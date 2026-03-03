@@ -1037,6 +1037,132 @@ New stages added by extending the enum. No backfill needed.
 
 ---
 
+### 21. Pre-implementation resolutions
+
+**Six open issues from the schema summary review, resolved before SQL implementation.**
+
+---
+
+#### 21a. Nullable vintage_year in composite PKs
+
+**Decision: UUID PK + unique constraint on (wine_id, vintage_year) for wine_vintages, wine_vintage_insights, and wine_vintage_grapes.**
+
+Postgres does not allow NULLs in primary key columns. NV wines need null vintage_year (s13). Rather than a sentinel value (0), these three tables get UUID PKs with a unique constraint on the composite.
+
+Rationale: `wine_vintages` has 30+ columns and is referenced by other tables -- it is an entity, not a join table. UUID PK is the correct pattern per s17's own rule. `wine_vintage_insights` and `wine_vintage_grapes` follow the same pattern for consistency.
+
+**Updated table PKs:**
+- `wine_vintages` -- `id UUID PK`, UNIQUE (wine_id, vintage_year)
+- `wine_vintage_insights` -- `id UUID PK`, UNIQUE (wine_id, vintage_year)
+- `wine_vintage_grapes` -- `id UUID PK`, UNIQUE (wine_id, vintage_year, grape_id)
+
+---
+
+#### 21b. Appellations table -- full field spec
+
+**Decision: Appellations table fully spec'd with regulatory fields.**
+
+The `appellations` table was referenced throughout the schema but never had a complete field list. Finalized:
+
+| Column | Type | Notes |
+|---|---|---|
+| id | uuid | PK |
+| slug | text | UNIQUE NOT NULL |
+| name | text | NOT NULL |
+| designation_type | text, nullable | AVA, AOC, DOCa, DOCG, DO, IGT, etc. |
+| country_id | uuid | FK countries, NOT NULL |
+| region_id | uuid | FK regions, NOT NULL |
+| latitude | decimal, nullable | Reference coordinate for weather fetch |
+| longitude | decimal, nullable | |
+| hemisphere | text, nullable | north or south |
+| growing_season_start_month | integer, nullable | 1-12 |
+| growing_season_end_month | integer, nullable | 1-12 |
+| min_aging_months | integer, nullable | Minimum aging required |
+| max_yield_hl_ha | decimal, nullable | Maximum permitted yield |
+| min_alcohol_pct | decimal, nullable | |
+| allowed_grapes_description | text, nullable | Rule as stated (complex, not structured) |
+| classification_level | text, nullable | Grand Cru, Premier Cru, Classico, Riserva, etc. |
+| regulatory_body | text, nullable | INAO, TTB, Consorzio, etc. |
+| regulatory_url | text, nullable | Link to official regulations |
+| established_year | integer, nullable | When appellation was legally created |
+| baseline_gdd | decimal, nullable | Long-term avg (see 21c) |
+| baseline_rainfall_mm | decimal, nullable | |
+| baseline_harvest_temp_c | decimal, nullable | |
+| created_at / updated_at / deleted_at | timestamptz | standard |
+
+---
+
+#### 21c. Weather baselines on appellations, not appellation_vintages
+
+**Decision: Long-term weather averages stored on `appellations` table, not repeated per vintage row.**
+
+Baselines are a property of the place, not the vintage. Calculated once from ~30 years of historical data. Stored on appellations, joined when displaying a specific vintage's comparison to normal.
+
+**Removed from `appellation_vintages`:** baseline_gdd, baseline_rainfall_mm, baseline_harvest_temp_c
+**Added to `appellations`:** baseline_gdd, baseline_rainfall_mm, baseline_harvest_temp_c (see 21b table above)
+
+---
+
+#### 21d. Trends: single polymorphic table
+
+**Decision: One `trends` table replaces six entity-specific trend tables.**
+
+Same pattern as `enrichment_log` -- entity_type + entity_id.
+
+**`trends` table:**
+- `id` UUID PK
+- `entity_type` text NOT NULL (appellation, region, country, producer, grape, varietal_category)
+- `entity_id` UUID NOT NULL
+- `trend_type` text NOT NULL (market_trend, emerging_narrative, buyer_sentiment, price_movement)
+- `content` text NOT NULL
+- `confidence` decimal NOT NULL (0.0-1.0)
+- `enriched_at` timestamptz NOT NULL
+- `refresh_after` timestamptz NOT NULL (trends always expire)
+- `created_at` timestamptz default now()
+
+**Dropped:** appellation_trends, region_trends, country_trends, producer_trends, grape_trends, varietal_category_trends
+
+Tradeoff: loses FK enforcement on entity_id. Accepted -- same tradeoff as enrichment_log, and trends are AI content with short TTL.
+
+---
+
+#### 21e. Country insights added
+
+**Decision: Add `country_insights` table.**
+
+Follows the same pattern as other entity insights tables. Country pages need content for a dataset product.
+
+**`country_insights` table:**
+- `country_id` UUID PK (FK countries)
+- `ai_overview` text, nullable
+- `ai_wine_history` text, nullable
+- `ai_key_regions` text, nullable (narrative referencing regions; drillability via regions.country_id FK)
+- `ai_signature_styles` text, nullable
+- `ai_regulatory_overview` text, nullable (how the classification system works)
+- `confidence` decimal
+- `enriched_at` timestamptz
+- `refresh_after` timestamptz, nullable
+- `created_at` / `updated_at` timestamptz
+
+Note: `ai_key_regions` is narrative text, not a join table. Drillability from country to regions is handled by the existing `regions.country_id` FK -- the frontend queries regions by country and sorts by relevance (wine count, etc.).
+
+---
+
+#### 21f. wine_candidates to dedup handoff
+
+**Decision: No schema changes needed. Pipeline sequencing handles it.**
+
+Flow when a candidate is selected:
+1. Run producer dedup (three-tier) against `producers`
+2. Resolve to existing producer or create new
+3. Run wine dedup (three-tier) against `wines WHERE producer_id = resolved_producer`
+4. Match -> set `wine_candidates.wines_id`, add vintage data
+5. No match -> create wine, set `wine_candidates.wines_id`, trigger enrichment
+
+All required schema elements already exist: name_normalized, duplicate_of, wine_candidates.wines_id.
+
+---
+
 ## Foundational Principles
 
 ### Don't Create When Content Already Exists
@@ -1072,5 +1198,5 @@ Loam is designed to be sold as a dataset. The schema must be recognizable and tr
 
 - **Terminology audit** -- verify all field names and enums against industry standard vocabulary before final implementation
 - **CellarTracker data access** -- private API, limits free access. Alternative sources for community scores and pricing TBD
-- **Schema implementation** -- actual SQL, migrations, seed data
+- **Schema implementation** -- actual SQL, migrations, seed data (NEXT STEP)
 - **Pipeline architecture** -- complete redesign, separate discussion once schema is locked

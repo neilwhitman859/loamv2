@@ -39,7 +39,7 @@ Self-referencing hierarchy. (s2)
 GAP: No lat/lng. Useful for map display?
 
 ### appellations
-Legal designations. Weather attaches here. (s1, s2)
+Legal designations. Weather attaches here. (s1, s2, s21b, s21c)
 | Column | Type | Constraints | Notes |
 |---|---|---|---|
 | id | uuid | PK | |
@@ -53,9 +53,20 @@ Legal designations. Weather attaches here. (s1, s2)
 | hemisphere | text | nullable | north/south |
 | growing_season_start_month | integer | nullable | 1-12 |
 | growing_season_end_month | integer | nullable | 1-12 |
+| min_aging_months | integer | nullable | Regulatory (s21b) |
+| max_yield_hl_ha | decimal | nullable | Regulatory (s21b) |
+| min_alcohol_pct | decimal | nullable | Regulatory (s21b) |
+| allowed_grapes_description | text | nullable | Rule as stated (s21b) |
+| classification_level | text | nullable | Grand Cru, Classico, etc. (s21b) |
+| regulatory_body | text | nullable | INAO, TTB, etc. (s21b) |
+| regulatory_url | text | nullable | (s21b) |
+| established_year | integer | nullable | (s21b) |
+| baseline_gdd | decimal | nullable | Long-term avg (s21c) |
+| baseline_rainfall_mm | decimal | nullable | (s21c) |
+| baseline_harvest_temp_c | decimal | nullable | (s21c) |
 | created_at / updated_at / deleted_at | timestamptz | standard | |
 
-GAP: Never fully spec'd. Fields inferred. NEEDS REVIEW.
+RESOLVED: Fully spec'd in s21b. Regulatory fields and baselines added.
 
 ---
 ## 2. Producers
@@ -127,11 +138,12 @@ PK: composite (wine_id, region_id)
 ---
 ## 4. Wine Vintages
 
-### wine_vintages (s5, s8, s10, s13, s14, s19)
+### wine_vintages (s5, s8, s10, s13, s14, s19, s21a)
 | Column | Type | Constraints | Notes |
 |---|---|---|---|
-| wine_id | uuid | FK wines, PK part |  |
-| vintage_year | integer | PK part | ISSUE #1: NV null |
+| id | uuid | PK | s21a: UUID PK, not composite |
+| wine_id | uuid | FK wines, NOT NULL | |
+| vintage_year | integer | nullable | Null for NV. UNIQUE(wine_id, vintage_year) |
 | acidity | integer | nullable | 1-5 WSET s10 |
 | tannin | integer | nullable | 1-5 s10 |
 | body | integer | nullable | 1-5 s10 |
@@ -167,7 +179,7 @@ PK: composite (wine_id, region_id)
 | vivino_id | text | nullable | s19 |
 | created_at/updated_at/deleted_at | timestamptz | standard |  |
 
-PK: composite (wine_id, vintage_year). ISSUE #1 applies.
+RESOLVED: UUID PK + UNIQUE (wine_id, vintage_year). (s21a)
 
 ---
 ## 5. Grapes
@@ -181,18 +193,17 @@ id, slug, name, color (red/white/rose/orange), effervescence (still/sparkling/se
 ### wine_grapes (s4, s5)
 PK: composite (wine_id, grape_id). percentage decimal nullable, percentage_source FK.
 
-### wine_vintage_grapes (s5)
-PK: composite (wine_id, vintage_year, grape_id). percentage, percentage_source. ISSUE #1 applies.
+### wine_vintage_grapes (s5, s21a)
+UUID PK. UNIQUE (wine_id, vintage_year, grape_id). percentage, percentage_source.
 
 ---
 ## 6. Weather
 
-### appellation_vintages (s1, s5)
+### appellation_vintages (s1, s5, s21c)
 PK: composite (appellation_id, vintage_year)
 Weather: gdd, total_rainfall_mm, harvest_rainfall_mm, harvest_avg_temp_c, spring_frost_days, heat_spike_days, avg_diurnal_range_c
-Baselines: baseline_gdd, baseline_rainfall_mm, baseline_harvest_temp_c (see ISSUE #4)
 Growing season: growing_season_start (date), growing_season_end (date)
-GAP: Field names TBD in s5. NEEDS REVIEW.
+RESOLVED: Baselines moved to appellations table (s21c).
 
 ---
 ## 7. Soil
@@ -260,7 +271,7 @@ Release price lives on wine_vintages, not here.
 
 All share: confidence, enriched_at, refresh_after (nullable), created_at, updated_at (s6)
 
-### wine_vintage_insights: PK composite (wine_id, vintage_year) ISSUE #1
+### wine_vintage_insights: UUID PK, UNIQUE (wine_id, vintage_year) (s21a)
 AI fields: ai_vintage_summary, ai_weather_impact, ai_microclimate_impact, ai_flavor_impact, ai_aging_potential, ai_quality_assessment, ai_comparison_to_normal, ai_harvest_analysis, ai_value_assessment
 Critic window: critic_drinking_window_start/end, critic_peak_start/end, critic_window_source FK
 Calculated window: calculated_drinking_window_start/end, calculated_peak_start/end, calculated_window_explanation
@@ -278,20 +289,21 @@ ai_overview, ai_climate_profile, ai_soil_profile, ai_signature_style, ai_key_gra
 ### grape_insights: PK grape_id. ai_overview, ai_flavor_profile, ai_growing_conditions, ai_food_pairing, ai_regions_of_note, ai_aging_characteristics
 ### soil_type_insights: PK soil_type_id. ai_overview, ai_wine_impact, ai_notable_regions, ai_drainage_explanation, ai_best_grapes
 ### water_body_insights: PK water_body_id. ai_overview, ai_wine_impact, ai_notable_regions
+### country_insights (s21e): PK country_id. ai_overview, ai_wine_history, ai_key_regions, ai_signature_styles, ai_regulatory_overview
 
 ---
-## 15. Trends
+## 15. Trends (s21d)
 
-6 tables (or 1 polymorphic): appellation/region/country/producer/grape/varietal_category_trends
-Each: id UUID PK, {entity}_id FK, trend_type, content, confidence, enriched_at, refresh_after NOT NULL, created_at
-ISSUE #5: Recommend single polymorphic table.
+### trends
+Single polymorphic table. Replaces 6 entity-specific tables.
+id UUID PK, entity_type (appellation/region/country/producer/grape/varietal_category), entity_id UUID, trend_type (market_trend/emerging_narrative/buyer_sentiment/price_movement), content, confidence, enriched_at, refresh_after NOT NULL, created_at
 
 ---
 ## 16. Search
 
 ### wine_candidates (s15)
 id, producer_name, wine_name, primary_grape, vintage_years (int[]), source_url, wines_id FK nullable, created_at
-GAP: Handoff to dedup undefined (ISSUE #6).
+RESOLVED: Handoff uses existing dedup system. No schema changes needed. (s21f)
 
 ---
 ## 17. Enrichment
@@ -301,17 +313,17 @@ id UUID PK. entity_type, entity_id, vintage_year (nullable), stage, status, star
 UNIQUE: (entity_type, entity_id, vintage_year, stage). No deleted_at.
 
 ---
-## Issues to Resolve
+## Issues — All Resolved (s21a-f)
 
-1. **Nullable vintage_year in PKs** - NV wines need null but Postgres disallows. Recommend sentinel (0).
-2. **Appellations fields** - Never spec'd. Inferred here. Needs sign-off.
-3. **Weather field names** - TBD in s5. Confirm against Open-Meteo output.
-4. **Baselines storage** - On appellation_vintages (repeated) or appellations (once)? Recommend appellations.
-5. **Trends tables** - 6 identical tables vs 1 polymorphic. Recommend single table.
-6. **wine_candidates handoff** - How candidates become wines via dedup. Needs definition.
-7. **Country insights** - No country_insights defined but country_trends exists. Add?
+1. ~~Nullable vintage_year in PKs~~ → UUID PK + unique constraint (s21a)
+2. ~~Appellations fields~~ → Fully spec'd with regulatory fields (s21b)
+3. ~~Weather field names~~ → Confirmed in summary; baselines moved to appellations (s21c)
+4. ~~Baselines storage~~ → On appellations, stored once (s21c)
+5. ~~Trends tables~~ → Single polymorphic table (s21d)
+6. ~~wine_candidates handoff~~ → Pipeline handles it, no schema changes (s21f)
+7. ~~Country insights~~ → Added (s21e)
 
 ---
-## Table Count: 48 (or 43 if trends consolidated)
+## Table Count: 44
 
-Geography 3, Producers 2, Wines 2, Vintages 1, Grapes 4, Weather 1, Soil 4, Water 4, Certifications 4, Sources 1, Scores 2, Pricing 1, Documents 3, Insights 8, Trends 6/1, Search 1, Enrichment 1
+Geography 3, Producers 2, Wines 2, Vintages 1, Grapes 4, Weather 1, Soil 4, Water 4, Certifications 4, Sources 1, Scores 2, Pricing 1, Documents 3, Insights 9, Trends 1, Search 1, Enrichment 1
