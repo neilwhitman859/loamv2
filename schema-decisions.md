@@ -599,9 +599,438 @@ Producer-written content is always better than AI-generated prose. A winemaker's
 
 ## Still to decide
 
-- **Wine attributes** — sensory profile, production methods, chemical data, aging details (comprehensive wine data for dataset sales)
-- **Pricing and market data** — release price, current market price, price history (structure identified, data sourcing TBD)
-- **Remaining terroir details** — vegetation/land use, any additional microclimate factors
+- **Terminology audit** — verify all field names and enums against industry standard vocabulary before final implementation
+- **CellarTracker data access** — private API, limits free access. Alternative sources for community scores and pricing TBD.
+- **Wine name field** — confirmed as stored field, exact naming conventions TBD
 - **Schema implementation** — actual SQL, migrations, seed data
-- **Pipeline updates** — how enrichment pipeline adapts to new schema
-- **Frontend implications** — how the new data model affects the UI
+- **Pipeline architecture** — complete redesign, separate discussion once schema is locked
+
+---
+
+### 11. Critic and community scores
+
+**Decision: Dedicated `wine_vintage_scores` table with full provenance. Publications as a seeded FK table. Multiple scores per wine-vintage supported — superseded scores flagged rather than deleted.**
+
+---
+
+**`publications` table** *(seeded)*
+- `id` PK, slug
+- `name` — "Wine Spectator", "Wine Advocate", "Decanter", "James Suckling", "CellarTracker", etc.
+- `country` text, nullable
+- `url` text, nullable
+- `type` enum (critic_publication, community, auction_house)
+
+---
+
+**`wine_vintage_scores` table**
+- `id` PK
+- `wine_id` + `vintage_year` — vintage_year nullable for NV wines
+- `score` integer
+- `score_low` integer, nullable — for ranges (e.g. barrel sample "92-95")
+- `score_high` integer, nullable
+- `score_scale` integer — original scale as published (100, 20, 5). No normalization — display layer handles conversion.
+- `publication_id` FK → publications
+- `critic` text, nullable — individual critic name where applicable
+- `tasting_note` text, nullable — descriptive tasting note
+- `review_text` text, nullable — general commentary, context, non-tasting note content
+- `drinking_status` enum (too_young, approachable, at_peak, declining), nullable — critic's qualitative call on where the wine is right now
+- `blind_tasted` boolean, nullable — whether the wine was tasted blind
+- `critic_drink_window_start` integer, nullable — critic's raw window recommendation as published
+- `critic_drink_window_end` integer, nullable
+- `review_date` date, nullable
+- `review_type` enum (final, barrel_sample, early_release, retrospective)
+- `is_community` boolean — true for CellarTracker and aggregated community scores, false for individual critic scores
+- `rating_count` integer, nullable — number of community ratings, populated for community scores only
+- `is_superseded` boolean, default false — flagged true when a critic publishes an updated score for the same wine-vintage. Keeps history intact, newer row is the active one.
+- `url` text, nullable — link to original review
+- `source` FK → source_types
+- `discovered_at` timestamp
+
+**Data sources:**
+- CellarTracker API — community scores, rating count, community average price
+- Producer websites — release prices, sometimes critic scores published as accolades
+- Both are free and legitimate
+
+**Notes:**
+- Multiple scores from the same publication/critic for the same wine-vintage are supported — re-reviews happen. `is_superseded` distinguishes active from historical.
+- Community scores (CellarTracker) displayed differently from critic scores in the UI — rating count is as meaningful as the score itself for community data.
+- Critic drink window fields on this table are the raw per-review data. `critic_drinking_window_start/end` on `wine_vintage_insights` is Loam's synthesized view across all critic input.
+
+---
+
+### 10. Wine attributes
+
+**Decision: Sensory, chemical, and production method fields split across `wines` (house style) and `wine_vintages` (vintage-specific). All nullable. Source tracking grouped by category.**
+
+---
+
+#### Sensory profile — on `wine_vintages`
+
+Stored as integer 1–5 using WSET-aligned scale. Vintage-specific because vintage conditions meaningfully affect expression year to year.
+
+- `acidity` integer 1–5 (1 = flat, 2 = soft, 3 = medium, 4 = firm, 5 = brisk)
+- `tannin` integer 1–5 (1 = none, 2 = soft, 3 = medium, 4 = firm, 5 = grippy)
+- `body` integer 1–5 (1 = light, 2 = light-medium, 3 = medium, 4 = medium-full, 5 = full)
+- `alcohol_level` integer 1–5 (1 = low <11%, 2 = medium-low 11–12.5%, 3 = medium 12.5–13.5%, 4 = medium-high 13.5–14.5%, 5 = high >14.5%)
+- `alcohol_pct` decimal — precise % from label or tech sheet
+
+Scale definitions live in code/docs, not the DB. AI-inferred or extracted from tech sheets. Source tracked per field via sensory source grouping (TBD during pipeline design).
+
+---
+
+#### Chemical data — on `wine_vintages`
+
+All nullable decimals. Never AI-inferred — either on the tech sheet or null. Single shared source field covers all chemical fields.
+
+- `ph` decimal
+- `ta_g_l` decimal — titratable acidity in g/L
+- `rs_g_l` decimal — residual sugar in g/L
+- `va_g_l` decimal — volatile acidity in g/L
+- `so2_free_mg_l` decimal
+- `so2_total_mg_l` decimal
+- `chemical_data_source` FK → source_types
+
+**Availability note:** pH and alcohol_pct are most commonly published. TA sometimes. RS matters for sweet/semi-sweet styles. VA and SO2 are rarely published proactively — more commonly stated when absent ("unfined, unfiltered") or when low SO2 is a selling point.
+
+---
+
+#### Production methods
+
+Split between house style (wine-level) and vintage-variable fields (vintage-level). Source tracking grouped into two buckets.
+
+**On `wines` (house style — rarely changes vintage to vintage)**
+- `oak_origin` enum (french, american, slavonian, hungarian, mixed, none), nullable
+- `yeast_type` enum (native, commercial, mixed), nullable
+- `fining` enum (unfined, fined, partial), nullable
+- `filtration` boolean, nullable
+- `closure` enum (cork, screwcap, diam, wax, other), nullable
+- `fermentation_vessel` enum (barrel, stainless, concrete, amphora, foudre, mixed), nullable
+- `oak_source` FK → source_types — covers all oak-related fields on `wines`
+
+**On `wine_vintages` (vintage-specific or ambiguous)**
+- `duration_in_oak_months` integer, nullable
+- `new_oak_pct` integer, nullable
+- `neutral_oak_pct` integer, nullable — middle (1-2yr oak) is implied: 100 - new_oak_pct - neutral_oak_pct
+- `whole_cluster_pct` integer, nullable
+- `bottle_aging_months` integer, nullable
+- `carbonic_maceration` boolean, nullable
+- `mlf` enum (full, partial, none), nullable
+- `winemaking_source` FK → source_types — covers all winemaking fields on `wine_vintages`
+
+**Availability note:** Duration in oak, closure, and alcohol_pct are most commonly published. % new oak common for premium wines. Whole cluster % increasingly common for Pinot/Syrah producers. Yeast type common for natural-leaning producers, rarely stated by conventional ones. Fining/filtration often stated only when absent ("unfined"). VA rarely published proactively.
+
+---
+
+#### Aging details
+
+Three tiers of aging guidance, each with distinct provenance. Drink now is a frontend calculation (today's date vs. window fields) — not stored.
+
+**On `wine_insights` (vintage-agnostic baseline)**
+
+Relative years from vintage, not absolute years. Used for NV wines and as a house style reference when vintage-specific data isn't available. AI-synthesized from varietal, appellation, and producer house style.
+
+- `typical_drinking_window_years` integer — how many years this wine typically needs before drinking
+- `typical_aging_potential_years` integer — outer bound of how long it can age
+- `typical_peak_start_years` integer — years from vintage to peak start
+- `typical_peak_end_years` integer — years from vintage to peak end
+
+**On `wine_vintage_insights` (vintage-specific)**
+
+Three parallel sets of fields — critic assessment, weather-based calculation, and AI synthesis. Stored separately so the user can compare provenance and see where consensus lies or diverges.
+
+*Critic:*
+- `critic_drinking_window_start` integer (year)
+- `critic_drinking_window_end` integer (year)
+- `critic_peak_start` integer (year)
+- `critic_peak_end` integer (year)
+- `critic_window_source` FK → source_types
+
+*Calculated (weather-based — Loam's own projection):*
+- `calculated_drinking_window_start` integer (year)
+- `calculated_drinking_window_end` integer (year)
+- `calculated_peak_start` integer (year)
+- `calculated_peak_end` integer (year)
+- `calculated_window_explanation` text — AI-generated prose explaining how the calculation was derived. References actual data inputs (GDD, harvest conditions, appellation aging curve, oak regime, blend) so the user can follow the reasoning.
+
+*AI synthesis:*
+- `ai_drinking_window_start` integer (year)
+- `ai_drinking_window_end` integer (year)
+- `ai_peak_start` integer (year)
+- `ai_peak_end` integer (year)
+- `ai_window_explanation` text — AI-generated prose explaining the holistic judgment. Not an average of critic and calculated — a reasoned synthesis that weights all inputs.
+
+**Display principle:** Show all three tiers with provenance labels. Disagreement between tiers is itself informative — surfaces as a signal to the user ("critics are more bullish on this vintage than the weather data suggests").
+---
+
+## Foundational Principle: Model Industry Norms
+
+**This principle governs all naming, vocabulary, and structural decisions.**
+
+Loam is designed to be sold as a dataset. That means the schema must be recognizable and trustworthy to wine industry buyers — sommeliers, importers, critics, developers building wine tools. Idiosyncratic naming or structure creates friction and reduces value.
+
+**What this means in practice:**
+- Use industry-standard vocabulary throughout — WSET terminology for sensory descriptors, standard appellation/region names, recognized certification names
+- Follow how major wine databases model their data (Wine-Searcher, CellarTracker, Wine Advocate) where known
+- Standard score scales (100-point primary)
+- Standard geographic hierarchy (country → region → appellation) — already implemented
+- No invented terminology when an industry term exists
+- Field names should be self-explanatory to a wine professional without a data dictionary
+
+**Terminology audit** — before final schema implementation, all enums and field names should be verified against industry standard vocabulary. This is a "still to decide" item.
+
+---
+
+### 12. Grapes table — fact/insight split
+
+**Decision: `grapes` table stays lean as a botanical fact table. All interpretive content moves to `grape_insights`.**
+
+**Reasoning:** Consistent with the fact/insight split applied across all entities. At 10,000 wines, the discipline of the separation pays off — re-enrichment is cleaner, source provenance is explicit, and the pattern is predictable for anyone reading the schema.
+
+**`grapes` table — botanical facts only:**
+- `id` PK, slug
+- `name`
+- `aliases` array — recognized synonyms (Syrah = Shiraz = Hermitage)
+- `color` enum (red, white, pink, grey)
+- `origin_country_id` FK → countries — where the grape originated
+
+**Dropped from v1:**
+- `is_blend`, `blend_components`, `common_blends` — redundant with `varietal_categories`, which handles blend identity
+- `description`, `climate`, `acidity`, `tannin`, `body`, `sweetness`, `oak_treatment`, `aging_potential` — interpretive, move to `grape_insights`
+- `primary_flavors`, `secondary_flavors`, `tertiary_flavors` — interpretive, move to `grape_insights`
+- `key_regions`, `region_notes`, `blend_notes` — interpretive, move to `grape_insights`
+- `sort_order` — not needed
+
+**`grape_insights` table** (already defined in Decision 6) covers all interpretive content.
+
+---
+
+### 13. NV (Non-Vintage) wines
+
+**Decision: `is_nv` boolean on `wines`. NV wines use null `vintage_year` throughout the schema. NV-specific fields added to `wine_vintages`.**
+
+**Industry standard:** Major wine databases (Wine-Searcher, CellarTracker, Wine Advocate) use vintage year as the primary identifier with NV as a special case — not a parallel track. Loam follows this convention.
+
+**NV wines are not all the same:**
+- **Annual releases** (Champagne NV) — different disgorgement each year, collectors care about disgorgement date
+- **Continuous production** (Sherry Solera) — ongoing blend, no meaningful release date
+- **Age statements** (Tawny Port 10yr, 20yr) — not a vintage but meaningful time information
+
+**On `wines`:**
+- `is_nv` boolean — flags this as a non-vintage wine
+
+**On `wine_vintages` — additional NV fields (all nullable):**
+- `disgorgement_date` date — for Champagne and similar annual NV releases
+- `age_statement_years` integer — for Tawny Port, aged Sherry
+- `solera_system` boolean, default false — for continuous blend wines
+
+**Behavior:**
+- NV wines have `vintage_year` = null on `wine_vintages`
+- Weather data (`appellation_vintages`) does not apply to NV wines — no vintage year to key on
+- Aging/drinking window fields on `wine_vintage_insights` still apply — NV wines can have drinking windows
+- `wine_insights` typical aging fields are the primary aging reference for NV wines
+
+---
+
+### 14. Pricing
+
+**Decision: Dedicated `wine_vintage_prices` table for valuation data. Separate from commerce/affiliate data (future `wine_vintage_listings` table). Simple for v1, infrastructure in place for expansion.**
+
+**Data sources (free):**
+- CellarTracker API — community average price, price range
+- Producer websites — release price, scraped per wine
+
+**`wine_vintage_prices` table:**
+- `id` PK
+- `wine_id` + `vintage_year` FK → wine_vintages (vintage_year nullable for NV)
+- `amount` decimal
+- `currency` text (USD, EUR, GBP, etc.)
+- `price_type` enum (release, community_average, community_low, community_high, auction_avg)
+- `source` FK → source_types
+- `recorded_at` timestamp — when this price was recorded/scraped
+- `url` text, nullable
+
+**Value assessment** — AI judgment on whether the wine is fairly priced relative to quality — lives on `wine_vintage_insights` as `ai_value_assessment` text. Not in the price table — it's interpretation, not data.
+
+**Future:** A separate `wine_vintage_listings` table for retail/affiliate links when partnerships exist. Pricing table stays pure valuation data.
+
+---
+
+### 15. Search and disambiguation
+
+**Decision: Lightweight `wine_candidates` table for search disambiguation before enrichment. On-demand enrichment triggered after user selects the correct wine.**
+
+**Problem:** Full enrichment takes 30+ seconds. Users shouldn't wait through enrichment only to find they searched for the wrong wine. Disambiguation comes first.
+
+**Flow:**
+1. User searches "Stag's Leap Cabernet"
+2. Query runs against `wine_candidates` — fast, lightweight
+3. User picks specific wine ("Armillary 2020")
+4. Check if wine exists in full `wines` table
+5. If not — trigger enrichment pipeline
+6. Show enriched wine page
+
+**`wine_candidates` table** *(seeded with ~20,000 wines)*
+- `id` PK
+- `producer_name` text
+- `wine_name` text
+- `primary_grape` text
+- `vintage_years` integer array — list of known available vintages
+- `source_url` text, nullable
+- `wines_id` FK → wines, nullable — populated once this candidate has been fully enriched
+
+**Note:** Matching logic between `wine_candidates` and `wines` (how a candidate maps to a full wine record) to be defined during pipeline implementation.
+
+---
+
+### 16. Vegetation, land use, and biodiversity
+
+**Decision: Wine-level narrative field in `wine_insights`. Producer content scraped first, AI fills gaps. Biodiversity certifications as a seeded join table.**
+
+**Why vegetation matters to wine:**
+- **Pest and disease management** — native vegetation supports beneficial insects, reduces intervention, affects sulfite levels
+- **Microclimate modulation** — trees and water features moderate temperature, affecting ripeness and acidity
+- **Soil biology** — diverse vegetation supports mycorrhizal fungi and bacteria, affecting mineral expression
+- **Water retention** — surrounding land affects vineyard water availability
+
+Wine-level (not appellation-level) because a specific vineyard's surroundings matter more than regional averages. Winemakers often describe this themselves on websites and tech sheets — scrape first, AI fills gaps.
+
+**On `wine_insights`:**
+- `ai_vegetation_and_land_use` text — narrative description of surrounding ecosystem, biodiversity, land management. Example: "The vineyard sits within a mixed agricultural landscape interspersed with native Mediterranean oak forest and garrigue scrubland. This biodiversity supports natural pest predation and moderates summer heat through forest proximity."
+- `vegetation_source` FK → source_types — `producer_stated` if from producer materials, `ai_inferred` if Claude-generated
+- `vegetation_confidence` decimal 0.0–1.0
+
+**`biodiversity_certifications` table** *(seeded)*
+- `id` PK, slug
+- `name` ("Regenerative Organic Certified", "Wildlife Friendly Farming", "Audubon Certified", "Land to Market Verified", "Carbon Neutral Certified", etc.)
+- `description` text, nullable
+- `url` text, nullable — link to certification body
+
+**`wine_biodiversity_certifications` join table**
+- `wine_id` FK
+- `biodiversity_certification_id` FK
+- `source` FK → source_types
+- PK: composite (wine_id, biodiversity_certification_id)
+
+---
+
+### 17. Primary keys — UUIDs everywhere
+
+**Decision: UUIDs as primary key on every table. Separate `slug` field on human-facing entities for URL display.**
+
+**Reasoning:**
+- Globally unique — no collisions when merging datasets or integrating with external systems
+- Industry standard for sellable datasets
+- No sequence exposure — buyers cannot infer dataset size from IDs
+- Safe for distributed pipeline runs — IDs generated independently never conflict
+
+**Implementation:**
+- Every table PK is a UUID, generated automatically by Postgres (`gen_random_uuid()`)
+- `slug` field (text, unique) added to: `wines`, `producers`, `appellations`, `varietal_categories`, `regions`, `countries`
+- Slug is the URL-friendly identifier (e.g. `stags-leap-armillary`). Can change without breaking anything because UUID is the real FK reference throughout the schema.
+- Slugs generated from name at insert time, normalized (lowercase, no accents, hyphens for spaces)
+
+**Note:** Section 12 (`grapes` table) shows `id` PK, slug — this should be read as UUID PK + separate slug field, consistent with this decision.
+
+---
+
+### 18. Soft deletes
+
+**Decision: `deleted_at` timestamp on all core tables. Null = active, populated = deleted. No hard deletes.**
+
+**Reasoning:**
+- Pipeline runs frequently and can make mistakes — soft deletes allow recovery
+- Audit trail for dataset integrity — buyers expect to know what changed
+- Consistent pattern across all tables
+
+**Implementation:**
+- `deleted_at` timestamptz, nullable, default null — on every core table
+- All standard queries filter `WHERE deleted_at IS NULL`
+- Consider a Postgres view per table that applies this filter automatically
+- `deleted_at` is never overwritten once set — if a record needs to be restored, set it back to null
+
+**Core tables this applies to:** `wines`, `producers`, `wine_vintages`, `appellations`, `regions`, `countries`, `grapes`, `varietal_categories`, `wine_grapes`, `wine_vintage_grapes`, `appellation_vintages`, and all insights/scores/pricing tables.
+
+---
+
+### 19. Duplicate detection
+
+**Decision: Three-layer approach. Normalize + slug match as first pass, AI-assisted candidate review as second pass, external IDs as confirmation when available.**
+
+**The problem:** No global standard wine identifier exists. Wine names vary ("Lopez de Heredia" vs "R. Lopez de Heredia"), and the pipeline will encounter the same wine described multiple ways across different sources.
+
+**Three distinct duplicate problems:**
+- **Producers** — same producer, different name strings
+- **Wines** — same wine, different label descriptions
+- **Vintages** — unambiguous once wine is correctly identified
+
+**Layer 1 — Normalization + slug matching**
+Before any insert, normalize producer name and wine name: remove accents, lowercase, strip punctuation, handle common abbreviations. Generate normalized slug. Check for existing match. Catches most cases.
+
+**Layer 2 — AI-assisted candidate review**
+When normalized slug match isn't found, query for wines with similar producer + region + varietal. Claude reviews candidates: "Is this new wine the same as any of these existing records?" Only runs when Layer 1 doesn't find a clean match.
+
+**Layer 3 — External IDs as confirmation**
+Store external database IDs as nullable fields. When two records share an external ID they are definitively the same wine.
+
+**Schema additions:**
+
+On `wines`:
+- `normalized_name` text — cleaned, accent-stripped, lowercase version of wine name used for matching
+- `duplicate_of` UUID FK → wines, nullable — if a duplicate is detected after the fact, points to the canonical record rather than deleting
+
+On `producers`:
+- `normalized_name` text — same normalization approach
+
+On `wine_vintages`:
+- `cellartracker_id` text, nullable
+- `wine_searcher_id` text, nullable
+- `vivino_id` text, nullable
+
+On `grapes`:
+- `vivc_number` text, nullable — VIVC (Vitis International Variety Catalogue) number. The global standard for grape variety identification used by researchers and regulators worldwide.
+
+**Note on CellarTracker:** CellarTracker's API is private — used only by select third-party apps. It is not a freely accessible public API. Data access options to be determined. This affects the scores and pricing data sourcing strategy.
+
+**Ongoing concern:** Duplicate detection is not fully solved. No free, accessible, comprehensive external ID system for wines exists. Monitor real-world pipeline behavior and revisit as better data sources are found.
+
+---
+
+### 20. Enrichment status tracking
+
+**Decision: Dedicated `wine_enrichment_log` table tracking each pipeline stage independently. Simple status fields on `wines` for overall state.**
+
+**Reasoning:** At 10,000 wines with a multi-stage pipeline, a single status field on `wines` doesn't give enough visibility. You need to know which stage failed, resume from failure points, and avoid re-running expensive stages unnecessarily. Null fields in a complete record are expected and legitimate — not every field will be populated for every wine.
+
+**On `wines` (overall status):**
+- `enrichment_status` enum (pending, partial, complete, failed) — overall pipeline state
+- `enriched_at` timestamptz — when enrichment last ran
+- `enrichment_notes` text, nullable — failure details for debugging
+
+**`wine_enrichment_log` table (per-stage tracking):**
+- `id` UUID PK
+- `wine_id` UUID FK → wines
+- `vintage_year` integer, nullable — null for wine-level stages, populated for vintage-specific stages
+- `stage` enum:
+  - `candidate_matching`
+  - `document_discovery`
+  - `document_extraction`
+  - `weather_fetch`
+  - `elevation_fetch`
+  - `external_ids`
+  - `scores_fetch`
+  - `pricing_fetch`
+  - `ai_microclimate`
+  - `ai_wine_insights`
+  - `ai_vintage_insights`
+- `status` enum (pending, running, complete, failed, confirmed_null, not_applicable)
+- `started_at` timestamptz
+- `completed_at` timestamptz, nullable
+- `error_message` text, nullable
+- `source` UUID FK → source_types, nullable
+
+**Null handling philosophy:**
+- `enriched_at` is always populated when a pipeline stage runs, even if it finds nothing
+- `enrichment_status` = complete means the pipeline finished, not that every field is populated
+- A null field on a complete record means the pipeline looked and couldn't find the data — confirmed null by implication
+- `status` = confirmed_null on a log row means: we looked, it genuinely doesn't exist. Pipeline skips on re-enrichment.
+- `status` = not_applicable means: this stage doesn't apply to this wine (e.g. weather_fetch for an NV wine)
