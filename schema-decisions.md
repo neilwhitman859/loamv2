@@ -607,7 +607,7 @@ Producer-written content is always better than AI-generated prose. A winemaker's
 
 ---
 
-### 11. Critic and community scores
+### 10. Critic and community scores
 
 **Decision: Dedicated `wine_vintage_scores` table with full provenance. Publications as a seeded FK table. Multiple scores per wine-vintage supported — superseded scores flagged rather than deleted.**
 
@@ -658,7 +658,7 @@ Producer-written content is always better than AI-generated prose. A winemaker's
 
 ---
 
-### 10. Wine attributes
+### 11. Wine attributes
 
 **Decision: Sensory, chemical, and production method fields split across `wines` (house style) and `wine_vintages` (vintage-specific). All nullable. Source tracking grouped by category.**
 
@@ -1027,6 +1027,8 @@ On `grapes`:
 - `completed_at` timestamptz, nullable
 - `error_message` text, nullable
 - `source` UUID FK → source_types, nullable
+
+**Future consideration:** This table is currently scoped to wines only (`wine_enrichment_log`). If enrichment expands to other entity types (producers, appellations, regions), this could be generalized to a single `enrichment_log` table with an `entity_type` column and a polymorphic `entity_id`, using the same structure. The unique constraint would become `(entity_type, entity_id, vintage_year, stage)`.
 
 **Null handling philosophy:**
 - `enriched_at` is always populated when a pipeline stage runs, even if it finds nothing
