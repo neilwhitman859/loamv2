@@ -1,5 +1,11 @@
 # Loam v2 — Session Context (March 3–4, 2026)
 
+> **⚠️ IMPORTANT: GitHub is the source of truth for this project.**
+> Claude's conversation memory is unreliable across sessions — decisions and context get lost.
+> This file and `schema-decisions.md` must be updated and pushed to GitHub **before ending any working session**.
+> At minimum, commit after: any schema decision, any seeding milestone, any design change.
+> If in doubt, commit. It's free and prevents hours of re-discovery.
+
 This document captures what was accomplished, key decisions, and next steps from the current working sessions. It's intended to give the next chat full context without needing to search prior conversations.
 
 ---
