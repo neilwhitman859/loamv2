@@ -1,6 +1,23 @@
 # Loam v2 — Session Context (March 3–4, 2026)
 
-This document captures what was accomplished, key decisions, and next steps from the current working session. It's intended to give the next chat full context without needing to search prior conversations.
+This document captures what was accomplished, key decisions, and next steps from the current working sessions. It's intended to give the next chat full context without needing to search prior conversations.
+
+---
+
+## Current Database State
+
+**Supabase project:** `vgbppjhmvbggfjztzobl`
+
+| Table | Rows | Status |
+|-------|------|--------|
+| wine_candidates | 100,646 | Seeded from X-Wines dataset |
+| countries | 62 | Complete |
+| regions | 328 | 266 real + 62 catch-alls |
+| appellations | 529 | 52 countries covered |
+| grapes | 707 | Complete with synonym mapping |
+| All other tables | 0 | Awaiting seeding/enrichment |
+
+**Schema** is fully built (all tables from schema-decisions.md exist).
 
 ---
 
@@ -13,96 +30,105 @@ This document captures what was accomplished, key decisions, and next steps from
 **Field mapping from CSV:**
 - WineryName → `producer_name`
 - WineName → `wine_name`
-- Type → `wine_type` (Red, White, Rosé, Sparkling, Dessert, Fortified)
-- Grapes → `grapes` (TEXT[] array, converted from Python-style string)
+- Type → `wine_type` (Red, White, Rosé, Sparkling, Dessert, Dessert/Port)
+- Grapes → `grapes` (TEXT[] array)
 - Grapes[0] → `primary_grape`
 - Elaborate → `elaborate`
 - ABV → `abv`
 - Country → `country`
 - RegionName → `region_name`
-- Vintages → `vintage_years` (INTEGER[], stripped 'N.V.' entries)
+- Vintages → `vintage_years` (INTEGER[])
 
-All rows have `source_url` set to the X-Wines GitHub URL.
-
-**Stats:** 62 countries, 30,190 unique producers, 2,160 unique region names, 6 wine types.
+**Stats:** 62 countries, 30,190 unique producers, 2,160 unique region names, 6 wine types, 777 distinct grape names.
 
 ### 2. Seeded 62 countries
 
-All 62 countries from the dataset inserted into `countries` with proper English names, ISO codes, and slugs.
+All 62 countries with proper English names, ISO codes, and slugs.
 
-**Top 5 by wine count:** France (24,371), Italy (19,358), United States (13,139), Spain (7,109), Portugal (4,958).
+### 3. Seeded 266 real regions with hierarchy
 
-### 3. Seeded 258 regions with hierarchy
+Cross-referenced Wine-Searcher, Decanter, Jancis Robinson, and Wine Folly for accuracy. 215 top-level, 43 with parent relationships. US intentionally more granular (most users US-based).
 
-Designed and inserted a complete region taxonomy across all 62 countries. This was a significant design effort — we cross-referenced Wine-Searcher, Decanter, Jancis Robinson, and Wine Folly to ensure professional accuracy.
+### 4. Added 62 catch-all regions
 
-**Total: 258 regions (215 top-level, 43 with parent relationships)**
+One per country. `is_catch_all BOOLEAN` column distinguishes them. Slug pattern: `{country-slug}-country`. Purpose: wines without specific regional designation get `region_id` pointing here.
 
-**Key hierarchy decisions:**
-- **France:** Bordeaux → Left Bank / Right Bank; Rhône Valley → Northern / Southern Rhône; Languedoc-Roussillon → Languedoc / Roussillon
-- **Italy:** Tuscany → Bolgheri; Sicily → Etna (both buzzy/emerging)
-- **United States:** California → Napa Valley, Sonoma County, Central Coast, Mendocino, Sierra Foothills, Lodi; Central Coast → Paso Robles, Santa Barbara County, Monterey; Oregon → Willamette Valley; Washington → Columbia Valley, Walla Walla Valley, Yakima Valley; New York → Finger Lakes, Long Island
-- **Spain:** Catalonia → Priorat, Penedès
-- **Australia:** State-level parents (South Australia, Western Australia, NSW, Victoria) with children beneath
-- **South Africa:** Coastal Region → Stellenbosch, Paarl, Franschhoek, Constantia
-- **New Zealand:** Wairarapa → Martinborough
+### 5. Seeded 529 appellations across 52 countries
 
-**US is intentionally more granular** than other countries because most users will be US-based. This is a deliberate asymmetry.
+Every appellation has `region_id` (NOT NULL) and `country_id` FKs. 25 designation types used (AOC, DOCG, DOC, DO, AVA, GI, WO, DAC, VQA, PDO, PGI, etc.).
 
-The full draft document is at `/mnt/user-data/outputs/regions_draft.md` and should be committed to the repo.
+**Top countries:** France 168, Italy 86, United States 63, Spain 27, Portugal 15, Australia 14, Germany 14, Chile 13, Austria 11, South Africa 10.
+
+**10 countries with 0 appellations** (genuinely no formal systems): Azerbaijan, Belarus, Colombia, Denmark, Jordan, Liechtenstein, Myanmar, San Marino, Sweden, Syria.
+
+**Country-level catch-all appellations:** Vin de France, Vino d'Italia, Vino de España, Deutscher Wein, South Eastern Australia, Niederösterreich.
+
+### 6. Seeded 707 grapes with synonym mapping
+
+777 distinct names → 707 canonical records after synonym merging. Every grape has color (368 red, 335 white, 3 grey, 1 pink), slug, and optional origin country (69 have origin set). 47 grapes have aliases (92 total aliases).
+
+**Key synonym merges:**
+
+| Canonical | Aliases |
+|---|---|
+| Syrah | Shiraz |
+| Grenache | Garnacha, Cannonau, Garnacha Tinta |
+| Pinot Noir | Spätburgunder, Blauburgunder, Pinot Nero |
+| Pinot Gris | Pinot Grigio, Grauburgunder, Ruländer, Szürkebarát, Tocai Friulano, Tocai Italico |
+| Pinot Blanc | Weissburgunder, Klevner |
+| Mourvèdre | Monastrell, Mataro, Mourvedre |
+| Tempranillo | Tinta Roriz, Tinta de Toro, Tinto Fino, Cencibel, Aragonez, Ull de Llebre, Tinta del Pais |
+| Gamay | Gamay Noir |
+| Carignan | Cariñena, Mazuelo, Samsó |
+| Sangiovese | Morellino, Nielluccio, Prugnolo Gentile |
+| Blaufränkisch | Lemberger, Kékfrankos |
+| Albariño | Alvarinho |
+| Malbec | Côt |
+| Mencía | Jaen |
+| Vermentino | Rolle/Rollo |
+| Trebbiano Toscano | Ugni Blanc, Procanico |
+| Muscat Blanc à Petits Grains | 14 aliases (Moscato, Muscatel, Gelber Muskateller, etc.) |
+| Muscat of Alexandria | Zibibbo, Hanepoot |
+
+**Kept separate:** Zinfandel and Primitivo (genetically identical, industry treats as distinct).
+
+**Muscat family:** 7 distinct grapes (Muscat Blanc à Petits Grains, Muscat of Alexandria, Muscat Ottonel, Muscat of Hamburg, Moscato Giallo, Moscato Rosa, Moscato di Scanzo).
+
+**Malvasia family:** All sub-varieties kept separate (9 distinct grapes).
+
+**Trebbiano family:** Sub-varieties separate, generic Trebbiano as catch-all.
 
 ---
 
-## Key Decisions & Principles
+## Decisions Made (Varietal Category Seeding — Pending Implementation)
 
-### Granularity target: "casual wine enthusiast"
-Regions are at the level a moderately knowledgeable wine drinker would recognize — Napa Valley, Burgundy, Barossa Valley. NOT appellation-level (Pauillac, Gevrey-Chambertin). Those will live in the `appellations` table.
-
-### Build from scratch, not migrate v1
-We reviewed the v1 geography tables (uvlhbyhezdhphnwcxtil). They have 317 regions and 1,517 appellations with clean hierarchy, but use text slugs as PKs, lack parent_id nesting, and mix AI content with factual data. Not worth migrating.
-
-### Professional naming conventions
-- English names where that's the industry standard: Burgundy (not Bourgogne), Tuscany (not Toscana), Piedmont (not Piemonte)
-- Local names where labels/professionals use them: Mosel, Pfalz, Tokaj, Barossa Valley
-- Aligned with Wine-Searcher and Decanter conventions
-
-### X-Wines region_name field is messy
-The `region_name` column in `wine_candidates` contains a mix of true regions, sub-regions, appellations, and even vineyard sites (e.g., "Gevrey-Chambertin 1er Cru 'Les Cazetiers'"). France alone has 487 distinct values. This field will need mapping to our clean region/appellation structure during enrichment.
-
----
-
-## Current Database State
-
-**Supabase project:** `vgbppjhmvbggfjztzobl`
-
-| Table | Rows |
-|-------|------|
-| wine_candidates | 100,646 |
-| countries | 62 |
-| regions | 258 |
-| All other tables | 0 |
-
-**Schema** is fully built (all tables from schema-decisions.md exist). Only seed data has been added so far.
+1. **Blend granularity:** Rich set ~25-30 named blend categories + generic catch-alls
+2. **Dessert/fortified:** Own varietal categories (Port, Sherry, Madeira, Champagne, Sauternes, Tokaji, Vin Santo, Ice Wine, Late Harvest)
+3. **Rosé:** Grape-specific rosé categories for major grapes + Rosé Blend catch-all (~10-15 entries)
+4. **Orange wine:** Include in color enum, create categories as wines appear
 
 ---
 
 ## What's Next
 
-### Immediate priorities
-1. **Commit regions_draft.md to the repo** — the curated region list with hierarchy documentation
-2. **Appellation seeding strategy** — decide how to seed the `appellations` table. Options: curate by hand like regions (labor intensive), use AI to extract from wine_candidates region_name field, or start with a known list (Wine-Searcher's appellation list as reference)
-3. **Grape seeding** — the `grapes` table is empty. wine_candidates has grape data in TEXT[] arrays. Need to extract unique grapes, normalize names, assign colors, and seed the grapes table
-4. **Region mapping** — map the 2,160 unique `region_name` values in wine_candidates to the 258 seeded regions. This is the bridge between raw data and clean taxonomy
+### Immediate priorities (seeding)
+1. ~~Grape seeding~~ ✅ Done
+2. **Varietal categories** — ~130-150 entries (single varietals, named blends, regional designations, rosé categories, generic catch-alls)
+3. **Source types** — reference table for data provenance
+4. **Publications** — critic/community review sources
+5. **Farming certifications** — Organic, biodynamic, etc.
+6. **Biodiversity certifications**
+7. **Soil types**
 
-### Pipeline work (after seeding)
-5. **Producer dedup** — 30,190 producer names need normalization and deduplication (three-tier system: deterministic → pg_trgm → Haiku)
-6. **Wine promotion** — move confirmed wines from wine_candidates into the main `wines` table with proper FKs
-7. **Enrichment pipeline** — the main event. Fetch weather data, scrape tech sheets, generate AI insights. This is where Loam's value prop comes alive
+### Processing wine_candidates into real entities
+8. **Producers** — extract, deduplicate (three-tier), create records
+9. **Wines** — create with proper FKs
+10. **Wine vintages** — from vintage_years arrays
 
-### Not yet decided
-- Whether to add Colorado as a US region (getting press but still small)
-- Appellation seeding depth — how many of the 1,517 v1 appellations are worth bringing into v2
-- Grape alias handling (e.g., Syrah/Shiraz, Pinot Grigio/Pinot Gris)
+### Pipeline work
+11. **Region mapping** — map 2,160 region_name values to 328 regions
+12. **Appellation mapping** — match wines to appellations
+13. **Enrichment pipeline** — weather, tech sheets, AI insights
 
 ---
 
@@ -112,4 +138,4 @@ The `region_name` column in `wine_candidates` contains a mix of true regions, su
 - **Supabase v2 project:** vgbppjhmvbggfjztzobl
 - **Supabase v1 project (reference only):** uvlhbyhezdhphnwcxtil
 - **X-Wines dataset:** https://github.com/rogerioxavier/X-Wines (CC0-1.0)
-- **Key repo files:** PROJECT.md, schema-decisions.md, schema-summary.md, regions_draft.md (pending commit)
+- **Key repo files:** PROJECT.md, schema-decisions.md, schema-summary.md, session-context.md, regions_draft.md
