@@ -151,3 +151,28 @@ Every appellation has `region_id` (NOT NULL) and `country_id` FKs. 25 designatio
 - **Supabase v1 project (reference only):** uvlhbyhezdhphnwcxtil
 - **X-Wines dataset:** https://github.com/rogerioxavier/X-Wines (CC0-1.0)
 - **Key repo files:** PROJECT.md, schema-decisions.md, schema-summary.md, session-context.md, regions_draft.md
+
+---
+
+## In Progress: Producer Dedup Pipeline
+
+**Status:** Pipeline built, ready to run via Claude Code.
+
+**What was done:**
+- Created `producer_dedup_staging` table (30,684 distinct producer names with normalized forms and wine counts)
+- Enabled `unaccent` and `pg_trgm` extensions
+- Ran trigram fuzzy matching across all countries (threshold ≥ 0.5)
+- Created `producer_dedup_pairs` table with 8,208 candidate pairs
+- Built Python pipeline (`producer_dedup_pipeline.py`) that batches pairs to Haiku for verdicts
+
+**Key finding:** The X-Wines data is cleaner than expected. Only 13 groups are deterministic exact matches (accent/case differences). The prefix-stripping approach (removing Château, Domaine, Tenuta etc.) creates too many false merges — "Château X" and "Domaine X" are almost always different producers in France.
+
+**Strategy:**
+- Deterministic exact matches (13 groups): auto-merge (same string after accent normalization)
+- All 8,208 fuzzy pairs (similarity 0.5–0.93): Haiku decides
+- Estimated Haiku cost: ~$0.73
+
+**After dedup completes:**
+1. Verify Haiku verdicts (spot check merge decisions)
+2. Create canonical producer records in `producers` table
+3. Move on to wine dedup and processing
