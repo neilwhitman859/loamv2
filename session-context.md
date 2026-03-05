@@ -19,7 +19,7 @@ This document captures what was accomplished, key decisions, and next steps from
 | wine_candidates | 100,646 | Seeded from X-Wines dataset |
 | countries | 62 | Complete |
 | regions | 328 | 266 real + 62 catch-alls |
-| appellations | 529 | 52 countries covered |
+| appellations | 752 | 223 added via Haiku classification pipeline |
 | grapes | 707 | Complete with synonym mapping |
 | varietal_categories | 154 | 101 single varietals, 23 named blends, 23 regional, 7 generic |
 | source_types | 26 | Complete |
@@ -209,11 +209,11 @@ Every appellation has `region_id` (NOT NULL) and `country_id` FKs. 25 designatio
 8. Generates globally unique slugs: `{producer-slug}-{wine-name-slug}` (zero collisions)
 9. Batch inserts: 500/batch for wines, 2000/batch for vintages and wine_grapes
 
-**Coverage (after region mapping expansion):**
+**Coverage (after appellation expansion):**
 - 30,418 of 30,418 producers have at least one wine
 - 120 of 154 varietal categories in use
 - 92,018 wines on real regions (91.6%), 8,422 on catch-all (8.4%)
-- 31,646 wines have appellation_id (31.5%)
+- 80,700 wines have appellation_id (80.3%)
 - 7,353 wines flagged as sparkling (effervescence = 'sparkling')
 - All 62 countries represented
 
@@ -238,3 +238,39 @@ Every appellation has `region_id` (NOT NULL) and `country_id` FKs. 25 designatio
 - Wines on catch-all: 17,884 → 8,422 (53% reduction)
 - Wines with appellation: 29,538 → 31,646 (+2,108)
 - Remaining 8,422 on catch-all are mostly: obscure sub-regions (<20 wines each), wines mapped to correct country catch-all (Spain, Austria, etc.)
+
+## Completed: Appellation Expansion Pipeline (March 5, 2026)
+
+**Status:** ✅ Complete. 223 new appellations added (529 → 752). Appellation coverage: 80,700 wines (80.3%), up from 31,646 (31.5%).
+
+**Pipeline (`classify_appellations.mjs`):**
+1. Fetches all 343 region_name_mappings with NULL appellation_id
+2. Quick backfill: 5 mappings matched existing appellations via normalized name (accent differences like "Muscadet-Sevre et Maine" → "Muscadet Sèvre et Maine")
+3. Haiku classification (claude-haiku-4-5-20251001): Classifies remaining 338 region_names as formal appellation vs. broad region in batches of 40
+4. Post-processing: strips designation types from canonical names, fixes known misclassifications (e.g., Oloroso is a sherry style, not a geographic appellation)
+5. Inserts new appellations with proper slug, designation_type, region_id, country_id
+6. Updates region_name_mappings with new appellation_ids
+7. SQL UPDATE matches wines to wine_candidates via producer name_normalized + wine name_normalized join, then applies appellation_id from region_name_mappings
+
+**Result across 3 runs:**
+- Run 1: 194 new appellations inserted, ~209 mappings updated
+- Run 2: 22 new appellations inserted, 22 mappings updated
+- Run 3: 7 new appellations inserted, 7 mappings updated (diminishing returns as obvious ones were done)
+- SQL wine update: +10,332 wines gained appellation_id via producer+wine name matching through wine_candidates
+- 2 country-mismatch wines fixed (set appellation_id to NULL)
+
+**Remaining 19,740 wines without appellation:** Genuinely on broad regions (California 1,836, Veneto 1,600, Piedmont 1,117, catch-alls like "Italy" 938, "United States" 929, etc.) — these are wines with no specific appellation on their label.
+
+**Key designation types added:**
+- France: AOC (Ventoux, Côtes de Bourg, Luberon, Côte Chalonnaise, etc.)
+- Italy: DOC/DOCG/IGT (Alto Adige, Colli Orientali del Friuli, Maremma Toscana, Etna, etc.)
+- Spain: DO (Cariñena, Valdepeñas, Utiel-Requena, Costers del Segre, etc.)
+- Austria: DAC (Weinviertel, Wagram, Carnuntum, Traisental, Südburgenland)
+- USA: AVA (Mendocino County, Sierra Foothills, Temecula Valley, Livermore Valley, etc.)
+- Australia: GI (Barossa Valley, Langhorne Creek, King Valley, etc.)
+- South Africa: WO (Robertson, Wellington, Darling, Breede River Valley, etc.)
+- Portugal: DOC (Setúbal, Tejo, Beiras, Ribatejo, etc.)
+- Others: Chile GI, Argentina IG, NZ GI, Switzerland AOC, Germany Anbaugebiet/Weinbaugebiet
+
+**Scripts in repo:**
+- `classify_appellations.mjs` — Full Haiku classification + insertion + wine update pipeline
