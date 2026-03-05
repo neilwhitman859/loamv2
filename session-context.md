@@ -21,7 +21,13 @@ This document captures what was accomplished, key decisions, and next steps from
 | regions | 328 | 266 real + 62 catch-alls |
 | appellations | 529 | 52 countries covered |
 | grapes | 707 | Complete with synonym mapping |
-| All other tables | 0 | Awaiting seeding/enrichment |
+| varietal_categories | 154 | 101 single varietals, 23 named blends, 23 regional, 7 generic |
+| source_types | 26 | Complete |
+| publications | 22 | 17 critics, 2 community, 3 auction houses |
+| farming_certifications | 18 | Complete |
+| biodiversity_certifications | 7 | Complete |
+| soil_types | 39 | Complete |
+| All other tables | 0 | Awaiting wine/producer processing |
 
 **Schema** is fully built (all tables from schema-decisions.md exist).
 
@@ -119,12 +125,12 @@ Every appellation has `region_id` (NOT NULL) and `country_id` FKs. 25 designatio
 
 ### Immediate priorities (seeding)
 1. ~~Grape seeding~~ ✅ Done
-2. **Varietal categories** — ~130-150 entries (single varietals, named blends, regional designations, rosé categories, generic catch-alls)
-3. **Source types** — reference table for data provenance
-4. **Publications** — critic/community review sources
-5. **Farming certifications** — Organic, biodynamic, etc.
-6. **Biodiversity certifications**
-7. **Soil types**
+2. ~~Varietal categories~~ ✅ Done — 154 entries — ~130-150 entries (single varietals, named blends, regional designations, rosé categories, generic catch-alls)
+3. ~~Source types~~ ✅ Done — 26 entries
+4. ~~Publications~~ ✅ Done — 22 entries
+5. ~~Farming certifications~~ ✅ Done — 18 entries
+6. ~~Biodiversity certifications~~ ✅ Done — 7 entries
+7. ~~Soil types~~ ✅ Done — 39 entries
 
 ### Processing wine_candidates into real entities
 8. **Producers** — extract, deduplicate (three-tier), create records
