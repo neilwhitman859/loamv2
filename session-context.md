@@ -29,9 +29,12 @@ This document captures what was accomplished, key decisions, and next steps from
 | soil_types | 39 | Complete |
 | producers | 30,418 | Canonical producers, deduplicated |
 | producer_aliases | 266 | Alias names for merged producers |
+| wines | 100,440 | Linked to producers, varietal categories, regions |
+| wine_vintages | 2,146,955 | One per wine×year, with ABV |
+| wine_grapes | 151,462 | Wine-to-grape links (all 707 grapes resolved) |
 | producer_dedup_staging | 30,684 | Dedup staging (completed) |
 | producer_dedup_pairs | 8,208 | Fuzzy match verdicts (completed) |
-| All other tables | 0 | Awaiting wine processing |
+| All other tables | 0 | Awaiting enrichment pipeline |
 
 **Schema** is fully built (all tables from schema-decisions.md exist).
 
@@ -138,13 +141,12 @@ Every appellation has `region_id` (NOT NULL) and `country_id` FKs. 25 designatio
 
 ### Processing wine_candidates into real entities
 8. ~~**Producers**~~ ✅ Done — 30,418 canonical producers with 266 aliases
-9. **Wines** — create with proper FKs (match to producers via name + aliases)
-10. **Wine vintages** — from vintage_years arrays
+9. ~~**Wines**~~ ✅ Done — 100,440 wines with FKs to producers, varietal categories, regions
+10. ~~**Wine vintages**~~ ✅ Done — 2,146,955 vintage records
+11. ~~**Wine grapes**~~ ✅ Done — 151,462 wine-to-grape links
 
 ### Pipeline work
-11. **Region mapping** — map 2,160 region_name values to 328 regions
-12. **Appellation mapping** — match wines to appellations
-13. **Enrichment pipeline** — weather, tech sheets, AI insights
+12. **Enrichment pipeline** — weather, tech sheets, AI insights
 
 ---
 
@@ -185,3 +187,27 @@ Every appellation has `region_id` (NOT NULL) and `country_id` FKs. 25 designatio
 - `producer_dedup_pipeline.mjs` — Haiku verdict pipeline
 - `producer_dedup_pipeline.py` — Original Python version (unused)
 - `create_producers.mjs` — Producer creation from dedup results
+- `create_wines.mjs` — Wine, vintage, and wine_grapes creation from wine_candidates
+
+## Completed: Wine Creation Pipeline (March 5, 2026)
+
+**Status:** ✅ Complete. 100,440 wines, 2,146,955 vintages, 151,462 wine_grapes created.
+
+**Pipeline (`create_wines.mjs`):**
+1. Fetches all reference data (producers, aliases, grapes, varietal_categories, regions, region_name_mappings, countries)
+2. Fetches all 100,646 wine_candidates with pagination
+3. Resolves producer_id via canonical name + alias fallback (99.999% resolved — 1 typo unresolved)
+4. Deduplicates on (producer_id, wine_name_normalized) → 100,440 unique wines (205 merged dups)
+5. Assigns varietal_category_id via `elaborate` field (named blends like Bordeaux Blend, Rhône Blend) or primary_grape → single varietal match
+6. Maps region_name to region_id via region_name_mappings (528 mappings); catch-all region for unmapped
+7. Sets appellation_id from region_name_mappings where available (29,538 wines)
+8. Generates globally unique slugs: `{producer-slug}-{wine-name-slug}` (zero collisions)
+9. Batch inserts: 500/batch for wines, 2000/batch for vintages and wine_grapes
+
+**Coverage:**
+- 30,418 of 30,418 producers have at least one wine
+- 120 of 154 varietal categories in use
+- 100,440 of 100,440 wines have region_id
+- 29,538 wines have appellation_id
+- 7,353 wines flagged as sparkling (effervescence = 'sparkling')
+- All 62 countries represented
