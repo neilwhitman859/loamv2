@@ -32,6 +32,7 @@ This document captures what was accomplished, key decisions, and next steps from
 | wines | 100,440 | Linked to producers, varietal categories, regions |
 | wine_vintages | 2,146,955 | One per wine×year, with ABV |
 | wine_grapes | 151,462 | Wine-to-grape links (all 707 grapes resolved) |
+| region_name_mappings | 1,140 | Maps wine_candidates region_name to region_id/appellation_id |
 | producer_dedup_staging | 30,684 | Dedup staging (completed) |
 | producer_dedup_pairs | 8,208 | Fuzzy match verdicts (completed) |
 | All other tables | 0 | Awaiting enrichment pipeline |
@@ -145,8 +146,11 @@ Every appellation has `region_id` (NOT NULL) and `country_id` FKs. 25 designatio
 10. ~~**Wine vintages**~~ ✅ Done — 2,146,955 vintage records
 11. ~~**Wine grapes**~~ ✅ Done — 151,462 wine-to-grape links
 
+### Data quality improvements
+12. ~~**Region mapping expansion**~~ ✅ Done — 612 new mappings, 91.6% wines on real regions
+
 ### Pipeline work
-12. **Enrichment pipeline** — weather, tech sheets, AI insights
+13. **Enrichment pipeline** — weather, tech sheets, AI insights
 
 ---
 
@@ -188,6 +192,7 @@ Every appellation has `region_id` (NOT NULL) and `country_id` FKs. 25 designatio
 - `producer_dedup_pipeline.py` — Original Python version (unused)
 - `create_producers.mjs` — Producer creation from dedup results
 - `create_wines.mjs` — Wine, vintage, and wine_grapes creation from wine_candidates
+- `expand_region_mappings.mjs` — Region mapping expansion (5 strategies + manual dictionary)
 
 ## Completed: Wine Creation Pipeline (March 5, 2026)
 
@@ -204,10 +209,32 @@ Every appellation has `region_id` (NOT NULL) and `country_id` FKs. 25 designatio
 8. Generates globally unique slugs: `{producer-slug}-{wine-name-slug}` (zero collisions)
 9. Batch inserts: 500/batch for wines, 2000/batch for vintages and wine_grapes
 
-**Coverage:**
+**Coverage (after region mapping expansion):**
 - 30,418 of 30,418 producers have at least one wine
 - 120 of 154 varietal categories in use
-- 100,440 of 100,440 wines have region_id
-- 29,538 wines have appellation_id
+- 92,018 wines on real regions (91.6%), 8,422 on catch-all (8.4%)
+- 31,646 wines have appellation_id (31.5%)
 - 7,353 wines flagged as sparkling (effervescence = 'sparkling')
 - All 62 countries represented
+
+## Completed: Region Mapping Expansion (March 5, 2026)
+
+**Status:** ✅ Complete. 612 new region_name_mappings added, 1,140 total.
+
+**Pipeline (`expand_region_mappings.mjs`):**
+1. Loads all regions (328), appellations (529), existing mappings (528)
+2. Fetches all wine_candidates and identifies 1,633 unmapped region_name+country combos (15,848 wines)
+3. Applies 5 matching strategies:
+   - Appellation exact match (0)
+   - Appellation normalized match — strips accents (5)
+   - Sub-appellation pattern stripping — French 1er Cru/Grand Cru, Italian Classico/Superiore/Ripasso (345)
+   - Region name exact/normalized match (7)
+   - Manual mapping dictionary — ~300 curated entries covering France, Italy, Spain, Portugal, Germany, Austria, USA, Australia, South Africa, NZ, Chile, Argentina, Canada, Greece, Switzerland, and others (255)
+4. Total matched: 612 of 1,633 unmapped combos (covering 11,234 wines)
+5. Inserted as region_name_mappings with correct match_type constraint values
+6. SQL UPDATE applied to wines table — moved 9,462 wines off catch-all regions
+
+**Result:**
+- Wines on catch-all: 17,884 → 8,422 (53% reduction)
+- Wines with appellation: 29,538 → 31,646 (+2,108)
+- Remaining 8,422 on catch-all are mostly: obscure sub-regions (<20 wines each), wines mapped to correct country catch-all (Spain, Austria, etc.)
