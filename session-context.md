@@ -1,4 +1,4 @@
-# Loam v2 — Session Context (March 3–4, 2026)
+# Loam v2 — Session Context (March 3–5, 2026)
 
 > **⚠️ IMPORTANT: GitHub is the source of truth for this project.**
 > Claude's conversation memory is unreliable across sessions — decisions and context get lost.
@@ -27,7 +27,11 @@ This document captures what was accomplished, key decisions, and next steps from
 | farming_certifications | 18 | Complete |
 | biodiversity_certifications | 7 | Complete |
 | soil_types | 39 | Complete |
-| All other tables | 0 | Awaiting wine/producer processing |
+| producers | 30,418 | Canonical producers, deduplicated |
+| producer_aliases | 266 | Alias names for merged producers |
+| producer_dedup_staging | 30,684 | Dedup staging (completed) |
+| producer_dedup_pairs | 8,208 | Fuzzy match verdicts (completed) |
+| All other tables | 0 | Awaiting wine processing |
 
 **Schema** is fully built (all tables from schema-decisions.md exist).
 
@@ -133,8 +137,8 @@ Every appellation has `region_id` (NOT NULL) and `country_id` FKs. 25 designatio
 7. ~~Soil types~~ ✅ Done — 39 entries
 
 ### Processing wine_candidates into real entities
-8. **Producers** — extract, deduplicate (three-tier), create records
-9. **Wines** — create with proper FKs
+8. ~~**Producers**~~ ✅ Done — 30,418 canonical producers with 266 aliases
+9. **Wines** — create with proper FKs (match to producers via name + aliases)
 10. **Wine vintages** — from vintage_years arrays
 
 ### Pipeline work
@@ -154,25 +158,30 @@ Every appellation has `region_id` (NOT NULL) and `country_id` FKs. 25 designatio
 
 ---
 
-## In Progress: Producer Dedup Pipeline
+## Completed: Producer Dedup Pipeline (March 5, 2026)
 
-**Status:** Pipeline built, ready to run via Claude Code.
+**Status:** ✅ Complete. 30,418 canonical producers created.
 
-**What was done:**
-- Created `producer_dedup_staging` table (30,684 distinct producer names with normalized forms and wine counts)
-- Enabled `unaccent` and `pg_trgm` extensions
-- Ran trigram fuzzy matching across all countries (threshold ≥ 0.5)
-- Created `producer_dedup_pairs` table with 8,208 candidate pairs
-- Built Python pipeline (`producer_dedup_pipeline.py`) that batches pairs to Haiku for verdicts
+**Pipeline (run via Claude Code):**
+1. Ported Python pipeline to Node.js (`producer_dedup_pipeline.mjs`) — Python not available on this machine
+2. Ran 8,208 fuzzy pairs through Claude Haiku in batches of 50 (cost: $0.43)
+3. Results: 393 merges, 7,815 keep_separate
+4. Deep manual review of all merges — two parallel research agents web-searched each pair
+5. Flipped 107 false merges to keep_separate (famous estates like Latour vs Latour à Pomerol, etc.)
+6. Flipped 26 more transitive chain false links (Union-Find transitivity created bad groups)
+7. Final state: 260 merges, 7,948 keep_separate, 0 pending
 
-**Key finding:** The X-Wines data is cleaner than expected. Only 13 groups are deterministic exact matches (accent/case differences). The prefix-stripping approach (removing Château, Domaine, Tenuta etc.) creates too many false merges — "Château X" and "Domaine X" are almost always different producers in France.
+**Producer creation (`create_producers.mjs`):**
+- Union-Find merges fuzzy pairs + 12 exact-match edges (same norm after accent/hyphen normalization)
+- False exact-match exclusion list (e.g., "Château Belle-Vue" ≠ "Château Bellevue")
+- Canonical name = most wines in each group
+- Slug generation with country-suffix disambiguation for 331 collisions
+- Result: 30,418 producers, 255 with aliases (266 alias records total)
+- All producers have country_id, unique slugs, normalized names
 
-**Strategy:**
-- Deterministic exact matches (13 groups): auto-merge (same string after accent normalization)
-- All 8,208 fuzzy pairs (similarity 0.5–0.93): Haiku decides
-- Estimated Haiku cost: ~$0.73
+**Key table:** `producer_aliases` — stores alternate spellings pointing to canonical producer_id.
 
-**After dedup completes:**
-1. Verify Haiku verdicts (spot check merge decisions)
-2. Create canonical producer records in `producers` table
-3. Move on to wine dedup and processing
+**Scripts in repo:**
+- `producer_dedup_pipeline.mjs` — Haiku verdict pipeline
+- `producer_dedup_pipeline.py` — Original Python version (unused)
+- `create_producers.mjs` — Producer creation from dedup results
