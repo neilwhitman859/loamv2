@@ -1,6 +1,6 @@
-# Loam v2 Schema Summary (Table-by-Table)
+# Loam v2 Schema Reference
 
-*Consolidated from schema-decisions.md s1-s20. Every table, column, FK.*
+*44 tables. Every column, FK, and constraint. Decision rationale archived in docs/old/schema-decisions.md.*
 
 ---
 

@@ -2,7 +2,7 @@
 
 > **⚠️ IMPORTANT: GitHub is the source of truth for this project.**
 > Claude's conversation memory is unreliable across sessions — decisions and context get lost.
-> This file and `schema-decisions.md` must be updated and pushed to GitHub **before ending any working session**.
+> This file and `docs/architecture/schema-decisions.md` must be updated and pushed to GitHub **before ending any working session**.
 > At minimum, commit after: any schema decision, any seeding milestone, any design change.
 > If in doubt, commit. It's free and prevents hours of re-discovery.
 
@@ -37,7 +37,7 @@ This document captures what was accomplished, key decisions, and next steps from
 | producer_dedup_pairs | 8,208 | Fuzzy match verdicts (completed) |
 | All other tables | 0 | Awaiting enrichment pipeline |
 
-**Schema** is fully built (all tables from schema-decisions.md exist).
+**Schema** is fully built (all tables from docs/schema.md exist).
 
 ---
 
@@ -160,7 +160,9 @@ Every appellation has `region_id` (NOT NULL) and `country_id` FKs. 25 designatio
 - **Supabase v2 project:** vgbppjhmvbggfjztzobl
 - **Supabase v1 project (reference only):** uvlhbyhezdhphnwcxtil
 - **X-Wines dataset:** https://github.com/rogerioxavier/X-Wines (CC0-1.0)
-- **Key repo files:** PROJECT.md, schema-decisions.md, schema-summary.md, session-context.md, regions_draft.md
+- **Key repo files:** README.md, session-context.md, docs/schema.md
+- **Strategy docs:** docs/strategy/ (dated brainstorm/planning docs)
+- **Archived docs:** docs/old/ (schema decisions log, region drafts, completed pipeline instructions)
 
 ---
 
