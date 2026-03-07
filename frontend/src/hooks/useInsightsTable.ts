@@ -16,7 +16,7 @@ export function useInsightsTable({ table, nameColumn, joinSelect, pageSize = 50 
   const [totalCount, setTotalCount] = useState(0)
   const [sortColumn, setSortColumn] = useState(nameColumn)
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc')
-  const debounceRef = useRef<ReturnType<typeof setTimeout>>()
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined)
 
   const fetchData = useCallback(async () => {
     setLoading(true)
@@ -35,7 +35,7 @@ export function useInsightsTable({ table, nameColumn, joinSelect, pageSize = 50 
     const { data: rows, count, error } = await query
 
     if (!error && rows) {
-      setData(rows as Record<string, unknown>[])
+      setData(rows as unknown as Record<string, unknown>[])
       setTotalCount(count ?? 0)
     }
     setLoading(false)

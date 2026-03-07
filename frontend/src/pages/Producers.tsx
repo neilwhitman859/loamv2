@@ -1,4 +1,4 @@
-import DataTable, { Column } from '../components/DataTable'
+import DataTable, { type Column } from '../components/DataTable'
 import { useInsightsTable } from '../hooks/useInsightsTable'
 
 const columns: Column<Record<string, unknown>>[] = [
