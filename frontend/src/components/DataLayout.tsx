@@ -14,6 +14,7 @@ const navItems = [
   { heading: 'Developer' },
   { label: 'Schema', to: '/dev/schema' },
   { label: 'Tables', to: '/dev/tables' },
+  { label: 'Strategy', to: '/dev/strategy' },
 ]
 
 const buildDate = typeof __BUILD_TIMESTAMP__ !== 'undefined'
