@@ -40,8 +40,8 @@ export default function Dashboard() {
   useEffect(() => {
     async function load() {
       const tables = [
-        { label: 'Wines', table: 'wines', link: '/data/wines' },
-        { label: 'Producers', table: 'producers', link: '/data/producers' },
+        { label: 'Wines', table: 'wines', link: '/data/wines', insightsTable: 'wine_insights' },
+        { label: 'Producers', table: 'producers', link: '/data/producers', insightsTable: 'producer_insights' },
         { label: 'Grapes', table: 'grapes', link: '/data/grapes', insightsTable: 'grape_insights' },
         { label: 'Appellations', table: 'appellations', link: '/data/appellations', insightsTable: 'appellation_insights' },
         { label: 'Regions', table: 'regions', link: '/data/regions', insightsTable: 'region_insights' },
@@ -123,11 +123,6 @@ export default function Dashboard() {
           >
             <div className="text-2xl font-bold text-earth-900 group-hover:text-wine-700">{s.count?.toLocaleString() ?? '—'}</div>
             <div className="text-xs text-earth-500 mt-1 group-hover:text-wine-600">{s.label}</div>
-            {s.insightsTable && s.insightsCount != null && s.count != null && s.count > 0 && (
-              <div className="text-xs text-wine-600 mt-2">
-                {Math.round((s.insightsCount / s.count) * 100)}% enriched
-              </div>
-            )}
           </Link>
         ))}
       </div>
