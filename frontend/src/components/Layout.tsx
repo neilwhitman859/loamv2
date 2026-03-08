@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 
 const navItems = [
   { label: 'Dashboard', to: '/' },
@@ -18,8 +18,6 @@ const navItems = [
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const location = useLocation()
-
   const navContent = (
     <>
       <div className="flex-1 py-3 overflow-y-auto">
