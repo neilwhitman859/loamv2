@@ -1,5 +1,5 @@
-import DataTable, { type Column } from '../components/DataTable'
-import { useInsightsTable } from '../hooks/useInsightsTable'
+import DataTable, { type Column } from '../../components/DataTable'
+import { useInsightsTable } from '../../hooks/useInsightsTable'
 
 const columns: Column<Record<string, unknown>>[] = [
   {
@@ -12,7 +12,7 @@ const columns: Column<Record<string, unknown>>[] = [
     label: 'Country',
     render: (row) => {
       const c = row.country as Record<string, unknown> | null
-      return <span className="text-earth-600 text-xs">{c?.name as string ?? '—'}</span>
+      return <span className="text-earth-600 text-xs">{(c?.name as string) ?? '—'}</span>
     },
     className: 'w-32',
   },
@@ -21,17 +21,28 @@ const columns: Column<Record<string, unknown>>[] = [
     label: 'Region',
     render: (row) => {
       const r = row.region as Record<string, unknown> | null
-      return <span className="text-earth-500 text-xs">{r?.name as string ?? '—'}</span>
+      return <span className="text-earth-500 text-xs">{(r?.name as string) ?? '—'}</span>
     },
     className: 'w-40',
   },
+  {
+    key: 'website',
+    label: 'Website',
+    render: (row) => {
+      const url = row.website_url as string | null
+      if (!url) return <span className="text-earth-300 text-xs">—</span>
+      return <span className="text-wine-600 text-xs truncate max-w-[120px] inline-block">{url.replace(/^https?:\/\//, '')}</span>
+    },
+    className: 'w-36',
+    sortable: false,
+  },
 ]
 
-export default function Producers() {
+export default function ProducersList() {
   const table = useInsightsTable({
     table: 'producers',
     nameColumn: 'name',
-    joinSelect: 'id, name, country:countries(name), region:regions(name)',
+    joinSelect: 'id, name, website_url, country:countries!country_id(id, name), region:regions!region_id(id, name)',
     pageSize: 50,
   })
 
@@ -46,6 +57,7 @@ export default function Producers() {
         search={table.search}
         onSearchChange={table.setSearch}
         searchPlaceholder="Search producers..."
+        detailPath={(row) => `/data/producers/${row.id}`}
         page={table.page}
         pageSize={table.pageSize}
         totalCount={table.totalCount}

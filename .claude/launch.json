@@ -1,12 +1,1 @@
-{
-  "version": "0.0.1",
-  "configurations": [
-    {
-      "name": "frontend",
-      "runtimeExecutable": "node",
-      "runtimeArgs": ["node_modules/vite/bin/vite.js", "--port", "5173"],
-      "port": 5173,
-      "cwd": "frontend"
-    }
-  ]
-}
+{"version":"0.0.1","configurations":[{"name":"frontend","runtimeExecutable":"node","runtimeArgs":["node_modules/vite/bin/vite.js","--port","5174"],"port":5174,"cwd":"frontend"}]}

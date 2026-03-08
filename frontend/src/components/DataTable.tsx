@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import ConfidenceBadge from './ConfidenceBadge'
 
 export interface Column<T> {
@@ -42,6 +42,7 @@ export default function DataTable<T extends Record<string, unknown>>({
   sortDirection,
   onSort,
 }: Props<T>) {
+  const navigate = useNavigate()
   const totalPages = totalCount != null ? Math.ceil(totalCount / pageSize) : null
 
   return (
@@ -97,13 +98,13 @@ export default function DataTable<T extends Record<string, unknown>>({
                   </td>
                 </tr>
               ) : (
-                data.map((row, i) => {
-                  const rowContent = (
+                data.map((row, i) => (
                     <tr
                       key={i}
                       className={`border-b border-earth-100 ${
                         detailPath ? 'hover:bg-wine-50/50 cursor-pointer' : 'hover:bg-earth-50'
                       } transition-colors`}
+                      onClick={detailPath ? () => navigate(detailPath(row)) : undefined}
                     >
                       {columns.map((col) => (
                         <td key={col.key} className={`px-4 py-3 ${col.className || ''}`}>
@@ -111,17 +112,7 @@ export default function DataTable<T extends Record<string, unknown>>({
                         </td>
                       ))}
                     </tr>
-                  )
-
-                  if (detailPath) {
-                    return (
-                      <Link key={i} to={detailPath(row)} className="contents">
-                        {rowContent}
-                      </Link>
-                    )
-                  }
-                  return rowContent
-                })
+                  ))
               )}
             </tbody>
           </table>

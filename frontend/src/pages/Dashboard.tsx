@@ -52,10 +52,10 @@ export default function Dashboard() {
       const tables = [
         { label: 'Wines', table: 'wines', link: '/data/wines' },
         { label: 'Producers', table: 'producers', link: '/data/producers' },
-        { label: 'Grapes', table: 'grapes', insightsTable: 'grape_insights' },
-        { label: 'Appellations', table: 'appellations', insightsTable: 'appellation_insights' },
-        { label: 'Regions', table: 'regions', insightsTable: 'region_insights' },
-        { label: 'Countries', table: 'countries', insightsTable: 'country_insights' },
+        { label: 'Grapes', table: 'grapes', link: '/data/grapes', insightsTable: 'grape_insights' },
+        { label: 'Appellations', table: 'appellations', link: '/data/appellations', insightsTable: 'appellation_insights' },
+        { label: 'Regions', table: 'regions', link: '/data/regions', insightsTable: 'region_insights' },
+        { label: 'Countries', table: 'countries', link: '/data/countries', insightsTable: 'country_insights' },
       ]
 
       // Fetch core + dashboard stats in parallel
@@ -151,7 +151,7 @@ export default function Dashboard() {
   return (
     <div>
       <h1 className="text-2xl font-bold text-earth-900 mb-1">Dashboard</h1>
-      <p className="text-sm text-earth-500 mb-6">Loam v2 wine intelligence database overview</p>
+      <p className="text-sm text-earth-500 mb-6">Loam wine intelligence database overview</p>
 
       {/* Core counts */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">

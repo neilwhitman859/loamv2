@@ -1,22 +1,26 @@
 import { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import GlobalSearch from './GlobalSearch'
 
 const navItems = [
-  { label: 'Dashboard', to: '/' },
-  { heading: 'Insights' },
-  { label: 'Grapes', to: '/insights/grapes' },
-  { label: 'Appellations', to: '/insights/appellations' },
-  { label: 'Regions', to: '/insights/regions' },
-  { label: 'Countries', to: '/insights/countries' },
-  { heading: 'Data' },
+  { label: 'Dashboard', to: '/data' },
+  { heading: 'Explore' },
   { label: 'Wines', to: '/data/wines' },
   { label: 'Producers', to: '/data/producers' },
+  { label: 'Grapes', to: '/data/grapes' },
+  { label: 'Appellations', to: '/data/appellations' },
+  { label: 'Regions', to: '/data/regions' },
+  { label: 'Countries', to: '/data/countries' },
   { heading: 'Developer' },
   { label: 'Schema', to: '/dev/schema' },
   { label: 'Tables', to: '/dev/tables' },
 ]
 
-export default function Layout() {
+const buildDate = typeof __BUILD_TIMESTAMP__ !== 'undefined'
+  ? new Date(__BUILD_TIMESTAMP__).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' })
+  : null
+
+export default function DevLayout() {
   const [menuOpen, setMenuOpen] = useState(false)
   const navContent = (
     <>
@@ -30,7 +34,7 @@ export default function Layout() {
             <NavLink
               key={item.to}
               to={item.to!}
-              end={item.to === '/'}
+              end={item.to === '/data'}
               onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
                 `block px-5 py-2 text-sm transition-colors ${
@@ -46,7 +50,8 @@ export default function Layout() {
         )}
       </div>
       <div className="p-4 border-t border-wine-700 text-[10px] text-wine-200/50">
-        Loam v2 Data Explorer
+        <div>Loam Data Explorer</div>
+        {buildDate && <div className="mt-0.5">Deployed {buildDate}</div>}
       </div>
     </>
   )
@@ -57,7 +62,7 @@ export default function Layout() {
       <div className="md:hidden bg-wine-900 text-white flex items-center justify-between px-4 py-3 flex-shrink-0">
         <div>
           <h1 className="text-lg font-semibold tracking-wide leading-tight">Loam</h1>
-          <p className="text-[10px] text-wine-200">Wine Intelligence</p>
+          <p className="text-[10px] text-wine-200">Developer</p>
         </div>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -76,7 +81,6 @@ export default function Layout() {
         </button>
       </div>
 
-      {/* Mobile overlay menu */}
       {menuOpen && (
         <div className="md:hidden fixed inset-0 top-[52px] z-50 flex">
           <nav className="w-64 bg-wine-900 text-white flex flex-col h-full shadow-xl">
@@ -86,18 +90,20 @@ export default function Layout() {
         </div>
       )}
 
-      {/* Desktop sidebar */}
       <nav className="hidden md:flex w-56 bg-wine-900 text-white flex-shrink-0 flex-col">
         <div className="p-5 border-b border-wine-700">
           <h1 className="text-lg font-semibold tracking-wide">Loam</h1>
-          <p className="text-xs text-wine-200 mt-0.5">Wine Intelligence</p>
+          <p className="text-xs text-wine-200 mt-0.5">Developer</p>
         </div>
         {navContent}
       </nav>
 
-      {/* Main content */}
+      {/* Full-width main content - no max-w constraint */}
       <main className="flex-1 overflow-y-auto">
-        <div className="max-w-7xl mx-auto p-4 md:p-6">
+        <div className="p-4 md:p-6">
+          <div className="mb-6 max-w-md">
+            <GlobalSearch />
+          </div>
           <Outlet />
         </div>
       </main>
