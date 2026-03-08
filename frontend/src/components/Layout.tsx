@@ -10,6 +10,9 @@ const navItems = [
   { heading: 'Data' },
   { label: 'Wines', to: '/data/wines' },
   { label: 'Producers', to: '/data/producers' },
+  { heading: 'Developer' },
+  { label: 'Schema', to: '/dev/schema' },
+  { label: 'Tables', to: '/dev/tables' },
 ]
 
 export default function Layout() {

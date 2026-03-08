@@ -8,6 +8,8 @@ import CountryInsights from './pages/CountryInsights'
 import Wines from './pages/Wines'
 import Producers from './pages/Producers'
 import Detail from './pages/Detail'
+import SchemaExplorer from './pages/SchemaExplorer'
+import TableBrowser from './pages/TableBrowser'
 
 export default function App() {
   return (
@@ -21,6 +23,9 @@ export default function App() {
         <Route path="/data/wines" element={<Wines />} />
         <Route path="/data/producers" element={<Producers />} />
         <Route path="/insights/:type/:id" element={<Detail />} />
+        <Route path="/dev/schema" element={<SchemaExplorer />} />
+        <Route path="/dev/tables" element={<TableBrowser />} />
+        <Route path="/dev/tables/:tableName" element={<TableBrowser />} />
       </Route>
     </Routes>
   )
