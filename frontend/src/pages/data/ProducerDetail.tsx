@@ -80,8 +80,8 @@ export default function ProducerDetail() {
       {tab === 'overview' && (
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {producer.website_url && <Field label="Website" value={<a href={String(producer.website_url)} target="_blank" rel="noopener noreferrer" className="text-wine-600 hover:underline text-sm">{String(producer.website_url).replace(/^https?:\/\//, '')}</a>} />}
-            {producer.year_established && <Field label="Established" value={String(producer.year_established)} />}
+            {!!producer.website_url && <Field label="Website" value={<a href={String(producer.website_url)} target="_blank" rel="noopener noreferrer" className="text-wine-600 hover:underline text-sm">{String(producer.website_url).replace(/^https?:\/\//, '')}</a>} />}
+            {!!producer.year_established && <Field label="Established" value={String(producer.year_established)} />}
             {country && <Field label="Country" value={<EntityLink type="countries" id={country.id as string} name={country.name as string} />} />}
             {region && <Field label="Region" value={<EntityLink type="regions" id={region.id as string} name={region.name as string} />} />}
           </div>

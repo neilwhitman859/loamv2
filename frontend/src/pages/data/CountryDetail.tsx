@@ -85,7 +85,7 @@ export default function CountryDetail() {
       <Link to="/data/countries" className="text-sm text-wine-600 hover:text-wine-800 mb-4 inline-block">← Back to countries</Link>
       <div className="flex items-center gap-3 mb-1">
         <h1 className="text-2xl font-bold text-earth-900">{country.name as string}</h1>
-        {country.iso_code && <span className="text-xs font-mono px-2 py-0.5 rounded bg-earth-100 text-earth-600">{String(country.iso_code)}</span>}
+        {!!country.iso_code && <span className="text-xs font-mono px-2 py-0.5 rounded bg-earth-100 text-earth-600">{String(country.iso_code)}</span>}
       </div>
       <div className="mb-6" />
 
@@ -94,7 +94,7 @@ export default function CountryDetail() {
       {tab === 'overview' && (
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {country.iso_code && <Field label="ISO Code" value={String(country.iso_code)} />}
+            {!!country.iso_code && <Field label="ISO Code" value={String(country.iso_code)} />}
           </div>
           <InsightsPanel fields={insightFields} data={insights} />
         </div>

@@ -146,11 +146,11 @@ export default function WineDetail() {
             {appellation && <Field label="Appellation" value={<EntityLink type="appellations" id={appellation.id as string} name={appellation.name as string} />} />}
             {region && <Field label="Region" value={<EntityLink type="regions" id={region.id as string} name={region.name as string} />} />}
             {country && <Field label="Country" value={<EntityLink type="countries" id={country.id as string} name={country.name as string} />} />}
-            {wine.wine_type && <Field label="Type" value={String(wine.wine_type)} />}
-            {wine.sweetness_level && <Field label="Sweetness" value={String(wine.sweetness_level)} />}
-            {wine.alcohol_pct && <Field label="ABV" value={`${String(wine.alcohol_pct)}%`} />}
-            {wine.aging_vessel && <Field label="Aging Vessel" value={String(wine.aging_vessel)} />}
-            {wine.aging_months && <Field label="Aging" value={`${String(wine.aging_months)} months`} />}
+            {!!wine.wine_type && <Field label="Type" value={String(wine.wine_type)} />}
+            {!!wine.sweetness_level && <Field label="Sweetness" value={String(wine.sweetness_level)} />}
+            {!!wine.alcohol_pct && <Field label="ABV" value={`${String(wine.alcohol_pct)}%`} />}
+            {!!wine.aging_vessel && <Field label="Aging Vessel" value={String(wine.aging_vessel)} />}
+            {!!wine.aging_months && <Field label="Aging" value={`${String(wine.aging_months)} months`} />}
           </div>
           <InsightsPanel fields={insightFields} data={insights} />
         </div>

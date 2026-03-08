@@ -72,7 +72,7 @@ export default function AppellationDetail() {
       <Link to="/data/appellations" className="text-sm text-wine-600 hover:text-wine-800 mb-4 inline-block">← Back to appellations</Link>
       <h1 className="text-2xl font-bold text-earth-900 mb-1">{appellation.name as string}</h1>
       <div className="flex flex-wrap gap-3 text-sm text-earth-500 mb-6">
-        {appellation.designation_type && <span className="px-2 py-0.5 rounded bg-earth-100 text-earth-700 text-xs">{String(appellation.designation_type)}</span>}
+        {!!appellation.designation_type && <span className="px-2 py-0.5 rounded bg-earth-100 text-earth-700 text-xs">{String(appellation.designation_type)}</span>}
         {country && <EntityLink type="countries" id={country.id as string} name={country.name as string} className="text-earth-500 hover:text-wine-600" />}
         {region && <EntityLink type="regions" id={region.id as string} name={region.name as string} className="text-earth-500 hover:text-wine-600" />}
       </div>
@@ -84,8 +84,8 @@ export default function AppellationDetail() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {country && <Field label="Country" value={<EntityLink type="countries" id={country.id as string} name={country.name as string} />} />}
             {region && <Field label="Region" value={<EntityLink type="regions" id={region.id as string} name={region.name as string} />} />}
-            {appellation.designation_type && <Field label="Designation" value={String(appellation.designation_type)} />}
-            {appellation.latitude && <Field label="Coordinates" value={`${String(appellation.latitude)}, ${String(appellation.longitude)}`} />}
+            {!!appellation.designation_type && <Field label="Designation" value={String(appellation.designation_type)} />}
+            {!!appellation.latitude && <Field label="Coordinates" value={`${String(appellation.latitude)}, ${String(appellation.longitude)}`} />}
           </div>
           <InsightsPanel fields={insightFields} data={insights} />
         </div>
