@@ -88,6 +88,21 @@ const TABLE_COLUMNS: Record<string, ColumnDef[]> = {
     { name: 'latitude', type: 'decimal', nullable: true },
     { name: 'longitude', type: 'decimal', nullable: true },
   ],
+  geographic_boundaries: [
+    { name: 'id', type: 'uuid', nullable: false },
+    { name: 'country_id', type: 'uuid', nullable: true, fk: 'countries' },
+    { name: 'region_id', type: 'uuid', nullable: true, fk: 'regions' },
+    { name: 'appellation_id', type: 'uuid', nullable: true, fk: 'appellations' },
+    { name: 'boundary', type: 'geometry', nullable: true },
+    { name: 'centroid', type: 'geometry', nullable: true },
+    { name: 'bounding_box', type: 'geometry', nullable: true },
+    { name: 'boundary_confidence', type: 'text', nullable: true },
+    { name: 'boundary_source', type: 'text', nullable: true },
+    { name: 'boundary_source_id', type: 'text', nullable: true },
+    { name: 'boundary_updated_at', type: 'timestamptz', nullable: true },
+    { name: 'created_at', type: 'timestamptz', nullable: false },
+    { name: 'updated_at', type: 'timestamptz', nullable: false },
+  ],
 }
 
 // ---------------------------------------------------------------------------
@@ -102,7 +117,7 @@ interface TableGroup {
 const TABLE_GROUPS: TableGroup[] = [
   {
     label: 'Geography',
-    tables: ['countries', 'regions', 'appellations', 'appellation_vintages'],
+    tables: ['countries', 'regions', 'appellations', 'geographic_boundaries', 'appellation_vintages'],
   },
   {
     label: 'Producers',
