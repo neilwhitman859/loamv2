@@ -18,7 +18,7 @@ import CountryDetail from './pages/data/CountryDetail'
 import SearchResults from './pages/data/SearchResults'
 import SchemaExplorer from './pages/SchemaExplorer'
 import TableBrowser from './pages/TableBrowser'
-import Strategy from './pages/Strategy'
+import About from './pages/About'
 
 export default function App() {
   return (
@@ -49,7 +49,7 @@ export default function App() {
         <Route path="/dev/schema" element={<SchemaExplorer />} />
         <Route path="/dev/tables" element={<TableBrowser />} />
         <Route path="/dev/tables/:tableName" element={<TableBrowser />} />
-        <Route path="/dev/strategy" element={<Strategy />} />
+        <Route path="/dev/about" element={<About />} />
       </Route>
     </Routes>
   )

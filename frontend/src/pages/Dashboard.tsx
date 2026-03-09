@@ -235,11 +235,11 @@ export default function Dashboard() {
           <p className="text-xs text-earth-500 mt-1">Browse, search, and inspect data in any table with FK navigation</p>
         </Link>
         <Link
-          to="/dev/strategy"
+          to="/dev/about"
           className="bg-white rounded-lg border border-earth-200 p-4 hover:border-wine-300 hover:shadow-sm transition-all group"
         >
-          <h3 className="font-semibold text-earth-800 group-hover:text-wine-700">Strategy</h3>
-          <p className="text-xs text-earth-500 mt-1">Strategic roadmap, priorities, and next moves</p>
+          <h3 className="font-semibold text-earth-800 group-hover:text-wine-700">About</h3>
+          <p className="text-xs text-earth-500 mt-1">What Loam is and how it works</p>
         </Link>
       </div>
     </div>
