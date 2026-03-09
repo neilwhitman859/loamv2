@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
-import { MapContainer, TileLayer, Marker, Popup, GeoJSON, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, GeoJSON, useMap, AttributionControl } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { supabase } from '../../lib/supabase'
@@ -358,7 +358,9 @@ export default function MapExplorer() {
           zoom={mapZoom}
           style={{ height: '100%', width: '100%' }}
           zoomControl={true}
+          attributionControl={false}
         >
+          <AttributionControl position="bottomright" prefix='<a href="https://leafletjs.com" title="A JavaScript library for interactive maps">Leaflet</a>' />
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &middot; <a href="https://carto.com">CARTO</a>'
             url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"

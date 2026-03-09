@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { MapContainer, TileLayer, Marker, GeoJSON, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, GeoJSON, useMap, AttributionControl } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { supabase } from '../lib/supabase'
@@ -112,7 +112,9 @@ export default function EntityMap({ entityType, entityId }: EntityMapProps) {
           style={{ height: '100%', width: '100%' }}
           zoomControl={true}
           scrollWheelZoom={false}
+          attributionControl={false}
         >
+          <AttributionControl position="bottomright" prefix='<a href="https://leafletjs.com" title="A JavaScript library for interactive maps">Leaflet</a>' />
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &middot; <a href="https://carto.com">CARTO</a>'
             url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
@@ -131,7 +133,7 @@ export default function EntityMap({ entityType, entityId }: EntityMapProps) {
               <FitBounds geojson={data.boundary_geojson!} />
             </>
           )}
-          <Marker position={[data.lat, data.lng]} icon={centroidIcon} />
+          {!hasPolygon && <Marker position={[data.lat, data.lng]} icon={centroidIcon} />}
         </MapContainer>
       </div>
       <div className="px-3 py-2 border-t border-earth-100 flex items-center justify-between text-[10px] text-earth-400">
