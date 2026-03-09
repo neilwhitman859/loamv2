@@ -16,6 +16,7 @@ import RegionDetail from './pages/data/RegionDetail'
 import CountriesList from './pages/data/CountriesList'
 import CountryDetail from './pages/data/CountryDetail'
 import SearchResults from './pages/data/SearchResults'
+import MapExplorer from './pages/data/MapExplorer'
 import SchemaExplorer from './pages/SchemaExplorer'
 import TableBrowser from './pages/TableBrowser'
 import About from './pages/About'
@@ -42,6 +43,7 @@ export default function App() {
         <Route path="/data/countries" element={<CountriesList />} />
         <Route path="/data/countries/:id" element={<CountryDetail />} />
         <Route path="/data/search" element={<SearchResults />} />
+        <Route path="/data/map" element={<MapExplorer />} />
       </Route>
 
       {/* Dev section — sidebar + full-width */}

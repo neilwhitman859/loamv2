@@ -11,6 +11,7 @@ const navItems = [
   { label: 'Appellations', to: '/data/appellations' },
   { label: 'Regions', to: '/data/regions' },
   { label: 'Countries', to: '/data/countries' },
+  { label: 'Map', to: '/data/map' },
   { heading: 'Developer' },
   { label: 'Schema', to: '/dev/schema' },
   { label: 'Tables', to: '/dev/tables' },
