@@ -5,6 +5,7 @@ import { useRelatedEntities } from '../../hooks/useRelatedEntities'
 import TabBar from '../../components/TabBar'
 import InsightsPanel from '../../components/InsightsPanel'
 import EntityLink from '../../components/EntityLink'
+import EntityMap from '../../components/EntityMap'
 import DataTable, { type Column } from '../../components/DataTable'
 
 const insightFields = [
@@ -96,6 +97,7 @@ export default function CountryDetail() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {!!country.iso_code && <Field label="ISO Code" value={String(country.iso_code)} />}
           </div>
+          <EntityMap entityType="country" entityId={id!} />
           <InsightsPanel fields={insightFields} data={insights} />
         </div>
       )}

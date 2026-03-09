@@ -5,6 +5,7 @@ import { useRelatedEntities } from '../../hooks/useRelatedEntities'
 import TabBar from '../../components/TabBar'
 import InsightsPanel from '../../components/InsightsPanel'
 import EntityLink from '../../components/EntityLink'
+import EntityMap from '../../components/EntityMap'
 import DataTable, { type Column } from '../../components/DataTable'
 
 const insightFields = [
@@ -114,6 +115,7 @@ export default function RegionDetail() {
             {country && <Field label="Country" value={<EntityLink type="countries" id={country.id as string} name={country.name as string} />} />}
             {parent && <Field label="Parent Region" value={<EntityLink type="regions" id={parent.id as string} name={parent.name as string} />} />}
           </div>
+          <EntityMap entityType="region" entityId={id!} />
           <InsightsPanel fields={insightFields} data={insights} />
         </div>
       )}

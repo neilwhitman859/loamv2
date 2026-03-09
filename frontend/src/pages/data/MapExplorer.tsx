@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, GeoJSON, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { supabase } from '../../lib/supabase'
@@ -45,6 +45,16 @@ interface BoundaryPoint {
   boundary_source: string
 }
 
+interface BoundaryPolygon {
+  id: string
+  entity_type: string
+  entity_name: string
+  country_name: string
+  region_name: string | null
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  boundary_geojson: any
+}
+
 interface CountryGroup {
   name: string
   regions: RegionGroup[]
@@ -77,6 +87,7 @@ function FlyTo({ center, zoom }: { center: [number, number]; zoom: number }) {
 // ---------------------------------------------------------------------------
 export default function MapExplorer() {
   const [points, setPoints] = useState<BoundaryPoint[]>([])
+  const [polygons, setPolygons] = useState<BoundaryPolygon[]>([])
   const [loading, setLoading] = useState(true)
   const [sidebarFilter, setSidebarFilter] = useState('')
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null)
@@ -85,12 +96,18 @@ export default function MapExplorer() {
   const [mapCenter, setMapCenter] = useState<[number, number]>([30, 0])
   const [mapZoom, setMapZoom] = useState(2)
 
-  // Fetch all boundary points
+  // Fetch all boundary points and polygons in parallel
   useEffect(() => {
     ;(async () => {
-      const { data, error } = await supabase.rpc('get_boundary_points')
-      if (!error && data) {
-        setPoints(data as BoundaryPoint[])
+      const [pointsRes, polygonsRes] = await Promise.all([
+        supabase.rpc('get_boundary_points'),
+        supabase.rpc('get_boundary_polygons'),
+      ])
+      if (!pointsRes.error && pointsRes.data) {
+        setPoints(pointsRes.data as BoundaryPoint[])
+      }
+      if (!polygonsRes.error && polygonsRes.data) {
+        setPolygons(polygonsRes.data as BoundaryPolygon[])
       }
       setLoading(false)
     })()
@@ -166,6 +183,18 @@ export default function MapExplorer() {
     }
     return points
   }, [points, countryGroups, selectedCountry, selectedRegion])
+
+  // Visible polygons on map — show polygons matching visible points
+  const visiblePolygons = useMemo(() => {
+    if (!selectedCountry) return []
+    const visibleNames = new Set(visiblePoints.map((p) => p.entity_name))
+    // Also include region polygon if a region is selected
+    return polygons.filter((poly) => {
+      if (selectedRegion && poly.entity_name === selectedRegion && poly.entity_type === 'region') return true
+      if (!selectedRegion && selectedCountry && poly.entity_name === selectedCountry && poly.entity_type === 'region') return true
+      return visibleNames.has(poly.entity_name)
+    })
+  }, [polygons, visiblePoints, selectedCountry, selectedRegion])
 
   // Handlers
   const handleCountryClick = (name: string) => {
@@ -335,6 +364,23 @@ export default function MapExplorer() {
             url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
           />
           <FlyTo center={mapCenter} zoom={mapZoom} />
+          {visiblePolygons.map((poly) => (
+            <GeoJSON
+              key={`poly-${poly.id}-${selectedPoint}`}
+              data={poly.boundary_geojson}
+              style={{
+                color: selectedPoint && visiblePoints.find((p) => p.id === selectedPoint)?.entity_name === poly.entity_name
+                  ? '#c2185b'
+                  : poly.entity_type === 'region' ? '#4a6741' : '#7c3050',
+                weight: poly.entity_type === 'region' ? 2 : 1.5,
+                fillColor: poly.entity_type === 'region' ? '#4a6741' : '#7c3050',
+                fillOpacity: selectedPoint && visiblePoints.find((p) => p.id === selectedPoint)?.entity_name === poly.entity_name
+                  ? 0.25
+                  : 0.08,
+                dashArray: poly.entity_type === 'region' ? '6 3' : undefined,
+              }}
+            />
+          ))}
           {visiblePoints.map((p) => (
             <Marker
               key={p.id}

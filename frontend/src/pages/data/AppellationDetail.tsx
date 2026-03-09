@@ -5,6 +5,7 @@ import { useRelatedEntities } from '../../hooks/useRelatedEntities'
 import TabBar from '../../components/TabBar'
 import InsightsPanel from '../../components/InsightsPanel'
 import EntityLink from '../../components/EntityLink'
+import EntityMap from '../../components/EntityMap'
 import DataTable, { type Column } from '../../components/DataTable'
 
 const insightFields = [
@@ -87,6 +88,7 @@ export default function AppellationDetail() {
             {!!appellation.designation_type && <Field label="Designation" value={String(appellation.designation_type)} />}
             {!!appellation.latitude && <Field label="Coordinates" value={`${String(appellation.latitude)}, ${String(appellation.longitude)}`} />}
           </div>
+          <EntityMap entityType="appellation" entityId={id!} />
           <InsightsPanel fields={insightFields} data={insights} />
         </div>
       )}
