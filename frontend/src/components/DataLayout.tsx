@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 import GlobalSearch from './GlobalSearch'
 
 const navItems = [
@@ -62,10 +62,10 @@ export default function DataLayout() {
     <div className="flex flex-col md:flex-row h-screen bg-earth-50">
       {/* Mobile header */}
       <div className="md:hidden bg-wine-900 text-white flex items-center justify-between px-4 py-3 flex-shrink-0">
-        <div>
+        <Link to="/" className="block">
           <h1 className="text-lg font-semibold tracking-wide leading-tight">Loam</h1>
           <p className="text-[10px] text-wine-200">Data Explorer</p>
-        </div>
+        </Link>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="p-2 rounded hover:bg-wine-700 transition-colors"
@@ -95,10 +95,10 @@ export default function DataLayout() {
 
       {/* Desktop sidebar */}
       <nav className="hidden md:flex w-56 bg-wine-900 text-white flex-shrink-0 flex-col">
-        <div className="p-5 border-b border-wine-700">
+        <Link to="/" className="block p-5 border-b border-wine-700 hover:bg-wine-800 transition-colors">
           <h1 className="text-lg font-semibold tracking-wide">Loam</h1>
           <p className="text-xs text-wine-200 mt-0.5">Data Explorer</p>
-        </div>
+        </Link>
         {navContent}
       </nav>
 

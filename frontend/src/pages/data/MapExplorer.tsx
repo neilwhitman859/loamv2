@@ -107,7 +107,9 @@ export default function MapExplorer() {
         setPoints(pointsRes.data as BoundaryPoint[])
       }
       if (!polygonsRes.error && polygonsRes.data) {
-        setPolygons(polygonsRes.data as BoundaryPolygon[])
+        // Only keep polygons that also have a centroid point
+        const pointIds = new Set((pointsRes.data ?? []).map((p: BoundaryPoint) => p.id))
+        setPolygons((polygonsRes.data as BoundaryPolygon[]).filter(p => pointIds.has(p.id)))
       }
       setLoading(false)
     })()
