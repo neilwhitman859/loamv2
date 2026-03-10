@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from 'react'
+import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, GeoJSON, useMap, AttributionControl } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -88,6 +88,7 @@ function FlyTo({ center, zoom }: { center: [number, number]; zoom: number }) {
 export default function MapExplorer() {
   const [points, setPoints] = useState<BoundaryPoint[]>([])
   const [polygons, setPolygons] = useState<BoundaryPolygon[]>([])
+  const [loadingPolygons, setLoadingPolygons] = useState(false)
   const [loading, setLoading] = useState(true)
   const [sidebarFilter, setSidebarFilter] = useState('')
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null)
@@ -96,23 +97,39 @@ export default function MapExplorer() {
   const [mapCenter, setMapCenter] = useState<[number, number]>([30, 0])
   const [mapZoom, setMapZoom] = useState(2)
 
-  // Fetch all boundary points and polygons in parallel
+  // Cache of already-fetched country polygons
+  const polygonCache = useRef<Map<string, BoundaryPolygon[]>>(new Map())
+
+  // Fetch only centroids on initial load (lightweight)
   useEffect(() => {
     ;(async () => {
-      const [pointsRes, polygonsRes] = await Promise.all([
-        supabase.rpc('get_boundary_points'),
-        supabase.rpc('get_boundary_polygons'),
-      ])
+      const pointsRes = await supabase.rpc('get_boundary_points')
       if (!pointsRes.error && pointsRes.data) {
         setPoints(pointsRes.data as BoundaryPoint[])
       }
-      if (!polygonsRes.error && polygonsRes.data) {
-        // Only keep polygons that also have a centroid point
-        const pointIds = new Set((pointsRes.data ?? []).map((p: BoundaryPoint) => p.id))
-        setPolygons((polygonsRes.data as BoundaryPolygon[]).filter(p => pointIds.has(p.id)))
-      }
       setLoading(false)
     })()
+  }, [])
+
+  // Fetch polygons lazily when a country is selected
+  const fetchPolygonsForCountry = useCallback(async (countryName: string) => {
+    // Return cached if available
+    if (polygonCache.current.has(countryName)) {
+      setPolygons(polygonCache.current.get(countryName)!)
+      return
+    }
+    setLoadingPolygons(true)
+    const res = await supabase.rpc('get_boundary_polygons_by_country', {
+      p_country_name: countryName,
+    })
+    if (!res.error && res.data) {
+      const data = res.data as BoundaryPolygon[]
+      polygonCache.current.set(countryName, data)
+      setPolygons(data)
+    } else {
+      setPolygons([])
+    }
+    setLoadingPolygons(false)
   }, [])
 
   // Group by country → region
@@ -205,6 +222,7 @@ export default function MapExplorer() {
       setSelectedCountry(null)
       setSelectedRegion(null)
       setSelectedPoint(null)
+      setPolygons([])
       setMapCenter([30, 0])
       setMapZoom(2)
       return
@@ -212,6 +230,7 @@ export default function MapExplorer() {
     setSelectedCountry(name)
     setSelectedRegion(null)
     setSelectedPoint(null)
+    fetchPolygonsForCountry(name)
     const country = countryGroups.find((c) => c.name === name)
     if (country && country.points.length > 0) {
       const avgLat = country.points.reduce((s, p) => s + p.lat, 0) / country.points.length
@@ -348,6 +367,7 @@ export default function MapExplorer() {
             </div>
             <div className="text-[10px] text-earth-400 mt-0.5">
               {visiblePoints.length} appellation{visiblePoints.length !== 1 ? 's' : ''} shown
+              {loadingPolygons && <span className="ml-1 text-wine-500">· loading polygons...</span>}
             </div>
           </div>
         )}
