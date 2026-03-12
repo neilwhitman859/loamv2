@@ -34,7 +34,7 @@ Great winemakers talk about their work with love and deep knowledge. They know t
 
 This especially applies to all AI-generated content — wine summaries, appellation overviews, producer profiles, tasting contexts. When Claude writes for Loam, it should sound like someone who loves wine talking to someone who wants to understand it.
 
-*See [voice-reference-wine-fact-sheets.md](voice-reference-wine-fact-sheets.md) for the full analysis behind this principle.*
+*See [VOICE.md](VOICE.md) for the full voice and tone guide.*
 
 ### 8. Monitor cheap, not loud
 

@@ -1,0 +1,86 @@
+# Loam — Decision Log
+
+Append-only. Each entry records a human judgment call and why. Claude adds entries automatically when decisions are made during sessions. Use "log that" to force an entry.
+
+---
+
+### 2026-03-03: Full DB rebuild for v2
+Starting fresh rather than migrating v1 schema. Dataset small enough to re-seed. Design the schema we actually want, build it clean.
+
+### 2026-03-03: Weather lives at appellation level, not wine level
+Weather is a property of place and year, not a bottle. Wine-level weather from ERA5 creates meaningless variation between wines in the same appellation. Fetch once per appellation-vintage using a representative coordinate.
+
+### 2026-03-03: Appellations are the weather anchor, not regions
+Appellations are specific enough to have meaningful weather data. Regions are often too broad (e.g., "California" is useless for weather). Wines inherit weather through their appellation link.
+
+### 2026-03-03: Three-tier soil/water body fallback
+Wine → appellation → region. Check wine_soils first, fall back to appellation_soils, then region_soils. Same pattern for water bodies. Avoids duplicating data while allowing specificity where we have it.
+
+### 2026-03-03: UUID primary keys everywhere
+Entity tables use UUID PKs with gen_random_uuid(). Join tables use composite PKs from FKs. Prevents enumeration attacks and makes merging datasets easier.
+
+### 2026-03-03: Soft deletes on core tables
+deleted_at TIMESTAMPTZ DEFAULT NULL on entity tables. Allows recovery and audit trails without losing data.
+
+### 2026-03-03: Source tracking with companion columns
+{field}_source UUID FK to source_types for fields where provenance varies. Enables re-enrichment and trust assessment. Users can see whether data came from a producer tech sheet, AI inference, or a wine database.
+
+### 2026-03-03: Varietal categories, not just grapes
+Wines are classified into varietal categories (single varietal, named blend, generic blend, regional designation, proprietary). This captures industry-standard classifications like "Bordeaux Blend" or "Champagne" that are more meaningful to users than raw grape lists.
+
+### 2026-03-03: Separate insights tables for AI content
+Factual data on core tables. AI synthesis in dedicated *_insights tables. This separation is foundational — it's what makes data trustworthy, re-enrichable, and eventually sellable.
+
+### 2026-03-03: Single polymorphic trends table
+One trends table with entity_type/entity_id instead of 6 entity-specific trend tables. Avoids table proliferation. Covers market trends, emerging narratives, buyer sentiment, price movements.
+
+### 2026-03-03: wine_vintages get UUID PK, not composite
+UNIQUE(wine_id, vintage_year) constraint instead of composite PK. Needed because vintage_year is nullable (NV wines).
+
+### 2026-03-03: Baselines on appellations, not appellation_vintages
+Long-term average GDD, rainfall, harvest temp stored on appellations table. Per-year actuals on appellation_vintages. Comparison = actual minus baseline.
+
+### 2026-03-04: Grape synonym merging strategy
+777 distinct names from X-Wines → 707 canonical grapes. Key merges: Syrah=Shiraz, Grenache=Garnacha=Cannonau, Pinot Gris=Pinot Grigio=Grauburgunder, Tempranillo=Tinta Roriz=Tinta de Toro (7 aliases). Muscat family: 7 distinct grapes kept separate. Malvasia family: all sub-varieties separate. Trebbiano family: sub-varieties separate.
+
+### 2026-03-04: Zinfandel and Primitivo kept separate
+Genetically identical, but the wine industry treats them as distinct. Merging would confuse users who know them as different wines from different places.
+
+### 2026-03-04: Region naming conventions
+English names where standard in professional wine trade (Burgundy not Bourgogne, Tuscany not Toscana). Local names retained where that's how labels and professionals refer to them (Mosel, Pfalz, Tokaj). Aligned with Wine-Searcher and Decanter conventions.
+
+### 2026-03-04: Catch-all regions per country
+62 catch-all regions, one per country. is_catch_all boolean distinguishes them. Slug pattern: {country-slug}-country. Purpose: wines without specific regional designation get a valid region_id without creating fake geography.
+
+### 2026-03-04: US regions intentionally more granular
+More sub-regions for the US than other countries because most users are US-based.
+
+### 2026-03-04: Producer dedup via Haiku + manual review
+30,684 candidates → 8,208 fuzzy pairs via pg_trgm → Claude Haiku verdicts in batches of 50 ($0.43) → 393 initial merges → deep manual review flipped 107 false merges (famous estates like Latour vs Latour à Pomerol) + 26 transitive chain false links → final: 260 merges, 7,948 keep_separate. Canonical name = most wines in each group.
+
+### 2026-03-05: Appellation classification via Haiku
+338 region names classified as formal appellation vs. broad region using Claude Haiku in batches of 40. Post-processing strips designation types from canonical names, fixes known misclassifications (e.g., Oloroso is a sherry style, not a geographic appellation). 223 new appellations created across 3 iterative runs.
+
+### 2026-03-05: MVP enrichment strategy — top wines first
+Rather than enriching all wines uniformly, prioritize top wines by vintage count as a proxy for importance/popularity. Full enrichment for the wines people care about, expand from there.
+
+### 2026-03-05: Geo-coordinates as force multiplier
+Appellation lat/lng unlocks weather data (Open-Meteo free), map visualizations, water body proximity, growing season validation. Priority investment.
+
+### ~2026-03-08: xwines_ table separation
+Bulk X-Wines dataset moved to xwines_* prefixed staging tables. Canonical tables (producers, wines, wine_vintages, etc.) reset for curated, high-quality data. xwines_ tables kept as reference but not actively maintained. Quality bar for canonical data is much higher than bulk import.
+
+### ~2026-03-08: New fields on wines and wine_vintages
+Added vineyard_name, food_pairings, metadata (jsonb) to wines. Added winemaker_notes, vintage_notes, brix_at_harvest, cases_produced, bottling_date, producer_drinking_window_start/end, metadata (jsonb) to wine_vintages. These capture common fields found when scraping producer wine pages.
+
+### ~2026-03-08: Producer schema changes
+Removed overview and overview_source from producers (AI overview content belongs in producer_insights). Added appellation_id, metadata (jsonb). Renamed website→website_url, established_year→year_established. Made country_id nullable. These changes need review during next big producer import.
+
+### 2026-03-12: Documentation consolidation
+7 maintained files with clear roles: CLAUDE.md (Claude's brain), README.md (project overview), docs/SCHEMA.md (table reference), docs/PRINCIPLES.md (product philosophy), docs/DECISIONS.md (this file), docs/VOICE.md (tone guide + food pairings), docs/WORKFLOW.md (session checklist). All other docs retired and absorbed.
+
+### 2026-03-12: Don't hardcode DB state in docs
+Claude queries the database for current row counts and state rather than relying on numbers in markdown files. SCHEMA.md documents structure and reasoning. DB state is always live-queried.
+
+### 2026-03-12: Data quality over launch timeline
+Soft goal of something live for friends by end of March 2026, but data accuracy and trustworthiness to a wine expert is the #1 priority. Willing to push any deadline for data quality. 100% accurate product or nothing.
