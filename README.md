@@ -83,7 +83,9 @@ Factual data on core tables. AI synthesis in dedicated insights tables. Source p
 
 ## Docs
 
-- **docs/schema.md** — Table-by-table field reference (the active schema spec)
-- **docs/strategy/** — Dated brainstorm/planning docs from voice chats
-- **docs/old/** — Archived docs (schema decision log, region drafts, completed pipeline instructions)
-- **session-context.md** — Running session context for Claude Code continuity
+- **CLAUDE.md** — Claude Code context file (auto-loaded at session start)
+- **docs/SCHEMA.md** — Table-by-table field reference (the active schema spec)
+- **docs/PRINCIPLES.md** — Core product principles and philosophy
+- **docs/DECISIONS.md** — Append-only log of key decisions with reasoning
+- **docs/VOICE.md** — Voice, tone, and food pairing guide for AI-generated content
+- **docs/WORKFLOW.md** — Session workflow checklist
