@@ -1,0 +1,2612 @@
+[
+  {
+    "country": "France",
+    "name": "France",
+    "slug": "france-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "France",
+    "name": "Bordeaux",
+    "slug": "bordeaux",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Major wine region, Left/Right Bank and Entre-Deux-Mers sub-regions"
+  },
+  {
+    "country": "France",
+    "name": "Left Bank",
+    "slug": "left-bank",
+    "parent": "bordeaux",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12 (implied grouping)",
+    "notes": "Médoc, Graves, Pessac-Léognan, Sauternes/Barsac"
+  },
+  {
+    "country": "France",
+    "name": "Right Bank",
+    "slug": "right-bank",
+    "parent": "bordeaux",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12 (implied grouping)",
+    "notes": "Saint-Émilion, Pomerol, Fronsac"
+  },
+  {
+    "country": "France",
+    "name": "Burgundy",
+    "slug": "burgundy",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Pinot Noir and Chardonnay heartland"
+  },
+  {
+    "country": "France",
+    "name": "Chablis",
+    "slug": "chablis",
+    "parent": "burgundy",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Northernmost Burgundy, Chardonnay on Kimmeridgian limestone"
+  },
+  {
+    "country": "France",
+    "name": "Côte de Nuits",
+    "slug": "cote-de-nuits",
+    "parent": "burgundy",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Grand Cru Pinot Noir: Gevrey-Chambertin, Vosne-Romanée, etc."
+  },
+  {
+    "country": "France",
+    "name": "Côte de Beaune",
+    "slug": "cote-de-beaune",
+    "parent": "burgundy",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Grand Cru Chardonnay: Meursault, Puligny-Montrachet, etc."
+  },
+  {
+    "country": "France",
+    "name": "Côte Chalonnaise",
+    "slug": "cote-chalonnaise",
+    "parent": "burgundy",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Mercurey, Givry, Rully, Montagny"
+  },
+  {
+    "country": "France",
+    "name": "Mâconnais",
+    "slug": "maconnais",
+    "parent": "burgundy",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Pouilly-Fuissé, Saint-Véran, Mâcon-Villages"
+  },
+  {
+    "country": "France",
+    "name": "Beaujolais",
+    "slug": "beaujolais",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Gamay-based wines, 10 crus"
+  },
+  {
+    "country": "France",
+    "name": "Alsace",
+    "slug": "alsace",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Aromatic whites: Riesling, Gewurztraminer, Pinot Gris, Muscat"
+  },
+  {
+    "country": "France",
+    "name": "The Loire Valley",
+    "slug": "loire-valley",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "France's longest river, diverse styles"
+  },
+  {
+    "country": "France",
+    "name": "Muscadet",
+    "slug": "muscadet",
+    "parent": "loire-valley",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Melon de Bourgogne, Atlantic-influenced"
+  },
+  {
+    "country": "France",
+    "name": "Anjou-Saumur",
+    "slug": "anjou-saumur",
+    "parent": "loire-valley",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Chenin Blanc and Cabernet Franc"
+  },
+  {
+    "country": "France",
+    "name": "Touraine",
+    "slug": "touraine",
+    "parent": "loire-valley",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Vouvray, Chinon, Bourgueil"
+  },
+  {
+    "country": "France",
+    "name": "Central Vineyards",
+    "slug": "central-vineyards",
+    "parent": "loire-valley",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Sancerre, Pouilly-Fumé — Sauvignon Blanc"
+  },
+  {
+    "country": "France",
+    "name": "The Rhône Valley",
+    "slug": "rhone-valley",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Syrah in north, Grenache blends in south"
+  },
+  {
+    "country": "France",
+    "name": "Northern Rhône",
+    "slug": "northern-rhone",
+    "parent": "rhone-valley",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Côte-Rôtie, Hermitage, Cornas, Saint-Joseph, Condrieu"
+  },
+  {
+    "country": "France",
+    "name": "Southern Rhône",
+    "slug": "southern-rhone",
+    "parent": "rhone-valley",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Châteauneuf-du-Pape, Gigondas, Côtes du Rhône"
+  },
+  {
+    "country": "France",
+    "name": "Southern France",
+    "slug": "southern-france",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Mediterranean climate, diverse varieties"
+  },
+  {
+    "country": "France",
+    "name": "Languedoc",
+    "slug": "languedoc",
+    "parent": "southern-france",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "France's largest wine region by volume"
+  },
+  {
+    "country": "France",
+    "name": "Roussillon",
+    "slug": "roussillon",
+    "parent": "southern-france",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Vins Doux Naturels, Grenache-based"
+  },
+  {
+    "country": "France",
+    "name": "Provence",
+    "slug": "provence",
+    "parent": "southern-france",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.10",
+    "notes": "Rosé heartland, Bandol for reds"
+  },
+  {
+    "country": "France",
+    "name": "The Dordogne and South West France",
+    "slug": "southwest-france",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Bergerac, Monbazillac, Cahors, Madiran, Jurançon, Côtes de Gascogne"
+  },
+  {
+    "country": "France",
+    "name": "Champagne",
+    "slug": "champagne",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.16",
+    "notes": "Sparkling wine region, traditional method"
+  },
+  {
+    "country": "France",
+    "name": "Jura",
+    "slug": "jura",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Vin Jaune, Savagnin, oxidative styles"
+  },
+  {
+    "country": "France",
+    "name": "Savoie",
+    "slug": "savoie",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Alpine wines, Jacquère, Altesse"
+  },
+  {
+    "country": "France",
+    "name": "Corsica",
+    "slug": "corsica",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Mediterranean island, Nielluccio, Sciacarello"
+  },
+  {
+    "country": "Germany",
+    "name": "Germany",
+    "slug": "germany-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Germany",
+    "name": "Mosel",
+    "slug": "mosel",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11 + DWI",
+    "notes": "Anbaugebiet. Steep slate slopes, Riesling"
+  },
+  {
+    "country": "Germany",
+    "name": "Nahe",
+    "slug": "nahe",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11 + DWI",
+    "notes": "Anbaugebiet. Diverse soils, elegant Riesling"
+  },
+  {
+    "country": "Germany",
+    "name": "Rheingau",
+    "slug": "rheingau",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11 + DWI",
+    "notes": "Anbaugebiet. South-facing Rhine slopes, premium Riesling"
+  },
+  {
+    "country": "Germany",
+    "name": "Rheinhessen",
+    "slug": "rheinhessen",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11 + DWI",
+    "notes": "Anbaugebiet. Germany's largest wine region"
+  },
+  {
+    "country": "Germany",
+    "name": "Pfalz",
+    "slug": "pfalz",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11 + DWI",
+    "notes": "Anbaugebiet. Warm climate, diverse varieties"
+  },
+  {
+    "country": "Germany",
+    "name": "Baden",
+    "slug": "baden",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11 + DWI",
+    "notes": "Anbaugebiet. Germany's warmest, Spätburgunder"
+  },
+  {
+    "country": "Germany",
+    "name": "Franken",
+    "slug": "franken",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11 + DWI",
+    "notes": "Anbaugebiet. Silvaner, Bocksbeutel bottles"
+  },
+  {
+    "country": "Germany",
+    "name": "Ahr",
+    "slug": "ahr",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Weingesetz / DWI",
+    "notes": "Anbaugebiet. Small region, Spätburgunder specialist"
+  },
+  {
+    "country": "Germany",
+    "name": "Württemberg",
+    "slug": "wuerttemberg",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Weingesetz / DWI",
+    "notes": "Anbaugebiet. Red wine focus, Trollinger, Lemberger"
+  },
+  {
+    "country": "Germany",
+    "name": "Mittelrhein",
+    "slug": "mittelrhein",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Weingesetz / DWI",
+    "notes": "Anbaugebiet. Rhine gorge, steep terraces"
+  },
+  {
+    "country": "Germany",
+    "name": "Hessische Bergstraße",
+    "slug": "hessische-bergstrasse",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Weingesetz / DWI",
+    "notes": "Anbaugebiet. Germany's smallest, Riesling"
+  },
+  {
+    "country": "Germany",
+    "name": "Saale-Unstrut",
+    "slug": "saale-unstrut",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Weingesetz / DWI",
+    "notes": "Anbaugebiet. Northernmost, continental climate"
+  },
+  {
+    "country": "Germany",
+    "name": "Sachsen",
+    "slug": "sachsen",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Weingesetz / DWI",
+    "notes": "Anbaugebiet. Easternmost, around Dresden"
+  },
+  {
+    "country": "Italy",
+    "name": "Italy",
+    "slug": "italy-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Italy",
+    "name": "Piemonte",
+    "slug": "piemonte",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Barolo, Barbaresco, Barbera, Nebbiolo"
+  },
+  {
+    "country": "Italy",
+    "name": "Valle d'Aosta",
+    "slug": "valle-d-aosta",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Italian admin regions",
+    "notes": "Alpine, smallest Italian wine region"
+  },
+  {
+    "country": "Italy",
+    "name": "Lombardy",
+    "slug": "lombardy",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Italian admin regions",
+    "notes": "Franciacorta, Valtellina"
+  },
+  {
+    "country": "Italy",
+    "name": "Trentino-Alto Adige",
+    "slug": "trentino-alto-adige",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Alpine, Germanic influence in Alto Adige"
+  },
+  {
+    "country": "Italy",
+    "name": "Trentino",
+    "slug": "trentino",
+    "parent": "trentino-alto-adige",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Italian-speaking, Pinot Grigio, sparkling"
+  },
+  {
+    "country": "Italy",
+    "name": "Alto Adige",
+    "slug": "alto-adige",
+    "parent": "trentino-alto-adige",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "German-speaking (Südtirol), aromatic whites"
+  },
+  {
+    "country": "Italy",
+    "name": "Veneto",
+    "slug": "veneto",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Soave, Valpolicella, Amarone, Prosecco"
+  },
+  {
+    "country": "Italy",
+    "name": "Friuli-Venezia Giulia",
+    "slug": "friuli-venezia-giulia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Premium whites, Collio, Colli Orientali"
+  },
+  {
+    "country": "Italy",
+    "name": "Liguria",
+    "slug": "liguria",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Italian admin regions",
+    "notes": "Cinque Terre, Vermentino, coastal"
+  },
+  {
+    "country": "Italy",
+    "name": "Emilia-Romagna",
+    "slug": "emilia-romagna",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Italian admin regions",
+    "notes": "Lambrusco, Sangiovese di Romagna"
+  },
+  {
+    "country": "Italy",
+    "name": "Tuscany",
+    "slug": "tuscany",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Chianti, Brunello, Vino Nobile, Bolgheri, Super Tuscans"
+  },
+  {
+    "country": "Italy",
+    "name": "Umbria",
+    "slug": "umbria",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Orvieto, Sagrantino di Montefalco"
+  },
+  {
+    "country": "Italy",
+    "name": "Marche",
+    "slug": "marche",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Verdicchio dei Castelli di Jesi"
+  },
+  {
+    "country": "Italy",
+    "name": "Lazio",
+    "slug": "lazio",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Frascati, Est! Est!! Est!!!"
+  },
+  {
+    "country": "Italy",
+    "name": "Abruzzo",
+    "slug": "abruzzo",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Montepulciano d'Abruzzo, Trebbiano"
+  },
+  {
+    "country": "Italy",
+    "name": "Molise",
+    "slug": "molise",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Italian admin regions",
+    "notes": "Small region, Tintilia del Molise"
+  },
+  {
+    "country": "Italy",
+    "name": "Campania",
+    "slug": "campania",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Taurasi, Fiano di Avellino, Greco di Tufo"
+  },
+  {
+    "country": "Italy",
+    "name": "Puglia",
+    "slug": "puglia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Primitivo di Manduria, Negroamaro"
+  },
+  {
+    "country": "Italy",
+    "name": "Basilicata",
+    "slug": "basilicata",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Aglianico del Vulture"
+  },
+  {
+    "country": "Italy",
+    "name": "Calabria",
+    "slug": "calabria",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Italian admin regions",
+    "notes": "Cirò, Gaglioppo"
+  },
+  {
+    "country": "Italy",
+    "name": "Sicily",
+    "slug": "sicily",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Nero d'Avola, Etna, Marsala"
+  },
+  {
+    "country": "Italy",
+    "name": "Sardinia",
+    "slug": "sardinia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Italian admin regions",
+    "notes": "Cannonau, Vermentino di Gallura"
+  },
+  {
+    "country": "Italy",
+    "name": "Langhe",
+    "slug": "langhe",
+    "parent": "piemonte",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.13, Federdoc 2025",
+    "notes": "Barolo, Barbaresco, Dolcetto d'Alba, Nebbiolo d'Alba — prestige Nebbiolo zone"
+  },
+  {
+    "country": "Italy",
+    "name": "Monferrato",
+    "slug": "monferrato",
+    "parent": "piemonte",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.13, Federdoc 2025",
+    "notes": "Barbera d'Asti, Grignolino — distinct terroir east of Langhe"
+  },
+  {
+    "country": "Italy",
+    "name": "Roero",
+    "slug": "roero",
+    "parent": "piemonte",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.13, Federdoc 2025",
+    "notes": "Roero Arneis DOCG, Roero DOCG — distinct sandy soils between Langhe and Monferrato"
+  },
+  {
+    "country": "Italy",
+    "name": "Chianti",
+    "slug": "chianti",
+    "parent": "tuscany",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.13, Federdoc 2025",
+    "notes": "Chianti DOCG + Chianti Classico DOCG — Tuscany's Sangiovese heartland"
+  },
+  {
+    "country": "Italy",
+    "name": "Montalcino",
+    "slug": "montalcino",
+    "parent": "tuscany",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.13, Federdoc 2025",
+    "notes": "Brunello di Montalcino DOCG — world-class Sangiovese"
+  },
+  {
+    "country": "Italy",
+    "name": "Montepulciano",
+    "slug": "montepulciano",
+    "parent": "tuscany",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.13, Federdoc 2025",
+    "notes": "Vino Nobile di Montepulciano DOCG — Sangiovese (Prugnolo Gentile) at altitude"
+  },
+  {
+    "country": "Italy",
+    "name": "Bolgheri",
+    "slug": "bolgheri",
+    "parent": "tuscany",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.13, Federdoc 2025",
+    "notes": "Super Tuscan territory — Sassicaia, Ornellaia, coastal Cab/Merlot"
+  },
+  {
+    "country": "Italy",
+    "name": "Valpolicella",
+    "slug": "valpolicella",
+    "parent": "veneto",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.13",
+    "notes": "Amarone, Ripasso, Corvina/Rondinella — one of Italy's most famous zones"
+  },
+  {
+    "country": "Italy",
+    "name": "Soave",
+    "slug": "soave",
+    "parent": "veneto",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.13",
+    "notes": "Major white wine zone — Garganega on volcanic soils"
+  },
+  {
+    "country": "Italy",
+    "name": "Conegliano-Valdobbiadene",
+    "slug": "conegliano-valdobbiadene",
+    "parent": "veneto",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.18 (sparkling)",
+    "notes": "Prosecco Superiore DOCG heartland"
+  },
+  {
+    "country": "Italy",
+    "name": "Etna",
+    "slug": "etna",
+    "parent": "sicily",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.13, Oxford Companion",
+    "notes": "Volcanic terroir — Nerello Mascalese, Carricante, distinct modern identity"
+  },
+  {
+    "country": "Italy",
+    "name": "Franciacorta",
+    "slug": "franciacorta",
+    "parent": "lombardy",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.18 (sparkling), Federdoc 2025",
+    "notes": "Italy's premier traditional method sparkling DOCG"
+  },
+  {
+    "country": "Italy",
+    "name": "Valtellina",
+    "slug": "valtellina",
+    "parent": "lombardy",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.13, Federdoc 2025",
+    "notes": "Alpine Nebbiolo (Chiavennasca) — Sforzato, terraced vineyards"
+  },
+  {
+    "country": "Spain",
+    "name": "Spain",
+    "slug": "spain-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Spain",
+    "name": "The Upper Ebro",
+    "slug": "upper-ebro",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Rioja, Navarra — Tempranillo, Garnacha"
+  },
+  {
+    "country": "Spain",
+    "name": "Catalunya",
+    "slug": "catalunya",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Penedès, Priorat, Cava, Montsant"
+  },
+  {
+    "country": "Spain",
+    "name": "The Duero Valley",
+    "slug": "duero-valley",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Ribera del Duero, Toro, Rueda"
+  },
+  {
+    "country": "Spain",
+    "name": "The North West",
+    "slug": "northwest-spain",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Rías Baixas, Valdeorras, Bierzo — Albariño, Godello, Mencía"
+  },
+  {
+    "country": "Spain",
+    "name": "Castilla-La Mancha",
+    "slug": "castilla-la-mancha",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "La Mancha, Valdepeñas — Spain's central plateau"
+  },
+  {
+    "country": "Spain",
+    "name": "The Levante",
+    "slug": "levante",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Jumilla, Yecla, Valencia, Utiel-Requena"
+  },
+  {
+    "country": "Spain",
+    "name": "Castilla y León",
+    "slug": "castilla-y-leon",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.13",
+    "notes": "VdlT designation for regional wines. Geographically overlaps The Duero Valley — DOs (Ribera del Duero, Toro, Rueda) map to Duero Valley, VdlT wines map here."
+  },
+  {
+    "country": "Spain",
+    "name": "Andalucía",
+    "slug": "andalucia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.20 (fortified)",
+    "notes": "Sherry (Jerez), Montilla-Moriles, Málaga"
+  },
+  {
+    "country": "Spain",
+    "name": "Rioja",
+    "slug": "rioja",
+    "parent": "upper-ebro",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.14",
+    "notes": "DOCa — Spain's most famous wine region, Tempranillo-dominant"
+  },
+  {
+    "country": "Spain",
+    "name": "Navarra",
+    "slug": "navarra",
+    "parent": "upper-ebro",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.14",
+    "notes": "DO — distinct identity, rosados and reds, Garnacha"
+  },
+  {
+    "country": "Spain",
+    "name": "Penedès",
+    "slug": "penedes",
+    "parent": "catalunya",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.14",
+    "notes": "DO — Cava heartland, diverse still wines"
+  },
+  {
+    "country": "Spain",
+    "name": "Priorat",
+    "slug": "priorat",
+    "parent": "catalunya",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.14",
+    "notes": "DOCa — one of only 2 DOCas, old vine Garnacha/Cariñena on llicorella slate"
+  },
+  {
+    "country": "Spain",
+    "name": "Ribera del Duero",
+    "slug": "ribera-del-duero",
+    "parent": "duero-valley",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.14",
+    "notes": "DO — major red region, Tinto Fino (Tempranillo) at altitude"
+  },
+  {
+    "country": "Spain",
+    "name": "Rueda",
+    "slug": "rueda",
+    "parent": "duero-valley",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.14",
+    "notes": "DO — white wines, Verdejo"
+  },
+  {
+    "country": "Spain",
+    "name": "Toro",
+    "slug": "toro",
+    "parent": "duero-valley",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.14",
+    "notes": "DO — powerful reds, Tinta de Toro (Tempranillo) from old vines"
+  },
+  {
+    "country": "Spain",
+    "name": "Rías Baixas",
+    "slug": "rias-baixas",
+    "parent": "northwest-spain",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.14",
+    "notes": "DO — Albariño, Atlantic-influenced, internationally recognized"
+  },
+  {
+    "country": "Spain",
+    "name": "Bierzo",
+    "slug": "bierzo",
+    "parent": "northwest-spain",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.14",
+    "notes": "DO — Mencía, rising star, slate soils"
+  },
+  {
+    "country": "Spain",
+    "name": "La Mancha",
+    "slug": "la-mancha",
+    "parent": "castilla-la-mancha",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.14",
+    "notes": "DO — largest single DO in the world by area"
+  },
+  {
+    "country": "Spain",
+    "name": "Jumilla",
+    "slug": "jumilla",
+    "parent": "levante",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.14",
+    "notes": "DO — old vine Monastrell (Mourvèdre)"
+  },
+  {
+    "country": "Spain",
+    "name": "Valencia",
+    "slug": "valencia",
+    "parent": "levante",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.14",
+    "notes": "DO — large and diverse, Mediterranean coast"
+  },
+  {
+    "country": "Spain",
+    "name": "Jerez",
+    "slug": "jerez",
+    "parent": "andalucia",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.20 (fortified)",
+    "notes": "Sherry country — Fino, Manzanilla, Oloroso, Amontillado, Palo Cortado, PX"
+  },
+  {
+    "country": "United States",
+    "name": "United States",
+    "slug": "united-states-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "United States",
+    "name": "California",
+    "slug": "california",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Dominant US wine state, diverse climates"
+  },
+  {
+    "country": "United States",
+    "name": "Napa Valley",
+    "slug": "napa-county",
+    "parent": "california",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Premium Cabernet Sauvignon"
+  },
+  {
+    "country": "United States",
+    "name": "Sonoma County",
+    "slug": "sonoma-county",
+    "parent": "california",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Diverse varieties, cool-climate Pinot Noir and Chardonnay"
+  },
+  {
+    "country": "United States",
+    "name": "Mendocino County",
+    "slug": "mendocino-county",
+    "parent": "california",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Anderson Valley sparkling, cool-climate wines"
+  },
+  {
+    "country": "United States",
+    "name": "Santa Cruz Mountains",
+    "slug": "santa-cruz-mountains",
+    "parent": "california",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Mountain Cabernet, Pinot Noir"
+  },
+  {
+    "country": "United States",
+    "name": "Monterey",
+    "slug": "monterey",
+    "parent": "california",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Wind-cooled Salinas Valley, Chardonnay, Pinot Noir"
+  },
+  {
+    "country": "United States",
+    "name": "San Luis Obispo County",
+    "slug": "san-luis-obispo-county",
+    "parent": "california",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Paso Robles, Edna Valley"
+  },
+  {
+    "country": "United States",
+    "name": "Santa Barbara County",
+    "slug": "santa-barbara-county",
+    "parent": "california",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Sta. Rita Hills, Santa Ynez Valley — Pinot Noir, Chardonnay"
+  },
+  {
+    "country": "United States",
+    "name": "Lodi",
+    "slug": "lodi",
+    "parent": "california",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Old-vine Zinfandel, inland delta"
+  },
+  {
+    "country": "United States",
+    "name": "Oregon",
+    "slug": "oregon",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Cool-climate Pinot Noir"
+  },
+  {
+    "country": "United States",
+    "name": "Willamette Valley",
+    "slug": "willamette-valley",
+    "parent": "oregon",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Oregon's premier Pinot Noir region"
+  },
+  {
+    "country": "United States",
+    "name": "Washington",
+    "slug": "washington-state",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Continental climate east of Cascades"
+  },
+  {
+    "country": "United States",
+    "name": "Columbia Valley",
+    "slug": "columbia-valley",
+    "parent": "washington-state",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Vast AVA, Cabernet Sauvignon, Merlot, Syrah"
+  },
+  {
+    "country": "United States",
+    "name": "Yakima Valley",
+    "slug": "yakima-valley",
+    "parent": "washington-state",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "First WA AVA, diverse varieties"
+  },
+  {
+    "country": "United States",
+    "name": "New York",
+    "slug": "new-york",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Cool-climate, Riesling, hybrid varieties"
+  },
+  {
+    "country": "United States",
+    "name": "Finger Lakes",
+    "slug": "finger-lakes",
+    "parent": "new-york",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Lake-moderated, Riesling specialist"
+  },
+  {
+    "country": "Canada",
+    "name": "Canada",
+    "slug": "canada-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Canada",
+    "name": "Ontario",
+    "slug": "ontario",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Niagara Peninsula, Icewine"
+  },
+  {
+    "country": "Canada",
+    "name": "British Columbia",
+    "slug": "british-columbia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Okanagan Valley, diverse varieties"
+  },
+  {
+    "country": "Chile",
+    "name": "Chile",
+    "slug": "chile-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Chile",
+    "name": "Coquimbo Region",
+    "slug": "coquimbo-region",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Elqui, Limarí — northern, desert-influenced"
+  },
+  {
+    "country": "Chile",
+    "name": "Aconcagua Region",
+    "slug": "aconcagua-region",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Aconcagua Valley, Casablanca, San Antonio"
+  },
+  {
+    "country": "Chile",
+    "name": "Central Valley Region",
+    "slug": "central-valley-chile",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Maipo, Rapel, Curicó, Maule — Chile's heartland"
+  },
+  {
+    "country": "Chile",
+    "name": "Southern Region",
+    "slug": "southern-region-chile",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Itata, Bío Bío, Malleco"
+  },
+  {
+    "country": "Argentina",
+    "name": "Argentina",
+    "slug": "argentina-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Argentina",
+    "name": "Salta",
+    "slug": "salta",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "High-altitude, Torrontés"
+  },
+  {
+    "country": "Argentina",
+    "name": "Cafayate",
+    "slug": "cafayate",
+    "parent": "salta",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Key sub-region of Salta, 1,700m elevation"
+  },
+  {
+    "country": "Argentina",
+    "name": "San Juan",
+    "slug": "san-juan",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Hot, irrigated, second-largest production"
+  },
+  {
+    "country": "Argentina",
+    "name": "Mendoza",
+    "slug": "mendoza",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Argentina's premier wine region, Malbec heartland"
+  },
+  {
+    "country": "Argentina",
+    "name": "Uco Valley",
+    "slug": "uco-valley",
+    "parent": "mendoza",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "High-altitude, premium Malbec"
+  },
+  {
+    "country": "Argentina",
+    "name": "Luján de Cuyo",
+    "slug": "lujan-de-cuyo",
+    "parent": "mendoza",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Historic Malbec heartland"
+  },
+  {
+    "country": "Argentina",
+    "name": "Maipú",
+    "slug": "maipu",
+    "parent": "mendoza",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Warm, lower-altitude Mendoza"
+  },
+  {
+    "country": "Argentina",
+    "name": "Patagonia",
+    "slug": "patagonia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Cool-climate, Neuquén, Río Negro"
+  },
+  {
+    "country": "South Africa",
+    "name": "South Africa",
+    "slug": "south-africa-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "South Africa",
+    "name": "Western Cape",
+    "slug": "western-cape",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.14",
+    "notes": "WO geographical unit. Contains Coastal Region, Breede River Valley, Cape South Coast in WO hierarchy, but modeled as L1 peer. For multi-region blends and wines without a more specific WO designation."
+  },
+  {
+    "country": "South Africa",
+    "name": "Coastal Region",
+    "slug": "coastal-region",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "WO region, maritime influence"
+  },
+  {
+    "country": "South Africa",
+    "name": "Stellenbosch",
+    "slug": "stellenbosch",
+    "parent": "coastal-region",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "SA's most prestigious wine district"
+  },
+  {
+    "country": "South Africa",
+    "name": "Paarl",
+    "slug": "paarl",
+    "parent": "coastal-region",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Warm climate, diverse styles"
+  },
+  {
+    "country": "South Africa",
+    "name": "Constantia",
+    "slug": "constantia",
+    "parent": "coastal-region",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Historic wine ward, cool maritime climate"
+  },
+  {
+    "country": "South Africa",
+    "name": "Durbanville",
+    "slug": "durbanville",
+    "parent": "coastal-region",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Cool, elevated ward near Cape Town"
+  },
+  {
+    "country": "South Africa",
+    "name": "Swartland",
+    "slug": "swartland",
+    "parent": "coastal-region",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Old-vine Chenin Blanc, Rhône varieties"
+  },
+  {
+    "country": "South Africa",
+    "name": "Breede River Valley",
+    "slug": "breede-river-valley",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "WO region, inland, warm"
+  },
+  {
+    "country": "South Africa",
+    "name": "Worcester",
+    "slug": "worcester",
+    "parent": "breede-river-valley",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Large district, brandy and bulk wine"
+  },
+  {
+    "country": "South Africa",
+    "name": "Robertson",
+    "slug": "robertson",
+    "parent": "breede-river-valley",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Limestone soils, Chardonnay"
+  },
+  {
+    "country": "South Africa",
+    "name": "Cape South Coast",
+    "slug": "cape-south-coast",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "WO region, cool-climate frontier"
+  },
+  {
+    "country": "South Africa",
+    "name": "Walker Bay",
+    "slug": "walker-bay",
+    "parent": "cape-south-coast",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Hemel-en-Aarde, Pinot Noir, Chardonnay"
+  },
+  {
+    "country": "South Africa",
+    "name": "Elim",
+    "slug": "elim",
+    "parent": "cape-south-coast",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Southernmost, maritime, Sauvignon Blanc"
+  },
+  {
+    "country": "South Africa",
+    "name": "Elgin",
+    "slug": "elgin",
+    "parent": "cape-south-coast",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Cool-climate, elevated, Pinot Noir"
+  },
+  {
+    "country": "Australia",
+    "name": "Australia",
+    "slug": "australia-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Australia",
+    "name": "South Eastern Australia",
+    "slug": "south-eastern-australia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Multi-state GI for commercial blends"
+  },
+  {
+    "country": "Australia",
+    "name": "South Australia",
+    "slug": "south-australia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Dominant wine state, warm to cool sites"
+  },
+  {
+    "country": "Australia",
+    "name": "Barossa",
+    "slug": "barossa",
+    "parent": "south-australia",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.14",
+    "notes": "Wine Australia zone containing Barossa Valley and Eden Valley"
+  },
+  {
+    "country": "Australia",
+    "name": "Barossa Valley",
+    "slug": "barossa-valley",
+    "parent": "south-australia",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.14",
+    "notes": "Old-vine Shiraz, warm, full-bodied"
+  },
+  {
+    "country": "Australia",
+    "name": "Eden Valley",
+    "slug": "eden-valley",
+    "parent": "south-australia",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Elevated, Riesling, cool-climate Shiraz"
+  },
+  {
+    "country": "Australia",
+    "name": "Clare Valley",
+    "slug": "clare-valley",
+    "parent": "south-australia",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Continental, premium Riesling"
+  },
+  {
+    "country": "Australia",
+    "name": "Adelaide Hills",
+    "slug": "adelaide-hills",
+    "parent": "south-australia",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Cool, elevated, Sauvignon Blanc, Pinot Noir"
+  },
+  {
+    "country": "Australia",
+    "name": "McLaren Vale",
+    "slug": "mclaren-vale",
+    "parent": "south-australia",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Maritime, Shiraz, Grenache"
+  },
+  {
+    "country": "Australia",
+    "name": "Coonawarra",
+    "slug": "coonawarra",
+    "parent": "south-australia",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Terra rossa soil, Cabernet Sauvignon"
+  },
+  {
+    "country": "Australia",
+    "name": "Victoria",
+    "slug": "victoria",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Diverse climates, cool to warm sites"
+  },
+  {
+    "country": "Australia",
+    "name": "Yarra Valley",
+    "slug": "yarra-valley",
+    "parent": "victoria",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Cool-climate, Pinot Noir, Chardonnay"
+  },
+  {
+    "country": "Australia",
+    "name": "Geelong",
+    "slug": "geelong",
+    "parent": "victoria",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Cool, maritime, Pinot Noir"
+  },
+  {
+    "country": "Australia",
+    "name": "Mornington Peninsula",
+    "slug": "mornington-peninsula",
+    "parent": "victoria",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Cool, maritime, Pinot Noir, Chardonnay"
+  },
+  {
+    "country": "Australia",
+    "name": "Heathcote",
+    "slug": "heathcote",
+    "parent": "victoria",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Warm inland, Cambrian soil, Shiraz"
+  },
+  {
+    "country": "Australia",
+    "name": "Goulburn Valley",
+    "slug": "goulburn-valley",
+    "parent": "victoria",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Warm, Marsanne, Shiraz (Tahbilk)"
+  },
+  {
+    "country": "Australia",
+    "name": "New South Wales",
+    "slug": "new-south-wales",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Hunter Valley and surrounding GIs"
+  },
+  {
+    "country": "Australia",
+    "name": "Hunter Valley",
+    "slug": "hunter-valley",
+    "parent": "new-south-wales",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Semillon, Shiraz, Australia's oldest wine region"
+  },
+  {
+    "country": "Australia",
+    "name": "Tasmania",
+    "slug": "tasmania",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Cool-climate island, sparkling, Pinot Noir"
+  },
+  {
+    "country": "Australia",
+    "name": "Western Australia",
+    "slug": "western-australia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Maritime southwest corner"
+  },
+  {
+    "country": "Australia",
+    "name": "Margaret River",
+    "slug": "margaret-river",
+    "parent": "western-australia",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Maritime, Cabernet/Merlot, Chardonnay"
+  },
+  {
+    "country": "Australia",
+    "name": "Great Southern",
+    "slug": "great-southern",
+    "parent": "western-australia",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Cool-climate, Riesling, Shiraz"
+  },
+  {
+    "country": "New Zealand",
+    "name": "New Zealand",
+    "slug": "new-zealand-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "New Zealand",
+    "name": "North Island",
+    "slug": "north-island",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Warmer, Hawke's Bay reds, Martinborough Pinot"
+  },
+  {
+    "country": "New Zealand",
+    "name": "Gisborne",
+    "slug": "gisborne",
+    "parent": "north-island",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Warm, Chardonnay"
+  },
+  {
+    "country": "New Zealand",
+    "name": "Hawke's Bay",
+    "slug": "hawkes-bay",
+    "parent": "north-island",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "NZ's Bordeaux-blend region, Gimblett Gravels"
+  },
+  {
+    "country": "New Zealand",
+    "name": "Martinborough",
+    "slug": "martinborough",
+    "parent": "north-island",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Wairarapa, cool, Pinot Noir"
+  },
+  {
+    "country": "New Zealand",
+    "name": "South Island",
+    "slug": "south-island",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Cool-climate, Sauvignon Blanc and Pinot Noir"
+  },
+  {
+    "country": "New Zealand",
+    "name": "Marlborough",
+    "slug": "marlborough",
+    "parent": "south-island",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "NZ's largest and most famous, Sauvignon Blanc"
+  },
+  {
+    "country": "New Zealand",
+    "name": "Nelson",
+    "slug": "nelson",
+    "parent": "south-island",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Artisan wineries, diverse varieties"
+  },
+  {
+    "country": "New Zealand",
+    "name": "Canterbury",
+    "slug": "canterbury",
+    "parent": "south-island",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "Waipara Valley, limestone soils"
+  },
+  {
+    "country": "New Zealand",
+    "name": "Central Otago",
+    "slug": "central-otago",
+    "parent": "south-island",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.12",
+    "notes": "World's southernmost, continental, Pinot Noir"
+  },
+  {
+    "country": "Austria",
+    "name": "Austria",
+    "slug": "austria-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Austria",
+    "name": "Niederösterreich",
+    "slug": "niederoesterreich",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Lower Austria, largest wine-producing Bundesland"
+  },
+  {
+    "country": "Austria",
+    "name": "Wachau",
+    "slug": "wachau",
+    "parent": "niederoesterreich",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Danube terraces, Grüner Veltliner, Riesling, Smaragd/Federspiel/Steinfeder"
+  },
+  {
+    "country": "Austria",
+    "name": "Weinviertel",
+    "slug": "weinviertel",
+    "parent": "niederoesterreich",
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.13",
+    "notes": "Austria's largest DAC, Grüner Veltliner"
+  },
+  {
+    "country": "Austria",
+    "name": "Kamptal",
+    "slug": "kamptal",
+    "parent": "niederoesterreich",
+    "is_catch_all": false,
+    "source": "Austrian Wine / DAC system",
+    "notes": "Langenlois, Zöbing. Premier Grüner Veltliner and Riesling DAC"
+  },
+  {
+    "country": "Austria",
+    "name": "Kremstal",
+    "slug": "kremstal",
+    "parent": "niederoesterreich",
+    "is_catch_all": false,
+    "source": "Austrian Wine / DAC system",
+    "notes": "Krems area. Grüner Veltliner and Riesling DAC, loess and gneiss soils"
+  },
+  {
+    "country": "Austria",
+    "name": "Burgenland",
+    "slug": "burgenland",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Neusiedlersee, sweet wines, Blaufränkisch"
+  },
+  {
+    "country": "Austria",
+    "name": "Steiermark",
+    "slug": "steiermark",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Austrian Wine",
+    "notes": "Styria, steep slopes, Sauvignon Blanc, Welschriesling"
+  },
+  {
+    "country": "Austria",
+    "name": "Wien",
+    "slug": "wien",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Austrian Wine",
+    "notes": "Vienna, urban vineyards, Gemischter Satz"
+  },
+  {
+    "country": "Hungary",
+    "name": "Hungary",
+    "slug": "hungary-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Hungary",
+    "name": "Tokaj",
+    "slug": "tokaj",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Aszú, Furmint, volcanic soils"
+  },
+  {
+    "country": "Hungary",
+    "name": "Eger",
+    "slug": "eger",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Egri Bikavér (Bull's Blood), Kadarka, Kékfrankos"
+  },
+  {
+    "country": "Hungary",
+    "name": "Villány",
+    "slug": "villany",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Warm, red wine focus, Cabernet Franc, Merlot"
+  },
+  {
+    "country": "Hungary",
+    "name": "Szekszárd",
+    "slug": "szekszard",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Kadarka, Bikavér-style reds"
+  },
+  {
+    "country": "Greece",
+    "name": "Greece",
+    "slug": "greece-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Greece",
+    "name": "Macedonia",
+    "slug": "macedonia-greece",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Northern Greece, Naoussa PDO, Xinomavro"
+  },
+  {
+    "country": "Greece",
+    "name": "Peloponnese",
+    "slug": "peloponnese",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Nemea PDO, Agiorgitiko"
+  },
+  {
+    "country": "Greece",
+    "name": "Aegean Islands",
+    "slug": "aegean-islands",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Santorini PDO, Assyrtiko, volcanic"
+  },
+  {
+    "country": "Greece",
+    "name": "Central Greece",
+    "slug": "central-greece",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Attica, Savvatiano, Retsina"
+  },
+  {
+    "country": "Greece",
+    "name": "Crete",
+    "slug": "crete",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Indigenous varieties, Vidiano, Kotsifali"
+  },
+  {
+    "country": "Portugal",
+    "name": "Portugal",
+    "slug": "portugal-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Portugal",
+    "name": "Vinho Verde",
+    "slug": "vinho-verde",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Northwest, Alvarinho, fresh, low-alcohol whites"
+  },
+  {
+    "country": "Portugal",
+    "name": "Douro",
+    "slug": "douro",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Port and dry reds, schist terraces"
+  },
+  {
+    "country": "Portugal",
+    "name": "Dão",
+    "slug": "dao",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Granite soils, Touriga Nacional, elegant reds"
+  },
+  {
+    "country": "Portugal",
+    "name": "Bairrada",
+    "slug": "bairrada",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Clay soils, Baga, sparkling"
+  },
+  {
+    "country": "Portugal",
+    "name": "Alentejo",
+    "slug": "alentejo",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Hot plains, modern reds, cork country"
+  },
+  {
+    "country": "Portugal",
+    "name": "Lisboa",
+    "slug": "lisboa",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "WSET L3 spec p.11",
+    "notes": "Atlantic-influenced, diverse styles"
+  },
+  {
+    "country": "Portugal",
+    "name": "Tejo",
+    "slug": "tejo",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Formerly Ribatejano. Portugal's third-largest by volume, Tagus river valley"
+  },
+  {
+    "country": "Portugal",
+    "name": "Madeira",
+    "slug": "madeira",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Fortified wines, Sercial/Verdelho/Bual/Malvasia"
+  },
+  {
+    "country": "Portugal",
+    "name": "Setúbal",
+    "slug": "setubal",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Moscatel de Setúbal, Castelão reds"
+  },
+  {
+    "country": "Croatia",
+    "name": "Croatia",
+    "slug": "croatia-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Croatia",
+    "name": "Coastal Croatia",
+    "slug": "coastal-croatia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Dalmatia, Istria — Plavac Mali, Malvazija"
+  },
+  {
+    "country": "Croatia",
+    "name": "Continental Croatia",
+    "slug": "continental-croatia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Slavonia, Plešivica — Graševina, Frankovka"
+  },
+  {
+    "country": "Georgia",
+    "name": "Georgia",
+    "slug": "georgia-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Georgia",
+    "name": "Kakheti",
+    "slug": "kakheti",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "wine.gov.ge",
+    "notes": "Eastern Georgia, 70% of production, qvevri winemaking"
+  },
+  {
+    "country": "Georgia",
+    "name": "Imereti",
+    "slug": "imereti",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "wine.gov.ge",
+    "notes": "Western Georgia, lighter qvevri style"
+  },
+  {
+    "country": "Georgia",
+    "name": "Kartli",
+    "slug": "kartli",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "wine.gov.ge",
+    "notes": "Central Georgia, continental climate"
+  },
+  {
+    "country": "Switzerland",
+    "name": "Switzerland",
+    "slug": "switzerland-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Switzerland",
+    "name": "Valais",
+    "slug": "valais",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Swiss Wine",
+    "notes": "Largest Swiss wine canton, Fendant (Chasselas), Rhône valley"
+  },
+  {
+    "country": "Switzerland",
+    "name": "Vaud",
+    "slug": "vaud",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Swiss Wine",
+    "notes": "Lavaux terraces (UNESCO), Chasselas, Lake Geneva"
+  },
+  {
+    "country": "Switzerland",
+    "name": "Geneva",
+    "slug": "geneva",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Swiss Wine",
+    "notes": "Third-largest canton, Gamay, Chasselas"
+  },
+  {
+    "country": "Switzerland",
+    "name": "Ticino",
+    "slug": "ticino",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Swiss Wine",
+    "notes": "Italian-speaking, Merlot specialist"
+  },
+  {
+    "country": "Romania",
+    "name": "Romania",
+    "slug": "romania-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Romania",
+    "name": "Moldavia",
+    "slug": "moldavia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Eastern Romania, Cotnari, whites"
+  },
+  {
+    "country": "Romania",
+    "name": "Muntenia",
+    "slug": "muntenia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Dealu Mare, warm, reds"
+  },
+  {
+    "country": "Romania",
+    "name": "Oltenia",
+    "slug": "oltenia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Southwest, Drăgășani"
+  },
+  {
+    "country": "Romania",
+    "name": "Transylvania",
+    "slug": "transylvania",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Cool plateau, aromatic whites"
+  },
+  {
+    "country": "Romania",
+    "name": "Dobrogea",
+    "slug": "dobrogea",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Black Sea coast, Murfatlar"
+  },
+  {
+    "country": "Slovenia",
+    "name": "Slovenia",
+    "slug": "slovenia-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Slovenia",
+    "name": "Primorska",
+    "slug": "primorska",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Western, Mediterranean influence, Rebula, orange wines"
+  },
+  {
+    "country": "Slovenia",
+    "name": "Podravje",
+    "slug": "podravje",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Northeast, continental, aromatic whites"
+  },
+  {
+    "country": "Slovenia",
+    "name": "Posavje",
+    "slug": "posavje",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Oxford Companion to Wine",
+    "notes": "Southeast, Cviček rosé blend"
+  },
+  {
+    "country": "Brazil",
+    "name": "Brazil",
+    "slug": "brazil-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Brazil",
+    "name": "Serra Gaúcha",
+    "slug": "serra-gaucha",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "INPI / Oxford Companion to Wine",
+    "notes": "Southern highlands, sparkling, Italian varieties"
+  },
+  {
+    "country": "Brazil",
+    "name": "Campanha",
+    "slug": "campanha",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "INPI / Oxford Companion to Wine",
+    "notes": "Southern plains, near Uruguay border"
+  },
+  {
+    "country": "Japan",
+    "name": "Japan",
+    "slug": "japan-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Japan",
+    "name": "Yamanashi",
+    "slug": "yamanashi",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "NTA",
+    "notes": "Japan's premier wine prefecture, Koshu grape"
+  },
+  {
+    "country": "Japan",
+    "name": "Hokkaido",
+    "slug": "hokkaido",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "NTA",
+    "notes": "Northernmost, cool-climate, emerging"
+  },
+  {
+    "country": "Japan",
+    "name": "Nagano",
+    "slug": "nagano",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "NTA",
+    "notes": "Mountain vineyards, Merlot, Chardonnay"
+  },
+  {
+    "country": "Bulgaria",
+    "name": "Bulgaria",
+    "slug": "bulgaria-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Bulgaria",
+    "name": "Danubian Plain",
+    "slug": "danubian-plain",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Bulgarian Wine Authority",
+    "notes": "Northern Bulgaria, continental climate"
+  },
+  {
+    "country": "Bulgaria",
+    "name": "Thracian Lowland",
+    "slug": "thracian-lowland",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Bulgarian Wine Authority",
+    "notes": "Southern Bulgaria, warm, Mavrud"
+  },
+  {
+    "country": "Bulgaria",
+    "name": "Black Sea",
+    "slug": "black-sea-bulgaria",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Bulgarian Wine Authority",
+    "notes": "Eastern coast, maritime influence"
+  },
+  {
+    "country": "Bulgaria",
+    "name": "Rose Valley",
+    "slug": "rose-valley",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Bulgarian Wine Authority",
+    "notes": "Central, Sub-Balkan, sheltered"
+  },
+  {
+    "country": "Bulgaria",
+    "name": "Struma Valley",
+    "slug": "struma-valley",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Bulgarian Wine Authority",
+    "notes": "Southwest, Mediterranean climate, Melnik"
+  },
+  {
+    "country": "Czech Republic",
+    "name": "Czech Republic",
+    "slug": "czech-republic-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Czech Republic",
+    "name": "Moravia",
+    "slug": "moravia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Czech Wine Fund",
+    "notes": "Southeast, 96% of Czech production"
+  },
+  {
+    "country": "Czech Republic",
+    "name": "Bohemia",
+    "slug": "bohemia",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "Czech Wine Fund",
+    "notes": "Central/north, small, cool-climate"
+  },
+  {
+    "country": "United Kingdom",
+    "name": "United Kingdom",
+    "slug": "united-kingdom-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "United Kingdom",
+    "name": "England",
+    "slug": "england",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "UK PDO / WineGB",
+    "notes": "Sparkling wine, southeast counties, chalk soils"
+  },
+  {
+    "country": "United Kingdom",
+    "name": "Wales",
+    "slug": "wales",
+    "parent": null,
+    "is_catch_all": false,
+    "source": "UK PDO / WineGB",
+    "notes": "Small but growing, hybrid and cool-climate varieties"
+  },
+  {
+    "country": "Morocco",
+    "name": "Morocco",
+    "slug": "morocco-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Moldova",
+    "name": "Moldova",
+    "slug": "moldova-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Slovakia",
+    "name": "Slovakia",
+    "slug": "slovakia-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Cyprus",
+    "name": "Cyprus",
+    "slug": "cyprus-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Belgium",
+    "name": "Belgium",
+    "slug": "belgium-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Netherlands",
+    "name": "Netherlands",
+    "slug": "netherlands-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Serbia",
+    "name": "Serbia",
+    "slug": "serbia-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "North Macedonia",
+    "name": "North Macedonia",
+    "slug": "north-macedonia-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Malta",
+    "name": "Malta",
+    "slug": "malta-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "China",
+    "name": "China",
+    "slug": "china-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "India",
+    "name": "India",
+    "slug": "india-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Luxembourg",
+    "name": "Luxembourg",
+    "slug": "luxembourg-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Denmark",
+    "name": "Denmark",
+    "slug": "denmark-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Albania",
+    "name": "Albania",
+    "slug": "albania-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Armenia",
+    "name": "Armenia",
+    "slug": "armenia-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Azerbaijan",
+    "name": "Azerbaijan",
+    "slug": "azerbaijan-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Belarus",
+    "name": "Belarus",
+    "slug": "belarus-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Bolivia",
+    "name": "Bolivia",
+    "slug": "bolivia-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Colombia",
+    "name": "Colombia",
+    "slug": "colombia-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Israel",
+    "name": "Israel",
+    "slug": "israel-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Jordan",
+    "name": "Jordan",
+    "slug": "jordan-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Lebanon",
+    "name": "Lebanon",
+    "slug": "lebanon-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Liechtenstein",
+    "name": "Liechtenstein",
+    "slug": "liechtenstein-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Mexico",
+    "name": "Mexico",
+    "slug": "mexico-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Montenegro",
+    "name": "Montenegro",
+    "slug": "montenegro-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Myanmar",
+    "name": "Myanmar",
+    "slug": "myanmar-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Peru",
+    "name": "Peru",
+    "slug": "peru-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Poland",
+    "name": "Poland",
+    "slug": "poland-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Russia",
+    "name": "Russia",
+    "slug": "russia-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "San Marino",
+    "name": "San Marino",
+    "slug": "san-marino-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Sweden",
+    "name": "Sweden",
+    "slug": "sweden-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Syria",
+    "name": "Syria",
+    "slug": "syria-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Thailand",
+    "name": "Thailand",
+    "slug": "thailand-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Tunisia",
+    "name": "Tunisia",
+    "slug": "tunisia-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Turkey",
+    "name": "Turkey",
+    "slug": "turkey-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Ukraine",
+    "name": "Ukraine",
+    "slug": "ukraine-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  },
+  {
+    "country": "Uruguay",
+    "name": "Uruguay",
+    "slug": "uruguay-country",
+    "parent": null,
+    "is_catch_all": true,
+    "source": null,
+    "notes": "Catch-all for wines without specific regional designation"
+  }
+]

@@ -58,13 +58,15 @@ The database has two layers:
 - **xwines_* tables** — bulk X-Wines dataset dump (~530K wines, ~2.2M vintages, ~32K producers). Kept as reference but not actively maintained. Data quality is lower.
 
 ### Reference Tables (complete)
-Countries (62), regions (352), appellations (3,206), grapes (709), varietal categories (154), source types (27), publications (68), farming certifications (18), biodiversity certifications (7), soil types (39).
+Countries (62), regions (290 — 62 catch-all, 132 L1, 96 L2), appellations (3,206), grapes (709), varietal categories (154), source types (27), publications (68), farming certifications (18), biodiversity certifications (7), soil types (39).
+
+Regions rebuilt from scratch (2026-03-12): two-level hierarchy sourced from WSET L3 spec + Federdoc/MAPA/official wine authorities. All X-Wines leftover regions purged. Data file: `data/regions_rebuild.json`. Migration script: `scripts/rebuild_regions.mjs`. 181 appellations temporarily on catch-all regions pending appellation→region mapping.
 
 ### Insights (partially populated)
-Grape insights (707), region insights (328), appellation insights (82), country insights (62). Producer insights and wine insights are empty.
+Grape insights (707), region insights (202 — 126 deleted with leftover regions), appellation insights (82), country insights (62). Producer insights and wine insights are empty.
 
 ### Geographic Data
-Geographic boundaries (2,984) with PostGIS geometry. Appellation containment hierarchy (2,158 relationships).
+Geographic boundaries (2,937 — 47 deleted with leftover regions) with PostGIS geometry. Appellation containment hierarchy (2,158 relationships).
 
 ### What's Not There Yet
 - Most insight tables empty (wine, producer, soil, water body)
@@ -78,7 +80,7 @@ Geographic boundaries (2,984) with PostGIS geometry. Appellation containment hie
 
 ## Current Focus
 
-Working through data population and quality refinement. The approach has shifted from bulk import to curated per-producer imports with high accuracy standards.
+Region rebuild complete. Next: appellation→region mapping (reassign 2,828 appellations from catch-all to proper named regions).
 
 ### Open Questions
 - Producer import strategy: how to systematically populate canonical producer/wine/vintage tables

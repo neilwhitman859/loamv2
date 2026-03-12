@@ -84,3 +84,26 @@ Claude queries the database for current row counts and state rather than relying
 
 ### 2026-03-12: Data quality over launch timeline
 Soft goal of something live for friends by end of March 2026, but data accuracy and trustworthiness to a wine expert is the #1 priority. Willing to push any deadline for data quality. 100% accurate product or nothing.
+
+### 2026-03-12: Region rebuild from scratch using WSET L3 as primary source
+Old 352 regions from X-Wines bulk import replaced with curated two-level hierarchy. Primary source: WSET Level 3 Award in Wines Specification (Issue 2, 2022), pages 10-14. Supplementary: Oxford Companion to Wine, government wine authorities (DWI, Wine Australia, SAWIS, etc.). No Wine-Searcher (TOS concern). L1/L2 implicit via parent_id — no schema change. US not significantly more granular than other countries. Data file: `data/regions_rebuild.json`. Migration script: `scripts/rebuild_regions.mjs`.
+
+### 2026-03-12: Two-level hierarchy confirmed after wine expert review
+Considered 3 levels to resolve containment issues (SA Western Cape → Coastal Region → Stellenbosch, AU South Australia → Barossa → Barossa Valley). Decided 2 levels is sufficient — regions are a navigational grouping layer, not a containment model. Only 2-3 countries need 3 levels; the complexity isn't justified. Containment overlaps (Western Cape as sibling to Coastal Region, Barossa as sibling to Barossa Valley) are acceptable and handled by mapping appellations to the most specific matching region.
+
+### 2026-03-12: Region refinements from WSET cross-check
+- Removed Entre-Deux-Mers as Bordeaux L2 — it's an AOC, not a navigational grouping. Left Bank / Right Bank are the standard Bordeaux sub-regions.
+- Added Kamptal and Kremstal as L2s under Niederösterreich — major Austrian DACs missing from WSET L3 but essential for wine professionals.
+- Added Tejo as Portugal L1 — third-largest Portuguese wine region by volume, absent from WSET L3.
+- Added Castilla y León back to Spain (exists alongside The Duero Valley — CyL for VdlT regional wines, Duero Valley for DOs).
+- Added Barossa zone as AU L2 alongside Barossa Valley per WSET spec.
+- Renamed "Southwest France" to "The Dordogne and South West France" per WSET spec exact wording.
+- Mapping principle: when multiple regions apply, use the most specific / label-matching region.
+
+### 2026-03-12: L2 sub-regions added for Italy and Spain
+Italy: Added 13 L2 sub-regions (Langhe, Monferrato, Roero under Piemonte; Chianti, Montalcino, Montepulciano, Bolgheri under Tuscany; Valpolicella, Soave, Conegliano-Valdobbiadene under Veneto; Etna under Sicily; Franciacorta, Valtellina under Lombardy). Source: WSET L3 + Federdoc 2025.
+Spain: Added 13 L2 sub-regions under WSET geographic groupings (Rioja, Navarra under Upper Ebro; Penedès, Priorat under Catalunya; Ribera del Duero, Rueda, Toro under Duero Valley; Rías Baixas, Bierzo under North West; La Mancha under Castilla-La Mancha; Jumilla, Valencia under Levante; Jerez under Andalucía). Source: WSET L3 + MAPA DOs.
+Renamed "Napa County" to "Napa Valley" — universally recognized name.
+
+### 2026-03-12: X-Wines leftover regions purged
+Deleted 147 non-curated regions from regions table. Reassigned 181 orphan appellations to country catch-all regions. Removed 47 geographic boundaries and 126 region insights tied to leftovers. Dropped xwines FK constraints to regions (xwines_wines, xwines_producers, xwines_region_name_mappings) since archive tables don't need referential integrity. Fixed 10 L2 regions that had missing parent_id (NZ, SA, France, Austria, Argentina). Reparented curated children from leftover parents (columbia-valley/yakima-valley from old "washington" to "washington-state"; monterey/santa-barbara-county from old "central-coast" to "california"; languedoc/roussillon from old "languedoc-roussillon" to "southern-france").
