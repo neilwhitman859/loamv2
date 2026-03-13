@@ -58,9 +58,11 @@ The database has two layers:
 - **xwines_* tables** — bulk X-Wines dataset dump (~530K wines, ~2.2M vintages, ~32K producers). Kept as reference but not actively maintained. Data quality is lower.
 
 ### Reference Tables (complete)
-Countries (62), regions (290 — 62 catch-all, 132 L1, 96 L2), appellations (3,206), grapes (709), varietal categories (154), source types (27), publications (68), farming certifications (18), biodiversity certifications (7), soil types (39).
+Countries (62), regions (373 — 62 catch-all, 215 L1 named, 96 L2), appellations (3,206), grapes (709), varietal categories (154), source types (27), publications (68), farming certifications (18), biodiversity certifications (7), soil types (39).
 
-Regions rebuilt from scratch (2026-03-12): two-level hierarchy sourced from WSET L3 spec + Federdoc/MAPA/official wine authorities. All X-Wines leftover regions purged. Data file: `data/regions_rebuild.json`. Migration script: `scripts/rebuild_regions.mjs`. 181 appellations temporarily on catch-all regions pending appellation→region mapping.
+Regions rebuilt from scratch (2026-03-12): two-level hierarchy sourced from WSET L3 spec + Federdoc/MAPA/official wine authorities. 81 new L1 regions added (2026-03-12) to cover appellations in all countries: 25 US states, 10 Swiss cantons, 6 Spanish autonomous communities, 6 Argentine provinces, 6 Slovak wine regions, 5 Austrian provinces, 5 Hungarian districts, 3 Moldovan IGPs, 2 Portuguese macro-regions, 2 Georgian regions, 2 Greek regions, 2 Romanian regions, 2 Brazilian regions, 2 Japanese prefectures, 1 each for Chile, Australia, Canada.
+
+Appellation→region attribution 96.4% complete (3,089/3,206). Three-pass strategy: Pass 1 containment trace (1,915), Pass 3 direct lookup (1,174). 117 remain on catch-all — South Africa outside WC (20), Hungary minor districts (15), Morocco (15), US multi-state AVAs (14), Swiss minor cantons (11), plus small countries without regions (Cyprus, Belgium, Netherlands, Serbia, etc.).
 
 ### Insights (partially populated)
 Grape insights (707), region insights (202 — 126 deleted with leftover regions), appellation insights (82), country insights (62). Producer insights and wine insights are empty.

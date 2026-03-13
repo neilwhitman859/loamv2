@@ -107,3 +107,9 @@ Renamed "Napa County" to "Napa Valley" — universally recognized name.
 
 ### 2026-03-12: X-Wines leftover regions purged
 Deleted 147 non-curated regions from regions table. Reassigned 181 orphan appellations to country catch-all regions. Removed 47 geographic boundaries and 126 region insights tied to leftovers. Dropped xwines FK constraints to regions (xwines_wines, xwines_producers, xwines_region_name_mappings) since archive tables don't need referential integrity. Fixed 10 L2 regions that had missing parent_id (NZ, SA, France, Austria, Argentina). Reparented curated children from leftover parents (columbia-valley/yakima-valley from old "washington" to "washington-state"; monterey/santa-barbara-county from old "central-coast" to "california"; languedoc/roussillon from old "languedoc-roussillon" to "southern-france").
+
+### 2026-03-12: Created Lorraine and Cognac L1 regions for France
+Added two new L1 regions to cover 3 peripheral AOCs that had no home: Lorraine (Moselle, Côtes de Toul) and Cognac (Pineau des Charentes). Pineau des Charentes is a vin de liqueur not covered by WSET L3, but it's an INAO-classified AOC and deserves a region rather than sitting on catch-all.
+
+### 2026-03-12: Catch-alls are for unappellated wines only
+All wines with an official appellation should be in a named region, even if the region is small. Catch-all regions should be reserved for wines without an official appellation (Vin de France, etc.), not as a dumping ground for appellations in minor wine areas. This means creating regions even for small/marginal wine-producing areas if they have official appellations in our database.
