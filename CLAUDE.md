@@ -58,11 +58,11 @@ The database has two layers:
 - **xwines_* tables** — bulk X-Wines dataset dump (~530K wines, ~2.2M vintages, ~32K producers). Kept as reference but not actively maintained. Data quality is lower.
 
 ### Reference Tables (complete)
-Countries (62), regions (373 — 62 catch-all, 215 L1 named, 96 L2), appellations (3,206), grapes (709), varietal categories (154), source types (27), publications (68), farming certifications (18), biodiversity certifications (7), soil types (39).
+Countries (62), regions (386 — 62 catch-all, 218 L1 named, 106 L2), appellations (3,205), grapes (709), varietal categories (154), source types (27), publications (68), farming certifications (18), biodiversity certifications (7), soil types (39).
 
-Regions rebuilt from scratch (2026-03-12): two-level hierarchy sourced from WSET L3 spec + Federdoc/MAPA/official wine authorities. All X-Wines leftover regions purged. Data file: `data/regions_rebuild.json`.
+Regions rebuilt from scratch (2026-03-12): two-level hierarchy sourced from WSET L3 spec + Federdoc/MAPA/official wine authorities. All X-Wines leftover regions purged. Data file: `data/regions_rebuild.json`. Expanded (2026-03-13): 13 new regions added from Sonnet review triage — L2 subregions for Canada, South Africa, Austria, Spain + L1 regions for Portugal, UK (Scotland).
 
-Appellation→region attribution 96.4% complete (3,089/3,206). Three-pass strategy: Pass 1 containment trace (1,915), Pass 3 direct lookup (1,174). 117 remain on catch-all by design. L2 attribution fixed (2026-03-12): 33 empty L2 regions resolved — appellations moved to lowest-level region (e.g., Napa Valley AVAs → Napa County L2, not California L1). 0 empty L2 regions remain.
+Appellation→region attribution 96.4% complete (3,090/3,205). Three-pass strategy: Pass 1 containment trace (1,915), Pass 3 direct lookup (1,174). ~115 remain on catch-all by design (multi-state US AVAs, minor countries without named regions). L2 attribution complete: 0 empty L2 regions. Sonnet review round 1 applied (2026-03-13): 10 appellation re-attributions + Southwest France rename + 48 appellations moved to 10 new L2 regions.
 
 ### Insights (partially populated)
 Grape insights (707), region insights (202 — 126 deleted with leftover regions), appellation insights (82), country insights (62). Producer insights and wine insights are empty.
@@ -70,16 +70,16 @@ Grape insights (707), region insights (202 — 126 deleted with leftover regions
 ### Geographic Data
 Geographic boundaries with PostGIS geometry. Appellation containment hierarchy (2,158 relationships).
 
-**Region boundaries (2026-03-12):** 310/311 named regions have geographic data (99.7%). Full rebuild from scratch:
-- **Official:** 30 regions (copied from wine authority appellation boundaries — UC Davis, Wine Australia, IPONZ, Eurac)
+**Region boundaries (2026-03-13):** 323/324 named regions have geographic data (99.7%). Full rebuild from scratch + Sonnet review expansion:
+- **Official:** 38 regions (copied from wine authority appellation boundaries — UC Davis, Wine Australia, IPONZ, Eurac EU PDO)
 - **Derived:** 181 regions (ST_Union of child appellation polygons — most accurate for wine platform)
-- **Approximate:** 81 regions (Nominatim admin boundaries + EU PDO copied from appellations)
-- **Geocoded:** 18 regions (centroid-only — mostly SA wine wards with no polygon source)
+- **Approximate:** 84 regions (Nominatim admin boundaries + EU PDO copied from appellations)
+- **Geocoded:** 20 regions (centroid-only — mostly SA wine wards with no polygon source)
 - **No data:** 1 (South Eastern Australia — cross-state super-zone, skipped by design)
 
-**Wine expert Sonnet review completed:** All 311 regions reviewed by country. Report at `data/region_review_report.json`. Key findings: 115 potential corrections identified (38 auto-fixable, 77 need review). Main structural issues flagged in South Africa (missing regions), Canada (needs L2 subregions), Portugal (missing regions), Croatia/Hungary (needs restructuring). Germany, Slovenia, Czech Republic passed with no issues.
+**Wine expert Sonnet review completed and triaged (2026-03-13):** All regions reviewed by country. 115 potential corrections identified. Applied: 10 appellation re-attributions, 1 rename (Southwest France), Cava moved to Spain catch-all, 13 new regions created with boundaries. Parked: Switzerland L2 restructuring, Italy L2 restructuring, Croatia/Hungary restructuring, England sub-regions. Germany, Slovenia, Czech Republic passed clean.
 
-Scripts: `scripts/geocode_regions.mjs` (Nominatim geocoding), `scripts/fix_region_geocodes.mjs` (Swiss/AR fixes), `scripts/review_region_boundaries.mjs` (Sonnet review).
+Scripts: `scripts/geocode_regions.mjs` (Nominatim geocoding), `scripts/fix_region_geocodes.mjs` (Swiss/AR fixes), `scripts/review_region_boundaries.mjs` (Sonnet review), `scripts/geocode_new_regions.mjs` (targeted geocoding for new regions).
 Data files: `data/region_nominatim_queries.json` (Nominatim query overrides), `data/region_review_report.json` (full Sonnet review report).
 
 ### What's Not There Yet
@@ -94,7 +94,7 @@ Data files: `data/region_nominatim_queries.json` (Nominatim query overrides), `d
 
 ## Current Focus
 
-Region boundaries complete (310/311 regions, 99.7%). Sonnet review identified 115 items for follow-up — next step is triaging the review report and applying the safe corrections.
+Region boundaries and Sonnet review triage complete (323/324 regions, 99.7%). All actionable items applied. Reference data layer is mature — ready for enrichment or producer pipeline work.
 
 ### Open Questions
 - Producer import strategy: how to systematically populate canonical producer/wine/vintage tables

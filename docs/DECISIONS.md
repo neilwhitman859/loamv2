@@ -122,3 +122,24 @@ Deleted all 27 existing region boundaries and rebuilt consistently. Four tiers: 
 
 ### 2026-03-12: Regions are qualitative, not legally defined
 Unlike appellations which have legal boundaries, regions are qualitative approximations of wine-producing areas as a wine expert would understand them. It's acceptable (and often better) to include areas that are clearly part of a region even if no specific appellation polygon covers them. This distinction is important for boundary smoothing and Sonnet review decisions.
+
+### 2026-03-13: Sonnet review round 1 — attribution fixes applied
+Applied 10 appellation→region moves and 1 region rename from the Sonnet review report. Moved Pokolbin + Broke Fordwich to Hunter Valley L2, Agrelo + Las Compuertas to Lujan de Cuyo L2, Darling to Swartland L2, Wellington + Franschhoek to Paarl L2, Blaye + Cotes de Blaye + Bourg/Cotes de Bourg/Bourgeais to Right Bank L2. Renamed "The Dordogne and South West France" back to "Southwest France" (WSET exact wording was overly verbose for navigation). Skipped Swan Valley→Swan District move: Swan District is an appellation in our schema, not a region, and the containment hierarchy already captures Swan Valley as a child of Swan District.
+
+### 2026-03-13: Sonnet review triage — new regions and structural decisions
+Created 13 new regions based on Sonnet review recommendations and WSET L3 alignment analysis:
+- **Canada:** Niagara Peninsula L2 (under Ontario, 14 apps) + Okanagan Valley L2 (under BC, 12 apps) — WSET standard subregions
+- **South Africa:** Klein Karoo L2 + Olifants River L2 (under Western Cape) — SAWIS hierarchy alignment, fixed 3 misattributed Olifants River appellations from Coastal Region
+- **Austria:** Carnuntum, Thermenregion, Wagram, Traisental as L2s under Niederösterreich — each IS a DAC, matches WSET structure
+- **Spain:** Somontano L2 (under Aragón) + León L2 (under Castilla y León) — WSET-recognized subregions
+- **Portugal:** Beira Interior L1 + Trás-os-Montes L1 — missing from original rebuild, major Portuguese wine regions
+- **UK:** Scotland L1 — emerging wine region, distinct from England/Wales
+- **Cava:** Moved to Spain catch-all (spans 7+ autonomous communities, no single region is accurate)
+- **Parked:** Switzerland, Italy, Croatia, Hungary restructuring + England sub-regions (too early)
+- **No change:** Japan (current structure fine), Darnibole (legitimate English PDO)
+
+### 2026-03-13: Multi-state US AVAs stay on catch-all
+14 US appellations that span state lines (e.g., Columbia Valley, Walla Walla Valley) remain on the USA catch-all region. Attributing them to any single state would be inaccurate. They roll up at the country level by design.
+
+### 2026-03-13: Portugal catch-all edge cases left as-is
+Encostas d'Aire, Lafões, and Távora-Varosa remain on Portugal catch-all. Each sits geographically between two existing regions (Lisboa/Bairrada, Dão/Vinho Verde, Dão/Douro respectively). Forcing them into either adjacent region would be equally inaccurate.
