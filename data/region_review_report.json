@@ -1,0 +1,941 @@
+[
+  {
+    "country": "United States",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "move_appellation",
+        "description": "Shenandoah Valley AVA spans Virginia, Maryland, Pennsylvania and West Virginia - should be moved to Virginia as the primary region",
+        "region_slug": "virginia",
+        "appellation_name": "Shenandoah Valley",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Lewis-Clark Valley AVA is primarily in Idaho with small portion in Washington - should be moved to Idaho",
+        "region_slug": "idaho",
+        "appellation_name": "Lewis-Clark Valley",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Mesilla Valley AVA is primarily in New Mexico with portion in Texas - should be moved to New Mexico",
+        "region_slug": "new-mexico",
+        "appellation_name": "Mesilla Valley",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Central Delaware Valley AVA spans Pennsylvania and New Jersey - should be moved to Pennsylvania as larger portion",
+        "region_slug": "pennsylvania",
+        "appellation_name": "Central Delaware Valley",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Cumberland Valley AVA spans Pennsylvania and Maryland - should be moved to Pennsylvania as larger portion",
+        "region_slug": "pennsylvania",
+        "appellation_name": "Cumberland Valley",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Southeastern New England AVA spans Connecticut, Massachusetts, and Rhode Island - should be moved to Connecticut or Massachusetts",
+        "region_slug": "connecticut",
+        "appellation_name": "Southeastern New England",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Texoma AVA spans Texas and Oklahoma - should be moved to Texas as Oklahoma not currently in hierarchy",
+        "region_slug": "texas",
+        "appellation_name": "Texoma",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Ozark Mountain AVA spans Arkansas, Missouri, and Oklahoma - should be moved to Arkansas or Missouri",
+        "region_slug": "missouri",
+        "appellation_name": "Ozark Mountain",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Upper Hiwassee Highlands AVA spans North Carolina and Georgia - should be moved to North Carolina",
+        "region_slug": "north-carolina",
+        "appellation_name": "Upper Hiwassee Highlands",
+        "severity": "auto_fix"
+      }
+    ],
+    "notes": "The US hierarchy is generally well-structured with appropriate L1 state-level regions and L2 sub-regions for major wine areas like Napa Valley and Willamette Valley. Main issue is several multi-state AVAs sitting in catch-all that should be attributed to their primary state. California's structure is excellent with proper sub-regions. Some smaller catch-all AVAs like Upper Mississippi River Valley and Ohio River Valley are appropriately left as catch-all due to spanning multiple states with no clear primary region."
+  },
+  {
+    "country": "Italy",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "move_appellation",
+        "description": "Bardolino and Bardolino Superiore should be in a separate Bardolino subregion as they're significant enough to warrant their own L2 region",
+        "region_slug": "veneto",
+        "appellation_name": "Bardolino",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Custoza (Bianco di Custoza) should be in a separate Custoza subregion as it's a well-defined wine area",
+        "region_slug": "veneto",
+        "appellation_name": "Bianco di Custoza / Custoza",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Prosecco appellations should move from general Veneto to Conegliano-Valdobbiadene where appropriate",
+        "region_slug": "veneto",
+        "appellation_name": "Prosecco",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Several important Tuscan appellations (Maremma Toscana, Cortona, Colli dell'Etruria Centrale) might warrant their own L2 subregions given their significance",
+        "region_slug": "tuscany",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Consider creating a Salento subregion in Puglia for the concentrated appellations in that area (Primitivo di Manduria, Salice Salentino, etc.)",
+        "region_slug": "puglia",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Alta Langa appellation in Langhe might be better at the general Piemonte level as it crosses traditional boundaries",
+        "region_slug": "langhe",
+        "appellation_name": "Alta Langa",
+        "severity": "needs_review"
+      },
+      {
+        "type": "smooth_boundary",
+        "description": "Derived boundaries for major regions like Tuscany and Veneto may have gaps - consider smoothing",
+        "region_slug": "tuscany",
+        "severity": "auto_fix"
+      }
+    ],
+    "notes": "Overall structure is very solid and follows Italian wine geography well. The major regions and subregions are correctly identified. Main issues are some important DOC/DOCG areas that could warrant their own L2 subregions (like Bardolino, Custoza in Veneto) and some appellations that might be better positioned. The Prosecco situation in Veneto needs attention as some appellations overlap with the dedicated Conegliano-Valdobbiadene region. Boundary smoothing recommended for derived regions to fill potential gaps."
+  },
+  {
+    "country": "France",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "move_appellation",
+        "description": "Entre-deux-Mers is a specific Bordeaux subregion, not a generic Bordeaux appellation. Should be on a dedicated L2 region or Right Bank.",
+        "region_slug": "bordeaux",
+        "appellation_name": "Entre-deux-Mers",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Blaye and Côtes de Blaye are Right Bank appellations, should move from Bordeaux L1 to Right Bank L2.",
+        "region_slug": "bordeaux",
+        "appellation_name": "Blaye",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Côtes de Blaye should move from Bordeaux L1 to Right Bank L2.",
+        "region_slug": "bordeaux",
+        "appellation_name": "Côtes de Blaye",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Bourg/Côtes de Bourg is a Right Bank appellation, should move to Right Bank L2.",
+        "region_slug": "bordeaux",
+        "appellation_name": "Bourg / Côtes de Bourg / Bourgeais",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "rename_region",
+        "description": "Region name should be 'Southwest France' not 'The Dordogne and South West France' - too verbose and not standard terminology.",
+        "region_slug": "southwest-france",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "flag_review",
+        "description": "Some Côtes de Bordeaux appellations may belong on specific L2 regions rather than the L1 catch-all, but geography needs verification.",
+        "region_slug": "bordeaux",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "Generally well-structured French hierarchy. Main issues are some Bordeaux Right Bank appellations sitting at L1 level instead of L2, and a few naming/attribution questions. The L2 breakdown for major regions like Burgundy, Loire, and Rhône looks accurate. Alsace Grand Cru appellations appropriately at regional level."
+  },
+  {
+    "country": "Spain",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "move_appellation",
+        "description": "DO León should be in its own L2 region under Castilla y León, as it's a significant and distinct wine region",
+        "region_slug": "castilla-y-leon",
+        "appellation_name": "León",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Ribeira Sacra should be in its own L2 region under The North West, as it's one of Galicia's most important DOs",
+        "region_slug": "northwest-spain",
+        "appellation_name": "Ribeira Sacra",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Valdeorras should be in its own L2 region under The North West, as it's a significant Galician DO",
+        "region_slug": "northwest-spain",
+        "appellation_name": "Valdeorras",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Somontano should be in its own L2 region under Aragón, as it's the most important DO in Aragón",
+        "region_slug": "aragon",
+        "appellation_name": "Somontano",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Cava appellation spans multiple regions but is attributed only to Catalunya - should consider if this needs special handling as a multi-regional DO",
+        "region_slug": "catalunya",
+        "appellation_name": "Cava",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Many Pago (single-estate) wines in Castilla-La Mancha could potentially be grouped or handled differently from regional DOs",
+        "region_slug": "castilla-la-mancha",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "Overall structure is very good and follows WSET L3 expectations well. The major wine regions are properly represented as L2 children of larger L1 areas. Main issues are some important DOs that should have their own L2 regions rather than being grouped at L1 level, and the multi-regional Cava DO which may need special consideration."
+  },
+  {
+    "country": "Australia",
+    "overall_assessment": "major_issues",
+    "corrections": [
+      {
+        "type": "flag_review",
+        "description": "Barossa zone and Barossa Valley region are creating confusion - zone should encompass both Barossa Valley and Eden Valley regions",
+        "region_slug": "barossa",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Hunter Valley region has both Hunter region and Hunter Valley zone appellations - needs clarification of hierarchy",
+        "region_slug": "hunter-valley",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Swan Valley subregion should be attributed to Swan District region rather than Western Australia state level",
+        "region_slug": "western-australia",
+        "appellation_name": "Swan Valley",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Pokolbin and Broke Fordwich subregions should be attributed to Hunter Valley region rather than NSW state level",
+        "region_slug": "new-south-wales",
+        "appellation_name": "Pokolbin",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Broke Fordwich subregion should be attributed to Hunter Valley region rather than NSW state level",
+        "region_slug": "new-south-wales",
+        "appellation_name": "Broke Fordwich",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Great Western subregion should be attributed to Grampians region rather than Victoria state level",
+        "region_slug": "victoria",
+        "appellation_name": "Great Western",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "South Eastern Australia appears to be a super-zone but has no boundary or appellations - needs clarification",
+        "region_slug": "south-eastern-australia",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "Australia's GI hierarchy is complex with zones, regions, and subregions. Several subregions are incorrectly attributed to state level rather than their parent regions. The Barossa zone/region naming creates confusion. Hunter Valley structure needs review as it mixes regional and zonal appellations. Overall structure captures major regions well but subregion attributions need correction."
+  },
+  {
+    "country": "South Africa",
+    "overall_assessment": "major_issues",
+    "corrections": [
+      {
+        "type": "move_appellation",
+        "description": "Northern Cape Orange River wards belong to Northern Cape region, not catch-all",
+        "region_slug": "northern-cape",
+        "appellation_name": "Central Orange River",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Douglas district should be under Northern Cape region",
+        "region_slug": "northern-cape",
+        "appellation_name": "Douglas",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Orange River wards (Upington, Kakamas, Keimoes, etc.) should be under Orange River/Northern Cape region",
+        "region_slug": "northern-cape",
+        "appellation_name": "Upington",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Missing major regions: Northern Cape (should be L1), Little Karoo (should be L2 under Western Cape), Olifants River (should be L2 under Western Cape)",
+        "region_slug": "western-cape",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Darling should be under Swartland as it's part of that district",
+        "region_slug": "swartland",
+        "appellation_name": "Darling",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Wellington should be under Paarl region as it's adjacent and similar terroir",
+        "region_slug": "paarl",
+        "appellation_name": "Wellington",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Franschhoek should be under Paarl region as it's part of that district traditionally",
+        "region_slug": "paarl",
+        "appellation_name": "Franschhoek",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Tulbagh should be under Breede River Valley or its own L2 region",
+        "region_slug": "breede-river-valley",
+        "appellation_name": "Tulbagh",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Klein Karoo and Olifants River regions are currently attributed as appellations to Western Cape but should be separate L2 regions",
+        "region_slug": "western-cape",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "South Africa's structure has significant issues. Many important regions are missing (Northern Cape, Klein Karoo as L2). Several districts are catch-all when they should be attributed to named regions. The Western Cape catch-all has major regions like Klein Karoo and Olifants River that should be separate L2 regions. Orange River valley appellations need proper regional structure."
+  },
+  {
+    "country": "Argentina",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "move_appellation",
+        "description": "San Rafael is a major subregion of Mendoza, should have its own L2 region rather than being attributed to Mendoza L1",
+        "region_slug": "mendoza",
+        "appellation_name": "San Rafael",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Agrelo is part of Luján de Cuyo subregion",
+        "region_slug": "lujan-de-cuyo",
+        "appellation_name": "Agrelo",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Las Compuertas is part of Luján de Cuyo subregion",
+        "region_slug": "lujan-de-cuyo",
+        "appellation_name": "Las Compuertas",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "flag_review",
+        "description": "Río Negro and Neuquén are major Patagonian wine regions that should be L2 subregions, but need specific appellations identified",
+        "region_slug": "patagonia",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Catamarca province produces wine but appears to be missing from the hierarchy",
+        "region_slug": "argentina",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "Argentina's structure is generally well-organized with proper hierarchy for major regions like Mendoza. Main issues are some appellations on wrong level (Agrelo, Las Compuertas should be under Luján de Cuyo) and San Rafael needs its own L2 region. Patagonia could benefit from L2 subregions for Río Negro and Neuquén. Missing Catamarca province entirely."
+  },
+  {
+    "country": "Switzerland",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "flag_review",
+        "description": "Vaud should be structured as L1 with L2 sub-regions (La Côte, Lavaux, Chablais) rather than having all AOCs directly attributed",
+        "region_slug": "vaud",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Missing important Three Lakes region (Vully AOC spans Vaud/Fribourg border)",
+        "region_slug": "vaud",
+        "appellation_name": "Vully",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Several regions lack proper polygon boundaries despite being major wine areas",
+        "region_slug": "geneva",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Catch-all cantonal appellations for minor wine regions may be appropriate given limited production",
+        "region_slug": "catch-all",
+        "severity": "auto_fix"
+      }
+    ],
+    "notes": "Swiss wine structure generally correct but Vaud needs sub-regionalization. The major wine cantons (Valais, Vaud, Geneva, Ticino, Neuchâtel) are properly represented. Minor cantonal catch-alls are reasonable for limited production areas. Missing polygon boundaries for some key regions should be addressed."
+  },
+  {
+    "country": "Germany",
+    "overall_assessment": "pass",
+    "corrections": [],
+    "notes": "German wine region structure is correctly implemented. All 13 anbaugebiete (wine regions) are properly represented as L1 regions with no hierarchical subdivision, which matches German wine law structure. The Mosel region contains comprehensive einzellage and grosslage appellations as expected. Other regions like Baden, Württemberg, Rheingau, Sachsen, and Saale-Unstrut appropriately show only the anbaugebiet designation, indicating they may have fewer detailed appellation mappings in the source data. The detailed appellation lists for Pfalz, Rheinhessen, Nahe, Ahr, and Mittelrhein demonstrate proper attribution to their respective regions. No catch-all appellations present, and boundary derivation from appellations is the appropriate method for these legally-defined wine regions."
+  },
+  {
+    "country": "Austria",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "move_appellation",
+        "description": "Carnuntum DAC should be moved to its own L2 region under Niederösterreich, as it's a distinct and important wine region",
+        "region_slug": "niederoesterreich",
+        "appellation_name": "Carnuntum",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Thermenregion DAC should be moved to its own L2 region under Niederösterreich, as it's a distinct and important wine region",
+        "region_slug": "niederoesterreich",
+        "appellation_name": "Thermenregion",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Wagram DAC should be moved to its own L2 region under Niederösterreich, as it's a distinct and important wine region",
+        "region_slug": "niederoesterreich",
+        "appellation_name": "Wagram",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Traisental DAC should be moved to its own L2 region under Niederösterreich, as it's a distinct and important wine region",
+        "region_slug": "niederoesterreich",
+        "appellation_name": "Traisental",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Consider creating L2 subregions for Burgenland DACs (Mittelburgenland, Eisenberg, Leithaberg, Neusiedlersee) as they are distinct terroirs",
+        "region_slug": "burgenland",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Consider creating L2 subregions for Steiermark DACs (Südsteiermark, Weststeiermark, Vulkanland Steiermark) as they are distinct terroirs",
+        "region_slug": "steiermark",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "The Austrian wine region structure is mostly correct but inconsistent in how DAC appellations are handled. Niederösterreich properly separates major DACs like Wachau, Weinviertel, Kamptal, and Kremstal into L2 regions, but leaves other important DACs (Carnuntum, Thermenregion, Wagram, Traisental) at the L1 level. Similarly, Burgenland and Steiermark could benefit from L2 subregions for their respective DACs. The boundary sources look appropriate with EU PDO data for established regions."
+  },
+  {
+    "country": "Portugal",
+    "overall_assessment": "major_issues",
+    "corrections": [
+      {
+        "type": "move_appellation",
+        "description": "Beira Interior is a major DOP region that should have its own region structure, not be catch-all",
+        "region_slug": "new-beira-interior",
+        "appellation_name": "Beira Interior",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Trás-os-Montes is a significant regional wine area that warrants its own region",
+        "region_slug": "new-tras-os-montes",
+        "appellation_name": "Trás-os-Montes",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Távora-Varosa is a DOP that should be placed in a Beira/Central region or get its own region",
+        "region_slug": "dao",
+        "appellation_name": "Távora-Varosa",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Lafões DOP is geographically close to Dão and should be grouped there",
+        "region_slug": "dao",
+        "appellation_name": "Lafões",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Encostas d'Aire is in the Lisboa/Estremadura area and should be placed there",
+        "region_slug": "lisboa",
+        "appellation_name": "Encostas d'Aire",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "flag_review",
+        "description": "Missing major wine region Vinhos Verdes sub-regions - should consider L2 structure for Vinho Verde with sub-regions like Monção e Melgaço, Lima, Cávado, etc.",
+        "region_slug": "vinho-verde",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Missing Península de Setúbal as regional name - currently just 'Setúbal' which is more specific",
+        "region_slug": "setubal",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "Portugal's structure is missing several important wine regions (Beira Interior, Trás-os-Montes) and has significant appellations as catch-all. The Vinho Verde region particularly needs sub-regional structure. Most catch-all appellations represent legitimate DOP regions that should be properly placed."
+  },
+  {
+    "country": "New Zealand",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "move_appellation",
+        "description": "Auckland region appellations should be consolidated into dedicated Auckland region rather than catch-all North Island",
+        "region_slug": "north-island",
+        "appellation_name": "Auckland",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Auckland subregions (Kumeu, Matakana, Waiheke Island) should move to dedicated Auckland region",
+        "region_slug": "north-island",
+        "appellation_name": "Kumeu",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Northland is a distinct wine region that should have its own L2 region rather than being on North Island catch-all",
+        "region_slug": "north-island",
+        "appellation_name": "Northland",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Waitaki Valley is geographically in Central Otago wine region and should be attributed there",
+        "region_slug": "south-island",
+        "appellation_name": "Waitaki Valley North Otago",
+        "severity": "needs_review"
+      },
+      {
+        "type": "rename_region",
+        "description": "Should be 'Wairarapa' as this is the broader regional name, with Martinborough as the key subregion",
+        "region_slug": "martinborough",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "New Zealand structure is mostly sound with official IPONZ boundaries. Main issues are missing dedicated regions for Auckland and Northland on North Island, and some appellations on wrong regional levels. The island-level catch-all appellations are appropriate. Waitaki Valley attribution needs review as it's more associated with Central Otago viticulturally."
+  },
+  {
+    "country": "Hungary",
+    "overall_assessment": "major_issues",
+    "corrections": [
+      {
+        "type": "move_appellation",
+        "description": "Mór is a well-known district that should be attributed to Pannonhalma region as they are geographically adjacent in Transdanubia",
+        "region_slug": "pannonhalma",
+        "appellation_name": "Mór / Móri",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Neszmély is geographically close to the Danube bend area and should likely be attributed to a Transdanubian region, possibly Pannonhalma",
+        "region_slug": "pannonhalma",
+        "appellation_name": "Neszmély / Neszmélyi",
+        "severity": "needs_review"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Etyek-Buda is located near Budapest and Lake Balaton, should be attributed to Lake Balaton region",
+        "region_slug": "lake-balaton",
+        "appellation_name": "Etyek-Buda / Etyek-Budai",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Tolna is in southern Transdanubia and should be attributed to Szekszárd region as they are geographically adjacent",
+        "region_slug": "szekszard",
+        "appellation_name": "Tolna / Tolnai",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Pécs is in southern Transdanubia near Villány and should be attributed to Villány region",
+        "region_slug": "villany",
+        "appellation_name": "Pécs",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Hajós-Baja is in the southern Great Plain near Szekszárd and should be attributed to Szekszárd region",
+        "region_slug": "szekszard",
+        "appellation_name": "Hajós-Baja",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Bükk is in northern Hungary near Eger and should be attributed to Eger region",
+        "region_slug": "eger",
+        "appellation_name": "Bükk / Bükki",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "move_appellation",
+        "description": "Zala is in western Transdanubia near Lake Balaton and should be attributed to Lake Balaton region",
+        "region_slug": "lake-balaton",
+        "appellation_name": "Zala / Zalai",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "flag_review",
+        "description": "Multiple Great Plain appellations (Kunság, Soltvadkerti, Csongrád, Monor, Izsáki) are in catch-all - may need a dedicated Great Plain region",
+        "region_slug": "catch-all",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "Hungary's wine regions are well-represented but many important districts are in catch-all appellations. The Great Plain (Alföld) appears to need its own region for the many districts there. Most corrections move geographically logical districts to their nearest major wine regions."
+  },
+  {
+    "country": "Greece",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "flag_review",
+        "description": "Messenikola appellation attribution needs verification - this may belong to Thessaly rather than Central Greece",
+        "region_slug": "central-greece",
+        "appellation_name": "Messenikola",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Missing important wine regions like Thessaly and Thrace that should have their own L1 regions",
+        "region_slug": "central-greece",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "Greek wine regions are generally well-structured with proper geographic clustering. The major wine-producing areas are represented, though some appellations like Rapsani and Messenikola might be better served by a dedicated Thessaly region. All island groups are appropriately separated, and the Peloponnese and Macedonia regions contain their expected appellations. The flat L1-only structure works for Greece's relatively straightforward geography, though consideration could be given to adding Thessaly as a separate region."
+  },
+  {
+    "country": "Romania",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "flag_review",
+        "description": "Banat and Crișana regions each have both a regional and specific appellation with the same name - may indicate data duplication",
+        "region_slug": "banat",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Crișana and Banat regions each have both a regional and specific appellation with the same name - may indicate data duplication",
+        "region_slug": "crisana",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "Overall structure aligns well with Romanian wine geography. The seven regions represent the major historical wine regions of Romania correctly. All appellations appear properly attributed to their respective regions. Minor concern about potential data duplication where region names match appellation names in Banat and Crișana - this could indicate either broad regional appellations or data entry issues that should be verified."
+  },
+  {
+    "country": "Slovakia",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "rename_region",
+        "description": "Use more internationally recognizable name for the famous Tokaj region",
+        "region_slug": "tokaj-slovakia",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "flag_review",
+        "description": "Slovakia has a two-tier system with wine regions and subregions - consider if L2 subregions should be added under these L1 regions",
+        "region_slug": "malokarpatska",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "Slovakia's wine region structure appears well-organized with the six main wine regions properly represented. The regions follow Slovakia's official wine classification system. Boundaries derived from appellations should be accurate. Main concern is whether the system should include L2 subregions, as Slovak wine law recognizes subregions within the main regions. The Tokaj region name could be clarified for international recognition."
+  },
+  {
+    "country": "Georgia",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "flag_review",
+        "description": "Kakheti boundary has no polygon despite being the most important wine region with 21 appellations",
+        "region_slug": "kakheti",
+        "severity": "needs_review"
+      },
+      {
+        "type": "rename_region",
+        "description": "Should be 'Racha-Lechkhumi and Kvemo Svaneti' to match official Georgian wine region naming",
+        "region_slug": "racha-lechkhumi",
+        "severity": "auto_fix"
+      }
+    ],
+    "notes": "Good coverage of Georgia's major wine regions. All appellations are correctly attributed to their respective regions. The structure matches Georgian wine geography well with Kakheti containing most premium appellations (Mukuzani, Tsinandali, Kindzmarauli). Only concerns are Kakheti's missing boundary polygon and the slightly abbreviated region name for Racha-Lechkhumi."
+  },
+  {
+    "country": "Bulgaria",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "rename_region",
+        "description": "Should be 'Black Sea Region' to match standard Bulgarian wine region nomenclature and avoid confusion with the sea itself",
+        "region_slug": "black-sea-bulgaria",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "flag_review",
+        "description": "Rose Valley is primarily known for rose oil production. Verify if this is a legitimate wine region or if these appellations should be redistributed to Thracian Lowland or Danubian Plain based on geographic location",
+        "region_slug": "rose-valley",
+        "severity": "needs_review"
+      },
+      {
+        "type": "smooth_boundary",
+        "description": "Derived boundaries from scattered appellations may have gaps - consider using ST_ConvexHull for more coherent regional boundaries",
+        "region_slug": "danubian-plain",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "smooth_boundary",
+        "description": "Derived boundaries from scattered appellations may have gaps - consider using ST_ConvexHull for more coherent regional boundaries",
+        "region_slug": "thracian-lowland",
+        "severity": "auto_fix"
+      }
+    ],
+    "notes": "Bulgaria's 5 main wine regions are correctly identified and match the official wine region structure. The flat hierarchy is appropriate as Bulgaria doesn't have established sub-regions in wine education. Main concerns are the Rose Valley region legitimacy and boundary smoothing for the large regions with many scattered appellations."
+  },
+  {
+    "country": "Japan",
+    "overall_assessment": "major_issues",
+    "corrections": [
+      {
+        "type": "flag_review",
+        "description": "Missing critical wine regions - Koshu Valley should be L2 under Yamanashi, and important prefectures like Okayama, Kyoto, and Shiga are absent",
+        "region_slug": "yamanashi",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Flat L1-only hierarchy doesn't reflect Japanese wine geography - should have L2 subregions within major prefectures",
+        "region_slug": "nagano",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Osaka is not a significant wine-producing prefecture - may be misattributed or administrative error",
+        "region_slug": "osaka",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "Japanese wine structure is incomplete. Missing Koshu Valley (Japan's most famous wine region within Yamanashi), and other important prefectures like Okayama, Kyoto, Shiga, and Tochigi. Current flat structure doesn't capture the prefecture → specific valley/area hierarchy that defines Japanese wine regions. Boundaries using prefecture administrative areas is appropriate, but regional selection and hierarchy need expansion."
+  },
+  {
+    "country": "Chile",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "move_appellation",
+        "description": "Secano Interior is a specific wine region that should be attributed to Central Valley Region where it geographically belongs",
+        "region_slug": "central-valley-chile",
+        "appellation_name": "Secano Interior",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "flag_review",
+        "description": "Aconcagua Region has no polygon boundary but contains important coastal appellations - needs proper boundary derivation from child appellations",
+        "region_slug": "aconcagua-region",
+        "severity": "needs_review"
+      },
+      {
+        "type": "rename_region",
+        "description": "Should be 'Valle Central' to match standard Chilean wine terminology, not 'Central Valley Region'",
+        "region_slug": "central-valley-chile",
+        "severity": "auto_fix"
+      },
+      {
+        "type": "rename_region",
+        "description": "Should be 'Sur' to match standard Chilean wine terminology, not 'Southern Region'",
+        "region_slug": "southern-region-chile",
+        "severity": "auto_fix"
+      }
+    ],
+    "notes": "Chilean wine regions are generally well-structured following the official DO hierarchy. Main issues are one catch-all appellation that belongs in Valle Central, missing boundary for Aconcagua, and region names that should match standard wine terminology rather than administrative naming."
+  },
+  {
+    "country": "Brazil",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "flag_review",
+        "description": "Serra Gaúcha has 5 appellations but no L2 subregions - consider creating subregions like Vale dos Vinhedos, Pinto Bandeira areas if these have distinct terroir characteristics",
+        "region_slug": "serra-gaucha",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Santa Catarina appears to be using state boundary rather than wine region boundary - may be too broad for a wine region",
+        "region_slug": "santa-catarina",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Vale do São Francisco region and appellation have identical names - verify if region boundary accurately represents the wine-producing area vs administrative area",
+        "region_slug": "vale-do-sao-francisco",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "Brazil's main wine regions are represented, but the structure is quite flat with no L2 subregions. Serra Gaúcha in particular has multiple important appellations that might benefit from subregional organization. Some regions may be using administrative boundaries rather than wine-specific boundaries, which could be overly broad for wine classification purposes."
+  },
+  {
+    "country": "Slovenia",
+    "overall_assessment": "pass",
+    "corrections": [],
+    "notes": "Slovenia's three-region structure correctly reflects the official wine classification. Podravje (northeast), Primorska (west), and Posavje (southeast) are the proper L1 regions as recognized by Slovenian wine law. The appellations are appropriately attributed to their respective regions. This is a relatively simple but accurate representation of Slovenian wine geography that aligns with WSET and MW expectations."
+  },
+  {
+    "country": "Moldova",
+    "overall_assessment": "minor_issues",
+    "corrections": [
+      {
+        "type": "flag_review",
+        "description": "Valul lui Traian boundary has no polygon - needs geographic verification to ensure proper coverage",
+        "region_slug": "valul-lui-traian",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "Moldova's three major wine regions are correctly identified and named as expected for WSET/MW level. The IGP appellations are properly attributed to their respective regions. Main concern is the missing polygon boundary for Valul lui Traian, which could affect wine attribution accuracy in that southern region."
+  },
+  {
+    "country": "Canada",
+    "overall_assessment": "major_issues",
+    "corrections": [
+      {
+        "type": "flag_review",
+        "description": "Missing critical L2 regions - Niagara Peninsula should be its own L2 region with sub-appellations, not lumped at L1 Ontario level",
+        "region_slug": "ontario",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Missing Okanagan Valley as L2 region - this is BC's most important wine region and should have its own L2 with sub-appellations",
+        "region_slug": "british-columbia",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Missing Vancouver Island as potential L2 region - significant enough wine region to warrant its own L2",
+        "region_slug": "british-columbia",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Structure needs complete reorganization - currently all appellations sit at L1 level when many should roll up through L2 regions",
+        "region_slug": "ontario",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "Canada's wine region structure is fundamentally flawed. Key wine regions like Niagara Peninsula and Okanagan Valley should be L2 regions with their sub-appellations properly nested beneath them. Currently everything is flattened to provincial L1 level, which doesn't reflect how wine professionals think about Canadian wine geography. This needs structural reorganization rather than simple corrections."
+  },
+  {
+    "country": "Czech Republic",
+    "overall_assessment": "pass",
+    "corrections": [],
+    "notes": "The Czech wine region structure is correctly organized with Moravia and Bohemia as the two main wine regions. All appellations are properly attributed to their respective regions, with Moravia containing the larger concentration of subregions (Slovácká, Znojemská, Mikulovská, Velkopavlovická) and specific appellations, while Bohemia contains the northern subregions (Litoměřická, Mělnická). The regional appellations 'Morava' and 'Čechy' appropriately correspond to their parent regions. Boundary derivation from appellations is appropriate given the relatively small and well-defined nature of Czech wine regions."
+  },
+  {
+    "country": "Croatia",
+    "overall_assessment": "major_issues",
+    "corrections": [
+      {
+        "type": "flag_review",
+        "description": "Croatian wine structure requires L2 regions. The current flat structure with subregions as appellations doesn't match the hierarchical nature of Croatian wine geography.",
+        "region_slug": "coastal-croatia",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Istria (Hrvatska Istra) should be its own L2 region under Coastal Croatia - it's a distinct and important wine region",
+        "region_slug": "coastal-croatia",
+        "appellation_name": "Hrvatska Istra",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Dalmatia subregions (Sjeverna, Srednja i Južna, Dalmatinska zagora) should likely be consolidated into a single Dalmatia L2 region",
+        "region_slug": "coastal-croatia",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Slavonija should be its own L2 region under Continental Croatia - it's Croatia's most important continental wine region",
+        "region_slug": "continental-croatia",
+        "appellation_name": "Slavonija",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Multiple 'region' level appellations (Primorska Hrvatska, Zapadna kontinentalna Hrvatska, Istočna kontinentalna Hrvatska) suggest these may be administrative divisions that don't align with wine geography",
+        "region_slug": "coastal-croatia",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "Croatia's wine regions are structured incorrectly. The current flat hierarchy doesn't reflect the natural wine geography. Key regions like Istria, Dalmatia, and Slavonija should be L2 regions with their subregions and appellations properly nested underneath. The presence of multiple 'region' level appellations suggests confusion between administrative and wine-geographic boundaries."
+  },
+  {
+    "country": "United Kingdom",
+    "overall_assessment": "major_issues",
+    "corrections": [
+      {
+        "type": "flag_review",
+        "description": "Darnibole is not a recognized English wine appellation - likely data error or typo",
+        "region_slug": "england",
+        "appellation_name": "Darnibole",
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "Missing Scotland region - Scottish wines exist and should have their own L1 region",
+        "region_slug": null,
+        "severity": "needs_review"
+      },
+      {
+        "type": "flag_review",
+        "description": "UK wine structure may need L2 subregions - consider South East England, South West England, etc. for better organization",
+        "region_slug": "england",
+        "severity": "needs_review"
+      }
+    ],
+    "notes": "UK wine regions are overly simplified. England has distinct sub-regions (Kent, Surrey, Hampshire, etc.) that would benefit from L2 structure. The 'Darnibole' appellation appears to be an error - not found in any UK wine documentation. Scotland is missing entirely despite having emerging wine production. The current flat structure doesn't reflect the geographical and qualitative distinctions MW students would expect."
+  }
+]

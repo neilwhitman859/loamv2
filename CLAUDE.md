@@ -60,15 +60,27 @@ The database has two layers:
 ### Reference Tables (complete)
 Countries (62), regions (373 — 62 catch-all, 215 L1 named, 96 L2), appellations (3,206), grapes (709), varietal categories (154), source types (27), publications (68), farming certifications (18), biodiversity certifications (7), soil types (39).
 
-Regions rebuilt from scratch (2026-03-12): two-level hierarchy sourced from WSET L3 spec + Federdoc/MAPA/official wine authorities. 81 new L1 regions added (2026-03-12) to cover appellations in all countries: 25 US states, 10 Swiss cantons, 6 Spanish autonomous communities, 6 Argentine provinces, 6 Slovak wine regions, 5 Austrian provinces, 5 Hungarian districts, 3 Moldovan IGPs, 2 Portuguese macro-regions, 2 Georgian regions, 2 Greek regions, 2 Romanian regions, 2 Brazilian regions, 2 Japanese prefectures, 1 each for Chile, Australia, Canada.
+Regions rebuilt from scratch (2026-03-12): two-level hierarchy sourced from WSET L3 spec + Federdoc/MAPA/official wine authorities. All X-Wines leftover regions purged. Data file: `data/regions_rebuild.json`.
 
-Appellation→region attribution 96.4% complete (3,089/3,206). Three-pass strategy: Pass 1 containment trace (1,915), Pass 3 direct lookup (1,174). 117 remain on catch-all — South Africa outside WC (20), Hungary minor districts (15), Morocco (15), US multi-state AVAs (14), Swiss minor cantons (11), plus small countries without regions (Cyprus, Belgium, Netherlands, Serbia, etc.).
+Appellation→region attribution 96.4% complete (3,089/3,206). Three-pass strategy: Pass 1 containment trace (1,915), Pass 3 direct lookup (1,174). 117 remain on catch-all by design. L2 attribution fixed (2026-03-12): 33 empty L2 regions resolved — appellations moved to lowest-level region (e.g., Napa Valley AVAs → Napa County L2, not California L1). 0 empty L2 regions remain.
 
 ### Insights (partially populated)
 Grape insights (707), region insights (202 — 126 deleted with leftover regions), appellation insights (82), country insights (62). Producer insights and wine insights are empty.
 
 ### Geographic Data
-Geographic boundaries (2,937 — 47 deleted with leftover regions) with PostGIS geometry. Appellation containment hierarchy (2,158 relationships).
+Geographic boundaries with PostGIS geometry. Appellation containment hierarchy (2,158 relationships).
+
+**Region boundaries (2026-03-12):** 310/311 named regions have geographic data (99.7%). Full rebuild from scratch:
+- **Official:** 30 regions (copied from wine authority appellation boundaries — UC Davis, Wine Australia, IPONZ, Eurac)
+- **Derived:** 181 regions (ST_Union of child appellation polygons — most accurate for wine platform)
+- **Approximate:** 81 regions (Nominatim admin boundaries + EU PDO copied from appellations)
+- **Geocoded:** 18 regions (centroid-only — mostly SA wine wards with no polygon source)
+- **No data:** 1 (South Eastern Australia — cross-state super-zone, skipped by design)
+
+**Wine expert Sonnet review completed:** All 311 regions reviewed by country. Report at `data/region_review_report.json`. Key findings: 115 potential corrections identified (38 auto-fixable, 77 need review). Main structural issues flagged in South Africa (missing regions), Canada (needs L2 subregions), Portugal (missing regions), Croatia/Hungary (needs restructuring). Germany, Slovenia, Czech Republic passed with no issues.
+
+Scripts: `scripts/geocode_regions.mjs` (Nominatim geocoding), `scripts/fix_region_geocodes.mjs` (Swiss/AR fixes), `scripts/review_region_boundaries.mjs` (Sonnet review).
+Data files: `data/region_nominatim_queries.json` (Nominatim query overrides), `data/region_review_report.json` (full Sonnet review report).
 
 ### What's Not There Yet
 - Most insight tables empty (wine, producer, soil, water body)
@@ -82,7 +94,7 @@ Geographic boundaries (2,937 — 47 deleted with leftover regions) with PostGIS 
 
 ## Current Focus
 
-Region rebuild complete. Next: appellation→region mapping (reassign 2,828 appellations from catch-all to proper named regions).
+Region boundaries complete (310/311 regions, 99.7%). Sonnet review identified 115 items for follow-up — next step is triaging the review report and applying the safe corrections.
 
 ### Open Questions
 - Producer import strategy: how to systematically populate canonical producer/wine/vintage tables

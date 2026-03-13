@@ -113,3 +113,12 @@ Added two new L1 regions to cover 3 peripheral AOCs that had no home: Lorraine (
 
 ### 2026-03-12: Catch-alls are for unappellated wines only
 All wines with an official appellation should be in a named region, even if the region is small. Catch-all regions should be reserved for wines without an official appellation (Vin de France, etc.), not as a dumping ground for appellations in minor wine areas. This means creating regions even for small/marginal wine-producing areas if they have official appellations in our database.
+
+### 2026-03-12: Appellations on lowest-level region, rolls up naturally
+Appellations should be attributed to the most specific (lowest-level) region they can accurately belong to. If Oakville AVA is in Napa Valley L2, it's implicitly in California L1 — no need to put it on L1 directly. Fixed 33 empty L2 regions caused by flat Pass 3 attribution pointing at L1s.
+
+### 2026-03-12: Region boundaries rebuilt from scratch with 4 confidence tiers
+Deleted all 27 existing region boundaries and rebuilt consistently. Four tiers: `official` (copied from wine authority appellation boundary), `derived` (NEW — ST_Union of child appellation polygons), `approximate` (Nominatim admin boundaries), `geocoded` (centroid-only). Derived boundaries preferred for wine platform — they represent actual wine territory better than admin boundaries. 250KB JSON size cap with progressive simplification.
+
+### 2026-03-12: Regions are qualitative, not legally defined
+Unlike appellations which have legal boundaries, regions are qualitative approximations of wine-producing areas as a wine expert would understand them. It's acceptable (and often better) to include areas that are clearly part of a region even if no specific appellation polygon covers them. This distinction is important for boundary smoothing and Sonnet review decisions.
