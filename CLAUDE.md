@@ -14,6 +14,9 @@ Loam is a wine intelligence platform. Users look up a wine and get the full stor
 - `docs/PRINCIPLES.md` — Product philosophy. Read when making judgment calls about what to build or how.
 - `docs/DECISIONS.md` — Append-only log of human decisions with reasoning. Read when you need to understand why something was done a certain way. Never re-litigate settled decisions without the user raising it.
 - `docs/VOICE.md` — Voice, tone, and food pairing guidance for all AI-generated content. Read before writing any enrichment prompts or insight content.
+- `docs/ROADMAP.md` — Phased development plan. Read at session start to know what phase we're in and what's next.
+- `docs/LWIN_STRATEGY.md` — LWIN integration research and three-layer data strategy. Read when working on wine import.
+- `docs/SCHEMA_ASSESSMENT.md` — Deep schema assessment with implementation spec (Part B). Read when doing schema work.
 - `docs/WORKFLOW.md` — Human-facing session checklist. You don't need to read this, but follow the behavioral instructions below.
 
 ---
@@ -94,19 +97,27 @@ Data files: `data/region_nominatim_queries.json` (Nominatim query overrides), `d
 
 ## Current Focus
 
-Region boundaries and Sonnet review triage complete (323/324 regions, 99.7%). All actionable items applied. Reference data layer is mature — ready for enrichment or producer pipeline work.
+**Phase 1: Foundation** — Schema hardening + reference data completion + trial producer imports. See `docs/ROADMAP.md` for full phased plan.
 
-### Open Questions
-- Producer import strategy: how to systematically populate canonical producer/wine/vintage tables
+### Strategic Context (established 2026-03-13)
+- **Three-layer data strategy:** LWIN (identity) → Government registries (breadth) → Producer direct (depth). No crowdsourced platforms.
+- **Tiered wine experience:** Tier 1 (fully enriched) → Tier 2 (AI-contextualized) → Tier 3 (just identified). Product handles each tier explicitly.
+- **LWIN first, then TTB COLA:** LWIN establishes the dedup backbone. COLA enriches and expands.
+- **Vertical slice:** California + Burgundy as first enrichment targets.
+- **Enrichment on demand:** Possible architecture — keep most wines at Tier 3, enrich to Tier 2 when a user looks up a wine. Needs further design.
+
+### Next Steps
+1. Review schema assessment decisions item by item (start of Phase 1)
+2. Execute schema migrations (21 new tables, ~45 columns)
+3. Populate reference data (appellation_grapes, grape parentage, classifications, etc.)
+4. Trial producer imports: Moone Tsai, Fort Ross, López de Heredia, + Burgundy TBD, Tuscany TBD
+
+### Open Questions (deferred)
+- Data freshness strategy (how/when to re-import)
+- Dedup strategy across import sources
+- Enrichment pipeline architecture (batch vs on-demand, cost model)
 - Data licensing for scores (Wine Spectator, Parker, CellarTracker)
-- Real-time vs batch enrichment for the frontend
-- Frontend timeline: soft goal of something live for friends, but data quality comes first
-
-### Enrichment Priority (when ready)
-1. AI insights for existing reference entities (appellations, grapes, regions, countries)
-2. Geographic enrichment (appellation lat/lng, water bodies, soils)
-3. Weather data (Open-Meteo, needs lat/lng first)
-4. Scores and pricing (needs data source strategy)
+- TTB COLA access strategy (COLA Cloud API vs direct scraping, cost)
 
 ---
 

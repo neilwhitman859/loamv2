@@ -143,3 +143,36 @@ Created 13 new regions based on Sonnet review recommendations and WSET L3 alignm
 
 ### 2026-03-13: Portugal catch-all edge cases left as-is
 Encostas d'Aire, Lafões, and Távora-Varosa remain on Portugal catch-all. Each sits geographically between two existing regions (Lisboa/Bairrada, Dão/Vinho Verde, Dão/Douro respectively). Forcing them into either adjacent region would be equally inaccurate.
+
+### 2026-03-13: LWIN as canonical external wine identifier
+LWIN (Liv-ex Wine Identification Number) adopted as the industry-standard cross-reference for Loam. CC BY 4.0 licensed, 187K wines, 37K producers. LWIN-7 maps to `wines`, LWIN-11 maps to `wine_vintages`. Gets first-class columns on both tables rather than going through the external_ids table. Decision documented in `docs/LWIN_STRATEGY.md`.
+
+### 2026-03-13: Three-layer data strategy — no crowdsourced platforms
+All data sources must be first-hand or regulatory. No Vivino, Wine-Searcher, or CellarTracker data. Layer 1: LWIN (identity backbone). Layer 2: Government registries — TTB COLA, EU e-labels, INAO, Wine Australia, etc. (catalog completeness). Layer 3: Producer direct — website scraping for winemaking depth, terroir narrative, AI synthesis (the Loam value-add).
+
+### 2026-03-13: Schema assessment completed — 21 new tables, ~45 new columns
+Deep expert assessment of every schema gap before wine import phase. Organized into Tier 0 (structural, hardest to change later) through Tier 3 (defer). Full implementation spec with user decisions in `docs/SCHEMA_ASSESSMENT.md` Part B. All schema work to be completed before any mass wine import.
+
+### 2026-03-13: Phased roadmap adopted
+Six phases: (1) Foundation — full schema hardening + reference data completion + trial producer imports, (2) LWIN import — 187K wine skeletons as identity backbone, (3) TTB COLA + other sources — everyday wine breadth (needs dedicated source research session first), (4) Vertical slice enrichment — California + Burgundy from Tier 3 to Tier 2/1, (5) Label scanner — OCR + fuzzy match, (6) Frontend. Not rushed — "fast is slow, slow is fast."
+
+### 2026-03-13: Tiered wine experience model
+Wines have different data completeness levels and the product handles each explicitly: Tier 1 (fully enriched — producer-scraped, full terroir/winemaking story), Tier 2 (identified + AI-contextualized from reference data), Tier 3 (just identified — name/place skeleton from LWIN or TTB COLA). Unknown wines show "we don't have this one yet."
+
+### 2026-03-13: LWIN import before TTB COLA
+LWIN goes first because it establishes the dedup backbone. COLA wines then match against existing LWIN records (enriching with grape data, label images, importer info) and create new records only for wines LWIN doesn't cover. One-directional matching against an established catalog is cleaner than bilateral dedup.
+
+### 2026-03-13: Make varietal_category_id nullable on wines
+Rather than creating an "Unclassified" placeholder varietal category for LWIN imports (which have no grape data), make the FK nullable. NULL means "we don't know yet" — honest and clean. Populated when enrichment fills in grape data.
+
+### 2026-03-13: Trial producer picks for schema stress test
+Before mass import, scrape 4-5 new producer websites to verify the schema handles diverse wine data. Picks: Moone Tsai (CA — small/boutique), Fort Ross (CA — small US vineyard), López de Heredia (Spain — traditional Rioja, Reserva/Gran Reserva system), plus a Burgundy producer and a Tuscan producer (TBD). Each exercises different schema features.
+
+### 2026-03-13: Vertical slice — California + Burgundy
+First enrichment targets: all wines in California (breadth, everyday + fine wine) and Burgundy (depth, vineyard-level classification, négociant vs domaine, hardest terroir test). If Loam can tell the Burgundy story well, it can handle anything.
+
+### 2026-03-13: Enrichment on demand as possible architecture
+Rather than batch-enriching 187K wines, keep most at Tier 3 and enrich to Tier 2 on demand when a user looks up a wine. Reference data is already in the DB — Claude can synthesize appellation context + grape profile in real-time. More sustainable than batch enrichment. Needs further design and planning.
+
+### 2026-03-13: Workflow preferences
+Longer focused sessions. Collaborative decision-making (Claude proposes, user guides). Trust Claude to execute specs and report results. Thorough over fast — do it right the first time.
