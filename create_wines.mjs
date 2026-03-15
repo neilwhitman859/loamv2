@@ -456,7 +456,7 @@ async function main() {
       vintages.push({
         wine_id: wineId,
         vintage_year: year,
-        alcohol_pct: wd.abv ? parseFloat(wd.abv) : null,
+        abv: wd.abv ? parseFloat(wd.abv) : null,
       });
     }
 

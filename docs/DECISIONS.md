@@ -310,3 +310,13 @@ Evaluated whether complex classification systems (Italian DOCG/DOC/Classico/Rise
 4. **Industry knowledge** (49): Common abbreviations (CdP, CDR), saint abbreviations (St-Emilion), Italian short forms (Brunello → Brunello di Montalcino, Amarone → Amarone della Valpolicella).
 Result: KL appellation resolution improved from 10.8% (159/1,468) to 67.0% (983/1,468). Remaining 485 unmatched are genuinely not appellation names (Champagne wines starting with "Brut", Italian IGT branded wines, generic color terms).
 EU GIview/eAmbrosia has no public API (SPA-only). Italian Masaf wine registry was down. Eurac PDO_EU_cat.csv has basic category data but not granular tipologie.
+
+### 2026-03-15: Schema sharpening — 8 fixes for data integrity and normalization
+1. **Color standardized to ASCII 'rose'** (not 'rosé') — matches varietal_categories convention. CHECK constraint added on wines.color (red/white/rose/orange).
+2. **CHECK constraints added** on wines.wine_type (table/sparkling/dessert/fortified), wines.effervescence (still/sparkling/semi_sparkling), producers.producer_type (estate/negociant/cooperative/virtual/corporate).
+3. **External ID columns dropped from wine_vintages** — vivino_id, wine_searcher_id, cellartracker_id (all 0 rows populated). external_ids table is the canonical home.
+4. **Redundant alcohol columns dropped** — alcohol_pct was identical to abv in all 132 rows, alcohol_level (1-5 xwines scale) had 0 rows. Keep abv only.
+5. **Winemaking columns dropped from wines** — oak_origin, yeast_type, fining, filtration, closure, fermentation_vessel moved from wines to wine_vintages only. 36 wines had data → consolidated into wines.vinification_notes. Also dropped _source FK columns for aspect/slope/fog_exposure/vine_planted_year (source tracking belongs on entity_attributes).
+6. **Redundant vineyard columns dropped from wines** — vineyard_id (0 rows), vineyard_name (9 rows, all had wine_vineyards links). wine_vineyards join table is canonical.
+7. **wines.latitude/longitude dropped** — 0 rows populated, conceptually misplaced. Wines get geography from appellation/region/vineyard. Producer lat/lon is for winery location.
+8. **Scores dedup index added** — UNIQUE on (wine_id, vintage_year, publication_id, critic, review_date) with COALESCE for nulls. Prevents duplicate score inserts while allowing multiple critics per publication and re-reviews.

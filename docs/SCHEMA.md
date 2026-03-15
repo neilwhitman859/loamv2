@@ -126,7 +126,7 @@ PostGIS geometry for map display and spatial queries. Links to one of country, r
 | appellation_id | uuid | FK appellations, nullable | |
 | website_url | text | nullable | |
 | year_established | integer | nullable | |
-| producer_type | text | nullable | estate/negociant/cooperative/custom_crush/virtual/corporate |
+| producer_type | text | nullable, CHECK | estate/negociant/cooperative/virtual/corporate |
 | parent_company | text | nullable | |
 | hectares_under_vine | decimal | nullable | |
 | total_production_cases | integer | nullable | |
@@ -191,39 +191,24 @@ PK: composite (producer_id, region_id). For multi-region producers.
 | varietal_category_id | uuid | FK varietal_categories, nullable | Inferred from blend when available |
 | varietal_category_source | uuid | FK source_types, nullable | |
 | label_designation | text | nullable | Raw label text |
-| effervescence | text | nullable | still/sparkling/semi_sparkling |
+| effervescence | text | nullable, CHECK | still/sparkling/semi_sparkling |
 | is_nv | boolean | NOT NULL default false | |
-| vineyard_name | text | nullable | Specific vineyard if named |
 | food_pairings | text | nullable | From producer/scraping |
-| latitude | decimal | nullable | Map/elevation |
-| longitude | decimal | nullable | |
 | elevation_m | integer | nullable | API-derived |
 | aspect | text | nullable | AI-enriched |
-| aspect_source | uuid | FK source_types, nullable | |
 | slope | text | nullable | AI-enriched |
-| slope_source | uuid | FK source_types, nullable | |
 | fog_exposure | text | nullable | AI-enriched |
-| fog_exposure_source | uuid | FK source_types, nullable | |
 | vine_planted_year | integer | nullable | |
 | vine_age_description | text | nullable | |
-| vine_planted_year_source | uuid | FK source_types, nullable | |
 | irrigation_type | text | nullable | dry_farmed/irrigated/deficit_irrigation |
 | irrigation_type_source | uuid | FK source_types, nullable | |
-| oak_origin | text | nullable | french/american/slavonian/hungarian/mixed/none |
-| yeast_type | text | nullable | native/commercial/mixed |
-| fining | text | nullable | unfined/fined/partial |
-| filtration | boolean | nullable | |
-| closure | text | nullable | cork/screwcap/diam/wax/other (house default; vintage-level override on wine_vintages) |
-| fermentation_vessel | text | nullable | barrel/stainless/concrete/amphora/foudre/mixed (house default) |
-| oak_source | uuid | FK source_types, nullable | Covers house-style fields |
-| color | text | nullable | red/white/rose/orange/amber (actual wine color, not grape color) |
-| wine_type | text | default 'table' | table/fortified/aromatized/dessert |
+| color | text | nullable, CHECK | red/white/rose/orange (ASCII 'rose' not 'rosé') |
+| wine_type | text | default 'table', CHECK | table/sparkling/dessert/fortified |
 | sweetness_level | text | nullable | dry/off-dry/medium-sweet/sweet/luscious |
 | sparkling_method | text | nullable | traditional/charmat/ancestral/transfer/carbonation |
 | sweet_method | text | nullable | botrytis/late_harvest/ice_wine/passito/fortified/vin_de_paille/cryoextraction |
 | parent_wine_id | uuid | FK wines, nullable | Second wine hierarchy |
 | wine_tier | text | nullable | grand_vin/second/third |
-| vineyard_id | uuid | FK vineyards, nullable | Links to vineyards table |
 | lwin | text | UNIQUE, nullable | LWIN-7 code (wine identity) |
 | label_image_url | text | nullable | Wine-level default label image |
 | vinification_notes | text | nullable | General winemaking approach (free text from producer/source) |
@@ -257,9 +242,7 @@ UUID PK + UNIQUE(wine_id, vintage_year). Vintage_year nullable for NV wines.
 | acidity | integer | nullable | 1-5 WSET scale |
 | tannin | integer | nullable | 1-5 |
 | body | integer | nullable | 1-5 |
-| alcohol_level | integer | nullable | 1-5 |
-| alcohol_pct | decimal | nullable | Precise percentage |
-| abv | numeric(4,1) | nullable | Alcohol by volume percentage for the vintage |
+| abv | numeric(4,1) | nullable | Alcohol by volume percentage |
 | ph | decimal | nullable | |
 | ta_g_l | decimal | nullable | Titratable acidity g/L |
 | rs_g_l | decimal | nullable | Residual sugar g/L |
@@ -292,16 +275,13 @@ UUID PK + UNIQUE(wine_id, vintage_year). Vintage_year nullable for NV wines.
 | disgorgement_date | date | nullable | NV/sparkling |
 | age_statement_years | integer | nullable | NV |
 | solera_system | boolean | default false | NV |
-| cellartracker_id | text | nullable | External ID |
-| wine_searcher_id | text | nullable | |
-| vivino_id | text | nullable | |
 | bottle_format_ml | integer | default 750 | 187/375/500/750/1500/3000/etc. |
-| closure | text | nullable | Per-vintage override of wines.closure |
-| fermentation_vessel | text | nullable | Per-vintage override |
-| oak_origin | text | nullable | Per-vintage override |
-| yeast_type | text | nullable | Per-vintage override |
-| fining | text | nullable | Per-vintage override |
-| filtration | boolean | nullable | Per-vintage override |
+| closure | text | nullable | cork/screwcap/diam/wax/other |
+| fermentation_vessel | text | nullable | barrel/stainless/concrete/amphora/foudre/mixed |
+| oak_origin | text | nullable | french/american/slavonian/hungarian/mixed/none |
+| yeast_type | text | nullable | native/commercial/mixed |
+| fining | text | nullable | unfined/fined/partial |
+| filtration | boolean | nullable | |
 | pradikat | text | nullable | kabinett/spatlese/auslese/ba/tba/eiswein |
 | maceration_days | integer | nullable | |
 | lees_aging_months | integer | nullable | |
@@ -316,9 +296,9 @@ UUID PK + UNIQUE(wine_id, vintage_year). Vintage_year nullable for NV wines.
 | metadata | jsonb | nullable | Flexible extra data |
 | created_at / updated_at / deleted_at | timestamptz | standard | |
 
-**Override pattern:** `closure`, `fermentation_vessel`, `oak_origin`, `yeast_type`, `fining`, `filtration` exist on both `wines` (house default) and `wine_vintages` (per-vintage override). When non-null on wine_vintages, it takes precedence.
+**Winemaking columns** live on `wine_vintages` only (not on wines). Use `wines.vinification_notes` for general/default winemaking approach description.
 
-**Deprecated columns** (still present, moving to wine_vintage_tasting_insights): `acidity`, `tannin`, `body`, `alcohol_level`. Moving to external_ids: `cellartracker_id`, `wine_searcher_id`, `vivino_id`.
+**Deprecated columns** (still present, moving to wine_vintage_tasting_insights): `acidity`, `tannin`, `body`.
 
 ---
 
@@ -504,7 +484,9 @@ PK: composite (producer_id, biodiversity_certification_id). certified_since/unti
 id, slug, name, country, url, type (critic_publication/community/auction_house), score_scale_min (decimal), score_scale_max (decimal), scoring_system (text: 100-point/20-point/5-star/letter/descriptive), active (boolean default true), timestamps, deleted_at
 
 ### wine_vintage_scores
-UUID PK. wine_id FK, vintage_year (nullable for NV), score, score_low, score_high, score_scale, publication_id FK, critic, tasting_note, review_text, drinking_status, blind_tasted, critic_drink_window_start/end, review_date, review_type, is_community (default false), rating_count, is_superseded (default false), url, source_id FK, discovered_at, timestamps
+UUID PK. wine_id FK, vintage_year (nullable for NV), score, score_low, score_high, score_scale, publication_id FK, critic, tasting_note, review_text, drinking_status, blind_tasted, critic_drink_window_start/end, review_date, review_type, is_community (default false), rating_count, is_superseded (default false), url, source_id FK, discovered_at, timestamps.
+
+**Dedup index:** UNIQUE on (wine_id, COALESCE(vintage_year,0), COALESCE(publication_id,'00..00'), COALESCE(critic,''), COALESCE(review_date,'1900-01-01')). Allows multiple critics per publication and re-reviews on different dates.
 
 ---
 

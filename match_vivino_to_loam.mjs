@@ -448,7 +448,6 @@ async function main() {
       .map((m) => ({
         wine_id: m.wineId,
         vintage_year: m.listing.vintage_year,
-        vivino_id: String(m.listing.vivino_vintage_id || ""),
       }));
 
     // Deduplicate by (wine_id, vintage_year) — keep first occurrence

@@ -801,7 +801,6 @@ async function insertData() {
       appellation_id: appellationId,
       varietal_category_id: varietalId,
       varietal_category_source: winerySourceId,
-      vineyard_name: latest.vineyard || null,
       metadata: {
         stags_leap_url: latest.url || null,
       },
@@ -855,7 +854,7 @@ async function insertData() {
     const { error } = await sb.from('wine_vintages').insert({
       wine_id: wineId,
       vintage_year: e.vintage,
-      alcohol_pct: e.abv || null,
+      abv: e.abv || null,
       ph: e.ph || null,
       ta_g_l: e.ta ? e.ta * 10 : null, // convert g/100ml to g/L
       duration_in_oak_months: parseOakMonths(e.aging),

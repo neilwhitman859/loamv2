@@ -652,7 +652,6 @@ async function main() {
           vintageRows.push({
             wine_id: m.wineId,
             vintage_year: year,
-            vivino_id: String(m.entry.listing.vivino_vintage_id || ""),
           });
         }
       }
@@ -1091,7 +1090,6 @@ async function main() {
         vintageRows.push({
           wine_id: entry._wineId,
           vintage_year: year,
-          vivino_id: String(l.vivino_vintage_id || ""),
         });
       }
     }

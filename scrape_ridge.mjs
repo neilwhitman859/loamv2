@@ -832,7 +832,6 @@ async function insertData() {
       appellation_id: appellationId,
       varietal_category_id: varietalId,
       varietal_category_source: winerySourceId,
-      vineyard_name: latest.vineyard || null,
       food_pairings: latest.foodPairings || null,
       yeast_type: 'Native',
       metadata: {
@@ -934,7 +933,7 @@ async function insertData() {
     const { error } = await sb.from('wine_vintages').insert({
       wine_id: wineId,
       vintage_year: w.vintage,
-      alcohol_pct: w.abv || null,
+      abv: w.abv || null,
       ph: wm.ph || null,
       ta_g_l: wm.ta || null,
       brix_at_harvest: wm.brix || null,

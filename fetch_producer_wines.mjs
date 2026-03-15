@@ -1050,7 +1050,6 @@ async function phase3() {
         vintageRows.push({
           wine_id: entry.wineId,
           vintage_year: l.vintage_year,
-          vivino_id: l.vivino_wine_id ? String(l.vivino_wine_id) : null,
         });
       }
     }
@@ -1221,7 +1220,6 @@ async function phase3() {
         exploreVintageRows.push({
           wine_id: loamWineId,
           vintage_year: p.vintage_year,
-          vivino_id: p.vivino_wine_id ? String(p.vivino_wine_id) : null,
         });
       }
     }

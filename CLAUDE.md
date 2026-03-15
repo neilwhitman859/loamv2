@@ -109,6 +109,13 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
   - Script: `scripts/seed_appellation_aliases.mjs`
   - KL appellation resolution improved: 10.8% → 67.0% (983/1,468 wines)
 
+**Schema sharpening (2026-03-15):** 8 data integrity and normalization fixes:
+- CHECK constraints added: wines.color (red/white/rose/orange), wines.wine_type, wines.effervescence, producers.producer_type
+- Color standardized: 'rosé' → 'rose' (ASCII, matches varietal_categories)
+- Dropped from wine_vintages: vivino_id, wine_searcher_id, cellartracker_id (use external_ids table), alcohol_pct, alcohol_level (redundant with abv)
+- Dropped from wines: oak_origin, yeast_type, fining, filtration, closure, fermentation_vessel + _source columns (winemaking lives on wine_vintages only; wines.vinification_notes for defaults), vineyard_id, vineyard_name (use wine_vineyards table), latitude, longitude (wines get geography from appellation/vineyard)
+- Scores dedup index: UNIQUE on (wine_id, vintage_year, publication_id, critic, review_date) with COALESCE for nulls
+
 ### Reference Data Progress (Phase 1b, 2026-03-14)
 
 **Classifications:** 13 systems, 32 levels. Audited by two independent wine expert passes. France: Bordeaux 1855 Médoc (5), Sauternes (3), Saint-Émilion (3), Graves (1), Burgundy Vineyard (2), Alsace Grand Cru (1), Champagne Cru (2), Cru Bourgeois (3), Cru Artisan (1), Provence Cru Classé (1). Germany: VDP (4). Austria: ÖTW Erste Lagen (2). Australia: Langton's (4). Systems: 11 government, 2 industry.

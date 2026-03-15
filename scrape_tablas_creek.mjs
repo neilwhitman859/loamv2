@@ -529,7 +529,7 @@ async function insertData() {
     if (e.certifications.length > 0) metadata.certifications = e.certifications;
 
     const { error } = await sb.from('wine_vintages').insert({
-      wine_id: wineId, vintage_year: e.vintage, alcohol_pct: e.abv || null,
+      wine_id: wineId, vintage_year: e.vintage, abv: e.abv || null,
       cases_produced: e.casesProduced || null,
       bottling_date: parseBottlingDate(e.bottlingDate),
       winemaker_notes: e.tastingNotes || null, vintage_notes: e.productionNotes || null,
