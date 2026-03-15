@@ -212,6 +212,7 @@ UUID PK + UNIQUE(wine_id, vintage_year). Vintage_year nullable for NV wines.
 | body | integer | nullable | 1-5 |
 | alcohol_level | integer | nullable | 1-5 |
 | alcohol_pct | decimal | nullable | Precise percentage |
+| abv | numeric(4,1) | nullable | Alcohol by volume percentage for the vintage |
 | ph | decimal | nullable | |
 | ta_g_l | decimal | nullable | Titratable acidity g/L |
 | rs_g_l | decimal | nullable | Residual sugar g/L |

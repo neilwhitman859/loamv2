@@ -218,3 +218,12 @@ Replaced `appellation_grapes.is_required` boolean with `association_type` text e
 
 ### 2026-03-14: Two-pass expert audit approach for reference data
 Established pattern: seed data from authoritative sources, then run two independent audits — (1) training data / wine expertise check for wrong/missing/questionable entries, (2) web source verification against official publications (Wine Australia, SAWIS, INAO, DWI, etc.). Compare findings, fix intersection of CRITICAL+HIGH issues immediately, park MEDIUM/LOW for later. Applied to region_grapes and country_grapes: found 120 issues (training) and 34 issues (web), with strong overlap on the critical ones. Fixed 10 deletions + 34 additions. ~90 medium/low issues parked (mostly naming conventions that belong in the display layer, not the data layer).
+
+### 2026-03-15: ABV as first-class column on wine_vintages
+ABV appears on literally every wine listing (producer, retailer, importer). Storing it in entity_attributes would require a JOIN for the most basic display. Added `abv numeric(4,1)` directly to wine_vintages. The entity_attributes system remains for less universal fields (pH, TA, oak details, etc.).
+
+### 2026-03-15: Cross-table validation audit before trial imports
+Full integrity audit before moving to Phase 1c imports: FK checks across all grape/appellation/classification/descriptor tables, label designation rule verification (German Prädikats 78 rules, Italian Riserva 23 rules, Portuguese ABV rules 14 rules), thin region grape fixes (6 removals, 20 additions), varietal category expert audit (31 grape mappings added to regional designations like Madeira/Marsala/Vinho Verde), statistical sanity checks. Three missing grapes added (Nerello Cappuccio, Mujuretuli, Tempranillo Blanco) and two wrong synonyms removed.
+
+### 2026-03-15: Cold-hardy hybrids in region_grapes
+Iowa, Minnesota, Wisconsin — replaced vinifera entries (Cab Sauv, Merlot, Cab Franc, Chardonnay) with cold-hardy hybrids (Marquette, Frontenac) that actually represent commercial production. The VIVC-sourced grapes table includes hybrids, so this is supported.

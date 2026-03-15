@@ -64,7 +64,7 @@ The database has two layers:
 - **xwines_* tables** — bulk X-Wines dataset dump (~530K wines, ~2.2M vintages, ~32K producers). Kept as reference but not actively maintained. Data quality is lower.
 
 ### Reference Tables (complete)
-Countries (62), regions (386 — 62 catch-all, 218 L1 named, 106 L2), appellations (3,205), grapes (9,690 from VIVC + 34,833 synonyms), varietal categories (154), source types (27), publications (68), farming certifications (18), biodiversity certifications (7), soil types (39).
+Countries (62), regions (386 — 62 catch-all, 218 L1 named, 106 L2), appellations (3,205), grapes (9,693 from VIVC + 34,820 synonyms), varietal categories (161 + 162 grape mappings), source types (27), publications (66), attribute definitions (73), tasting descriptors (304), farming certifications (18), biodiversity certifications (7), soil types (39).
 
 Regions rebuilt from scratch (2026-03-12): two-level hierarchy sourced from WSET L3 spec + Federdoc/MAPA/official wine authorities. All X-Wines leftover regions purged. Data file: `data/regions_rebuild.json`. Expanded (2026-03-13): 13 new regions added from Sonnet review triage — L2 subregions for Canada, South Africa, Austria, Spain + L1 regions for Portugal, UK (Scotland).
 
@@ -111,11 +111,15 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 
 **Grapes:** VIVC import complete — 9,690 grapes imported from VIVC cache, 34,833 synonyms, parentage resolved (~3,000+ grapes with parent links). Three-tier display name strategy: 26 Tier 1 overrides (Merlot, Malbec, Grenache, etc.), 154 Tier 2 family-preserved (Pinot Noir, Cabernet Sauvignon), 9,510 Tier 3 auto. Country-specific synonyms added (Zinfandel/US, Primitivo/IT, Garnacha/ES, Monastrell/ES, Alvarinho/PT, Gouveio/PT). `display_name` column added to grapes table. VIVC Phase 5 (reconnect varietal categories) still pending.
 
-**Publications:** 68 publications rebuilt from authoritative sources. Scoring systems, scale ranges, active status.
+**Publications:** 66 publications rebuilt from authoritative sources. Scoring systems, scale ranges, active status. Types: critic_publication, community, auction_house, competition, aggregator. Two-pass audit applied: 4 set inactive (Tanzer absorbed by Vinous, Dias Blue defunct, IWR/Connoisseurs' Guide ceased), Weinwisser country fixed (DE→CH), 3 scale_min fixes.
+
+**Attribute definitions:** 73 definitions across 6 categories (chemistry 8, winemaking 23, viticulture 13, production 15, service 6, business 8). Sources: OIV International Code (chemistry), WSET L3/L4 (winemaking/viticulture), real producer/retailer websites (production/business). Two-pass audit: 2 renames (serving_temp, aging_potential), 10 additions, 1 citation fix.
+
+**Tasting descriptors:** 304 descriptors in 3-tier hierarchy. Sources: WSET SAT (primary), UC Davis Wine Aroma Wheel, CMS Deductive Tasting Grid. Top-level categories use deterministic UUIDs (10000000-... prefix). Structure: 12 top-level categories → ~35 subcategories (20000000-... prefix) → ~257 leaf descriptors. Aroma categories: Fruit, Floral, Herbal/Vegetal, Spice, Oak, Earthy/Mineral, Nutty/Oxidative, Chemical/Other, Yeast/MLF. Palate categories: Sweetness, Acidity, Tannin, Body, Finish, Texture. Two-pass audit: 3 deletions (duplicates), 7 moves/fixes, ~12 additions.
 
 **Appellation grapes:** 9,233 rows across all 3,206 appellations (100% coverage). Grape varieties associated with each appellation — regulated varieties for EU appellations (INAO/disciplinari/Consejo Regulador sources), key planted varieties for non-EU geographic appellations (US AVAs, AU GIs, SA WOs have no grape restrictions). Coverage by country: France 361 (detailed per-appellation), Italy 408, Germany 1,288 (Riesling/Spätburgunder/Müller-Thurgau), Spain 105, US 277, SA 142, AU 106, plus 32 other countries. Notable gaps: Blaufränkisch not in grapes table (affects Austrian/Hungarian entries), Hondarrabi Zuri missing (Txakoli), Tintilia missing (Molise).
 
-**Region grapes:** 1,657 rows across all 324 named regions (100% coverage). Seeded from Anderson & Aryal dataset (University of Adelaide, 2000–2023 hectare plantings by variety) for L1 regions + authoritative sources for L2 subregions (Wine Australia, NZ Winegrowers, SAWIS, INAO, DOC/DOCG disciplinari, Consejo Regulador DO regulations, DWI, USDA/TTB). All entries `association_type = 'typical'`. Script: `scripts/seed_region_country_grapes.mjs`. Data: `scripts/insert_region_grapes.sql` (backup). **Two-pass expert audit completed (2026-03-14):** Pass 1 (training data), Pass 2 (web sources). 10 wrong entries removed (Rhône: Chardonnay/Gamay/Merlot, Rioja: Merlot, Etna: Nero d'Avola, Coastal Croatia: Grenache, Madeira: Sémillon, Abruzzo/Marche: Korinthiaki Lefki, Western Australia: Verdelho Tinto). 16 critical/high additions (Lodi: Zinfandel, Roero: Arneis, Vaud/Geneva: Chasselas, Coastal Croatia: Plavac Mali, Epirus: Debina, etc.). ~90 medium/low issues identified and parked (naming conventions, minor omissions).
+**Region grapes:** 1,673 rows across all 324 named regions (100% coverage). Seeded from Anderson & Aryal dataset (University of Adelaide, 2000–2023 hectare plantings by variety) for L1 regions + authoritative sources for L2 subregions (Wine Australia, NZ Winegrowers, SAWIS, INAO, DOC/DOCG disciplinari, Consejo Regulador DO regulations, DWI, USDA/TTB). All entries `association_type = 'typical'`. Script: `scripts/seed_region_country_grapes.mjs`. Data: `scripts/insert_region_grapes.sql` (backup). **Two-pass expert audit completed (2026-03-14):** Pass 1 (training data), Pass 2 (web sources). 10 wrong entries removed (Rhône: Chardonnay/Gamay/Merlot, Rioja: Merlot, Etna: Nero d'Avola, Coastal Croatia: Grenache, Madeira: Sémillon, Abruzzo/Marche: Korinthiaki Lefki, Western Australia: Verdelho Tinto). 16 critical/high additions (Lodi: Zinfandel, Roero: Arneis, Vaud/Geneva: Chasselas, Coastal Croatia: Plavac Mali, Epirus: Debina, etc.). ~90 medium/low issues identified and parked (naming conventions, minor omissions). **Cross-table validation audit (2026-03-15):** 6 removals (Asturias: Albariño→Albarín Blanco, Epirus: Cab Sauv→Vlachiko, Iowa/Minnesota: vinifera→cold-hardy hybrids) + 20 additions (Swiss cantons: Chasselas/Müller-Thurgau, Bierzo: Godello, Wien: Welschriesling/Pinot Blanc, Côte Chalonnaise: Aligoté, Mâconnais: Pinot Noir, Wales: Bacchus, Arkansas: Cynthiana, Iowa/Minnesota/Wisconsin: Marquette/Frontenac).
 
 **Country grapes:** 541 rows across all 62 countries (100% coverage). Seeded from Anderson & Aryal dataset for 46 major wine countries + manual additions for 16 minor countries. All entries `association_type = 'typical'`. **Audit additions (2026-03-14):** 18 country-level fixes — Italy: Nebbiolo + Corvina, France: Sémillon + Chenin Blanc + Viognier + Riesling + Gewürztraminer + Mourvèdre, Spain: Albariño + Mencía + Viura + Pedro Ximénez, Australia: Grenache, NZ: Riesling + Syrah, US: Cabernet Franc, Croatia: Plavac Mali, UK: Pinot Noir.
 
@@ -128,7 +132,7 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 - All document tables
 - All soil/water body link tables
 - Enrichment log
-- Reference data still needed: varietal category audit, varietal_category_grapes blend compositions
+- Reference data complete — all tables seeded and cross-table validated (2026-03-15). ABV column added to wine_vintages.
 
 ---
 
@@ -150,10 +154,11 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 4. ~~Seed label designations (73 entries, 153 rules)~~ ✓ → expanded to 98 designations, 200 rules after two-pass audit
 5. ~~VIVC Phase 1 crawl (9,400 wine grapes cached)~~ ✓
 6. ~~VIVC Phases 2-5~~ ✓ (9,690 grapes, 34,833 synonyms, parentage resolved, varietal categories reconnected)
-7. Audit varietal categories (154) with wine expert common sense check — Phase 1b
+7. ~~Seed publications, attribute definitions, tasting descriptors~~ ✓ (66 pubs, 73 attrs, 304 descriptors — two-pass audit applied)
+7b. ~~Audit varietal categories (161) with wine expert common sense check~~ ✓ — cross-table validation + expert audit: 31 grape mappings added, 2 removed (White Burgundy: Aligoté, Asturias: Albariño). Regional designations populated (Madeira, Marsala, Vinho Verde, Vin Santo, White Port, VDN, Beaujolais). 131→161 mappings.
 8. ~~Populate appellation_grapes from disciplinari/WSET~~ ✓ (9,233 rows, 3,206 appellations, 100% coverage)
-9. ~~Populate region_grapes and country_grapes~~ ✓ (1,657 region rows, 541 country rows — 100% coverage at all 3 geographic levels)
-10. ~~Expert audit of region/country grape data~~ ✓ — two-pass audit (training data + web sources), 10 deletions, 34 additions. ~90 medium/low parked.
+9. ~~Populate region_grapes and country_grapes~~ ✓ (1,671 region rows, 541 country rows — 100% coverage at all 3 geographic levels)
+10. ~~Expert audit of region/country grape data~~ ✓ — two-pass audit (training data + web sources), 10 deletions, 34 additions. ~90 medium/low parked. Cross-table validation (2026-03-15): +14 net changes to region_grapes.
 11. Trial producer imports: Moone Tsai, Fort Ross, López de Heredia, + Burgundy TBD, Tuscany TBD — Phase 1c
 
 ### Open Questions (deferred)
