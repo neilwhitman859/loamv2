@@ -1,0 +1,216 @@
+{
+  "producer": {
+    "name": "Sea Slopes",
+    "slug": "sea-slopes",
+    "country": "United States",
+    "region": "Sonoma County",
+    "website": "https://fortrossvineyard.com/sea-slopes/",
+    "producer_type": "negociant",
+    "parent_producer_slug": "fort-ross-vineyard",
+    "metadata": {
+      "owners": "Lester and Linda Schwartz",
+      "origin_story": "Sea Slopes originated as a limited-production barrel blend in 2004. Due to high demand, Lester and Linda established it as a dedicated brand in 2015 to produce a softer, more approachable, fruit-forward wine that could be enjoyed young.",
+      "style": "Softer, more approachable, fruit-forward wines with vibrant aromatics, gentle tannins, and seamless texture. Intended for early drinking."
+    },
+    "winemakers": [
+      {
+        "name": "Jeff Pisoni",
+        "role": "head",
+        "country": "United States",
+        "start_year": 2009
+      }
+    ]
+  },
+  "wines": [
+    {
+      "name": "Sea Slopes Pinot Noir",
+      "color": "red",
+      "appellation": "Sonoma Coast",
+      "varietal_category": "Pinot Noir",
+      "oak_origin": "french",
+      "grapes": [
+        { "name": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Accessible, fruit-forward style. Cold soaked, fermented in stainless steel with punch-down maceration, aged in French oak.",
+        "first_branded_vintage": 2015,
+        "first_barrel_blend": 2004
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "release_price_usd": 35,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 93, "reviewer": "Audrey Frick" }
+          ]
+        },
+        {
+          "year": 2022,
+          "oak_duration_months": 11,
+          "oak_new_pct": 20,
+          "oak_origin": "french",
+          "production_cases": 950,
+          "harvest_date": "2022-08-19",
+          "bottling_date": "July 2023",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 92 },
+            { "publication": "Wine Spectator", "score": 91 },
+            { "publication": "James Suckling", "score": 92 },
+            { "publication": "Jeb Dunnuck", "score": 90 }
+          ]
+        },
+        {
+          "year": 2021,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 89 }
+          ]
+        },
+        {
+          "year": 2020,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2019,
+          "release_price_usd": 31,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 94 }
+          ]
+        },
+        {
+          "year": 2018,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 90 }
+          ]
+        },
+        {
+          "year": 2017,
+          "release_price_usd": 31,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 92, "_note": "Editor's Choice" }
+          ]
+        },
+        {
+          "year": 2016,
+          "release_price_usd": 31,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 91 }
+          ]
+        },
+        {
+          "year": 2015,
+          "oak_origin": "french",
+          "_note": "First release under the Sea Slopes brand"
+        },
+        {
+          "year": 2014,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2013,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2012,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2011,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2010,
+          "abv": 14.5,
+          "release_price_usd": 36,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2009,
+          "abv": 14.1,
+          "release_price_usd": 27,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2006,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2004,
+          "abv": 14.0,
+          "release_price_usd": 50,
+          "oak_origin": "french",
+          "_note": "Labeled as 'Sea Slopes Signature Reserve Pinot Noir'. First Sea Slopes barrel blend."
+        }
+      ]
+    },
+    {
+      "name": "Sea Slopes Chardonnay",
+      "color": "white",
+      "appellation": "Sonoma Coast",
+      "varietal_category": "Chardonnay",
+      "oak_origin": "french",
+      "grapes": [
+        { "name": "Chardonnay", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Accessible, fruit-forward style. Aged in neutral French oak.",
+        "first_vintage": 2018
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "release_price_usd": 30,
+          "oak_duration_months": 10,
+          "oak_new_pct": 0,
+          "oak_origin": "french",
+          "production_cases": 440,
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 93, "reviewer": "Audrey Frick" }
+          ]
+        },
+        {
+          "year": 2022,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2021,
+          "release_price_usd": 22,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "James Suckling", "score": 91 },
+            { "publication": "Wine Enthusiast", "score": 91 }
+          ]
+        },
+        {
+          "year": 2020,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 91 }
+          ]
+        },
+        {
+          "year": 2019,
+          "release_price_usd": 32,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2018,
+          "oak_origin": "french",
+          "_note": "First Sea Slopes Chardonnay vintage"
+        },
+        {
+          "year": 2016,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 92, "_note": "Editor's Choice" }
+          ]
+        }
+      ]
+    }
+  ]
+}

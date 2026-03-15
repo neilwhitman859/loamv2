@@ -1,0 +1,377 @@
+{
+  "ZA": {
+    "hemisphere": "south", "growing_start": 10, "growing_end": 4,
+    "appellations": [
+      {"name":"Breedekloof","type":"WO","region":"South Africa","geo":"Breedekloof, Western Cape, South Africa"},
+      {"name":"Robertson","type":"WO","region":"South Africa","geo":"Robertson, Western Cape, South Africa"},
+      {"name":"Worcester","type":"WO","region":"South Africa","geo":"Worcester, Western Cape, South Africa"},
+      {"name":"Cape Agulhas","type":"WO","region":"South Africa","geo":"Cape Agulhas, Western Cape, South Africa"},
+      {"name":"Elgin","type":"WO","region":"Elgin","geo":"Elgin, Western Cape, South Africa"},
+      {"name":"Lower Duivenhoks River","type":"WO","region":"South Africa","geo":"Heidelberg, Western Cape, South Africa"},
+      {"name":"Overberg","type":"WO","region":"South Africa","geo":"Overberg, Western Cape, South Africa"},
+      {"name":"Plettenberg Bay","type":"WO","region":"South Africa","geo":"Plettenberg Bay, South Africa"},
+      {"name":"Swellendam","type":"WO","region":"South Africa","geo":"Swellendam, South Africa"},
+      {"name":"Walker Bay","type":"WO","region":"Walker Bay","geo":"Walker Bay, Hermanus, South Africa"},
+      {"name":"Cape Town","type":"WO","region":"Coastal Region","geo":"Cape Town, South Africa"},
+      {"name":"Darling","type":"WO","region":"Coastal Region","geo":"Darling, Western Cape, South Africa"},
+      {"name":"Franschhoek","type":"WO","region":"Franschhoek","geo":"Franschhoek, South Africa"},
+      {"name":"Lutzville Valley","type":"WO","region":"South Africa","geo":"Lutzville, Western Cape, South Africa"},
+      {"name":"Paarl","type":"WO","region":"Paarl","geo":"Paarl, South Africa"},
+      {"name":"Stellenbosch","type":"WO","region":"Stellenbosch","geo":"Stellenbosch, South Africa"},
+      {"name":"Swartland","type":"WO","region":"Swartland","geo":"Swartland, Western Cape, South Africa"},
+      {"name":"Tulbagh","type":"WO","region":"South Africa","geo":"Tulbagh, Western Cape, South Africa"},
+      {"name":"Wellington","type":"WO","region":"South Africa","geo":"Wellington, Western Cape, South Africa"},
+      {"name":"Calitzdorp","type":"WO","region":"South Africa","geo":"Calitzdorp, Western Cape, South Africa"},
+      {"name":"Langeberg-Garcia","type":"WO","region":"South Africa","geo":"Langeberg, Western Cape, South Africa"},
+      {"name":"Citrusdal Mountain","type":"WO","region":"South Africa","geo":"Citrusdal, Western Cape, South Africa"},
+      {"name":"Citrusdal Valley","type":"WO","region":"South Africa","geo":"Citrusdal, Western Cape, South Africa"},
+      {"name":"Ceres Plateau","type":"WO","region":"South Africa","geo":"Ceres, Western Cape, South Africa"},
+      {"name":"Prince Albert","type":"WO","region":"South Africa","geo":"Prince Albert, Western Cape, South Africa"},
+      {"name":"Central Orange River","type":"WO","region":"South Africa","geo":"Upington, Northern Cape, South Africa"},
+      {"name":"Douglas","type":"WO","region":"South Africa","geo":"Douglas, Northern Cape, South Africa"},
+      {"name":"Sutherland-Karoo","type":"WO","region":"South Africa","geo":"Sutherland, Northern Cape, South Africa"},
+      {"name":"Central Drakensberg","type":"WO","region":"South Africa","geo":"Central Drakensberg, KwaZulu-Natal, South Africa"},
+      {"name":"Lions River","type":"WO","region":"South Africa","geo":"Lions River, KwaZulu-Natal, South Africa"},
+      {"name":"Constantia","type":"WO","region":"Constantia","geo":"Constantia, Cape Town, South Africa"},
+      {"name":"Durbanville","type":"WO","region":"Coastal Region","geo":"Durbanville, Cape Town, South Africa"},
+      {"name":"Hout Bay","type":"WO","region":"Coastal Region","geo":"Hout Bay, Cape Town, South Africa"},
+      {"name":"Philadelphia","type":"WO","region":"Coastal Region","geo":"Philadelphia, Cape Town, South Africa"},
+      {"name":"Groenekloof","type":"WO","region":"Coastal Region","geo":"Groenekloof, Darling, South Africa"},
+      {"name":"Agter-Paarl","type":"WO","region":"Paarl","geo":"Agter-Paarl, Paarl, South Africa"},
+      {"name":"Simonsberg-Paarl","type":"WO","region":"Paarl","geo":"Simonsberg, Paarl, South Africa"},
+      {"name":"Voor-Paardeberg","type":"WO","region":"Paarl","geo":"Voor-Paardeberg, Paarl, South Africa"},
+      {"name":"Banghoek","type":"WO","region":"Stellenbosch","geo":"Banghoek, Stellenbosch, South Africa"},
+      {"name":"Bottelary","type":"WO","region":"Stellenbosch","geo":"Bottelary, Stellenbosch, South Africa"},
+      {"name":"Devon Valley","type":"WO","region":"Stellenbosch","geo":"Devon Valley, Stellenbosch, South Africa"},
+      {"name":"Jonkershoek Valley","type":"WO","region":"Stellenbosch","geo":"Jonkershoek, Stellenbosch, South Africa"},
+      {"name":"Papegaaiberg","type":"WO","region":"Stellenbosch","geo":"Papegaaiberg, Stellenbosch, South Africa"},
+      {"name":"Polkadraai Hills","type":"WO","region":"Stellenbosch","geo":"Polkadraai, Stellenbosch, South Africa"},
+      {"name":"Simonsberg-Stellenbosch","type":"WO","region":"Stellenbosch","geo":"Simonsberg, Stellenbosch, South Africa"},
+      {"name":"Vlottenburg","type":"WO","region":"Stellenbosch","geo":"Vlottenburg, Stellenbosch, South Africa"},
+      {"name":"Malmesbury","type":"WO","region":"Swartland","geo":"Malmesbury, South Africa"},
+      {"name":"Paardeberg","type":"WO","region":"Swartland","geo":"Paardeberg, Swartland, South Africa"},
+      {"name":"Paardeberg South","type":"WO","region":"Swartland","geo":"Paardeberg, Swartland, South Africa"},
+      {"name":"Piket-Bo-Berg","type":"WO","region":"Swartland","geo":"Piketberg, South Africa"},
+      {"name":"Porseleinberg","type":"WO","region":"Swartland","geo":"Porseleinberg, Swartland, South Africa"},
+      {"name":"Riebeekberg","type":"WO","region":"Swartland","geo":"Riebeek Kasteel, South Africa"},
+      {"name":"Riebeeksrivier","type":"WO","region":"Swartland","geo":"Riebeek West, South Africa"},
+      {"name":"Blouvlei","type":"WO","region":"South Africa","geo":"Wellington, Western Cape, South Africa"},
+      {"name":"Bovlei","type":"WO","region":"South Africa","geo":"Bovlei, Wellington, South Africa"},
+      {"name":"Groenberg","type":"WO","region":"South Africa","geo":"Wellington, Western Cape, South Africa"},
+      {"name":"Limietberg","type":"WO","region":"South Africa","geo":"Limietberg, Western Cape, South Africa"},
+      {"name":"Mid-Berg River","type":"WO","region":"South Africa","geo":"Berg River, Wellington, South Africa"},
+      {"name":"Bamboes Bay","type":"WO","region":"Coastal Region","geo":"Bamboes Bay, Western Cape, South Africa"},
+      {"name":"Lamberts Bay","type":"WO","region":"Coastal Region","geo":"Lamberts Bay, South Africa"},
+      {"name":"St Helena Bay","type":"WO","region":"Coastal Region","geo":"St Helena Bay, South Africa"},
+      {"name":"Elim","type":"WO","region":"South Africa","geo":"Elim, Western Cape, South Africa"},
+      {"name":"Napier","type":"WO","region":"South Africa","geo":"Napier, Western Cape, South Africa"},
+      {"name":"Elandskloof","type":"WO","region":"South Africa","geo":"Elandskloof, Western Cape, South Africa"},
+      {"name":"Greyton","type":"WO","region":"South Africa","geo":"Greyton, Western Cape, South Africa"},
+      {"name":"Klein River","type":"WO","region":"South Africa","geo":"Klein River, Western Cape, South Africa"},
+      {"name":"Theewater","type":"WO","region":"South Africa","geo":"Villiersdorp, Western Cape, South Africa"},
+      {"name":"Still Bay East","type":"WO","region":"South Africa","geo":"Still Bay, South Africa"},
+      {"name":"Buffeljags","type":"WO","region":"South Africa","geo":"Buffeljags, Swellendam, South Africa"},
+      {"name":"Malgas","type":"WO","region":"South Africa","geo":"Malgas, Swellendam, South Africa"},
+      {"name":"Stormsvlei","type":"WO","region":"South Africa","geo":"Stormsvlei, Swellendam, South Africa"},
+      {"name":"Bot River","type":"WO","region":"Walker Bay","geo":"Bot River, Western Cape, South Africa"},
+      {"name":"Hemel-en-Aarde Valley","type":"WO","region":"Walker Bay","geo":"Hemel-en-Aarde, Hermanus, South Africa"},
+      {"name":"Upper Hemel-en-Aarde Valley","type":"WO","region":"Walker Bay","geo":"Hemel-en-Aarde, Hermanus, South Africa"},
+      {"name":"Hemel-en-Aarde Ridge","type":"WO","region":"Walker Bay","geo":"Hemel-en-Aarde, Hermanus, South Africa"},
+      {"name":"Sunday's Glen","type":"WO","region":"Walker Bay","geo":"Hermanus, South Africa"},
+      {"name":"Springfontein Rim","type":"WO","region":"Walker Bay","geo":"Stanford, Western Cape, South Africa"},
+      {"name":"Stanford Foothills","type":"WO","region":"Walker Bay","geo":"Stanford, Western Cape, South Africa"},
+      {"name":"Herbertsdale","type":"WO","region":"South Africa","geo":"Herbertsdale, Western Cape, South Africa"},
+      {"name":"Groenfontein","type":"WO","region":"South Africa","geo":"Groenfontein, Calitzdorp, South Africa"},
+      {"name":"Montagu","type":"WO","region":"South Africa","geo":"Montagu, Western Cape, South Africa"},
+      {"name":"Tradouw","type":"WO","region":"South Africa","geo":"Tradouw Pass, South Africa"},
+      {"name":"Tradouw Highlands","type":"WO","region":"South Africa","geo":"Tradouw Pass, South Africa"},
+      {"name":"Piekenierskloof","type":"WO","region":"South Africa","geo":"Piekenierskloof, Western Cape, South Africa"},
+      {"name":"Cederberg","type":"WO","region":"South Africa","geo":"Cederberg, Western Cape, South Africa"},
+      {"name":"Goudini","type":"WO","region":"South Africa","geo":"Goudini, Western Cape, South Africa"},
+      {"name":"Slanghoek","type":"WO","region":"South Africa","geo":"Slanghoek, Western Cape, South Africa"},
+      {"name":"Agterkliphoogte","type":"WO","region":"South Africa","geo":"Robertson, Western Cape, South Africa"},
+      {"name":"Bonnievale","type":"WO","region":"South Africa","geo":"Bonnievale, Western Cape, South Africa"},
+      {"name":"McGregor","type":"WO","region":"South Africa","geo":"McGregor, Western Cape, South Africa"},
+      {"name":"Hex River Valley","type":"WO","region":"South Africa","geo":"Hex River Valley, Western Cape, South Africa"},
+      {"name":"Nuy","type":"WO","region":"South Africa","geo":"Nuy, Worcester, South Africa"},
+      {"name":"Koekenaap","type":"WO","region":"South Africa","geo":"Koekenaap, Western Cape, South Africa"}
+    ]
+  },
+  "CL": {
+    "hemisphere": "south", "growing_start": 10, "growing_end": 4,
+    "appellations": [
+      {"name":"Atacama","type":"DO","region":"Chile","geo":"Atacama Region, Chile"},
+      {"name":"Coquimbo","type":"DO","region":"Chile","geo":"Coquimbo Region, Chile"},
+      {"name":"Aconcagua","type":"DO","region":"Chile","geo":"Aconcagua, Chile"},
+      {"name":"Valle Central","type":"DO","region":"Central Valley","geo":"Central Valley, Chile"},
+      {"name":"Sur","type":"DO","region":"Chile","geo":"Biobío Region, Chile"},
+      {"name":"Austral","type":"DO","region":"Chile","geo":"Araucania Region, Chile"},
+      {"name":"Valle de Copiapó","type":"DO","region":"Chile","geo":"Copiapó, Chile"},
+      {"name":"Valle del Huasco","type":"DO","region":"Chile","geo":"Huasco, Chile"},
+      {"name":"Valle del Elqui","type":"DO","region":"Chile","geo":"Elqui Valley, Chile"},
+      {"name":"Valle del Limarí","type":"DO","region":"Chile","geo":"Limarí Valley, Chile"},
+      {"name":"Valle del Choapa","type":"DO","region":"Chile","geo":"Choapa, Chile"},
+      {"name":"Valle del Aconcagua","type":"DO","region":"Aconcagua Valley","geo":"Aconcagua Valley, Chile"},
+      {"name":"Valle de Casablanca","type":"DO","region":"Casablanca Valley","geo":"Casablanca, Valparaiso, Chile"},
+      {"name":"Valle de San Antonio","type":"DO","region":"Chile","geo":"San Antonio, Chile"},
+      {"name":"Valle de Leyda","type":"DO","region":"Leyda Valley","geo":"Leyda, Chile"},
+      {"name":"Valle del Maipo","type":"DO","region":"Maipo Valley","geo":"Maipo Valley, Chile"},
+      {"name":"Valle del Rapel","type":"DO","region":"Rapel Valley","geo":"Rapel, Chile"},
+      {"name":"Valle del Cachapoal","type":"DO","region":"Chile","geo":"Cachapoal, Chile"},
+      {"name":"Valle de Colchagua","type":"DO","region":"Colchagua Valley","geo":"Colchagua, Chile"},
+      {"name":"Valle de Curicó","type":"DO","region":"Chile","geo":"Curicó, Chile"},
+      {"name":"Valle del Maule","type":"DO","region":"Maule Valley","geo":"Maule Valley, Chile"},
+      {"name":"Valle del Itata","type":"DO","region":"Chile","geo":"Itata, Chile"},
+      {"name":"Valle del Bío-Bío","type":"DO","region":"Bío-Bío Valley","geo":"Bío-Bío, Chile"},
+      {"name":"Valle del Malleco","type":"DO","region":"Chile","geo":"Malleco, Chile"},
+      {"name":"Apalta","type":"DO","region":"Colchagua Valley","geo":"Apalta, Chile"},
+      {"name":"Peumo","type":"DO","region":"Chile","geo":"Peumo, Chile"},
+      {"name":"Lo Abarca","type":"DO","region":"Chile","geo":"Lo Abarca, Chile"},
+      {"name":"Secano Interior","type":"DO","region":"Chile","geo":"Cauquenes, Maule, Chile"}
+    ]
+  },
+  "CA": {
+    "hemisphere": "north", "growing_start": 4, "growing_end": 10,
+    "appellations": [
+      {"name":"Niagara Peninsula","type":"DVA","region":"Niagara Peninsula","geo":"Niagara Peninsula, Ontario, Canada"},
+      {"name":"Lake Erie North Shore","type":"DVA","region":"Canada","geo":"Lake Erie North Shore, Ontario, Canada"},
+      {"name":"Prince Edward County","type":"DVA","region":"Prince Edward County","geo":"Prince Edward County, Ontario, Canada"},
+      {"name":"Niagara-on-the-Lake","type":"DVA","region":"Niagara Peninsula","geo":"Niagara-on-the-Lake, Ontario, Canada"},
+      {"name":"Niagara Escarpment","type":"DVA","region":"Niagara Peninsula","geo":"Niagara Escarpment, Ontario, Canada"},
+      {"name":"Niagara Lakeshore","type":"DVA","region":"Niagara Peninsula","geo":"Niagara-on-the-Lake, Ontario, Canada"},
+      {"name":"Four Mile Creek","type":"DVA","region":"Niagara Peninsula","geo":"St. Catharines, Ontario, Canada"},
+      {"name":"St. David's Bench","type":"DVA","region":"Niagara Peninsula","geo":"St. Davids, Ontario, Canada"},
+      {"name":"Niagara River","type":"DVA","region":"Niagara Peninsula","geo":"Niagara Falls, Ontario, Canada"},
+      {"name":"Short Hills Bench","type":"DVA","region":"Niagara Peninsula","geo":"St. Catharines, Ontario, Canada"},
+      {"name":"Twenty Mile Bench","type":"DVA","region":"Niagara Peninsula","geo":"Jordan, Ontario, Canada"},
+      {"name":"Beamsville Bench","type":"DVA","region":"Niagara Peninsula","geo":"Beamsville, Ontario, Canada"},
+      {"name":"Lincoln Lakeshore","type":"DVA","region":"Niagara Peninsula","geo":"Lincoln, Ontario, Canada"},
+      {"name":"Creek Shores","type":"DVA","region":"Niagara Peninsula","geo":"Jordan, Ontario, Canada"},
+      {"name":"Vinemount Ridge","type":"DVA","region":"Niagara Peninsula","geo":"Vinemount, Ontario, Canada"},
+      {"name":"South Islands","type":"DVA","region":"Canada","geo":"Pelee Island, Ontario, Canada"},
+      {"name":"Okanagan Valley","type":"GI","region":"Okanagan Valley","geo":"Okanagan Valley, British Columbia, Canada"},
+      {"name":"Similkameen Valley","type":"GI","region":"Canada","geo":"Similkameen Valley, British Columbia, Canada"},
+      {"name":"Fraser Valley","type":"GI","region":"Canada","geo":"Fraser Valley, British Columbia, Canada"},
+      {"name":"Vancouver Island","type":"GI","region":"Vancouver Island","geo":"Vancouver Island, British Columbia, Canada"},
+      {"name":"Gulf Islands","type":"GI","region":"Canada","geo":"Gulf Islands, British Columbia, Canada"},
+      {"name":"Thompson Valley","type":"GI","region":"Canada","geo":"Thompson Valley, British Columbia, Canada"},
+      {"name":"Shuswap","type":"GI","region":"Canada","geo":"Shuswap, British Columbia, Canada"},
+      {"name":"Lillooet","type":"GI","region":"Canada","geo":"Lillooet, British Columbia, Canada"},
+      {"name":"Kootenays","type":"GI","region":"Canada","geo":"Kootenays, British Columbia, Canada"},
+      {"name":"Golden Mile Bench","type":"GI","region":"Okanagan Valley","geo":"Oliver, British Columbia, Canada"},
+      {"name":"Golden Mile Slopes","type":"GI","region":"Okanagan Valley","geo":"Oliver, British Columbia, Canada"},
+      {"name":"Naramata Bench","type":"GI","region":"Okanagan Valley","geo":"Naramata, British Columbia, Canada"},
+      {"name":"Okanagan Falls","type":"GI","region":"Okanagan Valley","geo":"Okanagan Falls, British Columbia, Canada"},
+      {"name":"Skaha Bench","type":"GI","region":"Okanagan Valley","geo":"Penticton, British Columbia, Canada"},
+      {"name":"East Kelowna Slopes","type":"GI","region":"Okanagan Valley","geo":"East Kelowna, British Columbia, Canada"},
+      {"name":"South Kelowna Slopes","type":"GI","region":"Okanagan Valley","geo":"Kelowna, British Columbia, Canada"},
+      {"name":"Lake Country","type":"GI","region":"Okanagan Valley","geo":"Lake Country, British Columbia, Canada"},
+      {"name":"Summerland Bench","type":"GI","region":"Okanagan Valley","geo":"Summerland, British Columbia, Canada"},
+      {"name":"Summerland Lakefront","type":"GI","region":"Okanagan Valley","geo":"Summerland, British Columbia, Canada"},
+      {"name":"Summerland Valleys","type":"GI","region":"Okanagan Valley","geo":"Summerland, British Columbia, Canada"},
+      {"name":"Cowichan Valley","type":"GI","region":"Vancouver Island","geo":"Cowichan Valley, British Columbia, Canada"},
+      {"name":"Tidal Bay","type":"GI","region":"Nova Scotia","geo":"Nova Scotia, Canada"}
+    ]
+  },
+  "GE": {
+    "hemisphere": "north", "growing_start": 4, "growing_end": 10,
+    "appellations": [
+      {"name":"Tsinandali","type":"PDO","region":"Kakheti","geo":"Tsinandali, Telavi, Georgia"},
+      {"name":"Mukuzani","type":"PDO","region":"Kakheti","geo":"Mukuzani, Gurjaani, Georgia"},
+      {"name":"Kindzmarauli","type":"PDO","region":"Kakheti","geo":"Kindzmarauli, Kvareli, Georgia"},
+      {"name":"Akhasheni","type":"PDO","region":"Kakheti","geo":"Akhasheni, Gurjaani, Georgia"},
+      {"name":"Napareuli","type":"PDO","region":"Kakheti","geo":"Napareuli, Telavi, Georgia"},
+      {"name":"Gurjaani","type":"PDO","region":"Kakheti","geo":"Gurjaani, Georgia"},
+      {"name":"Kvareli","type":"PDO","region":"Kakheti","geo":"Kvareli, Georgia"},
+      {"name":"Manavi","type":"PDO","region":"Kakheti","geo":"Manavi, Sagarejo, Georgia"},
+      {"name":"Vazisubani","type":"PDO","region":"Kakheti","geo":"Vazisubani, Georgia"},
+      {"name":"Kotekhi","type":"PDO","region":"Kakheti","geo":"Kakheti, Georgia"},
+      {"name":"Kardenakhi","type":"PDO","region":"Kakheti","geo":"Kardenakhi, Gurjaani, Georgia"},
+      {"name":"Tibaani","type":"PDO","region":"Kakheti","geo":"Tibaani, Sighnaghi, Georgia"},
+      {"name":"Teliani","type":"PDO","region":"Kakheti","geo":"Telavi, Georgia"},
+      {"name":"Kakheti","type":"PDO","region":"Kakheti","geo":"Kakheti, Georgia"},
+      {"name":"Saperavi Khashmi","type":"PDO","region":"Kakheti","geo":"Sagarejo, Georgia"},
+      {"name":"Kisi Magraani","type":"PDO","region":"Kakheti","geo":"Akhmeta, Georgia"},
+      {"name":"Akhmeta","type":"PDO","region":"Kakheti","geo":"Akhmeta, Georgia"},
+      {"name":"Akhoebi","type":"PDO","region":"Kakheti","geo":"Kakheti, Georgia"},
+      {"name":"Tsarapi","type":"PDO","region":"Kakheti","geo":"Kardenakhi, Gurjaani, Georgia"},
+      {"name":"Zegaani","type":"PDO","region":"Kakheti","geo":"Gurjaani, Georgia"},
+      {"name":"Atenuri","type":"PDO","region":"Kartli","geo":"Ateni, Gori, Georgia"},
+      {"name":"Bolnisi","type":"PDO","region":"Kartli","geo":"Bolnisi, Georgia"},
+      {"name":"Asuretuli Shala","type":"PDO","region":"Kartli","geo":"Tetritskaro, Georgia"},
+      {"name":"Okami","type":"PDO","region":"Kartli","geo":"Gori, Georgia"},
+      {"name":"Sviri","type":"PDO","region":"Georgia","geo":"Zestafoni, Georgia"},
+      {"name":"Obcha","type":"PDO","region":"Georgia","geo":"Baghdati, Georgia"},
+      {"name":"Sazanos Otskhanuri","type":"PDO","region":"Georgia","geo":"Zestafoni, Georgia"},
+      {"name":"Khvanchkara","type":"PDO","region":"Georgia","geo":"Khvanchkara, Ambrolauri, Georgia"},
+      {"name":"Tvishi","type":"PDO","region":"Georgia","geo":"Tvishi, Tsageri, Georgia"},
+      {"name":"Lechkhumi","type":"PDO","region":"Georgia","geo":"Tsageri, Georgia"},
+      {"name":"Racha","type":"PDO","region":"Georgia","geo":"Ambrolauri, Georgia"},
+      {"name":"Okureshis Usakhelouri","type":"PDO","region":"Georgia","geo":"Okureshi, Georgia"},
+      {"name":"Salkhino Ojaleshi","type":"PDO","region":"Georgia","geo":"Martvili, Georgia"}
+    ]
+  },
+  "CH": {
+    "hemisphere": "north", "growing_start": 4, "growing_end": 10,
+    "appellations": [
+      {"name":"Valais","type":"AOC","region":"Valais","geo":"Valais, Switzerland"},
+      {"name":"Vaud","type":"AOC","region":"Vaud","geo":"Vaud, Switzerland"},
+      {"name":"Genève","type":"AOC","region":"Geneva","geo":"Geneva, Switzerland"},
+      {"name":"Ticino","type":"AOC","region":"Ticino","geo":"Ticino, Switzerland"},
+      {"name":"Neuchâtel","type":"AOC","region":"Switzerland","geo":"Neuchâtel, Switzerland"},
+      {"name":"Trois Lacs","type":"AOC","region":"Switzerland","geo":"Biel, Switzerland"}
+    ]
+  },
+  "BR": {
+    "hemisphere": "south", "growing_start": 10, "growing_end": 4,
+    "appellations": [
+      {"name":"Vale dos Vinhedos","type":"DO","region":"Vale dos Vinhedos","geo":"Vale dos Vinhedos, Bento Gonçalves, Brazil"},
+      {"name":"Pinto Bandeira","type":"IG","region":"Serra Gaúcha","geo":"Pinto Bandeira, Rio Grande do Sul, Brazil"},
+      {"name":"Altos Montes","type":"IG","region":"Serra Gaúcha","geo":"Flores da Cunha, Rio Grande do Sul, Brazil"},
+      {"name":"Monte Belo","type":"DO","region":"Serra Gaúcha","geo":"Monte Belo do Sul, Rio Grande do Sul, Brazil"},
+      {"name":"Farroupilha","type":"IG","region":"Serra Gaúcha","geo":"Farroupilha, Rio Grande do Sul, Brazil"},
+      {"name":"Campanha Gaúcha","type":"IG","region":"Campanha Gaúcha","geo":"Campanha Gaúcha, Rio Grande do Sul, Brazil"},
+      {"name":"Vale do São Francisco","type":"IG","region":"São Francisco Valley","geo":"Petrolina, Pernambuco, Brazil"},
+      {"name":"Altos de Pinto Bandeira","type":"IG","region":"Serra Gaúcha","geo":"Pinto Bandeira, Rio Grande do Sul, Brazil"}
+    ]
+  },
+  "JP": {
+    "hemisphere": "north", "growing_start": 4, "growing_end": 10,
+    "appellations": [
+      {"name":"Yamanashi","type":"GI","region":"Yamanashi","geo":"Yamanashi Prefecture, Japan"},
+      {"name":"Hokkaido","type":"GI","region":"Hokkaido","geo":"Hokkaido, Japan"},
+      {"name":"Nagano","type":"GI","region":"Nagano","geo":"Nagano Prefecture, Japan"},
+      {"name":"Osaka","type":"GI","region":"Osaka","geo":"Osaka Prefecture, Japan"},
+      {"name":"Yamagata","type":"GI","region":"Yamagata","geo":"Yamagata Prefecture, Japan"}
+    ]
+  },
+  "MD": {
+    "hemisphere": "north", "growing_start": 4, "growing_end": 10,
+    "appellations": [
+      {"name":"Codru","type":"PGI","region":"Codru","geo":"Codru, Moldova"},
+      {"name":"Ștefan Vodă","type":"PGI","region":"Ștefan Vodă","geo":"Ștefan Vodă, Moldova"},
+      {"name":"Valul lui Traian","type":"PGI","region":"Valul lui Traian","geo":"Cahul, Moldova"},
+      {"name":"Divin","type":"PGI","region":"Moldova","geo":"Divin, Moldova"}
+    ]
+  },
+  "UY": {
+    "hemisphere": "south", "growing_start": 10, "growing_end": 4,
+    "appellations": [
+      {"name":"Canelones","type":"DO","region":"Canelones","geo":"Canelones, Uruguay"},
+      {"name":"Montevideo","type":"DO","region":"Uruguay","geo":"Montevideo, Uruguay"},
+      {"name":"Maldonado","type":"DO","region":"Maldonado","geo":"Maldonado, Uruguay"},
+      {"name":"Colonia","type":"DO","region":"Uruguay","geo":"Colonia del Sacramento, Uruguay"},
+      {"name":"Rivera","type":"DO","region":"Uruguay","geo":"Rivera, Uruguay"},
+      {"name":"San José","type":"DO","region":"Uruguay","geo":"San José de Mayo, Uruguay"}
+    ]
+  },
+  "IL": {
+    "hemisphere": "north", "growing_start": 4, "growing_end": 10,
+    "appellations": [
+      {"name":"Galilee","type":"GI","region":"Galilee","geo":"Galilee, Israel"},
+      {"name":"Upper Galilee","type":"GI","region":"Galilee","geo":"Upper Galilee, Israel"},
+      {"name":"Golan Heights","type":"GI","region":"Golan Heights","geo":"Golan Heights, Israel"},
+      {"name":"Judean Hills","type":"GI","region":"Judean Hills","geo":"Judean Hills, Israel"},
+      {"name":"Shomron","type":"GI","region":"Israel","geo":"Samaria, Israel"},
+      {"name":"Negev","type":"GI","region":"Israel","geo":"Negev, Israel"}
+    ]
+  },
+  "LB": {
+    "hemisphere": "north", "growing_start": 4, "growing_end": 10,
+    "appellations": [
+      {"name":"Bekaa Valley","type":"GI","region":"Bekaa Valley","geo":"Bekaa Valley, Lebanon"},
+      {"name":"West Bekaa","type":"GI","region":"Bekaa Valley","geo":"West Bekaa, Lebanon"},
+      {"name":"Batroun","type":"GI","region":"Mount Lebanon","geo":"Batroun, Lebanon"},
+      {"name":"Mount Lebanon","type":"GI","region":"Mount Lebanon","geo":"Mount Lebanon, Lebanon"},
+      {"name":"Zahle","type":"GI","region":"Bekaa Valley","geo":"Zahle, Lebanon"}
+    ]
+  },
+  "MX": {
+    "hemisphere": "north", "growing_start": 4, "growing_end": 10,
+    "appellations": [
+      {"name":"Valle de Guadalupe","type":"DO","region":"Valle de Guadalupe","geo":"Valle de Guadalupe, Baja California, Mexico"},
+      {"name":"Valle de Santo Tomás","type":"DO","region":"Mexico","geo":"Santo Tomás, Baja California, Mexico"},
+      {"name":"Valle de San Vicente","type":"DO","region":"Mexico","geo":"San Vicente, Baja California, Mexico"},
+      {"name":"Querétaro","type":"DO","region":"Querétaro","geo":"Querétaro, Mexico"},
+      {"name":"Parras de la Fuente","type":"DO","region":"Mexico","geo":"Parras de la Fuente, Coahuila, Mexico"},
+      {"name":"Aguascalientes","type":"DO","region":"Mexico","geo":"Aguascalientes, Mexico"}
+    ]
+  },
+  "CN": {
+    "hemisphere": "north", "growing_start": 4, "growing_end": 10,
+    "appellations": [
+      {"name":"Helan Mountain East","type":"GI","region":"Ningxia","geo":"Helan, Ningxia, China"},
+      {"name":"Yantai","type":"GI","region":"Shandong","geo":"Yantai, Shandong, China"},
+      {"name":"Changli","type":"GI","region":"China","geo":"Changli, Hebei, China"},
+      {"name":"Xinjiang","type":"GI","region":"China","geo":"Xinjiang, China"},
+      {"name":"Shangri-La","type":"GI","region":"Yunnan","geo":"Shangri-La, Yunnan, China"}
+    ]
+  },
+  "TR": {
+    "hemisphere": "north", "growing_start": 4, "growing_end": 10,
+    "appellations": [
+      {"name":"Trakya","type":"GI","region":"Thrace","geo":"Thrace, Turkey"},
+      {"name":"Ege","type":"GI","region":"Aegean","geo":"İzmir, Turkey"},
+      {"name":"İç Anadolu","type":"GI","region":"Anatolia","geo":"Cappadocia, Turkey"},
+      {"name":"Doğu Anadolu","type":"GI","region":"Anatolia","geo":"Elazığ, Turkey"}
+    ]
+  },
+  "MA": {
+    "hemisphere": "north", "growing_start": 4, "growing_end": 10,
+    "appellations": [
+      {"name":"Guerrouane","type":"AOG","region":"Meknès","geo":"Guerrouane, Morocco"},
+      {"name":"Berkane","type":"AOG","region":"Morocco","geo":"Berkane, Morocco"},
+      {"name":"Les Coteaux de l'Atlas","type":"AOG","region":"Atlas Mountains","geo":"Atlas Mountains, Morocco"},
+      {"name":"Beni M'Tir","type":"AOG","region":"Meknès","geo":"Meknès, Morocco"},
+      {"name":"Gharb","type":"AOG","region":"Morocco","geo":"Gharb, Morocco"},
+      {"name":"Zenata","type":"AOG","region":"Morocco","geo":"Zenata, Morocco"},
+      {"name":"Angad","type":"AOG","region":"Morocco","geo":"Oujda, Morocco"},
+      {"name":"Doukkala","type":"AOG","region":"Morocco","geo":"Doukkala, Morocco"},
+      {"name":"Saïs","type":"AOG","region":"Meknès","geo":"Fès, Morocco"}
+    ]
+  },
+  "IN": {
+    "hemisphere": "north", "growing_start": 10, "growing_end": 3,
+    "appellations": [
+      {"name":"Nashik","type":"GI","region":"Nashik","geo":"Nashik, Maharashtra, India"},
+      {"name":"Bengaluru","type":"GI","region":"Karnataka","geo":"Bengaluru, Karnataka, India"},
+      {"name":"Nandi Hills","type":"GI","region":"Karnataka","geo":"Nandi Hills, Karnataka, India"}
+    ]
+  },
+  "RS": {
+    "hemisphere": "north", "growing_start": 4, "growing_end": 10,
+    "appellations": [
+      {"name":"Fruška Gora","type":"PGI","region":"Vojvodina","geo":"Fruška Gora, Serbia"},
+      {"name":"Župa","type":"PGI","region":"Šumadija","geo":"Župa, Serbia"},
+      {"name":"Negotin","type":"PGI","region":"Serbia","geo":"Negotin, Serbia"},
+      {"name":"Knjaževac","type":"PGI","region":"Serbia","geo":"Knjaževac, Serbia"},
+      {"name":"Tri Morave","type":"PGI","region":"Šumadija","geo":"Kruševac, Serbia"}
+    ]
+  },
+  "MK": {
+    "hemisphere": "north", "growing_start": 4, "growing_end": 10,
+    "appellations": [
+      {"name":"Tikveš","type":"PGI","region":"Tikveš","geo":"Kavadarci, North Macedonia"},
+      {"name":"Povardarie","type":"PGI","region":"North Macedonia","geo":"Veles, North Macedonia"},
+      {"name":"Pelagonija","type":"PGI","region":"North Macedonia","geo":"Bitola, North Macedonia"},
+      {"name":"Pčinja-Osogovo","type":"PGI","region":"North Macedonia","geo":"Štip, North Macedonia"}
+    ]
+  },
+  "PE": {
+    "hemisphere": "south", "growing_start": 10, "growing_end": 4,
+    "appellations": [
+      {"name":"Ica","type":"DO","region":"Ica Valley","geo":"Ica, Peru"},
+      {"name":"Tacna","type":"DO","region":"Peru","geo":"Tacna, Peru"},
+      {"name":"Moquegua","type":"DO","region":"Peru","geo":"Moquegua, Peru"}
+    ]
+  },
+  "AM": {
+    "hemisphere": "north", "growing_start": 4, "growing_end": 10,
+    "appellations": [
+      {"name":"Ararat Valley","type":"GI","region":"Ararat Valley","geo":"Ararat Valley, Armenia"},
+      {"name":"Vayots Dzor","type":"GI","region":"Armenia","geo":"Vayots Dzor, Armenia"},
+      {"name":"Aragatsotn","type":"GI","region":"Aragatsotn","geo":"Aragatsotn, Armenia"},
+      {"name":"Tavush","type":"GI","region":"Armenia","geo":"Tavush, Armenia"}
+    ]
+  }
+}

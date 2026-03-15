@@ -1,0 +1,2865 @@
+{
+  "producer": {
+    "name": "Louis Jadot",
+    "slug": "louis-jadot",
+    "country": "France",
+    "region": "Burgundy",
+    "website": "https://www.louisjadot.com",
+    "producer_type": "negociant",
+    "founded_year": 1859,
+    "metadata": {
+      "full_name": "Maison Louis Jadot",
+      "headquarters": "Beaune, Côte de Beaune, Burgundy",
+      "president": "Pierre-Henry Gagey",
+      "owner": "Kopf family (via Kobrand Corporation, since 1985)",
+      "vineyard_hectares": 141,
+      "vineyard_notes": "Predominantly Premier and Grand Cru parcels in the Côte d'Or. Six wineries: Chablis, Beaune, Côte Chalonnaise, Mâconnais, Domaine Ferret, Beaujolais.",
+      "viticulture": "Transitioning all Côte d'Or vineyards to organic certification (began 2021). Co-founded Cadus cooperage for oak sourcing control.",
+      "negociant_notes": "Vinifies over 80% of négociant bottlings from purchased grapes. Approximately 80% of Premier and Grand Cru wines sourced from owned vineyards.",
+      "key_acquisitions": {
+        "1827": "Clos des Ursules (through marriage)",
+        "1985": "Domaine Clair-Daü (Chambertin Clos de Bèze, Chapelle-Chambertin, Bonnes-Mares, Musigny, Clos Vougeot, Les Amoureuses, Clos St. Jacques)",
+        "1996": "Château des Jacques, Moulin-à-Vent",
+        "2008": "Domaine J.A. Ferret, Pouilly-Fuissé",
+        "2012": "Château de Chorey-lès-Beaune",
+        "2017": "Domaine Prieur-Brunet"
+      },
+      "us_importer": "Kobrand Corporation",
+      "oregon_project": "Résonance Wines (Willamette Valley, est. 2013, headed by Thibault Gagey)"
+    },
+    "winemakers": [
+      {
+        "name": "Frédéric Barnier",
+        "role": "head",
+        "country": "France",
+        "start_year": 2012,
+        "metadata": {
+          "title": "Technical Director of Winemaking",
+          "joined": 2010,
+          "predecessor": "Jacques Lardière (winemaker for 42 years)",
+          "education": "Engineering degree, Agronomic School of Montpellier; Oenologist's National Diploma (1999)",
+          "previous": "Château de Chassagne-Montrachet (1999-2009)"
+        }
+      },
+      {
+        "name": "Christine Botton",
+        "role": "assistant",
+        "country": "France",
+        "metadata": {
+          "title": "Senior Winemaker",
+          "notes": "Over 30 years at Louis Jadot. Trained at Jadot, studied Oenology in Dijon."
+        }
+      }
+    ]
+  },
+  "wines": [
+    {
+      "name": "Le Musigny Grand Cru",
+      "color": "red",
+      "appellation": "Musigny",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Chambolle-Musigny",
+        "domaine": "Domaine Louis Jadot",
+        "source": "estate"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Vinous",
+              "score": 98,
+              "critic": "Neal Martin"
+            },
+            {
+              "publication": "Wine Advocate",
+              "score": 96,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "James Suckling",
+              "score": 98
+            },
+            {
+              "publication": "Burghound",
+              "score": 95,
+              "critic": "Allen Meadows"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Vinous",
+              "score": 97,
+              "critic": "Neal Martin"
+            },
+            {
+              "publication": "Wine Advocate",
+              "score": 96,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "James Suckling",
+              "score": 98
+            },
+            {
+              "publication": "Burghound",
+              "score": 95,
+              "critic": "Allen Meadows"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 95,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Vinous",
+              "score": 96,
+              "critic": "Neal Martin"
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Vinous",
+              "score": 97,
+              "critic": "Neal Martin"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Chambertin-Clos de Bèze Grand Cru",
+      "color": "red",
+      "appellation": "Chambertin-Clos de Bèze",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Gevrey-Chambertin",
+        "domaine": "Domaine Louis Jadot",
+        "source": "estate",
+        "notes": "Acquired with Clair-Daü purchase in 1985"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 96,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Jasper Morris MW",
+              "score": 96
+            },
+            {
+              "publication": "James Suckling",
+              "score": 97
+            },
+            {
+              "publication": "Burghound",
+              "score": 95,
+              "critic": "Allen Meadows"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 96,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "James Suckling",
+              "score": 98
+            },
+            {
+              "publication": "Burghound",
+              "score": 95,
+              "critic": "Allen Meadows"
+            },
+            {
+              "publication": "Jasper Morris MW",
+              "score": 95
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Jasper Morris MW",
+              "score": 97
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 95,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Jasper Morris MW",
+              "score": 94
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Bonnes-Mares Grand Cru",
+      "color": "red",
+      "appellation": "Bonnes-Mares",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Chambolle-Musigny",
+        "domaine": "Domaine Louis Jadot",
+        "source": "estate",
+        "notes": "Acquired with Clair-Daü purchase in 1985"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Vinous",
+              "score": 97,
+              "critic": "Neal Martin"
+            },
+            {
+              "publication": "Wine Advocate",
+              "score": 95,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Burghound",
+              "score": 94,
+              "critic": "Allen Meadows"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Vinous",
+              "score": 95,
+              "critic": "Neal Martin"
+            },
+            {
+              "publication": "Wine Advocate",
+              "score": 95,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Burghound",
+              "score": 93,
+              "critic": "Allen Meadows"
+            },
+            {
+              "publication": "Jasper Morris MW",
+              "score": 94
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Jasper Morris MW",
+              "score": 95
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Chapelle-Chambertin Grand Cru",
+      "color": "red",
+      "appellation": "Chapelle-Chambertin",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Gevrey-Chambertin",
+        "domaine": "Domaine Louis Jadot",
+        "source": "estate",
+        "notes": "Vines over 90 years old. Acquired with Clair-Daü purchase in 1985."
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Jasper Morris MW",
+              "score": 95
+            },
+            {
+              "publication": "Farr Vintners",
+              "score": 95,
+              "critic": "Thomas Parker MW"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Vinous",
+              "score": 94,
+              "critic": "Neal Martin"
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Jasper Morris MW",
+              "score": 97
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Clos de Vougeot Grand Cru",
+      "color": "red",
+      "appellation": "Clos de Vougeot / Clos Vougeot",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Vougeot",
+        "domaine": "Domaine Louis Jadot",
+        "source": "estate"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "James Suckling",
+              "score": 97
+            },
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Jasper Morris MW",
+              "score": 95
+            },
+            {
+              "publication": "Burghound",
+              "score": 92,
+              "critic": "Allen Meadows"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Vinous",
+              "score": 94,
+              "critic": "Neal Martin"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Jasper Morris MW",
+              "score": 93
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Échezeaux Grand Cru",
+      "color": "red",
+      "appellation": "Echezeaux",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Flagey-Échézeaux",
+        "domaine": "Domaine Louis Jadot",
+        "source": "estate"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Spectator",
+              "score": 96
+            },
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Vinous",
+              "score": 95,
+              "critic": "Neal Martin"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Vinous",
+              "score": 95,
+              "critic": "Neal Martin"
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Jasper Morris MW",
+              "score": 92
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Grands-Échezeaux Grand Cru",
+      "color": "red",
+      "appellation": "Grands-Echezeaux",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Flagey-Échézeaux",
+        "source": "negociant",
+        "notes": "Made from purchased wine"
+      },
+      "vintages": [
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Vinous",
+              "score": 96,
+              "critic": "Neal Martin"
+            },
+            {
+              "publication": "Wine Advocate",
+              "score": 95,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Vinous",
+              "score": 96,
+              "critic": "Neal Martin"
+            },
+            {
+              "publication": "Wine Advocate",
+              "score": 95,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Clos de la Roche Grand Cru",
+      "color": "red",
+      "appellation": "Clos de la Roche",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Morey-Saint-Denis",
+        "source": "negociant"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Vinous",
+              "score": 95,
+              "critic": "Neal Martin"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Vinous",
+              "score": 94,
+              "critic": "Neal Martin"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Clos Saint-Denis Grand Cru",
+      "color": "red",
+      "appellation": "Clos Saint-Denis",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Morey-Saint-Denis",
+        "domaine": "Domaine Gagey",
+        "source": "estate"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Vinous",
+              "score": 95,
+              "critic": "Neal Martin"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Vinous",
+              "score": 94,
+              "critic": "Neal Martin"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Charmes-Chambertin Grand Cru",
+      "color": "red",
+      "appellation": "Charmes-Chambertin",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Gevrey-Chambertin",
+        "source": "negociant"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Vinous",
+              "score": 93,
+              "critic": "Neal Martin"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Griotte-Chambertin Grand Cru",
+      "color": "red",
+      "appellation": "Griotte-Chambertin",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Gevrey-Chambertin",
+        "source": "negociant"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Latricières-Chambertin Grand Cru",
+      "color": "red",
+      "appellation": "Latricières-Chambertin",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Gevrey-Chambertin",
+        "source": "negociant"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Mazis-Chambertin Grand Cru",
+      "color": "red",
+      "appellation": "Mazis-Chambertin",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Gevrey-Chambertin",
+        "source": "negociant"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Le Chambertin Grand Cru",
+      "color": "red",
+      "appellation": "Chambertin",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Gevrey-Chambertin",
+        "source": "negociant"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 96,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 96,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 95,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Corton-Pougets Grand Cru",
+      "color": "red",
+      "appellation": "Corton",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Aloxe-Corton",
+        "vineyard": "Les Pougets",
+        "domaine": "Domaine des Héritiers Louis Jadot",
+        "source": "estate"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Jasper Morris MW",
+              "score": 91
+            },
+            {
+              "publication": "Farr Vintners",
+              "score": 93,
+              "critic": "Thomas Parker MW"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Jasper Morris MW",
+              "score": 93
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Corton-Grèves Grand Cru",
+      "color": "red",
+      "appellation": "Corton",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Aloxe-Corton",
+        "vineyard": "Les Grèves",
+        "source": "negociant"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Chevalier-Montrachet Les Demoiselles Grand Cru",
+      "color": "white",
+      "appellation": "Chevalier-Montrachet",
+      "varietal_category": "Chardonnay",
+      "grapes": [
+        {
+          "name": "Chardonnay",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Puligny-Montrachet",
+        "vineyard": "Les Demoiselles",
+        "domaine": "Domaine des Héritiers Louis Jadot",
+        "source": "estate"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 96,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Jasper Morris MW",
+              "score": 95
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 96,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Jasper Morris MW",
+              "score": 96
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 95,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Jasper Morris MW",
+              "score": 95
+            },
+            {
+              "publication": "Vinous",
+              "score": 94,
+              "critic": "Neal Martin"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Montrachet Grand Cru",
+      "color": "white",
+      "appellation": "Montrachet",
+      "varietal_category": "Chardonnay",
+      "grapes": [
+        {
+          "name": "Chardonnay",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Puligny-Montrachet / Chassagne-Montrachet",
+        "source": "negociant"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 95,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Jasper Morris MW",
+              "score": 96
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 96,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 95,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Bâtard-Montrachet Grand Cru",
+      "color": "white",
+      "appellation": "Bâtard-Montrachet",
+      "varietal_category": "Chardonnay",
+      "grapes": [
+        {
+          "name": "Chardonnay",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Puligny-Montrachet / Chassagne-Montrachet",
+        "domaine": "Domaine Louis Jadot",
+        "source": "estate"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 95,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Jasper Morris MW",
+              "score": 94
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Jasper Morris MW",
+              "score": 97
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Corton-Charlemagne Grand Cru",
+      "color": "white",
+      "appellation": "Corton-Charlemagne",
+      "varietal_category": "Chardonnay",
+      "grapes": [
+        {
+          "name": "Chardonnay",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Aloxe-Corton / Pernand-Vergelesses",
+        "domaine": "Domaine des Héritiers Louis Jadot",
+        "source": "estate"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "James Suckling",
+              "score": 98
+            },
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Jasper Morris MW",
+              "score": 95
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 95,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Jasper Morris MW",
+              "score": 96
+            },
+            {
+              "publication": "James Suckling",
+              "score": 97
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Gevrey-Chambertin Clos Saint-Jacques Premier Cru",
+      "color": "red",
+      "appellation": "Gevrey-Chambertin",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Gevrey-Chambertin",
+        "vineyard": "Clos Saint-Jacques",
+        "domaine": "Domaine Louis Jadot",
+        "source": "estate",
+        "notes": "Widely considered Grand Cru quality. Acquired with Clair-Daü purchase in 1985."
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Jasper Morris MW",
+              "score": 95
+            },
+            {
+              "publication": "James Suckling",
+              "score": 97
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 95,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Vinous",
+              "score": 95,
+              "critic": "Neal Martin"
+            },
+            {
+              "publication": "James Suckling",
+              "score": 97
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Jasper Morris MW",
+              "score": 95
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Chambolle-Musigny Les Amoureuses Premier Cru",
+      "color": "red",
+      "appellation": "Chambolle-Musigny",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Chambolle-Musigny",
+        "vineyard": "Les Amoureuses",
+        "domaine": "Domaine Louis Jadot",
+        "source": "estate",
+        "notes": "Widely considered Grand Cru quality. Acquired with Clair-Daü purchase in 1985."
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 95,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Burghound",
+              "score": 94,
+              "critic": "Allen Meadows"
+            },
+            {
+              "publication": "Jasper Morris MW",
+              "score": 95
+            },
+            {
+              "publication": "Decanter",
+              "score": 96
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 95,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Vinous",
+              "score": 95,
+              "critic": "Neal Martin"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Jasper Morris MW",
+              "score": 95
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Chambolle-Musigny Les Fuées Premier Cru",
+      "color": "red",
+      "appellation": "Chambolle-Musigny",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Chambolle-Musigny",
+        "vineyard": "Les Fuées",
+        "source": "estate",
+        "notes": "Adjacent to Bonnes-Mares; often shows a more structured, Bonnes-Mares-like style"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Vinous",
+              "score": 93,
+              "critic": "Neal Martin"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Chambolle-Musigny Les Baudes Premier Cru",
+      "color": "red",
+      "appellation": "Chambolle-Musigny",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Chambolle-Musigny",
+        "vineyard": "Les Baudes",
+        "source": "estate"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 91,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Beaune Clos des Ursules Premier Cru",
+      "color": "red",
+      "appellation": "Beaune",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Beaune",
+        "vineyard": "Vignes Franches - Clos des Ursules",
+        "domaine": "Domaine des Héritiers Louis Jadot",
+        "source": "estate",
+        "monopole": true,
+        "notes": "Jadot's flagship Beaune. Monopole since 1826. Located within the larger Vignes Franches Premier Cru vineyard."
+      },
+      "vintages": [
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "James Suckling",
+              "score": 96
+            },
+            {
+              "publication": "Wine Spectator",
+              "score": 94
+            }
+          ]
+        },
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Nuits-Saint-Georges Les Boudots Premier Cru",
+      "color": "red",
+      "appellation": "Nuits-Saint-Georges",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Nuits-Saint-Georges",
+        "vineyard": "Les Boudots",
+        "domaine": "Domaine Gagey",
+        "source": "estate"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Vinous",
+              "score": 92,
+              "critic": "Neal Martin"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 91,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Pommard Les Grands Epenots Premier Cru",
+      "color": "red",
+      "appellation": "Pommard",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Pommard",
+        "vineyard": "Les Grands Epenots",
+        "source": "negociant"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 91,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Volnay Santenots Premier Cru",
+      "color": "red",
+      "appellation": "Volnay",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Meursault",
+        "vineyard": "Les Santenots",
+        "source": "negociant",
+        "notes": "Vineyard is in Meursault but red wine is sold as Volnay Premier Cru"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 91,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 90,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Volnay Clos de la Barre",
+      "color": "red",
+      "appellation": "Volnay",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Village",
+        "commune": "Volnay",
+        "vineyard": "Clos de la Barre",
+        "domaine": "Domaine Louis Jadot",
+        "source": "estate",
+        "monopole": true
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 91,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 91,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 90,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vosne-Romanée Les Suchots Premier Cru",
+      "color": "red",
+      "appellation": "Vosne-Romanée",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Vosne-Romanée",
+        "vineyard": "Les Suchots",
+        "source": "negociant"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            },
+            {
+              "publication": "Vinous",
+              "score": 93,
+              "critic": "Neal Martin"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Vosne-Romanée Les Beaux Monts Premier Cru",
+      "color": "red",
+      "appellation": "Vosne-Romanée",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Vosne-Romanée",
+        "vineyard": "Les Beaux Monts",
+        "source": "negociant"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Savigny-lès-Beaune La Dominode Premier Cru",
+      "color": "red",
+      "appellation": "Savigny-lès-Beaune",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Savigny-lès-Beaune",
+        "vineyard": "La Dominode",
+        "source": "estate"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 91,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 91,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 90,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Puligny-Montrachet Les Folatières Premier Cru",
+      "color": "white",
+      "appellation": "Puligny-Montrachet",
+      "varietal_category": "Chardonnay",
+      "grapes": [
+        {
+          "name": "Chardonnay",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Puligny-Montrachet",
+        "vineyard": "Les Folatières",
+        "domaine": "Domaine des Héritiers Louis Jadot",
+        "source": "estate"
+      },
+      "vintages": [
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Jasper Morris MW",
+              "score": 95
+            },
+            {
+              "publication": "James Suckling",
+              "score": 94
+            },
+            {
+              "publication": "Vinous",
+              "score": 94,
+              "critic": "Neal Martin"
+            }
+          ]
+        },
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Jasper Morris MW",
+              "score": 94
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Meursault Les Charmes Premier Cru",
+      "color": "white",
+      "appellation": "Meursault",
+      "varietal_category": "Chardonnay",
+      "grapes": [
+        {
+          "name": "Chardonnay",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Meursault",
+        "vineyard": "Les Charmes",
+        "domaine": "Domaine Louis Jadot",
+        "source": "estate"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Meursault Les Perrières Premier Cru",
+      "color": "white",
+      "appellation": "Meursault",
+      "varietal_category": "Chardonnay",
+      "grapes": [
+        {
+          "name": "Chardonnay",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Meursault",
+        "vineyard": "Les Perrières",
+        "source": "negociant"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Meursault Les Genevrières Premier Cru",
+      "color": "white",
+      "appellation": "Meursault",
+      "varietal_category": "Chardonnay",
+      "grapes": [
+        {
+          "name": "Chardonnay",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Meursault",
+        "vineyard": "Les Genevrières",
+        "source": "negociant"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 94,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Beaune Grèves Le Clos Blanc Premier Cru",
+      "color": "white",
+      "appellation": "Beaune",
+      "varietal_category": "Chardonnay",
+      "grapes": [
+        {
+          "name": "Chardonnay",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Beaune",
+        "vineyard": "Grèves - Le Clos Blanc",
+        "source": "estate",
+        "notes": "Rare white Beaune Premier Cru from a small parcel within the Grèves vineyard"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 91,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Puligny-Montrachet Clos de la Garenne Premier Cru",
+      "color": "white",
+      "appellation": "Puligny-Montrachet",
+      "varietal_category": "Chardonnay",
+      "grapes": [
+        {
+          "name": "Chardonnay",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Puligny-Montrachet",
+        "vineyard": "Clos de la Garenne",
+        "domaine": "Duc de Magenta",
+        "source": "estate"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Chassagne-Montrachet Morgeot Premier Cru",
+      "color": "white",
+      "appellation": "Chassagne-Montrachet",
+      "varietal_category": "Chardonnay",
+      "grapes": [
+        {
+          "name": "Chardonnay",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Chassagne-Montrachet",
+        "vineyard": "Abbaye de Morgeot",
+        "domaine": "Duc de Magenta",
+        "source": "estate"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Gevrey-Chambertin Estournelles Saint-Jacques Premier Cru",
+      "color": "red",
+      "appellation": "Gevrey-Chambertin",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Gevrey-Chambertin",
+        "vineyard": "Estournelles Saint-Jacques",
+        "source": "negociant"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    },
+    {
+      "name": "Château des Jacques Moulin-à-Vent",
+      "color": "red",
+      "appellation": "Moulin-à-Vent",
+      "varietal_category": "Gamay",
+      "grapes": [
+        {
+          "name": "Gamay",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Cru Beaujolais",
+        "commune": "Romanèche-Thorins",
+        "domaine": "Château des Jacques",
+        "source": "estate",
+        "notes": "Acquired 1996. Moulin-à-Vent is the 'King of Beaujolais' — fullest, most age-worthy of the crus."
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 91,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 91,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 90,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Château des Jacques Moulin-à-Vent Clos de Rochegrès",
+      "color": "red",
+      "appellation": "Moulin-à-Vent",
+      "varietal_category": "Gamay",
+      "grapes": [
+        {
+          "name": "Gamay",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Cru Beaujolais",
+        "commune": "Romanèche-Thorins",
+        "vineyard": "Clos de Rochegrès",
+        "domaine": "Château des Jacques",
+        "source": "estate",
+        "notes": "Single-vineyard bottling from the Château des Jacques estate"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 91,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 91,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pouilly-Fuissé",
+      "color": "white",
+      "appellation": "Pouilly-Fuissé",
+      "varietal_category": "Chardonnay",
+      "grapes": [
+        {
+          "name": "Chardonnay",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Village",
+        "commune": "Fuissé",
+        "source": "negociant",
+        "notes": "Top of the Mâconnais hierarchy. Jadot acquired Domaine J.A. Ferret in Pouilly-Fuissé in 2008."
+      },
+      "vintages": [
+        {
+          "year": 2022,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 90,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 89,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 90,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nuits-Saint-Georges Les Vaucrains Premier Cru",
+      "color": "red",
+      "appellation": "Nuits-Saint-Georges",
+      "varietal_category": "Pinot Noir",
+      "grapes": [
+        {
+          "name": "Pinot Noir",
+          "percentage": 100
+        }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Nuits-Saint-Georges",
+        "vineyard": "Les Vaucrains",
+        "source": "negociant",
+        "notes": "One of the most powerful and age-worthy Nuits-Saint-Georges Premier Crus"
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 93,
+              "critic": "William Kelley"
+            }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            {
+              "publication": "Wine Advocate",
+              "score": 92,
+              "critic": "William Kelley"
+            }
+          ]
+        }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    }
+  ]
+}

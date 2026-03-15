@@ -1,0 +1,1103 @@
+{
+  "producer": {
+    "name": "Fort Ross Vineyard & Winery",
+    "slug": "fort-ross-vineyard",
+    "country": "United States",
+    "region": "Sonoma County",
+    "website": "https://fortrossvineyard.com",
+    "producer_type": "estate",
+    "appellation": "Fort Ross-Seaview",
+    "founded_year": 1994,
+    "first_vintage": 2000,
+    "metadata": {
+      "owners": "Lester and Linda Schwartz",
+      "winemaker": "Jeff Pisoni (since 2009 vintage)",
+      "winemaker_education": "California State University, Fresno (Enology)",
+      "vineyard_foreman": "Ventura Albor",
+      "location": "15725 Meyers Grade Road, Jenner, CA 95450",
+      "phone": "707-847-3460",
+      "subzone": "Fort Ross-Seaview AVA, Sonoma Coast",
+      "vineyard_size_acres": 51,
+      "num_blocks": 33,
+      "elevation_feet_low": 1200,
+      "elevation_feet_high": 1700,
+      "distance_to_ocean_miles": "<1",
+      "philosophy": "Gentle winemaking with minimal intervention. Effort placed in farming. Over thirty vineyard blocks farmed individually. Night harvest, native fermentation, French oak aging.",
+      "winemaking": "Hand-harvested at night in small 2-gallon trays, hand-sorted, destemmed, cold-soaked several days, open-top fermenters (5 and 10-ton tanks), manual punch-down, native yeast fermentation, French oak aging. Many wines bottled unfined and unfiltered.",
+      "grape_varieties_planted": ["Pinot Noir", "Chardonnay", "Pinotage", "Chenin Blanc"],
+      "pinot_noir_clones": ["Calera", "Pommard", "Swan", "Dijon 115", "Vosne-Romanée field selection"],
+      "chardonnay_clones": ["Hyde field selection", "Old Wente field selection"],
+      "pinotage_clones": ["MM1", "MM3 (proprietary, imported from South Africa via UC Davis Foundation Plant Services)"],
+      "pinotage_origin": "First private growers to import Pinotage bud wood from South Africa through UC Davis Foundation Plant Services",
+      "second_label": "Sea Slopes",
+      "historical_note": "Vineyard located near the historic Fort Ross, where the first grapevines in Sonoma County were planted in 1817 by Russian settlers."
+    },
+    "winemakers": [
+      {
+        "name": "Jeff Pisoni",
+        "role": "head",
+        "country": "United States",
+        "start_year": 2009,
+        "metadata": {
+          "education": "California State University, Fresno (Enology)",
+          "family": "Pisoni family of Santa Lucia Highlands"
+        }
+      }
+    ]
+  },
+  "_notes": {
+    "wine_naming_evolution": "Early vintages (2000-~2015) used 'Reserve' tier and 'Symposium' as cuvée names. The 'FRV' designation appeared around 2013-2017 for estate Pinot Noir and Chardonnay. By ~2018+ the estate Pinot became simply 'Pinot Noir' and the single-block wines (Top of Land, Stagecoach Road, The Terraces) became the top tier. 'Bicentennial Commemorative Bottling' wines began in 2010 to commemorate the 1812-2012 bicentennial of the Russian Settlement of Fort Ross.",
+    "sea_slopes_history": "Sea Slopes originated as a limited-production barrel blend in 2004. Due to high demand, it was established as a dedicated brand in 2015 for a 'softer, more approachable, fruit-forward wine.' Sea Slopes Chardonnay was introduced with the 2018 vintage. Appellation is Sonoma Coast (not Fort Ross-Seaview).",
+    "model_as_separate_producer": "Sea Slopes should be modeled as a separate producer with parent_producer_id pointing to Fort Ross Vineyard & Winery."
+  },
+  "wines": [
+    {
+      "name": "Pinot Noir",
+      "color": "red",
+      "appellation": "Fort Ross-Seaview",
+      "varietal_category": "Pinot Noir",
+      "oak_origin": "french",
+      "yeast_type": "native",
+      "fermentation_vessel": "mixed",
+      "grapes": [
+        { "name": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Estate blend of various blocks. Called 'FRV Pinot Noir' in some vintages (2013-2017). Earlier vintages labeled as Sonoma Coast Pinot Noir.",
+        "clones": "Calera, Pommard, Swan, Dijon 115"
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "release_price_usd": 54,
+          "oak_duration_months": 11,
+          "oak_new_pct": 30,
+          "oak_origin": "french",
+          "production_cases": 478,
+          "bottling_date": "August 2024",
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 96, "reviewer": "Audrey Frick" }
+          ]
+        },
+        {
+          "year": 2022,
+          "oak_duration_months": 11,
+          "oak_new_pct": 30,
+          "oak_origin": "french",
+          "production_cases": 590,
+          "harvest_date": "2022-08-19",
+          "bottling_date": "January 2023",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 93 }
+          ]
+        },
+        {
+          "year": 2021,
+          "oak_duration_months": 15,
+          "oak_new_pct": 35,
+          "oak_origin": "french",
+          "production_cases": 950,
+          "harvest_start": "2021-08-30",
+          "harvest_end": "2021-09-06",
+          "bottling_date": "January 2023",
+          "bottled_unfined_unfiltered": true,
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 92 },
+            { "publication": "Wine Enthusiast", "score": 92 },
+            { "publication": "James Suckling", "score": 93 }
+          ]
+        },
+        {
+          "year": 2020,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 93 }
+          ]
+        },
+        {
+          "year": 2019,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93 }
+          ]
+        },
+        {
+          "year": 2018,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 92 }
+          ]
+        },
+        {
+          "year": 2017,
+          "oak_origin": "french",
+          "_note": "Labeled as 'FRV Pinot Noir'",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 92 },
+            { "publication": "Jeb Dunnuck", "score": 92 }
+          ]
+        },
+        {
+          "year": 2016,
+          "oak_origin": "french",
+          "_note": "Labeled as 'FRV Pinot Noir'",
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 91 },
+            { "publication": "James Suckling", "score": 91 }
+          ]
+        },
+        {
+          "year": 2015,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 92 },
+            { "publication": "Wine Enthusiast", "score": 92 },
+            { "publication": "Jeb Dunnuck", "score": 91 }
+          ]
+        },
+        {
+          "year": 2014,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 93 }
+          ]
+        },
+        {
+          "year": 2013,
+          "oak_origin": "french",
+          "_note": "Labeled as 'FRV Pinot Noir'",
+          "scores": [
+            { "publication": "Prince of Pinot", "score": 90 }
+          ]
+        },
+        {
+          "year": 2012,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 93 }
+          ]
+        },
+        {
+          "year": 2011,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2010,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 93, "_note": "Cellar Selection" }
+          ]
+        },
+        {
+          "year": 2009,
+          "abv": 14.1,
+          "release_price_usd": 42,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2007,
+          "abv": 14.5,
+          "release_price_usd": 30,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Spectator", "score": 91 }
+          ]
+        },
+        {
+          "year": 2006,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2005,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2004,
+          "abv": 14.5,
+          "release_price_usd": 39,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Spectator", "score": 90 }
+          ]
+        },
+        {
+          "year": 2003,
+          "release_price_usd": 37,
+          "oak_origin": "french"
+        }
+      ]
+    },
+    {
+      "name": "Pinot Noir Reserve",
+      "color": "red",
+      "appellation": "Fort Ross-Seaview",
+      "varietal_category": "Pinot Noir",
+      "oak_origin": "french",
+      "yeast_type": "native",
+      "fermentation_vessel": "mixed",
+      "grapes": [
+        { "name": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Reserve-tier barrel selection. Discontinued label — superseded by single-block wines (Top of Land, Stagecoach Road, The Terraces) circa 2016.",
+        "clones": "Primarily old Burgundian field selections originating from Vosne-Romanée and Pommard"
+      },
+      "vintages": [
+        {
+          "year": 2014,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 91 }
+          ]
+        },
+        {
+          "year": 2009,
+          "abv": 14.3,
+          "release_price_usd": 65,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 93 }
+          ]
+        },
+        {
+          "year": 2005,
+          "abv": 14.0,
+          "release_price_usd": 49,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Spectator", "score": 92 }
+          ]
+        },
+        {
+          "year": 2004,
+          "abv": 14.5,
+          "release_price_usd": 49,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Spectator", "score": 92 }
+          ]
+        },
+        {
+          "year": 2003,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2002,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 92 }
+          ]
+        },
+        {
+          "year": 2001,
+          "abv": 14.5,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 91 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Symposium Pinot Noir",
+      "color": "red",
+      "appellation": "Fort Ross-Seaview",
+      "varietal_category": "Pinot Noir",
+      "oak_origin": "french",
+      "yeast_type": "native",
+      "grapes": [
+        { "name": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Special cuvée, early-era wine. Limited production."
+      },
+      "vintages": [
+        {
+          "year": 2011,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2003,
+          "release_price_usd": 28,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Spectator", "score": 92 }
+          ]
+        },
+        {
+          "year": 2002,
+          "oak_origin": "french"
+        }
+      ]
+    },
+    {
+      "name": "Top of Land Pinot Noir",
+      "color": "red",
+      "appellation": "Fort Ross-Seaview",
+      "varietal_category": "Pinot Noir",
+      "oak_origin": "french",
+      "yeast_type": "native",
+      "fermentation_vessel": "mixed",
+      "grapes": [
+        { "name": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Single-block expression from the lowest-yielding blocks at the highest elevations of the estate. Introduced with 2012 vintage.",
+        "first_vintage": 2012
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "release_price_usd": 80,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2022,
+          "release_price_usd": 80,
+          "oak_duration_months": 11,
+          "oak_new_pct": 50,
+          "oak_origin": "french",
+          "production_cases": 240,
+          "harvest_date": "2022-08-19",
+          "bottling_date": "August 2023"
+        },
+        {
+          "year": 2021,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 92 },
+            { "publication": "James Suckling", "score": 93 }
+          ]
+        },
+        {
+          "year": 2019,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 93, "_note": "93+" }
+          ]
+        },
+        {
+          "year": 2018,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2017,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93 }
+          ]
+        },
+        {
+          "year": 2016,
+          "oak_duration_months": 10,
+          "oak_new_pct": 40,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 93 }
+          ]
+        },
+        {
+          "year": 2015,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2014,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2013,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2012,
+          "oak_origin": "french"
+        }
+      ]
+    },
+    {
+      "name": "Stagecoach Road Pinot Noir",
+      "color": "red",
+      "appellation": "Fort Ross-Seaview",
+      "varietal_category": "Pinot Noir",
+      "oak_origin": "french",
+      "yeast_type": "native",
+      "fermentation_vessel": "mixed",
+      "grapes": [
+        { "name": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Single-block expression. Deeper, broader-shouldered style with broader tannins.",
+        "first_vintage": 2016
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "release_price_usd": 80,
+          "oak_duration_months": 11,
+          "oak_new_pct": 35,
+          "oak_origin": "french",
+          "production_cases": 118,
+          "bottling_date": "August 2024",
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 96, "reviewer": "Audrey Frick" }
+          ]
+        },
+        {
+          "year": 2022,
+          "oak_duration_months": 11,
+          "oak_new_pct": 55,
+          "oak_origin": "french",
+          "production_cases": 230,
+          "harvest_start": "2022-09-09",
+          "harvest_end": "2022-09-11",
+          "bottling_date": "August 2023"
+        },
+        {
+          "year": 2021,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 94 }
+          ]
+        },
+        {
+          "year": 2019,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 94 }
+          ]
+        },
+        {
+          "year": 2018,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2017,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94 },
+            { "publication": "Jeb Dunnuck", "score": 92 }
+          ]
+        },
+        {
+          "year": 2016,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 91, "_note": "91+" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Terraces Pinot Noir",
+      "color": "red",
+      "appellation": "Fort Ross-Seaview",
+      "varietal_category": "Pinot Noir",
+      "oak_origin": "french",
+      "yeast_type": "native",
+      "fermentation_vessel": "mixed",
+      "grapes": [
+        { "name": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Single-block expression from terraced Block #11. 100% Calera clone.",
+        "clone": "Calera",
+        "block": "Block 11 (terraced)",
+        "first_vintage": 2016
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "release_price_usd": 80,
+          "oak_duration_months": 11,
+          "oak_new_pct": 40,
+          "oak_origin": "french",
+          "production_cases": 114,
+          "bottling_date": "August 2024",
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 96, "_note": "96+", "drinking_window": "2027-2042" }
+          ]
+        },
+        {
+          "year": 2022,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2021,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "James Suckling", "score": 93 },
+            { "publication": "Wine Enthusiast", "score": 93 }
+          ]
+        },
+        {
+          "year": 2019,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2018,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2017,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93 }
+          ]
+        },
+        {
+          "year": 2016,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94 },
+            { "publication": "Jeb Dunnuck", "score": 92 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bicentennial Pinot Noir",
+      "color": "red",
+      "appellation": "Fort Ross-Seaview",
+      "varietal_category": "Pinot Noir",
+      "oak_origin": "french",
+      "yeast_type": "native",
+      "grapes": [
+        { "name": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Commemorative bottling for the 1812-2012 Bicentennial of the Russian Settlement of Fort Ross, the site of the first grape plantings in Sonoma County. Continued as an ongoing special cuvée beyond the original bicentennial year.",
+        "first_vintage": 2010
+      },
+      "vintages": [
+        {
+          "year": 2021,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2018,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2017,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 92 }
+          ]
+        },
+        {
+          "year": 2016,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2014,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2012,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 90 }
+          ]
+        },
+        {
+          "year": 2011,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2010,
+          "oak_origin": "french",
+          "_note": "First Bicentennial bottling"
+        }
+      ]
+    },
+    {
+      "name": "Chardonnay",
+      "color": "white",
+      "appellation": "Fort Ross-Seaview",
+      "varietal_category": "Chardonnay",
+      "oak_origin": "french",
+      "yeast_type": "native",
+      "grapes": [
+        { "name": "Chardonnay", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Estate blend from multiple blocks, cool-climate expression. Called 'FRV Chardonnay' in some vintages.",
+        "clones": "Hyde field selection, Old Wente field selection"
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "release_price_usd": 48,
+          "oak_duration_months": 11,
+          "oak_new_pct": 30,
+          "oak_origin": "french",
+          "production_cases": 478,
+          "bottling_date": "August 2024",
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 96, "reviewer": "Audrey Frick", "drinking_window": "2025-2037" }
+          ]
+        },
+        {
+          "year": 2022,
+          "oak_duration_months": 11,
+          "oak_new_pct": 30,
+          "oak_origin": "french",
+          "production_cases": 340,
+          "harvest_date": "2022-08-19",
+          "bottling_date": "August 2022",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 93 }
+          ]
+        },
+        {
+          "year": 2021,
+          "abv": 13.5,
+          "oak_duration_months": 11,
+          "oak_new_pct": 35,
+          "oak_origin": "french",
+          "release_price_usd": 48,
+          "scores": [
+            { "publication": "International Wine Review", "score": 93 },
+            { "publication": "Wine Enthusiast", "score": 94 }
+          ]
+        },
+        {
+          "year": 2020,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93 }
+          ]
+        },
+        {
+          "year": 2018,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 92 },
+            { "publication": "Wine Advocate", "score": 92 }
+          ]
+        },
+        {
+          "year": 2017,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2016,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 93 },
+            { "publication": "Wine Advocate", "score": 91 },
+            { "publication": "Jeb Dunnuck", "score": 91 },
+            { "publication": "James Suckling", "score": 91 }
+          ]
+        },
+        {
+          "year": 2015,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2012,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 92 }
+          ]
+        },
+        {
+          "year": 2011,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 93, "_note": "Editors' Choice" }
+          ]
+        },
+        {
+          "year": 2010,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 92 }
+          ]
+        },
+        {
+          "year": 2009,
+          "abv": 14.5,
+          "release_price_usd": 27,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 95, "_note": "Editors' Choice" }
+          ]
+        },
+        {
+          "year": 2006,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2005,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2004,
+          "oak_origin": "french"
+        }
+      ]
+    },
+    {
+      "name": "Chardonnay Reserve",
+      "color": "white",
+      "appellation": "Fort Ross-Seaview",
+      "varietal_category": "Chardonnay",
+      "oak_origin": "french",
+      "yeast_type": "native",
+      "grapes": [
+        { "name": "Chardonnay", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Reserve-tier barrel selection. Discontinued label — superseded by Mother of Pearl and Bicentennial Chardonnay."
+      },
+      "vintages": [
+        {
+          "year": 2011,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2005,
+          "oak_origin": "french",
+          "production_cases": 247,
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 91 }
+          ]
+        },
+        {
+          "year": 2004,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 94 }
+          ]
+        },
+        {
+          "year": 2002,
+          "oak_origin": "french"
+        }
+      ]
+    },
+    {
+      "name": "Mother of Pearl Chardonnay",
+      "color": "white",
+      "appellation": "Fort Ross-Seaview",
+      "varietal_category": "Chardonnay",
+      "oak_origin": "french",
+      "yeast_type": "native",
+      "grapes": [
+        { "name": "Chardonnay", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Reserve-tier single-block Chardonnay from heritage clones at the highest elevation blocks.",
+        "clones": "Heritage clones",
+        "first_vintage": 2013
+      },
+      "vintages": [
+        {
+          "year": 2021,
+          "release_price_usd": 68,
+          "oak_duration_months": 11,
+          "oak_new_pct": 25,
+          "oak_origin": "french",
+          "production_cases": 165,
+          "harvest_start": "2021-09-04",
+          "harvest_end": "2021-09-08",
+          "bottling_date": "August 2022",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 92 }
+          ]
+        },
+        {
+          "year": 2020,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2019,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 94 }
+          ]
+        },
+        {
+          "year": 2018,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 94 }
+          ]
+        },
+        {
+          "year": 2017,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93 },
+            { "publication": "Wine Enthusiast", "score": 93 },
+            { "publication": "James Suckling", "score": 92 }
+          ]
+        },
+        {
+          "year": 2016,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 91 }
+          ]
+        },
+        {
+          "year": 2015,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 94 }
+          ]
+        },
+        {
+          "year": 2013,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 94 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bicentennial Chardonnay",
+      "color": "white",
+      "appellation": "Fort Ross-Seaview",
+      "varietal_category": "Chardonnay",
+      "oak_origin": "french",
+      "yeast_type": "native",
+      "grapes": [
+        { "name": "Chardonnay", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Commemorative bottling. Only made in the best years. Comprised solely of the Hyde clone (small-berried old Hyde field selection).",
+        "clone": "Hyde field selection",
+        "first_vintage": 2010
+      },
+      "vintages": [
+        {
+          "year": 2022,
+          "oak_duration_months": 15,
+          "oak_new_pct": 20,
+          "oak_origin": "french",
+          "production_cases": 236,
+          "harvest_start": "2022-09-09",
+          "harvest_end": "2022-09-11",
+          "bottling_date": "March 2023"
+        },
+        {
+          "year": 2021,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2019,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2018,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2017,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2016,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 92 }
+          ]
+        },
+        {
+          "year": 2014,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2012,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2010,
+          "oak_origin": "french",
+          "_note": "First Bicentennial bottling. Wine Enthusiast review exists."
+        }
+      ]
+    },
+    {
+      "name": "Rosé of Pinot Noir",
+      "color": "rosé",
+      "appellation": "Fort Ross-Seaview",
+      "varietal_category": "Pinot Noir Rosé",
+      "oak_origin": "french",
+      "yeast_type": "native",
+      "grapes": [
+        { "name": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Estate rosé. French saignée method, 6-hour skin contact. Aged on lees in neutral French oak."
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "abv": 13.5,
+          "release_price_usd": 35,
+          "oak_duration_months": 4,
+          "oak_new_pct": 0,
+          "oak_origin": "french",
+          "production_cases": 100,
+          "bottling_date": "January 2024",
+          "bottled_unfiltered": true,
+          "winemaker": "Jeff Pisoni",
+          "scores": [
+            { "publication": "International Wine Review", "score": 93 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Late Harvest Chardonnay",
+      "color": "white",
+      "appellation": "Fort Ross-Seaview",
+      "varietal_category": "Late Harvest",
+      "oak_origin": "french",
+      "grapes": [
+        { "name": "Chardonnay", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Dessert wine. Estate-grown late harvest Chardonnay."
+      },
+      "vintages": [
+        {
+          "year": 2020,
+          "oak_duration_months": 30,
+          "oak_new_pct": 0,
+          "oak_origin": "french",
+          "production_cases": 84,
+          "bottling_date": "January 2023"
+        },
+        {
+          "year": 2019,
+          "oak_origin": "french"
+        }
+      ]
+    },
+    {
+      "name": "Pinotage",
+      "color": "red",
+      "appellation": "Fort Ross-Seaview",
+      "varietal_category": "Pinotage",
+      "oak_origin": "french",
+      "yeast_type": "native",
+      "fermentation_vessel": "mixed",
+      "grapes": [
+        { "name": "Pinotage", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Estate-grown from proprietary clones MM1 and MM3, developed at UC Davis from budwood personally imported by the Schwartzes from South Africa. Bottled unfined and unfiltered.",
+        "clones": "MM1, MM3",
+        "clone_origin": "Imported from one of the most select Pinotage vineyards in South Africa through UC Davis Foundation Plant Services"
+      },
+      "vintages": [
+        {
+          "year": 2019,
+          "abv": 13.5,
+          "release_price_usd": 62,
+          "oak_duration_months": 10,
+          "oak_new_pct": 15,
+          "oak_origin": "french",
+          "harvest_date": "2019-09-29",
+          "bottling_date": "August 2020",
+          "bottled_unfined_unfiltered": true,
+          "scores": [
+            { "publication": "International Wine Review", "score": 93 }
+          ]
+        },
+        {
+          "year": 2017,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 92 },
+            { "publication": "Jeb Dunnuck", "score": 92, "_note": "Jeb Dunnuck: 'Hats off to winemaker Jeff Pisoni for making a truly outstanding Pinotage.'" }
+          ]
+        },
+        {
+          "year": 2016,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 90 }
+          ]
+        },
+        {
+          "year": 2014,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 90 }
+          ]
+        },
+        {
+          "year": 2012,
+          "oak_origin": "french",
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 90 }
+          ]
+        },
+        {
+          "year": 2011,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2003,
+          "abv": 14.7,
+          "release_price_usd": 32,
+          "oak_origin": "french"
+        }
+      ]
+    },
+    {
+      "name": "Chenin Blanc",
+      "color": "white",
+      "appellation": "Fort Ross-Seaview",
+      "varietal_category": "Chenin Blanc",
+      "oak_origin": "french",
+      "yeast_type": "native",
+      "grapes": [
+        { "name": "Chenin Blanc", "percentage": 100 }
+      ],
+      "metadata": {
+        "style": "Estate-grown Chenin Blanc. Single clone grafted on established rootstock in Block 1 (half acre).",
+        "block": "Block 1",
+        "first_vintage": 2021
+      },
+      "vintages": [
+        {
+          "year": 2024,
+          "release_price_usd": 44,
+          "oak_origin": "french"
+        },
+        {
+          "year": 2022,
+          "abv": 13.0,
+          "release_price_usd": 44,
+          "oak_duration_months": 11,
+          "oak_new_pct": 0,
+          "oak_origin": "french",
+          "production_cases": 162,
+          "harvest_date": "2022-09-12",
+          "bottling_date": "July 2023",
+          "scores": [
+            { "publication": "International Wine Review", "score": 94 }
+          ]
+        },
+        {
+          "year": 2021,
+          "oak_duration_months": 16,
+          "oak_new_pct": 0,
+          "oak_origin": "french",
+          "harvest_date": "2021-09-13",
+          "scores": [
+            { "publication": "International Wine Review", "score": 92 },
+            { "publication": "Wine Enthusiast", "score": 92 }
+          ]
+        }
+      ]
+    }
+  ]
+}

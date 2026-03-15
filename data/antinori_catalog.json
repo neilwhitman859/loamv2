@@ -1,0 +1,2429 @@
+{
+  "producer": {
+    "name": "Marchesi Antinori",
+    "founded": 1385,
+    "headquarters": "Florence, Tuscany, Italy",
+    "chief_winemaker": "Renzo Cotarella",
+    "family": "Antinori (26 generations)",
+    "current_heads": ["Albiera Antinori", "Allegra Antinori", "Alessia Antinori"],
+    "total_estates": 21,
+    "notes": "One of Italy's oldest and most important wine producers. Pioneers of the Super Tuscan movement."
+  },
+  "estates": [
+    {
+      "name": "Tenuta Tignanello",
+      "region": "Chianti Classico, Tuscany",
+      "type": "antinori_core"
+    },
+    {
+      "name": "Badia a Passignano",
+      "region": "Chianti Classico, Tuscany",
+      "type": "antinori_core"
+    },
+    {
+      "name": "Pèppoli",
+      "region": "Chianti Classico, Tuscany",
+      "type": "antinori_core"
+    },
+    {
+      "name": "Antinori nel Chianti Classico",
+      "region": "San Casciano Val di Pesa, Tuscany",
+      "type": "antinori_core"
+    },
+    {
+      "name": "Pian delle Vigne",
+      "region": "Montalcino, Tuscany",
+      "type": "antinori_core"
+    },
+    {
+      "name": "Tenuta Guado al Tasso",
+      "region": "Bolgheri, Tuscany",
+      "type": "antinori_core"
+    },
+    {
+      "name": "Castello della Sala",
+      "region": "Orvieto, Umbria",
+      "type": "antinori_core"
+    },
+    {
+      "name": "Tenuta Montenisa",
+      "region": "Franciacorta, Lombardy",
+      "type": "antinori_core"
+    },
+    {
+      "name": "Villa Antinori",
+      "region": "Tuscany",
+      "type": "antinori_core"
+    },
+    {
+      "name": "Fattoria Aldobrandesca",
+      "region": "Sovana, Maremma, Tuscany",
+      "type": "estates_italy"
+    },
+    {
+      "name": "Le Mortelle",
+      "region": "Castiglione della Pescaia, Maremma, Tuscany",
+      "type": "estates_italy"
+    },
+    {
+      "name": "La Braccesca",
+      "region": "Cortona / Montepulciano, Tuscany",
+      "type": "estates_italy"
+    },
+    {
+      "name": "Tenuta Monteloro",
+      "region": "Fiesole, Tuscany",
+      "type": "estates_italy"
+    },
+    {
+      "name": "Tenuta Bocca di Lupo",
+      "region": "Castel del Monte, Minervino Murge, Puglia",
+      "type": "estates_italy"
+    },
+    {
+      "name": "Tormaresca",
+      "region": "Castel del Monte / Salento, Puglia",
+      "type": "estates_italy"
+    },
+    {
+      "name": "Prunotto",
+      "region": "Alba, Langhe, Piedmont",
+      "type": "estates_italy"
+    },
+    {
+      "name": "Col Solare",
+      "region": "Red Mountain, Washington State, USA",
+      "type": "estates_world"
+    },
+    {
+      "name": "Antinori Napa Valley",
+      "region": "Napa Valley, California, USA",
+      "type": "estates_world"
+    },
+    {
+      "name": "Stag's Leap Wine Cellars",
+      "region": "Napa Valley, California, USA",
+      "type": "estates_world",
+      "notes": "Already in Loam DB as separate producer"
+    },
+    {
+      "name": "Haras de Pirque",
+      "region": "Maipo Valley, Chile",
+      "type": "estates_world"
+    }
+  ],
+  "wines": [
+    {
+      "id": 1,
+      "name": "Tignanello",
+      "estate": "Tenuta Tignanello",
+      "color": "red",
+      "appellation": "Toscana IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": true,
+      "grapes": [
+        {"variety": "Sangiovese", "percentage": 80},
+        {"variety": "Cabernet Sauvignon", "percentage": 15},
+        {"variety": "Cabernet Franc", "percentage": 5}
+      ],
+      "oak": {
+        "type": "French oak barrels, small percentage Hungarian oak",
+        "months": 13,
+        "new_oak_pct": "predominantly new"
+      },
+      "bottle_aging_months": 12,
+      "abv": null,
+      "production_volume": null,
+      "vineyard_ha": 57,
+      "vineyard_altitude_m": "350-400",
+      "soil": "Marine limestone and calcareous clay",
+      "first_vintage": 1971,
+      "vintages_available": [2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006],
+      "vintages_not_produced": [1972, 1973, 1974, 1976, 1984, 1992, 2002],
+      "scores": [
+        {"publication": "Vinous", "vintage": 2022, "score": 98}
+      ],
+      "notes": "The original Super Tuscan. First Sangiovese aged in barriques, first red wine from Chianti Classico blended with non-traditional varieties (Cabernet), first to eliminate white grapes from Chianti blend."
+    },
+    {
+      "id": 2,
+      "name": "Solaia",
+      "estate": "Tenuta Tignanello",
+      "color": "red",
+      "appellation": "Toscana IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": true,
+      "grapes": [
+        {"variety": "Cabernet Sauvignon", "percentage": 75},
+        {"variety": "Sangiovese", "percentage": 20},
+        {"variety": "Cabernet Franc", "percentage": 5}
+      ],
+      "oak": {
+        "type": "New French oak barrels",
+        "months": 15,
+        "new_oak_pct": 100
+      },
+      "bottle_aging_months": 12,
+      "abv": null,
+      "production_volume": null,
+      "vineyard_ha": 20,
+      "vineyard_altitude_m": "350-400",
+      "soil": "Marine limestone and calcareous clay",
+      "first_vintage": 1978,
+      "vintages_available": [2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006],
+      "vintages_not_produced": [1980, 1981, 1983, 1984, 1992],
+      "scores": [],
+      "notes": "Top-tier Super Tuscan, Cabernet-dominant. 1978-1979 was 80% Cab Sauv, 20% Cab Franc (no Sangiovese). Produced only in exceptional vintages."
+    },
+    {
+      "id": 3,
+      "name": "Marchese Antinori",
+      "estate": "Tenuta Tignanello",
+      "color": "red",
+      "appellation": "Chianti Classico DOCG",
+      "classification": "DOCG",
+      "designation": "Riserva",
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Sangiovese", "percentage": null, "note": "dominant, with small percentage of complementary varieties"}
+      ],
+      "oak": {
+        "type": "French and Hungarian oak barriques",
+        "months": 12,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": 12,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006],
+      "scores": [],
+      "notes": "Estate's flagship Chianti Classico Riserva from Tenuta Tignanello vineyards."
+    },
+    {
+      "id": 4,
+      "name": "Badia a Passignano",
+      "estate": "Badia a Passignano",
+      "color": "red",
+      "appellation": "Chianti Classico DOCG",
+      "classification": "DOCG",
+      "designation": "Gran Selezione",
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Sangiovese", "percentage": 100}
+      ],
+      "oak": {
+        "type": "French oak, small portion Hungarian oak",
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "vineyard_ha": 65,
+      "vineyard_altitude_m": "300",
+      "soil": "Calcareous, rich in limestone with clay",
+      "first_vintage": null,
+      "vintages_available": [2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005],
+      "scores": [],
+      "notes": "Gran Selezione — the top tier of Chianti Classico hierarchy (above Riserva). 100% Sangiovese from the historic Badia a Passignano monastery estate."
+    },
+    {
+      "id": 5,
+      "name": "Pèppoli",
+      "estate": "Pèppoli",
+      "color": "red",
+      "appellation": "Chianti Classico DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Sangiovese", "percentage": null, "note": "dominant, with complementary varieties"}
+      ],
+      "oak": {
+        "type": "Slavonian oak barrels (large), small percentage in barriques",
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011],
+      "scores": [],
+      "notes": "Entry-level Chianti Classico. Approachable, earlier-drinking style."
+    },
+    {
+      "id": 6,
+      "name": "Villa Antinori Chianti Classico Riserva",
+      "estate": "Villa Antinori",
+      "color": "red",
+      "appellation": "Chianti Classico DOCG",
+      "classification": "DOCG",
+      "designation": "Riserva",
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Sangiovese", "percentage": null, "note": "dominant, with complementary varieties"}
+      ],
+      "oak": {
+        "type": "Large-format barrels and barriques",
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2023],
+      "scores": [],
+      "notes": "Villa Antinori brand Chianti Classico Riserva."
+    },
+    {
+      "id": 7,
+      "name": "Villa Antinori Rosso",
+      "estate": "Villa Antinori",
+      "color": "red",
+      "appellation": "Toscana IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Sangiovese", "percentage": null},
+        {"variety": "Merlot", "percentage": null},
+        {"variety": "Cabernet Sauvignon", "percentage": null}
+      ],
+      "oak": {
+        "type": "French and Hungarian oak barriques",
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011],
+      "scores": [],
+      "notes": "Flagship Villa Antinori red blend. IGT allows international grape variety inclusion."
+    },
+    {
+      "id": 8,
+      "name": "Villa Antinori Bianco",
+      "estate": "Villa Antinori",
+      "color": "white",
+      "appellation": "Toscana IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Pinot Grigio", "percentage": null},
+        {"variety": "Pinot Bianco", "percentage": null},
+        {"variety": "Vermentino", "percentage": null}
+      ],
+      "oak": {
+        "type": "Stainless steel",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": 1931,
+      "vintages_available": [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015],
+      "scores": [],
+      "notes": "First produced 1931 by Marchese Niccolò Antinori. Originally Trebbiano-based, Chardonnay added in 1980s, now Pinot Grigio/Pinot Bianco/Vermentino."
+    },
+    {
+      "id": 9,
+      "name": "Villa Antinori Pinot Bianco",
+      "estate": "Villa Antinori",
+      "color": "white",
+      "appellation": "Toscana IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Pinot Bianco", "percentage": 100}
+      ],
+      "oak": {
+        "type": "Stainless steel",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2024, 2023, 2022, 2021, 2020, 2019, 2018],
+      "scores": [],
+      "notes": "Grapes from Tenuta Monteloro in Fiesole."
+    },
+    {
+      "id": 10,
+      "name": "Guado al Tasso",
+      "estate": "Tenuta Guado al Tasso",
+      "color": "red",
+      "appellation": "Bolgheri DOC Superiore",
+      "classification": "DOC",
+      "designation": "Superiore",
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Cabernet Sauvignon", "percentage": null, "note": "dominant"},
+        {"variety": "Merlot", "percentage": null},
+        {"variety": "Cabernet Franc", "percentage": null},
+        {"variety": "Petit Verdot", "percentage": null, "note": "occasionally"}
+      ],
+      "oak": {
+        "type": "New French oak barriques",
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "vineyard_ha": 320,
+      "first_vintage": null,
+      "vintages_available": [2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006],
+      "scores": [],
+      "notes": "Flagship Bordeaux blend from Bolgheri. DOC Superiore is the top tier of the Bolgheri appellation. Estate also grows Syrah, Grenache, Viognier, Sémillon."
+    },
+    {
+      "id": 11,
+      "name": "Matarocchio",
+      "estate": "Tenuta Guado al Tasso",
+      "color": "red",
+      "appellation": "Bolgheri DOC Superiore",
+      "classification": "DOC",
+      "designation": "Superiore",
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Cabernet Franc", "percentage": 100}
+      ],
+      "oak": {
+        "type": "New French oak barriques",
+        "months": 18,
+        "new_oak_pct": 100
+      },
+      "bottle_aging_months": 12,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": 2007,
+      "vintages_available": [2021, 2019, 2017, 2016, 2015, 2013, 2012, 2011, 2009, 2007],
+      "scores": [],
+      "notes": "Ultra-premium single-vineyard 100% Cabernet Franc. Produced only in exceptional vintages. One of Italy's finest varietal Cab Francs."
+    },
+    {
+      "id": 12,
+      "name": "Cont'Ugo",
+      "estate": "Tenuta Guado al Tasso",
+      "color": "red",
+      "appellation": "Bolgheri DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Merlot", "percentage": 100}
+      ],
+      "oak": {
+        "type": "Second-fill oak barrels",
+        "months": 12,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "vineyard_altitude_m": "45-60",
+      "soil": "Clay-loam, alluvial origin",
+      "first_vintage": null,
+      "vintages_available": [2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2013, 2012, 2011],
+      "scores": [],
+      "notes": "Single-variety Merlot from Guado al Tasso."
+    },
+    {
+      "id": 13,
+      "name": "Il Bruciato",
+      "estate": "Tenuta Guado al Tasso",
+      "color": "red",
+      "appellation": "Bolgheri DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Cabernet Sauvignon", "percentage": null},
+        {"variety": "Merlot", "percentage": null},
+        {"variety": "Syrah", "percentage": null}
+      ],
+      "oak": {
+        "type": "Barriques",
+        "months": 6,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": 2003,
+      "vintages_available": [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012],
+      "scores": [],
+      "notes": "Entry-level Bolgheri red. Also includes Cabernet Franc and Petit Verdot in small quantities. 2003 not produced."
+    },
+    {
+      "id": 14,
+      "name": "Scalabrone",
+      "estate": "Tenuta Guado al Tasso",
+      "color": "rosé",
+      "appellation": "Bolgheri DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Cabernet Sauvignon", "percentage": null},
+        {"variety": "Merlot", "percentage": null},
+        {"variety": "Syrah", "percentage": null, "note": "a touch"}
+      ],
+      "oak": {
+        "type": "Stainless steel",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015],
+      "scores": [],
+      "notes": "Rosato from Bolgheri. Named after a local bandit from the 1800s. Short maceration (2-4 hours)."
+    },
+    {
+      "id": 15,
+      "name": "Vermentino",
+      "estate": "Tenuta Guado al Tasso",
+      "color": "white",
+      "appellation": "Bolgheri DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Vermentino", "percentage": 100}
+      ],
+      "oak": {
+        "type": "Stainless steel",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": 1996,
+      "vintages_available": [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015],
+      "scores": [],
+      "notes": "100% Vermentino, indigenous Tyrrhenian coast variety."
+    },
+    {
+      "id": 16,
+      "name": "Cervaro della Sala",
+      "estate": "Castello della Sala",
+      "color": "white",
+      "appellation": "Umbria IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Chardonnay", "percentage": null, "note": "dominant"},
+        {"variety": "Grechetto", "percentage": null, "note": "small quantity"}
+      ],
+      "oak": {
+        "type": "French oak barriques",
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": 1985,
+      "vintages_available": [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007],
+      "scores": [],
+      "notes": "Italy's most celebrated white wine. One of the first Italian whites to undergo malolactic fermentation and barrique aging. Chardonnay fermented in barriques, Grechetto fermented separately without oak."
+    },
+    {
+      "id": 17,
+      "name": "Pinot Nero della Sala",
+      "estate": "Castello della Sala",
+      "color": "red",
+      "appellation": "Umbria IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Pinot Nero", "percentage": 100}
+      ],
+      "oak": {
+        "type": "228-liter oak barrels",
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "vineyard_ha": 4,
+      "vineyard_altitude_m": "400",
+      "soil": "Calcareous with Pliocene-epoch sedimentary sand fossils",
+      "first_vintage": 1990,
+      "vintages_available": [2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2008, 2007, 2006, 2005],
+      "scores": [],
+      "notes": "Single-variety Pinot Noir from high-altitude Umbrian vineyards."
+    },
+    {
+      "id": 18,
+      "name": "Bramìto della Sala",
+      "estate": "Castello della Sala",
+      "color": "white",
+      "appellation": "Umbria IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Chardonnay", "percentage": 100}
+      ],
+      "oak": {
+        "type": "Partial oak, partial stainless steel",
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": 1994,
+      "vintages_available": [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015],
+      "scores": [],
+      "notes": "Entry-level Chardonnay from Castello della Sala. Partial oak fermentation, only oak-fermented lots undergo MLF."
+    },
+    {
+      "id": 19,
+      "name": "Conte della Vipera",
+      "estate": "Castello della Sala",
+      "color": "white",
+      "appellation": "Umbria IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Sauvignon Blanc", "percentage": null, "note": "dominant"},
+        {"variety": "Sémillon", "percentage": null}
+      ],
+      "oak": {
+        "type": "Stainless steel",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "vineyard_altitude_m": "250-350",
+      "soil": "Sedimentary marine fossils with clay veins",
+      "first_vintage": null,
+      "vintages_available": [2024],
+      "scores": [],
+      "notes": "Sauvignon Blanc/Sémillon blend. No MLF (prevented by cold temperature control at 10°C)."
+    },
+    {
+      "id": 20,
+      "name": "San Giovanni della Sala",
+      "estate": "Castello della Sala",
+      "color": "white",
+      "appellation": "Orvieto DOC Classico Superiore",
+      "classification": "DOC",
+      "designation": "Classico Superiore",
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Grechetto", "percentage": null},
+        {"variety": "Procanico", "percentage": null},
+        {"variety": "Pinot Bianco", "percentage": null},
+        {"variety": "Viognier", "percentage": null}
+      ],
+      "oak": {
+        "type": "Stainless steel",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015],
+      "scores": [],
+      "notes": "Traditional Orvieto blend. Procanico is the local name for Trebbiano Toscano."
+    },
+    {
+      "id": 21,
+      "name": "Muffato della Sala",
+      "estate": "Castello della Sala",
+      "color": "white",
+      "appellation": "Umbria IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "style": "sweet/dessert",
+      "grapes": [
+        {"variety": "Sauvignon Blanc", "percentage": null},
+        {"variety": "Grechetto", "percentage": null},
+        {"variety": "Traminer", "percentage": null},
+        {"variety": "Sémillon", "percentage": null},
+        {"variety": "Riesling", "percentage": null}
+      ],
+      "oak": {
+        "type": "228-liter oak barrels",
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": 1987,
+      "vintages_available": [2023, 2022, 2020, 2019, 2018, 2016, 2015, 2014, 2013, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004],
+      "scores": [],
+      "notes": "Botrytized sweet wine. All grapes affected by Botrytis cinerea (noble rot). Original blend: 50% Sauvignon Blanc, 30% Grechetto, 20% Drupeggio. Composition has varied over years. Named after 'muffa nobile' (noble rot)."
+    },
+    {
+      "id": 22,
+      "name": "Pian delle Vigne",
+      "estate": "Pian delle Vigne",
+      "color": "red",
+      "appellation": "Brunello di Montalcino DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Sangiovese", "percentage": 100}
+      ],
+      "oak": {
+        "type": "Oak barrels (30-80 hl)",
+        "months": 24,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004],
+      "scores": [],
+      "notes": "100% Sangiovese (Brunello clone). Large-format oak barrels, 2 years minimum as per DOCG regulations."
+    },
+    {
+      "id": 23,
+      "name": "Pian delle Vigne Vignaferrovia",
+      "estate": "Pian delle Vigne",
+      "color": "red",
+      "appellation": "Brunello di Montalcino DOCG",
+      "classification": "DOCG",
+      "designation": "Riserva",
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Sangiovese", "percentage": 100}
+      ],
+      "oak": {
+        "type": "Small barrels (5-30 hl)",
+        "months": 24,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "vineyard_ha": 4,
+      "first_vintage": 2004,
+      "vintages_available": [2019, 2018, 2016, 2015, 2013, 2012, 2010, 2009, 2007, 2006, 2004],
+      "vintages_not_produced": [2005, 2008, 2011, 2014, 2017],
+      "scores": [],
+      "notes": "Single-vineyard Brunello Riserva. 4-hectare plot adjacent to 19th-century railway station. Produced only in top vintages."
+    },
+    {
+      "id": 24,
+      "name": "Pian delle Vigne Rosso di Montalcino",
+      "estate": "Pian delle Vigne",
+      "color": "red",
+      "appellation": "Rosso di Montalcino DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Sangiovese", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": 10,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2016, 2015, 2014, 2013, 2012],
+      "scores": [],
+      "notes": "Junior wine of Brunello di Montalcino. Shorter aging requirement."
+    },
+    {
+      "id": 25,
+      "name": "La Braccesca",
+      "estate": "La Braccesca",
+      "color": "red",
+      "appellation": "Vino Nobile di Montepulciano DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Sangiovese", "percentage": null, "note": "dominant"},
+        {"variety": "Merlot", "percentage": null, "note": "small percentage"}
+      ],
+      "oak": {
+        "type": "Large-format barrels",
+        "months": 12,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011],
+      "scores": [],
+      "notes": "Estate Vino Nobile. Traditional Sangiovese (Prugnolo Gentile clone) with Merlot."
+    },
+    {
+      "id": 26,
+      "name": "Vigneto Santa Pia",
+      "estate": "La Braccesca",
+      "color": "red",
+      "appellation": "Vino Nobile di Montepulciano DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Sangiovese", "percentage": 100}
+      ],
+      "oak": {
+        "type": "500-liter tonneaux",
+        "months": 12,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": 12,
+      "abv": null,
+      "production_volume": null,
+      "vineyard_ha": 4,
+      "soil": "Sandy loam with fine gravel",
+      "first_vintage": 2001,
+      "vintages_available": [2021, 2019, 2018, 2017, 2016, 2015, 2013, 2012, 2010, 2009, 2008, 2007, 2006, 2005, 2004, 2003],
+      "scores": [],
+      "notes": "Single-vineyard Vino Nobile from the Santa Pia sub-zone."
+    },
+    {
+      "id": 27,
+      "name": "Maggiarino",
+      "estate": "La Braccesca",
+      "color": "red",
+      "appellation": "Vino Nobile di Montepulciano DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Sangiovese", "percentage": 100}
+      ],
+      "oak": {
+        "type": "Tonneaux",
+        "months": 12,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "soil": "Sandy loam with fine gravel",
+      "first_vintage": null,
+      "vintages_available": [2021, 2019, 2018, 2017, 2016, 2015],
+      "scores": [],
+      "notes": "Single-vineyard Vino Nobile from the Maggiarino sub-zone."
+    },
+    {
+      "id": 28,
+      "name": "Sabazio",
+      "estate": "La Braccesca",
+      "color": "red",
+      "appellation": "Rosso di Montepulciano DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Sangiovese", "percentage": null, "note": "dominant"},
+        {"variety": "Merlot", "percentage": null}
+      ],
+      "oak": {
+        "type": "Stainless steel",
+        "months": 4,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012],
+      "scores": [],
+      "notes": "Junior wine of Vino Nobile. Shorter aging, stainless steel only."
+    },
+    {
+      "id": 29,
+      "name": "Bramasole",
+      "estate": "La Braccesca",
+      "color": "red",
+      "appellation": "Cortona DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Syrah", "percentage": 100}
+      ],
+      "oak": {
+        "type": "French barriques (new and second-fill)",
+        "months": 12,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": 2000,
+      "vintages_available": [2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004],
+      "scores": [],
+      "notes": "100% Syrah from Cortona. One of Italy's benchmark Syrahs."
+    },
+    {
+      "id": 30,
+      "name": "Achelo",
+      "estate": "La Braccesca",
+      "color": "red",
+      "appellation": "Cortona DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Syrah", "percentage": 100}
+      ],
+      "oak": {
+        "type": "70% French barriques (2nd/3rd fill), 30% stainless steel",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012],
+      "scores": [],
+      "notes": "Entry-level Syrah from Cortona. More approachable than Bramasole."
+    },
+    {
+      "id": 31,
+      "name": "Poggio alle Nane",
+      "estate": "Le Mortelle",
+      "color": "red",
+      "appellation": "Maremma Toscana DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Cabernet Franc", "percentage": null, "note": "dominant"},
+        {"variety": "Cabernet Sauvignon", "percentage": null},
+        {"variety": "Carménère", "percentage": null, "note": "small percentage"}
+      ],
+      "oak": {
+        "type": "French oak",
+        "months": 16,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2013, 2012, 2011, 2010, 2009],
+      "scores": [],
+      "notes": "Top wine from Le Mortelle estate. Cab Franc/Cab Sauv/Carménère blend — unusual inclusion of Carménère."
+    },
+    {
+      "id": 32,
+      "name": "Botrosecco",
+      "estate": "Le Mortelle",
+      "color": "red",
+      "appellation": "Maremma Toscana DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Cabernet Sauvignon", "percentage": null},
+        {"variety": "Cabernet Franc", "percentage": null}
+      ],
+      "oak": {
+        "type": "Barriques",
+        "months": 9,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011],
+      "scores": [],
+      "notes": "Mid-range red from Le Mortelle. Cabernet blend."
+    },
+    {
+      "id": 33,
+      "name": "Ampio delle Mortelle",
+      "estate": "Le Mortelle",
+      "color": "red",
+      "appellation": "Toscana IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Carménère", "percentage": null},
+        {"variety": "Cabernet Sauvignon", "percentage": null},
+        {"variety": "Cabernet Franc", "percentage": null}
+      ],
+      "oak": {
+        "type": "New French oak barriques",
+        "months": 18,
+        "new_oak_pct": 100
+      },
+      "bottle_aging_months": 12,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2020, 2019, 2018, 2017, 2016, 2015],
+      "scores": [],
+      "notes": "Top wine from Le Mortelle. Features Carménère — rare in Italian wines."
+    },
+    {
+      "id": 34,
+      "name": "Vivia",
+      "estate": "Le Mortelle",
+      "color": "white",
+      "appellation": "Maremma Toscana DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Vermentino", "percentage": null},
+        {"variety": "Viognier", "percentage": null},
+        {"variety": "Ansonica", "percentage": null, "note": "small percentage"}
+      ],
+      "oak": {
+        "type": "Stainless steel (lees aging ~3 months)",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015],
+      "scores": [],
+      "notes": "White blend from Le Mortelle in Maremma. Vermentino/Viognier/Ansonica."
+    },
+    {
+      "id": 35,
+      "name": "Vie Cave",
+      "estate": "Fattoria Aldobrandesca",
+      "color": "red",
+      "appellation": "Toscana IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Malbec", "percentage": 100}
+      ],
+      "oak": {
+        "type": "French oak barriques",
+        "months": 7,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "soil": "Volcanic tufaceous",
+      "first_vintage": null,
+      "vintages_available": [2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2013, 2012, 2011, 2009],
+      "scores": [],
+      "notes": "100% Malbec grown on volcanic/tufaceous soils in Maremma. Named after Etruscan roads carved into tufa rock. Unusual variety for Italy."
+    },
+    {
+      "id": 36,
+      "name": "Aleatico",
+      "estate": "Fattoria Aldobrandesca",
+      "color": "red",
+      "appellation": "Sovana DOC Superiore",
+      "classification": "DOC",
+      "designation": "Superiore",
+      "super_tuscan": false,
+      "style": "sweet",
+      "grapes": [
+        {"variety": "Aleatico", "percentage": 100}
+      ],
+      "oak": {
+        "type": "Stainless steel (controlled low temperature)",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2022, 2020, 2019, 2017, 2015, 2013, 2011, 2010, 2009],
+      "scores": [],
+      "notes": "Sweet red wine. Part of harvest air-dried for ~1 month. Fermentation halted at optimal sugar levels. Rare variety."
+    },
+    {
+      "id": 37,
+      "name": "A",
+      "estate": "Fattoria Aldobrandesca",
+      "color": "rosé",
+      "appellation": "Toscana IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Aleatico", "percentage": 100}
+      ],
+      "oak": {
+        "type": "Stainless steel",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "soil": "Volcanic tufaceous",
+      "first_vintage": null,
+      "vintages_available": [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015],
+      "scores": [],
+      "notes": "Rosé from 100% Aleatico. Short cold maceration (4-6 hours). Aromatic variety."
+    },
+    {
+      "id": 38,
+      "name": "Mezzo Braccio",
+      "estate": "Tenuta Monteloro",
+      "color": "white",
+      "appellation": "Toscana IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Riesling", "percentage": 100}
+      ],
+      "oak": {
+        "type": "Stainless steel (lees aging)",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": 24,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2021, 2020, 2019, 2018, 2017, 2016, 2015, 2013, 2012],
+      "scores": [],
+      "notes": "100% Riesling from Fiesole hills above Florence. Unusual variety for Tuscany. Extended bottle aging (24 months)."
+    },
+    {
+      "id": 39,
+      "name": "Scabrezza",
+      "estate": "Tenuta Monteloro",
+      "color": "white",
+      "appellation": "Toscana IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Pinot Grigio", "percentage": 100}
+      ],
+      "oak": {
+        "type": "Stainless steel",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2024, 2023, 2022, 2021, 2018, 2017, 2016, 2015],
+      "scores": [],
+      "notes": "100% Pinot Grigio from Fiesole hills."
+    },
+    {
+      "id": 40,
+      "name": "Cuvée Royale Brut",
+      "estate": "Tenuta Montenisa",
+      "color": "sparkling",
+      "appellation": "Franciacorta DOCG",
+      "classification": "DOCG",
+      "designation": "Brut",
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Chardonnay", "percentage": null},
+        {"variety": "Pinot Nero", "percentage": null},
+        {"variety": "Pinot Bianco", "percentage": null}
+      ],
+      "oak": {
+        "type": "Stainless steel (primary)",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "lees_months": 36,
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": 1999,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Metodo classico sparkling. 36 months on lees before disgorgement. Flagship non-vintage Franciacorta."
+    },
+    {
+      "id": 41,
+      "name": "Rosé",
+      "estate": "Tenuta Montenisa",
+      "color": "sparkling_rosé",
+      "appellation": "Franciacorta DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Chardonnay", "percentage": null},
+        {"variety": "Pinot Nero", "percentage": null},
+        {"variety": "Pinot Bianco", "percentage": null}
+      ],
+      "oak": {
+        "type": "Stainless steel",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "lees_months": 24,
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Rosé Franciacorta. 24 months on lees."
+    },
+    {
+      "id": 42,
+      "name": "Blanc de Blancs",
+      "estate": "Tenuta Montenisa",
+      "color": "sparkling",
+      "appellation": "Franciacorta DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Chardonnay", "percentage": null},
+        {"variety": "Pinot Nero", "percentage": null},
+        {"variety": "Pinot Bianco", "percentage": null}
+      ],
+      "oak": {
+        "type": "Stainless steel",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "lees_months": 24,
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Blanc de Blancs Franciacorta. 24 months on lees."
+    },
+    {
+      "id": 43,
+      "name": "Conte Aymo",
+      "estate": "Tenuta Montenisa",
+      "color": "sparkling",
+      "appellation": "Franciacorta DOCG",
+      "classification": "DOCG",
+      "designation": "Millesimato",
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Chardonnay", "percentage": null},
+        {"variety": "Pinot Nero", "percentage": null},
+        {"variety": "Pinot Bianco", "percentage": null}
+      ],
+      "oak": {
+        "type": "Stainless steel",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "lees_months": null,
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2020, 2018, 2016, 2015, 2009],
+      "scores": [],
+      "notes": "Vintage-dated Franciacorta. Produced only in exceptional years."
+    },
+    {
+      "id": 44,
+      "name": "Contessa Maggi",
+      "estate": "Tenuta Montenisa",
+      "color": "sparkling",
+      "appellation": "Franciacorta DOCG",
+      "classification": "DOCG",
+      "designation": "Riserva",
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Chardonnay", "percentage": null},
+        {"variety": "Pinot Nero", "percentage": null},
+        {"variety": "Pinot Bianco", "percentage": null}
+      ],
+      "oak": {
+        "type": "Stainless steel + partial oak barrels",
+        "months": null,
+        "new_oak_pct": null
+      },
+      "lees_months": 60,
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2016, 2015, 2011, 2007],
+      "scores": [],
+      "notes": "Top-tier Franciacorta Riserva. 60 months on lees. Produced only in exceptional vintages."
+    },
+    {
+      "id": 45,
+      "name": "Donna Cora Satèn",
+      "estate": "Tenuta Montenisa",
+      "color": "sparkling",
+      "appellation": "Franciacorta DOCG",
+      "classification": "DOCG",
+      "designation": "Satèn",
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Chardonnay", "percentage": null},
+        {"variety": "Pinot Nero", "percentage": null},
+        {"variety": "Pinot Bianco", "percentage": null}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "lees_months": null,
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [2021, 2020, 2019, 2018, 2016, 2015, 2014, 2012, 2011],
+      "scores": [],
+      "notes": "Satèn style — lower pressure (max 5 atm vs 6 for standard), creamier texture. Vintage-dated."
+    },
+    {
+      "id": 46,
+      "name": "Bocca di Lupo",
+      "estate": "Tenuta Bocca di Lupo",
+      "color": "red",
+      "appellation": "Castel del Monte DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Aglianico", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Flagship Aglianico from Puglia. Top wine of the Bocca di Lupo estate."
+    },
+    {
+      "id": 47,
+      "name": "Pietrabianca",
+      "estate": "Tenuta Bocca di Lupo",
+      "color": "white",
+      "appellation": "Castel del Monte DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Chardonnay", "percentage": null, "note": "likely dominant"},
+        {"variety": "Fiano", "percentage": null, "note": "likely blended"}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Premium white from Puglia. 'In a land of red wines, an outstanding white.'"
+    },
+    {
+      "id": 48,
+      "name": "Fiano di Bocca di Lupo",
+      "estate": "Tenuta Bocca di Lupo",
+      "color": "white",
+      "appellation": "Puglia IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Fiano", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Apulian interpretation of Fiano."
+    },
+    {
+      "id": 49,
+      "name": "Ettore",
+      "estate": "Tenuta Bocca di Lupo",
+      "color": "red",
+      "appellation": "Castel del Monte DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Nero di Troia", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "100% Nero di Troia — one of southern Italy's noblest indigenous varieties."
+    },
+    {
+      "id": 50,
+      "name": "Trentangeli",
+      "estate": "Tenuta Bocca di Lupo",
+      "color": "red",
+      "appellation": "Castel del Monte DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Aglianico", "percentage": null, "note": "dominant"}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "More approachable expression of Aglianico from Bocca di Lupo."
+    },
+    {
+      "id": 51,
+      "name": "Kaloro",
+      "estate": "Tenuta Bocca di Lupo",
+      "color": "white",
+      "appellation": "Moscato di Trani DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "style": "sweet",
+      "grapes": [
+        {"variety": "Moscato", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Sweet Moscato from Trani. Bright acidity prevents excessive sweetness."
+    },
+    {
+      "id": 52,
+      "name": "Locone",
+      "estate": "Tenuta Bocca di Lupo",
+      "color": "red",
+      "appellation": "Castel del Monte DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Cabernet Sauvignon", "percentage": null}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Cabernet from Bocca di Lupo. Water-focused viticulture approach."
+    },
+    {
+      "id": 53,
+      "name": "Masseria Maìme",
+      "estate": "Tormaresca",
+      "color": "red",
+      "appellation": "Salento IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Negroamaro", "percentage": 100}
+      ],
+      "oak": {
+        "type": "300-liter French and Hungarian oak tonneaux",
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": 15,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Flagship Negroamaro from Upper Salento."
+    },
+    {
+      "id": 54,
+      "name": "Torcicoda",
+      "estate": "Tormaresca",
+      "color": "red",
+      "appellation": "Primitivo del Salento IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Primitivo", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": 18,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "First Apulian wine in Wine Spectator's Top 100."
+    },
+    {
+      "id": 55,
+      "name": "Carrubo",
+      "estate": "Tormaresca",
+      "color": "red",
+      "appellation": "Primitivo di Manduria DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Primitivo", "percentage": 100}
+      ],
+      "oak": {
+        "type": "500-liter French oak tonneaux (new + second-fill)",
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": 8,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Primitivo di Manduria DOC — from over-ripe grapes."
+    },
+    {
+      "id": 56,
+      "name": "Calafuria",
+      "estate": "Tormaresca",
+      "color": "rosé",
+      "appellation": "Salento IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Negroamaro", "percentage": null, "note": "likely dominant"}
+      ],
+      "oak": {
+        "type": "Stainless steel",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Rosato from Salento."
+    },
+    {
+      "id": 57,
+      "name": "Roycello",
+      "estate": "Tormaresca",
+      "color": "white",
+      "appellation": "Salento IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Fiano", "percentage": 100}
+      ],
+      "oak": {
+        "type": "Stainless steel (lees aging ~4 months)",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Fiano from Salento."
+    },
+    {
+      "id": 58,
+      "name": "Chardonnay",
+      "estate": "Tormaresca",
+      "color": "white",
+      "appellation": "Puglia IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Chardonnay", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Puglia Chardonnay."
+    },
+    {
+      "id": 59,
+      "name": "Fichimori",
+      "estate": "Tormaresca",
+      "color": "red",
+      "appellation": "Salento IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Negroamaro", "percentage": null, "note": "likely, blended"}
+      ],
+      "oak": {
+        "type": "Stainless steel",
+        "months": null,
+        "new_oak_pct": 0
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Light red, meant to be served chilled. Cold pre-fermentation maceration."
+    },
+    {
+      "id": 60,
+      "name": "Furia",
+      "estate": "Tormaresca",
+      "color": "rosé",
+      "appellation": "Salento IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Rosato from Salento."
+    },
+    {
+      "id": 61,
+      "name": "Neprica Negroamaro",
+      "estate": "Tormaresca",
+      "color": "red",
+      "appellation": "Puglia IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Negroamaro", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Entry-level Negroamaro."
+    },
+    {
+      "id": 62,
+      "name": "Neprica Primitivo",
+      "estate": "Tormaresca",
+      "color": "red",
+      "appellation": "Puglia IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Primitivo", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Entry-level Primitivo."
+    },
+    {
+      "id": 63,
+      "name": "Neprica Rosé",
+      "estate": "Tormaresca",
+      "color": "rosé",
+      "appellation": "Puglia IGT",
+      "classification": "IGT",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Entry-level Puglia rosato."
+    },
+    {
+      "id": 64,
+      "name": "Vigna Colonnello",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Barolo DOCG",
+      "classification": "DOCG",
+      "designation": "Riserva",
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Nebbiolo", "percentage": 100}
+      ],
+      "oak": {
+        "type": "Large Slavonian oak casks",
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Single-vineyard Barolo Riserva from Bussia MGA. Top wine of Prunotto."
+    },
+    {
+      "id": 65,
+      "name": "Bussia",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Barolo DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Nebbiolo", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Barolo from Bussia MGA in Monforte d'Alba."
+    },
+    {
+      "id": 66,
+      "name": "Cerretta",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Barolo DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Nebbiolo", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Barolo from Cerretta MGA in Serralunga d'Alba."
+    },
+    {
+      "id": 67,
+      "name": "Mosconi",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Barolo DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Nebbiolo", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Barolo from Mosconi MGA in Monforte d'Alba."
+    },
+    {
+      "id": 68,
+      "name": "Serra",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Barolo DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Nebbiolo", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Barolo from Serra MGA."
+    },
+    {
+      "id": 69,
+      "name": "Barolo",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Barolo DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Nebbiolo", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Entry-level/village Barolo blend."
+    },
+    {
+      "id": 70,
+      "name": "Bric Turot",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Barbaresco DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Nebbiolo", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Barbaresco from Bric Turot MGA in Treiso."
+    },
+    {
+      "id": 71,
+      "name": "Secondine",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Barbaresco DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Nebbiolo", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Barbaresco from Secondine MGA."
+    },
+    {
+      "id": 72,
+      "name": "Barbaresco",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Barbaresco DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Nebbiolo", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Entry-level/village Barbaresco blend."
+    },
+    {
+      "id": 73,
+      "name": "Occhetti",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Langhe DOC Nebbiolo",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Nebbiolo", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Langhe Nebbiolo — more approachable entry point to Nebbiolo."
+    },
+    {
+      "id": 74,
+      "name": "Costamiòle",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Nizza DOCG",
+      "classification": "DOCG",
+      "designation": "Riserva",
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Barbera", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Nizza DOCG Riserva — top-tier Barbera d'Asti from the Nizza subzone."
+    },
+    {
+      "id": 75,
+      "name": "Pian Romualdo",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Barbera d'Alba DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Barbera", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Single-vineyard Barbera d'Alba."
+    },
+    {
+      "id": 76,
+      "name": "Barbera d'Alba",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Barbera d'Alba DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Barbera", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Village-level Barbera d'Alba."
+    },
+    {
+      "id": 77,
+      "name": "Mosesco",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Dolcetto d'Alba DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Dolcetto", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Single-vineyard Dolcetto d'Alba."
+    },
+    {
+      "id": 78,
+      "name": "Dolcetto d'Alba",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Dolcetto d'Alba DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Dolcetto", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Village-level Dolcetto d'Alba."
+    },
+    {
+      "id": 79,
+      "name": "Bansella",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Nizza DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Barbera", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Nizza DOCG Barbera."
+    },
+    {
+      "id": 80,
+      "name": "Bricco Colma",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Piemonte DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Albarossa", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "100% Albarossa — a crossing of Nebbiolo and Barbera created by Prof. Dalmasso. Rare variety."
+    },
+    {
+      "id": 81,
+      "name": "Fiulot",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Barbera d'Asti DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Barbera", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Barbera d'Asti DOCG."
+    },
+    {
+      "id": 82,
+      "name": "Mompertone",
+      "estate": "Prunotto",
+      "color": "red",
+      "appellation": "Monferrato DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Barbera", "percentage": null},
+        {"variety": "Syrah", "percentage": null}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Monferrato DOC red blend, typically Barbera/Syrah."
+    },
+    {
+      "id": 83,
+      "name": "Arveja Langhe Arneis",
+      "estate": "Prunotto",
+      "color": "white",
+      "appellation": "Langhe DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Arneis", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "100% Arneis from Roero area."
+    },
+    {
+      "id": 84,
+      "name": "Moscato d'Asti",
+      "estate": "Prunotto",
+      "color": "white",
+      "appellation": "Moscato d'Asti DOCG",
+      "classification": "DOCG",
+      "designation": null,
+      "super_tuscan": false,
+      "style": "sweet/frizzante",
+      "grapes": [
+        {"variety": "Moscato Bianco", "percentage": 100}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Sweet frizzante Moscato d'Asti."
+    },
+    {
+      "id": 85,
+      "name": "Granadié",
+      "estate": "Prunotto",
+      "color": "rosé",
+      "appellation": "Langhe DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [
+        {"variety": "Nebbiolo", "percentage": null, "note": "likely dominant"}
+      ],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Langhe Rosato."
+    },
+    {
+      "id": 86,
+      "name": "Arveja",
+      "estate": "Prunotto",
+      "color": "white",
+      "appellation": "Langhe DOC",
+      "classification": "DOC",
+      "designation": null,
+      "super_tuscan": false,
+      "grapes": [],
+      "oak": {
+        "type": null,
+        "months": null,
+        "new_oak_pct": null
+      },
+      "bottle_aging_months": null,
+      "abv": null,
+      "production_volume": null,
+      "first_vintage": null,
+      "vintages_available": [],
+      "scores": [],
+      "notes": "Langhe DOC white. Separate from the Arneis version."
+    }
+  ],
+  "summary": {
+    "total_wines": 86,
+    "by_estate": {
+      "Tenuta Tignanello": 3,
+      "Badia a Passignano": 1,
+      "Pèppoli": 1,
+      "Villa Antinori": 4,
+      "Tenuta Guado al Tasso": 6,
+      "Castello della Sala": 6,
+      "Tenuta Montenisa (Franciacorta)": 6,
+      "Pian delle Vigne": 3,
+      "La Braccesca": 6,
+      "Le Mortelle": 4,
+      "Fattoria Aldobrandesca": 3,
+      "Tenuta Monteloro": 2,
+      "Tenuta Bocca di Lupo": 7,
+      "Tormaresca": 11,
+      "Prunotto": 23
+    },
+    "by_classification": {
+      "DOCG": 27,
+      "DOC": 30,
+      "IGT": 29
+    },
+    "by_color": {
+      "red": 58,
+      "white": 16,
+      "rosé": 5,
+      "sparkling": 5,
+      "sparkling_rosé": 1,
+      "sweet": 1
+    },
+    "appellations_represented": [
+      "Toscana IGT",
+      "Chianti Classico DOCG",
+      "Bolgheri DOC Superiore",
+      "Bolgheri DOC",
+      "Umbria IGT",
+      "Orvieto DOC Classico Superiore",
+      "Brunello di Montalcino DOCG",
+      "Rosso di Montalcino DOC",
+      "Vino Nobile di Montepulciano DOCG",
+      "Rosso di Montepulciano DOC",
+      "Cortona DOC",
+      "Maremma Toscana DOC",
+      "Sovana DOC Superiore",
+      "Franciacorta DOCG",
+      "Castel del Monte DOC",
+      "Moscato di Trani DOC",
+      "Puglia IGT",
+      "Salento IGT",
+      "Primitivo del Salento IGT",
+      "Primitivo di Manduria DOC",
+      "Barolo DOCG",
+      "Barbaresco DOCG",
+      "Nizza DOCG",
+      "Barbera d'Alba DOC",
+      "Barbera d'Asti DOCG",
+      "Dolcetto d'Alba DOC",
+      "Langhe DOC",
+      "Monferrato DOC",
+      "Piemonte DOC",
+      "Moscato d'Asti DOCG"
+    ],
+    "key_grapes": [
+      "Sangiovese", "Cabernet Sauvignon", "Cabernet Franc", "Merlot",
+      "Nebbiolo", "Barbera", "Syrah", "Chardonnay", "Pinot Nero",
+      "Vermentino", "Grechetto", "Sauvignon Blanc", "Sémillon",
+      "Aglianico", "Negroamaro", "Primitivo", "Nero di Troia", "Fiano",
+      "Aleatico", "Malbec", "Riesling", "Pinot Grigio", "Pinot Bianco",
+      "Arneis", "Moscato Bianco", "Dolcetto", "Albarossa", "Carménère",
+      "Petit Verdot", "Procanico", "Viognier", "Traminer", "Ansonica"
+    ],
+    "schema_test_observations": {
+      "classification_complexity": "Tests DOCG vs DOC vs IGT at same producer. Tignanello/Solaia are IGT but premium-priced (Super Tuscan paradox). Badia a Passignano is DOCG Gran Selezione (highest tier).",
+      "designation_variety": "Riserva (Marchese Antinori, Villa Antinori CC, Vignaferrovia, Vigna Colonnello, Costamiòle, Contessa Maggi), Gran Selezione (Badia a Passignano), Superiore (Guado al Tasso, Matarocchio, Aleatico), Satèn (Donna Cora), Millesimato/vintage (Conte Aymo), Classico Superiore (San Giovanni della Sala).",
+      "multi_estate": "Single producer with 20+ estates across Tuscany, Umbria, Lombardy, Piedmont, Puglia — plus USA and Chile. Each estate has its own wine lineup.",
+      "grape_diversity": "33+ grape varieties across the portfolio. From Nebbiolo in Piedmont to Aglianico in Puglia to Carménère in Maremma.",
+      "super_tuscan_concept": "Tignanello and Solaia are classified as IGT (lowest tier) but are among Italy's most expensive wines. Schema must handle IGT wines that are premium, not entry-level.",
+      "sweet_wines": "Muffato della Sala (botrytized), Aleatico (passito-style), Moscato d'Asti (frizzante), Kaloro (Moscato di Trani) — different styles of sweet wine.",
+      "sparkling": "6 Franciacorta DOCG wines test traditional method sparkling with lees aging data."
+    }
+  }
+}

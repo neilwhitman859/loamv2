@@ -1,0 +1,947 @@
+{
+  "producer": {
+    "name": "Marchesi Antinori",
+    "slug": "antinori",
+    "country": "Italy",
+    "region": "Tuscany",
+    "website": "https://www.antinori.it",
+    "producer_type": "estate",
+    "founded_year": 1385,
+    "metadata": {
+      "owners": "Antinori family (Albiera, Allegra, and Alessia Antinori — 26th generation)",
+      "headquarters": "Florence, Tuscany",
+      "annual_production_bottles": 20000000,
+      "num_labels": 150,
+      "philosophy": "Innovation within tradition. Pioneers of the Super Tuscan movement in the 1970s, blending international varieties with native Sangiovese. Quality-driven across all price tiers.",
+      "estates_tuscany": [
+        "Tenuta Tignanello (Chianti Classico — 319 ha, 165 ha vines)",
+        "Antinori nel Chianti Classico (Chianti Classico — winery/cellar)",
+        "Tenuta Guado al Tasso (Bolgheri — 900 ha, 300 ha vines)",
+        "Pian delle Vigne (Montalcino — 184 ha, 65 ha vines)"
+      ],
+      "estates_umbria": [
+        "Castello della Sala (Orvieto — 500 ha, 170 ha vines)"
+      ],
+      "historical_note": "One of the oldest wine families in the world. Giovanni di Piero Antinori enrolled in the Florentine Vintners' Guild in 1385. Marchese Piero Antinori led the Super Tuscan revolution in the 1970s with the creation of Tignanello (1971) and Solaia (1978)."
+    },
+    "winemakers": [
+      {
+        "name": "Renzo Cotarella",
+        "role": "head",
+        "country": "Italy",
+        "start_year": 1979,
+        "metadata": {
+          "title": "CEO and Chief Enologist",
+          "note": "Joined in 1979 as winemaker at Castello della Sala. Succeeded Giacomo Tachis as head winemaker for entire company in 1992. Promoted to CEO in 2005. Created Cervaro della Sala (first vintage 1985)."
+        }
+      }
+    ]
+  },
+  "_notes": {
+    "scope": "Core Tuscan and Umbrian portfolio — the 25 most important wines. Excludes international estates (Antica Napa Valley, Atlas Peak, Stag's Leap, Col Solare, Haras de Pirque, etc.), Puglia (Tormaresca), Lombardy (Montenisa), Piedmont (Prunotto — separate brand), and minor/value labels.",
+    "score_sourcing": "Scores from Wine Advocate (Monica Larner), James Suckling, Wine Spectator, Vinous (Antonio Galloni), Decanter, Wine Enthusiast, Jeb Dunnuck. Sourced from wine-searcher.com aggregation, retailer pages, and critic review announcements. All scores verified across multiple sources where possible.",
+    "blend_note": "Antinori adjusts blend percentages slightly each vintage. Where vintage-specific data was found, those percentages are used. Otherwise, the standard/typical blend is listed.",
+    "appellations": "IGT Toscana is used for Super Tuscan wines (Tignanello, Solaia). These are designated IGT rather than DOCG because they use non-traditional grape varieties. The DB appellation field should be null or mapped to a generic Toscana IGT if one exists."
+  },
+  "wines": [
+    {
+      "name": "Tignanello",
+      "color": "red",
+      "appellation": null,
+      "varietal_category": "Super Tuscan",
+      "grapes": [
+        { "name": "Sangiovese", "percentage": 80 },
+        { "name": "Cabernet Sauvignon", "percentage": 15 },
+        { "name": "Cabernet Franc", "percentage": 5 }
+      ],
+      "metadata": {
+        "estate": "Tenuta Tignanello",
+        "classification": "IGT Toscana",
+        "vineyard": "Tignanello (57 ha, southwest-facing, 350-400m elevation, limestone-rich soils)",
+        "first_vintage": 1971,
+        "aging": "12-14 months in French oak barriques (new and used), then 12 months in bottle",
+        "historical_note": "First Sangiovese aged in barriques, first contemporary Italian red blended with Cabernet, first Chianti-area red made without white grapes. One of the original Super Tuscans."
+      },
+      "vintages": [
+        {
+          "year": 2021,
+          "grapes": [
+            { "name": "Sangiovese", "percentage": 79 },
+            { "name": "Cabernet Sauvignon", "percentage": 13 },
+            { "name": "Cabernet Franc", "percentage": 8 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 98 },
+            { "publication": "James Suckling", "score": 98 },
+            { "publication": "Wine Spectator", "score": 97 },
+            { "publication": "Vinous", "score": 98 }
+          ]
+        },
+        {
+          "year": 2020,
+          "scores": [
+            { "publication": "James Suckling", "score": 97 },
+            { "publication": "Vinous", "score": 96 },
+            { "publication": "Wine Advocate", "score": 95 },
+            { "publication": "Wine Spectator", "score": 94 }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96 },
+            { "publication": "Wine Spectator", "score": 96 },
+            { "publication": "James Suckling", "score": 97 },
+            { "publication": "Vinous", "score": 95 }
+          ]
+        },
+        {
+          "year": 2018,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 98 },
+            { "publication": "Vinous", "score": 97 },
+            { "publication": "James Suckling", "score": 96 }
+          ]
+        },
+        {
+          "year": 2017,
+          "scores": [
+            { "publication": "James Suckling", "score": 98 },
+            { "publication": "Wine Spectator", "score": 97 },
+            { "publication": "Wine Advocate", "score": 96 },
+            { "publication": "Wine Enthusiast", "score": 97 },
+            { "publication": "Vinous", "score": 95 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Solaia",
+      "color": "red",
+      "appellation": null,
+      "varietal_category": "Super Tuscan",
+      "grapes": [
+        { "name": "Cabernet Sauvignon", "percentage": 75 },
+        { "name": "Sangiovese", "percentage": 20 },
+        { "name": "Cabernet Franc", "percentage": 5 }
+      ],
+      "metadata": {
+        "estate": "Tenuta Tignanello",
+        "classification": "IGT Toscana",
+        "vineyard": "Solaia (10 ha, adjacent to Tignanello vineyard, southwest-facing)",
+        "first_vintage": 1978,
+        "aging": "18 months in French oak barriques (75% new), then 12 months in bottle",
+        "historical_note": "Cabernet-dominant counterpart to Tignanello. Only produced in exceptional vintages — not made in 1980, 1981, 1983, 1984, 1992. Received 100 points from Wine Advocate for 2015 and 2016 vintages, and 100 from Vinous for 2021."
+      },
+      "vintages": [
+        {
+          "year": 2021,
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 77 },
+            { "name": "Sangiovese", "percentage": 14 },
+            { "name": "Cabernet Franc", "percentage": 9 }
+          ],
+          "scores": [
+            { "publication": "Vinous", "score": 100 },
+            { "publication": "James Suckling", "score": 97 },
+            { "publication": "Decanter", "score": 97 }
+          ]
+        },
+        {
+          "year": 2020,
+          "scores": [
+            { "publication": "James Suckling", "score": 98 },
+            { "publication": "Vinous", "score": 97 },
+            { "publication": "Wine Advocate", "score": 96 }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            { "publication": "James Suckling", "score": 98 }
+          ]
+        },
+        {
+          "year": 2018,
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 73 },
+            { "name": "Sangiovese", "percentage": 20 },
+            { "name": "Cabernet Franc", "percentage": 7 }
+          ],
+          "scores": [
+            { "publication": "Wine Spectator", "score": 91 },
+            { "publication": "Jeb Dunnuck", "score": 91 }
+          ]
+        },
+        {
+          "year": 2017,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 100 },
+            { "publication": "James Suckling", "score": 100 }
+          ]
+        },
+        {
+          "year": 2016,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 100 },
+            { "publication": "James Suckling", "score": 98 },
+            { "publication": "Vinous", "score": 98 }
+          ]
+        },
+        {
+          "year": 2015,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 100 },
+            { "publication": "James Suckling", "score": 97 },
+            { "publication": "Vinous", "score": 96 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Guado al Tasso",
+      "color": "red",
+      "appellation": "Bolgheri",
+      "varietal_category": "Super Tuscan",
+      "grapes": [
+        { "name": "Cabernet Sauvignon", "percentage": 55 },
+        { "name": "Cabernet Franc", "percentage": 30 },
+        { "name": "Merlot", "percentage": 15 }
+      ],
+      "metadata": {
+        "estate": "Tenuta Guado al Tasso",
+        "classification": "Bolgheri Superiore DOC",
+        "vineyard": "Guado al Tasso estate (300 ha vines within 900 ha estate, Bolgheri amphitheatre, 50-60m elevation)",
+        "first_vintage": 1990,
+        "aging": "18 months in French oak barriques (new and used), then 8-10 months in bottle",
+        "note": "Blend percentages vary significantly by vintage. Occasionally includes small amounts of Petit Verdot."
+      },
+      "vintages": [
+        {
+          "year": 2021,
+          "scores": [
+            { "publication": "Vinous", "score": 98 },
+            { "publication": "James Suckling", "score": 97 },
+            { "publication": "Wine Spectator", "score": 97 },
+            { "publication": "Decanter", "score": 96 },
+            { "publication": "Wine Advocate", "score": 95 }
+          ]
+        },
+        {
+          "year": 2020,
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 55 },
+            { "name": "Cabernet Franc", "percentage": 30 },
+            { "name": "Merlot", "percentage": 15 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96 },
+            { "publication": "Vinous", "score": 96 },
+            { "publication": "Wine Spectator", "score": 95 },
+            { "publication": "Wine Enthusiast", "score": 95 },
+            { "publication": "James Suckling", "score": 95 }
+          ]
+        },
+        {
+          "year": 2019,
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 60 },
+            { "name": "Cabernet Franc", "percentage": 25 },
+            { "name": "Merlot", "percentage": 15 }
+          ],
+          "scores": [
+            { "publication": "James Suckling", "score": 98 },
+            { "publication": "Wine Advocate", "score": 97 },
+            { "publication": "Vinous", "score": 97 },
+            { "publication": "Wine Enthusiast", "score": 96 },
+            { "publication": "Wine Spectator", "score": 95 }
+          ]
+        },
+        {
+          "year": 2018,
+          "scores": [
+            { "publication": "James Suckling", "score": 96 },
+            { "publication": "Wine Advocate", "score": 96 },
+            { "publication": "Decanter", "score": 96 },
+            { "publication": "Vinous", "score": 95 },
+            { "publication": "Wine Enthusiast", "score": 93 },
+            { "publication": "Wine Spectator", "score": 93 }
+          ]
+        },
+        {
+          "year": 2017,
+          "scores": [
+            { "publication": "James Suckling", "score": 97 },
+            { "publication": "Wine Advocate", "score": 97 },
+            { "publication": "Wine Enthusiast", "score": 96 },
+            { "publication": "Decanter", "score": 94 },
+            { "publication": "Vinous", "score": 93 },
+            { "publication": "Wine Spectator", "score": 93 }
+          ]
+        },
+        {
+          "year": 2016,
+          "scores": [
+            { "publication": "James Suckling", "score": 98 },
+            { "publication": "Vinous", "score": 98 },
+            { "publication": "Wine Advocate", "score": 98 },
+            { "publication": "Wine Enthusiast", "score": 96 },
+            { "publication": "Decanter", "score": 96 },
+            { "publication": "Wine Spectator", "score": 94 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Matarocchio",
+      "color": "red",
+      "appellation": "Bolgheri",
+      "varietal_category": "Cabernet Franc",
+      "grapes": [
+        { "name": "Cabernet Franc", "percentage": 100 }
+      ],
+      "metadata": {
+        "estate": "Tenuta Guado al Tasso",
+        "classification": "Bolgheri Superiore DOC",
+        "first_vintage": 2007,
+        "aging": "18 months in new French oak barriques, then 12+ months in bottle",
+        "note": "Only produced in vintages where Cabernet Franc excels. Not produced in 2018 or 2020. Ultra-premium single-varietal bottling from a dedicated parcel within the Guado al Tasso estate."
+      },
+      "vintages": [
+        {
+          "year": 2019,
+          "scores": []
+        },
+        {
+          "year": 2017,
+          "scores": []
+        },
+        {
+          "year": 2016,
+          "scores": []
+        },
+        {
+          "year": 2015,
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "Il Bruciato",
+      "color": "red",
+      "appellation": "Bolgheri",
+      "varietal_category": "Red Blend",
+      "grapes": [
+        { "name": "Cabernet Sauvignon", "percentage": 37 },
+        { "name": "Cabernet Franc", "percentage": 28 },
+        { "name": "Merlot", "percentage": 19 },
+        { "name": "Syrah", "percentage": 10 },
+        { "name": "Petit Verdot", "percentage": 6 }
+      ],
+      "metadata": {
+        "estate": "Tenuta Guado al Tasso",
+        "classification": "Bolgheri DOC Rosso",
+        "note": "Entry-level red from Guado al Tasso. Blend proportions vary by vintage. Named after 'bruciato' (burned), referring to the local practice of burning vegetation to clear land."
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 37 },
+            { "name": "Cabernet Franc", "percentage": 28 },
+            { "name": "Merlot", "percentage": 19 },
+            { "name": "Syrah", "percentage": 10 },
+            { "name": "Petit Verdot", "percentage": 6 }
+          ],
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 93 },
+            { "publication": "Wine Advocate", "score": 91 }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 93 }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": []
+        },
+        {
+          "year": 2020,
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "Cont'Ugo",
+      "color": "red",
+      "appellation": "Bolgheri",
+      "varietal_category": "Merlot",
+      "grapes": [
+        { "name": "Merlot", "percentage": 100 }
+      ],
+      "metadata": {
+        "estate": "Tenuta Guado al Tasso",
+        "classification": "Bolgheri DOC",
+        "note": "Pure Merlot from the Guado al Tasso estate. Named in honor of Count Ugo della Gherardesca, ancestor of the family that owns the estate."
+      },
+      "vintages": [
+        {
+          "year": 2022,
+          "scores": [
+            { "publication": "Falstaff", "score": 93 }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": []
+        },
+        {
+          "year": 2020,
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "Scalabrone",
+      "color": "rosé",
+      "appellation": "Bolgheri",
+      "varietal_category": "Rosé Blend",
+      "grapes": [
+        { "name": "Cabernet Sauvignon", "percentage": 40 },
+        { "name": "Merlot", "percentage": 30 },
+        { "name": "Syrah", "percentage": 30 }
+      ],
+      "metadata": {
+        "estate": "Tenuta Guado al Tasso",
+        "classification": "Bolgheri DOC Rosato",
+        "note": "Rosé from the Guado al Tasso estate. Short maceration (3-5 hours), stainless steel fermentation at 16C."
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "scores": []
+        },
+        {
+          "year": 2022,
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "Vermentino",
+      "color": "white",
+      "appellation": "Bolgheri",
+      "varietal_category": "Vermentino",
+      "grapes": [
+        { "name": "Vermentino", "percentage": 100 }
+      ],
+      "metadata": {
+        "estate": "Tenuta Guado al Tasso",
+        "classification": "Bolgheri DOC Vermentino",
+        "note": "100% Vermentino from the Guado al Tasso coastal estate."
+      },
+      "vintages": [
+        {
+          "year": 2024,
+          "scores": []
+        },
+        {
+          "year": 2023,
+          "scores": [
+            { "publication": "Wine Spectator", "score": 90 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Badia a Passignano",
+      "color": "red",
+      "appellation": "Chianti Classico",
+      "varietal_category": "Sangiovese",
+      "grapes": [
+        { "name": "Sangiovese", "percentage": 100 }
+      ],
+      "metadata": {
+        "estate": "Badia a Passignano",
+        "classification": "Chianti Classico Gran Selezione DOCG",
+        "vineyard": "56 ha surrounding the historic Badia a Passignano abbey in Sambuca Val di Pesa, planted mostly to Sangiovese",
+        "aging": "14-16 months in French oak barriques, then 12 months in bottle",
+        "historical_note": "The abbey has been a vineyard site for over 1000 years. Single-wine estate producing only Chianti Classico Gran Selezione."
+      },
+      "vintages": [
+        {
+          "year": 2022,
+          "scores": [
+            { "publication": "James Suckling", "score": 95 }
+          ]
+        },
+        {
+          "year": 2020,
+          "scores": []
+        },
+        {
+          "year": 2019,
+          "scores": []
+        },
+        {
+          "year": 2018,
+          "scores": []
+        },
+        {
+          "year": 2017,
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "Marchese Antinori Chianti Classico Riserva",
+      "color": "red",
+      "appellation": "Chianti Classico",
+      "varietal_category": "Chianti Blend",
+      "grapes": [
+        { "name": "Sangiovese", "percentage": 90 },
+        { "name": "Cabernet Sauvignon", "percentage": 5 },
+        { "name": "Merlot", "percentage": 5 }
+      ],
+      "metadata": {
+        "estate": "Tenuta Tignanello",
+        "classification": "Chianti Classico Riserva DOCG",
+        "note": "Historic label of the Antinori cellars, produced since 2011 from grapes of the Tignanello estate. Blend is 90% Sangiovese with complementary varieties (Cabernet Sauvignon, Merlot, or Cabernet Franc depending on vintage)."
+      },
+      "vintages": [
+        {
+          "year": 2021,
+          "scores": []
+        },
+        {
+          "year": 2020,
+          "scores": [
+            { "publication": "Wine Spectator", "score": 95 },
+            { "publication": "James Suckling", "score": 92 },
+            { "publication": "Vinous", "score": 92 }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            { "publication": "Vinous", "score": 93 },
+            { "publication": "Wine Enthusiast", "score": 92 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Villa Antinori Chianti Classico Riserva",
+      "color": "red",
+      "appellation": "Chianti Classico",
+      "varietal_category": "Chianti Blend",
+      "grapes": [
+        { "name": "Sangiovese", "percentage": 90 },
+        { "name": "Merlot", "percentage": 5 },
+        { "name": "Cabernet Sauvignon", "percentage": 5 }
+      ],
+      "metadata": {
+        "estate": "Antinori nel Chianti Classico",
+        "classification": "Chianti Classico Riserva DOCG",
+        "note": "90% Sangiovese with complementary varieties (typically Merlot and/or Cabernet Sauvignon). Aged in French, Hungarian, and American oak."
+      },
+      "vintages": [
+        {
+          "year": 2021,
+          "scores": []
+        },
+        {
+          "year": 2020,
+          "scores": []
+        },
+        {
+          "year": 2019,
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "Peppoli",
+      "color": "red",
+      "appellation": "Chianti Classico",
+      "varietal_category": "Chianti Blend",
+      "grapes": [
+        { "name": "Sangiovese", "percentage": 90 },
+        { "name": "Merlot", "percentage": 5 },
+        { "name": "Cabernet Sauvignon", "percentage": 5 }
+      ],
+      "metadata": {
+        "estate": "Tenuta Tignanello",
+        "classification": "Chianti Classico DOCG",
+        "note": "Entry-level Chianti Classico from Antinori. 90% Sangiovese with complementary varieties. Named after the Peppoli vineyard within the Tignanello estate."
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "scores": [
+            { "publication": "Falstaff", "score": 90 }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": []
+        },
+        {
+          "year": 2021,
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "Villa Antinori Rosso",
+      "color": "red",
+      "appellation": null,
+      "varietal_category": "Red Blend",
+      "grapes": [
+        { "name": "Sangiovese", "percentage": 55 },
+        { "name": "Cabernet Sauvignon", "percentage": 25 },
+        { "name": "Merlot", "percentage": 15 },
+        { "name": "Syrah", "percentage": 5 }
+      ],
+      "metadata": {
+        "estate": "Antinori nel Chianti Classico",
+        "classification": "IGT Toscana",
+        "first_vintage": 1928,
+        "aging": "12 months in French, Hungarian, and American oak, then 8 months in bottle",
+        "historical_note": "Originally created in 1928 by Marchese Niccolo Antinori. One of the most historic Italian wine labels. The red version is a Sangiovese-dominant blend with international varieties."
+      },
+      "vintages": [
+        {
+          "year": 2021,
+          "scores": []
+        },
+        {
+          "year": 2020,
+          "scores": []
+        },
+        {
+          "year": 2019,
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "Villa Antinori Bianco",
+      "color": "white",
+      "appellation": null,
+      "varietal_category": "White Blend",
+      "grapes": [
+        { "name": "Trebbiano", "percentage": 40 },
+        { "name": "Malvasia Bianca", "percentage": 20 },
+        { "name": "Pinot Blanc", "percentage": 15 },
+        { "name": "Pinot Grigio", "percentage": 15 },
+        { "name": "Riesling", "percentage": 10 }
+      ],
+      "metadata": {
+        "estate": "Antinori nel Chianti Classico",
+        "classification": "IGT Toscana",
+        "note": "White counterpart to Villa Antinori Rosso. Dominated by Trebbiano Toscano with Malvasia, Pinot Blanc, Pinot Grigio, and Rhine Riesling. Chardonnay was added to the blend in the 1980s."
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "scores": []
+        },
+        {
+          "year": 2022,
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "Pian delle Vigne",
+      "color": "red",
+      "appellation": "Brunello di Montalcino",
+      "varietal_category": "Sangiovese",
+      "grapes": [
+        { "name": "Sangiovese", "percentage": 100 }
+      ],
+      "metadata": {
+        "estate": "Pian delle Vigne",
+        "classification": "Brunello di Montalcino DOCG",
+        "vineyard": "65 ha vines within 184 ha estate in southwest Montalcino",
+        "aging": "Minimum 24 months in Slavonian oak and French oak casks, then 8 months in bottle",
+        "note": "100% Sangiovese (Brunello). Estate named after the plain visible from the 19th-century railway station on the property."
+      },
+      "vintages": [
+        {
+          "year": 2019,
+          "scores": [
+            { "publication": "James Suckling", "score": 94 },
+            { "publication": "Vinous", "score": 93 }
+          ]
+        },
+        {
+          "year": 2018,
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 95 }
+          ]
+        },
+        {
+          "year": 2017,
+          "scores": [
+            { "publication": "James Suckling", "score": 93 }
+          ]
+        },
+        {
+          "year": 2016,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93 },
+            { "publication": "Wine Enthusiast", "score": 95 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pian delle Vigne Vignaferrovia Riserva",
+      "color": "red",
+      "appellation": "Brunello di Montalcino",
+      "varietal_category": "Sangiovese",
+      "grapes": [
+        { "name": "Sangiovese", "percentage": 100 }
+      ],
+      "metadata": {
+        "estate": "Pian delle Vigne",
+        "classification": "Brunello di Montalcino Riserva DOCG",
+        "vineyard": "Vignaferrovia — 4 ha single parcel adjacent to the 19th-century railway station",
+        "aging": "Minimum 30 months in oak (Slavonian and French), then extended bottle aging",
+        "note": "Only produced in the finest vintages. Top selection from the Pian delle Vigne estate."
+      },
+      "vintages": [
+        {
+          "year": 2018,
+          "scores": [
+            { "publication": "James Suckling", "score": 92 }
+          ]
+        },
+        {
+          "year": 2016,
+          "scores": []
+        },
+        {
+          "year": 2015,
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "Cervaro della Sala",
+      "color": "white",
+      "appellation": "Orvieto",
+      "varietal_category": "Chardonnay",
+      "grapes": [
+        { "name": "Chardonnay", "percentage": 90 },
+        { "name": "Grechetto", "percentage": 10 }
+      ],
+      "metadata": {
+        "estate": "Castello della Sala",
+        "classification": "Umbria IGT",
+        "vineyard": "Castello della Sala estate (170 ha vines within 500 ha estate, near Orvieto, Umbria)",
+        "first_vintage": 1985,
+        "aging": "Partial barrel fermentation in French oak barriques (new and used) with batonnage, then 5-6 months in barriques",
+        "note": "Italy's benchmark barrel-fermented white wine. Created by Renzo Cotarella. Blend is approximately 90% Chardonnay and 10% Grechetto, though recent vintages show 95/5 split. Widely considered one of Italy's greatest white wines."
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 95 },
+            { "name": "Grechetto", "percentage": 5 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 97 },
+            { "publication": "James Suckling", "score": 97 },
+            { "publication": "Vinous", "score": 95 }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            { "publication": "James Suckling", "score": 98 },
+            { "publication": "Wine Advocate", "score": 94 },
+            { "publication": "Vinous", "score": 94 }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            { "publication": "James Suckling", "score": 97 }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95 },
+            { "publication": "Vinous", "score": 92 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bramito",
+      "color": "white",
+      "appellation": "Orvieto",
+      "varietal_category": "Chardonnay",
+      "grapes": [
+        { "name": "Chardonnay", "percentage": 100 }
+      ],
+      "metadata": {
+        "estate": "Castello della Sala",
+        "classification": "Umbria IGT",
+        "first_vintage": 1994,
+        "note": "Full name is 'Bramito del Cervo'. 100% Chardonnay from Castello della Sala. Partial oak fermentation with partial malolactic. Mineral-driven with orchard fruit character. Entry-level white from the Castello della Sala estate."
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "scores": []
+        },
+        {
+          "year": 2022,
+          "scores": []
+        },
+        {
+          "year": 2021,
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "Conte della Vipera",
+      "color": "white",
+      "appellation": "Orvieto",
+      "varietal_category": "Sauvignon Blanc",
+      "grapes": [
+        { "name": "Sauvignon Blanc", "percentage": 50 },
+        { "name": "Sémillon", "percentage": 50 }
+      ],
+      "metadata": {
+        "estate": "Castello della Sala",
+        "classification": "Umbria IGT",
+        "note": "Sauvignon Blanc and Semillon blend from Castello della Sala. A Bordeaux blanc-style wine from Umbria."
+      },
+      "vintages": [
+        {
+          "year": 2022,
+          "scores": []
+        },
+        {
+          "year": 2021,
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "Muffato della Sala",
+      "color": "white",
+      "appellation": "Orvieto",
+      "varietal_category": "Dessert Blend",
+      "grapes": [
+        { "name": "Sauvignon Blanc", "percentage": 40 },
+        { "name": "Grechetto", "percentage": 20 },
+        { "name": "Sémillon", "percentage": 20 },
+        { "name": "Gewürztraminer", "percentage": 10 },
+        { "name": "Riesling", "percentage": 10 }
+      ],
+      "metadata": {
+        "estate": "Castello della Sala",
+        "classification": "Umbria IGT",
+        "note": "Noble rot (botrytis) dessert wine from Castello della Sala. Inspired by Sauternes. The microclimate near Orvieto, with autumn mists from Lake Corbara, encourages botrytis development. Only produced in vintages with sufficient noble rot."
+      },
+      "vintages": [
+        {
+          "year": 2019,
+          "scores": []
+        },
+        {
+          "year": 2018,
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "Chianti Classico Tenute Marchese Antinori",
+      "color": "red",
+      "appellation": "Chianti Classico",
+      "varietal_category": "Sangiovese",
+      "grapes": [
+        { "name": "Sangiovese", "percentage": 95 },
+        { "name": "Cabernet Sauvignon", "percentage": 5 }
+      ],
+      "metadata": {
+        "estate": "Antinori nel Chianti Classico",
+        "classification": "Chianti Classico DOCG",
+        "note": "Standard Chianti Classico from Antinori. Predominantly Sangiovese with a small percentage of Cabernet Sauvignon."
+      },
+      "vintages": [
+        {
+          "year": 2022,
+          "scores": []
+        },
+        {
+          "year": 2021,
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "Le Mortelle Botrosecco",
+      "color": "red",
+      "appellation": "Maremma toscana",
+      "varietal_category": "Red Blend",
+      "grapes": [
+        { "name": "Cabernet Sauvignon", "percentage": 60 },
+        { "name": "Cabernet Franc", "percentage": 30 },
+        { "name": "Merlot", "percentage": 10 }
+      ],
+      "metadata": {
+        "estate": "Le Mortelle",
+        "classification": "Maremma Toscana DOC",
+        "note": "From the Le Mortelle estate in Maremma (southern Tuscany coastal region). Bordeaux-style blend."
+      },
+      "vintages": [
+        {
+          "year": 2021,
+          "scores": []
+        },
+        {
+          "year": 2020,
+          "scores": []
+        }
+      ]
+    },
+    {
+      "name": "Le Mortelle Poggio alle Nane",
+      "color": "red",
+      "appellation": "Maremma toscana",
+      "varietal_category": "Red Blend",
+      "grapes": [
+        { "name": "Cabernet Franc", "percentage": 60 },
+        { "name": "Cabernet Sauvignon", "percentage": 40 }
+      ],
+      "metadata": {
+        "estate": "Le Mortelle",
+        "classification": "Maremma Toscana DOC",
+        "note": "Top wine from Le Mortelle estate. Cabernet Franc-dominant blend."
+      },
+      "vintages": [
+        {
+          "year": 2019,
+          "scores": []
+        },
+        {
+          "year": 2018,
+          "scores": []
+        }
+      ]
+    }
+  ]
+}

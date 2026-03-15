@@ -1,0 +1,1278 @@
+{
+  "producer": {
+    "name": "R. López de Heredia Viña Tondonia",
+    "slug": "lopez-de-heredia",
+    "country": "Spain",
+    "region": "Rioja",
+    "website": "https://www.lopezdeheredia.com",
+    "year_established": 1877,
+    "producer_type": "estate",
+    "appellation": "Rioja",
+    "hectares_under_vine": 170,
+    "metadata": {
+      "subzone": "Rioja Alta",
+      "location": "Haro, La Rioja",
+      "founder": "Rafael López de Heredia y Landeta",
+      "generation": "4th generation",
+      "cooperage": "Own cooperage (La Tonelería) — makes and repairs barrels in-house",
+      "oak_source": "American oak exclusively",
+      "barrel_policy": "Only used/well-seasoned barrels, never new oak",
+      "fermentation": "Indigenous yeasts in century-old oak vats",
+      "vineyards": ["Viña Tondonia", "Viña Bosconia", "Viña Cubillo", "Viña Zaconia"],
+      "tondonia_hectares": 100,
+      "tondonia_planted": "1913-1914",
+      "productive_ha": 110
+    },
+    "winemakers": [
+      { "name": "Mercedes López de Heredia", "role": "head", "country": "Spain" }
+    ]
+  },
+  "wines": [
+    {
+      "name": "Viña Tondonia Reserva Tinto",
+      "color": "red",
+      "appellation": "Rioja",
+      "varietal_category": "Rioja Blend",
+      "vineyard_name": "Viña Tondonia",
+      "oak_origin": "american",
+      "yeast_type": "native",
+      "fining": "egg whites",
+      "filtration": false,
+      "fermentation_vessel": "barrel",
+      "label_designations": ["Reserva"],
+      "grapes": [
+        { "name": "Tempranillo", "percentage": 75 },
+        { "name": "Garnacho", "percentage": 15 },
+        { "name": "Graciano", "percentage": 5 },
+        { "name": "Mazuelo", "percentage": 5 }
+      ],
+      "vintages": [
+        {
+          "year": 2013,
+          "abv": 14.0,
+          "ph": 3.4,
+          "ta_g_l": 6.6,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "scores": [
+            { "publication": "Vinous", "score": 97, "critic": "Joaquín Hidalgo" },
+            { "publication": "Tim Atkin", "score": 96 },
+            { "publication": "Wine Advocate", "score": 95, "critic": "Luis Gutiérrez" },
+            { "publication": "Guía Peñín", "score": 95 }
+          ]
+        },
+        {
+          "year": 2012,
+          "abv": 13.0,
+          "ta_g_l": 6.6,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "cases_produced": 20833,
+          "scores": [
+            { "publication": "James Suckling", "score": 96, "critic": "Zekun Shuai" },
+            { "publication": "Wine Advocate", "score": 95, "critic": "Luis Gutiérrez" },
+            { "publication": "Tim Atkin", "score": 95 },
+            { "publication": "Vinous", "score": 95, "critic": "Joaquín Hidalgo" },
+            { "publication": "Decanter", "score": 94, "critic": "Ines Salpico" },
+            { "publication": "Guía Peñín", "score": 94 },
+            { "publication": "View From the Cellar", "score": 93, "critic": "John Gilman" }
+          ]
+        },
+        {
+          "year": 2011,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94 }
+          ]
+        },
+        {
+          "year": 2010,
+          "abv": 13.0,
+          "ph": 3.4,
+          "ta_g_l": 6.6,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "scores": [
+            { "publication": "James Suckling", "score": 97 },
+            { "publication": "Wine Advocate", "score": 96, "critic": "Luis Gutiérrez" },
+            { "publication": "International Wine Report", "score": 96 },
+            { "publication": "Falstaff", "score": 96 },
+            { "publication": "Wine Enthusiast", "score": 96 },
+            { "publication": "Tim Atkin", "score": 94 },
+            { "publication": "Guía Peñín", "score": 94 }
+          ]
+        },
+        {
+          "year": 2009,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "scores": [
+            { "publication": "James Suckling", "score": 97 },
+            { "publication": "Tim Atkin", "score": 94 },
+            { "publication": "View From the Cellar", "score": 94, "critic": "John Gilman" },
+            { "publication": "Wine & Spirits", "score": 93 },
+            { "publication": "Wine Advocate", "score": 93, "critic": "Luis Gutiérrez" },
+            { "publication": "Guía Peñín", "score": 93 }
+          ]
+        },
+        {
+          "year": 2008,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94 }
+          ]
+        },
+        {
+          "year": 2007,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "cases_produced": 16667,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96 }
+          ]
+        },
+        {
+          "year": 2006,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93 }
+          ]
+        },
+        {
+          "year": 2005,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93 }
+          ]
+        },
+        {
+          "year": 2004,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2003,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2002,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2001,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2000,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1999,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1998,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1997,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1996,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1995,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1994,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1993,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1992,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1991,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1990,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1989,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1988,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1987,
+          "abv": 13.0,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        }
+      ]
+    },
+    {
+      "name": "Viña Tondonia Gran Reserva Tinto",
+      "color": "red",
+      "appellation": "Rioja",
+      "varietal_category": "Rioja Blend",
+      "vineyard_name": "Viña Tondonia",
+      "oak_origin": "american",
+      "yeast_type": "native",
+      "fining": "egg whites",
+      "filtration": false,
+      "fermentation_vessel": "barrel",
+      "label_designations": ["Gran Reserva"],
+      "grapes": [
+        { "name": "Tempranillo", "percentage": 75 },
+        { "name": "Garnacho", "percentage": 15 },
+        { "name": "Mazuelo", "percentage": 5 },
+        { "name": "Graciano", "percentage": 5 }
+      ],
+      "vintages": [
+        {
+          "year": 2004,
+          "abv": 12.5,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "cases_produced": 2000,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 100, "critic": "Luis Gutiérrez" },
+            { "publication": "James Suckling", "score": 98, "critic": "Zekun Shuai" },
+            { "publication": "Tim Atkin", "score": 97 },
+            { "publication": "Vinous", "score": 97, "critic": "Joaquín Hidalgo" }
+          ]
+        },
+        {
+          "year": 2001,
+          "abv": 13.0,
+          "ph": 3.4,
+          "ta_g_l": 6.4,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "cases_produced": 2083,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 98, "critic": "Luis Gutiérrez" },
+            { "publication": "James Suckling", "score": 97 }
+          ]
+        },
+        {
+          "year": 1995,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1994,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1987,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1981,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1976,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1973,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1970,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        }
+      ]
+    },
+    {
+      "name": "Viña Tondonia Reserva Blanco",
+      "color": "white",
+      "appellation": "Rioja",
+      "varietal_category": "White Rioja Blend",
+      "vineyard_name": "Viña Tondonia",
+      "oak_origin": "american",
+      "yeast_type": "native",
+      "fining": "egg whites",
+      "filtration": false,
+      "fermentation_vessel": "barrel",
+      "label_designations": ["Reserva"],
+      "grapes": [
+        { "name": "Viura", "percentage": 90 },
+        { "name": "Malvasía", "percentage": 10 }
+      ],
+      "vintages": [
+        {
+          "year": 2013,
+          "abv": 12.5,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "cases_produced": 1167,
+          "scores": [
+            { "publication": "James Suckling", "score": 94 },
+            { "publication": "Guía Peñín", "score": 95 }
+          ]
+        },
+        {
+          "year": 2012,
+          "abv": 12.5,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2011,
+          "abv": 12.5,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2010,
+          "abv": 12.5,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2009,
+          "abv": 12.5,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2007,
+          "abv": 12.5,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2006,
+          "abv": 12.5,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2005,
+          "abv": 12.5,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2004,
+          "abv": 12.5,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2003,
+          "abv": 12.5,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2002,
+          "abv": 12.5,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2001,
+          "abv": 12.5,
+          "oak_months": 72,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        }
+      ]
+    },
+    {
+      "name": "Viña Tondonia Gran Reserva Blanco",
+      "color": "white",
+      "appellation": "Rioja",
+      "varietal_category": "White Rioja Blend",
+      "vineyard_name": "Viña Tondonia",
+      "oak_origin": "american",
+      "yeast_type": "native",
+      "fining": "egg whites",
+      "filtration": false,
+      "fermentation_vessel": "barrel",
+      "label_designations": ["Gran Reserva"],
+      "grapes": [
+        { "name": "Viura", "percentage": 90 },
+        { "name": "Malvasía", "percentage": 10 }
+      ],
+      "vintages": [
+        {
+          "year": 2004,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "cases_produced": 833,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 100, "critic": "Luis Gutiérrez" }
+          ]
+        },
+        {
+          "year": 2001,
+          "abv": 12.5,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 99, "critic": "Luis Gutiérrez" }
+          ]
+        },
+        {
+          "year": 1996,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 98 }
+          ]
+        },
+        {
+          "year": 1991,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1987,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1981,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1976,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1973,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1970,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1964,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        }
+      ]
+    },
+    {
+      "name": "Viña Tondonia Rosado Gran Reserva",
+      "color": "rose",
+      "appellation": "Rioja",
+      "varietal_category": "Rosé Blend",
+      "vineyard_name": "Viña Tondonia",
+      "oak_origin": "american",
+      "yeast_type": "native",
+      "fining": "egg whites",
+      "filtration": false,
+      "fermentation_vessel": "barrel",
+      "label_designations": ["Gran Reserva"],
+      "grapes": [
+        { "name": "Garnacho", "percentage": 60 },
+        { "name": "Tempranillo", "percentage": 30 },
+        { "name": "Viura", "percentage": 10 }
+      ],
+      "vintages": [
+        {
+          "year": 2012,
+          "abv": 12.5,
+          "ph": 3.3,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "cases_produced": 1250,
+          "scores": [
+            { "publication": "James Suckling", "score": 97 },
+            { "publication": "Wine Advocate", "score": 96, "critic": "Luis Gutiérrez" },
+            { "publication": "Tim Atkin", "score": 95 }
+          ]
+        },
+        {
+          "year": 2011,
+          "abv": 13.0,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "scores": [
+            { "publication": "James Suckling", "score": 95 },
+            { "publication": "Tim Atkin", "score": 94 },
+            { "publication": "Wine Advocate", "score": 93, "critic": "Luis Gutiérrez" }
+          ]
+        },
+        {
+          "year": 2010,
+          "abv": 13.0,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "cases_produced": 2083,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "critic": "Luis Gutiérrez" },
+            { "publication": "Tim Atkin", "score": 95 },
+            { "publication": "Vinous", "score": 95 },
+            { "publication": "James Suckling", "score": 95 }
+          ]
+        },
+        {
+          "year": 2009,
+          "abv": 13.0,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2008,
+          "abv": 13.0,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        }
+      ]
+    },
+    {
+      "name": "Viña Bosconia Reserva Tinto",
+      "color": "red",
+      "appellation": "Rioja",
+      "varietal_category": "Rioja Blend",
+      "vineyard_name": "Viña Bosconia",
+      "oak_origin": "american",
+      "yeast_type": "native",
+      "fining": "egg whites",
+      "filtration": false,
+      "fermentation_vessel": "barrel",
+      "label_designations": ["Reserva"],
+      "grapes": [
+        { "name": "Tempranillo", "percentage": 80 },
+        { "name": "Garnacho", "percentage": 15 },
+        { "name": "Mazuelo", "percentage": 2.5 },
+        { "name": "Graciano", "percentage": 2.5 }
+      ],
+      "vintages": [
+        {
+          "year": 2014,
+          "abv": 13.5,
+          "oak_months": 60,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "scores": [
+            { "publication": "James Suckling", "score": 95 }
+          ]
+        },
+        {
+          "year": 2013,
+          "abv": 13.5,
+          "oak_months": 60,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "scores": [
+            { "publication": "James Suckling", "score": 95 },
+            { "publication": "Wine Advocate", "score": 93, "critic": "Luis Gutiérrez" }
+          ]
+        },
+        {
+          "year": 2012,
+          "abv": 13.5,
+          "oak_months": 60,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "cases_produced": 6667,
+          "scores": [
+            { "publication": "James Suckling", "score": 95 },
+            { "publication": "Wine Advocate", "score": 93 }
+          ]
+        },
+        {
+          "year": 2011,
+          "abv": 13.5,
+          "ph": 3.3,
+          "ta_g_l": 6.7,
+          "oak_months": 60,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "cases_produced": 7333,
+          "scores": [
+            { "publication": "James Suckling", "score": 95 },
+            { "publication": "Tim Atkin", "score": 94 },
+            { "publication": "View From the Cellar", "score": 93, "critic": "John Gilman" },
+            { "publication": "Wine Advocate", "score": 92, "critic": "Luis Gutiérrez" }
+          ]
+        },
+        {
+          "year": 2010,
+          "abv": 13.5,
+          "oak_months": 60,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2009,
+          "abv": 13.5,
+          "oak_months": 60,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2008,
+          "abv": 13.5,
+          "oak_months": 60,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2007,
+          "abv": 13.5,
+          "oak_months": 60,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2006,
+          "abv": 13.5,
+          "oak_months": 60,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2005,
+          "abv": 13.5,
+          "oak_months": 60,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2004,
+          "abv": 13.5,
+          "oak_months": 60,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2003,
+          "abv": 13.5,
+          "oak_months": 60,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2002,
+          "abv": 13.5,
+          "oak_months": 60,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2001,
+          "abv": 13.5,
+          "oak_months": 60,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        }
+      ]
+    },
+    {
+      "name": "Viña Bosconia Gran Reserva Tinto",
+      "color": "red",
+      "appellation": "Rioja",
+      "varietal_category": "Rioja Blend",
+      "vineyard_name": "Viña Bosconia",
+      "oak_origin": "american",
+      "yeast_type": "native",
+      "fining": "egg whites",
+      "filtration": false,
+      "fermentation_vessel": "barrel",
+      "label_designations": ["Gran Reserva"],
+      "grapes": [
+        { "name": "Tempranillo", "percentage": 80 },
+        { "name": "Garnacho", "percentage": 15 },
+        { "name": "Mazuelo", "percentage": 2.5 },
+        { "name": "Graciano", "percentage": 2.5 }
+      ],
+      "vintages": [
+        {
+          "year": 2004,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "cases_produced": 500
+        },
+        {
+          "year": 2001,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "cases_produced": 417,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96 },
+            { "publication": "Tim Atkin", "score": 96 }
+          ]
+        },
+        {
+          "year": 1987,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1982,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1981,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1978,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1976,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1973,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1970,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1968,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 1964,
+          "abv": 12.0,
+          "oak_months": 120,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        }
+      ]
+    },
+    {
+      "name": "Viña Cubillo Crianza Tinto",
+      "color": "red",
+      "appellation": "Rioja",
+      "varietal_category": "Rioja Blend",
+      "vineyard_name": "Viña Cubillo",
+      "oak_origin": "american",
+      "yeast_type": "native",
+      "fining": "egg whites",
+      "filtration": false,
+      "fermentation_vessel": "barrel",
+      "label_designations": ["Crianza"],
+      "grapes": [
+        { "name": "Tempranillo", "percentage": 65 },
+        { "name": "Garnacho", "percentage": 25 },
+        { "name": "Mazuelo", "percentage": 5 },
+        { "name": "Graciano", "percentage": 5 }
+      ],
+      "vintages": [
+        {
+          "year": 2017,
+          "abv": 13.5,
+          "oak_months": 36,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93 },
+            { "publication": "James Suckling", "score": 92 }
+          ]
+        },
+        {
+          "year": 2016,
+          "abv": 13.5,
+          "oak_months": 36,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "cases_produced": 7667
+        },
+        {
+          "year": 2015,
+          "abv": 13.5,
+          "oak_months": 36,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2014,
+          "abv": 13.5,
+          "oak_months": 36,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2013,
+          "abv": 13.5,
+          "oak_months": 36,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2012,
+          "abv": 13.5,
+          "oak_months": 36,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2011,
+          "abv": 13.5,
+          "oak_months": 36,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2010,
+          "abv": 13.5,
+          "oak_months": 36,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2009,
+          "abv": 13.5,
+          "oak_months": 36,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2008,
+          "abv": 13.5,
+          "oak_months": 36,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2007,
+          "abv": 13.5,
+          "oak_months": 36,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2006,
+          "abv": 13.5,
+          "oak_months": 36,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2005,
+          "abv": 13.5,
+          "oak_months": 36,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        }
+      ]
+    },
+    {
+      "name": "Viña Gravonia Crianza Blanco",
+      "color": "white",
+      "appellation": "Rioja",
+      "varietal_category": "White Rioja Blend",
+      "vineyard_name": "Viña Zaconia",
+      "oak_origin": "american",
+      "yeast_type": "native",
+      "fining": "egg whites",
+      "filtration": false,
+      "fermentation_vessel": "barrel",
+      "label_designations": ["Crianza"],
+      "grapes": [
+        { "name": "Viura", "percentage": 100 }
+      ],
+      "vintages": [
+        {
+          "year": 2017,
+          "abv": 12.5,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2016,
+          "abv": 12.5,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2015,
+          "abv": 13.0,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "cases_produced": 2250,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "critic": "Luis Gutiérrez" }
+          ]
+        },
+        {
+          "year": 2014,
+          "abv": 12.5,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "critic": "Luis Gutiérrez" }
+          ]
+        },
+        {
+          "year": 2013,
+          "abv": 12.5,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel",
+          "scores": [
+            { "publication": "James Suckling", "score": 96 },
+            { "publication": "Tim Atkin", "score": 95 }
+          ]
+        },
+        {
+          "year": 2012,
+          "abv": 12.5,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2011,
+          "abv": 12.5,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2010,
+          "abv": 12.5,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2009,
+          "abv": 12.5,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2008,
+          "abv": 12.5,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2007,
+          "abv": 12.5,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2006,
+          "abv": 12.5,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2005,
+          "abv": 12.5,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        },
+        {
+          "year": 2004,
+          "abv": 12.5,
+          "oak_months": 48,
+          "new_oak_pct": 0,
+          "oak_origin": "american",
+          "aging_vessel": "barrel"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1455 @@
+{
+  "producer": {
+    "name": "Moone Tsai",
+    "slug": "moone-tsai",
+    "country": "United States",
+    "region": "Napa Valley",
+    "website": "https://www.moonetsai.com",
+    "producer_type": "negociant",
+    "founded_year": 2006,
+    "winemakers": [
+      {
+        "name": "Philippe Melka",
+        "role": "consulting",
+        "country": "France",
+        "metadata": {
+          "education": "University of Bordeaux",
+          "notable_clients": "Hundred Acre, Lail Vineyards, Dana Estates, Bryant Family",
+          "background": "Bordeaux-bred, formerly at Dominus Estate, Château Haut-Brion"
+        }
+      }
+    ],
+    "metadata": {
+      "style": "Limited production wines emphasizing elegance, structure, power and finesse",
+      "winemaker": "Philippe Melka",
+      "founders": "MaryAnn Tsai & Larry Tsai",
+      "hospitality_director": "Vicki Glass",
+      "phone": "(707) 913-7913",
+      "email": "info@moonetsai.com",
+      "location": "Napa, California",
+      "annual_production_cases": 3000,
+      "sourcing": "Multiple Napa Valley vineyard sources including Soda Canyon, Coombsville (Caldwell Vineyard), Atlas Peak, Pritchard Hill (Montagna Vineyard), Howell Mountain, St. Helena, To Kalon, Diamond Mountain, Yountville, Bald Mountain, Palisades (Calistoga)",
+      "oak_coopers": "St. Martin, Taransaud, Ermitage, Baron, François Frères, Billon, Marcel Cadet, Rousseau, Dargaud et Jaegle, Damy"
+    }
+  },
+  "wines": [
+    {
+      "name": "Napa Valley Cabernet Sauvignon",
+      "color": "red",
+      "appellation": "Napa Valley",
+      "varietal_category": "Cabernet Sauvignon",
+      "oak_origin": "french",
+      "grapes_note": "Blend varies by vintage: typically Cabernet Sauvignon dominant with Merlot, Petit Verdot, and/or Cabernet Franc",
+      "metadata": {
+        "series_code": "NVCS",
+        "vineyard_sources": "Soda Canyon, Coombsville, Atlas Peak, Howell Mountain, St. Helena, Yountville/Stags Leap",
+        "cooperage_brands": "St. Martin, François Frères, Taransaud"
+      },
+      "vintages": [
+        {
+          "year": 2019,
+          "cases_produced": 950,
+          "oak_months": 18,
+          "new_oak_pct": 50,
+          "oak_origin": "french",
+          "harvest_start": "2019-09-24",
+          "harvest_end": "2019-10-18",
+          "bottling_date": "2021-06-24",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 82 },
+            { "name": "Petit Verdot", "percentage": 9 },
+            { "name": "Cabernet Franc", "percentage": 6 },
+            { "name": "Merlot", "percentage": 3 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94, "critic": "Lisa Perrotti-Brown" }
+          ],
+          "metadata": { "vineyard_sources": "Soda Canyon, Yountville/Stags Leap, Howell Mountain", "cooperage": "St. Martin, Fr. Freres, Taransaud", "release_date": "March 2022" }
+        },
+        {
+          "year": 2018,
+          "cases_produced": 800,
+          "oak_months": 20,
+          "new_oak_pct": 56,
+          "oak_origin": "french",
+          "harvest_start": "2018-09-24",
+          "harvest_end": "2018-10-18",
+          "bottling_date": "2020-06-24",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "Atlas Peak, Soda Canyon, St. Helena", "cooperage": "St. Martin, Fr. Freres, Taransaud" }
+        },
+        {
+          "year": 2017,
+          "cases_produced": 809,
+          "oak_months": 20,
+          "new_oak_pct": 42,
+          "oak_origin": "french",
+          "harvest_start": "2017-09-06",
+          "harvest_end": "2017-10-06",
+          "bottling_date": "2019-06-03",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 93 },
+            { "name": "Merlot", "percentage": 7 }
+          ],
+          "metadata": { "vineyard_sources": "Coombsville, Howell Mountain, St. Helena, Soda Canyon", "cooperage": "St. Martin, Fr. Freres, Taransaud", "release_date": "February 2019" }
+        },
+        {
+          "year": 2016,
+          "cases_produced": 824,
+          "oak_months": 20,
+          "new_oak_pct": 40,
+          "oak_origin": "french",
+          "harvest_start": "2016-09-16",
+          "harvest_end": "2016-10-09",
+          "bottling_date": "2017-06-25",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 88 },
+            { "name": "Merlot", "percentage": 12 }
+          ],
+          "scores": [
+            { "publication": "Vinous", "score": 93, "critic": "Antonio Galloni" },
+            { "publication": "Wine Advocate", "score": 93, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "Coombsville, St. Helena, Howell Mountain", "cooperage": "St. Martin, Fr. Freres, Taransaud", "release_date": "February 2019" }
+        },
+        {
+          "year": 2015,
+          "cases_produced": 777,
+          "new_oak_pct": 40,
+          "oak_origin": "french",
+          "harvest_start": "2015-09-04",
+          "harvest_end": "2015-10-16",
+          "bottling_date": "2017-06-07",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 90 },
+            { "name": "Merlot", "percentage": 10 }
+          ],
+          "metadata": { "vineyard_sources": "Coombsville, St. Helena, Howell Mountain", "cooperage": "St. Martin, Fr. Freres, Taransaud", "release_date": "September 2018" }
+        },
+        {
+          "year": 2014,
+          "cases_produced": 1038,
+          "new_oak_pct": 40,
+          "oak_origin": "french",
+          "harvest_start": "2014-09-09",
+          "harvest_end": "2014-10-12",
+          "bottling_date": "2016-06-07",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 83 },
+            { "name": "Merlot", "percentage": 10 },
+            { "name": "Petit Verdot", "percentage": 7 }
+          ],
+          "scores": [
+            { "publication": "Vinous", "score": 94, "critic": "Antonio Galloni" },
+            { "publication": "Wine Advocate", "score": 93, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "Coombsville, St. Helena, Howell Mountain", "cooperage": "St. Martin, Fr. Freres, Taransaud", "release_date": "September 2017" }
+        },
+        {
+          "year": 2013,
+          "cases_produced": 1050,
+          "new_oak_pct": 40,
+          "oak_origin": "french",
+          "harvest_start": "2013-09-25",
+          "harvest_end": "2013-10-22",
+          "bottling_date": "2015-06-22",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 85 },
+            { "name": "Merlot", "percentage": 10 },
+            { "name": "Petit Verdot", "percentage": 5 }
+          ],
+          "scores": [
+            { "publication": "Vinous", "score": 93, "critic": "Antonio Galloni" }
+          ],
+          "metadata": { "vineyard_sources": "Coombsville, Soda Canyon District, St. Helena", "cooperage": "St. Martin, Fr. Freres, Taransaud", "release_date": "September 2016" }
+        },
+        {
+          "year": 2012,
+          "cases_produced": 905,
+          "new_oak_pct": 62,
+          "oak_origin": "french",
+          "harvest_start": "2012-09-28",
+          "harvest_end": "2012-10-21",
+          "bottling_date": "2014-06-03",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 80 },
+            { "name": "Merlot", "percentage": 20 }
+          ],
+          "metadata": { "vineyard_sources": "Coombsville, Soda Canyon District, Howell Mountain", "cooperage": "St. Martin, Fr. Freres, Taransaud", "release_date": "September 7, 2015" }
+        },
+        {
+          "year": 2011,
+          "cases_produced": 954,
+          "new_oak_pct": 67,
+          "oak_origin": "french",
+          "harvest_start": "2011-10-20",
+          "harvest_end": "2011-11-02",
+          "bottling_date": "2013-06-10",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Coombsville District, St. Helena District, Howell Mountain", "cooperage": "St. Martin, François Frères, Taransaud (67% new, 33% 2-year)", "release_date": "September 8, 2014" }
+        },
+        {
+          "year": 2010,
+          "cases_produced": 1002,
+          "new_oak_pct": 56,
+          "oak_origin": "french",
+          "harvest_start": "2010-09-30",
+          "harvest_end": "2010-11-05",
+          "bottling_date": "2013-03-11",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 83 },
+            { "name": "Merlot", "percentage": 17 }
+          ],
+          "metadata": { "vineyard_sources": "Coombsville District, St. Helena District, Howell Mountain", "cooperage": "St. Martin, François Frères, Taransaud (56% new, 44% 2-year)", "release_date": "September 16, 2013" }
+        },
+        {
+          "year": 2009,
+          "cases_produced": 1035,
+          "new_oak_pct": 81,
+          "oak_origin": "french",
+          "harvest_start": "2009-09-15",
+          "harvest_end": "2009-10-24",
+          "bottling_date": "2012-03-18",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Coombsville District, St. Helena District", "cooperage": "St. Martin, François Frères, Taransaud (81% new, 19% 2-year)", "release_date": "September 4, 2012" }
+        },
+        {
+          "year": 2008,
+          "cases_produced": 1587,
+          "new_oak_pct": 81,
+          "oak_origin": "french",
+          "harvest_start": "2008-09-05",
+          "harvest_end": "2008-10-18",
+          "bottling_date": "2011-02-17",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 86 },
+            { "name": "Merlot", "percentage": 14 }
+          ],
+          "metadata": { "vineyard_sources": "Howell Mountain, Coombsville District", "cooperage": "St. Martin, François Frères (81% new, 19% 2-year)", "release_date": "June 2011" }
+        }
+      ]
+    },
+    {
+      "name": "Cor Leonis",
+      "color": "red",
+      "appellation": "Napa Valley",
+      "varietal_category": "Cabernet Sauvignon",
+      "oak_origin": "french",
+      "grapes": [
+        { "name": "Cabernet Sauvignon", "percentage": 100 }
+      ],
+      "metadata": {
+        "series_code": "CL",
+        "tier": "Reserve/flagship tier",
+        "vineyard_sources": "Pritchard Hill, Coombsville (Caldwell Vineyard), To Kalon, St. Helena",
+        "cooperage_brands": "Taransaud, Ermitage, St. Martin"
+      },
+      "vintages": [
+        {
+          "year": 2019,
+          "cases_produced": 360,
+          "oak_months": 18,
+          "new_oak_pct": 70,
+          "oak_origin": "french",
+          "harvest_start": "2019-10-08",
+          "harvest_end": "2019-11-01",
+          "bottling_date": "2021-06-24",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 98, "critic": "Lisa Perrotti-Brown" }
+          ],
+          "metadata": { "vineyard_sources": "Pritchard Hill, Coombsville, St. Helena", "cooperage": "Taransaud, Ermitage, St. Martin", "release_date": "November 2022" }
+        },
+        {
+          "year": 2018,
+          "cases_produced": 500,
+          "oak_months": 18,
+          "new_oak_pct": 92,
+          "oak_origin": "french",
+          "harvest_start": "2018-09-24",
+          "harvest_end": "2018-10-29",
+          "bottling_date": "2020-06-24",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 98, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "Pritchard Hill, Coombsville, St. Helena", "cooperage": "Taransaud, Ermitage, St. Martin" }
+        },
+        {
+          "year": 2017,
+          "cases_produced": 380,
+          "new_oak_pct": 42,
+          "oak_origin": "french",
+          "harvest_start": "2017-09-27",
+          "harvest_end": "2017-10-06",
+          "bottling_date": "2019-06-04",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 96, "critic": "Jeb Dunnuck" },
+            { "publication": "Wine Advocate", "score": 95, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "Pritchard Hill, Caldwell/Coombsville, St. Helena", "cooperage": "Taransaud, Ermitage, St. Martin", "release_date": "September 2020" }
+        },
+        {
+          "year": 2016,
+          "cases_produced": 400,
+          "new_oak_pct": 50,
+          "oak_origin": "french",
+          "harvest_start": "2016-09-27",
+          "harvest_end": "2016-10-09",
+          "bottling_date": "2019-02-14",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "critic": "Robert Parker" },
+            { "publication": "Vinous", "score": 95, "critic": "Antonio Galloni" }
+          ],
+          "metadata": { "vineyard_sources": "Pritchard Hill, Caldwell/Coombsville, St. Helena", "cooperage": "Taransaud, Ermitage, St. Martin", "release_date": "May 2019" }
+        },
+        {
+          "year": 2015,
+          "cases_produced": 400,
+          "new_oak_pct": 85,
+          "oak_origin": "french",
+          "harvest_start": "2015-09-04",
+          "harvest_end": "2015-10-02",
+          "bottling_date": "2017-06-07",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "To Kalon, Caldwell/Coombsville, St. Helena", "cooperage": "Taransaud, Ermitage, St. Martin", "release_date": "September 2018" }
+        },
+        {
+          "year": 2014,
+          "cases_produced": 330,
+          "new_oak_pct": 92,
+          "oak_origin": "french",
+          "harvest_start": "2014-10-03",
+          "harvest_end": "2014-10-07",
+          "bottling_date": "2017-02-15",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Vinous", "score": 95, "critic": "Antonio Galloni" }
+          ],
+          "metadata": { "vineyard_sources": "To Kalon, Caldwell/Coombsville, St. Helena", "cooperage": "Taransaud, Ermitage, St. Martin", "release_date": "September 25, 2017" }
+        },
+        {
+          "year": 2013,
+          "cases_produced": 464,
+          "new_oak_pct": 90,
+          "oak_origin": "french",
+          "harvest_start": "2013-10-11",
+          "harvest_end": "2013-10-22",
+          "bottling_date": "2016-02-10",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "To Kalon, Caldwell/Coombsville, St. Helena", "cooperage": "Taransaud, Ermitage, St. Martin", "release_date": "September 2016" }
+        },
+        {
+          "year": 2012,
+          "cases_produced": 439,
+          "new_oak_pct": 90,
+          "oak_origin": "french",
+          "harvest_start": "2012-10-20",
+          "harvest_end": "2012-10-30",
+          "bottling_date": "2015-01-28",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "Caldwell/Coombsville District, To Kalon, Pritchard Hill", "cooperage": "Taransaud, Ermitage, St. Martin", "release_date": "September 7, 2015" }
+        },
+        {
+          "year": 2011,
+          "cases_produced": 312,
+          "new_oak_pct": 90,
+          "oak_origin": "french",
+          "harvest_start": "2011-10-20",
+          "harvest_end": "2011-11-02",
+          "bottling_date": "2014-01-27",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Vinous", "score": 94, "critic": "Antonio Galloni" }
+          ],
+          "metadata": { "vineyard_sources": "Caldwell/Coombsville District, To Kalon, Pritchard Hill", "cooperage": "Taransaud, Ermitage, St. Martin", "release_date": "September 8, 2014" }
+        },
+        {
+          "year": 2010,
+          "cases_produced": 341,
+          "new_oak_pct": 90,
+          "oak_origin": "french",
+          "harvest_start": "2010-09-30",
+          "harvest_end": "2010-11-05",
+          "bottling_date": "2013-03-11",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "Caldwell/Coombsville District, To Kalon, Pritchard Hill", "cooperage": "Taransaud, Ermitage, St. Martin", "release_date": "September 16, 2013" }
+        },
+        {
+          "year": 2009,
+          "cases_produced": 287,
+          "new_oak_pct": 100,
+          "oak_origin": "french",
+          "harvest_start": "2009-09-28",
+          "harvest_end": "2009-10-31",
+          "bottling_date": "2012-03-18",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Caldwell/Coombsville District, Pritchard Hill", "cooperage": "Taransaud, Ermitage, St. Martin", "release_date": "September 4, 2012" }
+        },
+        {
+          "year": 2008,
+          "cases_produced": 220,
+          "new_oak_pct": 100,
+          "oak_origin": "french",
+          "harvest_start": "2008-10-18",
+          "bottling_date": "2011-02-17",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Pritchard Hill, Caldwell/Coombsville District", "cooperage": "Taransaud, Ermitage, St. Martin", "release_date": "Fall 2011" }
+        },
+        {
+          "year": 2007,
+          "cases_produced": 181,
+          "new_oak_pct": 100,
+          "oak_origin": "french",
+          "harvest_start": "2007-10-15",
+          "bottling_date": "2009-09-01",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "metadata": { "cooperage": "Taransaud, Ermitage, St. Martin", "release_date": "November 9, 2010" }
+        },
+        {
+          "year": 2006,
+          "cases_produced": 181,
+          "oak_origin": "french",
+          "harvest_start": "2006-10-28",
+          "bottling_date": "2008-08-22",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "metadata": { "cooperage": "Billon Allier and St. Martin Tronçais", "release_date": "June 15, 2009", "note": "Inaugural vintage of the winery" }
+        }
+      ]
+    },
+    {
+      "name": "Howell Mountain Hillside Blend",
+      "color": "red",
+      "appellation": "Howell Mountain",
+      "varietal_category": "Bordeaux Blend",
+      "oak_origin": "french",
+      "grapes_note": "Blend of Cabernet Sauvignon and Merlot varies significantly by vintage, sometimes Merlot-dominant",
+      "metadata": {
+        "series_code": "HMHB",
+        "vineyard_sources": "Howell Mountain vineyards - Block P-1, J1, N1, O2, IG-01, P-2, Las Posadas, Palisades, Rocky Ridge, Candlestick",
+        "cooperage_brands": "St. Martin, Baron, Ermitage"
+      },
+      "vintages": [
+        {
+          "year": 2019,
+          "cases_produced": 750,
+          "oak_months": 18,
+          "new_oak_pct": 60,
+          "oak_origin": "french",
+          "harvest_start": "2019-10-08",
+          "harvest_end": "2019-10-26",
+          "bottling_date": "2021-06-24",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 62 },
+            { "name": "Merlot", "percentage": 38 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 97, "critic": "Lisa Perrotti-Brown" }
+          ],
+          "metadata": { "vineyard_sources": "Howell Mountain - P1, O2; Rocky Ridge, Candlestick", "cooperage": "St. Martin, Baron, Ermitage" }
+        },
+        {
+          "year": 2018,
+          "cases_produced": 610,
+          "new_oak_pct": 30,
+          "oak_origin": "french",
+          "harvest_start": "2018-10-09",
+          "harvest_end": "2018-10-29",
+          "bottling_date": "2020-06-24",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 54 },
+            { "name": "Merlot", "percentage": 46 }
+          ],
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 94, "critic": "Jeb Dunnuck" }
+          ],
+          "metadata": { "vineyard_sources": "Howell Mountain - IG-01, P-2, Palisades", "cooperage": "St. Martin, Baron, Ermitage" }
+        },
+        {
+          "year": 2017,
+          "cases_produced": 780,
+          "new_oak_pct": 42,
+          "oak_origin": "french",
+          "harvest_start": "2017-09-06",
+          "harvest_end": "2017-10-02",
+          "bottling_date": "2019-06-04",
+          "grapes": [
+            { "name": "Merlot", "percentage": 55 },
+            { "name": "Cabernet Sauvignon", "percentage": 39 },
+            { "name": "Petite Sirah", "percentage": 6 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "Howell Mountain - IG-01, P-2, Palisades", "cooperage": "St. Martin, Baron, Ermitage", "release_date": "September 2020" }
+        },
+        {
+          "year": 2016,
+          "cases_produced": 760,
+          "new_oak_pct": 50,
+          "oak_origin": "french",
+          "harvest_start": "2016-09-22",
+          "harvest_end": "2016-10-09",
+          "bottling_date": "2019-02-14",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 60 },
+            { "name": "Merlot", "percentage": 40 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 98, "critic": "Robert Parker" },
+            { "publication": "Vinous", "score": 95, "critic": "Antonio Galloni" }
+          ],
+          "metadata": { "vineyard_sources": "Howell Mountain - IG-01, P-2", "cooperage": "St. Martin, Baron, Ermitage", "release_date": "September 2019" }
+        },
+        {
+          "year": 2015,
+          "cases_produced": 700,
+          "new_oak_pct": 50,
+          "oak_origin": "french",
+          "harvest_start": "2015-09-11",
+          "harvest_end": "2015-09-15",
+          "bottling_date": "2017-02-15",
+          "grapes": [
+            { "name": "Merlot", "percentage": 50 },
+            { "name": "Cabernet Sauvignon", "percentage": 50 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "Howell Mountain - IG-01, P-2", "cooperage": "St. Martin, Baron, Ermitage", "release_date": "September 2018" }
+        },
+        {
+          "year": 2014,
+          "cases_produced": 900,
+          "new_oak_pct": 31,
+          "oak_origin": "french",
+          "harvest_start": "2014-09-08",
+          "harvest_end": "2014-09-18",
+          "bottling_date": "2017-02-15",
+          "grapes": [
+            { "name": "Merlot", "percentage": 84 },
+            { "name": "Cabernet Sauvignon", "percentage": 16 }
+          ],
+          "scores": [
+            { "publication": "Vinous", "score": 96, "critic": "Antonio Galloni" }
+          ],
+          "metadata": { "vineyard_sources": "Howell Mountain - IG-01, P-2, Las Posadas", "cooperage": "St. Martin, Baron, Ermitage", "release_date": "September 2017" }
+        },
+        {
+          "year": 2013,
+          "cases_produced": 579,
+          "new_oak_pct": 31,
+          "oak_origin": "french",
+          "harvest_start": "2013-10-02",
+          "harvest_end": "2013-10-08",
+          "bottling_date": "2016-02-10",
+          "grapes": [
+            { "name": "Merlot", "percentage": 71 },
+            { "name": "Cabernet Sauvignon", "percentage": 29 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "Howell Mountain - Block J1, N1, O2", "cooperage": "St. Martin, Baron, Ermitage", "release_date": "June 2016" }
+        },
+        {
+          "year": 2012,
+          "cases_produced": 579,
+          "new_oak_pct": 53,
+          "oak_origin": "french",
+          "harvest_start": "2012-10-24",
+          "harvest_end": "2012-11-02",
+          "bottling_date": "2015-01-28",
+          "grapes": [
+            { "name": "Merlot", "percentage": 64 },
+            { "name": "Cabernet Sauvignon", "percentage": 36 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "Howell Mountain - Block J1, N1, O2", "cooperage": "St. Martin, Baron, Ermitage", "release_date": "September 7, 2015" }
+        },
+        {
+          "year": 2011,
+          "cases_produced": 596,
+          "new_oak_pct": 67,
+          "oak_origin": "french",
+          "harvest_start": "2011-10-24",
+          "harvest_end": "2011-11-02",
+          "bottling_date": "2014-01-27",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 58 },
+            { "name": "Merlot", "percentage": 42 }
+          ],
+          "metadata": { "vineyard_sources": "Howell Mountain - Block J1, N1, O2", "cooperage": "St. Martin, Baron, Ermitage (67% new, 33% 2-year)", "release_date": "September 8, 2014" }
+        },
+        {
+          "year": 2010,
+          "cases_produced": 446,
+          "new_oak_pct": 67,
+          "oak_origin": "french",
+          "harvest_start": "2010-10-04",
+          "harvest_end": "2010-10-21",
+          "bottling_date": "2013-03-11",
+          "grapes": [
+            { "name": "Merlot", "percentage": 50 },
+            { "name": "Cabernet Sauvignon", "percentage": 50 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "Howell Mountain - Block J1, N1, O2", "cooperage": "St. Martin, Baron, Ermitage (67% new, 33% 2-year)", "release_date": "September 16, 2013" }
+        },
+        {
+          "year": 2009,
+          "cases_produced": 424,
+          "new_oak_pct": 60,
+          "oak_origin": "french",
+          "harvest_start": "2009-09-17",
+          "harvest_end": "2009-09-24",
+          "bottling_date": "2012-03-18",
+          "grapes": [
+            { "name": "Merlot", "percentage": 75 },
+            { "name": "Cabernet Sauvignon", "percentage": 25 }
+          ],
+          "metadata": { "vineyard_sources": "Howell Mountain - Block J1, N1, O2", "cooperage": "St. Martin, Baron, Ermitage (60% new, 40% 2-year)", "release_date": "June 25, 2012" }
+        },
+        {
+          "year": 2008,
+          "cases_produced": 253,
+          "new_oak_pct": 60,
+          "oak_origin": "french",
+          "harvest_start": "2008-09-23",
+          "bottling_date": "2011-02-17",
+          "grapes": [
+            { "name": "Merlot", "percentage": 86 },
+            { "name": "Cabernet Sauvignon", "percentage": 14 }
+          ],
+          "metadata": { "vineyard_sources": "Howell Mountain - Block P-1", "cooperage": "François Frères, Billon (60% new, 40% 2-year)", "release_date": "June 2011" }
+        }
+      ]
+    },
+    {
+      "name": "Leonidas",
+      "color": "red",
+      "appellation": "Napa Valley",
+      "varietal_category": "Cabernet Sauvignon",
+      "oak_origin": "french",
+      "grapes": [
+        { "name": "Cabernet Sauvignon", "percentage": 100 }
+      ],
+      "metadata": {
+        "tier": "Top tier, separate branding at leonidas.moonetsai.com",
+        "vineyard": "Montagna Vineyard, Block 7, Pritchard Hill",
+        "elevation_ft": 1000,
+        "winemaker": "Philippe Melka",
+        "formats": ["750ml", "Magnum", "Double Magnum"],
+        "motto": "transcende te ipsum"
+      },
+      "vintages": [
+        {
+          "year": 2021,
+          "abv": 15.3,
+          "ph": 3.73,
+          "ta_g_l": 6.1,
+          "cases_produced": 50,
+          "oak_months": 26,
+          "new_oak_pct": 100,
+          "oak_origin": "french",
+          "fermentation_vessel": "stainless",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 97, "critic": "Robert Parker" }
+          ],
+          "metadata": {
+            "winemaking": "Fermented in stainless steel tanks, 3-day cold soak, 21 days on skins. Extended aging 26 months in 100% new French oak.",
+            "inaugural_vintage": true,
+            "bottles_produced": 600
+          }
+        }
+      ]
+    },
+    {
+      "name": "Napa Valley Chardonnay",
+      "color": "white",
+      "appellation": "Napa Valley",
+      "varietal_category": "Chardonnay",
+      "oak_origin": "french",
+      "grapes": [
+        { "name": "Chardonnay", "percentage": 100 }
+      ],
+      "metadata": {
+        "series_code": "NVCH",
+        "vineyard": "Bald Mountain, Mayacamas Mountains",
+        "vineyard_details": "South-facing vineyard at nearly 1,600 feet, neighbor of Mount Veeder",
+        "cooperage_brands": "Marcel Cadet, Rousseau, François Frères, Dargaud et Jaegle"
+      },
+      "vintages": [
+        {
+          "year": 2021,
+          "new_oak_pct": 25,
+          "oak_origin": "french",
+          "harvest_start": "2021-09-06",
+          "bottling_date": "2023-03-08",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Vinous", "score": 93, "critic": "Antonio Galloni" }
+          ],
+          "metadata": { "vineyard_sources": "Bald Mountain", "cooperage": "Marcel Cadet, Rousseau, Francois Frères Dargaud et Jaegle (light to medium toast)", "release_date": "June 1, 2023" }
+        },
+        {
+          "year": 2020,
+          "new_oak_pct": 25,
+          "oak_origin": "french",
+          "harvest_start": "2020-09-12",
+          "bottling_date": "2022-03-08",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Bald Mountain", "cooperage": "Marcel Cadet, Rousseau, Francois Frères Dargaud et Jaegle (light to medium toast)", "release_date": "June 1, 2023" }
+        },
+        {
+          "year": 2019,
+          "cases_produced": 340,
+          "new_oak_pct": 45,
+          "oak_origin": "french",
+          "harvest_start": "2019-09-18",
+          "bottling_date": "2021-02-14",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Bald Mountain", "cooperage": "Marcel Cadet, Rousseau, Francois Frères Dargaud et Jaegle (light to medium toast)", "release_date": "April 2, 2022" }
+        },
+        {
+          "year": 2018,
+          "cases_produced": 340,
+          "new_oak_pct": 45,
+          "oak_origin": "french",
+          "harvest_start": "2018-09-18",
+          "bottling_date": "2020-02-14",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 96, "critic": "Jeb Dunnuck" }
+          ],
+          "metadata": { "vineyard_sources": "Bald Mountain", "cooperage": "Marcel Cadet, Rousseau, Francois Frères Dargaud et Jaegle (light to medium toast)", "release_date": "August 30, 2020" }
+        },
+        {
+          "year": 2017,
+          "cases_produced": 570,
+          "new_oak_pct": 30,
+          "oak_origin": "french",
+          "harvest_start": "2017-09-05",
+          "bottling_date": "2019-01-29",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 95, "critic": "Jeb Dunnuck" }
+          ],
+          "metadata": { "vineyard_sources": "Bald Mountain", "cooperage": "Marcel Cadet, Rousseau, Francois Frères Dargaud et Jaegle (light to medium toast)", "release_date": "April 2, 2019" }
+        },
+        {
+          "year": 2016,
+          "cases_produced": 303,
+          "new_oak_pct": 37,
+          "oak_origin": "french",
+          "harvest_start": "2016-09-08",
+          "bottling_date": "2018-03-21",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Bald Mountain", "cooperage": "Marcel Cadet, Rousseau, Francois Frères Dargaud et Jaegle (light to medium toast)", "release_date": "May 15, 2018" }
+        },
+        {
+          "year": 2015,
+          "cases_produced": 397,
+          "new_oak_pct": 39,
+          "oak_origin": "french",
+          "harvest_start": "2015-08-27",
+          "bottling_date": "2017-03-16",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Bald Mountain", "cooperage": "Marcel Cadet, Rousseau, Francois Frères Dargaud et Jaegle (light to medium toast)", "release_date": "May 1, 2017" }
+        },
+        {
+          "year": 2014,
+          "cases_produced": 508,
+          "new_oak_pct": 52,
+          "oak_origin": "french",
+          "harvest_start": "2014-09-02",
+          "harvest_end": "2014-09-12",
+          "bottling_date": "2016-04-13",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Bald Mountain", "cooperage": "Rousseau, Damy, François Frères", "release_date": "July 15, 2016" }
+        },
+        {
+          "year": 2013,
+          "cases_produced": 350,
+          "new_oak_pct": 60,
+          "oak_origin": "french",
+          "harvest_start": "2013-09-20",
+          "harvest_end": "2013-09-25",
+          "bottling_date": "2015-04-16",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Vinous", "score": 92, "critic": "Antonio Galloni" }
+          ],
+          "metadata": { "vineyard_sources": "Bald Mountain", "cooperage": "Rousseau, Damy, François Frères", "release_date": "July 1, 2015" }
+        },
+        {
+          "year": 2012,
+          "cases_produced": 550,
+          "new_oak_pct": 75,
+          "oak_origin": "french",
+          "harvest_start": "2012-09-20",
+          "harvest_end": "2012-09-27",
+          "bottling_date": "2014-04-11",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Connoisseurs' Guide", "score": 95 }
+          ],
+          "metadata": { "vineyard_sources": "Bald Mountain", "cooperage": "Rousseau, Damy, François Frères", "release_date": "June 16, 2014" }
+        },
+        {
+          "year": 2011,
+          "cases_produced": 695,
+          "new_oak_pct": 73,
+          "oak_origin": "french",
+          "harvest_start": "2011-10-02",
+          "harvest_end": "2011-10-15",
+          "bottling_date": "2013-03-11",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Bald Mountain", "cooperage": "Rousseau, Damy, François Frères", "release_date": "June 2013" }
+        },
+        {
+          "year": 2010,
+          "cases_produced": 495,
+          "new_oak_pct": 50,
+          "oak_origin": "french",
+          "harvest_start": "2010-09-22",
+          "bottling_date": "2012-04-18",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Bald Mountain", "cooperage": "Rousseau, Damy, François Frères", "release_date": "June 25, 2012" }
+        },
+        {
+          "year": 2009,
+          "cases_produced": 373,
+          "new_oak_pct": 65,
+          "oak_origin": "french",
+          "harvest_start": "2009-09-19",
+          "bottling_date": "2011-02-17",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Bald Mountain", "cooperage": "Billon", "release_date": "June 2011" }
+        }
+      ]
+    },
+    {
+      "name": "Sonoma Coast Chardonnay",
+      "color": "white",
+      "appellation": "Sonoma Coast",
+      "varietal_category": "Chardonnay",
+      "oak_origin": "french",
+      "grapes": [
+        { "name": "Chardonnay", "percentage": 100 }
+      ],
+      "metadata": {
+        "series_code": "SCCH",
+        "vineyard": "Charles Heintz Vineyard, Occidental",
+        "vineyard_details": "30-year-old Chardonnay vines on deep Gold Ridge Sandy Loam top-soils near the rocky Sonoma County coastline. Pacific fog nightly during growing season.",
+        "cooperage_brands": "François Frères, Rousseau, Damy"
+      },
+      "vintages": [
+        {
+          "year": 2022,
+          "cases_produced": 188,
+          "oak_months": 17,
+          "new_oak_pct": 40,
+          "oak_origin": "french",
+          "harvest_start": "2022-09-14",
+          "bottling_date": "2024-03-12",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "Charles Heintz Vineyard, Sonoma Coast", "cooperage": "Francois Freres, Rousseau, Damy", "release_date": "May 1, 2024" }
+        },
+        {
+          "year": 2019,
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Charles Heintz Vineyard, Sonoma Coast", "note": "Limited data available from website" }
+        },
+        {
+          "year": 2018,
+          "cases_produced": 225,
+          "new_oak_pct": 45,
+          "oak_origin": "french",
+          "harvest_start": "2018-09-26",
+          "bottling_date": "2020-02-14",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94, "critic": "Lisa Perrotti-Brown" }
+          ],
+          "metadata": { "vineyard_sources": "Charles Heintz Vineyard, Sonoma Coast", "cooperage": "Francois Freres, Rousseau, Damy", "release_date": "May 2, 2020" }
+        },
+        {
+          "year": 2017,
+          "cases_produced": 227,
+          "new_oak_pct": 37,
+          "oak_origin": "french",
+          "harvest_start": "2017-09-26",
+          "bottling_date": "2019-01-29",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Charles Heintz Vineyard, Sonoma Coast", "cooperage": "Francois Freres, Rousseau, Damy", "release_date": "April 2, 2019" }
+        },
+        {
+          "year": 2016,
+          "cases_produced": 323,
+          "new_oak_pct": 31,
+          "oak_origin": "french",
+          "harvest_start": "2016-09-23",
+          "bottling_date": "2018-03-21",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Charles Heintz Vineyards, Sonoma Coast", "cooperage": "Francois Freres, Rousseau, Damy", "release_date": "May 15, 2018" }
+        },
+        {
+          "year": 2015,
+          "cases_produced": 279,
+          "new_oak_pct": 31,
+          "oak_origin": "french",
+          "harvest_start": "2015-09-04",
+          "bottling_date": "2017-03-16",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Charles Heintz Vineyards, Sonoma Coast", "cooperage": "François Frères, Rousseau, Damy", "release_date": "June 1, 2017" }
+        },
+        {
+          "year": 2014,
+          "cases_produced": 247,
+          "new_oak_pct": 50,
+          "oak_origin": "french",
+          "harvest_start": "2014-10-07",
+          "bottling_date": "2016-04-13",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93, "critic": "Robert Parker" }
+          ],
+          "metadata": { "vineyard_sources": "Charles Heintz Vineyards, Sonoma Coast", "cooperage": "François Frères, Rousseau, Damy", "release_date": "July 15, 2016" }
+        },
+        {
+          "year": 2013,
+          "cases_produced": 325,
+          "new_oak_pct": 64,
+          "oak_origin": "french",
+          "harvest_start": "2013-10-04",
+          "bottling_date": "2015-04-16",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Vinous", "score": 92, "critic": "Antonio Galloni" }
+          ],
+          "metadata": { "vineyard_sources": "Charles Heintz Vineyards, Sonoma Coast", "cooperage": "François Frères, Rousseau, Damy", "release_date": "July 1, 2015" }
+        },
+        {
+          "year": 2012,
+          "cases_produced": 300,
+          "new_oak_pct": 68,
+          "oak_origin": "french",
+          "harvest_start": "2012-09-20",
+          "bottling_date": "2014-04-11",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Connoisseurs' Guide", "score": 97 }
+          ],
+          "metadata": { "vineyard_sources": "Charles Heintz Vineyards, Sonoma Coast", "cooperage": "François Frères, Rousseau, Damy", "release_date": "June 16, 2014" }
+        },
+        {
+          "year": 2011,
+          "cases_produced": 168,
+          "new_oak_pct": 68,
+          "oak_origin": "french",
+          "harvest_start": "2011-09-27",
+          "bottling_date": "2013-03-11",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Charles Heintz Vineyards, Sonoma Coast", "cooperage": "François Frères, Rousseau, Damy", "release_date": "June 2013" }
+        },
+        {
+          "year": 2010,
+          "cases_produced": 454,
+          "new_oak_pct": 75,
+          "oak_origin": "french",
+          "harvest_start": "2010-10-05",
+          "bottling_date": "2012-04-18",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Charles Heintz Vineyards, Sonoma Coast", "cooperage": "François Frères, Rousseau, Damy", "release_date": "June 25, 2012" }
+        }
+      ]
+    },
+    {
+      "name": "Petite Sirah Palisades",
+      "color": "red",
+      "appellation": "Napa Valley",
+      "varietal_category": "Petite Sirah",
+      "oak_origin": "french",
+      "metadata": {
+        "series_code": "PSPV",
+        "vineyard": "Palisades Vineyard, Calistoga",
+        "vineyard_details": "Historic vineyard below the high cliffs of the Palisades in a narrow riparian canyon, one mile north of Calistoga. Petite Sirah dominant since vineyards developed by Domenico Barberis in 1915.",
+        "cooperage_brands": "St. Martin, Taransaud, François Frères"
+      },
+      "vintages": [
+        {
+          "year": 2019,
+          "cases_produced": 50,
+          "oak_months": 18,
+          "new_oak_pct": 60,
+          "oak_origin": "french",
+          "harvest_start": "2019-10-02",
+          "bottling_date": "2021-06-24",
+          "grapes": [
+            { "name": "Petite Sirah", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Palisades, Calistoga", "cooperage": "St. Martin, Taransaud (puncheons)", "release_date": "September 1, 2023" }
+        },
+        {
+          "year": 2018,
+          "grapes_note": "Data not available on website for this vintage",
+          "scores": [
+            { "publication": "Vinous", "score": 94, "critic": "Antonio Galloni" }
+          ],
+          "metadata": { "note": "Vintage exists but technical details not published on website" }
+        },
+        {
+          "year": 2017,
+          "cases_produced": 120,
+          "oak_months": 20,
+          "new_oak_pct": 42,
+          "oak_origin": "french",
+          "harvest_start": "2017-09-12",
+          "harvest_end": "2017-09-29",
+          "bottling_date": "2019-06-03",
+          "grapes": [
+            { "name": "Petite Sirah", "percentage": 92 },
+            { "name": "Cabernet Sauvignon", "percentage": 8 }
+          ],
+          "metadata": { "vineyard_sources": "Palisades, Ink Grade", "cooperage": "St. Martin, Francois Freres, Taransaud", "release_date": "April 2020" }
+        }
+      ]
+    },
+    {
+      "name": "Black List",
+      "color": "red",
+      "appellation": "Napa Valley",
+      "varietal_category": "Bordeaux Blend",
+      "oak_origin": "french",
+      "grapes_note": "Blend varies dramatically by vintage - sometimes 100% Cabernet Sauvignon, sometimes Petit Verdot or Cabernet Franc dominant. Each vintage has a Roman numeral designation.",
+      "metadata": {
+        "series_code": "BL",
+        "tier": "Black List allocation only - experimental/special bottlings",
+        "cooperage_brands": "St. Martin, François Frères, Taransaud"
+      },
+      "vintages": [
+        {
+          "year": 2022,
+          "oak_months": 20,
+          "new_oak_pct": 70,
+          "oak_origin": "french",
+          "harvest_start": "2022-09-13",
+          "harvest_end": "2022-10-10",
+          "bottling_date": "2024-06-24",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "metadata": { "designation": "Black List XXXVII", "vineyard_sources": "Pritchard Hill, St. Helena, Coombsville", "cooperage": "St. Martin, Francois Freres, Taransaud" }
+        },
+        {
+          "year": 2021,
+          "cases_produced": 200,
+          "oak_months": 18,
+          "new_oak_pct": 75,
+          "oak_origin": "french",
+          "bottling_date": "2021-06-01",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "metadata": { "designation": "Black List XXXIV", "vineyard_sources": "Yountville, Soda Canyon", "cooperage": "St. Martin, Fr. Freres, Taransaud", "harvest_date": "September/October 2021", "release_date": "March 1, 2024" }
+        },
+        {
+          "year": 2019,
+          "cases_produced": 170,
+          "oak_months": 18,
+          "new_oak_pct": 60,
+          "oak_origin": "french",
+          "harvest_start": "2019-10-28",
+          "harvest_end": "2019-10-31",
+          "bottling_date": "2021-06-23",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 74 },
+            { "name": "Petit Verdot", "percentage": 25 },
+            { "name": "Cabernet Franc", "percentage": 1 }
+          ],
+          "metadata": { "designation": "Black List XXXI", "vineyard_sources": "Caldwell Block-15, Collientta Vineyard", "cooperage": "St. Martin, Fr. Freres, Taransaud", "release_date": "September 1, 2022" }
+        },
+        {
+          "year": 2018,
+          "cases_produced": 130,
+          "oak_months": 18,
+          "new_oak_pct": 70,
+          "oak_origin": "french",
+          "harvest_start": "2018-10-09",
+          "harvest_end": "2018-10-25",
+          "bottling_date": "2020-06-23",
+          "grapes": [
+            { "name": "Petit Verdot", "percentage": 43 },
+            { "name": "Cabernet Franc", "percentage": 31 },
+            { "name": "Cabernet Sauvignon", "percentage": 26 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 97, "critic": "Lisa Perrotti-Brown" },
+            { "publication": "Jeb Dunnuck", "score": 95, "critic": "Jeb Dunnuck" },
+            { "publication": "Vinous", "score": 95, "critic": "Antonio Galloni" }
+          ],
+          "metadata": { "designation": "Black List XXVII", "vineyard_sources": "Diamond Mountain", "cooperage": "St. Martin, Fr. Freres, Taransaud", "release_date": "April 30, 2021" }
+        },
+        {
+          "year": 2017,
+          "cases_produced": 130,
+          "oak_months": 20,
+          "new_oak_pct": 42,
+          "oak_origin": "french",
+          "harvest_start": "2017-09-06",
+          "harvest_end": "2017-09-30",
+          "bottling_date": "2019-06-04",
+          "grapes": [
+            { "name": "Petit Verdot", "percentage": 39 },
+            { "name": "Cabernet Sauvignon", "percentage": 24 },
+            { "name": "Merlot", "percentage": 20 },
+            { "name": "Cabernet Franc", "percentage": 17 }
+          ],
+          "metadata": { "designation": "Black List XXIII", "vineyard_sources": "Diamond Mountain, Howell Mountain, St. Helena", "cooperage": "St. Martin, Fr. Freres, Taransaud", "release_date": "March 1, 2021" }
+        },
+        {
+          "year": 2016,
+          "cases_produced": 135,
+          "oak_months": 20,
+          "new_oak_pct": 42,
+          "oak_origin": "french",
+          "harvest_start": "2016-10-09",
+          "bottling_date": "2018-06-26",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "metadata": { "designation": "Black List XXII", "vineyard_sources": "Caldwell Block-16/Coombsville, Pritchard Hill", "cooperage": "St. Martin, Francois Freres, Taransaud", "release_date": "February 2020" }
+        },
+        {
+          "year": 2015,
+          "cases_produced": 145,
+          "new_oak_pct": 85,
+          "oak_origin": "french",
+          "harvest_start": "2015-09-12",
+          "harvest_end": "2015-09-23",
+          "bottling_date": "2017-06-07",
+          "grapes": [
+            { "name": "Merlot", "percentage": 67 },
+            { "name": "Cabernet Sauvignon", "percentage": 33 }
+          ],
+          "metadata": { "designation": "Black List XIX - Las Posadas", "vineyard_sources": "Howell Mountain, Soda Canyon", "cooperage": "St. Martin, Fr. Freres, Taransaud", "release_date": "November 1, 2018" }
+        },
+        {
+          "year": 2014,
+          "cases_produced": 99,
+          "oak_months": 20,
+          "new_oak_pct": 100,
+          "oak_origin": "french",
+          "harvest_start": "2014-10-10",
+          "harvest_end": "2014-10-12",
+          "bottling_date": "2016-06-07",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "metadata": { "designation": "Black List XV", "vineyard_sources": "To Kalon, Oakville; Coombsville", "cooperage": "St. Martin, Fr. Freres, Taransaud", "release_date": "May 1, 2017" }
+        },
+        {
+          "year": 2013,
+          "cases_produced": 120,
+          "oak_months": 23,
+          "new_oak_pct": 60,
+          "oak_origin": "french",
+          "harvest_start": "2013-09-18",
+          "bottling_date": "2015-07-02",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "metadata": { "designation": "Black List XI", "vineyard_sources": "St. Helena", "cooperage": "St. Martin, Fr. Freres, Taransaud", "release_date": "March 2016" }
+        },
+        {
+          "year": 2012,
+          "cases_produced": 50,
+          "oak_months": 24,
+          "new_oak_pct": 50,
+          "oak_origin": "french",
+          "harvest_start": "2012-10-08",
+          "bottling_date": "2014-06-03",
+          "grapes": [
+            { "name": "Cabernet Franc", "percentage": 50 },
+            { "name": "Merlot", "percentage": 50 }
+          ],
+          "metadata": { "designation": "Black List VII", "vineyard_sources": "Pritchard Hill, Soda Canyon", "cooperage": "St. Martin, Fr. Frères, Taransaud", "release_date": "April 27, 2015" }
+        },
+        {
+          "year": 2011,
+          "cases_produced": 50,
+          "oak_months": 26,
+          "new_oak_pct": 67,
+          "oak_origin": "french",
+          "harvest_start": "2011-10-20",
+          "harvest_end": "2011-11-02",
+          "bottling_date": "2014-01-27",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 50 },
+            { "name": "Cabernet Franc", "percentage": 50 }
+          ],
+          "metadata": { "designation": "Black List IV", "vineyard_sources": "Coombsville District, Atlas Peak", "cooperage": "St. Martin, Fr. Freres, Taransaud", "release_date": "November 2014" }
+        },
+        {
+          "year": 2010,
+          "cases_produced": 50,
+          "oak_months": 26,
+          "new_oak_pct": 100,
+          "oak_origin": "french",
+          "harvest_start": "2010-11-05",
+          "bottling_date": "2013-03-11",
+          "grapes": [
+            { "name": "Cabernet Sauvignon", "percentage": 100 }
+          ],
+          "metadata": { "designation": "Black List II", "vineyard_sources": "Caldwell-18, Coombsville", "cooperage": "St. Martin, Fr. Freres, Taransaud", "release_date": "April 2013" }
+        }
+      ]
+    },
+    {
+      "name": "Paige Cuvee",
+      "color": "red",
+      "appellation": "Sonoma Coast",
+      "varietal_category": "Pinot Noir",
+      "oak_origin": "french",
+      "grapes_note": "100% Pinot Noir in most vintages; 2021 is 100% Chardonnay (anomaly). Part of the Limited Edition Sisters' Series.",
+      "metadata": {
+        "series_code": "LTD",
+        "series_name": "Limited Edition: Sisters' Series",
+        "cooperage_brands": "François Frères, Rousseau, Damy"
+      },
+      "vintages": [
+        {
+          "year": 2019,
+          "cases_produced": 150,
+          "new_oak_pct": 50,
+          "oak_origin": "french",
+          "harvest_start": "2019-09-25",
+          "bottling_date": "2021-02-03",
+          "grapes": [
+            { "name": "Pinot Noir", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Russian River Valley (Sonoma)", "cooperage": "François Frères, Rousseau, Damy", "release_date": "February 1, 2022" }
+        },
+        {
+          "year": 2018,
+          "cases_produced": 250,
+          "new_oak_pct": 55,
+          "oak_origin": "french",
+          "harvest_start": "2018-09-28",
+          "bottling_date": "2020-02-05",
+          "grapes": [
+            { "name": "Pinot Noir", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "critic": "Lisa Perrotti-Brown" },
+            { "publication": "Jeb Dunnuck", "score": 95, "critic": "Jeb Dunnuck" }
+          ],
+          "metadata": { "vineyard_sources": "Petaluma Gap (Sonoma)", "cooperage": "Francois Freres, Rousseau, Damy", "release_date": "May 30, 2020" }
+        },
+        {
+          "year": 2017,
+          "cases_produced": 150,
+          "new_oak_pct": 70,
+          "oak_origin": "french",
+          "harvest_start": "2017-09-20",
+          "bottling_date": "2019-02-14",
+          "grapes": [
+            { "name": "Pinot Noir", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 95, "critic": "Jeb Dunnuck" }
+          ],
+          "metadata": { "vineyard_sources": "Petaluma Gap (Sonoma)", "cooperage": "Francois Freres, Rousseau, Damy", "release_date": "May 30, 2019" }
+        },
+        {
+          "year": 2021,
+          "new_oak_pct": 45,
+          "oak_origin": "french",
+          "harvest_start": "2021-09-06",
+          "harvest_end": "2021-09-24",
+          "bottling_date": "2021-03-08",
+          "grapes": [
+            { "name": "Chardonnay", "percentage": 100 }
+          ],
+          "scores": [
+            { "publication": "Vinous", "score": 95, "critic": "Antonio Galloni" }
+          ],
+          "metadata": { "vineyard_sources": "Russian River Valley, Sonoma Coast", "cooperage": "Francois Freres, Rousseau, Damy", "release_date": "February 1, 2024", "note": "This vintage is a Chardonnay, not Pinot Noir" }
+        }
+      ]
+    },
+    {
+      "name": "Corinne Cuvee Pinot Noir",
+      "color": "red",
+      "appellation": "Sta. Rita Hills",
+      "varietal_category": "Pinot Noir",
+      "oak_origin": "french",
+      "grapes": [
+        { "name": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "series_code": "LTD",
+        "series_name": "Limited Edition: Sisters' Series",
+        "cooperage_brands": "François Frères, Rousseau, Damy",
+        "note": "Shares LTD series code with Paige Cuvee - appears to be a new naming within the Sisters' Series"
+      },
+      "vintages": [
+        {
+          "year": 2022,
+          "cases_produced": 150,
+          "oak_months": 16,
+          "new_oak_pct": 50,
+          "oak_origin": "french",
+          "harvest_start": "2022-09-14",
+          "harvest_end": "2022-10-05",
+          "bottling_date": "2024-02-20",
+          "grapes": [
+            { "name": "Pinot Noir", "percentage": 100 }
+          ],
+          "metadata": { "vineyard_sources": "Our Lady of Guadalupe (OLG), Santa Rita Hills", "cooperage": "Francois Freres, Rousseau, Damy", "release_date": "April 30, 2024" }
+        }
+      ]
+    }
+  ],
+  "_extraction_metadata": {
+    "source": "moonetsai.com",
+    "extraction_date": "2026-03-15",
+    "method": "AJAX API /include/wine-lookup.php with series codes NVCS, CL, HMHB, NVCH, SCCH, LTD, PSPV, BL + leonidas.moonetsai.com + accolades page",
+    "scores_source": "moonetsai.com/accolades (producer-reported critic scores)",
+    "notes": [
+      "Pricing requires authenticated account - not available",
+      "ABV/pH/TA only available for Leonidas 2021",
+      "Wine-Searcher and CellarTracker blocked automated access (403/405)",
+      "Winemaker: Philippe Melka (Bordeaux-bred, formerly Dominus, Hundred Acre, Bryant Family, Dana Estates)",
+      "2018 Black List scored as XXIV on accolades page but XXVII on wine page - likely accolades page error, XXVII used",
+      "LTD series contains multiple sub-wines: Paige Cuvee (Pinot Noir/Chardonnay) and Corinne Cuvee (Pinot Noir)",
+      "SCCH 2019 returned data but with no technical details beyond varietal and vineyard",
+      "PSPV 2018 returned data but with no technical details",
+      "HMHB 2021 vintage for score (95+ Robert Parker) not found on website - may be unreleased"
+    ],
+    "total_wines": 10,
+    "total_vintages": 83,
+    "vintage_counts": {
+      "Napa Valley Cabernet Sauvignon": 12,
+      "Cor Leonis": 14,
+      "Howell Mountain Hillside Blend": 12,
+      "Leonidas": 1,
+      "Napa Valley Chardonnay": 13,
+      "Sonoma Coast Chardonnay": 11,
+      "Petite Sirah Palisades": 3,
+      "Black List": 12,
+      "Paige Cuvee": 4,
+      "Corinne Cuvee Pinot Noir": 1
+    }
+  }
+}
