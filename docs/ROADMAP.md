@@ -18,13 +18,13 @@
 **Status:** Not started
 **Goal:** Schema is production-ready. Reference tables are fully populated. Trial imports prove the schema handles diverse wine data.
 
-### 1a. Schema Hardening
-Execute the full implementation spec from `docs/SCHEMA_ASSESSMENT.md` Part B:
-- All 21 new tables (Tier 0 structural through Tier 2)
-- All ~45 column additions on existing tables
-- Make `varietal_category_id` nullable on `wines`
-- Add `lwin` columns to `wines` and `wine_vintages`
-- Review each decision point before executing
+### 1a. Schema Hardening ✓ (2026-03-14)
+Executed the full implementation spec from `docs/SCHEMA_ASSESSMENT.md` Part B:
+- All 21 new tables (Tier 0 structural through Tier 2) ✓
+- All ~45 column additions on existing tables ✓
+- `lwin` columns on `wines` and `wine_vintages` ✓
+- All scrape data cleared — starting fresh ✓
+- Reviewed each decision point before executing ✓
 
 ### 1b. Reference Data Completion
 Fill the reference tables that power AI enrichment:

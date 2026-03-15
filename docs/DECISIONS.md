@@ -176,3 +176,45 @@ Rather than batch-enriching 187K wines, keep most at Tier 3 and enrich to Tier 2
 
 ### 2026-03-13: Workflow preferences
 Longer focused sessions. Collaborative decision-making (Claude proposes, user guides). Trust Claude to execute specs and report results. Thorough over fast — do it right the first time.
+
+### 2026-03-14: Cleared all producer scrape data — starting fresh
+Deleted all wines (267), vintages (1,757), scores (2,214), grape entries (491), and producers (3) from Ridge, Tablas Creek, and Stag's Leap. Clean slate before schema hardening. Will re-scrape after schema is production-ready (Phase 1c).
+
+### 2026-03-14: Schema hardening — Phase 1a execution
+Executing the full implementation spec from SCHEMA_ASSESSMENT.md Part B. Step-by-step with human review at each tier. Decisions made during execution:
+- `attribute_definitions` already existed (empty) — skipped creation, created companion `entity_attributes` to complete the flex field system.
+- `wine_appellations` kept as secondary junction table — `wines.appellation_id` remains the primary appellation link. Junction handles rare multi-appellation cases.
+- Polymorphic pattern (entity_type + entity_id) kept for `external_ids`, `entity_attributes`, `entity_classifications`. Orphan risk mitigated by soft deletes.
+- `vineyards` table enhanced: added `region_id` and `country_id` (not in original spec). CHECK constraint enforces at least one geographic anchor (appellation_id OR region_id OR country_id).
+- `wine_vintage_components` renamed to `wine_vintage_nv_components` for clarity.
+- `importers` table is country-agnostic by design (has country_id FK) but will be populated US-first since TTB COLA is the primary data source.
+
+### 2026-03-14: Vineyard soils — skip percentage column
+Vineyard soils table (`vineyard_soils`) is many-to-many without a percentage column. Percentages like "40% loam, 60% chalk" are almost never available from producer data — we'll have "loam and chalk" but not proportions. If we ever get percentages, we can add the column later. Simpler schema now.
+
+### 2026-03-14: Classification systems — 8 systems, 22 levels
+Seeded from authoritative sources (not training data): Bordeaux 1855 Médoc (5 levels), Bordeaux 1855 Sauternes (3), Saint-Émilion GCC (3), Graves (1), Burgundy Vineyard (2), Alsace Grand Cru (1), VDP Germany (4), Cru Bourgeois (3). Key distinction: classifications rank entities (producers/vineyards) within an appellation. DOC/DOCG are appellations, not classifications. US has no classification system. Cru Bourgeois is a classification (three tiers, five-year renewal cycle), not a label designation.
+
+### 2026-03-14: Label designations — controlled vocabulary replacing free text
+Created `label_designations` (73 entries), `label_designation_rules` (appellation-specific variations), and `wine_label_designations` (many-to-many join) tables to replace free-text `wines.label_designation`. Categories: aging_tier, pradikat_tier, production_method, estate_bottling, late_harvest, ice_wine, botrytis_sweet, vineyard_designation, vineyard_age, quality_tier, geographic_qualifier, sparkling_type, early_release. German Prädikats are label designations (they classify the wine by must weight), not classifications (which rank entities).
+
+### 2026-03-14: Label designation rules — two-table approach for appellation-specific variation
+Designations like Riserva, Crianza, and Prädikats mean different things in different appellations. `label_designation_rules` captures per-appellation requirements (aging, barrel, ABV, yield, Oechsle). Populated: Spanish Crianza/Reserva/Gran Reserva (7 rules), Portuguese Reserva/Grande Reserva (14 rules), Italian Superiore (32 rules), German Prädikats (78 rules across 13 Anbaugebiete × 6 levels with Zone A/B differentiation). Italian Riserva pending.
+
+### 2026-03-14: Dropped US Reserve from label designations
+US "Reserve" has no legal meaning — any winery can use it. Not regulated, not useful for a data platform focused on accuracy. All regulated designations kept.
+
+### 2026-03-14: Sparkling sweetness terms — universal, country_id NULL
+Brut Nature, Extra Brut, Brut, Extra Dry/Extra Sec, Dry/Sec, Demi-Sec, Doux added with country_id=NULL. These are EU-regulated terms used worldwide by convention. Universal application, not country-specific.
+
+### 2026-03-14: Grape display_name — three-tier naming strategy
+Added `display_name` column to grapes table. VIVC prime names stored in `name` (UPPERCASE, canonical reference). `display_name` derived via three tiers: (1) 26 explicit overrides for major grapes where VIVC name differs from industry standard (MERLOT NOIR→Merlot, COT→Malbec, CALABRESE→Nero d'Avola, MONASTRELL→Mourvèdre, GARNACHA TINTA→Grenache, ALVARINHO→Albariño, etc.); (2) Multi-variant families keep suffix (Pinot Noir stays Pinot Noir, not "Pinot"); (3) Single-variant grapes get color suffix stripped and title-cased. Country-specific synonyms with `is_primary_in_country=true` enable per-market display (Zinfandel in US, Primitivo in Italy; Garnacha in Spain, Grenache elsewhere). Verified against WSET Level 3 and TTB standards.
+
+### 2026-03-14: Grape rebuild — keep all VIVC wine grapes, no artificial cap
+Rebuilding the grapes table from scratch using VIVC (Vitis International Variety Catalogue) as the authoritative source. Originally planned ~1,000–1,500 "commercially significant" grapes, but decided to keep every grape VIVC classifies as wine utilization (expected 3,000–5,000). Rationale: storage cost is near-zero, more grapes means higher auto-match rate for LWIN import (187K wines), no UX downside since users encounter grapes through wines not browsing. VIVC prime name is the canonical `grapes.name`; TTB name stored in `ttb_name` for US display. Parentage resolved in a second pass after all grapes inserted. Dropped `grapes.aliases` TEXT[] in favor of structured `grape_synonyms` table. Added columns: `aroma_class`, `crossing_year`, `breeder`, `breeding_institute`, `origin_type`, `eu_catalog_countries`. Created `grape_plantings` table for grape × country planting areas. Source: VIVC direct scraping (no Wikidata intermediary).
+
+### 2026-03-14: Grape associations — two-level system (required/typical) at three geographic levels
+Replaced `appellation_grapes.is_required` boolean with `association_type` text enum ('required', 'typical'). "Required" = regulatory mandate (EU disciplinari/INAO). "Typical" = commonly planted / known for (everything else). Rejected a third "occasional" level — the distinction between typical and occasional is a judgment call that doesn't improve the user experience. Nuance belongs in the `notes` field. Created `region_grapes` and `country_grapes` tables with same structure (minus min/max percentage, which is appellation-level regulatory detail). Three-table hierarchy enables grape data at every geographic level.
+
+### 2026-03-14: Two-pass expert audit approach for reference data
+Established pattern: seed data from authoritative sources, then run two independent audits — (1) training data / wine expertise check for wrong/missing/questionable entries, (2) web source verification against official publications (Wine Australia, SAWIS, INAO, DWI, etc.). Compare findings, fix intersection of CRITICAL+HIGH issues immediately, park MEDIUM/LOW for later. Applied to region_grapes and country_grapes: found 120 issues (training) and 34 issues (web), with strong overlap on the critical ones. Fixed 10 deletions + 34 additions. ~90 medium/low issues parked (mostly naming conventions that belong in the display layer, not the data layer).

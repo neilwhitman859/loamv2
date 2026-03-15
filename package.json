@@ -20,6 +20,12 @@
   "homepage": "https://github.com/neilwhitman859/loamv2#readme",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
-    "@supabase/supabase-js": "^2.98.0"
+    "@supabase/supabase-js": "^2.98.0",
+    "pdf-parse": "^2.4.5",
+    "proj4": "^2.20.4",
+    "shapefile": "^0.6.6",
+    "sql.js": "^1.14.1",
+    "wkx": "^0.5.0",
+    "xlsx": "^0.18.5"
   }
 }
