@@ -37,15 +37,15 @@ Fill the reference tables that power AI enrichment:
 - Publications scoring metadata (`score_scale_min/max`)
 - Classification system seeded (Bordeaux 1855, Burgundy Grand/Premier Cru)
 
-### 1c. Trial Producer Imports
-Scrape 4-5 producer websites to stress-test the schema before mass import:
-- **Moone Tsai** (CA) — boutique, small production
-- **Fort Ross** (CA) — small US vineyard
-- **López de Heredia** (Spain) — traditional Rioja, Reserva/Gran Reserva, long aging
+### 1c. Trial Producer Imports (in progress, 2026-03-15)
+Import producer websites to stress-test the schema before mass import:
+- **Moone Tsai** (CA) ✓ — boutique Napa, 7 wines, 2 vintages. Bordeaux blend classification, multi-vineyard sourcing, Howell Mountain sub-AVA.
+- **Fort Ross** (CA) ✓ — Fort Ross-Seaview AVA, 10 wines (incl. Sea Slopes second label), 20 vintages. Cool-climate Pinot/Chard, Pinotage from SA cuttings.
+- **López de Heredia** (Spain) ✓ — traditional Rioja DOCa, 9 wines, 28 vintages, 41 scores. Label designations (Reserva/Gran Reserva/Crianza), American oak, unfined/unfiltered. Grape alias resolution tested (Garnacho→Grenache, Mazuelo→Carignan).
 - **TBD Burgundy producer** — vineyard-level classification, shared vineyards
 - **TBD Tuscany producer** — DOCG/DOC + IGT Super Tuscans
 
-If any producer provides data the schema can't capture, fix the schema before proceeding.
+Architecture: `lib/import.mjs` (shared import library) + `data/imports/{slug}.json` (standardized per-producer JSON). Supports `--dry-run`. No schema changes needed — all three imports succeeded without schema fixes.
 
 ---
 

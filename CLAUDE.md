@@ -96,6 +96,19 @@ New tables (Phase 1b): label_designations, label_designation_rules, wine_label_d
 
 Key deviations from original spec: vineyards got region_id + country_id + CHECK constraint; wine_vintage_components renamed to wine_vintage_nv_components. appellation_grapes `is_required` boolean replaced with `association_type` text ('required'/'typical') — same column added to region_grapes and country_grapes.
 
+**Post-KL-import refinements (2026-03-15):** 5 schema changes from bulk import stress test:
+- `wines.varietal_category_id` made nullable (no external source provides varietal categories natively)
+- `producer_farming_certifications.certification_status` added (certified/practicing/transitioning)
+- `producers.latitude/longitude` added (GPS coords from grower profiles)
+- `wines.vinification_notes` added (free text winemaking approach)
+- `appellation_aliases` table created and seeded with 17,558 aliases from 4 sources:
+  - INAO OpenDataSoft API: 2,557 official French AOC product variants (color, style, cru)
+  - Mechanical color suffixes: 9,866 (FR/IT/ES/PT/DE/US/AU/NZ/ZA/CL/AR)
+  - Mechanical designation suffixes: 3,193 (appellation + AOC/DOC/DOCG/etc.)
+  - Slash-form variants + informal/industry aliases + translations: 1,942
+  - Script: `scripts/seed_appellation_aliases.mjs`
+  - KL appellation resolution improved: 10.8% → 67.0% (983/1,468 wines)
+
 ### Reference Data Progress (Phase 1b, 2026-03-14)
 
 **Classifications:** 13 systems, 32 levels. Audited by two independent wine expert passes. France: Bordeaux 1855 Médoc (5), Sauternes (3), Saint-Émilion (3), Graves (1), Burgundy Vineyard (2), Alsace Grand Cru (1), Champagne Cru (2), Cru Bourgeois (3), Cru Artisan (1), Provence Cru Classé (1). Germany: VDP (4). Austria: ÖTW Erste Lagen (2). Australia: Langton's (4). Systems: 11 government, 2 industry.
@@ -125,14 +138,16 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
-### Content Tables (Phase 1c trial imports, 2026-03-15)
-- **6 producers**, **103 wines**, 559 vintages, 521 scores, 152 wine_grapes, 141 wine_vintage_grapes, 9 wine_label_designations, 6 winemakers, 7 producer-winemaker links, **40 entity_classifications** (20 Grand Cru + 20 Premier Cru)
+### Content Tables (Phase 1c trial imports + KL bulk import, 2026-03-15)
+- **199 producers**, **1,571 wines**, 559 vintages, 521 scores, 2,278 wine_grapes, 141 wine_vintage_grapes, 9 wine_label_designations, 6 winemakers, 7 producer-winemaker links, **40 entity_classifications**, 193 producer-importer links, 155 farming certifications
+- **Trial imports (6 producers):**
   - Fort Ross Vineyard (US/Sonoma, estate): 15 wines, 112 vintages, 84 scores
   - Sea Slopes (US/Sonoma, child of Fort Ross): 2 wines, 24 vintages, 15 scores
   - Moone Tsai (US/Napa, negociant): 10 wines, 83 vintages, 48 scores
   - López de Heredia (Spain/Rioja, estate): 9 wines, 115 vintages, 67 scores
   - Marchesi Antinori (Italy/Tuscany, estate): 23 wines, 76 vintages, 98 scores
   - Louis Jadot (France/Burgundy, negociant): 44 wines, 149 vintages, 209 scores, 40 classifications
+- **Kermit Lynch bulk import (193 producers, 1,467 wines):** First multi-producer portfolio import. France + Italy only. Tested importers table, bulk producer creation, grape parsing from blend strings, farming certification mapping. Appellation resolution at 11% (159/1,467) — drove creation of appellation_aliases table. Schema: `import_kl.mjs` + `fetch_kl_catalog.mjs` + `data/imports/kermit_lynch_catalog.json`.
 - Import architecture: `lib/import.mjs` (shared library) + `data/imports/{slug}.json` (per-producer data)
 - `--replace` mode: deletes all existing producer data in FK dependency order, then fresh insert
 - `parseDate()` helper converts informal dates ("August 2024" → "2024-08-01")

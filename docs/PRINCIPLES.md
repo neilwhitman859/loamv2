@@ -41,3 +41,7 @@ This especially applies to all AI-generated content — wine summaries, appellat
 When a pipeline is running in the background, don't poll with tools that dump the entire output buffer into the conversation. Every token of log output that enters the context gets re-read on every subsequent turn — and it adds up fast. The appellation insights run cost ~$7.63 in Sonnet API calls but nearly $1 in Claude Code monitoring just from re-reading progress logs.
 
 **The rule:** Use `tail -n 5` (or similar) on the output file to check progress. You get the last few lines — current position, success/fail count, time estimate — which is all that's needed. Save full output reads for when the task is done and you need the summary. The goal is reassurance that it's still working and a rough sense of how far along, not a replay of every line.
+
+### 9. Don't create new data from training data
+
+Training data (Claude's built-in knowledge) should only be used for **validation** — confirming, cross-referencing, and auditing data that came from authoritative sources. It should never be used to **generate** new factual content: scores, tasting notes, production figures, vintage details, or any data that would end up in canonical tables. If it didn't come from a primary source (producer website, government registry, official publication), it doesn't go in the database. Training data is the second opinion, not the source of truth.

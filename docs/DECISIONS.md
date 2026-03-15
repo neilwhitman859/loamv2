@@ -290,3 +290,23 @@ Appellation winemaking rules (ABV minimums, yield limits, aging requirements, al
 
 ### 2026-03-15: Multi-source data merging — design for future session
 Architecture proposal for handling data from multiple sources (LWIN, producer websites, critics, government registries): (1) Source priority tiers on source_types (producer > government > LWIN > critic > aggregator), (2) Field provenance sidecar table (entity_type, entity_id, field_name, source_id, updated_at) instead of per-column _source fields, (3) Importer merge mode that respects source priority. To be implemented in a dedicated session.
+
+### 2026-03-15: Schema refinements from Kermit Lynch bulk import stress test
+Five schema changes based on importing 1,468 wines from 193 KL growers:
+1. **varietal_category_id made nullable** on wines — no external source provides varietal categories natively. Forcing NOT NULL required fragile inference logic. Better to populate when genuinely known.
+2. **certification_status added** to producer_farming_certifications — certified/practicing/transitioning. KL distinguishes "Biodynamic (certified)" from "Biodynamic (practicing)" which is a meaningful real-world distinction.
+3. **latitude/longitude added** to producers — KL provides GPS coords for growers. Useful for map display and geographic resolution. Was being stuffed into metadata JSONB.
+4. **vinification_notes added** to wines — free text for general winemaking approach (fermentation, maceration, aging). Distinct from vintage-specific winemaking data on wine_vintages.
+5. **appellation_aliases table created** — accumulated fuzzy match mappings for appellation name resolution. KL import only resolved 11% of appellations because names like "Châteauneuf-du-Pape Rouge" don't exact-match. This table stores resolved mappings so future imports reuse them.
+
+### 2026-03-15: No country-specific tables for classification systems
+Evaluated whether complex classification systems (Italian DOCG/DOC/Classico/Riserva, German Prädikats, Bordeaux 1855, Port styles, etc.) need country-specific tables. Answer: no. The existing generic schema handles all cases through four complementary layers: appellations.designation_type (DOC/AOC/AVA), label_designations + label_designation_rules (Riserva/Crianza/Kabinett with per-appellation rules), classifications + entity_classifications (1855/Burgundy cru/VDP), and appellation_rules JSONB (flex regulatory data). Country-specific tables would fragment the query layer — one generic query pattern is better than N country-specific ones.
+
+### 2026-03-15: Appellation aliases seeded from primary sources + mechanical generation
+17,558 aliases seeded into appellation_aliases table from four source tiers:
+1. **INAO OpenDataSoft API** (primary source): 2,557 official French AOC wine product variants — color suffixes (rouge/blanc/rosé), vendanges tardives, vin jaune, premier/grand cru sub-types. API: `public.opendatasoft.com/api/explore/v2.1/catalog/datasets/aires-et-produits-aocaop-et-igp/records`, filtered to `signe_fr LIKE 'AOC%' OR 'IGP%'`.
+2. **Mechanical Tier 1**: color suffixes (9,866), designation type suffixes (3,193), accent-stripped variants. Applied per country using local language (rouge/rosé for FR, rosso/bianco for IT, tinto/blanco for ES, etc.).
+3. **Slash-form variants** (276): EU PDO multi-name appellations split into components (e.g., "Alsace / Vin d'Alsace" → "Alsace", "Vin d'Alsace"). Plus color suffixes for each variant.
+4. **Industry knowledge** (49): Common abbreviations (CdP, CDR), saint abbreviations (St-Emilion), Italian short forms (Brunello → Brunello di Montalcino, Amarone → Amarone della Valpolicella).
+Result: KL appellation resolution improved from 10.8% (159/1,468) to 67.0% (983/1,468). Remaining 485 unmatched are genuinely not appellation names (Champagne wines starting with "Brut", Italian IGT branded wines, generic color terms).
+EU GIview/eAmbrosia has no public API (SPA-only). Italian Masaf wine registry was down. Eurac PDO_EU_cat.csv has basic category data but not granular tipologie.

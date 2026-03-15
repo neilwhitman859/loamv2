@@ -81,6 +81,18 @@ Hierarchy of appellations (e.g., Pauillac is within Haut-Médoc).
 | child_id | uuid | NOT NULL, FK appellations | Contained appellation |
 | source | text | NOT NULL, default 'explicit' | |
 
+### appellation_aliases
+Accumulated fuzzy match mappings for appellation name resolution. When an import resolves a variant name to a canonical appellation, store the mapping here so future imports reuse it.
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| appellation_id | uuid | FK appellations, NOT NULL | ON DELETE CASCADE |
+| alias | text | NOT NULL | The variant name as encountered |
+| alias_normalized | text | UNIQUE NOT NULL | Lowercased/stripped for matching |
+| alias_type | text | CHECK | synonym/abbreviation/with_color/with_designation/local_name/historical/informal |
+| source | text | nullable | Which import pipeline created this alias |
+| created_at | timestamptz | NOT NULL, default now() | |
+
 ### geographic_boundaries
 PostGIS geometry for map display and spatial queries. Links to one of country, region, or appellation.
 | Column | Type | Constraints | Notes |
@@ -120,6 +132,8 @@ PostGIS geometry for map display and spatial queries. Links to one of country, r
 | total_production_cases | integer | nullable | |
 | parent_producer_id | uuid | FK producers, nullable | Self-ref for second labels/sub-brands (e.g., Sea Slopes → Fort Ross) |
 | philosophy | text | nullable | Producer philosophy/approach statement |
+| latitude | decimal | nullable | GPS coordinates for map display |
+| longitude | decimal | nullable | |
 | metadata | jsonb | nullable | Flexible extra data from scraping |
 | created_at / updated_at / deleted_at | timestamptz | standard | |
 
@@ -174,7 +188,7 @@ PK: composite (producer_id, region_id). For multi-region producers.
 | country_id | uuid | FK countries, NOT NULL | |
 | region_id | uuid | FK regions, nullable | Null when multi-region |
 | appellation_id | uuid | FK appellations, nullable | |
-| varietal_category_id | uuid | FK varietal_categories, NOT NULL | |
+| varietal_category_id | uuid | FK varietal_categories, nullable | Inferred from blend when available |
 | varietal_category_source | uuid | FK source_types, nullable | |
 | label_designation | text | nullable | Raw label text |
 | effervescence | text | nullable | still/sparkling/semi_sparkling |
@@ -212,6 +226,7 @@ PK: composite (producer_id, region_id). For multi-region producers.
 | vineyard_id | uuid | FK vineyards, nullable | Links to vineyards table |
 | lwin | text | UNIQUE, nullable | LWIN-7 code (wine identity) |
 | label_image_url | text | nullable | Wine-level default label image |
+| vinification_notes | text | nullable | General winemaking approach (free text from producer/source) |
 | duplicate_of | uuid | FK wines, nullable | Canonical pointer |
 | first_vintage_year | integer | nullable | Year the wine was first produced |
 | style | text | nullable | Wine style description (e.g., "traditional Rioja", "bold red") |
@@ -462,7 +477,7 @@ PK composite (wine_id, biodiversity_certification_id). certified_since (integer,
 
 ### producer_farming_certifications
 Producer-level certifications (most certs apply to the farming operation, not individual wines).
-PK: composite (producer_id, farming_certification_id). certified_since/until (integer), certifying_body (text), source_id FK.
+PK: composite (producer_id, farming_certification_id). certification_status text CHECK (certified/practicing/transitioning) default 'certified', certified_since/until (integer), certifying_body (text), source_id FK.
 
 ### producer_biodiversity_certifications
 PK: composite (producer_id, biodiversity_certification_id). certified_since/until (integer), certifying_body (text), source_id FK.
@@ -834,6 +849,6 @@ Bulk data from the X-Wines dataset (CC0 public domain). Kept for reference but n
 
 ## Table Count
 
-**Canonical:** 75 tables (Geography 5, Producers 5, Wines 4, Vintages 1, Grapes 6, Weather 1, Soil 4, Water 4, Certifications 6, Sources 1, Scores 2, Pricing 1, Documents 3, Insights 11, Trends 1, Search/Dedup 3, Enrichment 1, Vineyards 3, Classifications 3, Flex Fields 2, External IDs 1, Tasting Descriptors 2, Importers 2, Label Designations 3, Appellation Rules 1)
+**Canonical:** 76 tables (Geography 6, Producers 5, Wines 4, Vintages 1, Grapes 6, Weather 1, Soil 4, Water 4, Certifications 6, Sources 1, Scores 2, Pricing 1, Documents 3, Insights 11, Trends 1, Search/Dedup 3, Enrichment 1, Vineyards 3, Classifications 3, Flex Fields 2, External IDs 1, Tasting Descriptors 2, Importers 2, Label Designations 3, Appellation Rules 1)
 **xwines_ staging:** 13 tables
-**Total:** 88 tables
+**Total:** 89 tables
