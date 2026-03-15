@@ -227,3 +227,66 @@ Full integrity audit before moving to Phase 1c imports: FK checks across all gra
 
 ### 2026-03-15: Cold-hardy hybrids in region_grapes
 Iowa, Minnesota, Wisconsin — replaced vinifera entries (Cab Sauv, Merlot, Cab Franc, Chardonnay) with cold-hardy hybrids (Marquette, Frontenac) that actually represent commercial production. The VIVC-sourced grapes table includes hybrids, so this is supported.
+
+### 2026-03-15: Phase 1c import architecture — shared library + standardized JSON
+Producer imports use a two-layer approach: (1) per-producer data extraction into a standardized JSON format (`data/imports/{slug}.json`), (2) shared import library (`lib/import.mjs`) that resolves all FK references and inserts. This separates the always-custom scraping from the always-same DB logic. Grape resolution uses a three-tier strategy: hardcoded alias table → display_name lookup → grape_synonyms table. The library supports `--dry-run` and is idempotent (checks for existing records before inserting).
+
+### 2026-03-15: Score sourcing — producer websites + publicly visible aggregators
+For trial imports, scores come from producer websites (primary) and publicly visible aggregator data (supplementary). No scraping behind paywalls. Source type tracked as `producer-website`. This gives good coverage while staying clean on licensing. Phase 2+ will revisit when LWIN provides the dedup backbone.
+
+### 2026-03-15: producer_type "virtual" for non-estate producers
+Moone Tsai classified as `producer_type: virtual` — they source from multiple Napa vineyards (Soda Canyon, Yountville, Howell Mountain) rather than owning estate vineyards. This distinction matters for understanding wine provenance.
+
+### 2026-03-15: Winemakers as a first-class entity
+Created `winemakers` table + `producer_winemakers` junction with role (head/consulting/assistant/founding) and tenure (start_year/end_year). Winemakers frequently consult for multiple producers (e.g., Philippe Melka works with 10+ wineries) and producers change winemakers over time. This data is too important for wine enthusiasts to leave in metadata.
+
+### 2026-03-15: Production volumes standardized on cases
+Industry standard is cases (12 × 750ml = 9L). LWIN, Wine Spectator, Wine Advocate, auction houses all use cases. European producers report in bottles (÷12) or hectoliters (×11.11). Convert at import time, store as `cases_produced`.
+
+### 2026-03-15: Bottle formats table
+Created `bottle_formats` reference table (10 standard sizes from Piccolo 187ml to Nebuchadnezzar 15000ml) + `wine_vintage_formats` junction with per-format cases_produced and release_price_usd. Collectors care deeply about format availability, and prices vary significantly by format.
+
+### 2026-03-15: Multi-vineyard sourcing via wine_vineyards + wine_vintage_vineyards
+Created two junction tables linking wines to vineyards: `wine_vineyards` for default/typical sources, `wine_vintage_vineyards` for per-vintage sourcing with percentage. Many quality producers source from multiple vineyards (Moone Tsai: 5-7 per wine) and the blend changes year-to-year.
+
+### 2026-03-15: Second labels as child producers (parent_producer_id)
+Added self-referencing `parent_producer_id` FK on `producers` for second labels and sub-brands. Matches LWIN convention where second wines get their own LWIN-7 codes. Sea Slopes becomes its own producer with parent = Fort Ross. This is cleaner than brand columns on wines because the tier is a property of the brand, not individual wines. Also handles Bordeaux seconds (Les Forts de Latour → Château Latour) which Phase 2 LWIN import will encounter.
+
+### 2026-03-15: Import library field name flexibility
+The import library (`lib/import.mjs`) now accepts both canonical field names and common alternatives from JSON files. E.g., `oak_duration_months` or `oak_months`, `production_cases` or `cases_produced`, `founded_year` or `year_established`, `reviewer` or `critic`. This prevents format fragility when different research agents produce slightly different JSON structures.
+
+### 2026-03-15: Text dates parsed to ISO in importer
+Bottling dates and harvest dates from producer websites often use informal formats like "August 2024". The importer now parses these to ISO dates (first-of-month: "2024-08-01") rather than rejecting them. This captures the data rather than losing it silently.
+
+### 2026-03-15: Phase 1c expanded to 6 producers across 4 countries
+Trial producer imports expanded from 3 to 6: Fort Ross (US/Sonoma), Sea Slopes (US/Sonoma, child producer), Moone Tsai (US/Napa), López de Heredia (Spain/Rioja), Marchesi Antinori (Italy/Tuscany), Louis Jadot (France/Burgundy). This gives broad schema stress-testing across estate/negociant types, Old/New World, DOCG/DOC/IGT/AVA appellations, and single-varietal/blend wines.
+
+### 2026-03-15: Principle #9 — Training data for validation only
+Added to PRINCIPLES.md: Claude's training data should only be used for validation (confirming, cross-referencing, auditing). Never for generating new factual content that goes into canonical tables. Scores, tasting notes, production figures, vintage details must come from primary sources. Training data is the second opinion, not the source of truth.
+
+### 2026-03-15: Multi-estate producers use parent-child pattern
+Large wine groups (Antinori, LVMH, etc.) model each estate as a child producer with `parent_producer_id` pointing to the parent company. Same pattern as Sea Slopes → Fort Ross. No new schema needed.
+
+### 2026-03-15: Wine name evolution via wine_aliases table
+Track historical wine names (renames, market-specific names) via a `wine_aliases` table rather than a simple `previous_name` field or creating separate wine records. This preserves vintage continuity while handling multiple renames.
+
+### 2026-03-15: Clone data stays in metadata JSONB for now
+Clone information is too rare and inconsistent to justify structured storage. The `metadata` column on `wine_vintages` handles it. Revisit if clone-specific querying becomes a product need.
+
+### 2026-03-15: Critic-level drinking windows on wine_vintage_scores
+Critics often provide drinking windows alongside scores (e.g., "Drink 2025-2035"). Adding `drinking_window_start` and `drinking_window_end` columns to `wine_vintage_scores` — distinct from the producer-level `producer_drinking_window_start/end` on `wine_vintages`.
+
+### 2026-03-15: Schema changes require human approval
+The importer must never trigger DDL (CREATE TABLE, ALTER TABLE, etc.) — it maps JSON to an existing, fixed schema. Schema changes can still happen, but they require explicit human approval. This prevents Claude from silently adding columns or tables during import runs. The drinking_window_start duplicate column incident (added without checking existing critic_drink_window_start/end columns) demonstrated the risk.
+
+### 2026-03-15: Metadata fields promoted to structured columns
+Analysis of metadata across 6 trial producers identified 4 high-frequency, universally useful keys that deserve structured columns: `release_date` on wine_vintages (75 entries), `first_vintage_year` on wines (15), `style` on wines (17), `philosophy` on producers (2 but universal). Additional metadata keys identified for migration to proper table links: `classification` (67, should be entity_classifications), `vineyard`/`vineyard_sources` (115, should be wine_vineyards/wine_vintage_vineyards), `estate`/`domaine` (45, should be child producers). Remaining metadata (clones, cooperage details, notes, historical_note) stays in JSONB — too unstructured or infrequent to justify columns.
+
+### 2026-03-15: Enrichment log rebuilt with cost/model/audit tracking
+Original enrichment_log was a basic job queue (stage, attempts, stale_reason) with no model, cost, or audit capabilities. Rebuilt (zero rows, safe drop) with: model tracking, cost tracking (input_tokens, output_tokens, cost_usd), prompt template versioning, field-level change tracking (fields_updated, previous_values for rollback), review workflow (reviewed_by, reviewed_at), and source context (source_ids). This is the foundation for tracking AI enrichment costs and quality.
+
+### 2026-03-15: Appellation rules as flexible JSONB
+Appellation winemaking rules (ABV minimums, yield limits, aging requirements, allowed methods) stored in a single `appellation_rules` table with a JSONB `rules` column. One row per appellation. JSONB chosen over rigid columns because rule types vary wildly across regulatory frameworks (French AOC, Italian DOCG, Spanish DO, German Anbaugebiet all have different rule structures). Queryable via Postgres JSONB operators without schema changes as new rule types are discovered.
+
+### 2026-03-15: Multi-source data merging — design for future session
+Architecture proposal for handling data from multiple sources (LWIN, producer websites, critics, government registries): (1) Source priority tiers on source_types (producer > government > LWIN > critic > aggregator), (2) Field provenance sidecar table (entity_type, entity_id, field_name, source_id, updated_at) instead of per-column _source fields, (3) Importer merge mode that respects source priority. To be implemented in a dedicated session.

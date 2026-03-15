@@ -12,8 +12,10 @@ When this file is out of date, query the DB directly: `information_schema.column
 **Slugs:** `slug TEXT UNIQUE NOT NULL` on entity tables (wines, producers, appellations, regions, countries, grapes, varietal_categories, soil_types, water_bodies, farming_certifications, source_types, publications, biodiversity_certifications).
 **Soft deletes:** `deleted_at TIMESTAMPTZ DEFAULT NULL` on core entity tables.
 **Timestamps:** `created_at` and `updated_at` TIMESTAMPTZ DEFAULT now() on all entity tables.
+**`updated_at` triggers:** `set_updated_at()` BEFORE UPDATE trigger on all 36 tables with `updated_at`. Auto-sets timestamp on every UPDATE.
 **Source tracking:** `{field}_source UUID FK source_types` companion columns where provenance varies.
 **Naming:** snake_case. FK columns: `{table_singular}_id`.
+**Polymorphic FK validation:** `validate_polymorphic_fks()` function checks `entity_classifications`, `entity_attributes`, `external_ids`, `enrichment_log` for orphaned rows. Run after bulk operations.
 
 ---
 
@@ -116,8 +118,33 @@ PostGIS geometry for map display and spatial queries. Links to one of country, r
 | parent_company | text | nullable | |
 | hectares_under_vine | decimal | nullable | |
 | total_production_cases | integer | nullable | |
+| parent_producer_id | uuid | FK producers, nullable | Self-ref for second labels/sub-brands (e.g., Sea Slopes → Fort Ross) |
+| philosophy | text | nullable | Producer philosophy/approach statement |
 | metadata | jsonb | nullable | Flexible extra data from scraping |
 | created_at / updated_at / deleted_at | timestamptz | standard | |
+
+### winemakers
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| slug | text | UNIQUE NOT NULL | |
+| name | text | NOT NULL | |
+| country_id | uuid | FK countries, nullable | |
+| metadata | jsonb | nullable | |
+| created_at / updated_at | timestamptz | standard | |
+
+### producer_winemakers
+Junction: producer ↔ winemaker with role and tenure. Winemakers often consult for multiple producers.
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| producer_id | uuid | FK producers, NOT NULL | ON DELETE CASCADE |
+| winemaker_id | uuid | FK winemakers, NOT NULL | ON DELETE CASCADE |
+| role | text | NOT NULL, CHECK | head/consulting/assistant/founding |
+| start_year | smallint | nullable | |
+| end_year | smallint | nullable | null = current |
+| created_at | timestamptz | default now() | |
+UNIQUE(producer_id, winemaker_id, role)
 
 ### producer_aliases
 | Column | Type | Constraints | Notes |
@@ -186,6 +213,8 @@ PK: composite (producer_id, region_id). For multi-region producers.
 | lwin | text | UNIQUE, nullable | LWIN-7 code (wine identity) |
 | label_image_url | text | nullable | Wine-level default label image |
 | duplicate_of | uuid | FK wines, nullable | Canonical pointer |
+| first_vintage_year | integer | nullable | Year the wine was first produced |
+| style | text | nullable | Wine style description (e.g., "traditional Rioja", "bold red") |
 | metadata | jsonb | nullable | Flexible extra data from scraping |
 | created_at / updated_at / deleted_at | timestamptz | standard | |
 
@@ -195,6 +224,9 @@ PK: composite (wine_id, appellation_id). is_primary boolean default false, notes
 
 ### wine_regions
 PK: composite (wine_id, region_id). For multi-region wines.
+
+### wine_aliases
+UUID PK. wine_id FK (CASCADE), name text NOT NULL, alias_type text NOT NULL CHECK ('previous_name'|'alternate_label'|'market_name'), start_year integer, end_year integer, notes text, created_at. Tracks historical and alternate names for wines (renames, market-specific labels). Added 2026-03-15.
 
 ---
 
@@ -263,6 +295,7 @@ UUID PK + UNIQUE(wine_id, vintage_year). Vintage_year nullable for NV wines.
 | aging_vessel | text | nullable | barrel/stainless/concrete/amphora/foudre/mixed |
 | yield_hl_ha | decimal | nullable | |
 | availability_status | text | nullable | current_release/sold_out/futures/library/discontinued |
+| release_date | date | nullable | When this vintage was released to market |
 | label_image_url | text | nullable | Vintage-specific label image |
 | lwin | text | UNIQUE, nullable | LWIN-11 code (wine+vintage) |
 | metadata | jsonb | nullable | Flexible extra data |
@@ -554,7 +587,30 @@ id SERIAL PK, name_a, name_b, country, similarity, wines_a, wines_b, verdict, ve
 ## 17. Enrichment
 
 ### enrichment_log
-id UUID PK. entity_type, entity_id, vintage_year (nullable), stage, status, started_at, completed_at, failed_at, error_message, attempts, stale_reason, timestamps. UNIQUE: (entity_type, entity_id, vintage_year, stage). No deleted_at.
+Tracks every AI enrichment operation with full cost/model/audit trail. Rebuilt 2026-03-15.
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| entity_type | text | NOT NULL | wine/producer/grape/appellation/region/country/wine_vintage |
+| entity_id | uuid | NOT NULL | |
+| enrichment_type | text | NOT NULL | insight/tasting_descriptors/food_pairings/classification/grape_analysis |
+| model | text | NOT NULL | e.g., claude-sonnet-4-20250514 |
+| prompt_template | text | nullable | Name/version of prompt template used |
+| input_tokens | integer | nullable | |
+| output_tokens | integer | nullable | |
+| cost_usd | numeric(10,6) | nullable | |
+| fields_updated | text[] | nullable | Which columns/fields were set |
+| previous_values | jsonb | nullable | Snapshot of old values for rollback |
+| status | text | NOT NULL, default 'completed' | completed/failed/needs_review/superseded |
+| error_message | text | nullable | |
+| reviewed_by | text | nullable | Human reviewer if manually checked |
+| reviewed_at | timestamptz | nullable | |
+| source_ids | uuid[] | nullable | Sources fed to the model as context |
+| attempts | integer | default 1 | |
+| stale_reason | text | nullable | |
+| created_at | timestamptz | NOT NULL, default now() | |
+
+Indexes: entity (entity_type, entity_id), type (enrichment_type), model (model, created_at), status (partial: status != 'completed').
 
 ---
 
@@ -586,9 +642,62 @@ PK: composite (vineyard_id, producer_id). area_ha decimal nullable, planted_year
 ### vineyard_soils
 PK: composite (vineyard_id, soil_type_id).
 
+### wine_vineyards
+Wine-level vineyard sourcing (default/typical sources). Many-to-many.
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| wine_id | uuid | FK wines, NOT NULL | ON DELETE CASCADE |
+| vineyard_id | uuid | FK vineyards, NOT NULL | ON DELETE CASCADE |
+| notes | text | nullable | |
+| created_at | timestamptz | default now() | |
+UNIQUE(wine_id, vineyard_id)
+
+### wine_vintage_vineyards
+Per-vintage vineyard sourcing (when sources change year-to-year).
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| wine_id | uuid | FK wines, NOT NULL | ON DELETE CASCADE |
+| vintage_year | smallint | NOT NULL | |
+| vineyard_id | uuid | FK vineyards, NOT NULL | ON DELETE CASCADE |
+| percentage | numeric(5,2) | nullable | Percentage of fruit from this vineyard |
+| notes | text | nullable | |
+| created_at | timestamptz | default now() | |
+UNIQUE(wine_id, vintage_year, vineyard_id)
+
 ---
 
-## 19. Classifications
+## 19. Bottle Formats
+
+### bottle_formats
+Reference table for standard wine bottle sizes.
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| name | text | UNIQUE NOT NULL | Piccolo, Half Bottle, Standard, Magnum, etc. |
+| volume_ml | integer | NOT NULL | 187, 375, 750, 1500, 3000, etc. |
+| sort_order | smallint | NOT NULL DEFAULT 0 | |
+| created_at | timestamptz | default now() | |
+
+Pre-seeded: Piccolo (187ml), Half Bottle (375ml), Standard (750ml), Magnum (1500ml), Double Magnum (3000ml), Jeroboam (4500ml), Imperial (6000ml), Salmanazar (9000ml), Balthazar (12000ml), Nebuchadnezzar (15000ml).
+
+### wine_vintage_formats
+Tracks which bottle formats are available for a given vintage, with optional per-format production and pricing.
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| wine_id | uuid | FK wines, NOT NULL | ON DELETE CASCADE |
+| vintage_year | smallint | NOT NULL | |
+| bottle_format_id | uuid | FK bottle_formats, NOT NULL | ON DELETE CASCADE |
+| cases_produced | integer | nullable | Production in this format |
+| release_price_usd | numeric(10,2) | nullable | Price for this specific format |
+| created_at | timestamptz | default now() | |
+UNIQUE(wine_id, vintage_year, bottle_format_id)
+
+---
+
+## 20. Classifications
 
 ### classifications
 Classification systems (Bordeaux 1855, Burgundy Grand/Premier Cru, St-Émilion GCC, etc.).
@@ -604,7 +713,7 @@ id UUID PK, classification_level_id FK NOT NULL, entity_type NOT NULL, entity_id
 
 ---
 
-## 20. Flex Fields
+## 21. Flex Fields
 
 ### attribute_definitions
 Defines available flex attributes. Pre-existing table.
@@ -616,7 +725,7 @@ id UUID PK, attribute_id FK attribute_definitions NOT NULL, entity_type NOT NULL
 
 ---
 
-## 21. External IDs
+## 22. External IDs
 
 ### external_ids
 Generic registry for external system IDs (LWIN, CellarTracker, Vivino, Wine-Searcher, etc.) on any entity. Polymorphic.
@@ -624,7 +733,7 @@ id UUID PK, entity_type NOT NULL, entity_id UUID NOT NULL, system NOT NULL, exte
 
 ---
 
-## 22. Tasting Descriptors
+## 23. Tasting Descriptors
 
 ### tasting_descriptors
 Hierarchical flavor vocabulary (e.g., citrus → lemon → lemon zest). Reference table.
@@ -635,7 +744,7 @@ PK: composite (wine_id, vintage_year, descriptor_id). frequency integer default 
 
 ---
 
-## 23. Importers
+## 24. Importers
 
 ### importers
 Import companies. Country-agnostic but populated US-first (TTB COLA as primary data source).
@@ -646,7 +755,7 @@ PK: composite (producer_id, importer_id). is_current boolean default true, start
 
 ---
 
-## 24. Label Designations
+## 25. Label Designations
 
 ### label_designations
 Controlled vocabulary for wine label terms (Riserva, Kabinett, Estate Bottled, etc.). Replaces free-text `wines.label_designation`.
@@ -686,7 +795,22 @@ PK: composite (wine_id, label_designation_id).
 
 ---
 
-## 25. X-Wines Staging Tables (reference only)
+## 26. Appellation Rules
+
+### appellation_rules
+Flexible JSONB storage for appellation-level winemaking/production rules. Covers ABV minimums, yield limits, oak aging, bottle aging, allowed methods — varies wildly across regulatory frameworks.
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| appellation_id | uuid | FK appellations, NOT NULL, UNIQUE | One row per appellation |
+| rules | jsonb | NOT NULL, default '{}' | e.g., min_abv_pct, max_yield_hl_ha, min_oak_months, min_bottle_months |
+| source | text | nullable | Regulatory document reference |
+| notes | text | nullable | |
+| created_at / updated_at | timestamptz | standard | |
+
+---
+
+## 27. X-Wines Staging Tables (reference only)
 
 Bulk data from the X-Wines dataset (CC0 public domain). Kept for reference but not actively maintained. Data quality is lower than canonical tables.
 
@@ -710,6 +834,6 @@ Bulk data from the X-Wines dataset (CC0 public domain). Kept for reference but n
 
 ## Table Count
 
-**Canonical:** 74 tables (Geography 5, Producers 5, Wines 4, Vintages 1, Grapes 6, Weather 1, Soil 4, Water 4, Certifications 6, Sources 1, Scores 2, Pricing 1, Documents 3, Insights 11, Trends 1, Search/Dedup 3, Enrichment 1, Vineyards 3, Classifications 3, Flex Fields 2, External IDs 1, Tasting Descriptors 2, Importers 2, Label Designations 3)
+**Canonical:** 75 tables (Geography 5, Producers 5, Wines 4, Vintages 1, Grapes 6, Weather 1, Soil 4, Water 4, Certifications 6, Sources 1, Scores 2, Pricing 1, Documents 3, Insights 11, Trends 1, Search/Dedup 3, Enrichment 1, Vineyards 3, Classifications 3, Flex Fields 2, External IDs 1, Tasting Descriptors 2, Importers 2, Label Designations 3, Appellation Rules 1)
 **xwines_ staging:** 13 tables
-**Total:** 87 tables
+**Total:** 88 tables

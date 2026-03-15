@@ -60,7 +60,7 @@ If the user is going a long stretch without wrapping up, if decisions are being 
 
 ### Architecture
 The database has two layers:
-- **Canonical tables** (`producers`, `wines`, `wine_vintages`, etc.) — curated, high-quality data. Currently empty (cleared 2026-03-14 for schema hardening). Quality bar is high.
+- **Canonical tables** (`producers`, `wines`, `wine_vintages`, etc.) — curated, high-quality data. Phase 1c trial imports complete (2026-03-15): 3 producers, 26 wines, 59 vintages, 59 scores. Quality bar is high.
 - **xwines_* tables** — bulk X-Wines dataset dump (~530K wines, ~2.2M vintages, ~32K producers). Kept as reference but not actively maintained. Data quality is lower.
 
 ### Reference Tables (complete)
@@ -111,7 +111,7 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 
 **Grapes:** VIVC import complete — 9,690 grapes imported from VIVC cache, 34,833 synonyms, parentage resolved (~3,000+ grapes with parent links). Three-tier display name strategy: 26 Tier 1 overrides (Merlot, Malbec, Grenache, etc.), 154 Tier 2 family-preserved (Pinot Noir, Cabernet Sauvignon), 9,510 Tier 3 auto. Country-specific synonyms added (Zinfandel/US, Primitivo/IT, Garnacha/ES, Monastrell/ES, Alvarinho/PT, Gouveio/PT). `display_name` column added to grapes table. VIVC Phase 5 (reconnect varietal categories) still pending.
 
-**Publications:** 66 publications rebuilt from authoritative sources. Scoring systems, scale ranges, active status. Types: critic_publication, community, auction_house, competition, aggregator. Two-pass audit applied: 4 set inactive (Tanzer absorbed by Vinous, Dias Blue defunct, IWR/Connoisseurs' Guide ceased), Weinwisser country fixed (DE→CH), 3 scale_min fixes.
+**Publications:** 71 publications rebuilt from authoritative sources (66 original + 5 added 2026-03-15: View From the Cellar, Prince of Pinot, International Wine Review, Jasper Morris MW, Farr Vintners). Scoring systems, scale ranges, active status. Types: critic_publication, community, auction_house, competition, aggregator. Two-pass audit applied: 4 set inactive (Tanzer absorbed by Vinous, Dias Blue defunct, IWR/Connoisseurs' Guide ceased), Weinwisser country fixed (DE→CH), 3 scale_min fixes.
 
 **Attribute definitions:** 73 definitions across 6 categories (chemistry 8, winemaking 23, viticulture 13, production 15, service 6, business 8). Sources: OIV International Code (chemistry), WSET L3/L4 (winemaking/viticulture), real producer/retailer websites (production/business). Two-pass audit: 2 renames (serving_temp, aging_potential), 10 additions, 1 citation fix.
 
@@ -125,8 +125,25 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
+### Content Tables (Phase 1c trial imports, 2026-03-15)
+- **6 producers**, **103 wines**, 559 vintages, 521 scores, 152 wine_grapes, 141 wine_vintage_grapes, 9 wine_label_designations, 6 winemakers, 7 producer-winemaker links, **40 entity_classifications** (20 Grand Cru + 20 Premier Cru)
+  - Fort Ross Vineyard (US/Sonoma, estate): 15 wines, 112 vintages, 84 scores
+  - Sea Slopes (US/Sonoma, child of Fort Ross): 2 wines, 24 vintages, 15 scores
+  - Moone Tsai (US/Napa, negociant): 10 wines, 83 vintages, 48 scores
+  - López de Heredia (Spain/Rioja, estate): 9 wines, 115 vintages, 67 scores
+  - Marchesi Antinori (Italy/Tuscany, estate): 23 wines, 76 vintages, 98 scores
+  - Louis Jadot (France/Burgundy, negociant): 44 wines, 149 vintages, 209 scores, 40 classifications
+- Import architecture: `lib/import.mjs` (shared library) + `data/imports/{slug}.json` (per-producer data)
+- `--replace` mode: deletes all existing producer data in FK dependency order, then fresh insert
+- `parseDate()` helper converts informal dates ("August 2024" → "2024-08-01")
+- Field name flexibility: accepts both `oak_duration_months`/`oak_months`, `production_cases`/`cases_produced`, etc.
+- Parent-child producer relationship working: Sea Slopes → Fort Ross Vineyard & Winery
+- **Classification linkage** (2026-03-15): Importer resolves `classification.system` + `classification.level` → `entity_classifications`. Jadot Grand Cru/Premier Cru wines linked to Burgundy Vineyard Classification.
+- **Critic drinking windows**: `critic_drink_window_start/end` on `wine_vintage_scores` — importer maps from JSON `drinking_window_start/end` or `drink_from/drink_to`.
+- **Wine aliases**: `wine_aliases` table for tracking name evolution (previous_name, alternate_label, market_name). Import support in place.
+- **Vineyard sourcing**: `wine_vineyards` + `wine_vintage_vineyards` import support in place. Resolves vineyards by name from `vineyards` table.
+
 ### What's Not There Yet
-- All content tables empty (0 producers, 0 wines, 0 vintages, 0 scores)
 - Most insight tables empty (wine, producer, soil, water body)
 - All weather data (appellation_vintages)
 - All document tables
@@ -159,7 +176,37 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 8. ~~Populate appellation_grapes from disciplinari/WSET~~ ✓ (9,233 rows, 3,206 appellations, 100% coverage)
 9. ~~Populate region_grapes and country_grapes~~ ✓ (1,671 region rows, 541 country rows — 100% coverage at all 3 geographic levels)
 10. ~~Expert audit of region/country grape data~~ ✓ — two-pass audit (training data + web sources), 10 deletions, 34 additions. ~90 medium/low parked. Cross-table validation (2026-03-15): +14 net changes to region_grapes.
-11. Trial producer imports: Moone Tsai, Fort Ross, López de Heredia, + Burgundy TBD, Tuscany TBD — Phase 1c
+11. ~~Trial producer imports~~ ✓ — Phase 1c complete (2026-03-15). 6 producers across 4 countries:
+    - **Fort Ross** (US/Sonoma, estate): 15 wines, 112 vintages, 84 scores. Winemaker: Jeff Pisoni.
+    - **Sea Slopes** (US/Sonoma, child of Fort Ross): 2 wines, 24 vintages, 15 scores. parent_producer_id working.
+    - **Moone Tsai** (US/Napa, negociant): 10 wines, 83 vintages, 48 scores. Winemaker: Philippe Melka (consulting).
+    - **López de Heredia** (Spain/Rioja, estate): 9 wines, 115 vintages, 67 scores. Winemaker: Mercedes López de Heredia. Label designations linked.
+    - **Antinori** (Italy/Tuscany, estate): 23 wines, 76 vintages, 98 scores. Winemaker: Renzo Cotarella. 5 estates.
+    - **Louis Jadot** (France/Burgundy, negociant): 44 wines, 149 vintages, 209 scores, 40 classifications. Winemakers: Frédéric Barnier, Christine Botton.
+    - Schema additions: winemakers, bottle_formats, wine_vineyards, wine_vintage_vineyards, wine_aliases, parent_producer_id, classification linkage, critic drinking windows. 5 new publications added. Import library hardened.
+12. Schema improvements from trial imports (2026-03-15):
+    - ~~Classification linkage~~ ✓ — entity_classifications populated for Jadot wines
+    - ~~Critic drinking windows~~ ✓ — columns already existed, importer now maps to them
+    - ~~Wine aliases table~~ ✓ — wine_aliases created for name evolution tracking
+    - ~~Vineyard sourcing~~ ✓ — import support added for wine_vineyards/wine_vintage_vineyards
+    - Multi-estate structure: use parent-child pattern (no schema change needed)
+    - Clone data: stays in metadata JSONB (deferred)
+
+### Schema Post-Import Hardening (2026-03-15)
+- **Metadata → columns:** 4 fields promoted from metadata JSONB: `release_date` (wine_vintages), `first_vintage_year` (wines), `style` (wines), `philosophy` (producers). 150+ metadata entries identified for migration to proper table links (classifications, vineyards, estates).
+- **Enrichment log rebuilt:** Original was a basic job queue. Rebuilt with model tracking, cost tracking (input_tokens/output_tokens/cost_usd), prompt template versioning, field-level change tracking, review workflow.
+- **Appellation rules:** New `appellation_rules` table with flexible JSONB `rules` column for winemaking requirements (ABV, yield, aging, methods). One row per appellation.
+- **`updated_at` triggers:** `set_updated_at()` function + 36 BEFORE UPDATE triggers. Every table with `updated_at` now auto-sets on UPDATE.
+- **Orphan validation:** `validate_polymorphic_fks()` function checks entity_classifications, entity_attributes, external_ids, enrichment_log for orphaned rows. Currently clean.
+- **Soft delete consistency:** Audited — all 15 entity tables have `deleted_at`, all junction/log tables correctly don't. Added missing `deleted_at` to winemakers.
+- **Multi-source merging:** Architecture designed (source priority tiers, field provenance sidecar table, merge mode on import). Implementation deferred to dedicated session.
+
+### Technical Debt (pre-frontend)
+- **RLS policies:** Only 3/75 tables have RLS. Need "public read, service_role write" before frontend ships.
+- **Search infrastructure:** pg_trgm indexes exist but no full-text search, no cross-entity search function.
+- **API views:** No views for common joins (wine detail, producer detail, search index).
+- **Migrations in git:** All DDL via Supabase MCP. Need `supabase/migrations/` before multi-developer.
+- **FK normalization:** `wine_vintage_scores`/`wine_vintage_grapes` use `wine_id + vintage_year` instead of `wine_vintage_id`.
 
 ### Open Questions (deferred)
 - Data freshness strategy (how/when to re-import)
