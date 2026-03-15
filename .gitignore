@@ -3,5 +3,36 @@ node_modules/
 
 # Large intermediate data files
 *.jsonl
-!totalwine_lexington_green.jsonl
 *.log
+
+# Vivino pipeline artifacts
+vivino_*.json
+vivino_mega_*.json
+
+# Scraper progress/state files
+*_progress.json
+*_urls.json
+
+# Classifier output
+classify_output*.txt
+
+# TotalWine artifacts
+tw_remaining*.txt
+totalwine_progress.json
+
+# GeoJSON source files (large, downloaded from external sources)
+*.geojson
+
+# Downloaded geo source data (shapefiles, GeoPackages, zips)
+data/geo/
+
+# Large data caches (reproducible from source APIs)
+data/vivc_grapes_cache.json
+data/de_vineyards_cache.json
+data/rlp_vineyards.json
+data/imports/kl_wine_details_cache.json
+data/imports/kermit_lynch_catalog.json
+data/imports/lopez_de_heredia_catalog.json
+
+# Local settings
+.claude/settings.local.json
