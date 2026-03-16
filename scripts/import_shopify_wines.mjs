@@ -249,7 +249,7 @@ function parseTags(tags) {
 
     // Pét-nat / Pet'nat
     if (lower === 'pet nat' || lower === 'petnat' || lower === "pet'nat") {
-      result.isSparkling = true; result.effervescence = 'petillant-naturel'; continue;
+      result.isSparkling = true; result.effervescence = 'petillant_naturel'; continue;
     }
 
     // Flat tag matching
@@ -600,7 +600,7 @@ async function main() {
       effervescence = tagData.effervescence || 'sparkling';
     }
     if (/Pét-Nat|Pet[\s'-]?Nat|Ancestral/i.test(product.title)) {
-      effervescence = 'petillant-naturel';
+      effervescence = 'petillant_naturel';
     }
     if (/Frizzante|Vino Frizzante/i.test(product.title)) {
       effervescence = 'frizzante';

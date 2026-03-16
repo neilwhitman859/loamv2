@@ -1,0 +1,1095 @@
+{
+  "producer": {
+    "name": "Cantina Terlano",
+    "slug": "cantina-terlano",
+    "country": "Italy",
+    "region": "Alto Adige",
+    "appellation": "Alto Adige Terlano",
+    "producer_type": "cooperative",
+    "website": "https://www.cantina-terlano.com",
+    "founded_year": 1893,
+    "hectares_under_vine": 165,
+    "metadata": {
+      "members": 143,
+      "tier_system": ["Primo", "Rarity", "Selection", "Tradition"],
+      "location": "Terlano (Terlan), South Tyrol, Alto Adige",
+      "philosophy": "Founded in 1893, Cantina Terlano is a cooperative of 143 grower-members farming 165 hectares on quartz porphyry volcanic soils. Famous for extreme aging on lees — the Rarity program releases wines after 10+ years on lees. Winemaker Rudi Kofler oversees all production. The unique porphyry terroir gives the wines their distinctive mineral character.",
+      "winemaker_note": "Rudi Kofler — cellar master"
+    },
+    "winemakers": [
+      {
+        "name": "Rudi Kofler",
+        "role": "head",
+        "country": "Italy",
+        "metadata": {
+          "title": "Cellar Master"
+        }
+      }
+    ]
+  },
+  "_notes": {
+    "scope": "Complete portfolio of 22 wines across 4 tiers: Primo (1), Rarity (1), Selection (11 — 7 white, 4 red), Tradition (10 — 6 white, 4 red). All wines scraped from cantina-terlano.com.",
+    "appellations": "Most wines are Alto Adige Terlano DOC. Exceptions: Santa Maddalena is Alto Adige Santa Maddalena DOC. Lagrein Gries Riserva is Alto Adige Gries DOC. The Sauvignon Asparagus is a special bottling within Alto Adige DOC.",
+    "grapes_note": "Torilan lists 'Cabernet' without specifying Sauvignon vs Franc — entered as Cabernet Sauvignon based on Alto Adige convention."
+  },
+  "wines": [
+    {
+      "name": "Terlaner I Primo Grande Cuvee",
+      "color": "white",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Pinot Bianco", "percentage": 60 },
+        { "name": "Chardonnay", "percentage": 38 },
+        { "name": "Sauvignon Blanc", "percentage": 2 }
+      ],
+      "food_pairings": [],
+      "metadata": {
+        "tier": "Primo",
+        "altitude_m": "330-600",
+        "aspect": "South-Southwest",
+        "slope_pct": "10-55",
+        "soil": "Light, sandy-loamy soils with 55-60% quartz content and slightly acidic pH; subvolcanic origin with high permeability and limited nutrient supply",
+        "aging_potential": ">10 years",
+        "serving_temp_c": "12-14",
+        "vinification_notes": "Fermented in 12 hl oak casks. Malolactic fermentation and aging on lees for 12 months in big wooden barrels."
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "abv": 14.0,
+          "rs_g_l": 1.1,
+          "ta_g_l": 6.4,
+          "yield_hl_ha": 35,
+          "oak_duration_months": 12,
+          "aging_vessel": "large oak casks",
+          "winemaker_notes": "Color: Brilliant straw yellow. Nose: Rich and complex; citrus fruit, white pepper, herbs, delicate smoky note. Palate: Elegant and perfectly balanced with remarkable structure and subtle texture; extremely long finish."
+        },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2017 },
+        { "year": 2016 },
+        { "year": 2015 },
+        { "year": 2013 },
+        { "year": 2012 },
+        { "year": 2011 }
+      ]
+    },
+    {
+      "name": "Rarity Pinot Bianco",
+      "color": "white",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Pinot Bianco", "percentage": 100 }
+      ],
+      "food_pairings": [],
+      "metadata": {
+        "tier": "Rarity",
+        "altitude_m": "550",
+        "aspect": "Southwest",
+        "slope_pct": "30-50",
+        "soil": "Light, sandy-loamy soils with 55-60% quartz content, slightly acidic pH, volcanic origin quartz porphyry bedrock",
+        "aging_potential": ">10 years",
+        "serving_temp_c": "12-14",
+        "vinification_notes": "Fermented in stainless steel tanks. Malolactic fermentation, then 12 months in big wooden barrels, followed by 11 years on lees in steel tanks without filtering or fining."
+      },
+      "vintages": [
+        {
+          "year": 2011,
+          "abv": 14.0,
+          "rs_g_l": 1.8,
+          "ta_g_l": 5.7,
+          "yield_hl_ha": 40,
+          "oak_duration_months": 12,
+          "aging_vessel": "big wooden barrels, then steel tanks on lees",
+          "winemaker_notes": "Color: Intensive light straw yellow with delicate greenish reflections. Nose: Noble aromas of white flowers, chamomile, white peach with restrained mineral notes reminiscent of flint. Palate: Grippy, compact yet supple structure with infinitely long finish, enormous tension and salty minerality."
+        }
+      ]
+    },
+    {
+      "name": "Nova Domus Riserva",
+      "color": "white",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "label_designations": ["Riserva"],
+      "grapes": [
+        { "name": "Pinot Bianco", "percentage": 70 },
+        { "name": "Chardonnay", "percentage": 25 },
+        { "name": "Sauvignon Blanc", "percentage": 5 }
+      ],
+      "food_pairings": [
+        "Caviar",
+        "Grilled salmon steaks",
+        "Fried tuna",
+        "Fiorentina T-bone steaks",
+        "Saltimbocca alla romana",
+        "Braised knuckle of veal",
+        "Parmigiana with aubergines",
+        "Truffle fonduta",
+        "Tripe with filet of veal and asparagus crisps"
+      ],
+      "metadata": {
+        "tier": "Selection",
+        "altitude_m": "300-600",
+        "aspect": "South-Southwest",
+        "soil": "Light, sandy-loamy soils with 55-60% quartz content, slightly acidic pH, high permeability, limited nutrient supply",
+        "aging_potential": ">10 years",
+        "serving_temp_c": "12-14",
+        "vinification_notes": "Fermented in big oak barrels (30 hl). Partial malolactic fermentation and aging on lees for 12 months in big wooden barrels. Blending three months before bottling."
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "abv": 14.0,
+          "rs_g_l": 1.1,
+          "ta_g_l": 6.0,
+          "yield_hl_ha": 42,
+          "oak_duration_months": 12,
+          "aging_vessel": "large oak barrels",
+          "winemaker_notes": "Color: Fresh light yellow with slightly greenish nuances. Nose: Multifaceted with hints of herbs and spices (aniseed, mint, sage), fruit aromas (apricot, mandarine, honeydew melon, maracuja, passion fruit), salty mineral components. Palate: Complex and delicate, creamy softness with aromatic minerality, long finish."
+        },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2017 },
+        { "year": 2016 },
+        { "year": 2015 },
+        { "year": 2014 },
+        { "year": 2013 },
+        { "year": 2012 },
+        { "year": 2011 },
+        { "year": 2010 },
+        { "year": 2009 }
+      ]
+    },
+    {
+      "name": "Vorberg Riserva",
+      "color": "white",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "label_designations": ["Riserva"],
+      "grapes": [
+        { "name": "Pinot Bianco", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Spicy fish soup",
+        "Mussels in pepper sauce",
+        "Spaghetti allo scoglio",
+        "Mussels au gratin",
+        "Grilled ink fish",
+        "Poached char",
+        "Artichokes alla romana",
+        "Mature Pecorino",
+        "Mature Parmesan with mostarda",
+        "Tete de Moine"
+      ],
+      "metadata": {
+        "tier": "Selection",
+        "altitude_m": "450-650",
+        "aspect": "South-Southwest",
+        "slope_pct": "5-75",
+        "soil": "Light, sandy-loamy soils with 55-60% quartz content, slightly acidic pH, volcanic origin bedrock",
+        "aging_potential": ">10 years",
+        "serving_temp_c": "12-14",
+        "vinification_notes": "Fermented in big oak barrels (70 + 30 hl). Malolactic fermentation and aging on lees for 12 months in traditional wooden barrels."
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "abv": 13.5,
+          "rs_g_l": 1.0,
+          "ta_g_l": 5.8,
+          "yield_hl_ha": 52,
+          "oak_duration_months": 12,
+          "aging_vessel": "large oak barrels",
+          "winemaker_notes": "Color: Sparkling straw yellow. Nose: Ripe fruit (honeydew melon, white peach, pear, Golden Delicious apple), quince jelly, camomile, pineapple, mineral flint notes. Palate: Fruity aromatic and salty interplay with compact structure, elegant creamy elements, lingering minerally spicy character."
+        },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2017 }
+      ]
+    },
+    {
+      "name": "Quarz",
+      "color": "white",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Sauvignon Blanc", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Oysters",
+        "Salmon tartare",
+        "Shellfish crudites",
+        "Green apple risotto with crispy fried char filets",
+        "Poached lobster",
+        "Roast lamb in herb crust with poached asparagus",
+        "Mature goat's cheese",
+        "White Terlano asparagus risotto with Tropea onions and balsamico vinegar"
+      ],
+      "metadata": {
+        "tier": "Selection",
+        "altitude_m": "300-550",
+        "aspect": "South-Southwest",
+        "slope_pct": "10-40",
+        "soil": "Light, sandy-loamy soils with 55-60% quartz content, slightly acidic pH, volcanic porphyry bedrock origin",
+        "aging_potential": ">10 years",
+        "serving_temp_c": "12-14",
+        "vinification_notes": "50% fermented in big wooden barrels, 50% in stainless steel tanks. Aging on lees for 9 months. Blending three months before bottling."
+      },
+      "vintages": [
+        {
+          "year": 2024,
+          "abv": 14.0,
+          "rs_g_l": 2.0,
+          "ta_g_l": 6.2,
+          "yield_hl_ha": 40,
+          "oak_duration_months": 9,
+          "aging_vessel": "50% large oak barrels, 50% stainless steel",
+          "winemaker_notes": "Color: Brilliant straw yellow. Nose: Exotic with mango, papaya, lime, red grapefruit, lemon grass, lemon balm, mint, green tea, flint minerality, and gooseberry notes. Palate: Fascinating interplay of juicy fruit aromas and delicate minerality creating harmonious opulence with long, impressive finish."
+        },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2017 },
+        { "year": 2016 },
+        { "year": 2015 },
+        { "year": 2014 },
+        { "year": 2013 },
+        { "year": 2012 },
+        { "year": 2011 },
+        { "year": 2010 }
+      ]
+    },
+    {
+      "name": "Lunare",
+      "color": "white",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Gewurztraminer", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Sweet and sour Asian cuisine dishes",
+        "Grilled scorpion fish or swordfish",
+        "Pink-roasted pigeon breast",
+        "Squash gnocchi with walnuts and Alba truffles with Balsamico dressing",
+        "Rice pudding with cinnamon",
+        "Mild blue cheese like mild gorgonzola"
+      ],
+      "metadata": {
+        "tier": "Selection",
+        "altitude_m": "300-400",
+        "aspect": "South-Southwest",
+        "slope_pct": "5-25",
+        "soil": "Red porphyry (quartz porphyry), igneous rock with large mineral inclusions",
+        "aging_potential": ">10 years",
+        "serving_temp_c": "12-14",
+        "vinification_notes": "Fermented in stainless steel tanks and big wooden barrels. Aging on lees for 9 months, 50% in big wooden barrels, 50% in stainless steel tanks. Blending 3 months before bottling."
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "abv": 15.0,
+          "rs_g_l": 6.6,
+          "ta_g_l": 5.8,
+          "yield_hl_ha": 40,
+          "oak_duration_months": 9,
+          "aging_vessel": "50% large oak barrels, 50% stainless steel",
+          "winemaker_notes": "Color: Intensive light-golden yellow. Nose: Dense, finely knit nose with exotic tropical aromas of grapefruit, lime, lychee and orange with rose leaf and ginger notes. Palate: Fruity aromatic character continues on palate, highly quaffable with classic dry finish, complex yet very salty and smooth."
+        },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 }
+      ]
+    },
+    {
+      "name": "Kreuth",
+      "color": "white",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Chardonnay", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Vitello tonnato",
+        "Marinated octopus",
+        "Mixed antipasti",
+        "Grilled vegetables",
+        "Cheese dumplings",
+        "Pasta aglio olio peperoncino",
+        "Grilled fish with fennel",
+        "Crepes au gratin with radicchio filling",
+        "Fresh Tomino cheese"
+      ],
+      "metadata": {
+        "tier": "Selection",
+        "altitude_m": "260-350",
+        "aspect": "South-Southwest",
+        "slope_pct": "5-30",
+        "soil": "Light, sandy-loamy soils with 55-60% quartz content, slightly acidic pH, high permeability, volcanic origin bedrock",
+        "aging_potential": ">5 years",
+        "serving_temp_c": "12-14",
+        "vinification_notes": "50% fermented in stainless steel tanks, 50% in big wooden barrels. Partial malolactic fermentation and aging on lees for 10 months."
+      },
+      "vintages": [
+        {
+          "year": 2024,
+          "abv": 14.0,
+          "rs_g_l": 1.5,
+          "ta_g_l": 5.7,
+          "yield_hl_ha": 56,
+          "oak_duration_months": 10,
+          "aging_vessel": "50% large oak barrels, 50% stainless steel",
+          "winemaker_notes": "Color: Brilliant straw yellow. Nose: Exotic fruit components such as maracuja, star fruit and citrus, with spicy minerally notes of flint. Palate: Supple and firm structure with spicy, mineral and juicy aromas giving distinctive, strong terroir character."
+        },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 }
+      ]
+    },
+    {
+      "name": "Winkl",
+      "color": "white",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Sauvignon Blanc", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Boiled white asparagus in Bolzano sauce",
+        "Steamed green asparagus",
+        "Tuna carpaccio",
+        "Smoked salmon",
+        "Raw langoustines",
+        "Nettle dumplings",
+        "Poached trout with vegetables",
+        "Young goat's cheese"
+      ],
+      "metadata": {
+        "tier": "Selection",
+        "altitude_m": "280-580",
+        "aspect": "South-Southwest",
+        "slope_pct": "5-70",
+        "soil": "Light, sandy-loamy soils with 55-60% quartz content, slightly acidic pH, high permeability, limited nutrient supply, quartz porphyry bedrock of volcanic origin",
+        "aging_potential": ">5 years",
+        "serving_temp_c": "10-12",
+        "vinification_notes": "Fermented in stainless steel tanks. Aging on lees for 7-8 months, 80% in stainless steel tanks, 20% in big wooden barrels."
+      },
+      "vintages": [
+        {
+          "year": 2025,
+          "abv": 13.5,
+          "rs_g_l": 1.2,
+          "ta_g_l": 6.0,
+          "yield_hl_ha": 56,
+          "oak_duration_months": 8,
+          "aging_vessel": "80% stainless steel, 20% large oak barrels",
+          "winemaker_notes": "Color: Intensive straw yellow with delicate green shimmer. Nose: Ripe fruit aromas of apricot, mandarin and passion fruit with elements of elderberry, gooseberry and mint. Palate: Fruitiness continues with fine acidity, good structure, minerally but aromatic finish."
+        },
+        { "year": 2024 },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Terlaner Classico",
+      "color": "white",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Pinot Bianco", "percentage": 60 },
+        { "name": "Chardonnay", "percentage": 30 },
+        { "name": "Sauvignon Blanc", "percentage": 10 }
+      ],
+      "food_pairings": [
+        "Terlano wine soup",
+        "Raw white asparagus salad",
+        "Pizza and pasta with tomato sauce",
+        "Focaccia with rosemary",
+        "Penne all'arrabbiata",
+        "Parmesan and fresh pecorino",
+        "Bacon dumplings",
+        "Sausage with sauerkraut",
+        "Turkey breast with root vegetables",
+        "Veal roast"
+      ],
+      "metadata": {
+        "tier": "Tradition",
+        "altitude_m": "280-700",
+        "aspect": "South-Southwest",
+        "slope_pct": "5-60",
+        "soil": "Light, sandy-loamy soils with 55-60% quartz content, slightly acidic pH, volcanic quartz porphyry bedrock",
+        "aging_potential": ">5 years",
+        "serving_temp_c": "10-12",
+        "vinification_notes": "Fermented in stainless steel tanks. Aging on lees for 6-7 months, 80% in stainless steel tanks, 20% in big wooden barrels."
+      },
+      "vintages": [
+        {
+          "year": 2025,
+          "abv": 13.5,
+          "rs_g_l": 1.0,
+          "ta_g_l": 5.8,
+          "yield_hl_ha": 63,
+          "oak_duration_months": 7,
+          "aging_vessel": "80% stainless steel, 20% large oak barrels",
+          "winemaker_notes": "Color: Brilliant pale yellow with green nuances. Nose: Green apple and white peach with fine nuances of lemon balm and mint. Palate: Peach-forward with lively character, multifaceted and well-structured flavor from freshness and minerality with persistent finish."
+        },
+        { "year": 2024 },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Porphyr Riserva",
+      "color": "red",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "label_designations": ["Riserva"],
+      "grapes": [
+        { "name": "Lagrein", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Pink roasted saddle of venison in walnut crust with root vegetables and red cabbage",
+        "Rib of beef braised in Lagrein with mixed polenta and baby vegetables",
+        "Braised calf's cheek with Lagrein sauce on celeriac foam"
+      ],
+      "metadata": {
+        "tier": "Selection",
+        "altitude_m": "250-270",
+        "aspect": "Southwest",
+        "slope_pct": "0-5",
+        "soil": "Porphyry bedrock; diverse soil types characteristic of Alto Adige",
+        "aging_potential": ">5 years",
+        "serving_temp_c": "18",
+        "vinification_notes": "Fermented in stainless steel tanks. Malolactic fermentation and aging in barriques for 18 months, one-third new barrels. Blending three months before bottling."
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "abv": 14.0,
+          "rs_g_l": 1.7,
+          "ta_g_l": 4.8,
+          "yield_hl_ha": 42,
+          "oak_duration_months": 18,
+          "oak_pct_new": 33,
+          "aging_vessel": "barriques",
+          "winemaker_notes": "Color: Deep impenetrable ruby with violet reflections. Nose: Aromas of morello cherry and bilberry with notes of licorice, coffee, vanilla, clove and black tea. Palate: Harmonious with compact, concentrated multilayered flavors combining juicy fruit with spicy, peppery elements and dark chocolate notes, silky tannins."
+        },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2017 },
+        { "year": 2016 },
+        { "year": 2015 }
+      ]
+    },
+    {
+      "name": "Gries Riserva",
+      "color": "red",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "label_designations": ["Riserva"],
+      "grapes": [
+        { "name": "Lagrein", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Roast chamois with root vegetables",
+        "Veal cheeks braised in Lagrein with root vegetables"
+      ],
+      "metadata": {
+        "tier": "Selection",
+        "altitude_m": "250",
+        "aspect": "South-Southwest",
+        "slope_pct": "0-5",
+        "soil": "Light, sandy-loamy soils with 55-60% quartz content and slightly acidic pH, derived from quartz porphyry bedrock of volcanic origin",
+        "aging_potential": ">5 years",
+        "serving_temp_c": "16-18",
+        "vinification_notes": "Fermented in stainless steel tanks. Malolactic fermentation. Aged 12 months, 50% in big wooden barrels and 50% in barriques (one-third new). Blended three months before bottling."
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "abv": 14.0,
+          "rs_g_l": 1.5,
+          "ta_g_l": 4.5,
+          "yield_hl_ha": 56,
+          "oak_duration_months": 12,
+          "oak_pct_new": 17,
+          "aging_vessel": "50% large oak barrels, 50% barriques",
+          "winemaker_notes": "Color: Deep ruby to garnet red with delicate violet shimmer. Nose: Earthy, minerally notes with morello cherry, dark chocolate and plum jam. Palate: Spicy, velvety fruit notes with multilayered opulence and great complexity."
+        },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2017 }
+      ]
+    },
+    {
+      "name": "Monticol Riserva",
+      "color": "red",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "label_designations": ["Riserva"],
+      "grapes": [
+        { "name": "Pinot Noir", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Saddle of venison with red wine apple puree and quark spaetzle",
+        "Poppy-seed roasted saddle of sucking calf",
+        "Loin of beef herb roasted in foil with potato pancakes and chestnut ragout",
+        "Calf's liver in thyme butter",
+        "Veal paillard with Mediterranean vegetables",
+        "Barley risotto",
+        "Salted and smoked venison with cranberry sauce and horseradish"
+      ],
+      "metadata": {
+        "tier": "Selection",
+        "altitude_m": "450-600",
+        "aspect": "Southwest, East",
+        "slope_pct": "5-70",
+        "soil": "Light, sandy-loamy soils with 55-60% quartz content and slightly acidic pH. Quartz porphyry volcanic bedrock foundation with high permeability.",
+        "aging_potential": ">5 years",
+        "serving_temp_c": "16-18",
+        "vinification_notes": "Fermented in stainless steel tanks. Malolactic fermentation. 12 months aging: 30% in big wooden barrels, 70% in barriques (one-third new). Blending three months before bottling."
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "abv": 13.5,
+          "rs_g_l": 0.3,
+          "ta_g_l": 5.9,
+          "yield_hl_ha": 40,
+          "oak_duration_months": 12,
+          "oak_pct_new": 23,
+          "aging_vessel": "30% large oak barrels, 70% barriques",
+          "winemaker_notes": "Color: Intensive ruby red. Nose: Multifaceted with delicate primary aromas of wild strawberries, raspberry and cherry, blended with restrained elegant spicy notes and flint aromas. Palate: Well balanced with mineral elegance, long and exciting finish."
+        },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2017 }
+      ]
+    },
+    {
+      "name": "Siebeneich Riserva",
+      "color": "red",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "label_designations": ["Riserva"],
+      "grapes": [
+        { "name": "Merlot", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Shoulder of kid braised in olive oil with asparagus",
+        "Beef tagliata on rocket",
+        "Rabbit stew",
+        "Braised leg of lamb with spinach polenta",
+        "Aubergine alla parmigiana"
+      ],
+      "metadata": {
+        "tier": "Selection",
+        "altitude_m": "250-280",
+        "aspect": "South-Southwest",
+        "slope_pct": "5-15",
+        "soil": "Light sandy-loamy soils with quartz porphyry bedrock of volcanic origin; 55-60% quartz content, slightly acidic pH",
+        "aging_potential": ">5 years",
+        "serving_temp_c": "16-18",
+        "vinification_notes": "Fermented in stainless steel tanks. Malolactic fermentation. 12 months aging: 50% in big wooden barrels, 50% in barriques (one-third new). Blended 3 months before bottling."
+      },
+      "vintages": [
+        {
+          "year": 2023,
+          "abv": 14.0,
+          "rs_g_l": 0.8,
+          "ta_g_l": 4.8,
+          "yield_hl_ha": 56,
+          "oak_duration_months": 12,
+          "oak_pct_new": 17,
+          "aging_vessel": "50% large oak barrels, 50% barriques",
+          "winemaker_notes": "Color: Brilliant deep ruby red. Nose: Primary fruit aromas of blackberry and cranberry with herbal notes of mint and eucalyptus, hint of black pepper. Palate: Sturdy tannin structure with rich fruit aromas displaying complexity, depth and length."
+        },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2017 }
+      ]
+    },
+    {
+      "name": "Pinot Bianco",
+      "color": "white",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Pinot Bianco", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Salmon and tuna carpaccio",
+        "Courgette flowers with stracchino cheese or burrata",
+        "Avocado salad",
+        "Spinach spaetzle or schlutzkrapfen",
+        "Spaghetti alla carbonara",
+        "Scallops au gratin",
+        "Grilled scampi, dentex or sea bream"
+      ],
+      "metadata": {
+        "tier": "Tradition",
+        "altitude_m": "350-900",
+        "aspect": "South-Southwest",
+        "slope_pct": "5-70",
+        "serving_temp_c": "10-12",
+        "vinification_notes": "Fermented in stainless steel tanks. Aging on the lees in steel tanks for 6-7 months."
+      },
+      "vintages": [
+        {
+          "year": 2025,
+          "abv": 13.0,
+          "rs_g_l": 1.6,
+          "ta_g_l": 5.9,
+          "yield_hl_ha": 63,
+          "aging_vessel": "stainless steel",
+          "winemaker_notes": "Color: Clear pale yellow with a slight greenish shimmer. Nose: Crisp notes of apple and pear mingling with aromas of raspberry and lime, plus a touch of camomile and lemon grass. Palate: Intrigues the palate with the fruit of the pear and quince aromas combined with a salty minerality with persistent aftertaste."
+        },
+        { "year": 2024 },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Chardonnay",
+      "color": "white",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Chardonnay", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Plateau de fruits de mer with raw prawns and langoustines",
+        "Vegetable risotto",
+        "Cream of root vegetable soups",
+        "Soft Robiola cheese and cheese dumplings",
+        "Pasta dishes with cheese",
+        "Sea bass in salt",
+        "Veal paillard"
+      ],
+      "metadata": {
+        "tier": "Tradition",
+        "altitude_m": "260-350",
+        "aspect": "West to Southwest",
+        "slope_pct": "5-70",
+        "serving_temp_c": "10-12",
+        "vinification_notes": "Fermented in stainless steel tanks. Aging on the lees in steel tanks for 6-7 months."
+      },
+      "vintages": [
+        {
+          "year": 2025,
+          "abv": 13.0,
+          "rs_g_l": 1.5,
+          "ta_g_l": 5.8,
+          "yield_hl_ha": 63,
+          "aging_vessel": "stainless steel",
+          "winemaker_notes": "Color: Brilliant light straw yellow. Nose: Exotic fruity impressions with nuances of banana, quince, passion fruit, mango and sugar melon plus a hint of lemon balm. Palate: Soft and harmonious with sweetish exotic fruit components and slightly mineral note."
+        },
+        { "year": 2024 },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Pinot Grigio",
+      "color": "white",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Pinot Grigio", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "South Tyrolean hors d'oeuvres such as smoked bacon",
+        "Cured meats like Bundnerfleisch or venison salami",
+        "Parma ham",
+        "Dried tomatoes and olive pate",
+        "Herb risotto",
+        "Nettle gnocchi or beetroot dumplings",
+        "Lightly truffled dishes",
+        "Tender veal and fine grilled fish"
+      ],
+      "metadata": {
+        "tier": "Tradition",
+        "altitude_m": "270-350",
+        "aspect": "West to Southwest",
+        "slope_pct": "5-20",
+        "serving_temp_c": "10-12",
+        "vinification_notes": "Fermented in stainless steel tanks. Aging on the lees in steel tanks for 5-7 months."
+      },
+      "vintages": [
+        {
+          "year": 2025,
+          "abv": 13.5,
+          "rs_g_l": 1.5,
+          "ta_g_l": 5.7,
+          "yield_hl_ha": 63,
+          "aging_vessel": "stainless steel",
+          "winemaker_notes": "Color: Intensive straw yellow. Nose: Stimulating fruit reminiscent of Williams pear, lychee and white melon with floral character. Palate: Finely balanced components from black tea aromas to exotic fruity nuances of melon and ripe grapefruit."
+        },
+        { "year": 2024 },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Gewurztraminer",
+      "color": "white",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Gewurztraminer", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Spicy dishes",
+        "Sweet and sour Asian creations",
+        "Squash gnocchi",
+        "Creamed squash soup",
+        "Boiled ham with horseradish sauce",
+        "Sweet and sour wok vegetables with chicken breast or shrimps",
+        "Wiener schnitzel with potato salad"
+      ],
+      "metadata": {
+        "tier": "Tradition",
+        "altitude_m": "270-450",
+        "aspect": "West to Southwest",
+        "slope_pct": "3-30",
+        "serving_temp_c": "10-12",
+        "vinification_notes": "Fermented in stainless steel tanks. 6-7 months aging on lees in steel tanks."
+      },
+      "vintages": [
+        {
+          "year": 2025,
+          "abv": 14.0,
+          "rs_g_l": 3.9,
+          "ta_g_l": 5.0,
+          "yield_hl_ha": 63,
+          "aging_vessel": "stainless steel",
+          "winemaker_notes": "Color: Full, intensive straw yellow. Nose: Stimulating aroma reminiscent of lychee and mango with delicate honeysuckle notes and rose petal. Palate: Aromatic character with fresh fruit, lively acidity combining with mineral notes for round, firm impression."
+        },
+        { "year": 2024 },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Muller Thurgau",
+      "color": "white",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Muller-Thurgau", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Aperitif",
+        "Swordfish carpaccio",
+        "Poached fish like blue trout",
+        "Sea bass in foil",
+        "Boiled beef with celeriac puree",
+        "Fresh alp cheese"
+      ],
+      "metadata": {
+        "tier": "Tradition",
+        "altitude_m": "500-900",
+        "aspect": "West to Southwest",
+        "slope_pct": "20-70",
+        "serving_temp_c": "10-12",
+        "vinification_notes": "Fermented in stainless steel tanks. Aging on the lees in steel tanks for 5-7 months."
+      },
+      "vintages": [
+        {
+          "year": 2025,
+          "abv": 12.5,
+          "rs_g_l": 2.0,
+          "ta_g_l": 6.0,
+          "yield_hl_ha": 63,
+          "aging_vessel": "stainless steel",
+          "winemaker_notes": "Color: Delicate pale yellow. Nose: Fine spicy aroma of grapefruit and white pepper with ripe peaches. Palate: Well-balanced structure with lively acidity, delicate and elegant."
+        },
+        { "year": 2024 },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Sauvignon Blanc",
+      "color": "white",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Sauvignon Blanc", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Asparagus"
+      ],
+      "metadata": {
+        "tier": "Tradition",
+        "serving_temp_c": "10-12",
+        "vinification_notes": "Fermented in stainless steel tanks. Bottled slightly earlier than standard vintage. Grapes harvested separately.",
+        "note": "Sauvignon Asparagus — special bottling designed specifically for pairing with asparagus."
+      },
+      "vintages": [
+        {
+          "year": 2025,
+          "abv": 13.0,
+          "rs_g_l": 1.6,
+          "ta_g_l": 5.9,
+          "aging_vessel": "stainless steel",
+          "winemaker_notes": "Nose: Delicate fruit of the bouquet and fresh aromas create subtle combinations with the taste of asparagus."
+        }
+      ]
+    },
+    {
+      "name": "Lagrein Rose",
+      "color": "rose",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Lagrein", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Beef tartare",
+        "Delicate carpaccio",
+        "Vegetable strudel"
+      ],
+      "metadata": {
+        "tier": "Tradition",
+        "altitude_m": "250-280",
+        "aspect": "West to Southwest",
+        "slope_pct": "0-10",
+        "serving_temp_c": "12-14",
+        "vinification_notes": "Fermented in stainless steel tanks. Aging on the lees in steel tanks for 6-7 months."
+      },
+      "vintages": [
+        {
+          "year": 2025,
+          "abv": 13.0,
+          "rs_g_l": 1.3,
+          "ta_g_l": 5.5,
+          "yield_hl_ha": 63,
+          "aging_vessel": "stainless steel",
+          "winemaker_notes": "Color: Clear, intensively pink with salmon-colored reflections. Nose: Highly fruity with notes of raspberry and strawberry with a hint of amarena cherry. Palate: Very juicy and soft with fresh and fruity acidity, highly harmonious appeal."
+        },
+        { "year": 2024 },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Lagrein",
+      "color": "red",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Lagrein", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Beef olives with creamed potatoes",
+        "Braised haunch of venison with red cabbage",
+        "Hard cheeses like mature Parmesan"
+      ],
+      "metadata": {
+        "tier": "Tradition",
+        "altitude_m": "250-290",
+        "aspect": "West to Southwest",
+        "slope_pct": "0-10",
+        "serving_temp_c": "14-16",
+        "vinification_notes": "Fermented in stainless steel tanks. Malolactic fermentation and aging in big wooden barrels for 7-10 months."
+      },
+      "vintages": [
+        {
+          "year": 2025,
+          "abv": 13.5,
+          "rs_g_l": 1.7,
+          "ta_g_l": 4.5,
+          "yield_hl_ha": 63,
+          "oak_duration_months": 10,
+          "aging_vessel": "large oak barrels",
+          "winemaker_notes": "Color: Dark garnet red. Nose: Intensive aroma of dried cranberries and morello cherry with floral lilac notes, hints of laurel, and restrained chocolate. Palate: Juicy and harmonious with delicate texture and silky tannins; rare opulence, rich and velvety."
+        },
+        { "year": 2024 },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Pinot Noir",
+      "color": "red",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Pinot Noir", "percentage": 100 }
+      ],
+      "food_pairings": [
+        "Roast kid with celeriac and carrot puree",
+        "Lamb cutlets with herb risotto",
+        "Trout meuniere with boiled vegetables"
+      ],
+      "metadata": {
+        "tier": "Tradition",
+        "altitude_m": "450-650",
+        "aspect": "West to Southwest",
+        "slope_pct": "5-70",
+        "serving_temp_c": "14-16",
+        "vinification_notes": "Fermented in stainless steel tanks. Malolactic fermentation and aging in big wooden barrels for 7-10 months."
+      },
+      "vintages": [
+        {
+          "year": 2025,
+          "abv": 13.5,
+          "rs_g_l": 0.9,
+          "ta_g_l": 5.4,
+          "yield_hl_ha": 63,
+          "oak_duration_months": 10,
+          "aging_vessel": "large oak barrels",
+          "winemaker_notes": "Color: Lively ruby red. Nose: Fresh stimulating nose with blackberry, bilberry, cherry brandy hints, licorice and undergrowth aromas. Palate: Delightful balance between ripe fruit and delicate tannin structure conferring elegance on this minerally red wine."
+        },
+        { "year": 2024 },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Torilan",
+      "color": "red",
+      "wine_type": "table",
+      "appellation": "Alto Adige Terlano",
+      "grapes": [
+        { "name": "Merlot", "percentage": 85 },
+        { "name": "Cabernet Sauvignon", "percentage": 15 }
+      ],
+      "food_pairings": [
+        "Grilled cutlets with ratatouille",
+        "Venison medallions in South Tyrolean bread crust with Schupfnudel",
+        "Entrecote with grilled vegetables",
+        "Venison goulash with pilaf rice"
+      ],
+      "metadata": {
+        "tier": "Tradition",
+        "altitude_m": "260-290",
+        "aspect": "West to Southwest",
+        "slope_pct": "3-15",
+        "serving_temp_c": "16-18",
+        "vinification_notes": "Fermented in stainless steel tanks. Malolactic fermentation and aging in big wooden barrels for 7-10 months. Blending six months before bottling."
+      },
+      "vintages": [
+        {
+          "year": 2024,
+          "abv": 14.0,
+          "rs_g_l": 0.9,
+          "ta_g_l": 4.8,
+          "yield_hl_ha": 63,
+          "oak_duration_months": 10,
+          "aging_vessel": "large oak barrels",
+          "winemaker_notes": "Color: Intensive garnet red with ruby reflections. Nose: Merlot aromas of cassis and blackberry with noble spicy Cabernet character, black pepper and vanilla notes. Palate: Symbiosis of fruit, spiciness and tannins of Cabernet, and rich complexity of Merlot."
+        },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 }
+      ]
+    },
+    {
+      "name": "Santa Maddalena",
+      "color": "red",
+      "wine_type": "table",
+      "appellation": "Alto Adige Santa Maddalena",
+      "grapes": [
+        { "name": "Schiava", "percentage": 85 },
+        { "name": "Lagrein", "percentage": 15 }
+      ],
+      "food_pairings": [
+        "Cured meats like bacon and Bundnerfleisch",
+        "Venison carne salada with potted mushroom and cream cheese mousse",
+        "Cold beef with vinaigrette",
+        "Tagliatelle with salsiccia",
+        "Boiled beef with salsa verde and parsley potatoes"
+      ],
+      "metadata": {
+        "tier": "Tradition",
+        "altitude_m": "300-600",
+        "aspect": "West to Southwest",
+        "slope_pct": "20-50",
+        "serving_temp_c": "12-14",
+        "vinification_notes": "Fermented in stainless steel tanks. Malolactic fermentation and aging in big wooden barrels for 7-8 months."
+      },
+      "vintages": [
+        {
+          "year": 2025,
+          "abv": 12.5,
+          "rs_g_l": 1.1,
+          "ta_g_l": 4.4,
+          "yield_hl_ha": 63,
+          "oak_duration_months": 8,
+          "aging_vessel": "large oak barrels",
+          "winemaker_notes": "Color: Deep ruby red. Nose: Clear primary aromas of black elderberry and cherry underpinned by bitter almond and violet nuance. Palate: Full fruit flavors, soft and elegant with balanced acidity and low tannin content."
+        },
+        { "year": 2024 },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    }
+  ]
+}
