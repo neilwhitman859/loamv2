@@ -595,7 +595,7 @@ Standard insight fields: confidence, enriched_at, refresh_after, timestamps.
 Tracks which vintages compose a non-vintage wine. id UUID PK, wine_id FK, nv_vintage_year (integer), component_vintage_year (integer NOT NULL), percentage (decimal), component_wine_id (FK wines, nullable — for reserve wines from different cuvées), notes, source_id FK.
 
 ### wine_insights
-PK: wine_id. ai_wine_summary, ai_style_profile, ai_terroir_expression, ai_food_pairing, ai_cellar_recommendation, ai_comparable_wines, ai_vegetation_and_land_use, vegetation_source FK, vegetation_confidence. Typical aging (relative years): typical_drinking_window_min_years, typical_drinking_window_max_years, typical_aging_potential_years, typical_peak_start_years, typical_peak_end_years.
+PK: wine_id. ai_hook (2-3 sentence "30-second story" for mobile display), ai_wine_summary, ai_style_profile, ai_terroir_expression, ai_food_pairing, ai_cellar_recommendation, ai_comparable_wines, ai_vinification_summary, ai_vegetation_and_land_use, vegetation_source FK, vegetation_confidence. enrichment_tier SMALLINT (0-3, tracks current enrichment level), is_verified BOOLEAN (editorial review flag). Typical aging (relative years): typical_drinking_window_min_years, typical_drinking_window_max_years, typical_aging_potential_years, typical_peak_start_years, typical_peak_end_years.
 
 ### appellation_insights
 PK: appellation_id. ai_overview, ai_climate_profile, ai_soil_profile, ai_signature_style, ai_key_grapes, ai_aging_generalization, ai_notable_producers_summary.
@@ -934,8 +934,59 @@ Wine-level descriptor rollup (aggregated across vintages).
 | frequency | integer | DEFAULT 1 | How often this descriptor appears |
 | source | text | NOT NULL DEFAULT 'ai' | ai/community/critic |
 
+## 29. Wine Relationships
+
+### wine_relationships
+Tracks connections between wines — second labels, successors, stylistic siblings, etc.
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| wine_id | uuid | FK wines, NOT NULL | Source wine |
+| related_wine_id | uuid | FK wines, NOT NULL | Related wine |
+| relationship_type | text | NOT NULL, CHECK | second_wine_of, successor_to, inspired_by, sister_wine, same_vineyard, parent_wine, blend_component, stylistic_sibling |
+| description | text | | Optional context |
+| source_id | uuid | FK source_types | |
+| UNIQUE | | (wine_id, related_wine_id, relationship_type) | |
+| CHECK | | wine_id != related_wine_id | No self-references |
+
+---
+
+## 30. Producer Timeline
+
+### producer_timeline
+Key moments in a producer's history — founding, ownership changes, notable vintages, etc.
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| producer_id | uuid | FK producers, NOT NULL | |
+| year | smallint | NOT NULL | |
+| event_type | text | NOT NULL, CHECK | founded, ownership_change, winemaker_change, certification_change, expansion, notable_vintage, recognition, controversy, milestone, vineyard_acquisition, facility_change, brand_launch, generation_change |
+| description | text | NOT NULL | Event description |
+| source_url | text | | Reference link |
+| source_id | uuid | FK source_types | |
+| INDEX | | (producer_id, year) | Chronological lookup |
+
+---
+
+## 31. Analytics
+
+### wine_lookups
+Anonymous page view tracking for analytics and enrichment tier promotion.
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| wine_id | uuid | FK wines, NOT NULL | |
+| wine_vintage_id | uuid | FK wine_vintages | Nullable — set when viewing a specific vintage |
+| source | text | NOT NULL, CHECK | search, barcode, label_photo, direct, map, similar |
+| looked_at | timestamptz | NOT NULL DEFAULT now() | |
+| INDEX | | (wine_id, looked_at) | Demand signal queries |
+| INDEX | | (looked_at) | Time-range queries |
+| RLS | | anon INSERT allowed | Anonymous page views |
+
+---
+
 ## Table Count
 
-**Canonical:** 81 tables (Geography 6, Producers 5, Wines 4, Vintages 1, Grapes 10, Weather 1, Soil 4, Water 4, Certifications 6, Sources 1, Scores 2, Pricing 2, Documents 3, Insights 11, Trends 1, Search/Dedup 3, Enrichment 1, Vineyards 5, Bottle Formats 2, Classifications 3, Flex Fields 2, External IDs 1, Tasting Descriptors 2, Importers 2, Label Designations 3, Appellation Rules 1, Food Pairings 3)
+**Canonical:** 84 tables (Geography 6, Producers 5, Wines 4, Vintages 1, Grapes 10, Weather 1, Soil 4, Water 4, Certifications 6, Sources 1, Scores 2, Pricing 2, Documents 3, Insights 11, Trends 1, Search/Dedup 3, Enrichment 1, Vineyards 5, Bottle Formats 2, Classifications 3, Flex Fields 2, External IDs 1, Tasting Descriptors 2, Importers 2, Label Designations 3, Appellation Rules 1, Food Pairings 3, Wine Relationships 1, Producer Timeline 1, Analytics 1)
 **xwines_ staging:** 13 tables
-**Total:** 94 tables
+**Total:** 97 tables

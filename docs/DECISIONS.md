@@ -387,3 +387,30 @@ Cape Blend (South Africa, production_method) — requires Pinotage 30-70%. Qvevr
 
 ### 2026-03-16: Alias tables design (region, producer, label designation)
 Three alias tables queued — same pattern as existing appellation_aliases. Each has: alias, alias_normalized, alias_type (CHECK constraint), language_code, source. UNIQUE index on alias_normalized for dedup. Seed scripts ready: ~75 region aliases (WSET L3 naming conventions), ~80 label designation aliases (German abbreviations, sparkling sweetness translations, production method translations).
+
+### 2026-03-16: Four-tier enrichment model (Tier 0-3)
+Standardized enrichment architecture. Tier 0 = identity only ($0, 200K+ target). Tier 1 = quick enrichment via Haiku on first user lookup (~$0.004, 30K target). Tier 2 = standard enrichment via Sonnet when demand/data signals met (~$0.03, 10K target). Tier 3 = full enrichment, manually curated (~$0.15, 1K target). Total estimated cost: ~$570 for full coverage targets. On-demand lazy enrichment is the primary mechanism — wines are enriched when users look them up, not pre-enriched in bulk. See `docs/ENRICHMENT.md` for full specification.
+
+### 2026-03-16: "Wine not found" uses label photo identification (Option D)
+When a user searches for a wine not in the database and provides a label photo, Claude Vision reads the label, extracts fields, runs through fuzzy resolvers, and either matches an existing wine or creates a new Tier 0 entry with immediate Tier 1 enrichment. Cost ~$0.01-0.02 per identification. Generic geographic fallback (Option B) is NOT shown first — the system attempts to identify the specific wine before falling back. Some user back-and-forth to confirm identification is acceptable.
+
+### 2026-03-16: Mobile-first PWA, not native app
+Loam frontend is a Progressive Web App optimized for mobile browsers. No App Store distribution yet. PWA supports camera API (barcode/label scanning), service worker (offline caching of recently viewed wines), and add-to-homescreen. Target users: curious wine enthusiasts, wine shoppers, restaurant managers and staff, wine shop owners.
+
+### 2026-03-16: Anonymous-first, user accounts later
+No user authentication for v1. Anonymous browsing only. User accounts, cellar tracking, personal notes, saved wines are future features to be layered on. Architecture (RLS, Supabase Auth) supports this when ready.
+
+### 2026-03-16: Three input methods — text search, barcode scan, label photo
+Text search (existing), barcode scan (needs UPC/EAN data from LWIN or other non-Wine-Searcher source), and label photo recognition (Claude Vision API). Voice search and wine list OCR rejected — too niche for v1.
+
+### 2026-03-16: Image storage in Supabase Storage
+Label photos, producer logos, and map assets stored in Supabase Storage buckets. No external CDN for now.
+
+### 2026-03-16: Enrichment freshness — annual refresh
+Tier 1/2/3 enrichments refreshed once per year, or when significant new data arrives (new scores, vintage data added). Staleness tracked via `enrichment_log.enriched_at`. Low priority given current scale — revisit when user base grows.
+
+### 2026-03-16: COLA data access as strategic priority
+TTB COLA (Certificate of Label Approval) data contains structured label information (exact ABV, appellation as printed, importer of record, grape varieties) that is extremely hard to get elsewhere. Needs research into COLA Cloud API access and potentially FOIA requests. Alongside LWIN, this is the primary bulk data acquisition strategy. Wine-Searcher avoided for cost reasons.
+
+### 2026-03-16: Product features prioritized from brainstorm
+From a 16-idea brainstorm, user selected favorites: #10 cross-vintage comparison (top priority, enrichment), #1 vintage weather narratives (top priority, needs Open-Meteo), #13 education layer (mostly frontend UX), #2 wine relationships (new table), #3 winemaker career trajectories (schema check), #4 terroir fingerprinting (new table + enrichment), #5 value scoring (computed view), #9 producer timeline (new table + enrichment). Auction/secondary market (#7) rejected as too high-end. Similar wines section on wine page endorsed for discovery.
