@@ -190,7 +190,7 @@ PK: composite (producer_id, region_id). For multi-region producers.
 | appellation_id | uuid | FK appellations, nullable | |
 | varietal_category_id | uuid | FK varietal_categories, nullable | Inferred from blend when available |
 | varietal_category_source | uuid | FK source_types, nullable | |
-| effervescence | text | default 'still', CHECK | still/sparkling/semi-sparkling/petillant-naturel/frizzante |
+| effervescence | text | default 'still', CHECK | still/sparkling/semi_sparkling/petillant_naturel/frizzante |
 | is_nv | boolean | NOT NULL default false | |
 | food_pairings | text | nullable | From producer/scraping |
 | elevation_m | integer | nullable | API-derived |
@@ -202,7 +202,7 @@ PK: composite (producer_id, region_id). For multi-region producers.
 | irrigation_type | text | nullable | dry_farmed/irrigated/deficit_irrigation |
 | irrigation_type_source | uuid | FK source_types, nullable | |
 | color | text | nullable, CHECK | red/white/rose/orange (ASCII 'rose' not 'rosé') |
-| wine_type | text | default 'table', CHECK | table/sparkling/dessert/fortified/aromatized/fruit/natural |
+| wine_type | text | default 'table', CHECK | table/sparkling/dessert/fortified/aromatized |
 | sweetness_level | text | nullable | dry/off-dry/medium-sweet/sweet/luscious |
 | sparkling_method | text | nullable | traditional/charmat/ancestral/transfer/carbonation |
 | sweet_method | text | nullable | botrytis/late_harvest/ice_wine/passito/fortified/vin_de_paille/cryoextraction |
@@ -214,6 +214,13 @@ PK: composite (producer_id, region_id). For multi-region producers.
 | duplicate_of | uuid | FK wines, nullable | Canonical pointer |
 | first_vintage_year | integer | nullable | Year the wine was first produced |
 | style | text | nullable | Wine style description (e.g., "traditional Rioja", "bold red") |
+| description | text | nullable | Producer/back-label description (distinct from vinification_notes) |
+| critic_score_avg | numeric(4,1) | nullable | Computed: avg of all 100-point scores across all vintages |
+| critic_score_count | integer | DEFAULT 0 | Computed: count of 100-point scores across all vintages |
+| community_rating_avg | numeric(3,2) | nullable | Community rating (e.g., Vivino 1-5 scale) |
+| community_rating_count | integer | DEFAULT 0 | Number of community ratings |
+| popularity_score | numeric | nullable | Computed demand/popularity metric |
+| search_rank | integer | nullable | Global search rank |
 | metadata | jsonb | nullable | Flexible extra data from scraping |
 | created_at / updated_at / deleted_at | timestamptz | standard | |
 
@@ -232,7 +239,7 @@ UUID PK. wine_id FK (CASCADE), name text NOT NULL, alias_type text NOT NULL CHEC
 ## 4. Wine Vintages
 
 ### wine_vintages
-UUID PK + UNIQUE(wine_id, vintage_year). Vintage_year nullable for NV wines.
+UUID PK + UNIQUE(wine_id, vintage_year). Vintage_year = 0 for NV wines (not NULL — NULL would break the UNIQUE constraint). Use `wines.is_nv = true` for semantic NV flag.
 | Column | Type | Constraints | Notes |
 |---|---|---|---|
 | id | uuid | PK | |
@@ -289,10 +296,21 @@ UUID PK + UNIQUE(wine_id, vintage_year). Vintage_year nullable for NV wines.
 | release_date | date | nullable | When this vintage was released to market |
 | label_image_url | text | nullable | Vintage-specific label image |
 | lwin | text | UNIQUE, nullable | LWIN-11 code (wine+vintage) |
+| critic_score_avg | numeric(4,1) | nullable | Computed: avg of 100-point scores for this vintage |
+| critic_score_count | integer | DEFAULT 0 | Computed: count of scores |
+| community_rating_avg | numeric(3,2) | nullable | Community rating for this vintage |
+| community_rating_count | integer | DEFAULT 0 | |
+| market_price_avg_usd | numeric(10,2) | nullable | Computed: avg retail price |
+| market_price_min_usd | numeric(10,2) | nullable | Computed: lowest retail price |
+| market_price_max_usd | numeric(10,2) | nullable | Computed: highest retail price |
+| merchant_count | integer | DEFAULT 0 | How many merchants carry this vintage |
+| market_price_updated_at | timestamptz | nullable | When price aggregates were last refreshed |
 | metadata | jsonb | nullable | Flexible extra data |
 | created_at / updated_at / deleted_at | timestamptz | standard | |
 
 **Winemaking columns** live on `wine_vintages` only (not on wines). Use `wines.vinification_notes` for general/default winemaking approach description.
+
+**Computed columns** (`critic_score_avg/count`, `market_price_*`) are cached aggregates from `wine_vintage_scores` and `wine_vintage_prices`. Refresh with backfill queries after bulk imports.
 
 ---
 
@@ -848,8 +866,41 @@ Bulk data from the X-Wines dataset (CC0 public domain). Kept for reference but n
 
 ---
 
+## 28. Food Pairings
+
+### food_categories
+Hierarchical food category reference table (WSET + Vivino/Wine.com inspired).
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | Deterministic UUIDs for top-level (10000000-...) |
+| slug | text | UNIQUE NOT NULL | |
+| name | text | NOT NULL | |
+| parent_id | uuid | FK food_categories | Self-ref for hierarchy |
+| sort_order | integer | DEFAULT 0 | Display order |
+| created_at | timestamptz | DEFAULT now() | |
+| updated_at | timestamptz | DEFAULT now() | Trigger: set_updated_at |
+
+17 top-level categories, 41 sub-categories (58 total). Categories: Red Meat, Poultry, Pork, Game, Fish, Shellfish, Pasta & Grains, Cheese, Vegetables, Salad, Charcuterie, Dessert, Spicy Food, Asian Cuisine, Mediterranean, Aperitif, Nuts & Dried Fruit.
+
+### wine_food_pairings
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| wine_id | uuid | FK wines, PK | |
+| food_category_id | uuid | FK food_categories, PK | |
+| source | text | NOT NULL DEFAULT 'producer' | producer/ai/community |
+| confidence | numeric(3,2) | | AI confidence score |
+
+### wine_descriptors
+Wine-level descriptor rollup (aggregated across vintages).
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| wine_id | uuid | FK wines, PK | |
+| descriptor_id | uuid | FK tasting_descriptors, PK | |
+| frequency | integer | DEFAULT 1 | How often this descriptor appears |
+| source | text | NOT NULL DEFAULT 'ai' | ai/community/critic |
+
 ## Table Count
 
-**Canonical:** 78 tables (Geography 6, Producers 5, Wines 4, Vintages 1, Grapes 10, Weather 1, Soil 4, Water 4, Certifications 6, Sources 1, Scores 2, Pricing 2, Documents 3, Insights 11, Trends 1, Search/Dedup 3, Enrichment 1, Vineyards 5, Bottle Formats 2, Classifications 3, Flex Fields 2, External IDs 1, Tasting Descriptors 2, Importers 2, Label Designations 3, Appellation Rules 1)
+**Canonical:** 81 tables (Geography 6, Producers 5, Wines 4, Vintages 1, Grapes 10, Weather 1, Soil 4, Water 4, Certifications 6, Sources 1, Scores 2, Pricing 2, Documents 3, Insights 11, Trends 1, Search/Dedup 3, Enrichment 1, Vineyards 5, Bottle Formats 2, Classifications 3, Flex Fields 2, External IDs 1, Tasting Descriptors 2, Importers 2, Label Designations 3, Appellation Rules 1, Food Pairings 3)
 **xwines_ staging:** 13 tables
-**Total:** 91 tables
+**Total:** 94 tables
