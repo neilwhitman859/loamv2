@@ -60,7 +60,7 @@ If the user is going a long stretch without wrapping up, if decisions are being 
 
 ### Architecture
 The database has two layers:
-- **Canonical tables** (`producers`, `wines`, `wine_vintages`, etc.) — curated, high-quality data. Phase 1c trial imports complete (2026-03-15): 3 producers, 26 wines, 59 vintages, 59 scores. Quality bar is high.
+- **Canonical tables** (`producers`, `wines`, `wine_vintages`, etc.) — curated, high-quality data. 78 canonical tables. Trial imports + KL bulk + retailer imports complete. Quality bar is high.
 - **xwines_* tables** — bulk X-Wines dataset dump (~530K wines, ~2.2M vintages, ~32K producers). Kept as reference but not actively maintained. Data quality is lower.
 
 ### Reference Tables (complete)
@@ -146,7 +146,8 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
 ### Content Tables (Phase 1c trial imports + KL + retailer imports, 2026-03-15)
-- **794 producers**, **2,802 wines**, 1,790 vintages, 661 scores, 2,917 wine_grapes, 1,231 prices, 141 wine_vintage_grapes, 9 wine_label_designations, 6 winemakers, 7 producer-winemaker links, **40 entity_classifications**, 193 producer-importer links, 155 farming certifications
+- **794 producers**, **2,802 wines**, 1,790 vintages, 661 scores, 2,917 wine_grapes, 1,231 prices, 141 wine_vintage_grapes, 9 wine_label_designations, 6 winemakers, 7 producer-winemaker links, **40 entity_classifications**, 193 producer-importer links, 153 farming certifications
+- wine_vintage_id FK backfilled: 661/661 scores, 1,231/1,231 prices (100% linked to wine_vintages)
 - **Trial imports (6 producers):**
   - Fort Ross Vineyard (US/Sonoma, estate): 15 wines, 112 vintages, 84 scores
   - Sea Slopes (US/Sonoma, child of Fort Ross): 2 wines, 24 vintages, 15 scores
@@ -227,12 +228,31 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 - **Soft delete consistency:** Audited — all 15 entity tables have `deleted_at`, all junction/log tables correctly don't. Added missing `deleted_at` to winemakers.
 - **Multi-source merging:** Architecture designed (source priority tiers, field provenance sidecar table, merge mode on import). Implementation deferred to dedicated session.
 
+### Schema Scan & Hardening Round 2 (2026-03-15)
+Full cross-reference of actual DB schema vs all 10 import scripts. 29 issues identified and triaged.
+- **Deleted scripts:** `scrape_ridge.mjs` (referenced dropped columns), `fetch_producer_wines.mjs`, `create_wines_from_vivino.mjs`, `match_vivino_to_loam.mjs` (referenced non-existent `grapes.aliases` column and `region_name_mappings` table from xwines era). Remaining scrapers (`scrape_stags_leap.mjs`, `scrape_tablas_creek.mjs`) may break on schema changes — will fix when re-used.
+- **New table: `retailers`** — normalized retailer reference (id, slug, name, website_url, country_id, retailer_type CHECK, metadata, timestamps, deleted_at). FK from `wine_vintage_prices.retailer_id`.
+- **`wines.country_id` made nullable** — retailer imports often can't determine country. Better null than wrong.
+- **`wines.effervescence` DEFAULT 'still'** — 95%+ of wines are still; reduces code in every importer.
+- **`wines.label_designation` column DROPPED** — `wine_label_designations` junction table is canonical.
+- **`wine_vintages.acidity/tannin/body` DROPPED** — superseded by `wine_vintage_tasting_insights`. Zero data loss (all existing data was from rescrapeable sources).
+- **`wine_vintage_scores.score_provenance`** added — CHECK (direct/retailer_quote/aggregated/community). Distinguishes critic-direct scores from marketing copy extractions.
+- **`wine_vintage_scores.wine_vintage_id`** added — FK to wine_vintages, backfilled 100%. Normalizes the denormalized wine_id+vintage_year pattern.
+- **`wine_vintage_prices.wine_vintage_id`** added — same normalization, backfilled 100%.
+- **`wine_vintage_prices.compare_at_price_usd`** added — original MSRP for discount retailers (Last Bottle, flash sales).
+- **`grapes.name_normalized`** added — NOT NULL, indexed. Consistent with producers/wines pattern.
+- **`biodiversity_certifications.url`** added — basic reference data for certification websites.
+- **`enrichment_log` status CHECK** expanded — completed/failed/pending/needs_review/superseded.
+- **CHECK constraints documented vs actual DB:** wines.effervescence, wines.wine_type, producers.producer_type all have broader CHECK values in DB than previously documented. SCHEMA.md updated to match.
+- **`grape_plantings` table** documented — existed but was missing from SCHEMA.md. 0 rows (ready for Anderson & Aryal data).
+- **`wine_regions`/`producer_regions`** — tables exist but no import pipeline populates them. Noted for future multi-region support.
+
 ### Technical Debt (pre-frontend)
-- **RLS policies:** Only 3/75 tables have RLS. Need "public read, service_role write" before frontend ships.
+- **RLS policies:** Only 3/78 tables have RLS. Need "public read, service_role write" before frontend ships.
 - **Search infrastructure:** pg_trgm indexes exist but no full-text search, no cross-entity search function.
 - **API views:** No views for common joins (wine detail, producer detail, search index).
 - **Migrations in git:** All DDL via Supabase MCP. Need `supabase/migrations/` before multi-developer.
-- **FK normalization:** `wine_vintage_scores`/`wine_vintage_grapes` use `wine_id + vintage_year` instead of `wine_vintage_id`.
+- **FK normalization (partially addressed):** `wine_vintage_scores` and `wine_vintage_prices` now have `wine_vintage_id` FK (backfilled). `wine_vintage_grapes` already had optional `wine_vintage_id`. Legacy `wine_id + vintage_year` columns kept as convenience but `wine_vintage_id` is now the preferred join path.
 
 ### Open Questions (deferred)
 - Data freshness strategy (how/when to re-import)

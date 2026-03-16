@@ -302,6 +302,39 @@ Five schema changes based on importing 1,468 wines from 193 KL growers:
 ### 2026-03-15: No country-specific tables for classification systems
 Evaluated whether complex classification systems (Italian DOCG/DOC/Classico/Riserva, German Prädikats, Bordeaux 1855, Port styles, etc.) need country-specific tables. Answer: no. The existing generic schema handles all cases through four complementary layers: appellations.designation_type (DOC/AOC/AVA), label_designations + label_designation_rules (Riserva/Crianza/Kabinett with per-appellation rules), classifications + entity_classifications (1855/Burgundy cru/VDP), and appellation_rules JSONB (flex regulatory data). Country-specific tables would fragment the query layer — one generic query pattern is better than N country-specific ones.
 
+### 2026-03-15: Delete legacy scripts rather than patch them
+Deleted `scrape_ridge.mjs` and three Vivino scripts (`fetch_producer_wines.mjs`, `create_wines_from_vivino.mjs`, `match_vivino_to_loam.mjs`). These referenced dropped columns (`wines.yeast_type`), non-existent tables (`region_name_mappings`), and missing columns (`grapes.aliases`) from the xwines era. Schema is still changing — remaining scrapers will break and get fixed when actually re-used. Better to delete dead code than patch it.
+
+### 2026-03-15: wines.country_id made nullable
+Retailer imports (Last Bottle, Best Wine Store, Domestique) showed that many value wines don't clearly state country of origin. Forcing NOT NULL required defaulting ambiguous wines to US — creating inaccurate data. Core principle: better to be null than wrong. Producers already had nullable country_id.
+
+### 2026-03-15: Effervescence defaults to 'still'
+95%+ of wines are still. "Unknown effervescence" is almost never a real state — if you know enough to insert a wine, you know if it's sparkling. DEFAULT 'still' reduces boilerplate in every importer and ensures consistency.
+
+### 2026-03-15: Score provenance tracking
+Scores extracted from marketing copy (retailers quoting "93 Points Wine Spectator!") have very different reliability than scores pulled directly from critic databases. Added `score_provenance` CHECK (direct/retailer_quote/aggregated/community) to `wine_vintage_scores`. This supports future score weighting/display logic.
+
+### 2026-03-15: wine_vintage_id FK added to scores and prices
+Normalizes the denormalized `wine_id + vintage_year` pattern on `wine_vintage_scores` and `wine_vintage_prices`. Column is nullable (scores can exist for vintages not yet in wine_vintages). Backfilled 100% of existing data. Legacy convenience columns kept. Preferred join path going forward.
+
+### 2026-03-15: Deprecated columns dropped (acidity/tannin/body, label_designation)
+`wine_vintages.acidity/tannin/body` (1-5 WSET scale) superseded by `wine_vintage_tasting_insights` table which has full WSET SAT structured data. `wines.label_designation` free text superseded by `wine_label_designations` junction table. All existing data came from rescrapeable sources — no data loss concern.
+
+### 2026-03-15: Retailers table created
+Normalized retailer reference table rather than free-text `merchant_name` on `wine_vintage_prices`. FK from prices to retailers. Retailer type CHECK: online/brick_and_mortar/auction_house/direct_to_consumer/marketplace. Also added `compare_at_price_usd` for discount retailers where sale price ≠ market value.
+
+### 2026-03-15: grapes.name_normalized added
+Consistency with producers and wines tables. All three entity types now have name_normalized for dedup matching. Indexed for performance. Backfilled from VIVC names.
+
+### 2026-03-15: Enrichment strategy reconciled — proactive + on-demand
+Two earlier decisions described complementary approaches: (1) "MVP enrichment — top wines first" (2026-03-05) = batch proactive enrichment prioritized by vintage count/importance, (2) "Enrichment on demand" (2026-03-13) = reactive enrichment when a user looks up a wine. These coexist: proactive batch for Tier 1 targets (California + Burgundy top wines by score/vintage count), on-demand for the long tail (Tier 3 → Tier 2 synthesis from reference data when a user encounters a wine). Most wines stay at Tier 3 until looked up.
+
+### 2026-03-15: Source tracking evolution — companion columns → provenance sidecar
+Original approach (2026-03-03): `{field}_source UUID FK` companion columns per field. This was partially abandoned during schema sharpening (2026-03-15) — dropped _source columns for aspect/slope/fog_exposure/vine_planted_year from wines (source tracking for these belongs on entity_attributes). Future direction (designed, not yet implemented): field provenance sidecar table replacing per-column _source fields entirely. Existing _source columns on wine_vintages (chemical_data_source, winemaking_source, harvest_date_source, release_price_source) remain until the sidecar is built.
+
+### 2026-03-15: Claude granted schema autonomy during hardening phase
+During active schema hardening, Claude can independently: make nullable/NOT NULL calls (philosophy: null > wrong), add columns vs JSONB decisions, expand CHECK constraints, drop redundant columns, create new tables. This autonomy will be restricted once the schema stabilizes for production. Core architectural patterns (geography hierarchy, facts-vs-insights separation, UUID PKs, soft deletes, three-tier fallback) remain foundational and should be flagged before changing.
+
 ### 2026-03-15: Appellation aliases seeded from primary sources + mechanical generation
 17,558 aliases seeded into appellation_aliases table from four source tiers:
 1. **INAO OpenDataSoft API** (primary source): 2,557 official French AOC wine product variants — color suffixes (rouge/blanc/rosé), vendanges tardives, vin jaune, premier/grand cru sub-types. API: `public.opendatasoft.com/api/explore/v2.1/catalog/datasets/aires-et-produits-aocaop-et-igp/records`, filtered to `signe_fr LIKE 'AOC%' OR 'IGP%'`.

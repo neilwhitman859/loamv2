@@ -126,7 +126,7 @@ PostGIS geometry for map display and spatial queries. Links to one of country, r
 | appellation_id | uuid | FK appellations, nullable | |
 | website_url | text | nullable | |
 | year_established | integer | nullable | |
-| producer_type | text | nullable, CHECK | estate/negociant/cooperative/virtual/corporate |
+| producer_type | text | nullable, CHECK | estate/negociant/cooperative/virtual/corporate/custom_crush/grower |
 | parent_company | text | nullable | |
 | hectares_under_vine | decimal | nullable | |
 | total_production_cases | integer | nullable | |
@@ -185,13 +185,12 @@ PK: composite (producer_id, region_id). For multi-region producers.
 | name | text | NOT NULL | Wine name excluding producer |
 | name_normalized | text | NOT NULL | For dedup matching |
 | producer_id | uuid | FK producers, NOT NULL | |
-| country_id | uuid | FK countries, NOT NULL | |
+| country_id | uuid | FK countries, nullable | Null when country unclear from source data |
 | region_id | uuid | FK regions, nullable | Null when multi-region |
 | appellation_id | uuid | FK appellations, nullable | |
 | varietal_category_id | uuid | FK varietal_categories, nullable | Inferred from blend when available |
 | varietal_category_source | uuid | FK source_types, nullable | |
-| label_designation | text | nullable | Raw label text |
-| effervescence | text | nullable, CHECK | still/sparkling/semi_sparkling |
+| effervescence | text | default 'still', CHECK | still/sparkling/semi-sparkling/petillant-naturel/frizzante |
 | is_nv | boolean | NOT NULL default false | |
 | food_pairings | text | nullable | From producer/scraping |
 | elevation_m | integer | nullable | API-derived |
@@ -203,7 +202,7 @@ PK: composite (producer_id, region_id). For multi-region producers.
 | irrigation_type | text | nullable | dry_farmed/irrigated/deficit_irrigation |
 | irrigation_type_source | uuid | FK source_types, nullable | |
 | color | text | nullable, CHECK | red/white/rose/orange (ASCII 'rose' not 'rosé') |
-| wine_type | text | default 'table', CHECK | table/sparkling/dessert/fortified |
+| wine_type | text | default 'table', CHECK | table/sparkling/dessert/fortified/aromatized/fruit/natural |
 | sweetness_level | text | nullable | dry/off-dry/medium-sweet/sweet/luscious |
 | sparkling_method | text | nullable | traditional/charmat/ancestral/transfer/carbonation |
 | sweet_method | text | nullable | botrytis/late_harvest/ice_wine/passito/fortified/vin_de_paille/cryoextraction |
@@ -239,9 +238,6 @@ UUID PK + UNIQUE(wine_id, vintage_year). Vintage_year nullable for NV wines.
 | id | uuid | PK | |
 | wine_id | uuid | FK wines, NOT NULL | |
 | vintage_year | integer | nullable | Null for NV |
-| acidity | integer | nullable | 1-5 WSET scale |
-| tannin | integer | nullable | 1-5 |
-| body | integer | nullable | 1-5 |
 | abv | numeric(4,1) | nullable | Alcohol by volume percentage |
 | ph | decimal | nullable | |
 | ta_g_l | decimal | nullable | Titratable acidity g/L |
@@ -298,8 +294,6 @@ UUID PK + UNIQUE(wine_id, vintage_year). Vintage_year nullable for NV wines.
 
 **Winemaking columns** live on `wine_vintages` only (not on wines). Use `wines.vinification_notes` for general/default winemaking approach description.
 
-**Deprecated columns** (still present, moving to wine_vintage_tasting_insights): `acidity`, `tannin`, `body`.
-
 ---
 
 ## 5. Grapes
@@ -312,6 +306,7 @@ UUID PK + UNIQUE(wine_id, vintage_year). Vintage_year nullable for NV wines.
 | id | uuid | PK | |
 | slug | text | UNIQUE NOT NULL | |
 | name | text | NOT NULL | VIVC prime name (canonical, UPPERCASE) |
+| name_normalized | text | NOT NULL | Lowercase stripped for matching (indexed) |
 | display_name | text | nullable | Industry-standard name for UI display |
 | color | text | nullable | red/white (derived from berry skin) |
 | origin_country_id | uuid | FK countries, nullable | |
@@ -392,6 +387,17 @@ PK: composite (appellation_id, grape_id). association_type text NOT NULL CHECK (
 ### varietal_category_grapes
 Blend composition for varietal categories. E.g., Bordeaux Blend = Cabernet Sauvignon + Merlot + ...
 PK: composite (varietal_category_id, grape_id). is_required boolean default false, typical_min_pct / typical_max_pct decimal nullable.
+
+### grape_plantings
+Grape planting area by country from Anderson & Aryal dataset (University of Adelaide). For reference/analytics — distinct from region_grapes/country_grapes which track association.
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| grape_id | uuid | FK grapes, NOT NULL | PK composite |
+| country_id | uuid | FK countries, NOT NULL | PK composite |
+| area_ha | decimal | nullable | Planted area in hectares |
+| survey_year | integer | nullable | Year of survey data |
+| source | text | nullable | |
+| created_at | timestamptz | default now() | |
 
 ---
 
@@ -484,7 +490,7 @@ PK: composite (producer_id, biodiversity_certification_id). certified_since/unti
 id, slug, name, country, url, type (critic_publication/community/auction_house), score_scale_min (decimal), score_scale_max (decimal), scoring_system (text: 100-point/20-point/5-star/letter/descriptive), active (boolean default true), timestamps, deleted_at
 
 ### wine_vintage_scores
-UUID PK. wine_id FK, vintage_year (nullable for NV), score, score_low, score_high, score_scale, publication_id FK, critic, tasting_note, review_text, drinking_status, blind_tasted, critic_drink_window_start/end, review_date, review_type, is_community (default false), rating_count, is_superseded (default false), url, source_id FK, discovered_at, timestamps.
+UUID PK. wine_id FK, vintage_year (nullable for NV), wine_vintage_id FK wine_vintages (nullable, backfilled), score, score_low, score_high, score_scale, publication_id FK, critic, tasting_note, review_text, drinking_status, blind_tasted, critic_drink_window_start/end, review_date, review_type, is_community (default false), rating_count, is_superseded (default false), score_provenance (CHECK: direct/retailer_quote/aggregated/community), url, source_id FK, discovered_at, timestamps.
 
 **Dedup index:** UNIQUE on (wine_id, COALESCE(vintage_year,0), COALESCE(publication_id,'00..00'), COALESCE(critic,''), COALESCE(review_date,'1900-01-01')). Allows multiple critics per publication and re-reviews on different dates.
 
@@ -493,9 +499,22 @@ UUID PK. wine_id FK, vintage_year (nullable for NV), score, score_low, score_hig
 ## 12. Pricing
 
 ### wine_vintage_prices
-UUID PK. wine_id FK, vintage_year (nullable), price_usd, price_original, currency, price_type (retail/auction/pre_arrival), source_id FK, source_url, merchant_name, price_date, created_at
+UUID PK. wine_id FK, vintage_year (nullable), wine_vintage_id FK wine_vintages (nullable, backfilled), price_usd, price_original, currency, price_type (retail/auction/pre_arrival), compare_at_price_usd (decimal — original MSRP for discount retailers), retailer_id FK retailers (nullable), source_id FK, source_url, merchant_name, price_date, created_at
 
 Release price lives on wine_vintages, not here.
+
+### retailers
+Reference table for wine retailers (online stores, auction houses, etc.).
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| slug | text | UNIQUE NOT NULL | |
+| name | text | NOT NULL | |
+| website_url | text | nullable | |
+| country_id | uuid | FK countries, nullable | |
+| retailer_type | text | nullable, CHECK | online/brick_and_mortar/auction_house/direct_to_consumer/marketplace |
+| metadata | jsonb | nullable | |
+| created_at / updated_at / deleted_at | timestamptz | standard | |
 
 ---
 
@@ -598,7 +617,7 @@ Tracks every AI enrichment operation with full cost/model/audit trail. Rebuilt 2
 | cost_usd | numeric(10,6) | nullable | |
 | fields_updated | text[] | nullable | Which columns/fields were set |
 | previous_values | jsonb | nullable | Snapshot of old values for rollback |
-| status | text | NOT NULL, default 'completed' | completed/failed/needs_review/superseded |
+| status | text | NOT NULL, default 'completed' | completed/failed/pending/needs_review/superseded |
 | error_message | text | nullable | |
 | reviewed_by | text | nullable | Human reviewer if manually checked |
 | reviewed_at | timestamptz | nullable | |
@@ -787,7 +806,7 @@ Appellation-specific requirements for designations that vary by DOC/DOCG/DO (e.g
 UNIQUE(label_designation_id, appellation_id)
 
 ### wine_label_designations
-Many-to-many join replacing free-text `wines.label_designation`.
+Many-to-many join. Free-text `wines.label_designation` has been dropped — use this table exclusively.
 PK: composite (wine_id, label_designation_id).
 
 ---
@@ -831,6 +850,6 @@ Bulk data from the X-Wines dataset (CC0 public domain). Kept for reference but n
 
 ## Table Count
 
-**Canonical:** 76 tables (Geography 6, Producers 5, Wines 4, Vintages 1, Grapes 6, Weather 1, Soil 4, Water 4, Certifications 6, Sources 1, Scores 2, Pricing 1, Documents 3, Insights 11, Trends 1, Search/Dedup 3, Enrichment 1, Vineyards 3, Classifications 3, Flex Fields 2, External IDs 1, Tasting Descriptors 2, Importers 2, Label Designations 3, Appellation Rules 1)
+**Canonical:** 78 tables (Geography 6, Producers 5, Wines 4, Vintages 1, Grapes 10, Weather 1, Soil 4, Water 4, Certifications 6, Sources 1, Scores 2, Pricing 2, Documents 3, Insights 11, Trends 1, Search/Dedup 3, Enrichment 1, Vineyards 5, Bottle Formats 2, Classifications 3, Flex Fields 2, External IDs 1, Tasting Descriptors 2, Importers 2, Label Designations 3, Appellation Rules 1)
 **xwines_ staging:** 13 tables
-**Total:** 89 tables
+**Total:** 91 tables
