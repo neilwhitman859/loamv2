@@ -146,7 +146,7 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
 ### Content Tables (Phase 1c trial imports + KL + retailer + wine-type imports, 2026-03-16)
-- **854 producers**, **3,066 wines**, 2,684 vintages, 1,255 scores, 1,279 prices, 3,296 wine_grapes, 84 entity_classifications, 27 winemakers, 168 farming certifications, 80 label designation links, 8 wine_aliases
+- **855 producers**, **3,071 wines**, 2,701 vintages, 1,264 scores, 1,279 prices, 3,303 wine_grapes, 84 entity_classifications, 28 winemakers, 168 farming certifications, 80 label designation links, 8 wine_aliases
 - wine_vintage_id FK backfilled: scores and prices 100% linked to wine_vintages
 - **Trial imports (6 producers, Phase 1c):**
   - Fort Ross Vineyard (US/Sonoma, estate): 15 wines, 112 vintages, 84 scores
@@ -205,13 +205,20 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 - **Pre-import validation**: `--validate` flag catches CHECK constraint violations, unusual ABV/RS, missing required fields.
 - **Accent-tolerant resolution**: All grape, appellation, and region resolvers use `normalize()` to strip accents and standardize whitespace.
 
-### Pending Migrations (MCP offline — queued in scripts/pending_migrations.sql)
-- **3 alias tables**: region_aliases, producer_aliases, label_designation_aliases (with seed scripts ready)
-- **3 Lebanon regions**: Bekaa Valley, Mount Lebanon, Batroun
-- **17 label designations**: Nykteri, Colheita, En Rama, Blanc de Blancs, Blanc de Noirs, Vieilles Vignes, Goldkapsel, Cape Blend, Qvevri, 5 Madeira sweetness styles (Sercial/Verdelho/Bual/Malmsey/Terrantez), Rainwater, Canteiro
+### Migrations Applied (2026-03-16, previously queued while MCP offline)
+All 5 pending migrations executed successfully:
+- **3 alias tables**: region_aliases, producer_aliases (enhanced with alias_type), label_designation_aliases
+- **3 Lebanon regions**: Bekaa Valley, Mount Lebanon, Batroun (Lebanon now has 4 regions)
+- **16 new label designations**: Nykteri, Colheita, En Rama, Blanc de Blancs, Blanc de Noirs, Vieilles Vignes, Goldkapsel, Cape Blend, Qvevri, 5 Madeira sweetness styles (Sercial/Verdelho/Bual/Malmsey/Terrantez), Rainwater, Canteiro. Total: 115 designations.
 - **9 new wine columns**: soil_description, vine_age_description, vineyard_area_ha, commune, altitude_m_low, altitude_m_high, aspect, slope_pct, monopole
 - **1 new producer column**: address
-- Metadata still pending promotion (needs new columns): soil (~1,489), vine_age (~1,469), vineyard_area (~1,468), classification (28 unmapped Italian DOC/DOCG)
+
+### Metadata Promotion (2026-03-16) — Phase 2 COMPLETE
+4,611 fields promoted from JSONB metadata to proper columns:
+- 1,488 soil_description, 1,465 vine_age_description, 1,313 vineyard_area_ha
+- 53 commune, 23 altitude (low/high), 23 aspect, 22 slope_pct, 8 monopole
+- 193 producers.address
+- Remaining in metadata: classification (28 unmapped Italian DOC/DOCG), cooperage (~80), vineyard_sources (~79)
 
 ### What's Not There Yet
 - Most insight tables empty (wine, producer, soil, water body)

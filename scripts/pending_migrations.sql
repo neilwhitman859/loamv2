@@ -1,6 +1,6 @@
--- PENDING MIGRATIONS — Run when Supabase MCP reconnects
--- Created 2026-03-16 during import→harden session (MCP was offline)
--- Execute each section as a separate apply_migration call
+-- MIGRATIONS APPLIED — All executed 2026-03-16 via Supabase MCP
+-- Originally queued while MCP was offline
+-- Kept for reference / git history
 --
 -- NOTE: wine_vintages already has skin_contact_days, whole_cluster_pct,
 -- lees_aging_months, yield_hl_ha, mlf, maceration_days, batonnage,

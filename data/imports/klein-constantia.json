@@ -1,0 +1,122 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Klein Constantia",
+    "slug": "klein-constantia",
+    "country": "South Africa",
+    "region": "Constantia",
+    "appellation": "Constantia",
+    "website": "https://www.kleinconstantia.com",
+    "producer_type": "estate",
+    "founded_year": 1685,
+    "hectares_under_vine": 146,
+    "philosophy": "One of the oldest wine farms in the New World, established in 1685 by Simon van der Stel, the first Governor of the Cape. The original Constantia estate was famed for its Vin de Constance — a sweet Muscat wine beloved by Napoleon Bonaparte during his exile on St. Helena. The wine was revived in 1986. Klein Constantia's vineyards are cooled by ocean breezes from False Bay and the Atlantic, creating one of the coolest wine-growing climates in South Africa.",
+    "winemakers": [
+      {
+        "name": "Matthew Day",
+        "slug": "matthew-day",
+        "role": "head",
+        "title": "Winemaker",
+        "start_year": 2011,
+        "country": "South Africa"
+      }
+    ],
+    "metadata": {
+      "soil": "Decomposed granite and Table Mountain sandstone — ancient weathered soils, excellent drainage",
+      "altitude": "60-350m",
+      "historical_note": "Original Constantia estate divided in 1712. Klein Constantia is the smaller portion. Vin de Constance was the most expensive wine in the world in the 18th-19th centuries."
+    }
+  },
+  "wines": [
+    {
+      "name": "Vin de Constance",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Constantia",
+      "style": "Historic natural sweet wine — Napoleon's favorite",
+      "first_vintage_year": 1986,
+      "vinification_notes": "100% Muscat de Frontignan (Muscat Blanc à Petits Grains). Late-harvested in multiple passes through the vineyard over 2-3 months, picking only botrytized and raisined berries. Fermented in French oak, aged 3-5 years in barrel. No fortification — naturally sweet from concentrated grape sugars. The original Vin de Constance was described by Jane Austen, Charles Dickens, and Charles Baudelaire.",
+      "grapes": [
+        { "grape": "Muscat Blanc à Petits Grains", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2019, "abv": 14, "rs_g_l": 160, "duration_in_oak_months": 48, "scores": [{ "publication": "Wine Advocate", "score": 97 }, { "publication": "Tim Atkin MW", "score": 97 }] },
+        { "year": 2018, "abv": 14, "rs_g_l": 155, "duration_in_oak_months": 48, "scores": [{ "publication": "Wine Advocate", "score": 96 }, { "publication": "James Suckling", "score": 96 }] },
+        { "year": 2017, "abv": 14, "rs_g_l": 170, "duration_in_oak_months": 48, "scores": [{ "publication": "Tim Atkin MW", "score": 96 }] },
+        { "year": 2015, "abv": 14, "rs_g_l": 165, "scores": [{ "publication": "Wine Advocate", "score": 95 }] },
+        { "year": 2013, "abv": 14, "rs_g_l": 150, "scores": [{ "publication": "Wine Advocate", "score": 96 }] }
+      ]
+    },
+    {
+      "name": "Sauvignon Blanc",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Constantia",
+      "style": "Cool-climate Sauvignon Blanc — maritime influence",
+      "vinification_notes": "100% Sauvignon Blanc from cool, ocean-influenced vineyards. Tank fermented with some wild yeast. Crisp, mineral, and herbaceous — a style more Loire Valley than Marlborough. The cool Constantia climate preserves natural acidity.",
+      "grapes": [
+        { "grape": "Sauvignon Blanc", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2023, "abv": 13 },
+        { "year": 2022, "abv": 13, "scores": [{ "publication": "Tim Atkin MW", "score": 92 }] },
+        { "year": 2021, "abv": 13 }
+      ]
+    },
+    {
+      "name": "Chardonnay",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Constantia",
+      "style": "Barrel-fermented Chardonnay — Burgundian approach",
+      "vinification_notes": "100% Chardonnay from high-elevation vineyards (up to 350m). Barrel fermented in French oak (30% new). Partial malolactic. Citrus, white peach, and subtle oak spice with a mineral backbone from the granite soils.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 13.5, "duration_in_oak_months": 10, "new_oak_pct": 30, "scores": [{ "publication": "Tim Atkin MW", "score": 93 }] },
+        { "year": 2021, "abv": 13.5, "duration_in_oak_months": 10, "new_oak_pct": 30 },
+        { "year": 2020, "abv": 13, "duration_in_oak_months": 10 }
+      ]
+    },
+    {
+      "name": "Riesling",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Constantia",
+      "style": "Dry Riesling — rare in South Africa",
+      "vinification_notes": "100% Riesling — one of the few South African producers with Riesling. Tank fermented, no oak, no malolactic. The cool Constantia climate (one of the coolest in SA) allows Riesling to develop properly. Lime, white flower, and petrol with age.",
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2023, "abv": 12.5 },
+        { "year": 2022, "abv": 12.5 },
+        { "year": 2021, "abv": 12 }
+      ]
+    },
+    {
+      "name": "Cabernet Sauvignon/Merlot",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Constantia",
+      "style": "Bordeaux blend from cool maritime terroir",
+      "vinification_notes": "Cabernet Sauvignon dominant with Merlot and Cabernet Franc. Aged in French oak (40% new). The cool Constantia climate produces a more restrained, elegant style of red than warmer SA regions — more Bordeaux than Stellenbosch.",
+      "grapes": [
+        { "grape": "Cabernet Sauvignon", "percentage": 60 },
+        { "grape": "Merlot", "percentage": 30 },
+        { "grape": "Cabernet Franc", "percentage": 10 }
+      ],
+      "vintages": [
+        { "year": 2020, "abv": 14, "duration_in_oak_months": 18, "new_oak_pct": 40 },
+        { "year": 2019, "abv": 14, "duration_in_oak_months": 18 },
+        { "year": 2018, "abv": 14 }
+      ]
+    }
+  ]
+}
