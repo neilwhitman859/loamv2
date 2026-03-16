@@ -529,7 +529,7 @@ PK: composite (producer_id, biodiversity_certification_id). certified_since/unti
 id, slug, name, country, url, type (critic_publication/community/auction_house), score_scale_min (decimal), score_scale_max (decimal), scoring_system (text: 100-point/20-point/5-star/letter/descriptive), active (boolean default true), timestamps, deleted_at
 
 ### wine_vintage_scores
-UUID PK. wine_id FK, vintage_year (nullable for NV), wine_vintage_id FK wine_vintages (nullable, backfilled), score, score_low, score_high, score_scale, publication_id FK, critic, tasting_note, review_text, drinking_status, blind_tasted, critic_drink_window_start/end, review_date, review_type, is_community (default false), rating_count, is_superseded (default false), score_provenance (CHECK: direct/retailer_quote/aggregated/community), url, source_id FK, discovered_at, timestamps.
+UUID PK. wine_id FK, vintage_year (nullable for NV), wine_vintage_id FK wine_vintages (nullable, backfilled), score, score_low, score_high, score_scale, publication_id FK, critic, tasting_note, review_text, drinking_status, blind_tasted, critic_drinking_window_start/end, review_date, review_type, is_community (default false), rating_count, is_superseded (default false), score_provenance (CHECK: direct/retailer_quote/aggregated/community), url, source_id FK, discovered_at, timestamps.
 
 **Dedup index:** UNIQUE on (wine_id, COALESCE(vintage_year,0), COALESCE(publication_id,'00..00'), COALESCE(critic,''), COALESCE(review_date,'1900-01-01')). Allows multiple critics per publication and re-reviews on different dates.
 
@@ -577,9 +577,10 @@ All insight tables share: confidence (numeric), enriched_at, refresh_after (null
 ### wine_vintage_insights
 UUID PK. UNIQUE (wine_id, vintage_year).
 AI: ai_vintage_summary, ai_weather_impact, ai_microclimate_impact, ai_flavor_impact, ai_aging_potential, ai_quality_assessment, ai_comparison_to_normal, ai_harvest_analysis, ai_value_assessment.
-Critic window: critic_drinking_window_start/end, critic_peak_start/end, critic_window_source FK.
-Calculated window: calculated_drinking_window_start/end, calculated_peak_start/end, calculated_window_explanation.
-AI window: ai_drinking_window_start/end, ai_peak_start/end, ai_window_explanation.
+Critic window: critic_drinking_window_start/end, critic_window_source FK.
+Calculated window: calculated_drinking_window_start/end, calculated_window_explanation.
+AI window: ai_drinking_window_start/end, ai_window_explanation.
+Peak window: peak_drinking_window_start/end (synthesized optimal peak across all sources).
 ai_current_drinking_status: drink_now/hold/approaching_peak/at_peak/past_peak/declining.
 
 ### wine_vintage_tasting_insights
@@ -594,7 +595,7 @@ Standard insight fields: confidence, enriched_at, refresh_after, timestamps.
 Tracks which vintages compose a non-vintage wine. id UUID PK, wine_id FK, nv_vintage_year (integer), component_vintage_year (integer NOT NULL), percentage (decimal), component_wine_id (FK wines, nullable — for reserve wines from different cuvées), notes, source_id FK.
 
 ### wine_insights
-PK: wine_id. ai_wine_summary, ai_style_profile, ai_terroir_expression, ai_food_pairing, ai_cellar_recommendation, ai_comparable_wines, ai_vegetation_and_land_use, vegetation_source FK, vegetation_confidence. Typical aging (relative years): typical_drinking_window_years, typical_aging_potential_years, typical_peak_start_years, typical_peak_end_years.
+PK: wine_id. ai_wine_summary, ai_style_profile, ai_terroir_expression, ai_food_pairing, ai_cellar_recommendation, ai_comparable_wines, ai_vegetation_and_land_use, vegetation_source FK, vegetation_confidence. Typical aging (relative years): typical_drinking_window_min_years, typical_drinking_window_max_years, typical_aging_potential_years, typical_peak_start_years, typical_peak_end_years.
 
 ### appellation_insights
 PK: appellation_id. ai_overview, ai_climate_profile, ai_soil_profile, ai_signature_style, ai_key_grapes, ai_aging_generalization, ai_notable_producers_summary.

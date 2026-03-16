@@ -197,7 +197,7 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 - **NV convention**: `vintage_year=0` for non-vintage wines (Champagne NV, Tawny Port, multi-vintage blends).
 - **wine_type normalization**: `'still'` auto-corrected to `'table'` by importer (common JSON authoring mistake).
 - **rs_g_l falsy fix**: `0` correctly stored (not converted to null by JavaScript falsy evaluation).
-- **Critic drinking windows**: `critic_drink_window_start/end` on `wine_vintage_scores`.
+- **Critic drinking windows**: `critic_drinking_window_start/end` on `wine_vintage_scores`.
 - **Wine aliases**: `wine_aliases` table for tracking name evolution.
 - **Vineyard sourcing**: `wine_vineyards` + `wine_vintage_vineyards` import support in place.
 - **Region aliases (in-code)**: ~75 entries mapping English/alternative names (Piedmont→Piemonte, Burgundy→Bourgogne, etc.) + Greek, Lebanese, Georgian regions.
@@ -219,6 +219,12 @@ All 5 pending migrations executed successfully:
 - 53 commune, 23 altitude (low/high), 23 aspect, 22 slope_pct, 8 monopole
 - 193 producers.address
 - Remaining in metadata: classification (28 unmapped Italian DOC/DOCG), cooperage (~80), vineyard_sources (~79)
+
+### Drinking Window Schema Fix (2026-03-16)
+- Renamed `critic_drink_window_*` → `critic_drinking_window_*` on `wine_vintage_scores` (naming consistency)
+- Replaced `wine_insights.typical_drinking_window_years` (single int) with `typical_drinking_window_min_years` / `typical_drinking_window_max_years` (range)
+- Added `peak_drinking_window_start/end` on `wine_vintage_insights` (synthesized optimal peak window)
+- Hierarchy: per-score critic → per-vintage producer → per-vintage aggregated (critic/AI/calculated + peak) → per-wine typical range
 
 ### What's Not There Yet
 - Most insight tables empty (wine, producer, soil, water body)
@@ -298,9 +304,9 @@ Full cross-reference of actual DB schema vs all 10 import scripts. 29 issues ide
 - **`wine_regions`/`producer_regions`** — tables exist but no import pipeline populates them. Noted for future multi-region support.
 
 ### Technical Debt (pre-frontend)
-- **RLS policies:** Only 3/78 tables have RLS. Need "public read, service_role write" before frontend ships.
+- **RLS policies:** ✅ COMPLETE. 91/91 canonical tables have RLS enabled. Policy pattern: `public_read_*` (anon+authenticated SELECT), `service_write_*` (service_role ALL). 3 previously over-permissive tables (country_grapes, region_grapes, appellation_containment) tightened — public write policies removed.
 - **Search infrastructure:** pg_trgm indexes exist but no full-text search, no cross-entity search function.
-- **API views:** No views for common joins (wine detail, producer detail, search index).
+- **API views:** 4 views created: `wine_detail_view`, `producer_detail_view`, `wine_vintage_detail_view`, `wine_search_view`.
 - **Migrations in git:** All DDL via Supabase MCP. Need `supabase/migrations/` before multi-developer.
 - **FK normalization (partially addressed):** `wine_vintage_scores` and `wine_vintage_prices` now have `wine_vintage_id` FK (backfilled). `wine_vintage_grapes` already had optional `wine_vintage_id`. Legacy `wine_id + vintage_year` columns kept as convenience but `wine_vintage_id` is now the preferred join path.
 
