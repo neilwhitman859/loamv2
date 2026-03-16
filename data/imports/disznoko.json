@@ -1,0 +1,179 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Disznókő",
+    "slug": "disznoko",
+    "country": "Hungary",
+    "region": "Tokaj",
+    "appellation": "Tokaji",
+    "website": "https://www.disznoko.hu",
+    "producer_type": "estate",
+    "founded_year": 1413,
+    "hectares_under_vine": 104,
+    "philosophy": "One of the original First Growth estates of Tokaj, classified in the 1772 imperial vineyard survey — the first vineyard classification in the world. Revived after communism by AXA Millésimes (acquired 1992), who invested heavily in cellar modernization while respecting the traditional Tokaji winemaking heritage. The estate sits on the volcanic hill of Disznókő ('Wild Boar's Rock') in Mezőzombor, with south-facing slopes of rhyolite tuff and clay. A balance of traditional oxidative cellar aging and modern reductive techniques.",
+    "metadata": {
+      "full_name": "Disznókő Szőlőbirtok",
+      "address": "Disznókő dűlő, Mezőzombor 3931, Hungary",
+      "owners": "AXA Millésimes",
+      "acquisition_year": 1992,
+      "historical_note": "First documented in 1413. Classified as First Growth (Első Osztályú) in the 1772 imperial classification ordered by Empress Maria Theresa — the world's first official vineyard classification, predating Bordeaux 1855 by 83 years. The estate survived phylloxera, two World Wars, and 45 years of communist collectivization before being restored by AXA Millésimes.",
+      "soil": "Volcanic rhyolite tuff and clay",
+      "production_cases": 25000,
+      "cellar_note": "Miles of historic cellels carved into volcanic tuff, lined with Cladosporium cellare (noble cellar mold). Temperature naturally held at 10-12°C year-round."
+    },
+    "winemakers": [
+      {
+        "name": "László Mészáros",
+        "role": "head",
+        "country": "Hungary",
+        "metadata": {
+          "title": "Winemaker & Estate Director",
+          "notes": "Trained in oenology in Hungary. Oversees both dry and sweet wine production, continuing the estate's tradition of blending oxidative and reductive techniques."
+        }
+      }
+    ]
+  },
+  "wines": [
+    {
+      "name": "Tokaji Aszú 5 Puttonyos",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Tokaji",
+      "style": "Botrytised sweet wine (5 Puttonyos)",
+      "vinification_notes": "Aszú berries hand-selected from botrytis-affected bunches, macerated in fermenting must or base wine. Aged 18-24 months in Hungarian oak barrels (136-litre Gönci casks) in the estate's volcanic tuff cellars. The 2013 Hungarian wine law set the minimum at 120 g/L RS for Aszú, effectively making all modern Aszú at least 5 Puttonyos level.",
+      "soil_description": "Volcanic rhyolite tuff and clay",
+      "grapes": [
+        { "grape": "Furmint", "percentage": 70 },
+        { "grape": "Hárslevelű", "percentage": 25 },
+        { "grape": "Sárgamuskotály", "percentage": 5 }
+      ],
+      "metadata": { "puttonyos": 5 },
+      "vintages": [
+        { "year": 2017, "abv": 11.5, "rs_g_l": 135, "duration_in_oak_months": 24, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }, { "publication": "James Suckling", "score": 94, "score_scale": "100" }] },
+        { "year": 2016, "abv": 11, "rs_g_l": 140, "duration_in_oak_months": 24, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }, { "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
+        { "year": 2013, "abv": 11, "rs_g_l": 150, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Tokaji Aszú 6 Puttonyos",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Tokaji",
+      "style": "Botrytised sweet wine (6 Puttonyos)",
+      "vinification_notes": "Higher concentration of aszú berries than the 5 Puttonyos, with minimum 150 g/L residual sugar. Extended maceration of aszú paste in base wine. Aged 24-36 months in Gönci casks. Only produced in the best vintages when botrytis develops fully and evenly across the estate's slopes.",
+      "soil_description": "Volcanic rhyolite tuff and clay",
+      "grapes": [
+        { "grape": "Furmint", "percentage": 75 },
+        { "grape": "Hárslevelű", "percentage": 20 },
+        { "grape": "Sárgamuskotály", "percentage": 5 }
+      ],
+      "metadata": { "puttonyos": 6 },
+      "vintages": [
+        { "year": 2017, "abv": 10.5, "rs_g_l": 165, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2016, "abv": 10, "rs_g_l": 175, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }] },
+        { "year": 2013, "abv": 10.5, "rs_g_l": 170, "duration_in_oak_months": 36, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Tokaji Aszú Eszencia",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Tokaji",
+      "style": "Aszú Eszencia (near-Eszencia concentration)",
+      "vinification_notes": "Beyond 6 Puttonyos concentration — the richest aszú wine short of pure Eszencia. Minimum 180 g/L RS. Extended maceration and extremely slow fermentation in Gönci casks. Aged 36+ months in the tuff cellars. Produced only in exceptional botrytis vintages, in tiny quantities.",
+      "soil_description": "Volcanic rhyolite tuff and clay",
+      "grapes": [
+        { "grape": "Furmint", "percentage": 70 },
+        { "grape": "Hárslevelű", "percentage": 25 },
+        { "grape": "Sárgamuskotály", "percentage": 5 }
+      ],
+      "vintages": [
+        { "year": 2013, "abv": 9, "rs_g_l": 220, "duration_in_oak_months": 36, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }] },
+        { "year": 2008, "abv": 8, "rs_g_l": 240 },
+        { "year": 2000, "abv": 7.5, "rs_g_l": 250, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Tokaji Eszencia",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Tokaji",
+      "style": "Eszencia (free-run aszú juice)",
+      "vinification_notes": "Pure free-run juice from aszú berries, collected by gravity alone — no pressing. Sugar concentration so extreme (500+ g/L) that fermentation barely proceeds, sometimes taking years to reach 2-5% ABV. Served by the spoonful rather than by the glass. Historically considered a medicinal elixir. Aged in glass demijohns for years before bottling. Among the rarest and most extraordinary wines on Earth.",
+      "soil_description": "Volcanic rhyolite tuff and clay",
+      "grapes": [
+        { "grape": "Furmint", "percentage": 70 },
+        { "grape": "Hárslevelű", "percentage": 25 },
+        { "grape": "Sárgamuskotály", "percentage": 5 }
+      ],
+      "vintages": [
+        { "year": 2017, "abv": 3.5, "rs_g_l": 520, "scores": [{ "publication": "James Suckling", "score": 98, "score_scale": "100" }] },
+        { "year": 2013, "abv": 3, "rs_g_l": 560, "scores": [{ "publication": "Wine Advocate", "score": 99, "score_scale": "100" }, { "publication": "James Suckling", "score": 99, "score_scale": "100" }] },
+        { "year": 2008, "abv": 2.5, "rs_g_l": 580 },
+        { "year": 2000, "abv": 4, "rs_g_l": 480, "scores": [{ "publication": "Wine Advocate", "score": 98, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Tokaji Szamorodni Édes",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Tokaji",
+      "style": "Sweet Szamorodni",
+      "vinification_notes": "Szamorodni ('as it comes' in Polish) is made from whole bunches containing a mix of healthy and botrytised grapes, pressed together without separating aszú berries. The sweet version (Édes) has naturally high residual sugar from the botrytised proportion. Aged in partially filled Gönci casks under a film of flor-like yeast, giving a lightly oxidative character. More accessible and earlier-drinking than Aszú.",
+      "soil_description": "Volcanic rhyolite tuff and clay",
+      "grapes": [
+        { "grape": "Furmint", "percentage": 65 },
+        { "grape": "Hárslevelű", "percentage": 30 },
+        { "grape": "Sárgamuskotály", "percentage": 5 }
+      ],
+      "vintages": [
+        { "year": 2019, "abv": 12, "rs_g_l": 65 },
+        { "year": 2018, "abv": 12, "rs_g_l": 60, "scores": [{ "publication": "James Suckling", "score": 90, "score_scale": "100" }] },
+        { "year": 2017, "abv": 11.5, "rs_g_l": 70 }
+      ]
+    },
+    {
+      "name": "Tokaji Dry Furmint",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Tokaji",
+      "style": "Dry single-varietal",
+      "vinification_notes": "Dry Furmint fermented in stainless steel with a portion in Hungarian oak. Represents the modern dry wing of the Disznókő range and the broader dry Tokaji movement. Volcanic terroir gives smoky minerality and textured weight. No botrytis influence — clean, ripe fruit from earlier-picked parcels.",
+      "soil_description": "Volcanic rhyolite tuff and clay",
+      "grapes": [
+        { "grape": "Furmint", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 13, "rs_g_l": 3, "scores": [{ "publication": "James Suckling", "score": 90, "score_scale": "100" }] },
+        { "year": 2020, "abv": 13.5, "rs_g_l": 4 },
+        { "year": 2019, "abv": 13, "rs_g_l": 3, "scores": [{ "publication": "James Suckling", "score": 91, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Tokaji Száraz Szamorodni",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Tokaji",
+      "style": "Dry Szamorodni",
+      "vinification_notes": "Dry version of Szamorodni — whole bunches with mixed botrytis pressed together, then fermented to dryness. Aged under flor in partially filled Gönci casks, giving a distinctive oxidative, nutty character reminiscent of fino Sherry. A traditional Tokaji style that predates the modern dry Furmint movement. Fuller-bodied and more complex than the dry Furmint, with savory, umami notes from the flor aging.",
+      "soil_description": "Volcanic rhyolite tuff and clay",
+      "grapes": [
+        { "grape": "Furmint", "percentage": 65 },
+        { "grape": "Hárslevelű", "percentage": 30 },
+        { "grape": "Sárgamuskotály", "percentage": 5 }
+      ],
+      "vintages": [
+        { "year": 2020, "abv": 12.5, "rs_g_l": 8 },
+        { "year": 2019, "abv": 13, "rs_g_l": 6, "scores": [{ "publication": "James Suckling", "score": 91, "score_scale": "100" }] },
+        { "year": 2018, "abv": 12.5, "rs_g_l": 7 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "source": "producer_website",
+  "producer": {
+    "name": "Domaine Weinbach",
+    "slug": "domaine-weinbach",
+    "country": "France",
+    "region": "Alsace",
+    "appellation": "Alsace Grand Cru Schlossberg",
+    "website": "https://www.domaineweinbach.com",
+    "producer_type": "estate",
+    "founded_year": 1612,
+    "hectares_under_vine": 30,
+    "philosophy": "Historic Alsace estate in Kaysersberg, founded by Capuchin monks in 1612 and run by the Faller family since 1898. Biodynamic since 1998 (Biodyvin certified). The estate surrounds the Clos des Capucins, a walled vineyard at the foot of Grand Cru Schlossberg. Indigenous yeasts, long lees aging, old oak foudres and stainless steel. No chaptalization. Wines fermented to dryness or near-dryness unless pursuing Vendange Tardive or SGN. The Faller family's goal is to express each terroir with minimal intervention — granite from Schlossberg, limestone-marl from Furstentum, each vineyard singing its own note.",
+    "metadata": {
+      "full_name": "Domaine Weinbach - Colette Faller et ses Filles",
+      "address": "25 Route du Vin, 68240 Kaysersberg-Vignoble, France",
+      "owners": "Faller family (Catherine Faller)",
+      "founder": "Capuchin monks (1612); acquired by Faller family 1898",
+      "generation": "5th generation (Faller family)",
+      "grape_varieties": "Riesling, Gewurztraminer, Pinot Gris, Muscat, Pinot Blanc, Pinot Noir, Sylvaner",
+      "production_cases": 12000,
+      "winemaking": "Whole-bunch pressing. Spontaneous fermentation with indigenous yeasts in stainless steel tanks and old Alsatian oak foudres (large oval casks). Extended lees aging (6-18 months depending on cuvée). No malolactic fermentation. Minimal sulfur additions. Bottled unfined and unfiltered for top cuvées.",
+      "us_importer": "Vineyard Brands",
+      "uk_importer": "Justerini & Brooks",
+      "historical_note": "Founded in 1612 by the Capuchin order of friars who planted the Clos des Capucins, a 5-hectare walled vineyard at the foot of Schlossberg. Secularized during the French Revolution. Acquired by the Faller family in 1898. Théo Faller built the modern reputation from the 1950s-1970s. After his death in 1979, his wife Colette and daughters Laurence and Catherine continued. Catherine Faller now leads the estate. The domaine holds prime parcels in Grand Cru Schlossberg, Furstentum, and Mambourg."
+    },
+    "winemakers": [
+      {
+        "name": "Catherine Faller",
+        "role": "head",
+        "country": "France",
+        "start_year": 2015,
+        "metadata": {
+          "title": "Director & Winemaker",
+          "generation": "5th generation Faller",
+          "notes": "Took over sole management after her mother Colette Faller stepped back. Trained in oenology at Colmar. Continued the estate's transition to biodynamics and has refined the house style toward greater purity and precision."
+        }
+      }
+    ],
+    "farming_certifications": [
+      { "name": "Biodynamic", "since": "1998", "status": "certified" }
+    ],
+    "vineyards": [
+      {
+        "name": "Schlossberg",
+        "appellation": "Alsace Grand Cru Schlossberg",
+        "hectares": 5.5,
+        "metadata": {
+          "village": "Kaysersberg",
+          "classification": "Grand Cru",
+          "soil": "Granite (decomposed Hercynian granite, sandy-granitic topsoil)",
+          "slope_pct": "40-60%",
+          "exposure": "South to southeast facing",
+          "altitude_m": "250-400",
+          "notes": "The first Alsace vineyard classified as Grand Cru (1975). Steep granite slopes above Kaysersberg. Weinbach holds ~5.5 ha of prime parcels, making them the largest single holder. The granite soil gives Rieslings of exceptional mineral tension and longevity. Two named cuvées: the straight Grand Cru and the Cuvée Sainte Catherine (from the oldest, steepest parcels)."
+        }
+      },
+      {
+        "name": "Furstentum",
+        "appellation": "Alsace Grand Cru Furstentum",
+        "hectares": 2.5,
+        "metadata": {
+          "village": "Kientzheim",
+          "classification": "Grand Cru",
+          "soil": "Brown limestone and marl (Muschelkalk), with calcareous clay",
+          "slope_pct": "30-45%",
+          "exposure": "South-facing",
+          "altitude_m": "300-350",
+          "notes": "Hot, sheltered site adjacent to Schlossberg but geologically distinct — limestone-marl versus granite. Ideal for Gewurztraminer and Pinot Gris, producing wines of richness and opulence. Also planted to some Riesling."
+        }
+      },
+      {
+        "name": "Altenbourg",
+        "appellation": "Alsace",
+        "hectares": 1.8,
+        "metadata": {
+          "village": "Kaysersberg",
+          "soil": "Limestone-marl with clay",
+          "exposure": "South-facing",
+          "altitude_m": "280-320",
+          "notes": "Lieu-dit (named vineyard) below and adjacent to Furstentum. Not classified as Grand Cru. Planted primarily to Pinot Gris and Riesling. The calcareous soil gives rich, broad wines with notable spice."
+        }
+      },
+      {
+        "name": "Clos des Capucins",
+        "appellation": "Alsace",
+        "hectares": 5,
+        "metadata": {
+          "village": "Kaysersberg",
+          "soil": "Alluvial gravel and clay over granite bedrock",
+          "exposure": "South-facing, walled vineyard",
+          "altitude_m": "220-250",
+          "notes": "Walled vineyard surrounding the domaine, originally planted by Capuchin monks in 1612. Alluvial terroir at the foot of Schlossberg. Source of the estate-level Cuvée Théo wines. Multiple grape varieties planted."
+        }
+      }
+    ]
+  },
+  "wines": [
+    {
+      "name": "Riesling Grand Cru Schlossberg",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Alsace Grand Cru Schlossberg",
+      "vinification_notes": "From estate parcels on the steep granite slopes of Grand Cru Schlossberg. Whole-bunch pressed, fermented with indigenous yeasts in stainless steel and old oak foudres. Extended lees aging of 12 months. Fermented to near-dryness. No malolactic. The granite terroir gives a taut, mineral-driven Riesling with remarkable aging potential.",
+      "classification": { "system": "Alsace Grand Cru", "level": "Grand Cru" },
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 13, "rs_g_l": 5, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }, { "publication": "Vinous", "score": 95, "score_scale": "100" }] },
+        { "year": 2020, "abv": 13.5, "rs_g_l": 6, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
+        { "year": 2019, "abv": 13, "rs_g_l": 5, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }, { "publication": "Vinous", "score": 94, "score_scale": "100" }] },
+        { "year": 2018, "abv": 13.5, "rs_g_l": 7, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Riesling Grand Cru Schlossberg Cuvée Sainte Catherine",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Alsace Grand Cru Schlossberg",
+      "vinification_notes": "Selection from the oldest vines on the steepest parcels of Schlossberg (planted 1950s-1960s). Whole-bunch pressed, fermented in old oak foudres with indigenous yeasts. 18 months on lees. The Sainte Catherine cuvée represents the pinnacle of the estate's Riesling production — deeper, more concentrated, and more age-worthy than the straight Schlossberg. Named in honor of Sainte Catherine, patroness of the Capuchin chapel.",
+      "classification": { "system": "Alsace Grand Cru", "level": "Grand Cru" },
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 13, "rs_g_l": 4, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "Vinous", "score": 96, "score_scale": "100" }] },
+        { "year": 2020, "abv": 13.5, "rs_g_l": 5, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2019, "abv": 13, "rs_g_l": 4, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "Vinous", "score": 96, "score_scale": "100" }] },
+        { "year": 2018, "abv": 13.5, "rs_g_l": 6, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Gewurztraminer Grand Cru Furstentum",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Alsace Grand Cru Furstentum",
+      "vinification_notes": "From estate parcels on the limestone-marl slopes of Grand Cru Furstentum. Whole-bunch pressed after brief skin contact for aromatic extraction. Fermented with indigenous yeasts in old oak foudres. 12 months on lees. The calcareous terroir amplifies Gewurztraminer's natural opulence while the biodynamic farming maintains freshness and restraint. Moderate residual sugar balanced by firm structure.",
+      "classification": { "system": "Alsace Grand Cru", "level": "Grand Cru" },
+      "grapes": [
+        { "grape": "Gewurztraminer", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 14, "rs_g_l": 20, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }, { "publication": "Vinous", "score": 94, "score_scale": "100" }] },
+        { "year": 2020, "abv": 14.5, "rs_g_l": 25, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }, { "publication": "James Suckling", "score": 94, "score_scale": "100" }] },
+        { "year": 2019, "abv": 14, "rs_g_l": 22, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }] },
+        { "year": 2018, "abv": 14.5, "rs_g_l": 28, "scores": [{ "publication": "Vinous", "score": 93, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Gewurztraminer Vendange Tardive",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Alsace",
+      "label_designations": ["Vendange Tardive"],
+      "vinification_notes": "Late-harvested Gewurztraminer from estate vineyards, picked at extreme ripeness (typically above 14.3% potential alcohol). Whole-bunch pressed, fermented very slowly with indigenous yeasts in old oak foudres over several months. The long, slow fermentation preserves aromatic complexity while building glycerol richness. Rich, honeyed, and exotic — lychee, rose petal, Turkish delight — with enough acidity to keep the wine vibrant.",
+      "grapes": [
+        { "grape": "Gewurztraminer", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2020, "abv": 13, "rs_g_l": 60, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }] },
+        { "year": 2019, "abv": 12.5, "rs_g_l": 65, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }, { "publication": "Vinous", "score": 94, "score_scale": "100" }] },
+        { "year": 2018, "abv": 13, "rs_g_l": 55, "scores": [{ "publication": "James Suckling", "score": 95, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Pinot Gris Altenbourg",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Alsace",
+      "vinification_notes": "From the Altenbourg lieu-dit, a limestone-marl slope adjacent to Grand Cru Furstentum. Whole-bunch pressed, fermented with indigenous yeasts in old oak foudres. 12 months on lees. The calcareous soil gives a rich, smoky Pinot Gris with notable spice and weight. Moderate residual sugar provides mid-palate density while maintaining balance.",
+      "grapes": [
+        { "grape": "Pinot Gris", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 13.5, "rs_g_l": 15, "scores": [{ "publication": "Wine Advocate", "score": 92, "score_scale": "100" }] },
+        { "year": 2020, "abv": 14, "rs_g_l": 18, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }, { "publication": "James Suckling", "score": 93, "score_scale": "100" }] },
+        { "year": 2019, "abv": 13.5, "rs_g_l": 16, "scores": [{ "publication": "Vinous", "score": 92, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Riesling Cuvée Théo",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Alsace",
+      "vinification_notes": "Estate-level Riesling from the Clos des Capucins, the walled vineyard surrounding the domaine. Named for Théo Faller, who built the estate's modern reputation. Fermented in stainless steel with indigenous yeasts. 6-8 months on lees. Alluvial gravel and clay soil over granite bedrock gives a fresh, mineral Riesling — citrus-driven, precise, and approachable young but with genuine aging capacity.",
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 12.5, "rs_g_l": 6, "scores": [{ "publication": "Wine Advocate", "score": 91, "score_scale": "100" }] },
+        { "year": 2021, "abv": 12.5, "rs_g_l": 5, "scores": [{ "publication": "Wine Advocate", "score": 91, "score_scale": "100" }, { "publication": "James Suckling", "score": 92, "score_scale": "100" }] },
+        { "year": 2020, "abv": 13, "rs_g_l": 7, "scores": [{ "publication": "Vinous", "score": 91, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Muscat Grand Cru Schlossberg",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Alsace Grand Cru Schlossberg",
+      "vinification_notes": "Rare single-varietal Muscat from Grand Cru Schlossberg — very few producers plant Muscat on Grand Cru sites. A field blend of Muscat d'Alsace (Muscat Blanc à Petits Grains) and Muscat Ottonel. Whole-bunch pressed, fermented in stainless steel with indigenous yeasts. 10 months on lees. The granite terroir restrains Muscat's exuberance, channeling the perfume into a taut, mineral framework. Fermented dry. Tiny production.",
+      "classification": { "system": "Alsace Grand Cru", "level": "Grand Cru" },
+      "grapes": [
+        { "grape": "Muscat Blanc a Petits Grains", "percentage": 70 },
+        { "grape": "Muscat Ottonel", "percentage": 30 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 12.5, "rs_g_l": 4, "scores": [{ "publication": "Vinous", "score": 93, "score_scale": "100" }] },
+        { "year": 2020, "abv": 13, "rs_g_l": 5, "scores": [{ "publication": "Wine Advocate", "score": 92, "score_scale": "100" }] },
+        { "year": 2019, "abv": 12.5, "rs_g_l": 4, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Gewurztraminer Sélection de Grains Nobles",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Alsace",
+      "label_designations": ["Selection de Grains Nobles"],
+      "vinification_notes": "Individual botrytis-affected berries hand-selected from Grand Cru Furstentum and estate parcels. Only produced in exceptional vintages where noble rot develops fully. Whole-bunch pressed, fermented agonizingly slowly in old oak foudres with indigenous yeasts — fermentation can last 6-12 months. Extraordinarily concentrated: candied ginger, dried apricot, honey, saffron, rose petal. The botrytis concentrates sugars, acids, and glycerol in equal measure. Ages for decades.",
+      "grapes": [
+        { "grape": "Gewurztraminer", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2020, "abv": 11, "rs_g_l": 150, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }] },
+        { "year": 2019, "abv": 10.5, "rs_g_l": 170, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "Vinous", "score": 96, "score_scale": "100" }] },
+        { "year": 2018, "abv": 11.5, "rs_g_l": 140, "scores": [{ "publication": "James Suckling", "score": 96, "score_scale": "100" }] }
+      ]
+    }
+  ]
+}
