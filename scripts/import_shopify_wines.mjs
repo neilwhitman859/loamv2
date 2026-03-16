@@ -80,10 +80,18 @@ async function fetchAll(table, columns = '*', filter = {}, batchSize = 1000) {
 
 // ── Skip filters ────────────────────────────────────────────
 function shouldSkip(product) {
-  if (/Gift Card|T-Shirt|Cool-Pack|Shipping|Opener|Corkscrew|Glass Set/i.test(product.title)) return true;
+  if (/Gift Card|T-Shirt|Cool-Pack|Shipping|Opener|Corkscrew|Glass Set|Tote Bag|Decanter/i.test(product.title)) return true;
   if (/^(TEST|DBG)/i.test(product.title)) return true;
   if (/DO NOT SELL/i.test(product.title)) return true;
-  if (product.product_type && /Spirit|Accessory|Merch|Gift/i.test(product.product_type)) return true;
+  if (product.product_type && /Spirit|Accessory|Merch|Gift|Box|Subscription/i.test(product.product_type)) return true;
+  // Skip multi-packs, bundles, samplers, collections
+  if (/\d+-Pack|\bBundle\b|\bSampler\b|\bCollection\b|\bDuo\b|\bTrio\b/i.test(product.title)) return true;
+  // Skip gift boxes and subscriptions
+  if (/Gift Box|Wine Club|Subscription/i.test(product.title)) return true;
+  // Skip non-wine beverages
+  if (product.product_type && /^(Cider|Piquette|Verjus|Beer|Spirits?|Sake)$/i.test(product.product_type)) return true;
+  if (/\bCider\b/i.test(product.title) && !/Cidre/i.test(product.title)) return true;
+  if (/\bPiquette\b|\bVerjus\b/i.test(product.title)) return true;
   return false;
 }
 
@@ -96,8 +104,13 @@ function parseTags(tags) {
     regions: [],
     color: null,
     vintage: null,
+    abv: null,
     isOrganic: false,
+    isBiodynamic: false,
+    isNatural: false,
     isSparkling: false,
+    effervescence: null,
+    bodyStyle: null,
   };
 
   // Known flat-tag grapes (common varieties that appear as plain tags)
@@ -112,15 +125,40 @@ function parseTags(tags) {
     'montepulciano', 'aglianico', 'nero d\'avola', 'lambrusco',
     'touriga nacional', 'red blend', 'white blend', 'bordeaux blend red',
     'fruit flavored', 'ribolla gialla', 'loureiro', 'elbling',
+    'trousseau', 'poulsard', 'ploussard', 'savagnin', 'melon de bourgogne',
+    'cinsault', 'counoise', 'rolle', 'vermentino', 'tibouren',
+    'furmint', 'hárslevelű', 'blaufränkisch', 'zweigelt', 'st. laurent',
+    'grüner veltliner', 'welschriesling', 'corvina', 'rondinella',
+    'garganega', 'glera', 'arneis', 'cortese', 'grillo', 'nero d\'avola',
+    'nerello mascalese', 'carricante', 'frappato', 'dolcetto', 'freisa',
+    'schiava', 'lagrein', 'teroldego', 'nosiola', 'pecorino',
+    'falanghina', 'fiano', 'greco', 'aglianico', 'piedirosso',
+    'coda di volpe', 'pallagrello', 'casavecchia',
+    'godello', 'mencia', 'treixadura', 'bobal', 'monastrell',
+    'macabeo', 'xarel-lo', 'parellada', 'garnacha',
+    'País', 'pais', 'carignan', 'cinsaut', 'mourvédre',
+    'aligoté', 'aligote', 'jacquère', 'jacquere', 'altesse',
+    'pinot meunier', 'meunier', 'chasselas',
+    'moscatel de alejandría', 'moscatel', 'malvasia',
+    'grechetto', 'trebbiano', 'ciliegiolo', 'colorino',
+    'cabernet sauvignon', 'merlot', 'chardonnay',
   ]);
 
   // Known flat-tag countries
   const FLAT_COUNTRIES = new Map([
-    ['usa', 'United States'], ['france', 'France'], ['italy', 'Italy'],
+    ['usa', 'United States'], ['united states', 'United States'],
+    ['france', 'France'], ['italy', 'Italy'],
     ['spain', 'Spain'], ['australia', 'Australia'], ['argentina', 'Argentina'],
     ['chile', 'Chile'], ['germany', 'Germany'], ['portugal', 'Portugal'],
     ['new zealand', 'New Zealand'], ['south africa', 'South Africa'],
     ['austria', 'Austria'], ['greece', 'Greece'], ['hungary', 'Hungary'],
+    ['slovenia', 'Slovenia'], ['croatia', 'Croatia'], ['georgia', 'Georgia'],
+    ['uruguay', 'Uruguay'], ['brazil', 'Brazil'], ['canada', 'Canada'],
+    ['switzerland', 'Switzerland'], ['czech republic', 'Czech Republic'],
+    ['slovakia', 'Slovakia'], ['romania', 'Romania'], ['bulgaria', 'Bulgaria'],
+    ['morocco', 'Morocco'], ['japan', 'Japan'], ['israel', 'Israel'],
+    ['lebanon', 'Lebanon'], ['mexico', 'Mexico'], ['turkey', 'Turkey'],
+    ['moldova', 'Moldova'], ['uk', 'United Kingdom'], ['england', 'United Kingdom'],
   ]);
 
   // Known flat-tag regions
@@ -135,6 +173,17 @@ function parseTags(tags) {
     'rhone', 'loire', 'alsace', 'languedoc', 'provence', 'rioja',
     'stellenbosch', 'mendoza', 'uco valley', 'mosel', 'pfalz',
     'beaujolais', 'emilia-romagna', 'calabria', 'oregon', 'virginia',
+    'alto adige', 'südtirol', 'friuli venezia giulia', 'abruzzo', 'campania',
+    'sardinia', 'umbria', 'liguria', 'marche', 'basilicata',
+    'galicia', 'castilla y leon', 'catalonia', 'navarra', 'aragon',
+    'swartland', 'paarl', 'franschhoek', 'elgin', 'walker bay',
+    'hawkes bay', 'central otago', 'wairarapa', 'nelson', 'waipara',
+    'clare valley', 'eden valley', 'adelaide hills', 'margaret river',
+    'colchagua', 'maipo', 'casablanca', 'bio bio', 'itata valley',
+    'burgenland', 'wachau', 'kremstal', 'kamptal', 'steiermark',
+    'rheinhessen', 'nahe', 'franken', 'baden', 'württemberg',
+    'douro', 'alentejo', 'dao', 'bairrada', 'vinho verde',
+    'canary islands', 'tenerife',
   ]);
 
   for (const tag of tags) {
@@ -180,9 +229,28 @@ function parseTags(tags) {
     if (/^(beef-venison|salad-green|shellfish-crab|cakes-and)/i.test(lower)) continue;
     // Skip format tags
     if (/^(mini|split|can|popular|constellation|dave phinney)$/i.test(lower)) continue;
-    // Skip style tags
-    if (/^(natty|glou glou|crowdpleaser|young|bold|stone|east|island|hybrid|lacave|pet nat|petnat)/i.test(lower)) continue;
-    if (/^(fallwhite|staff pick|women-made)/i.test(lower)) continue;
+    // Skip style tags (but capture some)
+    if (/^(natty|glou glou|crowdpleaser|young|bold|stone|east|island|hybrid|lacave)/i.test(lower)) continue;
+    if (/^(fallwhite|staff pick|women-made|special)/i.test(lower)) continue;
+
+    // ABV from tags like "13.5%" or "13.5 %"
+    const abvMatch = lower.match(/^(\d{1,2}(?:\.\d+)?)\s*%$/);
+    if (abvMatch) { result.abv = parseFloat(abvMatch[1]); continue; }
+
+    // Body style
+    if (['light', 'medium', 'full', 'light-bodied', 'medium-bodied', 'full-bodied'].includes(lower)) {
+      result.bodyStyle = lower.replace(/-bodied$/, ''); continue;
+    }
+
+    // Farming/winemaking style
+    if (lower === 'biodynamic') { result.isBiodynamic = true; continue; }
+    if (lower === 'natural' || lower === 'low-sulfites' || lower === 'low sulfites') { result.isNatural = true; continue; }
+    if (lower === 'vegan') continue;
+
+    // Pét-nat / Pet'nat
+    if (lower === 'pet nat' || lower === 'petnat' || lower === "pet'nat") {
+      result.isSparkling = true; result.effervescence = 'petillant-naturel'; continue;
+    }
 
     // Flat tag matching
     if (lower.startsWith('vintage ')) {
@@ -460,7 +528,11 @@ async function main() {
 
   const sourceTypes = await fetchAll('source_types', 'id,slug');
   const sourceTypeMap = new Map(sourceTypes.map(s => [s.slug, s.id]));
-  const retailerSourceId = sourceTypeMap.get('retailer-website') || sourceTypeMap.get('importer-website') || sourceTypeMap.get('producer-website');
+  const retailerSourceId = sourceTypeMap.get('retailer-website');
+  if (!retailerSourceId) {
+    console.error('ERROR: source_type "retailer-website" not found. Run migration first.');
+    process.exit(1);
+  }
 
   console.log(`  Countries: ${countries.length}, Regions: ${regions.length}`);
   console.log(`  Appellations: ${appellations.length}, Aliases: ${aliases.length}`);
@@ -514,17 +586,29 @@ async function main() {
       const pt = (product.product_type || '').toLowerCase();
       if (pt.includes('red')) color = 'red';
       else if (pt.includes('white')) color = 'white';
+      else if (pt === 'orange') color = 'orange';
       else if (pt.includes('ros')) color = 'rose';
       else if (/Rosé|Rose\b/i.test(product.title)) color = 'rose';
+      else if (/Orange\b/i.test(product.title) || /Orange\b/i.test(product.product_type)) color = 'orange';
     }
 
-    // Wine type
+    // Wine type & effervescence
     let wineType = 'table';
-    if (tagData.isSparkling || product.product_type === 'Champagne' || /Brut|Cremant|Champagne|Sparkling|Pét-Nat|Prosecco/i.test(product.title)) {
+    let effervescence = 'still';
+    if (tagData.isSparkling || product.product_type === 'Champagne' || /Brut|Cremant|Crémant|Champagne|Sparkling|Pét-Nat|Pet[\s'-]?Nat|Prosecco|Cava|Sekt|Franciacorta/i.test(product.title)) {
+      wineType = 'sparkling';
+      effervescence = tagData.effervescence || 'sparkling';
+    }
+    if (/Pét-Nat|Pet[\s'-]?Nat|Ancestral/i.test(product.title)) {
+      effervescence = 'petillant-naturel';
+    }
+    if (/Frizzante|Vino Frizzante/i.test(product.title)) {
+      effervescence = 'frizzante';
       wineType = 'sparkling';
     }
-    if (/Sauternes|Late Harvest|Tokaji|Dessert/i.test(product.title)) wineType = 'dessert';
-    if (/Port|Sherry|Madeira|Marsala|Vermouth/i.test(product.title)) wineType = 'fortified';
+    if (/Sauternes|Late Harvest|Tokaji|Dessert|Vin de Paille|Vendanges Tardives|Beerenauslese|Trockenbeerenauslese|Eiswein/i.test(product.title)) wineType = 'dessert';
+    if (/\bPort\b|Sherry|Madeira|Marsala/i.test(product.title)) wineType = 'fortified';
+    if (/Vermouth|Vermut/i.test(product.title)) wineType = 'aromatized';
 
     // Vintage: from tags or title
     let vintage = tagData.vintage || parsed.vintage;
@@ -546,9 +630,7 @@ async function main() {
         }
       }
     }
-    if (!countryId) {
-      countryId = countryMap.get('united states'); // default
-    }
+    // No default country — better null than wrong (core principle)
 
     // Region
     let regionId = parsed.region?.id || null;
@@ -614,7 +696,7 @@ async function main() {
       name_normalized: normalize(parsed.displayName),
       color,
       wine_type: wineType,
-      effervescence: wineType === 'sparkling' ? 'sparkling' : null,
+      effervescence: effervescence,
       appellation_id: parsed.appellation?.id || null,
       country_id: countryId,
       region_id: regionId,
@@ -655,7 +737,13 @@ async function main() {
     // Vintage
     const vintageYear = vintage || 0;
     if (!DRY_RUN) {
-      await sb.from('wine_vintages').insert({ id: randomUUID(), wine_id: wineId, vintage_year: vintageYear, metadata: { source: sourceSlug } });
+      await sb.from('wine_vintages').insert({
+        id: randomUUID(),
+        wine_id: wineId,
+        vintage_year: vintageYear,
+        abv: tagData.abv || null,
+        metadata: { source: sourceSlug },
+      });
     }
     stats.vintages++;
 
