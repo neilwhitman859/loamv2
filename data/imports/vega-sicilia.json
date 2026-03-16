@@ -1,0 +1,97 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Vega Sicilia",
+    "slug": "vega-sicilia",
+    "country": "Spain",
+    "region": "Castilla y León",
+    "appellation": "Ribera del Duero",
+    "website": "https://www.vega-sicilia.com",
+    "producer_type": "estate",
+    "founded_year": 1864,
+    "hectares_under_vine": 210,
+    "philosophy": "Spain's most prestigious wine estate. Único is aged an extraordinary 10+ years before release — one of the longest aging programs of any wine in the world. Álamos estate at 700-800m on the Duero river. Bordeaux varieties (Cabernet, Merlot) alongside Tempranillo, a legacy of 19th century French plantings. Valbuena 5° is released after 5 years."
+  },
+  "wines": [
+    {
+      "name": "Único",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Ribera del Duero",
+      "style": "Icon Gran Reserva",
+      "first_vintage_year": 1915,
+      "vinification_notes": "Aged minimum 10 years in a combination of large oak vats and small barrels (mix of American and French oak) before release. Typically 94% Tempranillo (Tinto Fino), 6% Cabernet Sauvignon.",
+      "grapes": [
+        { "grape": "Tempranillo", "percentage": 94 },
+        { "grape": "Cabernet Sauvignon", "percentage": 6 }
+      ],
+      "vintages": [
+        { "year": 2015, "abv": 14.5, "duration_in_oak_months": 72, "bottle_aging_months": 48, "scores": [{ "publication": "Wine Advocate", "score": 99, "score_scale": "100" }, { "publication": "James Suckling", "score": 100, "score_scale": "100" }] },
+        { "year": 2014, "abv": 14.5, "duration_in_oak_months": 72, "bottle_aging_months": 48, "scores": [{ "publication": "Wine Advocate", "score": 98, "score_scale": "100" }, { "publication": "James Suckling", "score": 99, "score_scale": "100" }] },
+        { "year": 2013, "abv": 14, "duration_in_oak_months": 72, "bottle_aging_months": 48 },
+        { "year": 2012, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 98, "score_scale": "100" }] },
+        { "year": 2011, "abv": 14 },
+        { "year": 2009, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 99, "score_scale": "100" }] },
+        { "year": 2006, "abv": 14, "scores": [{ "publication": "Wine Advocate", "score": 98, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Valbuena 5°",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Ribera del Duero",
+      "style": "Reserva (5-year aging)",
+      "vinification_notes": "Second wine of Vega Sicilia, but considered world-class in its own right. 5 years of aging (hence 5°) in a combination of new and used French and American oak before release.",
+      "grapes": [
+        { "grape": "Tempranillo", "percentage": 95 },
+        { "grape": "Merlot", "percentage": 5 }
+      ],
+      "vintages": [
+        { "year": 2019, "abv": 14.5, "duration_in_oak_months": 36, "bottle_aging_months": 24, "scores": [{ "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
+        { "year": 2018, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 98, "score_scale": "100" }, { "publication": "Wine Advocate", "score": 97, "score_scale": "100" }] },
+        { "year": 2017, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
+        { "year": 2016, "abv": 14 },
+        { "year": 2015, "abv": 14.5 }
+      ]
+    },
+    {
+      "name": "Pintia",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Toro",
+      "style": "Toro Tinta de Toro",
+      "vinification_notes": "Vega Sicilia's Toro project. 100% Tinta de Toro (local Tempranillo clone) from old vines at 700m altitude. Aged 14 months in French oak.",
+      "grapes": [
+        { "grape": "Tempranillo", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2019, "abv": 15, "duration_in_oak_months": 14, "scores": [{ "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2018, "abv": 15, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }] },
+        { "year": 2017, "abv": 14.5 }
+      ]
+    },
+    {
+      "name": "Único Reserva Especial",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Ribera del Duero",
+      "style": "Multi-vintage blend (NV release)",
+      "vinification_notes": "Blend of 3 exceptional Único vintages, further aged and released as a non-vintage cuvée. Each release identified by a lot number. Extremely limited production.",
+      "grapes": [
+        { "grape": "Tempranillo", "percentage": 94 },
+        { "grape": "Cabernet Sauvignon", "percentage": 6 }
+      ],
+      "vintages": [
+        {
+          "year": 0,
+          "metadata": { "blend_vintages": "2009/2010/2011", "release": "2023" },
+          "scores": [{ "publication": "Wine Advocate", "score": 99, "score_scale": "100" }]
+        }
+      ]
+    }
+  ]
+}
