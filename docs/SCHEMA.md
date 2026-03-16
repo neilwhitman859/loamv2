@@ -242,6 +242,9 @@ PK: composite (producer_id, region_id). For multi-region producers.
 | community_rating_count | integer | DEFAULT 0 | Number of community ratings |
 | popularity_score | numeric | nullable | Computed demand/popularity metric |
 | search_rank | integer | nullable | Global search rank |
+| data_grade | text | DEFAULT 'F', CHECK | F/D/C/B/A — enrichment completeness grade |
+| lookup_count | integer | DEFAULT 0 | Page view count, triggers enrichment promotion |
+| identity_confidence | text | DEFAULT 'unverified', CHECK | unverified/lwin_matched/cola_matched/upc_matched/manual_verified |
 | metadata | jsonb | nullable | Flexible extra data from scraping |
 | created_at / updated_at / deleted_at | timestamptz | standard | |
 
@@ -526,7 +529,7 @@ PK: composite (producer_id, biodiversity_certification_id). certified_since/unti
 ## 11. Scores
 
 ### publications
-id, slug, name, country, url, type (critic_publication/community/auction_house), score_scale_min (decimal), score_scale_max (decimal), scoring_system (text: 100-point/20-point/5-star/letter/descriptive), active (boolean default true), timestamps, deleted_at
+id, slug, name, country, url, type (critic_publication/community/auction_house), score_scale_min (decimal), score_scale_max (decimal), scoring_system (text: 100-point/20-point/5-star/letter/descriptive), source_trust_level (SMALLINT 1-5: 5=authoritative, 4=respected, 3=niche, 2=community, 1=auction), active (boolean default true), timestamps, deleted_at
 
 ### wine_vintage_scores
 UUID PK. wine_id FK, vintage_year (nullable for NV), wine_vintage_id FK wine_vintages (nullable, backfilled), score, score_low, score_high, score_scale, publication_id FK, critic, tasting_note, review_text, drinking_status, blind_tasted, critic_drinking_window_start/end, review_date, review_type, is_community (default false), rating_count, is_superseded (default false), score_provenance (CHECK: direct/retailer_quote/aggregated/community), url, source_id FK, discovered_at, timestamps.
@@ -629,8 +632,7 @@ Single polymorphic table. id UUID PK, entity_type (appellation/region/country/pr
 
 ## 16. Search & Dedup (canonical)
 
-### wine_candidates
-id UUID PK, producer_name, wine_name, wine_type, grapes (text[]), primary_grape, elaborate, abv, country, region_name, vintage_years (int[]), wines_id FK nullable, source_url, created_at. Currently empty — canonical candidates table.
+~~wine_candidates~~ **DROPPED** (2026-03-16). All wines live in `wines` table with `data_grade` tracking completeness. No separate staging area.
 
 ### producer_dedup_staging
 id SERIAL PK, producer_name, country, norm, wine_count. Currently empty — canonical dedup staging.
@@ -987,6 +989,6 @@ Anonymous page view tracking for analytics and enrichment tier promotion.
 
 ## Table Count
 
-**Canonical:** 84 tables (Geography 6, Producers 5, Wines 4, Vintages 1, Grapes 10, Weather 1, Soil 4, Water 4, Certifications 6, Sources 1, Scores 2, Pricing 2, Documents 3, Insights 11, Trends 1, Search/Dedup 3, Enrichment 1, Vineyards 5, Bottle Formats 2, Classifications 3, Flex Fields 2, External IDs 1, Tasting Descriptors 2, Importers 2, Label Designations 3, Appellation Rules 1, Food Pairings 3, Wine Relationships 1, Producer Timeline 1, Analytics 1)
+**Canonical:** 83 tables (Geography 6, Producers 5, Wines 4, Vintages 1, Grapes 10, Weather 1, Soil 4, Water 4, Certifications 6, Sources 1, Scores 2, Pricing 2, Documents 3, Insights 11, Trends 1, Search/Dedup 2, Enrichment 1, Vineyards 5, Bottle Formats 2, Classifications 3, Flex Fields 2, External IDs 1, Tasting Descriptors 2, Importers 2, Label Designations 3, Appellation Rules 1, Food Pairings 3, Wine Relationships 1, Producer Timeline 1, Analytics 1)
 **xwines_ staging:** 13 tables
-**Total:** 97 tables
+**Total:** 96 tables

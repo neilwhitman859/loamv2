@@ -414,3 +414,30 @@ TTB COLA (Certificate of Label Approval) data contains structured label informat
 
 ### 2026-03-16: Product features prioritized from brainstorm
 From a 16-idea brainstorm, user selected favorites: #10 cross-vintage comparison (top priority, enrichment), #1 vintage weather narratives (top priority, needs Open-Meteo), #13 education layer (mostly frontend UX), #2 wine relationships (new table), #3 winemaker career trajectories (schema check), #4 terroir fingerprinting (new table + enrichment), #5 value scoring (computed view), #9 producer timeline (new table + enrichment). Auction/secondary market (#7) rejected as too high-end. Similar wines section on wine page endorsed for discovery.
+
+### 2026-03-16: Score source trust levels (1-5 scale)
+Publications rated 1-5 for source trustworthiness. 5=authoritative (WA, Vinous, JR, RVF), 4=respected (WS, Decanter, JS, Dunnuck), 3=good but niche (Gambero Rosso, competition results), 2=community (CellarTracker, Vivino), 1=auction houses. Affects display priority on mobile (show highest-trust first), weighted composites (if ever built), and AI prompt context. All 71 publications rated.
+
+### 2026-03-16: Letter-grade enrichment system (F/D/C/B/A)
+Replaced numeric tiers (0-3) with letter grades for memorability. F=identity only (LWIN/COLA), D=basic info (has scores or prices), C=quick enrichment (AI hook + tasting profile), B=standard enrichment (full narrative + terroir + value), A=full enrichment (cross-vintage, timeline, relationships). Tracked on both `wines.data_grade` and `wine_insights.enrichment_tier`. Five grades vs four tiers because D (structured data, no AI) is a distinct useful level.
+
+### 2026-03-16: No wine_candidates table — all wines in wines table
+Dropped `wine_candidates` (0 rows). All wines live in `wines` table regardless of data quality. `wines.data_grade` (F/D/C/B/A) tracks completeness. `wines.identity_confidence` tracks dedup certainty (unverified, lwin_matched, cola_matched, upc_matched, manual_verified). This simplifies the data model — no staging area, just quality grades.
+
+### 2026-03-16: Wine lookup count on wines table
+`wines.lookup_count` INTEGER column tracks page views. Incremented on each lookup. First lookup (count going from 0 to 1) triggers Grade C enrichment. Used as demand signal for Grade B promotion. Simpler than querying wine_lookups table for every decision.
+
+### 2026-03-16: Scores displayable, tasting notes not reproducible
+Numerical scores are facts (not copyrightable) and can be displayed: "Wine Advocate: 96". Full critic tasting note text is copyrighted and should NOT be reproduced verbatim. AI-generated narratives that synthesize (but don't reproduce) critic assessments are on safer legal ground. The `wine_vintage_scores.tasting_note` column may contain excerpts — display with attribution only, not full text.
+
+### 2026-03-16: Text search → wine page, barcode → vintage page
+Default landing behavior after lookup. Text search shows the wine page (all vintages, aggregate info) because users searching by name want the wine in general. Barcode scan shows the specific vintage page because barcodes are vintage-specific. Label photo shows vintage page if vintage detected, wine page if not. Wine page flows naturally into vintage page via vintage selector.
+
+### 2026-03-16: Frontend hybrid architecture
+Reads go direct to Supabase views/RPC (fast, uses CDN). Writes and enrichment go through Edge Functions (server-side Claude API calls). Search uses direct RPC calls. This minimizes latency for reads while keeping enrichment logic server-side.
+
+### 2026-03-16: USD-only pricing for v1
+Store and display prices in USD only. Add `price_currency` and `price_original` columns when non-US import sources are integrated. Currency conversion is a frontend concern for later.
+
+### 2026-03-16: Offline — cache last 50, search needs connectivity
+PWA service worker caches last 50 viewed wines for offline access. Search requires connectivity. Future optimization: cache top 1,000 wines by lookup_count for offline fuzzy matching. Not a launch blocker.
