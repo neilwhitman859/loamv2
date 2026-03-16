@@ -146,7 +146,7 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
 ### Content Tables (Phase 1c trial imports + KL + retailer + wine-type imports, 2026-03-16)
-- **855 producers**, **3,071 wines**, 2,701 vintages, 1,264 scores, 1,279 prices, 3,303 wine_grapes, 84 entity_classifications, 28 winemakers, 168 farming certifications, 80 label designation links, 8 wine_aliases
+- **857 producers**, **3,086 wines**, 2,750 vintages, 1,323 scores, 1,279 prices, 3,331 wine_grapes, 88 entity_classifications, 30 winemakers, 169 farming certifications, 88 label designation links, 116 label designations, 8 wine_aliases
 - wine_vintage_id FK backfilled: scores and prices 100% linked to wine_vintages
 - **Trial imports (6 producers, Phase 1c):**
   - Fort Ross Vineyard (US/Sonoma, estate): 15 wines, 112 vintages, 84 scores
