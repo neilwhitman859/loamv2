@@ -1,0 +1,235 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Produttori del Barbaresco",
+    "slug": "produttori-del-barbaresco",
+    "country": "Italy",
+    "region": "Piedmont",
+    "appellation": "Barbaresco",
+    "website": "https://www.produttoridelbarbaresco.com",
+    "producer_type": "cooperative",
+    "founded_year": 1958,
+    "hectares_under_vine": 110,
+    "philosophy": "The benchmark cooperative of Barbaresco, founded by 19 growers in 1958 to revive the appellation after decades of decline. Now 51 member families farming 110 hectares across the commune of Barbaresco. Traditional winemaking with large Slavonian oak botti. In great vintages, nine single-cru Riserva bottlings showcase the terroir differences between Barbaresco's finest sites. Consistently one of the greatest quality-to-price ratios in Italian wine.",
+    "winemakers": [
+      {
+        "name": "Aldo Vacca",
+        "slug": "aldo-vacca",
+        "role": "head",
+        "title": "Director & Winemaker",
+        "start_year": 1990
+      }
+    ]
+  },
+  "wines": [
+    {
+      "name": "Barbaresco",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Barbaresco",
+      "style": "Estate DOCG blend",
+      "vinification_notes": "Blend of fruit from all 51 member growers across the Barbaresco commune. Fermented in stainless steel with extended maceration on skins (20-25 days). Aged 18-22 months in large Slavonian oak botti (20-50 hL). The baseline Barbaresco — produced every vintage, showing the collective character of the appellation.",
+      "grapes": [
+        { "grape": "Nebbiolo", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2020, "abv": 14.5, "duration_in_oak_months": 20, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }, { "publication": "James Suckling", "score": 93, "score_scale": "100" }, { "publication": "Vinous", "score": 92, "score_scale": "100" }] },
+        { "year": 2019, "abv": 14.5, "duration_in_oak_months": 20, "scores": [{ "publication": "Wine Advocate", "score": 92, "score_scale": "100" }, { "publication": "James Suckling", "score": 94, "score_scale": "100" }, { "publication": "Vinous", "score": 91, "score_scale": "100" }] },
+        { "year": 2018, "abv": 14, "duration_in_oak_months": 20, "scores": [{ "publication": "Wine Advocate", "score": 91, "score_scale": "100" }, { "publication": "James Suckling", "score": 93, "score_scale": "100" }] },
+        { "year": 2017, "abv": 14, "duration_in_oak_months": 20, "scores": [{ "publication": "Wine Advocate", "score": 91, "score_scale": "100" }, { "publication": "James Suckling", "score": 93, "score_scale": "100" }] },
+        { "year": 2016, "abv": 14.5, "duration_in_oak_months": 20, "scores": [{ "publication": "Wine Advocate", "score": 92, "score_scale": "100" }, { "publication": "James Suckling", "score": 93, "score_scale": "100" }, { "publication": "Vinous", "score": 92, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Barbaresco Riserva Asili",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Barbaresco",
+      "style": "Single cru Riserva",
+      "label_designations": ["Riserva"],
+      "vinification_notes": "From the Asili cru in the commune of Barbaresco — south-facing amphitheatre with calcareous marl soils (Tortonian). One of the most celebrated crus, producing wines of exceptional elegance and aromatic intensity. Extended maceration (25-30 days), aged minimum 30 months in large Slavonian oak botti. Only produced in top vintages.",
+      "grapes": [
+        { "grape": "Nebbiolo", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2019, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }, { "publication": "Vinous", "score": 97, "score_scale": "100" }] },
+        { "year": 2017, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 95, "score_scale": "100" }, { "publication": "Vinous", "score": 95, "score_scale": "100" }] },
+        { "year": 2016, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }, { "publication": "Vinous", "score": 97, "score_scale": "100" }] },
+        { "year": 2015, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Barbaresco Riserva Montestefano",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Barbaresco",
+      "style": "Single cru Riserva",
+      "label_designations": ["Riserva"],
+      "vinification_notes": "From the Montestefano cru in the commune of Barbaresco — steep southwest-facing slope with Tortonian sandy marl. Known for producing powerful, structured Barbaresco with dark fruit and spice. Extended maceration (25-30 days), aged minimum 30 months in large Slavonian oak botti.",
+      "grapes": [
+        { "grape": "Nebbiolo", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2019, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }, { "publication": "Vinous", "score": 96, "score_scale": "100" }] },
+        { "year": 2017, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "Vinous", "score": 95, "score_scale": "100" }] },
+        { "year": 2016, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }, { "publication": "Vinous", "score": 96, "score_scale": "100" }] },
+        { "year": 2015, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Barbaresco Riserva Muncagota",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Barbaresco",
+      "style": "Single cru Riserva",
+      "label_designations": ["Riserva"],
+      "aliases": [{ "name": "Barbaresco Riserva Moccagatta", "alias_type": "alternate_label" }],
+      "vinification_notes": "From the Muncagota cru (historically also known as Moccagatta) in the commune of Barbaresco — southeast-facing with calcareous marl. Produces aromatic, refined Barbaresco. Extended maceration (25-30 days), aged minimum 30 months in large Slavonian oak botti.",
+      "grapes": [
+        { "grape": "Nebbiolo", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2019, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2017, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }, { "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
+        { "year": 2016, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }, { "publication": "Vinous", "score": 95, "score_scale": "100" }] },
+        { "year": 2015, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Barbaresco Riserva Ovello",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Barbaresco",
+      "style": "Single cru Riserva",
+      "label_designations": ["Riserva"],
+      "vinification_notes": "From the Ovello cru in the commune of Barbaresco — south-southwest facing with sandy calcareous marl. One of the larger crus, producing generous, approachable Barbaresco with round tannins. Extended maceration (25-30 days), aged minimum 30 months in large Slavonian oak botti.",
+      "grapes": [
+        { "grape": "Nebbiolo", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2019, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }, { "publication": "Vinous", "score": 95, "score_scale": "100" }] },
+        { "year": 2017, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
+        { "year": 2016, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "Vinous", "score": 96, "score_scale": "100" }] },
+        { "year": 2015, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Barbaresco Riserva Pajé",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Barbaresco",
+      "style": "Single cru Riserva",
+      "label_designations": ["Riserva"],
+      "vinification_notes": "From the Pajé cru in the commune of Barbaresco — south-southwest facing with compact calcareous marl. Considered one of the top two crus alongside Asili. Produces structured, age-worthy Barbaresco with great depth. Extended maceration (25-30 days), aged minimum 30 months in large Slavonian oak botti.",
+      "grapes": [
+        { "grape": "Nebbiolo", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2019, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }, { "publication": "Vinous", "score": 96, "score_scale": "100" }] },
+        { "year": 2017, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }, { "publication": "Vinous", "score": 96, "score_scale": "100" }] },
+        { "year": 2016, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 98, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }, { "publication": "Vinous", "score": 97, "score_scale": "100" }] },
+        { "year": 2015, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Barbaresco Riserva Pora",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Barbaresco",
+      "style": "Single cru Riserva",
+      "label_designations": ["Riserva"],
+      "vinification_notes": "From the Pora cru in the commune of Barbaresco — southwest-facing with Tortonian marl. Produces fragrant, floral Barbaresco with silky tannins and notable perfume. Extended maceration (25-30 days), aged minimum 30 months in large Slavonian oak botti.",
+      "grapes": [
+        { "grape": "Nebbiolo", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2019, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2017, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "Vinous", "score": 94, "score_scale": "100" }] },
+        { "year": 2016, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }, { "publication": "Vinous", "score": 96, "score_scale": "100" }] },
+        { "year": 2015, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Barbaresco Riserva Rabajà",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Barbaresco",
+      "style": "Single cru Riserva",
+      "label_designations": ["Riserva"],
+      "vinification_notes": "From the Rabajà cru in the commune of Barbaresco — south-facing with mixed sandy and calcareous marl (Tortonian-Serravallian). One of the most powerful crus, producing Barbaresco with intense concentration and tannic structure. Extended maceration (25-30 days), aged minimum 30 months in large Slavonian oak botti.",
+      "grapes": [
+        { "grape": "Nebbiolo", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2019, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }, { "publication": "Vinous", "score": 96, "score_scale": "100" }] },
+        { "year": 2017, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }, { "publication": "Vinous", "score": 95, "score_scale": "100" }] },
+        { "year": 2016, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }, { "publication": "Vinous", "score": 97, "score_scale": "100" }] },
+        { "year": 2015, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Barbaresco Riserva Rio Sordo",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Barbaresco",
+      "style": "Single cru Riserva",
+      "label_designations": ["Riserva"],
+      "vinification_notes": "From the Rio Sordo cru in the commune of Barbaresco — the coolest and highest-altitude cru, facing south-southwest. Produces the most delicate and perfumed of the nine crus, with lifted aromatics and fine tannins. Extended maceration (25-30 days), aged minimum 30 months in large Slavonian oak botti.",
+      "grapes": [
+        { "grape": "Nebbiolo", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2019, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
+        { "year": 2017, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }, { "publication": "Vinous", "score": 93, "score_scale": "100" }] },
+        { "year": 2016, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 95, "score_scale": "100" }, { "publication": "Vinous", "score": 95, "score_scale": "100" }] },
+        { "year": 2015, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Barbaresco Riserva Montefico",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Barbaresco",
+      "style": "Single cru Riserva",
+      "label_designations": ["Riserva"],
+      "vinification_notes": "From the Montefico cru in the commune of Barbaresco — southwest-facing with calcareous-clay marl. The smallest of the nine crus. Produces intense, concentrated Barbaresco with notable minerality and firm tannins. Extended maceration (25-30 days), aged minimum 30 months in large Slavonian oak botti.",
+      "grapes": [
+        { "grape": "Nebbiolo", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2019, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }, { "publication": "Vinous", "score": 95, "score_scale": "100" }] },
+        { "year": 2017, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "Vinous", "score": 94, "score_scale": "100" }] },
+        { "year": 2016, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }, { "publication": "Vinous", "score": 96, "score_scale": "100" }] },
+        { "year": 2015, "abv": 14.5, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Langhe Nebbiolo",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Langhe",
+      "style": "Entry-level Nebbiolo (Langhe DOC)",
+      "vinification_notes": "Declassified Nebbiolo from younger vines and parcels not selected for Barbaresco DOCG. Shorter maceration and aging than the Barbaresco. Aged 6-8 months in large Slavonian oak botti. Approachable and fresh, meant for earlier drinking.",
+      "grapes": [
+        { "grape": "Nebbiolo", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 14, "duration_in_oak_months": 8, "scores": [{ "publication": "James Suckling", "score": 91, "score_scale": "100" }] },
+        { "year": 2021, "abv": 13.5, "duration_in_oak_months": 8, "scores": [{ "publication": "James Suckling", "score": 91, "score_scale": "100" }] },
+        { "year": 2020, "abv": 14, "duration_in_oak_months": 8 },
+        { "year": 2019, "abv": 14, "duration_in_oak_months": 8, "scores": [{ "publication": "James Suckling", "score": 92, "score_scale": "100" }] }
+      ]
+    }
+  ]
+}

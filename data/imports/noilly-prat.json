@@ -1,0 +1,76 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Noilly Prat",
+    "slug": "noilly-prat",
+    "country": "France",
+    "region": "Languedoc",
+    "website": "https://www.noillyprat.com",
+    "producer_type": "estate",
+    "founded_year": 1813,
+    "philosophy": "Historic French vermouth house in Marseillan, on the Bassin de Thau in Languedoc. Founded by Joseph Noilly in 1813, the recipe was perfected by his son-in-law Claudius Prat. Unique outdoor aging process: base wines rest in Canadian oak casks exposed to the elements — sun, sea air, and temperature swings — for a full year in the open-air yard (le Parc). This oxidative maturation gives the wines their distinctive golden hue and nutty, saline complexity. After aging, the wines are blended with a mistelle (grape spirit and unfermented juice) and macerated with a secret blend of herbs, spices, and botanicals. The only vermouth in the world still made this way. Now owned by Bacardi-Martini."
+  },
+  "wines": [
+    {
+      "name": "Original Dry",
+      "color": "white",
+      "wine_type": "aromatized",
+      "effervescence": "still",
+      "style": "Dry French vermouth — the classic martini vermouth",
+      "vinification_notes": "Base wines of Picpoul and Clairette aged outdoors in Canadian oak casks for one year in Marseillan's open-air yard (le Parc), exposed to sun, wind, and Mediterranean sea air. Blended with mistelle and macerated with a proprietary blend of 20+ botanicals including chamomile, bitter orange peel, gentian, coriander, cloves, and nutmeg. The extended outdoor oxidative aging and botanical maceration are unique to Noilly Prat. Dry style with residual sugar under 30 g/L.",
+      "grapes": [
+        { "grape": "Picpoul", "percentage": 70 },
+        { "grape": "Clairette", "percentage": 30 }
+      ],
+      "vintages": [
+        { "year": 0, "abv": 18 }
+      ]
+    },
+    {
+      "name": "Extra Dry",
+      "color": "white",
+      "wine_type": "aromatized",
+      "effervescence": "still",
+      "style": "Extra dry French vermouth — lighter and drier than the Original Dry",
+      "vinification_notes": "Same Picpoul and Clairette base wines as the Original Dry, with a shorter maceration period and lighter botanical infusion. Designed for a more delicate, less assertive vermouth profile. Less oxidative character than the Original Dry. Popular in the US market as a mixing vermouth.",
+      "grapes": [
+        { "grape": "Picpoul", "percentage": 70 },
+        { "grape": "Clairette", "percentage": 30 }
+      ],
+      "vintages": [
+        { "year": 0, "abv": 16 }
+      ]
+    },
+    {
+      "name": "Rouge",
+      "color": "red",
+      "wine_type": "aromatized",
+      "effervescence": "still",
+      "style": "Sweet red French vermouth",
+      "vinification_notes": "Blend of Picpoul and Clairette base wines with red wine added for color. Macerated with a distinct botanical recipe emphasizing warm spices — vanilla, cocoa, bitter orange — alongside the house blend of herbs. Sweeter than the dry expressions, with caramel and spice character. Suited for Negronis, Manhattans, and sipping neat.",
+      "grapes": [
+        { "grape": "Picpoul", "percentage": 50 },
+        { "grape": "Clairette", "percentage": 25 }
+      ],
+      "vintages": [
+        { "year": 0, "abv": 16 }
+      ]
+    },
+    {
+      "name": "Ambré",
+      "color": "white",
+      "wine_type": "aromatized",
+      "effervescence": "still",
+      "style": "Amber semi-dry French vermouth",
+      "metadata": { "color_detail": "amber" },
+      "vinification_notes": "Extended outdoor aging gives a deep amber/golden color naturally — no caramel coloring added. Semi-dry style bridging the Original Dry and Rouge. Longer maceration with botanicals than the dry expressions, producing richer herbal and oxidative notes. Toasted almond, dried apricot, and honey character from the prolonged sun exposure. Best served chilled as an apéritif or with tonic.",
+      "grapes": [
+        { "grape": "Picpoul", "percentage": 70 },
+        { "grape": "Clairette", "percentage": 30 }
+      ],
+      "vintages": [
+        { "year": 0, "abv": 16 }
+      ]
+    }
+  ]
+}

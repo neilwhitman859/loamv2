@@ -1,0 +1,520 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Gravner",
+    "slug": "gravner",
+    "country": "Italy",
+    "region": "Friuli-Venezia Giulia",
+    "appellation": "Venezia Giulia",
+    "website": "https://www.gravner.it",
+    "producer_type": "estate",
+    "founded_year": 1901,
+    "hectares_under_vine": 18,
+    "philosophy": "Josko Gravner is the godfather of modern orange wine. After a transformative trip to Georgia in 2000, he abandoned stainless steel and barriques for buried Georgian qvevri (clay amphorae). All wines undergo extended skin maceration — whites ferment on skins for 5-7 months in qvevri, followed by years of aging in large Slavonian oak. No temperature control, no selected yeasts, no sulfites added during fermentation, no fining, no filtration. Biodynamic farming since 2012. The estate sits in Oslavia, a hillside hamlet on the Slovenian border known for its ponca soils (layered flysch of compressed marl and sandstone). Gravner's radical return to ancient methods in the early 2000s helped launch the global orange wine movement.",
+    "farming_certifications": [
+      { "name": "Biodynamic", "since": "2012", "status": "practicing" }
+    ],
+    "winemakers": [
+      {
+        "name": "Josko Gravner",
+        "slug": "josko-gravner",
+        "role": "head",
+        "title": "Owner & Winemaker",
+        "start_year": 1973,
+        "country": "Italy"
+      },
+      {
+        "name": "Mateja Gravner",
+        "slug": "mateja-gravner",
+        "role": "assistant",
+        "title": "Winemaker (daughter)",
+        "country": "Italy"
+      }
+    ],
+    "metadata": {
+      "location": "Oslavia, Gorizia, Friuli-Venezia Giulia",
+      "founder": "Giovanni Gravner (great-grandfather)",
+      "current_generation": "4th generation (Josko), 5th generation (Mateja)",
+      "total_hectares": 30,
+      "annual_production_bottles": 35000,
+      "qvevri_count": 36,
+      "qvevri_source": "Georgia (Imeretian and Kakhetian tradition)",
+      "qvevri_volume_liters": "1200-2500",
+      "soil": "Ponca — layered flysch of compressed marl and sandstone, mineral-rich, excellent drainage",
+      "altitude_m": "150-250",
+      "historical_note": "Josko Gravner was initially a modernist — among the first in Friuli to use barriques and temperature-controlled fermentation in the 1980s. After a devastating 1997 hailstorm destroyed 80% of the harvest, he began questioning modern winemaking. A 2000 trip to Georgia, where he discovered 8,000-year-old qvevri traditions, changed everything. He abandoned all modern technology, buried Georgian clay vessels in his cellar, and returned to pre-industrial winemaking. The wine world initially dismissed him; now he is recognized as a visionary.",
+      "key_dates": {
+        "1973": "Josko takes over from father, begins modernizing",
+        "1987": "First barrique-aged wines, critical acclaim",
+        "1997": "Devastating hailstorm — catalyst for philosophical shift",
+        "2000": "First trip to Georgia, discovers qvevri",
+        "2001": "First vintage fermented in qvevri (Ribolla)",
+        "2007": "Abandons DOC Collio designation, declassifies to IGT Venezia Giulia",
+        "2012": "Begins biodynamic practices",
+        "2018": "Mateja Gravner joins full-time"
+      }
+    }
+  },
+  "_notes": {
+    "scope": "Complete current Gravner portfolio — 4 wines. Gravner's production is tiny (~35,000 bottles/year total) and releases are very delayed (5-7 years after vintage). Only scores from major publications are included — many vintages have few or no published scores because Gravner rarely submits to critics. Older pre-qvevri vintages are excluded as they represent a fundamentally different winemaking approach.",
+    "appellations": "Gravner voluntarily left the DOC Collio system in 2007, finding it too restrictive for his methods. All wines since 2007 are labeled IGT Venezia Giulia. Pre-2007 wines were DOC Collio or DOC Friuli Isonzo.",
+    "orange_wine_note": "Gravner's Ribolla and Breg are orange wines — white grapes with extended skin maceration (5-7 months on skins). The 'orange' color value in this file is intentional and tests the CHECK constraint. These are not white wines — the extended skin contact gives them deep amber/orange color, tannic structure, and oxidative complexity.",
+    "score_sourcing": "Scores from Wine Advocate (Monica Larner for Italy), Vinous (Antonio Galloni), James Suckling. Gravner wines are notoriously hard to score — critics often struggle with the style. Many vintages go unreviewed."
+  },
+  "wines": [
+    {
+      "name": "Ribolla",
+      "color": "orange",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Venezia Giulia",
+      "style": "Orange wine — extended skin maceration in qvevri",
+      "vinification_notes": "The iconic Gravner wine. 100% Ribolla Gialla from Oslavia's ponca soils. Hand harvested, destemmed, then fermented on skins in buried Georgian qvevri (clay amphorae) for 5-7 months with no temperature control and no added yeasts. After pressing, transferred to large Slavonian oak casks for 6 years of aging. No sulfites added during fermentation. No fining, no filtration. Bottled without fining or filtration. Released 7 years after vintage. The extended skin contact gives the wine its deep amber-orange color, tannic grip, and extraordinary complexity.",
+      "grapes": [
+        { "grape": "Ribolla Gialla", "percentage": 100 }
+      ],
+      "vintages": [
+        {
+          "year": 2017,
+          "abv": 13.5,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Vinous", "score": 96, "critic": "Eric Guido" },
+            { "publication": "James Suckling", "score": 96 }
+          ]
+        },
+        {
+          "year": 2016,
+          "abv": 14.0,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Vinous", "score": 95, "critic": "Eric Guido" },
+            { "publication": "Wine Advocate", "score": 94, "critic": "Monica Larner" }
+          ]
+        },
+        {
+          "year": 2015,
+          "abv": 14.0,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Vinous", "score": 95, "critic": "Eric Guido" },
+            { "publication": "Wine Advocate", "score": 93, "critic": "Monica Larner" },
+            { "publication": "James Suckling", "score": 94 }
+          ]
+        },
+        {
+          "year": 2014,
+          "abv": 13.5,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "critic": "Monica Larner" },
+            { "publication": "Vinous", "score": 94, "critic": "Eric Guido" }
+          ]
+        },
+        {
+          "year": 2013,
+          "abv": 13.5,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "critic": "Monica Larner" },
+            { "publication": "Vinous", "score": 95, "critic": "Ian D'Agata" }
+          ]
+        },
+        {
+          "year": 2012,
+          "abv": 13.0,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "critic": "Monica Larner" },
+            { "publication": "Vinous", "score": 96, "critic": "Ian D'Agata" }
+          ]
+        },
+        {
+          "year": 2011,
+          "abv": 13.5,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "critic": "Monica Larner" }
+          ]
+        },
+        {
+          "year": 2010,
+          "abv": 13.0,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93, "critic": "Monica Larner" }
+          ]
+        },
+        {
+          "year": 2009,
+          "abv": 14.0,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94, "critic": "Monica Larner" }
+          ]
+        },
+        {
+          "year": 2008,
+          "abv": 13.5,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2007,
+          "abv": 13.5,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2006,
+          "abv": 14.0,
+          "skin_contact_days": 150,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2005,
+          "abv": 13.5,
+          "skin_contact_days": 150,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2004,
+          "abv": 13.5,
+          "skin_contact_days": 150,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2003,
+          "abv": 14.0,
+          "skin_contact_days": 150,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2002,
+          "abv": 13.0,
+          "skin_contact_days": 150,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2001,
+          "abv": 13.5,
+          "skin_contact_days": 120,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        }
+      ]
+    },
+    {
+      "name": "Breg",
+      "color": "orange",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Venezia Giulia",
+      "style": "Orange wine — Friulian white blend with extended skin maceration in qvevri",
+      "vinification_notes": "A blend of Sauvignon Blanc, Chardonnay, Pinot Grigio, and Riesling Italico from Oslavia's ponca soils. Each variety fermented separately on skins in buried Georgian qvevri for 5-7 months. After pressing, blended and aged in large Slavonian oak casks for 6 years. No added yeasts, no sulfites during fermentation, no fining, no filtration. The name 'Breg' means 'hill' in Slovenian, reflecting the cross-border culture of this borderland region. Deep amber-orange color with extraordinary aromatic complexity from the multi-variety blend.",
+      "grapes": [
+        { "grape": "Sauvignon Blanc", "percentage": 30 },
+        { "grape": "Chardonnay", "percentage": 30 },
+        { "grape": "Pinot Grigio", "percentage": 25 },
+        { "grape": "Riesling Italico", "percentage": 15 }
+      ],
+      "vintages": [
+        {
+          "year": 2017,
+          "abv": 13.5,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Vinous", "score": 95, "critic": "Eric Guido" },
+            { "publication": "James Suckling", "score": 95 }
+          ]
+        },
+        {
+          "year": 2016,
+          "abv": 14.0,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Vinous", "score": 94, "critic": "Eric Guido" },
+            { "publication": "Wine Advocate", "score": 93, "critic": "Monica Larner" }
+          ]
+        },
+        {
+          "year": 2015,
+          "abv": 14.0,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Vinous", "score": 94, "critic": "Eric Guido" },
+            { "publication": "Wine Advocate", "score": 93, "critic": "Monica Larner" }
+          ]
+        },
+        {
+          "year": 2014,
+          "abv": 13.5,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94, "critic": "Monica Larner" }
+          ]
+        },
+        {
+          "year": 2013,
+          "abv": 13.5,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94, "critic": "Monica Larner" },
+            { "publication": "Vinous", "score": 93, "critic": "Ian D'Agata" }
+          ]
+        },
+        {
+          "year": 2012,
+          "abv": 13.0,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "critic": "Monica Larner" }
+          ]
+        },
+        {
+          "year": 2011,
+          "abv": 13.5,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93, "critic": "Monica Larner" }
+          ]
+        },
+        {
+          "year": 2010,
+          "abv": 13.0,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2009,
+          "abv": 14.0,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93, "critic": "Monica Larner" }
+          ]
+        },
+        {
+          "year": 2008,
+          "abv": 13.5,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2007,
+          "abv": 13.5,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2006,
+          "abv": 14.0,
+          "skin_contact_days": 150,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2005,
+          "abv": 13.5,
+          "skin_contact_days": 150,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2004,
+          "abv": 13.5,
+          "skin_contact_days": 150,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2003,
+          "abv": 14.0,
+          "skin_contact_days": 150,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2002,
+          "abv": 13.0,
+          "skin_contact_days": 150,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2001,
+          "abv": 13.5,
+          "skin_contact_days": 120,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        }
+      ]
+    },
+    {
+      "name": "Rosso Gravner",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Venezia Giulia",
+      "style": "Red blend from Friulian native grapes, aged in qvevri",
+      "vinification_notes": "A blend of Pignolo and Merlot from Oslavia's ponca soils. Fermented on skins in buried Georgian qvevri with no temperature control and no added yeasts. After pressing, aged in large Slavonian oak casks. No fining, no filtration. Released after extended aging. Pignolo is a rare indigenous Friulian variety — thick-skinned, deeply colored, and tannic. The Merlot provides balance and accessibility.",
+      "grapes": [
+        { "grape": "Pignolo", "percentage": 50 },
+        { "grape": "Merlot", "percentage": 50 }
+      ],
+      "vintages": [
+        {
+          "year": 2015,
+          "abv": 14.0,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93, "critic": "Monica Larner" }
+          ]
+        },
+        {
+          "year": 2014,
+          "abv": 13.5,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 92, "critic": "Monica Larner" }
+          ]
+        },
+        {
+          "year": 2013,
+          "abv": 13.5,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94, "critic": "Monica Larner" }
+          ]
+        },
+        {
+          "year": 2012,
+          "abv": 13.0,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93, "critic": "Monica Larner" }
+          ]
+        },
+        {
+          "year": 2011,
+          "abv": 13.5,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2010,
+          "abv": 13.0,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2009,
+          "abv": 14.0,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2008,
+          "abv": 13.5,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2007,
+          "abv": 13.5,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        }
+      ]
+    },
+    {
+      "name": "Bianco Breg",
+      "color": "orange",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Venezia Giulia",
+      "style": "Orange wine — single-variety Sauvignon with extended skin maceration in qvevri",
+      "vinification_notes": "100% Sauvignon Blanc fermented on skins in buried Georgian qvevri for 5-7 months. Aged in large Slavonian oak casks. No added yeasts, no sulfites during fermentation, no fining, no filtration. This wine was produced in select vintages alongside the multi-variety Breg. Deep amber color. Produced sporadically — not every vintage.",
+      "grapes": [
+        { "grape": "Sauvignon Blanc", "percentage": 100 }
+      ],
+      "vintages": [
+        {
+          "year": 2012,
+          "abv": 13.0,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2010,
+          "abv": 13.0,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2009,
+          "abv": 14.0,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        },
+        {
+          "year": 2007,
+          "abv": 13.5,
+          "skin_contact_days": 180,
+          "aging_vessel": "qvevri then large oak",
+          "new_oak_pct": 0
+        }
+      ]
+    }
+  ]
+}
