@@ -14,6 +14,7 @@ Loam is a wine intelligence platform. Users look up a wine and get the full stor
 - `docs/PRINCIPLES.md` — Product philosophy. Read when making judgment calls about what to build or how.
 - `docs/DECISIONS.md` — Append-only log of human decisions with reasoning. Read when you need to understand why something was done a certain way. Never re-litigate settled decisions without the user raising it.
 - `docs/VOICE.md` — Voice, tone, and food pairing guidance for all AI-generated content. Read before writing any enrichment prompts or insight content.
+- `docs/ENRICHMENT.md` — Four-tier enrichment architecture (Tier 0-3), cost model, on-demand pipeline, wine-not-found flow. Read before building or modifying the enrichment pipeline.
 - `docs/ROADMAP.md` — Phased development plan. Read at session start to know what phase we're in and what's next.
 - `docs/LWIN_STRATEGY.md` — LWIN integration research and three-layer data strategy. Read when working on wine import.
 - `docs/SCHEMA_ASSESSMENT.md` — Deep schema assessment with implementation spec (Part B). Read when doing schema work.
@@ -146,7 +147,10 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
 ### Content Tables (Phase 1c trial imports + KL + retailer + wine-type imports, 2026-03-16)
-- **857 producers**, **3,086 wines**, 2,750 vintages, 1,323 scores, 1,279 prices, 3,331 wine_grapes, 88 entity_classifications, 30 winemakers, 169 farming certifications, 88 label designation links, 116 label designations, 8 wine_aliases
+- **858 producers**, **3,095 wines**, 2,777 vintages, 1,375 scores, 1,279 prices, 3,340 wine_grapes, 90 entity_classifications, 31 winemakers, 169 farming certifications, 90 label designation links, 116 label designations, 11 wine_aliases
+- **96 region aliases**, **75 label designation aliases** seeded (WSET L3 naming conventions, translations, abbreviations)
+- **New tables (2026-03-16):** wine_relationships (0 rows), producer_timeline (0 rows), wine_lookups (0 rows — analytics/enrichment promotion)
+- **wine_insights columns added:** ai_hook, ai_vinification_summary, enrichment_tier (0-3), is_verified
 - wine_vintage_id FK backfilled: scores and prices 100% linked to wine_vintages
 - **Trial imports (6 producers, Phase 1c):**
   - Fort Ross Vineyard (US/Sonoma, estate): 15 wines, 112 vintages, 84 scores
@@ -228,10 +232,11 @@ All 5 pending migrations executed successfully:
 
 ### What's Not There Yet
 - Most insight tables empty (wine, producer, soil, water body)
-- All weather data (appellation_vintages)
+- All weather data (appellation_vintages) — Open-Meteo schema design pending
 - All document tables
 - All soil/water body link tables
-- Enrichment log
+- wine_relationships, producer_timeline tables created but empty (0 rows)
+- Enrichment pipeline not yet built (architecture designed in `docs/ENRICHMENT.md`)
 - Reference data complete — all tables seeded and cross-table validated (2026-03-15). ABV column added to wine_vintages.
 
 ---
@@ -304,18 +309,20 @@ Full cross-reference of actual DB schema vs all 10 import scripts. 29 issues ide
 - **`wine_regions`/`producer_regions`** — tables exist but no import pipeline populates them. Noted for future multi-region support.
 
 ### Technical Debt (pre-frontend)
-- **RLS policies:** ✅ COMPLETE. 91/91 canonical tables have RLS enabled. Policy pattern: `public_read_*` (anon+authenticated SELECT), `service_write_*` (service_role ALL). 3 previously over-permissive tables (country_grapes, region_grapes, appellation_containment) tightened — public write policies removed.
+- **RLS policies:** ✅ COMPLETE. 94/94 canonical tables have RLS enabled (91 original + 3 new tables this session). Policy pattern: `public_read_*` (anon+authenticated SELECT), `service_write_*` (service_role ALL). wine_lookups also has `anon_insert` for anonymous page views.
 - **Search infrastructure:** ✅ COMPLETE. `search_vector` tsvector columns + GIN indexes on wines, producers, appellations, regions, grapes. Trigram indexes on all searchable name columns. Auto-update triggers on INSERT/UPDATE. Two RPC functions: `search_catalog(query, limit, entity_types[])` for unified cross-entity search bar, `search_wines(query, filter_*, sort_by, limit, offset)` for filtered wine browse. Both granted to anon+authenticated.
 - **API views:** 4 views created: `wine_detail_view`, `producer_detail_view`, `wine_vintage_detail_view`, `wine_search_view`.
+- **Alias tables:** ✅ SEEDED. region_aliases (96), label_designation_aliases (75), appellation_aliases (17,558).
+- **JSONB metadata:** ✅ CLEAN. All promotable fields moved to proper columns. Remaining metadata is appropriate for JSONB (import provenance, cooperage, clones, narrative notes).
 - **Migrations in git:** All DDL via Supabase MCP. Need `supabase/migrations/` before multi-developer.
 - **FK normalization (partially addressed):** `wine_vintage_scores` and `wine_vintage_prices` now have `wine_vintage_id` FK (backfilled). `wine_vintage_grapes` already had optional `wine_vintage_id`. Legacy `wine_id + vintage_year` columns kept as convenience but `wine_vintage_id` is now the preferred join path.
 
 ### Open Questions (deferred)
 - Data freshness strategy (how/when to re-import)
-- Dedup strategy across import sources
-- Enrichment pipeline architecture (batch vs on-demand, cost model)
+- Dedup strategy across import sources (LWIN as primary dedup key when available)
 - Data licensing for scores (Wine Spectator, Parker, CellarTracker)
-- TTB COLA access strategy (COLA Cloud API vs direct scraping, cost)
+- TTB COLA access strategy (COLA Cloud API vs FOIA — needs research)
+- Barcode/UPC data source (LWIN or alternatives, not Wine-Searcher)
 
 ---
 
