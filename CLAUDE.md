@@ -146,7 +146,7 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
 ### Content Tables (Phase 1c trial imports + KL + retailer + wine-type imports, 2026-03-16)
-- **~842 producers**, **~2,984 wines**, ~2,413 vintages, ~930 scores, ~1,279 prices, ~3,179 wine_grapes, ~71 entity_classifications, ~14 winemakers, ~160 farming certifications
+- **854 producers**, **3,066 wines**, 2,684 vintages, 1,255 scores, 1,279 prices, 3,296 wine_grapes, 84 entity_classifications, 27 winemakers, 168 farming certifications, 80 label designation links, 8 wine_aliases
 - wine_vintage_id FK backfilled: scores and prices 100% linked to wine_vintages
 - **Trial imports (6 producers, Phase 1c):**
   - Fort Ross Vineyard (US/Sonoma, estate): 15 wines, 112 vintages, 84 scores
@@ -171,6 +171,20 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
   - Catena Zapata (Argentina/Mendoza): 6 wines, 22 vintages. Tests high-altitude viticulture.
   - Château Miraval (France/Provence, rosé): 5 wines, 11 vintages. Tests rosé, cross-region production, 5-grape blends.
   - Vega Sicilia (Spain/Ribera del Duero): 4 wines, 16 vintages. Tests extreme oak aging, multi-vintage NV blend.
+- **Global coverage stress test (5 producers, 2026-03-16):**
+  - Kanonkop (South Africa/Stellenbosch): 6 wines, 23 vintages, 19 scores. Tests Pinotage, Cape Blend, Simonsberg-Stellenbosch ward.
+  - Château Musar (Lebanon): 5 wines, 19 vintages, 12 scores. Tests no-appellation country, indigenous grapes (Obaideh, Merwah), 20-point JR scores.
+  - Pheasant's Tears (Georgia/Kakheti): 6 wines, 17 vintages. Tests qvevri/orange wine, rare indigenous varieties (Shavkapito, Tavkveri, Chinuri).
+  - Blandy's (Portugal/Madeira): 7 wines, 10 vintages, 9 scores. Tests fortified NV (vintage_year=0), age_statement_years, Madeira noble varieties.
+  - Billecart-Salmon (France/Champagne): 7 wines, 13 vintages, 17 scores, 9 label designations. Tests rosé sparkling, NV + vintage, disgorgement dates, Blanc de Blancs/Noirs.
+- **Metadata promotion (2026-03-16):** 849 fields moved from JSONB metadata to proper columns:
+  - 583 vinification notes → wines.vinification_notes (from KL data)
+  - 74 release dates → wine_vintages.release_date
+  - 15 first vintage years → wines.first_vintage_year
+  - 177 production cases → producers.total_production_cases
+  - 4 VDP classifications → entity_classifications
+  - 616 HTML entities cleaned from KL vinification text (&ldquo; → ", &ocirc; → ô, etc.)
+  - Scripts: `scripts/promote_metadata.mjs`, `scripts/promote_classifications.mjs`, `scripts/fix_html_entities.mjs`, `scripts/audit_metadata.mjs`
 - Import architecture: `lib/import.mjs` (shared library) + `data/imports/{slug}.json` (per-producer data)
 - `--replace` mode: deletes all existing producer data in FK dependency order, then fresh insert
 - `parseDate()` helper converts informal dates ("August 2024" → "2024-08-01")
@@ -186,6 +200,18 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 - **Critic drinking windows**: `critic_drink_window_start/end` on `wine_vintage_scores`.
 - **Wine aliases**: `wine_aliases` table for tracking name evolution.
 - **Vineyard sourcing**: `wine_vineyards` + `wine_vintage_vineyards` import support in place.
+- **Region aliases (in-code)**: ~75 entries mapping English/alternative names (Piedmont→Piemonte, Burgundy→Bourgogne, etc.) + Greek, Lebanese, Georgian regions.
+- **Score validation**: Multi-scale aware — handles 100-point, 20-point (Jancis Robinson), 5-point scales.
+- **Pre-import validation**: `--validate` flag catches CHECK constraint violations, unusual ABV/RS, missing required fields.
+- **Accent-tolerant resolution**: All grape, appellation, and region resolvers use `normalize()` to strip accents and standardize whitespace.
+
+### Pending Migrations (MCP offline — queued in scripts/pending_migrations.sql)
+- **3 alias tables**: region_aliases, producer_aliases, label_designation_aliases (with seed scripts ready)
+- **3 Lebanon regions**: Bekaa Valley, Mount Lebanon, Batroun
+- **17 label designations**: Nykteri, Colheita, En Rama, Blanc de Blancs, Blanc de Noirs, Vieilles Vignes, Goldkapsel, Cape Blend, Qvevri, 5 Madeira sweetness styles (Sercial/Verdelho/Bual/Malmsey/Terrantez), Rainwater, Canteiro
+- **9 new wine columns**: soil_description, vine_age_description, vineyard_area_ha, commune, altitude_m_low, altitude_m_high, aspect, slope_pct, monopole
+- **1 new producer column**: address
+- Metadata still pending promotion (needs new columns): soil (~1,489), vine_age (~1,469), vineyard_area (~1,468), classification (28 unmapped Italian DOC/DOCG)
 
 ### What's Not There Yet
 - Most insight tables empty (wine, producer, soil, water body)

@@ -368,3 +368,22 @@ EU GIview/eAmbrosia has no public API (SPA-only). Italian Masaf wine registry wa
 6. **Redundant vineyard columns dropped from wines** — vineyard_id (0 rows), vineyard_name (9 rows, all had wine_vineyards links). wine_vineyards join table is canonical.
 7. **wines.latitude/longitude dropped** — 0 rows populated, conceptually misplaced. Wines get geography from appellation/region/vineyard. Producer lat/lon is for winery location.
 8. **Scores dedup index added** — UNIQUE on (wine_id, vintage_year, publication_id, critic, review_date) with COALESCE for nulls. Prevents duplicate score inserts while allowing multiple critics per publication and re-reviews.
+
+### 2026-03-16: Full autonomy for schema decisions during import→harden cycle
+User granted Claude full schema autonomy: "I want you to think about what would make loam great based on our mutual understanding of it and work towards that through your new autonomy." Tables and fields should be added where beneficial without asking permission, but the user wants to be told about additions. The import→harden cycle methodology: create JSON data → attempt import → hit friction → fix schema/importer → complete import is the primary way to discover schema gaps.
+
+### 2026-03-16: Metadata promotion strategy
+Audit of metadata JSONB across all entities revealed ~8,500 structured values that should be in proper columns/tables. Promotion priority:
+1. **Immediate** — move to existing columns (vinification_notes: 583, release_date: 74, first_vintage_year: 15, production_cases: 177). Done.
+2. **Next** — add new columns for high-frequency label-visible data (soil_description, vine_age_description, vineyard_area_ha, commune, altitude, aspect, slope, monopole). Queued in pending_migrations.sql.
+3. **Deferred** — promote to table links requiring complex resolution (winemaker→producer_winemakers: 195, vineyard→wine_vineyards: 56, classification→entity_classifications: partial).
+Italian DOC/DOCG designation metadata (77 entries) stays in metadata — these are appellation designations, not wine classifications. Different from Burgundy Grand Cru/Premier Cru or VDP which are true classification systems.
+
+### 2026-03-16: Madeira sweetness designations as label_designations
+Sercial, Verdelho, Bual, Malmsey, Terrantez added as label_designations (category: sweetness_style, country: Portugal). These grape names double as style designations on Madeira — "Sercial" on the label means "dry Madeira" as much as it means "made from Sercial grapes." Slugged with `-madeira` suffix to avoid collision with the grape entries.
+
+### 2026-03-16: Cape Blend and Qvevri as label designations
+Cape Blend (South Africa, production_method) — requires Pinotage 30-70%. Qvevri (Georgia, production_method) — UNESCO heritage clay vessel winemaking. Both are label-visible designations that appear on bottles and affect consumer expectations.
+
+### 2026-03-16: Alias tables design (region, producer, label designation)
+Three alias tables queued — same pattern as existing appellation_aliases. Each has: alias, alias_normalized, alias_type (CHECK constraint), language_code, source. UNIQUE index on alias_normalized for dedup. Seed scripts ready: ~75 region aliases (WSET L3 naming conventions), ~80 label designation aliases (German abbreviations, sparkling sweetness translations, production method translations).
