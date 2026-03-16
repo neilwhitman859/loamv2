@@ -42,6 +42,19 @@ Self-referencing hierarchy.
 | is_catch_all | boolean | NOT NULL | One catch-all per country for wines without specific region |
 | created_at / updated_at / deleted_at | timestamptz | standard | |
 
+### region_aliases
+Alternate names for regions (translations, abbreviations, historical names). Follows appellation_aliases pattern.
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| region_id | uuid | FK regions, NOT NULL | ON DELETE CASCADE |
+| name | text | NOT NULL | The variant name |
+| name_normalized | text | UNIQUE NOT NULL | Lowercased/stripped for matching |
+| alias_type | text | NOT NULL, CHECK, default 'alternate_name' | alternate_name/translation/abbreviation/historical_name |
+| language_code | text | nullable | ISO 639-1 |
+| source | text | nullable | |
+| created_at | timestamptz | default now() | |
+
 ### appellations
 Legal designations. Weather attaches here.
 | Column | Type | Constraints | Notes |
@@ -134,6 +147,7 @@ PostGIS geometry for map display and spatial queries. Links to one of country, r
 | philosophy | text | nullable | Producer philosophy/approach statement |
 | latitude | decimal | nullable | GPS coordinates for map display |
 | longitude | decimal | nullable | |
+| address | text | nullable | Full address / location string |
 | metadata | jsonb | nullable | Flexible extra data from scraping |
 | created_at / updated_at / deleted_at | timestamptz | standard | |
 
@@ -164,10 +178,11 @@ UNIQUE(producer_id, winemaker_id, role)
 | Column | Type | Constraints | Notes |
 |---|---|---|---|
 | id | uuid | PK | |
-| producer_id | uuid | FK producers, NOT NULL | |
-| name | text | NOT NULL | Alternate spelling |
-| name_normalized | text | NOT NULL | |
-| source | text | NOT NULL | e.g. 'xwines_dedup' |
+| producer_id | uuid | FK producers, NOT NULL | ON DELETE CASCADE |
+| name | text | NOT NULL | Alternate spelling/name |
+| name_normalized | text | UNIQUE NOT NULL | Lowercased/stripped for matching |
+| alias_type | text | NOT NULL, CHECK, default 'alternate_name' | alternate_name/abbreviation/previous_name/parent_company/informal |
+| source | text | nullable | Which import pipeline created this |
 | created_at | timestamptz | default now() | |
 
 ### producer_regions
@@ -194,11 +209,17 @@ PK: composite (producer_id, region_id). For multi-region producers.
 | is_nv | boolean | NOT NULL default false | |
 | food_pairings | text | nullable | From producer/scraping |
 | elevation_m | integer | nullable | API-derived |
-| aspect | text | nullable | AI-enriched |
-| slope | text | nullable | AI-enriched |
+| altitude_m_low | integer | nullable | Vineyard altitude range (low end) |
+| altitude_m_high | integer | nullable | Vineyard altitude range (high end) |
+| aspect | text | nullable | Vineyard orientation (e.g., "South-Southwest") |
+| slope_pct | numeric | nullable | Vineyard slope percentage |
 | fog_exposure | text | nullable | AI-enriched |
 | vine_planted_year | integer | nullable | |
-| vine_age_description | text | nullable | |
+| vine_age_description | text | nullable | Free text: "30-70 years old", "Planted in 1946" |
+| soil_description | text | nullable | Free text: "Volcanic pumice over limestone" |
+| vineyard_area_ha | numeric | nullable | Vineyard size in hectares |
+| commune | text | nullable | Village/commune within appellation (French: "Vosne-Romanée") |
+| monopole | boolean | default false | Is this a monopole vineyard? |
 | irrigation_type | text | nullable | dry_farmed/irrigated/deficit_irrigation |
 | irrigation_type_source | uuid | FK source_types, nullable | |
 | color | text | nullable, CHECK | red/white/rose/orange (ASCII 'rose' not 'rosé') |
@@ -800,7 +821,7 @@ Controlled vocabulary for wine label terms (Riserva, Kabinett, Estate Bottled, e
 | local_name | text | nullable | Name in local language |
 | slug | text | UNIQUE NOT NULL | |
 | country_id | uuid | FK countries, nullable | Null = universal (e.g., sparkling sweetness terms) |
-| category | text | NOT NULL | CHECK: aging_tier/pradikat_tier/production_method/estate_bottling/late_harvest/ice_wine/botrytis_sweet/vineyard_designation/vineyard_age/quality_tier/geographic_qualifier/sparkling_type/early_release |
+| category | text | NOT NULL | CHECK: aging_tier/pradikat_tier/production_method/estate_bottling/late_harvest/ice_wine/botrytis_sweet/vineyard_designation/vineyard_age/quality_tier/geographic_qualifier/sparkling_type/early_release/sweetness_style |
 | is_regulated | boolean | NOT NULL default true | |
 | regulatory_body | text | nullable | |
 | description | text | nullable | What this designation means |
@@ -822,6 +843,19 @@ Appellation-specific requirements for designations that vary by DOC/DOCG/DO (e.g
 | notes | text | nullable | Additional details (e.g., Oechsle for Prädikats) |
 | created_at | timestamptz | default now() | |
 UNIQUE(label_designation_id, appellation_id)
+
+### label_designation_aliases
+Alternate names/spellings for label designations. Follows appellation_aliases pattern.
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| label_designation_id | uuid | FK label_designations, NOT NULL | ON DELETE CASCADE |
+| name | text | NOT NULL | The variant name |
+| name_normalized | text | UNIQUE NOT NULL | Lowercased/stripped for matching |
+| alias_type | text | NOT NULL, CHECK, default 'abbreviation' | abbreviation/alternate_spelling/translation/synonym |
+| language_code | text | nullable | ISO 639-1 |
+| source | text | nullable | |
+| created_at | timestamptz | default now() | |
 
 ### wine_label_designations
 Many-to-many join. Free-text `wines.label_designation` has been dropped — use this table exclusively.
