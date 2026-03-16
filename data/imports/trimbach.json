@@ -1,0 +1,255 @@
+{
+  "source": "producer_website",
+  "producer": {
+    "name": "Maison Trimbach",
+    "slug": "trimbach",
+    "country": "France",
+    "region": "Alsace",
+    "appellation": "Alsace / Vin d'Alsace",
+    "website": "https://www.trimbach.fr",
+    "producer_type": "estate",
+    "founded_year": 1626,
+    "hectares_under_vine": 54,
+    "philosophy": "One of Alsace's most historic and respected houses, in the same family since 1626 — now in its 13th generation under Anne Trimbach. The house is renowned for its unwavering commitment to dry, age-worthy Rieslings that prioritize structure, minerality, and purity over fruit or residual sugar. Trimbach's style is the antithesis of the rich, off-dry Alsace stereotype: bone-dry, precise, and built for the table. The estate's crown jewel, Clos Sainte Hune, is consistently ranked among the greatest white wines in the world, yet it deliberately forgoes the Grand Cru designation it could carry. Vineyards span 54 hectares across the best slopes around Ribeauvillé, with additional purchased fruit from long-term grower contracts.",
+    "metadata": {
+      "full_name": "Maison F.E. Trimbach",
+      "address": "15 Route de Bergheim, 68150 Ribeauvillé, France",
+      "owners": "Anne Trimbach (13th generation)",
+      "founder": "Jean Trimbach (1626)",
+      "generation": "13th generation (Trimbach family)",
+      "grape_varieties": "Riesling, Gewurztraminer, Pinot Gris, Pinot Blanc, Muscat, Sylvaner, Pinot Noir",
+      "production_cases": 20000,
+      "winemaking": "Whole-bunch pressing. Temperature-controlled fermentation in stainless steel tanks and large oak foudres. Extended lees aging, often 12-18 months. Fermentation pushed to dryness wherever possible — house style prioritizes bone-dry wines. Minimal use of new oak. No malolactic for whites. Extended bottle aging before release — Clos Sainte Hune typically released 4-5 years after vintage.",
+      "us_importer": "Maison Marques & Domaines",
+      "uk_importer": "Fields Morris & Verdin",
+      "notable_recognition": "Clos Sainte Hune regularly appears on lists of the world's greatest white wines. Robert Parker called it 'one of the most extraordinary dry Rieslings made anywhere in the world.' The house served as the template for Alsace's reputation for dry, gastronomic Riesling throughout the 20th century.",
+      "historical_note": "Founded in 1626 by Jean Trimbach in Riquewihr. The family moved to Ribeauvillé in 1898 under Frédéric Émile Trimbach, whose name graces the estate's second-most-celebrated cuvée. The house has survived the Thirty Years' War, multiple changes of sovereignty between France and Germany, and two World Wars. The Clos Sainte Hune vineyard, a 1.67-hectare walled plot within Grand Cru Rosacker, was first vinified separately in 1919."
+    },
+    "winemakers": [
+      {
+        "name": "Jean Trimbach",
+        "role": "head",
+        "country": "France",
+        "start_year": 2000,
+        "metadata": {
+          "title": "Winemaker & Technical Director",
+          "generation": "12th generation Trimbach",
+          "notes": "Oversees all winemaking and vineyard management. Trained in oenology at the University of Dijon. Continues the family's uncompromising dry style. Works alongside niece Anne Trimbach who manages the commercial side of the estate."
+        }
+      }
+    ],
+    "vineyards": [
+      {
+        "name": "Clos Sainte Hune",
+        "appellation": "Alsace grand cru Rosacker",
+        "hectares": 1.67,
+        "metadata": {
+          "village": "Hunawihr",
+          "soil": "Muschelkalk (shell limestone) over Keuper marl",
+          "exposure": "South to south-east facing",
+          "altitude_m": "260-300",
+          "vine_age_note": "Old vines, some exceeding 50 years. 100% Riesling. Replanting done in small parcels to maintain average vine age.",
+          "notes": "A 1.67-hectare walled clos within the Grand Cru Rosacker. Exclusively owned by Trimbach since the early 20th century. Despite lying within Rosacker, Trimbach has always refused to label the wine as Grand Cru, believing the Clos Sainte Hune name carries greater prestige. The vineyard's Muschelkalk limestone gives the wine its trademark saline minerality and extraordinary aging potential. Consistently produces one of the world's greatest dry Rieslings."
+        }
+      },
+      {
+        "name": "Geisberg",
+        "appellation": "Alsace grand cru Geisberg",
+        "hectares": 4.5,
+        "metadata": {
+          "village": "Ribeauvillé",
+          "soil": "Sandstone and dolomitic limestone with gypsum-marl",
+          "exposure": "South-facing",
+          "altitude_m": "250-320",
+          "notes": "Grand Cru vineyard above Ribeauvillé. One of the two vineyards that compose the Frédéric Émile cuvée. From 2019, also bottled as a standalone Grand Cru. Known for wines of great structure and austerity in youth that develop extraordinary complexity with age."
+        }
+      },
+      {
+        "name": "Osterberg",
+        "appellation": "Alsace grand cru Osterberg",
+        "hectares": 3.5,
+        "metadata": {
+          "village": "Ribeauvillé",
+          "soil": "Clay-marl over Muschelkalk",
+          "exposure": "South to south-east facing",
+          "altitude_m": "250-310",
+          "notes": "Grand Cru vineyard adjacent to Geisberg. The second vineyard composing the Frédéric Émile blend. More clay-rich soil gives rounder, more generous fruit character than Geisberg, providing balance in the blend."
+        }
+      }
+    ]
+  },
+  "wines": [
+    {
+      "name": "Riesling Clos Sainte Hune",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Alsace / Vin d'Alsace",
+      "style": "Grand Cru-level single vineyard Riesling (not labeled GC)",
+      "vinification_notes": "From the 1.67-hectare walled Clos Sainte Hune within Grand Cru Rosacker. Whole-bunch pressed, fermented in stainless steel at controlled temperatures. Extended lees aging for 12-18 months. Pushed to complete dryness. Released 4-5 years after vintage. Deliberately not labeled as Grand Cru — Trimbach considers the Clos name more prestigious than the appellation. One of the most age-worthy dry white wines in the world.",
+      "first_vintage_year": 1919,
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "metadata": {
+        "vineyard": "Clos Sainte Hune (within Grand Cru Rosacker)",
+        "monopole": true,
+        "grand_cru_eligible": "Rosacker — deliberately not labeled",
+        "release_delay": "4-5 years post-vintage"
+      },
+      "vintages": [
+        { "year": 2018, "abv": 13.5, "rs_g_l": 2, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "Vinous", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
+        { "year": 2017, "abv": 13, "rs_g_l": 3, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "Vinous", "score": 96, "score_scale": "100" }] },
+        { "year": 2016, "abv": 13, "rs_g_l": 2, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "Vinous", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 98, "score_scale": "100" }] },
+        { "year": 2015, "abv": 13.5, "rs_g_l": 2, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "Vinous", "score": 96, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Riesling Frédéric Émile",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Alsace / Vin d'Alsace",
+      "style": "Named cuvée from Grand Cru vineyards (not labeled GC)",
+      "vinification_notes": "Blend of fruit from Grand Cru Geisberg and Grand Cru Osterberg, the two great hillside vineyards above Ribeauvillé. Named after Frédéric Émile Trimbach, who moved the house to Ribeauvillé in 1898. Whole-bunch pressed, fermented in stainless steel and large oak foudres. Extended lees aging. Fermented to dryness. Like Clos Sainte Hune, deliberately not labeled Grand Cru. Released 3-4 years after vintage.",
+      "first_vintage_year": 1955,
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "metadata": {
+        "vineyard_sources": "Grand Cru Geisberg + Grand Cru Osterberg",
+        "grand_cru_eligible": "Geisberg and Osterberg — deliberately not labeled",
+        "release_delay": "3-4 years post-vintage"
+      },
+      "vintages": [
+        { "year": 2018, "abv": 13.5, "rs_g_l": 3, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "Vinous", "score": 94, "score_scale": "100" }, { "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
+        { "year": 2017, "abv": 13, "rs_g_l": 4, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }, { "publication": "Vinous", "score": 93, "score_scale": "100" }] },
+        { "year": 2016, "abv": 13, "rs_g_l": 3, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "Vinous", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2015, "abv": 13.5, "rs_g_l": 3, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }, { "publication": "Vinous", "score": 94, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Riesling Grand Cru Geisberg",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Alsace grand cru Geisberg",
+      "style": "Alsace Grand Cru Riesling",
+      "classification": { "system": "Alsace Grand Cru", "level": "Grand Cru" },
+      "vinification_notes": "First produced in 2019 — Trimbach's first-ever wine carrying the Grand Cru designation on the label. From the family's holdings in the Geisberg vineyard above Ribeauvillé, on sandstone and dolomitic limestone. Whole-bunch pressed, fermented in stainless steel. Extended lees aging. Bone-dry. A historic departure for a house that had long resisted labeling any wine as Grand Cru.",
+      "first_vintage_year": 2019,
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2020, "abv": 13, "rs_g_l": 2, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }, { "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
+        { "year": 2019, "abv": 13.5, "rs_g_l": 2, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "Vinous", "score": 94, "score_scale": "100" }, { "publication": "James Suckling", "score": 95, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Riesling Grand Cru Schlossberg",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Alsace grand cru Schlossberg",
+      "style": "Alsace Grand Cru Riesling",
+      "classification": { "system": "Alsace Grand Cru", "level": "Grand Cru" },
+      "vinification_notes": "From the steep granite slopes of Schlossberg in Kaysersberg — the first vineyard classified as Grand Cru in Alsace (1975). Granite terroir gives a more floral, ethereal character compared to the limestone-driven Geisberg. Whole-bunch pressed, fermented in stainless steel. Extended lees aging. Dry.",
+      "first_vintage_year": 2019,
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2020, "abv": 13, "rs_g_l": 2, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }, { "publication": "James Suckling", "score": 94, "score_scale": "100" }] },
+        { "year": 2019, "abv": 13.5, "rs_g_l": 2, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }, { "publication": "Vinous", "score": 93, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Gewurztraminer Seigneurs de Ribeaupierre",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Alsace / Vin d'Alsace",
+      "style": "Prestige cuvée Gewurztraminer",
+      "vinification_notes": "Top Gewurztraminer cuvée, from old vines in the best parcels around Ribeauvillé including Grand Cru Osterberg. Named after the medieval Lords of Ribeaupierre who once controlled the village. Whole-bunch pressed, fermented in stainless steel and large oak foudres. Typically off-dry to balance the grape's natural opulence, but structured and serious — not a confected style. Extended lees aging.",
+      "grapes": [
+        { "grape": "Gewurztraminer", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2017, "abv": 14, "rs_g_l": 18, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }, { "publication": "James Suckling", "score": 93, "score_scale": "100" }] },
+        { "year": 2016, "abv": 14, "rs_g_l": 15, "scores": [{ "publication": "Wine Advocate", "score": 92, "score_scale": "100" }, { "publication": "Vinous", "score": 93, "score_scale": "100" }] },
+        { "year": 2015, "abv": 14.5, "rs_g_l": 20, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Gewurztraminer Vendange Tardive",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Alsace / Vin d'Alsace",
+      "style": "Late harvest Gewurztraminer",
+      "label_designations": ["Vendange Tardive"],
+      "vinification_notes": "Late-harvested Gewurztraminer from the best vineyard sites. Must reaches Vendange Tardive minimum ripeness (14.3% potential alcohol for Gewurztraminer). Rich, honeyed, and exotic with lychee, rose petal, and spice. Naturally sweet but balanced by structure. Fermented in stainless steel at cool temperatures. Only produced in vintages with sufficient late-season ripeness.",
+      "grapes": [
+        { "grape": "Gewurztraminer", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2017, "abv": 13.5, "rs_g_l": 55, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }, { "publication": "James Suckling", "score": 94, "score_scale": "100" }] },
+        { "year": 2015, "abv": 14, "rs_g_l": 60, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }] },
+        { "year": 2009, "abv": 13.5, "rs_g_l": 65, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "Vinous", "score": 94, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Pinot Gris Réserve Personnelle",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Alsace / Vin d'Alsace",
+      "style": "Reserve-level Pinot Gris",
+      "vinification_notes": "Top selection of Pinot Gris from the estate's best parcels. Whole-bunch pressed, fermented in stainless steel and large oak foudres. Typically off-dry with a rich, smoky character balanced by good acidity. Extended lees aging. The Réserve Personnelle designation indicates Trimbach's selection of the best lots, a tier above the standard Réserve.",
+      "grapes": [
+        { "grape": "Pinot Gris", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2018, "abv": 13.5, "rs_g_l": 12, "scores": [{ "publication": "Wine Advocate", "score": 91, "score_scale": "100" }, { "publication": "James Suckling", "score": 92, "score_scale": "100" }] },
+        { "year": 2017, "abv": 13.5, "rs_g_l": 14, "scores": [{ "publication": "Wine Advocate", "score": 91, "score_scale": "100" }] },
+        { "year": 2016, "abv": 13, "rs_g_l": 12, "scores": [{ "publication": "Vinous", "score": 91, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Riesling Réserve",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Alsace / Vin d'Alsace",
+      "style": "Estate Riesling",
+      "vinification_notes": "The entry-level estate Riesling and the backbone of Trimbach's production. Sourced from estate vineyards and long-term grower contracts across the best sites around Ribeauvillé. Whole-bunch pressed, fermented in stainless steel at controlled temperatures. Bone-dry, crisp, and nervy with the signature Trimbach precision. Accessible young but rewards 3-5 years of cellaring. The benchmark for dry Alsace Riesling at its price point.",
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 12.5, "rs_g_l": 3, "scores": [{ "publication": "Wine Advocate", "score": 90, "score_scale": "100" }, { "publication": "James Suckling", "score": 91, "score_scale": "100" }] },
+        { "year": 2020, "abv": 12.5, "rs_g_l": 3, "scores": [{ "publication": "Wine Advocate", "score": 90, "score_scale": "100" }] },
+        { "year": 2019, "abv": 13, "rs_g_l": 3, "scores": [{ "publication": "James Suckling", "score": 91, "score_scale": "100" }, { "publication": "Vinous", "score": 89, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Riesling Sélection de Grains Nobles",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Alsace / Vin d'Alsace",
+      "style": "Botrytis dessert Riesling",
+      "label_designations": ["Selection de Grains Nobles"],
+      "vinification_notes": "Individually selected botrytis-affected berries from the finest vineyard parcels. The rarest wine in the Trimbach range — produced only in exceptional botrytis vintages, perhaps once or twice per decade. Must weight exceeds SGN minimum (18.2% potential alcohol for Riesling). Extraordinarily concentrated with honeyed citrus, dried apricot, and spice balanced by the signature Trimbach acidity. Fermented very slowly in stainless steel. Tiny production.",
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2008, "abv": 10, "rs_g_l": 160, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "Vinous", "score": 95, "score_scale": "100" }] },
+        { "year": 2001, "abv": 10.5, "rs_g_l": 150, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }] },
+        { "year": 2000, "abv": 10, "rs_g_l": 155, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }] }
+      ]
+    }
+  ]
+}
