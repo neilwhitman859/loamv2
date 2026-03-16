@@ -1,0 +1,120 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Château Miraval",
+    "slug": "chateau-miraval",
+    "country": "France",
+    "region": "Provence",
+    "appellation": "Côtes de Provence",
+    "website": "https://www.miraval.com",
+    "producer_type": "estate",
+    "founded_year": 2012,
+    "hectares_under_vine": 50,
+    "philosophy": "Organic estate in Correns, the first organic village in France. Wines made in partnership with the Perrin family (Château de Beaucastel). Focus on premium Provence rosé, proving the category can command serious prices and critical attention.",
+    "farming_certifications": [
+      { "name": "Organic", "since": "2012", "status": "certified" }
+    ],
+    "metadata": {
+      "owner": "Brad Pitt & Perrin family partnership",
+      "village": "Correns",
+      "winemaking_partner": "Famille Perrin (Château de Beaucastel)"
+    }
+  },
+  "wines": [
+    {
+      "name": "Miraval Rosé",
+      "color": "rose",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Côtes de Provence",
+      "style": "Premium Provence rosé",
+      "vinification_notes": "Direct press (saignée not used). Cold fermentation in temperature-controlled stainless steel. Pale salmon-pink color. No malolactic fermentation to preserve freshness.",
+      "grapes": [
+        { "grape": "Grenache", "percentage": 40 },
+        { "grape": "Syrah", "percentage": 20 },
+        { "grape": "Cinsaut", "percentage": 20 },
+        { "grape": "Mourvèdre", "percentage": 10 },
+        { "grape": "Vermentino", "percentage": 10 }
+      ],
+      "vintages": [
+        { "year": 2023, "abv": 13, "mlf": "none", "scores": [{ "publication": "James Suckling", "score": 93, "score_scale": "100" }] },
+        { "year": 2022, "abv": 13 },
+        { "year": 2021, "abv": 13 },
+        { "year": 2020, "abv": 13 }
+      ]
+    },
+    {
+      "name": "Studio by Miraval Rosé",
+      "color": "rose",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Méditerranée",
+      "style": "Entry-level Provence rosé",
+      "grapes": [
+        { "grape": "Grenache", "percentage": 40 },
+        { "grape": "Cinsaut", "percentage": 30 },
+        { "grape": "Syrah", "percentage": 20 },
+        { "grape": "Mourvèdre", "percentage": 10 }
+      ],
+      "vintages": [
+        { "year": 2023, "abv": 12.5 },
+        { "year": 2022, "abv": 12.5 }
+      ]
+    },
+    {
+      "name": "Miraval Blanc",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Coteaux Varois en Provence",
+      "style": "Provence white",
+      "grapes": [
+        { "grape": "Vermentino", "percentage": 80 },
+        { "grape": "Grenache Blanc", "percentage": 20 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 13 },
+        { "year": 2021, "abv": 13 }
+      ]
+    },
+    {
+      "name": "Miraval Rouge",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Coteaux Varois en Provence",
+      "style": "Provence red",
+      "grapes": [
+        { "grape": "Syrah", "percentage": 60 },
+        { "grape": "Grenache", "percentage": 30 },
+        { "grape": "Cabernet Sauvignon", "percentage": 10 }
+      ],
+      "vintages": [
+        { "year": 2020, "abv": 14 },
+        { "year": 2019, "abv": 14 }
+      ]
+    },
+    {
+      "name": "Fleur de Miraval Rosé Champagne",
+      "color": "rose",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "style": "Prestige rosé Champagne",
+      "vinification_notes": "Made in collaboration with Champagne house Rodez. 75% Chardonnay, 25% Pinot Noir (red wine from Les Riceys). Non-vintage. Zero dosage.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 75 },
+        { "grape": "Pinot Noir", "percentage": 25 }
+      ],
+      "label_designations": ["Brut Nature"],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 0,
+          "metadata": { "collaboration": "Champagne Rodez" },
+          "scores": [{ "publication": "James Suckling", "score": 94, "score_scale": "100" }]
+        }
+      ]
+    }
+  ]
+}

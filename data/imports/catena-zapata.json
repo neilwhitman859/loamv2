@@ -1,0 +1,136 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Catena Zapata",
+    "slug": "catena-zapata",
+    "country": "Argentina",
+    "region": "Mendoza",
+    "appellation": "Mendoza",
+    "website": "https://www.catenawines.com",
+    "producer_type": "estate",
+    "founded_year": 1902,
+    "hectares_under_vine": 700,
+    "philosophy": "Pioneer of high-altitude Argentine viticulture. Dr. Nicolás Catena Zapata planted the first high-altitude Malbec vineyards in the 1990s, proving that elevation (up to 1,500m) produces world-class wines. Estate vineyards across Mendoza at different altitudes for blending complexity.",
+    "metadata": {
+      "owner": "Catena family (4th generation)",
+      "altitude_range_m": "900-1,500"
+    },
+    "winemakers": [
+      {
+        "name": "Alejandro Vigil",
+        "slug": "alejandro-vigil",
+        "role": "head",
+        "title": "Chief Winemaker",
+        "start_year": 2002
+      }
+    ]
+  },
+  "wines": [
+    {
+      "name": "Nicolás Catena Zapata",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Mendoza",
+      "style": "Icon Cabernet-Malbec blend",
+      "first_vintage_year": 1997,
+      "vinification_notes": "Flagship blend from Adrianna and Nicasia vineyards at 1,450m altitude. Aged 18 months in new French oak. Named after founder.",
+      "grapes": [
+        { "grape": "Cabernet Sauvignon", "percentage": 60 },
+        { "grape": "Malbec", "percentage": 40 }
+      ],
+      "vintages": [
+        { "year": 2020, "abv": 14.5, "new_oak_pct": 100, "duration_in_oak_months": 18, "scores": [{ "publication": "James Suckling", "score": 98, "score_scale": "100" }, { "publication": "Wine Advocate", "score": 97, "score_scale": "100" }] },
+        { "year": 2019, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 98, "score_scale": "100" }, { "publication": "Wine Advocate", "score": 97, "score_scale": "100" }] },
+        { "year": 2018, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 99, "score_scale": "100" }] },
+        { "year": 2017, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 100, "score_scale": "100" }] },
+        { "year": 2016, "abv": 14.5 },
+        { "year": 2015, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 99, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Adrianna Vineyard Malbec",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Mendoza",
+      "style": "Single vineyard Malbec (high altitude)",
+      "vinification_notes": "From Adrianna Vineyard at 1,450m in Gualtallary, Tupungato (Uco Valley). Extreme altitude Malbec.",
+      "grapes": [
+        { "grape": "Malbec", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2020, "abv": 14, "scores": [{ "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
+        { "year": 2019, "abv": 14, "scores": [{ "publication": "James Suckling", "score": 98, "score_scale": "100" }, { "publication": "Wine Advocate", "score": 98, "score_scale": "100" }] },
+        { "year": 2018, "abv": 14 },
+        { "year": 2017, "abv": 14 }
+      ]
+    },
+    {
+      "name": "Adrianna Vineyard Fortuna Terrae Malbec",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Mendoza",
+      "style": "Single parcel Malbec (ultra-premium)",
+      "vinification_notes": "Single parcel from Adrianna at 1,450m. Only made in exceptional years. Named 'Fortuna Terrae' (Fortunate Earth). Aged in French oak.",
+      "grapes": [
+        { "grape": "Malbec", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2019, "abv": 14, "scores": [{ "publication": "James Suckling", "score": 100, "score_scale": "100" }, { "publication": "Wine Advocate", "score": 100, "score_scale": "100" }] },
+        { "year": 2018, "abv": 14 },
+        { "year": 2017, "abv": 14, "scores": [{ "publication": "James Suckling", "score": 100, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Adrianna Vineyard White Bones Chardonnay",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Mendoza",
+      "style": "High altitude Chardonnay",
+      "vinification_notes": "From limestone-rich parcel at Adrianna (1,450m). Named for white calcium deposits in the soil. Wild fermented in French oak.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 13.5, "scores": [{ "publication": "James Suckling", "score": 98, "score_scale": "100" }] },
+        { "year": 2020, "abv": 13.5, "scores": [{ "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
+        { "year": 2019, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 98, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Catena Alta Malbec",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Mendoza",
+      "style": "Reserve Malbec",
+      "grapes": [
+        { "grape": "Malbec", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2020, "abv": 14, "scores": [{ "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
+        { "year": 2019, "abv": 14 },
+        { "year": 2018, "abv": 14 }
+      ]
+    },
+    {
+      "name": "Catena Malbec",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Mendoza",
+      "style": "Estate Malbec (entry level)",
+      "grapes": [
+        { "grape": "Malbec", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 13.5 },
+        { "year": 2021, "abv": 13.5, "scores": [{ "publication": "James Suckling", "score": 93, "score_scale": "100" }] },
+        { "year": 2020, "abv": 13.5 }
+      ]
+    }
+  ]
+}
