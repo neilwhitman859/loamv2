@@ -1,0 +1,170 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Felton Road",
+    "slug": "felton-road",
+    "country": "New Zealand",
+    "region": "Central Otago",
+    "appellation": "Central Otago",
+    "website": "https://www.feltonroad.com",
+    "producer_type": "estate",
+    "founded_year": 1991,
+    "hectares_under_vine": 30,
+    "philosophy": "Biodynamic estate in Bannockburn, Central Otago — the world's southernmost wine region. All fruit estate-grown from three vineyard blocks. Wild yeast fermentation, minimal intervention. Focus on expressing Central Otago's unique terroir through Pinot Noir, Chardonnay, and Riesling.",
+    "farming_certifications": [
+      { "name": "Biodynamic", "since": "2010", "status": "certified" },
+      { "name": "Organic", "since": "2010", "status": "certified" }
+    ],
+    "winemakers": [
+      {
+        "name": "Blair Walter",
+        "slug": "blair-walter",
+        "role": "head",
+        "title": "Winemaker & Viticulturist",
+        "start_year": 1997
+      }
+    ]
+  },
+  "wines": [
+    {
+      "name": "Block 3 Pinot Noir",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Central Otago",
+      "style": "Single block Pinot Noir (flagship)",
+      "vinification_notes": "Block 3 — original Felton Road vineyard on Cornish Point, Bannockburn. Schist soils over loess and gravel. Wild yeast, 25-30% whole cluster, aged 11 months in French oak (30% new). Unfined, unfiltered.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 13.5, "whole_cluster_pct": 28, "new_oak_pct": 30, "duration_in_oak_months": 11, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
+        { "year": 2021, "abv": 13, "whole_cluster_pct": 25, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }] },
+        { "year": 2020, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }] },
+        { "year": 2019, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
+        { "year": 2018, "abv": 13.5 },
+        { "year": 2017, "abv": 14 }
+      ]
+    },
+    {
+      "name": "Block 5 Pinot Noir",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Central Otago",
+      "style": "Single block Pinot Noir",
+      "vinification_notes": "Block 5 — younger plantings on Cornish Point. More structured and powerful than Block 3. Wild yeast, 25% whole cluster, aged in French oak.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2021, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }] },
+        { "year": 2020, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }] },
+        { "year": 2019, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Calvert Pinot Noir",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Central Otago",
+      "style": "Single vineyard Pinot Noir (Calvert Vineyard)",
+      "vinification_notes": "From Calvert vineyard — different soil profile (more clay). Wild yeast, whole cluster, French oak.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 13.5, "scores": [{ "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2021, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }] },
+        { "year": 2020, "abv": 13.5 },
+        { "year": 2019, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Bannockburn Pinot Noir",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Central Otago",
+      "style": "Estate Pinot Noir (entry-level)",
+      "vinification_notes": "Estate blend from all three vineyard blocks. Gateway to the Felton Road range. Wild yeast, French oak.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 13.5, "scores": [{ "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
+        { "year": 2021, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }] },
+        { "year": 2020, "abv": 13.5 },
+        { "year": 2019, "abv": 13.5 }
+      ]
+    },
+    {
+      "name": "Block 2 Chardonnay",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Central Otago",
+      "style": "Single block Chardonnay",
+      "vinification_notes": "Whole bunch pressed, wild yeast fermented in French oak (20% new). Full malolactic. Aged on lees 11 months with batonnage.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 13.5, "mlf": "full", "batonnage": true, "new_oak_pct": 20, "scores": [{ "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2021, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }] },
+        { "year": 2020, "abv": 13 },
+        { "year": 2019, "abv": 13 }
+      ]
+    },
+    {
+      "name": "Bannockburn Chardonnay",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Central Otago",
+      "style": "Estate Chardonnay",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 13 },
+        { "year": 2021, "abv": 13 }
+      ]
+    },
+    {
+      "name": "Dry Riesling",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Central Otago",
+      "style": "Dry Riesling",
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2023, "abv": 12.5, "rs_g_l": 5 },
+        { "year": 2022, "abv": 12.5, "rs_g_l": 6, "scores": [{ "publication": "James Suckling", "score": 94, "score_scale": "100" }] },
+        { "year": 2021, "abv": 12, "rs_g_l": 5 }
+      ]
+    },
+    {
+      "name": "Block 1 Riesling",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Central Otago",
+      "style": "Single block Riesling (off-dry)",
+      "vinification_notes": "Single block Riesling with slightly higher residual sugar than the Dry Riesling. Block 1 on the Cornish Point vineyard.",
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 11, "rs_g_l": 30, "scores": [{ "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
+        { "year": 2021, "abv": 11, "rs_g_l": 28 },
+        { "year": 2020, "abv": 11.5, "rs_g_l": 25 }
+      ]
+    }
+  ]
+}

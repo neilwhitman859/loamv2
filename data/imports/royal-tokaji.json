@@ -1,0 +1,145 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Royal Tokaji",
+    "slug": "royal-tokaji",
+    "country": "Hungary",
+    "region": "Tokaj",
+    "appellation": "Tokaji",
+    "website": "https://www.royal-tokaji.com",
+    "producer_type": "estate",
+    "founded_year": 1990,
+    "hectares_under_vine": 107,
+    "philosophy": "Founded by Hugh Johnson and a group of investors to revive the great Tokaji wines after communism. Estate includes first-growth vineyards classified in 1700 — the world's first vineyard classification, predating Bordeaux by 155 years. Focus on single-vineyard Aszú wines from classified sites."
+  },
+  "wines": [
+    {
+      "name": "Tokaji Aszú 5 Puttonyos",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Tokaji",
+      "style": "Botrytised sweet wine (5 Puttonyos)",
+      "vinification_notes": "Aszú berries (individually botrytised grapes) macerated in base wine. Minimum 120 g/L residual sugar. Aged minimum 18 months in oak. Traditional puttonyos classification (3-6 scale) simplified to minimum 5 puttonyos by 2013 Hungarian law.",
+      "grapes": [
+        { "grape": "Furmint", "percentage": 70 },
+        { "grape": "Hárslevelű", "percentage": 25 },
+        { "grape": "Sárgamuskotály", "percentage": 5 }
+      ],
+      "metadata": { "puttonyos": 5 },
+      "vintages": [
+        { "year": 2017, "abv": 11, "rs_g_l": 150, "duration_in_oak_months": 24 },
+        { "year": 2016, "abv": 11.5, "rs_g_l": 140, "duration_in_oak_months": 24 },
+        { "year": 2013, "abv": 11, "rs_g_l": 160, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Tokaji Aszú 6 Puttonyos",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Tokaji",
+      "style": "Botrytised sweet wine (6 Puttonyos)",
+      "vinification_notes": "Higher concentration than 5 Puttonyos. Minimum 150 g/L residual sugar. Only in exceptional years.",
+      "grapes": [
+        { "grape": "Furmint", "percentage": 75 },
+        { "grape": "Hárslevelű", "percentage": 25 }
+      ],
+      "metadata": { "puttonyos": 6 },
+      "vintages": [
+        { "year": 2016, "abv": 10, "rs_g_l": 180, "duration_in_oak_months": 30 },
+        { "year": 2013, "abv": 10.5, "rs_g_l": 175, "duration_in_oak_months": 30, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }] },
+        { "year": 2008, "abv": 10, "rs_g_l": 190, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Tokaji Aszú Essencia",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Tokaji",
+      "style": "Aszú Essencia (near-Essencia concentration)",
+      "vinification_notes": "Beyond 6 Puttonyos. Minimum 180 g/L RS. Extremely rare. Only in exceptional vintages.",
+      "grapes": [
+        { "grape": "Furmint", "percentage": 70 },
+        { "grape": "Hárslevelű", "percentage": 30 }
+      ],
+      "vintages": [
+        { "year": 2008, "abv": 8, "rs_g_l": 250 },
+        { "year": 2003, "abv": 7, "rs_g_l": 280 },
+        { "year": 1999, "abv": 6.5, "rs_g_l": 300 }
+      ]
+    },
+    {
+      "name": "Mézes Mály Tokaji Aszú 6 Puttonyos",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Tokaji",
+      "style": "Single vineyard Aszú — First Growth",
+      "vinification_notes": "Single vineyard from Mézes Mály — classified First Growth in 1700. One of the greatest Tokaji vineyards. Southwest-facing volcanic slopes.",
+      "grapes": [
+        { "grape": "Furmint", "percentage": 80 },
+        { "grape": "Hárslevelű", "percentage": 20 }
+      ],
+      "metadata": { "puttonyos": 6, "vineyard": "Mézes Mály", "classification": "First Growth (1700)" },
+      "vintages": [
+        { "year": 2016, "abv": 10, "rs_g_l": 180, "scores": [{ "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
+        { "year": 2013, "abv": 10, "rs_g_l": 185, "scores": [{ "publication": "Wine Advocate", "score": 98, "score_scale": "100" }] },
+        { "year": 2008, "abv": 9.5, "rs_g_l": 200 }
+      ]
+    },
+    {
+      "name": "Szt. Tamás Tokaji Aszú 6 Puttonyos",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Tokaji",
+      "style": "Single vineyard Aszú — First Growth",
+      "vinification_notes": "Single vineyard from Szt. Tamás (Saint Thomas) — classified First Growth. South-facing slopes of volcanic origin.",
+      "grapes": [
+        { "grape": "Furmint", "percentage": 80 },
+        { "grape": "Hárslevelű", "percentage": 20 }
+      ],
+      "metadata": { "puttonyos": 6, "vineyard": "Szt. Tamás" },
+      "vintages": [
+        { "year": 2016, "abv": 10, "rs_g_l": 175 },
+        { "year": 2013, "abv": 10, "rs_g_l": 180, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Tokaji Late Harvest",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Tokaji",
+      "style": "Late Harvest (Késői Szüretelésű)",
+      "grapes": [
+        { "grape": "Furmint", "percentage": 70 },
+        { "grape": "Hárslevelű", "percentage": 30 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 12, "rs_g_l": 50 },
+        { "year": 2020, "abv": 12, "rs_g_l": 45 },
+        { "year": 2019, "abv": 12.5, "rs_g_l": 55 }
+      ]
+    },
+    {
+      "name": "Tokaji Dry Furmint",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Tokaji",
+      "style": "Dry single-varietal",
+      "vinification_notes": "Dry Furmint showing the volcanic terroir character. Represents the modern dry side of Tokaji production alongside the traditional sweet wines.",
+      "grapes": [
+        { "grape": "Furmint", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 13 },
+        { "year": 2021, "abv": 13, "scores": [{ "publication": "James Suckling", "score": 91, "score_scale": "100" }] },
+        { "year": 2020, "abv": 12.5 }
+      ]
+    }
+  ]
+}
