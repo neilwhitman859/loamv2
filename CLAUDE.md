@@ -305,7 +305,7 @@ Full cross-reference of actual DB schema vs all 10 import scripts. 29 issues ide
 
 ### Technical Debt (pre-frontend)
 - **RLS policies:** ✅ COMPLETE. 91/91 canonical tables have RLS enabled. Policy pattern: `public_read_*` (anon+authenticated SELECT), `service_write_*` (service_role ALL). 3 previously over-permissive tables (country_grapes, region_grapes, appellation_containment) tightened — public write policies removed.
-- **Search infrastructure:** pg_trgm indexes exist but no full-text search, no cross-entity search function.
+- **Search infrastructure:** ✅ COMPLETE. `search_vector` tsvector columns + GIN indexes on wines, producers, appellations, regions, grapes. Trigram indexes on all searchable name columns. Auto-update triggers on INSERT/UPDATE. Two RPC functions: `search_catalog(query, limit, entity_types[])` for unified cross-entity search bar, `search_wines(query, filter_*, sort_by, limit, offset)` for filtered wine browse. Both granted to anon+authenticated.
 - **API views:** 4 views created: `wine_detail_view`, `producer_detail_view`, `wine_vintage_detail_view`, `wine_search_view`.
 - **Migrations in git:** All DDL via Supabase MCP. Need `supabase/migrations/` before multi-developer.
 - **FK normalization (partially addressed):** `wine_vintage_scores` and `wine_vintage_prices` now have `wine_vintage_id` FK (backfilled). `wine_vintage_grapes` already had optional `wine_vintage_id`. Legacy `wine_id + vintage_year` columns kept as convenience but `wine_vintage_id` is now the preferred join path.
