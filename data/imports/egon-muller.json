@@ -1,0 +1,198 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Weingut Egon Müller - Scharzhof",
+    "slug": "egon-muller",
+    "country": "Germany",
+    "region": "Mosel",
+    "appellation": "Wiltingen",
+    "website": "https://www.scharzhof.de",
+    "producer_type": "estate",
+    "founded_year": 1797,
+    "hectares_under_vine": 12.8,
+    "philosophy": "One of the world's most legendary wine estates, producing exclusively Riesling from the Scharzhofberger vineyard in the Saar Valley. The estate has been in the Müller family since 1797 when it was acquired during Napoleonic secularization. Ungrafted vines on steep Devon slate slopes. Extremely low yields, hand-harvested in multiple passes. Fermentation in traditional oak Fuder casks (1000L). No chaptalization, no new oak, no winemaking tricks — pure expression of Scharzhofberger slate terroir. TBA and BA are produced only in exceptional vintages, in quantities sometimes as small as 100-300 bottles.",
+    "metadata": {
+      "full_name": "Weingut Egon Müller - Scharzhof",
+      "address": "Scharzhof, 54459 Wiltingen, Germany",
+      "owners": "Egon Müller IV",
+      "founder": "Koch family (monastic origins); acquired by Müller family 1797",
+      "generation": "5th generation (Müller family)",
+      "vdp_member": true,
+      "vdp_classification": "VDP.Grosse Lage (Scharzhofberger)",
+      "grape_varieties": "100% Riesling",
+      "production_cases": 3500,
+      "winemaking": "Whole-bunch pressing. Spontaneous fermentation in traditional Mosel oak Fuder casks (1000L). Long, slow fermentation at cellar temperature. No malolactic. Minimal sulfur. No chaptalization. Bottled with natural residual sugar determined by each vintage and vineyard parcel.",
+      "us_importer": "Rudi Wiest Selections / Mosel Wine Merchant",
+      "uk_importer": "Howard Ripley",
+      "notable_recognition": "Regularly produces the most expensive wines at the annual Trier Grosse Ring auction. TBA 2003 sold for €12,000 per bottle. Classified as one of the five greatest wine estates in Germany by Gault Millau.",
+      "historical_note": "The Scharzhof was originally a monastic estate belonging to the Abbey of St. Maria ad Martyres in Trier. Secularized under Napoleon in 1797 and acquired by the Koch family, then passed to the Müller family through marriage. Felix Müller expanded the holdings; his grandson Egon Müller I established the modern reputation. Egon Müller IV (current) has maintained the estate at the pinnacle of German wine."
+    },
+    "winemakers": [
+      {
+        "name": "Egon Müller IV",
+        "role": "head",
+        "country": "Germany",
+        "start_year": 1991,
+        "metadata": {
+          "title": "Owner & Winemaker",
+          "generation": "5th generation Müller",
+          "notes": "Trained at Geisenheim. Took over from his father Egon Müller III. Also produces wine at Château Le Tertre Roteboeuf in Saint-Émilion (a personal project) and previously made wine in Slovakia (Château Béla). Known for obsessive selection in the vineyard and minimal intervention in the cellar."
+        }
+      }
+    ],
+    "vineyards": [
+      {
+        "name": "Scharzhofberger",
+        "appellation": "Wiltingen",
+        "hectares": 12.8,
+        "metadata": {
+          "village": "Wiltingen",
+          "vdp_classification": "Grosse Lage",
+          "soil": "Blue-grey Devon slate (Devonschiefer)",
+          "slope_pct": "45-65%",
+          "exposure": "South to southwest facing",
+          "altitude_m": "180-300",
+          "vine_age_note": "Many ungrafted vines on their own roots, some over 100 years old. Phylloxera never fully devastated the Saar's slate soils.",
+          "notes": "The greatest vineyard in the Saar Valley, and arguably all of Germany. 27.5 hectares total (Egon Müller owns roughly half). Steep Devon slate slopes above the village of Wiltingen. The combination of extreme slope, slate soil, and Saar Valley mesoclimate produces Rieslings of unmatched precision, mineral intensity, and aging potential. The vineyard naturally produces wines across the full Prädikat spectrum from Kabinett through TBA."
+        }
+      }
+    ]
+  },
+  "wines": [
+    {
+      "name": "Scharzhof Riesling",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Mosel",
+      "style": "Estate Riesling (QbA)",
+      "vinification_notes": "Basic estate wine from younger vines and declassified lots. Fermented in stainless steel and Fuder casks. Light, fresh, and accessible — the entry point to the Egon Müller range.",
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 11, "rs_g_l": 25 },
+        { "year": 2021, "abv": 10.5, "rs_g_l": 28 },
+        { "year": 2020, "abv": 11, "rs_g_l": 22 }
+      ]
+    },
+    {
+      "name": "Scharzhofberger Riesling Kabinett",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Wiltingen",
+      "style": "Mosel Kabinett",
+      "label_designations": ["Kabinett"],
+      "first_vintage_year": 1900,
+      "vinification_notes": "From the estate's Scharzhofberger holdings. Kabinett level — lightest of the Prädikats but still extraordinary in quality. Fermented in traditional Fuder casks. Naturally low alcohol, delicate residual sugar balanced by razor-sharp Saar acidity. One of the benchmarks for the Kabinett category worldwide.",
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 9, "rs_g_l": 45, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }, { "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
+        { "year": 2021, "abv": 8.5, "rs_g_l": 50, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }, { "publication": "James Suckling", "score": 94, "score_scale": "100" }] },
+        { "year": 2020, "abv": 9, "rs_g_l": 42, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }] },
+        { "year": 2019, "abv": 8.5, "rs_g_l": 48, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Scharzhofberger Riesling Spätlese",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Wiltingen",
+      "style": "Mosel Spätlese",
+      "label_designations": ["Spätlese"],
+      "vinification_notes": "Late-harvested Riesling from prime Scharzhofberger parcels. Greater concentration and sweetness than the Kabinett, but the Saar's high natural acidity keeps the wine taut and vibrant. Fermented in Fuder casks. Ages magnificently for decades — arguably the sweet spot of the Egon Müller range for cellaring.",
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 8, "rs_g_l": 70, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2021, "abv": 7.5, "rs_g_l": 75, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2020, "abv": 8, "rs_g_l": 65, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }] },
+        { "year": 2019, "abv": 7.5, "rs_g_l": 72, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Scharzhofberger Riesling Auslese",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Wiltingen",
+      "style": "Mosel Auslese",
+      "label_designations": ["Auslese"],
+      "vinification_notes": "Selected bunches of fully ripe and often botrytis-touched grapes from the best parcels of Scharzhofberger. Rich and concentrated but never heavy — the hallmark Saar tension keeps everything in balance. Fermented very slowly in Fuder casks, often taking months. Standard Auslese (white capsule) is produced in most good vintages.",
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 8, "rs_g_l": 110, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
+        { "year": 2021, "abv": 7.5, "rs_g_l": 120, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }] },
+        { "year": 2019, "abv": 7.5, "rs_g_l": 115, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 98, "score_scale": "100" }] },
+        { "year": 2018, "abv": 8, "rs_g_l": 105, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Scharzhofberger Riesling Auslese Goldkapsel",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Wiltingen",
+      "style": "Mosel Auslese (Gold Capsule auction selection)",
+      "label_designations": ["Auslese"],
+      "vinification_notes": "Ultra-selection of the most concentrated Auslese-level juice, bottled under gold capsule and typically sold only at the annual Trier Grosse Ring auction. Richer and more intense than the standard Auslese. Only produced in top vintages. Among the most sought-after auction wines in Germany.",
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "metadata": {
+        "selection": "Goldkapsel (Gold Capsule)",
+        "distribution": "Primarily Trier Grosse Ring auction",
+        "capsule_color": "gold"
+      },
+      "vintages": [
+        { "year": 2022, "abv": 7.5, "rs_g_l": 135, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }] },
+        { "year": 2021, "abv": 7, "rs_g_l": 140, "scores": [{ "publication": "Wine Advocate", "score": 98, "score_scale": "100" }] },
+        { "year": 2019, "abv": 7, "rs_g_l": 130, "scores": [{ "publication": "Wine Advocate", "score": 98, "score_scale": "100" }, { "publication": "James Suckling", "score": 99, "score_scale": "100" }] },
+        { "year": 2018, "abv": 7.5, "rs_g_l": 125, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Scharzhofberger Riesling Beerenauslese",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Wiltingen",
+      "style": "Mosel Beerenauslese",
+      "label_designations": ["Beerenauslese"],
+      "vinification_notes": "Individual botrytis-affected berries hand-selected from the Scharzhofberger. Produced only in vintages where noble rot develops ideally — perhaps 2-3 times per decade. Extraordinarily concentrated with honeyed sweetness balanced by electric Saar acidity. Fermentation can take 6-12 months. Tiny production, typically 200-600 bottles.",
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 7, "rs_g_l": 180, "scores": [{ "publication": "Wine Advocate", "score": 98, "score_scale": "100" }] },
+        { "year": 2019, "abv": 6.5, "rs_g_l": 200, "scores": [{ "publication": "Wine Advocate", "score": 98, "score_scale": "100" }, { "publication": "James Suckling", "score": 99, "score_scale": "100" }] },
+        { "year": 2018, "abv": 7, "rs_g_l": 190, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Scharzhofberger Riesling Trockenbeerenauslese",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Wiltingen",
+      "style": "Mosel Trockenbeerenauslese",
+      "label_designations": ["Trockenbeerenauslese"],
+      "vinification_notes": "The rarest and most extreme wine in the Egon Müller range. Made from individually selected, fully botrytis-shriveled berries — essentially raisins still on the vine. Must weight exceeds 150° Oechsle. Fermentation is agonizingly slow, sometimes lasting over a year. Production is measured in dozens of bottles, not cases. Among the most expensive wines produced anywhere in the world — auction prices regularly exceed €5,000-€15,000 per bottle. Only produced in exceptional botrytis vintages.",
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 6, "rs_g_l": 320, "scores": [{ "publication": "Wine Advocate", "score": 100, "score_scale": "100" }] },
+        { "year": 2019, "abv": 5.5, "rs_g_l": 350, "scores": [{ "publication": "Wine Advocate", "score": 100, "score_scale": "100" }, { "publication": "James Suckling", "score": 100, "score_scale": "100" }] },
+        { "year": 2018, "abv": 6, "rs_g_l": 300, "scores": [{ "publication": "Wine Advocate", "score": 99, "score_scale": "100" }] }
+      ]
+    }
+  ]
+}

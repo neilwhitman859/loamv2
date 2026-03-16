@@ -1,15 +1,16 @@
 {
+  "source": "producer-website",
   "producer": {
     "name": "Bodegas Lustau",
     "slug": "bodegas-lustau",
     "country": "Spain",
     "region": "Andalucia",
     "appellation": "Jerez-Xérès-Sherry",
-    "producer_type": "estate",
     "website": "https://lustau.es",
-    "year_established": 1896,
+    "producer_type": "estate",
+    "founded_year": 1896,
+    "philosophy": "One of the most respected sherry houses in Jerez de la Frontera, renowned for its Almacenista program — bottling exceptional soleras from small, independent stockholders. Founded by José Ruiz-Berdejo, a lawyer and notary who stored his wines in his office courtyard. Four historic bodegas: Las Cruces, Emperatriz Eugenia, La Campana, and El Aljibe. The range spans every sherry style from bone-dry biologically aged Finos to intensely sweet sun-dried Pedro Ximénez.",
     "metadata": {
-      "sherry_house": true,
       "bodegas": ["Bodega Las Cruces", "Bodega Emperatriz Eugenia", "Bodega La Campana", "Bodega El Aljibe"]
     }
   },
@@ -18,329 +19,173 @@
       "name": "Fino Jarana",
       "color": "white",
       "wine_type": "fortified",
-      "is_nv": true,
+      "effervescence": "still",
       "appellation": "Jerez-Xérès-Sherry",
-      "sweetness_level": "dry",
-      "grapes": [{"name": "Palomino", "percentage": 100}],
-      "food_pairings": ["fresh seafood", "smoked salmon", "fish", "Ibérico ham"],
-      "label_designations": [],
-      "metadata": {
-        "sherry_style": "Fino",
-        "aging_method": "biological",
-        "average_age_years": 4,
-        "serving_temp_c": "7-9",
-        "bodega": "Bodega Las Cruces, Jerez de la Frontera",
-        "range": "Solera Familiar"
-      },
+      "style": "Fino Sherry — dry, biologically aged",
+      "vinification_notes": "100% Palomino Fino from albariza soils. Fortified to 15% ABV and aged under a veil of flor yeast in the solera system at Bodega Las Cruces. Average age approximately 4 years. The flor protects the wine from oxidation, preserving pale color and developing characteristic yeasty, almond aromas.",
+      "grapes": [
+        { "grape": "Palomino Fino", "percentage": 100 }
+      ],
       "vintages": [
         {
           "year": 0,
           "abv": 15.0,
-          "price_eur": 12.00,
-          "bottle_size_ml": 750,
-          "winemaker_notes": "Pale straw colour with greenish reflections, bright and clean. Fresh, mineral and pungent on the nose with almonds and bakery notes. Dry and crisp on the palate, yet rich and with a full finish.",
-          "awards": ["Gold 2022", "Decanter Silver 2024", "IWC Silver 2024"]
+          "metadata": { "range": "Solera Familiar", "sherry_style": "Fino", "aging_method": "biological", "average_age_years": 4, "serving_temp_c": "7-9" }
+        }
+      ]
+    },
+    {
+      "name": "Manzanilla Papirusa",
+      "color": "white",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Manzanilla-Sanlúcar de Barrameda",
+      "style": "Manzanilla — dry, biologically aged in Sanlúcar",
+      "vinification_notes": "100% Palomino Fino aged under flor in Sanlúcar de Barrameda, where the cooler, more humid Atlantic climate produces a thicker, more active flor veil than in Jerez. This gives Manzanilla its distinctly lighter, more saline character compared to Fino. Average age approximately 4 years in solera.",
+      "grapes": [
+        { "grape": "Palomino Fino", "percentage": 100 }
+      ],
+      "vintages": [
+        {
+          "year": 0,
+          "abv": 15.0,
+          "metadata": { "range": "Solera Familiar", "sherry_style": "Manzanilla", "aging_method": "biological", "average_age_years": 4, "serving_temp_c": "7-9", "aging_location": "Sanlúcar de Barrameda" }
         }
       ]
     },
     {
       "name": "Amontillado Los Arcos",
-      "color": null,
+      "color": "white",
       "wine_type": "fortified",
-      "is_nv": true,
+      "effervescence": "still",
       "appellation": "Jerez-Xérès-Sherry",
-      "sweetness_level": "dry",
-      "grapes": [{"name": "Palomino", "percentage": 100}],
-      "food_pairings": ["artichokes", "tapas", "old cheese", "nuts", "olives", "broth", "mushroom risotto", "spicy Indian cuisine"],
-      "label_designations": [],
-      "metadata": {
-        "sherry_style": "Amontillado",
-        "aging_method": "combined",
-        "average_age_years": 8,
-        "serving_temp_c": "13-14",
-        "bodega": "Bodega Emperatriz Eugenia, Jerez de la Frontera",
-        "range": "Solera Familiar",
-        "aging_notes": "Equal periods under flor and in contact with oxygen"
-      },
+      "style": "Amontillado — dry, combined biological and oxidative aging",
+      "vinification_notes": "100% Palomino Fino. Begins life as a Fino under flor, then fortified further to kill the flor and continue aging oxidatively. Equal periods under biological and oxidative aging, giving it the pungent nose of a Fino with the nutty depth of an Oloroso. Average age approximately 8 years. Aged at Bodega Emperatriz Eugenia.",
+      "grapes": [
+        { "grape": "Palomino Fino", "percentage": 100 }
+      ],
       "vintages": [
         {
           "year": 0,
           "abv": 18.5,
-          "price_eur": 14.30,
-          "bottle_size_ml": 750,
-          "winemaker_notes": "Amber color. Hazelnut aromas with a genuine, rich and nutty flavor. Light, soft and round on the palate, with a long aftertaste.",
-          "awards": ["DWWA Silver 2025", "IWC Silver 2025"]
+          "metadata": { "range": "Solera Familiar", "sherry_style": "Amontillado", "aging_method": "combined", "average_age_years": 8, "serving_temp_c": "13-14" }
         }
       ]
     },
     {
       "name": "Oloroso Don Nuño",
-      "color": null,
+      "color": "white",
       "wine_type": "fortified",
-      "is_nv": true,
+      "effervescence": "still",
       "appellation": "Jerez-Xérès-Sherry",
-      "sweetness_level": "dry",
-      "grapes": [{"name": "Palomino", "percentage": 100}],
-      "food_pairings": ["matured cheeses", "red meats", "grilled red tuna", "game dishes", "stews"],
-      "label_designations": [],
-      "metadata": {
-        "sherry_style": "Oloroso",
-        "aging_method": "oxidative",
-        "average_age_years": 12,
-        "serving_temp_c": "13-14",
-        "bodega": "Bodega La Campana, Jerez de la Frontera",
-        "range": "Solera Familiar"
-      },
+      "style": "Oloroso — dry, fully oxidative aging",
+      "vinification_notes": "100% Palomino Fino. Fortified to 17%+ ABV from the start, preventing flor development entirely. Ages purely oxidatively in the solera at Bodega La Campana, developing rich walnut, tobacco, and dark chocolate aromas. Average age approximately 12 years. Despite its intense color and concentration, this is a dry wine.",
+      "grapes": [
+        { "grape": "Palomino Fino", "percentage": 100 }
+      ],
       "vintages": [
         {
           "year": 0,
           "abv": 20.0,
-          "price_eur": 21.40,
-          "bottle_size_ml": 750,
-          "winemaker_notes": "Dark bronze colour with golden rim. Pungent nutty aromas with a smoky wood background. Rich flavors of bitter chocolate, walnuts and baked chestnuts.",
-          "awards": ["Gran Gold 2021", "DWWA Silver 2025", "IWC Silver 2025"]
+          "metadata": { "range": "Solera Familiar", "sherry_style": "Oloroso", "aging_method": "oxidative", "average_age_years": 12, "serving_temp_c": "13-14" }
         }
       ]
     },
     {
       "name": "Palo Cortado Península",
-      "color": null,
+      "color": "white",
       "wine_type": "fortified",
-      "is_nv": true,
+      "effervescence": "still",
       "appellation": "Jerez-Xérès-Sherry",
-      "sweetness_level": "dry",
-      "grapes": [{"name": "Palomino", "percentage": 100}],
-      "food_pairings": ["white meats", "spicy dishes", "smoked meats", "foie gras", "mushrooms", "cheeses", "spicy Asian cuisine"],
-      "label_designations": [],
-      "metadata": {
-        "sherry_style": "Palo Cortado",
-        "aging_method": "oxidative",
-        "average_age_years": 12,
-        "serving_temp_c": "13-14",
-        "bodega": "Bodega Emperatriz Eugenia, Jerez de la Frontera",
-        "range": "Solera Familiar",
-        "style_notes": "Combines the finesse and delicacy of an Amontillado with the richness and body of an Oloroso"
-      },
+      "style": "Palo Cortado — dry, rare style between Amontillado and Oloroso",
+      "vinification_notes": "100% Palomino Fino. The rarest sherry style — originally classified as Fino, but the flor died unexpectedly, leading the wine into oxidative aging. Combines the aromatic finesse and pungency of an Amontillado with the body, richness, and structure of an Oloroso. Average age approximately 12 years. Aged at Bodega Emperatriz Eugenia.",
+      "grapes": [
+        { "grape": "Palomino Fino", "percentage": 100 }
+      ],
       "vintages": [
         {
           "year": 0,
           "abv": 19.0,
-          "price_eur": 21.40,
-          "bottle_size_ml": 750,
-          "winemaker_notes": "Light amber in color. Nutty and dry nuances of vanilla, mocha and dark chocolate. Dry and very concentrated, with a long and elegant finish.",
-          "awards": ["Gold 2022", "IWC Silver 2024", "DWWA Silver 2025"]
+          "metadata": { "range": "Solera Familiar", "sherry_style": "Palo Cortado", "aging_method": "oxidative", "average_age_years": 12, "serving_temp_c": "13-14" }
         }
       ]
     },
     {
       "name": "Pedro Ximénez San Emilio",
-      "color": null,
+      "color": "white",
       "wine_type": "fortified",
-      "is_nv": true,
+      "effervescence": "still",
       "appellation": "Jerez-Xérès-Sherry",
-      "sweetness_level": "sweet",
-      "grapes": [{"name": "Pedro Ximenez", "percentage": 100}],
-      "food_pairings": ["rich desserts", "cakes and pastries", "vanilla ice cream"],
-      "label_designations": [],
-      "metadata": {
-        "sherry_style": "Pedro Ximénez",
-        "aging_method": "oxidative",
-        "average_age_years": 12,
-        "serving_temp_c": "10-12",
-        "range": "Solera Familiar",
-        "production_notes": "Grapes are sun-dried after harvest until they are practically raisins before fermentation"
-      },
-      "vintages": [
-        {
-          "year": 0,
-          "abv": 17.0,
-          "price_eur": 24.20,
-          "bottle_size_ml": 750,
-          "winemaker_notes": "Dark mahogany with iodized edging. Floral and citrus flavors, fruit flavored raisins and spices. Full and long on the palate. Extremely sweet, with a pleasant acidity.",
-          "awards": ["Gold 2022", "IWC Gold 2025", "Decanter Silver 2024"]
-        }
-      ]
-    },
-    {
-      "name": "Moscatel Emilín",
-      "color": null,
-      "wine_type": "fortified",
-      "is_nv": true,
-      "appellation": "Jerez-Xérès-Sherry",
-      "sweetness_level": "sweet",
-      "grapes": [{"name": "Muscat of Alexandria", "percentage": 100}],
-      "food_pairings": ["citrus-flavored desserts", "egg-based desserts", "rich fruit cakes"],
-      "label_designations": [],
-      "metadata": {
-        "sherry_style": "Moscatel",
-        "aging_method": "oxidative",
-        "average_age_years": 8,
-        "serving_temp_c": "10-12",
-        "vineyard_origin": "Las Cruces, Chipiona",
-        "range": "Solera Familiar"
-      },
-      "vintages": [
-        {
-          "year": 0,
-          "abv": 17.0,
-          "price_eur": 24.20,
-          "bottle_size_ml": 750,
-          "winemaker_notes": "Dark mahogany color with an iodine rim. Intense floral and citric aromas, showing Moscatel varietal at its best. Smooth and rich on the palate, reminiscent of dried fruits and spices. Great length and sweetness, yet balanced by its natural acidity.",
-          "awards": ["Gold 2022", "IWC Silver 2025", "Decanter Silver 2024"]
-        }
-      ]
-    },
-    {
-      "name": "Cream Capataz Andrés",
-      "color": null,
-      "wine_type": "fortified",
-      "is_nv": true,
-      "appellation": "Jerez-Xérès-Sherry",
-      "sweetness_level": "sweet",
+      "style": "Pedro Ximénez — intensely sweet dessert sherry",
+      "vinification_notes": "100% Pedro Ximénez grapes, sun-dried on esparto grass mats (asoleo) after harvest until they are practically raisins. This concentrates sugars to extreme levels before the brief fermentation and fortification. Aged oxidatively in solera for approximately 12 years, developing flavors of fig, date, coffee, and dark caramel.",
       "grapes": [
-        {"name": "Palomino", "percentage": 85},
-        {"name": "Pedro Ximenez", "percentage": 15}
+        { "grape": "Pedro Ximénez", "percentage": 100 }
       ],
-      "food_pairings": ["light desserts", "cakes", "blue cheeses"],
-      "label_designations": [],
-      "metadata": {
-        "sherry_style": "Cream",
-        "aging_method": "oxidative",
-        "average_age_years": 8,
-        "serving_temp_c": "10-12",
-        "range": "Solera Familiar",
-        "blend_notes": "Oloroso (85%) and Pedro Ximénez (15%), each aged individually in its own Solera then blended before bottling",
-        "heritage_note": "Tribute to Capataz Andrés Pérez, Cellar Master at Lustau in the 1960s"
-      },
+      "vintages": [
+        {
+          "year": 0,
+          "abv": 17.0,
+          "metadata": { "range": "Solera Familiar", "sherry_style": "Pedro Ximénez", "aging_method": "oxidative", "average_age_years": 12, "serving_temp_c": "10-12", "sweetness": "sweet" }
+        }
+      ]
+    },
+    {
+      "name": "East India Solera",
+      "color": "white",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Jerez-Xérès-Sherry",
+      "style": "Cream Sherry — sweet, oxidatively aged blend",
+      "vinification_notes": "A blend of old Oloroso and Pedro Ximénez, referencing the historic practice of shipping sherries to the East Indies and back — the tropical heat and motion accelerating the aging. This modern interpretation achieves similar richness through extended solera aging. Sweet and concentrated with dried fruit and spice complexity.",
+      "grapes": [
+        { "grape": "Palomino Fino", "percentage": 80 },
+        { "grape": "Pedro Ximénez", "percentage": 20 }
+      ],
       "vintages": [
         {
           "year": 0,
           "abv": 20.0,
-          "price_eur": 21.40,
-          "bottle_size_ml": 750,
-          "winemaker_notes": "Mahogany colour with coppery reflections. Concentrated aromas of smoky wood, dates, dry figs and raisins. Fresh, silky with a balanced acidity.",
-          "awards": ["Silver 2019"]
-        }
-      ]
-    },
-    {
-      "name": "Fino del Puerto",
-      "color": "white",
-      "wine_type": "fortified",
-      "is_nv": true,
-      "appellation": "Jerez-Xérès-Sherry",
-      "sweetness_level": "dry",
-      "grapes": [{"name": "Palomino", "percentage": 100}],
-      "food_pairings": ["Ibérico ham", "almonds", "cheese", "seafood", "sushi", "sashimi"],
-      "label_designations": [],
-      "metadata": {
-        "sherry_style": "Fino",
-        "aging_method": "biological",
-        "average_age_years": 5,
-        "serving_temp_c": "7-9",
-        "aging_location": "El Puerto de Santa María",
-        "range": "Solera Familiar"
-      },
-      "vintages": [
-        {
-          "year": 0,
-          "abv": 15.0,
-          "price_eur": 12.00,
-          "bottle_size_ml": 750,
-          "winemaker_notes": "Pale straw colour. Scents of the sea with profound flor aromas. Clean and fresh, with a slight taste of tangy yeast.",
-          "awards": ["IWC Gold 2024", "Decanter Silver 2024"]
-        }
-      ]
-    },
-    {
-      "name": "Amontillado VORS",
-      "color": null,
-      "wine_type": "fortified",
-      "is_nv": true,
-      "appellation": "Jerez-Xérès-Sherry",
-      "sweetness_level": "dry",
-      "grapes": [{"name": "Palomino", "percentage": 100}],
-      "food_pairings": ["after-dinner", "cigars"],
-      "label_designations": ["VORS"],
-      "metadata": {
-        "sherry_style": "Amontillado",
-        "aging_method": "combined",
-        "average_age_years": 30,
-        "serving_temp_c": "13-14",
-        "range": "VORS",
-        "solera_notes": "Selection from 8 casks",
-        "production_notes": "Bottled without any kind of treatment, drawn straight from the barrel. May show cloudiness or sediment."
-      },
-      "vintages": [
-        {
-          "year": 0,
-          "abv": 21.5,
-          "price_eur": 63.50,
-          "bottle_size_ml": 500,
-          "winemaker_notes": "Dark amber in color. Aromas reminiscent of butterscotch, noble wood, old leather and furniture polish. Concentrated nose of dried dark fruits, and candied peel. Savory, almost saline, dry, fresh and invigorating. Warming and concentrated flavors with a balanced elegant length.",
-          "awards": ["IWC Gold 2024", "IWSC Gold 2024", "DWWA Platinum 2025"]
-        }
-      ]
-    },
-    {
-      "name": "Oloroso VORS",
-      "color": null,
-      "wine_type": "fortified",
-      "is_nv": true,
-      "appellation": "Jerez-Xérès-Sherry",
-      "sweetness_level": "dry",
-      "grapes": [{"name": "Palomino", "percentage": 100}],
-      "food_pairings": ["cigars", "after-dinner"],
-      "label_designations": ["VORS"],
-      "metadata": {
-        "sherry_style": "Oloroso",
-        "aging_method": "oxidative",
-        "average_age_years": 30,
-        "serving_temp_c": "13-14",
-        "range": "VORS",
-        "solera_notes": "Selection from 9 casks",
-        "production_notes": "Bottled without treatment, drawn directly from barrel. May show natural cloudiness or sediment."
-      },
-      "vintages": [
-        {
-          "year": 0,
-          "abv": 21.0,
-          "price_eur": 63.50,
-          "bottle_size_ml": 500,
-          "winemaker_notes": "Old gold color with bronze hues. Endless depth of fruit and complexity of evolution with leather and varnish. Expansive palate with crunchy walnuts and marmalade. Complex and intense mouth filling, reminiscent of marron glacé and old brandy.",
-          "awards": ["Best in Show 2023", "IWC Gold 2025", "IWSC Gold 2025"]
+          "metadata": { "range": "Solera Familiar", "sherry_style": "Cream / East India", "aging_method": "oxidative", "serving_temp_c": "10-12", "sweetness": "sweet" }
         }
       ]
     },
     {
       "name": "Oloroso Pata de Gallina",
-      "color": null,
+      "color": "white",
       "wine_type": "fortified",
-      "is_nv": true,
+      "effervescence": "still",
       "appellation": "Jerez-Xérès-Sherry",
-      "sweetness_level": "dry",
-      "grapes": [{"name": "Palomino", "percentage": 100}],
-      "food_pairings": ["red meats", "game", "stews", "roasts", "cheese board"],
+      "style": "Almacenista Oloroso — dry, single-stockholder solera",
       "label_designations": ["Almacenista"],
-      "metadata": {
-        "sherry_style": "Oloroso",
-        "aging_method": "oxidative",
-        "average_age_years": 15,
-        "serving_temp_c": "13-14",
-        "bodega": "El Aljibe, Jerez de la Frontera",
-        "range": "Almacenistas",
-        "almacenista": "García Jarana",
-        "solera_notes": "Exclusive Solera with only 38 casks",
-        "pata_de_gallina_note": "Indicates wines displaying above-average richness and smoothness due to elevated glycerol levels"
-      },
+      "vinification_notes": "100% Palomino Fino from the private solera of almacenista García Jarana, bottled by Lustau. Only 38 casks in this exclusive solera at Bodega El Aljibe. 'Pata de Gallina' (chicken foot) indicates wines with above-average glycerol levels, giving exceptional richness and smoothness. Average age approximately 15 years. Lustau pioneered the almacenista concept — selecting and bottling exceptional sherries from small, independent stockholders.",
+      "grapes": [
+        { "grape": "Palomino Fino", "percentage": 100 }
+      ],
       "vintages": [
         {
           "year": 0,
           "abv": 20.0,
-          "price_eur": 24.20,
-          "bottle_size_ml": 500,
-          "winemaker_notes": "Dark gold in color. Aromas of dried fruits and pipe tobacco. Very concentrated, with a powerful intensity on the palate and a slightly sweet finish.",
-          "awards": ["IWC Gold 2025", "DWWA Silver 2025"]
+          "metadata": { "range": "Almacenistas", "sherry_style": "Oloroso", "aging_method": "oxidative", "average_age_years": 15, "serving_temp_c": "13-14", "almacenista": "García Jarana", "solera_casks": 38 }
+        }
+      ]
+    },
+    {
+      "name": "Amontillado del Puerto",
+      "color": "white",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Jerez-Xérès-Sherry",
+      "style": "Almacenista Amontillado — dry, single-stockholder solera from El Puerto",
+      "label_designations": ["Almacenista"],
+      "vinification_notes": "100% Palomino Fino from the private solera of almacenista José Luis González Obregón in El Puerto de Santa María. Approximately 10 years average age with extended biological aging followed by oxidative maturation. The maritime influence of El Puerto imparts a distinctive saline quality. Bottled by Lustau as part of the Almacenista range.",
+      "grapes": [
+        { "grape": "Palomino Fino", "percentage": 100 }
+      ],
+      "vintages": [
+        {
+          "year": 0,
+          "abv": 18.5,
+          "metadata": { "range": "Almacenistas", "sherry_style": "Amontillado", "aging_method": "combined", "average_age_years": 10, "serving_temp_c": "13-14", "almacenista": "José Luis González Obregón", "aging_location": "El Puerto de Santa María" }
         }
       ]
     },
@@ -348,30 +193,19 @@
       "name": "Fino de Jerez 3 en Rama",
       "color": "white",
       "wine_type": "fortified",
-      "is_nv": true,
+      "effervescence": "still",
       "appellation": "Jerez-Xérès-Sherry",
-      "sweetness_level": "dry",
-      "grapes": [{"name": "Palomino", "percentage": 100}],
-      "food_pairings": ["Ibérico ham", "seafood", "steak tartare"],
+      "style": "En Rama Fino — unfiltered, drawn straight from cask",
       "label_designations": ["En Rama"],
-      "metadata": {
-        "sherry_style": "Fino",
-        "aging_method": "biological",
-        "average_age_years": 4,
-        "serving_temp_c": "7-9",
-        "range": "Rare and Vintage",
-        "saca": "Spring 2025",
-        "aging_vessel": "American oak casks",
-        "production_notes": "Bottled without additional treatment"
-      },
+      "vinification_notes": "100% Palomino Fino bottled 'en rama' — directly from the cask with minimal or no filtration, clarification, or stabilization. Released in seasonal sacas (typically spring) when the flor is at its most vigorous. This preserves the full aromatic intensity and textural complexity that is lost in standard filtered bottlings. Aged approximately 4 years in American oak casks in the solera system.",
+      "grapes": [
+        { "grape": "Palomino Fino", "percentage": 100 }
+      ],
       "vintages": [
         {
           "year": 0,
           "abv": 15.0,
-          "price_eur": 20.45,
-          "bottle_size_ml": 500,
-          "winemaker_notes": "Intense golden color with amber reflections. Pungent and intense with yeast, white bread, chalk and butter nuances. Delicate, classy and salty with mineral and nutty aftertaste.",
-          "awards": []
+          "metadata": { "range": "Rare and Vintage", "sherry_style": "Fino", "aging_method": "biological", "average_age_years": 4, "serving_temp_c": "7-9", "en_rama": true }
         }
       ]
     }
