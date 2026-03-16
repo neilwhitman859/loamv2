@@ -64,7 +64,7 @@ The database has two layers:
 - **xwines_* tables** — bulk X-Wines dataset dump (~530K wines, ~2.2M vintages, ~32K producers). Kept as reference but not actively maintained. Data quality is lower.
 
 ### Reference Tables (complete)
-Countries (62), regions (386 — 62 catch-all, 218 L1 named, 106 L2), appellations (3,205), grapes (9,693 from VIVC + 34,820 synonyms), varietal categories (161 + 162 grape mappings), source types (27), publications (66), attribute definitions (73), tasting descriptors (304), farming certifications (18), biodiversity certifications (7), soil types (39).
+Countries (62), regions (386 — 62 catch-all, 218 L1 named, 106 L2), appellations (3,205), grapes (9,693 from VIVC + 34,820 synonyms), varietal categories (161 + 162 grape mappings), source types (27), publications (71), attribute definitions (73), tasting descriptors (304), farming certifications (19, incl. HVE added 2026-03-16), biodiversity certifications (7), soil types (39).
 
 Regions rebuilt from scratch (2026-03-12): two-level hierarchy sourced from WSET L3 spec + Federdoc/MAPA/official wine authorities. All X-Wines leftover regions purged. Data file: `data/regions_rebuild.json`. Expanded (2026-03-13): 13 new regions added from Sonnet review triage — L2 subregions for Canada, South Africa, Austria, Spain + L1 regions for Portugal, UK (Scotland).
 
@@ -145,10 +145,10 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
-### Content Tables (Phase 1c trial imports + KL + retailer imports, 2026-03-15)
-- **794 producers**, **2,802 wines**, 1,790 vintages, 661 scores, 2,917 wine_grapes, 1,231 prices, 141 wine_vintage_grapes, 9 wine_label_designations, 6 winemakers, 7 producer-winemaker links, **40 entity_classifications**, 193 producer-importer links, 153 farming certifications
-- wine_vintage_id FK backfilled: 661/661 scores, 1,231/1,231 prices (100% linked to wine_vintages)
-- **Trial imports (6 producers):**
+### Content Tables (Phase 1c trial imports + KL + retailer + wine-type imports, 2026-03-16)
+- **~842 producers**, **~2,984 wines**, ~2,413 vintages, ~930 scores, ~1,279 prices, ~3,179 wine_grapes, ~71 entity_classifications, ~14 winemakers, ~160 farming certifications
+- wine_vintage_id FK backfilled: scores and prices 100% linked to wine_vintages
+- **Trial imports (6 producers, Phase 1c):**
   - Fort Ross Vineyard (US/Sonoma, estate): 15 wines, 112 vintages, 84 scores
   - Sea Slopes (US/Sonoma, child of Fort Ross): 2 wines, 24 vintages, 15 scores
   - Moone Tsai (US/Napa, negociant): 10 wines, 83 vintages, 48 scores
@@ -160,15 +160,32 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
   - **Last Bottle Wines** (flash sale): 234 wines, 212 producers, 139 scores (extracted from marketing copy), 234 prices ($10-$2,199). Appellation: 68%, Grape: 90%. Script: `scripts/import_last_bottle.mjs`. Data: `data/imports/last_bottle_raw.json`.
   - **The Best Wine Store** (value, ≤$15): 752 wines, 216 producers, 752 prices ($2.99-$15). Appellation: 4% (mass-market wines list "California" not appellations), Grape: 78%. Data: `data/imports/best_wine_store_raw.json`.
   - **Domestique Wine** (natural/organic): 245 wines, 167 producers, 245 prices ($19-$85). Appellation: 8% (natural wines use VdF/IGT), Grape: 90%. Excellent key:value tag structure (`country:Italy`, `grape:nebbiolo`, `region:Piedmont`). Data: `data/imports/domestique_wine_raw.json`.
+- **Wine-type stress test imports (10 producers across 8 countries, 2026-03-16):**
+  - Louis Roederer (France/Champagne, sparkling): 13 wines, 36 vintages. Tests NV (vintage_year=0), disgorgement, dosage via rs_g_l, lees aging.
+  - Dönnhoff (Germany/Nahe, Riesling): 31 wines, 171 vintages. Tests VDP hierarchy, Prädikat auto-detection, Einzellage appellations.
+  - Château d'Yquem (France/Sauternes, dessert): 2 wines, 17 vintages. Tests high RS, 1855 Sauternes classification, botrytis.
+  - Taylor's Port (Portugal/Porto, fortified): 11 wines, 30 vintages. Tests age_statement_years (Tawny 10-40yr), NV, Colheita.
+  - Penfolds (Australia, multi-region): 11 wines, 34 vintages. Tests Langton's classification, null appellation for GI zones.
+  - Royal Tokaji (Hungary/Tokaj, dessert): 7 wines, 20 vintages. Tests puttonyos metadata, ultra-high RS (up to 300 g/L).
+  - Felton Road (NZ/Central Otago, Pinot Noir): 8 wines, 30 vintages. Tests biodynamic/organic certs, whole cluster, single block.
+  - Catena Zapata (Argentina/Mendoza): 6 wines, 22 vintages. Tests high-altitude viticulture.
+  - Château Miraval (France/Provence, rosé): 5 wines, 11 vintages. Tests rosé, cross-region production, 5-grape blends.
+  - Vega Sicilia (Spain/Ribera del Duero): 4 wines, 16 vintages. Tests extreme oak aging, multi-vintage NV blend.
 - Import architecture: `lib/import.mjs` (shared library) + `data/imports/{slug}.json` (per-producer data)
 - `--replace` mode: deletes all existing producer data in FK dependency order, then fresh insert
 - `parseDate()` helper converts informal dates ("August 2024" → "2024-08-01")
-- Field name flexibility: accepts both `oak_duration_months`/`oak_months`, `production_cases`/`cases_produced`, etc.
+- Field name flexibility: accepts both `oak_duration_months`/`oak_months`, `production_cases`/`cases_produced`, `g.grape`/`g.name`, etc.
 - Parent-child producer relationship working: Sea Slopes → Fort Ross Vineyard & Winery
-- **Classification linkage** (2026-03-15): Importer resolves `classification.system` + `classification.level` → `entity_classifications`. Jadot Grand Cru/Premier Cru wines linked to Burgundy Vineyard Classification.
-- **Critic drinking windows**: `critic_drink_window_start/end` on `wine_vintage_scores` — importer maps from JSON `drinking_window_start/end` or `drink_from/drink_to`.
-- **Wine aliases**: `wine_aliases` table for tracking name evolution (previous_name, alternate_label, market_name). Import support in place.
-- **Vineyard sourcing**: `wine_vineyards` + `wine_vintage_vineyards` import support in place. Resolves vineyards by name from `vineyards` table.
+- **Classification linkage**: Importer resolves `classification.system` + `classification.level` → `entity_classifications`. System alias map for flexible matching (e.g., "Langton's" → "Langton's Classification of Australian Wine").
+- **Prädikat auto-detection**: Importer scans wine name and label_designations for German Prädikat levels.
+- **Grape aliases**: Expanded to cover Portuguese (Tinto Cão, Tinta Barroca), Champagne (Meunier), Hungarian (Sárgamuskotály, Hárslevelű) varieties.
+- **Publication aliases**: Short forms (WA, JS, WE, JD) resolve to full publication names.
+- **NV convention**: `vintage_year=0` for non-vintage wines (Champagne NV, Tawny Port, multi-vintage blends).
+- **wine_type normalization**: `'still'` auto-corrected to `'table'` by importer (common JSON authoring mistake).
+- **rs_g_l falsy fix**: `0` correctly stored (not converted to null by JavaScript falsy evaluation).
+- **Critic drinking windows**: `critic_drink_window_start/end` on `wine_vintage_scores`.
+- **Wine aliases**: `wine_aliases` table for tracking name evolution.
+- **Vineyard sourcing**: `wine_vineyards` + `wine_vintage_vineyards` import support in place.
 
 ### What's Not There Yet
 - Most insight tables empty (wine, producer, soil, water body)

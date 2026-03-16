@@ -335,6 +335,21 @@ Original approach (2026-03-03): `{field}_source UUID FK` companion columns per f
 ### 2026-03-15: Claude granted schema autonomy during hardening phase
 During active schema hardening, Claude can independently: make nullable/NOT NULL calls (philosophy: null > wrong), add columns vs JSONB decisions, expand CHECK constraints, drop redundant columns, create new tables. This autonomy will be restricted once the schema stabilizes for production. Core architectural patterns (geography hierarchy, facts-vs-insights separation, UUID PKs, soft deletes, three-tier fallback) remain foundational and should be flagged before changing.
 
+### 2026-03-16: NV wine convention — vintage_year=0
+Non-vintage wines (Champagne NV, Tawny Port, multi-vintage blends like Vega Sicilia Reserva Especial) use `vintage_year=0` rather than NULL. This allows the UNIQUE(wine_id, vintage_year) constraint to work, prevents null-handling complexity throughout the codebase, and is semantically clear: 0 means "intentionally non-vintage."
+
+### 2026-03-16: Champagne dosage tracked via rs_g_l
+Champagne dosage levels (Brut Nature=0, Extra Brut≤6, Brut≤12, etc.) stored using the existing `rs_g_l` (residual sugar grams per liter) column on wine_vintages. No separate dosage column needed — dosage IS residual sugar. Brut Nature with zero dosage correctly stores `rs_g_l=0`.
+
+### 2026-03-16: wine_type 'table' not 'still' — effervescence is separate
+The `wines.wine_type` CHECK allows table/sparkling/dessert/fortified/aromatized. "Still" is NOT a wine type — it's an effervescence value. A still red wine has `wine_type='table'` and `effervescence='still'`. A Champagne has `wine_type='sparkling'` and `effervescence='sparkling'`. This orthogonal design handles edge cases like sparkling dessert wines (e.g., Moscato d'Asti: wine_type='dessert', effervescence='sparkling').
+
+### 2026-03-16: Classification system aliases for flexible JSON matching
+Rather than requiring exact system names in import JSON (e.g., "Langton's Classification of Australian Wine"), the importer builds an alias map during reference data load. Short names like "Langton's" or "1855 Sauternes" resolve to full DB names. This reduces friction without changing the schema.
+
+### 2026-03-16: Import→harden cycle as schema stress test methodology
+10 producer imports across 8 countries covering all 5 wine types (table, sparkling, dessert, fortified, aromatized). Each import chosen to exercise different schema features: Champagne (disgorgement, dosage, NV), German Riesling (Prädikat, VDP), Sauternes (high RS, 1855 classification), Port (fortified, age statements, NV tawny), Australian (multi-region, Langton's), Tokaji (ultra-high RS, puttonyos), NZ (biodynamic certs), Argentine (high altitude), Provence (rosé), Spanish (extreme oak aging, multi-vintage NV). Each friction point fixed in the importer strengthens future imports.
+
 ### 2026-03-15: Appellation aliases seeded from primary sources + mechanical generation
 17,558 aliases seeded into appellation_aliases table from four source tiers:
 1. **INAO OpenDataSoft API** (primary source): 2,557 official French AOC wine product variants — color suffixes (rouge/blanc/rosé), vendanges tardives, vin jaune, premier/grand cru sub-types. API: `public.opendatasoft.com/api/explore/v2.1/catalog/datasets/aires-et-produits-aocaop-et-igp/records`, filtered to `signe_fr LIKE 'AOC%' OR 'IGP%'`.
