@@ -1,0 +1,148 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Kanonkop",
+    "slug": "kanonkop",
+    "country": "South Africa",
+    "region": "Stellenbosch",
+    "appellation": "Simonsberg-Stellenbosch",
+    "website": "https://www.kanonkop.co.za",
+    "producer_type": "estate",
+    "founded_year": 1910,
+    "hectares_under_vine": 125,
+    "philosophy": "One of South Africa's most iconic estates, Kanonkop has been in the Sauer family since 1910, named for the cannon on Simonsberg that was fired to signal ships arriving in False Bay. Famed for Pinotage — the uniquely South African grape (Pinot Noir × Cinsaut cross, 1925). The estate is a benchmark for red wines from the Simonsberg-Stellenbosch ward. Traditional winemaking: open-top fermentation, French oak, long aging.",
+    "farming_certifications": [
+      { "name": "Sustainable", "status": "certified", "since": 2012 }
+    ],
+    "winemakers": [
+      {
+        "name": "Abrie Beeslaar",
+        "slug": "abrie-beeslaar",
+        "role": "head",
+        "title": "Cellarmaster",
+        "start_year": 2002,
+        "country": "South Africa"
+      }
+    ],
+    "metadata": {
+      "soil": "Decomposed granite over clay with high iron content — well-drained, warm soils ideal for red varieties",
+      "altitude": "200-350m",
+      "ward": "Simonsberg-Stellenbosch"
+    }
+  },
+  "wines": [
+    {
+      "name": "Pinotage",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Simonsberg-Stellenbosch",
+      "style": "Estate Pinotage — concentrated, oak-aged benchmark",
+      "vinification_notes": "100% Pinotage from 30+ year old bush vines on decomposed granite. Open-top fermentation. Aged 16 months in French oak (50% new). Deep color, mulberry and dark chocolate. The reference point for premium Pinotage.",
+      "grapes": [
+        { "grape": "Pinotage", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 14.5, "duration_in_oak_months": 16, "new_oak_pct": 50, "scores": [{ "publication": "Tim Atkin MW", "score": 95 }] },
+        { "year": 2020, "abv": 14.5, "duration_in_oak_months": 16, "new_oak_pct": 50, "scores": [{ "publication": "Tim Atkin MW", "score": 93 }] },
+        { "year": 2019, "abv": 14, "duration_in_oak_months": 16, "new_oak_pct": 50, "scores": [{ "publication": "Wine Advocate", "score": 93 }] },
+        { "year": 2018, "abv": 14, "duration_in_oak_months": 16, "new_oak_pct": 50 },
+        { "year": 2017, "abv": 14.5, "scores": [{ "publication": "Tim Atkin MW", "score": 94 }] }
+      ]
+    },
+    {
+      "name": "Cabernet Sauvignon",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Simonsberg-Stellenbosch",
+      "style": "Estate Cabernet Sauvignon — structured, age-worthy",
+      "vinification_notes": "100% Cabernet Sauvignon from decomposed granite soils. Open-top fermented, 18 months in French oak (60% new). Cassis, pencil shavings, and earthy minerality. Built for long aging.",
+      "grapes": [
+        { "grape": "Cabernet Sauvignon", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2020, "abv": 14, "duration_in_oak_months": 18, "new_oak_pct": 60, "scores": [{ "publication": "Tim Atkin MW", "score": 96 }] },
+        { "year": 2019, "abv": 14, "duration_in_oak_months": 18, "new_oak_pct": 60, "scores": [{ "publication": "Wine Advocate", "score": 95 }] },
+        { "year": 2018, "abv": 14, "duration_in_oak_months": 18, "new_oak_pct": 60, "scores": [{ "publication": "Tim Atkin MW", "score": 95 }] },
+        { "year": 2017, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 95 }] }
+      ]
+    },
+    {
+      "name": "Paul Sauer",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Simonsberg-Stellenbosch",
+      "style": "Flagship Bordeaux blend — South Africa's Opus One",
+      "vinification_notes": "Named after family patriarch Paul Sauer. Bordeaux blend of Cabernet Sauvignon (70%), Cabernet Franc (18%), Merlot (12%) — blend varies by vintage. 18 months in French oak (75% new). Consistently South Africa's most celebrated red wine.",
+      "grapes": [
+        { "grape": "Cabernet Sauvignon", "percentage": 70 },
+        { "grape": "Cabernet Franc", "percentage": 18 },
+        { "grape": "Merlot", "percentage": 12 }
+      ],
+      "vintages": [
+        { "year": 2020, "abv": 14, "duration_in_oak_months": 18, "new_oak_pct": 75, "scores": [{ "publication": "Tim Atkin MW", "score": 98 }, { "publication": "Wine Advocate", "score": 96 }] },
+        { "year": 2019, "abv": 14, "duration_in_oak_months": 18, "new_oak_pct": 75, "scores": [{ "publication": "Tim Atkin MW", "score": 97 }, { "publication": "Wine Advocate", "score": 95 }] },
+        { "year": 2018, "abv": 14, "duration_in_oak_months": 18, "new_oak_pct": 75, "scores": [{ "publication": "James Suckling", "score": 96 }] },
+        { "year": 2017, "abv": 14.5, "scores": [{ "publication": "Tim Atkin MW", "score": 97 }, { "publication": "James Suckling", "score": 97 }] },
+        { "year": 2015, "abv": 14 }
+      ]
+    },
+    {
+      "name": "Kadette Pinotage",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Stellenbosch",
+      "style": "Entry-level Pinotage — approachable and fruit-forward",
+      "vinification_notes": "100% Pinotage from younger vines. Named for the Kadette car in which the Sauer family would deliver wine. Tank and oak aged. Fresh, fruity, and approachable — the gateway to Kanonkop.",
+      "grapes": [
+        { "grape": "Pinotage", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2023, "abv": 14 },
+        { "year": 2022, "abv": 14 },
+        { "year": 2021, "abv": 14 }
+      ]
+    },
+    {
+      "name": "Kadette Cape Blend",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Stellenbosch",
+      "style": "Cape Blend — Pinotage-led multi-variety blend",
+      "vinification_notes": "Cape Blend: Pinotage dominant (min 30%), blended with Cabernet Sauvignon, Merlot, and Cabernet Franc. The 'Cape Blend' designation requires Pinotage as significant component — South Africa's unique blending category.",
+      "grapes": [
+        { "grape": "Pinotage", "percentage": 40 },
+        { "grape": "Cabernet Sauvignon", "percentage": 30 },
+        { "grape": "Merlot", "percentage": 20 },
+        { "grape": "Cabernet Franc", "percentage": 10 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 14 },
+        { "year": 2021, "abv": 14 },
+        { "year": 2020, "abv": 14 }
+      ]
+    },
+    {
+      "name": "Black Label Pinotage",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Simonsberg-Stellenbosch",
+      "style": "Ultra-premium single-block Pinotage — only in exceptional years",
+      "vinification_notes": "100% Pinotage from a single block of 50+ year old bush vines. Only produced in exceptional vintages. 24 months in new French oak. Dense, concentrated, and extraordinarily long-lived. First vintage: 2003.",
+      "first_vintage_year": 2003,
+      "grapes": [
+        { "grape": "Pinotage", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2019, "abv": 15, "duration_in_oak_months": 24, "new_oak_pct": 100, "scores": [{ "publication": "Tim Atkin MW", "score": 98 }, { "publication": "Wine Advocate", "score": 97 }] },
+        { "year": 2017, "abv": 14.5, "duration_in_oak_months": 24, "new_oak_pct": 100, "scores": [{ "publication": "Tim Atkin MW", "score": 97 }] },
+        { "year": 2015, "abv": 15, "duration_in_oak_months": 24, "new_oak_pct": 100, "scores": [{ "publication": "Wine Advocate", "score": 96 }] }
+      ]
+    }
+  ]
+}

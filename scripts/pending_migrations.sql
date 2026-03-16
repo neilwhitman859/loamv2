@@ -110,3 +110,129 @@ SELECT 'Goldkapsel', 'goldkapsel', 'quality_tier',
   (SELECT id FROM countries WHERE name = 'Germany'),
   'German "Gold Capsule" — indicates a special selection of higher quality within a Prädikat level. Often sold at VDP auctions. Not legally defined but universally understood as a step above standard bottlings. Some estates use "Lange Goldkapsel" for an even higher tier.'
 WHERE NOT EXISTS (SELECT 1 FROM label_designations WHERE slug = 'goldkapsel');
+
+-- ============================================================
+-- MIGRATION 3: New regions discovered during imports
+-- Countries that only had catch-all regions but need named L1 regions
+-- ============================================================
+
+-- 3a. Lebanon — Bekaa Valley (most important wine region, ~90% of production)
+INSERT INTO regions (name, slug, country_id, parent_id, level, is_catch_all)
+SELECT 'Bekaa Valley', 'bekaa-valley',
+  (SELECT id FROM countries WHERE name = 'Lebanon'),
+  NULL, 1, false
+WHERE NOT EXISTS (SELECT 1 FROM regions WHERE slug = 'bekaa-valley');
+
+-- 3b. Lebanon — Mount Lebanon (coastal mountain wines)
+INSERT INTO regions (name, slug, country_id, parent_id, level, is_catch_all)
+SELECT 'Mount Lebanon', 'mount-lebanon',
+  (SELECT id FROM countries WHERE name = 'Lebanon'),
+  NULL, 1, false
+WHERE NOT EXISTS (SELECT 1 FROM regions WHERE slug = 'mount-lebanon');
+
+-- 3c. Lebanon — Batroun (emerging northern coastal region)
+INSERT INTO regions (name, slug, country_id, parent_id, level, is_catch_all)
+SELECT 'Batroun', 'batroun',
+  (SELECT id FROM countries WHERE name = 'Lebanon'),
+  NULL, 1, false
+WHERE NOT EXISTS (SELECT 1 FROM regions WHERE slug = 'batroun');
+
+-- ============================================================
+-- MIGRATION 4: Cape Blend label designation
+-- Discovered from Kanonkop import — uniquely South African designation
+-- ============================================================
+
+INSERT INTO label_designations (name, slug, category, country_id, description)
+SELECT 'Cape Blend', 'cape-blend', 'production_method',
+  (SELECT id FROM countries WHERE name = 'South Africa'),
+  'South African blending designation requiring Pinotage as a significant component (typically 30-70%). Celebrates South Africa''s unique grape variety within a multi-variety blend. Recognized by the Cape Winemakers Guild and industry bodies.'
+WHERE NOT EXISTS (SELECT 1 FROM label_designations WHERE slug = 'cape-blend');
+
+-- Qvevri designation (for Georgian amber wines)
+INSERT INTO label_designations (name, slug, category, country_id, description)
+SELECT 'Qvevri', 'qvevri', 'production_method',
+  (SELECT id FROM countries WHERE name = 'Georgia'),
+  'Georgian traditional winemaking in qvevri (kvevri) — large clay vessels buried underground. Grapes fermented and aged on skins for months. UNESCO Intangible Cultural Heritage since 2013. The world''s oldest continuous winemaking tradition (8,000 years). Produces distinctive amber/orange wines from white grapes.'
+WHERE NOT EXISTS (SELECT 1 FROM label_designations WHERE slug = 'qvevri');
+
+-- Madeira sweetness designations (grape names that double as style designations)
+INSERT INTO label_designations (name, slug, category, country_id, description)
+SELECT 'Sercial', 'sercial-madeira', 'sweetness_style',
+  (SELECT id FROM countries WHERE name = 'Portugal'),
+  'Driest style of Madeira wine, made from the Sercial grape. Maximum 25-45 g/L residual sugar. Intense acidity, citrus peel, almond character. Best served slightly chilled as aperitif.'
+WHERE NOT EXISTS (SELECT 1 FROM label_designations WHERE slug = 'sercial-madeira');
+
+INSERT INTO label_designations (name, slug, category, country_id, description)
+SELECT 'Verdelho', 'verdelho-madeira', 'sweetness_style',
+  (SELECT id FROM countries WHERE name = 'Portugal'),
+  'Medium-dry style of Madeira wine, made from the Verdelho grape. 45-65 g/L residual sugar. Smoky, caramel, and dried fruit with balancing acidity. Versatile — works as aperitif or with food.'
+WHERE NOT EXISTS (SELECT 1 FROM label_designations WHERE slug = 'verdelho-madeira');
+
+INSERT INTO label_designations (name, slug, category, country_id, description)
+SELECT 'Bual', 'bual-madeira', 'sweetness_style',
+  (SELECT id FROM countries WHERE name = 'Portugal'),
+  'Medium-sweet style of Madeira wine, made from the Bual (Boal) grape. 65-96 g/L residual sugar. Rich toffee, spice cake, and dried fig. Classic after-dinner Madeira.'
+WHERE NOT EXISTS (SELECT 1 FROM label_designations WHERE slug = 'bual-madeira');
+
+INSERT INTO label_designations (name, slug, category, country_id, description)
+SELECT 'Malmsey', 'malmsey-madeira', 'sweetness_style',
+  (SELECT id FROM countries WHERE name = 'Portugal'),
+  'Sweetest and richest style of Madeira wine, made from Malvasia (Malmsey). 96+ g/L residual sugar. Deep mahogany, molten toffee, dark chocolate, coffee. The acidity keeps it vibrant despite high sweetness.'
+WHERE NOT EXISTS (SELECT 1 FROM label_designations WHERE slug = 'malmsey-madeira');
+
+INSERT INTO label_designations (name, slug, category, country_id, description)
+SELECT 'Terrantez', 'terrantez-madeira', 'sweetness_style',
+  (SELECT id FROM countries WHERE name = 'Portugal'),
+  'Ultra-rare Madeira style from the nearly extinct Terrantez grape. Falls between Verdelho and Bual in sweetness. Smoky, bitter orange, incense. Among the most sought-after and expensive Madeiras.'
+WHERE NOT EXISTS (SELECT 1 FROM label_designations WHERE slug = 'terrantez-madeira');
+
+-- Rainwater (Madeira — light blended style)
+INSERT INTO label_designations (name, slug, category, country_id, description)
+SELECT 'Rainwater', 'rainwater-madeira', 'production_method',
+  (SELECT id FROM countries WHERE name = 'Portugal'),
+  'Light, medium-dry style of Madeira historically associated with the American market. Name origin debated — possibly from rainwater diluting barrels on the docks, or from a particular shipper''s style. Blend of Tinta Negra, lighter bodied than noble variety Madeiras.'
+WHERE NOT EXISTS (SELECT 1 FROM label_designations WHERE slug = 'rainwater-madeira');
+
+-- Canteiro (Madeira — premium natural aging method)
+INSERT INTO label_designations (name, slug, category, country_id, description)
+SELECT 'Canteiro', 'canteiro', 'production_method',
+  (SELECT id FROM countries WHERE name = 'Portugal'),
+  'Premium Madeira aging method. Wine aged naturally in casks placed on wooden supports (canteiros) in warm upper floors of lodges, where heat from the sun slowly develops the wine. Superior to estufagem (artificial heating). Required for all noble variety 10+ year Madeiras.'
+WHERE NOT EXISTS (SELECT 1 FROM label_designations WHERE slug = 'canteiro');
+
+-- ============================================================
+-- MIGRATION 5: New columns from metadata audit
+-- Promoting high-frequency metadata fields to proper columns
+-- ============================================================
+
+-- 5a. wines.soil_description — free text soil description (1,489 entries in metadata)
+-- Soil data ideally lives in vineyard_soils, but most wines don't have vineyard records.
+-- This captures what's on the label/website: "Volcanic pumice over limestone"
+ALTER TABLE wines ADD COLUMN IF NOT EXISTS soil_description TEXT;
+
+-- 5b. wines.vine_age_description — free text vine age (1,469 entries in metadata)
+-- Label-visible data: "30-70 years old", "Planted in 1946, 2003"
+ALTER TABLE wines ADD COLUMN IF NOT EXISTS vine_age_description TEXT;
+
+-- 5c. wines.vineyard_area_ha — vineyard size in hectares (1,468 entries in metadata)
+ALTER TABLE wines ADD COLUMN IF NOT EXISTS vineyard_area_ha NUMERIC;
+
+-- 5d. wines.commune — for French wines especially (53 entries)
+-- The village/commune within the appellation: "Vosne-Romanée", "Meursault"
+ALTER TABLE wines ADD COLUMN IF NOT EXISTS commune TEXT;
+
+-- 5e. wines.altitude_m_low / altitude_m_high — vineyard altitude range (23 entries)
+ALTER TABLE wines ADD COLUMN IF NOT EXISTS altitude_m_low INTEGER;
+ALTER TABLE wines ADD COLUMN IF NOT EXISTS altitude_m_high INTEGER;
+
+-- 5f. wines.aspect — vineyard orientation (23 entries): "South-Southwest", "Southwest"
+ALTER TABLE wines ADD COLUMN IF NOT EXISTS aspect TEXT;
+
+-- 5g. wines.slope_pct — vineyard slope percentage (22 entries)
+ALTER TABLE wines ADD COLUMN IF NOT EXISTS slope_pct NUMERIC;
+
+-- 5h. wines.monopole — boolean, is this a monopole vineyard (8 entries)
+ALTER TABLE wines ADD COLUMN IF NOT EXISTS monopole BOOLEAN DEFAULT false;
+
+-- 5i. producers.address — full address (198 entries in metadata as "location")
+ALTER TABLE producers ADD COLUMN IF NOT EXISTS address TEXT;

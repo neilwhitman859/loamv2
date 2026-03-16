@@ -1,0 +1,141 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Blandy's",
+    "slug": "blandys",
+    "country": "Portugal",
+    "region": "Madeira",
+    "appellation": "Madeirense",
+    "website": "https://www.bfrancisvinhos.com/en/brands/blandys",
+    "producer_type": "estate",
+    "founded_year": 1811,
+    "philosophy": "The Blandy family is the only founding family of the original Madeira wine shippers still involved in the wine trade. Established in 1811 by John Blandy, a British merchant. Madeira is the world's most indestructible wine — exposure to heat and oxygen (estufagem or canteiro aging) gives it virtually unlimited aging potential. Vintage Madeiras from the 19th century are still drinking beautifully.",
+    "winemakers": [
+      {
+        "name": "Francisco Albuquerque",
+        "slug": "francisco-albuquerque",
+        "role": "head",
+        "title": "Head Winemaker, Madeira Wine Company",
+        "start_year": 1990,
+        "country": "Portugal"
+      }
+    ],
+    "metadata": {
+      "soil": "Volcanic basalt and tufa — steep terraced vineyards on Atlantic island",
+      "altitude": "0-780m (vineyards at all elevations)",
+      "parent_company": "Madeira Wine Company (Symington Family ownership since 1989)"
+    }
+  },
+  "wines": [
+    {
+      "name": "Sercial 10 Year Old",
+      "color": "white",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Madeirense",
+      "style": "Dry Madeira — 10 year canteiro aged",
+      "vinification_notes": "100% Sercial — the driest of Madeira's noble grape varieties. Canteiro aged (natural heat from sun on upper floors of lodges) for minimum 10 years. Pale amber color. Intense acidity, salinity, almond, and citrus peel. Bone dry with a long, mineral finish. Serve slightly chilled as aperitif.",
+      "grapes": [
+        { "grape": "Sercial", "percentage": 100 }
+      ],
+      "label_designations": ["Sercial"],
+      "vintages": [
+        { "year": 0, "abv": 20, "age_statement_years": 10, "rs_g_l": 25, "scores": [{ "publication": "Wine Enthusiast", "score": 93 }] }
+      ]
+    },
+    {
+      "name": "Verdelho 10 Year Old",
+      "color": "white",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Madeirense",
+      "style": "Medium-dry Madeira — 10 year canteiro aged",
+      "vinification_notes": "100% Verdelho — medium-dry style. Canteiro aged minimum 10 years. Golden amber color. Smoky, caramel, dried fruit, and walnut notes with bright acidity cutting through the sweetness. More versatile than Sercial — works with richer dishes.",
+      "grapes": [
+        { "grape": "Verdelho", "percentage": 100 }
+      ],
+      "label_designations": ["Verdelho"],
+      "vintages": [
+        { "year": 0, "abv": 20, "age_statement_years": 10, "rs_g_l": 55, "scores": [{ "publication": "Wine Enthusiast", "score": 93 }] }
+      ]
+    },
+    {
+      "name": "Bual 10 Year Old",
+      "color": "white",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Madeirense",
+      "style": "Medium-sweet Madeira — 10 year canteiro aged",
+      "vinification_notes": "100% Bual (Boal) — medium-sweet style. Canteiro aged minimum 10 years. Deep amber-tawny color. Rich, complex: toffee, burnt orange, spice cake, and dried fig. Balancing acidity prevents cloying sweetness. Classic after-dinner wine.",
+      "grapes": [
+        { "grape": "Boal", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 0, "abv": 20, "age_statement_years": 10, "rs_g_l": 75, "scores": [{ "publication": "Wine Enthusiast", "score": 94 }] }
+      ]
+    },
+    {
+      "name": "Malmsey 10 Year Old",
+      "color": "white",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Madeirense",
+      "style": "Sweet Madeira — 10 year canteiro aged",
+      "vinification_notes": "100% Malmsey (Malvasia de São Jorge) — the sweetest and richest of the four noble styles. Canteiro aged minimum 10 years. Deep mahogany color. Molten toffee, dark chocolate, coffee, and Christmas cake. Despite the sweetness (80+ g/L RS), Madeira's signature acidity keeps it vibrant.",
+      "grapes": [
+        { "grape": "Malvasia", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 0, "abv": 20, "age_statement_years": 10, "rs_g_l": 85, "scores": [{ "publication": "Wine Advocate", "score": 93 }] }
+      ]
+    },
+    {
+      "name": "Colheita Sercial",
+      "color": "white",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Madeirense",
+      "style": "Single harvest Sercial — vintage dated Madeira",
+      "vinification_notes": "100% Sercial from a single harvest, canteiro aged minimum 5 years. Unlike the 10-year blend, Colheita shows the character of a specific year. The year on the label is the harvest year. Still bone dry with piercing acidity.",
+      "grapes": [
+        { "grape": "Sercial", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2011, "abv": 20, "rs_g_l": 25, "scores": [{ "publication": "Wine Advocate", "score": 92 }] },
+        { "year": 2007, "abv": 20, "rs_g_l": 25 }
+      ]
+    },
+    {
+      "name": "Bual Vintage",
+      "color": "white",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Madeirense",
+      "style": "Vintage Madeira — minimum 20 years aging",
+      "vinification_notes": "100% Bual from a single exceptional year. Canteiro aged minimum 20 years in cask before bottling. The 'Vintage' designation requires minimum 20 years aging (vs 5 for Colheita). Extraordinary complexity: coffee, caramel, dried tropical fruit, tobacco, and spice with electric acidity.",
+      "grapes": [
+        { "grape": "Boal", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 1999, "abv": 20, "rs_g_l": 78, "scores": [{ "publication": "Wine Advocate", "score": 96 }] },
+        { "year": 1988, "abv": 20, "rs_g_l": 75, "scores": [{ "publication": "Wine Advocate", "score": 97 }] }
+      ]
+    },
+    {
+      "name": "Terrantez Vintage",
+      "color": "white",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Madeirense",
+      "style": "Ultra-rare Terrantez — the 'lost' noble variety",
+      "vinification_notes": "100% Terrantez — the rarest of Madeira's noble grape varieties, nearly wiped out by phylloxera and oidium. Medium-sweet style (between Verdelho and Bual). Smoky, complex, with notes of bitter orange, tea, and incense. Among the most sought-after and expensive Madeiras.",
+      "grapes": [
+        { "grape": "Terrantez", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 1978, "abv": 20, "rs_g_l": 60, "scores": [{ "publication": "Wine Advocate", "score": 98 }] },
+        { "year": 1954, "abv": 19.5, "rs_g_l": 65, "scores": [{ "publication": "Wine Advocate", "score": 99 }] }
+      ]
+    }
+  ]
+}

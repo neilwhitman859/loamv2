@@ -1,0 +1,163 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Billecart-Salmon",
+    "slug": "billecart-salmon",
+    "country": "France",
+    "region": "Champagne",
+    "appellation": "Champagne",
+    "website": "https://www.champagne-billecart.fr",
+    "producer_type": "estate",
+    "founded_year": 1818,
+    "hectares_under_vine": 40,
+    "total_production_cases": 100000,
+    "philosophy": "Family-owned since 1818, Billecart-Salmon is renowned for producing Champagne's finest rosé. Seven generations of the founding families have maintained the house's meticulous approach: cold settling (double cold débourbage), slow fermentation at low temperature, and extended aging on lees. The Cuvée Elisabeth Salmon Rosé is considered one of the greatest rosé Champagnes ever made.",
+    "winemakers": [
+      {
+        "name": "Florent Nys",
+        "slug": "florent-nys",
+        "role": "head",
+        "title": "Chef de Caves",
+        "start_year": 2019,
+        "country": "France"
+      }
+    ],
+    "metadata": {
+      "soil": "Chalk subsoil (Côte des Blancs, Montagne de Reims)",
+      "vinification_note": "Double cold débourbage — unique cold settling technique before fermentation"
+    }
+  },
+  "wines": [
+    {
+      "name": "Brut Réserve",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "is_nv": true,
+      "style": "Non-vintage brut — house style benchmark",
+      "label_designations": ["Brut"],
+      "vinification_notes": "Blend of approximately 40% Pinot Meunier, 30% Chardonnay, 25% Pinot Noir. Reserve wines from 40+ parcels. Double cold débourbage. Aged minimum 36 months on lees. Dosage 8 g/L. Elegant, delicate, and pure — the antithesis of big, toasty NV Champagne.",
+      "grapes": [
+        { "grape": "Pinot Meunier", "percentage": 40 },
+        { "grape": "Chardonnay", "percentage": 30 },
+        { "grape": "Pinot Noir", "percentage": 25 }
+      ],
+      "vintages": [
+        { "year": 0, "abv": 12, "rs_g_l": 8, "lees_aging_months": 36, "scores": [{ "publication": "Wine Spectator", "score": 92 }] }
+      ]
+    },
+    {
+      "name": "Brut Rosé",
+      "color": "rose",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "is_nv": true,
+      "style": "Non-vintage rosé — the benchmark rosé Champagne",
+      "label_designations": ["Brut"],
+      "vinification_notes": "Blend of Chardonnay (40%), Pinot Noir (30%), Pinot Meunier (30%). The rosé color comes from a small addition of Pinot Noir red wine (saignée method). Famous salmon-pink color. Wild strawberry, raspberry, and citrus with a fine, persistent mousse. Widely considered the reference point for rosé Champagne.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 40 },
+        { "grape": "Pinot Noir", "percentage": 30 },
+        { "grape": "Pinot Meunier", "percentage": 30 }
+      ],
+      "vintages": [
+        { "year": 0, "abv": 12, "rs_g_l": 8, "lees_aging_months": 36, "scores": [{ "publication": "James Suckling", "score": 94 }, { "publication": "Wine Advocate", "score": 92 }] }
+      ]
+    },
+    {
+      "name": "Blanc de Blancs",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "is_nv": true,
+      "style": "Non-vintage Blanc de Blancs — 100% Chardonnay",
+      "label_designations": ["Blanc de Blancs", "Brut"],
+      "vinification_notes": "100% Chardonnay from Côte des Blancs (Avize, Chouilly, Mesnil-sur-Oger) and Montagne de Reims. Aged minimum 48 months on lees. Dosage 7 g/L. Precise, mineral, and citrus-driven. Shows the finesse that defines the house style.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 0, "abv": 12, "rs_g_l": 7, "lees_aging_months": 48, "scores": [{ "publication": "Wine Advocate", "score": 93 }] }
+      ]
+    },
+    {
+      "name": "Sous Bois Brut",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "is_nv": true,
+      "style": "NV brut with partial barrel fermentation",
+      "label_designations": ["Brut"],
+      "vinification_notes": "Blend of Pinot Noir (40%), Chardonnay (30%), Pinot Meunier (30%). Partially fermented and aged in oak barrels — 'sous bois' means 'undergrowth' referencing the woodsy character. Richer and more textured than the Brut Réserve. Extended lees aging.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 40 },
+        { "grape": "Chardonnay", "percentage": 30 },
+        { "grape": "Pinot Meunier", "percentage": 30 }
+      ],
+      "vintages": [
+        { "year": 0, "abv": 12, "rs_g_l": 8, "lees_aging_months": 48 }
+      ]
+    },
+    {
+      "name": "Cuvée Nicolas François Billecart",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "style": "Prestige cuvée — vintage, oak-fermented",
+      "label_designations": ["Brut"],
+      "vinification_notes": "Named after the founder. Blend of Pinot Noir (60%) and Chardonnay (40%) from Grand Cru villages. Partially vinified in oak. Aged minimum 10 years on lees before disgorgement. Complex, toasty, honeyed — yet retaining the Billecart elegance.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 60 },
+        { "grape": "Chardonnay", "percentage": 40 }
+      ],
+      "vintages": [
+        { "year": 2008, "abv": 12, "rs_g_l": 6, "lees_aging_months": 120, "disgorgement_date": "2020-06-01", "scores": [{ "publication": "Wine Advocate", "score": 97 }, { "publication": "James Suckling", "score": 98 }] },
+        { "year": 2007, "abv": 12, "rs_g_l": 6, "lees_aging_months": 108, "disgorgement_date": "2019-03-01", "scores": [{ "publication": "Wine Advocate", "score": 96 }] },
+        { "year": 2006, "abv": 12, "rs_g_l": 6, "disgorgement_date": "2018-06-01", "scores": [{ "publication": "Wine Spectator", "score": 96 }] }
+      ]
+    },
+    {
+      "name": "Cuvée Elisabeth Salmon Rosé",
+      "color": "rose",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "style": "Prestige rosé — the pinnacle of rosé Champagne",
+      "label_designations": ["Brut"],
+      "vinification_notes": "Named after Elisabeth Salmon, who married Nicolas François Billecart in 1818. Pinot Noir (55%) and Chardonnay (45%). The rosé character comes from blending with 5-8% still red Pinot Noir from Mareuil-sur-Aÿ. Aged minimum 8 years on lees. Wild strawberry, blood orange, white pepper, and mineral. Universally cited as one of the greatest rosé Champagnes in existence.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 55 },
+        { "grape": "Chardonnay", "percentage": 45 }
+      ],
+      "vintages": [
+        { "year": 2009, "abv": 12, "rs_g_l": 6, "lees_aging_months": 96, "disgorgement_date": "2020-09-01", "scores": [{ "publication": "Wine Advocate", "score": 97 }, { "publication": "James Suckling", "score": 98 }] },
+        { "year": 2008, "abv": 12, "rs_g_l": 6, "lees_aging_months": 108, "disgorgement_date": "2019-06-01", "scores": [{ "publication": "Wine Advocate", "score": 98 }, { "publication": "James Suckling", "score": 99 }] },
+        { "year": 2007, "abv": 12, "rs_g_l": 6, "lees_aging_months": 96, "scores": [{ "publication": "Wine Advocate", "score": 97 }] }
+      ]
+    },
+    {
+      "name": "Clos Saint-Hilaire",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "style": "Ultra-prestige Blanc de Noirs — single vineyard, single variety",
+      "label_designations": ["Blanc de Noirs", "Brut"],
+      "vinification_notes": "100% Pinot Noir from a single walled vineyard (clos) of 1 hectare in Mareuil-sur-Aÿ, planted in 1964. Only made in exceptional vintages. Fermented in oak. Aged minimum 10 years on lees. Extraordinarily concentrated and complex: red fruit, smoke, truffle, chalk. Production under 3,000 bottles per vintage.",
+      "first_vintage_year": 1995,
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2006, "abv": 12.5, "rs_g_l": 5, "lees_aging_months": 144, "cases_produced": 250, "disgorgement_date": "2019-09-01", "scores": [{ "publication": "Wine Advocate", "score": 99 }, { "publication": "James Suckling", "score": 99 }] },
+        { "year": 2005, "abv": 12, "rs_g_l": 5, "lees_aging_months": 132, "cases_produced": 250, "scores": [{ "publication": "Wine Advocate", "score": 98 }] },
+        { "year": 2002, "abv": 12.5, "rs_g_l": 4, "lees_aging_months": 144, "scores": [{ "publication": "Wine Advocate", "score": 99 }] }
+      ]
+    }
+  ]
+}

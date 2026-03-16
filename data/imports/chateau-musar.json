@@ -1,0 +1,124 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Château Musar",
+    "slug": "chateau-musar",
+    "country": "Lebanon",
+    "region": "Bekaa Valley",
+    "website": "https://www.chateaumusar.com",
+    "producer_type": "estate",
+    "founded_year": 1930,
+    "hectares_under_vine": 180,
+    "philosophy": "Founded in 1930 by Gaston Hochar and made legendary by his son Serge Hochar (1939-2014). Produced wine continuously through Lebanon's civil war (1975-1990), missing only the 1976 and 1984 vintages. The red blend of Cabernet Sauvignon, Cinsaut, and Carignan is aged 7 years before release — an anachronism in modern winemaking. Vineyards at 1,000m altitude in the Bekaa Valley, between the Lebanon and Anti-Lebanon mountain ranges. No pesticides or herbicides since founding.",
+    "winemakers": [
+      {
+        "name": "Tarek Sakr",
+        "slug": "tarek-sakr",
+        "role": "head",
+        "title": "Head Winemaker",
+        "start_year": 2015,
+        "country": "Lebanon"
+      }
+    ],
+    "metadata": {
+      "soil": "Limestone, clay, and gravel over chalk bedrock — Bekaa Valley alluvial",
+      "altitude": "900-1,100m",
+      "historical_note": "Only missed 2 vintages (1976, 1984) during 15-year civil war",
+      "former_winemaker": "Serge Hochar (1959-2014)"
+    }
+  },
+  "wines": [
+    {
+      "name": "Château Musar Red",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "style": "Iconic Lebanese red — aged 7 years before release",
+      "vinification_notes": "Blend of Cabernet Sauvignon, Cinsaut, and Carignan from the Bekaa Valley at 1,000m altitude. Each variety vinified separately, aged in French oak barrels for 12 months, then blended and aged in bottle for at minimum 5 years before release. The wine famously develops tertiary complexity: dried fruit, spice, leather, and earth. Serge Hochar compared it to Bordeaux meets Burgundy.",
+      "grapes": [
+        { "grape": "Cabernet Sauvignon", "percentage": 35 },
+        { "grape": "Cinsaut", "percentage": 35 },
+        { "grape": "Carignan", "percentage": 30 }
+      ],
+      "vintages": [
+        { "year": 2017, "abv": 14, "duration_in_oak_months": 12, "scores": [{ "publication": "Jancis Robinson", "score": 17, "scale": "20" }, { "publication": "Decanter", "score": 94 }] },
+        { "year": 2016, "abv": 14, "duration_in_oak_months": 12, "scores": [{ "publication": "James Suckling", "score": 93 }] },
+        { "year": 2015, "abv": 14, "duration_in_oak_months": 12, "scores": [{ "publication": "Wine Advocate", "score": 92 }] },
+        { "year": 2014, "abv": 14.5, "duration_in_oak_months": 12, "scores": [{ "publication": "Decanter", "score": 93 }] },
+        { "year": 2000, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 94 }] },
+        { "year": 1999, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 95 }] }
+      ]
+    },
+    {
+      "name": "Château Musar White",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "style": "Oxidative white — indigenous grapes, extreme aging",
+      "vinification_notes": "Blend of Obaideh and Merwah — two indigenous Lebanese grape varieties believed to be ancestral to Chardonnay and Sémillon. Fermented in old French oak, aged in barrel then bottle for 7+ years before release. Deep gold color, complex oxidative character: beeswax, dried apricot, roasted nuts, honey. One of the world's most unusual white wines.",
+      "grapes": [
+        { "grape": "Obaideh", "percentage": 50 },
+        { "grape": "Merwah", "percentage": 50 }
+      ],
+      "vintages": [
+        { "year": 2016, "abv": 13, "duration_in_oak_months": 12 },
+        { "year": 2015, "abv": 13, "duration_in_oak_months": 12, "scores": [{ "publication": "Jancis Robinson", "score": 17.5, "scale": "20" }] },
+        { "year": 2014, "abv": 13, "duration_in_oak_months": 12, "scores": [{ "publication": "Decanter", "score": 93 }] },
+        { "year": 2006, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 91 }] }
+      ]
+    },
+    {
+      "name": "Château Musar Rosé",
+      "color": "rose",
+      "wine_type": "table",
+      "effervescence": "still",
+      "style": "Aged rosé — Cinsaut and Carignan, released after 5+ years",
+      "vinification_notes": "Blend of Cinsaut and Carignan, made by saignée method. Like the red and white, released after extended aging. Develops copper-salmon color with age. Dried strawberry, spice, and Mediterranean herbs. Not a typical rosé — more like a light red with tertiary development.",
+      "grapes": [
+        { "grape": "Cinsaut", "percentage": 60 },
+        { "grape": "Carignan", "percentage": 40 }
+      ],
+      "vintages": [
+        { "year": 2017, "abv": 13.5 },
+        { "year": 2016, "abv": 13 },
+        { "year": 2015, "abv": 13, "scores": [{ "publication": "Decanter", "score": 91 }] }
+      ]
+    },
+    {
+      "name": "Hochar Père et Fils Red",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "style": "Second wine — more approachable, earlier release",
+      "vinification_notes": "Blend of Cinsaut, Grenache, and Cabernet Sauvignon. The more approachable red from Musar, released younger (3-4 years vs 7 for the Grand Vin). Named after the founder Gaston Hochar. Fruit-forward but still showing the Bekaa Valley signature.",
+      "grapes": [
+        { "grape": "Cinsaut", "percentage": 40 },
+        { "grape": "Grenache", "percentage": 30 },
+        { "grape": "Cabernet Sauvignon", "percentage": 30 }
+      ],
+      "vintages": [
+        { "year": 2020, "abv": 14 },
+        { "year": 2019, "abv": 13.5, "scores": [{ "publication": "James Suckling", "score": 91 }] },
+        { "year": 2018, "abv": 14 }
+      ]
+    },
+    {
+      "name": "Hochar Père et Fils White",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "style": "Second white — Viognier-led, more international style",
+      "vinification_notes": "Viognier, Vermentino, and Chardonnay blend. The more accessible white, released younger than the Grand Vin white. Floral, stone fruit, and fresh — a bridge between the extreme oxidative style of the main white and modern winemaking.",
+      "grapes": [
+        { "grape": "Viognier", "percentage": 40 },
+        { "grape": "Vermentino", "percentage": 30 },
+        { "grape": "Chardonnay", "percentage": 30 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 13 },
+        { "year": 2020, "abv": 13 },
+        { "year": 2019, "abv": 13 }
+      ]
+    }
+  ]
+}

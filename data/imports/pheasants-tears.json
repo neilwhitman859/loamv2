@@ -1,0 +1,130 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Pheasant's Tears",
+    "slug": "pheasants-tears",
+    "country": "Georgia",
+    "region": "Kakheti",
+    "website": "https://www.pheasantstears.com",
+    "producer_type": "estate",
+    "founded_year": 2007,
+    "hectares_under_vine": 15,
+    "philosophy": "Founded by American painter John Wurdeman and Georgian winemaker Gela Patalishvili. Named after a Georgian legend that when a pheasant eats a particularly beautiful grape, it sheds a tear of joy. Exclusively traditional Georgian qvevri winemaking — clay vessels buried in the ground, sealed with beeswax, fermented and aged on skins for 5-6 months. The oldest winemaking tradition on Earth (8,000 years). All indigenous Georgian grape varieties from old vines in Kakheti.",
+    "farming_certifications": [
+      { "name": "Organic", "status": "certified", "since": 2011 },
+      { "name": "Biodynamic", "status": "practicing" }
+    ],
+    "winemakers": [
+      {
+        "name": "John Wurdeman",
+        "slug": "john-wurdeman",
+        "role": "head",
+        "title": "Co-founder & Winemaker",
+        "start_year": 2007,
+        "country": "United States"
+      }
+    ],
+    "metadata": {
+      "soil": "Alluvial, clay, and limestone — Kakheti valley floor and foothills",
+      "winemaking_tradition": "Qvevri — 8,000 year old Georgian tradition. Clay vessels (kvevri) buried underground, grapes fermented on skins for 5-6 months",
+      "vine_age": "Many parcels 50-100+ years old"
+    }
+  },
+  "wines": [
+    {
+      "name": "Rkatsiteli",
+      "color": "orange",
+      "wine_type": "table",
+      "effervescence": "still",
+      "style": "Amber/orange wine — qvevri-fermented Rkatsiteli",
+      "vinification_notes": "100% Rkatsiteli from old vines in Kakheti. Whole cluster pressed, fermented with skins in buried qvevri for 5-6 months. No temperature control, no additives, no sulfur at fermentation. Deep amber color. Dried apricot, walnut, tea, and wild honey. The textbook Georgian amber wine.",
+      "grapes": [
+        { "grape": "Rkatsiteli", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 13, "skin_contact_days": 180, "aging_vessel": "qvevri" },
+        { "year": 2021, "abv": 13.5, "skin_contact_days": 180, "aging_vessel": "qvevri", "scores": [{ "publication": "Jancis Robinson", "score": 17, "scale": "20" }] },
+        { "year": 2020, "abv": 13, "skin_contact_days": 180, "aging_vessel": "qvevri" },
+        { "year": 2019, "abv": 13, "skin_contact_days": 180, "aging_vessel": "qvevri" }
+      ]
+    },
+    {
+      "name": "Mtsvane",
+      "color": "orange",
+      "wine_type": "table",
+      "effervescence": "still",
+      "style": "Amber wine — single-variety Mtsvane in qvevri",
+      "vinification_notes": "100% Mtsvane Kakhuri from old vines. Fermented on skins in qvevri for 5-6 months. Mtsvane ('green' in Georgian) produces a more floral and delicate amber wine than Rkatsiteli. Notes of chamomile, quince, green tea, and beeswax.",
+      "grapes": [
+        { "grape": "Mtsvane Kakhuri", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 12.5, "skin_contact_days": 170, "aging_vessel": "qvevri" },
+        { "year": 2021, "abv": 13, "skin_contact_days": 170, "aging_vessel": "qvevri" },
+        { "year": 2020, "abv": 12.5, "skin_contact_days": 170, "aging_vessel": "qvevri" }
+      ]
+    },
+    {
+      "name": "Chinuri",
+      "color": "orange",
+      "wine_type": "table",
+      "effervescence": "still",
+      "style": "Amber wine — rare Chinuri variety from Kartli",
+      "vinification_notes": "100% Chinuri from the Kartli region (western Georgia). One of Georgia's rarest indigenous white varieties. Fermented on skins in qvevri. Lighter amber color than Kakhetian wines. Mineral, citrus peel, and wild herbs. Shows the diversity of Georgian terroir.",
+      "grapes": [
+        { "grape": "Chinuri", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 12, "skin_contact_days": 150, "aging_vessel": "qvevri" },
+        { "year": 2020, "abv": 12, "skin_contact_days": 150, "aging_vessel": "qvevri" }
+      ]
+    },
+    {
+      "name": "Saperavi",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "style": "Qvevri-fermented Saperavi — Georgia's flagship red",
+      "vinification_notes": "100% Saperavi — Georgia's most important red grape, a teinturier (red flesh as well as skin). Fermented on skins with stems in qvevri for 2-3 weeks, then aged in qvevri for 6 months. Deep, inky black-purple. Black plum, sour cherry, wild herbs, and earth. Naturally high acidity gives freshness despite the intensity.",
+      "grapes": [
+        { "grape": "Saperavi", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 13.5, "maceration_days": 21, "aging_vessel": "qvevri", "scores": [{ "publication": "Jancis Robinson", "score": 17, "scale": "20" }] },
+        { "year": 2020, "abv": 14, "maceration_days": 18, "aging_vessel": "qvevri" },
+        { "year": 2019, "abv": 13.5, "maceration_days": 20, "aging_vessel": "qvevri" },
+        { "year": 2018, "abv": 13, "maceration_days": 18, "aging_vessel": "qvevri" }
+      ]
+    },
+    {
+      "name": "Tavkveri",
+      "color": "rose",
+      "wine_type": "table",
+      "effervescence": "still",
+      "style": "Georgian rosé — rare indigenous variety",
+      "vinification_notes": "100% Tavkveri — an extremely rare indigenous Georgian red variety that produces naturally light-colored wine, ideal for rosé. Fermented in qvevri with brief skin contact. Cranberry, wild strawberry, and rose petal. One of the few Georgian wines made as a conventional rosé rather than amber style.",
+      "grapes": [
+        { "grape": "Tavkveri", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 12, "skin_contact_days": 3, "aging_vessel": "qvevri" },
+        { "year": 2021, "abv": 12.5, "skin_contact_days": 3, "aging_vessel": "qvevri" }
+      ]
+    },
+    {
+      "name": "Shavkapito",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "style": "Ultra-rare indigenous red — rescued from extinction",
+      "vinification_notes": "100% Shavkapito — one of the rarest Georgian grape varieties, nearly extinct before revival. The name means 'black stalk.' Light-bodied, high-acid red with forest fruit, pepper, and herbal notes. Fermented and aged in qvevri. Georgia has 525 indigenous grape varieties — Pheasant's Tears champions the most obscure.",
+      "grapes": [
+        { "grape": "Shavkapito", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 12.5, "aging_vessel": "qvevri" },
+        { "year": 2020, "abv": 12, "aging_vessel": "qvevri" }
+      ]
+    }
+  ]
+}
