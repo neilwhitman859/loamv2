@@ -1,0 +1,143 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Domaine Sigalas",
+    "slug": "domaine-sigalas",
+    "country": "Greece",
+    "region": "Aegean Islands",
+    "appellation": "Santorini",
+    "website": "https://www.sigalas-wine.com",
+    "producer_type": "estate",
+    "founded_year": 1991,
+    "hectares_under_vine": 18,
+    "philosophy": "Pioneer of modern Santorini winemaking. Paris Sigalas, a former mathematics professor, began bottling estate wines in 1991. Santorini's volcanic soils (pumice, ash, and lava over limestone), extreme Aegean winds, and intense sunlight produce some of the most mineral-driven white wines in the world. Vines are trained in the traditional kouloura (basket) system, low to the ground to protect from wind. Many vines are ungrafted pre-phylloxera stock, over 200 years old.",
+    "farming_certifications": [
+      { "name": "Organic", "status": "certified", "since": 2016 }
+    ],
+    "winemakers": [
+      {
+        "name": "Paris Sigalas",
+        "slug": "paris-sigalas",
+        "role": "head",
+        "title": "Owner & Winemaker",
+        "start_year": 1991,
+        "country": "Greece"
+      }
+    ],
+    "metadata": {
+      "soil": "Volcanic — pumice, ash, lava over limestone",
+      "vine_training": "Kouloura (basket training)",
+      "vine_age": "Many vines 70-200+ years, ungrafted pre-phylloxera"
+    }
+  },
+  "wines": [
+    {
+      "name": "Santorini Assyrtiko",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Santorini",
+      "style": "Dry volcanic Assyrtiko",
+      "vinification_notes": "100% Assyrtiko from old bush vines (kouloura trained) on volcanic soil. Stainless steel fermented to preserve minerality and acidity. No malolactic. Intense salinity and citrus with volcanic mineral character.",
+      "grapes": [
+        { "grape": "Assyrtiko", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2023, "abv": 14, "scores": [{ "publication": "James Suckling", "score": 93 }] },
+        { "year": 2022, "abv": 14, "scores": [{ "publication": "James Suckling", "score": 94 }] },
+        { "year": 2021, "abv": 14 },
+        { "year": 2020, "abv": 13.5 }
+      ]
+    },
+    {
+      "name": "Santorini Barrel",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Santorini",
+      "style": "Barrel-fermented Assyrtiko",
+      "vinification_notes": "100% Assyrtiko from old vines. Fermented and aged 6 months in French oak barrels. Oak adds textural complexity while preserving the volcanic mineral core. Partial malolactic.",
+      "grapes": [
+        { "grape": "Assyrtiko", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 14.5, "duration_in_oak_months": 6, "scores": [{ "publication": "James Suckling", "score": 95 }] },
+        { "year": 2021, "abv": 14.5, "duration_in_oak_months": 6 },
+        { "year": 2020, "abv": 14, "duration_in_oak_months": 6 }
+      ]
+    },
+    {
+      "name": "Kavalieros",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Santorini",
+      "style": "Single vineyard Assyrtiko (flagship)",
+      "vinification_notes": "100% Assyrtiko from the Kavalieros vineyard — one of the highest sites on Santorini with 100+ year old vines on pure volcanic ash. Wild fermented in old French oak. Extended lees contact. The most concentrated and age-worthy Sigalas wine.",
+      "grapes": [
+        { "grape": "Assyrtiko", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 97 }, { "publication": "Wine Advocate", "score": 95 }] },
+        { "year": 2020, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 96 }] },
+        { "year": 2019, "abv": 14, "scores": [{ "publication": "Wine Advocate", "score": 95 }] }
+      ]
+    },
+    {
+      "name": "Nykteri",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Santorini",
+      "style": "Nykteri — traditional Santorini late-harvest style",
+      "label_designations": ["Nykteri"],
+      "vinification_notes": "Traditional Santorini designation: grapes harvested at high ripeness, pressed at night ('nykteri' = 'of the night'). Primarily Assyrtiko with Aidani and Athiri. Fermented and aged in French oak. Richer and more opulent than standard Assyrtiko.",
+      "grapes": [
+        { "grape": "Assyrtiko", "percentage": 80 },
+        { "grape": "Aidani", "percentage": 15 },
+        { "grape": "Athiri", "percentage": 5 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 15, "duration_in_oak_months": 8, "scores": [{ "publication": "James Suckling", "score": 94 }] },
+        { "year": 2020, "abv": 15, "duration_in_oak_months": 8 },
+        { "year": 2019, "abv": 14.5, "duration_in_oak_months": 8 }
+      ]
+    },
+    {
+      "name": "Vinsanto",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Santorini",
+      "style": "Vinsanto — sun-dried grape dessert wine",
+      "vinification_notes": "Traditional Santorini dessert wine. Assyrtiko, Aidani, and Athiri grapes sun-dried for 10-14 days on rooftops, concentrating sugars. Barrel aged 2+ years. Amber color, intense dried fruit, honey, and spice. One of Greece's most ancient and storied wine styles.",
+      "grapes": [
+        { "grape": "Assyrtiko", "percentage": 70 },
+        { "grape": "Aidani", "percentage": 20 },
+        { "grape": "Athiri", "percentage": 10 }
+      ],
+      "vintages": [
+        { "year": 2017, "abv": 10, "rs_g_l": 200, "duration_in_oak_months": 36 },
+        { "year": 2015, "abv": 9, "rs_g_l": 220, "duration_in_oak_months": 48 },
+        { "year": 2012, "abv": 9, "rs_g_l": 250, "duration_in_oak_months": 72 }
+      ]
+    },
+    {
+      "name": "Mm (Mavrotragano)",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Santorini",
+      "style": "Rare indigenous red from volcanic terroir",
+      "vinification_notes": "100% Mavrotragano — one of Greece's rarest indigenous red varieties, nearly extinct before revival on Santorini. Deep color, firm tannins, black fruit, and volcanic mineral character. Aged in French oak.",
+      "grapes": [
+        { "grape": "Mavrotragano", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 14, "scores": [{ "publication": "James Suckling", "score": 95 }] },
+        { "year": 2020, "abv": 14 },
+        { "year": 2019, "abv": 13.5 }
+      ]
+    }
+  ]
+}

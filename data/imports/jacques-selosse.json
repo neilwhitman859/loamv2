@@ -1,0 +1,385 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Jacques Selosse",
+    "slug": "jacques-selosse",
+    "country": "France",
+    "region": "Champagne",
+    "appellation": "Champagne",
+    "website": "https://www.selosse-lesavises.com",
+    "producer_type": "estate",
+    "founded_year": 1949,
+    "hectares_under_vine": 8.4,
+    "philosophy": "The most influential grower Champagne estate, single-handedly reshaping how the world thinks about Champagne terroir. Anselme Selosse took over from his father Jacques in 1980 and introduced Burgundian winemaking — barrel fermentation in used Burgundy barrels, no temperature control, indigenous yeasts, no filtration, extended lees aging, minimal dosage. Every wine expresses a specific lieu-dit or concept. Biodynamic farming since the late 1990s. Tiny production (~5,000 cases). Solera-based Substance is one of Champagne's most singular wines.",
+    "metadata": {
+      "owner": "Anselme Selosse",
+      "annual_production_cases": 5000,
+      "key_villages": ["Avize", "Cramant", "Oger", "Le Mesnil-sur-Oger", "Aÿ", "Ambonnay", "Mareuil-sur-Aÿ"],
+      "barrel_source": "Used Burgundy barrels (228L)",
+      "fermentation": "100% barrel fermented — no stainless steel",
+      "son": "Guillaume Selosse (increasingly involved)"
+    },
+    "farming_certifications": [
+      { "name": "Biodynamic", "status": "practicing", "since": "1998-01-01", "notes": "Practices biodynamic viticulture since late 1990s but has never sought Demeter certification. Cover crops, compost preparations, no herbicides or pesticides." }
+    ],
+    "winemakers": [
+      {
+        "name": "Anselme Selosse",
+        "slug": "anselme-selosse",
+        "role": "head",
+        "title": "Vigneron / Proprietor",
+        "since": "1980"
+      }
+    ]
+  },
+  "wines": [
+    {
+      "name": "Initial",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Blanc de Blancs",
+      "style": "NV Brut, Multi-Vintage Blend",
+      "vinification_notes": "The 'entry' Selosse — though nothing about it is entry-level. Blend of multiple vintages and villages from the Côte des Blancs (Avize, Cramant, Oger). 100% barrel fermented in used Burgundy casks, indigenous yeasts, full malolactic. Very low dosage (~4 g/L). Extended lees aging (4-5 years). No filtration. Originally called 'Brut' before being renamed 'Initial' to reflect its role as the introduction to the house style.",
+      "aliases": [{ "name": "Brut", "alias_type": "previous_name", "notes": "Renamed from 'Brut' to 'Initial' circa 2003" }],
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 100 }
+      ],
+      "label_designations": ["Brut", "Blanc de Blancs"],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 4,
+          "new_oak_pct": 0,
+          "mlf": "full",
+          "metadata": { "base_villages": ["Avize", "Cramant", "Oger"], "barrel_type": "used Burgundy 228L" },
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94, "score_scale": "100" },
+            { "publication": "Vinous", "score": 94, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Substance",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Blanc de Blancs",
+      "style": "NV Blanc de Blancs, Perpetual Solera",
+      "first_vintage_year": 1986,
+      "vinification_notes": "One of the most extraordinary wines in Champagne. A perpetual solera begun in 1986, never emptied — each year a portion is drawn off for disgorgement and new wine added. The result contains fractional components of every vintage since 1986. 100% Chardonnay from Avize Grand Cru. Barrel fermented. Incredibly concentrated and oxidative, more akin to a great white Burgundy than conventional Champagne. Very low dosage. Labeled with a disgorgement date rather than vintage.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 100 }
+      ],
+      "label_designations": ["Blanc de Blancs"],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 3,
+          "mlf": "full",
+          "metadata": { "solera_start": 1986, "village": "Avize Grand Cru", "concept": "Perpetual solera — contains fractional elements of every vintage since 1986" },
+          "scores": [
+            { "publication": "Wine Advocate", "score": 97, "score_scale": "100" },
+            { "publication": "Vinous", "score": 97, "score_scale": "100" },
+            { "publication": "Jeb Dunnuck", "score": 98, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Version Originale",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Blanc de Blancs",
+      "style": "NV Extra Brut, Zero Dosage",
+      "vinification_notes": "Same base blend as Initial but with absolutely zero dosage — the wine as it comes off the lees with no added sugar. 'V.O.' stands for Version Originale, reflecting Anselme's belief that this is the truest expression of the wine. 100% Chardonnay from Côte des Blancs Grand Cru villages. Barrel fermented, indigenous yeasts, full malolactic. The absence of dosage reveals the terroir with startling clarity.",
+      "aliases": [{ "name": "V.O.", "alias_type": "alternate_label", "notes": "Commonly referred to as 'V.O.'" }],
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 100 }
+      ],
+      "label_designations": ["Extra Brut", "Blanc de Blancs"],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 0,
+          "mlf": "full",
+          "metadata": { "base_villages": ["Avize", "Cramant", "Oger"], "dosage": "zero" },
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "score_scale": "100" },
+            { "publication": "Vinous", "score": 95, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Exquise",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Blanc de Blancs",
+      "style": "NV Sec",
+      "vinification_notes": "The outlier in the Selosse range — a higher-dosage Champagne (~20 g/L residual sugar), classified as Sec. Same Côte des Blancs Chardonnay base, barrel fermented. The dosage is designed not to mask but to create a different textural and flavor profile — rich, honeyed, exotic. Anselme considers this a gastronomic wine for pairing with foie gras, blue cheese, or Asian cuisine.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 100 }
+      ],
+      "label_designations": ["Sec", "Blanc de Blancs"],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 20,
+          "mlf": "full",
+          "metadata": { "base_villages": ["Avize", "Cramant", "Oger"], "pairing_notes": "Foie gras, blue cheese, spicy Asian cuisine" },
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "score_scale": "100" },
+            { "publication": "Vinous", "score": 94, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Millésimé",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Blanc de Blancs",
+      "style": "Vintage Brut",
+      "vinification_notes": "Rare vintage-dated releases, produced only in exceptional years. 100% Chardonnay from Grand Cru Côte des Blancs vineyards. Barrel fermented in used Burgundy casks. Extended lees aging (typically 7-10 years). Very low dosage. Each vintage is a singular statement of the year.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 100 }
+      ],
+      "label_designations": ["Brut", "Blanc de Blancs"],
+      "vintages": [
+        {
+          "year": 2012,
+          "rs_g_l": 3,
+          "mlf": "full",
+          "lees_aging_months": 96,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 97, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2005,
+          "mlf": "full",
+          "lees_aging_months": 108,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "score_scale": "100" },
+            { "publication": "Vinous", "score": 96, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2004,
+          "mlf": "full",
+          "lees_aging_months": 108,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 97, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2003,
+          "mlf": "full",
+          "lees_aging_months": 96
+        },
+        {
+          "year": 2002,
+          "mlf": "full",
+          "lees_aging_months": 120,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 98, "score_scale": "100" },
+            { "publication": "Vinous", "score": 97, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "La Côte Faron",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Champagne Blend",
+      "style": "Lieu-Dit, Aÿ Grand Cru",
+      "vinification_notes": "Single-vineyard lieu-dit from Aÿ Grand Cru on the Montagne de Reims. 100% Pinot Noir — one of the rare Selosse wines from a black grape. South-facing slope with chalk subsoil. Barrel fermented in used Burgundy casks. Extended lees aging. Minimal dosage. The Pinot Noir gives this wine power, depth, and a vinous character distinct from the Côte des Blancs cuvées.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "label_designations": ["Extra Brut"],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 2,
+          "mlf": "full",
+          "metadata": { "village": "Aÿ Grand Cru", "lieu_dit": "La Côte Faron", "soil": "chalk" },
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "score_scale": "100" },
+            { "publication": "Vinous", "score": 96, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Les Carelles",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Blanc de Blancs",
+      "style": "Lieu-Dit, Le Mesnil-sur-Oger Grand Cru",
+      "vinification_notes": "Single-vineyard lieu-dit from Le Mesnil-sur-Oger Grand Cru on the Côte des Blancs. 100% Chardonnay. Le Mesnil is famed for its austere, mineral, age-worthy Champagnes — Krug Clos du Mesnil comes from the same village. Barrel fermented, indigenous yeasts, full malolactic, minimal dosage. Often the most taut, chalky, and long-lived of the lieux-dits.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 100 }
+      ],
+      "label_designations": ["Extra Brut", "Blanc de Blancs"],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 2,
+          "mlf": "full",
+          "metadata": { "village": "Le Mesnil-sur-Oger Grand Cru", "lieu_dit": "Les Carelles", "soil": "chalk, deep Campanian" },
+          "scores": [
+            { "publication": "Wine Advocate", "score": 97, "score_scale": "100" },
+            { "publication": "Vinous", "score": 96, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sous le Mont",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Champagne Blend",
+      "style": "Lieu-Dit, Mareuil-sur-Aÿ Premier Cru",
+      "vinification_notes": "Single-vineyard lieu-dit from Mareuil-sur-Aÿ Premier Cru in the Vallée de la Marne. 100% Pinot Noir from a south-facing hillside vineyard. Barrel fermented in used Burgundy casks, indigenous yeasts, full malolactic. The Vallée de la Marne gives a softer, rounder Pinot Noir profile compared to La Côte Faron's Aÿ power.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "label_designations": ["Extra Brut"],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 2,
+          "mlf": "full",
+          "metadata": { "village": "Mareuil-sur-Aÿ Premier Cru", "lieu_dit": "Sous le Mont", "soil": "chalk with clay" },
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "score_scale": "100" },
+            { "publication": "Vinous", "score": 95, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Le Bout du Clos",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Champagne Blend",
+      "style": "Lieu-Dit, Ambonnay Grand Cru",
+      "vinification_notes": "Single-vineyard lieu-dit from Ambonnay Grand Cru on the Montagne de Reims. 100% Pinot Noir. Ambonnay is one of the warmest Grand Cru villages, producing rich, full-bodied Pinot Noir. Barrel fermented, indigenous yeasts, full malolactic. Minimal dosage. Often the most generous and immediately accessible of the Pinot Noir lieux-dits.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "label_designations": ["Extra Brut"],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 2,
+          "mlf": "full",
+          "metadata": { "village": "Ambonnay Grand Cru", "lieu_dit": "Le Bout du Clos", "soil": "chalk, Belemnite" },
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "score_scale": "100" },
+            { "publication": "Vinous", "score": 96, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Les Chantereines",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Blanc de Blancs",
+      "style": "Lieu-Dit, Avize Grand Cru",
+      "vinification_notes": "Single-vineyard lieu-dit from Avize Grand Cru, the Selosse home village on the Côte des Blancs. 100% Chardonnay. Avize sits at the heart of the Côte des Blancs, producing Champagnes of finesse and precision rather than the austere minerality of Le Mesnil. Barrel fermented, indigenous yeasts, full malolactic. This is arguably the most 'Selosse' of the lieux-dits — the purest expression of their house terroir.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 100 }
+      ],
+      "label_designations": ["Extra Brut", "Blanc de Blancs"],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 2,
+          "mlf": "full",
+          "metadata": { "village": "Avize Grand Cru", "lieu_dit": "Les Chantereines", "soil": "chalk, Campanian" },
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "score_scale": "100" },
+            { "publication": "Vinous", "score": 96, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chemin de Châlons",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Blanc de Blancs",
+      "style": "Lieu-Dit, Cramant Grand Cru",
+      "vinification_notes": "Single-vineyard lieu-dit from Cramant Grand Cru on the Côte des Blancs. 100% Chardonnay. Cramant produces Champagnes of great elegance and floral character — it sits just north of Avize, sharing the same east-facing chalk slopes. Barrel fermented, indigenous yeasts, full malolactic. Often the most aromatic and floral of the Chardonnay lieux-dits.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 100 }
+      ],
+      "label_designations": ["Extra Brut", "Blanc de Blancs"],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 2,
+          "mlf": "full",
+          "metadata": { "village": "Cramant Grand Cru", "lieu_dit": "Chemin de Châlons", "soil": "chalk" },
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "score_scale": "100" },
+            { "publication": "Vinous", "score": 95, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rosé",
+      "color": "rose",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Rosé Champagne",
+      "style": "NV Brut Rosé",
+      "vinification_notes": "Saignée method rosé — brief skin contact with Pinot Noir. Barrel fermented. Very limited production. The rosé expresses Selosse's signature oxidative, vinous style in a rosé format. Minimal dosage.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 50 },
+        { "grape": "Pinot Noir", "percentage": 50 }
+      ],
+      "label_designations": ["Brut"],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 4,
+          "mlf": "full",
+          "metadata": { "method": "saignée" },
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "score_scale": "100" },
+            { "publication": "Vinous", "score": 95, "score_scale": "100" }
+          ]
+        }
+      ]
+    }
+  ]
+}

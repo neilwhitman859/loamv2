@@ -1,0 +1,320 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Domaine de la Romanée-Conti",
+    "slug": "domaine-de-la-romanee-conti",
+    "country": "France",
+    "region": "Burgundy",
+    "appellation": "Vosne-Romanée",
+    "website": "https://www.romanee-conti.com",
+    "producer_type": "estate",
+    "founded_year": 1232,
+    "hectares_under_vine": 25.5,
+    "philosophy": "The most prestigious wine estate in the world. Monopole owner of Romanée-Conti and La Tâche — two of Burgundy's greatest Grand Cru vineyards. Biodynamic since 1985, with horse-drawn plowing of the most precious parcels. Whole-cluster fermentation, indigenous yeasts, long maceration, and aging in new French oak define a house style of extraordinary purity and complexity. Production is tiny — Romanée-Conti itself yields only ~450 cases per year from 1.81 hectares.",
+    "farming_certifications": [
+      { "name": "Biodynamic", "since": "1985", "status": "certified" },
+      { "name": "Organic", "since": "1985", "status": "certified" }
+    ],
+    "metadata": {
+      "full_name": "Domaine de la Romanée-Conti",
+      "abbreviation": "DRC",
+      "headquarters": "Vosne-Romanée, Côte de Nuits, Burgundy",
+      "owners": "de Villaine and Leroy/Roch families (co-owners since 1942)",
+      "co_manager": "Bertrand de Villaine (since 2018, succeeded Aubert de Villaine)",
+      "viticulture": "Fully biodynamic. Selection massale from estate vines. Horse-drawn plowing in Romanée-Conti and La Tâche. Yields kept extremely low (20-30 hl/ha). No herbicides or pesticides.",
+      "vineyard_notes": "25.5 hectares across 8 Grand Cru and 1 Premier Cru vineyard in the Côte de Nuits and Côte de Beaune. Romanée-Conti (1.81 ha, monopole), La Tâche (6.06 ha, monopole), Richebourg (3.51 ha), Romanée-Saint-Vivant (5.29 ha), Grands Échezeaux (3.53 ha), Échezeaux (4.67 ha), Corton (2.27 ha, added 2009), Montrachet (0.67 ha), Vosne-Romanée 1er Cru (parcels from Petits Monts, Cuvée Duvault-Blochet).",
+      "replanting_history": "Romanée-Conti vineyard replanted in 1947 (produced no wine 1946-1951). Last vintage from pre-phylloxera vines: 1945."
+    },
+    "winemakers": [
+      {
+        "name": "Perrine Fenal",
+        "role": "head",
+        "country": "France",
+        "start_year": 2023,
+        "metadata": {
+          "title": "Winemaker",
+          "predecessor": "Bernard Noblet",
+          "notes": "First female winemaker at DRC. Previously at Domaine de la Vougeraie."
+        }
+      },
+      {
+        "name": "Bernard Noblet",
+        "role": "head",
+        "country": "France",
+        "start_year": 1985,
+        "end_year": 2023,
+        "metadata": {
+          "title": "Winemaker (retired)",
+          "notes": "Winemaker for 38 vintages. Joined as cellar assistant in 1971, became head winemaker in 1985. Oversaw the transition to biodynamic farming."
+        }
+      }
+    ]
+  },
+  "wines": [
+    {
+      "name": "Romanée-Conti Grand Cru",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Romanée-Conti",
+      "style": "Grand Cru Monopole",
+      "first_vintage_year": 1232,
+      "vinification_notes": "100% whole-cluster fermentation. Indigenous yeasts, long cold soak, gentle extraction during 18-21 day maceration. Aged 16-20 months in 100% new French oak (François Frères). Unfined, unfiltered. Monopole: 1.81 hectares, ~450 cases annually.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Vosne-Romanée",
+        "monopole": true,
+        "vineyard_area_ha": 1.81,
+        "average_vine_age": "Over 50 years (replanted 1947)",
+        "soil": "Bathonian limestone with clay and marl. Thin topsoil over fractured bedrock. Mid-slope at 260m elevation."
+      },
+      "vintages": [
+        { "year": 2021, "abv": 13, "scores": [{ "publication": "Vinous", "score": 98, "critic": "Neal Martin", "score_scale": "100" }, { "publication": "Burghound", "score": 98, "critic": "Allen Meadows", "score_scale": "100" }] },
+        { "year": 2020, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 100, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 100, "critic": "Neal Martin", "score_scale": "100" }, { "publication": "Burghound", "score": 99, "critic": "Allen Meadows", "score_scale": "100" }] },
+        { "year": 2019, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 100, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 100, "critic": "Neal Martin", "score_scale": "100" }, { "publication": "Burghound", "score": 99, "critic": "Allen Meadows", "score_scale": "100" }, { "publication": "Jasper Morris MW", "score": 20, "score_scale": "20" }] },
+        { "year": 2018, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 99, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 99, "critic": "Neal Martin", "score_scale": "100" }, { "publication": "Burghound", "score": 98, "critic": "Allen Meadows", "score_scale": "100" }] }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "La Tâche Grand Cru",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "La Tâche",
+      "style": "Grand Cru Monopole",
+      "first_vintage_year": 1933,
+      "vinification_notes": "Typically 80-100% whole-cluster fermentation (varies by vintage). Indigenous yeasts, 18-21 day maceration. Aged 16-20 months in 100% new French oak. Unfined, unfiltered. Monopole: 6.06 hectares, ~1,500 cases annually.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Vosne-Romanée",
+        "monopole": true,
+        "vineyard_area_ha": 6.06,
+        "soil": "Varied terroir across the vineyard. Upper slope: thin clay over limestone. Mid-slope: deeper marl and clay. Lower slope: richer alluvial deposits. Elevation 255-300m.",
+        "notes": "Originally just the La Tâche climat (1.44 ha). Extended in 1933 to include Les Gaudichots (4.62 ha). DRC monopole since 1933."
+      },
+      "vintages": [
+        { "year": 2021, "abv": 13, "scores": [{ "publication": "Vinous", "score": 98, "critic": "Neal Martin", "score_scale": "100" }, { "publication": "Burghound", "score": 97, "critic": "Allen Meadows", "score_scale": "100" }] },
+        { "year": 2020, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 99, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 99, "critic": "Neal Martin", "score_scale": "100" }, { "publication": "Burghound", "score": 98, "critic": "Allen Meadows", "score_scale": "100" }] },
+        { "year": 2019, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 99, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 99, "critic": "Neal Martin", "score_scale": "100" }, { "publication": "Jasper Morris MW", "score": 20, "score_scale": "20" }] },
+        { "year": 2018, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 98, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 98, "critic": "Neal Martin", "score_scale": "100" }] }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Richebourg Grand Cru",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Richebourg",
+      "style": "Grand Cru",
+      "vinification_notes": "Typically 70-90% whole-cluster fermentation. Indigenous yeasts, 18-21 day maceration. Aged 16-20 months in 100% new French oak. Unfined, unfiltered. 3.51 hectares across two parcels (Richebourg and Les Verroilles), ~1,000 cases annually.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Vosne-Romanée",
+        "vineyard_area_ha": 3.51,
+        "soil": "Deep clay and marl over Bajocian limestone. Rich, well-drained soils. Mid-slope at 260-280m."
+      },
+      "vintages": [
+        { "year": 2021, "abv": 13, "scores": [{ "publication": "Vinous", "score": 97, "critic": "Neal Martin", "score_scale": "100" }, { "publication": "Burghound", "score": 96, "critic": "Allen Meadows", "score_scale": "100" }] },
+        { "year": 2020, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 99, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 98, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2019, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 98, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 99, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2018, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 97, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 97, "critic": "Neal Martin", "score_scale": "100" }] }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Romanée-Saint-Vivant Grand Cru",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Romanée-Saint-Vivant",
+      "style": "Grand Cru",
+      "first_vintage_year": 1966,
+      "vinification_notes": "Typically 50-80% whole-cluster fermentation (lower stem inclusion than La Tâche or Romanée-Conti). Indigenous yeasts, 18-21 day maceration. Aged 16-20 months in 100% new French oak. Unfined, unfiltered. 5.29 hectares, ~1,500 cases annually.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Vosne-Romanée",
+        "vineyard_area_ha": 5.29,
+        "soil": "Lighter soils than Romanée-Conti. Bathonian limestone with less clay. Well-drained. Lower on the slope at 250-260m.",
+        "notes": "Previously leased from Marey-Monge family (1966-1988). DRC acquired the vines outright in 1988. The vineyard was named for the Priory of Saint-Vivant de Vergy, which owned it from the 13th century."
+      },
+      "vintages": [
+        { "year": 2021, "abv": 13, "scores": [{ "publication": "Vinous", "score": 97, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2020, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 98, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 98, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2019, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 97, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 98, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2018, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 97, "critic": "William Kelley", "score_scale": "100" }] }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Grands Échezeaux Grand Cru",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Grands Échezeaux",
+      "style": "Grand Cru",
+      "vinification_notes": "Typically 60-80% whole-cluster fermentation. Indigenous yeasts, 18-21 day maceration. Aged 16-20 months in 100% new French oak. Unfined, unfiltered. 3.53 hectares, ~1,000 cases annually.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Flagey-Échezeaux",
+        "vineyard_area_ha": 3.53,
+        "soil": "Oolitic limestone with clay. Higher proportion of limestone than Échezeaux. Upper slope position at 260-280m."
+      },
+      "vintages": [
+        { "year": 2021, "abv": 13, "scores": [{ "publication": "Vinous", "score": 96, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2020, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 97, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 97, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2019, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 97, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 97, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2018, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 96, "critic": "William Kelley", "score_scale": "100" }] }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Échezeaux Grand Cru",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Échezeaux",
+      "style": "Grand Cru",
+      "vinification_notes": "Typically 50-70% whole-cluster fermentation. Indigenous yeasts, 18-21 day maceration. Aged 16-20 months in 100% new French oak. Unfined, unfiltered. 4.67 hectares across multiple lieux-dits, ~1,200 cases annually.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Flagey-Échezeaux",
+        "vineyard_area_ha": 4.67,
+        "soil": "Variable across the large vineyard. DRC parcels primarily in upper Échezeaux with more limestone.",
+        "notes": "Largest Grand Cru in terms of DRC holdings. Often considered the most approachable DRC wine in youth."
+      },
+      "vintages": [
+        { "year": 2021, "abv": 13, "scores": [{ "publication": "Vinous", "score": 95, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2020, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 96, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 96, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2019, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 96, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 96, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2018, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 95, "critic": "William Kelley", "score_scale": "100" }] }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Corton Grand Cru",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Corton",
+      "style": "Grand Cru",
+      "first_vintage_year": 2009,
+      "vinification_notes": "DRC's newest wine, first vintage 2009. Sourced from three lieux-dits: Le Clos du Roi, Les Bressandes, and Les Renardes. Typically 50-70% whole-cluster fermentation. Indigenous yeasts, 16-18 day maceration. Aged 16-20 months in 100% new French oak. Unfined, unfiltered. 2.27 hectares, ~700 cases annually.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Aloxe-Corton / Ladoix-Serrigny",
+        "vineyard_area_ha": 2.27,
+        "lieux_dits": ["Le Clos du Roi", "Les Bressandes", "Les Renardes"],
+        "soil": "Iron-rich clay and limestone on the hill of Corton. Easterly and southerly exposures at 280-330m.",
+        "notes": "Prince de Mérode vines, acquired in 2008. First vintage 2009. Only Grand Cru in the Côte de Beaune for red wine."
+      },
+      "vintages": [
+        { "year": 2021, "abv": 13, "scores": [{ "publication": "Vinous", "score": 95, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2020, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 96, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 96, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2019, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 96, "critic": "William Kelley", "score_scale": "100" }] },
+        { "year": 2018, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 95, "critic": "William Kelley", "score_scale": "100" }] }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Montrachet Grand Cru",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Montrachet",
+      "style": "Grand Cru",
+      "vinification_notes": "DRC's only white wine. Extraordinarily rare — approximately 2-3 barrels (50-75 cases) per vintage from 0.67 hectares. Whole-cluster pressed, fermented and aged 16-20 months in 100% new French oak. Indigenous yeasts. No bâtonnage. Bottled unfined and unfiltered.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 100 }
+      ],
+      "metadata": {
+        "classification": "Grand Cru",
+        "commune": "Puligny-Montrachet / Chassagne-Montrachet",
+        "vineyard_area_ha": 0.67,
+        "soil": "Limestone and marl. DRC parcel sits on the Puligny side, mid-slope at 250-260m. Thin topsoil over Bathonian limestone.",
+        "notes": "One of the rarest and most expensive white wines in the world. The vineyard straddles Puligny-Montrachet and Chassagne-Montrachet; DRC's parcel is on the Puligny side."
+      },
+      "vintages": [
+        { "year": 2021, "abv": 13.5, "scores": [{ "publication": "Vinous", "score": 98, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2020, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 99, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 99, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2019, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 98, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 99, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2018, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 97, "critic": "William Kelley", "score_scale": "100" }] }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Grand Cru"
+      }
+    },
+    {
+      "name": "Vosne-Romanée Premier Cru Cuvée Duvault-Blochet",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Vosne-Romanée",
+      "style": "Premier Cru",
+      "first_vintage_year": 2019,
+      "vinification_notes": "DRC's newest cuvée, first vintage 2019. Blend of several Premier Cru parcels in Vosne-Romanée, including Les Petits Monts, Les Reignots, and Les Suchots. Named for Jacques-Marie Duvault-Blochet, who assembled the DRC estate in the 19th century. Typically 50-70% whole-cluster fermentation. Aged 16-20 months in new French oak. Unfined, unfiltered.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 100 }
+      ],
+      "metadata": {
+        "classification": "Premier Cru",
+        "commune": "Vosne-Romanée",
+        "lieux_dits": ["Les Petits Monts", "Les Reignots", "Les Suchots"],
+        "notes": "Created from declassified Premier Cru parcels that were previously blended into the Grand Cru wines. Named in homage to Jacques-Marie Duvault-Blochet (1796-1874), who purchased Romanée-Conti in 1869 and assembled most of the domaine's current holdings."
+      },
+      "vintages": [
+        { "year": 2021, "abv": 13, "scores": [{ "publication": "Vinous", "score": 94, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2020, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 95, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 95, "critic": "Neal Martin", "score_scale": "100" }] },
+        { "year": 2019, "abv": 13.5, "scores": [{ "publication": "Wine Advocate", "score": 94, "critic": "William Kelley", "score_scale": "100" }, { "publication": "Vinous", "score": 94, "critic": "Neal Martin", "score_scale": "100" }] }
+      ],
+      "classification": {
+        "system": "Burgundy Vineyard Classification",
+        "level": "Premier Cru"
+      }
+    }
+  ]
+}
