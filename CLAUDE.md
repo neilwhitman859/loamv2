@@ -145,8 +145,8 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
-### Content Tables (Phase 1c trial imports + KL bulk import, 2026-03-15)
-- **199 producers**, **1,571 wines**, 559 vintages, 521 scores, 2,278 wine_grapes, 141 wine_vintage_grapes, 9 wine_label_designations, 6 winemakers, 7 producer-winemaker links, **40 entity_classifications**, 193 producer-importer links, 155 farming certifications
+### Content Tables (Phase 1c trial imports + KL + retailer imports, 2026-03-15)
+- **794 producers**, **2,802 wines**, 1,790 vintages, 661 scores, 2,917 wine_grapes, 1,231 prices, 141 wine_vintage_grapes, 9 wine_label_designations, 6 winemakers, 7 producer-winemaker links, **40 entity_classifications**, 193 producer-importer links, 155 farming certifications
 - **Trial imports (6 producers):**
   - Fort Ross Vineyard (US/Sonoma, estate): 15 wines, 112 vintages, 84 scores
   - Sea Slopes (US/Sonoma, child of Fort Ross): 2 wines, 24 vintages, 15 scores
@@ -155,6 +155,10 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
   - Marchesi Antinori (Italy/Tuscany, estate): 23 wines, 76 vintages, 98 scores
   - Louis Jadot (France/Burgundy, negociant): 44 wines, 149 vintages, 209 scores, 40 classifications
 - **Kermit Lynch bulk import (193 producers, 1,467 wines):** First multi-producer portfolio import. France + Italy only. Tested importers table, bulk producer creation, grape parsing from blend strings, farming certification mapping. Appellation resolution at 11% (159/1,467) — drove creation of appellation_aliases table. Schema: `import_kl.mjs` + `fetch_kl_catalog.mjs` + `data/imports/kermit_lynch_catalog.json`.
+- **Shopify retailer imports (2026-03-15):** Three retailers imported via Shopify JSON API (`/products.json`). Generic importer: `scripts/import_shopify_wines.mjs`. Learnings: title parsing handles "Producer Grape Region Vintage" patterns; tag formats vary wildly (flat, key:value, operational-only); appellation resolution correlates with wine price segment; grape resolution consistently 78-90%.
+  - **Last Bottle Wines** (flash sale): 234 wines, 212 producers, 139 scores (extracted from marketing copy), 234 prices ($10-$2,199). Appellation: 68%, Grape: 90%. Script: `scripts/import_last_bottle.mjs`. Data: `data/imports/last_bottle_raw.json`.
+  - **The Best Wine Store** (value, ≤$15): 752 wines, 216 producers, 752 prices ($2.99-$15). Appellation: 4% (mass-market wines list "California" not appellations), Grape: 78%. Data: `data/imports/best_wine_store_raw.json`.
+  - **Domestique Wine** (natural/organic): 245 wines, 167 producers, 245 prices ($19-$85). Appellation: 8% (natural wines use VdF/IGT), Grape: 90%. Excellent key:value tag structure (`country:Italy`, `grape:nebbiolo`, `region:Piedmont`). Data: `data/imports/domestique_wine_raw.json`.
 - Import architecture: `lib/import.mjs` (shared library) + `data/imports/{slug}.json` (per-producer data)
 - `--replace` mode: deletes all existing producer data in FK dependency order, then fresh insert
 - `parseDate()` helper converts informal dates ("August 2024" → "2024-08-01")
