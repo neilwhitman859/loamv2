@@ -1,0 +1,1104 @@
+{
+  "producer": {
+    "name": "Weingut Dönnhoff",
+    "slug": "donnhoff",
+    "country": "Germany",
+    "region": "Nahe",
+    "website": "https://www.doennhoff.com",
+    "producer_type": "estate",
+    "appellation": "Nahe",
+    "founded_year": 1750,
+    "hectares_under_vine": 25,
+    "philosophy": "Sustainable viticulture with Fair'n Green certification. No herbicides or pesticides. Dry farming to encourage deep-rooted vines. Organic soil coverage with straw and compost. Hand-harvested in two to three passes per vineyard. Vines planted at ~6,000 per hectare on low wireframes to benefit from soil warmth.",
+    "metadata": {
+      "full_name": "Weingut Hermann Dönnhoff",
+      "address": "Bahnhofstraße 11, 55585 Oberhausen an der Nahe, Germany",
+      "phone": "+49 (0)6755/263",
+      "email": "weingut@doennhoff.com",
+      "owners": "Dönnhoff family (Cornelius Dönnhoff, 4th generation)",
+      "founder": "Dönnhoff family established in Nahe c. 1750; Hermann Dönnhoff (1880-1953) began bottling under vineyard names in the 1920s",
+      "generation": "4th generation",
+      "vdp_member_since": 1991,
+      "sustainability_certification": "Fair'n Green",
+      "grape_varieties": "80% Riesling, 20% Grauburgunder & Weissburgunder (plus small amounts of Chardonnay, Pinot Noir)",
+      "production_cases": 10000,
+      "winemaking": "Whole-bunch pressing within 3 hours of picking. 10-18 hours settling. Spontaneous fermentation in traditional German oak casks (1200L Stückfass, 2400L Doppelstück) and stainless steel. Resting on lees, filtered in March, bottled a few months later.",
+      "us_importer": "Skurnik Wines & Spirits",
+      "uk_importer": "Howard Ripley",
+      "notable_recognition": "Helmut Dönnhoff named German Winemaker of the Year 1999 by Gault Millau",
+      "historical_note": "Family arrived in Nahe region c. 1750. First official mention 1761. Hermann Dönnhoff began bottling estate wines in the 1920s. Helmut took over from his father Hermann Jr. in 1966; in 1971 farmland was sold and Helmut turned full attention to wine. Cornelius joined in 2007 after training and stays abroad."
+    },
+    "winemakers": [
+      {
+        "name": "Cornelius Dönnhoff",
+        "role": "head",
+        "country": "Germany",
+        "start_year": 2007,
+        "metadata": {
+          "title": "Owner & Cellarmaster",
+          "generation": "4th generation",
+          "notes": "Took over management from father Helmut Dönnhoff. Trained abroad before joining the estate."
+        }
+      },
+      {
+        "name": "Helmut Dönnhoff",
+        "role": "consulting",
+        "country": "Germany",
+        "start_year": 1966,
+        "metadata": {
+          "title": "Founder (modern era)",
+          "notes": "Took over in 1966, elevated estate to world-class status. Named German Winemaker of the Year 1999 (Gault Millau). Trained at Geisenheim. Now semi-retired with Cornelius running day-to-day."
+        }
+      }
+    ],
+    "farming_certifications": [
+      { "certification": "Sustainable", "status": "certified" }
+    ],
+    "vineyards": [
+      {
+        "name": "Hermannshöhle",
+        "appellation": "Hermannshöhle, Niederhausen",
+        "metadata": {
+          "village": "Niederhausen",
+          "vdp_classification": "Grosse Lage",
+          "soil": "Slate, sandstone, limestone with calcareous veins",
+          "slope_pct": "40-60%",
+          "exposure": "South-facing",
+          "vine_age_note": "Vines planted in 1949 (oldest parcel)",
+          "notes": "Top-rated Grand Cru site in the Nahe for over 100 years. Dönnhoff's flagship vineyard. Produces both GG (dry) and Spätlese/Auslese (fruity) wines of extraordinary depth."
+        }
+      },
+      {
+        "name": "Klamm",
+        "appellation": "Klamm, Niederhausen",
+        "metadata": {
+          "village": "Niederhausen",
+          "vdp_classification": "Grosse Lage",
+          "soil": "Volcanic porphyry, decomposed black slate",
+          "slope_pct": "Up to 70%",
+          "notes": "Almost an extension of the Hermannshöhle and one of the steepest vineyards in the Nahe. Produces wines described as 'like laser beams and rocks' with volcanic spiciness."
+        }
+      },
+      {
+        "name": "Brücke",
+        "appellation": "Brücke, Oberhausen an der Nahe",
+        "hectares": 1.1,
+        "metadata": {
+          "village": "Oberhausen an der Nahe",
+          "vdp_classification": "Grosse Lage",
+          "monopole": true,
+          "soil": "Slate, porphyry, sandstone, loam",
+          "exposure": "Riverside location",
+          "notes": "Smallest single vineyard in the valley at 1.1 hectares. A monopole (sole ownership). Directly by the Nahe River. Produces 'wild and exotic' wines. Perfect microclimate for sweet Rieslings — predominantly bottled as Spätlese, Auslese, BA, and Eiswein."
+        }
+      },
+      {
+        "name": "Leistenberg",
+        "appellation": "Leistenberg, Oberhausen an der Nahe",
+        "metadata": {
+          "village": "Oberhausen an der Nahe",
+          "vdp_classification": "Grosse Lage",
+          "soil": "Decomposed slate (Tonschiefer)",
+          "slope_pct": "30-60%",
+          "exposure": "Southeast-facing",
+          "notes": "Terraced vineyard producing lighter, brighter, more lifted wines. Primary source for the Tonschiefer bottling and the estate's benchmark Kabinett."
+        }
+      },
+      {
+        "name": "Felsenberg",
+        "appellation": "Felsenberg, Schloßböckelheim",
+        "metadata": {
+          "village": "Schloßböckelheim",
+          "vdp_classification": "Grosse Lage",
+          "soil": "Porphyry (volcanic)",
+          "slope_pct": "50-60%",
+          "notes": "Coldest site in the Nahe. The 'Felsentürmchen' parcel (named after a small rock tower) produces the GG. Flinty minerality and smoky character."
+        }
+      },
+      {
+        "name": "Kirschheck",
+        "appellation": "Kirschheck, Norheim",
+        "metadata": {
+          "village": "Norheim",
+          "vdp_classification": "Grosse Lage",
+          "soil": "Slate, sandstone",
+          "exposure": "South-facing",
+          "notes": "Great home for Spätlese as the wines reach adequate ripeness nearly every year. Known for intense 'Nahe-peach note'."
+        }
+      },
+      {
+        "name": "Dellchen",
+        "appellation": "Dellchen, Norheim",
+        "metadata": {
+          "village": "Norheim",
+          "vdp_classification": "Grosse Lage",
+          "soil": "Slate, porphyry",
+          "slope_pct": "50-70%",
+          "notes": "A shaded dell (Dellchen = small dell) that creates extended ripening. Wines are bright, beautifully delineated."
+        }
+      },
+      {
+        "name": "Krötenpfuhl",
+        "appellation": "Krötenpfuhl, Bad Kreuznach",
+        "metadata": {
+          "village": "Bad Kreuznach",
+          "vdp_classification": "Grosse Lage",
+          "soil": "Löss, loam, quartzite",
+          "notes": "Gently sloped, warmer northern site. Produces both GG (dry) and Kabinett (off-dry). Wines are spicy and extraordinarily drinkable."
+        }
+      },
+      {
+        "name": "Kahlenberg",
+        "appellation": "Kahlenberg, Bad Kreuznach",
+        "metadata": {
+          "village": "Bad Kreuznach",
+          "vdp_classification": "Grosse Lage",
+          "soil": "Gravelly loam",
+          "notes": "Cornelius bottles this as Erste Lage (1er Cru) — Kahlenberg Trocken. More texture and body with a solid character."
+        }
+      },
+      {
+        "name": "Höllenpfad im Mühlenberg",
+        "appellation": "Höllenpfad, Roxheim",
+        "metadata": {
+          "village": "Roxheim",
+          "vdp_classification": "Grosse Lage",
+          "soil": "Red sandstone",
+          "notes": "'Im Mühlenberg' is a specific parcel within the Höllenpfad Einzellage. Finely knit and detailed wines with depth and length. Also produces a dry Ortswein-level Höllenpfad Trocken from other parcels."
+        }
+      }
+    ]
+  },
+  "_notes": {
+    "vdp_classification": "Dönnhoff is a VDP member since 1991. The VDP hierarchy (Gutswein → Ortswein → Erste Lage → Grosse Lage) maps to wine-level classifications. Grosse Lage dry wines are labeled 'Grosses Gewächs' (GG). Grosse Lage sweet wines carry Prädikat designations (Kabinett, Spätlese, Auslese, BA, TBA, Eiswein).",
+    "naming_convention": "German wine labels show: Village + Vineyard for Grosse Lage/Erste Lage wines (e.g., 'Niederhäuser Hermannshöhle'). Ortswein shows village name only (e.g., 'Schlossböckelheimer'). Gutswein shows no geographic designation.",
+    "style_notes": "Dönnhoff produces both trocken (dry, <9 g/L RS) and fruchtig (fruity/off-dry to sweet) wines. GG wines are always dry. Kabinett wines are traditionally off-dry (~30-50 g/L RS). Spätlese fruity (~40-60 g/L RS). Auslese sweet. 'Goldkapsel' (gold capsule) indicates a special selection of higher ripeness within Auslese.",
+    "wachenheimer_note": "The 2024 Wachenheimer Riesling Trocken is a one-off collaboration with Dr. Bürklin-Wolf (Pfalz) due to 2024 frost losses in the Nahe. Not a core portfolio wine.",
+    "westhofener_note": "The 2024 Westhofener Riesling Trocken is from Rheinhessen (Westhofen village), not Nahe. Another frost-year collaboration.",
+    "tonschiefer_note": "Tonschiefer ('clay slate') Riesling Trocken is sourced primarily from Oberhäuser Leistenberg (~80%) plus younger vines from Klamm and Hermannshöhle. It sits between Gutswein and Ortswein in the hierarchy — not officially classified but above estate level.",
+    "s_wines_note": "The 'S' designation (Weissburgunder S, Grauburgunder S, Chardonnay S) indicates premium Burgundy varietal selections. Fermented dry, aged 6-9 months in new German oak Stückfässer (1,200L). The Doppelstück and Stückfass bottlings are entry-level Burgundy varietals.",
+    "sparkling_note": "Dönnhoff produces traditional method Sekt: Pinot Brut (from Pinot Noir, 50+ months on lees, 11.5% ABV) and Riesling Brut Nature (zero dosage). Small production."
+  },
+  "wines": [
+    {
+      "name": "Riesling Trocken",
+      "color": "white",
+      "appellation": "Nahe",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Gutswein",
+        "style": "Dry estate-level blend from steeply sloping middle Nahe vineyards. Entry point to the Dönnhoff range.",
+        "fermentation": "Stainless steel and neutral oak"
+      },
+      "classification": { "system": "VDP Classification", "level": "Gutswein" },
+      "vintages": [
+        {
+          "year": 2024,
+          "abv": 11.0,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 90, "critic": "Stephan Reinhardt" },
+            { "publication": "Vinous", "score": 91, "critic": "Anne Krebiehl MW" }
+          ]
+        },
+        {
+          "year": 2023,
+          "abv": 11.5,
+          "scores": [
+            { "publication": "Vinous", "score": 90, "critic": "Anne Krebiehl MW" }
+          ]
+        },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Riesling",
+      "color": "white",
+      "appellation": "Nahe",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Gutswein",
+        "style": "Off-dry/fruity estate Riesling. Balanced between ripe fruit and crisp structure. The 'fruchtig' counterpart to the Trocken.",
+        "label_note": "Exported as 'Estate Riesling' (no 'Trocken' on label)"
+      },
+      "classification": { "system": "VDP Classification", "level": "Gutswein" },
+      "vintages": [
+        {
+          "year": 2024,
+          "abv": 10.5
+        },
+        {
+          "year": 2023,
+          "abv": 10.5,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 90, "critic": "Stephan Reinhardt" },
+            { "publication": "Vinous", "score": 91, "critic": "Anne Krebiehl MW" }
+          ]
+        },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Tonschiefer Riesling Trocken",
+      "color": "white",
+      "appellation": "Nahe",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Gutswein",
+        "style": "Dry. Sourced primarily from Oberhäuser Leistenberg (~80%) on weathered Tonschiefer (clay slate), plus younger vines from Klamm and Hermannshöhle. More complex than the estate Riesling with a pretty, floral quality.",
+        "vineyard_source": "Oberhäuser Leistenberg (primary), Klamm, Hermannshöhle (younger vines)",
+        "soil_focus": "Tonschiefer (clay slate)"
+      },
+      "classification": { "system": "VDP Classification", "level": "Gutswein" },
+      "vintages": [
+        { "year": 2024 },
+        {
+          "year": 2023,
+          "scores": [
+            { "publication": "Vinous", "score": 91, "critic": "Anne Krebiehl MW" }
+          ]
+        },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Schlossböckelheimer Riesling Trocken",
+      "color": "white",
+      "appellation": "Nahe",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Ortswein",
+        "style": "Dry village-level Riesling from the village of Schlossböckelheim. Porphyry-influenced.",
+        "village": "Schlossböckelheim"
+      },
+      "classification": { "system": "VDP Classification", "level": "Ortswein" },
+      "vintages": [
+        { "year": 2024 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Kreuznacher Kahlenberg Riesling Trocken",
+      "color": "white",
+      "appellation": "Kahlenberg, Bad Kreuznach",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Erste Lage",
+        "style": "Dry. From the Kahlenberg vineyard in Bad Kreuznach. Despite the site being classified Grosse Lage by VDP, Cornelius bottles it as Erste Lage. More texture and body with a solid character.",
+        "village": "Bad Kreuznach",
+        "vineyard": "Kahlenberg"
+      },
+      "classification": { "system": "VDP Classification", "level": "Erste Lage" },
+      "vintages": [
+        { "year": 2024 },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Roxheimer Höllenpfad Riesling Trocken",
+      "color": "white",
+      "appellation": "Höllenpfad, Roxheim",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Erste Lage",
+        "style": "Dry. From the Höllenpfad vineyard in Roxheim (different parcels than the GG 'im Mühlenberg'). Cool in tone, showing a green herbal character. Red sandstone terroir.",
+        "village": "Roxheim",
+        "vineyard": "Höllenpfad"
+      },
+      "classification": { "system": "VDP Classification", "level": "Erste Lage" },
+      "vintages": [
+        {
+          "year": 2024,
+          "scores": [
+            { "publication": "Vinous", "score": 92, "critic": "Anne Krebiehl MW" }
+          ]
+        },
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Hermannshöhle Riesling Grosses Gewächs",
+      "color": "white",
+      "appellation": "Hermannshöhle, Niederhausen",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Dry (GG). The flagship wine. From the Hermannshöhle vineyard in Niederhausen — top-rated Grand Cru site in the Nahe for over 100 years. Vines planted in 1949. Crystalline purity, citrus zest, stone minerals, extraordinary length.",
+        "village": "Niederhausen",
+        "vineyard": "Hermannshöhle",
+        "vine_age": "Planted 1949"
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        {
+          "year": 2023,
+          "abv": 13.0,
+          "scores": [
+            { "publication": "James Suckling", "score": 100, "critic": "Stuart Pigott" },
+            { "publication": "Vinous", "score": 97, "critic": "Anne Krebiehl MW", "_note": "96-98 range" },
+            { "publication": "Wine Advocate", "score": 96, "critic": "Stephan Reinhardt", "_note": "96+" },
+            { "publication": "Decanter", "score": 95 }
+          ],
+          "drinking_window_start": 2029,
+          "drinking_window_end": 2055
+        },
+        {
+          "year": 2022,
+          "scores": [
+            { "publication": "Vinous", "score": 96, "critic": "Anne Krebiehl MW", "_note": "95-97 range" }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "critic": "Stephan Reinhardt" }
+          ]
+        },
+        {
+          "year": 2020,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "critic": "Stephan Reinhardt" }
+          ]
+        },
+        {
+          "year": 2019,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "critic": "Stephan Reinhardt" }
+          ]
+        },
+        { "year": 2018 },
+        { "year": 2017 },
+        { "year": 2016 },
+        { "year": 2015 }
+      ]
+    },
+    {
+      "name": "Dellchen Riesling Grosses Gewächs",
+      "color": "white",
+      "appellation": "Dellchen, Norheim",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Dry (GG). From the Dellchen vineyard in Norheim. Bright, beautifully delineated, tastes of pure sunshine. Smoky slate notes with lemon and lime-edged ripe stone fruit.",
+        "village": "Norheim",
+        "vineyard": "Dellchen"
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        {
+          "year": 2023,
+          "scores": [
+            { "publication": "Falstaff", "score": 96 }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            { "publication": "Vinous", "score": 95, "critic": "Anne Krebiehl MW", "_note": "94-96 range" }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "critic": "Stephan Reinhardt" }
+          ]
+        },
+        { "year": 2020 },
+        {
+          "year": 2019,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94, "critic": "Stephan Reinhardt" }
+          ]
+        },
+        { "year": 2018 },
+        { "year": 2017 },
+        { "year": 2016 },
+        { "year": 2015 }
+      ]
+    },
+    {
+      "name": "Felsenberg Felsentürmchen Riesling Grosses Gewächs",
+      "color": "white",
+      "appellation": "Felsenberg, Schloßböckelheim",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Dry (GG). From the Felsentürmchen parcel within the Felsenberg vineyard in Schloßböckelheim. Named after a small rock tower (Felsentürmchen). Coldest site in the Nahe. Smoky, massively structured despite medium body. Flinty minerality.",
+        "village": "Schloßböckelheim",
+        "vineyard": "Felsenberg",
+        "parcel": "Felsentürmchen"
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        {
+          "year": 2023,
+          "scores": [
+            { "publication": "James Suckling", "score": 98, "critic": "Stuart Pigott" },
+            { "publication": "Vinous", "score": 97, "critic": "Anne Krebiehl MW", "_note": "96-98 range" },
+            { "publication": "Wine Advocate", "score": 95, "critic": "Stephan Reinhardt" }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            { "publication": "Vinous", "score": 96, "critic": "Anne Krebiehl MW", "_note": "95-97 range" }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "critic": "Stephan Reinhardt" }
+          ]
+        },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2017 },
+        { "year": 2016 },
+        { "year": 2015 }
+      ]
+    },
+    {
+      "name": "Höllenpfad im Mühlenberg Riesling Grosses Gewächs",
+      "color": "white",
+      "appellation": "Höllenpfad, Roxheim",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Dry (GG). From the 'im Mühlenberg' parcel within the Höllenpfad Einzellage in Roxheim. Red sandstone terroir. Finely knit and detailed with depth and length.",
+        "village": "Roxheim",
+        "vineyard": "Höllenpfad",
+        "parcel": "Im Mühlenberg"
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        {
+          "year": 2023,
+          "scores": [
+            { "publication": "Vinous", "score": 95, "critic": "Anne Krebiehl MW", "_note": "94-96 range" },
+            { "publication": "Wine Advocate", "score": 94, "critic": "Stephan Reinhardt", "_note": "94+" }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 96 },
+            { "publication": "Vinous", "score": 94, "critic": "Anne Krebiehl MW", "_note": "93-95 range" }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "critic": "Stephan Reinhardt" },
+            { "publication": "James Suckling", "score": 97, "critic": "Stuart Pigott" }
+          ]
+        },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2017 },
+        { "year": 2016 },
+        { "year": 2015 }
+      ]
+    },
+    {
+      "name": "Krötenpfuhl Riesling Grosses Gewächs",
+      "color": "white",
+      "appellation": "Krötenpfuhl, Bad Kreuznach",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Dry (GG). From the Krötenpfuhl vineyard in Bad Kreuznach. Löss, loam, and quartzite soils. Open and charming. Warmer site produces spicy, extraordinarily drinkable wines.",
+        "village": "Bad Kreuznach",
+        "vineyard": "Krötenpfuhl"
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        {
+          "year": 2023,
+          "scores": [
+            { "publication": "Vinous", "score": 93, "critic": "Anne Krebiehl MW" }
+          ]
+        },
+        { "year": 2022 },
+        {
+          "year": 2021,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94, "critic": "Stephan Reinhardt" }
+          ]
+        },
+        {
+          "year": 2020,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93, "critic": "Stephan Reinhardt", "_note": "93+" }
+          ]
+        },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2017 }
+      ]
+    },
+    {
+      "name": "Oberhäuser Leistenberg Riesling Kabinett",
+      "color": "white",
+      "appellation": "Leistenberg, Oberhausen an der Nahe",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "label_designations": ["Kabinett"],
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Off-dry/fruity Kabinett. Benchmark Nahe Kabinett. Salty, ripe citrus flavor. Light, tender, bright character with lemon zest, stone and herbal tisane notes.",
+        "village": "Oberhausen an der Nahe",
+        "vineyard": "Leistenberg",
+        "typical_rs_g_l": "30-45",
+        "typical_abv": "8.0-9.5"
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        {
+          "year": 2023,
+          "scores": [
+            { "publication": "James Suckling", "score": 96, "critic": "Stuart Pigott" },
+            { "publication": "Vinous", "score": 94, "critic": "Anne Krebiehl MW" }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            { "publication": "James Suckling", "score": 94, "critic": "Stuart Pigott" },
+            { "publication": "Vinous", "score": 92, "critic": "Anne Krebiehl MW" },
+            { "publication": "Falstaff", "score": 92 }
+          ]
+        },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2017 },
+        { "year": 2016 },
+        { "year": 2015 }
+      ]
+    },
+    {
+      "name": "Kreuznacher Krötenpfuhl Riesling Kabinett",
+      "color": "white",
+      "appellation": "Krötenpfuhl, Bad Kreuznach",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "label_designations": ["Kabinett"],
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Off-dry/fruity Kabinett. Spicy and bright, extraordinarily drinkable. From the warmer Krötenpfuhl site.",
+        "village": "Bad Kreuznach",
+        "vineyard": "Krötenpfuhl"
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        {
+          "year": 2023,
+          "scores": [
+            { "publication": "James Suckling", "score": 93, "critic": "Stuart Pigott" },
+            { "publication": "Vinous", "score": 93, "critic": "Anne Krebiehl MW" }
+          ]
+        },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Niederhäuser Klamm Riesling Kabinett",
+      "color": "white",
+      "appellation": "Klamm, Niederhausen",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "label_designations": ["Kabinett"],
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Off-dry/fruity Kabinett. Crisp character with volcanic spiciness from porphyry soils. Intense, steep-slope expression.",
+        "village": "Niederhausen",
+        "vineyard": "Klamm"
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        {
+          "year": 2023,
+          "scores": [
+            { "publication": "James Suckling", "score": 95, "critic": "Stuart Pigott" },
+            { "publication": "Vinous", "score": 94, "critic": "Anne Krebiehl MW" },
+            { "publication": "Wine Advocate", "score": 92, "critic": "Stephan Reinhardt", "_note": "92+" }
+          ]
+        },
+        { "year": 2022 },
+        { "year": 2021 },
+        { "year": 2020 },
+        { "year": 2019 }
+      ]
+    },
+    {
+      "name": "Norheimer Kirschheck Riesling Spätlese",
+      "color": "white",
+      "appellation": "Kirschheck, Norheim",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "label_designations": ["Spätlese"],
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Fruity/medium-sweet Spätlese. Tangerine aromatics, delicate, elegant, restrained with thrilling acidity. Great home for Spätlese as the wines reach adequate ripeness nearly every year. Intense Nahe-peach note.",
+        "village": "Norheim",
+        "vineyard": "Kirschheck",
+        "typical_rs_g_l": "45-60"
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        {
+          "year": 2023,
+          "scores": [
+            { "publication": "Vinous", "score": 94, "critic": "Anne Krebiehl MW" }
+          ]
+        },
+        { "year": 2022 },
+        {
+          "year": 2021,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93, "critic": "Stephan Reinhardt", "_note": "93+" },
+            { "publication": "James Suckling", "score": 95, "critic": "Stuart Pigott" }
+          ]
+        },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2017 },
+        { "year": 2016 },
+        { "year": 2015 }
+      ]
+    },
+    {
+      "name": "Oberhäuser Brücke Riesling Spätlese",
+      "color": "white",
+      "appellation": "Brücke, Oberhausen an der Nahe",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "label_designations": ["Spätlese"],
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Fruity/medium-sweet Spätlese. Incredibly focused, direct flavor. Wild and exotic character from the 1.1-hectare monopole site. Blackcurrant foliage and ripest Reine Claude plum notes. Light-footed, playful.",
+        "village": "Oberhausen an der Nahe",
+        "vineyard": "Brücke",
+        "monopole": true
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        {
+          "year": 2023,
+          "scores": [
+            { "publication": "Vinous", "score": 96, "critic": "Anne Krebiehl MW" }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            { "publication": "Vinous", "score": 95, "critic": "Anne Krebiehl MW" }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94, "critic": "Stephan Reinhardt" }
+          ]
+        },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2017 },
+        { "year": 2016 },
+        { "year": 2015 }
+      ]
+    },
+    {
+      "name": "Niederhäuser Hermannshöhle Riesling Spätlese",
+      "color": "white",
+      "appellation": "Hermannshöhle, Niederhausen",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "label_designations": ["Spätlese"],
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Fruity/sweet Spätlese. From the flagship Hermannshöhle vineyard. Shale-grown, moss and lemon aromatics becoming wet stone. Precise and slender with citrus precision and gentle sweetness.",
+        "village": "Niederhausen",
+        "vineyard": "Hermannshöhle"
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        {
+          "year": 2023,
+          "scores": [
+            { "publication": "Vinous", "score": 97, "critic": "Anne Krebiehl MW" }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 98, "critic": "Stephan Reinhardt" },
+            { "publication": "Vinous", "score": 95, "critic": "Anne Krebiehl MW" }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "critic": "Stephan Reinhardt" }
+          ]
+        },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2017 },
+        { "year": 2016 },
+        { "year": 2015 }
+      ]
+    },
+    {
+      "name": "Niederhäuser Hermannshöhle Riesling Auslese Goldkapsel",
+      "color": "white",
+      "appellation": "Hermannshöhle, Niederhausen",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "label_designations": ["Auslese"],
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Sweet Auslese with Goldkapsel (gold capsule) indicating special selection of highest ripeness. Enormous finesse and subtlety. Terrific concentration and power, all underplayed. Graceful and delightful.",
+        "village": "Niederhausen",
+        "vineyard": "Hermannshöhle",
+        "gold_capsule": true,
+        "bottle_format": "375ml and 750ml"
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        {
+          "year": 2023,
+          "scores": [
+            { "publication": "James Suckling", "score": 99, "critic": "Stuart Pigott" }
+          ]
+        },
+        {
+          "year": 2022,
+          "scores": [
+            { "publication": "Vinous", "score": 96, "critic": "Anne Krebiehl MW" }
+          ]
+        },
+        {
+          "year": 2021,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 97, "critic": "Stephan Reinhardt" }
+          ]
+        },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        {
+          "year": 2015,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 96, "critic": "Stephan Reinhardt" }
+          ]
+        },
+        { "year": 2012 },
+        { "year": 2007 },
+        { "year": 2005 }
+      ]
+    },
+    {
+      "name": "Oberhäuser Brücke Riesling Auslese Goldkapsel",
+      "color": "white",
+      "appellation": "Brücke, Oberhausen an der Nahe",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "label_designations": ["Auslese"],
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Sweet Auslese with Goldkapsel. From the tiny monopole Brücke vineyard. Superbly clear wine with wild, exotic character.",
+        "village": "Oberhausen an der Nahe",
+        "vineyard": "Brücke",
+        "gold_capsule": true,
+        "monopole": true
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        { "year": 2023 },
+        { "year": 2020 },
+        { "year": 2019 },
+        { "year": 2018 },
+        { "year": 2015 }
+      ]
+    },
+    {
+      "name": "Oberhäuser Brücke Riesling Beerenauslese",
+      "color": "white",
+      "appellation": "Brücke, Oberhausen an der Nahe",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "label_designations": ["Beerenauslese"],
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Intensely sweet BA from botrytis-affected berries. Rare production, only in exceptional vintages. From the riverside Brücke monopole.",
+        "village": "Oberhausen an der Nahe",
+        "vineyard": "Brücke",
+        "monopole": true,
+        "production_note": "Only produced in exceptional vintages"
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        { "year": 2019 },
+        { "year": 2015 },
+        { "year": 2010 },
+        { "year": 2005 }
+      ]
+    },
+    {
+      "name": "Oberhäuser Brücke Riesling Eiswein Goldkapsel",
+      "color": "white",
+      "appellation": "Brücke, Oberhausen an der Nahe",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "label_designations": ["Eiswein"],
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Ice wine from grapes frozen on the vine. Extremely rare — requires hard frost during harvest. Exceptional concentration and acidity. Typically produced in 375ml bottles.",
+        "village": "Oberhausen an der Nahe",
+        "vineyard": "Brücke",
+        "gold_capsule": true,
+        "monopole": true,
+        "bottle_format": "375ml",
+        "production_note": "Extremely rare, only in vintages with hard frost"
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        {
+          "year": 2020,
+          "_note": "Confirmed at BBR at £363/375ml"
+        },
+        { "year": 2016 },
+        { "year": 2012 },
+        { "year": 2004 },
+        { "year": 1998 },
+        { "year": 1996 }
+      ]
+    },
+    {
+      "name": "Schlossböckelheimer Felsenberg 'R' Riesling Spätlese",
+      "color": "white",
+      "appellation": "Felsenberg, Schloßböckelheim",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "still",
+      "label_designations": ["Spätlese"],
+      "metadata": {
+        "vdp_level": "Grosse Lage",
+        "style": "Fruity/sweet Spätlese. The 'R' designation indicates a special reserve-quality Spätlese from the Felsenberg vineyard. Rare bottling.",
+        "village": "Schloßböckelheim",
+        "vineyard": "Felsenberg",
+        "production_note": "Not produced every vintage"
+      },
+      "classification": { "system": "VDP Classification", "level": "Grosse Lage" },
+      "vintages": [
+        { "year": 2018 }
+      ]
+    },
+    {
+      "name": "Doppelstück Weissburgunder & Grauburgunder",
+      "color": "white",
+      "appellation": "Nahe",
+      "grapes": [
+        { "name": "Pinot Blanc", "percentage": 50 },
+        { "name": "Pinot Gris", "percentage": 50 }
+      ],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Gutswein",
+        "style": "Dry. Entry-level Burgundy varietal blend. Named after the 2,400L Doppelstück cask used for aging. Fresh, approachable.",
+        "fermentation": "German oak Doppelstück (2,400L)"
+      },
+      "classification": { "system": "VDP Classification", "level": "Gutswein" },
+      "vintages": [
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 }
+      ]
+    },
+    {
+      "name": "Stückfass Weissburgunder & Chardonnay",
+      "color": "white",
+      "appellation": "Nahe",
+      "grapes": [
+        { "name": "Pinot Blanc", "percentage": 50 },
+        { "name": "Chardonnay", "percentage": 50 }
+      ],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Gutswein",
+        "style": "Dry. Mid-tier Burgundy varietal blend. Named after the 1,200L Stückfass cask. More structured than the Doppelstück.",
+        "fermentation": "German oak Stückfass (1,200L)"
+      },
+      "classification": { "system": "VDP Classification", "level": "Gutswein" },
+      "vintages": [
+        { "year": 2023 },
+        { "year": 2022 }
+      ]
+    },
+    {
+      "name": "'S' Weissburgunder",
+      "color": "white",
+      "appellation": "Nahe",
+      "grapes": [{ "name": "Pinot Blanc", "percentage": 100 }],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Gutswein",
+        "style": "Dry. Premium selection Weissburgunder (Pinot Blanc). Carefully selected, fully ripe grapes harvested separately. Aged 6-9 months in new German oak Stückfässer (1,200L). Great aging potential.",
+        "fermentation": "New German oak Stückfass (1,200L)",
+        "oak_duration_months": "6-9",
+        "oak_new_pct": 100
+      },
+      "vintages": [
+        { "year": 2023 },
+        { "year": 2022 }
+      ]
+    },
+    {
+      "name": "'S' Grauburgunder",
+      "color": "white",
+      "appellation": "Nahe",
+      "grapes": [{ "name": "Pinot Gris", "percentage": 100 }],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Gutswein",
+        "style": "Dry. Premium selection Grauburgunder (Pinot Gris). Sun-ripened apples and pears, exotic lychees and pineapples, nutty aromas, spicy herbs, hint of vanilla. Fine wood aromas and smoky nuances. Deep mineral aftertaste.",
+        "fermentation": "New German oak Stückfass (1,200L)",
+        "oak_duration_months": "6-9",
+        "oak_new_pct": 100
+      },
+      "vintages": [
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2021 }
+      ]
+    },
+    {
+      "name": "'S' Chardonnay",
+      "color": "white",
+      "appellation": "Nahe",
+      "grapes": [{ "name": "Chardonnay", "percentage": 100 }],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Gutswein",
+        "style": "Dry. Premium selection Chardonnay. Aged in new German oak Stückfässer. Small production.",
+        "fermentation": "New German oak Stückfass (1,200L)",
+        "oak_duration_months": "6-9",
+        "oak_new_pct": 100
+      },
+      "vintages": [
+        { "year": 2023 },
+        { "year": 2022 },
+        { "year": 2020 }
+      ]
+    },
+    {
+      "name": "Sauvignon Blanc",
+      "color": "white",
+      "appellation": "Nahe",
+      "grapes": [{ "name": "Sauvignon Blanc", "percentage": 100 }],
+      "wine_type": "still",
+      "metadata": {
+        "vdp_level": "Gutswein",
+        "style": "Dry. Small production Sauvignon Blanc. Labeled with a white label.",
+        "label_note": "White Label"
+      },
+      "vintages": [
+        { "year": 2023 }
+      ]
+    },
+    {
+      "name": "Pinot Brut",
+      "color": "white",
+      "appellation": "Nahe",
+      "grapes": [{ "name": "Pinot Noir", "percentage": 100 }],
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "metadata": {
+        "style": "Bone-dry traditional method Sekt from Pinot Noir (Blanc de Noirs). Hand-riddled, disgorged after 50+ months on secondary yeast lees. Clear, fresh bouquet of ripe apples with stony notes. Remarkable finesse and delicate salinity.",
+        "method": "Traditional method (méthode champenoise)",
+        "lees_months": "50+",
+        "typical_abv": "11.5"
+      },
+      "vintages": [
+        { "year": 2019, "abv": 11.5 },
+        { "year": 2018, "abv": 11.5 },
+        { "year": 2017 },
+        { "year": 2016 }
+      ]
+    },
+    {
+      "name": "Riesling Brut Nature",
+      "color": "white",
+      "appellation": "Nahe",
+      "grapes": [{ "name": "Riesling", "percentage": 100 }],
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "metadata": {
+        "style": "Zero-dosage traditional method Riesling Sekt. Restrained aromas of apricot, crisp peach and meadow herbs. Powerful perlage, linear palate of lime zest and orange blossom.",
+        "method": "Traditional method (méthode champenoise)",
+        "dosage": "Brut Nature (zero dosage)"
+      },
+      "vintages": [
+        { "year": 2020 },
+        { "year": 2018 }
+      ]
+    },
+    {
+      "name": "Blanc de Blancs Brut",
+      "color": "white",
+      "appellation": "Nahe",
+      "grapes": [
+        { "name": "Pinot Blanc", "percentage": 50 },
+        { "name": "Chardonnay", "percentage": 50 }
+      ],
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "metadata": {
+        "style": "Traditional method Blanc de Blancs Sekt from Burgundy white varieties.",
+        "method": "Traditional method (méthode champenoise)"
+      },
+      "vintages": [
+        { "year": 2019 }
+      ]
+    }
+  ]
+}

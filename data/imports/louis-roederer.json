@@ -1,0 +1,597 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Louis Roederer",
+    "slug": "louis-roederer",
+    "country": "France",
+    "region": "Champagne",
+    "appellation": "Champagne",
+    "website": "https://www.louis-roederer.com",
+    "producer_type": "estate",
+    "founded_year": 1776,
+    "hectares_under_vine": 240,
+    "philosophy": "Pioneer of estate-driven Champagne. Unlike most houses that rely on purchased grapes, Roederer owns and farms two-thirds of its supply across 410 parcels in Grand Cru and Premier Cru villages. No malolactic fermentation on prestige cuvées. Partial oak vinification. Perpetual reserve system for NV blends. Jean-Baptiste Lécaillon has championed biodynamic viticulture as the future for Champagne.",
+    "metadata": {
+      "owner": "Rouzaud family (7th generation)",
+      "current_head": "Frédéric Rouzaud",
+      "annual_production_bottles": 3500000,
+      "self_sufficiency_pct": 66,
+      "districts": ["Côte des Blancs", "Montagne de Reims", "Vallée de la Marne"],
+      "key_villages": ["Verzenay", "Verzy", "Beaumont-sur-Vesle", "Aÿ", "Mareuil-sur-Aÿ", "Avize", "Cramant", "Mesnil-sur-Oger", "Cumières", "Chouilly"],
+      "us_importer": "Maisons Marques & Domaines (MMD)"
+    },
+    "farming_certifications": [
+      { "name": "Organic", "since": "2021-03-01", "status": "certified", "notes": "155 ha certified organic (conversion began 2018)" },
+      { "name": "Biodynamic", "since": "2000-01-01", "status": "practicing", "notes": "75 ha under biodynamic principles — largest biodynamic estate in Champagne. Horse-drawn plowing." },
+      { "name": "HVE", "since": "2014-01-01", "status": "certified", "notes": "Haute Valeur Environnementale Level 3 for all 242 ha" }
+    ],
+    "winemakers": [
+      {
+        "name": "Jean-Baptiste Lécaillon",
+        "slug": "jean-baptiste-lecaillon",
+        "role": "head",
+        "title": "Chef de Cave & Executive Vice President",
+        "since": "1999"
+      }
+    ]
+  },
+  "wines": [
+    {
+      "name": "Cristal",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Champagne Blend",
+      "style": "Prestige Cuvée",
+      "first_vintage_year": 1876,
+      "vinification_notes": "No malolactic fermentation. 20-32% vinified in oak depending on vintage. Sourced from 45 historic parcels across Grand Cru villages. Aged ~6 years on lees. Minimum 8 months post-disgorgement rest.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 60 },
+        { "grape": "Chardonnay", "percentage": 40 }
+      ],
+      "label_designations": ["Brut"],
+      "vintages": [
+        {
+          "year": 2016,
+          "rs_g_l": 7,
+          "mlf": "none",
+          "lees_aging_months": 72,
+          "disgorgement_date": "2024-07-01",
+          "grapes": [
+            { "grape": "Pinot Noir", "percentage": 58 },
+            { "grape": "Chardonnay", "percentage": 42 }
+          ],
+          "scores": [
+            { "publication": "Wine Spectator", "score": 96, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 97, "score_scale": "100" },
+            { "publication": "Vinous", "score": 96, "score_scale": "100" },
+            { "publication": "Wine Enthusiast", "score": 98, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2015,
+          "rs_g_l": 7,
+          "mlf": "none",
+          "new_oak_pct": 25,
+          "lees_aging_months": 60,
+          "scores": [
+            { "publication": "Wine Spectator", "score": 96, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 95, "score_scale": "100" },
+            { "publication": "Decanter", "score": 95, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2014,
+          "rs_g_l": 7,
+          "mlf": "none",
+          "lees_aging_months": 72,
+          "scores": [
+            { "publication": "Wine Spectator", "score": 97, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 96, "score_scale": "100" },
+            { "publication": "Vinous", "score": 97, "score_scale": "100" },
+            { "publication": "Jeb Dunnuck", "score": 98, "score_scale": "100" },
+            { "publication": "James Suckling", "score": 98, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2013,
+          "new_oak_pct": 32,
+          "mlf": "none",
+          "lees_aging_months": 72,
+          "scores": [
+            { "publication": "Wine Spectator", "score": 96, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 98, "score_scale": "100" },
+            { "publication": "James Suckling", "score": 98, "score_scale": "100" },
+            { "publication": "Decanter", "score": 96, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2012,
+          "rs_g_l": 7.5,
+          "mlf": "none",
+          "lees_aging_months": 72,
+          "scores": [
+            { "publication": "Wine Spectator", "score": 97, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 97, "score_scale": "100" },
+            { "publication": "Wine Enthusiast", "score": 98, "score_scale": "100" },
+            { "publication": "Jasper Morris MW", "score": 97, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2009,
+          "rs_g_l": 8,
+          "mlf": "none",
+          "new_oak_pct": 16,
+          "lees_aging_months": 72,
+          "disgorgement_date": "2016-03-01"
+        },
+        {
+          "year": 2008,
+          "rs_g_l": 7.5,
+          "mlf": "none",
+          "new_oak_pct": 16,
+          "lees_aging_months": 96,
+          "disgorgement_date": "2017-09-01",
+          "scores": [
+            { "publication": "Jeb Dunnuck", "score": 100, "score_scale": "100" },
+            { "publication": "James Suckling", "score": 100, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 98, "score_scale": "100" },
+            { "publication": "Vinous", "score": 99, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cristal Rosé",
+      "color": "rose",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Rosé Champagne",
+      "style": "Prestige Cuvée",
+      "vinification_notes": "Rosé by saignée method (cold maceration/skin contact). 20% vinified in oak. No malolactic fermentation. Aged ~6 years on lees, minimum 8 months post-disgorgement.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 55 },
+        { "grape": "Chardonnay", "percentage": 45 }
+      ],
+      "label_designations": ["Brut"],
+      "vintages": [
+        {
+          "year": 2014,
+          "rs_g_l": 7,
+          "mlf": "none",
+          "lees_aging_months": 72,
+          "scores": [
+            { "publication": "Wine Spectator", "score": 96, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2013,
+          "rs_g_l": 7,
+          "mlf": "none",
+          "lees_aging_months": 72,
+          "scores": [
+            { "publication": "Wine Enthusiast", "score": 97, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2012,
+          "rs_g_l": 8,
+          "mlf": "none",
+          "lees_aging_months": 72,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 100, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2008,
+          "mlf": "none",
+          "lees_aging_months": 96,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 100, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cristal Vinothèque",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Champagne Blend",
+      "style": "Prestige Cuvée, Late Disgorgement",
+      "vinification_notes": "Only 10% of each Cristal vintage selected for Vinothèque. Three-phase aging: 8-12 years on lees, 5-10 years post-riddling (neck down), 2-6 years post-disgorgement. ~20 years total cellar time. Lower dosage than standard Cristal.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 60 },
+        { "grape": "Chardonnay", "percentage": 40 }
+      ],
+      "vintages": [
+        {
+          "year": 2004,
+          "rs_g_l": 6,
+          "mlf": "none",
+          "lees_aging_months": 144
+        },
+        {
+          "year": 2002,
+          "mlf": "none",
+          "lees_aging_months": 180
+        },
+        {
+          "year": 2000,
+          "mlf": "none",
+          "lees_aging_months": 180
+        },
+        {
+          "year": 1999,
+          "mlf": "none",
+          "lees_aging_months": 192
+        },
+        {
+          "year": 1996,
+          "mlf": "none",
+          "lees_aging_months": 216
+        }
+      ]
+    },
+    {
+      "name": "Cristal Rosé Vinothèque",
+      "color": "rose",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Rosé Champagne",
+      "style": "Prestige Cuvée, Late Disgorgement",
+      "vinification_notes": "Late-disgorged Cristal Rosé. Same saignée method. Extended aging on lees with gradual riddling. Extremely limited production.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 55 },
+        { "grape": "Chardonnay", "percentage": 45 }
+      ],
+      "vintages": [
+        { "year": 1996, "mlf": "none", "lees_aging_months": 216 }
+      ]
+    },
+    {
+      "name": "Collection 244",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Champagne Blend",
+      "style": "NV Brut",
+      "vinification_notes": "Perpetual reserve system. Blend of base vintage (~55%), perpetual reserve wines (~35% from multiple years), and oak-aged reserves (~10%). Dosage 7 g/L. Successor to Brut Premier — number represents blend iteration count since 1776.",
+      "aliases": [{ "name": "Brut Premier", "alias_type": "previous_name", "end_year": 2021, "notes": "Replaced by Collection series starting with Collection 242" }],
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 41 },
+        { "grape": "Pinot Noir", "percentage": 33 },
+        { "grape": "Pinot Meunier", "percentage": 26 }
+      ],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 7,
+          "metadata": { "base_vintage": 2019, "collection_number": 244 },
+          "scores": [
+            { "publication": "Wine Spectator", "score": 93, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 93, "score_scale": "100" },
+            { "publication": "Vinous", "score": 93, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Collection 245",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Champagne Blend",
+      "style": "NV Brut",
+      "vinification_notes": "Perpetual reserve system. Blend of base vintage, perpetual reserve wines, and oak-aged reserves. Dosage 7 g/L.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 41 },
+        { "grape": "Pinot Noir", "percentage": 35 },
+        { "grape": "Pinot Meunier", "percentage": 24 }
+      ],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 7,
+          "metadata": { "base_vintage": 2020, "collection_number": 245 },
+          "scores": [
+            { "publication": "Vinous", "score": 92, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 92, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Collection 246",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Champagne Blend",
+      "style": "NV Brut",
+      "vinification_notes": "Perpetual reserve system. Blend of base vintage, perpetual reserve wines, and oak-aged reserves. Dosage 7 g/L.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 54 },
+        { "grape": "Pinot Noir", "percentage": 26 },
+        { "grape": "Pinot Meunier", "percentage": 20 }
+      ],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 7,
+          "metadata": { "base_vintage": 2021, "collection_number": 246 },
+          "scores": [
+            { "publication": "Wine Spectator", "score": 93, "score_scale": "100" },
+            { "publication": "Vinous", "score": 93, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brut Vintage",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Champagne Blend",
+      "vinification_notes": "Aged ~4 years on lees, 6 months post-disgorgement. Dosage 7 g/L.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 70 },
+        { "grape": "Chardonnay", "percentage": 30 }
+      ],
+      "label_designations": ["Brut"],
+      "vintages": [
+        {
+          "year": 2016,
+          "rs_g_l": 7,
+          "lees_aging_months": 48,
+          "grapes": [
+            { "grape": "Pinot Noir", "percentage": 68 },
+            { "grape": "Chardonnay", "percentage": 32 }
+          ],
+          "scores": [
+            { "publication": "Vinous", "score": 93, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 93, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2015,
+          "lees_aging_months": 48,
+          "grapes": [
+            { "grape": "Pinot Noir", "percentage": 70 },
+            { "grape": "Chardonnay", "percentage": 30 }
+          ],
+          "scores": [
+            { "publication": "James Suckling", "score": 96, "score_scale": "100" },
+            { "publication": "Wine Spectator", "score": 94, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 93, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2014,
+          "lees_aging_months": 48,
+          "grapes": [
+            { "grape": "Pinot Noir", "percentage": 80 },
+            { "grape": "Chardonnay", "percentage": 20 }
+          ],
+          "scores": [
+            { "publication": "Wine Advocate", "score": 95, "score_scale": "100" },
+            { "publication": "James Suckling", "score": 95, "score_scale": "100" },
+            { "publication": "Wine Spectator", "score": 93, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blanc de Blancs",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Champagne Blend",
+      "vinification_notes": "28% vinified in oak. No malolactic fermentation. Aged ~5 years on lees, 6 months post-disgorgement. Primarily from Avize Grand Cru (Côte des Blancs).",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 100 }
+      ],
+      "label_designations": ["Blanc de Blancs"],
+      "vintages": [
+        {
+          "year": 2017,
+          "rs_g_l": 7,
+          "mlf": "none",
+          "new_oak_pct": 28,
+          "lees_aging_months": 60,
+          "scores": [
+            { "publication": "Wine Spectator", "score": 93, "score_scale": "100" },
+            { "publication": "Jeb Dunnuck", "score": 95, "score_scale": "100" },
+            { "publication": "James Suckling", "score": 95, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2016,
+          "rs_g_l": 7,
+          "mlf": "none",
+          "new_oak_pct": 28,
+          "lees_aging_months": 60,
+          "scores": [
+            { "publication": "Vinous", "score": 94, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 94, "score_scale": "100" },
+            { "publication": "James Suckling", "score": 96, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2015,
+          "rs_g_l": 8,
+          "mlf": "none",
+          "new_oak_pct": 28,
+          "lees_aging_months": 60,
+          "scores": [
+            { "publication": "Vinous", "score": 94, "score_scale": "100" },
+            { "publication": "Jeb Dunnuck", "score": 94, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2014,
+          "mlf": "none",
+          "new_oak_pct": 28,
+          "lees_aging_months": 60,
+          "scores": [
+            { "publication": "James Suckling", "score": 96, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 94, "score_scale": "100" },
+            { "publication": "Wine Spectator", "score": 93, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rosé Vintage",
+      "color": "rose",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Rosé Champagne",
+      "vinification_notes": "Saignée method (cold maceration). 20% vinified in oak. Pinot Noir from La Rivière estate in Cumières.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 62 },
+        { "grape": "Chardonnay", "percentage": 38 }
+      ],
+      "vintages": [
+        {
+          "year": 2017,
+          "rs_g_l": 8,
+          "new_oak_pct": 20,
+          "lees_aging_months": 48
+        },
+        {
+          "year": 2016,
+          "rs_g_l": 9,
+          "new_oak_pct": 20,
+          "lees_aging_months": 48,
+          "scores": [
+            { "publication": "James Suckling", "score": 95, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2015,
+          "rs_g_l": 8,
+          "new_oak_pct": 20,
+          "lees_aging_months": 48
+        }
+      ]
+    },
+    {
+      "name": "Brut Nature",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Champagne Blend",
+      "style": "Brut Nature / Zero Dosage",
+      "vinification_notes": "Zero dosage. No malolactic fermentation. Aged ~6 years on lees. Sourced from south-facing hillside in Cumières. Collaboration with designer Philippe Starck, first vintage 2006.",
+      "grapes": [
+        { "grape": "Chardonnay", "percentage": 46 },
+        { "grape": "Pinot Noir", "percentage": 37 },
+        { "grape": "Pinot Meunier", "percentage": 17 }
+      ],
+      "label_designations": ["Brut Nature"],
+      "vintages": [
+        {
+          "year": 2018,
+          "rs_g_l": 0,
+          "mlf": "none",
+          "lees_aging_months": 60,
+          "scores": [
+            { "publication": "James Suckling", "score": 93, "score_scale": "100" },
+            { "publication": "Decanter", "score": 93, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2015,
+          "rs_g_l": 0,
+          "mlf": "none",
+          "lees_aging_months": 72,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 94, "score_scale": "100" },
+            { "publication": "Jeb Dunnuck", "score": 95, "score_scale": "100" },
+            { "publication": "James Suckling", "score": 95, "score_scale": "100" },
+            { "publication": "Vinous", "score": 93, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2012,
+          "rs_g_l": 0,
+          "mlf": "none",
+          "lees_aging_months": 72
+        },
+        {
+          "year": 2009,
+          "rs_g_l": 0,
+          "mlf": "none",
+          "lees_aging_months": 72,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 93, "score_scale": "100" },
+            { "publication": "Vinous", "score": 94, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brut Nature Rosé",
+      "color": "rose",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Rosé Champagne",
+      "style": "Brut Nature Rosé / Zero Dosage",
+      "vinification_notes": "Zero dosage. Cold infusion of Pinot Noir for 5 days. 20% vinified in oak. No malolactic fermentation. Collaboration with Philippe Starck.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 64 },
+        { "grape": "Pinot Meunier", "percentage": 20 },
+        { "grape": "Chardonnay", "percentage": 16 }
+      ],
+      "label_designations": ["Brut Nature"],
+      "vintages": [
+        {
+          "year": 2018,
+          "rs_g_l": 0,
+          "mlf": "none",
+          "new_oak_pct": 20,
+          "skin_contact_days": 5,
+          "lees_aging_months": 48,
+          "scores": [
+            { "publication": "Decanter", "score": 93, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Carte Blanche",
+      "color": "white",
+      "wine_type": "sparkling",
+      "effervescence": "sparkling",
+      "appellation": "Champagne",
+      "varietal_category": "Champagne Blend",
+      "style": "Demi-Sec",
+      "vinification_notes": "Higher dosage for off-dry profile. Sweeter style Champagne designed for pairing with desserts and spicy cuisine.",
+      "grapes": [
+        { "grape": "Pinot Noir", "percentage": 40 },
+        { "grape": "Chardonnay", "percentage": 40 },
+        { "grape": "Pinot Meunier", "percentage": 20 }
+      ],
+      "label_designations": ["Demi-Sec"],
+      "vintages": [
+        {
+          "year": 0,
+          "rs_g_l": 33,
+          "metadata": { "style": "demi-sec" }
+        }
+      ]
+    }
+  ]
+}
