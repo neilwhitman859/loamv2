@@ -1,0 +1,230 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Château d'Yquem",
+    "slug": "chateau-dyquem",
+    "country": "France",
+    "region": "Bordeaux",
+    "appellation": "Sauternes",
+    "website": "https://www.yquem.fr",
+    "producer_type": "estate",
+    "founded_year": 1593,
+    "hectares_under_vine": 100,
+    "philosophy": "Only estate in Sauternes classified Premier Cru Supérieur in 1855. Extreme selection — average yield under 9 hl/ha, one glass per vine. Multiple passes (tries) through vineyard to harvest individually botrytised berries. Entire vintages declassified if quality insufficient (1910, 1915, 1930, 1951, 1952, 1964, 1972, 1974, 1992, 2012).",
+    "metadata": {
+      "owner": "LVMH (since 1999)",
+      "classification": "Premier Cru Supérieur (1855)",
+      "average_yield_hl_ha": 9,
+      "passes_through_vineyard": "6-8 tries per harvest",
+      "aging_months": "20 months in 100% new oak"
+    },
+    "winemakers": [
+      {
+        "name": "Sandrine Garbay",
+        "slug": "sandrine-garbay",
+        "role": "head",
+        "title": "Maître de Chai",
+        "start_year": 1998
+      }
+    ]
+  },
+  "wines": [
+    {
+      "name": "Château d'Yquem",
+      "color": "white",
+      "wine_type": "dessert",
+      "effervescence": "still",
+      "appellation": "Sauternes",
+      "varietal_category": "Sauternes",
+      "style": "Botrytised sweet white",
+      "first_vintage_year": 1784,
+      "vinification_notes": "Hand-harvested in 6-8 successive passes (tries) selecting individual botrytised berries. Fermented in 100% new French oak barrels. Aged 20 months in new oak. Fermentation stops naturally when alcohol and sugar reach equilibrium (~14% ABV, 120-150 g/L RS).",
+      "grapes": [
+        { "grape": "Sémillon", "percentage": 75 },
+        { "grape": "Sauvignon Blanc", "percentage": 25 }
+      ],
+      "classification": {
+        "system": "Bordeaux 1855 Sauternes Classification",
+        "level": "Premier Cru Supérieur"
+      },
+      "vintages": [
+        {
+          "year": 2021,
+          "abv": 13.5,
+          "rs_g_l": 135,
+          "new_oak_pct": 100,
+          "duration_in_oak_months": 20,
+          "scores": [
+            { "publication": "James Suckling", "score": 98, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 97, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2020,
+          "abv": 13.5,
+          "rs_g_l": 130,
+          "new_oak_pct": 100,
+          "duration_in_oak_months": 20,
+          "scores": [
+            { "publication": "James Suckling", "score": 98, "score_scale": "100" },
+            { "publication": "Vinous", "score": 97, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 97, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2019,
+          "abv": 14,
+          "rs_g_l": 138,
+          "new_oak_pct": 100,
+          "duration_in_oak_months": 20,
+          "scores": [
+            { "publication": "James Suckling", "score": 99, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 98, "score_scale": "100" },
+            { "publication": "Vinous", "score": 97, "score_scale": "100" },
+            { "publication": "Jeb Dunnuck", "score": 99, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2018,
+          "abv": 14,
+          "rs_g_l": 132,
+          "new_oak_pct": 100,
+          "duration_in_oak_months": 20,
+          "scores": [
+            { "publication": "James Suckling", "score": 97, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 96, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2017,
+          "abv": 14,
+          "rs_g_l": 140,
+          "new_oak_pct": 100,
+          "duration_in_oak_months": 20,
+          "scores": [
+            { "publication": "James Suckling", "score": 99, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 98, "score_scale": "100" },
+            { "publication": "Vinous", "score": 98, "score_scale": "100" },
+            { "publication": "Jeb Dunnuck", "score": 100, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2016,
+          "abv": 14,
+          "rs_g_l": 135,
+          "new_oak_pct": 100,
+          "duration_in_oak_months": 20,
+          "scores": [
+            { "publication": "James Suckling", "score": 98, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 97, "score_scale": "100" },
+            { "publication": "Vinous", "score": 96, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2015,
+          "abv": 14.5,
+          "rs_g_l": 145,
+          "new_oak_pct": 100,
+          "duration_in_oak_months": 20,
+          "scores": [
+            { "publication": "James Suckling", "score": 99, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 98, "score_scale": "100" },
+            { "publication": "Vinous", "score": 97, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2014,
+          "abv": 14,
+          "rs_g_l": 140,
+          "new_oak_pct": 100,
+          "duration_in_oak_months": 20,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 97, "score_scale": "100" },
+            { "publication": "James Suckling", "score": 97, "score_scale": "100" },
+            { "publication": "Vinous", "score": 96, "score_scale": "100" }
+          ]
+        },
+        { "year": 2013, "abv": 13.5, "rs_g_l": 130, "new_oak_pct": 100, "duration_in_oak_months": 20 },
+        {
+          "year": 2011,
+          "abv": 14,
+          "rs_g_l": 145,
+          "new_oak_pct": 100,
+          "duration_in_oak_months": 20,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 100, "score_scale": "100" },
+            { "publication": "James Suckling", "score": 100, "score_scale": "100" },
+            { "publication": "Vinous", "score": 98, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2009,
+          "abv": 14.5,
+          "rs_g_l": 150,
+          "new_oak_pct": 100,
+          "duration_in_oak_months": 20,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 100, "score_scale": "100" },
+            { "publication": "James Suckling", "score": 100, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2001,
+          "abv": 14,
+          "rs_g_l": 150,
+          "new_oak_pct": 100,
+          "duration_in_oak_months": 20,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 100, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Y d'Yquem",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Bordeaux",
+      "varietal_category": "White Bordeaux Blend",
+      "style": "Dry white Bordeaux",
+      "first_vintage_year": 1959,
+      "vinification_notes": "Dry white wine from the same estate. Fermented and aged in oak barrels. Made from declassified fruit or parcels not affected by botrytis. Renamed from 'Y' (Ygrec) to 'Y d'Yquem' in 2004.",
+      "grapes": [
+        { "grape": "Sauvignon Blanc", "percentage": 75 },
+        { "grape": "Sémillon", "percentage": 25 }
+      ],
+      "aliases": [
+        { "name": "Ygrec", "alias_type": "previous_name", "end_year": 2004 },
+        { "name": "Y", "alias_type": "previous_name", "end_year": 2004 }
+      ],
+      "vintages": [
+        {
+          "year": 2021,
+          "abv": 13,
+          "scores": [
+            { "publication": "James Suckling", "score": 95, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2020,
+          "abv": 13,
+          "scores": [
+            { "publication": "James Suckling", "score": 95, "score_scale": "100" },
+            { "publication": "Vinous", "score": 93, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2019,
+          "abv": 13.5,
+          "scores": [
+            { "publication": "James Suckling", "score": 96, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 94, "score_scale": "100" }
+          ]
+        },
+        { "year": 2018, "abv": 13 },
+        { "year": 2017, "abv": 13 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "source": "producer-website",
+  "producer": {
+    "name": "Taylor's Port",
+    "slug": "taylors-port",
+    "country": "Portugal",
+    "region": "Douro",
+    "appellation": "Porto / Port",
+    "website": "https://www.taylor.pt",
+    "producer_type": "estate",
+    "founded_year": 1692,
+    "philosophy": "One of the founding houses of the Port wine trade. Pioneer of single-quinta vintage Ports. Own vineyards at Quinta de Vargellas, Quinta de Terra Feita, Quinta do Junco, and Quinta de São José. Traditional foot-treading (lagares) for finest wines. Taylor's has declared more classic vintages than any other house.",
+    "metadata": {
+      "owner": "The Fladgate Partnership (Alistair Robertson family)",
+      "sister_houses": ["Fonseca", "Croft"],
+      "lodge_location": "Vila Nova de Gaia"
+    },
+    "winemakers": [
+      {
+        "name": "David Guimaraens",
+        "slug": "david-guimaraens",
+        "role": "head",
+        "title": "Head Winemaker",
+        "start_year": 2002
+      }
+    ]
+  },
+  "wines": [
+    {
+      "name": "Vintage Port",
+      "color": "red",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Porto / Port",
+      "style": "Vintage Port (Classic Vintage)",
+      "vinification_notes": "Blend from the finest quintas. Foot-treaded in traditional granite lagares. Aged 2 years in large oak casks (balseiros) before bottling. Bottle-aged further before release. Only declared in exceptional vintages.",
+      "grapes": [
+        { "grape": "Touriga Nacional", "percentage": 30 },
+        { "grape": "Touriga Franca", "percentage": 25 },
+        { "grape": "Tinta Roriz", "percentage": 20 },
+        { "grape": "Tinta Barroca" },
+        { "grape": "Tinto Cão" }
+      ],
+      "vintages": [
+        {
+          "year": 2018,
+          "abv": 20.5,
+          "rs_g_l": 100,
+          "scores": [
+            { "publication": "Wine Spectator", "score": 97, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 97, "score_scale": "100" },
+            { "publication": "James Suckling", "score": 99, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2017,
+          "abv": 20.5,
+          "rs_g_l": 100,
+          "scores": [
+            { "publication": "Wine Spectator", "score": 98, "score_scale": "100" },
+            { "publication": "Wine Advocate", "score": 99, "score_scale": "100" },
+            { "publication": "James Suckling", "score": 100, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2016,
+          "abv": 20,
+          "rs_g_l": 98,
+          "scores": [
+            { "publication": "Wine Spectator", "score": 97, "score_scale": "100" },
+            { "publication": "James Suckling", "score": 99, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2011,
+          "abv": 20.5,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 97, "score_scale": "100" },
+            { "publication": "Wine Spectator", "score": 96, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2009,
+          "abv": 20.5,
+          "scores": [
+            { "publication": "Wine Advocate", "score": 97, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2007,
+          "abv": 20.5,
+          "scores": [
+            { "publication": "Wine Spectator", "score": 97, "score_scale": "100" }
+          ]
+        },
+        {
+          "year": 2003,
+          "abv": 20.5,
+          "scores": [
+            { "publication": "Wine Spectator", "score": 98, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Quinta de Vargellas Vintage Port",
+      "color": "red",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Porto / Port",
+      "style": "Single Quinta Vintage Port",
+      "vinification_notes": "Single-quinta Port from Vargellas in the upper Douro. Made in non-declared years from the best fruit. Foot-treaded. Aged 2 years in cask.",
+      "grapes": [
+        { "grape": "Touriga Nacional" },
+        { "grape": "Touriga Franca" },
+        { "grape": "Tinta Roriz" },
+        { "grape": "Tinta Barroca" },
+        { "grape": "Tinto Cão" }
+      ],
+      "vintages": [
+        { "year": 2015, "abv": 20.5, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }] },
+        { "year": 2013, "abv": 20.5 },
+        { "year": 2012, "abv": 20.5, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }] },
+        { "year": 2010, "abv": 20.5 },
+        { "year": 2008, "abv": 20.5 }
+      ]
+    },
+    {
+      "name": "Quinta de Vargellas Vinha Velha Vintage Port",
+      "color": "red",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Porto / Port",
+      "style": "Single Quinta Old Vine Vintage Port",
+      "vinification_notes": "Ultra-premium single-quinta Port from pre-phylloxera vines at Vargellas (planted 1890s). Extremely limited production. Foot-treaded in small lagares.",
+      "grapes": [
+        { "grape": "Touriga Nacional" },
+        { "grape": "Touriga Franca" },
+        { "grape": "Tinta Roriz" }
+      ],
+      "vintages": [
+        { "year": 2017, "abv": 20.5, "scores": [{ "publication": "James Suckling", "score": 99, "score_scale": "100" }] },
+        { "year": 2011, "abv": 20.5, "scores": [{ "publication": "Wine Advocate", "score": 99, "score_scale": "100" }] },
+        { "year": 2009, "abv": 20.5, "scores": [{ "publication": "Wine Advocate", "score": 100, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "10 Year Old Tawny Port",
+      "color": "red",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Porto / Port",
+      "style": "Aged Tawny",
+      "vinification_notes": "Blend of wines aged an average of 10 years in seasoned oak casks (pipes). Oxidative aging gives tawny color and nutty, dried fruit character.",
+      "grapes": [
+        { "grape": "Touriga Nacional" },
+        { "grape": "Touriga Franca" },
+        { "grape": "Tinta Roriz" },
+        { "grape": "Tinta Barroca" }
+      ],
+      "vintages": [
+        {
+          "year": 0,
+          "abv": 20,
+          "rs_g_l": 90,
+          "age_statement_years": 10,
+          "metadata": { "tawny_category": "10 Year Old" }
+        }
+      ]
+    },
+    {
+      "name": "20 Year Old Tawny Port",
+      "color": "red",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Porto / Port",
+      "style": "Aged Tawny",
+      "vinification_notes": "Blend of wines aged an average of 20 years in oak casks. Greater complexity with caramel, orange peel, hazelnut character.",
+      "grapes": [
+        { "grape": "Touriga Nacional" },
+        { "grape": "Touriga Franca" },
+        { "grape": "Tinta Roriz" }
+      ],
+      "vintages": [
+        {
+          "year": 0,
+          "abv": 20,
+          "rs_g_l": 85,
+          "age_statement_years": 20,
+          "metadata": { "tawny_category": "20 Year Old" },
+          "scores": [
+            { "publication": "Wine Spectator", "score": 96, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "30 Year Old Tawny Port",
+      "color": "red",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Porto / Port",
+      "style": "Aged Tawny",
+      "grapes": [
+        { "grape": "Touriga Nacional" },
+        { "grape": "Touriga Franca" }
+      ],
+      "vintages": [
+        {
+          "year": 0,
+          "abv": 20,
+          "age_statement_years": 30,
+          "metadata": { "tawny_category": "30 Year Old" }
+        }
+      ]
+    },
+    {
+      "name": "40 Year Old Tawny Port",
+      "color": "red",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Porto / Port",
+      "style": "Aged Tawny",
+      "grapes": [
+        { "grape": "Touriga Nacional" },
+        { "grape": "Touriga Franca" }
+      ],
+      "vintages": [
+        {
+          "year": 0,
+          "abv": 20,
+          "age_statement_years": 40,
+          "metadata": { "tawny_category": "40 Year Old" },
+          "scores": [
+            { "publication": "Wine Spectator", "score": 98, "score_scale": "100" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Colheita Single Harvest Port",
+      "color": "red",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Porto / Port",
+      "style": "Colheita (Single Harvest Tawny)",
+      "vinification_notes": "Single vintage tawny Port aged in cask for minimum 7 years. Combines vintage character of a declared year with oxidative tawny aging.",
+      "label_designations": ["Colheita"],
+      "grapes": [
+        { "grape": "Touriga Nacional" },
+        { "grape": "Touriga Franca" },
+        { "grape": "Tinta Roriz" }
+      ],
+      "vintages": [
+        { "year": 1969, "abv": 20, "age_statement_years": 50 },
+        { "year": 1967, "abv": 20 },
+        { "year": 1965, "abv": 20 },
+        { "year": 1963, "abv": 20 },
+        { "year": 1961, "abv": 20 }
+      ]
+    },
+    {
+      "name": "Late Bottled Vintage Port",
+      "color": "red",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Porto / Port",
+      "style": "LBV (Late Bottled Vintage)",
+      "vinification_notes": "Single vintage Port aged 4-6 years in cask before bottling. Taylor's LBV is unfiltered and bottle-matured, in traditional style.",
+      "grapes": [
+        { "grape": "Touriga Nacional" },
+        { "grape": "Touriga Franca" },
+        { "grape": "Tinta Roriz" },
+        { "grape": "Tinta Barroca" }
+      ],
+      "vintages": [
+        { "year": 2018, "abv": 20, "rs_g_l": 95 },
+        { "year": 2017, "abv": 20 },
+        { "year": 2016, "abv": 20 },
+        { "year": 2015, "abv": 20 }
+      ]
+    },
+    {
+      "name": "Fine White Port",
+      "color": "white",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Porto / Port",
+      "style": "White Port",
+      "grapes": [
+        { "grape": "Malvasia" },
+        { "grape": "Viosinho" },
+        { "grape": "Códega" }
+      ],
+      "vintages": [
+        { "year": 0, "abv": 20 }
+      ]
+    },
+    {
+      "name": "Chip Dry White Port",
+      "color": "white",
+      "wine_type": "fortified",
+      "effervescence": "still",
+      "appellation": "Porto / Port",
+      "style": "Dry White Port",
+      "vinification_notes": "Extra dry white Port, fermented longer before fortification to reduce residual sugar. Served chilled as aperitif.",
+      "grapes": [
+        { "grape": "Malvasia" },
+        { "grape": "Viosinho" }
+      ],
+      "vintages": [
+        { "year": 0, "abv": 20, "rs_g_l": 25 }
+      ]
+    }
+  ]
+}
