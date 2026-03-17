@@ -63,10 +63,11 @@ If the user is going a long stretch without wrapping up, if decisions are being 
 ### Architecture
 The database has two layers:
 - **Canonical tables** (`producers`, `wines`, `wine_vintages`, etc.) — curated, high-quality data. 78 canonical tables. Trial imports + KL bulk + retailer imports complete. Quality bar is high.
+- **source_* staging tables** — per-source raw data for multi-source merge. `source_ttb_colas` (TTB COLA registry, populating), `source_kansas_brands` (31,216 wine records loaded), `source_lwin` (ready for LWIN import). Each has merge tracking columns (canonical_wine_id, canonical_producer_id, processed_at).
 - **xwines_* tables** — bulk X-Wines dataset dump (~530K wines, ~2.2M vintages, ~32K producers). Kept as reference but not actively maintained. Data quality is lower.
 
 ### Reference Tables (complete)
-Countries (62), regions (386 — 62 catch-all, 218 L1 named, 106 L2), appellations (3,205), grapes (9,693 from VIVC + 34,820 synonyms), varietal categories (161 + 162 grape mappings), source types (27), publications (71), attribute definitions (73), tasting descriptors (304), farming certifications (19, incl. HVE added 2026-03-16), biodiversity certifications (7), soil types (39).
+Countries (62), regions (386 — 62 catch-all, 218 L1 named, 106 L2), appellations (3,662 — 3,205 PDO/DOC/AOC + 457 IGT/IGP/PGI/VR/Landwein/base-tier), grapes (9,693 from VIVC + 34,820 synonyms), varietal categories (161 + 162 grape mappings), source types (27), publications (71), attribute definitions (73), tasting descriptors (304), farming certifications (19, incl. HVE added 2026-03-16), biodiversity certifications (7), soil types (39).
 
 Regions rebuilt from scratch (2026-03-12): two-level hierarchy sourced from WSET L3 spec + Federdoc/MAPA/official wine authorities. All X-Wines leftover regions purged. Data file: `data/regions_rebuild.json`. Expanded (2026-03-13): 13 new regions added from Sonnet review triage — L2 subregions for Canada, South Africa, Austria, Spain + L1 regions for Portugal, UK (Scotland).
 
