@@ -192,11 +192,11 @@ Professional importers with public-facing wine catalogs. High-quality metadata f
 | Importer | Wines | Countries | Platform | Difficulty | Specialty |
 |----------|-------|-----------|----------|------------|-----------|
 | **Kermit Lynch** | 1,467 | France, Italy | — | — | ✅ INTEGRATED |
-| **Skurnik** | ~5,000 | 20+ | WordPress/FacetWP | EASY | German/Austrian (Terry Theise) |
-| **Polaner Selections** ⭐ | ~2-3K | US + Europe | WordPress | EASY | Soil, orientation, viticulture, vinification, ratings |
-| **Winebow** | 981 | 15 | Drupal | EASY | Chemistry data (acidity, RS, SO2) |
-| **Empson** ⭐ | 300-500 | Italy | WordPress | EASY | Full tech sheets per wine |
-| **European Cellars** | 724 | Spain, France | WordPress | EASY (slow) | Spain + Rhône |
+| **Skurnik** | ~5,000 | 20+ | WordPress/Sitemap | EASY | ⏳ FETCHING (7,574 SKUs) |
+| **Polaner Selections** ⭐ | 1,680 | 11 | WordPress REST API | EASY | ✅ FETCHED |
+| **Winebow** | 532 | 15 | Drupal | EASY | ⏳ FETCHING |
+| **Empson** ⭐ | 279 | Italy | WordPress | EASY | ⏳ FETCHING |
+| **European Cellars** | 443 | Spain, France | WordPress | EASY (slow) | ⏳ FETCHING |
 | **Kysela** | ~1,000 | 13 | Joomla | MEDIUM | Grape %, vinification detail |
 | **Louis/Dressner** | 1,163 | 6 | Custom AJAX | MEDIUM | Natural wine, sulfur data |
 
@@ -205,33 +205,40 @@ Professional importers with public-facing wine catalogs. High-quality metadata f
 - Script: `scripts/import_kl.mjs` + `scripts/fetch_kl_catalog.mjs`
 - File: `data/imports/kermit_lynch_catalog.json`
 
-**Skurnik Wines — PRIORITY**
-- FacetWP JSON endpoint returns structured data. No anti-bot.
-- Fields: Producer, wine name, grape, region, appellation, country, vintage, color, farming practice, SKU, soil
+**Skurnik Wines — FETCHING**
+- Sitemap scraper: 7,574 SKU URLs across 8 sitemaps. HTML scraping between `<!-- SKU DETAILS START/END -->` markers.
+- Fields: Producer, wine name, grape, region, appellation, country, vintage, color, farming practice, SKU code, bottle format, winemaking notes
+- ~50% of SKUs are wines (rest are spirits/sake/combos) — filtered automatically
 - Missing: ABV, tasting notes (PDFs blocked in robots.txt)
+- Script: `scripts/fetch_skurnik.mjs` → `data/imports/skurnik_catalog.json`
 - URL: https://skurnik.com/
 
-**Polaner Selections — PRIORITY** ⭐ NEW
-- ~400+ producers including CA icons (Arnot-Roberts, Bedrock, Kongsgaard, Littorai) and European classics (Giuseppe Mascarello, Confuron-Cotetidot)
-- Fields: Wine name, vintage, bottle sizes, country, region, appellation, wine type, varietals, varietal notes, organic/biodynamic/natural certification, vineyard name, orientation, soil composition, viticulture methods, vinification techniques, aging, production volume, notes, ratings (publication + score + description)
-- Basic user-agent detection, no CAPTCHA
+**Polaner Selections — FETCHED** ✅
+- 1,680 wines fetched via WordPress REST API (`/wp-json/wp/v2/wine`)
+- Fields: Wine title, country (99.6%), region (99.6%), appellation (98.2%), certifications (35.1%)
+- Taxonomy data only — detailed fields (grapes, soil, vinification) are in ACF, not exposed via API
+- Certifications: biodynamic (377), natural (241), HVE (36), organic (11), regenerative (85)
+- Country distribution: France 797, Italy 417, USA 249, Spain 107, Portugal 79
+- Script: `scripts/fetch_polaner.mjs` → `data/imports/polaner_catalog.json`
 - URL: https://www.polanerselections.com/
 
-**Winebow — PRIORITY**
-- Best data quality per wine of any importer. 28/page, ~35 pages.
-- Fields: Producer, wine name, grape (100%), region, appellation, country, vintage, ABV, winemaker, soil, vineyard size, vine age, production volume, tasting notes, acidity, RS, total SO2, dry extract
-- No anti-bot.
+**Winebow — FETCHING**
+- 532 wines from 153 brand pages. Drupal site with excellent per-wine data.
+- 19 Drupal Views fields per wine: appellation, vineyard name/size, soil composition, elevation, exposure, training method, vines/acre, yield/acre, bottles produced, varietal composition, maceration, MLF, aging vessel size, oak type, pH, acidity, ABV, residual sugar
+- Scores section with publication names and tasting notes
+- Script: `scripts/fetch_winebow.mjs` → `data/imports/winebow_catalog.json`
 - URL: https://winebow.com/
 
-**Empson & Co. — PRIORITY** ⭐ NEW
-- Italian specialist. Use empson.com (export site), not empsonusa.com
-- Fields: Producer, wine name, grape (100% breakdown), region, appellation/DOCG/DOC, ABV, tasting notes, soil (e.g., "calcareous clay with high magnesium content"), altitude, exposure, vine density, vine age, yield, fermentation details (container, duration, maceration technique/length), malolactic, aging containers (type, size, age), aging duration, bottling period, closure, serving temperature, food pairings, aging potential, yearly production, first vintage, awards/scores
-- Outstanding per-wine technical data. No anti-bot.
+**Empson & Co. — FETCHING**
+- 279 wines from WordPress sitemap. Italian specialist with richest per-wine data.
+- 27+ fields per wine: grape (100% breakdown), fermentation (container, duration, temperature, yeast), maceration (technique, duration), aging (container, size, oak type, duration), closure, vineyard (location, size, soil, training, altitude, density, yield, exposure, vine age), harvest timing, production, tasting notes, food pairings, aging potential, ABV, winemaker, serving temp, first vintage, scores
+- Script: `scripts/fetch_empson.mjs` → `data/imports/empson_catalog.json`
 - URL: https://www.empson.com/wines/
 
-**European Cellars (Eric Solomon) — PRIORITY**
-- Sitemap lists all 724 wine URLs. 10-second crawl delay requested.
-- Fields: Producer, wine name, grape, region, appellation, country, vintages, winemaker, soil, vineyard details (ha, vine age, altitude), production notes, farming practice, tech sheet PDFs
+**European Cellars (Eric Solomon) — FETCHING**
+- 443 wines from WordPress sitemap. 10-second crawl delay respected.
+- Fields: Producer (h3.producer-header), wine name (h1), grape, vine age, farming, soil, altitude, vinification, aging, wine type (from CSS class), certifications (organic, biodynamic, vegan), vintage-level scores
+- Script: `scripts/fetch_european_cellars.mjs` → `data/imports/european_cellars_catalog.json`
 - URL: https://europeancellars.com/
 
 **Kysela Pere et Fils — PRIORITY**

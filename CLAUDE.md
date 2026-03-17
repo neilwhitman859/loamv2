@@ -297,13 +297,21 @@ All 5 pending migrations executed successfully:
     - Clone data: stays in metadata JSONB (deferred)
 13. ~~Data acquisition research~~ ✓ — comprehensive survey of all sources. See `docs/SOURCES.md`.
 14. ~~Enrichment architecture finalized~~ ✓ — letter grades (F/D/C/B/A), Sonnet for B, Haiku for C. See `docs/ENRICHMENT.md`.
-15. **Build merge infrastructure** — create staging tables (import_runs, staging_wines, match_decisions, field_provenance), add wines columns (final_vintage_year, vintage_config, match_key), build lib/merge.mjs
-16. **LWIN import** — build scripts/extract/extract_lwin.mjs (Phase A of merge pipeline)
-17. **Kansas + PA import** — build extract scripts for state datasets (Phase B)
-18. **COLA Cloud API** — sign up, pull all wine COLAs (Phase C)
-19. **Importer scrapers** — Skurnik, Winebow, European Cellars, Kysela, Louis/Dressner
-20. **Enrichment pipeline** — Edge Function + prompts + enrichment_log
-21. **Frontend** — Vite/React PWA
+15. ~~LWIN import script~~ ✓ — `scripts/import_lwin.mjs` with `--analyze`/`--dry-run`/`--import` modes. Analysis: 189K wines, 100% country, 94% region, 62% appellation resolution. Import not yet run (needs user approval for 189K wines).
+16. ~~Importer fetchers built~~ ✓ (2026-03-17) — 5 importer catalog fetchers:
+    - **Polaner**: ✅ COMPLETE — 1,680 wines via WP REST API. Country 99.6%, region 99.6%, appellation 98.2%.
+    - **Skurnik**: ⏳ Fetching — 7,574 SKUs via sitemap scraping. ~50% are wines.
+    - **Winebow**: ⏳ Fetching — 532 wines from 153 brands. Best chemistry data (ABV, pH, acidity, RS).
+    - **Empson**: ⏳ Fetching — 279 wines. Richest per-wine data (27+ fields).
+    - **European Cellars**: ⏳ Fetching — 443 wines. 10s crawl delay respected.
+    - Scripts: `fetch_skurnik.mjs`, `fetch_polaner.mjs`, `fetch_winebow.mjs`, `fetch_empson.mjs`, `fetch_european_cellars.mjs`
+    - Output: `data/imports/{source}_catalog.json`
+17. **Build merge infrastructure** — create staging tables, build lib/merge.mjs
+18. **Kansas + PA import** — build extract scripts for state datasets (Phase B)
+19. **COLA Cloud API** — sign up, pull all wine COLAs (Phase C)
+20. **Remaining importer scrapers** — Kysela, Louis/Dressner, Broadbent
+21. **Enrichment pipeline** — Edge Function + prompts + enrichment_log
+22. **Frontend** — Vite/React PWA
 
 ### Schema Post-Import Hardening (2026-03-15)
 - **Metadata → columns:** 4 fields promoted from metadata JSONB: `release_date` (wine_vintages), `first_vintage_year` (wines), `style` (wines), `philosophy` (producers). 150+ metadata entries identified for migration to proper table links (classifications, vineyards, estates).

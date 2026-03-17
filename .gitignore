@@ -47,5 +47,12 @@ data/imports/mysa_wine_raw.json
 data/imports/mysa_wine_sample.json
 data/lwin_database.csv
 
+# Importer catalog fetches (large JSON files, reproducible from source websites)
+data/imports/skurnik_catalog.json
+data/imports/polaner_catalog.json
+data/imports/winebow_catalog.json
+data/imports/empson_catalog.json
+data/imports/european_cellars_catalog.json
+
 # Local settings
 .claude/settings.local.json
