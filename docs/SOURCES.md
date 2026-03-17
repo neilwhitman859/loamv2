@@ -1,8 +1,9 @@
 # Loam Data Sources
 
-Master reference for all external data sources — evaluated, integrated, or planned.
+Master reference for all external data sources — evaluated, integrated, planned, or rejected. Nothing gets lost.
 
-**Last updated**: 2026-03-14
+**Last updated**: 2026-03-16
+**Coverage**: All 50 US states + DC surveyed. 22+ importers researched. 12 competitions, 17 associations, 16 international retailers, 19 auction/trading platforms, 10+ wine APIs evaluated.
 
 ---
 
@@ -11,436 +12,760 @@ Master reference for all external data sources — evaluated, integrated, or pla
 | Status | Meaning |
 |--------|---------|
 | **INTEGRATED** | Data imported and live in Loam DB |
+| **IN HAND** | Data downloaded, analysis complete, import planned |
 | **PRIORITY** | Approved for near-term integration |
-| **PLANNED** | Approved but deferred to a later phase |
 | **EVALUATED** | Researched, decision pending |
+| **DEFERRED** | Evaluated, useful but not needed yet |
 | **SKIPPED** | Evaluated and rejected (with reason) |
 
 ---
 
-## Integrated Sources
+## 1. Wine Identity Sources (Catalog Building)
 
-### Vivino (via xwines staging tables)
-- **Data**: 529,973 wines, 32,349 producers, 2,175,664 vintages, 306,024 scores, 49,512 prices
-- **Format**: API scraping → JSONL → Supabase staging tables (xwines_*)
-- **License**: Proprietary (scraped)
-- **Scripts**: `fetch_vivino_mega.mjs`, `match_vivino_to_loam.mjs`, `create_wines_from_vivino.mjs`, `fetch_producer_wines.mjs`
-- **Notes**: Data in staging tables, not yet fully promoted to production
+These sources provide wine-level identity data (producer, wine name, geography, grape, vintage) for building the catalog backbone.
 
-### UC Davis AVA Project
-- **Data**: 284/284 US appellations with PostGIS boundary polygons
-- **Format**: GeoJSON (CC0)
-- **License**: CC0 (public domain)
-- **URL**: https://github.com/UCDavisLibrary/ava
-- **Script**: `import_us_avas.mjs`
-- **Coverage**: 100% of US AVAs
-- **Notes**: Gold standard for US appellations. All imported.
-
-### Natural Earth Country Boundaries
-- **Data**: 62/62 wine-producing countries with PostGIS boundary polygons
-- **Format**: Shapefile (public domain)
-- **License**: Public domain
-- **Script**: `import_accurate_boundaries.mjs`
-- **Coverage**: 100% of countries in DB
-
-### Winery Scrapers (Production Tables)
-- **Ridge Vineyards**: 182 wines, 1,119 vintages, 867 scores | Script: `scrape_ridge.mjs`
-- **Stag's Leap Wine Cellars**: 29 wines, 190 vintages, 173 scores
-- **Tablas Creek Vineyard**: 56 wines, 448 vintages, 1,174 scores, 116 grape entries | Script: `scrape_tablas_creek.mjs`
-- **Format**: Deterministic CSS-selector scraping → JSONL → Supabase
-- **License**: N/A (public website data)
-- **Notes**: 100% accuracy via deterministic parsing. Each winery publishes different data fields.
-
-### Nominatim / OSM Boundaries (partial)
-- **Data**: 375/662 non-US appellations, 64/352 regions
-- **Format**: Nominatim API → PostGIS
-- **License**: ODbL
-- **Scripts**: `geocode_appellations.mjs`, `fetch_global_boundaries.mjs`
-- **Notes**: Matches municipality/city boundaries, NOT actual wine appellation boundaries. Being superseded by authoritative sources below.
-
-### EU Wine PDO Geospatial Inventory (Eurac Research)
-- **Data**: 1,174 wine PDOs across 21 European countries — boundaries + authorized grape varieties + max yields
-- **Format**: GeoPackage (boundaries) + CSV (regulatory data)
-- **License**: CC BY 4.0
-- **URL**: https://doi.org/10.6084/m9.figshare.c.5877659.v1
-- **Interactive map**: https://winemap.eurac.edu/
-- **Script**: `import_eu_pdo.mjs`
-- **Coverage**: 1,174 EU appellations imported with municipality-level boundary polygons
-- **Accuracy**: Municipality-level approximation (better than Nominatim city-center, but not parcel-level like INAO)
-
-### Wine Australia GI Boundaries
-- **Data**: 106 Australian GIs (zones, regions, subregions) with official boundary polygons
-- **Format**: GeoJSON
-- **License**: CC BY 4.0 Australia
-- **URL**: https://wineaustralia-opendata-wineaustralia.hub.arcgis.com/
-- **Script**: `import_australia_gi.mjs`
-- **Coverage**: 100% of Australian GIs
-
-### Germany Rhineland-Palatinate Vineyard Register
-- **Data**: 1,192 German Einzellagen (individual vineyard sites) for 6 RLP wine regions
-- **Format**: JSON via OGC API
-- **License**: Datenlizenz Deutschland 2.0
-- **URL**: https://demo.ldproxy.net/vineyards/collections
-- **Script**: `import_rlp_einzellagen.mjs`
-- **Coverage**: 1,192 RLP Einzellagen with official vineyard boundaries
-
-### New Zealand IPONZ GI Boundaries
-- **Data**: 21 NZ GIs (18 with official boundary polygons, 3 enduring GIs)
-- **Format**: Esri JSON (converted to GeoJSON)
-- **License**: IPONZ (New Zealand IP Office)
-- **Script**: `import_nz_gi.mjs`
-- **Coverage**: 18/21 NZ GIs with boundaries
-
-### Argentina INV Appellations
-- **Data**: 36 Argentine IGs/DOCs from official INV list
-- **Format**: Manual data entry from official INV list + Nominatim geocoding
-- **Script**: `import_argentina_ig.mjs`
-- **Coverage**: All Argentine IGs/DOCs, centroids only (no boundary data available)
-
-### VIVC (Vitis International Variety Catalogue)
-- **Data**: 9,690 grapes imported (9,400 wine grapes from Phase 1 crawl + enrichment)
-- **Format**: Web scraping (structured HTML tables)
-- **License**: JKI (German Federal Research Centre)
-- **URL**: https://www.vivc.de/
-- **Script**: `import_vivc_grapes.mjs`
-- **Cache**: `data/vivc_grapes_cache.json`
-- **Loam use**: Authoritative grape reference. Grape names, colors, countries of origin. Synonym and parentage data available for future phases.
-
----
-
-## Regulatory & Reference Sources
-
-These are the authoritative regulatory and reference sources used to populate Loam's reference data tables (label designations, classifications, varietal categories, blend compositions). These are not imported as datasets — they were consulted by a wine expert (Claude) to seed accurate reference data.
-
-### Label Designations (98 designations, 200 rules, 14 categories)
-
-| Source | Jurisdiction | What it governs | How used in Loam |
-|--------|-------------|-----------------|------------------|
-| **EU Reg 1308/2013** (CMO Regulation) | EU-wide | Wine labeling framework, quality tiers (PDO/PGI/varietal) | EU-wide label designation categories, quality tier definitions |
-| **EU Reg 2019/33** (Delegated Act) | EU-wide | Sweetness terms and residual sugar thresholds for still and sparkling wines | Trocken ≤9 g/L, Halbtrocken ≤18 g/L, sparkling sweetness scale (Brut Nature through Doux) |
-| **German Weingesetz + Weinverordnung** | Germany | Prädikat wine system, Oechsle minimums by climate zone | 78 rules: 13 Anbaugebiete × 6 Prädikat levels with Zone A/B Oechsle minimums |
-| **Italian DOCG/DOC disciplinari di produzione** | Italy | Riserva aging, Superiore ABV/yield thresholds per denomination | 31 Superiore rules + 23 Riserva rules across specific DOCGs/DOCs |
-| **Spanish Ley del Vino 24/2003 + Consejo Regulador rules** | Spain | Crianza/Reserva/Gran Reserva aging requirements | 7 rules for Rioja, Ribera del Duero, Navarra deviations from national defaults |
-| **Portuguese IVV regulations** | Portugal | Reserva/Grande Reserva ABV thresholds, Garrafeira aging | 14 rules: ABV thresholds by DOC + Garrafeira national rule |
-| **Austrian Weingesetz 2009 §14** | Austria | KMW minimums for Prädikat wines | Spätlese through TBA threshold rules |
-| **Hungarian Tokaj Wine Region law** | Hungary | Aszú, Eszencia requirements | Puttonyos system, Eszencia RS minimums |
-| **INAO decrees** (various) | France | VT, SGN, Nouveau, Crémant specifications | French-specific label designations and rules |
-| **WSET Level 3 Award in Wines** | International | Standard wine terminology reference | Cross-reference for consistency across jurisdictions |
-
-### Classifications (13 systems, 32 levels)
-
-| Source | System | How used in Loam |
-|--------|--------|------------------|
-| **1855 Exposition Universelle records** | Bordeaux 1855 Médoc + Sauternes | 5 Médoc crus + 3 Sauternes tiers (Premier Cru Supérieur, Premier, Deuxième) |
-| **INAO decree (Legifrance JORFTEXT000046772378)** | Saint-Émilion Grand Cru Classé | 2022 revision: 3 tiers (Premier Grand Cru Classé A/B, Grand Cru Classé) |
-| **French ministerial decree 1953** | Graves Classification | Single tier (Cru Classé) |
-| **French ministerial decree 1955** | Provence Cru Classé | Single tier (Cru Classé), 18 estates |
-| **INAO regulations** | Burgundy Vineyard Classification | 4 tiers: Grand Cru, Premier Cru, Village, Regional |
-| **INAO regulations** | Alsace Grand Cru | Single tier (Grand Cru), 51 vineyard sites |
-| **INAO / CIVC regulations** | Champagne Premier & Grand Cru | 2 tiers: Grand Cru (17 villages, 100% échelle), Premier Cru (44 villages, 90-99%) |
-| **EU regulation 2006 + French ministerial arrêté** | Cru Artisan | Single tier, 8 Haut-Médoc appellations |
-| **Alliance des Crus Bourgeois (2020 re-establishment)** | Cru Bourgeois | 3 tiers: Cru Bourgeois Exceptionnel, Supérieur, Cru Bourgeois |
-| **VDP (Verband Deutscher Prädikatsweingüter)** | VDP Germany | 4 tiers: Grosse Lage, Erste Lage, Ortswein, Gutswein |
-| **ÖTW (Österreichische Traditionsweingüter)** | ÖTW Austria | 2 tiers: Erste Lage, Klassifizierte Lage |
-| **Langton's Fine Wine Auctions** | Langton's Classification of Australian Wine | 4 tiers: Exceptional, Outstanding, Excellent, Distinguished (7th edition, 2018) |
-
-### Varietal Categories (159 categories) & Blend Compositions (94 rows)
-
-| Source | Scope | How used in Loam |
-|--------|-------|------------------|
-| **DOCG/DOC disciplinari di produzione** | Italian blends | Chianti Classico (Sangiovese 80-100%), Amarone/Valpolicella (Corvina 45-95% + Corvinone + Rondinella), Barolo/Barbaresco (100% Nebbiolo), Brunello (100% Sangiovese), Prosecco (Glera 85-100%), Soave (Garganega 70-100%) |
-| **INAO cahiers des charges** | French blends | Champagne Blend (Chardonnay + Pinot Noir + Meunier), Châteauneuf-du-Pape (13 varieties), Côtes du Rhône (Grenache + Syrah + Mourvèdre), Bordeaux Blend (6 red, 5 white varieties) |
-| **Consejo Regulador rules** | Spanish blends | Rioja Blend (Tempranillo + Garnacha + Graciano + Mazuelo), Priorat (Garnacha + Cariñena), Cava Blend (Macabeo + Parellada + Xarel·lo) |
-| **Cape Winemakers Guild** | South Africa | Cape Blend: Pinotage required (30-70%) + Bordeaux varieties |
-| **Meritage Alliance** | USA | Meritage: Bordeaux varieties only, no single variety >90% |
-| **WSET Level 3 Award in Wines** | International | General varietal category definitions, standard blend names, grape variety reference |
-| **Oxford Companion to Wine (4th ed.)** | International | Grape name standardization (e.g., Negroamaro not Negramaro), synonym resolution |
-| **Wine Spectator** | International | Cross-reference for grape naming conventions |
-
-### Key Regulatory Principles Applied
-
-1. **Appellation-specific rules override national defaults**: e.g., Rioja Reserva aging differs from Spanish national standard
-2. **NULL appellation_id = national-level rule**: When a label designation rule applies country-wide (e.g., Portuguese Garrafeira), `appellation_id` is NULL
-3. **NULL color = not always the same**: If a varietal category can be made in multiple colors (e.g., Provence Blend, Field Blend), `color` is NULL rather than defaulting to the most common color
-4. **Synonym handling**: Where grapes have multiple names (Macabeo=Viura, Tinta Roriz=Tempranillo, Mazuelo=Carignan), the canonical grape ID is used regardless of regional naming
-
----
-
-## Priority Sources (Near-term Integration)
-
-### INAO AOC Parcel Boundaries (France)
-- **Data**: Parcel-level boundaries for 289 French wine AOCs (~3.8M parcels)
-- **Format**: Shapefile (EPSG:2154 Lambert93), 253.8 MB
-- **License**: Licence Ouverte (equivalent to CC BY)
-- **URL**: https://www.data.gouv.fr/datasets/delimitation-parcellaire-des-aoc-viticoles-de-linao
-- **Current gap**: French appellations use Nominatim city boundaries. INAO gives actual vineyard parcels.
-- **Loam use**: Replace French appellation boundaries with gold-standard parcel data
-- **Accuracy**: Parcel-level precision. THE authoritative source.
-
-### MAPA Spanish Wine DO Shapefiles
-- **Data**: Official boundaries for all Spanish DOP and IGP wine regions
-- **Format**: Shapefile (ETRS89), 7.33 MB
-- **License**: Free with MAPA attribution
-- **URL**: https://www.mapa.gob.es/es/cartografia-y-sig/ide/descargas/alimentacion/vinos
-- **Download**: https://www.mapa.gob.es/app/descargas/descargafichero.aspx?f=calidaddiferenciada_vinos.zip
-- **Current gap**: Spanish appellations use Nominatim approximations
-- **Loam use**: Official Spanish DO boundaries. ~69+ denominations.
-- **Accuracy**: Official government cartography at 1:25,000 scale
-
-### Liv-ex LWIN Database
-- **Data**: 200,000+ wines and spirits with standardized LWIN identifiers
-- **Format**: CSV download, APIs with membership
+### LWIN Database — IN HAND
+- **Status**: Excel file downloaded, deep analysis complete
+- **Data**: 186,586 wine records + 3,084 fortified wines (211K total with spirits)
+- **Fields**: LWIN-7 code, producer (title + name), wine name, country, region, sub_region, site, parcel, color, type/sub_type, designation (AOP/AVA/DOC/etc.), classification (Premier Cru, Grand Cru, etc.), vintage_config, first/final vintage
+- **Unique producers**: 37,369
+- **Geography**: 60 countries, 349 regions, 1,516 sub-regions, 1,658 sites
+- **Coverage bias**: Strong $30+ (fine wine/auction). Weak $10-30 (mass market). 64K France, 35K US, 24K Italy.
+- **What it lacks**: No grapes, no ABV, no barcode, no prices, no scores. Pure identity.
 - **License**: Creative Commons (free forever)
-- **URL**: https://www.liv-ex.com/lwin/
-- **Loam use**: Add `lwin_id` to wines table. Universal wine identifier used by auction houses and trading platforms. Cross-reference backbone.
+- **File**: `data/LWINdatabase.xlsx`
+- **Import plan**: Phase A of merge pipeline. Identity backbone.
 
-### Importer Site Scrapers
-- **Kermit Lynch Wine Merchant**: French/Italian specialty. ~300+ wines. Structured producer pages with tech sheet data.
-- **Skurnik Wines**: Major US importer. Structured wine detail pages.
-- **Louis/Dressner Selections**: ~78% have detailed tech info. Natural wine focus.
-- **Format**: Deterministic CSS-selector scraping (100% accuracy approach)
-- **License**: N/A (public website data)
-- **Loam use**: High-quality wine data for European producers. One template per importer = hundreds of wines per scraper.
-- **Notes**: Priority for wine table population. Professional data entry means high reliability.
+### TTB COLA via COLA Cloud API — PRIORITY
+- **Status**: Free tier available, Kaggle demo analyzed
+- **Data**: ~1.2M wine COLAs (2.6M total all beverages). 2,300 new/week.
+- **Fields**: TTB ID, brand name, fanciful name, class/type, origin, appellation (96%), grape varietals (54%), vintage year (65%), OCR ABV (87%), barcode (35%), label images, LLM-extracted designations/tasting notes/categories
+- **API**: REST at `app.colacloud.us/api/v1/colas`. Filter by `product_type=wine`.
+- **Pricing**: Free (500 req/mo = 50K records), Starter $39/mo (10K req = 1M records), Pro $199/mo
+- **Coverage**: Every wine label approved for US sale. Best mass-market coverage of any source.
+- **What it lacks**: No scores, no prices (these are label approvals, not retail data)
+- **Kaggle demo**: `data/imports/cola_demo.zip` (112,904 wine records from 2017-2018)
+- **Import plan**: Phase C of merge pipeline. Sign up for $39/mo Starter, pull all wine COLAs.
+- **URL**: https://colacloud.us/
 
-### K&L Wines (Retailer)
-- **Data**: Multiple critic scores per wine, prices, availability
-- **Format**: Server-rendered HTML, sitemaps available, no bot protection
-- **License**: N/A (public website data)
-- **URL**: https://www.klwines.com/
-- **Loam use**: Best aggregator target. Multi-critic scores in one place. Price data.
-- **Notes**: Most accessible major retailer for scraping
-
-### Wikidata Wine Graph (SPARQL)
-- **Data**: Grape varieties with synonyms, parentage, origins, VIVC IDs, Q-IDs
-- **Format**: SPARQL endpoint → JSON/CSV
+### TTB COLA Public Registry — EVALUATED
+- **Status**: FOIA request filed 2026-03-16 (backup strategy)
+- **Data**: Same 2.6M COLAs as COLA Cloud, but raw fields only (~15 fields)
+- **What it lacks vs COLA Cloud**: No grapes, no barcode, no ABV (those require OCR of label images)
+- **Access**: Web search at ttbonline.gov. No bulk API. TTB IDs are enumerable (YYDDD + sequence).
 - **License**: CC0 (public domain)
-- **URL**: https://query.wikidata.org/
-- **Loam use**: Grape synonym resolution (Syrah=Shiraz), parentage data, cross-reference IDs. Build a synonym lookup table.
-- **Accuracy**: Community-maintained but well-curated for grape varieties
-
-### USDA NASS QuickStats API
-- **Data**: US grape production, acreage, prices, yields by state/county/variety
-- **Format**: REST API (JSON/CSV/XML), free key, max 50K records/query
-- **License**: Public domain
-- **URL**: https://quickstats.nass.usda.gov/api
-- **Current gap**: No production/market data in Loam
-- **Loam use**: Production context for US wines. Need to design schema for production/market data tables.
-
-### FAOSTAT Global Production/Trade
-- **Data**: Global grape/wine production, trade, consumption — 245 countries, 1961–present
-- **Format**: CSV bulk download, R/Python packages
-- **License**: CC BY-NC-SA 3.0 IGO
-- **URL**: https://www.fao.org/faostat/ | Bulk: https://fenixservices.fao.org/faostat/static/bulkdownloads
-- **Loam use**: Country-level production and trade data. Connects land with trade.
-
-### TTB COLA Registry
-- **Data**: 2.6M+ wine label approvals — brand, appellation, class, vintage, alcohol, label images
-- **Format**: Web search + limited API. ~2,300 new records/week
-- **License**: Public domain
+- **Verdict**: COLA Cloud is the better path. FOIA is backup. DIY scraping not worth the effort.
 - **URL**: https://www.ttbonline.gov/colasonline/publicSearchColasBasic.do
-- **Loam use**: Validation tool for wine data accuracy. Authoritative US wine census. Label images.
-- **Notes**: Bulk extraction is the challenge. Consider as validation layer initially, not primary source.
-- **See also**: COLA Cloud (https://colacloud.us/) — commercial AI-enriched wrapper, enterprise pricing
+
+### Wine.com Sitemaps — IN HAND
+- **Status**: All 262,474 product URLs downloaded and analyzed
+- **Data**: 262,474 wine product URLs across 6 sitemaps + 32,811 vineyard/producer pages
+- **Fields from URL slugs**: Wine name + vintage (97% have vintage year), Wine.com product ID. Producer/wine name separation requires dictionary matching.
+- **Grape in slug**: ~56%. Appellation in slug: ~16%.
+- **Product pages**: DataDome captcha-blocked. No structured data extractable.
+- **Coverage**: Broadest US online wine catalog. Good $10-150 coverage.
+- **File**: `data/imports/wine_com_all_urls.txt` (20MB)
+- **Import plan**: Phase D. Parse URLs, match against canonical wines for identity confirmation + Wine.com IDs.
+- **URL**: https://www.wine.com/
+
+### Total Wine Sitemaps — EVALUATED
+- **Status**: Sitemaps confirmed accessible (17 product sitemaps, ~9,500 products)
+- **URL pattern**: `/wine/red-wine/cabernet-sauvignon/[wine-slug]/p/[id]` — includes grape variety in path
+- **Anti-bot**: Product pages return 403
+- **Verdict**: Worth extracting — URL pattern is richer than Wine.com (includes wine type + grape in path). ~9,500 wines.
+- **URL**: https://www.totalwine.com/
+
+### FirstLeaf Wine Directory — EVALUATED
+- **Status**: Shopify-based, 4 sitemaps with ~5,100 wine URLs
+- **Data**: Schema.org structured data on pages. Strong $10-30 coverage.
+- **Import method**: Existing `import_shopify_wines.mjs` works
+- **Verdict**: Easy import, good value-segment coverage.
+- **URL**: https://www.firstleaf.com/
 
 ---
 
-## Planned Sources (Deferred)
+## 2. State Brand Registration Databases (All 50 States + DC)
 
-### Portugal IVV DO Shapefiles
-- **Data**: Portuguese wine region boundaries
-- **Format**: Shapefiles (reported)
-- **License**: Portuguese government data
-- **URL**: https://www.ivv.gov.pt/
-- **Loam use**: Portuguese appellation boundaries
+Government sources containing wines approved for sale in that state. Public data, no licensing concerns.
 
-### Wine Enthusiast Reviews
-- **Data**: 400K+ professional reviews with scores, tasting notes
-- **Format**: WordPress site, scrapable
-- **License**: Copyrighted content
-- **URL**: https://www.winemag.com/
-- **Loam use**: Critic scores and tasting note text. Circle back later.
+### Tier 1 — High Value (downloaded or tested)
 
-### Jeb Dunnuck
-- **Data**: Free drinking windows, professional scores, tasting notes
-- **Format**: WordPress site
-- **License**: Copyrighted content
-- **URL**: https://jebdunnuck.com/
-- **Loam use**: Drinking windows (unique free source), critic scores. Circle back later.
+| State | Status | Fields | Export | Wine Records | Key Value |
+|-------|--------|--------|--------|-------------|-----------|
+| **Kansas** | ⭐ IN HAND | COLA (92%), appellation (84%), vintage (70%), ABV (100%) | JSON API | 31,216 | COLA IDs bridge to federal TTB |
+| **Pennsylvania** | ⭐ IN HAND | UPC (100%), grape, region hierarchy, vintage (60%), price | Excel | 4,812 | Best barcode source |
+| **New Jersey** | EVALUATED | UPC, grape variety, registrant, distributor | Web (acct req) | Unknown | UPC + grape (rare combo) |
 
-### SSURGO Soil Data (USDA)
-- **Data**: Complete US soil maps — type, texture, drainage, pH, organic matter, depth
-- **Format**: Shapefile + SQLite (gSSURGO), Soil Data Access REST API
-- **License**: Public domain
-- **URL**: https://websoilsurvey.nrcs.usda.gov/ | API: https://sdmdataaccess.nrcs.usda.gov/
-- **Loam use**: Overlay soil data on AVA boundaries = true terroir profiles. HUGE for differentiation.
-- **Notes**: High effort but massive payoff. Phase 3+.
+**Kansas Active Brands**
+- **Format**: JSON at `kdor.ks.gov/apps/liquorlicensee/Data/liquorlicenseefull.json`
+- **File**: `data/imports/kansas_active_brands.json` (24.6MB)
+- **Coverage**: Strong $10-150 US market. 6,625 unique brands including mass-market (Barefoot, Josh, 19 Crimes) that LWIN misses.
+- **Import plan**: Phase B of merge pipeline.
 
-### Open-Meteo Climate API
-- **Data**: Historical weather (ERA5 reanalysis 1940–present), growing degree days built-in
-- **Format**: REST API (JSON), no key needed
-- **License**: Free non-commercial; commercial plans available
-- **URL**: https://open-meteo.com/
-- **Loam use**: Compute Winkler GDD indices for wine regions. Vintage weather analysis.
-- **Notes**: Better than NASA POWER for our use case (higher resolution, built-in GDD, cleaner API)
+**Pennsylvania PLCB Wine Catalog**
+- **Format**: Excel download from PA PLCB website
+- **File**: `data/imports/pa_wine_catalog.xlsx`
+- **Price range**: $2.33 - $2,429.99, median $18.99
+- **Import plan**: Phase B of merge pipeline.
 
-### Computational Wine Wheel 2.0 (CWW)
-- **Data**: 985 categorized wine descriptor attributes from 100K+ professional reviews
-- **Format**: CSV on IEEE DataPort (open access, login required)
-- **License**: Open Access
-- **URL**: https://ieee-dataport.org/open-access/wineinformatics-21st-century-bordeaux-wines-dataset
-- **Loam use**: Machine-readable sensory vocabulary. Canonical descriptor taxonomy for parsing tasting notes.
+**New Jersey POSSE**
+- **URL**: https://abc.lps.nj.gov/ABCPublic/
+- **Caveat**: Requires free account registration to execute searches
 
-### eAmbrosia EU GI Register
-- **Data**: Official EU register of all PDO/PGI wines — status, authorized varieties, product specs
-- **Format**: Web + API at data.europa.eu
-- **License**: EU open data
-- **URL**: https://ec.europa.eu/agriculture/eambrosia/geographical-indications-register/
-- **Loam use**: Authorized grape varieties and winemaking rules per appellation
+### Tier 2 — PRO Platform (12 states, one scraper)
 
-### OIV Statistics Database
-- **Data**: Global wine production, consumption, trade — 50+ countries
-- **Format**: Web visualization, PDF publications
-- **License**: Free and unrestricted
-- **URL**: https://www.oiv.int/what-we-do/statistics
-- **Loam use**: Authoritative global production/trade comparisons
+| State | Status | Notes |
+|-------|--------|-------|
+| **AR, CO, IL, KY, LA, MN, NM, NY, OH, OK, SC, SD** | PRIORITY | Identical Sovos ShipCompliant system |
 
-### Eurostat Vineyard Survey
-- **Data**: EU vineyard area, vine varieties, age class by country and NUTS-2 region
-- **Format**: TSV, JSON via SDMX API
-- **License**: Free with attribution
-- **Loam use**: European vineyard planting data
+- **Fields**: COLA number, brand/label description, vintage, appellation, ABV, supplier, distributor, container type, unit size
+- **Export**: "Export Results" to Excel (no auth — `GET /Export/DownloadActiveBrandsSummary`)
+- **Wine coverage**: Low (~0.9% in NY). SC has Product Type filter for Wine specifically.
+- **Recommended states**: IL (largest market), CO, MN, SC (has wine filter)
+- **URL pattern**: `{state}.productregistrationonline.com/brands`
 
-### TTB Wine Production Statistics
-- **Data**: Monthly/annual US wine production by type and state
-- **Format**: CSV, JSON
-- **License**: Public domain
-- **URL**: https://www.ttb.gov/regulated-commodities/beverage-alcohol/wine/wine-statistics
-- **Loam use**: US production trends
+### Tier 3 — Individually Researched (worth pursuing)
 
-### OpenStreetMap Vineyard Polygons
-- **Data**: Community-mapped vineyard boundaries globally (`landuse=vineyard`)
-- **Format**: Overpass API (GeoJSON)
+| State | Status | URL | Fields | Export | Value |
+|-------|--------|-----|--------|--------|-------|
+| **North Carolina** | EVALUATED | abc2.nc.gov/Search/Product | Brand, fanciful name, ABV%, wine class, size, status, brand origin | Web scrape only | **HIGH** — ABV + wine classification |
+| **Missouri** | EVALUATED | data.mo.gov Socrata | Brand name, type, wholesaler | CSV/JSON API (Socrata) | **MEDIUM** — ~354K rows, great API, no wine metadata |
+| **Texas** | EVALUATED | tabcaims.elicense365.com | Label ID, product name, ABV, TTB COLA, date registered | Excel | **MEDIUM** — 2nd largest market, COLA IDs |
+| **West Virginia** | EVALUATED | wvabca.com/winesearch.aspx | TTB COLA, brand, fanciful name, class, vintage, ABV | Web scrape only | **MEDIUM** — wine-specific DB |
+| **Virginia** | EVALUATED | abc.virginia.gov BWC Reports | Code, brand, supplier, wholesaler | Excel (spirits); web (wine) | **MEDIUM** — 403 on fetch, needs browser |
+| **Tennessee** | EVALUATED | tn.gov TNTAP | Brand, COLA required for registration | Unknown (portal timeout) | **MEDIUM** — COLA captured, access unclear |
+
+**North Carolina** — `abc2.nc.gov/Search/Product` and `/Search/Brand`. ASP.NET app with wine class filters (Red, White, Rose, Sparkling, Dessert). Has ABV and brand origin. No COLA/vintage/appellation. Scrape-friendly.
+
+**Missouri** — Socrata open data at `data.mo.gov/api/views/gfq7-aa86/rows.csv`. Filter by `Type='Wine'`. Also has "Conditional Label Approvals" dataset (2,107 rows with Fanciful Name, Class, Proof). No wine-specific metadata but excellent bulk access.
+
+**Tennessee** — COLA is required for brand registration (promising), but TNTAP portal timed out on access. Worth investigating with a browser.
+
+### Tier 4 — Low Value or Login Required
+
+| State | Status | Notes |
+|-------|--------|-------|
+| **Utah** | IN HAND (LOW) | ~2,970 wines, no vintage/appellation/UPC/COLA/ABV. File: `data/imports/utah_product_list.xlsx` |
+| **Alabama** | Spirits only | QPL Excel download for spirits. Wine sold through private retailers, no public DB |
+| **Mississippi** | Not public | Control state, ~4,100 products in internal Price Book. Contact abcpurchasing@dor.ms.gov |
+| **Maine** | Login required | BELLS portal (launched Oct 2024). COLA captured at registration. Industry-facing. |
+| **Rhode Island** | Login required | Tyler Technologies portal. COLA captured. Requires email for account setup. |
+| **Vermont** | Spirits only | 802spirits.com covers spirits + fortified only. Table wine via private retailers. |
+
+### Tier 5 — No Database
+
+| State | Reason |
+|-------|--------|
+| **California** | No brand registration or product database |
+| **Washington** | No product DB. Licensee lists + aggregate wine sales only. Privatized spirits 2012. |
+| **Arizona** | No brand registration or product database |
+| **Maryland** | No brand registration or product database |
+| **Delaware** | No brand registration or product database |
+| **Hawaii** | No brand registration or product database |
+| **North Dakota** | No brand registration or product database |
+| **Alaska** | No label registration required. Wholesalers handle brand registration. |
+| **Indiana** | ATC has authority but no public product database. Licensee lookup only. |
+| **Nevada** | Brand registration (supplier-wholesaler designation) but no product/label registration. |
+| **Wisconsin** | Brand registration exists but not publicly searchable. |
+| **DC** | Licensee list only, no product database. |
+| **Florida** | Limited public access |
+| **Georgia** | Limited public access |
+| **Massachusetts** | Limited public access |
+| **Connecticut** | Limited public access |
+| **Michigan** | Login required |
+| **Montana** | Login required |
+| **Wyoming** | Login required |
+| **New Hampshire** | Login required |
+| **Oregon** | Spirits-only database |
+| **Iowa** | Spirits-only database |
+| **Nebraska** | Beer-only brand registration |
+| **Idaho** | Small retail catalog, no structured wine data |
+
+---
+
+## 3. Wine Importer Catalogs
+
+Professional importers with public-facing wine catalogs. High-quality metadata from producer tech sheets.
+
+### Tier 1 — High Priority (rich data, easy to scrape)
+
+| Importer | Wines | Countries | Platform | Difficulty | Specialty |
+|----------|-------|-----------|----------|------------|-----------|
+| **Kermit Lynch** | 1,467 | France, Italy | — | — | ✅ INTEGRATED |
+| **Skurnik** | ~5,000 | 20+ | WordPress/FacetWP | EASY | German/Austrian (Terry Theise) |
+| **Polaner Selections** ⭐ | ~2-3K | US + Europe | WordPress | EASY | Soil, orientation, viticulture, vinification, ratings |
+| **Winebow** | 981 | 15 | Drupal | EASY | Chemistry data (acidity, RS, SO2) |
+| **Empson** ⭐ | 300-500 | Italy | WordPress | EASY | Full tech sheets per wine |
+| **European Cellars** | 724 | Spain, France | WordPress | EASY (slow) | Spain + Rhône |
+| **Kysela** | ~1,000 | 13 | Joomla | MEDIUM | Grape %, vinification detail |
+| **Louis/Dressner** | 1,163 | 6 | Custom AJAX | MEDIUM | Natural wine, sulfur data |
+
+**Kermit Lynch Wine Merchant — INTEGRATED**
+- 193 producers, 1,467 wines imported
+- Script: `scripts/import_kl.mjs` + `scripts/fetch_kl_catalog.mjs`
+- File: `data/imports/kermit_lynch_catalog.json`
+
+**Skurnik Wines — PRIORITY**
+- FacetWP JSON endpoint returns structured data. No anti-bot.
+- Fields: Producer, wine name, grape, region, appellation, country, vintage, color, farming practice, SKU, soil
+- Missing: ABV, tasting notes (PDFs blocked in robots.txt)
+- URL: https://skurnik.com/
+
+**Polaner Selections — PRIORITY** ⭐ NEW
+- ~400+ producers including CA icons (Arnot-Roberts, Bedrock, Kongsgaard, Littorai) and European classics (Giuseppe Mascarello, Confuron-Cotetidot)
+- Fields: Wine name, vintage, bottle sizes, country, region, appellation, wine type, varietals, varietal notes, organic/biodynamic/natural certification, vineyard name, orientation, soil composition, viticulture methods, vinification techniques, aging, production volume, notes, ratings (publication + score + description)
+- Basic user-agent detection, no CAPTCHA
+- URL: https://www.polanerselections.com/
+
+**Winebow — PRIORITY**
+- Best data quality per wine of any importer. 28/page, ~35 pages.
+- Fields: Producer, wine name, grape (100%), region, appellation, country, vintage, ABV, winemaker, soil, vineyard size, vine age, production volume, tasting notes, acidity, RS, total SO2, dry extract
+- No anti-bot.
+- URL: https://winebow.com/
+
+**Empson & Co. — PRIORITY** ⭐ NEW
+- Italian specialist. Use empson.com (export site), not empsonusa.com
+- Fields: Producer, wine name, grape (100% breakdown), region, appellation/DOCG/DOC, ABV, tasting notes, soil (e.g., "calcareous clay with high magnesium content"), altitude, exposure, vine density, vine age, yield, fermentation details (container, duration, maceration technique/length), malolactic, aging containers (type, size, age), aging duration, bottling period, closure, serving temperature, food pairings, aging potential, yearly production, first vintage, awards/scores
+- Outstanding per-wine technical data. No anti-bot.
+- URL: https://www.empson.com/wines/
+
+**European Cellars (Eric Solomon) — PRIORITY**
+- Sitemap lists all 724 wine URLs. 10-second crawl delay requested.
+- Fields: Producer, wine name, grape, region, appellation, country, vintages, winemaker, soil, vineyard details (ha, vine age, altitude), production notes, farming practice, tech sheet PDFs
+- URL: https://europeancellars.com/
+
+**Kysela Pere et Fils — PRIORITY**
+- Aggressive crawl delays (40s for Google/Bing). Several bots blocked.
+- Fields: Producer, wine name, grape (with percentages!), region, appellation, tasting notes, soil, vinification (detailed), vine age, production volume, farming practice, tech sheet PDFs
+- URL: https://kysela.com/
+
+**Louis/Dressner Selections — PRIORITY**
+- Custom AJAX carousel pagination, needs API reverse-engineering.
+- Fields: Producer, wine name, filtering metadata (soil, grape, region, farming practice, sulfur use). 78% have detailed tech info.
+- URL: https://louisdressner.com/
+
+### Tier 2 — Medium Priority (good catalogs, moderate data)
+
+| Importer | Wines | Countries | Platform | Difficulty | Specialty |
+|----------|-------|-----------|----------|------------|-----------|
+| **Broadbent** ⭐ | 200-300 | 16 | WordPress | EASY | Portuguese/SA/Lebanese |
+| **Vintus** ⭐ | ~1,000+ | 12+ | WordPress/AJAX | MEDIUM | Luxury (Margaux, Guigal, Bollinger) |
+| **Rosenthal** ⭐ | 844 (retail) | 5 | Shopify (retail) | EASY | France/Italy artisan |
+| **Wilson Daniels** | ~550 | Various | React/Next.js | MEDIUM | DRC, Gaja, Biondi-Santi |
+| **MMD USA** ⭐ | ~100-200 | 7 | Custom CDN | MEDIUM | Roederer, Dominus, Pichon Comtesse |
+| **Palm Bay** | 100-150 | 10 | React/Next.js | EASY | ABV, acidity, RS, pH data |
+| **Olé & Obrigado** | 200-400 | 2 | jQuery DataTable | EASY | Iberian, Port/Sherry |
+| **Dreyfus Ashby** | ~150 | France | WordPress/WC | EASY | Drouhin family |
+
+**Broadbent Selections — EVALUATED** ⭐ NEW
+- Portuguese wines (Madeira, Port, Vinho Verde), South Africa (Kanonkop, Vilafonte, Warwick), Château Musar
+- Fields: Wine name, varietal, region, country, tasting notes, production details, ratings, organic/sustainable/vegan certifications
+- Filtering by producer, country, varietal, style, distinction (90+ ratings, organic, vegan, women in wine)
+- URL: https://broadbent.com/
+
+**Vintus — EVALUATED** ⭐ NEW
+- ~500K cases annually. Ultra-premium (Chateau Margaux, Bollinger, Ornellaia, Masseto, E. Guigal, Sandrone)
+- WordPress with Ajax Search Pro. Nonce tokens in AJAX requests.
+- Wine-level data depth uncertain — need to assess producer sub-pages
+- URL: https://vintus.com/
+
+**Rosenthal Wine Merchant — EVALUATED** ⭐ NEW
+- 143 growers (88 France, 41 Italy, 5 Switzerland, 5 Spain, 4 Austria). Artisan producers (Barthod, Fourrier, Montevertine, Brovia)
+- Importer site (rosenthalwinemerchant.com): Umbraco CMS, narrative-heavy
+- Retail site (rwmselections.com): Shopify, 844 items — easier for structured scraping
+- URL: https://www.rosenthalwinemerchant.com/ | https://rwmselections.com/
+
+**Wilson Daniels — EVALUATED**
+- ~60 premium producers. React/Next.js, sitemap with 1,084 URLs.
+- Winery-level data with fact sheet PDFs. JS rendering likely needed.
+- URL: https://wilsondaniels.com/
+
+**Maisons Marques & Domaines (MMD USA) — EVALUATED** ⭐ NEW
+- 16-17 brands, ~300K cases. Louis Roederer, Dominus, Pichon Comtesse, Pio Cesare, Domaines Ott, Ramos Pinto, Meerlust
+- Custom site with CDN (b-cdn.net). "Portfolio by Wine" page.
+- URL: https://www.mmdusa.net/
+
+**Palm Bay International — EVALUATED**
+- Fields: Producer, wine name, grape (100%), region, appellation, country, vintage, winemaker, ABV, acidity, RS, pH, closure, tasting notes, production method, vineyard info, tech sheet PDFs
+- React/Next.js, 2-second crawl delay. Small but deep.
+- URL: https://palmbay.com/
+
+**Olé & Obrigado — EVALUATED**
+- jQuery DataTable with all wines loaded on one page! Easiest scrape possible.
+- Fields: Producer, wine name, grape, region, country, ABV, soil, tasting notes, production notes
+- URL: https://oleobrigado.com/
+
+**Dreyfus, Ashby & Co. — EVALUATED**
+- 168 products in sitemap. WordPress + WooCommerce.
+- Fields: Producer, wine name, grape, region, appellation, country, soil, production method. Missing: vintage, tasting notes, ABV.
+- URL: https://dreyfusashby.com/
+
+### Tier 3 — Lower Priority (limited data, harder access)
+
+| Importer | Wines | Platform | Difficulty | Notes |
+|----------|-------|----------|------------|-------|
+| **T. Edward** | 500+ | Shopify B2B | MEDIUM | Very sparse data fields |
+| **Vineyard Brands** ⭐ | 80+ wineries | ASP.NET legacy | HARD | Ponsot, Dauvissat, Salon, Petrus. Data in PDFs/Salsify |
+| **Banfi** ⭐ | 40+ lines | WordPress | MEDIUM-HARD | Wordfence protection. Mostly own-brand. |
+| **Ethica Wines** ⭐ | 60+ brands | WordPress/WC | MEDIUM | Italian specialist, thin web data, PDFs have more |
+| **Terlato Wine Group** ⭐ | 80+ brands | Salesforce | HARD | Not scraper-friendly |
+
+### Niche Importers (small but interesting)
+
+| Importer | Wines | Notes |
+|----------|-------|-------|
+| **Jenny & François** | 279 wines, 71 producers | WordPress. Natural wine. Small but data-rich |
+| **Rare Wine Co.** | ~36 producers | Umbraco. Library/retail (Conterno, Pingus, Selosse) |
+
+### Importers — INACCESSIBLE
+
+| Importer | Issue | Notable Producers |
+|----------|-------|-------------------|
+| **Frederick Wildman & Sons** | ECONNREFUSED (site down) | — |
+| **Kobrand Corporation** | Expired SSL, ECONNREFUSED | Taittinger, Ruffino, Vega Sicilia |
+| **Robert Kacher Selections** | Redirects to `/lander` → 403 | — |
+| **Jorge Ordoñez Selections** | Same `/lander` → 403 | — |
+| **Martin Scott Wines** | Domain compromised (spam) | — |
+| **Dalla Terra** | Cloudflare, blocks ClaudeBot/GPTBot | Vietti, Selvapiana, Lageder, Inama |
+
+### Mass-Market Producers/Distributors — NOT USEFUL FOR SCRAPING
+
+| Company | Cases | Why Not Useful |
+|---------|-------|---------------|
+| E&J Gallo | 90M | Mass-market domestic, no browsable import catalog |
+| The Wine Group | 43M | Bulk/value domestic |
+| Trinchero Family | 17M | Domestic (Sutter Home) |
+| Delicato Family | 16M | Domestic |
+| Deutsch Family | 12M | Mass-market (Yellow Tail, Josh Cellars) |
+| Constellation Brands | — | Mass-market (Mondavi, Kim Crawford) |
+| Treasury Wine Estates | 5.5M | Corporate (Penfolds, 19 Crimes) |
+| Pernod Ricard USA | — | Spirits-focused |
+
+---
+
+## 4. Barcode/UPC Sources
+
+### COLA Cloud Barcodes — PRIORITY
+- **Coverage**: ~200-250K wine barcodes extracted from TTB label images
+- **Types**: UPC-A (57%), EAN-13 (42%)
+- **Access**: Via COLA Cloud API (same as wine identity source above)
+- **Note**: Barcodes are wine-level identifiers, NOT vintage-specific (GS1 allows reuse across vintages)
+
+### Pennsylvania PLCB UPCs — IN HAND
+- **Coverage**: 4,812 wines with 100% UPC coverage
+- **Best free barcode source available right now**
+
+### New Jersey POSSE UPCs — EVALUATED
+- **Coverage**: Unknown count, but UPC field confirmed in search results
+- **Requires free account registration**
+
+### Open Food Facts — EVALUATED
+- **Coverage**: ~16K wines globally, ~2K US. Every product has a barcode (primary key).
+- **Access**: Free API + full dump (Parquet/CSV on Hugging Face)
 - **License**: ODbL
-- **URL**: https://overpass-turbo.eu/
-- **Loam use**: Show where vineyards physically exist within appellations. Great France/Germany/Italy coverage.
+- **Vintage data**: Inconsistent (sometimes in product name, not structured)
+- **URL**: https://world.openfoodfacts.org/
 
-### SoilGrids 250m (Global)
-- **Data**: Global soil properties at 250m resolution — pH, carbon, texture, etc.
-- **Format**: WCS, WebDAV (GeoTIFF)
-- **License**: CC BY 4.0
-- **URL**: https://soilgrids.org/
-- **Loam use**: Global soil data for terroir characterization (complements US-only SSURGO)
+### UPC Data 4 Beverage Alcohol — EVALUATED
+- **Coverage**: 150K+ beverage alcohol records, ~30-50K wine subset
+- **Fields**: UPC-E/A, EAN-8/13, GS1 manufacturer, brand, item name, container, size, country, region, appellation, ABV
+- **Access**: Licensed database (contact for pricing). ASCII/Excel/Access delivery.
+- **Quality**: High — sourced from distributor systems (SGWS, RNDC)
+- **URL**: https://upcdata4spirits.com/
 
-### PRISM Climate Data
-- **Data**: High-resolution (800m) US climate data 1895–present
-- **Format**: BIL raster, R package
-- **License**: Free for most uses
-- **URL**: https://prism.oregonstate.edu/
-- **Loam use**: Terrain-aware US climate data. Better than Open-Meteo for US-specific analysis.
+### CellarTracker Barcodes — SKIPPED (no access)
+- **Coverage**: 858,686 UPC/EAN codes mapped to 2M+ wines
+- **Access**: No API, community-contributed, locked behind CellarTracker walls
+- **Long-term**: Partnership conversation with Eric LeVine
 
-### FooDB Wine Chemistry
-- **Data**: ~800–1,000 chemical compounds found in wine with concentrations
-- **Format**: CSV (952 MB), JSON (87 MB), MySQL dump
-- **License**: CC BY-NC 4.0
-- **URL**: https://foodb.ca/downloads
-- **Loam use**: Wine chemistry profiles by type. Powers "what compounds are in this wine" features.
-
-### Phenol-Explorer
-- **Data**: 500+ polyphenols in wine with concentration data
-- **Format**: Excel/CSV export
-- **License**: Free academic
-- **URL**: http://phenol-explorer.eu/
-- **Loam use**: Polyphenol/health compound data by wine type
-
-### FlavorGraph (Sony AI)
-- **Data**: 8K node food-chemical graph, 147K edges, 300-dim food embeddings
-- **Format**: Pickle files, PyTorch
-- **License**: Apache 2.0 (commercial OK)
-- **URL**: https://github.com/lamypark/FlavorGraph
-- **Loam use**: AI-driven food-wine pairing engine
-
-### WineSensed Dataset (DTU)
-- **Data**: 897K label images, 824K reviews, 350K vintages, pairwise flavor distances
-- **Format**: CSV + JPG images
-- **License**: CC BY-NC-ND 4.0
-- **URL**: https://data.dtu.dk/articles/dataset/23376560
-- **Loam use**: Label recognition, flavor similarity features
-
-### Argentina INV Open Data
-- **Data**: Vineyard area by province, wine production by variety, export data
-- **Format**: CSV (CC BY 4.0)
-- **URL**: https://datos.magyp.gob.ar/dataset/inv-actividad-vitivinicola
-- **Loam use**: Argentine production data
+### Validation Tools
+- **UPCitemdb**: Free 100 lookups/day. Spot-check tool. https://devs.upcitemdb.com/
+- **Go-UPC**: $19.95/mo for 5K calls. Claims wine coverage. https://go-upc.com/
+- **GS1 Verified**: Free 30 lookups/day. Authoritative but expensive at scale. https://www.gs1.org/services/verified-by-gs1
 
 ---
 
-## Skipped Sources (with reasons)
+## 5. Geographic & Boundary Sources
 
-### X-Wines Dataset
-- **Data**: 100,646 wines, 21M ratings (CC0)
-- **Reason**: Already explored; data too scattered and overlaps with Vivino staging data
-- **URL**: https://github.com/rogerioxavier/X-Wines
+### Integrated
 
-### USDA FoodData Central
-- **Data**: Wine nutritional data (calories, sugar, vitamins)
-- **Reason**: Not needed for current roadmap
-- **URL**: https://fdc.nal.usda.gov/
+| Source | Data | License | Script |
+|--------|------|---------|--------|
+| UC Davis AVA Project | 284 US AVA boundaries | CC0 | `import_us_avas.mjs` |
+| Natural Earth | 62 country boundaries | Public domain | `import_accurate_boundaries.mjs` |
+| Eurac Research EU Wine PDO | 1,174 EU PDO boundaries | CC BY 4.0 | `import_eu_pdo.mjs` |
+| Wine Australia GI | 106 Australian GI boundaries | CC BY 4.0 AU | `import_australia_gi.mjs` |
+| Germany RLP Vineyard Register | 1,192 Einzellagen boundaries | Datenlizenz DE 2.0 | `import_rlp_einzellagen.mjs` |
+| New Zealand IPONZ GI | 21 NZ GI boundaries | — | `import_nz_gi.mjs` |
+| Nominatim/OSM | 375 appellation + 64 region boundaries | ODbL | Various geocoding scripts |
 
-### TTB Permittees List
-- **Data**: All US wine producers with federal permits
-- **Reason**: Deprioritized for now
-- **URL**: https://www.ttb.gov/public-information/foia/list-of-permittees
+### Deferred
 
-### Adelaide Wine Economics Databases
-- **Data**: 11 databases, 200 years of global wine data
-- **Reason**: Deprioritized for now. Revisit for market intelligence features.
-- **URL**: https://economics.adelaide.edu.au/wine-economics/databases
-
-### FlavorDB2
-- **Data**: 25,595 flavor molecules, 936 ingredients
-- **Reason**: Deprioritized for now
-- **URL**: https://cosylab.iiitd.edu.in/flavordb2/
-
-### USDA Organic Integrity Database
-- **Data**: Certified organic operations
-- **Reason**: Deprioritized for now
-- **URL**: https://organic.ams.usda.gov/integrity/
-
-### Wine-Searcher API
-- **Data**: Wine pricing and availability
-- **Reason**: Commercial ($250–2,000/mo). Aggressive bot blocking.
-- **URL**: https://www.wine-searcher.com/trade/api
-
-### CellarTracker
-- **Data**: 5M wines, 13M reviews, drinkability curves
-- **Reason**: No public API, ToS prohibits commercial use, SiteBlackBox anti-bot. Considered competition.
-- **URL**: https://www.cellartracker.com/
-
-### NASA POWER
-- **Data**: Solar radiation, temperature, precipitation (global)
-- **Reason**: Open-Meteo preferred (better resolution, built-in GDD, cleaner API)
-- **URL**: https://power.larc.nasa.gov/
-
-### Wine Folly GWDB
-- **Data**: Producer-verified wine data, API available
-- **Reason**: Semi-open / contract required
-- **URL**: https://winefolly.com/
-
-### RAW Wine
-- **Data**: 18K natural wines
-- **Reason**: Semi-open / likely requires partnership
-- **URL**: https://rawwine.com/
+| Source | Data | License | URL |
+|--------|------|---------|-----|
+| INAO AOC Parcel Boundaries (France) | Parcel-level, 289 French AOCs. Gold standard. 253MB shapefile | Licence Ouverte | data.gouv.fr |
+| MAPA Spanish Wine DO | Official Spanish DOP/IGP boundaries. 7.33MB shapefile | Free w/ attribution | mapa.gob.es |
 
 ---
 
-## Notes
+## 6. Reference Data Sources (Already Integrated)
 
-### Accuracy Principle
-Loam prioritizes 100% accuracy over volume. We would rather have less data than more data with errors. All scraping uses deterministic CSS-selector parsing, never LLM interpretation. Data is validated against known types and ranges before insertion.
+| Source | Data | Tables Populated |
+|--------|------|-----------------|
+| VIVC | 9,690 grapes, 34,833 synonyms, parentage | grapes, grape_synonyms |
+| INAO OpenDataSoft API | 2,557 French AOC product variants | appellation_aliases |
+| Anderson & Aryal Dataset | Region/country grape plantings | region_grapes, country_grapes |
+| EU Reg 1308/2013, 2019/33 | Wine regulations | label_designations (116) |
+| German Weingesetz, Italian disciplinari, etc. | National wine laws | label_designation_rules, classification_levels (32) |
+| WSET L3/L4 + UC Davis Wine Aroma Wheel | Tasting framework | attribute_definitions (73), tasting_descriptors (304) |
 
-### LLM Scraping
-Evaluated but currently rejected. ~98% accuracy is insufficient. Will revisit if we find a way to achieve 100% accuracy (e.g., LLM extraction + deterministic validation + human review queue).
+---
 
-### COLA Cloud
-Commercial wrapper around TTB COLA with AI enrichment (4.6M label images, 470K barcodes). Enterprise pricing. Evaluate cost vs. building our own TTB extraction pipeline.
+## 7. Enrichment & Context Sources (Post-Launch)
+
+| Source | Data | License | Status | URL |
+|--------|------|---------|--------|-----|
+| Open-Meteo Climate API | Historical weather, GDD | Free non-commercial | DEFERRED | open-meteo.com |
+| SSURGO (USDA) | Complete US soil maps | Public domain | DEFERRED | websoilsurvey.nrcs.usda.gov |
+| SoilGrids 250m | Global soil properties, 250m res | CC BY 4.0 | DEFERRED | soilgrids.org |
+| Wikidata Wine Graph | Grape varieties, synonyms, Q-IDs | CC0 | DEFERRED | query.wikidata.org |
+| Global Wine Score | Aggregated critic scores | Free API | EVALUATED | globalwinescore.com/api |
+| db.wine (Wine Folly) | Producer-verified wine data | Commercial API | EVALUATED | db.wine |
+| FooDB Wine Chemistry | ~1,000 wine compounds | CC BY-NC 4.0 | DEFERRED | foodb.ca |
+| FlavorGraph (Sony AI) | Food-chemical graph for AI pairing | Apache 2.0 | DEFERRED | github.com/lamypark/FlavorGraph |
+| WineSensed Dataset | 350K+ vintages with label images | CC BY-NC-ND 4.0 | DEFERRED | data.dtu.dk |
+
+---
+
+## 8. Score/Review Sources (Deferred)
+
+| Source | Coverage | Access | Status |
+|--------|----------|--------|--------|
+| Wine Enthusiast | 400K+ reviews | WordPress, scrapeable | DEFERRED |
+| Jeb Dunnuck | Free drinking windows | WordPress | DEFERRED |
+| Vinous | ~100K+ reviews | Subscription, no API | DEFERRED |
+| Wine Advocate / Robert Parker | ~400K+ reviews | Paid subscription | DEFERRED |
+| Decanter | ~50K+ reviews | Subscription, UK-centric | DEFERRED |
+| JancisRobinson.com | ~200K+ tasting notes | Subscription | DEFERRED |
+
+All score content is copyrighted. Numerical scores are facts (displayable); tasting note text is not reproducible verbatim. See DECISIONS.md.
+
+---
+
+## 9. Wine Competition Databases
+
+Structured medal/score data from professional wine competitions. Public results, no licensing concerns for factual data (medals, scores).
+
+### Tier 1 — High Priority
+
+| Competition | Annual Wines | Data Access | Historical | Key Fields | US Coverage |
+|-------------|-------------|-------------|------------|------------|-------------|
+| **IWSC** ⭐ | ~4-5K | **CSV export** (email) | 2013+ | Producer, wine, vintage, country, medal, score | Moderate |
+| **Berliner Wine Trophy** ⭐ | ~13-15K | Web (200/page, scraper-friendly) | 2009+ (74K total) | Producer, wine, vintage, grape, country, **ABV, RS, acidity**, organic status | Limited (EU-heavy) |
+| **TEXSOM** ⭐ | ~3,200 | Web (sortable HTML tables) | **1985+** (40 years!) | Brand, description, appellation, country, vintage, medal, 400+ varieties | Very good |
+| **SF Chronicle** | ~5,500 | Web (single printable page) | 2014+ | Winery, wine, vintage, varietal, appellation, medal, price range | **Excellent** (US-focused) |
+| **DWWA** | ~18,000 | Web (React SPA, needs API reverse-eng) | 2004+ | Producer, wine, vintage, country, region, grape, medal, score, price | Good |
+
+**IWSC** — iwsc.net/results/search — CSV export via email makes this the easiest competition to integrate. Founded 1969, ~2% Gold rate. No scraping needed.
+
+**Berliner Wine Trophy** — results.wine-trophy.com — Richest structured data: includes alcohol %, residual sugar, acidity alongside medals. 74K awarded wines. OIV-patronized. Also covers Asia Wine Trophy, Portugal Wine Trophy.
+
+**TEXSOM** — texsom.com/results — 40 years of structured, sortable data. 400+ variety filters, 300+ appellation filters. Easy to scrape.
+
+**SF Chronicle** — winejudging.com — Largest North American competition. Categories organized by varietal + price point ($10-150 sweet spot). WordPress, no anti-bot.
+
+### Tier 2 — Worth Pursuing
+
+| Competition | Annual Wines | Notes |
+|-------------|-------------|-------|
+| **Concours Mondial de Bruxelles** | ~7-10K | results.concoursmondial.com. OIV-recognized. Strong European/South American. |
+| **IWC** | ~12-15K | internationalwinechallenge.com. Results also on Wine-Searcher (2008+). |
+| **London Wine Competition** | Growing | londonwinecompetition.com. Unique triple score: Quality 50%, Value 25%, Packaging 25%. |
+| **Mundus Vini** | ~12K | meininger.de. **403 blocks automated access.** Sensory spider web diagrams. |
+
+### Aggregators
+
+| Source | Coverage | Notes |
+|--------|----------|-------|
+| **EnofileOnline** | 215K bottles, 15K wineries | enofileonline.com. US regional competition aggregator. Searchable by brand, varietal, price, award, appellation. |
+| **Wine-Searcher Awards** | Multiple competitions | wine-searcher.com/awards. Aggregates IWC, IWSC, DWWA, CMB. Anti-bot blocks access. |
+
+### Matching Strategy
+Primary match key: producer name + wine name + vintage year + country. Competitions provide structured grape/region/appellation for validation. IWSC CSV is the fastest path to integration.
+
+---
+
+## 10. International Retailers & State Monopolies
+
+Government-run wine monopolies have the best structured data of any commercial source — every field curated centrally.
+
+### Tier 1 — Official APIs (Exceptional Data)
+
+**Vinmonopolet (Norway)** ⭐⭐ — PRIORITY
+- **URL**: api.vinmonopolet.no (official API portal)
+- **Catalog**: ~35,000 products
+- **API**: Free "Open" tier. Register for API key, no approval needed.
+- **Fields**: Product ID, name, vintage, **grape varieties with percentages**, ABV, producer, country, district, subdistrict, **EAN-13/GTIN barcode**, price, **sugar g/L, acid g/L**, tasting notes (Norwegian), **flavor scales (tannins, fullness, sweetness, freshness, bitterness — 0-100 numeric)**, food pairings, certifications (organic, biodynamic, fair trade, kosher), cork type, images
+- **Language**: Norwegian tasting notes, English field names
+- **Quality**: **BEST structured wine data source found in all research.** Government-mandated accuracy. Grape percentages measured. Sugar/acid measured. Flavor scales standardized.
+- **Matching**: Producer + wine + vintage + country/district. GTIN barcode enables cross-source dedup.
+
+**Systembolaget (Sweden)** — EVALUATED
+- **URL**: api-extern.systembolaget.se (internal API, unofficial access)
+- **Catalog**: ~16,400 wines
+- **API**: Official API removed. Community data mirror at github.com/AlexGustafsson/systembolaget-api-data (~73MB JSON dumps, regularly updated).
+- **Fields**: Product ID, name, vintage, grapes (array), producer, country, origin L1/L2, ABV, price, **taste clock (bitterness, body, sweetness, fruitacid, roughness, smokiness — 1-12 numeric)**, color, food pairings, organic/ethical/kosher labels
+- **Language**: Swedish
+- **Quality**: Very high but fewer fields than Vinmonopolet (no barcode, no sugar/acid g/L).
+- **Legal risk**: Community mirrors may violate ToS. Official API was deliberately removed.
+
+**SAQ — Société des alcools du Québec (Canada)** — EVALUATED
+- **URL**: saq.com
+- **Catalog**: ~8-12K wines
+- **API**: No official API. B2B assortment Excel download exists.
+- **Fields**: SAQ code, **UPC/barcode**, producer, **grape variety with % composition**, ABV, region, appellation, **sugar g/L**, tasting notes (aromas, acidity, sweetness, body, mouthfeel, wood), food pairings, serving temp, aging potential, certifications (organic, natural, biodynamic), price
+- **Language**: Bilingual English/French
+- **Quality**: Very high. UPC barcodes + grape percentages + sugar g/L. Scraping required but clean structure.
+
+### Tier 2 — Good Data, Moderate Access
+
+| Source | Country | Wines | API | Key Value | Notes |
+|--------|---------|-------|-----|-----------|-------|
+| **Alko** | Finland | ~8,700 | Excel price list + scrape | Monthly Excel download, acidity/tannin levels | alko.fi |
+| **LCBO** | Canada/ON | Large | Third-party GraphQL (lcbo.dev) | English, critic scores on some | lcbo.com |
+| **BC Liquor** | Canada/BC | Unknown | CSV on Open Canada portal | Open Government Licence | bcliquorstores.com |
+| **Berry Bros & Rudd** | UK | ~12,200 | JSON-LD schema.org on pages | **Maturity status** (unique), 327 years of trading | bbr.com |
+| **Tannico** | Italy | ~13,000 | Shopify (may support /products.json) | Largest Italian online retailer, bilingual | tannico.com |
+
+**Berry Bros & Rudd** is notable for maturity assessments (ready/youthful/mature/at best/not ready) — a unique data point not available elsewhere.
+
+### Tier 3 — Limited Value
+
+| Source | Country | Notes |
+|--------|---------|-------|
+| Majestic Wine | UK | ~1,500 wines, no API |
+| Wine Society | UK | Members-only access |
+| Waitrose Cellar | UK | 403 on fetch |
+| Laithwaites | UK | No structured data access |
+| Dan Murphy's | Australia | 403, JS-rendered, consumer-grade data |
+| Lavinia | France/Spain | 6K wines, no API |
+| Nicolas | France | No data access |
+
+---
+
+## 11. Producer & Appellation Associations
+
+Member directories with structured producer data. Best for the California + Oregon vertical slice.
+
+### US Associations (Priority)
+
+| Association | Members | Key Unique Data | Anti-bot | Priority |
+|-------------|---------|----------------|----------|----------|
+| **Sonoma County Vintners** ⭐ | 250+ | **AVA + grape varieties per producer** | Medium (reCAPTCHA) | HIGHEST |
+| **Napa Valley Vintners** | 500+ | Name, address, website | Low | HIGH |
+| **Willamette Valley WA** | ~200-300 | **12 sub-AVA attributions**, sustainability cert | Medium (JS) | HIGH |
+| **Oregon Wine Board** | 540+ | Region + certifications | HIGH (Cloudflare) | HIGH (hard access) |
+| **Paso Robles WCA** | 200+ | AVA districts + certification filters + price ranges | Medium | MEDIUM |
+| **Walla Walla Valley WA** | 150+ | 60+ variety filter options | Low | MEDIUM |
+| **Washington State Wine** | 1,000+ | Broad coverage | Unknown | MEDIUM |
+| **Lodi Winegrape Commission** | ~75 | LODI RULES certification | Medium | LOW |
+
+**Sonoma County Vintners** — sonomawine.com — Best US association directory. Filterable by AVA and grape variety per producer. Directly populates producer→appellation and producer→grape associations.
+
+**Willamette Valley WA** — willamettewines.com — 12 sub-AVA filters (Chehalem Mountains, Dundee Hills, Eola-Amity Hills, etc.). Women-led and sustainability tags.
+
+### International Associations
+
+| Association | Members | Key Data | Priority |
+|-------------|---------|----------|----------|
+| **UGCB** (Bordeaux) | 134 châteaux | Classification + appellation (authoritative) | HIGH |
+| **Consorzio Barolo** | 592 | Village/commune addresses | HIGH |
+| **Consorzio Chianti Classico** | 500+ | Municipality + bio cert filter | HIGH |
+| **Consorzio Brunello** | 200+ | Production type (Brunello/Rosso/Sant'Antimo) | MEDIUM |
+| **Comité Champagne** | 16,000+ | Authoritative if accessible (404 on current URLs) | MEDIUM |
+| **UGCB** | 134 | ugcb.net — Classification data is authoritative for Bordeaux | HIGH |
+
+---
+
+## 12. Auction Houses & Trading Platforms
+
+Fine wine price data and drinking windows. Most block programmatic access.
+
+### Accessible
+
+| Source | Type | Public Data | Key Value |
+|--------|------|------------|-----------|
+| **Liv-ex indices** | Trading | Free (Fine Wine 50/100/1000 + 8 regional sub-indices) | Market context. They create LWIN. |
+| **Sotheby's** | Auction | Browsable results (7,617+ searchable) | Hammer prices, provenance |
+| **Bonhams** | Auction | Publicly accessible results with prices | Hammer prices with buyer's premium |
+| **iDealwine** | Auction (French) | Active listings with prices, 25 years of data | Best French wine auction source |
+| **WineBid** | Online auction | Current lots browsable | Consumer auction, broader price range |
+
+### Blocked/Paywalled
+
+| Source | Issue | Notes |
+|--------|-------|-------|
+| **Acker** | 403 on fetch | Largest US wine auction house, 30+ years of data |
+| **Christie's** | 403 on fetch | Premier international, wine since 1766 |
+| **Zachys** | 403 on fetch | Major US auction, 20+ years |
+| **Hart Davis Hart** | ECONNREFUSED | US fine wine specialist |
+| **K&L Auctions** | DataDome | Same protection as K&L retail |
+| **Wine-Searcher** | $50K+/year API | Best price aggregator but prohibitively expensive |
+| **WineDecider** | 403 on fetch | Unique maturity curves, drinking window data |
+| **CellarTracker** | 405 Method Not Allowed | 13M reviews, 5M wines, best community drinking windows |
+
+### Drinking Window / Maturity Data
+Best sources: CellarTracker (no access), WineDecider (no access), Berry Bros & Rudd (maturity status on product pages), Jeb Dunnuck (free drinking windows, WordPress). This remains a **significant gap** — no programmatic access to any major maturity data source.
+
+---
+
+## 13. Wine APIs & Databases
+
+### Commercial APIs Worth Investigating
+
+| API | Coverage | Key Value | Pricing | Priority |
+|-----|----------|-----------|---------|----------|
+| **VineRadar** ⭐ | 40K+ wineries globally | **Vineyard GPS coordinates + terroir data** | Commercial (pricing TBD) | HIGH |
+| **db.wine (Wine Folly)** | Producer-verified data | API access, producer-submitted accuracy | Free + Pro tiers | MEDIUM |
+| **Wine Labs** | LWIN matching | Automate LWIN assignment to existing wines | Commercial | MEDIUM |
+| **Winevybe** | General wine DB | Regions, grapes, awards, packaging | RapidAPI | LOW |
+
+**VineRadar** — vineradar.com — 40K+ wineries with vineyard GPS, terroir data, tasting notes, food pairings, 500+ grape profiles. Sub-100ms API. SOC 2. Distribution: 8,500 Bordeaux/Burgundy/Champagne, 12K Italy, 4.7K California, 4.3K Spain, 2.8K Australia. **Directly serves Loam's terroir mission.** Contact for pricing.
+
+**db.wine** — Producer-verified wine data with API. Quality > quantity. Worth evaluating free tier.
+
+### Community / Academic
+
+| Source | Coverage | Notes |
+|--------|----------|-------|
+| **wein.plus** | 248K wines, 25K EU producers, 26K-keyword wine lexicon | Membership-gated |
+| **WineSensed** | 897K label images, 350K+ vintages | CC BY-NC-ND 4.0 (non-commercial) |
+| **X-Wines** | 530K wines, 2.2M vintages | Already in Loam as xwines_* tables |
+
+---
+
+## 14. Certification & Agricultural Databases
+
+### Sustainability Certifications
+
+| Source | Coverage | Access | Priority |
+|--------|----------|--------|----------|
+| **USDA Organic Integrity DB** ⭐ | All USDA-certified organic producers incl. wineries | Free, searchable (ams.usda.gov/integrity) | **HIGH** — quick win |
+| **Demeter International** | 7,000+ biodynamic farms globally (wine subset) | Browsable map at demeter.net | MEDIUM |
+| **SIP Certified** | 43K vineyard acres (CA, OR, MI) | Searchable on sipcertified.org | LOW |
+| **LIVE Certified** | Oregon sustainable wineries | Searchable | LOW |
+
+**USDA Organic Integrity DB** — Free, structured, covers all certified organic wineries in the US. Maps directly to `producer_farming_certifications`. Quick win for sustainability data.
+
+### Agricultural Data
+
+| Source | Data | Access | Value |
+|--------|------|--------|-------|
+| **USDA NASS** | CA grape acreage by variety + county | Free (Quick Stats API) | MEDIUM — enriches region_grapes |
+| **OIV Statistics** | Global production, consumption, trade | Free reports | LOW — macro level |
+| **Eurostat Vineyard Stats** | EU vineyard area, varieties, vine age | Free open data | LOW — macro level |
+| **AAWE Annual Database** | Global wine markets 1835-2018 | Free Excel | LOW — academic economics |
+
+### Emerging: EU E-Labels (u-label.com)
+Since Dec 2023, all EU wines must have digital labels (QR codes) with ingredients, nutrition, and allergen data. u-label.com (operated by CEEV/EFOW) has ~500K+ wines registered. **This is a massive new structured data source that didn't exist 2 years ago.** API access unclear — needs research. Post-launch but HIGH value for ingredient/nutrition data on EU wines.
+
+---
+
+## 15. Skipped Sources (with reasons)
+
+| Source | Reason |
+|--------|--------|
+| Wine-Searcher API | $250-2,000/mo. Aggressive bot blocking. |
+| CellarTracker bulk | No API, ToS prohibits commercial use |
+| Vivino scraping | Already have X-Wines (530K wines). ToS prohibits scraping. |
+| Amazon wine data | Restricted category, spotty coverage |
+| Instacart | Location-dependent, aggressive anti-bot |
+| Kroger/Fred Meyer | Aggressive anti-bot (Cloudflare) |
+| Costco online | Limited online catalog (~500 SKUs), aggressive protection |
+| Trader Joe's | No online product catalog at all |
+| Google Shopping | Merchant-only API, scraping against ToS |
+| GS1 Data Hub | $500-6,500/yr, uncertain wine coverage |
+| Southern Glazer's / RNDC / Breakthru | B2B only, no public access |
+| SevenFifty | 47K+ products but Imperva-blocked. Partnership play only. |
+| Commerce7 / WineDirect DTC stores | No central catalog, labor-intensive per winery |
+| Somm.ai restaurant lists | Expensive B2B platform |
+| Wine subscription clubs | Most sell private-label wines with no real producer identity (Winc, Bright Cellars, WSJ Wine, Martha Stewart Wine) |
+| Naked Wines | Cloudflare + reCAPTCHA. Independent winemaker profiles have some value but hard to access |
+| Dan Murphy's (Australia) | 403, JS-rendered, consumer-grade data |
+| WIN Data (Wine Industry DB) | Expensive B2B subscription. US producer operational data |
+| Winevizer | Restaurant wine list tool, not a data source |
+| Open Wine Data / OpenWines.eu | Nascent/inactive projects |
+
+---
+
+## 16. Coverage Gap Analysis
+
+### Geographic Gaps
+
+| Region | Gap Severity | Current Coverage | Suggested Sources |
+|--------|-------------|-----------------|-------------------|
+| **Australia/NZ** | HIGH | No AU/NZ importer. LWIN + COLA cover identity. | Old Bridge Cellars, Negociants USA, Wine Australia trade portal |
+| **South America** | HIGH | Only Catena Zapata trial import | Vine Connections, Click Wine Group, Wines of Chile, Wines of Argentina |
+| **South Africa** | HIGH | Only Broadbent + Kanonkop | Cape Classics (~40 producers), Indigo Wine |
+| **Portugal** | HIGH | Only Broadbent (fortified) + Olé & Obrigado | ViniPortugal, Sogrape, IVDP (Port registry) |
+| **Germany/Austria everyday** | MEDIUM | Skurnik covers enthusiast. Mass-market thin. | DWI, Austrian Wine Marketing Board |
+| **Greece/Croatia/Hungary** | MEDIUM | Trial imports only | Diamond Wine Importers, Athenee Importers |
+| **UK/Canada emerging** | LOW | No sources | Wines of Great Britain, Wine Growers Canada |
+
+### Data Field Gaps
+
+| Field | Sources | Gap Severity |
+|-------|---------|-------------|
+| **Soil composition** | Only importers (~12K wines) | HIGH |
+| **Elevation/altitude** | Empson, VineRadar (if API accessible) | HIGH |
+| **Vine age** | Empson, Kysela, European Cellars | HIGH |
+| **Drinking windows** | No programmatic source | HIGH |
+| **Sustainability certifications** | USDA Organic DB (quick win) + importers | MEDIUM |
+| **Production volume** | Empson, Winebow, Kysela | MEDIUM |
+| **Sugar/acid g/L** | Vinmonopolet API, Winebow, Palm Bay | MEDIUM |
+| **Vineyard GPS** | VineRadar API (if accessible) | MEDIUM |
+
+### Critical Technical Gap
+**Identity matching engine** — Without reliable fuzzy matching (producer + wine + vintage + region), scaling beyond ~12K importer wines into the 200K+ LWIN/COLA universe will create deduplication crisis. This is the #1 technical priority. See merge architecture in CLAUDE.md.
+
+---
+
+## 17. Coverage Projections
+
+### By Price Segment
+
+| Segment | Primary Sources | Est. Unique Wines |
+|---------|----------------|-------------------|
+| $50-150 (enthusiast) | LWIN + COLA Cloud + Importers | ~80K |
+| $20-50 (wine shop) | LWIN + COLA + Wine.com + State DBs | ~100K |
+| $10-20 (grocery/mass) | COLA Cloud + Kansas + PA + Wine.com | ~70K |
+| **Total** | | **~200-250K unique wines** |
+
+### Barcode Coverage
+~200K+ barcode mappings (COLA Cloud + PA + NJ + OFF). Covers the majority of wines a US consumer would encounter.
+
+---
+
+## 11. Import Priority Order
+
+| Phase | Source | Est. Wines | Key Value |
+|-------|--------|-----------|-----------|
+| A | **LWIN** | 186K | Identity backbone |
+| B | **Kansas + Pennsylvania** | 36K | COLA IDs + UPCs |
+| C | **COLA Cloud API** | ~1.2M COLAs | Barcodes + appellation + grapes at scale |
+| D | **Importer catalogs** | ~12K | Deep winemaking metadata |
+| | — Skurnik | 5K | German/Austrian |
+| | — Polaner ⭐ | 2-3K | Best new discovery |
+| | — Winebow | 1K | Chemistry data |
+| | — European Cellars | 700 | Spain/Rhône |
+| | — Empson ⭐ | 300-500 | Italian tech sheets |
+| | — Kysela | 1K | Grape percentages |
+| | — Louis/Dressner | 1.2K | Natural wine |
+| E | **Wine.com sitemaps** | 262K URLs | Identity confirmation |
+| F | **Total Wine sitemaps** | 9.5K | Secondary retailer |
+| G | **PRO Platform states** | 12 states | Consistent COLA data |
+| H | **NC + MO + TX state DBs** | Unknown | Additional state coverage |
+| I | **Open Food Facts** | ~16K | Supplemental barcodes |
+| J | **FirstLeaf** | 5.1K | Value segment |
+
+See `docs/ENRICHMENT.md` for the merge engine architecture and `CLAUDE.md` for schema details.

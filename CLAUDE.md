@@ -14,7 +14,8 @@ Loam is a wine intelligence platform. Users look up a wine and get the full stor
 - `docs/PRINCIPLES.md` — Product philosophy. Read when making judgment calls about what to build or how.
 - `docs/DECISIONS.md` — Append-only log of human decisions with reasoning. Read when you need to understand why something was done a certain way. Never re-litigate settled decisions without the user raising it.
 - `docs/VOICE.md` — Voice, tone, and food pairing guidance for all AI-generated content. Read before writing any enrichment prompts or insight content.
-- `docs/ENRICHMENT.md` — Four-tier enrichment architecture (Tier 0-3), cost model, on-demand pipeline, wine-not-found flow. Read before building or modifying the enrichment pipeline.
+- `docs/ENRICHMENT.md` — Letter-grade enrichment architecture (F/D/C/B/A), cost model, on-demand pipeline, wine-not-found flow. Read before building or modifying the enrichment pipeline.
+- `docs/SOURCES.md` — Master reference for all external data sources (evaluated, integrated, planned, rejected). Read when working on data acquisition or import pipelines.
 - `docs/ROADMAP.md` — Phased development plan. Read at session start to know what phase we're in and what's next.
 - `docs/LWIN_STRATEGY.md` — LWIN integration research and three-layer data strategy. Read when working on wine import.
 - `docs/SCHEMA_ASSESSMENT.md` — Deep schema assessment with implementation spec (Part B). Read when doing schema work.
@@ -245,12 +246,12 @@ All 5 pending migrations executed successfully:
 
 **Phase 1: Foundation** — Schema hardening + reference data completion + trial producer imports. See `docs/ROADMAP.md` for full phased plan.
 
-### Strategic Context (established 2026-03-13)
-- **Three-layer data strategy:** LWIN (identity) → Government registries (breadth) → Producer direct (depth). No crowdsourced platforms.
-- **Tiered wine experience:** Tier 1 (fully enriched) → Tier 2 (AI-contextualized) → Tier 3 (just identified). Product handles each tier explicitly.
-- **LWIN first, then TTB COLA:** LWIN establishes the dedup backbone. COLA enriches and expands.
+### Strategic Context (updated 2026-03-16)
+- **Multi-source data strategy:** LWIN (identity spine) → Government registries (Kansas, PA, COLA) → Importer catalogs (Skurnik, Winebow, etc.) → Retailer sitemaps (Wine.com, Total Wine). See `docs/SOURCES.md`.
+- **Letter-grade enrichment:** F (identity) → D (has scores/prices) → C (batch Haiku) → B (on-demand Sonnet) → A (curated). See `docs/ENRICHMENT.md`.
+- **LWIN-first spine:** LWIN establishes the dedup backbone. COLA enriches with US label data. State DBs bridge with COLA IDs and UPCs.
 - **Vertical slice:** California + Burgundy as first enrichment targets.
-- **Enrichment on demand:** Possible architecture — keep most wines at Tier 3, enrich to Tier 2 when a user looks up a wine. Needs further design.
+- **User lookup triggers B enrichment:** On-demand Sonnet for every search landing on a wine below Grade B. C is batch pre-warming. See ENRICHMENT.md.
 
 ### Next Steps
 1. ~~Review schema assessment decisions item by item~~ ✓
@@ -279,6 +280,15 @@ All 5 pending migrations executed successfully:
     - ~~Vineyard sourcing~~ ✓ — import support added for wine_vineyards/wine_vintage_vineyards
     - Multi-estate structure: use parent-child pattern (no schema change needed)
     - Clone data: stays in metadata JSONB (deferred)
+13. ~~Data acquisition research~~ ✓ — comprehensive survey of all sources. See `docs/SOURCES.md`.
+14. ~~Enrichment architecture finalized~~ ✓ — letter grades (F/D/C/B/A), Sonnet for B, Haiku for C. See `docs/ENRICHMENT.md`.
+15. **Build merge infrastructure** — create staging tables (import_runs, staging_wines, match_decisions, field_provenance), add wines columns (final_vintage_year, vintage_config, match_key), build lib/merge.mjs
+16. **LWIN import** — build scripts/extract/extract_lwin.mjs (Phase A of merge pipeline)
+17. **Kansas + PA import** — build extract scripts for state datasets (Phase B)
+18. **COLA Cloud API** — sign up, pull all wine COLAs (Phase C)
+19. **Importer scrapers** — Skurnik, Winebow, European Cellars, Kysela, Louis/Dressner
+20. **Enrichment pipeline** — Edge Function + prompts + enrichment_log
+21. **Frontend** — Vite/React PWA
 
 ### Schema Post-Import Hardening (2026-03-15)
 - **Metadata → columns:** 4 fields promoted from metadata JSONB: `release_date` (wine_vintages), `first_vintage_year` (wines), `style` (wines), `philosophy` (producers). 150+ metadata entries identified for migration to proper table links (classifications, vineyards, estates).
@@ -317,12 +327,34 @@ Full cross-reference of actual DB schema vs all 10 import scripts. 29 issues ide
 - **Migrations in git:** All DDL via Supabase MCP. Need `supabase/migrations/` before multi-developer.
 - **FK normalization (partially addressed):** `wine_vintage_scores` and `wine_vintage_prices` now have `wine_vintage_id` FK (backfilled). `wine_vintage_grapes` already had optional `wine_vintage_id`. Legacy `wine_id + vintage_year` columns kept as convenience but `wine_vintage_id` is now the preferred join path.
 
+### Data Acquisition Research (2026-03-16) — COMPLETE
+Comprehensive research across 17 source categories. Unified reference in `docs/SOURCES.md`.
+- **LWIN database analyzed**: 186K wine identities, 37K producers. Fine wine bias ($30+). No grapes/ABV/barcodes. File: `data/LWINdatabase.xlsx`
+- **COLA Cloud API identified**: Commercial wrapper on TTB COLA registry. $39/mo Starter tier. ~1.2M wine COLAs with 96% appellation, 54% grapes, 35% barcodes, 87% ABV.
+- **State databases surveyed (all 50 states)**: Kansas (31K wines, 92% COLA IDs) and PA (4.8K wines, 100% UPCs) are standouts. PRO Platform covers 12 states with one scraper. NJ has UPCs. TX has COLA IDs.
+- **22 importers researched**: Skurnik (5K wines, easy), Winebow (1K, best per-wine data quality), European Cellars (724), Kysela (1K), Louis/Dressner (1.2K), Polaner (2-3K, best new discovery).
+- **Retailer sitemaps**: Wine.com (262K URLs downloaded), Total Wine (9.5K), FirstLeaf (5.1K).
+- **Vinmonopolet API** ⭐⭐: Norwegian state monopoly — the single richest structured wine data source globally. Free tier, barcodes, grape percentages, sugar/acid g/L, flavor scales, 20K+ wines. Official API with auth key.
+- **Competition databases**: IWSC (CSV export available — easiest), Berliner Wine Trophy (74K wines), DWWA (20K wines/year), TEXSOM (40yr history). Most match via producer+wine+vintage.
+- **Wine APIs**: VineRadar (40K+ wineries with vineyard GPS + terroir data — directly serves Loam's core mission), db.wine (10K wines REST API).
+- **EU e-labels** (u-label.com): Massive new regulatory source (500K+ wines since Dec 2023) — ingredients, nutrition, allergens. Structured data, all EU wines.
+- **Certification databases**: USDA Organic Integrity DB (quick win — free CSV, producer-level), Demeter biodynamic registry.
+- **International retailers**: SAQ (Quebec, 14K wines, structured), Systembolaget (Sweden, 7K wines, barcodes).
+- **Auction/trading**: Liv-ex (10K wines, LWIN integration, requires membership), Sotheby's/Bonhams/iDealwine (fine wine pricing data).
+- **Merge architecture designed**: Staging tables (import_runs, staging_wines, match_decisions, field_provenance) + 4-layer matching + source priority + confidence thresholds.
+- **FOIA filed** to TTB as backup. Treating COLA Cloud as primary COLA strategy.
+- **Coverage projection**: ~200-250K unique wines across $10-150 US market.
+- **Import priority**: LWIN → Kansas+PA → COLA Cloud → Importers → Wine.com → Total Wine → PRO states → OFF → FirstLeaf.
+- **Files downloaded**: `kansas_active_brands.json` (24.6MB), `pa_wine_catalog.xlsx`, `wine_com_all_urls.txt` (20MB), `cola_demo.zip`, `utah_product_list.xlsx`, `lwin_database.csv`
+- **Critical gap identified**: Identity matching engine is #1 technical priority — without it, scaling beyond ~12K wines creates dedup crisis.
+
 ### Open Questions (deferred)
 - Data freshness strategy (how/when to re-import)
-- Dedup strategy across import sources (LWIN as primary dedup key when available)
 - Data licensing for scores (Wine Spectator, Parker, CellarTracker)
-- TTB COLA access strategy (COLA Cloud API vs FOIA — needs research)
-- Barcode/UPC data source (LWIN or alternatives, not Wine-Searcher)
+- UPC Data 4 Beverage Alcohol pricing inquiry
+- VineRadar API pricing inquiry (vineyard GPS + terroir data)
+- Vinmonopolet API key registration
+- Southern Hemisphere importer gap (no dedicated importers researched for AU/NZ/AR/CL/ZA)
 
 ---
 

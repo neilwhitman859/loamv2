@@ -34,5 +34,18 @@ data/imports/kl_wine_details_cache.json
 data/imports/kermit_lynch_catalog.json
 data/imports/lopez_de_heredia_catalog.json
 
+# Large downloaded data files (keep local, not in repo)
+data/imports/cola_demo.zip
+data/imports/cola_demo_extracted/
+data/imports/colas_2017.csv
+data/imports/kansas_active_brands.json
+data/imports/pa_wine_catalog.xlsx
+data/imports/pa_wine_field_descriptions.csv
+data/imports/utah_product_list.xlsx
+data/imports/wine_com_all_urls.txt
+data/imports/mysa_wine_raw.json
+data/imports/mysa_wine_sample.json
+data/lwin_database.csv
+
 # Local settings
 .claude/settings.local.json

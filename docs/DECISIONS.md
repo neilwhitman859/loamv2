@@ -441,3 +441,36 @@ Store and display prices in USD only. Add `price_currency` and `price_original` 
 
 ### 2026-03-16: Offline — cache last 50, search needs connectivity
 PWA service worker caches last 50 viewed wines for offline access. Search requires connectivity. Future optimization: cache top 1,000 wines by lookup_count for offline fuzzy matching. Not a launch blocker.
+
+### 2026-03-16: Enrichment grade content rebalancing
+Moved food pairings from Grade C to Grade B (needs richer context from Sonnet to do well). Moved comparable wines from Grade B to Grade C (simplified — Haiku can suggest 2-3 similar wines from region/grape/style). Moved drinking window estimates from Grade A to Grade B (too practically useful to limit to 500-2,000 wines). Grade A is now clearly differentiated as "connections across time and between wines" — cross-vintage, terroir fingerprint, producer timeline, winemaker career, wine relationships.
+
+### 2026-03-16: User lookup triggers B enrichment, not C
+The default on-demand enrichment is now F/D/C → B (Sonnet). Every user search that lands on a wine below Grade B triggers a full Sonnet enrichment call. Grade C becomes a batch "catalog pre-warm" process run by us, not triggered by users. Rationale: early users should get the best possible experience; cost is not a concern at launch scale. The page loads immediately with whatever data exists (F/D/C + geographic context), and B content appears in ~5-8 seconds.
+
+### 2026-03-16: Sonnet for B enrichment, revisit model choice later
+Using Claude Sonnet for on-demand B enrichment. Sonnet is significantly better than Haiku for narratives, terroir expression, and comparable wine reasoning. Will revisit model choice as the pipeline matures — evaluate Google Gemini and other APIs for cost/quality tradeoff. Haiku remains fine for batch C enrichment (structured/mechanical output).
+
+### 2026-03-16: UPC/barcode data required in LWIN import phase
+LWIN includes EAN-13 barcodes for a subset of wines. Must capture these in `external_ids` during Phase 2 import. COLA also provides UPC data for US wines. Between both sources, barcode coverage should be sufficient for the barcode scan input method at launch.
+
+### 2026-03-16: FOIA as backup, not primary COLA strategy
+Filed FOIA request to TTB (ttbfoia@ttb.gov) for full COLA database. However, treating this as a backup — expect 20+ business days with uncertain outcome. Primary COLA strategy is to research and build programmatic access to ttbonline.gov public data ourselves (scraping, API, or bulk download).
+
+### 2026-03-16: LWIN and COLA before launch
+LWIN import and COLA data acquisition are prerequisites for launch. These establish the wine identity backbone (LWIN) and US label data (COLA) that the platform needs. Enrichment pipeline comes before frontend. Sequence: LWIN import → COLA acquisition → enrichment pipeline → frontend.
+
+### 2026-03-16: Enrichment before frontend
+Build the enrichment pipeline before the frontend. Rationale: the frontend experience depends on enriched content existing — better to have the pipeline working and content generated before building the UI that displays it.
+
+### 2026-03-16: LWIN-first spine architecture for multi-source data merge
+LWIN as the identity backbone with progressive enrichment from other sources. Architecture: Staging tables (import_runs, staging_wines) → 4-layer matching engine (external ID → deterministic composite key → fuzzy composite score → AI-assisted) → canonical tables with field_provenance tracking. Source priority: Manual (1) > Producer direct (2) > Government (3) > LWIN (4) > Curated retailer (5) > Bulk retailer (6) > Open Food Facts (7) > X-Wines (8). Confidence thresholds: ≥0.92 auto-merge, 0.80-0.91 auto-merge with flag, 0.65-0.79 human review, <0.50 create new.
+
+### 2026-03-16: Multi-source data strategy — comprehensive with dedup
+Rather than relying on a single perfect source, use multiple sources (LWIN, COLA, state databases, importer catalogs, retailer sitemaps) with extensive dedup and validation. Each source has different strengths: LWIN for fine wine identity, COLA for US label data, Kansas for COLA IDs, PA for UPCs, importers for deep winemaking metadata. The merge infrastructure makes this manageable rather than a "world of hurt."
+
+### 2026-03-16: Unified wine data sources document (SOURCES.md)
+All wine data source research lives in `docs/SOURCES.md` — including sources we evaluated and rejected. This prevents knowledge loss between sessions and provides a persistent reference for data acquisition strategy. Status tracking: INTEGRATED, IN HAND, PRIORITY, EVALUATED, DEFERRED, SKIPPED.
+
+### 2026-03-16: Import priority order established
+9-step import priority: (1) LWIN identity backbone, (2) Kansas+PA state databases, (3) COLA Cloud API, (4) Importer catalogs (Skurnik, Winebow, European Cellars, Kysela, Louis/Dressner), (5) Wine.com sitemaps, (6) Total Wine sitemaps, (7) PRO Platform 12 states, (8) Open Food Facts barcodes, (9) FirstLeaf value segment. Target: ~200-250K unique wines covering $10-150 US market.

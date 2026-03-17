@@ -44,22 +44,22 @@ Loam uses a letter-grade enrichment model. Most wines enter the system with mini
 
 ---
 
-### Grade C — Quick Enrichment
+### Grade C — Catalog Enrichment
 **What it contains:**
 - **The hook** (2-3 sentences): The "30-second story" — what makes this wine worth knowing about. Stored in `wine_insights.ai_hook`.
 - **Structured tasting profile:** Body, sweetness, acidity levels from WSAT framework. Stored in `wine_vintage_tasting_insights`.
-- **Basic food pairing categories.** Stored in `wine_food_pairings`.
 - **Style classification** (e.g., "full-bodied dry red"). Stored in `wine_insights`.
+- **Comparable wines** (simplified): 2-3 similar wines based on region, grape, and style. Stored in `wine_insights.ai_comparable_wines`.
 
-**Trigger:** First user lookup of a Grade F or D wine. Runs in real-time (2-3 seconds).
+**Trigger:** Batch process run by us to pre-warm the catalog. Not triggered by user lookup. Used to build out coverage cheaply across large numbers of wines.
 
 **AI call:** One Haiku call. Input context: wine name, producer, region, appellation, grapes, appellation_insights, region_insights, grape_insights.
 
 **Cost:** ~$0.003-0.005 per wine.
 
-**Coverage target:** Grows organically from user demand. Estimated 20-50K within first year.
+**Coverage target:** 20-50K wines. Proactive catalog building.
 
-**Mobile experience:** Everything from D, plus the hook narrative, structured flavor profile, and food pairing. Feels complete for a casual user.
+**Mobile experience:** Everything from D, plus the hook narrative, structured flavor profile, and similar wine suggestions. If a user looks up a C wine, it gets promoted to B on-demand (see pipeline architecture below).
 
 ---
 
@@ -68,22 +68,21 @@ Loam uses a letter-grade enrichment model. Most wines enter the system with mini
 - **Full wine narrative** (1-2 paragraphs): The rich, voice-aligned story paragraph. Why this wine matters, what makes the producer distinctive, how terroir shapes the wine. Stored in `wine_insights.ai_wine_summary`.
 - **Terroir description:** Synthesized from soil, elevation, aspect, climate data. Stored in `wine_insights.ai_terroir_expression`.
 - **Vinification context:** How the wine is made and why those choices matter. Stored in `wine_insights.ai_vinification_summary`.
+- **Food pairings:** Specific, contextualized pairing recommendations. Stored in `wine_food_pairings`.
 - **Value assessment:** Price in context of appellation/region peers. Stored in `wine_insights`.
-- **Comparable wines:** "If you like this, try..." Stored in `wine_insights.ai_comparable_wines`.
+- **Comparable wines** (enhanced): Deeper "if you like this, try..." with reasoning. Upgrades the simplified C-grade suggestions. Stored in `wine_insights.ai_comparable_wines`.
+- **Drinking window estimates:** When to drink and when it peaks, synthesized from critic windows and wine characteristics. Stored in `wine_vintage_insights.ai_drinking_window_start/end` and `peak_drinking_window_start/end`.
 - **Vintage-specific notes** (if vintage data exists): How this year expressed in this wine.
 
-**Trigger:** One of:
-- Wine has been looked up (demand signal — any lookup count > 0 plus data richness)
-- Wine has scores AND prices in the DB (data richness signal)
-- Manual enrichment for priority producers/regions
+**Trigger:** First user lookup of any wine below Grade B (F, D, or C). This is the default on-demand enrichment — every user search that lands on an unenriched wine triggers B-grade enrichment.
 
-**AI call:** One Sonnet call with full context — wine data, producer data, appellation data, region data, scores, vintage weather (if available), all related reference data.
+**AI call:** One Sonnet call with full context — wine data, producer data, appellation data, region data, scores, vintage weather (if available), all related reference data. Model choice may be revisited — evaluate Google Gemini and other APIs for cost/quality tradeoff as the pipeline matures.
 
 **Cost:** ~$0.02-0.04 per wine.
 
 **Coverage target:** 5-15K wines. Major producers, commonly searched wines.
 
-**Mobile experience:** Full wine page with story, terroir card, vintage context. The "wow" experience.
+**Mobile experience:** Full wine page with story, terroir card, food pairings, drinking window, vintage context. The "wow" experience.
 
 ---
 
@@ -93,7 +92,6 @@ Loam uses a letter-grade enrichment model. Most wines enter the system with mini
 - **Detailed terroir fingerprint:** Structured soil × climate × elevation signature.
 - **Producer timeline context:** Key moments in the producer's history.
 - **Winemaker career context:** Who makes this wine and what else they've made.
-- **Drinking window AI estimates:** When to drink, when it peaks. Stored in `wine_vintage_insights.ai_drinking_window_start/end`.
 - **Wine relationship discovery:** Connections to other wines (second labels, sister wines, successors).
 
 **Trigger:** Manual curation only. These are showcase wines.
@@ -110,16 +108,16 @@ Loam uses a letter-grade enrichment model. Most wines enter the system with mini
 
 ## Cost Model
 
-| Grade | Per-wine cost | Target count | Total cost |
-|---|---|---|---|
-| F | $0 | 200,000 | $0 |
-| D | $0 | 50,000 | $0 |
-| C | ~$0.004 | 30,000 | ~$120 |
-| B | ~$0.03 | 10,000 | ~$300 |
-| A | ~$0.15 | 1,000 | ~$150 |
-| **Total** | | | **~$570** |
+| Grade | Per-wine cost | Trigger | Target count | Total cost |
+|---|---|---|---|---|
+| F | $0 | Import | 200,000 | $0 |
+| D | $0 | Import + scores/prices | 50,000 | $0 |
+| C | ~$0.004 | Batch (us) | 30,000 | ~$120 |
+| B | ~$0.03 | On-demand (user lookup) | 10,000+ | ~$300+ |
+| A | ~$0.15 | Manual curation | 1,000 | ~$150 |
+| **Total** | | | | **~$570+** |
 
-Budget cap: configurable daily limit on Grade C on-demand enrichment. When hit, new lookups fall back to Grade F/D experience (generic geographic context). Revisit threshold as usage grows.
+B count grows with user demand. At early scale (hundreds of users), cost is negligible. Budget cap exists as safety net but not expected to be a constraint at launch.
 
 ---
 
@@ -151,26 +149,34 @@ All wines live in the `wines` table — there is no separate candidates/staging 
 
 ## Enrichment Pipeline Architecture
 
-### On-Demand Flow (F/D → C)
+### On-Demand Flow (F/D/C → B)
+Triggered by user lookup. This is the primary enrichment path.
+
 1. User looks up wine via search, barcode, or label photo
-2. Wine found at Grade F or D (no `ai_hook` in `wine_insights`)
-3. Frontend requests enrichment via Supabase Edge Function
-4. Edge Function calls Claude Haiku with wine context + reference data
-5. Response parsed, validated, written to `wine_insights` + `wine_vintage_tasting_insights` + `wine_food_pairings`
-6. `enrichment_log` entry created with model, cost, fields_updated
-7. `wines.data_grade` updated to 'C', `wines.lookup_count` incremented
-8. Frontend receives enriched data, updates display
+2. Frontend loads wine page immediately with whatever data exists (F/D/C content + generic geographic context from appellation/region/grape insights)
+3. If wine is below Grade B, frontend fires enrichment request to Supabase Edge Function
+4. Edge Function assembles full context (wine, producer, appellation, region, scores, grapes, weather if available)
+5. Edge Function calls Claude Sonnet with rich prompt
+6. Response parsed, validated, written to `wine_insights` + `wine_vintage_tasting_insights` + `wine_food_pairings` + `wine_vintage_insights`
+7. `enrichment_log` entry created with model, cost, fields_updated
+8. `wines.data_grade` updated to 'B', `wines.lookup_count` incremented
+9. Frontend receives enriched data, updates display in-place (content appears/fades in)
 
-**Latency target:** <3 seconds end-to-end.
+**Latency target:** ~5-8 seconds for Sonnet enrichment. Acceptable because the page is never blank — F/D/C content + geographic context displays immediately while enrichment runs in the background.
 
-### Promotion Flow (C → B)
-Batch job (daily or weekly cron):
-1. Query wines at Grade C with data richness signals (scores, prices, multiple vintages)
-2. For each candidate, assemble full context (all related data across tables)
-3. Call Claude Sonnet with rich prompt
-4. Parse and write to insight tables
-5. Update `wines.data_grade` to 'B'
+**Budget cap:** Configurable daily limit on B enrichment spend. When hit, new lookups still show existing F/D/C content but skip the Sonnet call. Revisit threshold as usage grows. Not a concern at launch scale.
+
+### Catalog Pre-Warm Flow (F/D → C)
+Batch process run by us to build out catalog coverage cheaply.
+
+1. Select wines at Grade F or D (priority: wines with scores/prices, popular regions, imported producers)
+2. For each wine, assemble lightweight context (wine identity + reference data)
+3. Call Claude Haiku with quick enrichment prompt
+4. Parse and write to `wine_insights` + `wine_vintage_tasting_insights`
+5. Update `wines.data_grade` to 'C'
 6. Log enrichment with cost tracking
+
+**Purpose:** Pre-warming ensures that when a user first hits a wine, the page already has *something* useful (hook, tasting profile, style) while the B enrichment runs. Without pre-warming, users see only raw identity data for ~8 seconds.
 
 ### Curated Flow (→ A)
 Manual or semi-automated:
@@ -230,10 +236,10 @@ When a user searches for a wine not in the database:
    - Extract: producer name, wine name, vintage year, appellation, grape, country, classification text
    - Run extracted fields through existing fuzzy resolvers (trigram search on wines, producers, appellations)
    - If match found → show wine page
-   - If no match → create Grade F wine entry directly in `wines` table + immediate Grade C enrichment
+   - If no match → create Grade F wine entry directly in `wines` table + immediate Grade B enrichment (same on-demand Sonnet flow)
    - Some user back-and-forth to confirm identification is acceptable
-   - User sees result in 5-10 seconds
-4. Cost per label identification: ~$0.01-0.02 (Haiku vision + Grade C enrichment)
+   - User sees result in 10-15 seconds (vision + enrichment)
+4. Cost per label identification: ~$0.02-0.05 (Haiku vision + Grade B Sonnet enrichment)
 
 ---
 
