@@ -2,7 +2,7 @@
 
 Master reference for all external data sources — evaluated, integrated, planned, or rejected. Nothing gets lost.
 
-**Last updated**: 2026-03-16
+**Last updated**: 2026-03-17
 **Coverage**: All 50 US states + DC surveyed. 22+ importers researched. 12 competitions, 17 associations, 16 international retailers, 19 auction/trading platforms, 10+ wine APIs evaluated.
 
 ---
@@ -75,11 +75,11 @@ These sources provide wine-level identity data (producer, wine name, geography, 
 - **Verdict**: Worth extracting — URL pattern is richer than Wine.com (includes wine type + grape in path). ~9,500 wines.
 - **URL**: https://www.totalwine.com/
 
-### FirstLeaf Wine Directory — EVALUATED
-- **Status**: Shopify-based, 4 sitemaps with ~5,100 wine URLs
+### FirstLeaf Wine Directory — FETCHED ✅
+- **Status**: 1,770 products fetched via Shopify JSON API
 - **Data**: Schema.org structured data on pages. Strong $10-30 coverage.
+- **Script**: `scripts/fetch_firstleaf.mjs` → `data/imports/firstleaf_raw.json`
 - **Import method**: Existing `import_shopify_wines.mjs` works
-- **Verdict**: Easy import, good value-segment coverage.
 - **URL**: https://www.firstleaf.com/
 
 ---
@@ -192,11 +192,11 @@ Professional importers with public-facing wine catalogs. High-quality metadata f
 | Importer | Wines | Countries | Platform | Difficulty | Specialty |
 |----------|-------|-----------|----------|------------|-----------|
 | **Kermit Lynch** | 1,467 | France, Italy | — | — | ✅ INTEGRATED |
-| **Skurnik** | ~5,000 | 20+ | WordPress/Sitemap | EASY | ⏳ FETCHING (7,574 SKUs) |
+| **Skurnik** | 5,394 | 20+ | FacetWP REST API | EASY | ✅ FETCHED |
 | **Polaner Selections** ⭐ | 1,680 | 11 | WordPress REST API | EASY | ✅ FETCHED |
-| **Winebow** | 532 | 15 | Drupal | EASY | ⏳ FETCHING |
-| **Empson** ⭐ | 279 | Italy | WordPress | EASY | ⏳ FETCHING |
-| **European Cellars** | 443 | Spain, France | WordPress | EASY (slow) | ⏳ FETCHING |
+| **Winebow** | 536 | 15 | Drupal | EASY | ✅ FETCHED |
+| **Empson** ⭐ | 279 | Italy | WordPress | EASY | ✅ FETCHED |
+| **European Cellars** | 443 | Spain, France | WordPress | EASY (slow) | ✅ FETCHED |
 | **Kysela** | ~1,000 | 13 | Joomla | MEDIUM | Grape %, vinification detail |
 | **Louis/Dressner** | 1,163 | 6 | Custom AJAX | MEDIUM | Natural wine, sulfur data |
 
@@ -205,11 +205,11 @@ Professional importers with public-facing wine catalogs. High-quality metadata f
 - Script: `scripts/import_kl.mjs` + `scripts/fetch_kl_catalog.mjs`
 - File: `data/imports/kermit_lynch_catalog.json`
 
-**Skurnik Wines — FETCHING**
-- Sitemap scraper: 7,574 SKU URLs across 8 sitemaps. HTML scraping between `<!-- SKU DETAILS START/END -->` markers.
-- Fields: Producer, wine name, grape, region, appellation, country, vintage, color, farming practice, SKU code, bottle format, winemaking notes
-- ~50% of SKUs are wines (rest are spirits/sake/combos) — filtered automatically
-- Missing: ABV, tasting notes (PDFs blocked in robots.txt)
+**Skurnik Wines — FETCHED** ✅
+- 5,394 wines fetched via FacetWP REST API (`POST /wp-json/facetwp/v1/refresh`, template `our_wines_22`)
+- Phase 1 (listing): 98% producer, 100% grape, 97% appellation/region/country, 77% farming, 98% vintage
+- Phase 2 (detail pages, available but not yet run): ABV, blend %, soil, vineyard, aging, scores with drinking windows, tech sheet PDFs
+- Country distribution: France 1,057, US 1,039, Italy 812, Germany 731, Spain 382, Austria 324
 - Script: `scripts/fetch_skurnik.mjs` → `data/imports/skurnik_catalog.json`
 - URL: https://skurnik.com/
 
@@ -222,21 +222,24 @@ Professional importers with public-facing wine catalogs. High-quality metadata f
 - Script: `scripts/fetch_polaner.mjs` → `data/imports/polaner_catalog.json`
 - URL: https://www.polanerselections.com/
 
-**Winebow — FETCHING**
-- 532 wines from 153 brand pages. Drupal site with excellent per-wine data.
+**Winebow — FETCHED** ✅
+- 536 wines from 153 brand pages. Drupal site with excellent per-wine data.
+- Coverage: 94% grape, 98% ABV, 93% acidity, 89% RS, 86% pH, 79% soil, 79% production, 51% vineyard, 48% scores, 99% description
 - 19 Drupal Views fields per wine: appellation, vineyard name/size, soil composition, elevation, exposure, training method, vines/acre, yield/acre, bottles produced, varietal composition, maceration, MLF, aging vessel size, oak type, pH, acidity, ABV, residual sugar
 - Scores section with publication names and tasting notes
 - Script: `scripts/fetch_winebow.mjs` → `data/imports/winebow_catalog.json`
 - URL: https://winebow.com/
 
-**Empson & Co. — FETCHING**
+**Empson & Co. — FETCHED** ✅
 - 279 wines from WordPress sitemap. Italian specialist with richest per-wine data.
-- 27+ fields per wine: grape (100% breakdown), fermentation (container, duration, temperature, yeast), maceration (technique, duration), aging (container, size, oak type, duration), closure, vineyard (location, size, soil, training, altitude, density, yield, exposure, vine age), harvest timing, production, tasting notes, food pairings, aging potential, ABV, winemaker, serving temp, first vintage, scores
+- Coverage: 99% grape, 92% soil, 87% altitude, 57% vine_age, 88% ABV, 84% production, 93% tasting_notes/winemaker/fermentation, 44% oak_type
+- 27+ fields per wine: grape (100% breakdown), fermentation (container, duration, temperature, yeast), maceration (technique, duration), aging (container, size, oak type, duration), closure, vineyard (location, size, soil, training, altitude, density, yield, exposure, vine age), harvest timing, production, tasting notes, food pairings, aging potential, ABV, winemaker, serving temp, first vintage
 - Script: `scripts/fetch_empson.mjs` → `data/imports/empson_catalog.json`
 - URL: https://www.empson.com/wines/
 
-**European Cellars (Eric Solomon) — FETCHING**
+**European Cellars (Eric Solomon) — FETCHED** ✅
 - 443 wines from WordPress sitemap. 10-second crawl delay respected.
+- Coverage: 100% grape/soil/farming/vinification/aging, 99% altitude/vine_age, 89% producer, 80% scores, 88% certifications
 - Fields: Producer (h3.producer-header), wine name (h1), grape, vine age, farming, soil, altitude, vinification, aging, wine type (from CSS class), certifications (organic, biodynamic, vegan), vintage-level scores
 - Script: `scripts/fetch_european_cellars.mjs` → `data/imports/european_cellars_catalog.json`
 - URL: https://europeancellars.com/
@@ -761,11 +764,11 @@ Since Dec 2023, all EU wines must have digital labels (QR codes) with ingredient
 | B | **Kansas + Pennsylvania** | 36K | COLA IDs + UPCs |
 | C | **COLA Cloud API** | ~1.2M COLAs | Barcodes + appellation + grapes at scale |
 | D | **Importer catalogs** | ~12K | Deep winemaking metadata |
-| | — Skurnik | 5K | German/Austrian |
-| | — Polaner ⭐ | 2-3K | Best new discovery |
-| | — Winebow | 1K | Chemistry data |
-| | — European Cellars | 700 | Spain/Rhône |
-| | — Empson ⭐ | 300-500 | Italian tech sheets |
+| | — Skurnik | 5,394 ✅ | German/Austrian |
+| | — Polaner ⭐ | 1,680 ✅ | Best new discovery |
+| | — Winebow | 536 ✅ | Chemistry data |
+| | — European Cellars | 443 ✅ | Spanish/French terroir |
+| | — Empson ⭐ | 279 ✅ | Italian tech sheets |
 | | — Kysela | 1K | Grape percentages |
 | | — Louis/Dressner | 1.2K | Natural wine |
 | E | **Wine.com sitemaps** | 262K URLs | Identity confirmation |
