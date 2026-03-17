@@ -511,3 +511,11 @@ What TTB doesn't give (COLA Cloud adds): ABV, barcodes/GTIN, structured appellat
 Total cost: ~$10 (Haiku parsing). Time: ~1 week for complete 1.2M+ wine COLA corpus. COLA Cloud email still worth sending for barcode data and as a backup — but it's no longer the critical path for F-tier population.
 
 FOIA request to TTB also outstanding as a parallel path — may deliver the same data in a flat file.
+
+### 2026-03-17: Per-Source Staging Tables for Multi-Source Merge
+Architecture decision: each external data source gets its own staging table (`source_*`) rather than importing directly into canonical tables. Raw data preserved as-is for re-running merge logic without re-fetching. Merge tracking columns on each staging table (canonical_wine_id, canonical_producer_id, processed_at) enable provenance tracking.
+
+Tables created: `source_ttb_colas`, `source_kansas_brands`, `source_lwin`. Import priority: TTB COLA (broadest F-tier) → Kansas (COLA ID join for ABV/appellation) → LWIN (name matching for fine wine identity) → importer catalogs (rich enrichment data).
+
+### 2026-03-17: IGT/IGP/PGI Appellations Added to Appellations Table
+457 new PGI-tier appellations imported from eAmbrosia EU register, plus 5 base-tier designations (Vin de France, Vino d'Italia, Vino de España, Vinho de Portugal, Deutscher Wein). These go in the same `appellations` table with appropriate `designation_type` values (IGT, IGP, VdlT, VR, Landwein, PGI, VdF, VdI, VdE, VdP, VdT). No separate table needed — containment handled via `appellation_containment`. Naming convention: use the zone name without suffix (e.g., "Toscano" not "Toscano IGT"), add suffixed forms as aliases. Kansas appellation resolution improved from 77.1% → 81.9%.

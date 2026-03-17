@@ -63,7 +63,7 @@ If the user is going a long stretch without wrapping up, if decisions are being 
 ### Architecture
 The database has two layers:
 - **Canonical tables** (`producers`, `wines`, `wine_vintages`, etc.) — curated, high-quality data. 78 canonical tables. Trial imports + KL bulk + retailer imports complete. Quality bar is high.
-- **source_* staging tables** — per-source raw data for multi-source merge. `source_ttb_colas` (TTB COLA registry, populating), `source_kansas_brands` (31,216 wine records loaded), `source_lwin` (ready for LWIN import). Each has merge tracking columns (canonical_wine_id, canonical_producer_id, processed_at).
+- **source_* staging tables** — per-source raw data for multi-source merge. `source_ttb_colas` (TTB COLA registry, Phase 1 running), `source_kansas_brands` (31,216 wine records loaded), `source_lwin` (184,497 records loaded). Each has merge tracking columns (canonical_wine_id, canonical_producer_id, processed_at).
 - **xwines_* tables** — bulk X-Wines dataset dump (~530K wines, ~2.2M vintages, ~32K producers). Kept as reference but not actively maintained. Data quality is lower.
 
 ### Reference Tables (complete)
