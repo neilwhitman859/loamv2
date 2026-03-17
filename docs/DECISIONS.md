@@ -474,3 +474,40 @@ All wine data source research lives in `docs/SOURCES.md` — including sources w
 
 ### 2026-03-16: Import priority order established
 9-step import priority: (1) LWIN identity backbone, (2) Kansas+PA state databases, (3) COLA Cloud API, (4) Importer catalogs (Skurnik, Winebow, European Cellars, Kysela, Louis/Dressner), (5) Wine.com sitemaps, (6) Total Wine sitemaps, (7) PRO Platform 12 states, (8) Open Food Facts barcodes, (9) FirstLeaf value segment. Target: ~200-250K unique wines covering $10-150 US market.
+
+### 2026-03-17: COLA Cloud API — Role Assessment
+Signed up for free tier (500 req/mo). Tested with 22 requests against known wines (Ridge, López de Heredia, Tignanello, Cristal, Yquem). Key findings:
+- Search endpoint returns basic fields only (brand, product, ABV, origin, LLM category). Wine-specific fields (grapes, appellation, vintage, barcode, tasting notes) are ONLY on the detail endpoint (1 request per COLA).
+- Detail data is genuinely rich when present: grapes, appellations, barcodes (UPC-A domestic, EAN-13 imports), LLM-generated descriptions and tasting flavors.
+- Free tier cap: search pagination shows max 10,000 results regardless of actual count.
+- Grape coverage imperfect: truncated names ("cabernet" not "Cabernet Sauvignon"), French appellations often missing grapes (not on label).
+- 1.2M wine COLAs but bulk pull requires 1 detail request per COLA — infeasible even on Pro tier ($199/mo, 100K req/mo = 12 months).
+- Decision: Use COLA Cloud as **barcode + identity enrichment service**, not bulk catalog source. Best fit: on-demand lookup in Grade B enrichment pipeline (user searches → check COLA Cloud if wine below Grade B). Batch-enrich existing catalog when ready ($39/mo Starter). Snowflake data share for bulk access if economics justify later.
+- API key stored in .env (COLA_CLOUD_API_KEY). JS SDK installed (npm colacloud).
+
+### 2026-03-17: Identity-First Strategy — Accuracy Over Quick MVP
+User explicitly chose identity-first approach over depth-first MVP. Key principles:
+- Prioritize accuracy and provenance over shipping fast
+- Build the identity backbone (LWIN 187K wines) before enriching
+- On-demand enrichment (Sonnet for Grade B) triggered by user searches, not pre-computed
+- COLA Cloud as lookup service, not bulk import source
+- State DBs (Kansas, Illinois) for COLA ID bridging to federal data
+- Importer catalogs (10K wines) merge against LWIN backbone, not imported standalone
+- Frontend comes after the database is clean, accurate, and well-attributed
+- Sequencing: LWIN import → merge infrastructure → state DB COLA bridge → importer catalog merge → enrichment pipeline → frontend
+- Rationale: "I just want to be slow and methodical with it and prioritize accuracy"
+
+### 2026-03-17: TTB COLA Direct Scraping Over COLA Cloud for F-Tier
+Discovered that TTB's public COLA registry (ttbonline.gov) has structured grape varietal data natively — it's a field on the COLA application, not AI-extracted by COLA Cloud. This eliminates the primary value-add justification for paying COLA Cloud for bulk data.
+
+Strategy: scrape TTB directly in two phases:
+- **Phase 1 (CSV harvest):** Search by date range + wine class types (80-89), export CSVs of TTB IDs. 4-day windows to stay under 1,000-row cap. ~2,700 searches. User running locally, ~16 hours conservative rate limiting. 1955-present.
+- **Phase 2 (detail scrape):** Fetch each detail page by TTB ID URL pattern (`viewColaDetails.do?ttbid={ID}`). Parse HTML for grape varietals, applicant name/address, origin. Prioritize by filtering Phase 1 output (skip expired/surrendered, deduplicate label refreshes).
+- **Phase 3 (AI parse):** Haiku extracts vintage year, wine name, appellation from fanciful name text. ~$5-10 for full corpus.
+
+What TTB gives: TTB ID, brand name, fanciful name, grape varietals, origin (state/country), class/type, permit number, applicant name + full address, approval date, status.
+What TTB doesn't give (COLA Cloud adds): ABV, barcodes/GTIN, structured appellation mapping, tasting notes.
+
+Total cost: ~$10 (Haiku parsing). Time: ~1 week for complete 1.2M+ wine COLA corpus. COLA Cloud email still worth sending for barcode data and as a backup — but it's no longer the critical path for F-tier population.
+
+FOIA request to TTB also outstanding as a parallel path — may deliver the same data in a flat file.

@@ -1,5 +1,5 @@
 {
-  "source": "producer-website",
+  "source": "producer_website",
   "producer": {
     "name": "Penfolds",
     "slug": "penfolds",
@@ -8,20 +8,28 @@
     "website": "https://www.penfolds.com",
     "producer_type": "estate",
     "founded_year": 1844,
-    "philosophy": "Australia's most iconic winery. Multi-region blending is central to the style — wines are classified by style and quality tier rather than single-vineyard origin. Grange is the flagship, first made in 1951 by Max Schubert against management orders. Bin numbering system traces to original cellar storage locations.",
+    "philosophy": "Australia's most iconic and collected winery, founded by Dr. Christopher Rawson Penfold in 1844 at Magill Estate, Adelaide. The house style is built on multi-region blending — sourcing from Barossa Valley, McLaren Vale, Clare Valley, Coonawarra, and Adelaide Hills to achieve consistency and complexity across vintages. Penfolds pioneered the use of American oak hogsheads for Shiraz (Grange) and has maintained a bin numbering system since the 1960s to classify wines by style and quality tier. The Rewards of Patience tastings, held every five years, re-evaluate back vintages — a unique commitment to long-term quality tracking. Max Schubert's experimental Grange 1951 was hidden from management for years before becoming Australia's greatest wine.",
     "metadata": {
-      "owner": "Treasury Wine Estates (ASX listed)",
-      "founder": "Dr. Christopher Rawson Penfold",
-      "key_vineyards": ["Magill Estate (Adelaide)", "Kalimna (Barossa)", "Block 42 (Barossa)"],
-      "langtons_classification": "Multiple wines classified Exceptional and Outstanding"
+      "full_name": "Penfolds Wines Pty Ltd",
+      "address": "30 Tanunda Road, Nuriootpa, SA 5355, Australia",
+      "owners": "Treasury Wine Estates",
+      "founder": "Dr. Christopher Rawson Penfold & Mary Penfold",
+      "total_production_cases": 300000,
+      "key_vineyards": ["Magill Estate (Adelaide)", "Kalimna (Barossa Valley)", "Block 42 (Barossa Valley)"],
+      "winemaking": "Multi-district blending across South Australia is the defining philosophy. American oak hogsheads (300L) are central to the Grange and Bin programs. French oak barriques used for Yattarna and RWT. Extended maceration for reds. Open and headed-down fermentation. The bin numbering system tracks wine lineage and style across decades.",
+      "notable_recognition": "Grange is the only wine outside France to be listed as a Heritage Icon by the South Australian National Trust. Max Schubert awarded CBE for services to the wine industry. Multiple wines classified Exceptional by Langton's Classification of Australian Wine.",
+      "historical_note": "Dr. Penfold originally planted vines to produce fortified wines for medicinal purposes. His wife Mary ran the winery after his death in 1870 and expanded production. Max Schubert created Grange in 1951 after visiting Bordeaux, but management ordered him to stop. He secretly continued making Grange, and the 1955 vintage won a gold medal that vindicated the project. Grange has been produced continuously since 1952 (except 1957 and 1964, when no wine met the standard)."
     },
     "winemakers": [
       {
         "name": "Peter Gago",
-        "slug": "peter-gago",
         "role": "head",
-        "title": "Chief Winemaker",
-        "start_year": 2002
+        "country": "Australia",
+        "start_year": 2002,
+        "metadata": {
+          "title": "Chief Winemaker",
+          "notes": "Joined Penfolds in 1989 as a red winemaker. Appointed Chief Winemaker in 2002, succeeding John Duval. Trained as a secondary school teacher before pivoting to oenology at Roseworthy Agricultural College. Responsible for final blending decisions on Grange and all Penfolds wines. Known for meticulous blending trials and stewardship of the Rewards of Patience program."
+        }
       }
     ]
   },
@@ -31,70 +39,21 @@
       "color": "red",
       "wine_type": "table",
       "effervescence": "still",
-      "appellation": null,
-      "style": "Multi-region Shiraz (Icon)",
+      "region": "South Australia",
+      "style": "Multi-district Shiraz (Icon)",
       "first_vintage_year": 1951,
-      "vinification_notes": "Multi-region blend predominantly from Barossa Valley and McLaren Vale. Fermented in headed-down open and closed stainless steel fermenters. Matured 18 months in new American oak hogsheads (300L). Previously labeled 'Grange Hermitage' until 1990. The most collected and traded Australian wine.",
+      "vinification_notes": "Multi-district blend sourcing from Barossa Valley, McLaren Vale, Clare Valley, and Magill Estate. Fermented in stainless steel and headed-down open fermenters. 18 months maturation in 100% new American oak hogsheads (300L). The American oak regime is integral — Grange is defined by its oak character as much as its fruit. Component wines are blended after oak maturation. Small percentages of Cabernet Sauvignon are included in most vintages. Previously labeled 'Grange Hermitage' until 1990.",
+      "soil_description": "Varies by source district — Barossa Valley red-brown earth over limestone; McLaren Vale clay loam over limestone and ironstone; Magill Estate alluvial loam over quartzite",
+      "classification": { "system": "Langton's Classification of Australian Wine", "level": "Exceptional" },
       "grapes": [
-        { "grape": "Syrah", "percentage": 96 },
+        { "grape": "Shiraz", "percentage": 96 },
         { "grape": "Cabernet Sauvignon", "percentage": 4 }
       ],
-      "classification": {
-        "system": "Langton's Classification",
-        "level": "Exceptional"
-      },
       "vintages": [
-        {
-          "year": 2019,
-          "abv": 14.5,
-          "new_oak_pct": 100,
-          "duration_in_oak_months": 18,
-          "scores": [
-            { "publication": "James Suckling", "score": 99, "score_scale": "100" },
-            { "publication": "Wine Spectator", "score": 97, "score_scale": "100" },
-            { "publication": "Wine Advocate", "score": 99, "score_scale": "100" }
-          ]
-        },
-        {
-          "year": 2018,
-          "abv": 14.5,
-          "new_oak_pct": 100,
-          "duration_in_oak_months": 18,
-          "scores": [
-            { "publication": "James Suckling", "score": 100, "score_scale": "100" },
-            { "publication": "Wine Advocate", "score": 100, "score_scale": "100" },
-            { "publication": "Wine Spectator", "score": 97, "score_scale": "100" }
-          ]
-        },
-        {
-          "year": 2017,
-          "abv": 14.5,
-          "new_oak_pct": 100,
-          "duration_in_oak_months": 18,
-          "scores": [
-            { "publication": "James Suckling", "score": 99, "score_scale": "100" },
-            { "publication": "Wine Advocate", "score": 98, "score_scale": "100" }
-          ]
-        },
-        {
-          "year": 2016,
-          "abv": 14.5,
-          "new_oak_pct": 100,
-          "duration_in_oak_months": 18,
-          "scores": [
-            { "publication": "James Suckling", "score": 100, "score_scale": "100" },
-            { "publication": "Wine Advocate", "score": 99, "score_scale": "100" }
-          ]
-        },
-        {
-          "year": 2015,
-          "abv": 14.5,
-          "new_oak_pct": 100,
-          "duration_in_oak_months": 18,
-          "scores": [
-            { "publication": "Wine Spectator", "score": 97, "score_scale": "100" }
-          ]
-        }
+        { "year": 2019, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 99, "score_scale": "100" }, { "publication": "James Suckling", "score": 99, "score_scale": "100" }] },
+        { "year": 2018, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 100, "score_scale": "100" }, { "publication": "James Suckling", "score": 100, "score_scale": "100" }] },
+        { "year": 2017, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 98, "score_scale": "100" }, { "publication": "James Suckling", "score": 99, "score_scale": "100" }] },
+        { "year": 2016, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 99, "score_scale": "100" }, { "publication": "James Suckling", "score": 100, "score_scale": "100" }] }
       ]
     },
     {
@@ -102,22 +61,41 @@
       "color": "red",
       "wine_type": "table",
       "effervescence": "still",
-      "appellation": null,
-      "style": "Multi-region Cabernet Sauvignon",
+      "region": "South Australia",
+      "style": "Multi-district Cabernet Sauvignon",
       "first_vintage_year": 1964,
-      "vinification_notes": "The Cabernet counterpart to Grange. Matured in new American oak hogsheads. Multi-region blend from Coonawarra, Barossa, and other South Australian regions.",
+      "vinification_notes": "The Cabernet counterpart to Grange. Multi-district blend sourced primarily from Coonawarra, Barossa Valley, and Padthaway. Fermented in stainless steel. 18 months maturation in new American oak hogsheads (300L). Not produced in vintages where fruit quality is insufficient — skipped 1971-1975, 1981-1982, 1995-1996, 2003, and 2011.",
+      "soil_description": "Coonawarra terra rossa over limestone; Barossa Valley red-brown earth; Padthaway loam over limestone",
+      "classification": { "system": "Langton's Classification of Australian Wine", "level": "Outstanding" },
       "grapes": [
         { "grape": "Cabernet Sauvignon", "percentage": 100 }
       ],
-      "classification": {
-        "system": "Langton's Classification",
-        "level": "Exceptional"
-      },
       "vintages": [
-        { "year": 2019, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
-        { "year": 2018, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 98, "score_scale": "100" }, { "publication": "Wine Advocate", "score": 97, "score_scale": "100" }] },
-        { "year": 2017, "abv": 14.5 },
-        { "year": 2016, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 97, "score_scale": "100" }] }
+        { "year": 2019, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
+        { "year": 2018, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 98, "score_scale": "100" }] },
+        { "year": 2017, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2016, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "RWT Bin 798 Barossa Valley Shiraz",
+      "color": "red",
+      "wine_type": "table",
+      "effervescence": "still",
+      "region": "Barossa Valley",
+      "style": "Single-region Barossa Valley Shiraz",
+      "first_vintage_year": 1997,
+      "vinification_notes": "RWT stands for 'Red Winemaking Trial' — originally an experimental counterpoint to Grange using French oak instead of American. Sourced exclusively from Barossa Valley vineyards. Fermented in stainless steel and open fermenters. 15-17 months maturation in French oak hogsheads (300L), approximately 70% new. The wine that proved Barossa Shiraz works brilliantly with French oak — more restrained, structural, and savory than the American oak-driven Grange.",
+      "soil_description": "Barossa Valley red-brown earth and sandy loam over clay, some terra rossa sections",
+      "classification": { "system": "Langton's Classification of Australian Wine", "level": "Outstanding" },
+      "grapes": [
+        { "grape": "Shiraz", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2021, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
+        { "year": 2020, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2019, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
+        { "year": 2018, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 98, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }] }
       ]
     },
     {
@@ -125,24 +103,20 @@
       "color": "red",
       "wine_type": "table",
       "effervescence": "still",
-      "appellation": null,
-      "style": "Multi-region Shiraz (no new oak)",
+      "region": "South Australia",
+      "style": "Multi-district Shiraz (no new oak)",
       "first_vintage_year": 1957,
-      "vinification_notes": "The anti-Grange — same multi-region Shiraz philosophy but aged in old, large oak vats rather than new American hogsheads. No new oak influence. More terroir-driven, less oaky character.",
+      "vinification_notes": "The philosophical opposite of Grange — multi-district Shiraz matured for 12 months in old, large 1,460-litre oak vats with no new oak at all. This allows pure fruit and terroir expression without oak influence. Originally created by John Davoren in the 1950s. The wine is deliberately reductive in youth, evolving complex secondary and tertiary characters with extended cellaring. Small percentages of Cabernet Sauvignon may be included.",
+      "classification": { "system": "Langton's Classification of Australian Wine", "level": "Outstanding" },
       "grapes": [
-        { "grape": "Syrah", "percentage": 93 },
-        { "grape": "Cabernet Sauvignon", "percentage": 7 }
+        { "grape": "Shiraz", "percentage": 90 },
+        { "grape": "Cabernet Sauvignon", "percentage": 10 }
       ],
-      "classification": {
-        "system": "Langton's Classification",
-        "level": "Exceptional"
-      },
       "vintages": [
-        { "year": 2019, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
-        { "year": 2018, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 97, "score_scale": "100" }, { "publication": "Wine Advocate", "score": 96, "score_scale": "100" }] },
-        { "year": 2017, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
-        { "year": 2016, "abv": 14.5 },
-        { "year": 2015, "abv": 14.5 }
+        { "year": 2021, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
+        { "year": 2020, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2019, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2018, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }] }
       ]
     },
     {
@@ -150,23 +124,20 @@
       "color": "red",
       "wine_type": "table",
       "effervescence": "still",
-      "appellation": null,
-      "style": "Multi-region Cabernet Shiraz blend",
+      "region": "South Australia",
+      "style": "Multi-district Cabernet Shiraz blend",
       "first_vintage_year": 1960,
-      "vinification_notes": "Known as 'Baby Grange' or 'Poor Man's Grange.' Matured in the same barrels used for the previous year's Grange. South Australian multi-region blend.",
+      "vinification_notes": "Known as 'Baby Grange' — matured in the same American oak hogsheads used for the previous vintage of Grange (one-year-old seasoned oak). Multi-district blend from across South Australia. Fermented in stainless steel. 12 months in American oak hogsheads. The bridge between the Bin range and the luxury wines — accessible young but rewards cellaring. Created by Max Schubert in 1960.",
+      "classification": { "system": "Langton's Classification of Australian Wine", "level": "Excellent" },
       "grapes": [
         { "grape": "Cabernet Sauvignon", "percentage": 53 },
-        { "grape": "Syrah", "percentage": 47 }
+        { "grape": "Shiraz", "percentage": 47 }
       ],
-      "classification": {
-        "system": "Langton's Classification",
-        "level": "Outstanding"
-      },
       "vintages": [
-        { "year": 2020, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
-        { "year": 2019, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 94, "score_scale": "100" }] },
-        { "year": 2018, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 95, "score_scale": "100" }, { "publication": "Wine Advocate", "score": 94, "score_scale": "100" }] },
-        { "year": 2017, "abv": 14.5 }
+        { "year": 2021, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }, { "publication": "James Suckling", "score": 94, "score_scale": "100" }] },
+        { "year": 2020, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }, { "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
+        { "year": 2019, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 94, "score_scale": "100" }, { "publication": "James Suckling", "score": 94, "score_scale": "100" }] },
+        { "year": 2018, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 95, "score_scale": "100" }, { "publication": "James Suckling", "score": 95, "score_scale": "100" }] }
       ]
     },
     {
@@ -174,16 +145,20 @@
       "color": "red",
       "wine_type": "table",
       "effervescence": "still",
-      "appellation": null,
-      "style": "Multi-region Shiraz (Bin range)",
+      "region": "South Australia",
+      "style": "Multi-district Shiraz",
       "first_vintage_year": 1959,
+      "vinification_notes": "Named after the Kalimna vineyard in the Barossa Valley, though now a multi-district blend. Matured for 12 months in seasoned American oak hogsheads. Warm, generous, and approachable Shiraz — the workhorse red of the Penfolds range. Fermented in stainless steel with pump-overs. The original Kalimna vineyard, purchased in 1945, supplied fruit for early Grange vintages.",
+      "soil_description": "Barossa Valley red-brown earth and sandy loam",
+      "classification": { "system": "Langton's Classification of Australian Wine", "level": "Excellent" },
       "grapes": [
-        { "grape": "Syrah", "percentage": 100 }
+        { "grape": "Shiraz", "percentage": 100 }
       ],
       "vintages": [
-        { "year": 2020, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 93, "score_scale": "100" }] },
-        { "year": 2019, "abv": 14.5 },
-        { "year": 2018, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 93, "score_scale": "100" }] }
+        { "year": 2021, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 91, "score_scale": "100" }, { "publication": "James Suckling", "score": 92, "score_scale": "100" }] },
+        { "year": 2020, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 92, "score_scale": "100" }, { "publication": "James Suckling", "score": 93, "score_scale": "100" }] },
+        { "year": 2019, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 92, "score_scale": "100" }, { "publication": "James Suckling", "score": 93, "score_scale": "100" }] },
+        { "year": 2018, "abv": 14.5, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }, { "publication": "James Suckling", "score": 93, "score_scale": "100" }] }
       ]
     },
     {
@@ -192,29 +167,18 @@
       "wine_type": "table",
       "effervescence": "still",
       "appellation": "Coonawarra",
-      "style": "Single region Shiraz",
+      "style": "Single-region Coonawarra Shiraz",
       "first_vintage_year": 1962,
+      "vinification_notes": "Single-region Shiraz from Coonawarra in South Australia's Limestone Coast. Matured for 12 months in French oak hogsheads, approximately 25% new. A cooler-climate, more elegant style of Shiraz compared to the Barossa-driven Bin 28. Fermented in stainless steel. French oak (rather than American) reflects the more restrained Coonawarra fruit profile.",
+      "soil_description": "Coonawarra terra rossa — thin layer of red loam over ancient limestone, excellent drainage and heat retention",
       "grapes": [
-        { "grape": "Syrah", "percentage": 100 }
+        { "grape": "Shiraz", "percentage": 100 }
       ],
       "vintages": [
-        { "year": 2019, "abv": 14, "scores": [{ "publication": "James Suckling", "score": 93, "score_scale": "100" }] },
-        { "year": 2018, "abv": 14 }
-      ]
-    },
-    {
-      "name": "Bin 150 Marananga Shiraz",
-      "color": "red",
-      "wine_type": "table",
-      "effervescence": "still",
-      "appellation": "Barossa Valley",
-      "style": "Single region Shiraz",
-      "grapes": [
-        { "grape": "Syrah", "percentage": 100 }
-      ],
-      "vintages": [
-        { "year": 2019, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
-        { "year": 2018, "abv": 14.5 }
+        { "year": 2021, "abv": 14, "scores": [{ "publication": "Wine Advocate", "score": 91, "score_scale": "100" }, { "publication": "James Suckling", "score": 92, "score_scale": "100" }] },
+        { "year": 2020, "abv": 14, "scores": [{ "publication": "Wine Advocate", "score": 92, "score_scale": "100" }, { "publication": "James Suckling", "score": 91, "score_scale": "100" }] },
+        { "year": 2019, "abv": 14, "scores": [{ "publication": "Wine Advocate", "score": 92, "score_scale": "100" }, { "publication": "James Suckling", "score": 93, "score_scale": "100" }] },
+        { "year": 2018, "abv": 14, "scores": [{ "publication": "Wine Advocate", "score": 93, "score_scale": "100" }, { "publication": "James Suckling", "score": 92, "score_scale": "100" }] }
       ]
     },
     {
@@ -222,29 +186,18 @@
       "color": "white",
       "wine_type": "table",
       "effervescence": "still",
-      "appellation": "Tumbarumba",
-      "style": "Cool-climate Chardonnay",
+      "region": "South Australia",
+      "style": "Multi-district Chardonnay",
+      "first_vintage_year": 2005,
+      "vinification_notes": "Multi-district blend sourced from Tumbarumba (NSW), Adelaide Hills, and Henty (Victoria). Whole-bunch pressed. Fermented in French oak barriques, approximately 30% new. 8 months on lees with regular stirring. Partial malolactic fermentation. A relatively recent addition to the Penfolds range, designed as a cool-climate, restrained Chardonnay — the white counterpart to the Bin reds.",
       "grapes": [
         { "grape": "Chardonnay", "percentage": 100 }
       ],
       "vintages": [
-        { "year": 2020, "abv": 13 },
-        { "year": 2019, "abv": 13, "scores": [{ "publication": "James Suckling", "score": 94, "score_scale": "100" }] }
-      ]
-    },
-    {
-      "name": "Bin 51 Eden Valley Riesling",
-      "color": "white",
-      "wine_type": "table",
-      "effervescence": "still",
-      "appellation": "Eden Valley",
-      "style": "Dry Riesling",
-      "grapes": [
-        { "grape": "Riesling", "percentage": 100 }
-      ],
-      "vintages": [
-        { "year": 2022, "abv": 12 },
-        { "year": 2021, "abv": 12 }
+        { "year": 2022, "abv": 13, "scores": [{ "publication": "James Suckling", "score": 93, "score_scale": "100" }] },
+        { "year": 2021, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 91, "score_scale": "100" }, { "publication": "James Suckling", "score": 92, "score_scale": "100" }] },
+        { "year": 2020, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 92, "score_scale": "100" }, { "publication": "James Suckling", "score": 93, "score_scale": "100" }] },
+        { "year": 2019, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 91, "score_scale": "100" }, { "publication": "James Suckling", "score": 94, "score_scale": "100" }] }
       ]
     },
     {
@@ -252,41 +205,59 @@
       "color": "white",
       "wine_type": "table",
       "effervescence": "still",
-      "appellation": "Tasmania",
-      "style": "Icon Chardonnay",
+      "region": "South Australia",
+      "style": "Multi-district premium Chardonnay (Icon)",
       "first_vintage_year": 1998,
-      "vinification_notes": "Penfolds' prestige white. Multi-region but predominantly Tasmanian. Barrel fermented in French oak, partial malolactic. The white wine counterpart to Grange in ambition.",
+      "vinification_notes": "Penfolds' flagship white — the Chardonnay equivalent of Grange in ambition. Name means 'gradually' in the Peramangk Aboriginal language, reflecting years of trial vinifications before the first release. Multi-district blend from Tasmania, Adelaide Hills, and Tumbarumba. Whole-bunch pressed. Fermented in French oak barriques, approximately 40% new. 8-9 months on lees with regular stirring. Full malolactic fermentation. The culmination of Penfolds' 'white wine trial' program initiated in the 1990s.",
+      "classification": { "system": "Langton's Classification of Australian Wine", "level": "Outstanding" },
       "grapes": [
         { "grape": "Chardonnay", "percentage": 100 }
       ],
-      "classification": {
-        "system": "Langton's Classification",
-        "level": "Exceptional"
-      },
       "vintages": [
-        { "year": 2020, "abv": 13, "scores": [{ "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
-        { "year": 2019, "abv": 13, "scores": [{ "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
-        { "year": 2018, "abv": 13, "scores": [{ "publication": "James Suckling", "score": 97, "score_scale": "100" }, { "publication": "Wine Advocate", "score": 97, "score_scale": "100" }] }
+        { "year": 2021, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
+        { "year": 2020, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }] },
+        { "year": 2019, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 96, "score_scale": "100" }, { "publication": "James Suckling", "score": 96, "score_scale": "100" }] },
+        { "year": 2018, "abv": 13, "scores": [{ "publication": "Wine Advocate", "score": 97, "score_scale": "100" }, { "publication": "James Suckling", "score": 97, "score_scale": "100" }] }
       ]
     },
     {
-      "name": "Magill Estate Shiraz",
+      "name": "Bin 51 Riesling",
+      "color": "white",
+      "wine_type": "table",
+      "effervescence": "still",
+      "appellation": "Eden Valley",
+      "style": "Single-region Eden Valley Riesling",
+      "first_vintage_year": 2005,
+      "vinification_notes": "Single-region Riesling from Eden Valley in the Barossa zone. Cold-fermented in stainless steel to preserve varietal purity. No oak, no malolactic. Bottled early to retain freshness and acidity. Classic Eden Valley style — lime, floral, and mineral with a dry, crisp finish. The only aromatic white in the Penfolds range.",
+      "soil_description": "Eden Valley sandy loam and quartz gravel over ancient schist and gneiss",
+      "grapes": [
+        { "grape": "Riesling", "percentage": 100 }
+      ],
+      "vintages": [
+        { "year": 2022, "abv": 12, "scores": [{ "publication": "James Suckling", "score": 92, "score_scale": "100" }] },
+        { "year": 2021, "abv": 12, "scores": [{ "publication": "Wine Advocate", "score": 90, "score_scale": "100" }, { "publication": "James Suckling", "score": 91, "score_scale": "100" }] },
+        { "year": 2020, "abv": 12, "scores": [{ "publication": "James Suckling", "score": 92, "score_scale": "100" }] },
+        { "year": 2019, "abv": 12, "scores": [{ "publication": "Wine Advocate", "score": 91, "score_scale": "100" }] }
+      ]
+    },
+    {
+      "name": "Koonunga Hill Shiraz Cabernet",
       "color": "red",
       "wine_type": "table",
       "effervescence": "still",
-      "appellation": "Adelaide",
-      "style": "Single vineyard Shiraz (urban winery)",
-      "vinification_notes": "From the original Penfolds vineyard in the Adelaide suburbs, planted 1844. One of the few urban vineyards in the world. Only 5.2 hectares. Single vineyard, single region — unusual for Penfolds.",
+      "region": "South Australia",
+      "style": "Multi-district Shiraz Cabernet blend",
+      "first_vintage_year": 1976,
+      "vinification_notes": "The entry point to Penfolds — named after a vineyard near the original Magill Estate. Multi-district blend from across South Australia. Fermented in stainless steel. 10-12 months maturation in seasoned American and French oak. Designed to be approachable and fruit-forward in youth. Introduced in 1976 to provide an affordable everyday red that still carries the Penfolds hallmark of quality and consistency.",
       "grapes": [
-        { "grape": "Syrah", "percentage": 100 }
+        { "grape": "Shiraz", "percentage": 65 },
+        { "grape": "Cabernet Sauvignon", "percentage": 35 }
       ],
-      "classification": {
-        "system": "Langton's Classification",
-        "level": "Outstanding"
-      },
       "vintages": [
-        { "year": 2019, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 95, "score_scale": "100" }] },
-        { "year": 2018, "abv": 14.5, "scores": [{ "publication": "James Suckling", "score": 96, "score_scale": "100" }] }
+        { "year": 2022, "abv": 14, "scores": [{ "publication": "James Suckling", "score": 90, "score_scale": "100" }] },
+        { "year": 2021, "abv": 14, "scores": [{ "publication": "Wine Advocate", "score": 88, "score_scale": "100" }, { "publication": "James Suckling", "score": 89, "score_scale": "100" }] },
+        { "year": 2020, "abv": 14, "scores": [{ "publication": "James Suckling", "score": 90, "score_scale": "100" }] },
+        { "year": 2019, "abv": 14, "scores": [{ "publication": "Wine Advocate", "score": 89, "score_scale": "100" }] }
       ]
     }
   ]

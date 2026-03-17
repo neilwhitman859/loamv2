@@ -261,10 +261,11 @@ All 5 pending migrations executed successfully:
 
 **Phase 1: Foundation** — Schema hardening + reference data completion + trial producer imports. See `docs/ROADMAP.md` for full phased plan.
 
-### Strategic Context (updated 2026-03-16)
-- **Multi-source data strategy:** LWIN (identity spine) → Government registries (Kansas, PA, COLA) → Importer catalogs (Skurnik, Winebow, etc.) → Retailer sitemaps (Wine.com, Total Wine). See `docs/SOURCES.md`.
+### Strategic Context (updated 2026-03-17)
+- **Multi-source data strategy:** TTB COLA direct (F-tier backbone) → LWIN (identity matching layer) → State DBs (COLA ID + UPC bridge) → Importer catalogs (enrichment) → COLA Cloud (barcode enrichment) → Retailer sitemaps. See `docs/SOURCES.md`.
 - **Letter-grade enrichment:** F (identity) → D (has scores/prices) → C (batch Haiku) → B (on-demand Sonnet) → A (curated). See `docs/ENRICHMENT.md`.
-- **LWIN-first spine:** LWIN establishes the dedup backbone. COLA enriches with US label data. State DBs bridge with COLA IDs and UPCs.
+- **TTB COLA as F-tier backbone:** TTB has grape varietals as a native structured field. ~1.2M wine COLAs, free, public domain. Phase 1 (CSV harvest) running now. LWIN matches against this for dedup and fine wine coverage. COLA Cloud for barcodes only.
+- **Identity-first, accuracy-first:** User explicitly chose slow/methodical over quick MVP. On-demand enrichment for user searches. Barcodes considered from the start to avoid re-matching later.
 - **Vertical slice:** California + Burgundy as first enrichment targets.
 - **User lookup triggers B enrichment:** On-demand Sonnet for every search landing on a wine below Grade B. C is batch pre-warming. See ENRICHMENT.md.
 
@@ -298,20 +299,27 @@ All 5 pending migrations executed successfully:
 13. ~~Data acquisition research~~ ✓ — comprehensive survey of all sources. See `docs/SOURCES.md`.
 14. ~~Enrichment architecture finalized~~ ✓ — letter grades (F/D/C/B/A), Sonnet for B, Haiku for C. See `docs/ENRICHMENT.md`.
 15. ~~LWIN import script~~ ✓ — `scripts/import_lwin.mjs` with `--analyze`/`--dry-run`/`--import` modes. Analysis: 189K wines, 100% country, 94% region, 62% appellation resolution. Import not yet run (needs user approval for 189K wines).
-16. ~~Importer fetchers built~~ ✓ (2026-03-17) — 5 importer catalog fetchers:
-    - **Polaner**: ✅ COMPLETE — 1,680 wines via WP REST API. Country 99.6%, region 99.6%, appellation 98.2%.
-    - **Skurnik**: ⏳ Fetching — 7,574 SKUs via sitemap scraping. ~50% are wines.
-    - **Winebow**: ⏳ Fetching — 532 wines from 153 brands. Best chemistry data (ABV, pH, acidity, RS).
-    - **Empson**: ⏳ Fetching — 279 wines. Richest per-wine data (27+ fields).
-    - **European Cellars**: ⏳ Fetching — 443 wines. 10s crawl delay respected.
+16. ~~Importer fetchers built and run~~ ✓ (2026-03-17) — 6 importer catalog fetchers, all complete:
+    - **Polaner**: ✅ 1,680 wines via WP REST API. Country 99.6%, region 99.6%, appellation 98.2%.
+    - **Skurnik**: ✅ 5,394 wines via FacetWP REST API (rebuilt from sitemap scraping). Grape 100%, appellation 97%.
+    - **Winebow**: ✅ 536 wines from 153 brands. Best chemistry data — ABV 98%, pH 86%, acidity 93%, RS 89%.
+    - **Empson**: ✅ 279 wines. Richest per-wine data (27+ fields) — soil 92%, altitude 87%, winemaker 94%.
+    - **European Cellars**: ✅ 443 wines. 100% grape/soil/farming/vinification/aging, 80% scores.
+    - **FirstLeaf**: ✅ 1,770 products via Shopify JSON API.
+    - Total: ~10,102 catalog wines in JSON files ready for DB import.
     - Scripts: `fetch_skurnik.mjs`, `fetch_polaner.mjs`, `fetch_winebow.mjs`, `fetch_empson.mjs`, `fetch_european_cellars.mjs`
     - Output: `data/imports/{source}_catalog.json`
-17. **Build merge infrastructure** — create staging tables, build lib/merge.mjs
-18. **Kansas + PA import** — build extract scripts for state datasets (Phase B)
-19. **COLA Cloud API** — sign up, pull all wine COLAs (Phase C)
-20. **Remaining importer scrapers** — Kysela, Louis/Dressner, Broadbent
-21. **Enrichment pipeline** — Edge Function + prompts + enrichment_log
-22. **Frontend** — Vite/React PWA
+17. ~~Build merge infrastructure~~ ✓ (partial) — `lib/merge.mjs` MergeEngine class built. 3-tier matching, additive merging, grade calculation, all resolvers. Not yet tested.
+18. **TTB COLA Phase 1 (CSV harvest)** — IN PROGRESS. User running locally (~16 hours). 1955-present.
+19. **TTB COLA Phase 2 (detail scrape)** — fetch grape varietals + applicant data from detail pages. Filter Phase 1 output first.
+20. **TTB COLA Phase 3 (AI parse)** — Haiku extracts vintage, wine name, appellation from fanciful names. ~$10.
+21. **LWIN import** — match against TTB COLA backbone for dedup. Script ready, not yet run.
+22. **Kansas + PA import** — bridge COLA IDs to state data (UPCs, distributor info)
+23. **Importer catalog merge** — merge 10K catalog wines against TTB+LWIN backbone
+24. **COLA Cloud barcode enrichment** — email for one-time export or use $39/mo Starter for on-demand
+25. **Remaining importer scrapers** — Kysela, Louis/Dressner, Broadbent
+26. **Enrichment pipeline** — Edge Function + prompts + enrichment_log
+27. **Frontend** — Vite/React PWA
 
 ### Schema Post-Import Hardening (2026-03-15)
 - **Metadata → columns:** 4 fields promoted from metadata JSONB: `release_date` (wine_vintages), `first_vintage_year` (wines), `style` (wines), `philosophy` (producers). 150+ metadata entries identified for migration to proper table links (classifications, vineyards, estates).
@@ -365,11 +373,31 @@ Comprehensive research across 17 source categories. Unified reference in `docs/S
 - **International retailers**: SAQ (Quebec, 14K wines, structured), Systembolaget (Sweden, 7K wines, barcodes).
 - **Auction/trading**: Liv-ex (10K wines, LWIN integration, requires membership), Sotheby's/Bonhams/iDealwine (fine wine pricing data).
 - **Merge architecture designed**: Staging tables (import_runs, staging_wines, match_decisions, field_provenance) + 4-layer matching + source priority + confidence thresholds.
-- **FOIA filed** to TTB as backup. Treating COLA Cloud as primary COLA strategy.
+- **FOIA filed** to TTB as backup parallel path.
 - **Coverage projection**: ~200-250K unique wines across $10-150 US market.
-- **Import priority**: LWIN → Kansas+PA → COLA Cloud → Importers → Wine.com → Total Wine → PRO states → OFF → FirstLeaf.
+- **Import priority**: TTB COLA direct → LWIN → Kansas+PA → Importers → COLA Cloud (barcode enrichment) → Wine.com → Total Wine → PRO states → OFF → FirstLeaf.
 - **Files downloaded**: `kansas_active_brands.json` (24.6MB), `pa_wine_catalog.xlsx`, `wine_com_all_urls.txt` (20MB), `cola_demo.zip`, `utah_product_list.xlsx`, `lwin_database.csv`
 - **Critical gap identified**: Identity matching engine is #1 technical priority — without it, scaling beyond ~12K wines creates dedup crisis.
+
+### TTB COLA Direct Scraping (2026-03-17) — Phase 1 IN PROGRESS
+Discovered that TTB's public COLA registry has **structured grape varietal data as a native field** — not AI-extracted. This eliminates COLA Cloud as the primary F-tier data source.
+
+**TTB COLA Online detail fields:** TTB ID, brand name, fanciful name, **grape varietals**, origin (state/country), class/type (red/white/rosé/sparkling/dessert), permit number, applicant name + full address, approval date, serial number, status.
+**Not available from TTB:** ABV, barcodes/GTIN, structured appellation (only state/country-level origin), tasting notes.
+
+**Phase 1 (CSV harvest):** User running locally — conservative rate limiting, ~16 hours estimated. Searching 1955-present by date range + wine class types 80-89. 4-day windows to stay under 1,000-row export cap. Expected output: 1.2-1.5M TTB IDs with basic metadata.
+
+**Phase 2 (detail scrape):** Fetch detail pages by TTB ID. Predictable URL: `https://ttbonline.gov/colasonline/viewColaDetails.do?action=publicDisplaySearchBasic&ttbid={TTB_ID}`. Parse HTML for grape varietals, applicant data. Filter Phase 1 output first (skip expired/surrendered, deduplicate label refreshes). 3-7 days at polite rate.
+
+**Phase 3 (AI parse):** Haiku extracts vintage year, wine name, appellation from fanciful name text. ~$5-10 total.
+
+**COLA Cloud role revised:** Barcode + identity enrichment service for on-demand Grade B enrichment, not bulk F-tier source. Email drafted to request one-time data export (barcode data specifically). API key in `.env`.
+
+**Merge infrastructure:** `lib/merge.mjs` built — MergeEngine class with reference data loading, 3-tier producer/wine matching (key → normalized name → fuzzy pg_trgm), additive field merging, grade calculation. Not yet tested.
+
+**COLA Cloud API tested (2026-03-17):** 22 requests on free tier (500/mo). Search endpoint basic, detail endpoint rich. Known wines tested: Ridge, López de Heredia, Tignanello, Cristal, Yquem. Grape coverage imperfect (truncated names, French wines often missing grapes). Sample data saved: `data/imports/cola_cloud_sample.json`, `data/imports/cola_cloud_test2.json`.
+
+**Illinois PRO Platform API discovered:** Public JSON POST endpoint at `/Search/ActiveBrandSearch`. Returns COLA numbers, ABV, vintage, appellation, distributors. Same platform as Kansas but requires session cookies (not fully open like Kansas JSON dump).
 
 ### Open Questions (deferred)
 - Data freshness strategy (how/when to re-import)
@@ -378,6 +406,8 @@ Comprehensive research across 17 source categories. Unified reference in `docs/S
 - VineRadar API pricing inquiry (vineyard GPS + terroir data)
 - Vinmonopolet API key registration
 - Southern Hemisphere importer gap (no dedicated importers researched for AU/NZ/AR/CL/ZA)
+- COLA Cloud Snowflake data share pricing (for barcode bulk access if email negotiation fails)
+- COLA Cloud one-time export email (drafted, not yet sent)
 
 ---
 
