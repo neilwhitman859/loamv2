@@ -220,6 +220,7 @@ PK: composite (producer_id, region_id). For multi-region producers.
 | vineyard_area_ha | numeric | nullable | Vineyard size in hectares |
 | commune | text | nullable | Village/commune within appellation (French: "Vosne-Romanée") |
 | monopole | boolean | default false | Is this a monopole vineyard? |
+| barcode | text | nullable, indexed | GTIN/EAN barcode. Wine-level (not vintage-specific per GS1). For scan-to-lookup. |
 | irrigation_type | text | nullable | dry_farmed/irrigated/deficit_irrigation |
 | irrigation_type_source | uuid | FK source_types, nullable | |
 | color | text | nullable, CHECK | red/white/rose/orange (ASCII 'rose' not 'rosé') |
@@ -320,6 +321,14 @@ UUID PK + UNIQUE(wine_id, vintage_year). Vintage_year = 0 for NV wines (not NULL
 | release_date | date | nullable | When this vintage was released to market |
 | label_image_url | text | nullable | Vintage-specific label image |
 | lwin | text | UNIQUE, nullable | LWIN-11 code (wine+vintage) |
+| ingredients | text | nullable | EU e-label ingredient list |
+| allergens | text[] | nullable | EU e-label allergen declarations (sulfites, milk, egg, fish) |
+| energy_kcal_per_100ml | numeric | nullable | EU e-label energy content per 100ml |
+| nutrition_data | jsonb | nullable | Full EU e-label nutrition: {fat_g, saturates_g, carbs_g, sugars_g, protein_g, salt_g} per 100ml |
+| maceration_technique | text | nullable | cold_soak/extended/post_fermentation/saignee/carbonic/semi_carbonic/whole_cluster |
+| aging_vessel_size_l | integer | nullable | Primary aging vessel size in liters (225=barrique, 500=puncheon, 2000+=foudre) |
+| maturity_status | text | nullable, CHECK | youthful/not_ready/approaching/ready/at_best/mature/past_peak/declining |
+| maturity_status_source | text | nullable | Who assessed maturity (e.g., Berry Bros & Rudd) |
 | critic_score_avg | numeric(4,1) | nullable | Computed: avg of 100-point scores for this vintage |
 | critic_score_count | integer | DEFAULT 0 | Computed: count of scores |
 | community_rating_avg | numeric(3,2) | nullable | Community rating for this vintage |
@@ -532,7 +541,7 @@ PK: composite (producer_id, biodiversity_certification_id). certified_since/unti
 id, slug, name, country, url, type (critic_publication/community/auction_house), score_scale_min (decimal), score_scale_max (decimal), scoring_system (text: 100-point/20-point/5-star/letter/descriptive), source_trust_level (SMALLINT 1-5: 5=authoritative, 4=respected, 3=niche, 2=community, 1=auction), active (boolean default true), timestamps, deleted_at
 
 ### wine_vintage_scores
-UUID PK. wine_id FK, vintage_year (nullable for NV), wine_vintage_id FK wine_vintages (nullable, backfilled), score, score_low, score_high, score_scale, publication_id FK, critic, tasting_note, review_text, drinking_status, blind_tasted, critic_drinking_window_start/end, review_date, review_type, is_community (default false), rating_count, is_superseded (default false), score_provenance (CHECK: direct/retailer_quote/aggregated/community), url, source_id FK, discovered_at, timestamps.
+UUID PK. wine_id FK, vintage_year (nullable for NV), wine_vintage_id FK wine_vintages (nullable, backfilled), score, score_low, score_high, score_scale, medal (CHECK: grand_gold/double_gold/gold/silver/bronze/trophy/best_in_show/best_in_class/commended/seal_of_approval/gran_mencion), publication_id FK, critic, tasting_note, review_text, drinking_status, blind_tasted, critic_drinking_window_start/end, review_date, review_type, is_community (default false), rating_count, is_superseded (default false), score_provenance (CHECK: direct/retailer_quote/aggregated/community), url, source_id FK, discovered_at, timestamps.
 
 **Dedup index:** UNIQUE on (wine_id, COALESCE(vintage_year,0), COALESCE(publication_id,'00..00'), COALESCE(critic,''), COALESCE(review_date,'1900-01-01')). Allows multiple critics per publication and re-reviews on different dates.
 
@@ -541,7 +550,7 @@ UUID PK. wine_id FK, vintage_year (nullable for NV), wine_vintage_id FK wine_vin
 ## 12. Pricing
 
 ### wine_vintage_prices
-UUID PK. wine_id FK, vintage_year (nullable), wine_vintage_id FK wine_vintages (nullable, backfilled), price_usd, price_original, currency, price_type (retail/auction/pre_arrival), compare_at_price_usd (decimal — original MSRP for discount retailers), retailer_id FK retailers (nullable), source_id FK, source_url, merchant_name, price_date, created_at
+UUID PK. wine_id FK, vintage_year (nullable), wine_vintage_id FK wine_vintages (nullable, backfilled), price_usd, price_original, currency, price_type (retail/auction/pre_arrival), compare_at_price_usd (decimal — original MSRP for discount retailers), retailer_id FK retailers (nullable), notes (text — auction provenance, condition, lot context), source_id FK, source_url, merchant_name, price_date, created_at
 
 Release price lives on wine_vintages, not here.
 

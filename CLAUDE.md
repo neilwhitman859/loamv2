@@ -231,6 +231,21 @@ All 5 pending migrations executed successfully:
 - Added `peak_drinking_window_start/end` on `wine_vintage_insights` (synthesized optimal peak window)
 - Hierarchy: per-score critic → per-vintage producer → per-vintage aggregated (critic/AI/calculated + peak) → per-wine typical range
 
+### Pre-Import Schema Expansion (2026-03-17)
+11 new columns + 2 reference data rows added to support new data sources:
+- **`wines.barcode`** TEXT, indexed — GTIN/EAN for scan-to-lookup (Vinmonopolet, PA, SAQ, COLA Cloud)
+- **`wine_vintage_scores.medal`** TEXT, CHECK — competition medals (IWSC, Berliner, TEXSOM, DWWA, etc.)
+- **`wine_vintages.ingredients`** TEXT — EU e-label ingredient list
+- **`wine_vintages.allergens`** TEXT[] — EU e-label allergen declarations
+- **`wine_vintages.energy_kcal_per_100ml`** NUMERIC — EU e-label nutrition
+- **`wine_vintages.nutrition_data`** JSONB — full EU e-label nutrition breakdown
+- **`wine_vintages.maceration_technique`** TEXT — cold_soak/extended/saignee/etc. (importers)
+- **`wine_vintages.aging_vessel_size_l`** INTEGER — barrique(225)/puncheon(500)/foudre(2000+)
+- **`wine_vintages.maturity_status`** TEXT, CHECK — expert-assessed readiness (BBR, etc.)
+- **`wine_vintages.maturity_status_source`** TEXT — who assessed maturity
+- **`wine_vintage_prices.notes`** TEXT — auction provenance/condition/lot context
+- **`farming_certifications`**: Kosher + Fair Trade rows added (now 21 certifications)
+
 ### What's Not There Yet
 - Most insight tables empty (wine, producer, soil, water body)
 - All weather data (appellation_vintages) — Open-Meteo schema design pending
