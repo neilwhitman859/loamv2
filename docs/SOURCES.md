@@ -361,43 +361,92 @@ Professional importers with public-facing wine catalogs. High-quality metadata f
 
 ## 4. Barcode/UPC Sources
 
-### COLA Cloud Barcodes — PRIORITY
-- **Coverage**: ~200-250K wine barcodes extracted from TTB label images
-- **Types**: UPC-A (57%), EAN-13 (42%)
-- **Access**: Via COLA Cloud API (same as wine identity source above)
-- **Note**: Barcodes are wine-level identifiers, NOT vintage-specific (GS1 allows reuse across vintages)
+Barcodes (UPC-A / EAN-13 / GTIN) are the most definitive wine dedup key — same code on the same bottle worldwide. Strategy: aggregate from many smaller sources since no single source has comprehensive coverage.
 
-### Pennsylvania PLCB UPCs — IN HAND
-- **Coverage**: 4,812 wines with 100% UPC coverage
-- **Best free barcode source available right now**
+**Key insight**: Same wine from different importers may get different UPCs. NV wines get new UPCs per release. Many small producers have no barcode at all. Barcodes are a high-confidence match signal, not a universal key.
 
-### New Jersey POSSE UPCs — EVALUATED
-- **Coverage**: Unknown count, but UPC field confirmed in search results
-- **Requires free account registration**
+### Tier 1: Immediately Actionable (~45K barcodes, free/cheap)
 
-### Open Food Facts — EVALUATED
-- **Coverage**: ~16K wines globally, ~2K US. Every product has a barcode (primary key).
-- **Access**: Free API + full dump (Parquet/CSV on Hugging Face)
-- **License**: ODbL
-- **Vintage data**: Inconsistent (sometimes in product name, not structured)
-- **URL**: https://world.openfoodfacts.org/
+**Vinmonopolet (Norway)** — PRIORITY
+- **Coverage**: ~20K wines, ALL with EAN-13 barcodes (state monopoly requirement)
+- **Access**: Free API at api.vinmonopolet.no. Open tier has basic data. Email sent for Restricted access (full product data).
+- **Bonus data**: Sugar g/L, acid g/L, grape percentages, ABV — richest per-wine data of any free source
+- **Status**: API key obtained (2026-03-17). Restricted access requested. Scraping fallback viable (~5-10 hrs).
 
-### UPC Data 4 Beverage Alcohol — EVALUATED
-- **Coverage**: 150K+ beverage alcohol records, ~30-50K wine subset
-- **Fields**: UPC-E/A, EAN-8/13, GS1 manufacturer, brand, item name, container, size, country, region, appellation, ABV
-- **Access**: Licensed database (contact for pricing). ASCII/Excel/Access delivery.
-- **Quality**: High — sourced from distributor systems (SGWS, RNDC)
-- **URL**: https://upcdata4spirits.com/
+**Open Food Facts** — PRIORITY
+- **Coverage**: ~16K wines globally. Every product has barcode as primary key.
+- **Access**: Free CSV/JSONL download + REST API. ODbL license.
+- **Quality**: Crowdsourced, variable. Wine-specific fields (grape, vintage) not structured. Mostly European wines.
+- **URL**: https://world.openfoodfacts.org/data
 
-### CellarTracker Barcodes — SKIPPED (no access)
-- **Coverage**: 858,686 UPC/EAN codes mapped to 2M+ wines
-- **Access**: No API, community-contributed, locked behind CellarTracker walls
-- **Long-term**: Partnership conversation with Eric LeVine
+**Pennsylvania PLCB** — IN HAND
+- **Coverage**: ~4,800 wines with 100% UPC coverage (control state, every product must be listed)
+- **Access**: Existing file `data/imports/pa_wine_catalog.xlsx` — check for UPC column
+- **Format**: UPC-A (12-digit bottles), SCC-14 (14-digit cases)
 
-### Validation Tools
-- **UPCitemdb**: Free 100 lookups/day. Spot-check tool. https://devs.upcitemdb.com/
-- **Go-UPC**: $19.95/mo for 5K calls. Claims wine coverage. https://go-upc.com/
-- **GS1 Verified**: Free 30 lookups/day. Authoritative but expensive at scale. https://www.gs1.org/services/verified-by-gs1
+**Systembolaget (Sweden)** — EVALUATED
+- **Coverage**: ~7K wines. GS1 Sweden requires GTIN for all alcohol.
+- **Access**: Community GitHub API/Excel download. Confirm GTIN field exists.
+- **Status**: Needs testing.
+
+**Alko (Finland)** — EVALUATED
+- **Coverage**: ~5K wines. Daily-updated product export.
+- **Access**: Download from alko.fi. Community GitHub parsers available.
+- **Status**: Needs testing to confirm GTIN in export.
+
+### Tier 2: Moderate Investment (~100-160K barcodes total)
+
+**UPC Data 4 Beverage Alcohol** — PRIORITY (contact)
+- **Coverage**: 150K+ records (beer/wine/spirits). Wine subset estimated 40-60K.
+- **Fields**: UPC/EAN, manufacturer, brand, item name, container, country, region, appellation, vintage, varietal, ABV, kosher/organic
+- **Access**: Licensed database via Gregg London (gregg@glondon.com, 469-585-1961). Excel/Access/ASCII delivery.
+- **Quality**: High — sourced from producer submissions, continuously maintained.
+- **Cost**: Quote needed. Likely one-time purchase + update subscription.
+- **Verdict**: Only purpose-built alcohol barcode database with wine-specific fields. Top priority for bulk coverage.
+
+**COLA Cloud Barcodes** — PRIORITY
+- **Coverage**: ~300-400K wine barcodes (25-35% of wine COLAs). OCR-extracted from label images.
+- **Types**: UPC-A (57%), EAN-13 (42%). Placeholder codes are filtered but still a quality issue.
+- **Access**: API. Free: 500 req/mo. Starter: $39/mo (10K req). Pro: $199/mo (100K req). Enterprise: Snowflake data share.
+- **Quality**: Medium. OCR extraction, not structured data. `barcode_cola_occurrences` helps filter junk.
+- **Status**: API key in .env. 22 test requests made. Email drafted for one-time bulk export.
+
+### Tier 3: Partnership/Long-term
+
+**CellarTracker** — SKIPPED (no access)
+- **Coverage**: 858,686 UPC/EAN codes mapped to 2M+ wines. Second-largest wine barcode dataset.
+- **Access**: No API, locked. Partnership with Eric LeVine needed.
+- **Quality**: Medium-high. User-contributed, some mapping errors.
+
+**Vivino** — NOT ACCESSIBLE
+- **Coverage**: Estimated 500K-1M+ wine barcodes from billions of user scans. Largest wine barcode dataset.
+- **Access**: No public API, no export. Internal only.
+
+**EU E-Labels** — WATCH
+- **Coverage**: Growing rapidly. All EU wines bottled after Dec 2023 must have QR codes with embedded GS1 GTIN.
+- **Access**: Fragmented across providers (u-label.com, wine-elabels.eu, Bottlebooks). No centralized download.
+- **Timeline**: Will become definitive EU barcode source within 2-3 years. Not actionable today.
+
+### Validation & Lookup Tools
+- **UPCitemdb**: Free 100 lookups/day. https://devs.upcitemdb.com/
+- **Go-UPC**: $19.95/mo for 5K calls. https://go-upc.com/
+- **EAN-Search**: 1-149 EUR/mo. 1B+ products. https://ean-search.org/
+- **GS1 Verified**: Free 30 lookups/day. Authoritative. https://www.gs1.org/services/verified-by-gs1
+
+### Barcode Aggregation Estimate
+
+| Source | Est. Wine Barcodes | Access | Cost |
+|--------|-------------------|--------|------|
+| Vinmonopolet | ~20K | Free API | $0 |
+| Open Food Facts | ~16K | Free download | $0 |
+| Pennsylvania PLCB | ~4-5K | Existing file | $0 |
+| Systembolaget | ~7K (if GTIN confirmed) | Community API | $0 |
+| Alko Finland | ~5K (if GTIN confirmed) | Download | $0 |
+| UPC Data 4 Bev Alcohol | ~40-60K | Licensed | Quote needed |
+| COLA Cloud | ~300-400K | API | $39-199/mo |
+| CellarTracker | ~858K | Partnership | N/A |
+| **Free/cheap total** | **~45-50K** | | **$0** |
+| **With moderate spend** | **~100-160K** | | **~$250/mo** |
 
 ---
 

@@ -147,13 +147,14 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
-### Content Tables (Phase 1c trial imports + KL + retailer + wine-type imports, 2026-03-16)
-- **858 producers**, **3,095 wines**, 2,777 vintages, 1,375 scores, 1,279 prices, 3,340 wine_grapes, 90 entity_classifications, 31 winemakers, 169 farming certifications, 90 label designation links, 116 label designations, 11 wine_aliases
+### Content Tables (Phase 1c/1d, 2026-03-18)
+- **948 producers**, **4,488 wines**, 1,498 vintages, 1,237 scores, 0 prices, 4,801 wine_grapes, 3,350 external_ids, 90 entity_classifications, 31 winemakers, 169 farming certifications, 90 label designation links, 116 label designations, 11 wine_aliases
 - **96 region aliases**, **75 label designation aliases** seeded (WSET L3 naming conventions, translations, abbreviations)
 - **New tables (2026-03-16):** wine_relationships (0 rows), producer_timeline (0 rows), wine_lookups (0 rows — analytics/enrichment promotion)
 - **wine_insights columns added:** ai_hook, ai_vinification_summary, enrichment_tier (0-3), is_verified
 - wine_vintage_id FK backfilled: scores and prices 100% linked to wine_vintages
-- **Trial imports (6 producers, Phase 1c):**
+- **Staging-first architecture (2026-03-18):** All data now goes through per-source staging tables before canonical promotion. KL and retailer data moved from canonical to staging. 13 staging tables total. See "Multi-Source Merge Infrastructure" section below.
+- **Trial imports (6 producers, Phase 1c) — retained as seed data:**
   - Fort Ross Vineyard (US/Sonoma, estate): 15 wines, 112 vintages, 84 scores
   - Sea Slopes (US/Sonoma, child of Fort Ross): 2 wines, 24 vintages, 15 scores
   - Moone Tsai (US/Napa, negociant): 10 wines, 83 vintages, 48 scores
@@ -245,6 +246,36 @@ All 5 pending migrations executed successfully:
 - **`wine_vintages.maturity_status_source`** TEXT — who assessed maturity
 - **`wine_vintage_prices.notes`** TEXT — auction provenance/condition/lot context
 - **`farming_certifications`**: Kosher + Fair Trade rows added (now 21 certifications)
+
+### Multi-Source Merge Infrastructure (2026-03-18)
+Staging-first architecture: all external data goes through per-source staging tables, then a match engine promotes to canonical tables. Prevents dedup crisis at scale.
+
+**New tables:**
+- `match_decisions` — audit trail for cross-source matching decisions (AI review, confidence, extracted data)
+- `source_polaner` (1,680 rows), `source_kermit_lynch` (1,468 rows), `source_kermit_lynch_growers` (193 rows)
+- `source_skurnik` (5,541 rows), `source_winebow` (536 rows), `source_empson` (279 rows), `source_european_cellars` (443 rows)
+- `source_last_bottle` (160 rows), `source_best_wine_store` (1,658 rows), `source_domestique` (247 rows)
+- Pre-existing: `source_lwin` (184,497), `source_ttb_colas` (0 — Phase 1 running), `source_kansas_brands` (31,216)
+
+**RPC functions:** `match_producer_fuzzy()`, `match_wine_fuzzy()` — pg_trgm similarity search for the match engine.
+
+**Scripts:**
+- `scripts/load_staging.mjs` — loads raw JSON catalogs into per-source staging tables. Supports `--source polaner,kl,skurnik,...` or `--source all`.
+- `scripts/promote_staging.mjs` — matches staging rows against canonical, creates/links records. Supports `--source`, `--dry-run`, `--limit`. Per-source adapters handle field mapping.
+
+**Promotion results (5 importer catalogs promoted 2026-03-18):**
+- KL: 1,468 wines → 830 new wines created, 638 matched to existing
+- Skurnik: 5,541 wines → 2,605 new wines created, 2,912 matched, 24 skipped/errors
+- Winebow: 536 wines → 340 new wines, 59 matched, 137 skipped (no name field)
+- Empson: 279 wines → 178 new wines, 96 matched, 5 skipped
+- EC: 443 wines → 324 new wines, 71 matched, 48 skipped
+
+**Polaner deferred:** 1,680 wines with no producer field (all data in title string "Producer Wine Region"). Only 13 match by prefix against known producers. Needs AI-assisted title parsing for the remaining 1,667.
+
+**Canonical data after migration:**
+- KL + retailer data moved from canonical to staging tables
+- 33 curated seed producers (6 trial + 15 wine-type + 5 global + 7 additional) retained in canonical
+- ~4,140 new wines + 348 seed wines = 4,488 total canonical wines
 
 ### What's Not There Yet
 - Most insight tables empty (wine, producer, soil, water body)

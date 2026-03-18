@@ -519,3 +519,21 @@ Tables created: `source_ttb_colas`, `source_kansas_brands`, `source_lwin`. Impor
 
 ### 2026-03-17: IGT/IGP/PGI Appellations Added to Appellations Table
 457 new PGI-tier appellations imported from eAmbrosia EU register, plus 5 base-tier designations (Vin de France, Vino d'Italia, Vino de España, Vinho de Portugal, Deutscher Wein). These go in the same `appellations` table with appropriate `designation_type` values (IGT, IGP, VdlT, VR, Landwein, PGI, VdF, VdI, VdE, VdP, VdT). No separate table needed — containment handled via `appellation_containment`. Naming convention: use the zone name without suffix (e.g., "Toscano" not "Toscano IGT"), add suffixed forms as aliases. Kansas appellation resolution improved from 77.1% → 81.9%.
+
+### 2026-03-17: Staging-First, Promote on Match Architecture
+All sources stay in per-source staging tables (`source_*`). A match engine runs across staging tables and existing canonical records. Only when confident of identity do we create/update a canonical `wines`/`producers` row. Prevents dedup crisis at scale. Single sources can promote with `identity_confidence = 'unverified'`; second-source confirmation upgrades confidence. Existing 3,095 canonical wines from trial imports stay as seed data.
+
+### 2026-03-17: Two-Backbone Identity Strategy (LWIN + TTB COLA)
+LWIN (184K wines, global fine wine, clean names, classifications, no grapes) and TTB COLA (~1.2M wines, US market, has grape varietals, messy names) are complementary backbones. Neither replaces the other. Overlap (~30-40% for fine wine imported to US) gives strongest identity when both match. Non-overlapping coverage extends catalog breadth. Both stay in staging; matching combines their strengths.
+
+### 2026-03-17: AI-Assisted Match Review (Haiku/Sonnet)
+No human review at scale — too many wines. Match confidence tiers: >0.85 auto-accept, 0.6-0.85 Haiku review (~$0.001/call), 0.4-0.6 Sonnet review (~$0.01/call), <0.4 don't match. AI reviews logged in `match_decisions` table. Any definitive facts exposed during AI review (confirmed grapes, appellation, producer identity) captured as free enrichment data.
+
+### 2026-03-17: Store All Identifiers in external_ids
+Every identifier encountered from any source should be stored: LWIN-7, LWIN-11, TTB ID, Vinmonopolet product ID, importer SKUs, GTIN/EAN, Kansas brand ID. More identifiers per wine = easier future matching. Barcodes (GTIN/EAN) are universal — same barcode on a bottle worldwide (EAN-13 = UPC-A with leading zero).
+
+### 2026-03-17: Vinmonopolet Added as Priority Source
+Norwegian state wine monopoly. ~25K wines with measured grape percentages, sugar g/L, acid g/L, ABV, flavor scales, food pairings, certifications. Open API key obtained but Open tier returns sparse data only. Email sent requesting full API access (my-products-v1 endpoint with barcodes and chemistry). Barcodes would be a universal dedup key across all sources. Website scraping is fallback (all data publicly displayed, ~5-10 hours).
+
+### 2026-03-17: Clean Slate for Canonical Wines (Partial)
+Keep 6 trial producer imports as seed data (Fort Ross, Sea Slopes, Moone Tsai, López de Heredia, Antinori, Louis Jadot — ~100 wines with deep, research-quality data). Move KL bulk import (193 producers, 1,467 wines) and retailer imports (Last Bottle, Best Wine Store, Domestique — ~1,200 wines) to staging tables. All future imports go through staging→match→promote pipeline. Canonical table starts lean with high-quality seeds.

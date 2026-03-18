@@ -710,33 +710,64 @@ Raw Kansas ABC active brands data. 31,216 wine records loaded.
 Raw LWIN database records. 184,497 records loaded (live wines + fortified).
 | Column | Type | Notes |
 |---|---|---|
-| id | uuid | PK |
-| lwin | text | UNIQUE NOT NULL. LWIN-7 code |
-| status | text | Live/Combined/Deleted |
+| lwin | text | PK. LWIN code (7/11/18 digit) |
+| lwin_7 | text | 7-digit wine identity |
+| lwin_11 | text | 11-digit wine+vintage |
+| lwin_18 | text | 18-digit wine+vintage+format |
 | display_name | text | Full display name |
-| producer_title | text | Title (e.g., "Château", "Domaine") |
 | producer_name | text | Producer name |
 | wine_name | text | Wine name |
 | country | text | Country name |
 | region | text | Region name |
 | sub_region | text | Sub-region |
-| site | text | Vineyard site |
-| parcel | text | Vineyard parcel |
+| appellation | text | Appellation/designation |
 | colour | text | White/Red/Rosé |
 | wine_type | text | Wine/Fortified Wine |
-| sub_type | text | Still/Sparkling/Semi-Sparkling |
 | designation | text | AOP/AVA/DOC/DOCG/etc. |
 | classification | text | Grand Cru/Premier Cru/etc. |
-| vintage_config | text | sequential/non-vintage |
-| first_vintage | text | |
-| final_vintage | text | |
-| date_added | date | |
-| date_updated | date | |
-| reference | text | |
+| vintage | text | Vintage year |
 | canonical_wine_id | uuid | FK wines, nullable — set during merge |
 | canonical_producer_id | uuid | FK producers, nullable — set during merge |
 | processed_at | timestamptz | |
 | created_at | timestamptz | |
+
+### Importer Staging Tables (created 2026-03-18)
+All follow same pattern: raw source fields + merge tracking columns (canonical_wine_id, canonical_producer_id, processed_at, match_confidence).
+
+| Table | Rows | Key Fields | Source |
+|---|---|---|---|
+| source_polaner | 1,680 | wp_id, title, country, region, appellation, certifications | Polaner Selections |
+| source_kermit_lynch | 1,468 | kl_id, sku, wine_name, grower_name, blend, soil, vinification | Kermit Lynch |
+| source_kermit_lynch_growers | 193 | kl_id, name, country, region, farming, winemaker, founded_year | KL growers |
+| source_skurnik | 5,541 | producer, name, vintage, country, region, appellation, grape, color, sku | Skurnik |
+| source_winebow | 536 | producer, name, vintage, grape, ph, acidity, abv, residual_sugar, scores | Winebow |
+| source_empson | 279 | producer, name, grape, fermentation/aging details, soil, altitude, winemaker | Empson |
+| source_european_cellars | 443 | producer, name, color, appellation, grape, soil, vinification, aging, scores | European Cellars |
+| source_last_bottle | 160 | shopify_id, title, price_usd, compare_at_price_usd, tags, description | Last Bottle |
+| source_best_wine_store | 1,658 | shopify_id, title, producer, price_usd, tags | Best Wine Store |
+| source_domestique | 247 | shopify_id, title, producer, country, grape, vintage, price_usd, tags | Domestique |
+
+### match_decisions (created 2026-03-18)
+Audit trail for cross-source matching. Logs every match decision with confidence, method, and AI review data.
+| Column | Type | Notes |
+|---|---|---|
+| id | uuid | PK |
+| source_a | text | NOT NULL. Source table name |
+| source_a_id | text | NOT NULL. Row ID in source table |
+| source_b | text | Second source (null for single-source promotion) |
+| source_b_id | text | Row ID in second source |
+| entity_type | text | CHECK (wine/producer) |
+| match_method | text | NOT NULL. barcode/lwin_code/cola_id/name_trigram/ai_haiku/ai_sonnet/manual |
+| confidence | numeric | 0.0-1.0 |
+| canonical_wine_id | uuid | FK wines |
+| canonical_producer_id | uuid | FK producers |
+| status | text | CHECK (auto_accepted/ai_accepted/ai_rejected/flagged/rejected/manual_accepted) |
+| ai_model | text | Model used for AI review |
+| ai_prompt | text | Prompt sent to AI |
+| ai_response | text | Raw AI response |
+| ai_extracted_data | jsonb | Facts extracted during AI review |
+| notes | text | |
+| created_at/updated_at | timestamptz | |
 
 ---
 
