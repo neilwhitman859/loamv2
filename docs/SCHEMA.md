@@ -651,6 +651,95 @@ id SERIAL PK, name_a, name_b, country, similarity, wines_a, wines_b, verdict, ve
 
 ---
 
+## 16b. Source Staging Tables
+
+Per-source raw data for multi-source merge pipeline. Each preserves raw data as-is with merge tracking columns. Created 2026-03-17.
+
+### source_ttb_colas
+Raw TTB COLA registry data from Phase 1 CSV harvest + Phase 2 detail scrape.
+| Column | Type | Notes |
+|---|---|---|
+| id | uuid | PK |
+| ttb_id | text | UNIQUE NOT NULL. TTB COLA ID (e.g., "23086001000354") |
+| permit_no | text | Applicant permit number |
+| serial_number | text | Label serial number |
+| completed_date | date | Approval date |
+| brand_name | text | Producer/brand |
+| fanciful_name | text | Wine name (contains vintage, varietal, appellation in free text) |
+| origin_code | text | State/country code |
+| origin_desc | text | Full origin description |
+| class_type | text | TTB class code (80-89 for wine) |
+| class_type_desc | text | Class description (e.g., "TABLE WINE RED") |
+| grape_varietals | text | Phase 2: structured field from detail page |
+| applicant_name | text | Phase 2: importer/producer name |
+| applicant_address | text | Phase 2: full address |
+| status | text | Active/expired/surrendered/revoked |
+| canonical_wine_id | uuid | FK wines, nullable — set during merge |
+| canonical_producer_id | uuid | FK producers, nullable — set during merge |
+| processed_at | timestamptz | When merge processing completed |
+| created_at | timestamptz | |
+
+### source_kansas_brands
+Raw Kansas ABC active brands data. 31,216 wine records loaded.
+| Column | Type | Notes |
+|---|---|---|
+| id | uuid | PK |
+| cola_number | text | COLA ID — joins to source_ttb_colas.ttb_id |
+| ks_license | text | Kansas license/registration number |
+| brand_name | text | Producer/brand |
+| fanciful_name | text | Wine name |
+| product_type | text | "Light Wine", "Sparkling", etc. |
+| abv | numeric | ABV percentage (100% fill rate) |
+| pack_size | integer | |
+| container_size | numeric | Volume |
+| container_unit | text | ML, L |
+| vintage | text | Vintage year (68.5% fill) |
+| appellation | text | Wine appellation (83.8% fill) |
+| expiration | date | Kansas registration expiration |
+| container_type | text | BTL, CAN, BAG |
+| organic | text | YES/NO |
+| imported | text | YES/NO |
+| distributor1 | text | Primary Kansas distributor |
+| distributor2 | text | Secondary distributor |
+| canonical_wine_id | uuid | FK wines, nullable — set during merge |
+| canonical_producer_id | uuid | FK producers, nullable — set during merge |
+| processed_at | timestamptz | |
+| created_at | timestamptz | |
+
+### source_lwin
+Raw LWIN database records. 184,497 records loaded (live wines + fortified).
+| Column | Type | Notes |
+|---|---|---|
+| id | uuid | PK |
+| lwin | text | UNIQUE NOT NULL. LWIN-7 code |
+| status | text | Live/Combined/Deleted |
+| display_name | text | Full display name |
+| producer_title | text | Title (e.g., "Château", "Domaine") |
+| producer_name | text | Producer name |
+| wine_name | text | Wine name |
+| country | text | Country name |
+| region | text | Region name |
+| sub_region | text | Sub-region |
+| site | text | Vineyard site |
+| parcel | text | Vineyard parcel |
+| colour | text | White/Red/Rosé |
+| wine_type | text | Wine/Fortified Wine |
+| sub_type | text | Still/Sparkling/Semi-Sparkling |
+| designation | text | AOP/AVA/DOC/DOCG/etc. |
+| classification | text | Grand Cru/Premier Cru/etc. |
+| vintage_config | text | sequential/non-vintage |
+| first_vintage | text | |
+| final_vintage | text | |
+| date_added | date | |
+| date_updated | date | |
+| reference | text | |
+| canonical_wine_id | uuid | FK wines, nullable — set during merge |
+| canonical_producer_id | uuid | FK producers, nullable — set during merge |
+| processed_at | timestamptz | |
+| created_at | timestamptz | |
+
+---
+
 ## 17. Enrichment
 
 ### enrichment_log

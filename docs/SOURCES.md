@@ -24,9 +24,9 @@ Master reference for all external data sources — evaluated, integrated, planne
 
 These sources provide wine-level identity data (producer, wine name, geography, grape, vintage) for building the catalog backbone.
 
-### LWIN Database — IN HAND
-- **Status**: Excel file downloaded, deep analysis complete
-- **Data**: 186,586 wine records + 3,084 fortified wines (211K total with spirits)
+### LWIN Database — INTEGRATED
+- **Status**: 184,497 records loaded into `source_lwin` staging table (2026-03-17)
+- **Data**: 186,586 wine records + 3,084 fortified wines (211K total with spirits). Live + wine/fortified filtered.
 - **Fields**: LWIN-7 code, producer (title + name), wine name, country, region, sub_region, site, parcel, color, type/sub_type, designation (AOP/AVA/DOC/etc.), classification (Premier Cru, Grand Cru, etc.), vintage_config, first/final vintage
 - **Unique producers**: 37,369
 - **Geography**: 60 countries, 349 regions, 1,516 sub-regions, 1,658 sites
@@ -34,28 +34,32 @@ These sources provide wine-level identity data (producer, wine name, geography, 
 - **What it lacks**: No grapes, no ABV, no barcode, no prices, no scores. Pure identity.
 - **License**: Creative Commons (free forever)
 - **File**: `data/LWINdatabase.xlsx`
-- **Import plan**: Phase A of merge pipeline. Identity backbone.
+- **Role**: Layer 2 overlay — matches against TTB backbone by normalized producer + wine name. Adds LWIN codes for fine wine segment.
+- **Script**: `scripts/load_lwin.mjs`
 
-### TTB COLA via COLA Cloud API — PRIORITY
-- **Status**: Free tier available, Kaggle demo analyzed
+### TTB COLA Public Registry — PRIORITY (F-tier backbone)
+- **Status**: Phase 1 (CSV harvest) running on local machine. ~16 hours estimated. 1955-present.
+- **Data**: ~1.2M wine COLAs. Grape varietals are a **native structured field** on detail pages (not AI-extracted).
+- **Fields**: TTB ID, brand name, fanciful name, grape varietals, origin (state/country), class/type, permit number, applicant name + full address, approval date, serial number, status
+- **What it lacks**: ABV, barcodes/GTIN, structured appellation (only state/country origin), tasting notes
+- **Access**: Web search at ttbonline.gov. CSV export with 1,000-row cap per search.
+- **License**: CC0 (public domain)
+- **Pipeline**: Phase 1 → CSVs of TTB IDs. Phase 2 → detail page scrape for grapes/applicant. Phase 3 → Haiku parse fanciful names for vintage/wine/appellation (~$5-10).
+- **Role**: Layer 1 backbone — broadest US wine identity source. Joins with Kansas on COLA ID.
+- **Staging table**: `source_ttb_colas`
+- **URL**: https://www.ttbonline.gov/colasonline/publicSearchColasBasic.do
+
+### TTB COLA via COLA Cloud API — DEFERRED
+- **Status**: API tested (22 requests on free tier). Revised to barcode enrichment role only.
 - **Data**: ~1.2M wine COLAs (2.6M total all beverages). 2,300 new/week.
 - **Fields**: TTB ID, brand name, fanciful name, class/type, origin, appellation (96%), grape varietals (54%), vintage year (65%), OCR ABV (87%), barcode (35%), label images, LLM-extracted designations/tasting notes/categories
-- **API**: REST at `app.colacloud.us/api/v1/colas`. Filter by `product_type=wine`.
-- **Pricing**: Free (500 req/mo = 50K records), Starter $39/mo (10K req = 1M records), Pro $199/mo
-- **Coverage**: Every wine label approved for US sale. Best mass-market coverage of any source.
-- **What it lacks**: No scores, no prices (these are label approvals, not retail data)
-- **Kaggle demo**: `data/imports/cola_demo.zip` (112,904 wine records from 2017-2018)
-- **Import plan**: Phase C of merge pipeline. Sign up for $39/mo Starter, pull all wine COLAs.
+- **API**: REST at `app.colacloud.us/api/v1/colas`. Search endpoint basic, detail endpoint rich.
+- **Pricing**: Free (500 req/mo), Starter $39/mo (10K req), Pro $199/mo (100K req), Snowflake data share (enterprise, pricing unknown)
+- **Verdict**: Too expensive for bulk F-tier. TTB direct gives grapes natively for free. COLA Cloud's unique value is barcodes (35% coverage) — useful for on-demand Grade B enrichment via Starter tier ($39/mo).
+- **API key**: In `.env`
+- **Sample data**: `data/imports/cola_cloud_sample.json`, `data/imports/cola_cloud_test2.json`
+- **Scripts**: `scripts/test_cola_cloud.mjs`, `scripts/test_cola_cloud_2.mjs`
 - **URL**: https://colacloud.us/
-
-### TTB COLA Public Registry — EVALUATED
-- **Status**: FOIA request filed 2026-03-16 (backup strategy)
-- **Data**: Same 2.6M COLAs as COLA Cloud, but raw fields only (~15 fields)
-- **What it lacks vs COLA Cloud**: No grapes, no barcode, no ABV (those require OCR of label images)
-- **Access**: Web search at ttbonline.gov. No bulk API. TTB IDs are enumerable (YYDDD + sequence).
-- **License**: CC0 (public domain)
-- **Verdict**: COLA Cloud is the better path. FOIA is backup. DIY scraping not worth the effort.
-- **URL**: https://www.ttbonline.gov/colasonline/publicSearchColasBasic.do
 
 ### Wine.com Sitemaps — IN HAND
 - **Status**: All 262,474 product URLs downloaded and analyzed
@@ -92,15 +96,17 @@ Government sources containing wines approved for sale in that state. Public data
 
 | State | Status | Fields | Export | Wine Records | Key Value |
 |-------|--------|--------|--------|-------------|-----------|
-| **Kansas** | ⭐ IN HAND | COLA (92%), appellation (84%), vintage (70%), ABV (100%) | JSON API | 31,216 | COLA IDs bridge to federal TTB |
+| **Kansas** | ⭐ INTEGRATED | COLA (92%), appellation (84%), vintage (70%), ABV (100%) | JSON API | 31,216 | COLA IDs bridge to federal TTB |
 | **Pennsylvania** | ⭐ IN HAND | UPC (100%), grape, region hierarchy, vintage (60%), price | Excel | 4,812 | Best barcode source |
 | **New Jersey** | EVALUATED | UPC, grape variety, registrant, distributor | Web (acct req) | Unknown | UPC + grape (rare combo) |
 
 **Kansas Active Brands**
+- **Status**: 31,216 wine records loaded into `source_kansas_brands` staging table (2026-03-17)
 - **Format**: JSON at `kdor.ks.gov/apps/liquorlicensee/Data/liquorlicenseefull.json`
 - **File**: `data/imports/kansas_active_brands.json` (24.6MB)
 - **Coverage**: Strong $10-150 US market. 6,625 unique brands including mass-market (Barefoot, Josh, 19 Crimes) that LWIN misses.
-- **Import plan**: Phase B of merge pipeline.
+- **Role**: Layer 1 enrichment — joins with TTB on COLA ID for ABV, appellation, vintage, distributor data.
+- **Script**: `scripts/load_kansas.mjs`
 
 **Pennsylvania PLCB Wine Catalog**
 - **Format**: Excel download from PA PLCB website
