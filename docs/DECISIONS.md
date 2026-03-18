@@ -535,5 +535,26 @@ Every identifier encountered from any source should be stored: LWIN-7, LWIN-11, 
 ### 2026-03-17: Vinmonopolet Added as Priority Source
 Norwegian state wine monopoly. ~25K wines with measured grape percentages, sugar g/L, acid g/L, ABV, flavor scales, food pairings, certifications. Open API key obtained but Open tier returns sparse data only. Email sent requesting full API access (my-products-v1 endpoint with barcodes and chemistry). Barcodes would be a universal dedup key across all sources. Website scraping is fallback (all data publicly displayed, ~5-10 hours).
 
-### 2026-03-17: Clean Slate for Canonical Wines (Partial)
-Keep 6 trial producer imports as seed data (Fort Ross, Sea Slopes, Moone Tsai, López de Heredia, Antinori, Louis Jadot — ~100 wines with deep, research-quality data). Move KL bulk import (193 producers, 1,467 wines) and retailer imports (Last Bottle, Best Wine Store, Domestique — ~1,200 wines) to staging tables. All future imports go through staging→match→promote pipeline. Canonical table starts lean with high-quality seeds.
+### 2026-03-18: Canonical Name Strategy (Producers + Wines)
+Canonical names should be the "commercially recognizable" name — what a wine drinker would see on a shelf or wine list. Not legal entities (TTB), not regulatory filings. Brand names, not corporate names. "Opus One" not "OPUS ONE RED WINE". "Château Margaux" not "SAS DU CHATEAU MARGAUX". Include estate prefixes when recognized (Domaine, Château, Bodegas). Drop corporate suffixes (Inc, LLC, SAS, GmbH). Source priority: LWIN/importer catalogs (curated) > retailers > TTB COLA (always alias, never canonical). Every name variant goes into alias tables. After multi-source merge, batch Haiku pass over wines with 2+ meaningfully different name variants to pick the best canonical name — estimated ~10-20% of wines need this, ~$40-70 total. Trivial differences (casing, accents) resolved programmatically without AI.
+
+### 2026-03-18: LWIN as 1:1 Identity Backbone
+Every LWIN-7 code maps to exactly one canonical wine — no dedup within LWIN. LWIN-7 is a commercially curated unique wine identifier. Wine names derived from LWIN `display_name` minus producer prefix, NOT from the `wine_name` field (which is often just "Rouge"/"Blanc"/"Riesling"). Example: "Domaine Jean-Jacques Confuron, Bourgogne, Rouge" → wine name "Bourgogne, Rouge" (not "Rouge"). This prevents Burgundy producers' entire portfolios from collapsing into a single "Rouge" record. First import attempt had this bug — 13K wines dropped + 151 wines wrongly merged (up to 19 different wines per producer). Fixed and re-imported.
+
+### 2026-03-18: Full Canonical Wipe and Rebuild
+Wiped all wines and producers from canonical tables to rebuild correctly through staging→promote pipeline. TRUNCATE CASCADE also wiped staging tables (lesson learned — CASCADE truncates all FK-referencing tables regardless of null values). All staging data reloaded from source files (CSV/JSON). No seed data retained — everything goes through the same pipeline now. Cleaner architecture.
+
+### 2026-03-18: LWIN Producer Names — Use producer_name as Dedup Key
+LWIN's `producer_name` is the deduped identity key (one per producer entity). The `display_name` prefix varies per wine (different labels/brands under same producer — e.g., "Domaine Grand Veneur" and "Alain Jaume" are the same entity). Use `producer_name` for matching/dedup, use the most common `display_name` prefix as the canonical display name, store all other variants as `producer_aliases` with type `alternate_name`.
+
+### 2026-03-18: SQL-Based Bulk Promotion over HTTP API
+For large imports (100K+ records), use server-side SQL (INSERT INTO ... SELECT FROM staging) instead of Node.js scripts making individual Supabase REST API calls. The LWIN import went from 3+ hours (Node/HTTP) to ~2 minutes (pure SQL). Disable search vector triggers during bulk inserts, re-enable after.
+
+### 2026-03-18: Barcode Aggregation Strategy
+Barcodes (UPC/EAN/GTIN) are the strongest cross-source identifier — same barcode on the same bottle worldwide, unique per vintage. Strategy: aggregate barcodes from every source that has them. Known barcode sources: PA PLCB (5,905 wines, 100% UPC), LCBO (3,515 wines, 99.9% UPC), Vinmonopolet (pending API access), WineDeals.com (7,694 wines with UPC on product pages), UPC Data 4 Beverage Alcohol (commercial, 150K+ wine barcodes, pricing inquiry sent). Also: Systembolaget (no barcodes but rich grape/vintage/taste data for enrichment matching).
+
+### 2026-03-18: WineDeals.com as Barcode + Enrichment Source
+US retailer (Premier Wine & Spirits, Amherst NY) with 7,694 wines. Every product page exposes 25 structured fields including UPC, grape varieties, ABV, vintage, country, region, district, appellation, color, wine type. Puppeteer scraper built (`scripts/scrape_winedeals.mjs`), resume-safe. Estimated 3-4 hours to scrape full catalog.
+
+### 2026-03-18: 7 New Countries Added
+Bosnia and Herzegovina, Bhutan, Hong Kong, Russia, Ecuador, Venezuela, Indonesia — all from LWIN data. Minor wine-producing countries but legitimate LWIN entries.
