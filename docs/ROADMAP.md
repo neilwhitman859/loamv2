@@ -1,6 +1,6 @@
 # Loam — Roadmap
 
-*Established 2026-03-13. Updated as phases complete.*
+*Established 2026-03-13. Updated 2026-03-17.*
 
 ---
 
@@ -10,124 +10,158 @@
 - **Real data only.** First-hand sources and government registries. No crowdsourced platforms.
 - **Schema before data.** All structural work completed before mass import.
 - **Terroir is central.** Burgundy is the benchmark — if we can tell that story well, we can handle anything.
+- **Identity first, accuracy first.** Slow and methodical over quick MVP. Prioritize accuracy. On-demand enrichment for user searches.
 
 ---
 
-## Phase 1: Foundation
+## Phase 1: Foundation ✓ (2026-03-14 – 2026-03-17)
 
-**Status:** Not started
+**Status:** COMPLETE
 **Goal:** Schema is production-ready. Reference tables are fully populated. Trial imports prove the schema handles diverse wine data.
 
 ### 1a. Schema Hardening ✓ (2026-03-14)
 Executed the full implementation spec from `docs/SCHEMA_ASSESSMENT.md` Part B:
-- All 21 new tables (Tier 0 structural through Tier 2) ✓
+- All 24 new tables (Tier 0 structural through Tier 2) ✓
 - All ~45 column additions on existing tables ✓
-- `lwin` columns on `wines` and `wine_vintages` ✓
-- All scrape data cleared — starting fresh ✓
+- Two rounds of schema hardening from import stress testing ✓
 - Reviewed each decision point before executing ✓
 
-### 1b. Reference Data Completion
-Fill the reference tables that power AI enrichment:
-- `appellation_grapes` — structured allowed varieties per appellation
-- `varietal_category_grapes` — blend composition
-- Grape parentage (`parent1_grape_id`, `parent2_grape_id`) from VIVC
-- Grape synonyms table populated
-- Soil physical properties backfilled
-- Remaining appellation/region/grape insights
-- Publications scoring metadata (`score_scale_min/max`)
-- Classification system seeded (Bordeaux 1855, Burgundy Grand/Premier Cru)
+### 1b. Reference Data Completion ✓ (2026-03-14 – 2026-03-15)
+All reference tables seeded and cross-validated:
+- Appellations: 3,662 (3,205 PDO/DOC/AOC + 457 IGT/IGP/PGI/VR/Landwein/base-tier) ✓
+- Appellation aliases: 17,558 ✓
+- Grapes: 9,693 (VIVC) + 34,820 synonyms ✓
+- Appellation grapes: 9,233 (100% coverage) ✓
+- Region grapes: 1,673 (100% coverage) ✓
+- Country grapes: 541 (100% coverage) ✓
+- Classifications: 13 systems, 32 levels ✓
+- Label designations: 116 + 75 aliases ✓
+- Publications: 71 ✓
+- Attribute definitions: 73 ✓
+- Tasting descriptors: 304 ✓
+- Soil types: 39 ✓
+- Farming/biodiversity certifications: 21 + 7 ✓
+- Geographic boundaries: countries 100%, appellations 88.8%, regions 99.7% ✓
 
-### 1c. Trial Producer Imports (in progress, 2026-03-15)
-Import producer websites to stress-test the schema before mass import:
-- **Moone Tsai** (CA) ✓ — boutique Napa, 7 wines, 2 vintages. Bordeaux blend classification, multi-vineyard sourcing, Howell Mountain sub-AVA.
-- **Fort Ross** (CA) ✓ — Fort Ross-Seaview AVA, 10 wines (incl. Sea Slopes second label), 20 vintages. Cool-climate Pinot/Chard, Pinotage from SA cuttings.
-- **López de Heredia** (Spain) ✓ — traditional Rioja DOCa, 9 wines, 28 vintages, 41 scores. Label designations (Reserva/Gran Reserva/Crianza), American oak, unfined/unfiltered. Grape alias resolution tested (Garnacho→Grenache, Mazuelo→Carignan).
-- **TBD Burgundy producer** — vineyard-level classification, shared vineyards
-- **TBD Tuscany producer** — DOCG/DOC + IGT Super Tuscans
+### 1c. Trial Imports + Schema Stress Testing ✓ (2026-03-15 – 2026-03-16)
+- 6 trial producer imports (4 countries) ✓
+- KL bulk import (193 producers, 1,467 wines) ✓
+- 3 Shopify retailer imports (1,231 wines) ✓
+- 10 wine-type stress tests (champagne, port, dessert, fortified, etc.) ✓
+- 5 global coverage stress tests (SA, Lebanon, Georgia, Madeira, Champagne) ✓
+- Total: 858 producers, 3,095 wines, 2,777 vintages in canonical tables ✓
+- Import library (`lib/import.mjs`) hardened across all edge cases ✓
 
-Architecture: `lib/import.mjs` (shared import library) + `data/imports/{slug}.json` (standardized per-producer JSON). Supports `--dry-run`. No schema changes needed — all three imports succeeded without schema fixes.
+### 1d. Source Research ✓ (2026-03-16 – 2026-03-17)
+- 17 source categories researched and documented in `docs/SOURCES.md` ✓
+- 6 importer catalog fetchers built and run (~10K wines in JSON files) ✓
+- COLA Cloud API tested (22 requests, search vs detail endpoint analysis) ✓
+- TTB COLA direct strategy identified (grape varietals are native field) ✓
+- Enrichment architecture designed (`docs/ENRICHMENT.md`) ✓
+- Multi-source merge architecture designed (`lib/merge.mjs`) ✓
 
----
-
-## Phase 2: LWIN Import
-
-**Status:** Not started
-**Depends on:** Phase 1 complete
-**Goal:** 187K wine skeletons in canonical tables. Identity backbone established. Dedup anchor for future imports.
-
-- Import LWIN database (187K wines after filtering spirits/beer)
-- Bulk-create ~37K producer records
-- Build region mapping (`data/lwin_region_mapping.json`, ~100 entries)
-- Appellation matching (fuzzy name match, ~85% expected auto-match)
-- Assign LWIN-7 codes to `wines.lwin`, LWIN-11 to `wine_vintages.lwin`
-- Match and merge with existing 267 wines (Ridge, Tablas Creek, Stag's Leap + trial imports)
-- All imported wines enter at Tier 3 (just identified)
-
----
-
-## Phase 3: Source Research + TTB COLA Import
-
-**Status:** Not started
-**Depends on:** Phase 2 complete (LWIN as dedup backbone)
-**Goal:** Everyday wine coverage. Dedicated source research session before any import.
-
-### 3a. Source Research Session
-Deep dive into available data sources:
-- **TTB COLA** — access strategy (COLA Cloud API vs direct scraping), cost, data quality
-- **EU e-labels** — mandatory since Dec 2023, structured data, emerging ecosystem
-- **Other catalog-level sources** — Wine Australia, INAO, INV, SAG
-- Schema impact assessment — do any sources reveal gaps?
-
-### 3b. TTB COLA Import
-- Enrich existing LWIN wines with grape data, label images, importer info
-- Create new records for everyday wines not in LWIN
-- Dedup: match COLA records against LWIN backbone by producer + wine name + appellation
+### 1e. Search + API Infrastructure ✓ (2026-03-16)
+- Full-text search vectors + trigram indexes on all searchable entities ✓
+- RPC functions: `search_catalog()` and `search_wines()` ✓
+- 4 API views for frontend consumption ✓
+- RLS policies on all 94 canonical tables ✓
 
 ---
 
-## Phase 4: Vertical Slice Enrichment — California + Burgundy
+## Phase 2: Multi-Source Data Population (IN PROGRESS)
 
-**Status:** Not started
-**Depends on:** Phases 2-3 provide the wine catalog
-**Goal:** Every wine in California and Burgundy moves from Tier 3 to Tier 2 (AI-enriched from reference data). Select producers move to Tier 1 (producer-scraped).
+**Status:** In progress
+**Goal:** ~200K+ wines in canonical tables from multiple authoritative sources. Identity matching and dedup working. Every wine has a data grade (F/D/C/B/A).
 
-- AI enrichment pipeline design (batch vs on-demand, cost model)
-- Tier 3 → Tier 2: Claude synthesizes appellation context, grape profiles, regional climate from reference data
-- Tier 2 → Tier 1: Targeted producer scraping for winemaking depth
-- Burgundy: test vineyard-level classification, Grand Cru/Premier Cru, négociant vs domaine
-- California: test breadth across price points, AVA hierarchy
+### Architecture
+Per-source staging tables (`source_*`) preserve raw data. Merge layer reconciles into canonical tables. Three-tier matching: key-based (COLA ID, LWIN, barcode) → normalized name → fuzzy pg_trgm.
+
+### 2a. Staging Tables + Raw Data Loading (IN PROGRESS)
+- `source_ttb_colas`: Phase 1 CSV harvest running on local machine (~16 hours) ⏳
+- `source_kansas_brands`: 31,216 wine records loaded ✓
+- `source_lwin`: 184,497 records loaded ✓
+- Importer catalogs: 10K wines in JSON files, not yet in staging tables
+
+### 2b. TTB COLA Pipeline
+- **Phase 1 (CSV harvest):** Running locally. 1955-present, wine class types 80-89. ⏳
+- **Phase 2 (detail scrape):** Fetch grape varietals + applicant data from detail pages. Filter Phase 1 output first (skip expired/surrendered, deduplicate label refreshes). 3-7 days at polite rate.
+- **Phase 3 (AI parse):** Haiku extracts vintage, wine name, appellation from fanciful names. ~$5-10.
+
+### 2c. Key-Based Joins (Layer 1)
+- JOIN `source_ttb_colas` + `source_kansas_brands` ON cola_id — trivial SQL join
+- Produces enriched staging view: TTB identity + Kansas ABV/appellation/vintage
+- Group COLAs into wine identities (many COLAs → one wine)
+- Store COLA IDs in `external_ids`
+
+### 2d. LWIN Overlay (Layer 2)
+- Match LWIN records against Layer 1 by normalized producer + wine name
+- Adds LWIN codes to existing records, creates new for fine wines not in TTB/Kansas
+- ~187K wines, 30-50% estimated overlap with TTB
+
+### 2e. Rich Source Merge (Layer 3)
+- Importer catalogs (10K wines) merge against Layers 1+2
+- Adds depth: soil, vinification, farming certs, scores
+- Mostly enrichment, not identity creation
+- Also: retailer imports, state databases
+
+### 2f. Data Grade Assignment
+- F: identity only (producer + wine + country)
+- D: has scores or prices
+- C: batch Haiku enrichment (appellation context, grape profiles)
+- B: on-demand Sonnet enrichment (triggered by user search)
+- A: curated (manual verification)
 
 ---
 
-## Phase 5: Label Scanner
+## Phase 3: Enrichment Pipeline
 
 **Status:** Not started
-**Depends on:** Large wine catalog to match against (Phases 2-3)
-**Goal:** User scans a wine label, Loam identifies the wine.
+**Depends on:** Phase 2 provides the wine catalog
+**Goal:** On-demand enrichment for user searches. Every wine a user looks up gets Grade B content within 5-15 seconds.
 
-- OCR approach first (photo → text extraction → fuzzy match against wines table)
-- Leverage trigram indexes on producer name + wine name
-- Build and test — may evolve to include visual matching later
-- Label images from TTB COLA as potential reference set
+- Edge Function for on-demand Sonnet enrichment
+- Batch Haiku for pre-warming popular wines to Grade C
+- Vertical slice: California + Burgundy as first enrichment targets
+- Enrichment log with cost tracking, prompt versioning, review workflow
+- Weather data integration (Open-Meteo, appellation-level)
+- See `docs/ENRICHMENT.md` for full architecture
 
 ---
 
-## Phase 6: Frontend
+## Phase 4: Frontend
 
 **Status:** Not started
-**Depends on:** Data worth showing (Phase 4 enrichment proves the model)
+**Depends on:** Enrichment pipeline working (Phase 3)
 **Goal:** Beautiful, information-rich wine pages. Search + label scan as entry points.
 
-- Tiered experience: Tier 1/2/3 wines show different levels of detail
+- Vite/React PWA, mobile-first
+- Tiered experience: Grade F/D/C/B/A wines show different levels of detail
+- Input methods: text search, barcode scan (later), label photo (later)
 - Not rushed. When it ships, it ships right.
+
+---
+
+## Phase 5: Label Scanner + Barcode
+
+**Status:** Not started
+**Depends on:** Large wine catalog with barcodes (Phase 2)
+**Goal:** User scans a wine label or barcode, Loam identifies the wine.
+
+- Barcode scan → GTIN/EAN lookup against `wines.barcode`
+- OCR approach for labels (photo → text → fuzzy match)
+- Leverage trigram indexes on producer name + wine name
+- Barcode sources: Vinmonopolet API, state databases (PA), COLA Cloud
 
 ---
 
 ## Open Items (Not Phased Yet)
 
-- **Data freshness strategy** — how/when to re-import from LWIN, COLA, etc.
-- **Dedup strategy** — consistent matching approach across all import sources
-- **Enrichment pipeline architecture** — batch vs on-demand, queue system, cost model
+- **Data freshness strategy** — how/when to re-import from TTB, LWIN, etc.
 - **Score data licensing** — Wine Spectator, Parker, CellarTracker terms
 - **Weather data** — Open-Meteo integration (needs appellation lat/lng)
-- **Remaining insight tables** — wine insights, producer insights, soil insights, water body insights
+- **COLA Cloud email** — request one-time barcode data export
+- **Vinmonopolet API** — Norwegian state monopoly, richest structured source globally
+- **EU e-labels** — 500K+ wines with ingredients, nutrition, allergens
+- **VineRadar API** — vineyard GPS + terroir data
+- **Southern hemisphere importers** — no dedicated importers researched for AU/NZ/AR/CL/ZA
+- **Remaining insight tables** — wine, producer, soil, water body insights

@@ -414,6 +414,6 @@ Discovered that TTB's public COLA registry has **structured grape varietal data 
 
 ## Key Phrases
 
-- **"wrap up"** — End-of-session routine: update CLAUDE.md, update DECISIONS.md if needed, commit and push.
+- **"wrap up"** — End-of-session routine: update CLAUDE.md, update DECISIONS.md if needed, update ROADMAP.md if phase status changed, update SCHEMA.md if schema changed, commit and push.
 - **"log that"** — Force a DECISIONS.md entry.
 - **"briefing"** — Give current state summary anytime mid-session.
