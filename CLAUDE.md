@@ -413,13 +413,15 @@ Discovered that TTB's public COLA registry has **structured grape varietal data 
 
 ## Key Phrases
 
-- **"wrap up"** — End-of-session routine: update all relevant docs, then commit and push. Check each:
+- **"wrap up"** — End-of-session routine: **consider every doc file** for updates, then commit and push. Go through this checklist — skip only if genuinely nothing changed for that doc:
   - `CLAUDE.md` — always update (current state, what was accomplished)
   - `docs/DECISIONS.md` — append if any decisions were made
   - `docs/ROADMAP.md` — update if phase status or priorities changed
   - `docs/SCHEMA.md` — update if schema changed (CREATE/ALTER/DROP)
   - `docs/SOURCES.md` — update if source status changed (new source, fetcher built, data loaded)
   - `docs/ENRICHMENT.md` — update if enrichment architecture changed
-  - `docs/PRINCIPLES.md`, `docs/VOICE.md`, `docs/WORKFLOW.md` — stable, rarely need updates
+  - `docs/PRINCIPLES.md` — update if product philosophy changed
+  - `docs/VOICE.md` — update if tone/content guidance changed
+  - `docs/WORKFLOW.md` — update if session workflow changed
 - **"log that"** — Force a DECISIONS.md entry.
 - **"briefing"** — Give current state summary anytime mid-session.
