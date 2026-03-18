@@ -17,9 +17,8 @@ Loam is a wine intelligence platform. Users look up a wine and get the full stor
 - `docs/ENRICHMENT.md` — Letter-grade enrichment architecture (F/D/C/B/A), cost model, on-demand pipeline, wine-not-found flow. Read before building or modifying the enrichment pipeline.
 - `docs/SOURCES.md` — Master reference for all external data sources (evaluated, integrated, planned, rejected). Read when working on data acquisition or import pipelines.
 - `docs/ROADMAP.md` — Phased development plan. Read at session start to know what phase we're in and what's next.
-- `docs/LWIN_STRATEGY.md` — LWIN integration research and three-layer data strategy. Read when working on wine import.
-- `docs/SCHEMA_ASSESSMENT.md` — Deep schema assessment with implementation spec (Part B). Read when doing schema work.
 - `docs/WORKFLOW.md` — Human-facing session checklist. You don't need to read this, but follow the behavioral instructions below.
+- `docs/reference/` — Retired docs kept for historical reference, not actively updated. Includes LWIN_STRATEGY.md (superseded by SOURCES.md + ROADMAP.md), SCHEMA_ASSESSMENT.md (Phase 1a spec, fully executed).
 
 ---
 
