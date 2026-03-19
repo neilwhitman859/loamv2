@@ -153,7 +153,7 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 - **New tables (2026-03-16):** wine_relationships (0 rows), producer_timeline (0 rows), wine_lookups (0 rows — analytics/enrichment promotion)
 - **wine_insights columns added:** ai_hook, ai_vinification_summary, enrichment_tier (0-3), is_verified
 - wine_vintage_id FK backfilled: scores and prices 100% linked to wine_vintages
-- **Staging-first architecture (2026-03-18):** All data now goes through per-source staging tables before canonical promotion. KL and retailer data moved from canonical to staging. 13 staging tables total. See "Multi-Source Merge Infrastructure" section below.
+- **Staging-first architecture (2026-03-18):** All data now goes through per-source staging tables before canonical promotion. KL and retailer data moved from canonical to staging. **19 staging tables total (889K rows, ~647K with COLA, ~27K with UPC).** See "Multi-Source Merge Infrastructure" section below.
 - **Trial imports (6 producers, Phase 1c) — retained as seed data:**
   - Fort Ross Vineyard (US/Sonoma, estate): 15 wines, 112 vintages, 84 scores
   - Sea Slopes (US/Sonoma, child of Fort Ross): 2 wines, 24 vintages, 15 scores
@@ -255,13 +255,29 @@ Staging-first architecture: all external data goes through per-source staging ta
 - `source_polaner` (1,680 rows), `source_kermit_lynch` (1,468 rows), `source_kermit_lynch_growers` (193 rows)
 - `source_skurnik` (5,541 rows), `source_winebow` (536 rows), `source_empson` (279 rows), `source_european_cellars` (443 rows)
 - `source_last_bottle` (160 rows), `source_best_wine_store` (1,658 rows), `source_domestique` (247 rows)
-- Pre-existing: `source_lwin` (184,497), `source_ttb_colas` (0 — Phase 1 running), `source_kansas_brands` (31,216)
+- Pre-existing: `source_lwin` (189,359), `source_ttb_colas` (0 — Phase 1 running), `source_kansas_brands` (65,476)
+- **New (2026-03-19 session):**
+  - `source_pro_platform` (346,080 rows) — 12 US states via PRO Platform XLSX export. Unique on cola_number, `states` TEXT[] tracks which states each COLA appeared in. Fields: cola_number, brand, label_description, vintage, appellation, abv, supplier, distributors, states.
+  - `source_tabc` (182,933 rows) — Texas TABC via Socrata API. 100% TTB numbers, 99.8% ABV.
+  - `source_wv_abca` (55,093 rows) — West Virginia ABCA via REST API. 96.7% TTB IDs, vintage 63.8%. Detail endpoint has appellation + varietal (not yet scraped).
+  - `source_openfoodfacts` (5,176 rows) — UPC barcodes, 62% French. Crowdsourced.
+  - `source_horizon` (6,441 rows) — UPC barcodes from Horizon Beverage (SGWS MA/RI distributor).
+  - `source_winedeals` (3,200 rows, 2,760 with UPC) — Retailer, Puppeteer scrape.
+  - `source_lcbo` (7,030 rows) — Ontario LCBO, UPC barcodes. Pre-existing.
+  - `source_pa` (5,905 rows) — Pennsylvania PLCB, 10,297 UPCs. Pre-existing.
+  - `source_systembolaget` (12,646 rows) — Sweden. Pre-existing.
+- **Total staging rows: 889,686** across 19 source tables. **~647K with COLA, ~27K with UPC barcodes.**
 
 **RPC functions:** `match_producer_fuzzy()`, `match_wine_fuzzy()` — pg_trgm similarity search for the match engine.
 
 **Scripts:**
 - `scripts/load_staging.mjs` — loads raw JSON catalogs into per-source staging tables. Supports `--source polaner,kl,skurnik,...` or `--source all`.
 - `scripts/promote_staging.mjs` — matches staging rows against canonical, creates/links records. Supports `--source`, `--dry-run`, `--limit`. Per-source adapters handle field mapping.
+- `scripts/parse_pro_platform.mjs` — parses 12 PRO Platform XLSX exports → per-state JSON. Dedup by COLA within each state. CSV fast path for files >20MB. Supports `--state ar,co,...` and `--stats`.
+- `scripts/load_pro_staging.mjs` — loads parsed PRO JSON into source_pro_platform with cross-state dedup. Merges states[] array. Supports `--state` and `--dry-run`.
+- `scripts/load_tabc_staging.mjs` — loads TX TABC JSON (Socrata) into source_tabc. Dedup by TTB number.
+- `scripts/load_wv_staging.mjs` — loads WV ABCA JSON (REST API) into source_wv_abca. Separates numeric COLA from text TTB values.
+- `scripts/load_upc_staging.mjs` — loads Open Food Facts, Horizon Beverage, WineDeals into their staging tables.
 
 **Promotion results (5 importer catalogs promoted 2026-03-18):**
 - KL: 1,468 wines → 830 new wines created, 638 matched to existing
@@ -341,16 +357,23 @@ Staging-first architecture: all external data goes through per-source staging ta
     - Scripts: `fetch_skurnik.mjs`, `fetch_polaner.mjs`, `fetch_winebow.mjs`, `fetch_empson.mjs`, `fetch_european_cellars.mjs`
     - Output: `data/imports/{source}_catalog.json`
 17. ~~Build merge infrastructure~~ ✓ (partial) — `lib/merge.mjs` MergeEngine class built. 3-tier matching, additive merging, grade calculation, all resolvers. Not yet tested.
-18. **TTB COLA Phase 1 (CSV harvest)** — IN PROGRESS. User running locally (~16 hours). 1955-present.
-19. **TTB COLA Phase 2 (detail scrape)** — fetch grape varietals + applicant data from detail pages. Filter Phase 1 output first.
-20. **TTB COLA Phase 3 (AI parse)** — Haiku extracts vintage, wine name, appellation from fanciful names. ~$10.
-21. **LWIN import** — match against TTB COLA backbone for dedup. Script ready, not yet run.
-22. **Kansas + PA import** — bridge COLA IDs to state data (UPCs, distributor info)
-23. **Importer catalog merge** — merge 10K catalog wines against TTB+LWIN backbone
-24. **COLA Cloud barcode enrichment** — email for one-time export or use $39/mo Starter for on-demand
-25. **Remaining importer scrapers** — Kysela, Louis/Dressner, Broadbent
-26. **Enrichment pipeline** — Edge Function + prompts + enrichment_log
-27. **Frontend** — Vite/React PWA
+18. ~~50-state UPC/COLA survey~~ ✓ (2026-03-19) — comprehensive overnight survey of all 50 US state alcohol control boards. See section below.
+19. ~~PRO Platform 12-state XLSX download + parse + load~~ ✓ (2026-03-19) — 346,080 unique COLAs loaded into source_pro_platform.
+20. ~~TX TABC load~~ ✓ — 182,933 wines loaded into source_tabc.
+21. ~~WV ABCA load~~ ✓ — 55,093 wines loaded into source_wv_abca.
+22. ~~UPC sources load~~ ✓ — OFF (5,176), Horizon (6,441), WineDeals (3,200) loaded.
+23. ~~Kansas reload~~ ✓ — 65,476 records loaded (was 0 due to prior truncation).
+24. **NJ OPRA request** — File for UPC+COLA data (7-day response). Portal: www-njlib.nj.gov. Or call 609-984-2830.
+25. **TTB COLA Phase 1 (CSV harvest)** — IN PROGRESS. User running locally (~16 hours). 1955-present.
+26. **TTB COLA Phase 2 (detail scrape)** — fetch grape varietals + applicant data from detail pages.
+27. **TTB COLA Phase 3 (AI parse)** — Haiku extracts vintage, wine name, appellation from fanciful names. ~$10.
+28. **LWIN import** — match against TTB COLA backbone for dedup. Script ready, not yet run.
+29. **WV ABCA detail scraper** — batch fetch appellation/varietal/vineyard for 55K labels (~15 hours).
+30. **Importer catalog merge** — merge 10K catalog wines against TTB+LWIN backbone.
+31. **COLA Cloud barcode enrichment** — on-demand for Grade B enrichment, not bulk. $39/mo Starter.
+32. **Remaining importer scrapers** — Kysela, Louis/Dressner, Broadbent
+33. **Enrichment pipeline** — Edge Function + prompts + enrichment_log
+34. **Frontend** — Vite/React PWA
 
 ### Schema Post-Import Hardening (2026-03-15)
 - **Metadata → columns:** 4 fields promoted from metadata JSONB: `release_date` (wine_vintages), `first_vintage_year` (wines), `style` (wines), `philosophy` (producers). 150+ metadata entries identified for migration to proper table links (classifications, vineyards, estates).
@@ -454,11 +477,11 @@ Comprehensive overnight survey of all 50 US state alcohol control boards for win
 - **Horizon Beverage** (SGWS/MA+RI): 6,441 wines via undocumented JSON API at `horizonbeverage.com/api/products/GetProducts`. UPC in every record. File: `horizon_wines.json`. Script: `fetch_horizon.mjs`.
 - **PA PLCB**: 5,905 wines with 10,297 UPCs (multiple per product). Parsed from Excel catalog. File: `pa_wines_parsed.json`.
 - **LCBO** (Ontario, Canada): 3,513 wines with barcodes. Puppeteer scraper. File: `lcbo_wines.json`. Script: `fetch_lcbo.mjs`.
-- **WineDeals.com**: ~6,800 wines (scraper running overnight). Puppeteer product page scraper. Script: `fetch_winedeals.mjs`.
+- **WineDeals.com**: 3,200 wines scraped (2,760 with UPC). Puppeteer product page scraper. File: `winedeals_catalog.json`. Script: `fetch_winedeals.mjs`.
 
-**Connecticut DCP — WAF-blocked Rosetta Stone:** UPC + COLA bridge in per-supplier PDF price lists. 388 supplier GUIDs cached (`ct_dcp_guids.json`). BITS BOT WAF blocks all automated approaches (Puppeteer, fetch, cookie copying). Script: `fetch_ct_dcp.mjs` (supports `--chrome-profile` mode but DPAPI cookie encryption prevents sharing). **Action needed: call Richard Mindek at CT DCP (860) 713-6229 for bulk CSV export.**
+**Connecticut DCP — NO UPC/COLA (confirmed 2026-03-19):** Original "Rosetta Stone" claim was wrong. Wholesaler XLSX price lists (e.g., Brescome Barton: 11,309 rows) contain wine name, vintage, proof, pack, prices — but NO UPC and NO TTB COLA columns. Supplier PDFs are similar. CT brand registration form does not collect UPC or COLA as structured fields. However, CT data IS valuable for pricing (~50-100K wholesale wine prices per month). Also downloaded: `ct_liquor_brands.json` (71,753 brand registrations from data.ct.gov Socrata API — brand name + wholesaler mappings, no UPC/COLA). Contact: Richard.Mindek@ct.gov, (860) 713-6229. FOIA portal: dcpct.govqa.us (4-day response).
 
-**New Jersey POSSE — UPC+COLA combo:** Since Jan 2023, NJ ABC collects BOTH UPC and TTB COLA for all brand registrations. Free account at `abc.lps.nj.gov` needed. **Action needed: register account to test search/export.**
+**New Jersey POSSE — OPRA required (confirmed 2026-03-19):** Account created and tested. Product Search returns ZERO results for all queries — database appears empty despite UPC+COLA collection since Jan 2023. The data exists (confirmed by NJ ABC advisory notices AN 2024-04) but is not exposed through the web search interface. **Action: File NJ OPRA request** via www-njlib.nj.gov (7-day response, electronic records free). Request CSV export of all wine product registrations including UPC + COLA. Or call 609-984-2830.
 
 **Vinmonopolet** — Email sent requesting API key. Waiting for response. (~20K wines with barcodes, richest structured data globally.)
 
