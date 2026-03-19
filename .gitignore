@@ -57,3 +57,24 @@ data/imports/firstleaf_raw.json
 
 # Local settings
 .claude/settings.local.json
+.chrome-temp-profile/
+
+# 50-state survey data (2026-03-18)
+data/imports/*_active_brands*.xlsx
+data/imports/*_active_brands*.json
+data/imports/pro_*.json
+data/imports/tx_*.json
+data/imports/tx_*.csv
+data/imports/wv_*.json
+data/imports/fl_*.csv
+data/imports/ct_dcp_*.json
+data/imports/openfoodfacts_wines.json
+data/imports/horizon_beverage_wines.json
+data/imports/lcbo_catalog.json
+data/imports/pa_wines_parsed.json
+data/imports/winedeals_catalog.json
+data/imports/systembolaget_raw.json
+data/imports/va_abc_quarterly.csv
+data/imports/utah_alpha_price_list_mar2026.pdf
+data/imports/*_fetch_log.txt
+data/imports/tabc_approved_labels.csv

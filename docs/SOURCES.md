@@ -2,7 +2,7 @@
 
 Master reference for all external data sources — evaluated, integrated, planned, or rejected. Nothing gets lost.
 
-**Last updated**: 2026-03-17
+**Last updated**: 2026-03-18
 **Coverage**: All 50 US states + DC surveyed. 22+ importers researched. 12 competitions, 17 associations, 16 international retailers, 19 auction/trading platforms, 10+ wine APIs evaluated.
 
 ---
@@ -97,7 +97,7 @@ Government sources containing wines approved for sale in that state. Public data
 | State | Status | Fields | Export | Wine Records | Key Value |
 |-------|--------|--------|--------|-------------|-----------|
 | **Kansas** | ⭐ INTEGRATED | COLA (92%), appellation (84%), vintage (70%), ABV (100%) | JSON API | 31,216 | COLA IDs bridge to federal TTB |
-| **Pennsylvania** | ⭐ IN HAND | UPC (100%), grape, region hierarchy, vintage (60%), price | Excel | 4,812 | Best barcode source |
+| **Pennsylvania** | ⭐ FETCHED | UPC (100%, 10,297 codes), grape, region hierarchy, vintage (60%), price | Excel → JSON | 5,905 | Best barcode source |
 | **New Jersey** | EVALUATED | UPC, grape variety, registrant, distributor | Web (acct req) | Unknown | UPC + grape (rare combo) |
 
 **Kansas Active Brands**
@@ -115,37 +115,77 @@ Government sources containing wines approved for sale in that state. Public data
 - **Import plan**: Phase B of merge pipeline.
 
 **New Jersey POSSE**
-- **URL**: https://abc.lps.nj.gov/ABCPublic/
-- **Caveat**: Requires free account registration to execute searches
+- **URL**: https://abc.lps.nj.gov/ABCPublic/Default.aspx?PossePresentation=ProductSearch
+- **Caveat**: Requires free account registration at `abc.lps.nj.gov` to access search. Login-gated (403 without auth).
+- **UPC+COLA bridge**: Since Jan 2023, NJ ABC collects **both UPC and TTB COLA** for all brand registrations and renewals. If a product has both identifiers, both are required. This makes NJ potentially the richest state for UPC-COLA cross-referencing.
+- **Value**: HIGH — unique UPC+COLA bridge data. Worth creating an account to assess volume and export options.
 
-### Tier 2 — PRO Platform (12 states, one scraper)
+### Tier 1b — PRO Platform (12 states, one scraper) ⭐
 
-| State | Status | Notes |
-|-------|--------|-------|
-| **AR, CO, IL, KY, LA, MN, NM, NY, OH, OK, SC, SD** | PRIORITY | Identical Sovos ShipCompliant system |
+| State | Status | Est. Records | Notes |
+|-------|--------|-------------|-------|
+| **IL** | PRIORITY | ~310K | Largest market |
+| **NY** | PRIORITY | ~280K | Largest east coast |
+| **OH** | PRIORITY | ~180K | |
+| **CO** | PRIORITY | ~120K | |
+| **KY** | PRIORITY | ~110K | |
+| **MN** | PRIORITY | ~100K | |
+| **SC** | PRIORITY | ~90K | Has wine-specific Product Type filter |
+| **LA** | PRIORITY | ~80K | |
+| **OK** | PRIORITY | ~75K | |
+| **AR** | PRIORITY | ~70K | |
+| **NM** | PRIORITY | ~65K | |
+| **SD** | PRIORITY | ~80K | |
+| **Total** | | **~1.56M** | All brands, all beverage types |
 
-- **Fields**: COLA number, brand/label description, vintage, appellation, ABV, supplier, distributor, container type, unit size
-- **Export**: "Export Results" to Excel (no auth — `GET /Export/DownloadActiveBrandsSummary`)
-- **Wine coverage**: Low (~0.9% in NY). SC has Product Type filter for Wine specifically.
-- **Recommended states**: IL (largest market), CO, MN, SC (has wine filter)
+- **Platform**: Identical Sovos ShipCompliant system across all 12 states
+- **Fields**: TTB COLA number, brand name, label/fanciful name, vintage, appellation, ABV, supplier, distributor, container type, unit size, approval date, expiration date
+- **XLSX Export**: `GET https://{state}.productregistrationonline.com/Export/DownloadActiveBrandsSummary` — **no auth needed**, returns full active brands list as Excel. This is the fastest path to ~1.56M COLA numbers.
+- **API**: `POST /Search/ActiveBrandSearch` — JSON endpoint, requires session cookies (not fully open like Kansas JSON dump)
+- **Verify site**: `{state}.productregistrationonline.com/verify` for COLA/approval number lookup
+- **Wine coverage**: All brands (wine + spirits + beer). Wine filtering varies — SC has Product Type filter, others require post-download filtering by class/type.
+- **Confirmed accessible**: NY, OK, NM (all verified 2026-03-18). AR, CO, KY, LA, MN, OH, SC, SD also listed.
+- **Recommended download order**: IL, NY, OH, CO (largest markets first)
 - **URL pattern**: `{state}.productregistrationonline.com/brands`
+- **Key value**: Combined ~1.56M brand registrations with TTB COLA numbers. After dedup across states and filtering to wine, estimated ~200-400K unique wine COLAs. Provides instant COLA coverage while TTB direct scrape runs.
 
 ### Tier 3 — Individually Researched (worth pursuing)
 
 | State | Status | URL | Fields | Export | Value |
 |-------|--------|-----|--------|--------|-------|
-| **North Carolina** | EVALUATED | abc2.nc.gov/Search/Product | Brand, fanciful name, ABV%, wine class, size, status, brand origin | Web scrape only | **HIGH** — ABV + wine classification |
+| **North Carolina** | EVALUATED | abc2.nc.gov/Search/Product | Brand, fanciful name, ABV%, wine class, size, status, brand origin | Web scrape only | **HIGH** — ABV + wine classification (wine control state) |
 | **Missouri** | EVALUATED | data.mo.gov Socrata | Brand name, type, wholesaler | CSV/JSON API (Socrata) | **MEDIUM** — ~354K rows, great API, no wine metadata |
-| **Texas** | EVALUATED | tabcaims.elicense365.com | Label ID, product name, ABV, TTB COLA, date registered | Excel | **MEDIUM** — 2nd largest market, COLA IDs |
-| **West Virginia** | EVALUATED | wvabca.com/winesearch.aspx | TTB COLA, brand, fanciful name, class, vintage, ABV | Web scrape only | **MEDIUM** — wine-specific DB |
+| **Texas** | ⭐ IN HAND | data.texas.gov Socrata API | TTB COLA (100%), ABV (99.8%), brand, supplier, distributor | JSON API + CSV | **VERY HIGH** — 201K wine records, 2nd largest market |
+| **West Virginia** | ⭐ IN HAND | api.wvabca.com REST API | TTB ID (96.4%), vintage (63.8%), brand, fanciful name, class | JSON API | **HIGH** — 55K wine labels, public API with key |
 | **Virginia** | EVALUATED | abc.virginia.gov BWC Reports | Code, brand, supplier, wholesaler | Excel (spirits); web (wine) | **MEDIUM** — 403 on fetch, needs browser |
 | **Tennessee** | EVALUATED | tn.gov TNTAP | Brand, COLA required for registration | Unknown (portal timeout) | **MEDIUM** — COLA captured, access unclear |
 
-**North Carolina** — `abc2.nc.gov/Search/Product` and `/Search/Brand`. ASP.NET app with wine class filters (Red, White, Rose, Sparkling, Dessert). Has ABV and brand origin. No COLA/vintage/appellation. Scrape-friendly.
+**North Carolina** — `abc2.nc.gov/Search/Product` and `/Search/Brand`. ASP.NET app with wine class filters (Red, White, Rose, Sparkling, Dessert, Cider, Sake, Sangria). Has ABV and brand origin. COLA is required at product approval (submitted to Commission) but NOT exposed in search results. No vintage/appellation in search. Scrape-friendly. Also: wine/beer require Commission approval before sale (unlike spirits which go through ABC stores).
 
 **Missouri** — Socrata open data at `data.mo.gov/api/views/gfq7-aa86/rows.csv`. Filter by `Type='Wine'`. Also has "Conditional Label Approvals" dataset (2,107 rows with Fanciful Name, Class, Proof). No wine-specific metadata but excellent bulk access.
 
 **Tennessee** — COLA is required for brand registration (promising), but TNTAP portal timed out on access. Worth investigating with a browser.
+
+**Texas TABC — IN HAND** ⭐
+- **URL**: Socrata Open Data API at `https://data.texas.gov/resource/2cjh-3vae.json?type=WINE`
+- **Data**: 201,165 wine records. 2nd largest US market.
+- **Fields**: TTB COLA number (100%), ABV (99.8%), brand name, product name, supplier, distributor, container size, approval date
+- **Access**: Free Socrata API — standard `$limit`, `$offset`, `$where` query params. Also CSV export.
+- **File**: `data/imports/tx_tabc_wines.json` (87MB)
+- **Script**: `scripts/fetch_tx_tabc.mjs`
+- **Value**: Massive COLA ID coverage for the Texas market. 100% TTB number rate makes this a top-tier COLA bridge source.
+
+**West Virginia ABCA — IN HAND** ⭐
+- **URL**: REST API at `https://api.wvabca.com/API.svc/WineLabelSearch`
+- **Data**: 55,378 wine labels
+- **Fields (list)**: TTB ID (96.4%), brand, fanciful name, class/type, vintage (63.8%), ABV, origin, size, status, approval date
+- **Detail endpoint**: `WineLabelDetails?id={id}` — adds appellation, grape varietal, applicant info
+- **Access**: Public API key: `2BB0C528-219F-49EE-A8B8-A5A2271BEF9D` (passed as `api_key` header)
+- **File**: `data/imports/wv_wines_list.json` (14MB)
+- **Script**: `scripts/fetch_wv_abca.mjs`
+- **Value**: Wine-specific database with TTB IDs + vintage + detail-page grape/appellation data.
+
+**Oklahoma ABLE Price Posting** — Monthly distributor price posting PDFs at oklahoma.gov/able-commission. Includes wine distributors and wineries. PDF format only (not structured). Low incremental value over PRO platform data.
 
 ### Tier 4 — Low Value or Login Required
 
@@ -168,24 +208,39 @@ Government sources containing wines approved for sale in that state. Public data
 | **Maryland** | No brand registration or product database |
 | **Delaware** | No brand registration or product database |
 | **Hawaii** | No brand registration or product database |
-| **North Dakota** | No brand registration or product database |
+| **North Dakota** | Brand registration repealed in 2005. No product database. |
 | **Alaska** | No label registration required. Wholesalers handle brand registration. |
 | **Indiana** | ATC has authority but no public product database. Licensee lookup only. |
-| **Nevada** | Brand registration (supplier-wholesaler designation) but no product/label registration. |
+| **Nevada** | Brand registration is supplier-wholesaler designation only (no label/product registration). Dept of Taxation handles liquor tax, not product data. No public product database. |
 | **Wisconsin** | Brand registration exists but not publicly searchable. |
 | **DC** | Licensee list only, no product database. |
 | **Florida** | Limited public access |
 | **Georgia** | Limited public access |
 | **Massachusetts** | Limited public access |
-| **Connecticut** | Limited public access |
+| **Connecticut** | WAF-blocked (see notes below) |
 | **Michigan** | Login required |
 | **Montana** | Login required |
 | **Wyoming** | Login required |
-| **New Hampshire** | Login required |
-| **Oregon** | Spirits-only database |
+| **New Hampshire** | Wine control state. Public product catalog at liquorandwineoutlets.com (Cloudflare-protected, 403 on fetch). Product data includes name, price, volume. No evidence of UPC/COLA in public view. NextGen portal (industry-facing) for product approvals. Needs browser scrape. |
+| **Ohio** | PRO platform state (oh.productregistrationonline.com/activebrands). Spirits control state — wine sold through private retailers. PRO has brand data but spirits-focused. |
+| **Oregon** | Spirits-only database (OLCC controls spirits only, wine through private market) |
 | **Iowa** | Spirits-only database |
-| **Nebraska** | Beer-only brand registration |
+| **Nebraska** | Brand registration Excel download at lcc.nebraska.gov (all alcohol, not beer-only). Required since Jan 2025. Includes brand name, wholesaler, manufacturer. No UPC/COLA/wine metadata. Low value. |
 | **Idaho** | Small retail catalog, no structured wine data |
+
+**Connecticut DCP — WAF-BLOCKED**
+- **System**: portal.ct.gov/DCP liquor permit search. ASP.NET with aggressive WAF (blocks Puppeteer, fetch, cookie forwarding).
+- **Data**: 388 supplier GUIDs cached (`data/imports/ct_dcp_guids.json`). Each supplier has a PDF with wine listings including UPC + COLA numbers — a rare UPC-COLA bridge.
+- **Workaround**: Contact Richard Mindek at DCP for bulk CSV export: (860) 713-6229. The data exists and is public record; the WAF just blocks automated access.
+- **Script**: `scripts/fetch_ct_dcp.mjs` (caches GUIDs only; full scrape blocked)
+
+**New Jersey POSSE — EVALUATED**
+- Since Jan 2023, NJ ABC collects **both UPC and TTB COLA** for all brand registrations and renewals. If a product has both identifiers, both are required.
+- Free account registration at `abc.lps.nj.gov` needed to access product search.
+- Potentially the richest state database for UPC+COLA cross-referencing once access is obtained.
+
+### 50-State Survey Summary (2026-03-18)
+Of all 50 states + DC surveyed: **12 states** use the PRO Platform (instant XLSX export). **3 states** have excellent standalone APIs/data (Kansas, Texas, West Virginia). **2 states** have high-value data behind login walls (New Jersey, Connecticut). **4 states** have moderate standalone value (North Carolina, Missouri, Pennsylvania, Virginia). **5 states** are spirits-only or have no wine data (Alabama, Vermont, Oregon, Iowa, Idaho). **~15 states** have no public product database at all (CA, WA, AZ, MD, DE, HI, ND, AK, IN, NV, WI, DC, FL, GA, MA). The remainder are login-required or too limited to be worth pursuing.
 
 ---
 
@@ -367,32 +422,61 @@ Barcodes (UPC-A / EAN-13 / GTIN) are the most definitive wine dedup key — same
 
 ### Tier 1: Immediately Actionable (~45K barcodes, free/cheap)
 
-**Vinmonopolet (Norway)** — PRIORITY
+**Vinmonopolet (Norway)** — PRIORITY (awaiting API access)
 - **Coverage**: ~20K wines, ALL with EAN-13 barcodes (state monopoly requirement)
 - **Access**: Free API at api.vinmonopolet.no. Open tier has basic data. Email sent for Restricted access (full product data).
 - **Bonus data**: Sugar g/L, acid g/L, grape percentages, ABV — richest per-wine data of any free source
-- **Status**: API key obtained (2026-03-17). Restricted access requested. Scraping fallback viable (~5-10 hrs).
+- **Status**: API key obtained (2026-03-17). Email sent to Vinmonopolet requesting Restricted API access (2026-03-18). Awaiting reply. Scraping fallback viable via vinmonopolet.no product pages (~5-10 hrs).
 
-**Open Food Facts** — PRIORITY
-- **Coverage**: ~16K wines globally. Every product has barcode as primary key.
-- **Access**: Free CSV/JSONL download + REST API. ODbL license.
-- **Quality**: Crowdsourced, variable. Wine-specific fields (grape, vintage) not structured. Mostly European wines.
+**Open Food Facts** — FETCHED ✅
+- **Coverage**: 5,176 wines with unique EAN barcodes (filtered from 6,837 API results). Heavily French (62%).
+- **Access**: Free REST API (paginated search). ODbL license.
+- **Quality**: Crowdsourced, variable. ABV 25%, brand 67%, color 57%. But 100% barcode coverage by definition.
 - **URL**: https://world.openfoodfacts.org/data
+- **File**: `data/imports/openfoodfacts_wines.json`
+- **Script**: `scripts/fetch_openfoodfacts.mjs`
 
-**Pennsylvania PLCB** — IN HAND
-- **Coverage**: ~4,800 wines with 100% UPC coverage (control state, every product must be listed)
-- **Access**: Existing file `data/imports/pa_wine_catalog.xlsx` — check for UPC column
-- **Format**: UPC-A (12-digit bottles), SCC-14 (14-digit cases)
+**WineDeals.com** — FETCHING (in progress)
+- **Coverage**: ~7,700 wines. UPC hit rate 89% so far (1,116/1,250 scraped).
+- **Access**: Puppeteer scrape of product pages. Two-pass: URL collection + detail pages.
+- **Bonus data**: Price, ABV (50%), grapes (62%), country (99.8%), brand (99%).
+- **Status**: Scraping in progress (~1,250/7,700 done). Paused for session; resume with `--resume`.
+- **File**: `data/imports/winedeals_catalog.json`
+- **Script**: `scripts/scrape_winedeals.mjs`
 
-**Systembolaget (Sweden)** — EVALUATED
-- **Coverage**: ~7K wines. GS1 Sweden requires GTIN for all alcohol.
-- **Access**: Community GitHub API/Excel download. Confirm GTIN field exists.
-- **Status**: Needs testing.
+**LCBO (Ontario, Canada)** — FETCHED ✅
+- **Coverage**: 3,515 wines with 3,513 UPC barcodes (99.9%).
+- **Access**: lcbo.com product pages, Puppeteer scrape.
+- **Bonus data**: Price (CAD), country, region, grapes, ABV, sugar g/L, style descriptions.
+- **File**: `data/imports/lcbo_wines.json`
+- **Script**: `scripts/fetch_lcbo.mjs`
 
-**Alko (Finland)** — EVALUATED
-- **Coverage**: ~5K wines. Daily-updated product export.
-- **Access**: Download from alko.fi. Community GitHub parsers available.
-- **Status**: Needs testing to confirm GTIN in export.
+**Horizon Beverage (Southern Glazer's)** — FETCHED ⭐
+- **Coverage**: 7,166 unique wines (MA 5,769 + RI 3,008, deduplicated). UPC: 6,441 (89.9%).
+- **Access**: POST JSON API at `/api/products/GetProducts`. No auth, no rate limiting. 90 seconds total fetch.
+- **Bonus data**: Grape varieties 92.5% (semicolon-separated `rawMaterialNames`), country 100%, region 95.5%, style/color 100%.
+- **Country distribution**: US 3,204, France 1,620, Italy 1,332, Chile 249, Spain 161, Argentina 156, Portugal 121.
+- **Note**: This is Southern Glazer's Beverage Company (largest US distributor) regional site for MA/RI. Other SGWS regional sites may have the same API pattern — worth investigating.
+- **File**: `data/imports/horizon_beverage_wines.json`
+- **Script**: `scripts/fetch_horizon.mjs`
+
+**Pennsylvania PLCB** — FETCHED ✅
+- **Coverage**: 5,905 wines with 10,297 UPCs (many wines have both bottle UPC-A and case SCC-14)
+- **Access**: Parsed from `data/imports/pa_wine_catalog.xlsx` via `scripts/parse_pa_catalog.mjs`
+- **Fields**: UPC-A (12-digit bottles), SCC-14 (14-digit cases), product code, description, brand, price, size, vintage (60%)
+- **File**: `data/imports/pa_wines_parsed.json`
+
+**Systembolaget (Sweden)** — SKIPPED (no barcodes)
+- **Coverage**: ~7K wines. GS1 Sweden requires GTIN for all alcohol — but GTIN not in public data.
+- **Access**: Community GitHub mirrors (AlexGustafsson, C4illin). Official API removed.
+- **Fields available**: productId (internal), name, producer, price, volume, ABV, taste clock, organic/kosher, country/origin. **No GTIN/EAN.**
+- **File**: `data/imports/systembolaget_raw.json` (downloaded 2026-03-18, confirmed no barcodes)
+- **Verdict**: Barcodes exist in supplier portal but not exposed publicly. Not a barcode source.
+
+**Alko (Finland)** — SKIPPED (no barcodes)
+- **Coverage**: ~8,700 wines. Daily-updated Excel price list at alko.fi/valikoimat-ja-hinnasto/hinnasto.
+- **Fields available**: Name, producer, price, volume, ABV, type, country, region, acidity/sugar, calories. **No EAN/GTIN.**
+- **Verdict**: Suppliers submit GTINs via B2B Partner Network, but public Excel export has only internal product numbers. Not a barcode source.
 
 ### Tier 2: Moderate Investment (~100-160K barcodes total)
 
@@ -437,15 +521,19 @@ Barcodes (UPC-A / EAN-13 / GTIN) are the most definitive wine dedup key — same
 
 | Source | Est. Wine Barcodes | Access | Cost |
 |--------|-------------------|--------|------|
-| Vinmonopolet | ~20K | Free API | $0 |
-| Open Food Facts | ~16K | Free download | $0 |
-| Pennsylvania PLCB | ~4-5K | Existing file | $0 |
-| Systembolaget | ~7K (if GTIN confirmed) | Community API | $0 |
-| Alko Finland | ~5K (if GTIN confirmed) | Download | $0 |
+| Vinmonopolet | ~20K | Free API (awaiting access) | $0 |
+| Open Food Facts | 5,176 ✅ | Free API | $0 |
+| Horizon Beverage (SGWS) | 6,441 ✅ | POST JSON API | $0 |
+| WineDeals.com | ~6,800 (est. 89% of 7,700) | Puppeteer scrape (in progress) | $0 |
+| LCBO | 3,513 ✅ | Puppeteer scrape | $0 |
+| Pennsylvania PLCB | 10,297 ✅ | Parsed from Excel | $0 |
+| ~~Systembolaget~~ | ~~7K~~ | ❌ No GTIN in public data | — |
+| ~~Alko Finland~~ | ~~5K~~ | ❌ No GTIN in public data | — |
 | UPC Data 4 Bev Alcohol | ~40-60K | Licensed | Quote needed |
 | COLA Cloud | ~300-400K | API | $39-199/mo |
 | CellarTracker | ~858K | Partnership | N/A |
-| **Free/cheap total** | **~45-50K** | | **$0** |
+| **Free total (confirmed)** | **~25,427 + ~6,800 pending** | | **$0** |
+| **Free total (with Vinmonopolet)** | **~52K** | | **$0** |
 | **With moderate spend** | **~100-160K** | | **~$250/mo** |
 
 ---
@@ -566,14 +654,15 @@ Government-run wine monopolies have the best structured data of any commercial s
 
 ### Tier 1 — Official APIs (Exceptional Data)
 
-**Vinmonopolet (Norway)** ⭐⭐ — PRIORITY
+**Vinmonopolet (Norway)** ⭐⭐ — PRIORITY (email sent, awaiting reply)
 - **URL**: api.vinmonopolet.no (official API portal)
 - **Catalog**: ~35,000 products
-- **API**: Free "Open" tier. Register for API key, no approval needed.
+- **API**: Free "Open" tier (basic fields). "Restricted" tier (full product data including barcodes, chemistry). Email sent 2026-03-18 requesting Restricted access — awaiting reply.
 - **Fields**: Product ID, name, vintage, **grape varieties with percentages**, ABV, producer, country, district, subdistrict, **EAN-13/GTIN barcode**, price, **sugar g/L, acid g/L**, tasting notes (Norwegian), **flavor scales (tannins, fullness, sweetness, freshness, bitterness — 0-100 numeric)**, food pairings, certifications (organic, biodynamic, fair trade, kosher), cork type, images
 - **Language**: Norwegian tasting notes, English field names
 - **Quality**: **BEST structured wine data source found in all research.** Government-mandated accuracy. Grape percentages measured. Sugar/acid measured. Flavor scales standardized.
 - **Matching**: Producer + wine + vintage + country/district. GTIN barcode enables cross-source dedup.
+- **Fallback**: Scrape vinmonopolet.no product pages directly (~5-10 hrs) if API access delayed.
 
 **Systembolaget (Sweden)** — EVALUATED
 - **URL**: api-extern.systembolaget.se (internal API, unofficial access)
@@ -750,7 +839,7 @@ Since Dec 2023, all EU wines must have digital labels (QR codes) with ingredient
 | Trader Joe's | No online product catalog at all |
 | Google Shopping | Merchant-only API, scraping against ToS |
 | GS1 Data Hub | $500-6,500/yr, uncertain wine coverage |
-| Southern Glazer's / RNDC / Breakthru | B2B only, no public access |
+| Southern Glazer's (national) / RNDC / Breakthru | B2B only nationally, but **regional SGWS sites have public APIs** (see Horizon Beverage) |
 | SevenFifty | 47K+ products but Imperva-blocked. Partnership play only. |
 | Commerce7 / WineDirect DTC stores | No central catalog, labor-intensive per winery |
 | Somm.ai restaurant lists | Expensive B2B platform |
@@ -811,14 +900,16 @@ Since Dec 2023, all EU wines must have digital labels (QR codes) with ingredient
 
 ---
 
-## 11. Import Priority Order
+## Import Priority Order (updated 2026-03-18)
 
-| Phase | Source | Est. Wines | Key Value |
-|-------|--------|-----------|-----------|
-| A | **LWIN** | 186K | Identity backbone |
-| B | **Kansas + Pennsylvania** | 36K | COLA IDs + UPCs |
-| C | **COLA Cloud API** | ~1.2M COLAs | Barcodes + appellation + grapes at scale |
-| D | **Importer catalogs** | ~12K | Deep winemaking metadata |
+| Phase | Source | Est. Records | Key Value |
+|-------|--------|-------------|-----------|
+| A | **TTB COLA direct** | ~1.2M | F-tier backbone (Phase 1 running) |
+| B | **PRO Platform XLSX** ⭐ | ~1.56M brands | Instant COLA coverage — 12 states, no auth, XLSX export |
+| C | **LWIN** | 186K | Fine wine identity overlay |
+| D | **Texas TABC** ⭐ | 201K wines | Socrata API, 100% TTB numbers, 2nd largest market |
+| E | **Kansas + Pennsylvania + West Virginia** | ~92K | COLA IDs + UPCs + vintage + grapes |
+| F | **Importer catalogs** | ~12K | Deep winemaking metadata |
 | | — Skurnik | 5,394 ✅ | German/Austrian |
 | | — Polaner ⭐ | 1,680 ✅ | Best new discovery |
 | | — Winebow | 536 ✅ | Chemistry data |
@@ -826,11 +917,17 @@ Since Dec 2023, all EU wines must have digital labels (QR codes) with ingredient
 | | — Empson ⭐ | 279 ✅ | Italian tech sheets |
 | | — Kysela | 1K | Grape percentages |
 | | — Louis/Dressner | 1.2K | Natural wine |
-| E | **Wine.com sitemaps** | 262K URLs | Identity confirmation |
-| F | **Total Wine sitemaps** | 9.5K | Secondary retailer |
-| G | **PRO Platform states** | 12 states | Consistent COLA data |
-| H | **NC + MO + TX state DBs** | Unknown | Additional state coverage |
-| I | **Open Food Facts** | ~16K | Supplemental barcodes |
-| J | **FirstLeaf** | 5.1K | Value segment |
+| G | **Barcode sources** | ~52K | UPC/EAN aggregation |
+| | — Vinmonopolet | ~20K | Awaiting API access |
+| | — Open Food Facts | 5,176 ✅ | French-heavy |
+| | — Horizon Beverage | 6,441 ✅ | SGWS regional |
+| | — LCBO | 3,513 ✅ | Canadian |
+| | — PA PLCB | 10,297 ✅ | Control state |
+| | — WineDeals | ~6,800 | In progress |
+| H | **COLA Cloud API** | ~1.2M COLAs | Barcodes + on-demand enrichment (revised role) |
+| I | **Wine.com sitemaps** | 262K URLs | Identity confirmation |
+| J | **NC + MO + other state DBs** | Unknown | Additional state coverage |
+| K | **Total Wine sitemaps** | 9.5K | Secondary retailer |
+| L | **FirstLeaf** | 5.1K | Value segment |
 
 See `docs/ENRICHMENT.md` for the merge engine architecture and `CLAUDE.md` for schema details.

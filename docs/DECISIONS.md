@@ -558,3 +558,18 @@ US retailer (Premier Wine & Spirits, Amherst NY) with 7,694 wines. Every product
 
 ### 2026-03-18: 7 New Countries Added
 Bosnia and Herzegovina, Bhutan, Hong Kong, Russia, Ecuador, Venezuela, Indonesia — all from LWIN data. Minor wine-producing countries but legitimate LWIN entries.
+
+### 2026-03-18: UPC Barcode Sources — Batch Acquisition Session
+Fetched 5 new barcode sources in a single session. Strategy: aggregate barcodes from many smaller free sources rather than paying for one expensive commercial database.
+- **Open Food Facts**: 5,176 wines with EAN barcodes (REST API, 30 min)
+- **Horizon Beverage / SGWS**: 6,441 UPCs + 92.5% grape data (JSON API, 90 sec!) — discovered public API on Southern Glazer's regional site
+- **LCBO (Ontario)**: 3,513 UPCs (Puppeteer, previous session)
+- **PA PLCB**: 10,297 unique UPCs across 5,905 wines (Excel parse)
+- **WineDeals.com**: ~6,800 estimated (Puppeteer, running overnight)
+Total confirmed: ~25,400 barcodes from free sources. Pending: ~6,800 winedeals + ~20K Vinmonopolet (awaiting API access).
+
+### 2026-03-18: Connecticut DCP as UPC↔COLA Rosetta Stone
+Connecticut DCP OpenAccess portal (biznet.ct.gov) has per-supplier PDF price lists with UPC + COLA(TTB ID#) + vintage + ABV + price in a single row. This is the only source that directly bridges UPC barcodes to TTB COLA IDs without probabilistic matching. 388 supplier PDFs available for February 2026. Scraper built (`scripts/fetch_ct_dcp.mjs`).
+
+### 2026-03-18: CT DCP — Extract All, Filter Wine Later
+Decision: Download all 388 CT DCP supplier PDFs (wine + spirits + beer) now. Filter to wine products later once TTB COLA Phase 1 data arrives — cross-reference COLA IDs against TTB wine class types 80-89 for definitive wine identification. Cleaner than guessing from company names.

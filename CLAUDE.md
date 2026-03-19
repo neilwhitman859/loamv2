@@ -393,7 +393,7 @@ Full cross-reference of actual DB schema vs all 10 import scripts. 29 issues ide
 Comprehensive research across 17 source categories. Unified reference in `docs/SOURCES.md`.
 - **LWIN database analyzed**: 186K wine identities, 37K producers. Fine wine bias ($30+). No grapes/ABV/barcodes. File: `data/LWINdatabase.xlsx`
 - **COLA Cloud API identified**: Commercial wrapper on TTB COLA registry. $39/mo Starter tier. ~1.2M wine COLAs with 96% appellation, 54% grapes, 35% barcodes, 87% ABV.
-- **State databases surveyed (all 50 states)**: Kansas (31K wines, 92% COLA IDs) and PA (4.8K wines, 100% UPCs) are standouts. PRO Platform covers 12 states with one scraper. NJ has UPCs. TX has COLA IDs.
+- **State databases surveyed (all 50 states)**: Full 50-state survey completed 2026-03-18. PRO Platform is the #1 discovery (12 states, 1.56M brand registrations with COLA). TX TABC (201K wines via Socrata), WV ABCA (55K wines via REST API), PA PLCB (5.9K wines with UPCs), KS KDOR (31K wines). NJ has UPC+COLA (since Jan 2023, needs free account). CT has UPC+COLA bridge (WAF-blocked, needs phone call). 28 states confirmed dead ends (spirits-only, no public data, or licensee-restricted).
 - **22 importers researched**: Skurnik (5K wines, easy), Winebow (1K, best per-wine data quality), European Cellars (724), Kysela (1K), Louis/Dressner (1.2K), Polaner (2-3K, best new discovery).
 - **Retailer sitemaps**: Wine.com (262K URLs downloaded), Total Wine (9.5K), FirstLeaf (5.1K).
 - **Vinmonopolet API** ⭐⭐: Norwegian state monopoly — the single richest structured wine data source globally. Free tier, barcodes, grape percentages, sugar/acid g/L, flavor scales, 20K+ wines. Official API with auth key.
@@ -406,8 +406,8 @@ Comprehensive research across 17 source categories. Unified reference in `docs/S
 - **Merge architecture designed**: Staging tables (import_runs, staging_wines, match_decisions, field_provenance) + 4-layer matching + source priority + confidence thresholds.
 - **FOIA filed** to TTB as backup parallel path.
 - **Coverage projection**: ~200-250K unique wines across $10-150 US market.
-- **Import priority**: TTB COLA direct → LWIN → Kansas+PA → Importers → COLA Cloud (barcode enrichment) → Wine.com → Total Wine → PRO states → OFF → FirstLeaf.
-- **Files downloaded**: `kansas_active_brands.json` (24.6MB), `pa_wine_catalog.xlsx`, `wine_com_all_urls.txt` (20MB), `cola_demo.zip`, `utah_product_list.xlsx`, `lwin_database.csv`
+- **Import priority (revised 2026-03-18)**: PRO Platform (instant XLSX, 1.56M COLA) → TTB COLA direct → TX TABC → WV ABCA → LWIN → Importers → UPC sources (PA/OFF/Horizon/LCBO) → COLA Cloud (barcode enrichment) → Wine.com → Total Wine.
+- **Files downloaded**: `kansas_active_brands.json` (24.6MB), `pa_wine_catalog.xlsx`, `wine_com_all_urls.txt` (20MB), `cola_demo.zip`, `utah_product_list.xlsx`, `lwin_database.csv`, plus all files from 2026-03-18 session below.
 - **Critical gap identified**: Identity matching engine is #1 technical priority — without it, scaling beyond ~12K wines creates dedup crisis.
 
 ### TTB COLA Direct Scraping (2026-03-17) — Phase 1 IN PROGRESS
@@ -430,15 +430,62 @@ Discovered that TTB's public COLA registry has **structured grape varietal data 
 
 **Illinois PRO Platform API discovered:** Public JSON POST endpoint at `/Search/ActiveBrandSearch`. Returns COLA numbers, ABV, vintage, appellation, distributors. Same platform as Kansas but requires session cookies (not fully open like Kansas JSON dump).
 
+### 50-State UPC/COLA Survey + PRO Platform Discovery (2026-03-18) — COMPLETE
+Comprehensive overnight survey of all 50 US state alcohol control boards for wine product data (UPC barcodes and/or TTB COLA identifiers). Combined with UPC source fetching from retailers and government monopolies.
+
+**PRO Platform — #1 discovery (Tier 1 source):** Sovos/ShipCompliant Product Registration Online platform used by 12 US states. All use identical API (`POST /Search/ActiveBrandSearch`) and XLSX export (`GET /Export/DownloadActiveBrandsSummary` — no auth needed!). Combined 1.56M brand registrations, 99% with TTB COLA numbers, plus vintage, appellation, ABV, supplier, distributor. All 12 state exports downloaded as XLSX in ~3 minutes.
+
+**PRO Platform XLSX files (12 states, ~270MB total):**
+- AR: `ar_active_brands.xlsx` (4.6MB), CO: `co_active_brands.xlsx` (48MB — largest)
+- IL: `il_active_brands.xlsx` (35MB), KY: `ky_active_brands.xlsx` (27MB)
+- LA: `la_active_brands.xlsx` (7.8MB), MN: `mn_active_brands.xlsx` (13MB)
+- NM: `nm_active_brands.xlsx` (17MB), NY: `ny_active_brands.xlsx` (6.5MB)
+- OH: `oh_active_brands.xlsx` (37MB), OK: `ok_active_brands.xlsx` (8.2MB)
+- SC: `sc_active_brands.xlsx` (39MB), SD: `sd_active_brands.xlsx` (5.5MB)
+- Fields: Tax Trade Bureau ID (COLA), Brand Description, Label Description, Vintage, Appellation, Percent Alcohol, Container Type, Unit Size, Supplier Name, Distributor Name, Approval Date, Approval Number
+- Note: Files contain ALL beverages (spirits + wine). Wine filtering needed during import. Rows are duplicated per supplier-distributor pair; dedup by COLA needed.
+
+**Texas TABC (201K wines):** Socrata Open Data API at `data.texas.gov/resource/2cjh-3vae.json?type=WINE`. 201,165 wine records, 100% TTB numbers, 99.8% ABV. Pre-Sept 2021 labels (post-2021 in AIMS system, no bulk export). File: `tx_tabc_wines.json` (87MB).
+
+**West Virginia ABCA (55K wines):** REST API at `api.wvabca.com/API.svc/`. Public API key: `2BB0C528-219F-49EE-A8B8-A5A2271BEF9D`. List endpoint (`/WineLabelSearch`): 55,378 wine labels, 96.4% TTB ID, 63.8% vintage. Detail endpoint (`/GetWineLabelDetails`) has appellation + varietal + vineyard — needs batch scraper (~15 hours). File: `wv_wines_list.json` (14MB).
+
+**UPC barcode sources fetched:**
+- **Open Food Facts**: 5,176 wines with EAN barcodes. REST API, 8 wine categories paginated. 62% French. File: `openfoodfacts_wines.json`. Script: `fetch_openfoodfacts.mjs`.
+- **Horizon Beverage** (SGWS/MA+RI): 6,441 wines via undocumented JSON API at `horizonbeverage.com/api/products/GetProducts`. UPC in every record. File: `horizon_wines.json`. Script: `fetch_horizon.mjs`.
+- **PA PLCB**: 5,905 wines with 10,297 UPCs (multiple per product). Parsed from Excel catalog. File: `pa_wines_parsed.json`.
+- **LCBO** (Ontario, Canada): 3,513 wines with barcodes. Puppeteer scraper. File: `lcbo_wines.json`. Script: `fetch_lcbo.mjs`.
+- **WineDeals.com**: ~6,800 wines (scraper running overnight). Puppeteer product page scraper. Script: `fetch_winedeals.mjs`.
+
+**Connecticut DCP — WAF-blocked Rosetta Stone:** UPC + COLA bridge in per-supplier PDF price lists. 388 supplier GUIDs cached (`ct_dcp_guids.json`). BITS BOT WAF blocks all automated approaches (Puppeteer, fetch, cookie copying). Script: `fetch_ct_dcp.mjs` (supports `--chrome-profile` mode but DPAPI cookie encryption prevents sharing). **Action needed: call Richard Mindek at CT DCP (860) 713-6229 for bulk CSV export.**
+
+**New Jersey POSSE — UPC+COLA combo:** Since Jan 2023, NJ ABC collects BOTH UPC and TTB COLA for all brand registrations. Free account at `abc.lps.nj.gov` needed. **Action needed: register account to test search/export.**
+
+**Vinmonopolet** — Email sent requesting API key. Waiting for response. (~20K wines with barcodes, richest structured data globally.)
+
+**50-state dead ends (28 states confirmed no wine UPC/COLA data):**
+- Spirits-only control: OR, VA, IA (since 1985), WA (wine privatized 2012)
+- Spirits-only database: MI
+- No wine control: AK, AZ, CA, DE, GA, HI, IN, MA, MO, NE, NV, ND (repealed 2005), RI, WI
+- Fortified only: ID, VT, MT
+- Licensee-restricted: WY, AL
+- Low value (no COLA/UPC in output): UT, MD (Montgomery Co only), MS, TN, NC (wine control but COLA not in search results)
+
+**New scripts:** `fetch_pro_states.mjs` (PRO Platform multi-state fetcher — paginated JSON + analyze mode), `fetch_ct_dcp.mjs` (CT DCP Puppeteer+PDF scraper), `fetch_openfoodfacts.mjs`, `fetch_horizon.mjs`, `fetch_lcbo.mjs`, `fetch_winedeals.mjs`.
+
 ### Open Questions (deferred)
 - Data freshness strategy (how/when to re-import)
 - Data licensing for scores (Wine Spectator, Parker, CellarTracker)
 - UPC Data 4 Beverage Alcohol pricing inquiry
 - VineRadar API pricing inquiry (vineyard GPS + terroir data)
-- Vinmonopolet API key registration
+- Vinmonopolet API key — email sent 2026-03-18, awaiting response
 - Southern Hemisphere importer gap (no dedicated importers researched for AU/NZ/AR/CL/ZA)
 - COLA Cloud Snowflake data share pricing (for barcode bulk access if email negotiation fails)
 - COLA Cloud one-time export email (drafted, not yet sent)
+- CT DCP bulk export — call Richard Mindek (860) 713-6229
+- NJ POSSE account registration — UPC+COLA data since Jan 2023
+- WV ABCA detail scraper — batch fetch appellation/varietal/vineyard for 55K labels (~15 hours)
+- PRO Platform wine-only re-exports — current XLSX files include all beverages, need wine filtering
+- Systembolaget/Alko barcode sources — still need investigation
 
 ---
 
