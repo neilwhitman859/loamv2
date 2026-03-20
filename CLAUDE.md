@@ -15,6 +15,7 @@ Loam is a wine intelligence platform. Users look up a wine and get the full stor
 - `docs/DECISIONS.md` — Append-only log of human decisions with reasoning. Read when you need to understand why something was done a certain way. Never re-litigate settled decisions without the user raising it.
 - `docs/VOICE.md` — Voice, tone, and food pairing guidance for all AI-generated content. Read before writing any enrichment prompts or insight content.
 - `docs/ENRICHMENT.md` — Letter-grade enrichment architecture (F/D/C/B/A), cost model, on-demand pipeline, wine-not-found flow. Read before building or modifying the enrichment pipeline.
+- `docs/MERGE_STRATEGY.md` — Merge pipeline strategy, Python migration decision, COLA approach, AI matching, wine identity definition, xwines reference index policy, product direction framework. Read before building or modifying the merge pipeline. Established 2026-03-19 from Claude.ai design session.
 - `docs/SOURCES.md` — Master reference for all external data sources (evaluated, integrated, planned, rejected). Read when working on data acquisition or import pipelines.
 - `docs/ROADMAP.md` — Phased development plan. Read at session start to know what phase we're in and what's next.
 - `docs/WORKFLOW.md` — Human-facing session checklist. You don't need to read this, but follow the behavioral instructions below.
@@ -306,17 +307,24 @@ Staging-first architecture: all external data goes through per-source staging ta
 
 ## Current Focus
 
-**Phase 1: Foundation** — Schema hardening + reference data completion + trial producer imports. See `docs/ROADMAP.md` for full phased plan.
+**Phase 2: Multi-Source Data Population** — Merge pipeline, COLA label images, retailer catalog integration. See `docs/ROADMAP.md` for full phased plan.
 
-### Strategic Context (updated 2026-03-17)
+### Strategic Context (updated 2026-03-19)
+- **Language migration:** All new pipeline work in Python. Node.js scripts retired. See `docs/MERGE_STRATEGY.md`.
+- **Merge strategy:** LWIN → COLA groups → State DBs → Importers → Retailers → xwines (reference index only). See `docs/MERGE_STRATEGY.md`.
 - **Multi-source data strategy:** TTB COLA direct (F-tier backbone) → LWIN (identity matching layer) → State DBs (COLA ID + UPC bridge) → Importer catalogs (enrichment) → COLA Cloud (barcode enrichment) → Retailer sitemaps. See `docs/SOURCES.md`.
 - **Letter-grade enrichment:** F (identity) → D (has scores/prices) → C (batch Haiku) → B (on-demand Sonnet) → A (curated). See `docs/ENRICHMENT.md`.
 - **TTB COLA as F-tier backbone:** TTB has grape varietals as a native structured field. ~1.2M wine COLAs, free, public domain. Phase 1 (CSV harvest) running now. LWIN matches against this for dedup and fine wine coverage. COLA Cloud for barcodes only.
+- **AI matching:** Local Ollama (8B models) for bulk matching, Haiku for edge cases, Sonnet for enrichment writing only. See `docs/MERGE_STRATEGY.md`.
+- **Product direction:** Build what's universal across all commercial paths. Show to people early. Wine list enrichment is fastest B2B revenue path. See `docs/MERGE_STRATEGY.md`.
 - **Identity-first, accuracy-first:** User explicitly chose slow/methodical over quick MVP. On-demand enrichment for user searches. Barcodes considered from the start to avoid re-matching later.
 - **Vertical slice:** California + Burgundy as first enrichment targets.
 - **User lookup triggers B enrichment:** On-demand Sonnet for every search landing on a wine below Grade B. C is batch pre-warming. See ENRICHMENT.md.
 
-### Next Steps
+### Immediate Next Steps (updated 2026-03-19)
+1. **Python migration** — Set up Python pipeline infrastructure (supabase-py, normalization helpers, merge engine). Build fresh, not port.
+2. **COLA label images** — Phase 1: scrape image URLs from ttbonline.gov (fast). Phase 2: batch-download images locally (days, background).
+3. **Retailer catalog merge + initial frontend** — Merge one broad retailer (Wine.com, K&L, or Total Wine — evaluate for scrapeability + data quality + breadth). Target 5-10K additional canonical wines with prices. Build minimal Vite/React frontend to see data and show people.
 1. ~~Review schema assessment decisions item by item~~ ✓
 2. ~~Execute schema migrations (21 new tables, ~45 columns)~~ ✓
 3. ~~Seed classifications (8 systems, 22 levels)~~ ✓ → expanded to 13 systems, 32 levels after two-pass audit

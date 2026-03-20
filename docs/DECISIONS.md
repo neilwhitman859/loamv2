@@ -573,3 +573,33 @@ Connecticut DCP OpenAccess portal (biznet.ct.gov) has per-supplier PDF price lis
 
 ### 2026-03-18: CT DCP — Extract All, Filter Wine Later
 Decision: Download all 388 CT DCP supplier PDFs (wine + spirits + beer) now. Filter to wine products later once TTB COLA Phase 1 data arrives — cross-reference COLA IDs against TTB wine class types 80-89 for definitive wine identification. Cleaner than guessing from company names.
+
+### 2026-03-19: Python migration for data pipeline
+All new data pipeline work written in Python. Node.js scripts retired for new development. Boundary: Python for all ETL/matching/dedup/enrichment/analysis, TypeScript/Deno for Supabase Edge Functions, TypeScript/React for frontend. Existing Node scrapers stay as-is (data already collected). Merge engine built fresh in Python since JS version (`lib/merge.mjs`) is untested. See `docs/MERGE_STRATEGY.md` for full rationale.
+
+### 2026-03-19: COLA as starting point over UPC
+COLA is the identity backbone, not UPC. ~647K records with COLA vs. ~27K with UPC. COLA chains together Kansas, PRO Platform, TABC, WV via key-based joins. UPC is secondary — valuable for barcode scanning (Phase 5) but not for identity building. Attach UPCs to COLA-built identities as lookup keys.
+
+### 2026-03-19: Wine identity definition
+A wine is a distinct commercial product from a single producer that maintains a consistent identity across vintages. Blend % changes, vineyard sourcing shifts within same appellation, and winemaking evolution between vintages do NOT create a new wine. Different tier, designated vineyard, product line, or second label DO create a new wine. Label redesigns = same wine (group COLAs). Name changes tracked in wine_aliases. Reference this in matching prompts.
+
+### 2026-03-19: xwines as reference index, not identity source
+Use xwines data (530K wines) as a matching confidence signal only. A match in xwines increases confidence that a COLA parse was correct, but xwines data never flows into canonical columns. Field values come from higher-trust sources. Same policy for Vivino — useful for matching confirmation and community scores, never creates canonical records. `xwines_wine_candidates` (100K pre-parsed rows) is the most useful matching dictionary.
+
+### 2026-03-19: Local AI models for bulk matching
+Use Ollama (Llama 3.1 8B or Mistral 7B) for bulk producer/wine matching to eliminate API costs. Matching is classification, not generation — small models handle it. Hybrid approach: local model on everything, flag low-confidence, send only those to Haiku. Sonnet reserved exclusively for enrichment writing where voice quality matters.
+
+### 2026-03-19: Confidence as field, not separate tables
+Track matching confidence as fields on canonical table (`wines.identity_confidence` categorical + consider adding `wines.identity_match_score` numeric). Rejected multiple confidence-tier tables — promotion logic nightmares, FK updates, query complexity.
+
+### 2026-03-19: COLA label images — URLs first, download second
+Scrape label image URLs from ttbonline.gov (Phase 1, fast), then batch-download images locally (Phase 2, days in background). Public domain. Serves every product direction: consumer polish, wine list enrichment, label recognition library, API customers, standalone commercial value.
+
+### 2026-03-19: Build what's universal, defer product-specific
+Product shape not yet defined (consumer app vs. data API vs. wine list enrichment vs. professional reference). Build what's on critical path in every scenario: canonical identity, reference data, enrichment, matching, prices/scores, label images. Defer: specific frontend design, barcode scanning, offline/caching, marketing/billing. Show to people early to find direction. See `docs/MERGE_STRATEGY.md`.
+
+### 2026-03-19: Merge strategy document established
+Created `docs/MERGE_STRATEGY.md` covering: Python migration, merge layer sequencing (LWIN → COLA → state DBs → importers → retailers → xwines reference), COLA strengths/risks, wine identity definition, AI matching approach, product direction framework, revenue estimates, Claude involvement patterns. This is the primary reference for Claude Code merge pipeline work.
+
+### 2026-03-19: GitHub token operational risk accepted
+Token shared in Claude.ai chat session. Accepted as operational risk for now. Rotate when convenient.
