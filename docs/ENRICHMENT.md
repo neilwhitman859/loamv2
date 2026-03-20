@@ -19,7 +19,7 @@ Loam uses a letter-grade enrichment model. Most wines enter the system with mini
 ### Grade F — Identity Only
 **What it contains:** Wine name, producer, region/appellation, country, grapes, color, wine type. No AI-generated content. No scores.
 
-**Source:** LWIN bulk import, COLA import, retailer catalog ingestion.
+**Source:** Backbone ID imports (LWIN, COLA, UPC), retailer catalog ingestion.
 
 **AI cost:** $0
 
@@ -27,7 +27,7 @@ Loam uses a letter-grade enrichment model. Most wines enter the system with mini
 
 **Mobile experience:** Name, producer, region, grapes, country. Below that: appellation context from `appellation_insights`, region context from `region_insights`, grape info from `grape_insights`. The page uses *generic geographic context* rather than wine-specific content — it's not empty, just not personalized to the wine.
 
-**Identity tracking:** `wines.identity_confidence` tracks how the wine was identified (unverified, lwin_matched, cola_matched, upc_matched, manual_verified).
+**Identity tracking:** `wines.identity_confidence` tracks which Backbone ID (or method) confirmed the wine's identity: `unverified`, `lwin_matched`, `cola_matched`, `upc_matched`, `manual_verified`.
 
 ---
 
@@ -136,14 +136,14 @@ Trust level affects: score display priority on mobile (higher trust shown first)
 
 ## Wine Identity & Dedup
 
-All wines live in the `wines` table — there is no separate candidates/staging table. Identity confidence is tracked via `wines.identity_confidence`:
-- `unverified` — created from import, not cross-referenced
-- `lwin_matched` — matched to LWIN database (high confidence)
-- `cola_matched` — matched to TTB COLA record
-- `upc_matched` — matched via barcode/UPC
+All wines live in the `wines` table — there is no separate candidates/staging table. Identity confidence is tracked via `wines.identity_confidence`, which records how the wine was confirmed:
+- `unverified` — created from import, not cross-referenced against any Backbone ID
+- `lwin_matched` — matched to LWIN (Backbone ID: fine wine trade)
+- `cola_matched` — matched to TTB COLA (Backbone ID: US regulatory)
+- `upc_matched` — matched via UPC/EAN (Backbone ID: retail barcode)
 - `manual_verified` — human-confirmed identity
 
-**Dedup strategy:** LWIN as primary dedup key when available. Fuzzy matching (producer name + wine name + country, trigram similarity >0.7) to catch duplicates from different sources. UPC/EAN as secondary identifier where available.
+**Dedup strategy:** Backbone IDs are the primary dedup mechanism — COLA, LWIN, and UPC stored in `external_ids`. Key-based matching first (exact Backbone ID join), then fuzzy matching (producer name + wine name + country, trigram similarity >0.7) for sources without Backbone IDs. See `docs/SOURCES.md` for the full Backbone ID definition.
 
 ---
 

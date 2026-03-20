@@ -1,6 +1,6 @@
 # Loam — Roadmap
 
-*Established 2026-03-13. Updated 2026-03-17.*
+*Established 2026-03-13. Updated 2026-03-20.*
 
 ---
 
@@ -50,7 +50,7 @@ All reference tables seeded and cross-validated:
 - 10 wine-type stress tests (champagne, port, dessert, fortified, etc.) ✓
 - 5 global coverage stress tests (SA, Lebanon, Georgia, Madeira, Champagne) ✓
 - Total: 858 producers, 3,095 wines, 2,777 vintages in canonical tables ✓
-- Import library (`lib/import.mjs`) hardened across all edge cases ✓
+- Import library hardened across all edge cases ✓
 
 ### 1d. Source Research ✓ (2026-03-16 – 2026-03-17)
 - 17 source categories researched and documented in `docs/SOURCES.md` ✓
@@ -58,7 +58,8 @@ All reference tables seeded and cross-validated:
 - COLA Cloud API tested (22 requests, search vs detail endpoint analysis) ✓
 - TTB COLA direct strategy identified (grape varietals are native field) ✓
 - Enrichment architecture designed (`docs/ENRICHMENT.md`) ✓
-- Multi-source merge architecture designed (`lib/merge.mjs`) ✓
+- Multi-source merge architecture designed (`pipeline/lib/merge.py`) ✓
+- Full Python migration: 133 pipeline scripts, Node.js archived ✓
 
 ### 1e. Search + API Infrastructure ✓ (2026-03-16)
 - Full-text search vectors + trigram indexes on all searchable entities ✓
@@ -71,32 +72,38 @@ All reference tables seeded and cross-validated:
 ## Phase 2: Multi-Source Data Population (IN PROGRESS)
 
 **Status:** In progress
-**Goal:** ~200K+ wines in canonical tables from multiple authoritative sources. Identity matching and dedup working. Every wine has a data grade (F/D/C/B/A).
+**Goal:** ~200K+ wines in canonical tables from multiple authoritative sources. Backbone ID matching and dedup working. Every wine has a data grade (F/D/C/B/A).
 
 ### Architecture
-Per-source staging tables (`source_*`) preserve raw data. Merge layer reconciles into canonical tables. Three-tier matching: key-based (COLA ID, LWIN, barcode) → normalized name → fuzzy pg_trgm.
+Per-source staging tables (`source_*`) preserve raw data. Merge layer reconciles into canonical tables. Three-tier matching: Backbone IDs (COLA, LWIN, UPC) → normalized name → fuzzy pg_trgm. See `docs/SOURCES.md` for Backbone ID definitions.
 
-### 2a. Staging Tables + Raw Data Loading (IN PROGRESS)
-- `source_ttb_colas`: Phase 1 CSV harvest running on local machine (~16 hours) ⏳
-- `source_kansas_brands`: 31,216 wine records loaded ✓
-- `source_lwin`: 184,497 records loaded ✓
-- Importer catalogs: 10K wines in JSON files, not yet in staging tables
+### 2a. Staging Tables + Raw Data Loading ✓
+- 19 staging tables, 891K total rows ✓
+- `source_pro_platform`: 346K rows (12 US states via PRO Platform) ✓
+- `source_tabc`: 183K rows (Texas TABC) ✓
+- `source_lwin`: 189K records loaded and promoted to canonical ✓
+- `source_kansas_brands`: 65K records ✓
+- `source_wv_abca`: 55K records ✓
+- UPC sources: OFF 5.2K, Horizon 6.4K, WineDeals 3.2K, PA 5.9K, LCBO 7K, Systembolaget 12.6K ✓
+- Importer catalogs: KL, Skurnik, Winebow, Empson, EC promoted to canonical ✓
+- Polaner: deprioritized (thin metadata, data retained in staging)
 
 ### 2b. TTB COLA Pipeline
 - **Phase 1 (CSV harvest):** Running locally. 1955-present, wine class types 80-89. ⏳
 - **Phase 2 (detail scrape):** Fetch grape varietals + applicant data from detail pages. Filter Phase 1 output first (skip expired/surrendered, deduplicate label refreshes). 3-7 days at polite rate.
 - **Phase 3 (AI parse):** Haiku extracts vintage, wine name, appellation from fanciful names. ~$5-10.
 
-### 2c. Key-Based Joins (Layer 1)
-- JOIN `source_ttb_colas` + `source_kansas_brands` ON cola_id — trivial SQL join
-- Produces enriched staging view: TTB identity + Kansas ABV/appellation/vintage
+### 2c. Backbone ID Joins (Layer 1)
+- JOIN `source_ttb_colas` + `source_kansas_brands` + `source_pro_platform` ON COLA number — trivial SQL join
+- Produces enriched staging view: TTB identity + state ABV/appellation/vintage
 - Group COLAs into wine identities (many COLAs → one wine)
-- Store COLA IDs in `external_ids`
+- Store all Backbone IDs (COLA, LWIN, UPC) in `external_ids`
 
 ### 2d. LWIN Overlay (Layer 2)
-- Match LWIN records against Layer 1 by normalized producer + wine name
-- Adds LWIN codes to existing records, creates new for fine wines not in TTB/Kansas
-- ~187K wines, 30-50% estimated overlap with TTB
+- LWIN already promoted to canonical (189K wines, 32K producers)
+- Match TTB COLA records against LWIN canonical by normalized producer + wine name
+- Cross-references Backbone IDs: wines get both LWIN and COLA in `external_ids`
+- ~30-50% estimated overlap between LWIN and TTB
 
 ### 2e. Rich Source Merge (Layer 3)
 - Importer catalogs (10K wines) merge against Layers 1+2

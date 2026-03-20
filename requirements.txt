@@ -1,0 +1,23 @@
+# Loam v2 — Python data pipeline dependencies
+# Install: pip install -r requirements.txt
+
+# Core
+supabase>=2.28.0
+anthropic>=0.86.0
+python-dotenv>=1.2.0
+
+# Data processing
+pandas>=3.0.0
+numpy>=2.4.0
+openpyxl>=3.1.0
+
+# HTTP
+httpx>=0.28.0
+requests>=2.32.0
+
+# Future: local AI, fuzzy matching, geospatial
+# ollama
+# rapidfuzz
+# sentence-transformers
+# geopandas
+# playwright

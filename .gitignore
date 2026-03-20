@@ -55,6 +55,15 @@ data/imports/empson_catalog.json
 data/imports/european_cellars_catalog.json
 data/imports/firstleaf_raw.json
 
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
 # Local settings
 .claude/settings.local.json
 .chrome-temp-profile/

@@ -20,9 +20,23 @@ Master reference for all external data sources — evaluated, integrated, planne
 
 ---
 
+## Backbone IDs
+
+Three identifier systems form Loam's identity spine. Every wine should resolve to at least one Backbone ID. Cross-referencing between them is the primary dedup mechanism.
+
+| Backbone ID | Full Name | Axis | Coverage |
+|-------------|-----------|------|----------|
+| **COLA** | Certificate of Label Approval (TTB) | US regulatory | ~1.2M wine labels, structured grapes, no barcode |
+| **LWIN** | Liv-ex Wine Identification Number | Fine wine trade | ~189K wines, strong $30+, no grapes/barcode |
+| **UPC** | Universal Product Code (EAN/GTIN) | Retail / scanning | Fragmented across sources, best for scan-to-lookup |
+
+All three are stored in the `external_ids` table with `id_type` = `'ttb_cola'`, `'lwin'`, or `'upc'`.
+
+---
+
 ## 1. Wine Identity Sources (Catalog Building)
 
-These sources provide wine-level identity data (producer, wine name, geography, grape, vintage) for building the catalog backbone.
+These sources provide wine-level identity data (producer, wine name, geography, grape, vintage) for building the catalog backbone. The goal is to resolve every wine to at least one Backbone ID (COLA, LWIN, or UPC).
 
 ### LWIN Database — INTEGRATED
 - **Status**: 184,497 records loaded into `source_lwin` staging table (2026-03-17)
@@ -254,7 +268,7 @@ Professional importers with public-facing wine catalogs. High-quality metadata f
 |----------|-------|-----------|----------|------------|-----------|
 | **Kermit Lynch** | 1,467 | France, Italy | — | — | ✅ INTEGRATED |
 | **Skurnik** | 5,394 | 20+ | FacetWP REST API | EASY | ✅ FETCHED |
-| **Polaner Selections** ⭐ | 1,680 | 11 | WordPress REST API | EASY | ✅ FETCHED |
+| **Polaner Selections** | 1,680 | 11 | WordPress REST API | EASY | ⏸ DEPRIORITIZED |
 | **Winebow** | 536 | 15 | Drupal | EASY | ✅ FETCHED |
 | **Empson** ⭐ | 279 | Italy | WordPress | EASY | ✅ FETCHED |
 | **European Cellars** | 443 | Spain, France | WordPress | EASY (slow) | ✅ FETCHED |
@@ -274,13 +288,10 @@ Professional importers with public-facing wine catalogs. High-quality metadata f
 - Script: `scripts/fetch_skurnik.mjs` → `data/imports/skurnik_catalog.json`
 - URL: https://skurnik.com/
 
-**Polaner Selections — FETCHED** ✅
-- 1,680 wines fetched via WordPress REST API (`/wp-json/wp/v2/wine`)
-- Fields: Wine title, country (99.6%), region (99.6%), appellation (98.2%), certifications (35.1%)
-- Taxonomy data only — detailed fields (grapes, soil, vinification) are in ACF, not exposed via API
-- Certifications: biodynamic (377), natural (241), HVE (36), organic (11), regenerative (85)
-- Country distribution: France 797, Italy 417, USA 249, Spain 107, Portugal 79
-- Script: `scripts/fetch_polaner.mjs` → `data/imports/polaner_catalog.json`
+**Polaner Selections — DEPRIORITIZED** ⏸
+- 1,680 wines fetched via WordPress REST API (`/wp-json/wp/v2/wine`). All titles parsed via Haiku. Data in `source_polaner`.
+- **Deprioritized 2026-03-20**: Catalog is small (1,680) and metadata-thin — taxonomy only (no grapes, soil, vinification). Title parsing fragile. Not worth ongoing investment vs. Skurnik (5.5K wines + grapes) or Winebow (best chemistry data). Data retained in staging for reference.
+- Script: `pipeline/fetch/polaner.py` → `data/imports/polaner_catalog.json`
 - URL: https://www.polanerselections.com/
 
 **Winebow — FETCHED** ✅
@@ -911,7 +922,7 @@ Since Dec 2023, all EU wines must have digital labels (QR codes) with ingredient
 | E | **Kansas + Pennsylvania + West Virginia** | ~92K | COLA IDs + UPCs + vintage + grapes |
 | F | **Importer catalogs** | ~12K | Deep winemaking metadata |
 | | — Skurnik | 5,394 ✅ | German/Austrian |
-| | — Polaner ⭐ | 1,680 ✅ | Best new discovery |
+| | — Polaner | 1,680 ⏸ | Deprioritized (thin metadata) |
 | | — Winebow | 536 ✅ | Chemistry data |
 | | — European Cellars | 443 ✅ | Spanish/French terroir |
 | | — Empson ⭐ | 279 ✅ | Italian tech sheets |

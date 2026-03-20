@@ -4,7 +4,7 @@ Loam is a wine intelligence platform. Users look up a wine and get the full stor
 
 **Supabase project:** `vgbppjhmvbggfjztzobl` (us-east-1)
 **GitHub:** github.com/neilwhitman859/loamv2
-**Stack:** Supabase (Postgres), Node.js scripts, Anthropic Claude, Open-Meteo, Vite/React frontend
+**Stack:** Supabase (Postgres), Python pipeline, Anthropic Claude, Open-Meteo, Vite/React frontend
 
 ---
 
@@ -15,9 +15,9 @@ Loam is a wine intelligence platform. Users look up a wine and get the full stor
 - `docs/DECISIONS.md` — Append-only log of human decisions with reasoning. Read when you need to understand why something was done a certain way. Never re-litigate settled decisions without the user raising it.
 - `docs/VOICE.md` — Voice, tone, and food pairing guidance for all AI-generated content. Read before writing any enrichment prompts or insight content.
 - `docs/ENRICHMENT.md` — Letter-grade enrichment architecture (F/D/C/B/A), cost model, on-demand pipeline, wine-not-found flow. Read before building or modifying the enrichment pipeline.
-- `docs/MERGE_STRATEGY.md` — Merge pipeline strategy, Python migration decision, COLA approach, AI matching, wine identity definition, xwines reference index policy, product direction framework. Read before building or modifying the merge pipeline. Established 2026-03-19 from Claude.ai design session.
 - `docs/SOURCES.md` — Master reference for all external data sources (evaluated, integrated, planned, rejected). Read when working on data acquisition or import pipelines.
 - `docs/ROADMAP.md` — Phased development plan. Read at session start to know what phase we're in and what's next.
+- `docs/MERGE_STRATEGY.md` — Merge pipeline decisions: Python migration, merge layer sequencing, COLA risks, wine identity definition, AI matching approach, product direction. Read before building merge/matching infrastructure.
 - `docs/WORKFLOW.md` — Human-facing session checklist. You don't need to read this, but follow the behavioral instructions below.
 - `docs/reference/` — Retired docs kept for historical reference, not actively updated. Includes LWIN_STRATEGY.md (superseded by SOURCES.md + ROADMAP.md), SCHEMA_ASSESSMENT.md (Phase 1a spec, fully executed).
 
@@ -59,6 +59,22 @@ If the user is going a long stretch without wrapping up, if decisions are being 
 ---
 
 ## Current State
+
+### Pipeline Language
+**Python** for all data pipeline work (2026-03-20). Node.js retired. All 116 Node.js scripts archived to `scripts_archive/node/` and being converted to Python in `pipeline/`.
+
+Pipeline structure:
+- `pipeline/lib/` — shared libraries (db.py, normalize.py, resolve.py, importer.py, merge.py)
+- `pipeline/fetch/` — data fetchers and web scrapers
+- `pipeline/load/` — staging table loaders
+- `pipeline/promote/` — staging → canonical promotion
+- `pipeline/enrich/` — AI enrichment scripts
+- `pipeline/reference/` — reference data seeding
+- `pipeline/geo/` — geographic boundary scripts
+- `pipeline/vivino/` — Vivino-specific pipeline (archive/reference)
+- `pipeline/analyze/` — analysis and utility scripts
+
+See `docs/MERGE_STRATEGY.md` for rationale.
 
 ### Architecture
 The database has two layers:
@@ -192,7 +208,7 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
   - 4 VDP classifications → entity_classifications
   - 616 HTML entities cleaned from KL vinification text (&ldquo; → ", &ocirc; → ô, etc.)
   - Scripts: `scripts/promote_metadata.mjs`, `scripts/promote_classifications.mjs`, `scripts/fix_html_entities.mjs`, `scripts/audit_metadata.mjs`
-- Import architecture: `lib/import.mjs` (shared library) + `data/imports/{slug}.json` (per-producer data)
+- Import architecture: `pipeline/lib/importer.py` (shared library, converted from `lib/import.mjs`) + `data/imports/{slug}.json` (per-producer data)
 - `--replace` mode: deletes all existing producer data in FK dependency order, then fresh insert
 - `parseDate()` helper converts informal dates ("August 2024" → "2024-08-01")
 - Field name flexibility: accepts both `oak_duration_months`/`oak_months`, `production_cases`/`cases_produced`, `g.grape`/`g.name`, etc.
@@ -271,14 +287,16 @@ Staging-first architecture: all external data goes through per-source staging ta
 
 **RPC functions:** `match_producer_fuzzy()`, `match_wine_fuzzy()` — pg_trgm similarity search for the match engine.
 
-**Scripts:**
-- `scripts/load_staging.mjs` — loads raw JSON catalogs into per-source staging tables. Supports `--source polaner,kl,skurnik,...` or `--source all`.
-- `scripts/promote_staging.mjs` — matches staging rows against canonical, creates/links records. Supports `--source`, `--dry-run`, `--limit`. Per-source adapters handle field mapping.
-- `scripts/parse_pro_platform.mjs` — parses 12 PRO Platform XLSX exports → per-state JSON. Dedup by COLA within each state. CSV fast path for files >20MB. Supports `--state ar,co,...` and `--stats`.
-- `scripts/load_pro_staging.mjs` — loads parsed PRO JSON into source_pro_platform with cross-state dedup. Merges states[] array. Supports `--state` and `--dry-run`.
-- `scripts/load_tabc_staging.mjs` — loads TX TABC JSON (Socrata) into source_tabc. Dedup by TTB number.
-- `scripts/load_wv_staging.mjs` — loads WV ABCA JSON (REST API) into source_wv_abca. Separates numeric COLA from text TTB values.
-- `scripts/load_upc_staging.mjs` — loads Open Food Facts, Horizon Beverage, WineDeals into their staging tables.
+**Active Python scripts (all under `pipeline/`):**
+- `python -m pipeline.load.staging --source kl,skurnik,...` — loads raw JSON catalogs into staging tables
+- `python -m pipeline.promote.staging --source skurnik [--dry-run]` — matches staging → canonical, creates/links records
+- `python -m pipeline.promote.lwin [--analyze|--dry-run|--promote]` — LWIN staging → canonical promotion
+- `python -m pipeline.load.pro_staging --state ar,co,...` — loads PRO Platform XLSX into staging
+- `python -m pipeline.load.tabc_staging` — loads TX TABC into staging
+- `python -m pipeline.load.wv_staging` — loads WV ABCA into staging
+- `python -m pipeline.load.upc_staging` — loads Open Food Facts, Horizon, WineDeals into staging
+- `python -m pipeline.fetch.wv_details` — WV ABCA detail fetcher with resume support
+- `python -m pipeline.analyze.db_counts` — row counts across all tables
 
 **Promotion results (5 importer catalogs promoted 2026-03-18):**
 - KL: 1,468 wines → 830 new wines created, 638 matched to existing
@@ -287,7 +305,7 @@ Staging-first architecture: all external data goes through per-source staging ta
 - Empson: 279 wines → 178 new wines, 96 matched, 5 skipped
 - EC: 443 wines → 324 new wines, 71 matched, 48 skipped
 
-**Polaner deferred:** 1,680 wines with no producer field (all data in title string "Producer Wine Region"). Only 13 match by prefix against known producers. Needs AI-assisted title parsing for the remaining 1,667.
+**Polaner deprioritized (2026-03-20):** All 1,680 titles parsed via Haiku (producer + wine_name extracted). Data in `source_polaner`. Removed from active promotion pipeline — catalog is small and metadata-thin compared to other importers. Data retained for reference.
 
 **Canonical data after migration:**
 - KL + retailer data moved from canonical to staging tables
@@ -307,24 +325,17 @@ Staging-first architecture: all external data goes through per-source staging ta
 
 ## Current Focus
 
-**Phase 2: Multi-Source Data Population** — Merge pipeline, COLA label images, retailer catalog integration. See `docs/ROADMAP.md` for full phased plan.
+**Phase 1: Foundation** — Schema hardening + reference data completion + trial producer imports. See `docs/ROADMAP.md` for full phased plan.
 
 ### Strategic Context (updated 2026-03-19)
-- **Language migration:** All new pipeline work in Python. Node.js scripts retired. See `docs/MERGE_STRATEGY.md`.
-- **Merge strategy:** LWIN → COLA groups → State DBs → Importers → Retailers → xwines (reference index only). See `docs/MERGE_STRATEGY.md`.
-- **Multi-source data strategy:** TTB COLA direct (F-tier backbone) → LWIN (identity matching layer) → State DBs (COLA ID + UPC bridge) → Importer catalogs (enrichment) → COLA Cloud (barcode enrichment) → Retailer sitemaps. See `docs/SOURCES.md`.
+- **Backbone IDs:** Three identifier systems anchor every wine: **COLA** (US regulatory, ~1.2M labels), **LWIN** (fine wine trade, 189K wines — already in canonical), **UPC** (retail barcode, fragmented sources). All stored in `external_ids`. Cross-referencing Backbone IDs is the primary dedup mechanism. See `docs/SOURCES.md` for the formal definition.
+- **Multi-source data strategy:** LWIN (canonical backbone, already loaded) → TTB COLA direct (Phase 1 running) → State DBs (COLA + UPC bridge) → Importer catalogs (enrichment) → COLA Cloud (barcode enrichment) → Retailer sitemaps.
 - **Letter-grade enrichment:** F (identity) → D (has scores/prices) → C (batch Haiku) → B (on-demand Sonnet) → A (curated). See `docs/ENRICHMENT.md`.
-- **TTB COLA as F-tier backbone:** TTB has grape varietals as a native structured field. ~1.2M wine COLAs, free, public domain. Phase 1 (CSV harvest) running now. LWIN matches against this for dedup and fine wine coverage. COLA Cloud for barcodes only.
-- **AI matching:** Local Ollama (8B models) for bulk matching, Haiku for edge cases, Sonnet for enrichment writing only. See `docs/MERGE_STRATEGY.md`.
-- **Product direction:** Build what's universal across all commercial paths. Show to people early. Wine list enrichment is fastest B2B revenue path. See `docs/MERGE_STRATEGY.md`.
 - **Identity-first, accuracy-first:** User explicitly chose slow/methodical over quick MVP. On-demand enrichment for user searches. Barcodes considered from the start to avoid re-matching later.
 - **Vertical slice:** California + Burgundy as first enrichment targets.
 - **User lookup triggers B enrichment:** On-demand Sonnet for every search landing on a wine below Grade B. C is batch pre-warming. See ENRICHMENT.md.
 
-### Immediate Next Steps (updated 2026-03-19)
-1. **Python migration** — Set up Python pipeline infrastructure (supabase-py, normalization helpers, merge engine). Build fresh, not port.
-2. **COLA label images** — Phase 1: scrape image URLs from ttbonline.gov (fast). Phase 2: batch-download images locally (days, background).
-3. **Retailer catalog merge + initial frontend** — Merge one broad retailer (Wine.com, K&L, or Total Wine — evaluate for scrapeability + data quality + breadth). Target 5-10K additional canonical wines with prices. Build minimal Vite/React frontend to see data and show people.
+### Next Steps
 1. ~~Review schema assessment decisions item by item~~ ✓
 2. ~~Execute schema migrations (21 new tables, ~45 columns)~~ ✓
 3. ~~Seed classifications (8 systems, 22 levels)~~ ✓ → expanded to 13 systems, 32 levels after two-pass audit
@@ -455,7 +466,7 @@ Discovered that TTB's public COLA registry has **structured grape varietal data 
 
 **COLA Cloud role revised:** Barcode + identity enrichment service for on-demand Grade B enrichment, not bulk F-tier source. Email drafted to request one-time data export (barcode data specifically). API key in `.env`.
 
-**Merge infrastructure:** `lib/merge.mjs` built — MergeEngine class with reference data loading, 3-tier producer/wine matching (key → normalized name → fuzzy pg_trgm), additive field merging, grade calculation. Not yet tested.
+**Merge infrastructure:** `pipeline/lib/merge.py` (converted from `lib/merge.mjs`) — MergeEngine class with reference data loading, 3-tier producer/wine matching (key → normalized name → fuzzy pg_trgm), additive field merging, grade calculation. Not yet tested.
 
 **COLA Cloud API tested (2026-03-17):** 22 requests on free tier (500/mo). Search endpoint basic, detail endpoint rich. Known wines tested: Ridge, López de Heredia, Tignanello, Cristal, Yquem. Grape coverage imperfect (truncated names, French wines often missing grapes). Sample data saved: `data/imports/cola_cloud_sample.json`, `data/imports/cola_cloud_test2.json`.
 

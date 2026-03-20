@@ -603,3 +603,9 @@ Created `docs/MERGE_STRATEGY.md` covering: Python migration, merge layer sequenc
 
 ### 2026-03-19: GitHub token operational risk accepted
 Token shared in Claude.ai chat session. Accepted as operational risk for now. Rotate when convenient.
+
+### 2026-03-20: Polaner deprioritized as source
+Polaner removed from active promotion pipeline. Title parsing was completed (all 1,680 titles parsed via Haiku) and data sits in `source_polaner`, but the catalog is small and metadata-thin compared to Skurnik (5.5K wines with grapes/appellations) or Winebow (best chemistry data). Not worth ongoing investment. Data retained in staging for future reference if needed.
+
+### 2026-03-20: Full Python migration for all pipeline scripts
+All 116 Node.js scripts being converted to Python (even archived ones). Rationale: the work ahead — ETL, dedup, fuzzy matching, AI calls, data quality analysis — is Python's home turf. Pandas, scikit-learn, sentence-transformers, local Ollama bindings are all Python-native. The merge engine was never tested in JS so building fresh in Python costs the same. Node.js archived in `scripts_archive/node/`.
