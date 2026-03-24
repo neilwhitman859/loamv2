@@ -622,5 +622,14 @@ Built pipeline to download TTB label images and scan for UPC/EAN barcodes using 
 ### 2026-03-24: Store TTB label images in Supabase Storage long-term
 Label images are valuable beyond barcode extraction — users should be able to see the actual wine label. Plan to store images in Supabase Storage for canonical wines. Estimated cost: ~$4-8/mo for deduplicated canonical wines, ~$17-23/mo for all 3.28M COLAs. Download everything to local disk first (free), extract barcodes, then selectively upload canonical wine labels to Supabase Storage.
 
+### 2026-03-24: UPC→price lookup — build from existing data, don't pay for APIs
+Researched UPC→price lookup services (SerpAPI $0.01-0.025/lookup, Go-UPC $75-795/mo, Barcode Lookup $99+/mo, Wine-Searcher API $250-2,000/mo). Concluded: don't pay for any of them. We already have ~82K wine prices across 13 staging sources (Spec's, Wally's, Flatiron, PA, BC Liquor, LCBO, EnofileOnline, etc.). The gap is the merge engine linking staging→canonical, not data access. On-demand Google Shopping lookups via SerpAPI could be a fallback for Grade B enrichment at $75/mo for 5K lookups, but only after the free data is exhausted.
+
+### 2026-03-24: Wine.com scraping — park it, DataDome blocks everything
+Wine.com product pages return 403 (DataDome anti-bot). API endpoints also blocked. We have 262K product URLs from sitemaps — could parse slugs for Wine.com product IDs to store in external_ids for future use, but actual price/product data is inaccessible without paid proxy rotation services. Not worth the effort. Better to add more Shopify/WooCommerce retailers that don't fight back.
+
+### 2026-03-24: Vivino — use existing xwines_* data for validation, don't re-scrape
+Vivino API returning 403 (Cloudflare). Apify scrapers still work (~$5-15 per 10K wines via residential proxies). But we already have 530K wines in xwines_* tables from prior scraping. For validation use case (confirming wine identity, checking ratings, verifying grape varieties), the existing data is sufficient at zero cost and zero risk. If fresh data needed later, Apify is path of least resistance.
+
 ### 2026-03-24: Merge strategy — push forward now, don't wait for TTB detail scraper
 COLA numbers (the identity backbone) are already in source_ttb_colas. The detail scraper adds enrichment data (grape varietals, applicant info) but doesn't block identity matching. Phase 1: COLA-keyed deterministic joins across 5 sources (~650K records). Phase 2: LWIN cross-reference (fuzzy match). Phase 3: UPC barcode bridging. Phase 4: Importer catalog enrichment. Phase 5: Competition data overlay.

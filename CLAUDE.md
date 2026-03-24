@@ -624,7 +624,9 @@ Built and ran a complete pipeline to extract UPC barcodes from TTB COLA label im
 - ~~WV ABCA detail scraper~~ — **CANCELLED**, API is dead (2026-03-23 audit confirmed)
 - PRO Platform wine-only re-exports — current XLSX files include all beverages, need wine filtering
 - Systembolaget/Alko barcode sources — still need investigation
-- UPC→price lookup tool (Google Shopping / SerpAPI) — bulk or on-demand pricing from UPC barcodes across multiple retailers. Defer to enrichment pipeline phase.
+- UPC→price lookup tool — **RESEARCHED**: SerpAPI ($0.01-0.025/lookup), Go-UPC ($75-795/mo), Wine-Searcher API ($250-2K/mo). Decision: don't pay. We have ~82K prices in 13 staging sources already. On-demand SerpAPI at $75/mo is fallback for Grade B enrichment after merge engine runs.
+- Wine.com scraping — **BLOCKED**: DataDome 403 on all product pages and API endpoints. 262K sitemap URLs in hand for future slug parsing (Wine.com product IDs). Park until API partnership or DataDome bypass becomes viable.
+- Vivino re-scraping — **UNNECESSARY**: API returning 403 (Cloudflare). Apify scrapers work at ~$5-15/10K wines. But xwines_* tables already have 530K wines for validation. Use existing data, don't re-scrape.
 - TTB AVA shapefiles at https://www.ttb.gov/ava — research for boundary data
 - Tech sheet extraction tool for winery PDFs — design and build
 
