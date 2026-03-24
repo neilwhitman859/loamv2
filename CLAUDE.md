@@ -566,27 +566,28 @@ Key discoveries:
 - **BC Liquor** Elasticsearch API is rich — UPC, grapes, ABV, sweetness, tasting notes, VQA/organic/kosher flags.
 - **UPC barcode total now ~50.6K** confirmed free (up from ~25.4K before this session).
 
-### Source Audit (2026-03-23) — COMPREHENSIVE
+### Source Audit (2026-03-23/24) — COMPREHENSIVE
 Full spot-check of all 30 staging table sources against live online endpoints:
 - **APIs confirmed dead:** WV ABCA (server responds but returns empty — silently deprecated), Horizon Beverage (404). Data archival only.
 - **APIs access changed:** Systembolaget (requires auth now — bulk XML may still work), Spec's WooCommerce (404 on API endpoint — site redesign?), Skurnik (TLS cert issues but site live with 5,403 wines via FacetWP).
-- **Stale data opportunities:** TABC +18K (API has 201K vs our 183K), Open Food Facts +11K (16K vs our 5K — re-fetch attempted, got rate-limited 429).
+- **Stale data opportunities:** TABC +18K (API has 201K vs our 183K), Open Food Facts +11K (16K vs our 5K — re-fetch got rate-limited 429, original 5K preserved in DB).
 - **Healthy sources:** PRO Platform (XLSX exports still unauthenticated, all 12 states), Kansas KDOR (URL moved to new LiquorLicensee app, data intact), LCBO/BC Liquor (sites live), all 5 importers (sites live, minor redesigns).
 - **TABC bonus:** Label PDF URLs on Google Cloud Storage (not yet harvested).
 - **PRO Platform parsed JSONs deleted** (325MB intermediate cache, regenerable from XLSX).
 - **PRO Platform note:** IL may have dropped from platform About page (only 11 states listed now vs our 12), but our data already captured.
-- **Winebow:** Complete site redesign, old domain dead, product catalog restructured.
-- **European Cellars:** PDF catalogue page removed, but producer pages still accessible.
+- **Importer audit:** All 5 sites live. Skurnik: 5,403 wines (vs our 5,541, normal churn). Winebow: complete site redesign, old domain dead. European Cellars: PDF catalogue page removed, producer pages remain. KL: URL structure changed (`/our-wines/` → `/wines`). Empson: domain consolidated to `empson.com`.
+- **Retailer/UPC audit:** Open Food Facts healthy (3x growth to 16K). Horizon dead (404). LCBO/BC Liquor stable. Systembolaget API locked down. Spec's WC API may have changed routes.
 
-### TTB Label Image → Barcode Pipeline (2026-03-23) — NEW
+### TTB Label Image → Barcode Pipeline (2026-03-23+24) — DOWNLOAD COMPLETE
 Built and ran a complete pipeline to extract UPC barcodes from TTB COLA label images:
 
-**Phase 1: Image Download** (`pipeline/fetch/ttb_image_downloader.py`)
+**Phase 1: Image Download** (`pipeline/fetch/ttb_image_downloader.py`) — COMPLETE
 - 350,939 records have label_image_urls (all from detail scraper, not printable)
 - Only 17.5% of detail-scraped labels have images uploaded to TTB
 - Two URL patterns: `publicViewImage` (231K single images), `publicViewAttachment` (120K named files — front/back/neck)
-- 2020-2026 batch: 3,402 images downloaded (1.3GB), 97.7% success rate, 38 img/sec
-- Full 2005-2019 download running in background (~347K images, ~120GB, ~19 hours at 5/sec)
+- **490,373 images downloaded** (~21GB), zero errors, ~30 img/sec average
+- 2020-2026 batch: 3,402 images (1.3GB). 2005-2019 batch: ~487K images (~20GB).
+- Note: Images from ~2007 and earlier are mostly tiny thumbnails (~5KB), not full-res labels
 - SSL verification disabled for TTB's government CA cert
 - Output: `~/Desktop/Loam Cowork/data/images/ttb_labels/{prefix}/{ttb_id}/label_{n}.jpg`
 
@@ -598,7 +599,16 @@ Built and ran a complete pipeline to extract UPC barcodes from TTB COLA label im
 - Code39 barcodes are the TTB ID itself (validation, not product UPC)
 - Processing speed: ~8-10 images/sec
 - Results: `data/imports/ttb_barcode_results.json`
-- **Projection:** At 18.2% hit rate across full 350K images = ~64,000 COLA→UPC bridges for free
+- **Full 490K scan not yet run** — next step. Projection: ~64K COLA→UPC bridges at 18.2% hit rate.
+
+**Phase 3: Printable page images (NOT YET CAPTURED)**
+- The printable scraper (528K records scraped so far) captures structured data but **zero images** (`images: 0` in status.json)
+- The printable pages DO have full-res front + back label images in `<img>` tags
+- The inject script regex looks for `imageWindow()` calls (detail page pattern), not `<img>` tags (printable page pattern)
+- **Fix needed:** After current printable scraper run finishes, modify `ttb_printable_inject.js` to extract `<img>` URLs from printable pages
+- This would unlock full-res back labels (where UPC barcodes live) for ~2M+ records
+- Plan: Store images in Supabase Storage long-term (label images useful for both barcodes and user-facing display)
+- Estimated storage for canonical wines: ~$4-8/mo on Supabase Pro. Full 3.28M COLAs would be ~800GB-1.1TB (~$17-23/mo).
 
 ### Open Questions (deferred)
 - Data freshness strategy (how/when to re-import)

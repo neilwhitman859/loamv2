@@ -618,3 +618,9 @@ Deleted 325MB of `pro_*_parsed.json` files (12 states). These were intermediate 
 
 ### 2026-03-23: Label image barcode extraction as COLA→UPC bridge
 Built pipeline to download TTB label images and scan for UPC/EAN barcodes using zxing-cpp. 18.2% hit rate on 2020-2026 labels (516 unique barcodes from 3,407 images). Projected ~64K bridges at scale across 350K images with URLs. This is free data — no API costs, no licensing, just computer vision on publicly available government label images.
+
+### 2026-03-24: Store TTB label images in Supabase Storage long-term
+Label images are valuable beyond barcode extraction — users should be able to see the actual wine label. Plan to store images in Supabase Storage for canonical wines. Estimated cost: ~$4-8/mo for deduplicated canonical wines, ~$17-23/mo for all 3.28M COLAs. Download everything to local disk first (free), extract barcodes, then selectively upload canonical wine labels to Supabase Storage.
+
+### 2026-03-24: Merge strategy — push forward now, don't wait for TTB detail scraper
+COLA numbers (the identity backbone) are already in source_ttb_colas. The detail scraper adds enrichment data (grape varietals, applicant info) but doesn't block identity matching. Phase 1: COLA-keyed deterministic joins across 5 sources (~650K records). Phase 2: LWIN cross-reference (fuzzy match). Phase 3: UPC barcode bridging. Phase 4: Importer catalog enrichment. Phase 5: Competition data overlay.
