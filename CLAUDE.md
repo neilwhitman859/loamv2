@@ -164,13 +164,13 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
-### Content Tables (Phase 1c/1d, 2026-03-18)
-- **948 producers**, **4,488 wines**, 1,498 vintages, 1,237 scores, 0 prices, 4,801 wine_grapes, 3,350 external_ids, 90 entity_classifications, 31 winemakers, 169 farming certifications, 90 label designation links, 116 label designations, 11 wine_aliases
+### Content Tables (Phase 1c/1d, updated 2026-03-23)
+- **32,754 producers**, **189,359 wines** (LWIN promoted to canonical), 0 vintages, 0 scores, 0 prices, 0 wine_grapes, 189,814 external_ids, 90 entity_classifications, 31 winemakers, 169 farming certifications, 90 label designation links, 116 label designations, 11 wine_aliases
 - **96 region aliases**, **75 label designation aliases** seeded (WSET L3 naming conventions, translations, abbreviations)
 - **New tables (2026-03-16):** wine_relationships (0 rows), producer_timeline (0 rows), wine_lookups (0 rows — analytics/enrichment promotion)
 - **wine_insights columns added:** ai_hook, ai_vinification_summary, enrichment_tier (0-3), is_verified
 - wine_vintage_id FK backfilled: scores and prices 100% linked to wine_vintages
-- **Staging-first architecture (2026-03-18):** All data now goes through per-source staging tables before canonical promotion. KL and retailer data moved from canonical to staging. **19 staging tables total (889K rows, ~647K with COLA, ~27K with UPC).** See "Multi-Source Merge Infrastructure" section below.
+- **Staging-first architecture (2026-03-18+):** All data now goes through per-source staging tables before canonical promotion. KL and retailer data moved from canonical to staging. **30 staging tables total (~4.35M rows).** See "Multi-Source Merge Infrastructure" section below.
 - **Trial imports (6 producers, Phase 1c) — retained as seed data:**
   - Fort Ross Vineyard (US/Sonoma, estate): 15 wines, 112 vintages, 84 scores
   - Sea Slopes (US/Sonoma, child of Fort Ross): 2 wines, 24 vintages, 15 scores
@@ -267,23 +267,42 @@ All 5 pending migrations executed successfully:
 ### Multi-Source Merge Infrastructure (2026-03-18)
 Staging-first architecture: all external data goes through per-source staging tables, then a match engine promotes to canonical tables. Prevents dedup crisis at scale.
 
-**New tables:**
+**30 staging tables (~4.35M total rows, audited 2026-03-23):**
 - `match_decisions` — audit trail for cross-source matching decisions (AI review, confidence, extracted data)
-- `source_polaner` (1,680 rows), `source_kermit_lynch` (1,468 rows), `source_kermit_lynch_growers` (193 rows)
-- `source_skurnik` (5,541 rows), `source_winebow` (536 rows), `source_empson` (279 rows), `source_european_cellars` (443 rows)
-- `source_last_bottle` (160 rows), `source_best_wine_store` (1,658 rows), `source_domestique` (247 rows)
-- Pre-existing: `source_lwin` (189,359), `source_ttb_colas` (0 — Phase 1 running), `source_kansas_brands` (65,476)
-- **New (2026-03-19 session):**
-  - `source_pro_platform` (346,080 rows) — 12 US states via PRO Platform XLSX export. Unique on cola_number, `states` TEXT[] tracks which states each COLA appeared in. Fields: cola_number, brand, label_description, vintage, appellation, abv, supplier, distributors, states.
-  - `source_tabc` (182,933 rows) — Texas TABC via Socrata API. 100% TTB numbers, 99.8% ABV.
-  - `source_wv_abca` (55,093 rows) — West Virginia ABCA via REST API. 96.7% TTB IDs, vintage 63.8%. Detail endpoint has appellation + varietal (not yet scraped).
-  - `source_openfoodfacts` (5,176 rows) — UPC barcodes, 62% French. Crowdsourced.
-  - `source_horizon` (6,441 rows) — UPC barcodes from Horizon Beverage (SGWS MA/RI distributor).
-  - `source_winedeals` (3,200 rows, 2,760 with UPC) — Retailer, Puppeteer scrape.
-  - `source_lcbo` (7,030 rows) — Ontario LCBO, UPC barcodes. Pre-existing.
-  - `source_pa` (5,905 rows) — Pennsylvania PLCB, 10,297 UPCs. Pre-existing.
-  - `source_systembolaget` (12,646 rows) — Sweden. Pre-existing.
-- **Total staging rows: 889,686** across 19 source tables. **~647K with COLA, ~27K with UPC barcodes.**
+- **Regulatory/ID sources:**
+  - `source_ttb_colas` (3,283,318) — TTB COLA registry, printable scraper running. 2M detail-scraped, 106K printable-scraped. 350,939 label image URLs extracted. COLA IDs + grape varietals + applicant data.
+  - `source_pro_platform` (346,080) — 12 US states via PRO Platform XLSX. COLA + vintage + appellation + ABV.
+  - `source_lwin` (189,359) — LWIN trade identifiers. Fine wine backbone.
+  - `source_tabc` (182,933) — Texas TABC via Socrata. 100% TTB numbers, 99.8% ABV. **⚠️ 18K stale** (API has 201K).
+  - `source_kansas_brands` (65,476) — KS KDOR. All beverage types; wine subset ~31K. URL moved to new app.
+  - `source_wv_abca` (55,093) — West Virginia ABCA. 96.7% TTB IDs. **⚠️ API is dead** (returns empty). Data is archival. Detail scraper cannot run.
+- **Competition sources:**
+  - `source_berliner` (73,896) — Berliner Wine Trophy. 42 competitions (2009-2026). 100% grapes/country/medal.
+  - `source_texsom` (46,896) — TEXSOM. 40 years (1985-2025). Producer, appellation, vintage, medal.
+  - `source_enofile` (9,166) — EnofileOnline. Appellation/varietal/price, competition medals.
+- **UPC barcode sources:**
+  - `source_specs` (21,913) — Spec's Wine. **100% UPC barcodes** (best barcode source). Prices. WooCommerce API may have changed.
+  - `source_systembolaget` (12,646) — Sweden monopoly. Barcodes, structured data. API now requires auth.
+  - `source_lcbo` (7,030) — Ontario LCBO. UPC barcodes.
+  - `source_horizon` (6,441) — Horizon Beverage (SGWS MA/RI). UPC barcodes. **⚠️ API is dead** (404). Data archival.
+  - `source_pa` (5,905) — Pennsylvania PLCB. 10,297 UPCs.
+  - `source_openfoodfacts` (5,176) — Crowdsourced UPCs, 62% French. **⚠️ Stale** — source now has 16K (3x growth).
+  - `source_bc_liquor` (3,200) — BC Liquor. 99.5% UPC, grapes, ABV, tasting notes.
+  - `source_winedeals` (3,200) — Retailer. 2,760 with UPC.
+- **Importer catalogs:**
+  - `source_skurnik` (5,541) — Grapes 100%, appellation 97%.
+  - `source_polaner` (1,680) — Deprioritized (metadata-thin).
+  - `source_kermit_lynch` (1,468) + `source_kermit_lynch_growers` (193) — Rich metadata.
+  - `source_winebow` (536) — Best chemistry data (ABV/pH/acidity/RS).
+  - `source_european_cellars` (443) — 100% soil/farming/vinification.
+  - `source_empson` (279) — Richest per-wine data (27+ fields).
+- **Retailer catalogs:**
+  - `source_wallys` (19,446) — Prices, distributor mapping.
+  - `source_flatiron` (4,130) — Structured Shopify tags.
+  - `source_firstleaf` (1,770) — DTC wine club.
+  - `source_best_wine_store` (1,658) — Value retailer.
+  - `source_domestique` (247) — Natural wine.
+  - `source_last_bottle` (160) — Flash sale prices.
 
 **RPC functions:** `match_producer_fuzzy()`, `match_wine_fuzzy()` — pg_trgm similarity search for the match engine.
 
@@ -295,7 +314,9 @@ Staging-first architecture: all external data goes through per-source staging ta
 - `python -m pipeline.load.tabc_staging` — loads TX TABC into staging
 - `python -m pipeline.load.wv_staging` — loads WV ABCA into staging
 - `python -m pipeline.load.upc_staging` — loads Open Food Facts, Horizon, WineDeals into staging
-- `python -m pipeline.fetch.wv_details` — WV ABCA detail fetcher with resume support
+- `python -m pipeline.fetch.wv_details` — WV ABCA detail fetcher with resume support (**⚠️ API dead, cannot run**)
+- `python -m pipeline.fetch.ttb_image_downloader` — downloads label images from TTB by year range
+- `python -m pipeline.analyze.barcode_scanner` — scans downloaded label images for UPC/EAN/QR barcodes
 - `python -m pipeline.analyze.db_counts` — row counts across all tables
 
 **Promotion results (5 importer catalogs promoted 2026-03-18):**
@@ -307,10 +328,10 @@ Staging-first architecture: all external data goes through per-source staging ta
 
 **Polaner deprioritized (2026-03-20):** All 1,680 titles parsed via Haiku (producer + wine_name extracted). Data in `source_polaner`. Removed from active promotion pipeline — catalog is small and metadata-thin compared to other importers. Data retained for reference.
 
-**Canonical data after migration:**
-- KL + retailer data moved from canonical to staging tables
-- 33 curated seed producers (6 trial + 15 wine-type + 5 global + 7 additional) retained in canonical
-- ~4,140 new wines + 348 seed wines = 4,488 total canonical wines
+**Canonical data (updated 2026-03-23):**
+- LWIN promoted to canonical: 189,359 wines, 32,754 producers, 189,814 external_ids
+- Seed data retained (6 trial + 15 wine-type + 5 global + 7 additional producers)
+- wine_vintages, scores, prices all at 0 (LWIN has no vintage data; importer data in staging)
 
 ### What's Not There Yet
 - Most insight tables empty (wine, producer, soil, water body)
@@ -383,16 +404,24 @@ Staging-first architecture: all external data goes through per-source staging ta
 22. ~~UPC sources load~~ ✓ — OFF (5,176), Horizon (6,441), WineDeals (3,200) loaded.
 23. ~~Kansas reload~~ ✓ — 65,476 records loaded (was 0 due to prior truncation).
 24. **NJ OPRA request** — File for UPC+COLA data (7-day response). Portal: www-njlib.nj.gov. Or call 609-984-2830.
-25. **TTB COLA Phase 1 (CSV harvest)** — IN PROGRESS. User running locally (~16 hours). 1955-present.
-26. **TTB COLA Phase 2 (detail scrape)** — fetch grape varietals + applicant data from detail pages.
-27. **TTB COLA Phase 3 (AI parse)** — Haiku extracts vintage, wine name, appellation from fanciful names. ~$10.
-28. **LWIN import** — match against TTB COLA backbone for dedup. Script ready, not yet run.
-29. **WV ABCA detail scraper** — batch fetch appellation/varietal/vineyard for 55K labels (~15 hours).
-30. **Importer catalog merge** — merge 10K catalog wines against TTB+LWIN backbone.
-31. **COLA Cloud barcode enrichment** — on-demand for Grade B enrichment, not bulk. $39/mo Starter.
-32. **Remaining importer scrapers** — Kysela, Louis/Dressner, Broadbent
-33. **Enrichment pipeline** — Edge Function + prompts + enrichment_log
-34. **Frontend** — Vite/React PWA
+25. ~~TTB COLA Phase 1 (CSV harvest)~~ ✓ — 3,283,318 records loaded.
+26. ~~TTB COLA Phase 2 (detail scrape)~~ ✓ — **COMPLETE (2026-03-23).** Two scrapers ran:
+    - **Detail scraper** (Chrome inject): 2,007,033 records in 18.25h at ~30 rec/s. Extracted: 837K grapes, 744K vintages, 206K image URLs. Zero WAF blocks.
+    - **Printable scraper** (Chrome inject): 1,550,027 records with data in 24.3h at ~20 rec/s. Extracted: 1,489K appellations (96%), 822K ABV (old form only), 696K grapes (45%), 680K vintages (44%), 1.55M applicants (100%). 457K records had no printable page (error). Zero WAF blocks.
+    - Architecture: Python HTTP server serves batches → JS injected into Chrome Console fetches TTB pages → posts results back to server → server writes to Supabase. Bypasses Shape Security WAF by running in real browser.
+    - Scripts: `pipeline/fetch/ttb_chrome_scraper.py` + `ttb_chrome_inject.js` (detail), `pipeline/fetch/ttb_printable_scraper.py` + `ttb_printable_inject.js` (printable)
+    - New columns added: `wine_appellation`, `wine_vintage`, `abv`, `phone`, `email`, `label_image_urls`, `detail_scraped_at`, `net_contents`, `formula`, `applicant_name`, `applicant_address`, `applicant_city`, `applicant_state`, `applicant_zip`, `ct_code`, `or_code`, `label_dimensions`, `printable_scraped_at`
+27. **TTB COLA Phase 3 (AI parse)** — Haiku extracts vintage, wine name, appellation from fanciful names. ~$10. Lower priority now that printable scraper got 96% appellation coverage.
+28. ~~LWIN import~~ ✓ — 189,359 wines + 32,754 producers promoted to canonical.
+29. ~~WV ABCA detail scraper~~ — **CANCELLED**, API dead (2026-03-23 audit confirmed).
+30. **TTB label image download** — 205K image URLs in DB. Need to test if URLs require auth. Previous Playwright run got 3,402 images (2020-2026).
+31. **TTB barcode scan** — Scan downloaded images for UPC/EAN. Previous test: 516 unique barcodes from 3,407 images (18.2% hit rate). Projected ~37K barcodes from full 205K images.
+32. **COLA-keyed deterministic merge** — Join PRO/TABC/WV/Kansas/barcode data on shared COLA numbers. Pure SQL, zero ambiguity.
+33. **Importer catalog merge** — merge 10K catalog wines against TTB+LWIN backbone.
+34. **COLA Cloud barcode enrichment** — on-demand for Grade B enrichment, not bulk. $39/mo Starter.
+35. **Remaining importer scrapers** — Kysela, Louis/Dressner, Broadbent
+36. **Enrichment pipeline** — Edge Function + prompts + enrichment_log
+37. **Frontend** — Vite/React PWA
 
 ### Schema Post-Import Hardening (2026-03-15)
 - **Metadata → columns:** 4 fields promoted from metadata JSONB: `release_date` (wine_vintages), `first_vintage_year` (wines), `style` (wines), `philosophy` (producers). 150+ metadata entries identified for migration to proper table links (classifications, vineyards, estates).
@@ -452,25 +481,25 @@ Comprehensive research across 17 source categories. Unified reference in `docs/S
 - **Files downloaded**: `kansas_active_brands.json` (24.6MB), `pa_wine_catalog.xlsx`, `wine_com_all_urls.txt` (20MB), `cola_demo.zip`, `utah_product_list.xlsx`, `lwin_database.csv`, plus all files from 2026-03-18 session below.
 - **Critical gap identified**: Identity matching engine is #1 technical priority — without it, scaling beyond ~12K wines creates dedup crisis.
 
-### TTB COLA Direct Scraping (2026-03-17) — Phase 1 IN PROGRESS
+### TTB COLA Direct Scraping (2026-03-17 → 2026-03-24) — PHASES 1+2 COMPLETE
 Discovered that TTB's public COLA registry has **structured grape varietal data as a native field** — not AI-extracted. This eliminates COLA Cloud as the primary F-tier data source.
 
-**TTB COLA Online detail fields:** TTB ID, brand name, fanciful name, **grape varietals**, origin (state/country), class/type (red/white/rosé/sparkling/dessert), permit number, applicant name + full address, approval date, serial number, status.
-**Not available from TTB:** ABV, barcodes/GTIN, structured appellation (only state/country-level origin), tasting notes.
+**Phase 1 (CSV harvest) — COMPLETE:** 3,283,318 records loaded into `source_ttb_colas`. Basic metadata: TTB ID, brand name, fanciful name, class type, status, dates, origin.
 
-**Phase 1 (CSV harvest):** User running locally — conservative rate limiting, ~16 hours estimated. Searching 1955-present by date range + wine class types 80-89. 4-day windows to stay under 1,000-row export cap. Expected output: 1.2-1.5M TTB IDs with basic metadata.
+**Phase 2 (detail + printable scrape) — COMPLETE (2026-03-24):** Two-pass scrape using Chrome inject architecture (Python HTTP server + JS in browser Console). Bypasses Shape Security WAF by running in real Chrome.
+- **Detail scraper** (18.25h, ~30 rec/s): 2,007,033 records. Extracted grapes (837K), vintages (744K), image URLs (206K). Uses `publicDisplaySearchBasic` URL.
+- **Printable scraper** (24.3h, ~20 rec/s): 1,550,027 records with data (457K had no printable page). Two form versions detected (old pre-2013, new post-2013). Extracted: appellations 1.49M (96%), ABV 822K (old form only), grapes 696K (45%), vintages 680K (44%), applicants 1.55M (100%), plus CT/OR codes, label dimensions, net contents, formula, phone, email.
+- **Zero WAF blocks** across both runs.
+- Scripts: `pipeline/fetch/ttb_chrome_scraper.py` + `ttb_chrome_inject.js`, `pipeline/fetch/ttb_printable_scraper.py` + `ttb_printable_inject.js`
+- DB columns added: `wine_appellation`, `wine_vintage`, `abv`, `phone`, `email`, `label_image_urls`, `detail_scraped_at`, `net_contents`, `formula`, `applicant_name`, `applicant_address`, `applicant_city`, `applicant_state`, `applicant_zip`, `ct_code`, `or_code`, `label_dimensions`, `printable_scraped_at`
 
-**Phase 2 (detail scrape):** Fetch detail pages by TTB ID. Predictable URL: `https://ttbonline.gov/colasonline/viewColaDetails.do?action=publicDisplaySearchBasic&ttbid={TTB_ID}`. Parse HTML for grape varietals, applicant data. Filter Phase 1 output first (skip expired/surrendered, deduplicate label refreshes). 3-7 days at polite rate.
+**Phase 3 (AI parse):** Haiku extracts vintage, wine name from fanciful names. Lower priority now — printable scraper got 96% appellation, 45% grape, 44% vintage coverage directly.
 
-**Phase 3 (AI parse):** Haiku extracts vintage year, wine name, appellation from fanciful name text. ~$5-10 total.
+**COLA Cloud role revised:** Barcode + identity enrichment service for on-demand Grade B enrichment, not bulk F-tier source. API key in `.env`.
 
-**COLA Cloud role revised:** Barcode + identity enrichment service for on-demand Grade B enrichment, not bulk F-tier source. Email drafted to request one-time data export (barcode data specifically). API key in `.env`.
+**Merge infrastructure:** `pipeline/lib/merge.py` — MergeEngine class with 3-tier matching. Not yet tested.
 
-**Merge infrastructure:** `pipeline/lib/merge.py` (converted from `lib/merge.mjs`) — MergeEngine class with reference data loading, 3-tier producer/wine matching (key → normalized name → fuzzy pg_trgm), additive field merging, grade calculation. Not yet tested.
-
-**COLA Cloud API tested (2026-03-17):** 22 requests on free tier (500/mo). Search endpoint basic, detail endpoint rich. Known wines tested: Ridge, López de Heredia, Tignanello, Cristal, Yquem. Grape coverage imperfect (truncated names, French wines often missing grapes). Sample data saved: `data/imports/cola_cloud_sample.json`, `data/imports/cola_cloud_test2.json`.
-
-**Illinois PRO Platform API discovered:** Public JSON POST endpoint at `/Search/ActiveBrandSearch`. Returns COLA numbers, ABV, vintage, appellation, distributors. Same platform as Kansas but requires session cookies (not fully open like Kansas JSON dump).
+**COLA Cloud API tested (2026-03-17):** 22 requests on free tier. Sample data saved: `data/imports/cola_cloud_sample.json`, `data/imports/cola_cloud_test2.json`.
 
 ### 50-State UPC/COLA Survey + PRO Platform Discovery (2026-03-18) — COMPLETE
 Comprehensive overnight survey of all 50 US state alcohol control boards for wine product data (UPC barcodes and/or TTB COLA identifiers). Combined with UPC source fetching from retailers and government monopolies.
@@ -514,6 +543,63 @@ Comprehensive overnight survey of all 50 US state alcohol control boards for win
 
 **New scripts:** `fetch_pro_states.mjs` (PRO Platform multi-state fetcher — paginated JSON + analyze mode), `fetch_ct_dcp.mjs` (CT DCP Puppeteer+PDF scraper), `fetch_openfoodfacts.mjs`, `fetch_horizon.mjs`, `fetch_lcbo.mjs`, `fetch_winedeals.mjs`.
 
+### Additional Source Fetchers (2026-03-21) — 7 FETCHERS BUILT, RUN, AND LOADED
+Built and ran Python fetchers for 7 additional data sources. All output to `data/imports/`. **All 7 loaded into staging tables** (confirmed 2026-03-23).
+
+| Source | Wines | UPC | Key Fields | Script | File |
+|--------|-------|-----|-----------|--------|------|
+| **Spec's Wine** | 21,913 | **21,912 (100%)** | Wine category, origin (99.4%), price (64.5%) | `pipeline/fetch/specs.py` | `specs_wines.json` (11.9 MB) |
+| **Berliner Wine Trophy** | 73,899 | — | Grapes/country/medal (100%), producer (100%) | `pipeline/fetch/berliner_wine_trophy.py` | `berliner_wine_trophy.json` (47.5 MB) |
+| **TEXSOM** | 46,896 | — | Producer, appellation, country, vintage, medal | `pipeline/fetch/texsom.py` | `texsom_wines.json` (11.3 MB) |
+| **Wally's Wine** | 19,446 | — | Price (100%), distributor mapping (100%) | `pipeline/fetch/wallys.py` | `wallys_wines.json` (14.7 MB) |
+| **EnofileOnline** | 9,166 | — | Appellation/varietal/price (99.7%), medals | `pipeline/fetch/enofileonline.py` | `enofileonline_wines.json` (3.7 MB) |
+| **Flatiron Wines** | 4,130 | — | Structured tags (country, region, grape, vintage) | `pipeline/fetch/shopify.py` | `flatiron_wines.json` (12 MB) |
+| **BC Liquor** | 3,300 | **3,270 (99.5%)** | Country/ABV/grapes (100%), tasting notes | `pipeline/fetch/bc_liquor.py` | `bc_liquor_wines.json` (3.4 MB) |
+| **Total** | **178,750** | **~25,182** | | | **104.5 MB** |
+
+Key discoveries:
+- **Spec's is the single best UPC barcode source** — 21,912 barcodes from WooCommerce Store API (SKU field = UPC).
+- **Berliner Wine Trophy is massive** — 73.9K wines across 42 competitions (2009-2026), 100% grapes/country coverage. Top countries: DE 14.6K, IT 14.6K, ES 13.2K, FR 7.1K, PT 6.4K.
+- **TEXSOM has 40 years** of structured competition data (1985-2025). Static JSON files with JS-to-JSON conversion.
+- **EnofileOnline API pagination is broken** — returns same 300 results regardless of page number. Fetches 300 per competition max.
+- **Wally's vendor field** maps wines to US distributors (Southern, RNDC, Chambers & Chambers, Winebow, Kermit Lynch).
+- **BC Liquor** Elasticsearch API is rich — UPC, grapes, ABV, sweetness, tasting notes, VQA/organic/kosher flags.
+- **UPC barcode total now ~50.6K** confirmed free (up from ~25.4K before this session).
+
+### Source Audit (2026-03-23) — COMPREHENSIVE
+Full spot-check of all 30 staging table sources against live online endpoints:
+- **APIs confirmed dead:** WV ABCA (server responds but returns empty — silently deprecated), Horizon Beverage (404). Data archival only.
+- **APIs access changed:** Systembolaget (requires auth now — bulk XML may still work), Spec's WooCommerce (404 on API endpoint — site redesign?), Skurnik (TLS cert issues but site live with 5,403 wines via FacetWP).
+- **Stale data opportunities:** TABC +18K (API has 201K vs our 183K), Open Food Facts +11K (16K vs our 5K — re-fetch attempted, got rate-limited 429).
+- **Healthy sources:** PRO Platform (XLSX exports still unauthenticated, all 12 states), Kansas KDOR (URL moved to new LiquorLicensee app, data intact), LCBO/BC Liquor (sites live), all 5 importers (sites live, minor redesigns).
+- **TABC bonus:** Label PDF URLs on Google Cloud Storage (not yet harvested).
+- **PRO Platform parsed JSONs deleted** (325MB intermediate cache, regenerable from XLSX).
+- **PRO Platform note:** IL may have dropped from platform About page (only 11 states listed now vs our 12), but our data already captured.
+- **Winebow:** Complete site redesign, old domain dead, product catalog restructured.
+- **European Cellars:** PDF catalogue page removed, but producer pages still accessible.
+
+### TTB Label Image → Barcode Pipeline (2026-03-23) — NEW
+Built and ran a complete pipeline to extract UPC barcodes from TTB COLA label images:
+
+**Phase 1: Image Download** (`pipeline/fetch/ttb_image_downloader.py`)
+- 350,939 records have label_image_urls (all from detail scraper, not printable)
+- Only 17.5% of detail-scraped labels have images uploaded to TTB
+- Two URL patterns: `publicViewImage` (231K single images), `publicViewAttachment` (120K named files — front/back/neck)
+- 2020-2026 batch: 3,402 images downloaded (1.3GB), 97.7% success rate, 38 img/sec
+- Full 2005-2019 download running in background (~347K images, ~120GB, ~19 hours at 5/sec)
+- SSL verification disabled for TTB's government CA cert
+- Output: `~/Desktop/Loam Cowork/data/images/ttb_labels/{prefix}/{ttb_id}/label_{n}.jpg`
+
+**Phase 2: Barcode Detection** (`pipeline/analyze/barcode_scanner.py`)
+- Uses zxing-cpp (pure C++ with Python bindings — works on Windows, no native deps)
+- Scanned 3,407 images (2020-2026): **619 labels with UPC/EAN (18.2%)**, 135 with QR codes (4.0%)
+- **516 unique EAN-13 barcodes** extracted — direct COLA→UPC bridges
+- QR codes contain producer website URLs (bonus data)
+- Code39 barcodes are the TTB ID itself (validation, not product UPC)
+- Processing speed: ~8-10 images/sec
+- Results: `data/imports/ttb_barcode_results.json`
+- **Projection:** At 18.2% hit rate across full 350K images = ~64,000 COLA→UPC bridges for free
+
 ### Open Questions (deferred)
 - Data freshness strategy (how/when to re-import)
 - Data licensing for scores (Wine Spectator, Parker, CellarTracker)
@@ -525,9 +611,12 @@ Comprehensive overnight survey of all 50 US state alcohol control boards for win
 - COLA Cloud one-time export email (drafted, not yet sent)
 - CT DCP bulk export — call Richard Mindek (860) 713-6229
 - NJ POSSE account registration — UPC+COLA data since Jan 2023
-- WV ABCA detail scraper — batch fetch appellation/varietal/vineyard for 55K labels (~15 hours)
+- ~~WV ABCA detail scraper~~ — **CANCELLED**, API is dead (2026-03-23 audit confirmed)
 - PRO Platform wine-only re-exports — current XLSX files include all beverages, need wine filtering
 - Systembolaget/Alko barcode sources — still need investigation
+- UPC→price lookup tool (Google Shopping / SerpAPI) — bulk or on-demand pricing from UPC barcodes across multiple retailers. Defer to enrichment pipeline phase.
+- TTB AVA shapefiles at https://www.ttb.gov/ava — research for boundary data
+- Tech sheet extraction tool for winery PDFs — design and build
 
 ---
 

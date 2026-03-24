@@ -609,3 +609,12 @@ Polaner removed from active promotion pipeline. Title parsing was completed (all
 
 ### 2026-03-20: Full Python migration for all pipeline scripts
 All 116 Node.js scripts being converted to Python (even archived ones). Rationale: the work ahead — ETL, dedup, fuzzy matching, AI calls, data quality analysis — is Python's home turf. Pandas, scikit-learn, sentence-transformers, local Ollama bindings are all Python-native. The merge engine was never tested in JS so building fresh in Python costs the same. Node.js archived in `scripts_archive/node/`.
+
+### 2026-03-23: Run TTB image downloader in parallel with printable scraper
+User decided to run both the label image downloader and the printable scraper simultaneously against ttbonline.gov, despite risk of WAF blocking. Different endpoints (publicViewImage.do vs viewColaDetails.do) but same server. Image downloader throttled to 5/sec (vs 40/sec in testing) as compromise. Rationale: "let's just do both at the same time, I think we should get moving."
+
+### 2026-03-23: Delete PRO Platform intermediate parsed JSONs
+Deleted 325MB of `pro_*_parsed.json` files (12 states). These were intermediate cache between XLSX→DB pipeline. Data already in `source_pro_platform` (346K rows) and regenerable from XLSX source files. XLSX files kept as authoritative source-of-record.
+
+### 2026-03-23: Label image barcode extraction as COLA→UPC bridge
+Built pipeline to download TTB label images and scan for UPC/EAN barcodes using zxing-cpp. 18.2% hit rate on 2020-2026 labels (516 unique barcodes from 3,407 images). Projected ~64K bridges at scale across 350K images with URLs. This is free data — no API costs, no licensing, just computer vision on publicly available government label images.

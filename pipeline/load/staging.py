@@ -348,6 +348,29 @@ def load_domestique() -> int:
     return count
 
 
+def load_firstleaf() -> int:
+    print("\n=== Loading FirstLeaf ===")
+    products = load_json("firstleaf_raw.json")
+    rows = [{
+        "title": p.get("title"),
+        "handle": p.get("handle"),
+        "vendor": p.get("vendor"),
+        "product_type": p.get("product_type"),
+        "tags": p.get("tags"),
+        "price_usd": float(p["variants"][0]["price"]) if p.get("variants") else None,
+        "image_url": p["images"][0]["src"] if p.get("images") else None,
+        "metadata": {
+            "shopify_id": p.get("id"),
+            "sku": p["variants"][0].get("sku") if p.get("variants") else None,
+            "created_at": p.get("created_at"),
+            "body_html": p.get("body_html"),
+        },
+    } for p in products]
+    count = batch_insert("source_firstleaf", rows)
+    print(f"  Inserted {count}/{len(products)} rows")
+    return count
+
+
 LOADERS = {
     "polaner": load_polaner,
     "kl": load_kermit_lynch,
@@ -358,6 +381,7 @@ LOADERS = {
     "last-bottle": load_last_bottle,
     "best-wine-store": load_best_wine_store,
     "domestique": load_domestique,
+    "firstleaf": load_firstleaf,
 }
 
 

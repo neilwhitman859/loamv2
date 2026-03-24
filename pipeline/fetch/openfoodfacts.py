@@ -25,7 +25,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 OUTPUT_FILE = Path("data/imports/openfoodfacts_wines.json")
 PAGE_SIZE = 100  # max allowed by OFF API
-DELAY_S = 2.0  # be polite -- OFF is volunteer-run
+DELAY_S = 3.0  # be polite -- OFF is volunteer-run (raised from 2.0 after 429s)
 USER_AGENT = "LoamWineDB/1.0 (neil@loam.wine)"
 
 WINE_CATEGORIES = [
@@ -131,11 +131,19 @@ def fetch_page(client: httpx.Client, category: str, page: int) -> dict | None:
         f"action=process&tagtype_0=categories&tag_contains_0=contains&tag_0={category}"
         f"&fields={FIELDS}&sort_by=unique_scans_n&page_size={PAGE_SIZE}&page={page}&json=1"
     )
-    resp = client.get(url)
-    if resp.status_code != 200:
+    for attempt in range(3):
+        resp = client.get(url)
+        if resp.status_code == 200:
+            return resp.json()
+        if resp.status_code == 429:
+            wait = DELAY_S * (2 ** attempt) + 5
+            print(f"  Rate limited (429) on {category} page {page}, waiting {wait:.0f}s...")
+            time.sleep(wait)
+            continue
         print(f"  HTTP {resp.status_code} for {category} page {page}")
         return None
-    return resp.json()
+    print(f"  Failed after 3 retries for {category} page {page}")
+    return None
 
 
 def main():
@@ -188,6 +196,15 @@ def main():
                 time.sleep(DELAY_S)
 
     wines = list(all_wines.values())
+
+    # Safety: don't overwrite existing data with empty results
+    if not wines and OUTPUT_FILE.exists():
+        existing = json.loads(OUTPUT_FILE.read_text(encoding="utf-8"))
+        if existing:
+            print(f"\n  WARNING: Fetch returned 0 wines but existing file has {len(existing)} records.")
+            print(f"  Keeping existing file. Delete manually to force overwrite.")
+            return
+
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_FILE.write_text(json.dumps(wines, indent=2, ensure_ascii=False))
 

@@ -2,8 +2,8 @@
 
 Master reference for all external data sources — evaluated, integrated, planned, or rejected. Nothing gets lost.
 
-**Last updated**: 2026-03-18
-**Coverage**: All 50 US states + DC surveyed. 22+ importers researched. 12 competitions, 17 associations, 16 international retailers, 19 auction/trading platforms, 10+ wine APIs evaluated.
+**Last updated**: 2026-03-21
+**Coverage**: All 50 US states + DC surveyed. 22+ importers researched. 12 competitions, 17 associations, 16 international retailers, 19 auction/trading platforms, 10+ wine APIs evaluated. 7 new fetchers built and run this session.
 
 ---
 
@@ -189,15 +189,14 @@ Government sources containing wines approved for sale in that state. Public data
 - **Script**: `scripts/fetch_tx_tabc.mjs`
 - **Value**: Massive COLA ID coverage for the Texas market. 100% TTB number rate makes this a top-tier COLA bridge source.
 
-**West Virginia ABCA — IN HAND** ⭐
-- **URL**: REST API at `https://api.wvabca.com/API.svc/WineLabelSearch`
-- **Data**: 55,378 wine labels
-- **Fields (list)**: TTB ID (96.4%), brand, fanciful name, class/type, vintage (63.8%), ABV, origin, size, status, approval date
-- **Detail endpoint**: `WineLabelDetails?id={id}` — adds appellation, grape varietal, applicant info
-- **Access**: Public API key: `2BB0C528-219F-49EE-A8B8-A5A2271BEF9D` (passed as `api_key` header)
+**West Virginia ABCA — ARCHIVAL** (API dead as of 2026-03-23)
+- **URL**: REST API at `https://api.wvabca.com/API.svc/WineLabelSearch` — **server responds but returns empty bodies**
+- **Data**: 55,093 wine labels in staging (snapshot from original fetch)
+- **Fields (list)**: TTB ID (96.7%), brand, fanciful name, class/type, vintage (63.7%), ABV, origin, size, status, approval date
+- **Detail endpoint**: `WineLabelDetails?id={id}` — **cannot run**, API silently deprecated
+- **Access**: Public API key: `2BB0C528-219F-49EE-A8B8-A5A2271BEF9D` — likely revoked
 - **File**: `data/imports/wv_wines_list.json` (14MB)
-- **Script**: `scripts/fetch_wv_abca.mjs`
-- **Value**: Wine-specific database with TTB IDs + vintage + detail-page grape/appellation data.
+- **Value**: 53,299 TTB COLA cross-references still valuable for identity matching. No new data possible.
 
 **Oklahoma ABLE Price Posting** — Monthly distributor price posting PDFs at oklahoma.gov/able-commission. Includes wine distributors and wineries. PDF format only (not structured). Low incremental value over PRO platform data.
 
@@ -431,7 +430,23 @@ Barcodes (UPC-A / EAN-13 / GTIN) are the most definitive wine dedup key — same
 
 **Key insight**: Same wine from different importers may get different UPCs. NV wines get new UPCs per release. Many small producers have no barcode at all. Barcodes are a high-confidence match signal, not a universal key.
 
-### Tier 1: Immediately Actionable (~45K barcodes, free/cheap)
+### Tier 1: Immediately Actionable (~77K barcodes, free/cheap)
+
+**Spec's Wine & Fine Foods** — FETCHED ⭐⭐ (2026-03-21)
+- **Coverage**: 21,912 wines with UPC-A barcodes (100% of wine products). All 12-digit.
+- **Access**: WooCommerce Store API at `specsonline.com/wp-json/wc/store/v1/products`. No auth.
+- **Bonus data**: Wine category (100%), wine origin (99.4%), price (64.5%).
+- **Quality**: Excellent — SKU field IS the UPC barcode. Major TX retailer, 80K total products.
+- **File**: `data/imports/specs_wines.json` (11.9 MB)
+- **Script**: `pipeline/fetch/specs.py`
+
+**BC Liquor Stores (Canada/BC)** — FETCHED ⭐ (2026-03-21)
+- **Coverage**: 3,270 wines with EAN barcodes (99.5% of 3,300 products).
+- **Access**: Elasticsearch API at `bcliquorstores.com/ajax/browse?type=wine`. No auth.
+- **Bonus data**: Country 100%, grapes 99.7%, ABV 100%, price 100%, sweetness, tasting descriptions.
+- **Quality**: Government monopoly — centrally curated. All fields rich.
+- **File**: `data/imports/bc_liquor_wines.json` (3.4 MB)
+- **Script**: `pipeline/fetch/bc_liquor.py`
 
 **Vinmonopolet (Norway)** — PRIORITY (awaiting API access)
 - **Coverage**: ~20K wines, ALL with EAN-13 barcodes (state monopoly requirement)
@@ -462,12 +477,12 @@ Barcodes (UPC-A / EAN-13 / GTIN) are the most definitive wine dedup key — same
 - **File**: `data/imports/lcbo_wines.json`
 - **Script**: `scripts/fetch_lcbo.mjs`
 
-**Horizon Beverage (Southern Glazer's)** — FETCHED ⭐
-- **Coverage**: 7,166 unique wines (MA 5,769 + RI 3,008, deduplicated). UPC: 6,441 (89.9%).
-- **Access**: POST JSON API at `/api/products/GetProducts`. No auth, no rate limiting. 90 seconds total fetch.
-- **Bonus data**: Grape varieties 92.5% (semicolon-separated `rawMaterialNames`), country 100%, region 95.5%, style/color 100%.
+**Horizon Beverage (Southern Glazer's)** — ARCHIVAL (API dead as of 2026-03-23)
+- **Coverage**: 6,441 wines in staging. UPC barcodes in every record.
+- **Access**: POST JSON API at `/api/products/GetProducts` — **returns 404 as of 2026-03-23**. Undocumented internal API, always fragile.
+- **Bonus data**: Grape varieties 92.5%, country 100%, region 95.5%, style/color 100%.
 - **Country distribution**: US 3,204, France 1,620, Italy 1,332, Chile 249, Spain 161, Argentina 156, Portugal 121.
-- **Note**: This is Southern Glazer's Beverage Company (largest US distributor) regional site for MA/RI. Other SGWS regional sites may have the same API pattern — worth investigating.
+- **Note**: Data is archival. No new data possible. Other SGWS regional sites may still work but not investigated.
 - **File**: `data/imports/horizon_beverage_wines.json`
 - **Script**: `scripts/fetch_horizon.mjs`
 
@@ -532,20 +547,22 @@ Barcodes (UPC-A / EAN-13 / GTIN) are the most definitive wine dedup key — same
 
 | Source | Est. Wine Barcodes | Access | Cost |
 |--------|-------------------|--------|------|
+| **Spec's Wine** | **21,912 ✅** | WooCommerce Store API | $0 |
 | Vinmonopolet | ~20K | Free API (awaiting access) | $0 |
-| Open Food Facts | 5,176 ✅ | Free API | $0 |
-| Horizon Beverage (SGWS) | 6,441 ✅ | POST JSON API | $0 |
-| WineDeals.com | ~6,800 (est. 89% of 7,700) | Puppeteer scrape (in progress) | $0 |
-| LCBO | 3,513 ✅ | Puppeteer scrape | $0 |
 | Pennsylvania PLCB | 10,297 ✅ | Parsed from Excel | $0 |
+| Horizon Beverage (SGWS) | 6,441 ✅ | POST JSON API | $0 |
+| Open Food Facts | 5,176 ✅ | Free API | $0 |
+| LCBO | 3,513 ✅ | Puppeteer scrape | $0 |
+| **BC Liquor** | **3,270 ✅** | Elasticsearch API | $0 |
+| WineDeals.com | ~6,800 (est. 89% of 7,700) | Puppeteer scrape (in progress) | $0 |
 | ~~Systembolaget~~ | ~~7K~~ | ❌ No GTIN in public data | — |
 | ~~Alko Finland~~ | ~~5K~~ | ❌ No GTIN in public data | — |
 | UPC Data 4 Bev Alcohol | ~40-60K | Licensed | Quote needed |
 | COLA Cloud | ~300-400K | API | $39-199/mo |
 | CellarTracker | ~858K | Partnership | N/A |
-| **Free total (confirmed)** | **~25,427 + ~6,800 pending** | | **$0** |
-| **Free total (with Vinmonopolet)** | **~52K** | | **$0** |
-| **With moderate spend** | **~100-160K** | | **~$250/mo** |
+| **Free total (confirmed)** | **~50,609 + ~6,800 pending** | | **$0** |
+| **Free total (with Vinmonopolet)** | **~77K** | | **$0** |
+| **With moderate spend** | **~130-190K** | | **~$250/mo** |
 
 ---
 
@@ -626,15 +643,25 @@ Structured medal/score data from professional wine competitions. Public results,
 |-------------|-------------|-------------|------------|------------|-------------|
 | **IWSC** ⭐ | ~4-5K | **CSV export** (email) | 2013+ | Producer, wine, vintage, country, medal, score | Moderate |
 | **Berliner Wine Trophy** ⭐ | ~13-15K | Web (200/page, scraper-friendly) | 2009+ (74K total) | Producer, wine, vintage, grape, country, **ABV, RS, acidity**, organic status | Limited (EU-heavy) |
-| **TEXSOM** ⭐ | ~3,200 | Web (sortable HTML tables) | **1985+** (40 years!) | Brand, description, appellation, country, vintage, medal, 400+ varieties | Very good |
+| **TEXSOM** ⭐ | ~3,200 | Static JSON files | **1985+** (40 years!) | Brand, description, appellation, country, vintage, medal, 400+ varieties | Very good |
 | **SF Chronicle** | ~5,500 | Web (single printable page) | 2014+ | Winery, wine, vintage, varietal, appellation, medal, price range | **Excellent** (US-focused) |
 | **DWWA** | ~18,000 | Web (React SPA, needs API reverse-eng) | 2004+ | Producer, wine, vintage, country, region, grape, medal, score, price | Good |
 
 **IWSC** — iwsc.net/results/search — CSV export via email makes this the easiest competition to integrate. Founded 1969, ~2% Gold rate. No scraping needed.
 
-**Berliner Wine Trophy** — results.wine-trophy.com — Richest structured data: includes alcohol %, residual sugar, acidity alongside medals. 74K awarded wines. OIV-patronized. Also covers Asia Wine Trophy, Portugal Wine Trophy.
+**Berliner Wine Trophy** — results.wine-trophy.com — FETCHED ✅ (2026-03-21)
+- **73,899 wines** across 42 competitions (2009-2026). 47.5 MB.
+- 100% producer, 100% grapes, 100% country, 100% medal.
+- Medals: Gold 61,139, Silver 11,531, Grand Gold 1,229.
+- Top countries: Germany 14.6K, Italy 14.6K, Spain 13.2K, France 7.1K, Portugal 6.4K.
+- OIV-patronized. Also covers Asia Wine Trophy, Portugal Wine Trophy.
+- Script: `pipeline/fetch/berliner_wine_trophy.py`. File: `data/imports/berliner_wine_trophy.json`.
 
-**TEXSOM** — texsom.com/results — 40 years of structured, sortable data. 400+ variety filters, 300+ appellation filters. Easy to scrape.
+**TEXSOM** — texsom.com/results — FETCHED ✅ (2026-03-21)
+- **46,896 wines** across 40 years (1985-2025). 11.3 MB.
+- Static JSON files at `/wp-content/plugins/wine-seeker/data/json-data-{YEAR}.json`.
+- JS arrays with single quotes — custom parser converts to JSON.
+- Script: `pipeline/fetch/texsom.py`. File: `data/imports/texsom_wines.json`.
 
 **SF Chronicle** — winejudging.com — Largest North American competition. Categories organized by varietal + price point ($10-150 sweet spot). WordPress, no anti-bot.
 
@@ -651,7 +678,7 @@ Structured medal/score data from professional wine competitions. Public results,
 
 | Source | Coverage | Notes |
 |--------|----------|-------|
-| **EnofileOnline** | 215K bottles, 15K wineries | enofileonline.com. US regional competition aggregator. Searchable by brand, varietal, price, award, appellation. |
+| **EnofileOnline** | 215K bottles, 15K wineries | enofileonline.com. FETCHED ✅ — **9,166 wines** from 47 US competitions (2025-2026). API pagination broken (300 max per competition). 100% appellation, 99.7% varietal/price. Script: `pipeline/fetch/enofileonline.py`. File: `data/imports/enofileonline_wines.json`. |
 | **Wine-Searcher Awards** | Multiple competitions | wine-searcher.com/awards. Aggregates IWC, IWSC, DWWA, CMB. Anti-bot blocks access. |
 
 ### Matching Strategy
@@ -698,11 +725,30 @@ Government-run wine monopolies have the best structured data of any commercial s
 |--------|---------|-------|-----|-----------|-------|
 | **Alko** | Finland | ~8,700 | Excel price list + scrape | Monthly Excel download, acidity/tannin levels | alko.fi |
 | **LCBO** | Canada/ON | Large | Third-party GraphQL (lcbo.dev) | English, critic scores on some | lcbo.com |
-| **BC Liquor** | Canada/BC | Unknown | CSV on Open Canada portal | Open Government Licence | bcliquorstores.com |
+| **BC Liquor** | Canada/BC | 3,300 | Elasticsearch API (`/ajax/browse`) | FETCHED ✅ — 99.5% UPC, 100% country/ABV, 99.7% grapes. Open Government Licence | bcliquorstores.com |
 | **Berry Bros & Rudd** | UK | ~12,200 | JSON-LD schema.org on pages | **Maturity status** (unique), 327 years of trading | bbr.com |
 | **Tannico** | Italy | ~13,000 | Shopify (may support /products.json) | Largest Italian online retailer, bilingual | tannico.com |
 
 **Berry Bros & Rudd** is notable for maturity assessments (ready/youthful/mature/at best/not ready) — a unique data point not available elsewhere.
+
+### US Wine Retailers — FETCHED ✅ (2026-03-21)
+
+**Spec's Wine & Fine Foods** — specsonline.com
+- **21,913 wines** via WooCommerce Store API (`/wp-json/wc/store/v1/products`). **21,912 UPC barcodes (100%)** — all 12-digit UPC-A via SKU field.
+- Wine category 100%, wine origin 99.4%, price 64.5%.
+- Top origins: USA 7,380, France 6,042, Italy 3,016, Spain 1,266.
+- Top categories: French Bordeaux Red, Cabernet Sauvignon, Pinot Noir, Chardonnay.
+- **Best single UPC barcode source found.** Script: `pipeline/fetch/specs.py`. File: `data/imports/specs_wines.json` (11.9 MB).
+
+**Wally's Wine & Spirits** — wallywine.com (Shopify: cbbc83-3.myshopify.com)
+- **19,446 wines** via Shopify `/products.json` API. No structured wine metadata in tags (flat format).
+- Price 100%, vendor/distributor 100%. Unique value: **distributor mapping** — Southern Wine & Spirits (3,263), RNDC (1,425), Chambers & Chambers (1,075), Winebow (835), Kermit Lynch (609).
+- Product types: Imported Wines 13,994, Domestic Wines 5,443.
+- Script: `pipeline/fetch/wallys.py`. File: `data/imports/wallys_wines.json` (14.7 MB).
+
+**Flatiron Wines** — nyc.flatiron-wines.com (Shopify)
+- **4,130 wines** via generic Shopify fetcher. Structured `key:value` tags (country, region, grape, vintage).
+- Script: `pipeline/fetch/shopify.py`. File: `data/imports/flatiron_wines.json` (12 MB).
 
 ### Tier 3 — Limited Value
 
