@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { supabase } from '../../lib/supabase'
+import EntityMap from '../../components/EntityMap'
 
 interface Producer {
   id: string
@@ -13,6 +14,10 @@ interface Producer {
   hectares_under_vine: number | null
   total_production_cases: number | null
   address: string | null
+  latitude: number | null
+  longitude: number | null
+  parent_producer_id: string | null
+  parent_company: string | null
   country: { id: string; name: string } | null
   region: { id: string; name: string } | null
   appellation: { id: string; name: string } | null
@@ -23,7 +28,13 @@ interface WineSummary {
   name: string
   color: string | null
   wine_type: string | null
+  appellation: { name: string } | null
 }
+
+interface FarmingCert { name: string; certification_status: string | null; certified_since: number | null }
+interface BioCert { name: string }
+interface ProducerAlias { alias: string; alias_type: string | null }
+interface ChildProducer { id: string; name: string }
 
 const COLOR_DOTS: Record<string, string> = {
   red: 'bg-red-700',
@@ -37,187 +48,254 @@ export default function ProducerPage() {
   const [producer, setProducer] = useState<Producer | null>(null)
   const [wines, setWines] = useState<WineSummary[]>([])
   const [wineCount, setWineCount] = useState(0)
+  const [farmingCerts, setFarmingCerts] = useState<FarmingCert[]>([])
+  const [bioCerts, setBioCerts] = useState<BioCert[]>([])
+  const [aliases, setAliases] = useState<ProducerAlias[]>([])
+  const [children, setChildren] = useState<ChildProducer[]>([])
+  const [parentProducer, setParentProducer] = useState<{ id: string; name: string } | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if (!id) return
     setLoading(true)
 
-    Promise.all([
-      supabase
-        .from('producers')
-        .select(`
-          id, name, producer_type, year_established, website_url, philosophy, description,
-          hectares_under_vine, total_production_cases, address,
-          country:countries!producers_country_id_fkey(id, name),
-          region:regions!producers_region_id_fkey(id, name),
-          appellation:appellations!producers_appellation_id_fkey(id, name)
-        `)
-        .eq('id', id)
-        .single(),
+    supabase
+      .from('producers')
+      .select(`
+        id, name, producer_type, year_established, website_url, philosophy, description,
+        hectares_under_vine, total_production_cases, address, latitude, longitude,
+        parent_producer_id, parent_company,
+        country:countries!producers_country_id_fkey(id, name),
+        region:regions!producers_region_id_fkey(id, name),
+        appellation:appellations!producers_appellation_id_fkey(id, name)
+      `)
+      .eq('id', id)
+      .single()
+      .then(({ data }) => {
+        if (data) {
+          const prod = data as unknown as Producer
+          setProducer(prod)
+          const p: PromiseLike<void>[] = []
 
-      supabase
-        .from('wines')
-        .select('id, name, color, wine_type')
-        .eq('producer_id', id)
-        .is('deleted_at', null)
-        .order('name')
-        .limit(50),
+          p.push(supabase.from('wines')
+            .select('id, name, color, wine_type, appellation:appellations!wines_appellation_id_fkey(name)')
+            .eq('producer_id', id).is('deleted_at', null).order('name').limit(100)
+            .then(({ data: d }) => { if (d) setWines(d as unknown as WineSummary[]) }))
 
-      supabase
-        .from('wines')
-        .select('id', { count: 'exact', head: true })
-        .eq('producer_id', id)
-        .is('deleted_at', null),
-    ]).then(([prodRes, wineRes, countRes]) => {
-      if (prodRes.data) setProducer(prodRes.data as unknown as Producer)
-      if (wineRes.data) setWines(wineRes.data)
-      if (countRes.count != null) setWineCount(countRes.count)
-      setLoading(false)
-    })
+          p.push(supabase.from('wines')
+            .select('id', { count: 'exact', head: true })
+            .eq('producer_id', id).is('deleted_at', null)
+            .then(({ count }) => { if (count != null) setWineCount(count) }))
+
+          p.push(supabase.from('producer_farming_certifications')
+            .select('certification_status, certified_since, farming_certification:farming_certifications!producer_farming_certifications_farming_certification_id_fkey(name)')
+            .eq('producer_id', id)
+            .then(({ data: d }) => {
+              if (d) setFarmingCerts(d.map((r: any) => ({
+                name: r.farming_certification?.name || '',
+                certification_status: r.certification_status,
+                certified_since: r.certified_since,
+              })))
+            }))
+
+          p.push(supabase.from('producer_biodiversity_certifications')
+            .select('biodiversity_certification:biodiversity_certifications!producer_biodiversity_certifications_biodiversity_certification_id_fkey(name)')
+            .eq('producer_id', id)
+            .then(({ data: d }) => {
+              if (d) setBioCerts(d.map((r: any) => ({ name: r.biodiversity_certification?.name || '' })))
+            }))
+
+          p.push(supabase.from('producer_aliases')
+            .select('alias, alias_type')
+            .eq('producer_id', id)
+            .then(({ data: d }) => { if (d) setAliases(d) }))
+
+          // Child producers
+          p.push(supabase.from('producers')
+            .select('id, name')
+            .eq('parent_producer_id', id).is('deleted_at', null).order('name')
+            .then(({ data: d }) => { if (d) setChildren(d) }))
+
+          // Parent producer
+          if (prod.parent_producer_id) {
+            p.push(supabase.from('producers')
+              .select('id, name')
+              .eq('id', prod.parent_producer_id).single()
+              .then(({ data: d }) => { if (d) setParentProducer(d) }))
+          }
+
+          Promise.all(p).then(() => setLoading(false))
+        } else {
+          setLoading(false)
+        }
+      })
   }, [id])
 
-  if (loading) {
-    return (
-      <div className="max-w-3xl mx-auto px-4 py-12">
-        <div className="animate-pulse space-y-4">
-          <div className="h-8 bg-earth-200 rounded w-1/2" />
-          <div className="h-5 bg-earth-100 rounded w-1/4" />
-        </div>
-      </div>
-    )
-  }
-
-  if (!producer) {
-    return (
-      <div className="max-w-3xl mx-auto px-4 py-16 text-center">
-        <p className="text-earth-500">Producer not found</p>
-        <Link to="/" className="text-wine-600 text-sm mt-2 inline-block hover:underline">Back to search</Link>
-      </div>
-    )
-  }
+  if (loading) return <Loading />
+  if (!producer) return <NotFound label="Producer" />
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-6 pb-16">
-
       {/* Breadcrumb */}
-      <nav className="text-xs text-earth-400 mb-4 flex items-center gap-1.5 flex-wrap">
-        {producer.country && (
-          <>
-            <Link to={`/country/${producer.country.id}`} className="hover:text-earth-600 transition-colors">{producer.country.name}</Link>
-            <span>/</span>
-          </>
-        )}
-        {producer.region && (
-          <>
-            <Link to={`/region/${producer.region.id}`} className="hover:text-earth-600 transition-colors">{producer.region.name}</Link>
-            <span>/</span>
-          </>
-        )}
+      <nav className="text-xs text-earth-400 mb-3 flex items-center gap-1.5 flex-wrap">
+        {producer.country && <><Link to={`/country/${producer.country.id}`} className="hover:text-earth-600">{producer.country.name}</Link><span>/</span></>}
+        {producer.region && <><Link to={`/region/${producer.region.id}`} className="hover:text-earth-600">{producer.region.name}</Link><span>/</span></>}
+        {parentProducer && <><Link to={`/producer/${parentProducer.id}`} className="hover:text-earth-600">{parentProducer.name}</Link><span>/</span></>}
         <span className="text-earth-500">{producer.name}</span>
       </nav>
 
       {/* Header */}
-      <header className="mb-8">
-        <h1 className="font-display text-2xl md:text-3xl font-semibold text-earth-900 leading-tight">
-          {producer.name}
-        </h1>
-
-        <div className="flex flex-wrap gap-2 mt-3">
-          {producer.producer_type && (
-            <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-earth-100 text-earth-600 capitalize">
-              {producer.producer_type}
-            </span>
-          )}
-          {producer.year_established && (
-            <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-earth-100 text-earth-600">
-              Est. {producer.year_established}
-            </span>
-          )}
+      <header className="mb-4">
+        <h1 className="font-display text-2xl md:text-3xl font-semibold text-earth-900">{producer.name}</h1>
+        <div className="flex flex-wrap gap-1.5 mt-2">
+          {producer.producer_type && <Tag>{producer.producer_type}</Tag>}
+          {producer.year_established && <Tag>Est. {producer.year_established}</Tag>}
+          {producer.parent_company && <Tag variant="muted">{producer.parent_company}</Tag>}
         </div>
-
-        {producer.website_url && (
-          <a
-            href={producer.website_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-3 text-xs text-wine-500 hover:text-wine-600 transition-colors"
-          >
-            {producer.website_url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
-            <span className="ml-1">&#8599;</span>
-          </a>
+        {aliases.length > 0 && (
+          <p className="text-xs text-earth-400 mt-1">Also known as: {aliases.map(a => a.alias).join(', ')}</p>
         )}
       </header>
 
-      {/* Description / Philosophy */}
-      {(producer.description || producer.philosophy) && (
-        <section className="mb-8">
-          {producer.description && (
-            <p className="text-sm text-earth-700 leading-relaxed mb-3">{producer.description}</p>
+      {/* Facts */}
+      <Section title="Details">
+        <FactGrid>
+          {producer.country && <Fact label="Country" value={producer.country.name} link={`/country/${producer.country.id}`} />}
+          {producer.region && <Fact label="Region" value={producer.region.name} link={`/region/${producer.region.id}`} />}
+          {producer.appellation && <Fact label="Appellation" value={producer.appellation.name} link={`/appellation/${producer.appellation.id}`} />}
+          {producer.hectares_under_vine && <Fact label="Hectares" value={`${producer.hectares_under_vine}`} />}
+          {producer.total_production_cases && <Fact label="Production" value={`${producer.total_production_cases.toLocaleString()} cases`} />}
+          {producer.address && <Fact label="Address" value={producer.address} />}
+          {producer.latitude && producer.longitude && (
+            <Fact label="Coordinates" value={`${producer.latitude.toFixed(4)}, ${producer.longitude.toFixed(4)}`} />
           )}
-          {producer.philosophy && (
-            <p className="text-sm text-earth-600 leading-relaxed italic border-l-2 border-earth-300 pl-4">{producer.philosophy}</p>
+          {producer.website_url && (
+            <Fact label="Website" value={producer.website_url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')} />
           )}
-        </section>
+        </FactGrid>
+      </Section>
+
+      {/* Certifications */}
+      {(farmingCerts.length > 0 || bioCerts.length > 0) && (
+        <Section title="Certifications">
+          <div className="flex flex-wrap gap-1.5">
+            {farmingCerts.map((c, i) => (
+              <span key={i} className="text-xs px-2 py-0.5 bg-green-50 border border-green-200 rounded text-green-700">
+                {c.name}
+                {c.certification_status && c.certification_status !== 'certified' && ` (${c.certification_status})`}
+                {c.certified_since && ` since ${c.certified_since}`}
+              </span>
+            ))}
+            {bioCerts.map((c, i) => (
+              <span key={`bio-${i}`} className="text-xs px-2 py-0.5 bg-emerald-50 border border-emerald-200 rounded text-emerald-700">
+                {c.name}
+              </span>
+            ))}
+          </div>
+        </Section>
       )}
 
-      {/* Key facts */}
-      {(producer.hectares_under_vine || producer.total_production_cases || producer.address) && (
-        <section className="mb-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {producer.hectares_under_vine && (
-              <Stat label="Vineyard area" value={`${producer.hectares_under_vine} ha`} />
-            )}
-            {producer.total_production_cases && (
-              <Stat label="Production" value={`${producer.total_production_cases.toLocaleString()} cases`} />
-            )}
-            {producer.address && (
-              <Stat label="Location" value={producer.address} />
-            )}
+      {/* Philosophy */}
+      {producer.philosophy && (
+        <Section title="Philosophy">
+          <p className="text-sm text-earth-600">{producer.philosophy}</p>
+        </Section>
+      )}
+
+      {/* Map */}
+      {producer.region && (
+        <Section title="Location">
+          <EntityMap entityType="region" entityId={producer.region.id} label={producer.region.name} />
+        </Section>
+      )}
+
+      {/* Child producers / estates */}
+      {children.length > 0 && (
+        <Section title="Estates & Labels">
+          <div className="flex flex-wrap gap-2">
+            {children.map(c => (
+              <Link key={c.id} to={`/producer/${c.id}`}
+                className="text-sm px-3 py-1.5 bg-earth-100 rounded-lg text-earth-700 hover:bg-earth-200 transition-colors">
+                {c.name}
+              </Link>
+            ))}
           </div>
-        </section>
+        </Section>
       )}
 
       {/* Wines */}
-      <section>
-        <h3 className="font-display text-lg font-semibold text-earth-800 mb-3">
-          Wines {wineCount > 0 && <span className="text-earth-400 font-normal text-sm">({wineCount})</span>}
-        </h3>
-
+      <Section title={`Wines${wineCount > 0 ? ` (${wineCount})` : ''}`}>
         {wines.length === 0 ? (
           <p className="text-sm text-earth-400">No wines in catalog yet.</p>
         ) : (
-          <div className="space-y-1">
+          <div className="space-y-0.5">
             {wines.map(w => (
-              <Link
-                key={w.id}
-                to={`/wine/${w.id}`}
-                className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-earth-100 transition-colors"
-              >
-                {w.color && (
-                  <div className={`w-3 h-3 rounded-full shrink-0 ${COLOR_DOTS[w.color] || 'bg-earth-300'}`} />
-                )}
+              <Link key={w.id} to={`/wine/${w.id}`}
+                className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-earth-100 transition-colors">
+                {w.color && <div className={`w-3 h-3 rounded-full shrink-0 ${COLOR_DOTS[w.color] || 'bg-earth-300'}`} />}
                 <span className="text-sm text-earth-700 font-medium truncate">{w.name}</span>
-                {w.wine_type && w.wine_type !== 'table' && (
-                  <span className="text-[10px] text-earth-400 uppercase tracking-wider shrink-0">{w.wine_type}</span>
-                )}
+                {w.appellation && <span className="text-[10px] text-earth-400 truncate shrink-0 ml-auto">{w.appellation.name}</span>}
               </Link>
             ))}
-            {wineCount > 50 && (
-              <p className="text-xs text-earth-400 px-3 pt-2">Showing 50 of {wineCount} wines</p>
-            )}
+            {wineCount > 100 && <p className="text-xs text-earth-400 px-3 pt-2">Showing 100 of {wineCount}</p>}
           </div>
         )}
-      </section>
+      </Section>
     </div>
   )
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
+/* ── Shared components ────────────────────────────────────── */
+
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div>
-      <div className="text-xs text-earth-400 mb-0.5">{label}</div>
-      <div className="text-sm text-earth-700 font-medium">{value}</div>
+    <section className="mb-5">
+      <h3 className="font-display text-base font-semibold text-earth-800 mb-2 pb-1 border-b border-earth-100">{title}</h3>
+      {children}
+    </section>
+  )
+}
+
+function Tag({ children, variant = 'default' }: { children: React.ReactNode; variant?: 'default' | 'accent' | 'muted' }) {
+  const s = { default: 'bg-earth-100 text-earth-600', accent: 'bg-wine-50 text-wine-700', muted: 'bg-stone-100 text-stone-500' }
+  return <span className={`inline-block text-xs font-medium px-2 py-0.5 rounded-full capitalize ${s[variant]}`}>{children}</span>
+}
+
+function FactGrid({ children }: { children: React.ReactNode }) {
+  const filtered = Array.isArray(children) ? children.filter(Boolean) : children ? [children] : []
+  if (filtered.length === 0) return null
+  return <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-2 mb-2">{filtered}</div>
+}
+
+function Fact({ label, value, link }: { label: string; value: string; link?: string }) {
+  return (
+    <div className="min-w-0">
+      <div className="text-[10px] uppercase tracking-wider text-earth-400 leading-tight">{label}</div>
+      {link ? (
+        <Link to={link} className="text-sm font-medium text-earth-800 hover:text-wine-600 transition-colors truncate block">{value}</Link>
+      ) : (
+        <div className="text-sm font-medium text-earth-800 truncate" title={value}>{value}</div>
+      )}
+    </div>
+  )
+}
+
+function Loading() {
+  return (
+    <div className="max-w-3xl mx-auto px-4 py-12">
+      <div className="animate-pulse space-y-4">
+        <div className="h-8 bg-earth-200 rounded w-1/2" />
+        <div className="h-5 bg-earth-100 rounded w-1/4" />
+      </div>
+    </div>
+  )
+}
+
+function NotFound({ label }: { label: string }) {
+  return (
+    <div className="max-w-3xl mx-auto px-4 py-16 text-center">
+      <p className="text-earth-500">{label} not found</p>
+      <Link to="/" className="text-wine-600 text-sm mt-2 inline-block hover:underline">Back to search</Link>
     </div>
   )
 }

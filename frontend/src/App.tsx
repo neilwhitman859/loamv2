@@ -10,6 +10,7 @@ import RegionPage from './pages/consumer/RegionPage'
 import AppellationPage from './pages/consumer/AppellationPage'
 import CountryPage from './pages/consumer/CountryPage'
 import GrapePage from './pages/consumer/GrapePage'
+import VineyardPage from './pages/consumer/VineyardPage'
 
 // Data explorer (admin/dev)
 import DataLayout from './components/DataLayout'
@@ -46,6 +47,7 @@ export default function App() {
         <Route path="/appellation/:id" element={<AppellationPage />} />
         <Route path="/country/:id" element={<CountryPage />} />
         <Route path="/grape/:id" element={<GrapePage />} />
+        <Route path="/vineyard/:id" element={<VineyardPage />} />
       </Route>
 
       {/* Data explorer — sidebar + max-w-7xl */}
