@@ -633,3 +633,30 @@ Vivino API returning 403 (Cloudflare). Apify scrapers still work (~$5-15 per 10K
 
 ### 2026-03-24: Merge strategy — push forward now, don't wait for TTB detail scraper
 COLA numbers (the identity backbone) are already in source_ttb_colas. The detail scraper adds enrichment data (grape varietals, applicant info) but doesn't block identity matching. Phase 1: COLA-keyed deterministic joins across 5 sources (~650K records). Phase 2: LWIN cross-reference (fuzzy match). Phase 3: UPC barcode bridging. Phase 4: Importer catalog enrichment. Phase 5: Competition data overlay.
+
+### 2026-03-25: Supabase compute — upgrade Nano → Small ($10/mo)
+Nano (0.5GB RAM, shared CPU) could not handle upserts into source_ttb_colas (3.5GB table + indexes). Statement timeouts on every write, causing scraper to stall. Micro (1GB, shared CPU) considered but Small (2GB, dedicated CPU) chosen for headroom — table will grow as printable scraper adds data to all 3.28M rows, and we have 30 other staging tables plus 78 canonical tables.
+
+### 2026-03-25: TTB scraping — run detail and printable sequentially, not in parallel
+Overnight parallel run caused silent rate limiting: ERR_CONNECTION_RESET errors (not WAF blocks) from TTB after sustained ~80 req/s combined. Sequential runs at 20-43 rec/s each produce zero WAF blocks. Run detail first (fills pre-2005 gaps), then printable (full re-scrape for label images).
+
+### 2026-03-25: Image URL separation — application_scan_urls vs label_image_urls
+Detail scraper's `publicViewImage.do` URLs are scans of the full TTB application form (with labels physically pasted at bottom). Printable scraper's `publicViewAttachment.do` URLs are actual individual label photos (front, back, strip, neck). Separated into distinct columns for downstream use: label photos for barcode scanning + user display, app scans for archive/reference only.
+
+### 2026-03-25: TTB scraping scope — all years, all statuses, all class types
+Previous runs only scraped APPROVED status and 5 wine class types (80/81/80A/84/88). Expanded to include all statuses (SURRENDERED, EXPIRED, REVOKED) and additional class types (8000/8100/8400/8800). Pre-2005 records (~1.1M) had never been detail-scraped.
+
+### 2026-03-25: Affiliate links — start after importer catalog merge (step 6), before/parallel with enrichment
+Wine.com, Drizly, Total Wine, Vivino all have affiliate programs (5-10% commission). Need merged wine identities first to reliably match canonical wines to retailer product pages. Don't need polished frontend — even a basic search page with buy links generates revenue. Build: affiliate_url_template + commission_rate on `retailers` table, map canonical wines → retailer availability from staging price data (~82K prices across 13 sources), generate dynamic affiliate URLs. Wally's distributor mapping data (Southern, RNDC, Chambers, Winebow, KL) helps identify which retailers carry which wines.
+
+### 2026-03-27: TTB ID format — non-001 IDs have no printable page (confirmed)
+Audit confirmed that the middle 3 digits of the 14-digit TTB ID (positions 6-8) encode the form type. Only `001` = standard COLA form 5100.31 with a printable version. IDs with `000`, `002`, `003` return error on `publicFormDisplay` URL — verified live in browser. The `--only-001` flag on the printable scraper was correct. 1.35M wine records with non-001 IDs will never get printable-only fields (appellation, ABV, applicant, label images) from TTB directly. These fields must come from COLA-keyed cross-reference with PRO Platform (346K), TABC (183K), Kansas (65K), and other state databases that share COLA numbers.
+
+### 2026-03-27: TTB scrape declared complete
+Detail scrape: 3.18M/3.28M (96.8%) — remaining 104K are non-grape-wine class types (flavored wine, fruit wine, mead, cider). Printable scrape: 1.82M/1.83M 001-format records (99.86%) — remaining 2,635 are pre-1997 with no printable page. No more scraping needed. Next step is COLA-keyed deterministic merge and AI parse for non-001 records.
+
+### 2026-03-27: Trial import data loss from LWIN promotion — accepted
+LWIN canonical promotion cleared trial import seed data (33 producers, ~560 vintages, ~521 scores, 31 winemakers, 169 farming certs, 11 wine aliases, 707 grape insights). This is acceptable — the trial imports served their purpose (schema stress-testing) and the importer staging data remains for re-promotion against the LWIN backbone. The canonical table now has clean LWIN-sourced identity data.
+
+### 2026-03-31: Principle #9 — structured data gets structured display
+If a field is structured in the DB (numbers, dates, percentages, enums), it must be displayed structurally in the UI — not buried in prose. Grids, labeled values, pills, compact rows. This makes pages comparable side-by-side and builds user muscle memory for where to find facts. AI narrative wraps around structured data, never replaces it. Applied first to wine page vintage details and winemaking sections. Added as Principle #9 in PRINCIPLES.md (existing #9 renumbered to #10).

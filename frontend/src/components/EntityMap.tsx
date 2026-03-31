@@ -43,9 +43,11 @@ interface BoundaryData {
 interface EntityMapProps {
   entityType: 'country' | 'region' | 'appellation'
   entityId: string
+  /** Optional label shown above the map (e.g. "Russian River Valley") */
+  label?: string
 }
 
-export default function EntityMap({ entityType, entityId }: EntityMapProps) {
+export default function EntityMap({ entityType, entityId, label }: EntityMapProps) {
   const [data, setData] = useState<BoundaryData | null>(null)
   const [loading, setLoading] = useState(true)
   const [notFound, setNotFound] = useState(false)
@@ -105,6 +107,11 @@ export default function EntityMap({ entityType, entityId }: EntityMapProps) {
 
   return (
     <div className="bg-white rounded border border-earth-200 overflow-hidden">
+      {label && (
+        <div className="px-3 py-1.5 border-b border-earth-100 text-xs font-medium text-earth-500">
+          {label}
+        </div>
+      )}
       <div className="h-64">
         <MapContainer
           center={[data.lat, data.lng]}

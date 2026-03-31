@@ -42,6 +42,10 @@ When a pipeline is running in the background, don't poll with tools that dump th
 
 **The rule:** Use `tail -n 5` (or similar) on the output file to check progress. You get the last few lines — current position, success/fail count, time estimate — which is all that's needed. Save full output reads for when the task is done and you need the summary. The goal is reassurance that it's still working and a rough sense of how far along, not a replay of every line.
 
-### 9. Don't create new data from training data
+### 9. Structured data, structured display
+
+If a field is structured in the database, display it structurally in the UI. Numbers, dates, percentages, enums — these are scannable facts, not prose. Render them as labeled values, grids, pills, or compact rows — never bury them in sentences. This makes pages comparable side-by-side and trains users to know where to look. AI narrative adds context and story *around* the structured data, but the facts themselves should always be visually distinct and instantly scannable. A user glancing at two vintages should be able to compare ABV, oak, production, and scores without reading a paragraph.
+
+### 10. Don't create new data from training data
 
 Training data (Claude's built-in knowledge) should only be used for **validation** — confirming, cross-referencing, and auditing data that came from authoritative sources. It should never be used to **generate** new factual content: scores, tasting notes, production figures, vintage details, or any data that would end up in canonical tables. If it didn't come from a primary source (producer website, government registry, official publication), it doesn't go in the database. Training data is the second opinion, not the source of truth.

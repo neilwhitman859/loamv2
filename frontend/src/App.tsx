@@ -1,7 +1,19 @@
 import { Routes, Route } from 'react-router-dom'
+
+// Consumer pages
+import ConsumerLayout from './components/consumer/ConsumerLayout'
+import HomePage from './pages/consumer/HomePage'
+import SearchPage from './pages/consumer/SearchPage'
+import WinePage from './pages/consumer/WinePage'
+import ProducerPage from './pages/consumer/ProducerPage'
+import RegionPage from './pages/consumer/RegionPage'
+import AppellationPage from './pages/consumer/AppellationPage'
+import CountryPage from './pages/consumer/CountryPage'
+import GrapePage from './pages/consumer/GrapePage'
+
+// Data explorer (admin/dev)
 import DataLayout from './components/DataLayout'
 import DevLayout from './components/DevLayout'
-import LandingPage from './pages/LandingPage'
 import Dashboard from './pages/Dashboard'
 import WinesList from './pages/data/WinesList'
 import WineDetail from './pages/data/WineDetail'
@@ -24,10 +36,19 @@ import About from './pages/About'
 export default function App() {
   return (
     <Routes>
-      {/* Landing page — standalone, no sidebar */}
-      <Route path="/" element={<LandingPage />} />
+      {/* Consumer app — root-level, mobile-first */}
+      <Route element={<ConsumerLayout />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/wine/:id" element={<WinePage />} />
+        <Route path="/producer/:id" element={<ProducerPage />} />
+        <Route path="/region/:id" element={<RegionPage />} />
+        <Route path="/appellation/:id" element={<AppellationPage />} />
+        <Route path="/country/:id" element={<CountryPage />} />
+        <Route path="/grape/:id" element={<GrapePage />} />
+      </Route>
 
-      {/* Data section — sidebar + max-w-7xl */}
+      {/* Data explorer — sidebar + max-w-7xl */}
       <Route element={<DataLayout />}>
         <Route path="/data" element={<Dashboard />} />
         <Route path="/data/wines" element={<WinesList />} />
@@ -46,7 +67,7 @@ export default function App() {
         <Route path="/data/map" element={<MapExplorer />} />
       </Route>
 
-      {/* Dev section — sidebar + full-width */}
+      {/* Dev tools — sidebar + full-width */}
       <Route element={<DevLayout />}>
         <Route path="/dev/schema" element={<SchemaExplorer />} />
         <Route path="/dev/tables" element={<TableBrowser />} />
