@@ -110,7 +110,7 @@ export default function WinePage() {
       .then(({ data }) => {
         if (data) {
           setWine(data as unknown as Wine)
-          const promises: Promise<void>[] = []
+          const promises: PromiseLike<void>[] = []
 
           promises.push(
             supabase.from('wine_insights').select('ai_hook, ai_wine_summary, ai_terroir_expression, ai_vinification_summary, ai_food_pairing, ai_style_profile, ai_cellar_recommendation, ai_comparable_wines, enrichment_tier')

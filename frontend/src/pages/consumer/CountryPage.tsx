@@ -11,7 +11,6 @@ interface Country {
 interface Region {
   id: string
   name: string
-  is_catch_all: boolean | null
 }
 
 export default function CountryPage() {

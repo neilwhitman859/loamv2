@@ -33,7 +33,7 @@ export default function HomePage() {
   const [loading, setLoading] = useState(false)
   const [showResults, setShowResults] = useState(false)
   const navigate = useNavigate()
-  const debounceRef = useRef<ReturnType<typeof setTimeout>>()
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined)
   const resultsRef = useRef<HTMLDivElement>(null)
 
   const search = useCallback(async (q: string) => {
