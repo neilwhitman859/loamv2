@@ -656,7 +656,7 @@ id SERIAL PK, name_a, name_b, country, similarity, wines_a, wines_b, verdict, ve
 Per-source raw data for multi-source merge pipeline. Each preserves raw data as-is with merge tracking columns. Created 2026-03-17.
 
 ### source_ttb_colas
-Raw TTB COLA registry data from Phase 1 CSV harvest + Phase 2 detail scrape.
+Raw TTB COLA registry data from Phase 1 CSV harvest + Phase 2 detail/printable scrape. 3,283,318 records.
 | Column | Type | Notes |
 |---|---|---|
 | id | uuid | PK |
@@ -670,9 +670,26 @@ Raw TTB COLA registry data from Phase 1 CSV harvest + Phase 2 detail scrape.
 | origin_desc | text | Full origin description |
 | class_type | text | TTB class code (80-89 for wine) |
 | class_type_desc | text | Class description (e.g., "TABLE WINE RED") |
-| grape_varietals | text | Phase 2: structured field from detail page |
-| applicant_name | text | Phase 2: importer/producer name |
-| applicant_address | text | Phase 2: full address |
+| grape_varietals | text | Structured grape field from detail/printable pages |
+| wine_appellation | text | Printable page: wine appellation |
+| wine_vintage | text | Printable page: vintage year |
+| abv | text | Printable page (old form): alcohol by volume |
+| applicant_name | text | Printable page: importer/producer name |
+| applicant_address | text | Printable page: address |
+| applicant_city | text | Printable page: city |
+| applicant_state | text | Printable page: state |
+| applicant_zip | text | Printable page: zip |
+| phone | text | Printable page: phone number |
+| email | text | Printable page: email |
+| label_image_urls | text[] | Printable page: `publicViewAttachment.do` URLs — actual label photos (front, back, strip, neck) |
+| application_scan_urls | text[] | Detail page: `publicViewImage.do` URLs — full application form scans with labels embedded |
+| net_contents | text | Printable page: bottle size |
+| formula | text | Printable page: formula/recipe |
+| ct_code | text | Printable page: Connecticut code |
+| or_code | text | Printable page: Oregon code |
+| label_dimensions | text | Printable page: label size dimensions |
+| detail_scraped_at | timestamptz | When detail page was scraped |
+| printable_scraped_at | timestamptz | When printable page was scraped |
 | status | text | Active/expired/surrendered/revoked |
 | canonical_wine_id | uuid | FK wines, nullable — set during merge |
 | canonical_producer_id | uuid | FK producers, nullable — set during merge |

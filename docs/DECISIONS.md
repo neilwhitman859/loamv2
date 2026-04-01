@@ -660,3 +660,12 @@ LWIN canonical promotion cleared trial import seed data (33 producers, ~560 vint
 
 ### 2026-03-31: Principle #9 — structured data gets structured display
 If a field is structured in the DB (numbers, dates, percentages, enums), it must be displayed structurally in the UI — not buried in prose. Grids, labeled values, pills, compact rows. This makes pages comparable side-by-side and builds user muscle memory for where to find facts. AI narrative wraps around structured data, never replaces it. Applied first to wine page vintage details and winemaking sections. Added as Principle #9 in PRINCIPLES.md (existing #9 renumbered to #10).
+
+### 2026-04-01: Frontend pause — fill data before building more UI
+Consumer frontend pages (Wine, Producer, Appellation, Region, Grape, Country, Vineyard) are built and deployed on Render. But canonical tables are nearly empty: 189K wines with 1 vintage, 3 scores, 1 grape link. Pages render beautifully when data exists but most show bare identity-only shells. Decision: stop frontend work, focus entirely on filling canonical data via importer re-promotion, COLA-keyed merge, and enrichment pipeline. Don't return to UI until wine pages have vintages, scores, and grapes populating.
+
+### 2026-04-01: TTB image download does not block merge work
+TTB label image download (~490K images, ~48 hours remaining) is a UPC barcode extraction play — separate from the text data merge. All 3.18M detail-scraped and 1.82M printable-scraped records are already in source_ttb_colas with appellations, grapes, vintages, ABV. COLA-keyed merge and importer re-promotion can proceed immediately.
+
+### 2026-04-01: Importer re-promotion is highest priority next step
+8,267 wines across 5 importer staging tables (KL, Skurnik, Winebow, Empson, EC) have richest per-wine data: grapes, vintages, farming practices, descriptions. All have canonical_wine_id = 0 (cleared during LWIN promotion). Re-promoting these against the LWIN backbone is the fastest path to pages with actual content. Then COLA-keyed merge for scale, then enrichment pipeline for AI content.

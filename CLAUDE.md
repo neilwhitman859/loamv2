@@ -60,6 +60,9 @@ If the user is going a long stretch without wrapping up, if decisions are being 
 
 ## Current State
 
+### Supabase Compute
+**Small** ($10/mo, 2GB RAM, dedicated CPU) — upgraded from Nano 2026-03-25. Required for `source_ttb_colas` table (4.7GB with indexes). Nano could not complete upserts without statement timeouts. DB total size: 6.6 GB.
+
 ### Pipeline Language
 **Python** for all data pipeline work (2026-03-20). Node.js retired. All 116 Node.js scripts archived to `scripts_archive/node/` and being converted to Python in `pipeline/`.
 
@@ -78,19 +81,19 @@ See `docs/MERGE_STRATEGY.md` for rationale.
 
 ### Architecture
 The database has two layers:
-- **Canonical tables** (`producers`, `wines`, `wine_vintages`, etc.) — curated, high-quality data. 78 canonical tables. Trial imports + KL bulk + retailer imports complete. Quality bar is high.
-- **source_* staging tables** — per-source raw data for multi-source merge. `source_ttb_colas` (TTB COLA registry, Phase 1 running), `source_kansas_brands` (31,216 wine records loaded), `source_lwin` (184,497 records loaded). Each has merge tracking columns (canonical_wine_id, canonical_producer_id, processed_at).
+- **Canonical tables** (`producers`, `wines`, `wine_vintages`, etc.) — curated, high-quality data. 78 canonical tables. LWIN promoted as backbone (189K wines, 33K producers). Quality bar is high.
+- **source_* staging tables** — per-source raw data for multi-source merge. `source_ttb_colas` (TTB COLA registry, 3.28M records, scrape complete), `source_pro_platform` (346K), `source_lwin` (189K, all promoted), `source_kansas_brands` (65K), `source_tabc` (183K), `source_wv_abca` (55K). Each has merge tracking columns (canonical_wine_id, canonical_producer_id, processed_at).
 - **xwines_* tables** — bulk X-Wines dataset dump (~530K wines, ~2.2M vintages, ~32K producers). Kept as reference but not actively maintained. Data quality is lower.
 
 ### Reference Tables (complete)
-Countries (62), regions (386 — 62 catch-all, 218 L1 named, 106 L2), appellations (3,662 — 3,205 PDO/DOC/AOC + 457 IGT/IGP/PGI/VR/Landwein/base-tier), grapes (9,693 from VIVC + 34,820 synonyms), varietal categories (161 + 162 grape mappings), source types (27), publications (71), attribute definitions (73), tasting descriptors (304), farming certifications (19, incl. HVE added 2026-03-16), biodiversity certifications (7), soil types (39).
+Countries (68), regions (389 — 65 catch-all, 218 L1 named, 106 L2), appellations (3,662 — 3,205 PDO/DOC/AOC + 457 IGT/IGP/PGI/VR/Landwein/base-tier), grapes (9,693 from VIVC + 34,820 synonyms), varietal categories (161 + 162 grape mappings), source types (29), publications (78), attribute definitions (73), tasting descriptors (304), farming certifications (21, incl. HVE, Kosher, Fair Trade), biodiversity certifications (7), soil types (39).
 
 Regions rebuilt from scratch (2026-03-12): two-level hierarchy sourced from WSET L3 spec + Federdoc/MAPA/official wine authorities. All X-Wines leftover regions purged. Data file: `data/regions_rebuild.json`. Expanded (2026-03-13): 13 new regions added from Sonnet review triage — L2 subregions for Canada, South Africa, Austria, Spain + L1 regions for Portugal, UK (Scotland).
 
 Appellation→region attribution 96.4% complete (3,090/3,205). Three-pass strategy: Pass 1 containment trace (1,915), Pass 3 direct lookup (1,174). ~115 remain on catch-all by design (multi-state US AVAs, minor countries without named regions). L2 attribution complete: 0 empty L2 regions. Sonnet review round 1 applied (2026-03-13): 10 appellation re-attributions + Southwest France rename + 48 appellations moved to 10 new L2 regions.
 
-### Insights (partially populated)
-Grape insights (707), region insights (202 — 126 deleted with leftover regions), appellation insights (82), country insights (62). Producer insights and wine insights are empty.
+### Insights (mostly empty)
+Grape insights (0 — cleared during LWIN promotion), region insights (202), appellation insights (82), country insights (62). Producer insights, wine insights, wine_vintage_insights, wine_vintage_tasting_insights all empty.
 
 ### Geographic Data
 Geographic boundaries with PostGIS geometry. Appellation containment hierarchy (2,158 relationships).
@@ -120,7 +123,7 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 - `producer_farming_certifications.certification_status` added (certified/practicing/transitioning)
 - `producers.latitude/longitude` added (GPS coords from grower profiles)
 - `wines.vinification_notes` added (free text winemaking approach)
-- `appellation_aliases` table created and seeded with 17,558 aliases from 4 sources:
+- `appellation_aliases` table created and seeded with 18,631 aliases from 4+ sources (originally 17,558, expanded during LWIN import):
   - INAO OpenDataSoft API: 2,557 official French AOC product variants (color, style, cru)
   - Mechanical color suffixes: 9,866 (FR/IT/ES/PT/DE/US/AU/NZ/ZA/CL/AR)
   - Mechanical designation suffixes: 3,193 (appellation + AOC/DOC/DOCG/etc.)
@@ -150,28 +153,28 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 
 **Grapes:** VIVC import complete — 9,690 grapes imported from VIVC cache, 34,833 synonyms, parentage resolved (~3,000+ grapes with parent links). Three-tier display name strategy: 26 Tier 1 overrides (Merlot, Malbec, Grenache, etc.), 154 Tier 2 family-preserved (Pinot Noir, Cabernet Sauvignon), 9,510 Tier 3 auto. Country-specific synonyms added (Zinfandel/US, Primitivo/IT, Garnacha/ES, Monastrell/ES, Alvarinho/PT, Gouveio/PT). `display_name` column added to grapes table. VIVC Phase 5 (reconnect varietal categories) still pending.
 
-**Publications:** 71 publications rebuilt from authoritative sources (66 original + 5 added 2026-03-15: View From the Cellar, Prince of Pinot, International Wine Review, Jasper Morris MW, Farr Vintners). Scoring systems, scale ranges, active status. Types: critic_publication, community, auction_house, competition, aggregator. Two-pass audit applied: 4 set inactive (Tanzer absorbed by Vinous, Dias Blue defunct, IWR/Connoisseurs' Guide ceased), Weinwisser country fixed (DE→CH), 3 scale_min fixes.
+**Publications:** 78 publications rebuilt from authoritative sources (66 original + 5 added 2026-03-15 + 7 added during imports: View From the Cellar, Prince of Pinot, International Wine Review, Jasper Morris MW, Farr Vintners, plus competition/importer publications). Scoring systems, scale ranges, active status. Types: critic_publication, community, auction_house, competition, aggregator. Two-pass audit applied: 4 set inactive (Tanzer absorbed by Vinous, Dias Blue defunct, IWR/Connoisseurs' Guide ceased), Weinwisser country fixed (DE→CH), 3 scale_min fixes.
 
 **Attribute definitions:** 73 definitions across 6 categories (chemistry 8, winemaking 23, viticulture 13, production 15, service 6, business 8). Sources: OIV International Code (chemistry), WSET L3/L4 (winemaking/viticulture), real producer/retailer websites (production/business). Two-pass audit: 2 renames (serving_temp, aging_potential), 10 additions, 1 citation fix.
 
 **Tasting descriptors:** 304 descriptors in 3-tier hierarchy. Sources: WSET SAT (primary), UC Davis Wine Aroma Wheel, CMS Deductive Tasting Grid. Top-level categories use deterministic UUIDs (10000000-... prefix). Structure: 12 top-level categories → ~35 subcategories (20000000-... prefix) → ~257 leaf descriptors. Aroma categories: Fruit, Floral, Herbal/Vegetal, Spice, Oak, Earthy/Mineral, Nutty/Oxidative, Chemical/Other, Yeast/MLF. Palate categories: Sweetness, Acidity, Tannin, Body, Finish, Texture. Two-pass audit: 3 deletions (duplicates), 7 moves/fixes, ~12 additions.
 
-**Appellation grapes:** 9,233 rows across all 3,206 appellations (100% coverage). Grape varieties associated with each appellation — regulated varieties for EU appellations (INAO/disciplinari/Consejo Regulador sources), key planted varieties for non-EU geographic appellations (US AVAs, AU GIs, SA WOs have no grape restrictions). Coverage by country: France 361 (detailed per-appellation), Italy 408, Germany 1,288 (Riesling/Spätburgunder/Müller-Thurgau), Spain 105, US 277, SA 142, AU 106, plus 32 other countries. Notable gaps: Blaufränkisch not in grapes table (affects Austrian/Hungarian entries), Hondarrabi Zuri missing (Txakoli), Tintilia missing (Molise).
+**Appellation grapes:** 9,278 rows across all 3,206 appellations (100% coverage). Grape varieties associated with each appellation — regulated varieties for EU appellations (INAO/disciplinari/Consejo Regulador sources), key planted varieties for non-EU geographic appellations (US AVAs, AU GIs, SA WOs have no grape restrictions). Coverage by country: France 361 (detailed per-appellation), Italy 408, Germany 1,288 (Riesling/Spätburgunder/Müller-Thurgau), Spain 105, US 277, SA 142, AU 106, plus 32 other countries. Notable gaps: Blaufränkisch not in grapes table (affects Austrian/Hungarian entries), Hondarrabi Zuri missing (Txakoli), Tintilia missing (Molise).
 
 **Region grapes:** 1,673 rows across all 324 named regions (100% coverage). Seeded from Anderson & Aryal dataset (University of Adelaide, 2000–2023 hectare plantings by variety) for L1 regions + authoritative sources for L2 subregions (Wine Australia, NZ Winegrowers, SAWIS, INAO, DOC/DOCG disciplinari, Consejo Regulador DO regulations, DWI, USDA/TTB). All entries `association_type = 'typical'`. Script: `scripts/seed_region_country_grapes.mjs`. Data: `scripts/insert_region_grapes.sql` (backup). **Two-pass expert audit completed (2026-03-14):** Pass 1 (training data), Pass 2 (web sources). 10 wrong entries removed (Rhône: Chardonnay/Gamay/Merlot, Rioja: Merlot, Etna: Nero d'Avola, Coastal Croatia: Grenache, Madeira: Sémillon, Abruzzo/Marche: Korinthiaki Lefki, Western Australia: Verdelho Tinto). 16 critical/high additions (Lodi: Zinfandel, Roero: Arneis, Vaud/Geneva: Chasselas, Coastal Croatia: Plavac Mali, Epirus: Debina, etc.). ~90 medium/low issues identified and parked (naming conventions, minor omissions). **Cross-table validation audit (2026-03-15):** 6 removals (Asturias: Albariño→Albarín Blanco, Epirus: Cab Sauv→Vlachiko, Iowa/Minnesota: vinifera→cold-hardy hybrids) + 20 additions (Swiss cantons: Chasselas/Müller-Thurgau, Bierzo: Godello, Wien: Welschriesling/Pinot Blanc, Côte Chalonnaise: Aligoté, Mâconnais: Pinot Noir, Wales: Bacchus, Arkansas: Cynthiana, Iowa/Minnesota/Wisconsin: Marquette/Frontenac).
 
-**Country grapes:** 541 rows across all 62 countries (100% coverage). Seeded from Anderson & Aryal dataset for 46 major wine countries + manual additions for 16 minor countries. All entries `association_type = 'typical'`. **Audit additions (2026-03-14):** 18 country-level fixes — Italy: Nebbiolo + Corvina, France: Sémillon + Chenin Blanc + Viognier + Riesling + Gewürztraminer + Mourvèdre, Spain: Albariño + Mencía + Viura + Pedro Ximénez, Australia: Grenache, NZ: Riesling + Syrah, US: Cabernet Franc, Croatia: Plavac Mali, UK: Pinot Noir.
+**Country grapes:** 541 rows across all 68 countries (100% coverage at time of seeding; 6 countries added later may need grape data). Seeded from Anderson & Aryal dataset for 46 major wine countries + manual additions for 16 minor countries. All entries `association_type = 'typical'`. **Audit additions (2026-03-14):** 18 country-level fixes — Italy: Nebbiolo + Corvina, France: Sémillon + Chenin Blanc + Viognier + Riesling + Gewürztraminer + Mourvèdre, Spain: Albariño + Mencía + Viura + Pedro Ximénez, Australia: Grenache, NZ: Riesling + Syrah, US: Cabernet Franc, Croatia: Plavac Mali, UK: Pinot Noir.
 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
-### Content Tables (Phase 1c/1d, updated 2026-03-23)
-- **32,754 producers**, **189,359 wines** (LWIN promoted to canonical), 0 vintages, 0 scores, 0 prices, 0 wine_grapes, 189,814 external_ids, 90 entity_classifications, 31 winemakers, 169 farming certifications, 90 label designation links, 116 label designations, 11 wine_aliases
-- **96 region aliases**, **75 label designation aliases** seeded (WSET L3 naming conventions, translations, abbreviations)
+### Content Tables (Phase 1c/1d, updated 2026-03-27)
+- **32,754 producers**, **189,359 wines** (LWIN promoted to canonical), 0 vintages, 0 scores, 0 prices, 0 wine_grapes, 189,814 external_ids, **15,785 entity_classifications** (9,680 Burgundy Premier Cru + 5,703 Grand Cru + 402 other from LWIN), 0 winemakers, 0 farming certifications, 0 label designation links, 116 label designations, 0 wine_aliases, **2,902 producer_aliases** (from LWIN)
+- **96 region aliases**, **75 label designation aliases**, **18,631 appellation aliases** seeded
+- **Note (2026-03-27):** Trial import seed data (33 producers, ~560 vintages, ~521 scores, 31 winemakers, 169 farming certs, 90 label designation links, 11 wine_aliases, 707 grape insights) was **cleared during LWIN canonical promotion**. This data existed in staging tables but the LWIN promotion replaced canonical content. Importer staging data (KL, Skurnik, Empson, EC, Winebow) remains in staging tables with `canonical_wine_id = NULL` — needs re-promotion against the LWIN backbone.
 - **New tables (2026-03-16):** wine_relationships (0 rows), producer_timeline (0 rows), wine_lookups (0 rows — analytics/enrichment promotion)
 - **wine_insights columns added:** ai_hook, ai_vinification_summary, enrichment_tier (0-3), is_verified
-- wine_vintage_id FK backfilled: scores and prices 100% linked to wine_vintages
 - **Staging-first architecture (2026-03-18+):** All data now goes through per-source staging tables before canonical promotion. KL and retailer data moved from canonical to staging. **30 staging tables total (~4.35M rows).** See "Multi-Source Merge Infrastructure" section below.
-- **Trial imports (6 producers, Phase 1c) — retained as seed data:**
+- **Trial imports (6 producers, Phase 1c) — CLEARED during LWIN promotion:**
   - Fort Ross Vineyard (US/Sonoma, estate): 15 wines, 112 vintages, 84 scores
   - Sea Slopes (US/Sonoma, child of Fort Ross): 2 wines, 24 vintages, 15 scores
   - Moone Tsai (US/Napa, negociant): 10 wines, 83 vintages, 48 scores
@@ -267,10 +270,10 @@ All 5 pending migrations executed successfully:
 ### Multi-Source Merge Infrastructure (2026-03-18)
 Staging-first architecture: all external data goes through per-source staging tables, then a match engine promotes to canonical tables. Prevents dedup crisis at scale.
 
-**30 staging tables (~4.35M total rows, audited 2026-03-23):**
+**30 staging tables (~4.35M total rows, audited 2026-03-27):**
 - `match_decisions` — audit trail for cross-source matching decisions (AI review, confidence, extracted data)
 - **Regulatory/ID sources:**
-  - `source_ttb_colas` (3,283,318) — TTB COLA registry, printable scraper running. 2M detail-scraped, 106K printable-scraped. 350,939 label image URLs extracted. COLA IDs + grape varietals + applicant data.
+  - `source_ttb_colas` (3,283,319) — TTB COLA registry. **Scrape complete.** 3.18M detail-scraped (96.8%), 1.82M printable-scraped (99.86% of 001-format). 1.82M label image URLs, 1.75M appellations, 857K grapes, 1.50M vintages, 856K ABV. Non-001 IDs (1.35M) confirmed no printable page on TTB.
   - `source_pro_platform` (346,080) — 12 US states via PRO Platform XLSX. COLA + vintage + appellation + ABV.
   - `source_lwin` (189,359) — LWIN trade identifiers. Fine wine backbone.
   - `source_tabc` (182,933) — Texas TABC via Socrata. 100% TTB numbers, 99.8% ABV. **⚠️ 18K stale** (API has 201K).
@@ -328,25 +331,56 @@ Staging-first architecture: all external data goes through per-source staging ta
 
 **Polaner deprioritized (2026-03-20):** All 1,680 titles parsed via Haiku (producer + wine_name extracted). Data in `source_polaner`. Removed from active promotion pipeline — catalog is small and metadata-thin compared to other importers. Data retained for reference.
 
-**Canonical data (updated 2026-03-23):**
-- LWIN promoted to canonical: 189,359 wines, 32,754 producers, 189,814 external_ids
-- Seed data retained (6 trial + 15 wine-type + 5 global + 7 additional producers)
-- wine_vintages, scores, prices all at 0 (LWIN has no vintage data; importer data in staging)
+**Canonical data (updated 2026-03-27):**
+- LWIN promoted to canonical: 189,359 wines, 32,754 producers, 189,814 external_ids, 15,785 entity_classifications, 2,902 producer_aliases
+- Wine quality: 99.98% country, 93.3% region, 55.4% appellation, 98.2% color, 100% wine_type, 0% varietal_category, 0% vinification_notes (LWIN is identity-only)
+- Trial import seed data (33 producers, ~560 vintages, ~521 scores, winemakers, farming certs, wine_aliases, grape insights) was **cleared during LWIN promotion**
+- wine_vintages, scores, prices, wine_grapes all at 0 (LWIN has no vintage/grape data; importer data in staging but unlinked)
+- 5 importer staging sources unlinked (canonical_wine_id = NULL): KL 1,468 + Skurnik 5,541 + Winebow 536 + Empson 279 + EC 443
 
 ### What's Not There Yet
-- Most insight tables empty (wine, producer, soil, water body)
+- **wine_vintages, wine_vintage_scores, wine_vintage_prices: all 0** — no vintage data in canonical. LWIN is identity-only. Importer staging data has vintage data but needs re-promotion.
+- **wine_grapes: 0** — no grape-to-wine links in canonical. Importer staging has grape data.
+- **winemakers: 0** — cleared during LWIN promotion. Was 31 from trial imports.
+- Most insight tables empty (wine, producer, grape, wine_vintage)
 - All weather data (appellation_vintages) — Open-Meteo schema design pending
 - All document tables
 - All soil/water body link tables
 - wine_relationships, producer_timeline tables created but empty (0 rows)
 - Enrichment pipeline not yet built (architecture designed in `docs/ENRICHMENT.md`)
 - Reference data complete — all tables seeded and cross-table validated (2026-03-15). ABV column added to wine_vintages.
+- **retailers table: 0 rows** — created but never seeded.
+
+---
+
+## Consumer Frontend (PAUSED 2026-04-01)
+
+**Deployed:** loam.onrender.com (Render static site, auto-deploys from GitHub push)
+**Stack:** Vite + React + Tailwind, mobile-first PWA
+**Design tokens:** Playfair Display (headings), Inter (body), wine/earth/stone color palettes
+
+**Pages built (all data-dense, structured fact grids, minimal prose):**
+- `WinePage` — Full vintage chemistry (ABV, pH, TA, RS, VA, SO2, brix), winemaking details, aging, EU e-label, production, appellation structured fields, producer details, label designations, farming certifications, score table, grape pills, dual maps, identifiers (LWIN, barcode), drink window, other vintages comparison table
+- `ProducerPage` — Details grid, farming/biodiversity certifications, aliases, parent/child producer links, region map, wine list with appellations
+- `AppellationPage` — Structured fields (established, area, yield, min ABV, aging, elevation, GDD, rainfall, growing season), production rules, terroir (soil/climate/style), map, grape varieties (required/typical), sub-appellations from containment hierarchy, producer list
+- `RegionPage` — Region grapes, sub-regions, appellations list, producer list, map, AI terroir
+- `GrapePage` — VIVC identity, synonyms with country, parent/child grape links, country/region/appellation associations, wine count
+- `CountryPage` — Map, country grapes, region grid, stats
+- `VineyardPage` — Site details (elevation, aspect, slope, density), soil types with properties, producer/wine links, map
+- `HomePage` — Search bar, `SearchPage` — results
+
+**Routes:** `/wine/:id`, `/producer/:id`, `/appellation/:id`, `/region/:id`, `/grape/:id`, `/country/:id`, `/vineyard/:id`, `/search`, `/`
+**Dev tools preserved:** `/data/*` (data explorer), `/dev/*` (schema browser)
+
+**Why paused:** Canonical tables nearly empty — 189K wines but ~1 vintage, ~3 scores, ~1 grape link. Pages render beautifully with data but most show identity-only shells. Need importer re-promotion + COLA merge + enrichment pipeline before more UI work.
+
+**Design principle (Principle #9):** Structured data in DB → structured display in UI. Numbers, dates, percentages, enums displayed as labeled fact grids — never buried in prose.
 
 ---
 
 ## Current Focus
 
-**Phase 1: Foundation** — Schema hardening + reference data completion + trial producer imports. See `docs/ROADMAP.md` for full phased plan.
+**Phase 2: Multi-Source Data Population** — Fill canonical tables. See `docs/ROADMAP.md` for full phased plan.
 
 ### Strategic Context (updated 2026-03-19)
 - **Backbone IDs:** Three identifier systems anchor every wine: **COLA** (US regulatory, ~1.2M labels), **LWIN** (fine wine trade, 189K wines — already in canonical), **UPC** (retail barcode, fragmented sources). All stored in `external_ids`. Cross-referencing Backbone IDs is the primary dedup mechanism. See `docs/SOURCES.md` for the formal definition.
@@ -405,17 +439,12 @@ Staging-first architecture: all external data goes through per-source staging ta
 23. ~~Kansas reload~~ ✓ — 65,476 records loaded (was 0 due to prior truncation).
 24. **NJ OPRA request** — File for UPC+COLA data (7-day response). Portal: www-njlib.nj.gov. Or call 609-984-2830.
 25. ~~TTB COLA Phase 1 (CSV harvest)~~ ✓ — 3,283,318 records loaded.
-26. ~~TTB COLA Phase 2 (detail scrape)~~ ✓ — **COMPLETE (2026-03-23).** Two scrapers ran:
-    - **Detail scraper** (Chrome inject): 2,007,033 records in 18.25h at ~30 rec/s. Extracted: 837K grapes, 744K vintages, 206K image URLs. Zero WAF blocks.
-    - **Printable scraper** (Chrome inject): 1,550,027 records with data in 24.3h at ~20 rec/s. Extracted: 1,489K appellations (96%), 822K ABV (old form only), 696K grapes (45%), 680K vintages (44%), 1.55M applicants (100%). 457K records had no printable page (error). Zero WAF blocks.
-    - Architecture: Python HTTP server serves batches → JS injected into Chrome Console fetches TTB pages → posts results back to server → server writes to Supabase. Bypasses Shape Security WAF by running in real browser.
-    - Scripts: `pipeline/fetch/ttb_chrome_scraper.py` + `ttb_chrome_inject.js` (detail), `pipeline/fetch/ttb_printable_scraper.py` + `ttb_printable_inject.js` (printable)
-    - New columns added: `wine_appellation`, `wine_vintage`, `abv`, `phone`, `email`, `label_image_urls`, `detail_scraped_at`, `net_contents`, `formula`, `applicant_name`, `applicant_address`, `applicant_city`, `applicant_state`, `applicant_zip`, `ct_code`, `or_code`, `label_dimensions`, `printable_scraped_at`
-27. **TTB COLA Phase 3 (AI parse)** — Haiku extracts vintage, wine name, appellation from fanciful names. ~$10. Lower priority now that printable scraper got 96% appellation coverage.
+26. ~~TTB COLA Phase 2 (detail + printable scrape)~~ ✓ — **COMPLETE (2026-03-27).** Detail: 3.18M/3.28M (96.8%). Printable: 1.82M/1.83M 001-format (99.86%). Non-001 IDs (1.35M) confirmed to have no printable page on TTB (error on `publicFormDisplay`). See TTB section for full breakdown.
+27. **TTB COLA Phase 3 (AI parse)** — Haiku extracts vintage, wine name, appellation from fanciful names. ~$10. Most useful for 1.35M non-001 records that can't get printable data. Lower priority — COLA-keyed merge with PRO/TABC is faster path.
 28. ~~LWIN import~~ ✓ — 189,359 wines + 32,754 producers promoted to canonical.
 29. ~~WV ABCA detail scraper~~ — **CANCELLED**, API dead (2026-03-23 audit confirmed).
-30. **TTB label image download** — 205K image URLs in DB. Need to test if URLs require auth. Previous Playwright run got 3,402 images (2020-2026).
-31. **TTB barcode scan** — Scan downloaded images for UPC/EAN. Previous test: 516 unique barcodes from 3,407 images (18.2% hit rate). Projected ~37K barcodes from full 205K images.
+30. ~~TTB label image download~~ ✓ — 490,373 images downloaded (~21GB). 350,939 records have label_image_urls (17.5% of detail-scraped). Images from ~2007 and earlier are mostly tiny thumbnails.
+31. **TTB barcode scan (full 490K)** — Previous test: 516 unique barcodes from 3,407 images (18.2% hit rate). Projected ~64K COLA→UPC bridges from full 490K images. Full scan not yet run.
 32. **COLA-keyed deterministic merge** — Join PRO/TABC/WV/Kansas/barcode data on shared COLA numbers. Pure SQL, zero ambiguity.
 33. **Importer catalog merge** — merge 10K catalog wines against TTB+LWIN backbone.
 34. **COLA Cloud barcode enrichment** — on-demand for Grade B enrichment, not bulk. $39/mo Starter.
@@ -481,19 +510,38 @@ Comprehensive research across 17 source categories. Unified reference in `docs/S
 - **Files downloaded**: `kansas_active_brands.json` (24.6MB), `pa_wine_catalog.xlsx`, `wine_com_all_urls.txt` (20MB), `cola_demo.zip`, `utah_product_list.xlsx`, `lwin_database.csv`, plus all files from 2026-03-18 session below.
 - **Critical gap identified**: Identity matching engine is #1 technical priority — without it, scaling beyond ~12K wines creates dedup crisis.
 
-### TTB COLA Direct Scraping (2026-03-17 → 2026-03-24) — PHASES 1+2 COMPLETE
+### TTB COLA Direct Scraping (2026-03-17 → 2026-03-27) — SCRAPE COMPLETE
 Discovered that TTB's public COLA registry has **structured grape varietal data as a native field** — not AI-extracted. This eliminates COLA Cloud as the primary F-tier data source.
 
-**Phase 1 (CSV harvest) — COMPLETE:** 3,283,318 records loaded into `source_ttb_colas`. Basic metadata: TTB ID, brand name, fanciful name, class type, status, dates, origin.
+**Phase 1 (CSV harvest) — COMPLETE:** 3,283,319 records loaded into `source_ttb_colas`. Basic metadata: TTB ID, brand name, fanciful name, class type, status, dates, origin.
 
-**Phase 2 (detail + printable scrape) — COMPLETE (2026-03-24):** Two-pass scrape using Chrome inject architecture (Python HTTP server + JS in browser Console). Bypasses Shape Security WAF by running in real Chrome.
+**Phase 2a (initial detail + printable scrape) — COMPLETE (2026-03-24):** Two-pass scrape using Chrome inject architecture (Python HTTP server + JS in browser Console). Bypasses Shape Security WAF by running in real Chrome.
 - **Detail scraper** (18.25h, ~30 rec/s): 2,007,033 records. Extracted grapes (837K), vintages (744K), image URLs (206K). Uses `publicDisplaySearchBasic` URL.
 - **Printable scraper** (24.3h, ~20 rec/s): 1,550,027 records with data (457K had no printable page). Two form versions detected (old pre-2013, new post-2013). Extracted: appellations 1.49M (96%), ABV 822K (old form only), grapes 696K (45%), vintages 680K (44%), applicants 1.55M (100%), plus CT/OR codes, label dimensions, net contents, formula, phone, email.
 - **Zero WAF blocks** across both runs.
-- Scripts: `pipeline/fetch/ttb_chrome_scraper.py` + `ttb_chrome_inject.js`, `pipeline/fetch/ttb_printable_scraper.py` + `ttb_printable_inject.js`
-- DB columns added: `wine_appellation`, `wine_vintage`, `abv`, `phone`, `email`, `label_image_urls`, `detail_scraped_at`, `net_contents`, `formula`, `applicant_name`, `applicant_address`, `applicant_city`, `applicant_state`, `applicant_zip`, `ct_code`, `or_code`, `label_dimensions`, `printable_scraped_at`
 
-**Phase 3 (AI parse):** Haiku extracts vintage, wine name from fanciful names. Lower priority now — printable scraper got 96% appellation, 45% grape, 44% vintage coverage directly.
+**Phase 2b (gap fill + image re-scrape) — COMPLETE (2026-03-27):**
+Gap analysis revealed: ~1.17M records never detail-scraped (mostly pre-2005), printable scraper captured zero label images (inject script had wrong regex). Decision: re-scrape ALL years for ALL data.
+- **Image URL separation:** New `application_scan_urls` column separates detail-page form scans (`publicViewImage.do`) from printable-page label photos (`publicViewAttachment.do` → `label_image_urls`). Migration applied, existing URLs migrated.
+- **Detail scraper Run 2 — COMPLETE:** 3,178,691 / 3,283,319 records detail-scraped (96.8%). The ~104K remaining are non-grape-wine class types (flavored wine, fruit wine, mead, cider, vermouth) — out of scope.
+- **Printable scraper Run 2 — COMPLETE:** 1,824,749 / 1,827,384 wine-class 001-format records scraped (99.86%). The 2,635 remaining are pre-1997 001 IDs with no printable page. Only 29 post-2003 records missing.
+- **Overnight run lessons (2026-03-25):** Running both scrapers in parallel caused silent rate limiting (ERR_CONNECTION_RESET, not WAF blocks). Chrome background tab throttling collapsed throughput (setTimeout → 1/min). Fixes: sequential runs, `MessageChannel` delay (not throttled), concurrency reduced to 20.
+- Scripts: `pipeline/fetch/ttb_chrome_scraper.py` + `ttb_chrome_inject.js`, `pipeline/fetch/ttb_printable_scraper.py` + `ttb_printable_inject.js`
+- DB columns added: `wine_appellation`, `wine_vintage`, `abv`, `phone`, `email`, `label_image_urls`, `application_scan_urls`, `detail_scraped_at`, `net_contents`, `formula`, `applicant_name`, `applicant_address`, `applicant_city`, `applicant_state`, `applicant_zip`, `ct_code`, `or_code`, `label_dimensions`, `printable_scraped_at`
+
+**TTB ID format discovery (2026-03-27 audit):** The middle 3 digits of the 14-digit TTB ID (positions 6-8) encode the **form type**:
+- `001` = Standard COLA form 5100.31. Has both detail page AND printable page. **1.83M wine records.**
+- `000` = Different form type (possibly exemption/state-only). Detail page works, **printable returns error**. 328K wine records.
+- `002` = Different form type. Detail page works, **printable returns error**. 167K wine records.
+- `003` = Different form type. Detail page works, **printable returns error**. 176K wine records.
+- Old-format short IDs (004-009, 200-301 series): All pre-2003, ~670K records. Detail page works, no printable.
+- **Total non-001 wine records: 1.35M** — these have detail-scraped data (vintage ~80%) but will never get printable-only fields (appellation, ABV, applicant, label images) from TTB directly. Appellation/ABV must come from cross-referencing PRO Platform, TABC, and other state sources via COLA-keyed merge.
+
+**Scrape totals (as of 2026-03-27):**
+- Detail scraped: 3,178,691 (grapes 857K, vintages 1.50M, application scan URLs 1.34M)
+- Printable scraped: 1,824,749 (appellations 1.75M, ABV 856K, grapes 857K from both sources, applicants 1.82M, label image URLs 1.82M)
+
+**Phase 3 (AI parse):** Haiku extracts vintage, wine name from fanciful names. Lower priority now — printable scraper got 96% appellation, 45% grape, 44% vintage coverage on 001-format records. Useful for non-001 records that can't get printable data.
 
 **COLA Cloud role revised:** Barcode + identity enrichment service for on-demand Grade B enrichment, not bulk F-tier source. API key in `.env`.
 
@@ -601,12 +649,11 @@ Built and ran a complete pipeline to extract UPC barcodes from TTB COLA label im
 - Results: `data/imports/ttb_barcode_results.json`
 - **Full 490K scan not yet run** — next step. Projection: ~64K COLA→UPC bridges at 18.2% hit rate.
 
-**Phase 3: Printable page images (NOT YET CAPTURED)**
-- The printable scraper (528K records scraped so far) captures structured data but **zero images** (`images: 0` in status.json)
-- The printable pages DO have full-res front + back label images in `<img>` tags
-- The inject script regex looks for `imageWindow()` calls (detail page pattern), not `<img>` tags (printable page pattern)
-- **Fix needed:** After current printable scraper run finishes, modify `ttb_printable_inject.js` to extract `<img>` URLs from printable pages
-- This would unlock full-res back labels (where UPC barcodes live) for ~2M+ records
+**Phase 3: Printable page images — FIX APPLIED**
+- Printable inject script was updated to extract `publicViewAttachment.do` URLs (actual front/back/strip label photos from `<img>` tags)
+- Printable scraper Run 2 captured 1.82M label_image_urls — these are the printable-page attachment URLs
+- **Note:** The 1.82M `label_image_urls` from printable are DIFFERENT from the 1.34M `application_scan_urls` from detail. The detail-page `publicViewImage.do` URLs are form scans; the printable-page `publicViewAttachment.do` URLs are actual label photos.
+- Not all 1.82M printable records will have actual images — some just have the URL field populated but the attachment may be empty
 - Plan: Store images in Supabase Storage long-term (label images useful for both barcodes and user-facing display)
 - Estimated storage for canonical wines: ~$4-8/mo on Supabase Pro. Full 3.28M COLAs would be ~800GB-1.1TB (~$17-23/mo).
 

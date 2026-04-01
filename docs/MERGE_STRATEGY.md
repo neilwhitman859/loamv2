@@ -156,11 +156,14 @@ Build new pipeline tools in Python. Not a full port of existing scripts.
 - Merge engine (build fresh — JS version untested)
 - Data exploration with pandas for QA and analysis
 
-### 2. COLA Label Image Scrape
+### 2. COLA Label Images ✓ (partially complete)
 TTB public COLA search at `ttbonline.gov` has label images for every approved COLA. Public domain.
 
-**Phase 1 (fast):** Scrape label image URLs, store in DB. Lightweight, quick.
-**Phase 2 (background):** Batch-download images locally. Can run for days. Small files, one-time cost.
+**Two image types identified (2026-03-25):**
+- `application_scan_urls`: Detail page `publicViewImage.do` — full TTB application form scans with labels pasted on. 350K URLs extracted, 490K images downloaded (~21GB). Archive/reference quality.
+- `label_image_urls`: Printable page `publicViewAttachment.do` — actual individual label photos (front, back, strip, neck). Higher quality. Being captured by printable re-scrape (Phase 2b).
+
+**Barcode scanning:** 516 unique UPC/EAN barcodes extracted from 3,407 test images (18.2% hit rate). Full 490K scan projected to yield ~64K COLA→UPC bridges.
 
 Label images serve every product direction: consumer app polish, wine list enrichment, label recognition reference library, API customers, standalone commercial value.
 

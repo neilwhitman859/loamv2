@@ -1,6 +1,6 @@
 # Loam — Roadmap
 
-*Established 2026-03-13. Updated 2026-03-20.*
+*Established 2026-03-13. Updated 2026-03-25.*
 
 ---
 
@@ -78,20 +78,28 @@ All reference tables seeded and cross-validated:
 Per-source staging tables (`source_*`) preserve raw data. Merge layer reconciles into canonical tables. Three-tier matching: Backbone IDs (COLA, LWIN, UPC) → normalized name → fuzzy pg_trgm. See `docs/SOURCES.md` for Backbone ID definitions.
 
 ### 2a. Staging Tables + Raw Data Loading ✓
-- 19 staging tables, 891K total rows ✓
+- 30 staging tables, ~4.35M total rows ✓
+- `source_ttb_colas`: 3,283K records (Phase 1 CSV + Phase 2 detail/printable scrape) ✓
 - `source_pro_platform`: 346K rows (12 US states via PRO Platform) ✓
 - `source_tabc`: 183K rows (Texas TABC) ✓
 - `source_lwin`: 189K records loaded and promoted to canonical ✓
 - `source_kansas_brands`: 65K records ✓
-- `source_wv_abca`: 55K records ✓
-- UPC sources: OFF 5.2K, Horizon 6.4K, WineDeals 3.2K, PA 5.9K, LCBO 7K, Systembolaget 12.6K ✓
+- `source_wv_abca`: 55K records (API dead, archival only) ✓
+- `source_berliner`: 74K records (competition data) ✓
+- `source_texsom`: 47K records (competition data) ✓
+- `source_specs`: 22K records (100% UPC barcodes) ✓
+- `source_wallys`: 19K records (prices, distributor mapping) ✓
+- UPC sources: OFF 5.2K, Horizon 6.4K (dead), WineDeals 3.2K, PA 5.9K, LCBO 7K, BC Liquor 3.3K, Systembolaget 12.6K ✓
 - Importer catalogs: KL, Skurnik, Winebow, Empson, EC promoted to canonical ✓
 - Polaner: deprioritized (thin metadata, data retained in staging)
 
-### 2b. TTB COLA Pipeline
-- **Phase 1 (CSV harvest):** Running locally. 1955-present, wine class types 80-89. ⏳
-- **Phase 2 (detail scrape):** Fetch grape varietals + applicant data from detail pages. Filter Phase 1 output first (skip expired/surrendered, deduplicate label refreshes). 3-7 days at polite rate.
-- **Phase 3 (AI parse):** Haiku extracts vintage, wine name, appellation from fanciful names. ~$5-10.
+### 2b. TTB COLA Pipeline ✓ SCRAPE COMPLETE
+- **Phase 1 (CSV harvest):** ✓ COMPLETE. 3,283,319 records loaded. All years 1955-2026.
+- **Phase 2a (initial detail + printable scrape):** ✓ COMPLETE. Detail: 2M records. Printable: 1.55M records.
+- **Phase 2b (gap fill + image re-scrape):** ✓ COMPLETE. Detail: 3.18M/3.28M (96.8%) — remaining 104K are non-wine class types. Printable: 1.82M/1.83M 001-format (99.86%) — remaining 2,635 are pre-1997.
+- **TTB ID format discovery (2026-03-27):** Non-001 IDs (000/002/003 format, 1.35M records) have no printable page on TTB — confirmed by live browser testing. Appellation/ABV for these must come from COLA-keyed cross-reference with state databases.
+- **Image separation:** `application_scan_urls` (full form scans from detail pages) vs `label_image_urls` (individual label photos from printable pages — front, back, strip, neck).
+- **Phase 3 (AI parse):** Lower priority now — printable scraper got 96% appellation coverage on 001-format. Useful for 1.35M non-001 records. ~$5-10.
 
 ### 2c. Backbone ID Joins (Layer 1)
 - JOIN `source_ttb_colas` + `source_kansas_brands` + `source_pro_platform` ON COLA number — trivial SQL join
@@ -137,14 +145,16 @@ Per-source staging tables (`source_*`) preserve raw data. Merge layer reconciles
 
 ## Phase 4: Frontend
 
-**Status:** Not started
-**Depends on:** Enrichment pipeline working (Phase 3)
+**Status:** PAUSED (2026-04-01) — pages built, waiting on data
+**Depends on:** Phase 2 merge + Phase 3 enrichment to fill canonical tables
 **Goal:** Beautiful, information-rich wine pages. Search + label scan as entry points.
 
-- Vite/React PWA, mobile-first
-- Tiered experience: Grade F/D/C/B/A wines show different levels of detail
-- Input methods: text search, barcode scan (later), label photo (later)
-- Not rushed. When it ships, it ships right.
+- Vite/React PWA, mobile-first, deployed on Render at loam.onrender.com ✓
+- Consumer pages built (2026-03-31): Wine, Producer, Appellation, Region, Grape, Country, Vineyard ✓
+- Data-dense dossier design: structured fact grids, minimal prose, maps, knowledge graph connections ✓
+- Search + home page ✓
+- Design principle: structured data in DB → structured display in UI (Principle #9) ✓
+- **Paused because canonical tables are nearly empty** — 189K wines but 1 vintage, 3 scores, 1 grape link. Pages show identity-only shells. Resuming after importer re-promotion + COLA merge fill the tables.
 
 ---
 
