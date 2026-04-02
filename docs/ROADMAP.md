@@ -101,23 +101,37 @@ Per-source staging tables (`source_*`) preserve raw data. Merge layer reconciles
 - **Image separation:** `application_scan_urls` (full form scans from detail pages) vs `label_image_urls` (individual label photos from printable pages — front, back, strip, neck).
 - **Phase 3 (AI parse):** Lower priority now — printable scraper got 96% appellation coverage on 001-format. Useful for 1.35M non-001 records. ~$5-10.
 
-### 2c. Backbone ID Joins (Layer 1)
-- JOIN `source_ttb_colas` + `source_kansas_brands` + `source_pro_platform` ON COLA number — trivial SQL join
-- Produces enriched staging view: TTB identity + state ABV/appellation/vintage
-- Group COLAs into wine identities (many COLAs → one wine)
-- Store all Backbone IDs (COLA, LWIN, UPC) in `external_ids`
+### 2c. COLA-to-COLA Consolidation — DEPRIORITIZED (2026-04-02)
+Original plan: JOIN TTB + PRO + TABC + Kansas on shared COLA numbers to enrich TTB staging. Analysis showed near-zero value — where TTB and PRO overlap (211K records), TTB already has the data from the printable scrape. The records TTB is missing data on (1.35M non-001 format) don't overlap with state sources either. Skipping this step.
 
-### 2d. LWIN Overlay (Layer 2)
-- LWIN already promoted to canonical (189K wines, 32K producers)
-- Match TTB COLA records against LWIN canonical by normalized producer + wine name
-- Cross-references Backbone IDs: wines get both LWIN and COLA in `external_ids`
-- ~30-50% estimated overlap between LWIN and TTB
+### 2c. Tiered TTB → Canonical Promotion (revised 2026-04-02)
+New approach: promote TTB data in confidence tiers rather than the original 3-layer merge.
 
-### 2e. Rich Source Merge (Layer 3)
-- Importer catalogs (10K wines) merge against Layers 1+2
-- Adds depth: soil, vinification, farming certs, scores
-- Mostly enrichment, not identity creation
-- Also: retailer imports, state databases
+**Tier B — Deterministic match to existing canonical (NEXT):**
+- Match TTB records against existing 189K canonical wines on exact producer + wine name + appellation
+- No new wines created — just linking TTB to what's there, filling COLA IDs + grapes + ABV
+- Estimated: ~20-50K links. ~2-3 days focused work.
+
+**Tier C — New wines from clean TTB records:**
+- Unmatched TTB records with high data quality (appellation resolved, grapes parsed, brand confirmed as real producer)
+- Creates new canonical wines. 644K distinct wines in TTB with appellation + grapes.
+- Build pipeline carefully, run in batches, spot-check. ~1 week.
+
+**Tier D — Fuzzy tail (agent work):**
+- Ambiguous names, applicant-vs-producer confusion, unresolved appellations
+- Promotion agent processes daily, hundreds at a time. Ongoing.
+
+### 2d. Importer Re-Linking (IN PROGRESS)
+- 8,267 unlinked importer wines: KL 928, Skurnik 2,239, Winebow 525, Empson 279, EC 437
+- Being handled in separate enrichment sessions
+- Richest per-wine metadata — grapes, soil, vinification, scores, chemistry
+- Depth promotion (vintages, grapes, scores → canonical tables) runs as links land
+
+### 2e. Competition + Retailer Linking
+- Berliner 74K + TEXSOM 47K + Enofile 9K → competition scores/medals
+- Spec's 22K UPC barcodes → scan-to-lookup
+- Wally's 19K → first price data
+- Agent work, runs parallel with Tier D
 
 ### 2f. Data Grade Assignment
 - F: identity only (producer + wine + country)
@@ -125,6 +139,23 @@ Per-source staging tables (`source_*`) preserve raw data. Merge layer reconciles
 - C: batch Haiku enrichment (appellation context, grape profiles)
 - B: on-demand Sonnet enrichment (triggered by user search)
 - A: curated (manual verification)
+
+### 2g. Automated Data Quality (BUILT 2026-04-02)
+- Scheduled Claude Code task (`data-accuracy-agent`), currently paused — enable after merge pipeline has linked staging → canonical
+- Two modes: accuracy (validates existing records against staging sources) + enrichment (promotes unlinked staging, parses TTB names, WebFetches producer websites)
+- Infrastructure: `accuracy_audit` table, `last_validated_at` tracking, `sample_wines_for_validation()` RPC
+- Runs on Max subscription ($0 incremental), ~15-20 min/session
+
+### Readiness Metric (established 2026-04-02)
+- Mystery shopper test: sample N wines from real retailer staging tables (Spec's, Wally's), attempt canonical lookup, score the user experience
+- First test: 50 random Spec's bottles → ~56% producer found, ~30% exact wine found, 0% depth, ~14% false matches
+- **Current readiness: ~8/100.** Target: 50+ before frontend resumes.
+
+### SQL Consistency Fixes (2026-04-02)
+- ✓ 75,774 wines refined from L1 to L2 regions (Burgundy→Côte de Beaune, California→Napa Valley, etc.)
+- 3,224 remaining complex cross-boundary mismatches (agent work)
+- 1,388 producer-country mismatches identified (mixed — name collisions + legitimate subsidiaries)
+- 4 null-country wines confirmed correct (multi-country collaborative blends)
 
 ---
 

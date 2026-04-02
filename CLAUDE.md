@@ -359,18 +359,27 @@ Staging-first architecture: all external data goes through per-source staging ta
 - First test: 50 random Spec's bottles → ~56% producer found, ~30% exact wine found, 0% depth, ~14% false matches
 - **Current readiness: ~8/100**
 
-**Tiered promotion plan (revised 2026-04-02):**
-- COLA-to-COLA consolidation deprioritized (near-zero value — TTB already has data where state sources overlap)
-- Tier B (match TTB → existing canonical): ~20-50K links, 2-3 days
-- Tier C (new canonical wines from clean TTB): ~100-200K new wines, ~1 week
+**Tier B promotion EXECUTED (2026-04-02):**
+- Strategy 1 (producer + fanciful name + appellation): 59K TTB records → 19K wines
+- Strategy 3 (producer + fanciful name, no appellation): 97K TTB records → 30K wines
+- Total: **162,576 TTB records linked to 45,168 canonical wines**
+- **45,168 COLA external_ids** added (was 2,378)
+- **66,000 wine_vintages** created (was 2,936), 40,424 with ABV
+- **30,048 wines** now have at least 1 vintage (was ~1,600)
+
+**Next steps (resume here):**
+- Promote TTB grape_varietals → wine_grapes (22K linked wines have grape data, not yet promoted)
+- Run mystery shopper test to measure readiness improvement
+- Strategy 2 (producer + grape = wine name, no fanciful) not yet attempted
+- Tier C (new canonical wines from clean TTB): ~100-200K new wines
 - Tier D (fuzzy tail): agent work, ongoing
-- TTB richest slice: 836K records with appellation + grapes, dedup to 644K distinct wines
 
 ### What's Not There Yet
-- **wine_vintages: 7,015** — from COLA Pass 1d (2,936) + importer promotion (4,079). Still low vs 190K wines.
-- **wine_vintage_scores: 3, wine_vintage_prices: 0** — essentially empty. Importer staging has scores (EC) but not yet promoted.
-- **wine_grapes: 1** — no grape-to-wine links in canonical. Importer staging has grape data (Skurnik 100%, Empson 100%, Winebow 100%) but grape promotion not yet built.
-- **winemakers: 0** — cleared during LWIN promotion. Was 31 from trial imports.
+- **wine_vintages: 66,000** across 30,048 wines (was 2,936). 40,424 with ABV.
+- **wine_vintage_scores: ~343** — other session promoting importer scores.
+- **wine_grapes: ~3,179** — other session promoting. TTB has 22K more wines with grape data ready to promote.
+- **wine_vintage_prices: 0** — no price data in canonical yet.
+- **winemakers: 0** — cleared during LWIN promotion.
 - Most insight tables empty (wine, producer, grape, wine_vintage)
 - All weather data (appellation_vintages) — Open-Meteo schema design pending
 - All document tables

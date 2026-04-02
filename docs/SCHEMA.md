@@ -818,6 +818,36 @@ Tracks every AI enrichment operation with full cost/model/audit trail. Rebuilt 2
 
 Indexes: entity (entity_type, entity_id), type (enrichment_type), model (model, created_at), status (partial: status != 'completed').
 
+### accuracy_audit
+Append-only log of all automated data quality changes by the accuracy/enrichment agent. Every field modification is recorded with source evidence and confidence score. Added 2026-04-02.
+| Column | Type | Constraints | Notes |
+|---|---|---|---|
+| id | uuid | PK | |
+| entity_type | text | NOT NULL, CHECK | wine/producer/appellation/region/wine_vintage/wine_vintage_score/wine_grape/external_id/entity_classification |
+| entity_id | uuid | NOT NULL | |
+| field_name | text | NOT NULL | Which column was changed |
+| old_value | text | nullable | Previous value |
+| new_value | text | nullable | New value |
+| action_type | text | NOT NULL, CHECK | fix/enrich/promote/parse/validate_only |
+| evidence_type | text | NOT NULL, CHECK | source_consensus/official_source/statistical_outlier/cross_table_consistency/website_extraction/fanciful_name_parse/staging_promotion/cola_crossref |
+| evidence_detail | text | NOT NULL | Human-readable explanation citing specific sources |
+| confidence | numeric(4,3) | NOT NULL, CHECK 0-1 | |
+| source_table | text | nullable | e.g., 'source_ttb_colas' |
+| source_record_id | text | nullable | ID in the source table |
+| source_url | text | nullable | If WebFetched from a website |
+| session_type | text | NOT NULL, default 'scheduled' | scheduled/manual/background |
+| created_at | timestamptz | NOT NULL, default now() | |
+
+Indexes: entity (entity_type, entity_id), created (created_at DESC), action (action_type), evidence (evidence_type).
+View: `accuracy_audit_daily` — daily aggregate metrics by action/evidence/entity type.
+
+**Validation tracking columns (added 2026-04-02):**
+- `wines.last_validated_at` TIMESTAMPTZ, indexed (NULLS FIRST)
+- `producers.last_validated_at` TIMESTAMPTZ, indexed (NULLS FIRST)
+- `wine_vintages.last_validated_at` TIMESTAMPTZ, indexed (NULLS FIRST)
+
+**RPC:** `sample_wines_for_validation(batch_size)` — stratified weighted sampling prioritizing never-validated records, proportional by country.
+
 ---
 
 ## 18. Vineyards
