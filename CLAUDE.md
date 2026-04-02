@@ -168,7 +168,8 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
 ### Content Tables (Phase 1c/1d, updated 2026-04-02)
-- **32,754 producers**, **190,209 wines** (189,359 LWIN + 850 from importers), **7,015 vintages** (2,936 COLA + 4,079 importer), 3 scores, 0 prices, 1 wine_grapes, 192,192 external_ids, **15,785 entity_classifications** (9,680 Burgundy Premier Cru + 5,703 Grand Cru + 402 other from LWIN), 0 winemakers, 0 farming certifications, 0 label designation links, 116 label designations, 0 wine_aliases, **2,902 producer_aliases** (from LWIN)
+- **32,754 producers**, **190,209 wines** (189,359 LWIN + 850 from importers), **7,015 vintages**, **1,008 scores**, 0 prices, **3,576 wine_grapes**, 192,192 external_ids, **15,785 entity_classifications**, 0 winemakers, 0 farming certifications, 0 label designation links, 116 label designations, 0 wine_aliases, **2,902 producer_aliases**
+- **Enrichment promotion (2026-04-02):** 3,575 wine_grapes (Skurnik 1,894 + KL 875 + Winebow 331 + EC 255 + Empson 220), 1,005 wine_vintage_scores (EC 768 + Winebow 237), 1,238 wines updated with soil/vinification/vine_age (KL 814 + EC 231 + Empson 193). 866 grape names unresolved (top: Palomino, Zinfandel, Gruner Veltliner, Cinsault — fixable with more VIVC aliases). Script: `pipeline/promote/importer_enrich.py`.
 - **Sparkling wine fix (2026-04-02):** 8,977 wines reclassified from table/still to sparkling/sparkling via keyword detection (Brut, Sekt, Cremant, Cava, Champagne, etc.) + sparkling-only appellations (Franciacorta, Trento, Alta Langa, Asti). Migration: `fix_sparkling_wines`. Wine type distribution now: table 93.6%, sparkling 4.7%, fortified 1.6%.
 - **Sonnet accuracy audit (2026-04-02):** 300 random wines audited by Sonnet for $0.05. 96% accuracy — 10/12 errors were the sparkling bug (fixed above), 2 were minor LWIN region misattributions. Non-sparkling data was 100% clean. Full results: `data/imports/audit_sonnet_300.json`.
 - **COLA bridge merge (2026-04-02):** Reverse-bridged 2,701 producer IDs from PRO→TTB. Enriched TTB with WV data: +9,708 vintages, +4,357 ABVs, +387 appellations. Kansas/TABC/PRO added zero enrichment (TTB printable scraper already had the data). Promoted 19 new wine_vintages to canonical. Sonnet audit found 2 COLA collisions in 10-record sample (Chateau Suduiraut/Argyle, Chateau Puybarbe/Santa Cristina) — COLA IDs can be reused.
@@ -338,12 +339,32 @@ Staging-first architecture: all external data goes through per-source staging ta
 
 **Polaner deprioritized (2026-03-20):** All 1,680 titles parsed via Haiku (producer + wine_name extracted). Data in `source_polaner`. Removed from active promotion pipeline — catalog is small and metadata-thin compared to other importers. Data retained for reference.
 
-**Canonical data (updated 2026-03-27):**
+**Canonical data (updated 2026-04-02):**
 - LWIN promoted to canonical: 189,359 wines, 32,754 producers, 189,814 external_ids, 15,785 entity_classifications, 2,902 producer_aliases
 - Wine quality: 99.98% country, 93.3% region, 55.4% appellation, 98.2% color, 100% wine_type, 0% varietal_category, 0% vinification_notes (LWIN is identity-only)
+- **Region refinement (2026-04-02):** 75,774 wines updated from L1 to L2 regions (e.g., Burgundy→Côte de Beaune). 3,224 complex cross-boundary mismatches remain (agent work).
 - Trial import seed data (33 producers, ~560 vintages, ~521 scores, winemakers, farming certs, wine_aliases, grape insights) was **cleared during LWIN promotion**
-- wine_vintages, scores, prices, wine_grapes all at 0 (LWIN has no vintage/grape data; importer data in staging but unlinked)
-- 5 importer staging sources unlinked (canonical_wine_id = NULL): KL 1,468 + Skurnik 5,541 + Winebow 536 + Empson 279 + EC 443
+- wine_vintages, scores, prices, wine_grapes nearly empty (LWIN is identity-only; importer data in staging but unlinked)
+- 5 importer staging sources partially linked: KL 540/1,468 + Skurnik 3,302/5,541 + Winebow 11/536 + Empson 0/279 + EC 6/443 (re-linking in progress)
+
+**Data quality infrastructure (added 2026-04-02):**
+- `accuracy_audit` table — append-only change log with source evidence, confidence scores, entity tracking
+- `accuracy_audit_daily` view — aggregate metrics by day/action/evidence type
+- `last_validated_at` column + index on wines, producers, wine_vintages
+- `sample_wines_for_validation(batch_size)` RPC — stratified weighted sampling
+- Scheduled task `data-accuracy-agent` — daily Claude Code session for validation + enrichment (currently paused, enable after merge pipeline links staging → canonical)
+
+**Readiness metric (established 2026-04-02):**
+- Mystery shopper test: sample real wines from retailer staging, attempt canonical lookup, score user experience
+- First test: 50 random Spec's bottles → ~56% producer found, ~30% exact wine found, 0% depth, ~14% false matches
+- **Current readiness: ~8/100**
+
+**Tiered promotion plan (revised 2026-04-02):**
+- COLA-to-COLA consolidation deprioritized (near-zero value — TTB already has data where state sources overlap)
+- Tier B (match TTB → existing canonical): ~20-50K links, 2-3 days
+- Tier C (new canonical wines from clean TTB): ~100-200K new wines, ~1 week
+- Tier D (fuzzy tail): agent work, ongoing
+- TTB richest slice: 836K records with appellation + grapes, dedup to 644K distinct wines
 
 ### What's Not There Yet
 - **wine_vintages: 7,015** — from COLA Pass 1d (2,936) + importer promotion (4,079). Still low vs 190K wines.
