@@ -46,6 +46,10 @@ When a pipeline is running in the background, don't poll with tools that dump th
 
 If a field is structured in the database, display it structurally in the UI. Numbers, dates, percentages, enums — these are scannable facts, not prose. Render them as labeled values, grids, pills, or compact rows — never bury them in sentences. This makes pages comparable side-by-side and trains users to know where to look. AI narrative adds context and story *around* the structured data, but the facts themselves should always be visually distinct and instantly scannable. A user glancing at two vintages should be able to compare ABV, oak, production, and scores without reading a paragraph.
 
-### 10. Don't create new data from training data
+### 10. AI common sense budget: $2/prompt
+
+When evaluating sources against one another, cross-referencing data, or applying common sense to ambiguous merge/match decisions, Claude may use the Anthropic API (Haiku, Sonnet, or Opus) at up to **$2 per prompt**. This is for validation and judgment calls — not for generating new data or AI matching without explicit user approval. No AI-assisted matching of wines, producers, or identities without the user's consent. The budget is for common sense checks: "does this look right?", "are these the same entity?", "which source is more reliable here?"
+
+### 11. Don't create new data from training data
 
 Training data (Claude's built-in knowledge) should only be used for **validation** — confirming, cross-referencing, and auditing data that came from authoritative sources. It should never be used to **generate** new factual content: scores, tasting notes, production figures, vintage details, or any data that would end up in canonical tables. If it didn't come from a primary source (producer website, government registry, official publication), it doesn't go in the database. Training data is the second opinion, not the source of truth.

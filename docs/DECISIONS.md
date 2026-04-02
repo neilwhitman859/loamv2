@@ -669,3 +669,30 @@ TTB label image download (~490K images, ~48 hours remaining) is a UPC barcode ex
 
 ### 2026-04-01: Importer re-promotion is highest priority next step
 8,267 wines across 5 importer staging tables (KL, Skurnik, Winebow, Empson, EC) have richest per-wine data: grapes, vintages, farming practices, descriptions. All have canonical_wine_id = 0 (cleared during LWIN promotion). Re-promoting these against the LWIN backbone is the fastest path to pages with actual content. Then COLA-keyed merge for scale, then enrichment pipeline for AI content.
+
+### 2026-04-01: Loam ID format — ISO alpha-2 + 7-digit sequence + vintage year
+Human-facing stable identifier for wines and vintages. Format: `FR-0012345` (wine), `FR-0012345-2017` (vintage), `FR-0012345-NV` (non-vintage). 7-digit per-country sequence gives 10M headroom per country — France is largest at ~200K now. Primary keys stay UUID internally; Loam ID is the durable external reference (like ISBN/DOI). No producer name embedded — names are mutable (acquisitions, rebranding) and would cause the ID to lie about current state. Producer context lives in display layer and slug.
+
+### 2026-04-01: Wine identity definition — supplemental clarification
+A row in the `wines` table represents: "Would this be considered a different wine/liquid/batch/lot to the winemaker/seller?" Vintage gets special treatment (lives on `wine_vintages`, not `wines`). This supplements the existing schema definition. A producer's Chardonnay and their Merlot are different wines. Their 2019 vs 2020 of the same wine are not. Bottle format (750ml vs magnum) is NOT a different wine. Label redesigns are NOT a different wine.
+
+### 2026-04-01: COLA→wine creation requires normalization first — not safe to use raw fanciful names
+175K wine candidates from COLA data evaluated. Raw `fanciful_name` field has serious quality issues: 9+ spelling variants per wine (e.g., Kendall-Jackson "VINTNERS RESERVE" / "VINTNER'S RESERVE" / "VINTERS RESERVE" / "VITNERS RESERVE"), 30-character truncation, appellations used as wine names, experimental labels. Creating wines directly from raw fanciful names would produce thousands of duplicates. Must build a normalization layer first. UPC barcode data (arriving soon) will help cluster COLAs into product groups for dedup. Decision: wait for UPC data before creating wines from COLA.
+
+### 2026-04-01: AI common sense budget — $2/prompt (Principle #10)
+When evaluating sources against one another, cross-referencing data, or applying common sense to ambiguous merge/match decisions, Claude may use the Anthropic API (Haiku, Sonnet, or Opus) at up to $2 per prompt. This is for validation and judgment calls — not for generating new data. No AI-assisted matching of wines, producers, or identities without the user's explicit consent. Budget is for common sense checks: "does this look right?", "are these the same entity?", "which source is more reliable here?"
+
+### 2026-04-01: No new data from training data (Principle #11)
+Training data (Claude's built-in knowledge) should only be used for validation — confirming, cross-referencing, and auditing data from authoritative sources. Never used to generate new factual content (scores, tasting notes, production figures, vintage details) for canonical tables. Training data is the second opinion, not the source of truth.
+
+### 2026-04-02: Readiness metric — mystery shopper test, not database statistics
+Database statistics (74% identity completeness) misrepresent real user experience. Readiness measured by sampling real wine store inventories (Spec's, Wally's, etc.) from staging tables and attempting canonical lookup. Score reflects: can the user find it, is the match correct, is there useful depth. First test: 50 random Spec's bottles → ~56% producer found, ~30% exact wine found, 0% had any depth (vintages/scores/grapes/prices), ~14% false matches. Real usefulness score: ~8/100. This is the number we track, not row counts.
+
+### 2026-04-02: Region refinement — 75,774 wines L1→L2
+SQL consistency check found 78,998 wines where wine.region_id != appellation.region_id. 75,774 were LWIN wines assigned to L1 parent regions (Burgundy, California, Bordeaux) while their appellation belonged to an L2 child (Côte de Beaune, Napa Valley, Right Bank). Bulk UPDATE to refine to the more specific region. 3,224 remaining are genuinely complex cross-boundary cases (left for agent). Also found 1,388 producer-country mismatches (mixed — some LWIN name collisions, some legitimate subsidiaries).
+
+### 2026-04-02: Autonomous data accuracy + enrichment agent — BUILT
+Combined scheduled Claude Code task running daily at 8:23 AM on Max subscription ($0 incremental). Five-phase session: (1) SQL cross-table consistency checks, (2) source consensus validation via stratified sampling, (3) staging→canonical promotion for unlinked importer wines, (4) TTB fanciful name parsing, (5) summary report. Hard rules: never write from training data (Principle #11), confidence >0.95 required for fixes, every change logged to `accuracy_audit` table with source citation, 30-min/300-record budget cap. Source independence groups prevent counting correlated sources as multiple votes. Infrastructure: `accuracy_audit` table (append-only), `last_validated_at` on wines/producers/wine_vintages, `sample_wines_for_validation()` RPC for stratified sampling. Agent gets more powerful as merge pipeline links more staging data to canonical.
+
+### 2026-04-02: Future feature — "Endless Paper" style infinite wine map
+Inspired by endlesspaper.app. Semantic zoom map of global wine geography: countries → regions → appellations → vineyards/producers. Data already exists (62 countries, 323 regions, 2,847 appellations with PostGIS boundaries, 2,158 containment hierarchy rows). Technical plan: swap Leaflet for MapLibre GL JS (continuous zoom, WebGL polygon rendering, style-driven layer visibility). Strip away standard map tiles — wine boundaries ARE the map, earth-tone canvas. Search-to-fly interaction. Come back to this after canonical data is populated.

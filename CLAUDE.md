@@ -167,8 +167,15 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
-### Content Tables (Phase 1c/1d, updated 2026-03-27)
-- **32,754 producers**, **189,359 wines** (LWIN promoted to canonical), 0 vintages, 0 scores, 0 prices, 0 wine_grapes, 189,814 external_ids, **15,785 entity_classifications** (9,680 Burgundy Premier Cru + 5,703 Grand Cru + 402 other from LWIN), 0 winemakers, 0 farming certifications, 0 label designation links, 116 label designations, 0 wine_aliases, **2,902 producer_aliases** (from LWIN)
+### Content Tables (Phase 1c/1d, updated 2026-04-02)
+- **32,754 producers**, **190,209 wines** (189,359 LWIN + 850 from importers), **7,015 vintages** (2,936 COLA + 4,079 importer), 3 scores, 0 prices, 1 wine_grapes, 192,192 external_ids, **15,785 entity_classifications** (9,680 Burgundy Premier Cru + 5,703 Grand Cru + 402 other from LWIN), 0 winemakers, 0 farming certifications, 0 label designation links, 116 label designations, 0 wine_aliases, **2,902 producer_aliases** (from LWIN)
+- **Sparkling wine fix (2026-04-02):** 8,977 wines reclassified from table/still to sparkling/sparkling via keyword detection (Brut, Sekt, Cremant, Cava, Champagne, etc.) + sparkling-only appellations (Franciacorta, Trento, Alta Langa, Asti). Migration: `fix_sparkling_wines`. Wine type distribution now: table 93.6%, sparkling 4.7%, fortified 1.6%.
+- **Sonnet accuracy audit (2026-04-02):** 300 random wines audited by Sonnet for $0.05. 96% accuracy — 10/12 errors were the sparkling bug (fixed above), 2 were minor LWIN region misattributions. Non-sparkling data was 100% clean. Full results: `data/imports/audit_sonnet_300.json`.
+- **COLA bridge merge (2026-04-02):** Reverse-bridged 2,701 producer IDs from PRO→TTB. Enriched TTB with WV data: +9,708 vintages, +4,357 ABVs, +387 appellations. Kansas/TABC/PRO added zero enrichment (TTB printable scraper already had the data). Promoted 19 new wine_vintages to canonical. Sonnet audit found 2 COLA collisions in 10-record sample (Chateau Suduiraut/Argyle, Chateau Puybarbe/Santa Cristina) — COLA IDs can be reused.
+- **Importer producer re-linking (2026-04-02):** 3-pass matching (exact → alias → normalized prefix/suffix stripping) across 5 importers. Total producer links: Skurnik 4,016/5,541 (72.5%), KL 891/1,468 (60.7%), Empson 221/279 (79.2%), EC 238/443 (53.7%), Winebow 284/536 (53.0%). Normalized matching added 1,187 links over exact-only.
+- **Importer AI wine matching (2026-04-02):** Sonnet-assisted wine matching for 4,157 unmatched wines. Producer constraint limits candidates to 3-30 LWIN wines per producer. Results: 3,837 matched (93%), 823 new, 26 uncertain, 1 error. Total cost $1.93. Script: `pipeline/promote/importer_wine_match.py`.
+- **New canonical wines from importers (2026-04-02):** 850 wines created from unmatched importer data (Sonnet said "NONE" — genuinely not in LWIN). Script: `pipeline/promote/importer_promote.py`.
+- **Vintage promotion (2026-04-02):** 4,079 wine_vintages created from Skurnik (3,817) and Winebow (262). 108 duplicates skipped.
 - **96 region aliases**, **75 label designation aliases**, **18,631 appellation aliases** seeded
 - **Note (2026-03-27):** Trial import seed data (33 producers, ~560 vintages, ~521 scores, 31 winemakers, 169 farming certs, 90 label designation links, 11 wine_aliases, 707 grape insights) was **cleared during LWIN canonical promotion**. This data existed in staging tables but the LWIN promotion replaced canonical content. Importer staging data (KL, Skurnik, Empson, EC, Winebow) remains in staging tables with `canonical_wine_id = NULL` — needs re-promotion against the LWIN backbone.
 - **New tables (2026-03-16):** wine_relationships (0 rows), producer_timeline (0 rows), wine_lookups (0 rows — analytics/enrichment promotion)
@@ -339,8 +346,9 @@ Staging-first architecture: all external data goes through per-source staging ta
 - 5 importer staging sources unlinked (canonical_wine_id = NULL): KL 1,468 + Skurnik 5,541 + Winebow 536 + Empson 279 + EC 443
 
 ### What's Not There Yet
-- **wine_vintages, wine_vintage_scores, wine_vintage_prices: all 0** — no vintage data in canonical. LWIN is identity-only. Importer staging data has vintage data but needs re-promotion.
-- **wine_grapes: 0** — no grape-to-wine links in canonical. Importer staging has grape data.
+- **wine_vintages: 7,015** — from COLA Pass 1d (2,936) + importer promotion (4,079). Still low vs 190K wines.
+- **wine_vintage_scores: 3, wine_vintage_prices: 0** — essentially empty. Importer staging has scores (EC) but not yet promoted.
+- **wine_grapes: 1** — no grape-to-wine links in canonical. Importer staging has grape data (Skurnik 100%, Empson 100%, Winebow 100%) but grape promotion not yet built.
 - **winemakers: 0** — cleared during LWIN promotion. Was 31 from trial imports.
 - Most insight tables empty (wine, producer, grape, wine_vintage)
 - All weather data (appellation_vintages) — Open-Meteo schema design pending

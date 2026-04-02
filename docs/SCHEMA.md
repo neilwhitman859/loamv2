@@ -193,6 +193,8 @@ PK: composite (producer_id, region_id). For multi-region producers.
 ## 3. Wines
 
 ### wines
+**Identity definition:** A wine is a distinct liquid/batch/lot as the winemaker or seller would distinguish it. Same producer, different grape = different wine. Same wine, different vintage = same wine (vintage lives on `wine_vintages`). Different bottle format or label redesign = same wine.
+
 | Column | Type | Constraints | Notes |
 |---|---|---|---|
 | id | uuid | PK | |
