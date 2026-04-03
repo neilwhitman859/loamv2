@@ -132,8 +132,8 @@ export default function Dashboard() {
         <>
           <h2 className="text-lg font-semibold text-earth-900 mb-3">Scores & Prices</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
-            <StatCard value={dbStats.total_scores.toLocaleString()} label="Critic Scores" sublabel="From Vivino, Wine-Searcher, etc." color="text-purple-700" />
-            <StatCard value={dbStats.total_prices.toLocaleString()} label="Price Points" sublabel="USD prices with merchants" color="text-emerald-700" />
+            <StatCard value={dbStats.total_scores.toLocaleString()} label="Critic Scores" sublabel="Berliner, TEXSOM, importers" color="text-purple-700" />
+            <StatCard value={dbStats.total_prices.toLocaleString()} label="Price Points" sublabel="Spec's, Wally's, Flatiron, LCBO, more" color="text-emerald-700" />
             <StatCard value={dbStats.total_vintages.toLocaleString()} label="Vintages Tracked" sublabel="Individual vintage records" color="text-blue-700" />
             <StatCard
               value={`${Math.round((dbStats.wines_with_scores / wineCount) * 100)}%`}

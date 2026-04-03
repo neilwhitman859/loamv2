@@ -67,6 +67,17 @@ interface AppellationInsight {
   ai_key_grapes: string | null
 }
 
+interface Price {
+  price_usd: number | null
+  currency: string | null
+  merchant_name: string | null
+  vintage_year: number | null
+  price_date: string | null
+}
+interface ExternalId {
+  system: string
+  external_id: string
+}
 interface Classification { level_name: string; system_name: string }
 interface Score {
   score: number; score_low: number | null; score_high: number | null
@@ -150,6 +161,8 @@ export default function WinePage() {
   const [appGrapes, setAppGrapes] = useState<AppellationGrape[]>([])
   const [labelDesignations, setLabelDesignations] = useState<LabelDesignation[]>([])
   const [farmingCerts, setFarmingCerts] = useState<FarmingCert[]>([])
+  const [prices, setPrices] = useState<Price[]>([])
+  const [externalIds, setExternalIds] = useState<ExternalId[]>([])
   const [vintages, setVintages] = useState<Vintage[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -226,6 +239,16 @@ export default function WinePage() {
             .select('percentage, grape:grapes!wine_grapes_grape_id_fkey(id, display_name, color)')
             .eq('wine_id', id).order('percentage', { ascending: false, nullsFirst: false })
             .then(({ data: d }) => { if (d) setGrapes(d as unknown as GrapeLink[]) }))
+
+          p.push(supabase.from('wine_vintage_prices')
+            .select('price_usd, currency, merchant_name, vintage_year, price_date')
+            .eq('wine_id', id).order('price_usd', { ascending: true }).limit(10)
+            .then(({ data: d }) => { if (d) setPrices(d as Price[]) }))
+
+          p.push(supabase.from('external_ids')
+            .select('system, external_id')
+            .eq('entity_type', 'wine').eq('entity_id', id)
+            .then(({ data: d }) => { if (d) setExternalIds(d as ExternalId[]) }))
 
           p.push(supabase.from('wine_vintages')
             .select('vintage_year, abv, cases_produced, duration_in_oak_months, new_oak_pct, neutral_oak_pct, whole_cluster_pct, harvest_start_date, harvest_end_date, winemaker_notes, vintage_notes, ph, ta_g_l, rs_g_l, va_g_l, so2_free_mg_l, so2_total_mg_l, brix_at_harvest, maceration_technique, maceration_days, fermentation_vessel, oak_origin, yeast_type, fining, filtration, closure, lees_aging_months, batonnage, skin_contact_days, aging_vessel, aging_vessel_size_l, yield_hl_ha, bottling_date, release_date, disgorgement_date, age_statement_years, bottle_format_ml, bottle_aging_months, release_price_usd, carbonic_maceration, mlf, pradikat, ingredients, allergens, energy_kcal_per_100ml, maturity_status')
@@ -370,6 +393,28 @@ export default function WinePage() {
                 {s.medal && <span className="text-xs text-amber-600 font-medium">{s.medal}</span>}
                 {s.critic_drinking_window_start && s.critic_drinking_window_end && (
                   <span className="text-xs text-earth-400 ml-auto">{s.critic_drinking_window_start}–{s.critic_drinking_window_end}</span>
+                )}
+              </div>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {/* ── Prices ─────────────────────────────────────── */}
+      {prices.length > 0 && (
+        <Section title="Prices">
+          <div className="space-y-1">
+            {prices.map((p, i) => (
+              <div key={i} className="flex items-baseline gap-3 py-1 border-b border-earth-50 last:border-0">
+                <span className="text-lg font-display font-bold text-emerald-700 w-20 shrink-0">
+                  {p.price_usd ? `$${Number(p.price_usd).toFixed(0)}` : '–'}
+                </span>
+                {p.currency && p.currency !== 'USD' && (
+                  <span className="text-xs text-earth-400">{p.currency}</span>
+                )}
+                <span className="text-xs text-earth-600 truncate">{p.merchant_name || 'Retailer'}</span>
+                {p.vintage_year && p.vintage_year > 0 && (
+                  <span className="text-xs text-earth-400 ml-auto">{p.vintage_year}</span>
                 )}
               </div>
             ))}
@@ -663,11 +708,17 @@ export default function WinePage() {
       )}
 
       {/* ── Identifiers ────────────────────────────────── */}
-      {(wine.lwin || wine.barcode) && (
+      {(wine.lwin || wine.barcode || externalIds.length > 0) && (
         <Section title="Identifiers">
           <FactGrid>
             {wine.lwin && <Fact label="LWIN" value={wine.lwin} />}
             {wine.barcode && <Fact label="Barcode" value={wine.barcode} />}
+            {externalIds.filter(e => e.system === 'upc').map((e, i) => (
+              <Fact key={`upc-${i}`} label="UPC" value={e.external_id} />
+            ))}
+            {externalIds.filter(e => e.system === 'cola').length > 0 && (
+              <Fact label="COLA IDs" value={`${externalIds.filter(e => e.system === 'cola').length} registered`} />
+            )}
           </FactGrid>
         </Section>
       )}

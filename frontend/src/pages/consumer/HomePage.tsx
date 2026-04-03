@@ -32,9 +32,16 @@ export default function HomePage() {
   const [results, setResults] = useState<SearchResult[]>([])
   const [loading, setLoading] = useState(false)
   const [showResults, setShowResults] = useState(false)
+  const [wineCount, setWineCount] = useState<number | null>(null)
   const navigate = useNavigate()
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined)
   const resultsRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    supabase.from('wines').select('*', { count: 'exact', head: true }).then(({ count }) => {
+      if (count != null) setWineCount(count)
+    })
+  }, [])
 
   const search = useCallback(async (q: string) => {
     if (q.length < 2) {
@@ -190,7 +197,8 @@ export default function HomePage() {
       {/* Bottom tagline */}
       <div className="text-center pb-8 px-6">
         <p className="text-xs text-earth-400">
-          189,000+ wines. Place, grapes, people.
+          {wineCount ? `${Math.floor(wineCount / 1000).toLocaleString()}K+ wines` : 'Loading...'}.{' '}
+          Place, grapes, people.
         </p>
       </div>
     </div>

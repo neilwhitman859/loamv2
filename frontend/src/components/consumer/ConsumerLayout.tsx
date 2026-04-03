@@ -57,9 +57,10 @@ export default function ConsumerLayout() {
           {/* Mobile nav dropdown */}
           {mobileMenuOpen && (
             <nav className="md:hidden border-t border-earth-100 bg-white px-4 py-3 space-y-1">
-              <NavLink to="/explore" label="Explore" onClick={() => setMobileMenuOpen(false)} />
-              <NavLink to="/regions" label="Regions" onClick={() => setMobileMenuOpen(false)} />
-              <NavLink to="/grapes" label="Grapes" onClick={() => setMobileMenuOpen(false)} />
+              <NavLink to="/search?q=bordeaux" label="Bordeaux" onClick={() => setMobileMenuOpen(false)} />
+              <NavLink to="/search?q=burgundy" label="Burgundy" onClick={() => setMobileMenuOpen(false)} />
+              <NavLink to="/search?q=napa valley" label="Napa Valley" onClick={() => setMobileMenuOpen(false)} />
+              <NavLink to="/data" label="Data Explorer" onClick={() => setMobileMenuOpen(false)} />
             </nav>
           )}
         </header>
