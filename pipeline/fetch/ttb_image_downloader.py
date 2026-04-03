@@ -382,56 +382,106 @@ def get_scan_save_path(output_dir: Path, ttb_id: str, data: bytes) -> Path:
     return output_dir / "scans" / year / ttb_id / f"scan{ext}"
 
 
+def build_existing_set(output_dir: Path, image_type: str, console: Console = None) -> set[str]:
+    """Pre-scan disk once and return set of TTB IDs already downloaded.
+    Just checks if COLA directory exists (doesn't verify files inside — too slow on USB)."""
+    subdir = output_dir / ("labels" if image_type == "labels" else "scans")
+    existing = set()
+    if not subdir.exists():
+        return existing
+
+    if console:
+        console.print(f"  Scanning existing downloads on disk...")
+
+    for year_dir in sorted(subdir.iterdir()):
+        if not year_dir.is_dir():
+            continue
+        count = 0
+        try:
+            for cola_dir in year_dir.iterdir():
+                try:
+                    if cola_dir.is_dir():
+                        existing.add(cola_dir.name)
+                        count += 1
+                except OSError:
+                    continue
+        except OSError as e:
+            if console:
+                console.print(f"    [red]{year_dir.name}: scan error: {e}[/red]")
+            continue
+        if console and count > 0:
+            console.print(f"    {year_dir.name}: {count:,} COLAs on disk")
+
+    if console:
+        console.print(f"  [cyan]Total on disk: {len(existing):,} COLAs[/cyan]")
+
+    return existing
+
+
 def check_label_exists(output_dir: Path, ttb_id: str) -> bool:
     """Check if this COLA already has downloaded label images."""
     year = ttb_id_to_year(ttb_id)
     ttb_dir = output_dir / "labels" / year / ttb_id
-    if not ttb_dir.exists():
-        return False
-    # Has at least one image file
-    return any(ttb_dir.iterdir())
+    return ttb_dir.exists()
 
 
 def check_scan_exists(output_dir: Path, ttb_id: str) -> bool:
     """Check if this COLA already has a downloaded scan."""
     year = ttb_id_to_year(ttb_id)
     ttb_dir = output_dir / "scans" / year / ttb_id
-    if not ttb_dir.exists():
-        return False
-    return any(ttb_dir.iterdir())
+    return ttb_dir.exists()
 
 
 # ── DB Fetch ─────────────────────────────────────────────────────────────────
 
 def fetch_records(image_type: str, year_min: int | None, year_max: int | None,
-                  limit: int | None, console: Console) -> list[dict]:
+                  limit: int | None, console: Console,
+                  logger: logging.Logger = None) -> list[dict]:
     """Fetch records from source_ttb_colas that have image URLs."""
     column = "label_image_urls" if image_type == "labels" else "application_scan_urls"
     sb = get_supabase()
 
-    start_year = year_min or 1955
+    start_year = year_min or 2003  # No label images before 2003
     end_year = year_max or 2026
+
+    if logger:
+        logger.info(f"FETCH START: {column}, years {start_year}-{end_year}")
 
     all_records = []
     for year in range(start_year, end_year + 1):
-        for q_start, q_end in [
-            (f"{year}-01-01", f"{year}-03-31"),
-            (f"{year}-04-01", f"{year}-06-30"),
-            (f"{year}-07-01", f"{year}-09-30"),
-            (f"{year}-10-01", f"{year}-12-31"),
-        ]:
+        for month in range(1, 13):
+            m_start = f"{year}-{month:02d}-01"
+            if month == 12:
+                m_end = f"{year}-12-31"
+            else:
+                m_end = f"{year}-{month + 1:02d}-01"
             offset = 0
+            retries = 0
             while True:
                 try:
-                    result = sb.table("source_ttb_colas") \
+                    q = sb.table("source_ttb_colas") \
                         .select(f"ttb_id, {column}") \
-                        .gte("completed_date", q_start) \
-                        .lte("completed_date", q_end) \
+                        .gte("completed_date", m_start) \
                         .not_.is_(column, "null") \
-                        .range(offset, offset + 499) \
-                        .execute()
+                        .range(offset, offset + 499)
+                    if month == 12:
+                        q = q.lte("completed_date", m_end)
+                    else:
+                        q = q.lt("completed_date", m_end)
+                    result = q.execute()
+                    retries = 0
                 except Exception as e:
-                    console.print(f"  [red]Error {year} Q{q_start[5:7]}: {e}[/red]")
+                    retries += 1
+                    msg = f"Error {year}-{month:02d} offset={offset}: {type(e).__name__}: {str(e)[:200]}"
+                    console.print(f"  [red]{msg}[/red]")
+                    if logger:
+                        logger.error(msg)
+                    if retries < 3:
+                        import time
+                        time.sleep(5)
+                        continue
+                    if logger:
+                        logger.error(f"Giving up on {year}-{month:02d} after 3 retries")
                     break
 
                 if not result.data:
@@ -452,6 +502,9 @@ def fetch_records(image_type: str, year_min: int | None, year_max: int | None,
             all_records = all_records[:limit]
             break
 
+    if logger:
+        logger.info(f"FETCH COMPLETE: {len(all_records):,} records")
+
     return all_records
 
 
@@ -459,7 +512,8 @@ def fetch_records(image_type: str, year_min: int | None, year_max: int | None,
 
 async def download_labels(records: list[dict], output_dir: Path, concurrent: int,
                           stats: Stats, console: Console, live: Live,
-                          logger: logging.Logger = None):
+                          logger: logging.Logger = None,
+                          existing_set: set[str] = None):
     """Download label images using headed Playwright.
 
     Shape Security WAF blocks headless browsers and direct HTTP requests to
@@ -579,7 +633,8 @@ async def download_labels(records: list[dict], output_dir: Path, concurrent: int
 
 async def download_scans(records: list[dict], output_dir: Path, concurrent: int,
                          stats: Stats, console: Console, live: Live,
-                         logger: logging.Logger = None):
+                         logger: logging.Logger = None,
+                         existing_set: set[str] = None):
     """Download scan images using headed Playwright with direct navigation.
 
     publicViewImage.do is also WAF-protected. We navigate to each image URL
@@ -722,7 +777,7 @@ async def run_phase(image_type: str, output_dir: Path, args, console: Console,
     console.print(f"  Concurrent: {concurrent}")
     console.print(f"  Fetching records from DB...")
 
-    records = fetch_records(image_type, args.year_min, args.year_max, args.limit, console)
+    records = fetch_records(image_type, args.year_min, args.year_max, args.limit, console, logger)
     console.print(f"  Found {len(records):,} records with {column}")
 
     if not records:
@@ -733,24 +788,16 @@ async def run_phase(image_type: str, output_dir: Path, args, console: Console,
     total_urls = sum(len(r.get(column) or []) for r in records)
     console.print(f"  Total image URLs: {total_urls:,}")
 
-    # Count already-downloaded (resume check)
-    check_fn = check_label_exists if image_type == "labels" else check_scan_exists
-    already_done = sum(1 for r in records if check_fn(output_dir, r["ttb_id"]))
-    already_urls = sum(
-        len(r.get(column) or []) for r in records if check_fn(output_dir, r["ttb_id"])
-    )
-    if already_done > 0:
-        console.print(f"  [cyan]Already downloaded: {already_done:,} COLAs ({already_urls:,} images) — will skip[/cyan]")
-        console.print(f"  Remaining to download: {total_urls - already_urls:,} images")
+    # Skip expensive pre-scan on USB drives — resume check happens per-COLA during download
+    existing_set = None
+    console.print(f"  [dim]Resume check will happen per-COLA during download[/dim]")
 
-    est_gb = (total_urls - already_urls) * 400 / (1024 * 1024)  # ~400KB average
-    console.print(f"  Estimated size: ~{est_gb:.0f} GB (new downloads only)")
+    est_gb = total_urls * 400 / (1024 * 1024)  # ~400KB average
+    console.print(f"  Estimated total size: ~{est_gb:.0f} GB")
 
     if logger:
         logger.info(f"Phase {phase_index}/{total_phases}: {image_type.upper()}")
         logger.info(f"  Records: {len(records):,}, URLs: {total_urls:,}, "
-                     f"Already done: {already_done:,} COLAs ({already_urls:,} images)")
-        logger.info(f"  Remaining: {total_urls - already_urls:,} images, "
                      f"Concurrent: {concurrent}")
 
     stats = Stats(
@@ -775,9 +822,9 @@ async def run_phase(image_type: str, output_dir: Path, args, console: Console,
             log_task = asyncio.create_task(log_snapshot_loop())
             try:
                 if image_type == "labels":
-                    await download_labels(records, output_dir, concurrent, stats, console, live, logger)
+                    await download_labels(records, output_dir, concurrent, stats, console, live, logger, existing_set)
                 else:
-                    await download_scans(records, output_dir, concurrent, stats, console, live, logger)
+                    await download_scans(records, output_dir, concurrent, stats, console, live, logger, existing_set)
             finally:
                 log_task.cancel()
                 try:
@@ -861,11 +908,21 @@ async def async_main():
 
     types_to_run = ["labels", "scans"] if args.type == "all" else [args.type]
 
-    for i, image_type in enumerate(types_to_run):
-        await run_phase(image_type, output_dir, args, console, i + 1, len(types_to_run), logger)
+    try:
+        for i, image_type in enumerate(types_to_run):
+            await run_phase(image_type, output_dir, args, console, i + 1, len(types_to_run), logger)
 
-    logger.info("All downloads complete!")
-    console.print("\n[bold green]All downloads complete![/bold green]")
+        logger.info("All downloads complete!")
+        console.print("\n[bold green]All downloads complete![/bold green]")
+    except KeyboardInterrupt:
+        logger.error("INTERRUPTED by user (Ctrl+C)")
+        console.print("\n[yellow]Interrupted![/yellow]")
+    except Exception as e:
+        logger.error(f"FATAL CRASH: {type(e).__name__}: {str(e)[:500]}")
+        import traceback
+        logger.error(traceback.format_exc())
+        console.print(f"\n[red]FATAL: {e}[/red]")
+        raise
 
 
 def main():
