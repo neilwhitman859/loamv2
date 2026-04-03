@@ -646,6 +646,78 @@ class BatchMatcher:
         self.stats["bc_wine_match"] = matched_wines
         self.stats["bc_total"] = len(rows)
 
+    # ── Wally's Adapter ────────────────────────────────────────
+
+    def run_wallys(self):
+        """Match Wally's wines. Title format: '2023 Producer WineName, Region 750mL'."""
+        print("\n" + "=" * 60)
+        print("WALLY'S (19,446 wines)")
+        print("=" * 60)
+
+        rows = self._load_staging(
+            "source_wallys",
+            "id,title,vendor,producer,country,region,vintage,price"
+        )
+        print(f"  Unmatched rows: {len(rows)}")
+        if not rows:
+            return
+
+        updates = []
+        matched_wines = 0
+        matched_producers = 0
+        producer_cache = {}
+
+        for i, r in enumerate(rows):
+            country_id = self.resolve_country(r.get("country"))
+            # Use producer tag if available, otherwise extract from title
+            producer_name = r.get("producer")
+            title = r.get("title", "")
+
+            if producer_name:
+                pmatch = self.match_producer(producer_name, country_id)
+                wine_name = title
+                if pmatch:
+                    # Strip producer from title for wine name
+                    if producer_name.lower() in title.lower():
+                        idx = title.lower().find(producer_name.lower())
+                        wine_name = (title[:idx] + title[idx + len(producer_name):]).strip(" ,")
+                    wine_name = re.sub(r"^\d{4}\s+", "", wine_name)  # strip vintage
+                    wine_name = re.sub(r"\s+\d+(\.\d+)?m[lL]$", "", wine_name)  # strip volume
+                    wine_name = wine_name.strip(" ,")
+            else:
+                # Extract from title: strip vintage year and volume first
+                clean = re.sub(r"^\d{4}\s+", "", title)
+                clean = re.sub(r"\s+\d+(\.\d+)?m[lL]$", "", clean).strip()
+                pmatch, wine_name = self.match_producer_from_title(clean, country_id)
+
+            if not pmatch:
+                self.stats["wallys_producer_miss"] += 1
+                continue
+
+            matched_producers += 1
+            pid = pmatch["id"]
+
+            if pid not in producer_cache:
+                producer_cache[pid] = self.load_producer_wines(pid)
+
+            wmatch = self.match_wine(producer_cache[pid], wine_name)
+            update = {"id": r["id"], "producer_id": pid}
+            if wmatch:
+                update["wine_id"] = wmatch["id"]
+                matched_wines += 1
+            updates.append(update)
+
+            if (i + 1) % 1000 == 0 and self.verbose:
+                print(f"  ... {i+1}/{len(rows)} processed, {matched_wines} wines matched")
+
+        print(f"  Rows with producer match: {matched_producers}/{len(rows)}")
+        print(f"  Wines matched: {matched_wines}/{len(rows)}")
+
+        self._write_matches("source_wallys", updates)
+        self.stats["wallys_producer_match"] = matched_producers
+        self.stats["wallys_wine_match"] = matched_wines
+        self.stats["wallys_total"] = len(rows)
+
     # ── Spec's Adapter ─────────────────────────────────────────
 
     def run_specs(self):
@@ -737,6 +809,7 @@ def main():
         "lcbo": matcher.run_lcbo,
         "systembolaget": matcher.run_systembolaget,
         "bc_liquor": matcher.run_bc_liquor,
+        "wallys": matcher.run_wallys,
         "specs": matcher.run_specs,
     }
 
