@@ -374,19 +374,31 @@ Staging-first architecture: all external data goes through per-source staging ta
 - **Depth promoted:** 115.6K COLA IDs, 130.1K vintages (64.3K wines), 85.6K grape links (70.6K wines)
 - **Search fix:** `search_catalog` v2 — unaccent + producer name matching. Findability 12%→83%.
 
+**Competition linking (2026-04-02):**
+- Berliner Wine Trophy: 4K records → 3.6K scores (Gold/Grand Gold/Silver)
+- TEXSOM: 14K records → 13.3K scores across 40 years of competitions
+- Enofile: skipped (small US regional competitions, low canonical overlap)
+
+**Retailer linking (2026-04-02):**
+- Spec's: 4,807 wines matched. **3,095 UPC barcodes** + 2,796 retail prices.
+- Wally's: 6,822 records matched. 6,217 prices + 5,809 vintages from title year parsing.
+- **First price data in canonical.** Matching via full-text search + producer name confirmation.
+
 **Next steps (resume here):**
 - Tier C slice 2: create new producers from TTB brand names (115K unmatched brands)
 - Improve appellation resolver for TTB strings that are regions/countries (CALIFORNIA, MENDOZA, etc.)
-- Competition linking (Berliner 74K + TEXSOM 47K → scores)
 - Tier D (fuzzy tail): agent work, ongoing
+- BC Liquor linking (3.2K wines, UPCs + tasting notes)
+- Flatiron linking (4.1K wines, structured tags)
 
 ### What's Not There Yet
-- **wine_vintages: 130,102** across 64,308 wines.
-- **wine_vintage_scores: 17,852** across 7,037 wines — Berliner (3.6K scores), TEXSOM (13.3K scores), importer (1K scores).
+- **wine_vintages: 135,911** across 65,875 wines.
+- **wine_vintage_scores: 17,852** across 7,037 wines.
 - **wine_grapes: 85,622** across 70,638 wines.
-- **wine_vintage_prices: 0** — no price data in canonical yet.
+- **wine_vintage_prices: 9,013** across 5,360 wines — Spec's (2.8K) + Wally's (6.2K).
+- **UPC barcodes: 3,095** in external_ids (Spec's).
 - **winemakers: 0** — cleared during LWIN promotion.
-- **TTB back-linking COMPLETE** — 360K TTB records linked to 116K canonical wines. Functional index `idx_ttb_lower_brand` on `lower(trim(brand_name))` solved the 3M-row timeout issue.
+- **TTB back-linking COMPLETE** — 360K TTB records linked to 116K canonical wines.
 - Most insight tables empty (wine, producer, grape, wine_vintage)
 - All weather data (appellation_vintages) — Open-Meteo schema design pending
 - All document tables
