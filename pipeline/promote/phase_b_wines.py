@@ -11,6 +11,7 @@ Usage:
 import sys
 import time
 import re
+import uuid
 from collections import defaultdict
 from pathlib import Path
 
@@ -73,14 +74,26 @@ def main():
         pname = producer["name"]
         country_id = producer.get("country_id")
 
-        # Get unique fanciful names for this producer
-        result = (sb.table("source_ttb_colas")
-                  .select("fanciful_name")
-                  .eq("canonical_producer_id", pid)
-                  .is_("canonical_wine_id", "null")
-                  .not_.is_("fanciful_name", "null")
-                  .limit(200)
-                  .execute())
+        # Get unique fanciful names for this producer (with retry)
+        for attempt in range(3):
+            try:
+                result = (sb.table("source_ttb_colas")
+                          .select("fanciful_name")
+                          .eq("canonical_producer_id", pid)
+                          .is_("canonical_wine_id", "null")
+                          .not_.is_("fanciful_name", "null")
+                          .limit(200)
+                          .execute())
+                break
+            except Exception as e:
+                if attempt < 2:
+                    time.sleep(2 ** attempt)
+                    continue
+                errors += 1
+                if errors <= 5:
+                    print(f"  TTB fetch error for {pid}: {e}", flush=True)
+                result = type('R', (), {'data': []})()
+                break
 
         fanciful_names = set()
         for r in result.data:
@@ -97,7 +110,6 @@ def main():
                 wines_skipped += 1
                 continue
 
-            slug_counter += 1
             display_name = fn.title() if fn == fn.upper() else fn
 
             if args.dry_run:
@@ -105,24 +117,36 @@ def main():
                 existing_wines.add((pid, name_norm))
                 continue
 
-            try:
-                result = sb.table("wines").insert({
-                    "name": display_name,
-                    "name_normalized": name_norm,
-                    "slug": slugify(f"{pname} {fn}")[:190] + f"-pb-{slug_counter}",
-                    "producer_id": pid,
-                    "country_id": country_id,
-                    "wine_type": "table",
-                    "effervescence": "still",
-                }).execute()
-                if result.data:
-                    wines_created += 1
-                    existing_wines.add((pid, name_norm))
-            except Exception as e:
-                errors += 1
-                if errors <= 5:
-                    safe = str(e)[:100].encode('ascii', 'replace').decode('ascii')
-                    print(f"  Error: {safe}")
+            for attempt in range(3):
+                try:
+                    short_id = uuid.uuid4().hex[:8]
+                    result = sb.table("wines").insert({
+                        "name": display_name,
+                        "name_normalized": name_norm,
+                        "slug": slugify(f"{pname} {fn}")[:180] + f"-pb-{short_id}",
+                        "producer_id": pid,
+                        "country_id": country_id,
+                        "wine_type": "table",
+                        "effervescence": "still",
+                    }).execute()
+                    if result.data:
+                        wines_created += 1
+                        existing_wines.add((pid, name_norm))
+                    break
+                except Exception as e:
+                    err_str = str(e)
+                    if "23505" in err_str:  # duplicate key
+                        existing_wines.add((pid, name_norm))
+                        wines_skipped += 1
+                        break
+                    if attempt < 2:
+                        time.sleep(2 ** attempt)
+                        continue
+                    errors += 1
+                    if errors <= 5:
+                        safe = err_str[:100].encode('ascii', 'replace').decode('ascii')
+                        print(f"  Error: {safe}", flush=True)
+                    break
 
         if (pi + 1) % 200 == 0:
             elapsed = time.time() - t0

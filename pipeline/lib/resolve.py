@@ -109,6 +109,14 @@ GRAPE_ALIASES: dict[str, str] = {
     "bonarda": "Bonarda",
     "ribolla gialla": "Ribolla Gialla", "ribolla": "Ribolla Gialla",
     "friulano": "Sauvignonasse", "tocai friulano": "Sauvignonasse",
+    # TTB ASCII-stripped accented forms
+    "spatburgunder": "Spätburgunder", "aligote": "Aligoté",
+    "carmenere": "Carmenère", "valdiguie": "Valdiguié",
+    "catarratto bianco comune": "Catarratto Bianco Comune",
+    "catarratto": "Catarratto Bianco Comune",
+    "montepulciano": "Montepulciano",
+    "pineau d'aunis": "Pineau d'Aunis",
+    "picpoul blanc": "Piquepoul Blanc",
 }
 
 REGION_ALIASES: dict[str, str] = {

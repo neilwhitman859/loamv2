@@ -168,8 +168,9 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
 ### Content Tables (Phase 1c/1d, updated 2026-04-03)
-- **37,184 producers** (32.8K LWIN + 4.4K Phase B from TTB), **413,483 wines** (189K LWIN + 80K C1 + 105K C2 + 39K Phase B + 850 importers), **147,550 vintages**, **17,852 scores**, **15,468 prices** (Spec's + Wally's + Flatiron + LCBO + Systembolaget + BC Liquor), **137,774 wine_grapes** across 107K wines, **120,162 external_ids** (116K COLA + 4.6K UPC), **15,785 entity_classifications**, 0 winemakers, **7,176 producer_aliases** (2.9K LWIN + 4.3K hyphen-stripped)
-- **Readiness metric:** 28/100 (200-sample Spec's mystery shopper). Was 8/100 on 2026-04-02.
+- **37,184 producers** (32.8K LWIN + 4.4K Phase B from TTB), **470,820 wines** (189K LWIN + 80K C1 + 105K C2 + 96K Phase B + 850 importers), **270,788 vintages**, **17,852 scores**, **17,623 prices** (Spec's + Wally's + Flatiron + LCBO + Systembolaget + BC Liquor), **141,430 wine_grapes** across ~110K wines, **478,728 external_ids** (364K COLA + 5K UPC + 189K LWIN), **15,785 entity_classifications**, 0 winemakers, **7,176 producer_aliases** (2.9K LWIN + 4.3K hyphen-stripped)
+- **284,291 wines linked to TTB** (666K TTB records linked). Was 155K wines / 432K records on 2026-04-03.
+- **Readiness metric:** 28/100 (200-sample Spec's mystery shopper). Was 8/100 on 2026-04-02. (Re-measurement pending after this session's +57K wines.)
 - **Enrichment promotion (2026-04-02):** 3,575 wine_grapes (Skurnik 1,894 + KL 875 + Winebow 331 + EC 255 + Empson 220), 1,005 wine_vintage_scores (EC 768 + Winebow 237), 1,238 wines updated with soil/vinification/vine_age (KL 814 + EC 231 + Empson 193). 866 grape names unresolved (top: Palomino, Zinfandel, Gruner Veltliner, Cinsault — fixable with more VIVC aliases). Script: `pipeline/promote/importer_enrich.py`.
 - **Sparkling wine fix (2026-04-02):** 8,977 wines reclassified from table/still to sparkling/sparkling via keyword detection (Brut, Sekt, Cremant, Cava, Champagne, etc.) + sparkling-only appellations (Franciacorta, Trento, Alta Langa, Asti). Migration: `fix_sparkling_wines`. Wine type distribution now: table 93.6%, sparkling 4.7%, fortified 1.6%.
 - **Sonnet accuracy audit (2026-04-02):** 300 random wines audited by Sonnet for $0.05. 96% accuracy — 10/12 errors were the sparkling bug (fixed above), 2 were minor LWIN region misattributions. Non-sparkling data was 100% clean. Full results: `data/imports/audit_sonnet_300.json`.
@@ -398,12 +399,21 @@ Staging-first architecture: all external data goes through per-source staging ta
 - Script: `pipeline/promote/batch_matcher.py` (reusable, in-memory producer matching with suffix stripping)
 - Promotion: `pipeline/promote/retail_promote.py` (UPCs, prices, vintages)
 
+**Completed this session (2026-04-03/04):**
+- **Phase B wine creation COMPLETE:** 30,493 new wines from 4,430 Phase B producers. Total wines: 470,820.
+- **TTB wine linking v2:** 117,597 wine-name pairs linked (284K wines now linked to 666K TTB records). Script: `pipeline/promote/ttb_wine_link_v2.py`.
+- **COLA depth promotion:** +123K vintages, +169K COLA external IDs. Script: `pipeline/promote/cola_depth.py` (cursor-based pagination, handles 666K records in ~15 min).
+- **Batch matcher re-run (partial):** Spec's +298 matches. Wally's hit ConnectionTerminated (run separately next session).
+- **Retail promote:** +477 prices, +1,236 vintages from Flatiron/LCBO/Systembolaget/BC Liquor.
+- **Grape promotion:** +3,656 grape links (618 new from encoding-fixed run + 3,038 from initial run).
+- **TTB encoding fixes:** `grape_from_helper.py` now handles `?`-corrupted accented chars (Mourvèdre, Albariño, etc.).
+
 **Next steps (resume here):**
-- **Finish Phase B wine creation:** Re-run `pipeline/promote/phase_b_wines.py` to cover remaining ~600 producers. Script is resume-safe (checks existing wines).
-- **COLA ID + vintage promotion** for new C2/Phase B wines: `promote_ttb_vintages()` SQL function exists but source_ttb_colas operations timeout. Need per-producer Python approach or back-link via `_tier_c2_pending` pattern.
-- **Grape promotion for Phase B wines:** Run `pipeline/promote/grape_from_helper.py` after rebuilding `_grape_pending` to include new wines.
-- **Re-run batch_matcher** against Spec's/LCBO/Systembolaget to capture new Phase B producers. The new 4.4K producers weren't available when the previous matching ran.
+- **Re-run batch_matcher for Wally's:** Previous run crashed on ConnectionTerminated. Run `--source wallys` alone.
+- **Re-measure readiness metric:** Run Spec's mystery shopper against expanded catalog. Should be significantly higher than 28/100.
 - **Improve Systembolaget matching:** Swedish→English country/region translation in batch_matcher covers top 30 but many niche regions still miss.
+- **Rebuild _grape_pending** with new wines (current table is stale — doesn't include Phase B wines). Then re-run grape_from_helper.
+- **TTB barcode scan:** 490K label images need re-download (~21GB) — images not on current machine. Projected ~64K COLA→UPC bridges.
 - **Tier D (fuzzy tail):** AI-assisted matching for remaining unlinked staging records.
 - **xwines_dedup alias cleanup:** 4,274 aliases with known quality issues (maps sub-brands to wrong main producers). Needs audit.
 

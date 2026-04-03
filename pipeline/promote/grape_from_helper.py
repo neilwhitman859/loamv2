@@ -22,27 +22,84 @@ from pipeline.lib.db import get_supabase, batch_insert
 from pipeline.lib.resolve import ReferenceResolver
 
 
+JUNK_STRINGS = {
+    "the status is approved.", "the status is approved",
+    "red wine", "white wine", "rose wine", "table wine",
+    "wine", "red", "white", "rose", "blended wine",
+}
+
+# TTB encodes accented chars as '?' — map common corrupted forms
+TTB_GRAPE_FIXES = {
+    "mourv?dre": "Mourvedre", "mourv dre": "Mourvedre",
+    "albari?o": "Albarino", "albari o": "Albarino",
+    "gew?rztraminer": "Gewurztraminer", "gew rztraminer": "Gewurztraminer",
+    "gr?ner veltliner": "Gruner Veltliner", "gr ner veltliner": "Gruner Veltliner",
+    "carmen?re": "Carmenere", "carmen re": "Carmenere",
+    "aligot?": "Aligote", "aligot": "Aligote",
+    "sp?tburgunder": "Spatburgunder", "sp tburgunder": "Spatburgunder",
+    "valdigu?": "Valdiguie", "valdigu": "Valdiguie",
+    "m?ller-thurgau": "Muller-Thurgau", "m ller-thurgau": "Muller-Thurgau",
+    "m?ller thurgau": "Muller-Thurgau",
+    "blaufr?nkisch": "Blaufrankisch",
+    "torront?s": "Torrontes",
+    "catarratto": "Catarratto Bianco Comune",
+    "montepulciano d'abruzzo": "Montepulciano",
+    "picpoul blanc": "Piquepoul Blanc", "picpoul": "Piquepoul Blanc",
+    "pineau d'aunis": "Pineau d'Aunis",
+    "chianti": "Sangiovese",
+}
+
+
 def parse_grape_string(s):
     """Parse TTB grape_varietals into [(name, percentage), ...]."""
     if not s:
         return []
     s = s.strip()
+    # Skip junk
+    if s.lower() in JUNK_STRINGS:
+        return []
     parts = re.split(r'[,/]', s)
     grapes = []
     for part in parts:
         part = part.strip()
         if not part or len(part) < 2:
             continue
+        # Strip trailing "100%" etc.
+        part = re.sub(r'\s+100%$', '', part)
         pct_match = re.match(r'^(\d+)%?\s+(.+)$', part)
         if pct_match:
             pct = int(pct_match.group(1))
             name = pct_match.group(2).strip()
             if 0 < pct <= 100:
-                grapes.append((name.title(), pct))
+                name = _fix_grape_name(name)
+                if name:
+                    grapes.append((name, pct))
         else:
             name = re.sub(r'\s+', ' ', part).strip()
-            grapes.append((name.title(), None))
+            name = _fix_grape_name(name)
+            if name:
+                grapes.append((name, None))
     return grapes
+
+
+def _fix_grape_name(name):
+    """Fix TTB encoding corruption and known misspellings."""
+    if not name:
+        return None
+    # Strip non-ASCII question marks that replace accented chars
+    cleaned = name.replace('?', '').strip()
+    # Check TTB fixes map (case-insensitive)
+    lower = name.lower()
+    if lower in TTB_GRAPE_FIXES:
+        return TTB_GRAPE_FIXES[lower]
+    cleaned_lower = cleaned.lower()
+    if cleaned_lower in TTB_GRAPE_FIXES:
+        return TTB_GRAPE_FIXES[cleaned_lower]
+    if cleaned_lower in JUNK_STRINGS:
+        return None
+    # Return title-cased version
+    result = cleaned.title() if cleaned == cleaned.upper() else cleaned
+    return result if len(result) >= 2 else None
 
 
 def main():
