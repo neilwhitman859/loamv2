@@ -359,27 +359,35 @@ Staging-first architecture: all external data goes through per-source staging ta
 - First test: 50 random Spec's bottles → ~56% producer found, ~30% exact wine found, 0% depth, ~14% false matches
 - **Current readiness: ~8/100**
 
-**Tier B promotion EXECUTED (2026-04-02):**
-- Strategy 1 (producer + fanciful name + appellation): 59K TTB records → 19K wines
-- Strategy 3 (producer + fanciful name, no appellation): 97K TTB records → 30K wines
-- Total: **162,576 TTB records linked to 45,168 canonical wines**
-- **45,168 COLA external_ids** added (was 2,378)
-- **66,000 wine_vintages** created (was 2,936), 40,424 with ABV
-- **30,048 wines** now have at least 1 vintage (was ~1,600)
+**Tier B+C promotion EXECUTED (2026-04-02):**
+- **Tier B** (match TTB → existing canonical):
+  - S1 (producer + fanciful + appellation): 59K records → 19K wines
+  - S3 (producer + fanciful, no appellation): 97K records → 30K wines
+  - S2 (producer + grape = wine name): 57K records → 14K wines
+  - S4 (suffix-stripped producer names): 14K records → 4.6K wines
+  - Total: **233,548 TTB records linked to 59,546 canonical wines**
+- **Tier C slice 1** (new wines for existing producers):
+  - 80K new wines created from TTB records with known producer + resolved appellation + grapes
+  - Appellation resolver: direct + alias + unaccent matching (971K records resolvable)
+  - **270,167 total canonical wines** (was 190K)
+  - TTB→new-wine back-linking not yet complete (needs Python batch, SQL timeouts on 3M row table)
+- **Depth promoted:** 59.5K COLA IDs, 90.4K vintages (39.5K wines), 35K grape links (33.7K wines)
+- **Search fix:** `search_catalog` v2 — unaccent + producer name matching. Findability 12%→83%.
 
 **Next steps (resume here):**
-- Promote TTB grape_varietals → wine_grapes (22K linked wines have grape data, not yet promoted)
-- Run mystery shopper test to measure readiness improvement
-- Strategy 2 (producer + grape = wine name, no fanciful) not yet attempted
-- Tier C (new canonical wines from clean TTB): ~100-200K new wines
+- Link TTB records to the 80K newly created wines (Python batch script — SQL timeouts against 3M rows)
+- Promote vintages + grapes for newly linked wines
+- Tier C slice 2: create new producers from TTB brand names (130K unmatched brands)
+- Improve appellation resolver for TTB strings that are regions/countries (CALIFORNIA, MENDOZA, etc.)
 - Tier D (fuzzy tail): agent work, ongoing
 
 ### What's Not There Yet
-- **wine_vintages: 66,000** across 30,048 wines (was 2,936). 40,424 with ABV.
+- **wine_vintages: 90,443** across 39,459 wines. Many with ABV.
 - **wine_vintage_scores: ~343** — other session promoting importer scores.
-- **wine_grapes: ~3,179** — other session promoting. TTB has 22K more wines with grape data ready to promote.
+- **wine_grapes: 34,956** across 33,745 wines.
 - **wine_vintage_prices: 0** — no price data in canonical yet.
 - **winemakers: 0** — cleared during LWIN promotion.
+- **80K new Tier C wines not yet TTB-linked** — wine records exist but source_ttb_colas rows not back-linked.
 - Most insight tables empty (wine, producer, grape, wine_vintage)
 - All weather data (appellation_vintages) — Open-Meteo schema design pending
 - All document tables
