@@ -7,6 +7,20 @@
     const CONCURRENCY = 20;
     const DETAIL_URL = 'https://ttbonline.gov/colasonline/viewColaDetails.do?action=publicDisplaySearchAdvanced&ttbid=';
 
+    // Chrome throttles setTimeout in background tabs to 1/min.
+    // MessageChannel callbacks are NOT throttled.
+    function delay(ms) {
+        return new Promise(resolve => {
+            const start = performance.now();
+            const ch = new MessageChannel();
+            ch.port1.onmessage = () => {
+                if (performance.now() - start >= ms) { ch.port1.close(); resolve(); }
+                else ch.port2.postMessage('');
+            };
+            ch.port2.postMessage('');
+        });
+    }
+
     function extractFields(html) {
         const fields = {};
 
@@ -78,7 +92,7 @@
             batch = await batchResp.json();
         } catch (e) {
             console.log('%c[TTB Scraper] Server unreachable, retrying in 5s...', 'color: red');
-            await new Promise(r => setTimeout(r, 5000));
+            await delay(5000);
             continue;
         }
 
@@ -129,7 +143,7 @@
             });
         } catch (e) {
             console.log('%c[TTB Scraper] Failed to send results, retrying...', 'color: red');
-            await new Promise(r => setTimeout(r, 2000));
+            await delay(2000);
             continue;
         }
 

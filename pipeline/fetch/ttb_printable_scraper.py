@@ -26,7 +26,7 @@ import time
 from collections import deque
 from dataclasses import dataclass, field
 from pathlib import Path
-from http.server import HTTPServer, BaseHTTPRequestHandler
+from http.server import HTTPServer, BaseHTTPRequestHandler, ThreadingHTTPServer
 import threading
 
 from rich.console import Console
@@ -50,6 +50,7 @@ SERVER_PORT = 8766
 class Stats:
     total_records: int = 0
     completed: int = 0
+    session_completed: int = 0
     errors: int = 0
     waf_blocks: int = 0
 
@@ -68,6 +69,8 @@ class Stats:
     peak_throughput: float = 0.0
     recent: deque = field(default_factory=lambda: deque(maxlen=8))
 
+    _eta_window: deque = field(default_factory=lambda: deque(maxlen=300))
+
     era_totals: dict = field(default_factory=dict)
     era_done: dict = field(default_factory=dict)
 
@@ -77,7 +80,8 @@ class Stats:
     @property
     def elapsed(self): return time.monotonic() - self.start_time if self.start_time else 0
     @property
-    def avg_throughput(self): return self.completed / self.elapsed if self.elapsed > 1 else 0
+    def session_throughput(self):
+        return self.session_completed / self.elapsed if self.elapsed > 1 else 0
     @property
     def current_throughput(self):
         now = time.monotonic()
@@ -86,16 +90,28 @@ class Stats:
         span = now - recent[0]
         return len(recent) / span if span > 0.1 else 0
     @property
+    def eta_throughput(self):
+        if len(self._eta_window) < 2: return self.current_throughput
+        window = list(self._eta_window)
+        span = window[-1][0] - window[0][0]
+        count = window[-1][1] - window[0][1]
+        return count / span if span > 1 else self.current_throughput
+    @property
     def eta_seconds(self):
-        rate = self.avg_throughput
+        rate = self.eta_throughput
         if rate <= 0: return 0
         return (self.total_records - self.completed) / rate
+    @property
+    def remaining(self):
+        return self.total_records - self.completed
 
     def record_batch(self, count: int):
         now = time.monotonic()
         for _ in range(count):
             self._recent_times.append(now)
         self.batches_received += 1
+        self.session_completed += count
+        self._eta_window.append((now, self.session_completed))
         if now - self._last_throughput_update >= 1.0:
             ct = self.current_throughput
             self._throughput_history.append(ct)
@@ -117,19 +133,25 @@ def format_duration(s: float) -> str:
     h, m = int(s // 3600), int((s % 3600) // 60)
     return f"{h}h {m:02d}m" if h > 0 else f"{m}m"
 
-def build_dashboard(stats: Stats) -> Panel:
+def build_dashboard(stats: Stats, db_writer=None) -> Panel:
     pct = (stats.completed / stats.total_records * 100) if stats.total_records else 0
     bar_w = 50
     filled = int(bar_w * pct / 100)
     bar = f"[green]{'█' * filled}[/green][dim]{'░' * (bar_w - filled)}[/dim]"
-    progress = f"  {bar}  {pct:5.1f}%  {stats.completed:,}\n  of {stats.total_records:,} records{'':>20}ETA: {format_duration(stats.eta_seconds)}"
+    eta_str = format_duration(stats.eta_seconds)
+    finish_str = ""
+    if stats.eta_seconds > 0:
+        finish_time = time.time() + stats.eta_seconds
+        finish_str = f"  (finishes ~{time.strftime('%H:%M', time.localtime(finish_time))})"
+    progress = f"  {bar}  {pct:5.1f}%  {stats.completed:,} / {stats.total_records:,}\n  Remaining: {stats.remaining:,}  |  This session: {stats.session_completed:,}  |  ETA: {eta_str}{finish_str}"
 
     tp = Table.grid(padding=(0, 1))
     tp.add_row("[bold]Current:[/bold]", f"{stats.current_throughput:>6.1f} rec/s")
-    tp.add_row("[bold]Average:[/bold]", f"{stats.avg_throughput:>6.1f} rec/s")
+    tp.add_row("[bold]Session avg:[/bold]", f"{stats.session_throughput:>6.1f} rec/s")
+    tp.add_row("[bold]ETA rate:[/bold]", f"{stats.eta_throughput:>6.1f} rec/s")
     tp.add_row("[bold]Peak:[/bold]", f"{stats.peak_throughput:>6.1f} rec/s")
     tp.add_row("", f"[dim]{stats.sparkline()}[/dim]")
-    tp_panel = Panel(tp, title="Throughput", border_style="blue", width=30)
+    tp_panel = Panel(tp, title="Throughput", border_style="blue", width=34)
 
     dp = Table.grid(padding=(0, 1))
     dp.add_row("[bold]Grapes:[/bold]", f"{stats.grapes_found:>12,}")
@@ -138,18 +160,24 @@ def build_dashboard(stats: Stats) -> Panel:
     dp.add_row("[bold]ABV:[/bold]", f"{stats.abv_found:>12,}")
     dp.add_row("[bold]Applicant:[/bold]", f"{stats.applicant_found:>12,}")
     dp.add_row("[bold]Images:[/bold]", f"{stats.images_found:>12,}")
-    ext_pct = (stats.fields_extracted / stats.completed * 100) if stats.completed else 0
+    ext_pct = (stats.fields_extracted / stats.session_completed * 100) if stats.session_completed else 0
     dp.add_row("[bold]Has data:[/bold]", f"{stats.fields_extracted:>8,}  [dim]({ext_pct:.1f}%)[/dim]")
     dp_panel = Panel(dp, title="Extracted", border_style="magenta", width=34)
 
     np_t = Table.grid(padding=(0, 1))
     np_t.add_row("[bold]Batches:[/bold]", f"{stats.batches_received:>8,}")
-    err_pct = (stats.errors / stats.completed * 100) if stats.completed else 0
+    err_pct = (stats.errors / max(1, stats.session_completed) * 100)
     np_t.add_row("[bold]Errors:[/bold]", f"{stats.errors:>8,}  [dim]({err_pct:.3f}%)[/dim]")
     if stats.waf_blocks > 0:
         np_t.add_row("[bold red]WAF blocks:[/bold red]", f"[red]{stats.waf_blocks:>8,}[/red]")
+    else:
+        np_t.add_row("[bold]WAF blocks:[/bold]", f"[green]{stats.waf_blocks:>8,}[/green]")
     np_t.add_row("[bold]JS errors:[/bold]", f"{stats.js_errors:>8,}")
-    np_panel = Panel(np_t, title="Network", border_style="red", width=34)
+    if db_writer:
+        np_t.add_row("[bold]DB writes:[/bold]", f"{db_writer.total_written:>8,}")
+        if db_writer.write_errors > 0:
+            np_t.add_row("[bold red]DB errors:[/bold red]", f"[red]{db_writer.write_errors:>8,}[/red]")
+    np_panel = Panel(np_t, title="Network / DB", border_style="red", width=34)
 
     era_t = Table.grid(padding=(0, 1))
     for era in sorted(stats.era_totals.keys()):
@@ -169,7 +197,7 @@ def build_dashboard(stats: Stats) -> Panel:
 
     elapsed_str = format_duration(stats.elapsed)
     started = time.strftime("%Y-%m-%d %H:%M", time.localtime(time.time() - stats.elapsed))
-    footer = f"  Started: {started}  |  Elapsed: {elapsed_str}  |  Batches: {stats.batches_received}  |  Ctrl+C to stop"
+    footer = f"  Started: {started}  |  Elapsed: {elapsed_str}  |  Ctrl+C to stop gracefully"
 
     layout = Table.grid(padding=(1, 0))
     layout.add_row(Text(progress, style="bold"))
@@ -181,7 +209,7 @@ def build_dashboard(stats: Stats) -> Panel:
     layout.add_row(rec_panel)
     layout.add_row(Text(footer, style="dim"))
 
-    return Panel(layout, title="[bold white] TTB COLA Printable Scraper [/bold white]", border_style="bold white")
+    return Panel(layout, title="[bold white] TTB COLA Printable Scraper (port 8766) [/bold white]", border_style="bold white")
 
 
 # ─── Checkpoint ──────────────────────────────────────────────────────────────
@@ -230,30 +258,34 @@ class DbWriter:
 
     def write_batch(self, rows: list[dict]):
         with self._lock:
-            try:
-                sb = self._get_sb()
-                sb.table("source_ttb_colas").upsert(
-                    rows, on_conflict="ttb_id"
-                ).execute()
-                self.total_written += len(rows)
-            except Exception:
-                self.write_errors += 1
-                # Retry one by one
-                sb = self._get_sb()
-                for row in rows:
-                    try:
-                        sb.table("source_ttb_colas").upsert(
-                            row, on_conflict="ttb_id"
-                        ).execute()
-                        self.total_written += 1
-                    except Exception:
-                        self.write_errors += 1
+            # Write in chunks of 20 to avoid statement timeout on bloated table
+            for i in range(0, len(rows), 20):
+                chunk = rows[i:i+20]
+                try:
+                    sb = self._get_sb()
+                    sb.table("source_ttb_colas").upsert(
+                        chunk, on_conflict="ttb_id"
+                    ).execute()
+                    self.total_written += len(chunk)
+                except Exception:
+                    # Retry one by one
+                    for row in chunk:
+                        try:
+                            sb = self._get_sb()
+                            sb.table("source_ttb_colas").upsert(
+                                row, on_conflict="ttb_id"
+                            ).execute()
+                            self.total_written += 1
+                        except Exception:
+                            self.write_errors += 1
 
 
 # ─── Record List ─────────────────────────────────────────────────────────────
 
 def get_era(year: int) -> str:
-    if year < 2000: return "1999"
+    if year < 1980: return "pre-1980"
+    if year < 1990: return "1980-89"
+    if year < 2000: return "1990-99"
     if year < 2005: return "2000-04"
     if year < 2010: return "2005-09"
     elif year < 2015: return "2010-14"
@@ -261,40 +293,84 @@ def get_era(year: int) -> str:
     else: return "2020+"
 
 
-def fetch_record_list(start_year: int, limit: int | None = None) -> list[dict]:
-    """Fetch records that are missing printable-page fields (appellation, applicant)."""
+def fetch_year_keyset(sb, year: int, wine_classes: list) -> list[dict]:
+    """Fetch records for a single year using keyset pagination (gt ttb_id)."""
+    all_records = []
+    last_id = ""
+    batch_size = 500
+    while True:
+        try:
+            result = (sb.table("source_ttb_colas")
+                .select("ttb_id,brand_name,completed_date")
+                .in_("class_type", wine_classes)
+                .gte("completed_date", f"{year}-01-01")
+                .lt("completed_date", f"{year + 1}-01-01")
+                .gt("ttb_id", last_id)
+                .order("ttb_id")
+                .limit(batch_size)
+            ).execute()
+        except Exception as e:
+            if "timeout" in str(e).lower():
+                batch_size = max(100, batch_size // 2)
+                time.sleep(2)
+                continue
+            print(f"\n  Error {year}: {str(e)[:80]}")
+            time.sleep(2)
+            continue
+        if not result.data: break
+        all_records.extend(result.data)
+        last_id = result.data[-1]["ttb_id"]
+        if len(result.data) < batch_size: break
+        batch_size = min(500, batch_size * 2)
+    return all_records
+
+
+def fetch_record_list(start_year: int, limit: int | None = None, only_001: bool = False) -> list[dict]:
+    """Fetch all wine COLAs using keyset pagination (avoids OFFSET timeout)."""
     sb = get_supabase()
     all_records = []
-    batch_size = 1000
+    wine_classes = ["80", "81", "80A", "84", "88", "8000", "8100", "8400", "8800"]
     current_year = time.localtime().tm_year
+
     for year in range(start_year, current_year + 1):
-        year_start = f"{year}-01-01"
-        year_end = f"{year}-12-31"
-        offset = 0
+        records = fetch_year_keyset(sb, year, wine_classes)
+        all_records.extend(records)
+        print(f"  {year}: {len(records):>8,}  total: {len(all_records):,}")
+        if limit and len(all_records) >= limit:
+            all_records = all_records[:limit]
+            break
+
+    # Pass 2: NULL completed_date
+    if not limit or len(all_records) < limit:
+        last_id = ""
+        null_count = 0
         while True:
             try:
                 result = (sb.table("source_ttb_colas")
                     .select("ttb_id,brand_name,completed_date")
-                    .eq("status", "APPROVED")
-                    .in_("class_type", ["80", "81", "80A", "84", "88"])
-                    .gte("completed_date", year_start)
-                    .lte("completed_date", year_end)
+                    .in_("class_type", wine_classes)
+                    .is_("completed_date", "null")
+                    .gt("ttb_id", last_id)
                     .order("ttb_id")
-                    .range(offset, offset + batch_size - 1)
+                    .limit(500)
                 ).execute()
             except Exception as e:
-                print(f"\n  Retry {year} offset {offset}: {str(e)[:80]}")
                 time.sleep(2)
                 continue
             if not result.data: break
             all_records.extend(result.data)
-            if len(result.data) < batch_size: break
-            offset += batch_size
-        print(f"  {year}: {len(all_records):,} total", end="\r")
-        if limit and len(all_records) >= limit:
-            all_records = all_records[:limit]
-            break
-    print(f"  Fetched {len(all_records):,} records (all wine COLAs since {start_year})")
+            null_count += len(result.data)
+            last_id = result.data[-1]["ttb_id"]
+            if len(result.data) < 500: break
+        if null_count > 0:
+            print(f"  NULL-date: {null_count:,} added")
+
+    if only_001:
+        before = len(all_records)
+        all_records = [r for r in all_records if len(r["ttb_id"]) >= 14 and r["ttb_id"][5:8] == "001"]
+        print(f"  Filtered to 001-only: {before:,} → {len(all_records):,}")
+
+    print(f"  Fetched {len(all_records):,} records")
     return all_records
 
 
@@ -320,8 +396,8 @@ def make_handler(stats, checkpoint, db_writer, record_queue, queue_lock):
             if self.path == "/batch":
                 with queue_lock:
                     batch = []
-                    while len(batch) < 50 and record_queue:
-                        batch.append(record_queue.pop(0))
+                    while len(batch) < 100 and record_queue:
+                        batch.append(record_queue.popleft())
 
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json")
@@ -407,12 +483,9 @@ def make_handler(stats, checkpoint, db_writer, record_queue, queue_lock):
                         if fields.get("applicant_name"):
                             stats.applicant_found += 1
 
-                        if fields.get("image_ids"):
-                            row["label_image_urls"] = [
-                                f"https://ttbonline.gov/colasonline/publicViewImage.do?id={img_id}"
-                                for img_id in fields["image_ids"]
-                            ]
-                            stats.images_found += len(fields["image_ids"])
+                        if fields.get("label_image_urls"):
+                            row["label_image_urls"] = fields["label_image_urls"]
+                            stats.images_found += len(fields["label_image_urls"])
 
                         has_data = len(row) > 2  # More than ttb_id + printable_scraped_at
                         if has_data:
@@ -465,15 +538,17 @@ def make_handler(stats, checkpoint, db_writer, record_queue, queue_lock):
 def main():
     parser = argparse.ArgumentParser(description="TTB COLA Printable Page Scraper")
     parser.add_argument("--output-dir", type=str, default=str(DEFAULT_OUTPUT))
-    parser.add_argument("--start-year", type=int, default=1999)
+    parser.add_argument("--start-year", type=int, default=1955)
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--refresh-list", action="store_true")
     parser.add_argument("--reset", action="store_true")
     parser.add_argument("--rebuild-checkpoint", action="store_true",
                         help="Rebuild checkpoint from DB — skips already-scraped records")
     parser.add_argument("--port", type=int, default=SERVER_PORT)
-    parser.add_argument("--concurrency", type=int, default=20,
-                        help="JS fetch concurrency (default: 20)")
+    parser.add_argument("--concurrency", type=int, default=50,
+                        help="JS fetch concurrency (default: 40)")
+    parser.add_argument("--only-001", action="store_true",
+                        help="Only scrape 14-digit 001 IDs (which have printable pages)")
     args = parser.parse_args()
 
     if sys.platform == "win32":
@@ -485,23 +560,15 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=True)
     console = Console()
 
-    # ── Record list ── (reuse detail scraper's cached list)
+    # ── Record list ──
     console.print(f"\n[bold]Fetching record list (since {args.start_year})...[/bold]")
-    detail_cache = Path.home() / "Desktop" / "Loam Cowork" / "data" / "imports" / "ttb_cola_labels" / "record_list.json"
-    cache_file = output_dir / "record_list_printable.json"
+    cache_suffix = "_001" if args.only_001 else ""
+    cache_file = output_dir / f"record_list_printable{cache_suffix}.json"
     if cache_file.exists() and not args.refresh_list:
         records = json.loads(cache_file.read_text(encoding="utf-8"))
         console.print(f"  Loaded {len(records):,} records from cache.")
-    elif detail_cache.exists():
-        # Always prefer detail scraper's cached list — no DB query needed
-        console.print(f"  Loading from detail scraper cache...")
-        records = json.loads(detail_cache.read_text(encoding="utf-8"))
-        console.print(f"  Loaded {len(records):,} records from detail scraper cache.")
-        if args.limit:
-            records = records[:args.limit]
-        cache_file.write_text(json.dumps(records), encoding="utf-8")
     else:
-        records = fetch_record_list(args.start_year, args.limit)
+        records = fetch_record_list(args.start_year, args.limit, only_001=args.only_001)
         cache_file.write_text(json.dumps(records), encoding="utf-8")
 
     for r in records:
@@ -517,7 +584,10 @@ def main():
     already_done = len(checkpoint.completed)
 
     if args.rebuild_checkpoint:
+        # Only skip records that have BOTH printable data AND image URLs.
+        # Records scraped without images get re-queued for image extraction.
         console.print(f"  [yellow]Rebuilding checkpoint from DB (old: {already_done:,})...[/yellow]")
+        console.print(f"  [yellow]Condition: printable_scraped_at IS NOT NULL AND label_image_urls IS NOT NULL[/yellow]")
         sb = get_supabase()
         real_done = set()
         current_year = time.localtime().tm_year
@@ -530,7 +600,8 @@ def main():
                 try:
                     result = (sb.table("source_ttb_colas")
                               .select("ttb_id")
-                              .not_.is_("wine_appellation", "null")
+                              .not_.is_("printable_scraped_at", "null")
+                              .not_.is_("label_image_urls", "null")
                               .gte("completed_date", year_start)
                               .lte("completed_date", year_end)
                               .order("ttb_id")
@@ -555,7 +626,7 @@ def main():
         checkpoint = Checkpoint(checkpoint_file)
         checkpoint.load()
         already_done = len(checkpoint.completed)
-        console.print(f"  [green]Checkpoint rebuilt: {already_done:,} verified records[/green]")
+        console.print(f"  [green]Checkpoint rebuilt: {already_done:,} verified records (have both data + images)[/green]")
 
     if args.reset:
         console.print(f"  [yellow]Reset: clearing checkpoint ({already_done:,} entries)[/yellow]")
@@ -576,7 +647,7 @@ def main():
 
     # ── Stats ──
     stats = Stats()
-    stats.total_records = len(records)
+    stats.total_records = already_done + len(remaining)
     stats.completed = already_done
     stats.start_time = time.monotonic()
     for r in records:
@@ -588,10 +659,10 @@ def main():
             stats.era_done[era] = stats.era_done.get(era, 0) + 1
 
     # ── Build queue ──
-    record_queue = [
+    record_queue = deque(
         {"ttb_id": r["ttb_id"], "brand": r.get("brand_name", ""), "era": r["era_name"]}
         for r in remaining
-    ]
+    )
     queue_lock = threading.Lock()
 
     db_writer = DbWriter()
@@ -613,7 +684,7 @@ def main():
             "total": stats.total_records,
             "remaining": len(record_queue),
             "pct": round(stats.completed / stats.total_records * 100, 2) if stats.total_records else 0,
-            "avg_rec_per_sec": round(stats.avg_throughput, 1),
+            "avg_rec_per_sec": round(stats.session_throughput, 1),
             "current_rec_per_sec": round(stats.current_throughput, 1),
             "peak_rec_per_sec": round(stats.peak_throughput, 1),
             "eta_hours": round(stats.eta_seconds / 3600, 1) if stats.eta_seconds > 0 else 0,
@@ -637,7 +708,7 @@ def main():
 
     # ── Start HTTP server ──
     HandlerClass = make_handler(stats, checkpoint, db_writer, record_queue, queue_lock)
-    server = HTTPServer(("127.0.0.1", args.port), HandlerClass)
+    server = ThreadingHTTPServer(("127.0.0.1", args.port), HandlerClass)
     server_thread = threading.Thread(target=server.serve_forever, daemon=True)
     server_thread.start()
 
@@ -656,10 +727,10 @@ def main():
     last_log_time = time.monotonic()
     last_completed = stats.completed
     try:
-        with Live(build_dashboard(stats), console=console, refresh_per_second=2) as live:
+        with Live(build_dashboard(stats, db_writer), console=console, refresh_per_second=2) as live:
             while stats.completed < stats.total_records:
                 time.sleep(0.5)
-                live.update(build_dashboard(stats))
+                live.update(build_dashboard(stats, db_writer))
 
                 # Log every 30 seconds
                 now = time.monotonic()

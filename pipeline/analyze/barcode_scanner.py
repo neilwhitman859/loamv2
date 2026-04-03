@@ -10,6 +10,7 @@ Usage:
     python -m pipeline.analyze.barcode_scanner --limit 100             # test with 100
     python -m pipeline.analyze.barcode_scanner --output results.json   # custom output
     python -m pipeline.analyze.barcode_scanner --update-db             # write barcodes to source_ttb_colas
+    python -m pipeline.analyze.barcode_scanner --workers 12            # custom worker count
 """
 
 import argparse
@@ -17,28 +18,28 @@ import json
 import os
 import sys
 import time
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
-
-import zxingcpp
-from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 # ─── Constants ───────────────────────────────────────────────────────────────
 
-DEFAULT_IMAGE_DIR = Path.home() / "Desktop" / "Loam Cowork" / "data" / "images" / "ttb_labels"
+DEFAULT_IMAGE_DIR = Path.home() / "Desktop" / "Label Images" / "labels"
 DEFAULT_OUTPUT = Path(__file__).resolve().parents[2] / "data" / "imports" / "ttb_barcode_results.json"
 
 # Barcode types we care about for product identification
 UPC_TYPES = {"EAN13", "EAN8", "UPCA", "UPCE"}
 QR_TYPES = {"QRCode", "DataMatrix"}
-# Code39 on TTB labels is just the TTB ID itself — useful for validation but not product UPC
 
 
 # ─── Scanner ─────────────────────────────────────────────────────────────────
 
 def scan_image(img_path: str) -> list[dict]:
     """Scan a single image for barcodes. Returns list of detected codes."""
+    import zxingcpp
+    from PIL import Image
+
     try:
         img = Image.open(img_path)
         results = zxingcpp.read_barcodes(img)
@@ -73,6 +74,15 @@ def scan_image(img_path: str) -> list[dict]:
         return [{"format": "error", "type": "error", "value": str(e)[:200]}]
 
 
+def scan_batch(batch: list[tuple[str, str]]) -> list[tuple[str, str, list[dict]]]:
+    """Scan a batch of images. Worker function for multiprocessing."""
+    results = []
+    for ttb_id, img_path in batch:
+        codes = scan_image(img_path)
+        results.append((ttb_id, img_path, codes))
+    return results
+
+
 def find_all_images(image_dir: Path) -> list[tuple[str, str]]:
     """Find all label images, return (ttb_id, image_path) tuples."""
     results = []
@@ -83,8 +93,9 @@ def find_all_images(image_dir: Path) -> list[tuple[str, str]]:
             if not ttb_dir.is_dir():
                 continue
             ttb_id = ttb_dir.name
-            for img_file in sorted(ttb_dir.glob("*.jpg")):
-                results.append((ttb_id, str(img_file)))
+            for img_file in sorted(ttb_dir.glob("*")):
+                if img_file.suffix.lower() in (".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff"):
+                    results.append((ttb_id, str(img_file)))
     return results
 
 
@@ -95,6 +106,8 @@ def main():
     parser.add_argument("--image-dir", type=str, default=str(DEFAULT_IMAGE_DIR))
     parser.add_argument("--output", type=str, default=str(DEFAULT_OUTPUT))
     parser.add_argument("--limit", type=int, help="Max images to scan")
+    parser.add_argument("--workers", type=int, default=max(1, os.cpu_count() - 2),
+                        help="Number of parallel workers (default: CPU count - 2)")
     parser.add_argument("--update-db", action="store_true", help="Write UPC barcodes to source_ttb_colas")
     args = parser.parse_args()
 
@@ -104,6 +117,7 @@ def main():
     print("=== TTB Label Barcode Scanner ===")
     print(f"  Image dir: {image_dir}")
     print(f"  Output: {output_path}")
+    print(f"  Workers: {args.workers}")
     print()
 
     # Find all images
@@ -115,11 +129,22 @@ def main():
         images = images[:args.limit]
         print(f"  Limited to {len(images):,}")
 
-    # Scan
-    print("\nScanning for barcodes...")
+    if not images:
+        print("No images found.")
+        return
+
+    # Split into batches for workers (256 images per batch)
+    batch_size = 256
+    batches = []
+    for i in range(0, len(images), batch_size):
+        batches.append(images[i:i + batch_size])
+
+    print(f"  {len(batches):,} batches of ~{batch_size} images")
+
+    # Scan with multiprocessing
+    print(f"\nScanning for barcodes with {args.workers} workers...")
     start_time = time.time()
 
-    # Results grouped by TTB ID
     by_ttb: dict[str, dict] = {}
     total_scanned = 0
     total_upc = 0
@@ -127,58 +152,65 @@ def main():
     total_code39 = 0
     total_no_barcode = 0
     errors = 0
+    batches_done = 0
 
-    for i, (ttb_id, img_path) in enumerate(images):
-        codes = scan_image(img_path)
-        total_scanned += 1
+    with ProcessPoolExecutor(max_workers=args.workers) as pool:
+        futures = {pool.submit(scan_batch, b): b for b in batches}
 
-        if ttb_id not in by_ttb:
-            by_ttb[ttb_id] = {
-                "ttb_id": ttb_id,
-                "upcs": [],
-                "qr_codes": [],
-                "code39": [],
-                "other": [],
-                "image_count": 0,
-            }
+        for future in as_completed(futures):
+            results = future.result()
+            batches_done += 1
 
-        rec = by_ttb[ttb_id]
-        rec["image_count"] += 1
+            for ttb_id, img_path, codes in results:
+                total_scanned += 1
 
-        has_upc = False
-        for code in codes:
-            if code["type"] == "error":
-                errors += 1
-            elif code["type"] == "upc":
-                if code["value"] not in rec["upcs"]:
-                    rec["upcs"].append(code["value"])
-                has_upc = True
-            elif code["type"] == "qr":
-                if code["value"] not in rec["qr_codes"]:
-                    rec["qr_codes"].append(code["value"])
-            elif code["type"] == "code39":
-                if code["value"] not in rec["code39"]:
-                    rec["code39"].append(code["value"])
-            else:
-                rec["other"].append(code)
+                if ttb_id not in by_ttb:
+                    by_ttb[ttb_id] = {
+                        "ttb_id": ttb_id,
+                        "upcs": [],
+                        "qr_codes": [],
+                        "code39": [],
+                        "other": [],
+                        "image_count": 0,
+                    }
 
-        if has_upc:
-            total_upc += 1
-        if any(c["type"] == "qr" for c in codes):
-            total_qr += 1
-        if any(c["type"] == "code39" for c in codes):
-            total_code39 += 1
-        if not codes or all(c["type"] == "error" for c in codes):
-            total_no_barcode += 1
+                rec = by_ttb[ttb_id]
+                rec["image_count"] += 1
 
-        if (i + 1) % 500 == 0 or i + 1 == len(images):
+                has_upc = False
+                for code in codes:
+                    if code["type"] == "error":
+                        errors += 1
+                    elif code["type"] == "upc":
+                        if code["value"] not in rec["upcs"]:
+                            rec["upcs"].append(code["value"])
+                        has_upc = True
+                    elif code["type"] == "qr":
+                        if code["value"] not in rec["qr_codes"]:
+                            rec["qr_codes"].append(code["value"])
+                    elif code["type"] == "code39":
+                        if code["value"] not in rec["code39"]:
+                            rec["code39"].append(code["value"])
+                    else:
+                        rec["other"].append(code)
+
+                if has_upc:
+                    total_upc += 1
+                if any(c["type"] == "qr" for c in codes):
+                    total_qr += 1
+                if any(c["type"] == "code39" for c in codes):
+                    total_code39 += 1
+                if not codes or all(c["type"] == "error" for c in codes):
+                    total_no_barcode += 1
+
             elapsed = time.time() - start_time
-            rate = (i + 1) / elapsed if elapsed > 0 else 0
-            remaining = (len(images) - i - 1) / rate if rate > 0 else 0
+            rate = total_scanned / elapsed if elapsed > 0 else 0
+            remaining = (len(images) - total_scanned) / rate if rate > 0 else 0
+            remaining_h = remaining / 3600
             print(
-                f"  [{i+1:,}/{len(images):,}] "
-                f"UPC: {total_upc:,}  QR: {total_qr:,}  "
-                f"{rate:.0f} img/sec  ~{remaining:.0f}s left",
+                f"  [{total_scanned:,}/{len(images):,}] "
+                f"UPC: {total_upc:,}  QR: {total_qr:,}  Err: {errors:,}  "
+                f"{rate:.0f} img/s  ~{remaining_h:.1f}h left   ",
                 end="\r",
             )
 
@@ -195,6 +227,7 @@ def main():
     print(f"  Images scanned: {total_scanned:,}")
     print(f"  Unique TTB IDs: {len(by_ttb):,}")
     print(f"  Time: {elapsed:.1f}s ({total_scanned / elapsed:.0f} img/sec)")
+    print(f"  Workers: {args.workers}")
     print()
     print(f"  TTB labels with UPC/EAN: {ttb_with_upc:,} ({ttb_with_upc / len(by_ttb) * 100:.1f}%)")
     print(f"  TTB labels with QR code: {ttb_with_qr:,} ({ttb_with_qr / len(by_ttb) * 100:.1f}%)")
@@ -245,31 +278,21 @@ def update_db(by_ttb: dict[str, dict]):
     upc_records = [r for r in by_ttb.values() if r["upcs"]]
     print(f"  Writing {len(upc_records):,} UPC records...")
 
-    # We don't have a barcode column on source_ttb_colas yet, so store in metadata
-    # or create a separate results table. For now, just report — the JSON output
-    # is the bridge file that the merge engine will use.
-    #
-    # TODO: Add barcode column to source_ttb_colas, or use external_ids table
-    # during canonical promotion.
-
     batch_size = 100
     updated = 0
     for i in range(0, len(upc_records), batch_size):
         batch = upc_records[i:i + batch_size]
         for rec in batch:
             try:
-                # Store first UPC as the primary barcode
                 sb.table("source_ttb_colas").update({
                     "barcode": rec["upcs"][0],
                 }).eq("ttb_id", rec["ttb_id"]).execute()
                 updated += 1
             except Exception as e:
-                # barcode column may not exist yet
                 if "barcode" in str(e):
                     print(f"  Column 'barcode' not found on source_ttb_colas. Skipping DB update.")
                     print(f"  Results saved to JSON — use that for merge pipeline.")
                     return
-                pass
 
         print(f"  {min(i + batch_size, len(upc_records)):,}/{len(upc_records):,}", end="\r")
 

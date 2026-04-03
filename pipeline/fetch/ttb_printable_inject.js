@@ -4,8 +4,22 @@
 
 (async () => {
     const SERVER = 'http://localhost:8766';
-    const CONCURRENCY = 25;
+    const CONCURRENCY = 50;
     const PRINT_URL = 'https://ttbonline.gov/colasonline/viewColaDetails.do?action=publicFormDisplay&ttbid=';
+
+    // Chrome throttles setTimeout in background tabs to 1/min.
+    // MessageChannel callbacks are NOT throttled.
+    function delay(ms) {
+        return new Promise(resolve => {
+            const start = performance.now();
+            const ch = new MessageChannel();
+            ch.port1.onmessage = () => {
+                if (performance.now() - start >= ms) { ch.port1.close(); resolve(); }
+                else ch.port2.postMessage('');
+            };
+            ch.port2.postMessage('');
+        });
+    }
 
     function extractFields(html) {
         const fields = {};
@@ -90,22 +104,35 @@
             fields.field_15 = getField('15\\.');
         }
 
-        // === APPLICANT ADDRESS (from permit/plant registry block) ===
-        const addrBlock = html.match(/PLANT REGISTRY.*?<div\s+class="data">([\s\S]*?)<\/div>/i);
-        if (addrBlock) {
-            const text = addrBlock[1].replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, '')
-                .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim();
-            const lines = text.split('\n').map(s => s.trim()).filter(s => s);
-            for (const line of lines) {
-                const csz = line.match(/^(.+?),?\s+([A-Z]{2})\s+(\d{5}(?:-\d{4})?)$/);
-                if (csz) {
-                    fields.applicant_city = csz[1].replace(/,$/, '').trim();
-                    fields.applicant_state = csz[2];
-                    fields.applicant_zip = csz[3];
-                    break;
-                }
-                if (!fields.applicant_address && /^\d+\s/.test(line)) {
-                    fields.applicant_address = line;
+        // === APPLICANT ADDRESS ===
+        // Parse state/zip from applicant_dba (field 8) — contains "ST ZIP" but may have
+        // DBA/tradename text appended after (e.g. "...MN 55110 TWO SILO WINERY (Used on label)")
+        if (fields.applicant_dba) {
+            const szMatch = fields.applicant_dba.match(/\b([A-Z]{2})\s+(\d{5}(?:-\d{4})?)\b/);
+            if (szMatch) {
+                fields.applicant_state = szMatch[1];
+                fields.applicant_zip = szMatch[2];
+            }
+        }
+
+        // Fallback: try PLANT REGISTRY block for full address parsing (works ~8% — has <br> line breaks)
+        if (!fields.applicant_state) {
+            const addrBlock = html.match(/PLANT REGISTRY[\s\S]*?<div\s+class="data">([\s\S]*?)<\/div>/i);
+            if (addrBlock) {
+                const text = addrBlock[1].replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, '')
+                    .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim();
+                const lines = text.split('\n').map(s => s.trim()).filter(s => s);
+                for (const line of lines) {
+                    const csz = line.match(/^(.+?),?\s+([A-Z]{2})\s+(\d{5}(?:-\d{4})?)$/);
+                    if (csz) {
+                        fields.applicant_city = csz[1].replace(/,$/, '').trim();
+                        fields.applicant_state = csz[2];
+                        fields.applicant_zip = csz[3];
+                        break;
+                    }
+                    if (!fields.applicant_address && /^\d+\s/.test(line)) {
+                        fields.applicant_address = line;
+                    }
                 }
             }
         }
@@ -132,9 +159,16 @@
             if (c && c !== '\u00A0') fields.total_bottle_capacity = c;
         }
 
-        // === IMAGE IDs ===
-        const imageIds = [...html.matchAll(/imageWindow\(['"]?(\d+)['"]?\)/g)].map(m => m[1]);
-        if (imageIds.length > 0) fields.image_ids = imageIds;
+        // === LABEL IMAGE URLs ===
+        // Printable pages use <img src="/colasonline/publicViewAttachment.do?filename=X&filetype=l">
+        // (NOT imageWindow() — that's detail-page only)
+        const attachUrls = [...html.matchAll(/src="([^"]*publicViewAttachment\.do\?filename=([^&"]+)&filetype=([^"&]+))"/gi)];
+        if (attachUrls.length > 0) {
+            fields.label_image_urls = attachUrls.map(m =>
+                'https://ttbonline.gov' + (m[1].startsWith('/') ? '' : '/colasonline/') + m[1]
+            );
+            fields.label_filenames = attachUrls.map(m => decodeURIComponent(m[2]));
+        }
 
         // Remove null/undefined values
         return Object.fromEntries(Object.entries(fields).filter(([k, v]) => v != null));
@@ -157,7 +191,7 @@
             batch = await batchResp.json();
         } catch (e) {
             console.log('%c[TTB Printable] Server unreachable, retrying in 5s...', 'color: red');
-            await new Promise(r => setTimeout(r, 5000));
+            await delay(5000);
             continue;
         }
 
@@ -221,7 +255,7 @@
             });
         } catch (e) {
             console.log('%c[TTB Printable] Failed to send results, retrying...', 'color: red');
-            await new Promise(r => setTimeout(r, 2000));
+            await delay(2000);
             continue;
         }
 
