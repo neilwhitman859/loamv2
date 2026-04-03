@@ -392,13 +392,15 @@ Staging-first architecture: all external data goes through per-source staging ta
 - Flatiron linking (4.1K wines, structured tags)
 
 ### What's Not There Yet
-- **wine_vintages: 135,911** across 65,875 wines.
-- **wine_vintage_scores: 17,852** across 7,037 wines.
+- **wine_vintages: 136,384** across 66,074 wines.
+- **wine_vintage_scores: 17,852** across 7,037 wines — Berliner + TEXSOM + importer.
 - **wine_grapes: 85,622** across 70,638 wines.
-- **wine_vintage_prices: 9,013** across 5,360 wines — Spec's (2.8K) + Wally's (6.2K).
-- **UPC barcodes: 3,095** in external_ids (Spec's).
+- **wine_vintage_prices: 9,013** across 5,360 wines — Spec's + Wally's + BC Liquor.
+- **UPC barcodes: 3,095** in external_ids — Spec's (2.1K) + BC Liquor (1K).
+- **COLA IDs: 115,556** in external_ids.
 - **winemakers: 0** — cleared during LWIN promotion.
 - **TTB back-linking COMPLETE** — 360K TTB records linked to 116K canonical wines.
+- **Flatiron + remaining retailers** — need Python batch approach (SQL-over-MCP times out on complex producer matching with suffix stripping against 33K producers).
 - Most insight tables empty (wine, producer, grape, wine_vintage)
 - All weather data (appellation_vintages) — Open-Meteo schema design pending
 - All document tables
