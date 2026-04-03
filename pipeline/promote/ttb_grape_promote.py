@@ -4,6 +4,9 @@ Promote grape data from TTB records to wine_grapes table.
 For each canonical wine that lacks grape data, finds TTB records via
 canonical_wine_id index and resolves the grape_varietals string.
 
+Uses direct Postgres (psycopg2) instead of Supabase REST API to avoid
+HTTP/2 ConnectionTerminated errors on the 3.28M-row source_ttb_colas table.
+
 Usage:
     python -m pipeline.promote.ttb_grape_promote [--limit 10000] [--dry-run]
 """
@@ -15,7 +18,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from pipeline.lib.db import get_supabase, batch_insert
+from pipeline.lib.db import get_conn
 from pipeline.lib.resolve import ReferenceResolver
 
 
@@ -23,10 +26,10 @@ def parse_grape_string(s):
     """Parse TTB grape_varietals string into [(name, percentage), ...].
 
     Examples:
-        "CABERNET SAUVIGNON" → [("Cabernet Sauvignon", None)]
-        "100% PINOT NOIR" → [("Pinot Noir", 100)]
-        "75% CABERNET SAUVIGNON, 25% MERLOT" → [("Cabernet Sauvignon", 75), ("Merlot", 25)]
-        "CHARDONNAY/PINOT NOIR" → [("Chardonnay", None), ("Pinot Noir", None)]
+        "CABERNET SAUVIGNON" -> [("Cabernet Sauvignon", None)]
+        "100% PINOT NOIR" -> [("Pinot Noir", 100)]
+        "75% CABERNET SAUVIGNON, 25% MERLOT" -> [("Cabernet Sauvignon", 75), ("Merlot", 25)]
+        "CHARDONNAY/PINOT NOIR" -> [("Chardonnay", None), ("Pinot Noir", None)]
     """
     if not s:
         return []
@@ -62,98 +65,71 @@ def parse_grape_string(s):
 
 def main():
     import argparse
+    from psycopg2.extras import execute_values
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=50000)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
-    sb = get_supabase()
+    conn = get_conn()
+    cur = conn.cursor()
 
-    # Load grape resolver
+    # Load grape resolver (uses REST API internally for light reference reads -- that's fine)
     print("Loading grape resolver...")
     resolver = ReferenceResolver(verbose=True)
     resolver.init_sync()
 
-    # Get wine IDs that need grapes (have no wine_grapes entries)
-    # Use a SQL approach: wines NOT IN wine_grapes, created recently (Tier C)
+    # Find ALL wines without grape data using a single SQL query with LEFT JOIN
+    # No created_at filter -- processes the entire catalog
     print("Finding wines without grape data...")
-    wines_needing_grapes = []
-    offset = 0
-    while True:
-        result = (sb.table("wines")
-                  .select("id")
-                  .is_("deleted_at", "null")
-                  .gte("created_at", "2026-04-02")  # Tier C wines
-                  .range(offset, offset + 999)
-                  .execute())
-        wines_needing_grapes.extend([r["id"] for r in result.data])
-        if len(result.data) < 1000:
-            break
-        offset += 1000
-    print(f"  {len(wines_needing_grapes)} Tier C wines")
-
-    # Filter to those without grapes
-    # Check in batches
-    print("Filtering to wines without grapes...")
-    wines_without_grapes = []
-    for i in range(0, len(wines_needing_grapes), 200):
-        batch = wines_needing_grapes[i:i + 200]
-        result = (sb.table("wine_grapes")
-                  .select("wine_id")
-                  .in_("wine_id", batch)
-                  .execute())
-        has_grapes = {r["wine_id"] for r in result.data}
-        wines_without_grapes.extend([wid for wid in batch if wid not in has_grapes])
-
+    cur.execute("""
+        SELECT w.id
+        FROM wines w
+        LEFT JOIN wine_grapes wg ON wg.wine_id = w.id
+        WHERE w.deleted_at IS NULL
+          AND wg.wine_id IS NULL
+    """)
+    wines_without_grapes = [row[0] for row in cur.fetchall()]
     print(f"  {len(wines_without_grapes)} wines without grapes")
 
     if args.limit and len(wines_without_grapes) > args.limit:
         wines_without_grapes = wines_without_grapes[:args.limit]
         print(f"  Limited to {args.limit}")
 
-    # Batch-load TTB grape data for target wines
-    # Query in chunks to avoid HTTP/2 connection pool exhaustion
-    print("Loading grape data from TTB (batched)...")
-    target_set = set(wines_without_grapes)
-    wine_grape_map = {}  # wine_id → grape_string
+    if not wines_without_grapes:
+        print("No wines need grape data.")
+        cur.close()
+        conn.close()
+        return
 
-    # Paginate through TTB records that have grape data and are linked to canonical
-    chunk_size = 500
-    wine_list = list(wines_without_grapes)
-    for chunk_start in range(0, len(wine_list), chunk_size):
-        chunk = wine_list[chunk_start:chunk_start + chunk_size]
-        try:
-            result = (sb.table("source_ttb_colas")
-                      .select("canonical_wine_id,grape_varietals")
-                      .in_("canonical_wine_id", chunk)
-                      .not_.is_("grape_varietals", "null")
-                      .limit(5000)
-                      .execute())
-            for r in result.data:
-                wid = r["canonical_wine_id"]
-                if wid not in wine_grape_map:  # keep first match
-                    wine_grape_map[wid] = r["grape_varietals"]
-        except Exception as e:
-            print(f"  Warning: chunk {chunk_start} failed ({e}), reconnecting...")
-            sb = get_supabase()
-            try:
-                result = (sb.table("source_ttb_colas")
-                          .select("canonical_wine_id,grape_varietals")
-                          .in_("canonical_wine_id", chunk)
-                          .not_.is_("grape_varietals", "null")
-                          .limit(5000)
-                          .execute())
-                for r in result.data:
-                    wid = r["canonical_wine_id"]
-                    if wid not in wine_grape_map:
-                        wine_grape_map[wid] = r["grape_varietals"]
-            except Exception as e2:
-                print(f"  Error: chunk {chunk_start} failed again ({e2}), skipping")
-                continue
+    # Load TTB grape data for target wines using a single JOIN query
+    # Uses a temp table to pass the wine ID list efficiently
+    print("Loading grape data from TTB...")
+    cur.execute("""
+        CREATE TEMP TABLE _target_wines (wine_id uuid)
+    """)
+    execute_values(
+        cur,
+        "INSERT INTO _target_wines (wine_id) VALUES %s",
+        [(wid,) for wid in wines_without_grapes],
+        page_size=5000,
+    )
+    cur.execute("""
+        SELECT DISTINCT ON (t.canonical_wine_id)
+            t.canonical_wine_id, t.grape_varietals
+        FROM source_ttb_colas t
+        JOIN _target_wines tw ON tw.wine_id = t.canonical_wine_id
+        WHERE t.grape_varietals IS NOT NULL
+          AND t.canonical_wine_id IS NOT NULL
+        ORDER BY t.canonical_wine_id, t.id
+    """)
+    wine_grape_map = {}
+    for row in cur:
+        wine_grape_map[row[0]] = row[1]
 
-        if (chunk_start + chunk_size) % 5000 == 0:
-            print(f"  {chunk_start + chunk_size}/{len(wine_list)} wines queried, "
-                  f"{len(wine_grape_map)} with grape data")
+    cur.execute("DROP TABLE IF EXISTS _target_wines")
+    conn.commit()
 
     print(f"  {len(wine_grape_map)} wines have TTB grape data")
 
@@ -175,11 +151,7 @@ def main():
         for name, pct in parsed:
             grape = resolver.resolve_grape(name)
             if grape:
-                wine_grapes.append({
-                    "wine_id": wine_id,
-                    "grape_id": grape["id"],
-                    "percentage": pct,
-                })
+                wine_grapes.append((wine_id, grape["id"], pct))
                 grapes_resolved += 1
             else:
                 grapes_unresolved += 1
@@ -207,12 +179,28 @@ def main():
 
     if args.dry_run:
         print("\n  DRY RUN")
+        cur.close()
+        conn.close()
         return
 
     if grape_inserts:
         print(f"\nInserting {len(grape_inserts)} grape links...")
-        inserted = batch_insert("wine_grapes", grape_inserts, batch_size=200)
+        execute_values(
+            cur,
+            """
+            INSERT INTO wine_grapes (wine_id, grape_id, percentage)
+            VALUES %s
+            ON CONFLICT DO NOTHING
+            """,
+            grape_inserts,
+            page_size=1000,
+        )
+        conn.commit()
+        inserted = cur.rowcount
         print(f"  Inserted: {inserted}")
+
+    cur.close()
+    conn.close()
 
 
 if __name__ == "__main__":
