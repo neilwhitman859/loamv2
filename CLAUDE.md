@@ -382,7 +382,7 @@ Staging-first architecture: all external data goes through per-source staging ta
 
 ### What's Not There Yet
 - **wine_vintages: 130,102** across 64,308 wines.
-- **wine_vintage_scores: ~1,008** across 343 wines — other session promoting importer scores.
+- **wine_vintage_scores: 17,852** across 7,037 wines — Berliner (3.6K scores), TEXSOM (13.3K scores), importer (1K scores).
 - **wine_grapes: 85,622** across 70,638 wines.
 - **wine_vintage_prices: 0** — no price data in canonical yet.
 - **winemakers: 0** — cleared during LWIN promotion.
