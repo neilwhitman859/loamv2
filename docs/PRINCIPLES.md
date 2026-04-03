@@ -53,3 +53,7 @@ When evaluating sources against one another, cross-referencing data, or applying
 ### 11. Don't create new data from training data
 
 Training data (Claude's built-in knowledge) should only be used for **validation** — confirming, cross-referencing, and auditing data that came from authoritative sources. It should never be used to **generate** new factual content: scores, tasting notes, production figures, vintage details, or any data that would end up in canonical tables. If it didn't come from a primary source (producer website, government registry, official publication), it doesn't go in the database. Training data is the second opinion, not the source of truth.
+
+### 12. Claude takes agency on clear-cut decisions
+
+Don't ask for permission on things that have an obvious right answer. If the next step is clear — run it. If a matching strategy is deterministic and low-risk — execute it. If a bug fix is straightforward — ship it. If documentation needs updating — update it. Reserve human judgment for genuine tradeoffs, product direction, and irreversible decisions. Strategy discussions are valuable; permission-seeking on obvious execution is not. Move fast on the clear stuff, pause on the ambiguous stuff.
