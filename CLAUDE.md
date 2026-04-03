@@ -167,8 +167,8 @@ Key deviations from original spec: vineyards got region_id + country_id + CHECK 
 
 **Soil types:** 39 soil types with drainage_rate, heat_retention, water_holding_capacity, geological_origin properties.
 
-### Content Tables (Phase 1c/1d, updated 2026-04-02)
-- **32,754 producers**, **190,209 wines** (189,359 LWIN + 850 from importers), **7,015 vintages**, **1,008 scores**, 0 prices, **3,576 wine_grapes**, 192,192 external_ids, **15,785 entity_classifications**, 0 winemakers, 0 farming certifications, 0 label designation links, 116 label designations, 0 wine_aliases, **2,902 producer_aliases**
+### Content Tables (Phase 1c/1d, updated 2026-04-03)
+- **32,754 producers**, **374,795 wines** (189K LWIN + 80K Tier C1 from TTB + 105K Tier C2 from TTB + 850 importers), **147,550 vintages**, **17,852 scores**, **10,889 prices**, **85,622 wine_grapes**, **119,232 external_ids** (116K COLA + 3.7K UPC), **15,785 entity_classifications**, 0 winemakers, 0 farming certifications, 0 label designation links, 116 label designations, 0 wine_aliases, **2,902 producer_aliases**
 - **Enrichment promotion (2026-04-02):** 3,575 wine_grapes (Skurnik 1,894 + KL 875 + Winebow 331 + EC 255 + Empson 220), 1,005 wine_vintage_scores (EC 768 + Winebow 237), 1,238 wines updated with soil/vinification/vine_age (KL 814 + EC 231 + Empson 193). 866 grape names unresolved (top: Palomino, Zinfandel, Gruner Veltliner, Cinsault — fixable with more VIVC aliases). Script: `pipeline/promote/importer_enrich.py`.
 - **Sparkling wine fix (2026-04-02):** 8,977 wines reclassified from table/still to sparkling/sparkling via keyword detection (Brut, Sekt, Cremant, Cava, Champagne, etc.) + sparkling-only appellations (Franciacorta, Trento, Alta Langa, Asti). Migration: `fix_sparkling_wines`. Wine type distribution now: table 93.6%, sparkling 4.7%, fortified 1.6%.
 - **Sonnet accuracy audit (2026-04-02):** 300 random wines audited by Sonnet for $0.05. 96% accuracy — 10/12 errors were the sparkling bug (fixed above), 2 were minor LWIN region misattributions. Non-sparkling data was 100% clean. Full results: `data/imports/audit_sonnet_300.json`.
@@ -369,9 +369,17 @@ Staging-first architecture: all external data goes through per-source staging ta
 - **Tier C slice 1** (new wines for existing producers):
   - 80K new wines created from TTB records with known producer + resolved appellation + grapes
   - Appellation resolver: direct + alias + unaccent matching (971K records resolvable)
-  - **270,167 total canonical wines** (was 190K)
-  - TTB→new-wine back-linking not yet complete (needs Python batch, SQL timeouts on 3M row table)
-- **Depth promoted:** 115.6K COLA IDs, 130.1K vintages (64.3K wines), 85.6K grape links (70.6K wines)
+- **Tier C slice 2** (2026-04-03):
+  - +104,628 new wines created from TTB records via SQL migration
+  - +43 appellation aliases for TTB-format accent-stripped French names
+  - TTB→wine back-linking: 110K pairs identified via `_tier_c2_pending` helper table, batch link running
+  - **374,795 total canonical wines** (was 270K)
+- **TTB producer re-linking (2026-04-03):**
+  - 839 brands linked to existing producers via normalized + suffix-stripped + &-vs-et matching
+  - +64,067 TTB records linked to canonical producers
+  - Scripts: `pipeline/promote/ttb_producer_relink.py`, `_ttb_producer_relink` mapping table
+  - Remaining: ~82K brand names with 5+ records still unmatched (many are genuinely new producers)
+- **Depth promoted:** 115.6K COLA IDs, 147.6K vintages, 85.6K grape links (70.6K wines)
 - **Search fix:** `search_catalog` v2 — unaccent + producer name matching. Findability 12%→83%.
 
 **Competition linking (2026-04-02):**
@@ -379,25 +387,30 @@ Staging-first architecture: all external data goes through per-source staging ta
 - TEXSOM: 14K records → 13.3K scores across 40 years of competitions
 - Enofile: skipped (small US regional competitions, low canonical overlap)
 
-**Retailer linking (2026-04-02):**
+**Retailer + monopoly linking (2026-04-02 + 2026-04-03):**
 - Spec's: 4,807 wines matched. **3,095 UPC barcodes** + 2,796 retail prices.
 - Wally's: 6,822 records matched. 6,217 prices + 5,809 vintages from title year parsing.
-- **First price data in canonical.** Matching via full-text search + producer name confirmation.
+- Flatiron: 761/4,130 wines matched (18.4%), 909 producers. 598 USD prices.
+- LCBO: 1,360/7,030 wines matched (19.3%), 4,282 producers. 464 UPCs, 550 CAD prices.
+- Systembolaget: 1,222/12,646 wines matched (9.7%), 772 producers. 556 SEK prices.
+- BC Liquor: 276/3,200 wines matched (8.6%), 706 producers. 117 UPCs, 172 CAD prices.
+- Script: `pipeline/promote/batch_matcher.py` (reusable, in-memory producer matching with suffix stripping)
+- Promotion: `pipeline/promote/retail_promote.py` (UPCs, prices, vintages)
 
 **Next steps (resume here):**
-- Tier C slice 2: create new producers from TTB brand names (115K unmatched brands)
-- Improve appellation resolver for TTB strings that are regions/countries (CALIFORNIA, MENDOZA, etc.)
+- TTB back-link C2 completing (110K wine pairs, running via `pipeline/promote/ttb_backlink_c2.py`)
+- Tier C slice 2 new producers: create from high-frequency unmatched TTB brands (82K brands, 1.6M records)
+- Depth promotion for newly linked wines: COLA IDs, vintages, grapes (server-side SQL function `promote_ttb_vintages()` exists)
+- Improve retailer matching rates (Systembolaget Swedish name translation, LCBO producer extraction)
 - Tier D (fuzzy tail): agent work, ongoing
-- BC Liquor linking (3.2K wines, UPCs + tasting notes)
-- Flatiron linking (4.1K wines, structured tags)
 
 ### What's Not There Yet
-- **wine_vintages: 136,384** across 66,074 wines.
+- **wine_vintages: 147,550** across ~80K wines.
 - **wine_vintage_scores: 17,852** across 7,037 wines — Berliner + TEXSOM + importer.
 - **wine_grapes: 85,622** across 70,638 wines.
-- **wine_vintage_prices: 9,013** across 5,360 wines — Spec's + Wally's + BC Liquor.
-- **UPC barcodes: 3,095** in external_ids — Spec's (2.1K) + BC Liquor (1K).
-- **COLA IDs: 115,556** in external_ids.
+- **wine_vintage_prices: 10,889** across ~6K wines — Spec's + Wally's + BC Liquor + Flatiron + LCBO + Systembolaget.
+- **UPC barcodes: 3,676** in external_ids — Spec's (2.1K) + BC Liquor (1K) + LCBO (0.5K).
+- **COLA IDs: 115,556** in external_ids (back-link for 110K new wine pairs in progress).
 - **winemakers: 0** — cleared during LWIN promotion.
 - **TTB back-linking COMPLETE** — 360K TTB records linked to 116K canonical wines.
 - **Flatiron + remaining retailers** — need Python batch approach (SQL-over-MCP times out on complex producer matching with suffix stripping against 33K producers).
