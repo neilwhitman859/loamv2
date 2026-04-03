@@ -104,9 +104,9 @@ Region insights (202), appellation insights (82), country insights (62). All oth
 
 ### Content Tables (updated 2026-04-03)
 Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for promotion/merge event history.
-- **~37K producers**, **~478K wines**, **~271K vintages**, **~18K scores**, **~18K prices**, **~182K wine_grapes**, **~479K external_ids** (364K COLA + 5K UPC + 189K LWIN), **~16K entity_classifications**
-- **284K wines linked to TTB** (666K TTB records linked)
-- **Readiness metric:** 38/100 (measured 2026-04-03, up from 8/100 on 2026-04-02)
+- **~37K producers**, **~478K wines**, **~279K vintages**, **~18K scores**, **~21K prices**, **~184K wine_grapes**, **~486K external_ids** (292K COLA + 5K UPC + 189K LWIN), **~16K entity_classifications**
+- **292K wines linked to TTB** (686K TTB records linked)
+- **Readiness metric:** 39/100 avg (3-run, measured 2026-04-03, up from 8/100 on 2026-04-02)
 - Alias tables seeded: 96 region, 75 label designation, 18,631 appellation
 - Sonnet accuracy audit: 96% on 300-sample ($0.05). Non-sparkling data 100% clean.
 - Sparkling wine fix applied: 8,977 reclassified. Distribution: table 93.6%, sparkling 4.7%, fortified 1.6%.
@@ -192,26 +192,32 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 
 **Completed (2026-04-03 data gaps session):**
 - TABC refresh: fetched 201K from Socrata, but 183K unique TTB after dedup — no net new records. Stale flag removed.
-- Grape promotion (full catalog): +2,511 grape links (179K → 182K). Fixed U+FFFD encoding corruption in `ttb_grape_promote.py` and `grape_from_helper.py`. Only ~9K wines in TTB have grape data for wines lacking it — 335K wines without grapes simply have no TTB grape_varietals field.
+- Grape promotion (full catalog): +2,511 grape links (179K → 184K). Fixed U+FFFD encoding corruption in `ttb_grape_promote.py` and `grape_from_helper.py`. Only ~9K wines in TTB have grape data for wines lacking it — 335K wines without grapes simply have no TTB grape_varietals field.
 - Phase B wine creation: +6,767 wines from 4,430 producers (471K → 478K wines). Script resume-safe, 0 errors.
-- COLA depth: 666K linked records scanned, 0 new COLA IDs, 2 new vintages — existing promotion already captured everything.
-- Readiness re-measured: **38/100** (up from 8/100 on 2026-04-02). Producer findability 73%, wine findability 39.5%, depth 0.74/4.
+- TTB wine linking: refreshed _tmp_wine_match (478K entries), linked 7,964 new TTB records to Phase B wines.
+- COLA depth (round 2): +8,089 vintages, +7,256 COLA IDs from newly linked wines.
+- Spec's promotion: +139 UPCs, +3,665 prices from linked Spec's records.
+- Retail promotion (Flatiron/LCBO/Systembolaget/BC Liquor): +45 UPCs, +93 prices, +1,280 vintages ensured.
+- Readiness re-measured: **39/100 avg** (3-run, up from 8/100 on 2026-04-02). Producer findability ~73%, wine findability ~39%, depth ~0.74/4.
 - DB password regenerated for psycopg2 connection (was stale).
+- **Schema assessment:** The schema is well-designed — 47 empty canonical tables all have matching data in staging sources. The gap is **zero promotion of depth data**, not missing columns. `wine_vintages` has 77 columns, only 2 populated. See `data/stats/2026-04-03.json`.
 
 **Next steps (resume here):**
-1. **Link Phase B wines back to TTB** — new wines need `canonical_wine_id` set on source_ttb_colas for COLA/vintage/grape data flow.
-2. **Enrichment pipeline MVP** — Edge Function + prompts. Next major phase after merge work stabilizes.
-3. **Tier D (fuzzy tail)** — AI-assisted matching for remaining unlinked staging records.
-4. **Depth gap** — scores (5%), grapes (13%), vintages (22.5%) are thin. Need importer catalog merge and/or enrichment pipeline.
-5. **Importer catalog merge** — 10K wines from Skurnik/KL/Empson/etc. against TTB+LWIN backbone.
+1. **Promote importer depth data** — Empson/Winebow/EC/KL have fermentation, oak, yeast, closure, aging, pH, RS, TA data. All canonical columns exist at 0 rows. ~2,700 wines could get deep winemaking data. **Highest ROI action.**
+2. **Promote producer metadata from KL Growers** — 193 growers with GPS, websites, founded year, production, farming. All columns exist, all empty.
+3. **Promote farming certifications** — ~36K possible links (TTB organic 33K + EC 443 + BC Liquor 115 + Systembolaget 2,166). Tables exist, 0 rows.
+4. **Promote label_image_url from TTB** — 1.82M label URLs for 292K linked wines. Column exists, 0 rows.
+5. **Compute score rollups** — 18K scores across 7K wines, but critic_score_avg not computed. Single SQL update.
+6. **Enrichment pipeline MVP** — Edge Function + prompts. Next major phase.
+7. **Tier D (fuzzy tail)** — AI-assisted matching for remaining unlinked staging records.
 
 ### Major Gaps
-- Most wines lack depth (vintages, scores, grapes are sparse relative to 478K wines)
+- **Depth data is the #1 gap:** wine_vintages has 77 columns, only abv populated. Importer sources have the data, just not promoted.
 - UPC barcodes: ~5K (barcode scan running should add ~64K)
 - All insight tables mostly empty. Enrichment pipeline not built yet (see `docs/ENRICHMENT.md`).
-- Weather data, document tables, soil/water body links, wine_relationships, producer_timeline — all empty.
-- Winemakers: 0 (cleared during LWIN promotion).
-- Retailers table: 0 rows.
+- 47 canonical tables at 0 rows (food pairings, farming certs, winemakers, descriptors, vineyards, etc.)
+- Weather data, soil/water body links, wine_relationships, producer_timeline — all empty.
+- Missing schema fields: serving_temperature, training_method, fermentation_duration/temp, vine_density at wine level, kosher status. Consider adding before importer depth promotion.
 
 ---
 
