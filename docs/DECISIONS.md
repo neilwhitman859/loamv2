@@ -720,3 +720,6 @@ Running two Python pipeline scripts simultaneously against Supabase causes `Conn
 
 ### 2026-04-02: Future feature — "Endless Paper" style infinite wine map
 Inspired by endlesspaper.app. Semantic zoom map of global wine geography: countries → regions → appellations → vineyards/producers. Data already exists (62 countries, 323 regions, 2,847 appellations with PostGIS boundaries, 2,158 containment hierarchy rows). Technical plan: swap Leaflet for MapLibre GL JS (continuous zoom, WebGL polygon rendering, style-driven layer visibility). Strip away standard map tiles — wine boundaries ARE the map, earth-tone canvas. Search-to-fly interaction. Come back to this after canonical data is populated.
+
+### 2026-04-03: Geography is open for refinement — avoid creating appellation duplicates
+The 3,662 appellations are built from official sources and multi-pass expert audited. All geographic data (appellations, regions, boundaries, attribution, hierarchy) is open for refinement, restructuring, and correction as needed — use good judgment. The one thing to watch for: don't create new appellations that duplicate existing ones (e.g., a "Napa Valley" variant alongside the existing entry). That would be a dedup crisis at scale. When in doubt, match to what exists rather than creating new.

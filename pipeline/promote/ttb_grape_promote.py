@@ -111,27 +111,61 @@ def main():
         wines_without_grapes = wines_without_grapes[:args.limit]
         print(f"  Limited to {args.limit}")
 
-    # For each wine, get grape data from TTB via canonical_wine_id index
-    print("Loading grape data from TTB...")
+    # Batch-load TTB grape data for target wines
+    # Query in chunks to avoid HTTP/2 connection pool exhaustion
+    print("Loading grape data from TTB (batched)...")
+    target_set = set(wines_without_grapes)
+    wine_grape_map = {}  # wine_id → grape_string
+
+    # Paginate through TTB records that have grape data and are linked to canonical
+    chunk_size = 500
+    wine_list = list(wines_without_grapes)
+    for chunk_start in range(0, len(wine_list), chunk_size):
+        chunk = wine_list[chunk_start:chunk_start + chunk_size]
+        try:
+            result = (sb.table("source_ttb_colas")
+                      .select("canonical_wine_id,grape_varietals")
+                      .in_("canonical_wine_id", chunk)
+                      .not_.is_("grape_varietals", "null")
+                      .limit(5000)
+                      .execute())
+            for r in result.data:
+                wid = r["canonical_wine_id"]
+                if wid not in wine_grape_map:  # keep first match
+                    wine_grape_map[wid] = r["grape_varietals"]
+        except Exception as e:
+            print(f"  Warning: chunk {chunk_start} failed ({e}), reconnecting...")
+            sb = get_supabase()
+            try:
+                result = (sb.table("source_ttb_colas")
+                          .select("canonical_wine_id,grape_varietals")
+                          .in_("canonical_wine_id", chunk)
+                          .not_.is_("grape_varietals", "null")
+                          .limit(5000)
+                          .execute())
+                for r in result.data:
+                    wid = r["canonical_wine_id"]
+                    if wid not in wine_grape_map:
+                        wine_grape_map[wid] = r["grape_varietals"]
+            except Exception as e2:
+                print(f"  Error: chunk {chunk_start} failed again ({e2}), skipping")
+                continue
+
+        if (chunk_start + chunk_size) % 5000 == 0:
+            print(f"  {chunk_start + chunk_size}/{len(wine_list)} wines queried, "
+                  f"{len(wine_grape_map)} with grape data")
+
+    print(f"  {len(wine_grape_map)} wines have TTB grape data")
+
+    # Resolve grapes in memory
+    print("Resolving grape names...")
     grape_inserts = []
     wines_resolved = 0
     grapes_resolved = 0
     grapes_unresolved = 0
     unresolved_names = {}
 
-    for i, wine_id in enumerate(wines_without_grapes):
-        # Query TTB record for this wine (uses the canonical_wine_id index)
-        result = (sb.table("source_ttb_colas")
-                  .select("grape_varietals")
-                  .eq("canonical_wine_id", wine_id)
-                  .not_.is_("grape_varietals", "null")
-                  .limit(1)
-                  .execute())
-
-        if not result.data:
-            continue
-
-        grape_string = result.data[0]["grape_varietals"]
+    for i, (wine_id, grape_string) in enumerate(wine_grape_map.items()):
         parsed = parse_grape_string(grape_string)
 
         if not parsed:
@@ -155,8 +189,8 @@ def main():
             grape_inserts.extend(wine_grapes)
             wines_resolved += 1
 
-        if (i + 1) % 2000 == 0:
-            print(f"  {i + 1}/{len(wines_without_grapes)} wines processed, "
+        if (i + 1) % 5000 == 0:
+            print(f"  {i + 1}/{len(wine_grape_map)} wines processed, "
                   f"{wines_resolved} resolved, {len(grape_inserts)} grape links")
 
     print(f"\nResults:")
