@@ -86,10 +86,10 @@ def _fix_grape_name(name):
     """Fix TTB encoding corruption and known misspellings."""
     if not name:
         return None
-    # Strip non-ASCII question marks that replace accented chars
-    cleaned = name.replace('?', '').strip()
-    # Check TTB fixes map (case-insensitive)
-    lower = name.lower()
+    # TTB uses U+FFFD (replacement char) for accented chars
+    normalized = name.replace('\ufffd', '?')
+    cleaned = name.replace('\ufffd', '').replace('?', '').strip()
+    lower = normalized.lower()
     if lower in TTB_GRAPE_FIXES:
         return TTB_GRAPE_FIXES[lower]
     cleaned_lower = cleaned.lower()

@@ -104,9 +104,9 @@ Region insights (202), appellation insights (82), country insights (62). All oth
 
 ### Content Tables (updated 2026-04-03)
 Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for promotion/merge event history.
-- **~37K producers**, **~471K wines**, **~271K vintages**, **~18K scores**, **~18K prices**, **~141K wine_grapes**, **~479K external_ids** (364K COLA + 5K UPC + 189K LWIN), **~16K entity_classifications**
+- **~37K producers**, **~478K wines**, **~271K vintages**, **~18K scores**, **~18K prices**, **~182K wine_grapes**, **~479K external_ids** (364K COLA + 5K UPC + 189K LWIN), **~16K entity_classifications**
 - **284K wines linked to TTB** (666K TTB records linked)
-- **Readiness metric:** 28/100 (re-measurement pending after Phase B expansion)
+- **Readiness metric:** 38/100 (measured 2026-04-03, up from 8/100 on 2026-04-02)
 - Alias tables seeded: 96 region, 75 label designation, 18,631 appellation
 - Sonnet accuracy audit: 96% on 300-sample ($0.05). Non-sparkling data 100% clean.
 - Sparkling wine fix applied: 8,977 reclassified. Distribution: table 93.6%, sparkling 4.7%, fortified 1.6%.
@@ -121,7 +121,7 @@ Staging-first architecture: all external data goes through per-source staging ta
   - `source_ttb_colas` (3,283,319) — TTB COLA registry. **Scrape complete.** 3.18M detail-scraped (96.8%), 1.82M printable-scraped (99.86% of 001-format). 1.82M label image URLs, 1.75M appellations, 857K grapes, 1.50M vintages, 856K ABV. Non-001 IDs (1.35M) confirmed no printable page on TTB.
   - `source_pro_platform` (346,080) — 12 US states via PRO Platform XLSX. COLA + vintage + appellation + ABV.
   - `source_lwin` (189,359) — LWIN trade identifiers. Fine wine backbone.
-  - `source_tabc` (182,933) — Texas TABC via Socrata. 100% TTB numbers, 99.8% ABV. **⚠️ 18K stale** (API has 201K).
+  - `source_tabc` (182,933) — Texas TABC via Socrata. 100% TTB numbers, 99.8% ABV. **Refreshed 2026-04-03** (201K API records → 183K unique TTB after dedup, no net new).
   - `source_kansas_brands` (65,476) — KS KDOR. All beverage types; wine subset ~31K. URL moved to new app.
   - `source_wv_abca` (55,093) — West Virginia ABCA. 96.7% TTB IDs. **⚠️ API is dead** (returns empty). Data is archival. Detail scraper cannot run.
 - **Competition sources:**
@@ -190,17 +190,23 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 - Grape promotion: +3,527 grape links. Fixed `ttb_grape_promote.py` for batched queries (was crashing on per-wine TTB lookups). Only 5,258/50K wines had TTB grape data — most Phase B wines on non-001 records lack grape field.
 - Lesson: batch_matcher must run each source in its own process (combined runs hit ConnectionTerminated)
 
+**Completed (2026-04-03 data gaps session):**
+- TABC refresh: fetched 201K from Socrata, but 183K unique TTB after dedup — no net new records. Stale flag removed.
+- Grape promotion (full catalog): +2,511 grape links (179K → 182K). Fixed U+FFFD encoding corruption in `ttb_grape_promote.py` and `grape_from_helper.py`. Only ~9K wines in TTB have grape data for wines lacking it — 335K wines without grapes simply have no TTB grape_varietals field.
+- Phase B wine creation: +6,767 wines from 4,430 producers (471K → 478K wines). Script resume-safe, 0 errors.
+- COLA depth: 666K linked records scanned, 0 new COLA IDs, 2 new vintages — existing promotion already captured everything.
+- Readiness re-measured: **38/100** (up from 8/100 on 2026-04-02). Producer findability 73%, wine findability 39.5%, depth 0.74/4.
+- DB password regenerated for psycopg2 connection (was stale).
+
 **Next steps (resume here):**
-1. **Re-measure readiness metric** — Spec's mystery shopper against expanded catalog. Should be higher than 28/100.
-2. **Run grape promotion on remaining 150K+ wines** — remove the `gte("created_at", "2026-04-02")` filter to include all wines, not just Tier C.
-3. **TABC refresh** — API has 201K vs our 183K (+18K records).
-4. **Phase B wine creation remainder** — ~600 producers still need wine creation (script resume-safe).
-5. **COLA ID + vintage promotion** for new C2/Phase B wines.
-6. **Enrichment pipeline MVP** — Edge Function + prompts. Next major phase after merge work stabilizes.
-7. **Tier D (fuzzy tail)** — AI-assisted matching for remaining unlinked staging records.
+1. **Link Phase B wines back to TTB** — new wines need `canonical_wine_id` set on source_ttb_colas for COLA/vintage/grape data flow.
+2. **Enrichment pipeline MVP** — Edge Function + prompts. Next major phase after merge work stabilizes.
+3. **Tier D (fuzzy tail)** — AI-assisted matching for remaining unlinked staging records.
+4. **Depth gap** — scores (5%), grapes (13%), vintages (22.5%) are thin. Need importer catalog merge and/or enrichment pipeline.
+5. **Importer catalog merge** — 10K wines from Skurnik/KL/Empson/etc. against TTB+LWIN backbone.
 
 ### Major Gaps
-- Most wines lack depth (vintages, scores, grapes are sparse relative to 471K wines)
+- Most wines lack depth (vintages, scores, grapes are sparse relative to 478K wines)
 - UPC barcodes: ~5K (barcode scan running should add ~64K)
 - All insight tables mostly empty. Enrichment pipeline not built yet (see `docs/ENRICHMENT.md`).
 - Weather data, document tables, soil/water body links, wine_relationships, producer_timeline — all empty.
@@ -252,10 +258,10 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 
 **Active:**
 - TTB barcode scan (490K images) — running in separate session
-- Data merge paused — see "Next steps (resume here)" in Tier B+C section above for prioritized list
+- Data merge paused — see "Next steps (resume here)" in merge infrastructure section
 
 **Upcoming:**
-- TABC refresh (+18K records, API has 201K vs our 183K)
+- Link Phase B wines back to TTB (6,767 new wines need canonical_wine_id backlinks)
 - Enrichment pipeline MVP (Edge Function + prompts) — next major phase
 - COLA-keyed deterministic merge (PRO/TABC/WV/Kansas/barcode → shared COLA numbers, pure SQL)
 - Importer catalog merge (10K wines against TTB+LWIN backbone)
