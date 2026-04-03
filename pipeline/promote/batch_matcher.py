@@ -20,7 +20,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from pipeline.lib.db import get_supabase
+from pipeline.lib.db import get_conn
 from pipeline.lib.normalize import normalize, normalize_producer, normalize_wine_name, parse_vintage
 
 
@@ -69,7 +69,7 @@ class BatchMatcher:
     """
 
     def __init__(self, verbose=True, dry_run=False):
-        self.sb = get_supabase()
+        self.conn = get_conn()
         self.verbose = verbose
         self.dry_run = dry_run
 
@@ -89,20 +89,17 @@ class BatchMatcher:
         if self.verbose:
             print("BatchMatcher: loading producers and countries...")
 
+        cur = self.conn.cursor()
+
         # Load countries
-        offset = 0
-        countries_raw = []
-        while True:
-            result = self.sb.table("countries").select("id,name,iso_code").range(offset, offset + 999).execute()
-            countries_raw.extend(result.data)
-            if len(result.data) < 1000:
-                break
-            offset += 1000
-        for c in countries_raw:
-            self.countries[c["name"].lower()] = c["id"]
-            self.country_names[c["id"]] = c["name"]
-            if c.get("iso_code"):
-                self.countries[c["iso_code"].lower()] = c["id"]
+        cur.execute("SELECT id, name, iso_code FROM countries")
+        countries_raw = cur.fetchall()
+        for row in countries_raw:
+            cid, name, iso_code = row
+            self.countries[name.lower()] = cid
+            self.country_names[cid] = name
+            if iso_code:
+                self.countries[iso_code.lower()] = cid
         # Common aliases
         us = self.countries.get("united states")
         if us:
@@ -116,25 +113,19 @@ class BatchMatcher:
             print(f"  Countries: {len(countries_raw)}")
 
         # Load all producers
-        offset = 0
-        producers_raw = []
-        while True:
-            result = (self.sb.table("producers")
-                      .select("id,name,name_normalized,country_id")
-                      .is_("deleted_at", "null")
-                      .range(offset, offset + 999)
-                      .execute())
-            producers_raw.extend(result.data)
-            if len(result.data) < 1000:
-                break
-            offset += 1000
-
-        for p in producers_raw:
-            norm = p["name_normalized"] or normalize(p["name"])
+        cur.execute(
+            "SELECT id, name, name_normalized, country_id "
+            "FROM producers WHERE deleted_at IS NULL"
+        )
+        producers_raw = cur.fetchall()
+        for row in producers_raw:
+            pid, name, name_normalized, country_id = row
+            p = {"id": pid, "name": name, "name_normalized": name_normalized, "country_id": country_id}
+            norm = name_normalized or normalize(name)
             self.producer_by_norm[norm] = p
 
             # Also index by suffix-stripped form
-            stripped = normalize_producer(p["name"])
+            stripped = normalize_producer(name)
             if stripped and stripped != norm:
                 if stripped not in self.producer_by_stripped:
                     self.producer_by_stripped[stripped] = []
@@ -143,22 +134,16 @@ class BatchMatcher:
             print(f"  Producers: {len(producers_raw)} (norm index: {len(self.producer_by_norm)}, stripped index: {len(self.producer_by_stripped)})")
 
         # Load producer aliases
-        offset = 0
-        alias_count = 0
-        while True:
-            result = (self.sb.table("producer_aliases")
-                      .select("producer_id,name,name_normalized")
-                      .range(offset, offset + 999)
-                      .execute())
-            for a in result.data:
-                anorm = a.get("name_normalized") or normalize(a["name"])
-                self.producer_by_alias[anorm] = a["producer_id"]
-                alias_count += 1
-            if len(result.data) < 1000:
-                break
-            offset += 1000
+        cur.execute("SELECT producer_id, name, name_normalized FROM producer_aliases")
+        aliases_raw = cur.fetchall()
+        for row in aliases_raw:
+            producer_id, name, name_normalized = row
+            anorm = name_normalized or normalize(name)
+            self.producer_by_alias[anorm] = producer_id
         if self.verbose:
-            print(f"  Producer aliases: {alias_count}")
+            print(f"  Producer aliases: {len(aliases_raw)}")
+
+        cur.close()
 
         elapsed = time.time() - t0
         if self.verbose:
@@ -265,20 +250,18 @@ class BatchMatcher:
     def load_producer_wines(self, producer_id):
         """Load all wines for a producer into a dict keyed by name_normalized."""
         wines = {}
-        offset = 0
-        while True:
-            result = (self.sb.table("wines")
-                      .select("id,name,name_normalized,slug")
-                      .eq("producer_id", producer_id)
-                      .is_("deleted_at", "null")
-                      .range(offset, offset + 999)
-                      .execute())
-            for w in result.data:
-                norm = w.get("name_normalized") or normalize(w["name"])
-                wines[norm] = w
-            if len(result.data) < 1000:
-                break
-            offset += 1000
+        cur = self.conn.cursor()
+        cur.execute(
+            "SELECT id, name, name_normalized, slug FROM wines "
+            "WHERE producer_id = %s AND deleted_at IS NULL",
+            (producer_id,)
+        )
+        for row in cur.fetchall():
+            wid, name, name_normalized, slug = row
+            w = {"id": wid, "name": name, "name_normalized": name_normalized, "slug": slug}
+            norm = name_normalized or normalize(name)
+            wines[norm] = w
+        cur.close()
         return wines
 
     def match_wine(self, producer_wines, wine_name):
@@ -323,18 +306,20 @@ class BatchMatcher:
 
     def _load_staging(self, table, columns, batch_size=1000):
         """Load all unmatched rows from a staging table."""
-        rows = []
-        offset = 0
-        while True:
-            result = (self.sb.table(table)
-                      .select(columns)
-                      .is_("canonical_wine_id", "null")
-                      .range(offset, offset + batch_size - 1)
-                      .execute())
-            rows.extend(result.data)
-            if len(result.data) < batch_size:
-                break
-            offset += batch_size
+        # Validate table/column names against injection (they come from hardcoded strings
+        # in our adapter methods, but be safe)
+        assert re.match(r'^[a-z_]+$', table), f"Invalid table name: {table}"
+        col_list = [c.strip() for c in columns.split(",")]
+        for c in col_list:
+            assert re.match(r'^[a-z_]+$', c), f"Invalid column name: {c}"
+
+        cur = self.conn.cursor()
+        cur.execute(
+            f"SELECT {columns} FROM {table} WHERE canonical_wine_id IS NULL"
+        )
+        col_names = [desc[0] for desc in cur.description]
+        rows = [dict(zip(col_names, row)) for row in cur.fetchall()]
+        cur.close()
         return rows
 
     def _write_matches(self, table, updates):
@@ -342,30 +327,51 @@ class BatchMatcher:
         if self.dry_run or not updates:
             return
 
-        now = datetime.now(timezone.utc).isoformat()
+        from psycopg2.extras import execute_values
+
+        assert re.match(r'^[a-z_]+$', table), f"Invalid table name: {table}"
+
+        now = datetime.now(timezone.utc)
+        cur = self.conn.cursor()
         written = 0
         errors = 0
+        batch_size = 500
 
-        # Group by (producer_id, wine_id) pattern for batch efficiency
-        # But simplest reliable approach: per-row updates in chunks
-        for i, row in enumerate(updates):
+        for i in range(0, len(updates), batch_size):
+            batch = updates[i:i + batch_size]
+            # Build tuples: (id, canonical_producer_id, canonical_wine_id, processed_at)
+            values = []
+            for row in batch:
+                values.append((
+                    row["id"],
+                    row["producer_id"],
+                    row.get("wine_id"),
+                    now,
+                ))
             try:
-                update_data = {
-                    "canonical_producer_id": row["producer_id"],
-                    "processed_at": now,
-                }
-                if row.get("wine_id"):
-                    update_data["canonical_wine_id"] = row["wine_id"]
-                self.sb.table(table).update(update_data).eq("id", row["id"]).execute()
-                written += 1
+                execute_values(
+                    cur,
+                    f"UPDATE {table} AS t SET "
+                    f"canonical_producer_id = v.producer_id, "
+                    f"canonical_wine_id = v.wine_id, "
+                    f"processed_at = v.processed_at "
+                    f"FROM (VALUES %s) AS v(id, producer_id, wine_id, processed_at) "
+                    f"WHERE t.id = v.id",
+                    values,
+                    template="(%s, %s::uuid, %s::uuid, %s::timestamptz)"
+                )
+                self.conn.commit()
+                written += len(batch)
             except Exception as e:
-                errors += 1
-                if errors <= 5 and self.verbose:
-                    print(f"  Write error ({row['id']}): {e}")
+                self.conn.rollback()
+                errors += len(batch)
+                if errors <= 5 * batch_size and self.verbose:
+                    print(f"  Batch write error at offset {i}: {e}")
 
-            if (i + 1) % 500 == 0 and self.verbose:
-                print(f"  ... wrote {written}/{i+1} updates")
+            if self.verbose and (i + batch_size) % 1000 < batch_size:
+                print(f"  ... wrote {written}/{min(i + batch_size, len(updates))} updates")
 
+        cur.close()
         if self.verbose:
             print(f"  Written: {written}, errors: {errors}")
 
