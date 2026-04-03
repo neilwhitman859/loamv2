@@ -646,6 +646,61 @@ class BatchMatcher:
         self.stats["bc_wine_match"] = matched_wines
         self.stats["bc_total"] = len(rows)
 
+    # ── Spec's Adapter ─────────────────────────────────────────
+
+    def run_specs(self):
+        """Match Spec's wines. No producer column — extract from name."""
+        print("\n" + "=" * 60)
+        print("SPEC'S (21,913 wines)")
+        print("=" * 60)
+
+        rows = self._load_staging(
+            "source_specs",
+            "id,name,upc,sku,price,wine_origin"
+        )
+        print(f"  Unmatched rows: {len(rows)}")
+        if not rows:
+            return
+
+        updates = []
+        matched_wines = 0
+        matched_producers = 0
+        producer_cache = {}
+
+        for i, r in enumerate(rows):
+            country_id = self.resolve_country(r.get("wine_origin"))
+            name = r.get("name", "")
+
+            pmatch, wine_name = self.match_producer_from_title(name, country_id)
+
+            if not pmatch:
+                self.stats["specs_producer_miss"] += 1
+                continue
+
+            matched_producers += 1
+            pid = pmatch["id"]
+
+            if pid not in producer_cache:
+                producer_cache[pid] = self.load_producer_wines(pid)
+
+            wmatch = self.match_wine(producer_cache[pid], wine_name)
+            update = {"id": r["id"], "producer_id": pid}
+            if wmatch:
+                update["wine_id"] = wmatch["id"]
+                matched_wines += 1
+            updates.append(update)
+
+            if (i + 1) % 1000 == 0 and self.verbose:
+                print(f"  ... {i+1}/{len(rows)} processed, {matched_wines} wines matched")
+
+        print(f"  Rows with producer match: {matched_producers}/{len(rows)}")
+        print(f"  Wines matched: {matched_wines}/{len(rows)}")
+
+        self._write_matches("source_specs", updates)
+        self.stats["specs_producer_match"] = matched_producers
+        self.stats["specs_wine_match"] = matched_wines
+        self.stats["specs_total"] = len(rows)
+
     # ── Summary ──────────────────────────────────────────────────
 
     def print_summary(self):
@@ -682,6 +737,7 @@ def main():
         "lcbo": matcher.run_lcbo,
         "systembolaget": matcher.run_systembolaget,
         "bc_liquor": matcher.run_bc_liquor,
+        "specs": matcher.run_specs,
     }
 
     for src in sources:
