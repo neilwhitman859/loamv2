@@ -371,23 +371,22 @@ Staging-first architecture: all external data goes through per-source staging ta
   - Appellation resolver: direct + alias + unaccent matching (971K records resolvable)
   - **270,167 total canonical wines** (was 190K)
   - TTB→new-wine back-linking not yet complete (needs Python batch, SQL timeouts on 3M row table)
-- **Depth promoted:** 59.5K COLA IDs, 90.4K vintages (39.5K wines), 85.6K grape links (70.6K wines)
+- **Depth promoted:** 115.6K COLA IDs, 130.1K vintages (64.3K wines), 85.6K grape links (70.6K wines)
 - **Search fix:** `search_catalog` v2 — unaccent + producer name matching. Findability 12%→83%.
 
 **Next steps (resume here):**
-- Link TTB records to the 80K newly created wines (Python batch script — SQL timeouts against 3M rows)
-- Promote vintages + grapes for newly linked wines
-- Tier C slice 2: create new producers from TTB brand names (130K unmatched brands)
+- Tier C slice 2: create new producers from TTB brand names (115K unmatched brands)
 - Improve appellation resolver for TTB strings that are regions/countries (CALIFORNIA, MENDOZA, etc.)
+- Competition linking (Berliner 74K + TEXSOM 47K → scores)
 - Tier D (fuzzy tail): agent work, ongoing
 
 ### What's Not There Yet
-- **wine_vintages: 90,443** across 39,459 wines. Many with ABV.
+- **wine_vintages: 130,102** across 64,308 wines.
 - **wine_vintage_scores: ~1,008** across 343 wines — other session promoting importer scores.
-- **wine_grapes: 85,622** across 70,638 wines (was 3,576 at session start).
+- **wine_grapes: 85,622** across 70,638 wines.
 - **wine_vintage_prices: 0** — no price data in canonical yet.
 - **winemakers: 0** — cleared during LWIN promotion.
-- **80K new Tier C wines not yet TTB-linked** — wine records exist but source_ttb_colas rows not back-linked (needs Python batch, SQL timeouts on 3M row table).
+- **TTB back-linking COMPLETE** — 360K TTB records linked to 116K canonical wines. Functional index `idx_ttb_lower_brand` on `lower(trim(brand_name))` solved the 3M-row timeout issue.
 - Most insight tables empty (wine, producer, grape, wine_vintage)
 - All weather data (appellation_vintages) — Open-Meteo schema design pending
 - All document tables
