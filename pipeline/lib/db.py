@@ -1,10 +1,11 @@
 """
-Supabase client and environment loading for the Loam pipeline.
+Supabase client and database connections for the Loam pipeline.
 
 Usage:
-    from pipeline.lib.db import get_supabase, get_env
+    from pipeline.lib.db import get_supabase, get_conn, get_env
 
-    sb = get_supabase()
+    sb = get_supabase()                    # REST API client (legacy)
+    conn = get_conn()                      # Direct Postgres connection (preferred)
     result = sb.table('wines').select('*').limit(5).execute()
 """
 
@@ -43,6 +44,20 @@ def get_supabase() -> Client:
     if not url or not key:
         raise RuntimeError("Missing SUPABASE_URL and/or SUPABASE_SERVICE_ROLE in .env")
     return create_client(url, key)
+
+
+def get_conn():
+    """Get a direct Postgres connection via session pooler.
+
+    Returns a psycopg2 connection. Caller is responsible for closing it.
+    No connection pool exhaustion — this is a real TCP connection, not HTTP/2.
+    """
+    import psycopg2
+    _ensure_env()
+    dsn = os.environ.get("DATABASE_URL")
+    if not dsn:
+        raise RuntimeError("Missing DATABASE_URL in .env")
+    return psycopg2.connect(dsn)
 
 
 async def fetch_all(table: str, columns: str = "*", filters: dict | None = None,

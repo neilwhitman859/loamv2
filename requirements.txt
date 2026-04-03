@@ -11,6 +11,9 @@ pandas>=3.0.0
 numpy>=2.4.0
 openpyxl>=3.1.0
 
+# Database (direct Postgres via session pooler)
+psycopg2-binary>=2.9.0
+
 # HTTP
 httpx>=0.28.0
 requests>=2.32.0
