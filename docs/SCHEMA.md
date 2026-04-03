@@ -216,6 +216,8 @@ PK: composite (producer_id, region_id). For multi-region producers.
 | aspect | text | nullable | Vineyard orientation (e.g., "South-Southwest") |
 | slope_pct | numeric | nullable | Vineyard slope percentage |
 | fog_exposure | text | nullable | AI-enriched |
+| training_method | text | nullable | Vine training system (e.g., Guyot, Cordon, Gobelet, Pergola, VSP) |
+| vine_density_per_ha | integer | nullable | Vine planting density (vines per hectare) |
 | vine_planted_year | integer | nullable | |
 | vine_age_description | text | nullable | Free text: "30-70 years old", "Planted in 1946" |
 | soil_description | text | nullable | Free text: "Volcanic pumice over limestone" |
@@ -306,7 +308,11 @@ UUID PK + UNIQUE(wine_id, vintage_year). Vintage_year = 0 for NV wines (not NULL
 | age_statement_years | integer | nullable | NV |
 | solera_system | boolean | default false | NV |
 | bottle_format_ml | integer | default 750 | 187/375/500/750/1500/3000/etc. |
+| serving_temperature_low_c | integer | nullable | Recommended serving temperature range low end, Celsius |
+| serving_temperature_high_c | integer | nullable | Recommended serving temperature range high end, Celsius |
 | closure | text | nullable | cork/screwcap/diam/wax/other |
+| fermentation_duration_days | integer | nullable | Primary fermentation duration in days |
+| fermentation_temperature_c | numeric(4,1) | nullable | Primary fermentation temperature in Celsius |
 | fermentation_vessel | text | nullable | barrel/stainless/concrete/amphora/foudre/mixed |
 | oak_origin | text | nullable | french/american/slavonian/hungarian/mixed/none |
 | yeast_type | text | nullable | native/commercial/mixed |
