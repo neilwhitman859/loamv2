@@ -107,19 +107,24 @@ Original plan: JOIN TTB + PRO + TABC + Kansas on shared COLA numbers to enrich T
 ### 2c. Tiered TTB → Canonical Promotion (revised 2026-04-02)
 New approach: promote TTB data in confidence tiers rather than the original 3-layer merge.
 
-**Tier B — Deterministic match to existing canonical (NEXT):**
-- Match TTB records against existing 189K canonical wines on exact producer + wine name + appellation
-- No new wines created — just linking TTB to what's there, filling COLA IDs + grapes + ABV
-- Estimated: ~20-50K links. ~2-3 days focused work.
+**Tier B — Deterministic match to existing canonical:** ✓ COMPLETE (2026-04-04)
+- 284,291 canonical wines linked to 666,317 TTB records
+- COLA IDs, vintages, grapes, ABV promoted to canonical
+- Scripts: `ttb_wine_link_v2.py` (cursor-based fanciful_name matching), `cola_depth.py` (cursor pagination for depth promotion)
 
-**Tier C — New wines from clean TTB records:**
-- Unmatched TTB records with high data quality (appellation resolved, grapes parsed, brand confirmed as real producer)
-- Creates new canonical wines. 644K distinct wines in TTB with appellation + grapes.
-- Build pipeline carefully, run in batches, spot-check. ~1 week.
+**Phase B — New producers + wines from TTB:** ✓ COMPLETE (2026-04-04)
+- 4,430 new producers created from unmatched TTB brand names
+- 30,493 new wines created from TTB fanciful names for Phase B producers
+- Script: `phase_b_wines.py` (UUID slugs, retry logic)
+
+**Tier C — New wines from clean TTB records:** ✓ COMPLETE (2026-04-03)
+- Tier C1: +80K wines from TTB with resolved appellation + grapes (existing producers)
+- Tier C2: +105K wines via SQL migration (broader criteria)
+- Total canonical wines: 470,820
 
 **Tier D — Fuzzy tail (agent work):**
 - Ambiguous names, applicant-vs-producer confusion, unresolved appellations
-- Promotion agent processes daily, hundreds at a time. Ongoing.
+- ~25K distinct TTB (producer, fanciful) pairs unmatched. Promotion agent processes daily. Ongoing.
 
 ### 2d. Importer Re-Linking (IN PROGRESS)
 - 8,267 unlinked importer wines: KL 928, Skurnik 2,239, Winebow 525, Empson 279, EC 437

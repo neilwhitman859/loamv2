@@ -709,5 +709,14 @@ LWIN stores name_normalized with hyphens preserved ("lynch-bages") while our nor
 ### 2026-04-03: Server-side SQL functions for large TTB operations
 The source_ttb_colas table (3.28M rows) consistently times out on any full-table operation via REST API or MCP. Solution: create PL/pgSQL functions that run server-side (`promote_ttb_vintages()`, `rebuild_wine_search_vectors()`). MCP HTTP may timeout but the function completes on the Postgres side. Discovered: Tier C2 migration also completed server-side despite MCP timeout — 104,628 wines created. Lesson: for large operations, create a function and call it; accept that the HTTP response may timeout but the work still completes.
 
+### 2026-04-04: Cursor-based pagination for source_ttb_colas operations
+OFFSET-based pagination on 3.28M row table causes statement timeouts even with LIMIT. Solution: cursor pagination using `ttb_id > last_seen ORDER BY ttb_id LIMIT 1000`. This avoids the O(n) OFFSET skip and runs at 600-800 records/sec. Applied in `cola_depth.py` (scanned 666K records in 15 min) and `ttb_wine_link_v2.py` (loaded 261K unlinked records for in-memory matching). Lesson: never use OFFSET pagination on tables > 100K rows in Supabase.
+
+### 2026-04-04: One COLA ID per wine (external_ids unique constraint)
+The `external_ids` table has a UNIQUE constraint on `(entity_type, entity_id, system)`, meaning only one COLA per wine. Wines legitimately have multiple COLAs (different vintages, label revisions), but the constraint exists and we work within it — store the first COLA found. Adequate for identity linkage. If we need multiple COLAs per wine later, alter the constraint to include `external_id`.
+
+### 2026-04-04: No parallel Supabase REST API scripts
+Running two Python pipeline scripts simultaneously against Supabase causes `ConnectionTerminated` errors from HTTP/2 connection pool exhaustion. All pipeline scripts must run sequentially. SQL via MCP can run concurrently with one Python script.
+
 ### 2026-04-02: Future feature — "Endless Paper" style infinite wine map
 Inspired by endlesspaper.app. Semantic zoom map of global wine geography: countries → regions → appellations → vineyards/producers. Data already exists (62 countries, 323 regions, 2,847 appellations with PostGIS boundaries, 2,158 containment hierarchy rows). Technical plan: swap Leaflet for MapLibre GL JS (continuous zoom, WebGL polygon rendering, style-driven layer visibility). Strip away standard map tiles — wine boundaries ARE the map, earth-tone canvas. Search-to-fly interaction. Come back to this after canonical data is populated.
