@@ -113,6 +113,8 @@ Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for p
 - **Farming certs:** 9,324 (+2,937 from Skurnik/KL/EC/Polaner)
 - **Wine depth (2026-04-04):** +1,921 sweetness (Flatiron), +1,158 vine_age (KL), +254 description (Skurnik), +35,695 colors inferred from grapes (54% → 61.16%)
 - **Inference wins (2026-04-04):** first_vintage_year 84 → 175,153 (computed from wine_vintages), region_id 301K → 386K (+84,543 from producers), varietal_category_id 0 → 94,198 (single-grape match)
+- **Data grade refresh (2026-04-04):** F=461,449, D=34,561, C=913, B=3 (was F=496,923, D=0, C=0, B=3)
+- **Producer inference:** country +4K, region +2K, appellation 0 → 25,634 (reverse-computed from wines)
 - **wine_vintage_id backfill:** 0 orphaned prices (was 23K), 0 orphaned scores. All join via wine_vintage_id.
 - **Readiness metric:** 59.67/100 avg (3-run: 51, 65, 63, measured 2026-04-04 after full session). Up from 39/100 on 2026-04-03 — +20 points.
 - Alias tables seeded: 96 region, 75 label designation, 18,631 appellation
