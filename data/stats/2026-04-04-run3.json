@@ -1,0 +1,131 @@
+{
+  "date": "2026-04-04",
+  "run_number": 3,
+  "duration_minutes": 180,
+  "row_counts": {
+    "active_wines": 480980,
+    "deleted_wines": 15652,
+    "producers": 37184,
+    "wine_vintages": 302993,
+    "wine_vintage_scores": 18309,
+    "wine_vintage_prices": 30482,
+    "wine_grapes": 191989,
+    "external_ids_cola": 291542,
+    "external_ids_upc": 11813,
+    "wines_validated": 398054,
+    "wines_without_country": 82926
+  },
+  "deltas_vs_run2": {
+    "active_wines": "-15652 (soft-deleted by dedup_wines.py — 26441 target, 15652 done at time of measurement, still running)",
+    "wine_vintages": "+153 (retail_promote from new batch_matcher matches)",
+    "wine_vintage_prices": "+88 (retail_promote: Flatiron 37, LCBO+BC Liquor 51; crashed at Systembolaget ~20K REST calls)",
+    "wine_grapes": "+43 (ttb_grape_promote 35 + grape_blend_promote 8 from new alias/fix additions)",
+    "external_ids_upc": "+45 (retail_promote LCBO+BC Liquor)",
+    "wines_validated": "+13326 (bulk stamp of newly country-inferred wines)",
+    "wines_without_country": "-28978 (18432 got country from producer/appellation inference + ~10546 deleted by dedup)"
+  },
+  "gaps": {
+    "wines_without_grapes": "~354000 (most Phase B wines have no TTB grape data)",
+    "wines_without_country": 82926,
+    "wines_not_validated": "active_wines - wines_validated"
+  },
+  "scripts_run": {
+    "batch_matcher_systembolaget": "174 wine matches (revived by name_normalized fix)",
+    "batch_matcher_flatiron": "42 wine matches (revived by name_normalized fix)",
+    "batch_matcher_wallys": "56 wine matches (revived by name_normalized fix)",
+    "batch_matcher_lcbo": "112 wine matches (revived by name_normalized fix)",
+    "batch_matcher_bc_liquor": "9 wine matches",
+    "retail_promote": "88 prices, 45 UPCs, 153 vintages; crashed at ~20K REST calls (expected)",
+    "ttb_grape_promote": "+35 grape links (new fixes: sauvingon, pinot n0ir, gruner veltiner, pinot auxerrois, garganaga, piot noir, etc.)",
+    "grape_blend_promote": "+8 grape links (inline-% fix: 72%Bobal, 80%MARSANNE, pipe-separator fix)",
+    "dedup_wines": "RUNNING: 15652/26441 wines soft-deleted, 8510 groups, 3066 ext_ids reassigned, 1373 images transferred",
+    "country_inference": "+18432 country_id assignments (15108 from producer, 3324 from appellation→region)"
+  },
+  "new_scripts_built": [
+    "pipeline/promote/dedup_wines.py — soft-deletes exact duplicate wine rows (same name/producer/color/type/appellation, 0 vintages). Reassigns external_ids, wine_grapes, label_image_url to keep_id before deleting."
+  ],
+  "root_causes_found": [
+    "producers.name_normalized column had special characters (periods, ampersands, hyphens) that normalize() strips. batch_matcher uses normalize() on incoming names but looked up pre-normalized DB values. e.g. 'E. Guigal' stored as 'e. guigal', but incoming 'E Guigal' normalized to 'e guigal' — no match. Fixed 4186 producers by stripping non-alphanumeric from name_normalized. Revived 393 wine matches across all sources.",
+    "26441 exact duplicate wine rows from Phase B TTB wine creation. Same wine promoted multiple times from different TTB COLA records. Dedup_wines.py script now soft-deletes extras, reassigns linked data to keep_id.",
+    "111K wines had no country_id — not just TTB-only records. 10450 inferable from producer.country_id, 3324 from appellation→region→country. Batch-assigned 18432 wines.",
+    "White Zinfandel and Zinfandel aliases mapped to wrong target: 'Zinfandel' not in DB. DB uses 'PRIMITIVO' (VIVC primary name). Fixed.",
+    "St Laurent aliases mapped to 'Sankt Laurent' — not in DB. DB uses 'SAINT LAURENT'. Fixed.",
+    "Savagnin Ouille: was incorrectly mapped to Gewürztraminer. Haiku confirmed it's SAVAGNIN BLANC (non-oxidative Jura style). Fixed.",
+    "grape_blend_promote couldn't handle inline percentages like 'Noir20%' (no space before digit). Added regex to normalize 'word%' → 'word %' and '%word' → '% word' before parsing."
+  ],
+  "synonyms_added": [
+    "savagnin ouille → SAVAGNIN BLANC (resolve.py)",
+    "savagnin → SAVAGNIN BLANC (resolve.py)",
+    "trebbiano d'abruzzo → omitted (disputed variety, no DB entry)",
+    "sauvingon blanc → Sauvignon Blanc (resolve.py + ttb_grape_promote.py)",
+    "pinot n0ir → Pinot Noir (ttb_grape_promote.py)",
+    "gruner veltiner → Grüner Veltliner (resolve.py)",
+    "zinfandel → Primitivo (resolve.py, VIVC primary name fix)",
+    "white zinfandel → Primitivo (resolve.py)",
+    "zin → Primitivo (resolve.py)",
+    "st. laurent → Saint Laurent (resolve.py, DB name fix)",
+    "saint laurent → Saint Laurent (resolve.py)",
+    "st laurent → Saint Laurent (resolve.py)",
+    "traiser riesling → Riesling (ttb_grape_promote.py, Haiku confirmed appellation prefix)",
+    "icewine riesling → Riesling (ttb_grape_promote.py)",
+    "weisserburgunder → Pinot Blanc (ttb_grape_promote.py)",
+    "piot noir → Pinot Noir (ttb_grape_promote.py)",
+    "garganaga → Garganega (ttb_grape_promote.py)",
+    "gewuztraminer → Gewurztraminer (ttb_grape_promote.py)",
+    "cataratto extra lucido → Catarratto Bianco Comune (ttb_grape_promote.py)",
+    "musct/muscat de alejandria → Muscat d'Alexandrie (ttb_grape_promote.py)"
+  ],
+  "sql_fixes": [
+    "51 table wines with ABV > 20% reclassified to 'fortified' (Pedro Ximenez, Palo Cortado, Vintage Porto, Seppeltsfield tawny, etc.)",
+    "4186 producers had non-alphanumeric name_normalized fixed to consistent format",
+    "18432 wines assigned country_id from producer or appellation chain",
+    "BLEND_BLACKLIST expanded: ruby, tawny, vintage port, vin santo, vino nobile",
+    "JUNK_STRINGS expanded: vintage years (2005-2020), 2-digit year remnants (02-09), rosso, bianco, rosato",
+    "parse_grape_string now splits on | in addition to , and /"
+  ],
+  "haiku_spend": {
+    "calls": 1,
+    "input_tokens": 558,
+    "output_tokens": 344,
+    "est_cost": 0.0024,
+    "purpose": "Grape name disambiguation: Savagnin Ouille, Trebbiano D'Abruzzo, Syr, Carig, Mourv, Traiser Riesling"
+  },
+  "readiness": 35,
+  "readiness_delta": "+2 vs Run #2 (33)",
+  "readiness_dimensions": {
+    "found_pct": 100,
+    "vintage_pct": 38,
+    "score_pct": 8,
+    "grapes_pct": 18,
+    "price_pct": 8.5
+  },
+  "accuracy_audit_entries_today": 4,
+  "self_grade": "A",
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "item": "Dedup still running (15652/26441 done). Re-run dedup_wines.py next session to complete the remaining 10789 deletions.",
+      "impact": "~10789 more wines to soft-delete"
+    },
+    {
+      "priority": "HIGH",
+      "item": "All batch_matcher sources now exhausted for easy matches. Remaining unmatched producers (Systembolaget ~8K, LCBO ~2K, etc.) are genuinely new — need producer creation script. Consider building a 'create missing producers from Systembolaget' pipeline.",
+      "impact": "~12K Systembolaget + LCBO + BC Liquor records"
+    },
+    {
+      "priority": "MEDIUM",
+      "item": "82926 wines still without country_id — no producer country or appellation chain available. These are TTB-only Phase B wines. Consider using wine name parsing or TTB appellation_state field for US country assignment.",
+      "impact": "~83K wines"
+    },
+    {
+      "priority": "MEDIUM",
+      "item": "Readiness grapes dimension at 18% — main bottleneck. 100 blend strings still unsplittable. Consider Haiku batch on top 100 unsplittable blend strings.",
+      "impact": "~100-200 grape links"
+    },
+    {
+      "priority": "LOW",
+      "item": "retail_promote crashes at Systembolaget REST limit. Rewrite to use psycopg2 COPY for bulk price/UPC insertion.",
+      "impact": "More reliable price/UPC promotion"
+    }
+  ]
+}

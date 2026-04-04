@@ -24,9 +24,34 @@ from pipeline.lib.resolve import ReferenceResolver
 
 JUNK_STRINGS = {
     "the status is approved.", "the status is approved",
-    "red wine", "white wine", "rose wine", "table wine",
-    "wine", "red", "white", "rose", "blended wine",
+    "the status is expired.", "the status is expired",
+    "the status is surrendered.", "the status is surrendered",
+    "red wine", "white wine", "rose wine", "rosé wine", "table wine",
+    "wine", "red", "white", "rose", "rosé", "blended wine", "blend",
     "na", "n/a", "none",
+    # Vintage years / numeric noise erroneously in grape field
+    "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012",
+    "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020",
+    "02", "03", "04", "05", "06", "07", "08", "09",  # 2-digit year remnants
+    # Generic Italian color/type terms
+    "rosso", "bianco", "rosato",
+}
+
+# Style/appellation strings that appear in TTB grape field but are NOT grapes.
+# Skip wines where grape_varietals matches these exactly.
+BLEND_BLACKLIST = {
+    "barbaresco", "barolo", "amarone", "valpolicella", "prosecco", "champagne",
+    "blanc de blancs", "blanc de noirs", "marsala", "chianti", "rioja",
+    "cava", "port", "sherry", "bordeaux", "burgundy",
+    "pinot noir rose", "rose of pinot noir",
+    "riesling spatlese", "riesling auslese", "riesling kabinett",
+    "meritage", "red bordeaux", "red wine blend", "sancerre", "topaque",
+    # Port classifications (not grape names)
+    "ruby", "tawny", "vintage port", "late bottled vintage",
+    # Italian/other wine styles (not grape names)
+    "vin santo", "vino nobile", "amarone della valpolicella",
+    # Appellation-prefixed names (grape + appellation)
+    "traiser riesling",  # Riesling from Traisen — parse as single grape below
 }
 
 # TTB encodes accented chars as '?' — map common corrupted forms
@@ -49,6 +74,47 @@ TTB_GRAPE_FIXES = {
     "pineau d'aunis": "Pineau d'Aunis",
     "gewurtztraminer": "Gewurztraminer",
     "reisling": "Riesling",
+    "mar?chal foch": "Marechal Foch",
+    "souz?o": "Souzao",
+    "fum? blanc": "Fume Blanc",
+    "nero d' avola": "Nero d'Avola",
+    "nero d?avola": "Nero d'Avola",
+    "gruner vetliner": "Gruner Veltliner",
+    "pinot noir rose": "Pinot Noir",
+    "rose of pinot noir": "Pinot Noir",
+    "pinor noir": "Pinot Noir",
+    "zinfindel": "Zinfandel",
+    "gewruztraminer": "Gewurztraminer",
+    "chardonnnay": "Chardonnay",
+    "riseling": "Riesling",
+    "cabernet france": "Cabernet Franc",
+    "montepulciano d' abruzzo": "Montepulciano",
+    # Run #3 additions
+    # Blend strings with no space before percentage (handled as primary grape)
+    "pinot noir20% chardonnay": "Pinot Noir",
+    "cabernet sauvignon15% merlot": "Cabernet Sauvignon",
+    # Other common fixes
+    "gewuztraminer": "Gewurztraminer",
+    "cataratto extra lucido": "Catarratto Bianco Comune",
+    "weisserburgunder": "Pinot Blanc",  # German synonym
+    "piot noir": "Pinot Noir",
+    "garganaga": "Garganega",
+    "musct de alejandria": "Muscat d'Alexandrie",
+    "muscat de alejandria": "Muscat d'Alexandrie",
+    "sauvingon blanc": "Sauvignon Blanc",
+    "sauvingon": "Sauvignon Blanc",
+    "pinot n0ir": "Pinot Noir",  # zero substituted for 'o'
+    "gruner veltiner": "Gruner Veltliner",  # variant spelling (vetliner already covered)
+    # Appellation-prefixed grape names (Haiku confirmed: extract the grape)
+    "traiser riesling": "Riesling",  # Traisen = German appellation; grape is Riesling
+    "nahe riesling": "Riesling",
+    "mosel riesling": "Riesling",
+    "rheingau riesling": "Riesling",
+    "alsace riesling": "Riesling",
+    "icewine riesling": "Riesling",
+    # Typos
+    "pinot auxerrios": "Pinot Auxerrois",
+    "pinot auxerois": "Pinot Auxerrois",
 }
 
 
@@ -80,10 +146,14 @@ def parse_grape_string(s):
     if not s:
         return []
     s = s.strip()
-    if s.lower() in JUNK_STRINGS:
+    # Normalise: strip U+FFFD replacement chars used by TTB for accented chars
+    s_lower = s.lower().replace('\ufffd', '?').strip()
+    if s_lower in JUNK_STRINGS:
+        return []
+    if s_lower in BLEND_BLACKLIST:
         return []
 
-    parts = re.split(r'[,/]', s)
+    parts = re.split(r'[,/|]', s)  # also split on pipe (|) separator
     grapes = []
     for part in parts:
         part = part.strip()

@@ -26,7 +26,7 @@ GRAPE_ALIASES: dict[str, str] = {
     # US names
     "petite sirah": "Durif", "petit sirah": "Durif", "petite syrah": "Durif",
     "cab sauv": "Cabernet Sauvignon", "cab franc": "Cabernet Franc",
-    "cab": "Cabernet Sauvignon", "zin": "Zinfandel",
+    "cab": "Cabernet Sauvignon", "zin": "Primitivo", "zinfandel": "Primitivo",
     "petit verdot": "Petit Verdot", "petite verdot": "Petit Verdot",
     # Spanish
     "mazuelo": "Carignan", "mazuela": "Carignan", "cariñena": "Carignan",
@@ -55,7 +55,7 @@ GRAPE_ALIASES: dict[str, str] = {
     "grüner veltliner": "Grüner Veltliner", "gruner veltliner": "Grüner Veltliner",
     "blaufränkisch": "Blaufränkisch", "blaufrankisch": "Blaufränkisch",
     "lemberger": "Blaufränkisch", "zweigelt": "Zweigelt",
-    "st. laurent": "Sankt Laurent", "saint laurent": "Sankt Laurent",
+    "st. laurent": "Saint Laurent", "saint laurent": "Saint Laurent",
     # Portuguese
     "touriga nacional": "Touriga Nacional", "touriga franca": "Touriga Franca",
     "tinta roriz": "Tempranillo", "aragonez": "Tempranillo",
@@ -120,6 +120,26 @@ GRAPE_ALIASES: dict[str, str] = {
     # TTB parenthetical synonyms
     "tinto fino (tempranillo)": "Tempranillo",
     "tinto fino": "Tempranillo",
+    # TTB style/colour prefix stripping
+    "white zinfandel": "Primitivo",  # Zinfandel = PRIMITIVO in VIVC/DB
+    "fume blanc": "Sauvignon Blanc", "fumé blanc": "Sauvignon Blanc",
+    "riesling spatlese": "Riesling",
+    # TTB typos
+    "gruner vetliner": "Grüner Veltliner",
+    "pinor noir": "Pinot Noir",
+    # Varietals with spaces quirks
+    "verduzzo": "Verduzzo Friulano",
+    "st laurent": "Saint Laurent",
+    "niagara": "Niagara",
+    # HTML-entity names in DB (grapes table stores &#039; for apostrophe)
+    "pineau d&#039;aunis": "Pineau d'Aunis",
+    "nero d&#039;avola": "Nero d'Avola",
+    # Run #3 additions (Haiku-confirmed)
+    "savagnin ouille": "Savagnin Blanc",  # Ouille = non-oxidative style from Jura; grape is Savagnin Blanc (NOT Gewürztraminer)
+    "savagnin": "Savagnin Blanc",          # Plain Savagnin = SAVAGNIN BLANC in VIVC
+    # trebbiano d'abruzzo omitted: disputed variety (Bombino Bianco vs distinct), no DB entry, skip
+    "gruner veltiner": "Grüner Veltliner",  # alternate spelling
+    "sauvingon blanc": "Sauvignon Blanc",  # TTB typo
 }
 
 REGION_ALIASES: dict[str, str] = {
