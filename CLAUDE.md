@@ -109,8 +109,9 @@ Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for p
 - **COLA-keyed state merge:** 170K state DB records linked (PRO 84K, TABC 52K, WV 22K, Kansas 13K). +10,136 appellation assignments, +543 vintages.
 - **Price coverage:** 5.21% (25,898 distinct wines with prices). Was ~1% before session.
 - **Score coverage:** 2.24% (11,152 distinct wines with scores). Was 1.24% before session.
+- **UPCs:** 17,701 (+4,303 from Horizon/PA/OpenFoodFacts this session)
 - **wine_vintage_id backfill:** 0 orphaned prices (was 23K), 0 orphaned scores. All join via wine_vintage_id.
-- **Readiness metric:** 39/100 avg (3-run, measured 2026-04-03, up from 8/100 on 2026-04-02). Price dimension ~1% → 5.2%.
+- **Readiness metric:** 59/100 avg (3-run: 56, 68, 53, measured 2026-04-04). Up from 39/100 on 2026-04-03 — +20 points.
 - Alias tables seeded: 96 region, 75 label designation, 18,631 appellation
 - **Depth data now populated** (was all 0): 211K label images, 6.4K farming certs, 4.7K bottle formats, 809 food pairings, 696 descriptions, 449 sweetness, 166 winemakers, 233 pH, 251 TA, 192 RS, 100 fermentation vessels, 106 yeast types, 224 MLF, 166 oak duration, 158 oak origin, 101 closures, 321 production, 88 serving temps, 343 critic_score_avg, +141 importer scores, +681 colors
 - **Producer depth** (was all 0): 107 year_established, 78 websites, 117 GPS, 120 descriptions, 110 production, 173 winemaker links
