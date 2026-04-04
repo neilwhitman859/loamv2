@@ -1,110 +1,104 @@
-# Session: Prep Price Infrastructure for COLA UPC Arrival
+# Session: Maximize Price Coverage
 
-Read CLAUDE.md first. Give a briefing. This is a focused work session.
+Read CLAUDE.md first. Give a briefing. Single focus: maximize price coverage from current sources.
 
-## Context
-Two things are landing in a few days:
-1. **COLA UPC data** — barcode scan of 490K TTB label images, projected ~64K COLA→UPC bridges
-2. **TTB UPC** — will also arrive via a separate data drop
-
-When UPCs land on TTB records, the chain becomes:
-  TTB COLA → UPC → Spec's/LCBO/BC Liquor/PA/OpenFoodFacts → price
-That's ~50K+ prices currently sitting in staging that have no path to canonical wines.
-This is the single biggest readiness lever remaining.
-
-**Goal of this session: make the price infrastructure ready to absorb that data cleanly.**
-
-Current state (post Riddler Run #6, 2026-04-04):
-- 470,485 active wines | 195,468 grape links | 4,886 without country
-- Readiness: 40.9/100 — vintage 55%, grapes 45%, score 2%, price 1%
-- Price join bug found: 30,551 price rows exist but only 7,343 accessible via wine_vintage_id
-- 23,208 prices linked via legacy wine_id + vintage_year, not wine_vintage_id
+## Current State (post Riddler Run #6, 2026-04-04)
+- 470,485 active wines | readiness 40.9/100 — price dimension ~1%
+- 30,551 rows in wine_vintage_prices
+- Only 7,343 accessible via wine_vintage_id join — 23,208 orphaned (join bug)
+- ~1,538 COLA-linked wines with prices out of 292K = ~0.5% coverage
 
 ---
 
-## Goals (ordered by impact)
+## Step 1: Fix the wine_vintage_id Backfill [HIGH — do this first]
 
-### 1. Fix the Price Join Bug [HIGH — do this first, ~1 hour]
-
-The root cause: wine_vintage_prices has a wine_vintage_id FK (the preferred join path) but
-~23K rows were promoted with only wine_id + vintage_year set, wine_vintage_id left NULL.
+~23K price rows have wine_id + vintage_year set but wine_vintage_id = NULL.
 The readiness query joins through wine_vintage_id and misses them entirely.
+Same bug was fixed for scores in Riddler Run #2. Apply same fix to prices.
 
-Same bug was fixed for scores in Riddler Run #2. Apply the same fix to prices.
-
-Backfill script logic:
 ```sql
--- Find price rows missing wine_vintage_id
-SELECT COUNT(*) FROM wine_vintage_prices WHERE wine_vintage_id IS NULL;
+-- Confirm the gap
+SELECT
+  COUNT(*) as total_prices,
+  COUNT(wine_vintage_id) as have_vintage_id,
+  COUNT(*) - COUNT(wine_vintage_id) as missing_vintage_id
+FROM wine_vintage_prices;
 
--- Backfill: match wine_id + vintage_year → wine_vintages
+-- Backfill where vintage_year matches
 UPDATE wine_vintage_prices wvp
 SET wine_vintage_id = wv.id
 FROM wine_vintages wv
 WHERE wvp.wine_vintage_id IS NULL
   AND wvp.wine_id = wv.wine_id
   AND wvp.vintage_year = wv.vintage_year;
-
--- For NV wines (vintage_year = 0 or NULL), match on wine_id + NV vintage
 ```
 
-After backfill, re-run readiness to confirm price_pct improves.
+After backfill: re-run readiness and confirm price_pct improves meaningfully.
 
-### 2. Audit the UPC Match Path [MEDIUM — ~1 hour]
+---
 
-Before the barcode scan data lands, verify the pipeline is ready to use it.
+## Step 2: Add Virginia ABC [MEDIUM — clean legal source]
 
-Check:
-- Where does the barcode scan write UPCs? (source_ttb_colas.upc? external_ids? a new table?)
-- Does retail_promote.py have a UPC matching path, or does it only match by wine name?
-- When a TTB record gets a UPC, does that UPC flow through to source_specs/source_lcbo/etc.?
+Virginia DABC publishes a full product price list as a public government spreadsheet.
+No ToS issues — public records. Updated weekly. ~8K wine SKUs.
 
-Look at `pipeline/promote/retail_promote.py` and trace the UPC join path.
-If the path doesn't exist, build it now so it's ready on day one.
+Research the download URL:
+- Try: https://www.abc.virginia.gov/products/wine
+- Look for a CSV, Excel, or JSON download link
 
-The expected join when UPCs arrive:
+Build the fetcher + loader:
+1. `pipeline/fetch/virginia_abc.py` — download and parse the price list
+2. `pipeline/load/virginia_abc_staging.py` — load into `source_virginia_abc`
+   - Columns needed: name, producer, vintage_year, size_ml, price_usd, upc (if present)
+3. Run batch_matcher on the new source
+4. Run retail_promote to pull prices for matched wines
+
+Other state ABCs worth checking if time permits:
+- New Hampshire NHSLC: https://www.liquorandwineoutlets.com
+- Utah DABC: https://www.abc.utah.gov (has downloadable product list)
+
+---
+
+## Step 3: Run Full retail_promote [after Steps 1–2]
+
+```bash
+python -m pipeline.promote.retail_promote
 ```
-source_ttb_colas.upc
-  → match source_specs.upc / source_lcbo.upc / source_bc_liquor.upc / source_pa.upc
-  → get price + retailer
-  → promote to wine_vintage_prices
-```
 
-### 3. Add Virginia ABC Price Data [MEDIUM — clean legal source, ~1 hour]
-Virginia DABC publishes a full product price list as a downloadable spreadsheet (public
-government data, no ToS issues). Updated weekly. ~8K wine SKUs with prices.
+This will crash at Systembolaget REST limit (~20K calls) — that's expected and known.
+Run it anyway for the partial gains. Check output for new price/UPC counts.
 
-Research and fetch:
-- URL: https://www.abc.virginia.gov/products/wine (check for CSV/Excel download)
-- Fields to capture: product name, producer, vintage, size, price, UPC if present
-- Load into new `source_virginia_abc` staging table
-- Run batch_matcher to link to canonical wines
+Then run readiness 3x and record the new price_pct average.
 
-Same pattern as existing state sources (PRO Platform, TABC, etc.).
+---
 
-### 4. Wine Creation from Staging [MEDIUM — needs decision]
-~3K LCBO/Systembolaget/Flatiron records have a matched canonical producer but no canonical
-wine. Once created, these wines would immediately get prices from their staging source.
-This is more valuable than it sounds — these wines would also carry UPCs from LCBO/BC Liquor,
-which sets up future UPC price matching.
+## Step 4: Wine Creation from Staging [MEDIUM — needs decision]
+
+~3K LCBO/Systembolaget/Flatiron records have a matched canonical producer but no
+canonical wine. Once created, these wines would immediately get prices from their
+staging source.
 
 Creation policy (decide and log to DECISIONS.md):
 - Minimum bar: producer_id matched + wine_name exists + at least one attribute (UPC/vintage/price)
 - Dedup: fuzzy match against existing wines for the producer first
 - Start with LCBO only (~2K wines, best quality, all have UPCs)
 
-### 5. Grade C Batch Enrichment [$15–30 — fill wine_insights while waiting]
-The enrich-wine Edge Function is live but only 2 wines enriched.
-Build `pipeline/enrich/batch_enrich_c.py` targeting wines with country + appellation + grape.
-Start with 5K wines (~$15). Makes every searched wine page show something useful.
+---
+
+## Acceptance Criteria
+
+This session is successful if:
+- Price readiness goes from ~1% to 5%+ (3-run average)
+- wine_vintage_id backfill complete (0 NULL wine_vintage_ids where wine_id + vintage_year exist)
+- Virginia ABC prices loaded and partially promoted
 
 ---
 
 ## Do NOT do this session
-- Don't add CellarTracker or Vivino scores (legal issues — decision made, revisit later)
-- Don't re-run Riddler phases (runs nightly, handles grape/country incrementally)
-- Don't start frontend work until price join is fixed and confirmed
+- Don't touch grape promotion, country inference, or validation stamps (Riddler handles)
+- Don't build enrichment pipeline (separate session)
+- Don't start frontend work
+- Don't add score sources (decision made to skip for now)
 
 ## Wrapping up
-Update CLAUDE.md (especially price coverage numbers after backfill), DECISIONS.md if any
-decisions made, commit, push.
+Update CLAUDE.md price coverage numbers, DECISIONS.md if decisions made, commit, push.
