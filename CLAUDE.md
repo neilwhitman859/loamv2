@@ -111,10 +111,9 @@ Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for p
 - **Score coverage:** 2.24% (11,152 distinct wines with scores). Was 1.24% before session.
 - **UPCs:** 17,701 (+4,303 from Horizon/PA/OpenFoodFacts)
 - **Farming certs:** 9,324 (+2,937 from Skurnik/KL/EC/Polaner)
-- **Wine depth (2026-04-04):** +1,921 sweetness (Flatiron), +1,158 vine_age (KL), +254 description (Skurnik), +35,695 colors inferred from grapes (54% → 61.16%)
-- **Inference wins (2026-04-04):** first_vintage_year 84 → 175,153 (computed from wine_vintages), region_id 301K → 386K (+84,543 from producers), varietal_category_id 0 → 94,198 (single-grape match)
-- **Data grade refresh (2026-04-04):** F=461,449, D=34,561, C=913, B=3 (was F=496,923, D=0, C=0, B=3)
-- **Producer inference:** country +4K, region +2K, appellation 0 → 25,634 (reverse-computed from wines)
+- **Wine depth (2026-04-04):** +1,921 sweetness (Flatiron), +1,158 vine_age (KL), +254 description (Skurnik)
+- **Data grade refresh (2026-04-04):** F/D/C/B distribution updated based on populated price/score/grape fields
+- **⚠️ Inference reverts (2026-04-04):** Rolled back probabilistic inferences that violated Principle #3/#5. See `docs/DECISIONS.md` and `memory/feedback_no_probabilistic_inference.md`. Reverted: color-from-grapes, first_vintage_year MIN computation, critic/community score aggregates, sparkling_method name patterns, wine_grapes from name/appellation patterns, producer country/region/appellation majority-vote, wine region from multi-region producers. Collateral loss (~44K wine_grapes, ~85K colors) — can be restored via proper pipeline scripts using real source data.
 - **wine_vintage_id backfill:** 0 orphaned prices (was 23K), 0 orphaned scores. All join via wine_vintage_id.
 - **Readiness metric:** 66.67/100 avg (3-run: 64, 65, 71, measured 2026-04-04 after grape name inference). Up from 39/100 on 2026-04-03 — +28 points.
 - Alias tables seeded: 96 region, 75 label designation, 18,631 appellation
