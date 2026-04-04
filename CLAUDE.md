@@ -116,7 +116,7 @@ Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for p
 - **Data grade refresh (2026-04-04):** F=461,449, D=34,561, C=913, B=3 (was F=496,923, D=0, C=0, B=3)
 - **Producer inference:** country +4K, region +2K, appellation 0 → 25,634 (reverse-computed from wines)
 - **wine_vintage_id backfill:** 0 orphaned prices (was 23K), 0 orphaned scores. All join via wine_vintage_id.
-- **Readiness metric:** 59.67/100 avg (3-run: 51, 65, 63, measured 2026-04-04 after full session). Up from 39/100 on 2026-04-03 — +20 points.
+- **Readiness metric:** 66.67/100 avg (3-run: 64, 65, 71, measured 2026-04-04 after grape name inference). Up from 39/100 on 2026-04-03 — +28 points.
 - Alias tables seeded: 96 region, 75 label designation, 18,631 appellation
 - **Depth data now populated** (was all 0): 211K label images, 6.4K farming certs, 4.7K bottle formats, 809 food pairings, 696 descriptions, 449 sweetness, 166 winemakers, 233 pH, 251 TA, 192 RS, 100 fermentation vessels, 106 yeast types, 224 MLF, 166 oak duration, 158 oak origin, 101 closures, 321 production, 88 serving temps, 343 critic_score_avg, +141 importer scores, +681 colors
 - **Producer depth** (was all 0): 107 year_established, 78 websites, 117 GPS, 120 descriptions, 110 production, 173 winemaker links
