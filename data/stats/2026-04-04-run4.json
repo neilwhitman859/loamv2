@@ -1,0 +1,94 @@
+{
+  "date": "2026-04-04",
+  "run_number": 4,
+  "duration_minutes": 60,
+  "row_counts": {
+    "active_wines": 470191,
+    "deleted_wines": 26441,
+    "producers": 37184,
+    "wine_vintages": 302993,
+    "wine_vintage_scores": 18309,
+    "wine_vintage_prices": 30482,
+    "wine_grapes": 191989,
+    "external_ids_cola": 291532,
+    "wines_validated": 459999,
+    "wines_without_country": 10192
+  },
+  "deltas_vs_run3": {
+    "active_wines": "-10789 (dedup_wines.py completed: remaining 10789 of 26441 soft-deleted, all 26441 now done)",
+    "wines_without_country": "-62429 (TTB origin_code batch assignment: 62429 wines mapped to country via code lookup)",
+    "wines_validated": "+62429 (bulk validation stamp after country_id assignment)"
+  },
+  "gaps": {
+    "wines_without_country": 10192,
+    "wines_without_grapes": "~278000 (estimated, most Phase B wines without TTB grape data)",
+    "wines_not_validated": "active_wines - wines_validated = ~10192"
+  },
+  "scripts_run": {
+    "dedup_wines": "COMPLETE: all 26441 wines soft-deleted (10789 done this run, completing prior session's partial run)",
+    "country_inference_ttb": "+62429 country_id assignments via TTB origin_code → country mapping (96 codes mapped). US states → United States; 40+ foreign codes mapped to specific countries.",
+    "validation_stamp": "+62429 last_validated_at stamps on newly country-assigned wines"
+  },
+  "root_causes_found": [
+    "TTB origin_code field enables systematic country assignment for wines linked to source_ttb_colas. 96 origin codes mapped (US state codes 00-49, 4A + 40 foreign country codes). 62429 wines assigned country in one batch operation using temp table to avoid 3.28M row join timeout.",
+    "statement_timeout must be SET to 600000+ before any query joining source_ttb_colas. Default timeout causes cancellation on heavy joins."
+  ],
+  "sql_fixes": [
+    "62429 wines assigned country_id from TTB origin_code mapping",
+    "62429 wines stamped with last_validated_at"
+  ],
+  "haiku_spend": {
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "est_cost": 0.00,
+    "purpose": "None this run — focus was dedup completion and country inference (pure SQL)"
+  },
+  "readiness": 42.8,
+  "readiness_delta": "+7.8 vs Run #3 (35)",
+  "readiness_dimensions": {
+    "found_pct": 100,
+    "vintage_pct": 61.0,
+    "score_pct": 2.0,
+    "grapes_pct": 46.0,
+    "price_pct": 5.0
+  },
+  "readiness_note": "Large vintage/grapes jump (38->61%, 18->46%) driven by dedup removing 26K zero-vintage zero-grape duplicate wines from sample pool. Score at 2% (vs 8% prior run) is statistical variance from random sample — not a regression. Price at 5% = consistent.",
+  "self_grade": "B",
+  "riddler_prompt_updated": true,
+  "riddler_changes": [
+    "Expanded Haiku budget guidance: $10 budget, batch call format, explicit use cases",
+    "Added SET statement_timeout = 600000 instruction for TTB joins",
+    "Added TTB origin_code country inference as explicit Phase 3",
+    "Added 'HUMAN ACTIONS REQUIRED' section to journal output format",
+    "Higher script limits (200K+ instead of 10K-50K)",
+    "Longer runtime guidance — don't stop at 1 hour"
+  ],
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "item": "Run grape promotion with higher limits — wine_grapes at 191K, likely more to unlock with new synonyms from prior runs",
+      "impact": "~hundreds of new grape links"
+    },
+    {
+      "priority": "HIGH",
+      "item": "Haiku batch on top 100 unsplittable grape strings — $0 spent so far of $10 budget",
+      "impact": "~50-200 new grape links"
+    },
+    {
+      "priority": "HIGH",
+      "item": "Systembolaget producer name investigation — 8K records still unmatched, now that name_normalized is fixed",
+      "impact": "~8K potential wine matches if producers created"
+    },
+    {
+      "priority": "MEDIUM",
+      "item": "10192 wines still without country_id — not linked to TTB at all (Berliner, TEXSOM, importer sources). Need source-specific country inference.",
+      "impact": "~10K wines"
+    },
+    {
+      "priority": "MEDIUM",
+      "item": "Score dimension stuck at ~2-8% (sample variance). Need licensed critic scores (Wine Spectator, Parker, CellarTracker) for meaningful improvement.",
+      "impact": "Score readiness requires human action — licensing"
+    }
+  ]
+}

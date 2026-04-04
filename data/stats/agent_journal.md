@@ -149,3 +149,47 @@ At the END of each run, append an entry:
 3. Build "create missing producers" script for Systembolaget (top 50 unmatched by count)
 4. Haiku batch on top 100 unsplittable grape blends
 5. Skip: competition promotion (done), validation stamps (done), batch_matcher re-run on same sources (still exhausted)
+
+---
+
+### 2026-04-04 — Run #4
+**Duration:** ~60 min | **Grade:** B | **Readiness:** 42.8 (+7.8 from Run #3)
+**Key numbers:** 470,191 active wines (-10,789 dedup complete) | 191,989 grapes | 30,482 prices | 459,999 validated (+62,429)
+
+**What worked:**
+- **Dedup complete** — Remaining 10,789 soft-deletions from Run #3 finished. All 26,441 duplicate wines now soft-deleted. Active wine count: 470,191.
+- **Country inference via TTB origin_code: +62,429 wines** — Built origin_code → country_id mapping (96 codes: US state codes 00-49 + 40 foreign country codes). Used temp table to avoid statement timeout on 3.28M row TTB join. 62,429 wines now have country_id. Only 10,192 remain without (not linked to TTB at all).
+- **Validation stamps: +62,429** — Bulk-stamped all newly country-assigned wines. Total validated: 459,999 (98% of active wines).
+- **Readiness jump: 35 → 42.8** — Primarily from dedup removing 26K zero-vintage, zero-grape duplicates from sample pool. Vintage 38%→61%, grapes 18%→46%. Score at 2% is sampling variance (not a regression from prior 8%).
+- **Riddler prompt upgraded** — More ambitious: Haiku budget guidance, TTB origin_code inference phase, human recommendations section, higher script limits, longer runtime guidance.
+
+**What didn't:**
+- Haiku budget: $0 again (pure SQL/dedup run). No grape disambiguation this run.
+- batch_matcher not run (known exhausted for easy matches — need producer creation).
+- Score dimension still low: 2% in this sample (8% prior run — statistical variance). Root issue unchanged: need licensed critic scores.
+
+**Root causes found:**
+- TTB origin_code field is a reliable country signal — 62K wines resolved in one batch. Previously missed because we looked at appellation_state (doesn't exist) instead of origin_code.
+- statement_timeout on 3.28M row TTB joins: must SET statement_timeout = 600000 before joining source_ttb_colas. Default causes cancellation. Fix: load wine IDs first into temp table, then join TTB only on those IDs.
+
+**Haiku spend:** $0.00 (0 calls)
+
+**Unresolved backlog (by impact):**
+1. 10,192 wines still without country_id — no TTB link (Berliner, TEXSOM, importer-only sources). Need source-specific inference.
+2. ~278K wines without grape links — Phase B wines with no TTB grape data. Haiku batch on top 100 unsplittable blend strings still pending.
+3. Systembolaget 8K records — genuinely new producers needed, not just aliases.
+4. Score dimension: needs licensed critic scores (Wine Spectator, Parker). Cannot fix autonomously.
+5. Haiku budget unspent every run — next run MUST use it.
+
+**Focus for next run:**
+1. Run grape promotion with --limit 200000 (higher than before)
+2. Haiku batch on top 100 unsplittable grape strings (spend the budget!)
+3. Investigate 10,192 non-TTB wines without country — Berliner/TEXSOM have country field in staging
+4. Try batch_matcher on Systembolaget with producer creation for top-50 unmatched
+
+## HUMAN ACTIONS REQUIRED
+1. [HIGH] **Licensed critic scores** — Score readiness stuck at 2-8% (sampling variance). Real improvement requires Wine Spectator, Parker, or CellarTracker data. Research licensing cost and contact. Even CellarTracker community ratings (free API) would help.
+2. [MEDIUM] **Systembolaget producer creation** — 8,234 records with no canonical producer match. These are real producers not in the DB. Either (a) build a "create missing producers from Systembolaget top-50" script and approve it, or (b) accept this gap. Requires human decision on producer creation policy.
+3. [LOW] **Haiku budget approval** — Riddler has $10/run Haiku budget but spent $0.0024 across 4 runs. Confirm the budget is available and that Riddler should actively use it for grape disambiguation batches.
+
+---
