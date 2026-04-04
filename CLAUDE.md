@@ -111,7 +111,7 @@ Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for p
 - **Score coverage:** 2.24% (11,152 distinct wines with scores). Was 1.24% before session.
 - **UPCs:** 17,701 (+4,303 from Horizon/PA/OpenFoodFacts)
 - **Farming certs:** 9,324 (+2,937 from Skurnik/KL/EC/Polaner)
-- **Wine depth (2026-04-04):** +1,921 sweetness (Flatiron), +1,158 vine_age (KL), +254 description (Skurnik)
+- **Wine depth (2026-04-04):** +1,921 sweetness (Flatiron), +1,158 vine_age (KL), +254 description (Skurnik), +35,695 colors inferred from grapes (54% → 61.16%)
 - **wine_vintage_id backfill:** 0 orphaned prices (was 23K), 0 orphaned scores. All join via wine_vintage_id.
 - **Readiness metric:** 59.67/100 avg (3-run: 51, 65, 63, measured 2026-04-04 after full session). Up from 39/100 on 2026-04-03 — +20 points.
 - Alias tables seeded: 96 region, 75 label designation, 18,631 appellation
