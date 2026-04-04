@@ -102,12 +102,14 @@ Region insights (202), appellation insights (82), country insights (62). All oth
 ### Schema (Phase 1a/1b complete)
 78 canonical tables, 30 staging tables. Schema hardened across 3 rounds (Phase 1a, post-import, scan round 2). All reference data seeded and audited. See `docs/SCHEMA.md` for field reference, `docs/HISTORY.md` for schema change history.
 
-### Content Tables (updated 2026-04-03)
+### Content Tables (updated 2026-04-04)
 Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for promotion/merge event history.
-- **~37K producers**, **~497K wines**, **~288K vintages**, **~18K scores**, **~30K prices**, **~184K wine_grapes**, **~493K external_ids** (292K COLA + 10K UPC + 189K LWIN), **~16K entity_classifications**
+- **~37K producers**, **~497K wines**, **~320K vintages**, **~19K scores**, **~50K prices**, **~202K wine_grapes**, **~492K external_ids** (292K COLA + 12K UPC + 189K LWIN), **~16K entity_classifications**
 - **292K wines linked to TTB** (686K TTB records linked)
 - **COLA-keyed state merge:** 170K state DB records linked (PRO 84K, TABC 52K, WV 22K, Kansas 13K). +10,136 appellation assignments, +543 vintages.
-- **Readiness metric:** 39/100 avg (3-run, measured 2026-04-03, up from 8/100 on 2026-04-02)
+- **Price coverage:** 4.59% (22,807 distinct wines with prices). Was ~1% before backfill+promotion session.
+- **wine_vintage_id backfill:** 0 orphaned prices (was 23K), 0 orphaned scores. All join via wine_vintage_id.
+- **Readiness metric:** 39/100 avg (3-run, measured 2026-04-03, up from 8/100 on 2026-04-02). Price dimension jumped ~1% → 4.6%.
 - Alias tables seeded: 96 region, 75 label designation, 18,631 appellation
 - **Depth data now populated** (was all 0): 211K label images, 6.4K farming certs, 4.7K bottle formats, 809 food pairings, 696 descriptions, 449 sweetness, 166 winemakers, 233 pH, 251 TA, 192 RS, 100 fermentation vessels, 106 yeast types, 224 MLF, 166 oak duration, 158 oak origin, 101 closures, 321 production, 88 serving temps, 343 critic_score_avg, +141 importer scores, +681 colors
 - **Producer depth** (was all 0): 107 year_established, 78 websites, 117 GPS, 120 descriptions, 110 production, 173 winemaker links
@@ -217,17 +219,30 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 - ✅ 6 new schema fields: serving_temperature_low/high_c, fermentation_duration_days, fermentation_temperature_c, training_method, vine_density_per_ha
 - New script: `pipeline/promote/importer_depth.py`
 
+**Completed (2026-04-04 price coverage session):**
+- ✅ wine_vintage_id backfill: 23,208 orphaned prices → 0. Created 9,658 missing vintages, rescued 2,424 NV orphans.
+- ✅ Wally's prices: +17,550 (biggest single addition, all NV/USD)
+- ✅ Spec's/LCBO/BC Liquor/Systembolaget/PA/FirstLeaf prices via bulk SQL
+- ✅ TEXSOM remaining scores: +423 (normalized medal mapping)
+- ✅ Grape promotion: +6,565 links from Berliner (comma text), Flatiron/Systembolaget (arrays). Matched via grapes + grape_synonyms.
+- ✅ Spec's UPCs: +51 via SQL ON CONFLICT
+- ✅ Virginia ABC researched — spirits-only control state, not useful for table wine. Utah DABS better alternative (~2.9K wines).
+- retail_promote.py REST approach killed (too slow for UPC dedup errors). Bulk SQL 10x faster.
+- **Session totals:** +19,080 prices, +423 scores, +6,565 grapes, +17,314 vintages. Price coverage ~1% → 4.59%.
+
 **Next steps (resume here):**
 1. ✅ **Enrichment pipeline MVP LIVE** — `enrich-wine` Edge Function deployed. Sonnet enrichment on-demand. Tested: ~$0.018/wine, 25s latency. Writes to wine_insights, wine_vintage_tasting_insights, enrichment_log. Updates data_grade to B.
-2. **Grade C batch pre-warming** — Haiku batch for 30-50K wines (~$120). Build the batch script.
-3. **Frontend integration** — Wire up enrichment trigger on wine page load for sub-B wines.
-4. **Tier D (fuzzy tail)** — AI-assisted matching for remaining unlinked staging records.
-5. **TTB COLA Phase 3 AI parse** — Haiku on 1.35M non-001 fanciful names (~$10).
-6. **Frontend resume** — canonical tables now have real depth + enrichment pipeline live.
+2. **Push price coverage to 5%+** — Add batch_matcher configs for Enofile (9K), PA unmatched (5.3K), Best Wine Store (1.7K), Domestique (247), Last Bottle (160). All have prices but 0 matches currently.
+3. **Grade C batch pre-warming** — Haiku batch for 30-50K wines (~$120). Build the batch script.
+4. **Frontend integration** — Wire up enrichment trigger on wine page load for sub-B wines.
+5. **Tier D (fuzzy tail)** — AI-assisted matching for remaining unlinked staging records. Berliner (70K unmatched), TEXSOM (33K), Systembolaget (8K).
+6. **TTB COLA Phase 3 AI parse** — Haiku on 1.35M non-001 fanciful names (~$10).
+7. **Frontend resume** — canonical tables now have real depth + enrichment pipeline live.
 
 ### Major Gaps
+- **Price coverage 4.59%** — all matched staging records promoted. Need batch_matcher on unmatched retail/competition sources to push past 5%.
 - **Enrichment pipeline live but 2 wines enriched** — need batch pre-warming (Grade C) and frontend integration (Grade B on-demand).
-- UPC barcodes: ~5K (barcode scan running should add ~64K)
+- UPC barcodes: ~12K (barcode scan running should add ~64K)
 - ~40 canonical tables still at 0 rows (vineyards, descriptors, wine_relationships, etc.)
 - Weather data, soil/water body links, producer_timeline — all empty.
 
