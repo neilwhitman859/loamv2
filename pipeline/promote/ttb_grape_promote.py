@@ -52,6 +52,15 @@ BLEND_BLACKLIST = {
     "vin santo", "vino nobile", "amarone della valpolicella",
     # Appellation-prefixed names (grape + appellation)
     "traiser riesling",  # Riesling from Traisen — parse as single grape below
+    # Run #5 additions — Haiku confirmed skip items
+    "gavi", "crianza", "soave", "fendant", "bianchello del metauro",
+    "white burgundy", "branco", "st vincent", "red bordeaux",
+    "sparkling wine", "red table wine", "white zinfandel",
+    "brut", "bianco", "rosso", "red blend", "white wine blend",
+    "blanc de noir", "vendemmia", "cuvee", "the status is approved.",
+    "the status is expired.", "the status is surrendered.",
+    "red", "white", "rose wine", "rosé", "11/14/2005",
+    "eec/eu (ttb use only)", "multiple countries",
 }
 
 # TTB encodes accented chars as '?' — map common corrupted forms
@@ -115,6 +124,67 @@ TTB_GRAPE_FIXES = {
     # Typos
     "pinot auxerrios": "Pinot Auxerrois",
     "pinot auxerois": "Pinot Auxerrois",
+    # Run #5 additions — truncated forms from TTB data
+    "syr": "Syrah",         # truncated Syrah
+    "carig": "Carignan",    # truncated Carignan/Cariñena
+    "mourv": "Mourvèdre",   # truncated Mourvèdre (already have mourv?dre but not bare truncation)
+    # Blend shorthand cleanup
+    "viura malvoisia": "Viura",   # Viura is primary; Malvoisie/Malvasia is secondary
+    "savagnin ouille": "Savagnin Blanc",  # Haiku confirmed Run #3: Savagnin Ouille = Savagnin Blanc
+    # Run #5 — grape name resolution from DB inspection
+    "baroques": "Baroque",              # plural form of Baroque (in DB as BAROQUE)
+    "muscat petits grains": "Muscat a Petits Grains Blancs",  # common TTB form → VIVC canonical
+    "argonez": "Tempranillo Tinto",     # typo for Aragonez, which is a synonym for Tempranillo
+    "aragonez": "Tempranillo Tinto",    # Aragonez = Tempranillo synonym
+    "zweiglt": "Zweigelt",              # common typo
+    "zweigelt": "Zweigelt",
+    "rkatsiteli rose": "Rkatsiteli",    # color suffix stripped
+    "mouvedre": "Mourvèdre",            # common misspelling in TTB blends
+    "alicante bouschet": "Alicante Bouschet",  # legitimate grape, ensure it resolves
+    "tinto fino": "Tempranillo Tinto",  # Tinto Fino = Tempranillo in Spain
+    # Run #5 — Haiku-confirmed fixes
+    "riesling spatlese": "Riesling",        # quality level, extract grape
+    "riesling auslese": "Riesling",
+    "dry riesling": "Riesling",             # style prefix, extract grape
+    "riesling spatlese": "Riesling",
+    "gamay noir a jus blanc": "Gamay Noir", # French name (encoding strips accent)
+    "gamay noir ? jus blanc": "Gamay Noir",
+    "carinyena": "Carignan Noir",           # Catalan name for Carignan
+    "mencia": "Mencia",                     # in DB as MENCIA
+    "anglianico": "Aglianico",              # common typo
+    "fruilano": "Friulano",                 # typo for Friulano
+    "semillion": "Semillon",                # common misspelling
+    "barbera asti": "Barbera Nera",         # Barbera d'Asti → extract grape
+    "barbera d asti": "Barbera Nera",
+    "barbera d'asti": "Barbera Nera",
+    "barbera alba": "Barbera Nera",
+    "barbera d'alba": "Barbera Nera",
+    "verduzzo": "Verduzzo Friulano",        # matches VERDUZZO FRIULANO in DB
+    "verduzzo friulano": "Verduzzo Friulano",
+    "balufrankisch": "Blaufraenkisch",      # typo of Blaufrankisch (DB: BLAUFRAENKISCH via Lemberger synonym)
+    "blaufrankisch": "Blaufraenkisch",
+    "grenache rose": "Grenache",            # color suffix, extract grape
+    "100% pineau d'aunis": "Pineau d'Aunis",  # percentage prefix
+    "cabernet sauvingon": "Cabernet Sauvignon",  # misspelling
+    # Run #5 second pass — more typos from 200K promotion run
+    "pedro ximnez": "Pedro Ximenez",       # missing 'e'
+    "pedro xim?nez": "Pedro Ximenez",      # encoding corruption
+    "chadonnay": "Chardonnay",             # typo
+    "pinot grigo": "Pinot Grigio",         # typo
+    "rieling": "Riesling",                 # typo
+    "smillon": "Semillon",                 # typo
+    "cataratto": "Catarratto Bianco Comune",  # one 't' variant (cataratto vs catarratto)
+    "rousanne": "Roussanne",               # typo
+    "savignin": "Savagnin Blanc",          # 'Savignin' with i → Savagnin
+    "muscato": "Muscat Blanc a Petits Grains",  # Italian vernacular for Muscat
+    "savignon blanc": "Sauvignon Blanc",   # typo
+    "grenache 25%": "Grenache",            # percentage embedded
+    "grenache 80%": "Grenache",
+    "grenache 50%": "Grenache",
+    "malbec 85%": "Malbec",
+    "syrah 85%": "Syrah",
+    "chardonnay 85%": "Chardonnay",
+    "pinot rose": "Pinot Gris",            # Pinot Rosé = Pinot Gris in most contexts
 }
 
 
@@ -153,7 +223,17 @@ def parse_grape_string(s):
     if s_lower in BLEND_BLACKLIST:
         return []
 
-    parts = re.split(r'[,/|]', s)  # also split on pipe (|) separator
+    # Dash-separated blends: only split on dash if the result looks like grape names
+    # (e.g. "Balufrankisch-Zweigelt-Cabernet Sauvignon-Merlot")
+    # Heuristic: if no comma/slash and string has 2+ dash segments each 3+ chars → dash split
+    if '-' in s and ',' not in s and '/' not in s:
+        dash_parts = [p.strip() for p in s.split('-') if len(p.strip()) >= 3]
+        if len(dash_parts) >= 2:
+            parts = dash_parts
+        else:
+            parts = [s]
+    else:
+        parts = re.split(r'[,/|]', s)  # also split on pipe (|) separator
     grapes = []
     for part in parts:
         part = part.strip()

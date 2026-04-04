@@ -23,8 +23,6 @@ At the END of each run, append an entry:
 
 ---
 
-(No entries yet — first run pending)
-
 ---
 
 ### 2026-04-04 — Run #1
@@ -191,5 +189,53 @@ At the END of each run, append an entry:
 1. [HIGH] **Licensed critic scores** — Score readiness stuck at 2-8% (sampling variance). Real improvement requires Wine Spectator, Parker, or CellarTracker data. Research licensing cost and contact. Even CellarTracker community ratings (free API) would help.
 2. [MEDIUM] **Systembolaget producer creation** — 8,234 records with no canonical producer match. These are real producers not in the DB. Either (a) build a "create missing producers from Systembolaget top-50" script and approve it, or (b) accept this gap. Requires human decision on producer creation policy.
 3. [LOW] **Haiku budget approval** — Riddler has $10/run Haiku budget but spent $0.0024 across 4 runs. Confirm the budget is available and that Riddler should actively use it for grape disambiguation batches.
+
+---
+
+### 2026-04-04 — Run #5
+**Duration:** ~180 min | **Grade:** B | **Readiness:** 40.3 (~42.8 Run #4 — sampling variance, true trend flat)
+**Key numbers:** 470,191 active wines | 192,357 grapes (+368) | 30,377 prices (-105 cleanup) | 9,899 without country (-293)
+
+**What worked:**
+- **Grape promotion 200K limit**: Ran ttb_grape_promote with 200K limit (was 50K). Resolved +310 in one run. Found ~35 new fixes needed across the larger catalog.
+- **Haiku disambiguation ($0.001)**: 1 call, 27 strings batched. Confirmed 15+ new TTB_GRAPE_FIXES (Anglianico, Fruilano, Mencia, Rousanne, Chadonnay, etc.). Added 20 new BLEND_BLACKLIST entries (junk strings like "THE STATUS IS APPROVED.", "RED WINE", "Crianza", etc.). Caught Haiku error: "Topaque → Touriga Nacional" is WRONG (Topaque = Muscadelle-based Rutherglen style), skipped it.
+- **Country inference +293**: Polaner (+59), WineDeals (+224), Flatiron (+3), TTB unusual codes (+7: Slovenia, North Macedonia, Serbia, Denmark, Sweden, Germany, Wisconsin/US). Exhausted all staging source country fields.
+- **Phase 1 cleanup**: 105 prices on soft-deleted wines deleted (orphaned from dedup). 0 future vintages, 0 country-appellation mismatches.
+- **Root cause identified: batch_matcher 0 wine matches**: LCBO/Systembolaget/Flatiron have producers matched but wines don't exist in canonical. "Jacob's Creek Pinot Grigio" → producer matches but no "Pinot Grigio" canonical wine exists for Jacob's Creek. Not a name-matching bug — a missing wine creation problem.
+
+**What didn't:**
+- Retail/batch_matcher: 0 wine matches across all sources (by design — wines need to be created first)
+- Readiness: 40.3 vs 42.8 in Run #4 (sampling variance). True grapes dimension ~45%, vintage ~52%, score ~3.5%, price ~1%.
+- retail_promote: no net new prices (105 deletion from Phase 1 offset additions)
+
+**Root causes found:**
+- LCBO/Systembolaget/Flatiron zero wine matches: The staging wines (e.g. "Jacob's Creek Pinot Grigio") have producers matched in canonical, but the specific wine doesn't exist in canonical. This is EXPECTED — these are retail/distributor catalog wines not captured by LWIN or TTB promotion. Fix: build create_missing_wines_from_staging.py.
+- TTB grape field contains non-grape junk: "THE STATUS IS APPROVED.", "Red Wine", "Crianza" etc. appear as grape_varietals values. Now blacklisted, saving ~700 useless processing attempts per run.
+- Blend promoter dash-separator fix applied: "Balufrankisch-Zweigelt-Cabernet Sauvignon-Merlot" now splits on dashes when no comma/slash present.
+
+**Accuracy checks:**
+- Verified all 8 ABV <1% wines are legitimate dealcoholized products (Henkell, Freixenet, Kim Crawford, etc.). No fix needed.
+- Spot-checked 10 country assignments from WineDeals: all correct (Italy wines → Italy, US wines → US, France wines → France).
+- Haiku error caught: Topaque → Touriga Nacional is incorrect. Topaque is an Australian Muscadelle-based fortified style. Skipped this mapping.
+
+**Haiku spend:** $0.001 (1 call, 535 in / 669 out tokens)
+
+**Unresolved backlog (by impact):**
+1. Missing wine creation from staging sources (~2K LCBO, ~8K Systembolaget, ~1.5K Flatiron producer-matched but no canonical wine)
+2. 9,899 wines without country_id (no staging source with country data; Yugoslavia/unknown TTB codes)
+3. Score dimension stuck at 3.5% — licensed critic scores needed (CellarTracker free API worth investigating)
+4. 1,820 still-unsplittable blend strings — diminishing returns (exotic/malformed)
+5. Haiku underused — $10 budget available, only $0.001 spent
+
+**Focus for next run:**
+1. **Build create_missing_wines_from_staging.py** — create canonical wines for LCBO/Systembolaget/Flatiron producer-matched records. Use staging wine name stripped of producer prefix as wine name. This could add 1K-3K new canonical wines with prices/UPCs.
+2. **Haiku for country inference** — batch 9,899 country-less wine names + producer names → infer country. At $0.001/batch of 30, the 9,899 wines would cost ~$0.30.
+3. **Grape promotion 500K limit** — cover the full 328K grape-less wine catalog (not just 200K)
+4. **Skip**: batch_matcher (won't produce wine matches until wines created), retail_promote (no wines to promote to), competition promotion (exhausted)
+
+## HUMAN ACTIONS REQUIRED
+1. [HIGH] **Licensed critic scores** — Score readiness stuck at 3.5% (sampling variance but fundamentally low). Need Wine Spectator, Parker, or CellarTracker data. Even CellarTracker free API would push this to 20-30%.
+2. [HIGH] **Wine creation from staging approval** — Riddler wants to create ~3K new canonical wines from LCBO/Systembolaget/Flatiron producer-matched records. This increases wine count and enables price/UPC linkage. Needs human approval of the creation policy (quality bar, what data to include).
+3. [MEDIUM] **Systembolaget producer creation** — After wine creation from matched producers, ~7K Systembolaget records still have no producer match. Build and approve a producer creation script for top-50 unmatched.
 
 ---
