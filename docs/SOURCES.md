@@ -965,7 +965,7 @@ Since Dec 2023, all EU wines must have digital labels (QR codes) with ingredient
 | A | **TTB COLA direct** | 3.28M records | ✅ **SCRAPE COMPLETE.** Detail: 3.18M (96.8%). Printable: 1.82M/1.83M 001-format (99.86%). Non-001 (1.35M) confirmed no printable page. |
 | B | **PRO Platform XLSX** ⭐ | 346K loaded | ✅ Loaded. 12 states, COLA + vintage + appellation + ABV. |
 | C | **LWIN** | 189K | ✅ **Promoted to canonical.** 189K wines, 33K producers, 190K external_ids, 16K classifications. |
-| D | **Texas TABC** ⭐ | 183K loaded | ✅ Loaded. 100% TTB numbers, 99.8% ABV. ⚠️ 18K stale (API has 201K). |
+| D | **Texas TABC** ⭐ | 183K loaded | ✅ Loaded. 100% TTB numbers, 99.8% ABV. Refreshed 2026-04-03 (201K API → 183K unique TTB after dedup, no net new). |
 | E | **Kansas + Pennsylvania + West Virginia** | ~126K loaded | ✅ KS 65K + PA 6K + WV 55K loaded. ⚠️ WV API dead. |
 | F | **Importer catalogs** | ~8.3K in staging | ⚠️ In staging, **unlinked** (canonical_wine_id = NULL). Needs re-promotion against LWIN backbone. |
 | | — Skurnik | 5,541 ✅ | German/Austrian |

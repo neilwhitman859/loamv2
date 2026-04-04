@@ -147,6 +147,12 @@ All wines live in the `wines` table — there is no separate candidates/staging 
 
 ---
 
+## Deployment Status
+
+**MVP deployed 2026-04-04.** Edge Function `enrich-wine` is live on Supabase. On-demand B-grade enrichment tested on 2 wines (~$0.018/wine, ~25s latency, Claude Sonnet). Writes to `wine_insights`, `wine_vintage_tasting_insights`, `enrichment_log`. Updates `wines.data_grade` to 'B'. Prompt template: `enrich-wine-v1`. Voice/prompt refinement needed before batch spend >$16.
+
+---
+
 ## Enrichment Pipeline Architecture
 
 ### On-Demand Flow (F/D/C → B)

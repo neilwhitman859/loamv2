@@ -166,12 +166,12 @@ New approach: promote TTB data in confidence tiers rather than the original 3-la
 
 ## Phase 3: Enrichment Pipeline
 
-**Status:** Not started
+**Status:** MVP deployed (2026-04-04). `enrich-wine` Edge Function live. On-demand B-grade enrichment tested on 2 wines (~$0.018/wine, ~25s). Voice/prompt refinement needed before batch spend.
 **Depends on:** Phase 2 provides the wine catalog
 **Goal:** On-demand enrichment for user searches. Every wine a user looks up gets Grade B content within 5-15 seconds.
 
-- Edge Function for on-demand Sonnet enrichment
-- Batch Haiku for pre-warming popular wines to Grade C
+- ✅ Edge Function for on-demand Sonnet enrichment (deployed)
+- Batch Haiku for pre-warming popular wines to Grade C (pending prompt refinement)
 - Vertical slice: California + Burgundy as first enrichment targets
 - Enrichment log with cost tracking, prompt versioning, review workflow
 - Weather data integration (Open-Meteo, appellation-level)
