@@ -102,21 +102,18 @@ Region insights (202), appellation insights (82), country insights (62). All oth
 ### Schema (Phase 1a/1b complete)
 78 canonical tables, 30 staging tables. Schema hardened across 3 rounds (Phase 1a, post-import, scan round 2). All reference data seeded and audited. See `docs/SCHEMA.md` for field reference, `docs/HISTORY.md` for schema change history.
 
-### Content Tables (updated 2026-04-04)
+### Content Tables (updated 2026-04-04, post inference-revert)
 Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for promotion/merge event history.
-- **~37K producers**, **~497K wines**, **~331K vintages**, **~27K scores**, **~55K prices**, **~203K wine_grapes**, **~492K external_ids** (292K COLA + 13K UPC + 189K LWIN), **~16K entity_classifications**
+- **~37K producers**, **~497K wines**, **~319K vintages**, **~27K scores**, **~27K prices**, **~152K wine_grapes**, **~492K external_ids** (292K COLA + 18K UPC + 189K LWIN), **~16K entity_classifications**
 - **292K wines linked to TTB** (686K TTB records linked)
 - **COLA-keyed state merge:** 170K state DB records linked (PRO 84K, TABC 52K, WV 22K, Kansas 13K). +10,136 appellation assignments, +543 vintages.
-- **Price coverage:** 5.21% (25,898 distinct wines with prices). Was ~1% before session.
-- **Score coverage:** 2.24% (11,152 distinct wines with scores). Was 1.24% before session.
-- **UPCs:** 17,701 (+4,303 from Horizon/PA/OpenFoodFacts)
-- **Farming certs:** 9,324 (+2,937 from Skurnik/KL/EC/Polaner)
-- **Wine depth (2026-04-04):** +1,921 sweetness (Flatiron), +1,158 vine_age (KL), +254 description (Skurnik)
-- **Data grade refresh (2026-04-04):** F/D/C/B distribution updated based on populated price/score/grape fields
-- **⚠️ Inference reverts (2026-04-04):** Rolled back probabilistic inferences that violated Principle #3/#5. See `docs/DECISIONS.md` and `memory/feedback_no_probabilistic_inference.md`. Reverted: color-from-grapes, first_vintage_year MIN, critic/community score aggregates, sparkling_method name patterns, wine_grapes from name/appellation patterns, producer country/region/appellation majority-vote, wine region from multi-region producers, varietal_category_id (single-grape ≠ single-varietal), data grade C (misused letter system), NV price fallback (~28.6K retailer prices + 12.2K orphan vintages). Collateral loss (~44K wine_grapes, ~85K colors). Restoration requires running proper pipeline scripts with real source data.
-- **Kept (definitional cascades):** wine_vintage_id key joins, region_id from appellation, country_id from region/appellation, wine_type regulatory reclassification (Champagne→sparkling, Tawny Port→fortified), data grade F→D from raw data presence.
-- **wine_vintage_id backfill:** 0 orphaned prices (was 23K), 0 orphaned scores. All join via wine_vintage_id.
-- **Readiness metric:** 66.67/100 avg (3-run: 64, 65, 71, measured 2026-04-04 after grape name inference). Up from 39/100 on 2026-04-03 — +28 points.
+- **Price coverage:** 3.36% (16,683 distinct wines with prices). Was ~1% at session start, peaked at 5.25% before inference reverts.
+- **Score coverage:** ~2% (distinct wines with scores from TEXSOM +8.5K, Berliner +1.7K, BC Liquor community +592).
+- **UPCs:** 17,701 (+5,836 this session from Horizon/PA/OpenFoodFacts + Spec's + LCBO + BC Liquor)
+- **Farming certs:** 9,324 (+2,937 from Skurnik/KL/EC/Polaner pattern text matching — legitimate, values are explicit farming terms)
+- **Wine depth (2026-04-04):** +1,921 sweetness (Flatiron), +1,158 vine_age (KL), +254 description (Skurnik) — direct source promotions
+- **⚠️ Inference reverts (2026-04-04):** See `docs/DECISIONS.md` entry "No probabilistic inference on canonical columns" and `memory/feedback_no_probabilistic_inference.md`. This session applied 18 inference operations across the canonical tables; 14 were reverted after user caught errors (Blanc de Noirs mis-marked red, Saldo-type multi-region producers wrongly single-region'd, etc.). Reverts had collateral damage (no row-level provenance in the schema): ~44K legit wine_grapes links cleared along with the 81K pattern-inferred ones, ~85K pre-session colors cleared before TTB restoration, 28.6K NV price rows removed (most Wally's vintage data was in titles, never parsed).
+- **Kept (strictly definitional/direct):** wine_vintage_id composite-key backfill, region_id from appellations.region_id, country_id from region/appellation, wine_type regulatory reclassification (Champagne→sparkling, Tawny Port→fortified — legal category names), data grade F→D from raw data presence, and all direct staging promotions (not inference).
 - Alias tables seeded: 96 region, 75 label designation, 18,631 appellation
 - **Depth data now populated** (was all 0): 211K label images, 6.4K farming certs, 4.7K bottle formats, 809 food pairings, 696 descriptions, 449 sweetness, 166 winemakers, 233 pH, 251 TA, 192 RS, 100 fermentation vessels, 106 yeast types, 224 MLF, 166 oak duration, 158 oak origin, 101 closures, 321 production, 88 serving temps, 343 critic_score_avg, +141 importer scores, +681 colors
 - **Producer depth** (was all 0): 107 year_established, 78 websites, 117 GPS, 120 descriptions, 110 production, 173 winemaker links
