@@ -33,6 +33,7 @@ JUNK_STRINGS = {
     "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012",
     "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020",
     "02", "03", "04", "05", "06", "07", "08", "09",  # 2-digit year remnants
+    "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",  # more 2-digit noise
     # Generic Italian color/type terms
     "rosso", "bianco", "rosato",
 }
@@ -61,6 +62,23 @@ BLEND_BLACKLIST = {
     "the status is expired.", "the status is surrendered.",
     "red", "white", "rose wine", "rosé", "11/14/2005",
     "eec/eu (ttb use only)", "multiple countries",
+    # Run #6 additions
+    "white burgundy wine",     # style string (already have "white burgundy")
+    "valdobbiadene",           # Prosecco appellation name, not a grape
+    "palo cortado",            # Sherry style, not a grape
+    "st. vincent",             # Patron saint of wine, not a grape (have "st vincent")
+    "red burgundy",            # style/region name, not a grape
+    "torrette",                # Valle d'Aosta DOC wine, not a grape
+    "auslese",                 # German quality level, not a grape
+    "chianti classico",        # Tuscan wine appellation, not a grape
+    "ripasso",                 # Venetian wine style, not a grape
+    "santenay",                # Burgundy appellation
+    "brut rose",               # Sparkling wine style
+    "brut rosé",
+    "feinherb",                # German sweetness level
+    "01",                      # numeric noise
+    "montalcino",              # Brunello di Montalcino appellation, not a grape
+    "ros wine",                # OCR/typo for "Rose Wine"
 }
 
 # TTB encodes accented chars as '?' — map common corrupted forms
@@ -185,6 +203,54 @@ TTB_GRAPE_FIXES = {
     "syrah 85%": "Syrah",
     "chardonnay 85%": "Chardonnay",
     "pinot rose": "Pinot Gris",            # Pinot Rosé = Pinot Gris in most contexts
+    # Run #6 additions — from top unresolved list
+    "cabernet suavignon": "Cabernet Sauvignon",   # typo
+    "pinot nior": "Pinot Noir",                   # typo
+    "menca": "Mencia",                            # typo for Mencía (already have 'mencia')
+    "friuliano": "Friulano",                      # typo with extra 'i'
+    "gewurtzraminer": "Gewurztraminer",           # transposed letters (have 'gewurtztraminer')
+    "hondarribi zuri": "Courbu Blanc",            # Basque synonym confirmed via VIVC
+    "hondarrabi zuri": "Courbu Blanc",            # spelling variant
+    "muscat d'alexandrie": "Muscat of Alexandria",  # French name → DB canonical
+    "muscat d alexandrie": "Muscat of Alexandria",
+    # Percentage-embedded single-grape strings
+    "syrah 15%": "Syrah",
+    "cabernet sauvignon 20%": "Cabernet Sauvignon",
+    # Regional/obscure grape synonyms
+    "jakot": "Friulano",                          # Slovenian backward spelling of Tocai Friulano
+    "chiavennasca": "Nebbiolo",                   # Valtellina synonym for Nebbiolo
+    "jacqure": "Jacquere",                        # typo for Jacquère (Savoie grape)
+    "lon millot": "Leon Millot",                  # typo for Léon Millot (French-American hybrid)
+    # More typos
+    "rieslng": "Riesling",                        # missing 'i'
+    "caberent sauvignon": "Cabernet Sauvignon",   # transposed 'e/r'
+    "blaufrankish": "Blaufraenkisch",             # missing 'c'
+    "1oo% chenin blanc": "Chenin Blanc",          # letter O instead of digit 0
+    "100% chenin blanc": "Chenin Blanc",          # percentage prefix
+    # Run #6, pass 4
+    "san giovese": "Sangiovese",                  # typo (missing 'a')
+    "riesling feinherb": "Riesling",              # Feinherb = off-dry style level
+    "grenache noire": "Grenache Noir",            # French feminine form
+    "garnatcha tinta": "Garnacha Tinta",          # variant spelling → DB canonical
+    "garnache": "Garnacha Tinta",                 # short form → Garnacha
+    "weiburgunder": "Pinot Blanc",               # typo for Weissburgunder
+    "cabernet sauvigon": "Cabernet Sauvignon",   # missing 'n'
+    "gerwurztraminer": "Gewurztraminer",          # transposed 'e/w'
+    "gruner valtliner": "Gruner Veltliner",       # 'a' for 'e' typo
+    "cabernet savignon": "Cabernet Sauvignon",   # transposed letters
+    "malbec rose": "Malbec",                     # color suffix stripped
+    "ros wine": "Rose Wine",                     # OCR error? → blacklisted below
+    # More typos (Run #6, pass 3)
+    "gewurtraminer": "Gewurztraminer",            # missing 'z'
+    "catarrato": "Catarratto Bianco Comune",      # one 't' variant
+    "shriaz": "Syrah",                            # transposed letters
+    "weisburgunder": "Pinot Blanc",               # German: Weissburgunder = Pinot Blanc
+    "weissburgunder": "Pinot Blanc",
+    "sauvingnon blanc": "Sauvignon Blanc",        # transposed letters
+    "trebbiano d'abruzzo": "Trebbiano Toscano",   # appellation-prefixed (extract grape)
+    "trebbiano d abruzzo": "Trebbiano Toscano",
+    "nebbiolo d'alba": "Nebbiolo",               # appellation-prefixed (extract grape)
+    "nebbiolo d alba": "Nebbiolo",
 }
 
 
@@ -202,6 +268,13 @@ def _fix_grape_name(name):
     cleaned_lower = cleaned.lower()
     if cleaned_lower in TTB_GRAPE_FIXES:
         return TTB_GRAPE_FIXES[cleaned_lower]
+    # Strip trailing percentage (e.g. "Syrah 15%" → "Syrah", "Chardonnay 100%" → "Chardonnay")
+    pct_stripped = re.sub(r'\s+\d+\.?\d*\s*%\s*$', '', cleaned_lower).strip()
+    if pct_stripped and pct_stripped != cleaned_lower:
+        if pct_stripped in TTB_GRAPE_FIXES:
+            return TTB_GRAPE_FIXES[pct_stripped]
+        # Return the percentage-stripped version for resolver to handle
+        return pct_stripped.title() if pct_stripped == pct_stripped.upper() else pct_stripped
     if cleaned_lower in JUNK_STRINGS:
         return None
     result = cleaned.title() if cleaned == cleaned.upper() else cleaned

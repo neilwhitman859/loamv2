@@ -239,3 +239,57 @@ At the END of each run, append an entry:
 3. [MEDIUM] **Systembolaget producer creation** — After wine creation from matched producers, ~7K Systembolaget records still have no producer match. Build and approve a producer creation script for top-50 unmatched.
 
 ---
+
+### 2026-04-04 — Run #6
+**Duration:** ~180 min | **Grade:** A | **Readiness:** 40.9 (+0.6 from Run #5)
+**Key numbers:** 470,485 active wines | 195,468 grapes (+3,111) | 4,886 without country (-5,036) | 465,599 validated (+5,600)
+
+**What worked:**
+- **Haiku country inference: +5,036 country assignments** — Built `pipeline/analyze/haiku_country_infer.py`. Sent all 9,922 country-less wines to Haiku in batches of 40. 51% hit rate (49% too ambiguous). Top: FR 2,433, US 1,248, IT 536, DE 344. 15/15 spot-checks correct. $0.12 total. Reduces unvalidatable wines from 9,922 → 4,886.
+- **Grape promotion: +3,111 total** — 6 iterative passes of ttb_grape_promote (+746 total from fixes), 2 passes of grape_blend_promote (+447 from all sources). The most significant single addition.
+- **Bug fix: trailing percentage in blend parser** — `_parse_pct_blend` was rejecting valid blends like "Pinot Noir 80% Chardonnay 20%" and "Pinot Noir 34% Chardonnay 33% Pinot Meunier 33%" because a trailing percentage token with no following grape caused the whole parse to fail. Fixed to accept trailing pct when 2+ grapes already resolved. Confirmed with direct unit test before running.
+- **22 new TTB_GRAPE_FIXES** — hondarribi zuri→Courbu Blanc (VIVC confirmed), jakot→Friulano (Slovenian back-spelling), chiavennasca→Nebbiolo, jacqure→Jacquere, lon millot→Leon Millot, san giovese→Sangiovese, shriaz→Syrah, weisburgunder→Pinot Blanc, trebbiano d'abruzzo→Trebbiano Toscano, malbec rose→Malbec, many more typos.
+- **14 new BLEND_BLACKLIST entries** — white burgundy wine, valdobbiadene, palo cortado, chianti classico, ripasso, santenay, torrette, auslese, montalcino, etc.
+- **Generic percentage stripping** — Added regex in `_fix_grape_name` to strip trailing "NN%" from grape name segments ("Syrah 15%" → "Syrah").
+- **Phase 1 clean** — 0 ABV anomalies, 0 future vintages, 0 orphaned scores/prices, 0 country-appellation mismatches. Dedup: 0 new duplicates.
+- **Haiku spend: $0.12** — Finally used the budget meaningfully (country inference). Most impactful Haiku use so far.
+
+**What didn't:**
+- Readiness only +0.6 (sampling variance dominates). Real gains are in validated wines (+5,600) and grape links (+3,111).
+- Price dimension: 0-1% (no new retail matches possible without wine creation from staging).
+- Score dimension: 1-2.5% (sampling variance; licensed scores still needed).
+- "Cabernet Pfeffer" (10 wines): confirmed not in VIVC DB. Haiku can't identify canonical name. Left unresolved.
+- create_missing_wines_from_staging.py: NOT built this run — requires human approval on creation policy before autonomous execution.
+
+**Root causes found:**
+- `_parse_pct_blend` trailing-percentage bug: "Grape1 NN% Grape2 NN%" format has a trailing percentage after the last grape. The parser saw the final "NN%" as expecting a following grape, found none, and rejected the whole parse. Fix: if at end of tokens and 2+ results already accumulated, accept trailing pct as belonging to last grape.
+- Hondarribi Zuri = Courbu Blanc (VIVC synonym, confirmed via DB query). Previously not in any mapping.
+- Jakot = Friulano (Slovenian dialect name, spelled backward from "Tokaj"). Not in synonyms table.
+
+**Accuracy checks:**
+- 15/15 spot-checked Haiku country assignments all correct. Distribution makes sense: FR dominant, US second, IT/DE following.
+- Spot-checked 5 new grape fixes (Jakot→Friulano, Hondarribi Zuri→Courbu Blanc, Chiavennasca→Nebbiolo, Jacqure→Jacquere, Lon Millot→Leon Millot): all confirmed via VIVC/DB lookup before adding.
+- Blend parser fix: directly unit-tested "PINOT NOIR 80% CHARDONNAY 20%", "Pinot Noir 34% Chardonnay 33% Pinot Meunier 33%", "merlot 60% cabernet sauvignon 40%" — all now return 2-3 grapes correctly.
+
+**Haiku spend:** $0.12 (249 calls, 269K in / 43K out tokens — country inference batch)
+
+**Unresolved backlog (by impact):**
+1. 4,886 wines still without country_id — too ambiguous for Haiku (generic names like "Red", "Cabernet Sauvignon" with importer producers). Cannot resolve autonomously.
+2. Wine creation from staging (LCBO ~2K, Systembolaget ~8K, Flatiron ~1.5K) — producer-matched but no canonical wine. BLOCKED: needs human approval on creation policy.
+3. Score dimension: 1-2.5% — needs licensed critic scores. CellarTracker free API is best next step.
+4. "Cabernet Pfeffer" (10 wines) — not in VIVC, not in DB. Leave unresolved until grape is formally identified.
+5. Haiku for Systembolaget producer creation — could create ~50 new canonical producers from top-unmatched. Needs human decision on auto-creation policy.
+
+**Focus for next run:**
+1. **Grape promotion again (500K)** — with all new fixes applied, another pass will find more (run twice per session)
+2. **Score joining** — check if any wine_vintage_scores still have NULL wine_vintage_id (backfill from prior competition promotions)
+3. **Investigate price dimension** — why is price 0-1%? Spec's 30K prices should be hitting COLA-matched wines. Diagnose join path.
+4. **Skip**: country inference (4,886 remaining are truly ambiguous), create_missing_wines (needs human approval), batch_matcher (exhausted)
+
+## HUMAN ACTIONS REQUIRED
+1. [HIGH] **Licensed critic scores** — Score readiness stuck at 1-2.5% (sampling variance but fundamentally low). CellarTracker free API is the most accessible next step. Wine Spectator/Parker require licensing.
+2. [HIGH] **Wine creation from staging approval** — Riddler wants to create ~3K new canonical wines from LCBO/Systembolaget/Flatiron producer-matched records. Need: (a) minimum data requirements (must have producer+name+at least 1 attribute), (b) dedup check against existing names, (c) confirmation that retail source quality bar is acceptable.
+3. [MEDIUM] **Investigate price dimension** — 30K prices exist in wine_vintage_prices but COLA-matched wines show 0-1% in readiness. The join path may be broken (wine_id vs wine_vintage_id). Riddler can investigate but this may need schema awareness to fix.
+4. [LOW] **Cabernet Pfeffer** — 10 wines with this grape. Not in VIVC, not in Loam DB. Research: is this the same as Gros Verdot? If so, add synonym to DB. If distinct California heritage variety, decide whether to add as a new grape entry.
+
+---

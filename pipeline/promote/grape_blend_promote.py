@@ -63,6 +63,12 @@ def _parse_pct_blend(s, resolver):
         if found:
             result.append(found)
         elif pct is not None:
+            if i >= len(tokens) and len(result) >= 2:
+                # Trailing percentage with no following grape (e.g. "Cab 50% Merlot 50%")
+                # Attach the pct to the last resolved grape and finish
+                last_id, _ = result[-1]
+                result[-1] = (last_id, pct)
+                break
             # Had a percentage but couldn't resolve the grape — give up
             return None
         else:
