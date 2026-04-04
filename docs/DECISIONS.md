@@ -729,3 +729,5 @@ Post-merge schema assessment found the schema is well-designed: nearly every fie
 
 ### 2026-04-04: Voice and prompt refinement before batch enrichment spend
 Enrichment pipeline MVP is live (`enrich-wine` Edge Function, ~$0.018/wine Sonnet). No batch spending over $16 until voice and prompt quality are dialed in. Refine on a small sample first, iterate on the prompt template, review output against VOICE.md standards, then scale to Grade C batch pre-warming. The 2 test enrichments worked but haven't been editorially reviewed yet.
+### 2026-04-04: Systembolaget retired from nightly batch_matcher
+Systembolaget (12,646 records, 8,234 unmatched) removed from nightly Riddler promotion loop. Root causes: (1) name order reversal — stores 'Accordini Igino' vs canonical 'Igino Accordini'; (2) many small European producers not in canonical DB; (3) API now requires auth, so data is stale and unrefreshable. Table is KEPT — it has UPC barcodes that could be matched via COLA bridge in the future, bypassing the producer name problem entirely. Revisit when UPC-keyed matching is built.

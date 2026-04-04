@@ -311,7 +311,7 @@ class BatchMatcher:
         assert re.match(r'^[a-z_]+$', table), f"Invalid table name: {table}"
         col_list = [c.strip() for c in columns.split(",")]
         for c in col_list:
-            assert re.match(r'^[a-z_]+$', c), f"Invalid column name: {c}"
+            assert re.match(r'^[a-z_0-9]+$', c), f"Invalid column name: {c}"
 
         cur = self.conn.cursor()
         cur.execute(
@@ -358,7 +358,7 @@ class BatchMatcher:
                     f"FROM (VALUES %s) AS v(id, producer_id, wine_id, processed_at) "
                     f"WHERE t.id = v.id",
                     values,
-                    template="(%s, %s::uuid, %s::uuid, %s::timestamptz)"
+                    template="(%s::uuid, %s::uuid, %s::uuid, %s::timestamptz)"
                 )
                 self.conn.commit()
                 written += len(batch)

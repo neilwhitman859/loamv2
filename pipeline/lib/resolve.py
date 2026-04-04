@@ -117,6 +117,9 @@ GRAPE_ALIASES: dict[str, str] = {
     "montepulciano": "Montepulciano",
     "pineau d'aunis": "Pineau d'Aunis",
     "picpoul blanc": "Piquepoul Blanc",
+    # TTB parenthetical synonyms
+    "tinto fino (tempranillo)": "Tempranillo",
+    "tinto fino": "Tempranillo",
 }
 
 REGION_ALIASES: dict[str, str] = {
@@ -328,6 +331,21 @@ class ReferenceResolver:
         if uk:
             self.countries["uk"] = uk
             self.countries["england"] = uk
+        # Swedish country names (Systembolaget source)
+        _sv = {
+            "frankrike": "france", "italien": "italy", "spanien": "spain",
+            "sydafrika": "south africa", "tyskland": "germany", "sverige": "sweden",
+            "österrike": "austria", "australien": "australia", "grekland": "greece",
+            "ungern": "hungary", "nya zeeland": "new zealand", "libanon": "lebanon",
+            "schweiz": "switzerland", "ukraina": "ukraine", "bulgarien": "bulgaria",
+            "kroatien": "croatia", "slovenien": "slovenia", "rumänien": "romania",
+            "moldavien": "moldova", "georgien": "georgia", "marocko": "morocco",
+            "algeriet": "algeria", "tunisien": "tunisia", "israel": "israel",
+        }
+        for sv, en in _sv.items():
+            cid = self.countries.get(en)
+            if cid:
+                self.countries[sv] = cid
         if self.verbose:
             print(f"  Countries: {len(rows)}")
 
