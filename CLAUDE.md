@@ -217,19 +217,18 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 - New script: `pipeline/promote/importer_depth.py`
 
 **Next steps (resume here):**
-1. **Enrichment pipeline MVP** — Edge Function + prompts. Next major phase. Schema and depth data now ready.
-2. **Tier D (fuzzy tail)** — AI-assisted matching for remaining unlinked staging records.
-3. **TTB COLA Phase 3 AI parse** — Haiku on 1.35M non-001 fanciful names (~$10).
-4. **Remaining importer scrapers** — Kysela, Louis/Dressner, Broadbent.
-5. **Frontend resume** — canonical tables now have real depth for ~1,600 wines.
+1. ✅ **Enrichment pipeline MVP LIVE** — `enrich-wine` Edge Function deployed. Sonnet enrichment on-demand. Tested: ~$0.018/wine, 25s latency. Writes to wine_insights, wine_vintage_tasting_insights, enrichment_log. Updates data_grade to B.
+2. **Grade C batch pre-warming** — Haiku batch for 30-50K wines (~$120). Build the batch script.
+3. **Frontend integration** — Wire up enrichment trigger on wine page load for sub-B wines.
+4. **Tier D (fuzzy tail)** — AI-assisted matching for remaining unlinked staging records.
+5. **TTB COLA Phase 3 AI parse** — Haiku on 1.35M non-001 fanciful names (~$10).
+6. **Frontend resume** — canonical tables now have real depth + enrichment pipeline live.
 
 ### Major Gaps
-- **Depth now seeded but still thin at scale:** ~1,600 wines have deep winemaking data, but 476K wines have identity only. Enrichment pipeline is the path to Grade C/B at scale.
+- **Enrichment pipeline live but 2 wines enriched** — need batch pre-warming (Grade C) and frontend integration (Grade B on-demand).
 - UPC barcodes: ~5K (barcode scan running should add ~64K)
-- All insight tables mostly empty. Enrichment pipeline not built yet (see `docs/ENRICHMENT.md`).
 - ~40 canonical tables still at 0 rows (vineyards, descriptors, wine_relationships, etc.)
 - Weather data, soil/water body links, producer_timeline — all empty.
-- Missing schema fields: serving_temperature, training_method, fermentation_duration/temp, vine_density at wine level, kosher status. Consider adding before importer depth promotion.
 
 ---
 
