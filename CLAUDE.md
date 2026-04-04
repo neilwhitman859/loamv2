@@ -108,7 +108,7 @@ Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for p
 - **292K wines linked to TTB** (686K TTB records linked)
 - **Readiness metric:** 39/100 avg (3-run, measured 2026-04-03, up from 8/100 on 2026-04-02)
 - Alias tables seeded: 96 region, 75 label designation, 18,631 appellation
-- **Depth data now populated** (was all 0): 211K label images, 6.4K farming certs, 809 food pairings, 166 winemakers, 449 sweetness, 233 pH, 251 TA, 192 RS, 100 fermentation vessels, 106 yeast types, 224 MLF, 166 oak duration, 158 oak origin, 101 closures, 321 production, 88 serving temps, 343 critic_score_avg
+- **Depth data now populated** (was all 0): 211K label images, 6.4K farming certs, 4.7K bottle formats, 809 food pairings, 449 sweetness, 166 winemakers, 233 pH, 251 TA, 192 RS, 100 fermentation vessels, 106 yeast types, 224 MLF, 166 oak duration, 158 oak origin, 101 closures, 321 production, 88 serving temps, 343 critic_score_avg, +141 importer scores
 - **Producer depth** (was all 0): 107 year_established, 78 websites, 117 GPS, 120 descriptions, 110 production, 173 winemaker links
 - Sonnet accuracy audit: 96% on 300-sample ($0.05). Non-sparkling data 100% clean.
 - Sparkling wine fix applied: 8,977 reclassified. Distribution: table 93.6%, sparkling 4.7%, fortified 1.6%.
