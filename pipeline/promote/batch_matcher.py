@@ -1031,6 +1031,70 @@ class BatchMatcher:
         self.stats["pa_wine_match"] = matched_wines
         self.stats["pa_total"] = len(rows)
 
+    # ── Best Wine Store Adapter ────────────────────────────────
+
+    def run_best_wine_store(self):
+        """Match Best Wine Store. Producer set, title has wine name + region."""
+        print("\n" + "=" * 60)
+        print("BEST WINE STORE (1,658 wines)")
+        print("=" * 60)
+
+        rows = self._load_staging(
+            "source_best_wine_store",
+            "id,title,producer,wine_name,country,vintage"
+        )
+        print(f"  Unmatched rows: {len(rows)}")
+        if not rows:
+            return
+
+        updates = []
+        matched_wines = 0
+        matched_producers = 0
+        producer_cache = {}
+
+        for i, r in enumerate(rows):
+            country_id = self.resolve_country(r.get("country"))
+            producer_name = r.get("producer")
+            title = r.get("title") or ""
+
+            if producer_name:
+                pmatch = self.match_producer(producer_name, country_id)
+                wine_name = title
+                if pmatch and producer_name.lower() in title.lower():
+                    idx = title.lower().find(producer_name.lower())
+                    wine_name = (title[:idx] + title[idx + len(producer_name):]).strip(" ,")
+            else:
+                pmatch, wine_name = self.match_producer_from_title(title, country_id)
+
+            if not pmatch:
+                self.stats["best_wine_store_producer_miss"] += 1
+                continue
+
+            matched_producers += 1
+            pid = pmatch["id"]
+
+            # Strip volume info and vintage
+            wine_name = re.sub(r"\s+\d+(\.\d+)?\s*(ml|l)\b", "", wine_name, flags=re.IGNORECASE)
+            wine_name = re.sub(r"\s+\d{4}$", "", wine_name).strip()
+
+            if pid not in producer_cache:
+                producer_cache[pid] = self.load_producer_wines(pid)
+
+            wmatch = self.match_wine(producer_cache[pid], wine_name)
+            update = {"id": r["id"], "producer_id": pid}
+            if wmatch:
+                update["wine_id"] = wmatch["id"]
+                matched_wines += 1
+            updates.append(update)
+
+        print(f"  Rows with producer match: {matched_producers}/{len(rows)}")
+        print(f"  Wines matched: {matched_wines}/{len(rows)}")
+
+        self._write_matches("source_best_wine_store", updates)
+        self.stats["best_wine_store_producer_match"] = matched_producers
+        self.stats["best_wine_store_wine_match"] = matched_wines
+        self.stats["best_wine_store_total"] = len(rows)
+
     # ── Berliner Wine Trophy Adapter ───────────────────────────
 
     def run_berliner(self):
@@ -1193,6 +1257,7 @@ def main():
         "pa": matcher.run_pa,
         "berliner": matcher.run_berliner,
         "texsom": matcher.run_texsom,
+        "best_wine_store": matcher.run_best_wine_store,
     }
 
     for src in sources:
