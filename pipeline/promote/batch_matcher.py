@@ -779,6 +779,376 @@ class BatchMatcher:
         self.stats["specs_wine_match"] = matched_wines
         self.stats["specs_total"] = len(rows)
 
+    # ── Enofile Adapter ────────────────────────────────────────
+
+    def run_enofile(self):
+        """Match Enofile wines. `brand` is producer, has appellation + vintage."""
+        print("\n" + "=" * 60)
+        print("ENOFILE (9,166 wines)")
+        print("=" * 60)
+
+        rows = self._load_staging(
+            "source_enofile",
+            "id,brand,varietal,vintage,appellation,designation,addl_designation"
+        )
+        print(f"  Unmatched rows: {len(rows)}")
+        if not rows:
+            return
+
+        updates = []
+        matched_wines = 0
+        matched_producers = 0
+        producer_cache = {}
+
+        for i, r in enumerate(rows):
+            brand = r.get("brand")
+            if not brand:
+                self.stats["enofile_producer_miss"] += 1
+                continue
+
+            pmatch = self.match_producer(brand, None)
+            if not pmatch:
+                self.stats["enofile_producer_miss"] += 1
+                continue
+
+            matched_producers += 1
+            pid = pmatch["id"]
+
+            if pid not in producer_cache:
+                producer_cache[pid] = self.load_producer_wines(pid)
+
+            # Build wine name: varietal + designation + addl_designation
+            parts = []
+            for key in ("varietal", "designation", "addl_designation"):
+                v = r.get(key)
+                if v and v.strip():
+                    parts.append(v.strip())
+            wine_name = " ".join(parts) if parts else (r.get("appellation") or "")
+
+            wmatch = self.match_wine(producer_cache[pid], wine_name)
+            update = {"id": r["id"], "producer_id": pid}
+            if wmatch:
+                update["wine_id"] = wmatch["id"]
+                matched_wines += 1
+            updates.append(update)
+
+            if (i + 1) % 1000 == 0 and self.verbose:
+                print(f"  ... {i+1}/{len(rows)} processed, {matched_wines} wines matched")
+
+        print(f"  Rows with producer match: {matched_producers}/{len(rows)}")
+        print(f"  Wines matched: {matched_wines}/{len(rows)}")
+
+        self._write_matches("source_enofile", updates)
+        self.stats["enofile_producer_match"] = matched_producers
+        self.stats["enofile_wine_match"] = matched_wines
+        self.stats["enofile_total"] = len(rows)
+
+    # ── Domestique Adapter ─────────────────────────────────────
+
+    def run_domestique(self):
+        """Match Domestique wines. Producer set, title has 'WineName YYYY'."""
+        print("\n" + "=" * 60)
+        print("DOMESTIQUE (247 wines)")
+        print("=" * 60)
+
+        rows = self._load_staging(
+            "source_domestique",
+            "id,title,producer,wine_name,country,vintage"
+        )
+        print(f"  Unmatched rows: {len(rows)}")
+        if not rows:
+            return
+
+        updates = []
+        matched_wines = 0
+        matched_producers = 0
+        producer_cache = {}
+
+        for i, r in enumerate(rows):
+            country_id = self.resolve_country(r.get("country"))
+            producer_name = r.get("producer")
+            title = r.get("title") or ""
+            wine_name = r.get("wine_name") or title
+
+            if producer_name:
+                pmatch = self.match_producer(producer_name, country_id)
+            else:
+                pmatch, wine_name = self.match_producer_from_title(title, country_id)
+
+            if not pmatch:
+                self.stats["domestique_producer_miss"] += 1
+                continue
+
+            matched_producers += 1
+            pid = pmatch["id"]
+
+            # Clean wine name
+            wine_name = re.sub(r"\s+\d{4}$", "", wine_name).strip()
+
+            if pid not in producer_cache:
+                producer_cache[pid] = self.load_producer_wines(pid)
+
+            wmatch = self.match_wine(producer_cache[pid], wine_name)
+            update = {"id": r["id"], "producer_id": pid}
+            if wmatch:
+                update["wine_id"] = wmatch["id"]
+                matched_wines += 1
+            updates.append(update)
+
+        print(f"  Rows with producer match: {matched_producers}/{len(rows)}")
+        print(f"  Wines matched: {matched_wines}/{len(rows)}")
+
+        self._write_matches("source_domestique", updates)
+        self.stats["domestique_producer_match"] = matched_producers
+        self.stats["domestique_wine_match"] = matched_wines
+        self.stats["domestique_total"] = len(rows)
+
+    # ── Last Bottle Adapter ────────────────────────────────────
+
+    def run_last_bottle(self):
+        """Match Last Bottle wines. Title format: 'Producer Varietal Region YYYY'."""
+        print("\n" + "=" * 60)
+        print("LAST BOTTLE (160 wines)")
+        print("=" * 60)
+
+        rows = self._load_staging(
+            "source_last_bottle",
+            "id,title,producer,wine_name,country,vintage"
+        )
+        print(f"  Unmatched rows: {len(rows)}")
+        if not rows:
+            return
+
+        updates = []
+        matched_wines = 0
+        matched_producers = 0
+        producer_cache = {}
+
+        for i, r in enumerate(rows):
+            country_id = self.resolve_country(r.get("country"))
+            producer_name = r.get("producer")
+            title = r.get("title") or ""
+
+            if producer_name:
+                pmatch = self.match_producer(producer_name, country_id)
+                wine_name = r.get("wine_name") or title
+            else:
+                # Strip trailing vintage year from title
+                clean = re.sub(r"\s+\d{4}$", "", title).strip()
+                pmatch, wine_name = self.match_producer_from_title(clean, country_id)
+
+            if not pmatch:
+                self.stats["last_bottle_producer_miss"] += 1
+                continue
+
+            matched_producers += 1
+            pid = pmatch["id"]
+
+            if pid not in producer_cache:
+                producer_cache[pid] = self.load_producer_wines(pid)
+
+            wmatch = self.match_wine(producer_cache[pid], wine_name or "")
+            update = {"id": r["id"], "producer_id": pid}
+            if wmatch:
+                update["wine_id"] = wmatch["id"]
+                matched_wines += 1
+            updates.append(update)
+
+        print(f"  Rows with producer match: {matched_producers}/{len(rows)}")
+        print(f"  Wines matched: {matched_wines}/{len(rows)}")
+
+        self._write_matches("source_last_bottle", updates)
+        self.stats["last_bottle_producer_match"] = matched_producers
+        self.stats["last_bottle_wine_match"] = matched_wines
+        self.stats["last_bottle_total"] = len(rows)
+
+    # ── PA PLCB Adapter ────────────────────────────────────────
+
+    def run_pa(self):
+        """Match PA PLCB wines. `brand_name` is producer, `item_description` has wine name."""
+        print("\n" + "=" * 60)
+        print("PA PLCB (5,905 wines)")
+        print("=" * 60)
+
+        rows = self._load_staging(
+            "source_pa",
+            "id,brand_name,item_description,country,region,vintage"
+        )
+        print(f"  Unmatched rows: {len(rows)}")
+        if not rows:
+            return
+
+        updates = []
+        matched_wines = 0
+        matched_producers = 0
+        producer_cache = {}
+
+        for i, r in enumerate(rows):
+            country_id = self.resolve_country(r.get("country"))
+            brand = r.get("brand_name")
+            desc = r.get("item_description") or ""
+
+            if brand:
+                pmatch = self.match_producer(brand, country_id)
+                wine_name = desc
+                # Strip brand from description if present
+                if pmatch and brand.lower() in desc.lower():
+                    idx = desc.lower().find(brand.lower())
+                    wine_name = (desc[:idx] + desc[idx + len(brand):]).strip(" ,")
+            else:
+                pmatch, wine_name = self.match_producer_from_title(desc, country_id)
+
+            if not pmatch:
+                self.stats["pa_producer_miss"] += 1
+                continue
+
+            matched_producers += 1
+            pid = pmatch["id"]
+
+            # Strip vintage year and volume info
+            wine_name = re.sub(r"\s+\d{4}\s*", " ", wine_name)
+            wine_name = re.sub(r"\s+\d+(\.\d+)?\s*(ml|l)\b", "", wine_name, flags=re.IGNORECASE)
+            wine_name = wine_name.strip()
+
+            if pid not in producer_cache:
+                producer_cache[pid] = self.load_producer_wines(pid)
+
+            wmatch = self.match_wine(producer_cache[pid], wine_name)
+            update = {"id": r["id"], "producer_id": pid}
+            if wmatch:
+                update["wine_id"] = wmatch["id"]
+                matched_wines += 1
+            updates.append(update)
+
+            if (i + 1) % 1000 == 0 and self.verbose:
+                print(f"  ... {i+1}/{len(rows)} processed, {matched_wines} wines matched")
+
+        print(f"  Rows with producer match: {matched_producers}/{len(rows)}")
+        print(f"  Wines matched: {matched_wines}/{len(rows)}")
+
+        self._write_matches("source_pa", updates)
+        self.stats["pa_producer_match"] = matched_producers
+        self.stats["pa_wine_match"] = matched_wines
+        self.stats["pa_total"] = len(rows)
+
+    # ── Berliner Wine Trophy Adapter ───────────────────────────
+
+    def run_berliner(self):
+        """Match Berliner Wine Trophy. Has producer, wine_name, country, grapes, medal."""
+        print("\n" + "=" * 60)
+        print("BERLINER WINE TROPHY (73,896 wines)")
+        print("=" * 60)
+
+        rows = self._load_staging(
+            "source_berliner",
+            "id,wine_name,producer,country,region"
+        )
+        print(f"  Unmatched rows: {len(rows)}")
+        if not rows:
+            return
+
+        updates = []
+        matched_wines = 0
+        matched_producers = 0
+        producer_cache = {}
+
+        for i, r in enumerate(rows):
+            country_id = self.resolve_country(r.get("country"))
+            producer_name = r.get("producer")
+            wine_name = r.get("wine_name") or ""
+
+            if producer_name:
+                pmatch = self.match_producer(producer_name, country_id)
+            else:
+                pmatch, wine_name = self.match_producer_from_title(wine_name, country_id)
+
+            if not pmatch:
+                self.stats["berliner_producer_miss"] += 1
+                continue
+
+            matched_producers += 1
+            pid = pmatch["id"]
+
+            if pid not in producer_cache:
+                producer_cache[pid] = self.load_producer_wines(pid)
+
+            wmatch = self.match_wine(producer_cache[pid], wine_name)
+            update = {"id": r["id"], "producer_id": pid}
+            if wmatch:
+                update["wine_id"] = wmatch["id"]
+                matched_wines += 1
+            updates.append(update)
+
+            if (i + 1) % 5000 == 0 and self.verbose:
+                print(f"  ... {i+1}/{len(rows)} processed, {matched_wines} wines matched")
+
+        print(f"  Rows with producer match: {matched_producers}/{len(rows)}")
+        print(f"  Wines matched: {matched_wines}/{len(rows)}")
+
+        self._write_matches("source_berliner", updates)
+        self.stats["berliner_producer_match"] = matched_producers
+        self.stats["berliner_wine_match"] = matched_wines
+        self.stats["berliner_total"] = len(rows)
+
+    # ── TEXSOM Adapter ─────────────────────────────────────────
+
+    def run_texsom(self):
+        """Match TEXSOM. Has producer, wine_name, appellation, country, vintage."""
+        print("\n" + "=" * 60)
+        print("TEXSOM (46,896 wines)")
+        print("=" * 60)
+
+        rows = self._load_staging(
+            "source_texsom",
+            "id,producer,wine_name,appellation,country,vintage"
+        )
+        print(f"  Unmatched rows: {len(rows)}")
+        if not rows:
+            return
+
+        updates = []
+        matched_wines = 0
+        matched_producers = 0
+        producer_cache = {}
+
+        for i, r in enumerate(rows):
+            country_id = self.resolve_country(r.get("country"))
+            producer_name = r.get("producer")
+            wine_name = r.get("wine_name") or ""
+
+            if producer_name:
+                pmatch = self.match_producer(producer_name, country_id)
+            else:
+                pmatch, wine_name = self.match_producer_from_title(wine_name, country_id)
+
+            if not pmatch:
+                self.stats["texsom_producer_miss"] += 1
+                continue
+
+            matched_producers += 1
+            pid = pmatch["id"]
+
+            if pid not in producer_cache:
+                producer_cache[pid] = self.load_producer_wines(pid)
+
+            wmatch = self.match_wine(producer_cache[pid], wine_name)
+            update = {"id": r["id"], "producer_id": pid}
+            if wmatch:
+                update["wine_id"] = wmatch["id"]
+                matched_wines += 1
+            updates.append(update)
+
+            if (i + 1) % 5000 == 0 and self.verbose:
+                print(f"  ... {i+1}/{len(rows)} processed, {matched_wines} wines matched")
+
+        print(f"  Rows with producer match: {matched_producers}/{len(rows)}")
+        print(f"  Wines matched: {matched_wines}/{len(rows)}")
+
+        self._write_matches("source_texsom", updates)
+        self.stats["texsom_producer_match"] = matched_producers
+        self.stats["texsom_wine_match"] = matched_wines
+        self.stats["texsom_total"] = len(rows)
+
     # ── Summary ──────────────────────────────────────────────────
 
     def print_summary(self):
@@ -817,6 +1187,12 @@ def main():
         "bc_liquor": matcher.run_bc_liquor,
         "wallys": matcher.run_wallys,
         "specs": matcher.run_specs,
+        "enofile": matcher.run_enofile,
+        "domestique": matcher.run_domestique,
+        "last_bottle": matcher.run_last_bottle,
+        "pa": matcher.run_pa,
+        "berliner": matcher.run_berliner,
+        "texsom": matcher.run_texsom,
     }
 
     for src in sources:
