@@ -104,7 +104,7 @@ Region insights (202), appellation insights (82), country insights (62). All oth
 
 ### Content Tables (updated 2026-04-03)
 Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for promotion/merge event history.
-- **~37K producers**, **~478K wines**, **~284K vintages**, **~18K scores**, **~21K prices**, **~184K wine_grapes**, **~486K external_ids** (292K COLA + 5K UPC + 189K LWIN), **~16K entity_classifications**
+- **~37K producers**, **~497K wines**, **~288K vintages**, **~18K scores**, **~30K prices**, **~184K wine_grapes**, **~493K external_ids** (292K COLA + 10K UPC + 189K LWIN), **~16K entity_classifications**
 - **292K wines linked to TTB** (686K TTB records linked)
 - **COLA-keyed state merge:** 170K state DB records linked (PRO 84K, TABC 52K, WV 22K, Kansas 13K). +10,136 appellation assignments, +543 vintages.
 - **Readiness metric:** 39/100 avg (3-run, measured 2026-04-03, up from 8/100 on 2026-04-02)
