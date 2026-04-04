@@ -726,3 +726,6 @@ The 3,662 appellations are built from official sources and multi-pass expert aud
 
 ### 2026-04-03: Schema assessment — gap is promotion, not missing columns
 Post-merge schema assessment found the schema is well-designed: nearly every field our staging sources contain already has a canonical home. The problem is zero promotion of depth data. wine_vintages has 77 columns but only 2 populated (wine_id, abv). producers has 25 columns but only 5 populated. 47 junction/detail tables sit at 0 rows. Highest-ROI action: promote importer winemaking data (Empson, Winebow, EC, KL have fermentation, oak, chemistry data) into existing wine_vintages columns. ~2,700 wines could get deep winemaking profiles. Also identified 6 missing fields to add: serving_temperature, training_method, fermentation_duration, fermentation_temperature, vine_density (wine-level), kosher status.
+
+### 2026-04-04: Voice and prompt refinement before batch enrichment spend
+Enrichment pipeline MVP is live (`enrich-wine` Edge Function, ~$0.018/wine Sonnet). No batch spending over $16 until voice and prompt quality are dialed in. Refine on a small sample first, iterate on the prompt template, review output against VOICE.md standards, then scale to Grade C batch pre-warming. The 2 test enrichments worked but haven't been editorially reviewed yet.
