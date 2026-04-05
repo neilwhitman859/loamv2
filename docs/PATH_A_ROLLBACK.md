@@ -577,6 +577,49 @@ DELETE FROM appellation_rules WHERE source_url IN (
 
 ---
 
+## Batch 16 (2026-04-05 loop-cycle 12): 11 major French AOCs via INAO CDCs
+
+### Appellations seeded (11)
+
+Alsace / Vin d'Alsace, Bordeaux, Côtes du Rhône, Arbois (Jura), Chinon, Touraine, Saumur, Languedoc, Beaujolais, Côtes du Rhône Villages, Coteaux Champenois.
+
+Source URL patterns:
+- PNOCDCAlsace.pdf, PNOCDCLanguedoc.pdf, PNOCDCBeaujolais.pdf, PNOCDCCotesduRhoneVillages.pdf, PNOCDCCoteauxChampenois.pdf
+- PNOCDC-Cotes-du-Rhone.pdf, PNOCDC-Touraine.pdf, PNOCDC-Saumur.pdf
+- 3-CDC-Bordeaux.pdf (Bordeaux)
+- PNO-CdcArbois-cn220210.pdf (Arbois)
+- CPAOV-2017-224-Chinon.pdf (Chinon)
+
+### Cascades
+
+**None** — all 11 are multi-color umbrellas (white + red + rosé subtypes). No strictly single-color cascade possible. Rule text and primary grape rows seeded; no wine_grapes or color changes.
+
+### To undo batch 16 rules
+
+```sql
+DELETE FROM appellation_rules WHERE source_url IN (
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCAlsace.pdf',
+  'https://extranet.inao.gouv.fr/fichier/3-CDC-Bordeaux.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDC-Cotes-du-Rhone.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNO-CdcArbois-cn220210.pdf',
+  'https://extranet.inao.gouv.fr/fichier/CPAOV-2017-224-Chinon.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDC-Touraine.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDC-Saumur.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCLanguedoc.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCBeaujolais.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCCotesduRhoneVillages.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCCoteauxChampenois.pdf'
+);
+```
+
+### Batch 16 running totals
+
+- appellation_rules: 219 → **230** (+11)
+- appellation_grapes with full provenance: 770 → **797** (+27)
+- 0 duplicates, 100% provenance coverage.
+
+---
+
 ## Audit results (2026-04-05 late)
 
 Clean audit after session 2:
