@@ -233,6 +233,136 @@ WHERE appellation_id = 'c7b4c983-b0cb-4951-bccd-0102a826da93'
 
 ---
 
+## Batch 11 (2026-04-05 very late): 22 Italian DOC/DOCG via MASAF catalogoviti mass sweep
+
+**Source URL pattern**: `http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q={id}`
+
+### Appellations seeded (22)
+
+| # | Appellation | q ID | appellation_id | Rule |
+|---|---|---|---|---|
+| 1 | Aglianico del Vulture | 2002 | b9960dcb-a445-41ad-ade2-76d5f7af3996 | 100% Aglianico, red |
+| 2 | Barbera d'Alba | 2020 | 040007ee-88ed-4317-8add-e6927e62f992 | 85-100% Barbera + 0-15% Nebbiolo, red |
+| 3 | Gattinara | 1039 | edfd5eaf-c0e3-48cc-9b04-528f4f9bd4ff | 90-100% Nebbiolo (Spanna), red |
+| 4 | Primitivo di Manduria | 2236 | 3853e919-65f7-43cf-afe3-effe0802805f | 85%+ Primitivo, red |
+| 5 | Montepulciano d'Abruzzo | 2200 | 53863f87-8dc4-4717-8c93-e65a445c0c70 | 85%+ Montepulciano, red |
+| 6 | Verdicchio dei Castelli di Jesi | 2320 | 910b1424-3cf7-4466-ac5f-221c43eeae1f | 85%+ Verdicchio, white |
+| 7 | Verdicchio di Matelica | 2321 | daedd257-3c5f-479f-b606-d6e471bb7696 | 85%+ Verdicchio, white |
+| 8 | Lugana | 2174 | c9b67c82-b71e-4453-b058-8af4cbcf1422 | 90%+ Turbiana (Trebbiano di Soave), white |
+| 9 | Cesanese del Piglio / Piglio | 1021 | d6e82f1a-cb2c-4edb-82e7-5024d0483d74 | 90%+ Cesanese Affile/comune, red |
+| 10 | Trebbiano d'Abruzzo | 2299 | 84117ba3-2808-4616-9434-19a4e9eac5ae | 85%+ Trebbiano abruzzese/Bombino/Trebbiano toscano, white |
+| 11 | Cerasuolo di Vittoria | 1020 | 8baccbec-2b2a-4e20-8562-83101164fa5d | 50-70% Nero d'Avola + 30-50% Frappato, red |
+| 12 | Frascati Superiore | 1038 | df2ed21b-521f-4e94-b682-addf99f8ba30 | 70%+ Malvasia Candia/Lazio + 30% complement, white |
+| 13 | Offida | 1049 | 15a4e1c5-0f5f-4567-add7-16595c3fe66c | Pecorino 85+ / Passerina 85+ / rosso Montepulciano 85+ |
+| 14 | Conegliano Valdobbiadene - Prosecco | 1029 | 42756499-9ef1-4bdf-9500-77554d734324 | 85%+ Glera, sparkling |
+| 15 | Montefalco | 2198 | 2c9b00cd-ed65-4547-b24a-60452e75a3f5 | bianco: Grechetto 50%+ + Trebbiano 20-35%; rosso: Sangiovese 60-70% + Sagrantino 10-15% |
+| 16 | Trento | 2301 | a5a8277a-8b12-4aae-910a-4aba9a150b7d | Chardonnay/Pinot bianco/Pinot nero/Meunier, spumante |
+| 17 | Alta Langa | 1003 | c4695c4e-e3f3-4f79-8fa1-8510c1babda4 | 90-100% Pinot nero/Chardonnay, spumante |
+| 18 | Alto Adige (umbrella) | 2010 | b8297e3c-4467-4c2b-8ac3-8952e0cb9891 | umbrella, varietal 85%+ rules |
+| 19 | Trentino (umbrella) | 2300 | 19a8b3f5-cacc-4615-a066-27110407ecc7 | umbrella, bianco/rosso/kretzer |
+| 20 | Collio Goriziano (umbrella) | 2101 | d3281bfd-a332-44c6-9527-0175866bbdd7 | umbrella, 16+ varieties |
+| 21 | Friuli Isonzo (umbrella) | 2136 | b6824ed5-1c28-4a41-980f-ee8947c58dfc | umbrella, 20+ varieties |
+| 22 | Colli Tortonesi (umbrella) | 2094 | b4579f42-af01-407a-8d7c-d15c029e8e2a | umbrella, Barbera/Dolcetto/Timorasso/Cortese varietal rules |
+
+### To undo batch 11 rules
+
+```sql
+DELETE FROM appellation_rules
+WHERE source_url IN (
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2002',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2020',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1039',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2236',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2200',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2320',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2321',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2174',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1021',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2299',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1020',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1038',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1049',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1029',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2198',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2301',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1003',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2010',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2300',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2101',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2136',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2094'
+);
+
+-- appellation_grapes rollback via same URL list:
+DELETE FROM appellation_grapes
+WHERE source_url IN (<same URL list>);
+```
+
+### Batch 11 cascades
+
+**Color cascades** (all NULL-only fills):
+
+| Appellation | Color Set | Total Wines |
+|---|---|---|
+| Aglianico del Vulture | red | 154 |
+| Barbera d'Alba | red | 845 (2 pre-existing white left intact) |
+| Gattinara | red | 132 (2 pre-existing white left intact) |
+| Primitivo di Manduria | red | 136 |
+| Montepulciano d'Abruzzo | red | 351 (2 pre-existing white left intact) |
+| Cerasuolo di Vittoria | red | 61 |
+| Cesanese del Piglio | red | 39 (1 pre-existing white left intact) |
+| Verdicchio dei Castelli di Jesi | white | 174 (5 pre-existing red left intact) |
+| Verdicchio di Matelica | white | 44 |
+| Lugana | white | 81 (3 pre-existing red left intact) |
+| Trebbiano d'Abruzzo | white | 153 (7 pre-existing red left intact) |
+| Frascati Superiore | white | 20 (4 pre-existing red left intact) |
+
+**Total wines with color in batch 11 appellations: 2,190** (pre-existing wrongs left alone per no-overwrite rule — flagged for future cleanup).
+
+To reverse a specific cascade:
+
+```sql
+-- Reverse red cascade for Aglianico del Vulture
+UPDATE wines SET color = NULL, updated_at = NOW()
+WHERE appellation_id = 'b9960dcb-a445-41ad-ade2-76d5f7af3996'
+  AND color = 'red'
+  AND updated_at > '2026-04-05 21:30:00+00'::timestamptz;  -- batch 11 window
+```
+
+**Varietal_category_id cascades** (NULL-only):
+
+| Appellation | Category |
+|---|---|
+| Aglianico del Vulture | Aglianico (3a9dcf56-...) |
+| Barbera d'Alba | Barbera (1db7eed4-...) |
+| Gattinara | Nebbiolo (97a82ffb-...) |
+| Primitivo di Manduria | Primitivo (1a54bde6-...) |
+| Montepulciano d'Abruzzo | Montepulciano (496537db-...) |
+| Verdicchio Castelli di Jesi | Verdicchio (03ce1738-...) |
+| Verdicchio di Matelica | Verdicchio (03ce1738-...) |
+| Lugana | Trebbiano (6722bd7c-...) |
+| Trebbiano d'Abruzzo | Trebbiano (6722bd7c-...) |
+| Conegliano Valdobbiadene Prosecco | Prosecco (7b38ca9d-...) |
+
+To reverse: `UPDATE wines SET varietal_category_id = NULL WHERE appellation_id = '...' AND varietal_category_id = '...'` per pair.
+
+**Wine_grapes 100% cascade** (ONE appellation only — Aglianico del Vulture 100% Aglianico):
+
+79 new rows created at `percentage=100, percentage_source='adeb8cb4-6d80-42f1-9962-d13340f82978'` (MASAF source_type).
+
+```sql
+-- Rollback
+DELETE FROM wine_grapes
+WHERE grape_id = '951f1441-a2a0-4b03-98c0-bff93cd6f046'  -- Aglianico
+  AND percentage = 100
+  AND percentage_source = 'adeb8cb4-6d80-42f1-9962-d13340f82978'  -- MASAF
+  AND wine_id IN (SELECT id FROM wines WHERE appellation_id = 'b9960dcb-a445-41ad-ade2-76d5f7af3996');
+```
+
+Clean provenance: every batch 11 row is identifiable by (`source_url LIKE '%catalogoviti%'` AND `source_accessed_date='2026-04-05'`) for rules/grapes, and by (`percentage_source='adeb8cb4-6d80-42f1-9962-d13340f82978'`) for wine_grapes.
+
+---
+
 ## Audit results (2026-04-05 late)
 
 Clean audit after session 2:
