@@ -155,6 +155,7 @@ New approach: promote TTB data in confidence tiers rather than the original 3-la
 - Mystery shopper test: sample N wines from real retailer staging tables (Spec's, Wally's), attempt canonical lookup, score the user experience
 - First test: 50 random Spec's bottles → ~56% producer found, ~30% exact wine found, 0% depth, ~14% false matches
 - **Current readiness: ~8/100.** Target: 50+ before frontend resumes.
+- **2026-04-05 update:** 17 rounds of recovery + definitional fills completed (see CLAUDE.md round log). Direct-source fills from existing staging data are largely exhausted — remaining canonical gaps require either external data integration (Open-Meteo weather, more importers, CellarTracker) or AI enrichment. Readiness metric should be re-run after the enrichment pipeline generates Grade C/B content.
 
 ### SQL Consistency Fixes (2026-04-02)
 - ✓ 75,774 wines refined from L1 to L2 regions (Burgundy→Côte de Beaune, California→Napa Valley, etc.)
