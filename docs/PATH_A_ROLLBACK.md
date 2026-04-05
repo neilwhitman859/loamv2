@@ -363,6 +363,71 @@ Clean provenance: every batch 11 row is identifiable by (`source_url LIKE '%cata
 
 ---
 
+## Batch 12 (2026-04-05 very late 2): 17 more Italian DOCs/DOCGs via MASAF catalogoviti
+
+### Appellations seeded (17)
+
+| # | Appellation | q ID | appellation_id | Rule |
+|---|---|---|---|---|
+| 1 | Rosso di Montalcino | 2250 | 28973a7d-f586-418f-93e9-877c596da9fd | 100% Sangiovese, red |
+| 2 | Nebbiolo d'Alba | 2211 | 4096834f-7de2-49ab-b102-180474d0ab48 | 100% Nebbiolo, red |
+| 3 | Dolcetto d'Alba | 2115 | 8385e4da-7703-44ef-8c7e-ee662487eb80 | 100% Dolcetto, red |
+| 4 | Cannonau di Sardegna | 2049 | 13539eea-4d25-4da4-a77c-a5f1af45b482 | 85%+ Cannonau (Grenache), red |
+| 5 | Romagna Albana | 1058 | 3006ac12-8d74-497f-a7e9-971ad0e8d613 | 95%+ Albana, white |
+| 6 | Valpolicella Ripasso | 2314 | a6b38cfe-7cbe-44b5-86e3-ef12fcffcbd2 | Corvina 45-95% + Corvinone (sub) + Rondinella 5-30%, red |
+| 7 | Salice Salentino | 2258 | 78bc7c98-a29f-4f1e-a5fa-3e04e3cad941 | 75%+ Negroamaro, red/rosato |
+| 8 | Faro | 2128 | 8cb5f577-f930-4654-8ee1-75d3f989db30 | Nerello Mascalese 45-60 + Nocera 5-10 + Nerello Cappuccio 15-30, red |
+| 9 | Vin Santo del Chianti Classico | 2331 | a0214fa1-5514-4016-9be8-d10937696593 | Trebbiano+Malvasia 60%+; Occhio di Pernice 80%+ Sangiovese |
+| 10 | Gioia del Colle | 2145 | 20a3547f-7fd2-4801-ace7-55a0e29d4265 | multi-subtype (Primitivo 50-60, bianco Trebbiano 50-70, etc.) |
+| 11 | Monferrato DOC | 2192 | 641c9dc1-624b-4434-a6f4-de78acbcf732 | umbrella |
+| 12 | Sannio | 2266 | ae024b44-4e4e-4c0f-9c2b-226f85125a4c | umbrella |
+| 13 | Valle d'Aosta | 2311 | ea1fca59-0f76-436b-bb91-f1196bfbdfd7 | umbrella (19+ varietal specifications) |
+| 14 | Abruzzo DOC | 2001 | 97bc797a-f953-4a8b-ad4a-db8d9ed33276 | multi-subtype |
+| 15 | Cortona | 2109 | 07b7489d-c8b8-4f2b-b649-830ce8569fb9 | multi-subtype (Syrah/Merlot blend + varietals) |
+| 16 | Colline Novaresi | 2099 | f145b094-2eb1-4b2b-a087-0a154a891410 | multi-subtype |
+| 17 | Marsala | 2183 | fa643a34-c81a-4aee-bd44-2096d070cadf | fortified, oro/ambra (whites) + rubino (reds) |
+
+### To undo batch 12 rules
+
+```sql
+DELETE FROM appellation_rules WHERE source_url IN (
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2250',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2211',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2115',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2049',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1058',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2314',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2258',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2128',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2331',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2145',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2192',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2266',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2311',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2001',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2109',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2099',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2183'
+);
+```
+
+### Batch 12 cascades
+
+**Color cascades**: 7 appellations → 1,432 wines. Pre-existing wrongs left intact:
+2 white Nebbiolo d'Alba, 1 white Valpolicella Ripasso, 1 white Cannonau di Sardegna, 2 red Romagna Albana.
+
+**varietal_category_id**: Rosso di Montalcino → Sangiovese, Nebbiolo d'Alba → Nebbiolo.
+
+**wine_grapes 100%** (3 true 100% appellations only): Rosso di Montalcino + Nebbiolo d'Alba + Dolcetto d'Alba — all with `percentage_source='adeb8cb4-6d80-42f1-9962-d13340f82978'` (MASAF source_type).
+
+### Batch 12 running totals after application
+
+- appellation_rules: 140 → **157** (+17)
+- appellation_grapes with full provenance: 673 → **688** (+15)
+- All rules have 100% provenance; 0 duplicates per appellation_id.
+
+---
+
 ## Audit results (2026-04-05 late)
 
 Clean audit after session 2:
