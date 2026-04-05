@@ -532,6 +532,51 @@ DELETE FROM appellation_rules WHERE source_url IN (
 
 ---
 
+## Batch 15 (2026-04-05 loop-cycle 11): 17 Burgundy AOCs via INAO CDCs
+
+### Appellations seeded (17)
+
+Beaune, Chambolle-Musigny, Corton, Santenay, Saint-Aubin, Morey-Saint-Denis, Mercurey, Marsannay, Vosne-Romanée, Rully, Pernand-Vergelesses, Clos de Vougeot / Clos Vougeot, Aloxe-Corton, Corton-Charlemagne, Savigny-lès-Beaune, Auxey-Duresses, Echezeaux.
+
+Source URL pattern: `https://extranet.inao.gouv.fr/fichier/{PNOCDC-Name.pdf}` — various naming conventions (PNOCDC{Name}.pdf, PNOCDC-{Name}.pdf, PNOCDC{CompactName}.pdf).
+
+### Cascades
+
+- **Color** (grand cru + single-color village only): Chambolle-Musigny (red), Vosne-Romanée (red), Echezeaux (red grand cru), Corton-Charlemagne (white grand cru). Others have both colors; no cascade.
+- **varietal_category_id**: Chambolle-Musigny, Vosne-Romanée, Echezeaux → Pinot Noir; Corton-Charlemagne → Chardonnay.
+
+### To undo batch 15 rules
+
+```sql
+DELETE FROM appellation_rules WHERE source_url IN (
+  'https://extranet.inao.gouv.fr/fichier/PNOCDC-Beaune.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDC-Chambolle-Musigny.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCCorton.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCSantenay.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCSaint-Aubin.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDC-MoreySaintDenis.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCMercurey.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDC-Marsannay.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCVosne-Romanee.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCRully.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCPernand-Vergelesses.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCVougeot.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCAloxeCorton.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCCorton-Charlemagne.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCSavigny-les-Beaune.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDC-Auxey-Duresses.pdf',
+  'https://extranet.inao.gouv.fr/fichier/PNOCDCEchezeaux.pdf'
+);
+```
+
+### Batch 15 running totals
+
+- appellation_rules: 202 → **219** (+17)
+- appellation_grapes with full provenance: 739 → **770** (+31)
+- 0 duplicates, 100% provenance coverage.
+
+---
+
 ## Audit results (2026-04-05 late)
 
 Clean audit after session 2:
