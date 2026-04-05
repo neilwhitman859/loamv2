@@ -428,6 +428,59 @@ DELETE FROM appellation_rules WHERE source_url IN (
 
 ---
 
+## Batch 13 (2026-04-05 loop-cycle 9): 24 more Italian DOCs/DOCGs from MASAF
+
+### Appellations seeded (24)
+
+Sicilia DOC (q=2274), Romagna DOC (q=2245), Recioto della Valpolicella DOCG (q=1054), Venezia DOC (q=2319), Cerasuolo d'Abruzzo (q=2063), Colli Piacentini (q=2092), Bianco di Custoza (q=2028), Rosso di Montepulciano (q=2251), Garda DOC (q=2142), Carso (q=2055), Vesuvio DOC (q=2325), Castel del Monte (q=2058), Erbaluce di Caluso DOCG (q=1035), Orvieto DOC (q=2222), Ischia DOC (q=2157), Ghemme DOCG (q=1041), Montecucco DOC (q=2197), Sforzato di Valtellina DOCG (q=1062), Vittoria DOC (q=2335), Lacrima di Morro d'Alba (q=2158), Valtellina Rosso (q=2316), Colli di Luni (q=2081), Lambrusco di Sorbara DOC (q=2161), Lambrusco Grasparossa di Castelvetro (q=2162).
+
+### Batch 13 cascades
+
+- **RED** color cascades: Recioto della Valpolicella, Rosso di Montepulciano, Ghemme, Sforzato di Valtellina, Valtellina Rosso, Lacrima di Morro d'Alba
+- **WHITE** color cascades: Bianco di Custoza, Erbaluce di Caluso, Orvieto
+- **Cerasuolo d'Abruzzo skipped** — legally rosato, color cascade risky without knowing wines.color enum support for 'rose'/'rosato'
+- **varietal_category_id**: Rosso di Montepulciano → Sangiovese, Ghemme/Sforzato/Valtellina Rosso → Nebbiolo, Cerasuolo d'Abruzzo → Montepulciano
+- **wine_grapes 100% cascade**: Erbaluce di Caluso (true 100% single-variety)
+
+### To undo batch 13 rules
+
+```sql
+DELETE FROM appellation_rules WHERE source_url IN (
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2274',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2245',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1054',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2319',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2063',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2092',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2028',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2251',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2142',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2055',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2325',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2058',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1035',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2222',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2157',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1041',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2197',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1062',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2335',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2158',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2316',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2081',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2161',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2162'
+);
+```
+
+### Batch 13 running totals
+
+- appellation_rules: 157 → **181** (+24)
+- appellation_grapes with full provenance: 688 → **717** (+29)
+- 0 duplicates, 100% provenance coverage.
+
+---
+
 ## Audit results (2026-04-05 late)
 
 Clean audit after session 2:
