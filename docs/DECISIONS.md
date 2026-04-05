@@ -863,3 +863,50 @@ ALTER TABLE wine_vintages
 **Alternative considered:** Supabase's built-in image transformation API (upload JPEG, serve WebP via URL params like `?format=webp&width=600`). Requires Pro plan ($25/mo). Simpler — one upload, multiple formats on demand. Switch to this if/when we upgrade.
 
 **Timing:** Don't execute until frontend restart. Data merge phase has higher-leverage work right now.
+
+---
+
+### 2026-04-05: Path A (appellation_rules seeding) — provenance is mandatory at row level
+
+Seeding `appellation_rules` + `appellation_grapes` from legal sources (eAmbrosia, INAO, MASAF, MAPA, TTB 27 CFR, Wine Australia GI, IPONZ, SAWIS, INV, SAG). Session prompt: `data/session_prompts/seed_appellation_rules.md`.
+
+**Key rules for this workstream:**
+
+1. Every row inserted carries its citation in-row: `source_url` (resolvable), `source_organization` (canonical label), `source_document_title`, `source_accessed_date`, `source_text_excerpt` (~100-300 char literal/paraphrased sentence a reviewer can verify from alone), `last_verified_at`. Added 6 columns to both tables via migration on 2026-04-05 (added as NULLABLE — see below).
+
+2. **`appellation_grapes` was NOT empty at session start** (prompt assumed 0 rows, actual: 9,278 rows across 3,206 appellations from a prior unverified seed). Prior rows have parenthetical notes like "(INAO)" or "(Disciplinare)" but no structured provenance. **Decision:** audit-and-backfill rather than wipe-and-restart. Provenance columns added as nullable (NOT NULL enforcement deferred until legacy audit completes). For each appellation touched in this session we UPSERT existing rows with full provenance. Legacy untouched rows carry `source_organization IS NULL` = "unverified legacy, needs follow-up audit." Enforce NOT NULL at script level now, at DB level later once all 9,278 are audited.
+
+3. **`appellation_rules` uses UNIQUE(appellation_id)** — one row per appellation. The `rules` jsonb holds the complete rule set for an appellation (colors, grape rules per color, min alcohol, max yield, aging tiers, etc.). Provenance columns cite the single legal document that informed the whole row.
+
+4. **Cascade rules (definitional only):**
+   - Single-variety appellation (e.g., Chablis = 100% Chardonnay) → fill NULL `varietal_category_id` and create missing `wine_grapes(grape=Chardonnay, percentage=100)` rows.
+   - Single-color regulated appellation → fill NULL `wines.color`.
+   - Single-wine-type appellation (e.g., Champagne = sparkling only) → fill NULL `wines.wine_type='sparkling'`.
+   - **DO NOT** cascade from blend-allowed appellations (Bordeaux, Champagne grapes, Rioja grapes) — the wine could be any subset.
+   - **DO NOT** cascade where the law allows a disjunction (Champagne color = white OR rosé — ambiguous, not definitional).
+   - **DO NOT** overwrite non-null existing values. Cascades fill NULLs only.
+
+5. **Substitution for dry run:** Original prompt listed Barolo + Brunello as examples. MASAF (politicheagricole.it/catalogoviti) returned ECONNREFUSED every attempt (likely geoblocking). eAmbrosia detail pages are JavaScript-rendered so WebFetch got only the shell. Substituted Champagne + Bourgogne from INAO extranet (both higher wine counts anyway: 8,891 and 4,377 vs Barolo 3,212). Barolo/Brunello deferred — try EUR-Lex C-series CELEX search or an alternate Italian path in a follow-up.
+
+6. **Skipped 2 Rioja grapes in link-table seeding:**
+   - Malvasía: `grapes` table has duplicate MALVASIA rows (pre-existing data quality bug, unrelated to this session)
+   - Turruntés: Synonyms in `grape_synonyms` point to both ALBILLO REAL and ALBILLO MAYOR — cannot disambiguate without additional research
+   - Both are included in the Rioja rules jsonb `white.varieties` list so the legal fact isn't lost. Link-table rows can be added once grape table duplicates are resolved.
+
+**Dry-run result (5 appellations):** Sancerre, Chablis, Rioja, Champagne, Bourgogne all seeded with 100% provenance coverage (5 rule rows + 28 grape rows, all with source_url + source_organization + source_text_excerpt populated). Legal texts extracted from local PDF copies via `pypdf`; raw texts saved under `data/legal_sources/` for reference.
+
+---
+
+### 2026-04-05: Canonical data error discovered — 850 wines with impossible colors per legal rules
+
+Cross-checking the new `appellation_rules` against `wines.color` surfaced **850 wines with legally impossible color values**:
+
+- **50 Chablis wines labeled `color='red'`**: Chablis AOC is 100% Chardonnay, white-only by law (INAO cahier des charges, décret n° 2011-1752). Examples: Raveneau Butteaux, Gilbert Picq Premier Cru Vosgros, La Chablisienne Beauroy, Verget Montée de Tonnerre. All are real Chablis wines with red mis-classification.
+
+- **800 Champagne wines labeled `color='red'`**: AOC Champagne is reserved for "vins mousseux blancs ou rosés" (sparkling white or rosé) — red is impossible (INAO cahier des charges, PNO 2019).
+
+**Why:** Almost certainly a side effect of earlier wine_type / color classification work. Likely source is a pattern-match or bulk update that mis-tagged these wines.
+
+**How to apply:** Per the session "no overwrite" rule, leaving these alone this session. This is not a cascade problem — it's a pre-existing canonical data error that legal-rule validation surfaces. Logged here for a dedicated cleanup session: for any appellation with a `required_color` in `appellation_rules.rules`, validate that all wines under that appellation have a compatible color (or NULL), and flip impossible values to NULL (not to the legal color, since we still don't know which of several legal options each wine is). Expected blast radius: ~850 wines in Chablis+Champagne alone; running the full validation against all future seeded rules will likely surface more.
+
+**Value of this find:** proves the appellation_rules work is not just data-entry — it's a cross-validation signal. Every seeded rule is a new constraint that can catch existing errors.
