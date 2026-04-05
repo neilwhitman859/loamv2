@@ -315,6 +315,13 @@ TTB_GRAPE_FIXES = {
     "columbar": "Colombard",                       # truncated/typo variant
     "granatxa": "Garnacha Tinta",                  # Catalan spelling of Garnacha (cf. garnaxta)
     "cannonnau": "Garnacha Tinta",                 # double-n variant of canonnau = Sardinian Grenache
+    # Run #7 pass 2 — typos confirmed via DB lookup
+    "merweh": "Merwah",                           # typo for Merwah (Lebanese grape)
+    "hrslevelu": "Harslevelue",                   # typo missing 'a' (HARSLEVELU is synonym)
+    "nergroamaro": "Negro Amaro",                 # transposed 'er' typo
+    # New grapes added to DB this run
+    "cabernet pfeffer": "Cabernet Pfeffer",
+    "casetta": "Casetta",
     # Run #7 blacklist additions (single-token junk detected in second pass)
 }
 
