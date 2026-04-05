@@ -199,6 +199,13 @@ class BatchMatcher:
         stripped = normalize_producer(name)
         if stripped and stripped != norm:
             candidates = self.producer_by_stripped.get(stripped, [])
+            # Also check producer_by_norm directly — producer_by_stripped only indexes
+            # producers where normalize_producer(name) != name_normalized, so "Failla"
+            # (stripped = norm = "failla") is missing from stripped index but is in norm index.
+            if not candidates:
+                p = self.producer_by_norm.get(stripped)
+                if p:
+                    candidates = [p]
             if candidates:
                 # Prefer same-country match
                 if country_id:

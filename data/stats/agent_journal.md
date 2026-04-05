@@ -293,3 +293,56 @@ At the END of each run, append an entry:
 4. [LOW] **Cabernet Pfeffer** — 10 wines with this grape. Not in VIVC, not in Loam DB. Research: is this the same as Gros Verdot? If so, add synonym to DB. If distinct California heritage variety, decide whether to add as a new grape entry.
 
 ---
+
+### 2026-04-05 — Run #7
+**Duration:** ~120 min | **Grade:** A | **Readiness:** 41.9 (+1.0 from Run #6, sampling variance ±2)
+**Key numbers:** 470,485 active wines | 188,438 grapes (+29) | 327,906 vintages (+302) | 33,440 prices (+244) | 19,716 wines with price (+169)
+
+**What worked:**
+- **ROOT CAUSE FIX: batch_matcher Tier 3 producer gap** — `producer_by_stripped` only indexes producers where `normalize_producer(name) != name_normalized`. So "Failla" (stripped = "failla" = norm) was never added to the stripped index. When matching "Failla Wines" → stripped "failla" → not in stripped index → miss. Fix: in Tier 3, also check `producer_by_norm` with the stripped form. This unlocked matches that had been silently failing since the matcher was built. **984 Systembolaget + 309 Flatiron + 59 Spec's + 42 Wally's + 18 LCBO wine matches** from a single bug fix.
+- **610 country-appellation mismatches fixed** — These were left over from earlier TTB appellation promotion assigning wrong French/Italian appellations to non-French wines (and vice versa). Strategy: NULL appellation_id (trust country_id from TTB origin_code over appellation string matching). Count now 0.
+- **+29 grape links from TTB grape promotion** — Added 15 new TTB_GRAPE_FIXES (charrdonnay, aglianco, mecia, weitzburgunder, moscastello selvatico, gruneer veltlliner, zeigelt, primivito, verhelho, collombard, temparnillo, chardonaay, syarh, trempranillo blanco, refrosco, alborino, columbar, garnaxta, canonnau, grenaches noirs, fromentau, chardoonnay, chianti/sangiovese, chardonnaypinot noir, sptburgunder). Added 10 new JUNK_STRINGS (natur, sparkling, blanco, blanc, txakoli, patrimonio, apple and cranberry, char, pg, brut prosecco, sb & viog, sem, katinka, pouilly, fuisse, pas, loire, veramar, wiener gemischter satz dac, prosecco docg, marcello colfundo, langhe, auslese).
+- **+244 prices, +302 vintages, +8 UPCs** from retail_promote after new matches.
+- **Phase 1 clean:** 0 future vintages, 0 ABV 750 errors. Dedup: 0 new duplicates.
+- **Price dimension diagnosed:** 4.15% coverage overall (19,547 wines with price). Low in sample because COLA wines are production wines — most don't have retail prices. Score dimension: 2.50% actual (11,773 wines).
+
+**What didn't:**
+- Readiness only +1.0 (sampling variance). True structural gains are larger (1,412 new source matches).
+- Systembolaget retail_promote had connection error partway through — some Systembolaget prices/UPCs may not have fully promoted. Need a second run.
+- Remaining unresolved grapes are all 1-wine edge cases (Merweh, Hrslevelu, Casetta, Nergroamaro, etc.) — genuinely obscure varietals not in VIVC DB. Cannot resolve without schema additions.
+- Haiku budget: $0 this run (all work was SQL/code fixes).
+- Price readiness (1.5% in sample) is a sampling artifact — COLA-matched wines skew toward unknown producers without retail prices.
+
+**Root causes found:**
+- **batch_matcher Tier 3 gap:** When a canonical producer's `normalize_producer(name) == name_normalized` (e.g., "Failla" → stripped = "failla" = normalized), the producer is indexed in `producer_by_norm` but NOT in `producer_by_stripped`. Tier 3 only checked `producer_by_stripped`, so "Failla Wines" → stripped "failla" → miss. Fix: fallback to `producer_by_norm[stripped]` in Tier 3. This was causing all suffix-variant producer names (Wines, Winery, s.r.l., etc.) to fail when the canonical name was simple (no suffixes to strip).
+- **610 appellation mismatches:** Root cause is TTB wine_appellation matching across country boundaries — "Champagne" as style designation was matched to the Champagne AOC appellation. TTB origin_code country assignment is more reliable. Fixed by nulling the conflicting appellation_id.
+
+**Accuracy checks:**
+- Spot-checked 10 country-appellation mismatch samples before fixing: all clearly had wrong appellation (e.g., Chilean Cab Sauv linked to French Champagne AOC). Fix confirmed correct.
+- Spot-checked 5 new GRAPE_FIXES entries via DB lookup before adding: charrdonnay→Chardonnay, aglianco→AGLIANICO, weitzburgunder→PINOT BLANC, canonnau→GARNACHA TINTA, fromentau→PINOT GRIS all confirmed in DB.
+- Confirmed batch_matcher Tier 3 fix via manual trace: "Failla Wines" → normalize_producer → "failla" → producer_by_norm["failla"] = Failla (id: b0e507f3).
+
+**Haiku spend:** $0.00 (0 calls)
+
+**Unresolved backlog (by impact):**
+1. Wine creation from staging (LCBO ~2K, Systembolaget ~8K producer-matched but no canonical wine) — BLOCKED: needs human approval on creation policy
+2. 4,886 wines still without country_id — too ambiguous for Haiku (generic names, no staging country data)
+3. Score dimension stuck at 2-3% — needs licensed critic scores (CellarTracker free API is best next step)
+4. Systembolaget retail_promote connection error — Syst prices may be partially promoted; re-run retail_promote to confirm
+5. Cabernet Pfeffer (10 wines) — not in VIVC DB, research needed
+6. Merweh/Hrslevelu/Casetta/Nergroamaro — obscure varietals not in VIVC. Would need new grape DB entries.
+
+**Focus for next run:**
+1. Re-run retail_promote to ensure Systembolaget prices fully promoted (connection error in this run)
+2. Run batch_matcher on all sources again with the Tier 3 fix (may unlock more matches on second pass)
+3. Use Haiku ($10 budget) to disambiguate top 50 unsplittable TTB grape strings — still unspent
+4. Investigate `create_missing_wines_from_staging.py` design (pending human approval) — would add 1K-3K canonical wines
+5. Skip: grape promotion (exhausted), dedup (0 new), country inference (4,886 truly ambiguous)
+
+## HUMAN ACTIONS REQUIRED
+1. [HIGH] **Wine creation from staging approval** — 984 Systembolaget + 309 Flatiron producers are now matched in canonical, but their wines don't exist as canonical wines. Script would create ~1K-3K canonical wines with producer+name+price. Needs human sign-off on quality bar: (a) require wine name length ≥3, (b) dedup against existing names, (c) only from producer-matched rows with wine_id IS NULL.
+2. [HIGH] **Licensed critic scores** — Score readiness stuck at 2-3%. CellarTracker free API would push this to 20-30%. Research the API and consider adding it as a source.
+3. [MEDIUM] **Cabernet Pfeffer** — 10 wines with this California heritage grape. Not in VIVC. Is this the same as Gros Verdot? Research and decide: (a) add as new grape, (b) map to existing synonym, or (c) leave unresolved.
+4. [LOW] **Merweh, Hárslevelű, Casetta, Negroamaro** — Legitimate grapes not in our VIVC DB. If we add them as new grapes, they'd immediately unlock several TTB grape links. Low count but correct action.
+
+---

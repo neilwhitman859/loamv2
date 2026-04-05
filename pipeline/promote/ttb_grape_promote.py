@@ -36,6 +36,31 @@ JUNK_STRINGS = {
     "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",  # more 2-digit noise
     # Generic Italian color/type terms
     "rosso", "bianco", "rosato",
+    # Run #7 additions — non-grape single tokens
+    "natur",                   # German quality/style descriptor
+    "sparkling",               # wine style, not a grape
+    "blanco",                  # Spanish for white
+    "blanc",                   # French for white
+    "txakoli",                 # Basque wine appellation (grape = Hondarrabi Zuri)
+    "patrimonio",              # Corsican AOC appellation, not a grape
+    "apple and cranberry",     # fruit, not a wine grape
+    "char",                    # ambiguous truncation
+    "pg",                      # abbreviation, too ambiguous
+    "red grapes",              # generic descriptor
+    "brut prosecco",           # sparkling wine style, not a grape
+    "sb & viog",               # Sauvignon Blanc & Viognier abbreviation blend notation
+    "sem",                     # too short/ambiguous
+    "katinka",                 # wine brand, not a grape
+    "pouilly",                 # Pouilly-Fumé/Fuissé appellation, not a grape
+    "fuisse",                  # Pouilly-Fuissé appellation suffix, not a grape
+    "pas",                     # too short/ambiguous
+    "loire",                   # wine region, not a grape
+    "veramar",                 # wine brand, not a grape
+    "wiener gemischter satz dac",  # Austrian wine appellation (DAC quality level)
+    "prosecco docg",           # Prosecco with DOC designation — not a grape
+    "marcello colfundo",       # producer/winery name, not a grape
+    "langhe",                  # Italian DOC wine appellation, not a grape
+    "auslese",                 # German quality level (already in BLEND_BLACKLIST, add here too)
 }
 
 # Style/appellation strings that appear in TTB grape field but are NOT grapes.
@@ -79,6 +104,15 @@ BLEND_BLACKLIST = {
     "01",                      # numeric noise
     "montalcino",              # Brunello di Montalcino appellation, not a grape
     "ros wine",                # OCR/typo for "Rose Wine"
+    # Run #7 additions
+    "prosecco millesimato",    # Prosecco appellation with vintage designation, not a grape
+    "proprietary red wine",    # trade designation, not a grape
+    "natur",                   # not a grape (German quality/style term)
+    "blanco",                  # Spanish for "white", not a grape
+    "blanc",                   # French for "white", not a grape
+    "red grapes",              # generic descriptor, not a grape
+    "tribianco",               # Italian white blend name, not a single grape
+    "selma pete",              # person's name, not a grape
 }
 
 # TTB encodes accented chars as '?' — map common corrupted forms
@@ -251,6 +285,37 @@ TTB_GRAPE_FIXES = {
     "trebbiano d abruzzo": "Trebbiano Toscano",
     "nebbiolo d'alba": "Nebbiolo",               # appellation-prefixed (extract grape)
     "nebbiolo d alba": "Nebbiolo",
+    # Run #7 additions — from unresolved list
+    "charrdonnay": "Chardonnay",                 # double-r typo
+    "weitzburgunder": "Pinot Blanc",             # variant of Weissburgunder
+    "aglianco": "Aglianico",                     # missing 'i' typo
+    "mecia": "Mencia",                           # transposed letters
+    "moscastello selvatico": "Moscatello Selvatico",  # doubled-ca typo
+    "gruneer veltlliner": "Gruner Veltliner",    # double-e + double-l typo
+    "sauvingion blanc": "Sauvignon Blanc",       # double transposition
+    "chardoonay": "Chardonnay",                  # double-o typo
+    "zeigelt": "Zweigelt",                       # missing 'w' typo
+    "primivito": "Primitivo",                    # transposed letters
+    "verhelho": "Verdelho Branco",               # transposed 'r'/'h', most common Verdelho
+    "collombard": "Colombard",                   # double-l typo
+    "temparnillo": "Tempranillo Tinto",          # transposed 'a'
+    "chardonaay": "Chardonnay",                  # extra 'a' typo
+    "garnaxta": "Garnacha Tinta",               # Catalan variant of Garnacha
+    "canonnau": "Garnacha Tinta",               # Sardinian synonym for Grenache (VIVC: Garnacha)
+    "grenaches noirs": "Garnacha Tinta",        # plural French form of Grenache Noir
+    "fromentau": "Pinot Gris",                  # Alsace dialect name for Pinot Gris
+    "sptburgunder (pinot noir)": "Pinot Noir",  # truncated Spätburgunder with parenthetical
+    "chardoonnay": "Chardonnay",               # extra-o typo
+    "chianti (sangiovese)": "Sangiovese",       # appellation with grape in parens — extract grape
+    "chardonnaypinot noir": "Chardonnay",       # merged blend — promote primary grape only
+    "syarh": "Syrah",                          # transposed letters
+    "trempranillo blanco": "Tempranillo Blanco",  # transposed 'e'
+    "refrosco": "Refosco Dal Peduncolo Rosso",    # transposed 'o', most common Refosco in wine
+    "alborino": "Albarino",                        # 'o' for 'a' typo in Albariño
+    "columbar": "Colombard",                       # truncated/typo variant
+    "granatxa": "Garnacha Tinta",                  # Catalan spelling of Garnacha (cf. garnaxta)
+    "cannonnau": "Garnacha Tinta",                 # double-n variant of canonnau = Sardinian Grenache
+    # Run #7 blacklist additions (single-token junk detected in second pass)
 }
 
 

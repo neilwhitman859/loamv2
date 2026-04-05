@@ -1,0 +1,38 @@
+{
+  "run": 7,
+  "date": "2026-04-05",
+  "timestamp": "2026-04-05T03:00:00Z",
+  "readiness": 41.9,
+  "readiness_prev": 40.9,
+  "readiness_delta": 1.0,
+  "active_wines": 470485,
+  "wines_no_country": 4886,
+  "wine_grapes": 188438,
+  "wine_vintages": 327906,
+  "scores": 27451,
+  "prices": 33440,
+  "wines_with_price": 19716,
+  "price_coverage_pct": 4.19,
+  "dimensions": {
+    "found_pct": 100.0,
+    "vintage_pct": 62.0,
+    "score_pct": 3.0,
+    "grapes_pct": 43.0,
+    "price_pct": 1.5
+  },
+  "changes_this_run": {
+    "appellation_mismatches_fixed": 610,
+    "grape_links_added": 29,
+    "systembolaget_wine_matches": 984,
+    "flatiron_wine_matches": 309,
+    "lcbo_wine_matches": 18,
+    "wallys_wine_matches": 42,
+    "specs_wine_matches": 59,
+    "prices_added": 244,
+    "vintages_added": 302,
+    "upcs_added": 8
+  },
+  "root_causes_fixed": [
+    "batch_matcher Tier 3: producer_by_stripped gap — producers where normalize_producer(name)==name_normalized were never added to stripped index, so suffix-stripped lookups fell through. Fixed by also checking producer_by_norm with stripped form in Tier 3."
+  ]
+}
