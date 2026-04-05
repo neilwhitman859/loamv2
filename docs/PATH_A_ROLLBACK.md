@@ -481,6 +481,57 @@ DELETE FROM appellation_rules WHERE source_url IN (
 
 ---
 
+## Batch 14 (2026-04-05 loop-cycle 10): 21 more Italian DOCs/DOCGs from MASAF
+
+### Appellations seeded (21)
+
+Brachetto d'Acqui DOCG (q=1012), Carmignano DOCG (q=1015), Ruchè di Castagnole Monferrato DOCG (q=1060), Ramandolo DOCG (q=1053), Vernaccia di Serrapetrona DOCG (q=1072), Dolcetto di Diano d'Alba (q=1032), Cinque Terre / Sciacchetrà (q=2068), Colli Bolognesi (q=2075), Rosso Piceno / Piceno (q=2253), Sant'Antimo (q=2267), Breganze (q=2039), Riviera Ligure di Ponente (q=2243), Cirò (q=2070), Grignolino d'Asti (q=2151), Cortese dell'Alto Monferrato (q=2107), Copertino (q=2105), Malvasia delle Lipari (q=2175), Monica di Sardegna (q=2193), Nuragus di Cagliari (q=2215), Freisa d'Asti (q=2130), Aleatico di Puglia (q=2007).
+
+**Skipped** (already seeded in earlier batches): Asti DOCG (already via Valoritalia), Barbera d'Asti DOCG (already in earlier MASAF batch), Brunello di Montalcino (already via Valoritalia).
+
+### Cascades
+
+- **RED**: Carmignano, Ruchè, Dolcetto di Diano d'Alba, Rosso Piceno, Grignolino d'Asti, Monica di Sardegna, Freisa d'Asti, Aleatico di Puglia
+- **WHITE**: Ramandolo, Cinque Terre, Cortese dell'Alto Monferrato, Nuragus di Cagliari, Malvasia delle Lipari
+- **varietal_category_id**: Carmignano → Sangiovese
+- **wine_grapes 100% cascade**: Dolcetto di Diano d'Alba, Ramandolo (Verduzzo Friulano), Freisa d'Asti (true 100% single-variety each)
+
+### To undo batch 14 rules
+
+```sql
+DELETE FROM appellation_rules WHERE source_url IN (
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1012',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1015',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1060',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1053',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1072',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=1032',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2068',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2075',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2253',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2267',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2039',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2243',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2070',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2151',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2107',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2105',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2175',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2193',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2215',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2130',
+  'http://catalogoviti.politicheagricole.it/scheda_denom.php?t=dsc&q=2007'
+);
+```
+
+### Batch 14 running totals
+
+- appellation_rules: 181 → **202** (+21)
+- appellation_grapes with full provenance: 717 → **739** (+22)
+- 0 duplicates, 100% provenance coverage.
+
+---
+
 ## Audit results (2026-04-05 late)
 
 Clean audit after session 2:
