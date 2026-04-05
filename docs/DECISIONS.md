@@ -1096,3 +1096,37 @@ The pre-existing appellation_grapes row for Pomerol / Carmenère is INCORRECT pe
 - 57 legal source files in `data/legal_sources/` (21 batch 1 + 12 batch 2 + 6 used in rule-seeding + 6 batch 3 Spanish + 8 untrailed from batch 1 [unused eurlex files + sauternes partial extract] + 4 additional: hermitage partial, cava_documento_unico, saint_emilion_grand_cru, barsac)
 
 Path A is now a rhythm — can scale to 100+ appellations over multiple sessions without needing to rediscover the patterns.
+
+### 2026-04-05: Path A batch 4 — Italian Veneto DOCs + more French (68 rules total)
+
+Continued Path A with a 4th batch. 59 → 68 rules (+9). Totals now: 68 appellation_rules (100% provenance), 401 appellation_grapes with structured provenance, 69 legal source files.
+
+**Batch 4 appellations (9 new):**
+- **Italian DOC/DOCGs via Regione del Veneto** (MASAF-subordinate, Nextcloud sharing URLs at `sharing.regione.veneto.it/index.php/s/XXX/download`):
+  - Valpolicella DOC (Corvina 45-95% + Rondinella 5-30% + ≤25% accessory reds)
+  - Soave DOC (Garganega ≥70% + ≤30% Trebbiano di Soave/Chardonnay)
+  - Soave Superiore DOCG (same encépagement as base Soave)
+  - Bardolino DOC (Corvina 35-95% + Rondinella 5-40% + Molinara ≤15%)
+  - Prosecco DOC (Glera ≥85% + 8 accessories; Prosecco Rosé since 2020)
+- **French AOCs via INAO**: Corbières, Faugères, Saint-Péray, Cairanne
+
+**Cascades executed:** Valpolicella 467 → red, Soave 242 → white, Bardolino 120 → red, Saint-Péray 60 → white, Soave Superiore 13 → white. ~902 color fills in this batch.
+
+**Data quality bugs discovered (flagged, not fixed per no-delete rule):**
+- **Bardolino had a pre-existing GARGANEGA grape row.** This is WRONG — Bardolino is a red wine made from Corvina/Rondinella/Molinara. Garganega is the white grape of Soave. The erroneous row was probably created by a past auto-tagger that conflated Lake Garda appellations. Left in place; correct red grapes inserted.
+- **Prosecco had a pre-existing GARGANEGA grape row.** Also WRONG — Prosecco is from Glera. Same root cause. Left in place; correct Glera + accessories inserted.
+
+Both bugs surfaced because the batch 4 seeder queries existing rows before inserting — the contrast between "authoritative" (from legal source) and "existing unsourced" rows made the errors visible. This is now a known pattern: Path A seeding acts as a data quality audit for pre-existing unsourced appellation_grapes rows.
+
+**Deferred from batch 4:**
+- **Franciacorta DOCG**: Two Valoritalia URLs tried — both returned wrong documents (first was Chianti Classico, second was a municipal administration decree). The actual Franciacorta disciplinare URL is not discoverable via direct guessing. The `buonalombardia.regione.lombardia.it/wps/wcm/connect/...` URL returns URLError even with a User-Agent header. Next session: try WebFetch to navigate the Consorzio Franciacorta site (franciacorta.wine/it/consorzio/disciplinare/) which hosts the official PDF.
+- **Savennières AOC**: Base appellation URL not findable despite 10+ pattern guesses. Only sub-appellations (Roche aux Moines, Coulée de Serrant) have discoverable CDC PDFs on extranet.inao.gouv.fr. The base Savennières CDC likely exists at a URL we haven't tried yet. Well-known to be 100% Chenin Blanc, white only.
+- **Quincy AOC** (Central Vineyards Loire, 100% Sauvignon Blanc): URL not findable.
+- **Menetou-Salon** (Sauvignon Blanc whites + Pinot Noir reds): Only an "EXTRAIT" (extract) of Chapter X (territorial info) was available — no grape rules section.
+- **Conegliano Valdobbiadene Prosecco DOCG + Asolo Prosecco DOCG**: These sub-appellations of Prosecco DOC don't exist as separate rows in our appellations table. Only base Prosecco DOC exists. Would need appellation CREATE + hierarchy link before seeding.
+- **Hermitage full CDC**: Only a 2-page 2010 modification notice (cork requirement) is findable on extranet.inao.gouv.fr. Full CDC likely on JORF/Légifrance (`legifrance.gouv.fr` or `info.agriculture.gouv.fr`). Well-known to mirror Crozes-Hermitage rules (Syrah principal + Marsanne/Roussanne).
+
+**New fetcher: scripts/fetch_legal_sources_batch4.py** adds:
+- MASAF-subordinate Regione del Veneto discovery via Nextcloud sharing URLs
+- Multi-pattern URL guessing for AOCs not found via Google search
+- Better error handling: treats HTML returned for a `.pdf` URL as "file not found", tries next guess
