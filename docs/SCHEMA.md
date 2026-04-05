@@ -442,6 +442,7 @@ PK: composite (region_id, grape_id). association_type text NOT NULL CHECK ('requ
 ### appellation_grapes
 Structured allowed varieties per appellation. Complements `appellations.allowed_grapes_description` (free text).
 PK: composite (appellation_id, grape_id). association_type text NOT NULL CHECK ('required','typical') default 'typical', max_percentage decimal nullable, min_percentage decimal nullable, notes text nullable.
+**Provenance columns** (added 2026-04-05 for Path A appellation-rules seeding): `source_url` text, `source_organization` text, `source_document_title` text, `source_accessed_date` date, `source_text_excerpt` text, `last_verified_at` timestamptz. All nullable. NULL on any of these = "unverified legacy row from pre-2026-04-05 seed (9,278 rows), needs audit against approved legal sources." Every row written from 2026-04-05 forward must have `source_url` + `source_organization` + `source_text_excerpt` populated. Strict NOT NULL enforcement deferred until legacy audit completes. Approved sources: EU eAmbrosia, INAO, MASAF, TTB 27 CFR Part 9, Wine Australia GI Register, IPONZ, SAWIS, INV, SAG.
 
 ### varietal_category_grapes
 Blend composition for varietal categories. E.g., Bordeaux Blend = Cabernet Sauvignon + Merlot + ...
@@ -1053,15 +1054,23 @@ PK: composite (wine_id, label_designation_id).
 ## 26. Appellation Rules
 
 ### appellation_rules
-Flexible JSONB storage for appellation-level winemaking/production rules. Covers ABV minimums, yield limits, oak aging, bottle aging, allowed methods — varies wildly across regulatory frameworks.
+Flexible JSONB storage for appellation-level winemaking/production rules. Covers ABV minimums, yield limits, oak aging, bottle aging, allowed methods, required color, aging tiers — varies wildly across regulatory frameworks. UNIQUE(appellation_id) enforces one row per appellation; the `rules` jsonb carries the full rule set.
 | Column | Type | Constraints | Notes |
 |---|---|---|---|
 | id | uuid | PK | |
 | appellation_id | uuid | FK appellations, NOT NULL, UNIQUE | One row per appellation |
-| rules | jsonb | NOT NULL, default '{}' | e.g., min_abv_pct, max_yield_hl_ha, min_oak_months, min_bottle_months |
-| source | text | nullable | Regulatory document reference |
+| rules | jsonb | NOT NULL, default '{}' | e.g., min_abv_pct, max_yield_hl_ha, aging_tiers[], required_color, oak/bottle aging, min_grape_pct per variety |
+| source | text | nullable | Legacy column. Prefer structured provenance fields below. |
 | notes | text | nullable | |
+| source_url | text | nullable, required for new rows (2026-04-05+) | Exact URL of the legal source document |
+| source_organization | text | nullable, required for new rows | "EU eAmbrosia", "INAO", "MASAF", "TTB 27 CFR Part 9", "Wine Australia GI Register", "IPONZ", "SAWIS", "INV", "SAG" |
+| source_document_title | text | nullable | e.g., "PDO Barolo — Product Specification" |
+| source_accessed_date | date | nullable | Date the source was read; laws change |
+| source_text_excerpt | text | nullable, required for new rows | ~100-300 char literal/paraphrased sentence from legal doc — a reviewer must be able to verify the claim from this alone |
+| last_verified_at | timestamptz | nullable | Set on insert, updated on re-verification |
 | created_at / updated_at | timestamptz | standard | |
+
+**Provenance rule (2026-04-05+):** Every row written from this date forward must populate `source_url`, `source_organization`, and `source_text_excerpt`, traceable to the approved sources list in `data/session_prompts/seed_appellation_rules.md`. Enforced at script level during Path A session; DB-level NOT NULL deferred until legacy audit completes.
 
 ---
 
