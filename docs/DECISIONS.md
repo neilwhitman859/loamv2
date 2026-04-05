@@ -804,3 +804,62 @@ Third follow-up pass. Continued strict "direct source or definitional cascade on
 - **first_vintage_year from MIN(wine_vintages.vintage_year):** Semantically, `first_vintage_year` is "the year the producer first made this wine" (e.g., Chateau Margaux 1787). MIN over our local wine_vintages is "earliest vintage we have data for" (e.g., 2020 for a wine whose vintage history we only have from 2020 forward). These aren't the same. The feedback memory lists MIN→first_vintage_year as definitional but that's an edge case — for most wines we have incomplete vintage history, so the MIN would be wrong. Skip.
 
 - **Fanciful_name/brand_name from TTB:** Canonical wines have `name` (the wine name) but no separate brand/fanciful field. Could flesh out but would require schema decisions on how to disambiguate brand vs wine name vs fanciful name.
+
+### 2026-04-04: UPC barcodes link to wine, not wine_vintage
+
+Decision: Store TTB-scanned UPCs in `external_ids(entity_type='wine', id_type='upc', ...)` at the canonical wine level, not the vintage level. Multiple UPCs per wine allowed (sizes, importers, package changes). This matches CellarTracker's data model.
+
+**Rationale:**
+- **GS1 standard:** Wineries can reuse one GTIN across all vintages unless they plan to track/price them separately. Most volume producers do exactly this.
+- **1990s vintage-encoded UPC practice is abandoned.** Modern wineries arbitrarily assign the next available product number per new release.
+- **CellarTracker (industry reference) links UPCs to wine, not vintage** — supports multiple UPCs per wine, acknowledges "vintage variations are often glossed over" because producers reuse barcodes.
+- **Vintage doesn't always exist:** NV Champagnes, ports, blends have no vintage at all — UPC→wine still works perfectly.
+- **Matches existing pattern:** LWIN is already stored at the wine level in external_ids. Symmetry is good.
+
+**Edge case handling:**
+- Same UPC across scanned COLAs for the same wine → dedupe via unique constraint on `(entity_type, entity_id, id_type, id_value)`
+- Premium wines with per-vintage UPCs (Bordeaux grand cru) → all UPCs attach to the same wine record, losing some per-vintage precision but matching industry standard
+- Same UPC across different wines (rare mistakes) → store both, flag as ambiguous
+- Multiple UPCs per wine (importers, sizes) → allow, one external_ids row per UPC
+
+**Promoter scope:** Build `pipeline/promote/ttb_upc_promote.py` that reads the barcode scan JSON, joins to `source_ttb_colas.canonical_wine_id`, and writes to `external_ids`. For COLAs not yet linked to canonical, track UPCs in a side table for later promotion when the merge engine catches up. Scanner stays single-purpose (scan images → JSON); promoter handles DB logic.
+
+**Sources consulted:**
+- [GS1 Netherlands GTIN rules](https://www.gs1.nl/en/knowledge-base/barcodes/when-is-a-new-gtin-required/)
+- [Barcodes for Wine - GS1 US guidance](https://www.barcode-us.com/industry-guidance/barcodes-for-wine)
+- [CellarTracker UPC data model](https://support.cellartracker.com/article/10-about-upc-and-ean-barcodes)
+
+### 2026-04-05: Label images served as WebP from Supabase Storage (not TTB URLs)
+
+**Decision:** Before un-pausing the frontend, migrate label images from TTB-hosted URLs to Supabase Storage, converted to WebP. Keep TTB URLs in `label_image_url` as source-of-truth backup. Add new columns for the served variants.
+
+**Why migrate off TTB URLs:**
+- TTB could change URL structure, rate-limit, or go offline — we'd lose 167K image references with no recourse
+- TTB's CDN performance is unknown and untunable for a mobile-first PWA
+- No ability to resize/optimize for mobile viewports
+
+**Why WebP over JPEG:**
+- 30% bandwidth reduction on every page load — the real win is egress cost ($0.09/GB on Supabase), not storage ($0.021/GB/month)
+- LCP improvement on mobile matters for a mobile-first PWA where the label is the primary visual
+- Universal browser support since ~2020
+
+**Why not AVIF:** 20% smaller than WebP but encode speed is too slow for 167K images, and iOS 16+ requirement adds support risk. Revisit in 2028.
+
+**Schema plan:**
+```sql
+ALTER TABLE wine_vintages
+  ADD COLUMN label_image_thumbnail_url TEXT,  -- 300px wide WebP, for cards/lists
+  ADD COLUMN label_image_full_url TEXT;       -- 1200px wide WebP, for detail pages
+-- Keep label_image_url (TTB URL) as source-of-truth backup
+```
+
+**Processing plan:**
+1. Filter to ~167K images that are actually linked to canonical wines (the 490K D:\ scrape includes all labels — only the linked subset needs Supabase)
+2. Generate 2 WebP variants per image: 300px thumbnail + 1200px full, quality 80
+3. Upload to Supabase Storage bucket `wine-labels/`
+4. Update `label_image_thumbnail_url` and `label_image_full_url`
+5. Execute as a dedicated pipeline script (`pipeline/media/label_webp_migrate.py`)
+
+**Alternative considered:** Supabase's built-in image transformation API (upload JPEG, serve WebP via URL params like `?format=webp&width=600`). Requires Pro plan ($25/mo). Simpler — one upload, multiple formats on demand. Switch to this if/when we upgrade.
+
+**Timing:** Don't execute until frontend restart. Data merge phase has higher-leverage work right now.
