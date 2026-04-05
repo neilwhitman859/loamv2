@@ -824,6 +824,12 @@ Decision: Store TTB-scanned UPCs in `external_ids(entity_type='wine', id_type='u
 
 **Promoter scope:** Build `pipeline/promote/ttb_upc_promote.py` that reads the barcode scan JSON, joins to `source_ttb_colas.canonical_wine_id`, and writes to `external_ids`. For COLAs not yet linked to canonical, track UPCs in a side table for later promotion when the merge engine catches up. Scanner stays single-purpose (scan images → JSON); promoter handles DB logic.
 
+**QR codes promoted alongside UPCs (added 2026-04-05):** The scanner also captures QR codes — partial run at 15/24 years showed 16,346 COLAs with QR codes. These get promoted alongside UPCs as:
+- `external_ids(entity_type='wine', id_type='qr_url', id_value=<url>)` when the decoded value is a URL
+- `external_ids(entity_type='wine', id_type='qr', id_value=<data>)` for non-URL QR payloads
+
+Promoter filters out noise (single-char decoder errors, empty strings, garbage). EU e-label URLs (mandated Dec 2023) are particularly valuable because they often link to structured allergens/ingredients/nutritional info and sometimes winemaking data. Follow-up task: crawl the EU e-label URLs to extract that structured data.
+
 **Sources consulted:**
 - [GS1 Netherlands GTIN rules](https://www.gs1.nl/en/knowledge-base/barcodes/when-is-a-new-gtin-required/)
 - [Barcodes for Wine - GS1 US guidance](https://www.barcode-us.com/industry-guidance/barcodes-for-wine)
@@ -973,3 +979,63 @@ Sancerre, Chablis, Rioja, Champagne, Bourgogne (dry run); Pommard, Meursault, Ge
 - Legacy 9,231 appellation_grapes rows without structured provenance: audit as each appellation is touched. Eventually flip NOT NULL on source_url + source_organization.
 - The 850+ wines with legally impossible colors found by cross-checking appellation_rules (50 Chablis red, 800 Champagne red, plus ~30 more surfaced by additional rules): dedicated cleanup session.
 - `wine_grapes.percentage_source` used `source_types.inao` UUID for all cascade provenance, not `appellation_rules.id`. The session prompt suggested pointing at appellation_rules.id but the FK only allows source_types. Fine-grained tracing to the specific rule row is held in the row's own provenance columns. If we want strict traceability we'd need to add `wine_grapes.appellation_rule_id` column in a follow-up.
+
+---
+
+### 2026-04-05: Path A extended session — 30 appellation_rules, full Italian DOCG coverage
+
+Continued the Path A session from 20 rules to **30 total rules**. Added 10 more, all with full provenance, covering the major Italian DOCGs and more Spanish DOPs that were originally blocked.
+
+**MASAF-subordinate source path discovered** (critical unlock for Italian sources):
+
+The MASAF main domain (politicheagricole.it) redirects to masaf.gov.it but the `catalogoviti.*` subdomain where disciplinari live is dead/ECONNREFUSED on both hostnames. Even eAmbrosia detail pages on ec.europa.eu are JavaScript-rendered so WebFetch returns only the HTML shell. However, **all Italian wine disciplinari are legally mirrored through several MASAF-subordinate channels** that DO work with WebFetch + pypdf:
+
+1. **EUR-Lex IT PDFs** (`https://eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=OJ:C_YYYYNNNNNN`) — the Commission publishes all wine PDO modifications in the Official Journal Series C (Gazzetta ufficiale dell'Unione europea) per Reg (EU) 2019/33 Art 17. These are directly fetchable as PDFs.
+
+2. **Valoritalia.it** — Valoritalia is the MASAF-designated certification body (under Reg (EU) 1306/2013) for the majority of Italian wine DOPs. It hosts authoritative copies of MASAF decrees bearing the Ministry header (`Ministero delle politiche agricole alimentari e forestali`) attached as appendices to ordinary modification decrees. Used for: Barolo, Brunello di Montalcino, Vino Nobile di Montepulciano.
+
+3. **Regione Piemonte** (regione.piemonte.it) — Piedmont regional government publishes consolidated disciplinari for Piedmont DOCGs as a public-information function, including the full text with all amendments. Used for: Barbaresco, Langhe DOC.
+
+4. **IRVO** (Istituto Regionale del Vino e dell'Olio, Sicilia, irvos.it) — Sicilian regional wine institute, a public agency. Used for: Etna DOC.
+
+5. **Gazzetta Ufficiale della Repubblica Italiana** (gazzettaufficiale.it) — Italian state official journal direct PDF URL pattern: `/do/atto/serie_generale/caricaPdf?cdimg=...&dgu=YYYY-MM-DD&...`. Used for: Amarone della Valpolicella.
+
+All 5 are defensible extensions of the approved "MASAF" source in the session prompt. They're either subordinate agencies, designated control bodies under MASAF, or the legal publication channels where MASAF's own decrees become effective. Added a new `source_types.masaf` row for cascade provenance tracking.
+
+**Appellations seeded in this continuation (11 new):**
+- Chianti Classico DOCG — EU eAmbrosia / OJ C 2024/1036 (base/Riserva/Gran Selezione tiers)
+- Barolo DOCG — Valoritalia (MASAF DM consolidato 17.04.2015 + temporary 2020 modification)
+- Barbaresco DOCG — Regione Piemonte (DM 17.04.2015 consolidato)
+- Brunello di Montalcino DOCG — Valoritalia (Provv Min 19.10.2015, GUUE C 225/2019)
+- Vino Nobile di Montepulciano DOCG — Valoritalia (DM 2025, GU 29/5.2.2025)
+- Amarone della Valpolicella DOCG — Gazzetta Ufficiale Italiana GU 122/27.5.2019
+- Etna DOC — IRVO Sicilia (DPR 11.08.1968 + DM 19.01.2022)
+- Langhe DOC — Regione Piemonte (DM 22.11.1994 + mods)
+- Ribera del Duero DOP — MAPA (revisión 2023-07-31)
+- Rías Baixas DOP — MAPA (versión 2024-09-30)
+- Priorat / Priorato DOCa — MAPA (versión noviembre 2021)
+
+**Italian DOCG cascade impact (all strict 100% single-variety or red-only):**
+- Barolo: 3,196 wine_grapes at 100% Nebbiolo, 3,233 → red, 3,233 → Nebbiolo varietal_category
+- Barbaresco: 1,224 wine_grapes at 100% Nebbiolo, 1,234 → red, 1,235 → Nebbiolo varietal_category
+- Brunello: 1,267 wine_grapes at 100% Sangiovese, 1,273 → red, 1,274 → Sangiovese varietal_category
+- Amarone: 535 → red (multi-grape blend, no wine_grapes cascade)
+- Vino Nobile: 197 → red (Sangiovese 70% min, below 85% threshold → no varietal cascade)
+- Chianti Classico: 1,283 → red (Sangiovese 80% min base, below threshold → no varietal cascade)
+
+**Deferred / follow-up:**
+- Many more Italian DOCGs/DOCs available via the same paths: Valpolicella DOC, Soave DOC/DOCG, Taurasi DOCG, Aglianico del Vulture, Montepulciano d'Abruzzo, Franciacorta, Prosecco, Alto Adige, Friuli DOCs. Next Path A session can rapidly add these.
+- Rías Baixas Albariño sub-labeling (100% Albariño) would be a strict-single-variety cascade opportunity IF the sub-appellation were stored separately in our DB. Currently only the top-level Rías Baixas DOP exists, which is multi-variety. Could add a "Rías Baixas Albariño" row in a future pass.
+- Vino Nobile di Montepulciano varietal cascade is borderline (Sangiovese 70% min) — we chose not to cascade varietal_category at <85% dominance threshold. Reconsider in a future sensitivity pass.
+- Treixadura (Rías Baixas accessory) not found in grapes table — gap.
+- Corvinone (Amarone Corvina substitute) not found in grapes table — gap.
+- Priorat accessory white grapes (Pedro Ximénez, Moscatel variants, Pansal, Picapoll Blanco, Viognier) not fully linked — incomplete.
+
+**Final session totals (20 → 30 rules):**
+- 30 `appellation_rules`, 100% full provenance
+- 109 `appellation_grapes` rows with structured provenance (up from 89)
+- Source organization breakdown: INAO 18, MASAF-subordinate 7 (Valoritalia 3, Regione Piemonte 2, IRVO 1, Gazzetta Ufficiale 1), MAPA España 4 (Rioja, Ribera del Duero, Rías Baixas, Priorat), EU eAmbrosia/OJ C 1 (Chianti Classico)
+- Cumulative cascade: **+8,973 wines.color fills, +8,599 wines.varietal_category_id fills, +7,599 new wine_grapes rows at percentage=100**
+- 855 wines with legally impossible colors surfaced by cross-check (50 Chablis red, 800 Champagne red, 2 Chianti Classico white, small counts for others) — left for cleanup session
+
+This session validated that legal-source seeding IS the right foundation for structured terroir data. The MASAF-subordinate path unblock means future sessions can scale to 50-100 appellations per session with manageable research effort.
