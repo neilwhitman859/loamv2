@@ -601,6 +601,30 @@ Barcodes (UPC-A / EAN-13 / GTIN) are the most definitive wine dedup key — same
 | German Weingesetz, Italian disciplinari, etc. | National wine laws | label_designation_rules, classification_levels (32) |
 | WSET L3/L4 + UC Davis Wine Aroma Wheel | Tasting framework | attribute_definitions (73), tasting_descriptors (304) |
 
+### 6a. Legal-Source Wine Law Texts (Path A — appellation_rules seeding)
+
+Used to seed `appellation_rules` and `appellation_grapes` with full provenance per row. Every row carries source_url + source_organization + source_text_excerpt. 30 rules seeded 2026-04-05 (see `data/session_prompts/seed_appellation_rules.md`, `docs/DECISIONS.md` "Path A session complete" and "Path A extended session" entries, and raw legal-text extracts under `data/legal_sources/`).
+
+| Source | URL pattern | Wine laws covered | Fetch method | Status |
+|---|---|---|---|---|
+| **INAO extranet** (France) | `extranet.inao.gouv.fr/fichier/*.pdf` | All French AOC/AOP cahiers des charges | WebFetch → pypdf | ✅ 18 AOCs seeded |
+| **INAO BO-Agri bulletin** (France) | `info.agriculture.gouv.fr/gedei/...` | Homologated cahiers des charges (Journal Officiel) | WebFetch → pypdf | ✅ Sancerre source |
+| **MAPA España** | `mapa.gob.es/dam/mapa/.../pliegos-de-condiciones/...pdf` | All Spanish DOP/DOCa pliegos de condiciones | WebFetch → pypdf | ✅ Rioja, Ribera del Duero, Rías Baixas, Priorat seeded |
+| **EU eAmbrosia (detail pages)** | `ec.europa.eu/info/food-farming-fisheries/.../details/EUGI...` | EU register of GIs | ❌ JavaScript-rendered — WebFetch gets only shell | Deferred |
+| **EUR-Lex IT PDFs** (EU Official Journal C-series) | `eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=OJ:C_YYYYNNNNNN` | All wine PDO modifications per Reg (EU) 2019/33 Art 17 | WebFetch → pypdf | ✅ Chianti Classico seeded; 1000s more available |
+| **MASAF direct** (Italy) | `politicheagricole.it/catalogoviti/*` and `masaf.gov.it/catalogoviti/*` | Italian disciplinari di produzione | ❌ ECONNREFUSED on both — subdomain dead | Blocked; use sub-paths below |
+| **Valoritalia** (MASAF-designated control body, Italy) | `valoritalia.it/wp-content/uploads/*/[wine-name].pdf` | Italian disciplinari attached to MASAF decrees (Ministry header present in PDFs) | WebFetch → pypdf | ✅ Barolo, Brunello, Vino Nobile seeded |
+| **Regione Piemonte** (Italian regional gov) | `regione.piemonte.it/web/sites/default/files/media/documenti/*.pdf` | Piedmont DOCGs + DOCs consolidated | WebFetch → pypdf | ✅ Barbaresco, Langhe DOC seeded |
+| **IRVO Sicilia** (Istituto Regionale del Vino e dell'Olio) | `irvos.it/wp-content/uploads/*.pdf` | Sicilian wine DOCs consolidated | WebFetch → pypdf | ✅ Etna DOC seeded |
+| **Gazzetta Ufficiale della Repubblica Italiana** | `gazzettaufficiale.it/do/atto/serie_generale/caricaPdf?cdimg=...` or `eli/gu/YYYY/MM/DD/ID/sg/pdf` | Italian state official journal — ministerial decrees | WebFetch → pypdf | ✅ Amarone della Valpolicella seeded |
+| **ISMEA** (Italian public agency, in-house body of MASAF) | `ismeamercati.it/flex/AppData/Redational/pdf/*.pdf` | Italian disciplinari mirrors | ❌ TLS cert validation error | Blocked; use alternate |
+| **Wine Australia GI Register** | `wineaustralia.com/labelling/register-of-protected-gis-and-other-terms` | AU GI register | Not yet attempted | Pending |
+| **IPONZ** (New Zealand) | `iponz.govt.nz/about-ip/geographical-indications/` | NZ GI register | Not yet attempted | Pending |
+| **SAWIS** (South Africa) | `sawis.co.za` | Wine of Origin scheme | Not yet attempted | Pending |
+| **TTB 27 CFR Part 9** (USA) | `ecfr.gov/current/title-27/chapter-I/subchapter-A/part-9` | AVA boundary definitions (no varietal/color mandate) | Not yet attempted | Pending |
+
+Tables populated: `appellation_rules` (30 rows), `appellation_grapes` (9,314 total rows, 109 with structured provenance from this session). Every row has source_url + source_organization + source_text_excerpt populated per Path A rules.
+
 ---
 
 ## 7. Enrichment & Context Sources (Post-Launch)
