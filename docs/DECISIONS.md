@@ -910,3 +910,66 @@ Cross-checking the new `appellation_rules` against `wines.color` surfaced **850 
 **How to apply:** Per the session "no overwrite" rule, leaving these alone this session. This is not a cascade problem — it's a pre-existing canonical data error that legal-rule validation surfaces. Logged here for a dedicated cleanup session: for any appellation with a `required_color` in `appellation_rules.rules`, validate that all wines under that appellation have a compatible color (or NULL), and flip impossible values to NULL (not to the legal color, since we still don't know which of several legal options each wine is). Expected blast radius: ~850 wines in Chablis+Champagne alone; running the full validation against all future seeded rules will likely surface more.
 
 **Value of this find:** proves the appellation_rules work is not just data-entry — it's a cross-validation signal. Every seeded rule is a new constraint that can catch existing errors.
+
+---
+
+### 2026-04-05: Path A session complete — 19 appellation_rules seeded + cascades executed
+
+**What shipped:**
+- 19 `appellation_rules` rows (0 → 19), 100% provenance coverage
+- 83 `appellation_grapes` rows with full provenance (out of 9,314 total — legacy 9,231 still unverified)
+- Provenance columns migrated onto both link tables (source_url, source_organization, source_document_title, source_accessed_date, source_text_excerpt, last_verified_at), nullable for now until legacy audit completes
+- Raw legal text PDFs extracted to `data/legal_sources/` via `pypdf` (20 files, ~38K lines total) for reproducibility
+- Cascade 1: +2,466 wines.color fills (9 single-color appellations)
+- Cascade 2: +3,610 wines.varietal_category_id fills (strict + effective single-variety)
+- Cascade 3: +2,869 new wine_grapes rows at percentage=100 (true 100% appellations only)
+
+**Source organizations used:**
+- INAO (Institut National de l'Origine et de la Qualité): 18 rules covering French AOCs. URLs via extranet.inao.gouv.fr or info.agriculture.gouv.fr (BO-Agri bulletin).
+- Ministerio de Agricultura Pesca y Alimentación (España): 1 rule (Rioja DOCa). URL via mapa.gob.es direct PDF.
+- eAmbrosia / EU: NOT used — detail pages are JavaScript-rendered so WebFetch could not retrieve them.
+- MASAF (Italian): NOT used — politicheagricole.it catalogoviti returned ECONNREFUSED every attempt, likely geoblocked.
+
+**Appellations seeded (19):**
+Sancerre, Chablis, Rioja, Champagne, Bourgogne (dry run); Pommard, Meursault, Gevrey-Chambertin, Puligny-Montrachet, Chassagne-Montrachet, Volnay, Muscadet, Vouvray, Pouilly-Fumé, Pouilly-sur-Loire (batch 2); Nuits-Saint-Georges, Pouilly-Fuissé, Châteauneuf-du-Pape, Gigondas (batch 3).
+
+**Cascade detail by appellation (NULL fills only, no overwrites):**
+| Appellation | Color fills | Varietal cat fills | wine_grapes rows |
+|---|---:|---:|---:|
+| Chablis (100% Chardonnay, white only) | 560 | 2,018 | 1,796 |
+| Pouilly-Fuissé (100% Chardonnay, white) | 285 | 374 | 277 |
+| Pouilly-Fumé (100% Sauv Blanc, white) | 117 | 106 | 106 |
+| Pouilly-sur-Loire (100% Chasselas, white) | 6 | 0 (no cat) | 1 |
+| Sancerre (color-dependent) | 0 (multi-color) | 697 | 689 |
+| Muscadet (90% Melon min) | 28 | 45 | 0 (not strict 100%) |
+| Vouvray (95% Chenin min) | 249 | 436 | 0 (not strict 100%) |
+| Pommard (red only, 85% Pinot Noir min) | 366 | 0 | 0 |
+| Gevrey-Chambertin (red only) | 583 | 0 | 0 |
+| Volnay (red only) | 272 | 0 | 0 |
+
+**Judgment calls made:**
+
+1. **Audit-and-backfill over wipe-and-restart for legacy appellation_grapes.** Prior seed pass had left 9,278 rows with parenthetical-only source notes like "(INAO)" or "(Disciplinare)". Rather than delete and reseed from scratch, provenance columns were added as nullable and legacy rows were left alone. Rows touched in this session (83) got full structured provenance via UPSERT. Rows not touched (9,231) keep `source_organization IS NULL` as a "needs audit" flag. Strict NOT NULL enforcement deferred until legacy audit completes in a future session.
+
+2. **Substituted Champagne + Bourgogne for Barolo + Brunello in dry run** because MASAF catalogoviti.politicheagricole.it returned ECONNREFUSED on every fetch attempt, and eAmbrosia EU register detail pages are JavaScript-rendered (WebFetch only got the HTML shell). Champagne and Bourgogne are higher wine-count anyway (8,891 and 4,377) so no loss of dry run value.
+
+3. **Effective-single-variety (min 85-95%) counts for varietal_category cascade but NOT for wine_grapes cascade.** Burgundy villages (Pommard, Gevrey, etc.) allow Pinot Noir principal + up to 15% accessory (Chardonnay/Pinot Blanc/Pinot Gris, field blend). A Pommard wine is legally 85-100% Pinot Noir. For `wines.varietal_category_id` = Pinot Noir this is honest (the category is "Pinot Noir" even if 5% Chardonnay). For `wine_grapes(grape=Pinot Noir, percentage=100)` it would be a lie — the wine could be 85%. Cascade rule: varietal_category flows where grape dominance is ≥85%, wine_grapes rows created only at true strict 100%. Muscadet (min 90% Melon) and Vouvray (min 95% Chenin) also get varietal_category but not wine_grapes at 100%.
+
+4. **Skipped some grape links in appellation_grapes seeding due to grape table data quality:**
+   - Malvasía (Rioja): `grapes` table has duplicate MALVASIA rows — unresolved earlier data quality issue, unrelated to this session.
+   - Turruntés (Rioja): grape_synonyms maps it to both ALBILLO REAL and ALBILLO MAYOR — ambiguous identity.
+   - Picardan (Châteauneuf-du-Pape): multiple grapes have "PICARDAN" as synonym (Araignan, Bouchales, Bourboulenc, Cinsaut). Ambiguous.
+   - In all 3 cases the grape IS listed in `appellation_rules.rules` jsonb under the varieties array, so the legal fact isn't lost. Link-table row will be added once grape-table dupes are resolved.
+
+5. **Pouilly-sur-Loire varietal_category_id not cascaded** because no "Chasselas" entry exists in `varietal_categories` table. 6 wines affected. Add category in a future reference-data pass.
+
+6. **Sancerre cascade is color-dependent, not blind.** The law says "white wines = 100% Sauv Blanc; red/rosé wines = 100% Pinot Noir". A Sancerre wine with NULL color cannot be grape-cascaded (could be either grape). 662 Sancerre wines remain NULL-color — they get no cascade. Only the 849 wines with existing color values got the grape cascade (547 white → Sauv Blanc, 202 red → Pinot Noir, 100 rosé → Pinot Noir).
+
+7. **Champagne color NOT cascaded** even though it's a single-wine-type appellation (sparkling only). The law allows white OR rosé — that's a disjunction, not a definitional equality. A Champagne wine with NULL color could be either. Only strictly single-color appellations get color cascade.
+
+**Deferred / follow-up items:**
+- Barolo, Brunello di Montalcino, Chianti Classico, Barbaresco and other Italian DOCGs: need MASAF access via VPN or alternative source (consorzio sites aren't on approved list, eAmbrosia is JS-rendered, EUR-Lex search for "Barolo DOP" returned misleading hits — one CELEX was actually for Nocciola del Piemonte hazelnut PGI). Targeted follow-up session.
+- Top 80+ remaining appellations from the 100-appellation priority list: straightforward, just time.
+- Legacy 9,231 appellation_grapes rows without structured provenance: audit as each appellation is touched. Eventually flip NOT NULL on source_url + source_organization.
+- The 850+ wines with legally impossible colors found by cross-checking appellation_rules (50 Chablis red, 800 Champagne red, plus ~30 more surfaced by additional rules): dedicated cleanup session.
+- `wine_grapes.percentage_source` used `source_types.inao` UUID for all cascade provenance, not `appellation_rules.id`. The session prompt suggested pointing at appellation_rules.id but the FK only allows source_types. Fine-grained tracing to the specific rule row is held in the row's own provenance columns. If we want strict traceability we'd need to add `wine_grapes.appellation_rule_id` column in a follow-up.

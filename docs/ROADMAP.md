@@ -157,6 +157,12 @@ New approach: promote TTB data in confidence tiers rather than the original 3-la
 - **Current readiness: ~8/100.** Target: 50+ before frontend resumes.
 - **2026-04-05 update:** 17 rounds of recovery + definitional fills completed (see CLAUDE.md round log). Direct-source fills from existing staging data are largely exhausted — remaining canonical gaps require either external data integration (Open-Meteo weather, more importers, CellarTracker) or AI enrichment. Readiness metric should be re-run after the enrichment pipeline generates Grade C/B content.
 
+### 2h. Path A: Seed appellation_rules from legal sources (IN PROGRESS, 2026-04-05)
+Wine law facts seeded from regulatory registers (INAO, MAPA, eAmbrosia, TTB 27 CFR, Wine Australia, etc.) directly into `appellation_rules` and `appellation_grapes`, with full legal-source provenance per row. Cascades run only where strictly definitional (no probabilistic inference).
+- ✅ **First session (2026-04-05): 19 appellations seeded.** All French INAO (18) + 1 Spanish MAPA (Rioja). Provenance columns added to link tables. +2,466 color fills, +3,610 varietal_category fills, +2,869 wine_grapes rows. See `data/session_prompts/seed_appellation_rules.md` and `docs/DECISIONS.md` "Path A session complete".
+- 🔜 **Next sessions:** 80+ more appellations from top-100 priority list. Italian DOCGs (Barolo, Brunello, Chianti Classico, Barbaresco) need alternative fetch path — MASAF ECONNREFUSED, eAmbrosia JS-rendered. Legacy audit of 9,231 pre-existing appellation_grapes rows without structured provenance.
+- 🔜 **Then:** Flip `source_url` + `source_organization` to NOT NULL once legacy audit is clean.
+
 ### SQL Consistency Fixes (2026-04-02)
 - ✓ 75,774 wines refined from L1 to L2 regions (Burgundy→Côte de Beaune, California→Napa Valley, etc.)
 - 3,224 remaining complex cross-boundary mismatches (agent work)
