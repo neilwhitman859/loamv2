@@ -1039,3 +1039,60 @@ All 5 are defensible extensions of the approved "MASAF" source in the session pr
 - 855 wines with legally impossible colors surfaced by cross-check (50 Chablis red, 800 Champagne red, 2 Chianti Classico white, small counts for others) — left for cleanup session
 
 This session validated that legal-source seeding IS the right foundation for structured terroir data. The MASAF-subordinate path unblock means future sessions can scale to 50-100 appellations per session with manageable research effort.
+
+### 2026-04-05: Path A extension — batches 2 + 3 add 29 more appellations (59 total)
+
+Continued the Path A session (legal-source appellation_rules seeding) with three additional batches. Started from 30 rules, finished at 59.
+
+**Batch 1 fixes (corrections to initial session):**
+- File count: initial entry said "31 files" but actually 37 files were extracted (29 used, 8 unpromoted: 7 unused eurlex_*.txt + 1 partial sauternes_cdc.txt with only Chapter IX). Not a fabrication — just an arithmetic drift. Corrected in CLAUDE.md.
+- Illegal color count: initial entry said "~855 wines with impossible colors" but the true count is ~872 when Italian DOCG edge cases (5 Barolo white + 9 Barolo rose + 1 Chianti Classico rose + 1 Barbaresco rose + 1 Brunello white) are included. Expanded across batches 2-3 to ~895.
+
+**Batch 2 — Jumilla + 11 French AOCs (2026-04-05):**
+- Jumilla DOP from EUR-Lex C/2025/1605 (Ministerio de Agricultura Pesca y Alimentación de España, via EU eAmbrosia channel)
+- 11 French AOCs from INAO extranet (extranet.inao.gouv.fr/fichier/*): Pauillac, Margaux, Saint-Julien, Graves, Pessac-Léognan, Crozes-Hermitage, Cornas, Condrieu, Morgon, Bandol, Minervois
+- +12 appellation_rules, +97 grape rows with provenance
+- Cascades: Cornas → red + 100% Syrah (300 wines at percentage=100), Condrieu → white + 100% Viognier (316 wines at percentage=100), Pauillac/Margaux/Saint-Julien/Morgon → red-only color fills
+
+**Batch 3a — 11 more French AOCs (2026-04-05):**
+- Bordeaux: Pomerol, Saint-Émilion, Saint-Émilion Grand Cru, Sauternes, Barsac, Saint-Estèphe
+- Rhône: Saint-Joseph, Côte-Rôtie
+- Beaujolais: Moulin-à-Vent, Fleurie
+- Southern Rhône: Vacqueyras
+- +11 appellation_rules, +61 grape rows with provenance
+- Red-only cascades on 7 AOCs, white-only on 2 (Sauternes, Barsac)
+
+**Batch 3b — 6 Spanish DOPs (2026-04-05):**
+- Rueda DOP (white-dominant, Verdejo flagship)
+- Penedès DOP (classic 3 whites + Cava base varieties)
+- Navarra DOP (Garnacha rosado tradition)
+- Toro DOP (Tinta de Toro = Tempranillo variant)
+- Bierzo DOP (Mencía + Godello)
+- Somontano DOP (3 autochthonous Aragonese varieties: Moristel, Parraleta, Alcañón)
+- +6 appellation_rules, +82 grape rows with provenance
+- NO cascades (all 6 are multi-color and multi-variety — no strict definitional fills available)
+
+**Notable data quality finding — Pomerol Carmenère superseded:**
+The pre-existing appellation_grapes row for Pomerol / Carmenère is INCORRECT per the current Pomerol CDC (PNO 2 juin 2021). The CDC authorizes only 5 varieties for Pomerol: Cabernet Franc, Cabernet Sauvignon, Cot (Malbec/Pressac), Merlot, Petit Verdot. Carmenère is NOT on the list. Left the erroneous row in place per no-delete rule, but updated the other 5 with proper provenance. This is a known-bad row that should be reviewed in a cleanup session — deletion is justified per legal source, but I'm deferring to human judgment.
+
+**Source URL discoveries (for future sessions):**
+- INAO file naming is wildly inconsistent. Patterns found: `PNOCDCPauillac.pdf`, `PNOCDCSaint-Julien.pdf`, `PNOCDCSaint-Estephe.pdf`, `PNOCDCMoulinaVent.pdf`, `PNOCDCFleurie.pdf`, `PNOCDCAOC-Hermitage.pdf`, `PNOCDCAOCCondrieu.pdf`, `PNOCDCAOCPouillyFuiss20191114.pdf`, `4-CDC-Pomerol-PNO.pdf`, `4-CDC-Sauternes-PNO.pdf`, `4-CDC-Barsac-PNO.pdf`, `CDC---Graves-et-Graves-supérieures---PNO-2023.pdf`, `CDC---Pessac-Léognan---PNO-2024.pdf`, `CDCSaint-Emilion-PNO2023.pdf`, `CDCSaint-Emilion-Grand-cru-PNO2023.pdf`, `PNO2020CDCCrozesHermitage.pdf`, `PNO2022AOPBANDOL.pdf`, `PNO2023AOPCornas.pdf`, `PNO2023SaintJoseph.pdf`, `PNO2023AOPCoteRotie.pdf`, `PNO-CDCMorgon-221130.pdf`, `PNO-AOC-MINERVOIS-2019.docx.pdf`, `pnocdcaoc-vacqueyras.pdf`. Write a fetcher with multi-pattern URL guessing per slug OR discover via Google `site:extranet.inao.gouv.fr` search.
+- MAPA hosts PDFs at TWO paths: `/dam/mapa/contenido/alimentacion/.../dops/{name}_{yyyy_mm_dd}.pdf` (newer) AND `/es/alimentacion/temas/calidad-diferenciada/{name}_{yyyy_mm_dd}_tcm30-XXXXXX.pdf` (older, with unique tcm30 numeric suffix per file). Rueda was only accessible via the older path.
+- **Cava DOP limitation:** The full Cava pliego at `/es/alimentacion/temas/calidad-diferenciada/pliegodecondicionesdopcava_tcm30-564756.pdf` (and other language variants) returns a .docx file (ZIP header `PK\x03\x04`), not PDF. The "documento único" at `/dam/mapa/contenido/.../htm/documento-unico-dop-cava.pdf` IS a valid PDF but doesn't contain the full grape list in clean extractable form. Cava deferred to next session — will need docx extraction or a different source.
+
+**Next Path A session backlog (ordered by wine count):**
+- Hermitage (313 wines) — full CDC not findable via INAO search; only found 2010 modification notice for cork requirement. May be on JORF (info.agriculture.gouv.fr) instead.
+- Italian DOC/DOCGs deferred: Chianti DOP (Reg UE 2024/2741), Prosecco, Valpolicella, Soave, Taurasi, Montepulciano d'Abruzzo, Franciacorta. EUR-Lex OJ:C_YYYYNNNNNN search needs to be done per-DOC, time-consuming.
+- Cava DOP — needs docx extraction or alternative source.
+- Rías Baixas Albariño sub-labeling (100% Albariño) cascade opportunity — only added if sub-appellation is stored separately.
+- German VDP GGs, USA AVAs, Australian GIs — different source systems entirely.
+
+**Final session totals (3 batches):**
+- 59 `appellation_rules`, 100% full provenance (up from 0 → 59 across full Path A)
+- 349 `appellation_grapes` rows with structured provenance (up from 0 → 349)
+- Source breakdown: INAO 36, MAPA España 10, EU eAmbrosia/OJ C 1, MASAF-subordinate 7 (Valoritalia 3, Regione Piemonte 2, IRVO 1, Gazzetta Ufficiale 1). Jumilla is counted under MAPA+EU (both orgs listed in source_organization).
+- Cascade totals (batches 1+2+3 combined): **~11,311 wines.color fills, ~9,055 wines.varietal_category_id fills, ~8,215 wine_grapes rows at percentage=100**
+- ~895 illegal-color flags deferred to cleanup session
+- 57 legal source files in `data/legal_sources/` (21 batch 1 + 12 batch 2 + 6 used in rule-seeding + 6 batch 3 Spanish + 8 untrailed from batch 1 [unused eurlex files + sauternes partial extract] + 4 additional: hermitage partial, cava_documento_unico, saint_emilion_grand_cru, barsac)
+
+Path A is now a rhythm — can scale to 100+ appellations over multiple sessions without needing to rediscover the patterns.

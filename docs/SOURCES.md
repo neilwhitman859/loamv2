@@ -603,15 +603,15 @@ Barcodes (UPC-A / EAN-13 / GTIN) are the most definitive wine dedup key — same
 
 ### 6a. Legal-Source Wine Law Texts (Path A — appellation_rules seeding)
 
-Used to seed `appellation_rules` and `appellation_grapes` with full provenance per row. Every row carries source_url + source_organization + source_text_excerpt. 30 rules seeded 2026-04-05 (see `data/session_prompts/seed_appellation_rules.md`, `docs/DECISIONS.md` "Path A session complete" and "Path A extended session" entries, and raw legal-text extracts under `data/legal_sources/`).
+Used to seed `appellation_rules` and `appellation_grapes` with full provenance per row. Every row carries source_url + source_organization + source_text_excerpt. **59 rules seeded** as of 2026-04-05 across 3 batches (see `data/session_prompts/seed_appellation_rules.md`, `docs/DECISIONS.md` "Path A session complete", "Path A extended session", and "Path A extension — batches 2 + 3" entries, raw legal-text extracts under `data/legal_sources/` — 57 files total, and batch fetcher scripts under `scripts/fetch_legal_sources*.py`).
 
 | Source | URL pattern | Wine laws covered | Fetch method | Status |
 |---|---|---|---|---|
-| **INAO extranet** (France) | `extranet.inao.gouv.fr/fichier/*.pdf` | All French AOC/AOP cahiers des charges | WebFetch → pypdf | ✅ 18 AOCs seeded |
+| **INAO extranet** (France) | `extranet.inao.gouv.fr/fichier/*.pdf` | All French AOC/AOP cahiers des charges | WebFetch → pypdf | ✅ 36 AOCs seeded (batches 1+2+3) |
 | **INAO BO-Agri bulletin** (France) | `info.agriculture.gouv.fr/gedei/...` | Homologated cahiers des charges (Journal Officiel) | WebFetch → pypdf | ✅ Sancerre source |
-| **MAPA España** | `mapa.gob.es/dam/mapa/.../pliegos-de-condiciones/...pdf` | All Spanish DOP/DOCa pliegos de condiciones | WebFetch → pypdf | ✅ Rioja, Ribera del Duero, Rías Baixas, Priorat seeded |
+| **MAPA España** | `mapa.gob.es/dam/mapa/.../pliegos-de-condiciones/...pdf` (newer) AND `mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/{name}_{date}_tcm30-XXXXXX.pdf` (older, with unique tcm30 suffix) | All Spanish DOP/DOCa pliegos de condiciones | WebFetch → pypdf | ✅ 10 DOPs seeded: Rioja, Ribera del Duero, Rías Baixas, Priorat, Jumilla, Rueda, Penedès, Navarra, Toro, Bierzo, Somontano. ❌ Cava returns .docx not PDF |
 | **EU eAmbrosia (detail pages)** | `ec.europa.eu/info/food-farming-fisheries/.../details/EUGI...` | EU register of GIs | ❌ JavaScript-rendered — WebFetch gets only shell | Deferred |
-| **EUR-Lex IT PDFs** (EU Official Journal C-series) | `eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=OJ:C_YYYYNNNNNN` | All wine PDO modifications per Reg (EU) 2019/33 Art 17 | WebFetch → pypdf | ✅ Chianti Classico seeded; 1000s more available |
+| **EUR-Lex IT PDFs** (EU Official Journal C-series) | `eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=OJ:C_YYYYNNNNNN` | All wine PDO modifications per Reg (EU) 2019/33 Art 17 | WebFetch → pypdf | ✅ Chianti Classico + Jumilla seeded; 1000s more available |
 | **MASAF direct** (Italy) | `politicheagricole.it/catalogoviti/*` and `masaf.gov.it/catalogoviti/*` | Italian disciplinari di produzione | ❌ ECONNREFUSED on both — subdomain dead | Blocked; use sub-paths below |
 | **Valoritalia** (MASAF-designated control body, Italy) | `valoritalia.it/wp-content/uploads/*/[wine-name].pdf` | Italian disciplinari attached to MASAF decrees (Ministry header present in PDFs) | WebFetch → pypdf | ✅ Barolo, Brunello, Vino Nobile seeded |
 | **Regione Piemonte** (Italian regional gov) | `regione.piemonte.it/web/sites/default/files/media/documenti/*.pdf` | Piedmont DOCGs + DOCs consolidated | WebFetch → pypdf | ✅ Barbaresco, Langhe DOC seeded |
@@ -623,7 +623,14 @@ Used to seed `appellation_rules` and `appellation_grapes` with full provenance p
 | **SAWIS** (South Africa) | `sawis.co.za` | Wine of Origin scheme | Not yet attempted | Pending |
 | **TTB 27 CFR Part 9** (USA) | `ecfr.gov/current/title-27/chapter-I/subchapter-A/part-9` | AVA boundary definitions (no varietal/color mandate) | Not yet attempted | Pending |
 
-Tables populated: `appellation_rules` (30 rows), `appellation_grapes` (9,314 total rows, 109 with structured provenance from this session). Every row has source_url + source_organization + source_text_excerpt populated per Path A rules.
+**Batch fetcher scripts** (pypdf-based, with %PDF- header validation to reject HTML 404 pages):
+- `scripts/fetch_legal_sources.py` — batch 1: 11 French AOCs via search-confirmed URLs
+- `scripts/fetch_legal_sources_batch2.py` — batch 2: 12 French AOCs + Spanish guess-fallback. Introduces URL-guess fallback for AOCs where Google search doesn't return a direct PDF hit (e.g., Saint-Estèphe via `PNOCDCSaint-Estephe.pdf`, Fleurie via `PNOCDCFleurie.pdf`, Saint-Émilion via `CDCSaint-Emilion-PNO2023.pdf`)
+- `scripts/fetch_legal_sources_batch3.py` — batch 3: 6 Spanish MAPA pliegos + Toro guess-fallback (`toro_2025_01_03.pdf`)
+
+**Known fetcher limitation:** INAO file naming is wildly inconsistent (pattern varies per AOC — PNOCDC{Name}.pdf, PNOCDC-{Name}.pdf, PNOCDCAOC-{Name}.pdf, PNO{YYYY}CDC{Name}.pdf, PNO{YYYY}AOP{Name}.pdf, 4-CDC-{Name}-PNO.pdf, CDC---{Name}---PNO-{YYYY}.pdf, cdc{name}.docx.pdf, etc.). No single rule. Currently workflow is: WebSearch for each AOC → take URL from results → add to script. Consider scraping INAO.gouv.fr product pages for reliable URL discovery.
+
+Tables populated: `appellation_rules` (59 rows, all with full provenance), `appellation_grapes` (9,454 total rows, 349 with structured provenance from Path A). Every Path A row has source_url + source_organization + source_text_excerpt populated.
 
 ---
 
