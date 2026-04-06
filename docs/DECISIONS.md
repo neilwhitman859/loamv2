@@ -1138,3 +1138,16 @@ Both bugs surfaced because the batch 4 seeder queries existing rows before inser
 **Decision**: The `association_type` column on `region_grapes` and `country_grapes` should only contain `'typical'`, never `'required'`. The `'required'` value is reserved for `appellation_grapes` where it means "legally mandated per government regulations." Regions and countries are not government-defined wine appellations, so no grape can be legally "required" at those levels.
 
 **Action**: 33 region_grapes + 12 country_grapes rows changed from 'required' → 'typical'. All future cascades use 'typical' only.
+
+---
+
+### 2026-04-06: Cron loop design lessons — gap analysis first, self-termination, single-focus
+
+**Context**: First overnight cron loop ran 27 cycles across 3 tracks (prices, vineyards, data quality). Track B (vineyards) was the clear winner — 0 → 815 from legal sources. Tracks A and C were already exhausted from prior sessions and produced nearly zero new data across all cycles.
+
+**Lessons logged to `data/session_prompts/cron_loop_template.md`**:
+1. **Gap analysis before loop creation.** Query what's actually available before defining tracks. The price track ran batch_matcher + retail_promote for 10 sources and got ~0 new prices. A 5-minute gap query would have skipped the entire track.
+2. **Self-termination is mandatory.** The cron kept firing after all done criteria were met. Every loop must check done criteria at the START of each cycle and cancel itself.
+3. **Single-focus beats multi-track.** Pick one high-value track with a genuinely large backlog. Don't spread across tracks that are already done.
+4. **batch_matcher is interactive, not automated.** It can crash, has source-specific quirks, and needs human judgment on errors.
+5. **Data quality sweeps: run once, verify, drop.** Don't rotate 6 sweeps that all return 0.

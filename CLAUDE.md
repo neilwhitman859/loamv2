@@ -56,6 +56,25 @@ When asking the user a clarifying question, **always give a recommendation**. If
 ### Nudge the User
 If the user is going a long stretch without wrapping up, if decisions are being made but not logged, or if a session is ending without updating files — say something. Be direct: "We've made some decisions this session that aren't logged yet. Want me to update DECISIONS.md and CLAUDE.md before we stop?"
 
+### Cron Loops — Explicit Request Only
+Never create a cron loop or automated recurring task unless the user explicitly says
+"create a loop" (or similar: "set up a cron", "run this overnight"). When the user
+does request a loop, remind them of this workflow before starting:
+
+```
+CRON LOOP PRE-FLIGHT CHECKLIST
+1. Read the journal    → data/stats/cron_loop_journal.md (what worked/failed before)
+2. Gap analysis        → Query the DB to prove the work actually exists
+3. Single focus        → Pick ONE track with a large backlog (not multiple)
+4. Size it             → If < 5 units, just do it interactively — no loop needed
+5. Build the manifest  → Explicit numbered list: Cycle 1 = X, Cycle 2 = Y, ...
+6. Self-termination    → Loop checks done criteria at the START of every cycle
+7. User approval       → Show the manifest and get a thumbs-up before creating the cron
+```
+
+See `data/session_prompts/cron_loop_template.md` for the full structural template
+and `data/stats/cron_loop_journal.md` for past loop outcomes and remaining backlog.
+
 ---
 
 ## Current State
@@ -174,6 +193,7 @@ Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for p
   - **MASAF-subordinate path (breakthrough, allows Italian DOCGs):** catalogoviti.politicheagricole.it/masaf.gov.it subdomain is ECONNREFUSED, but MASAF decrees are mirrored on (a) **EUR-Lex IT PDFs** via the `OJ:C_YYYYNNNNNN` URL pattern for Reg (EU) 2019/33 Art 17 wine PDO modifications, (b) **Valoritalia** (MASAF-designated control body), (c) **Regione Piemonte** (Piedmont regional government), (d) **IRVO** (Sicilian regional wine institute), (e) **Gazzetta Ufficiale della Repubblica Italiana** (gazzettaufficiale.it direct PDFs). All 5 are defensible extensions of the MASAF source.
   - **Notable finding (Pomerol):** The Pomerol CDC authorizes only 5 varieties (Cabernet Franc, Cabernet Sauvignon, Cot/Malbec, Merlot, Petit Verdot) — Carmenère is NOT permitted (unlike Médoc and Saint-Émilion). Pre-existing unsourced Carmenère row in appellation_grapes for Pomerol left in place per no-delete rule, but flagged as superseded per current CDC.
   - **Cascades executed across all 3 batches** (strictly definitional, NULL-fills only): **~2,338 additional wines.color** fills beyond batch 1 (batch 1: 8,973; batch 2: 769 across Pauillac/Margaux/Saint-Julien/Cornas/Morgon/Condrieu; batch 3: ~1,569 across Pomerol/Saint-Émilion/Saint-Émilion GC/Saint-Estèphe/Côte-Rôtie/Moulin-à-Vent/Fleurie/Sauternes/Barsac) **~11,311 total color fills**. **~9,055 wines.varietal_category_id** fills (batch 1 + Cornas→Syrah + Condrieu→Viognier). **~8,215 wine_grapes rows** at percentage=100 for true single-variety appellations (batch 1 + Cornas 300 + Condrieu 316). Cross-check found **~895 wines with legally impossible colors** (batch 1: 855 — 50 Chablis red, 800 Champagne red, 2 Chianti Classico white, 2 Pommard non-red, 1 Gevrey non-red; plus Italian DOCG edge cases: 9 Barolo rose, 5 Barolo white, 1 Chianti Classico rose, 1 Barbaresco rose, 1 Brunello white; batch 2-3 flags: ~7 Sauternes red, 2 Barsac red, 1 each Pomerol/Saint-Émilion/Saint-Émilion GC/Saint-Estèphe/Moulin-à-Vent white) — all left alone per no-overwrite rule, flagged in DECISIONS.md for cleanup session.
+- **Cron loop overnight (2026-04-06): Vineyard seeding from legal sources — 0 → 815 vineyards.** 3-track loop (*/10 cron, 27 cycles). Track A (price promotion): 0 new — all sources already promoted. Track B (vineyards): **+806 vineyards** — 585 Burgundy Premier Cru climats from INAO CDCs (26 villages), 170 Barolo MGAs from MASAF disciplinare, 51 Alsace Grand Crus linked to existing appellations. Track C (data quality sweeps): 0 rows — all already clean. Track B was the only productive track; Tracks A and C were wasted cycles (would have been caught by gap analysis). Infrastructure created: `data/session_prompts/cron_loop_template.md` (structural template for future loops), `data/stats/cron_loop_journal.md` (append-only journal of loop outcomes). 9 slug conflicts resolved (Les Fourneaux Chablis vs Mercurey, etc.). Barolo PDF artifacts manually corrected (OCR split words, missing commas).
 - **⚠️ Inference reverts (2026-04-04):** See `docs/DECISIONS.md` entry "No probabilistic inference on canonical columns" and `memory/feedback_no_probabilistic_inference.md`. This session applied 18 inference operations across the canonical tables; 14 were reverted after user caught errors (Blanc de Noirs mis-marked red, Saldo-type multi-region producers wrongly single-region'd, etc.). Reverts had collateral damage (no row-level provenance in the schema): ~44K legit wine_grapes links cleared along with the 81K pattern-inferred ones, ~85K pre-session colors cleared before TTB restoration, 28.6K NV price rows removed (most Wally's vintage data was in titles, never parsed).
 - **Kept (strictly definitional/direct):** wine_vintage_id composite-key backfill, region_id from appellations.region_id, country_id from region/appellation, wine_type regulatory reclassification (Champagne→sparkling, Tawny Port→fortified — legal category names), data grade F→D from raw data presence, and all direct staging promotions (not inference).
 - Alias tables seeded: 96 region, 75 label designation, 18,631 appellation
@@ -315,7 +335,7 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 - **Score coverage 2.24%** — competition sources now matched (Berliner 4.9K/73K, TEXSOM 21.7K/46.9K). Rest require fuzzy matching.
 - **Enrichment pipeline live but 2 wines enriched** — need batch pre-warming (Grade C) and frontend integration (Grade B on-demand).
 - UPC barcodes: ~13K (barcode scan running should add ~64K)
-- ~40 canonical tables still at 0 rows (vineyards, descriptors, wine_relationships, etc.)
+- ~40 canonical tables still at 0 rows (descriptors, wine_relationships, etc.) — vineyards now has 815 rows
 - Weather data, soil/water body links, producer_timeline — all empty.
 
 ---
