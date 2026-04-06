@@ -524,10 +524,17 @@ def get_appellations(conn, appellation_id: str = None, limit: int = None,
         return cur.fetchall()
 
 
-def get_fetched_ids(conn) -> set:
-    """Get appellation IDs that already have weather data."""
+def get_fetched_ids(conn, source: str = None) -> set:
+    """Get appellation IDs that already have weather data.
+
+    Args:
+        source: If set, only count appellations with this data_source (e.g. 'open-meteo').
+    """
     with conn.cursor() as cur:
-        cur.execute("SELECT DISTINCT appellation_id FROM appellation_weather_years")
+        if source:
+            cur.execute("SELECT DISTINCT appellation_id FROM appellation_weather_years WHERE data_source = %s", (source,))
+        else:
+            cur.execute("SELECT DISTINCT appellation_id FROM appellation_weather_years")
         return {str(r[0]) for r in cur.fetchall()}
 
 
@@ -558,9 +565,9 @@ def main():
                             by_wines=args.by_wines)
     print(f"Found {len(apps)} appellations with coordinates + season metadata")
 
-    # Resume: skip already-fetched
+    # Resume: skip appellations already fetched from Open-Meteo specifically
     if not args.no_resume and not args.id:
-        fetched = get_fetched_ids(conn)
+        fetched = get_fetched_ids(conn, source="open-meteo")
         before = len(apps)
         apps = [a for a in apps if str(a["id"]) not in fetched]
         skipped = before - len(apps)

@@ -259,7 +259,8 @@ Staging-first architecture: all external data goes through per-source staging ta
 - `python -m pipeline.analyze.barcode_scanner --image-dir "D:\TTB Label Images\labels" --workers 12` — scans label/scan images for UPC/EAN/QR barcodes (year-by-year streaming, incremental save, resume support)
 - `python -m pipeline.promote.ttb_upc_promote --execute --qr` — promotes barcode scan UPCs + QR codes to external_ids via source_ttb_colas.canonical_wine_id join
 - `python -m pipeline.analyze.db_counts` — row counts across all tables
-- `python -m pipeline.fetch.open_meteo_weather [--test|--limit N|--id UUID|--no-resume|--delay N]` — fetches Open-Meteo historical weather → appellation_weather_years + appellation_weather_months. Coordinate caching (2dp), resume support, daily limit detection. ~3,000 appellations, 1980-2025.
+- `python -m pipeline.fetch.nasa_power_weather [--test|--limit N|--id UUID|--no-resume|--delay N]` — NASA POWER bulk weather fetch (~50km resolution, 1981-2025). 1dp coordinate caching. **COMPLETE: all 2,997 appellations fetched.**
+- `python -m pipeline.fetch.open_meteo_weather [--test|--limit N|--id UUID|--no-resume|--delay N|--by-wines]` — Open-Meteo high-resolution weather drip (~9-25km, 1980-2025). 2dp coordinate caching, resume support (skips open-meteo sourced), daily limit detection. `--by-wines` orders by wine count (Napa first). Nightly scheduled task runs this.
 
 **Key promotion scripts:**
 - `pipeline/promote/batch_matcher.py` — reusable in-memory producer matching with suffix stripping
@@ -341,8 +342,8 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 - **Score coverage 2.24%** — competition sources now matched (Berliner 4.9K/73K, TEXSOM 21.7K/46.9K). Rest require fuzzy matching.
 - **Enrichment pipeline live but 2 wines enriched** — need batch pre-warming (Grade C) and frontend integration (Grade B on-demand).
 - ~~UPC barcodes~~ **DONE:** 106K UPCs across 80K wines (TTB label+scan barcode scanning complete, promoted to external_ids 2026-04-06)
-- ~40 canonical tables still at 0 rows (descriptors, wine_relationships, etc.) — vineyards now has 815 rows
-- **Weather data: IN PROGRESS.** `appellation_weather_years` + `appellation_weather_months` tables created. 11 appellations fetched (505 yearly rows, 6,060 monthly rows) and validated. Bulk run blocked by Open-Meteo daily API quota — resume daily until ~3,000 appellations covered. Pipeline: `pipeline/fetch/open_meteo_weather.py` with coordinate caching, resume support, daily limit detection.
+- ~38 canonical tables still at 0 rows (descriptors, wine_relationships, etc.) — vineyards has 815 rows, weather tables now fully populated
+- **Weather data: BULK COMPLETE, DRIP UPGRADING.** 2,997 appellations × 45 years = 134,867 yearly rows + 1,618,404 monthly rows. Bulk fill via NASA POWER API (~50km resolution, 1981-2025). Nightly scheduled task (`open-meteo-weather-drip`, 3am) upgrades ~8 appellations/night to Open-Meteo's higher resolution (~9-25km, 1980-2025) in wine-count priority order (Napa first, then Champagne, Paso Robles, etc.). Pipelines: `pipeline/fetch/nasa_power_weather.py` (bulk, complete), `pipeline/fetch/open_meteo_weather.py --by-wines` (drip, ongoing).
 - Soil/water body links, producer_timeline — still empty.
 
 ---

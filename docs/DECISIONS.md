@@ -1224,3 +1224,15 @@ Convention-based months are always within 2-3 weeks of reality, never catastroph
 ### 2026-04-06: TABC/PRO have no prices — regulatory data only
 
 **Discovery:** Investigated TABC (182K) and PRO Platform (346K) for price coverage. Neither has a price column — they're COLA registration databases with ABV, vintage, and appellation data. Their value is wine identity linking (COLA numbers), not retail pricing. The 130K unmatched TABC and 261K unmatched PRO records point to TTB records that themselves lack canonical_wine_id — blocked on TTB Phase 3 AI parse (1.35M non-001 fanciful names).
+
+### 2026-04-06: WineTest — external benchmark assessment tool
+
+**Decision:** Built WineTest (`python -m pipeline.analyze.winetest`), a DB quality tool that generates a fresh benchmark of ~200 wines Americans actually encounter (stores, restaurants, friends' houses) and scores the DB against it. Benchmark comes from Haiku-generated market-representative wine lists — NOT from our own data — with a stable core (~60 wines) plus rotating category samples (random from pool of 45 categories). Each run uses a different category mix.
+
+**Six dimensions:** Findability (can we find it?), Depth (weighted field completeness across identity/price/quality/story/visual/vintage/winemaking), Accuracy (Haiku verification of key facts), Story Test (would an enthusiast learn something? 1-5 scale), Blind Spot Detection (pattern analysis on misses), and Trend Tracking (vs previous run).
+
+**First run results (200 wines, seed=42):** Overall 49/100. Findability 70%, Depth 31%, Accuracy 85%, Story 1.5/5. Identity coverage strong (74%) but quality signals (3%) and story (0%) are nearly empty — expected given enrichment pipeline is live but only 2 wines enriched. Cost: ~$1.50/run.
+
+**Why:** Previous assessment tools (`american_wine_test.py`, `readiness_test.py`) tested against our own data — cherry-picking. WineTest tests against what users actually care about, from an independent external signal. Replaces both.
+
+**Known v1 limitations:** Haiku sometimes generates benchmark entries where the "producer" is actually an appellation (e.g., "Barolo" + "Nebbiolo"), which inflates the "producer only" count. Some benchmark wines may be fictional. Both are acceptable for a v1 — the aggregate scores are meaningful even with some benchmark noise.
