@@ -136,7 +136,7 @@ Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for p
 - **Price coverage:** 3.94% (19,574 distinct wines with prices). Was 3.36% post-revert, peaked at 5.25% pre-revert, ~1% at start of Phase 2. Honest post-phantom-cleanup number — 1,241 phantom NV Wally's rows deleted.
 - **Data grade:** F=467,355, D=29,568, C=0, B=3 (5,906 phantom D reclassified to F after revert).
 - **Score coverage:** ~2% (distinct wines with scores from TEXSOM +8.5K, Berliner +1.7K, BC Liquor community +592).
-- **UPCs:** 106,442 across 80,723 wines (up from 17,701 — TTB label/scan barcode scanning + promotion session 2026-04-06). Also 12,529 QR URLs + 1,390 QR codes promoted.
+- **UPCs:** 117,250 across 80,618 wines (TTB label/scan barcode scanning + staging source backfill, 2026-04-06). Also 12,529 QR URLs + 1,390 QR codes. 404 fake UPCs cleaned. 466 high-confidence duplicate wine pairs identified via shared UPCs (same producer, >0.6 name similarity) — logged for merge session.
 - **Farming certs:** 9,324 (+2,937 from Skurnik/KL/EC/Polaner pattern text matching — legitimate, values are explicit farming terms)
 - **Wine depth (2026-04-04):** +1,921 sweetness (Flatiron), +1,158 vine_age (KL), +254 description (Skurnik) — direct source promotions
 - **Recovery session (2026-04-04 evening):** +7,707 prices (Wally's title parser extracting leading-year vintage from title), +29,249 wine_grapes (TTB grape promotion re-run, real `grape_varietals` field), +86,015 colors (LWIN `colour` column backfill + 1,681 from importers), +12 prices (Enofile NV for sparkling/fortified). All recoveries from direct source data, zero inference. See DECISIONS.md "Recovery of lost data via authoritative sources only."
