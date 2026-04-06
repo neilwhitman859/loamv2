@@ -473,6 +473,10 @@ def run_cleanup(table: str, dry_run: bool = True, limit: int = 0):
                 for row_id, old_name, new_name in changes:
                     new_norm = normalize(new_name)
                     new_slug = slugify(new_name)
+
+                    # Use savepoints so slug conflicts don't rollback
+                    # previous successful updates
+                    cur.execute("SAVEPOINT row_sp")
                     try:
                         cur.execute(f"""
                             UPDATE {table}
@@ -480,10 +484,12 @@ def run_cleanup(table: str, dry_run: bool = True, limit: int = 0):
                                 slug = %s, updated_at = now()
                             WHERE id = %s
                         """, (new_name, new_norm, new_slug, str(row_id)))
+                        cur.execute("RELEASE SAVEPOINT row_sp")
                         updated += 1
                     except Exception:
-                        conn.rollback()
-                        # Slug conflict — append disambiguator
+                        cur.execute("ROLLBACK TO SAVEPOINT row_sp")
+                        # Slug conflict — try with disambiguator
+                        cur.execute("SAVEPOINT row_sp2")
                         try:
                             cur.execute(f"""
                                 UPDATE {table}
@@ -491,10 +497,11 @@ def run_cleanup(table: str, dry_run: bool = True, limit: int = 0):
                                     slug = %s, updated_at = now()
                                 WHERE id = %s
                             """, (new_name, new_norm, new_slug + "-2", str(row_id)))
+                            cur.execute("RELEASE SAVEPOINT row_sp2")
                             updated += 1
                             slug_conflicts += 1
                         except Exception:
-                            conn.rollback()
+                            cur.execute("ROLLBACK TO SAVEPOINT row_sp2")
                             # Last resort: update name only, skip slug
                             cur.execute(f"""
                                 UPDATE {table}
@@ -513,7 +520,7 @@ def run_cleanup(table: str, dry_run: bool = True, limit: int = 0):
             print(f"\n  Done. {updated} rows updated.")
             if slug_conflicts:
                 print(f"  {slug_conflicts} slug conflicts resolved.")
-            print("  updated_at bumped → search_vector triggers will re-fire.")
+            print("  updated_at bumped -- search_vector triggers will re-fire.")
         elif not changes:
             print("  Nothing to change.")
 
