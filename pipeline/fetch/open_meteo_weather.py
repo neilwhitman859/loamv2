@@ -59,8 +59,16 @@ HUMID_PCT = 85.0             # % RH — threshold for "humid day"
 
 # ── API ──────────────────────────────────────────────────────────────────────
 
+class DailyLimitExceeded(Exception):
+    """Raised when Open-Meteo's daily API quota is hit."""
+    pass
+
+
 def fetch_daily(lat: float, lon: float, retries: int = 5) -> dict | None:
-    """Fetch daily weather from Open-Meteo for full date range (1980-2025)."""
+    """Fetch daily weather from Open-Meteo for full date range (1980-2025).
+
+    Raises DailyLimitExceeded if the daily API quota is exhausted.
+    """
     params = {
         "latitude": round(lat, 4),
         "longitude": round(lon, 4),
@@ -73,12 +81,21 @@ def fetch_daily(lat: float, lon: float, retries: int = 5) -> dict | None:
         try:
             resp = requests.get(OPEN_METEO_URL, params=params, timeout=120)
             if resp.status_code == 429:
-                wait = 10 * (attempt + 1)
-                print(f"rate limited, waiting {wait}s ... ", end="", flush=True)
+                # Check if it's daily limit vs rate limit
+                try:
+                    body = resp.json()
+                    if "daily" in body.get("reason", "").lower():
+                        raise DailyLimitExceeded(body["reason"])
+                except (ValueError, KeyError):
+                    pass
+                wait = 15 * (attempt + 1)
+                print(f"429({wait}s) ", end="", flush=True)
                 time.sleep(wait)
                 continue
             resp.raise_for_status()
             return resp.json()
+        except DailyLimitExceeded:
+            raise
         except requests.RequestException as e:
             if attempt < retries - 1:
                 time.sleep(5 * (attempt + 1))
@@ -548,12 +565,15 @@ def main():
             print(f"(cached) ", end="", flush=True)
         else:
             print(f"... ", end="", flush=True)
-            data = fetch_daily(lat, lon)
+            try:
+                data = fetch_daily(lat, lon)
+            except DailyLimitExceeded:
+                print("DAILY LIMIT — stopping. Re-run tomorrow to continue.")
+                break
             api_calls += 1
             if data is None:
                 print("API ERROR")
                 errors += 1
-                # After error, wait extra before next attempt
                 time.sleep(30)
                 continue
             all_days = parse_daily(data)

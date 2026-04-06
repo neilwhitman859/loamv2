@@ -258,6 +258,7 @@ Staging-first architecture: all external data goes through per-source staging ta
 - `python -m pipeline.analyze.barcode_scanner --image-dir "D:\TTB Label Images\labels" --workers 12` — scans label/scan images for UPC/EAN/QR barcodes (year-by-year streaming, incremental save, resume support)
 - `python -m pipeline.promote.ttb_upc_promote --execute --qr` — promotes barcode scan UPCs + QR codes to external_ids via source_ttb_colas.canonical_wine_id join
 - `python -m pipeline.analyze.db_counts` — row counts across all tables
+- `python -m pipeline.fetch.open_meteo_weather [--test|--limit N|--id UUID|--no-resume|--delay N]` — fetches Open-Meteo historical weather → appellation_weather_years + appellation_weather_months. Coordinate caching (2dp), resume support, daily limit detection. ~3,000 appellations, 1980-2025.
 
 **Key promotion scripts:**
 - `pipeline/promote/batch_matcher.py` — reusable in-memory producer matching with suffix stripping
@@ -337,7 +338,8 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 - **Enrichment pipeline live but 2 wines enriched** — need batch pre-warming (Grade C) and frontend integration (Grade B on-demand).
 - ~~UPC barcodes~~ **DONE:** 106K UPCs across 80K wines (TTB label+scan barcode scanning complete, promoted to external_ids 2026-04-06)
 - ~40 canonical tables still at 0 rows (descriptors, wine_relationships, etc.) — vineyards now has 815 rows
-- Weather data, soil/water body links, producer_timeline — all empty.
+- **Weather data: IN PROGRESS.** `appellation_weather_years` + `appellation_weather_months` tables created. 11 appellations fetched (505 yearly rows, 6,060 monthly rows) and validated. Bulk run blocked by Open-Meteo daily API quota — resume daily until ~3,000 appellations covered. Pipeline: `pipeline/fetch/open_meteo_weather.py` with coordinate caching, resume support, daily limit detection.
+- Soil/water body links, producer_timeline — still empty.
 
 ---
 

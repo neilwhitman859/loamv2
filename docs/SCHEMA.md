@@ -78,9 +78,11 @@ Legal designations. Weather attaches here.
 | regulatory_body | text | nullable | INAO, TTB, etc. |
 | regulatory_url | text | nullable | |
 | established_year | integer | nullable | |
-| baseline_gdd | decimal | nullable | Long-term avg for comparison |
-| baseline_rainfall_mm | decimal | nullable | |
-| baseline_harvest_temp_c | decimal | nullable | |
+| baseline_gdd | decimal | nullable | 30-year avg GDD (1991-2020 climate normal) |
+| baseline_rainfall_mm | decimal | nullable | 30-year avg growing season rainfall |
+| baseline_harvest_temp_c | decimal | nullable | 30-year avg harvest temp |
+| harvest_start_month | integer | nullable | Convention harvest start (1-12), seeded from latitude band |
+| harvest_end_month | integer | nullable | Convention harvest end (1-12), overridable from CDC/legal |
 | area_ha | decimal | nullable | Total vineyard area in hectares |
 | elevation_min_m | integer | nullable | |
 | elevation_max_m | integer | nullable | |
@@ -464,26 +466,78 @@ Grape planting area by country from Anderson & Aryal dataset (University of Adel
 ## 6. Weather
 
 ### appellation_vintages
-PK: composite (appellation_id, vintage_year). Weather data per appellation per year.
+PK: composite (appellation_id, vintage_year). **Vintage assessment** data (rating, summary). Weather data moved to `appellation_weather_years`.
 | Column | Type | Notes |
 |---|---|---|
 | appellation_id | uuid | FK appellations |
 | vintage_year | integer | |
-| gdd | decimal | Growing degree days |
-| total_rainfall_mm | decimal | |
-| harvest_rainfall_mm | decimal | |
-| harvest_avg_temp_c | decimal | |
-| spring_frost_days | integer | |
-| heat_spike_days | integer | |
-| avg_diurnal_range_c | decimal | |
-| growing_season_start | date | |
-| growing_season_end | date | |
+| gdd | decimal | Growing degree days — **DEPRECATED**, use appellation_weather_years |
+| total_rainfall_mm | decimal | **DEPRECATED** |
+| harvest_rainfall_mm | decimal | **DEPRECATED** |
+| harvest_avg_temp_c | decimal | **DEPRECATED** |
+| spring_frost_days | integer | **DEPRECATED** |
+| heat_spike_days | integer | **DEPRECATED** |
+| avg_diurnal_range_c | decimal | **DEPRECATED** |
+| growing_season_start | date | **DEPRECATED** |
+| growing_season_end | date | **DEPRECATED** |
 | vintage_rating | text | nullable | poor/below_average/average/good/very_good/excellent/exceptional |
 | vintage_rating_source | uuid | FK source_types, nullable | |
 | vintage_summary | text | nullable | |
 | created_at / updated_at | timestamptz | |
 
-Baselines (long-term averages) stored on the appellations table, not here.
+Weather columns deprecated — retained for backwards compatibility. New weather data goes to `appellation_weather_years` (objective instrument data) and `appellation_weather_months` (monthly rollups).
+
+### appellation_weather_years
+PK: composite (appellation_id, year). Yearly weather metrics computed from Open-Meteo historical daily data. Growing season defined by 10°C 5-day rolling mean threshold. Harvest metrics use convention-based months from appellations table.
+| Column | Type | Notes |
+|---|---|---|
+| appellation_id | uuid | FK appellations, ON DELETE CASCADE |
+| year | integer | Calendar year (CHECK 1940-2100) |
+| growing_season_start | date | Computed from 10°C threshold |
+| growing_season_end | date | Computed from 10°C threshold |
+| gdd | decimal | Growing degree days (Winkler, base 10°C) |
+| huglin_index | decimal | Huglin heliothermal index (day-length adjusted K coefficient) |
+| avg_growing_season_temp_c | decimal | Mean temp during growing season |
+| max_temp_c | decimal | Absolute max temp in calendar year |
+| heat_spike_days | integer | Days Tmax > 35°C during growing season |
+| avg_diurnal_range_c | decimal | Avg (Tmax - Tmin) during growing season |
+| growing_season_rainfall_mm | decimal | Total precip during growing season |
+| dormant_rainfall_mm | decimal | Precip during off-season before growing season |
+| rain_days | integer | Days with precip > 1mm during growing season |
+| et0_mm | decimal | FAO Penman-Monteith reference evapotranspiration |
+| water_balance_mm | decimal | rainfall - ET0 (negative = water stress) |
+| spring_frost_days | integer | Days Tmin < 0°C within 90 days before growing season |
+| last_frost_date | date | Last date Tmin < 0°C before growing season |
+| sunshine_hours | decimal | Total sunshine hours during growing season |
+| solar_radiation_mj_m2 | decimal | Total shortwave radiation during growing season |
+| avg_relative_humidity_pct | decimal | Mean RH during growing season |
+| humid_days | integer | Days with mean RH > 85% during growing season |
+| harvest_rainfall_mm | decimal | Convention-based: precip during harvest months |
+| harvest_avg_temp_c | decimal | Convention-based: avg temp during harvest months |
+| cool_night_index_c | decimal | Avg Tmin in last harvest month |
+| harvest_method | text | 'latitude_convention' or 'override' |
+| data_source | text | NOT NULL DEFAULT 'open-meteo' |
+| fetched_at | timestamptz | When API data was retrieved |
+| created_at / updated_at | timestamptz | |
+
+### appellation_weather_months
+PK: composite (appellation_id, year, month). Monthly weather rollups — 12 rows per appellation-year. Calendar year months (not growing-season-aligned). Source: Open-Meteo daily data aggregated.
+| Column | Type | Notes |
+|---|---|---|
+| appellation_id | uuid | FK appellations, ON DELETE CASCADE |
+| year | integer | Calendar year (CHECK 1940-2100) |
+| month | integer | 1-12 (CHECK) |
+| avg_temp_c | decimal | Mean of daily mean temps |
+| min_temp_c | decimal | Mean of daily minimum temps |
+| max_temp_c | decimal | Mean of daily maximum temps |
+| rainfall_mm | decimal | Total precipitation |
+| rain_days | integer | Days with precip > 1mm |
+| sunshine_hours | decimal | Total sunshine hours |
+| et0_mm | decimal | Total reference evapotranspiration |
+| avg_humidity_pct | decimal | Mean relative humidity |
+| created_at / updated_at | timestamptz | |
+
+Baselines (long-term 30-year averages) stored on the appellations table: baseline_gdd, baseline_rainfall_mm, baseline_harvest_temp_c.
 
 ---
 

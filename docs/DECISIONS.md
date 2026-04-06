@@ -1151,3 +1151,38 @@ Both bugs surfaced because the batch 4 seeder queries existing rows before inser
 3. **Single-focus beats multi-track.** Pick one high-value track with a genuinely large backlog. Don't spread across tracks that are already done.
 4. **batch_matcher is interactive, not automated.** It can crash, has source-specific quirks, and needs human judgment on errors.
 5. **Data quality sweeps: run once, verify, drop.** Don't rotate 6 sweeps that all return 0.
+
+---
+
+### 2026-04-06: Weather data gets its own table, separate from vintage assessments
+
+**Decision:** Create `appellation_weather_years` and `appellation_weather_months` as dedicated weather tables, rather than storing weather data in the existing `appellation_vintages` table. Weather columns on `appellation_vintages` are deprecated.
+
+**Why:**
+- Weather is objective instrument data (Open-Meteo) with one source of truth. Vintage ratings are subjective assessments from multiple sources (critics, AI, editorial). Different provenance, different update cadences.
+- We want weather for every appellation-year including years where we have no wines. A dedicated table makes this natural. Creating `appellation_vintages` rows for years with zero wines felt wrong.
+- The monthly child table (`appellation_weather_months`) enables month-by-month vintage comparison without pre-computing "harvest" windows into the yearly summary.
+- AI enrichment uses weather as input to the vintage story — cleaner dependency when it's a separate table.
+
+### 2026-04-06: Harvest window uses latitude-band conventions with override path, not algorithmic computation
+
+**Decision:** Harvest metrics (harvest_rainfall, harvest_avg_temp, cool_night_index) are computed from conventional harvest months stored on the `appellations` table (seeded from latitude bands: NH warm=Aug-Oct, moderate=Sep-Oct, cool=Oct-Nov; SH mirrors). No GDD-threshold or grape-maturity-table computation.
+
+**Why:** Multiple algorithmic approaches were evaluated:
+- **GDD threshold per grape** — false precision. Textbook thresholds vary by clone/rootstock/climate and aren't validated at scale.
+- **"Last 45 days of growing season"** — systematically wrong in warm climates where growing season extends well past harvest.
+- **"80% of average GDD"** — fails for cool climates where GDD accumulates fast in summer but harvest is during the slow autumn tail.
+
+Convention-based months are always within 2-3 weeks of reality, never catastrophically wrong, and overridable when we get real data (from CDCs, vintage reports, appellation bodies). The monthly table provides the escape valve — AI enrichment can tell grape-specific harvest stories using monthly data.
+
+**Override path:** `harvest_start_month` / `harvest_end_month` on appellations, updatable from CDCs (French CDCs often specify "vendanges ne peuvent débuter avant..."), appellation body vintage reports (CIVB, BIVB), phenological databases (DWD Germany, INRAE France).
+
+### 2026-04-06: Growing season computed from 10°C 5-day rolling mean threshold
+
+**Decision:** Growing season start = first 5-consecutive-day run where the 5-day rolling mean of daily mean temperature crosses 10°C. End = last date where rolling mean is still ≥ 10°C. Standard agronomic definition for Vitis vinifera (biological zero = 10°C).
+
+**Why:** This is the published standard in viticultural climatology (Jones, Winkler). It adapts per-appellation and per-year — gives us "2003 started 3 weeks early in Burgundy" automatically. Works globally. Only edge case: tropical/subtropical regions where temps never drop below 10°C → growing season is year-round, which is correct.
+
+### 2026-04-06: Open-Meteo free tier has strict daily API quota
+
+**Discovery:** The Open-Meteo Historical Weather API free tier hit "Daily API request limit exceeded" after approximately 20-30 successful requests (each requesting 46 years of daily data for 8 variables). The bulk run for ~3,000 appellations will need to be spread across multiple days or use a registered API key for higher limits. Script has resume support and coordinate-level caching (2dp rounding) to minimize wasted calls.
