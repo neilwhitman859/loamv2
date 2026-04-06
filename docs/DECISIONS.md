@@ -1236,3 +1236,22 @@ Convention-based months are always within 2-3 weeks of reality, never catastroph
 **Why:** Previous assessment tools (`american_wine_test.py`, `readiness_test.py`) tested against our own data — cherry-picking. WineTest tests against what users actually care about, from an independent external signal. Replaces both.
 
 **Known v1 limitations:** Haiku sometimes generates benchmark entries where the "producer" is actually an appellation (e.g., "Barolo" + "Nebbiolo"), which inflates the "producer only" count. Some benchmark wines may be fictional. Both are acceptable for a v1 — the aggregate scores are meaningful even with some benchmark noise.
+
+---
+
+### Wine & producer name cleanup (2026-04-06)
+
+**Decision:** Built a 2-phase name cleanup pipeline that fixed 10,877 names across wines (10,835) and producers (42). Phase 1 is a deterministic Python script (`pipeline/analyze/name_cleanup.py`) with 5 passes: HTML entity decode, whitespace normalization, Wally's suffix stripping, U+FFFD accent repair via word dictionary, and curly quote normalization. Phase 2 (`pipeline/analyze/name_cleanup_haiku.py`) uses Haiku to repair the remaining long-tail U+FFFD words that the dictionary couldn't cover.
+
+**Results:**
+- U+FFFD encoding corruption: 4,955 → 0 wines, 5 → 0 producers (75% dictionary, 25% Haiku)
+- HTML entities (&amp; &#8217; &quot;): 859 → 0
+- Double spaces: 4,446 → 0
+- Wally's suffixes ("2020 / 750 ml."): 3,729 → 0
+- Curly quotes: 455 wines + 1,000 producers → 0
+- Tabs/newlines/leading spaces: 25 → 0
+- 549 + 55 slug conflicts revealed (encoding-variant duplicates) — deferred to future dedup session
+
+**Why this is not inference:** Every fix replaces a known-corrupted character with the one correct original. The corruption is Latin-1/Windows-1252 bytes that became U+FFFD in UTF-8 — each maps to exactly one accented character (é, è, ê, ñ, ü, etc.) determinable from the surrounding word. Haiku acts as OCR correction, not inference.
+
+**Cost:** ~$0.10 (Haiku phase). Dictionary phase: $0.
