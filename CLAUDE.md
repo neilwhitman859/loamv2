@@ -65,8 +65,8 @@ does request a loop, remind them of this workflow before starting:
 CRON LOOP PRE-FLIGHT CHECKLIST
 1. Read the journal    → data/stats/cron_loop_journal.md (what worked/failed before)
 2. Gap analysis        → Query the DB to prove the work actually exists
-3. Single focus        → Pick ONE track with a large backlog (not multiple)
-4. Size it             → If < 5 units, just do it interactively — no loop needed
+3. Single focus        → Recommend ONE track (multi-track often wastes cycles)
+4. Skip if small       → If there are only a few items, just do them now — no loop needed
 5. Build the manifest  → Explicit numbered list: Cycle 1 = X, Cycle 2 = Y, ...
 6. Self-termination    → Loop checks done criteria at the START of every cycle
 7. User approval       → Show the manifest and get a thumbs-up before creating the cron

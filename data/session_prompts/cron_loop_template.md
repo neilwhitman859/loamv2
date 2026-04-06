@@ -29,11 +29,12 @@ If the answer is 0, don't include that source. The 2026-04-06 loop ran
 batch_matcher + retail_promote for 10 sources and got ~0 new prices. A 5-minute
 gap query would have skipped the entire track.
 
-**2. Single-focus beats multi-track.** Pick ONE high-value track with a
-genuinely large backlog. Don't spread across tracks that are already done.
+**2. Single-focus is recommended.** Pick ONE high-value track with a
+genuinely large backlog. Multi-track is allowed but often wastes cycles
+(the 2026-04-06 loop had 2 of 3 tracks exhausted from cycle 1).
 
-**3. Size the work.** Estimate how many cycles the track needs. If < 5, just
-do it interactively — a cron loop has overhead that isn't worth it for small jobs.
+**3. Skip if small.** If there are only a few items, just do them in the
+current conversation — a cron loop has setup overhead that isn't worth it.
 
 **4. Build the manifest.** Write an explicit numbered list of exactly what each
 cycle will do. Don't make the AI figure out "what's next" — that requires
