@@ -1186,3 +1186,31 @@ Convention-based months are always within 2-3 weeks of reality, never catastroph
 ### 2026-04-06: Open-Meteo free tier has strict daily API quota
 
 **Discovery:** The Open-Meteo Historical Weather API free tier hit "Daily API request limit exceeded" after approximately 20-30 successful requests (each requesting 46 years of daily data for 8 variables). The bulk run for ~3,000 appellations will need to be spread across multiple days or use a registered API key for higher limits. Script has resume support and coordinate-level caching (2dp rounding) to minimize wasted calls.
+
+### 2026-04-06: Two-tier weather strategy — NASA POWER bulk + Open-Meteo drip
+
+**Decision:** Use NASA POWER API (free, no rate limits, no auth) for the bulk historical fill of all ~3,000 appellations, then use Open-Meteo's higher-resolution data as a drip overlay for high-value appellations (US first, then other Americas, then rest of world). NASA POWER data gets overwritten by Open-Meteo on the same (appellation_id, year) key when the drip catches up.
+
+**Why:** Open-Meteo free tier at ~8 appellations/day would take ~375 days. NASA POWER can fetch all 3,000 in ~90 minutes. The tradeoff is resolution: NASA POWER is ~50km (MERRA-2 reanalysis) vs Open-Meteo's ~9-25km (ERA5/ERA5-Land). For vintage characterization (was 2003 hot? was 2021 frosty?), 50km is adequate. The Open-Meteo drip then upgrades precision where microclimate matters most. Other options considered: Open-Meteo Professional at $99/month (one-time blast), ARCO-ERA5 Zarr on Google Cloud (free, 25km, but requires hourly→daily resampling + Penman-Monteith ET0 computation). Chose NASA POWER for simplicity and $0 cost.
+
+**Implementation:** `pipeline/fetch/nasa_power_weather.py` (bulk), `pipeline/fetch/open_meteo_weather.py --us-first` (drip with American priority). NASA POWER uses 1dp coordinate caching (~11km, matching its grid resolution) vs Open-Meteo's 2dp.
+
+### 2026-04-06: Retailers table seeded — price provenance plumbing
+
+**Decision:** Seeded the `retailers` table (0 → 13 rows) with all known price sources and backfilled all 99,268 existing `wine_vintage_prices` rows with `retailer_id` and normalized `merchant_name`. Prior state: all prices had NULL source tracking — impossible to trace which retailer a price came from.
+
+**Why:** Price coverage push to 10% requires knowing which sources have been promoted. Without retailer tracking, dedup was impossible (same wine from two sources = duplicate prices). The `retailer_type` constraint allows `online`, `brick_and_mortar`, `auction_house`, `direct_to_consumer`, `marketplace`.
+
+### 2026-04-06: Producer creation strategy — TTB bridge + curated catalog sources
+
+**Decision:** Two-tier producer creation for unmatched staging rows:
+1. **TTB Producer Bridge** (conservative): Match staging producer names against TTB brand_name index (419K distinct brands). Only create if TTB confirms the brand exists. Slug suffix `-tb-`. Result: 422 new producers.
+2. **Catalog Producer Create** (moderate): For curated catalog sources (Enofile, Systembolaget, WineDeals, BestWineStore, Domestique, Flatiron), create producers directly without TTB requirement. These are real, vetted brands from legitimate retail/importer catalogs — many are European producers TTB will never have. Slug suffix `-cp-`. Result: ~2,915 new producers.
+
+**Why:** Previous batch_matcher runs had exhausted easy matches. ~11K staging rows with prices had producer names that didn't match any existing canonical producer. TTB-only would miss most European producers. Curated catalog sources are trustworthy enough (real retailers selling real wine) to create producers without TTB confirmation. Conservative: still requires normalized name matching against existing producers first, only creates if no match found.
+
+### 2026-04-06: retail_wine_create expanded to 12 sources
+
+**Decision:** Added 6 new source adapters to `retail_wine_create.py`: enofile (composes wine name from varietal+designation+addl_designation), pa (item_description), best_wine_store (title minus producer prefix), domestique (wine_name or title), winedeals (name minus producer prefix), firstleaf (title). Total: 12 source configs covering all priced staging tables with producer matches.
+
+**Why:** After producer creation, these staging rows had `canonical_producer_id` but no `canonical_wine_id`. Creating canonical wines unlocks price promotion for those rows. Each source needed custom name extraction logic due to different column layouts.

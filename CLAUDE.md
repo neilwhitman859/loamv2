@@ -123,7 +123,7 @@ Region insights (202), appellation insights (82), country insights (62). All oth
 
 ### Content Tables (updated 2026-04-04, post recovery + 10 follow-ups)
 Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for promotion/merge event history.
-- **~37K producers**, **~497K wines**, **~328K vintages**, **~27K scores**, **~33K prices**, **~188K wine_grapes**, **~604K external_ids** (294K COLA + 106K UPC + 189K LWIN + 13K QR URL + 1.4K QR), **~16K entity_classifications**
+- **~41K producers**, **~488K wines**, **~348K vintages**, **~27K scores**, **~109K prices**, **~198K wine_grapes**, **~604K external_ids** (294K COLA + 106K UPC + 189K LWIN + 13K QR URL + 1.4K QR), **~16K entity_classifications**, **13 retailers**
 - **~267K wines with color** (up from 180K post-revert via LWIN backfill)
 - **~262K wines with appellation_id** (up from 230K via TTB wine_appellation backfill)
 - **~413K wines with region_id** (up from 287K via TTB direct resolve + cascade from appellation)
@@ -133,7 +133,7 @@ Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for p
 - **292K wines linked to TTB** (686K TTB records linked)
 - **Wine type:** table 473,232, sparkling 18,757, fortified 4,937 (+4,712 reclassified this session: 4,166 sparkling from TTB class_type_desc, 223 vermouth→fortified, 323 Port/Sherry/Madeira via name+TTB context match)
 - **COLA-keyed state merge:** 170K state DB records linked (PRO 84K, TABC 52K, WV 22K, Kansas 13K). +10,136 appellation assignments, +543 vintages.
-- **Price coverage:** 3.94% (19,574 distinct wines with prices). Was 3.36% post-revert, peaked at 5.25% pre-revert, ~1% at start of Phase 2. Honest post-phantom-cleanup number — 1,241 phantom NV Wally's rows deleted.
+- **Price coverage:** 7.54% (36,760 distinct wines with prices out of 487,543 wines). Was 3.94% pre-session. Gained via: retailers table seeded (13 retailers, 99K prices backfilled with retailer_id + merchant_name), TTB producer bridge (+422 new producers from TTB brand matching), catalog producer creation (+2,915 producers from curated sources: Enofile/Systembolaget/WineDeals/BestWineStore/Domestique/Flatiron), retail_wine_create expanded (6 new source adapters), bulk price promotion from all matched sources. Was 3.36% post-revert, peaked at 5.25% pre-revert, ~1% at start of Phase 2.
 - **Data grade:** F=467,355, D=29,568, C=0, B=3 (5,906 phantom D reclassified to F after revert).
 - **Score coverage:** ~2% (distinct wines with scores from TEXSOM +8.5K, Berliner +1.7K, BC Liquor community +592).
 - **UPCs:** 117,250 across 80,618 wines (TTB label/scan barcode scanning + staging source backfill, 2026-04-06). Also 12,529 QR URLs + 1,390 QR codes. 404 fake UPCs cleaned. 466 high-confidence duplicate wine pairs identified via shared UPCs (same producer, >0.6 name similarity) — logged for merge session.
@@ -267,6 +267,9 @@ Staging-first architecture: all external data goes through per-source staging ta
 - `pipeline/promote/cola_depth.py` — COLA IDs, vintages, grapes from linked TTB records
 - `pipeline/promote/grape_from_helper.py` — TTB grape promotion (handles encoding corruption)
 - `pipeline/promote/ttb_producer_relink.py` — normalized producer matching for TTB brands
+- `pipeline/promote/ttb_producer_bridge.py` — creates producers from TTB brand_name matches for unlinked staging rows
+- `pipeline/promote/catalog_producer_create.py` — creates producers from curated catalog sources (Enofile, Systembolaget, WineDeals, etc.)
+- `pipeline/promote/retail_wine_create.py` — creates canonical wines from producer-matched staging records (12 sources)
 
 **Data quality infrastructure:**
 - `accuracy_audit` table + `accuracy_audit_daily` view
@@ -402,7 +405,7 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 - ~~Vinmonopolet follow-up~~ — deprioritized 2026-04-03
 
 ### Schema Hardening (complete — see `docs/HISTORY.md` for detail)
-3 rounds of hardening applied. Key infrastructure: `set_updated_at()` triggers on 36 tables, `validate_polymorphic_fks()` orphan checker, enrichment_log with cost/model tracking, `appellation_rules` table. `wine_vintage_scores` and `wine_vintage_prices` have `wine_vintage_id` FK (preferred join path). `retailers` table created but 0 rows.
+3 rounds of hardening applied. Key infrastructure: `set_updated_at()` triggers on 36 tables, `validate_polymorphic_fks()` orphan checker, enrichment_log with cost/model tracking, `appellation_rules` table. `wine_vintage_scores` and `wine_vintage_prices` have `wine_vintage_id` FK (preferred join path). `retailers` table seeded with 13 retailers (all price sources).
 
 ### Technical Debt (pre-frontend)
 - **RLS policies:** ✅ COMPLETE. 94/94 canonical tables have RLS enabled (91 original + 3 new tables this session). Policy pattern: `public_read_*` (anon+authenticated SELECT), `service_write_*` (service_role ALL). wine_lookups also has `anon_insert` for anonymous page views.

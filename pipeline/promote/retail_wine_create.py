@@ -93,6 +93,38 @@ SOURCE_CONFIG = {
         'select': 'id, canonical_producer_id, name',
         'needs_producer_strip': True,
     },
+    'enofile': {
+        'table': 'source_enofile',
+        'select': 'id, canonical_producer_id, varietal, designation, addl_designation',
+        'needs_producer_strip': False,  # wine name composed from varietal+designation
+    },
+    'pa': {
+        'table': 'source_pa',
+        'select': 'id, canonical_producer_id, item_description',
+        'name_col': 'item_description',
+        'needs_producer_strip': True,
+    },
+    'best_wine_store': {
+        'table': 'source_best_wine_store',
+        'select': 'id, canonical_producer_id, title, producer',
+        'needs_producer_strip': True,
+    },
+    'domestique': {
+        'table': 'source_domestique',
+        'select': 'id, canonical_producer_id, wine_name, title, producer',
+        'needs_producer_strip': True,
+    },
+    'winedeals': {
+        'table': 'source_winedeals',
+        'select': 'id, canonical_producer_id, name, producer',
+        'needs_producer_strip': True,
+    },
+    'firstleaf': {
+        'table': 'source_firstleaf',
+        'select': 'id, canonical_producer_id, title',
+        'name_col': 'title',
+        'needs_producer_strip': True,
+    },
 }
 
 
@@ -123,6 +155,37 @@ def get_raw_wine_name(row, source_key):
             return title[len(producer):].lstrip(' ,:-').strip()
         return title
     elif source_key == 'wallys':
+        return row.get('title') or ''
+    elif source_key == 'enofile':
+        # Compose wine name from varietal + designation + addl_designation
+        parts = []
+        varietal = (row.get('varietal') or '').strip()
+        designation = (row.get('designation') or '').strip()
+        addl = (row.get('addl_designation') or '').strip()
+        if varietal:
+            parts.append(varietal)
+        if designation:
+            parts.append(designation)
+        if addl:
+            parts.append(addl)
+        return ' '.join(parts)
+    elif source_key == 'pa':
+        return row.get('item_description') or ''
+    elif source_key == 'best_wine_store':
+        title = row.get('title') or ''
+        producer = row.get('producer') or ''
+        if producer and title.lower().startswith(producer.lower()):
+            return title[len(producer):].lstrip(' ,:-').strip()
+        return title
+    elif source_key == 'domestique':
+        return row.get('wine_name') or row.get('title') or ''
+    elif source_key == 'winedeals':
+        name = row.get('name') or ''
+        producer = row.get('producer') or ''
+        if producer and name.lower().startswith(producer.lower()):
+            return name[len(producer):].lstrip(' ,:-').strip()
+        return name
+    elif source_key == 'firstleaf':
         return row.get('title') or ''
     else:
         return row.get('name') or ''
@@ -304,7 +367,7 @@ def process_source(conn, source_key, config, dry_run=False):
 def main():
     parser = argparse.ArgumentParser(description="Create canonical wines from producer-matched staging records")
     parser.add_argument('--dry-run', action='store_true', help="Show what would be created without writing")
-    parser.add_argument('--source', default='lcbo,systembolaget,flatiron,specs,wallys,bc_liquor',
+    parser.add_argument('--source', default='lcbo,systembolaget,flatiron,specs,wallys,bc_liquor,enofile,pa,best_wine_store,domestique,winedeals,firstleaf',
                         help="Comma-separated source keys")
     args = parser.parse_args()
 

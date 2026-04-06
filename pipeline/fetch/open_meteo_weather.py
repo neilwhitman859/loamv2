@@ -475,22 +475,47 @@ def save_monthly(conn, rows: list[dict]):
 
 # ── Query helpers ────────────────────────────────────────────────────────────
 
-def get_appellations(conn, appellation_id: str = None, limit: int = None) -> list[dict]:
-    """Get appellations ready for weather fetch."""
-    sql = """
-        SELECT id, name, latitude, longitude, hemisphere,
-               growing_season_start_month, growing_season_end_month,
-               harvest_start_month, harvest_end_month
-        FROM appellations
-        WHERE latitude IS NOT NULL AND longitude IS NOT NULL
-          AND growing_season_start_month IS NOT NULL
-          AND harvest_start_month IS NOT NULL
+def get_appellations(conn, appellation_id: str = None, limit: int = None,
+                     by_wines: bool = False) -> list[dict]:
+    """Get appellations ready for weather fetch.
+
+    Args:
+        by_wines: If True, order by wine count descending (most important first).
+                  Naturally surfaces Napa, Champagne, Bordeaux, Rioja, etc.
     """
+    if by_wines:
+        sql = """
+            SELECT a.id, a.name, a.latitude, a.longitude, a.hemisphere,
+                   a.growing_season_start_month, a.growing_season_end_month,
+                   a.harvest_start_month, a.harvest_end_month,
+                   count(w.id) as wine_count
+            FROM appellations a
+            LEFT JOIN wines w ON w.appellation_id = a.id
+            WHERE a.latitude IS NOT NULL AND a.longitude IS NOT NULL
+              AND a.growing_season_start_month IS NOT NULL
+              AND a.harvest_start_month IS NOT NULL
+        """
+    else:
+        sql = """
+            SELECT a.id, a.name, a.latitude, a.longitude, a.hemisphere,
+                   a.growing_season_start_month, a.growing_season_end_month,
+                   a.harvest_start_month, a.harvest_end_month
+            FROM appellations a
+            WHERE a.latitude IS NOT NULL AND a.longitude IS NOT NULL
+              AND a.growing_season_start_month IS NOT NULL
+              AND a.harvest_start_month IS NOT NULL
+        """
     params = []
     if appellation_id:
-        sql += " AND id = %s"
+        sql += " AND a.id = %s"
         params.append(appellation_id)
-    sql += " ORDER BY name"
+    if by_wines:
+        sql += " GROUP BY a.id, a.name, a.latitude, a.longitude, a.hemisphere,"
+        sql += " a.growing_season_start_month, a.growing_season_end_month,"
+        sql += " a.harvest_start_month, a.harvest_end_month"
+        sql += " ORDER BY count(w.id) DESC, a.name"
+    else:
+        sql += " ORDER BY a.name"
     if limit:
         sql += f" LIMIT {int(limit)}"
 
@@ -522,12 +547,15 @@ def main():
     parser.add_argument("--id", type=str, help="Single appellation UUID")
     parser.add_argument("--no-resume", action="store_true", help="Re-fetch even if data exists")
     parser.add_argument("--delay", type=float, default=5.0, help="Seconds between API calls (default 5)")
+    parser.add_argument("--by-wines", action="store_true",
+                        help="Prioritize appellations with most wines (Napa, Champagne, etc. first)")
     args = parser.parse_args()
 
     conn = get_conn()
 
     limit = 10 if args.test else args.limit
-    apps = get_appellations(conn, appellation_id=args.id, limit=limit)
+    apps = get_appellations(conn, appellation_id=args.id, limit=limit,
+                            by_wines=args.by_wines)
     print(f"Found {len(apps)} appellations with coordinates + season metadata")
 
     # Resume: skip already-fetched
