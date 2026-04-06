@@ -4,6 +4,14 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-06: Duplicate wine merge buffer via match_decisions
+All AI duplicate classification results (12,671 groups) written to match_decisions only. No canonical merges executed. Status values: ai_accepted (true_duplicate), ai_rejected (distinct_wines), flagged (unclear). Human review required before any actual merges. The 9,600 ai_accepted rows are the merge backlog.
+
+### 2026-04-06: Nightly schema audit + conservative DB cleanup
+Built pipeline/analyze/schema_audit.py (10-category read-only audit, saves JSON to data/stats/). Scheduled as nightly task. Executed conservative fixes this session: 8 missing FK indexes added, 2,278 grape double-space names cleaned, 1 vintage year corrected (2050→2024 parsing artifact). Schema audit journal at data/stats/schema_audit_journal.md.
+
+---
+
 ### 2026-03-03: Full DB rebuild for v2
 Starting fresh rather than migrating v1 schema. Dataset small enough to re-seed. Design the schema we actually want, build it clean.
 
