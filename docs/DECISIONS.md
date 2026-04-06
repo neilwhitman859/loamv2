@@ -1214,3 +1214,13 @@ Convention-based months are always within 2-3 weeks of reality, never catastroph
 **Decision:** Added 6 new source adapters to `retail_wine_create.py`: enofile (composes wine name from varietal+designation+addl_designation), pa (item_description), best_wine_store (title minus producer prefix), domestique (wine_name or title), winedeals (name minus producer prefix), firstleaf (title). Total: 12 source configs covering all priced staging tables with producer matches.
 
 **Why:** After producer creation, these staging rows had `canonical_producer_id` but no `canonical_wine_id`. Creating canonical wines unlocks price promotion for those rows. Each source needed custom name extraction logic due to different column layouts.
+
+### 2026-04-06: Utah DABS added as new source (state monopoly pricing)
+
+**Decision:** Added `source_utah_dabs` staging table and `pipeline/fetch/utah_dabs.py` fetcher. Downloads monthly XLSX from abs.utah.gov, filters to wine products (excluding fruit wine, cider, sake, mead), parses size/price/vendor/class. State monopoly = authoritative pricing for ~2,500 active wines. Matching uses `match_producer_from_title` since producer name is embedded in the description field (vendor column is the distributor, not the producer).
+
+**Why:** Utah DABS is a state-controlled monopoly — all wine sold in Utah goes through their system. Public XLSX download, no authentication needed, rich category classification (127 wine classes like "FRENCH RED - BURGUNDY", "RED VARIETAL - PINOT NOIR"). ~2,080 prices promoted from first load.
+
+### 2026-04-06: TABC/PRO have no prices — regulatory data only
+
+**Discovery:** Investigated TABC (182K) and PRO Platform (346K) for price coverage. Neither has a price column — they're COLA registration databases with ABV, vintage, and appellation data. Their value is wine identity linking (COLA numbers), not retail pricing. The 130K unmatched TABC and 261K unmatched PRO records point to TTB records that themselves lack canonical_wine_id — blocked on TTB Phase 3 AI parse (1.35M non-001 fanciful names).

@@ -55,6 +55,11 @@ SOURCE_CONFIG = {
         'producer_col': 'producer',
         'price_col': 'price',
     },
+    'pa': {
+        'table': 'source_pa',
+        'producer_col': 'brand_name',
+        'price_col': 'retail_price',
+    },
 }
 
 

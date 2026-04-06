@@ -1102,6 +1102,140 @@ class BatchMatcher:
         self.stats["best_wine_store_wine_match"] = matched_wines
         self.stats["best_wine_store_total"] = len(rows)
 
+    # ── FirstLeaf Adapter ─────────────────────────────────────
+
+    def run_firstleaf(self):
+        """Match FirstLeaf. vendor=producer, title='Producer Year Varietal, Region'."""
+        print("\n" + "=" * 60)
+        print("FIRSTLEAF (1,770 wines)")
+        print("=" * 60)
+
+        rows = self._load_staging(
+            "source_firstleaf",
+            "id,title,vendor,product_type"
+        )
+        # Filter to wine rows only
+        rows = [r for r in rows if r.get("product_type") == "wine"]
+        print(f"  Unmatched wine rows: {len(rows)}")
+        if not rows:
+            return
+
+        updates = []
+        matched_wines = 0
+        matched_producers = 0
+        producer_cache = {}
+
+        for i, r in enumerate(rows):
+            producer_name = r.get("vendor") or ""
+            title = r.get("title") or ""
+
+            if not producer_name or producer_name.lower() == "firstleaf":
+                continue
+
+            pmatch = self.match_producer(producer_name, None)
+            if not pmatch:
+                self.stats["firstleaf_producer_miss"] += 1
+                continue
+
+            matched_producers += 1
+            pid = pmatch["id"]
+
+            # Strip producer prefix from title to get wine name
+            wine_name = title
+            if producer_name.lower() in title.lower():
+                idx = title.lower().find(producer_name.lower())
+                wine_name = (title[:idx] + title[idx + len(producer_name):]).strip(" ,")
+
+            # Strip vintage year and volume
+            wine_name = re.sub(r"^\d{4}\s+", "", wine_name)
+            wine_name = re.sub(r"\s+\d{4}$", "", wine_name)
+            wine_name = re.sub(r"\s+\d+(\.\d+)?\s*(ml|l)\b", "", wine_name, flags=re.IGNORECASE)
+            wine_name = wine_name.strip()
+
+            if pid not in producer_cache:
+                producer_cache[pid] = self.load_producer_wines(pid)
+
+            wmatch = self.match_wine(producer_cache[pid], wine_name)
+            update = {"id": r["id"], "producer_id": pid}
+            if wmatch:
+                update["wine_id"] = wmatch["id"]
+                matched_wines += 1
+            updates.append(update)
+
+        print(f"  Rows with producer match: {matched_producers}/{len(rows)}")
+        print(f"  Wines matched: {matched_wines}/{len(rows)}")
+
+        self._write_matches("source_firstleaf", updates)
+        self.stats["firstleaf_producer_match"] = matched_producers
+        self.stats["firstleaf_wine_match"] = matched_wines
+        self.stats["firstleaf_total"] = len(rows)
+
+    # ── Utah DABS Adapter ─────────────────────────────────────
+
+    def run_utah_dabs(self):
+        """Match Utah DABS. Producer embedded in description, vendor is distributor."""
+        print("\n" + "=" * 60)
+        print("UTAH DABS (2,834 wines)")
+        print("=" * 60)
+
+        rows = self._load_staging(
+            "source_utah_dabs",
+            "id,description,class_name,vendor_name"
+        )
+        # Filter to active items
+        print(f"  Unmatched rows: {len(rows)}")
+        if not rows:
+            return
+
+        updates = []
+        matched_wines = 0
+        matched_producers = 0
+        producer_cache = {}
+
+        for i, r in enumerate(rows):
+            desc = r.get("description") or ""
+
+            # Strip trailing size (750ml, 750, 1.75L, etc.)
+            title = re.sub(r"\s+\d+(\.\d+)?\s*(ml|l)?\s*$", "", desc, flags=re.IGNORECASE).strip()
+            # Strip trailing vintage like '17/18 or '23
+            title = re.sub(r"'\d{2}(?:/\d{2})?\s*$", "", title).strip()
+
+            if not title:
+                continue
+
+            # Try to extract producer from title
+            pmatch, wine_name = self.match_producer_from_title(title, None)
+
+            if not pmatch:
+                self.stats["utah_dabs_producer_miss"] += 1
+                continue
+
+            matched_producers += 1
+            pid = pmatch["id"]
+
+            # Clean wine name: strip volume and vintage leftovers
+            wine_name = re.sub(r"\s+\d+(\.\d+)?\s*(ml|l)\b", "", wine_name, flags=re.IGNORECASE)
+            wine_name = re.sub(r"'\d{2}(?:/\d{2})?\s*$", "", wine_name).strip()
+            wine_name = re.sub(r"\s+\d{4}$", "", wine_name).strip()
+
+            if pid not in producer_cache:
+                producer_cache[pid] = self.load_producer_wines(pid)
+
+            wmatch = self.match_wine(producer_cache[pid], wine_name)
+            update = {"id": r["id"], "producer_id": pid}
+            if wmatch:
+                update["wine_id"] = wmatch["id"]
+                matched_wines += 1
+            updates.append(update)
+
+        print(f"  Rows with producer match: {matched_producers}/{len(rows)}")
+        print(f"  Wines matched: {matched_wines}/{len(rows)}")
+
+        self._write_matches("source_utah_dabs", updates)
+        self.stats["utah_dabs_producer_match"] = matched_producers
+        self.stats["utah_dabs_wine_match"] = matched_wines
+        self.stats["utah_dabs_total"] = len(rows)
+
     # ── Berliner Wine Trophy Adapter ───────────────────────────
 
     def run_berliner(self):
@@ -1265,6 +1399,8 @@ def main():
         "berliner": matcher.run_berliner,
         "texsom": matcher.run_texsom,
         "best_wine_store": matcher.run_best_wine_store,
+        "firstleaf": matcher.run_firstleaf,
+        "utah_dabs": matcher.run_utah_dabs,
     }
 
     for src in sources:

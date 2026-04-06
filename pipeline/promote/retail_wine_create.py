@@ -125,6 +125,12 @@ SOURCE_CONFIG = {
         'name_col': 'title',
         'needs_producer_strip': True,
     },
+    'utah_dabs': {
+        'table': 'source_utah_dabs',
+        'select': 'id, canonical_producer_id, description',
+        'name_col': 'description',
+        'needs_producer_strip': True,
+    },
 }
 
 
@@ -187,6 +193,13 @@ def get_raw_wine_name(row, source_key):
         return name
     elif source_key == 'firstleaf':
         return row.get('title') or ''
+    elif source_key == 'utah_dabs':
+        desc = row.get('description') or ''
+        # Strip trailing size (750ml, 1.75L, etc.)
+        desc = re.sub(r'\s+\d+(\.\d+)?\s*(ml|l)?\s*$', '', desc, flags=re.IGNORECASE).strip()
+        # Strip trailing vintage like '17/18 or '23
+        desc = re.sub(r"'\d{2}(?:/\d{2})?\s*$", '', desc).strip()
+        return desc
     else:
         return row.get('name') or ''
 

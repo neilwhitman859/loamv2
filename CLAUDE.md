@@ -119,21 +119,21 @@ Geographic boundaries with PostGIS geometry. All geographic data open for refine
 Region insights (202), appellation insights (82), country insights (62). All other insight tables empty.
 
 ### Schema (Phase 1a/1b complete)
-78 canonical tables, 30 staging tables. Schema hardened across 3 rounds (Phase 1a, post-import, scan round 2). All reference data seeded and audited. See `docs/SCHEMA.md` for field reference, `docs/HISTORY.md` for schema change history.
+78 canonical tables, 31 staging tables. Schema hardened across 3 rounds (Phase 1a, post-import, scan round 2). All reference data seeded and audited. See `docs/SCHEMA.md` for field reference, `docs/HISTORY.md` for schema change history.
 
 ### Content Tables (updated 2026-04-04, post recovery + 10 follow-ups)
 Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for promotion/merge event history.
-- **~41K producers**, **~488K wines**, **~348K vintages**, **~27K scores**, **~109K prices**, **~198K wine_grapes**, **~604K external_ids** (294K COLA + 106K UPC + 189K LWIN + 13K QR URL + 1.4K QR), **~16K entity_classifications**, **13 retailers**
+- **~42K producers**, **~491K wines**, **~348K vintages**, **~27K scores**, **~140K prices**, **~198K wine_grapes**, **~604K external_ids** (294K COLA + 106K UPC + 189K LWIN + 13K QR URL + 1.4K QR), **~16K entity_classifications**, **14 retailers**
 - **~267K wines with color** (up from 180K post-revert via LWIN backfill)
 - **~262K wines with appellation_id** (up from 230K via TTB wine_appellation backfill)
 - **~413K wines with region_id** (up from 287K via TTB direct resolve + cascade from appellation)
 - **~468K wines with country_id** (up from 466K via cascade)
 - **~167K wine_vintages with label image URLs** (restored from TTB after column was wiped)
 - **~169K wine_vintages with ABV** (up from 167K via TTB backfill)
-- **292K wines linked to TTB** (686K TTB records linked)
+- **293K wines linked to TTB** (689K TTB records linked)
 - **Wine type:** table 473,232, sparkling 18,757, fortified 4,937 (+4,712 reclassified this session: 4,166 sparkling from TTB class_type_desc, 223 vermouth→fortified, 323 Port/Sherry/Madeira via name+TTB context match)
 - **COLA-keyed state merge:** 170K state DB records linked (PRO 84K, TABC 52K, WV 22K, Kansas 13K). +10,136 appellation assignments, +543 vintages.
-- **Price coverage:** 7.54% (36,760 distinct wines with prices out of 487,543 wines). Was 3.94% pre-session. Gained via: retailers table seeded (13 retailers, 99K prices backfilled with retailer_id + merchant_name), TTB producer bridge (+422 new producers from TTB brand matching), catalog producer creation (+2,915 producers from curated sources: Enofile/Systembolaget/WineDeals/BestWineStore/Domestique/Flatiron), retail_wine_create expanded (6 new source adapters), bulk price promotion from all matched sources. Was 3.36% post-revert, peaked at 5.25% pre-revert, ~1% at start of Phase 2.
+- **Price coverage:** 8.39% (41,187 distinct wines with prices out of 490,933 wines). Was 3.94% pre-session. Gained via: retailers table seeded (13 retailers, 99K prices backfilled with retailer_id + merchant_name), TTB producer bridge (+422 new producers from TTB brand matching), catalog producer creation (+2,915 producers from curated sources: Enofile/Systembolaget/WineDeals/BestWineStore/Domestique/Flatiron), retail_wine_create expanded (6 new source adapters), bulk price promotion from all matched sources. Utah DABS fetched (2,834 wines, state monopoly pricing) and FirstLeaf matched (458 producers). PA PLCB producer creation (+474 producers via TTB bridge + catalog). Re-run sweeps on Spec's/Wally's/LCBO/BC Liquor with expanded producer index. Was 3.36% post-revert, peaked at 5.25% pre-revert, ~1% at start of Phase 2.
 - **Data grade:** F=467,355, D=29,568, C=0, B=3 (5,906 phantom D reclassified to F after revert).
 - **Score coverage:** ~2% (distinct wines with scores from TEXSOM +8.5K, Berliner +1.7K, BC Liquor community +592).
 - **UPCs:** 117,250 across 80,618 wines (TTB label/scan barcode scanning + staging source backfill, 2026-04-06). Also 12,529 QR URLs + 1,390 QR codes. 404 fake UPCs cleaned. 466 high-confidence duplicate wine pairs identified via shared UPCs (same producer, >0.6 name similarity) — logged for merge session.
@@ -206,7 +206,7 @@ Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for p
 ### Multi-Source Merge Infrastructure (2026-03-18)
 Staging-first architecture: all external data goes through per-source staging tables, then a match engine promotes to canonical tables. Prevents dedup crisis at scale.
 
-**30 staging tables (~4.35M total rows, audited 2026-03-27):**
+**31 staging tables (~4.35M total rows, audited 2026-03-27):**
 - `match_decisions` — audit trail for cross-source matching decisions (AI review, confidence, extracted data)
 - **Regulatory/ID sources:**
   - `source_ttb_colas` (3,283,319) — TTB COLA registry. **Scrape complete.** 3.18M detail-scraped (96.8%), 1.82M printable-scraped (99.86% of 001-format). 1.82M label image URLs, 1.75M appellations, 857K grapes, 1.50M vintages, 856K ABV. Non-001 IDs (1.35M) confirmed no printable page on TTB.
@@ -242,6 +242,7 @@ Staging-first architecture: all external data goes through per-source staging ta
   - `source_best_wine_store` (1,658) — Value retailer.
   - `source_domestique` (247) — Natural wine.
   - `source_last_bottle` (160) — Flash sale prices.
+  - `source_utah_dabs` (2,834) — Utah DABS state monopoly. Monthly XLSX, 127 wine classes, authoritative pricing.
 
 **RPC functions:** `match_producer_fuzzy()`, `match_wine_fuzzy()` — pg_trgm similarity search for the match engine.
 
