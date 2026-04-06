@@ -1,0 +1,664 @@
+{
+  "timestamp": "2026-04-06T19:11:57.561580+00:00",
+  "db_size": "8343 MB",
+  "null_rates": {
+    "wines": {
+      "total": 517374,
+      "columns": {
+        "name": {
+          "filled": 517374,
+          "null": 0,
+          "fill_pct": 100.0
+        },
+        "producer_id": {
+          "filled": 517374,
+          "null": 0,
+          "fill_pct": 100.0
+        },
+        "color": {
+          "filled": 282146,
+          "null": 235228,
+          "fill_pct": 54.5
+        },
+        "wine_type": {
+          "filled": 517374,
+          "null": 0,
+          "fill_pct": 100.0
+        },
+        "country_id": {
+          "filled": 473074,
+          "null": 44300,
+          "fill_pct": 91.4
+        },
+        "region_id": {
+          "filled": 413413,
+          "null": 103961,
+          "fill_pct": 79.9
+        },
+        "appellation_id": {
+          "filled": 261488,
+          "null": 255886,
+          "fill_pct": 50.5
+        },
+        "varietal_category_id": {
+          "filled": 205831,
+          "null": 311543,
+          "fill_pct": 39.8
+        },
+        "identity_confidence": {
+          "filled": 517374,
+          "null": 0,
+          "fill_pct": 100.0
+        },
+        "data_grade": {
+          "filled": 517374,
+          "null": 0,
+          "fill_pct": 100.0
+        },
+        "search_vector": {
+          "filled": 505857,
+          "null": 11517,
+          "fill_pct": 97.8
+        }
+      }
+    },
+    "producers": {
+      "total": 41725,
+      "columns": {
+        "name": {
+          "filled": 41725,
+          "null": 0,
+          "fill_pct": 100.0
+        },
+        "country_id": {
+          "filled": 34479,
+          "null": 7246,
+          "fill_pct": 82.6
+        },
+        "region_id": {
+          "filled": 18940,
+          "null": 22785,
+          "fill_pct": 45.4
+        },
+        "appellation_id": {
+          "filled": 0,
+          "null": 41725,
+          "fill_pct": 0.0
+        },
+        "description": {
+          "filled": 120,
+          "null": 41605,
+          "fill_pct": 0.3
+        },
+        "year_established": {
+          "filled": 107,
+          "null": 41618,
+          "fill_pct": 0.3
+        },
+        "search_vector": {
+          "filled": 37214,
+          "null": 4511,
+          "fill_pct": 89.2
+        }
+      }
+    },
+    "wine_vintages": {
+      "total": 353565,
+      "columns": {
+        "wine_id": {
+          "filled": 353565,
+          "null": 0,
+          "fill_pct": 100.0
+        },
+        "vintage_year": {
+          "filled": 353562,
+          "null": 3,
+          "fill_pct": 100.0
+        },
+        "abv": {
+          "filled": 171142,
+          "null": 182423,
+          "fill_pct": 48.4
+        },
+        "label_image_url": {
+          "filled": 167164,
+          "null": 186401,
+          "fill_pct": 47.3
+        }
+      }
+    },
+    "wine_grapes": {
+      "total": 278054,
+      "columns": {
+        "wine_id": {
+          "filled": 278054,
+          "null": 0,
+          "fill_pct": 100.0
+        },
+        "grape_id": {
+          "filled": 278054,
+          "null": 0,
+          "fill_pct": 100.0
+        },
+        "percentage": {
+          "filled": 220411,
+          "null": 57643,
+          "fill_pct": 79.3
+        }
+      }
+    },
+    "wine_vintage_scores": {
+      "total": 27451,
+      "columns": {
+        "wine_id": {
+          "filled": 27451,
+          "null": 0,
+          "fill_pct": 100.0
+        },
+        "wine_vintage_id": {
+          "filled": 27451,
+          "null": 0,
+          "fill_pct": 100.0
+        },
+        "publication_id": {
+          "filled": 25821,
+          "null": 1630,
+          "fill_pct": 94.1
+        },
+        "score": {
+          "filled": 1757,
+          "null": 25694,
+          "fill_pct": 6.4
+        },
+        "vintage_year": {
+          "filled": 27451,
+          "null": 0,
+          "fill_pct": 100.0
+        },
+        "review_date": {
+          "filled": 22615,
+          "null": 4836,
+          "fill_pct": 82.4
+        }
+      }
+    },
+    "wine_vintage_prices": {
+      "total": 139937,
+      "columns": {
+        "wine_id": {
+          "filled": 139937,
+          "null": 0,
+          "fill_pct": 100.0
+        },
+        "wine_vintage_id": {
+          "filled": 139937,
+          "null": 0,
+          "fill_pct": 100.0
+        },
+        "price_usd": {
+          "filled": 130207,
+          "null": 9730,
+          "fill_pct": 93.0
+        },
+        "retailer_id": {
+          "filled": 139138,
+          "null": 799,
+          "fill_pct": 99.4
+        },
+        "vintage_year": {
+          "filled": 139937,
+          "null": 0,
+          "fill_pct": 100.0
+        }
+      }
+    }
+  },
+  "value_violations": [
+    {
+      "table": "wines",
+      "column": "wine_type",
+      "check": {
+        "values": [
+          "table",
+          "sparkling",
+          "fortified"
+        ]
+      },
+      "violations": 0
+    },
+    {
+      "table": "wines",
+      "column": "color",
+      "check": {
+        "values": [
+          "red",
+          "white",
+          "rose",
+          "orange"
+        ]
+      },
+      "violations": 0
+    },
+    {
+      "table": "wine_grapes",
+      "column": "percentage",
+      "check": {
+        "range": [
+          0,
+          100
+        ]
+      },
+      "violations": 0
+    },
+    {
+      "table": "wine_vintage_scores",
+      "column": "score",
+      "check": {
+        "range": [
+          0,
+          100
+        ]
+      },
+      "violations": 0
+    },
+    {
+      "table": "wine_vintages",
+      "column": "vintage_year",
+      "check": {
+        "range": [
+          0,
+          2026
+        ]
+      },
+      "violations": 1
+    }
+  ],
+  "orphan_fks": [],
+  "total_fk_count": 169,
+  "fk_index_gaps": [
+    {
+      "table": "appellation_documents",
+      "column": "appellation_id"
+    },
+    {
+      "table": "appellation_documents",
+      "column": "source_id"
+    },
+    {
+      "table": "appellation_vintages",
+      "column": "vintage_rating_source"
+    },
+    {
+      "table": "classifications",
+      "column": "country_id"
+    },
+    {
+      "table": "entity_attributes",
+      "column": "source_id"
+    },
+    {
+      "table": "external_ids",
+      "column": "source_id"
+    },
+    {
+      "table": "grapes",
+      "column": "origin_country_id"
+    },
+    {
+      "table": "importers",
+      "column": "country_id"
+    },
+    {
+      "table": "label_designations",
+      "column": "country_id"
+    },
+    {
+      "table": "producer_biodiversity_certifications",
+      "column": "source_id"
+    },
+    {
+      "table": "producer_documents",
+      "column": "producer_id"
+    },
+    {
+      "table": "producer_documents",
+      "column": "source_id"
+    },
+    {
+      "table": "producer_farming_certifications",
+      "column": "source_id"
+    },
+    {
+      "table": "producer_importers",
+      "column": "source_id"
+    },
+    {
+      "table": "producer_timeline",
+      "column": "source_id"
+    },
+    {
+      "table": "retailers",
+      "column": "country_id"
+    },
+    {
+      "table": "soil_types",
+      "column": "parent_soil_type_id"
+    },
+    {
+      "table": "varietal_categories",
+      "column": "grape_id"
+    },
+    {
+      "table": "vineyards",
+      "column": "country_id"
+    },
+    {
+      "table": "wine_grapes",
+      "column": "percentage_source"
+    },
+    {
+      "table": "wine_insights",
+      "column": "vegetation_source"
+    },
+    {
+      "table": "wine_lookups",
+      "column": "wine_vintage_id"
+    },
+    {
+      "table": "wine_relationships",
+      "column": "source_id"
+    },
+    {
+      "table": "wine_vintage_descriptors",
+      "column": "source_id"
+    },
+    {
+      "table": "wine_vintage_documents",
+      "column": "source_id"
+    },
+    {
+      "table": "wine_vintage_documents",
+      "column": "wine_id"
+    },
+    {
+      "table": "wine_vintage_grapes",
+      "column": "percentage_source"
+    },
+    {
+      "table": "wine_vintage_grapes",
+      "column": "wine_vintage_id"
+    },
+    {
+      "table": "wine_vintage_insights",
+      "column": "critic_window_source"
+    },
+    {
+      "table": "wine_vintage_nv_components",
+      "column": "component_wine_id"
+    },
+    {
+      "table": "wine_vintage_nv_components",
+      "column": "source_id"
+    },
+    {
+      "table": "wine_vintage_nv_components",
+      "column": "wine_id"
+    },
+    {
+      "table": "wine_vintage_prices",
+      "column": "retailer_id"
+    },
+    {
+      "table": "wine_vintage_prices",
+      "column": "source_id"
+    },
+    {
+      "table": "wine_vintage_scores",
+      "column": "source_id"
+    },
+    {
+      "table": "wine_vintages",
+      "column": "chemical_data_source"
+    },
+    {
+      "table": "wine_vintages",
+      "column": "harvest_date_source"
+    },
+    {
+      "table": "wine_vintages",
+      "column": "release_price_source"
+    },
+    {
+      "table": "wine_vintages",
+      "column": "winemaking_source"
+    },
+    {
+      "table": "wines",
+      "column": "duplicate_of"
+    },
+    {
+      "table": "wines",
+      "column": "irrigation_type_source"
+    },
+    {
+      "table": "wines",
+      "column": "parent_wine_id"
+    },
+    {
+      "table": "wines",
+      "column": "region_id"
+    },
+    {
+      "table": "wines",
+      "column": "varietal_category_source"
+    }
+  ],
+  "duplicates": [
+    {
+      "table": "wines",
+      "columns": [
+        "name",
+        "producer_id"
+      ],
+      "description": "same name + producer",
+      "duplicate_groups": 12652
+    },
+    {
+      "table": "wine_grapes",
+      "columns": [
+        "wine_id",
+        "grape_id"
+      ],
+      "description": "same wine + grape",
+      "duplicate_groups": 0
+    },
+    {
+      "table": "external_ids",
+      "columns": [
+        "entity_id",
+        "system",
+        "external_id"
+      ],
+      "description": "same entity + system + value",
+      "duplicate_groups": 0
+    },
+    {
+      "table": "wine_label_designations",
+      "columns": [
+        "wine_id",
+        "label_designation_id"
+      ],
+      "description": "same wine + designation",
+      "duplicate_groups": 0
+    }
+  ],
+  "polymorphic_orphans": [],
+  "whitespace": [
+    {
+      "table": "appellations",
+      "column": "name",
+      "leading_trailing": 0,
+      "double_spaces": 1
+    },
+    {
+      "table": "grapes",
+      "column": "name",
+      "leading_trailing": 0,
+      "double_spaces": 2278
+    }
+  ],
+  "table_sizes": [
+    {
+      "table": "source_ttb_colas",
+      "total_bytes": 5113167872,
+      "est_rows": 3671906,
+      "pretty": "4876 MB"
+    },
+    {
+      "table": "wines",
+      "total_bytes": 812498944,
+      "est_rows": 517373,
+      "pretty": "775 MB"
+    },
+    {
+      "table": "xwines_wine_vintages",
+      "total_bytes": 468852736,
+      "est_rows": 2142139,
+      "pretty": "447 MB"
+    },
+    {
+      "table": "appellation_weather_months",
+      "total_bytes": 339574784,
+      "est_rows": 1567644,
+      "pretty": "324 MB"
+    },
+    {
+      "table": "xwines_wines",
+      "total_bytes": 309624832,
+      "est_rows": 529973,
+      "pretty": "295 MB"
+    },
+    {
+      "table": "source_pro_platform",
+      "total_bytes": 194748416,
+      "est_rows": 346080,
+      "pretty": "186 MB"
+    },
+    {
+      "table": "external_ids",
+      "total_bytes": 153600000,
+      "est_rows": 574909,
+      "pretty": "146 MB"
+    },
+    {
+      "table": "wine_vintages",
+      "total_bytes": 152133632,
+      "est_rows": 327508,
+      "pretty": "145 MB"
+    },
+    {
+      "table": "xwines_wine_vintage_scores",
+      "total_bytes": 125181952,
+      "est_rows": 310723,
+      "pretty": "119 MB"
+    },
+    {
+      "table": "source_lwin",
+      "total_bytes": 117653504,
+      "est_rows": 189359,
+      "pretty": "112 MB"
+    },
+    {
+      "table": "geographic_boundaries",
+      "total_bytes": 101064704,
+      "est_rows": 3153,
+      "pretty": "96 MB"
+    },
+    {
+      "table": "_tmp_wine_match",
+      "total_bytes": 84385792,
+      "est_rows": 490933,
+      "pretty": "80 MB"
+    },
+    {
+      "table": "source_tabc",
+      "total_bytes": 80248832,
+      "est_rows": 182933,
+      "pretty": "77 MB"
+    },
+    {
+      "table": "xwines_wine_candidates",
+      "total_bytes": 76103680,
+      "est_rows": 100646,
+      "pretty": "73 MB"
+    },
+    {
+      "table": "source_berliner",
+      "total_bytes": 52387840,
+      "est_rows": 73896,
+      "pretty": "50 MB"
+    }
+  ],
+  "dead_tuples": [
+    {
+      "table": "xwines_wine_vintages",
+      "live": 2170848,
+      "dead": 37933,
+      "dead_pct": 1.7
+    },
+    {
+      "table": "external_ids",
+      "live": 614762,
+      "dead": 37437,
+      "dead_pct": 6.1
+    },
+    {
+      "table": "source_ttb_colas",
+      "live": 3671906,
+      "dead": 25132,
+      "dead_pct": 0.7
+    },
+    {
+      "table": "wines",
+      "live": 517373,
+      "dead": 22639,
+      "dead_pct": 4.4
+    },
+    {
+      "table": "source_kansas_brands",
+      "live": 65476,
+      "dead": 12576,
+      "dead_pct": 19.2
+    },
+    {
+      "table": "producers",
+      "live": 41725,
+      "dead": 7149,
+      "dead_pct": 17.1
+    },
+    {
+      "table": "source_berliner",
+      "live": 73896,
+      "dead": 6614,
+      "dead_pct": 9.0
+    },
+    {
+      "table": "xwines_wine_vintage_scores",
+      "live": 306024,
+      "dead": 6061,
+      "dead_pct": 2.0
+    },
+    {
+      "table": "wine_vintages",
+      "live": 353565,
+      "dead": 2920,
+      "dead_pct": 0.8
+    },
+    {
+      "table": "xwines_wine_grapes",
+      "live": 314197,
+      "dead": 2838,
+      "dead_pct": 0.9
+    }
+  ]
+}
