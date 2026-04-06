@@ -1,0 +1,5789 @@
+{
+  "timestamp": "2026-04-06T13:41:54.147341",
+  "overall_score": 54.8,
+  "findability": {
+    "pct": 78.5,
+    "found": 161,
+    "total": 205
+  },
+  "depth": {
+    "pct": 31.1
+  },
+  "accuracy": null,
+  "story": null,
+  "blind_spots": [
+    {
+      "dimension": "country",
+      "value": "spain",
+      "miss_rate": 0.75,
+      "missed": 3,
+      "total": 4
+    }
+  ],
+  "benchmark_metadata": {
+    "seed": 42,
+    "target_size": 200,
+    "actual_size": 205,
+    "categories_sampled": [
+      "Premium wines $50-$100",
+      "Finger Lakes Riesling",
+      "Sonoma County Pinot Noir",
+      "Beaujolais"
+    ],
+    "sources": [
+      "haiku_core (65 wines)",
+      "haiku_category:Premium wines $50-$100 (35 wines)",
+      "haiku_category:Finger Lakes Riesling (35 wines)",
+      "haiku_category:Sonoma County Pinot Noir (35 wines)",
+      "haiku_category:Beaujolais (35 wines)"
+    ],
+    "generated_at": "2026-04-06T13:41:37.383536"
+  },
+  "benchmark_wines": [
+    {
+      "producer": "Yellow Tail",
+      "name": "Cabernet Sauvignon",
+      "country": "Australia",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Josh Cellars",
+      "name": "Cabernet Sauvignon",
+      "country": "US",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Barefoot",
+      "name": "Pinot Noir",
+      "country": "US",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "19 Crimes",
+      "name": "Red Blend",
+      "country": "Australia",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Apothic",
+      "name": "Cabernet Sauvignon",
+      "country": "US",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Columbia Crest",
+      "name": "Cabernet Sauvignon H3",
+      "country": "US",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Barefoot",
+      "name": "Sauvignon Blanc",
+      "country": "US",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Barefoot",
+      "name": "Pinot Grigio",
+      "country": "US",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Santa Margherita",
+      "name": "Pinot Grigio",
+      "country": "Italy",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Barefoot",
+      "name": "Chardonnay",
+      "country": "US",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Sutter Home",
+      "name": "Pinot Grigio",
+      "country": "US",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Barefoot",
+      "name": "Merlot",
+      "country": "US",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Menage a Trois",
+      "name": "Red Blend",
+      "country": "US",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Meiomi",
+      "name": "Pinot Noir",
+      "country": "US",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Silver Oak",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "country": "US",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Caymus",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "country": "US",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Stag's Leap",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "country": "US",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Decoy",
+      "name": "Cabernet Sauvignon",
+      "country": "US",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Duckhorn",
+      "name": "Merlot Napa Valley",
+      "country": "US",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Penfolds",
+      "name": "Grange",
+      "country": "Australia",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Penfolds",
+      "name": "Bin 149 Cabernet Sauvignon",
+      "country": "Australia",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Penfolds",
+      "name": "Max's Shiraz",
+      "country": "Australia",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Cloudy Bay",
+      "name": "Sauvignon Blanc",
+      "country": "New Zealand",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Oyster Bay",
+      "name": "Sauvignon Blanc",
+      "country": "New Zealand",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Kim Crawford",
+      "name": "Sauvignon Blanc",
+      "country": "New Zealand",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Stoneleigh",
+      "name": "Sauvignon Blanc",
+      "country": "New Zealand",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Torbreck",
+      "name": "Woodcutter's Shiraz",
+      "country": "Australia",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Cakebread",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "country": "US",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Opus One",
+      "name": "Bordeaux Blend Napa Valley",
+      "country": "US",
+      "color": "red",
+      "price_tier": "luxury",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Screaming Eagle",
+      "name": "Cabernet Sauvignon",
+      "country": "US",
+      "color": "red",
+      "price_tier": "luxury",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Domaine de la Roman\u00e9e-Conti",
+      "name": "Roman\u00e9e-Conti",
+      "country": "France",
+      "color": "red",
+      "price_tier": "luxury",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Henri Jayer",
+      "name": "Richebourg",
+      "country": "France",
+      "color": "red",
+      "price_tier": "luxury",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Petrus",
+      "name": "Pomerol",
+      "country": "France",
+      "color": "red",
+      "price_tier": "luxury",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Ch\u00e2teau Lafite Rothschild",
+      "name": "Pauillac",
+      "country": "France",
+      "color": "red",
+      "price_tier": "luxury",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Ch\u00e2teau Margaux",
+      "name": "Bordeaux",
+      "country": "France",
+      "color": "red",
+      "price_tier": "luxury",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Ch\u00e2teau Mouton Rothschild",
+      "name": "Pauillac",
+      "country": "France",
+      "color": "red",
+      "price_tier": "luxury",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Domaine Leflaive",
+      "name": "Puligny-Montrachet",
+      "country": "France",
+      "color": "white",
+      "price_tier": "premium",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Chablis",
+      "name": "William F\u00e8vre",
+      "country": "France",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Sancerre",
+      "name": "Cloudy Bay",
+      "country": "France",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Alsace Riesling",
+      "name": "Trimbach",
+      "country": "France",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Roederer",
+      "name": "Cristal",
+      "country": "France",
+      "color": "sparkling",
+      "price_tier": "luxury",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Bollinger",
+      "name": "Special Cuv\u00e9e",
+      "country": "France",
+      "color": "sparkling",
+      "price_tier": "premium",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Mo\u00ebt & Chandon",
+      "name": "Brut Imperial",
+      "country": "France",
+      "color": "sparkling",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Veuve Clicquot",
+      "name": "Yellow Label",
+      "country": "France",
+      "color": "sparkling",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Prosecco",
+      "name": "Zonin",
+      "country": "Italy",
+      "color": "sparkling",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Asti",
+      "name": "Moscato d'Asti",
+      "country": "Italy",
+      "color": "sparkling",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Cava",
+      "name": "Codorn\u00edu",
+      "country": "Spain",
+      "color": "sparkling",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Chianti Classico",
+      "name": "Antinori",
+      "country": "Italy",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Barolo",
+      "name": "Gaja",
+      "country": "Italy",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Barolo",
+      "name": "Luciano Sandrone",
+      "country": "Italy",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Brunello di Montalcino",
+      "name": "Biondi-Santi",
+      "country": "Italy",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Valpolicella Ripasso",
+      "name": "Allegrini",
+      "country": "Italy",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Rioja Reserva",
+      "name": "Marqu\u00e9s de C\u00e1ceres",
+      "country": "Spain",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Tempranillo",
+      "name": "Campo Viejo",
+      "country": "Spain",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Ribera del Duero",
+      "name": "Pesquera",
+      "country": "Spain",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Malbec",
+      "name": "Catena Zapata",
+      "country": "Argentina",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Malbec",
+      "name": "Trapiche",
+      "country": "Argentina",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Torront\u00e9s",
+      "name": "Cafayate",
+      "country": "Argentina",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Pinot Noir",
+      "name": "A to Z Wineworks",
+      "country": "US",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Pinot Noir",
+      "name": "Domaine Drouhin",
+      "country": "US",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Chardonnay",
+      "name": "Kendall-Jackson Vintner's Reserve",
+      "country": "US",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Riesling",
+      "name": "Chateau Ste. Michelle",
+      "country": "US",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Gew\u00fcrztraminer",
+      "name": "Pacific Rim",
+      "country": "US",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Ros\u00e9",
+      "name": "Whispering Angel",
+      "country": "France",
+      "color": "ros\u00e9",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Ros\u00e9",
+      "name": "Sancerre",
+      "country": "France",
+      "color": "ros\u00e9",
+      "price_tier": "midrange",
+      "source": "core",
+      "category": "core"
+    },
+    {
+      "producer": "Schrader",
+      "name": "Cabernet Sauvignon Old Sparky Napa Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Shafer",
+      "name": "Cabernet Sauvignon One Point Five Napa Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Prisoner Wine Company",
+      "name": "Red Blend Napa Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Heitz",
+      "name": "Cabernet Sauvignon Martha's Vineyard Napa Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Robert Mondavi",
+      "name": "Cabernet Sauvignon Reserve Napa Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Conundrum",
+      "name": "White Blend California",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Groth",
+      "name": "Cabernet Sauvignon Reserve Napa Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Stag's Leap",
+      "name": "Merlot Napa Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "V. Sattui",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Markham",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Benziger",
+      "name": "Cabernet Sauvignon Tribute Glen Ellen",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Blackstone",
+      "name": "Merlot Walla Walla Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Charles Smith",
+      "name": "Kung Fu Girl Riesling Washington",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Willamette Valley Vineyards",
+      "name": "Pinot Noir Estate Oregon",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "A.P. Vin",
+      "name": "Pinot Noir Washington",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Erath",
+      "name": "Pinot Noir Willamette Valley Oregon",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Ch\u00e2teau St. Jean",
+      "name": "Cabernet Sauvignon Cinq C\u00e9pages Sonoma County",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Rodney Strong",
+      "name": "Cabernet Sauvignon Reserve Sonoma County",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Benziger",
+      "name": "Pinot Noir Imagery Estate Sonoma County",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Buena Vista",
+      "name": "Cabernet Sauvignon Historic Sonoma County",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Talbott",
+      "name": "Chardonnay Sleepy Hollow Monterey County",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Morgan",
+      "name": "Pinot Noir Reserve Santa Lucia Highlands",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Calera",
+      "name": "Pinot Noir Central Coast",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Neyers",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Quivira",
+      "name": "Sauvignon Blanc Dry Creek Valley",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Ferrari-Carano",
+      "name": "Chardonnay Reserve Sonoma County",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Franciscan",
+      "name": "Cabernet Sauvignon Estate Napa Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Silverado Vineyards",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Domaines Barons de Rothschild",
+      "name": "Escudo Rojo Maipo Valley",
+      "country": "Chile",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Concha y Toro",
+      "name": "Cabernet Sauvignon Don Melchor Maipo Valley",
+      "country": "Chile",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Vi\u00f1a Santa Rita",
+      "name": "Cabernet Sauvignon Reserve Maipo Valley",
+      "country": "Chile",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Achaval-Ferrer",
+      "name": "Malbec Mendoza",
+      "country": "Argentina",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Norton",
+      "name": "Malbec Reserva Mendoza",
+      "country": "Argentina",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Susana Balbo",
+      "name": "Cabernet Sauvignon Bruja Negra Salta",
+      "country": "Argentina",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Alamos",
+      "name": "Cabernet Sauvignon Mendoza",
+      "country": "Argentina",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Premium wines $50-$100",
+      "category": "Premium wines $50-$100"
+    },
+    {
+      "producer": "Dr. Konstantin Frank",
+      "name": "Riesling Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Dr. Konstantin Frank",
+      "name": "Riesling Semi-Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Dr. Konstantin Frank",
+      "name": "Riesling Reserve",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "premium",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Glenora Wine Cellars",
+      "name": "Riesling Estate",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Glenora Wine Cellars",
+      "name": "Riesling Reserve",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "premium",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Heron Hill Vineyards",
+      "name": "Riesling Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Heron Hill Vineyards",
+      "name": "Riesling Semi-Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Heron Hill Vineyards",
+      "name": "Riesling Reserve",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Wagner Vineyards",
+      "name": "Riesling Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Wagner Vineyards",
+      "name": "Riesling Semi-Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Wagner Vineyards",
+      "name": "Riesling Ice Wine",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Cayuga Ridge Estate Winery",
+      "name": "Riesling Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Cayuga Ridge Estate Winery",
+      "name": "Riesling Reserve",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Standing Stone Vineyards",
+      "name": "Riesling Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Standing Stone Vineyards",
+      "name": "Riesling Off-Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Lakewood Vineyards",
+      "name": "Riesling Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Lakewood Vineyards",
+      "name": "Riesling Reserve Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Fox Run Vineyards",
+      "name": "Riesling Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Fox Run Vineyards",
+      "name": "Riesling Reserve",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "premium",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Hosmer Winery",
+      "name": "Riesling Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Hosmer Winery",
+      "name": "Riesling Select",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Knapp Vineyards",
+      "name": "Riesling Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Knapp Vineyards",
+      "name": "Riesling Reserve",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Sheldrake Point Vineyards",
+      "name": "Riesling Estate",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Sheldrake Point Vineyards",
+      "name": "Riesling Reserve",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "premium",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Red Newt Cellars",
+      "name": "Riesling Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Red Newt Cellars",
+      "name": "Riesling Reserve",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "premium",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Atwater Estate Vineyards",
+      "name": "Riesling Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Atwater Estate Vineyards",
+      "name": "Riesling Reserve",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Lamoreaux Landing Wine Cellars",
+      "name": "Riesling Estate",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "premium",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Lamoreaux Landing Wine Cellars",
+      "name": "Riesling Reserve",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "premium",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Seneca Lake Wine Trail",
+      "name": "Riesling Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Goose Watch Winery",
+      "name": "Riesling Dry",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "everyday",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Goose Watch Winery",
+      "name": "Riesling Reserve",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "midrange",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Forge Cellars",
+      "name": "Riesling Dry Lichen",
+      "country": "USA",
+      "color": "white",
+      "price_tier": "premium",
+      "source": "category:Finger Lakes Riesling",
+      "category": "Finger Lakes Riesling"
+    },
+    {
+      "producer": "Gary Farrell",
+      "name": "Pinot Noir Russian River Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Kosta Browne",
+      "name": "Pinot Noir Russian River Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Emeritus Vineyards",
+      "name": "Pinot Noir Russian River Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Dutton-Goldfield",
+      "name": "Pinot Noir Russian River Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Rochioli",
+      "name": "Pinot Noir Russian River Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Martinelli",
+      "name": "Pinot Noir Russian River Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Davis Bynum",
+      "name": "Pinot Noir Russian River Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Siduri",
+      "name": "Pinot Noir Sonoma Coast",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Fog Head",
+      "name": "Pinot Noir Sonoma Coast",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Pinot By Aubert",
+      "name": "Pinot Noir Sonoma Coast",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Arista Winery",
+      "name": "Pinot Noir Sonoma County",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Donelan Family Wines",
+      "name": "Pinot Noir Sonoma County",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Sunc\u00e9",
+      "name": "Pinot Noir Sonoma County",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Lynmar Estate",
+      "name": "Pinot Noir Russian River Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "J Vineyards & Winery",
+      "name": "Pinot Noir Russian River Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Sonoma-Cutrer",
+      "name": "Pinot Noir Russian River Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Truett-Hurst",
+      "name": "Pinot Noir Dry Creek Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Wilson Artisan Wines",
+      "name": "Pinot Noir Sonoma County",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Poppiano",
+      "name": "Pinot Noir Sonoma County",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "El Molino Vineyard",
+      "name": "Pinot Noir Pinot Noir Anderson Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Peay Vineyards",
+      "name": "Pinot Noir Sonoma Coast",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Failla",
+      "name": "Pinot Noir Sonoma Coast",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Coastlands",
+      "name": "Pinot Noir Sonoma Coast",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Anthill Farms",
+      "name": "Pinot Noir Sonoma County",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Littorai",
+      "name": "Pinot Noir Sonoma Coast",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Three Sticks",
+      "name": "Pinot Noir Sonoma Coast",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Hartford Court",
+      "name": "Pinot Noir Russian River Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Copain",
+      "name": "Pinot Noir Sonoma Coast",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Goldeneye",
+      "name": "Pinot Noir Anderson Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Scribe",
+      "name": "Pinot Noir Sonoma County",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "La Crema",
+      "name": "Pinot Noir Sonoma Coast",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Sebastiani",
+      "name": "Pinot Noir Sonoma County",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Kendall-Jackson",
+      "name": "Pinot Noir Vintner's Reserve Sonoma County",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Trentadue",
+      "name": "Pinot Noir Dry Creek Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Moshin Vineyards",
+      "name": "Pinot Noir Russian River Valley",
+      "country": "USA",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Sonoma County Pinot Noir",
+      "category": "Sonoma County Pinot Noir"
+    },
+    {
+      "producer": "Maison Duboeuf",
+      "name": "Beaujolais Cru Morgon",
+      "country": "France",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Maison Duboeuf",
+      "name": "Beaujolais Cru Moulin-\u00e0-Vent",
+      "country": "France",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Maison Duboeuf",
+      "name": "Beaujolais Cru Fleurie",
+      "country": "France",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Maison Duboeuf",
+      "name": "Beaujolais Cru C\u00f4te de Brouilly",
+      "country": "France",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Maison Duboeuf",
+      "name": "Beaujolais Cru Brouilly",
+      "country": "France",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Maison Duboeuf",
+      "name": "Beaujolais Nouveau",
+      "country": "France",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Georges Duboeuf",
+      "name": "Beaujolais Cru R\u00e9gni\u00e9",
+      "country": "France",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Georges Duboeuf",
+      "name": "Beaujolais Cru Chiroubles",
+      "country": "France",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Georges Duboeuf",
+      "name": "Beaujolais Cru C\u00f4tes de Fontaines",
+      "country": "France",
+      "color": "red",
+      "price_tier": "everyday",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Louis Jadot",
+      "name": "Beaujolais Cru Moulin-\u00e0-Vent",
+      "country": "France",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Louis Jadot",
+      "name": "Beaujolais Cru Morgon",
+      "country": "France",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Louis Jadot",
+      "name": "Beaujolais Cru Fleurie",
+      "country": "France",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Ch\u00e2teau de la Chaize",
+      "name": "Beaujolais Cru Brouilly",
+      "country": "France",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine Huet",
+      "name": "Beaujolais Cru C\u00f4te de Brouilly",
+      "country": "France",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine Thillardon",
+      "name": "Beaujolais Cru Brouilly",
+      "country": "France",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Jean Descombes",
+      "name": "Beaujolais Cru Morgon",
+      "country": "France",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Ch\u00e2teau des Tours",
+      "name": "Beaujolais Cru Oingt",
+      "country": "France",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine Calot",
+      "name": "Beaujolais Cru Fleurie",
+      "country": "France",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Maison Joseph Drouhin",
+      "name": "Beaujolais Cru Moulin-\u00e0-Vent",
+      "country": "France",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine de la Ravini\u00e8re",
+      "name": "Beaujolais Cru Saint-Amour",
+      "country": "France",
+      "color": "red",
+      "price_tier": "midrange",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine des Diables",
+      "name": "Beaujolais Cru Fleurie",
+      "country": "France",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine Michel Chignard",
+      "name": "Beaujolais Cru Morgon",
+      "country": "France",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine Yvon M\u00e9tras",
+      "name": "Beaujolais Cru Fleurie",
+      "country": "France",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Clos de la Rollette",
+      "name": "Beaujolais Cru Fleurie",
+      "country": "France",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine Th\u00e9o Renault",
+      "name": "Beaujolais Cru Brouilly",
+      "country": "France",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine de la C\u00f4te",
+      "name": "Beaujolais Cru R\u00e9gni\u00e9",
+      "country": "France",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Ch\u00e2teau de Pizay",
+      "name": "Beaujolais Cru Morgon",
+      "country": "France",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine de la Tour du Bief",
+      "name": "Beaujolais Cru Chiroubles",
+      "country": "France",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine Hubert Laporte",
+      "name": "Beaujolais Cru C\u00f4te de Brouilly",
+      "country": "France",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine Joseph Chamonard",
+      "name": "Beaujolais Cru Fleurie",
+      "country": "France",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine Faiveley",
+      "name": "Beaujolais Cru Moulin-\u00e0-Vent",
+      "country": "France",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine Vissoux",
+      "name": "Beaujolais Cru Fleurie",
+      "country": "France",
+      "color": "red",
+      "price_tier": "premium",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine Piron",
+      "name": "Beaujolais Cru Morgon",
+      "country": "France",
+      "color": "red",
+      "price_tier": "luxury",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine Lafont",
+      "name": "Beaujolais Cru Fleurie",
+      "country": "France",
+      "color": "red",
+      "price_tier": "luxury",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    },
+    {
+      "producer": "Domaine Sapp\u00e9",
+      "name": "Beaujolais Cru Brouilly",
+      "country": "France",
+      "color": "red",
+      "price_tier": "luxury",
+      "source": "category:Beaujolais",
+      "category": "Beaujolais"
+    }
+  ],
+  "findability_detail": [
+    {
+      "producer": "Yellow Tail",
+      "name": "Cabernet Sauvignon",
+      "status": "found",
+      "match_wine": "Cabernet Sauvignon 2x",
+      "match_producer": "Yellow Tail",
+      "confidence": 0.863636
+    },
+    {
+      "producer": "Josh Cellars",
+      "name": "Cabernet Sauvignon",
+      "status": "found",
+      "match_wine": "Cabernet Sauvignon, California",
+      "match_producer": "Josh",
+      "confidence": 0.678571
+    },
+    {
+      "producer": "Barefoot",
+      "name": "Pinot Noir",
+      "status": "found",
+      "match_wine": "Pinot Noir 4x",
+      "match_producer": "Barefoot",
+      "confidence": 0.785714
+    },
+    {
+      "producer": "19 Crimes",
+      "name": "Red Blend",
+      "status": "found",
+      "match_wine": "The Warden Red Blend",
+      "match_producer": "19 Crimes",
+      "confidence": 0.47619
+    },
+    {
+      "producer": "Apothic",
+      "name": "Cabernet Sauvignon",
+      "status": "found",
+      "match_wine": "Apothic Cabernet Sauvignon",
+      "match_producer": "Apothic",
+      "confidence": 0.703704
+    },
+    {
+      "producer": "Columbia Crest",
+      "name": "Cabernet Sauvignon H3",
+      "status": "found",
+      "match_wine": "H3 Cabernet Sauvignon",
+      "match_producer": "Columbia Crest",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Barefoot",
+      "name": "Sauvignon Blanc",
+      "status": "found",
+      "match_wine": "Sauvignon Blanc 2x",
+      "match_producer": "Barefoot",
+      "confidence": 0.842105
+    },
+    {
+      "producer": "Barefoot",
+      "name": "Pinot Grigio",
+      "status": "found",
+      "match_wine": "Pink Pinot Grigio",
+      "match_producer": "Barefoot",
+      "confidence": 0.866667
+    },
+    {
+      "producer": "Santa Margherita",
+      "name": "Pinot Grigio",
+      "status": "found",
+      "match_wine": "Pinot Grig0",
+      "match_producer": "Santa Margherita",
+      "confidence": 0.666667
+    },
+    {
+      "producer": "Barefoot",
+      "name": "Chardonnay",
+      "status": "found",
+      "match_wine": "Chardonnay 4x",
+      "match_producer": "Barefoot",
+      "confidence": 0.785714
+    },
+    {
+      "producer": "Sutter Home",
+      "name": "Pinot Grigio",
+      "status": "found",
+      "match_wine": "Pinot Grigio 4x",
+      "match_producer": "Sutter Home",
+      "confidence": 0.8125
+    },
+    {
+      "producer": "Barefoot",
+      "name": "Merlot",
+      "status": "found",
+      "match_wine": "Merlot 2x",
+      "match_producer": "Barefoot",
+      "confidence": 0.7
+    },
+    {
+      "producer": "Menage a Trois",
+      "name": "Red Blend",
+      "status": "found",
+      "match_wine": "Red Blend Silk Soft",
+      "match_producer": "Menage a Trois",
+      "confidence": 0.526316
+    },
+    {
+      "producer": "Meiomi",
+      "name": "Pinot Noir",
+      "status": "found",
+      "match_wine": "Pinot Noir",
+      "match_producer": "Meiomi",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Silver Oak",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "status": "found",
+      "match_wine": "Cabernet Sauvignon, Napa Valley",
+      "match_producer": "Silver Oak",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Caymus",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "status": "found",
+      "match_wine": "Cabernet Sauvignon, Napa Valley",
+      "match_producer": "Caymus",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Stag's Leap",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "status": "found",
+      "match_wine": "Wine Cellars Artemis Cabernet Sauvignon",
+      "match_producer": "Stag's Leap",
+      "confidence": 0.372549
+    },
+    {
+      "producer": "Decoy",
+      "name": "Cabernet Sauvignon",
+      "status": "found",
+      "match_wine": "Cabernet Sauvignon, Sonoma County",
+      "match_producer": "Decoy",
+      "confidence": 0.612903
+    },
+    {
+      "producer": "Duckhorn",
+      "name": "Merlot Napa Valley",
+      "status": "found",
+      "match_wine": "Duckhorn Merlot Napa Valley",
+      "match_producer": "Duckhorn",
+      "confidence": 0.678571
+    },
+    {
+      "producer": "Penfolds",
+      "name": "Grange",
+      "status": "found",
+      "match_wine": "Grange Mag",
+      "match_producer": "Penfolds",
+      "confidence": 0.636364
+    },
+    {
+      "producer": "Penfolds",
+      "name": "Bin 149 Cabernet Sauvignon",
+      "status": "found",
+      "match_wine": "Penfolds Bin 149 Cabernet Sauvignon",
+      "match_producer": "Penfolds",
+      "confidence": 0.75
+    },
+    {
+      "producer": "Penfolds",
+      "name": "Max's Shiraz",
+      "status": "found",
+      "match_wine": "Max'S Shiraz/Cab",
+      "match_producer": "Penfolds",
+      "confidence": 0.75
+    },
+    {
+      "producer": "Cloudy Bay",
+      "name": "Sauvignon Blanc",
+      "status": "found",
+      "match_wine": "Sauv Blanc",
+      "match_producer": "Cloudy Bay",
+      "confidence": 0.588235
+    },
+    {
+      "producer": "Oyster Bay",
+      "name": "Sauvignon Blanc",
+      "status": "found",
+      "match_wine": "Sauvignon Blanc, Marlborough",
+      "match_producer": "Oyster Bay",
+      "confidence": 0.571429
+    },
+    {
+      "producer": "Kim Crawford",
+      "name": "Sauvignon Blanc",
+      "status": "found",
+      "match_wine": "Sauvignon Blanc, Marlborough",
+      "match_producer": "Kim Crawford",
+      "confidence": 0.571429
+    },
+    {
+      "producer": "Stoneleigh",
+      "name": "Sauvignon Blanc",
+      "status": "found",
+      "match_wine": "Sauvignon Blanc, Marlborough",
+      "match_producer": "Stoneleigh",
+      "confidence": 0.571429
+    },
+    {
+      "producer": "Torbreck",
+      "name": "Woodcutter's Shiraz",
+      "status": "found",
+      "match_wine": "Torbreck Woodcutter's Shiraz",
+      "match_producer": "Torbreck",
+      "confidence": 0.678571
+    },
+    {
+      "producer": "Cakebread",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "status": "found",
+      "match_wine": "Cabernet Sauvignon Napa Valley",
+      "match_producer": "Cakebread",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Opus One",
+      "name": "Bordeaux Blend Napa Valley",
+      "status": "found",
+      "match_wine": "Napa Valley",
+      "match_producer": "Opus One",
+      "confidence": 0.461538
+    },
+    {
+      "producer": "Screaming Eagle",
+      "name": "Cabernet Sauvignon",
+      "status": "found",
+      "match_wine": "Cabernet Sauvignon, Oakville",
+      "match_producer": "Screaming Eagle",
+      "confidence": 0.678571
+    },
+    {
+      "producer": "Domaine de la Roman\u00e9e-Conti",
+      "name": "Roman\u00e9e-Conti",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Romanee Conti",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Henri Jayer",
+      "name": "Richebourg",
+      "status": "found",
+      "match_wine": "Richebourg Grand Cru",
+      "match_producer": "Henri Jayer",
+      "confidence": 0.52381
+    },
+    {
+      "producer": "Petrus",
+      "name": "Pomerol",
+      "status": "found",
+      "match_wine": "Pomerol",
+      "match_producer": "Petrus",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Ch\u00e2teau Lafite Rothschild",
+      "name": "Pauillac",
+      "status": "found",
+      "match_wine": "Pauillac",
+      "match_producer": "Chateau Lafite Rothschild",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Ch\u00e2teau Margaux",
+      "name": "Bordeaux",
+      "status": "found",
+      "match_wine": "Pavillon Blanc Second Vin, Bordeaux",
+      "match_producer": "Chateau Margaux",
+      "confidence": 0.6
+    },
+    {
+      "producer": "Ch\u00e2teau Mouton Rothschild",
+      "name": "Pauillac",
+      "status": "found",
+      "match_wine": "Pauillac",
+      "match_producer": "Chateau Mouton Rothschild",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Domaine Leflaive",
+      "name": "Puligny-Montrachet",
+      "status": "found",
+      "match_wine": "Puligny-Montrachet",
+      "match_producer": "Domaine Leflaive",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Chablis",
+      "name": "William F\u00e8vre",
+      "status": "found",
+      "match_wine": "Monmain Chablis 1er Gerard",
+      "match_producer": "Chablis 1Er Cru",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Sancerre",
+      "name": "Cloudy Bay",
+      "status": "found",
+      "match_wine": "Ch\u00e2teau de Sancerre 2018 Sauvignon Blanc Sancerre, France",
+      "match_producer": "Chateau de Sancerre",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Alsace Riesling",
+      "name": "Trimbach",
+      "status": "found",
+      "match_wine": "Alsace",
+      "match_producer": "Riesling",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Roederer",
+      "name": "Cristal",
+      "status": "found",
+      "match_wine": "Cristal",
+      "match_producer": "Louis Roederer",
+      "confidence": 0.6
+    },
+    {
+      "producer": "Bollinger",
+      "name": "Special Cuv\u00e9e",
+      "status": "found",
+      "match_wine": "Special Cuvee",
+      "match_producer": "Bollinger",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Mo\u00ebt & Chandon",
+      "name": "Brut Imperial",
+      "status": "found",
+      "match_wine": "Brut",
+      "match_producer": "Moet & Chandon",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Veuve Clicquot",
+      "name": "Yellow Label",
+      "status": "found",
+      "match_wine": "Yellow Label Brut",
+      "match_producer": "Veuve Clicquot",
+      "confidence": 0.722222
+    },
+    {
+      "producer": "Prosecco",
+      "name": "Zonin",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Prose",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Asti",
+      "name": "Moscato d'Asti",
+      "status": "found",
+      "match_wine": "Astica Cabernet Sauvignon",
+      "match_producer": "Astica",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Cava",
+      "name": "Codorn\u00edu",
+      "status": "found",
+      "match_wine": "Vena Cava Rose (Nieto)",
+      "match_producer": "Vena Cava",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Chianti Classico",
+      "name": "Antinori",
+      "status": "not_found",
+      "match_wine": null,
+      "match_producer": null,
+      "confidence": 0.0
+    },
+    {
+      "producer": "Barolo",
+      "name": "Gaja",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Boroli Barolo",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Barolo",
+      "name": "Luciano Sandrone",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Boroli Barolo",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Brunello di Montalcino",
+      "name": "Biondi-Santi",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Brunello di Montalcino",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Valpolicella Ripasso",
+      "name": "Allegrini",
+      "status": "not_found",
+      "match_wine": null,
+      "match_producer": null,
+      "confidence": 0.0
+    },
+    {
+      "producer": "Rioja Reserva",
+      "name": "Marqu\u00e9s de C\u00e1ceres",
+      "status": "not_found",
+      "match_wine": null,
+      "match_producer": null,
+      "confidence": 0.0
+    },
+    {
+      "producer": "Tempranillo",
+      "name": "Campo Viejo",
+      "status": "not_found",
+      "match_wine": null,
+      "match_producer": null,
+      "confidence": 0.0
+    },
+    {
+      "producer": "Ribera del Duero",
+      "name": "Pesquera",
+      "status": "not_found",
+      "match_wine": null,
+      "match_producer": null,
+      "confidence": 0.0
+    },
+    {
+      "producer": "Malbec",
+      "name": "Catena Zapata",
+      "status": "found",
+      "match_wine": "Copper Moon - Malbec",
+      "match_producer": "Chateau Malbec",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Malbec",
+      "name": "Trapiche",
+      "status": "found",
+      "match_wine": "Copper Moon - Malbec",
+      "match_producer": "Chateau Malbec",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Torront\u00e9s",
+      "name": "Cafayate",
+      "status": "not_found",
+      "match_wine": null,
+      "match_producer": null,
+      "confidence": 0.0
+    },
+    {
+      "producer": "Pinot Noir",
+      "name": "A to Z Wineworks",
+      "status": "found",
+      "match_wine": "Bask - Pinot Noir",
+      "match_producer": "Domaine Pinot Noir",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Pinot Noir",
+      "name": "Domaine Drouhin",
+      "status": "found",
+      "match_wine": "Bask - Pinot Noir",
+      "match_producer": "Domaine Pinot Noir",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Chardonnay",
+      "name": "Kendall-Jackson Vintner's Reserve",
+      "status": "found",
+      "match_wine": "Bartier Bros. - Chardonnay",
+      "match_producer": "Domaine Chardonnay",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Riesling",
+      "name": "Chateau Ste. Michelle",
+      "status": "found",
+      "match_wine": "50Th Parallel Estate - Riesling",
+      "match_producer": "Riesling",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Gew\u00fcrztraminer",
+      "name": "Pacific Rim",
+      "status": "found",
+      "match_wine": "Gray Monk - Gewurztraminer",
+      "match_producer": "Gewurztraminer",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Ros\u00e9",
+      "name": "Whispering Angel",
+      "status": "found",
+      "match_wine": "Bask - Rose",
+      "match_producer": "Rose",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Ros\u00e9",
+      "name": "Sancerre",
+      "status": "found",
+      "match_wine": "Bask - Rose",
+      "match_producer": "Rose",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Schrader",
+      "name": "Cabernet Sauvignon Old Sparky Napa Valley",
+      "status": "found",
+      "match_wine": "Old Sparky Cabernet Sauvignon, Napa Valley",
+      "match_producer": "Schrader",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Shafer",
+      "name": "Cabernet Sauvignon One Point Five Napa Valley",
+      "status": "found",
+      "match_wine": "Cabernet Sauvignon, Napa Valley",
+      "match_producer": "Shafer",
+      "confidence": 0.673913
+    },
+    {
+      "producer": "Prisoner Wine Company",
+      "name": "Red Blend Napa Valley",
+      "status": "found",
+      "match_wine": "2018 Prisoner Red Blend Napa Valley, California",
+      "match_producer": "The Prisoner Wine Company",
+      "confidence": 0.468085
+    },
+    {
+      "producer": "Heitz",
+      "name": "Cabernet Sauvignon Martha's Vineyard Napa Valley",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Heitz & Knod",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Robert Mondavi",
+      "name": "Cabernet Sauvignon Reserve Napa Valley",
+      "status": "found",
+      "match_wine": "Reserve Cabernet Sauvignon, Napa Valley",
+      "match_producer": "Robert Mondavi",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Conundrum",
+      "name": "White Blend California",
+      "status": "found",
+      "match_wine": "White, California",
+      "match_producer": "Conundrum",
+      "confidence": 0.73913
+    },
+    {
+      "producer": "Groth",
+      "name": "Cabernet Sauvignon Reserve Napa Valley",
+      "status": "found",
+      "match_wine": "Reserve Cabernet Sauvignon, Napa Valley",
+      "match_producer": "Groth",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Stag's Leap",
+      "name": "Merlot Napa Valley",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Stag's Leap",
+      "confidence": 0.0
+    },
+    {
+      "producer": "V. Sattui",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "status": "found",
+      "match_wine": "Sattui Family Cabernet Sauvignon, Napa Valley",
+      "match_producer": "V. Sattui Winery",
+      "confidence": 0.5625
+    },
+    {
+      "producer": "Markham",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "status": "found",
+      "match_wine": "Markham Cabernet Sauvignon",
+      "match_producer": "Markham",
+      "confidence": 0.487179
+    },
+    {
+      "producer": "Benziger",
+      "name": "Cabernet Sauvignon Tribute Glen Ellen",
+      "status": "found",
+      "match_wine": "Cabernet Sauvignon, Sonoma County",
+      "match_producer": "Benziger",
+      "confidence": 0.395833
+    },
+    {
+      "producer": "Blackstone",
+      "name": "Merlot Walla Walla Valley",
+      "status": "found",
+      "match_wine": "Merlot Napa Valley",
+      "match_producer": "Blackstone",
+      "confidence": 0.583333
+    },
+    {
+      "producer": "Charles Smith",
+      "name": "Kung Fu Girl Riesling Washington",
+      "status": "found",
+      "match_wine": "Kung Fu Girl Riesling",
+      "match_producer": "Charles Smith",
+      "confidence": 0.677419
+    },
+    {
+      "producer": "Willamette Valley Vineyards",
+      "name": "Pinot Noir Estate Oregon",
+      "status": "found",
+      "match_wine": "Estate Pinot Noir",
+      "match_producer": "Willamette Valley Vineyards",
+      "confidence": 0.666667
+    },
+    {
+      "producer": "A.P. Vin",
+      "name": "Pinot Noir Washington",
+      "status": "not_found",
+      "match_wine": null,
+      "match_producer": null,
+      "confidence": 0.0
+    },
+    {
+      "producer": "Erath",
+      "name": "Pinot Noir Willamette Valley Oregon",
+      "status": "found",
+      "match_wine": "Leland Pinot Noir, Willamette Valley",
+      "match_producer": "Erath",
+      "confidence": 0.674419
+    },
+    {
+      "producer": "Ch\u00e2teau St. Jean",
+      "name": "Cabernet Sauvignon Cinq C\u00e9pages Sonoma County",
+      "status": "found",
+      "match_wine": "Cinq Cepages, Sonoma County",
+      "match_producer": "Chateau St. Jean",
+      "confidence": 0.595238
+    },
+    {
+      "producer": "Rodney Strong",
+      "name": "Cabernet Sauvignon Reserve Sonoma County",
+      "status": "found",
+      "match_wine": "Reserve Cabernet Sauvignon",
+      "match_producer": "Rodney Strong",
+      "confidence": 0.692308
+    },
+    {
+      "producer": "Benziger",
+      "name": "Pinot Noir Imagery Estate Sonoma County",
+      "status": "found",
+      "match_wine": "PINOT NOIR, Sonoma Mountain",
+      "match_producer": "Benziger",
+      "confidence": 0.326531
+    },
+    {
+      "producer": "Buena Vista",
+      "name": "Cabernet Sauvignon Historic Sonoma County",
+      "status": "found",
+      "match_wine": "Cabernet Sauvignon, Sonoma County",
+      "match_producer": "Buena Vista",
+      "confidence": 0.775
+    },
+    {
+      "producer": "Talbott",
+      "name": "Chardonnay Sleepy Hollow Monterey County",
+      "status": "found",
+      "match_wine": "Sleepy Hollow Vineyard Chardonnay, Monterey",
+      "match_producer": "Talbott",
+      "confidence": 0.708333
+    },
+    {
+      "producer": "Morgan",
+      "name": "Pinot Noir Reserve Santa Lucia Highlands",
+      "status": "found",
+      "match_wine": "Twelve Clones Pinot Noir, Santa Lucia Highlands",
+      "match_producer": "Morgan",
+      "confidence": 0.62963
+    },
+    {
+      "producer": "Calera",
+      "name": "Pinot Noir Central Coast",
+      "status": "found",
+      "match_wine": "Pinot Noir, Central Coast",
+      "match_producer": "Calera",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Neyers",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "status": "found",
+      "match_wine": "Napa Valley Cabernet Sauvignon",
+      "match_producer": "Neyers",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Quivira",
+      "name": "Sauvignon Blanc Dry Creek Valley",
+      "status": "found",
+      "match_wine": "Sauvignon Blanc, Dry Creek Valley",
+      "match_producer": "Quivira",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Ferrari-Carano",
+      "name": "Chardonnay Reserve Sonoma County",
+      "status": "found",
+      "match_wine": "Sonoma County Chardonnay",
+      "match_producer": "Ferrari-Carano",
+      "confidence": 0.75
+    },
+    {
+      "producer": "Franciscan",
+      "name": "Cabernet Sauvignon Estate Napa Valley",
+      "status": "found",
+      "match_wine": "Estate Cabernet Sauvignon",
+      "match_producer": "Franciscan",
+      "confidence": 0.684211
+    },
+    {
+      "producer": "Silverado Vineyards",
+      "name": "Cabernet Sauvignon Napa Valley",
+      "status": "found",
+      "match_wine": "Silver Gate Cabernet Sauvignon California",
+      "match_producer": "Silver",
+      "confidence": 0.372549
+    },
+    {
+      "producer": "Domaines Barons de Rothschild",
+      "name": "Escudo Rojo Maipo Valley",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Les Domaines Barons de Rothschild Lafite",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Concha y Toro",
+      "name": "Cabernet Sauvignon Don Melchor Maipo Valley",
+      "status": "found",
+      "match_wine": "Gravas Cabernet Sauvignon, Maipo Valley",
+      "match_producer": "Concha Y Toro",
+      "confidence": 0.653061
+    },
+    {
+      "producer": "Vi\u00f1a Santa Rita",
+      "name": "Cabernet Sauvignon Reserve Maipo Valley",
+      "status": "found",
+      "match_wine": "Cabernet Sauvignon Reserva, Maipo Valley",
+      "match_producer": "Santa Rita",
+      "confidence": 0.904762
+    },
+    {
+      "producer": "Achaval-Ferrer",
+      "name": "Malbec Mendoza",
+      "status": "found",
+      "match_wine": "Malbec Finca Mirador, Mendoza",
+      "match_producer": "Achaval-Ferrer",
+      "confidence": 0.518519
+    },
+    {
+      "producer": "Norton",
+      "name": "Malbec Reserva Mendoza",
+      "status": "found",
+      "match_wine": "Malbec Reserva Mendoza",
+      "match_producer": "Bodega Norton",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Susana Balbo",
+      "name": "Cabernet Sauvignon Bruja Negra Salta",
+      "status": "found",
+      "match_wine": "Crios Cabernet Sauvignon, Mendoza",
+      "match_producer": "Susana Balbo",
+      "confidence": 0.395833
+    },
+    {
+      "producer": "Alamos",
+      "name": "Cabernet Sauvignon Mendoza",
+      "status": "found",
+      "match_wine": "Cabernet Sauvignon, Mendoza",
+      "match_producer": "Alamos",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Dr. Konstantin Frank",
+      "name": "Riesling Dry",
+      "status": "found",
+      "match_wine": "Riesling Dry, Finger Lakes",
+      "match_producer": "Dr. Konstantin Frank",
+      "confidence": 0.52
+    },
+    {
+      "producer": "Dr. Konstantin Frank",
+      "name": "Riesling Semi-Dry",
+      "status": "found",
+      "match_wine": "Semi-Dry Riesling, Finger Lakes",
+      "match_producer": "Dr. Konstantin Frank",
+      "confidence": 0.6
+    },
+    {
+      "producer": "Dr. Konstantin Frank",
+      "name": "Riesling Reserve",
+      "status": "found",
+      "match_wine": "Riesling Reserve, Finger Lakes",
+      "match_producer": "Dr. Konstantin Frank",
+      "confidence": 0.571429
+    },
+    {
+      "producer": "Glenora Wine Cellars",
+      "name": "Riesling Estate",
+      "status": "found",
+      "match_wine": "Jazz Riesling",
+      "match_producer": "Glenora",
+      "confidence": 0.428571
+    },
+    {
+      "producer": "Glenora Wine Cellars",
+      "name": "Riesling Reserve",
+      "status": "found",
+      "match_wine": "Neptunes Reserve Riesling",
+      "match_producer": "Glenora",
+      "confidence": 0.615385
+    },
+    {
+      "producer": "Heron Hill Vineyards",
+      "name": "Riesling Dry",
+      "status": "found",
+      "match_wine": "Semi-Dry Riesling",
+      "match_producer": "Heron Hill",
+      "confidence": 0.722222
+    },
+    {
+      "producer": "Heron Hill Vineyards",
+      "name": "Riesling Semi-Dry",
+      "status": "found",
+      "match_wine": "Semi-Dry Riesling",
+      "match_producer": "Heron Hill",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Heron Hill Vineyards",
+      "name": "Riesling Reserve",
+      "status": "found",
+      "match_wine": "Riesling Reserve, Finger Lakes",
+      "match_producer": "Heron Hill",
+      "confidence": 0.571429
+    },
+    {
+      "producer": "Wagner Vineyards",
+      "name": "Riesling Dry",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Wagner",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Wagner Vineyards",
+      "name": "Riesling Semi-Dry",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Wagner",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Wagner Vineyards",
+      "name": "Riesling Ice Wine",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Wagner",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Cayuga Ridge Estate Winery",
+      "name": "Riesling Dry",
+      "status": "not_found",
+      "match_wine": null,
+      "match_producer": null,
+      "confidence": 0.0
+    },
+    {
+      "producer": "Cayuga Ridge Estate Winery",
+      "name": "Riesling Reserve",
+      "status": "not_found",
+      "match_wine": null,
+      "match_producer": null,
+      "confidence": 0.0
+    },
+    {
+      "producer": "Standing Stone Vineyards",
+      "name": "Riesling Dry",
+      "status": "found",
+      "match_wine": "Riesling Timeline Dry",
+      "match_producer": "Standing Stone Vineyards",
+      "confidence": 0.565217
+    },
+    {
+      "producer": "Standing Stone Vineyards",
+      "name": "Riesling Off-Dry",
+      "status": "found",
+      "match_wine": "Riesling Timeline Dry",
+      "match_producer": "Standing Stone Vineyards",
+      "confidence": 0.52
+    },
+    {
+      "producer": "Lakewood Vineyards",
+      "name": "Riesling Dry",
+      "status": "found",
+      "match_wine": "Dry Riesling, Finger Lakes",
+      "match_producer": "Lakewood Vineyards",
+      "confidence": 0.473684
+    },
+    {
+      "producer": "Lakewood Vineyards",
+      "name": "Riesling Reserve Dry",
+      "status": "found",
+      "match_wine": "Dry Riesling, Finger Lakes",
+      "match_producer": "Lakewood Vineyards",
+      "confidence": 0.40625
+    },
+    {
+      "producer": "Fox Run Vineyards",
+      "name": "Riesling Dry",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Fox Run",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Fox Run Vineyards",
+      "name": "Riesling Reserve",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Fox Run",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Hosmer Winery",
+      "name": "Riesling Dry",
+      "status": "found",
+      "match_wine": "Dry Riesling, Cayuga Lake",
+      "match_producer": "Hosmer",
+      "confidence": 0.52
+    },
+    {
+      "producer": "Hosmer Winery",
+      "name": "Riesling Select",
+      "status": "found",
+      "match_wine": "Dry Riesling, Cayuga Lake",
+      "match_producer": "Hosmer",
+      "confidence": 0.45
+    },
+    {
+      "producer": "Knapp Vineyards",
+      "name": "Riesling Dry",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Knapp",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Knapp Vineyards",
+      "name": "Riesling Reserve",
+      "status": "found",
+      "match_wine": "Pasta Red Reserve",
+      "match_producer": "Knapp",
+      "confidence": 0.333333
+    },
+    {
+      "producer": "Sheldrake Point Vineyards",
+      "name": "Riesling Estate",
+      "status": "found",
+      "match_wine": "Reserve Riesling",
+      "match_producer": "Sheldrake Point",
+      "confidence": 0.391304
+    },
+    {
+      "producer": "Sheldrake Point Vineyards",
+      "name": "Riesling Reserve",
+      "status": "found",
+      "match_wine": "Reserve Riesling",
+      "match_producer": "Sheldrake Point",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Red Newt Cellars",
+      "name": "Riesling Dry",
+      "status": "found",
+      "match_wine": "Riesling Dry, Finger Lakes",
+      "match_producer": "Red Newt",
+      "confidence": 0.52
+    },
+    {
+      "producer": "Red Newt Cellars",
+      "name": "Riesling Reserve",
+      "status": "found",
+      "match_wine": "RESERVE, Finger Lakes",
+      "match_producer": "Red Newt",
+      "confidence": 0.333333
+    },
+    {
+      "producer": "Atwater Estate Vineyards",
+      "name": "Riesling Dry",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Atwater Estate Vineyards",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Atwater Estate Vineyards",
+      "name": "Riesling Reserve",
+      "status": "found",
+      "match_wine": "Reserve Red",
+      "match_producer": "Atwater Estate Vineyards",
+      "confidence": 0.444444
+    },
+    {
+      "producer": "Lamoreaux Landing Wine Cellars",
+      "name": "Riesling Estate",
+      "status": "found",
+      "match_wine": "Riesling Late Harvest",
+      "match_producer": "Lamoreaux Landing",
+      "confidence": 0.461538
+    },
+    {
+      "producer": "Lamoreaux Landing Wine Cellars",
+      "name": "Riesling Reserve",
+      "status": "found",
+      "match_wine": "Riesling Late Harvest",
+      "match_producer": "Lamoreaux Landing",
+      "confidence": 0.357143
+    },
+    {
+      "producer": "Seneca Lake Wine Trail",
+      "name": "Riesling Dry",
+      "status": "not_found",
+      "match_wine": null,
+      "match_producer": null,
+      "confidence": 0.0
+    },
+    {
+      "producer": "Goose Watch Winery",
+      "name": "Riesling Dry",
+      "status": "found",
+      "match_wine": "Riesling Gewurztraminer, Finger Lakes",
+      "match_producer": "Goose Watch",
+      "confidence": 0.45
+    },
+    {
+      "producer": "Goose Watch Winery",
+      "name": "Riesling Reserve",
+      "status": "found",
+      "match_wine": "Riesling Gewurztraminer, Finger Lakes",
+      "match_producer": "Goose Watch",
+      "confidence": 0.45
+    },
+    {
+      "producer": "Forge Cellars",
+      "name": "Riesling Dry Lichen",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Forges",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Gary Farrell",
+      "name": "Pinot Noir Russian River Valley",
+      "status": "found",
+      "match_wine": "Pinot Noir, Russian River Valley",
+      "match_producer": "Gary Farrell",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Kosta Browne",
+      "name": "Pinot Noir Russian River Valley",
+      "status": "found",
+      "match_wine": "Pinot Noir, Russian River Valley",
+      "match_producer": "Kosta Browne",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Emeritus Vineyards",
+      "name": "Pinot Noir Russian River Valley",
+      "status": "found",
+      "match_wine": "Pinot Noir, Russian River Valley",
+      "match_producer": "Emeritus",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Dutton-Goldfield",
+      "name": "Pinot Noir Russian River Valley",
+      "status": "found",
+      "match_wine": "Dutton Ranch Pinot Noir, Russian River Valley",
+      "match_producer": "Dutton Goldfield",
+      "confidence": 0.72093
+    },
+    {
+      "producer": "Rochioli",
+      "name": "Pinot Noir Russian River Valley",
+      "status": "found",
+      "match_wine": "Pinot Noir, Russian River Valley",
+      "match_producer": "Rochioli",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Martinelli",
+      "name": "Pinot Noir Russian River Valley",
+      "status": "found",
+      "match_wine": "Pinot Noir, Russian River Valley",
+      "match_producer": "Martinelli",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Davis Bynum",
+      "name": "Pinot Noir Russian River Valley",
+      "status": "found",
+      "match_wine": "Russian River Valley Pinot Noir",
+      "match_producer": "Davis Bynum",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Siduri",
+      "name": "Pinot Noir Sonoma Coast",
+      "status": "found",
+      "match_wine": "Pinot Noir, Sonoma Coast",
+      "match_producer": "Siduri",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Fog Head",
+      "name": "Pinot Noir Sonoma Coast",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Head",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Pinot By Aubert",
+      "name": "Pinot Noir Sonoma Coast",
+      "status": "found",
+      "match_wine": "Pinot Noir Sonoma Coast",
+      "match_producer": "Aubert",
+      "confidence": 0.4375
+    },
+    {
+      "producer": "Arista Winery",
+      "name": "Pinot Noir Sonoma County",
+      "status": "found",
+      "match_wine": "Pinot Noir, Sonoma Coast",
+      "match_producer": "Arista",
+      "confidence": 0.689655
+    },
+    {
+      "producer": "Donelan Family Wines",
+      "name": "Pinot Noir Sonoma County",
+      "status": "found",
+      "match_wine": "Rose, Sonoma County",
+      "match_producer": "Donelan",
+      "confidence": 0.466667
+    },
+    {
+      "producer": "Sunc\u00e9",
+      "name": "Pinot Noir Sonoma County",
+      "status": "not_found",
+      "match_wine": null,
+      "match_producer": null,
+      "confidence": 0.0
+    },
+    {
+      "producer": "Lynmar Estate",
+      "name": "Pinot Noir Russian River Valley",
+      "status": "found",
+      "match_wine": "Pinot Noir, Russian River Valley",
+      "match_producer": "Lynmar",
+      "confidence": 1.0
+    },
+    {
+      "producer": "J Vineyards & Winery",
+      "name": "Pinot Noir Russian River Valley",
+      "status": "found",
+      "match_wine": "Pinot Noir, Russian River Valley",
+      "match_producer": "J Vineyards",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Sonoma-Cutrer",
+      "name": "Pinot Noir Russian River Valley",
+      "status": "found",
+      "match_wine": "Pinot Noir, Russian River Valley",
+      "match_producer": "Sonoma Cutrer",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Truett-Hurst",
+      "name": "Pinot Noir Dry Creek Valley",
+      "status": "found",
+      "match_wine": "Luci Zinfandel, Dry Creek Valley",
+      "match_producer": "Truett-Hurst",
+      "confidence": 0.395349
+    },
+    {
+      "producer": "Wilson Artisan Wines",
+      "name": "Pinot Noir Sonoma County",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Artisan",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Poppiano",
+      "name": "Pinot Noir Sonoma County",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Castello di Poppiano",
+      "confidence": 0.0
+    },
+    {
+      "producer": "El Molino Vineyard",
+      "name": "Pinot Noir Pinot Noir Anderson Valley",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "El Molino",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Peay Vineyards",
+      "name": "Pinot Noir Sonoma Coast",
+      "status": "found",
+      "match_wine": "Pinot Noir, Sonoma Coast",
+      "match_producer": "Peay",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Failla",
+      "name": "Pinot Noir Sonoma Coast",
+      "status": "found",
+      "match_wine": "Pinot Noir, Sonoma Coast",
+      "match_producer": "Failla",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Coastlands",
+      "name": "Pinot Noir Sonoma Coast",
+      "status": "not_found",
+      "match_wine": null,
+      "match_producer": null,
+      "confidence": 0.0
+    },
+    {
+      "producer": "Anthill Farms",
+      "name": "Pinot Noir Sonoma County",
+      "status": "found",
+      "match_wine": "Pinot Noir, Sonoma Coast",
+      "match_producer": "Anthill Farms",
+      "confidence": 0.689655
+    },
+    {
+      "producer": "Littorai",
+      "name": "Pinot Noir Sonoma Coast",
+      "status": "found",
+      "match_wine": "Pinot Noir Sonoma Coast",
+      "match_producer": "Littorai",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Three Sticks",
+      "name": "Pinot Noir Sonoma Coast",
+      "status": "found",
+      "match_wine": "Durell Pinot Noir, Sonoma Coast",
+      "match_producer": "Three Sticks",
+      "confidence": 0.774194
+    },
+    {
+      "producer": "Hartford Court",
+      "name": "Pinot Noir Russian River Valley",
+      "status": "found",
+      "match_wine": "Four Hearts Chardonnay, Russian River Valley",
+      "match_producer": "Hartford (Court)",
+      "confidence": 0.37037
+    },
+    {
+      "producer": "Copain",
+      "name": "Pinot Noir Sonoma Coast",
+      "status": "found",
+      "match_wine": "Pinot Noir, Sonoma Coast",
+      "match_producer": "Copain",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Goldeneye",
+      "name": "Pinot Noir Anderson Valley",
+      "status": "found",
+      "match_wine": "Pinot Noir, Anderson Valley",
+      "match_producer": "Goldeneye",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Scribe",
+      "name": "Pinot Noir Sonoma County",
+      "status": "found",
+      "match_wine": "Estate Pinot Noir, Sonoma County",
+      "match_producer": "Scribe",
+      "confidence": 0.78125
+    },
+    {
+      "producer": "La Crema",
+      "name": "Pinot Noir Sonoma Coast",
+      "status": "found",
+      "match_wine": "Sonoma Coast Pinot Noir",
+      "match_producer": "La Crema",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Sebastiani",
+      "name": "Pinot Noir Sonoma County",
+      "status": "found",
+      "match_wine": "Pinot Noir, Sonoma County",
+      "match_producer": "Sebastiani",
+      "confidence": 1.0
+    },
+    {
+      "producer": "Kendall-Jackson",
+      "name": "Pinot Noir Vintner's Reserve Sonoma County",
+      "status": "found",
+      "match_wine": "Vintner's Reserve Pinot Gris",
+      "match_producer": "Kendall-Jackson",
+      "confidence": 0.510638
+    },
+    {
+      "producer": "Trentadue",
+      "name": "Pinot Noir Dry Creek Valley",
+      "status": "found",
+      "match_wine": "Trentadue Opr Sauvignon Blanc",
+      "match_producer": "Trentadue",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Moshin Vineyards",
+      "name": "Pinot Noir Russian River Valley",
+      "status": "found",
+      "match_wine": "Rosalina Pinot Noir, Russian River Valley",
+      "match_producer": "Moshin Vineyards",
+      "confidence": 0.411765
+    },
+    {
+      "producer": "Maison Duboeuf",
+      "name": "Beaujolais Cru Morgon",
+      "status": "found",
+      "match_wine": "Beaujolais Nouveau",
+      "match_producer": "George Duboeuf",
+      "confidence": 0.37931
+    },
+    {
+      "producer": "Maison Duboeuf",
+      "name": "Beaujolais Cru Moulin-\u00e0-Vent",
+      "status": "found",
+      "match_wine": "Moulin - A - Vent",
+      "match_producer": "George Duboeuf",
+      "confidence": 0.482759
+    },
+    {
+      "producer": "Maison Duboeuf",
+      "name": "Beaujolais Cru Fleurie",
+      "status": "found",
+      "match_wine": "Beaujolais Nouveau",
+      "match_producer": "George Duboeuf",
+      "confidence": 0.366667
+    },
+    {
+      "producer": "Maison Duboeuf",
+      "name": "Beaujolais Cru C\u00f4te de Brouilly",
+      "status": "found",
+      "match_wine": "Beaujolais-Villages Ch. De Plan",
+      "match_producer": "George Duboeuf",
+      "confidence": 0.355556
+    },
+    {
+      "producer": "Maison Duboeuf",
+      "name": "Beaujolais Cru Brouilly",
+      "status": "found",
+      "match_wine": "Beaujolais Villages",
+      "match_producer": "George Duboeuf",
+      "confidence": 0.387097
+    },
+    {
+      "producer": "Maison Duboeuf",
+      "name": "Beaujolais Nouveau",
+      "status": "found",
+      "match_wine": "Beaujolais Nouveau",
+      "match_producer": "George Duboeuf",
+      "confidence": 0.533333
+    },
+    {
+      "producer": "Georges Duboeuf",
+      "name": "Beaujolais Cru R\u00e9gni\u00e9",
+      "status": "found",
+      "match_wine": "Beaujolais-Regnie",
+      "match_producer": "Georges Duboeuf",
+      "confidence": 0.818182
+    },
+    {
+      "producer": "Georges Duboeuf",
+      "name": "Beaujolais Cru Chiroubles",
+      "status": "found",
+      "match_wine": "Beaujolais",
+      "match_producer": "Georges Duboeuf",
+      "confidence": 0.44
+    },
+    {
+      "producer": "Georges Duboeuf",
+      "name": "Beaujolais Cru C\u00f4tes de Fontaines",
+      "status": "found",
+      "match_wine": "Cru Du Beaujolais Grande Cuvee",
+      "match_producer": "Georges Duboeuf",
+      "confidence": 0.377778
+    },
+    {
+      "producer": "Louis Jadot",
+      "name": "Beaujolais Cru Moulin-\u00e0-Vent",
+      "status": "found",
+      "match_wine": "Beaujolais",
+      "match_producer": "Maison Louis Jadot",
+      "confidence": 0.37931
+    },
+    {
+      "producer": "Louis Jadot",
+      "name": "Beaujolais Cru Morgon",
+      "status": "found",
+      "match_wine": "Beaujolais",
+      "match_producer": "Maison Louis Jadot",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Louis Jadot",
+      "name": "Beaujolais Cru Fleurie",
+      "status": "found",
+      "match_wine": "Beaujolais",
+      "match_producer": "Maison Louis Jadot",
+      "confidence": 0.478261
+    },
+    {
+      "producer": "Ch\u00e2teau de la Chaize",
+      "name": "Beaujolais Cru Brouilly",
+      "status": "found",
+      "match_wine": "Brouilly",
+      "match_producer": "Chateau de La Chaize",
+      "confidence": 0.391304
+    },
+    {
+      "producer": "Domaine Huet",
+      "name": "Beaujolais Cru C\u00f4te de Brouilly",
+      "status": "found",
+      "match_wine": "Domaine Huet Clos du Bourg Vouvray Sec  2023 / 750 ml.",
+      "match_producer": "Domaine Huet",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Domaine Thillardon",
+      "name": "Beaujolais Cru Brouilly",
+      "status": "found",
+      "match_wine": "Gamay, Beaujolais",
+      "match_producer": "Thillardon",
+      "confidence": 0.37931
+    },
+    {
+      "producer": "Jean Descombes",
+      "name": "Beaujolais Cru Morgon",
+      "status": "found",
+      "match_wine": "Beaujolais Blanc",
+      "match_producer": "G. Descombes",
+      "confidence": 0.407407
+    },
+    {
+      "producer": "Ch\u00e2teau des Tours",
+      "name": "Beaujolais Cru Oingt",
+      "status": "found",
+      "match_wine": "Domaine des Tours Merlot-Syrah, Vin de Pays de Vaucluse",
+      "match_producer": "Chateau des Tours",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Domaine Calot",
+      "name": "Beaujolais Cru Fleurie",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Domaine Calot",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Maison Joseph Drouhin",
+      "name": "Beaujolais Cru Moulin-\u00e0-Vent",
+      "status": "found",
+      "match_wine": "Moulin-a-Vent",
+      "match_producer": "Joseph Drouhin",
+      "confidence": 0.482759
+    },
+    {
+      "producer": "Domaine de la Ravini\u00e8re",
+      "name": "Beaujolais Cru Saint-Amour",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Ravini",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Domaine des Diables",
+      "name": "Beaujolais Cru Fleurie",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Domaine Les Diables",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Domaine Michel Chignard",
+      "name": "Beaujolais Cru Morgon",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Domaine Chignard",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Domaine Yvon M\u00e9tras",
+      "name": "Beaujolais Cru Fleurie",
+      "status": "found",
+      "match_wine": "Fleurie",
+      "match_producer": "Yvon Metras",
+      "confidence": 0.347826
+    },
+    {
+      "producer": "Clos de la Rollette",
+      "name": "Beaujolais Cru Fleurie",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Maison de La Villette",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Domaine Th\u00e9o Renault",
+      "name": "Beaujolais Cru Brouilly",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Renault",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Domaine de la C\u00f4te",
+      "name": "Beaujolais Cru R\u00e9gni\u00e9",
+      "status": "found",
+      "match_wine": "Cote Mas Blanc Languedoc",
+      "match_producer": "Cote Mas",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Ch\u00e2teau de Pizay",
+      "name": "Beaujolais Cru Morgon",
+      "status": "found",
+      "match_wine": "Beaujolais",
+      "match_producer": "Chateau De Pizay",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Domaine de la Tour du Bief",
+      "name": "Beaujolais Cru Chiroubles",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Tour du Bon",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Domaine Hubert Laporte",
+      "name": "Beaujolais Cru C\u00f4te de Brouilly",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Laporte",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Domaine Joseph Chamonard",
+      "name": "Beaujolais Cru Fleurie",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Domaine J. Chamonard",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Domaine Faiveley",
+      "name": "Beaujolais Cru Moulin-\u00e0-Vent",
+      "status": "found",
+      "match_wine": "Corton Grand Cru, Clos des Cortons Faiveley",
+      "match_producer": "Domaine Faiveley",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Domaine Vissoux",
+      "name": "Beaujolais Cru Fleurie",
+      "status": "not_found",
+      "match_wine": null,
+      "match_producer": null,
+      "confidence": 0.0
+    },
+    {
+      "producer": "Domaine Piron",
+      "name": "Beaujolais Cru Morgon",
+      "status": "found",
+      "match_wine": "Piron Brouilly",
+      "match_producer": "Chateau Piron",
+      "confidence": 0.5
+    },
+    {
+      "producer": "Domaine Lafont",
+      "name": "Beaujolais Cru Fleurie",
+      "status": "producer_only",
+      "match_wine": null,
+      "match_producer": "Laffont",
+      "confidence": 0.0
+    },
+    {
+      "producer": "Domaine Sapp\u00e9",
+      "name": "Beaujolais Cru Brouilly",
+      "status": "not_found",
+      "match_wine": null,
+      "match_producer": null,
+      "confidence": 0.0
+    }
+  ],
+  "depth_detail": [
+    {
+      "wine_id": "d1effbb8-3ad0-4f8b-baf5-ea6e2b374797",
+      "wine": "Cabernet Sauvignon 2x",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.208
+    },
+    {
+      "wine_id": "ed66a3bb-1088-4c76-863a-0b251f287ca3",
+      "wine": "Cabernet Sauvignon, California",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.433
+    },
+    {
+      "wine_id": "4d133b96-3b55-4bc1-af01-7c510370c250",
+      "wine": "Pinot Noir 4x",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.208
+    },
+    {
+      "wine_id": "1270f235-e25a-4b5b-9f21-789e4488d5de",
+      "wine": "The Warden Red Blend",
+      "categories": {
+        "identity": 0.2857142857142857,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.179
+    },
+    {
+      "wine_id": "c7faffa7-a13d-438d-8005-0bb1544c91b6",
+      "wine": "Apothic Cabernet Sauvignon",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.208
+    },
+    {
+      "wine_id": "76832061-7d55-4bf8-a673-3bef3b209d47",
+      "wine": "H3 Cabernet Sauvignon",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.208
+    },
+    {
+      "wine_id": "4bea382c-b4f2-44a6-8815-9d335add3292",
+      "wine": "Sauvignon Blanc 2x",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.208
+    },
+    {
+      "wine_id": "b9f81eae-a8cc-4961-9d64-2f0002598f95",
+      "wine": "Pink Pinot Grigio",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.086
+    },
+    {
+      "wine_id": "034fd24d-293e-4672-a0ff-33d5c1e891ff",
+      "wine": "Pinot Grig0",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.208
+    },
+    {
+      "wine_id": "3129ef52-5561-4c7b-86b9-5277e3bdf33f",
+      "wine": "Chardonnay 4x",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.208
+    },
+    {
+      "wine_id": "f2545584-80be-4973-9bcb-7bbd772cd467",
+      "wine": "Pinot Grigio 4x",
+      "categories": {
+        "identity": 0.2857142857142857,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.179
+    },
+    {
+      "wine_id": "4e9c9ad0-af47-4393-88b8-5384feac67e7",
+      "wine": "Merlot 2x",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.208
+    },
+    {
+      "wine_id": "0563abe2-3bf7-4d09-bce8-7b869c58b534",
+      "wine": "Red Blend Silk Soft",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.208
+    },
+    {
+      "wine_id": "18f0a932-560f-42fa-82dc-15214cd52d0d",
+      "wine": "Pinot Noir",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.308
+    },
+    {
+      "wine_id": "be11429e-5c5d-4e9a-b829-d68e744dd277",
+      "wine": "Cabernet Sauvignon, Napa Valley",
+      "categories": {
+        "identity": 1.0,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.633
+    },
+    {
+      "wine_id": "397e257c-bbeb-4cdf-a619-98ca78c3b074",
+      "wine": "Cabernet Sauvignon, Napa Valley",
+      "categories": {
+        "identity": 1.0,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.633
+    },
+    {
+      "wine_id": "d2617744-bde6-4a5c-9404-c7cfe16ef65a",
+      "wine": "Wine Cellars Artemis Cabernet Sauvignon",
+      "categories": {
+        "identity": 0.2857142857142857,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.057
+    },
+    {
+      "wine_id": "8b2240ac-0558-41db-ac4d-403fdb424e88",
+      "wine": "Cabernet Sauvignon, Sonoma County",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.605
+    },
+    {
+      "wine_id": "f03dd580-c1ee-4f78-b043-382da29bd877",
+      "wine": "Duckhorn Merlot Napa Valley",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.33
+    },
+    {
+      "wine_id": "af513834-bf99-4d38-85b1-cad97fae42e6",
+      "wine": "Grange Mag",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.165
+    },
+    {
+      "wine_id": "4fb24b5d-b66d-4594-8b56-4d56ff123532",
+      "wine": "Penfolds Bin 149 Cabernet Sauvignon",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.308
+    },
+    {
+      "wine_id": "9d626e29-3118-4bf4-adcc-0f4887f71ac1",
+      "wine": "Max'S Shiraz/Cab",
+      "categories": {
+        "identity": 0.2857142857142857,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.179
+    },
+    {
+      "wine_id": "731d31fc-6f76-47d8-a3aa-c28f0ec9742b",
+      "wine": "Sauv Blanc",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.208
+    },
+    {
+      "wine_id": "0548edb0-c338-4a90-8ccc-68845dbc5de3",
+      "wine": "Sauvignon Blanc, Marlborough",
+      "categories": {
+        "identity": 1.0,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.633
+    },
+    {
+      "wine_id": "a05a9643-4b92-4020-8fb1-1dc458afe7f3",
+      "wine": "Sauvignon Blanc, Marlborough",
+      "categories": {
+        "identity": 1.0,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.633
+    },
+    {
+      "wine_id": "eda475de-70f3-4b96-bb53-896e322e4f43",
+      "wine": "Sauvignon Blanc, Marlborough",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.433
+    },
+    {
+      "wine_id": "74762427-4a6c-4d92-ba3b-28cae51b725a",
+      "wine": "Torbreck Woodcutter's Shiraz",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.33
+    },
+    {
+      "wine_id": "22276461-9912-452b-ad5b-c28588b02483",
+      "wine": "Cabernet Sauvignon Napa Valley",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.308
+    },
+    {
+      "wine_id": "168619ef-1da4-4579-aa88-45e3109b1811",
+      "wine": "Napa Valley",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.416
+    },
+    {
+      "wine_id": "500c55b3-c5bd-45c7-80e2-72e1db9bbf6e",
+      "wine": "Cabernet Sauvignon, Oakville",
+      "categories": {
+        "identity": 1.0,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.633
+    },
+    {
+      "wine_id": "5b0f4b71-c435-4b1c-9d14-6e29141cc05a",
+      "wine": "Richebourg Grand Cru",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.205
+    },
+    {
+      "wine_id": "9625d2fc-10cc-4956-8dae-83bf931cbc8c",
+      "wine": "Pomerol",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.416
+    },
+    {
+      "wine_id": "db1dbd26-b6cf-454a-984c-81cc490a8b48",
+      "wine": "Pauillac",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 1.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 1.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.505
+    },
+    {
+      "wine_id": "dfed8e14-b9e7-40cb-8e2a-b836037e57ee",
+      "wine": "Pavillon Blanc Second Vin, Bordeaux",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 1.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.5
+      },
+      "overall": 0.487
+    },
+    {
+      "wine_id": "e1c749ca-d3e8-4421-aaff-baf4d745ef92",
+      "wine": "Pauillac",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 1.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.638
+    },
+    {
+      "wine_id": "16189416-9f70-42fb-b59f-377b14c168df",
+      "wine": "Puligny-Montrachet",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.394
+    },
+    {
+      "wine_id": "f1486fd9-ed2d-4448-9066-fde91f142546",
+      "wine": "Monmain Chablis 1er Gerard",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.143
+    },
+    {
+      "wine_id": "e9ee46c3-cc6b-43a3-b2ab-dbbc3f2d515c",
+      "wine": "Ch\u00e2teau de Sancerre 2018 Sauvignon Blanc Sancerre, France",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.308
+    },
+    {
+      "wine_id": "1f3e3f47-633f-400f-b801-47bd5cdc26d9",
+      "wine": "Alsace",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.143
+    },
+    {
+      "wine_id": "8aa966f8-b9bc-4686-aff2-ef5a50643921",
+      "wine": "Cristal",
+      "categories": {
+        "identity": 1.0,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.6
+    },
+    {
+      "wine_id": "42ae6747-2085-459a-9ca8-b91bf490a474",
+      "wine": "Special Cuvee",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.222
+    },
+    {
+      "wine_id": "1b205a76-2eab-4c14-bf70-a7fad84e5e30",
+      "wine": "Brut",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.086
+    },
+    {
+      "wine_id": "35128ebe-d62d-4474-b38b-b8cdaf0bd7f6",
+      "wine": "Yellow Label Brut",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.527
+    },
+    {
+      "wine_id": "325ed74a-2ae8-43a7-aef2-085809a2d3bc",
+      "wine": "Astica Cabernet Sauvignon",
+      "categories": {
+        "identity": 0.2857142857142857,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.279
+    },
+    {
+      "wine_id": "de720b2e-f91f-4880-8c95-174748da3d9a",
+      "wine": "Vena Cava Rose (Nieto)",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.308
+    },
+    {
+      "wine_id": "29e7e353-73ca-43e3-a32e-5f961a8ba0a9",
+      "wine": "Copper Moon - Malbec",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 1.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.454
+    },
+    {
+      "wine_id": "29e7e353-73ca-43e3-a32e-5f961a8ba0a9",
+      "wine": "Copper Moon - Malbec",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 1.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.454
+    },
+    {
+      "wine_id": "58c7073a-98ec-49fd-b434-07498d0645b0",
+      "wine": "Bask - Pinot Noir",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 1.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.5
+      },
+      "overall": 0.487
+    },
+    {
+      "wine_id": "58c7073a-98ec-49fd-b434-07498d0645b0",
+      "wine": "Bask - Pinot Noir",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 1.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.5
+      },
+      "overall": 0.487
+    },
+    {
+      "wine_id": "33e351d4-fa96-4403-8365-18fbd11eb9ff",
+      "wine": "Bartier Bros. - Chardonnay",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 1.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.454
+    },
+    {
+      "wine_id": "361439b7-817f-407c-b627-a6e4a99a8128",
+      "wine": "50Th Parallel Estate - Riesling",
+      "categories": {
+        "identity": 0.5714285714285714,
+        "price": 1.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.425
+    },
+    {
+      "wine_id": "0920c4e9-9024-458b-a8fc-5bdc71eb412b",
+      "wine": "Gray Monk - Gewurztraminer",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 1.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.454
+    },
+    {
+      "wine_id": "e5b8bdc3-36bd-43f3-a8d5-aa678b553edf",
+      "wine": "Bask - Rose",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.397
+    },
+    {
+      "wine_id": "e5b8bdc3-36bd-43f3-a8d5-aa678b553edf",
+      "wine": "Bask - Rose",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.397
+    },
+    {
+      "wine_id": "4338b419-9082-4cd4-ae31-7bb11264c693",
+      "wine": "Old Sparky Cabernet Sauvignon, Napa Valley",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.433
+    },
+    {
+      "wine_id": "1423dc80-0783-46d5-94af-3d544f27d983",
+      "wine": "Cabernet Sauvignon, Napa Valley",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.233
+    },
+    {
+      "wine_id": "957d508b-9b74-4714-beb1-95d1f5fe127d",
+      "wine": "2018 Prisoner Red Blend Napa Valley, California",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.208
+    },
+    {
+      "wine_id": "f4b9fa34-282b-454f-89d5-75bc05a078f1",
+      "wine": "Reserve Cabernet Sauvignon, Napa Valley",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.416
+    },
+    {
+      "wine_id": "7874b039-cb85-47ea-aec6-33f7cbbcf569",
+      "wine": "White, California",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.365
+    },
+    {
+      "wine_id": "20ea331f-b4ec-4cb2-b992-ce5c66c0cc03",
+      "wine": "Reserve Cabernet Sauvignon, Napa Valley",
+      "categories": {
+        "identity": 1.0,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.5
+    },
+    {
+      "wine_id": "91b41002-7214-4ce1-aff5-9918c556ccfc",
+      "wine": "Sattui Family Cabernet Sauvignon, Napa Valley",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.26
+    },
+    {
+      "wine_id": "beb8fa56-862f-450a-bcb2-6458a6c2b189",
+      "wine": "Markham Cabernet Sauvignon",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.308
+    },
+    {
+      "wine_id": "f67f7467-a881-43c9-8ca9-09d45e7a3e5c",
+      "wine": "Cabernet Sauvignon, Sonoma County",
+      "categories": {
+        "identity": 1.0,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 1.0
+      },
+      "overall": 0.667
+    },
+    {
+      "wine_id": "f32a2696-8798-4e0c-853f-a75d8585d224",
+      "wine": "Merlot Napa Valley",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.165
+    },
+    {
+      "wine_id": "2445233c-b3e8-40f2-ba5e-43a48b3b266c",
+      "wine": "Kung Fu Girl Riesling",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.308
+    },
+    {
+      "wine_id": "d991ebb3-d015-4e19-a7c3-dba81f8d1a92",
+      "wine": "Estate Pinot Noir",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.208
+    },
+    {
+      "wine_id": "a1bf75c3-a3f1-4b14-bc9e-b3d0b335f771",
+      "wine": "Leland Pinot Noir, Willamette Valley",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.5
+    },
+    {
+      "wine_id": "a3b8bc8b-dca7-452f-808a-696c9d97e175",
+      "wine": "Cinq Cepages, Sonoma County",
+      "categories": {
+        "identity": 0.5714285714285714,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.359
+    },
+    {
+      "wine_id": "12471bb8-ed14-407d-b9a8-c605037f3ec7",
+      "wine": "Reserve Cabernet Sauvignon",
+      "categories": {
+        "identity": 0.2857142857142857,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.057
+    },
+    {
+      "wine_id": "220b30b0-3857-42d4-8b76-8b1ea17029b5",
+      "wine": "PINOT NOIR, Sonoma Mountain",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 1.0
+      },
+      "overall": 0.438
+    },
+    {
+      "wine_id": "785dd5e2-2604-42b1-a2d3-06c8dc78cb77",
+      "wine": "Cabernet Sauvignon, Sonoma County",
+      "categories": {
+        "identity": 0.5714285714285714,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.337
+    },
+    {
+      "wine_id": "a89e7cd9-e078-4ce5-8105-713494aa6986",
+      "wine": "Sleepy Hollow Vineyard Chardonnay, Monterey",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.571
+    },
+    {
+      "wine_id": "d05018ab-2eec-4358-8c10-d5d4bdc94531",
+      "wine": "Twelve Clones Pinot Noir, Santa Lucia Highlands",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.533
+    },
+    {
+      "wine_id": "b0b2e248-c0a8-4338-b7ca-0b90a5192962",
+      "wine": "Pinot Noir, Central Coast",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.433
+    },
+    {
+      "wine_id": "344f6a94-ef1a-4517-aed2-dd90d40d3ac6",
+      "wine": "Napa Valley Cabernet Sauvignon",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.165
+    },
+    {
+      "wine_id": "da14379f-da84-452c-9e70-8ccd99d5cb22",
+      "wine": "Sauvignon Blanc, Dry Creek Valley",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 1.0
+      },
+      "overall": 0.467
+    },
+    {
+      "wine_id": "3a3b8efc-aa6a-46a2-80d4-1dac3a4c7390",
+      "wine": "Sonoma County Chardonnay",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.33
+    },
+    {
+      "wine_id": "cb714aad-111e-441d-9c12-830338d652f7",
+      "wine": "Estate Cabernet Sauvignon",
+      "categories": {
+        "identity": 0.2857142857142857,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.179
+    },
+    {
+      "wine_id": "2e20d5ad-425a-4d38-8111-5af542d56a5e",
+      "wine": "Silver Gate Cabernet Sauvignon California",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.308
+    },
+    {
+      "wine_id": "a7cb4929-859f-46f5-af67-6fe77d7752f9",
+      "wine": "Gravas Cabernet Sauvignon, Maipo Valley",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.171
+    },
+    {
+      "wine_id": "e8f44b69-a300-4d47-a586-f6909a05a077",
+      "wine": "Cabernet Sauvignon Reserva, Maipo Valley",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.171
+    },
+    {
+      "wine_id": "34e8f822-ddf2-4b4c-b780-b37fc822926b",
+      "wine": "Malbec Finca Mirador, Mendoza",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.394
+    },
+    {
+      "wine_id": "a742353c-a190-49fb-990c-da182dc67033",
+      "wine": "Malbec Reserva Mendoza",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.086
+    },
+    {
+      "wine_id": "cf72994d-1d1a-4d9e-9de1-03bd35dc31d0",
+      "wine": "Crios Cabernet Sauvignon, Mendoza",
+      "categories": {
+        "identity": 0.5714285714285714,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.337
+    },
+    {
+      "wine_id": "ca4ed63e-612d-4079-9487-c7aa8c795649",
+      "wine": "Cabernet Sauvignon, Mendoza",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.605
+    },
+    {
+      "wine_id": "8ffa8cf2-4d79-456b-98f9-0fabb743d10c",
+      "wine": "Riesling Dry, Finger Lakes",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.467
+    },
+    {
+      "wine_id": "46fd7b16-f4d2-4f92-9956-ff736cdc3be9",
+      "wine": "Semi-Dry Riesling, Finger Lakes",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.6666666666666666,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.349
+    },
+    {
+      "wine_id": "1597334a-b3b1-4eb5-8974-253540f74e3f",
+      "wine": "Riesling Reserve, Finger Lakes",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.171
+    },
+    {
+      "wine_id": "2b42b0ce-8952-45a7-a396-83549485128a",
+      "wine": "Jazz Riesling",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.165
+    },
+    {
+      "wine_id": "1f48c639-b1db-43cb-a140-90fbd9aacea2",
+      "wine": "Neptunes Reserve Riesling",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.143
+    },
+    {
+      "wine_id": "161a3260-9a99-46dc-bb96-887d1a2fa6ef",
+      "wine": "Semi-Dry Riesling",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.6666666666666666,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.298
+    },
+    {
+      "wine_id": "161a3260-9a99-46dc-bb96-887d1a2fa6ef",
+      "wine": "Semi-Dry Riesling",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.6666666666666666,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.298
+    },
+    {
+      "wine_id": "efc4fc04-8628-463a-aaff-591ac23d98dd",
+      "wine": "Riesling Reserve, Finger Lakes",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.4
+    },
+    {
+      "wine_id": "c5d08ca8-7bca-49b4-b2f7-eb5816fa47c3",
+      "wine": "Riesling Timeline Dry",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.143
+    },
+    {
+      "wine_id": "c5d08ca8-7bca-49b4-b2f7-eb5816fa47c3",
+      "wine": "Riesling Timeline Dry",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.143
+    },
+    {
+      "wine_id": "d9e674f7-1aa9-496f-945e-12ac54374a64",
+      "wine": "Dry Riesling, Finger Lakes",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.171
+    },
+    {
+      "wine_id": "d9e674f7-1aa9-496f-945e-12ac54374a64",
+      "wine": "Dry Riesling, Finger Lakes",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.171
+    },
+    {
+      "wine_id": "7ced1ec0-b82a-4d7a-b7d7-a94fe387b43c",
+      "wine": "Dry Riesling, Cayuga Lake",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.444
+    },
+    {
+      "wine_id": "7ced1ec0-b82a-4d7a-b7d7-a94fe387b43c",
+      "wine": "Dry Riesling, Cayuga Lake",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.3333333333333333,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.444
+    },
+    {
+      "wine_id": "2e417c39-516b-4d7c-bd92-e0537515bdf0",
+      "wine": "Pasta Red Reserve",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.143
+    },
+    {
+      "wine_id": "60e27f41-624b-462c-b14c-0c655587e182",
+      "wine": "Reserve Riesling",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.165
+    },
+    {
+      "wine_id": "60e27f41-624b-462c-b14c-0c655587e182",
+      "wine": "Reserve Riesling",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.165
+    },
+    {
+      "wine_id": "5940326f-8e4f-4806-a8f5-bc0c87ea9bb6",
+      "wine": "Riesling Dry, Finger Lakes",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.171
+    },
+    {
+      "wine_id": "bce02ffd-ec04-40ad-9605-5a0806103471",
+      "wine": "RESERVE, Finger Lakes",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.171
+    },
+    {
+      "wine_id": "8635a081-5d85-4e39-9d11-9cd958926d12",
+      "wine": "Reserve Red",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.165
+    },
+    {
+      "wine_id": "330046f6-5780-4c8f-a877-3777efe29fa2",
+      "wine": "Riesling Late Harvest",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.165
+    },
+    {
+      "wine_id": "330046f6-5780-4c8f-a877-3777efe29fa2",
+      "wine": "Riesling Late Harvest",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.165
+    },
+    {
+      "wine_id": "cd28af9b-070e-4c37-9407-fcd6cca68cab",
+      "wine": "Riesling Gewurztraminer, Finger Lakes",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.2
+    },
+    {
+      "wine_id": "cd28af9b-070e-4c37-9407-fcd6cca68cab",
+      "wine": "Riesling Gewurztraminer, Finger Lakes",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.2
+    },
+    {
+      "wine_id": "32377039-5fe6-4438-9747-91c574892ce2",
+      "wine": "Pinot Noir, Russian River Valley",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.433
+    },
+    {
+      "wine_id": "4f1d291e-63bd-4d3f-a5b5-705a5eb5a702",
+      "wine": "Pinot Noir, Russian River Valley",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.394
+    },
+    {
+      "wine_id": "c754ef14-8821-4d6d-ac0e-9a38201e8c84",
+      "wine": "Pinot Noir, Russian River Valley",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.233
+    },
+    {
+      "wine_id": "6b68f601-85e5-4fe4-a2df-c501b387d396",
+      "wine": "Dutton Ranch Pinot Noir, Russian River Valley",
+      "categories": {
+        "identity": 1.0,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.6
+    },
+    {
+      "wine_id": "20f7b2dc-7e6f-4f99-8cec-f3bd9f448e3e",
+      "wine": "Pinot Noir, Russian River Valley",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.433
+    },
+    {
+      "wine_id": "2b65464d-af9d-4c65-9c84-3f1a226979b2",
+      "wine": "Pinot Noir, Russian River Valley",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.171
+    },
+    {
+      "wine_id": "2236f3eb-0014-425d-bbe3-8c2dca2e4f35",
+      "wine": "Russian River Valley Pinot Noir",
+      "categories": {
+        "identity": 0.2857142857142857,
+        "price": 0.5,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.179
+    },
+    {
+      "wine_id": "1ccc3676-3ceb-4761-8310-e52483f73a7d",
+      "wine": "Pinot Noir, Sonoma Coast",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.171
+    },
+    {
+      "wine_id": "3c2d8db9-117f-4706-b60d-9837d083ed7f",
+      "wine": "Pinot Noir Sonoma Coast",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.086
+    },
+    {
+      "wine_id": "705332e9-c11b-4fd9-8ca8-889665d72d8d",
+      "wine": "Pinot Noir, Sonoma Coast",
+      "categories": {
+        "identity": 1.0,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.633
+    },
+    {
+      "wine_id": "b629ab49-3e14-487c-89b7-df7929a3a545",
+      "wine": "Rose, Sonoma County",
+      "categories": {
+        "identity": 0.5714285714285714,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.114
+    },
+    {
+      "wine_id": "34ed6142-a1e1-4e9c-a9eb-beab50c6c0a1",
+      "wine": "Pinot Noir, Russian River Valley",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.433
+    },
+    {
+      "wine_id": "4fddd8f4-1ade-4637-9f2c-b293d717cd06",
+      "wine": "Pinot Noir, Russian River Valley",
+      "categories": {
+        "identity": 1.0,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.633
+    },
+    {
+      "wine_id": "ffa9318e-07c1-4b9f-8e8e-dbd4441628d1",
+      "wine": "Pinot Noir, Russian River Valley",
+      "categories": {
+        "identity": 1.0,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.633
+    },
+    {
+      "wine_id": "88c1621a-268e-4e24-890b-db88c59ddeac",
+      "wine": "Luci Zinfandel, Dry Creek Valley",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.171
+    },
+    {
+      "wine_id": "de649774-7092-4153-b25b-f32da684ed2a",
+      "wine": "Pinot Noir, Sonoma Coast",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.3
+    },
+    {
+      "wine_id": "883c271d-f526-423f-81c2-8ba1f23aff1b",
+      "wine": "Pinot Noir, Sonoma Coast",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 1.0
+      },
+      "overall": 0.467
+    },
+    {
+      "wine_id": "f22912a3-eba0-4989-8d96-fce370491583",
+      "wine": "Pinot Noir, Sonoma Coast",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 1.0
+      },
+      "overall": 0.289
+    },
+    {
+      "wine_id": "10ea64bb-9c3c-4529-b709-bf4bd1784fc7",
+      "wine": "Pinot Noir Sonoma Coast",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.086
+    },
+    {
+      "wine_id": "57e78f2c-7dca-49aa-a563-3c6e25d2da4e",
+      "wine": "Durell Pinot Noir, Sonoma Coast",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.171
+    },
+    {
+      "wine_id": "d91cd36d-68ac-476c-8696-7b3d1588a505",
+      "wine": "Four Hearts Chardonnay, Russian River Valley",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.171
+    },
+    {
+      "wine_id": "ac609d68-323b-4c3d-a1ca-34b10b8894f5",
+      "wine": "Pinot Noir, Sonoma Coast",
+      "categories": {
+        "identity": 1.0,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.433
+    },
+    {
+      "wine_id": "94b37db3-33ab-4ba3-b855-f9ba3c0eba6e",
+      "wine": "Pinot Noir, Anderson Valley",
+      "categories": {
+        "identity": 1.0,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.633
+    },
+    {
+      "wine_id": "23980b64-2b25-47d4-a325-39c5cc79414f",
+      "wine": "Estate Pinot Noir, Sonoma County",
+      "categories": {
+        "identity": 0.5714285714285714,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.114
+    },
+    {
+      "wine_id": "6db4b454-8dfc-4716-afc1-8f78d928b554",
+      "wine": "Sonoma Coast Pinot Noir",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.086
+    },
+    {
+      "wine_id": "8ea20563-7e13-4eaf-8fc6-91dc7b7a77f6",
+      "wine": "Pinot Noir, Sonoma County",
+      "categories": {
+        "identity": 1.0,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.633
+    },
+    {
+      "wine_id": "a60f4127-1cbf-4e1c-a938-2c145f692275",
+      "wine": "Vintner's Reserve Pinot Gris",
+      "categories": {
+        "identity": 0.2857142857142857,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.057
+    },
+    {
+      "wine_id": "f8ff23e0-cb87-4f90-b9fa-70fa2b4e56a8",
+      "wine": "Trentadue Opr Sauvignon Blanc",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.308
+    },
+    {
+      "wine_id": "a69ba473-0478-439b-931f-edb4a4ab48cb",
+      "wine": "Rosalina Pinot Noir, Russian River Valley",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.171
+    },
+    {
+      "wine_id": "043bbde5-c77c-42c8-b6f1-a925beabb3f2",
+      "wine": "Beaujolais Nouveau",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.165
+    },
+    {
+      "wine_id": "1a18712d-7a9d-4c49-b03d-0060cc9fe6ae",
+      "wine": "Moulin - A - Vent",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.143
+    },
+    {
+      "wine_id": "043bbde5-c77c-42c8-b6f1-a925beabb3f2",
+      "wine": "Beaujolais Nouveau",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.165
+    },
+    {
+      "wine_id": "a53b3784-dba0-453b-837a-cdb90e02e1af",
+      "wine": "Beaujolais-Villages Ch. De Plan",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.165
+    },
+    {
+      "wine_id": "75294433-c91d-4357-a9df-d3cf2bbe1f55",
+      "wine": "Beaujolais Villages",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.165
+    },
+    {
+      "wine_id": "043bbde5-c77c-42c8-b6f1-a925beabb3f2",
+      "wine": "Beaujolais Nouveau",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.165
+    },
+    {
+      "wine_id": "95143e17-c539-4bd7-9393-f0b2af3cafe7",
+      "wine": "Beaujolais-Regnie",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.165
+    },
+    {
+      "wine_id": "1a9eea10-9ccb-422c-bc12-e6b23b52aed3",
+      "wine": "Beaujolais",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 1.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.471
+    },
+    {
+      "wine_id": "3aa57ec0-4a0c-4003-91ec-38895ab2dd2c",
+      "wine": "Cru Du Beaujolais Grande Cuvee",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.143
+    },
+    {
+      "wine_id": "d3d48d00-cce2-441a-a6f6-f3b6a5e68432",
+      "wine": "Beaujolais",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.308
+    },
+    {
+      "wine_id": "d3d48d00-cce2-441a-a6f6-f3b6a5e68432",
+      "wine": "Beaujolais",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.308
+    },
+    {
+      "wine_id": "d3d48d00-cce2-441a-a6f6-f3b6a5e68432",
+      "wine": "Beaujolais",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.308
+    },
+    {
+      "wine_id": "5e089b1f-73ab-4541-acf5-5a00df0bcc5a",
+      "wine": "Brouilly",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.416
+    },
+    {
+      "wine_id": "3ef9dae6-115b-4af0-bf53-83e328ae9fbc",
+      "wine": "Domaine Huet Clos du Bourg Vouvray Sec  2023 / 750 ml.",
+      "categories": {
+        "identity": 0.5714285714285714,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.359
+    },
+    {
+      "wine_id": "501d85dd-72a5-4a7b-97f6-e08eee54c6c3",
+      "wine": "Gamay, Beaujolais",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.5
+      },
+      "overall": 0.205
+    },
+    {
+      "wine_id": "03197656-541b-40e4-8a35-fe34c7e05f92",
+      "wine": "Beaujolais Blanc",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.5
+      },
+      "overall": 0.383
+    },
+    {
+      "wine_id": "54ab957b-415b-4741-9c5c-5d30975ed0bd",
+      "wine": "Domaine des Tours Merlot-Syrah, Vin de Pays de Vaucluse",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.308
+    },
+    {
+      "wine_id": "90536024-bcf8-491d-978e-a9cdc21f2429",
+      "wine": "Moulin-a-Vent",
+      "categories": {
+        "identity": 0.5714285714285714,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.114
+    },
+    {
+      "wine_id": "70cf3f8d-2e13-41d3-828e-b3d8ed5f71f6",
+      "wine": "Fleurie",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.171
+    },
+    {
+      "wine_id": "d9c6eff0-d949-49d7-90d9-c684dba14409",
+      "wine": "Cote Mas Blanc Languedoc",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.308
+    },
+    {
+      "wine_id": "5bef2beb-8781-4dc7-883f-85c2c7131be5",
+      "wine": "Beaujolais",
+      "categories": {
+        "identity": 0.7142857142857143,
+        "price": 0.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.6666666666666666,
+        "winemaking": 0.0
+      },
+      "overall": 0.187
+    },
+    {
+      "wine_id": "8a2aa8ea-271b-44c7-acc7-46ebac65c44e",
+      "wine": "Corton Grand Cru, Clos des Cortons Faiveley",
+      "categories": {
+        "identity": 0.8571428571428571,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 1.0,
+        "vintage": 1.0,
+        "winemaking": 0.0
+      },
+      "overall": 0.571
+    },
+    {
+      "wine_id": "5cec09fc-41c3-4139-8682-8f9960985a75",
+      "wine": "Piron Brouilly",
+      "categories": {
+        "identity": 0.42857142857142855,
+        "price": 1.0,
+        "quality": 0.0,
+        "story": 0.0,
+        "visual": 0.0,
+        "vintage": 0.3333333333333333,
+        "winemaking": 0.0
+      },
+      "overall": 0.308
+    }
+  ],
+  "accuracy_detail": null,
+  "story_detail": null
+}

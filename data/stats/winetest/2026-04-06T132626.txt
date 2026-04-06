@@ -1,0 +1,36 @@
+WINETEST -- 2026-04-06 13:26
+========================================================
+
+Overall: 49/100
+
+Benchmark: 200 wines from 5 sources
+  Seed: 42
+  Categories: Premium wines $50-$100, Finger Lakes Riesling, Sonoma County Pinot Noir, Beaujolais
+
+FINDABILITY    70% (139/200 found)
+  Producer only (wine not matched): 54
+  Not found at all: 7
+
+DEPTH          31% (weighted avg across 139 found wines)
+  identity       74%  ##############......
+  vintage        47%  #########...........
+  price          36%  #######.............
+  visual         31%  ######..............
+  winemaking     15%  ##..................
+  quality         3%  ....................
+  story           0%  ....................
+
+ACCURACY       85% (30/30 wines checked, 30 field errors)
+  X grapes: The grape should be Riesling, not N/A. The wine name explicitly states 'Riesling Dry'
+  X region: Region should be 'Bordeaux' or more specifically 'Graves', not the overly broad 'France'
+  X appellation: Appellation should be 'Graves' (or 'Pessac-Léognan'), not N/A. This is a classified Graves wine
+  X grapes: Grapes should be specified. Château de Fieuzal typically uses Cabernet Sauvignon, Merlot, and Cabernet Franc in its red blend
+  X region: Should specify 'Champagne' as the region, not N/A
+  ... and 25 more
+
+STORY          1.5/5.0 (12/100 normalized)
+  Distribution: 1*=16  2*=14  3*=0  4*=0  5*=0
+  Weakest:
+    Silver Thread Vineyard Riesling Dry: 1/5 -- Entry contains only basic producer and region information with no grape variety, pricing, scores, vintage data, or descriptive details that would help an enthusiast understand or evaluate this wine.
+    Lakewood Vineyards Riesling Semi-Dry: 1/5 -- The entry provides only the wine's name, producer, and basic regional classification—no pricing, tasting notes, scores, vineyard details, or any information that would help an enthusiast understand the wine's quality, character, or value.
+    Trénel Beaujolais Villages: 1/5 -- The entry contains only the producer name and basic wine type with no appellation, grapes, pricing, scores, or tasting notes—providing nothing beyond what the label itself would show.

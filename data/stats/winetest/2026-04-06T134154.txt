@@ -1,0 +1,34 @@
+WINETEST -- 2026-04-06 13:41
+========================================================
+
+Overall: 55/100
+
+Benchmark: 205 wines from 5 sources
+  Seed: 42
+  Categories: Premium wines $50-$100, Finger Lakes Riesling, Sonoma County Pinot Noir, Beaujolais
+
+FINDABILITY    79% (161/205 found)
+  Producer only (wine not matched): 30
+  Not found at all: 14
+
+DEPTH          31% (weighted avg across 161 found wines)
+  identity       71%  ##############......
+  vintage        45%  #########...........
+  price          45%  ########............
+  visual         23%  ####................
+  winemaking     13%  ##..................
+  quality         5%  ....................
+  story           0%  ....................
+
+BLIND SPOTS (>50% miss rate)
+  country      spain                          75% missed (3/4)
+
+NOTABLE MISSES (premium/luxury wines not found)
+  Ribera del Duero — Pesquera (Spain)
+  A.P. Vin — Pinot Noir Washington (USA)
+  Domaine Vissoux — Beaujolais Cru Fleurie (France)
+  Domaine Sappé — Beaujolais Cru Brouilly (France)
+
+TREND (vs previous run)
+  Overall: 49 → 55 (UP 5.6)
+  Previous run: 2026-04-06T13:26:26.915812
