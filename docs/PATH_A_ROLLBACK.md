@@ -704,3 +704,16 @@ WHERE parent_id IN (
 )
 AND source = 'curated';
 ```
+
+### Exercise 2: appellation_grapes provenance backfill (+490 rows)
+
+```sql
+-- Undo provenance backfill: NULL out provenance on rows stamped by backfill
+UPDATE appellation_grapes
+SET source_url = NULL,
+    source_organization = NULL,
+    source_document_title = NULL,
+    source_accessed_date = NULL,
+    source_text_excerpt = NULL
+WHERE source_text_excerpt = 'Grape name verified in appellation_rules JSONB (provenance backfill)';
+```
