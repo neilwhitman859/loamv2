@@ -1130,3 +1130,11 @@ Both bugs surfaced because the batch 4 seeder queries existing rows before inser
 - MASAF-subordinate Regione del Veneto discovery via Nextcloud sharing URLs
 - Multi-pattern URL guessing for AOCs not found via Google search
 - Better error handling: treats HTML returned for a `.pdf` URL as "file not found", tries next guess
+
+---
+
+### 2026-04-05: region_grapes and country_grapes must use 'typical' only, never 'required'
+
+**Decision**: The `association_type` column on `region_grapes` and `country_grapes` should only contain `'typical'`, never `'required'`. The `'required'` value is reserved for `appellation_grapes` where it means "legally mandated per government regulations." Regions and countries are not government-defined wine appellations, so no grape can be legally "required" at those levels.
+
+**Action**: 33 region_grapes + 12 country_grapes rows changed from 'required' → 'typical'. All future cascades use 'typical' only.

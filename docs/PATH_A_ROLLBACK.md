@@ -642,3 +642,65 @@ Clean audit after session 2:
 - Barolo rose: 9, Sauternes red: 7, Barolo white: 5
 - Smaller counts (1-3 each) across ~15 other appellations
 - These are cleanup targets for a future session, NOT bugs caused by Path A.
+
+---
+
+## Exercises 5 + 4 (2026-04-05): region/country grapes cascade + containment expansion
+
+### Exercise 5: region_grapes + country_grapes cascade
+
+```sql
+-- Undo country_grapes cascade (+82 rows)
+DELETE FROM country_grapes WHERE notes LIKE 'Cascaded from region_grapes%';
+
+-- Undo region_grapes cascade (+223 rows)
+DELETE FROM region_grapes WHERE notes LIKE 'Cascaded from appellation_grapes%';
+
+-- Restore 'required' association_type on pre-existing rows (33 region_grapes + 12 country_grapes)
+-- NOTE: these were changed to 'typical' per decision that regions/countries don't have legal requirements
+-- Reverting this would restore the original (incorrect) values. Only do this if the decision is reversed.
+```
+
+### Exercise 4 Batch 1: Bordeaux + Bourgogne + Rhône + Portugal containment (+162 rows)
+
+```sql
+-- Undo all Exercise 4 containment (added with source='curated')
+-- Bordeaux umbrella: Bordeaux AOC → 38 children
+DELETE FROM appellation_containment
+WHERE parent_id = 'c22540df-2860-4a43-966a-3439cb6d9e82'
+AND source = 'curated'
+AND child_id NOT IN (
+  -- Preserve any pre-existing curated rows (none expected, but safe)
+  SELECT child_id FROM appellation_containment WHERE parent_id = 'c22540df-2860-4a43-966a-3439cb6d9e82' AND source = 'explicit'
+);
+
+-- Saint-Emilion → Saint-Emilion Grand Cru
+DELETE FROM appellation_containment
+WHERE parent_id = '911c087c-fcff-4021-9f8e-0dbfe7ba6dd6'
+AND child_id = '751fc99d-73d7-4e85-a72e-dea69dc7205d';
+
+-- Bourgogne umbrella: Bourgogne AOC → 82 children
+DELETE FROM appellation_containment
+WHERE parent_id = 'cb6e8610-119b-48de-a708-a29f880ac864'
+AND source = 'curated';
+
+-- Côtes du Rhône umbrella: → 18 children
+DELETE FROM appellation_containment
+WHERE parent_id = '945b5857-0f6e-4155-a6e8-d353d28a9209'
+AND source = 'curated';
+
+-- CDR Villages → 8 named village crus
+DELETE FROM appellation_containment
+WHERE parent_id = '5139f8ab-be53-4956-8064-fdef1a280387'
+AND source = 'curated';
+
+-- Portuguese containment: Douro→Porto, Algarve→4, Açores→3, Lisboa→7
+DELETE FROM appellation_containment
+WHERE parent_id IN (
+  'd9f7deec-cff6-45fd-8d91-c3be9936bd39',  -- Douro
+  'c9c8fcc2-669d-4762-a9b8-b8d63e5a88fc',  -- Algarve
+  '8898d517-d603-4bee-b644-6f200ca21874',  -- Açores
+  '358fcc6f-4c00-44f5-ab5d-637651a8affc'   -- Lisboa
+)
+AND source = 'curated';
+```
