@@ -123,7 +123,7 @@ Region insights (202), appellation insights (82), country insights (62). All oth
 
 ### Content Tables (updated 2026-04-04, post recovery + 10 follow-ups)
 Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for promotion/merge event history.
-- **~37K producers**, **~497K wines**, **~328K vintages**, **~27K scores**, **~33K prices**, **~188K wine_grapes**, **~492K external_ids** (292K COLA + 18K UPC + 189K LWIN), **~16K entity_classifications**
+- **~37K producers**, **~497K wines**, **~328K vintages**, **~27K scores**, **~33K prices**, **~188K wine_grapes**, **~604K external_ids** (294K COLA + 106K UPC + 189K LWIN + 13K QR URL + 1.4K QR), **~16K entity_classifications**
 - **~267K wines with color** (up from 180K post-revert via LWIN backfill)
 - **~262K wines with appellation_id** (up from 230K via TTB wine_appellation backfill)
 - **~413K wines with region_id** (up from 287K via TTB direct resolve + cascade from appellation)
@@ -136,7 +136,7 @@ Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for p
 - **Price coverage:** 3.94% (19,574 distinct wines with prices). Was 3.36% post-revert, peaked at 5.25% pre-revert, ~1% at start of Phase 2. Honest post-phantom-cleanup number — 1,241 phantom NV Wally's rows deleted.
 - **Data grade:** F=467,355, D=29,568, C=0, B=3 (5,906 phantom D reclassified to F after revert).
 - **Score coverage:** ~2% (distinct wines with scores from TEXSOM +8.5K, Berliner +1.7K, BC Liquor community +592).
-- **UPCs:** 17,701 (+5,836 this session from Horizon/PA/OpenFoodFacts + Spec's + LCBO + BC Liquor)
+- **UPCs:** 106,442 across 80,723 wines (up from 17,701 — TTB label/scan barcode scanning + promotion session 2026-04-06). Also 12,529 QR URLs + 1,390 QR codes promoted.
 - **Farming certs:** 9,324 (+2,937 from Skurnik/KL/EC/Polaner pattern text matching — legitimate, values are explicit farming terms)
 - **Wine depth (2026-04-04):** +1,921 sweetness (Flatiron), +1,158 vine_age (KL), +254 description (Skurnik) — direct source promotions
 - **Recovery session (2026-04-04 evening):** +7,707 prices (Wally's title parser extracting leading-year vintage from title), +29,249 wine_grapes (TTB grape promotion re-run, real `grape_varietals` field), +86,015 colors (LWIN `colour` column backfill + 1,681 from importers), +12 prices (Enofile NV for sparkling/fortified). All recoveries from direct source data, zero inference. See DECISIONS.md "Recovery of lost data via authoritative sources only."
@@ -255,7 +255,8 @@ Staging-first architecture: all external data goes through per-source staging ta
 - `python -m pipeline.load.upc_staging` — loads Open Food Facts, Horizon, WineDeals into staging
 - `python -m pipeline.fetch.wv_details` — WV ABCA detail fetcher with resume support (**⚠️ API dead, cannot run**)
 - `python -m pipeline.fetch.ttb_image_downloader` — downloads label images from TTB by year range
-- `python -m pipeline.analyze.barcode_scanner` — scans downloaded label images for UPC/EAN/QR barcodes
+- `python -m pipeline.analyze.barcode_scanner --image-dir "D:\TTB Label Images\labels" --workers 12` — scans label/scan images for UPC/EAN/QR barcodes (year-by-year streaming, incremental save, resume support)
+- `python -m pipeline.promote.ttb_upc_promote --execute --qr` — promotes barcode scan UPCs + QR codes to external_ids via source_ttb_colas.canonical_wine_id join
 - `python -m pipeline.analyze.db_counts` — row counts across all tables
 
 **Key promotion scripts:**
@@ -334,7 +335,7 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 ### Major Gaps
 - **Score coverage 2.24%** — competition sources now matched (Berliner 4.9K/73K, TEXSOM 21.7K/46.9K). Rest require fuzzy matching.
 - **Enrichment pipeline live but 2 wines enriched** — need batch pre-warming (Grade C) and frontend integration (Grade B on-demand).
-- UPC barcodes: ~13K (barcode scan running should add ~64K)
+- ~~UPC barcodes~~ **DONE:** 106K UPCs across 80K wines (TTB label+scan barcode scanning complete, promoted to external_ids 2026-04-06)
 - ~40 canonical tables still at 0 rows (descriptors, wine_relationships, etc.) — vineyards now has 815 rows
 - Weather data, soil/water body links, producer_timeline — all empty.
 
@@ -382,7 +383,7 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 **All Phase 1 foundation work is complete** (schema, reference data, data acquisition, LWIN promotion, TTB scraping, staging table loads, initial merge passes). See git history for details.
 
 **Active:**
-- TTB barcode scan (490K images) — running in separate session
+- ~~TTB barcode scan~~ **COMPLETE** (2026-04-06): 3M labels + 332K scans scanned, 106K UPCs promoted
 - Data merge paused — see "Next steps (resume here)" in merge infrastructure section
 
 **Upcoming:**
@@ -417,7 +418,7 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 - **Data acquisition:** 17 source categories researched. See `docs/SOURCES.md`.
 - **TTB COLA scraping COMPLETE:** 3.28M records. Detail: 3.18M (96.8%). Printable: 1.82M (99.86% of 001-format). Chrome inject architecture (Python + JS). See `docs/HISTORY.md`.
 - **50-state survey COMPLETE:** PRO Platform (12 states, 346K COLAs loaded), TABC (183K), WV (55K, API now dead), Kansas (65K). 28 states confirmed dead ends.
-- **490K label images downloaded** (~21GB). Barcode scan running in separate session. Test: 18.2% hit rate → projected ~64K COLA→UPC bridges.
+- **3M+ label images + 332K scan images downloaded** to external drive (D:\TTB Label Images, ~770GB). Barcode scan complete: 142K unique UPCs detected, 106K promoted to external_ids across 80K wines. 45K QR codes also captured and promoted (12.5K URLs + 1.4K data).
 - **7 additional fetchers built and loaded:** Spec's, Berliner, TEXSOM, Wally's, Enofile, Flatiron, BC Liquor.
 - **Source audit (2026-03-24):** Dead: WV ABCA, Horizon. Stale: TABC +18K, OFF +11K. Healthy: PRO Platform, Kansas, LCBO, BC Liquor, all importers.
 
