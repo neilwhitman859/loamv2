@@ -5,11 +5,15 @@ Runs read-only checks against the database and produces a report.
 Designed to run nightly (or at session start) to catch regressions.
 
 Usage:
-    python -m pipeline.analyze.schema_audit [--json] [--save]
+    python -m pipeline.analyze.schema_audit [--json] [--save] [--fix]
 
 Options:
     --json    Output raw JSON instead of formatted report
     --save    Save JSON results to data/stats/schema_audit_YYYY-MM-DD.json
+    --fix     Apply conservative auto-fixes after auditing:
+              - VACUUM ANALYZE tables with >10% dead tuples
+              - CREATE INDEX IF NOT EXISTS for missing FK indexes
+              Both are idempotent and safe to run every night.
 """
 
 import json
@@ -367,6 +371,66 @@ def audit_db_size(cur):
 
 
 # ---------------------------------------------------------------------------
+# Auto-fix functions (conservative, idempotent)
+# ---------------------------------------------------------------------------
+
+VACUUM_THRESHOLD_PCT = 10.0  # VACUUM tables with >10% dead tuple ratio
+
+
+def fix_vacuum(conn, dead_tuples):
+    """VACUUM ANALYZE tables with high dead tuple ratios.
+
+    VACUUM must run outside a transaction (autocommit=True).
+    Returns list of table names that were vacuumed.
+    """
+    to_vacuum = [d["table"] for d in dead_tuples if d["dead_pct"] >= VACUUM_THRESHOLD_PCT]
+    if not to_vacuum:
+        return []
+
+    fixed = []
+    old_autocommit = conn.autocommit
+    conn.autocommit = True
+    try:
+        for table in to_vacuum:
+            with conn.cursor() as cur:
+                print(f"  VACUUM ANALYZE {table}...", file=sys.stderr)
+                cur.execute(f"VACUUM ANALYZE {table}")
+            fixed.append(table)
+    finally:
+        conn.autocommit = old_autocommit
+    return fixed
+
+
+def fix_fk_indexes(conn, fk_index_gaps):
+    """CREATE INDEX IF NOT EXISTS for all missing FK columns.
+
+    Safe to run multiple times — IF NOT EXISTS makes it idempotent.
+    Returns list of 'table.column' strings that got indexes.
+    """
+    if not fk_index_gaps:
+        return []
+
+    fixed = []
+    for gap in fk_index_gaps:
+        table = gap["table"]
+        column = gap["column"]
+        # Postgres identifier limit is 63 bytes; truncate if needed
+        idx_name = f"idx_{table}_{column}"[:63]
+        try:
+            with conn.cursor() as cur:
+                print(f"  CREATE INDEX IF NOT EXISTS {idx_name}...", file=sys.stderr)
+                cur.execute(
+                    f"CREATE INDEX IF NOT EXISTS {idx_name} ON {table}({column})"
+                )
+            conn.commit()
+            fixed.append(f"{table}.{column}")
+        except Exception as e:
+            conn.rollback()
+            print(f"  SKIP {table}.{column}: {e}", file=sys.stderr)
+    return fixed
+
+
+# ---------------------------------------------------------------------------
 # Report formatting
 # ---------------------------------------------------------------------------
 
@@ -517,6 +581,7 @@ def main():
     args = sys.argv[1:]
     output_json = "--json" in args
     save = "--save" in args
+    fix = "--fix" in args
 
     conn = get_conn()
     try:
@@ -534,6 +599,19 @@ def main():
             dead_tuples = audit_dead_tuples(cur)
             db_size = audit_db_size(cur)
 
+        # Auto-fix: VACUUM and missing FK indexes
+        fixes_applied = {"vacuumed": [], "indexes_created": []}
+        if fix:
+            print("\nApplying conservative fixes...", file=sys.stderr)
+            conn.commit()  # Close open transaction before autocommit switch
+            fixes_applied["vacuumed"] = fix_vacuum(conn, dead_tuples)
+            fixes_applied["indexes_created"] = fix_fk_indexes(conn, fk_index_gaps)
+            if fixes_applied["vacuumed"] or fixes_applied["indexes_created"]:
+                print("Re-running dead tuple check after fixes...", file=sys.stderr)
+                with conn.cursor() as cur:
+                    dead_tuples = audit_dead_tuples(cur)
+                    fk_index_gaps = audit_fk_indexes(cur)
+
         results = {
             "timestamp": datetime.now(tz=__import__('datetime').timezone.utc).isoformat(),
             "db_size": db_size,
@@ -547,12 +625,21 @@ def main():
             "whitespace": whitespace,
             "table_sizes": table_sizes,
             "dead_tuples": dead_tuples,
+            "fixes_applied": fixes_applied,
         }
 
         if output_json:
             print(json.dumps(results, indent=2))
         else:
             print(format_report(results))
+            if fix and (fixes_applied["vacuumed"] or fixes_applied["indexes_created"]):
+                print("\n--- AUTO-FIXES APPLIED ---")
+                if fixes_applied["vacuumed"]:
+                    print(f"  VACUUM ANALYZE: {', '.join(fixes_applied['vacuumed'])}")
+                if fixes_applied["indexes_created"]:
+                    print(f"  Indexes created: {len(fixes_applied['indexes_created'])}")
+                    for idx in fixes_applied["indexes_created"]:
+                        print(f"    {idx}")
 
         if save:
             stats_dir = Path(__file__).resolve().parents[2] / "data" / "stats"
