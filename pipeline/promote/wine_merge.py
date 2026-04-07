@@ -2,11 +2,15 @@
 """
 wine_merge.py — Merge Haiku-classified duplicate wine groups into single canonical records.
 
-Reads match_decisions (status='ai_accepted'), merges all duplicate IDs into the
-survivor (source_a_id), re-points every child table, NULL-fills missing survivor
-columns from duplicates, then soft-deletes the duplicates.
+Strategy (redesigned for speed):
+  Phase 1 — BULK: Build a dupe→survivor mapping table in Postgres, then do
+             ONE UPDATE per staging table (30 tables, one JOIN each). Fast.
+  Phase 2 — PER-GROUP: Handle canonical child tables with conflict logic
+             (vintages, wine_grapes, external_ids, etc.). Small tables, fast.
+  Phase 3 — BULK: Soft-delete all dupes + mark decisions merged in two queries.
 
-Only processes status='ai_accepted' groups. Flagged and rejected are untouched.
+The old approach did 30 staging UPDATEs per batch of 200 groups (~250K queries
+total against source_ttb_colas). This approach does 30 total. Runtime: minutes.
 
 Usage:
     python -m pipeline.promote.wine_merge            # dry-run (default, safe)
@@ -23,51 +27,10 @@ import argparse
 from pipeline.lib.db import get_conn
 
 # ---------------------------------------------------------------------------
-# Child tables to re-point: wine_id FK → survivor
-# Each entry: (table, wine_id_column, conflict_columns_or_None)
-# conflict_columns: list of columns that form a unique key with wine_id.
-#   When a dupe row would conflict, the dupe row is deleted (survivor already has it).
-# None = simple UPDATE, no conflict handling needed.
+# Config
 # ---------------------------------------------------------------------------
 
-WINE_ID_TABLES = [
-    # Tables with unique (wine_id, X) constraints — delete conflicts first
-    ("wine_grapes",                      "wine_id", ["grape_id"]),
-    ("wine_label_designations",          "wine_id", ["label_designation_id"]),
-    ("wine_appellations",                "wine_id", ["appellation_id"]),
-    ("wine_regions",                     "wine_id", ["region_id"]),
-    ("wine_soils",                       "wine_id", ["soil_type_id"]),
-    ("wine_vineyards",                   "wine_id", ["vineyard_id"]),
-    ("wine_biodiversity_certifications", "wine_id", ["biodiversity_certification_id"]),
-    ("wine_farming_certifications",      "wine_id", ["farming_certification_id"]),
-    ("wine_food_pairings",               "wine_id", ["food_category_id"]),
-    ("wine_relationships",               "wine_id", ["related_wine_id"]),
-    # One-per-wine tables — if survivor has one, drop dupe's
-    ("wine_insights",                    "wine_id", ["wine_id"]),  # 1:1
-    # Vintage tables using (wine_id, vintage_year) — no wine_vintage_id
-    ("wine_vintage_grapes",              "wine_id", ["grape_id"]),      # wine_vintage_id already re-pointed above
-    ("wine_vintage_formats",             "wine_id", ["bottle_format_id"]),
-    ("wine_vintage_tasting_insights",    "wine_id", None),
-    ("wine_vintage_insights",            "wine_id", None),
-    ("wine_vintage_vineyards",           "wine_id", None),
-    ("wine_vintage_descriptors",         "wine_id", None),
-    ("wine_vintage_documents",           "wine_id", None),
-    ("wine_vintage_nv_components",       "wine_id", None),
-    # Simple re-point — no meaningful unique constraint with wine_id alone
-    ("wine_aliases",                     "wine_id", None),
-    ("wine_descriptors",                 "wine_id", None),
-    ("wine_lookups",                     "wine_id", None),
-    ("wine_water_bodies",                "wine_id", None),
-]
-
-# wine_relationships also has a related_wine_id FK — re-point that separately
-WINE_RELATED_TABLES = [
-    ("wine_relationships",   "related_wine_id"),
-    ("wine_vintage_nv_components", "component_wine_id"),
-    ("wines",                "parent_wine_id"),
-]
-
-# Staging tables: canonical_wine_id column, simple re-point
+# Staging tables with canonical_wine_id — updated in bulk via mapping table
 STAGING_TABLES = [
     "source_bc_liquor", "source_berliner", "source_best_wine_store",
     "source_domestique", "source_empson", "source_enofile",
@@ -79,13 +42,55 @@ STAGING_TABLES = [
     "source_systembolaget", "source_tabc", "source_texsom",
     "source_ttb_colas", "source_utah_dabs", "source_wallys",
     "source_winebow", "source_winedeals", "source_wv_abca",
-    # _tmp_wine_match uses wine_id not canonical_wine_id — handled separately
 ]
 
-# Tables using wine_id (not canonical_wine_id) that are not canonical child tables
-WINE_ID_LOOKUP_TABLES = ["_tmp_wine_match"]
+# _tmp_wine_match uses wine_id, not canonical_wine_id
+STAGING_WINE_ID_TABLES = ["_tmp_wine_match"]
 
-# Columns to NULL-fill on survivor from dupes (first non-NULL wins)
+# Canonical child tables: (table, wine_id_col, conflict_cols_or_None)
+# conflict_cols: unique key partner columns. Dupe rows conflicting with
+# survivor rows are deleted; non-conflicting rows are re-pointed.
+# None = simple re-point, no conflict possible.
+WINE_ID_TABLES = [
+    ("wine_grapes",                      "wine_id", ["grape_id"]),
+    ("wine_label_designations",          "wine_id", ["label_designation_id"]),
+    ("wine_appellations",                "wine_id", ["appellation_id"]),
+    ("wine_regions",                     "wine_id", ["region_id"]),
+    ("wine_soils",                       "wine_id", ["soil_type_id"]),
+    ("wine_vineyards",                   "wine_id", ["vineyard_id"]),
+    ("wine_biodiversity_certifications", "wine_id", ["biodiversity_certification_id"]),
+    ("wine_farming_certifications",      "wine_id", ["farming_certification_id"]),
+    ("wine_food_pairings",               "wine_id", ["food_category_id"]),
+    ("wine_relationships",               "wine_id", ["related_wine_id"]),
+    ("wine_insights",                    "wine_id", ["wine_id"]),   # 1:1
+    ("wine_vintage_grapes",              "wine_id", ["grape_id"]),
+    ("wine_vintage_formats",             "wine_id", ["bottle_format_id"]),
+    ("wine_vintage_tasting_insights",    "wine_id", None),
+    ("wine_vintage_insights",            "wine_id", None),
+    ("wine_vintage_vineyards",           "wine_id", None),
+    ("wine_vintage_descriptors",         "wine_id", None),
+    ("wine_vintage_documents",           "wine_id", None),
+    ("wine_vintage_nv_components",       "wine_id", None),
+    ("wine_aliases",                     "wine_id", None),
+    ("wine_descriptors",                 "wine_id", None),
+    ("wine_lookups",                     "wine_id", None),
+    ("wine_water_bodies",                "wine_id", None),
+]
+
+WINE_RELATED_TABLES = [
+    ("wine_relationships",         "related_wine_id"),
+    ("wine_vintage_nv_components", "component_wine_id"),
+    ("wines",                      "parent_wine_id"),
+]
+
+# Tables with wine_vintage_id FK (re-pointed when vintages are conflict-merged)
+VINTAGE_CHILD_TABLES = [
+    ("wine_vintage_prices",  "wine_vintage_id"),
+    ("wine_vintage_scores",  "wine_vintage_id"),
+    ("wine_vintage_grapes",  "wine_vintage_id"),
+]
+
+# Columns to NULL-fill on survivor from dupes
 NULL_FILL_COLUMNS = [
     "appellation_id", "region_id", "country_id", "color",
     "varietal_category_id", "style", "label_image_url",
@@ -93,22 +98,22 @@ NULL_FILL_COLUMNS = [
 
 
 # ---------------------------------------------------------------------------
-# Helpers
+# Data loading
 # ---------------------------------------------------------------------------
 
-def load_groups(cur):
-    """Load all ai_accepted groups not yet merged from match_decisions.
-
-    Returns list of (decision_id, survivor_id, [dupe_ids]).
-    """
-    cur.execute("""
+def load_groups(cur, limit=None):
+    """Load all unmerged ai_accepted groups from match_decisions."""
+    q = """
         SELECT id, source_a_id, source_b_id
         FROM match_decisions
         WHERE status = 'ai_accepted'
         AND entity_type = 'wine'
         AND (notes IS NULL OR notes NOT LIKE '%%[merged]%%')
         ORDER BY created_at
-    """)
+    """
+    if limit:
+        q += f" LIMIT {int(limit)}"
+    cur.execute(q)
     rows = cur.fetchall()
     groups = []
     for decision_id, survivor_id, source_b_id in rows:
@@ -120,28 +125,99 @@ def load_groups(cur):
     return groups
 
 
-def null_fill_survivor(cur, survivor_id, dupe_ids, dry_run, stats):
-    """Copy first non-NULL value from dupes into survivor for missing columns."""
-    # Get survivor's current values
+# ---------------------------------------------------------------------------
+# Phase 1: Bulk staging table updates
+# ---------------------------------------------------------------------------
+
+def bulk_update_staging(cur, groups, dry_run, stats):
+    """Build a mapping table and do one UPDATE per staging table.
+
+    Creates a temp table of (dupe_id, survivor_id), then joins against each
+    staging table. One query per table regardless of how many groups there are.
+    """
+    print("  [Phase 1] Building dupe→survivor mapping...", file=sys.stderr)
+
+    # Collect all (dupe_id, survivor_id) pairs
+    pairs = []
+    for _, survivor_id, dupe_ids in groups:
+        for dupe_id in dupe_ids:
+            pairs.append((dupe_id, survivor_id))
+
+    if not pairs:
+        return
+
+    print(f"  [Phase 1] {len(pairs):,} dupe→survivor pairs", file=sys.stderr)
+
+    if not dry_run:
+        # Create temp mapping table
+        cur.execute("""
+            CREATE TEMP TABLE _merge_map (
+                dupe_id uuid NOT NULL,
+                survivor_id uuid NOT NULL
+            ) ON COMMIT DROP
+        """)
+        cur.executemany(
+            "INSERT INTO _merge_map VALUES (%s::uuid, %s::uuid)",
+            pairs,
+        )
+        cur.execute("CREATE INDEX ON _merge_map(dupe_id)")
+
+        # Bulk update each staging table
+        for table in STAGING_TABLES:
+            cur.execute(f"""
+                UPDATE {table} t
+                SET canonical_wine_id = m.survivor_id
+                FROM _merge_map m
+                WHERE t.canonical_wine_id = m.dupe_id
+            """)
+            n = cur.rowcount
+            stats["staging_repoints"] += n
+            if n > 0:
+                print(f"  [Phase 1] {table}: {n:,} rows updated", file=sys.stderr)
+
+        for table in STAGING_WINE_ID_TABLES:
+            cur.execute(f"""
+                UPDATE {table} t
+                SET wine_id = m.survivor_id
+                FROM _merge_map m
+                WHERE t.wine_id = m.dupe_id
+            """)
+            stats["staging_repoints"] += cur.rowcount
+
+        # Also update match_decisions.canonical_wine_id
+        cur.execute("""
+            UPDATE match_decisions t
+            SET canonical_wine_id = m.survivor_id
+            FROM _merge_map m
+            WHERE t.canonical_wine_id = m.dupe_id
+        """)
+
+    print(f"  [Phase 1] Staging updates complete. {stats['staging_repoints']:,} rows total.",
+          file=sys.stderr)
+
+
+# ---------------------------------------------------------------------------
+# Phase 2: Per-group canonical child table work
+# ---------------------------------------------------------------------------
+
+def null_fill_survivor(cur, survivor_id, dupe_ids, stats):
     cols = ", ".join(NULL_FILL_COLUMNS)
     cur.execute(f"SELECT {cols} FROM wines WHERE id = %s::uuid", (survivor_id,))
     row = cur.fetchone()
     if not row:
         return
     survivor_vals = dict(zip(NULL_FILL_COLUMNS, row))
-
     missing = [c for c in NULL_FILL_COLUMNS if survivor_vals[c] is None]
     if not missing:
         return
 
-    # Collect first non-NULL values from dupes
-    fill = {}
-    placeholders = ",".join(["%s::uuid"] * len(dupe_ids))
+    ph = ",".join(["%s::uuid"] * len(dupe_ids))
     missing_cols = ", ".join(missing)
     cur.execute(
-        f"SELECT {missing_cols} FROM wines WHERE id IN ({placeholders}) AND deleted_at IS NULL",
+        f"SELECT {missing_cols} FROM wines WHERE id IN ({ph}) AND deleted_at IS NULL",
         dupe_ids,
     )
+    fill = {}
     for dupe_row in cur.fetchall():
         for col, val in zip(missing, dupe_row):
             if col not in fill and val is not None:
@@ -149,229 +225,178 @@ def null_fill_survivor(cur, survivor_id, dupe_ids, dry_run, stats):
         if len(fill) == len(missing):
             break
 
-    if not fill:
-        return
-
-    set_clause = ", ".join(f"{c} = %s" for c in fill)
-    values = list(fill.values()) + [survivor_id]
-    if not dry_run:
+    if fill:
+        set_clause = ", ".join(f"{c} = %s" for c in fill)
         cur.execute(
             f"UPDATE wines SET {set_clause}, updated_at = NOW() WHERE id = %s::uuid",
-            values,
+            list(fill.values()) + [survivor_id],
         )
-    stats["null_fills"] += len(fill)
+        stats["null_fills"] += len(fill)
 
 
-# Tables that actually have a wine_vintage_id FK column
-VINTAGE_CHILD_TABLES = [
-    ("wine_vintage_prices",  "wine_vintage_id"),
-    ("wine_vintage_scores",  "wine_vintage_id"),
-    ("wine_vintage_grapes",  "wine_vintage_id"),  # also needs wine_id re-point below
-]
-
-
-def handle_vintages(cur, survivor_id, dupe_ids, dry_run, stats):
-    """Process all vintages for every dupe in order.
-
-    For each vintage:
-    - If year conflicts with an existing survivor vintage (including ones moved
-      from earlier dupes in this same group): re-point its children to the
-      survivor vintage, then delete it.
-    - Otherwise: re-point wine_id to survivor.
-
-    Processing per-vintage rather than per-dupe ensures intra-group conflicts
-    (two dupes both having year X) are handled correctly.
-    """
+def handle_vintages(cur, survivor_id, dupe_ids, stats):
+    """Merge vintages per-dupe, handling year conflicts."""
     for dupe_id in dupe_ids:
         cur.execute(
             "SELECT id, vintage_year FROM wine_vintages WHERE wine_id = %s::uuid",
             (dupe_id,),
         )
-        dupe_vintages = cur.fetchall()
-
-        for dupe_vid, year in dupe_vintages:
+        for dupe_vid, year in cur.fetchall():
             dupe_vid = str(dupe_vid)
-
-            # Check for conflict against current survivor vintages
             cur.execute(
                 "SELECT id FROM wine_vintages WHERE wine_id = %s::uuid AND vintage_year = %s",
                 (survivor_id, year),
             )
             conflict = cur.fetchone()
-
             if conflict:
                 surv_vid = str(conflict[0])
-                # Re-point all children of the dupe vintage → survivor vintage
                 for table, col in VINTAGE_CHILD_TABLES:
-                    if not dry_run:
-                        cur.execute(
-                            f"UPDATE {table} SET {col} = %s::uuid WHERE {col} = %s::uuid",
-                            (surv_vid, dupe_vid),
-                        )
-                        stats["vintage_child_repoints"] += cur.rowcount
-                # Delete the now-empty dupe vintage
-                if not dry_run:
-                    cur.execute("DELETE FROM wine_vintages WHERE id = %s::uuid", (dupe_vid,))
+                    cur.execute(
+                        f"UPDATE {table} SET {col} = %s::uuid WHERE {col} = %s::uuid",
+                        (surv_vid, dupe_vid),
+                    )
+                    stats["vintage_child_repoints"] += cur.rowcount
+                cur.execute("DELETE FROM wine_vintages WHERE id = %s::uuid", (dupe_vid,))
                 stats["vintages_merged"] += 1
             else:
-                # No conflict — re-point wine_id to survivor
-                if not dry_run:
-                    cur.execute(
-                        "UPDATE wine_vintages SET wine_id = %s::uuid WHERE id = %s::uuid",
-                        (survivor_id, dupe_vid),
-                    )
-                    stats["child_repoints"] += cur.rowcount
-
-
-def repoint_wine_id_tables(cur, survivor_id, dupe_ids, dry_run, stats):
-    """Re-point wine_id FK columns from all dupe IDs → survivor.
-
-    For tables with conflict_columns, delete conflicting dupe rows first.
-    """
-    for table, col, conflict_cols in WINE_ID_TABLES:
-        for dupe_id in dupe_ids:
-            if conflict_cols:
-                # Special case: 1:1 table (conflict_cols == ["wine_id"])
-                if conflict_cols == ["wine_id"]:
-                    # If survivor already has a row, just drop dupe's row
-                    cur.execute(
-                        f"SELECT 1 FROM {table} WHERE {col} = %s::uuid", (survivor_id,)
-                    )
-                    if cur.fetchone():
-                        if not dry_run:
-                            cur.execute(
-                                f"DELETE FROM {table} WHERE {col} = %s::uuid", (dupe_id,)
-                            )
-                        continue
-
-                else:
-                    # Delete dupe rows that would conflict with survivor rows
-                    conflict_join = " AND ".join(
-                        f"existing.{c} = dupe.{c}" for c in conflict_cols
-                    )
-                    if not dry_run:
-                        cur.execute(f"""
-                            DELETE FROM {table} dupe
-                            USING {table} existing
-                            WHERE dupe.{col} = %s::uuid
-                            AND existing.{col} = %s::uuid
-                            AND {conflict_join}
-                        """, (dupe_id, survivor_id))
-                        stats["conflict_drops"] += cur.rowcount
-
-            # Re-point remaining rows
-            if not dry_run:
                 cur.execute(
-                    f"UPDATE {table} SET {col} = %s::uuid WHERE {col} = %s::uuid",
-                    (survivor_id, dupe_id),
+                    "UPDATE wine_vintages SET wine_id = %s::uuid WHERE id = %s::uuid",
+                    (survivor_id, dupe_vid),
                 )
                 stats["child_repoints"] += cur.rowcount
 
 
-def repoint_related_wine_columns(cur, survivor_id, dupe_ids, dry_run, stats):
-    """Re-point non-primary wine_id columns (related_wine_id, parent_wine_id, etc.)."""
+def repoint_wine_id_tables(cur, survivor_id, dupe_ids, stats):
     ph = ",".join(["%s::uuid"] * len(dupe_ids))
-    for table, col in WINE_RELATED_TABLES:
-        if not dry_run:
-            cur.execute(
-                f"UPDATE {table} SET {col} = %s::uuid WHERE {col} IN ({ph})",
-                [survivor_id] + dupe_ids,
-            )
-            stats["child_repoints"] += cur.rowcount
+    all_ids = [survivor_id] + dupe_ids
+    ph_all = ",".join(["%s::uuid"] * len(all_ids))
+    for table, col, conflict_cols in WINE_ID_TABLES:
+        if conflict_cols:
+            if conflict_cols == ["wine_id"]:
+                cur.execute(f"SELECT 1 FROM {table} WHERE {col} = %s::uuid", (survivor_id,))
+                if cur.fetchone():
+                    cur.execute(f"DELETE FROM {table} WHERE {col} IN ({ph})", dupe_ids)
+                    continue
+            else:
+                # Delete ANY dupe row whose conflict key appears more than once across
+                # survivor+all dupes combined. This handles:
+                #   - dupe conflicts with survivor (survivor count ≥ 1, so total > 1)
+                #   - cross-dupe conflicts (two dupes share the same key)
+                cc = ", ".join(conflict_cols)
+                cur.execute(f"""
+                    DELETE FROM {table} t
+                    WHERE t.{col} IN ({ph})
+                    AND ({cc}) IN (
+                        SELECT {cc} FROM {table}
+                        WHERE {col} IN ({ph_all})
+                        GROUP BY {cc}
+                        HAVING COUNT(*) > 1
+                    )
+                """, dupe_ids + all_ids)
+                stats["conflict_drops"] += cur.rowcount
 
-
-def repoint_external_ids(cur, survivor_id, dupe_ids, dry_run, stats):
-    """Re-point external_ids. Unique on (entity_type, entity_id, system, external_id).
-
-    For each dupe, reassign rows where survivor doesn't already have the same (system, external_id).
-    Delete any remaining dupe rows (survivor already has that identifier).
-    """
-    for dupe_id in dupe_ids:
-        if not dry_run:
-            # Reassign non-conflicting rows
-            cur.execute("""
-                UPDATE external_ids
-                SET entity_id = %s::uuid
-                WHERE entity_type = 'wine'
-                AND entity_id = %s::uuid
-                AND (system, external_id) NOT IN (
-                    SELECT system, external_id FROM external_ids
-                    WHERE entity_type = 'wine' AND entity_id = %s::uuid
-                )
-            """, (survivor_id, dupe_id, survivor_id))
-            stats["external_id_repoints"] += cur.rowcount
-
-            # Delete remaining (duplicates the survivor already has)
-            cur.execute("""
-                DELETE FROM external_ids
-                WHERE entity_type = 'wine' AND entity_id = %s::uuid
-            """, (dupe_id,))
-
-
-def repoint_vintage_prices_scores(cur, survivor_id, dupe_ids, dry_run, stats):
-    """Update wine_id on prices/scores to match survivor.
-
-    wine_vintage_id is already correct (set during vintage conflict merge).
-    wine_vintage_formats handled in WINE_ID_TABLES (uses wine_id+vintage_year key).
-    """
-    ph = ",".join(["%s::uuid"] * len(dupe_ids))
-    for table in ("wine_vintage_prices", "wine_vintage_scores"):
-        if not dry_run:
-            cur.execute(
-                f"UPDATE {table} SET wine_id = %s::uuid WHERE wine_id IN ({ph})",
-                [survivor_id] + dupe_ids,
-            )
-            stats["child_repoints"] += cur.rowcount
-
-
-def repoint_staging_tables(cur, survivor_id, dupe_ids, dry_run, stats):
-    """Update canonical_wine_id on all staging tables, and wine_id on lookup tables.
-
-    Uses IN() to batch all dupe_ids in a single query per table.
-    """
-    ph = ",".join(["%s::uuid"] * len(dupe_ids))
-    for table in STAGING_TABLES:
-        if not dry_run:
-            cur.execute(
-                f"UPDATE {table} SET canonical_wine_id = %s::uuid "
-                f"WHERE canonical_wine_id IN ({ph})",
-                [survivor_id] + dupe_ids,
-            )
-            stats["staging_repoints"] += cur.rowcount
-    for table in WINE_ID_LOOKUP_TABLES:
-        if not dry_run:
-            cur.execute(
-                f"UPDATE {table} SET wine_id = %s::uuid WHERE wine_id IN ({ph})",
-                [survivor_id] + dupe_ids,
-            )
-            stats["staging_repoints"] += cur.rowcount
-
-
-def soft_delete_dupes(cur, survivor_id, dupe_ids, dry_run, stats):
-    """Soft-delete all dupe wines: set deleted_at + duplicate_of."""
-    placeholders = ",".join(["%s::uuid"] * len(dupe_ids))
-    if not dry_run:
         cur.execute(
-            f"""UPDATE wines
-                SET deleted_at = NOW(),
-                    duplicate_of = %s::uuid,
-                    updated_at = NOW()
-                WHERE id IN ({placeholders})
-                AND deleted_at IS NULL""",
+            f"UPDATE {table} SET {col} = %s::uuid WHERE {col} IN ({ph})",
             [survivor_id] + dupe_ids,
         )
-    stats["wines_deleted"] += len(dupe_ids)
+        stats["child_repoints"] += cur.rowcount
 
 
-def mark_merged(cur, decision_id, dry_run):
-    """Append [merged] to match_decisions.notes so this group is skipped on re-run."""
+def repoint_related_wine_columns(cur, survivor_id, dupe_ids, stats):
+    ph = ",".join(["%s::uuid"] * len(dupe_ids))
+    for table, col in WINE_RELATED_TABLES:
+        cur.execute(
+            f"UPDATE {table} SET {col} = %s::uuid WHERE {col} IN ({ph})",
+            [survivor_id] + dupe_ids,
+        )
+        stats["child_repoints"] += cur.rowcount
+
+
+def repoint_external_ids(cur, survivor_id, dupe_ids, stats):
+    ph = ",".join(["%s::uuid"] * len(dupe_ids))
+    all_ids = [survivor_id] + dupe_ids
+    ph_all = ",".join(["%s::uuid"] * len(all_ids))
+    # Delete dupe rows whose (system, external_id) appears more than once across
+    # survivor+all dupes. Catches conflicts with survivor AND cross-dupe conflicts.
+    cur.execute(f"""
+        DELETE FROM external_ids
+        WHERE entity_type = 'wine'
+        AND entity_id IN ({ph})
+        AND (system, external_id) IN (
+            SELECT system, external_id FROM external_ids
+            WHERE entity_type = 'wine' AND entity_id IN ({ph_all})
+            GROUP BY system, external_id
+            HAVING COUNT(*) > 1
+        )
+    """, dupe_ids + all_ids)
+    stats["conflict_drops"] += cur.rowcount
+    # Update remaining dupe rows (no conflicts remain)
+    cur.execute(f"""
+        UPDATE external_ids SET entity_id = %s::uuid
+        WHERE entity_type = 'wine' AND entity_id IN ({ph})
+    """, [survivor_id] + dupe_ids)
+    stats["external_id_repoints"] += cur.rowcount
+
+
+def repoint_vintage_prices_scores(cur, survivor_id, dupe_ids, stats):
+    ph = ",".join(["%s::uuid"] * len(dupe_ids))
+    for table in ("wine_vintage_prices", "wine_vintage_scores"):
+        cur.execute(
+            f"UPDATE {table} SET wine_id = %s::uuid WHERE wine_id IN ({ph})",
+            [survivor_id] + dupe_ids,
+        )
+        stats["child_repoints"] += cur.rowcount
+
+
+# ---------------------------------------------------------------------------
+# Phase 3: Bulk soft-delete + mark merged
+# ---------------------------------------------------------------------------
+
+def bulk_finalize(cur, groups, dry_run, stats):
+    """Soft-delete all dupes and mark all decisions merged in two queries."""
+    print("  [Phase 3] Soft-deleting dupes and marking decisions merged...",
+          file=sys.stderr)
+
+    all_dupes = []       # (dupe_id, survivor_id)
+    decision_ids = []
+
+    for decision_id, survivor_id, dupe_ids in groups:
+        for dupe_id in dupe_ids:
+            all_dupes.append((dupe_id, survivor_id))
+        decision_ids.append(decision_id)
+
     if not dry_run:
+        # Bulk soft-delete with duplicate_of set
         cur.execute("""
-            UPDATE match_decisions
-            SET notes = COALESCE(notes, '') || ' [merged]',
+            CREATE TEMP TABLE _delete_map (
+                dupe_id uuid NOT NULL,
+                survivor_id uuid NOT NULL
+            ) ON COMMIT DROP
+        """)
+        cur.executemany(
+            "INSERT INTO _delete_map VALUES (%s::uuid, %s::uuid)",
+            all_dupes,
+        )
+        cur.execute("""
+            UPDATE wines w
+            SET deleted_at = NOW(),
+                duplicate_of = m.survivor_id,
                 updated_at = NOW()
-            WHERE id = %s::uuid
-        """, (decision_id,))
+            FROM _delete_map m
+            WHERE w.id = m.dupe_id
+            AND w.deleted_at IS NULL
+        """)
+        stats["wines_deleted"] = cur.rowcount
+
+        # Bulk mark decisions as merged
+        ph = ",".join(["%s::uuid"] * len(decision_ids))
+        cur.execute(
+            f"UPDATE match_decisions SET notes = COALESCE(notes,'') || ' [merged]', "
+            f"updated_at = NOW() WHERE id IN ({ph})",
+            decision_ids,
+        )
+
+    print(f"  [Phase 3] {stats['wines_deleted']:,} wines soft-deleted.", file=sys.stderr)
 
 
 # ---------------------------------------------------------------------------
@@ -385,22 +410,35 @@ def run(execute=False, limit=None):
     conn = get_conn()
     cur = conn.cursor()
 
-    print(f"[wine_merge] {mode} — loading match_decisions...")
-    groups = load_groups(cur)
-    if limit:
-        groups = groups[:limit]
-
+    print(f"[wine_merge] {mode} — loading unmerged groups...", file=sys.stderr)
+    groups = load_groups(cur, limit=limit)
     total = len(groups)
     total_dupes = sum(len(d) for _, _, d in groups)
-    print(f"  {total} groups to merge ({total_dupes} dupe wines total)")
+    print(f"  {total:,} groups to merge ({total_dupes:,} dupe wines total)", file=sys.stderr)
 
     if total == 0:
         print("  Nothing to do.")
         conn.close()
         return
 
+    if dry_run:
+        dupe_counts = [len(d) for _, _, d in groups]
+        print(f"\n  Dry-run summary:")
+        print(f"    Groups:          {total:,}")
+        print(f"    Wines to delete: {sum(dupe_counts):,}")
+        print(f"    Avg dupes/group: {sum(dupe_counts)/total:.1f}")
+        print(f"    Max dupes/group: {max(dupe_counts)}")
+        print(f"\n  Sample groups (first 5):")
+        for decision_id, survivor_id, dupe_ids in groups[:5]:
+            cur.execute("SELECT name FROM wines WHERE id = %s::uuid", (survivor_id,))
+            row = cur.fetchone()
+            name = row[0] if row else "?"
+            print(f"    KEEP {survivor_id[:8]}.. ({name!r}), DELETE {len(dupe_ids)} dupes")
+        conn.close()
+        print("\n  Run with --execute to apply.")
+        return
+
     stats = {
-        "groups": 0,
         "wines_deleted": 0,
         "vintages_merged": 0,
         "vintage_child_repoints": 0,
@@ -412,85 +450,61 @@ def run(execute=False, limit=None):
         "errors": 0,
     }
 
-    # Dry-run: just summarise and sample — don't do real work
-    if dry_run:
-        dupe_counts = [len(d) for _, _, d in groups]
-        print(f"\n  Dry-run summary:")
-        print(f"    Groups:          {total}")
-        print(f"    Wines to delete: {sum(dupe_counts)}")
-        print(f"    Avg dupes/group: {sum(dupe_counts)/total:.1f}")
-        print(f"    Max dupes/group: {max(dupe_counts)}")
-        print(f"\n  Sample groups (first 5):")
-        for decision_id, survivor_id, dupe_ids in groups[:5]:
-            cur.execute("SELECT name FROM wines WHERE id = %s::uuid", (survivor_id,))
-            row = cur.fetchone()
-            name = row[0] if row else "?"
-            print(f"    KEEP {survivor_id[:8]}.. ({name!r}), DELETE {len(dupe_ids)} dupes")
-        conn.close()
-        print("\n  Run with --execute to apply.")
-        return stats
+    # -------------------------------------------------------------------------
+    # Phase 1: Bulk staging updates (one query per table)
+    # -------------------------------------------------------------------------
+    bulk_update_staging(cur, groups, dry_run, stats)
+    conn.commit()
+    print("  [Phase 1] Committed.", file=sys.stderr)
 
-    BATCH = 200
+    # -------------------------------------------------------------------------
+    # Phase 2: Per-group canonical child table work
+    # -------------------------------------------------------------------------
+    print(f"  [Phase 2] Processing {total:,} groups for canonical child tables...",
+          file=sys.stderr)
+
+    BATCH = 500
     for i in range(0, total, BATCH):
         batch = groups[i:i + BATCH]
         for decision_id, survivor_id, dupe_ids in batch:
             try:
-                # 1. NULL-fill survivor columns from dupes
-                null_fill_survivor(cur, survivor_id, dupe_ids, dry_run, stats)
-
-                # 2. Handle all vintages: merge conflicts, re-point non-conflicts
-                handle_vintages(cur, survivor_id, dupe_ids, dry_run, stats)
-
-                # 3. Re-point wine_id FK tables (with conflict handling)
-                repoint_wine_id_tables(cur, survivor_id, dupe_ids, dry_run, stats)
-
-                # 5. Re-point related wine columns (parent_wine_id, etc.)
-                repoint_related_wine_columns(cur, survivor_id, dupe_ids, dry_run, stats)
-
-                # 6. Re-point external_ids
-                repoint_external_ids(cur, survivor_id, dupe_ids, dry_run, stats)
-
-                # 7. Re-point wine_id on prices/scores/formats
-                repoint_vintage_prices_scores(cur, survivor_id, dupe_ids, dry_run, stats)
-
-                # 8. Re-point staging tables
-                repoint_staging_tables(cur, survivor_id, dupe_ids, dry_run, stats)
-
-                # 9. Soft-delete dupes
-                soft_delete_dupes(cur, survivor_id, dupe_ids, dry_run, stats)
-
-                # 10. Mark decision as merged
-                mark_merged(cur, decision_id, dry_run)
-
-                stats["groups"] += 1
-
+                null_fill_survivor(cur, survivor_id, dupe_ids, stats)
+                handle_vintages(cur, survivor_id, dupe_ids, stats)
+                repoint_wine_id_tables(cur, survivor_id, dupe_ids, stats)
+                repoint_related_wine_columns(cur, survivor_id, dupe_ids, stats)
+                repoint_external_ids(cur, survivor_id, dupe_ids, stats)
+                repoint_vintage_prices_scores(cur, survivor_id, dupe_ids, stats)
             except Exception as e:
                 conn.rollback()
                 stats["errors"] += 1
-                print(f"  ERROR group {decision_id} (survivor={survivor_id}): {e}")
+                print(f"  ERROR group {decision_id}: {e}", file=sys.stderr)
                 continue
 
         conn.commit()
-
         pct = (i + len(batch)) / total * 100
         print(
-            f"  [{pct:5.1f}%] {stats['groups']} merged | "
-            f"deleted={stats['wines_deleted']} vintages_merged={stats['vintages_merged']} "
-            f"ext_ids={stats['external_id_repoints']} errors={stats['errors']}"
+            f"  [Phase 2] [{pct:5.1f}%] {i+len(batch):,}/{total:,} groups | "
+            f"vintages_merged={stats['vintages_merged']} "
+            f"ext_ids={stats['external_id_repoints']} errors={stats['errors']}",
+            file=sys.stderr,
         )
 
-    print(f"\n[wine_merge] {'DRY RUN COMPLETE' if dry_run else 'COMPLETE'}")
-    print(f"  Groups merged:           {stats['groups']}")
-    print(f"  Wines soft-deleted:      {stats['wines_deleted']}")
-    print(f"  Vintage conflicts merged:{stats['vintages_merged']}")
-    print(f"  Child rows re-pointed:   {stats['child_repoints']}")
-    print(f"  External IDs re-pointed: {stats['external_id_repoints']}")
-    print(f"  Staging rows re-pointed: {stats['staging_repoints']}")
-    print(f"  Conflict drops:          {stats['conflict_drops']}")
-    print(f"  NULL fills on survivor:  {stats['null_fills']}")
-    print(f"  Errors:                  {stats['errors']}")
-    if dry_run:
-        print("\n  Run with --execute to apply.")
+    # -------------------------------------------------------------------------
+    # Phase 3: Bulk soft-delete + mark merged
+    # -------------------------------------------------------------------------
+    bulk_finalize(cur, groups, dry_run, stats)
+    conn.commit()
+
+    print(f"\n[wine_merge] COMPLETE")
+    print(f"  Groups merged:             {total:,}")
+    print(f"  Wines soft-deleted:        {stats['wines_deleted']:,}")
+    print(f"  Vintage conflicts merged:  {stats['vintages_merged']:,}")
+    print(f"  Child rows re-pointed:     {stats['child_repoints']:,}")
+    print(f"  External IDs re-pointed:   {stats['external_id_repoints']:,}")
+    print(f"  Staging rows re-pointed:   {stats['staging_repoints']:,}")
+    print(f"  Conflict drops:            {stats['conflict_drops']:,}")
+    print(f"  NULL fills on survivor:    {stats['null_fills']:,}")
+    print(f"  Errors:                    {stats['errors']:,}")
 
     conn.close()
     return stats
@@ -498,9 +512,7 @@ def run(execute=False, limit=None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--execute", action="store_true",
-                        help="Apply changes (default is dry-run)")
-    parser.add_argument("--limit", type=int, default=None,
-                        help="Process at most N groups")
+    parser.add_argument("--execute", action="store_true")
+    parser.add_argument("--limit", type=int, default=None)
     args = parser.parse_args()
     run(execute=args.execute, limit=args.limit)
