@@ -1263,3 +1263,15 @@ Convention-based months are always within 2-3 weeks of reality, never catastroph
 **Why this is not inference:** Every fix replaces a known-corrupted character with the one correct original. The corruption is Latin-1/Windows-1252 bytes that became U+FFFD in UTF-8 — each maps to exactly one accented character (é, è, ê, ñ, ü, etc.) determinable from the surrounding word. Haiku acts as OCR correction, not inference.
 
 **Cost:** ~$0.10 (Haiku phase). Dictionary phase: $0.
+
+---
+
+### 2026-04-07: Label OCR project tabled as "someday"
+
+**Decision:** After running an OCR bake-off on 20 test label images (EasyOCR, RapidOCR, Claude Vision as control), decided to table the bulk label OCR extraction project indefinitely. Images are preserved on the external drive for future use.
+
+**Bake-off results:** EasyOCR captured ~80% of Claude Vision baseline text, RapidOCR ~74%. Back labels (where the data is) performed better at ~94%. OnnxTR identified as strongest untested candidate but not pursued.
+
+**Why tabled:** Most high-value label data is already extracted from TTB structured fields (170K ABVs, 857K grapes, 1.75M appellations) without OCR. What labels uniquely offer (winemaker notes, blend percentages, EU e-label chemistry) would improve WineTest Depth from ~33% to ~38% — marginal. The enrichment pipeline (Grade C Haiku batch, ~$120 for 30-50K wines) would move Story from 1.8/5 to 3.5/5 and WineTest from 56 to ~70+ — far higher impact for the same effort.
+
+**Artifacts preserved:** `pipeline/analyze/ocr_bakeoff.py` (bake-off script), `data/test_labels/` (20 test images), `data/stats/ocr_bakeoff_results.json` (full results). Ready to resume if needed.

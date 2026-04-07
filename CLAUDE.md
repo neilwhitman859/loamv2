@@ -48,13 +48,16 @@ If the user says **"log that"**, force an entry even if you didn't think it was 
 When you modify the database schema (CREATE TABLE, ALTER TABLE, DROP, etc.), update `docs/SCHEMA.md` to reflect the change, including the reasoning.
 
 ### Commit at Milestones
-When something is important enough to update CLAUDE.md, it's important enough to commit. Commit with a clear message after meaningful milestones.
+When something is important enough to update CLAUDE.md, it's important enough to commit. Commit with a clear message after meaningful milestones. Also update your entry in `data/sessions.md` with current progress.
 
 ### Always Recommend
 When asking the user a clarifying question, **always give a recommendation**. If the answer is unclear, explain the case for each option. Don't just ask — propose a direction.
 
 ### Nudge the User
 If the user is going a long stretch without wrapping up, if decisions are being made but not logged, or if a session is ending without updating files — say something. Be direct: "We've made some decisions this session that aren't logged yet. Want me to update DECISIONS.md and CLAUDE.md before we stop?"
+
+### Session Whiteboard
+Read `data/sessions.md` at session start. Log what you're working on under **Active** (include tables you're writing to). At wrap-up, move your entry to **Done** with a summary. If another session is active, don't edit CLAUDE.md or docs/ — the next solo session merges it in.
 
 ### Cron Loops — Explicit Request Only
 Never create a cron loop or automated recurring task unless the user explicitly says
@@ -263,6 +266,7 @@ Staging-first architecture: all external data goes through per-source staging ta
 - `python -m pipeline.promote.ttb_upc_promote --execute --qr` — promotes barcode scan UPCs + QR codes to external_ids via source_ttb_colas.canonical_wine_id join
 - `python -m pipeline.analyze.name_cleanup [--execute] [--table wines|producers|both]` — deterministic 5-pass name cleanup (HTML decode, whitespace, Wally's suffix strip, U+FFFD dictionary repair, curly quotes). Dry-run by default.
 - `python -m pipeline.analyze.name_cleanup_haiku [--execute] [--table wines]` — Haiku-powered repair of remaining U+FFFD long-tail words. ~$0.10 for 1,237 names.
+- `python -m pipeline.analyze.ocr_bakeoff [--image-dir DIR] [--limit N] [--skip-claude]` — OCR bake-off comparing EasyOCR, RapidOCR, Claude Vision on wine labels. Results in `data/stats/ocr_bakeoff_results.json`.
 - `python -m pipeline.analyze.db_counts` — row counts across all tables
 - `python -m pipeline.analyze.winetest [--size 200] [--categories 4] [--seed N] [--no-accuracy] [--accuracy-sample 30]` — WineTest DB quality assessment. Haiku-generated benchmark of wines Americans actually encounter, measures findability/depth/accuracy/story. ~$0.60/run with accuracy+story checks.
 - `python -m pipeline.promote.grape_from_name [--dry-run|--execute] [--limit N]` — grape backfill from wine names via greedy longest-match on curated 95-grape set
@@ -413,6 +417,7 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 **Dropped:**
 - ~~NJ OPRA request~~ — deprioritized 2026-04-03
 - ~~Vinmonopolet follow-up~~ — deprioritized 2026-04-03
+- ~~Bulk label OCR extraction~~ — tabled 2026-04-07. Bake-off done (EasyOCR 80%, RapidOCR 74% vs Claude baseline). ROI too low vs enrichment pipeline. Images preserved on D: drive.
 
 ### Schema Hardening (complete — see `docs/HISTORY.md` for detail)
 3 rounds of hardening applied. Key infrastructure: `set_updated_at()` triggers on 36 tables, `validate_polymorphic_fks()` orphan checker, enrichment_log with cost/model tracking, `appellation_rules` table. `wine_vintage_scores` and `wine_vintage_prices` have `wine_vintage_id` FK (preferred join path). `retailers` table seeded with 13 retailers (all price sources).

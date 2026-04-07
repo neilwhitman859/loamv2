@@ -1,0 +1,3135 @@
+{
+  "metadata": {
+    "run_at": "2026-04-07T09:27:02",
+    "image_count": 20,
+    "image_dir": "C:\\Users\\neilw\\Documents\\GitHub\\loamv2\\data\\test_labels",
+    "tools": [
+      "EasyOCR",
+      "RapidOCR",
+      "Claude Vision (Haiku)"
+    ],
+    "totals": {
+      "EasyOCR": {
+        "time": 162.54999999999998,
+        "chars": 6952,
+        "words": 1108,
+        "cost": 0,
+        "count": 20
+      },
+      "RapidOCR": {
+        "time": 89.42000000000003,
+        "chars": 6477,
+        "words": 715,
+        "cost": 0,
+        "count": 20
+      },
+      "Claude Vision (Haiku)": {
+        "time": 65.03,
+        "chars": 8703,
+        "words": 1299,
+        "cost": 0.030009999999999995,
+        "count": 20
+      }
+    }
+  },
+  "results": [
+    {
+      "filename": "01_back_napa.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 10.11,
+          "text": "2020 Cabernet Sauvignon Younwville [KINLOCH Ccllarcd & Bortlcd by Elysc Wincry CA Exclusivlcy for Kinloch Golf Club GOVERNMENT   WARNING; (1) ACCoRDinG TO TFE SURGEON GENERAL WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACF-INERY AND MAY CAUSE HEALTH PROBLEMS CONTAINS SULFITES 75Oml ALC BYVOL: 149% Napa Valley Napa,",
+          "char_count": 457,
+          "word_count": 69,
+          "line_count": 19,
+          "avg_confidence": 0.768,
+          "lines": [
+            {
+              "text": "2020",
+              "confidence": 0.996
+            },
+            {
+              "text": "Cabernet Sauvignon",
+              "confidence": 0.917
+            },
+            {
+              "text": "Younwville",
+              "confidence": 0.505
+            },
+            {
+              "text": "[KINLOCH",
+              "confidence": 0.617
+            },
+            {
+              "text": "Ccllarcd & Bortlcd by Elysc Wincry",
+              "confidence": 0.61
+            },
+            {
+              "text": "CA",
+              "confidence": 0.999
+            },
+            {
+              "text": "Exclusivlcy for Kinloch Golf Club",
+              "confidence": 0.774
+            },
+            {
+              "text": "GOVERNMENT   WARNING; (1) ACCoRDinG TO TFE SURGEON",
+              "confidence": 0.26
+            },
+            {
+              "text": "GENERAL WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES",
+              "confidence": 0.611
+            },
+            {
+              "text": "DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2)",
+              "confidence": 0.695
+            },
+            {
+              "text": "CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY",
+              "confidence": 0.847
+            },
+            {
+              "text": "TO DRIVE A CAR OR OPERATE MACF-INERY AND MAY CAUSE HEALTH",
+              "confidence": 0.653
+            },
+            {
+              "text": "PROBLEMS",
+              "confidence": 0.981
+            },
+            {
+              "text": "CONTAINS SULFITES",
+              "confidence": 0.914
+            },
+            {
+              "text": "75Oml",
+              "confidence": 0.337
+            },
+            {
+              "text": "ALC BYVOL: 149%",
+              "confidence": 0.941
+            },
+            {
+              "text": "Napa",
+              "confidence": 0.999
+            },
+            {
+              "text": "Valley",
+              "confidence": 0.999
+            },
+            {
+              "text": "Napa,",
+              "confidence": 0.939
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 5.88,
+          "text": "2020 Cabernet Sauvignon Yountuille·NapaValley KINLOCH Cellarcd & Bottled by Elyse Winery, Napa, CA Exclusivley for Kinloch Golf Club GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OFALCOHOLICBEVERAGES IMPAIRSYOUR ABILITY TODRIVE A CAR OR OPERATE MACHINERY. ANDMAY CAUSE HEALTH PROBLEMS. CONTAINSSULFITES 750ml ALC. BYVOL: 14.9%",
+          "char_count": 452,
+          "word_count": 61,
+          "line_count": 15,
+          "avg_confidence": 0.978,
+          "lines": [
+            {
+              "text": "2020",
+              "confidence": 1.0
+            },
+            {
+              "text": "Cabernet Sauvignon",
+              "confidence": 0.973
+            },
+            {
+              "text": "Yountuille·NapaValley",
+              "confidence": 0.967
+            },
+            {
+              "text": "KINLOCH",
+              "confidence": 0.999
+            },
+            {
+              "text": "Cellarcd & Bottled by Elyse Winery, Napa, CA",
+              "confidence": 0.958
+            },
+            {
+              "text": "Exclusivley for Kinloch Golf Club",
+              "confidence": 0.976
+            },
+            {
+              "text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON",
+              "confidence": 0.975
+            },
+            {
+              "text": "GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES",
+              "confidence": 0.952
+            },
+            {
+              "text": "DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2)",
+              "confidence": 0.99
+            },
+            {
+              "text": "CONSUMPTION OFALCOHOLICBEVERAGES IMPAIRSYOUR ABILITY",
+              "confidence": 0.967
+            },
+            {
+              "text": "TODRIVE A CAR OR OPERATE MACHINERY. ANDMAY CAUSE HEALTH",
+              "confidence": 0.926
+            },
+            {
+              "text": "PROBLEMS.",
+              "confidence": 1.0
+            },
+            {
+              "text": "CONTAINSSULFITES",
+              "confidence": 0.996
+            },
+            {
+              "text": "750ml",
+              "confidence": 0.999
+            },
+            {
+              "text": "ALC. BYVOL: 14.9%",
+              "confidence": 0.995
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 2.88,
+          "text": "2020\nCabernet Sauvignon\nYountville • Napa Valley\n\nKINLOCH\n\nCellared & Bottled by Elyse Winery, Napa, CA\nExclusively for Kinloch Golf Club\n\nGOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\n\nCONTAINS SULFITES          750ml          ALC. BY VOL: 14.9%",
+          "char_count": 483,
+          "word_count": 71,
+          "line_count": 12,
+          "avg_confidence": 1.0,
+          "input_tokens": 1661,
+          "output_tokens": 169,
+          "cost_usd": 0.002
+        }
+      ]
+    },
+    {
+      "filename": "02_back_italian_langhe.png",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 6.02,
+          "text": "Muscadet Sèvre et Maine sur Lie 2021 Appelabon Muscadet Sevree Mane Cortrdée GOVERNMENTWARNING (1) ACCORDING TO THE SURGEON GENERAL WOMEN   SHOULD NOT DRINK ALCOHOUC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPARS YOUR ABIUTY TO DRIVE A CAR OR OPERATE MACHINERY AND MAY CAUSE HEALTH PROBLEMS WTEWNE IMPORTEDBY ACE WINE & SPIRITS LAKELAND FL 0 N alc.I2s bYVoL   Het cohtehts 75UL 1 PRoductoF FRaHcE   Contaks SWFITES 1 LMSFI Vis €n bateille au Château Cela Cormerais par Thierry BE SHARD Vioneron 4 Vonnieres (FRAHCE W Cicteaudelacomerais Com",
+          "char_count": 603,
+          "word_count": 94,
+          "line_count": 30,
+          "avg_confidence": 0.706,
+          "lines": [
+            {
+              "text": "Muscadet Sèvre et Maine sur Lie",
+              "confidence": 0.631
+            },
+            {
+              "text": "2021",
+              "confidence": 0.999
+            },
+            {
+              "text": "Appelabon Muscadet Sevree Mane Cortrdée",
+              "confidence": 0.438
+            },
+            {
+              "text": "GOVERNMENTWARNING",
+              "confidence": 0.917
+            },
+            {
+              "text": "(1) ACCORDING TO",
+              "confidence": 0.707
+            },
+            {
+              "text": "THE SURGEON",
+              "confidence": 0.989
+            },
+            {
+              "text": "GENERAL",
+              "confidence": 1.0
+            },
+            {
+              "text": "WOMEN   SHOULD",
+              "confidence": 0.909
+            },
+            {
+              "text": "NOT DRINK ALCOHOUC BEVERAGES DURING",
+              "confidence": 0.769
+            },
+            {
+              "text": "PREGNANCY BECAUSE OF THE RISK OF BIRTH",
+              "confidence": 0.432
+            },
+            {
+              "text": "DEFECTS",
+              "confidence": 0.891
+            },
+            {
+              "text": "(2) CONSUMPTION OF ALCOHOLIC",
+              "confidence": 0.904
+            },
+            {
+              "text": "BEVERAGES IMPARS YOUR ABIUTY TO DRIVE",
+              "confidence": 0.639
+            },
+            {
+              "text": "A CAR OR OPERATE MACHINERY",
+              "confidence": 0.934
+            },
+            {
+              "text": "AND MAY",
+              "confidence": 0.949
+            },
+            {
+              "text": "CAUSE HEALTH PROBLEMS",
+              "confidence": 0.783
+            },
+            {
+              "text": "WTEWNE",
+              "confidence": 0.979
+            },
+            {
+              "text": "IMPORTEDBY",
+              "confidence": 0.973
+            },
+            {
+              "text": "ACE WINE & SPIRITS",
+              "confidence": 0.986
+            },
+            {
+              "text": "LAKELAND FL",
+              "confidence": 0.931
+            },
+            {
+              "text": "0",
+              "confidence": 0.928
+            },
+            {
+              "text": "N",
+              "confidence": 0.947
+            },
+            {
+              "text": "alc.I2s bYVoL   Het cohtehts 75UL",
+              "confidence": 0.036
+            },
+            {
+              "text": "1",
+              "confidence": 0.243
+            },
+            {
+              "text": "PRoductoF FRaHcE   Contaks SWFITES",
+              "confidence": 0.039
+            },
+            {
+              "text": "1",
+              "confidence": 0.342
+            },
+            {
+              "text": "LMSFI",
+              "confidence": 0.897
+            },
+            {
+              "text": "Vis €n bateille au Château Cela Cormerais par Thierry BE SHARD",
+              "confidence": 0.331
+            },
+            {
+              "text": "Vioneron 4 Vonnieres (FRAHCE",
+              "confidence": 0.401
+            },
+            {
+              "text": "W Cicteaudelacomerais Com",
+              "confidence": 0.272
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 6.21,
+          "text": "MuscadetSevreetMainesur Lie 2021 AppelationMuscadetSevreetMaineControlee GOVERNMENTWARNING:(1)ACCORDING TO THE SURGEON GENERAL,WOMEN SHOULD NOTDRINKALCOHOLICBEVERAGES DURING PREGNANCY BECAUSEOFTHERISKOFBIRTH DEFECTS.(2)CONSUMPTION OFALCOHOLIC BEVERAGESIMPARSYOURABILITYTODRIVE A CAR OR OPERATE MACHINERY,AND MAY CAUSEHEALTHPROBLEMS WHTEWNE 565290000 IMPORTEDBY ACEWINE&SPIRITS LAKELAND,FL ALC.12% BY VOL.NET CONTENTS 750 ML PRODUCTOFFRANCE CONTAINS SULFITES LMSF1 3 Mis enbouteille auChateau de laCormeraisparThierry BESNARD Vigneron 44 Monnieres（FRANCE)-www.chateaudelacormerais.com",
+          "char_count": 583,
+          "word_count": 49,
+          "line_count": 22,
+          "avg_confidence": 0.964,
+          "lines": [
+            {
+              "text": "MuscadetSevreetMainesur Lie",
+              "confidence": 0.98
+            },
+            {
+              "text": "2021",
+              "confidence": 0.999
+            },
+            {
+              "text": "AppelationMuscadetSevreetMaineControlee",
+              "confidence": 0.981
+            },
+            {
+              "text": "GOVERNMENTWARNING:(1)ACCORDING TO",
+              "confidence": 0.965
+            },
+            {
+              "text": "THE SURGEON GENERAL,WOMEN SHOULD",
+              "confidence": 0.97
+            },
+            {
+              "text": "NOTDRINKALCOHOLICBEVERAGES DURING",
+              "confidence": 0.978
+            },
+            {
+              "text": "PREGNANCY BECAUSEOFTHERISKOFBIRTH",
+              "confidence": 0.98
+            },
+            {
+              "text": "DEFECTS.(2)CONSUMPTION OFALCOHOLIC",
+              "confidence": 0.972
+            },
+            {
+              "text": "BEVERAGESIMPARSYOURABILITYTODRIVE",
+              "confidence": 0.974
+            },
+            {
+              "text": "A CAR OR OPERATE MACHINERY,AND MAY",
+              "confidence": 0.932
+            },
+            {
+              "text": "CAUSEHEALTHPROBLEMS",
+              "confidence": 0.994
+            },
+            {
+              "text": "WHTEWNE",
+              "confidence": 0.989
+            },
+            {
+              "text": "565290000",
+              "confidence": 0.995
+            },
+            {
+              "text": "IMPORTEDBY",
+              "confidence": 0.994
+            },
+            {
+              "text": "ACEWINE&SPIRITS",
+              "confidence": 0.98
+            },
+            {
+              "text": "LAKELAND,FL",
+              "confidence": 0.942
+            },
+            {
+              "text": "ALC.12% BY VOL.NET CONTENTS 750 ML",
+              "confidence": 0.931
+            },
+            {
+              "text": "PRODUCTOFFRANCE CONTAINS SULFITES",
+              "confidence": 0.972
+            },
+            {
+              "text": "LMSF1",
+              "confidence": 0.995
+            },
+            {
+              "text": "3",
+              "confidence": 0.757
+            },
+            {
+              "text": "Mis enbouteille auChateau de laCormeraisparThierry BESNARD",
+              "confidence": 0.964
+            },
+            {
+              "text": "Vigneron 44 Monnieres（FRANCE)-www.chateaudelacormerais.com",
+              "confidence": 0.958
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 4.32,
+          "text": "Muscadet Sèvre et Maine sur Lie\n2021\nAppellation Muscadet Sèvre et Maine Contrôlée\n\nGOVERNMENT WARNING : (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\n\nWHITE WINE\n\nIMPORTED BY :\nACE WINE & SPIRITS\nLAKELAND, FL\n\nALC.12% BY VOL   NET CONTENTS 750 ML\n\nPRODUCT OF FRANCE   CONTAINS SULFITES\n\nLMSF1\n\nMis en bouteille au Château de la Cormerais par Thierry BESNARD\nVigneron 44 Monnières (FRANCE) - www.chateaudelacormerais.com",
+          "char_count": 638,
+          "word_count": 98,
+          "line_count": 20,
+          "avg_confidence": 1.0,
+          "input_tokens": 515,
+          "output_tokens": 236,
+          "cost_usd": 0.00136
+        }
+      ]
+    },
+    {
+      "filename": "03_back_bordeaux.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 4.66,
+          "text": "GRAND VIN DE BORDEAUX PETIT-FIGEAC SAINT-ÉMILION GRAND CRU APPELLATION SAINT-ÉMILION GRAND CRU CONTRÔLÉE 2019 MIS EN BOUTEILLE À LA PROPRIÉTÉ SCEA FAMILLE MANONCOURT, EXPLOITANT CHATEAU DE FIGEAC SAINT-ÉMILION FRANCE CONTIENT DES SULFITES CONTAINS SULFITES - ENTHÄLT SULFITE 1496 vo PRODUCE OF FRANCE 75o LPF191",
+          "char_count": 311,
+          "word_count": 44,
+          "line_count": 15,
+          "avg_confidence": 0.871,
+          "lines": [
+            {
+              "text": "GRAND VIN DE BORDEAUX",
+              "confidence": 0.893
+            },
+            {
+              "text": "PETIT-FIGEAC",
+              "confidence": 0.995
+            },
+            {
+              "text": "SAINT-ÉMILION GRAND CRU",
+              "confidence": 0.982
+            },
+            {
+              "text": "APPELLATION SAINT-ÉMILION GRAND CRU CONTRÔLÉE",
+              "confidence": 0.843
+            },
+            {
+              "text": "2019",
+              "confidence": 1.0
+            },
+            {
+              "text": "MIS EN BOUTEILLE À LA PROPRIÉTÉ",
+              "confidence": 0.892
+            },
+            {
+              "text": "SCEA FAMILLE MANONCOURT, EXPLOITANT",
+              "confidence": 0.887
+            },
+            {
+              "text": "CHATEAU DE FIGEAC",
+              "confidence": 0.771
+            },
+            {
+              "text": "SAINT-ÉMILION FRANCE",
+              "confidence": 0.961
+            },
+            {
+              "text": "CONTIENT DES SULFITES",
+              "confidence": 0.841
+            },
+            {
+              "text": "CONTAINS SULFITES - ENTHÄLT SULFITE",
+              "confidence": 0.811
+            },
+            {
+              "text": "1496 vo",
+              "confidence": 0.929
+            },
+            {
+              "text": "PRODUCE OF FRANCE",
+              "confidence": 0.995
+            },
+            {
+              "text": "75o",
+              "confidence": 0.263
+            },
+            {
+              "text": "LPF191",
+              "confidence": 0.999
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 3.81,
+          "text": "GRANDVINDEBORDEAUX PETIT-FIGEAC SAINT-EMILION GRAND CRU APPELLATIONSAINT-EMILIONGRANDCRUCONTROLEE 2019 MIS EN BOUTEILLEA LA PROPRIETE SCEAFAMILLEMANONCOURT,EXPLOITANT CHATEAUDEFIGEAC-SAINT-EMILIONFRANCE CONTIENT DES SULFITES - CONTAINS SULFITES - ENTHALT SULFITE 14% vol. 75 cl PRODUCEOFFRANCE LPF191",
+          "char_count": 300,
+          "word_count": 29,
+          "line_count": 13,
+          "avg_confidence": 0.974,
+          "lines": [
+            {
+              "text": "GRANDVINDEBORDEAUX",
+              "confidence": 0.99
+            },
+            {
+              "text": "PETIT-FIGEAC",
+              "confidence": 0.973
+            },
+            {
+              "text": "SAINT-EMILION GRAND CRU",
+              "confidence": 0.957
+            },
+            {
+              "text": "APPELLATIONSAINT-EMILIONGRANDCRUCONTROLEE",
+              "confidence": 0.988
+            },
+            {
+              "text": "2019",
+              "confidence": 1.0
+            },
+            {
+              "text": "MIS EN BOUTEILLEA LA PROPRIETE",
+              "confidence": 0.944
+            },
+            {
+              "text": "SCEAFAMILLEMANONCOURT,EXPLOITANT",
+              "confidence": 0.969
+            },
+            {
+              "text": "CHATEAUDEFIGEAC-SAINT-EMILIONFRANCE",
+              "confidence": 0.981
+            },
+            {
+              "text": "CONTIENT DES SULFITES - CONTAINS SULFITES - ENTHALT SULFITE",
+              "confidence": 0.973
+            },
+            {
+              "text": "14% vol.",
+              "confidence": 0.982
+            },
+            {
+              "text": "75 cl",
+              "confidence": 0.927
+            },
+            {
+              "text": "PRODUCEOFFRANCE",
+              "confidence": 0.992
+            },
+            {
+              "text": "LPF191",
+              "confidence": 0.992
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 3.1,
+          "text": "GRAND VIN DE BORDEAUX\n\nPETIT-FIGEAC\n\nSAINT-ÉMILION GRAND CRU\nAPPELLATION SAINT-ÉMILION GRAND CRU CONTRÔLÉE\n2019\n\nMIS EN BOUTEILLE À LA PROPRIÉTÉ\nSCEA FAMILLE MANONCOURT, EXPLOITANT\nCHATEAU DE FIGEAC - SAINT-ÉMILION FRANCE\n\nCONTIENT DES SULFITES - CONTAINS SULFITES - ENTHÄLT SULFITE\n\n14% Vol.                PRODUCE OF FRANCE          75 cl\n                                                    LPF191",
+          "char_count": 399,
+          "word_count": 47,
+          "line_count": 16,
+          "avg_confidence": 1.0,
+          "input_tokens": 938,
+          "output_tokens": 149,
+          "cost_usd": 0.00135
+        }
+      ]
+    },
+    {
+      "filename": "04_back_spanish.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 4.38,
+          "text": "",
+          "char_count": 0,
+          "word_count": 0,
+          "line_count": 0,
+          "avg_confidence": 0,
+          "lines": []
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 1.1,
+          "text": "",
+          "char_count": 0,
+          "word_count": 0,
+          "line_count": 0,
+          "avg_confidence": 0,
+          "lines": []
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 5.55,
+          "text": "Deep Springs\nVineyards\n\nVillard Blanc\n\nOur American Villard Blanc is a dry wine with a hint of fresh lime, green apple, and lemongrass. With grapefruit-like acidity, and a touch of fresh grass. Villard Blanc is reminiscent of a Sauvignon Blanc, minus the intensity and acidity. Enjoy this light fruity wine with seafoods such as shrimp or with goat cheese.\n\nAt Deep Springs Vineyards we strive to produce the perfect wines for all occasions. Whether you are outside enjoying a summer day or a meal with friends and family, or cozying up to a fire on a cold winter's day! Our passion is to bring you a selection of the finest grape wines and fruit wines from local farms and orchards.\n\nGOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMAN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\n\nProduced and bottled by Deep Springs Vineyards, Dalton, GA\n\nCONTAINS SULFITES, 750ML Product of Georgia, USA                    Alc 12.5% by VOL",
+          "char_count": 1114,
+          "word_count": 183,
+          "line_count": 14,
+          "avg_confidence": 1.0,
+          "input_tokens": 1649,
+          "output_tokens": 316,
+          "cost_usd": 0.00258
+        }
+      ]
+    },
+    {
+      "filename": "05_back_pinot_grigio.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 9.09,
+          "text": "famille isabel Rerrahdg CHÂTEAUNEUF-DU-PAPE 2021 SAINT PREFERT",
+          "char_count": 62,
+          "word_count": 7,
+          "line_count": 5,
+          "avg_confidence": 0.813,
+          "lines": [
+            {
+              "text": "famille",
+              "confidence": 1.0
+            },
+            {
+              "text": "isabel Rerrahdg",
+              "confidence": 0.33
+            },
+            {
+              "text": "CHÂTEAUNEUF-DU-PAPE",
+              "confidence": 0.999
+            },
+            {
+              "text": "2021",
+              "confidence": 0.747
+            },
+            {
+              "text": "SAINT PREFERT",
+              "confidence": 0.988
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 3.53,
+          "text": "famille IsabelFerrando CHATEAUNEUF-DU-PAPE 2021 SAINTPREFERT",
+          "char_count": 60,
+          "word_count": 5,
+          "line_count": 5,
+          "avg_confidence": 0.941,
+          "lines": [
+            {
+              "text": "famille",
+              "confidence": 0.994
+            },
+            {
+              "text": "IsabelFerrando",
+              "confidence": 0.814
+            },
+            {
+              "text": "CHATEAUNEUF-DU-PAPE",
+              "confidence": 0.99
+            },
+            {
+              "text": "2021",
+              "confidence": 0.942
+            },
+            {
+              "text": "SAINTPREFERT",
+              "confidence": 0.967
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 1.86,
+          "text": "famille\nIsabel Ferrando\n\nCHÂTEAUNEUF-DU-PAPE\n2021\n\nSAINT PREFERT",
+          "char_count": 64,
+          "word_count": 7,
+          "line_count": 7,
+          "avg_confidence": 1.0,
+          "input_tokens": 1669,
+          "output_tokens": 32,
+          "cost_usd": 0.00146
+        }
+      ]
+    },
+    {
+      "filename": "06_back_exodus.png",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 10.43,
+          "text": "VINTAGE 202 2 L A U R E N T I A VINEYARD AnD WINRRY VIDAL BLANC ICE WINE LAKE ERIE C @co",
+          "char_count": 88,
+          "word_count": 23,
+          "line_count": 10,
+          "avg_confidence": 0.693,
+          "lines": [
+            {
+              "text": "VINTAGE",
+              "confidence": 0.995
+            },
+            {
+              "text": "202 2",
+              "confidence": 0.817
+            },
+            {
+              "text": "L A U R E N T I A",
+              "confidence": 0.728
+            },
+            {
+              "text": "VINEYARD",
+              "confidence": 0.172
+            },
+            {
+              "text": "AnD",
+              "confidence": 0.686
+            },
+            {
+              "text": "WINRRY",
+              "confidence": 0.915
+            },
+            {
+              "text": "VIDAL BLANC ICE WINE",
+              "confidence": 0.892
+            },
+            {
+              "text": "LAKE ERIE",
+              "confidence": 0.742
+            },
+            {
+              "text": "C",
+              "confidence": 0.682
+            },
+            {
+              "text": "@co",
+              "confidence": 0.3
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 4.04,
+          "text": "VINTAGE 2022 LAURENTIA VINEYARD AND WINERY VIDAL BLANC ICE WINE LAKE ERIE",
+          "char_count": 73,
+          "word_count": 12,
+          "line_count": 7,
+          "avg_confidence": 0.979,
+          "lines": [
+            {
+              "text": "VINTAGE",
+              "confidence": 0.993
+            },
+            {
+              "text": "2022",
+              "confidence": 0.994
+            },
+            {
+              "text": "LAURENTIA",
+              "confidence": 0.993
+            },
+            {
+              "text": "VINEYARD AND WINERY",
+              "confidence": 0.919
+            },
+            {
+              "text": "VIDAL BLANC ICE WINE",
+              "confidence": 0.966
+            },
+            {
+              "text": "LAKE",
+              "confidence": 1.0
+            },
+            {
+              "text": "ERIE",
+              "confidence": 0.988
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 5.91,
+          "text": "VINTAGE\n2022\n\nLAURENTIA\nVINEYARD AND WINERY\n\nVIDAL BLANC ICE WINE\n\nLAKE ERIE",
+          "char_count": 76,
+          "word_count": 12,
+          "line_count": 9,
+          "avg_confidence": 1.0,
+          "input_tokens": 1637,
+          "output_tokens": 35,
+          "cost_usd": 0.00145
+        }
+      ]
+    },
+    {
+      "filename": "07_back_huckleberry.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 8.27,
+          "text": "Rosé of Pinot Noir California 2022 Produced and Bottled by Elyse Winery Napa CA GOVERNMENT WARNING; (1) ACCORDING to the surgeON  generaL,  woMe ShouLD Not DrINK AlCOHOLIC BeverageS DurING PreGNANCY Because oFthe RISK oF BIRTH defects  (2) CoNsuMptIoN  oF ALCohoLIC beverages tMpatRS  YoUR ABILITY TO DrIvE A CAR oR operate MAChINERY AND MAY Cause heAlth probleMS CoNtaINs suLFITES 750 ML ALC. 14.5 % BYVOL",
+          "char_count": 406,
+          "word_count": 64,
+          "line_count": 12,
+          "avg_confidence": 0.546,
+          "lines": [
+            {
+              "text": "Rosé of Pinot Noir",
+              "confidence": 0.938
+            },
+            {
+              "text": "California",
+              "confidence": 0.96
+            },
+            {
+              "text": "2022",
+              "confidence": 0.923
+            },
+            {
+              "text": "Produced and Bottled by Elyse Winery",
+              "confidence": 0.958
+            },
+            {
+              "text": "Napa CA",
+              "confidence": 0.767
+            },
+            {
+              "text": "GOVERNMENT WARNING; (1) ACCORDING to the surgeON  generaL,  woMe",
+              "confidence": 0.131
+            },
+            {
+              "text": "ShouLD Not DrINK AlCOHOLIC BeverageS DurING PreGNANCY Because oFthe RISK",
+              "confidence": 0.037
+            },
+            {
+              "text": "oF BIRTH defects  (2) CoNsuMptIoN  oF ALCohoLIC beverages tMpatRS  YoUR",
+              "confidence": 0.032
+            },
+            {
+              "text": "ABILITY TO DrIvE A CAR oR operate MAChINERY AND MAY Cause heAlth probleMS",
+              "confidence": 0.051
+            },
+            {
+              "text": "CoNtaINs suLFITES",
+              "confidence": 0.14
+            },
+            {
+              "text": "750 ML",
+              "confidence": 0.992
+            },
+            {
+              "text": "ALC. 14.5 % BYVOL",
+              "confidence": 0.626
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 3.86,
+          "text": "Rosé of Pinot Noir California 2022 Produced and Bottled by Elyse Winery Napa CA GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OFTHE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS. CONTAINS SULFITES 750ML ALC. 14.5 % BY VOL.",
+          "char_count": 406,
+          "word_count": 64,
+          "line_count": 12,
+          "avg_confidence": 0.979,
+          "lines": [
+            {
+              "text": "Rosé of Pinot Noir",
+              "confidence": 0.923
+            },
+            {
+              "text": "California",
+              "confidence": 1.0
+            },
+            {
+              "text": "2022",
+              "confidence": 1.0
+            },
+            {
+              "text": "Produced and Bottled by Elyse Winery",
+              "confidence": 0.993
+            },
+            {
+              "text": "Napa CA",
+              "confidence": 0.982
+            },
+            {
+              "text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN",
+              "confidence": 0.994
+            },
+            {
+              "text": "SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OFTHE RISK",
+              "confidence": 0.969
+            },
+            {
+              "text": "OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR",
+              "confidence": 0.989
+            },
+            {
+              "text": "ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.",
+              "confidence": 0.958
+            },
+            {
+              "text": "CONTAINS SULFITES",
+              "confidence": 0.989
+            },
+            {
+              "text": "750ML",
+              "confidence": 0.995
+            },
+            {
+              "text": "ALC. 14.5 % BY VOL.",
+              "confidence": 0.955
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 2.98,
+          "text": "Rosé of Pinot Noir\nCalifornia\n2022\n\nProduced and Bottled by Elyse Winery\nNapa CA\n\nGOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\n\nCONTAINS SULFITES          750 ML          ALC. 14.5 % BY VOL.",
+          "char_count": 429,
+          "word_count": 66,
+          "line_count": 10,
+          "avg_confidence": 1.0,
+          "input_tokens": 1622,
+          "output_tokens": 148,
+          "cost_usd": 0.00189
+        }
+      ]
+    },
+    {
+      "filename": "08_back_boneyard.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 5.67,
+          "text": "2022 MERLOT Williams Gap Vineyard was established in 2006. The combination of gravel laced Eubanks soils, sloping topography and persistent breezes off the mountains contribute to conditions that enable us to grow high quality grapes that have produced award winning wines! Jack Sexton, Quh 4+ Vineyard Owner Produced by Paradise Springs Winery , Clifton, VA 20124 Bottled by Williams Gap Vineyard, Round Hill, VA 20141 GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS . CONTAINS SULFITES 75OML",
+          "char_count": 728,
+          "word_count": 112,
+          "line_count": 16,
+          "avg_confidence": 0.735,
+          "lines": [
+            {
+              "text": "2022 MERLOT",
+              "confidence": 0.9
+            },
+            {
+              "text": "Williams Gap Vineyard was established in 2006. The combination of",
+              "confidence": 0.759
+            },
+            {
+              "text": "gravel laced Eubanks soils, sloping topography and persistent breezes",
+              "confidence": 0.885
+            },
+            {
+              "text": "off the mountains contribute to conditions that enable us to grow high",
+              "confidence": 0.742
+            },
+            {
+              "text": "quality grapes that have produced award winning wines!",
+              "confidence": 0.648
+            },
+            {
+              "text": "Jack Sexton,",
+              "confidence": 0.852
+            },
+            {
+              "text": "Quh 4+",
+              "confidence": 0.05
+            },
+            {
+              "text": "Vineyard Owner",
+              "confidence": 1.0
+            },
+            {
+              "text": "Produced by Paradise Springs Winery , Clifton, VA 20124",
+              "confidence": 0.618
+            },
+            {
+              "text": "Bottled by Williams Gap Vineyard, Round Hill, VA 20141",
+              "confidence": 0.687
+            },
+            {
+              "text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT",
+              "confidence": 0.862
+            },
+            {
+              "text": "DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS.",
+              "confidence": 0.725
+            },
+            {
+              "text": "(2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE",
+              "confidence": 0.657
+            },
+            {
+              "text": "MACHINERY, AND MAY CAUSE HEALTH PROBLEMS .",
+              "confidence": 0.705
+            },
+            {
+              "text": "CONTAINS SULFITES",
+              "confidence": 0.971
+            },
+            {
+              "text": "75OML",
+              "confidence": 0.696
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 6.82,
+          "text": "2O22MERLOT Williams Gap Vineyard was established in 2006. The combination of gravel laced Eubanks soils, sloping topography and persistent breezes off the mountains contribute to conditions that enable us to grow high Jack Sexton, Vineyard Owner Produced by Paradise Springs Winery, Clifton, VA 20124 BottledbyWilliamsGapVineyard,Round Hill,VA20141 GOVERNMENTWARNING:(1)ACCORDINGTOTHESURGEONGENERAL,WOMENSHOULDNOT DRINKALCOHOLICBEVERAGESDURINGPREGNANCYBECAUSEOFTHERISKOFBIRTHDEFECTS. MACHINERY,ANDMAYCAUSEHEALTHPROBLEMS CONTAINSSULFITES 750ML",
+          "char_count": 542,
+          "word_count": 51,
+          "line_count": 13,
+          "avg_confidence": 0.977,
+          "lines": [
+            {
+              "text": "2O22MERLOT",
+              "confidence": 0.945
+            },
+            {
+              "text": "Williams Gap Vineyard was established in 2006. The combination of",
+              "confidence": 0.971
+            },
+            {
+              "text": "gravel laced Eubanks soils, sloping topography and persistent breezes",
+              "confidence": 0.988
+            },
+            {
+              "text": "off the mountains contribute to conditions that enable us to grow high",
+              "confidence": 0.968
+            },
+            {
+              "text": "Jack Sexton,",
+              "confidence": 0.972
+            },
+            {
+              "text": "Vineyard Owner",
+              "confidence": 0.963
+            },
+            {
+              "text": "Produced by Paradise Springs Winery, Clifton, VA 20124",
+              "confidence": 0.976
+            },
+            {
+              "text": "BottledbyWilliamsGapVineyard,Round Hill,VA20141",
+              "confidence": 0.981
+            },
+            {
+              "text": "GOVERNMENTWARNING:(1)ACCORDINGTOTHESURGEONGENERAL,WOMENSHOULDNOT",
+              "confidence": 0.979
+            },
+            {
+              "text": "DRINKALCOHOLICBEVERAGESDURINGPREGNANCYBECAUSEOFTHERISKOFBIRTHDEFECTS.",
+              "confidence": 0.994
+            },
+            {
+              "text": "MACHINERY,ANDMAYCAUSEHEALTHPROBLEMS",
+              "confidence": 0.969
+            },
+            {
+              "text": "CONTAINSSULFITES",
+              "confidence": 0.996
+            },
+            {
+              "text": "750ML",
+              "confidence": 0.994
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 3.82,
+          "text": "2022 MERLOT\n\nWilliams Gap Vineyard was established in 2006. The combination of gravel laced Eubanks soils, sloping topography and persistent breezes off the mountains contribute to conditions that enable us to grow high quality grapes that have produced award winning wines!\n\nJack Sexton,\nVineyard Owner\n\nProduced by Paradise Springs Winery, Clifton, VA 20124\nBottled by Williams Gap Vineyard, Round Hill, VA 20141\n\nGOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\n\nCONTAINS SULFITES                                                750ML",
+          "char_count": 771,
+          "word_count": 108,
+          "line_count": 13,
+          "avg_confidence": 1.0,
+          "input_tokens": 681,
+          "output_tokens": 214,
+          "cost_usd": 0.0014
+        }
+      ]
+    },
+    {
+      "filename": "09_back_cab_sauv.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 28.18,
+          "text": "CHAMPAGNE TELMONT 441 5 0 N F@NDtE EN 1 112 W W W . CHAMPAGNE-TELMONTCoM BRUT PRODUCT OF FRANCE PRODUCED BY TELMONT, 51480 DAMERY FRANCE IMPORTED BY RÉMY COINTREAU USA, INC \" NEW YORK; NY GOVERNMENT WARNING 1 AcCORDING TO THE SURGEOI GENERAL WOMEN SHOULD WOT DRINK ALCOHOLICBEVERAGES DURIHIG PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS: (2) COHISUMPTIOH OF ALCOHOLIC BEVERAGES MPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE VACHINERY, AND MAY CAUSE HEALTH PROBLENS . cONTAINS SULPHITES NM-169-001 PLEASE DRINK RESPONSIBLY 12% ALC /VOL 750 ML 7hi7dilsa 87256\"43060 3",
+          "char_count": 567,
+          "word_count": 92,
+          "line_count": 33,
+          "avg_confidence": 0.679,
+          "lines": [
+            {
+              "text": "CHAMPAGNE",
+              "confidence": 0.956
+            },
+            {
+              "text": "TELMONT",
+              "confidence": 0.995
+            },
+            {
+              "text": "441 5 0 N",
+              "confidence": 0.064
+            },
+            {
+              "text": "F@NDtE",
+              "confidence": 0.384
+            },
+            {
+              "text": "EN",
+              "confidence": 0.702
+            },
+            {
+              "text": "1 112",
+              "confidence": 0.192
+            },
+            {
+              "text": "W W W . CHAMPAGNE-TELMONTCoM",
+              "confidence": 0.351
+            },
+            {
+              "text": "BRUT",
+              "confidence": 0.967
+            },
+            {
+              "text": "PRODUCT",
+              "confidence": 0.943
+            },
+            {
+              "text": "OF",
+              "confidence": 0.747
+            },
+            {
+              "text": "FRANCE",
+              "confidence": 1.0
+            },
+            {
+              "text": "PRODUCED BY TELMONT, 51480 DAMERY",
+              "confidence": 0.726
+            },
+            {
+              "text": "FRANCE",
+              "confidence": 0.948
+            },
+            {
+              "text": "IMPORTED BY RÉMY COINTREAU USA, INC",
+              "confidence": 0.484
+            },
+            {
+              "text": "\"",
+              "confidence": 0.053
+            },
+            {
+              "text": "NEW YORK; NY",
+              "confidence": 0.826
+            },
+            {
+              "text": "GOVERNMENT WARNING",
+              "confidence": 0.784
+            },
+            {
+              "text": "1",
+              "confidence": 0.999
+            },
+            {
+              "text": "AcCORDING TO THE SURGEOI GENERAL WOMEN",
+              "confidence": 0.308
+            },
+            {
+              "text": "SHOULD WOT DRINK ALCOHOLICBEVERAGES DURIHIG PREGNANCY BECAUSE OF THE RISK",
+              "confidence": 0.442
+            },
+            {
+              "text": "OF BIRTH DEFECTS: (2) COHISUMPTIOH OF ALCOHOLIC BEVERAGES MPAIRS YOUR ABILITY",
+              "confidence": 0.547
+            },
+            {
+              "text": "TO DRIVE A CAR OR OPERATE VACHINERY, AND MAY CAUSE HEALTH PROBLENS .",
+              "confidence": 0.358
+            },
+            {
+              "text": "cONTAINS",
+              "confidence": 0.616
+            },
+            {
+              "text": "SULPHITES",
+              "confidence": 0.892
+            },
+            {
+              "text": "NM-169-001",
+              "confidence": 0.998
+            },
+            {
+              "text": "PLEASE",
+              "confidence": 0.955
+            },
+            {
+              "text": "DRINK",
+              "confidence": 0.991
+            },
+            {
+              "text": "RESPONSIBLY",
+              "confidence": 0.958
+            },
+            {
+              "text": "12% ALC /VOL",
+              "confidence": 0.412
+            },
+            {
+              "text": "750 ML",
+              "confidence": 0.878
+            },
+            {
+              "text": "7hi7dilsa",
+              "confidence": 0.082
+            },
+            {
+              "text": "87256\"43060",
+              "confidence": 0.859
+            },
+            {
+              "text": "3",
+              "confidence": 1.0
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 9.34,
+          "text": "CHAMPAGNE TELMONT MAISONFONDEE EN1PI2 WWW.CHAMPAGNE-TELMONT.COM BRUT PRODUCTOF FRANCE PRODUCED BY TELMONT.5148O DAMERY-FRANCE IMPORTED BY REMY COINTREAU USA,INC.NEW YORK.NY GOVERNMENT WARNING:(1)ACCORDINGTO THE SURGEON GENERAL,WOMEN SHOULD NOTDRINKALCOHOLICBEVERAGESDURINGPREGNANCYBECAUSEOFTHERISK OFBIRTHDEFECTS.(2)CONSUMPTIONOFALCOHOLICBEVERAGESIMPAIRSYOURABILITY TODRIVEA CAROROPERATEMACHINERY.AND MAYCAUSEHEALTHPROBLEMS CONTAINSSULPHITES NM-169-001 PLEASE DRINKRESPONSIBLY 12%ALC.VOL 750ML 8723643060 7TRH17B1USA",
+          "char_count": 516,
+          "word_count": 37,
+          "line_count": 19,
+          "avg_confidence": 0.957,
+          "lines": [
+            {
+              "text": "CHAMPAGNE",
+              "confidence": 0.996
+            },
+            {
+              "text": "TELMONT",
+              "confidence": 0.981
+            },
+            {
+              "text": "MAISONFONDEE EN1PI2",
+              "confidence": 0.832
+            },
+            {
+              "text": "WWW.CHAMPAGNE-TELMONT.COM",
+              "confidence": 0.981
+            },
+            {
+              "text": "BRUT",
+              "confidence": 0.995
+            },
+            {
+              "text": "PRODUCTOF FRANCE",
+              "confidence": 0.97
+            },
+            {
+              "text": "PRODUCED BY TELMONT.5148O DAMERY-FRANCE",
+              "confidence": 0.947
+            },
+            {
+              "text": "IMPORTED BY REMY COINTREAU USA,INC.NEW YORK.NY",
+              "confidence": 0.917
+            },
+            {
+              "text": "GOVERNMENT WARNING:(1)ACCORDINGTO THE SURGEON GENERAL,WOMEN",
+              "confidence": 0.944
+            },
+            {
+              "text": "SHOULD NOTDRINKALCOHOLICBEVERAGESDURINGPREGNANCYBECAUSEOFTHERISK",
+              "confidence": 0.973
+            },
+            {
+              "text": "OFBIRTHDEFECTS.(2)CONSUMPTIONOFALCOHOLICBEVERAGESIMPAIRSYOURABILITY",
+              "confidence": 0.977
+            },
+            {
+              "text": "TODRIVEA CAROROPERATEMACHINERY.AND MAYCAUSEHEALTHPROBLEMS",
+              "confidence": 0.97
+            },
+            {
+              "text": "CONTAINSSULPHITES",
+              "confidence": 0.993
+            },
+            {
+              "text": "NM-169-001",
+              "confidence": 0.968
+            },
+            {
+              "text": "PLEASE DRINKRESPONSIBLY",
+              "confidence": 0.973
+            },
+            {
+              "text": "12%ALC.VOL",
+              "confidence": 0.986
+            },
+            {
+              "text": "750ML",
+              "confidence": 0.996
+            },
+            {
+              "text": "8723643060",
+              "confidence": 0.998
+            },
+            {
+              "text": "7TRH17B1USA",
+              "confidence": 0.792
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 4.12,
+          "text": "CHAMPAGNE\nTELMONT\nMAISON FONDÉE EN 1912\n\nWWW.CHAMPAGNE-TELMONT.COM | BRUT\n\nPRODUCT OF FRANCE\n\nPRODUCED BY TELMONT, 51480 DAMERY - FRANCE\nIMPORTED BY RÉMY COINTREAU USA, INC., NEW YORK, NY\n\nGOVERNMENT WARNING : (1) ACCORDING TO THE SURGEON GENERAL, WOMEN\nSHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK\nOF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY\nTO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\n\nCONTAINS SULPHITES | NM-169-001\n\nPLEASE DRINK RESPONSIBLY | 12% ALC./VOL\n                                | 750 ML\n\n7IRH17B1USA\n\n0 | 87236 | 43060 | 3",
+          "char_count": 624,
+          "word_count": 93,
+          "line_count": 24,
+          "avg_confidence": 1.0,
+          "input_tokens": 1661,
+          "output_tokens": 236,
+          "cost_usd": 0.00227
+        }
+      ]
+    },
+    {
+      "filename": "10_back_tn.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 3.78,
+          "text": "92 8 5 9 9",
+          "char_count": 10,
+          "word_count": 5,
+          "line_count": 5,
+          "avg_confidence": 0.15,
+          "lines": [
+            {
+              "text": "92",
+              "confidence": 0.06
+            },
+            {
+              "text": "8",
+              "confidence": 0.163
+            },
+            {
+              "text": "5",
+              "confidence": 0.277
+            },
+            {
+              "text": "9",
+              "confidence": 0.022
+            },
+            {
+              "text": "9",
+              "confidence": 0.229
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 1.65,
+          "text": "IMITED NOI EDITION LIMIT 力 eSo",
+          "char_count": 30,
+          "word_count": 6,
+          "line_count": 6,
+          "avg_confidence": 0.924,
+          "lines": [
+            {
+              "text": "IMITED",
+              "confidence": 0.985
+            },
+            {
+              "text": "NOI",
+              "confidence": 0.975
+            },
+            {
+              "text": "EDITION",
+              "confidence": 0.941
+            },
+            {
+              "text": "LIMIT",
+              "confidence": 0.99
+            },
+            {
+              "text": "力",
+              "confidence": 0.82
+            },
+            {
+              "text": "eSo",
+              "confidence": 0.834
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 1.41,
+          "text": "LIMITED EDITION\nLIMITED EDITION\nDING CARALABOG",
+          "char_count": 46,
+          "word_count": 6,
+          "line_count": 3,
+          "avg_confidence": 1.0,
+          "input_tokens": 1011,
+          "output_tokens": 20,
+          "cost_usd": 0.00089
+        }
+      ]
+    },
+    {
+      "filename": "11_front_maury.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 3.22,
+          "text": "DOMAINE DES CARLINES Gates du'hua APPELLATION D'ORIGINE PROTÉGÉE TRÉMOULETTE CHARDONNAY",
+          "char_count": 87,
+          "word_count": 10,
+          "line_count": 7,
+          "avg_confidence": 0.856,
+          "lines": [
+            {
+              "text": "DOMAINE",
+              "confidence": 0.986
+            },
+            {
+              "text": "DES",
+              "confidence": 0.94
+            },
+            {
+              "text": "CARLINES",
+              "confidence": 0.962
+            },
+            {
+              "text": "Gates du'hua",
+              "confidence": 0.115
+            },
+            {
+              "text": "APPELLATION D'ORIGINE PROTÉGÉE",
+              "confidence": 0.988
+            },
+            {
+              "text": "TRÉMOULETTE",
+              "confidence": 0.999
+            },
+            {
+              "text": "CHARDONNAY",
+              "confidence": 0.999
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 1.94,
+          "text": "DOMAINE DES CARLINES balesdulura APPELLATION D'ORIGINEPROTEGEE TREMOULETTE CHARDONNAY",
+          "char_count": 85,
+          "word_count": 8,
+          "line_count": 7,
+          "avg_confidence": 0.977,
+          "lines": [
+            {
+              "text": "DOMAINE",
+              "confidence": 0.99
+            },
+            {
+              "text": "DES",
+              "confidence": 0.994
+            },
+            {
+              "text": "CARLINES",
+              "confidence": 0.98
+            },
+            {
+              "text": "balesdulura",
+              "confidence": 0.914
+            },
+            {
+              "text": "APPELLATION D'ORIGINEPROTEGEE",
+              "confidence": 0.974
+            },
+            {
+              "text": "TREMOULETTE",
+              "confidence": 0.989
+            },
+            {
+              "text": "CHARDONNAY",
+              "confidence": 0.994
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 1.65,
+          "text": "DOMAINE\nDES\nCARLINES\nColes du Jura\nAPPELLATION D'ORIGINE PROTÉGÉE\nTRÉMOULETTE\nCHARDONNAY",
+          "char_count": 88,
+          "word_count": 11,
+          "line_count": 7,
+          "avg_confidence": 1.0,
+          "input_tokens": 533,
+          "output_tokens": 45,
+          "cost_usd": 0.00061
+        }
+      ]
+    },
+    {
+      "filename": "12_front_italian.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 15.17,
+          "text": "SANGIOVESE 1 HORSE HEAVEN HILLS ~ 2022 1 LIMITED RELEASE UP To 463 V TOTAL CASES Yao IJmnn KATIE NELSON WINEMAKER The varietal typicity shines through in this Sangiovese! 9 This wine displays notes of dried herbs, cocoa, raspberry; red cherry; cranberry; orange zest and baking spice. It has a powdery;   dusty   finish from 10% Cabernet Sauvignon blended in, which is typical of this region.",
+          "char_count": 392,
+          "word_count": 65,
+          "line_count": 28,
+          "avg_confidence": 0.744,
+          "lines": [
+            {
+              "text": "SANGIOVESE",
+              "confidence": 0.995
+            },
+            {
+              "text": "1",
+              "confidence": 0.261
+            },
+            {
+              "text": "HORSE",
+              "confidence": 1.0
+            },
+            {
+              "text": "HEAVEN",
+              "confidence": 1.0
+            },
+            {
+              "text": "HILLS",
+              "confidence": 0.999
+            },
+            {
+              "text": "~",
+              "confidence": 0.233
+            },
+            {
+              "text": "2022",
+              "confidence": 1.0
+            },
+            {
+              "text": "1",
+              "confidence": 0.758
+            },
+            {
+              "text": "LIMITED",
+              "confidence": 1.0
+            },
+            {
+              "text": "RELEASE UP To",
+              "confidence": 0.623
+            },
+            {
+              "text": "463",
+              "confidence": 0.998
+            },
+            {
+              "text": "V",
+              "confidence": 0.115
+            },
+            {
+              "text": "TOTAL CASES",
+              "confidence": 0.664
+            },
+            {
+              "text": "Yao IJmnn",
+              "confidence": 0.034
+            },
+            {
+              "text": "KATIE",
+              "confidence": 1.0
+            },
+            {
+              "text": "NELSON",
+              "confidence": 0.738
+            },
+            {
+              "text": "WINEMAKER",
+              "confidence": 0.998
+            },
+            {
+              "text": "The varietal typicity shines through in this Sangiovese!",
+              "confidence": 0.929
+            },
+            {
+              "text": "9",
+              "confidence": 0.082
+            },
+            {
+              "text": "This wine displays notes of dried herbs, cocoa, raspberry;",
+              "confidence": 0.778
+            },
+            {
+              "text": "red cherry; cranberry; orange zest and baking spice. It",
+              "confidence": 0.666
+            },
+            {
+              "text": "has",
+              "confidence": 1.0
+            },
+            {
+              "text": "a",
+              "confidence": 0.661
+            },
+            {
+              "text": "powdery;   dusty   finish",
+              "confidence": 0.606
+            },
+            {
+              "text": "from",
+              "confidence": 1.0
+            },
+            {
+              "text": "10%",
+              "confidence": 0.906
+            },
+            {
+              "text": "Cabernet",
+              "confidence": 1.0
+            },
+            {
+              "text": "Sauvignon blended in, which is typical of this region.",
+              "confidence": 0.79
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 5.58,
+          "text": "SANGIOVESE RELEASE HORSE HEAVEN HILLS 2022 463 LIMITED RELEASE UP TO kitieNelhen TOTALCASES KATIE NELSON WINEMAKER The varietal typicity shines through in this Sangiovese! This wine displays notes of dried herbs, cocoa, raspberry, red cherry, cranberry, orange zest and baking spice. It has a powdery, dusty finish from 10% Cabernet Sauvignon blended in, which is typical of this region.",
+          "char_count": 387,
+          "word_count": 59,
+          "line_count": 15,
+          "avg_confidence": 0.966,
+          "lines": [
+            {
+              "text": "SANGIOVESE",
+              "confidence": 0.978
+            },
+            {
+              "text": "RELEASE",
+              "confidence": 0.994
+            },
+            {
+              "text": "HORSE HEAVEN HILLS",
+              "confidence": 0.956
+            },
+            {
+              "text": "2022",
+              "confidence": 1.0
+            },
+            {
+              "text": "463",
+              "confidence": 0.999
+            },
+            {
+              "text": "LIMITED RELEASE UP TO",
+              "confidence": 0.955
+            },
+            {
+              "text": "kitieNelhen",
+              "confidence": 0.673
+            },
+            {
+              "text": "TOTALCASES",
+              "confidence": 0.996
+            },
+            {
+              "text": "KATIE NELSON",
+              "confidence": 0.988
+            },
+            {
+              "text": "WINEMAKER",
+              "confidence": 0.99
+            },
+            {
+              "text": "The varietal typicity shines through in this Sangiovese!",
+              "confidence": 0.992
+            },
+            {
+              "text": "This wine displays notes of dried herbs, cocoa, raspberry,",
+              "confidence": 0.995
+            },
+            {
+              "text": "red cherry, cranberry, orange zest and baking spice. It",
+              "confidence": 0.995
+            },
+            {
+              "text": "has a powdery, dusty finish from 10% Cabernet",
+              "confidence": 0.988
+            },
+            {
+              "text": "Sauvignon blended in, which is typical of this region.",
+              "confidence": 0.99
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 2.97,
+          "text": "SANGIOVESE\n\nHORSE HEAVEN HILLS\n\n2022\n\nLIMITED RELEASE UP TO 463 TOTAL CASES\n\nKatie Nelson\n\nKATIE NELSON WINEMAKER\n\nThe varietal typicity shines through in this Sangiovese! This wine displays notes of dried herbs, cocoa, raspberry, red cherry, cranberry, orange zest and baking spice. It has a powdery, dusty finish from 10% Cabernet Sauvignon blended in, which is typical of this region.\n\nDelille Cellars\n\nLIMITED RELEASE\n\nESTD 1992",
+          "char_count": 432,
+          "word_count": 66,
+          "line_count": 19,
+          "avg_confidence": 1.0,
+          "input_tokens": 1661,
+          "output_tokens": 136,
+          "cost_usd": 0.00187
+        }
+      ]
+    },
+    {
+      "filename": "13_front_spanish.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 3.27,
+          "text": "SANCERRE ARGILO-CALCAIRE & SILEX 2023 HENRI BOURGEOIS PAR LA VIGNE DEPUIS 1696",
+          "char_count": 78,
+          "word_count": 12,
+          "line_count": 8,
+          "avg_confidence": 0.908,
+          "lines": [
+            {
+              "text": "SANCERRE",
+              "confidence": 0.894
+            },
+            {
+              "text": "ARGILO-CALCAIRE & SILEX",
+              "confidence": 0.997
+            },
+            {
+              "text": "2023",
+              "confidence": 1.0
+            },
+            {
+              "text": "HENRI BOURGEOIS",
+              "confidence": 0.918
+            },
+            {
+              "text": "PAR LA",
+              "confidence": 0.472
+            },
+            {
+              "text": "VIGNE",
+              "confidence": 0.999
+            },
+            {
+              "text": "DEPUIS",
+              "confidence": 0.987
+            },
+            {
+              "text": "1696",
+              "confidence": 0.999
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 3.5,
+          "text": "SANCERRE ARGILO-CALCAIRE&SILEX.2023 HENRIBOURGEOIS PARLAVIGNEDEPUIS1696",
+          "char_count": 71,
+          "word_count": 4,
+          "line_count": 4,
+          "avg_confidence": 0.983,
+          "lines": [
+            {
+              "text": "SANCERRE",
+              "confidence": 0.994
+            },
+            {
+              "text": "ARGILO-CALCAIRE&SILEX.2023",
+              "confidence": 0.977
+            },
+            {
+              "text": "HENRIBOURGEOIS",
+              "confidence": 0.985
+            },
+            {
+              "text": "PARLAVIGNEDEPUIS1696",
+              "confidence": 0.974
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 1.55,
+          "text": "SANCERRE\nARGILO-CALCAIRE & SILEX . 2023\n\nHENRI BOURGEOIS\n\nPAR LA VIGNE DEPUIS 1696",
+          "char_count": 82,
+          "word_count": 13,
+          "line_count": 6,
+          "avg_confidence": 1.0,
+          "input_tokens": 526,
+          "output_tokens": 42,
+          "cost_usd": 0.00059
+        }
+      ]
+    },
+    {
+      "filename": "14_front_riesling.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 7.02,
+          "text": "MOSHIN VINEYARDS 2023 Mlbariño _ 'Russian River A serendipitous encounter with winery colleague led us to the aquisition of a small amount of Albariño grapes grown right here in the Russian Rlver Valley! This wine is very true to the varietal with soft and pretty aromas of white peaches and tropical fruit. On the palate it is medium-bodied , yet bright and refreshing with notes of citrus , green melon and wet slate HARVEST BRIX ALC. by VOL CASES 10/26/23 21.3 3.28 6.6 g/1 0.15% 12.3% 140 moshinvineyards.com 707-433-5499 PRODUCED & BOTTLED BY MOSHIN VINEYARDS, HEALDSBURG, CALIFORNIA GOVERNMENT   WARNING: (1) ACCORDING TO THE SURGEON GENERAL WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITYTO DRIE A CAROR OPERATE MACHINERY;AND MAY CAUSEHEALTH PROBLEMS. CONTAINS SULFITES CA CRV Valley",
+          "char_count": 895,
+          "word_count": 140,
+          "line_count": 39,
+          "avg_confidence": 0.841,
+          "lines": [
+            {
+              "text": "MOSHIN VINEYARDS",
+              "confidence": 0.925
+            },
+            {
+              "text": "2023 Mlbariño _",
+              "confidence": 0.572
+            },
+            {
+              "text": "'Russian River",
+              "confidence": 0.688
+            },
+            {
+              "text": "A serendipitous encounter with",
+              "confidence": 0.904
+            },
+            {
+              "text": "winery colleague led us to the aquisition of a",
+              "confidence": 0.875
+            },
+            {
+              "text": "small amount of Albariño grapes grown right here in the Russian Rlver",
+              "confidence": 0.735
+            },
+            {
+              "text": "Valley!",
+              "confidence": 0.991
+            },
+            {
+              "text": "This wine is very true to the varietal with soft and pretty aromas of white peaches",
+              "confidence": 0.715
+            },
+            {
+              "text": "and tropical fruit. On the palate it is medium-bodied , yet bright and refreshing",
+              "confidence": 0.714
+            },
+            {
+              "text": "with notes of citrus , green melon and wet slate",
+              "confidence": 0.809
+            },
+            {
+              "text": "HARVEST",
+              "confidence": 0.999
+            },
+            {
+              "text": "BRIX",
+              "confidence": 0.999
+            },
+            {
+              "text": "ALC. by VOL",
+              "confidence": 0.828
+            },
+            {
+              "text": "CASES",
+              "confidence": 1.0
+            },
+            {
+              "text": "10/26/23",
+              "confidence": 0.584
+            },
+            {
+              "text": "21.3",
+              "confidence": 0.616
+            },
+            {
+              "text": "3.28",
+              "confidence": 0.986
+            },
+            {
+              "text": "6.6 g/1",
+              "confidence": 0.522
+            },
+            {
+              "text": "0.15%",
+              "confidence": 0.995
+            },
+            {
+              "text": "12.3%",
+              "confidence": 0.545
+            },
+            {
+              "text": "140",
+              "confidence": 0.999
+            },
+            {
+              "text": "moshinvineyards.com 707-433-5499",
+              "confidence": 0.771
+            },
+            {
+              "text": "PRODUCED & BOTTLED BY MOSHIN VINEYARDS, HEALDSBURG, CALIFORNIA",
+              "confidence": 0.845
+            },
+            {
+              "text": "GOVERNMENT   WARNING: (1) ACCORDING TO THE",
+              "confidence": 0.656
+            },
+            {
+              "text": "SURGEON GENERAL WOMEN SHOULD NOT DRINK",
+              "confidence": 0.884
+            },
+            {
+              "text": "ALCOHOLIC",
+              "confidence": 0.794
+            },
+            {
+              "text": "BEVERAGES",
+              "confidence": 1.0
+            },
+            {
+              "text": "DURING",
+              "confidence": 1.0
+            },
+            {
+              "text": "PREGNANCY",
+              "confidence": 1.0
+            },
+            {
+              "text": "BECAUSE OF THE RISK OF BIRTH DEFECTS",
+              "confidence": 0.735
+            },
+            {
+              "text": "CONSUMPTION",
+              "confidence": 1.0
+            },
+            {
+              "text": "OF",
+              "confidence": 1.0
+            },
+            {
+              "text": "ALCOHOLIC",
+              "confidence": 1.0
+            },
+            {
+              "text": "BEVERAGES",
+              "confidence": 1.0
+            },
+            {
+              "text": "IMPAIRS YOUR ABILITYTO DRIE A CAROR OPERATE",
+              "confidence": 0.552
+            },
+            {
+              "text": "MACHINERY;AND MAY CAUSEHEALTH PROBLEMS.",
+              "confidence": 0.735
+            },
+            {
+              "text": "CONTAINS SULFITES",
+              "confidence": 0.851
+            },
+            {
+              "text": "CA CRV",
+              "confidence": 0.999
+            },
+            {
+              "text": "Valley",
+              "confidence": 0.976
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 7.36,
+          "text": "MOSHINVINEYARDS 2023gAlbarino / Russian RiverValley A serendipitousencounterwithawinerycolleagueledustotheaquisitionofa small amountofAlbarinograpesgrownrighthereintheRussianRlverValley! Thiswineisverytruetothevarietalwithsoftandprettyaromasofwhitepeaches andtropicalfruit.Onthepalateitismedium-bodied,yetbrightandrefreshing withnotesofcitrus，greenmelonandwetslate. HARVEST BRIX PH TA RS ALC.byVOL. CASES 10/26/23 21.3 3.28 6.6g/l 0.15% 12.3% 140 moshinvineyards.com707-433-5499 PRODUCED&BOTTLEDBYMOSHINVINEYARDS,HEALDSBURG,CALIFORNIA GOVERNMENTWARNING:(1)ACCORDINGTOTHE SURGEONGENERAL,WOMENSHOULDNOTDRINK ALCOHOLICBEVERAGESDURINGPREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS.(2) CONSUMPTIONOFALCOHOLICBEVERAGES IMPAIRSYOURABILITYTODRIVEACAROROPERATE MACHINERYANDMAYCAUSEHEALTHPROBLEMS. CONTAINSSULFITES CACRV",
+          "char_count": 810,
+          "word_count": 43,
+          "line_count": 32,
+          "avg_confidence": 0.986,
+          "lines": [
+            {
+              "text": "MOSHINVINEYARDS",
+              "confidence": 0.954
+            },
+            {
+              "text": "2023gAlbarino / Russian RiverValley",
+              "confidence": 0.963
+            },
+            {
+              "text": "A serendipitousencounterwithawinerycolleagueledustotheaquisitionofa",
+              "confidence": 0.99
+            },
+            {
+              "text": "small amountofAlbarinograpesgrownrighthereintheRussianRlverValley!",
+              "confidence": 0.982
+            },
+            {
+              "text": "Thiswineisverytruetothevarietalwithsoftandprettyaromasofwhitepeaches",
+              "confidence": 0.997
+            },
+            {
+              "text": "andtropicalfruit.Onthepalateitismedium-bodied,yetbrightandrefreshing",
+              "confidence": 0.982
+            },
+            {
+              "text": "withnotesofcitrus，greenmelonandwetslate.",
+              "confidence": 0.979
+            },
+            {
+              "text": "HARVEST",
+              "confidence": 0.997
+            },
+            {
+              "text": "BRIX",
+              "confidence": 0.996
+            },
+            {
+              "text": "PH",
+              "confidence": 0.999
+            },
+            {
+              "text": "TA",
+              "confidence": 0.997
+            },
+            {
+              "text": "RS",
+              "confidence": 0.996
+            },
+            {
+              "text": "ALC.byVOL.",
+              "confidence": 0.983
+            },
+            {
+              "text": "CASES",
+              "confidence": 0.995
+            },
+            {
+              "text": "10/26/23",
+              "confidence": 0.999
+            },
+            {
+              "text": "21.3",
+              "confidence": 0.999
+            },
+            {
+              "text": "3.28",
+              "confidence": 0.999
+            },
+            {
+              "text": "6.6g/l",
+              "confidence": 0.947
+            },
+            {
+              "text": "0.15%",
+              "confidence": 0.999
+            },
+            {
+              "text": "12.3%",
+              "confidence": 0.999
+            },
+            {
+              "text": "140",
+              "confidence": 1.0
+            },
+            {
+              "text": "moshinvineyards.com707-433-5499",
+              "confidence": 0.995
+            },
+            {
+              "text": "PRODUCED&BOTTLEDBYMOSHINVINEYARDS,HEALDSBURG,CALIFORNIA",
+              "confidence": 0.965
+            },
+            {
+              "text": "GOVERNMENTWARNING:(1)ACCORDINGTOTHE",
+              "confidence": 0.979
+            },
+            {
+              "text": "SURGEONGENERAL,WOMENSHOULDNOTDRINK",
+              "confidence": 0.978
+            },
+            {
+              "text": "ALCOHOLICBEVERAGESDURINGPREGNANCY",
+              "confidence": 0.995
+            },
+            {
+              "text": "BECAUSE OF THE RISK OF BIRTH DEFECTS.(2)",
+              "confidence": 0.94
+            },
+            {
+              "text": "CONSUMPTIONOFALCOHOLICBEVERAGES",
+              "confidence": 0.997
+            },
+            {
+              "text": "IMPAIRSYOURABILITYTODRIVEACAROROPERATE",
+              "confidence": 0.992
+            },
+            {
+              "text": "MACHINERYANDMAYCAUSEHEALTHPROBLEMS.",
+              "confidence": 0.969
+            },
+            {
+              "text": "CONTAINSSULFITES",
+              "confidence": 0.997
+            },
+            {
+              "text": "CACRV",
+              "confidence": 0.996
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 5.48,
+          "text": "MOSHIN VINEYARDS\n\n2023 Albariño / Russian River Valley\n\nA serendipitous encounter with a winery colleague led us to the aquisition of a small amount of Albariño grapes grown right here in the Russian River Valley! This wine is very true to the varietal with soft and pretty aromas of ripe peaches and tropical fruit. On the palate it is medium-bodied, yet bright and refreshing with notes of citrus, green melon and wet slate.\n\nHARVEST          BRIX          PH          TA          RS          ALC. by VOL.          CASES\n10/26/23          21.3          3.28          6.6 g/l          0.15%          12.3%          140\n\nmoshinvineyards.com  707-433-5499\n\nPRODUCED & BOTTLED BY MOSHIN VINEYARDS, HEALDSBURG, CALIFORNIA\n\nGOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\n\nCONTAINS SULFITES                                                                                          CA CRV",
+          "char_count": 1118,
+          "word_count": 147,
+          "line_count": 16,
+          "avg_confidence": 1.0,
+          "input_tokens": 479,
+          "output_tokens": 316,
+          "cost_usd": 0.00165
+        }
+      ]
+    },
+    {
+      "filename": "15_front_alsace_gc.png",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 1.2,
+          "text": "Siseph Ihcuhin VosNE-RoMANÉE",
+          "char_count": 28,
+          "word_count": 3,
+          "line_count": 2,
+          "avg_confidence": 0.478,
+          "lines": [
+            {
+              "text": "Siseph Ihcuhin",
+              "confidence": 0.15
+            },
+            {
+              "text": "VosNE-RoMANÉE",
+              "confidence": 0.805
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 1.31,
+          "text": "Joseph reuhin VOSNE-ROMANEE",
+          "char_count": 27,
+          "word_count": 3,
+          "line_count": 2,
+          "avg_confidence": 0.767,
+          "lines": [
+            {
+              "text": "Joseph reuhin",
+              "confidence": 0.577
+            },
+            {
+              "text": "VOSNE-ROMANEE",
+              "confidence": 0.957
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 1.06,
+          "text": "Joseph Drouhin\nVosne-Romanée",
+          "char_count": 28,
+          "word_count": 3,
+          "line_count": 2,
+          "avg_confidence": 1.0,
+          "input_tokens": 387,
+          "output_tokens": 17,
+          "cost_usd": 0.00038
+        }
+      ]
+    },
+    {
+      "filename": "16_back_musella.png",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 3.41,
+          "text": "IMPORTED BY: ADVENTURES IN WINE DALY CITY, CA GOVERNMENT WARNING: (1) ACCORDInG To THE SURGEON GENERAL WOMEN SHOULD NCT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2} CCNSUMFTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE 4 CAR OR CPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS 750 ML CCNTAINS SULFITES",
+          "char_count": 352,
+          "word_count": 55,
+          "line_count": 11,
+          "avg_confidence": 0.69,
+          "lines": [
+            {
+              "text": "IMPORTED BY: ADVENTURES IN WINE DALY CITY, CA",
+              "confidence": 0.958
+            },
+            {
+              "text": "GOVERNMENT WARNING: (1) ACCORDInG To THE SURGEON",
+              "confidence": 0.313
+            },
+            {
+              "text": "GENERAL WOMEN SHOULD NCT DRINK ALCOHOLIC BEVERAGES",
+              "confidence": 0.767
+            },
+            {
+              "text": "DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2}",
+              "confidence": 0.569
+            },
+            {
+              "text": "CCNSUMFTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY",
+              "confidence": 0.781
+            },
+            {
+              "text": "TO DRIVE",
+              "confidence": 0.671
+            },
+            {
+              "text": "4 CAR OR CPERATE MACHINERY,",
+              "confidence": 0.575
+            },
+            {
+              "text": "AND MAY CAUSE",
+              "confidence": 0.442
+            },
+            {
+              "text": "HEALTH PROBLEMS",
+              "confidence": 0.689
+            },
+            {
+              "text": "750 ML",
+              "confidence": 0.98
+            },
+            {
+              "text": "CCNTAINS SULFITES",
+              "confidence": 0.839
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 5.9,
+          "text": "IMPORTEDBY:ADVENTURESINWINEDALYCITY,CA GOVERNMENTWARNING: (1) ACCORDINGTOTHESURGEON GENERALWOMENSHOULD NOTDRINKALCOHOLIC BEVERAGES DURINGPREGNANCYBECAUSEOFTHERISKOFBIRTHDEFECTS.(2) TO DRIVEA CAROROPERATE MACHINERY,AND MAYCAUSE HEALTHPROBLEMS. 750ML CONTAINSSULFITES",
+          "char_count": 265,
+          "word_count": 16,
+          "line_count": 10,
+          "avg_confidence": 0.955,
+          "lines": [
+            {
+              "text": "IMPORTEDBY:ADVENTURESINWINEDALYCITY,CA",
+              "confidence": 0.98
+            },
+            {
+              "text": "GOVERNMENTWARNING:",
+              "confidence": 0.99
+            },
+            {
+              "text": "(1)",
+              "confidence": 0.711
+            },
+            {
+              "text": "ACCORDINGTOTHESURGEON",
+              "confidence": 0.991
+            },
+            {
+              "text": "GENERALWOMENSHOULD NOTDRINKALCOHOLIC BEVERAGES",
+              "confidence": 0.975
+            },
+            {
+              "text": "DURINGPREGNANCYBECAUSEOFTHERISKOFBIRTHDEFECTS.(2)",
+              "confidence": 0.986
+            },
+            {
+              "text": "TO DRIVEA CAROROPERATE MACHINERY,AND MAYCAUSE",
+              "confidence": 0.949
+            },
+            {
+              "text": "HEALTHPROBLEMS.",
+              "confidence": 0.975
+            },
+            {
+              "text": "750ML",
+              "confidence": 0.993
+            },
+            {
+              "text": "CONTAINSSULFITES",
+              "confidence": 0.997
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 2.13,
+          "text": "IMPORTED BY: ADVENTURES IN WINE DALY CITY, CA\n\nGOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\n\n750 ML     CONTAINS SULFITES",
+          "char_count": 360,
+          "word_count": 55,
+          "line_count": 5,
+          "avg_confidence": 1.0,
+          "input_tokens": 311,
+          "output_tokens": 116,
+          "cost_usd": 0.00071
+        }
+      ]
+    },
+    {
+      "filename": "17_back_italian_generic.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 6.16,
+          "text": "844 2+ 2019 Imbottigliato 'origine da Società Agricola La Querciolana s.s. Panicale Italia all (",
+          "char_count": 96,
+          "word_count": 15,
+          "line_count": 9,
+          "avg_confidence": 0.763,
+          "lines": [
+            {
+              "text": "844",
+              "confidence": 0.037
+            },
+            {
+              "text": "2+",
+              "confidence": 0.543
+            },
+            {
+              "text": "2019",
+              "confidence": 1.0
+            },
+            {
+              "text": "Imbottigliato",
+              "confidence": 1.0
+            },
+            {
+              "text": "'origine da Società Agricola",
+              "confidence": 0.942
+            },
+            {
+              "text": "La Querciolana s.s.",
+              "confidence": 0.985
+            },
+            {
+              "text": "Panicale",
+              "confidence": 1.0
+            },
+            {
+              "text": "Italia",
+              "confidence": 1.0
+            },
+            {
+              "text": "all (",
+              "confidence": 0.362
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 2.76,
+          "text": "2019 Imbottigliato all'origine da Societa Agricola La Querciolana s.s. - Panicale - Italia",
+          "char_count": 90,
+          "word_count": 13,
+          "line_count": 3,
+          "avg_confidence": 0.994,
+          "lines": [
+            {
+              "text": "2019",
+              "confidence": 1.0
+            },
+            {
+              "text": "Imbottigliato all'origine da Societa Agricola",
+              "confidence": 0.993
+            },
+            {
+              "text": "La Querciolana s.s. - Panicale - Italia",
+              "confidence": 0.989
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 2.8,
+          "text": "Orciolato +\n\n2019\n\nImbottigliato all'origine da Società Agricola\nLa Querciolana s.s. - Panicale - Italia",
+          "char_count": 104,
+          "word_count": 15,
+          "line_count": 6,
+          "avg_confidence": 1.0,
+          "input_tokens": 1641,
+          "output_tokens": 47,
+          "cost_usd": 0.0015
+        }
+      ]
+    },
+    {
+      "filename": "18_back_seleccion.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 17.81,
+          "text": "LOEW FAMILY WINES HAVE BEEN Beloved. A term that was often used by our ENJOYED FOR CENTURIES late cofounder William Loew to refer to his wife and our cofounder; Lois Loew. Our ancestors founded their first wineries in the Austro-Hungarian empire  where Like their marriage, this wine is a harmonious they continued to produce wine until the blend, it shows nuances of nectarine, mid-2Oth century. In 1982, we established pineapple and white flowers. A wine to Loew Vineyards in Maryland; and have enjoy with loved ones, to take on a picnic, now extended our tradition to the fifth or to celebrate a special occasion. generation: We take pride in sharing our heritage through each bottle of 70% Chardonnay, 30% Sauvignon Blanc wine we create. BELOVED Co-fermented in Stainless Steel Maryland Grown Grapes Produced & Bottled by GOVERNMENT WARNING: (1) Accord - The Loew Vineyards, Inc Maryland White Wine ing to the Surgeon General; women should Mt. MD not drink alcoholic beverages during preg- nancy because of the risk of birth defects. www.LoewVineyards.net 2022 (2) Consumption of  alcoholic beverages impairs your ability to drive a car or operate CONTAINS SULFITES ALC 12.9% BY VOL/750 ML machinery; and may cause health problems: Xoohegrds Airy",
+          "char_count": 1250,
+          "word_count": 202,
+          "line_count": 55,
+          "avg_confidence": 0.808,
+          "lines": [
+            {
+              "text": "LOEW",
+              "confidence": 0.999
+            },
+            {
+              "text": "FAMILY",
+              "confidence": 1.0
+            },
+            {
+              "text": "WINES",
+              "confidence": 0.999
+            },
+            {
+              "text": "HAVE",
+              "confidence": 1.0
+            },
+            {
+              "text": "BEEN",
+              "confidence": 1.0
+            },
+            {
+              "text": "Beloved. A term that was often used by our",
+              "confidence": 0.791
+            },
+            {
+              "text": "ENJOYED",
+              "confidence": 1.0
+            },
+            {
+              "text": "FOR",
+              "confidence": 1.0
+            },
+            {
+              "text": "CENTURIES",
+              "confidence": 0.999
+            },
+            {
+              "text": "late cofounder William Loew to refer to his",
+              "confidence": 0.536
+            },
+            {
+              "text": "wife and our cofounder; Lois Loew.",
+              "confidence": 0.729
+            },
+            {
+              "text": "Our ancestors founded their first wineries",
+              "confidence": 0.86
+            },
+            {
+              "text": "in",
+              "confidence": 1.0
+            },
+            {
+              "text": "the",
+              "confidence": 1.0
+            },
+            {
+              "text": "Austro-Hungarian",
+              "confidence": 0.991
+            },
+            {
+              "text": "empire  where",
+              "confidence": 0.733
+            },
+            {
+              "text": "Like their marriage, this wine is a harmonious",
+              "confidence": 0.754
+            },
+            {
+              "text": "they continued to produce wine until the",
+              "confidence": 0.969
+            },
+            {
+              "text": "blend, it shows nuances of nectarine,",
+              "confidence": 0.848
+            },
+            {
+              "text": "mid-2Oth century. In 1982, we established",
+              "confidence": 0.615
+            },
+            {
+              "text": "pineapple and white flowers.",
+              "confidence": 0.892
+            },
+            {
+              "text": "A wine to",
+              "confidence": 0.751
+            },
+            {
+              "text": "Loew Vineyards in Maryland; and have",
+              "confidence": 0.802
+            },
+            {
+              "text": "enjoy with loved ones, to take on a picnic,",
+              "confidence": 0.569
+            },
+            {
+              "text": "now extended our tradition to the fifth",
+              "confidence": 0.741
+            },
+            {
+              "text": "or to celebrate a special occasion.",
+              "confidence": 0.662
+            },
+            {
+              "text": "generation: We take pride in sharing our",
+              "confidence": 0.873
+            },
+            {
+              "text": "heritage through each bottle of",
+              "confidence": 0.948
+            },
+            {
+              "text": "70% Chardonnay, 30% Sauvignon Blanc",
+              "confidence": 0.836
+            },
+            {
+              "text": "wine we create.",
+              "confidence": 0.741
+            },
+            {
+              "text": "BELOVED",
+              "confidence": 0.65
+            },
+            {
+              "text": "Co-fermented in Stainless Steel",
+              "confidence": 0.998
+            },
+            {
+              "text": "Maryland Grown Grapes",
+              "confidence": 0.804
+            },
+            {
+              "text": "Produced & Bottled by",
+              "confidence": 0.999
+            },
+            {
+              "text": "GOVERNMENT WARNING:",
+              "confidence": 0.659
+            },
+            {
+              "text": "(1)",
+              "confidence": 0.995
+            },
+            {
+              "text": "Accord -",
+              "confidence": 0.406
+            },
+            {
+              "text": "The Loew Vineyards, Inc",
+              "confidence": 0.801
+            },
+            {
+              "text": "Maryland White Wine",
+              "confidence": 0.661
+            },
+            {
+              "text": "ing to the Surgeon General; women should",
+              "confidence": 0.82
+            },
+            {
+              "text": "Mt.",
+              "confidence": 0.906
+            },
+            {
+              "text": "MD",
+              "confidence": 1.0
+            },
+            {
+              "text": "not drink alcoholic beverages during preg-",
+              "confidence": 0.826
+            },
+            {
+              "text": "nancy because of the risk of birth defects.",
+              "confidence": 0.733
+            },
+            {
+              "text": "www.LoewVineyards.net",
+              "confidence": 0.699
+            },
+            {
+              "text": "2022",
+              "confidence": 0.656
+            },
+            {
+              "text": "(2)",
+              "confidence": 0.518
+            },
+            {
+              "text": "Consumption",
+              "confidence": 1.0
+            },
+            {
+              "text": "of  alcoholic beverages",
+              "confidence": 0.921
+            },
+            {
+              "text": "impairs your ability to drive a car or operate",
+              "confidence": 0.837
+            },
+            {
+              "text": "CONTAINS SULFITES",
+              "confidence": 0.749
+            },
+            {
+              "text": "ALC 12.9% BY VOL/750 ML",
+              "confidence": 0.415
+            },
+            {
+              "text": "machinery; and may cause health problems:",
+              "confidence": 0.769
+            },
+            {
+              "text": "Xoohegrds",
+              "confidence": 0.104
+            },
+            {
+              "text": "Airy",
+              "confidence": 0.903
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 8.45,
+          "text": "LOEWFAMILY WINESHAVE BEEN Beloved. A term that was often used by our ENJOYED FORCENTURIES late cofounder william Loew to refer to his wife and our cofounder, Lois Loew. Our ancestors founded their first wineries in the Austro-Hungarian empire where Like their marriage, this wine is a harmonious mevards theycontinued toproducewineuntil the blend, it shows nuances of nectarine, mid-20th century.ln 1982,we established pineapple and white flowers. A wine to LoewVineyards inMaryland,and have enjoy with loved ones, to take on a picnic, now extended our tradition to the fifth ortocelebrateaspecialoccasion. generation. We take pride in sharing our heritage through each botfle of 70% Chardonnay, 30% Sauvignon Blanc wine we create. BELOVED Co-fermented in StainlessSteel Maryland Grown Grapes Produced & Bottled by GOVERNMENT WARNING:(1) Accord- The Loew Vineyards, Inc. Maryland White Wine ing to the Surgeon General, women should Mt.Airy, MD not drink alcoholic beverages during preg- nancy because of the risk of birth defects. www.LoewVineyards.net 2022 (2)  Consumption  of alcoholic beverages impairs your ability to drive a car or operate CONTAINS SULFITES | ALC 12.9% BY VOL/750 ML machinery, and may cause health problems.",
+          "char_count": 1231,
+          "word_count": 182,
+          "line_count": 41,
+          "avg_confidence": 0.979,
+          "lines": [
+            {
+              "text": "LOEWFAMILY",
+              "confidence": 0.997
+            },
+            {
+              "text": "WINESHAVE",
+              "confidence": 0.994
+            },
+            {
+              "text": "BEEN",
+              "confidence": 0.992
+            },
+            {
+              "text": "Beloved. A term that was often used by our",
+              "confidence": 0.982
+            },
+            {
+              "text": "ENJOYED",
+              "confidence": 0.989
+            },
+            {
+              "text": "FORCENTURIES",
+              "confidence": 0.997
+            },
+            {
+              "text": "late cofounder william Loew to refer to his",
+              "confidence": 0.973
+            },
+            {
+              "text": "wife and our cofounder, Lois Loew.",
+              "confidence": 0.995
+            },
+            {
+              "text": "Our ancestors founded their first wineries",
+              "confidence": 0.97
+            },
+            {
+              "text": "in the Austro-Hungarian empire where",
+              "confidence": 0.967
+            },
+            {
+              "text": "Like their marriage, this wine is a harmonious",
+              "confidence": 0.998
+            },
+            {
+              "text": "mevards",
+              "confidence": 0.899
+            },
+            {
+              "text": "theycontinued toproducewineuntil the",
+              "confidence": 0.965
+            },
+            {
+              "text": "blend, it shows nuances of nectarine,",
+              "confidence": 0.985
+            },
+            {
+              "text": "mid-20th century.ln 1982,we established",
+              "confidence": 0.961
+            },
+            {
+              "text": "pineapple and white flowers. A wine to",
+              "confidence": 0.999
+            },
+            {
+              "text": "LoewVineyards inMaryland,and have",
+              "confidence": 0.968
+            },
+            {
+              "text": "enjoy with loved ones, to take on a picnic,",
+              "confidence": 0.965
+            },
+            {
+              "text": "now extended our tradition to the fifth",
+              "confidence": 0.986
+            },
+            {
+              "text": "ortocelebrateaspecialoccasion.",
+              "confidence": 0.995
+            },
+            {
+              "text": "generation. We take pride in sharing our",
+              "confidence": 0.987
+            },
+            {
+              "text": "heritage through each botfle of",
+              "confidence": 0.97
+            },
+            {
+              "text": "70% Chardonnay, 30% Sauvignon Blanc",
+              "confidence": 0.964
+            },
+            {
+              "text": "wine we create.",
+              "confidence": 0.97
+            },
+            {
+              "text": "BELOVED",
+              "confidence": 0.999
+            },
+            {
+              "text": "Co-fermented in StainlessSteel",
+              "confidence": 0.983
+            },
+            {
+              "text": "Maryland Grown Grapes",
+              "confidence": 0.991
+            },
+            {
+              "text": "Produced & Bottled by",
+              "confidence": 0.986
+            },
+            {
+              "text": "GOVERNMENT WARNING:(1) Accord-",
+              "confidence": 0.936
+            },
+            {
+              "text": "The Loew Vineyards, Inc.",
+              "confidence": 0.972
+            },
+            {
+              "text": "Maryland White Wine",
+              "confidence": 0.966
+            },
+            {
+              "text": "ing to the Surgeon General, women should",
+              "confidence": 0.999
+            },
+            {
+              "text": "Mt.Airy, MD",
+              "confidence": 0.979
+            },
+            {
+              "text": "not drink alcoholic beverages during preg-",
+              "confidence": 0.976
+            },
+            {
+              "text": "nancy because of the risk of birth defects.",
+              "confidence": 0.987
+            },
+            {
+              "text": "www.LoewVineyards.net",
+              "confidence": 0.986
+            },
+            {
+              "text": "2022",
+              "confidence": 1.0
+            },
+            {
+              "text": "(2)  Consumption  of alcoholic beverages",
+              "confidence": 0.973
+            },
+            {
+              "text": "impairs your ability to drive a car or operate",
+              "confidence": 0.995
+            },
+            {
+              "text": "CONTAINS SULFITES | ALC 12.9% BY VOL/750 ML",
+              "confidence": 0.964
+            },
+            {
+              "text": "machinery, and may cause health problems.",
+              "confidence": 0.986
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 6.15,
+          "text": "LOEW FAMILY WINES HAVE BEEN ENJOYED FOR CENTURIES\n\nOur ancestors founded their first wineries in the Austro-Hungarian empire where they continued to produce wine until the mid-20th century. In 1982, we established Loew Vineyards in Maryland, and have now extended our tradition to the fifth generation. We take pride in sharing our heritage through each bottle of wine we create.\n\nMaryland Grown Grapes\nProduced & Bottled by\nThe Loew Vineyards, Inc.\nMt. Airy, MD\n\nwww.LoewVineyards.net\n\nCONTAINS SULFITES | ALC 12.9% BY VOL/750 ML\n\nBeloved. A term that was often used by our late cofounder William Loew to refer to his wife and our cofounder, Lois Loew.\n\nLike their marriage, this wine is a harmonious blend, it shows nuances of nectarine, pineapple and white flowers. A wine to enjoy with loved ones, to take on a picnic, or to celebrate a special occasion.\n\n70% Chardonnay, 30% Sauvignon Blanc\n\nCo-fermented in Stainless Steel\n\nGOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.\n\nLoew\nVineyards\n\nBELOVED\nMaryland White Wine\n\n2022",
+          "char_count": 1264,
+          "word_count": 201,
+          "line_count": 30,
+          "avg_confidence": 1.0,
+          "input_tokens": 1333,
+          "output_tokens": 359,
+          "cost_usd": 0.0025
+        }
+      ]
+    },
+    {
+      "filename": "19_back_la_violeta.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 5.72,
+          "text": "SAGE BREAKER",
+          "char_count": 12,
+          "word_count": 2,
+          "line_count": 2,
+          "avg_confidence": 1.0,
+          "lines": [
+            {
+              "text": "SAGE",
+              "confidence": 1.0
+            },
+            {
+              "text": "BREAKER",
+              "confidence": 0.999
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 1.4,
+          "text": "SAGEBREAKER",
+          "char_count": 11,
+          "word_count": 1,
+          "line_count": 1,
+          "avg_confidence": 0.977,
+          "lines": [
+            {
+              "text": "SAGEBREAKER",
+              "confidence": 0.977
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 1.39,
+          "text": "SAGEBREAKER",
+          "char_count": 11,
+          "word_count": 1,
+          "line_count": 1,
+          "avg_confidence": 1.0,
+          "input_tokens": 1669,
+          "output_tokens": 8,
+          "cost_usd": 0.00137
+        }
+      ]
+    },
+    {
+      "filename": "20_back_graciano.jpg",
+      "results": [
+        {
+          "tool": "EasyOCR",
+          "elapsed_sec": 8.98,
+          "text": "PINOT NOIR 2 PAYS D'OC Indication Géographique Protégée ; Imported by : TAT AMERICA LLC; 318 WEST 53rd STREET g NEW YORK, NY 10019 ; GOVERNMENT WARNING : (|) ACCORDING to THE SURGEON GENERAL   WOMEN   SHOULD NoT   DRINK   ALCOHOLIC ~( BEVERAGES DURING PREGNANCY BECAUSE oF THE RISK ! OF BIRTH DEFECTS   (2) CONSUMPTION OF ALCOHOLIC BEVERAGES   IMPAIRS YOUR   ABILITY To DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS ª ë 9 3 443350 074142 5 PRODUCT OF FRANCE RED WINE \" 13% ALC BY VOL - CONTAINS SULFITES - 750 ML",
+          "char_count": 530,
+          "word_count": 94,
+          "line_count": 30,
+          "avg_confidence": 0.579,
+          "lines": [
+            {
+              "text": "PINOT NOIR",
+              "confidence": 0.742
+            },
+            {
+              "text": "2",
+              "confidence": 0.206
+            },
+            {
+              "text": "PAYS D'OC",
+              "confidence": 0.966
+            },
+            {
+              "text": "Indication Géographique Protégée",
+              "confidence": 0.786
+            },
+            {
+              "text": ";",
+              "confidence": 0.186
+            },
+            {
+              "text": "Imported by :",
+              "confidence": 0.8
+            },
+            {
+              "text": "TAT AMERICA LLC; 318 WEST 53rd STREET",
+              "confidence": 0.759
+            },
+            {
+              "text": "g",
+              "confidence": 0.462
+            },
+            {
+              "text": "NEW YORK, NY 10019",
+              "confidence": 0.99
+            },
+            {
+              "text": ";",
+              "confidence": 0.11
+            },
+            {
+              "text": "GOVERNMENT WARNING : (|) ACCORDING to THE SURGEON",
+              "confidence": 0.326
+            },
+            {
+              "text": "GENERAL   WOMEN   SHOULD",
+              "confidence": 0.564
+            },
+            {
+              "text": "NoT   DRINK   ALCOHOLIC",
+              "confidence": 0.566
+            },
+            {
+              "text": "~(",
+              "confidence": 0.566
+            },
+            {
+              "text": "BEVERAGES DURING PREGNANCY BECAUSE oF THE RISK",
+              "confidence": 0.543
+            },
+            {
+              "text": "!",
+              "confidence": 0.393
+            },
+            {
+              "text": "OF BIRTH DEFECTS   (2) CONSUMPTION OF ALCOHOLIC",
+              "confidence": 0.434
+            },
+            {
+              "text": "BEVERAGES   IMPAIRS YOUR   ABILITY To DRIVE A CAR OR",
+              "confidence": 0.352
+            },
+            {
+              "text": "OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS",
+              "confidence": 0.636
+            },
+            {
+              "text": "ª",
+              "confidence": 0.289
+            },
+            {
+              "text": "ë",
+              "confidence": 0.22
+            },
+            {
+              "text": "9",
+              "confidence": 0.031
+            },
+            {
+              "text": "3",
+              "confidence": 1.0
+            },
+            {
+              "text": "443350",
+              "confidence": 0.999
+            },
+            {
+              "text": "074142",
+              "confidence": 1.0
+            },
+            {
+              "text": "5",
+              "confidence": 0.997
+            },
+            {
+              "text": "PRODUCT OF FRANCE",
+              "confidence": 0.853
+            },
+            {
+              "text": "RED WINE",
+              "confidence": 0.995
+            },
+            {
+              "text": "\"",
+              "confidence": 0.091
+            },
+            {
+              "text": "13% ALC BY VOL - CONTAINS SULFITES - 750 ML",
+              "confidence": 0.51
+            }
+          ]
+        },
+        {
+          "tool": "RapidOCR",
+          "elapsed_sec": 4.98,
+          "text": "PINOT NOIR Mis en bouteille par Naudin Tiercin a F-21200 (Cote d'Or) - France PAYS D'OC Indication Geographique Protegee Imported by : TATAMERICALLC,318WEST53rdSTREET NEWYORK, NY 10019 GOVERNMENT WARNING:(1)ACCORDING TO THESURGEON GENERAL WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSEOFTHE RISK OF BIRTH DEFECTS.(2)CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERYANDMAYCAUSE HEALTH PROBLEMS 443350 074142 PRODUCT OF FRANCE-RED WINE 13%ALC BYVOL. - CONTAINS SULFITES -750 ML",
+          "char_count": 538,
+          "word_count": 72,
+          "line_count": 17,
+          "avg_confidence": 0.953,
+          "lines": [
+            {
+              "text": "PINOT NOIR",
+              "confidence": 0.962
+            },
+            {
+              "text": "Mis en bouteille par Naudin Tiercin a F-21200 (Cote d'Or) - France",
+              "confidence": 0.938
+            },
+            {
+              "text": "PAYS D'OC",
+              "confidence": 0.956
+            },
+            {
+              "text": "Indication Geographique Protegee",
+              "confidence": 0.981
+            },
+            {
+              "text": "Imported by :",
+              "confidence": 0.969
+            },
+            {
+              "text": "TATAMERICALLC,318WEST53rdSTREET",
+              "confidence": 0.832
+            },
+            {
+              "text": "NEWYORK, NY 10019",
+              "confidence": 0.952
+            },
+            {
+              "text": "GOVERNMENT WARNING:(1)ACCORDING TO THESURGEON",
+              "confidence": 0.956
+            },
+            {
+              "text": "GENERAL WOMEN SHOULD NOT DRINK ALCOHOLIC",
+              "confidence": 0.964
+            },
+            {
+              "text": "BEVERAGES DURING PREGNANCY BECAUSEOFTHE RISK",
+              "confidence": 0.965
+            },
+            {
+              "text": "OF BIRTH DEFECTS.(2)CONSUMPTION OF ALCOHOLIC",
+              "confidence": 0.944
+            },
+            {
+              "text": "BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR",
+              "confidence": 0.955
+            },
+            {
+              "text": "OPERATE MACHINERYANDMAYCAUSE HEALTH PROBLEMS",
+              "confidence": 0.967
+            },
+            {
+              "text": "443350",
+              "confidence": 0.998
+            },
+            {
+              "text": "074142",
+              "confidence": 0.998
+            },
+            {
+              "text": "PRODUCT OF FRANCE-RED WINE",
+              "confidence": 0.923
+            },
+            {
+              "text": "13%ALC BYVOL. - CONTAINS SULFITES -750 ML",
+              "confidence": 0.947
+            }
+          ]
+        },
+        {
+          "tool": "Claude Vision (Haiku)",
+          "elapsed_sec": 3.9,
+          "text": "PINOT NOIR\nPAYS D'OC\nIndication Géographique Protégée\n\nImported by :\nTAT AMERICA LLC, 318 WEST 53rd STREET\nNEW YORK, NY 10019\n\nGOVERNMENT WARNING : (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTION OF ALCOHOLIC BEVERAGES IMPAIRS YOUR ABILITY TO DRIVE A CAR OR OPERATE MACHINERY, AND MAY CAUSE HEALTH PROBLEMS.\n\n3 443350 074142\n\nPRODUCT OF FRANCE - RED WINE\n13% ALC. BY VOL. - CONTAINS SULFITES - 750 ML\n\nMis en bouteille par Naudin Tiercin à F-21200 (Côte d'Or) - France",
+          "char_count": 572,
+          "word_count": 96,
+          "line_count": 16,
+          "avg_confidence": 1.0,
+          "input_tokens": 1655,
+          "output_tokens": 214,
+          "cost_usd": 0.00218
+        }
+      ]
+    }
+  ]
+}
