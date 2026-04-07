@@ -4,6 +4,15 @@ Append-only log of nightly schema audit runs. Each entry compares to the previou
 
 ---
 
+### 2026-04-07 (nightly automated run + follow-up)
+- DB size: 8,375 MB (+32 MB vs yesterday)
+- Issues flagged: 47 categories (down from 58 — whitespace and value violations resolved)
+- Regressions vs yesterday: `source_specs` dead tuples new at 6.4%; `wines` dead tuples grew +2.5% to 6.9% (open-meteo drip writes)
+- New findings: 12,671 duplicate wine groups (+19 vs baseline — minor, likely new wines added); FK index gaps reduced to 36 columns (8 indexes added last session)
+- Follow-up: VACUUM ANALYZE on source_kansas_brands/source_berliner/source_specs/external_ids/wines; added 36 missing FK indexes (migration: add_missing_fk_indexes)
+
+---
+
 ### 2026-04-06 (nightly automated run)
 - DB size: 8,343 MB
 - Issues flagged: 58 categories
