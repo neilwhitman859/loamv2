@@ -4,7 +4,9 @@ Active and recent sessions. Read at session start, append when starting/finishin
 
 ## Active
 
+- **2026-04-07 Knowledge seed pipeline:** Built `pipeline/promote/knowledge_seed.py` — multi-stage pipeline to populate notable wines from Claude training data. 920 generated across 32 categories, 656 already existed, 204 promoted after dual Haiku+Sonnet validation. +200 wines, +31 producers, +321 wine_grapes. Backbone IDs: 9/200 (TTB COLA). Sonnet LWIN matching found 43 same-wine pairs but all conflicted with existing entries (deferred to dedup session). Tables: `source_claude_knowledge`, `wines`, `producers`, `wine_grapes`, `external_ids`.
 - **2026-04-07 Data gap fills + Haiku loop ($20):** Free fills (grape→color cascade, name keyword colors, appellation_vintages from weather) + 4-track Haiku loop (color disambiguation, appellation soils, dupe resolution, grape extraction from names). Tables writing: `wines.color`, `appellation_vintages`, `appellation_soils`, `wine_grapes`, `match_decisions`.
+- **2026-04-07 Producer website scrape (100 top producers):** Built `pipeline/fetch/producer_site_scrape.py` — generic Haiku-based extraction from winery websites. 77/100 completed (23 failed: JS-heavy sites). +498 wines, +311 vintages, +28 winemakers, +537 grapes. Deep vintage data: 252 winemaker notes, 135 oak durations, 80 ABVs, 36 pH/TA. Cost: ~$1.65. Tables: `wines`, `wine_vintages`, `wine_grapes`, `winemakers`, `producer_winemakers`, `producers`.
 
 ## Done
 

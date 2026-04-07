@@ -1279,3 +1279,17 @@ Convention-based months are always within 2-3 weeks of reality, never catastroph
 **Why tabled:** Most high-value label data is already extracted from TTB structured fields (170K ABVs, 857K grapes, 1.75M appellations) without OCR. What labels uniquely offer (winemaker notes, blend percentages, EU e-label chemistry) would improve WineTest Depth from ~33% to ~38% — marginal. The enrichment pipeline (Grade C Haiku batch, ~$120 for 30-50K wines) would move Story from 1.8/5 to 3.5/5 and WineTest from 56 to ~70+ — far higher impact for the same effort.
 
 **Artifacts preserved:** `pipeline/analyze/ocr_bakeoff.py` (bake-off script), `data/test_labels/` (20 test images), `data/stats/ocr_bakeoff_results.json` (full results). Ready to resume if needed.
+
+---
+
+### 2026-04-07: Claude training data as a data source for wine seeding
+
+**Decision:** Approved using Claude's training knowledge as a data source for populating "big boy" wines — the most popular/notable wines that Loam users would encounter. Conservative multi-stage pipeline with dual AI validation (Haiku generation + Sonnet quality gate).
+
+**Pipeline:** `pipeline/promote/knowledge_seed.py` — 6 stages (generate → dedup → ttb-match → validate → promote → report). 920 wines generated across 32 categories, 656 already existed in DB (71% overlap validates calibration), 204 promoted after dual validation. Sonnet rejected 37 that Haiku approved — validating the second quality gate.
+
+**Results:** +200 wines, +31 producers, +321 wine_grapes. Backbone IDs: 9/200 (COLA only). Sonnet LWIN fuzzy matching ($0.22) found 43 same-wine pairs but all conflicted with existing LWIN-imported wines — these are duplicate candidates for future merge session. 43 LWIN dupes logged to `data/stats/knowledge_seed_lwin_dupes.json`.
+
+**Why approved:** These are unambiguously real, famous wines (Opus One, Sassicaia, Dom Perignon). Dual validation minimizes hallucination risk. The 71% overlap with existing DB proves good calibration. Users searching Loam expect to find these wines. The `-ks-` slug suffix marks origin for auditability.
+
+**Precedent:** First time using AI training data as a source. All prior canonical writes came from government registries, importer catalogs, or direct source data. Approved because the wines are trivially verifiable — this is NOT a blanket approval for AI-sourced writes on less verifiable data.

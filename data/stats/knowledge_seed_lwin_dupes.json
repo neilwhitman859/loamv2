@@ -1,0 +1,13 @@
+{
+  "description": "Knowledge seed LWIN duplicate analysis (2026-04-07)",
+  "method": "Sonnet fuzzy matching: 131 wines evaluated against LWIN candidates by producer name, $0.22",
+  "result": "43 Sonnet-confirmed same-wine matches, ALL conflicted with existing external_ids (LWIN already assigned to different canonical wine from LWIN import). 0 applied.",
+  "interpretation": "These 43 knowledge_seed wines are likely duplicates of existing LWIN-imported canonical wines with different name formats (e.g. 'Château Margaux' vs 'Margaux'). Dedup merge would resolve and inherit LWIN-7 codes.",
+  "action": "Deferred to dedicated dedup session. Combined with 466 UPC-identified duplicate pairs from barcode scan session.",
+  "wines_promoted": 200,
+  "wines_with_backbone_id": 9,
+  "wines_without_backbone_id": 191,
+  "sonnet_matches_found": 43,
+  "sonnet_matches_applied": 0,
+  "sonnet_matches_conflicted": 43
+}
