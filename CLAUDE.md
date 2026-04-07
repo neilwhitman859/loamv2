@@ -127,7 +127,7 @@ Region insights (202), appellation insights (82), country insights (62). All oth
 ### Content Tables (updated 2026-04-04, post recovery + 10 follow-ups)
 Query DB for current counts — these are snapshots. See `docs/HISTORY.md` for promotion/merge event history.
 - **~42K producers**, **~491K wines**, **~348K vintages**, **~27K scores**, **~140K prices**, **~278K wine_grapes**, **~604K external_ids** (294K COLA + 106K UPC + 189K LWIN + 13K QR URL + 1.4K QR), **~16K entity_classifications**, **14 retailers**
-- **~267K wines with color** (up from 180K post-revert via LWIN backfill)
+- **~323K wines with color (62.4%)** (up from 282K via appellation_rules single-color cascade +200 and TTB class_type prefix 81→white +40,538)
 - **~262K wines with appellation_id** (up from 230K via TTB wine_appellation backfill)
 - **~413K wines with region_id** (up from 287K via TTB direct resolve + cascade from appellation)
 - **~468K wines with country_id** (up from 466K via cascade)

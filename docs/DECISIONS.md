@@ -4,6 +4,10 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-07: TTB class_type prefix 81→white executed, prefix 80→red rejected
+
+TTB class_type codes encode wine color: prefix 80 = "not white" (red or rosé), 81 = white, 82 = rosé. Executed prefix 81→white fill (+40,538 wines, 95.9% validated accuracy — mismatches are random COLA matching errors). Rejected prefix 80→red fill despite 97.8% measured accuracy because ~2-3% of prefix 80 wines are rosé (TTB classifies rosé under "table wine" class 80, not separately). Tried stacking additional signals (grape color, appellation rules, multiple TTB records) — none cleared 99%. Rosé contamination is structural in TTB's classification system, not solvable by combining signals. Name-based color keywords recommended as next play.
+
 ### 2026-04-06: Duplicate wine merge buffer via match_decisions
 All AI duplicate classification results (12,671 groups) written to match_decisions only. No canonical merges executed. Status values: ai_accepted (true_duplicate), ai_rejected (distinct_wines), flagged (unclear). Human review required before any actual merges. The 9,600 ai_accepted rows are the merge backlog.
 
