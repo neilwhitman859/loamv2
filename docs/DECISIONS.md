@@ -4,12 +4,31 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-07: 30K quality wine target — strategic pivot and data model refinements
+
+Major strategic shift: target 30K wines with quality data instead of 518K mostly-empty wines. Goal is "friend test" — a friend scanning a bottle at a restaurant or wine store finds it with correct, complete data 95% of the time. Key decisions:
+
+1. **NV only for actual NV wines.** Vintage year 0 is only valid for wines that are genuinely non-vintage (most sparkling, some fortified). No more creating phantom NV rows to hang data on vintage wines that just don't display vintage on their website. Wine-level data (grapes, color) goes on wines table; vintage-specific data requires a real vintage year.
+
+2. **Wine name field = cuvée, nullable.** Don't rename the column, but redefine semantics. `name` means "the cuvée or specific wine designation beyond producer + appellation + grape." Accept NULLs — many wines (Château Margaux, Caymus Cab) don't have a cuvée. Strip out producer prefixes, appellation suffixes, grape names, vintage years. Add a computed `display_name` that assembles country-aware display strings (French wines lead with appellation, US wines lead with grape, etc.).
+
+3. **Producer list needs bottom-up rebuild.** Current 42K producers include junk magnets ("Château" with 594 wines, "Not Found" with 568, "Global Wine Co" x3 with 2,607, "Premiere Napa Valley" with 538). Starting from trusted external sources (LWIN 33K, xwines 32K, Wikidata ~15K) to build a validated producer canon, rather than trying to fix the existing list.
+
+4. **Two-dimensional grading: data quality D→A, enrichment 1→4.** Data grade measures identity correctness (is this wine real and correctly described?). Enrichment grade measures content completeness (does this wine have a story?). A being best data quality, 4 being most enriched. Exact tier definitions TBD.
+
+5. **Geographic fields derived, not independently assigned.** Wine region_id should always match appellation.region_id. Country cascades from region. No independent geographic assignment that could contradict the appellation.
+
+6. **Color must be consistent with grapes.** 12K white wines with only red grape links identified. Every wine in the 30K target must have color consistent with its grapes, or an explicit explanation (Blanc de Noirs via label designation).
+
 ### 2026-04-07: TTB class_type prefix 81→white executed, prefix 80→red rejected
 
 TTB class_type codes encode wine color: prefix 80 = "not white" (red or rosé), 81 = white, 82 = rosé. Executed prefix 81→white fill (+40,538 wines, 95.9% validated accuracy — mismatches are random COLA matching errors). Rejected prefix 80→red fill despite 97.8% measured accuracy because ~2-3% of prefix 80 wines are rosé (TTB classifies rosé under "table wine" class 80, not separately). Tried stacking additional signals (grape color, appellation rules, multiple TTB records) — none cleared 99%. Rosé contamination is structural in TTB's classification system, not solvable by combining signals. Name-based color keywords recommended as next play.
 
+### 2026-04-08: Dedup merge executed — 10,469 groups merged
+Executed `wine_merge.py` on all pending ai_accepted groups. 25,977 dupe wines consolidated onto survivors (child data re-pointed, NULL fills propagated). All dupes were already soft-deleted by earlier `dedup_wines.py`. Backfilled `duplicate_of` on 19,552 that were missing it. 2 groups failed on `idx_scores_dedup` constraint (score-level conflict handling not yet in merge script). 156 flagged groups remain for future review. Active wines: 477,151.
+
 ### 2026-04-06: Duplicate wine merge buffer via match_decisions
-All AI duplicate classification results (12,671 groups) written to match_decisions only. No canonical merges executed. Status values: ai_accepted (true_duplicate), ai_rejected (distinct_wines), flagged (unclear). Human review required before any actual merges. The 9,600 ai_accepted rows are the merge backlog.
+All AI duplicate classification results (12,671 groups) written to match_decisions only. No canonical merges executed. Status values: ai_accepted (true_duplicate), ai_rejected (distinct_wines), flagged (unclear). Human review required before any actual merges. The 9,600 ai_accepted rows are the merge backlog. **UPDATE 2026-04-08: Merge executed — see entry above.**
 
 ### 2026-04-06: Nightly schema audit + conservative DB cleanup
 Built pipeline/analyze/schema_audit.py (10-category read-only audit, saves JSON to data/stats/). Scheduled as nightly task. Executed conservative fixes this session: 8 missing FK indexes added, 2,278 grape double-space names cleaned, 1 vintage year corrected (2050→2024 parsing artifact). Schema audit journal at data/stats/schema_audit_journal.md.
