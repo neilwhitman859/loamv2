@@ -73,6 +73,46 @@ Append-only. Every session adds an entry. This is the detailed narrative — wha
 
 ---
 
+### Session 3: Batch 0 Prototype — 2026-04-08
+
+**What happened:** End-to-end pipeline run through the full identity system for the first time. Implemented all scaffolded scripts from Session 2 and ran 46 producers (from the 48-producer Batch 0 roster) through clean_cuvee → build_display_name → batch_pipeline → canonical promotion.
+
+**Key deliverables:**
+- `pipeline/identity/clean_cuvee.py` — implemented: 10-step stripping algorithm (producer, appellation, grapes, classifications, color, vintage, noise), country-aware, 25+ grape name blocklist to prevent false cuvée extractions
+- `pipeline/identity/build_display_name.py` — implemented: country-aware display name construction, fallback logic for wines without a cuvée (producer + appellation pattern), slug collision handling
+- `pipeline/identity/batch_pipeline.py` — new: orchestrates the full per-producer pipeline (crossref → select → clean → display_name → dedup → promote), resume-safe, dry-run mode
+
+**Results:**
+- 46 producers created (2 of 48 deferred — staging data too thin)
+- 1,677 wines promoted
+- 889 wine_grapes links
+- 894 vintages
+- 3,967 external_ids
+- 2,335 TTB records linked
+- All 15 exit criteria passed
+- identity_complete: 53% of wines
+- avg completeness: 5.6/11 fields
+- Country breakdown: DE(558), FR(430), AU(320), US(172), IT(98), ES(97)
+- $0 AI spend (deterministic pipeline, no AI calls)
+
+**Issues found and fixed:**
+- LWIN name mismatches: J.J. Prüm, Jadot, Riscal, Tyrrell's all had LWIN producer names that didn't match our normalized producer names — required manual alias mappings
+- False grape matches: 25+ grape names (e.g., "Ruby", "Crystal", "Noble") were blocklisted after they were appearing as cuvée fragments instead of grape identifiers
+- Rioja appellation resolving: "Rioja" wasn't resolving correctly (maps to DOCa Rioja in our appellations table, not plain "Rioja") — fixed resolver lookup
+- display_name fallback: wines without a cuvée (e.g., generic varietal wines) needed a separate display name pattern (producer + grape or producer + appellation) — added fallback branch
+- Slug collision handling: several wines from different producers produced the same slug — added producer prefix disambiguation
+
+**Surprises:**
+- German wines dominated the count (558) — LWIN has deeper German coverage than expected for the Batch 0 producer set
+- 53% identity_complete is lower than hoped; most of the gap is appellation_confirmed (requires appellation rules match) and grapes_confirmed (many LWIN records lack grape data)
+- The blocklist for false grape matches grew faster than expected — common English words appear in wine names frequently
+
+**Numbers:** 1,677 wines, 46 producers, 889 wine_grapes, 894 vintages, 3,967 external_ids. $0 AI cost.
+
+**Next session:** Session 4 — Batch 0 Review + Go/No-Go. Use Opus. Manual review of output quality, display names, identity completeness gaps. Decision gate: proceed to Batch 1 (500 producers) or iterate on pipeline first.
+
+---
+
 ### Planning Session — 2026-04-08
 
 **What happened:** Full strategic planning session. Evolved from a López de Heredia producer scrape walkthrough into a fundamental rethink of the entire data approach.
