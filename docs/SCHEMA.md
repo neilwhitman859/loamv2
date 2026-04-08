@@ -201,8 +201,8 @@ PK: composite (producer_id, region_id). For multi-region producers.
 |---|---|---|---|
 | id | uuid | PK | |
 | slug | text | UNIQUE NOT NULL | |
-| name | text | NOT NULL | Wine name excluding producer |
-| name_normalized | text | NOT NULL | For dedup matching |
+| name | text | nullable | Cuvée name (nullable — many wines have no cuvée). Changed from NOT NULL in Session 4 (2026-04-08). |
+| name_normalized | text | nullable | For dedup matching. Nullable when name is NULL. |
 | producer_id | uuid | FK producers, NOT NULL | |
 | country_id | uuid | FK countries, nullable | Null when country unclear from source data |
 | region_id | uuid | FK regions, nullable | Null when multi-region |

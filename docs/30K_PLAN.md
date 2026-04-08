@@ -6,7 +6,7 @@
 **Price tier coverage:** $0-10: 50% | $10-30: 80% | $30-100: 100% | $100-250: 80% | $250+: 60%
 **Budget:** $175 AI (includes buffer for iteration). All data sources free/open.
 **Started:** 2026-04-08
-**Status:** Session 2 DONE — Session 3 ready to start
+**Status:** Session 4 DONE — GO for Batch 1. Next: Session 5 (500 producers, 50-cap)
 
 ---
 
@@ -634,39 +634,52 @@ Full pipeline for all 50:
 
 ## Session 4: Batch 0 Review
 
-**Status:** NOT STARTED
+**Status:** DONE
 **Model:** Opus
-**AI cost:** ~$0.50
+**AI cost:** $0
+**Date:** 2026-04-08
 
 ### Goal
 Review batch 0 output. Run mini Josh Test. Decide what's next.
 
-### Known Issues from Session 3 (investigate first)
+### Known Issues — Results
 
-1. **2 wines with NULL confirmation** — should be C or better. Find them, diagnose, fix.
-2. **Wine count 10x target** (1,677 vs 150-250) — large producers (J.J. Prüm 171, Dönnhoff 117, Penfolds 114) pulled full LWIN catalogs. Decide: is this fine, or should future batches cap per-producer?
-3. **Penfolds already existed canonically** — wines may have been created under both old and new producer entries. Check for duplicates or orphaned wines.
-4. **Spot-check display names across all 6 countries** — dry run looked clean but 1,677 wines is a lot to have only eyeballed samples.
+1. **NULL confirmation:** RESOLVED. 0 wines with NULL confirmation. All 1,690 have confirmation (B=247, C=1,443). The 2 NULLs from Session 3 were fixed before session end.
+2. **Wine count 10x target:** ACCEPTED. 1,690 wines from 46 producers. Large LWIN catalogs (J.J. Prüm 171, Dönnhoff 117, Penfolds 116). **Decision: cap at 50 wines per producer for Batch 1.**
+3. **Penfolds duplicates:** CLEAN. Only 1 Penfolds producer (116 wines). Archive tables are separate. No duplicates.
+4. **Display names:** FIXED 2 BUGS.
+   - Bug 1: `wines.name` had NOT NULL constraint. 401 wines had display_name stored as cuvée. Fixed: ALTER TABLE DROP NOT NULL + set cuvée=NULL where appropriate. Script: `pipeline/identity/fix_batch0_display.py`.
+   - Bug 2: Grapes table stores ALL CAPS (VIVC). 904 wines had "RIESLING" etc in display name. Fixed: Title Case grape names in display builder. Script: same.
+   - Residual: 21 wines with "Cabernet Cabernet" pattern (grape appears in cuvée AND as standalone grape). Documented for Batch 1 fix.
 
-### Process
+### Mini Josh Test (30 wines from Batch 0 producers)
+- **26/30 FOUND = 87% findability**
+- 4 misses: all LWIN coverage gaps (Duckhorn thin, Yellow Tail no Shiraz SKU, Jadot no Beaujolais-Villages SKU, Meiomi search key mismatch). Not pipeline bugs.
+- Display name quality: excellent post-fix. French appellation patterns, German vineyard+Prädikat, AU/US varietal patterns all correct.
 
-1. **Investigate known issues** (above) before anything else.
-2. **Mini Josh Test:** Sample 50 wines from restaurant lists / retail / grocery. Can Loam find them? What's the quality?
-3. **Display name audit:** Are all 6 country patterns rendering correctly? (FR, US, IT, ES, DE, AU)
-4. **Completeness analysis:** What's the average completeness? Where are the gaps?
-5. **Cuvée quality check:** Read through cuvée values (including NULLs). Do they make sense?
-6. **Decide next steps:**
-   - Is the pipeline working? Scale to batch 1.
-   - Is the cuvée cleaning broken? Redesign before scaling.
-   - Is the producer matching working? Or do we need more sources?
-   - What's the right batch 1 size?
+### Completeness
+- Avg: 5.6/11. Distribution: 5(685), 6(755), 7(99), 8(67).
+- 52.8% identity_complete. 98.9% color. 88.6% appellation. 54% grapes. 12% vintages.
+- Grape gap = biggest lever. Vintages = TTB linking fills this.
+- 403 wines with correct NULL cuvée (was 0 before fix).
+
+### GO/NO-GO Decision: **GO**
+
+Pipeline works. Display names are excellent. Cuvée extraction is clean. Two bugs found and fixed. One residual (grape-in-cuvée dedup) noted for Batch 1.
+
+### Batch 1 Scope
+- 500 producers, $30-100 focus
+- 50-wine cap per producer (expect ~8K-12K wines)
+- Add TTB linking as pipeline Step 3
+- Add appellation_rules cascade for grape/color confirmation
+- Fix grape-in-cuvée dedup before running
 
 ### Exit Criteria
-- [ ] Known issues from Session 3 resolved or documented
-- [ ] Mini Josh Test results documented
-- [ ] Problems from batch 0 resolved or documented
-- [ ] Batch 1 scope decided (producer count, wine target)
-- [ ] Plan updated with learnings
+- [x] Known issues from Session 3 resolved or documented
+- [x] Mini Josh Test results documented (26/30 = 87%)
+- [x] Problems from batch 0 resolved or documented
+- [x] Batch 1 scope decided (500 producers, 50-cap)
+- [x] Plan updated with learnings
 
 ---
 

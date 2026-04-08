@@ -466,7 +466,8 @@ class BatchPipeline:
 
         # Identify primary grape from wine name (for display name + label regulation)
         primary_grape = self._identify_primary_grape(raw_name, country_code)
-        primary_grape_name = primary_grape["name"] if primary_grape else None
+        # Title Case grape names for display (grapes table stores ALL CAPS from VIVC)
+        primary_grape_name = primary_grape["name"].title() if primary_grape else None
 
         # Build display name
         classification_str = classifications[0] if classifications else None
@@ -503,9 +504,9 @@ class BatchPipeline:
             return str(existing[0])
 
         wine_id = str(uuid.uuid4())
-        # wines.name is NOT NULL — use display_name as fallback when no cuvée
-        wine_name = cuvee or display_name
-        wine_name_norm = normalize(wine_name) if wine_name else ""
+        # wines.name = cuvée (nullable). NULL is correct when no cuvée.
+        wine_name = cuvee
+        wine_name_norm = normalize(wine_name) if wine_name else None
         try:
             self.cur.execute("""
                 INSERT INTO wines (id, name, name_normalized, slug, producer_id,

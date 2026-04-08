@@ -1384,3 +1384,21 @@ Convention-based months are always within 2-3 weeks of reality, never catastroph
 **Why approved:** These are unambiguously real, famous wines (Opus One, Sassicaia, Dom Perignon). Dual validation minimizes hallucination risk. The 71% overlap with existing DB proves good calibration. Users searching Loam expect to find these wines. The `-ks-` slug suffix marks origin for auditability.
 
 **Precedent:** First time using AI training data as a source. All prior canonical writes came from government registries, importer catalogs, or direct source data. Approved because the wines are trivially verifiable — this is NOT a blanket approval for AI-sourced writes on less verifiable data.
+
+---
+
+### wines.name and wines.name_normalized now nullable (2026-04-08, Session 4)
+
+**Decision:** `wines.name` (cuvée) and `wines.name_normalized` changed from NOT NULL to nullable. Many wines correctly have no cuvée — "Joseph Drouhin, Beaune Premier Cru" has no cuvée, "Château Margaux, Margaux" has no cuvée. NULL is the correct value, not the display_name.
+
+**Context:** Session 4 review found 401 wines (24%) where `wines.name` stored the full display_name as fallback because the NOT NULL constraint forced it. This contradicts IDENTITY_RULES.md Section 1 which says "wines.name = cuvée, nullable."
+
+**Impact:** 403 wines now correctly have NULL cuvée. 1,287 wines have real cuvées. `display_name` (computed, always non-NULL) is the user-facing name.
+
+---
+
+### Batch 1 scope: 500 producers, 50-wine cap (2026-04-08, Session 4)
+
+**Decision:** Batch 0 produced 1,690 wines from 46 producers (target was 150-250). Large producers pulled full LWIN catalogs (J.J. Prüm 171, Dönnhoff 117). For Batch 1, cap at 50 wines per producer. Target: 500 producers, $30-100 price tier, ~8K-12K wines.
+
+**Why:** Uncapped, 500 producers could produce 50K+ wines — too many to review. The 50-cap keeps batch size manageable while still covering each producer's core wines. Marquee producers may get exceptions.

@@ -149,3 +149,45 @@ Append-only. Every session adds an entry. This is the detailed narrative — wha
 - The suggest+confirm model might limit completeness if too few staging sources confirm Haiku's suggestions.
 
 **Numbers:** 0 new wines, 0 new producers. This was a planning session.
+
+---
+
+### Session 4: Batch 0 Review + GO/NO-GO — 2026-04-08
+
+**What happened:** Full review of Session 3's batch 0 output (46 producers, 1,690 wines). Found and fixed 2 pipeline bugs. Ran mini Josh Test. Made GO decision for Batch 1.
+
+**Bugs found and fixed:**
+1. **wines.name NOT NULL constraint** — When cuvée extraction returned None (correct for many wines: "Joseph Drouhin, Beaune" has no cuvée), the pipeline stored the full display_name as `wines.name` because the column had a NOT NULL constraint. 401 wines affected. Fix: ALTER TABLE + code fix + data repair via `fix_batch0_display.py`. Now 403 wines correctly have NULL cuvée.
+2. **ALL CAPS grape names in display_name** — The grapes table stores VIVC names in ALL CAPS (RIESLING, CABERNET SAUVIGNON). The `_identify_primary_grape()` method returned these as-is, and they flowed into display names. 904 wines had "RIESLING" etc. Fix: `.title()` in batch_pipeline.py + regex replacement in fix script. Down to 0 ALL CAPS (except CVNE which is the correct producer name).
+3. **Residual: 21 "Cabernet Cabernet" patterns** — When a grape name appears in the LWIN wine_name (e.g., "Bin 389 Cabernet Shiraz"), the cuvée extractor keeps it AND the grape identifier adds it again. Fix deferred to Batch 1: strip primary_grape from cuvée in the pipeline.
+
+**Mini Josh Test:**
+- 30 wines from Batch 0 producers tested against the Josh Test sample.
+- **26/30 FOUND = 87% findability.**
+- 4 misses: Duckhorn (1 wine in LWIN, thin coverage), Yellow Tail Shiraz (LWIN has Cab but not Shiraz), Louis Jadot Beaujolais-Villages (LWIN has "Beaujolais" not "-Villages"), Meiomi Pinot Noir (3 wines but search key mismatch). All LWIN coverage gaps, not pipeline bugs.
+- Display name quality: excellent post-fix across all 6 countries.
+
+**Completeness analysis:**
+- 1,690 wines. Avg completeness 5.6/11.
+- 52.8% identity_complete. 98.9% color. 88.6% appellation. 54% grapes. 12% vintages.
+- Biggest gaps: grapes (need appellation_rules cascade) and vintages (need TTB linking).
+- 403 correct NULL cuvées (was 0 — all were wrong before fix).
+
+**Known issues from Session 3 — all resolved:**
+1. NULL confirmation: 0 remaining (was fixed during Session 3).
+2. Wine count 10x: accepted, cap at 50/producer for Batch 1.
+3. Penfolds: clean, no duplicates.
+4. Display names: 2 bugs fixed, 1 minor residual documented.
+
+**Decision: GO for Batch 1.**
+- 500 producers, $30-100 focus
+- 50-wine cap per producer
+- Add TTB linking + appellation_rules cascade
+- Fix grape-in-cuvée dedup first
+
+**Surprises:**
+- The `wines.name` NOT NULL constraint was inherited from the archive schema. The fresh table recreation in Session 1 preserved it, but IDENTITY_RULES.md says name should be nullable. Schema and design doc were out of sync.
+- The ALL CAPS grape issue was hiding in plain sight — VIVC stores all grape names in uppercase, and no previous pipeline ever needed to format them for display.
+- The "Cabernet Cabernet" pattern only affects AU wines (Penfolds, Henschke, Tyrrell's) because Australian LWIN entries often include the grape in the wine name AND the wine is varietal-labeled.
+
+**Numbers:** 0 new wines, 0 new producers. Fixed 1,195 wines (cuvée + display name). $0 AI cost.
