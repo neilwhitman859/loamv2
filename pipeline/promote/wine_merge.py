@@ -359,8 +359,11 @@ def bulk_finalize(cur, groups, dry_run, stats):
 
     all_dupes = []       # (dupe_id, survivor_id)
     decision_ids = []
+    failed = set(stats.get("error_groups", []))
 
     for decision_id, survivor_id, dupe_ids in groups:
+        if decision_id in failed:
+            continue  # skip groups whose child migration failed
         for dupe_id in dupe_ids:
             all_dupes.append((dupe_id, survivor_id))
         decision_ids.append(decision_id)
@@ -448,6 +451,7 @@ def run(execute=False, limit=None):
         "conflict_drops": 0,
         "null_fills": 0,
         "errors": 0,
+        "error_groups": [],
     }
 
     # -------------------------------------------------------------------------
@@ -468,15 +472,18 @@ def run(execute=False, limit=None):
         batch = groups[i:i + BATCH]
         for decision_id, survivor_id, dupe_ids in batch:
             try:
+                cur.execute("SAVEPOINT sp_group")
                 null_fill_survivor(cur, survivor_id, dupe_ids, stats)
                 handle_vintages(cur, survivor_id, dupe_ids, stats)
                 repoint_wine_id_tables(cur, survivor_id, dupe_ids, stats)
                 repoint_related_wine_columns(cur, survivor_id, dupe_ids, stats)
                 repoint_external_ids(cur, survivor_id, dupe_ids, stats)
                 repoint_vintage_prices_scores(cur, survivor_id, dupe_ids, stats)
+                cur.execute("RELEASE SAVEPOINT sp_group")
             except Exception as e:
-                conn.rollback()
+                cur.execute("ROLLBACK TO SAVEPOINT sp_group")
                 stats["errors"] += 1
+                stats["error_groups"].append(decision_id)
                 print(f"  ERROR group {decision_id}: {e}", file=sys.stderr)
                 continue
 
@@ -505,6 +512,10 @@ def run(execute=False, limit=None):
     print(f"  Conflict drops:            {stats['conflict_drops']:,}")
     print(f"  NULL fills on survivor:    {stats['null_fills']:,}")
     print(f"  Errors:                    {stats['errors']:,}")
+    if stats["error_groups"]:
+        print(f"  Failed group IDs:          {stats['error_groups'][:20]}")
+        if len(stats["error_groups"]) > 20:
+            print(f"    ... and {len(stats['error_groups']) - 20} more")
 
     conn.close()
     return stats

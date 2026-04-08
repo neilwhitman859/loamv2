@@ -4,6 +4,15 @@ Append-only log of nightly schema audit runs. Each entry compares to the previou
 
 ---
 
+### 2026-04-08 (nightly automated run)
+- DB size: 8,459 MB (+84 MB vs yesterday — open-meteo drip + dedup merge writes)
+- Issues flagged: 12 categories (down from 47 — FK index gaps resolved)
+- Regressions vs yesterday: none. Duplicate wine groups dropped 12,671 → 12,546 (−125, dedup merge working)
+- New findings: `wine_vintage_scores` at 14.7% dead tuples (>10% threshold — VACUUM needed); wines/producers vacuumed by --fix (were above threshold)
+- Fixes applied: VACUUM ANALYZE wines, producers; 0 new indexes
+
+---
+
 ### 2026-04-07 (nightly automated run + follow-up)
 - DB size: 8,375 MB (+32 MB vs yesterday)
 - Issues flagged: 47 categories (down from 58 — whitespace and value violations resolved)
