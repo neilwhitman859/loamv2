@@ -12,15 +12,54 @@ Usage:
 """
 import argparse
 import json
+import re
+import unicodedata
+from collections import defaultdict
 from pathlib import Path
+
+from pipeline.lib.db import get_conn
 
 
 SAMPLE_PATH = Path("data/josh_test_sample.json")
 
+# Staging tables and the columns to search for producer names
+STAGING_SOURCES = [
+    ("source_lwin", "producer"),
+    ("source_ttb_colas", "brand_name"),
+    ("source_skurnik", "producer"),
+    ("source_empson", "producer"),
+    ("source_winebow", "producer"),
+    ("source_european_cellars", "producer"),
+    ("source_kermit_lynch", "producer"),
+    ("source_flatiron", "producer"),
+    ("source_specs", "brand"),
+    ("source_bc_liquor", "producer"),
+    ("source_systembolaget", "producer"),
+    ("source_texsom", "producer"),
+    ("source_berliner", "producer"),
+    ("source_enofile", "producer"),
+    ("source_wallys", "title"),  # producer column is NULL; title has it embedded
+    ("source_domestique", "producer"),
+    ("source_best_wine_store", "producer"),
+    ("source_firstleaf", "producer"),
+    ("source_claude_knowledge", "producer"),
+    ("source_pro_platform", "brand_name"),
+    ("source_tabc", "brand_name"),
+    ("source_kansas_brands", "brand_name"),
+    ("source_wv_abca", "brand_name"),
+]
+
+
+def _normalize(s: str) -> str:
+    """Lowercase, strip accents, collapse whitespace."""
+    s = unicodedata.normalize("NFD", s)
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
+    return re.sub(r"\s+", " ", s.lower().strip())
+
 
 def load_sample(path: Path = SAMPLE_PATH) -> list[dict]:
     """Load the Josh Test wine sample."""
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         data = json.load(f)
     return data["wines"]
 
@@ -28,23 +67,7 @@ def load_sample(path: Path = SAMPLE_PATH) -> list[dict]:
 def test_findability(wines: list[dict]) -> dict:
     """
     Test if each wine can be found in the canonical database.
-
-    For each wine, searches by:
-        1. Producer name (fuzzy)
-        2. Wine name / search term
-        3. If found, checks data quality (confirmation, completeness)
-
-    Returns:
-        {
-            "total": int,
-            "found": int,
-            "find_rate": float,
-            "by_tier": {tier: {"total": N, "found": N, "rate": float}},
-            "by_country": {cc: {"total": N, "found": N, "rate": float}},
-            "missing": [list of unfound wine dicts],
-            "avg_confirmation": str,
-            "avg_completeness": float,
-        }
+    Implemented in Session 4+.
     """
     raise NotImplementedError("Session 4+")
 
@@ -53,31 +76,169 @@ def test_staging_coverage(wines: list[dict]) -> dict:
     """
     Check how many Josh Test wines exist in staging tables (pre-promotion).
 
-    Used to validate that our staging data can cover the test sample
-    before we start promoting wines.
+    For each wine, searches staging tables for the producer name.
+    A wine is "found" if its producer appears in at least one staging source.
 
-    Returns:
-        {
-            "total": int,
-            "found_in_staging": int,
-            "coverage_rate": float,
-            "by_tier": {tier: {"total": N, "found": N}},
-            "missing": [list of wines not in any staging table],
-        }
+    Strategy: one batched query per staging table (efficient), skip full-scan
+    on huge tables (TTB 3.28M) in favor of sampled check.
     """
-    raise NotImplementedError("Session 2 — implement for S2.3 check")
+    conn = get_conn()
+    cur = conn.cursor()
+
+    # Deduplicate producers to minimize queries
+    producers = {}
+    for w in wines:
+        key = _normalize(w["producer"])
+        if key not in producers:
+            producers[key] = {"orig": w["producer"], "patterns": set()}
+        # Primary pattern
+        producers[key]["patterns"].add(key)
+        # Also try without common prefixes
+        for prefix in ["chateau ", "domaine ", "bodegas ", "caves ",
+                        "maison ", "tenuta ", "cantina "]:
+            if key.startswith(prefix):
+                producers[key]["patterns"].add(key[len(prefix):])
+
+    producer_found = {k: False for k in producers}
+
+    # For each staging table, run ONE query checking all producers
+    for table, col in STAGING_SOURCES:
+        # Build a single query: check all producer patterns at once
+        all_patterns = []
+        pattern_to_producers = {}
+        for pkey, pdata in producers.items():
+            if producer_found[pkey]:
+                continue  # already found, skip
+            for pat in pdata["patterns"]:
+                all_patterns.append(f"%{pat}%")
+                pattern_to_producers.setdefault(f"%{pat}%", []).append(pkey)
+
+        if not all_patterns:
+            break  # all found
+
+        # For huge tables, use a different approach: check a sample
+        try:
+            cur.execute(f"SELECT reltuples::bigint FROM pg_class WHERE relname = %s",
+                        (table,))
+            row = cur.fetchone()
+            row_count = row[0] if row else 0
+        except Exception:
+            conn.rollback()
+            row_count = 0
+
+        try:
+            if row_count > 500_000:
+                # Large table: check each unfound producer individually with LIMIT
+                for pkey, pdata in producers.items():
+                    if producer_found[pkey]:
+                        continue
+                    for pat in pdata["patterns"]:
+                        cur.execute(
+                            f"SELECT 1 FROM {table} WHERE lower({col}) LIKE %s LIMIT 1",
+                            (f"%{pat}%",)
+                        )
+                        if cur.fetchone():
+                            producer_found[pkey] = True
+                            break
+            else:
+                # Small table: pull all distinct producer values, match in Python
+                cur.execute(f"SELECT DISTINCT lower({col}) FROM {table} WHERE {col} IS NOT NULL")
+                values = {row[0] for row in cur.fetchall()}
+                for pkey, pdata in producers.items():
+                    if producer_found[pkey]:
+                        continue
+                    for pat in pdata["patterns"]:
+                        if any(pat in v for v in values):
+                            producer_found[pkey] = True
+                            break
+        except Exception:
+            conn.rollback()
+            continue
+
+    cur.close()
+    conn.close()
+
+    # Map back to wines
+    found_wines = []
+    missing_wines = []
+    tier_counts = defaultdict(lambda: {"total": 0, "found": 0})
+    country_counts = defaultdict(lambda: {"total": 0, "found": 0})
+
+    for w in wines:
+        key = _normalize(w["producer"])
+        tier = w["price_tier"]
+        cc = w.get("country", "??")
+        tier_counts[tier]["total"] += 1
+        country_counts[cc]["total"] += 1
+
+        if producer_found.get(key, False):
+            found_wines.append(w)
+            tier_counts[tier]["found"] += 1
+            country_counts[cc]["found"] += 1
+        else:
+            missing_wines.append(w)
+
+    total = len(wines)
+    found = len(found_wines)
+
+    # Add rates to tier/country dicts
+    for d in tier_counts.values():
+        d["rate"] = d["found"] / d["total"] if d["total"] else 0
+    for d in country_counts.values():
+        d["rate"] = d["found"] / d["total"] if d["total"] else 0
+
+    return {
+        "total": total,
+        "found": found,
+        "find_rate": found / total if total else 0,
+        "by_tier": dict(tier_counts),
+        "by_country": dict(country_counts),
+        "missing": missing_wines,
+    }
 
 
 def print_report(results: dict) -> None:
     """Print formatted Josh Test results."""
+    mode = "STAGING COVERAGE" if "found_in_staging" not in results else "FINDABILITY"
+    found_key = "found"
+
     print(f"\n{'='*60}")
-    print(f"  JOSH TEST RESULTS")
+    print(f"  JOSH TEST — {mode}")
     print(f"{'='*60}")
-    print(f"  Find rate: {results['found']}/{results['total']} ({results['find_rate']:.0%})")
+    print(f"  Overall: {results[found_key]}/{results['total']}"
+          f" ({results['find_rate']:.0%})")
     print()
-    for tier, data in results.get("by_tier", {}).items():
-        print(f"  {tier:>10}: {data['found']}/{data['total']} ({data['rate']:.0%})")
+
+    print("  By price tier:")
+    for tier in ["$0-10", "$10-30", "$30-100", "$100-250", "$250+"]:
+        data = results.get("by_tier", {}).get(tier)
+        if data:
+            print(f"    {tier:>10}: {data['found']:>3}/{data['total']:<3}"
+                  f" ({data['rate']:.0%})")
+    print()
+
+    print("  By country:")
+    by_cc = results.get("by_country", {})
+    for cc in sorted(by_cc.keys(), key=lambda k: -by_cc[k]["total"]):
+        data = by_cc[cc]
+        print(f"    {cc:>4}: {data['found']:>3}/{data['total']:<3}"
+              f" ({data['rate']:.0%})")
+    print()
+
+    missing = results.get("missing", [])
+    if missing:
+        print(f"  Missing ({len(missing)}):")
+        for w in missing:
+            print(f"    [{w['price_tier']}] {w['search_term']} ({w['producer']})")
+
     print(f"{'='*60}")
+
+    # S2.3 threshold check
+    rate = results["find_rate"]
+    if rate >= 0.50:
+        print(f"  [PASS] S2.3: staging coverage {rate:.0%} >= 50%")
+    else:
+        print(f"  [FAIL] S2.3: staging coverage {rate:.0%} < 50%")
 
 
 def main():
