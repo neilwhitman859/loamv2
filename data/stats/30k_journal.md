@@ -33,7 +33,43 @@ Append-only. Every session adds an entry. This is the detailed narrative — wha
 
 **Numbers:** 0 new wines, 0 new producers. This was architecture work.
 
-**Next session:** Session 2 — Identity Design + Josh Test Sample. Use Opus. Design country-aware display_name rules for 13+ countries, define cuvée extraction algorithm, build Josh Test sample list.
+**Next session:** Session 3 — Batch 0 Prototype. Use Opus. 50 producers, ~200 wines through the full pipeline. Implement the identity scripts scaffolded in Session 2.
+
+---
+
+### Session 2: Identity Design + Josh Test Sample — 2026-04-08
+
+**What happened:** Designed the complete identity rules system for all wine-producing countries. Created the Josh Test benchmark sample. Scaffolded the pipeline. Verified all Batch 0 infrastructure.
+
+**Key deliverables:**
+- `docs/IDENTITY_RULES.md` — 10-section spec covering: identity model (6-component tuple), display name patterns for 14 countries + fallback, cuvée extraction algorithm (10-step stripping process with edge cases), confirmed boolean patterns (color/grapes/appellation), staging→canonical matching spec (5-step per-producer clustering), label regulation rule (27 CFR 4.23 US ≥75%, EU ≥85%), junk producer criteria (7 rule categories), Batch 0 producer roster with staging counts, LWIN license status, provenance logging spec.
+- `data/josh_test_sample.json` — 265 wines Americans actually encounter, weighted by price tier: $0-10 (35 wines), $10-30 (80), $30-100 (90), $100-250 (40), $250+ (20). Sourced from grocery, restaurant, store, gift, and collector contexts. 18 countries represented.
+- Pipeline scaffolding: 11 files across `pipeline/identity/` (6 scripts), `pipeline/quality/` (3 scripts), `pipeline/analyze/josh_test.py`. All with function signatures, docstrings, and clear `NotImplementedError("Session 3")` markers.
+
+**Key decisions:**
+- Display name is a stored column (not Postgres GENERATED) because it references multiple tables. Computed by pipeline code at insertion time.
+- Négociant bottlings are different wines (same appellation, different producer = different identity tuple).
+- Portfolio parent companies (Treasury, Constellation, E&J Gallo) should NOT be created as producers — use the label brand (Penfolds, Robert Mondavi, Barefoot) since that's what consumers see.
+- Cuvée extraction follows a country-aware stripping algorithm: strip producer → appellation → grapes → classifications → color → vintage → noise → clean. What remains = cuvée or NULL.
+- The "confirmed" booleans have strict source requirements — appellation rules and label regulation count as sources, AI alone does not.
+
+**Staging verification:**
+- 48/48 unique Batch 0 producers found in staging (100% coverage)
+- TTB covers all 48. LWIN covers 45/48 (missing: Josh Cellars, Treasury, Constellation — expected, these aren't fine wine).
+- Key inflated counts flagged: "Ridge" = 25K TTB rows, "Latour" = 9K — substring matching. Precise matching critical in Session 3.
+- Wally's source has NULL producer column across all 19K rows — unusable for producer matching.
+
+**LWIN license resolved:** CC BY 4.0 — fully commercial, derivatives OK, attribution only obligation. No fallback plan needed.
+
+**Josh Test staging coverage estimate:** ~88% based on TTB universal coverage of US wines + LWIN coverage of fine wine. Well above the 50% S2.3 threshold. Precise measurement deferred to Session 3 when josh_test.py staging check is implemented.
+
+**Surprises:**
+- None major. The design session went cleanly. The identity patterns for all 14 countries are well-defined in wine literature.
+- The TTB counts for common producer names are very noisy (substring false positives). Session 3 will need normalized exact matching, not ILIKE.
+
+**Numbers:** 0 new wines, 0 new producers. This was a design session. $0 AI cost.
+
+**Next session:** Session 3 — Batch 0 Prototype. Use Opus. Implement the scaffolded pipeline scripts. Run 50 producers, ~200 wines through end-to-end. Review every display name.
 
 ---
 

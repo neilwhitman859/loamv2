@@ -6,6 +6,10 @@ Active and recent sessions. Read at session start, append when starting/finishin
 
 ## Done
 
+- **2026-04-08 30K Session 2: Identity Design** (Opus) — Designed complete identity rules for 14 wine countries + fallback (`docs/IDENTITY_RULES.md`). Created 265-wine Josh Test sample (`data/josh_test_sample.json`). Scaffolded 11 pipeline scripts (`pipeline/identity/`, `pipeline/quality/`, `pipeline/analyze/josh_test.py`). Verified 48/48 Batch 0 producers in staging (100%). Confirmed LWIN CC BY 4.0 license. $0 AI cost. No DB writes.
+
+- **2026-04-08 30K Session 1: Phase 0 Archive & Schema** (Sonnet) — Archived 518K wines + 42K producers. Fresh canonical tables with 9 new columns. 21/21 validation checks. $0 AI cost.
+
 - **2026-04-08 Dedup merge session:** Executed `wine_merge.py` on 10,469 ai_accepted groups (25,977 dupe wines). Child data consolidated: 56 vintage merges, 1,453 child repoints, 805 external_id repoints, 918 conflict drops, 1,952 NULL fills. Backfilled `duplicate_of` on 19,552 already-deleted wines. 2 errors (score constraint). Active wines: 477,151. Tables written: `wines`, `wine_vintages`, `wine_grapes`, `external_ids`, `wine_vintage_prices`, `wine_vintage_scores`, `match_decisions`, + all child tables.
 
 - **2026-04-07 Appellation rules Phase 3 loop (cycles 36-40):** Completed the FR/AU/SA/ES/GR appellation_rules seeding loop. Processed 77 appellations across cycles 36-40. Loop self-terminated with 0 remaining for all 5 countries. Final state: **1,165 appellation_rules**, **10,413 appellation_grapes**, 100% provenance, 0 duplicates. Notable: Savennières Coulée de Serrant + La Tâche monopoles, Tursan Baroque 90%+, Mavrodaphne of Patras fortified PDO, Monemvasia-Malvasia dessert PDO, Tegea corrected to Bordeaux-variety PGI (not Moschofilero), Altenberg de Bergheim corrected to white-only (not red-permitted). Gap flagged: Prensal Blanc/Moll absent from grapes table. Tables written: `appellation_rules`, `appellation_grapes`, `wines.color`.

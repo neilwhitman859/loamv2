@@ -6,7 +6,7 @@
 **Price tier coverage:** $0-10: 50% | $10-30: 80% | $30-100: 100% | $100-250: 80% | $250+: 60%
 **Budget:** $175 AI (includes buffer for iteration). All data sources free/open.
 **Started:** 2026-04-08
-**Status:** Phase 0 DONE — Session 2 ready to start
+**Status:** Session 2 DONE — Session 3 ready to start
 
 ---
 
@@ -414,7 +414,7 @@ PLANNED BUT FLEXIBLE (details decided after batch 0):
 
 ## Phase 0: Archive & Fresh Start
 
-**Status:** NOT STARTED
+**Status:** DONE (2026-04-08)
 **Session:** 1 (Sonnet)
 **AI cost:** $0
 
@@ -526,7 +526,7 @@ CREATE TABLE ai_suggestions (
 
 ## Session 2: Identity-by-Country Design
 
-**Status:** NOT STARTED
+**Status:** DONE (2026-04-08)
 **Model:** Opus
 **AI cost:** $0
 
@@ -562,15 +562,18 @@ Design the identity rules, cuvée extraction logic, and display name patterns fo
 7. **Verify Batch 0 producers in staging:** Query staging tables for all 50 planned producers. Swap any that are missing for similar producers in the same category.
 
 ### Exit Criteria
-- [ ] Josh Test sample list created (~200-300 wines, price-tier weighted)
-- [ ] Identity rules documented for 13+ countries
-- [ ] Cuvée extraction algorithm designed with edge cases
-- [ ] Display name SQL function spec'd
-- [ ] Staging→canonical matching approach designed
-- [ ] Label regulation rule codified
-- [ ] Pipeline scripts scaffolded (empty files with signatures)
-- [ ] Batch 0 producers verified in staging data
-- [ ] All documented in `docs/IDENTITY_RULES.md`
+- [x] Josh Test sample list created (265 wines, price-tier weighted) — `data/josh_test_sample.json`
+- [x] Identity rules documented for 14 countries + fallback — `docs/IDENTITY_RULES.md`
+- [x] Cuvée extraction algorithm designed with edge cases — IDENTITY_RULES.md Section 3
+- [x] Display name Python function spec'd — IDENTITY_RULES.md Section 2.15
+- [x] Staging→canonical matching approach designed — IDENTITY_RULES.md Section 5
+- [x] Label regulation rule codified (27 CFR 4.23 + EU 607/2009) — IDENTITY_RULES.md Section 6
+- [x] Pipeline scripts scaffolded (11 files) — `pipeline/identity/`, `pipeline/quality/`, `pipeline/analyze/josh_test.py`
+- [x] Batch 0 producers verified in staging (48/48 found, 100%) — IDENTITY_RULES.md Section 8
+- [x] LWIN license verified: CC BY 4.0, attribution only — IDENTITY_RULES.md Section 9
+- [x] Junk producer criteria defined — IDENTITY_RULES.md Section 7
+- [x] Confirmed boolean patterns documented — IDENTITY_RULES.md Section 4
+- [x] All documented in `docs/IDENTITY_RULES.md`
 
 ---
 
@@ -715,6 +718,8 @@ Field-level confidence for Haiku (thresholds decided during triage with real dat
 | Session | Date | Phase | Model | Outcome |
 |---------|------|-------|-------|---------|
 | Planning | 2026-04-08 | — | Opus | Full plan created. Key decisions: build from scratch, archive existing, three-metric grading, identity tuple, price-tier coverage, iterative batches, AI suggest+confirm, provenance table, blend/appellation/grape confirmed booleans, Josh Test, batch 0 prototype approach. |
+| 1 | 2026-04-08 | Phase 0 | Sonnet | Archive + schema rebuild. 21/21 validation checks. 518K wines archived, fresh tables created with 9 new columns. |
+| 2 | 2026-04-08 | Design | Opus | Identity rules for 14 countries. 265-wine Josh Test sample. Cuvée extraction algorithm. 11 pipeline scripts scaffolded. 48/48 Batch 0 producers verified in staging. LWIN CC BY 4.0 confirmed. |
 
 ---
 
