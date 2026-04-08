@@ -4,6 +4,78 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-08: Varietal name in wine name = source-confirmed grape (label regulation)
+
+US federal law 27 CFR 4.23 requires that if a varietal is on the label, the wine must be 75%+ that grape. Therefore "Barefoot Cabernet Sauvignon" — the varietal in the name is legally source-confirmed. Codified as source_type = 'label_regulation' in provenance. This unlocks identity_complete for thousands of varietal-labeled wines without AI.
+
+### 2026-04-08: Price-tier coverage targets for wine selection
+
+$0-10: 50% | $10-30: 80% | $30-100: 100% | $100-250: 80% | $250+: 60%. The $30-100 tier is the core — the American wine enthusiast sweet spot. This guides both wine selection (which wines to build) and Josh Test weighting (how to measure coverage). Overall target: 85% Josh Test pass rate.
+
+### 2026-04-08: Josh Test sample designed in Session 2, not Session 11
+
+The Josh Test sample (~200-300 wines from retail, restaurants, grocery, subscriptions) must be built BEFORE wine selection in Batches 1-3, not after. Otherwise we optimize toward our existing data bias instead of real-world coverage. Session 2 designs the sample. Batches use it as a coverage guide. Phase 5 just runs the test.
+
+### 2026-04-08: Iterative batch approach — 4 sessions planned, rest decided after Batch 0
+
+Sessions 1-4 planned in detail (archive, design, prototype, review). Everything after decided based on Batch 0 learnings. Batch 0 = 50 producers across 10 categories, ~200 wines, full pipeline end-to-end. Small enough to review every wine. If it works, scale. If not, redesign. Not a waterfall — design upfront, then iterate.
+
+### 2026-04-08: LWIN alone insufficient for wine selection
+
+LWIN ID alone should not qualify a wine for inclusion. Many LWIN wines are obscure foreign wines with zero US availability. Require LWIN + at least one commercial signal (price, score, UPC, or TTB COLA). The natural cohort at this intersection is ~30K wines.
+
+### 2026-04-08: Start with 3 producer sources, not 8. No xwines.
+
+LWIN + TTB Wine Producer Permits + Wikidata for the initial producer canon. CA ABC, USDA Organic, OSM, and state permits reserved for the 85→95% coverage push. xwines excluded from the 30K entirely — data quality too low. More sources = more cross-referencing complexity. Start small and accurate.
+
+### 2026-04-08: AI suggests, sources confirm — nothing enters canonical without a real source
+
+Replaced "AI is a judge, not a creator" and "lean on training data" with a clearer unified principle: AI suggests, sources confirm. Use Haiku/Sonnet training data heavily as a source of common sense — for matching, classification, gap identification, generating suggestions. But AI suggestions never go directly to canonical tables. Every canonical write requires confirmation from a real source (LWIN, TTB, staging data, legal document). If AI says "this wine is Chardonnay" but no staging source confirms it, the wine stays without grapes. This resolves the tension between "use AI knowledge" and "don't let AI create data." The pipeline becomes: Haiku suggests → check staging sources for agreement → write with source provenance (or skip if no source confirms). Cost-effective: Haiku identifies which source data to trust, sources provide the authority.
+
+### 2026-04-08: Three-metric grading system (confirmation, completeness, enrichment)
+
+Replaced two-dimensional grading with three independent metrics: (1) Confirmation D/C/B/A measures identity verification (is this wine real?), (2) Completeness 0-11 counts populated fields (producer, color, grapes, appellation, region, country, vintage, UPC, price, score, label image), (3) Enrichment 0/1/2 measures AI content level. Consumer-ready = Confirmation B + Completeness 6/11+. Having good data is the main part — enrichment is a bonus, not a requirement.
+
+### 2026-04-08: Iterative dry-run loop as core process
+
+Every major pipeline step follows: dry run (10-50 records) → AI audit for common sense → learn what worked/broke → restart → iterate until trusted → scale. Not optional. The cost of a bad dry run is ~$0.10. The cost of scaling a bad pipeline is days of cleanup. We are not in a hurry.
+
+### 2026-04-08: Haiku enrichment confidence threshold — DEFERRED to Phase 4
+
+Not deciding the confidence threshold in advance. Instead: run the full Haiku suggestion pass, log ALL suggestions to an `ai_suggestions` table with confidence scores, then analyze the real distribution. How many at 0.95+? How many at 0.85-0.95? How many had source confirmation vs not? Triage decision made with real data, not theory. Sonnet escalation scope and budget also decided after triage.
+
+### 2026-04-08: The Josh Test — real-world coverage benchmark
+
+New test for Phase 5. Unlike WineTest (tests our existing data), the Josh Test measures whether an American wine enthusiast can find their wines in Loam. Sample from real restaurant wine lists, Total Wine shelves, subscription boxes, grocery stores. Reports: find rate, average confirmation, average completeness, average enrichment. This is the real measure of success.
+
+### 2026-04-08: Promote from staging, not from archive
+
+Phase 2 wine selection promotes directly from staging tables (source_lwin, importer catalogs, TTB COLA, etc.) rather than from the archive. The archive is a reference for cross-checking, not the source of truth. We learned things from building the archive but don't want to inherit its quality problems.
+
+### 2026-04-08: Phase 1 dedup entirely in staging before any canonical insert
+
+All producer cross-referencing and AI dedup happens in staging. The deduplicated master list is produced first, then inserted to canonical in one operation. No incremental insertion, no dupes to fix after the fact. Heavy AI dedup from the onset using Haiku for ambiguous name matches.
+
+### 2026-04-08: Provenance audit table for all canonical data
+
+All writes to canonical tables (wines, producers, wine_vintages, wine_grapes, etc.) must log to a `data_provenance` audit table recording: entity_type, entity_id, field_name, field_value, source_type, source_id, confidence, session_id, created_at. This enables surgical rollbacks ("undo everything Haiku did in session 5"), source attribution ("where did this wine's color come from?"), and prevents a repeat of the inference revert disaster where 44K legit records were lost as collateral because we couldn't distinguish good data from bad.
+
+### 2026-04-08: Grape links must be complete with percentages — blend_complete boolean
+
+When linking grapes to wines, ALL known grapes must be linked with correct percentages — not just the primary. "80% Cab 20% Merlot" with only Cab linked is wrong. If a source says only "Cabernet Sauvignon" with no blend info, link Cab at NULL percentage. A `blend_complete` boolean on wines indicates whether the full blend is known. Never set percentage=100 unless the source explicitly says it's 100% (or appellation rules require single-variety). NULL percentage means "we don't know the split," not "it's the only grape."
+
+### 2026-04-08: Rebuild wines and producers from scratch — archive existing data
+
+Decision: Do not attempt to clean the existing 518K wines and 42K producers. Instead, archive all existing wine/producer/related canonical data to archive tables and rebuild from scratch using staging tables as the source, with validation before insertion.
+
+**What gets archived:** wines, producers, wine_vintages, wine_grapes, wine_vintage_prices, wine_vintage_scores, external_ids (wine/producer entities), wine_label_designations, wine_farming_certifications, producer_farming_certifications, wine_vintage_formats, winemakers, producer_winemakers, match_decisions, entity_classifications, wine_insights, wine_vintage_tasting_insights, wine_lookups, vineyards and related tables.
+
+**What stays as-is:** All reference tables (appellations, grapes, regions, countries, varietal_categories, publications, retailers, attribute_definitions, tasting_descriptors, farming_certifications, biodiversity_certifications, soil_types, bottle_formats, label_designations). Appellation rules, appellation_grapes, appellation_soils, appellation_vintages. Geographic boundaries. All staging tables (source_*). Schema infrastructure.
+
+**Why:** Every attempt to clean existing canonical data produced more problems (17 rounds of follow-ups, inference revert disaster with 44K collateral damage, no row-level provenance). The staging tables contain all the raw source data — rebuilding from staging with validation produces higher quality output than fixing data in place. The approach that worked best in this project (appellation rules from legal sources, barcode scanning) was always "source → validate → insert," never "bulk dump → fix."
+
+**The archive is not deleted.** It remains available for reference, for pulling forward external_id linkages (LWIN, COLA, UPC), and for future expansion beyond 30K.
+
 ### 2026-04-07: 30K quality wine target — strategic pivot and data model refinements
 
 Major strategic shift: target 30K wines with quality data instead of 518K mostly-empty wines. Goal is "friend test" — a friend scanning a bottle at a restaurant or wine store finds it with correct, complete data 95% of the time. Key decisions:
