@@ -641,19 +641,28 @@ Full pipeline for all 50:
 ### Goal
 Review batch 0 output. Run mini Josh Test. Decide what's next.
 
+### Known Issues from Session 3 (investigate first)
+
+1. **2 wines with NULL confirmation** — should be C or better. Find them, diagnose, fix.
+2. **Wine count 10x target** (1,677 vs 150-250) — large producers (J.J. Prüm 171, Dönnhoff 117, Penfolds 114) pulled full LWIN catalogs. Decide: is this fine, or should future batches cap per-producer?
+3. **Penfolds already existed canonically** — wines may have been created under both old and new producer entries. Check for duplicates or orphaned wines.
+4. **Spot-check display names across all 6 countries** — dry run looked clean but 1,677 wines is a lot to have only eyeballed samples.
+
 ### Process
 
-1. **Mini Josh Test:** Sample 50 wines from restaurant lists / retail / grocery. Can Loam find them? What's the quality?
-2. **Display name audit:** Are all 10 country categories rendering correctly?
-3. **Completeness analysis:** What's the average completeness? Where are the gaps?
-4. **Cuvée quality check:** Read through all ~200 cuvée values (including NULLs). Do they make sense?
-5. **Decide next steps:**
+1. **Investigate known issues** (above) before anything else.
+2. **Mini Josh Test:** Sample 50 wines from restaurant lists / retail / grocery. Can Loam find them? What's the quality?
+3. **Display name audit:** Are all 6 country patterns rendering correctly? (FR, US, IT, ES, DE, AU)
+4. **Completeness analysis:** What's the average completeness? Where are the gaps?
+5. **Cuvée quality check:** Read through cuvée values (including NULLs). Do they make sense?
+6. **Decide next steps:**
    - Is the pipeline working? Scale to batch 1.
    - Is the cuvée cleaning broken? Redesign before scaling.
    - Is the producer matching working? Or do we need more sources?
    - What's the right batch 1 size?
 
 ### Exit Criteria
+- [ ] Known issues from Session 3 resolved or documented
 - [ ] Mini Josh Test results documented
 - [ ] Problems from batch 0 resolved or documented
 - [ ] Batch 1 scope decided (producer count, wine target)
