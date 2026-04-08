@@ -1,6 +1,6 @@
 {
   "sessions": [
-    {"id": 1, "name": "Phase 0: Archive & Schema", "model": "Sonnet", "status": "not_started", "date": null, "ai_spend": null, "notes": null},
+    {"id": 1, "name": "Phase 0: Archive & Schema", "model": "Sonnet", "status": "done", "date": "2026-04-08", "ai_spend": null, "notes": "Archive + schema complete. 21/21 validation checks passed. Fresh canonical tables live, archive_* preserved, all views/RPCs/RLS rebuilt."},
     {"id": 2, "name": "Identity Design + Josh Test Sample", "model": "Opus", "status": "not_started", "date": null, "ai_spend": null, "notes": null},
     {"id": 3, "name": "Batch 0: Prototype (50 producers)", "model": "Opus", "status": "not_started", "date": null, "ai_spend": null, "notes": null},
     {"id": 4, "name": "Batch 0 Review + Go/No-Go", "model": "Opus", "status": "not_started", "date": null, "ai_spend": null, "notes": null},

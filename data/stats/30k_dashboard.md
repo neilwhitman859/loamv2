@@ -1,5 +1,5 @@
 =======================================================
-  LOAM 30K PLAN                    2026-04-08 13:06:49
+  LOAM 30K PLAN                    2026-04-08 13:54:14
 =======================================================
 
   SESSIONS
@@ -18,22 +18,22 @@
 
   PHASE STATUS
   ___________________________________________________
-  0  Archive & Schema       NOT STARTED
-  1  Producer Canon         BLOCKED
-  2  Wine Identity          477,151 wines
+  0  Archive & Schema       DONE
+  1  Producer Canon         READY
+  2  Wine Identity          BLOCKED
   3  Vintage & Depth        PENDING
   4  Enrichment             PENDING
   5  Josh Test              PENDING
 
   PROGRESS
   ___________________________________________________
-  Producers      41,758  [####################] 100%
-  Wines         477,151  [####################] 100%
-  w/ vintage    203,438  [########............] 43%
-  w/ grapes     264,231  [###########.........] 55%
-  w/ UPC              0  [....................] 0%
+  Producers           0  [....................] 0%
+  Wines               0  [....................] 0%
+  w/ vintage          0  
+  w/ grapes           0  
+  w/ UPC              0  
 
-  New grading columns not yet added (Phase 0 pending)
+  No wines yet
 
   JOSH TEST
   ___________________________________________________
@@ -52,9 +52,12 @@
   Regions               389
   Countries              68
 
+  PROVENANCE
+  ___________________________________________________
+  Total entries         0
+
   NEXT ACTION
   ___________________________________________________
-  -> Session 1: Archive & Schema
-     data/session_prompts/30k_phase_0.md
+  -> Session 2: Identity Design + Josh Test Sample
 
 =======================================================

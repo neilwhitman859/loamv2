@@ -6,7 +6,7 @@
 **Price tier coverage:** $0-10: 50% | $10-30: 80% | $30-100: 100% | $100-250: 80% | $250+: 60%
 **Budget:** $175 AI (includes buffer for iteration). All data sources free/open.
 **Started:** 2026-04-08
-**Status:** PLANNING
+**Status:** Phase 0 DONE — Session 2 ready to start
 
 ---
 

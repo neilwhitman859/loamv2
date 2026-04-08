@@ -12,7 +12,6 @@ Usage:
 
 import sys
 import os
-import io
 import time
 import argparse
 import re
@@ -20,7 +19,12 @@ from datetime import datetime
 
 # Fix Windows console encoding
 if os.name == 'nt':
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    try:
+        os.system('chcp 65001 >nul 2>&1')
+        if hasattr(sys.stdout, 'reconfigure'):
+            sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
 
 # Add project root to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))

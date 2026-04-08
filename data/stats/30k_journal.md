@@ -4,6 +4,39 @@ Append-only. Every session adds an entry. This is the detailed narrative — wha
 
 ---
 
+### Session 1: Phase 0 — Archive & Schema — 2026-04-08
+
+**What happened:** Full archive and schema rebuild. Renamed all existing canonical tables to `archive_*`, recreated fresh empty canonical tables with 9 new 30K quality columns, rebuilt all views/RPCs/triggers/RLS/indexes from scratch.
+
+**Key steps:**
+- Pre-flight: captured row counts (518,096 wines, 41,758 producers) and dependency scan (all views, RPCs, triggers, FKs, indexes enumerated)
+- Archived ~130 indexes on archive_* tables to `archive_` prefix (critical — Postgres doesn't auto-rename indexes on table rename)
+- Created fresh canonical tables: wines, producers, wine_vintages, wine_grapes, external_ids, and 50+ child tables
+- Added 9 new columns to wines: `display_name`, `confirmation`, `completeness`, `enrichment`, `identity_complete`, `blend_complete`, `appellation_confirmed`, `grapes_confirmed`, `color_confirmed`
+- Created `data_provenance` and `ai_suggestions` tables
+- Rebuilt 4 views: wine_detail_view, producer_detail_view, wine_vintage_detail_view, wine_search_view
+- Built `pipeline/analyze/thirty_k_validate.py` — 21-check validation script
+
+**Surprises:**
+- Postgres does NOT auto-rename indexes when you rename a table (ALTER TABLE wines RENAME TO archive_wines leaves `wines_pkey` named `wines_pkey` — creating a fresh `wines` table then gets `wines_pkey1`). Required a dedicated migration to rename ~130 indexes before recreating canonical tables.
+- producer_detail_view: fresh producers table has no `data_grade` column (archive did) — had to remove from view definition
+- search_catalog RPC column selection syntax differs in psycopg2 context — fixed by using `SELECT *` instead of `SELECT etype, wid`
+
+**Results:**
+- 21/21 validation checks passed (100%)
+- archive_wines: 518,096 rows preserved
+- archive_producers: 41,758 rows preserved
+- wines: 0 rows (clean start)
+- producers: 0 rows (clean start)
+- All reference tables intact (3,662 appellations, 9,695 grapes, 1,165 appellation_rules)
+- All staging tables untouched
+
+**Numbers:** 0 new wines, 0 new producers. This was architecture work.
+
+**Next session:** Session 2 — Identity Design + Josh Test Sample. Use Opus. Design country-aware display_name rules for 13+ countries, define cuvée extraction algorithm, build Josh Test sample list.
+
+---
+
 ### Planning Session — 2026-04-08
 
 **What happened:** Full strategic planning session. Evolved from a López de Heredia producer scrape walkthrough into a fundamental rethink of the entire data approach.
