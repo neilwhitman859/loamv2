@@ -175,13 +175,22 @@ We are not in a hurry. If a dry run looks wrong, throw it away and try again.
 | Final: Josh Test | **Opus** | Fresh eyes on the whole thing |
 
 ### Session Discipline
-- Run dashboard at start and end
-- Run validation checklist at end (before moving to next step)
-- Update memory file at end
-- Update journal at end (`data/stats/30k_journal.md`)
-- Update plan doc exit criteria at end
-- Commit at end
-- One batch per session — don't rush
+
+**START of every session (non-negotiable):**
+1. Read the plan doc, memory file, and journal
+2. Run dashboard
+3. **GATE CHECK: Verify the PREVIOUS session's exit criteria are ALL met.** Check `30k_sessions.json` — previous session must show `"status": "done"`. If not, STOP. Complete the previous session's unfinished work BEFORE starting new work. Do not skip this.
+4. Mark current session as `"in_progress"` in `30k_sessions.json`
+
+**END of every session (non-negotiable, do not skip ANY step):**
+1. Run validation: `python -m pipeline.analyze.thirty_k_validate --session <id>`
+2. Verify ALL exit criteria for this session are met. If any fail, fix before proceeding.
+3. Update `data/stats/30k_sessions.json` — mark session `"done"`, fill `date` and `ai_spend`
+4. Append entry to `data/stats/30k_journal.md`
+5. Update `memory/30k_status.md` — point to next session
+6. Update `docs/30K_PLAN.md` — check off exit criteria
+7. Commit and push
+8. **Do NOT end the session until steps 1-7 are ALL complete.**
 
 ### Validation (two layers, run after every session)
 
