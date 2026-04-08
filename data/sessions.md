@@ -4,6 +4,10 @@ Active and recent sessions. Read at session start, append when starting/finishin
 
 ## Active
 
+## Done
+
+- **2026-04-07 Appellation rules Phase 3 loop (cycles 36-40):** Completed the FR/AU/SA/ES/GR appellation_rules seeding loop. Processed 77 appellations across cycles 36-40. Loop self-terminated with 0 remaining for all 5 countries. Final state: **1,165 appellation_rules**, **10,413 appellation_grapes**, 100% provenance, 0 duplicates. Notable: Savennières Coulée de Serrant + La Tâche monopoles, Tursan Baroque 90%+, Mavrodaphne of Patras fortified PDO, Monemvasia-Malvasia dessert PDO, Tegea corrected to Bordeaux-variety PGI (not Moschofilero), Altenberg de Bergheim corrected to white-only (not red-permitted). Gap flagged: Prensal Blanc/Moll absent from grapes table. Tables written: `appellation_rules`, `appellation_grapes`, `wines.color`.
+
 - **2026-04-07 Knowledge seed pipeline:** Built `pipeline/promote/knowledge_seed.py` — multi-stage pipeline to populate notable wines from Claude training data. 920 generated across 32 categories, 656 already existed, 204 promoted after dual Haiku+Sonnet validation. +200 wines, +31 producers, +321 wine_grapes. Backbone IDs: 9/200 (TTB COLA). Sonnet LWIN matching found 43 same-wine pairs but all conflicted with existing entries (deferred to dedup session). Tables: `source_claude_knowledge`, `wines`, `producers`, `wine_grapes`, `external_ids`.
 ## Done
 
