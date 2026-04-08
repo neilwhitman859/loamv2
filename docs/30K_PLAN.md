@@ -668,10 +668,9 @@ Review batch 0 output. Run mini Josh Test. Decide what's next.
 Pipeline works. Display names are excellent. Cuvée extraction is clean. Two bugs found and fixed. One residual (grape-in-cuvée dedup) noted for Batch 1.
 
 ### Batch 1 Scope
-- 500 producers, $30-100 focus
-- 50-wine cap per producer (expect ~8K-12K wines)
-- Add TTB linking as pipeline Step 3
-- Add appellation_rules cascade for grape/color confirmation
+- ~500 producers, spread across all price tiers (not just $30-100)
+- No per-producer cap — pull full LWIN catalogs
+- Add TTB linking (cautiously — validate before bulk run)
 - Fix grape-in-cuvée dedup before running
 
 ### Exit Criteria

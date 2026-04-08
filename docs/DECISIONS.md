@@ -1402,3 +1402,5 @@ Convention-based months are always within 2-3 weeks of reality, never catastroph
 **Decision:** Batch 0 produced 1,690 wines from 46 producers (target was 150-250). Large producers pulled full LWIN catalogs (J.J. Prüm 171, Dönnhoff 117). For Batch 1, cap at 50 wines per producer. Target: 500 producers, $30-100 price tier, ~8K-12K wines.
 
 **Why:** Uncapped, 500 producers could produce 50K+ wines — too many to review. The 50-cap keeps batch size manageable while still covering each producer's core wines. Marquee producers may get exceptions.
+
+**UPDATE (same session):** Cap removed. Deep coverage per producer is a feature, not a problem. Most producers have 10-30 LWIN entries; the 100+ outliers (J.J. Prüm, Dönnhoff) are fine — those are real wines people search for. Review will be statistical (sample-based). Also: Batch 1 will spread across ALL price tiers, not just $30-100. The plan's tier coverage targets still apply but the roster shouldn't be artificially restricted to one tier.
