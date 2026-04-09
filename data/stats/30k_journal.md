@@ -287,3 +287,49 @@ FR 5,344 | US 3,416 | DE 2,768 | AU 1,005 | IT 978 | PT 611 | CL 525 | ES 486 | 
 **Numbers:** 0 new wines, 0 new producers. ~48,000 child rows recovered from archive. $0 AI cost.
 
 **Next session:** Session 7 — Batch 2 Part 1 (2K producers). Expand the catalog to increase findability.
+
+---
+
+### Session 7: Batch 2 — Scale to 2,000 Producers — 2026-04-09
+
+**What happened:** Expanded the catalog from 542 to 2,532 producers and from 16,524 to 51,035 wines. Built a 2,000-producer roster from LWIN staging (all producers with 20+ wines plus top 620 from the 10-19 tier), ran the full batch_pipeline.py with `--skip-ttb`, then executed archive depth recovery via the same LWIN-based bridge pattern from Session 6.
+
+**Key steps:**
+1. Built `data/batch2_roster.json`: 2,000 producers across 44 countries. Filtered out 509 producers already in batch 0/1 rosters. Tiers: 5 with 100+ wines, 6 with 50-99, 1,369 with 20-49, 620 with 10-19.
+2. Dry-run on 50 producers — clean. Cuvée extraction, grape identification, appellation resolution all working correctly.
+3. Full pipeline execution (~16 hours): 1,041 new producers created, 959 already existed (from pre-revert system). 18,564 new wines, 18,052 wines already existed (dedup via slug). 10,146 wine_grapes, 18,564 LWIN external_ids. 420 slug conflicts resolved. 0 errors across all 2,000 producers.
+4. Archive bridge: 51,035 mappings (all canonical wines → archive via LWIN).
+5. Archive depth recovery: +25,365 vintages, +16,279 grapes, +3,473 scores, +9,240 prices, +11,654 label designations. Wine-level fields: color 99.1%, region 97.3%, appellation 85.7%.
+6. Cascades: identity_confidence → all 51,035 lwin_matched. Data grade: 4,406 D, 46,629 F. Completeness recalculated — median 8-9/11 (up from 5-6/11).
+
+**Final state:**
+| Metric | Before (Session 6) | After | Delta |
+|--------|---------------------|-------|-------|
+| Producers | 542 | 2,532 | +1,990 |
+| Wines | 16,524 | 51,035 | +34,511 |
+| Vintages | 20,124 | 45,489 | +25,365 |
+| Grapes | 17,259 | 52,581 | +35,322 |
+| Scores | 1,947 | 5,420 | +3,473 |
+| Prices | 13,980 | 23,220 | +9,240 |
+| LWIN IDs | 16,524 | 51,035 | +34,511 |
+| Label designations | 5,050 | 11,654 | +6,604 |
+| Color coverage | 98.7% | 99.1% | +0.4% |
+| Appellation coverage | 87.1% | 85.7% | -1.4% |
+| Region coverage | — | 97.3% | — |
+| Completeness median | 5-6/11 | 8-9/11 | +3 |
+| Data grade D | 1,712 | 4,406 | +2,694 |
+| Identity confidence | 16,524 lwin | 51,035 lwin | +34,511 |
+
+**Country distribution (top 10):**
+France 14,731 | US 12,219 | Germany 4,720 | Australia 4,355 | Italy 4,113 | Spain 1,595 | Portugal 1,334 | Chile 1,318 | Argentina 1,297 | South Africa 1,279
+
+**Surprises:**
+- Pipeline took ~16 hours for 2,000 producers (individual INSERT per wine, psycopg2 round trips). Not blocking — resume-safe and 0 errors.
+- 959 of 2,000 roster producers already existed as canonical producers (from pre-revert system imports). Pipeline handled gracefully via `[EXISTS]` path, adding remaining wines.
+- 18,052 wines already existed by slug — significant dedup surface from the old system.
+- Appellation coverage slightly decreased (87.1% → 85.7%) because new wines from smaller producers have less appellation data in LWIN.
+- Completeness jumped dramatically (median 5-6 → 8-9) because the archive recovery fills more fields per wine than LWIN staging alone provides.
+
+**Numbers:** +34,511 wines, +1,990 producers, ~54,000 child rows recovered. $0 AI cost.
+
+**Next session:** Session 8 — Batch 3 / Gap Fill. TTB linking for new wines, push to 100K+ wines with the remaining 5+ wine producers, or gap-fill existing wines.
