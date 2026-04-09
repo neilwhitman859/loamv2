@@ -4,9 +4,13 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-09: Josh Test v1 was inflated — v2 with real search_catalog is the honest metric
+
+v1 (custom Python matching) scored 89% by using loose bidirectional substring matching and producer-is-wine fallbacks. This was tuning the test to match the data, not measuring real findability. v2 calls the actual `search_catalog` RPC — the same search a user would trigger — and checks if a result from the correct producer appears in the top 10. v2 scores **84% (223/265)**. The 5-point delta is real: v1 forgave name mismatches (E. Guigal vs Guigal, Bodegas Muga vs Muga) that the real search function doesn't. v2 is now the authoritative metric. v1 kept for reference only.
+
 ### 2026-04-09: Skip Batch 3, proceed to enrichment
 
-Josh Test at 89% findability (target 50%) after Batch 2 + TTB linking. Every tier exceeds target: $30-100 at 94%, $100-250 at 92%, $250+ at 95%. The 28 missing wines are either grocery brands not in LWIN (can't fix with more LWIN batches) or name-matching issues (fixable in search layer). Batch 3 (9,500 producers with 1-4 wines each) would add long-tail wines unlikely to appear in real-world searches. ROI is now in enrichment (Story score near 0) rather than catalog breadth. The ~9,500 remaining LWIN producers can be added incrementally later if coverage gaps emerge.
+Josh Test v2 at 84% findability (target 50%) after Batch 2 + TTB linking. $30-100 at 92%, $100-250 at 92%, $250+ at 90%. The 42 missing wines (v2) are grocery brands not in LWIN ($0-10 tier weakest at 57%) or name-matching issues fixable in search layer. Batch 3 (9,500 producers with 1-4 wines each) would add long-tail wines unlikely to appear in real-world searches. ROI is now in enrichment (Story score near 0) rather than catalog breadth.
 
 ### 2026-04-09: Drop all staging FK constraints on canonical_wine_id
 

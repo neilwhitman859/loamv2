@@ -314,6 +314,117 @@ def _calc_depth(cur, wine_id: str) -> int:
     return score
 
 
+def test_findability_v2(wines: list[dict]) -> dict:
+    """
+    Honest findability test using the real search_catalog RPC.
+
+    For each wine, calls search_catalog(search_term, 10, ['wine']) —
+    the exact same search a user would trigger. A wine is "found" only if
+    a result from the correct producer appears in the top 10.
+    """
+    conn = get_conn()
+    cur = conn.cursor()
+
+    found_wines = []
+    missing_wines = []
+    tier_counts = defaultdict(lambda: {"total": 0, "found": 0})
+    country_counts = defaultdict(lambda: {"total": 0, "found": 0})
+    depth_scores = []
+
+    for w in wines:
+        tier = w["price_tier"]
+        cc = w.get("country", "??")
+        tier_counts[tier]["total"] += 1
+        country_counts[cc]["total"] += 1
+
+        found = False
+        matched_wine_id = None
+        search_term = w["search_term"]
+
+        # Call the real search_catalog RPC
+        try:
+            cur.execute("""
+                SELECT entity_type, id, name, slug, subtitle, score
+                FROM search_catalog(%s, 10, ARRAY['wine'])
+            """, (search_term,))
+            results = cur.fetchall()
+        except Exception:
+            conn.rollback()
+            results = []
+
+        if results:
+            # Check if any result is from the right producer
+            producer_norm = _normalize(w["producer"])
+            # Build producer variants for matching
+            producer_variants = {producer_norm}
+            for prefix in ["chateau ", "domaine ", "bodegas ", "maison ",
+                           "tenuta ", "cantina ", "weingut "]:
+                if producer_norm.startswith(prefix):
+                    producer_variants.add(producer_norm[len(prefix):])
+            for suffix in [" vineyards", " vineyard", " winery", " estate",
+                           " cellars", " wines"]:
+                if producer_norm.endswith(suffix):
+                    producer_variants.add(producer_norm[:-len(suffix)])
+
+            for etype, rid, rname, rslug, subtitle, score in results:
+                # subtitle is producer name for wine results
+                subtitle_norm = _normalize(subtitle) if subtitle else ""
+                name_norm = _normalize(rname) if rname else ""
+
+                # Check if result producer matches expected producer
+                producer_match = False
+                for variant in producer_variants:
+                    if variant and (variant in subtitle_norm or subtitle_norm in variant):
+                        producer_match = True
+                        break
+                    # Also check if producer name appears in the wine name/slug
+                    if variant and variant in name_norm:
+                        producer_match = True
+                        break
+
+                if producer_match:
+                    found = True
+                    matched_wine_id = str(rid)
+                    break
+
+        if found:
+            found_wines.append(w)
+            tier_counts[tier]["found"] += 1
+            country_counts[cc]["found"] += 1
+
+            if matched_wine_id:
+                depth = _calc_depth(cur, matched_wine_id)
+                depth_scores.append(depth)
+                w["_depth"] = depth
+                w["_wine_id"] = matched_wine_id
+        else:
+            missing_wines.append(w)
+
+    cur.close()
+    conn.close()
+
+    total = len(wines)
+    found = len(found_wines)
+
+    for d in tier_counts.values():
+        d["rate"] = d["found"] / d["total"] if d["total"] else 0
+    for d in country_counts.values():
+        d["rate"] = d["found"] / d["total"] if d["total"] else 0
+
+    avg_depth = sum(depth_scores) / len(depth_scores) if depth_scores else 0
+
+    return {
+        "total": total,
+        "found": found,
+        "find_rate": found / total if total else 0,
+        "avg_depth": avg_depth,
+        "by_tier": dict(tier_counts),
+        "by_country": dict(country_counts),
+        "found_wines": found_wines,
+        "missing": missing_wines,
+    }
+
+
 def test_staging_coverage(wines: list[dict]) -> dict:
     """
     Check how many Josh Test wines exist in staging tables (pre-promotion).
@@ -499,6 +610,8 @@ def main():
     parser.add_argument("--tier", help="Test single price tier only")
     parser.add_argument("--staging", action="store_true",
                         help="Check staging coverage instead of canonical")
+    parser.add_argument("--v2", action="store_true",
+                        help="Use real search_catalog RPC (honest test)")
     args = parser.parse_args()
 
     wines = load_sample(Path(args.sample))
@@ -507,6 +620,8 @@ def main():
 
     if args.staging:
         results = test_staging_coverage(wines)
+    elif args.v2:
+        results = test_findability_v2(wines)
     else:
         results = test_findability(wines)
 
