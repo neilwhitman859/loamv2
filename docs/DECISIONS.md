@@ -4,6 +4,16 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-09: Drop all staging FK constraints on canonical_wine_id
+
+Staging tables (`source_*`) had FK constraints on `canonical_wine_id` referencing `archive_wines`. These broke on table rebuilds and blocked bulk operations (TTB FK DROP timed out on 3.28M rows). Staging tables are raw import buffers — the match engine validates via JOIN before promoting, which is the real integrity check. All 30 staging FK constraints dropped. No replacement FKs added.
+
+### 2026-04-09: Defer Grade C Haiku enrichment until after Batch 2/3
+
+Better to do a bulk enrichment pass after catalog is larger (5-10x more wines). Doing 500 wines now wastes sequencing.
+
+---
+
 ### 2026-04-08: Varietal name in wine name = source-confirmed grape (label regulation)
 
 US federal law 27 CFR 4.23 requires that if a varietal is on the label, the wine must be 75%+ that grape. Therefore "Barefoot Cabernet Sauvignon" — the varietal in the name is legally source-confirmed. Codified as source_type = 'label_regulation' in provenance. This unlocks identity_complete for thousands of varietal-labeled wines without AI.
@@ -1404,3 +1414,23 @@ Convention-based months are always within 2-3 weeks of reality, never catastroph
 **Why:** Uncapped, 500 producers could produce 50K+ wines — too many to review. The 50-cap keeps batch size manageable while still covering each producer's core wines. Marquee producers may get exceptions.
 
 **UPDATE (same session):** Cap removed. Deep coverage per producer is a feature, not a problem. Most producers have 10-30 LWIN entries; the 100+ outliers (J.J. Prüm, Dönnhoff) are fine — those are real wines people search for. Review will be statistical (sample-based). Also: Batch 1 will spread across ALL price tiers, not just $30-100. The plan's tier coverage targets still apply but the roster shouldn't be artificially restricted to one tier.
+
+---
+
+### Josh Test findability target: 85%+ (2026-04-09, Session 7)
+
+**Decision:** Target 85%+ findability on Josh Test before considering the data population phase complete. This may require multiple sessions beyond the current plan.
+
+**Why:** 50% findability means half the wines a typical American encounters aren't in our database. That's not good enough for a product that promises "the full story." The gap is likely split between (a) long-tail LWIN producers with 1-4 wines, and (b) grocery/value brands not in LWIN at all (Josh Cellars, Apothic, Bogle, etc.). Closing (b) requires a TTB-first promotion path — a new pipeline, not just more LWIN batches.
+
+**Impact:** Sessions 8+ may need to include TTB-first wine creation for non-LWIN brands. Plan will be reassessed after Josh Test results from Session 7.2.
+
+---
+
+### Voice calibration required before enrichment batch (2026-04-09, Session 7)
+
+**Decision:** Do not run the Haiku batch enrichment (Grade C, ~$120) until voice is calibrated. Generate 10 sample enrichments, review against `docs/VOICE.md`, adjust the prompt, and iterate until tone is right.
+
+**Why:** Enrichment content is the first AI-generated text users see. If the voice is wrong, 50K bad enrichments cost $120 to generate and are painful to fix. Better to spend a focused session calibrating the prompt on 10-20 wines before committing to the batch.
+
+**Impact:** Session 9 (enrichment) should start with voice calibration, not batch execution. Could be split into 9a (calibration) and 9b (batch).
