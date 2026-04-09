@@ -107,9 +107,11 @@ EU_COUNTRIES = {
 class BatchPipeline:
     """End-to-end pipeline for creating producers and wines from staging data."""
 
-    def __init__(self, dry_run: bool = True, limit: Optional[int] = None):
+    def __init__(self, dry_run: bool = True, limit: Optional[int] = None,
+                 skip_ttb: bool = False):
         self.dry_run = dry_run
         self.limit = limit
+        self.skip_ttb = skip_ttb
         self.conn = get_conn()
         self.cur = self.conn.cursor()
         self.stats = defaultdict(int)
@@ -468,6 +470,15 @@ class BatchPipeline:
         primary_grape = self._identify_primary_grape(raw_name, country_code)
         # Title Case grape names for display (grapes table stores ALL CAPS from VIVC)
         primary_grape_name = primary_grape["name"].title() if primary_grape else None
+
+        # Strip primary grape from cuvée to prevent duplication in display name
+        # (e.g., "Bin 389 Cabernet" cuvée + "Cabernet Sauvignon" grape → "Cabernet Cabernet")
+        if cuvee and primary_grape:
+            cuvee = re.sub(
+                r'(?<!\w)' + re.escape(primary_grape["name"]) + r'(?!\w)',
+                '', cuvee, flags=re.IGNORECASE
+            ).strip()
+            cuvee = re.sub(r'\s+', ' ', cuvee).strip() or None
 
         # Build display name
         classification_str = classifications[0] if classifications else None
@@ -948,15 +959,28 @@ class BatchPipeline:
     # Main run
     # =========================================================================
 
-    def run(self):
+    def run(self, roster_file: Optional[str] = None):
         """Run the full batch pipeline."""
-        producers = BATCH_0_PRODUCERS
+        if roster_file:
+            # Load from JSON roster
+            with open(roster_file, encoding="utf-8") as f:
+                roster_data = json.load(f)
+            producers = [
+                (p["canonical_name"], p["lwin_name"], p["country_code"],
+                 p.get("price_tier", "$30-100"))
+                for p in roster_data["producers"]
+            ]
+            batch_label = f"BATCH 1 ({roster_file})"
+        else:
+            producers = BATCH_0_PRODUCERS
+            batch_label = "BATCH 0"
+
         if self.limit:
             producers = producers[:self.limit]
 
         mode = "DRY RUN" if self.dry_run else "EXECUTE"
         print(f"\n{'='*60}")
-        print(f"  BATCH 0 PIPELINE — {mode}")
+        print(f"  {batch_label} PIPELINE -- {mode}")
         print(f"  {len(producers)} producers")
         print(f"{'='*60}\n")
 
@@ -988,7 +1012,7 @@ class BatchPipeline:
                 print(f"  Created {len(wine_ids)} wines")
 
                 # Step 3: Link TTB for depth
-                if not self.dry_run and wine_ids:
+                if not self.dry_run and wine_ids and not self.skip_ttb:
                     ttb_count = self.link_ttb_for_producer(producer_id, canonical_name, country_code)
                     if ttb_count:
                         print(f"  Linked {ttb_count} TTB records")
@@ -1015,7 +1039,7 @@ class BatchPipeline:
     def _print_summary(self):
         """Print final summary statistics."""
         print(f"\n{'='*60}")
-        print(f"  BATCH 0 SUMMARY")
+        print(f"  BATCH SUMMARY")
         print(f"{'='*60}")
         for key, val in sorted(self.stats.items()):
             print(f"  {key}: {val}")
@@ -1023,18 +1047,22 @@ class BatchPipeline:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Batch 0 Pipeline")
+    parser = argparse.ArgumentParser(description="Batch Pipeline")
     parser.add_argument("--dry-run", action="store_true", default=False,
-                        help="Dry run — don't write to DB")
+                        help="Dry run -- don't write to DB")
     parser.add_argument("--execute", action="store_true", default=False,
-                        help="Execute — write to DB")
+                        help="Execute -- write to DB")
     parser.add_argument("--limit", type=int, default=None,
                         help="Limit to first N producers")
+    parser.add_argument("--roster", type=str, default=None,
+                        help="Path to JSON roster file (e.g., data/batch1_roster.json)")
+    parser.add_argument("--skip-ttb", action="store_true", default=False,
+                        help="Skip TTB linking step")
     args = parser.parse_args()
 
     dry_run = not args.execute
-    pipeline = BatchPipeline(dry_run=dry_run, limit=args.limit)
-    pipeline.run()
+    pipeline = BatchPipeline(dry_run=dry_run, limit=args.limit, skip_ttb=args.skip_ttb)
+    pipeline.run(roster_file=args.roster)
 
 
 if __name__ == "__main__":

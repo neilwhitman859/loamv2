@@ -4,9 +4,13 @@ Active and recent sessions. Read at session start, append when starting/finishin
 
 ## Active
 
-- **2026-04-08 30K Session 4: Batch 0 Review** (Opus) — Reviewed 1,690 wines from Session 3. Fixed 2 bugs: wines.name NOT NULL (401 bad cuvées) + ALL CAPS grapes (904 display names). Mini Josh Test 26/30=87%. GO for Batch 1 (500 producers, 50-cap). $0 AI.
+(none)
 
 ## Done
+
+- **2026-04-08/09 30K Session 5: Batch 1 (500 producers)** (Opus) — 542 producers, 16,524 wines, 8,551 wine_grapes, 4,842 vintages, 45,305 external_ids (16K LWIN + 29K COLA). Fixed grape-in-cuvée dedup. Josh Test 47/50=94%. Cleaned 1 Joh. Jos. Prum dupe. $0 AI. Tables: wines, producers, wine_grapes, external_ids, wine_vintages, wine_label_designations, data_provenance.
+
+- **2026-04-08 30K Session 4: Batch 0 Review** (Opus) — Reviewed 1,690 wines. Fixed 2 bugs. Mini Josh Test 26/30=87%. GO for Batch 1. $0 AI.
 
 - **2026-04-08 30K Session 2: Identity Design** (Opus) — Designed complete identity rules for 14 wine countries + fallback (`docs/IDENTITY_RULES.md`). Created 265-wine Josh Test sample (`data/josh_test_sample.json`). Scaffolded 11 pipeline scripts (`pipeline/identity/`, `pipeline/quality/`, `pipeline/analyze/josh_test.py`). Verified 48/48 Batch 0 producers in staging (100%). Confirmed LWIN CC BY 4.0 license. $0 AI cost. No DB writes.
 

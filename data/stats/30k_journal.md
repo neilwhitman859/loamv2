@@ -152,6 +152,55 @@ Append-only. Every session adds an entry. This is the detailed narrative — wha
 
 ---
 
+### Session 5: Batch 1 — 500 Producers — 2026-04-08/09
+
+**What happened:** Executed full Batch 1 pipeline: 500 producers from a roster spanning all price tiers and 23 countries. Fixed the grape-in-cuvée dedup bug. Built the roster from Josh Test sample + top LWIN producers. Created 16,524 wines with TTB linking for depth (vintages, COLAs).
+
+**Key deliverables:**
+- `data/batch1_roster.json` — 500-producer roster (491 with LWIN, 9 grocery brands without LWIN)
+- `pipeline/identity/build_roster.py` — roster builder script (Josh Test + LWIN top + manual LWIN mappings)
+- Grape-in-cuvée dedup fix in `batch_pipeline.py` (line ~468)
+- `--roster` and `--skip-ttb` flags added to batch_pipeline.py
+
+**Bug fixed:**
+- **Grape-in-cuvée dedup:** Primary grape name (from `_identify_primary_grape`) was appearing in both the cuvée AND the display name (e.g., "Penfolds Bin 389 Cabernet Cabernet"). Fix: after extracting both cuvée and primary_grape, regex-strip the grape from the cuvée. 21 affected wines now clean. Verified on dry-run: 0 duplicate patterns.
+
+**Results:**
+- **542 producers** (500 roster + 46 Batch 0 - 4 slug overlaps - 1 Prum dupe cleaned = 541 → 542 actual)
+- **16,524 wines** (14,834 new + 1,690 Batch 0)
+- **8,551 wine_grapes** (7,662 new)
+- **4,842 wine_vintages** (3,948 new from TTB linking)
+- **45,305 external_ids** (16,524 LWIN + 28,781 COLA)
+- **2,836 wine_label_designations**
+- **71,495 data_provenance records**
+- Color: 96.8% (7,934 white, 7,564 red, 493 rosé, 533 NULL)
+- Appellation: 80.9% (13,364/16,524)
+- Grape: 51.7% (8,551/16,524)
+- Avg completeness: 5.2/11
+- Confirmation: 16,277 C-grade (single backbone ID), 247 B-grade (two backbone IDs)
+- **Josh Test: 47/50 = 94%** (misses: Peter Vella, Rex Goliath, Carlo Rossi — all $0-10 no-LWIN)
+- **$0 AI cost** (deterministic pipeline, no AI calls)
+- 10 producers with 0 wines (no-LWIN grocery brands: Black Box, Bota Box, etc.)
+
+**Duplicate found and fixed:**
+- "Joh. Jos. Prum" (LWIN name) was in the roster's lwin_top list because `normalize_for_match` didn't equate it with Batch 0's "J.J. Prüm". Created 171 duplicate wines. Deleted post-batch: producer + 171 wines + 153 grapes + 171 external_ids + 152 designations + 837 provenance records. Future fix: add LWIN-name-to-Batch-0 cross-check in build_roster.py.
+
+**Country breakdown:**
+FR 5,344 | US 3,416 | DE 2,768 | AU 1,005 | IT 978 | PT 611 | CL 525 | ES 486 | AR 393 | ZA 349 | AT 254 | NZ 121 | LU 87 | MD 39 | SI 36 + 12 others
+
+**Timing:** ~90 min wine creation, ~90 min TTB linking. Total elapsed ~3 hours.
+
+**Surprises:**
+- LWIN's wine count per producer varies enormously (Sine Qua Non 203, Markus Molitor 195 vs. typical 20-40). The first 20 producers in the roster (sorted by wine count) took 40% of the total runtime.
+- Windows stdout buffering made monitoring the background batch impossible — had to poll the DB directly.
+- Only 1 true duplicate producer in the roster despite thousands of variant names.
+- Josh Test 94% is a big jump from Batch 0's 87% — the roster's Josh Test inclusion was effective.
+- 10 producers had 0 wines (no LWIN data, no TTB match). These are all Franzia/Black Box type brands. They'll need either TTB-only sourcing or manual knowledge seeding.
+
+**Next session:** Session 6 — Batch 1 Part 2 (depth + enrichment). Add TTB depth (ABV, label images, grapes from TTB), importer depth, then Haiku batch enrichment.
+
+---
+
 ### Session 4: Batch 0 Review + GO/NO-GO — 2026-04-08
 
 **What happened:** Full review of Session 3's batch 0 output (46 producers, 1,690 wines). Found and fixed 2 pipeline bugs. Ran mini Josh Test. Made GO decision for Batch 1.
