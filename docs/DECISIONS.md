@@ -4,6 +4,10 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-09: Skip Batch 3, proceed to enrichment
+
+Josh Test at 89% findability (target 50%) after Batch 2 + TTB linking. Every tier exceeds target: $30-100 at 94%, $100-250 at 92%, $250+ at 95%. The 28 missing wines are either grocery brands not in LWIN (can't fix with more LWIN batches) or name-matching issues (fixable in search layer). Batch 3 (9,500 producers with 1-4 wines each) would add long-tail wines unlikely to appear in real-world searches. ROI is now in enrichment (Story score near 0) rather than catalog breadth. The ~9,500 remaining LWIN producers can be added incrementally later if coverage gaps emerge.
+
 ### 2026-04-09: Drop all staging FK constraints on canonical_wine_id
 
 Staging tables (`source_*`) had FK constraints on `canonical_wine_id` referencing `archive_wines`. These broke on table rebuilds and blocked bulk operations (TTB FK DROP timed out on 3.28M rows). Staging tables are raw import buffers — the match engine validates via JOIN before promoting, which is the real integrity check. All 30 staging FK constraints dropped. No replacement FKs added.
