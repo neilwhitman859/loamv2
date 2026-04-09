@@ -8,6 +8,8 @@ Active and recent sessions. Read at session start, append when starting/finishin
 
 ## Done
 
+- **2026-04-09 30K Session 6: Batch 1 Part 2 (Depth Recovery)** (Opus) — Archive recovery via LWIN bridge (16,524 1:1 mappings). +14,021 vintages (5,123 wines), +8,708 grapes (11,444 wines), +1,947 scores (630 wines), +13,980 prices (1,296 wines), +330 farming certs, +2,214 label designations, +5,736 external_ids (UPC/QR). Cascades: +1,027 appellation, +780 region, +311 color, +9,943 varietal_category, +1,184 wine_type. Staging relinked (10 tables, TTB deferred — too large). Avg completeness 5.32→6.29. Data grade: 1,712 F→D. Josh Test 33/100 (22% findability expected with 16.5K subset, depth 45% for found wines). $0 AI. Tables: wines, wine_vintages, wine_grapes, wine_vintage_scores, wine_vintage_prices, wine_farming_certifications, wine_label_designations, external_ids, source_* staging tables.
+
 - **2026-04-08/09 30K Session 5: Batch 1 (500 producers)** (Opus) — 542 producers, 16,524 wines, 8,551 wine_grapes, 4,842 vintages, 45,305 external_ids (16K LWIN + 29K COLA). Fixed grape-in-cuvée dedup. Josh Test 47/50=94%. Cleaned 1 Joh. Jos. Prum dupe. $0 AI. Tables: wines, producers, wine_grapes, external_ids, wine_vintages, wine_label_designations, data_provenance.
 
 - **2026-04-08 30K Session 4: Batch 0 Review** (Opus) — Reviewed 1,690 wines. Fixed 2 bugs. Mini Josh Test 26/30=87%. GO for Batch 1. $0 AI.

@@ -1,0 +1,38 @@
+WINETEST -- 2026-04-09 03:17
+========================================================
+
+Overall: 33/100
+
+Benchmark: 51 wines from 5 sources
+  Seed: 19016
+  Categories: Popular red blends, Chilean Cabernet Sauvignon, Chianti and Tuscan reds, Oregon Pinot Noir
+
+FINDABILITY    22% (11/51 found)
+  Producer only (wine not matched): 31
+  Not found at all: 9
+
+DEPTH          45% (weighted avg across 11 found wines)
+  identity       88%  #################...
+  price          64%  ############........
+  vintage        61%  ############........
+  visual         55%  ##########..........
+  winemaking     27%  #####...............
+  quality         6%  #...................
+  story           0%  ....................
+
+BLIND SPOTS (>50% miss rate)
+  country      france                         58% missed (7/12)
+
+NOTABLE MISSES (premium/luxury wines not found)
+  Château Lynch-Bages — Pauillac (France)
+  Château Pichon Longueville Lalande — Pauillac (France)
+  Puligny-Montrachet — Domaine Leflaive (France)
+  Gramercy Cellars — Syrah (US)
+  Château d'Yquem — Sauternes (France)
+  Barossa Valley Estate — Penfolds RWT Shiraz (Australia)
+  Cristal — Champagne (France)
+  Châteauneuf-du-Pape — Château Rayas (France)
+
+TREND (vs previous run)
+  Overall: 56 → 33 (DOWN 23.0)
+  Previous run: 2026-04-06T14:23:12.104895

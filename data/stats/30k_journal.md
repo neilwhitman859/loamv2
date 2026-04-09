@@ -240,3 +240,50 @@ FR 5,344 | US 3,416 | DE 2,768 | AU 1,005 | IT 978 | PT 611 | CL 525 | ES 486 | 
 - The "Cabernet Cabernet" pattern only affects AU wines (Penfolds, Henschke, Tyrrell's) because Australian LWIN entries often include the grape in the wine name AND the wine is varietal-labeled.
 
 **Numbers:** 0 new wines, 0 new producers. Fixed 1,195 wines (cuvée + display name). $0 AI cost.
+
+---
+
+### Session 6: Batch 1 Part 2 — Depth Recovery — 2026-04-09
+
+**What happened:** Recovered depth data from archive tables via LWIN-based bridge. All 16,524 Batch 1 wines map 1:1 to archive wines through shared LWIN codes in external_ids. Bulk INSERT/UPDATE operations copied vintages, grapes, scores, prices, farming certs, label designations, and UPC/QR external_ids from archive to canonical tables. Then cascaded appellation, region, color, varietal_category, wine_type, and identity_confidence from archive + reference tables.
+
+**Key steps:**
+1. Built `_archive_bridge` table: 16,524 rows mapping archive_wine_id → new_wine_id via shared LWIN in external_ids. 16,407 distinct archive wines (117 archive wines map to 2+ new wines — LWIN dedup artifacts). Each new wine maps to exactly 1 archive wine.
+2. Built `_archive_vintage_bridge`: 16,499 rows mapping archive_vintage_id → new_vintage_id via (wine_id, vintage_year) composite match.
+3. FK integrity verified: 0 orphan grape_ids, publication_ids, retailer_ids, farming_cert_ids, label_designation_ids.
+4. Bulk recovered: vintages +14,021, grapes +8,708, scores +1,947, prices +13,980, farming_certs +330, label_designations +2,214, external_ids +5,736 (UPC/QR/QR_URL).
+5. Staging relinked: 10 smaller staging tables (5,619 rows) updated canonical_wine_id from archive → new wines. TTB (29,334 rows) deferred — FK DROP timed out on 3.28M row table.
+6. Archive field recovery: appellation_id +1,027, region_id +780, color +311, varietal_category_id +9,034, wine_type sparkling +650 / fortified +534.
+7. Cascades: varietal_category from single-grape wines +909, region from appellation.region_id (none needed), identity_confidence → all 16,524 lwin_matched.
+8. Completeness recalculated (0-11 per wine), data_grade F→D for 1,712 wines with scores/prices, identity_complete = true for 11,150 wines (67.5%).
+
+**Final state (Batch 1 wines):**
+| Metric | Before | After |
+|--------|--------|-------|
+| Vintages | 6,071 (1,064 wines) | 20,092 (5,123 wines) |
+| Grapes | 8,551 | 17,259 (11,444 wines) |
+| Scores | 0 | 1,947 (630 wines) |
+| Prices | 0 | 13,980 (1,296 wines) |
+| Farming certs | 0 | 330 (315 wines) |
+| Label designations | 2,836 | 5,050 (3,195 wines) |
+| External IDs (UPC) | 0 | 2,416 wines |
+| Color coverage | 96.8% | 98.7% |
+| Appellation coverage | 80.9% | 87.1% |
+| Varietal category | 0 | 9,943 (60.2%) |
+| Wine type sparkling | 0 | 650 |
+| Wine type fortified | 0 | 534 |
+| Avg completeness | 5.32/11 | 6.29/11 |
+| Data grade D | 0 | 1,712 |
+| Identity complete | unknown | 11,150 (67.5%) |
+
+**Surprises:**
+- Staging table `canonical_wine_id` FK constraints all point to `archive_wines`, not `wines`. Required DROP CONSTRAINT before UPDATE. TTB too large to alter inline — FK DROP timed out.
+- wine_grapes table is a simple junction (no id, no timestamps) — different from other child tables.
+- 13,980 prices recovered vs prompt estimate of 11,004 — the 117 archive wines mapping to 2+ new wines caused some price duplication (correct behavior — both new wines should get the data).
+- UPC recovery was a bonus find not in the original prompt — 5,160 UPCs + 517 QR URLs + 59 QR codes.
+
+**Josh Test:** 33/100 overall. Findability 22% (11/51) — expected with only 16.5K wines (archive had 518K). Depth 45% for found wines (identity 88%, price 64%, vintage 61%). This is not a regression — it's a smaller catalog being tested against a general benchmark.
+
+**Numbers:** 0 new wines, 0 new producers. ~48,000 child rows recovered from archive. $0 AI cost.
+
+**Next session:** Session 7 — Batch 2 Part 1 (2K producers). Expand the catalog to increase findability.
