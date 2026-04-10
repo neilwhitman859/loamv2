@@ -4,7 +4,7 @@ Active and recent sessions. Read at session start, append when starting/finishin
 
 ## Active
 
-- **2026-04-09 30K Session 8: Data Quality Gate** (Opus) — Pre-enrichment quality audit and fixes. Champagne wine_type fix, Port color fix, display name artifacts, 6 producer merges, Krug/Failla cross-contamination, mass-market coverage gap fill, wine-level dedup. Tables: wines, producers, wine_vintages, wine_grapes, external_ids.
+- **2026-04-09 30K Session 8: Data Quality Gate** (Opus) — Pre-enrichment quality audit and fixes. Champagne wine_type: 1,020 table→sparkling. Fortified colors: +183 (Port red, Madeira white, Sherry white). Display name artifacts: 57 doubled-grape fixes. 7 producer merges (Chapoutier, Faiveley, Ganevat, Errázuriz, Catena, Roche de Bellene, Fourrier). Krug cross-contamination: 11 Austrian wines separated. Ridge Failla misattribution fixed. Antinori spelling dupes: 3 fixed. Mass-market coverage: +183 wines, +420 vintages, +2,523 COLA IDs across 18 brands (Josh Cellars, Barefoot, Meiomi, etc.). Script: `pipeline/enrich/seed_mass_market.py`. $0 AI. Tables: wines, producers, wine_vintages, wine_grapes, external_ids.
 
 ## Done
 

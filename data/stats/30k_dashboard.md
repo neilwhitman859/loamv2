@@ -13,7 +13,7 @@
   [x]  7. Batch 2 (2K producers + depth)         2026-04-09 ($0.00)
   [x]  7.2 TTB Linking + Josh Test               2026-04-09 ($0.00)
   [-]  8a. Batch 3 / Gap Fill                    SKIPPED (84% findability)
-  [~]  8b. Data Quality Gate                     IN PROGRESS
+  [x]  8b. Data Quality Gate                     2026-04-09 ($0.00)
   [ ]  9. Enrichment Test (500 wines)            
   [ ] 10. Josh Test + Final Validation           
 
@@ -24,7 +24,8 @@
   2  Wine Identity          51,035 wines
   3  Vintage & Depth        67,310 vintages (+21,821 from TTB)
   4  Enrichment             PENDING (next step)
-  5  Josh Test              89% findability, 6.5/8 depth
+  4a Data Quality Gate      Session 8 complete
+  5  Josh Test              84% findability (v2), 6.5/8 depth
 
   PROGRESS
   ___________________________________________________
@@ -75,8 +76,19 @@
   ABV filled           2,318
   Label URLs          37,200
 
+  DATA QUALITY GATE (Session 8)
+  ___________________________________________________
+  Champagne wine_type fixed  1,020
+  Fortified colors fixed       183
+  Display name artifacts        57
+  Producer merges (7 pairs)   ~250 wines consolidated
+  Krug/Failla cross-contam      12 wines fixed
+  Mass-market wines seeded     183 new wines
+  Mass-market vintages         420
+  Mass-market COLA IDs       2,523
+
   NEXT ACTION
   ___________________________________________________
-    Session 9: Enrichment Sweep (Grade C Haiku batch)
+    Session 9: Enrichment Test (500 wines, voice calibration)
 
 =======================================================
