@@ -4,7 +4,7 @@ Active and recent sessions. Read at session start, append when starting/finishin
 
 ## Active
 
-(none)
+- **2026-04-09 30K Session 8: Data Quality Gate** (Opus) — Pre-enrichment quality audit and fixes. Champagne wine_type fix, Port color fix, display name artifacts, 6 producer merges, Krug/Failla cross-contamination, mass-market coverage gap fill, wine-level dedup. Tables: wines, producers, wine_vintages, wine_grapes, external_ids.
 
 ## Done
 

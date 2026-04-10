@@ -12,8 +12,9 @@
   [x]  6. Batch 1 Part 2 (depth + enrichment)    2026-04-09 ($0.00)
   [x]  7. Batch 2 (2K producers + depth)         2026-04-09 ($0.00)
   [x]  7.2 TTB Linking + Josh Test               2026-04-09 ($0.00)
-  [-]  8. Batch 3 / Gap Fill                     SKIPPED (89% findability)
-  [ ]  9. Enrichment Sweep                       
+  [-]  8a. Batch 3 / Gap Fill                    SKIPPED (84% findability)
+  [~]  8b. Data Quality Gate                     IN PROGRESS
+  [ ]  9. Enrichment Test (500 wines)            
   [ ] 10. Josh Test + Final Validation           
 
   PHASE STATUS

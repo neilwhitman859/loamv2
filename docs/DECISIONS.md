@@ -4,6 +4,22 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-09: Session 8 is Data Quality Gate — fix everything before enrichment
+
+Pre-enrichment quality audit revealed: (a) 1,020 Champagne wines mistyped as "table", (b) ~500 Port/fortified wines missing colors, (c) 6 producer dupe pairs (~250 wines), (d) cross-producer contamination (Krug/Austrian Krug, Ridge/Failla), (e) display name artifacts, (f) mass-market coverage gap ($0-10 tier at 57%). All must be fixed before enrichment — dirty data compounds into bad enrichment content. Use AI and web research as needed, no shortcuts. Low-end coverage is critical because users will be diverse, not just fine wine enthusiasts.
+
+### 2026-04-09: 500-wine enrichment subset selected by depth + real-world encounter likelihood
+
+Not "best data" wines, not "most prestigious." Selection criteria: wines people actually encounter (restaurants, grocery, wine shops) that also have enough existing depth to produce quality enrichment. This naturally spans price tiers. The 500 is a test run to validate voice and quality before scaling.
+
+### 2026-04-09: Voice calibration before scaling enrichment, not before the 500
+
+Voice should be good going into the 500-wine test. The test is specifically to validate voice + quality. Must be great before scaling beyond 500. Budget protection — don't blow $175 on wrong voice.
+
+### 2026-04-09: Session naming continuity
+
+Session 8: Data Quality Gate (fixes, dedup, coverage). Session 9: Enrichment Test (500 wines, voice calibration). Session 10: Josh Test + Final Validation. Maintains the existing numbered session structure from the 30K plan.
+
 ### 2026-04-09: Josh Test v1 was inflated — v2 with real search_catalog is the honest metric
 
 v1 (custom Python matching) scored 89% by using loose bidirectional substring matching and producer-is-wine fallbacks. This was tuning the test to match the data, not measuring real findability. v2 calls the actual `search_catalog` RPC — the same search a user would trigger — and checks if a result from the correct producer appears in the top 10. v2 scores **84% (223/265)**. The 5-point delta is real: v1 forgave name mismatches (E. Guigal vs Guigal, Bodegas Muga vs Muga) that the real search function doesn't. v2 is now the authoritative metric. v1 kept for reference only.
