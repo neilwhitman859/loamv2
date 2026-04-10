@@ -1,0 +1,129 @@
+{
+  "_meta": {
+    "description": "High-level Loam roadmap. Update phase status/metrics as work progresses. Used by pipeline/analyze/loam_roadmap.py.",
+    "last_updated": "2026-04-10"
+  },
+  "phases": [
+    {
+      "id": 1,
+      "name": "Foundation",
+      "status": "done",
+      "date": "2026-03-17",
+      "summary": "Schema, reference data, source research",
+      "key_metrics": [
+        "94 canonical tables",
+        "3,662 appellations, 9,695 grapes, 389 regions",
+        "17 source categories researched (docs/SOURCES.md)"
+      ],
+      "notes": "All reference tables seeded. Schema hardened across 3 rounds."
+    },
+    {
+      "id": 2,
+      "name": "Data Population (30K Plan)",
+      "status": "done",
+      "date": "2026-04-09",
+      "summary": "Quality-over-coverage catalog rebuild",
+      "key_metrics": [
+        "2,529 producers, 51,790 wines",
+        "Josh Test: 85% findability",
+        "Completeness median: 8/11"
+      ],
+      "notes": "Sessions 1-8 of the 30K plan. Archive, identity rules, batch imports, TTB linking, quality gate."
+    },
+    {
+      "id": 3,
+      "name": "Enrichment Pipeline",
+      "status": "in_progress",
+      "summary": "AI narrative content for wine pages",
+      "sub_tasks": [
+        {"name": "Pipeline infrastructure (sequential + batch)", "status": "done", "metric": "batch_enrich.py, batch_api.py, batch_runner.py"},
+        {"name": "Voice calibration", "status": "done", "metric": "7 wines manual review, docs/VOICE.md aligned"},
+        {"name": "Session 9: D-grade sweep", "status": "done", "metric": "4,962 wines enriched, $15.76"},
+        {"name": "Session 10: Final validation", "status": "next", "metric": "Josh Test, WineTest Story, S11 checks"},
+        {"name": "Grade C on F-grade wines", "status": "planned", "metric": "~46,688 wines, ~$93 est."},
+        {"name": "Grade A showcase curation", "status": "planned", "metric": "Top ~500 wines, manual review"}
+      ],
+      "notes": "On-demand Edge Function stays for user-triggered enrichment. Batch runner handles scheduled refreshes."
+    },
+    {
+      "id": 4,
+      "name": "Frontend Resume",
+      "status": "pending",
+      "summary": "Ship the consumer experience (loam.onrender.com)",
+      "sub_tasks": [
+        {"name": "Verify API views against 30K tables", "status": "planned"},
+        {"name": "Wire up Edge Function for on-demand enrichment", "status": "planned"},
+        {"name": "Loading states for Grade F/D wines", "status": "planned"},
+        {"name": "Test wine pages with real enrichment data", "status": "planned"},
+        {"name": "Deploy + onboard first beta users", "status": "planned"}
+      ],
+      "notes": "Pages already built (Wine/Producer/Appellation/Region/Grape/Country/Vineyard). Paused since 2026-04-01. Dependencies resolved by Phase 3."
+    },
+    {
+      "id": 5,
+      "name": "Input Methods",
+      "status": "pending",
+      "summary": "Barcode scan + label photo + wine-not-found",
+      "sub_tasks": [
+        {"name": "Barcode scanner → UPC lookup", "status": "planned", "metric": "106K UPCs already indexed"},
+        {"name": "Label photo → Claude Vision → fuzzy match", "status": "planned"},
+        {"name": "Wine-not-found: create + enrich in 15s", "status": "planned"}
+      ],
+      "notes": "Data layer already supports this. Needs frontend + Vision API integration."
+    },
+    {
+      "id": 6,
+      "name": "Data Expansion",
+      "status": "pending",
+      "summary": "Fill coverage gaps, add richer sources",
+      "sub_tasks": [
+        {"name": "TTB COLA Phase 3 AI parse (1.35M non-001)", "status": "planned", "metric": "~$10 Haiku"},
+        {"name": "Score coverage push (Wine Spectator/Parker)", "status": "planned", "metric": "Licensing TBD"},
+        {"name": "Southern Hemisphere importers (AU/NZ/AR/CL/ZA)", "status": "planned"},
+        {"name": "CellarTracker integration", "status": "planned"},
+        {"name": "Weather data drip upgrade", "status": "in_progress", "metric": "Scheduled Open-Meteo job running"}
+      ],
+      "notes": "Not blocking frontend launch. Ongoing background work."
+    },
+    {
+      "id": 7,
+      "name": "Quality & Maintenance",
+      "status": "pending",
+      "summary": "Automated drift detection + refresh cycles",
+      "sub_tasks": [
+        {"name": "Weekly batch_runner cron (new wines)", "status": "planned"},
+        {"name": "Monthly batch_runner cron (retry failed)", "status": "planned"},
+        {"name": "Annual batch_runner cron (refresh stale)", "status": "planned"},
+        {"name": "Voice drift monitor", "status": "planned"},
+        {"name": "Data accuracy agent re-enable", "status": "paused", "metric": "Built, currently disabled"}
+      ],
+      "notes": "Set up after Phase 3 completes. Runs unattended."
+    },
+    {
+      "id": 8,
+      "name": "Product Layer",
+      "status": "pending",
+      "summary": "User features beyond search",
+      "sub_tasks": [
+        {"name": "User accounts (optional)", "status": "planned"},
+        {"name": "Saved wines / tasting notes", "status": "planned"},
+        {"name": "Search filters (grape/region/price/style)", "status": "planned"},
+        {"name": "Wine recommendations", "status": "planned"},
+        {"name": "Cellar tracking", "status": "planned"}
+      ],
+      "notes": "Loam can stay anonymous-first at launch. Add accounts when users ask."
+    },
+    {
+      "id": 9,
+      "name": "Launch",
+      "status": "pending",
+      "summary": "Public launch, SEO, first 1,000 users",
+      "sub_tasks": [
+        {"name": "SEO (schema.org + OpenGraph)", "status": "planned", "metric": "Already designed in"},
+        {"name": "Public launch", "status": "planned"},
+        {"name": "First 1,000 users", "status": "planned"}
+      ],
+      "notes": "Target after Phase 4 completes with enough enrichment coverage."
+    }
+  ]
+}
