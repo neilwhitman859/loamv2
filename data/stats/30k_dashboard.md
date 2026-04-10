@@ -1,5 +1,5 @@
 =======================================================
-  LOAM 30K PLAN                    2026-04-09
+  LOAM 30K PLAN                    2026-04-10 06:54:41
 =======================================================
 
   SESSIONS
@@ -11,10 +11,8 @@
   [x]  5. Batch 1 Part 1 (500 producers)         2026-04-08 ($0.00)
   [x]  6. Batch 1 Part 2 (depth + enrichment)    2026-04-09 ($0.00)
   [x]  7. Batch 2 (2K producers + depth)         2026-04-09 ($0.00)
-  [x]  7.2 TTB Linking + Josh Test               2026-04-09 ($0.00)
-  [-]  8a. Batch 3 / Gap Fill                    SKIPPED (84% findability)
-  [x]  8b. Data Quality Gate                     2026-04-09 ($0.00)
-  [x]  9. Enrichment Sweep (S9+S10 merged)       2026-04-09 (~$28 est)
+  [x]  8. Data Quality Gate + Mass Market        2026-04-09 ($0.00)
+  [x]  9. Enrichment Sweep (S9+S10 merged)       2026-04-10 ($15.76)
   [ ] 10. Josh Test + Final Validation           
 
   PHASE STATUS
@@ -23,39 +21,52 @@
   1  Producer Canon         2,529 producers
   2  Wine Identity          51,790 wines
   3  Vintage & Depth        68,537 vintages
-  4  Enrichment             IN PROGRESS (sweeps running)
-  4a Data Quality Gate      Session 8 complete
-  5  Josh Test              85% findability (v2), 5.8/8 depth
+  4  Enrichment             4,962 insights
+  5  Josh Test              85% find rate
 
-  ENRICHMENT (Session 9 COMPLETE)
+  PROGRESS
   ___________________________________________________
-  Grade B (Sonnet)    105 wines        [##..................]
-  Grade C (Haiku)     4,857 wines      [##..................]
-  Grade D remaining     140 wines
-  Grade F             46,688 wines
-  Total enriched      4,962 wines (9.6%)
-  Cost                $15.76 / $36 enrichment budget
-  Method              Anthropic Batch API (50% discount)
-  Pipelines           pipeline/enrich/batch_enrich.py (sequential)
-                      pipeline/enrich/batch_api.py (batch, preferred)
+  Producers       2,529  [##########..........] 51%
+  Wines          51,790  [####################] 100%
+  w/ vintage     16,664  [######..............] 32%
+  w/ grapes      36,139  [#############.......] 70%
+  w/ UPC              0  [....................] 0%
 
-  JOSH TEST (unchanged from Session 8)
+  CONFIRMATION
   ___________________________________________________
-  Overall         226/265  (85%)  — real search_catalog RPC
-  $0-10            27/35   (77%)
-  $10-30           69/80   (86%)
-  $30-100          76/90   (84%)
-  $100-250         35/40   (88%)
-  $250+            19/20   (95%)
-  Avg depth         5.8/8
-  Missing wines       39
+  A             1  (0.0%)
+  B         1,266  (2.4%)
+  C        49,730  (96.0%)
+  NULL        793  (1.5%)
+
+  COMPLETENESS
+  ___________________________________________________
+  Average      8.0/11
+  ID complete    11,107  (21%)
+  >= 6/11        50,166  (97%)
+  >= 8/11        34,457  (67%)
+
+  ENRICHMENT
+  ___________________________________________________
+  B: Sonnet narrative         105  (0.2%)
+  C: Haiku catalog          4,857  (9.4%)
+  D: Has scores/prices        140  (0.3%)
+  F: Identity only         46,688  (90.1%)
+  wine_insights total       4,962  (9.6%)
+
+  JOSH TEST
+  ___________________________________________________
+  Find rate     85%  (target: 85%)
+  Avg confirm   B
+  Avg complete  6.0/11
+  Avg enrich    in_progress
 
   BUDGET
   ___________________________________________________
   Spent: $15.76 / $175.00
-  [##..................] 9%
+  [#...................] 9%
 
-  REFERENCE TABLES (stable)
+  REFERENCE TABLES (should be stable)
   ___________________________________________________
   Appellations        3,662
   App. rules          1,165
@@ -63,12 +74,12 @@
   Regions               389
   Countries              68
 
+  PROVENANCE
+  ___________________________________________________
+  Total entries   222,331
+
   NEXT ACTION
   ___________________________________________________
-    Session 10: Josh Test + Final Validation
-    - Verify enrichment quality at scale
-    - Run WineTest Story dimension (should be 0→3+)
-    - Final Josh Test with S11 validation checks
-    - Optional: re-run 169 failed Grade C wines (JSON parse errors)
+    Check docs/30K_PLAN.md for current session
 
 =======================================================

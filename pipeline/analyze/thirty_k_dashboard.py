@@ -164,13 +164,37 @@ def generate(conn):
     phase1 = f'{n(prod_count)} producers' if prod_count > 0 and archived else ('BLOCKED' if not archived else 'READY')
     phase2 = f'{n(wine_count)} wines' if wine_count > 0 and prod_count > 0 else ('BLOCKED' if prod_count == 0 else 'READY')
 
+    # Depth check: vintages
+    rows = q(conn, "SELECT count(*) FROM wine_vintages") if wine_count > 0 else []
+    vint_total = rows[0][0] if rows else 0
+    phase3 = f'{n(vint_total)} vintages' if vint_total > 0 else 'PENDING'
+
+    # Enrichment check: wine_insights
+    rows = q(conn, "SELECT count(*) FROM wine_insights") if wine_count > 0 else []
+    insights_count = rows[0][0] if rows else 0
+    phase4 = f'{n(insights_count)} insights' if insights_count > 0 else 'PENDING'
+
+    # Josh Test: check latest file
+    josh_path = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'stats', 'josh_test_latest.json')
+    if os.path.exists(josh_path):
+        try:
+            import json
+            with open(josh_path) as f:
+                jt = json.load(f)
+            rate = jt.get('find_rate', 0)
+            phase5 = f'{rate:.0%} find rate'
+        except Exception:
+            phase5 = 'PENDING'
+    else:
+        phase5 = 'PENDING'
+
     for num, name, st in [
         ("0", "Archive & Schema", phase0),
         ("1", "Producer Canon", phase1),
         ("2", "Wine Identity", phase2),
-        ("3", "Vintage & Depth", "PENDING"),
-        ("4", "Enrichment", "PENDING"),
-        ("5", "Josh Test", "PENDING"),
+        ("3", "Vintage & Depth", phase3),
+        ("4", "Enrichment", phase4),
+        ("5", "Josh Test", phase5),
     ]:
         lines.append(f"  {B}{num}{X}  {name:<22} {status_color(st)}")
     lines.append("")
@@ -231,16 +255,33 @@ def generate(conn):
             lines.append(f"  {D}No data yet{X}")
         lines.append("")
 
-        # Enrichment
+        # Enrichment — read from wine_insights + data_grade
         lines.append(f"  {B}ENRICHMENT{X}")
         lines.append(f"  {'_' * 51}")
-        rows = q(conn, """SELECT enrichment, count(*) FROM wines
-                         WHERE deleted_at IS NULL GROUP BY enrichment ORDER BY enrichment""")
+        rows = q(conn, """
+            SELECT data_grade, count(*) FROM wines
+            WHERE deleted_at IS NULL
+            GROUP BY data_grade ORDER BY data_grade
+        """)
         if rows:
-            labels = {0: 'None', 1: 'Basic (AI gap-fill)', 2: 'Full (Sonnet)'}
+            labels = {
+                'A': 'A: Full curated',
+                'B': 'B: Sonnet narrative',
+                'C': 'C: Haiku catalog',
+                'D': 'D: Has scores/prices',
+                'F': 'F: Identity only',
+            }
             for grade, cnt in rows:
+                g = grade or 'NULL'
                 pct = cnt / wine_count * 100
-                lines.append(f"  {grade}: {labels.get(grade, '?'):<22} {n(cnt):>8}  ({pct:.1f}%)")
+                color = G if g in ('A', 'B') else Y if g == 'C' else D
+                label = labels.get(g, g)
+                lines.append(f"  {color}{label:<22}{X} {n(cnt):>8}  ({pct:.1f}%)")
+        # Also show insights coverage
+        rows = q(conn, "SELECT count(*) FROM wine_insights")
+        if rows:
+            ins = rows[0][0]
+            lines.append(f"  {D}wine_insights total{X}    {n(ins):>8}  ({ins/wine_count*100:.1f}%)")
         lines.append("")
 
     elif wine_count > 0:
