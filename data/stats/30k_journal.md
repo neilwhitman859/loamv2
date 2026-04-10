@@ -389,3 +389,40 @@ France 14,731 | US 12,219 | Germany 4,720 | Australia 4,355 | Italy 4,113 | Spai
 **To monitor:** Check `SELECT data_grade, count(*) FROM wines WHERE deleted_at IS NULL GROUP BY data_grade` periodically. Re-run commands from dashboard if processes die.
 
 **Next session:** Session 10 — Josh Test + Final Validation. Verify enrichment results, run WineTest Story dimension, final Josh Test with all checks.
+
+---
+
+### Session 9 addendum: Batch API switch — 2026-04-10
+
+**What happened:** Sequential enrichment was too slow (~6 wines/minute combined, ~23hr ETA for full sweep). User asked "why wouldn't we do the batch method?" — no good reason. Killed the sequential processes, built `pipeline/enrich/batch_api.py` using Anthropic's Message Batches API.
+
+**Results:**
+- Grade C batch: 5,000 wines submitted, **ended in under 5 minutes**, 4,831 succeeded, 169 errors (all JSON parse from malformed Haiku output, ~3.4% error rate)
+- Grade B batch: 60 wines submitted, ended in under 5 minutes, 60/60 succeeded, 0 errors
+- **Total cost: $14.43 batch + $1.20 sequential = $15.63** (vs $28 sequential estimate)
+- Batch API gave 50% discount on all tokens
+
+**Final enrichment state:**
+| Grade | Before session | After session | Delta |
+|-------|---------------|---------------|-------|
+| B | 0 | 105 | +105 |
+| C | 0 | 4,857 | +4,857 |
+| D | 4,360 | 140 | -4,220 |
+| F | 47,386 | 46,688 | -698 (enriched from F) |
+
+**Spot-check quality samples (Grade C):**
+- Bollinger Francaises: "single-varietal Pinot Noir Champagne from old vines — a rare declaration of place and grape in a region obsessed with blends"
+- Talbott Logan Chardonnay: caught a data quality issue — "varietal data lists Pinot Noir and Pinot Blanc as the grapes, but it's labeled as a Chardonnay"
+- Marchesi Antinori Bramito Cervo: "clay-limestone hills that punches above its $21 price point by treating white wine as a food wine, not a aperitif"
+- Beaumont Hope Marguerite: "Bokkeveld shale and Table Mountain sandstone"
+
+**Lessons learned:**
+- Anthropic Batch API is the right choice for bulk enrichment. Should have started here.
+- Sequential approach with background `&` was a dead-end — Claude's Bash tool can't track forked processes, and we were fighting rate limits by running concurrent processes against the same API key.
+- Bulk context preloading (8 queries for N wines, not 8×N) was a critical optimization — 10x throughput even in sequential mode.
+- 3.4% JSON parse error rate from Haiku is acceptable. Can be addressed with a retry pass or more defensive parsing.
+
+**Infrastructure built:**
+- `pipeline/enrich/batch_enrich.py` — sequential enrichment with Grade C/B prompts, bulk preloading, atomic DB writes (good for small batches, calibration)
+- `pipeline/enrich/batch_api.py` — Batch API submit/status/process workflow (preferred for bulk)
+- `data/stats/batch_enrichment_log.json` — submission tracking

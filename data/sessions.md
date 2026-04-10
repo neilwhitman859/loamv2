@@ -4,9 +4,11 @@ Active and recent sessions. Read at session start, append when starting/finishin
 
 ## Active
 
-- **2026-04-09 30K Session 9: Enrichment Sweep** (Opus) — Merged S9+S10. Built `pipeline/enrich/batch_enrich.py` (Grade C Haiku + Grade B Sonnet batch enrichment). Calibrated on 7 wines, validated voice. Launched sweeps: Grade C on 4,360 D-grade wines + Grade B on top 100. Sweeps running in background (PIDs 105880/104688). ~$0.75 spent at session end, ~$28 expected. Tables: wines, wine_insights, wine_vintage_tasting_insights, enrichment_log.
+(none)
 
 ## Done
+
+- **2026-04-10 30K Session 9: Enrichment Sweep (S9+S10 merged)** (Opus) — Built full batch enrichment pipeline. Calibrated on 7 wines, validated voice against docs/VOICE.md. First attempted sequential (~6 wines/min, too slow), then switched to Anthropic Batch API (50% discount). Submitted 5,000 Grade C + 60 Grade B. Both ended in <5 min. Processed: **4,831 Grade C enriched (4,857 total), 60 Grade B enriched (105 total)**, 169 errors (JSON parse, 3.4%). Cost: $15.76 total. Enrichment coverage: 9.6% of catalog. Scripts: `pipeline/enrich/batch_enrich.py` (sequential, calibration), `pipeline/enrich/batch_api.py` (batch, preferred). Tables: wine_insights, wine_vintage_tasting_insights, enrichment_log.
 
 - **2026-04-09 30K Session 8: Data Quality Gate** (Opus) — Pre-enrichment quality audit and fixes. Champagne wine_type: 1,020 table→sparkling. Fortified colors: +183 (Port red, Madeira white, Sherry white). Display name artifacts: 57 doubled-grape fixes. 7 producer merges (Chapoutier, Faiveley, Ganevat, Errázuriz, Catena, Roche de Bellene, Fourrier). Krug cross-contamination: 11 Austrian wines separated. Ridge Failla misattribution fixed. Antinori spelling dupes: 3 fixed. Mass-market coverage: +183 wines, +420 vintages, +2,523 COLA IDs across 18 brands (Josh Cellars, Barefoot, Meiomi, etc.). Josh Test v1 removed — v2 (search_catalog) is now the only test: 85% (226/265). $0-10 tier jumped 57%→77%. Script: `pipeline/enrich/seed_mass_market.py`. $0 AI. Tables: wines, producers, wine_vintages, wine_grapes, external_ids.
 

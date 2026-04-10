@@ -27,14 +27,17 @@
   4a Data Quality Gate      Session 8 complete
   5  Josh Test              85% findability (v2), 5.8/8 depth
 
-  ENRICHMENT (Session 9)
+  ENRICHMENT (Session 9 COMPLETE)
   ___________________________________________________
-  Grade B (Sonnet)    ~22+ enriched, running (target 100)
-  Grade C (Haiku)     ~70+ enriched, running (target 4,360)
-  Grade D             4,312 remaining
-  Grade F             47,386 (not targeted this session)
-  Cost so far         ~$0.75
-  Pipeline            pipeline/enrich/batch_enrich.py
+  Grade B (Sonnet)    105 wines        [##..................]
+  Grade C (Haiku)     4,857 wines      [##..................]
+  Grade D remaining     140 wines
+  Grade F             46,688 wines
+  Total enriched      4,962 wines (9.6%)
+  Cost                $15.76 / $36 enrichment budget
+  Method              Anthropic Batch API (50% discount)
+  Pipelines           pipeline/enrich/batch_enrich.py (sequential)
+                      pipeline/enrich/batch_api.py (batch, preferred)
 
   JOSH TEST (unchanged from Session 8)
   ___________________________________________________
@@ -49,8 +52,8 @@
 
   BUDGET
   ___________________________________________________
-  Spent: ~$0.75 / $175.00
-  [....................] <1%
+  Spent: $15.76 / $175.00
+  [##..................] 9%
 
   REFERENCE TABLES (stable)
   ___________________________________________________
@@ -62,10 +65,10 @@
 
   NEXT ACTION
   ___________________________________________________
-    Monitor enrichment sweeps (PIDs 105880/104688)
-    Re-run if processes die:
-      python -m pipeline.enrich.batch_enrich --grade C --limit 4400 --execute --budget 30
-      python -m pipeline.enrich.batch_enrich --grade B --limit 100 --execute --budget 5
     Session 10: Josh Test + Final Validation
+    - Verify enrichment quality at scale
+    - Run WineTest Story dimension (should be 0→3+)
+    - Final Josh Test with S11 validation checks
+    - Optional: re-run 169 failed Grade C wines (JSON parse errors)
 
 =======================================================
