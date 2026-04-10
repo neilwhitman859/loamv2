@@ -43,17 +43,16 @@
   Wines w/ LWIN        51,035  (100%)
   Vintages total       67,310
 
-  JOSH TEST (Session 7.2)
+  JOSH TEST (post-Session 8 quality gate)
   ___________________________________________________
-  v1 (Python)     237/265  (89%)  — inflated, custom matching
-  v2 (search_catalog) 223/265 (84%) — honest, uses real RPC
-  $0-10            20/35   (57%)  v2
-  $10-30           65/80   (81%)  v2
-  $30-100          83/90   (92%)  v2
-  $100-250         37/40   (92%)  v2
-  $250+            18/20   (90%)  v2
-  Avg depth         6.5/8  (v1 found set)
-  Missing wines       42   (v2)
+  Overall         226/265  (85%)  — real search_catalog RPC
+  $0-10            27/35   (77%)  +20pp from mass-market seed
+  $10-30           69/80   (86%)
+  $30-100          76/90   (84%)
+  $100-250         35/40   (88%)
+  $250+            19/20   (95%)
+  Avg depth         5.8/8
+  Missing wines       39
 
   BUDGET
   ___________________________________________________

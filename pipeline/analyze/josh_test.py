@@ -64,196 +64,6 @@ def load_sample(path: Path = SAMPLE_PATH) -> list[dict]:
     return data["wines"]
 
 
-def test_findability(wines: list[dict]) -> dict:
-    """
-    Test if each wine can be found in the canonical database.
-
-    Search strategy per wine:
-    1. Find producer by normalized name match (name_normalized or stripped prefix/suffix)
-    2. If producer found, check if a matching wine exists (by name or grape)
-    3. Also try search_vector full-text search as fallback
-    """
-    conn = get_conn()
-    cur = conn.cursor()
-
-    # Pre-load all producers with normalized names for fast matching
-    cur.execute("""
-        SELECT id, name, name_normalized, slug
-        FROM producers WHERE deleted_at IS NULL
-    """)
-    all_producers = cur.fetchall()
-
-    # Build producer lookup: normalized_name -> (id, name)
-    producer_index = {}
-    for pid, pname, pnorm, pslug in all_producers:
-        key = _normalize(pname) if pname else ""
-        if key:
-            producer_index[key] = (str(pid), pname)
-        # Also index without prefixes/suffixes
-        for prefix in ["chateau ", "domaine ", "bodegas ", "maison ", "tenuta ",
-                        "cantina ", "casa ", "weingut ", "caves "]:
-            if key.startswith(prefix):
-                producer_index[key[len(prefix):]] = (str(pid), pname)
-        for suffix in [" vineyards", " vineyard", " winery", " estate",
-                        " cellars", " wines", " wine", " estates"]:
-            if key.endswith(suffix):
-                producer_index[key[:-len(suffix)]] = (str(pid), pname)
-
-    found_wines = []
-    missing_wines = []
-    tier_counts = defaultdict(lambda: {"total": 0, "found": 0})
-    country_counts = defaultdict(lambda: {"total": 0, "found": 0})
-    depth_scores = []
-
-    for w in wines:
-        tier = w["price_tier"]
-        cc = w.get("country", "??")
-        tier_counts[tier]["total"] += 1
-        country_counts[cc]["total"] += 1
-
-        found = False
-        matched_wine_id = None
-
-        # Strategy 1: Producer name lookup
-        search_producer = _normalize(w["producer"])
-        producer_match = producer_index.get(search_producer)
-
-        # Try without prefix/suffix
-        if not producer_match:
-            for prefix in ["chateau ", "domaine ", "bodegas ", "maison "]:
-                if search_producer.startswith(prefix):
-                    producer_match = producer_index.get(search_producer[len(prefix):])
-                    if producer_match:
-                        break
-        if not producer_match:
-            for suffix in [" vineyards", " vineyard", " winery", " estate",
-                            " cellars", " wines"]:
-                if search_producer.endswith(suffix):
-                    producer_match = producer_index.get(search_producer[:-len(suffix)])
-                    if producer_match:
-                        break
-
-        if producer_match:
-            pid, pname = producer_match
-            # Get wines for this producer
-            cur.execute("""
-                SELECT id, name, display_name, color
-                FROM wines WHERE producer_id = %s AND deleted_at IS NULL
-            """, (pid,))
-            producer_wines = cur.fetchall()
-
-            # Try to match the specific wine
-            search_norm = _normalize(w["search_term"])
-            grape_norm = _normalize(w.get("grape", "")) if w.get("grape") else ""
-
-            for wid, wname, display, color in producer_wines:
-                wname_norm = _normalize(wname) if wname else ""
-                display_norm = _normalize(display) if display else ""
-
-                # Exact name match (either direction)
-                if wname_norm and (wname_norm in search_norm or search_norm in wname_norm):
-                    found = True
-                    matched_wine_id = str(wid)
-                    break
-                if display_norm and (display_norm in search_norm or search_norm in display_norm):
-                    found = True
-                    matched_wine_id = str(wid)
-                    break
-
-                # Grape match (e.g., "Barefoot Cabernet Sauvignon" -> wine named "Cabernet Sauvignon")
-                if grape_norm and wname_norm and grape_norm == wname_norm:
-                    found = True
-                    matched_wine_id = str(wid)
-                    break
-
-                # Search term contains wine name tokens
-                if wname_norm and len(wname_norm) > 3:
-                    # Check if all words in wine name appear in search term
-                    wname_words = set(wname_norm.split())
-                    search_words = set(search_norm.split())
-                    if wname_words and wname_words.issubset(search_words):
-                        found = True
-                        matched_wine_id = str(wid)
-                        break
-
-                # Producer-is-wine match (Bordeaux estates, single-wine producers)
-                # If wine has no cuvée name and producer name matches search
-                if not wname and _normalize(pname) in search_norm:
-                    found = True
-                    matched_wine_id = str(wid)
-                    break
-
-            # If producer found but no specific wine matched, check if it's a
-            # "producer-only" wine (e.g., "Apothic Red" where wine is "Red")
-            if not found and producer_wines:
-                # Try matching just the non-producer part of the search term
-                remainder = search_norm.replace(_normalize(w["producer"]), "").strip()
-                if remainder:
-                    for wid, wname, display, color in producer_wines:
-                        wname_norm = _normalize(wname) if wname else ""
-                        if wname_norm and (wname_norm == remainder or remainder == wname_norm):
-                            found = True
-                            matched_wine_id = str(wid)
-                            break
-
-        # Strategy 2: Full-text search fallback
-        if not found:
-            search_terms = w["search_term"].split()
-            tsquery = " & ".join(t for t in search_terms if len(t) > 2)
-            if tsquery:
-                try:
-                    cur.execute("""
-                        SELECT id FROM wines
-                        WHERE deleted_at IS NULL
-                          AND search_vector @@ to_tsquery('simple', %s)
-                        LIMIT 5
-                    """, (tsquery,))
-                    rows = cur.fetchall()
-                    if rows:
-                        found = True
-                        matched_wine_id = str(rows[0][0])
-                except Exception:
-                    conn.rollback()
-
-        if found:
-            found_wines.append(w)
-            tier_counts[tier]["found"] += 1
-            country_counts[cc]["found"] += 1
-
-            # Calculate depth score for found wines
-            if matched_wine_id:
-                depth = _calc_depth(cur, matched_wine_id)
-                depth_scores.append(depth)
-                w["_depth"] = depth
-                w["_wine_id"] = matched_wine_id
-        else:
-            missing_wines.append(w)
-
-    cur.close()
-    conn.close()
-
-    total = len(wines)
-    found = len(found_wines)
-
-    for d in tier_counts.values():
-        d["rate"] = d["found"] / d["total"] if d["total"] else 0
-    for d in country_counts.values():
-        d["rate"] = d["found"] / d["total"] if d["total"] else 0
-
-    avg_depth = sum(depth_scores) / len(depth_scores) if depth_scores else 0
-
-    return {
-        "total": total,
-        "found": found,
-        "find_rate": found / total if total else 0,
-        "avg_depth": avg_depth,
-        "by_tier": dict(tier_counts),
-        "by_country": dict(country_counts),
-        "found_wines": found_wines,
-        "missing": missing_wines,
-    }
-
-
 def _calc_depth(cur, wine_id: str) -> int:
     """Calculate depth score 0-8 for a found wine."""
     score = 0
@@ -314,7 +124,7 @@ def _calc_depth(cur, wine_id: str) -> int:
     return score
 
 
-def test_findability_v2(wines: list[dict]) -> dict:
+def test_findability(wines: list[dict]) -> dict:
     """
     Honest findability test using the real search_catalog RPC.
 
@@ -610,8 +420,6 @@ def main():
     parser.add_argument("--tier", help="Test single price tier only")
     parser.add_argument("--staging", action="store_true",
                         help="Check staging coverage instead of canonical")
-    parser.add_argument("--v2", action="store_true",
-                        help="Use real search_catalog RPC (honest test)")
     args = parser.parse_args()
 
     wines = load_sample(Path(args.sample))
@@ -620,8 +428,6 @@ def main():
 
     if args.staging:
         results = test_staging_coverage(wines)
-    elif args.v2:
-        results = test_findability_v2(wines)
     else:
         results = test_findability(wines)
 
