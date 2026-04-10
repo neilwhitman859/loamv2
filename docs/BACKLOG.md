@@ -79,6 +79,26 @@ Append-only list of discovered issues and deferred work. Read at session start b
 **Scope:** Wait — these were actually processed in the 2026-04-08 dedup merge session. Verify this is fully closed.
 **Status:** Likely done, needs verification
 
+### [2026-04-10] Wine_grapes has 6,337 wines with impossible grape percentages (>100% total)
+**Priority:** P0 — blocks enrichment quality on ~12% of the corpus
+**Scope:** 6,337 wines (12.3% of 51,614 active) have `wine_grapes.percentage` values that sum to more than 100%. Typical pattern: 275% = three grapes each at 100% + 75%, or 200% = two grapes each at 100%. This happens when multiple conflicting grape-assignment sources each set `percentage = 100` independently rather than normalizing to fractions of a blend. Affected wines include Kumeu River Hunting Hill (Chardonnay 100% + Pinot Noir 75% = 175%, but it's actually a 100% Chardonnay wine), Krug Clos du Mesnil, Joseph Phelps Eisele, and 6,334 others.
+**Why:** The enrichment pipeline reads `wine_grapes` as ground truth. A 275% total causes Haiku/Sonnet to faithfully describe nonsense blends as if they were real ("pairs Pinot Noir with Chardonnay"). The auditor correctly flags these as factual errors, and Stage 1 pass 2 showed ~30% of the 34 fail wines had this bug. **No amount of prompt engineering can fix enrichment on these wines** — the data is wrong.
+**Discovery:** Stage 1 pass 2 analysis of Kumeu River Hunting Hill, confirmed by population query in Session 12.
+**Fix strategy (proposed, not agreed):**
+- For wines with exactly 1 grape_link and percentage=100: OK, leave alone
+- For wines where SUM(percentage) > 100: either (a) reset all percentages to NULL for that wine (conservative), (b) keep only the single-highest-confidence grape, or (c) re-derive from a stronger source (LWIN percentage field if present)
+- Best approach needs a session-level discussion. Do NOT autonomously fix in bulk without review — the repair policy is product-critical.
+**Estimated effort:** 2-4 hours investigation + fix + validation
+**Discovered in:** Session 12 (Stage 1 pass 2 diagnosis)
+
+### [2026-04-10] 270 Grade C wines have thin facts packets (<3 facts) despite Grade C assignment
+**Priority:** P1 — blocks enrichment ceiling on thin-packet wines
+**Scope:** 270 wines assigned `data_grade = 'C'` have fewer than 3 of the 5 canonical facts (grape, appellation, vintage, score, price). 28 have only 1 fact, 242 have exactly 2. Example: Quinta do Noval Black (fortified red, no grapes, no appellation, no vintage, no score). For these wines, Grade C enrichment can only produce "identity stub" content ("X is a red wine from Y") that scores 1-2/5 on the voice audit regardless of model choice. This suggests the data_grade='C' assignment is not strictly gated on packet richness — some thin-packet wines slipped through.
+**Why:** These wines are dragging down the Grade C population average on any population-level audit. Either (a) they should be demoted to Grade D until more data is promoted, or (b) Grade C should write purely structured output for thin-packet wines instead of attempting prose.
+**Fix strategy:** Add a `richness_score` column or view that counts non-NULL facts; re-run the grade assignment with the richness floor as a gate; or downgrade these 270 specifically.
+**Estimated effort:** 1 hour (SQL audit + grade reassignment) + reruns
+**Discovered in:** Session 12 (Stage 1 pass 2 diagnosis — Quinta do Noval Black case)
+
 ---
 
 ## Workflow

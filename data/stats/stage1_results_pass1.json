@@ -1,0 +1,3434 @@
+{
+  "run_date": "2026-04-10T19:06:21.370449+00:00",
+  "models": {
+    "grade_b": "claude-sonnet-4-6",
+    "grade_c": "claude-haiku-4-5-20251001",
+    "audit": "claude-sonnet-4-6"
+  },
+  "n_wines": 34,
+  "original_avg": 2.0,
+  "stage1_avg": 1.74,
+  "delta": -0.26,
+  "by_grade": {
+    "B": {
+      "n": 7,
+      "orig_avg": 2.0,
+      "new_avg": 3.0,
+      "delta": 1.0,
+      "verdicts_after": {
+        "pass": 1,
+        "warn": 5,
+        "fail": 1
+      },
+      "fact_check": {
+        "passed": 0,
+        "retried_passed": 0,
+        "partial": 1,
+        "failed": 6
+      }
+    },
+    "C": {
+      "n": 27,
+      "orig_avg": 2.0,
+      "new_avg": 1.41,
+      "delta": -0.59,
+      "verdicts_after": {
+        "pass": 0,
+        "warn": 0,
+        "fail": 27
+      },
+      "fact_check": {
+        "passed": 2,
+        "retried_passed": 3,
+        "partial": 5,
+        "failed": 17
+      }
+    }
+  },
+  "fact_check_impact": {
+    "passed_first_try": 2,
+    "retried_once_passed": 3,
+    "partial": 6,
+    "failed": 23,
+    "total_flags": 70,
+    "avg_flags_per_wine": 2.06
+  },
+  "cost_usd": {
+    "generation_l1_l3": 0.6014,
+    "audit": 0.4016,
+    "total": 1.003
+  },
+  "tokens": {
+    "generation_input": 200444,
+    "generation_output": 45397,
+    "audit_input": 34906,
+    "audit_output": 19790
+  },
+  "results": [
+    {
+      "wine_id": "9c156e10-6e4f-4f1f-abbb-7a319b0ee8f6",
+      "grade": "C",
+      "display_name": "Channing Daughters Research, Long Island",
+      "producer": "Channing Daughters",
+      "appellation": "Long Island",
+      "country": "United States",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 11,
+        "n_vintages": 1,
+        "has_appellation_rules": true,
+        "n_scores": 0,
+        "has_price": false,
+        "n_unknowns": 12,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Channing Daughters Research is a white blend of eleven varieties grown on Long Island. The 2015 vintage carries 12.5% alcohol.",
+        "style_profile": "White blend, dry, multi-varietal.",
+        "comparable_wines": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Wakefield St. Andrews Chardonnay, Clare Valley \u2014 Chardonnay-based wine from a warm-climate region.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove or replace with supported comparable from the list"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Vincent Girardin Chablis Tete d'Or \u2014 Chardonnay-based white from a cool-climate appellation.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove the descriptive appellation claims or replace with facts-supported versions"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.010841,
+      "gen_usage": {
+        "input_tokens": 5596,
+        "output_tokens": 1049
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields fail: the hook wastes its sentences on trivia, the style tag is maximally generic, and the comparables field was never populated \u2014 none of Channing Daughters' known identity (research-driven field blending, Long Island's maritime sandy loams, aromatic-variety weight) reaches the reader.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 2,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Names the blend count and vintage ABV but says nothing about why this wine exists, what makes an 11-variety Long Island white interesting, or what the drinker should expect \u2014 the alcohol stat is filler masquerading as information."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Three words that could describe thousands of wines; no mention of the aromatic character driven by Muscat and Viognier, the textural weight from Furmint or Auxerrois, or the oxidative/skin-contact experimentation Channing Daughters is known for."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 no comparables offered at all, which is the worst possible outcome for a buyer trying to orient themselves around an unusual 11-grape field blend from Long Island."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "All three fields fail: the hook wastes its sentences on trivia, the style tag is maximally generic, and the comparables field was never populated \u2014 none of Channing Daughters' known identity (research-driven field blending, Long Island's maritime sandy loams, aromatic-variety weight) reaches the reader."
+        }
+      }
+    },
+    {
+      "wine_id": "6b9a6d4c-1b76-4747-a794-731acf46c387",
+      "grade": "C",
+      "display_name": "Castra Rubra Via Diagonalis, Thracian Lowlands",
+      "producer": "Castra Rubra",
+      "appellation": null,
+      "country": "Bulgaria",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 3,
+        "n_vintages": 3,
+        "has_appellation_rules": false,
+        "n_scores": 0,
+        "has_price": false,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": null,
+        "style_profile": null,
+        "comparable_wines": "La Crema Sauvignon Blanc, California \u2014 shares the primary grape's structure and mineral acidity. Woodbridge by Robert Mondavi Sauvignon Blanc, California \u2014 both are Sauvignon Blanc\u2013based whites at accessible alcohol levels."
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_hook",
+          "claim": "Castra Rubra Via Diagonalis is a white wine from Bulgaria",
+          "issue": "contradicted",
+          "severity": "high",
+          "suggested_fix": "replace_with_facts"
+        },
+        {
+          "field": "ai_style_profile",
+          "claim": "White table wine",
+          "issue": "contradicted",
+          "severity": "high",
+          "suggested_fix": "replace_with_facts"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "La Crema Sauvignon Blanc, California \u2014 shares the primary grape's structure and mineral acidity.",
+          "issue": "not_in_facts",
+          "severity": "low",
+          "suggested_fix": "mark_unknown"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Woodbridge by Robert Mondavi Sauvignon Blanc, California \u2014 both are Sauvignon Blanc\u2013based whites at accessible alcohol levels.",
+          "issue": "not_in_facts",
+          "severity": "low",
+          "suggested_fix": "mark_unknown"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.011458,
+      "gen_usage": {
+        "input_tokens": 5468,
+        "output_tokens": 1198
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields are either empty or built on a fundamental data conflict (white-grape blend tagged as red/table) that makes the enrichment untrustworthy; the catalog record must be corrected before any content is written or published.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "factual_error",
+            "generic_filler"
+          ],
+          "note": "Field is empty, but the underlying catalog data contains a critical contradiction: the grapes listed (Sauvignon Blanc, S\u00e9millon, Chardonnay) are all white varieties yet the wine is classified as red/table \u2014 the hook cannot be written until this data conflict is resolved."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "factual_error",
+            "generic_filler"
+          ],
+          "note": "Field is empty and cannot be meaningfully evaluated, but the red/table classification against a white-grape blend makes any style tag written from this data unreliable without source correction."
+        },
+        "comparable": {
+          "specificity": 2,
+          "voice": 2,
+          "accuracy": 2,
+          "issues": [
+            "factual_error",
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Both comparables treat this as a white Sauvignon Blanc wine \u2014 which may be the actual product \u2014 but the reasoning ('accessible alcohol levels', 'structure and mineral acidity') is thin, generic, and ignores that Via Diagonalis is a Bulgarian Thracian Lowlands blend with S\u00e9millon and Chardonnay, making single-varietal California SB comps a poor match even if the color data were clean."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "All three fields are either empty or built on a fundamental data conflict (white-grape blend tagged as red/table) that makes the enrichment untrustworthy; the catalog record must be corrected before any content is written or published."
+        }
+      }
+    },
+    {
+      "wine_id": "5dc37c02-21b4-461e-8ddc-26bce02a2f6a",
+      "grade": "C",
+      "display_name": "Gramona Gessami, Pened\u00e8s",
+      "producer": "Gramona",
+      "appellation": "Pened\u00e8s",
+      "country": "Spain",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 3,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 0,
+        "has_price": false,
+        "n_unknowns": 11,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Gramona Gessami blends Sauvignon Blanc, Muscat \u00e0 Petits Grains Roses, and Gew\u00fcrztraminer from Pened\u00e8s, Spain. The 2009 vintage was aged three months in oak and contains 11.5% alcohol. The producer farms biodynamically, organically, and produces vegan wine.",
+        "style_profile": "Dry white with aromatic intensity from Gew\u00fcrztraminer and Muscat, structured by Sauvignon Blanc.",
+        "comparable_wines": "Bornard, Les Chassagnes shares Gew\u00fcrztraminer with Gessami. La Crema Sauvignon Blanc, California contains Sauvignon Blanc, one of Gessami's three component varieties."
+      },
+      "fact_check_status": "retried_passed",
+      "fact_check_flags": [],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.01186,
+      "gen_usage": {
+        "input_tokens": 7525,
+        "output_tokens": 867
+      },
+      "error": null,
+      "stage1_score": 2,
+      "stage1_verdict": "fail",
+      "stage1_summary": "The enrichment contains at least one clearly wrong comparable, probable vintage-specific facts misapplied as evergreen copy, and no real connection between Pened\u00e8s terroir and the wine's character \u2014 all three fields need a rewrite.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 4,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "factual_error",
+            "voice_drift"
+          ],
+          "note": "Grapes and origin are correctly named, but '2009 vintage aged three months in oak' and '11.5% alcohol' appear to be vintage-specific facts presented as general wine truths \u2014 not defensible for a catalog entry without confirmed sourcing, and the sentence structure reads like a spec sheet dump rather than a hook."
+        },
+        "style": {
+          "specificity": 3,
+          "voice": 3,
+          "accuracy": 3,
+          "issues": [
+            "ok"
+          ],
+          "note": "Reasonably direct and grape-specific, but 'aromatic intensity' and 'structured by Sauvignon Blanc' are functional shorthand without any connection to place, soil, or what those qualities actually taste like \u2014 acceptable but thin."
+        },
+        "comparable": {
+          "specificity": 3,
+          "voice": 2,
+          "accuracy": 2,
+          "issues": [
+            "factual_error",
+            "voice_drift",
+            "generic_filler"
+          ],
+          "note": "Bornard Les Chassagnes is a Poulsard-dominant Jura red \u2014 not a Gew\u00fcrztraminer wine \u2014 making that comparison factually wrong; La Crema California Sauvignon Blanc is a poor match stylistically (New World commercial vs. aromatic Catalan blend) and the shared-grape logic is too shallow to help a buyer."
+        },
+        "overall": {
+          "score": 2,
+          "verdict": "fail",
+          "summary": "The enrichment contains at least one clearly wrong comparable, probable vintage-specific facts misapplied as evergreen copy, and no real connection between Pened\u00e8s terroir and the wine's character \u2014 all three fields need a rewrite."
+        }
+      }
+    },
+    {
+      "wine_id": "069a7c0f-bee1-421a-95ae-59475fc40372",
+      "grade": "C",
+      "display_name": "des Bosquets, Gigondas La Font",
+      "producer": "des Bosquets",
+      "appellation": "Gigondas",
+      "country": "France",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 0,
+        "n_vintages": 1,
+        "has_appellation_rules": true,
+        "n_scores": 0,
+        "has_price": true,
+        "n_unknowns": 13,
+        "n_comparables": 0
+      },
+      "enrichment": {
+        "hook": "des Bosquets, Gigondas La Font is a red wine from the Rh\u00f4ne Valley appellation of Gigondas, produced in the 2007 vintage. Gigondas reds are built on Grenache as the principal grape, with Syrah, Mourv\u00e8dre, and Cinsaut permitted as complementary varieties under appellation law.",
+        "style_profile": "Red table wine from Gigondas.",
+        "comparable_wines": "No close comparables in the Loam catalog yet."
+      },
+      "fact_check_status": "retried_passed",
+      "fact_check_flags": [],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.009967,
+      "gen_usage": {
+        "input_tokens": 6317,
+        "output_tokens": 730
+      },
+      "error": null,
+      "stage1_score": 2,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields either restate metadata the buyer already has or punt entirely \u2014 none of them teach anything about this wine, this producer, or why someone should care; needs a full rewrite against the voice guide.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 3,
+          "voice": 3,
+          "accuracy": 4,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "The appellation law sentence is useful and accurate, but the opening clause ('is a red wine from the Rh\u00f4ne Valley appellation of Gigondas, produced in the 2007 vintage') is pure catalog boilerplate \u2014 it restates the label and adds nothing; a real hook would say something about what Gigondas La Font actually tastes or feels like, or what distinguishes des Bosquets as a producer."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 2,
+          "accuracy": 4,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Three words that restate the color and type fields already in the database \u2014 this is filler by definition and should either describe the wine's actual character (weight, tannin, fruit profile typical of Gigondas) or be left blank rather than occupy the field with noise."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 3,
+          "accuracy": 5,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Honest and not wrong, but it wastes the field \u2014 if no catalog comparables exist, the field should name external reference points a buyer would recognize (e.g., Ch\u00e2teau Rayas Ch\u00e2teauneuf-du-Pape for texture, or a Vacqueyras at a lower price point) rather than simply reporting a catalog gap."
+        },
+        "overall": {
+          "score": 2,
+          "verdict": "fail",
+          "summary": "All three fields either restate metadata the buyer already has or punt entirely \u2014 none of them teach anything about this wine, this producer, or why someone should care; needs a full rewrite against the voice guide."
+        }
+      }
+    },
+    {
+      "wine_id": "4c7706b9-decc-4572-8430-bd8e7309c128",
+      "grade": "C",
+      "display_name": "King Estate Mountain Blocks Rose of Pinot Noir, Willamette Valley",
+      "producer": "King Estate",
+      "appellation": "Willamette Valley",
+      "country": "United States",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 5,
+        "has_price": true,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": null,
+        "style_profile": "Dry ros\u00e9 with Pinot Noir character.",
+        "comparable_wines": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_hook",
+          "claim": "composed primarily of Pinot Noir",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "replace_with_facts"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Fowles Wine Are you Game? Chardonnay, Victoria \u2014 a still table wine from a cool-climate region",
+          "issue": "contradicted",
+          "severity": "high",
+          "suggested_fix": "replace_with_facts"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Ochota Barrels A Forest Pinot Noir, Adelaide Hills \u2014 a wine produced from Pinot Noir in a cool southern-hemisphere appellation",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.011177,
+      "gen_usage": {
+        "input_tokens": 5792,
+        "output_tokens": 1077
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields are either blank or reduced to a single content-free phrase; this entry delivers zero information a buyer couldn't read off the bottle and must be fully rewritten.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": "uncertain",
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 no content to evaluate, but a blank hook is a functional failure for catalog enrichment."
+        },
+        "style": {
+          "specificity": 2,
+          "voice": 2,
+          "accuracy": "uncertain",
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "\"Dry ros\u00e9 with Pinot Noir character\" restates the label data and adds nothing \u2014 no mention of Willamette Valley climate, volcanic or sedimentary soils, fruit profile, or texture that would distinguish this wine from any other Oregon ros\u00e9."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": "uncertain",
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 comparables are a key decision-support tool and the absence is a straight failure, not a minor gap."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "All three fields are either blank or reduced to a single content-free phrase; this entry delivers zero information a buyer couldn't read off the bottle and must be fully rewritten."
+        }
+      }
+    },
+    {
+      "wine_id": "daf5ebb0-7f92-4fef-af56-ed3d48baa365",
+      "grade": "C",
+      "display_name": "Two Hands Twelftree Road Tatachilla California, McLaren Vale",
+      "producer": "Two Hands",
+      "appellation": "McLaren Vale",
+      "country": "Australia",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 1,
+        "n_vintages": 2,
+        "has_appellation_rules": true,
+        "n_scores": 0,
+        "has_price": true,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Two Hands Twelftree Road is a McLaren Vale red built on Listan Prieto, a varietal grounded in Spanish heritage. At $20, it represents the McLaren Vale appellation's 433 km\u00b2 footprint and its diverse approach to winemaking.",
+        "style_profile": "Red table wine, 75% Listan Prieto.",
+        "comparable_wines": "Philipp Kuhn Mano Negra (Pfalz) \u2014 same Listan Prieto base. Pax Somers Mission (Lodi) \u2014 Listan Prieto from another New World region. Durigutti Proyecto Las Compuertas Gobelet Criolla (Mendoza) \u2014 Listan Prieto in South America."
+      },
+      "fact_check_status": "partial",
+      "fact_check_flags": [
+        {
+          "field": "ai_hook",
+          "claim": "a varietal grounded in Spanish heritage",
+          "issue": "not_in_facts",
+          "severity": "low",
+          "suggested_fix": "remove"
+        },
+        {
+          "field": "ai_hook",
+          "claim": "its diverse approach to winemaking",
+          "issue": "not_in_facts",
+          "severity": "low",
+          "suggested_fix": "remove"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.011665000000000002,
+      "gen_usage": {
+        "input_tokens": 5765,
+        "output_tokens": 1180
+      },
+      "error": null,
+      "stage1_score": 2,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields contain unverified or fabricated specifics (blend percentage, appellation area, comparable wine provenance) that violate the core accuracy requirement, and the hook in particular lapses into generic filler rather than connecting place, grape, or flavor to a buying decision.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 3,
+          "voice": 2,
+          "accuracy": 2,
+          "issues": [
+            "factual_error",
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "The 433 km\u00b2 figure is unverified filler that teaches nothing useful, 'diverse approach to winemaking' is pure generic_filler, and the wine name includes 'California' which is almost certainly a data error that the hook silently perpetuates rather than flagging."
+        },
+        "style": {
+          "specificity": 2,
+          "voice": 2,
+          "accuracy": 2,
+          "issues": [
+            "factual_error",
+            "generic_filler"
+          ],
+          "note": "Asserting '75% Listan Prieto' with no sourced blend data is a fabricated precision; if the varietal composition is unknown, say so \u2014 and a one-field tag this bare adds no stylistic information at all."
+        },
+        "comparable": {
+          "specificity": 4,
+          "voice": 3,
+          "accuracy": 2,
+          "issues": [
+            "factual_error"
+          ],
+          "note": "Producers and regions are named specifically, which is good, but the Pax Somers bottling is listed as Lodi \u2014 Pax Wines' Mission sources are typically Sonoma County, not Lodi \u2014 and the sole selection criterion ('same Listan Prieto base') is repeated verbatim three times without distinguishing what a buyer would actually taste differently across the three."
+        },
+        "overall": {
+          "score": 2,
+          "verdict": "fail",
+          "summary": "All three fields contain unverified or fabricated specifics (blend percentage, appellation area, comparable wine provenance) that violate the core accuracy requirement, and the hook in particular lapses into generic filler rather than connecting place, grape, or flavor to a buying decision."
+        }
+      }
+    },
+    {
+      "wine_id": "b13027e1-a879-44bc-8c71-679b35c7de03",
+      "grade": "C",
+      "display_name": "Kumeu River Hunting Hill Pinot Noir, Kumeu",
+      "producer": "Kumeu River",
+      "appellation": "Kumeu",
+      "country": "New Zealand",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 2,
+        "n_vintages": 2,
+        "has_appellation_rules": false,
+        "n_scores": 0,
+        "has_price": true,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Kumeu River's Hunting Hill Pinot Noir is sourced from Kumeu in New Zealand's North Island. The 2006 vintage reaches 14.0% ABV.",
+        "style_profile": "Red table wine from Pinot Noir.",
+        "comparable_wines": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Vina Cobos Felino Chardonnay, Mendoza \u2014 both wines are produced outside traditional Old World regions.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove or mark_unknown"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Wakefield St. Andrews Chardonnay, Clare Valley \u2014 both are Southern Hemisphere wines from established producers.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove or mark_unknown"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.010707,
+      "gen_usage": {
+        "input_tokens": 5327,
+        "output_tokens": 1076
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields fail Loam's core standard: the hook is filler metadata, the style profile adds nothing beyond what the record already states, and comparables are absent entirely \u2014 no field connects place to flavor or helps a buyer make a decision.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 2,
+          "voice": 1,
+          "accuracy": 2,
+          "issues": [
+            "generic_filler",
+            "voice_drift",
+            "factual_error"
+          ],
+          "note": "Recites metadata (appellation, vintage, ABV) without connecting place to taste or saying anything useful; also leads with Chardonnay-producing Kumeu River without clarifying this is their Pinot program, and the 2006 vintage/14.0% ABV detail is presented as if sourced from the catalog record but cannot be verified as accurate for this specific bottling."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Technically accurate but functionally useless \u2014 'Red table wine from Pinot Noir' restates the color/type field verbatim and teaches a buyer nothing about this wine's actual character, weight, or regional profile."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 a complete miss; Kumeu River Pinot has obvious comparables (e.g., Ata Rangi, Felton Road, lighter-styled Central Otago or Martinborough Pinots) that would genuinely help a buyer's decision."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "All three fields fail Loam's core standard: the hook is filler metadata, the style profile adds nothing beyond what the record already states, and comparables are absent entirely \u2014 no field connects place to flavor or helps a buyer make a decision."
+        }
+      }
+    },
+    {
+      "wine_id": "f01e5dbc-5aaa-4d7f-b646-366525f29dfc",
+      "grade": "C",
+      "display_name": "Bertani Ognisanti di Novare, Valpolicella Superiore",
+      "producer": "Bertani",
+      "appellation": "Valpolicella",
+      "country": "Italy",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 5,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 4,
+        "has_price": false,
+        "n_unknowns": 12,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": null,
+        "style_profile": "Medium-bodied dry red with red fruit character and structure from Corvina and Corvinone.",
+        "comparable_wines": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_hook",
+          "claim": "has received gold medals at the Berliner Wine Trophy across multiple vintages",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "replace_with_facts"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Cecilia Beretta Terre di Cariano, Valpolicella Superiore\u2014a peer wine within the same appellation and classification tier",
+          "issue": "contradicted",
+          "severity": "high",
+          "suggested_fix": "remove"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.013059,
+      "gen_usage": {
+        "input_tokens": 7239,
+        "output_tokens": 1164
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "Two of three fields are completely empty and the one populated field is too generic to be useful \u2014 the entire entry needs to be rewritten with producer context, site specificity, and Loam-standard directness before it is publishable.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 no hook exists to evaluate; needs to be written from scratch with specific reference to Bertani, Ognisanti di Novare, and what distinguishes this wine within Valpolicella Superiore."
+        },
+        "style": {
+          "specificity": 2,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Leads with a generic descriptor ('medium-bodied dry red with red fruit character') that could apply to hundreds of wines; names Corvina and Corvinone but ignores the rarer listed varieties (Croatina/Hrvatica, Corbina), and says nothing specific about Valpolicella Superiore's ripasso process, the single-vineyard Ognisanti site, or any concrete flavor anchors beyond 'red fruit.'"
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 no comparables exist to evaluate; should name specific producers and wines (e.g., Allegrini Palazzo della Torre, Zenato Ripassa, or a lighter Amarone) with a brief reason why each is analogous or a useful alternative."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "Two of three fields are completely empty and the one populated field is too generic to be useful \u2014 the entire entry needs to be rewritten with producer context, site specificity, and Loam-standard directness before it is publishable."
+        }
+      }
+    },
+    {
+      "wine_id": "f5146e11-c736-4de9-aed9-afb0c13d195f",
+      "grade": "C",
+      "display_name": "Babich Black Label Pinot Noir, Marlborough",
+      "producer": "Babich",
+      "appellation": "Marlborough",
+      "country": "New Zealand",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 2,
+        "n_vintages": 3,
+        "has_appellation_rules": false,
+        "n_scores": 1,
+        "has_price": true,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": null,
+        "style_profile": "Medium-bodied dry red with Pinot Noir's characteristic red fruit and spice.",
+        "comparable_wines": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_hook",
+          "claim": "The 2016 vintage earned a silver medal at TEXSOM International Wine Awards.",
+          "issue": "contradicted",
+          "severity": "high",
+          "suggested_fix": "remove or correct \u2014 ground truth shows 'TEXSOM International Wine Awards: None/None (2016) (silver medal)', which is ambiguous but the 'None/None' structure suggests no documented score, making the silver medal claim unsupported"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "The COMPARABLE WINES list contains only Chardonnays; this wine is a Pinot Noir.",
+          "issue": "contradicted",
+          "severity": "high",
+          "suggested_fix": "remove \u2014 ground truth shows grapes as 'Chardonnay (100.0%), Pinot Noir (75.0%)', indicating this wine contains 100% Chardonnay and 75% Pinot Noir (which is compositionally impossible as stated, but the presence of Chardonnay contradicts the claim that this is solely a Pinot Noir)"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.010642,
+      "gen_usage": {
+        "input_tokens": 5357,
+        "output_tokens": 1057
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "Two of three fields are blank, the one populated field contains a probable grape-list data error it does not flag and defaults to generic category language with zero Marlborough or producer specificity \u2014 this entry requires a full rewrite and upstream data correction before publication.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 no content to evaluate; a critical customer-facing field is missing entirely."
+        },
+        "style": {
+          "specificity": 2,
+          "voice": 2,
+          "accuracy": 2,
+          "issues": [
+            "generic_filler",
+            "factual_error",
+            "voice_drift"
+          ],
+          "note": "The style tag echoes back only the grape name with no place-specific detail, and including Chardonnay in the grape list while describing a red wine that is Pinot Noir-only raises an accuracy concern \u2014 the entry's listed grapes include Chardonnay, which cannot be correct for a red table wine and likely reflects a data error that the copy then compounds by leaning into 'Pinot Noir's characteristic red fruit and spice' without naming a single actual flavor, soil type, or Marlborough-specific reference."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 no comparables provided, leaving buyers with no navigation aid."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "Two of three fields are blank, the one populated field contains a probable grape-list data error it does not flag and defaults to generic category language with zero Marlborough or producer specificity \u2014 this entry requires a full rewrite and upstream data correction before publication."
+        }
+      }
+    },
+    {
+      "wine_id": "8fcdfbeb-0ec8-44ff-ba01-d6455d97a5b4",
+      "grade": "C",
+      "display_name": "Quinta do Noval Black, Porto",
+      "producer": "Quinta do Noval",
+      "appellation": null,
+      "country": "Portugal",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 0,
+        "n_vintages": 1,
+        "has_appellation_rules": false,
+        "n_scores": 0,
+        "has_price": true,
+        "n_unknowns": 14,
+        "n_comparables": 0
+      },
+      "enrichment": {
+        "hook": "Quinta do Noval Black is a fortified red from the Douro region of Portugal, produced by Quinta do Noval. This non-vintage Porto sits at an accessible price point of $26.",
+        "style_profile": "Fortified red from Portugal's Douro region.",
+        "comparable_wines": "No close comparables in the Loam catalog yet."
+      },
+      "fact_check_status": "passed",
+      "fact_check_flags": [],
+      "retries": 0,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.003078,
+      "gen_usage": {
+        "input_tokens": 2233,
+        "output_tokens": 169
+      },
+      "error": null,
+      "stage1_score": 2,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields fail to meet Loam's specificity standard \u2014 no grape varieties, no house style context for Noval Black, no value judgment \u2014 leaving a buyer no better informed than the back label.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 2,
+          "voice": 2,
+          "accuracy": 4,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Restates label information without adding anything \u2014 no grapes, no style character, no value context beyond a price mention that doesn't explain whether $26 is good or average for entry-level Porto."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 2,
+          "accuracy": 4,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "A four-word restatement of the appellation data already in the record \u2014 adds zero style information, no grape blend, no sweetness level, no texture or weight cues."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 3,
+          "accuracy": 5,
+          "issues": [
+            "ok"
+          ],
+          "note": "Honest and defensible as a placeholder, but a real audit pass would expect the writer to name obvious out-of-catalog comparables (e.g., Graham's Six Grapes, Ramos Pinto Collector) rather than leaving the buyer with nothing."
+        },
+        "overall": {
+          "score": 2,
+          "verdict": "fail",
+          "summary": "All three fields fail to meet Loam's specificity standard \u2014 no grape varieties, no house style context for Noval Black, no value judgment \u2014 leaving a buyer no better informed than the back label."
+        }
+      }
+    },
+    {
+      "wine_id": "61b51a7c-6400-4614-aa32-3d2a38f85777",
+      "grade": "C",
+      "display_name": "J Vineyards Eastside Knoll Pinot Noir, Russian River Valley",
+      "producer": "J Vineyards",
+      "appellation": "Russian River Valley",
+      "country": "United States",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 5,
+        "has_price": false,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "J Vineyards Eastside Knoll Pinot Noir is a Russian River Valley red built from 75% Pinot Noir. The wine has received multiple medals at TEXSOM International Wine Awards, including a gold medal in 2016 and silver medals in 2013 and 2019.",
+        "style_profile": "Dry red Pinot Noir with red fruit character and structure from the variety.",
+        "comparable_wines": "Ochota Barrels A Forest Pinot Noir, Adelaide Hills \u2014 a Pinot Noir from a cool maritime region with similar varietal expression and structure."
+      },
+      "fact_check_status": "partial",
+      "fact_check_flags": [],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.011684,
+      "gen_usage": {
+        "input_tokens": 5514,
+        "output_tokens": 1234
+      },
+      "error": null,
+      "stage1_score": 2,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields fail Loam's core standard \u2014 the hook carries a probable factual error, the style profile is a content-free placeholder, and the comparable dodges the real stylistic comparison work; none of them connect place to taste or give a buyer actionable information.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 3,
+          "voice": 2,
+          "accuracy": 2,
+          "issues": [
+            "factual_error",
+            "voice_drift",
+            "generic_filler"
+          ],
+          "note": "The '75% Pinot Noir' claim is unsupported and likely wrong for a single-varietal estate Pinot Noir \u2014 this is a significant factual risk; the medal recitation reads like press kit filler and teaches the buyer nothing useful."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "This could describe virtually any Pinot Noir on the planet \u2014 no reference to Russian River Valley's specific character (coastal fog, Goldridge sandy loam, cool nights), no tonal or textural specificity whatsoever."
+        },
+        "comparable": {
+          "specificity": 3,
+          "voice": 3,
+          "accuracy": 2,
+          "issues": [
+            "vague_hedging",
+            "generic_filler"
+          ],
+          "note": "Ochota Barrels is a real, nameable producer which is good, but 'similar varietal expression and structure' is meaningless padding \u2014 Adelaide Hills and Russian River Valley share cool-climate credentials but the stylistic logic (skin contact tendencies at Ochota vs. conventional RRV) is glossed over and potentially misleading."
+        },
+        "overall": {
+          "score": 2,
+          "verdict": "fail",
+          "summary": "All three fields fail Loam's core standard \u2014 the hook carries a probable factual error, the style profile is a content-free placeholder, and the comparable dodges the real stylistic comparison work; none of them connect place to taste or give a buyer actionable information."
+        }
+      }
+    },
+    {
+      "wine_id": "15608e79-70dd-4adc-bdbd-924ec3dc3227",
+      "grade": "C",
+      "display_name": "Ochoa Gran Reserva, Navarra",
+      "producer": "Ochoa",
+      "appellation": "Navarra",
+      "country": "Spain",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 3,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 3,
+        "has_price": false,
+        "n_unknowns": 12,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Ochoa Gran Reserva is a red blend from Navarra anchored by Tempranillo (55%) with Cabernet Sauvignon (30%) and Merlot. The 2015 vintage holds 13.0% ABV; the 2014 reaches 13.5%.",
+        "style_profile": "Medium-bodied red with dark fruit and structure from Cabernet Sauvignon.",
+        "comparable_wines": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Condado de Huelva \u2014 Tempranillo-based Spanish red from a neighboring appellation",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove_or_verify_appellation_claim"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Maxwell Team Picked Tempranillo, McLaren Vale \u2014 Tempranillo-forward blend at similar alcohol range",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove_alcohol_range_claim"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.011503,
+      "gen_usage": {
+        "input_tokens": 6948,
+        "output_tokens": 911
+      },
+      "error": null,
+      "stage1_score": 2,
+      "stage1_verdict": "fail",
+      "stage1_summary": "The hook states specific numbers that appear fabricated, the style profile is pure boilerplate, and the comparables field is blank \u2014 all three fields need a rewrite before this entry is publishable.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 4,
+          "voice": 3,
+          "accuracy": 3,
+          "issues": [
+            "factual_error",
+            "voice_drift"
+          ],
+          "note": "The blend percentages (55/30) and vintage ABV figures read as confidently stated facts but are unverifiable from the base data provided and should be flagged as uncertain; the writing is functional but reads like a spec sheet rather than a purposeful Loam sentence."
+        },
+        "style": {
+          "specificity": 2,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "'Medium-bodied red with dark fruit and structure from Cabernet Sauvignon' is a boilerplate descriptor that could apply to hundreds of wines and teaches the buyer nothing specific about this wine, this appellation, or what distinguishes a Navarra Gran Reserva."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 a Gran Reserva Navarra blend at this price tier has obvious comparison points (Rioja Gran Reserva, other Tempranillo-Cab blends from northern Spain) and the absence of any content is a straight failure."
+        },
+        "overall": {
+          "score": 2,
+          "verdict": "fail",
+          "summary": "The hook states specific numbers that appear fabricated, the style profile is pure boilerplate, and the comparables field is blank \u2014 all three fields need a rewrite before this entry is publishable."
+        }
+      }
+    },
+    {
+      "wine_id": "a7c30b8f-f31a-4380-970b-6ede0dfe4a6d",
+      "grade": "C",
+      "display_name": "Adelaida Version, Paso Robles",
+      "producer": "Adelaida",
+      "appellation": "Paso Robles",
+      "country": "United States",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 5,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 0,
+        "has_price": false,
+        "n_unknowns": 12,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Adelaida Version is a white wine from Paso Robles made from Counoise, Syrah, Grenache, Cinsaut, and Mourv\u00e8dre. The 2013 vintage carries 14.6% ABV.",
+        "style_profile": "White table wine from five Rh\u00f4ne varieties.",
+        "comparable_wines": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Tank Garage Wild Child shares Counoise as a primary component.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove or replace with 'Tank Garage Wild Child shares Counoise as a component' (ground truth only lists Counoise, does not specify 'primary')"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Scarborough Meek No Name & Counoise uses Counoise in a multi-varietal blend.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove or revise (ground truth only lists Counoise for this wine; grape composition beyond Counoise is not documented)"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.010615,
+      "gen_usage": {
+        "input_tokens": 5440,
+        "output_tokens": 1035
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields either restate raw catalog data without interpretation or are blank, and none of them address the glaring red-varieties-listed-as-white-wine anomaly that a useful entry must either explain or flag as a known data uncertainty.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 3,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift",
+            "factual_error"
+          ],
+          "note": "Reads like a database printout \u2014 grapes and ABV listed but no insight delivered; the core factual problem is that Counoise, Syrah, Grenache, Cinsaut, and Mourv\u00e8dre are all red varieties yet the wine is cataloged as white, which the hook ignores entirely and leaves an unresolved contradiction that should be flagged plainly."
+        },
+        "style": {
+          "specificity": 2,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "factual_error",
+            "voice_drift"
+          ],
+          "note": "Five words that restate the catalog fields without adding any perspective on style, texture, or why a buyer should care; the 'white' designation combined with five classic red Rh\u00f4ne varieties is either a cataloging error or a deliberate skin-contact/saign\u00e9e-style anomaly that deserves direct acknowledgment rather than silent repetition."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": "uncertain",
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 no comparables offered at all, which is a straight omission; even a hedged suggestion of Tablas Creek Esprit Blanc or another Paso Rh\u00f4ne white-field blend would give a buyer something to orient against."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "All three fields either restate raw catalog data without interpretation or are blank, and none of them address the glaring red-varieties-listed-as-white-wine anomaly that a useful entry must either explain or flag as a known data uncertainty."
+        }
+      }
+    },
+    {
+      "wine_id": "49e94588-27a5-4890-baf0-70fed65a1f8b",
+      "grade": "C",
+      "display_name": "Taittinger Comte, Champagne",
+      "producer": "Taittinger",
+      "appellation": "Champagne",
+      "country": "France",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 2,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 0,
+        "has_price": true,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Taittinger Comte is a Champagne sparkling white made from Chardonnay and Pinot Blanc. Released across multiple vintages, it sits at the premium end of the Champagne market, retailing between $280 and $800.",
+        "style_profile": "Dry sparkling white with Chardonnay and Pinot Blanc.",
+        "comparable_wines": "Vina Cobos Felino Chardonnay, Mendoza \u2014 shares Chardonnay as a primary grape component. Vincent Girardin, Chablis Tete d'Or \u2014 Chardonnay-based white wine from a cool wine region."
+      },
+      "fact_check_status": "retried_passed",
+      "fact_check_flags": [],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.010377999999999998,
+      "gen_usage": {
+        "input_tokens": 6163,
+        "output_tokens": 843
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields contain a probable factual error at the core (Pinot Blanc in Comtes de Champagne), deliver no sensory or geographic information, and the comparables are so mismatched on price and style as to be actively misleading \u2014 full rewrite required.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 2,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "factual_error",
+            "voice_drift"
+          ],
+          "note": "Reads like a data sheet recitation \u2014 no place, no taste, no point of view \u2014 and the grape list is likely wrong: Comtes de Champagne is a blanc de blancs made exclusively from Chardonnay, not Chardonnay and Pinot Blanc."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "factual_error",
+            "voice_drift"
+          ],
+          "note": "A five-word grape-and-color label that says nothing about texture, dosage, aging, or what actually distinguishes this wine, and repeats the likely incorrect Pinot Blanc inclusion."
+        },
+        "comparable": {
+          "specificity": 2,
+          "voice": 1,
+          "accuracy": 2,
+          "issues": [
+            "factual_error",
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Matching a prestige Champagne to a $15 Mendoza Chardonnay on the sole basis of shared grape variety is a near-useless comparison that would mislead any buyer; comparable wines should reflect style, price tier, and production method \u2014 think Krug Blanc de Blancs or Billecart-Salmon Blanc de Blancs."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "All three fields contain a probable factual error at the core (Pinot Blanc in Comtes de Champagne), deliver no sensory or geographic information, and the comparables are so mismatched on price and style as to be actively misleading \u2014 full rewrite required."
+        }
+      }
+    },
+    {
+      "wine_id": "12b6479f-0c67-486d-b8bd-15258a9b4d82",
+      "grade": "C",
+      "display_name": "Felton Road Block 2 Chardonnay, Central Otago",
+      "producer": "Felton Road",
+      "appellation": "Central Otago",
+      "country": "New Zealand",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 2,
+        "n_vintages": 3,
+        "has_appellation_rules": false,
+        "n_scores": 0,
+        "has_price": false,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Felton Road Block 2 is a Chardonnay from Central Otago, New Zealand's southernmost wine region. The 2023 vintage carries 14.0% ABV.",
+        "style_profile": "Dry white Chardonnay.",
+        "comparable_wines": "Wakefield St. Andrews Chardonnay, Clare Valley \u2014 another Southern Hemisphere Chardonnay from a cool climate region. Vina Cobos Felino Chardonnay, Mendoza \u2014 a Chardonnay from a high-altitude, cool-climate appellation."
+      },
+      "fact_check_status": "partial",
+      "fact_check_flags": [
+        {
+          "field": "ai_hook",
+          "claim": "Central Otago, New Zealand's southernmost wine region",
+          "issue": "not_in_facts",
+          "severity": "low",
+          "suggested_fix": "remove_or_mark_unknown"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Vina Cobos Felino Chardonnay, Mendoza \u2014 a Chardonnay from a high-altitude, cool-climate appellation",
+          "issue": "not_in_facts",
+          "severity": "low",
+          "suggested_fix": "remove_descriptor"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.009052,
+      "gen_usage": {
+        "input_tokens": 5147,
+        "output_tokens": 781
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields fail Loam's core standard \u2014 no place-to-taste connection, no point of view, one likely factual error, and the style field is a verbatim echo of the product metadata; requires full rewrite.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 2,
+          "voice": 1,
+          "accuracy": 2,
+          "issues": [
+            "generic_filler",
+            "voice_drift",
+            "factual_error"
+          ],
+          "note": "Restates the label without adding anything (no Block 2 site detail, no soil, no style signal), and citing '14.0% ABV' as the second sentence's only fact is filler; also, Central Otago is not NZ's southernmost wine region \u2014 Otago/Canterbury competes with Marlborough's southern edges, and Canterbury/Waipara is further south than parts of Central Otago, making the claim misleading."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 2,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "'Dry white Chardonnay' is a three-word restatement of the color/type field and teaches a buyer nothing \u2014 no texture, no oak register, no acidity profile, no mention of Pinot Blanc in the blend."
+        },
+        "comparable": {
+          "specificity": 3,
+          "voice": 2,
+          "accuracy": 2,
+          "issues": [
+            "generic_filler",
+            "voice_drift",
+            "factual_error"
+          ],
+          "note": "Both comps are named with appellation, which is a baseline, but the reasoning ('cool climate region', 'cool-climate appellation') is vague filler rather than a genuine taste or style bridge; Wakefield St. Andrews is Clare Valley, which is warm-continental and a stylistically poor match for Felton Road's high-altitude, reductive Central Otago style, making it a questionable comparable."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "All three fields fail Loam's core standard \u2014 no place-to-taste connection, no point of view, one likely factual error, and the style field is a verbatim echo of the product metadata; requires full rewrite."
+        }
+      }
+    },
+    {
+      "wine_id": "56594676-4e85-4309-90b0-51b1ae85a89b",
+      "grade": "C",
+      "display_name": "Fairview Goats Roam The Goatfather, Coastal Region",
+      "producer": "Fairview",
+      "appellation": "Coastal Region",
+      "country": "South Africa",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 3,
+        "n_vintages": 1,
+        "has_appellation_rules": true,
+        "n_scores": 1,
+        "has_price": false,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Fairview's Goatfather blends Cabernet Sauvignon, Sangiovese, and Merlot from South Africa's Coastal Region. This non-vintage red won a gold medal at the Berliner Wine Trophy.",
+        "style_profile": "Red table wine with Cabernet Sauvignon structure and dark fruit character.",
+        "comparable_wines": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Soos Creek Le Tastevin Cabernet Sauvignon, Red Mountain \u2014 a Cabernet Sauvignon-based wine sharing similar dark fruit and structure.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove or replace with wines from the approved comparable list"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Behrens Family Winery Camping Forever Cabernet Sauvignon, St. Helena \u2014 another Cabernet-forward blend offering comparable body and profile.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove or replace with wines from the approved comparable list"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.010624,
+      "gen_usage": {
+        "input_tokens": 5564,
+        "output_tokens": 1012
+      },
+      "error": null,
+      "stage1_score": 2,
+      "stage1_verdict": "fail",
+      "stage1_summary": "The entry fails on a probable fabricated award claim in the hook, omits Sangiovese from the style profile despite it being a named grape, and leaves comparables entirely blank \u2014 collectively these undermine both trust and utility.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 3,
+          "voice": 2,
+          "accuracy": 2,
+          "issues": [
+            "factual_error",
+            "voice_drift",
+            "generic_filler"
+          ],
+          "note": "The gold medal claim is unverified and potentially fabricated \u2014 a serious factual risk; the sentence structure is functional but reads as AI-generic catalog copy rather than Loam's direct, point-of-view voice."
+        },
+        "style": {
+          "specificity": 2,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Mentioning only Cabernet structure and dark fruit ignores Sangiovese entirely \u2014 a significant omission for a Sangiovese blend \u2014 and 'dark fruit character' is the kind of placeholder language Loam explicitly avoids."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty; for a Cab-Sangiovese-Merlot blend at this price tier there are obvious reference points (e.g., mid-range Tuscan blends, other Coastal Region reds) that would genuinely help a buyer."
+        },
+        "overall": {
+          "score": 2,
+          "verdict": "fail",
+          "summary": "The entry fails on a probable fabricated award claim in the hook, omits Sangiovese from the style profile despite it being a named grape, and leaves comparables entirely blank \u2014 collectively these undermine both trust and utility."
+        }
+      }
+    },
+    {
+      "wine_id": "5367fc5a-14a0-4214-a446-e815088fa152",
+      "grade": "C",
+      "display_name": "Oak Farm Vineyards Mohr-Fry Ranches Block 417 Zinfandel, Lodi",
+      "producer": "Oak Farm Vineyards",
+      "appellation": "Lodi",
+      "country": "United States",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 2,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 1,
+        "has_price": false,
+        "n_unknowns": 12,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": null,
+        "style_profile": "Red table wine with Sauvignon Blanc and Primitivo.",
+        "comparable_wines": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_hook",
+          "claim": "pairs Sauvignon Blanc and Primitivo in a red table wine from Sacramento and San Joaquin Counties",
+          "issue": "contradicted",
+          "severity": "high",
+          "suggested_fix": "replace_with_facts"
+        },
+        {
+          "field": "ai_hook",
+          "claim": "Block 417 Zinfandel from Lodi",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "replace_with_facts"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "La Crema Sauvignon Blanc, California \u2014 a California white that shares regional origin and Sauvignon Blanc as a varietal component",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.010847,
+      "gen_usage": {
+        "input_tokens": 5537,
+        "output_tokens": 1062
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "This entry has a foundational data integrity failure \u2014 the grapes are mislabeled (Sauvignon Blanc on a red Zinfandel), which corrupts all downstream enrichment fields; correct the source data before any copy is written.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "factual_error",
+            "generic_filler"
+          ],
+          "note": "Field is empty, and the grape data feeding this entry is wrong \u2014 Block 417 is a Zinfandel, not Sauvignon Blanc/Primitivo, so any hook generated from this catalog record would be built on bad inputs."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 2,
+          "accuracy": 1,
+          "issues": [
+            "factual_error",
+            "generic_filler"
+          ],
+          "note": "Sauvignon Blanc and Primitivo are listed as the grapes for a wine cataloged as red Zinfandel from Lodi \u2014 Sauvignon Blanc is a white grape and has no place here; Primitivo is genetically related to Zinfandel but is not what this wine is, making this tag both wrong and misleading."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "factual_error",
+            "generic_filler"
+          ],
+          "note": "Field is empty, and comparables cannot be responsibly generated until the grape variety data is corrected \u2014 any suggestions derived from the current record would point buyers toward the wrong wines entirely."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "This entry has a foundational data integrity failure \u2014 the grapes are mislabeled (Sauvignon Blanc on a red Zinfandel), which corrupts all downstream enrichment fields; correct the source data before any copy is written."
+        }
+      }
+    },
+    {
+      "wine_id": "93095f33-c769-4c19-b338-8f91ff39980d",
+      "grade": "C",
+      "display_name": "Louis Latour, Chambolle-Musigny",
+      "producer": "Louis Latour",
+      "appellation": "Chambolle-Musigny",
+      "country": "France",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 0,
+        "has_price": true,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Louis Latour's Chambolle-Musigny is a Pinot Noir from the C\u00f4te de Nuits, produced under INAO regulations that mandate the principal grape as Pinot Noir with optional accessory varieties limited to 15% blend. Available in documented vintages 2009, 1988, and 1985.",
+        "style_profile": "Dry red Pinot Noir with red fruit and earthy character.",
+        "comparable_wines": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Ochota Barrels A Forest Pinot Noir, Adelaide Hills \u2014 both are unfiltered Pinot Noirs from cool regions.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove the 'unfiltered' descriptor as it is not documented in the ground truth for either wine"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Quealy Musk Creek Pinot Gris, Mornington Peninsula \u2014 both originate from producers working with cool-climate viticulture.",
+          "issue": "contradicted",
+          "severity": "high",
+          "suggested_fix": "remove this comparable entirely; Quealy Musk Creek is a Pinot Gris, not a Pinot Noir, making the 'both' comparison factually incorrect"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.010673,
+      "gen_usage": {
+        "input_tokens": 5718,
+        "output_tokens": 991
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields fail Loam's standards: the hook contains a likely factual error and reads like automated regulatory boilerplate, the style profile is placeholder-level generic, and comparables were not generated at all \u2014 a full rewrite is required.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 2,
+          "voice": 1,
+          "accuracy": 2,
+          "issues": [
+            "factual_error",
+            "voice_drift",
+            "generic_filler"
+          ],
+          "note": "The INAO blending rule cited is wrong \u2014 Chambolle-Musigny AOC does not permit 15% accessory varieties in Pinot Noir; the vintage list reads like database output rather than useful context, and the sentence teaches nothing about what makes this wine or appellation worth caring about."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Accurate in the most minimal sense but says nothing a buyer couldn't guess from reading the label \u2014 no soil, no structure, no acidity note, no producer context, no sense of where Chambolle sits relative to its neighbors."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 no comparables provided, which is a missed opportunity given that Chambolle has obvious reference points (Gevrey for structure contrast, Volnay for cross-C\u00f4te comparison, n\u00e9gociant peers like Jadot or Drouhin)."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "All three fields fail Loam's standards: the hook contains a likely factual error and reads like automated regulatory boilerplate, the style profile is placeholder-level generic, and comparables were not generated at all \u2014 a full rewrite is required."
+        }
+      }
+    },
+    {
+      "wine_id": "08120386-225b-4d6b-a0d4-51383a074b55",
+      "grade": "C",
+      "display_name": "Louis Latour, Roman\u00e9e-Saint-Vivant Grand Cru Les Quatre Journaux",
+      "producer": "Louis Latour",
+      "appellation": "Roman\u00e9e-Saint-Vivant",
+      "country": "France",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 0,
+        "has_price": true,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Roman\u00e9e-Saint-Vivant is a Grand Cru vineyard in Vosne-Roman\u00e9e, C\u00f4te de Nuits, producing Pinot Noir under strict appellation law. Louis Latour's holding in the Les Quatre Journaux parcel represents one of Burgundy's most sought-after expressions. Vintages 2009, 1996, and 1990 are documented in the cellar.",
+        "style_profile": "Dry red Pinot Noir from Grand Cru terroir.",
+        "comparable_wines": "Ochota Barrels A Forest Pinot Noir, Adelaide Hills \u2014 both wines center on Pinot Noir as the principal varietal expression."
+      },
+      "fact_check_status": "partial",
+      "fact_check_flags": [],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.010811,
+      "gen_usage": {
+        "input_tokens": 5471,
+        "output_tokens": 1068
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields fail Loam's core mandate \u2014 none connects place to taste, the style tag is content-free, the comparable is misleading, and the hook violates its own length rule while defaulting to generic AI filler throughout.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 3,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift",
+            "factual_error"
+          ],
+          "note": "The field exceeds the 1-2 sentence brief, the cellar-vintage sentence reads like inventory data rather than useful buyer context, and 'most sought-after expressions' is unsubstantiated filler; also the hook never connects place to taste \u2014 no mention of Vosne limestone, iron-rich soils, or what the wine actually delivers."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Saying 'Dry red Pinot Noir from Grand Cru terroir' restates the label without adding a single piece of useful information \u2014 no soil type, no flavor profile, no structural character, nothing that distinguishes this from any other Burgundy Grand Cru."
+        },
+        "comparable": {
+          "specificity": 2,
+          "voice": 1,
+          "accuracy": 2,
+          "issues": [
+            "generic_filler",
+            "voice_drift",
+            "factual_error"
+          ],
+          "note": "Ochota Barrels A Forest is a warm-climate, low-intervention natural wine at a fraction of the price and a completely different stylistic register; justifying the pairing solely on 'Pinot Noir as the principal varietal expression' is the weakest possible rationale and would actively mislead a buyer."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "All three fields fail Loam's core mandate \u2014 none connects place to taste, the style tag is content-free, the comparable is misleading, and the hook violates its own length rule while defaulting to generic AI filler throughout."
+        }
+      }
+    },
+    {
+      "wine_id": "728044fd-0408-4238-a700-864cc834a92f",
+      "grade": "C",
+      "display_name": "Tyrrell's Vat 1 Semillon, Hunter Valley",
+      "producer": "Tyrrell's",
+      "appellation": "Hunter Valley",
+      "country": "Australia",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 2,
+        "has_price": true,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Tyrrell's Vat 1 Semillon is a white wine from Hunter Valley, Australia's flagship region for the variety. Built on a base of 75% S\u00e9millon, it has earned a gold medal at TEXSOM International Wine Awards (2016) and a silver medal (2013).",
+        "style_profile": "Dry white wine built on S\u00e9millon, delivering stone fruit and herbaceous notes with crisp acidity.",
+        "comparable_wines": "Mount Pleasant (McWilliams) Lovedale Cellar Aged Semillon, Hunter Valley shares the same appellation and grape variety, offering direct regional comparison. Catena Zapata Agrelo Saint Felicien Semillon, Luj\u00e1n de Cuyo is a S\u00e9millon-led white from a warm region with similar fruit-forward character."
+      },
+      "fact_check_status": "passed",
+      "fact_check_flags": [],
+      "retries": 0,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.004271,
+      "gen_usage": {
+        "input_tokens": 2706,
+        "output_tokens": 313
+      },
+      "error": null,
+      "stage1_score": 2,
+      "stage1_verdict": "fail",
+      "stage1_summary": "A factual error on the blend percentage, a style profile that omits Vat 1's defining age-worthiness, and a flawed comparable undermine the entry \u2014 it needs a full rewrite grounded in what makes this wine actually distinctive.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 3,
+          "voice": 2,
+          "accuracy": 2,
+          "issues": [
+            "factual_error",
+            "voice_drift",
+            "generic_filler"
+          ],
+          "note": "Claims 75% S\u00e9millon but Vat 1 is a 100% S\u00e9millon wine; 'flagship region for the variety' is defensible but the medal citation reads like spec-sheet padding with no connective tissue to why this wine matters."
+        },
+        "style": {
+          "specificity": 2,
+          "voice": 2,
+          "accuracy": 2,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Stone fruit and herbaceous notes with crisp acidity is a boilerplate Semillon descriptor that ignores Vat 1's defining characteristic \u2014 that it is released young and thin, only revealing its true toasty, lanolin, and lemon-curd complexity after a decade in bottle \u2014 which is the single most important thing a buyer needs to know."
+        },
+        "comparable": {
+          "specificity": 4,
+          "voice": 3,
+          "accuracy": 2,
+          "issues": [
+            "factual_error"
+          ],
+          "note": "Lovedale is a legitimate and well-chosen regional peer; however Catena Zapata Saint Felicien is a Mendoza white with a fundamentally different profile (richer, oak-influenced, warmer-climate) and describing it as 'similar fruit-forward character' is misleading \u2014 Vat 1 is emphatically not fruit-forward, making this comparison confusing rather than useful."
+        },
+        "overall": {
+          "score": 2,
+          "verdict": "fail",
+          "summary": "A factual error on the blend percentage, a style profile that omits Vat 1's defining age-worthiness, and a flawed comparable undermine the entry \u2014 it needs a full rewrite grounded in what makes this wine actually distinctive."
+        }
+      }
+    },
+    {
+      "wine_id": "e0e5a8b6-57a8-40bd-bdc0-0294c33b1d82",
+      "grade": "C",
+      "display_name": "Bruno Clair, Chambertin Grand Cru",
+      "producer": "Bruno Clair",
+      "appellation": "Chambertin",
+      "country": "France",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 0,
+        "has_price": true,
+        "n_unknowns": 12,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Bruno Clair's Chambertin is a Grand Cru Pinot Noir from the C\u00f4te de Nuits, one of Burgundy's most prestigious vineyard sites. The wine is produced under INAO regulations that mandate Pinot Noir as the principal grape, with accessory varieties permitted up to 15 percent. Available vintages include 2022, 2019, and 2012 (13.0% ABV).",
+        "style_profile": "Dry red Pinot Noir with the structure and depth characteristic of Grand Cru Chambertin.",
+        "comparable_wines": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Ochota Barrels A Forest Pinot Noir from Adelaide Hills shares the varietal foundation and cool-climate character of this Burgundy expression.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove or replace \u2014 while Ochota Barrels A Forest Pinot Noir is in the approved comparable wines list, the claim that it 'shares cool-climate character' with Chambertin Grand Cru is an unsupported inference about terroir similarity. The ground truth does not document Adelaide Hills as cool-climate or establish any stylistic parallel to Burgundy Pinot Noir."
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.010401,
+      "gen_usage": {
+        "input_tokens": 5491,
+        "output_tokens": 982
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields fail: the hook contains a material factual error about permitted grape varieties, the style profile is tautological filler, and the comparables field is blank \u2014 this entry needs a full rewrite before publication.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 2,
+          "voice": 1,
+          "accuracy": 2,
+          "issues": [
+            "factual_error",
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "The INAO 15% accessory variety claim is factually wrong \u2014 Chambertin Grand Cru is Pinot Noir only with no permitted blending varieties; the rest reads like a regulatory summary rather than useful buying information, and the ABV detail is presented without context or source."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Circular and content-free \u2014 saying a Grand Cru Chambertin has 'structure and depth characteristic of Grand Cru Chambertin' teaches a buyer nothing; no soil type (Gevrey limestone and clay), no flavor descriptors, no aging context, no producer style notes."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 no comparables provided at all, which is a straight content failure for a wine at this price and prestige level where buyer navigation to Rousseau, Ponsot, or Trapet would be genuinely useful."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "All three fields fail: the hook contains a material factual error about permitted grape varieties, the style profile is tautological filler, and the comparables field is blank \u2014 this entry needs a full rewrite before publication."
+        }
+      }
+    },
+    {
+      "wine_id": "508c1828-dce8-4b1c-bcd8-38035ba1e965",
+      "grade": "C",
+      "display_name": "Ch\u00e2teau Latour, Pauillac",
+      "producer": "Ch\u00e2teau Latour",
+      "appellation": "Pauillac",
+      "country": "France",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 0,
+        "has_price": true,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": null,
+        "style_profile": "Red table wine from Merlot.",
+        "comparable_wines": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_hook",
+          "claim": "produced from Merlot",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "replace_with_facts"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Lindeman's Bin 40 Merlot (South Eastern Australia) offers a Merlot reference point at a lower price tier",
+          "issue": "contradicted",
+          "severity": "high",
+          "suggested_fix": "remove or correct varietal"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.010428,
+      "gen_usage": {
+        "input_tokens": 5948,
+        "output_tokens": 896
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields are either empty or contain a factual error (wrong primary grape) with zero specificity about Pauillac, Left Bank structure, or Latour's profile \u2014 this entry requires a full rewrite.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": "uncertain",
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 no content to evaluate, but the absence itself is a failure to deliver the required headline."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 2,
+          "accuracy": "uncertain",
+          "issues": [
+            "factual_error",
+            "generic_filler"
+          ],
+          "note": "Ch\u00e2teau Latour is a Cabernet Sauvignon-dominant blend (typically ~75\u201380% Cab Sauv with Merlot, Cabernet Franc, and Petit Verdot); listing Merlot as the sole grape is a significant factual error, and the tag 'Red table wine from Merlot' is the barest possible description with no specificity about Pauillac, Left Bank typicity, or the wine's character."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": "uncertain",
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 no comparables provided for what is one of Bordeaux's most benchmarked wines, leaving a buyer with nothing to navigate by."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "All three fields are either empty or contain a factual error (wrong primary grape) with zero specificity about Pauillac, Left Bank structure, or Latour's profile \u2014 this entry requires a full rewrite."
+        }
+      }
+    },
+    {
+      "wine_id": "e30cc558-3654-4c89-b861-dcd67289fdb9",
+      "grade": "C",
+      "display_name": "Frei Brothers Merlot, Dry Creek Valley",
+      "producer": "Frei Brothers",
+      "appellation": "Dry Creek Valley",
+      "country": "United States",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 5,
+        "has_price": false,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Frei Brothers produces this Merlot from Dry Creek Valley in Sonoma County, California. The wine is made from 100% Merlot grapes. It has received multiple medals at TEXSOM International Wine Awards, including a gold medal in 2010.",
+        "style_profile": "Dry red Merlot from Sonoma County.",
+        "comparable_wines": "Bec Hardy Pertaringa Stage Left Merlot, Adelaide \u2014 a single-varietal Merlot from another established wine region. Lindeman's Bin 40 Merlot, South Eastern Australia \u2014 a Merlot-based red at an accessible price point."
+      },
+      "fact_check_status": "partial",
+      "fact_check_flags": [],
+      "retries": 0,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.0057929999999999995,
+      "gen_usage": {
+        "input_tokens": 2728,
+        "output_tokens": 613
+      },
+      "error": null,
+      "stage1_score": 2,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields recycle label data or make hollow varietal comparisons without connecting place to taste, stating a point of view, or giving a buyer any information that aids a real decision.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 3,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift",
+            "factual_error"
+          ],
+          "note": "Reads like a data dump rather than a hook \u2014 no place-to-taste connection, no point of view, and the TEXSOM gold medal claim (2010) is unverified and oddly dated as a headline fact."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Four words that restate the label; says nothing about flavor, structure, soil, climate, or style that would help a buyer make a decision."
+        },
+        "comparable": {
+          "specificity": 3,
+          "voice": 2,
+          "accuracy": 2,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Comps are loosely justified by grape variety alone ('another established wine region', 'accessible price point') with no flavor, structure, or style rationale connecting them to Frei Brothers, and pairing an Australian supermarket Merlot with a Sonoma appellation wine is a weak match without explanation."
+        },
+        "overall": {
+          "score": 2,
+          "verdict": "fail",
+          "summary": "All three fields recycle label data or make hollow varietal comparisons without connecting place to taste, stating a point of view, or giving a buyer any information that aids a real decision."
+        }
+      }
+    },
+    {
+      "wine_id": "13280107-fe9d-4e9e-b184-b9cf5d97566e",
+      "grade": "C",
+      "display_name": "Red Newt Sawmill Creek South Block Riesling, Finger Lakes",
+      "producer": "Red Newt",
+      "appellation": "Finger Lakes",
+      "country": "United States",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 1,
+        "n_vintages": 1,
+        "has_appellation_rules": true,
+        "n_scores": 1,
+        "has_price": false,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Red Newt Sawmill Creek South Block is a 100% Riesling from the Finger Lakes region of New York. The 2014 vintage received a gold medal at the TEXSOM International Wine Awards.",
+        "style_profile": null,
+        "comparable_wines": "Geheimrat Wegeler Riesling Feinherb (Mosel) \u2014 both are Rieslings from cool-climate regions. Heymann-Lowenstein Kirchberg Riesling (Mosel) \u2014 another single-vineyard Riesling from a cool appellation."
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_style_profile",
+          "claim": "dry to off-dry profile",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove or mark_unknown"
+        },
+        {
+          "field": "ai_style_profile",
+          "claim": "characteristic stone fruit and floral notes",
+          "issue": "not_in_facts",
+          "severity": "low",
+          "suggested_fix": "mark as safe inference (Riesling varietal character) or remove"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.010362000000000001,
+      "gen_usage": {
+        "input_tokens": 5442,
+        "output_tokens": 984
+      },
+      "error": null,
+      "stage1_score": 2,
+      "stage1_verdict": "fail",
+      "stage1_summary": "The hook contains a potentially false award claim and adds no sensory or place-based insight; the style field is blank; and the comparables name the right wines but give no actionable reasoning \u2014 all three fields need to be rewritten.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 3,
+          "voice": 2,
+          "accuracy": 2,
+          "issues": [
+            "factual_error",
+            "voice_drift",
+            "generic_filler"
+          ],
+          "note": "The TEXSOM gold medal claim is unverified and vintage-specific (2014) in a way that will age badly; the first sentence restates catalog metadata rather than teaching anything about the wine."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 no content to evaluate."
+        },
+        "comparable": {
+          "specificity": 3,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Both comparables are legitimate single-vineyard Mosel Rieslings and the cool-climate framing is defensible, but the rationale ('both are Rieslings from cool-climate regions') is too thin \u2014 it doesn't connect style, sweetness level, or price point to help a buyer actually decide."
+        },
+        "overall": {
+          "score": 2,
+          "verdict": "fail",
+          "summary": "The hook contains a potentially false award claim and adds no sensory or place-based insight; the style field is blank; and the comparables name the right wines but give no actionable reasoning \u2014 all three fields need to be rewritten."
+        }
+      }
+    },
+    {
+      "wine_id": "e9a9343a-f821-4a27-98da-8de1ca087822",
+      "grade": "C",
+      "display_name": "Valdivieso Chardonnay",
+      "producer": "Valdivieso",
+      "appellation": "Valle Central",
+      "country": "Chile",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 2,
+        "n_vintages": 3,
+        "has_appellation_rules": false,
+        "n_scores": 1,
+        "has_price": false,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": null,
+        "style_profile": "Dry white with Chardonnay's stone fruit and oak-derived richness.",
+        "comparable_wines": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_hook",
+          "claim": "The 2015 vintage earned a bronze medal at the TEXSOM International Wine Awards",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "replace_with_facts"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Vina Cobos Felino Chardonnay (Mendoza) \u2014 a Southern Hemisphere Chardonnay from a major wine region.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "mark_unknown"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Wakefield St. Andrews Chardonnay (Clare Valley) \u2014 a Chardonnay-based white from another classic cool-climate region.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "mark_unknown"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.009798,
+      "gen_usage": {
+        "input_tokens": 5183,
+        "output_tokens": 923
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "Two of three fields are empty and the one populated field ignores a listed grape, makes an unverified oak claim, and defaults to generic category language \u2014 a complete rewrite is required.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 no content to evaluate, scores default to 1."
+        },
+        "style": {
+          "specificity": 2,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "factual_error"
+          ],
+          "note": "Pinot Blanc is listed as a co-grape but is completely ignored; 'oak-derived richness' is stated as fact when oak treatment at this tier and producer is unconfirmed, and Central Valley Chardonnay at this price point is often lightly oaked or unoaked."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty \u2014 no content to evaluate, scores default to 1."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "Two of three fields are empty and the one populated field ignores a listed grape, makes an unverified oak claim, and defaults to generic category language \u2014 a complete rewrite is required."
+        }
+      }
+    },
+    {
+      "wine_id": "1d1daae9-4c7a-4e0f-b61c-014c0c8f2b55",
+      "grade": "C",
+      "display_name": "Fox Creek JSM, McLaren Vale",
+      "producer": "Fox Creek",
+      "appellation": "McLaren Vale",
+      "country": "Australia",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 3,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 0,
+        "has_price": false,
+        "n_unknowns": 12,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Fox Creek JSM is a red blend from McLaren Vale, Australia, built from Syrah, Cabernet Sauvignon, and Cabernet Franc. The 2006 vintage carries 14.5% alcohol. McLaren Vale, a 433 km\u00b2 region with roughly 7,400 hectares under vine, has no mandatory varieties, leaving producers free to craft their own blends.",
+        "style_profile": "Full-bodied dry red blend with dark fruit and savory structure from Syrah and Cabernet.",
+        "comparable_wines": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Firestone Clone 174 Syrah, Santa Ynez Valley \u2014 a single-varietal Syrah that shares the core grape component of this blend.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove or replace with comparable wines from the authorized list only"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Hardys Crest Shiraz, South Eastern Australia \u2014 an Australian Syrah-based red at a similar price tier and alcohol level.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove the claim about 'similar price tier and alcohol level' as price range and ABV for Hardys Crest are not documented in ground truth"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.010656000000000002,
+      "gen_usage": {
+        "input_tokens": 5476,
+        "output_tokens": 1036
+      },
+      "error": null,
+      "stage1_score": 2,
+      "stage1_verdict": "fail",
+      "stage1_summary": "The hook wastes its space on inert regional statistics instead of connecting McLaren Vale's soils or climate to what's actually in the glass, the style tag is generic enough to describe hundreds of red blends, and the comparables field was left blank \u2014 none of the three fields meets Loam's standard of specific, decision-useful information.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 3,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "The regional statistics (433 km\u00b2, 7,400 hectares) read like Wikipedia padding rather than information that helps a buyer decide anything; the ABV mention is fine but the hook buries the wine itself in boilerplate geography."
+        },
+        "style": {
+          "specificity": 3,
+          "voice": 3,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Functional but thin \u2014 'dark fruit and savory structure' is near-universal shorthand for any Syrah-Cab blend and does nothing to distinguish JSM or McLaren Vale specifically."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty; no comparables provided at all, which is a straight miss on a required enrichment field."
+        },
+        "overall": {
+          "score": 2,
+          "verdict": "fail",
+          "summary": "The hook wastes its space on inert regional statistics instead of connecting McLaren Vale's soils or climate to what's actually in the glass, the style tag is generic enough to describe hundreds of red blends, and the comparables field was left blank \u2014 none of the three fields meets Loam's standard of specific, decision-useful information."
+        }
+      }
+    },
+    {
+      "wine_id": "8eb8c8f3-2f36-4249-a4a1-6fea1351e3f8",
+      "grade": "C",
+      "display_name": "Chehalem Three Pinot Noir, Willamette Valley",
+      "producer": "Chehalem",
+      "appellation": "Willamette Valley",
+      "country": "United States",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 4,
+        "has_price": false,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Chehalem's Three Pinot Noir from Oregon's Willamette Valley is built on Pinot Noir as its primary component. The wine has earned silver medals at the TEXSOM International Wine Awards in both 2015 and 2016.",
+        "style_profile": "Dry red Pinot Noir from the Pacific Northwest.",
+        "comparable_wines": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_hook",
+          "claim": "Pinot Noir as its primary component",
+          "issue": "not_in_facts",
+          "severity": "medium",
+          "suggested_fix": "replace_with_facts"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Ochota Barrels A Forest Pinot Noir, Adelaide Hills \u2014 both are Pinot Noir-based wines from cool-climate regions",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-haiku-4-5-20251001",
+      "gen_cost_usd": 0.009644,
+      "gen_usage": {
+        "input_tokens": 5524,
+        "output_tokens": 824
+      },
+      "error": null,
+      "stage1_score": 1,
+      "stage1_verdict": "fail",
+      "stage1_summary": "All three fields fail to deliver usable buyer information \u2014 the hook contains a likely factual misread of the wine's name, the style profile is a content-free restatement of visible metadata, and comparables are absent entirely.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 2,
+          "voice": 2,
+          "accuracy": 2,
+          "issues": [
+            "generic_filler",
+            "factual_error",
+            "voice_drift"
+          ],
+          "note": "Stating Pinot Noir is the 'primary component' of a wine called Three Pinot Noir is circular and likely misleading \u2014 the name refers to three Pinot Noir clones or vineyard blocks, not a blend where Pinot is merely dominant; the medal citations are specificity-adjacent but read like marketing copy rather than useful buyer information."
+        },
+        "style": {
+          "specificity": 1,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "Restating the grape, color, and region already visible in the catalog fields adds zero information \u2014 this is placeholder text, not a style profile."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is empty; no comparables provided at all, which is a missed opportunity to orient the buyer among Willamette peers like Rex Hill, A to Z, or Adelsheim at a similar price point."
+        },
+        "overall": {
+          "score": 1,
+          "verdict": "fail",
+          "summary": "All three fields fail to deliver usable buyer information \u2014 the hook contains a likely factual misread of the wine's name, the style profile is a content-free restatement of visible metadata, and comparables are absent entirely."
+        }
+      }
+    },
+    {
+      "wine_id": "de8f4f9e-02f3-45ce-860e-1a0d6f8a02fa",
+      "grade": "B",
+      "display_name": "Frank Family Vineyards Chiles Valley Zinfandel, Napa Valley",
+      "producer": "Frank Family Vineyards",
+      "appellation": "Napa Valley",
+      "country": "United States",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 5,
+        "has_price": true,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Frank Family Vineyards Chiles Valley Zinfandel is a Napa Valley red built on 75% Primitivo, the Italian synonym for Zinfandel. Vintages on record include 2014, 2018, and 2023, and the wine retails between $35 and $40 across eight merchant listings.",
+        "wine_summary": null,
+        "style_profile": "Full-bodied dry red with dark fruit intensity, peppery spice, and grippy tannins.",
+        "terroir_expression": "The Napa Valley viticultural area is located in Napa County, California, as defined under 27 CFR \u00a79.23. Chiles Valley is a sub-district within that county boundary. Specific soil types for this vineyard site are not documented in available records. Primitivo planted in Napa County conditions produces wines with concentrated dark fruit and firm structure; beyond the appellation-level geography, no additional verified terroir data is on record for this bottling.",
+        "food_pairing": "1. Grilled lamb chops \u2014 the fat and char meet the wine's tannin structure and dark fruit directly. 2. Slow-smoked beef brisket \u2014 the wine's weight and pepper notes stand up to the smoke and rendered fat. 3. Spicy Italian sausage pasta \u2014 Zinfandel's bramble fruit offsets the heat and fennel seed without disappearing. 4. Aged cheddar \u2014 the firm tannins and acidity inherent to Primitivo cut through the fat and salt of a hard cheese. 5. Mushroom and black pepper flatbread \u2014 earthy umami from the mushrooms reinforces the grape's natural peppery character.",
+        "cellar_recommendation": "Producer does not publish a specific drinking window. Zinfandel at this price point is generally consumed within five to eight years of vintage, but no producer guidance is on record for this wine.",
+        "comparable_wines": null,
+        "vinification_summary": "Specific vinification details for this wine \u2014 fermentation vessel, oak aging duration, oak origin, new oak percentage, malolactic fermentation status, and closure type \u2014 are not documented. The grape composition on record is 75% Primitivo; the identity and proportion of any remaining varieties are not documented. At the category level, California Napa Valley Zinfandel is a warm-climate red typically fermented to dryness and aged in oak to add structure, but none of those details have been confirmed for this specific bottling."
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_wine_summary",
+          "claim": "The bottling is labeled under the Napa Valley appellation, which is governed by 27 CFR \u00a79.23 and established by T.D. ATF-60.",
+          "issue": "not_in_facts",
+          "severity": "low",
+          "suggested_fix": "mark_unknown"
+        },
+        {
+          "field": "ai_wine_summary",
+          "claim": "The wine has received multiple TEXSOM International Wine Awards medals, including gold medals in 2007 and 2008, a silver in 2012, a silver in 2014, and a bronze in 2011.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Copain Arrowhead Mountain Zinfandel, Sonoma Valley is comparable because it is also built on Primitivo",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "replace_with_facts"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Carlisle Monte Zinfandel, Sonoma Valley is comparable because it shares the Primitivo grape base",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "replace_with_facts"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-sonnet-4-6",
+      "gen_cost_usd": 0.048292,
+      "gen_usage": {
+        "input_tokens": 8054,
+        "output_tokens": 2940
+      },
+      "error": null,
+      "stage1_score": 3,
+      "stage1_verdict": "warn",
+      "stage1_summary": "Food pairings and terroir are solid; two fields are blank placeholders, cellar notes miss an obvious vintage-specific distinction, and style and vinification fall back on category-level generics rather than saying anything specific to this wine.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 4,
+          "voice": 4,
+          "accuracy": 3,
+          "issues": [
+            "factual_error"
+          ],
+          "note": "Good specificity \u2014 names the sub-appellation, synonym relationship, vintage years, price range, and merchant count. Voice is direct and informational. Factual issue: the entry states '75% Primitivo' but Primitivo IS Zinfandel \u2014 describing it as '75% Primitivo, the Italian synonym for Zinfandel' is accurate as a synonym note, but the implication that the remaining 25% is unaccounted for is worth flagging. Larger issue: calling this a 'Napa Valley red built on 75% Primitivo' is slightly misleading if the label says Zinfandel and Primitivo is just the declared grape on the data record. The hook doesn't explain why only 75% is documented or what the other 25% might be, which leaves a small credibility gap."
+        },
+        "summary": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 5,
+          "issues": [
+            "ok"
+          ],
+          "note": "Field is blank ('\u2014'). No content to audit. Technically accurate in that it makes no false claims, but it contributes nothing. Should either be populated or removed from display."
+        },
+        "style": {
+          "specificity": 3,
+          "voice": 3,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "vague_hedging"
+          ],
+          "note": "'Full-bodied dry red with dark fruit intensity, peppery spice, and grippy tannins' is serviceable but generic \u2014 this describes a large category of warm-climate Zinfandel without anchoring to anything specific about this wine, this vineyard, or this producer's style. 'Dark fruit intensity' and 'peppery spice' are category-level descriptors. No mention of alcohol level (Zinfandel commonly runs 14.5\u201316%), no mention of the bramble/jam register vs. fresher styles, no acknowledgment of the Chiles Valley elevation influence on structure. Passes minimally but needs more specificity to be useful."
+        },
+        "terroir": {
+          "specificity": 4,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "ok"
+          ],
+          "note": "Strongest field in the set. It cites the CFR appellation definition, correctly identifies Chiles Valley as a sub-district, honestly flags the absence of soil data, and draws a defensible category-level connection between Primitivo in Napa conditions and the resulting wine profile. Voice is plain and direct. Minor deduction: 'no additional verified terroir data is on record' is slightly bureaucratic phrasing \u2014 could be tightened. Also misses an opportunity to note that Chiles Valley sits at higher elevation than the Napa Valley floor (~1,600 ft), which is a material, verifiable detail that would meaningfully connect place to taste."
+        },
+        "food": {
+          "specificity": 5,
+          "voice": 4,
+          "accuracy": 5,
+          "issues": [
+            "ok"
+          ],
+          "note": "Best field in the audit. All five pairings name specific dishes, every pairing includes a mechanistic reason (tannin structure meets fat, acidity cuts salt, bramble offsets heat), and the range covers casual through more substantial meals. 'Spicy Italian sausage pasta' and 'mushroom and black pepper flatbread' cover the Tuesday-night register; lamb chops and brisket cover Saturday. No sommelier theater. Minor note: 'without disappearing' in pairing 3 is slightly colloquial but acceptable under Loam's voice \u2014 it makes a real point about the wine holding up. Could add one dairy/cheese pairing explanation that goes beyond 'cuts through fat and salt,' but this is minor."
+        },
+        "cellar": {
+          "specificity": 3,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "vague_hedging"
+          ],
+          "note": "Honest about the absence of producer guidance, which is correct Loam behavior. The 5\u20138 year category-level window is defensible for Zinfandel at this price point. Deduction for specificity: doesn't distinguish between the three documented vintages (2014, 2018, 2023), which have materially different remaining windows \u2014 a 2014 at this price point is likely past its optimal window, while a 2023 is just entering it. That distinction is available from the hook's own data and should be used here."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 5,
+          "issues": [
+            "ok"
+          ],
+          "note": "Field is blank ('\u2014'). Same situation as summary \u2014 technically accurate, contributes nothing. Obvious comparables exist (Turley, Ridge, Seghesio) and could be populated with appropriate hedging if data confidence is low."
+        },
+        "vinification": {
+          "specificity": 3,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Appropriately honest about the absence of documented specifics. The category-level note about warm-climate California Zinfandel being fermented to dryness and oak-aged is defensible but generic \u2014 it's padding that doesn't help a decision about this specific wine. The sentence starting 'At the category level...' reads as filler to justify the field's existence. Better to end at 'none of those details have been confirmed for this specific bottling' and cut the category generalization, or replace it with a concrete note that Frank Family is known for a particular style if that is verifiable."
+        },
+        "overall": {
+          "score": 3,
+          "verdict": "warn",
+          "summary": "Food pairings and terroir are solid; two fields are blank placeholders, cellar notes miss an obvious vintage-specific distinction, and style and vinification fall back on category-level generics rather than saying anything specific to this wine."
+        }
+      }
+    },
+    {
+      "wine_id": "29d0e262-bbcb-432d-9276-f6a310e1e628",
+      "grade": "B",
+      "display_name": "Frei Brothers Chardonnay, Russian River Valley",
+      "producer": "Frei Brothers",
+      "appellation": "Russian River Valley",
+      "country": "United States",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 2,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 5,
+        "has_price": true,
+        "n_unknowns": 12,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": null,
+        "wine_summary": null,
+        "style_profile": "Medium- to full-bodied dry white with stone fruit character and moderate acidity.",
+        "terroir_expression": "The Russian River Valley is a federally designated viticultural area within Sonoma County, California, as established under 27 CFR \u00a79.66. Chardonnay grown in this appellation is widely associated with higher natural acidity driven by the cool growing conditions. Soil type for this specific wine is not documented. ABV across the three documented vintages \u2014 13.8% in 2015, 14.2% in 2017, and 13.9% in 2024 \u2014 shows moderate vintage-to-vintage variation.",
+        "food_pairing": "1. Roast chicken: Chardonnay's weight and acidity cut through roasted skin fat without overwhelming white meat. 2. Grilled halibut with butter sauce: the wine's acidity keeps richness in check while complementing mild, flaky fish. 3. Pasta with cream and mushroom: body in the wine holds up to cream-based sauces, and Chardonnay's apple and citrus character offsets earthiness. 4. Brie or Camembert: the softness of bloomy-rind cheese suits the rounded profile typical of Russian River Valley Chardonnay.",
+        "cellar_recommendation": "Producer does not publish a specific drinking window. At $16 and with no documented oak or aging specifications on file, this wine is suited for near-term drinking.",
+        "comparable_wines": null,
+        "vinification_summary": "No winemaker notes, fermentation vessel details, oak treatment, malolactic fermentation status, or \u00e9levage information are on file for this wine. At the category level, Russian River Valley Chardonnay is a white wine produced from Chardonnay grapes grown within Sonoma County, California, under the federal AVA designation of 27 CFR \u00a79.66. All vinification specifics for this label are undocumented."
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_hook",
+          "claim": "including a silver medal in 2017",
+          "issue": "contradicted",
+          "severity": "high",
+          "suggested_fix": "The ground truth shows TEXSOM awarded a silver medal in 2017, but also bronze medals in 2003, 2004, 2010, and 2015. The ai_hook omits the bronze medals and presents 2017 as the sole recognition, which is misleading."
+        },
+        {
+          "field": "ai_wine_summary",
+          "claim": "TEXSOM awarded it bronze medals in 2003, 2004, 2010, and 2015, and a silver medal in 2017",
+          "issue": "supported",
+          "severity": "high",
+          "suggested_fix": "This claim is fully supported by ground truth and correctly lists all TEXSOM awards."
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Vina Cobos Felino Chardonnay, Mendoza",
+          "issue": "supported",
+          "severity": "high",
+          "suggested_fix": "This wine appears in the COMPARABLE WINES list and is a valid reference."
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Wakefield St. Andrews Chardonnay, Clare Valley",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "This wine does NOT appear in the COMPARABLE WINES list. The approved list includes only Vina Cobos Felino, Vincent Girardin Chablis Tete d'Or, and Wakefield St. Andrews is not present. Remove this reference or replace with an approved comparable."
+        },
+        {
+          "field": "ai_cellar_recommendation",
+          "claim": "with no documented oak or aging specifications on file",
+          "issue": "not_in_facts",
+          "severity": "low",
+          "suggested_fix": "This is a safe inference from the UNKNOWN FIELDS list which includes 'oak aging duration' and 'oak origin' as undocumented. Phrasing is appropriate."
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-sonnet-4-6",
+      "gen_cost_usd": 0.048285999999999996,
+      "gen_usage": {
+        "input_tokens": 7920,
+        "output_tokens": 2998
+      },
+      "error": null,
+      "stage1_score": 2,
+      "stage1_verdict": "fail",
+      "stage1_summary": "Two fields are empty, three contain regulatory boilerplate or generic category-level filler that violates Loam's specificity standard, and only the cellar field is genuinely on-voice; the entry needs substantive rewrites across hook, summary, terroir, vinification, and comparables before it meets Grade B standards.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "ok"
+          ],
+          "note": "Empty. No content to evaluate."
+        },
+        "summary": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "ok"
+          ],
+          "note": "Empty. No content to evaluate."
+        },
+        "style": {
+          "specificity": 2,
+          "voice": 3,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "'Stone fruit character' is vague \u2014 which stone fruits? No mention of Pinot Blanc in the blend or what it contributes. 'Moderate acidity' is defensible for the category but unverified against actual tasting data. The sentence is functional but thin; it reads like a boilerplate varietal descriptor rather than anything specific to Frei Brothers or Russian River Valley."
+        },
+        "terroir": {
+          "specificity": 2,
+          "voice": 2,
+          "accuracy": 3,
+          "issues": [
+            "voice_drift",
+            "generic_filler"
+          ],
+          "note": "The CFR citation (27 CFR \u00a79.66) is technically accurate but reads like legal boilerplate, not Loam voice. The acidity-from-cool-climate connection is valid and on-brand, but it's a generic RRV statement rather than anything specific to this wine or producer. The ABV data is a genuine positive \u2014 specific and honest. The soil disclaimer is appropriately candid. Overall the field oscillates between regulatory citation and useful observation without cohering into a real point of view."
+        },
+        "food": {
+          "specificity": 3,
+          "voice": 3,
+          "accuracy": 4,
+          "issues": [
+            "sommelier_theater"
+          ],
+          "note": "Dishes are real and named specifically, which is good. The mechanical explanations ('acidity cuts fat', 'body holds up') are directionally correct and on-voice. However, 'offsets earthiness' for mushroom pasta is vague, and 'softness of bloomy-rind cheese suits the rounded profile' drifts toward sommelier theater. No Tuesday-night option is present \u2014 all four pairings skew weekend or restaurant. Missing a simple weeknight anchor (e.g., rotisserie chicken, pasta with jarred cream sauce). The Pinot Blanc in the blend is ignored entirely."
+        },
+        "cellar": {
+          "specificity": 3,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "ok"
+          ],
+          "note": "This is the strongest field. Price is cited, absence of oak/aging data is stated plainly, and the recommendation ('near-term drinking') follows logically from the evidence. No hedging, no theater. Slightly stronger if it named an approximate window (e.g., 'drink within 1\u20132 years') rather than leaving it implicit."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "ok"
+          ],
+          "note": "Empty. No content to evaluate."
+        },
+        "vinification": {
+          "specificity": 1,
+          "voice": 2,
+          "accuracy": 4,
+          "issues": [
+            "generic_filler",
+            "voice_drift"
+          ],
+          "note": "The first sentence is honest and appropriately direct \u2014 Loam-compliant. The second sentence reverts to regulatory boilerplate (restating the AVA definition, citing 27 CFR \u00a79.66 again) that adds no value and reads like padding. The field should end after 'undocumented'; everything after that is filler. The CFR citation appeared in terroir already and doesn't belong here."
+        },
+        "overall": {
+          "score": 2,
+          "verdict": "fail",
+          "summary": "Two fields are empty, three contain regulatory boilerplate or generic category-level filler that violates Loam's specificity standard, and only the cellar field is genuinely on-voice; the entry needs substantive rewrites across hook, summary, terroir, vinification, and comparables before it meets Grade B standards."
+        }
+      }
+    },
+    {
+      "wine_id": "8e03d24a-ffd2-4c48-9893-7ad0ae58b338",
+      "grade": "B",
+      "display_name": "Cuvaison Durrell Chardonnay, Los Carneros",
+      "producer": "Cuvaison",
+      "appellation": "Los Carneros",
+      "country": "United States",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 2,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 5,
+        "has_price": false,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Cuvaison's Durrell Chardonnay is sourced from Los Carneros, a viticultural area spanning Napa and Sonoma Counties. The wine is a Chardonnay-based white with documented vintages in 2002, 2012, and 2017, and has received medals at the TEXSOM International Wine Awards across multiple competition years.",
+        "wine_summary": null,
+        "style_profile": "Medium-to-full-bodied dry white with Chardonnay's characteristic stone fruit and citrus core, shaped by a cool bay-influenced growing region.",
+        "terroir_expression": "Los Carneros is legally defined under 27 CFR \u00a79.32 as a viticultural area in Napa and Sonoma Counties, California. Its southern location near San Pablo Bay exposes vineyards to persistent marine influence \u2014 cool air and afternoon wind \u2014 that moderates ripening and preserves acidity in Chardonnay. Soil types within Los Carneros are not documented in the available facts for this wine. Vine age, elevation, and specific vineyard aspects for the Durrell site are not documented.",
+        "food_pairing": "1. Roast chicken with pan jus \u2014 Chardonnay's weight and acidity cut through roasted fat without overwhelming the dish. 2. Grilled Pacific halibut \u2014 a firm white fish that holds up to a fuller-bodied white. 3. Pasta with brown butter and sage \u2014 the richness of browned butter aligns with the weight of a Los Carneros Chardonnay. 4. Soft-rind cheeses such as Brie or Camembert \u2014 fat and salt in the cheese balance the wine's acidity. 5. Corn chowder \u2014 the sweetness of corn complements Chardonnay's stone fruit character without competing with it.",
+        "cellar_recommendation": "Producer does not publish a specific window. Documented vintages span 2002, 2012, and 2017; no drinking window data is available in the facts provided.",
+        "comparable_wines": null,
+        "vinification_summary": "Winemaker notes and vinification details for this wine are not documented. Fermentation vessel, oak aging duration, oak origin, new oak percentage, malolactic fermentation status, and closure type are all unknown. At the category level, Chardonnay from Los Carneros \u2014 a cool-climate AVA defined by 27 CFR \u00a79.32 as spanning Napa and Sonoma Counties \u2014 is a grape-and-region combination that producers in this area handle across a wide range of approaches, from unoaked stainless-steel fermentation to barrel fermentation with full malolactic conversion. No specific method is attributed to this wine without documented support."
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_wine_summary",
+          "claim": "The Durrell Chardonnay has earned bronze and silver medals at the TEXSOM International Wine Awards across competition years 1983, 1986, 1995, 1999, and 2002.",
+          "issue": "contradicted",
+          "severity": "high",
+          "suggested_fix": "replace_with_facts"
+        },
+        {
+          "field": "ai_hook",
+          "claim": "has received medals at the TEXSOM International Wine Awards across multiple competition years",
+          "issue": "not_in_facts",
+          "severity": "medium",
+          "suggested_fix": "mark_unknown"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Wakefield St. Andrews Chardonnay, Clare Valley \u2014 both are single-varietal Chardonnays from appellations outside the traditional Burgundian heartland where the variety has established a documented track record.",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-sonnet-4-6",
+      "gen_cost_usd": 0.051647,
+      "gen_usage": {
+        "input_tokens": 8217,
+        "output_tokens": 3102
+      },
+      "error": null,
+      "stage1_score": 3,
+      "stage1_verdict": "warn",
+      "stage1_summary": "Terroir and vinification fields are strong models of the Loam voice; style and food have generic-filler and mild theater issues; summary and comparable are blank, leaving the entry materially incomplete for a customer-facing record.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 4,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "ok"
+          ],
+          "note": "Names the wine, appellation, documented vintages, and a specific competition. Functional and direct. Slightly dry but that's fine \u2014 no filler or theater. Could be strengthened by a single line of editorial perspective rather than pure fact-listing, but it doesn't violate any rules."
+        },
+        "summary": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "ok"
+          ],
+          "note": "Field is a dash \u2014 no content. Not a failure of voice, just absent. If this field is required, it needs to be filled; if intentionally blank, flag for editorial review."
+        },
+        "style": {
+          "specificity": 2,
+          "voice": 3,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler",
+            "vague_hedging"
+          ],
+          "note": "'Stone fruit and citrus core' and 'cool bay-influenced growing region' are generic category descriptors that could apply to almost any Los Carneros Chardonnay. No mention of the Pinot Blanc component or what it contributes to weight or texture. 'Characteristic' is a weak hedge. Needs a sharper, more specific claim \u2014 e.g. what differentiates this wine's profile from a Sonoma Coast or Burgundy-style Chardonnay."
+        },
+        "terroir": {
+          "specificity": 4,
+          "voice": 5,
+          "accuracy": 5,
+          "issues": [
+            "ok"
+          ],
+          "note": "Best field in the entry. Cites the CFR definition, names San Pablo Bay, explains the mechanism (marine influence \u2192 moderated ripening \u2192 preserved acidity), and is honest about what is not documented (soils, vine age, elevation, aspect). Exactly the Loam model: connect place to taste, state what you know, be plain about gaps."
+        },
+        "food": {
+          "specificity": 4,
+          "voice": 3,
+          "accuracy": 4,
+          "issues": [
+            "sommelier_theater",
+            "voice_drift"
+          ],
+          "note": "Dishes are real and named \u2014 good. Explanations of the why are present, which is correct. However, 'the richness of browned butter aligns with the weight' edges toward flavor-poetry rather than a mechanical explanation (fat + oak texture = match). 'Complements without competing' is mild sommelier theater. The list skews Saturday-dinner; a Tuesday-night option (e.g. rotisserie chicken, simple fish tacos) would broaden coverage per the voice guide. Pinot Blanc in the blend is ignored \u2014 could it open a pairing angle?"
+        },
+        "cellar": {
+          "specificity": 2,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "ok"
+          ],
+          "note": "Honest about the absence of data, which is correct. But it stops there \u2014 a stronger entry would offer a category-level inference (e.g. 'cool-climate Chardonnay with preserved acidity typically drinks well 3\u20137 years from vintage; no producer guidance to narrow this') while flagging it as inference. As written it gives the reader nothing actionable."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "ok"
+          ],
+          "note": "Field is a dash \u2014 no content. Los Carneros Chardonnay has obvious comparables (Saintsbury, Acacia, Hyde de Villaine at different price points; Burgundy white comparisons at category level). Leaving this blank is a missed opportunity for the market/value perspective the voice guide explicitly requires."
+        },
+        "vinification": {
+          "specificity": 3,
+          "voice": 4,
+          "accuracy": 5,
+          "issues": [
+            "ok"
+          ],
+          "note": "Correctly documents all unknowns without fabricating. The category-level framing (unoaked stainless through full-malolactic barrel fermentation) is accurate and useful context. Slightly long for what it delivers \u2014 the list of unknowns could be compressed to one sentence. No voice violations."
+        },
+        "overall": {
+          "score": 3,
+          "verdict": "warn",
+          "summary": "Terroir and vinification fields are strong models of the Loam voice; style and food have generic-filler and mild theater issues; summary and comparable are blank, leaving the entry materially incomplete for a customer-facing record."
+        }
+      }
+    },
+    {
+      "wine_id": "c2fb7430-4d41-485f-94c2-6128fd49daeb",
+      "grade": "B",
+      "display_name": "Landmark Vineyards Overlook Chardonnay, California",
+      "producer": "Landmark Vineyards",
+      "appellation": null,
+      "country": "United States",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 2,
+        "n_vintages": 3,
+        "has_appellation_rules": false,
+        "n_scores": 5,
+        "has_price": false,
+        "n_unknowns": 13,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Landmark Vineyards Overlook Chardonnay is a California white built around Chardonnay, with documented vintages reaching 14.2\u201314.3% ABV. It has earned medals at the TEXSOM International Wine Awards across multiple vintages spanning 1993 to 2018, including gold medals in 2011 and 2018.",
+        "wine_summary": null,
+        "style_profile": "Full-bodied dry white with ripe stone fruit character and warm-climate weight.",
+        "terroir_expression": "No legal appellation is assigned to this wine, and no specific soil data is documented in our records. As a California-designated wine, fruit can be sourced from multiple counties across the state. California Chardonnay at this ripeness level \u2014 evidenced by ABV in the 14.2\u201314.3% range \u2014 reflects warm growing conditions that push toward peach, nectarine, and tropical fruit over the leaner citrus profile of cooler sites. Specific vineyard aspects, elevations, or soil types are not documented.",
+        "food_pairing": "1. Roast chicken with pan drippings \u2014 the wine's body and warmth stand up to savory fat without being overwhelmed. 2. Grilled lobster with drawn butter \u2014 the richness of the shellfish calls for a white with enough weight to match. 3. Pork tenderloin with a cream and mustard sauce \u2014 the wine's ripe fruit holds against the richness of a dairy-based sauce. 4. Corn chowder with smoked bacon \u2014 the sweet corn and smoky pork mirror the wine's warm-climate fruit register. 5. Butternut squash risotto \u2014 the starchy, buttery texture of the dish aligns with a full-bodied Chardonnay.",
+        "cellar_recommendation": "Producer does not publish a specific drinking window. At 14.2\u201314.3% ABV, the wine is built for near-term consumption rather than extended cellaring.",
+        "comparable_wines": null,
+        "vinification_summary": "Fermentation vessel, oak program, malolactic fermentation status, and \u00e9levage details are not documented for this wine. At the category level, California Chardonnay at 14.2\u201314.3% ABV is frequently aged in oak \u2014 which adds texture, rounds the midpalate, and introduces vanilla or toast notes \u2014 and undergoes full or partial malolactic fermentation to soften acidity, though neither practice is confirmed here. Any such description applied to the Overlook specifically would be inference, not documented fact."
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_wine_summary",
+          "claim": "The grape composition listed in our data shows Chardonnay at 100% alongside Pinot Blanc at 75%, which suggests a multi-variety sourcing structure",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove_or_clarify - ground truth shows these percentages but does not explain how 100% + 75% = a valid blend; this is internally contradictory and requires winemaker confirmation to resolve"
+        },
+        {
+          "field": "ai_hook",
+          "claim": "earned medals at the TEXSOM International Wine Awards across multiple vintages spanning 1993 to 2018",
+          "issue": "not_in_facts",
+          "severity": "medium",
+          "suggested_fix": "replace_with_facts - TEXSOM medals are documented for 1993, 2011, 2014, 2017, and 2018; no medals documented for 1994\u20132010, 2012\u20132013, 2015\u20132016, or after 2018. Claim oversimplifies the record."
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Vincent Girardin Chablis Tete d'Or: included as a stylistic counterpoint",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "remove - this wine is not in the approved COMPARABLE WINES list (list includes only Vina Cobos Felino Chardonnay, Wakefield St. Andrews Chardonnay, and Vincent Girardin Chablis Tete d'Or; however, the enrichment presents it as a factual comparable when no sourcing or editorial justification is provided in ground truth)"
+        },
+        {
+          "field": "ai_vinification_summary",
+          "claim": "At the category level, California Chardonnay at 14.2\u201314.3% ABV is frequently aged in oak \u2014 which adds texture, rounds the midpalate, and introduces vanilla or toast notes \u2014 and undergoes full or partial malolactic fermentation to soften acidity, though neither practice is confirmed here.",
+          "issue": "not_in_facts",
+          "severity": "low",
+          "suggested_fix": "acceptable as category-level inference; however, ensure the final clause ('though neither practice is confirmed here') is preserved to avoid reader confusion that these details apply to the Overlook specifically"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-sonnet-4-6",
+      "gen_cost_usd": 0.046512,
+      "gen_usage": {
+        "input_tokens": 7536,
+        "output_tokens": 2890
+      },
+      "error": null,
+      "stage1_score": 3,
+      "stage1_verdict": "warn",
+      "stage1_summary": "Vinification and terroir fields demonstrate strong Loam voice discipline, but two fields are entirely blank (summary, comparable), style is generic, food pairings lack a Tuesday-night option, and the hook reads as a data list rather than a useful lead \u2014 collectively the entry is functional but incomplete.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 4,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "ok"
+          ],
+          "note": "Strong on concrete detail \u2014 ABV range, named award, specific vintages and medal tiers. Reads factually, no filler. Minor weakness: it's a data recitation rather than a lead that earns attention; doesn't establish why any of this matters to the buyer. Functional but flat as an opening."
+        },
+        "summary": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "ok"
+          ],
+          "note": "Field is blank (em dash). No content to audit. Scores reflect absence, not failure."
+        },
+        "style": {
+          "specificity": 2,
+          "voice": 3,
+          "accuracy": 3,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "'Full-bodied dry white with ripe stone fruit character and warm-climate weight' is accurate at the category level but applies equally to dozens of California Chardonnays. No specific flavor descriptors, no texture detail, no mention of Pinot Blanc's contribution (a documented grape in the blend). Loam voice asks for a point of view and named specifics \u2014 this delivers a label description."
+        },
+        "terroir": {
+          "specificity": 3,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "ok"
+          ],
+          "note": "Honest and well-structured: explicitly states what is and isn't documented, explains the ABV-to-ripeness inference chain, names specific fruit markers (peach, nectarine, tropical). The disclosure about appellation absence is handled matter-of-factly per voice rules. Slight weakness: 'reflects warm growing conditions' is mild category generalization but is defensible given the ABV evidence cited. No Pinot Blanc mention, which is a gap."
+        },
+        "food": {
+          "specificity": 4,
+          "voice": 3,
+          "accuracy": 4,
+          "issues": [
+            "sommelier_theater",
+            "voice_drift"
+          ],
+          "note": "Dishes are named and specific \u2014 no 'delicate proteins' here. Pairing logic is usually present ('body and warmth stand up to savory fat', 'richness of the shellfish calls for weight'). However, 'the wine's body and warmth stand up to savory fat without being overwhelmed' slides toward sommelier theater. Coverage skews Saturday-dinner heavy (lobster, pork tenderloin); no Tuesday-night option (e.g., rotisserie chicken, pasta with cream sauce). Corn chowder is a good middle-ground entry. Missing a simpler, accessible pairing per Loam's 'full table' rule."
+        },
+        "cellar": {
+          "specificity": 3,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "ok"
+          ],
+          "note": "Direct and honest: no drinking window published, ABV evidence supports near-term framing. Doesn't overclaim. Could be more actionable \u2014 'near-term' is slightly vague; a concrete horizon ('drink within 2\u20133 years of vintage') would sharpen it, even as a category inference. Minor vague_hedging risk but stays on the right side of the line."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "ok"
+          ],
+          "note": "Field is blank (em dash). No content to audit. This is a meaningful gap for a buyer trying to calibrate value or style \u2014 Loam voice asks for market and value perspective. Should be populated."
+        },
+        "vinification": {
+          "specificity": 3,
+          "voice": 5,
+          "accuracy": 5,
+          "issues": [
+            "ok"
+          ],
+          "note": "Exemplary handling of an undocumented field. Clearly separates what is known (nothing confirmed for this wine) from what is typical at the category level, names the practices (oak, MLF), explains their sensory effects (texture, vanilla/toast, softened acidity), and explicitly flags that applying them to the Overlook would be inference. This is the Loam voice at its best: honest, specific at the category level, and protective of the reader. Specificity score docked only because the wine-level data is genuinely absent."
+        },
+        "overall": {
+          "score": 3,
+          "verdict": "warn",
+          "summary": "Vinification and terroir fields demonstrate strong Loam voice discipline, but two fields are entirely blank (summary, comparable), style is generic, food pairings lack a Tuesday-night option, and the hook reads as a data list rather than a useful lead \u2014 collectively the entry is functional but incomplete."
+        }
+      }
+    },
+    {
+      "wine_id": "d4a3e184-0567-4b91-a905-f186f71e5902",
+      "grade": "B",
+      "display_name": "Taylor's Fine Ruby, Porto",
+      "producer": "Taylor's",
+      "appellation": null,
+      "country": "Portugal",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 0,
+        "n_vintages": 0,
+        "has_appellation_rules": false,
+        "n_scores": 0,
+        "has_price": false,
+        "n_unknowns": 14,
+        "n_comparables": 0
+      },
+      "enrichment": {
+        "hook": "Taylor's Fine Ruby is a red fortified Port from Portugal. It is a young, fruit-forward style of Port, bottled without extended barrel aging to preserve freshness and red-fruit character.",
+        "wine_summary": "Taylor's is a Port producer based in Portugal. Fine Ruby is an entry-level ruby Port, a category defined by early bottling relative to Tawny or Vintage styles. Ruby Ports are fermented to partial completion before the addition of grape spirit halts fermentation, preserving residual sweetness and red-fruit intensity. The Fine Ruby style prioritizes vibrancy over oxidative complexity.",
+        "style_profile": "Sweet, full-bodied fortified red with fresh red-fruit character and a warming finish.",
+        "terroir_expression": "The grapes are sourced from Portugal's Port-producing region. Specific vineyard sources, soil types, elevations, and aspects are not documented for this wine. At the category level, ruby Port is produced from red grapes grown in a hot, continental-influenced inland climate that delivers high sugar concentrations and ripe fruit character. Soil types are not documented.",
+        "food_pairing": "1. Dark chocolate or chocolate cake \u2014 the wine's sweetness matches the bitterness of cocoa without conflict. 2. Aged cheddar or hard sheep's milk cheese \u2014 salt and fat in the cheese provide contrast to the wine's sweetness. 3. Beef stew or braised short ribs \u2014 the wine's body and sweetness hold against rich, savory meat. 4. Dried fruit and nut boards \u2014 figs, dates, and walnuts echo the wine's red-fruit and warming character. 5. Blue cheese \u2014 the sharp, salty intensity of blue cheese is cut by the wine's sweetness.",
+        "cellar_recommendation": "Producer does not publish a specific window. Fine Ruby Port is a style intended for early drinking, not long cellaring.",
+        "comparable_wines": "No close comparables in the Loam catalog yet.",
+        "vinification_summary": "Specific vinification details for this wine are not documented. At the category level, ruby Port is produced by fermenting red grapes to partial completion, then adding grape spirit to arrest fermentation. This process preserves residual sugar and retains fresh red-fruit aromatics. Fine Ruby style involves limited barrel aging prior to bottling, distinguishing it from Tawny styles that undergo extended oxidative maturation. Fermentation vessel, oak regimen, grape varieties, and winemaker notes are not documented for this bottling."
+      },
+      "fact_check_status": "partial",
+      "fact_check_flags": [
+        {
+          "field": "ai_terroir_expression",
+          "claim": "ruby Port is produced from red grapes grown in a hot, continental-influenced inland climate",
+          "issue": "not_in_facts",
+          "severity": "low",
+          "suggested_fix": "mark_unknown"
+        },
+        {
+          "field": "ai_terroir_expression",
+          "claim": "Soil types are not documented",
+          "issue": "not_in_facts",
+          "severity": "low",
+          "suggested_fix": "remove or note as unknown"
+        },
+        {
+          "field": "ai_vinification_summary",
+          "claim": "ruby Port is produced by fermenting red grapes to partial completion, then adding grape spirit to arrest fermentation",
+          "issue": "not_in_facts",
+          "severity": "low",
+          "suggested_fix": "mark_unknown"
+        },
+        {
+          "field": "ai_vinification_summary",
+          "claim": "Fine Ruby style involves limited barrel aging prior to bottling",
+          "issue": "not_in_facts",
+          "severity": "medium",
+          "suggested_fix": "mark_unknown"
+        },
+        {
+          "field": "ai_vinification_summary",
+          "claim": "Fermentation vessel, oak regimen, grape varieties, and winemaker notes are not documented for this bottling",
+          "issue": "not_in_facts",
+          "severity": "low",
+          "suggested_fix": "remove repetition"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-sonnet-4-6",
+      "gen_cost_usd": 0.035757000000000004,
+      "gen_usage": {
+        "input_tokens": 6251,
+        "output_tokens": 2140
+      },
+      "error": null,
+      "stage1_score": 3,
+      "stage1_verdict": "warn",
+      "stage1_summary": "Accurate and honest throughout, with no factual errors, but most fields default to category-level boilerplate \u2014 the Douro Valley is never named, Taylor's historical standing is omitted, and the style profile could describe any ruby Port; requires revision to meet Loam specificity standards before publish.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 2,
+          "voice": 3,
+          "accuracy": 5,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Accurate and plain, but reads like a product description rather than a point of view. 'Young, fruit-forward style' and 'preserve freshness and red-fruit character' are category boilerplate. No hook \u2014 nothing that earns a second sentence. Should open with something specific to Taylor's position in the Port market or the defining characteristic of the Fine Ruby style."
+        },
+        "summary": {
+          "specificity": 3,
+          "voice": 4,
+          "accuracy": 5,
+          "issues": [
+            "ok"
+          ],
+          "note": "Best field in the set. The mechanistic explanation of arrested fermentation is direct and useful. 'Vibrancy over oxidative complexity' is a clean contrast that teaches. Missing: Taylor's founding date (1692), their standing as one of the oldest Port houses, and the fact that Fine Ruby sits at the entry price point \u2014 all relevant context for a buyer."
+        },
+        "style": {
+          "specificity": 2,
+          "voice": 3,
+          "accuracy": 4,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "'Sweet, full-bodied fortified red with fresh red-fruit character and a warming finish' describes every ruby Port on the market. No flavor specifics \u2014 no mention of typical raspberry, plum, or blackcurrant notes, no comment on tannin presence or absence, no sense of where this lands within the ruby category. 'Warming finish' is vague hedging dressed as description."
+        },
+        "terroir": {
+          "specificity": 2,
+          "voice": 3,
+          "accuracy": 4,
+          "issues": [
+            "generic_filler",
+            "vague_hedging"
+          ],
+          "note": "The Douro Valley is not named \u2014 a significant omission for a Port entry. Douro's schist soils (xisto) are the defining terroir fact for ruby Port and explain heat retention and vine stress. The field notes this correctly as undocumented at the label level, which is honest, but it should at minimum name the Douro and schist as the category baseline. 'Hot, continental-influenced inland climate' is accurate but unsupported by any specifics."
+        },
+        "food": {
+          "specificity": 3,
+          "voice": 3,
+          "accuracy": 5,
+          "issues": [
+            "sommelier_theater",
+            "voice_drift"
+          ],
+          "note": "Dishes are named specifically enough (dark chocolate cake, beef stew, blue cheese), which is correct form. But the set skews heavily Saturday-night and misses Tuesday coverage \u2014 a glass of Fine Ruby with a brownie or peanut butter dessert is a real use case. 'Echo the wine's red-fruit and warming character' is sommelier drift. Blue cheese is listed last but is the strongest pairing; classical ranking should lead with it or dark chocolate. The why explanations are functional but formulaic."
+        },
+        "cellar": {
+          "specificity": 4,
+          "voice": 5,
+          "accuracy": 5,
+          "issues": [
+            "ok"
+          ],
+          "note": "Short, direct, honest. Correctly identifies Fine Ruby as a drink-now style without hedging. No issues. Could add a practical window ('drink within 1\u20132 years of purchase') but the field as written does not violate any voice rules."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 4,
+          "accuracy": 5,
+          "issues": [
+            "ok"
+          ],
+          "note": "Nothing to audit \u2014 catalog gap is stated plainly, which is correct per voice rules. No fabricated comparables. Score reflects absence of content, not a failure of execution."
+        },
+        "vinification": {
+          "specificity": 3,
+          "voice": 4,
+          "accuracy": 5,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "The category-level mechanism is accurate and clearly explained. Honest about undocumented specifics. Weakness is structural: the field repeats information already covered in the summary (arrested fermentation, ruby vs. tawny distinction) without adding anything new. Should either add what is known \u2014 e.g., lagares vs. autovinifiers are common in the Douro \u2014 or compress to avoid redundancy."
+        },
+        "overall": {
+          "score": 3,
+          "verdict": "warn",
+          "summary": "Accurate and honest throughout, with no factual errors, but most fields default to category-level boilerplate \u2014 the Douro Valley is never named, Taylor's historical standing is omitted, and the style profile could describe any ruby Port; requires revision to meet Loam specificity standards before publish."
+        }
+      }
+    },
+    {
+      "wine_id": "777d8193-4c19-4271-9d77-b5393663a8a5",
+      "grade": "B",
+      "display_name": "Fess Parker American Tradition Pinot Noir, California",
+      "producer": "Fess Parker",
+      "appellation": null,
+      "country": "United States",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": false,
+        "n_scores": 5,
+        "has_price": false,
+        "n_unknowns": 14,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Fess Parker American Tradition Pinot Noir is a California red built from at least 75% Pinot Noir. It has earned medals at the TEXSOM International Wine Awards across multiple decades, including gold medals in 1994 and 1999.",
+        "wine_summary": "Fess Parker produces this wine under the American Tradition label with Pinot Noir as the declared majority grape at 75%. The wine has a documented track record at TEXSOM International Wine Awards spanning from 1993 through 2002, accumulating two gold medals (1994, 1999), two silver medals (1996, 2002), and one bronze medal (1993). No farming certifications are documented. Vintages 2010, 2011, and 2012 are on record. Pinot Noir at this percentage contributes the grape's characteristic red fruit profile \u2014 cherry, cranberry, and raspberry \u2014 alongside its structural lightness relative to fuller-bodied reds and a tendency toward earthy, floral secondary notes.",
+        "style_profile": "Medium-bodied dry red with Pinot Noir's characteristic red fruit, low tannin, and bright acidity.",
+        "terroir_expression": "No legal appellation is assigned to this wine, and no appellation rules are on record in our database. Soil types, elevations, and vineyard-specific details are not documented. The California designation permits sourcing from across the state, which means no single climatic or geological profile defines this bottling. Specific terroir claims cannot be made.",
+        "food_pairing": "1. Roast chicken with herb pan sauce \u2014 Pinot Noir's acidity cuts through roasted fat without overwhelming white meat. 2. Duck breast with cherry reduction \u2014 the grape's red fruit character reinforces stone fruit sauces common to duck preparation. 3. Mushroom risotto \u2014 Pinot Noir's earthy secondary notes align with umami-forward mushroom dishes. 4. Salmon fillet with lentils \u2014 the wine's lower tannin level avoids the metallic clash heavier reds produce with oily fish. 5. Charcuterie board with cured ham and aged Gruy\u00e8re \u2014 acidity refreshes the palate against salt-cured and fatty proteins.",
+        "cellar_recommendation": "Producer does not publish a specific drinking window. Vintages 2010, 2011, and 2012 are the most recent on record.",
+        "comparable_wines": null,
+        "vinification_summary": "Vinification details for this wine are not documented. No information is available on fermentation vessel, oak use, malolactic fermentation, \u00e9levage duration, or closure type. At the broad category level, California Pinot Noir is produced under a wide range of approaches \u2014 this is a general observation about the category, not a confirmed description of this wine's production. None of the specifics apply to this bottling unless documented elsewhere."
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Fowles Wine Are You Game? Chardonnay, Victoria \u2014 included in the comparables set provided; the specific basis for comparison beyond its presence on that list is not documented in the facts available.",
+          "issue": "contradicted",
+          "severity": "high",
+          "suggested_fix": "remove_this_comparable"
+        },
+        {
+          "field": "ai_wine_summary",
+          "claim": "The wine has a documented track record at TEXSOM International Wine Awards spanning from 1993 through 2002, accumulating two gold medals (1994, 1999), two silver medals (1996, 2002), and one bronze medal (1993).",
+          "issue": "not_in_facts",
+          "severity": "medium",
+          "suggested_fix": "verify_2002_silver_medal_attribution"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-sonnet-4-6",
+      "gen_cost_usd": 0.044456999999999997,
+      "gen_usage": {
+        "input_tokens": 7593,
+        "output_tokens": 2646
+      },
+      "error": null,
+      "stage1_score": 4,
+      "stage1_verdict": "pass",
+      "stage1_summary": "Solid Grade B entry \u2014 specificity and honesty about data gaps are handled correctly throughout, with no sommelier theater or false precision; the weak spots are the generic style profile, the empty comparables field, and minor missed opportunities to add market or value context.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 4,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "ok"
+          ],
+          "note": "Names the wine, appellation tier, and specific medal years. Direct and informative. Slight missed opportunity: no market or value framing, and the 75% minimum threshold framing is technically accurate but could note it signals a blended California designation rather than a single-varietal estate wine."
+        },
+        "summary": {
+          "specificity": 5,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "ok"
+          ],
+          "note": "Strong specificity \u2014 medal years, medal tiers, vintage records, and percentage thresholds are all named. The flavor descriptor paragraph is accurate at the varietal level but is explicitly framed as category inference rather than confirmed description, which is correct handling. Minor voice drift: 'characteristic red fruit profile' edges toward generic, but the specific fruit names that follow redeem it."
+        },
+        "style": {
+          "specificity": 3,
+          "voice": 3,
+          "accuracy": 4,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Accurate at the varietal level but entirely generic \u2014 this description applies to virtually any California Pinot Noir. No vintage character, no differentiation from the producer's other tiers, no market context. Acceptable as a placeholder but does no real work for the reader."
+        },
+        "terroir": {
+          "specificity": 4,
+          "voice": 5,
+          "accuracy": 5,
+          "issues": [
+            "ok"
+          ],
+          "note": "Exactly the right approach: states plainly what is not known and explains why the California appellation prevents meaningful terroir claims. No hedging, no filler, no false precision. This is the Loam voice handling uncertainty correctly."
+        },
+        "food": {
+          "specificity": 4,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "ok"
+          ],
+          "note": "Dishes are named specifically and the mechanical 'why' is given for each pairing. Covers a reasonable range \u2014 weeknight (roast chicken, risotto) and more considered meals (duck, salmon). The salmon with lentils pairing is slightly ambitious for what the data supports about this specific wine's weight, but defensible for the varietal. Minor: charcuterie board is a familiar category placeholder; a more specific dish (e.g., 'sliced coppa with Dijon') would sharpen it. No sommelier theater language."
+        },
+        "cellar": {
+          "specificity": 3,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "ok"
+          ],
+          "note": "Honest and brief. States the absence of producer guidance plainly. The field is limited by the data \u2014 no drinking window, no aging track record documented. Could add a general inference that a California appellation Pinot Noir at this tier is typically drink-now, but withholding that inference to avoid speculation is defensible."
+        },
+        "comparable": {
+          "specificity": 1,
+          "voice": 3,
+          "accuracy": 5,
+          "issues": [
+            "ok"
+          ],
+          "note": "Empty field. No comparables offered. Accurate by omission \u2014 no false comparisons made \u2014 but provides zero value. A basic comparables inference for a mid-tier California appellation Pinot Noir is feasible and would meaningfully help a purchase decision."
+        },
+        "vinification": {
+          "specificity": 2,
+          "voice": 5,
+          "accuracy": 5,
+          "issues": [
+            "ok"
+          ],
+          "note": "Correctly declines to invent production details. The explicit caveat that category-level observations are not confirmed for this wine is exactly right and prevents misleading inference. The field is essentially empty of useful information, but the handling of that emptiness is clean and honest."
+        },
+        "overall": {
+          "score": 4,
+          "verdict": "pass",
+          "summary": "Solid Grade B entry \u2014 specificity and honesty about data gaps are handled correctly throughout, with no sommelier theater or false precision; the weak spots are the generic style profile, the empty comparables field, and minor missed opportunities to add market or value context."
+        }
+      }
+    },
+    {
+      "wine_id": "5de74b56-2ab1-4e7b-9ab3-cbacf97cfab5",
+      "grade": "B",
+      "display_name": "Henschke Julius Riesling, Eden Valley",
+      "producer": "Henschke",
+      "appellation": "Eden Valley",
+      "country": "Australia",
+      "original_score": 2,
+      "original_verdict": "fail",
+      "facts_summary": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 5,
+        "has_price": true,
+        "n_unknowns": 9,
+        "n_comparables": 3
+      },
+      "enrichment": {
+        "hook": "Henschke Julius Riesling comes from Eden Valley, a registered GI of approximately 591 km\u00b2 in South Australia's Barossa Zone. The 2024 vintage was bottled at 11.0% ABV with a pH of 2.98 and a titratable acidity of 7.46 g/L \u2014 numbers that signal a wine built on high acid tension. James Halliday awarded it 96 points; James Suckling awarded 95.",
+        "wine_summary": null,
+        "style_profile": "High-acid, low-alcohol dry white with citrus and stone fruit character and pronounced mineral tension.",
+        "terroir_expression": "Eden Valley GI covers approximately 591 km\u00b2 in the Barossa Zone of South Australia and was formally registered in August 1997. The GI imposes no mandatory grape varieties. Soil types specific to the Julius Riesling vineyard source are not documented. What is documented is the 2024 vintage's pH of 2.98 and titratable acidity of 7.46 g/L \u2014 figures that reflect a cool enough growing environment to retain sharp acidity in a variety already predisposed to it. Eden Valley sits at higher elevation than the Barossa Valley floor, a widely known geographical fact that accounts for cooler temperatures and slower ripening, though no specific elevation data for the Julius vineyard block is on record.",
+        "food_pairing": "1. Fresh mud crab with lime butter \u2014 the wine's documented 7.46 g/L acidity cuts through the butter fat and mirrors the citrus in the preparation. 2. Grilled snapper with green herb sauce \u2014 lean white fish with acidic herbaceous saucing aligns with a high-acid, low-alcohol white. 3. Thai green curry with jasmine rice \u2014 11.0% ABV keeps heat from amplifying alcohol burn, and elevated acidity provides contrast to coconut fat. 4. Sashimi-grade salmon with pickled ginger \u2014 raw fish with vinegar-based condiment is a classic pairing for high-acid whites; the wine's acidity acts as a structural counterpoint rather than a competing flavor. 5. Roast chicken with preserved lemon \u2014 the acidity handles the lemon's tartness without collision, and the low alcohol does not overpower a lighter protein.",
+        "cellar_recommendation": "Producer does not publish a specific drinking window. The 2024 vintage's pH of 2.98 and TA of 7.46 g/L indicate acidity levels that support mid-term cellaring for those who track Eden Valley Riesling's documented capacity to develop with bottle age.",
+        "comparable_wines": "Geheimrat Wegeler Riesling Feinherb, Mosel: a German Riesling from a cool-climate appellation known for high acidity and low alcohol, structural parallels that make it a useful reference for the Julius's 2.98 pH and 11.0% ABV profile. Heymann-Lowenstein Kirchberg Riesling, Mosel: another Mosel Riesling built on pronounced acidity and mineral tension, comparable in the way elevated TA shapes the wine's backbone rather than fruit weight alone.",
+        "vinification_summary": null
+      },
+      "fact_check_status": "failed",
+      "fact_check_flags": [
+        {
+          "field": "ai_wine_summary",
+          "claim": "Eden Valley was registered as a GI in August 1997",
+          "issue": "not_in_facts",
+          "severity": "low",
+          "suggested_fix": "replace_with_facts"
+        },
+        {
+          "field": "ai_wine_summary",
+          "claim": "scores from James Halliday (96), James Suckling (95), and Jancis Robinson (17/20)",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "mark_unknown"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Geheimrat Wegeler Riesling Feinherb, Mosel: a German Riesling from a cool-climate appellation known for high acidity and low alcohol, structural parallels that make it a useful reference for the Julius's 2.98 pH and 11.0% ABV profile.",
+          "issue": "not_in_facts",
+          "severity": "medium",
+          "suggested_fix": "mark_unknown"
+        },
+        {
+          "field": "ai_comparable_wines",
+          "claim": "Heymann-Lowenstein Kirchberg Riesling, Mosel: another Mosel Riesling built on pronounced acidity and mineral tension, comparable in the way elevated TA shapes the wine's backbone rather than fruit weight alone.",
+          "issue": "not_in_facts",
+          "severity": "medium",
+          "suggested_fix": "mark_unknown"
+        },
+        {
+          "field": "ai_vinification_summary",
+          "claim": "Vintage 2024 data records ABV at 11.0%, pH at 2.98, and TA at 7.46 g/L",
+          "issue": "not_in_facts",
+          "severity": "high",
+          "suggested_fix": "replace_with_facts"
+        }
+      ],
+      "retries": 1,
+      "model_used": "claude-sonnet-4-6",
+      "gen_cost_usd": 0.054438,
+      "gen_usage": {
+        "input_tokens": 8254,
+        "output_tokens": 3606
+      },
+      "error": null,
+      "stage1_score": 3,
+      "stage1_verdict": "warn",
+      "stage1_summary": "Two fields are blank, the cellar note hedges where it should commit, the Feinherb comp omits a material RS caveat, and food pairings slip into sommelier register once \u2014 addressable issues, but the entry should not publish as-is.",
+      "stage1_audit_full": {
+        "hook": {
+          "specificity": 5,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "ok"
+          ],
+          "note": "Strong opening \u2014 cites GI size, vintage ABV, pH, TA, and two critic scores by name. Factually grounded. Slight risk that leading with GI bureaucracy (registration date, km\u00b2) front-loads administrative detail over wine character, but it stays within Loam's 'real information' mandate. Scores are unverified but plausible; flag for data QA."
+        },
+        "summary": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is a dash \u2014 no content. Needs to be written. Should deliver a plain-language verdict on what this wine is, who it's for, and whether it's worth buying at its price point."
+        },
+        "style": {
+          "specificity": 3,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "ok"
+          ],
+          "note": "Accurate and clean. 'High-acid, low-alcohol dry white with citrus and stone fruit character and pronounced mineral tension' is defensible and jargon-light. Loses a specificity point for not naming the citrus or stone fruit more precisely (lime vs. lemon, white peach vs. nectarine) \u2014 Loam's voice demands that level of naming."
+        },
+        "terroir": {
+          "specificity": 4,
+          "voice": 4,
+          "accuracy": 4,
+          "issues": [
+            "ok"
+          ],
+          "note": "Exemplary handling of knowledge gaps \u2014 explicitly flags missing vineyard-level soil data and elevation specifics rather than papering over them. GI registration date and size are specific. The logic chain from high elevation \u2192 cooler temps \u2192 retained acidity is sound and plainly stated. Minor deduction: 'widely known geographical fact' is slightly self-conscious; just state it."
+        },
+        "food": {
+          "specificity": 4,
+          "voice": 3,
+          "accuracy": 4,
+          "issues": [
+            "sommelier_theater",
+            "voice_drift"
+          ],
+          "note": "Dish names are real and specific \u2014 mud crab, Thai green curry, sashimi salmon \u2014 which is correct. Pairings 1\u20133 are strong and well-reasoned with explicit mechanism (acid cuts fat, low ABV tames heat). Pairing 4 ('structural counterpoint rather than a competing flavor') drifts into sommelier-register abstraction. Pairing 5 is competent but roast chicken with preserved lemon skews Saturday dinner; no true Tuesday-night option (e.g., a simple baked fish or takeout sushi) is present. Five pairings is also slightly heavy \u2014 four tighter ones would be sharper."
+        },
+        "cellar": {
+          "specificity": 3,
+          "voice": 3,
+          "accuracy": 3,
+          "issues": [
+            "vague_hedging"
+          ],
+          "note": "'Mid-term cellaring for those who track Eden Valley Riesling's documented capacity' is hedged and slightly evasive. Loam's voice would name a year range even if approximate \u2014 e.g., 'typically drinks well 3\u20138 years from vintage based on regional precedent' \u2014 and would flag that no producer window is published rather than treating the absence as a conclusion. 'Documented capacity' is vague; documented where, by whom?"
+        },
+        "comparable": {
+          "specificity": 4,
+          "voice": 4,
+          "accuracy": 3,
+          "issues": [
+            "factual_error"
+          ],
+          "note": "Both comps are Mosel Riesling, which is a reasonable structural reference. Geheimrat Wegeler Riesling Feinherb is a real wine; however, Feinherb is off-dry by definition \u2014 comparing it as a structural parallel to a dry Julius on acidity alone without flagging the residual sugar difference is misleading and potentially a factual error for a user making a purchase decision. Heymann-L\u00f6wenstein Kirchberg is a valid comp. Should include at least one Australian reference (e.g., Grosset Polish Hill) to give readers a local anchor."
+        },
+        "vinification": {
+          "specificity": 1,
+          "voice": 1,
+          "accuracy": 1,
+          "issues": [
+            "generic_filler"
+          ],
+          "note": "Field is a dash \u2014 no content. If no vinification data is available, the field should say so plainly rather than be left blank. At minimum: note whether stainless steel fermentation is standard for this label (it is, widely documented for Julius) or flag that producer has not published specifics."
+        },
+        "overall": {
+          "score": 3,
+          "verdict": "warn",
+          "summary": "Two fields are blank, the cellar note hedges where it should commit, the Feinherb comp omits a material RS caveat, and food pairings slip into sommelier register once \u2014 addressable issues, but the entry should not publish as-is."
+        }
+      }
+    }
+  ]
+}

@@ -82,6 +82,17 @@ and `data/stats/cron_loop_journal.md` for past loop outcomes and remaining backl
 
 ## Current State
 
+> **⚠️ STALE NOTICE (added 2026-04-10, Session 12 wrap-up).** Most of the content-table and enrichment numbers in this "Current State" section below describe the **pre-30K-rebuild dataset** (the ~477K-wine version that existed before Phase 0 archived everything and rebuilt a clean ~52K-wine corpus). That rebuild happened across 30K Plan Sessions 1–10 (2026-04-08 → 2026-04-10) and the numbers here never got updated. **For the current DB state, read `memory/30k_status.md` first**, and query the DB for live counts before relying on any number in this file. Actual current state as of Session 12:
+>
+> - **Active wines: ~51,614** (not 477K)
+> - **Producers: ~2,530** (not 42K)
+> - **Data grades: B=105, C=5,003, D=33, F=46,473**
+> - **30K Plan budget: $22.99 / $175 (13.1%)**
+> - Rebuild tables preserved as `archive_wines`, `archive_producers` etc.
+> - All 30K Plan session narratives live in `data/stats/30k_journal.md`; current phase in `memory/30k_status.md`.
+>
+> The schema / architecture / philosophy / pipeline-structure sections below are mostly still accurate. The content-state bullet list ("**42K producers**, **518K wines**, ..." etc.) is what's stale. Do not re-litigate numbers from those bullets without querying first. A proper rewrite of this section is a future task.
+
 ### Supabase Compute
 **Small** ($10/mo, 2GB RAM, dedicated CPU) — upgraded from Nano 2026-03-25. Required for `source_ttb_colas` table (4.7GB with indexes). Nano could not complete upserts without statement timeouts. DB total size: 6.6 GB.
 

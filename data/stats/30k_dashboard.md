@@ -1,5 +1,5 @@
 =======================================================
-  LOAM 30K PLAN                    2026-04-10 08:25:00
+  LOAM 30K PLAN                    2026-04-10 13:26:07
 =======================================================
 
   SESSIONS
@@ -18,48 +18,48 @@
   PHASE STATUS
   ___________________________________________________
   0  Archive & Schema       DONE
-  1  Producer Canon         2,529 producers
-  2  Wine Identity          51,790 wines
+  1  Producer Canon         2,530 producers
+  2  Wine Identity          51,614 wines
   3  Vintage & Depth        68,537 vintages
-  4  Enrichment             4,962 insights
+  4  Enrichment             5,108 insights
   5  Josh Test              85% find rate
 
   PROGRESS
   ___________________________________________________
-  Producers       2,529  [##########..........] 51%
-  Wines          51,790  [####################] 100%
-  w/ vintage     16,664  [######..............] 32%
-  w/ grapes      36,139  [#############.......] 70%
+  Producers       2,530  [##########..........] 51%
+  Wines          51,614  [####################] 100%
+  w/ vintage     16,663  [######..............] 32%
+  w/ grapes      35,794  [#############.......] 69%
   w/ UPC              0  [....................] 0%
 
   CONFIRMATION
   ___________________________________________________
   A             1  (0.0%)
-  B         1,266  (2.4%)
-  C        49,730  (96.0%)
-  NULL        793  (1.5%)
+  B         1,266  (2.5%)
+  C        49,744  (96.4%)
+  NULL        603  (1.2%)
 
   COMPLETENESS
   ___________________________________________________
   Average      8.0/11
-  ID complete    11,107  (21%)
-  >= 6/11        50,166  (97%)
-  >= 8/11        34,457  (67%)
+  ID complete    11,121  (22%)
+  >= 6/11        50,165  (97%)
+  >= 8/11        34,456  (67%)
 
   ENRICHMENT
   ___________________________________________________
   B: Sonnet narrative         105  (0.2%)
-  C: Haiku catalog          4,857  (9.4%)
-  D: Has scores/prices        140  (0.3%)
-  F: Identity only         46,688  (90.1%)
-  wine_insights total       4,962  (9.6%)
+  C: Haiku catalog          5,003  (9.7%)
+  D: Has scores/prices         33  (0.1%)
+  F: Identity only         46,473  (90.0%)
+  wine_insights total       5,108  (9.9%)
 
   JOSH TEST
   ___________________________________________________
   Find rate     85%  (target: 85%)
-  Avg confirm   B
-  Avg complete  6.0/11
-  Avg enrich    in_progress
+  Avg confirm   C
+  Avg complete  8.1/11
+  Avg enrich    F/D
 
   BUDGET
   ___________________________________________________
@@ -76,12 +76,10 @@
 
   PROVENANCE
   ___________________________________________________
-  Total entries   222,331
+  Total entries   223,947
 
   NEXT ACTION
   ___________________________________________________
-    30K plan complete. Phase 4 frontend resume.
-    BLOCKER: enrichment audit found 2.48-2.65/5
-    quality. Fix prompts before exposing Grade B.
+    Check docs/30K_PLAN.md for current session
 
 =======================================================
