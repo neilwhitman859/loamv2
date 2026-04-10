@@ -4,9 +4,11 @@ Active and recent sessions. Read at session start, append when starting/finishin
 
 ## Active
 
-- **2026-04-09 30K Session 8: Data Quality Gate** (Opus) — Pre-enrichment quality audit and fixes. Champagne wine_type: 1,020 table→sparkling. Fortified colors: +183 (Port red, Madeira white, Sherry white). Display name artifacts: 57 doubled-grape fixes. 7 producer merges (Chapoutier, Faiveley, Ganevat, Errázuriz, Catena, Roche de Bellene, Fourrier). Krug cross-contamination: 11 Austrian wines separated. Ridge Failla misattribution fixed. Antinori spelling dupes: 3 fixed. Mass-market coverage: +183 wines, +420 vintages, +2,523 COLA IDs across 18 brands (Josh Cellars, Barefoot, Meiomi, etc.). Script: `pipeline/enrich/seed_mass_market.py`. $0 AI. Tables: wines, producers, wine_vintages, wine_grapes, external_ids.
+(none)
 
 ## Done
+
+- **2026-04-09 30K Session 8: Data Quality Gate** (Opus) — Pre-enrichment quality audit and fixes. Champagne wine_type: 1,020 table→sparkling. Fortified colors: +183 (Port red, Madeira white, Sherry white). Display name artifacts: 57 doubled-grape fixes. 7 producer merges (Chapoutier, Faiveley, Ganevat, Errázuriz, Catena, Roche de Bellene, Fourrier). Krug cross-contamination: 11 Austrian wines separated. Ridge Failla misattribution fixed. Antinori spelling dupes: 3 fixed. Mass-market coverage: +183 wines, +420 vintages, +2,523 COLA IDs across 18 brands (Josh Cellars, Barefoot, Meiomi, etc.). Josh Test v1 removed — v2 (search_catalog) is now the only test: 85% (226/265). $0-10 tier jumped 57%→77%. Script: `pipeline/enrich/seed_mass_market.py`. $0 AI. Tables: wines, producers, wine_vintages, wine_grapes, external_ids.
 
 - **2026-04-09 30K Session 7.2: TTB Linking + Josh Test** (Opus) — TTB linked all 2,532 producers. 2,157 (85%) had TTB records. +200,289 COLA IDs across 10,906 wines, +21,821 vintages, +37,200 label image URLs, +2,318 ABV fills. Josh Test findability: v1 (custom Python matching) **89% (237/265)** — inflated by loose matching. v2 (real `search_catalog` RPC) **84% (223/265)** — honest test. $0-10 tier weakest at 57% (grocery brands). Avg depth 6.5/8. 42 wines missing in v2 (grocery brands, name mismatches). Decision: skip Batch 3, proceed to enrichment. Scripts: `pipeline/identity/ttb_link_batch.py`, `pipeline/analyze/josh_test.py` (v1 + v2 findability). $0 AI. Tables: external_ids, wine_vintages.
 

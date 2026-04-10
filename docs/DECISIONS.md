@@ -4,6 +4,10 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-09: Josh Test is a directional coverage metric, not a product quality metric
+
+The Josh Test measures whether wines exist in the database, not whether users would have a good experience. Limitations: (1) sample was AI-generated, not from real purchase/search data; (2) price tier distribution over-indexes premium wines ($0-10 is 13% of sample but ~40-50% of real purchases by volume); (3) "found" means any wine from the correct producer in top 10 — tests producer findability, not wine findability; (4) doesn't test natural language queries ("good red under 20"); (5) depth score rewards basic identity (color, country) rather than useful content. Keep running it for catalog coverage direction, but the enrichment success metric is qualitative: "would a user who lands on this page learn something useful?"
+
 ### 2026-04-09: Session 8 is Data Quality Gate — fix everything before enrichment
 
 Pre-enrichment quality audit revealed: (a) 1,020 Champagne wines mistyped as "table", (b) ~500 Port/fortified wines missing colors, (c) 6 producer dupe pairs (~250 wines), (d) cross-producer contamination (Krug/Austrian Krug, Ridge/Failla), (e) display name artifacts, (f) mass-market coverage gap ($0-10 tier at 57%). All must be fixed before enrichment — dirty data compounds into bad enrichment content. Use AI and web research as needed, no shortcuts. Low-end coverage is critical because users will be diverse, not just fine wine enthusiasts.
