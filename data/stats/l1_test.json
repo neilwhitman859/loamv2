@@ -1,0 +1,315 @@
+{
+  "run_date": "2026-04-10T14:11:10.734096+00:00",
+  "model": "claude-sonnet-4-6",
+  "wines_tested": 10,
+  "total_input_tokens": 10411,
+  "total_output_tokens": 7562,
+  "cost_usd": 0.1447,
+  "results": [
+    {
+      "wine_id": "29d0e262-bbcb-432d-9276-f6a310e1e628",
+      "grade": "B",
+      "display_name": "Frei Brothers Chardonnay, Russian River Valley",
+      "producer": "Frei Brothers",
+      "appellation": "Russian River Valley",
+      "country": "United States",
+      "facts": {
+        "n_grapes": 2,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 5,
+        "has_price": true,
+        "n_comparables": 3
+      },
+      "l1_enrichment": {
+        "hook": "Frei Brothers Chardonnay from Russian River Valley is a Sonoma County white priced at $16 that has earned consistent recognition at the TEXSOM International Wine Awards across multiple vintages from 2003 through 2017. ABV has held between 13.8% and 14.2% across the three documented vintages, signaling a ripe, fuller-bodied style typical of this cool-climate California appellation.",
+        "wine_summary": "Frei Brothers is a Sonoma County producer with a multi-decade track record in Russian River Valley Chardonnay, a appellation defined by its location within Sonoma County, California per 27 CFR \u00a79.66. The wine has appeared at TEXSOM International Wine Awards in 2003, 2004, 2010, 2015, and 2017, collecting bronze medals in four of those years and a silver in 2017 \u2014 a consistent if modest showing. At a stable $16 retail price across five merchant listings, it occupies the value end of Russian River Valley Chardonnay, a category that more typically commands significantly higher prices. The grape composition listed in the data includes both Chardonnay (100%) and Pinot Blanc (75%), which is an internally inconsistent figure and likely reflects a data error; no verified blend ratio can be stated with confidence.",
+        "style_profile": "Full-bodied white with ripe stone fruit character and moderate to high alcohol.",
+        "terroir_expression": "Per 27 CFR \u00a79.66, the Russian River Valley viticultural area is located in Sonoma County, California. Beyond that legal boundary definition, specific soil types, elevations, or vineyard aspects for this wine are not documented in the available data. What is widely established about Russian River Valley as an appellation is that its proximity to the Pacific Ocean, via the Russian River corridor, draws marine fog and cool air into the valley, moderating growing-season temperatures. This cooling effect is what makes the appellation a recognized source of aromatic, structured Chardonnay with naturally higher acidity than warmer Sonoma zones. The three documented vintages (2015, 2017, 2024) show ABVs ranging from 13.8% to 14.2%, consistent with fruit reaching full physiological ripeness in a cool-climate setting.",
+        "food_pairing": "1. Roast chicken with pan jus \u2014 the weight and ripeness of Russian River Chardonnay match the richness of roasted poultry without overwhelming it. 2. Grilled salmon with herb butter \u2014 the wine's body and fruit complement fatty fish, while any natural acidity cuts through the butter. 3. Lobster bisque \u2014 the fuller style holds up to a cream-based shellfish soup where a leaner white would be lost. 4. Pasta with mushroom cream sauce \u2014 earthiness in the dish aligns with the savory depth Chardonnay develops at this ripeness level. 5. Brie or Camembert \u2014 soft-ripened cheeses with buttery texture are a straightforward match for a ripe, mid-weight Chardonnay.",
+        "cellar_recommendation": "Producer does not publish a specific drinking window. At $16 and based on the moderate ABV range documented, this is almost certainly intended for near-term consumption; Russian River Valley Chardonnays at this price tier are generally not made for extended cellaring.",
+        "comparable_wines": "Vina Cobos Felino Chardonnay, Mendoza \u2014 like the Frei Brothers, this is a value-positioned New World Chardonnay from a warm-influenced growing region, offering ripe fruit character at an accessible price point. Wakefield St. Andrews Chardonnay, Clare Valley \u2014 another warm-climate, fuller-bodied Chardonnay from a single appellation, making it a useful reference point for comparing how site-driven ripeness shapes the variety outside of California.",
+        "vinification_summary": "Specific vinification details for this wine \u2014 including fermentation vessel, oak treatment, malolactic fermentation status, and any winemaker notes \u2014 are not documented. At the appellation level, Russian River Valley Chardonnay is commonly vinified with some degree of oak contact and partial or full malolactic fermentation, techniques that contribute to the broader, rounder style the region is known for; however, whether Frei Brothers follows this approach for this wine cannot be confirmed from available data. The ABV range of 13.8%\u201314.2% across three vintages suggests consistent ripeness at harvest, which is typical for a producer managing fruit from an established cool-climate site."
+      },
+      "usage": {
+        "input_tokens": 1168,
+        "output_tokens": 1062
+      },
+      "error": null,
+      "prompt_length": 3864
+    },
+    {
+      "wine_id": "5de74b56-2ab1-4e7b-9ab3-cbacf97cfab5",
+      "grade": "B",
+      "display_name": "Henschke Julius Riesling, Eden Valley",
+      "producer": "Henschke",
+      "appellation": "Eden Valley",
+      "country": "Australia",
+      "facts": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 5,
+        "has_price": true,
+        "n_comparables": 3
+      },
+      "l1_enrichment": {
+        "hook": "Henschke Julius Riesling is Eden Valley's benchmark expression of Australian Riesling, earning 95\u201396-point scores from James Halliday, James Suckling, and Jancis Robinson. The 2024 vintage clocks in at 11.0% ABV with a pH of 2.98 and 7.46 g/L total acidity \u2014 numbers that signal a wine built for precision and longevity.",
+        "wine_summary": "Henschke is one of the Barossa Zone's most historically significant family producers, and Julius Riesling is their dedicated Eden Valley Riesling \u2014 named for Julius Henschke, who planted the family's first vines in the 19th century. Eden Valley sits at higher elevation than the Barossa Valley floor, producing Rieslings that Australian critics consistently rank among the country's finest. The Julius bottling has drawn 96/100 from James Halliday, 95/100 from James Suckling, and 17/20 from Jancis Robinson, a scoring spread that reflects genuine cross-market recognition rather than regional favoritism. At $45 across four merchant listings, it represents strong value against that critical pedigree.",
+        "style_profile": "High-acid, low-alcohol dry white with citrus-driven intensity and strong aging potential.",
+        "terroir_expression": "Eden Valley is a registered GI under Wine Australia, gazetted in August 1997, covering approximately 591 km\u00b2 within the Barossa Zone. The GI specifies no mandatory grape varieties. Eden Valley is widely understood to sit at meaningfully higher elevations than the adjacent Barossa Valley, which moderates growing temperatures and preserves natural acidity in white varieties \u2014 consistent with the Julius's documented 2024 metrics of pH 2.98 and 7.46 g/L TA. Specific soil types for this vineyard are not documented in the verified sources available.",
+        "food_pairing": "1. Freshwater trout with lemon beurre blanc \u2014 high acidity cuts through butter and amplifies the fish's delicate flavor. 2. Vietnamese-style prawn rolls with nuoc cham \u2014 the wine's acid structure and low alcohol hold up to fish sauce and lime without overpowering fresh herbs. 3. Sichuan-style cold chicken (bang bang ji) \u2014 residual peppery heat is balanced by the wine's bright acidity. 4. Aged hard cheeses such as gruy\u00e8re or comt\u00e9 \u2014 the wine's structural acidity is a counterpoint to fat and salt. 5. Lightly cured smoked salmon \u2014 a classic high-acid Riesling pairing; acidity lifts the oiliness of the fish.",
+        "cellar_recommendation": "The 2024's pH of 2.98 and 7.46 g/L TA indicate serious structural acidity, which is the primary driver of Riesling aging. Producer does not publish a specific drinking window, but wines with this acid profile routinely develop well over 10 or more years.",
+        "comparable_wines": "Geheimrat Wegeler Riesling Feinherb, Mosel \u2014 another high-acid, low-alcohol Riesling from a cool-climate appellation where precision acidity and citrus character define the style, making it a useful European reference point for Julius. Heymann-Lowenstein Kirchberg Riesling, Mosel \u2014 a benchmark Mosel Riesling prized for its tension and mineral-driven structure, comparable to Julius in its emphasis on acidity and aging potential over richness.",
+        "vinification_summary": "Winemaker notes and specific vinification details for Julius Riesling are not documented in verified sources. At the category level, Eden Valley Riesling \u2014 like Australian Riesling broadly \u2014 is typically fermented to dryness or near-dryness in stainless steel to preserve primary fruit and acidity, and is commonly sealed under screwcap to protect freshness, though neither practice is mandated by the Eden Valley GI, which specifies no production requirements. The 2024's documented pH of 2.98 and 11.0% ABV are consistent with cool-climate, acid-focused winemaking, but specific fermentation vessel, oak use, and residual sugar are not documented."
+      },
+      "usage": {
+        "input_tokens": 1136,
+        "output_tokens": 999
+      },
+      "error": null,
+      "prompt_length": 3693
+    },
+    {
+      "wine_id": "777d8193-4c19-4271-9d77-b5393663a8a5",
+      "grade": "B",
+      "display_name": "Fess Parker American Tradition Pinot Noir, California",
+      "producer": "Fess Parker",
+      "appellation": null,
+      "country": "United States",
+      "facts": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": false,
+        "n_scores": 5,
+        "has_price": false,
+        "n_comparables": 3
+      },
+      "l1_enrichment": {
+        "hook": "Fess Parker's American Tradition Pinot Noir is a California-appellation bottling built around at least 75% Pinot Noir, earning gold medals at TEXSOM in 1994 and 1999. It draws on Fess Parker's established presence in California winemaking, particularly known through its Santa Barbara County operations.",
+        "wine_summary": "Fess Parker is a Santa Barbara County producer with roots in the Santa Ynez Valley, a region that established itself as a serious Pinot Noir source well before broader California recognition arrived. The American Tradition Pinot Noir is a California-appellation wine, meaning it can source fruit from across the state rather than from a single defined sub-region. That broad designation offers blending flexibility but steps back from the site-specific focus of the producer's Santa Barbara-designated bottlings. The wine has a documented competition track record spanning the 1990s and into the 2000s, with multiple TEXSOM medal results across that period.",
+        "style_profile": "Medium-bodied dry red with soft tannins, red fruit character, and moderate structure typical of California Pinot Noir.",
+        "terroir_expression": "No appellation law is on file for this wine, as it carries a broad California designation rather than a legally defined sub-appellation. California as a catch-all appellation permits sourcing from any AVA within the state, so no specific soil profile, elevation range, or climatic constraint can be attributed to this wine with certainty. Soil type is not documented. What can be said at the category level is that California Pinot Noir tends toward riper red and dark fruit compared to Burgundian benchmarks, with naturally higher alcohol potential given the state's warmer growing conditions.",
+        "food_pairing": "1. Roast duck breast \u2014 Pinot Noir's red fruit and moderate tannin complement duck's richness without overwhelming it. 2. Mushroom risotto \u2014 earthier Pinot Noir characteristics align naturally with umami-forward mushroom dishes. 3. Salmon with pinot noir reduction \u2014 California Pinot Noir's weight is well-matched to fatty fish preparations. 4. Charcuterie and cured meats \u2014 the wine's acidity cuts through fat in sliced salumi or prosciutto. 5. Grilled lamb chops with herbs \u2014 the grape's savory edge works alongside herb-crusted lamb without the need for heavier tannic structure.",
+        "cellar_recommendation": "Producer does not publish a specific drinking window for this wine. Given the broad California appellation and Pinot Noir's generally moderate aging curve, current vintages on the market are likely best consumed within a few years of release.",
+        "comparable_wines": "Ochota Barrels A Forest Pinot Noir, Adelaide Hills is comparable as another Pinot Noir from a warm-climate New World region where the grape is pushed toward aromatic expressiveness and accessible structure. Fowles Wine Are You Game? from Victoria is relevant as a value-tier New World Pinot Noir with a competition pedigree, similar in positioning to Fess Parker's American Tradition as an entry point into a producer's range.",
+        "vinification_summary": "No winemaker notes, fermentation vessel details, oak program, or other vinification specifics are documented for this wine. At the category level, California Pinot Noir of this style is typically cold-soaked before fermentation to extract color and aromatics, followed by short maceration to preserve fruit character and limit harsh tannin extraction. Oak aging is common in the category but duration, origin, and new oak percentage are not documented here and cannot be assumed for this specific bottling. Malolactic fermentation completion is standard practice for California red table wine but is not confirmed for this label."
+      },
+      "usage": {
+        "input_tokens": 1074,
+        "output_tokens": 863
+      },
+      "error": null,
+      "prompt_length": 3747
+    },
+    {
+      "wine_id": "8e03d24a-ffd2-4c48-9893-7ad0ae58b338",
+      "grade": "B",
+      "display_name": "Cuvaison Durrell Chardonnay, Los Carneros",
+      "producer": "Cuvaison",
+      "appellation": "Los Carneros",
+      "country": "United States",
+      "facts": {
+        "n_grapes": 2,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 5,
+        "has_price": false,
+        "n_comparables": 3
+      },
+      "l1_enrichment": {
+        "hook": "Cuvaison's Durrell Chardonnay comes from Los Carneros, a cool-climate appellation straddling Napa and Sonoma Counties where marine influence from San Pablo Bay drives high natural acidity in Chardonnay. Cuvaison has focused on Carneros fruit for decades, and the Durrell designation points to a specific sourcing commitment within that zone. Medal recognition stretches back to the early 1980s, suggesting a consistent track record across vintages.",
+        "wine_summary": "Cuvaison is one of the longer-standing producers working Los Carneros fruit, with a history of producing Chardonnay and Pinot Noir from this cool corridor. The Durrell Chardonnay represents a single-vineyard or single-source bottling, distinguishing it from broader appellation blends in the portfolio. Los Carneros sits at the southern end of both Napa and Sonoma Valleys, where afternoon winds and fog off San Pablo Bay moderate temperatures and extend the growing season \u2014 conditions that typically yield Chardonnay with sharp natural acidity and restrained ripeness rather than tropical weight. Documented vintages span 2002 through 2017, indicating the wine has been produced across meaningfully different growing years. TEXSOM bronze and silver medal results across multiple vintages from 1983 to 2002 support the wine's consistency at a competitive level. Note: the grape data as supplied lists both Chardonnay at 100% and Pinot Blanc at 75%, which is internally inconsistent; this entry treats the wine as a Chardonnay-dominant bottling, as the label and appellation context suggest.",
+        "style_profile": "Medium-to-full-bodied dry white with crisp acidity, stone fruit character, and cool-climate restraint.",
+        "terroir_expression": "Per TTB regulation 27 CFR \u00a79.32, Los Carneros is a federally recognized viticultural area located across both Napa and Sonoma Counties in California. The appellation's defining characteristic at the regulatory level is its geographic position \u2014 the southernmost reach of both valleys \u2014 where proximity to San Pablo Bay delivers consistent cooling winds and morning fog. This marine influence is widely documented to moderate daytime heat, preserve acidity, and slow ripening in Chardonnay. Specific soil types for the Durrell site are not documented in the materials available, and no soil claims are made here.",
+        "food_pairing": "1. Roasted chicken with herb pan sauce \u2014 the acidity cuts through fat while stone fruit notes complement the savory roast. 2. Dungeness crab with drawn butter \u2014 a classic California Chardonnay pairing; the wine's cool-climate crispness balances the richness of shellfish. 3. Seared scallops with a light cream sauce \u2014 acidity keeps the pairing fresh without overwhelming delicate seafood. 4. Grilled halibut with lemon and capers \u2014 the citrus-forward nature of Carneros Chardonnay aligns naturally with the dish's brightness. 5. Pasta with white truffle or mushroom cream \u2014 earthy, savory elements in the dish meet the wine's structure and mid-palate weight.",
+        "cellar_recommendation": "Producer does not publish a specific drinking window. Los Carneros Chardonnay at this level is generally approachable on release but can hold 5\u20138 years from vintage given the appellation's naturally high acidity \u2014 treat that as a category-level guideline, not a producer-specific claim.",
+        "comparable_wines": "Vina Cobos Felino Chardonnay, Mendoza \u2014 like the Durrell, this is a single-variety Chardonnay from a producer with a defined regional focus, offering a similarly fruit-driven profile at a serious quality tier. Wakefield St. Andrews Chardonnay, Clare Valley \u2014 Clare Valley's cool-climate acidity and stone fruit character in Chardonnay parallel what Los Carneros marine influence delivers, making this a useful reference point for style.",
+        "vinification_summary": "Winemaker notes and vinification details for the Durrell Chardonnay are not documented in available materials \u2014 fermentation vessel, oak program, malolactic fermentation status, and aging duration are all unknown. At the category level, cool-climate Carneros Chardonnay is frequently produced with partial or full malolactic fermentation to soften acidity and build mid-palate texture, and French oak barrel aging is common among Napa-adjacent producers at this tier, but these are appellation-level observations and should not be taken as confirmed practice for this specific wine. No vinification claims are made beyond what the producer has documented."
+      },
+      "usage": {
+        "input_tokens": 1144,
+        "output_tokens": 1084
+      },
+      "error": null,
+      "prompt_length": 3788
+    },
+    {
+      "wine_id": "c2fb7430-4d41-485f-94c2-6128fd49daeb",
+      "grade": "B",
+      "display_name": "Landmark Vineyards Overlook Chardonnay, California",
+      "producer": "Landmark Vineyards",
+      "appellation": null,
+      "country": "United States",
+      "facts": {
+        "n_grapes": 2,
+        "n_vintages": 3,
+        "has_appellation_rules": false,
+        "n_scores": 5,
+        "has_price": false,
+        "n_comparables": 3
+      },
+      "l1_enrichment": {
+        "hook": "Landmark Vineyards' Overlook Chardonnay is a California white built from Chardonnay with a Pinot Blanc component, earning consistent recognition at TEXSOM International Wine Awards across multiple decades \u2014 gold medals in 2011 and 2018 among them. At 14.2\u201314.3% ABV in documented vintages, it sits on the richer end of the California Chardonnay spectrum.",
+        "wine_summary": "Landmark Vineyards has operated in Sonoma County since the 1970s and built its reputation squarely on Chardonnay. The Overlook label is their multi-source California bottling, designed for broader reach and consistent style across vintages. The blend incorporates Chardonnay as the dominant variety alongside a Pinot Blanc component \u2014 an uncommon addition in California that can contribute leaner structure and bright acidity to offset the richness typical of warm-climate Chardonnay. The wine has accumulated a meaningful competition track record at TEXSOM spanning from 1993 to 2018, suggesting both longevity as a program and a style that resonates with structured judging panels.",
+        "style_profile": "Full-bodied white with ripe stone fruit character and a likely creamy mid-palate given California origin and ABV.",
+        "terroir_expression": "No legal appellation is assigned to this wine, and no specific soil or geographic data is documented in our records. As a broad California designation, fruit can be sourced from multiple growing regions across the state, meaning terroir-specific claims are not meaningful here. What the label does communicate is a production approach optimized for consistency and accessibility rather than single-site expression. The Pinot Blanc component hints at sourcing from cooler sites or a deliberate stylistic choice to add freshness, but the specific origins of the fruit are not documented.",
+        "food_pairing": "1. Roast chicken with butter and herbs \u2014 the wine's weight and fruit richness match the fat in the dish without overpowering it. 2. Pasta with cream and mushroom sauce \u2014 the body and likely oak influence hold up well against umami and dairy. 3. Grilled salmon with lemon beurre blanc \u2014 classic Chardonnay pairing; acidity cuts through the fish fat while the body matches its richness. 4. Soft-ripened cheeses such as Brie or Camembert \u2014 the wine's likely creaminess complements the texture, and the acidity prevents the pairing from becoming cloying. 5. Corn chowder or butternut squash soup \u2014 the wine's ripe fruit and body align naturally with sweet, starchy flavors.",
+        "cellar_recommendation": "Producer does not publish a specific drinking window. At 14.2\u201314.3% ABV, this is a full-bodied white best approached on release or within a few years of vintage; extended cellaring is not indicated by the available data.",
+        "comparable_wines": "Vina Cobos Felino Chardonnay, Mendoza \u2014 like the Overlook, this is a warm-climate Chardonnay carrying ripe fruit weight and a higher ABV profile, positioned as an accessible, consistent expression of the variety rather than a terroir-driven single-site wine. Wakefield St. Andrews Chardonnay, Clare Valley \u2014 a fuller-bodied Southern Hemisphere Chardonnay with competition pedigree, comparable to the Overlook in its combination of fruit richness and structured winemaking at a reliable price point.",
+        "vinification_summary": "Specific vinification details for this wine \u2014 including fermentation vessel, oak regimen, malolactic fermentation status, and winemaker notes \u2014 are not documented. At the category level, California Chardonnay at 14.2\u201314.3% ABV is commonly produced with some combination of barrel fermentation or barrel aging and full or partial malolactic fermentation to develop the textural richness and softer acidity associated with the style, though none of this can be confirmed for the Overlook specifically. The presence of Pinot Blanc in the blend is a documented fact and may play a role in preserving freshness, but the precise winemaking treatment of each variety is unknown."
+      },
+      "usage": {
+        "input_tokens": 1097,
+        "output_tokens": 975
+      },
+      "error": null,
+      "prompt_length": 3763
+    },
+    {
+      "wine_id": "d4a3e184-0567-4b91-a905-f186f71e5902",
+      "grade": "B",
+      "display_name": "Taylor's Fine Ruby, Porto",
+      "producer": "Taylor's",
+      "appellation": null,
+      "country": "Portugal",
+      "facts": {
+        "n_grapes": 0,
+        "n_vintages": 0,
+        "has_appellation_rules": false,
+        "n_scores": 0,
+        "has_price": false,
+        "n_comparables": 0
+      },
+      "l1_enrichment": {
+        "hook": "Taylor's is one of the oldest and most respected Port houses, founded in 1692 and still privately held. Fine Ruby is their entry point into the Port category \u2014 a young, fruit-forward fortified wine made in the classic Ruby style. It delivers what Ruby Port is known for: fresh red fruit character and sweetness without extended wood aging.",
+        "wine_summary": "Taylor Fladgate has been producing Port from the Douro Valley for over three centuries, making it one of the longest-standing names in the trade. The house is known for its commitment to quality across all tiers, from entry-level Rubies through to its benchmark Vintage declarations. Fine Ruby sits at the accessible end of that range, designed to showcase the vibrant, fruit-driven character that defines the Ruby category \u2014 wines that spend a relatively short time in wood before bottling in order to preserve freshness and primary fruit. The grape varieties are not documented in our database, though Douro red Port wines are broadly produced from indigenous Portuguese varieties including Touriga Nacional, Touriga Franca, Tinta Roriz, and Tinta Barroca, among others.",
+        "style_profile": "Sweet, medium-to-full-bodied fortified red with fresh red fruit and warming spirit.",
+        "terroir_expression": "No formal appellation data is held in our database for this wine, and specific soil types, vineyard elevations, or sub-zones are not documented. At a broad category level, Ruby Port is produced from grapes grown in the Douro Valley of northern Portugal, a region defined by its schist-dominant soils, extreme diurnal temperature variation, and steep terraced vineyards along the Douro river. These conditions typically produce concentrated, deeply colored fruit with high natural sugars \u2014 well suited to the fortification process that defines Port wine.",
+        "food_pairing": "1. Dark chocolate or chocolate fondant \u2014 the wine's sweetness and red fruit character are a natural match for bittersweet chocolate. 2. Aged hard cheeses such as Manchego or aged Gouda \u2014 salt and fat contrast effectively with the wine's sugar and spirit. 3. Charcuterie and cured meats \u2014 richness in the meat balances the wine's weight and sweetness. 4. Beef stew or braised short rib \u2014 a classic pairing where the wine's body holds up to the richness of slow-cooked red meat. 5. Cherry tart or berry crumble \u2014 mirrors the wine's red fruit profile without overwhelming it.",
+        "cellar_recommendation": "Producer does not publish a specific drinking window for this wine. As a Fine Ruby style, it is generally intended for near-term consumption rather than cellaring, and is best enjoyed within a few years of purchase to retain its fresh fruit character.",
+        "comparable_wines": "No close comparables in the Loam catalog yet.",
+        "vinification_summary": "Winemaker notes and specific vinification details are not documented in our database. At the category level, Ruby Port is produced by fermenting red Douro grapes with fermentation arrested partway through by the addition of neutral grape spirit (aguardente), leaving residual sugar in the wine and raising alcohol to approximately 19\u201322% \u2014 though the specific ABV for this wine is not documented. The resulting wine is typically aged in large wood vessels for a relatively short period \u2014 generally two to three years \u2014 to preserve fresh fruit character rather than develop the oxidative, nutty profile associated with Tawny-style Ports. This description reflects standard Ruby Port production practice and should not be taken as confirmed detail for this specific wine."
+      },
+      "usage": {
+        "input_tokens": 885,
+        "output_tokens": 813
+      },
+      "error": null,
+      "prompt_length": 3237
+    },
+    {
+      "wine_id": "de8f4f9e-02f3-45ce-860e-1a0d6f8a02fa",
+      "grade": "B",
+      "display_name": "Frank Family Vineyards Chiles Valley Zinfandel, Napa Valley",
+      "producer": "Frank Family Vineyards",
+      "appellation": "Napa Valley",
+      "country": "United States",
+      "facts": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 5,
+        "has_price": true,
+        "n_comparables": 3
+      },
+      "l1_enrichment": {
+        "hook": "Frank Family Vineyards bottles this Chiles Valley Zinfandel from Napa Valley, built on a Primitivo foundation and priced in the approachable $35\u2013$40 range. It has collected multiple TEXSOM medals across a range of vintages, including gold in 2007 and 2008. That track record across years suggests consistent winemaking, not a one-off overperformer.",
+        "wine_summary": "Frank Family Vineyards is a well-established Napa Valley producer with a broad portfolio spanning sparkling to Cabernet. This Zinfandel draws from Chiles Valley, a sub-area within the larger Napa Valley AVA, and is built primarily on Primitivo \u2014 the Italian synonym for Zinfandel, genetically identical and known for producing wines with deep color, ripe dark fruit, and spice. At 75% Primitivo, the varietal character is the dominant voice in the bottle, though the remaining 25% is not documented. The wine has shown up across vintages from 2014 through 2023, suggesting it is a recurring release rather than a one-time project.",
+        "style_profile": "Full-bodied dry red with ripe dark fruit, warm spice, and characteristic Zinfandel intensity.",
+        "terroir_expression": "Under 27 CFR \u00a79.23, the Napa Valley viticultural area is defined by its location in Napa County, California \u2014 one of the most geographically and reputationally distinct wine regions in the United States. Chiles Valley sits in the eastern hills of Napa County and is broadly known for warmer daytime temperatures moderated by elevation, which tends to produce Zinfandel with concentration and structure. However, specific soil types, elevations, and vineyard aspects for this wine are not documented in the provided data, and no further terroir claims can be made.",
+        "food_pairing": "1. Braised short ribs \u2014 the wine's body and fruit weight match the richness of slow-cooked beef without being overwhelmed. 2. BBQ brisket with a dark, smoky rub \u2014 Primitivo-based Zinfandel's spice and fruit play well against charred, fatty cuts. 3. Lamb merguez sausage \u2014 the warm spice profile of the wine echoes North African seasoning. 4. Sharp aged cheddar \u2014 the fruit intensity and structure cut through the fat of aged hard cheeses. 5. Pizza with fennel sausage and roasted peppers \u2014 a classic pairing for California Zinfandel, where the wine's acidity and fruit hold up to assertive toppings.",
+        "cellar_recommendation": "Producer does not publish a specific drinking window. Primitivo-based Zinfandels from Napa Valley are generally approachable on release but can hold 5\u20138 years with proper storage; treat with caution beyond that range without producer guidance.",
+        "comparable_wines": "Ridge Vineyards Park Muscatine Zinfandel, Howell Mountain \u2014 also a Primitivo-based Zinfandel from Napa County's eastern mountain terrain, making it a direct stylistic and geographic reference point. Carlisle Monte Zinfandel, Sonoma Valley \u2014 another serious, single-site Primitivo-driven Zinfandel in a similar price and quality tier, useful for comparing how California's two premier Zinfandel regions differ in expression.",
+        "vinification_summary": "Winemaker notes and vinification details \u2014 including fermentation vessel, oak regimen, aging duration, oak origin, new oak percentage, malolactic fermentation status, and closure \u2014 are not documented for this wine. At the category level, Napa Valley Zinfandels (and wines labeled under 27 CFR \u00a79.23) are not bound by any prescribed production methods under appellation law; winemaking decisions are entirely at the producer's discretion. Primitivo-based Zinfandels in this price range typically see some oak aging to add structure and integrate the grape's naturally high fruit sugars, but no specific claims can be made here without documented evidence."
+      },
+      "usage": {
+        "input_tokens": 1166,
+        "output_tokens": 958
+      },
+      "error": null,
+      "prompt_length": 3865
+    },
+    {
+      "wine_id": "069a7c0f-bee1-421a-95ae-59475fc40372",
+      "grade": "C",
+      "display_name": "des Bosquets, Gigondas La Font",
+      "producer": "des Bosquets",
+      "appellation": "Gigondas",
+      "country": "France",
+      "facts": {
+        "n_grapes": 0,
+        "n_vintages": 1,
+        "has_appellation_rules": true,
+        "n_scores": 0,
+        "has_price": true,
+        "n_comparables": 0
+      },
+      "l1_enrichment": {
+        "hook": "A 2007 Gigondas from des Bosquets built on at least 50% Grenache by appellation law, with Syrah, Mourv\u00e8dre, and/or Cinsaut rounding out the blend. Gigondas reds are known for density and grip \u2014 more structured than Ch\u00e2teauneuf-du-Pape's plushest expressions, with the garrigue-tinged, dark-fruited character typical of the southern Rh\u00f4ne at elevation. At $45, this is a single vintage snapshot with no critic scores on file.",
+        "style_profile": "Dense, dark-fruited southern Rh\u00f4ne red with Grenache-driven warmth and savory herb notes.",
+        "comparable_wines": "No close comparables in the Loam catalog yet."
+      },
+      "usage": {
+        "input_tokens": 1070,
+        "output_tokens": 195
+      },
+      "error": null,
+      "prompt_length": 3327
+    },
+    {
+      "wine_id": "08120386-225b-4d6b-a0d4-51383a074b55",
+      "grade": "C",
+      "display_name": "Louis Latour, Roman\u00e9e-Saint-Vivant Grand Cru Les Quatre Journaux",
+      "producer": "Louis Latour",
+      "appellation": "Roman\u00e9e-Saint-Vivant",
+      "country": "France",
+      "facts": {
+        "n_grapes": 1,
+        "n_vintages": 3,
+        "has_appellation_rules": true,
+        "n_scores": 0,
+        "has_price": true,
+        "n_comparables": 3
+      },
+      "l1_enrichment": {
+        "hook": "Louis Latour's monopole holding within Roman\u00e9e-Saint-Vivant \u2014 Les Quatre Journaux \u2014 is one of the most historically significant single-owner parcels in the C\u00f4te de Nuits, producing Pinot Noir from a Grand Cru that sits at the northern edge of Vosne-Roman\u00e9e. The documented vintages span 1990 through 2009, covering a range of celebrated Burgundy years across more than two decades. At $400, this sits at the entry tier for Roman\u00e9e-Saint-Vivant, a Grand Cru where prices can climb far higher.",
+        "style_profile": "Structured, aromatic C\u00f4te de Nuits Grand Cru Pinot Noir \u2014 expect the appellation's characteristic red fruit, earthy depth, and fine tannin frame.",
+        "comparable_wines": "Ochota Barrels A Forest Pinot Noir, Adelaide Hills shares the pursuit of perfume-driven, site-expressive Pinot Noir with real structural tension underneath. Fowles Wine Are you Game? Chardonnay, Victoria is included as a counterpoint for buyers who prioritize cool-climate precision and restrained fruit weight in a serious red-wine context, though the grape and region differ substantially from Roman\u00e9e-Saint-Vivant."
+      },
+      "usage": {
+        "input_tokens": 864,
+        "output_tokens": 309
+      },
+      "error": null,
+      "prompt_length": 2744
+    },
+    {
+      "wine_id": "12b6479f-0c67-486d-b8bd-15258a9b4d82",
+      "grade": "C",
+      "display_name": "Felton Road Block 2 Chardonnay, Central Otago",
+      "producer": "Felton Road",
+      "appellation": "Central Otago",
+      "country": "New Zealand",
+      "facts": {
+        "n_grapes": 2,
+        "n_vintages": 3,
+        "has_appellation_rules": false,
+        "n_scores": 0,
+        "has_price": false,
+        "n_comparables": 3
+      },
+      "l1_enrichment": {
+        "hook": "Felton Road's Block 2 Chardonnay comes from one of the southernmost wine regions on earth, where Central Otago's dramatic diurnal temperature swings preserve sharp acidity while the long, intense growing season builds genuine fruit concentration. Block 2 is a single-block bottling from a producer widely regarded as one of New Zealand's most meticulous, and the two documented vintages show ABVs between 13.5% and 14.0%, consistent with ripe but not overworked fruit. Vinification details are not documented here, but the wine's reputation rests on precision and site specificity rather than heavy-handed winemaking.",
+        "style_profile": "Tightly structured, cool-climate Chardonnay with concentrated stone fruit and underlying tension from high natural acidity.",
+        "comparable_wines": "Vincent Girardin Chablis Tete d'Or shares the cool-climate Chardonnay DNA \u2014 bright acidity, mineral drive, and restrained fruit \u2014 that defines Block 2's style. Wakefield St. Andrews Chardonnay from Clare Valley is another single-site, regionally expressive Chardonnay where elevation and latitude shape a focused, food-friendly profile similar in ambition to Felton Road's block-designate approach."
+      },
+      "usage": {
+        "input_tokens": 807,
+        "output_tokens": 304
+      },
+      "error": null,
+      "prompt_length": 2701
+    }
+  ]
+}
