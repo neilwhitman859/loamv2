@@ -426,3 +426,83 @@ France 14,731 | US 12,219 | Germany 4,720 | Australia 4,355 | Italy 4,113 | Spai
 - `pipeline/enrich/batch_enrich.py` — sequential enrichment with Grade C/B prompts, bulk preloading, atomic DB writes (good for small batches, calibration)
 - `pipeline/enrich/batch_api.py` — Batch API submit/status/process workflow (preferred for bulk)
 - `data/stats/batch_enrichment_log.json` — submission tracking
+
+---
+
+### Session 10: Josh Test + Final Validation — 2026-04-10
+
+**What happened:** The final 30K plan validation session. Re-ran the failed Grade C wines from Session 9, added a `--save` flag to `josh_test.py`, ran WineTest with the Story dimension, built a brand-new enrichment quality auditor, ran the full S11.1-S11.11 + U1-U12 validation suite, and documented the 85→95% push for future work.
+
+**Key deliverables:**
+- `pipeline/analyze/enrichment_audit.py` — new tool. Pulls a random sample of N Grade C and M Grade B wines, sends each through Sonnet with the voice rules from `docs/VOICE.md`, scores each populated field on Specificity/Voice/Accuracy (1-5), tags issues from a fixed taxonomy (`generic_filler`, `sommelier_theater`, `vague_hedging`, `poetic`, `factual_error`, `voice_drift`), aggregates verdicts. Writes JSON + Markdown to `data/stats/enrichment_audit.{json,md}`.
+- `data/stats/30k_s11_checks.md` — full S11.1-S11.11 + U1-U12 documentation. 8 PASS, 3 FAIL, 4 SKIPPED. None blocking launch.
+- `data/stats/push_to_95.md` — gap analysis for the 39 missing Josh Test wines, broken into 5 buckets, projected cost <$1 in AI to reach 95%.
+
+**S11 results (key numbers):**
+- **S11.1 Josh Test find rate: 85.0% (226/265)** — PASS at exact threshold
+- **S11.2 Avg confirmation: C** — FAIL vs target B (structural to single-source dataset; promotion to B is the on-demand enrichment loop's job)
+- **S11.3 Avg completeness: 8.1/11** — PASS, comfortable margin
+- **S11.4 Barcode spot-check** — SUBSTITUTED. Automated proxies: 6,989 wines have UPCs, 0 broken FKs, 100% have country_id. Manual 100-wine accuracy audit deferred to user-driven testing
+- **S11.5 Display names** — PASS. 0/51,790 missing display_name. 24 hand-checked samples across 8 countries all parse cleanly
+- **S11.6 Duplicate wines:** Initial naive count showed 4,755 groups. Investigation: PostgreSQL `GROUP BY` treats NULL == NULL, and 12,271 wines have name_normalized IS NULL (mass-market Franzia/Carlo Rossi grocery wines from same producer differing only by varietal SKU — these are NOT dupes). After display_name fallback + appellation grouping: **2,272 real dupe groups, 2,678 excess rows.** FAIL but non-blocking — backlog from the 156 unclear groups in the dedup session
+- **S11.7 Provenance: 98.5%** of active wines have ≥2 provenance entries — PASS
+- **S11.10 Budget: $16.81 / $175 (9.6%)** — PASS, comfortable margin
+
+**Universal checks (U1-U12):** 7 PASS, 1 FAIL (U2 ≡ S11.6), 4 SKIPPED.
+
+**ENRICHMENT AUDIT — the most important finding of the session:**
+Built `enrichment_audit.py` and ran it on 50 random Grade C wines + 20 random Grade B wines. Total cost $1.05.
+
+| Grade | Sample | Overall | Pass | Warn | Fail | Top issue |
+|-------|--------|---------|------|------|------|-----------|
+| C | 50 | **2.48/5** | 0 | 23 | 27 | **factual_error: 111** |
+| B | 20 | **2.65/5** | 0 | 13 | 7 | **factual_error: 91** |
+
+**This is a major signal that the enrichment pipeline ships factually unreliable copy.** Worst Grade C samples surfaced:
+- Channing Daughters Research: "invented specifics (unverified ABV, unconfirmed co-fermentation, a likely non-existent comparable SKU, and a false terroir claim for New Mexico)"
+- Gramona Gessami: "at least two likely fabricated facts (oak aging, soil type) and one clear geographic error (Viticultors del Priorat placed in Penedès)"
+- King Estate Mountain Blocks Rosé: "demonstrably wrong comparable (Cristal d'Arques)"
+- des Bosquets La Font: "Multiple factual errors (altitude, soil description, Château de Selle's appellation)"
+
+The audit is consistent across both grades — Grade B is barely better than Grade C (2.65 vs 2.48). Specificity is fine (3.06-4.45), Voice is acceptable (2.85-3.9), but **Accuracy is the killer**: hook 2.5, summary 2.4, comparable 2.64-2.95, vinification 2.45. Sonnet/Haiku confidently make up wine facts when they don't know them. The voice rules say "state directly what is known, name the gap plainly, give the buyer something actionable" — but the model is performing certainty instead of acknowledging uncertainty.
+
+**This must be addressed before Grade B can ship to users.** Required fixes (Phase 4 or Session 11):
+1. **Fact-checking pass:** A second model call that compares enrichment claims against the source data (wine_grapes, appellation_rules, wine_vintages) and flags any claim not supported
+2. **Tighter prompts:** Explicit "if you don't know, say so" instructions and refusal of common confabulation patterns (inventing ABV, inventing oak regimes, inventing soil types)
+3. **Comparable sanity check:** The "comparable" field has the highest fabrication rate — needs a known-wine validation step
+4. **Re-enrich the worst:** Once prompts are fixed, the failing audit samples are an obvious test set
+
+**Other session work:**
+- **Retry failed Grade C wines:** the 169 errored wines from Session 9 were re-run via the Anthropic Batch API. Most succeeded. The remainder were JSON parse failures from malformed Haiku output.
+- **josh_test.py --save:** added flag that writes the full result (per-wine pass/fail with confirmation/completeness/enrichment) to `data/stats/josh_test_latest.json`. Used by S11.1 documentation.
+- **WineTest with Story:** ran the full WineTest including Story dimension (~$0.60). Story still 1.8/5 — barely improved over baseline. The enrichment audit explains why: even when wines have all 8 narrative fields, the content isn't reliably good enough to "teach the user something true."
+- **Schema reminders:** spent a few minutes in a column-name comedy of errors. `external_ids` uses `system` (not `id_type`) with values `cola`/`lwin_7`/`upc`/`qr_url`/`qr`. `data_provenance` uses `table_name` + `record_id` (not `entity_type`/`entity_id`). Memorialized so the next session doesn't repeat.
+
+**Surprises:**
+- **The S11.6 NULL-name dupe trap.** Spent a confused half hour staring at "4,755 duplicate groups" before realizing PostgreSQL treats NULL == NULL in GROUP BY. The mass-market grocery wines (Franzia, Carlo Rossi, Peter Vella) have NULL `name` because they don't have a real cuvée — only display_name carries the varietal. These are legitimate distinct SKUs, not dupes.
+- **Grade B is barely better than Grade C in the audit.** I expected Sonnet to outperform Haiku by a wide margin on accuracy. It didn't. Both models confabulate at similar rates. The expensive tokens didn't buy us facts, they bought us prose.
+- **Of 39 missing Josh Test wines, only 2 have zero staging coverage.** The push to 95% is fundamentally a promotion problem (run `retail_wine_create` against `source_ttb_colas`), not a data acquisition problem. The TTB COLA data already has Beringer 2,882 times, Jadot 2,706 times, Drouhin 2,033 times.
+
+**Numbers:**
+- New scripts: 1 (`enrichment_audit.py`)
+- New docs: 2 (`30k_s11_checks.md`, `push_to_95.md`)
+- AI spend this session: **$1.05** (audit) + ~$0 (retry batch was already tracked under Session 9 budget)
+- Cumulative AI spend: **$16.81 / $175 (9.6%)**
+- Wines audited: 70
+- Wines re-enriched (retry pass): ~150
+- Validation checks run: 23 (S11.1-S11.11 + U1-U12)
+- Failures flagged: 3 (none blocking launch)
+
+**Phase 3 status:** **DONE.** The 30K plan's quality bar is met for launch:
+- Findability ≥85% ✓
+- Completeness median ≥6 ✓
+- Provenance coverage ≥95% ✓
+- Display names complete ✓
+- Budget under cap ✓
+
+Open items, none of which block launch:
+- Avg confirmation = C (structural — fix is on-demand B enrichment from frontend)
+- 2,272 real dupes (cleanup from incomplete dedup session)
+- **Enrichment quality (2.48-2.65/5)** — must be fixed before Grade B ships to users, but doesn't block the read-only frontend launch since on-demand B enrichment isn't wired up yet
+
+**Next session:** Phase 4 frontend resume. Verify API views against the rebuilt 30K canonical tables, wire up the Edge Function for on-demand Grade B enrichment, ship loading states for F/D wines. Address the enrichment audit findings BEFORE wiring up on-demand Grade B.

@@ -33,7 +33,7 @@ os.environ["PYTHONUNBUFFERED"] = "1"
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv(override=True)
 
 import anthropic
 from anthropic.types.message_create_params import MessageCreateParamsNonStreaming

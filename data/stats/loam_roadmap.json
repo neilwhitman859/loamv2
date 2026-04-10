@@ -1,7 +1,7 @@
 {
   "_meta": {
     "description": "High-level Loam roadmap. Update phase status/metrics as work progresses. Used by pipeline/analyze/loam_roadmap.py.",
-    "last_updated": "2026-04-10"
+    "last_updated": "2026-04-10T08:20:00Z"
   },
   "phases": [
     {
@@ -39,11 +39,12 @@
         {"name": "Pipeline infrastructure (sequential + batch)", "status": "done", "metric": "batch_enrich.py, batch_api.py, batch_runner.py"},
         {"name": "Voice calibration", "status": "done", "metric": "7 wines manual review, docs/VOICE.md aligned"},
         {"name": "Session 9: D-grade sweep", "status": "done", "metric": "4,962 wines enriched, $15.76"},
-        {"name": "Session 10: Final validation", "status": "next", "metric": "Josh Test, WineTest Story, S11 checks"},
+        {"name": "Session 10: Final validation", "status": "done", "metric": "S11 8/3/4 PASS/FAIL/SKIP, Josh 85%, Story 1.8/5, audit 2.48-2.65/5"},
+        {"name": "Enrichment quality fix", "status": "blocking", "metric": "Audit found 111+91 factual errors in 70 sample wines. Fix prompts + add fact-check pass before Grade B ships"},
         {"name": "Grade C on F-grade wines", "status": "planned", "metric": "~46,688 wines, ~$93 est."},
         {"name": "Grade A showcase curation", "status": "planned", "metric": "Top ~500 wines, manual review"}
       ],
-      "notes": "On-demand Edge Function stays for user-triggered enrichment. Batch runner handles scheduled refreshes."
+      "notes": "On-demand Edge Function stays for user-triggered enrichment. Batch runner handles scheduled refreshes. WARNING: enrichment_audit.py found 2.48-2.65/5 quality (Sonnet+Haiku confabulate facts). Must fix prompts/add fact-check pass before exposing Grade B to users."
     },
     {
       "id": 4,

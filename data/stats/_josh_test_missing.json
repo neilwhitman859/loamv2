@@ -1,0 +1,624 @@
+{
+  "total_missing": 39,
+  "by_country": {
+    "US": 20,
+    "CL": 2,
+    "FR": 9,
+    "NZ": 2,
+    "ES": 2,
+    "IT": 2,
+    "PT": 1,
+    "AT": 1
+  },
+  "by_tier": {
+    "$0-10": 8,
+    "$10-30": 11,
+    "$30-100": 14,
+    "$100-250": 5,
+    "$250+": 1
+  },
+  "by_context": {
+    "grocery": 8,
+    "store": 16,
+    "restaurant": 9,
+    "collector": 6
+  },
+  "missing_wines": [
+    {
+      "id": 6,
+      "search_term": "Woodbridge Cabernet Sauvignon",
+      "producer": "Woodbridge by Robert Mondavi",
+      "grape": "Cabernet Sauvignon",
+      "country": "US",
+      "price_tier": "$0-10",
+      "context": "grocery",
+      "_staging_hits": [
+        "tabc=19"
+      ]
+    },
+    {
+      "id": 8,
+      "search_term": "Cupcake Sauvignon Blanc",
+      "producer": "Cupcake Vineyards",
+      "grape": "Sauvignon Blanc",
+      "country": "US",
+      "price_tier": "$0-10",
+      "context": "grocery",
+      "_staging_hits": [
+        "ttb_colas=171",
+        "tabc=46",
+        "kansas_brands=50",
+        "best_wine_store=17"
+      ]
+    },
+    {
+      "id": 24,
+      "search_term": "Peter Vella Delicious Red",
+      "producer": "Peter Vella",
+      "grape": null,
+      "country": "US",
+      "price_tier": "$0-10",
+      "context": "grocery",
+      "_staging_hits": [
+        "ttb_colas=248",
+        "tabc=62",
+        "kansas_brands=19",
+        "best_wine_store=5"
+      ]
+    },
+    {
+      "id": 25,
+      "search_term": "Carlo Rossi Burgundy",
+      "producer": "Carlo Rossi",
+      "grape": null,
+      "country": "US",
+      "price_tier": "$0-10",
+      "context": "grocery",
+      "_staging_hits": [
+        "ttb_colas=496",
+        "tabc=78",
+        "kansas_brands=111"
+      ]
+    },
+    {
+      "id": 27,
+      "search_term": "Rex Goliath Cabernet",
+      "producer": "Rex Goliath",
+      "grape": "Cabernet Sauvignon",
+      "country": "US",
+      "price_tier": "$0-10",
+      "context": "grocery",
+      "_staging_hits": [
+        "ttb_colas=29",
+        "tabc=44",
+        "kansas_brands=2"
+      ]
+    },
+    {
+      "id": 28,
+      "search_term": "Frontera Cabernet Sauvignon",
+      "producer": "Frontera",
+      "grape": "Cabernet Sauvignon",
+      "country": "CL",
+      "price_tier": "$0-10",
+      "context": "grocery",
+      "_staging_hits": [
+        "ttb_colas=445",
+        "wallys=1",
+        "tabc=184",
+        "kansas_brands=22"
+      ]
+    },
+    {
+      "id": 32,
+      "search_term": "Bogle Merlot",
+      "producer": "Bogle Vineyards",
+      "grape": "Merlot",
+      "country": "US",
+      "price_tier": "$0-10",
+      "context": "grocery",
+      "_staging_hits": [
+        "ttb_colas=103",
+        "tabc=7",
+        "kansas_brands=1",
+        "systembolaget=2",
+        "best_wine_store=12"
+      ]
+    },
+    {
+      "id": 34,
+      "search_term": "Coppola Diamond Claret",
+      "producer": "Francis Ford Coppola",
+      "grape": null,
+      "country": "US",
+      "price_tier": "$0-10",
+      "context": "grocery",
+      "_staging_hits": [
+        "ttb_colas=114",
+        "wallys=1",
+        "tabc=50",
+        "best_wine_store=28",
+        "winedeals=1"
+      ]
+    },
+    {
+      "id": 45,
+      "search_term": "Justin Cabernet Sauvignon",
+      "producer": "Justin",
+      "grape": "Cabernet Sauvignon",
+      "country": "US",
+      "price_tier": "$10-30",
+      "context": "store",
+      "_staging_hits": [
+        "ttb_colas=1132",
+        "wallys=29",
+        "tabc=57",
+        "kansas_brands=108",
+        "systembolaget=2",
+        "polaner=4",
+        "best_wine_store=5",
+        "winedeals=2"
+      ]
+    },
+    {
+      "id": 52,
+      "search_term": "Rodney Strong Cabernet Alexander Valley",
+      "producer": "Rodney Strong",
+      "grape": "Cabernet Sauvignon",
+      "country": "US",
+      "price_tier": "$10-30",
+      "context": "store",
+      "_staging_hits": [
+        "ttb_colas=923",
+        "wallys=2",
+        "tabc=219",
+        "kansas_brands=40",
+        "best_wine_store=5"
+      ]
+    },
+    {
+      "id": 69,
+      "search_term": "Chandon Brut California",
+      "producer": "Domaine Chandon",
+      "grape": null,
+      "country": "US",
+      "price_tier": "$10-30",
+      "context": "restaurant",
+      "_staging_hits": [
+        "ttb_colas=510",
+        "wallys=4",
+        "tabc=13",
+        "systembolaget=10",
+        "best_wine_store=8"
+      ]
+    },
+    {
+      "id": 75,
+      "search_term": "Guigal Cotes du Rhone",
+      "producer": "E. Guigal",
+      "grape": null,
+      "country": "FR",
+      "price_tier": "$10-30",
+      "context": "restaurant",
+      "_staging_hits": [
+        "ttb_colas=759",
+        "wallys=36",
+        "tabc=42",
+        "kansas_brands=7",
+        "flatiron=1",
+        "winedeals=2"
+      ]
+    },
+    {
+      "id": 79,
+      "search_term": "Matua Sauvignon Blanc",
+      "producer": "Matua",
+      "grape": "Sauvignon Blanc",
+      "country": "NZ",
+      "price_tier": "$10-30",
+      "context": "store",
+      "_staging_hits": [
+        "ttb_colas=122",
+        "tabc=11",
+        "kansas_brands=6",
+        "best_wine_store=4",
+        "winedeals=2"
+      ]
+    },
+    {
+      "id": 80,
+      "search_term": "Nobilo Sauvignon Blanc",
+      "producer": "Nobilo",
+      "grape": "Sauvignon Blanc",
+      "country": "NZ",
+      "price_tier": "$10-30",
+      "context": "store",
+      "_staging_hits": [
+        "ttb_colas=111",
+        "tabc=32",
+        "kansas_brands=14",
+        "best_wine_store=1"
+      ]
+    },
+    {
+      "id": 82,
+      "search_term": "Educated Guess Cabernet",
+      "producer": "Educated Guess",
+      "grape": "Cabernet Sauvignon",
+      "country": "US",
+      "price_tier": "$10-30",
+      "context": "store",
+      "_staging_hits": [
+        "ttb_colas=51",
+        "wallys=1",
+        "tabc=14",
+        "kansas_brands=8",
+        "best_wine_store=6",
+        "winedeals=1"
+      ]
+    },
+    {
+      "id": 84,
+      "search_term": "Hess Select Cabernet",
+      "producer": "The Hess Collection",
+      "grape": "Cabernet Sauvignon",
+      "country": "US",
+      "price_tier": "$10-30",
+      "context": "store",
+      "_staging_hits": [
+        "ttb_colas=127",
+        "tabc=7",
+        "kansas_brands=1",
+        "best_wine_store=12"
+      ]
+    },
+    {
+      "id": 86,
+      "search_term": "Sterling Napa Cabernet",
+      "producer": "Sterling Vineyards",
+      "grape": "Cabernet Sauvignon",
+      "country": "US",
+      "price_tier": "$10-30",
+      "context": "store",
+      "_staging_hits": [
+        "ttb_colas=1051",
+        "wallys=1",
+        "tabc=38",
+        "kansas_brands=14",
+        "winedeals=2"
+      ]
+    },
+    {
+      "id": 99,
+      "search_term": "Cotes du Rhone Perrin",
+      "producer": "Famille Perrin",
+      "grape": null,
+      "country": "FR",
+      "price_tier": "$10-30",
+      "context": "store",
+      "_staging_hits": [
+        "ttb_colas=87",
+        "wallys=5",
+        "tabc=23",
+        "kansas_brands=10",
+        "systembolaget=4"
+      ]
+    },
+    {
+      "id": 100,
+      "search_term": "Rioja Crianza Muga",
+      "producer": "Bodegas Muga",
+      "grape": "Tempranillo",
+      "country": "ES",
+      "price_tier": "$10-30",
+      "context": "restaurant",
+      "_staging_hits": [
+        "ttb_colas=122",
+        "flatiron=1"
+      ]
+    },
+    {
+      "id": 116,
+      "search_term": "Caymus Cabernet Sauvignon Napa",
+      "producer": "Caymus Vineyards",
+      "grape": "Cabernet Sauvignon",
+      "country": "US",
+      "price_tier": "$30-100",
+      "context": "restaurant",
+      "_staging_hits": [
+        "ttb_colas=164",
+        "tabc=11",
+        "kansas_brands=39",
+        "flatiron=4",
+        "best_wine_store=19",
+        "winedeals=5"
+      ]
+    },
+    {
+      "id": 118,
+      "search_term": "Silver Oak Alexander Valley Cabernet",
+      "producer": "Silver Oak Cellars",
+      "grape": "Cabernet Sauvignon",
+      "country": "US",
+      "price_tier": "$30-100",
+      "context": "restaurant",
+      "_staging_hits": [
+        "ttb_colas=13",
+        "tabc=2"
+      ]
+    },
+    {
+      "id": 119,
+      "search_term": "Jordan Cabernet Sonoma",
+      "producer": "Jordan Vineyard & Winery",
+      "grape": "Cabernet Sauvignon",
+      "country": "US",
+      "price_tier": "$30-100",
+      "context": "restaurant",
+      "_staging_hits": []
+    },
+    {
+      "id": 127,
+      "search_term": "Hall Cabernet Napa",
+      "producer": "Hall Wines",
+      "grape": "Cabernet Sauvignon",
+      "country": "US",
+      "price_tier": "$30-100",
+      "context": "store",
+      "_staging_hits": [
+        "ttb_colas=4",
+        "tabc=2",
+        "systembolaget=10"
+      ]
+    },
+    {
+      "id": 128,
+      "search_term": "Beringer Private Reserve Cabernet",
+      "producer": "Beringer",
+      "grape": "Cabernet Sauvignon",
+      "country": "US",
+      "price_tier": "$30-100",
+      "context": "store",
+      "_staging_hits": [
+        "ttb_colas=2882",
+        "wallys=22",
+        "tabc=192",
+        "kansas_brands=63",
+        "systembolaget=2",
+        "best_wine_store=11",
+        "winedeals=2"
+      ]
+    },
+    {
+      "id": 133,
+      "search_term": "Daou Cabernet Paso Robles",
+      "producer": "DAOU",
+      "grape": "Cabernet Sauvignon",
+      "country": "US",
+      "price_tier": "$30-100",
+      "context": "store",
+      "_staging_hits": [
+        "ttb_colas=341",
+        "wallys=59",
+        "tabc=43",
+        "kansas_brands=17",
+        "systembolaget=6",
+        "best_wine_store=7",
+        "winedeals=10"
+      ]
+    },
+    {
+      "id": 147,
+      "search_term": "Guigal Chateauneuf-du-Pape",
+      "producer": "E. Guigal",
+      "grape": null,
+      "country": "FR",
+      "price_tier": "$30-100",
+      "context": "restaurant",
+      "_staging_hits": [
+        "ttb_colas=759",
+        "wallys=36",
+        "tabc=42",
+        "kansas_brands=7",
+        "flatiron=1",
+        "winedeals=2"
+      ]
+    },
+    {
+      "id": 158,
+      "search_term": "Muga Reserva Rioja",
+      "producer": "Bodegas Muga",
+      "grape": "Tempranillo",
+      "country": "ES",
+      "price_tier": "$30-100",
+      "context": "restaurant",
+      "_staging_hits": [
+        "ttb_colas=122",
+        "flatiron=1"
+      ]
+    },
+    {
+      "id": 164,
+      "search_term": "Antinori Chianti Classico Riserva",
+      "producer": "Marchesi Antinori",
+      "grape": "Sangiovese",
+      "country": "IT",
+      "price_tier": "$30-100",
+      "context": "restaurant",
+      "_staging_hits": [
+        "ttb_colas=64",
+        "wallys=11",
+        "tabc=2",
+        "kansas_brands=10",
+        "systembolaget=12",
+        "best_wine_store=1"
+      ]
+    },
+    {
+      "id": 165,
+      "search_term": "Gaja Ca'Marcanda Promis",
+      "producer": "Gaja",
+      "grape": null,
+      "country": "IT",
+      "price_tier": "$30-100",
+      "context": "store",
+      "_staging_hits": [
+        "ttb_colas=1496",
+        "wallys=112",
+        "tabc=75",
+        "kansas_brands=15",
+        "systembolaget=8",
+        "flatiron=2",
+        "winedeals=6"
+      ]
+    },
+    {
+      "id": 179,
+      "search_term": "Taylor's Late Bottled Vintage Port",
+      "producer": "Taylor's",
+      "grape": null,
+      "country": "PT",
+      "price_tier": "$30-100",
+      "context": "store",
+      "_staging_hits": [
+        "ttb_colas=55",
+        "tabc=3"
+      ]
+    },
+    {
+      "id": 183,
+      "search_term": "FX Pichler Riesling Smaragd Wachau",
+      "producer": "F.X. Pichler",
+      "grape": "Riesling",
+      "country": "AT",
+      "price_tier": "$30-100",
+      "context": "store",
+      "_staging_hits": [
+        "ttb_colas=145",
+        "tabc=1",
+        "flatiron=1"
+      ]
+    },
+    {
+      "id": 187,
+      "search_term": "Errazuriz Max Reserva Cabernet",
+      "producer": "Vi\u00f1a Err\u00e1zuriz",
+      "grape": "Cabernet Sauvignon",
+      "country": "CL",
+      "price_tier": "$30-100",
+      "context": "store",
+      "_staging_hits": []
+    },
+    {
+      "id": 202,
+      "search_term": "Zind-Humbrecht Pinot Gris",
+      "producer": "Zind-Humbrecht",
+      "grape": "Pinot Gris",
+      "country": "FR",
+      "price_tier": "$30-100",
+      "context": "store",
+      "_staging_hits": [
+        "ttb_colas=198",
+        "tabc=49",
+        "kansas_brands=10",
+        "flatiron=1",
+        "winedeals=4"
+      ]
+    },
+    {
+      "id": 208,
+      "search_term": "Silver Oak Napa Valley Cabernet",
+      "producer": "Silver Oak Cellars",
+      "grape": "Cabernet Sauvignon",
+      "country": "US",
+      "price_tier": "$100-250",
+      "context": "collector",
+      "_staging_hits": [
+        "ttb_colas=13",
+        "tabc=2"
+      ]
+    },
+    {
+      "id": 229,
+      "search_term": "Trimbach Clos Sainte Hune Riesling",
+      "producer": "Trimbach",
+      "grape": "Riesling",
+      "country": "FR",
+      "price_tier": "$100-250",
+      "context": "collector",
+      "_staging_hits": [
+        "ttb_colas=399",
+        "wallys=23",
+        "tabc=30",
+        "kansas_brands=20",
+        "flatiron=1",
+        "winedeals=1"
+      ]
+    },
+    {
+      "id": 232,
+      "search_term": "Drouhin Musigny Grand Cru",
+      "producer": "Joseph Drouhin",
+      "grape": "Pinot Noir",
+      "country": "FR",
+      "price_tier": "$100-250",
+      "context": "collector",
+      "_staging_hits": [
+        "ttb_colas=2033",
+        "wallys=101",
+        "tabc=33",
+        "kansas_brands=22",
+        "systembolaget=10",
+        "flatiron=11"
+      ]
+    },
+    {
+      "id": 233,
+      "search_term": "Jadot Corton-Charlemagne Grand Cru",
+      "producer": "Louis Jadot",
+      "grape": "Chardonnay",
+      "country": "FR",
+      "price_tier": "$100-250",
+      "context": "collector",
+      "_staging_hits": [
+        "ttb_colas=2706",
+        "wallys=86",
+        "tabc=224",
+        "kansas_brands=105",
+        "systembolaget=52",
+        "flatiron=9",
+        "best_wine_store=4",
+        "winedeals=21"
+      ]
+    },
+    {
+      "id": 234,
+      "search_term": "Bouchard Montrachet Grand Cru",
+      "producer": "Bouchard P\u00e8re et Fils",
+      "grape": "Chardonnay",
+      "country": "FR",
+      "price_tier": "$100-250",
+      "context": "collector",
+      "_staging_hits": [
+        "wallys=1",
+        "systembolaget=28"
+      ]
+    },
+    {
+      "id": 261,
+      "search_term": "Salon Le Mesnil Champagne",
+      "producer": "Salon",
+      "grape": "Chardonnay",
+      "country": "FR",
+      "price_tier": "$250+",
+      "context": "collector",
+      "_staging_hits": [
+        "ttb_colas=256",
+        "wallys=8",
+        "tabc=25",
+        "kansas_brands=1",
+        "systembolaget=2"
+      ]
+    }
+  ]
+}

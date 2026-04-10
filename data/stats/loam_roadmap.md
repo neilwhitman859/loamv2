@@ -1,5 +1,5 @@
 =================================================================
-  LOAM PRODUCT ROADMAP            2026-04-10 07:16:30
+  LOAM PRODUCT ROADMAP            2026-04-10 08:25:00
 =================================================================
 
   OVERVIEW
@@ -8,9 +8,11 @@
   Catalog: 51,790 wines, 2,529 producers
   Enriched: 4,962 wines (9.6%)
   Josh Test: 85% findability
-  Budget: $15.76 / $175 (9.0%)
+  Budget: $16.81 / $175 (9.6%)
 
   >>> CURRENTLY IN PHASE 3: Enrichment Pipeline
+  >>> 30K plan COMPLETE. Next: Phase 4 (frontend resume).
+  >>> BLOCKER: enrichment_audit found 2.48-2.65/5 quality.
 
   [x] PHASE 1: Foundation  [DONE]  2026-03-17
       Schema, reference data, source research
@@ -31,10 +33,12 @@
       [x] Pipeline infrastructure (sequential + batch)  — batch_enrich.py, batch_api.py, batch_runner.py
       [x] Voice calibration  — 7 wines manual review, docs/VOICE.md aligned
       [x] Session 9: D-grade sweep  — 4,962 wines enriched, $15.76
-      [!] Session 10: Final validation  — Josh Test, WineTest Story, S11 checks
+      [x] Session 10: Final validation  — Josh 85%, S11 8/3/4 PASS/FAIL/SKIP, audit 2.48-2.65/5
+      [!] Enrichment quality fix  — 111+91 factual errors flagged. Fix prompts before Grade B ships
       [ ] Grade C on F-grade wines  — ~46,688 wines, ~$93 est.
       [ ] Grade A showcase curation  — Top ~500 wines, manual review
-      On-demand Edge Function stays for user-triggered enrichment. Batch runner handles scheduled refreshes.
+      WARNING: enrichment_audit.py found 2.48-2.65/5 quality (Sonnet+Haiku confabulate facts).
+      Must fix prompts/add fact-check pass before exposing Grade B to users.
 
   [ ] PHASE 4: Frontend Resume  [pending]
       Ship the consumer experience (loam.onrender.com)

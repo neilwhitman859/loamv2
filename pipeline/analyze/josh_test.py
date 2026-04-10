@@ -9,15 +9,19 @@ Usage:
     python -m pipeline.analyze.josh_test [--sample data/josh_test_sample.json]
     python -m pipeline.analyze.josh_test --tier "$30-100"  # single tier
     python -m pipeline.analyze.josh_test --staging  # check staging coverage
+    python -m pipeline.analyze.josh_test --save  # save to data/stats/josh_test_latest.json
 """
 import argparse
 import json
 import re
 import unicodedata
 from collections import defaultdict
+from datetime import datetime, timezone
 from pathlib import Path
 
 from pipeline.lib.db import get_conn
+
+LATEST_RESULTS_PATH = Path("data/stats/josh_test_latest.json")
 
 
 SAMPLE_PATH = Path("data/josh_test_sample.json")
@@ -140,6 +144,11 @@ def test_findability(wines: list[dict]) -> dict:
     tier_counts = defaultdict(lambda: {"total": 0, "found": 0})
     country_counts = defaultdict(lambda: {"total": 0, "found": 0})
     depth_scores = []
+    confirmation_scores = []  # ints: A=4, B=3, C=2, D=1, None=0
+    completeness_scores = []
+    enrichment_scores = []  # ints: 2=B, 1=C, 0=F/D
+    CONF_TO_INT = {'A': 4, 'B': 3, 'C': 2, 'D': 1, None: 0}
+    INT_TO_CONF = {4: 'A', 3: 'B', 2: 'C', 1: 'D', 0: 'NULL'}
 
     for w in wines:
         tier = w["price_tier"]
@@ -207,6 +216,24 @@ def test_findability(wines: list[dict]) -> dict:
                 depth_scores.append(depth)
                 w["_depth"] = depth
                 w["_wine_id"] = matched_wine_id
+
+                # Pull confirmation, completeness, data_grade for the matched wine
+                cur.execute("""
+                    SELECT confirmation, completeness, data_grade
+                    FROM wines WHERE id = %s
+                """, (matched_wine_id,))
+                row = cur.fetchone()
+                if row:
+                    conf, comp, dg = row
+                    confirmation_scores.append(CONF_TO_INT.get(conf, 0))
+                    completeness_scores.append(comp or 0)
+                    # Map data_grade to enrichment level: B=2, C=1, else=0
+                    if dg == 'B':
+                        enrichment_scores.append(2)
+                    elif dg == 'C':
+                        enrichment_scores.append(1)
+                    else:
+                        enrichment_scores.append(0)
         else:
             missing_wines.append(w)
 
@@ -222,12 +249,26 @@ def test_findability(wines: list[dict]) -> dict:
         d["rate"] = d["found"] / d["total"] if d["total"] else 0
 
     avg_depth = sum(depth_scores) / len(depth_scores) if depth_scores else 0
+    avg_conf_int = sum(confirmation_scores) / len(confirmation_scores) if confirmation_scores else 0
+    avg_completeness = sum(completeness_scores) / len(completeness_scores) if completeness_scores else 0
+    avg_enrichment_int = sum(enrichment_scores) / len(enrichment_scores) if enrichment_scores else 0
+    # Round avg confirmation to nearest int letter
+    avg_confirmation_letter = INT_TO_CONF.get(round(avg_conf_int), 'NULL')
+    if avg_enrichment_int >= 1.5:
+        avg_enrichment_letter = 'B'
+    elif avg_enrichment_int >= 0.5:
+        avg_enrichment_letter = 'C'
+    else:
+        avg_enrichment_letter = 'F/D'
 
     return {
         "total": total,
         "found": found,
         "find_rate": found / total if total else 0,
         "avg_depth": avg_depth,
+        "avg_confirmation": avg_confirmation_letter,
+        "avg_completeness": round(avg_completeness, 1),
+        "avg_enrichment": avg_enrichment_letter,
         "by_tier": dict(tier_counts),
         "by_country": dict(country_counts),
         "found_wines": found_wines,
@@ -414,12 +455,55 @@ def print_report(results: dict) -> None:
             print(f"  [FAIL] S2.3: staging coverage {rate:.0%} < 50%")
 
 
+def save_results(results: dict, session: int | None = None, notes: str = "") -> None:
+    """Persist findability results in the schema the dashboards expect."""
+    LATEST_RESULTS_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    payload = {
+        "run_date": datetime.now(timezone.utc).date().isoformat(),
+        "session": session,
+        "method": "search_catalog RPC (v2, honest test)",
+        "total_tested": results["total"],
+        "found": results["found"],
+        "find_rate": round(results["find_rate"], 2),
+        "avg_depth_found": round(results.get("avg_depth", 0), 1),
+        "avg_confirmation": results.get("avg_confirmation", "—"),
+        "avg_completeness": results.get("avg_completeness", 0),
+        "avg_enrichment": results.get("avg_enrichment", "—"),
+        "by_tier": {
+            tier: {
+                "found": data["found"],
+                "total": data["total"],
+                "rate": round(data["rate"], 2),
+            }
+            for tier, data in results.get("by_tier", {}).items()
+        },
+        "by_country": {
+            cc: {
+                "found": data["found"],
+                "total": data["total"],
+                "rate": round(data["rate"], 2),
+            }
+            for cc, data in results.get("by_country", {}).items()
+        },
+    }
+    if notes:
+        payload["notes"] = notes
+
+    LATEST_RESULTS_PATH.write_text(json.dumps(payload, indent=2))
+    print(f"\n  Saved to {LATEST_RESULTS_PATH}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Josh Test")
     parser.add_argument("--sample", default=str(SAMPLE_PATH))
     parser.add_argument("--tier", help="Test single price tier only")
     parser.add_argument("--staging", action="store_true",
                         help="Check staging coverage instead of canonical")
+    parser.add_argument("--save", action="store_true",
+                        help="Save results to data/stats/josh_test_latest.json")
+    parser.add_argument("--session", type=int, help="Session number for save metadata")
+    parser.add_argument("--notes", default="", help="Notes to embed in saved JSON")
     args = parser.parse_args()
 
     wines = load_sample(Path(args.sample))
@@ -432,6 +516,9 @@ def main():
         results = test_findability(wines)
 
     print_report(results)
+
+    if args.save and not args.staging:
+        save_results(results, session=args.session, notes=args.notes)
 
 
 if __name__ == "__main__":

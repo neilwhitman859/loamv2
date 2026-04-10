@@ -1,28 +1,122 @@
 {
   "run_date": "2026-04-10",
-  "session": 9,
+  "session": 10,
   "method": "search_catalog RPC (v2, honest test)",
   "total_tested": 265,
   "found": 226,
   "find_rate": 0.85,
   "avg_depth_found": 5.8,
-  "avg_confirmation": "B",
-  "avg_completeness": 6.0,
-  "avg_enrichment": "in_progress",
+  "avg_confirmation": "C",
+  "avg_completeness": 8.1,
+  "avg_enrichment": "F/D",
   "by_tier": {
-    "$0-10": {"found": 27, "total": 35, "rate": 0.77},
-    "$10-30": {"found": 69, "total": 80, "rate": 0.86},
-    "$30-100": {"found": 76, "total": 90, "rate": 0.84},
-    "$100-250": {"found": 35, "total": 40, "rate": 0.88},
-    "$250+": {"found": 19, "total": 20, "rate": 0.95}
+    "$0-10": {
+      "found": 27,
+      "total": 35,
+      "rate": 0.77
+    },
+    "$10-30": {
+      "found": 69,
+      "total": 80,
+      "rate": 0.86
+    },
+    "$30-100": {
+      "found": 76,
+      "total": 90,
+      "rate": 0.84
+    },
+    "$100-250": {
+      "found": 35,
+      "total": 40,
+      "rate": 0.88
+    },
+    "$250+": {
+      "found": 19,
+      "total": 20,
+      "rate": 0.95
+    }
   },
   "by_country": {
-    "US": {"found": 83, "total": 103, "rate": 0.81},
-    "FR": {"found": 47, "total": 56, "rate": 0.84},
-    "IT": {"found": 25, "total": 27, "rate": 0.93},
-    "AU": {"found": 17, "total": 17, "rate": 1.00},
-    "DE": {"found": 7, "total": 7, "rate": 1.00},
-    "ES": {"found": 13, "total": 15, "rate": 0.87}
+    "US": {
+      "found": 83,
+      "total": 103,
+      "rate": 0.81
+    },
+    "AU": {
+      "found": 17,
+      "total": 17,
+      "rate": 1.0
+    },
+    "IT": {
+      "found": 25,
+      "total": 27,
+      "rate": 0.93
+    },
+    "CL": {
+      "found": 5,
+      "total": 7,
+      "rate": 0.71
+    },
+    "AR": {
+      "found": 6,
+      "total": 6,
+      "rate": 1.0
+    },
+    "NZ": {
+      "found": 6,
+      "total": 8,
+      "rate": 0.75
+    },
+    "FR": {
+      "found": 47,
+      "total": 56,
+      "rate": 0.84
+    },
+    "ES": {
+      "found": 13,
+      "total": 15,
+      "rate": 0.87
+    },
+    "DE": {
+      "found": 7,
+      "total": 7,
+      "rate": 1.0
+    },
+    "ZA": {
+      "found": 5,
+      "total": 5,
+      "rate": 1.0
+    },
+    "AT": {
+      "found": 1,
+      "total": 2,
+      "rate": 0.5
+    },
+    "PT": {
+      "found": 6,
+      "total": 7,
+      "rate": 0.86
+    },
+    "GR": {
+      "found": 2,
+      "total": 2,
+      "rate": 1.0
+    },
+    "LB": {
+      "found": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "HU": {
+      "found": 1,
+      "total": 1,
+      "rate": 1.0
+    },
+    "GB": {
+      "found": 1,
+      "total": 1,
+      "rate": 1.0
+    }
   },
-  "notes": "Unchanged from Session 8 quality gate. Enrichment doesn't affect findability. Will re-test in Session 10 for Story dimension via WineTest."
+  "notes": "Session 10 final validation: post-Grade C retry. Enrichment dimension reflects data_grade promotion."
 }
