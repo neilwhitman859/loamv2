@@ -333,3 +333,59 @@ France 14,731 | US 12,219 | Germany 4,720 | Australia 4,355 | Italy 4,113 | Spai
 **Numbers:** +34,511 wines, +1,990 producers, ~54,000 child rows recovered. $0 AI cost.
 
 **Next session:** Session 8 — Batch 3 / Gap Fill. TTB linking for new wines, push to 100K+ wines with the remaining 5+ wine producers, or gap-fill existing wines.
+
+---
+
+### Session 8: Data Quality Gate + Mass Market — 2026-04-09
+
+(See sessions.md for details — quality audit, Champagne wine_type fix, producer merges, mass-market seeding. $0 AI.)
+
+---
+
+### Session 9: Enrichment Sweep (S9+S10 merged) — 2026-04-09
+
+**What happened:** Merged Sessions 9 and 10 per the plan (S9 gap-fill checks all passed, moved directly to enrichment). Built `pipeline/enrich/batch_enrich.py` — a batch enrichment script supporting both Grade C (Haiku, ~$0.006/wine) and Grade B (Sonnet, ~$0.018/wine). Calibrated on 7 wines across US/France/Italy/Germany/Australia/Portugal, validated voice quality, then launched bulk sweeps.
+
+**Key steps:**
+1. S9 validation checks — all 6 passed. Josh Test 85% (at target). $0-10 tier at 77% (target 50%). $250+ at 95% (target 60%). $0 budget spent.
+2. Built `pipeline/enrich/batch_enrich.py` with:
+   - Bulk context preloading (8 queries for N wines, not 8*N)
+   - Grade C prompt (hook, style, sensory, comparables) and Grade B prompt (full narrative)
+   - Resume-safe (skips already-enriched wines)
+   - Budget cap, enrichment_log tracking, data_grade updates
+3. Calibrated Grade B (Sonnet) on 7 wines: Opus One Overture, DRC Corton-Charlemagne, Rosenblum Zinfandel, Sassicaia, Taylor's Port, Penfolds Grange, Josh Cellars Cab. Voice quality excellent — specific, no filler, uses DB context (appellation rules, scores). Cost: $0.12.
+4. Calibrated Grade C (Haiku) on 5 wines. Fixed arg-count bug in tasting_insights INSERT. Voice comparable to Sonnet but lighter. Cost: $0.03.
+5. Fixed comparable_wines JSON-as-string formatting bug (Haiku sometimes returns JSON array instead of text).
+6. Optimized: bulk preloading increased throughput from ~2/min to ~18/min (10x improvement).
+7. Launched concurrent sweeps: Grade C on 4,360 D-grade wines ($26 budget cap) + Grade B on top 100 wines ($5 budget cap). Both running at session end.
+
+**Bugs fixed:**
+- `write_grade_c` had 15 args but 14 `%s` placeholders (extra `0` for vintage_year). 32 API calls wasted before fix.
+- `comparable_wines` sometimes returned as JSON object — added normalization in `call_claude`.
+- Windows stdout buffering prevented background output — added `PYTHONUNBUFFERED=1`.
+- Schema column name mismatches: `rule_text` → `rules`, `certification_id` → `farming_certification_id`, `designation_id` → `label_designation_id`, `ld.name` → `ld.canonical_name`.
+
+**State at session end (sweeps still running):**
+| Grade | Count | Notes |
+|-------|-------|-------|
+| B | ~22 | Grade B sweep running (target 100) |
+| C | ~70 | Grade C sweep running (target 4,360) |
+| D | 4,312 | Will become C as sweep progresses |
+| F | 47,386 | Not targeted |
+
+**Cost:** ~$0.75 at session end, expected ~$28 when sweeps complete.
+
+**Voice review highlights:**
+- Opus One: "first-growth Bordeaux meets Napa Valley vision...multi-vintage blend showcases the estate's signature Oakville terroir"
+- Josh Cellars: quality_level "acceptable", "triumph of California's industrial wine model" — honest without being dismissive
+- DRC Corton-Charlemagne: "0.68 hectares on the upper slopes of Corton hill...At $2,000 per bottle"
+- Barefoot Pink Moscato: "engineered for accessibility...the gateway wine for people who don't yet like dry wine"
+
+**Surprises:**
+- Haiku Grade C quality is remarkably close to Sonnet Grade B for hooks and style profiles. The main difference is Grade B adds full narratives, terroir, vinification, food pairings.
+- Bulk context preloading was the critical optimization — per-wine DB queries were the bottleneck, not the API calls.
+- Background Bash processes report "completed" when the shell exits (due to `&`), but the forked Python processes continue running. Misleading but harmless.
+
+**To monitor:** Check `SELECT data_grade, count(*) FROM wines WHERE deleted_at IS NULL GROUP BY data_grade` periodically. Re-run commands from dashboard if processes die.
+
+**Next session:** Session 10 — Josh Test + Final Validation. Verify enrichment results, run WineTest Story dimension, final Josh Test with all checks.

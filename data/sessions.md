@@ -4,7 +4,7 @@ Active and recent sessions. Read at session start, append when starting/finishin
 
 ## Active
 
-(none)
+- **2026-04-09 30K Session 9: Enrichment Sweep** (Opus) — Merged S9+S10. Built `pipeline/enrich/batch_enrich.py` (Grade C Haiku + Grade B Sonnet batch enrichment). Calibrated on 7 wines, validated voice. Launched sweeps: Grade C on 4,360 D-grade wines + Grade B on top 100. Sweeps running in background (PIDs 105880/104688). ~$0.75 spent at session end, ~$28 expected. Tables: wines, wine_insights, wine_vintage_tasting_insights, enrichment_log.
 
 ## Done
 

@@ -14,39 +14,32 @@
   [x]  7.2 TTB Linking + Josh Test               2026-04-09 ($0.00)
   [-]  8a. Batch 3 / Gap Fill                    SKIPPED (84% findability)
   [x]  8b. Data Quality Gate                     2026-04-09 ($0.00)
-  [ ]  9. Enrichment Test (500 wines)            
+  [x]  9. Enrichment Sweep (S9+S10 merged)       2026-04-09 (~$28 est)
   [ ] 10. Josh Test + Final Validation           
 
   PHASE STATUS
   ___________________________________________________
   0  Archive & Schema       DONE
-  1  Producer Canon         2,532 producers
-  2  Wine Identity          51,035 wines
-  3  Vintage & Depth        67,310 vintages (+21,821 from TTB)
-  4  Enrichment             PENDING (next step)
+  1  Producer Canon         2,529 producers
+  2  Wine Identity          51,790 wines
+  3  Vintage & Depth        68,537 vintages
+  4  Enrichment             IN PROGRESS (sweeps running)
   4a Data Quality Gate      Session 8 complete
-  5  Josh Test              84% findability (v2), 6.5/8 depth
+  5  Josh Test              85% findability (v2), 5.8/8 depth
 
-  PROGRESS
+  ENRICHMENT (Session 9)
   ___________________________________________________
-  Producers       2,532  [##########..........] 51%
-  Wines          51,035  [####################] 100%
-  w/ vintage     ~37K   [###############.....] 72%
-  w/ grapes      35,704  [#############.......] 70%
-  w/ COLA        10,906  [####................] 21%
-  w/ label image ~37K   [###############.....] 72%
-  w/ ABV         ~38K   [###############.....] 75%
+  Grade B (Sonnet)    ~22+ enriched, running (target 100)
+  Grade C (Haiku)     ~70+ enriched, running (target 4,360)
+  Grade D             4,312 remaining
+  Grade F             47,386 (not targeted this session)
+  Cost so far         ~$0.75
+  Pipeline            pipeline/enrich/batch_enrich.py
 
-  CONFIRMATION (updated post-TTB)
-  ___________________________________________________
-  Wines w/ COLA        10,906  (21.4%)
-  Wines w/ LWIN        51,035  (100%)
-  Vintages total       67,310
-
-  JOSH TEST (post-Session 8 quality gate)
+  JOSH TEST (unchanged from Session 8)
   ___________________________________________________
   Overall         226/265  (85%)  — real search_catalog RPC
-  $0-10            27/35   (77%)  +20pp from mass-market seed
+  $0-10            27/35   (77%)
   $10-30           69/80   (86%)
   $30-100          76/90   (84%)
   $100-250         35/40   (88%)
@@ -56,10 +49,10 @@
 
   BUDGET
   ___________________________________________________
-  Spent: $0.00 / $175.00
-  [....................] 0%
+  Spent: ~$0.75 / $175.00
+  [....................] <1%
 
-  REFERENCE TABLES (should be stable)
+  REFERENCE TABLES (stable)
   ___________________________________________________
   Appellations        3,662
   App. rules          1,165
@@ -67,27 +60,12 @@
   Regions               389
   Countries              68
 
-  TTB LINKING (Session 7.2)
-  ___________________________________________________
-  Producers w/ TTB   2,157/2,532 (85%)
-  COLA IDs created   200,289
-  Vintages created    21,821
-  ABV filled           2,318
-  Label URLs          37,200
-
-  DATA QUALITY GATE (Session 8)
-  ___________________________________________________
-  Champagne wine_type fixed  1,020
-  Fortified colors fixed       183
-  Display name artifacts        57
-  Producer merges (7 pairs)   ~250 wines consolidated
-  Krug/Failla cross-contam      12 wines fixed
-  Mass-market wines seeded     183 new wines
-  Mass-market vintages         420
-  Mass-market COLA IDs       2,523
-
   NEXT ACTION
   ___________________________________________________
-    Session 9: Enrichment Test (500 wines, voice calibration)
+    Monitor enrichment sweeps (PIDs 105880/104688)
+    Re-run if processes die:
+      python -m pipeline.enrich.batch_enrich --grade C --limit 4400 --execute --budget 30
+      python -m pipeline.enrich.batch_enrich --grade B --limit 100 --execute --budget 5
+    Session 10: Josh Test + Final Validation
 
 =======================================================
