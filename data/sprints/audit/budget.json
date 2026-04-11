@@ -6,9 +6,10 @@
   "by_session": {
     "S2.1": 0.00,
     "S2.2": 0.00,
-    "S2.3": 0.00
+    "S2.3": 0.00,
+    "S2.4": 0.00
   },
   "by_model": {},
   "closed": false,
-  "notes": "Part of a $50 combined ceiling across Sprints 2+3. S2.3 actual spend: $0 — pivoted from Sonnet API calls to inline Opus 4.6 reasoning (Opus is more capable for this task) + 3 WebFetch primary-source verifications. The $18 S2.3 pre-auth is rolled forward to Sprint 3 F10 (L3 re-fact-check pass on 5,108 existing wine_insights rows, estimated $30-50). Remaining Sprint 2 budget: $25.00 / $25.00."
+  "notes": "Part of a $50 combined ceiling across Sprints 2+3. S2.3 actual spend: $0 — pivoted from Sonnet API calls to inline Opus 4.6 reasoning (Opus is more capable for this task) + 3 WebFetch primary-source verifications. S2.4 actual spend: $0 — Opus 4.6 inline + 1 WebFetch (Wikipedia La Tâche), ratified pattern per DECISIONS.md 2026-04-11 + memory/feedback_opus_inline_reasoning.md. Four sessions in, budget is $0.00 / $25.00. The $18 S2.3 pre-auth continues to roll forward to Sprint 3 F10 (L3 re-fact-check pass on 5,108 existing wine_insights rows, estimated $30-50, to be re-evaluated at Sprint 3 start). Remaining Sprint 2 budget: $25.00 / $25.00."
 }

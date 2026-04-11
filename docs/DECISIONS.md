@@ -1528,3 +1528,32 @@ So ~80% of non-null percentages were not blend data at all. Downstream enrichmen
 - 6,570 over-100% wines → 1 (Cullen Diana Madeline, a real Bordeaux blend with a rounding artifact 84+13+5+3=105).
 - BACKLOG P0 grape percentage item closed.
 - Enrichment can now read `wine_grapes.percentage` as "real when non-null, unknown when null" and prompts can be built around that contract.
+
+---
+
+### Opus inline reasoning is the default for audit / fact-check / cross-record work (2026-04-11, ratified after S2.3)
+
+**Decision:** For audit-class and reasoning-class sessions — data audits, primary-source fact-checking, cross-record pattern recognition, findings synthesis, quality/severity judgments — default to doing the work inline in the current Opus 4.6 / 1M-context conversation instead of pre-authorizing a Haiku/Sonnet script budget. Scripted Haiku/Sonnet still belongs in mass-batch promotion, unattended scheduled runs, and anything that exceeds the 1M context window.
+
+**Why:** Sprint 2 S2.3 ("wine expert canonical audit — 99 wines + 50 producers") was pre-scoped with a $15-18 Haiku/Sonnet budget for fact-checking. When the session actually ran, Opus 4.6 did the audit inline — reading each record from the DB, using training knowledge for known facts, using WebFetch to verify against primary sources (INAO, winery sites, Wikipedia, regional councils) for every finding that needed external corroboration. The result was 22 findings at **$0 project spend**, including severe catches that a per-item Haiku script structurally could not have made:
+
+- **Systemic grape-linkage bug found by cross-referencing across the whole batch in one pass:** Chardonnay/Pinot Blanc linkage error affects 2,743 of 2,809 Chardonnay-named wines (97.6%). A per-wine Haiku pass would flag each wine individually as "wrong grape" but would not see the pattern. Opus saw the same error repeat and escalated it to a systemic root-cause finding.
+- **Invented grape caught by primary-source verification:** Messina Hof's AI-generated `wine_insights` described a grape called "Garro". Opus had no training knowledge of "Garro", WebFetched Messina Hof's own site, confirmed the actual grape is Lenoir (Black Spanish). Haiku would have either passed this ("looks like a grape name") or flagged every non-standard grape name, generating noise.
+- **Confabulated producer history caught by judgment:** `wine_insights` claimed Joseph Phelps "purchased Eisele Vineyard in 2013". Opus knew the actual 2013 transaction (sold to Artemis / Latour) and WebFetched to confirm. This requires the same model to hold both the AI-generated narrative and the factual check.
+- **Fabricated geology caught by training knowledge:** "Hunter Valley volcanic", "Santa Ynez Franciscan shale" — factually wrong in ways a wine-literate reader catches immediately. A general-purpose Haiku summarizer would not flag these.
+
+Pre-authorizing a scripted Haiku/Sonnet budget for this kind of work is paying for lower-quality output. User confirmed the pivot mid-session with "this is great, document this and add to the necessary MD's to do this more often."
+
+**Rule going forward:**
+
+- **Default audit/fact-check/reasoning sessions to Opus inline.** If a session spec proposes a Haiku/Sonnet budget for that work, pause and ask whether Opus inline is the right tool first — default yes. Note the pivot in the session journal so budget tracking stays honest.
+- **Still script Haiku/Sonnet** for: mass-batch promotion (tens of thousands of rows), per-item transformations that must be reproducible, workloads exceeding the 1M context window, unattended scheduled runs, anything that writes to the DB through a pipeline script.
+- **When writing session prompts**, prefer "Opus will audit/reason through X inline" over "script will batch Haiku across X" unless the scale genuinely demands batch.
+- **When estimating sprint budgets**, don't pad audit sessions with AI spend by default. S2.1 / S2.2 / S2.3 all ran at $0 actual vs budgeted $0-18; S2.4 and subsequent audit sessions should be $0 by default.
+
+**Cost implication for Sprint 2:** The $18 S2.3 pre-auth that was not spent rolls forward to the Sprint 3 L3 re-fact-check pass (post-fix content regeneration). Even that should be re-evaluated at the start of Sprint 3 — if re-checking can itself be done Opus-inline on a sample, the budget may stay at $0.
+
+**Documented in:**
+- `memory/feedback_opus_inline_reasoning.md` (primary — auto-loads in future conversations)
+- `CLAUDE.md` "Prefer Opus Inline for Audit & Reasoning" behavioral instruction
+- `memory/MEMORY.md` index

@@ -60,6 +60,25 @@ If the user is going a long stretch without wrapping up, if decisions are being 
 ### Session Whiteboard
 Read `data/sessions.md` at session start. Log what you're working on under **Active** (include tables you're writing to). At wrap-up, move your entry to **Done** with a summary. If another session is active, don't edit CLAUDE.md or docs/ — the next solo session merges it in.
 
+### Prefer Opus Inline for Audit & Reasoning
+For audit-class and reasoning-class work — data audits, primary-source fact-checking,
+cross-record pattern recognition, findings synthesis, quality/severity judgments —
+default to doing the work inline in the current Opus 4.6 / 1M-context conversation
+instead of pre-authorizing a Haiku/Sonnet script budget. Same rigor, ~$0 marginal
+project cost, and Opus can cross-reference across the whole batch in one pass in
+a way a per-item scripted call cannot.
+
+Still use scripted Haiku/Sonnet for: mass-batch promotion (tens of thousands of
+rows), per-item transformations that must be reproducible, workloads exceeding
+the 1M context window, unattended scheduled runs, anything that writes to the DB
+via automation.
+
+When a session spec proposes a Haiku/Sonnet budget for "fact-checking" or "auditing"
+or "reasoning across records," pause and ask whether Opus inline is the right tool
+first — default yes. Note the pivot in the session journal so budget tracking stays
+honest. See `memory/feedback_opus_inline_reasoning.md` for full rationale and the
+S2.3 evidence.
+
 ### Cron Loops — Explicit Request Only
 Never create a cron loop or automated recurring task unless the user explicitly says
 "create a loop" (or similar: "set up a cron", "run this overnight"). When the user
@@ -89,25 +108,38 @@ producing a Sprint 3 fix backlog. S2.1 (DB canonical) ran with 34 findings
 **S2.2 (DB staging)** ran with 31 findings (6 P0, 11 P1, 9 P2, 5 P3) →
 `findings_db_staging.md`. **S2.3 (wine canonical, 99 wines + 50 producers sommelier
 audit)** ran with 22 findings (9 P0, 8 P1, 4 P2, 1 P3) → `findings_wine_canonical.md`.
-All three sessions at $0 actual spend. Sprint 2 budget $0 / $25 ceiling. 87 findings
-total across S2.1+S2.2+S2.3 so far.
+**S2.4 (wine reference content)** ran with 30 findings (8 P0, 14 P1, 7 P2, 1 P3) →
+`findings_wine_reference.md`. All four sessions at $0 actual spend. Sprint 2 budget
+$0 / $25 ceiling. **117 findings** total across S2.1+S2.2+S2.3+S2.4 so far.
 
-**Three-session headline:** (S2.2 F1) 286,918 wine_id pointers across 29 of 31
+**Four-session headline:** (S2.2 F1) 286,918 wine_id pointers across 29 of 31
 wine-bearing staging tables are dangling archive references — Sprint 3's highest-ROI
 task is a staging relink (reuse S13 pattern) to unlock ~52K prices + ~48K scores +
-~200K vintage-grade fields + ~40K UPCs. (S2.3 F2) The Chardonnay/Pinot Blanc
-grape-linkage bug is systemic — 2,743 of 2,809 Chardonnay-named wines (97.6%) have
-Pinot Blanc linked. (S2.3 F3) All 15 hand-picked famous producers (DRC, Lafite,
-Latour, Margaux, etc.) have zero metadata. (S2.3 F10) AI-generated `wine_insights`
-content confabulates confidently on top of data errors — primary-source verification
-caught invented grapes (Messina Hof "Garro"), wrong producer history (Joseph Phelps
-Eisele "purchased in 2013" — actually Artemis/Latour), and geological fabrication
-(Hunter Valley "volcanic", Santa Ynez "Franciscan shale").
+~200K vintage-grade fields + ~40K UPCs. (S2.3 F2 → S2.4 F2) The Chardonnay/Pinot
+Blanc grape-linkage bug is systemic (2,743 of 2,809 Chardonnay-named wines have
+Pinot Blanc linked) AND S2.4 identified the root cause — PINOT BLANC grape row has
+VIVC synonyms `PINOT CHARDONNAY`, `CHARDONNET PINOT BLANC`, `PINOT BLANC CHARDONNET`,
+plus `PINOT GRIGIO` (which is actually Pinot Gris). (S2.4 F1) varietal_categories
+has 5+ P0 wrong-grape links — Merlot → Grolleau Noir, Riesling → Crouchen, Verdejo →
+Trousseau Noir, Greco → Albana Bianca, St. Laurent → Muscat St. Laurent. (S2.4 F3)
+121 famous appellations stored with slash-concatenated alias names ("Hermitage /
+Ermitage / L'Hermitage / L'Ermitage", "Porto / Port"). (S2.4 F9) 240 FR AOCs + 105 IT
+DOCs have fake 1973 `established_year` default (Chambertin actual 1936, Barolo DOC
+1966, Champagne 1936). (S2.4 F8) Corrects S2.3 F7: GARRO is a real VIVC grape #7326,
+not invented — the Messina Hof error lives in wine_grapes linkage, not the grapes
+table. (S2.3 F3) All 15 hand-picked famous producers (DRC, Lafite, Latour, Margaux,
+etc.) have zero metadata.
 
-**Sprint 3 sequence (recommended from S2.3):** (a) S2.2 F1 staging relink → (b) S2.3
-F3 producer seed file → (c) F2/F7/F8 grape repair → (d) F6 color+country repair →
-(e) F10 L3 re-fact-check pass (the $18 S2.3 pre-auth rolls forward here) →
-(f) content regeneration. Skipping any of (a)-(e) re-contaminates (f).
+**Sprint 3 sequence (refined by S2.4):** (a) S2.2 F1 staging relink → (b) S2.3 F3
+producer seed file → (c) refined grape-repair workstream — **3a** `grapes.name`
+cleanup + `display_name` (S2.4 F6, F15) → **3b** 921 synonym collision resolution +
+delete PINOT BLANC's 4 polluting synonyms (S2.4 F2, F7) → **3c** fix varietal_categories
+wrong links (S2.4 F1) → **3d** re-run grape resolver against wine_grapes (S2.3 F2) →
+**3e** JSONB content backfill + appellation_grapes language fixes + appellation_soils
+provenance schema (S2.4 F11-F17) → (d) F6 color+country repair → (e) F10 L3 re-fact-check
+pass (the $18 S2.3 pre-auth rolls forward here, re-evaluate at Sprint 3 start) →
+(f) content regeneration. Skipping any of (a)-(e) re-contaminates (f). **S2.4 findings
+blocking Sprint 3: 8 P0 + 14 P1 = 22 items added to backlog.**
 
 Live sprint state: `data/sprints/current.json`. 30K Plan (Sprint 1) closed 2026-04-11
 and is archived at `data/sprints/_archive/30k/`. Pre-30K history (the ~477K-wine

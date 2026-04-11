@@ -179,3 +179,105 @@ The $18 S2.3 pre-auth does not expire — it rolls forward to Sprint 3 F10 (the 
 None. All 22 findings execute inside the Sprint 3 envelope. The largest workstream is F10's re-fact-check pass on 5,108 rows, estimated $30-50 — inside the Sprint 2+3 combined $50 ceiling when combined with $0 from S2.1/S2.2/S2.3.
 
 One sequencing recommendation: Sprint 3 should run in order (a) S2.2 F1 staging relink → (b) S2.3 F3 producer seed file → (c) F2/F7/F8 grape repair → (d) F6 color+country repair → (e) F10 L3 re-fact-check → (f) content regeneration. Skipping any of (a)-(e) will re-contaminate (f).
+
+---
+
+## S2.4 — 2026-04-11
+
+**Expert:** wine_reference
+**Status:** in progress
+**Budget:** $0 expected (Opus inline per the S2.3 pattern — ratified as the default for audit/reasoning work in `docs/DECISIONS.md` 2026-04-11 and `memory/feedback_opus_inline_reasoning.md`)
+
+### Scope
+
+Hand-verified content correctness of the reference layer:
+
+- **`appellation_rules`** (1,165 rows) — min ABV, yield caps, grape requirements, aging minimums, elevation, established year. Sample against INAO / DOCG / TTB AVA primary sources.
+- **`appellation_grapes`** (10,414 rows) — required/permitted/dominant flags per appellation. Start with the appellations that matter most (Burgundy grand crus, Bordeaux AOCs, Barolo, Champagne, Napa AVAs).
+- **`grape_synonyms`** (34,820 rows) — verify known-correct mappings and hunt for the root cause of S2.3 F2 (Chardonnay/Pinot Blanc linkage bug affecting 2,743 of 2,809 Chardonnay-named wines). S2.1 F7 already flagged 919 primary-name collisions — cross-reference.
+- **`varietal_categories`** (161 rows) — category structure and membership.
+- **`grapes` parent/child** — check for cycles, invalid parents, and a spot-check of known parentage (Cabernet Sauvignon = Cab Franc × Sauv Blanc, etc.).
+- **`appellation_soils`** (930 links across 304 appellations) + `soil_types` (39 rows) — verify soil-to-appellation associations against primary sources (TTB AVA docs, INAO, regional councils). S2.3 F14 flagged fabricated soil claims in AI content ("Hunter Valley volcanic", "Santa Ynez Franciscan shale") — but those lived in `wine_insights`. S2.4 audits whether the structured reference soil data is any better.
+- **Spot-check:** `tasting_descriptors` (304), `farming_certifications` (21), `biodiversity_certifications` (7), `label_designations`, and alias tables (`region_aliases`, `appellation_aliases`).
+
+S2.1 already covered the reference layer **structurally** (FK integrity, orphan checks, duplicate detection, staleness). S2.4 is **content correctness** — is the data actually right.
+
+### Method
+
+Opus inline, same pattern as S2.3. Query the DB for real data, reason across it using training knowledge, WebFetch primary sources (INAO, DOCG, TTB AVA regulations, regional wine council sites, Wikipedia for spot-checks) when a finding needs external corroboration. No Haiku/Sonnet API calls. Target $0 actual spend.
+
+### Discipline
+
+- **Read-only.** No DDL, no DML, no fixes. Findings only.
+- **Skip already-known issues** from S2.1 / S2.2 / S2.3 unless S2.4 adds new content-correctness evidence.
+- **Chardonnay/Pinot Blanc root cause is in scope** — if the bug lives in `grape_synonyms`, that's a S2.4 finding; if it's in name-matching code, that's a S2.5 finding but I note the boundary.
+- **Sample, don't enumerate** — 10,414 appellation_grapes rows and 34,820 synonyms are too many to check one by one. Query distributions, pull 20-50 spot-checks from high-signal appellations (Burgundy grand crus, Bordeaux crus classés, Barolo, Napa Cabernets, Champagne, Rioja Gran Reserva, Mosel Grosses Gewächs).
+- **Each finding needs concrete evidence** — SQL query + result + primary-source link where relevant — and a proposed fix.
+
+### Method
+
+~25 read-only SQL queries via Supabase MCP `execute_sql`. 1 WebFetch to Wikipedia to verify the La Tâche area figure (5.03 ha vs suspected 6.06 ha — Wikipedia confirmed 5.03, so I dropped that as a finding). All audit reasoning done inline via Opus 4.6 + training knowledge. $0 project spend.
+
+### 30 findings written to `findings/findings_wine_reference.md`
+
+- **P0 (8):**
+  - **F1** — varietal_categories has 5+ confirmed wrong-grape links: Merlot → GROLLEAU NOIR (Loire grape, not Merlot), Riesling → CROUCHEN (historical "Cape Riesling" misnomer), Verdejo → TROUSSEAU NOIR (wrong country, wrong color), Greco → ALBANA BIANCA (different variety), St. Laurent → MUSCAT ST. LAURENT (pattern-matched to wrong grape).
+  - **F2** — Root cause of S2.3 F2 Chardonnay/Pinot Blanc bug: PINOT BLANC grape row has VIVC synonyms `PINOT CHARDONNAY`, `CHARDONNET PINOT BLANC`, `PINOT BLANC CHARDONNET`, plus `PINOT GRIGIO` / `P. GRIGIO` (which is actually Pinot Gris, a distinct variety). Any name resolver finds Chardonnay matching both CHARDONNAY BLANC (correct) and PINOT BLANC (via synonym). Fix: delete the 4 polluting synonyms + audit resolver preference order (S2.5 hand-off).
+  - **F3** — 121 appellations have slash-concatenated alias names stored in `appellations.name`: `Hermitage / Ermitage / L'Hermitage / L'Ermitage`, `Porto / Port`, `Clos de Vougeot / Clos Vougeot`, `Priorat / Priorato`, etc. Breaks UI display, wine linkage, alias tables already exist for this purpose.
+  - **F4** — French AOC names missing diacritics: `Echezeaux` (should be Échézeaux), `Grands-Echezeaux`, 6 Saint-Emilion variants (should be Saint-Émilion).
+  - **F5** — Pauillac `rules.classification` is internally contradictory: names 3 Premier Crus (Lafite, Latour, Mouton) but says "1 Premier Cru"; claims "1 Troisième" (Pauillac has 0); "5 Quatrième" (Pauillac has 1, Duhart-Milon). Total 18 is right, breakdown wrong in 3 of 5 tiers. Primary source URL is real INAO PDF — transcription error.
+  - **F6** — `grapes.name` uses VIVC cépage+suffix form (CHARDONNAY BLANC, MERLOT NOIR, TEMPRANILLO TINTO, CARIGNAN NOIR, MONASTRELL used on French CdP). Cascades into every downstream table. Fix: populate existing `display_name` column with common English names; update frontend to prefer display_name.
+  - **F7** — 921 grape-synonym primary-name collisions confirmed (re-ran S2.1 F7 with higher precision). Worst offender: `AGLIANICO` is a synonym of 4 different primary grapes (Magliocco Dolce, Aglianicone, Lambrusco Maestri, Negro Amaro) plus being its own primary. 551 grapes affected across 657 distinct colliding synonyms.
+  - **F8** — **S2.3 F7 correction:** GARRO is a real VIVC grape #7326 (Spanish crossing, species=vinifera, parentage_confirmed=true, origin Spain). Not invented. Messina Hof error lives in wine_grapes linkage, not in the grapes table — the Papa Paulo Port wine was matched to the wrong grape_id. Actual grape is Lenoir/Black Spanish (present in Loam as BALDWIN LENOIR and JACQUEZ).
+- **P1 (14):**
+  - **F9** — `established_year` poisoned with fake 1973 default on 240 French AOCs + 105 Italian DOCs (345 rows). Chambertin actual 1936, Barolo DOC 1966, Brunello DOCG 1980, Champagne 1936.
+  - **F10** — `classification_level` dominated by German einzellage (1,179 of 1,743 populated, 67.6%). Only 2 rows tagged grand_cru, 8 tagged aoc, 0 tagged docg/doc/ava/cru_classe/premier_cru.
+  - **F11** — `appellation_rules.rules` JSONB has no stable schema: `area_acres` vs `area_ha`, `elevation_range_ft` vs `elevation_range_m` vs `elevation_max_m+min_m`, `established_date` vs `established_year` vs `established`, `min_abv` vs `min_alcohol_pct`. Extreme case: Petit Chablis uses `{"Chardonnay": 100}` while Chambertin uses `{"principal": "Pinot Noir"}`.
+  - **F12** — Yield and ABV extraction sparse in appellation_rules: only 80 of 1,165 rows (6.9%) have max_yield and 59 (5.1%) have min_alcohol at top level.
+  - **F13** — 434 of 1,165 rules (37%) have ≤3 top-level keys. Burgundy Grand Crus (Chambertin, Charmes-Chambertin, Bonnes-Mares, Montrachet, Musigny) got bare stubs while Italian DOCGs got deep disciplinare data. Depth inverted from user expectation.
+  - **F14** — Châteauneuf-du-Pape appellation_grapes uses Spanish grape names (GARNACHA BLANCA/ROJA/TINTA, MONASTRELL) on a French appellation. Also missing Picardan (one of 13/18 authorized varieties per INAO CDC, present in rules JSONB but not materialized into appellation_grapes).
+  - **F15** — Grape name inversion: `VERDOT PETIT`, `MESLIER PETIT` exist as canonical names in the grapes table. S2.3 F9 flagged wine-level counts (284, 1,001 links); S2.4 confirms the root cause is in `grapes.name` itself.
+  - **F16** — Chambertin / Charmes-Chambertin / Bonnes-Mares missing accessory grapes (Chardonnay, Pinot Blanc, Pinot Gris at ≤15%) in appellation_grapes. Inconsistent with La Tâche which has them loaded correctly. Same Burgundy Grand Cru rule applies.
+  - **F17** — `appellation_soils` has ZERO provenance columns (only 2 columns: appellation_id, soil_type_id). Cannot audit or re-verify 930 soil links.
+  - **F18** — Hunter Valley linked to Basalt in appellation_soils, likely reinforcing S2.3 F14 "Hunter Valley volcanic" confabulation. Hunter Valley's dominant soils are alluvial/clay/sandstone, not basalt. Santa Ynez has zero rows in appellation_soils (S2.3 F14 "Franciscan shale" claim was pure AI confabulation with no structured anchor).
+  - F19 — `soil_types` has one junk row: "Ite" ("-ite" is a suffix, not a soil type). Description admits "used broadly to describe."
+  - F20 — `source_organization` has massive string fragmentation (INAO in 20+ variants, MASAF 15+, SAWIS/WOSA 15+, MAPA 8+, Wines of Greece 20+). Cannot group by source for coverage reports.
+  - F21 — TTB-sourced appellation_rules rows 98% unverified (4 of 188 have last_verified_at); split across two string-variant buckets, one 100% verified (50/50), other 2%.
+  - F22 — Rioja appellation_grapes lists `TROUSSEAU NOIR` as required — technically correct-by-DNA (Maturana Tinta = Trousseau Noir per 2008 DNA study) but misleading canonical form for Spanish context.
+- **P2 (7):** F23 Margaux communes duplicate Cantenac · F24 Napa Valley missing California 100% county rule · F25 six correct-but-confusing varietal_categories synonym routings (Zinfandel→Primitivo, Shiraz→Syrah, etc.) · F26 tasting_descriptors mixes structural/palate/flavor · F27 farming/biodiversity certs clean (positive finding) · F28 parentage_confirmed lacks parentage_source column · F29 appellations structured columns drift from rules JSONB.
+- **P3 (1):** F30 source_url primary-source coverage 81%, Wikipedia only 2% (positive finding — provenance infrastructure is good).
+
+### Meta-patterns surfaced
+
+Four for S2.9 synthesis:
+
+1. **The reference layer's provenance infrastructure is good; content loads are uneven.** `appellation_rules` has 13 well-designed columns including provenance. The problem is inside the JSONB (F11 schema drift, F13 37% thin stubs). Sprint 4 should keep the schema and fix the loader.
+2. **Canonical grape naming is the single biggest cross-cutting issue.** F1, F2, F6, F7, F8, F14, F15, F22 are all facets of: `grapes.name` uses VIVC cépage+suffix form, downstream tables inherit it, resolvers have no disambiguation policy. **Fix grapes table first, then cascade.** Pre-Sprint-3 workstream.
+3. **Appellation naming has parallel issues.** F3, F4, F9, F10, F29 come from the same root: one loader per source, each with its own naming convention, results landed in shared columns without normalization.
+4. **S2.3 findings traceable to S2.4 data issues:** S2.3 F2 → F2 root cause. S2.3 F7 → F8 correction. S2.3 F9 → F15 root cause. S2.3 F14 → F18 structured-data reinforcement. Validates the S2.3→S2.4 ordering.
+
+### Sprint 3 sequence refined
+
+Previous (from S2.3): (a) staging relink → (b) producer seed → (c) grape repair → (d) color/country → (e) L3 re-fact-check → (f) content regeneration
+
+S2.4 refines step (c) grape repair into:
+- **3a** — grapes.name canonical cleanup + display_name populated (F6, F15)
+- **3b** — grape_synonyms collision resolution (F7) + delete PINOT BLANC's 4 polluting synonyms (F2)
+- **3c** — fix varietal_categories 5+ wrong grape_id links (F1)
+- **3d** — re-run grape resolver against wine_grapes to fix 2,743 Chardonnay/Pinot Blanc mismatches (S2.3 F2)
+- **3e** — only then run F11-F13 JSONB content backfill + F14 appellation_grapes language/Picardan fixes + F17 appellation_soils provenance schema
+
+Total S2.4 findings blocking Sprint 3: **8 P0 + 14 P1 = 22 items**.
+
+### Scope-breaker check
+
+None. All findings slot into existing Sprint 3 envelope; several graduate to Sprint 4 reference redesign. Recalibration: Sprint 3 scope grows ~20 items, Sprint 4 scope grows by F11/F29 canonical rules schema workstream.
+
+### Deliverables
+
+- `data/sprints/audit/findings/findings_wine_reference.md` — 30-finding report (8 P0, 14 P1, 7 P2, 1 P3)
+- `data/sprints/audit/prompts/s2_4_wine_reference.md` — session prompt (written at session start for reproducibility)
+- `data/sprints/audit/sessions.json` — S2.4 → done, $0 spend
+- `data/sprints/audit/budget.json` — S2.4 entry, running total $0.00 / $25.00
+- `data/sprints/audit/journal.md` — this section
+
