@@ -90,3 +90,23 @@ data/imports/tabc_approved_labels.csv
 data/imports/*.csv
 data/imports/*.json
 *.html
+
+# Housekeeping interregnum (Session 14, 2026-04-11)
+# archive_raw/ holds 2026-03 scrape outputs, bulk dumps, producer catalogs.
+# Kept on disk but gitignored — they bloat the repo and aren't inputs to current work.
+archive_raw/
+
+# Scratch pipeline stdout/stderr/logs that used to end up in data/stats/
+data/stats/*_stdout.txt
+data/stats/*_progress.txt
+data/stats/execute_*.txt
+data/stats/*_log.txt
+data/stats/*_session*.log
+data/stats/batch2_output.txt
+data/stats/_heredia_detail.json
+data/stats/_josh_test_missing.json
+data/stats/lwin_unpromoted_*.*
+data/stats/winetest/
+data/stats/sprint_dashboard.md
+data/stats/loam_roadmap.md
+.claude/scheduled_tasks.lock

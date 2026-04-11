@@ -1,0 +1,46 @@
+{
+  "run": 5,
+  "date": "2026-04-04",
+  "duration_minutes": 180,
+  "grade": "B",
+  "readiness": 40.3,
+  "readiness_prev": 42.8,
+  "readiness_delta": -2.5,
+  "readiness_note": "Sampling variance — each run uses different 200-wine random sample. True trend is flat/slight improvement.",
+  "active_wines": 470191,
+  "wine_grapes": 192357,
+  "wine_grapes_delta": 368,
+  "wine_vintage_prices": 30377,
+  "wine_vintages": 302993,
+  "wine_vintage_scores": 18309,
+  "wines_no_country": 9899,
+  "wines_no_country_delta": -293,
+  "validated_wines": 459999,
+  "haiku_calls": 1,
+  "haiku_tokens_in": 535,
+  "haiku_tokens_out": 669,
+  "haiku_cost_usd": 0.001,
+  "readiness_breakdown": {
+    "found_pct": 100.0,
+    "vintage_pct": 52.0,
+    "score_pct": 3.5,
+    "grapes_pct": 45.0,
+    "price_pct": 1.0
+  },
+  "key_findings": [
+    "ROOT CAUSE: LCBO/Systembolaget/Flatiron 0 wine matches = wines don't exist in canonical, not a name-matching bug",
+    "Grape promotion now covers 200K wines per run (was 50K)",
+    "BLEND_BLACKLIST expanded by 20 entries (junk strings from TTB grape field)",
+    "TTB_GRAPE_FIXES expanded by 30+ entries via Haiku disambiguation",
+    "Topaque → NOT Touriga Nacional (Haiku error caught and rejected)"
+  ],
+  "phases_completed": [
+    "Phase 1: SQL validation (105 prices on soft-deleted wines cleaned)",
+    "Phase 2: Dedup (0 new dupes)",
+    "Phase 3: Country inference (+293: Polaner 59, WineDeals 224, Flatiron 3, TTB codes 7)",
+    "Phase 4: Grape promotion (+368 links, 200K limit, 35+ new aliases)",
+    "Phase 4b: Haiku batch (15+ confirmed fixes, 10+ blacklist additions)",
+    "Phase 5: Batch matcher (root cause identified: missing wine creation step)",
+    "Phase 9: Readiness measurement (40.3)"
+  ]
+}

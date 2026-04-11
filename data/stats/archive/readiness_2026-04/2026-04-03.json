@@ -1,0 +1,60 @@
+{
+  "date": "2026-04-03",
+  "source": "specs",
+  "sample_size": 200,
+  "readiness_score": 39,
+  "readiness_runs": [36, 38, 42, 34, 37, 33, 41],
+  "readiness_avg": 37,
+  "previous_score": 8,
+  "previous_date": "2026-04-02",
+  "metrics": {
+    "producer_found_pct": 74,
+    "wine_found_pct": 38,
+    "has_vintages_pct": 23,
+    "has_scores_pct": 4,
+    "has_grapes_pct": 12,
+    "has_prices_pct": 34,
+    "avg_depth": 0.74
+  },
+  "session_work_round1": {
+    "tabc_refresh": "No net new (201K raw -> 183K unique, same as before)",
+    "grape_promotion": "+2511 links (179K -> 184K), fixed U+FFFD encoding",
+    "phase_b_wines": "+6767 wines from 4430 producers (471K -> 478K)",
+    "ttb_wine_linking": "+7964 TTB records linked to Phase B wines",
+    "cola_depth_r2": "+8089 vintages, +7256 COLA IDs",
+    "retail_promotion": "+3758 prices, +184 UPCs"
+  },
+  "session_work_round2": {
+    "importer_depth": "1586 wine updates + 488 vintage updates (Empson/Winebow/EC/KL)",
+    "kl_growers": "120 producers with year_established, website, GPS, production, description",
+    "label_images": "211266 wines with TTB label_image_url (was 0)",
+    "farming_certs": "845 wine_farming_certifications (was 0)",
+    "score_rollups": "343 wines with critic_score_avg",
+    "schema_fields": "6 new columns: serving_temp, fermentation_duration/temp, training_method, vine_density"
+  },
+  "tables_populated_from_zero": [
+    "wine_farming_certifications (845)",
+    "wines.label_image_url (211266)",
+    "wines.training_method (321)",
+    "wines.vine_density_per_ha (263)",
+    "wines.critic_score_avg (343)",
+    "producers.year_established (107)",
+    "producers.website_url (78)",
+    "producers.latitude/longitude (117)",
+    "producers.description (120)",
+    "producers.total_production_cases (110)",
+    "wine_vintages.ph (233)",
+    "wine_vintages.ta_g_l (251)",
+    "wine_vintages.rs_g_l (192)",
+    "wine_vintages.fermentation_vessel (100)",
+    "wine_vintages.yeast_type (106)",
+    "wine_vintages.closure (101)",
+    "wine_vintages.mlf (224)",
+    "wine_vintages.duration_in_oak_months (166)",
+    "wine_vintages.oak_origin (158)",
+    "wine_vintages.cases_produced (321)",
+    "wine_vintages.serving_temperature (88)",
+    "wine_vintages.fermentation_duration_days (72)",
+    "wine_vintages.fermentation_temperature_c (69)"
+  ]
+}

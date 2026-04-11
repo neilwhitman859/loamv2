@@ -1,0 +1,39 @@
+{
+  "run": 6,
+  "date": "2026-04-04",
+  "duration_min": 180,
+  "grade": "A",
+  "readiness": 40.9,
+  "readiness_prev": 40.3,
+  "readiness_delta": 0.6,
+  "active_wines": 470485,
+  "wines_no_country": 4886,
+  "wines_no_country_prev": 9922,
+  "wine_grapes": 195468,
+  "wine_grapes_prev": 192357,
+  "wine_grapes_delta": 3111,
+  "wine_vintages": 303181,
+  "scores": 18309,
+  "prices": 30551,
+  "validated": 465599,
+  "validated_prev": 459999,
+  "haiku_spend_usd": 0.1213,
+  "haiku_calls": 249,
+  "haiku_tokens_in": 269344,
+  "haiku_tokens_out": 43209,
+  "phases": {
+    "phase1_sql_validation": "clean — 0 ABV anomalies, 0 future vintages, 0 orphans, 0 country-appellation mismatches",
+    "phase2_dedup": "0 new duplicates",
+    "phase3_country_inference": "+5036 country assignments via Haiku (9922→4886 without country). 15/15 spot-checks correct. $0.12 cost.",
+    "phase4_grape_promotion": "+3111 total: 746 from ttb_grape_promote (6 passes), 447 from grape_blend_promote (2 runs, trailing-% bug fix)",
+    "phase7_haiku_grape": "Fixed trailing-percentage bug in _parse_pct_blend — 372 new links from patterns like 'Pinot Noir 80% Chardonnay 20%'",
+    "phase9_readiness": "3-sample average: 41.4/40.1/41.3 = 40.9 avg. Vintage: 55-58%, Grapes: 41-49%, Score: 1-2.5%, Price: 0-1%"
+  },
+  "new_fixes": {
+    "ttb_grape_fixes_added": ["hondarribi zuri→Courbu Blanc", "muscat d'alexandrie→Muscat of Alexandria", "jakot→Friulano", "chiavennasca→Nebbiolo", "jacqure→Jacquere", "lon millot→Leon Millot", "rieslng→Riesling", "cabernet suavignon/savignon/sauvigon/caberent sauvignon→Cabernet Sauvignon", "friuliano→Friulano", "gewurtzraminer/gerwurztraminer→Gewurztraminer", "weisburgunder/weiburgunder→Pinot Blanc", "san giovese→Sangiovese", "shriaz→Syrah", "garnache/garnatcha tinta→Garnacha Tinta", "grenache noire→Grenache Noir", "gruner valtliner→Gruner Veltliner", "menca→Mencia", "blaufrankish→Blaufraenkisch", "trebbiano d'abruzzo→Trebbiano Toscano", "nebbiolo d'alba→Nebbiolo", "riesling feinherb→Riesling", "malbec rose→Malbec"],
+    "blend_blacklist_added": ["white burgundy wine", "valdobbiadene", "palo cortado", "st. vincent", "red burgundy", "torrette", "auslese", "chianti classico", "ripasso", "santenay", "brut rose", "feinherb", "montalcino", "ros wine"],
+    "junk_strings_added": ["10-20 (2-digit numeric noise)"],
+    "bug_fix": "grape_blend_promote._parse_pct_blend: trailing percentage token after last grape was rejected. Fixed to accept trailing pct if 2+ grapes already resolved.",
+    "generic_pct_strip": "Added regex strip of trailing '%NN' in _fix_grape_name — covers 'Syrah 15%' → 'Syrah' patterns"
+  }
+}

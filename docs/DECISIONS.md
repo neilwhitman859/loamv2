@@ -1462,3 +1462,33 @@ Convention-based months are always within 2-3 weeks of reality, never catastroph
 **Why:** Enrichment content is the first AI-generated text users see. If the voice is wrong, 50K bad enrichments cost $120 to generate and are painful to fix. Better to spend a focused session calibrating the prompt on 10-20 wines before committing to the batch.
 
 **Impact:** Session 9 (enrichment) should start with voice calibration, not batch execution. Could be split into 9a (calibration) and 9b (batch).
+
+---
+
+### Sprint model + Reference-First pivot (2026-04-11, Session 14 Phase A)
+
+**Decision:** Formalize project work around discrete sprints. The 30K Plan is Sprint 1. Reference-First Enrichment becomes Sprint 2. Sprint-tracked state moves from ad-hoc `data/stats/30k_*` files + `memory/30k_status.md` into `data/sprints/<name>/{sessions.json, budget.json, status.md, journal.md, meta.json, prompts/}`. `data/sprints/current.json` points at whichever sprint is active; archived sprints move to `data/sprints/_archive/<name>/`. Both dashboards (`sprint_dashboard.py`, `loam_roadmap.py`) are now sprint-aware.
+
+**Why:** The 30K Plan was organized around sessions, not a proper sprint. As the project adds a second sprint (Reference-First), we need a clean boundary so sprint 1's state doesn't leak into sprint 2's, and so a future sprint 3 can pick up the same structure without renaming everything. The dashboards also need to survive the next sprint without code changes.
+
+**Impact:** `thirty_k_dashboard.py` renamed to `sprint_dashboard.py` and reads from `data/sprints/current.json`. `loam_roadmap.json` loses hardcoded `key_metrics` arrays — replaced with `metrics_query` names that dispatch to live DB queries. The 30K sprint formally closes at the end of Session 14 Phase B; its folder moves to `data/sprints/_archive/30k/`.
+
+---
+
+### Grade C enrichment deprecated under Reference-First architecture (2026-04-11, Session 14 Phase A)
+
+**Decision:** Stop trying to fix the Grade C voice regression from Session 12. Deprecate both the P0 "three-layer redesign" backlog item and the P1 "270 thin Grade C wines" item. The Grade C code path still exists but is not a product goal going forward.
+
+**Why:** Session 12's finding was that the voice-rules rewrite stripped editorial voice from Grade C (3-field thin packets) while leaving Grade B (8-field rich packets) intact. The simplest fix was "loosen the voice rules for Grade C" but the broader observation was that wine-level Grade C is fundamentally thin — it can only describe facts we already have. The Reference-First architecture flips this: wine pages become thin synthesis over an enriched reference layer (grape / region / appellation / producer insights). A thin wine with no grape/appellation still renders a useful page because the reference layer carries the weight. That makes the Grade C voice fix moot for the product goal.
+
+**Impact:** Grade C voice fix moved to `docs/HISTORY.md` "Closed: architecture changed". Sprint 2 (Reference-First) will decide how to re-grade thin-packet wines and whether Grade C even remains as a tier.
+
+---
+
+### Session 14 is one session with two phases, not two sessions (2026-04-11)
+
+**Decision:** Run the housekeeping interregnum as one session (Session 14) with a natural commit point between Phase A (dashboards + repo + tiny fixes + CLAUDE.md rewrite) and Phase B (DB cleanup + P0 fix + bigger fixes + 30K closure). Not two separate sessions.
+
+**Why:** Opus 1M context can hold the full load; Session 13 is already complete so there's no incoming state to absorb; and the built-in audit gate at the P0 grape-percentage review point gives a natural user-approval pause. Splitting into two sessions would duplicate session setup overhead and re-read a lot of the same state. The phase break gives us a commit-able checkpoint without forcing a session boundary.
+
+**Impact:** `data/sprints/30k/sessions.json` lists Session 14 once, as a single session with status `in_progress`. Two commits happen during it — one at end of Phase A, one at end of Phase B — and the second commit is the formal 30K sprint closure.

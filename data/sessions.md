@@ -4,7 +4,7 @@ Active and recent sessions. Read at session start, append when starting/finishin
 
 ## Active
 
-(none)
+- **2026-04-11 Session 14 Phase A: Housekeeping interregnum** (Opus) — Dashboard redesign (sprint + project), repo cleanup (archive_raw, gitignore, delete stubs + docs/ROADMAP.md), backlog consolidation, tiny bug fixes #1-#4 (Sauvignon Gris color, phantom DOCG grape rows, MALVASIA dedup, thirty_k_validate S11.6), CLAUDE.md aggressive rewrite. Tables writing: `grapes`, `appellation_grapes`, `wine_grapes`, `grape_synonyms`, `data_provenance`.
 
 ## Done
 

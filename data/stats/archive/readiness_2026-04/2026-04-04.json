@@ -1,0 +1,116 @@
+{
+  "date": "2026-04-04",
+  "run_number": 1,
+  "duration_minutes": 120,
+  "row_counts": {
+    "wines": 496632,
+    "producers": 37184,
+    "wine_vintages": 288013,
+    "wine_vintage_scores": 17993,
+    "wine_vintage_prices": 30394,
+    "wine_grapes": 183971,
+    "external_ids_cola": 291547,
+    "external_ids_lwin": 189359,
+    "external_ids_upc": 11768,
+    "wines_linked_ttb": 291547,
+    "wines_validated": 34278
+  },
+  "deltas_vs_2026_04_03": {
+    "wine_grapes": "+23 (new synonyms resolved: VALDIGUI, MARCHAL FOCH, RIELSING, PINEAU D'AUNIS)",
+    "wine_vintage_prices": "+135 (retail_promote from Flatiron new matches)",
+    "wines_validated": "+34278 (first time stamping last_validated_at - country/region/appellation consistent)",
+    "abv_nulled": "12 vintage records (invalid values: 750, 163, 135, 121, 28, 26, 3.5, 1, 0)",
+    "vintage_year_nulled": "3 records (year 2030, clearly erroneous)",
+    "appellation_cleared": "146 wines (country-appellation country mismatch - wrong appellation assigned)"
+  },
+  "gaps": {
+    "wines_without_grapes": 358348,
+    "wines_without_vintages": 325744,
+    "wines_without_scores": 496631,
+    "wines_without_prices": 490370
+  },
+  "scripts_run": {
+    "batch_matcher_specs": "1 new match, 1 written (exhausted)",
+    "batch_matcher_systembolaget": "0 matches (root cause: name order reversal + producers not in canonical)",
+    "batch_matcher_lcbo": "0 matches (exhausted)",
+    "batch_matcher_bc_liquor": "0 matches (exhausted)",
+    "batch_matcher_flatiron": "136 wine matches, 199 written (8% of remaining)",
+    "batch_matcher_wallys": "3 producer links (exhausted)",
+    "retail_promote": "+135 prices from Flatiron new matches, then crashed at Systembolaget with ConnectionTerminated (HTTP/2 limit). No data loss — Systembolaget has 0 canonical matches anyway.",
+    "ttb_grape_promote": "+23 new grape links (from synonym additions)"
+  },
+  "bugs_fixed": [
+    "batch_matcher _write_matches: missing ::uuid cast on id column (silently failing all writes)",
+    "batch_matcher _load_staging: column name regex '^[a-z_]+$' blocked digits, fixed to '^[a-z_0-9]+$'",
+    "resolve.py GRAPE_ALIASES: added 'tinto fino (tempranillo)' and 'tinto fino' -> Tempranillo",
+    "resolve.py _load_countries: added Swedish country name support (for Systembolaget)"
+  ],
+  "synonyms_added": [
+    {"synonym": "VALDIGUI", "grape": "VALDIGUIE", "reason": "TTB spelling (missing final E)"},
+    {"synonym": "MARCHAL FOCH", "grape": "MARECHAL FOCH", "reason": "TTB spelling (missing E in MARECHAL)"},
+    {"synonym": "RIELSING", "grape": "RIESLING WEISS", "reason": "TTB typo"},
+    {"synonym": "PINEAU D'AUNIS", "grape": "PINEAU D'AUNIS", "reason": "DB stores as HTML entity, added plaintext"}
+  ],
+  "haiku_spend": {
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "est_cost": 0.0,
+    "reason": "All resolutions achieved via SQL + code analysis. No ambiguous cases requiring AI."
+  },
+  "validation": {
+    "sampled": 34278,
+    "clean": 34278,
+    "fixed": 0,
+    "skipped": 0,
+    "method": "Bulk stamp: wines with country_id where region/appellation country matches canonical country"
+  },
+  "sql_checks": {
+    "country_region_mismatch": 9,
+    "country_appellation_mismatch_fixed": 146,
+    "abv_outliers_fixed": 12,
+    "vintage_year_outliers_fixed": 3,
+    "orphan_external_ids": 0,
+    "orphan_wine_grapes": 0,
+    "duplicate_name_producer_pairs": 9055
+  },
+  "readiness": 30,
+  "readiness_delta": -9,
+  "readiness_note": "Methodology difference: previous score (39) from human session using different sampling/scoring. This run scores only on already-matched Spec's wines (found=100%). Metrics: found 100%, vintage 30%, score 0%, grapes 17%, price 4%. Establishing new baseline for automated tracking.",
+  "readiness_dimensions": {
+    "found_pct": 100,
+    "vintage_pct": 30,
+    "score_pct": 0,
+    "grapes_pct": 17,
+    "price_pct": 4
+  },
+  "accuracy_audit_entries_today": 15,
+  "self_grade": "B",
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "item": "Systembolaget name order mismatch: stores 'Accordini Igino' vs canonical 'Igino Accordini'. Add name-part reordering to match_producer or create producer aliases from Systembolaget data. ~8K wines blocked.",
+      "impact": "~8234 records"
+    },
+    {
+      "priority": "HIGH",
+      "item": "Blend grape strings in TTB ('Pinot Noir Chardonnay', 'Cabernet Sauvignon Merlot') - split on spaces/percentages and resolve each part individually. Remaining ~978 unresolved TTB grapes are mostly blends.",
+      "impact": "~50 wines (per top 15 seen)"
+    },
+    {
+      "priority": "MEDIUM",
+      "item": "9 country-region mismatches remain - wines like 'Sauvignon Blanc California' with country=France. Ambiguous: may be intentional French wines named after CA regions. Flag for human review.",
+      "impact": "9 records"
+    },
+    {
+      "priority": "MEDIUM",
+      "item": "9055 duplicate name+producer pairs - not real dupes (same label across vintages), but should audit the highest-count cases (Happs: 12, Brothers in Arms: 11) for actual duplicates.",
+      "impact": "Investigation needed"
+    },
+    {
+      "priority": "LOW",
+      "item": "Score dimension is 0% - all 17,993 scores link via wine_vintage_id but sample wines may not have vintages. Need to verify score join path.",
+      "impact": "Readiness accuracy"
+    }
+  ]
+}

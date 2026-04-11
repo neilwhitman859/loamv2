@@ -35,12 +35,6 @@ Append-only list of discovered issues and deferred work. Read at session start b
 **Estimated effort:** 1-2 hours
 **Discovered in:** Session 13
 
-### [2026-04-10] LWIN long-tail promotion sweep (10+ wine producers)
-**Priority:** ~~P1~~ **DONE in Session 13** (2026-04-10/11)
-**Actual result:** Scope expanded from "10-19 wine bucket" to "all US + INTL>=8". **+8,146 producers, +104,009 wines. Active wines 51,614 → 155,623.**
-**Remaining:** 69,470 LWIN rows for INTL producers with <8 wines — intentionally skipped per the US-biased scope the user chose. Could be a follow-up session if desired.
-**Closed:** Session 13
-
 ### [2026-04-10] Grape synonym ambiguity — broader cleanup
 **Priority:** P2
 **Scope:** 29+ grapes had short-synonym collisions in `grape_synonyms`. Session 11 fixed the worst cases (Riesling, Grolleau Noir, Dolcetto/Croatina → Nebbiolo false matches, Melon → Pinot Blanc, Calabrese di Montenuovo → Sangiovese, Canari Noir → Pinot Gris) — totaling ~5,000 wine_grapes rows repointed. Remaining ambiguous synonyms: `malvasia` (29 grapes), `plant d` (19), `raisin d` (13), `alicante` (11), `muscat d` (11), `greco` (10), `malaga` (10), `tinta` (8), `tokay` (7), `bonarda` (7), `nerello` (7). For each: decide between deleting the ambiguous synonym entirely or adding region/color-aware disambiguation.
@@ -49,75 +43,74 @@ Append-only list of discovered issues and deferred work. Read at session start b
 **Estimated effort:** 4-6 hours (auditing + targeted cleanups) + spot-check audit after
 **Discovered in:** Session 11 (Knoll/Grolleau Noir grape-link investigation)
 
-### [2026-04-10] Durif/Petite Sirah ↔ Syrah reconciliation
-**Priority:** P3
-**Scope:** `DURIF` has 1,230 wine_grapes links. 1,048 have "Syrah" or "Petite Sirah" in the wine name. Durif and Petite Sirah are the same grape scientifically, so linking "Petite Sirah" to DURIF is correct. But linking "Syrah" to DURIF is wrong — they're different grapes (despite the name confusion). Audit which of the 1,048 are "Petite Sirah" (correct) vs plain "Syrah" (wrong).
-**Why:** Borderline case — not blocking, but wines labeled Syrah shouldn't be linked to Durif.
-**Estimated effort:** 30 minutes of SQL + spot-check
-**Discovered in:** Session 11
-
 ### [2026-04-10] Schema bug: `source_lwin.canonical_*` FK points to archive_*
-**Priority:** P2
+**Priority:** P2 — scheduled for Session 14 Phase B
 **Scope:** `source_lwin.canonical_wine_id` and `source_lwin.canonical_producer_id` foreign keys reference `archive_wines` and `archive_producers` (the old tables), not the new canonical `wines` and `producers`. Leftover from the 30K rebuild — tables were renamed but FKs stayed. Same issue may affect other `source_*` tables.
 **Why:** Prevents `pipeline/promote/*` scripts from marking staging rows as processed_at after promotion. Caused the Fort Ross promotion to skip the source_lwin update step.
 **Fix:** Drop the old FKs, add new ones pointing to the canonical tables.
 **Estimated effort:** 15 minutes audit + single migration
 **Discovered in:** Session 11 (Fort Ross promotion)
-
-### [2026-04-10] Enrichment quality fix (three-layer redesign)
-**Priority:** P0 — blocks Grade B shipping to users
-**Scope:** Session 10 audit found Grade C 2.48/5, Grade B 2.65/5, with 111+91 factual_error tags. Root cause: models confabulate facts when the prompt doesn't constrain them to verified data. Fix is a three-layer redesign:
-- **L1:** Retrieval-grounded prompts that include a structured "facts packet" (wine identity + `appellation_rules` text + `wine_vintages` chemistry + known unknowns) and explicit "do not invent" instructions
-- **L2:** Per-field constraints — `ai_comparable_wines` pulls ONLY from our own DB via deterministic query; `ai_terroir_expression` leans on `appellation_rules`; `ai_vinification_summary` leans on real winemaker notes
-- **L3:** Post-generation fact-check pass (Haiku) that validates claims against ground truth; retry once if flagged
-**Dependencies:** None — we have all the source data (`appellation_rules` 549 rows, `wine_grapes`, `wine_vintages`, producer site scrapes for 84 producers)
-**Estimated cost:** ~$50-80 for full re-enrichment of 105 Grade B + 4,857 Grade C with Batch API
-**Validation plan:** Build minimal L1 prototype, re-enrich 10 worst audit samples, re-audit, decide on L3
-**Discovered in:** Session 10, designed in Session 11
-**Status:** Validation test being built this session
+**Update:** Session 13 fixed the bug on all 30 non-LWIN `source_*` staging tables via a bulk relink (`relink_staging_to_current.py`) — `source_lwin` itself still points at `archive_*`. Scheduled for Session 14 Phase B W5.
 
 ### [2026-04-10] `wine_detail_view` and `wine_vintage_detail_view` don't expose `wine_insights`
-**Priority:** P1
+**Priority:** P1 — scheduled for Session 14 Phase B
 **Scope:** Frontend API views don't LEFT JOIN `wine_insights` or `wine_vintage_tasting_insights`, so the frontend can't access ai_hook, ai_wine_summary, ai_terroir_expression, etc. Fine for F/D page rendering (structured fields only), but blocks Grade B narrative display.
-**Why:** Natural time to add the JOIN is when the enrichment quality fix lands — we shouldn't expose the current 2.48-2.65/5 quality content to users anyway.
+**Why:** Will be moot under the Reference-First sprint if wine pages stop consuming wine-level AI content, but still worth fixing — the view should be correct regardless.
 **Estimated effort:** 1 hour (ALTER VIEW + test)
 **Discovered in:** Session 11 (view verification)
 
-### [2026-04-10] Session 10 S11.6 misclassification (false positive)
-**Priority:** P3 — already corrected in Session 11 followup
-**Scope:** Session 10's S11.6 check reported 2,272 "real duplicate groups" — this was a false positive. The grouping used `name_normalized` which for mass-market producers is the cuvée LINE name (e.g., Dark Horse "One Horse Town") not the varietal. Distinct SKUs were being grouped as dupes. True count with strict grouping (producer + display_name + appellation) was 181, now merged. The `pipeline/analyze/thirty_k_validate.py` U2 check logic should be updated to use the stricter grouping.
-**Estimated effort:** 20 minutes
-**Discovered in:** Session 11 (user question about 2,272 dedup groups)
-
-### [2026-04-09 carryover] 2,682 unclear dedup groups
-**Priority:** P2
-**Scope:** From 2026-04-08 dedup session: 2,682 wine_merge groups in `match_decisions` with decision=unclear. Session 11 Haiku reclassified 2,017 of them (1,982 true_duplicate, 35 distinct_wines), leaving 665 still unclear. Those need human review or a stronger classifier.
-**Discovered in:** Session 11 (inherited)
-
-### [2026-04-06 carryover] 10,469 ai_accepted dedup groups unprocessed
-**Priority:** P3
-**Scope:** Wait — these were actually processed in the 2026-04-08 dedup merge session. Verify this is fully closed.
-**Status:** Likely done, needs verification
-
 ### [2026-04-10] Wine_grapes has 6,337 wines with impossible grape percentages (>100% total)
-**Priority:** P0 — blocks enrichment quality on ~12% of the corpus
-**Scope:** 6,337 wines (12.3% of 51,614 active) have `wine_grapes.percentage` values that sum to more than 100%. Typical pattern: 275% = three grapes each at 100% + 75%, or 200% = two grapes each at 100%. This happens when multiple conflicting grape-assignment sources each set `percentage = 100` independently rather than normalizing to fractions of a blend. Affected wines include Kumeu River Hunting Hill (Chardonnay 100% + Pinot Noir 75% = 175%, but it's actually a 100% Chardonnay wine), Krug Clos du Mesnil, Joseph Phelps Eisele, and 6,334 others.
+**Priority:** P0 — blocks enrichment quality on ~12% of the corpus. **Scheduled for Session 14 Phase B W6 (audit-first with user review gate).**
+**Scope:** 6,337 wines (12.3% of the pre-S13 51,614 active corpus; new S13 long-tail wines mostly have no grape percentages yet) have `wine_grapes.percentage` values that sum to more than 100%. Typical pattern: 275% = three grapes each at 100% + 75%, or 200% = two grapes each at 100%. This happens when multiple conflicting grape-assignment sources each set `percentage = 100` independently rather than normalizing to fractions of a blend. Affected wines include Kumeu River Hunting Hill (Chardonnay 100% + Pinot Noir 75% = 175%, but it's actually a 100% Chardonnay wine), Krug Clos du Mesnil, Joseph Phelps Eisele, and 6,334 others.
 **Why:** The enrichment pipeline reads `wine_grapes` as ground truth. A 275% total causes Haiku/Sonnet to faithfully describe nonsense blends as if they were real ("pairs Pinot Noir with Chardonnay"). The auditor correctly flags these as factual errors, and Stage 1 pass 2 showed ~30% of the 34 fail wines had this bug. **No amount of prompt engineering can fix enrichment on these wines** — the data is wrong.
-**Discovery:** Stage 1 pass 2 analysis of Kumeu River Hunting Hill, confirmed by population query in Session 12.
-**Fix strategy (proposed, not agreed):**
-- For wines with exactly 1 grape_link and percentage=100: OK, leave alone
-- For wines where SUM(percentage) > 100: either (a) reset all percentages to NULL for that wine (conservative), (b) keep only the single-highest-confidence grape, or (c) re-derive from a stronger source (LWIN percentage field if present)
-- Best approach needs a session-level discussion. Do NOT autonomously fix in bulk without review — the repair policy is product-critical.
+**Fix strategy:** Session 14 Phase B builds `pipeline/analyze/audit_grape_percentages.py` (read-only) and surfaces per-pattern breakdown (275 / 200 / 150 / etc.) with LWIN availability hints. User picks strategy per pattern (NULL-out / keep-highest / re-derive from LWIN) at the review gate; then `fix_grape_percentages.py` runs with `--dry-run` default.
 **Estimated effort:** 2-4 hours investigation + fix + validation
 **Discovered in:** Session 12 (Stage 1 pass 2 diagnosis)
 
-### [2026-04-10] 270 Grade C wines have thin facts packets (<3 facts) despite Grade C assignment
-**Priority:** P1 — blocks enrichment ceiling on thin-packet wines
-**Scope:** 270 wines assigned `data_grade = 'C'` have fewer than 3 of the 5 canonical facts (grape, appellation, vintage, score, price). 28 have only 1 fact, 242 have exactly 2. Example: Quinta do Noval Black (fortified red, no grapes, no appellation, no vintage, no score). For these wines, Grade C enrichment can only produce "identity stub" content ("X is a red wine from Y") that scores 1-2/5 on the voice audit regardless of model choice. This suggests the data_grade='C' assignment is not strictly gated on packet richness — some thin-packet wines slipped through.
-**Why:** These wines are dragging down the Grade C population average on any population-level audit. Either (a) they should be demoted to Grade D until more data is promoted, or (b) Grade C should write purely structured output for thin-packet wines instead of attempting prose.
-**Fix strategy:** Add a `richness_score` column or view that counts non-NULL facts; re-run the grade assignment with the richness floor as a gate; or downgrade these 270 specifically.
-**Estimated effort:** 1 hour (SQL audit + grade reassignment) + reruns
-**Discovered in:** Session 12 (Stage 1 pass 2 diagnosis — Quinta do Noval Black case)
+### [2026-04-11] `wines.color` contradicts `appellation_rules.allowed_colors` on ~895 wines
+**Priority:** P2 — scheduled for Session 14 Phase B W7 (fix #5)
+**Scope:** Roughly 895 wines carry a color that's not permitted for their appellation under current legal rules. Typical offenders catalogued during Path A seeding: 800 Champagne red, 50 Chablis red, 2 Chianti Classico white, 2 Pommard non-red, 9 Barolo rosé, 5 Barolo white, 7 Sauternes red, 2 Barsac red, plus smaller counts elsewhere.
+**Fix:** Session 14 Phase B `UPDATE wines SET color = NULL WHERE color NOT IN allowed_colors(appellation)` + data_provenance log.
+**Discovered in:** Path A seeding batch 5 (2026-04-05)
+
+### [2026-04-11] Durif/Petite Sirah ↔ Syrah reconciliation (~1,048 wines)
+**Priority:** P3 — scheduled for Session 14 Phase B W7 (fix #6)
+**Scope:** `DURIF` has 1,230 wine_grapes links. 1,048 of those have "Syrah" or "Petite Sirah" in the wine name. Durif and Petite Sirah are the same grape scientifically, so "Petite Sirah" → DURIF is correct. "Syrah" → DURIF is wrong (despite name confusion). Phase B splits into buckets A (Petite Sirah, keep) / B (Syrah only, delete) / C (both phrases, spot-check).
+**Discovered in:** Session 11
+
+### [2026-04-11] Session 14 Phase A — Housekeeping interregnum
+**Priority:** P0 — active this session
+**Scope:** Dashboard redesign (sprint + project), repo cleanup, backlog consolidation, tiny fixes #1-#4, CLAUDE.md aggressive rewrite. Natural commit point between Phase A and Phase B.
+**Status:** In progress
+
+### [2026-04-11] Session 14 Phase B — DB cleanup + P0 fix + bigger fixes + 30K closure
+**Priority:** P0 — active this session
+**Scope:** Drop temp tables, move `archive_*` to archive schema, fix source_lwin FKs, add wine_detail_view JOINs, read-only reference-insight audit, P0 grape percentage repair (audit-first with user review gate), bug fixes #5-#6, 30K sprint formal closure (Josh Test re-run, budget freeze, archive move, final commit).
+**Status:** Pending Phase A completion
+
+### [2026-04-11] CLAUDE.md leaked bug: 66 producers named as appellations
+**Priority:** P3
+**Scope:** About 66 producers in `producers` are actually appellation names (e.g., "Chianti Classico" as a producer). They act as magnet wines for the rest of the pipeline — anything that can't resolve the real producer gets attached to these. Concrete observed harm: ~71 staging rows attached to appellation-as-producer rows.
+**Fix:** Needs a dedup logic design. Not an autonomous fix — product-critical.
+**Estimated effort:** 2-3 hours investigation + 1 hour fix
+**Discovered in:** 2026-04-04 follow-up pass (inherited from CLAUDE.md)
+
+### [2026-04-11] CLAUDE.md leaked bug: `batch_matcher.match_wine` loose substring collapses distinct wines
+**Priority:** P2
+**Scope:** `pipeline/promote/batch_matcher.py:match_wine()` uses a loose bidirectional substring check that collapses distinct wines from the same producer. Known ~170 collisions across Skurnik/Empson/European Cellars (e.g. two different Domaine X cuvées both match "Domaine X"). Fix path: `retail_wine_create.py` needs to be responsible for creating missing canonicals instead of letting `match_wine` bind to the wrong existing row.
+**Estimated effort:** 4-6 hours (code refactor + regression test on the known collisions)
+**Discovered in:** 2026-04-04 follow-up pass (inherited from CLAUDE.md)
+
+### [2026-04-11] CLAUDE.md leaked backlog: 665 unclear dedup groups remaining
+**Priority:** P2
+**Scope:** From the 2026-04-08 dedup session: 2,682 wine_merge groups in `match_decisions` had decision='unclear'. Session 11 Haiku reclassified 2,017 of them (1,982 true_duplicate, 35 distinct_wines), leaving 665 still unclear. Those need either a stronger classifier or human review.
+**Fix:** Re-run Haiku dedup classifier with tighter prompt, OR manual review, OR Sonnet pass.
+**Discovered in:** 2026-04-06 (inherited)
+
+### [2026-04-06 carryover] 10,469 ai_accepted dedup groups unprocessed
+**Priority:** P3
+**Scope:** These were processed in the 2026-04-08 dedup merge session + Session 13 strict + Haiku passes. Likely fully closed — verify on next dedup session.
+**Status:** Likely done, needs verification
 
 ---
 

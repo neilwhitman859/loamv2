@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "description": "High-level Loam roadmap. Update phase status/metrics as work progresses. Used by pipeline/analyze/loam_roadmap.py.",
-    "last_updated": "2026-04-10T08:20:00Z"
+    "description": "High-level Loam roadmap. Phase-level metrics are pulled live from the DB via pipeline/analyze/loam_roadmap.py's METRIC_DISPATCH table. Set `metrics_query` on a phase to wire it to a live query; key_metrics is only a legacy fallback for phases we haven't built a query for yet.",
+    "last_updated": "2026-04-11"
   },
   "phases": [
     {
@@ -10,41 +10,35 @@
       "status": "done",
       "date": "2026-03-17",
       "summary": "Schema, reference data, source research",
-      "key_metrics": [
-        "94 canonical tables",
-        "3,662 appellations, 9,695 grapes, 389 regions",
-        "17 source categories researched (docs/SOURCES.md)"
-      ],
-      "notes": "All reference tables seeded. Schema hardened across 3 rounds."
+      "metrics_query": "foundation",
+      "notes": "All reference tables seeded. Schema hardened across 3 rounds. 94 canonical tables. 17 source categories researched (docs/SOURCES.md)."
     },
     {
       "id": 2,
       "name": "Data Population (30K Plan)",
       "status": "done",
-      "date": "2026-04-09",
-      "summary": "Quality-over-coverage catalog rebuild",
-      "key_metrics": [
-        "2,529 producers, 51,790 wines",
-        "Josh Test: 85% findability",
-        "Completeness median: 8/11"
-      ],
-      "notes": "Sessions 1-8 of the 30K plan. Archive, identity rules, batch imports, TTB linking, quality gate."
+      "date": "2026-04-11",
+      "summary": "Quality-over-coverage catalog rebuild — closing in Session 14 housekeeping interregnum",
+      "metrics_query": "data_population",
+      "notes": "Sessions 1-13 of the 30K plan. LWIN backbone promotion, TTB depth linking, batch imports, dedup merges, LWIN long-tail sweep. Sprint closes at end of Session 14 Phase B, moves to data/sprints/_archive/30k/."
     },
     {
       "id": 3,
       "name": "Enrichment Pipeline",
       "status": "in_progress",
-      "summary": "AI narrative content for wine pages",
+      "summary": "AI narrative content for wine pages — shifting to Reference-First architecture in Sprint 2",
+      "metrics_query": "enrichment",
       "sub_tasks": [
         {"name": "Pipeline infrastructure (sequential + batch)", "status": "done", "metric": "batch_enrich.py, batch_api.py, batch_runner.py"},
         {"name": "Voice calibration", "status": "done", "metric": "7 wines manual review, docs/VOICE.md aligned"},
         {"name": "Session 9: D-grade sweep", "status": "done", "metric": "4,962 wines enriched, $15.76"},
         {"name": "Session 10: Final validation", "status": "done", "metric": "S11 8/3/4 PASS/FAIL/SKIP, Josh 85%, Story 1.8/5, audit 2.48-2.65/5"},
-        {"name": "Enrichment quality fix", "status": "blocking", "metric": "Audit found 111+91 factual errors in 70 sample wines. Fix prompts + add fact-check pass before Grade B ships"},
-        {"name": "Grade C on F-grade wines", "status": "planned", "metric": "~46,688 wines, ~$93 est."},
-        {"name": "Grade A showcase curation", "status": "planned", "metric": "Top ~500 wines, manual review"}
+        {"name": "Session 11: L1 prototype + cleanup", "status": "done", "metric": "L1 lifted Grade B 2.0->3.57, factual_error -90%"},
+        {"name": "Session 12: L3 fact-check build + Stage 2 validation", "status": "done", "metric": "Grade B 3.31/5 (+0.66). Grade C 1.76/5 regression (deprecated under RF)"},
+        {"name": "Three-layer L1+L3 architecture", "status": "done", "metric": "Validated in S11+S12. Ships in Sprint 2 vertical slice."},
+        {"name": "Reference-First pivot (Sprint 2)", "status": "planned", "metric": "Enrich the reference layer once; wine pages become thin synthesis over it"}
       ],
-      "notes": "On-demand Edge Function stays for user-triggered enrichment. Batch runner handles scheduled refreshes. WARNING: enrichment_audit.py found 2.48-2.65/5 quality (Sonnet+Haiku confabulate facts). Must fix prompts/add fact-check pass before exposing Grade B to users."
+      "notes": "Grade C voice regression deprecated — wine-level synthesis will lean on enriched reference layer (grapes/regions/appellations/producers). Grade B on-demand stays behind ENRICHMENT_ENABLED feature flag until RF sprint vertical slice ships."
     },
     {
       "id": 4,
@@ -53,12 +47,13 @@
       "summary": "Ship the consumer experience (loam.onrender.com)",
       "sub_tasks": [
         {"name": "Verify API views against 30K tables", "status": "planned"},
+        {"name": "Add wine_insights JOIN to wine_detail_view", "status": "planned"},
         {"name": "Wire up Edge Function for on-demand enrichment", "status": "planned"},
         {"name": "Loading states for Grade F/D wines", "status": "planned"},
         {"name": "Test wine pages with real enrichment data", "status": "planned"},
         {"name": "Deploy + onboard first beta users", "status": "planned"}
       ],
-      "notes": "Pages already built (Wine/Producer/Appellation/Region/Grape/Country/Vineyard). Paused since 2026-04-01. Dependencies resolved by Phase 3."
+      "notes": "Pages already built (Wine/Producer/Appellation/Region/Grape/Country/Vineyard). Paused since 2026-04-01. Resumes in Sprint 2 vertical slice."
     },
     {
       "id": 5,
@@ -66,8 +61,8 @@
       "status": "pending",
       "summary": "Barcode scan + label photo + wine-not-found",
       "sub_tasks": [
-        {"name": "Barcode scanner → UPC lookup", "status": "planned", "metric": "106K UPCs already indexed"},
-        {"name": "Label photo → Claude Vision → fuzzy match", "status": "planned"},
+        {"name": "Barcode scanner -> UPC lookup", "status": "planned", "metric": "106K UPCs already indexed"},
+        {"name": "Label photo -> Claude Vision -> fuzzy match", "status": "planned"},
         {"name": "Wine-not-found: create + enrich in 15s", "status": "planned"}
       ],
       "notes": "Data layer already supports this. Needs frontend + Vision API integration."

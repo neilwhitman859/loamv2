@@ -259,3 +259,108 @@ Polaner deprioritized (metadata-thin, 1,680 titles parsed via Haiku).
 **Region refinement:** 75,774 wines updated L1→L2. 3,224 cross-boundary mismatches remain.
 
 **Search fix:** search_catalog v2 with unaccent + producer name matching. Findability 12%→83%.
+
+---
+
+## Closed: architecture changed (2026-04-11, Session 14 Phase A)
+
+### Grade C enrichment quality fix (three-layer redesign) — deprecated
+Originally a P0 backlog item (the Session 10 audit found Grade C averaging 2.48/5 with 111+ factual_error tags). Deprecated on 2026-04-11 when the project pivoted to Reference-First enrichment. Under the new architecture, wine pages become thin synthesis over an enriched reference layer (grape + region + appellation + producer insights). Wine-level voice regressions no longer apply the same way, so the old three-layer L1+L3 redesign (which Session 12 actually built and validated for Grade B — see `data/sprints/30k/journal.md` Session 12 entry) is paused for Grade C and will be revisited (or replaced) inside the Sprint 2 vertical slice.
+
+### 270 thin Grade C wines with <3 of 5 canonical facts — deprecated
+Originally a P1 backlog item. Same reason: wine-level Grade C is being replaced by Reference-First synthesis. A thin wine (no grape, no appellation, no vintage, no score, no price) can still render a useful page if the reference layer is rich — because the page pulls context from grape/appellation insights rather than trying to generate original wine-level copy. Grade-level re-classification will happen inside the RF sprint.
+
+### Session 10 S11.6 misclassification (false positive) — closed
+Session 10's S11.6 check reported 2,272 duplicate wines via `GROUP BY name_normalized`. That grouping inflated the count because mass-market wines with NULL `name` were being lumped together. Session 14 Phase A fix #4 added `validate_post_dedup()` to `pipeline/analyze/thirty_k_validate.py` with the corrected grouping `(producer_id, display_name, appellation_id)`. New count: **0 real duplicate groups**. The old broken grouping remains as an informational-only warn line for reference.
+
+---
+
+## Pre-30K rebuild history (moved from CLAUDE.md "Content Tables" on 2026-04-11, Session 14 Phase A W4)
+
+These bullets describe the pre-rebuild dataset (~477K wines, ~42K producers) before Phase 0 of the 30K plan archived everything and rebuilt a clean corpus. They were living in CLAUDE.md and going stale every week. They're preserved here for auditing the old pipelines but **do not reflect current DB state** — always query the DB for live numbers.
+
+The full session-by-session narrative for the 30K rebuild itself lives in `data/sprints/30k/journal.md` (and, post-closure, `data/sprints/_archive/30k/journal.md`).
+
+### Content Tables as of 2026-04-04 (post-recovery + 10 follow-ups, pre-rebuild)
+
+- **~42K producers**, **~518K wines**, **~354K vintages**, **~27K scores**, **~140K prices**, **~293K wine_grapes**, **~614K external_ids** (294K COLA + 106K UPC + 189K LWIN + 13K QR URL + 1.4K QR), **~16K entity_classifications**, **14 retailers**, **194 winemakers**
+- **~432K wines with color (83.5%)** via free fills + Haiku color classify. Scripts: `pipeline/enrich/haiku_color_classify.py`, `pipeline/promote/ttb_color_fill.py`
+- **~262K wines with appellation_id** via TTB wine_appellation backfill
+- **~413K wines with region_id** via TTB direct resolve + cascade from appellation
+- **~468K wines with country_id**
+- **~167K wine_vintages with label image URLs** (restored from TTB after column was wiped)
+- **~169K wine_vintages with ABV**
+- **293K wines linked to TTB** (689K TTB records linked)
+- **Wine type:** table 473,232, sparkling 18,757, fortified 4,937
+- **COLA-keyed state merge:** 170K state DB records linked (PRO 84K, TABC 52K, WV 22K, Kansas 13K)
+- **Price coverage:** 8.39% (41,187 distinct wines with prices out of 490,933 wines)
+- **Data grade:** F=467,355, D=29,568, C=0, B=3
+- **Score coverage:** ~2%
+- **UPCs:** 117,250 across 80,618 wines (TTB label/scan barcode scanning)
+
+### Promotion rounds 1-17 (2026-04-04 to 2026-04-05, all pre-rebuild)
+
+Each round applied strictly definitional / direct-source fills only (no inference). Highlights:
+
+- **Round 1 — Recovery (2026-04-04):** +7,707 prices (Wally's title parser), +29,249 wine_grapes (TTB grape promotion re-run), +86,015 colors (LWIN `colour` column backfill + 1,681 from importers). See DECISIONS.md "Recovery of lost data via authoritative sources only."
+- **Round 2 — TTB label images + ABV (2026-04-04):** +163,635 label images from TTB (0 to 167,164), +2,670 ABV values, +32,135 appellation_id values from TTB wine_appellation, +4,166 sparkling and +223 fortified reclassifications from TTB class_type_desc.
+- **Round 3 — Region/country cascade (2026-04-04):** +125,844 region_id values (26,441 cascaded from appellation + 99,403 resolved directly from TTB wine_appellation + origin_desc), +323 fortified reclassifications from name-based Port/Sherry/Madeira/Marsala/Banyuls/Maury match, +1,966 wine country_id + 188 producer country_id cascaded.
+- **Round 4 — TTB grape parsing (2026-04-05):** +3,542 wine_grapes via greedy longest-match parser on TTB space-separated blends. +6 TA from Winebow chemistry.
+- **Round 5 — Fortified age statements (2026-04-05):** +95 age_statement_years on fortified wines parsed from name ("10 Year Tawny Port" to 10).
+- **Round 6 — LWIN backfill + search vector rebuild (2026-04-05):** +898 LWIN external_ids backfilled. Search vector rebuild: +2,574 wines, +6,859 producers, +1 appellation.
+- **Round 7 — COLA + varietal_category cascade (2026-04-05):** +2,160 COLA external_ids backfilled. +62,519 wines.varietal_category_id via strictly definitional single-grape cascade (0 to 62,519).
+- **Round 8 — identity_confidence cascade (2026-04-05):** +435,050 identity_confidence values cascaded from external_ids (LWIN > COLA > UPC precedence). +3,184 fortified varietal_category_id via name match.
+- **Round 9 — Single-grape percentage fill (2026-04-05):** +79,189 wine_grapes.percentage=100 on single-grape wines. +9,002 wine_vintage_prices.price_original copied on USD-currency rows.
+- **Round 10 — State DB ABV fill (2026-04-05):** +536 from PRO Platform, +147 from WV ABCA (both vintage-matched definitionally). TABC skipped (no vintage column).
+- **Round 11 — Label designations by name match (2026-04-05):** +53,128 wine_label_designations (0 to 53,128). Word-boundary match of 93 canonical designation names against wines.name.
+- **Round 12 — Farming cert gap fills (2026-04-05):** +123 wine_farming_certifications from Skurnik + Kermit Lynch. +78 producer_farming_certifications from KL growers.
+- **Round 13 — Empson first_vintage + appellation to varietal (2026-04-05):** +76 first_vintage_year from Empson's explicit column. +1,803 varietal_category_id from strict appellation-name == category-name match (Franciacorta 467, Sauternes 389, Prosecco 359, etc.).
+- **Round 14 — Wally's bottle formats + appellation data (2026-04-05):** +15,940 wine_vintage_formats from Wally's title size parsing. appellation_vintages populated (134,877 rows from weather data). appellation_soils: 930 links.
+- **Round 15 — TEXSOM review dates (2026-04-05):** +5,452 review_date on TEXSOM scores via vintage-matched backfill from source_texsom.year.
+- **Round 16 — Producer external_ids (2026-04-05):** +538 producer external_ids (Skurnik 379 slugs, Kermit Lynch 120 grower IDs, Empson 39 slugs). First producer entity_type entries in external_ids.
+- **Round 17 — NV score sync (2026-04-05):** +1,025 wine_vintage_scores.vintage_year set to 0 (NV) on rows where `wine_vintage_id` FK already pointed to a wine_vintages(vintage_year=0) row. Orphan score count went to 0.
+
+### Path A appellation_rules seeding (2026-04-05 to 2026-04-07)
+
+Seeded **1,165 appellation_rules** and **10,413 appellation_grapes** with full legal-document provenance. Sources: INAO CDCs (French AOCs), MAPA pliegos (Spanish DOPs), MASAF catalogoviti sweep (398 Italian DOC/DOCG PDFs), IVV Portugal, BML Austria via Bundeskellereiinspektion, BLE Germany, EU eAmbrosia/OJ C, Hungarian Wine Act, Greek PDO register, Georgian National Wine Agency, Slovenian MoA, Romanian ONVPV, Swiss federal + cantonal. Countries covered: US, Italy, France, Austria, Portugal, Spain, Germany, Greece, Australia, South Africa, Hungary, Switzerland, Georgia, Slovenia, Romania, North Macedonia, Moldova, Czech Republic.
+
+Rollback SQL per batch lives in `docs/PATH_A_ROLLBACK.md`. Pre-existing illegal wine colors (~895 wines — 800 Champagne red, 50 Chablis red, 9 Barolo rosé, etc.) catalogued during this work and left in place per no-overwrite rule — queued for Session 14 Phase B bug fix #5.
+
+### Producer website scrape (2026-04-07)
+
+`pipeline/fetch/producer_site_scrape.py` — generic Haiku-based extraction from top 100 wine producer websites. 77/100 completed initially, +7 via Playwright fallback in v2. **+522 wines, +356 vintages (80 ABV, 36 pH, 36 TA, 135 oak, 252 winemaker notes), +560 wine_grapes, +28 winemakers, +55 year_established, +71 producer descriptions, +113 website_urls on producers.** Cost: ~$1.84 Haiku total (v1 + v2).
+
+### Accent cleanup (2026-04-07)
+
+`pipeline/analyze/accent_cleanup.py` — deterministic accent restoration, 28 rules covering French/Spanish/Portuguese/German patterns. **~23,118 names fixed** across producers (4,772) and wines (18,346). Zero AI cost. 9,630 slug collisions revealed accent-variant duplicate entries, logged for dedup.
+
+### Knowledge seed (2026-04-08)
+
+`pipeline/promote/knowledge_seed.py` — 6-stage pipeline (generate → dedup → ttb-match → validate → promote → report). 920 generated across 32 categories, 656 already existed (71% overlap), 204 promoted after dual Haiku+Sonnet validation. **+200 wines, +31 producers, +321 wine_grapes.** Backbone IDs: 9/200 (COLA only). Total cost: ~$2.50. Staging table: `source_claude_knowledge`.
+
+### Haiku data gap fills loop (2026-04-07)
+
+- **Free fills:** +15,653 white-grape to white cascade, +11,171 name-keyword colors, +134,877 appellation_vintages from weather
+- **Track A color classify:** ~$22 (4 parallel runs, coverage 62.4% to 83.5%, +109K wines with color)
+- **Track B appellation soils:** $0.34 (0 to 930 links across 304 appellations)
+- **Track C dupe reclassify:** $0.68 (2,017/2,682 unclear reclassified → 1,982 true_duplicate + 35 distinct)
+- **Track D grape extract:** $0.35 — killed at 2% hit rate, not cost-effective
+- Scripts: `pipeline/enrich/haiku_color_classify.py`, `pipeline/enrich/haiku_appellation_soils.py`, `pipeline/enrich/haiku_dupe_reclassify.py`, `pipeline/enrich/haiku_grape_extract.py`
+
+### Inference reverts (2026-04-04)
+
+See `docs/DECISIONS.md` entry "No probabilistic inference on canonical columns" and `memory/feedback_no_probabilistic_inference.md`. This session applied 18 inference operations across the canonical tables; 14 were reverted after user caught errors. Reverts had collateral damage: ~44K legit wine_grapes links cleared along with the 81K pattern-inferred ones, ~85K pre-session colors cleared before TTB restoration, 28.6K NV price rows removed.
+
+**Kept (strictly definitional/direct):** wine_vintage_id composite-key backfill, region_id from appellations.region_id, country_id from region/appellation, wine_type regulatory reclassification (Champagne to sparkling, Tawny Port to fortified — legal category names), data grade F to D from raw data presence, and all direct staging promotions (not inference).
+
+### Depth data populated via recovery + follow-up rounds
+
+- **Wine depth** (was 0): 211K label images, 6.4K farming certs, 4.7K bottle formats, 809 food pairings, 696 descriptions, 449 sweetness, 166 winemakers, 233 pH, 251 TA, 192 RS, 100 fermentation vessels, 106 yeast types, 224 MLF, 166 oak duration, 158 oak origin, 101 closures, 321 production, 88 serving temps, 343 critic_score_avg
+- **Producer depth** (was 0): 155 year_established, 185 websites, 117 GPS, 183 descriptions, 110 production, 194 winemaker links
+- Alias tables seeded: 96 region, 75 label designation, 18,631 appellation
+
+### Other pre-rebuild milestones
+
+- Sonnet accuracy audit: 96% on 300-sample ($0.05). Non-sparkling data 100% clean.
+- Sparkling wine fix applied: 8,977 reclassified. Distribution: table 93.6%, sparkling 4.7%, fortified 1.6%.
+- Search fix: `search_catalog` v2 with unaccent + producer name matching. Findability 12% to 83%.

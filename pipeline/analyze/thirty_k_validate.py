@@ -326,11 +326,78 @@ def validate_ongoing(conn):
 
 
 # ─────────────────────────────────────────────────────────────
+# S11 / post-dedup validation
+# ─────────────────────────────────────────────────────────────
+
+def validate_post_dedup(conn):
+    """S11.6 / U2 — no real duplicate wines remaining.
+
+    Session 10 originally grouped by `name_normalized` and reported 2,272 duplicate
+    groups. That count was inflated: mass-market wines with NULL `name` were being
+    grouped together even though their `display_name`s (varietal SKUs) are distinct.
+    The corrected grouping uses (producer_id, display_name, appellation_id) — which
+    is what a real duplicate actually looks like.
+    """
+    print(f"\n{B}── Post-dedup / S11.6 — real duplicate wines ──{X}")
+    checks = []
+    passed = 0
+    total = 0
+
+    # Corrected U2 — strict grouping on what makes a wine unique to users
+    rows = q(conn, """
+        SELECT count(*) FROM (
+            SELECT producer_id, display_name, appellation_id, count(*) AS n
+            FROM wines
+            WHERE deleted_at IS NULL
+              AND display_name IS NOT NULL
+              AND producer_id IS NOT NULL
+            GROUP BY producer_id, display_name, appellation_id
+            HAVING count(*) > 1
+        ) x
+    """)
+    strict_groups = rows[0][0] if rows else None
+    ok = strict_groups is not None and strict_groups < 250
+    run_check(
+        checks,
+        f"U2 strict dedup groups (producer + display_name + appellation): {strict_groups}",
+        ok,
+        detail="target <250 — Session 10 reported 2,272 with the broken name_normalized grouping",
+    )
+    total += 1; passed += (1 if ok else 0)
+
+    # Sanity: the old broken grouping, for reference
+    rows = q(conn, """
+        SELECT count(*) FROM (
+            SELECT producer_id, name_normalized
+            FROM wines
+            WHERE deleted_at IS NULL
+              AND name_normalized IS NOT NULL
+              AND producer_id IS NOT NULL
+            GROUP BY producer_id, name_normalized
+            HAVING count(*) > 1
+        ) x
+    """)
+    old_groups = rows[0][0] if rows else None
+    run_check(
+        checks,
+        f"Legacy (producer + name_normalized) groups: {old_groups}",
+        True,
+        detail="informational — Session 10 S11.6 used this; inflated by NULL-name mass-market wines",
+        warn=True,
+    )
+    total += 1; passed += 1  # informational, always passes
+
+    return passed, total
+
+
+# ─────────────────────────────────────────────────────────────
 # Main
 # ─────────────────────────────────────────────────────────────
 
 SESSION_VALIDATORS = {
     'phase_0': validate_phase_0,
+    'post_dedup': validate_post_dedup,
+    's11': validate_post_dedup,
 }
 
 

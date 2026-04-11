@@ -155,13 +155,16 @@ We are not in a hurry. If a dry run looks wrong, throw it away and try again.
 ## Session Management
 
 ### Persistent Dashboard
-`python -m pipeline.analyze.thirty_k_dashboard --watch` — keep open in PowerShell.
+`python -m pipeline.analyze.sprint_dashboard --watch` — keep open in PowerShell. (Renamed from `thirty_k_dashboard` in Session 14.)
+
+### Sprint Files
+All sprint-tracked state lives under `data/sprints/30k/`: `sessions.json`, `budget.json`, `journal.md`, `status.md`, `meta.json`, `prompts/`. The active sprint pointer is `data/sprints/current.json`.
 
 ### Auto-loading Memory File
-`memory/30k_status.md` — loaded every session. Current phase, what to do, what not to do.
+`data/sprints/30k/status.md` — repo-tracked as of Session 14 (previously `memory/30k_status.md`). Current phase, what to do, what not to do.
 
 ### Session Prompt Files
-`data/session_prompts/30k_phase_N.md` — designed 1-2 phases ahead, not all at once.
+`data/sprints/30k/prompts/30k_phase_N.md` — designed 1-2 phases ahead, not all at once.
 
 ### Model Selection
 
@@ -177,17 +180,17 @@ We are not in a hurry. If a dry run looks wrong, throw it away and try again.
 ### Session Discipline
 
 **START of every session (non-negotiable):**
-1. Read the plan doc, memory file, and journal
-2. Run dashboard
-3. **GATE CHECK: Verify the PREVIOUS session's exit criteria are ALL met.** Check `30k_sessions.json` — previous session must show `"status": "done"`. If not, STOP. Complete the previous session's unfinished work BEFORE starting new work. Do not skip this.
-4. Mark current session as `"in_progress"` in `30k_sessions.json`
+1. Read the plan doc, status file (`data/sprints/30k/status.md`), and journal (`data/sprints/30k/journal.md`)
+2. Run dashboard: `python -m pipeline.analyze.sprint_dashboard`
+3. **GATE CHECK: Verify the PREVIOUS session's exit criteria are ALL met.** Check `data/sprints/30k/sessions.json` — previous session must show `"status": "done"`. If not, STOP. Complete the previous session's unfinished work BEFORE starting new work. Do not skip this.
+4. Mark current session as `"in_progress"` in `data/sprints/30k/sessions.json`
 
 **END of every session (non-negotiable, do not skip ANY step):**
 1. Run validation: `python -m pipeline.analyze.thirty_k_validate --session <id>`
 2. Verify ALL exit criteria for this session are met. If any fail, fix before proceeding.
-3. Update `data/stats/30k_sessions.json` — mark session `"done"`, fill `date` and `ai_spend`
-4. Append entry to `data/stats/30k_journal.md`
-5. Update `memory/30k_status.md` — point to next session
+3. Update `data/sprints/30k/sessions.json` — mark session `"done"`, fill `date` and `ai_spend`
+4. Append entry to `data/sprints/30k/journal.md`
+5. Update `data/sprints/30k/status.md` — point to next session
 6. Update `docs/30K_PLAN.md` — check off exit criteria
 7. Commit and push
 8. **Do NOT end the session until steps 1-7 are ALL complete.**
@@ -799,7 +802,7 @@ pipeline/
     ttb_permits.py
     wikidata_sparql.py
   analyze/            # Measurement
-    thirty_k_dashboard.py   # (exists)
+    sprint_dashboard.py     # (renamed from thirty_k_dashboard.py in S14)
     josh_test.py            # (new)
     winetest/               # (exists)
   lib/                # Shared (existing)
