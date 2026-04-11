@@ -115,11 +115,14 @@ edge functions + shared libs + scheduled tasks)** ran with 32 findings (9 P0, 14
 corpus + 5 prompt files + live enrich-wine edge function)** ran with 32 findings
 (9 P0, 14 P1, 7 P2, 2 P3) → `findings_voice.md`. **S2.7 (UX / frontend expert —
 9 consumer pages + 14 dev-explorer pages + 9 shared components)** ran with 32 findings
-(9 P0, 14 P1, 7 P2, 2 P3) → `findings_ux.md`. All seven sessions at $0 actual
-spend. Sprint 2 budget $0 / $25 ceiling. **213 findings** total across
-S2.1+S2.2+S2.3+S2.4+S2.5+S2.6+S2.7 so far.
+(9 P0, 14 P1, 7 P2, 2 P3) → `findings_ux.md`. **S2.8 (meta expert — 14 docs files
++ 19 memory files + CLAUDE.md + loam_roadmap.json + sprint infra + scheduled tasks
++ edge function deployment verification)** ran with 32 findings (9 P0, 14 P1, 7 P2,
+2 P3) → `findings_meta.md`. All eight sessions at $0 actual
+spend. Sprint 2 budget $0 / $25 ceiling. **245 findings** total across
+S2.1+S2.2+S2.3+S2.4+S2.5+S2.6+S2.7+S2.8 so far.
 
-**Six-session headline:** (S2.2 F1) 286,918 wine_id pointers across 29 of 31
+**Eight-session headline:** (S2.2 F1) 286,918 wine_id pointers across 29 of 31
 wine-bearing staging tables are dangling archive references — Sprint 3's highest-ROI
 task is a staging relink (reuse S13 pattern) to unlock ~52K prices + ~48K scores +
 ~200K vintage-grade fields + ~40K UPCs. **S2.5 F3 pinpoints the code cause:**
@@ -203,17 +206,65 @@ pages and never rendered** — AppellationPage drops `ai_overview`/`ai_key_grape
 and no user would ever see it. (S2.7 F8) `/vineyard/:id` route is dead (0 rows,
 search_catalog doesn't include vineyard). (S2.7 F9) Zero `.catch()` anywhere in
 consumer pages, no error boundary in `main.tsx` — structural reason F2 silently
-ships.**
+ships. **(S2.8 F1) CLAUDE.md `## Current Focus` section is 5+ sessions stale and
+internally contradicts `## Current State` — line 520 reads "Session 14 housekeeping
+interregnum … Sprint 2 = Reference-First Enrichment (planning session 15, execution
+sessions 16+)" while this Current State section correctly tracks Sprint 2 as the
+Audit. Same file, opposite forward frames. A session briefing reading top-down gets
+the wrong frame. (S2.8 F2) `memory/30k_status.md:29` ships the same pre-pivot
+Reference-First claim into every conversation via `MEMORY.md` auto-load — S14
+Phase A fixed `project_sprint_model_and_rf_direction.md` but missed this file.
+(S2.8 F3) `docs/SOURCES.md:33` mis-documents external_ids Backbone ID storage —
+says `id_type = 'ttb_cola'` but live `information_schema` confirms the column is
+`system` (not `id_type`) and the COLA value is `'cola'` (not `'ttb_cola'`); also
+`lwin_7` (50,908 rows) not mentioned. Any pipeline author writing the documented
+query gets zero rows silently — S2.7 F2 dead-column pattern at the doc layer. (S2.8
+F4) CLAUDE.md internal contradiction on vineyards — line 334 (Aspirational) says
+`public.vineyards is empty post-rebuild` (verified 0), line 487 (Major Gaps) says
+"vineyards has 815 rows" (false — 0 public, 881 archive, not 815). (S2.8 F5)
+`loam_roadmap.json` Sprint 2 sub-tasks are 7 states behind (S2.1 still marked
+in_progress, S2.2-S2.9 marked planned) — creates two-dashboards-two-answers drift
+vs `dash.ps1` which reads live sessions.json. (S2.8 F6) `docs/30K_PLAN.md` header
+says "Session 4 DONE — GO for Batch 1" (10 sessions out of date) and contains 10
+broken `data/sprints/30k/` path references (dir moved to `_archive` on 30K close);
+`CLAUDE.md:306` has one broken path too. (S2.8 F9) `docs/architecture/` and
+`docs/pipelines/` are empty scaffolded dirs from 2026-03-05, never populated.
+(S2.8 F11) `docs/MERGE_STRATEGY.md` still frames Python migration as pending and
+plans Ollama local matching that never materialized; references 3 non-existent
+files. (S2.8 F23) Remaining CLAUDE.md hardcoded-count drift against live DB:
+wine_grapes 47,035 vs 46,028, color 153,311 vs 153,229, archive vineyards 815
+vs 881 — down from S2.1 F28 baseline but not eliminated.**
 
-**Sprint 3 sequence (refined by S2.6 + S2.7):** Pre-reqs: (i) voice module
+**Sprint 3 sequence (refined by S2.6 + S2.7 + S2.8):** Pre-reqs: (i) voice module
 consolidation — create `pipeline/lib/voice.py` with shared VOICE_RULES_BLOCK +
 NEVER INVENT block, rewrite 4 reference enrichment scripts + vendored edge
 function to import it, ~4-6 hrs (S2.6 F1/F2, closes 14 of 32 S2.6 findings).
-(ii) Delete `describe-chemical` edge function, centralize Anthropic model IDs
-via `pipeline/lib/models.py`, vendor `enrich-wine` source into `supabase/functions/`
-— ~30 min combined (S2.5 F1/F5/F31). (iii) Restore `wine_food_pairings` from
-`archive.wine_food_pairings` (S2.6 F8). (iv) **NEW — UI hygiene bundle (~3-4
-hours combined, S2.7):** fix CountryPage column typo (F2, 1 min), add
+(ii) Delete `describe-chemical` edge function (VERIFIED still deployed ACTIVE
+version 5 as of S2.8), centralize Anthropic model IDs via `pipeline/lib/models.py`,
+vendor `enrich-wine` source into `supabase/functions/` — ~30 min combined (S2.5
+F1/F5/F31). (iii) Restore `wine_food_pairings` from `archive.wine_food_pairings`
+(S2.6 F8). (iv) **Doc hygiene bundle (~2-3 hours combined, S2.8):** rewrite
+CLAUDE.md `## Current Focus` (F1, 20 min), update `memory/30k_status.md` Next
+section (F2, 5 min), fix `docs/SOURCES.md:33` external_ids storage typo (F3,
+2 min), delete CLAUDE.md "vineyards has 815 rows" line (F4, 2 min), update
+`loam_roadmap.json` Sprint 2 sub_tasks (F5, 5 min), archive `docs/30K_PLAN.md`
+→ `docs/reference/` + fix CLAUDE.md:306 broken path (F6, 10 min), add BACKLOG.md
+to CLAUDE.md doc index + prune 6 closed items (F7, 10 min), archive
+`docs/AUDIT_2026-04-01.md` → `docs/reference/` (F8, 2 min), `git rm -r
+docs/architecture/ docs/pipelines/` (F9, 1 min), rewrite CLAUDE.md pre-30K "Next
+Steps" block (F10, 15 min), mark `docs/MERGE_STRATEGY.md` as retrospective or
+move to reference (F11, 30 min), add Status banner to `docs/ENRICHMENT.md` (F12,
+10 min), update `docs/SOURCES.md` last-updated header (F13, 10 min), add Never
+Invent section to `docs/VOICE.md` (F14, 30 min), archive `docs/PATH_A_ROLLBACK.md`
+(F15, 2 min), add `docs/IDENTITY_RULES.md` to CLAUDE.md doc index (F16, 2 min),
+add SUPERSEDED markers or split DECISIONS.md current/archive (F17, 1 hr), prune
+`data/sessions.md` Sprint 1 entries + adopt one-line format (F18, 15 min), add
+frontmatter to `memory/vivino-pipeline.md` (F19, 2 min), update `memory/product-
+architecture.md` Tier→F/D/C/B/A (F20, 5 min), delete stale sections of
+`memory/workflow_session_tips.md` (F21, 5 min), rename `memory/project_sprint_
+model_and_rf_direction.md` → `project_sprint_model_and_dashboards.md` (F22, 1
+min + MEMORY.md edit), strip 4 CLAUDE.md hardcoded counts (F23, 5 min).
+(v) **UI hygiene bundle (~3-4 hours combined, S2.7):** fix CountryPage column typo (F2, 1 min), add
 `display_name` fallback to WinePage (F1, 5 min), fix footer About link (F7, 1
 min), park `/vineyard/:id` route (F8, 5 min), add error boundary + `.catch()`
 to consumer pages (F9, 2 hours), add 404 catch-all (F10, 5 min), render the 8
@@ -243,8 +294,9 @@ at UI layer via 16,429 active wine-page reach). Skipping any of (a)-(e)
 re-contaminates (f). **The `ENRICHMENT_ENABLED=false` feature flag on the
 `enrich-wine` edge function must stay OFF through Sprint 3 and into Sprint 5; do
 not flip until (S2.6) F1+F2+F3+F4 AND (S2.7) F5 AI-disclaimer UI all land.**
-**S2.4 + S2.5 + S2.6 + S2.7 findings blocking Sprint 3: 35 P0 + 56 P1 = 91 items
-total (net ~85 after cross-session overlap dedup).**
+**S2.4 + S2.5 + S2.6 + S2.7 + S2.8 findings blocking Sprint 3: 44 P0 + 70 P1 = 114
+items total (net ~108 after cross-session overlap dedup; S2.8 is structurally
+distinct so no overlap).**
 
 Live sprint state: `data/sprints/current.json`. 30K Plan (Sprint 1) closed 2026-04-11
 and is archived at `data/sprints/_archive/30k/`. Pre-30K history (the ~477K-wine

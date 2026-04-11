@@ -591,3 +591,131 @@ None. S2.7 findings are all fit-and-finish UI fixes or mandate confirmations of 
 - `data/sprints/audit/budget.json` — S2.7 entry, running total $0.00 / $25.00
 - `data/sprints/audit/journal.md` — this section
 
+---
+
+## S2.8 — 2026-04-11
+
+**Expert:** meta
+**Status:** done
+**Budget:** $0.00 (Opus inline per ratified S2.3–S2.7 pattern; no Haiku/Sonnet API calls)
+
+### Scope
+
+The meta layer is what every other audit stands on. S2.8 audited:
+
+- All of `docs/*.md` (14 root files + 2 in `docs/reference/`)
+- Empty scaffolded dirs `docs/architecture/`, `docs/pipelines/`
+- `CLAUDE.md` (611 lines)
+- Every file under `memory/` (19 files including MEMORY.md index)
+- `data/stats/loam_roadmap.json` + `pipeline/analyze/loam_roadmap.py`
+- `data/sprints/current.json` + all of `data/sprints/audit/`
+- `data/sprints/_archive/30k/` and its journal.md pointer state
+- `data/sessions.md` (whiteboard format + ballooning check)
+- `data/stats/` contents (~55 files)
+- `data/session_prompts/` legacy dir
+- `scripts/dash.ps1` (cross-check against sprint state)
+- Scheduled task state via `mcp__scheduled-tasks__list_scheduled_tasks`
+- Edge function deployment state via `mcp__c4a52b5c-67f7-4804-8f3b-e9e5c906b1fd__list_edge_functions`
+- Live DB drift verification via ~15 `execute_sql` calls (hardcoded counts, table row counts, information_schema columns, external_ids system distribution)
+
+### Method
+
+Opus 4.6 inline + Supabase MCP `execute_sql` + `list_scheduled_tasks` + `list_edge_functions`. Read-only throughout — no DDL, no DML, no pipeline runs, no file writes other than the findings file and sprint-state updates. Every claim in the findings has either a `file:line` cross-ref or an MCP query result as paired evidence.
+
+### 32 findings written to `findings/findings_meta.md`: 9 P0, 14 P1, 7 P2, 2 P3
+
+**Headline P0s (4 of 9):**
+
+1. **F1 — CLAUDE.md `## Current Focus` is 5+ sessions stale and internally contradicts `## Current State`.** Line 520 still reads "Session 14 housekeeping interregnum … Sprint 2 = Reference-First Enrichment (planning session 15, execution sessions 16+)." Line 109–247 (`## Current State`) correctly tracks Sprint 2 as the Audit with S2.1–S2.7 done. Same file, opposite forward frames. A session briefing reading top-down gets the Reference-First frame; reading `## Current State` gets the Audit frame. The only reason this session isn't on the wrong foot is the user typed "execute s2.8" explicitly.
+
+2. **F2 — `memory/30k_status.md:29` ships the same pre-pivot Reference-First claim into every conversation via `MEMORY.md`.** MEMORY.md auto-loads. The S14 Phase A prompt (s2_1_db_canonical.md A9) correctly rewrote `project_sprint_model_and_rf_direction.md` but missed this file. Fix is one paragraph rewrite.
+
+3. **F3 — `docs/SOURCES.md:33` mis-documents `external_ids` Backbone ID storage.** Doc says `id_type = 'ttb_cola' | 'lwin' | 'upc'`. Verified via MCP `information_schema.columns`: the column is `system` (not `id_type`) and the COLA value is `cola` (not `ttb_cola`). Also `lwin_7` (50,908 rows, distinct from `lwin`) isn't mentioned. Any pipeline author writing a query from this doc as-written gets a column-does-not-exist error; a more charitable author writing `WHERE system = 'ttb_cola'` gets zero rows silently. Three errors in one sentence on the canonical source-of-truth doc. 2-minute fix.
+
+4. **F4 — CLAUDE.md internal contradiction on vineyards count.** Line 334 (Aspirational) says `public.vineyards is empty post-rebuild` (verified 0 live). Line 487 (Major Gaps) says `vineyards has 815 rows` (false — 0 public, 881 archive). Three nested errors in one file: wrong public count, wrong archive count, and the contradiction between the two lines. Same class as F1 (self-contradicting file).
+
+**5 more P0s (F5–F9):**
+
+- F5 loam_roadmap.json Sprint 2 sub-tasks all 7 states behind (S2.1 still "in_progress", S2.2–S2.9 "planned"); `dash.ps1` reads live sessions.json so two-dashboards-two-answers drift
+- F6 docs/30K_PLAN.md header status "Session 4 DONE — GO for Batch 1" (10 sessions out of date) + 10 broken `data/sprints/30k/` path references (dir moved to `_archive`)
+- F7 docs/BACKLOG.md is orphan from CLAUDE.md Docs index yet hardcoded into `sprint_dashboard.py:49` as BACKLOG_PATH — active reader + zero doc awareness, plus 6 CLOSED items never pruned per its own workflow
+- F8 docs/AUDIT_2026-04-01.md is a superseded audit still in docs/ root — its "canonical db is PERFECT, zero FK violations" contradicts S2.1's 34-finding audit of the same layer
+- F9 docs/architecture/ and docs/pipelines/ are empty scaffolded dirs created 2026-03-05, never populated
+
+**14 P1 findings (F10–F23):**
+
+- F10 CLAUDE.md "Next Steps (cleaned 2026-04-03)" block is pre-30K and references 8 dead artifacts (Phase B wines that don't exist, 6,767-wine backlink count, etc.)
+- F11 docs/MERGE_STRATEGY.md still frames Python migration as pending + plans Ollama local matching that never materialized + references 3 non-existent files (lib/merge.mjs, lib/import.mjs, sync_project_context.py "to build")
+- F12 docs/ENRICHMENT.md contradicts S2.6/S2.7 — MVP "deployed" framing omits ENRICHMENT_ENABLED=false feature flag; Grade C Haiku batch documented as forward goal even though DECISIONS.md 2026-04-11 deprecated it; "All enrichment prompts must follow VOICE.md" is aspirational not enforced at the code layer
+- F13 docs/SOURCES.md "Last updated: 2026-03-25" is 17 days stale (missing TABC refresh, knowledge seed pipeline, barcode scan completion)
+- F14 docs/VOICE.md (2026-03-12) is older than the problem — S2.6 F3 proved voice rules don't prevent factual confabulation; doc needs a "Never Invent" section and L3 fact-check gate cross-ref
+- F15 docs/PATH_A_ROLLBACK.md (719 lines unused rollback SQL) belongs in `docs/reference/`
+- F16 docs/IDENTITY_RULES.md is a "Session 2 design spec" not listed in CLAUDE.md Docs index despite being core to Sprint 3's grape-repair compound
+- F17 docs/DECISIONS.md is 1,559 lines / 271 entries append-only with no SUPERSEDED markers; Josh Test v1→v2→directional entries all live alongside each other with no archive strategy
+- F18 data/sessions.md has session entries that are single paragraphs of 8,830 chars (largest line); 69 lines file but ~45K bytes; balloons on every audit session that writes its detail inline
+- F19 memory/vivino-pipeline.md has no frontmatter (only memory file missing `---name/description/type` block)
+- F20 memory/product-architecture.md uses "Tier 0-3" nomenclature superseded by F/D/C/B/A per ENRICHMENT.md
+- F21 memory/workflow_session_tips.md has stale "CLAUDE.md Hygiene flagged 2026-04-03" (cleanup already happened in S14 Phase A) + "Next Steps IS the task queue" (pre-sprint-model)
+- F22 memory/project_sprint_model_and_rf_direction.md filename still contains "rf_direction" even after content was rewritten to drop the RF-as-Sprint-2 claim — filename misleads
+- F23 CLAUDE.md hardcoded numbers drift — wine_grapes 47,035 vs live 46,028, color 153,311 vs live 153,229, archive vineyards 815 vs live 881 (down from S2.1 F28 baseline of ≥6 but not eliminated)
+
+**7 P2 findings (F24–F30):**
+
+- F24 loam_roadmap.json has no METRIC_DISPATCH dispatcher for the Sprint 2 (audit) phase — no live metrics render under Phase 3
+- F25 loam_roadmap.json Phase 10 lists 1 of 4 paused scheduled tasks (`data-accuracy-agent` mentioned; `loam-stats`, `loam-data-quality`, `nightly-schema-audit` invisible)
+- F26 data/stats/ has 55 files including an ad-hoc Python script (`s23_build_sample.py` in a stats dir), stdout dumps from specific sessions, multi-version pass1/pass2 snapshots
+- F27 data/session_prompts/ mixed live/dead state — `cron_loop_template.md` is actively referenced by CLAUDE.md:148; other 7 files are pre-sprint-model legacy
+- F28 scripts/fetch_legal_sources_batch{2,3,4,5,8,10}.py gaps (no batch 1,6,7,9) suggest abandoned iteration
+- F29 docs/HISTORY.md has no TOC for its 366 lines
+- F30 CLAUDE.md "Reference Tables (complete)" heading is misleading given S2.4 found 30 reference-content issues including 8 P0 wrong-grape links
+
+**2 P3 findings:**
+
+- F31 data/stats/loam_roadmap.md is a git-tracked auto-generated dump that drifts when `--save` isn't run
+- F32 MEMORY.md longest entry is 530 chars vs 150-char limit documented in CLAUDE.md memory instructions
+
+### Cross-session meta-patterns for S2.9 synthesis
+
+Five patterns worth escalating:
+
+1. **Doc staleness is systematic, not ad-hoc.** S2.1 F28 + S2.7 F2 (dead column reference) + S2.8 F1/F3/F4 are all the same class. Common thread: nothing enforces doc freshness except manual discipline at session wrap-up. Sprint 3 should add a "drift check" step to the wrap-up checklist.
+
+2. **The sprint-model pivot (DECISIONS.md 2026-04-11) was incompletely executed.** Three files reflect it correctly: CLAUDE.md `## Current State`, `memory/project_quality_before_enrichment.md`, `memory/project_sprint_model_and_rf_direction.md` (content). Three files still carry the pre-pivot frame: CLAUDE.md `## Current Focus`, `memory/30k_status.md`, `docs/ENRICHMENT.md` Grade C path. One file is ambiguous: `docs/30K_PLAN.md` header + broken paths. The fix was one-session-wide and missed half the surface area.
+
+3. **docs/ root has 6 files that should move to `docs/reference/`.** AUDIT_2026-04-01.md, 30K_PLAN.md, PATH_A_ROLLBACK.md, IDENTITY_RULES.md, BACKLOG.md, MERGE_STRATEGY.md. Current `docs/reference/` has 2 files (LWIN_STRATEGY, SCHEMA_ASSESSMENT). The move pattern is established; several other candidates haven't been moved yet.
+
+4. **Empty dirs and orphan scripts indicate scaffold intent that never landed.** `docs/architecture/`, `docs/pipelines/`, `scripts/fetch_legal_sources_batch*.py` gaps, `data/stats/s23_build_sample.py` in a stats directory. Sprint 3 structural cleanup pass.
+
+5. **Two dashboards = two answers.** `loam_roadmap.py` reads `loam_roadmap.json` sub_tasks (stale); `dash.ps1` reads sprint dir directly (live). For phases that map to sprints, the roadmap should delegate phase-level state to the sprint dir.
+
+### Cross-references added to Sprint 3 backlog
+
+- S2.1 F28 → F23 (hardcoded count drift, compound with this session's finer-grained scope)
+- S2.5 F1 (describe-chemical still deployed) → this session VERIFIED still deployed via `list_edge_functions` (version 5, ACTIVE, verify_jwt=false). Pre-Sprint-3 hygiene item not yet executed.
+- S2.6 F1/F2 (prompt drift) → F12 (ENRICHMENT.md doc-level mirror of the same gap) + F14 (VOICE.md-level gap)
+- S2.7 F2 (dead column reference in code) → F3 (dead column reference in doc) — same class at different layers
+
+Total S2.8 findings blocking Sprint 3: **9 P0 + 14 P1 = 23 items**. No overlaps with prior sessions (meta layer is structurally distinct). Net 23 new items.
+
+### Scope-breaker check
+
+None. S2.8 findings are all doc-layer patches, memory edits, archive moves, and dir cleanups. All highly parallel to Sprint 3 data work. Sprint 3 gets a "doc hygiene" pre-req bundle (~2-3 hours) to run alongside S2.7's "UI hygiene" bundle (~3-4 hours) — combined ~5-6 hours before the data work begins.
+
+**Cumulative Sprint 2 pre-req hygiene:** ~6 hours of doc + UI cleanup before any Sprint 3 execution can start. Still cheap relative to the cost of Sprint 3 inheriting the drift.
+
+### Deliverables
+
+- `data/sprints/audit/findings/findings_meta.md` — 32-finding report (9 P0, 14 P1, 7 P2, 2 P3)
+- `data/sprints/audit/prompts/s2_8_meta.md` — session prompt (written at session start for reproducibility)
+- `data/sprints/audit/sessions.json` — S2.8 → done, $0 spend
+- `data/sprints/audit/budget.json` — S2.8 entry, running total $0.00 / $25.00
+- `data/sprints/audit/journal.md` — this section
+- `CLAUDE.md` — Current State updated with S2.8 done + 245 running totals
+- `memory/project_sprint2_findings.md` — updated with S2.8 cross-references
+- `data/sessions.md` — whiteboard entry added under Done
+
+**Tables touched:** NONE (read-only audit; all reads via MCP and filesystem).
+
+**Running Sprint 2 totals:** 245 findings across S2.1+S2.2+S2.3+S2.4+S2.5+S2.6+S2.7+S2.8, still **$0.00 / $25.00** ceiling. S2.9 (synthesis + Sprint 3 backlog) is the final planned session.
+
+
