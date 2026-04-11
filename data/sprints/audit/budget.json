@@ -3,7 +3,10 @@
   "total_spent": 0.00,
   "target_spent": 15.00,
   "ceiling": 25.00,
-  "by_session": {},
+  "by_session": {
+    "S2.1": 0.00,
+    "S2.2": 0.00
+  },
   "by_model": {},
   "closed": false,
   "notes": "Part of a $50 combined ceiling across Sprints 2+3. Main AI spend expected in S2.3 (wine expert fact-checking) — ~$15-18 for 100-wine + 50-producer stratified sample with Sonnet validation. Other sessions should be ~$0. Any overage above $15 per sprint gets justified in the journal before spending."

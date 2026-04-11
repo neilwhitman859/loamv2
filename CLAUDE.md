@@ -85,11 +85,18 @@ and `data/stats/cron_loop_journal.md` for past loop outcomes and remaining backl
 
 **Sprint 2 (Audit) is active as of 2026-04-11.** Multi-expert read-only audit
 producing a Sprint 3 fix backlog. S2.1 (DB canonical + reference structural) ran
-2026-04-11 with 34 findings — 6 P0, 12 P1, 11 P2, 5 P3. See
-`data/sprints/audit/findings/findings_db_canonical.md`. Live sprint state:
-`data/sprints/current.json`. 30K Plan (Sprint 1) closed 2026-04-11 and is archived at
-`data/sprints/_archive/30k/`. Pre-30K history (the ~477K-wine pre-rebuild dataset)
-lives in `docs/HISTORY.md` under "Pre-30K rebuild history".
+2026-04-11 with 34 findings (6 P0, 12 P1, 11 P2, 5 P3) — see
+`data/sprints/audit/findings/findings_db_canonical.md`. **S2.2 (DB staging)** ran
+2026-04-11 with 31 findings (6 P0, 11 P1, 9 P2, 5 P3) — see
+`data/sprints/audit/findings/findings_db_staging.md`. Headline: **286,918 wine_id
+pointers across 29 of 31 wine-bearing staging tables are dangling archive references**
+(everything except `source_ttb_colas` and `source_lwin` which S13 relinked), locking
+~52K prices + ~48K scores + ~200K vintage-grade fields + ~40K UPCs in staging.
+Sprint 3's archive depth bridge must start with a staging relink (reuse S13 pattern)
+then re-promote. Live sprint state: `data/sprints/current.json`. 30K Plan (Sprint 1)
+closed 2026-04-11 and is archived at `data/sprints/_archive/30k/`. Pre-30K history
+(the ~477K-wine pre-rebuild dataset) lives in `docs/HISTORY.md` under
+"Pre-30K rebuild history".
 
 **Sprint sequence (locked 2026-04-11):** 1 (30K, done) → 2 (Audit, active) → 3
 (Execute fixes) → 4 (Reference Design) → 5 (Reference Enrichment). Enrichment at
