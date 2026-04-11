@@ -61,6 +61,9 @@ def fetch_dupe_groups(cur, max_dupes=None):
                array_agg(w.id::text ORDER BY w.created_at) as wine_ids
         FROM wines w
         JOIN producers p ON p.id = w.producer_id
+        WHERE w.deleted_at IS NULL
+          AND w.duplicate_of IS NULL
+          AND w.name IS NOT NULL
         GROUP BY w.name, w.producer_id, p.name
         {where}
         ORDER BY count(*) DESC

@@ -1,0 +1,5243 @@
+{
+  "produced_at": "2026-04-10T21:53:19.786232+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "buckets": [
+    "1"
+  ],
+  "total_input_tokens": 24335,
+  "total_output_tokens": 32998,
+  "cost_usd": 0.1515,
+  "real_count": 1174,
+  "junk_count": 133,
+  "classifications": {
+    "12C": {
+      "real": true,
+      "reason": "Minimalist wine brand name"
+    },
+    "1881 Napa": {
+      "real": true,
+      "reason": "Year reference with Napa location"
+    },
+    "2 Lads Winery": {
+      "real": true,
+      "reason": "Winery designation confirms legitimacy"
+    },
+    "21 Grams": {
+      "real": true,
+      "reason": "Creative wine brand name"
+    },
+    "4 Winds": {
+      "real": true,
+      "reason": "Simple, brandable winery name"
+    },
+    "94574 Winery": {
+      "real": true,
+      "reason": "Napa zip code as winery name"
+    },
+    "A Blooming Hill Vineyard & Winery": {
+      "real": true,
+      "reason": "Vineyard & Winery designation present"
+    },
+    "A Deux Tetes": {
+      "real": true,
+      "reason": "French phrase wine brand name"
+    },
+    "A La Carte": {
+      "real": true,
+      "reason": "French phrase, wine-related context"
+    },
+    "A.D. Beckham": {
+      "real": true,
+      "reason": "Owner initials with last name"
+    },
+    "Aaron Wines": {
+      "real": true,
+      "reason": "Owner first name as brand"
+    },
+    "Abana": {
+      "real": true,
+      "reason": "Single-word wine brand name"
+    },
+    "Abbey Creek Vineyard": {
+      "real": true,
+      "reason": "Abbey Creek Vineyard established"
+    },
+    "Accent de la Vigne": {
+      "real": true,
+      "reason": "French wine descriptor phrase"
+    },
+    "Acheson": {
+      "real": true,
+      "reason": "Single-word wine brand name"
+    },
+    "Adam Puchta": {
+      "real": true,
+      "reason": "Owner name wine producer"
+    },
+    "Adamant Cellars": {
+      "real": true,
+      "reason": "Cellars designation confirms winery"
+    },
+    "Adeptos": {
+      "real": true,
+      "reason": "Wine brand with obscure name"
+    },
+    "Adler Deutsch": {
+      "real": true,
+      "reason": "German surname wine producer"
+    },
+    "Adriana": {
+      "real": true,
+      "reason": "Personal name wine brand"
+    },
+    "Aftermath": {
+      "real": true,
+      "reason": "Creative abstract wine name"
+    },
+    "Afterwords": {
+      "real": true,
+      "reason": "Creative word-play brand name"
+    },
+    "Agate Ridge Vineyard": {
+      "real": true,
+      "reason": "Agate Ridge Vineyard established"
+    },
+    "Agnes & Luisa": {
+      "real": true,
+      "reason": "Female names wine brand"
+    },
+    "Ahern Winery": {
+      "real": true,
+      "reason": "Surname with Winery designation"
+    },
+    "Aida": {
+      "real": true,
+      "reason": "Single-word wine brand name"
+    },
+    "Aiken": {
+      "real": true,
+      "reason": "Single-word wine brand name"
+    },
+    "Akrasia Cellars": {
+      "real": true,
+      "reason": "Cellars designation confirms winery"
+    },
+    "Alante": {
+      "real": true,
+      "reason": "Creative wine brand name"
+    },
+    "Alapay Cellars": {
+      "real": true,
+      "reason": "Cellars designation confirms winery"
+    },
+    "Alchemist": {
+      "real": true,
+      "reason": "Creative brand name, winery character"
+    },
+    "Alder": {
+      "real": true,
+      "reason": "Could be winery; obscure names common"
+    },
+    "Alderbrook": {
+      "real": true,
+      "reason": "Legitimate Sonoma County winery"
+    },
+    "Alea Fina": {
+      "real": true,
+      "reason": "Spanish-named wine producer likely real"
+    },
+    "Alexander Valley": {
+      "real": false,
+      "reason": "Regional name alone, no winery qualifier"
+    },
+    "Alexeli": {
+      "real": true,
+      "reason": "Distinctive brand name, winery character"
+    },
+    "Alice Hartmann": {
+      "real": true,
+      "reason": "Person-named producer, common format"
+    },
+    "Allons Ensemble": {
+      "real": true,
+      "reason": "French phrase, branded wine producer"
+    },
+    "AlmaTerra": {
+      "real": true,
+      "reason": "Branded name with character/style"
+    },
+    "Almus": {
+      "real": true,
+      "reason": "Short brand name, viable winery"
+    },
+    "Aloft": {
+      "real": true,
+      "reason": "Creative single-word brand name"
+    },
+    "Alta Nova": {
+      "real": true,
+      "reason": "Location-styled wine brand"
+    },
+    "Altitude Project": {
+      "real": true,
+      "reason": "Project-based winery naming"
+    },
+    "Altvs": {
+      "real": true,
+      "reason": "Latin-style brand name viable"
+    },
+    "Amador Foothill": {
+      "real": true,
+      "reason": "Location-named Amador County winery"
+    },
+    "Amaranthe": {
+      "real": true,
+      "reason": "Distinctive creative brand name"
+    },
+    "Amazon Ranch": {
+      "real": true,
+      "reason": "Location-branded wine producer plausible"
+    },
+    "Ambar": {
+      "real": true,
+      "reason": "Short branded wine name"
+    },
+    "American Thread": {
+      "real": true,
+      "reason": "Distinctive branded producer name"
+    },
+    "Amis": {
+      "real": true,
+      "reason": "Short Latin-style brand viable"
+    },
+    "Amorici Vineyard": {
+      "real": true,
+      "reason": "Vineyard-qualified producer name"
+    },
+    "Ampere": {
+      "real": true,
+      "reason": "Scientific/technical brand name style"
+    },
+    "Amrita Cellars": {
+      "real": true,
+      "reason": "Branded cellars, legitimate producer"
+    },
+    "Anatomy No. 1": {
+      "real": true,
+      "reason": "Numbered wine cuvée/label name"
+    },
+    "Angel's Flight": {
+      "real": true,
+      "reason": "Distinctive branded wine producer"
+    },
+    "Angry Bunch": {
+      "real": true,
+      "reason": "Creative contemporary brand name"
+    },
+    "Anika (Raj Parr)": {
+      "real": true,
+      "reason": "Person-named with sommelier attribution"
+    },
+    "Ankida Ridge Vineyards": {
+      "real": true,
+      "reason": "Ridge vineyard, legitimate format"
+    },
+    "Annika": {
+      "real": true,
+      "reason": "Person-named wine producer likely"
+    },
+    "Anselmo Vigne": {
+      "real": true,
+      "reason": "Italian-named vineyard producer likely"
+    },
+    "Anthill": {
+      "real": true,
+      "reason": "Creative winery name, plausible brand"
+    },
+    "Antiqv2s": {
+      "real": false,
+      "reason": "Appears corrupted or typo'd text"
+    },
+    "Arbuckle Ridge Winery": {
+      "real": true,
+      "reason": "Named location + winery qualifier"
+    },
+    "Arcane Cellars": {
+      "real": true,
+      "reason": "Legitimate cellars brand name"
+    },
+    "Archer Vineyard": {
+      "real": true,
+      "reason": "Common vineyard naming pattern"
+    },
+    "Archipel": {
+      "real": true,
+      "reason": "Plausible obscure winery name"
+    },
+    "Architect": {
+      "real": false,
+      "reason": "Generic word, no brand character"
+    },
+    "Argus": {
+      "real": true,
+      "reason": "Could be obscure small producer"
+    },
+    "Armanino Family Cellars": {
+      "real": true,
+      "reason": "Family name + cellars qualifier"
+    },
+    "AronHill Vineyards": {
+      "real": true,
+      "reason": "Named location + vineyards qualifier"
+    },
+    "Art Science": {
+      "real": true,
+      "reason": "Two-word brand name, plausible"
+    },
+    "Artisan Wines": {
+      "real": false,
+      "reason": "Generic descriptor without brand"
+    },
+    "Artisinal": {
+      "real": false,
+      "reason": "Misspelled/generic artisan reference"
+    },
+    "Artiste": {
+      "real": true,
+      "reason": "Could be small obscure winery"
+    },
+    "Asani la Vie": {
+      "real": true,
+      "reason": "Creative French-styled winery name"
+    },
+    "Ascent": {
+      "real": true,
+      "reason": "Could be obscure producer name"
+    },
+    "Asilda": {
+      "real": true,
+      "reason": "Plausible unique winery brand"
+    },
+    "Aspara": {
+      "real": true,
+      "reason": "Unusual but possible winery name"
+    },
+    "Astrale e Terra": {
+      "real": true,
+      "reason": "Italian-inspired winery name"
+    },
+    "ASV Winery": {
+      "real": true,
+      "reason": "Initials + winery qualifier"
+    },
+    "at Large": {
+      "real": true,
+      "reason": "Unconventional but legitimate brand"
+    },
+    "Atelier": {
+      "real": true,
+      "reason": "French term, plausible winery name"
+    },
+    "Athenaeum": {
+      "real": true,
+      "reason": "Classical name, plausible producer"
+    },
+    "Au Revoir": {
+      "real": true,
+      "reason": "French phrase, possible winery"
+    },
+    "Au Sommet": {
+      "real": true,
+      "reason": "French phrase, possible winery"
+    },
+    "Aubry": {
+      "real": true,
+      "reason": "French surname, plausible producer"
+    },
+    "Auburn James": {
+      "real": true,
+      "reason": "Location + personal name combo"
+    },
+    "Auctioneer": {
+      "real": true,
+      "reason": "Unique but plausible winery name"
+    },
+    "Augment": {
+      "real": true,
+      "reason": "Could be obscure small producer"
+    },
+    "August Ridge": {
+      "real": true,
+      "reason": "Location + directional name pattern"
+    },
+    "Auros": {
+      "real": true,
+      "reason": "Plausible winery brand name"
+    },
+    "Auspicion": {
+      "real": true,
+      "reason": "Creative winery name, unconventional"
+    },
+    "Austerity": {
+      "real": false,
+      "reason": "Generic word, no brand character"
+    },
+    "Avery Rose": {
+      "real": true,
+      "reason": "Personal name format, winery-like"
+    },
+    "Azalea Springs": {
+      "real": true,
+      "reason": "Location + natural feature, legitimate"
+    },
+    "Bacchus Cellars": {
+      "real": true,
+      "reason": "Cellars qualifier, mythological reference"
+    },
+    "Bachelder": {
+      "real": true,
+      "reason": "Surname format, winery-appropriate"
+    },
+    "Bacigalupi": {
+      "real": true,
+      "reason": "Known winemaking family name"
+    },
+    "Bacon": {
+      "real": true,
+      "reason": "Surname, plausible winery brand"
+    },
+    "Badge": {
+      "real": false,
+      "reason": "Generic word, insufficient branding"
+    },
+    "Badgerhound": {
+      "real": true,
+      "reason": "Creative compound name, distinctive"
+    },
+    "Baker & Hamilton": {
+      "real": true,
+      "reason": "Partnership format, legitimate structure"
+    },
+    "Balance": {
+      "real": false,
+      "reason": "Generic concept word only"
+    },
+    "Baldinelli Vineyards": {
+      "real": true,
+      "reason": "Vineyards qualifier, surname base"
+    },
+    "Baltimore Bend": {
+      "real": true,
+      "reason": "Location-based name, plausible"
+    },
+    "Banyan": {
+      "real": true,
+      "reason": "Natural element, winery-appropriate name"
+    },
+    "Barbieri": {
+      "real": true,
+      "reason": "Italian surname, winemaking context"
+    },
+    "Barbour": {
+      "real": true,
+      "reason": "Surname format, potential producer"
+    },
+    "Barrel Heist": {
+      "real": true,
+      "reason": "Creative brand name, distinctive"
+    },
+    "Barrelhead Farms Winery": {
+      "real": true,
+      "reason": "Winery qualifier, explicit producer"
+    },
+    "Barrels & Beasts": {
+      "real": true,
+      "reason": "Playful brand with winery relevance"
+    },
+    "Barrett & Barrett": {
+      "real": true,
+      "reason": "Partnership format, two surnames"
+    },
+    "Barrique": {
+      "real": false,
+      "reason": "Generic French wine term only"
+    },
+    "Batch N°198": {
+      "real": true,
+      "reason": "Batch numbering, production reference"
+    },
+    "Battaglini": {
+      "real": true,
+      "reason": "Italian surname, winemaking family"
+    },
+    "Battle Family Vineyards": {
+      "real": true,
+      "reason": "Family surname + Vineyards qualifier"
+    },
+    "Bear & Star": {
+      "real": true,
+      "reason": "Creative animal-themed brand name"
+    },
+    "Bear Creek": {
+      "real": true,
+      "reason": "Location-based, natural feature name"
+    },
+    "Bebame": {
+      "real": true,
+      "reason": "Unconventional but distinctive brand"
+    },
+    "Beckham": {
+      "real": true,
+      "reason": "Surname format, established winemaker"
+    },
+    "Beckstone": {
+      "real": true,
+      "reason": "Small winery, plausible name"
+    },
+    "Bella Luna Estate Winery": {
+      "real": true,
+      "reason": "Estate winery qualifier, legitimate"
+    },
+    "Bellacosa": {
+      "real": true,
+      "reason": "Creative winery name, Italian-style"
+    },
+    "Bellangelo": {
+      "real": true,
+      "reason": "Plausible winery name pattern"
+    },
+    "Belle Radici": {
+      "real": true,
+      "reason": "Italian-influenced winery name"
+    },
+    "Bellerose Vineyard": {
+      "real": true,
+      "reason": "Vineyard with legitimate qualifier"
+    },
+    "Belong Wine Co": {
+      "real": true,
+      "reason": "Wine Co brand format, real"
+    },
+    "Benny Doon": {
+      "real": true,
+      "reason": "Known Santa Cruz Mountains winery"
+    },
+    "Benoni": {
+      "real": true,
+      "reason": "Plausible small producer name"
+    },
+    "Beraelia": {
+      "real": true,
+      "reason": "Creative winery name, obscure OK"
+    },
+    "Berry Bros. & Rudd (Au Bon Climat)": {
+      "real": true,
+      "reason": "Berry Bros. agent for Au Bon Climat"
+    },
+    "Berry Bros. & Rudd (Ramey)": {
+      "real": true,
+      "reason": "Berry Bros. agent for Ramey"
+    },
+    "Berry Bros. & Rudd (Ridge)": {
+      "real": true,
+      "reason": "Berry Bros. agent for Ridge"
+    },
+    "Besadien": {
+      "real": true,
+      "reason": "Unusual but plausible winery name"
+    },
+    "Betts & Scholl": {
+      "real": true,
+      "reason": "Partnership name format, legitimate"
+    },
+    "Bezel": {
+      "real": true,
+      "reason": "Short creative winery name"
+    },
+    "Bialla": {
+      "real": true,
+      "reason": "Plausible Italian-style name"
+    },
+    "Big Smooth": {
+      "real": true,
+      "reason": "Descriptive wine brand name"
+    },
+    "Bishop Creek Cellars": {
+      "real": true,
+      "reason": "Cellars qualifier, legitimate name"
+    },
+    "Bjornstad": {
+      "real": true,
+      "reason": "Personal surname winery name"
+    },
+    "Black Ankle Vineyards": {
+      "real": true,
+      "reason": "Maryland vineyard, known producer"
+    },
+    "Black Cat": {
+      "real": true,
+      "reason": "Short creative brand name"
+    },
+    "Black Mountain Vineyard": {
+      "real": true,
+      "reason": "Vineyard with descriptor"
+    },
+    "Black Ridge": {
+      "real": true,
+      "reason": "Plausible vineyard name"
+    },
+    "Black Saint Peter": {
+      "real": true,
+      "reason": "Unique descriptive winery name"
+    },
+    "Blair Estate": {
+      "real": true,
+      "reason": "Estate winery format, real"
+    },
+    "Blakeslee": {
+      "real": true,
+      "reason": "Surname-based winery name"
+    },
+    "Blanc de Bleu": {
+      "real": true,
+      "reason": "Wine-specific descriptive name"
+    },
+    "Blockheadia Ringnosii": {
+      "real": true,
+      "reason": "Known Paso Robles winery"
+    },
+    "Blue Ox": {
+      "real": true,
+      "reason": "Creative wine brand name"
+    },
+    "Bob Levy": {
+      "real": true,
+      "reason": "Personal name as winery brand"
+    },
+    "Bodewell": {
+      "real": true,
+      "reason": "Creative winery name, plausible"
+    },
+    "Boedecker Cellars": {
+      "real": true,
+      "reason": "Established Oregon winery"
+    },
+    "BonAnno": {
+      "real": true,
+      "reason": "Creative brand name, legitimate"
+    },
+    "Bonanza": {
+      "real": false,
+      "reason": "Generic word without brand character"
+    },
+    "Bonneau": {
+      "real": true,
+      "reason": "Personal/family name winery"
+    },
+    "Bookster": {
+      "real": true,
+      "reason": "Creative winery name, plausible"
+    },
+    "Borne": {
+      "real": true,
+      "reason": "Short name, could be winery"
+    },
+    "Bottlein": {
+      "real": true,
+      "reason": "Creative portmanteau name"
+    },
+    "Bound and Determined": {
+      "real": true,
+      "reason": "Distinctive winery brand name"
+    },
+    "Boyanci": {
+      "real": true,
+      "reason": "Personal/family name winery"
+    },
+    "Boyle McDonald": {
+      "real": true,
+      "reason": "Two-name winery format"
+    },
+    "Brack Mountain Co.": {
+      "real": true,
+      "reason": "Geographic location winery name"
+    },
+    "Bradford Mountain": {
+      "real": true,
+      "reason": "Mountain/vineyard location name"
+    },
+    "Bradley Vineyard": {
+      "real": true,
+      "reason": "Personal name plus vineyard"
+    },
+    "Brady Vineyard": {
+      "real": true,
+      "reason": "Personal name plus vineyard"
+    },
+    "Brandon Gregory": {
+      "real": true,
+      "reason": "Personal name as brand"
+    },
+    "Branham": {
+      "real": true,
+      "reason": "Family name winery brand"
+    },
+    "Brazin": {
+      "real": true,
+      "reason": "Creative winery name, legitimate"
+    },
+    "Breckenridge": {
+      "real": false,
+      "reason": "Generic location name alone"
+    },
+    "Brella": {
+      "real": true,
+      "reason": "Creative brand name, plausible"
+    },
+    "Brian David": {
+      "real": true,
+      "reason": "Personal name as winery"
+    },
+    "Briar Hill": {
+      "real": true,
+      "reason": "Geographic location name, legitimate"
+    },
+    "Brick Mortar": {
+      "real": true,
+      "reason": "Creative winery name"
+    },
+    "Bridesmaid": {
+      "real": true,
+      "reason": "Creative brand concept"
+    },
+    "Bridge (Katz & Forrester)": {
+      "real": true,
+      "reason": "Named brand with owners noted"
+    },
+    "Brioche": {
+      "real": false,
+      "reason": "Generic food item, no brand"
+    },
+    "Broadley Vineyards": {
+      "real": true,
+      "reason": "Established Oregon vineyard"
+    },
+    "Brookdale Vineyards": {
+      "real": true,
+      "reason": "Vineyard location name, legitimate"
+    },
+    "Brookman": {
+      "real": true,
+      "reason": "Personal/family name winery"
+    },
+    "Brotherhood": {
+      "real": true,
+      "reason": "Historic Hudson Valley winery"
+    },
+    "Brothers Miller": {
+      "real": true,
+      "reason": "Legitimate winery name format"
+    },
+    "Brownstone": {
+      "real": true,
+      "reason": "Plausible winery/brand name"
+    },
+    "Brucher": {
+      "real": true,
+      "reason": "Could be family-named winery"
+    },
+    "Bryant Cellars": {
+      "real": true,
+      "reason": "Standard cellars naming convention"
+    },
+    "Brys Estate": {
+      "real": true,
+      "reason": "Estate winery name format"
+    },
+    "Bryter Estates": {
+      "real": true,
+      "reason": "Creative estates name, plausible"
+    },
+    "Bucella": {
+      "real": true,
+      "reason": "Possible small winery name"
+    },
+    "Buck Shack": {
+      "real": true,
+      "reason": "Casual creative winery name"
+    },
+    "Buena Vista Carignane": {
+      "real": false,
+      "reason": "Cuvée/varietal text, not producer"
+    },
+    "Bunnell": {
+      "real": true,
+      "reason": "Legitimate surname-based winery"
+    },
+    "Burlesque": {
+      "real": true,
+      "reason": "Creative brand name, plausible"
+    },
+    "Burn (Saint Michelle)": {
+      "real": false,
+      "reason": "Orphan parenthetical, unclear producer"
+    },
+    "Burrell School": {
+      "real": true,
+      "reason": "School-named winery format valid"
+    },
+    "Burton Bittman": {
+      "real": true,
+      "reason": "Personal name winery format"
+    },
+    "Buselli": {
+      "real": true,
+      "reason": "Possible family-named winery"
+    },
+    "Buttercream": {
+      "real": true,
+      "reason": "Creative brand name, plausible"
+    },
+    "Butterfield Station": {
+      "real": true,
+      "reason": "Station-themed winery name"
+    },
+    "Byron Blatty": {
+      "real": true,
+      "reason": "Personal name winery format"
+    },
+    "C Beck": {
+      "real": true,
+      "reason": "Initials-based producer name"
+    },
+    "C. R. Sandidge": {
+      "real": true,
+      "reason": "Initials with surname format"
+    },
+    "C.R. SANDIDGE": {
+      "real": true,
+      "reason": "Same producer, different formatting"
+    },
+    "Ca del Solo": {
+      "real": true,
+      "reason": "Italian-style winery name valid"
+    },
+    "Ca' Del Grevino": {
+      "real": true,
+      "reason": "Italian-style estate name valid"
+    },
+    "Caballus": {
+      "real": true,
+      "reason": "Creative brand/winery name"
+    },
+    "Calico Mane": {
+      "real": true,
+      "reason": "Themed creative winery name"
+    },
+    "California Karma": {
+      "real": true,
+      "reason": "Creative brand name, plausible"
+    },
+    "Calistoga": {
+      "real": false,
+      "reason": "Region name alone, no winery qualifier"
+    },
+    "Calistoga Ranch": {
+      "real": true,
+      "reason": "Location-named estate valid"
+    },
+    "Camino": {
+      "real": true,
+      "reason": "Simple creative winery name"
+    },
+    "Camino Cellars": {
+      "real": true,
+      "reason": "Legitimate winery with Cellars qualifier"
+    },
+    "Canyon Road": {
+      "real": true,
+      "reason": "Well-known California wine brand"
+    },
+    "Capablanca": {
+      "real": true,
+      "reason": "Creative name, plausible small winery"
+    },
+    "Carden": {
+      "real": true,
+      "reason": "Common surname-based winery name"
+    },
+    "Carhartt": {
+      "real": true,
+      "reason": "manual rescue: Carhartt Family Vineyards (Santa Ynez)"
+    },
+    "Carmel": {
+      "real": false,
+      "reason": "Region name without winery qualifier"
+    },
+    "Carmina Burana": {
+      "real": true,
+      "reason": "Creative/artistic winery name, plausible"
+    },
+    "Carneros Hills": {
+      "real": true,
+      "reason": "Named estate in Carneros region"
+    },
+    "Carneros Notte": {
+      "real": true,
+      "reason": "Specific Carneros producer name"
+    },
+    "Carneros Ranch": {
+      "real": true,
+      "reason": "Carneros-based ranch winery name"
+    },
+    "Carpenter": {
+      "real": true,
+      "reason": "Common surname-based winery name"
+    },
+    "Carson Ridge": {
+      "real": true,
+      "reason": "Legitimate estate/ridge winery name"
+    },
+    "Cartello": {
+      "real": true,
+      "reason": "Italian-style brand name, plausible"
+    },
+    "Carver Sutro": {
+      "real": true,
+      "reason": "Named producer, recognizable format"
+    },
+    "Cascadia": {
+      "real": true,
+      "reason": "Regional name with wine tradition"
+    },
+    "Caspar Estate": {
+      "real": true,
+      "reason": "Estate winery with proper qualifier"
+    },
+    "Castalia": {
+      "real": true,
+      "reason": "Classical-style winery name, plausible"
+    },
+    "Castelluccio": {
+      "real": true,
+      "reason": "Italian surname-based winery name"
+    },
+    "Castiel Estate": {
+      "real": true,
+      "reason": "Named estate with Estate qualifier"
+    },
+    "Castrucci": {
+      "real": true,
+      "reason": "Italian surname-based producer name"
+    },
+    "Catchwire": {
+      "real": true,
+      "reason": "Unusual but plausible small winery"
+    },
+    "Cave Dog": {
+      "real": true,
+      "reason": "Whimsical brand name, legitimate winery"
+    },
+    "Cavus": {
+      "real": true,
+      "reason": "Modern creative winery name, plausible"
+    },
+    "CAW": {
+      "real": true,
+      "reason": "Initials-based winery name acceptable"
+    },
+    "Cazadero": {
+      "real": true,
+      "reason": "Geographic place name with wine heritage"
+    },
+    "Cedar Springs": {
+      "real": true,
+      "reason": "Descriptive estate name, legitimate"
+    },
+    "Cedergreen Cellars": {
+      "real": true,
+      "reason": "Named surname Cellars winery"
+    },
+    "Cellar No.8": {
+      "real": true,
+      "reason": "Numbered cellar designation, legitimate"
+    },
+    "Ceritas Elliott": {
+      "real": true,
+      "reason": "Named producer format, recognizable"
+    },
+    "Cerro Prieto": {
+      "real": true,
+      "reason": "Spanish-named estate in wine region"
+    },
+    "Chaix": {
+      "real": true,
+      "reason": "Small winery, plausible surname"
+    },
+    "Challen": {
+      "real": true,
+      "reason": "Obscure but legitimate winery name"
+    },
+    "Challenger Ridge": {
+      "real": true,
+      "reason": "Ridge wine estate, common format"
+    },
+    "Champ Reves": {
+      "real": true,
+      "reason": "French-style wine name, plausible"
+    },
+    "Chaparral": {
+      "real": true,
+      "reason": "Geographic/descriptor name, established"
+    },
+    "Charbay": {
+      "real": true,
+      "reason": "Known California distillery/winery"
+    },
+    "Charles Creek": {
+      "real": true,
+      "reason": "Creek-based winery, common naming"
+    },
+    "Charles Smith (Sixto)": {
+      "real": true,
+      "reason": "Charles Smith winery, Washington producer"
+    },
+    "Charlie Clay": {
+      "real": true,
+      "reason": "Personal name winery format"
+    },
+    "Chaz Point": {
+      "real": true,
+      "reason": "Point/location-based winery name"
+    },
+    "Chelsea Goldschmidt": {
+      "real": true,
+      "reason": "Personal name wine producer"
+    },
+    "Chen Brothers": {
+      "real": true,
+      "reason": "Family winery, plausible format"
+    },
+    "Cherry Blossom": {
+      "real": true,
+      "reason": "Floral/fruit themed winery possible"
+    },
+    "Cherry Hill Winery": {
+      "real": true,
+      "reason": "Hill winery, clear legitimate format"
+    },
+    "Chiarello": {
+      "real": true,
+      "reason": "Personal/family name winery"
+    },
+    "Chiron": {
+      "real": true,
+      "reason": "Mythological name, plausible winery"
+    },
+    "Chiver": {
+      "real": true,
+      "reason": "Obscure but possible winery name"
+    },
+    "Chop Shop": {
+      "real": true,
+      "reason": "Shop-themed winery, modern naming"
+    },
+    "Christeni Vineyards": {
+      "real": true,
+      "reason": "Plausible family/place wine name"
+    },
+    "Christian Lazo": {
+      "real": true,
+      "reason": "Personal name wine producer"
+    },
+    "Christian Moueix": {
+      "real": true,
+      "reason": "Known French/US winemaker family"
+    },
+    "Christopher Creek": {
+      "real": true,
+      "reason": "Creek vineyard, standard format"
+    },
+    "Cinque Insieme": {
+      "real": true,
+      "reason": "Italian wine collective name"
+    },
+    "CIRQ Kosta Browne": {
+      "real": false,
+      "reason": "Unclear hybrid/apparent label artifact"
+    },
+    "Citation": {
+      "real": true,
+      "reason": "Generic but legitimate wine brand"
+    },
+    "City Winery": {
+      "real": true,
+      "reason": "Known NYC/multi-location winery"
+    },
+    "Clary Ranch": {
+      "real": true,
+      "reason": "Ranch-based vineyard, common format"
+    },
+    "Clay Creek Vineyards": {
+      "real": true,
+      "reason": "Clay creek vineyard, plausible name"
+    },
+    "Clay Station": {
+      "real": true,
+      "reason": "Station/location wine estate"
+    },
+    "Clos de Napa Cellars": {
+      "real": true,
+      "reason": "French-style Napa winery format"
+    },
+    "Clos de Sequoya": {
+      "real": true,
+      "reason": "Clos format, Sequoia reference"
+    },
+    "Clos Robert": {
+      "real": true,
+      "reason": "Clos format, proper winery name"
+    },
+    "Cobblestone": {
+      "real": true,
+      "reason": "Common winery name, brand character"
+    },
+    "Coelho Winery": {
+      "real": true,
+      "reason": "Portuguese surname + Winery qualifier"
+    },
+    "Coeur Terre": {
+      "real": true,
+      "reason": "French-style name, winery-like"
+    },
+    "Coeur Terre Vineyard Mcminnville Or": {
+      "real": true,
+      "reason": "Explicit location tag suggests real producer"
+    },
+    "Coleman Vineyards": {
+      "real": true,
+      "reason": "Surname + Vineyards qualifier"
+    },
+    "Colgin Cellars": {
+      "real": true,
+      "reason": "Known Napa Valley winery"
+    },
+    "Collateral": {
+      "real": false,
+      "reason": "Generic word, no winery qualifier"
+    },
+    "Collier Falls": {
+      "real": true,
+      "reason": "Descriptive name with brand character"
+    },
+    "Como No": {
+      "real": true,
+      "reason": "Spanish phrase, creative winery name"
+    },
+    "Compass Point": {
+      "real": true,
+      "reason": "Evocative name with brand character"
+    },
+    "Component": {
+      "real": false,
+      "reason": "Generic word, no winery identifier"
+    },
+    "Comptche Ridge Vineyards": {
+      "real": true,
+      "reason": "Location-based vineyard name"
+    },
+    "Comptoir": {
+      "real": false,
+      "reason": "French word only, generic term"
+    },
+    "Consentino Winery": {
+      "real": true,
+      "reason": "Surname + Winery qualifier"
+    },
+    "Contour": {
+      "real": false,
+      "reason": "Generic descriptive word alone"
+    },
+    "Cooper & Thief Cellarmasters": {
+      "real": true,
+      "reason": "Established brand with qualifier"
+    },
+    "Cooper Garrod": {
+      "real": true,
+      "reason": "Surname + family name format"
+    },
+    "Cooper Point": {
+      "real": true,
+      "reason": "Surname + geographic name"
+    },
+    "Cooper Wells": {
+      "real": true,
+      "reason": "Surname + Wells, winery-like"
+    },
+    "Cooper's Hawk & Buena Vista": {
+      "real": false,
+      "reason": "Ampersand partnership without clear producer"
+    },
+    "Cooper's Hawk & LVE": {
+      "real": false,
+      "reason": "Ampersand partnership without clear producer"
+    },
+    "Cooper's Hawk & Ste. Michelle": {
+      "real": false,
+      "reason": "Ampersand partnership without clear producer"
+    },
+    "Copain Wines": {
+      "real": true,
+      "reason": "Known producer, wine brand"
+    },
+    "Corazon": {
+      "real": true,
+      "reason": "Spanish word, creative winery name"
+    },
+    "Cordon Santa Barbara": {
+      "real": true,
+      "reason": "Spanish name + region reference"
+    },
+    "Corvelia": {
+      "real": true,
+      "reason": "Unique name with brand character"
+    },
+    "Counselor": {
+      "real": false,
+      "reason": "Generic occupational word alone"
+    },
+    "Counterpoint": {
+      "real": false,
+      "reason": "Generic descriptive word alone"
+    },
+    "Coup Foudre": {
+      "real": true,
+      "reason": "French-inspired winery name, legitimate"
+    },
+    "CourAvant": {
+      "real": true,
+      "reason": "Creative winery brand name"
+    },
+    "CR Cellars": {
+      "real": true,
+      "reason": "Standard cellars format name"
+    },
+    "Crave Vineyards": {
+      "real": true,
+      "reason": "Legitimate vineyard name"
+    },
+    "Crawford Beck": {
+      "real": true,
+      "reason": "Person-based winery name"
+    },
+    "Crichton Hall": {
+      "real": true,
+      "reason": "Estate-style winery name"
+    },
+    "Cronin": {
+      "real": true,
+      "reason": "Single-name winery brand"
+    },
+    "Crooked Path": {
+      "real": true,
+      "reason": "Descriptive winery name"
+    },
+    "Crown Valley": {
+      "real": true,
+      "reason": "Valley-based winery name"
+    },
+    "Crux": {
+      "real": true,
+      "reason": "Short creative brand name"
+    },
+    "Crypsis": {
+      "real": true,
+      "reason": "Unique wine brand name"
+    },
+    "Crystal Valley Cellars": {
+      "real": true,
+      "reason": "Valley cellars format name"
+    },
+    "Cultivar": {
+      "real": true,
+      "reason": "Wine-related generic term brand"
+    },
+    "Culton": {
+      "real": true,
+      "reason": "manual rescue: Culton Cellars (Willamette)"
+    },
+    "D-Cubed": {
+      "real": true,
+      "reason": "Alphanumeric creative brand name"
+    },
+    "d'Amis": {
+      "real": true,
+      "reason": "Italian-style winery name"
+    },
+    "D'Anu": {
+      "real": true,
+      "reason": "Italian-inspired brand name"
+    },
+    "Dalla Valle & Ornellaia": {
+      "real": true,
+      "reason": "Known Napa Valley winery"
+    },
+    "Dance Cellars": {
+      "real": true,
+      "reason": "Cellars format creative name"
+    },
+    "Dancing Bull": {
+      "real": true,
+      "reason": "Whimsical winery brand name"
+    },
+    "Dancing Coyote": {
+      "real": true,
+      "reason": "Animal-themed winery name"
+    },
+    "Dancing Hares": {
+      "real": true,
+      "reason": "Animal-themed vineyard name"
+    },
+    "Dancing Hares Vineyard": {
+      "real": true,
+      "reason": "Animal-themed vineyard name"
+    },
+    "Daniel": {
+      "real": true,
+      "reason": "Single-name winery brand"
+    },
+    "Darcie Kent Vineyards": {
+      "real": true,
+      "reason": "Person-named vineyard brand"
+    },
+    "Dark Night of the Soul": {
+      "real": true,
+      "reason": "Literary-inspired winery name"
+    },
+    "Dave Harvey": {
+      "real": true,
+      "reason": "Person-based winery name"
+    },
+    "DaVero": {
+      "real": true,
+      "reason": "Sonoma County known producer"
+    },
+    "David Coffaro": {
+      "real": true,
+      "reason": "Person-named wine producer"
+    },
+    "David Fulton": {
+      "real": true,
+      "reason": "Person-named wine producer"
+    },
+    "Daydream": {
+      "real": true,
+      "reason": "Creative winery brand name"
+    },
+    "De Angelis": {
+      "real": true,
+      "reason": "Italian surname winery format"
+    },
+    "De Rose": {
+      "real": true,
+      "reason": "Italian surname winery format"
+    },
+    "de Vie": {
+      "real": true,
+      "reason": "French-style wine brand name"
+    },
+    "Debauchee": {
+      "real": true,
+      "reason": "Distinctive winery brand name"
+    },
+    "Decades 5": {
+      "real": true,
+      "reason": "Wine producer brand name"
+    },
+    "Deciderio Hernandez": {
+      "real": true,
+      "reason": "Personal name winery format"
+    },
+    "Decoy": {
+      "real": true,
+      "reason": "Known California wine brand"
+    },
+    "Del Bondio": {
+      "real": true,
+      "reason": "Italian surname winery format"
+    },
+    "Delta Block": {
+      "real": true,
+      "reason": "Wine region/vineyard designation"
+    },
+    "Demure": {
+      "real": true,
+      "reason": "Distinctive winery brand name"
+    },
+    "Denali Estate": {
+      "real": true,
+      "reason": "Estate winery format standard"
+    },
+    "des Chirats (Jeff Cohn & Yves Cuilleron)": {
+      "real": true,
+      "reason": "Collaborative producer with names"
+    },
+    "Desert Wind": {
+      "real": true,
+      "reason": "Geographic wine brand name"
+    },
+    "Deux Punx": {
+      "real": true,
+      "reason": "Creative winery brand name"
+    },
+    "Di Arie": {
+      "real": true,
+      "reason": "Italian surname winery format"
+    },
+    "Diamond Terrace": {
+      "real": true,
+      "reason": "Distinctive vineyard brand name"
+    },
+    "Diamondback": {
+      "real": true,
+      "reason": "Creative winery brand name"
+    },
+    "DiFronzo": {
+      "real": true,
+      "reason": "Italian surname winery format"
+    },
+    "DIME": {
+      "real": true,
+      "reason": "Acronym wine brand name"
+    },
+    "Discovery Beach": {
+      "real": true,
+      "reason": "Geographic wine brand name"
+    },
+    "Dogfarm": {
+      "real": true,
+      "reason": "Creative winery brand name"
+    },
+    "Dois Irmaos": {
+      "real": true,
+      "reason": "Portuguese-style winery name"
+    },
+    "Dolce": {
+      "real": true,
+      "reason": "Known California wine producer"
+    },
+    "Domaine Carneros by Taittinger": {
+      "real": true,
+      "reason": "Established Napa Valley winery"
+    },
+    "Domaine Divio": {
+      "real": true,
+      "reason": "French-style domaine name"
+    },
+    "Dominus Estate": {
+      "real": true,
+      "reason": "Known Napa Valley estate"
+    },
+    "Donatoni": {
+      "real": true,
+      "reason": "Italian surname winery format"
+    },
+    "Doohickey": {
+      "real": true,
+      "reason": "Whimsical winery brand name"
+    },
+    "Dos Gabezas": {
+      "real": true,
+      "reason": "Spanish-style winery name"
+    },
+    "Dos Lagos": {
+      "real": true,
+      "reason": "Spanish wine brand name, legitimate"
+    },
+    "Dough": {
+      "real": true,
+      "reason": "Creative winery name, real producer"
+    },
+    "Downstream": {
+      "real": true,
+      "reason": "Oregon winery, established producer"
+    },
+    "Drawbridge": {
+      "real": true,
+      "reason": "Napa Valley winery, legitimate brand"
+    },
+    "Drinkward Peschon": {
+      "real": true,
+      "reason": "manual rescue: Drinkward Peschon Estate (Napa)"
+    },
+    "Drouhin (Oregon)": {
+      "real": true,
+      "reason": "French house with Oregon operations"
+    },
+    "Drumheller": {
+      "real": true,
+      "reason": "Washington winery, real producer"
+    },
+    "Duckhorn": {
+      "real": true,
+      "reason": "Napa Valley icon, well-known producer"
+    },
+    "Duhig": {
+      "real": true,
+      "reason": "Obscure but likely real small winery"
+    },
+    "Duncan Peak": {
+      "real": true,
+      "reason": "California winery, legitimate name"
+    },
+    "Dunstan": {
+      "real": true,
+      "reason": "Small producer, plausible winery name"
+    },
+    "Durney": {
+      "real": true,
+      "reason": "Carmel Valley historic winery"
+    },
+    "Dutton Estate": {
+      "real": true,
+      "reason": "Sonoma Coast winery, established"
+    },
+    "Duxoup": {
+      "real": true,
+      "reason": "Napa Valley winery, real producer"
+    },
+    "Dylans Ghost": {
+      "real": true,
+      "reason": "Creative winery name, real producer"
+    },
+    "E16": {
+      "real": true,
+      "reason": "Minimalist brand name, legitimate"
+    },
+    "Eagle Eye": {
+      "real": true,
+      "reason": "Generic but real winery name"
+    },
+    "Eagles Trace": {
+      "real": true,
+      "reason": "Established winery, legitimate producer"
+    },
+    "Edge": {
+      "real": false,
+      "reason": "Too generic, lacks brand character"
+    },
+    "Editorial": {
+      "real": false,
+      "reason": "Too generic, lacks brand character"
+    },
+    "Edward James (Paul Hobbs)": {
+      "real": true,
+      "reason": "Paul Hobbs sub-label, legitimate"
+    },
+    "Edward Lane": {
+      "real": true,
+      "reason": "Person-named winery, plausible producer"
+    },
+    "Ellipsis": {
+      "real": true,
+      "reason": "Artistic name, likely real winery"
+    },
+    "Elusa Winery": {
+      "real": true,
+      "reason": "Named winery with location qualifier"
+    },
+    "Embrazen": {
+      "real": true,
+      "reason": "Creative brand name, real producer"
+    },
+    "Emerald Valley Vineyards": {
+      "real": true,
+      "reason": "Oregon vineyard, established producer"
+    },
+    "Emh": {
+      "real": false,
+      "reason": "Abbreviation without context, unclear"
+    },
+    "Eminent Domaine": {
+      "real": true,
+      "reason": "Playful winery name, real producer"
+    },
+    "Emmaus": {
+      "real": true,
+      "reason": "Religious-themed winery name, legitimate"
+    },
+    "Emos": {
+      "real": true,
+      "reason": "Short creative name, real producer"
+    },
+    "Empathy": {
+      "real": false,
+      "reason": "Generic emotion word, no brand character"
+    },
+    "Encroachment": {
+      "real": false,
+      "reason": "Generic word, lacks winery identity"
+    },
+    "Engel": {
+      "real": true,
+      "reason": "Could be surname-based winery"
+    },
+    "Ennbonds": {
+      "real": true,
+      "reason": "Unusual name fits small winery style"
+    },
+    "Entre Nous": {
+      "real": true,
+      "reason": "French phrase common for wine brands"
+    },
+    "Erde Wines": {
+      "real": true,
+      "reason": "Legitimate winery name format"
+    },
+    "Erggelet Brothers": {
+      "real": true,
+      "reason": "Family name winery, legitimate"
+    },
+    "Erich Russell": {
+      "real": true,
+      "reason": "Personal name winery format"
+    },
+    "Estrella River": {
+      "real": true,
+      "reason": "Geographic name with brand character"
+    },
+    "Etto": {
+      "real": true,
+      "reason": "Short unique name, winery-style"
+    },
+    "Euclid": {
+      "real": true,
+      "reason": "Could be legitimate winery name"
+    },
+    "Exitus": {
+      "real": true,
+      "reason": "Latin-style name, winery-appropriate"
+    },
+    "Exposed": {
+      "real": false,
+      "reason": "Generic adjective, no brand identity"
+    },
+    "Fait Main": {
+      "real": true,
+      "reason": "French phrase, wine brand format"
+    },
+    "Familiar Air": {
+      "real": true,
+      "reason": "Creative phrase, plausible winery"
+    },
+    "Farella-Park": {
+      "real": true,
+      "reason": "Hyphenated surname winery"
+    },
+    "Farmstrong": {
+      "real": true,
+      "reason": "Brand-style compound word"
+    },
+    "Favia Erickson Winegrowers": {
+      "real": true,
+      "reason": "Personal names, established format"
+    },
+    "Feather Falls": {
+      "real": true,
+      "reason": "Geographic place name, winery-style"
+    },
+    "Fellom Ranch": {
+      "real": true,
+      "reason": "Ranch name, legitimate format"
+    },
+    "Fiadh Ruadh": {
+      "real": true,
+      "reason": "Unique name, possibly Gaelic origin"
+    },
+    "Fighting Chance": {
+      "real": true,
+      "reason": "Creative brand name, plausible"
+    },
+    "Fine Form": {
+      "real": false,
+      "reason": "Generic phrase, minimal brand character"
+    },
+    "First Press": {
+      "real": true,
+      "reason": "Plausible winery brand name"
+    },
+    "Fisticuffs": {
+      "real": true,
+      "reason": "Quirky name fits small winery"
+    },
+    "Five Sons": {
+      "real": true,
+      "reason": "Family winery name format"
+    },
+    "Fleur": {
+      "real": true,
+      "reason": "Short elegant name, winery-style"
+    },
+    "Flint & Steel": {
+      "real": true,
+      "reason": "Creative compound, plausible brand"
+    },
+    "Flock Machine": {
+      "real": true,
+      "reason": "Unusual name could be real winery"
+    },
+    "Folds of Honor": {
+      "real": true,
+      "reason": "Brand-style philanthropic name format"
+    },
+    "Folk & Fable": {
+      "real": true,
+      "reason": "Creative brand name, winery style"
+    },
+    "Folly of the Beast": {
+      "real": true,
+      "reason": "Distinctive winery name"
+    },
+    "Fontaine": {
+      "real": true,
+      "reason": "Single-word winery names common"
+    },
+    "Formation": {
+      "real": true,
+      "reason": "Plausible winery brand name"
+    },
+    "Forth": {
+      "real": true,
+      "reason": "Simple, believable winery name"
+    },
+    "Fortnight": {
+      "real": true,
+      "reason": "Uncommon but viable winery name"
+    },
+    "Fortress": {
+      "real": true,
+      "reason": "Could be legitimate winery brand"
+    },
+    "Founders Stone": {
+      "real": true,
+      "reason": "Descriptive winery estate name"
+    },
+    "Fourth Leaf": {
+      "real": true,
+      "reason": "Poetic winery name format"
+    },
+    "Foxcover": {
+      "real": true,
+      "reason": "Distinctive single-word brand name"
+    },
+    "Freelander": {
+      "real": true,
+      "reason": "Plausible winery name"
+    },
+    "Freja": {
+      "real": true,
+      "reason": "Personal name as winery brand"
+    },
+    "Frontiere": {
+      "real": true,
+      "reason": "French-style winery name variant"
+    },
+    "Fruit & Flower (Elicit)": {
+      "real": false,
+      "reason": "Parenthetical notation suggests cuvée"
+    },
+    "Full Pull Friends": {
+      "real": true,
+      "reason": "Unconventional but real-seeming name"
+    },
+    "Futo 5500 SLD": {
+      "real": false,
+      "reason": "Model/serial number format, not winery"
+    },
+    "Gala": {
+      "real": false,
+      "reason": "Generic word without brand character"
+    },
+    "Gallegos": {
+      "real": true,
+      "reason": "Common surname winery name"
+    },
+    "Gallifant Cellers": {
+      "real": true,
+      "reason": "Surname-based cellars name"
+    },
+    "Garavin": {
+      "real": true,
+      "reason": "Distinctive winery brand name"
+    },
+    "Garric": {
+      "real": true,
+      "reason": "Plausible single-word winery name"
+    },
+    "Gary Farrel": {
+      "real": true,
+      "reason": "Known Sonoma Coast winery"
+    },
+    "Gather Wines": {
+      "real": true,
+      "reason": "Modern descriptive wine brand"
+    },
+    "Gavilan": {
+      "real": true,
+      "reason": "Distinctive winery name"
+    },
+    "Gemello": {
+      "real": true,
+      "reason": "Italian-style winery name"
+    },
+    "George Family": {
+      "real": true,
+      "reason": "Family name estate format"
+    },
+    "Ghost Cellars": {
+      "real": true,
+      "reason": "Creative winery cellars brand"
+    },
+    "Gibbons Lane": {
+      "real": true,
+      "reason": "Lane/location-based winery name"
+    },
+    "Girl & Dragon": {
+      "real": true,
+      "reason": "Narrative-styled winery brand"
+    },
+    "GKG": {
+      "real": false,
+      "reason": "Pure initials, no branding substance"
+    },
+    "Glen Ellen": {
+      "real": true,
+      "reason": "Historic California wine brand"
+    },
+    "Glorias": {
+      "real": true,
+      "reason": "Small winery, creative name"
+    },
+    "Glorious Revolution": {
+      "real": true,
+      "reason": "Legitimate winery name"
+    },
+    "Gold Coast": {
+      "real": true,
+      "reason": "Could be winery brand"
+    },
+    "Golden Cluster": {
+      "real": true,
+      "reason": "Plausible small winery name"
+    },
+    "Goldschmidt Vineyards": {
+      "real": true,
+      "reason": "Known Napa Valley winery"
+    },
+    "Gorman": {
+      "real": true,
+      "reason": "Surname-based winery name"
+    },
+    "Gothic": {
+      "real": true,
+      "reason": "Plausible winery designation"
+    },
+    "Grable Vineyards": {
+      "real": true,
+      "reason": "Legitimate family vineyard"
+    },
+    "Grace Bridge": {
+      "real": true,
+      "reason": "Creative winery branding"
+    },
+    "Grace Lane": {
+      "real": true,
+      "reason": "Plausible winery estate name"
+    },
+    "Grande Cote": {
+      "real": true,
+      "reason": "French-inspired winery name"
+    },
+    "Grands Joueurs Vignerons": {
+      "real": true,
+      "reason": "Plausible estate winery"
+    },
+    "Grassi": {
+      "real": true,
+      "reason": "Surname-based wine producer"
+    },
+    "Graziano": {
+      "real": true,
+      "reason": "Family-named winery"
+    },
+    "Greg La Follette (GLF)": {
+      "real": true,
+      "reason": "Known winemaker brand"
+    },
+    "Grey Stack": {
+      "real": true,
+      "reason": "Creative winery name"
+    },
+    "Gust": {
+      "real": false,
+      "reason": "Too generic, no producer character"
+    },
+    "Gustave Niebaum": {
+      "real": true,
+      "reason": "Historic Napa Valley founder"
+    },
+    "Hall Ranch": {
+      "real": true,
+      "reason": "Legitimate ranch vineyard"
+    },
+    "Hallmark Channel": {
+      "real": false,
+      "reason": "Television network, not winery"
+    },
+    "Hambleden Capital": {
+      "real": false,
+      "reason": "Investment firm, not winery"
+    },
+    "Hamel": {
+      "real": true,
+      "reason": "Surname-based winery"
+    },
+    "Hames Creek": {
+      "real": true,
+      "reason": "Location-based winery name"
+    },
+    "Handpicked": {
+      "real": false,
+      "reason": "Generic descriptor, no brand"
+    },
+    "Hangtime": {
+      "real": true,
+      "reason": "Creative winery branding"
+    },
+    "Hanson Gabarino": {
+      "real": true,
+      "reason": "Winemaker surname brand"
+    },
+    "Harbor": {
+      "real": true,
+      "reason": "Plausible coastal winery"
+    },
+    "Hard Six Cellars": {
+      "real": true,
+      "reason": "Creative dice-themed winery"
+    },
+    "Hardin": {
+      "real": true,
+      "reason": "Surname-based wine producer"
+    },
+    "Harlequin": {
+      "real": true,
+      "reason": "Creative winery name, plausible brand"
+    },
+    "Hartford (Court)": {
+      "real": true,
+      "reason": "Hartford Court is legitimate CA winery"
+    },
+    "Hartig": {
+      "real": true,
+      "reason": "Plausible surname-based winery name"
+    },
+    "Hartwell Vineyards": {
+      "real": true,
+      "reason": "Standard vineyard naming convention"
+    },
+    "Harumph": {
+      "real": false,
+      "reason": "Nonsense word, no wine brand character"
+    },
+    "Hauck Cellars": {
+      "real": true,
+      "reason": "Plausible surname-based cellars name"
+    },
+    "Havens Wine Cellars": {
+      "real": true,
+      "reason": "Legitimate Oregon wine producer"
+    },
+    "Hawley": {
+      "real": true,
+      "reason": "Could be surname-based winery name"
+    },
+    "Hayes Ranche": {
+      "real": true,
+      "reason": "Plausible ranch-based producer name"
+    },
+    "Hayes Valley": {
+      "real": true,
+      "reason": "San Francisco Bay Area location-based"
+    },
+    "Hayrick": {
+      "real": true,
+      "reason": "Plausible creative winery name"
+    },
+    "Hayseed": {
+      "real": false,
+      "reason": "Generic term, lacks wine brand identity"
+    },
+    "Heimark Vineyard": {
+      "real": true,
+      "reason": "Plausible surname-based vineyard"
+    },
+    "Helioterra": {
+      "real": true,
+      "reason": "Creative winery name with character"
+    },
+    "Henry Estate": {
+      "real": true,
+      "reason": "Legitimate Oregon wine estate"
+    },
+    "Hiatus": {
+      "real": true,
+      "reason": "Plausible abstract winery name"
+    },
+    "Hidden Ridge": {
+      "real": true,
+      "reason": "Common vineyard location-based name"
+    },
+    "Hierogram": {
+      "real": true,
+      "reason": "Unique creative winery name possible"
+    },
+    "Higgs Boson": {
+      "real": false,
+      "reason": "Physics term, not wine producer brand"
+    },
+    "High Dive": {
+      "real": true,
+      "reason": "Creative/unique winery name plausible"
+    },
+    "High Heaven Vintners": {
+      "real": true,
+      "reason": "Descriptive vintner name, likely real"
+    },
+    "High Pass Winery": {
+      "real": true,
+      "reason": "Location-based winery name format"
+    },
+    "Hillcrest": {
+      "real": true,
+      "reason": "Common vineyard location-based name"
+    },
+    "Hillick & Hobbs": {
+      "real": true,
+      "reason": "Partnership-style winery name"
+    },
+    "Hillwalker Vineyards": {
+      "real": true,
+      "reason": "Plausible descriptive vineyard name"
+    },
+    "Hindsight": {
+      "real": true,
+      "reason": "Abstract concept winery name possible"
+    },
+    "HIP": {
+      "real": false,
+      "reason": "Acronym only, lacks wine identity"
+    },
+    "Hobo": {
+      "real": true,
+      "reason": "Creative winery name, plausible brand"
+    },
+    "Hogwash": {
+      "real": false,
+      "reason": "Nonsense word, no wine producer character"
+    },
+    "Holden": {
+      "real": true,
+      "reason": "Plausible surname-based winery name"
+    },
+    "Hollis": {
+      "real": false,
+      "reason": "Generic name, no winery qualifier"
+    },
+    "Hollywood": {
+      "real": false,
+      "reason": "Place name without winery designation"
+    },
+    "Holmes Gap": {
+      "real": true,
+      "reason": "Plausible vineyard/estate name"
+    },
+    "Holus Bolus": {
+      "real": true,
+      "reason": "Creative winery brand name"
+    },
+    "Homewood Winery": {
+      "real": true,
+      "reason": "Explicit winery designation present"
+    },
+    "Hook'd": {
+      "real": true,
+      "reason": "Brand-like creative name"
+    },
+    "Hoot Owl Creek": {
+      "real": true,
+      "reason": "Plausible vineyard/creek name"
+    },
+    "Hors Categorie": {
+      "real": true,
+      "reason": "French phrase as wine brand"
+    },
+    "Horse & Plow": {
+      "real": true,
+      "reason": "Creative winery brand name"
+    },
+    "Houndstooth": {
+      "real": true,
+      "reason": "Distinctive brand-style name"
+    },
+    "House of Bones": {
+      "real": true,
+      "reason": "Evocative winery brand name"
+    },
+    "House of Independent Producers": {
+      "real": true,
+      "reason": "Explicit producer designation"
+    },
+    "Howell at the Moon": {
+      "real": true,
+      "reason": "Creative winery brand name"
+    },
+    "Howell Mountain": {
+      "real": false,
+      "reason": "Geographic region, no producer qualifier"
+    },
+    "Huge Bear": {
+      "real": true,
+      "reason": "Creative animal-themed brand"
+    },
+    "Humboldt Coast": {
+      "real": false,
+      "reason": "Geographic region, no producer qualifier"
+    },
+    "Hunt McKay": {
+      "real": true,
+      "reason": "Plausible person-based winery name"
+    },
+    "Husch": {
+      "real": true,
+      "reason": "Known US wine producer"
+    },
+    "Hyde Vineyard": {
+      "real": true,
+      "reason": "Plausible vineyard designation"
+    },
+    "Hyland": {
+      "real": true,
+      "reason": "Plausible winery brand name"
+    },
+    "Iaconis": {
+      "real": true,
+      "reason": "Distinctive brand-style name"
+    },
+    "Idealist Wines": {
+      "real": true,
+      "reason": "Explicit wines brand designation"
+    },
+    "if you see kay": {
+      "real": true,
+      "reason": "Creative wordplay brand name"
+    },
+    "Igneous": {
+      "real": true,
+      "reason": "Distinctive geology-themed brand"
+    },
+    "Immix": {
+      "real": true,
+      "reason": "Short distinctive brand name"
+    },
+    "Incandesa": {
+      "real": true,
+      "reason": "Creative brand-style name"
+    },
+    "Incognito": {
+      "real": true,
+      "reason": "Distinctive brand-style name"
+    },
+    "Inconceivable Wine": {
+      "real": true,
+      "reason": "Creative humorous wine brand"
+    },
+    "Inconnu": {
+      "real": true,
+      "reason": "French word as wine brand"
+    },
+    "Inizi": {
+      "real": true,
+      "reason": "Short distinctive brand name"
+    },
+    "Intent": {
+      "real": false,
+      "reason": "Generic word, no brand character"
+    },
+    "Introvert": {
+      "real": false,
+      "reason": "Generic word, no brand character"
+    },
+    "Iron + Sand": {
+      "real": true,
+      "reason": "Creative brand name with symbol"
+    },
+    "Iron Side": {
+      "real": true,
+      "reason": "Plausible winery name"
+    },
+    "Irvine": {
+      "real": false,
+      "reason": "Likely place name without qualifier"
+    },
+    "Irwin Family Vineyards": {
+      "real": true,
+      "reason": "Named person + vineyard qualifier"
+    },
+    "Istro": {
+      "real": false,
+      "reason": "Generic word, no context"
+    },
+    "J": {
+      "real": true,
+      "reason": "manual rescue: J Vineyards & Winery (Sonoma, famous sparkling)"
+    },
+    "J Davies": {
+      "real": true,
+      "reason": "Initials + surname, plausible"
+    },
+    "J Gregory": {
+      "real": true,
+      "reason": "Initials + surname, plausible"
+    },
+    "J. Craw": {
+      "real": true,
+      "reason": "Initials + surname, plausible"
+    },
+    "Jack Nicklaus": {
+      "real": true,
+      "reason": "Celebrity name, known winery"
+    },
+    "Jack Tar": {
+      "real": true,
+      "reason": "Distinctive brand name"
+    },
+    "Jacob Martin": {
+      "real": false,
+      "reason": "Generic first + last name"
+    },
+    "James David Cellars": {
+      "real": true,
+      "reason": "Named person + cellars qualifier"
+    },
+    "James Johnson": {
+      "real": false,
+      "reason": "Generic first + last name"
+    },
+    "Janzen": {
+      "real": true,
+      "reason": "Plausible surname-based brand"
+    },
+    "Jardesca": {
+      "real": true,
+      "reason": "Distinctive invented name"
+    },
+    "Jason Stephens": {
+      "real": false,
+      "reason": "Generic first + last name"
+    },
+    "Javadi": {
+      "real": true,
+      "reason": "Plausible surname-based brand"
+    },
+    "Jeff Cohn & Yves Cuilleron": {
+      "real": true,
+      "reason": "Known collaborative winery"
+    },
+    "Jeff Gordon": {
+      "real": true,
+      "reason": "Celebrity name, known winery"
+    },
+    "Jemrose": {
+      "real": true,
+      "reason": "Plausible brand name"
+    },
+    "Jeremy Nickel Cellars": {
+      "real": true,
+      "reason": "Named person + cellars qualifier"
+    },
+    "Jeremy Wine": {
+      "real": false,
+      "reason": "Generic name + common word"
+    },
+    "Jerry Murray": {
+      "real": false,
+      "reason": "Generic first + last name"
+    },
+    "Jeunesse (Herzog)": {
+      "real": true,
+      "reason": "Named producer with parenthetical"
+    },
+    "JNSQ": {
+      "real": true,
+      "reason": "Distinctive acronym brand"
+    },
+    "Johan": {
+      "real": true,
+      "reason": "Plausible surname-based brand"
+    },
+    "Johan Drueskall": {
+      "real": true,
+      "reason": "Named person, plausible winery"
+    },
+    "Johan Farmlands": {
+      "real": true,
+      "reason": "Winery with farmland descriptor"
+    },
+    "Johndrow": {
+      "real": true,
+      "reason": "Legitimate winery name, Willamette Valley"
+    },
+    "Johnson": {
+      "real": false,
+      "reason": "Too generic, no winery qualifier"
+    },
+    "Johnson Estate": {
+      "real": true,
+      "reason": "Classic estate winery format"
+    },
+    "Joseph Cellars": {
+      "real": true,
+      "reason": "Cellars qualifier, legitimate format"
+    },
+    "Joseph Christy": {
+      "real": true,
+      "reason": "Person name format, possible producer"
+    },
+    "Joseph Drouhin": {
+      "real": false,
+      "reason": "French winery, not US producer"
+    },
+    "Joullian": {
+      "real": true,
+      "reason": "Established Carmel Valley winery"
+    },
+    "Journeyman": {
+      "real": true,
+      "reason": "Small winery with creative name"
+    },
+    "Jovino": {
+      "real": true,
+      "reason": "Legitimate winery brand name"
+    },
+    "JP Harbison": {
+      "real": true,
+      "reason": "Person initials, winery format"
+    },
+    "JR": {
+      "real": false,
+      "reason": "Too generic, initials only"
+    },
+    "Jules Harrison": {
+      "real": true,
+      "reason": "Person name format, possible producer"
+    },
+    "Jurisdiction": {
+      "real": false,
+      "reason": "Generic word, no winery character"
+    },
+    "Juslyn Vineyards": {
+      "real": true,
+      "reason": "Vineyard format, legitimate name"
+    },
+    "Kahler Cellars": {
+      "real": true,
+      "reason": "Established Washington winery"
+    },
+    "Kaola": {
+      "real": true,
+      "reason": "Small winery brand name"
+    },
+    "Karly": {
+      "real": true,
+      "reason": "Amador County winery established"
+    },
+    "Kate Arnold": {
+      "real": true,
+      "reason": "Person name format, possible producer"
+    },
+    "Katherine Goldschmidt": {
+      "real": true,
+      "reason": "Person name format, possible producer"
+    },
+    "Kaz Winery Bodega Bay Portworks": {
+      "real": true,
+      "reason": "Winery with location and style"
+    },
+    "Kedem": {
+      "real": true,
+      "reason": "Historic kosher wine producer"
+    },
+    "Keenan": {
+      "real": true,
+      "reason": "Napa Valley estate winery"
+    },
+    "Keep Wines": {
+      "real": true,
+      "reason": "Small winery brand, creative name"
+    },
+    "Kelham": {
+      "real": true,
+      "reason": "Legitimate small winery name"
+    },
+    "Kelly Fleming": {
+      "real": true,
+      "reason": "Person name format, possible producer"
+    },
+    "Ken Deis": {
+      "real": true,
+      "reason": "Person name format, possible producer"
+    },
+    "Ken Forrester": {
+      "real": false,
+      "reason": "South African winery, not US"
+    },
+    "Kendall-Jackson": {
+      "real": true,
+      "reason": "Major California wine producer"
+    },
+    "King Family Vineyard": {
+      "real": true,
+      "reason": "Virginia estate vineyard"
+    },
+    "Kings Mountain Vineyards": {
+      "real": true,
+      "reason": "Vineyard with geographic qualifier"
+    },
+    "Kingsmill": {
+      "real": true,
+      "reason": "Historic Virginia winery brand"
+    },
+    "Kinton": {
+      "real": true,
+      "reason": "Small winery, creative name"
+    },
+    "Kismet Estate Winery": {
+      "real": true,
+      "reason": "Winery with estate designation"
+    },
+    "Kistler (Occidental)": {
+      "real": true,
+      "reason": "Known Sonoma Coast producer"
+    },
+    "Klipsun": {
+      "real": true,
+      "reason": "Washington wine producer"
+    },
+    "Koan": {
+      "real": true,
+      "reason": "Small winery, abstract name"
+    },
+    "Kokumi": {
+      "real": true,
+      "reason": "Oregon producer, creative name"
+    },
+    "Konverterra": {
+      "real": true,
+      "reason": "Small producer, distinctive name"
+    },
+    "Korbin Kameron": {
+      "real": true,
+      "reason": "Founder name as brand"
+    },
+    "Kristine Ashe": {
+      "real": true,
+      "reason": "Personal name producer/winery"
+    },
+    "L'Envolee": {
+      "real": true,
+      "reason": "French name, likely winery"
+    },
+    "L'Escrime": {
+      "real": true,
+      "reason": "French name, likely producer"
+    },
+    "La Cienega Vineyard": {
+      "real": true,
+      "reason": "Vineyard with location name"
+    },
+    "La garagista": {
+      "real": true,
+      "reason": "Known Vermont natural winery"
+    },
+    "la Grande Roche": {
+      "real": true,
+      "reason": "French-named vineyard/winery"
+    },
+    "La Quinta": {
+      "real": true,
+      "reason": "Geographic name with winery context"
+    },
+    "La Rata": {
+      "real": true,
+      "reason": "Small producer, distinctive name"
+    },
+    "Lacuna": {
+      "real": true,
+      "reason": "Abstract name, likely producer"
+    },
+    "Landy Family Vineyards": {
+      "real": true,
+      "reason": "Family vineyard designation"
+    },
+    "Larkin": {
+      "real": true,
+      "reason": "Small winery, simple name"
+    },
+    "Larkin Winery": {
+      "real": true,
+      "reason": "Winery designation clarifies producer"
+    },
+    "Larry Hyde Vineyard": {
+      "real": true,
+      "reason": "Founder vineyard name format"
+    },
+    "Laura Michael": {
+      "real": true,
+      "reason": "Personal name producer brand"
+    },
+    "Laura Volkman Vineyards": {
+      "real": true,
+      "reason": "Founder vineyards designation"
+    },
+    "Laurel Ridge": {
+      "real": true,
+      "reason": "Small winery, location name"
+    },
+    "Lauren Glen": {
+      "real": true,
+      "reason": "Personal brand name format"
+    },
+    "Lava Cap": {
+      "real": true,
+      "reason": "California wine producer"
+    },
+    "Lavelle": {
+      "real": true,
+      "reason": "Small producer, creative name"
+    },
+    "Lawsons Dry Hills": {
+      "real": true,
+      "reason": "Known New Zealand, not US"
+    },
+    "Laz": {
+      "real": true,
+      "reason": "Short brand name, plausible winery"
+    },
+    "Le Clos": {
+      "real": false,
+      "reason": "Generic French phrase, no US winery qualifier"
+    },
+    "Leaf & Twig": {
+      "real": true,
+      "reason": "Creative winery name with ampersand"
+    },
+    "Lefranc": {
+      "real": true,
+      "reason": "Historic California winery, Lefranc brand"
+    },
+    "Lenz": {
+      "real": true,
+      "reason": "Known Long Island winery producer"
+    },
+    "Leo Family": {
+      "real": true,
+      "reason": "Family winery naming convention"
+    },
+    "Leonhardt": {
+      "real": true,
+      "reason": "Plausible person-based winery name"
+    },
+    "Les Grands Vins de Colette": {
+      "real": false,
+      "reason": "Generic French phrase, no clear producer"
+    },
+    "Les Lunes Wine": {
+      "real": true,
+      "reason": "Named wine brand with clear qualifier"
+    },
+    "Letterhead": {
+      "real": true,
+      "reason": "Quirky but legitimate winery name"
+    },
+    "Levensohn": {
+      "real": true,
+      "reason": "Plausible person-based winery name"
+    },
+    "Leviathan": {
+      "real": true,
+      "reason": "Creative brand name, possibly wine producer"
+    },
+    "Levy & McClellan": {
+      "real": true,
+      "reason": "Partnership winery naming convention"
+    },
+    "Lewis Rice": {
+      "real": true,
+      "reason": "Person names as winery identifier"
+    },
+    "Libra": {
+      "real": true,
+      "reason": "Single-word brand name, plausible winery"
+    },
+    "Lieff": {
+      "real": true,
+      "reason": "Plausible person-based winery name"
+    },
+    "Lightpost Winery": {
+      "real": true,
+      "reason": "Winery with descriptive location name"
+    },
+    "Lilian Whitehawk": {
+      "real": true,
+      "reason": "Person name as winery identifier"
+    },
+    "Lillian Roussanne": {
+      "real": true,
+      "reason": "Vintage name format, likely real brand"
+    },
+    "Liquid Sky Vineyards": {
+      "real": true,
+      "reason": "Vineyard name with clear qualifier"
+    },
+    "Lish Wines": {
+      "real": true,
+      "reason": "Person name plus wines designation"
+    },
+    "Little Frances": {
+      "real": true,
+      "reason": "Descriptive small winery name"
+    },
+    "Little Valley": {
+      "real": true,
+      "reason": "Plausible location-based winery name"
+    },
+    "Llamas Family Wines": {
+      "real": true,
+      "reason": "Family winery naming convention"
+    },
+    "Lloyd Cellars": {
+      "real": true,
+      "reason": "Person name with cellars qualifier"
+    },
+    "Longevity": {
+      "real": false,
+      "reason": "Generic wellness word, no winery character"
+    },
+    "Longfellow": {
+      "real": true,
+      "reason": "Literary reference as winery name"
+    },
+    "Longhouse": {
+      "real": true,
+      "reason": "Architectural feature as brand name"
+    },
+    "Longshot": {
+      "real": true,
+      "reason": "Quirky but plausible winery name"
+    },
+    "Lookout Ridge": {
+      "real": true,
+      "reason": "Descriptive location-based winery name"
+    },
+    "Lorenza": {
+      "real": true,
+      "reason": "Single-name winery, creative branding"
+    },
+    "Los Angeles River Wine Company": {
+      "real": true,
+      "reason": "Named company with geographic qualifier"
+    },
+    "Lost Blues": {
+      "real": true,
+      "reason": "Creative winery name, not generic"
+    },
+    "Lost Canyon": {
+      "real": true,
+      "reason": "Geographic/creative winery name"
+    },
+    "Lost Isle": {
+      "real": true,
+      "reason": "Creative winery brand name"
+    },
+    "Lost Parcels": {
+      "real": true,
+      "reason": "Unique winery name, branded"
+    },
+    "Lost Poet": {
+      "real": true,
+      "reason": "Creative winery brand name"
+    },
+    "Love & Terroir": {
+      "real": true,
+      "reason": "Branded winery with descriptors"
+    },
+    "Love Noir": {
+      "real": true,
+      "reason": "Creative wine brand name"
+    },
+    "Lucunda Vineyards": {
+      "real": true,
+      "reason": "Named vineyard, established format"
+    },
+    "Lumina": {
+      "real": true,
+      "reason": "Single-name winery, branded"
+    },
+    "Luna": {
+      "real": true,
+      "reason": "Single-name winery, common format"
+    },
+    "Luna Vineyards": {
+      "real": true,
+      "reason": "Named vineyard, established format"
+    },
+    "Lynch": {
+      "real": true,
+      "reason": "Single-name winery, branded"
+    },
+    "Lytton Springs Winery": {
+      "real": true,
+      "reason": "Well-known Sonoma County winery"
+    },
+    "M. Autumn": {
+      "real": true,
+      "reason": "Initials with personal name, branded"
+    },
+    "M. Sherwin Cellars": {
+      "real": true,
+      "reason": "Personal name with cellars qualifier"
+    },
+    "Mac & Billy Cellars": {
+      "real": true,
+      "reason": "Personal names with cellars qualifier"
+    },
+    "Macdonald": {
+      "real": true,
+      "reason": "Single-name winery, branded"
+    },
+    "Mackenzie": {
+      "real": true,
+      "reason": "Single-name winery, branded"
+    },
+    "Maddie Lane": {
+      "real": true,
+      "reason": "Personal name winery format"
+    },
+    "Madrigal": {
+      "real": true,
+      "reason": "Single-name winery, branded"
+    },
+    "Madrone": {
+      "real": true,
+      "reason": "Named winery, established format"
+    },
+    "Magdalena": {
+      "real": true,
+      "reason": "Single-name winery, branded"
+    },
+    "Magie Rouge (Morlet)": {
+      "real": true,
+      "reason": "Named brand with producer parenthetical"
+    },
+    "Maldonado Family Vineyards": {
+      "real": true,
+      "reason": "Family vineyard, standard format"
+    },
+    "Malene": {
+      "real": true,
+      "reason": "Single-name winery, branded"
+    },
+    "Manchester Ridge": {
+      "real": true,
+      "reason": "Geographic-based winery name"
+    },
+    "Mandolin": {
+      "real": true,
+      "reason": "Creative single-name winery"
+    },
+    "Mandrake": {
+      "real": true,
+      "reason": "Creative single-name winery"
+    },
+    "Manifesto": {
+      "real": true,
+      "reason": "Creative brand name, wine producer"
+    },
+    "Mansfield": {
+      "real": true,
+      "reason": "Potential winery or estate name"
+    },
+    "Mantazas Creek": {
+      "real": true,
+      "reason": "Known Sonoma Coast winery"
+    },
+    "Manu Propria": {
+      "real": true,
+      "reason": "Latin phrase brand, plausible winery"
+    },
+    "Mapson": {
+      "real": true,
+      "reason": "Could be small producer name"
+    },
+    "Marcelina Vineyards": {
+      "real": true,
+      "reason": "Explicit vineyard designation"
+    },
+    "Marchesi": {
+      "real": true,
+      "reason": "Italian surname, plausible producer"
+    },
+    "Margins": {
+      "real": false,
+      "reason": "Generic word, lacks brand character"
+    },
+    "Marita's Vineyard": {
+      "real": true,
+      "reason": "Personal vineyard name format"
+    },
+    "Mark Herold Wines": {
+      "real": true,
+      "reason": "Known winemaker brand"
+    },
+    "Marnet": {
+      "real": true,
+      "reason": "Plausible small winery name"
+    },
+    "Maroon": {
+      "real": true,
+      "reason": "Could be winery brand"
+    },
+    "Match": {
+      "real": false,
+      "reason": "Generic word, no winery context"
+    },
+    "Mathis": {
+      "real": true,
+      "reason": "Surname-based producer name"
+    },
+    "Matthew D. Taylor": {
+      "real": true,
+      "reason": "Person-named winery format"
+    },
+    "Matthew Fritz": {
+      "real": true,
+      "reason": "Known winemaker producer"
+    },
+    "MC4": {
+      "real": true,
+      "reason": "Could be initials-based brand"
+    },
+    "Mccaw": {
+      "real": true,
+      "reason": "Surname winery, plausible"
+    },
+    "McCay": {
+      "real": true,
+      "reason": "Surname-based producer name"
+    },
+    "McFadden": {
+      "real": true,
+      "reason": "Known Mendocino winery"
+    },
+    "McGah": {
+      "real": true,
+      "reason": "Plausible surname winery"
+    },
+    "McKenzie Mueller": {
+      "real": true,
+      "reason": "Compound name producer format"
+    },
+    "Meander": {
+      "real": true,
+      "reason": "Creative brand name possibility"
+    },
+    "Megan Anne": {
+      "real": true,
+      "reason": "Personal name winery format"
+    },
+    "Melanson": {
+      "real": true,
+      "reason": "Surname-based producer name"
+    },
+    "Memento Wines": {
+      "real": true,
+      "reason": "Explicit 'Wines' designation"
+    },
+    "Mendelson": {
+      "real": true,
+      "reason": "Surname-based producer name"
+    },
+    "Meriwether": {
+      "real": true,
+      "reason": "Plausible historic winery name"
+    },
+    "Metaphora": {
+      "real": true,
+      "reason": "Creative poetic brand name"
+    },
+    "Mettler Family Vineyards": {
+      "real": true,
+      "reason": "Known family vineyard producer"
+    },
+    "Meyer": {
+      "real": true,
+      "reason": "manual rescue: Meyer Family Cellars (Anderson Valley)"
+    },
+    "Meyer Family Vineyards": {
+      "real": true,
+      "reason": "Family vineyard with clear winery designation"
+    },
+    "Mica": {
+      "real": false,
+      "reason": "Generic word, no winery or brand context"
+    },
+    "Michael Caitlin": {
+      "real": false,
+      "reason": "Personal names only, no winery indicator"
+    },
+    "Michael Scott": {
+      "real": false,
+      "reason": "Common personal name, no winery context"
+    },
+    "Michel-Schlumberger": {
+      "real": true,
+      "reason": "Established Sonoma Coast winery, hyphenated name"
+    },
+    "Midland": {
+      "real": false,
+      "reason": "Generic place name without winery identifier"
+    },
+    "Mignanelli": {
+      "real": true,
+      "reason": "Legitimate small winery surname brand"
+    },
+    "Mike Molly Hendry": {
+      "real": false,
+      "reason": "Multiple personal names, no producer context"
+    },
+    "Milano Family": {
+      "real": true,
+      "reason": "Family winery with clear designation"
+    },
+    "Mill Creek": {
+      "real": true,
+      "reason": "Established Washington winery brand"
+    },
+    "Millbrook": {
+      "real": true,
+      "reason": "Known Hudson Valley winery"
+    },
+    "Minus Tide": {
+      "real": true,
+      "reason": "Legitimate small Oregon wine producer"
+    },
+    "Miramar Estate": {
+      "real": true,
+      "reason": "Estate winery with clear designation"
+    },
+    "Mithra": {
+      "real": true,
+      "reason": "Legitimate winery brand, distinctive name"
+    },
+    "Modern Wine Group": {
+      "real": true,
+      "reason": "Wine company with business structure"
+    },
+    "Mojave": {
+      "real": false,
+      "reason": "Geographic location only, no winery name"
+    },
+    "Momtazi Family Estate": {
+      "real": true,
+      "reason": "Family estate with clear designation"
+    },
+    "Mon Blanc": {
+      "real": true,
+      "reason": "Legitimate winery brand name"
+    },
+    "Moniz": {
+      "real": true,
+      "reason": "Portuguese surname winery brand"
+    },
+    "Monocle": {
+      "real": true,
+      "reason": "Distinctive wine brand name"
+    },
+    "Monte Volpe": {
+      "real": true,
+      "reason": "Known Sonoma wine producer"
+    },
+    "Monterey Bay": {
+      "real": false,
+      "reason": "Geographic region, not winery name"
+    },
+    "Montesquieu Winery": {
+      "real": true,
+      "reason": "Winery with clear name designation"
+    },
+    "Morgan Bay Cellars": {
+      "real": true,
+      "reason": "Cellar with explicit business structure"
+    },
+    "Morisoli Vineyard": {
+      "real": true,
+      "reason": "Vineyard with surname identifier"
+    },
+    "Moss Roxx": {
+      "real": true,
+      "reason": "Distinctive creative winery brand name"
+    },
+    "Mount Eden": {
+      "real": true,
+      "reason": "Historic Santa Cruz Mountain winery"
+    },
+    "Mount St. John Vineyard": {
+      "real": true,
+      "reason": "Named vineyard with location identifier"
+    },
+    "Mt. Luxxe Vineyards": {
+      "real": true,
+      "reason": "Distinctive branded vineyard name"
+    },
+    "MTR Productions": {
+      "real": true,
+      "reason": "Production company name format"
+    },
+    "Mueller": {
+      "real": false,
+      "reason": "Bare surname without winery qualifier"
+    },
+    "Mueller Family Vineyards": {
+      "real": true,
+      "reason": "Family name with vineyards qualifier"
+    },
+    "Muirwood": {
+      "real": true,
+      "reason": "Distinctive winery brand name"
+    },
+    "Munselle Vineyards": {
+      "real": true,
+      "reason": "Named vineyard with qualifier"
+    },
+    "Nalle": {
+      "real": true,
+      "reason": "Established Sonoma Coast winery"
+    },
+    "Napa by Napa": {
+      "real": true,
+      "reason": "Wine brand with regional reference"
+    },
+    "Napa Ridge": {
+      "real": true,
+      "reason": "Known Napa Valley wine producer"
+    },
+    "Napa Wine Company": {
+      "real": true,
+      "reason": "Wine company with Napa focus"
+    },
+    "Narsai David Estates": {
+      "real": true,
+      "reason": "Named person with estates qualifier"
+    },
+    "Neiman": {
+      "real": false,
+      "reason": "Bare surname without winery qualifier"
+    },
+    "Nelson Family": {
+      "real": false,
+      "reason": "Generic family descriptor lacking brand"
+    },
+    "Nichelini": {
+      "real": true,
+      "reason": "Historic California wine family"
+    },
+    "Nichols": {
+      "real": false,
+      "reason": "Bare surname without winery qualifier"
+    },
+    "Nicholson Jones": {
+      "real": true,
+      "reason": "Two-part family name format"
+    },
+    "Nick Goldschmidt": {
+      "real": true,
+      "reason": "Person name with winery identity"
+    },
+    "Nicolette Christopher": {
+      "real": true,
+      "reason": "Person name suggesting winery producer"
+    },
+    "Nielson": {
+      "real": true,
+      "reason": "manual rescue: Nielson by Byron (Santa Maria)"
+    },
+    "Niew Vineyards": {
+      "real": true,
+      "reason": "Unique name with vineyard qualifier"
+    },
+    "Ninety Plus Cellars": {
+      "real": true,
+      "reason": "Branded wine cellar company"
+    },
+    "No Brainer": {
+      "real": true,
+      "reason": "Distinctive marketing brand name"
+    },
+    "Noble Family": {
+      "real": true,
+      "reason": "Family name with qualifier present"
+    },
+    "Noemi Vineyards": {
+      "real": true,
+      "reason": "Person name with vineyard qualifier"
+    },
+    "Noir": {
+      "real": false,
+      "reason": "Generic wine style word alone"
+    },
+    "Noria": {
+      "real": true,
+      "reason": "Distinctive brand name, could be winery"
+    },
+    "North (Alban)": {
+      "real": true,
+      "reason": "Directional name with producer attribution"
+    },
+    "North Northwest": {
+      "real": true,
+      "reason": "Directional brand name for wine"
+    },
+    "Notes": {
+      "real": false,
+      "reason": "Generic descriptor without brand identity"
+    },
+    "Notre Vin": {
+      "real": true,
+      "reason": "French-style wine brand, plausible producer"
+    },
+    "Nova": {
+      "real": false,
+      "reason": "Generic word, lacks winery character"
+    },
+    "Nuestra": {
+      "real": true,
+      "reason": "Spanish name, plausible winery brand"
+    },
+    "O'Connell": {
+      "real": true,
+      "reason": "Surname-based winery name format"
+    },
+    "O'connor": {
+      "real": true,
+      "reason": "Surname-based winery name format"
+    },
+    "Oakford": {
+      "real": true,
+      "reason": "Plausible winery name, surname-like"
+    },
+    "Oakville Cross": {
+      "real": true,
+      "reason": "Location + descriptor, legitimate format"
+    },
+    "Oakville Terraces": {
+      "real": true,
+      "reason": "Location + descriptor, legitimate format"
+    },
+    "Oakville Wine Growers": {
+      "real": true,
+      "reason": "Location + business type format"
+    },
+    "Oblivion": {
+      "real": true,
+      "reason": "Creative single-word winery name"
+    },
+    "Obsession": {
+      "real": true,
+      "reason": "Creative single-word winery name"
+    },
+    "Obsidian": {
+      "real": true,
+      "reason": "Creative single-word winery name"
+    },
+    "Obsidian Ridge": {
+      "real": true,
+      "reason": "Word + descriptor, legitimate format"
+    },
+    "Octavie": {
+      "real": true,
+      "reason": "Unique personal/brand name format"
+    },
+    "Odonata": {
+      "real": true,
+      "reason": "Unique creative winery name"
+    },
+    "Oeno": {
+      "real": true,
+      "reason": "Short wine-related term name"
+    },
+    "Ogden Wine Company": {
+      "real": true,
+      "reason": "Surname + business type format"
+    },
+    "Old Vines Estates": {
+      "real": true,
+      "reason": "Descriptor + business name format"
+    },
+    "Oliver Winery and Vineyards": {
+      "real": true,
+      "reason": "Name + business type format"
+    },
+    "Olivia Edmund": {
+      "real": true,
+      "reason": "Two-name format, plausible brand"
+    },
+    "Olsenperri": {
+      "real": true,
+      "reason": "Compound surname-style name"
+    },
+    "Onabay Vineyards": {
+      "real": true,
+      "reason": "Name + Vineyards qualifier format"
+    },
+    "Ondine Chattan": {
+      "real": true,
+      "reason": "Two-name format, plausible brand"
+    },
+    "One Time Spaceman": {
+      "real": true,
+      "reason": "Unusual creative winery name"
+    },
+    "Optima": {
+      "real": true,
+      "reason": "Single word, plausible wine brand"
+    },
+    "Oregon Territory": {
+      "real": false,
+      "reason": "Geographic region name without qualifier"
+    },
+    "Oriel": {
+      "real": true,
+      "reason": "Short creative winery name"
+    },
+    "Origin": {
+      "real": true,
+      "reason": "Single word, plausible wine brand"
+    },
+    "Orison": {
+      "real": true,
+      "reason": "Unique single-word brand name"
+    },
+    "Oro Bello": {
+      "real": true,
+      "reason": "Spanish phrase, plausible winery"
+    },
+    "Oro en Paz": {
+      "real": true,
+      "reason": "Spanish phrase, plausible winery"
+    },
+    "Oro Puro": {
+      "real": true,
+      "reason": "Spanish phrase, plausible winery"
+    },
+    "Oryx": {
+      "real": true,
+      "reason": "Animal name, plausible winery brand"
+    },
+    "Otra Vez": {
+      "real": true,
+      "reason": "Spanish phrase, creative winery name"
+    },
+    "Our Daily": {
+      "real": true,
+      "reason": "Obscure but possible winery name"
+    },
+    "Our Lady of Guadalupe": {
+      "real": true,
+      "reason": "Religious reference, legitimate winery"
+    },
+    "Ousterhout": {
+      "real": true,
+      "reason": "Surname-based winery name"
+    },
+    "Overland": {
+      "real": true,
+      "reason": "Geographic/directional winery name"
+    },
+    "Ovis": {
+      "real": true,
+      "reason": "Animal name, plausible brand"
+    },
+    "Pacifica": {
+      "real": true,
+      "reason": "Geographic name, coastal region reference"
+    },
+    "Paetra": {
+      "real": true,
+      "reason": "Obscure but creative winery name"
+    },
+    "Page": {
+      "real": true,
+      "reason": "Simple surname, common winery name"
+    },
+    "Pamplin Family Winery": {
+      "real": true,
+      "reason": "Family name with winery qualifier"
+    },
+    "Paon": {
+      "real": true,
+      "reason": "Bird name, elegant winery brand"
+    },
+    "Paper Planes": {
+      "real": true,
+      "reason": "Creative compound name, plausible"
+    },
+    "Paradise Ridge": {
+      "real": true,
+      "reason": "Established Sonoma County winery"
+    },
+    "Parallel 44": {
+      "real": true,
+      "reason": "Geographic/latitude reference name"
+    },
+    "Paras": {
+      "real": true,
+      "reason": "Obscure surname-based name"
+    },
+    "Parr Selection": {
+      "real": true,
+      "reason": "Surname with selection qualifier"
+    },
+    "Parry": {
+      "real": true,
+      "reason": "Simple surname, plausible winery"
+    },
+    "Paso Cellars": {
+      "real": true,
+      "reason": "Paso Robles location-based name"
+    },
+    "Paso d'Oro": {
+      "real": true,
+      "reason": "Spanish gold reference, Paso Robles"
+    },
+    "Paso Ranches": {
+      "real": true,
+      "reason": "Paso Robles ranch-based name"
+    },
+    "Patrick McNeil": {
+      "real": true,
+      "reason": "Personal name winery format"
+    },
+    "Paul Masson": {
+      "real": true,
+      "reason": "Historic California wine brand"
+    },
+    "Pavo": {
+      "real": true,
+      "reason": "Bird name, elegant brand"
+    },
+    "Paydirt": {
+      "real": true,
+      "reason": "Mining reference, Western theme"
+    },
+    "Peacock Family Vineyard": {
+      "real": true,
+      "reason": "Family name with vineyard qualifier"
+    },
+    "Peay Vineyards": {
+      "real": true,
+      "reason": "Established Sonoma Coast vineyard"
+    },
+    "Pedemonte": {
+      "real": true,
+      "reason": "Surname-based winery name"
+    },
+    "Pedras": {
+      "real": true,
+      "reason": "Portuguese reference, plausible name"
+    },
+    "Pellet Estate": {
+      "real": true,
+      "reason": "Surname with estate qualifier"
+    },
+    "Peltier": {
+      "real": true,
+      "reason": "Surname-based winery name."
+    },
+    "Penche": {
+      "real": true,
+      "reason": "Plausible small winery name."
+    },
+    "Peninsula": {
+      "real": false,
+      "reason": "Generic geography word alone."
+    },
+    "Penns Wood": {
+      "real": true,
+      "reason": "Established PA winery."
+    },
+    "Pepperwood Springs": {
+      "real": true,
+      "reason": "Known California wine producer."
+    },
+    "Perchance": {
+      "real": true,
+      "reason": "Plausible creative winery name."
+    },
+    "Perenchio": {
+      "real": true,
+      "reason": "Surname-based producer name."
+    },
+    "Perfect Season": {
+      "real": true,
+      "reason": "Plausible winery brand name."
+    },
+    "Perimeter": {
+      "real": true,
+      "reason": "Plausible abstract winery name."
+    },
+    "Perrymoore": {
+      "real": true,
+      "reason": "Surname-based winery name."
+    },
+    "Peru": {
+      "real": false,
+      "reason": "Country name without producer qualifier."
+    },
+    "Pescadero Creek Vineyard": {
+      "real": true,
+      "reason": "Established vineyard in California."
+    },
+    "Pesenti": {
+      "real": true,
+      "reason": "Italian surname wine producer."
+    },
+    "Petite Fleur": {
+      "real": true,
+      "reason": "Plausible French-style brand name."
+    },
+    "Petree Cellars": {
+      "real": true,
+      "reason": "Explicit cellars designation, real."
+    },
+    "Petticoat": {
+      "real": true,
+      "reason": "Plausible creative winery name."
+    },
+    "Pey-Lucia": {
+      "real": true,
+      "reason": "Hyphenated French-style producer name."
+    },
+    "Pezzato": {
+      "real": true,
+      "reason": "Italian surname wine producer."
+    },
+    "Phelan Vineyard": {
+      "real": true,
+      "reason": "Established California vineyard."
+    },
+    "Philip Staley": {
+      "real": true,
+      "reason": "Person-name-based producer."
+    },
+    "Philippe-Lorraine": {
+      "real": true,
+      "reason": "Hyphenated French surname producer."
+    },
+    "Philo Ridge": {
+      "real": true,
+      "reason": "Plausible vineyard location name."
+    },
+    "Phoenix": {
+      "real": true,
+      "reason": "Plausible abstract winery name."
+    },
+    "Picayune": {
+      "real": true,
+      "reason": "Distinctive creative winery name."
+    },
+    "Picchetti": {
+      "real": true,
+      "reason": "Italian surname wine producer."
+    },
+    "Pied a Terre": {
+      "real": true,
+      "reason": "French phrase wine brand."
+    },
+    "Piena": {
+      "real": true,
+      "reason": "Plausible short winery name."
+    },
+    "Piers": {
+      "real": true,
+      "reason": "Simple surname winery name."
+    },
+    "Pillar Rock": {
+      "real": true,
+      "reason": "Plausible vineyard location name."
+    },
+    "Pink Darner": {
+      "real": true,
+      "reason": "Distinctive creative winery name."
+    },
+    "Pinot Society": {
+      "real": true,
+      "reason": "Creative wine brand name, legitimate producer"
+    },
+    "Pip & Plow": {
+      "real": true,
+      "reason": "Established winery with distinctive brand"
+    },
+    "Poetry": {
+      "real": true,
+      "reason": "Single-word brand names common in wine industry"
+    },
+    "Point North": {
+      "real": true,
+      "reason": "Directional brand name, plausible winery"
+    },
+    "Pomar Junction": {
+      "real": true,
+      "reason": "Named after location junction, real vineyard"
+    },
+    "Pont de Chevalier": {
+      "real": true,
+      "reason": "French-named estate, legitimate California producer"
+    },
+    "Pont Neuf": {
+      "real": true,
+      "reason": "French bridge reference, plausible wine brand"
+    },
+    "Populis": {
+      "real": true,
+      "reason": "Legitimate California wine producer/brand"
+    },
+    "Portfolio": {
+      "real": false,
+      "reason": "Generic word, lacks winery brand character"
+    },
+    "Poseidon Vineyard": {
+      "real": true,
+      "reason": "Named vineyard with producer qualifier"
+    },
+    "Positas": {
+      "real": true,
+      "reason": "Established Santa Cruz winery, real producer"
+    },
+    "Potek": {
+      "real": true,
+      "reason": "Small obscure winery name, legitimate producer"
+    },
+    "Pouillon": {
+      "real": true,
+      "reason": "French-style name, plausible wine producer"
+    },
+    "Premiere Napa Valley (Accendo Cellars)": {
+      "real": true,
+      "reason": "Accendo Cellars legitimate Napa winery"
+    },
+    "Premiere Napa Valley (Ahnfeldt)": {
+      "real": true,
+      "reason": "Ahnfeldt legitimate Napa wine producer"
+    },
+    "Premiere Napa Valley (Anomaly Vineyards)": {
+      "real": true,
+      "reason": "Anomaly Vineyards legitimate Napa producer"
+    },
+    "Premiere Napa Valley (Arrow Branch)": {
+      "real": true,
+      "reason": "Arrow Branch legitimate Napa winery"
+    },
+    "Premiere Napa Valley (Baldacci Family Vineyards)": {
+      "real": true,
+      "reason": "Baldacci Family Vineyards legitimate producer"
+    },
+    "Premiere Napa Valley (Barbour)": {
+      "real": true,
+      "reason": "Barbour legitimate Napa wine producer"
+    },
+    "Premiere Napa Valley (Bevan Cellars & Chateau Boswell Winery)": {
+      "real": true,
+      "reason": "Multiple legitimate Napa wineries listed"
+    },
+    "Premiere Napa Valley (Bure Family Wines)": {
+      "real": true,
+      "reason": "Bure Family Wines legitimate producer"
+    },
+    "Premiere Napa Valley (Casa Nuestra)": {
+      "real": true,
+      "reason": "Casa Nuestra established Napa winery"
+    },
+    "Premiere Napa Valley (Coho)": {
+      "real": true,
+      "reason": "Coho legitimate Napa wine producer"
+    },
+    "Premiere Napa Valley (Conn Creek Winery)": {
+      "real": true,
+      "reason": "Conn Creek Winery established Napa producer"
+    },
+    "Premiere Napa Valley (Corison Winery, Dyer Vineyard, Gallica, Snowden Vineyards)": {
+      "real": true,
+      "reason": "Multiple established Napa wineries listed"
+    },
+    "Premiere Napa Valley (Farella Vineyard)": {
+      "real": true,
+      "reason": "Farella Vineyard legitimate Napa producer"
+    },
+    "Premiere Napa Valley (Frias Family Vineyard)": {
+      "real": true,
+      "reason": "Frias Family Vineyard legitimate producer"
+    },
+    "Premiere Napa Valley (Heitz Cellar)": {
+      "real": true,
+      "reason": "Heitz Cellar iconic Napa winery"
+    },
+    "Premiere Napa Valley (Hestan Vineyards)": {
+      "real": true,
+      "reason": "Hestan Vineyards established Napa producer"
+    },
+    "Premiere Napa Valley (Hewitt Vineyard and Provenance Vineyards)": {
+      "real": true,
+      "reason": "Multiple established Napa wineries listed"
+    },
+    "Premiere Napa Valley (Hiatus Cellars)": {
+      "real": true,
+      "reason": "Hiatus Cellars is legitimate Napa winery"
+    },
+    "Premiere Napa Valley (Husic)": {
+      "real": true,
+      "reason": "Husic is known Napa Valley producer"
+    },
+    "Premiere Napa Valley (John Anthony)": {
+      "real": true,
+      "reason": "John Anthony is established winery"
+    },
+    "Premiere Napa Valley (Kenefick Ranch)": {
+      "real": true,
+      "reason": "Kenefick Ranch is real Napa producer"
+    },
+    "Premiere Napa Valley (Lang & Reed)": {
+      "real": true,
+      "reason": "Lang & Reed is established winery"
+    },
+    "Premiere Napa Valley (Page Cellars)": {
+      "real": true,
+      "reason": "Page Cellars is legitimate producer"
+    },
+    "Premiere Napa Valley (Pahlmeyer)": {
+      "real": true,
+      "reason": "Pahlmeyer is well-known winery"
+    },
+    "Premiere Napa Valley (Reynolds Family Winery)": {
+      "real": true,
+      "reason": "Reynolds Family Winery is real"
+    },
+    "Premiere Napa Valley (Robert Mondavi Winery)": {
+      "real": true,
+      "reason": "Robert Mondavi is iconic winery"
+    },
+    "Premiere Napa Valley (Rocca)": {
+      "real": true,
+      "reason": "Rocca is legitimate Napa producer"
+    },
+    "Premiere Napa Valley (Scarecrow)": {
+      "real": true,
+      "reason": "Scarecrow is established winery"
+    },
+    "Premiere Napa Valley (Sciandri Family Vineyards)": {
+      "real": true,
+      "reason": "Sciandri Family Vineyards is real"
+    },
+    "Premiere Napa Valley (Signorello)": {
+      "real": true,
+      "reason": "Signorello is known Napa winery"
+    },
+    "Premiere Napa Valley (Snowden)": {
+      "real": true,
+      "reason": "Snowden is legitimate producer"
+    },
+    "Premiere Napa Valley (Sodaro)": {
+      "real": true,
+      "reason": "Sodaro is real Napa producer"
+    },
+    "Premiere Napa Valley (Taplin Cellars)": {
+      "real": true,
+      "reason": "Taplin Cellars is legitimate winery"
+    },
+    "Premiere Napa Valley (Tierra Roja Vineyards": {
+      "real": true,
+      "reason": "Tierra Roja Vineyards is real"
+    },
+    "Premiere Napa Valley (Tournesol)": {
+      "real": true,
+      "reason": "Tournesol is legitimate producer"
+    },
+    "Premiere Napa Valley (Tuck Beckstoffer)": {
+      "real": true,
+      "reason": "Tuck Beckstoffer is real winery"
+    },
+    "Prescription": {
+      "real": false,
+      "reason": "Generic term, no brand character"
+    },
+    "Presidio": {
+      "real": false,
+      "reason": "Generic place name without qualifier"
+    },
+    "Preston of Dry Creek": {
+      "real": true,
+      "reason": "Preston of Dry Creek is established"
+    },
+    "Prime": {
+      "real": false,
+      "reason": "Too generic, likely descriptor"
+    },
+    "Prime Solum": {
+      "real": true,
+      "reason": "Prime Solum is legitimate winery"
+    },
+    "Primitive": {
+      "real": false,
+      "reason": "Generic wine descriptor term"
+    },
+    "Progeny": {
+      "real": true,
+      "reason": "Progeny is legitimate wine brand"
+    },
+    "Promontory (Harlan)": {
+      "real": true,
+      "reason": "Promontory by Harlan Estate exists"
+    },
+    "Purple Heart": {
+      "real": true,
+      "reason": "Purple Heart could be winery name"
+    },
+    "Purple Owl": {
+      "real": true,
+      "reason": "Purple Owl is creative winery name"
+    },
+    "PWR Wines": {
+      "real": true,
+      "reason": "PWR Wines is legitimate producer"
+    },
+    "QTR": {
+      "real": true,
+      "reason": "Plausible winery acronym/brand name"
+    },
+    "Quail Run": {
+      "real": true,
+      "reason": "Common nature-inspired winery name"
+    },
+    "Quaintrelle": {
+      "real": true,
+      "reason": "Unusual but distinctive brand character"
+    },
+    "Quattro Theory": {
+      "real": true,
+      "reason": "Creative/conceptual winery name"
+    },
+    "Quest": {
+      "real": true,
+      "reason": "Simple word works as brand name"
+    },
+    "Quipster": {
+      "real": true,
+      "reason": "Quirky personality-driven brand name"
+    },
+    "R&B Cellars": {
+      "real": true,
+      "reason": "Standard cellars format with initials"
+    },
+    "Radio Silence": {
+      "real": true,
+      "reason": "Evocative/artistic winery name style"
+    },
+    "Rail 2 Rail": {
+      "real": true,
+      "reason": "Creative compound name, winery plausible"
+    },
+    "Railsback Freres": {
+      "real": true,
+      "reason": "Family name with French plural form"
+    },
+    "Rakes Point": {
+      "real": true,
+      "reason": "Geographic/descriptive winery name"
+    },
+    "Ramal Road": {
+      "real": true,
+      "reason": "Specific place-based brand name"
+    },
+    "Ramazzotti": {
+      "real": false,
+      "reason": "Italian liqueur brand, not US winery"
+    },
+    "Ramian": {
+      "real": true,
+      "reason": "Surname-based winery name"
+    },
+    "Ramsay": {
+      "real": true,
+      "reason": "manual rescue: Ramsay Wine Cellars (Kent Rasmussen, Napa)"
+    },
+    "Ramseyer Vineyards": {
+      "real": true,
+      "reason": "Family surname with vineyards qualifier"
+    },
+    "Ranchero": {
+      "real": false,
+      "reason": "Generic descriptor without brand specificity"
+    },
+    "Random Path": {
+      "real": true,
+      "reason": "Conceptual/poetic winery brand name"
+    },
+    "Rapport": {
+      "real": true,
+      "reason": "Abstract concept works as brand"
+    },
+    "Rashi": {
+      "real": true,
+      "reason": "Proper name/acronym style brand"
+    },
+    "RB": {
+      "real": false,
+      "reason": "Too generic, just initials, no context"
+    },
+    "Rebellious": {
+      "real": false,
+      "reason": "Generic adjective, lacks brand identity"
+    },
+    "Recoltant": {
+      "real": false,
+      "reason": "French wine term, not brand name"
+    },
+    "Red Lily": {
+      "real": true,
+      "reason": "Descriptive imagery wine brand name"
+    },
+    "Red Thread": {
+      "real": true,
+      "reason": "Poetic/artistic wine brand name"
+    },
+    "Redwick Estate": {
+      "real": true,
+      "reason": "Proper name with estate qualifier"
+    },
+    "Renaissance": {
+      "real": false,
+      "reason": "Generic historical term without brand"
+    },
+    "Renard": {
+      "real": true,
+      "reason": "French surname works as brand"
+    },
+    "Republic of Pink": {
+      "real": true,
+      "reason": "Whimsical/creative brand name style"
+    },
+    "Republique": {
+      "real": true,
+      "reason": "French word works as wine brand"
+    },
+    "Requiem": {
+      "real": true,
+      "reason": "Creative winery name, legitimate brand"
+    },
+    "Retzlaff": {
+      "real": true,
+      "reason": "Surname-based winery, common format"
+    },
+    "Reverie": {
+      "real": true,
+      "reason": "Poetic winery name, plausible producer"
+    },
+    "Reverie II": {
+      "real": true,
+      "reason": "Numbered variant, suggests multiple labels"
+    },
+    "Revolver Wine Company": {
+      "real": true,
+      "reason": "Descriptive company name, legitimate"
+    },
+    "Rex-Goliath": {
+      "real": true,
+      "reason": "Bold brand name, known winery"
+    },
+    "Reynolds": {
+      "real": true,
+      "reason": "Surname alone acceptable for winery"
+    },
+    "Rhiannon": {
+      "real": true,
+      "reason": "Distinctive name, plausible producer"
+    },
+    "Richard Family": {
+      "real": true,
+      "reason": "Family-based winery name format"
+    },
+    "Richard Partridge": {
+      "real": true,
+      "reason": "Personal name winery, legitimate format"
+    },
+    "Ride & Ridden": {
+      "real": true,
+      "reason": "Descriptive brand name, acceptable format"
+    },
+    "Ridge Vineyards": {
+      "real": true,
+      "reason": "Established Napa Valley winery, known"
+    },
+    "Ristow": {
+      "real": true,
+      "reason": "Surname-based winery, common format"
+    },
+    "Ritchie Creek": {
+      "real": true,
+      "reason": "Geographic + place name, legitimate"
+    },
+    "River & Vine": {
+      "real": true,
+      "reason": "Descriptive brand with ampersand"
+    },
+    "Road 31": {
+      "real": true,
+      "reason": "Route-based winery name, plausible"
+    },
+    "Roadhouse Winery": {
+      "real": true,
+      "reason": "Descriptive compound winery name"
+    },
+    "Roanoke": {
+      "real": false,
+      "reason": "Geographic name alone, no qualifier"
+    },
+    "Robert Egelhoff": {
+      "real": true,
+      "reason": "Personal name winery, legitimate"
+    },
+    "Robert Graig": {
+      "real": true,
+      "reason": "Personal name winery, legitimate"
+    },
+    "Robert John Vineyards": {
+      "real": true,
+      "reason": "Family + vineyard qualifier, legitimate"
+    },
+    "Robert Renzoni Vineyards": {
+      "real": true,
+      "reason": "Personal + vineyard qualifier, legitimate"
+    },
+    "Roberts + Rogers": {
+      "real": true,
+      "reason": "Dual surnames with ampersand format"
+    },
+    "Rock Creek": {
+      "real": true,
+      "reason": "Geographic name with common modifier"
+    },
+    "Rock View": {
+      "real": true,
+      "reason": "Geographic name with descriptor"
+    },
+    "Rockwell Brown": {
+      "real": true,
+      "reason": "Personal name winery, legitimate"
+    },
+    "Rocky Point Cellars": {
+      "real": true,
+      "reason": "Geographic + cellars qualifier, legitimate"
+    },
+    "Rocky Trail": {
+      "real": true,
+      "reason": "Geographic descriptor, plausible brand"
+    },
+    "Rodde": {
+      "real": true,
+      "reason": "Surname-based winery, legitimate"
+    },
+    "Roddis Cellars": {
+      "real": true,
+      "reason": "Surname + cellars qualifier, legitimate"
+    },
+    "Rogue": {
+      "real": true,
+      "reason": "Rogue Wines, Oregon producer"
+    },
+    "Romeo": {
+      "real": true,
+      "reason": "Romeo Cellars, Washington winery"
+    },
+    "Root Cause": {
+      "real": true,
+      "reason": "Root Cause Wine, creative brand name"
+    },
+    "Rosa Obscura": {
+      "real": true,
+      "reason": "Rosa Obscura, legitimate wine label"
+    },
+    "Rose  & Arrow": {
+      "real": true,
+      "reason": "Rose & Arrow, small winery brand"
+    },
+    "Rose Creek": {
+      "real": true,
+      "reason": "Rose Creek Vineyards, Idaho producer"
+    },
+    "Roth": {
+      "real": true,
+      "reason": "Roth Wines, California winery"
+    },
+    "Roubaix Vineyards": {
+      "real": true,
+      "reason": "Roubaix Vineyards, Washington producer"
+    },
+    "Rowland": {
+      "real": true,
+      "reason": "Rowland Cellars, legitimate winery"
+    },
+    "Roy & Fils": {
+      "real": true,
+      "reason": "Roy & Fils, wine producer"
+    },
+    "Roy Piper": {
+      "real": true,
+      "reason": "Roy Piper Wines, family name brand"
+    },
+    "RPM": {
+      "real": true,
+      "reason": "RPM Wines, branded winery label"
+    },
+    "Rua": {
+      "real": true,
+      "reason": "Rua Wines, producer brand name"
+    },
+    "Rubissow": {
+      "real": true,
+      "reason": "Rubissow Vineyards, Napa producer"
+    },
+    "Runway": {
+      "real": true,
+      "reason": "Runway Wines, creative brand name"
+    },
+    "Rutherford Grove": {
+      "real": true,
+      "reason": "Rutherford Grove, Napa winery"
+    },
+    "Rutledge & Vine": {
+      "real": true,
+      "reason": "Rutledge & Vine, boutique producer"
+    },
+    "Sabina Vineyards": {
+      "real": true,
+      "reason": "Sabina Vineyards, Washington winery"
+    },
+    "Sabotage": {
+      "real": true,
+      "reason": "Sabotage Wine, creative brand"
+    },
+    "Saffron Fields Vineyard": {
+      "real": true,
+      "reason": "Saffron Fields Vineyard, producer"
+    },
+    "Sage": {
+      "real": true,
+      "reason": "Sage Wine, branded label"
+    },
+    "Saint Helena Winery": {
+      "real": true,
+      "reason": "Saint Helena Winery, Napa producer"
+    },
+    "Saint John": {
+      "real": true,
+      "reason": "Saint John, wine brand"
+    },
+    "Saint Michelle": {
+      "real": true,
+      "reason": "Saint Michelle Wines, Washington producer"
+    },
+    "Sainte Michelle": {
+      "real": true,
+      "reason": "Sainte Michelle, wine brand variant"
+    },
+    "Sainte Michelle (Stimson Estate)": {
+      "real": true,
+      "reason": "Sainte Michelle with estate qualifier"
+    },
+    "Salishan": {
+      "real": true,
+      "reason": "Salishan Vineyards, Oregon winery"
+    },
+    "San Lorenzo": {
+      "real": true,
+      "reason": "San Lorenzo, wine producer"
+    },
+    "San Marcos Winery": {
+      "real": true,
+      "reason": "San Marcos Winery, California producer"
+    },
+    "Sand Hill": {
+      "real": true,
+      "reason": "Sand Hill Vineyard, winery brand"
+    },
+    "Sander Wine Co.": {
+      "real": true,
+      "reason": "Wine Co. qualifier indicates legitimate producer."
+    },
+    "Sandor Vineyards": {
+      "real": true,
+      "reason": "Vineyards designation, plausible winery name."
+    },
+    "Sang Froid": {
+      "real": true,
+      "reason": "Creative winery name, French-inspired brand."
+    },
+    "Sanglier": {
+      "real": true,
+      "reason": "Winery brand name, French wine term."
+    },
+    "Sarah Powell": {
+      "real": false,
+      "reason": "Bare person name, no winery qualifier."
+    },
+    "Savage Wine Company": {
+      "real": true,
+      "reason": "Wine Company qualifier, legitimate producer."
+    },
+    "Savannah Chanelle": {
+      "real": true,
+      "reason": "Creative brand name with winery character."
+    },
+    "Sawyer": {
+      "real": true,
+      "reason": "Single-word winery name, plausible brand."
+    },
+    "Scarlet Smack": {
+      "real": true,
+      "reason": "Creative, distinctive wine brand name."
+    },
+    "Scenic Root (Pey Marin)": {
+      "real": true,
+      "reason": "Named winery with location parenthetical."
+    },
+    "Scheid": {
+      "real": true,
+      "reason": "Established Monterey County wine producer."
+    },
+    "Scheid Family": {
+      "real": true,
+      "reason": "Family designation, legitimate winery name."
+    },
+    "Schein Erna": {
+      "real": false,
+      "reason": "Bare person name, no producer qualifier."
+    },
+    "Schneider & Bieler": {
+      "real": true,
+      "reason": "Partnership name typical of wine producers."
+    },
+    "Schocken Hill": {
+      "real": true,
+      "reason": "Hill-named vineyard, plausible brand."
+    },
+    "School House": {
+      "real": true,
+      "reason": "School House, established winery name."
+    },
+    "Scott Harvey": {
+      "real": true,
+      "reason": "Known Amador County wine producer."
+    },
+    "Scotty-Boy!": {
+      "real": true,
+      "reason": "Quirky winery brand with character."
+    },
+    "Sea Pines Vineyard": {
+      "real": true,
+      "reason": "Vineyard name, legitimate designation."
+    },
+    "Secret Cellars": {
+      "real": true,
+      "reason": "Cellars qualifier, winery brand name."
+    },
+    "Seebass": {
+      "real": true,
+      "reason": "Creative single-word wine brand."
+    },
+    "Sei Querce": {
+      "real": true,
+      "reason": "Italian-style winery brand name."
+    },
+    "Selby": {
+      "real": true,
+      "reason": "Single-word winery brand, plausible."
+    },
+    "Semler": {
+      "real": true,
+      "reason": "Surname-based winery, common format."
+    },
+    "Sempre Vive": {
+      "real": true,
+      "reason": "Italian phrase wine brand name."
+    },
+    "Serdonis": {
+      "real": true,
+      "reason": "Distinctive winery brand name."
+    },
+    "Seven Daughters": {
+      "real": true,
+      "reason": "Named wine brand, legitimate producer."
+    },
+    "Seven Stones": {
+      "real": true,
+      "reason": "Stones-themed vineyard brand name."
+    },
+    "Shadowbox": {
+      "real": true,
+      "reason": "Creative winery brand name."
+    },
+    "Shanondoah": {
+      "real": false,
+      "reason": "Misspelled/unclear, not standard winery."
+    },
+    "Shatter Cane": {
+      "real": true,
+      "reason": "Creative winery name, plausible brand"
+    },
+    "Shenandoah Vineyards of California": {
+      "real": true,
+      "reason": "Explicit vineyard designation, California"
+    },
+    "Shiloh Road": {
+      "real": true,
+      "reason": "Road-named vineyard, common style"
+    },
+    "Shinn": {
+      "real": true,
+      "reason": "Short personal name, many wineries use this"
+    },
+    "Shokrian Vineyard": {
+      "real": true,
+      "reason": "Surname vineyard, legitimate format"
+    },
+    "Shoreline Vineyards": {
+      "real": true,
+      "reason": "Geographic vineyard name, standard"
+    },
+    "Shortbread": {
+      "real": false,
+      "reason": "Generic cookie brand, no wine character"
+    },
+    "Shroud Mountain": {
+      "real": true,
+      "reason": "Mountain vineyard name, plausible"
+    },
+    "Shug": {
+      "real": true,
+      "reason": "Short winery name, real California producer"
+    },
+    "Shutter": {
+      "real": true,
+      "reason": "Simple descriptive name, wine-related"
+    },
+    "Sidebar Cellars": {
+      "real": true,
+      "reason": "Cellars designation, legitimate format"
+    },
+    "Sierra Madre": {
+      "real": true,
+      "reason": "Geographic mountain name, plausible"
+    },
+    "Sika": {
+      "real": true,
+      "reason": "Short animal-name winery, acceptable"
+    },
+    "Silver Ghost": {
+      "real": true,
+      "reason": "Evocative brand name, wine-appropriate"
+    },
+    "Silver Puffs": {
+      "real": true,
+      "reason": "Whimsical winery name, plausible producer"
+    },
+    "Silver Totem": {
+      "real": true,
+      "reason": "Totem-based name, creative winery"
+    },
+    "Silverpoint Cellars": {
+      "real": true,
+      "reason": "Cellars designation, legitimate format"
+    },
+    "Sin Zin": {
+      "real": true,
+      "reason": "Zinfandel-focused name, plausible"
+    },
+    "Sire Estate": {
+      "real": true,
+      "reason": "Estate designation, legitimate format"
+    },
+    "Sirita": {
+      "real": true,
+      "reason": "Short unique name, plausible winery"
+    },
+    "Sivas Sonoma": {
+      "real": true,
+      "reason": "Sonoma region explicit, legitimate"
+    },
+    "Skewis": {
+      "real": true,
+      "reason": "Uncommon surname name, plausible"
+    },
+    "Sky River": {
+      "real": true,
+      "reason": "Geographic river name, wine-styled"
+    },
+    "Skyfall Vineyard": {
+      "real": true,
+      "reason": "Vineyard designation, dramatic name"
+    },
+    "Slam Dunk": {
+      "real": true,
+      "reason": "Sports-themed winery name, creative"
+    },
+    "Sling & Spear": {
+      "real": true,
+      "reason": "Alliterative brand, plausible winery"
+    },
+    "Slingshot": {
+      "real": true,
+      "reason": "Projectile name, creative winery"
+    },
+    "SLO Down": {
+      "real": true,
+      "reason": "SLO County wordplay, regional"
+    },
+    "Slow Press": {
+      "real": true,
+      "reason": "Wine process reference, plausible"
+    },
+    "Smith Perry": {
+      "real": true,
+      "reason": "Personal names combined, legitimate format"
+    },
+    "Smoking Gun": {
+      "real": true,
+      "reason": "Creative winery brand name"
+    },
+    "Sockeye": {
+      "real": true,
+      "reason": "Legitimate Washington winery"
+    },
+    "Solar Estate": {
+      "real": true,
+      "reason": "Estate winery naming style"
+    },
+    "Solemn Cellars": {
+      "real": true,
+      "reason": "Cellars designation indicates winery"
+    },
+    "Solid Ground": {
+      "real": true,
+      "reason": "Plausible winery brand name"
+    },
+    "Sonma Loeb": {
+      "real": true,
+      "reason": "California winery, real producer"
+    },
+    "Sonoma Creek": {
+      "real": false,
+      "reason": "Generic Sonoma reference, no qualifier"
+    },
+    "Sonoma Vineyards": {
+      "real": true,
+      "reason": "Historic Sonoma County producer"
+    },
+    "Sorada": {
+      "real": true,
+      "reason": "Legitimate winery brand name"
+    },
+    "Sorella": {
+      "real": true,
+      "reason": "Plausible winery name, real producer"
+    },
+    "Sostener": {
+      "real": true,
+      "reason": "Small winery or brand name"
+    },
+    "Southold Farm & Cellars": {
+      "real": true,
+      "reason": "Legitimate Long Island producer"
+    },
+    "Spence": {
+      "real": true,
+      "reason": "Plausible winery brand name"
+    },
+    "Spill The Wine": {
+      "real": true,
+      "reason": "Creative wine brand name"
+    },
+    "Spindrift Cellars": {
+      "real": true,
+      "reason": "Cellars qualifier indicates winery"
+    },
+    "Sponge Cake": {
+      "real": false,
+      "reason": "Generic dessert name, no winery"
+    },
+    "Spoto": {
+      "real": true,
+      "reason": "Plausible winery surname brand"
+    },
+    "St Innocent": {
+      "real": true,
+      "reason": "Legitimate Oregon winery"
+    },
+    "St Michelle": {
+      "real": true,
+      "reason": "Chateau Ste. Michelle producer"
+    },
+    "Stack House": {
+      "real": true,
+      "reason": "Plausible winery brand name"
+    },
+    "Stag's Hollow": {
+      "real": true,
+      "reason": "British Columbia/Washington area producer"
+    },
+    "Stalworth": {
+      "real": false,
+      "reason": "Generic word, lacks winery character"
+    },
+    "Stanton": {
+      "real": true,
+      "reason": "Plausible winery surname brand"
+    },
+    "Stardust": {
+      "real": false,
+      "reason": "Generic word, no winery qualifier"
+    },
+    "Stark": {
+      "real": true,
+      "reason": "Plausible winery surname brand"
+    },
+    "Starside": {
+      "real": true,
+      "reason": "Plausible creative winery name"
+    },
+    "Statera": {
+      "real": true,
+      "reason": "Plausible winery brand name"
+    },
+    "Stave & Steel": {
+      "real": true,
+      "reason": "Creative winemaking brand name"
+    },
+    "Ste. Michelle & Antinori": {
+      "real": true,
+      "reason": "Known Chateau Ste. Michelle joint venture"
+    },
+    "Stehleon": {
+      "real": true,
+      "reason": "Plausible small winery brand"
+    },
+    "Steltzner Vineyards": {
+      "real": true,
+      "reason": "Established Napa Valley winery"
+    },
+    "Stetson WInery": {
+      "real": true,
+      "reason": "Known California winery, typo in listing"
+    },
+    "Stickybeak": {
+      "real": true,
+      "reason": "Creative small winery name"
+    },
+    "Stokes' Ghost": {
+      "real": true,
+      "reason": "Legitimate winery with creative name"
+    },
+    "Stomping Girl": {
+      "real": true,
+      "reason": "Known Australian wine brand, US availability"
+    },
+    "Stone Barn": {
+      "real": true,
+      "reason": "Small US winery, common name style"
+    },
+    "Stone Cruz": {
+      "real": true,
+      "reason": "Plausible winery name, region descriptor"
+    },
+    "StoneFly Vineyards": {
+      "real": true,
+      "reason": "Legitimate branded winery name"
+    },
+    "Stonegate": {
+      "real": true,
+      "reason": "Established winery, common name"
+    },
+    "Strala Vineyards": {
+      "real": true,
+      "reason": "Legitimate small winery name"
+    },
+    "Stratford Cellars": {
+      "real": true,
+      "reason": "Known winery with cellars designation"
+    },
+    "Streblow": {
+      "real": true,
+      "reason": "Surname-based winery, legitimate style"
+    },
+    "Sturino Trotta": {
+      "real": true,
+      "reason": "Partnership winery name format"
+    },
+    "Surh Cellars": {
+      "real": true,
+      "reason": "Known California winery"
+    },
+    "SVB": {
+      "real": false,
+      "reason": "Acronym alone lacks winery character"
+    },
+    "Sycamore Creek": {
+      "real": true,
+      "reason": "Established California winery"
+    },
+    "Sylvie": {
+      "real": true,
+      "reason": "Small winery, single name acceptable"
+    },
+    "Tagaris": {
+      "real": true,
+      "reason": "Known Washington state winery"
+    },
+    "Talty": {
+      "real": true,
+      "reason": "Legitimate surname-based winery"
+    },
+    "Tant Pis!": {
+      "real": true,
+      "reason": "Creative winery name with French phrase"
+    },
+    "Tantara": {
+      "real": true,
+      "reason": "Plausible winery name, creative style"
+    },
+    "Tara Bella Winery & Vineyards": {
+      "real": true,
+      "reason": "Established winery with full designation"
+    },
+    "Tarius": {
+      "real": true,
+      "reason": "Legitimate single-word winery name"
+    },
+    "Tattoo Girl": {
+      "real": true,
+      "reason": "Creative modern winery name"
+    },
+    "Taylor Estates": {
+      "real": true,
+      "reason": "Established winery, classic name"
+    },
+    "TB Cellars": {
+      "real": true,
+      "reason": "Known California cellars brand"
+    },
+    "Tedeschi Family Winery": {
+      "real": true,
+      "reason": "Family winery with full designation"
+    },
+    "Teira": {
+      "real": true,
+      "reason": "Legitimate single-word winery name"
+    },
+    "Telegraph Road": {
+      "real": true,
+      "reason": "Established winery, geographic reference"
+    },
+    "Tempus Cellars": {
+      "real": true,
+      "reason": "Known California winery brand"
+    },
+    "Tench": {
+      "real": true,
+      "reason": "Single-word winery name, plausible"
+    },
+    "Tench Estate": {
+      "real": true,
+      "reason": "Estate qualifier makes it legitimate"
+    },
+    "Terre et Sang": {
+      "real": true,
+      "reason": "French phrase, could be US winery"
+    },
+    "Tesseron": {
+      "real": false,
+      "reason": "French Cognac house, not US producer"
+    },
+    "Tetra": {
+      "real": true,
+      "reason": "Single-word brand name, plausible winery"
+    },
+    "The Adroit Initiative": {
+      "real": true,
+      "reason": "Creative winery name with brand character"
+    },
+    "The Atom": {
+      "real": true,
+      "reason": "Simple brand name, plausible winery"
+    },
+    "The Cellar Cru": {
+      "real": true,
+      "reason": "Cellar qualifier, legitimate winery name"
+    },
+    "The Cleaver": {
+      "real": true,
+      "reason": "Creative single-word brand name"
+    },
+    "The Debatte": {
+      "real": true,
+      "reason": "Creative brand with proprietary feel"
+    },
+    "The Elkhoury Family Vineyard": {
+      "real": true,
+      "reason": "Family vineyard, clear legitimate structure"
+    },
+    "The Farm": {
+      "real": true,
+      "reason": "manual rescue: The Farm Winery (Paso Robles)"
+    },
+    "The Happy Medium": {
+      "real": true,
+      "reason": "Creative phrase with brand character"
+    },
+    "The Hunt": {
+      "real": true,
+      "reason": "Creative single-word brand name"
+    },
+    "The Knife": {
+      "real": true,
+      "reason": "Creative brand name, plausible winery"
+    },
+    "The Leader": {
+      "real": false,
+      "reason": "Generic word, lacks brand character"
+    },
+    "The Mascot": {
+      "real": true,
+      "reason": "Creative brand name, plausible"
+    },
+    "The Pinot Project": {
+      "real": true,
+      "reason": "Project-style brand, legitimate winery"
+    },
+    "The Pitmaster": {
+      "real": true,
+      "reason": "Creative themed brand name"
+    },
+    "The Seeker": {
+      "real": true,
+      "reason": "Creative single-word brand name"
+    },
+    "The Show": {
+      "real": false,
+      "reason": "Generic word, lacks brand character"
+    },
+    "The Simple Grape": {
+      "real": true,
+      "reason": "Simple phrase with brand character"
+    },
+    "The Treat": {
+      "real": false,
+      "reason": "Generic word, lacks brand character"
+    },
+    "The Vigilante": {
+      "real": true,
+      "reason": "Creative brand name, plausible"
+    },
+    "The Willametter Journal": {
+      "real": true,
+      "reason": "Regional reference, creative winery name"
+    },
+    "The Wine Foundry": {
+      "real": true,
+      "reason": "Foundry qualifier, legitimate winery"
+    },
+    "The Wine Society": {
+      "real": false,
+      "reason": "Generic society name, not producer"
+    },
+    "Thomas": {
+      "real": true,
+      "reason": "Personal name, classic winery style"
+    },
+    "Threaded Tale": {
+      "real": true,
+      "reason": "Creative phrase, brand character present"
+    },
+    "Thumbprint Cellars": {
+      "real": true,
+      "reason": "Cellars qualifier, legitimate winery name"
+    },
+    "Thunder Mountains": {
+      "real": true,
+      "reason": "Plausible winery brand name"
+    },
+    "Thurlow Cellars": {
+      "real": true,
+      "reason": "Cellars qualifier, legitimate format"
+    },
+    "Tiedemann": {
+      "real": true,
+      "reason": "Surname-based producer, common style"
+    },
+    "Tierce": {
+      "real": true,
+      "reason": "Wine term, possible winery name"
+    },
+    "Tierra Roja": {
+      "real": true,
+      "reason": "Spanish-style name, legitimate winery"
+    },
+    "Time Place Wine Co.": {
+      "real": true,
+      "reason": "Wine Co. qualifier present"
+    },
+    "Tin Star": {
+      "real": true,
+      "reason": "Creative brand name, plausible"
+    },
+    "Tom Scott Vineyard": {
+      "real": true,
+      "reason": "Person surname plus Vineyard"
+    },
+    "Tom Shula": {
+      "real": false,
+      "reason": "Surname alone without winery qualifier"
+    },
+    "Tonti": {
+      "real": true,
+      "reason": "Surname-based, plausible producer"
+    },
+    "Topaz": {
+      "real": false,
+      "reason": "Generic color word, no brand character"
+    },
+    "Tor Kenward": {
+      "real": true,
+      "reason": "Person surname, legitimate format"
+    },
+    "Torial": {
+      "real": true,
+      "reason": "Obscure but plausible winery name"
+    },
+    "Tortuga": {
+      "real": true,
+      "reason": "Creative brand name, realistic"
+    },
+    "Totts": {
+      "real": true,
+      "reason": "Plausible winery brand name"
+    },
+    "Trader Joe's": {
+      "real": false,
+      "reason": "Retail chain, not wine producer"
+    },
+    "Trailstone": {
+      "real": true,
+      "reason": "Creative brand, plausible winery"
+    },
+    "Travail": {
+      "real": true,
+      "reason": "Surname-based, plausible producer"
+    },
+    "Trentadue": {
+      "real": true,
+      "reason": "Surname-based, legitimate winery"
+    },
+    "Trey Marie": {
+      "real": true,
+      "reason": "Person name format, realistic"
+    },
+    "Tri Tip": {
+      "real": false,
+      "reason": "Generic food term, no winery context"
+    },
+    "Trig Point": {
+      "real": true,
+      "reason": "Creative place-based name"
+    },
+    "Trim": {
+      "real": false,
+      "reason": "Generic word, lacks brand character"
+    },
+    "Troublemaker": {
+      "real": true,
+      "reason": "Creative brand name, plausible"
+    },
+    "True Believer": {
+      "real": true,
+      "reason": "Creative brand name, plausible"
+    },
+    "Truffle & Wine": {
+      "real": true,
+      "reason": "Branded pairing concept, realistic"
+    },
+    "Tuli": {
+      "real": true,
+      "reason": "Short name, plausible winery"
+    },
+    "Tussock Jumper": {
+      "real": true,
+      "reason": "Creative brand, whimsical but real"
+    },
+    "Two Dog Knoll Vineyard": {
+      "real": true,
+      "reason": "Vineyard qualifier, legitimate format"
+    },
+    "Two Rivers Vineyard": {
+      "real": true,
+      "reason": "Vineyard qualifier, legitimate format"
+    },
+    "Two Sisters": {
+      "real": true,
+      "reason": "Common winery name pattern"
+    },
+    "Tzum": {
+      "real": true,
+      "reason": "Obscure but plausible winery name"
+    },
+    "Ultraviolet": {
+      "real": true,
+      "reason": "Creative brand name for winery"
+    },
+    "Undaunted": {
+      "real": true,
+      "reason": "Plausible wine brand name"
+    },
+    "Unturned Stone": {
+      "real": true,
+      "reason": "Poetic winery/vineyard name"
+    },
+    "Uppercut": {
+      "real": true,
+      "reason": "Could be winery brand name"
+    },
+    "Used Automobile Parts": {
+      "real": false,
+      "reason": "Not a wine producer name"
+    },
+    "V Madrone": {
+      "real": true,
+      "reason": "Plausible California winery name"
+    },
+    "Valance": {
+      "real": true,
+      "reason": "Could be wine brand name"
+    },
+    "Valerie's Vineyard": {
+      "real": true,
+      "reason": "Named-person vineyard pattern"
+    },
+    "Valley Moon": {
+      "real": true,
+      "reason": "Common valley-themed winery name"
+    },
+    "Van Dyk": {
+      "real": true,
+      "reason": "Surname-based winery name"
+    },
+    "Varozza": {
+      "real": true,
+      "reason": "Italian-style surname winery"
+    },
+    "Vaughn Duffy": {
+      "real": true,
+      "reason": "Personal name winery pattern"
+    },
+    "Vellum": {
+      "real": true,
+      "reason": "Sophisticated winery brand name"
+    },
+    "Vendange": {
+      "real": true,
+      "reason": "French wine term, plausible brand"
+    },
+    "Vennstone": {
+      "real": true,
+      "reason": "Distinctive winery name"
+    },
+    "Verada": {
+      "real": true,
+      "reason": "Plausible wine producer name"
+    },
+    "Veritas Ridge": {
+      "real": true,
+      "reason": "Estate-style winery name"
+    },
+    "Vermillion": {
+      "real": true,
+      "reason": "Color-based wine brand name"
+    },
+    "Versant": {
+      "real": true,
+      "reason": "Could be winery brand"
+    },
+    "Vesper Vineyards": {
+      "real": true,
+      "reason": "Established-sounding vineyard name"
+    },
+    "Vezer Family Vineyard": {
+      "real": true,
+      "reason": "Family vineyard name pattern"
+    },
+    "Vida Valiente": {
+      "real": true,
+      "reason": "Spanish-language winery name"
+    },
+    "Vidovich": {
+      "real": true,
+      "reason": "Surname-based winery"
+    },
+    "VIE WInery": {
+      "real": true,
+      "reason": "Creative spelling, winery brand"
+    },
+    "Vieux-OS": {
+      "real": true,
+      "reason": "French-style winery name"
+    },
+    "Vigilance": {
+      "real": true,
+      "reason": "Virtue-themed wine brand"
+    },
+    "Villa San Maurice": {
+      "real": true,
+      "reason": "Villa-style estate winery"
+    },
+    "Vincent Christopher": {
+      "real": true,
+      "reason": "Personal name winery pattern"
+    },
+    "Vincity": {
+      "real": true,
+      "reason": "Creative brand name, wine producer style"
+    },
+    "Vine Hill Ranch": {
+      "real": true,
+      "reason": "Ranch/vineyard property naming pattern"
+    },
+    "Vinehouse": {
+      "real": true,
+      "reason": "Winery brand with legitimate naming"
+    },
+    "Vineyard House": {
+      "real": true,
+      "reason": "Estate/vineyard property name format"
+    },
+    "Vineyard of Pasterick": {
+      "real": true,
+      "reason": "Family/property vineyard name"
+    },
+    "Vineyardist": {
+      "real": false,
+      "reason": "Generic descriptor, not brand"
+    },
+    "Vinyasa": {
+      "real": true,
+      "reason": "Unique creative winery brand name"
+    },
+    "Virage": {
+      "real": true,
+      "reason": "Standalone winery brand name"
+    },
+    "Vo Cab": {
+      "real": true,
+      "reason": "Short brand abbreviation style"
+    },
+    "Voix de la Vigne": {
+      "real": true,
+      "reason": "French winery name variant"
+    },
+    "Vulture": {
+      "real": true,
+      "reason": "Distinctive single-word brand name"
+    },
+    "Walsh": {
+      "real": false,
+      "reason": "Surname alone lacks vineyard qualifier"
+    },
+    "Wandering Giants": {
+      "real": true,
+      "reason": "Creative winery brand name"
+    },
+    "Waren Dacon": {
+      "real": false,
+      "reason": "Unclear naming, likely misspelled"
+    },
+    "Washington Hills": {
+      "real": true,
+      "reason": "Regional/geographic winery name"
+    },
+    "Watchful Maker": {
+      "real": true,
+      "reason": "Distinctive winery brand name"
+    },
+    "Waters Edge": {
+      "real": true,
+      "reason": "Estate property location name"
+    },
+    "Watts Winery": {
+      "real": true,
+      "reason": "Family name with winery qualifier"
+    },
+    "Waxwing": {
+      "real": true,
+      "reason": "Creative bird-themed brand name"
+    },
+    "We Believe": {
+      "real": false,
+      "reason": "Generic phrase, not brand"
+    },
+    "Weese Family": {
+      "real": true,
+      "reason": "Family winery naming pattern"
+    },
+    "Weinstock": {
+      "real": true,
+      "reason": "Family surname winery brand"
+    },
+    "West Coast Swing": {
+      "real": true,
+      "reason": "Creative branded winery name"
+    },
+    "West Wilder": {
+      "real": true,
+      "reason": "Directional property name format"
+    },
+    "West Wind Farm": {
+      "real": true,
+      "reason": "Farm/vineyard property name"
+    },
+    "Westbrook Wine Farm": {
+      "real": true,
+      "reason": "Wine farm estate name format"
+    },
+    "Westerhold": {
+      "real": true,
+      "reason": "Family/place winery brand name"
+    },
+    "Whalebone Vineyard": {
+      "real": true,
+      "reason": "Distinctive vineyard brand name"
+    },
+    "Whetstone": {
+      "real": true,
+      "reason": "Standalone winery brand name"
+    },
+    "Whipsmart Wine Company": {
+      "real": true,
+      "reason": "Creative wine company brand name"
+    },
+    "Whispering Dove": {
+      "real": true,
+      "reason": "Creative winery name, legitimate brand"
+    },
+    "Whistling Arrow": {
+      "real": true,
+      "reason": "Plausible small winery name"
+    },
+    "Whistling Dog": {
+      "real": true,
+      "reason": "Creative animal-themed winery"
+    },
+    "White Dog": {
+      "real": true,
+      "reason": "Known whiskey/spirits brand name"
+    },
+    "White Horse": {
+      "real": true,
+      "reason": "Common winery name element"
+    },
+    "Whoa Farm": {
+      "real": true,
+      "reason": "Farm-based winery naming pattern"
+    },
+    "Wild Ridge": {
+      "real": true,
+      "reason": "Plausible vineyard designation"
+    },
+    "Wilder": {
+      "real": true,
+      "reason": "Single-word winery names exist"
+    },
+    "Wildwood": {
+      "real": true,
+      "reason": "Common winery name structure"
+    },
+    "William Hatcher": {
+      "real": true,
+      "reason": "Person-named winery legitimate"
+    },
+    "Williamson Vineyards": {
+      "real": true,
+      "reason": "Known Washington state winery"
+    },
+    "Willowood": {
+      "real": true,
+      "reason": "Descriptive winery name pattern"
+    },
+    "Winc": {
+      "real": false,
+      "reason": "Generic tech term, not winery brand"
+    },
+    "Windrun": {
+      "real": true,
+      "reason": "Plausible landscape-based name"
+    },
+    "Windsor Vineyards": {
+      "real": true,
+      "reason": "Known California winery brand"
+    },
+    "Windward Vineyard": {
+      "real": true,
+      "reason": "Legitimate vineyard designation"
+    },
+    "Windwhistle": {
+      "real": true,
+      "reason": "Evocative winery name pattern"
+    },
+    "Windy Trail Vineyards": {
+      "real": true,
+      "reason": "Descriptive vineyard name"
+    },
+    "Wine Guerrilla": {
+      "real": true,
+      "reason": "Known wine brand/producer"
+    },
+    "Wine Spots": {
+      "real": false,
+      "reason": "Generic descriptor, lacks brand character"
+    },
+    "Wing Canyon": {
+      "real": true,
+      "reason": "Geographic winery naming style"
+    },
+    "Winking Owl": {
+      "real": true,
+      "reason": "Whimsical winery name pattern"
+    },
+    "Winter": {
+      "real": false,
+      "reason": "Generic seasonal word alone"
+    },
+    "Wise Acre": {
+      "real": true,
+      "reason": "Farm/agricultural winery name"
+    },
+    "Witching Hour": {
+      "real": true,
+      "reason": "Creative themed winery brand"
+    },
+    "Witching Stick": {
+      "real": true,
+      "reason": "Plausible creative winery name"
+    },
+    "Wither": {
+      "real": false,
+      "reason": "Generic verb without brand qualifier"
+    },
+    "Wold Gap": {
+      "real": true,
+      "reason": "Geographic/landscape designation"
+    },
+    "Wolfs Head": {
+      "real": true,
+      "reason": "Animal-named winery legitimate"
+    },
+    "Woltner": {
+      "real": true,
+      "reason": "Known California wine family"
+    },
+    "Wooden Valley": {
+      "real": true,
+      "reason": "Wooden Valley Winery, Solano County CA"
+    },
+    "Woodenhead": {
+      "real": true,
+      "reason": "Woodenhead, Sonoma County winery"
+    },
+    "Woodwork": {
+      "real": false,
+      "reason": "Generic word, no winery qualifier"
+    },
+    "Worthy (Axios)": {
+      "real": false,
+      "reason": "Parenthetical artifact, unclear brand"
+    },
+    "Xanthos": {
+      "real": true,
+      "reason": "Xanthos Wine, small producer"
+    },
+    "Xaviars Cellars": {
+      "real": true,
+      "reason": "Xavier's Cellars, legitimate winery"
+    },
+    "Xtant": {
+      "real": false,
+      "reason": "Generic term, no producer identity"
+    },
+    "Yata Eagle Wines": {
+      "real": true,
+      "reason": "Yata Eagle Wines, creative small label"
+    },
+    "Yesterday": {
+      "real": false,
+      "reason": "Generic word, no brand character"
+    },
+    "Yoakim Bridge": {
+      "real": true,
+      "reason": "Yoakim Bridge, small winery name"
+    },
+    "Yorba": {
+      "real": true,
+      "reason": "Yorba, likely family-named winery"
+    },
+    "York Creek Vineyards": {
+      "real": true,
+      "reason": "York Creek Vineyards, Napa Valley"
+    },
+    "Yverdon": {
+      "real": false,
+      "reason": "Place name, no producer qualifier"
+    },
+    "Zanzibar": {
+      "real": false,
+      "reason": "Place name, no winery qualifier"
+    },
+    "Zin Collective": {
+      "real": true,
+      "reason": "Zin Collective, wine brand collective"
+    },
+    "Zin-Phomaniac": {
+      "real": true,
+      "reason": "Creative Zinfandel producer name"
+    },
+    "Zmor": {
+      "real": false,
+      "reason": "Unclear, possibly corrupted text"
+    }
+  },
+  "manual_rescues": 8
+}

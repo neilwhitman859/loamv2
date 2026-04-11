@@ -582,3 +582,117 @@ Grade B survived the same voice rules because it has 8 fields for specific facts
 **Conclusion:** pipeline architecture + Grade B path validated (+0.66 on the population, 0 fails). Grade C voice-rules rewrite is destructive and will be reverted/loosened in a future session — the right move is **old-style editorial voice + new-style fact discipline** (keep the facts packet + L3 fact-check, bring back the anti-hedging/anti-filler guidance in a softer form that doesn't strip legitimate editorial framing). Full corpus re-enrichment is NOT ready to ship.
 
 **Next session:** Session 13 — **LWIN long-tail promotion sweep** (hands-off work). Promote LWIN producers with 10-19 wines in the long tail (3,230 producers, ~40,847 wines), eliminating thousands of zero-result searches for real producers like Fort Ross Vineyard. Script exists (`pipeline/promote/lwin.py`); needs a wine-count filter extension. Zero AI cost, long deterministic run. Details in `data/session_prompts/session_13_lwin_long_tail.md`.
+
+---
+
+## Session 13 — LWIN long-tail sweep + dedup + TTB re-link (2026-04-10 / 2026-04-11)
+
+**Scope expanded mid-session.** The user's initial ask was "show me wines from Fort Ross Vineyard" → expanded to "add all US producers + INTL >=8 wines from LWIN" → expanded mid-sleep to "also dedup and do the TTB match". Session 13 ended up being the biggest single-session canonical growth in the project's history.
+
+### Phase 1 — LWIN long-tail sweep (6 hours)
+
+**Goal:** Move LWIN producers the 30K Plan excluded (producers with <20 wines) into the canonical tables. Fort Ross had 15 LWIN wines, right below the cutoff.
+
+**Eligibility cut (user's call):** ALL US producers, INTL >=8 wines. Started with a Haiku junk filter on US 1-wine producers ($0.15, 141 flagged) but user abandoned it mid-session: "LWIN is well-curated, better to be inclusive." All 10,623 eligible producers processed.
+
+**Infrastructure issues discovered and fixed:**
+
+1. **Broken FK on source_lwin.canonical_producer_id -> archive_producers.** All 189,359 rows were pre-rebuild fossils pointing at the archived pre-30K producer table. Dropped old FK, wiped all stale canonical_* + processed_at, added fresh FKs pointing at current producers/wines. Migration: `reset_source_lwin_canonical_fks_to_current`.
+
+2. **LWIN schema misread.** Initial script used `source_lwin.appellation` column for appellation lookup, but that column stores the classification TIER (AOP, AVA, DOCG), not the appellation name. The actual appellation is in `sub_region` (Meursault, Chablis, Rutherford, Napa Valley). Fixed mid-run; appellation resolution rate jumped from ~0% to ~85%.
+
+3. **external_ids column is `system`, not `source`.** First test run logged "external_ids upsert failed" on every row.
+
+4. **source_lwin PK is `lwin` (text), not `id`.** No numeric row ID exists.
+
+5. **Slug collisions aborted the outer transaction.** conn.rollback() on a wine INSERT failure wiped the producer INSERT from the same transaction, causing cascading failures. Fixed by wrapping every wine+producer INSERT in a SAVEPOINT with ROLLBACK TO.
+
+6. **Champagne misclassified as still wine.** LWIN's wine_type column is useless (98.4% just "Wine"). Added sparkling detection via region='Champagne' + wine-name tokens (brut, cremant, prosecco, cava, franciacorta, etc.).
+
+**Scripts built in pipeline/promote/:**
+- `lwin_long_tail.py` — the main sweep script with producer-count filter, savepoints, bulk pending-writes
+- `lwin_junk_filter.py` — Haiku junk classifier (built, tested, then abandoned per user)
+- `seed_strict_dupes.py` — populate match_decisions with strict-exact dupe groups for wine_merge.py to consume
+- `relink_staging_to_current.py` — remap 30 source_* table canonical_producer_id FKs from archive to current via name_normalized match
+- `refresh_tmp_wine_match.py` — rebuild the _tmp_wine_match helper table from current canonical wines
+- `ttb_wine_link_sql.py` — fast SQL-based TTB->wine linker (replaces REST-per-row v2)
+- `cola_depth_sql.py` — fast SQL-based COLA external_ids + wine_vintages backfill (replaces REST-based cola_depth.py)
+
+**Sweep results (6.0 hours total, 8 rows/sec):**
+- Producers: 2,474 matched + 8,145 created = **+8,146 net new canonical producers**
+- Wines: 15,478 matched + 104,080 created = **+104,009 net new canonical wines**
+- LWIN external_ids: 119,558 upserted
+- source_lwin rows processed: 119,558 of 189,359 (the remaining 69,470 are INTL <8 producers, intentionally skipped)
+
+### Phase 2 — Dedup
+
+**Strict-exact pass:** seed_strict_dupes.py populated match_decisions with 611 groups where wines shared (name_normalized, producer_id, color, wine_type, appellation_id). wine_merge.py consumed them: **589 groups merged, 637 wines soft-deleted, 321 vintage conflicts merged, 22 errors** (known wine_vintage_tasting_insights_wine_id_vintage_year_key bug, pre-existing in wine_merge.py, logged for BACKLOG).
+
+**Haiku fuzzy pass:** pipeline/analyze/wine_dupe_classify.py patched to filter deleted_at and duplicate_of. Fuzzy groups = wines sharing (name_normalized, producer_id) but differing on color/type/appellation. 2,483 groups classified: **71 true_duplicate, 2,255 distinct_wines, 157 unclear. Cost: $0.34.**
+
+**A prior buggy classifier run with `--max-dupes 10` wrote 697 match_decisions for singleton "groups"** (single-record classifications that aren't real dupes). All 697 manually marked ai_rejected before wine_merge to avoid poisoning the merge queue.
+
+**wine_merge on Haiku-accepted:** 164 legitimate groups processed, **81 wines soft-deleted, 498 vintage conflicts merged, 58 errors** (same tasting_insights bug).
+
+**Total dedup this session: 718 wines soft-deleted** (637 strict + 81 Haiku). About 7% of the merge targets hit the wine_vintage_tasting_insights bug.
+
+### Phase 3 — TTB re-link
+
+**Discovered: ALL 30 source_* staging tables had the same archive_producers FK bug.** _tmp_wine_match had 490,933 rows pointing at archive_wines. source_ttb_colas had 1.7M rows pointing at archive_producers and 690K at archive_wines. Zero UUID overlap between archive and current (the 30K rebuild generated fresh UUIDs).
+
+**relink_staging_to_current.py** built an `_archive_to_current_producer` mapping (10,475 archive producers mapped to current via name_normalized match, 9,504 primary + 971 fallback) and did bulk UPDATEs on each staging table. 29/30 tables relinked via the Python script; source_ttb_colas was too big (3.28M rows) and hit statement timeout, so the UPDATE + null-unmapped + fresh-FK was run directly via apply_migration with a 30-minute statement_timeout. First half (wine_id NULL) committed in ~10 sec; second half (producer remap) ran for ~10 min; third migration (null unmapped + add FK) ran another ~5 min.
+
+**Final source_ttb_colas state:**
+- 801,258 rows re-linked to current producers (had a name_normalized match)
+- 2,482,061 producer_id NULLed (archive producer has no current match)
+- 0 canonical_wine_id (all nulled in prep for fresh linking)
+- Fresh FK: source_ttb_colas_canonical_producer_id_fkey -> producers(id) ON DELETE SET NULL
+
+**refresh_tmp_wine_match.py:** Truncated the old 490K-row helper and repopulated from current canonical wines — **143,621 rows, all pointing at current wines, zero archive refs.**
+
+**ttb_wine_link_sql.py:** Single bulk UPDATE joining source_ttb_colas to _tmp_wine_match on (canonical_producer_id, UPPER(fanciful_name)). **Result: 83,183 TTB rows linked to canonical wines in 207 seconds.**
+
+**cola_depth_sql.py:**
+- **+12,165 COLA external_ids** (253,301 total) — first COLA per wine wins
+- **+15,371 wine_vintages** (83,531 total) from TTB's wine_vintage column, with ABV where parseable
+- Total time: 32 seconds
+
+### Phase 4 — Validation
+
+- Fort Ross: 15 -> **28 wines** (sweep picked up more LWIN entries than the Session 11 prototype)
+- Fort Ross search via search_catalog('Fort Ross Vineyard', 5) returns producer + wine hits correctly
+- Sample 10 random new long-tail producers: all legitimate, all with LWIN backbone IDs
+- 9 test producer searches (Littorai, Rodney Strong, Willowcroft, Imbuko, Viansa, Open Claim, Pine Ridge, Scheid, Kistler): all return results
+
+### Session 13 numbers
+
+| Metric | Before | After | Delta |
+|---|---:|---:|---:|
+| Active wines | 51,614 | 155,623 | **+104,009 (3.0x)** |
+| Active producers | 2,530 | 10,676 | **+8,146 (4.2x)** |
+| LWIN external_ids (current) | 0 | 119,889 | +119,889 |
+| COLA external_ids | 241,136 | 253,301 | +12,165 |
+| wine_vintages | 68,160 | 83,531 | +15,371 |
+| TTB linked rows (current) | 0 | 83,183 | +83,183 |
+| source_* staging tables with working FKs | 0 | 30 | +30 |
+| _tmp_wine_match current refs | 0 | 143,621 | +143,621 |
+| Fort Ross wines | 15 | 28 | +13 |
+| AI spend | - | $0.34 | Haiku dedup classifier only |
+
+### Known issues logged for future sessions
+
+1. **wine_vintage_tasting_insights_wine_id_vintage_year_key conflict handling missing in wine_merge.py.** 80 total merge errors across both wine_merge runs this session. The bug: when both survivor and dupe have entries for the same (wine_id, vintage_year=0) NV bucket, the vintage merge path tries to INSERT a second row and collides. wine_merge.py handles conflict drops for wine_grapes, wine_label_designations, etc. but not wine_vintage_tasting_insights. Fix: add it to WINE_ID_TABLES with conflict_cols=["wine_id"] or similar. 80 match_decisions remain unmerged because of this, they will sit in pending_merge until the fix lands.
+
+2. **wine_dupe_classify.py --max-dupes N is broken.** It changes the HAVING clause from `> 1` to `<= N`, which accepts singleton groups. A prior run wrote 697 "dupe" records for singletons. Fix: change `<= N` to `BETWEEN 2 AND N` or add an explicit count >= 2 floor.
+
+3. **895K source_ttb_colas rows have NULL canonical_producer_id** after relink. These represent TTB records whose producer was archived and never recreated in the 30K rebuild. Future work: run TTB producer re-matching (via pipeline/promote/ttb_producer_bridge.py or similar) to recover these via name-based matching against the current canonical producers.
+
+### Scope that was NOT done
+
+- Remaining 69,470 LWIN rows (INTL producers with <8 wines) — intentionally skipped per the US-biased scope the user chose
+- Grade C enrichment voice-rules fix — carried forward from Session 12, still blocking full corpus re-enrichment
+- Phase 4 frontend resume
+- Re-run Josh Test to measure findability lift from the long-tail sweep
+- Grape-percentage backfill (6,337 wines with wine_grapes.percentage > 100%, P0 BACKLOG item)
+
+**Next session:** Session 14. Two realistic paths — (a) Grade C voice-rules fix + full corpus re-enrichment, or (b) Phase 4 frontend resume (Grade B already works, Grade C is broken but only 4,857 wines depend on it). User preference determines which.

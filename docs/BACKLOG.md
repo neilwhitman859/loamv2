@@ -12,14 +12,34 @@ Append-only list of discovered issues and deferred work. Read at session start b
 
 ## Active
 
-### [2026-04-10] LWIN long-tail promotion sweep (10+ wine producers)
+### [2026-04-11] wine_merge.py missing conflict handling for wine_vintage_tasting_insights
 **Priority:** P1
-**Scope:** 3,230 LWIN producers with 10-19 wines each, 40,847 total wines not yet in canonical. 83% of the 10-19-wine bucket is missing. Would take active wines 51,599 → ~92,000.
-**Why:** The 30K plan intentionally prioritized top-volume producers, leaving a long tail. Real producers like Fort Ross Vineyard, Littorai, etc. sit in this gap. On-demand creation is the planned fallback but a bulk sweep would eliminate thousands of zero-result searches in one pass.
-**Dependencies:** None — LWIN promotion script exists (`pipeline/promote/lwin.py`). Needs a minor extension to filter by producer wine count.
-**Estimated cost:** $0 (deterministic), 2-3 hours
-**Tradeoff:** Dilutes average completeness per wine. These producers have fewer enrichment sources than the top 2,500.
-**Discovered in:** Session 11 (Fort Ross gap investigation)
+**Scope:** 80 match_decisions rows (22 strict + 58 Haiku) in Session 13 failed to merge because when both survivor and dupe have a `wine_vintage_tasting_insights` row for `(wine_id, vintage_year=0)` (NV bucket), the per-group merge tries to INSERT a second row and collides with the unique key `wine_vintage_tasting_insights_wine_id_vintage_year_key`. wine_merge.py handles conflict drops for `wine_grapes`, `wine_label_designations`, `wine_insights` etc. but not `wine_vintage_tasting_insights`.
+**Fix:** Add `("wine_vintage_tasting_insights", "wine_id", ["wine_id"])` to the WINE_ID_TABLES list, OR change its existing entry from `conflict_cols=None` to explicit conflict handling. Also check `wine_vintage_insights` for the same bug.
+**Dependencies:** None
+**Estimated effort:** 30 minutes (1 code change + retest by running wine_merge on the 80 pending match_decisions)
+**Discovered in:** Session 13 (2026-04-11)
+
+### [2026-04-11] wine_dupe_classify.py --max-dupes N broken
+**Priority:** P3
+**Scope:** The `--max-dupes N` flag changes the HAVING clause from `count(*) > 1` to `count(*) <= N`, which incorrectly accepts singleton groups (count=1). A Session 13 run wrote 697 match_decisions for singletons — the classifier returned "single record, no duplicate classification needed" for each but still set status to ai_accepted/flagged. All 697 had to be manually marked ai_rejected before wine_merge.
+**Fix:** Change to `HAVING count(*) BETWEEN 2 AND N` or add an explicit `COUNT(*) >= 2` floor.
+**Dependencies:** None
+**Estimated effort:** 5 minutes
+**Discovered in:** Session 13
+
+### [2026-04-11] 895K source_ttb_colas rows unmappable (archive producers with no current match)
+**Priority:** P2
+**Scope:** After Session 13's staging relink, the mapping found only 10,475 archive producers with a current-canonical name_normalized match, leaving 2,482,061 source_ttb_colas rows with NULL canonical_producer_id. These represent TTB records whose producer was in archive_producers but was never recreated in the 30K rebuild or the LWIN long-tail sweep. Recovery path: `pipeline/promote/ttb_producer_bridge.py` can re-match these via normalized name matching against current canonical producers (for ones where the LWIN sweep created a matching producer AFTER the staging relink ran — since the staging relink only used the name map that existed at its start).
+**Fix:** Re-run ttb_producer_bridge.py or similar name-based re-matcher. Should recover a meaningful chunk since the LWIN long-tail sweep added 8,146 new producers that weren't in the mapping during Session 13.
+**Estimated effort:** 1-2 hours
+**Discovered in:** Session 13
+
+### [2026-04-10] LWIN long-tail promotion sweep (10+ wine producers)
+**Priority:** ~~P1~~ **DONE in Session 13** (2026-04-10/11)
+**Actual result:** Scope expanded from "10-19 wine bucket" to "all US + INTL>=8". **+8,146 producers, +104,009 wines. Active wines 51,614 → 155,623.**
+**Remaining:** 69,470 LWIN rows for INTL producers with <8 wines — intentionally skipped per the US-biased scope the user chose. Could be a follow-up session if desired.
+**Closed:** Session 13
 
 ### [2026-04-10] Grape synonym ambiguity — broader cleanup
 **Priority:** P2
