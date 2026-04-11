@@ -109,37 +109,57 @@ producing a Sprint 3 fix backlog. S2.1 (DB canonical) ran with 34 findings
 `findings_db_staging.md`. **S2.3 (wine canonical, 99 wines + 50 producers sommelier
 audit)** ran with 22 findings (9 P0, 8 P1, 4 P2, 1 P3) → `findings_wine_canonical.md`.
 **S2.4 (wine reference content)** ran with 30 findings (8 P0, 14 P1, 7 P2, 1 P3) →
-`findings_wine_reference.md`. All four sessions at $0 actual spend. Sprint 2 budget
-$0 / $25 ceiling. **117 findings** total across S2.1+S2.2+S2.3+S2.4 so far.
+`findings_wine_reference.md`. **S2.5 (code expert — 265 pipeline/*.py files + 2
+edge functions + shared libs + scheduled tasks)** ran with 32 findings (9 P0, 14 P1,
+7 P2, 2 P3) → `findings_code.md`. All five sessions at $0 actual spend. Sprint 2
+budget $0 / $25 ceiling. **149 findings** total across S2.1+S2.2+S2.3+S2.4+S2.5 so far.
 
-**Four-session headline:** (S2.2 F1) 286,918 wine_id pointers across 29 of 31
+**Five-session headline:** (S2.2 F1) 286,918 wine_id pointers across 29 of 31
 wine-bearing staging tables are dangling archive references — Sprint 3's highest-ROI
 task is a staging relink (reuse S13 pattern) to unlock ~52K prices + ~48K scores +
-~200K vintage-grade fields + ~40K UPCs. (S2.3 F2 → S2.4 F2) The Chardonnay/Pinot
-Blanc grape-linkage bug is systemic (2,743 of 2,809 Chardonnay-named wines have
-Pinot Blanc linked) AND S2.4 identified the root cause — PINOT BLANC grape row has
-VIVC synonyms `PINOT CHARDONNAY`, `CHARDONNET PINOT BLANC`, `PINOT BLANC CHARDONNET`,
-plus `PINOT GRIGIO` (which is actually Pinot Gris). (S2.4 F1) varietal_categories
-has 5+ P0 wrong-grape links — Merlot → Grolleau Noir, Riesling → Crouchen, Verdejo →
-Trousseau Noir, Greco → Albana Bianca, St. Laurent → Muscat St. Laurent. (S2.4 F3)
-121 famous appellations stored with slash-concatenated alias names ("Hermitage /
-Ermitage / L'Hermitage / L'Ermitage", "Porto / Port"). (S2.4 F9) 240 FR AOCs + 105 IT
-DOCs have fake 1973 `established_year` default (Chambertin actual 1936, Barolo DOC
-1966, Champagne 1936). (S2.4 F8) Corrects S2.3 F7: GARRO is a real VIVC grape #7326,
-not invented — the Messina Hof error lives in wine_grapes linkage, not the grapes
-table. (S2.3 F3) All 15 hand-picked famous producers (DRC, Lafite, Latour, Margaux,
+~200K vintage-grade fields + ~40K UPCs. **S2.5 F3 pinpoints the code cause:**
+`relink_staging_to_current.py` STAGING_TABLES_WINE lists only 1 of 30 tables with an
+unresolved TODO comment. (S2.3 F2 → S2.4 F2 → S2.5 F2) The Chardonnay/Pinot Blanc
+grape-linkage bug is systemic (2,743 of 2,809 display_name Chardonnay wines have
+Pinot Blanc linked) — S2.4 found the data root cause (PINOT BLANC has VIVC synonyms
+`PINOT CHARDONNAY`, `CHARDONNET PINOT BLANC`, `PINOT BLANC CHARDONNET`, `PINOT GRIGIO`)
+AND S2.5 found the CODE root cause — `batch_pipeline._match_ttb_to_wine` collapses
+4 grape-specific TTB COLAs (Chardonnay/Cab/Shiraz/Shiraz) onto 1 canonical wine for
+~2,700 wines (verified via live DB query on De Bortoli 17 Trees wine). The resolver
+in `pipeline/lib/resolve.py` is correct — the bug is upstream wine-identity dedup.
+(S2.5 F1) `describe-chemical` edge function is DEPLOYED, ACTIVE, `verify_jwt=false`,
+shares `ANTHROPIC_API_KEY`, has ZERO wine logic — leftover from another project,
+unauthenticated credit-burn risk, delete immediately. (S2.5 F4) `enrich-wine` edge
+function reads `grapes.name` (VIVC "CHARDONNAY BLANC") not `grapes.display_name`
+("Chardonnay") — every Grade B prompt inherits wrong grape labels. (S2.5 F5) Three
+Anthropic model IDs coexist with no central config (haiku-4-5, sonnet-4 stale,
+sonnet-4-6). (S2.5 F18) `lwin_long_tail.py` inserts wines without populating
+`display_name` — 50,908 long-tail wines affected, biasing S2.3 F2 sample toward
+BATCH_0. (S2.4 F1) varietal_categories has 5+ P0 wrong-grape links — Merlot → Grolleau
+Noir, Riesling → Crouchen, Verdejo → Trousseau Noir, Greco → Albana Bianca, St. Laurent
+→ Muscat St. Laurent. (S2.4 F3) 121 famous appellations stored with slash-concatenated
+alias names. (S2.4 F9) 240 FR AOCs + 105 IT DOCs have fake 1973 `established_year`
+default. (S2.3 F3) All 15 hand-picked famous producers (DRC, Lafite, Latour, Margaux,
 etc.) have zero metadata.
 
-**Sprint 3 sequence (refined by S2.4):** (a) S2.2 F1 staging relink → (b) S2.3 F3
-producer seed file → (c) refined grape-repair workstream — **3a** `grapes.name`
-cleanup + `display_name` (S2.4 F6, F15) → **3b** 921 synonym collision resolution +
-delete PINOT BLANC's 4 polluting synonyms (S2.4 F2, F7) → **3c** fix varietal_categories
-wrong links (S2.4 F1) → **3d** re-run grape resolver against wine_grapes (S2.3 F2) →
-**3e** JSONB content backfill + appellation_grapes language fixes + appellation_soils
-provenance schema (S2.4 F11-F17) → (d) F6 color+country repair → (e) F10 L3 re-fact-check
+**Sprint 3 sequence (refined by S2.5):** (a) S2.2 F1 staging relink **— code owner
+identified: extend `relink_staging_to_current.py` STAGING_TABLES_WINE from 1 to 30
+tables (S2.5 F3), ~2hr fix** → (b) S2.3 F3 producer seed file → (c) refined grape-repair
+workstream — **3a** `grapes.name` cleanup + `display_name` (S2.4 F6, F15) → **3b**
+921 synonym collision resolution + delete PINOT BLANC's 4 polluting synonyms
+(S2.4 F2, F7) → **3c** fix varietal_categories wrong links (S2.4 F1) → **3c.5 NEW**
+fix `batch_pipeline._match_ttb_to_wine` multi-COLA collapse (S2.5 F2) → **3c.6 NEW**
+fix `ttb_grape_promote` DISTINCT ON arbitrary pick (S2.5 F17) → **3c.7 NEW** consolidate
+grape resolvers on `ReferenceResolver` (S2.5 F11) → **3d** re-run grape resolver
+against wine_grapes (S2.3 F2) → **3e** JSONB content backfill + appellation_grapes
+language fixes + appellation_soils provenance schema (S2.4 F11-F17) → (d) F6 color+country
+repair → (e) F10 L3 re-fact-check
 pass (the $18 S2.3 pre-auth rolls forward here, re-evaluate at Sprint 3 start) →
-(f) content regeneration. Skipping any of (a)-(e) re-contaminates (f). **S2.4 findings
-blocking Sprint 3: 8 P0 + 14 P1 = 22 items added to backlog.**
+(f) content regeneration. Skipping any of (a)-(e) re-contaminates (f). **Pre-Sprint-3
+code hygiene (S2.5 F1/F5/F31):** delete `describe-chemical` edge function, centralize
+Anthropic model IDs via `pipeline/lib/models.py`, vendor `enrich-wine` source into
+`supabase/functions/` — all ~30 min combined. **S2.4 + S2.5 findings blocking Sprint 3:
+17 P0 + 28 P1 = 45 items added to backlog.**
 
 Live sprint state: `data/sprints/current.json`. 30K Plan (Sprint 1) closed 2026-04-11
 and is archived at `data/sprints/_archive/30k/`. Pre-30K history (the ~477K-wine

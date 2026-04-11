@@ -281,3 +281,90 @@ None. All findings slot into existing Sprint 3 envelope; several graduate to Spr
 - `data/sprints/audit/budget.json` — S2.4 entry, running total $0.00 / $25.00
 - `data/sprints/audit/journal.md` — this section
 
+---
+
+## S2.5 — 2026-04-11
+
+### Session
+Sprint 2 Session 5. Expert hat: **code** (pipeline scripts, shared libs, edge functions, scheduled tasks, conventions, error handling, dead code). Opus 4.6 inline + MCP edge function reads + Supabase SQL verification queries. $0 actual project spend. Continues the ratified Opus-inline pattern from S2.3/S2.4.
+
+### Scope audited
+
+- `pipeline/` — 265 Python files, 77,560 LOC across `fetch`, `load`, `promote`, `enrich`, `identity`, `reference`, `geo`, `analyze`, `vivino`, `lib`
+- `pipeline/lib/` — shared libs: `db.py`, `normalize.py`, `resolve.py`, `importer.py`, `merge.py`
+- `supabase/functions/` — 2 deployed edge functions: `enrich-wine` + `describe-chemical` (read via MCP `get_edge_function`)
+- `scripts/` — dev tooling (dash.ps1, legal source fetchers, misc SQL)
+- `scripts_archive/node/` — 116 archived .mjs files
+- `frontend/src/` — grep for grape display field usage (confirms frontend uses display_name correctly)
+- Nightly scheduled task — `open_meteo_weather.py` drip behavior
+
+Scoped out: frontend UX (S2.7), voice/editorial (S2.6), docs/memory drift (S2.8), business/synthesis (S2.9). Also scoped out: re-auditing the reference data layer (already covered by S2.4).
+
+### Method
+
+- Opus 4.6 inline (ratified by DECISIONS.md 2026-04-11 + memory/feedback_opus_inline_reasoning.md)
+- Glob/Grep across pipeline tree
+- Targeted Read of hot-path files: `db.py`, `normalize.py`, `resolve.py`, `merge.py`, `batch_pipeline.py`, `lwin_long_tail.py`, `ttb_grape_promote.py`, `grape_blend_promote.py`, `grape_from_name.py`, `haiku_grape_extract.py`, `relink_staging_to_current.py`, `importer_grape_promote.py`, `import_lwin.py`, `build_display_name.py`, `fix_batch0_display.py`, `open_meteo_weather.py`, `importer.py`
+- MCP `get_edge_function` to retrieve both edge function source trees
+- Targeted SQL queries via MCP `execute_sql` to verify code assumptions against live DB (e.g., `grapes.display_name` coverage: 9,692 of 9,694 populated; Chardonnay wine cohort grape distribution)
+- Traced S2.3 F2 Chardonnay/Pinot Blanc bug through the actual DB state of one specific wine (042abb2f-6cce-4623-baec-90a18e60f4ac, De Bortoli "17 Trees") — found 4 TTB COLAs (Chardonnay/Cab/Shiraz/Shiraz) linked to ONE canonical wine
+- Read-only throughout. No pipeline runs, no DDL, no DML, no fixes
+
+### 32 findings written to `findings/findings_code.md`
+
+- **P0 (9):**
+  - **F1** — `describe-chemical` edge function is DEPLOYED, ACTIVE, `verify_jwt: false`, uses the shared `ANTHROPIC_API_KEY`, and has **zero wine logic** — it's a "chemical industry analyst" prompt from an unrelated project. Unauthenticated credential burn. Delete.
+  - **F2** — Code root cause of S2.3 F2 Chardonnay/Pinot Blanc bug identified: `batch_pipeline._match_ttb_to_wine` (pipeline/identity/batch_pipeline.py:693-716) matches only on `fanciful_name`, falls through to `"if len(wines) == 1, assume match"`, causing 4 grape-specific COLAs to collapse onto 1 canonical wine for ~2,700 wines. Combined with `DISTINCT ON (canonical_wine_id)` in `ttb_grape_promote` (F17) and multi-run accumulation, wines acquire CHARDONNAY BLANC + PINOT BLANC + PINOT NOIR + CAB SAUV stacks. Grape resolver in `pipeline/lib/resolve.py` itself is correct — the bug is upstream in wine-identity dedup.
+  - **F3** — `relink_staging_to_current.py` Session-13 one-off script: its `STAGING_TABLES_WINE` const lists ONLY `source_ttb_colas` with an unresolved `# Add others if they have canonical_wine_id columns` TODO. 29 OTHER staging tables still hold dangling archive wine_id pointers. This is the code-level cause of S2.2 F1 (286,918 dangling wine_id pointers). Sprint 3's #1 blocker.
+  - **F4** — `enrich-wine` edge function (supabase/functions/enrich-wine/index.ts) builds prompts using `grapes(name)` — the VIVC cépage form ("CHARDONNAY BLANC", "MERLOT NOIR") — not `grapes(display_name)`. Frontend correctly uses display_name; enrichment prompts inherit wrong labels. Every Grade B enrichment sees garbage grape names. Pipeline enrich scripts (`appellation_insights.py`, `country_insights.py`, `region_insights.py`) have the same bug.
+  - **F5** — Model version drift: `describe-chemical` uses `claude-haiku-4-5-20251001`, `enrich-wine` uses `claude-sonnet-4-20250514` (stale), 12 pipeline scripts hardcode `claude-sonnet-4-20250514` while 3 use `claude-sonnet-4-6`. Three coexisting model IDs, no central config.
+  - **F6** — `grape_from_name.py` builds `grapes_raw = {normalize(row[1]): ... for row in cur.fetchall()}` — if `display_name` is NULL, `normalize(None)` → `""` and all NULL rows collapse to one key. Silent-failure time bomb.
+  - **F7** (overlaps P0/P1 — logged P1) — `haiku_grape_extract.resolve_grape` uses 70%-coverage containment match over all 34,820 grapes+synonyms, O(n*m) per call, with edge cases where short grape names match longer synonyms unexpectedly.
+  - **F8** (logged P1) — `BATCH_0_PRODUCERS` hardcoded in `batch_pipeline.py` source code instead of `data/roster/batch_0.json`.
+  - **F9** (logged P1) — `batch_pipeline._load_reference_data()` loads synonyms into `self.grapes` dict WITHOUT separating from primary names — synonyms can overwrite primary name mappings for collision cases (920 collisions per S2.4 F7).
+- **P1 (14):** F3, F7, F8, F9 (listed above), plus F10 open-meteo drip has no error-logging side channel, F11 4+ duplicate grape lookup implementations across pipeline, F12 `grape_from_name.py` dict overwrite silent collision, F13 `except Exception:` used 422 times (silent error swallowing), F14 `get_conn()` not used as context manager (potential leaks), F17 `DISTINCT ON (canonical_wine_id)` picks arbitrary TTB row, F18 `lwin_long_tail.py` inserts wines without `display_name` (50,908 wines affected, biasing S2.3 F2 cohort measurement), F24 no `supabase/migrations/` directory, F31 edge function source not in git.
+- **P2 (7):** F15 202x `sys.path.insert` hacks, F16 13 separate `INSERT INTO wines` sites, F19 `scripts/` has 11 numbered legal-source batch files no ownership, F20 CLAUDE.md claims `data-accuracy-agent` scheduled task exists but not in repo, F21 three overlapping dedup scripts, F22 `pipeline/promote/` 55 files no README, F23 `pipeline/vivino/` marked archive but in active tree, F25 143 hardcoded grape aliases + 32 region aliases in `resolve.py` duplicating DB alias tables, F26 `resolve_grape` step 5 suffix fallback overmatching, F27 `batch_matcher.py` vs `generic_matcher.py` unclear current, F28 producer-specific scrapers (ridge/stags_leap/tablas_creek) not migrated to generic Haiku scraper.
+- **P3 (2):** F29 `pipeline/analyze/winetest/` sub-package is a tool not an analyzer, F30 `scripts_archive/node/` 116 files no manifest, F32 no CI/pre-commit checks.
+
+### Key data-backed SQL verifications
+
+1. **`grapes.display_name` coverage:** 9,692 of 9,694 grapes have populated display_name. S2.4 F6's wording implied "add display_name column" but the column exists and is 99.98% populated. The real finding is a frontend/edge-function bug (F4) — code reads `name` not `display_name`.
+2. **De Bortoli "17 Trees" (wine_id 042abb2f-6cce-4623-baec-90a18e60f4ac):** 4 TTB COLAs linked, grape_varietals are "Chardonnay", "Cabernet Sauvignon", "Shiraz", "Shiraz". Current wine_grapes show CHARDONNAY BLANC + PINOT BLANC linked. Zero lwin records, so this wine came from TTB-linking alone via `batch_pipeline`. Proves F2 multi-COLA collapse.
+3. **Chardonnay cohort grape distribution** (WHERE `display_name ILIKE '%chardonnay%'`, 2,796 wines with grapes, 5,400 total links, 1.93 avg links per wine): PINOT BLANC 2,743, CHARDONNAY BLANC 2,434, PINOT NOIR 83, CAB SAUV 19, VIOGNIER 12, SYRAH 11. Confirms most wines have BOTH wrong grapes stacked.
+4. **`name ILIKE '%chardonnay%'` wines: 7,466, but `display_name ILIKE '%chardonnay%'` wines: 2,809 — only 18 overlap.** 7,448 of the 7,466 have NULL display_name. These are the LWIN long-tail wines from `lwin_long_tail.py` which doesn't populate display_name (F18). The S2.3 F2 audit was SELECTION-BIASED toward BATCH_0 wines which inflated the bug rate — but the bug is real.
+
+### Meta-patterns surfaced (for S2.9 synthesis)
+
+1. **Every code bug traces back to "too many grape resolvers."** F6, F7, F9, F11, F17, F26 are facets of the same problem: grape resolution is duplicated across 4-5 sites with subtly different semantics. Consolidating on `ReferenceResolver.resolve_grape()` closes all of them at once. Pre-Sprint-3 workstream: refactor grape resolution to ONE site.
+
+2. **Infrastructure-as-code gap is systemic.** F1 (rogue edge function), F24 (no migrations dir), F31 (no edge function source in git), F32 (no CI), F19 (`scripts/` untracked ownership) are symptoms of "the git repo is not a complete picture of the live system." Sprint 3 should land `supabase/migrations/` and `supabase/functions/` at minimum.
+
+3. **Wine creation is a 13-site operation.** F16 (13 INSERT sites), F18 (display_name bifurcation), F8 (hardcoded roster) all point at the same root: no `create_wine()` factory. Sprint 3 F3 producer seed is the natural landing place for `pipeline/lib/wines.py::create_wine()`.
+
+4. **S2.3 F2 Chardonnay/Pinot Blanc is a CODE + DATA compound.** Data side alone (S2.4 F2) is necessary but not sufficient — F2 (multi-COLA collapse) + F17 (DISTINCT ON arbitrary pick) + F11 (resolver duplication) are the other half. Sprint 3 grape workstream must include code fixes running in parallel with data fixes.
+
+5. **S2.2 F1 staging archive-ID relink has a specific code owner and a 2-hour fix.** F3 identifies `relink_staging_to_current.py::STAGING_TABLES_WINE` needing extension from 1 to 30 tables. Blocks ~52K prices + ~48K scores + ~200K vintage-grade fields.
+
+### Sprint 3 sequence refined (code items added)
+
+Previous (post-S2.4): (a) S2.2 F1 staging relink → (b) S2.3 F3 producer seed → (c) refined grape-repair workstream (3a-3e) → (d) F6 color+country repair → (e) F10 L3 re-fact-check → (f) content regeneration
+
+S2.5 additions:
+- **(a) staging relink** now has a concrete code handle — extend `STAGING_TABLES_WINE` in `relink_staging_to_current.py` from 1 to 30 tables (S2.5 F3). Still the #1 Sprint 3 task.
+- **(c) grape repair** gains 3 sub-tasks: **3c.5** fix multi-COLA collapse in `batch_pipeline._match_ttb_to_wine` (S2.5 F2), **3c.6** fix `DISTINCT ON` arbitrary pick in `ttb_grape_promote` (S2.5 F17), **3c.7** consolidate grape resolvers on `ReferenceResolver` (S2.5 F11).
+- **NEW pre-req — code hygiene:** Delete `describe-chemical` edge function (S2.5 F1), vendor `enrich-wine` source into `supabase/functions/` (S2.5 F31), centralize Anthropic model IDs via `pipeline/lib/models.py` (S2.5 F5). All ~30 min combined.
+
+Total S2.5 findings blocking Sprint 3: **9 P0 + 14 P1 = 23 items added to backlog.**
+
+### Scope-breaker check
+
+None. All findings slot into existing Sprint 3 envelope. F2 changes the sequence of grape-repair sub-steps but doesn't expand total scope — the S2.4 data fixes still need to happen, now with co-running code fixes. F24 (migrations dir) and F31 (edge function source) are Sprint 3 pre-requisites that cost <1 hour each.
+
+### Deliverables
+
+- `data/sprints/audit/findings/findings_code.md` — 32-finding report (9 P0, 14 P1, 7 P2, 2 P3)
+- `data/sprints/audit/prompts/s2_5_code.md` — session prompt (written at session start for reproducibility)
+- `data/sprints/audit/sessions.json` — S2.5 → done, $0 spend
+- `data/sprints/audit/budget.json` — S2.5 entry, running total $0.00 / $25.00
+- `data/sprints/audit/journal.md` — this section
+
