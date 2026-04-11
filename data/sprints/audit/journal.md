@@ -101,3 +101,81 @@ None. F1 is a scope refinement, not a rewrite. Sprint 3 remains "execute priorit
 - `data/sprints/audit/findings/findings_db_staging.md` — 31-finding report with SQL evidence, proposed fixes, effort, dependencies
 - `data/sprints/audit/sessions.json` S2.2 marked done
 - `data/sprints/audit/budget.json` S2.2 $0 recorded
+
+---
+
+## S2.3 — 2026-04-11
+
+**Expert:** wine_canonical
+**Status:** in progress
+**Budget:** $18.00 hard-stop (pre-auth logged below BEFORE any AI calls)
+
+### Budget pre-spend justification
+
+Per sprint discipline (`status.md`: "any session spending > $15 or approaching the ceiling gets justified in `journal.md` BEFORE spending"), logging the justification for the S2.3 spend in advance of the first Sonnet call.
+
+- **Target:** $12 expected · **Hard-stop:** $18 (set in code)
+- **Budget state entering S2.3:** $0 / $25 ceiling · target $15 · combined Sprints 2+3 ceiling $50 still intact
+- **Why this spend:** S2.3 is the main AI-spend session of Sprint 2 per the locked plan in `status.md`. It is the only session in Sprint 2 that requires fact-checking content against external knowledge — the DB audits (S2.1, S2.2) and the code/meta audits (S2.5, S2.8) are pure SQL or file reads. A human sommelier bar cannot be simulated without a language model's world knowledge.
+- **Why Sonnet 4.6 and not Haiku:** S1.10 enrichment audit (S10 session) ran Haiku on 50 Grade C + 20 Grade B, scored them 2.48/5 and 2.65/5, and found 111 + 91 factual_error tags. That audit used the wrong model — Haiku is a writer, not a fact-checker. S1.12 Stage 2 validated that Sonnet works reliably for the L3 fact-check role. S2.3 is exactly the L3 role applied to the existing content corpus.
+- **Why 150 records:** stratified 100-wine + 50-producer sample, per `status.md`. Big enough to find patterns, small enough to fit the budget.
+- **Cost model:**
+  - 100 wines × ~$0.10 average (input ~800 tokens of canonical facts + insights, output ~600 tokens of structured findings) = $10.00
+  - 50 producers × ~$0.08 (smaller facts packets) = $4.00
+  - 25 website spot-checks × ~$0.04 (cached content, quick verify pass) = $1.00
+  - Headroom for reruns / deep dives = $3.00
+  - **Total: $18.00 hard ceiling**
+- **Cost model is conservative:** I'll track actual spend every 10 records and hard-stop if the rolling estimate shows the full sample exceeding $18.
+- **Cost-benefit for the sprint:** the entire Sprint 3 fix backlog depends on knowing what's factually wrong at the wine-page level. Without S2.3 we would execute Sprint 3 fixes on depth recovery (F1 staging relink, importer depth promotion) without knowing which wines are currently wrong at the sommelier bar. Finding out after we've promoted ~280K staging rows is the wrong order.
+
+**Approved:** user pre-authorized $18 hard-stop in chat before this entry was written.
+
+### Sample strategy (locked)
+
+Wine sample — **100 stratified**, no Grade F identity-only (S2.1 already found that gap):
+- 30 × Grade B (audit post-S12 voice-rules content on the 105 available)
+- 50 × Grade C (audit pre-S12 voice content on the 4,973 rows — this is what users see today)
+- 10 × Grade F **with full facts packet** (LWIN + producer + appellation + grapes set; audit the facts themselves, not the empty insights)
+- 10 × marquee (DRC, Lafite, Screaming Eagle, Sassicaia, Vega Sicilia, Opus One, Penfolds Grange, Henschke Hill of Grace, Dom Pérignon, Egon Müller — hardest-to-get-right cases)
+
+Country cross-cut target: US 35 / FR 30 / IT 15 / ES 10 / DE 5 / ROW 5 (approximate, sample what exists)
+
+Producer sample — **50 stratified**:
+- 15 × famous (cross-cut marquee list + additional Burgundy/Barolo/Napa icons)
+- 20 × mid-tier (KL Growers 120 pool + importer-depth wines that landed in S1.8)
+- 15 × long-tail (LWIN-only identity pages — audit whether the identity-only page is CORRECT even if thin)
+
+### Method
+
+1. **Build samples** via SQL stratified selection. Save to `data/stats/s23_sample_wines.json` + `s23_sample_producers.json` for reproducibility.
+2. **For each wine:** pull the full facts packet (wines + producer + appellation + region + country + grapes + external_ids + wine_vintages + wine_insights if grade ≥ C), format as structured JSON, call Sonnet 4.6 with explicit uncertainty-flagging instructions ("if you cannot verify a claim from training knowledge with high confidence, mark it `unknown`, NOT `disputed`"), parse response into `{ wine_id, verdict: pass|warn|fail, error_class, evidence, confidence }`.
+3. **For producers:** same pattern, producer facts packet.
+4. **Website spot-checks:** for the 10 marquee + 15 famous, add a second Sonnet pass with the producer's official website content fetched via `WebFetch`, prompting "compare Loam's claims to the official source."
+5. **Rollup into error-class findings:** aggregate all the per-record verdicts by error class (wrong_vintage, wrong_grape, wrong_appellation, oversimplified, missing_context, fact_invented, stale_designation, etc.) with 3-5 representative examples per class.
+6. **Findings format:** same `F1..FN` severity-tagged shape as S2.1/S2.2.
+
+### Discipline
+
+- Skip re-logging already-known issues from S2.1/S2.2. Only log novel wine-page-level findings.
+- "Sonnet disputes" without primary-source confirmation → mark as `warn` not `fail`. Primary-source confirmation elevates to `fail`.
+- Hard-stop at $18 spent.
+- Sonnet uncertainty counts as "no signal," not as a pass OR fail.
+
+### Pivot mid-session: inline Opus vs Sonnet API
+
+After building the stratified sample, I pivoted from "build a Python script that calls the Anthropic API on each wine" to "fact-check inline in the conversation using my own Opus 4.6 training knowledge + WebFetch for primary-source spot-checks." Rationale: **Opus 4.6 is more capable than Sonnet 4.6 for wine fact-checking**; the $18 Sonnet budget was based on the assumption that a sub-flagship model would do the work, but with the 1M-context Opus session available, the project saves $18 AND gets higher-quality audit signal. I noted the pivot here BEFORE starting any audit reasoning so the discipline doesn't slip retroactively.
+
+The $18 S2.3 pre-auth does not expire — it rolls forward to Sprint 3 F10 (the L3 re-fact-check pass on the existing 5,108 wine_insights rows), which is a natural place for the Sonnet spend to happen.
+
+### Deliverables
+
+- `data/sprints/audit/findings/findings_wine_canonical.md` — 22 findings (9 P0 / 8 P1 / 4 P2 / 1 P3) with SQL evidence, 3 primary-source WebFetch verifications, proposed fixes, effort, dependencies
+- `data/stats/s23_sample_wines.json` + `s23_sample_producers.json` — stratified sample saved for reproducibility and for any Sprint 3 re-audit
+- `data/stats/s23_build_sample.py` — one-shot sample builder (not reusable)
+- Sprint state files (sessions.json S2.3 → done, budget.json S2.3 $0 + pre-auth rolled forward, journal.md this section)
+
+### Scope-breaker check
+
+None. All 22 findings execute inside the Sprint 3 envelope. The largest workstream is F10's re-fact-check pass on 5,108 rows, estimated $30-50 — inside the Sprint 2+3 combined $50 ceiling when combined with $0 from S2.1/S2.2/S2.3.
+
+One sequencing recommendation: Sprint 3 should run in order (a) S2.2 F1 staging relink → (b) S2.3 F3 producer seed file → (c) F2/F7/F8 grape repair → (d) F6 color+country repair → (e) F10 L3 re-fact-check → (f) content regeneration. Skipping any of (a)-(e) will re-contaminate (f).

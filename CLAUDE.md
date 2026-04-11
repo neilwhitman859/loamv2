@@ -84,19 +84,34 @@ and `data/stats/cron_loop_journal.md` for past loop outcomes and remaining backl
 ## Current State
 
 **Sprint 2 (Audit) is active as of 2026-04-11.** Multi-expert read-only audit
-producing a Sprint 3 fix backlog. S2.1 (DB canonical + reference structural) ran
-2026-04-11 with 34 findings (6 P0, 12 P1, 11 P2, 5 P3) — see
-`data/sprints/audit/findings/findings_db_canonical.md`. **S2.2 (DB staging)** ran
-2026-04-11 with 31 findings (6 P0, 11 P1, 9 P2, 5 P3) — see
-`data/sprints/audit/findings/findings_db_staging.md`. Headline: **286,918 wine_id
-pointers across 29 of 31 wine-bearing staging tables are dangling archive references**
-(everything except `source_ttb_colas` and `source_lwin` which S13 relinked), locking
-~52K prices + ~48K scores + ~200K vintage-grade fields + ~40K UPCs in staging.
-Sprint 3's archive depth bridge must start with a staging relink (reuse S13 pattern)
-then re-promote. Live sprint state: `data/sprints/current.json`. 30K Plan (Sprint 1)
-closed 2026-04-11 and is archived at `data/sprints/_archive/30k/`. Pre-30K history
-(the ~477K-wine pre-rebuild dataset) lives in `docs/HISTORY.md` under
-"Pre-30K rebuild history".
+producing a Sprint 3 fix backlog. S2.1 (DB canonical) ran with 34 findings
+(6 P0, 12 P1, 11 P2, 5 P3) → `data/sprints/audit/findings/findings_db_canonical.md`.
+**S2.2 (DB staging)** ran with 31 findings (6 P0, 11 P1, 9 P2, 5 P3) →
+`findings_db_staging.md`. **S2.3 (wine canonical, 99 wines + 50 producers sommelier
+audit)** ran with 22 findings (9 P0, 8 P1, 4 P2, 1 P3) → `findings_wine_canonical.md`.
+All three sessions at $0 actual spend. Sprint 2 budget $0 / $25 ceiling. 87 findings
+total across S2.1+S2.2+S2.3 so far.
+
+**Three-session headline:** (S2.2 F1) 286,918 wine_id pointers across 29 of 31
+wine-bearing staging tables are dangling archive references — Sprint 3's highest-ROI
+task is a staging relink (reuse S13 pattern) to unlock ~52K prices + ~48K scores +
+~200K vintage-grade fields + ~40K UPCs. (S2.3 F2) The Chardonnay/Pinot Blanc
+grape-linkage bug is systemic — 2,743 of 2,809 Chardonnay-named wines (97.6%) have
+Pinot Blanc linked. (S2.3 F3) All 15 hand-picked famous producers (DRC, Lafite,
+Latour, Margaux, etc.) have zero metadata. (S2.3 F10) AI-generated `wine_insights`
+content confabulates confidently on top of data errors — primary-source verification
+caught invented grapes (Messina Hof "Garro"), wrong producer history (Joseph Phelps
+Eisele "purchased in 2013" — actually Artemis/Latour), and geological fabrication
+(Hunter Valley "volcanic", Santa Ynez "Franciscan shale").
+
+**Sprint 3 sequence (recommended from S2.3):** (a) S2.2 F1 staging relink → (b) S2.3
+F3 producer seed file → (c) F2/F7/F8 grape repair → (d) F6 color+country repair →
+(e) F10 L3 re-fact-check pass (the $18 S2.3 pre-auth rolls forward here) →
+(f) content regeneration. Skipping any of (a)-(e) re-contaminates (f).
+
+Live sprint state: `data/sprints/current.json`. 30K Plan (Sprint 1) closed 2026-04-11
+and is archived at `data/sprints/_archive/30k/`. Pre-30K history (the ~477K-wine
+pre-rebuild dataset) lives in `docs/HISTORY.md` under "Pre-30K rebuild history".
 
 **Sprint sequence (locked 2026-04-11):** 1 (30K, done) → 2 (Audit, active) → 3
 (Execute fixes) → 4 (Reference Design) → 5 (Reference Enrichment). Enrichment at
