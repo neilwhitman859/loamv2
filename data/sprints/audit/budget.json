@@ -8,9 +8,10 @@
     "S2.2": 0.00,
     "S2.3": 0.00,
     "S2.4": 0.00,
-    "S2.5": 0.00
+    "S2.5": 0.00,
+    "S2.6": 0.00
   },
   "by_model": {},
   "closed": false,
-  "notes": "Part of a $50 combined ceiling across Sprints 2+3. S2.3 actual spend: $0 — pivoted from Sonnet API calls to inline Opus 4.6 reasoning + 3 WebFetch primary-source verifications. S2.4 actual spend: $0 — Opus 4.6 inline + 1 WebFetch (Wikipedia La Tâche), ratified pattern per DECISIONS.md 2026-04-11. S2.5 actual spend: $0 — Opus 4.6 inline code audit across 265 pipeline/*.py files + 2 MCP get_edge_function reads + ~15 verification SQL queries. No API calls to Haiku/Sonnet. Five sessions in, budget is $0.00 / $25.00. The $18 S2.3 pre-auth continues to roll forward to Sprint 3 F10 (L3 re-fact-check pass on 5,108 existing wine_insights rows, estimated $30-50, to be re-evaluated at Sprint 3 start). Remaining Sprint 2 budget: $25.00 / $25.00."
+  "notes": "Part of a $50 combined ceiling across Sprints 2+3. S2.3 actual spend: $0 — pivoted from Sonnet API calls to inline Opus 4.6 reasoning + 3 WebFetch primary-source verifications. S2.4 actual spend: $0 — Opus 4.6 inline + 1 WebFetch (Wikipedia La Tâche), ratified pattern per DECISIONS.md 2026-04-11. S2.5 actual spend: $0 — Opus 4.6 inline code audit across 265 pipeline/*.py files + 2 MCP get_edge_function reads + ~15 verification SQL queries. S2.6 actual spend: $0 — Opus 4.6 inline voice audit across 5 enrichment prompt files + 1 MCP get_edge_function (enrich-wine) + ~20 verification SQL queries including LIKE-scan quantification of voice violations across the 5,454-row enriched corpus. No API calls to Haiku/Sonnet. Six sessions in, budget is $0.00 / $25.00. The $18 S2.3 pre-auth continues to roll forward; S2.6 F3 recommends upgrading it from 'L3 re-fact-check existing content' to 'L3 fact-check gate on Sprint 5 regen pass' since existing content will be regenerated. Remaining Sprint 2 budget: $25.00 / $25.00."
 }

@@ -368,3 +368,111 @@ None. All findings slot into existing Sprint 3 envelope. F2 changes the sequence
 - `data/sprints/audit/budget.json` — S2.5 entry, running total $0.00 / $25.00
 - `data/sprints/audit/journal.md` — this section
 
+---
+
+## S2.6 — 2026-04-11
+
+### Session
+Sprint 2 Session 6. Expert hat: **voice** (editorial correctness, prompt discipline, cliché density, confabulation resistance). Opus 4.6 inline + MCP edge function read + LIKE-scan quantification across the full enriched corpus. $0 actual project spend. Continues the ratified Opus-inline pattern from S2.3/S2.4/S2.5.
+
+### Scope audited
+
+- `docs/VOICE.md` — read as the yardstick for every finding
+- **Prompt source files:**
+  - `pipeline/enrich/enrich_prompts.py` (the new tightened Grade B/C wine prompts, `VOICE_RULES_BLOCK` with 15 hedging words + 20 sommelier-theater phrases + NEVER INVENT block)
+  - `pipeline/enrich/appellation_insights.py` (reference-layer, weak 8-word banlist)
+  - `pipeline/enrich/region_insights.py` (same pattern)
+  - `pipeline/enrich/country_insights.py` (same pattern)
+  - `pipeline/enrich/grape_insights.py` (same pattern, but best food-pairing rules in Loam)
+  - `supabase/functions/enrich-wine/index.ts` (live, version 3, read via MCP `get_edge_function` since source not in git per S2.5 F31)
+- **Enriched corpus (5,454 rows total):**
+  - `wine_insights` — 5,108 rows (46 Grade B, 5,062 Grade C; all enriched 2026-04-10)
+  - `wine_vintage_tasting_insights` — 5,164 rows (spot-checked; structural audit deferred to S2.7)
+  - `region_insights` — 202 rows, 15 countries, all 2026-03-06
+  - `appellation_insights` — 82 rows, 100% US AVAs, all 2026-03-06
+  - `country_insights` — 62 rows, all 2026-03-06
+  - `grape_insights` — 0 rows (never run)
+  - `wine_food_pairings` — 0 rows (CLAUDE.md claims 809, stale; archive has 809)
+
+Scoped out: frontend rendering (S2.7), docs/memory drift (S2.8), business positioning (S2.9), code quality beyond the enrichment prompts (already covered S2.5).
+
+### Method
+
+- Opus 4.6 inline (ratified by DECISIONS.md 2026-04-11 + memory/feedback_opus_inline_reasoning.md)
+- 4 parallel `Read` calls on the pipeline/enrich/*.py prompt files + 1 MCP `get_edge_function` on enrich-wine
+- ~20 Supabase MCP `execute_sql` queries: corpus inventory by tier/country/date, enrichment_log model breakdown, stratified Grade B + Grade C content samples, full-corpus LIKE scans on banned-word patterns (hedging, sommelier theater, generic filler), receipt queries for confabulation evidence (Chardonnay+Pinot Blanc contamination pool, Knights Valley → Beringer Alluvium feedback loop, DRC Corton-Charlemagne MLF claim, Schramsberg J Schram rosé/sparkling mix-up)
+- Read-only throughout. No pipeline runs, no DDL, no DML, no fixes.
+
+### 32 findings written to `findings/findings_voice.md`
+
+- **P0 (9):**
+  - **F1** — 346 reference-insight rows written with weak reference-layer prompts. LIKE scan: 71% of 82 appellation soil profiles contain "well-draining", 62% "ancient", 60% "volcanic" (many incorrectly), 20% use "force vines/roots to struggle/dig deep" template. 50% of appellations, 37% of regions, 44% of countries contain "elegant/elegance" — default adjective crutch. "enrich_prompts.py" is the only tightened voice source in the codebase; 5 other prompt locations are behind it.
+  - **F2** — `enrich-wine` edge function (live, version 3) ships a weak voice preamble with zero banned-word list + stale `claude-sonnet-4-20250514` + reads `grapes.name` not `display_name` (overlap S2.5 F4/F5/F31). Grade B LIKE scan proves the edge function is behind `enrich_prompts.py`: 59% "likely", 52% "showcases", 41% "premium", 39% "elegant" (vs Grade C under tightened prompt: 2%, 1%, 3.9%, 16%). 10-50x rate deltas are the cleanest signal that two different prompt systems produced the two tiers.
+  - **F3** — Tightened voice rules do NOT prevent factual confabulation. 5 random Grade C hook samples, every one contains an invented fact: Schramsberg J Schram described as "a still rosé from a sparkling house" (J Schram is Schramsberg's top-tier sparkling); Pax Obsidian "likely 14.5%+" ABV + "Durif, a Rhône outlier rarely seen in California" (Durif IS Petite Sirah, ubiquitous); Perrin CdP Les Sinards narrated as "white wine masquerading under red grape varieties" (rationalization of Spanish grape names on French CdP per S2.4 F14); Merry Edwards "40 years refining Pinot Noir" (founded 1997, 30 years max); DRC Corton-Charlemagne Grade B "They avoid malolactic fermentation in most vintages" (factually wrong). **Session-10 feature flag is still the correct call.**
+  - **F4** — 487 Chardonnay+Pinot Blanc wines (S2.3 F2 / S2.5 F2 contamination pool) have wine_insights where Claude invents rationales for impossible grape data instead of flagging it. Waterbrook Icon Chardonnay hook: "blends 100% Chardonnay with 75% Pinot Blanc — an unusual high-proportion white blend" (175% total rationalized into narrative). Ceritas Porter-Bass: "blends Chardonnay with Pinot Blanc to chase salinity and tension over richness — a deliberate restraint that reads as intelligence rather than timidity" (pure invented backstory). 9.5% of the enriched corpus.
+  - **F5** — Contamination feedback loop traced end-to-end. Edge function `assembleContext()` reads appellation_insights.ai_terroir / ai_climate / ai_style and region_insights.ai_terroir / ai_climate and injects them into Grade B wine prompts as "Appellation Context" / "Region Context" sections. Knights Valley appellation_insight (2026-03-06) confabulates "volcanic soils from ancient Mayacamas Mountain eruptions" → Beringer Alluvium Grade B wine_insight (2026-04-10) inherits claim and extends with DIFFERENT wrong volcano ("Mount St. Helena eruptions"). Beringer's own summary contradicts itself within 3 sentences. Parallel hits: RRV "volcanic ash from ancient eruptions" (false), Sonoma Coast "volcanic intrusions" (false), Howell Mountain "tufa and obsidian" (tufa is sedimentary limestone, Claude meant "tuff"). Sprint 5 regeneration order must be reference-first, wine-second.
+  - **F6** — `grape_insights` table has 0 rows despite `grape_insights.py` containing the BEST food-pairing prompt in Loam. The food-pairing field spec is 130 words of VOICE.md-compliant structured guidance (classics first, name cuisines, full table range, flavor logic, banned patterns, no cop-outs) — never run. Frontend GrapePage has no narrative today.
+  - **F7** — 5,003 of 5,062 Grade C wines (99%) have no food-pairing prose because `GRADE_C_FIELDS` schema in `enrich_prompts.py` explicitly drops the `food_pairing` slot. VOICE.md: "These rules apply everywhere food pairing content appears." 98.8% of enriched wines violate by omission.
+  - **F8** — `wine_food_pairings` structured table is empty (0 rows). CLAUDE.md claim "809 structured links + 203 text descriptions from Empson" is stale — archive has 809, public has 0, 30K rebuild wiped it. Edge function `assembleContext` silently gets empty results for the "Existing Food Pairings" prompt context.
+  - **F9** — 82/82 appellation_insights are US AVAs. Zero Chambertin, zero Barolo, zero Champagne, zero Rioja, zero Chablis, zero Burgundy grand crus or Bordeaux communes. Region_insights has some European coverage (21 IT, 19 FR, 15 ES, 13 DE) but no marquee appellation depth. Explains why DRC Corton-Charlemagne Grade B got no terroir context and fell back to Claude training knowledge for its confabulated MLF claim.
+- **P1 (14):** F10 stale `claude-sonnet-4-20250514` hardcoded in 4 reference scripts + edge function (overlaps S2.5 F5), F11 reference prompts lack retrieval-grounded NEVER INVENT block, F12 "elegant/elegance" is default adjective across 15% of enriched corpus (37-50% of reference insights), F13 "marry/marries/marriage of" VOICE.md-banned phrase leaks through (enrich_prompts.py bans it but validator is warning-only), F14 "showcases" 52% Grade B vs 1% Grade C confirms edge function did not use enrich_prompts.py, F15 59% Grade B "likely" validates Session-10 feature flag, F16 "suggests" not on any banned list (4.5% of Grade C), F17 formulaic soil-profile templates (71/62/60% "well-draining/ancient/volcanic" tics), F18 "modern revival" trope on 27% of regions, F19 formulaic food pairing format (100% em-dash template, 71% "cuts through"), F20 confabulated-narrative response to bad facts not prevented by any rule — no "FACTS_PACKET_INCONSISTENT" escape hatch in the prompt, F21 volcanic narrative applied to ~29 wrong AVAs, F22 Grade C schema drops 5 of 8 narrative fields (no terroir/vinification/food/cellar), F23 hyperbolic marketing language unchecked at country level ("France: wine's eternal reference point", "Italy: ancestral homeland").
+- **P2 (7):** F24 BANNED_WORDS validators are warning-only not rejecting, F25 DRC has 1/3 marquee wines enriched (Corton-Charlemagne with wrong MLF; Echezeaux + La Tâche NULL fields), F26 wine_vintage_tasting_insights sensory grid not audited structurally, F27 food-pairing palette only 3 rhetorical verbs, F28 corpus is two one-shot batches (2026-03-06 + 2026-04-10), no refresh discipline, F29 reference insights have no enrichment_log entries, F30 `country_insights.ai_regulatory_overview` is the only reference field that hits VOICE.md baseline (positive finding — preserve as template).
+- **P3 (2):** F31 Grade C `style_profile` is the strongest fingerprint of enrich_prompts.py working (positive finding), F32 comparable_wines field sometimes invents producers in direct violation of COMPARABLES CRITICAL RULE (Domaine Huet attached to Morey-Saint-Denis; Scharffenberger described as same producer as Schramsberg).
+
+### Key data-backed SQL verifications
+
+1. **Enriched corpus timing:** wine_insights Grade B (46 rows) + Grade C (5,062 rows) ALL written 2026-04-10 (one-shot batch). region_insights (202) + appellation_insights (82) + country_insights (62) ALL written 2026-03-06 (separate one-shot batch). Corpus is two batches, no ongoing refresh.
+2. **enrichment_log model breakdown:** claude-haiku-4-5-20251001 completed 5,067 Grade C, errored on 226; claude-sonnet-4-20250514 completed 105 Grade B, errored on 3. Grade C used tightened prompt with correct Haiku 4.5 model; Grade B used stale Sonnet 4 model via weak edge function prompt.
+3. **Voice-violation LIKE scans:**
+   - Grade B hedging: 27/46 "likely" (59%), 13/46 "typically" (28%), 12/46 "suggests" (26%), 7/46 "often" (15%)
+   - Grade C hedging: 106/5062 "likely" (2.1%), 288/5062 "typically" (5.7%), 226/5062 "suggests" (4.5%)
+   - Grade B sommelier theater: 18/46 "elegant" (39%), 7/46 "harmonious" (15%), 3/46 "marry/marriage" (7%)
+   - Grade B generic filler: 24/46 "showcases" (52%), 19/46 "premium" (41%), 6/46 "legendary" (13%), 4/46 "remarkable" (9%)
+   - Reference appellation soils: 58/82 "well-draining" (71%), 51/82 "ancient" (62%), 49/82 "volcanic" (60%), 16/82 "force vines/roots to struggle" (20%)
+   - Regions: 74/202 "elegant" (37%), 55/202 revival tropes (27%), 60/202 "diurnal" (30%)
+4. **Chardonnay+Pinot Blanc contaminated wine_insights:** 487 wines with both `display_name ILIKE '%chardonnay%'` and a PINOT BLANC link that also have wine_insights rows. 9.5% of enriched corpus carries rationalized invented narratives for the S2.3 F2 grape bug.
+5. **Knights Valley feedback loop:** Queried appellation_insight (2026-03-06 "volcanic from Mayacamas eruptions") → Grade B wine_insight on Beringer Alluvium (2026-04-10 "volcanic from Mount St. Helena eruptions"). Contradiction confirmed at DB level.
+6. **DRC coverage:** `SELECT ai_terroir_expression, ai_vinification_summary FROM wine_insights wi JOIN wines w ... WHERE w.display_name ILIKE '%romanée-conti%'` — only Corton-Charlemagne has populated narrative fields, Echezeaux Grand Cru + La Tâche Grand Cru both NULL.
+
+### Meta-patterns surfaced (for S2.9 synthesis)
+
+1. **Prompt drift is THE voice problem.** `enrich_prompts.py` is the only tightened voice source; 5 other prompt locations are strictly weaker. Consolidating to one shared `pipeline/lib/voice.py` module closes 14 of the 32 findings simultaneously. Highest-leverage S2.6 cleanup (~4-6 hours effort, Sprint 3 pre-req).
+
+2. **Voice rules cannot prevent factual confabulation.** Tightening hedging reduced "likely" usage 10-30x Grade C vs Grade B, but receipts show Grade C still invents facts (175% blends, non-existent wines described, wrong grape characterizations). Retrieval-grounded facts packet + L3 fact-check gate (already scaffolded in `enrich_prompts.build_retry_prompt`) is the structural fix. Sprint 5 MUST make L3 non-optional.
+
+3. **Contamination feedback loop is real and one-directional.** Reference insights contaminate wine prompts via `assembleContext`. Wine insights do NOT flow backward to reference insights. Sprint 5 regeneration order is locked: reference first, wine second.
+
+4. **Reference corpus is US-biased AND structurally formulaic.** Appellation soil profiles use a 4-marker template ("ancient" + "well-draining" + "volcanic" + "force vines to struggle") that reads as specific but is filler at 60-71% rates. Plus: zero European marquee appellations in the corpus. Sprint 5 scope must add ~500 European appellation_insights.
+
+5. **Grade C is voice-audited but food-blind.** 99% of enriched wines lack food-pairing output because `GRADE_C_FIELDS` schema is 3 fields. VOICE.md has a whole Food Pairings section with 6 structural rules; Loam deploys none of them on 99% of enriched wines. The grape_insights.py food-pairing prompt is the best in Loam AND is never run (F6).
+
+### Sprint 3 sequence refined (voice items added)
+
+Previous (post-S2.5): (a) S2.2 F1 staging relink → (b) S2.3 F3 producer seed → (c) refined grape-repair workstream (3a-3e + 3c.5-3c.7) → (d) F6 color+country repair → (e) F10 L3 re-fact-check → (f) content regeneration. Pre-Sprint-3 hygiene: describe-chemical delete + vendor enrich-wine + model IDs.
+
+S2.6 additions:
+
+- **Sprint 3 pre-req — voice module consolidation (F1, F2):** Create `pipeline/lib/voice.py` with shared VOICE_RULES_BLOCK (upgraded from `enrich_prompts.py:41-59` with F12/F13/F16/F23 additions) and NEVER INVENT block (extended with F11 reference-specific rules + F20 contradiction-escape-hatch). Rewrite 4 reference prompts + vendored edge function to import it. ~4-6 hrs. **Closes 14 of 32 S2.6 findings.** Must land before any regeneration.
+- **Sprint 3 — restore wine_food_pairings from archive (F8):** Bulk UPDATE restoring 809 rows from `archive.wine_food_pairings` via the same normalized-key match as staging relink.
+- **Sprint 5 prep — L3 fact-check gate (F3):** Re-scope the $18 S2.3 rolled-forward pre-auth from "re-fact-check existing rows" to "build L3 gate that blocks writes without fact-check". Estimated ~$40-80 at Sprint 5 regeneration scale, inside combined ceiling.
+- **Sprint 5 — reference regen first, wine regen second (F5):** sequencing constraint, not additional scope.
+- **Sprint 5 — widen GRADE_C_FIELDS (F7, F22):** add food_pairing + cellar_recommendation + shortened terroir_expression to Haiku schema. ~$20-30 retrofit cost.
+- **Sprint 5 — port grape_insights.py food-pairing rules upstream (F19):** 30-min prompt edit. Single source of truth for all food-pairing surfaces.
+- **Sprint 5 — expand reference coverage beyond US AVAs (F9):** ~500 new European appellation_insights + 150 new region_insights. Sonnet cost ~$15-20.
+
+Total S2.6 findings blocking Sprint 3: **9 P0 + 14 P1 = 23 items**. Overlaps with S2.5 (F2 ↔ S2.5 F31 vendor; F10 ↔ S2.5 F5 models; F2 ↔ S2.5 F4 grape display_name) → net ~20 new items added to backlog.
+
+### Scope-breaker check
+
+None. All findings slot into the Sprint 3 pre-req + Sprint 5 regen envelope that was already planned. F5 sequencing constraint (reference first) was already implicit in the sprint model. F9 European coverage expansion is the only finding that materially grows Sprint 5 scope; cost growth is <$30 at Sonnet rates.
+
+**The `ENRICHMENT_ENABLED=false` feature flag on the `enrich-wine` edge function must stay OFF through Sprint 3 and into Sprint 5.** Do not flip it until F1 (shared voice module) + F2 (edge function aligned) + F3 (L3 gate) + F4 (grape repair) all land. S2.6 evidence strongly validates the Session-10 decision.
+
+### Deliverables
+
+- `data/sprints/audit/findings/findings_voice.md` — 32-finding report (9 P0, 14 P1, 7 P2, 2 P3)
+- `data/sprints/audit/prompts/s2_6_voice.md` — session prompt (written at session start for reproducibility)
+- `data/sprints/audit/sessions.json` — S2.6 → done, $0 spend
+- `data/sprints/audit/budget.json` — S2.6 entry, running total $0.00 / $25.00
+- `data/sprints/audit/journal.md` — this section
+

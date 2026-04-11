@@ -111,10 +111,13 @@ audit)** ran with 22 findings (9 P0, 8 P1, 4 P2, 1 P3) → `findings_wine_canoni
 **S2.4 (wine reference content)** ran with 30 findings (8 P0, 14 P1, 7 P2, 1 P3) →
 `findings_wine_reference.md`. **S2.5 (code expert — 265 pipeline/*.py files + 2
 edge functions + shared libs + scheduled tasks)** ran with 32 findings (9 P0, 14 P1,
-7 P2, 2 P3) → `findings_code.md`. All five sessions at $0 actual spend. Sprint 2
-budget $0 / $25 ceiling. **149 findings** total across S2.1+S2.2+S2.3+S2.4+S2.5 so far.
+7 P2, 2 P3) → `findings_code.md`. **S2.6 (voice expert — 5,454-row enriched
+corpus + 5 prompt files + live enrich-wine edge function)** ran with 32 findings
+(9 P0, 14 P1, 7 P2, 2 P3) → `findings_voice.md`. All six sessions at $0 actual
+spend. Sprint 2 budget $0 / $25 ceiling. **181 findings** total across
+S2.1+S2.2+S2.3+S2.4+S2.5+S2.6 so far.
 
-**Five-session headline:** (S2.2 F1) 286,918 wine_id pointers across 29 of 31
+**Six-session headline:** (S2.2 F1) 286,918 wine_id pointers across 29 of 31
 wine-bearing staging tables are dangling archive references — Sprint 3's highest-ROI
 task is a staging relink (reuse S13 pattern) to unlock ~52K prices + ~48K scores +
 ~200K vintage-grade fields + ~40K UPCs. **S2.5 F3 pinpoints the code cause:**
@@ -127,39 +130,78 @@ AND S2.5 found the CODE root cause — `batch_pipeline._match_ttb_to_wine` colla
 4 grape-specific TTB COLAs (Chardonnay/Cab/Shiraz/Shiraz) onto 1 canonical wine for
 ~2,700 wines (verified via live DB query on De Bortoli 17 Trees wine). The resolver
 in `pipeline/lib/resolve.py` is correct — the bug is upstream wine-identity dedup.
-(S2.5 F1) `describe-chemical` edge function is DEPLOYED, ACTIVE, `verify_jwt=false`,
-shares `ANTHROPIC_API_KEY`, has ZERO wine logic — leftover from another project,
-unauthenticated credit-burn risk, delete immediately. (S2.5 F4) `enrich-wine` edge
-function reads `grapes.name` (VIVC "CHARDONNAY BLANC") not `grapes.display_name`
-("Chardonnay") — every Grade B prompt inherits wrong grape labels. (S2.5 F5) Three
-Anthropic model IDs coexist with no central config (haiku-4-5, sonnet-4 stale,
-sonnet-4-6). (S2.5 F18) `lwin_long_tail.py` inserts wines without populating
-`display_name` — 50,908 long-tail wines affected, biasing S2.3 F2 sample toward
-BATCH_0. (S2.4 F1) varietal_categories has 5+ P0 wrong-grape links — Merlot → Grolleau
-Noir, Riesling → Crouchen, Verdejo → Trousseau Noir, Greco → Albana Bianca, St. Laurent
-→ Muscat St. Laurent. (S2.4 F3) 121 famous appellations stored with slash-concatenated
-alias names. (S2.4 F9) 240 FR AOCs + 105 IT DOCs have fake 1973 `established_year`
-default. (S2.3 F3) All 15 hand-picked famous producers (DRC, Lafite, Latour, Margaux,
-etc.) have zero metadata.
+**(S2.6 F4) Contamination has reached the user-facing content layer:** 487 Chardonnay
+wines with wine_insights carry Claude-invented rationales for the impossible grape
+pair (Waterbrook Icon hook: "blends 100% Chardonnay with 75% Pinot Blanc — an unusual
+high-proportion white blend"). **(S2.6 F5) Contamination feedback loop traced
+end-to-end:** Knights Valley appellation_insight (2026-03-06) confabulates "volcanic
+soils from ancient Mayacamas eruptions" → edge function `assembleContext` injects
+it as Grade B wine prompt context → Beringer Alluvium Grade B inherits and extends
+with a DIFFERENT wrong volcano ("Mount St. Helena eruptions"). Same pattern across
+RRV (false volcanic ash), Sonoma Coast (false volcanic intrusions), Howell Mountain
+(wrong "tufa and obsidian"). **(S2.6 F1/F2) Prompt drift is the voice problem:**
+`enrich_prompts.py` is the only tightened voice source in the codebase; four
+reference-layer enrichment scripts and the live `enrich-wine` edge function all
+ship a weak 8-word banlist with no hedging/sommelier-theater/performative-enthusiasm
+rules — Grade B LIKE scan: 59% "likely", 52% "showcases", 41% "premium", 39%
+"elegant"; Grade C under the tightened prompt: 2%, 1%, 3.9%, 16% (10-50x deltas).
+**(S2.6 F3) Voice rules cannot prevent factual confabulation** — 5/5 random Grade
+C hook samples contained invented facts (Schramsberg J Schram falsely described
+as "still rosé", DRC Corton-Charlemagne falsely claims "avoids MLF", Pax Obsidian
+"likely 14.5%+" fabricated ABV) validating the Session-10 feature-flag decision
+to keep `enrich-wine` `ENRICHMENT_ENABLED=false`. **(S2.6 F9) Reference corpus is
+100% US-biased at the appellation level** — 82/82 `appellation_insights` are US
+AVAs; zero Chambertin, Barolo, Champagne, Rioja, Chablis — which is WHY DRC
+Corton-Charlemagne's Grade B prompt got no appellation context and fell back to
+Claude training knowledge. (S2.5 F1) `describe-chemical` edge function is DEPLOYED,
+ACTIVE, `verify_jwt=false`, shares `ANTHROPIC_API_KEY`, has ZERO wine logic —
+leftover from another project, unauthenticated credit-burn risk, delete immediately.
+(S2.5 F4) `enrich-wine` edge function reads `grapes.name` (VIVC "CHARDONNAY BLANC")
+not `grapes.display_name` ("Chardonnay") — every Grade B prompt inherits wrong
+grape labels. (S2.5 F5) Three Anthropic model IDs coexist with no central config
+(haiku-4-5, sonnet-4 stale, sonnet-4-6). (S2.5 F18) `lwin_long_tail.py` inserts
+wines without populating `display_name` — 50,908 long-tail wines affected, biasing
+S2.3 F2 sample toward BATCH_0. (S2.4 F1) varietal_categories has 5+ P0 wrong-grape
+links — Merlot → Grolleau Noir, Riesling → Crouchen, Verdejo → Trousseau Noir,
+Greco → Albana Bianca, St. Laurent → Muscat St. Laurent. (S2.4 F3) 121 famous
+appellations stored with slash-concatenated alias names. (S2.4 F9) 240 FR AOCs +
+105 IT DOCs have fake 1973 `established_year` default. (S2.3 F3) All 15 hand-picked
+famous producers (DRC, Lafite, Latour, Margaux, etc.) have zero metadata.
+**(S2.6 F8) `wine_food_pairings` structured table is empty; CLAUDE.md claims
+"809 structured links + 203 text descriptions from Empson" is stale — 30K rebuild
+wiped the table, archive still has 809 rows. (S2.6 F6) `grape_insights` table has
+zero rows despite `grape_insights.py` containing the best food-pairing prompt in
+Loam (VOICE.md-compliant classics-first structured guidance, never run). (S2.6 F7)
+99% of enriched wines (5,003 of 5,062 Grade C) have no food-pairing prose at all
+because `GRADE_C_FIELDS` schema drops the field entirely.**
 
-**Sprint 3 sequence (refined by S2.5):** (a) S2.2 F1 staging relink **— code owner
-identified: extend `relink_staging_to_current.py` STAGING_TABLES_WINE from 1 to 30
-tables (S2.5 F3), ~2hr fix** → (b) S2.3 F3 producer seed file → (c) refined grape-repair
-workstream — **3a** `grapes.name` cleanup + `display_name` (S2.4 F6, F15) → **3b**
-921 synonym collision resolution + delete PINOT BLANC's 4 polluting synonyms
-(S2.4 F2, F7) → **3c** fix varietal_categories wrong links (S2.4 F1) → **3c.5 NEW**
-fix `batch_pipeline._match_ttb_to_wine` multi-COLA collapse (S2.5 F2) → **3c.6 NEW**
-fix `ttb_grape_promote` DISTINCT ON arbitrary pick (S2.5 F17) → **3c.7 NEW** consolidate
+**Sprint 3 sequence (refined by S2.6):** Pre-reqs: (i) voice module consolidation
+— create `pipeline/lib/voice.py` with shared VOICE_RULES_BLOCK + NEVER INVENT
+block, rewrite 4 reference enrichment scripts + vendored edge function to import
+it, ~4-6 hrs (S2.6 F1/F2, closes 14 of 32 S2.6 findings). (ii) Delete `describe-chemical`
+edge function, centralize Anthropic model IDs via `pipeline/lib/models.py`, vendor
+`enrich-wine` source into `supabase/functions/` — ~30 min combined (S2.5 F1/F5/F31).
+(iii) Restore `wine_food_pairings` from `archive.wine_food_pairings` (S2.6 F8).
+Then: (a) S2.2 F1 staging relink **— code owner identified: extend
+`relink_staging_to_current.py` STAGING_TABLES_WINE from 1 to 30 tables (S2.5 F3),
+~2hr fix** → (b) S2.3 F3 producer seed file → (c) refined grape-repair workstream —
+**3a** `grapes.name` cleanup + `display_name` (S2.4 F6, F15) → **3b** 921 synonym
+collision resolution + delete PINOT BLANC's 4 polluting synonyms (S2.4 F2, F7) →
+**3c** fix varietal_categories wrong links (S2.4 F1) → **3c.5** fix
+`batch_pipeline._match_ttb_to_wine` multi-COLA collapse (S2.5 F2) → **3c.6** fix
+`ttb_grape_promote` DISTINCT ON arbitrary pick (S2.5 F17) → **3c.7** consolidate
 grape resolvers on `ReferenceResolver` (S2.5 F11) → **3d** re-run grape resolver
 against wine_grapes (S2.3 F2) → **3e** JSONB content backfill + appellation_grapes
-language fixes + appellation_soils provenance schema (S2.4 F11-F17) → (d) F6 color+country
-repair → (e) F10 L3 re-fact-check
-pass (the $18 S2.3 pre-auth rolls forward here, re-evaluate at Sprint 3 start) →
-(f) content regeneration. Skipping any of (a)-(e) re-contaminates (f). **Pre-Sprint-3
-code hygiene (S2.5 F1/F5/F31):** delete `describe-chemical` edge function, centralize
-Anthropic model IDs via `pipeline/lib/models.py`, vendor `enrich-wine` source into
-`supabase/functions/` — all ~30 min combined. **S2.4 + S2.5 findings blocking Sprint 3:
-17 P0 + 28 P1 = 45 items added to backlog.**
+language fixes + appellation_soils provenance schema (S2.4 F11-F17) → (d) F6
+color+country repair → (e) L3 fact-check gate scaffolding (S2.6 F3; the $18 S2.3
+pre-auth re-scoped from "re-fact-check existing prose" to "build L3 gate that
+blocks writes without fact-check") → (f) Sprint 5: **reference regen first, wine
+regen second** (S2.6 F5; contamination direction is one-way). Skipping any of
+(a)-(e) re-contaminates (f). **The `ENRICHMENT_ENABLED=false` feature flag on the
+`enrich-wine` edge function must stay OFF through Sprint 3 and into Sprint 5; do
+not flip until F1+F2+F3+F4 all land.** **S2.4 + S2.5 + S2.6 findings blocking
+Sprint 3: 26 P0 + 42 P1 = 68 items total (net ~65 after S2.5↔S2.6 overlap
+dedup).**
 
 Live sprint state: `data/sprints/current.json`. 30K Plan (Sprint 1) closed 2026-04-11
 and is archived at `data/sprints/_archive/30k/`. Pre-30K history (the ~477K-wine
