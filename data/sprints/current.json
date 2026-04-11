@@ -1,16 +1,16 @@
 {
-  "name": null,
-  "status": "between_sprints",
+  "name": "audit",
+  "status": "active",
+  "sprint_number": 2,
   "previous": {
     "name": "30k",
     "closed_at": "2026-04-11",
     "archive_path": "data/sprints/_archive/30k/"
   },
   "next": {
-    "name": "reference_first",
-    "status": "planning",
-    "planning_session": 15,
-    "notes": "Session 15 is the Sprint 2 planning kickoff. Creates data/sprints/reference_first/ and updates this file to point at it."
+    "name": "execute",
+    "status": "planned",
+    "notes": "Sprint 3 — execute prioritized fixes from Sprint 2's backlog. Scope depends on findings; size TBD."
   },
-  "notes": "No active sprint. 30K closed 2026-04-11 at end of Session 14 Phase B. Reference-First sprint planning starts in Session 15."
+  "notes": "Sprint 2 (Audit) active. ~9-session multi-expert read-only audit producing Sprint 3 backlog. Reference redesign and enrichment execution deferred to Sprints 4 and 5 per strategy locked in S1.14."
 }

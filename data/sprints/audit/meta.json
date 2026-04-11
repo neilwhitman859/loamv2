@@ -1,0 +1,29 @@
+{
+  "name": "audit",
+  "display_name": "Sprint 2 — Audit",
+  "sprint_number": 2,
+  "started": "2026-04-11",
+  "status": "active",
+  "goal": "Multi-expert read-only audit (DB, wine, code, voice, UX, meta, business) to produce a prioritized Sprint 3 fix backlog. Get Loam in a better place before going heavy on enrichment. Reference tables are a through-line; wines and producers get equal weight.",
+  "budget_total": 25.00,
+  "budget_target": 15.00,
+  "expert_bar": {
+    "wine": "working sommelier — a certified somm reading a Loam page should not find factual errors or simplistic claims"
+  },
+  "discipline": [
+    "Read-only (no fixes this sprint, all fixes go to Sprint 3)",
+    "Severity-tagged findings (P0-P3)",
+    "Flexible session order (overflow to S2.X.5 if needed)",
+    "Recalibrate after each session if findings are significantly worse or better than expected",
+    "Budget overages justified in journal before spending"
+  ],
+  "primary_deliverable": "Prioritized Sprint 3 fix backlog in findings/synthesis.md (written in S2.9)",
+  "sprint_file_index": {
+    "sessions": "sessions.json",
+    "budget": "budget.json",
+    "journal": "journal.md",
+    "status": "status.md",
+    "prompts_dir": "prompts/",
+    "findings_dir": "findings/"
+  }
+}

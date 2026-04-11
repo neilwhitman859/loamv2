@@ -1,7 +1,8 @@
 {
   "_meta": {
     "description": "High-level Loam roadmap. Phase-level metrics are pulled live from the DB via pipeline/analyze/loam_roadmap.py's METRIC_DISPATCH table. Set `metrics_query` on a phase to wire it to a live query; key_metrics is only a legacy fallback for phases we haven't built a query for yet.",
-    "last_updated": "2026-04-11"
+    "last_updated": "2026-04-11",
+    "sprint_mapping": "Phases 3-6 correspond to Sprints 2-5. Phase 2 = Sprint 1 (30K Plan, done). Sprints 2 (Audit), 3 (Execute), 4 (Reference Design), 5 (Reference Enrichment) precede the old Phase 3 enrichment work, which now lives inside Sprint 5."
   },
   "phases": [
     {
@@ -15,48 +16,86 @@
     },
     {
       "id": 2,
-      "name": "Data Population (30K Plan)",
+      "name": "Sprint 1 — Data Population (30K Plan)",
       "status": "done",
       "date": "2026-04-11",
-      "summary": "Quality-over-coverage catalog rebuild — closing in Session 14 housekeeping interregnum",
+      "summary": "Quality-over-coverage catalog rebuild. 155K active wines. Closed 2026-04-11.",
       "metrics_query": "data_population",
-      "notes": "Sessions 1-13 of the 30K plan. LWIN backbone promotion, TTB depth linking, batch imports, dedup merges, LWIN long-tail sweep. Sprint closes at end of Session 14 Phase B, moves to data/sprints/_archive/30k/."
+      "notes": "Sessions 1-14 of the 30K Plan. LWIN backbone promotion, TTB depth linking, batch imports, dedup merges, LWIN long-tail sweep. Final Josh Test 84% (222/265). Archived at data/sprints/_archive/30k/."
     },
     {
       "id": 3,
-      "name": "Enrichment Pipeline",
+      "name": "Sprint 2 — Audit",
       "status": "in_progress",
-      "summary": "AI narrative content for wine pages — shifting to Reference-First architecture in Sprint 2",
-      "metrics_query": "enrichment",
+      "summary": "Multi-expert read-only audit (DB, wine, code, voice, UX, meta, business) producing a prioritized Sprint 3 fix backlog",
       "sub_tasks": [
-        {"name": "Pipeline infrastructure (sequential + batch)", "status": "done", "metric": "batch_enrich.py, batch_api.py, batch_runner.py"},
-        {"name": "Voice calibration", "status": "done", "metric": "7 wines manual review, docs/VOICE.md aligned"},
-        {"name": "Session 9: D-grade sweep", "status": "done", "metric": "4,962 wines enriched, $15.76"},
-        {"name": "Session 10: Final validation", "status": "done", "metric": "S11 8/3/4 PASS/FAIL/SKIP, Josh 85%, Story 1.8/5, audit 2.48-2.65/5"},
-        {"name": "Session 11: L1 prototype + cleanup", "status": "done", "metric": "L1 lifted Grade B 2.0->3.57, factual_error -90%"},
-        {"name": "Session 12: L3 fact-check build + Stage 2 validation", "status": "done", "metric": "Grade B 3.31/5 (+0.66). Grade C 1.76/5 regression (deprecated under RF)"},
-        {"name": "Three-layer L1+L3 architecture", "status": "done", "metric": "Validated in S11+S12. Ships in Sprint 2 vertical slice."},
-        {"name": "Reference-First pivot (Sprint 2)", "status": "planned", "metric": "Enrich the reference layer once; wine pages become thin synthesis over it"}
+        {"name": "S2.1 DB canonical + reference structural audit", "status": "in_progress"},
+        {"name": "S2.2 DB staging audit (32 source_* tables)", "status": "planned"},
+        {"name": "S2.3 Wine expert — canonical sample (100 wines + 50 producers)", "status": "planned"},
+        {"name": "S2.4 Wine expert — reference content (appellation_rules / grapes / soils)", "status": "planned"},
+        {"name": "S2.5 Code expert audit (pipeline/ + edge fn + scheduled tasks)", "status": "planned"},
+        {"name": "S2.6 Voice / editorial audit", "status": "planned"},
+        {"name": "S2.7 UX / frontend audit", "status": "planned"},
+        {"name": "S2.8 Meta audit (docs + memory + roadmap)", "status": "planned"},
+        {"name": "S2.9 Business + synthesis + Sprint 3 backlog", "status": "planned"}
       ],
-      "notes": "Grade C voice regression deprecated — wine-level synthesis will lean on enriched reference layer (grapes/regions/appellations/producers). Grade B on-demand stays behind ENRICHMENT_ENABLED feature flag until RF sprint vertical slice ships."
+      "notes": "Read-only. Severity-tagged findings (P0-P3). Budget target $15, ceiling $25, part of $50 combined ceiling for Sprints 2+3. Main AI spend is S2.3 wine expert fact-checking. Quality-before-enrichment thesis: foundation must be ready before reference enrichment in Sprint 5."
     },
     {
       "id": 4,
+      "name": "Sprint 3 — Execute",
+      "status": "planned",
+      "summary": "Execute prioritized fixes from Sprint 2's backlog. Close P0 and P1 strictly before any P2/P3.",
+      "sub_tasks": [
+        {"name": "Execute P0 fixes from Sprint 2 backlog", "status": "planned"},
+        {"name": "Execute P1 fixes from Sprint 2 backlog", "status": "planned"},
+        {"name": "Optional P2/P3 work (scope-permitting)", "status": "planned"}
+      ],
+      "notes": "Budget target $15, shares $50 combined ceiling with Sprint 2. Scope sized after Sprint 2 synthesis. Does NOT touch reference-table structure — that's Sprint 4 design territory."
+    },
+    {
+      "id": 5,
+      "name": "Sprint 4 — Reference Design",
+      "status": "planned",
+      "summary": "Redesign the reference layer (grapes / regions / appellations / producers / vineyards) and the enrichment architecture that sits on top of it",
+      "sub_tasks": [
+        {"name": "Reference table structural redesign proposal", "status": "planned"},
+        {"name": "Enrichment architecture discussion + prompts", "status": "planned"},
+        {"name": "Vertical slice selection (Sonoma Coast / California / Burgundy)", "status": "planned"},
+        {"name": "Wine page minimum content contract", "status": "planned"}
+      ],
+      "notes": "Design work, not build. Output is a locked plan for Sprint 5. Uses reference-layer findings from Sprints 2/3 as primary input."
+    },
+    {
+      "id": 6,
+      "name": "Sprint 5 — Reference Enrichment",
+      "status": "planned",
+      "summary": "Enrich the shared reference layer once; wine pages become thin synthesis over that context",
+      "sub_tasks": [
+        {"name": "Vertical slice PoC across every layer (grape → region → appellation → vineyards → producers → wines)", "status": "planned"},
+        {"name": "Co-design frontend + enrichment with the slice", "status": "planned"},
+        {"name": "Horizontal passes: appellations → producers → wines", "status": "planned"},
+        {"name": "Wine-level content last, mostly composition", "status": "planned"}
+      ],
+      "notes": "Scope deferred — revisit after Sprint 4 design. The old wine-level Grade B/C batch is retired; Grade B on-demand stays behind ENRICHMENT_ENABLED flag until the vertical slice ships."
+    },
+    {
+      "id": 7,
       "name": "Frontend Resume",
       "status": "pending",
       "summary": "Ship the consumer experience (loam.onrender.com)",
       "sub_tasks": [
-        {"name": "Verify API views against 30K tables", "status": "planned"},
-        {"name": "Add wine_insights JOIN to wine_detail_view", "status": "planned"},
+        {"name": "Verify API views against current tables", "status": "planned"},
+        {"name": "Add wine_insights JOIN to wine_detail_view", "status": "done"},
         {"name": "Wire up Edge Function for on-demand enrichment", "status": "planned"},
         {"name": "Loading states for Grade F/D wines", "status": "planned"},
         {"name": "Test wine pages with real enrichment data", "status": "planned"},
         {"name": "Deploy + onboard first beta users", "status": "planned"}
       ],
-      "notes": "Pages already built (Wine/Producer/Appellation/Region/Grape/Country/Vineyard). Paused since 2026-04-01. Resumes in Sprint 2 vertical slice."
+      "notes": "Pages already built (Wine/Producer/Appellation/Region/Grape/Country/Vineyard). Paused since 2026-04-01. Resumes with Sprint 5 vertical slice."
     },
     {
-      "id": 5,
+      "id": 8,
       "name": "Input Methods",
       "status": "pending",
       "summary": "Barcode scan + label photo + wine-not-found",
@@ -68,7 +107,7 @@
       "notes": "Data layer already supports this. Needs frontend + Vision API integration."
     },
     {
-      "id": 6,
+      "id": 9,
       "name": "Data Expansion",
       "status": "pending",
       "summary": "Fill coverage gaps, add richer sources",
@@ -82,7 +121,7 @@
       "notes": "Not blocking frontend launch. Ongoing background work."
     },
     {
-      "id": 7,
+      "id": 10,
       "name": "Quality & Maintenance",
       "status": "pending",
       "summary": "Automated drift detection + refresh cycles",
@@ -93,10 +132,10 @@
         {"name": "Voice drift monitor", "status": "planned"},
         {"name": "Data accuracy agent re-enable", "status": "paused", "metric": "Built, currently disabled"}
       ],
-      "notes": "Set up after Phase 3 completes. Runs unattended."
+      "notes": "Set up after Sprint 5 completes. Runs unattended."
     },
     {
-      "id": 8,
+      "id": 11,
       "name": "Product Layer",
       "status": "pending",
       "summary": "User features beyond search",
@@ -110,7 +149,7 @@
       "notes": "Loam can stay anonymous-first at launch. Add accounts when users ask."
     },
     {
-      "id": 9,
+      "id": 12,
       "name": "Launch",
       "status": "pending",
       "summary": "Public launch, SEO, first 1,000 users",
@@ -119,7 +158,7 @@
         {"name": "Public launch", "status": "planned"},
         {"name": "First 1,000 users", "status": "planned"}
       ],
-      "notes": "Target after Phase 4 completes with enough enrichment coverage."
+      "notes": "Target after frontend resumes with enough enrichment coverage."
     }
   ]
 }

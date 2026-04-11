@@ -1,0 +1,13 @@
+{
+  "sessions": [
+    {"id": 1, "name": "Sprint 2 open + DB canonical audit", "expert": "db_canonical", "status": "done", "date": "2026-04-11", "ai_spend": 0, "notes": "Opened Sprint 2. 34 findings in findings/findings_db_canonical.md: 6 P0, 12 P1, 11 P2, 5 P3. Headline: 80%+ of pre-30K depth lost in rebuild, producer metadata near-zero, search_vector missing on 67% wines / 100% producers, 919 grape synonym primary-name collisions, 3,534 wines in 1,686 true-dup groups. Recommend non-LWIN archive depth bridge as Sprint 3 top priority."},
+    {"id": 2, "name": "DB staging audit", "expert": "db_staging", "status": "not_started", "date": null, "ai_spend": null, "notes": "All 32 staging tables: merge state, processed_at distribution, value-left-on-table"},
+    {"id": 3, "name": "Wine expert — canonical sample", "expert": "wine_canonical", "status": "not_started", "date": null, "ai_spend": null, "notes": "100-wine + 50-producer stratified sample, Sonnet fact-checking, sommelier bar — main AI spend (~$15-18)"},
+    {"id": 4, "name": "Wine expert — reference content", "expert": "wine_reference", "status": "not_started", "date": null, "ai_spend": null, "notes": "appellation_rules, appellation_grapes, grape synonyms, categorizations, soils — hand-verified content correctness"},
+    {"id": 5, "name": "Code expert audit", "expert": "code", "status": "not_started", "date": null, "ai_spend": null, "notes": "pipeline/ scripts, edge function, shared libs, scheduled tasks, conventions, error handling, dead code"},
+    {"id": 6, "name": "Voice / editorial audit", "expert": "voice", "status": "not_started", "date": null, "ai_spend": null, "notes": "2 enriched wines + enrichment prompts + existing insight tables (346 rows) vs VOICE.md"},
+    {"id": 7, "name": "UX / frontend audit", "expert": "ux", "status": "not_started", "date": null, "ai_spend": null, "notes": "Every page type, data-to-UI integrity, empty state handling"},
+    {"id": 8, "name": "Meta audit", "expert": "meta", "status": "not_started", "date": null, "ai_spend": null, "notes": "docs/*.md, CLAUDE.md, memory files, loam_roadmap.json, scheduled infra"},
+    {"id": 9, "name": "Business + synthesis + Sprint 3 backlog", "expert": "business", "status": "not_started", "date": null, "ai_spend": null, "notes": "Competitive positioning, monetization, value prop. Dedupe findings across experts, produce Sprint 3 backlog."}
+  ]
+}

@@ -83,14 +83,23 @@ and `data/stats/cron_loop_journal.md` for past loop outcomes and remaining backl
 
 ## Current State
 
-30K Plan is closing in Session 14 (housekeeping interregnum). Reference-First is the
-next sprint. **Live sprint state: `data/sprints/current.json`. 30K archive and journal
-land in `data/sprints/_archive/30k/` at the end of Session 14 Phase B.** Pre-30K history
-(the ~477K-wine pre-rebuild dataset) moved to `docs/HISTORY.md` under "Pre-30K rebuild
-history".
+**Sprint 2 (Audit) is active as of 2026-04-11.** Multi-expert read-only audit
+producing a Sprint 3 fix backlog. S2.1 (DB canonical + reference structural) ran
+2026-04-11 with 34 findings — 6 P0, 12 P1, 11 P2, 5 P3. See
+`data/sprints/audit/findings/findings_db_canonical.md`. Live sprint state:
+`data/sprints/current.json`. 30K Plan (Sprint 1) closed 2026-04-11 and is archived at
+`data/sprints/_archive/30k/`. Pre-30K history (the ~477K-wine pre-rebuild dataset)
+lives in `docs/HISTORY.md` under "Pre-30K rebuild history".
+
+**Sprint sequence (locked 2026-04-11):** 1 (30K, done) → 2 (Audit, active) → 3
+(Execute fixes) → 4 (Reference Design) → 5 (Reference Enrichment). Enrichment at
+scale does NOT start until Sprint 5. See `memory/project_quality_before_enrichment.md`.
 
 **Numbers in this section are periodic snapshots.** Always query the DB (or run
-`python -m pipeline.analyze.sprint_dashboard`) before relying on any count.
+`python -m pipeline.analyze.sprint_dashboard` / `powershell -File scripts/dash.ps1`)
+before relying on any count. The S2.1 audit found ≥6 places where hardcoded counts
+in this file had drifted from live DB state (finding F28). Trust live queries, not
+the numbers below.
 
 ### Supabase Compute
 **Small** ($10/mo, 2GB RAM, dedicated CPU) — upgraded from Nano 2026-03-25. Required for `source_ttb_colas` table (4.7GB with indexes). Nano could not complete upserts without statement timeouts. DB total size: 6.6 GB.
