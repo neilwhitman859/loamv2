@@ -3,7 +3,8 @@
 
 _tmp_wine_match is a helper table used by ttb_wine_link_v2.py to do fast
 (producer_id, UPPER(name)) -> wine_id lookups. It was originally built against
-the pre-rebuild canonical tables and still holds 490K archive_wines UUIDs.
+the pre-rebuild canonical tables and still holds 490K archive.wines UUIDs.
+(Prior to Session 14 Phase B W5, that table was named public.archive_wines.)
 
 This script drops and rebuilds it from the current `wines` table with the
 layout ttb_wine_link_v2.py expects:
@@ -88,15 +89,15 @@ def main():
             # Validate that wine_ids now point at current table
             cur.execute("""
                 SELECT
-                    COUNT(*) FILTER (WHERE EXISTS (SELECT 1 FROM wines w WHERE w.id = t.wine_id)) AS in_current,
-                    COUNT(*) FILTER (WHERE EXISTS (SELECT 1 FROM archive_wines aw WHERE aw.id = t.wine_id)) AS in_archive
+                    COUNT(*) FILTER (WHERE EXISTS (SELECT 1 FROM public.wines w WHERE w.id = t.wine_id)) AS in_current,
+                    COUNT(*) FILTER (WHERE EXISTS (SELECT 1 FROM archive.wines aw WHERE aw.id = t.wine_id)) AS in_archive
                 FROM _tmp_wine_match t
             """)
             in_current, in_archive = cur.fetchone()
-            print(f"  Wine IDs in current wines: {in_current:,}")
-            print(f"  Wine IDs in archive_wines: {in_archive:,}")
+            print(f"  Wine IDs in current public.wines: {in_current:,}")
+            print(f"  Wine IDs in archive.wines: {in_archive:,}")
             if in_archive > 0:
-                print("  WARNING: Some _tmp_wine_match rows still reference archive_wines.")
+                print("  WARNING: Some _tmp_wine_match rows still reference archive.wines.")
     finally:
         conn.close()
 

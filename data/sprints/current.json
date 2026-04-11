@@ -1,6 +1,16 @@
 {
-  "name": "30k",
-  "started": "2026-04-08",
-  "status": "closing",
-  "notes": "30K Plan is in its closing housekeeping interregnum (Session 14). Formal closure happens at the end of Session 14 Phase B — sprint will move to data/sprints/_archive/30k/ and this file will point at the next sprint (or be cleared)."
+  "name": null,
+  "status": "between_sprints",
+  "previous": {
+    "name": "30k",
+    "closed_at": "2026-04-11",
+    "archive_path": "data/sprints/_archive/30k/"
+  },
+  "next": {
+    "name": "reference_first",
+    "status": "planning",
+    "planning_session": 15,
+    "notes": "Session 15 is the Sprint 2 planning kickoff. Creates data/sprints/reference_first/ and updates this file to point at it."
+  },
+  "notes": "No active sprint. 30K closed 2026-04-11 at end of Session 14 Phase B. Reference-First sprint planning starts in Session 15."
 }

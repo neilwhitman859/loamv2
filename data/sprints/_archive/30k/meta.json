@@ -1,0 +1,25 @@
+{
+  "name": "30k",
+  "display_name": "30K Plan",
+  "started": "2026-04-08",
+  "ended": "2026-04-11",
+  "status": "closed",
+  "closure_reason": "Data quality and coverage goals met. Corpus expanded to 155K wines (3x target) via LWIN long-tail sweep in Session 13. Enrichment pipeline validated for Grade B in Session 12. Architecture pivoting to Reference-First enrichment in Sprint 2 — wine-level Grade C synthesis deprecated in favor of enriching the shared reference layer (grapes / regions / appellations / producers) and treating wine pages as thin synthesis over that context.",
+  "sessions_completed": 14,
+  "final_josh_test": {
+    "find_rate": 0.84,
+    "found": 222,
+    "total": 265,
+    "run_date": "2026-04-11"
+  },
+  "goal": "Quality-over-coverage rebuild of the wine corpus. Archive 477K-wine pre-rebuild dataset, rebuild cleanly from LWIN backbone + TTB depth + targeted importer promotion. Target: ~30K high-quality wines with working enrichment.",
+  "budget_total": 175.00,
+  "budget_spent": 23.33,
+  "sprint_file_index": {
+    "sessions": "sessions.json",
+    "budget": "budget.json",
+    "journal": "journal.md",
+    "status": "status.md",
+    "prompts_dir": "prompts/"
+  }
+}

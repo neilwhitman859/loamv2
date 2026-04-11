@@ -30,7 +30,10 @@
     "stage2_generation": 1.72,
     "haiku_dedup_classifier": 0.34
   },
-  "closed": false,
+  "closed": true,
+  "closed_at": "2026-04-11",
+  "final_total_spent": 23.33,
+  "final_budget_remaining": 151.67,
   "last_updated": "2026-04-11",
-  "notes": "Session 13 added $0.34 (Haiku dedup classifier for 2,483 fuzzy dupe groups during the LWIN long-tail sweep). Total now $23.33/$175 (13.3%). Session 14 is a housekeeping interregnum with $0 AI spend projected. Budget freezes at end of Session 14 Phase B when the 30K sprint closes."
+  "notes": "30K sprint CLOSED at end of Session 14 Phase B. Total spend $23.33 / $175 (13.3%). Session 14 added $0 (pure housekeeping, no AI). Unspent $151.67 budget surplus carries to the Reference-First sprint (Sprint 2). Final Josh Test: 222/265 (84%), 1pp below the S10 peak (226/265, 85%) after the S13 LWIN long-tail expanded the corpus 3x. See data/sprints/_archive/30k/journal.md for the full session-by-session narrative."
 }

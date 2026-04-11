@@ -1,34 +1,34 @@
 {
-  "run_date": "2026-04-10",
-  "session": 10,
+  "run_date": "2026-04-11",
+  "session": 14,
   "method": "search_catalog RPC (v2, honest test)",
   "total_tested": 265,
-  "found": 226,
-  "find_rate": 0.85,
-  "avg_depth_found": 5.8,
-  "avg_confirmation": "C",
-  "avg_completeness": 8.1,
+  "found": 222,
+  "find_rate": 0.84,
+  "avg_depth_found": 4.6,
+  "avg_confirmation": "D",
+  "avg_completeness": 4.4,
   "avg_enrichment": "F/D",
   "by_tier": {
     "$0-10": {
-      "found": 27,
+      "found": 24,
       "total": 35,
-      "rate": 0.77
+      "rate": 0.69
     },
     "$10-30": {
-      "found": 69,
+      "found": 64,
       "total": 80,
-      "rate": 0.86
+      "rate": 0.8
     },
     "$30-100": {
-      "found": 76,
+      "found": 77,
       "total": 90,
-      "rate": 0.84
+      "rate": 0.86
     },
     "$100-250": {
-      "found": 35,
+      "found": 38,
       "total": 40,
-      "rate": 0.88
+      "rate": 0.95
     },
     "$250+": {
       "found": 19,
@@ -38,9 +38,9 @@
   },
   "by_country": {
     "US": {
-      "found": 83,
+      "found": 79,
       "total": 103,
-      "rate": 0.81
+      "rate": 0.77
     },
     "AU": {
       "found": 17,
@@ -48,14 +48,14 @@
       "rate": 1.0
     },
     "IT": {
-      "found": 25,
+      "found": 24,
       "total": 27,
-      "rate": 0.93
+      "rate": 0.89
     },
     "CL": {
-      "found": 5,
+      "found": 6,
       "total": 7,
-      "rate": 0.71
+      "rate": 0.86
     },
     "AR": {
       "found": 6,
@@ -63,19 +63,19 @@
       "rate": 1.0
     },
     "NZ": {
-      "found": 6,
+      "found": 4,
       "total": 8,
-      "rate": 0.75
+      "rate": 0.5
     },
     "FR": {
-      "found": 47,
+      "found": 48,
       "total": 56,
-      "rate": 0.84
+      "rate": 0.86
     },
     "ES": {
-      "found": 13,
+      "found": 14,
       "total": 15,
-      "rate": 0.87
+      "rate": 0.93
     },
     "DE": {
       "found": 7,
@@ -83,9 +83,9 @@
       "rate": 1.0
     },
     "ZA": {
-      "found": 5,
+      "found": 4,
       "total": 5,
-      "rate": 1.0
+      "rate": 0.8
     },
     "AT": {
       "found": 1,
@@ -93,9 +93,9 @@
       "rate": 0.5
     },
     "PT": {
-      "found": 6,
+      "found": 7,
       "total": 7,
-      "rate": 0.86
+      "rate": 1.0
     },
     "GR": {
       "found": 2,
@@ -118,5 +118,6 @@
       "rate": 1.0
     }
   },
-  "notes": "Session 10 final validation: post-Grade C retry. Enrichment dimension reflects data_grade promotion."
+  "session_phase": "B (30K closure)",
+  "notes": "Session 14 Phase B final Josh Test for 30K sprint closure. Post-S13 LWIN long-tail sweep + dedup. Overall: 222/265 (84%), 1pp below S10 (226/265, 85%). $0-10 tier dropped 77%\u219269% from dedup collapsing mass-market variants. $100-250 tier improved 88%\u219295%. Corpus 3x bigger (155K wines vs 52K) but findability is robust."
 }

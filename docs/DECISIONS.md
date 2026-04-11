@@ -1492,3 +1492,39 @@ Convention-based months are always within 2-3 weeks of reality, never catastroph
 **Why:** Opus 1M context can hold the full load; Session 13 is already complete so there's no incoming state to absorb; and the built-in audit gate at the P0 grape-percentage review point gives a natural user-approval pause. Splitting into two sessions would duplicate session setup overhead and re-read a lot of the same state. The phase break gives us a commit-able checkpoint without forcing a session boundary.
 
 **Impact:** `data/sprints/30k/sessions.json` lists Session 14 once, as a single session with status `in_progress`. Two commits happen during it — one at end of Phase A, one at end of Phase B — and the second commit is the formal 30K sprint closure.
+
+---
+
+### Grape percentages: label regulation minimums are not blend data (2026-04-11, Session 14 Phase B W6)
+
+**Decision:** Stop writing `wine_grapes.percentage` as the label-regulation varietal minimum (75% US / 85% EU). Going forward, `percentage` is NULL unless the value came from real blend source text (TTB `grape_varietals` declared percentages, producer tech sheets, or importer catalog blend fields). Bulk repair: nulled 22,664 rows with `percentage IN (75, 85)` plus 6,464 `100` rows on multi-grape wines where the 100 was stale after a second grape was promoted.
+
+**Why:** Session 12's audit of enrichment output flagged ~6,500 wines with percentages summing above 100. Initial hypothesis was "competing data sources each setting 100 independently". Session 14 Phase B audit proved that was wrong — the root cause was `pipeline/identity/batch_pipeline.py:577`:
+
+```python
+min_pct = 85 if country_code in EU_COUNTRIES else 75
+self._create_wine_grape(wine_id, primary_grape["id"], min_pct, "label_regulation")
+```
+
+That line wrote the label regulation floor ("to call this wine 'Pinot Noir' on the label, it must be ≥75% Pinot Noir in the US or ≥85% in the EU") as if it were the real blend proportion. Distribution of all wine_grapes.percentage values before the fix:
+
+- 75: 15,462 rows (US regulatory floor)
+- 100: 13,975 rows (Round 9 single-grape cascade)
+- 85: 7,224 rows (EU regulatory floor)
+- Real blend values (50, 30, 25, etc.): ~1,000 rows
+- NULL: ~9,400 rows
+
+So ~80% of non-null percentages were not blend data at all. Downstream enrichment was reading these as ground-truth composition and generating nonsense blend descriptions. Prompt engineering can't fix bad ground truth.
+
+**Principle:** this is a direct application of Loam's "real data only, no synthetic inference" rule. A regulatory floor tells you what a label can legally claim; it does not tell you what's in the bottle. If we don't have real blend data, `percentage` is NULL — a wine can link to its grape varieties without claiming a proportion.
+
+**LWIN is not a source of truth for grape data.** Checked during the audit: `source_lwin` has no grape column at all (columns are `lwin`, `lwin_7/11/18`, `display_name`, `producer_name`, `wine_name`, `country`, `region`, `sub_region`, `appellation`, `colour`, `wine_type`, `designation`, `classification`, `vintage`). Any "re-derive from LWIN" plan for future grape repair work is structurally impossible.
+
+**Long-term plan for real blend percentages:** the only trustworthy sources are (1) TTB `grape_varietals` text parsing for wines whose label declares a blend, (2) producer tech sheets / scraped sites for marquee producers, and (3) importer catalogs with explicit blend fields (Empson, Winebow, European Cellars, Kermit Lynch). Collectively that's maybe a few thousand wines. For the remaining majority, the honest answer is NULL — and under the Reference-First architecture that's fine, because wine pages lean on grape/appellation insights rather than wine-level composition copy.
+
+**Impact:**
+- `pipeline/identity/batch_pipeline.py` — line 577 now passes `None` instead of `min_pct`. `EU_COUNTRIES` constant removed as dead code.
+- 29,128 `wine_grapes.percentage` values nulled in a single migration. Single audit row added to `data_provenance`.
+- 6,570 over-100% wines → 1 (Cullen Diana Madeline, a real Bordeaux blend with a rounding artifact 84+13+5+3=105).
+- BACKLOG P0 grape percentage item closed.
+- Enrichment can now read `wine_grapes.percentage` as "real when non-null, unknown when null" and prompts can be built around that contract.

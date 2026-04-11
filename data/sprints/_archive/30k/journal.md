@@ -696,3 +696,71 @@ Grade B survived the same voice rules because it has 8 fields for specific facts
 - Grape-percentage backfill (6,337 wines with wine_grapes.percentage > 100%, P0 BACKLOG item)
 
 **Next session:** Session 14. Two realistic paths — (a) Grade C voice-rules fix + full corpus re-enrichment, or (b) Phase 4 frontend resume (Grade B already works, Grade C is broken but only 4,857 wines depend on it). User preference determines which.
+
+
+---
+
+## Session 14 (2026-04-11): Housekeeping interregnum + 30K SPRINT CLOSURE
+
+**Model:** Opus (1M context)
+**AI spend:** $0.00 (pure housekeeping + SQL migrations)
+**Cumulative:** $23.33 / $175
+
+This is the final entry in the 30K journal. Session 14 ran as a single session with two phases, committing between them. Phase A was housekeeping; Phase B was DB cleanup, the P0 grape percentage repair, two bigger bug fixes, and formal sprint closure.
+
+### Phase A (committed as a422e13)
+
+Four workstreams:
+
+1. **Dashboard redesign.** Renamed `thirty_k_dashboard.py` → `sprint_dashboard.py`, sprint-aware reading `data/sprints/current.json`. `loam_roadmap.py` gained a live Current Sprint banner and a `METRIC_DISPATCH` table that replaced hardcoded stale `key_metrics` arrays. `scripts/dash.ps1` PowerShell launcher. Sprint state moved from scattered `data/stats/30k_*` files + `memory/30k_status.md` into `data/sprints/30k/{meta.json, sessions.json, budget.json, journal.md, status.md, prompts/}`.
+
+2. **Repo cleanup.** Moved 2026-03 scrape dumps to `archive_raw/` (gitignored). Deleted empty stubs, `docs/ROADMAP.md` (duplicated `loam_roadmap.json`). Extended `.gitignore`; ran `git rm --cached` on 17 tracked scratch files. Moved readiness snapshots to `data/stats/archive/`.
+
+3. **Backlog + tiny fixes.** Four migrations: Sauvignon Gris red→white (pink-berried white mutation), 6 phantom `appellation_grapes` rows (Bardolino/Prosecco GARGANEGA, Pomerol CARMENERE, Bucelas/Colares/Carcavelos TOURIGA NACIONAL), MALVASIA dedup (soft-delete because `archive.wine_grapes` FK blocks hard delete), and `validate_post_dedup()` added to `thirty_k_validate.py` with the corrected U2 grouping (strict count: **0** real dupes, was falsely 2,272). BACKLOG rewritten; DECISIONS got 3 new entries (sprint model, Grade C deprecation, one-session-two-phases).
+
+4. **CLAUDE.md rewrite.** Cut 82 lines (525 → 443). Pre-30K bullets moved to `docs/HISTORY.md` under "Pre-30K rebuild history". Current State section is now a ~30-line live snapshot.
+
+### Phase B (this commit)
+
+Four workstreams:
+
+5. **DB cleanup.** Dropped 2 unreferenced temp tables (`_tmp_wine_match_producers`, `_ttb_producer_relink`); **kept** `_tmp_wine_match` because it is live pipeline state used by 6 promotion scripts. **Schema move:** created `archive` schema and moved all 45 `public.archive_*` tables into it with the `archive_` prefix stripped — so `public.archive_wines` → `archive.wines`, etc. Pre-flight verified no views / functions / policies / non-archive tables depended on the old names. **View updates:** added `wine_insights` LEFT JOIN to `wine_detail_view` and `wine_vintage_tasting_insights` LEFT JOIN to `wine_vintage_detail_view` so the frontend can read Grade B narrative content in a single query. **Reference-insight audit:** read-only survey of the seven `*_insights` tables that will hold Sprint 2's reference-layer content. Output at `data/stats/reference_insights_audit.md`. Found `source_lwin.canonical_*` FKs were already fixed in S13 (BACKLOG entry was stale).
+
+6. **P0 grape percentage repair.** Built `pipeline/analyze/audit_grape_percentages.py` (read-only). Audit revealed **root cause was not what we thought**: it wasn't "competing data sources each setting 100 independently", it was `pipeline/identity/batch_pipeline.py:577` writing label-regulation minimums (75% US, 85% EU) **as if they were blend proportions**. Distribution check confirmed: 80% of all non-null percentages in wine_grapes were exactly 75, 85, or 100 — regulatory floors and single-grape cascades, not real blend data. Only ~1,000 rows (~1.3%) carried real TTB/importer blend values. **Also discovered during the audit: LWIN has no grape data at all** (no grape column, no percentage column), so the "re-derive from LWIN" repair strategy the original backlog entry suggested was structurally impossible. **Fix:** patched `batch_pipeline.py` to pass `None` instead of `min_pct` (EU_COUNTRIES constant removed as dead code), then ran a migration to null 22,664 rows with `percentage IN (75, 85)` and 6,464 rows with `percentage = 100` on multi-grape-link wines. Preserved 7,511 single-grape 100% values (definitionally correct) and 1,005 real blend values. **Result: 6,570 over-100% wines → 1** (Cullen Diana Madeline, a real Bordeaux blend with a rounding artifact 84+13+5+3=105, left intact).
+
+7. **Bigger bug fixes #5 and #6.**
+   - **#5 Impossible wine colors.** Audit found 431 mismatches (not 895 — S11 cleanup had already dropped a chunk). Three separate bugs in one: 330 wines with `color='rosé'` (should be ASCII `rose` per DECISIONS 2026-03-15); 5 French IGPs with `blanc`/`rouge`/`rosé` rule colors (should be English); ~80 genuine mismatches. Fixed all three in a single migration. 431 → 0.
+   - **#6 Durif/Petite Sirah ↔ Syrah reconciliation.** Deleted 949 DURIF links from wines whose name says "Syrah" (not "Petite Sirah") — DURIF is the wrong grape, despite the name confusion. Plus mirror bug: deleted 50 SYRAH links from wines whose name says "Petite Sirah" — same greedy parser false positive in the opposite direction. First pass missed 106 wines because of NULL-unsafe WHERE clause on `w.name`; cleanup pass with COALESCE caught the rest. Preserved: 85 DURIF-on-Petite-Sirah (correct) + 194 DURIF plantings on wines that don't mention either phrase (real Rutherglen-style Durif bottlings).
+
+8. **30K sprint closure.**
+   - Josh Test re-run: **222/265 = 84%** (down 1pp from S10 peak of 85%, after the corpus grew 3x from S13 long-tail). $0-10 tier dropped 77% → 69% (dedup collapsed mass-market variants). $100-250 tier improved 88% → 95%.
+   - Budget frozen at **$23.33 / $175 (13.3%)**. Unspent **$151.67** carries to Sprint 2 (Reference-First).
+   - `meta.json` status → `closed`, `ended: 2026-04-11`, closure reason logged.
+   - Sprint folder moves to `data/sprints/_archive/30k/` as part of the final commit. `data/sprints/current.json` clears (no active sprint until Sprint 2 planning in Session 15).
+
+### Final corpus state
+
+| Metric | Pre-S14 | Post-S14 | Delta |
+|---|---:|---:|---:|
+| Active wines | 155,623 | 155,623 | 0 |
+| Producers | 10,676 | 10,676 | 0 |
+| wine_grapes rows with synthetic % | ~29,000 | 0 | -29,128 |
+| wine_grapes rows with real blend % | ~1,000 | ~1,000 | unchanged |
+| Wines with sum-over-100% grapes | 6,570 | 1 | -6,569 |
+| Wines with impossible color vs appellation | 431 | 0 | -431 |
+| Bogus DURIF links (Syrah-named wines) | 949 | 0 | -949 |
+| Bogus SYRAH links (Petite Sirah-named wines) | 50 | 0 | -50 |
+
+### Handoff to Sprint 2 (Reference-First Enrichment)
+
+The 30K sprint is architecturally done. Sprint 2 starts fresh with:
+- A clean `archive` schema isolated from the live corpus
+- `wine_grapes.percentage` that is either a real blend value or NULL (never a regulatory-floor artifact)
+- `wine_detail_view` / `wine_vintage_detail_view` exposing `wine_insights` content to the frontend
+- Live dashboards that read from `data/sprints/current.json` and can pivot to Sprint 2 without code changes
+- A reference_insights_audit documenting the 7 `*_insights` tables that will be Sprint 2's content target
+- $151.67 budget surplus to spend on the RF vertical slice
+
+Session 15 is the Sprint 2 planning kickoff. Session 16+ is execution.
+
+**30K Plan: CLOSED.**

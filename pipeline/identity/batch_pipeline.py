@@ -96,12 +96,10 @@ LWIN_TYPE_MAP = {
     "Fortified": "fortified",
 }
 
-# EU country codes (for label regulation — 85% grape threshold)
-EU_COUNTRIES = {
-    "FR", "IT", "ES", "DE", "PT", "AT", "GR", "HU", "RO", "BG",
-    "HR", "SI", "SK", "CZ", "NL", "BE", "LU", "PL", "DK", "SE",
-    "FI", "IE", "CY", "MT", "EE", "LV", "LT",
-}
+# (EU_COUNTRIES constant removed in Session 14 Phase B W6. It was only used to
+# decide between the 75% US and 85% EU label-regulation minimum when writing
+# synthetic wine_grapes.percentage values. Percentages now default to NULL, so
+# the constant is dead code.)
 
 
 class BatchPipeline:
@@ -572,10 +570,18 @@ class BatchPipeline:
             if ld:
                 self._create_label_designation(wine_id, ld["id"])
 
-        # Promote primary grape (label regulation)
+        # Promote primary grape (label regulation).
+        #
+        # Historical note (removed in Session 14 Phase B W6, 2026-04-11): this block
+        # used to set `percentage` to 85 (EU) or 75 (US) — the legal minimum for
+        # varietal labeling in each jurisdiction. That was a regulatory floor, NOT
+        # a blend proportion, and downstream enrichment was reading it as ground-truth
+        # composition. 22,664 rows carrying synthetic 75 / 85 values were null'd out
+        # during W6. We still create the grape link (we want to know the primary
+        # variety), but with NULL percentage. Real blend percentages should only come
+        # from TTB `grape_varietals` parsing or producer tech sheets.
         if primary_grape:
-            min_pct = 85 if country_code in EU_COUNTRIES else 75
-            self._create_wine_grape(wine_id, primary_grape["id"], min_pct, "label_regulation")
+            self._create_wine_grape(wine_id, primary_grape["id"], None, "label_regulation")
 
         return wine_id
 

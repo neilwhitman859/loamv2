@@ -46,23 +46,23 @@ def q(conn, query, params=None):
         return None  # None = query error
 
 
-def table_exists(conn, name):
+def table_exists(conn, name, schema='public'):
     rows = q(conn, """SELECT EXISTS (SELECT 1 FROM information_schema.tables
-                      WHERE table_schema='public' AND table_name=%s)""", (name,))
+                      WHERE table_schema=%s AND table_name=%s)""", (schema, name))
     return rows[0][0] if rows else False
 
 
-def col_exists(conn, table, col):
+def col_exists(conn, table, col, schema='public'):
     rows = q(conn, """SELECT EXISTS (SELECT 1 FROM information_schema.columns
-                      WHERE table_schema='public' AND table_name=%s AND column_name=%s)""",
-             (table, col))
+                      WHERE table_schema=%s AND table_name=%s AND column_name=%s)""",
+             (schema, table, col))
     return rows[0][0] if rows else False
 
 
-def count(conn, table, where=None):
-    if not table_exists(conn, table):
+def count(conn, table, where=None, schema='public'):
+    if not table_exists(conn, table, schema=schema):
         return None
-    sql = f"SELECT count(*) FROM {table}"
+    sql = f'SELECT count(*) FROM "{schema}"."{table}"'
     if where:
         sql += f" WHERE {where}"
     rows = q(conn, sql)
@@ -146,17 +146,18 @@ def validate_phase_0(conn):
     print(f"\n{B}Phase 0: Archive & Schema{X}")
     print("─" * 55)
 
-    # S1.1 archive_wines exists with expected row count
-    cnt = count(conn, 'archive_wines')
+    # S1.1 archive.wines exists with expected row count
+    # (Moved from public.archive_wines to archive.wines in Session 14 Phase B W5.)
+    cnt = count(conn, 'wines', schema='archive')
     ok = cnt is not None and cnt > 500000
-    run_check(checks, f"S1.1  archive_wines {cnt:,} rows" if cnt else "S1.1  archive_wines",
+    run_check(checks, f"S1.1  archive.wines {cnt:,} rows" if cnt else "S1.1  archive.wines",
               ok, detail=None if ok else "expected >500K")
     total += 1; passed += (1 if ok else 0)
 
-    # S1.2 archive_producers
-    cnt = count(conn, 'archive_producers')
+    # S1.2 archive.producers
+    cnt = count(conn, 'producers', schema='archive')
     ok = cnt is not None and cnt > 40000
-    run_check(checks, f"S1.2  archive_producers {cnt:,} rows" if cnt else "S1.2  archive_producers",
+    run_check(checks, f"S1.2  archive.producers {cnt:,} rows" if cnt else "S1.2  archive.producers",
               ok, detail=None if ok else "expected >40K")
     total += 1; passed += (1 if ok else 0)
 

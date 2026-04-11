@@ -60,23 +60,33 @@ Append-only list of discovered issues and deferred work. Read at session start b
 **Discovered in:** Session 11 (view verification)
 
 ### [2026-04-10] Wine_grapes has 6,337 wines with impossible grape percentages (>100% total)
-**Priority:** P0 — blocks enrichment quality on ~12% of the corpus. **Scheduled for Session 14 Phase B W6 (audit-first with user review gate).**
-**Scope:** 6,337 wines (12.3% of the pre-S13 51,614 active corpus; new S13 long-tail wines mostly have no grape percentages yet) have `wine_grapes.percentage` values that sum to more than 100%. Typical pattern: 275% = three grapes each at 100% + 75%, or 200% = two grapes each at 100%. This happens when multiple conflicting grape-assignment sources each set `percentage = 100` independently rather than normalizing to fractions of a blend. Affected wines include Kumeu River Hunting Hill (Chardonnay 100% + Pinot Noir 75% = 175%, but it's actually a 100% Chardonnay wine), Krug Clos du Mesnil, Joseph Phelps Eisele, and 6,334 others.
-**Why:** The enrichment pipeline reads `wine_grapes` as ground truth. A 275% total causes Haiku/Sonnet to faithfully describe nonsense blends as if they were real ("pairs Pinot Noir with Chardonnay"). The auditor correctly flags these as factual errors, and Stage 1 pass 2 showed ~30% of the 34 fail wines had this bug. **No amount of prompt engineering can fix enrichment on these wines** — the data is wrong.
-**Fix strategy:** Session 14 Phase B builds `pipeline/analyze/audit_grape_percentages.py` (read-only) and surfaces per-pattern breakdown (275 / 200 / 150 / etc.) with LWIN availability hints. User picks strategy per pattern (NULL-out / keep-highest / re-derive from LWIN) at the review gate; then `fix_grape_percentages.py` runs with `--dry-run` default.
-**Estimated effort:** 2-4 hours investigation + fix + validation
-**Discovered in:** Session 12 (Stage 1 pass 2 diagnosis)
+**Priority:** ~~P0~~ **CLOSED in Session 14 Phase B W6 (2026-04-11)**
+**Resolution:** Audit revealed the root cause wasn't "competing data sources setting 100 independently" — it was `pipeline/identity/batch_pipeline.py:577` writing **label regulation minimums (75% US, 85% EU) as if they were blend proportions**. 80% of all non-null percentages in wine_grapes were regulatory floors, not real blend data. Fix landed in the same session:
+- **Code:** `batch_pipeline.py:577` now passes `None` as the percentage instead of the min_pct floor. `EU_COUNTRIES` constant removed (dead code).
+- **Data:** 29,128 wine_grapes.percentage values nulled (22,664 at 75/85 + 6,464 at 100 on multi-link wines). Preserved 7,511 single-grape 100% values (definitionally correct) and 1,005 real TTB/importer blend values.
+- **Before/after:** 6,570 wines with sum-over-100 → 1 (Cullen Diana Madeline: 84+13+5+3=105, a real-data rounding artifact, left intact).
+- **Audit trail:** single summary row in `data_provenance` pointing at this session. Audit output lives at `data/stats/grape_percentage_audit.md`.
+- **LWIN is not usable as a ground-truth source for grapes** — its schema has no grape column at all. Noted for future repair work.
+**Discovered in:** Session 12 (Stage 1 pass 2 diagnosis). **Closed:** Session 14 Phase B W6.
 
-### [2026-04-11] `wines.color` contradicts `appellation_rules.allowed_colors` on ~895 wines
-**Priority:** P2 — scheduled for Session 14 Phase B W7 (fix #5)
-**Scope:** Roughly 895 wines carry a color that's not permitted for their appellation under current legal rules. Typical offenders catalogued during Path A seeding: 800 Champagne red, 50 Chablis red, 2 Chianti Classico white, 2 Pommard non-red, 9 Barolo rosé, 5 Barolo white, 7 Sauternes red, 2 Barsac red, plus smaller counts elsewhere.
-**Fix:** Session 14 Phase B `UPDATE wines SET color = NULL WHERE color NOT IN allowed_colors(appellation)` + data_provenance log.
-**Discovered in:** Path A seeding batch 5 (2026-04-05)
+### [2026-04-11] `wines.color` contradicts `appellation_rules.allowed_colors`
+**Priority:** ~~P2~~ **CLOSED in Session 14 Phase B W7 fix #5 (2026-04-11)**
+**Resolution:** Audit found 431 mismatches (not 895 — the old estimate was pre-S11 cleanup). Three distinct bugs, all fixed in one migration:
+- **330 wines** had `color='rosé'` (accented) — per DECISIONS 2026-03-15, wines.color should be ASCII `rose`. Normalized.
+- **5 IGP appellations** (Coteaux de Peyriac, Côtes de Thau, Haute Vallée de l'Aude, Périgord, Yonne) had French color words (`blanc`/`rouge`/`rosé`) in their rules JSONB. Rewrote to `white`/`red`/`rose`.
+- **~80 genuine mismatches** — nulled out `wines.color` (conservative, don't guess the correct color).
+- Result: 431 → 0 mismatches. Single audit row in `data_provenance`.
+**Discovered in:** Path A seeding batch 5 (2026-04-05). **Closed:** Session 14 Phase B W7.
 
-### [2026-04-11] Durif/Petite Sirah ↔ Syrah reconciliation (~1,048 wines)
-**Priority:** P3 — scheduled for Session 14 Phase B W7 (fix #6)
-**Scope:** `DURIF` has 1,230 wine_grapes links. 1,048 of those have "Syrah" or "Petite Sirah" in the wine name. Durif and Petite Sirah are the same grape scientifically, so "Petite Sirah" → DURIF is correct. "Syrah" → DURIF is wrong (despite name confusion). Phase B splits into buckets A (Petite Sirah, keep) / B (Syrah only, delete) / C (both phrases, spot-check).
-**Discovered in:** Session 11
+### [2026-04-11] Durif/Petite Sirah ↔ Syrah reconciliation
+**Priority:** ~~P3~~ **CLOSED in Session 14 Phase B W7 fix #6 (2026-04-11)**
+**Resolution:** `DURIF` had 1,228 active wine_grapes links. Split into buckets:
+- **Bucket B (Syrah, wrong): 949 wines** — DURIF linked to wines named `<something> Syrah` (not Petite Sirah). Deleted. Covers both the original 843 count and the 106 null-name wines that were missed by the first pass with a NULL-unsafe WHERE clause.
+- **Mirror bug: 50 wines** — wines named Petite Sirah had SYRAH falsely linked (same greedy parser false-positive, opposite direction). Deleted.
+- **Preserved: 85** DURIF-on-Petite-Sirah links (correct — Durif = Petite Sirah).
+- **Preserved: 194** DURIF links on wines whose names don't mention Syrah or Petite Sirah (likely real Rutherglen-style Durif plantings).
+- Result: 1,228 → 279 DURIF links, all defensible. Single audit row in `data_provenance`.
+**Discovered in:** Session 11. **Closed:** Session 14 Phase B W7.
 
 ### [2026-04-11] Session 14 Phase A — Housekeeping interregnum
 **Priority:** P0 — active this session

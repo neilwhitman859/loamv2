@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
-"""Re-link ALL source_* staging tables from archive_producers -> current producers.
+"""Re-link ALL source_* staging tables from archive.producers -> current producers.
+
+One-off migration tool. Last ran in Session 13 (2026-04-10). Session 14 Phase B W5
+moved the archive tables from public.archive_X to archive.X, so the SQL references
+below were updated to archive.producers / archive.wines. If you're thinking about
+re-running this script, check whether the staging FKs still need re-pointing first
+(most of the S13 work is already landed).
 
 Context:
     The 30K Plan Phase 0 rebuild created new canonical `producers` and `wines`
     tables with fresh UUIDs. Every `source_*` staging table's canonical_*
-    foreign keys still point at `archive_producers`/`archive_wines`. This
+    foreign keys still point at `archive.producers`/`archive.wines`. This
     script walks the archive->current mapping via `name_normalized` match and
     bulk-updates the staging tables to point at the new canonical IDs.
 
@@ -20,7 +26,7 @@ Strategy:
              UPDATE canonical_producer_id using the mapping, re-add a fresh FK
              pointing at the current producers table.
     Phase 2: For source_ttb_colas specifically, also NULL out canonical_wine_id
-             since those pointed at archive_wines (which are all gone from the
+             since those pointed at archive.wines (which are all gone from the
              current wines table — zero UUID overlap confirmed). TTB-to-wine
              relinking happens in a separate step via ttb_wine_link_v2.
 
@@ -58,7 +64,7 @@ STAGING_TABLES_PRODUCER = [
 # source_lwin already handled in prior migration — skip it.
 # match_decisions handled separately.
 
-# Tables that ALSO have canonical_wine_id (must NULL it out since archive_wines are gone)
+# Tables that ALSO have canonical_wine_id (must NULL it out since archive.wines are gone)
 STAGING_TABLES_WINE = [
     "source_ttb_colas",
     # Add others if they have canonical_wine_id columns
@@ -81,7 +87,7 @@ def build_mapping_table(conn, dry_run: bool):
             cur.execute("""
                 INSERT INTO _archive_to_current_producer (archive_id, current_id)
                 SELECT DISTINCT ON (ap.id) ap.id, p.id
-                FROM archive_producers ap
+                FROM archive.producers ap
                 JOIN producers p
                   ON p.name_normalized = ap.name_normalized
                  AND (
@@ -98,7 +104,7 @@ def build_mapping_table(conn, dry_run: bool):
             cur.execute("""
                 INSERT INTO _archive_to_current_producer (archive_id, current_id)
                 SELECT DISTINCT ON (ap.id) ap.id, p.id
-                FROM archive_producers ap
+                FROM archive.producers ap
                 JOIN producers p ON p.name_normalized = ap.name_normalized
                 WHERE p.deleted_at IS NULL
                   AND ap.id NOT IN (SELECT archive_id FROM _archive_to_current_producer)
@@ -116,7 +122,7 @@ def build_mapping_table(conn, dry_run: bool):
         else:
             cur.execute("""
                 SELECT COUNT(DISTINCT ap.id)
-                FROM archive_producers ap
+                FROM archive.producers ap
                 JOIN producers p ON p.name_normalized = ap.name_normalized
                 WHERE p.deleted_at IS NULL
             """)
@@ -188,7 +194,7 @@ def bulk_relink_table(
         """)
         stats["cleared_no_match"] = cur.rowcount or 0
 
-        # Phase 3: null canonical_wine_id (points at archive_wines, all gone)
+        # Phase 3: null canonical_wine_id (points at archive.wines, all gone)
         if null_wine_id:
             cur.execute(f'UPDATE "{table}" SET canonical_wine_id = NULL WHERE canonical_wine_id IS NOT NULL')
             stats["cleared_wine_id"] = cur.rowcount or 0

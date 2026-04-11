@@ -1,0 +1,92 @@
+{
+  "generated_at": "2026-04-11T08:38:05",
+  "totals": {
+    "wines_with_any_grape_link": 35137,
+    "wines_over_100": 6570,
+    "pct_over_100": 18.7,
+    "lwin_available_for_broken": 6570,
+    "lwin_unavailable_for_broken": 0
+  },
+  "buckets": [
+    {
+      "bucket": "101-150",
+      "wines": 118,
+      "avg_sum": 147.3,
+      "avg_link_count": 2.5,
+      "multi_100_only": 0,
+      "mix_100_and_partial": 1,
+      "has_null_percentage_link": 35,
+      "single_link_100": 0
+    },
+    {
+      "bucket": "151-175",
+      "wines": 4451,
+      "avg_sum": 174.9,
+      "avg_link_count": 2.0,
+      "multi_100_only": 0,
+      "mix_100_and_partial": 4382,
+      "has_null_percentage_link": 33,
+      "single_link_100": 0
+    },
+    {
+      "bucket": "176-200",
+      "wines": 1871,
+      "avg_sum": 185.2,
+      "avg_link_count": 2.0,
+      "multi_100_only": 22,
+      "mix_100_and_partial": 1838,
+      "has_null_percentage_link": 19,
+      "single_link_100": 0
+    },
+    {
+      "bucket": "201-250",
+      "wines": 49,
+      "avg_sum": 247.4,
+      "avg_link_count": 3.1,
+      "multi_100_only": 0,
+      "mix_100_and_partial": 44,
+      "has_null_percentage_link": 5,
+      "single_link_100": 0
+    },
+    {
+      "bucket": "251-299",
+      "wines": 52,
+      "avg_sum": 270.5,
+      "avg_link_count": 3.2,
+      "multi_100_only": 0,
+      "mix_100_and_partial": 48,
+      "has_null_percentage_link": 9,
+      "single_link_100": 0
+    },
+    {
+      "bucket": "300",
+      "wines": 1,
+      "avg_sum": 300.0,
+      "avg_link_count": 6.0,
+      "multi_100_only": 0,
+      "mix_100_and_partial": 0,
+      "has_null_percentage_link": 1,
+      "single_link_100": 0
+    },
+    {
+      "bucket": "301-400",
+      "wines": 23,
+      "avg_sum": 348.9,
+      "avg_link_count": 4.3,
+      "multi_100_only": 0,
+      "mix_100_and_partial": 22,
+      "has_null_percentage_link": 3,
+      "single_link_100": 0
+    },
+    {
+      "bucket": ">400",
+      "wines": 5,
+      "avg_sum": 440.0,
+      "avg_link_count": 5.6,
+      "multi_100_only": 0,
+      "mix_100_and_partial": 5,
+      "has_null_percentage_link": 2,
+      "single_link_100": 0
+    }
+  ]
+}
