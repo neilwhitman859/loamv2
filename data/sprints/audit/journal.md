@@ -476,3 +476,118 @@ None. All findings slot into the Sprint 3 pre-req + Sprint 5 regen envelope that
 - `data/sprints/audit/budget.json` — S2.6 entry, running total $0.00 / $25.00
 - `data/sprints/audit/journal.md` — this section
 
+---
+
+## S2.7 — UX / Frontend Audit (2026-04-11)
+
+**Expert hat:** UX / frontend — page types, data-to-UI integrity, empty-state handling, routing, a11y, mobile-first, Principle #9 compliance
+**Model:** Opus 4.6 (1M context) — ratified inline pattern per DECISIONS.md 2026-04-11
+**Budget:** $0 spent / $0 expected / $25 ceiling
+**Duration:** ~2 hours
+**Deliverable:** `data/sprints/audit/findings/findings_ux.md` (32 findings: 9 P0, 14 P1, 7 P2, 2 P3)
+
+### Method
+
+Read-only static analysis of the `frontend/` React app. No dev server runs, no screenshots, no browser automation. Scope: 9 consumer pages (`frontend/src/pages/consumer/`), 9 shared components (`frontend/src/components/`), 3 hooks, 14 dev-explorer pages (`frontend/src/pages/data/`), routing (`App.tsx`), layouts (`ConsumerLayout`, `DataLayout`, `DevLayout`), Supabase client (`lib/supabase.ts`). Cross-referenced against S2.1-S2.6 findings to quantify UI symptoms of data-layer bugs.
+
+~12 verification SQL queries via Supabase MCP:
+1. Core wine/producer/vineyard counts by data_grade (confirmed 155,623 active / 150,512 F / 104,727 NULL display_name)
+2. `wines.name` vs `display_name` NULL distribution + sample (confirmed 12,083 with NULL name, 0 with null both, sample of 8 marquee Burgundy wines with NULL name)
+3. Chardonnay + Pinot Blanc UI reach (confirmed 2,914 active wine pages)
+4. Producer metadata coverage (confirmed 0/10,676 have hectares/production/address/coords/description/philosophy/year/parent/appellation, 1 has website, 1 has type)
+5. F-grade appellation inflation (confirmed 95.7% F-grade for wines with appellation_id)
+6. Producers with only F wines (confirmed 9,274/10,676 = 86.9%)
+7. Duplicate wine names per producer (confirmed 5,573 rows in 2,404 groups across 1,145 producers)
+8. `country_insights` column inventory + live PGRST 42703 error reproduction for CountryPage.tsx:40
+9. Insight table row counts (region 202, appellation 82, country 62, grape 0, producer 0)
+10. search_catalog RPC on 'vega sicilia' and 'romanee-conti' (confirmed S2.3 F1 at the UI layer: marquee wines unfindable or wrong-named in results)
+11. Volcanic soil profile UI reach (confirmed 16,429 active wine pages render `appInsight.ai_soil_profile` containing 'volcanic')
+12. Confabulated wine_insights on Chardonnay+Pinot Blanc pool (confirmed 493, matches S2.6 F4 ± 6)
+
+Zero API calls to Haiku/Sonnet. Zero DB writes. Read-only discipline held.
+
+### Headline findings
+
+**F1 — 12,083 wine pages render empty `<h1></h1>`.** `WinePage.tsx:175` fetches `name` not `display_name`, and 7.8% of active wines have `name IS NULL`. Live samples include Ropiteau Pommard Premier Cru, Mommessin Châteauneuf-du-Pape, Ligeret Chambertin-Clos de Bèze Grand Cru — marquee Burgundy appellations rendering blank titles. 5-minute fix.
+
+**F2 — CountryPage is silently broken on 100% of country pages.** Line 40 selects `ai_signature_grapes` which does not exist; the actual column is `ai_signature_styles` (plural). Verified by running the exact query via MCP and seeing `ERROR: 42703: column "ai_signature_grapes" does not exist`. Because there's no `.catch()` anywhere in consumer pages (F9), the failure is silent — every country page visit fetches nothing, renders no overview, even though 62 `country_insights` rows exist. Additionally, `ai_wine_history`, `ai_key_regions`, `ai_regulatory_overview` (S2.6 F30's VOICE.md-compliant field) are not fetched at all; only `ai_overview` is rendered out of 5 available fields. 1-minute typo fix + 10-minute render expansion.
+
+**F3 — 2,914 wine pages render Chardonnay + Pinot Blanc grape chip bug.** Live-verified UI manifestation of S2.3 F2 / S2.5 F2. 493 of those also render confabulated `wine_insights.ai_hook` ("blends 100% Chardonnay with 75% Pinot Blanc" — per S2.6 F4). The consumer WinePage correctly reads `grapes.display_name` so the UI layer is faithfully rendering wrong data. Fix is in Sprint 3 data layer (grape-repair workstream) + stale content gating in Sprint 3 + regeneration in Sprint 5.
+
+**F4 — ProducerPage is structurally empty across 100% of producers.** Verified by direct SQL: 0 producers have `hectares_under_vine`, `total_production_cases`, `address`, `latitude`, `description`, `philosophy`, `year_established`, `parent_producer_id`, `parent_company`, or `appellation_id`. 1 has `website_url`. 1 has `producer_type`. The Section "Details" header renders above an empty FactGrid on every producer page. The Philosophy section and Estates & Labels section NEVER render anywhere in the app (dead JSX). S2.3 F3 flagged 15 marquee producers — the actual scope is **every producer**, all 10,676 of them. Sprint 3 needs a broader producer metadata strategy, not a 15-producer seed.
+
+**F5 — AI content rendered as plain text with zero confidence / disclaimer / source attribution.** `ConfidenceBadge.tsx` exists and is wired into `InsightsPanel.tsx` — but only used by the dev `/data/*` explorer, not the consumer pages. Confirmed via grep: consumer pages have no imports of ConfidenceBadge or InsightsPanel. The `confidence` column exists on all 5 insight tables and is fetched by zero consumer pages. No "AI-generated" badge, no enriched_at timestamp, no "Some content on this page is AI-generated" disclaimer. Users have no way to tell that "volcanic soils from ancient Mayacamas eruptions" is Claude-invented.
+
+**F6 — 16,429 active wine pages render contaminated volcanic soil claims at the wine level.** `WinePage.tsx:551-555` renders `appInsight.ai_soil_profile` under MiniLabel "Soil" as if about the wine's own vineyard. Live query: 16,429 active wines are linked to an appellation whose `ai_soil_profile` contains "volcanic", 49 appellations affected. Per S2.6 F5, ~14 of those appellations have **false** volcanic claims (Knights Valley, RRV, Sonoma Coast, Howell Mountain, Hunter Valley, etc.). Users read actively wrong geology on those wine pages, with no attribution saying "from the appellation profile."
+
+**F7 — Footer About link is broken.** `ConsumerLayout.tsx:84` links to `/about` but App.tsx has no `/about` consumer route; only `/dev/about` exists. Clicking goes to a blank screen (compounded by F10: no 404 catch-all). 1-minute fix.
+
+**F8 — `/vineyard/:id` route is dead.** `vineyards` table is 0 rows, `search_catalog` RPC doesn't include vineyard entity type, no page navigates to `/vineyard/:id`. 232 LOC `VineyardPage.tsx` is unreachable. Park for Sprint 4.
+
+**F9 — Zero error handling in consumer pages.** Grep: no `.catch()` calls in `frontend/src/pages/consumer/`. No error boundary in `main.tsx` wrapping `<App/>`. No try/catch. The `useEntityDetail.ts` hook handles errors correctly but is ONLY used by the dev explorer. Every Supabase failure (network, RLS block, bad query like F2) fails silent — the page just doesn't render those sections. This is the structural reason F2 silently shipped.
+
+### Key P1s
+
+- **F10** — no 404 catch-all route in App.tsx
+- **F11** — Dashboard stats list `producer_insights` which has 0 rows (table exists but never populated)
+- **F12** — wineCount displayed across 5 page types is inflated by F-grade empty shells (96.7% of appellation wines are F; HomePage also missed the `deleted_at` filter)
+- **F13** — 5,573 wines in 2,404 duplicate-name groups on 1,145 producer pages; users can't distinguish them
+- **F14** — Producer website URL is non-clickable plain text on consumer pages (WinePage + ProducerPage); the dev ProducerDetail.tsx:83 does it correctly with `target="_blank" rel="noopener noreferrer"`
+- **F15** — dev WineDetail.tsx:37 reads `grapes.name` not `display_name` (S2.5 F4 extension to dev explorer)
+- **F16-F19** — **8 `ai_*` fields fetched by consumer pages and never rendered.** AppellationPage drops `ai_overview`, `ai_key_grapes`, `ai_notable_producers_summary` (3 of 7). CountryPage drops `ai_wine_history`, `ai_key_regions` (plus F2 typo, net 2 of 5 real fields rendered). RegionPage drops `ai_overview` (1 of 5). GrapePage drops `ai_overview`, `ai_regions_of_note` (2 of 6, though moot while `grape_insights` is 0 rows). If Sprint 5 generates perfect ai_overview for Chambertin appellation, the current code will fetch-and-discard it.
+- **F20** — zero aria-current, aria-live, aria-labelledby, htmlFor, or role attributes anywhere in consumer pages. Only 3 aria-label total (all on mobile hamburger toggles). WCAG 1.3.1, 2.4.6, 4.1.3 violations.
+- **F21** — heading hierarchy skips h1 → h3 in every detail page (WinePage/ProducerPage/Appellation/Region/Country/Grape/Vineyard). No h2s. WCAG 1.3.1 violation.
+- **F22** — WinePage food pairing section invisible on 99% of Grade C wines (`GRADE_C_FIELDS` drops the field per S2.6 F7)
+- **F23** — classification `system_name` captured into state at `WinePage.tsx:258-266` but only `level_name` rendered. User sees "Premier Cru" with no "Saint-Émilion 1855" or "Burgundy 1er Cru" context
+
+### P2 + P3 summary
+
+- **F24** — empty Section headers visible when FactGrid filters all children to null (the rendering bug behind F4's visible impact)
+- **F25** — EntityMap boundary_source rendered raw ("ldproxy_rlp", "uc_davis_ava")
+- **F26** — VineyardPage map shows appellation instead of vineyard GPS point (N/A until vineyards exist)
+- **F27** — ~500 LOC of Section/Tag/Fact/FactGrid/Loading/NotFound/MiniLabel duplication across 8 consumer pages, with inconsistent variant props
+- **F28** — Dashboard fires N+1 count queries uncached on every load
+- **F29** — HomePage `autoFocus` triggers mobile keyboard popup on load, causing layout shift
+- **F30** — GrapePage wineCount inflated by Pinot Blanc contamination bug
+- **F31** — `LandingPage.tsx` is dead code (exists in src, not routed)
+- **F32** — build timestamp shown only on dev layouts, not ConsumerLayout footer
+
+### Sprint 3 impact
+
+**Pre-req UI hygiene bundle (~3-4 hours total):** F1 (5 min), F2 (1 min + 10 min render expansion), F7 (1 min), F8 (park), F9 (2 hours for error boundary + .catch), F10 (5 min), F11 (1 min), F14 (5 min), F15 (1 min), F16-F19 (30 min to render dead fetches), F20 (2 hours a11y baseline), F21 (5 min single-file change once F27 lands), F22 (1 hour wire structured wine_food_pairings path), F23 (5 min), F24 (15 min Section fix), **F27 (half day — consolidate shared consumer components; optional but 8x multiplier on all other UI fixes)**.
+
+**Data-dependent:** F3 (Chardonnay+Pinot Blanc data fix), F4 (producer metadata strategy call), F6 (contaminated appellation_insights cleanup or wait for Sprint 5 regen), F12 (honest display now), F13 (fuzzy merge pass).
+
+**Sprint 5 constraints locked:** AI disclaimer + confidence badge must ship before `ENRICHMENT_ENABLED` flag flips (F5); every new `ai_*` field in Sprint 5 prompts must have matching consumer render (F16-F19 lesson); reference-first regeneration confirmed at the UI layer (F6 quantifies 16,429 wine-page reach).
+
+### Cross-references
+
+- S2.1 F28 → F12 (UI extension of count drift)
+- S2.3 F1 → F1 (empty h1), also verified by search_catalog reproducing marquee breakage at UI
+- S2.3 F2 / S2.5 F2 → F3 (Chardonnay+Pinot Blanc quantified as 2,914 UI pages)
+- S2.3 F3 → F4 (producer metadata scope corrected from 15 to 10,676)
+- S2.4 F10 → F23 (classification German einzellage)
+- S2.5 F4 → F15 (dev WineDetail uses grapes.name)
+- S2.5 F18 → F1 (inverse NULL display_name / name scope)
+- S2.6 F3/F4 → F3 + F5 (confabulation renders; no disclaimer)
+- S2.6 F5 → F6 (16,429 contaminated wine-page soil renders)
+- S2.6 F7 → F22 (food pairing absent on 99% of C)
+- S2.6 F8 → F22 (wine_food_pairings structured table empty; no UI render path)
+- S2.6 F9 → F16 (US-only appellation_insights compounded with dead-fetch ai_overview)
+
+Total S2.7 findings blocking Sprint 3: **9 P0 + 14 P1 = 23 items**. Overlaps with prior sessions on F3/F6/F15 — net ~20 new items added to backlog.
+
+### Scope-breaker check
+
+None. S2.7 findings are all fit-and-finish UI fixes or mandate confirmations of existing Sprint 3/5 plan. The only shift: Sprint 3 grows a "UI hygiene" pre-req bundle (~3-4 hours) before the data work begins, because F9 error handling is foundational for Sprint 3 to be able to trust its own fixes.
+
+**F2 is the session's single cheapest high-impact finding** — 1-character typo that invalidates 100% of country pages. It's been silently shipping because of F9. Both must land before any other UI work can be relied on.
+
+### Deliverables
+
+- `data/sprints/audit/findings/findings_ux.md` — 32-finding report (9 P0, 14 P1, 7 P2, 2 P3)
+- `data/sprints/audit/prompts/s2_7_ux.md` — session prompt (written at session start for reproducibility)
+- `data/sprints/audit/sessions.json` — S2.7 → done, $0 spend
+- `data/sprints/audit/budget.json` — S2.7 entry, running total $0.00 / $25.00
+- `data/sprints/audit/journal.md` — this section
+

@@ -113,9 +113,11 @@ audit)** ran with 22 findings (9 P0, 8 P1, 4 P2, 1 P3) → `findings_wine_canoni
 edge functions + shared libs + scheduled tasks)** ran with 32 findings (9 P0, 14 P1,
 7 P2, 2 P3) → `findings_code.md`. **S2.6 (voice expert — 5,454-row enriched
 corpus + 5 prompt files + live enrich-wine edge function)** ran with 32 findings
-(9 P0, 14 P1, 7 P2, 2 P3) → `findings_voice.md`. All six sessions at $0 actual
-spend. Sprint 2 budget $0 / $25 ceiling. **181 findings** total across
-S2.1+S2.2+S2.3+S2.4+S2.5+S2.6 so far.
+(9 P0, 14 P1, 7 P2, 2 P3) → `findings_voice.md`. **S2.7 (UX / frontend expert —
+9 consumer pages + 14 dev-explorer pages + 9 shared components)** ran with 32 findings
+(9 P0, 14 P1, 7 P2, 2 P3) → `findings_ux.md`. All seven sessions at $0 actual
+spend. Sprint 2 budget $0 / $25 ceiling. **213 findings** total across
+S2.1+S2.2+S2.3+S2.4+S2.5+S2.6+S2.7 so far.
 
 **Six-session headline:** (S2.2 F1) 286,918 wine_id pointers across 29 of 31
 wine-bearing staging tables are dangling archive references — Sprint 3's highest-ROI
@@ -174,17 +176,57 @@ zero rows despite `grape_insights.py` containing the best food-pairing prompt in
 Loam (VOICE.md-compliant classics-first structured guidance, never run). (S2.6 F7)
 99% of enriched wines (5,003 of 5,062 Grade C) have no food-pairing prose at all
 because `GRADE_C_FIELDS` schema drops the field entirely.**
+**(S2.7 F2) `CountryPage.tsx:40` selects a non-existent column `ai_signature_grapes`
+(actual column is `ai_signature_styles`) — 100% of country pages silently fail to
+render any AI content via PGRST 42703, invisible because (F9) zero `.catch()` in
+consumer pages. 1-char typo fix. (S2.7 F1) `WinePage.tsx:175` fetches `wine.name`
+not `display_name`; 12,083 active wines (7.8%) have NULL name but populated
+display_name and render empty `<h1></h1>` (verified samples: Ropiteau Pommard
+Premier Cru, Mommessin Châteauneuf-du-Pape, Ligeret Chambertin-Clos de Bèze Grand
+Cru). (S2.7 F4) ProducerPage is structurally empty corpus-wide — 0 of 10,676
+producers have hectares/production/address/coords/description/philosophy/year/
+parent/appellation; 1 has website; 1 has type. S2.3 F3's "15 marquee producers
+with 0 metadata" undersells the scope — **every** producer has 0 metadata. Dead
+sections: Philosophy and Estates & Labels NEVER render. (S2.7 F3) 2,914 active
+wine pages render the Chardonnay+Pinot Blanc chip combination (UI manifestation
+of S2.3 F2 / S2.5 F2); 493 also render confabulated `wine_insights.ai_hook`.
+(S2.7 F6) 16,429 active wine pages render contaminated volcanic soil claims at
+the wine level via `appInsight.ai_soil_profile` under MiniLabel "Soil" with no
+attribution — UI reach of S2.6 F5. (S2.7 F5) AI content rendered with zero
+confidence badge / AI disclaimer / source attribution across all consumer pages;
+`ConfidenceBadge.tsx` + `InsightsPanel.tsx` exist but only wired to dev `/data/*`
+explorer, not consumer pages. (S2.7 F16-F19) **8 `ai_*` fields fetched by consumer
+pages and never rendered** — AppellationPage drops `ai_overview`/`ai_key_grapes`/
+`ai_notable_producers_summary`, RegionPage drops `ai_overview`, CountryPage drops
+`ai_wine_history`/`ai_key_regions` (plus F2), GrapePage drops `ai_overview`/
+`ai_regions_of_note`. Sprint 5 could generate perfect Chambertin `ai_overview`
+and no user would ever see it. (S2.7 F8) `/vineyard/:id` route is dead (0 rows,
+search_catalog doesn't include vineyard). (S2.7 F9) Zero `.catch()` anywhere in
+consumer pages, no error boundary in `main.tsx` — structural reason F2 silently
+ships.**
 
-**Sprint 3 sequence (refined by S2.6):** Pre-reqs: (i) voice module consolidation
-— create `pipeline/lib/voice.py` with shared VOICE_RULES_BLOCK + NEVER INVENT
-block, rewrite 4 reference enrichment scripts + vendored edge function to import
-it, ~4-6 hrs (S2.6 F1/F2, closes 14 of 32 S2.6 findings). (ii) Delete `describe-chemical`
-edge function, centralize Anthropic model IDs via `pipeline/lib/models.py`, vendor
-`enrich-wine` source into `supabase/functions/` — ~30 min combined (S2.5 F1/F5/F31).
-(iii) Restore `wine_food_pairings` from `archive.wine_food_pairings` (S2.6 F8).
+**Sprint 3 sequence (refined by S2.6 + S2.7):** Pre-reqs: (i) voice module
+consolidation — create `pipeline/lib/voice.py` with shared VOICE_RULES_BLOCK +
+NEVER INVENT block, rewrite 4 reference enrichment scripts + vendored edge
+function to import it, ~4-6 hrs (S2.6 F1/F2, closes 14 of 32 S2.6 findings).
+(ii) Delete `describe-chemical` edge function, centralize Anthropic model IDs
+via `pipeline/lib/models.py`, vendor `enrich-wine` source into `supabase/functions/`
+— ~30 min combined (S2.5 F1/F5/F31). (iii) Restore `wine_food_pairings` from
+`archive.wine_food_pairings` (S2.6 F8). (iv) **NEW — UI hygiene bundle (~3-4
+hours combined, S2.7):** fix CountryPage column typo (F2, 1 min), add
+`display_name` fallback to WinePage (F1, 5 min), fix footer About link (F7, 1
+min), park `/vineyard/:id` route (F8, 5 min), add error boundary + `.catch()`
+to consumer pages (F9, 2 hours), add 404 catch-all (F10, 5 min), render the 8
+dead-fetch `ai_*` fields (F16-F19, 30 min), add a11y baseline — aria attrs +
+h1→h2 hierarchy (F20/F21, 2 hours), make producer website URL clickable (F14,
+5 min), fix classification render (F23, 5 min), make Section component
+content-aware (F24, 15 min), optionally consolidate shared consumer components
+(F27, half day, reduces every other UI fix by 8x). F5 (AI disclaimer / confidence
+badge) deferred to pre-Sprint-5 gate.
 Then: (a) S2.2 F1 staging relink **— code owner identified: extend
 `relink_staging_to_current.py` STAGING_TABLES_WINE from 1 to 30 tables (S2.5 F3),
-~2hr fix** → (b) S2.3 F3 producer seed file → (c) refined grape-repair workstream —
+~2hr fix** → (b) **producer metadata strategy (S2.7 F4 expands S2.3 F3 from "15
+producers" to corpus-wide)** → (c) refined grape-repair workstream —
 **3a** `grapes.name` cleanup + `display_name` (S2.4 F6, F15) → **3b** 921 synonym
 collision resolution + delete PINOT BLANC's 4 polluting synonyms (S2.4 F2, F7) →
 **3c** fix varietal_categories wrong links (S2.4 F1) → **3c.5** fix
@@ -196,12 +238,13 @@ language fixes + appellation_soils provenance schema (S2.4 F11-F17) → (d) F6
 color+country repair → (e) L3 fact-check gate scaffolding (S2.6 F3; the $18 S2.3
 pre-auth re-scoped from "re-fact-check existing prose" to "build L3 gate that
 blocks writes without fact-check") → (f) Sprint 5: **reference regen first, wine
-regen second** (S2.6 F5; contamination direction is one-way). Skipping any of
-(a)-(e) re-contaminates (f). **The `ENRICHMENT_ENABLED=false` feature flag on the
+regen second** (S2.6 F5 + S2.7 F6; contamination direction is one-way, confirmed
+at UI layer via 16,429 active wine-page reach). Skipping any of (a)-(e)
+re-contaminates (f). **The `ENRICHMENT_ENABLED=false` feature flag on the
 `enrich-wine` edge function must stay OFF through Sprint 3 and into Sprint 5; do
-not flip until F1+F2+F3+F4 all land.** **S2.4 + S2.5 + S2.6 findings blocking
-Sprint 3: 26 P0 + 42 P1 = 68 items total (net ~65 after S2.5↔S2.6 overlap
-dedup).**
+not flip until (S2.6) F1+F2+F3+F4 AND (S2.7) F5 AI-disclaimer UI all land.**
+**S2.4 + S2.5 + S2.6 + S2.7 findings blocking Sprint 3: 35 P0 + 56 P1 = 91 items
+total (net ~85 after cross-session overlap dedup).**
 
 Live sprint state: `data/sprints/current.json`. 30K Plan (Sprint 1) closed 2026-04-11
 and is archived at `data/sprints/_archive/30k/`. Pre-30K history (the ~477K-wine
