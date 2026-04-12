@@ -1594,6 +1594,26 @@ Batch of decisions made after the Sprint 2 audit closed (275 findings, $0 spend)
 
 Sprint 2 (audit) → Sprint 3 (fix) → re-audit after Sprint 3. Not a one-shot fix-everything sprint. Iterate. Each cycle narrows the finding count. This replaces the implicit "Sprint 3 closes all P0/P1s permanently" assumption with "Sprint 3 closes what it can, then Sprint 3.5 or Sprint 4 opening audits what's left."
 
+### 2026-04-12: Sprint 5 enrichment scoped to friends-and-family, not full corpus
+
+The $620-700 "full corpus" enrichment cost is not necessary for the friends-and-family launch criterion. Scope Sprint 5 to ~$60-100: re-generate existing ~5K enriched wines through the new voice module + L3 gate, add Grade C on ~3K high-depth wines, Grade B on ~500 demo wines, reference regen on 49 contaminated US + ~200 European appellations, L3 gate calibration. Expand only if friends-and-family feedback shows coverage gaps. Full-corpus coverage ($620-700) is the ceiling for later, not the Sprint 5 target.
+
+### 2026-04-12: Producer enrichment should follow wine enrichment conventions
+
+Standardize naming conventions for producer metadata + enrichment scores to match the wine pattern (data_grade F/D/C/B/A, enrichment_log tracking, pipeline/lib/voice.py shared rules). Build out during the Sprint 3 producer metadata session (Track 4). "Producers are the artists" — metadata needs to be deep (founding story, winemaker philosophy, vineyard holdings, production methods), not just 3 fields.
+
+### 2026-04-12: Sprint 3 execution pattern — autonomous with dry-run summaries
+
+Sprint 3 runs interactively (same as Sprint 2) but with writes. Pattern: dry-run first → summarize what will change → execute without per-row approval. User trusts Claude to make good data decisions but wants visibility into what changed via summaries and the live dashboard file. Not fully scripted/unattended; not per-row approval either.
+
+### 2026-04-12: Replace dashboards with a single Notepad++-friendly file
+
+Ditch `loam_roadmap.json` + `dash.ps1` + `sprint_dashboard.py` as the source-of-truth dashboards. Replace with a single markdown file at `data/stats/dashboard.md` that Claude regenerates at session start, milestones, and session end. User keeps it open in Notepad++ with auto-refresh. Contains: sprint state, budget, metrics, progress checklist, open questions. One file, one truth.
+
+### 2026-04-12: S2.10 reprioritization session before Sprint 3
+
+Run a S2.10 session that re-sorts the Sprint 3 backlog against the updated strategic context (ICP = enthusiast + beverage director, launch = friends-and-family after Sprint 3, producers = deep metadata, Sprint 5 budget = $60-100 not $620-700). Also establishes the KPI framework and the new dashboard file. Tracked in the same dashboard.
+
 ### 2026-04-12: Delete xwines_* tables and Riddler scheduled task
 
 xwines_* (530K Vivino-sourced wines, ~2.2M vintages, ~32K producers) kept as "reference" is confusing things. Delete in Sprint 3. The data-accuracy-agent (Riddler) scheduled task is also dead weight — delete, don't revive.
