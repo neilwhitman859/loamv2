@@ -1557,3 +1557,43 @@ Pre-authorizing a scripted Haiku/Sonnet budget for this kind of work is paying f
 - `memory/feedback_opus_inline_reasoning.md` (primary — auto-loads in future conversations)
 - `CLAUDE.md` "Prefer Opus Inline for Audit & Reasoning" behavioral instruction
 - `memory/MEMORY.md` index
+
+### 2026-04-12: Post-Sprint-2 strategic decisions — 14 open questions resolved
+
+Batch of decisions made after the Sprint 2 audit closed (275 findings, $0 spend). These resolve the open questions from the S2.9 business audit that blocked Sprint 3 from being prioritized rigorously.
+
+**Q1 — What is Loam?** Venture long-term, personal project short-term. Core thesis: Loam should be a world-class wine dataset and reference tool. Goal: look up any wine in the world and get interesting, accurate, and meaningful data on (a) what it is (facts), (b) where it came from (human backstory), and (c) why it tastes the way it does (viticultural backstory). Reference lookup tool frontend built on top of a world-class dataset. All possible future paths for Loam require this foundation first.
+
+**Q2 — ICP:** Enthusiast AND beverage director (dual audience). Not trade-only, not B2B-only.
+
+**Q3 — Launch criterion:** Friends and family usable after Sprint 3 bug fixes + frontend polish. Not a public launch — a soft opening for a known audience.
+
+**Q4 — Frontend after Sprint 3:** Must be at least basically functioning. Not paused through Sprint 5. Sprint 3 unpauses the frontend and delivers a usable (not polished) consumer experience.
+
+**Q6 — Producer metadata scope:** Must be rigorous. Producers are "the artists." Not just website+year+coords — deep metadata: winemaker history, philosophy, vineyard holdings, production methods, founding story, estate details. Sprint 3 Track 4 needs to be re-scoped from "300 producers with 3 fields" to "meaningful depth on top producers."
+
+**Q7 — Data freshness model:** Updates every couple months. Deferred to post-Sprint 3.
+
+**Q8 — xwines_* tables (Vivino dump, 530K wines):** Delete. Old reference data kept "just in case" that is now confusing things. Drop the tables during Sprint 3.
+
+**Q9 — Sprint 3 execution pattern:** To be figured out with Claude's help at Sprint 3 opening. Not pre-decided.
+
+**Q10 — Verification methodology:** Sprint 3 verifies fixes as it goes. After Sprint 3, run another Sprint-2-style audit. Iterate audit→fix→audit. This is the long-term pattern.
+
+**Q11 — Rollback story:** Move forward with best effort, fix if needed. Stop keeping old backups and archives that create confusing parallel state. Indecision and over-preservation have created more problems than they've solved.
+
+**Q12 — Riddler / data-accuracy-agent:** Delete. Don't revive.
+
+**Q13 — Name/positioning ("Loam" + "wine intelligence platform"):** Needs rethinking. Deferred.
+
+**Q14 — Structural risks not caught by read-only audit:** Understood — continuous improvement, not perfection.
+
+**Meta — File structure / workflow / dashboards:** Current md file structure, dashboards, and prioritization workflow are not in a good place. Need to rethink — timing TBD but acknowledged as a real problem. (See also S2.8 findings on doc drift, two-dashboards-two-answers, stale session prompts, ballooning sessions.md entries.)
+
+### 2026-04-12: Audit→fix→audit is the long-term quality pattern
+
+Sprint 2 (audit) → Sprint 3 (fix) → re-audit after Sprint 3. Not a one-shot fix-everything sprint. Iterate. Each cycle narrows the finding count. This replaces the implicit "Sprint 3 closes all P0/P1s permanently" assumption with "Sprint 3 closes what it can, then Sprint 3.5 or Sprint 4 opening audits what's left."
+
+### 2026-04-12: Delete xwines_* tables and Riddler scheduled task
+
+xwines_* (530K Vivino-sourced wines, ~2.2M vintages, ~32K producers) kept as "reference" is confusing things. Delete in Sprint 3. The data-accuracy-agent (Riddler) scheduled task is also dead weight — delete, don't revive.
