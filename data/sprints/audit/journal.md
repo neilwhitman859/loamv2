@@ -718,4 +718,150 @@ None. S2.8 findings are all doc-layer patches, memory edits, archive moves, and 
 
 **Running Sprint 2 totals:** 245 findings across S2.1+S2.2+S2.3+S2.4+S2.5+S2.6+S2.7+S2.8, still **$0.00 / $25.00** ceiling. S2.9 (synthesis + Sprint 3 backlog) is the final planned session.
 
+---
+
+## S2.9 — 2026-04-11
+
+**Expert:** business (capstone — positioning, monetization, ICP, competitive parity, moat, unit economics, risk)
+**Status:** done
+**Budget:** $0.00 (Opus 4.6 inline + 8 Supabase MCP verification queries, zero API calls)
+
+### Scope
+
+Two deliverables: (1) **findings_business.md** — a business-layer audit reading Loam as a go-to-market object rather than a technical artifact; (2) **synthesis.md** — the primary Sprint 2 deliverable, a deduped and prioritized Sprint 3 backlog drawn from all 9 audit sessions.
+
+### Method
+
+- Opus 4.6 inline reasoning (ratified pattern per DECISIONS.md 2026-04-11, S2.3-S2.8 precedent)
+- 8 `execute_sql` verification queries against the live DB for business-relevant signals: `wine_lookups` (user telemetry), `enrichment_log` (cost-to-date + unit economics + error rate), actual price/score coverage via join (not staging counts), `archive.wine_vintage_prices` vs `public.wine_vintage_prices` delta (staging relink unlock potential), `accuracy_audit` (feedback loop state)
+- `list_edge_functions` re-verification for the third time across Sprint 2 that `describe-chemical` is still deployed
+- Grep across consumer frontend for monetization/pricing/billing terms (zero results)
+- Competitive parity table built from training knowledge (explicit where specific; treated as point-in-time April 2026)
+- Read-only — no DB writes, no prompt runs, no new scraping, no code changes
+- No WebFetch — the business audit is entirely inline reasoning over prior findings + live DB queries + training knowledge
+
+### Key live DB verifications
+
+| Signal | Value | Implication |
+|---|---|---|
+| `public.wine_lookups` | **0 rows** | Zero user telemetry ever captured — "on-demand enrichment" has never fired |
+| `public.enrichment_log` | 5,401 rows, $16.19 total | 5,067 Haiku Grade C ($14.85) + 105 Sonnet Grade B ($1.35) + 229 errors (4.24% rate) |
+| Unit cost (Haiku Grade C) | **$0.00293/wine** | Full 155K Grade C coverage = ~$456 one-shot |
+| Unit cost (Sonnet Grade B) | **$0.01286/wine** | Full 155K Grade B coverage = ~$2,003 one-shot |
+| Live price coverage | **1.81%** (2,815 of 155,623 active) | CLAUDE.md claim of 5.21% is stale — 30K rebuild wiped the joins |
+| Live score coverage | **1.30%** (2,029 of 155,623) | Not "2.24% of the corpus" as claimed |
+| `archive.wine_vintage_prices` | **139,937 rows** | 116,717 prices waiting behind S2.2 F1 / S2.5 F3 relink |
+| `archive.wine_vintage_scores` | **27,325 rows** | 21,905 scores waiting behind the same relink |
+| `list_edge_functions` | `describe-chemical` ACTIVE v5 | S2.5 F1 → S2.8 → **S2.9 re-verified for 3rd time**, still not deleted |
+| `public.wine_food_pairings` | **0 rows** | S2.6 F8 confirmed, `archive.wine_food_pairings` has 809 |
+| `public.accuracy_audit` | 34 rows total | Feedback loop almost entirely unused |
+
+### 30 business findings written to `findings/findings_business.md`
+
+- **P0 (8):** F1 no monetization model exists anywhere in the architecture; F2 zero user wine lookups ever logged (instrumentation exists, never wired); F3 Loam's moat is INVERTED today — direct LLM queries return more factual answers than Loam's enriched pages on marquee wines; F4 ICP undefined (architecture serves "any of the above, partially"); F5 terroir positioning is 10x more polished than data supports (0 vineyards, 1/10,676 producers with website, 49/82 appellation_insights with volcanic confabulation); F6 `describe-chemical` still deployed (third audit cycle verification); F7 competitive parity table shows Loam losing on 6 columns and winning on 4 (weather + appellation rules + geographic boundaries + backbone IDs), wedge is narrow but defensible; F8 sprint sequence delays user-visible signal by 1-2 quarters without a parallel signal-collection track.
+- **P1 (14):** F9 no feedback loop instrumentation; F10 no affiliate revenue architecture despite 82K+ prices + 14 retailers; F11 B2B API licensing unexplored (highest-LTV path ignored); F12 brand voice vs AI voice conflated (AI voice has factual errors, brand voice doesn't exist); F13 "Loam" and "wine intelligence" have trademark/SEO collisions (Wine Intelligence Ltd. since 2002); F14 no SEO strategy (empty h1 on 12K pages, country pages 100% broken, no sitemap.xml); F15 no press kit / media surface; F16 unit economics are fine — Sprint 5 at $620-700 total is negligible; F17 enrichment cost decoupled from revenue model (supply-side-only pipeline); F18 legal/licensing status of 32 scraped sources undefined; F19 no competitor pricing intelligence informs (nonexistent) pricing strategy; F20 "why now" thesis only partially valid post-audit — narrow niche is defensible, general thesis isn't.
+- **P2 (6):** F21 PWA/mobile-first choice not research-backed; F22 no "first 100 users" plan; F23 pricing accuracy/staleness risk; F24 a11y/ADA compliance is legal risk; F25 no localization strategy (EN-US only caps market at 20% of wine buyers); F26 no "data freshness" communication on consumer pages.
+- **P3 (2):** F27 Sprint 5 has no measurable done criterion; F28-F30 branding polish (loam = soil type unexplained, "wine intelligence platform" generic + collides, Wine.com/Total Wine partnerships unexplored).
+
+### Cross-session dedupe — 9 compound groups
+
+The raw P0+P1 count across S2.1-S2.8 is ~170 findings; after dedupe into compound tracks, **net Sprint 3 scope is ~38 items organized into 9 tracks**:
+
+1. **Chardonnay/Pinot Blanc contamination** — 12 findings across 5 experts (S2.3 F2 + S2.4 F1/F2 + S2.5 F2/F4/F11/F17/F18 + S2.6 F4 + S2.7 F3/F15/F30) collapse into ONE compound grape repair (Sprint 3 Track 3).
+2. **Staging archive relink** — 4 findings (S2.1 F6 + S2.2 F1 + S2.5 F3 + S2.9 F3) collapse into ONE data unlock (Sprint 3 Track 2).
+3. **Volcanic soil confabulation** — 4 findings (S2.3 F14 + S2.4 F18 + S2.6 F5 + S2.7 F6) collapse into Sprint 5 reference regen (flagged, not fixed in Sprint 3).
+4. **Producer metadata corpus-wide** — 3 findings (S2.1 F4 + S2.3 F3 + S2.7 F4 + S2.9 F5) collapse into Sprint 3 Track 4.
+5. **Edge function + voice module hygiene** — 7 findings (S2.5 F1/F4/F5/F31 + S2.6 F1/F2 + S2.9 F6) collapse into Sprint 3 Track 1 (highest priority).
+6. **Food pairings** — 4 findings (S2.6 F6/F7/F8 + S2.7 F22) collapse into Sprint 3 Track 8.
+7. **Doc drift / meta hygiene** — 23 findings from S2.8 + S2.1 F28 collapse into Sprint 3 Track 0A.
+8. **UI hygiene bundle** — 15 findings from S2.7 collapse into Sprint 3 Track 0B.
+9. **AI safety rail / brand voice** — 4 findings (S2.7 F5 + S2.9 F12/F15/F26) collapse into Sprint 3 Track 6.
+
+### Sprint 3 backlog (synthesis.md is authoritative)
+
+**10 recommended sessions, $50-200 estimated spend:**
+
+- **S3.1** — Code/voice hygiene (Track 1 + Track 0A partial) — delete `describe-chemical`, vendor `enrich-wine`, create `pipeline/lib/voice.py` + `pipeline/lib/models.py`, rewrite 4 reference enrichment scripts
+- **S3.2** — Doc hygiene finish + UI hygiene P0s (Track 0A + Track 0B P0s)
+- **S3.3** — Staging archive relink (Track 2) — price coverage 1.81% → ~35%
+- **S3.4 + S3.5** — Grape repair compound (Track 3) — drop Chardonnay+Pinot Blanc false positives from 2,743 to ≤ 50
+- **S3.6** — UI hygiene P1s + AI safety rail (Track 0B P1s + Track 6)
+- **S3.7** — Producer metadata strategy + seed run (Track 4) — 300+ producers with website + year + coords
+- **S3.8** — L3 fact-check gate build (Track 7) — rescopes the $18 S2.3 pre-auth into gate infrastructure
+- **S3.9** — Signal collection (Track 5) + food pairings restore (Track 8)
+- **S3.10** — Sprint 3 exit review + Sprint 4 scoping
+
+### Sprint 3 done criteria (12)
+
+Sprint 3 closes only when ALL 12 are measurably true, including: `describe-chemical` deleted, `enrich-wine` vendored with voice module, Chardonnay/Pinot Blanc false-positive count ≤ 50 (down from 2,743), price coverage > 12.8%, UI P0s shipped, ≥300 producers with metadata, L3 fact-check gate calibrated, `<AIBadge>` shipped, doc hygiene closed, `wine_lookups` has ≥ 10 rows from real sessions, `docs/MONETIZATION.md` exists, `ENRICHMENT_ENABLED` feature flag still OFF.
+
+### Key deferrals (explicit, documented)
+
+- **Sprint 4:** `appellation_rules` JSONB redesign, `appellation_grapes`/`appellation_soils` provenance, French AOC diacritics, 1855 classification fix, slash-concatenated aliases, grapes.name VIVC cleanup, retailer affiliate architecture, pricing freshness, SEO hygiene
+- **Sprint 5:** reference regen (49 contaminated appellation_insights), European coverage (~500 new rows), wine regen (Grade B on top 10K + Grade C on full corpus), L3 gate application to existing 5,108 wine_insights rows
+- **Sprint 6+:** B2B API, affiliate revenue, partnerships, monetization execution, localization, mobile app, content marketing
+
+### Meta-patterns
+
+1. **Correctness-constrained, not cost-constrained.** F16 evidence removes the cost anxiety. Sprint 5's full coverage is $620-700 total. The real constraint is fact-check quality, voice consolidation, grape repair.
+2. **Demand signal before enrichment signal.** F2's zero wine_lookups is the most under-weighted audit finding. Sprint 3 wires instrumentation + signal collection in parallel with the technical work.
+3. **Wedge is narrow but defensible.** F7 + F20 combined: "wine intelligence platform" is too broad to win against Vivino/Wine-Searcher/LLMs; "terroir-grade wine data for trade/sommelier audience" is narrow enough to win because of the 4 star columns Loam holds (weather + appellation rules + geographic boundaries + backbone IDs).
+4. **Three recurring re-verifications across Sprint 2.** (a) `describe-chemical` still deployed (S2.5/S2.8/S2.9 — 3 cycles); (b) CLAUDE.md doc drift (S2.1/S2.7/S2.8); (c) Chardonnay/Pinot Blanc contamination (S2.3/S2.4/S2.5/S2.6/S2.7). Sprint 3 should close all three in Session 1-2.
+5. **Sprint 3 is 80% dedupe, 20% new work.** 170 raw findings → 38 net items → 9 tracks → 10 sessions. The synthesis value is in the dedupe, not in copying P0s forward.
+6. **Business findings reprioritize some technical P0s.** Empty h1 on 12K pages is P0 by severity but has 0 traffic. The sommelier-demo critical path (delete describe-chemical + staging relink + grape repair + producer metadata + voice consolidation) is the actual Sprint 3 critical path.
+7. **Sprint 5 is not "run enrichment";** Sprint 5 is "validate the quality gate by running enrichment through it on a bounded sample." Sprint 3 builds the gate.
+8. **Every sprint exits with a measurable done criterion.** Sprint 2 did (245 findings → synthesis.md). Sprint 3+ inherits the pattern.
+
+### Scope-breaker check
+
+**One soft reframing, no hard break.** The technical audit's implicit "fix every P0/P1" framing would take 20+ sessions before any user-visible value lands. Sprint 3 should be scoped around "unblock Sprint 5 + unlock staging depth + restore first-impression credibility on the ~500 wines a sommelier demo would hit" — not around "close every P0 by raw count." This is operationalized in synthesis.md's Tier 1-6 structure. No escalation to user required; recalibration clause applied.
+
+### Deliverables
+
+- `data/sprints/audit/findings/findings_business.md` — 30-finding business audit (8 P0, 14 P1, 6 P2, 2 P3)
+- `data/sprints/audit/findings/synthesis.md` — **Sprint 2 primary deliverable**: deduped Sprint 3 backlog with 9 tracks, 10-session sequence, 12 done criteria, explicit deferrals to Sprint 4/5/6+, risk tracking
+- `data/sprints/audit/prompts/s2_9_business_synthesis.md` — session prompt
+- `data/sprints/audit/sessions.json` — S2.9 → done, $0 spend, Sprint 2 complete
+- `data/sprints/audit/budget.json` — S2.9 entry, Sprint 2 closed at $0.00 / $25.00
+- `data/sprints/audit/journal.md` — this section + Sprint 2 closing summary below
+- `data/sprints/current.json` — Sprint 2 closed, Sprint 3 (execute) next
+- `CLAUDE.md` — Current State updated with Sprint 2 closed + pointer to synthesis.md
+- `memory/project_sprint2_findings.md` — updated with S2.9 summary + synthesis.md pointer
+- `data/sessions.md` — whiteboard entry moved to Done
+
+**Tables touched:** NONE (read-only audit; all writes are to sprint infra + docs + memory, no DB/schema changes).
+
+---
+
+## Sprint 2 — Closed 2026-04-11
+
+**9 sessions, 275 findings, $0.00 actual spend against $25.00 ceiling.**
+
+| Session | Expert | Findings (P0/P1/P2/P3) | Headline |
+|---|---|---|---|
+| S2.1 | db_canonical | 34 (6/12/11/5) | 80%+ depth lost in 30K rebuild; search_vector missing on 67% wines; 919 grape synonym collisions |
+| S2.2 | db_staging | 31 (6/11/9/5) | 286,918 dangling wine_id pointers (29 of 31 tables); ~52K prices locked behind relink |
+| S2.3 | wine_canonical | 22 (9/8/4/1) | 8/10 marquee wines broken; Chardonnay/Pinot Blanc bug systemic; 15 famous producers 0 metadata |
+| S2.4 | wine_reference | 30 (8/14/7/1) | Root cause of C/PB bug (PINOT BLANC synonyms); 5+ wrong grape links in varietal_categories |
+| S2.5 | code | 32 (9/14/7/2) | describe-chemical rogue deploy; batch_pipeline multi-COLA collapse; 4+ duplicate grape resolvers |
+| S2.6 | voice | 32 (9/14/7/2) | Prompt drift end-to-end; contamination feedback loop reference→wine; 5/5 Grade C hooks have invented facts |
+| S2.7 | ux | 32 (9/14/7/2) | CountryPage 100% broken via typo; 12K empty h1s; 8 ai_* fields fetched and never rendered |
+| S2.8 | meta | 32 (9/14/7/2) | CLAUDE.md internal contradictions; sprint pivot incompletely executed; doc drift systematic |
+| **S2.9** | **business** | **30 (8/14/6/2)** | **No monetization; 0 user lookups; moat inverted vs LLMs today; wedge narrow but defensible** |
+
+**Critical Sprint 3 pre-reqs identified (addressed in synthesis.md Tier 1):**
+- Code/voice hygiene bundle (Track 1) — closes 21 findings across S2.5/S2.6/S2.9 in 1-2 sessions
+- Staging archive relink (Track 2) — unlocks ~116K prices + ~22K scores from archive tables
+- Grape repair compound (Track 3) — closes Chardonnay/Pinot Blanc contamination at all 5 layers
+- Doc hygiene (Track 0A) + UI hygiene (Track 0B) — closes drift surface area blocking every future session briefing
+
+**Sprint 2 structural observations for the sprint sequence:**
+- **Opus inline reasoning pattern ratified across 9 sessions at $0.** Every session that pre-authorized Haiku/Sonnet budget ended up not needing it; the $18 S2.3 pre-auth rolls forward to Sprint 3 Track 7 (L3 fact-check gate build), rescoped from "re-fact-check existing prose" to "build the gate that blocks writes without fact-check."
+- **Every session stayed read-only.** No DB writes, no DDL, no pipeline runs, no prompt executions. The audit discipline held for 9 consecutive sessions.
+- **Three findings were re-verified across sessions** (describe-chemical deployment, CLAUDE.md drift, Chardonnay/Pinot Blanc) — Sprint 3 opens with these as the first-minute wins.
+- **Sprint 3 scope is ~8-12 sessions + $50-200 actual budget.** Combined Sprint 2+3 ceiling should be extended from $50 to $250 at Sprint 3 mid-point if Track 4 (producer metadata) runs expensive; Sprint 5 enrichment budget is separate and sized around $500-1,500.
+- **`ENRICHMENT_ENABLED=false` feature flag stays OFF** through Sprint 3 and into Sprint 5 until voice + L3 gate + grape repair + AI-disclaimer UI all land. This is a cross-session locked decision from S2.5/S2.6/S2.7/S2.9.
+
+**Sprint 2 exits clean.** No outstanding blockers, no escalations, no structural pivots. Sprint 3 opens whenever the user is ready; synthesis.md is the authoritative starting point.
+
 

@@ -102,27 +102,70 @@ and `data/stats/cron_loop_journal.md` for past loop outcomes and remaining backl
 
 ## Current State
 
-**Sprint 2 (Audit) is active as of 2026-04-11.** Multi-expert read-only audit
-producing a Sprint 3 fix backlog. S2.1 (DB canonical) ran with 34 findings
-(6 P0, 12 P1, 11 P2, 5 P3) → `data/sprints/audit/findings/findings_db_canonical.md`.
-**S2.2 (DB staging)** ran with 31 findings (6 P0, 11 P1, 9 P2, 5 P3) →
-`findings_db_staging.md`. **S2.3 (wine canonical, 99 wines + 50 producers sommelier
-audit)** ran with 22 findings (9 P0, 8 P1, 4 P2, 1 P3) → `findings_wine_canonical.md`.
-**S2.4 (wine reference content)** ran with 30 findings (8 P0, 14 P1, 7 P2, 1 P3) →
-`findings_wine_reference.md`. **S2.5 (code expert — 265 pipeline/*.py files + 2
-edge functions + shared libs + scheduled tasks)** ran with 32 findings (9 P0, 14 P1,
-7 P2, 2 P3) → `findings_code.md`. **S2.6 (voice expert — 5,454-row enriched
-corpus + 5 prompt files + live enrich-wine edge function)** ran with 32 findings
-(9 P0, 14 P1, 7 P2, 2 P3) → `findings_voice.md`. **S2.7 (UX / frontend expert —
-9 consumer pages + 14 dev-explorer pages + 9 shared components)** ran with 32 findings
-(9 P0, 14 P1, 7 P2, 2 P3) → `findings_ux.md`. **S2.8 (meta expert — 14 docs files
-+ 19 memory files + CLAUDE.md + loam_roadmap.json + sprint infra + scheduled tasks
-+ edge function deployment verification)** ran with 32 findings (9 P0, 14 P1, 7 P2,
-2 P3) → `findings_meta.md`. All eight sessions at $0 actual
-spend. Sprint 2 budget $0 / $25 ceiling. **245 findings** total across
-S2.1+S2.2+S2.3+S2.4+S2.5+S2.6+S2.7+S2.8 so far.
+**Sprint 2 (Audit) CLOSED 2026-04-11.** 9 sessions, **275 findings**, $0.00 / $25.00
+spent (Opus 4.6 inline ratified as the default audit pattern). Primary deliverable:
+[`data/sprints/audit/findings/synthesis.md`](data/sprints/audit/findings/synthesis.md)
+— deduped, prioritized 9-track Sprint 3 backlog with 10-session sequence and 12 done
+criteria. **Sprint 3 (Execute) opens next** against that backlog.
 
-**Eight-session headline:** (S2.2 F1) 286,918 wine_id pointers across 29 of 31
+| Session | Expert | Findings (P0/P1/P2/P3) | Findings file |
+|---|---|---|---|
+| S2.1 | db_canonical | 34 (6/12/11/5) | `findings_db_canonical.md` |
+| S2.2 | db_staging | 31 (6/11/9/5) | `findings_db_staging.md` |
+| S2.3 | wine_canonical (sommelier) | 22 (9/8/4/1) | `findings_wine_canonical.md` |
+| S2.4 | wine_reference | 30 (8/14/7/1) | `findings_wine_reference.md` |
+| S2.5 | code | 32 (9/14/7/2) | `findings_code.md` |
+| S2.6 | voice | 32 (9/14/7/2) | `findings_voice.md` |
+| S2.7 | ux | 32 (9/14/7/2) | `findings_ux.md` |
+| S2.8 | meta | 32 (9/14/7/2) | `findings_meta.md` |
+| S2.9 | business | 30 (8/14/6/2) | `findings_business.md` |
+
+**Sprint 2 headline** (the one-paragraph version; synthesis.md is authoritative):
+Sprint 3 unblocks Sprint 5 by (1) eliminating contamination vectors that would
+re-infect regenerated content, (2) unlocking the staging-locked data depth waiting
+in archive tables, and (3) repairing first-impression credibility on the ~500 wines
+a sommelier demo is likeliest to hit. Biggest concrete opens: the Chardonnay/Pinot
+Blanc compound bug (12 findings across 5 experts → Track 3), staging archive relink
+(S2.2 F1 + S2.5 F3 → Track 2, unlocks ~116K archive prices + ~22K scores from the
+pre-30K world currently dangling), code/voice hygiene bundle (21 findings across
+S2.5+S2.6+S2.9 → Track 1, closes in 1-2 sessions), `describe-chemical` rogue edge
+function still deployed at Sprint 2 close (S2.5 F1 / S2.8 / S2.9 all re-verified
+deployed — delete in Sprint 3 Session 1 Minute 1), corpus-wide producer metadata
+vacuum (0 of 10,676 producers have metadata, not just 15 marquee), doc hygiene
+bundle (23 S2.8 findings), UI hygiene bundle (15 S2.7 findings including CountryPage
+1-char typo breaking 100% of country pages), and the new business-layer findings
+from S2.9: **no monetization model, 0 user wine lookups ever, moat inverted vs
+direct LLM queries today, ICP undefined, terroir positioning 10x more polished than
+data supports**. Cost is not a constraint — Sprint 5 full coverage projects at
+$620-700 total; correctness + voice consolidation + fact-check gate are the
+constraints. **`ENRICHMENT_ENABLED=false` feature flag on `enrich-wine` stays OFF
+through Sprint 3 into Sprint 5** until voice module + L3 fact-check gate + grape
+repair compound + AI-disclaimer UI all land.
+
+**Sprint sequence (locked 2026-04-11):** 1 (30K, done) → 2 (Audit, **CLOSED**) →
+3 (Execute, opens next) → 4 (Reference Design) → 5 (Reference Enrichment).
+Enrichment at scale does NOT start until Sprint 5. See
+`memory/project_quality_before_enrichment.md` and `data/sprints/audit/findings/synthesis.md`.
+
+**Numbers in this section are periodic snapshots.** Always query the DB (or run
+`python -m pipeline.analyze.sprint_dashboard` / `powershell -File scripts/dash.ps1`)
+before relying on any count. S2.1 F28 / S2.7 F2 / S2.8 F1/F3/F4/F23 all documented
+doc-drift; Sprint 3 Track 0A closes it.
+
+Live sprint state: `data/sprints/current.json`. 30K Plan (Sprint 1) closed 2026-04-11
+and is archived at `data/sprints/_archive/30k/`. Pre-30K history (the ~477K-wine
+pre-rebuild dataset) lives in `docs/HISTORY.md` under "Pre-30K rebuild history".
+
+---
+
+## Prior Sprint 2 headline (pre-S2.9, kept for context — synthesis.md supersedes)
+
+Before Sprint 2 closed, a detailed per-session narrative lived in this section.
+It's now captured across the 9 findings files under `data/sprints/audit/findings/`
+and collapsed into tracks in `synthesis.md`. The remaining bullets below are the
+pre-S2.9 Sprint 3 sequence that synthesis.md organized, refined, and dedupes:
+
+**Pre-S2.9 eight-session headline (preserved verbatim; synthesis.md supersedes):** (S2.2 F1) 286,918 wine_id pointers across 29 of 31
 wine-bearing staging tables are dangling archive references — Sprint 3's highest-ROI
 task is a staging relink (reuse S13 pattern) to unlock ~52K prices + ~48K scores +
 ~200K vintage-grade fields + ~40K UPCs. **S2.5 F3 pinpoints the code cause:**
@@ -297,20 +340,6 @@ not flip until (S2.6) F1+F2+F3+F4 AND (S2.7) F5 AI-disclaimer UI all land.**
 **S2.4 + S2.5 + S2.6 + S2.7 + S2.8 findings blocking Sprint 3: 44 P0 + 70 P1 = 114
 items total (net ~108 after cross-session overlap dedup; S2.8 is structurally
 distinct so no overlap).**
-
-Live sprint state: `data/sprints/current.json`. 30K Plan (Sprint 1) closed 2026-04-11
-and is archived at `data/sprints/_archive/30k/`. Pre-30K history (the ~477K-wine
-pre-rebuild dataset) lives in `docs/HISTORY.md` under "Pre-30K rebuild history".
-
-**Sprint sequence (locked 2026-04-11):** 1 (30K, done) → 2 (Audit, active) → 3
-(Execute fixes) → 4 (Reference Design) → 5 (Reference Enrichment). Enrichment at
-scale does NOT start until Sprint 5. See `memory/project_quality_before_enrichment.md`.
-
-**Numbers in this section are periodic snapshots.** Always query the DB (or run
-`python -m pipeline.analyze.sprint_dashboard` / `powershell -File scripts/dash.ps1`)
-before relying on any count. The S2.1 audit found ≥6 places where hardcoded counts
-in this file had drifted from live DB state (finding F28). Trust live queries, not
-the numbers below.
 
 ### Supabase Compute
 **Small** ($10/mo, 2GB RAM, dedicated CPU) — upgraded from Nano 2026-03-25. Required for `source_ttb_colas` table (4.7GB with indexes). Nano could not complete upserts without statement timeouts. DB total size: 6.6 GB.
