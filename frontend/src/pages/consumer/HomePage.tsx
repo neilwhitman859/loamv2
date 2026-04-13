@@ -115,7 +115,6 @@ export default function HomePage() {
                 onChange={(e) => setQuery(e.target.value)}
                 onFocus={() => results.length > 0 && setShowResults(true)}
                 placeholder="Search a wine, producer, or region..."
-                autoFocus
                 className="w-full h-14 pl-12 pr-4 bg-white rounded-2xl text-base text-earth-800 placeholder:text-earth-400 border border-earth-200 shadow-sm focus:border-wine-400 focus:outline-none focus:ring-2 focus:ring-wine-400/20 transition-all"
               />
               <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-earth-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">

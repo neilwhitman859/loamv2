@@ -34,7 +34,7 @@ export default function WineDetail() {
     Promise.all([
       supabase.from('wines').select('*, producer:producers!producer_id(id, name), appellation:appellations!appellation_id(id, name), country:countries!country_id(id, name), region:regions!region_id(id, name), varietal_category:varietal_categories!varietal_category_id(name, color)').eq('id', id).single(),
       supabase.from('wine_insights').select('*').eq('wine_id', id).maybeSingle(),
-      supabase.from('wine_grapes').select('grape_id, percentage, grape:grapes!grape_id(id, name, color)').eq('wine_id', id),
+      supabase.from('wine_grapes').select('grape_id, percentage, grape:grapes!grape_id(id, name, display_name, color)').eq('wine_id', id),
     ]).then(([wineRes, insightsRes, grapesRes]) => {
       if (wineRes.data) setWine(wineRes.data as Record<string, unknown>)
       if (insightsRes.data) setInsights(insightsRes.data as Record<string, unknown>)

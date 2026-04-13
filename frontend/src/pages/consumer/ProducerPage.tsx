@@ -170,7 +170,14 @@ export default function ProducerPage() {
             <Fact label="Coordinates" value={`${producer.latitude.toFixed(4)}, ${producer.longitude.toFixed(4)}`} />
           )}
           {producer.website_url && (
-            <Fact label="Website" value={producer.website_url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')} />
+            <div className="min-w-0">
+              <div className="text-[10px] uppercase tracking-wider text-earth-400 leading-tight">Website</div>
+              <a href={producer.website_url.startsWith('http') ? producer.website_url : `https://${producer.website_url}`}
+                target="_blank" rel="noopener noreferrer"
+                className="text-sm font-medium text-wine-600 hover:text-wine-700 transition-colors truncate block">
+                {producer.website_url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
+              </a>
+            </div>
           )}
         </FactGrid>
       </Section>
@@ -250,7 +257,7 @@ export default function ProducerPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mb-5">
-      <h3 className="font-display text-base font-semibold text-earth-800 mb-2 pb-1 border-b border-earth-100">{title}</h3>
+      <h2 className="font-display text-base font-semibold text-earth-800 mb-2 pb-1 border-b border-earth-100">{title}</h2>
       {children}
     </section>
   )

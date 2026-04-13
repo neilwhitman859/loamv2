@@ -8,6 +8,7 @@ import EntityMap from '../../components/EntityMap'
 interface Wine {
   id: string
   name: string
+  display_name: string | null
   color: string | null
   wine_type: string | null
   effervescence: string | null
@@ -173,7 +174,7 @@ export default function WinePage() {
     supabase
       .from('wines')
       .select(`
-        id, name, color, wine_type, effervescence, sweetness_level, sparkling_method,
+        id, name, display_name, color, wine_type, effervescence, sweetness_level, sparkling_method,
         vinification_notes, first_vintage_year,
         soil_description, vine_age_description, vineyard_area_ha,
         altitude_m_low, altitude_m_high, aspect, slope_pct, monopole, commune,
@@ -341,7 +342,7 @@ export default function WinePage() {
         {wine.country && <><Link to={`/country/${wine.country.id}`} className="hover:text-earth-600">{wine.country.name}</Link><span>/</span></>}
         {wine.region && <><Link to={`/region/${wine.region.id}`} className="hover:text-earth-600">{wine.region.name}</Link><span>/</span></>}
         {wine.appellation && <><Link to={`/appellation/${wine.appellation.id}`} className="hover:text-earth-600">{wine.appellation.name}</Link><span>/</span></>}
-        <span className="text-earth-500">{wine.name}</span>
+        <span className="text-earth-500">{wine.display_name || wine.name}</span>
       </nav>
 
       {/* ── Header ─────────────────────────────────────── */}
@@ -349,7 +350,7 @@ export default function WinePage() {
         <div className="flex items-start gap-3">
           {wine.color && <div className={`w-4 h-4 rounded-full mt-2 shrink-0 ${COLOR_DOT[wine.color] || 'bg-earth-300'}`} />}
           <div>
-            <h1 className="font-display text-2xl md:text-3xl font-semibold text-earth-900 leading-tight">{wine.name}</h1>
+            <h1 className="font-display text-2xl md:text-3xl font-semibold text-earth-900 leading-tight">{wine.display_name || wine.name}</h1>
             {wine.producer && (
               <Link to={`/producer/${wine.producer.id}`} className="text-base text-wine-600 hover:text-wine-700 font-medium mt-0.5 inline-block">
                 {wine.producer.name}
@@ -365,7 +366,7 @@ export default function WinePage() {
           {wine.effervescence && wine.effervescence !== 'still' && <Tag>{wine.effervescence}</Tag>}
           {wine.sweetness_level && <Tag>{wine.sweetness_level}</Tag>}
           {wine.sparkling_method && <Tag>{wine.sparkling_method}</Tag>}
-          {classifications.map((c, i) => <Tag key={i} variant="accent">{c.level_name}</Tag>)}
+          {classifications.map((c, i) => <Tag key={i} variant="accent">{c.system_name ? `${c.system_name}: ${c.level_name}` : c.level_name}</Tag>)}
           {labelDesignations.map((ld, i) => <Tag key={`ld-${i}`} variant="muted">{ld.canonical_name}</Tag>)}
           {wine.monopole && <Tag variant="accent">Monopole</Tag>}
           {wine.data_grade && <Tag variant="muted">Grade {wine.data_grade.toUpperCase()}</Tag>}
@@ -373,7 +374,7 @@ export default function WinePage() {
 
         {/* One-liner hook */}
         {insight?.ai_hook && (
-          <p className="text-sm text-earth-500 mt-2 italic">{insight.ai_hook}</p>
+          <p className="text-sm text-earth-500 mt-2 italic">{insight.ai_hook} <AiLabel /></p>
         )}
       </header>
 
@@ -620,7 +621,14 @@ export default function WinePage() {
             {wine.producer.hectares_under_vine && <Fact label="Hectares" value={wine.producer.hectares_under_vine.toString()} />}
             {wine.producer.total_production_cases && <Fact label="Production" value={`${wine.producer.total_production_cases.toLocaleString()} cases`} />}
             {wine.producer.website_url && (
-              <Fact label="Website" value={wine.producer.website_url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')} />
+              <div className="min-w-0">
+                <div className="text-[10px] uppercase tracking-wider text-earth-400 leading-tight">Website</div>
+                <a href={wine.producer.website_url.startsWith('http') ? wine.producer.website_url : `https://${wine.producer.website_url}`}
+                  target="_blank" rel="noopener noreferrer"
+                  className="text-sm font-medium text-wine-600 hover:text-wine-700 transition-colors truncate block">
+                  {wine.producer.website_url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
+                </a>
+              </div>
             )}
           </FactGrid>
 
@@ -663,7 +671,7 @@ export default function WinePage() {
             )}
           </FactGrid>
           {insight?.ai_cellar_recommendation && (
-            <p className="text-sm text-earth-600 mt-2">{insight.ai_cellar_recommendation}</p>
+            <p className="text-sm text-earth-600 mt-2">{insight.ai_cellar_recommendation} <AiLabel /></p>
           )}
         </Section>
       )}
@@ -671,7 +679,7 @@ export default function WinePage() {
       {/* ── Food ───────────────────────────────────────── */}
       {insight?.ai_food_pairing && (
         <Section title="Food pairing">
-          <p className="text-sm text-earth-600">{insight.ai_food_pairing}</p>
+          <p className="text-sm text-earth-600">{insight.ai_food_pairing} <AiLabel /></p>
         </Section>
       )}
 
@@ -726,7 +734,7 @@ export default function WinePage() {
       {/* ── Similar wines (brief) ──────────────────────── */}
       {insight?.ai_comparable_wines && (
         <Section title="Similar wines">
-          <p className="text-sm text-earth-600">{insight.ai_comparable_wines}</p>
+          <p className="text-sm text-earth-600">{insight.ai_comparable_wines} <AiLabel /></p>
         </Section>
       )}
 
@@ -746,7 +754,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   return (
     <>
       <section className="mb-5">
-        <h3 className="font-display text-base font-semibold text-earth-800 mb-2 pb-1 border-b border-earth-100">{title}</h3>
+        <h2 className="font-display text-base font-semibold text-earth-800 mb-2 pb-1 border-b border-earth-100">{title}</h2>
         {children}
       </section>
     </>
@@ -780,6 +788,10 @@ function Fact({ label, value, link }: { label: string; value: string; link?: str
 
 function MiniLabel({ children }: { children: React.ReactNode }) {
   return <div className="text-[10px] uppercase tracking-wider text-earth-400 mb-1">{children}</div>
+}
+
+function AiLabel() {
+  return <span className="inline-block text-[9px] uppercase tracking-wider text-earth-400 bg-earth-100 px-1.5 py-0.5 rounded ml-1 align-middle" title="Generated by AI and may contain errors">AI</span>
 }
 
 /* ── Helpers ──────────────────────────────────────────────── */

@@ -120,7 +120,7 @@
 <body>
 
 <h1>Loam Dashboard</h1>
-<div class="updated">Last updated: 2026-04-13 &mdash; S3.3a &mdash; auto-refreshes every 5s</div>
+<div class="updated">Last updated: 2026-04-13 &mdash; S3.4 &mdash; auto-refreshes every 5s</div>
 
 <div class="status-bar">
   <div class="status-item">
@@ -129,7 +129,7 @@
   </div>
   <div class="status-item">
     <span class="status-label">Sprint</span>
-    <span class="status-value">3 &mdash; S3.3 done (Track 3A+3B+3C)</span>
+    <span class="status-value">3 &mdash; S3.4 done (Track 4)</span>
   </div>
   <div class="status-item">
     <span class="status-label">Budget</span>
@@ -197,14 +197,13 @@
   <div class="track-done">Done when: Chard/PB &le;50 (from 2,743), display_name NULL &lt;55K (from 104K), search_vector &gt;60% (from 32%), no 1973 years, food pairings &gt;800, 487 bad insights deleted</div>
 </div>
 
-<div class="track pending">
+<div class="track done">
   <div class="track-header">
-    <div class="track-check"></div>
+    <div class="track-check">&#10003;</div>
     <span class="track-name">4. UI hygiene</span>
-    <span class="track-est">~1-2 sessions</span>
+    <span class="track-est">S3.4, DONE</span>
   </div>
-  <div class="track-desc">Fix all frontend rendering bugs. P0: CountryPage column typo, WinePage display_name fallback, error boundary + .catch(), 404 route, /about link, park /vineyard. P1: render 8 dead ai_* fields, a11y baseline, heading hierarchy, food pairing section, classification system_name, clickable producer URLs, wineCount F-grade filter. P2: Section conditional render, EntityMap cleanup, component consolidation (~500 LOC dedup), Dashboard caching, remove autoFocus. Also: voice scan of existing content to flag issues for Sprint 4.</div>
-  <div class="track-done">Done when: CountryPage renders ai_overview, WinePage h1 never empty, error boundary works, 8 ai_* fields visible, a11y score &gt;85</div>
+  <div class="track-desc">Fixed CountryPage column typo (ai_signature_grapes&rarr;ai_signature_styles) + rendered 3 missing fields. WinePage display_name fallback + classification system_name. Error boundary in main.tsx. 404 catch-all route. /about route under consumer layout. AI disclaimer labels on all ai_* prose across 6 pages. Rendered 9 dead-fetch ai_* fields (AppellationPage 3, CountryPage 3, RegionPage 1, GrapePage 2). Heading hierarchy h1&rarr;h2 on 7 pages. Clickable producer URLs (ProducerPage + WinePage). Dashboard removed producer_insights. Dev WineDetail grapes display_name. Removed autoFocus. A11y landmarks (role=banner/main/contentinfo). Footer disclaimer. Voice scan: 83 flagged instances (56 &ldquo;elegant&rdquo;, 20 &ldquo;showcases&rdquo;, 3 &ldquo;marry&rdquo;, 4 &ldquo;tapestry&rdquo;) logged for Sprint 4.</div>
 </div>
 
 <div class="track done">
@@ -307,6 +306,7 @@
 <h2>Session Log</h2>
 <table>
   <tr><th>Session</th><th>Date</th><th>Tracks</th><th>Notes</th></tr>
+  <tr><td>S3.4</td><td>2026-04-13</td><td>Track 4 DONE</td><td><strong>P0:</strong> CountryPage column typo (ai_signature_grapes&rarr;ai_signature_styles) + 3 missing fields rendered. WinePage display_name fallback h1 + classification system_name. Error boundary. 404 catch-all. /about route. AI disclaimer labels on all ai_* prose (6 pages). <strong>P1:</strong> 9 dead-fetch ai_* fields rendered (AppellationPage 3, CountryPage 3, RegionPage 1, GrapePage 2). h1&rarr;h2 heading fix (7 pages). Clickable producer URLs. Dashboard removed producer_insights. Dev WineDetail display_name. <strong>P2:</strong> Removed autoFocus. A11y landmarks. Footer disclaimer. <strong>Voice scan:</strong> 83 flagged instances across 346 insight rows &mdash; logged for Sprint 4.</td></tr>
   <tr><td>S3.3</td><td>2026-04-13</td><td>Track 3A+3B+3C DONE</td><td><strong>3A Grape compound:</strong> deleted 5 PB polluting synonyms, fixed 6 varietal_categories wrong-grape links, deleted 921 synonym-primary collisions, fixed MALEGUE self-parent, fixed GARRO&rarr;JACQUEZ, fixed 8 display name inversions. Synonyms 34,809&rarr;33,885. <strong>3B Pipeline:</strong> fixed grape_from_name NULL collapse+dict collision (F6+F12), split batch_pipeline primary/synonym dicts (F9), replaced haiku_grape_extract containment with suffix matching (F7+F11), added ttb_grape_promote multi-COLA conflict detection (F2+F17), externalized BATCH_0_PRODUCERS to JSON (F8). <strong>3C Data:</strong> Chard/PB 3,611&rarr;351 (&minus;90%), display_name 32.7%&rarr;100%, search_vector 100%, Leroy region fixed, 363 fake 1973 years NULLed, deleted &ldquo;Ite&rdquo; soil type, deleted 30 Grade-F wine_insights + 31 PB-confabulated insights, deleted 57 orphan external_ids, soft-deleted 46 zero-wine producers, fixed 3 vintage outliers, added grape_id index, computed score rollups (278 wines).</td></tr>
   <tr><td>S3.2</td><td>2026-04-12</td><td>Track 2 DONE</td><td>Staging relink: built archive&rarr;current wine map (124K via LWIN+name), relinked 100K pointers, NULL'd 177K unfixable. Promoted prices (23K&rarr;40K, 14 sources + archive), scores (5.4K&rarr;30K, 7 sources + archive), vintages (84K&rarr;126K). Price coverage 1.81%&rarr;5.46%, score 1.30%&rarr;4.87%. Dangling pointers 277K&rarr;0. Fixed TEXSOM mojibake. Added 29 indexes. Backfilled processed_at on 14 sources. STAGING_TABLES_WINE 1&rarr;31. TTB ABV (93K) deferred to Python.</td></tr>
   <tr><td>S3.5</td><td>2026-04-12</td><td>Track 5 DONE</td><td>Edge function + code cleanup: describe-chemical neutralized (JWT+410 Gone), enrich-wine vendored with grape/model fixes, pipeline/lib/models.py created, 33 files centralized, 10 stale model IDs fixed, supabase/migrations/ created, sys.path evaluated (kept), INSERT INTO wines documented.</td></tr>

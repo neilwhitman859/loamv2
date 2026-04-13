@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 
 // Consumer pages
 import ConsumerLayout from './components/consumer/ConsumerLayout'
@@ -34,6 +34,16 @@ import SchemaExplorer from './pages/SchemaExplorer'
 import TableBrowser from './pages/TableBrowser'
 import About from './pages/About'
 
+function NotFoundPage() {
+  return (
+    <div className="max-w-3xl mx-auto px-4 py-16 text-center">
+      <h1 className="font-display text-3xl font-semibold text-earth-900 mb-2">Page not found</h1>
+      <p className="text-earth-500 mb-4">The page you're looking for doesn't exist.</p>
+      <Link to="/" className="text-wine-600 text-sm hover:underline">Back to home</Link>
+    </div>
+  )
+}
+
 export default function App() {
   return (
     <Routes>
@@ -48,6 +58,8 @@ export default function App() {
         <Route path="/country/:id" element={<CountryPage />} />
         <Route path="/grape/:id" element={<GrapePage />} />
         <Route path="/vineyard/:id" element={<VineyardPage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
 
       {/* Data explorer — sidebar + max-w-7xl */}

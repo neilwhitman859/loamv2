@@ -11,7 +11,7 @@ export default function ConsumerLayout() {
     <div className="min-h-screen bg-earth-50 flex flex-col">
       {/* Header — compact, always visible */}
       {!isHome && (
-        <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-earth-200">
+        <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-earth-200" role="banner">
           <div className="max-w-3xl mx-auto px-4 h-14 flex items-center gap-3">
             {/* Logo / Home link */}
             <Link to="/" className="font-display text-xl font-semibold text-wine-700 tracking-wide shrink-0">
@@ -67,23 +67,26 @@ export default function ConsumerLayout() {
       )}
 
       {/* Main content */}
-      <main className="flex-1">
+      <main className="flex-1" role="main">
         <Outlet />
       </main>
 
       {/* Footer — minimal */}
-      <footer className="border-t border-earth-200 bg-white">
+      <footer className="border-t border-earth-200 bg-white" role="contentinfo">
         <div className="max-w-3xl mx-auto px-4 py-8 text-center">
           <Link to="/" className="font-display text-lg font-semibold text-wine-700 tracking-wide">
             Loam
           </Link>
           <p className="mt-1 text-xs text-earth-400">
-            Wine intelligence. Place, grapes, people.
+            Wine data. Place, grapes, people.
           </p>
           <div className="mt-4 flex justify-center gap-6 text-xs text-earth-400">
             <Link to="/about" className="hover:text-earth-600 transition-colors">About</Link>
             <Link to="/data" className="hover:text-earth-600 transition-colors">Data Explorer</Link>
           </div>
+          <p className="mt-3 text-[10px] text-earth-300">
+            AI-generated content is labeled. Data may contain errors.
+          </p>
         </div>
       </footer>
     </div>

@@ -41,7 +41,7 @@ export default function Dashboard() {
     async function load() {
       const tables = [
         { label: 'Wines', table: 'wines', link: '/data/wines', insightsTable: 'wine_insights' },
-        { label: 'Producers', table: 'producers', link: '/data/producers', insightsTable: 'producer_insights' },
+        { label: 'Producers', table: 'producers', link: '/data/producers' },
         { label: 'Grapes', table: 'grapes', link: '/data/grapes', insightsTable: 'grape_insights' },
         { label: 'Appellations', table: 'appellations', link: '/data/appellations', insightsTable: 'appellation_insights' },
         { label: 'Regions', table: 'regions', link: '/data/regions', insightsTable: 'region_insights' },
