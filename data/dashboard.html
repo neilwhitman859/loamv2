@@ -120,7 +120,7 @@
 <body>
 
 <h1>Loam Dashboard</h1>
-<div class="updated">Last updated: 2026-04-12 22:15 &mdash; S2.10 &mdash; auto-refreshes every 5s</div>
+<div class="updated">Last updated: 2026-04-12 23:00 &mdash; S2.10 &mdash; auto-refreshes every 5s</div>
 
 <div class="status-bar">
   <div class="status-item">
@@ -129,15 +129,15 @@
   </div>
   <div class="status-item">
     <span class="status-label">Sprint</span>
-    <span class="status-value">3 (planning)</span>
+    <span class="status-value">3 (planned, not started)</span>
   </div>
   <div class="status-item">
     <span class="status-label">Budget</span>
-    <span class="status-value">$0 / $50</span>
+    <span class="status-value">$0 / $0</span>
   </div>
   <div class="status-item">
-    <span class="status-label">Sessions</span>
-    <span class="status-value">0 completed</span>
+    <span class="status-label">Findings</span>
+    <span class="status-value">179 in scope / 96 deferred</span>
   </div>
   <div class="status-item">
     <span class="status-label">Roadmap</span>
@@ -166,65 +166,66 @@
 </div>
 
 <h2>Sprint 3 &mdash; Fix (current)</h2>
+<p style="color: var(--muted); font-size: 0.75rem; margin-bottom: 10px;">Full plan: data/sprints/fix/plan.md &mdash; 6 tracks, ~179 findings, $0 budget</p>
 
 <div class="track pending">
   <div class="track-header">
     <div class="track-check"></div>
     <span class="track-name">1. Clean house</span>
-    <span class="track-est">~1 session, $0</span>
+    <span class="track-est">~1 session</span>
   </div>
-  <div class="track-desc">Delete cruft from earlier iterations AND deduplicate docs so they stop going stale. Drop xwines_* tables (530K Vivino dump), delete Riddler, rm dead scripts/docs/empty dirs, prune bloated session entries, archive stale docs to docs/reference/. Structural fix: strip all hardcoded numbers from CLAUDE.md (dashboard is the only place for live numbers), ensure each fact lives in exactly one file.</div>
-  <div class="track-done">Done when: xwines_* gone, Riddler gone, dead dirs/scripts gone, no hardcoded DB counts in CLAUDE.md, no duplicate state across docs</div>
+  <div class="track-desc">Delete cruft from earlier iterations. Drop xwines_* tables, delete Riddler, archive 5 stale docs to docs/reference/, delete WORKFLOW.md + ENRICHMENT.md, rm empty dirs + dead scripts + dead components, consolidate 19 memory files to ~9, prune sessions.md, fix staging duplicates. Strip all hardcoded DB counts from CLAUDE.md.</div>
+  <div class="track-done">Done when: xwines_* gone, Riddler gone, docs/ has &le;8 files, memory files &le;9, no hardcoded counts in CLAUDE.md</div>
 </div>
 
 <div class="track pending">
   <div class="track-header">
     <div class="track-check"></div>
-    <span class="track-name">2. Staging archive relink</span>
-    <span class="track-est">~1 session, $0</span>
+    <span class="track-name">2. Staging repair + relink</span>
+    <span class="track-est">~2 sessions</span>
   </div>
-  <div class="track-desc">The 30K rebuild broke 286K staging pointers. Extend relink script from 1 to 30 tables, then re-promote prices/scores/vintages. Biggest single user-visible improvement: unlocks 140K archive prices + 27K scores.</div>
-  <div class="track-done">Done when: price coverage &gt;12% (from 1.81%), dangling staging pointers &lt;10K (from 286K)</div>
+  <div class="track-desc">Fix staging data quality (93K malformed ABVs, 802 mojibake rows, 17K duplicate IDs, missing indexes on 14 tables, processed_at never written on 14 sources). Then extend relink script from 1 to 30 tables, execute, and re-promote prices/scores/vintages from newly linked staging. Biggest single user-visible improvement.</div>
+  <div class="track-done">Done when: price coverage &gt;12% (from 1.81%), dangling staging pointers &lt;10K (from 286K), all 30 staging tables in relink list</div>
 </div>
 
 <div class="track pending">
   <div class="track-header">
     <div class="track-check"></div>
-    <span class="track-name">3. Grape repair</span>
-    <span class="track-est">~2 sessions, $0</span>
+    <span class="track-name">3. Grape + data repair</span>
+    <span class="track-est">~3 sessions</span>
   </div>
-  <div class="track-desc">Compound bug across 5 audit experts: PINOT BLANC has VIVC synonyms that match Chardonnay, so 2,743 Chardonnay wines have wrong Pinot Blanc grape linked. Fix: delete polluting synonyms, fix varietal_categories wrong links, consolidate resolvers, re-run wine_grapes. Also: backfill display_name on 50,908 LWIN long-tail wines (improves search), fix 8 broken marquee wines (DRC/Lafite wrong color, Opus One NULL display_name), fix Domaine Leroy region, NULL out 345 fake 1973 established_years.</div>
-  <div class="track-done">Done when: Chardonnay+Pinot Blanc &le;50; display_name NULL count &lt;55K (from 104K); Domaine Leroy region = Burgundy; no 1973 established_years</div>
+  <div class="track-desc">Largest track. (A) Grape compound: delete PINOT BLANC polluting synonyms, fix varietal_categories, fix 921 synonym collisions, consolidate 4 resolver implementations, fix batch_pipeline multi-COLA collapse, fix ttb_grape_promote arbitrary pick, re-run resolver. (B) Wine corrections: backfill 50K display_names, fix 8 marquee wines, fix Leroy/Catena, fix colors, fix phantom grapes. (C) Reference: NULL 345 fake 1973 years, fix 121 slash-concatenated appellations, restore French diacritics, fix Pauillac classification, fix appellation_grapes names, add appellation_soils provenance, restore food pairings from archive, delete 487 confabulated wine_insights. (D) Indexes + rollups: add grape index, regenerate search_vectors, compute score rollups.</div>
+  <div class="track-done">Done when: Chard/PB &le;50 (from 2,743), display_name NULL &lt;55K (from 104K), search_vector &gt;60% (from 32%), no 1973 years, food pairings &gt;800, 487 bad insights deleted</div>
 </div>
 
 <div class="track pending">
   <div class="track-header">
     <div class="track-check"></div>
     <span class="track-name">4. UI hygiene</span>
-    <span class="track-est">~1 session, $0</span>
+    <span class="track-est">~1-2 sessions</span>
   </div>
-  <div class="track-desc">Pages need to actually render the structured data. CountryPage selects non-existent column (1-char typo, 100% of country pages broken). WinePage shows empty h1 on 12K wines. No error boundary. No 404 page. 8 ai_* fields fetched and silently discarded. Also: remove HomePage autoFocus (pops mobile keyboard), delete dead LandingPage.tsx, fix wineCount inflation from F-grade wines on entity pages.</div>
-  <div class="track-done">Done when: CountryPage renders ai_overview; WinePage h1 never empty; error boundary catches failures; 8 ai_* fields visible; no dead components</div>
+  <div class="track-desc">Fix all frontend rendering bugs. P0: CountryPage column typo, WinePage display_name fallback, error boundary + .catch(), 404 route, /about link, park /vineyard. P1: render 8 dead ai_* fields, a11y baseline, heading hierarchy, food pairing section, classification system_name, clickable producer URLs, wineCount F-grade filter. P2: Section conditional render, EntityMap cleanup, component consolidation (~500 LOC dedup), Dashboard caching, remove autoFocus. Also: voice scan of existing content to flag issues for Sprint 4.</div>
+  <div class="track-done">Done when: CountryPage renders ai_overview, WinePage h1 never empty, error boundary works, 8 ai_* fields visible, a11y score &gt;85</div>
 </div>
 
 <div class="track pending">
   <div class="track-header">
     <div class="track-check"></div>
-    <span class="track-name">5. Edge function hygiene</span>
-    <span class="track-est">~0.5 session, $0</span>
+    <span class="track-name">5. Edge function + code cleanup</span>
+    <span class="track-est">~1 session</span>
   </div>
-  <div class="track-desc">describe-chemical is a rogue edge function: deployed, active, verify_jwt=false, shares the Anthropic API key, has zero wine logic. Delete it. Also vendor enrich-wine source into git (not in repo today) and centralize the 3 scattered Anthropic model IDs.</div>
-  <div class="track-done">Done when: describe-chemical absent from list_edge_functions; supabase/functions/enrich-wine/ in git; pipeline/lib/models.py exists</div>
+  <div class="track-desc">Delete describe-chemical rogue edge function (unauthenticated, credit-burn risk &mdash; verified deployed 3x during audit). Vendor enrich-wine source into git. Create pipeline/lib/models.py with centralized Anthropic model IDs. Fix enrich-wine to read grapes.display_name. Clean up sys.path hacks, consolidate INSERT INTO wines call sites, create supabase/migrations/ directory.</div>
+  <div class="track-done">Done when: describe-chemical absent, enrich-wine in git, pipeline/lib/models.py exists, ENRICHMENT_ENABLED still OFF</div>
 </div>
 
 <div class="track pending">
   <div class="track-header">
     <div class="track-check"></div>
     <span class="track-name">6. Doc hygiene</span>
-    <span class="track-est">~1 session, $0</span>
+    <span class="track-est">~1 session</span>
   </div>
-  <div class="track-desc">23 findings from S2.8 meta audit. CLAUDE.md has internal contradictions and hardcoded counts that drift from the live DB. SOURCES.md documents wrong column names. Multiple docs reference files that moved or were deleted.</div>
-  <div class="track-done">Done when: CLAUDE.md internally consistent; docs/SOURCES.md external_ids section correct; no broken path references</div>
+  <div class="track-desc">LAST track &mdash; update docs to reflect post-fix state. Strip remaining CLAUDE.md drift, fix SOURCES.md external_ids typo, update SCHEMA.md, update loam_roadmap.json, rewrite MEMORY.md index. Business-layer docs: define ICP, note legal/licensing status, fix product description ("wine intelligence" collision), note competitive parity honestly, define Sprint 5 done criterion.</div>
+  <div class="track-done">Done when: zero hardcoded counts in CLAUDE.md, SOURCES.md matches live schema, CLAUDE.md doesn't say "wine intelligence platform"</div>
 </div>
 
 <h2>What's Next (after Fix)</h2>
@@ -302,33 +303,7 @@
 </table>
 
 <h2>Budget</h2>
-<table>
-  <tr><th>Sprint</th><th>Ceiling</th><th>Spent</th><th>Status</th></tr>
-  <tr><td>Sprint 2 (Audit)</td><td>$25</td><td>$0.00</td><td>CLOSED</td></tr>
-  <tr><td>Sprint 3 (Fix)</td><td>$50</td><td>$0.00</td><td>Active</td></tr>
-  <tr><td>Extension</td><td>+$200</td><td>&mdash;</td><td>Available on request</td></tr>
-</table>
-
-<h2>Done Criteria</h2>
-<ul class="criteria">
-  <li>Project cruft deleted (xwines_*, Riddler, dead dirs/scripts/docs)</li>
-  <li>No hardcoded DB counts in CLAUDE.md; no duplicate state across docs</li>
-  <li>describe-chemical deleted, enrich-wine vendored</li>
-  <li>Chardonnay/Pinot Blanc &le;50 wines (from 2,743)</li>
-  <li>Price coverage &gt;12% (from 1.81%)</li>
-  <li>UI P0s shipped (CountryPage, WinePage, error boundary, 404)</li>
-  <li>Doc drift fixed (CLAUDE.md, SOURCES.md, stale docs archived)</li>
-  <li>ENRICHMENT_ENABLED flag still OFF</li>
-</ul>
-
-<h2>Deferred to Sprint 4 (Deepen)</h2>
-<ul class="deferred">
-  <li>Voice module (pipeline/lib/voice.py)</li>
-  <li>Signal collection (landing page, email signup, wine_lookups)</li>
-  <li>AI safety rail (AIBadge, /about, /known-issues)</li>
-  <li>L3 fact-check gate</li>
-  <li>Food pairings restoration</li>
-</ul>
+<p style="color: var(--muted); font-size: 0.85rem;">Sprint 3: $0 budget &mdash; pure code, SQL, and file operations. No AI spend.</p>
 
 <h2>Open Questions</h2>
 <ul class="questions">
