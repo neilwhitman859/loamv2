@@ -36,6 +36,14 @@ Reference entity enrichment (regions, appellations, grapes) done via Opus 4.6 in
 
 Reference enrichment content depth should be proportional to prominence. Napa Valley gets full multi-sentence coverage across all fields. An obscure single-vineyard appellation with 1 wine gets shorter, honest entries. The voice guide already supports this via the confidence-based depth guidance, but the principle is explicit: famous regions/appellations/grapes get richer content because that's where users will spend time.
 
+### 2026-04-13: Add ai_market_info field to wine_insights
+
+New field for wine-level market positioning — the "industry insider" perspective. Covers: price positioning and why it's priced where it is, production volume/availability (broad strokes, not hard numbers), collector dynamics where relevant, who's buying it and why. Voice: like a good consultant — shoot straight, can be gently negative, but don't be too specific about numbers you might get wrong. Wine-level positioning but can call out truly notable vintages. One field, not broken out. This insider knowledge is part of what sets Loam apart.
+
+### 2026-04-13: Wine comparables should reference DB wines and be creative
+
+ai_comparable_wines should reference wines that actually exist in the Loam database (query before writing). And comparisons should be interesting/unexpected — not just "other Napa Cabs" but cross-regional matches (e.g., a Napa Cab matched with a Ribera del Duero based on shared structural traits). Highlight what makes the comparison interesting, think outside the box.
+
 ### 2026-04-13: Populate ai_notable_producers_summary in appellation_insights
 
 The column exists in the table but the existing script doesn't write to it. Since our demo producers are the notable producers for many appellations (Ridge for Santa Cruz Mountains, Tempier for Bandol, DRC for Vosne-Romanée, etc.), this field adds real value. Update the script and populate inline.
