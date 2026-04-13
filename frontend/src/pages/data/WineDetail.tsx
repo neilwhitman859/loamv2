@@ -89,7 +89,7 @@ export default function WineDetail() {
   const grapeColumns: Column<Record<string, unknown>>[] = [
     { key: 'name', label: 'Grape', render: (row) => {
       const g = row.grape as Record<string, unknown> | null
-      return g ? <EntityLink type="grapes" id={g.id as string} name={g.name as string} /> : <span>—</span>
+      return g ? <EntityLink type="grapes" id={g.id as string} name={(g.display_name || g.name) as string} /> : <span>—</span>
     }},
     { key: 'color', label: 'Color', render: (row) => {
       const g = row.grape as Record<string, unknown> | null

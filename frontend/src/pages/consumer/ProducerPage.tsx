@@ -239,7 +239,7 @@ export default function ProducerPage() {
             {wines.map(w => (
               <Link key={w.id} to={`/wine/${w.id}`}
                 className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-earth-100 transition-colors">
-                {w.color && <div className={`w-3 h-3 rounded-full shrink-0 ${COLOR_DOTS[w.color] || 'bg-earth-300'}`} />}
+                {w.color && <div className={`w-3 h-3 rounded-full shrink-0 ${COLOR_DOTS[w.color] || 'bg-earth-300'}`} aria-label={`${w.color} wine`} />}
                 <span className="text-sm text-earth-700 font-medium truncate">{w.name}</span>
                 {w.appellation && <span className="text-[10px] text-earth-400 truncate shrink-0 ml-auto">{w.appellation.name}</span>}
               </Link>

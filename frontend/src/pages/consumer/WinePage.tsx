@@ -55,11 +55,6 @@ interface WineInsight {
   typical_aging_potential_years: number | null
 }
 
-interface RegionInsight {
-  ai_overview: string | null
-  ai_climate_profile: string | null
-  ai_signature_style: string | null
-}
 
 interface AppellationInsight {
   ai_overview: string | null
@@ -154,7 +149,6 @@ export default function WinePage() {
   const { id } = useParams<{ id: string }>()
   const [wine, setWine] = useState<Wine | null>(null)
   const [insight, setInsight] = useState<WineInsight | null>(null)
-  const [regionInsight, setRegionInsight] = useState<RegionInsight | null>(null)
   const [appInsight, setAppInsight] = useState<AppellationInsight | null>(null)
   const [classifications, setClassifications] = useState<Classification[]>([])
   const [scores, setScores] = useState<Score[]>([])
@@ -195,13 +189,6 @@ export default function WinePage() {
             .select('ai_hook, ai_wine_summary, ai_terroir_expression, ai_vinification_summary, ai_food_pairing, ai_style_profile, ai_cellar_recommendation, ai_comparable_wines, enrichment_tier, typical_drinking_window_min_years, typical_drinking_window_max_years, typical_aging_potential_years')
             .eq('wine_id', id).maybeSingle()
             .then(({ data: d }) => { if (d) setInsight(d) }))
-
-          if ((data.region as any)?.id) {
-            p.push(supabase.from('region_insights')
-              .select('ai_overview, ai_climate_profile, ai_signature_style')
-              .eq('region_id', (data.region as any).id).maybeSingle()
-              .then(({ data: d }) => { if (d) setRegionInsight(d) }))
-          }
 
           if ((data.appellation as any)?.id) {
             p.push(supabase.from('appellation_insights')
@@ -324,7 +311,7 @@ export default function WinePage() {
   /* ── Derived data ──────────────────────────────────────── */
 
   const v = vintages[0] || null
-  const hasAnyContent = insight || regionInsight || appInsight || scores.length > 0 || grapes.length > 0 || v
+  const hasAnyContent = insight || appInsight || scores.length > 0 || grapes.length > 0 || v
 
   // Maps
   const maps: { type: 'country' | 'region' | 'appellation'; id: string; label: string }[] = []
@@ -348,7 +335,7 @@ export default function WinePage() {
       {/* ── Header ─────────────────────────────────────── */}
       <header className="mb-4">
         <div className="flex items-start gap-3">
-          {wine.color && <div className={`w-4 h-4 rounded-full mt-2 shrink-0 ${COLOR_DOT[wine.color] || 'bg-earth-300'}`} />}
+          {wine.color && <div className={`w-4 h-4 rounded-full mt-2 shrink-0 ${COLOR_DOT[wine.color] || 'bg-earth-300'}`} aria-label={`${wine.color} wine`} />}
           <div>
             <h1 className="font-display text-2xl md:text-3xl font-semibold text-earth-900 leading-tight">{wine.display_name || wine.name}</h1>
             {wine.producer && (

@@ -125,9 +125,10 @@ and `data/stats/cron_loop_journal.md` for past loop outcomes and remaining backl
 
 ## Current State
 
-**Sprint 3 (Fix) COMPLETE.** All 6 tracks done, $0 spent. ~179 findings addressed, ~96 deferred to Sprint 4+.
+**Sprint 3 (Fix) COMPLETE.** All 6 tracks + re-audit + quick-fix done, $0 spent. 158 fixed, 10 partial, 101 deferred.
 Sprint 2 (Audit) deliverable: [`data/sprints/audit/findings/synthesis.md`](data/sprints/audit/findings/synthesis.md).
 Sprint 3 plan: [`data/sprints/fix/plan.md`](data/sprints/fix/plan.md) — 6 tracks, ~179 findings in scope.
+Sprint 3 re-audit: [`data/sprints/fix/reaudit_findings.md`](data/sprints/fix/reaudit_findings.md) — S3.7 (9-expert, 275 findings audited) + S3.7b (quick-fix pass).
 
 | Session | Expert | Findings (P0/P1/P2/P3) | Findings file |
 |---|---|---|---|
@@ -314,7 +315,7 @@ primary value. Sprint 3 reflects this — all AI prose work deferred to Sprint 4
 
 1. **Clean house** — ✅ DONE S3.1: dropped 15 tables, archived docs, pruned memory/stats/scripts
 2. **Staging archive relink** — ✅ DONE S3.2: relinked 100K pointers, promoted 40K prices + 30K scores, created 42K vintages
-3. **Grape repair** — ✅ DONE S3.3: Chard/PB -90%, display_name 100%, 8 pipeline fixes, search_vector 100%
+3. **Grape repair** — ✅ DONE S3.3: Chard/PB -90% (S3.7 verified: **0 remaining**), display_name 100%, 8 pipeline fixes, search_vector 100%
 4. **UI hygiene** — ✅ DONE S3.4: 22 fixes across 15 files, error boundary, 404, AI disclaimers, a11y
 5. **Edge function hygiene** — ✅ DONE S3.5: describe-chemical neutralized, enrich-wine vendored, models.py centralized
 6. **Doc hygiene** — ✅ DONE S3.6: docs updated to reflect post-fix state, business context added
@@ -341,7 +342,7 @@ safety rail, signal collection, food pairings. See `data/dashboard.html`.
 3 rounds of hardening applied. Key infrastructure: `set_updated_at()` triggers on 36 tables, `validate_polymorphic_fks()` orphan checker, enrichment_log with cost/model tracking, `appellation_rules` table. `wine_vintage_scores` and `wine_vintage_prices` have `wine_vintage_id` FK (preferred join path). `retailers` table seeded with 13 retailers (all price sources).
 
 ### Technical Debt (pre-frontend)
-- **RLS policies:** ✅ COMPLETE. 94/94 canonical tables have RLS enabled (91 original + 3 new tables this session). Policy pattern: `public_read_*` (anon+authenticated SELECT), `service_write_*` (service_role ALL). wine_lookups also has `anon_insert` for anonymous page views.
+- **RLS policies:** ✅ COMPLETE. All public tables have RLS enabled (S3.7b added 3 utility tables: lwin_class_map, lwin_region_map, specs_producer_bridge; dropped 6 temp tables that lacked RLS). Policy pattern: `public_read_*` (anon+authenticated SELECT), `service_write_*` (service_role ALL). wine_lookups also has `anon_insert` for anonymous page views.
 - **Search infrastructure:** ✅ COMPLETE. `search_vector` tsvector columns + GIN indexes on wines, producers, appellations, regions, grapes. Trigram indexes on all searchable name columns. Auto-update triggers on INSERT/UPDATE. Two RPC functions: `search_catalog(query, limit, entity_types[])` for unified cross-entity search bar, `search_wines(query, filter_*, sort_by, limit, offset)` for filtered wine browse. Both granted to anon+authenticated.
 - **API views:** 4 views created: `wine_detail_view`, `producer_detail_view`, `wine_vintage_detail_view`, `wine_search_view`.
 - **Alias tables:** ✅ SEEDED. region_aliases, label_designation_aliases, appellation_aliases.

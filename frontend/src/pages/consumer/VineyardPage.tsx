@@ -165,7 +165,7 @@ export default function VineyardPage() {
             {wines.map((w, i) => (
               <Link key={i} to={`/wine/${w.wine.id}`}
                 className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-earth-100 transition-colors">
-                {w.wine.color && <div className={`w-3 h-3 rounded-full shrink-0 ${COLOR_DOTS[w.wine.color] || 'bg-earth-300'}`} />}
+                {w.wine.color && <div className={`w-3 h-3 rounded-full shrink-0 ${COLOR_DOTS[w.wine.color] || 'bg-earth-300'}`} aria-label={`${w.wine.color} wine`} />}
                 <span className="text-sm text-earth-700 font-medium truncate">{w.wine.name}</span>
               </Link>
             ))}

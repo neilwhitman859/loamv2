@@ -120,7 +120,7 @@
 <body>
 
 <h1>Loam Dashboard</h1>
-<div class="updated">Last updated: 2026-04-13 &mdash; S3.6 &mdash; auto-refreshes every 5s</div>
+<div class="updated">Last updated: 2026-04-13 &mdash; S3.7b &mdash; auto-refreshes every 5s</div>
 
 <div class="status-bar">
   <div class="status-item">
@@ -225,13 +225,22 @@
 
 <h2>What's Next (after Fix)</h2>
 
-<div class="track active" style="opacity: 1;">
+<div class="track done">
   <div class="track-header">
-    <div class="track-check"></div>
-    <span class="track-name">S3.7 &mdash; Full Re-audit (9 experts, 1 session)</span>
-    <span class="track-est">NEXT</span>
+    <div class="track-check">&#10003;</div>
+    <span class="track-name">S3.7 &mdash; Full Re-audit (9 experts)</span>
+    <span class="track-est">S3.7, DONE</span>
   </div>
-  <div class="track-desc">All 9 Sprint 2 expert perspectives re-run in a single Opus session. For each of the 275 original findings: classify as FIXED/PARTIAL/DEFERRED/MISSED/REGRESSED. Surface NEW findings. Produce verdict: iterate another fix sprint or move to Sprint 4 (Deepen)? Read-only, $0. Prompt: data/session_prompts/s3.7_reaudit.md. Output: data/sprints/fix/reaudit_findings.md.</div>
+  <div class="track-desc">All 9 Sprint 2 expert perspectives re-run in a single Opus session. 275 original findings: 158 fixed, 10 partial, 101 deferred, 1 missed, 1 regressed. 7 new findings surfaced. Verdict: <strong>move to Sprint 4</strong>. Output: data/sprints/fix/reaudit_findings.md.</div>
+</div>
+
+<div class="track done">
+  <div class="track-header">
+    <div class="track-check">&#10003;</div>
+    <span class="track-name">S3.7b &mdash; Quick-fix pass on re-audit findings</span>
+    <span class="track-est">S3.7b, DONE</span>
+  </div>
+  <div class="track-desc">Fixed all P0+P1+actionable P2/P3 findings from S3.7 re-audit. DB: backfilled 12,275 NULL wine names (P0), dropped wines.lwin column (missed from S3.1), dropped 6 temp work tables (468K rows), added RLS to 3 utility tables, backfilled producer search_vector (53&rarr;10,683). Frontend: dev WineDetail display_name, color dot aria-labels (3 files), removed dead regionInsight state. Duplicates: 5,193&rarr;2,669 excess (&minus;49%). Tables without RLS: 9&rarr;0. $0.</div>
 </div>
 
 <div class="track pending" style="opacity: 0.4;">
@@ -253,7 +262,7 @@
 </div>
 
 <h2>Snapshot Metrics</h2>
-<p style="color: var(--muted); font-size: 0.75rem; margin-bottom: 10px;">Queried 2026-04-13 S3.6. Re-query at session start.</p>
+<p style="color: var(--muted); font-size: 0.75rem; margin-bottom: 10px;">Queried 2026-04-13 S3.7b. Re-query at session start.</p>
 
 <div class="metrics">
   <div class="metric">
@@ -262,7 +271,7 @@
   </div>
   <div class="metric">
     <div class="metric-label">Producers</div>
-    <div class="metric-value">10,630</div>
+    <div class="metric-value">10,683</div>
   </div>
   <div class="metric">
     <div class="metric-label">Price coverage</div>
@@ -281,8 +290,8 @@
   </div>
   <div class="metric">
     <div class="metric-label">Chardonnay/PB bug</div>
-    <div class="metric-value ok">351</div>
-    <div class="metric-target">was 3,611 (2,743 at audit) &bull; &minus;90% &bull; ~161 legitimate PB wines in remainder</div>
+    <div class="metric-value ok">0</div>
+    <div class="metric-target">was 3,611 (2,743 at audit) &bull; <strong>100% resolved</strong> (S3.7 verified)</div>
   </div>
   <div class="metric">
     <div class="metric-label">display_name coverage</div>
@@ -292,7 +301,7 @@
   <div class="metric">
     <div class="metric-label">search_vector coverage</div>
     <div class="metric-value ok">100%</div>
-    <div class="metric-target">156,570 wines &bull; was 99.6% &bull; 595 regenerated</div>
+    <div class="metric-target">156,570 wines + 10,683 producers &bull; all entities 100%</div>
   </div>
   <div class="metric">
     <div class="metric-label">Vintages</div>
@@ -304,6 +313,8 @@
 <h2>Session Log</h2>
 <table>
   <tr><th>Session</th><th>Date</th><th>Tracks</th><th>Notes</th></tr>
+  <tr><td>S3.7b</td><td>2026-04-13</td><td>Quick-fix pass</td><td>Fixed all P0+P1 from re-audit. DB: backfilled 12,275 NULL wine names, dropped wines.lwin + 6 temp tables (468K rows), added RLS to 3 utility tables, producer search_vector 53&rarr;10,683. Frontend: dev WineDetail display_name, color dot aria-labels (3 files), removed dead regionInsight. Dupes: 5,193&rarr;2,669 (&minus;49%). Tables without RLS: 9&rarr;0.</td></tr>
+  <tr><td>S3.7</td><td>2026-04-13</td><td>Re-audit DONE</td><td>9-expert re-audit of 275 S2 findings: 158 fixed, 10 partial, 101 deferred, 1 missed, 1 regressed, 7 new. Net open: 19 (1 P0, 4 P1, 10 P2, 4 P3). Verdict: <strong>move to Sprint 4</strong>. Findings: data/sprints/fix/reaudit_findings.md.</td></tr>
   <tr><td>S3.6</td><td>2026-04-13</td><td>Track 6 DONE</td><td><strong>Sprint 3 complete.</strong> CLAUDE.md: &ldquo;wine intelligence&rdquo;&rarr;&ldquo;wine data,&rdquo; business context section (ICP, competitive parity, terroir gap, Sprint 5 criterion, cost/revenue), reference heading updated, all 6 track statuses marked done, frontend section updated. SOURCES.md: external_ids id_type&rarr;system + ttb_cola&rarr;cola + added lwin_7/qr/qr_url, date updated. SCHEMA.md: xwines section removed, table count fixed. loam_roadmap.json: Sprint 2 done + Sprint 3 done with 6 tracks. MEMORY.md: rewritten (10 entries, &lt;150 chars). project_quality_before_enrichment.md: Sprint 3 marked done.</td></tr>
   <tr><td>S3.4</td><td>2026-04-13</td><td>Track 4 DONE</td><td><strong>P0:</strong> CountryPage column typo (ai_signature_grapes&rarr;ai_signature_styles) + 3 missing fields rendered. WinePage display_name fallback h1 + classification system_name. Error boundary. 404 catch-all. /about route. AI disclaimer labels on all ai_* prose (6 pages). <strong>P1:</strong> 9 dead-fetch ai_* fields rendered (AppellationPage 3, CountryPage 3, RegionPage 1, GrapePage 2). h1&rarr;h2 heading fix (7 pages). Clickable producer URLs. Dashboard removed producer_insights. Dev WineDetail display_name. <strong>P2:</strong> Removed autoFocus. A11y landmarks. Footer disclaimer. <strong>Voice scan:</strong> 83 flagged instances across 346 insight rows &mdash; logged for Sprint 4.</td></tr>
   <tr><td>S3.3</td><td>2026-04-13</td><td>Track 3A+3B+3C DONE</td><td><strong>3A Grape compound:</strong> deleted 5 PB polluting synonyms, fixed 6 varietal_categories wrong-grape links, deleted 921 synonym-primary collisions, fixed MALEGUE self-parent, fixed GARRO&rarr;JACQUEZ, fixed 8 display name inversions. Synonyms 34,809&rarr;33,885. <strong>3B Pipeline:</strong> fixed grape_from_name NULL collapse+dict collision (F6+F12), split batch_pipeline primary/synonym dicts (F9), replaced haiku_grape_extract containment with suffix matching (F7+F11), added ttb_grape_promote multi-COLA conflict detection (F2+F17), externalized BATCH_0_PRODUCERS to JSON (F8). <strong>3C Data:</strong> Chard/PB 3,611&rarr;351 (&minus;90%), display_name 32.7%&rarr;100%, search_vector 100%, Leroy region fixed, 363 fake 1973 years NULLed, deleted &ldquo;Ite&rdquo; soil type, deleted 30 Grade-F wine_insights + 31 PB-confabulated insights, deleted 57 orphan external_ids, soft-deleted 46 zero-wine producers, fixed 3 vintage outliers, added grape_id index, computed score rollups (278 wines).</td></tr>
@@ -318,7 +329,8 @@
 
 <h2>Open Questions</h2>
 <ul class="questions">
-  <li>S3.7 re-audit queued &mdash; run prompt from data/session_prompts/s3.7_reaudit.md</li>
+  <li>Sprint 4 (Deepen) ready to start &mdash; producer metadata, voice module, enrichment prep</li>
+  <li>Remaining 2,669 duplicate wines need dedup strategy in Sprint 4</li>
 </ul>
 
 </body>
