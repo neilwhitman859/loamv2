@@ -120,7 +120,7 @@
 <body>
 
 <h1>Loam Dashboard</h1>
-<div class="updated">Last updated: 2026-04-12 23:00 &mdash; S2.10 &mdash; auto-refreshes every 5s</div>
+<div class="updated">Last updated: 2026-04-12 &mdash; S3.1 &mdash; auto-refreshes every 5s</div>
 
 <div class="status-bar">
   <div class="status-item">
@@ -129,7 +129,7 @@
   </div>
   <div class="status-item">
     <span class="status-label">Sprint</span>
-    <span class="status-value">3 (planned, not started)</span>
+    <span class="status-value">3 &mdash; S3.1 active (Track 1)</span>
   </div>
   <div class="status-item">
     <span class="status-label">Budget</span>
@@ -168,14 +168,13 @@
 <h2>Sprint 3 &mdash; Fix (current)</h2>
 <p style="color: var(--muted); font-size: 0.75rem; margin-bottom: 10px;">Full plan: data/sprints/fix/plan.md &mdash; 6 tracks, ~179 findings, $0 budget</p>
 
-<div class="track pending">
+<div class="track done">
   <div class="track-header">
-    <div class="track-check"></div>
+    <div class="track-check">&#10003;</div>
     <span class="track-name">1. Clean house</span>
-    <span class="track-est">~1 session</span>
+    <span class="track-est">S3.1, DONE</span>
   </div>
-  <div class="track-desc">Delete cruft from earlier iterations. Drop xwines_* tables, delete Riddler, archive 5 stale docs to docs/reference/, delete WORKFLOW.md + ENRICHMENT.md, rm empty dirs + dead scripts + dead components, consolidate 19 memory files to ~9, prune sessions.md, fix staging duplicates. Strip all hardcoded DB counts from CLAUDE.md.</div>
-  <div class="track-done">Done when: xwines_* gone, Riddler gone, docs/ has &le;8 files, memory files &le;9, no hardcoded counts in CLAUDE.md</div>
+  <div class="track-desc">Dropped 15 tables (13 xwines + 2 temp) + wines.lwin column. Archived 5 docs + deleted 2 + emptied dirs. Pruned session_prompts (7&rarr;1), stats (5 files), scripts (6 batch). Archived vivino pipeline. Deleted LandingPage.tsx. Consolidated memory (19&rarr;11). Deduped staging (systembolaget 2x, lcbo 2x + unique constraints). Stripped all hardcoded DB counts from CLAUDE.md (711&rarr;384 lines).</div>
 </div>
 
 <div class="track pending">
@@ -299,6 +298,7 @@
 <h2>Session Log</h2>
 <table>
   <tr><th>Session</th><th>Date</th><th>Tracks</th><th>Notes</th></tr>
+  <tr><td>S3.1</td><td>2026-04-12</td><td>Track 1 DONE</td><td>Clean house: 15 tables dropped, 5 docs archived, 2 deleted, vivino archived, memory 19&rarr;11, staging deduped, CLAUDE.md 711&rarr;384 lines, LandingPage deleted.</td></tr>
   <tr><td>S2.10</td><td>2026-04-12</td><td>planning</td><td>Dashboard + reprioritization. Sprint 3 scope re-sorted.</td></tr>
 </table>
 

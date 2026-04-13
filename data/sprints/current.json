@@ -1,23 +1,12 @@
 {
-  "name": "audit",
-  "status": "closed",
-  "sprint_number": 2,
-  "closed_at": "2026-04-11",
+  "name": "fix",
+  "status": "active",
+  "sprint_number": 3,
+  "started_at": "2026-04-12",
   "previous": {
-    "name": "30k",
+    "name": "audit",
     "closed_at": "2026-04-11",
-    "archive_path": "data/sprints/_archive/30k/"
+    "archive_path": "data/sprints/audit/"
   },
-  "next": {
-    "name": "execute",
-    "status": "ready",
-    "sprint_number": 3,
-    "backlog_source": "data/sprints/audit/findings/synthesis.md",
-    "estimated_sessions": 10,
-    "estimated_budget_usd": "50-200",
-    "combined_sprint23_ceiling_usd": 50,
-    "recommended_ceiling_extension_usd": 250,
-    "notes": "Sprint 3 — execute the 9-track Sprint 3 backlog in data/sprints/audit/findings/synthesis.md. Tier 1 (Sprint 5 contamination blockers): Track 1 code/voice hygiene, Track 3 grape repair. Tier 2 (data unlock): Track 2 staging archive relink. Tier 3 (first-impression credibility): Track 0A doc hygiene, Track 0B UI hygiene, Track 4 producer metadata. Tier 4 (voice/content gate): Track 6 AI safety rail, Track 7 L3 fact-check gate. Tier 5 (signal): Track 5. Tier 6 (hygiene): Track 8 food pairings. 12 done criteria defined. Opens with S3.1 = Track 1 first-minute-win: delete describe-chemical edge function (3rd audit re-verification, still deployed at Sprint 2 close)."
-  },
-  "notes": "Sprint 2 (Audit) CLOSED 2026-04-11. 10 sessions (S2.1-S2.10), 275 findings + 1 strategic reprioritization, $0.00 / $25.00 ceiling. S2.10 (2026-04-12) reopened Sprint 2 for strategic session: created data/dashboard.md, re-sorted Sprint 3 against 'structured data is the product' (all AI prose work deferred to Sprint 4), simplified roadmap to Build > Audit > Fix > Deepen > Enrich. Roadmap: Build (done) > Audit (done) > Fix (Sprint 3, opens next) > Deepen (Sprint 4) > Enrich (Sprint 5, $60-100 friends-and-family scope). ENRICHMENT_ENABLED stays OFF."
+  "notes": "Sprint 3 — Fix. 6 tracks, ~179 findings, $0 budget. Executing against Sprint 2 audit findings. Track order: 1 Clean house, 2 Staging relink, 3 Grape+data repair, 4 UI hygiene, 5 Edge function+code cleanup, 6 Doc hygiene."
 }
