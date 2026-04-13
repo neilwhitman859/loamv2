@@ -35,10 +35,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import anthropic
 
 from pipeline.lib.db import get_conn
+from pipeline.lib.models import HAIKU_MODEL, SONNET_MODEL
 
 # ── Models & pricing ──────────────────────────────────────────
-HAIKU_MODEL = "claude-haiku-4-5-20251001"
-SONNET_MODEL = "claude-sonnet-4-20250514"
 
 # Per million tokens
 PRICING = {

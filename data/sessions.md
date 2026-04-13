@@ -4,7 +4,7 @@ Active and recent sessions. Read at session start, append when starting/finishin
 
 ## Active
 
-(none)
+- **2026-04-12 S3.5: Track 5 — Edge function + code cleanup** (Opus, $0) — describe-chemical neutralized (JWT+410 Gone v6), enrich-wine vendored with grape/model fixes, pipeline/lib/models.py created, 33 files centralized, 10 stale model IDs fixed, supabase/migrations/ created. Tables: NONE.
 
 ## Done
 

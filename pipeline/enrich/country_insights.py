@@ -20,6 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 import anthropic
 from pipeline.lib.db import get_supabase, get_env, fetch_all
+from pipeline.lib.models import SONNET_MODEL
 
 # ── Constants ───────────────────────────────────────────────
 CONCURRENCY = 3
@@ -76,7 +77,7 @@ def call_sonnet(client: anthropic.Anthropic, user_msg: str, max_tokens: int = MA
     for attempt in range(1, max_retries + 1):
         try:
             response = client.messages.create(
-                model="claude-sonnet-4-20250514",
+                model=SONNET_MODEL,
                 max_tokens=max_tokens,
                 messages=[
                     {"role": "user", "content": SYSTEM_PROMPT + "\n\n" + user_msg},

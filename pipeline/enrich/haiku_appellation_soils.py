@@ -26,9 +26,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import anthropic
 
 from pipeline.lib.db import get_conn, get_env
+from pipeline.lib.models import HAIKU_MODEL
 
 # -- Constants ---------------------------------------------------------------
-HAIKU_MODEL = "claude-haiku-4-5-20251001"
 BATCH_SIZE = 10  # appellations per API call (rules text can be long)
 MAX_TOKENS = 4096
 TEXT_TRUNCATE = 2000  # max chars of combined text per appellation

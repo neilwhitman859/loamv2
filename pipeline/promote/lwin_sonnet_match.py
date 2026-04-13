@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import anthropic
 
 from pipeline.lib.db import get_conn, get_env
+from pipeline.lib.models import SONNET_MODEL
 from pipeline.lib.normalize import normalize
 
 PREFIXES = ['chateau ', 'domaine ', 'bodega ', 'bodegas ', 'weingut ',
@@ -141,7 +142,7 @@ def main():
 
         try:
             response = client.messages.create(
-                model="claude-sonnet-4-6",
+                model=SONNET_MODEL,
                 max_tokens=4096,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}],

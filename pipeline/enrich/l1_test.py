@@ -35,8 +35,7 @@ load_dotenv(override=True)
 import anthropic
 
 from pipeline.lib.db import get_conn
-
-SONNET_MODEL = "claude-sonnet-4-6"
+from pipeline.lib.models import SONNET_MODEL
 PRICING = {"input": 3.0, "output": 15.0}  # per 1M
 
 OUT_JSON = Path("data/stats/l1_test.json")

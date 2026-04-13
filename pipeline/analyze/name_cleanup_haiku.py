@@ -19,6 +19,7 @@ import time
 import anthropic
 
 from pipeline.lib.db import get_conn, get_env
+from pipeline.lib.models import HAIKU_MODEL
 from pipeline.lib.normalize import normalize, slugify
 
 FFFD = "\ufffd"
@@ -44,7 +45,7 @@ def repair_batch_with_haiku(client, names: list[str]) -> dict[str, str]:
     name_list = "\n".join(f"{i+1}. {name}" for i, name in enumerate(names))
 
     response = client.messages.create(
-        model="claude-haiku-4-5-20251001",
+        model=HAIKU_MODEL,
         max_tokens=4096,
         messages=[{
             "role": "user",

@@ -32,6 +32,8 @@ if sys.platform == "win32":
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
+from pipeline.lib.models import HAIKU_MODEL
+
 # ─── Constants ───────────────────────────────────────────────────────────────
 
 DEFAULT_IMAGE_DIR = Path(__file__).resolve().parents[2] / "data" / "test_labels"
@@ -137,7 +139,7 @@ def run_claude_vision(img_path: str) -> dict:
 
     t0 = time.perf_counter()
     response = client.messages.create(
-        model="claude-haiku-4-5-20251001",
+        model=HAIKU_MODEL,
         max_tokens=2000,
         messages=[{
             "role": "user",

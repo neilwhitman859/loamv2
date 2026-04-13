@@ -19,6 +19,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
 from pipeline.lib.db import get_env  # loads .env
+from pipeline.lib.models import HAIKU_MODEL
 
 import anthropic
 
@@ -212,7 +213,7 @@ def _generate_via_haiku(
     """Call Haiku to generate a wine list. Returns parsed list of dicts."""
     try:
         response = client.messages.create(
-            model="claude-haiku-4-5-20251001",
+            model=HAIKU_MODEL,
             max_tokens=4096,
             messages=[{"role": "user", "content": prompt}],
         )

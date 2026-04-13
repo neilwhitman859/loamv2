@@ -7,6 +7,17 @@ Usage:
     sb = get_supabase()                    # REST API client (legacy)
     conn = get_conn()                      # Direct Postgres connection (preferred)
     result = sb.table('wines').select('*').limit(5).execute()
+
+INSERT INTO wines convention (6 call sites as of Sprint 3):
+    Required columns: name, name_normalized, slug, producer_id, wine_type
+    Common columns:   id, country_id, color, effervescence
+    Source-specific:  region_id, appellation_id, display_name, data_grade,
+                      identity_confidence, color_confirmed, appellation_confirmed
+    Each promotion source legitimately has different column sets depending on
+    data confidence. Don't abstract this into a shared helper — keep explicit
+    INSERTs and ensure all required columns are present.
+    See: batch_pipeline, producer_site_scrape, seed_mass_market,
+         generic_matcher, lwin_long_tail, retail_wine_create
 """
 
 import os

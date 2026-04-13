@@ -29,10 +29,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import anthropic
 
 from pipeline.lib.db import get_conn, get_env
+from pipeline.lib.models import HAIKU_MODEL
 from pipeline.lib.normalize import normalize
 
 # ── Constants ───────────────────────────────────────────────
-HAIKU_MODEL = "claude-haiku-4-5-20251001"
 BATCH_SIZE = 40  # wines per API call — names are short
 MAX_TOKENS = 8192  # multi-grape blends produce more output
 

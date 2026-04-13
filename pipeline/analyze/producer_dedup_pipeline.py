@@ -11,11 +11,12 @@ import time
 import anthropic
 from supabase import create_client
 
+from pipeline.lib.models import HAIKU_MODEL as MODEL
+
 # Config
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://vgbppjhmvbggfjztzobl.supabase.co")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZnYnBwamhtdmJnZ2ZqenR6b2JsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI1ODU1NDYsImV4cCI6MjA4ODE2MTU0Nn0.KHZiqk6B7XYDnkFcDNJtMIKoT-hf7s8MGkmpOsjgVDk")
 BATCH_SIZE = 50
-MODEL = "claude-haiku-4-5-20251001"
 
 SYSTEM_PROMPT = """You are a wine industry data expert helping deduplicate wine producer names.
 

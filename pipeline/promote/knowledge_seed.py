@@ -37,10 +37,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import anthropic
 
 from pipeline.lib.db import get_conn, get_env
+from pipeline.lib.models import HAIKU_MODEL, SONNET_MODEL
 from pipeline.lib.normalize import normalize, normalize_producer, normalize_wine_name, slugify
 
 # ── Constants ────────────────────────────────────────────────
-HAIKU_MODEL = "claude-haiku-4-5-20251001"
 MAX_TOKENS = 16384
 INPUT_COST_PER_M = 0.80
 OUTPUT_COST_PER_M = 4.00
@@ -857,7 +857,7 @@ def stage_validate(args):
     model = getattr(args, "model", "haiku")
     recheck = getattr(args, "recheck", False)
     if model == "sonnet":
-        model_id = "claude-sonnet-4-6"
+        model_id = SONNET_MODEL
         input_cpm = 3.00
         output_cpm = 15.00
         print(f"Using SONNET for validation (higher quality, ~5x cost)")

@@ -16,7 +16,7 @@ then explicit do-not-invent rules, then the field schema. The model is told
 to write declarative statements only and to use "Not documented" or omit
 the claim if a fact is missing.
 
-Models (these match the latest Sonnet 4.6 / Haiku 4.5 release IDs):
+Models imported from pipeline.lib.models:
     SONNET_MODEL = "claude-sonnet-4-6"
     HAIKU_MODEL  = "claude-haiku-4-5-20251001"
 """
@@ -26,8 +26,7 @@ from __future__ import annotations
 import json
 from typing import Any
 
-SONNET_MODEL = "claude-sonnet-4-6"
-HAIKU_MODEL = "claude-haiku-4-5-20251001"
+from pipeline.lib.models import HAIKU_MODEL, SONNET_MODEL
 
 PRICING = {
     SONNET_MODEL: {"input": 3.0, "output": 15.0},  # per 1M tokens

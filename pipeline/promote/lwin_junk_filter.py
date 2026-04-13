@@ -47,9 +47,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import anthropic
 
 from pipeline.lib.db import get_conn, get_env
+from pipeline.lib.models import HAIKU_MODEL
 
 # ── Constants ────────────────────────────────────────────────
-HAIKU_MODEL = "claude-haiku-4-5-20251001"
 BATCH_SIZE = 30  # producer names per API call
 MAX_TOKENS = 2048
 

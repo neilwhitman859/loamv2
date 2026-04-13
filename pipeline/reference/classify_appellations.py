@@ -27,6 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 import anthropic
 from pipeline.lib.db import get_supabase, get_env, fetch_all
+from pipeline.lib.models import HAIKU_MODEL
 from pipeline.lib.normalize import normalize, slugify
 
 
@@ -44,7 +45,7 @@ DESIGNATION_RE = re.compile(
 def call_haiku(client: anthropic.Anthropic, messages: list[dict], max_tokens: int = 8192) -> str:
     """Call Claude Haiku and return the text response."""
     response = client.messages.create(
-        model="claude-haiku-4-5-20251001",
+        model=HAIKU_MODEL,
         max_tokens=max_tokens,
         messages=messages,
     )

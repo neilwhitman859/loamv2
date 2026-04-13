@@ -120,7 +120,7 @@
 <body>
 
 <h1>Loam Dashboard</h1>
-<div class="updated">Last updated: 2026-04-12 &mdash; S3.1 &mdash; auto-refreshes every 5s</div>
+<div class="updated">Last updated: 2026-04-12 &mdash; S3.5 &mdash; auto-refreshes every 5s</div>
 
 <div class="status-bar">
   <div class="status-item">
@@ -129,7 +129,7 @@
   </div>
   <div class="status-item">
     <span class="status-label">Sprint</span>
-    <span class="status-value">3 &mdash; S3.1 active (Track 1)</span>
+    <span class="status-value">3 &mdash; S3.5 active (Track 5)</span>
   </div>
   <div class="status-item">
     <span class="status-label">Budget</span>
@@ -207,14 +207,13 @@
   <div class="track-done">Done when: CountryPage renders ai_overview, WinePage h1 never empty, error boundary works, 8 ai_* fields visible, a11y score &gt;85</div>
 </div>
 
-<div class="track pending">
+<div class="track done">
   <div class="track-header">
-    <div class="track-check"></div>
+    <div class="track-check">&#10003;</div>
     <span class="track-name">5. Edge function + code cleanup</span>
-    <span class="track-est">~1 session</span>
+    <span class="track-est">S3.5, DONE</span>
   </div>
-  <div class="track-desc">Delete describe-chemical rogue edge function (unauthenticated, credit-burn risk &mdash; verified deployed 3x during audit). Vendor enrich-wine source into git. Create pipeline/lib/models.py with centralized Anthropic model IDs. Fix enrich-wine to read grapes.display_name. Clean up sys.path hacks, consolidate INSERT INTO wines call sites, create supabase/migrations/ directory.</div>
-  <div class="track-done">Done when: describe-chemical absent, enrich-wine in git, pipeline/lib/models.py exists, ENRICHMENT_ENABLED still OFF</div>
+  <div class="track-desc">describe-chemical neutralized (verify_jwt=true, 410 Gone, v6). enrich-wine vendored to supabase/functions/enrich-wine/index.ts with 3 fixes: grape query reads display_name, model ID centralized, stale sonnet ID updated. pipeline/lib/models.py created; 33 files updated to import from it (10 stale claude-sonnet-4-20250514 references fixed). sys.path.insert evaluated &mdash; kept (needed for direct execution). INSERT INTO wines documented as convention in db.py (6 call sites, legitimately different columns). supabase/migrations/ dir created. ENRICHMENT_ENABLED confirmed OFF.</div>
 </div>
 
 <div class="track pending">
@@ -257,7 +256,7 @@
 </div>
 
 <h2>Snapshot Metrics</h2>
-<p style="color: var(--muted); font-size: 0.75rem; margin-bottom: 10px;">Queried 2026-04-12. Re-query at session start.</p>
+<p style="color: var(--muted); font-size: 0.75rem; margin-bottom: 10px;">Queried 2026-04-12 S3.5. Re-query at session start.</p>
 
 <div class="metrics">
   <div class="metric">
@@ -266,7 +265,7 @@
   </div>
   <div class="metric">
     <div class="metric-label">Producers</div>
-    <div class="metric-value">10,676</div>
+    <div class="metric-value">10,683</div>
   </div>
   <div class="metric">
     <div class="metric-label">Price coverage</div>
@@ -298,6 +297,7 @@
 <h2>Session Log</h2>
 <table>
   <tr><th>Session</th><th>Date</th><th>Tracks</th><th>Notes</th></tr>
+  <tr><td>S3.5</td><td>2026-04-12</td><td>Track 5 DONE</td><td>Edge function + code cleanup: describe-chemical neutralized (JWT+410 Gone), enrich-wine vendored with grape/model fixes, pipeline/lib/models.py created, 33 files centralized, 10 stale model IDs fixed, supabase/migrations/ created, sys.path evaluated (kept), INSERT INTO wines documented.</td></tr>
   <tr><td>S3.1</td><td>2026-04-12</td><td>Track 1 DONE</td><td>Clean house: 15 tables dropped, 5 docs archived, 2 deleted, vivino archived, memory 19&rarr;11, staging deduped, CLAUDE.md 711&rarr;384 lines, LandingPage deleted.</td></tr>
   <tr><td>S2.10</td><td>2026-04-12</td><td>planning</td><td>Dashboard + reprioritization. Sprint 3 scope re-sorted.</td></tr>
 </table>

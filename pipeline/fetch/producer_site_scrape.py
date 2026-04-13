@@ -39,6 +39,7 @@ import requests
 from bs4 import BeautifulSoup, XMLParsedAsHTMLWarning
 
 from pipeline.lib.db import get_conn, get_env
+from pipeline.lib.models import HAIKU_MODEL
 from pipeline.lib.normalize import normalize, slugify, normalize_producer
 from pipeline.lib.resolve import ReferenceResolver
 
@@ -47,7 +48,6 @@ warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 warnings.filterwarnings("ignore", message="Unverified HTTPS request")
 
 # ── Constants ─────────────────────────────────────────────────────────────────
-HAIKU_MODEL = "claude-haiku-4-5-20251001"
 MAX_TOKENS = 8192
 INPUT_COST_PER_M = 0.80
 OUTPUT_COST_PER_M = 4.00

@@ -20,6 +20,7 @@ import httpx
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from pipeline.lib.db import get_supabase, get_env
+from pipeline.lib.models import HAIKU_MODEL
 
 BATCH_SIZE = 20  # Titles per Haiku call
 
@@ -41,7 +42,7 @@ def call_haiku(api_key: str, prompt: str) -> str:
             "anthropic-version": "2023-06-01",
         },
         json={
-            "model": "claude-haiku-4-5-20251001",
+            "model": HAIKU_MODEL,
             "max_tokens": 4096,
             "messages": [{"role": "user", "content": prompt}],
         },

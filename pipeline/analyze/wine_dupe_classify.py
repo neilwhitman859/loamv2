@@ -21,8 +21,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from pipeline.lib.db import get_conn, get_env
-
-HAIKU_MODEL = "claude-haiku-4-5-20251001"
+from pipeline.lib.models import HAIKU_MODEL
 BATCH_SIZE = 12  # groups per Haiku call
 
 

@@ -315,7 +315,7 @@ primary value. Sprint 3 reflects this — all AI prose work deferred to Sprint 4
 2. **Staging archive relink** — unlock 140K prices + 27K scores ($0)
 3. **Grape repair** — Chardonnay/PB fix + display_name backfill + marquee wine fixes ($0)
 4. **UI hygiene** — CountryPage typo, WinePage h1, error boundary, 404, dead ai_* fields ($0)
-5. **Edge function hygiene** — delete describe-chemical, vendor enrich-wine, centralize model IDs ($0)
+5. **Edge function hygiene** — ✅ DONE S3.5: describe-chemical neutralized, enrich-wine vendored, models.py created, 33 files centralized
 6. **Doc hygiene** — 23 S2.8 findings ($0)
 
 6 tracks, $0 budget, pure cleanup and bug fixes. Auto-continues between tracks.
@@ -336,7 +336,8 @@ safety rail, signal collection, food pairings. See `data/dashboard.html`.
 - **Direct Postgres connection:** ✅ `get_conn()` in `pipeline/lib/db.py` via session pooler (psycopg2). Eliminates HTTP/2 ConnectionTerminated crashes. `batch_matcher.py` and `ttb_grape_promote.py` migrated. `get_supabase()` still works for light reads.
 - **Nightly agent (Riddler):** DELETED. Do not revive.
 - **Session prompts:** `data/session_prompts/` for passing focused work instructions to new sessions.
-- **Migrations in git:** All DDL via Supabase MCP. Need `supabase/migrations/` before multi-developer.
+- **Migrations in git:** `supabase/migrations/` directory created (S3.5). All DDL via Supabase MCP; migration files for DDL tracking going forward.
+- **Centralized model IDs:** `pipeline/lib/models.py` — HAIKU_MODEL, SONNET_MODEL, OPUS_MODEL constants. All 33 pipeline scripts import from here (S3.5). Edge function model IDs in `supabase/functions/enrich-wine/index.ts`.
 - **FK normalization (partially addressed):** `wine_vintage_scores` and `wine_vintage_prices` now have `wine_vintage_id` FK (backfilled). `wine_vintage_grapes` already had optional `wine_vintage_id`. Legacy `wine_id + vintage_year` columns kept as convenience but `wine_vintage_id` is now the preferred join path.
 
 ### Completed Research & Pipelines (see `docs/HISTORY.md` + `docs/SOURCES.md` for detail)

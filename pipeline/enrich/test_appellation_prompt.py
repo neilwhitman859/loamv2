@@ -17,6 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 import anthropic
 from pipeline.lib.db import get_env
+from pipeline.lib.models import HAIKU_MODEL, SONNET_MODEL
 
 # ── Test data ───────────────────────────────────────────────
 TEST_APPELLATIONS = [
@@ -164,7 +165,7 @@ def test_producer_knowledge(client: anthropic.Anthropic):
         )
 
         response = client.messages.create(
-            model="claude-haiku-4-5-20251001",
+            model=HAIKU_MODEL,
             max_tokens=4096,
             messages=[{"role": "user", "content": PRODUCER_TEST_PROMPT + "\n\n" + user_msg}],
         )
@@ -210,7 +211,7 @@ Region: {app['region']}
 Key grapes: {', '.join(app['grapes'])}"""
 
         response = client.messages.create(
-            model="claude-sonnet-4-20250514",
+            model=SONNET_MODEL,
             max_tokens=1500,
             messages=[
                 {"role": "user", "content": SYSTEM_PROMPT + "\n\n" + user_msg},

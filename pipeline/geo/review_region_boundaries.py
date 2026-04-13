@@ -22,6 +22,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 import httpx
 from pipeline.lib.db import get_supabase, get_env
+from pipeline.lib.models import SONNET_MODEL
 from pipeline.geo.helpers import fetch_all_paginated
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -78,7 +79,7 @@ def call_sonnet(system_prompt: str, user_message: str, max_tokens: int = 4096) -
                     "anthropic-version": "2023-06-01",
                 },
                 json={
-                    "model": "claude-sonnet-4-20250514",
+                    "model": SONNET_MODEL,
                     "max_tokens": max_tokens,
                     "system": system_prompt,
                     "messages": [{"role": "user", "content": user_message}],

@@ -13,6 +13,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from pipeline.lib.db import get_supabase
+from pipeline.lib.models import SONNET_MODEL
 import anthropic
 
 
@@ -160,7 +161,7 @@ Here are the wines:
 {batch_text}"""
 
     response = client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model=SONNET_MODEL,
         max_tokens=4000,
         messages=[{"role": "user", "content": prompt}]
     )

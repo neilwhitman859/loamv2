@@ -15,6 +15,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 import anthropic
 from pipeline.lib.db import get_env
+from pipeline.lib.models import SONNET_MODEL
 
 # ── Test data ───────────────────────────────────────────────
 TEST_COUNTRIES = [
@@ -138,7 +139,7 @@ def main():
 
         user_msg = build_user_message(country)
         response = client.messages.create(
-            model="claude-sonnet-4-20250514",
+            model=SONNET_MODEL,
             max_tokens=1500,
             messages=[
                 {"role": "user", "content": SYSTEM_PROMPT + "\n\n" + user_msg},

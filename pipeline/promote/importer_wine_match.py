@@ -18,6 +18,7 @@ from collections import defaultdict
 import anthropic
 
 from pipeline.lib.db import get_supabase, get_env
+from pipeline.lib.models import SONNET_MODEL
 
 
 # Source configurations
@@ -180,7 +181,7 @@ def match_wines_with_ai(client, producer_name, importer_wines, lwin_wines, dry_r
 
         try:
             resp = client.messages.create(
-                model="claude-sonnet-4-20250514",
+                model=SONNET_MODEL,
                 max_tokens=20,
                 messages=[{"role": "user", "content": prompt}],
             )

@@ -21,6 +21,7 @@ import psycopg2.extras
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from pipeline.lib.db import get_conn
+from pipeline.lib.models import HAIKU_MODEL
 
 # Country ISO → UUID mapping (populated from DB at runtime)
 COUNTRY_MAP: dict[str, str] = {}  # iso_code.upper() → id
@@ -70,7 +71,7 @@ def infer_countries_batch(client: anthropic.Anthropic, batch: list[dict]) -> dic
     )
 
     message = client.messages.create(
-        model="claude-haiku-4-5-20251001",
+        model=HAIKU_MODEL,
         max_tokens=512,
         messages=[
             {"role": "user", "content": f"Identify country of origin for these wines:\n\n{entries}"}
@@ -135,7 +136,7 @@ def main():
                 for i, item in enumerate(batch)
             )
             message = client.messages.create(
-                model="claude-haiku-4-5-20251001",
+                model=HAIKU_MODEL,
                 max_tokens=512,
                 messages=[
                     {"role": "user", "content": f"Identify country of origin for these wines:\n\n{entries}"}
