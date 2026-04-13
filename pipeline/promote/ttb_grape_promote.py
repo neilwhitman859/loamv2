@@ -453,23 +453,36 @@ def main():
         [(wid,) for wid in wines_without_grapes],
         page_size=5000,
     )
+    # Load ALL TTB grape data for target wines (no DISTINCT ON — detect conflicts)
     cur.execute("""
-        SELECT DISTINCT ON (t.canonical_wine_id)
-            t.canonical_wine_id, t.grape_varietals
+        SELECT t.canonical_wine_id, t.grape_varietals
         FROM source_ttb_colas t
         JOIN _target_wines tw ON tw.wine_id = t.canonical_wine_id
         WHERE t.grape_varietals IS NOT NULL
           AND t.canonical_wine_id IS NOT NULL
         ORDER BY t.canonical_wine_id, t.ttb_id
     """)
-    wine_grape_map = {}
+    # Group all grape strings per wine to detect multi-COLA conflicts (S2.5 F2/F17)
+    from collections import defaultdict
+    wine_grape_strings = defaultdict(set)
     for row in cur:
-        wine_grape_map[row[0]] = row[1]
+        wine_grape_strings[row[0]].add(row[1])
 
     cur.execute("DROP TABLE IF EXISTS _target_wines")
     conn.commit()
 
-    print(f"  {len(wine_grape_map)} wines have TTB grape data")
+    # Separate clean (single grape string) from conflicting (multiple different grapes)
+    wine_grape_map = {}
+    conflicts = {}
+    for wine_id, grape_set in wine_grape_strings.items():
+        if len(grape_set) == 1:
+            wine_grape_map[wine_id] = next(iter(grape_set))
+        else:
+            conflicts[wine_id] = grape_set
+
+    print(f"  {len(wine_grape_map)} wines have unambiguous TTB grape data")
+    if conflicts:
+        print(f"  {len(conflicts)} wines SKIPPED — conflicting TTB grape data (multi-COLA collapse)")
 
     # Resolve grapes in memory
     print("Resolving grape names...")

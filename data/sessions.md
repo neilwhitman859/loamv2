@@ -4,9 +4,15 @@ Active and recent sessions. Read at session start, append when starting/finishin
 
 ## Active
 
-- **2026-04-12 S3.5: Track 5 — Edge function + code cleanup** (Opus, $0) — describe-chemical neutralized (JWT+410 Gone v6), enrich-wine vendored with grape/model fixes, pipeline/lib/models.py created, 33 files centralized, 10 stale model IDs fixed, supabase/migrations/ created. Tables: NONE.
+(none)
 
 ## Done
+
+- **2026-04-13 S3.3: Track 3 — Grape + data repair** (Opus, $0) — **3A:** Deleted 5 PB polluting synonyms, fixed 6 varietal_categories wrong-grape links, deleted 921 synonym-primary collisions, fixed MALEGUE self-parent, fixed GARRO→JACQUEZ, fixed 8 display name inversions. **3B:** Fixed grape_from_name NULL collapse+dict collision (F6+F12), split batch_pipeline primary/synonym dicts (F9), replaced haiku containment with suffix matching (F7+F11), added ttb_grape_promote conflict detection (F2+F17), externalized BATCH_0_PRODUCERS to JSON (F8). **3C:** Chard/PB 3,611→351, display_name 32.7%→100%, search_vector 100%, Leroy region fixed, 363 fake 1973 years NULLed, deleted Ite soil, deleted 61 bad wine_insights, deleted 57 orphan external_ids, soft-deleted 46 zero-wine producers, fixed 3 vintage outliers, added grape_id index, computed score rollups. Tables: grape_synonyms, varietal_categories, grapes, wine_grapes, wines, producers, appellations, soil_types, external_ids, wine_insights, wine_vintages, + 4 pipeline files.
+
+- **2026-04-12 S3.2: Track 2 — Staging repair + relink** (Opus, $0) — Built archive→current wine map (124K via LWIN+name_producer). Relinked 100K staging pointers, NULL'd 177K unfixable. Promoted prices (23K→40K rows, 2.8K→8.5K wines, 14 sources + archive), scores (5.4K→30K rows, 2K→7.6K wines, 7 sources + archive), vintages (84K→126K). Coverage: prices 1.81%→5.46%, scores 1.30%→4.87%. Dangling 277K→0. Fixed TEXSOM mojibake, added 29 indexes, backfilled processed_at on 14 sources, updated STAGING_TABLES_WINE to 31. TTB ABV cleanup deferred (needs Python). Tables: wine_vintage_prices, wine_vintage_scores, wine_vintages, 29 source_* tables, _archive_to_current_wine, _archive_to_current_producer.
+
+- **2026-04-12 S3.5: Track 5 — Edge function + code cleanup** (Opus, $0) — describe-chemical neutralized (JWT+410 Gone v6), enrich-wine vendored with grape/model fixes, pipeline/lib/models.py created, 33 files centralized, 10 stale model IDs fixed, supabase/migrations/ created. Tables: NONE.
 
 - **2026-04-12 S2.10: Dashboard + reprioritization** (Opus, $0) — Strategic session reopening Sprint 2. Created `data/dashboard.md` (single source of truth). Re-sorted Sprint 3 for "structured data is the product" — all AI prose work deferred to Sprint 4. Simplified roadmap: Build > Audit > Fix > Deepen > Enrich. Added session routines + dashboard rule to CLAUDE.md. Rewrote Current Focus (closes S2.8 F1). Logged 3 decisions to DECISIONS.md. Tables: NONE.
 

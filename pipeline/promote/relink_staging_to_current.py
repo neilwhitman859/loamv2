@@ -64,10 +64,21 @@ STAGING_TABLES_PRODUCER = [
 # source_lwin already handled in prior migration — skip it.
 # match_decisions handled separately.
 
-# Tables that ALSO have canonical_wine_id (must NULL it out since archive.wines are gone)
+# All source_* tables with canonical_wine_id
+# S3.2 expanded from 1 to 31 (all wine-bearing staging tables)
+# Relink completed via SQL migration (create_archive_to_current_wine_map +
+# relink_staging_wine_ids + null_remaining_dangling_wine_ids) 2026-04-12
 STAGING_TABLES_WINE = [
-    "source_ttb_colas",
-    # Add others if they have canonical_wine_id columns
+    "source_bc_liquor", "source_berliner", "source_best_wine_store",
+    "source_claude_knowledge", "source_domestique", "source_empson",
+    "source_enofile", "source_european_cellars", "source_firstleaf",
+    "source_flatiron", "source_horizon", "source_kansas_brands",
+    "source_kermit_lynch", "source_last_bottle", "source_lcbo",
+    "source_lwin", "source_openfoodfacts", "source_pa", "source_polaner",
+    "source_pro_platform", "source_skurnik", "source_specs",
+    "source_systembolaget", "source_tabc", "source_texsom",
+    "source_ttb_colas", "source_utah_dabs", "source_wallys",
+    "source_winebow", "source_winedeals", "source_wv_abca",
 ]
 
 

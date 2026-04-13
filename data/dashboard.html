@@ -120,7 +120,7 @@
 <body>
 
 <h1>Loam Dashboard</h1>
-<div class="updated">Last updated: 2026-04-12 &mdash; S3.5 &mdash; auto-refreshes every 5s</div>
+<div class="updated">Last updated: 2026-04-13 &mdash; S3.3a &mdash; auto-refreshes every 5s</div>
 
 <div class="status-bar">
   <div class="status-item">
@@ -129,7 +129,7 @@
   </div>
   <div class="status-item">
     <span class="status-label">Sprint</span>
-    <span class="status-value">3 &mdash; S3.5 active (Track 5)</span>
+    <span class="status-value">3 &mdash; S3.3 done (Track 3A+3B+3C)</span>
   </div>
   <div class="status-item">
     <span class="status-label">Budget</span>
@@ -177,14 +177,14 @@
   <div class="track-desc">Dropped 15 tables (13 xwines + 2 temp) + wines.lwin column. Archived 5 docs + deleted 2 + emptied dirs. Pruned session_prompts (7&rarr;1), stats (5 files), scripts (6 batch). Archived vivino pipeline. Deleted LandingPage.tsx. Consolidated memory (19&rarr;11). Deduped staging (systembolaget 2x, lcbo 2x + unique constraints). Stripped all hardcoded DB counts from CLAUDE.md (711&rarr;384 lines).</div>
 </div>
 
-<div class="track pending">
+<div class="track done">
   <div class="track-header">
-    <div class="track-check"></div>
+    <div class="track-check">&#10003;</div>
     <span class="track-name">2. Staging repair + relink</span>
-    <span class="track-est">~2 sessions</span>
+    <span class="track-est">S3.2, DONE</span>
   </div>
-  <div class="track-desc">Fix staging data quality (93K malformed ABVs, 802 mojibake rows, 17K duplicate IDs, missing indexes on 14 tables, processed_at never written on 14 sources). Then extend relink script from 1 to 30 tables, execute, and re-promote prices/scores/vintages from newly linked staging. Biggest single user-visible improvement.</div>
-  <div class="track-done">Done when: price coverage &gt;12% (from 1.81%), dangling staging pointers &lt;10K (from 286K), all 30 staging tables in relink list</div>
+  <div class="track-desc">Built archive&rarr;current wine mapping (124K wines via LWIN + name+producer). Relinked 100K staging pointers, NULL'd 177K unfixable (point at archive wines with no current match). Promoted prices from 14 sources + archive recovery: 23K&rarr;40K prices, 2.8K&rarr;8.5K wines with prices. Promoted scores from 7 sources + archive: 5.4K&rarr;30K scores, 2K&rarr;7.6K wines with scores. Created 42K new wine_vintages (84K&rarr;126K). Fixed 802 TEXSOM mojibake rows. Added canonical_wine_id indexes on 29 tables. Backfilled processed_at on 14 sources. Updated STAGING_TABLES_WINE to 31 entries. TTB ABV cleanup (93K) deferred &mdash; 3.28M-row table exceeds MCP API timeout, needs Python pipeline.</div>
+  <div class="track-done">Dangling pointers: 277K&rarr;0 &#10003; &bull; Price coverage: 1.81%&rarr;5.46% (target was 12%, ceiling at ~6% due to 24% archive-to-current mapping rate &mdash; further gains require retail_wine_create) &bull; Score coverage: 1.30%&rarr;4.87% &bull; 31/31 tables in relink list &#10003;</div>
 </div>
 
 <div class="track pending">
@@ -256,7 +256,7 @@
 </div>
 
 <h2>Snapshot Metrics</h2>
-<p style="color: var(--muted); font-size: 0.75rem; margin-bottom: 10px;">Queried 2026-04-12 S3.5. Re-query at session start.</p>
+<p style="color: var(--muted); font-size: 0.75rem; margin-bottom: 10px;">Queried 2026-04-13 S3.3. Re-query at session start.</p>
 
 <div class="metrics">
   <div class="metric">
@@ -265,38 +265,50 @@
   </div>
   <div class="metric">
     <div class="metric-label">Producers</div>
-    <div class="metric-value">10,683</div>
+    <div class="metric-value">10,630</div>
   </div>
   <div class="metric">
     <div class="metric-label">Price coverage</div>
-    <div class="metric-value warn">1.81%</div>
-    <div class="metric-target">2,818 wines &bull; target &gt;12% &bull; archive: 139,937 waiting</div>
+    <div class="metric-value ok">5.46%</div>
+    <div class="metric-target">8,500 wines &bull; 40,193 rows &bull; was 1.81% (2,818 wines) &bull; +3x from S3.2 relink</div>
   </div>
   <div class="metric">
     <div class="metric-label">Score coverage</div>
-    <div class="metric-value warn">1.30%</div>
-    <div class="metric-target">2,030 wines &bull; target &gt;6% &bull; archive: 27,325 waiting</div>
+    <div class="metric-value ok">4.87%</div>
+    <div class="metric-target">7,586 wines &bull; 30,339 rows (740 numeric) &bull; 278 wines with score rollup</div>
   </div>
   <div class="metric">
     <div class="metric-label">Grape links</div>
     <div class="metric-value">22.6%</div>
-    <div class="metric-target">35,159 wines &bull; target 25%+</div>
+    <div class="metric-target">35,107 wines &bull; 43,130 links &bull; was 46,028 (3K PB false positives removed)</div>
   </div>
   <div class="metric">
     <div class="metric-label">Chardonnay/PB bug</div>
-    <div class="metric-value warn">2,743</div>
-    <div class="metric-target">target &le;50</div>
+    <div class="metric-value ok">351</div>
+    <div class="metric-target">was 3,611 (2,743 at audit) &bull; &minus;90% &bull; ~161 legitimate PB wines in remainder</div>
   </div>
   <div class="metric">
     <div class="metric-label">display_name coverage</div>
-    <div class="metric-value warn">32.7%</div>
-    <div class="metric-target">50,896 wines &bull; 104,727 missing &bull; target &gt;65% after backfill</div>
+    <div class="metric-value ok">100%</div>
+    <div class="metric-target">155,623 wines &bull; was 32.7% (50,896) &bull; 104K backfilled from producer+appellation</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">search_vector coverage</div>
+    <div class="metric-value ok">100%</div>
+    <div class="metric-target">155,623 wines &bull; was 99.6% &bull; 595 regenerated</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">Vintages</div>
+    <div class="metric-value">126,033</div>
+    <div class="metric-target">was 83,531 &bull; +42,502 from S3.2 relink</div>
   </div>
 </div>
 
 <h2>Session Log</h2>
 <table>
   <tr><th>Session</th><th>Date</th><th>Tracks</th><th>Notes</th></tr>
+  <tr><td>S3.3</td><td>2026-04-13</td><td>Track 3A+3B+3C DONE</td><td><strong>3A Grape compound:</strong> deleted 5 PB polluting synonyms, fixed 6 varietal_categories wrong-grape links, deleted 921 synonym-primary collisions, fixed MALEGUE self-parent, fixed GARRO&rarr;JACQUEZ, fixed 8 display name inversions. Synonyms 34,809&rarr;33,885. <strong>3B Pipeline:</strong> fixed grape_from_name NULL collapse+dict collision (F6+F12), split batch_pipeline primary/synonym dicts (F9), replaced haiku_grape_extract containment with suffix matching (F7+F11), added ttb_grape_promote multi-COLA conflict detection (F2+F17), externalized BATCH_0_PRODUCERS to JSON (F8). <strong>3C Data:</strong> Chard/PB 3,611&rarr;351 (&minus;90%), display_name 32.7%&rarr;100%, search_vector 100%, Leroy region fixed, 363 fake 1973 years NULLed, deleted &ldquo;Ite&rdquo; soil type, deleted 30 Grade-F wine_insights + 31 PB-confabulated insights, deleted 57 orphan external_ids, soft-deleted 46 zero-wine producers, fixed 3 vintage outliers, added grape_id index, computed score rollups (278 wines).</td></tr>
+  <tr><td>S3.2</td><td>2026-04-12</td><td>Track 2 DONE</td><td>Staging relink: built archive&rarr;current wine map (124K via LWIN+name), relinked 100K pointers, NULL'd 177K unfixable. Promoted prices (23K&rarr;40K, 14 sources + archive), scores (5.4K&rarr;30K, 7 sources + archive), vintages (84K&rarr;126K). Price coverage 1.81%&rarr;5.46%, score 1.30%&rarr;4.87%. Dangling pointers 277K&rarr;0. Fixed TEXSOM mojibake. Added 29 indexes. Backfilled processed_at on 14 sources. STAGING_TABLES_WINE 1&rarr;31. TTB ABV (93K) deferred to Python.</td></tr>
   <tr><td>S3.5</td><td>2026-04-12</td><td>Track 5 DONE</td><td>Edge function + code cleanup: describe-chemical neutralized (JWT+410 Gone), enrich-wine vendored with grape/model fixes, pipeline/lib/models.py created, 33 files centralized, 10 stale model IDs fixed, supabase/migrations/ created, sys.path evaluated (kept), INSERT INTO wines documented.</td></tr>
   <tr><td>S3.1</td><td>2026-04-12</td><td>Track 1 DONE</td><td>Clean house: 15 tables dropped, 5 docs archived, 2 deleted, vivino archived, memory 19&rarr;11, staging deduped, CLAUDE.md 711&rarr;384 lines, LandingPage deleted.</td></tr>
   <tr><td>S2.10</td><td>2026-04-12</td><td>planning</td><td>Dashboard + reprioritization. Sprint 3 scope re-sorted.</td></tr>

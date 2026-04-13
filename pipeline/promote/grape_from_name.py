@@ -42,7 +42,24 @@ def main():
     # Load grape reference, restricted to commercially significant varieties
     # to avoid false positives (e.g., "Columbia" grape matching Columbia Valley)
     cur.execute("SELECT id, display_name FROM grapes WHERE deleted_at IS NULL")
-    grapes_raw = {normalize(row[1]): (str(row[0]), row[1]) for row in cur.fetchall()}
+    grapes_raw = {}
+    _skipped_null = 0
+    _collisions = []
+    for row in cur.fetchall():
+        if not row[1]:
+            _skipped_null += 1
+            continue
+        norm = normalize(row[1])
+        if norm in grapes_raw:
+            _collisions.append((norm, grapes_raw[norm][1], row[1]))
+            continue  # keep first, skip collision
+        grapes_raw[norm] = (str(row[0]), row[1])
+    if _skipped_null:
+        print(f"  Skipped {_skipped_null} grapes with NULL display_name")
+    if _collisions:
+        print(f"  WARNING: {len(_collisions)} grape display_name collisions (kept first):")
+        for c in _collisions[:10]:
+            print(f"    '{c[0]}' — kept '{c[1]}', skipped '{c[2]}'")
 
     # Curated set of unambiguous commercial grape names
     SAFE_GRAPES = {

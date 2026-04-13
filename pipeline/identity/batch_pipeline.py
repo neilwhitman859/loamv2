@@ -18,6 +18,7 @@ import json
 import re
 import uuid
 from collections import defaultdict
+from pathlib import Path
 from typing import Optional
 
 from pipeline.lib.db import get_conn
@@ -26,59 +27,21 @@ from pipeline.identity.clean_cuvee import extract_cuvee, extract_classifications
 from pipeline.identity.build_display_name import build_display_name
 
 
-# ===== Batch 0 Producer Roster (from IDENTITY_RULES.md Section 8) =====
-BATCH_0_PRODUCERS = [
-    # (canonical_name, lwin_name, country_code, category)
-    # lwin_name is how LWIN stores the producer name
-    ("Château Margaux", "Margaux", "FR", "Bordeaux"),
-    ("Château Lafite Rothschild", "Lafite Rothschild", "FR", "Bordeaux"),
-    ("Château Mouton Rothschild", "Mouton Rothschild", "FR", "Bordeaux"),
-    ("Château Haut-Brion", "Haut-Brion", "FR", "Bordeaux"),
-    ("Château Latour", "Latour", "FR", "Bordeaux"),
-    ("Ridge Vineyards", "Ridge", "US", "Napa"),
-    ("Caymus Vineyards", "Caymus", "US", "Napa"),
-    ("Stag's Leap Wine Cellars", "Stag's Leap Wine Cellars", "US", "Napa"),
-    ("Opus One", "Opus One", "US", "Napa"),
-    ("Silver Oak Cellars", "Silver Oak", "US", "Napa"),
-    ("Giacomo Conterno", "Giacomo Conterno", "IT", "Italian"),
-    ("Marchesi Antinori", "Antinori", "IT", "Italian"),
-    ("Gaja", "Gaja", "IT", "Italian"),
-    ("Masseto", "Masseto", "IT", "Italian"),
-    ("Tenuta San Guido", "San Guido", "IT", "Italian"),
-    ("López de Heredia", "R. Lopez de Heredia", "ES", "Spanish"),
-    ("La Rioja Alta", "La Rioja Alta", "ES", "Spanish"),
-    ("CVNE", "CVNE", "ES", "Spanish"),
-    ("Bodegas Muga", "Muga", "ES", "Spanish"),
-    ("Marqués de Riscal", "de Riscal", "ES", "Spanish"),
-    ("J.J. Prüm", "Joh. Jos. Prum", "DE", "German"),
-    ("Dr. Loosen", "Dr. Loosen", "DE", "German"),
-    ("Dönnhoff", "Donnhoff", "DE", "German"),
-    ("Egon Müller", "Egon Muller", "DE", "German"),
-    ("Fritz Haag", "Fritz Haag", "DE", "German"),
-    ("Penfolds", "Penfolds", "AU", "Australian"),
-    ("Henschke", "Henschke", "AU", "Australian"),
-    ("Torbreck", "Torbreck", "AU", "Australian"),
-    ("Tyrrell's", "Tyrrell's", "AU", "Australian"),
-    ("Yalumba", "Yalumba", "AU", "Australian"),
-    ("Barefoot", "Barefoot", "US", "Grocery"),
-    ("Josh Cellars", None, "US", "Grocery"),  # Not in LWIN
-    ("Meiomi", "Meiomi", "US", "Grocery"),
-    ("19 Crimes", "19 Crimes", "AU", "Grocery"),
-    ("Yellow Tail", "Yellow Tail", "AU", "Grocery"),
-    ("Louis Jadot", "Louis Jadot", "FR", "Negociant"),
-    ("Louis Latour", "Louis Latour", "FR", "Negociant"),
-    ("Joseph Drouhin", "Joseph Drouhin", "FR", "Negociant"),
-    ("Bouchard Père et Fils", "Bouchard Pere et Fils", "FR", "Negociant"),
-    ("Maison Champy", "Champy", "FR", "Negociant"),
-    ("Dominus Estate", "Dominus", "US", "Single-wine"),
-    ("Screaming Eagle", "Screaming Eagle", "US", "Single-wine"),
-    ("Harlan Estate", "Harlan", "US", "Single-wine"),
-    ("Scarecrow", "Scarecrow", "US", "Single-wine"),
-    # Portfolio: use subsidiary brands, skip parent companies
-    ("Kendall-Jackson", "Kendall Jackson", "US", "Portfolio"),
-    ("Duckhorn Vineyards", "Duckhorn", "US", "Portfolio"),
-    # Skip Treasury/Constellation/E&J Gallo — parent companies, not label brands
-]
+# ===== Batch 0 Producer Roster — loaded from data/roster/batch_0.json =====
+def _load_batch_0_roster():
+    """Load Batch 0 producer roster from JSON file."""
+    roster_path = Path(__file__).resolve().parents[2] / "data" / "roster" / "batch_0.json"
+    if not roster_path.exists():
+        print(f"WARNING: Batch 0 roster not found at {roster_path}")
+        return []
+    with open(roster_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return [
+        (p["canonical_name"], p.get("lwin_name"), p["country_code"], p["category"])
+        for p in data
+    ]
+
+BATCH_0_PRODUCERS = _load_batch_0_roster()
 
 # LWIN colour mapping
 LWIN_COLOR_MAP = {
@@ -158,18 +121,27 @@ class BatchPipeline:
                 self.appellation_by_norm[norm_key] = []
             self.appellation_by_norm[norm_key].append(self.appellations[str(row[0])])
 
-        # Grapes (name → id, including synonyms)
+        # Grapes: separate primary names from synonyms so primaries always win
         self.cur.execute("SELECT id, name FROM grapes")
-        self.grapes = {}
+        self.grapes_primary = {}
+        self.grapes = {}  # combined lookup (primary preferred)
         self.grape_names = set()
         for row in self.cur.fetchall():
-            self.grapes[row[1].upper()] = {"id": str(row[0]), "name": row[1]}
+            entry = {"id": str(row[0]), "name": row[1]}
+            self.grapes_primary[row[1].upper()] = entry
+            self.grapes[row[1].upper()] = entry
             self.grape_names.add(row[1])
 
         self.cur.execute("SELECT grape_id, synonym FROM grape_synonyms")
+        self.grape_synonyms = {}
         for row in self.cur.fetchall():
-            self.grapes[row[1].upper()] = {"id": str(row[0]), "name": row[1]}
-            self.grape_names.add(row[1])  # Include synonyms for cuvée stripping
+            key = row[1].upper()
+            entry = {"id": str(row[0]), "name": row[1]}
+            self.grape_synonyms[key] = entry
+            # Only add synonym to combined lookup if it doesn't collide with a primary name
+            if key not in self.grapes_primary:
+                self.grapes[key] = entry
+            # Don't add synonyms to grape_names — only primary names for cuvée stripping
 
         # Pre-build curated grape list for cuvée stripping
         # Use only common grapes (appear in real wine names), not all 40K VIVC entries
@@ -249,11 +221,12 @@ class BatchPipeline:
         return matches[0]
 
     def resolve_grape(self, text: str) -> Optional[dict]:
-        """Resolve grape text to canonical grape."""
+        """Resolve grape text to canonical grape. Prefers primary names over synonyms."""
         if not text:
             return None
         key = text.strip().upper()
-        return self.grapes.get(key)
+        # Primary names always win over synonyms
+        return self.grapes_primary.get(key) or self.grapes.get(key)
 
     def resolve_country(self, code_or_name: str) -> Optional[dict]:
         """Resolve country code or name to canonical country."""
@@ -692,7 +665,13 @@ class BatchPipeline:
 
     def _match_ttb_to_wine(self, wines: list, fanciful: Optional[str],
                            appellation: Optional[str]) -> Optional[str]:
-        """Match a TTB record to a canonical wine."""
+        """Match a TTB record to a canonical wine.
+
+        WARNING: This can collapse multiple COLAs with different grapes onto
+        one canonical wine when the fanciful_name is a range name (e.g., "17 Trees").
+        The downstream grape promotion step (ttb_grape_promote.py) must detect and
+        skip conflicting grape assignments. See S2.5 F2.
+        """
         if not wines:
             return None
 

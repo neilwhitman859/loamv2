@@ -71,46 +71,61 @@ Example:
 def build_grape_lookup(conn):
     """Load all grape names + synonyms into a normalized lookup dict.
 
+    Mirrors ReferenceResolver.resolve_grape() tier ordering:
+    display_name > VIVC name > synonyms. Primary names always win over synonyms.
+
     Returns:
         grape_lookup: dict[normalized_name] -> grape_id (UUID string)
         display_names: dict[grape_id] -> display_name
     """
-    grape_lookup = {}  # norm_name -> grape_id
-    display_names = {}  # grape_id -> display_name
+    grape_lookup = {}       # norm_name -> grape_id (primary names, always win)
+    grape_by_vivc = {}      # norm_vivc_name -> grape_id
+    grape_synonyms = {}     # norm_synonym -> grape_id (only if no primary collision)
+    display_names = {}      # grape_id -> display_name
 
     with conn.cursor() as cur:
-        # Primary grape names
+        # Primary grape names (display_name + VIVC name)
         cur.execute("""
-            SELECT id, display_name FROM grapes WHERE deleted_at IS NULL
+            SELECT id, name, display_name FROM grapes WHERE deleted_at IS NULL
         """)
-        for grape_id, display_name in cur.fetchall():
+        for grape_id, vivc_name, display_name in cur.fetchall():
             gid = str(grape_id)
-            norm = normalize(display_name)
-            display_names[gid] = display_name
-            if norm:
-                grape_lookup[norm] = gid
+            if display_name:
+                display_names[gid] = display_name
+                norm = normalize(display_name)
+                if norm:
+                    grape_lookup[norm] = gid
+            if vivc_name:
+                norm_vivc = normalize(vivc_name)
+                if norm_vivc:
+                    grape_by_vivc[norm_vivc] = gid
 
-        # Synonyms — may overwrite primary if same norm, but that's fine
-        # (they point to the same grape_id)
+        # Synonyms — never overwrite primary names
         cur.execute("""
             SELECT grape_id, synonym FROM grape_synonyms
         """)
         for grape_id, synonym in cur.fetchall():
             gid = str(grape_id)
             norm = normalize(synonym)
-            if norm and norm not in grape_lookup:
-                grape_lookup[norm] = gid
+            if norm and norm not in grape_lookup and norm not in grape_by_vivc:
+                grape_synonyms[norm] = gid
 
-    return grape_lookup, display_names
+    # Merge: primary > vivc > synonyms
+    merged = {}
+    merged.update(grape_synonyms)  # lowest priority
+    merged.update(grape_by_vivc)   # medium priority
+    merged.update(grape_lookup)    # highest priority (display_name)
+
+    return merged, display_names
 
 
 def resolve_grape(name, grape_lookup):
     """Try to match a Haiku-returned grape name to our reference table.
 
-    Tries in order:
+    Mirrors ReferenceResolver.resolve_grape() logic:
       1. Exact normalized match
-      2. Containment: check if any lookup key is contained in name or vice versa
-         (handles 'Grenache Noir' matching 'Grenache' etc.)
+      2. Common variations (strip "grape", "the")
+      3. Common color suffixes (noir, blanc, tinto, etc.)
 
     Returns grape_id or None.
     """
@@ -123,7 +138,6 @@ def resolve_grape(name, grape_lookup):
         return grape_lookup[norm]
 
     # 2. Try common variations
-    # Strip trailing "grape" or leading "the"
     stripped = norm
     if stripped.endswith(" grape"):
         stripped = stripped[:-6].strip()
@@ -132,23 +146,11 @@ def resolve_grape(name, grape_lookup):
     if stripped and stripped in grape_lookup:
         return grape_lookup[stripped]
 
-    # 3. Try containment — Haiku might say "Grenache Noir" but we have
-    #    "Grenache" and "Grenache Noir" separately. Prefer longer matches.
-    best_match = None
-    best_len = 0
-    for lookup_norm, gid in grape_lookup.items():
-        # Only consider containment if the lookup term is substantial (>= 4 chars)
-        if len(lookup_norm) < 4:
-            continue
-        # Check if lookup_norm is contained in the Haiku name
-        if lookup_norm in norm and len(lookup_norm) > best_len:
-            best_match = gid
-            best_len = len(lookup_norm)
-        # Check if Haiku name is contained in lookup_norm (less reliable, skip)
-
-    # Only use containment if the match covers most of the input
-    if best_match and best_len >= len(norm) * 0.7:
-        return best_match
+    # 3. Try common color suffixes (matches ReferenceResolver step 5)
+    for suffix in [" noir", " blanc", " tinto", " tinta", " blanco"]:
+        with_suffix = grape_lookup.get(norm + suffix)
+        if with_suffix:
+            return with_suffix
 
     return None
 
