@@ -317,8 +317,8 @@ entities, and shares with 5+ real people. Future sprint scope driven by demo fee
 
 ### Sprint 4 Tracks
 
-0. **Quick fixes** — wire wine_lookups, merge 3 duplicate producers, drop temp tables, producer search_vector
-1. **Wine selection + manifest** — compile ~400 wines, map reference entity dependencies
+0. **Quick fixes** — ~~wire wine_lookups, merge 3 duplicate producers, drop temp tables, producer search_vector~~ **DONE S4.1**
+1. **Wine selection + manifest** — ~~compile wines, map reference entity dependencies~~ **DONE S4.1** (518 wines, 14 producers, manifest at `data/sprints/demo/manifest.json`)
 2. **Reference enrichment cascade** — countries → regions → appellations → grapes (top-down, each layer feeds context to next)
 3. **Producer enrichment** — build `producer_insights.py` + populate structured producer fields
 4. **Wine enrichment** — iterative voice calibration via human review, cascade-grounded prompts
@@ -326,9 +326,10 @@ entities, and shares with 5+ real people. Future sprint scope driven by demo fee
 
 ### Demo Producer Set
 
-**User's collection:** Stag's Leap Wine Cellars (51), Fort Ross (28), López de Heredia (19, merge needed), CIRQ (5, merge needed), Ridge Vineyards (129, merge needed)
-**French recommendations:** Domaine Tempier (19), E. Guigal (30), Trimbach (75), Domaine Huet (58)
+**User's collection:** Stag's Leap Wine Cellars (49), Fort Ross (28), López de Heredia (18, merged S4.1), CIRQ (4, merged S4.1), Ridge Vineyards (113, merged S4.1)
+**French recommendations:** Tempier (19), E. Guigal (30), Trimbach (75), Huet (58)
 **Benchmarks:** DRC (14), Krug (71), Giacomo Conterno (32), Château Margaux (4), Château Latour (3)
+**Total: 518 wines across 14 producers.** Reference dependencies: 4 countries, 20 regions, 51 appellations, 41 grapes.
 
 ### Enrichment Cascade Design
 

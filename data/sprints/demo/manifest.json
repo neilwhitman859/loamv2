@@ -1,0 +1,234 @@
+{
+  "generated": "2026-04-13",
+  "session": "S4.1",
+  "summary": {
+    "total_wines": 518,
+    "total_producers": 14,
+    "wines_with_insights": 80,
+    "wines_needing_enrichment": 438,
+    "wines_missing_appellation": 127,
+    "wines_missing_region": 1,
+    "wines_missing_country": 0
+  },
+  "producers": [
+    {
+      "id": "531a3920-ccab-4f14-801f-df8f1ece51f0",
+      "name": "Stag's Leap Wine Cellars",
+      "group": "owner",
+      "wines": 49,
+      "has_insight": 5,
+      "has_grapes": 26,
+      "has_prices": 10,
+      "has_scores": 9
+    },
+    {
+      "id": "5af1f66d-ca37-4c7a-83e7-8ea741e069f8",
+      "name": "Ridge Vineyards",
+      "group": "owner",
+      "wines": 113,
+      "has_insight": 19,
+      "has_grapes": 54,
+      "has_prices": 28,
+      "has_scores": 2
+    },
+    {
+      "id": "9dba92bb-432a-4645-b359-97c604d81e4c",
+      "name": "Fort Ross",
+      "group": "owner",
+      "wines": 28,
+      "has_insight": 0,
+      "has_grapes": 15,
+      "has_prices": 0,
+      "has_scores": 3
+    },
+    {
+      "id": "be0b2418-e978-4c73-85f0-6d49c9940935",
+      "name": "López de Heredia",
+      "group": "owner",
+      "wines": 18,
+      "has_insight": 1,
+      "has_grapes": 3,
+      "has_prices": 2,
+      "has_scores": 0
+    },
+    {
+      "id": "8316beee-c06a-4149-bdfa-ca0fc70eb143",
+      "name": "CIRQ",
+      "group": "owner",
+      "wines": 4,
+      "has_insight": 0,
+      "has_grapes": 0,
+      "has_prices": 0,
+      "has_scores": 2
+    },
+    {
+      "id": "ceebb2c1-3121-4067-bbfa-71e9e2e02b5c",
+      "name": "Tempier",
+      "group": "french_rec",
+      "wines": 19,
+      "has_insight": 3,
+      "has_grapes": 6,
+      "has_prices": 7,
+      "has_scores": 0
+    },
+    {
+      "id": "1271aa01-0f8e-4abb-b8fb-6ae2da03a1b6",
+      "name": "E. Guigal",
+      "group": "french_rec",
+      "wines": 30,
+      "has_insight": 8,
+      "has_grapes": 14,
+      "has_prices": 13,
+      "has_scores": 0
+    },
+    {
+      "id": "9691ac1f-68c7-47b8-9ae1-d84db9a7d28d",
+      "name": "Trimbach",
+      "group": "french_rec",
+      "wines": 75,
+      "has_insight": 8,
+      "has_grapes": 24,
+      "has_prices": 17,
+      "has_scores": 8
+    },
+    {
+      "id": "1801910f-375e-4e6b-962f-49f558897bf9",
+      "name": "Huet",
+      "group": "french_rec",
+      "wines": 58,
+      "has_insight": 1,
+      "has_grapes": 1,
+      "has_prices": 3,
+      "has_scores": 0
+    },
+    {
+      "id": "9507f989-a73c-4caa-b6a4-4f596ac6a0f2",
+      "name": "Domaine de la Romanée-Conti",
+      "group": "benchmark",
+      "wines": 14,
+      "has_insight": 5,
+      "has_grapes": 6,
+      "has_prices": 5,
+      "has_scores": 0
+    },
+    {
+      "id": "95560c9b-e4c1-423b-8524-0e79f8f6bb54",
+      "name": "Krug",
+      "group": "benchmark",
+      "wines": 71,
+      "has_insight": 22,
+      "has_grapes": 23,
+      "has_prices": 7,
+      "has_scores": 0
+    },
+    {
+      "id": "9859dc71-c199-45c0-a1e3-0a73b95ff3f0",
+      "name": "Giacomo Conterno",
+      "group": "benchmark",
+      "wines": 32,
+      "has_insight": 3,
+      "has_grapes": 21,
+      "has_prices": 5,
+      "has_scores": 0
+    },
+    {
+      "id": "2c863ed3-98cb-4474-8954-6259aa2793f8",
+      "name": "Château Margaux",
+      "group": "benchmark",
+      "wines": 4,
+      "has_insight": 4,
+      "has_grapes": 4,
+      "has_prices": 4,
+      "has_scores": 3
+    },
+    {
+      "id": "1ceb6035-6a13-4698-880f-156e72726ab6",
+      "name": "Château Latour",
+      "group": "benchmark",
+      "wines": 3,
+      "has_insight": 1,
+      "has_grapes": 3,
+      "has_prices": 3,
+      "has_scores": 0
+    }
+  ],
+  "reference_entities": {
+    "countries": {
+      "total": 4,
+      "already_enriched": 4,
+      "need_enrichment": 0,
+      "items": [
+        {"name": "France", "wines": 274, "has_insight": true},
+        {"name": "United States", "wines": 194, "has_insight": true},
+        {"name": "Italy", "wines": 32, "has_insight": true},
+        {"name": "Spain", "wines": 18, "has_insight": true}
+      ]
+    },
+    "regions": {
+      "total": 20,
+      "already_enriched": 12,
+      "need_enrichment": 8,
+      "need_list": [
+        {"name": "Touraine", "wines": 37},
+        {"name": "Napa Valley", "wines": 37},
+        {"name": "Langhe", "wines": 20},
+        {"name": "Piemonte", "wines": 11},
+        {"name": "Santa Cruz Mountains", "wines": 9},
+        {"name": "Côte de Nuits", "wines": 8},
+        {"name": "Côte de Beaune", "wines": 4},
+        {"name": "San Luis Obispo County", "wines": 4}
+      ]
+    },
+    "appellations": {
+      "total": 51,
+      "already_enriched": 17,
+      "need_enrichment": 34,
+      "top_needs": [
+        {"name": "Vouvray", "wines": 58},
+        {"name": "Champagne", "wines": 42},
+        {"name": "Bandol", "wines": 19},
+        {"name": "Barolo", "wines": 16},
+        {"name": "Côte-Rôtie", "wines": 9},
+        {"name": "Alsace / Vin d'Alsace", "wines": 9},
+        {"name": "Rioja", "wines": 8},
+        {"name": "Langhe", "wines": 6},
+        {"name": "Côtes du Rhône", "wines": 5},
+        {"name": "Saint-Joseph", "wines": 5}
+      ]
+    },
+    "grapes": {
+      "total": 41,
+      "already_enriched": 0,
+      "need_enrichment": 41,
+      "top_grapes": [
+        {"name": "Pinot Noir", "wines": 39},
+        {"name": "Chardonnay", "wines": 36},
+        {"name": "Primitivo", "wines": 30, "note": "VIVC name for Zinfandel"},
+        {"name": "Cabernet Sauvignon", "wines": 29},
+        {"name": "Pinot Meunier", "wines": 21},
+        {"name": "Durif", "wines": 15, "note": "VIVC name for Petite Sirah"},
+        {"name": "Grenache", "wines": 14},
+        {"name": "Syrah", "wines": 13},
+        {"name": "Nebbiolo", "wines": 13},
+        {"name": "Gewürztraminer", "wines": 11},
+        {"name": "Riesling", "wines": 8}
+      ]
+    }
+  },
+  "enrichment_cascade_order": [
+    "1. Countries (4) — all already enriched, verify only",
+    "2. Regions (20) — 8 need enrichment",
+    "3. Appellations (51) — 34 need enrichment",
+    "4. Grapes (41) — all 41 need enrichment",
+    "5. Producers (14) — all need enrichment (pipeline must be built)",
+    "6. Wines (518) — 438 need enrichment"
+  ],
+  "estimated_cost": {
+    "regions": "$0.50",
+    "appellations": "$2.00",
+    "grapes": "$2.00",
+    "producers": "$2.00",
+    "wines_at_003_each": "$15.54",
+    "total_estimate": "$22.00"
+  }
+}

@@ -192,11 +192,11 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">S4.0 &middot; Apr 13, 2026</div>
+  <div class="meta">S4.1 &middot; Apr 13, 2026</div>
 </div>
 
 <div class="now">
-  <strong>Sprint 4 (Demo) planned.</strong> ~400 wines across 15 producers, top-down enrichment cascade, voice calibration via human review.
+  <strong>S4.1 complete.</strong> Track 0 quick fixes done (wine_lookups wired, 3 producer merges). Manifest built: 518 wines, 14 producers. Next: reference enrichment cascade.
 </div>
 
 <!-- ROADMAP -->
@@ -214,14 +214,14 @@
 <div class="quality-grid">
   <div class="quality-item">
     <div class="q-label">Wines enriched</div>
-    <div class="q-value bad">0 <span class="q-pct">/ ~400</span></div>
+    <div class="q-value bad">0 <span class="q-pct">/ 518</span></div>
     <div class="q-detail">enriched + human reviewed</div>
   </div>
   <div class="quality-item">
     <div class="q-label">Tracks</div>
     <ul class="gate">
-      <li><span class="g-no">&#10007;</span> Quick fixes</li>
-      <li><span class="g-no">&#10007;</span> Wine selection</li>
+      <li><span class="g-yes">&#10003;</span> Quick fixes</li>
+      <li><span class="g-yes">&#10003;</span> Wine selection</li>
       <li><span class="g-no">&#10007;</span> Ref enrichment</li>
       <li><span class="g-no">&#10007;</span> Producer pipeline</li>
       <li><span class="g-no">&#10007;</span> Wine enrichment</li>
@@ -231,28 +231,28 @@
   <div class="quality-item wide">
     <div class="q-label">Enrichment cascade</div>
     <ul class="gate">
-      <li><span class="g-no">&#10007;</span> Countries (0 / ~6)</li>
-      <li><span class="g-no">&#10007;</span> Regions (0 / ~12)</li>
-      <li><span class="g-no">&#10007;</span> Appellations (0 / ~25)</li>
-      <li><span class="g-no">&#10007;</span> Grapes (0 / ~20)</li>
-      <li><span class="g-no">&#10007;</span> Producers (0 / 15)</li>
-      <li><span class="g-no">&#10007;</span> Wines (0 / ~400)</li>
+      <li><span class="g-yes">&#10003;</span> Countries (4 / 4)</li>
+      <li><span class="g-no">&#10007;</span> Regions (12 / 20)</li>
+      <li><span class="g-no">&#10007;</span> Appellations (17 / 51)</li>
+      <li><span class="g-no">&#10007;</span> Grapes (0 / 41)</li>
+      <li><span class="g-no">&#10007;</span> Producers (0 / 14)</li>
+      <li><span class="g-no">&#10007;</span> Wines (0 / 518)</li>
     </ul>
   </div>
   <div class="quality-item">
     <div class="q-label">Producers</div>
     <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
       <tr style="color:var(--muted);"><td>Owner</td><td style="text-align:right">Wines</td><td style="text-align:right">Done</td></tr>
-      <tr><td>Stag&rsquo;s Leap WC</td><td style="text-align:right">51</td><td style="text-align:right; color:var(--red);">0</td></tr>
-      <tr><td>Ridge Vineyards</td><td style="text-align:right">129</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>Stag&rsquo;s Leap WC</td><td style="text-align:right">49</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>Ridge Vineyards</td><td style="text-align:right">113</td><td style="text-align:right; color:var(--red);">0</td></tr>
       <tr><td>Fort Ross</td><td style="text-align:right">28</td><td style="text-align:right; color:var(--red);">0</td></tr>
-      <tr><td>L&oacute;pez de Heredia</td><td style="text-align:right">19</td><td style="text-align:right; color:var(--red);">0</td></tr>
-      <tr><td>CIRQ</td><td style="text-align:right">5</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>L&oacute;pez de Heredia</td><td style="text-align:right">18</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>CIRQ</td><td style="text-align:right">4</td><td style="text-align:right; color:var(--red);">0</td></tr>
       <tr style="color:var(--muted);"><td>French recs</td><td style="text-align:right">Wines</td><td style="text-align:right">Done</td></tr>
       <tr><td>Tempier</td><td style="text-align:right">19</td><td style="text-align:right; color:var(--red);">0</td></tr>
       <tr><td>E. Guigal</td><td style="text-align:right">30</td><td style="text-align:right; color:var(--red);">0</td></tr>
       <tr><td>Trimbach</td><td style="text-align:right">75</td><td style="text-align:right; color:var(--red);">0</td></tr>
-      <tr><td>Domaine Huet</td><td style="text-align:right">58</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>Huet</td><td style="text-align:right">58</td><td style="text-align:right; color:var(--red);">0</td></tr>
       <tr style="color:var(--muted);"><td>Benchmarks</td><td style="text-align:right">Wines</td><td style="text-align:right">Done</td></tr>
       <tr><td>DRC</td><td style="text-align:right">14</td><td style="text-align:right; color:var(--red);">0</td></tr>
       <tr><td>Krug</td><td style="text-align:right">71</td><td style="text-align:right; color:var(--red);">0</td></tr>
@@ -268,8 +268,8 @@
       <tr><td style="color:var(--muted);">Voice iterations</td><td style="text-align:right">0</td></tr>
       <tr><td style="color:var(--muted);">User lookups</td><td style="text-align:right">0</td></tr>
       <tr><td style="color:var(--muted);">Humans shown</td><td style="text-align:right">0 / 5</td></tr>
-      <tr><td style="color:var(--muted);">Dupes merged</td><td style="text-align:right">0 / 3</td></tr>
-      <tr><td style="color:var(--muted);">Sessions</td><td style="text-align:right">S4.0</td></tr>
+      <tr><td style="color:var(--muted);">Dupes merged</td><td style="text-align:right; color:var(--green);">3 / 3</td></tr>
+      <tr><td style="color:var(--muted);">Sessions</td><td style="text-align:right">S4.1</td></tr>
     </table>
   </div>
 </div>
@@ -301,7 +301,7 @@
 <!-- NEXT UP -->
 <div class="section-label">Next Up &mdash; Sprint 4 (Demo)</div>
 <ul class="next-list">
-  <li><strong>S4.1</strong> &mdash; Quick fixes + producer merges + wine selection manifest</li>
+  <li><strong>S4.1</strong> &mdash; <span style="color:var(--green);">&#10003;</span> Quick fixes + producer merges + manifest (518 wines)</li>
   <li><strong>S4.2</strong> &mdash; Reference enrichment cascade (countries &rarr; regions &rarr; appellations &rarr; grapes)</li>
   <li><strong>S4.3</strong> &mdash; Build producer enrichment + voice calibration (first 5 wines)</li>
   <li><strong>S4.4</strong> &mdash; Wine enrichment: user's producers (voice review loop)</li>
@@ -312,9 +312,9 @@
 <!-- KEY NUMBERS -->
 <div class="section-label">Key Numbers</div>
 <div class="numbers">
-  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">156,570</div></div>
-  <div class="n-item"><div class="n-label">Producers</div><div class="n-value">10,683</div></div>
-  <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">126,033</div></div>
+  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">155,608</div></div>
+  <div class="n-item"><div class="n-label">Producers</div><div class="n-value">10,627</div></div>
+  <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">125,972</div></div>
   <div class="n-item"><div class="n-label">Prices</div><div class="n-value">40,193</div></div>
   <div class="n-item"><div class="n-label">Scores</div><div class="n-value">30,339</div></div>
   <div class="n-item"><div class="n-label">Grape links</div><div class="n-value">43,130</div></div>

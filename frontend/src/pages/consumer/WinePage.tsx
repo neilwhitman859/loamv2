@@ -284,6 +284,14 @@ export default function WinePage() {
       })
   }, [id])
 
+  /* ── Track page view ─────────────────────────────────────── */
+  useEffect(() => {
+    if (!wine?.id) return
+    supabase.from('wine_lookups')
+      .insert({ wine_id: wine.id, source: 'web' })
+      .then(() => {}) // fire-and-forget
+  }, [wine?.id])
+
   /* ── Loading / not found ───────────────────────────────── */
 
   if (loading) {
