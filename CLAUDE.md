@@ -16,8 +16,9 @@ Loam is a wine intelligence platform. Users look up a wine and get the full stor
 - `docs/VOICE.md` — Voice, tone, and food pairing guidance for all AI-generated content. Read before writing any enrichment prompts or insight content.
 - `docs/ENRICHMENT.md` — Letter-grade enrichment architecture (F/D/C/B/A), cost model, on-demand pipeline, wine-not-found flow. Read before building or modifying the enrichment pipeline.
 - `docs/SOURCES.md` — Master reference for all external data sources (evaluated, integrated, planned, rejected). Read when working on data acquisition or import pipelines.
-- `data/stats/loam_roadmap.json` + `python -m pipeline.analyze.loam_roadmap` — Phased development plan. The JSON holds phase structure; the script renders it with live DB metrics. Replaced `docs/ROADMAP.md` (deleted in Session 14 Phase A — it duplicated the JSON and went stale). Read at session start to know what phase we're in.
-- `data/sprints/current.json` + `python -m pipeline.analyze.sprint_dashboard` — Active sprint state. Each sprint lives under `data/sprints/<name>/` (sessions.json, budget.json, journal.md, status.md, meta.json, prompts/); archived sprints live under `data/sprints/_archive/<name>/`.
+- `data/dashboard.md` — **Single source of truth for sprint progress.** Track checklist, session log, budget, snapshot metrics. Read at session start. Update at milestones and before every commit. User keeps it open in Notepad++ with auto-reload.
+- `data/sprints/current.json` — Sprint state pointer. Each sprint lives under `data/sprints/<name>/` (sessions.json, budget.json, journal.md, prompts/); archived sprints under `data/sprints/_archive/<name>/`.
+- `data/stats/loam_roadmap.json` + `python -m pipeline.analyze.loam_roadmap` — Phased development plan (legacy, being superseded by dashboard.md). The JSON holds phase structure; the script renders it with live DB metrics.
 - `docs/MERGE_STRATEGY.md` — Merge pipeline decisions: Python migration, merge layer sequencing, COLA risks, wine identity definition, AI matching approach, product direction. Read before building merge/matching infrastructure.
 - `docs/WORKFLOW.md` — Human-facing session checklist. You don't need to read this, but follow the behavioral instructions below.
 - `docs/reference/` — Retired docs kept for historical reference, not actively updated. Includes LWIN_STRATEGY.md (superseded by SOURCES.md + `data/stats/loam_roadmap.json`), SCHEMA_ASSESSMENT.md (Phase 1a spec, fully executed).
@@ -78,6 +79,30 @@ or "reasoning across records," pause and ask whether Opus inline is the right to
 first — default yes. Note the pivot in the session journal so budget tracking stays
 honest. See `memory/feedback_opus_inline_reasoning.md` for full rationale and the
 S2.3 evidence.
+
+### Dashboard
+Update `data/dashboard.md` at session start (refresh metrics), at milestones (check
+off completed tracks), and before every commit. This is the single source of truth
+for sprint progress. User keeps it open in Notepad++ with auto-reload.
+
+### Session Routines
+
+**Session open (3 steps):**
+1. Read `data/dashboard.md` + `CLAUDE.md`
+2. Query DB for current metrics — update dashboard snapshot
+3. Log session start in `data/sessions.md` under Active
+
+**Session close (4 steps):**
+1. Update `data/dashboard.md` — check off tracks, refresh metrics
+2. Update `CLAUDE.md` if anything meaningful changed
+3. Move session entry to Done in `data/sessions.md`
+4. Commit and push
+
+**Sprint open:** Create sprint dir (`data/sprints/<name>/`), sessions.json,
+budget.json, journal.md. Update `data/sprints/current.json`.
+
+**Sprint close:** Re-run all dashboard metrics. Archive sprint. Update current.json
+pointer. Decide: re-audit or move to next phase.
 
 ### Cron Loops — Explicit Request Only
 Never create a cron loop or automated recurring task unless the user explicitly says
@@ -598,37 +623,31 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 
 ## Current Focus
 
-**Session 14 housekeeping interregnum** — 30K Plan (Sprint 1) closes at end of Session 14 Phase B. Sprint 2 = Reference-First Enrichment (planning session 15, execution sessions 16+). See `data/stats/loam_roadmap.json` + `python -m pipeline.analyze.loam_roadmap` for the full phased plan.
+**Phase 3 — Fix.** Sprint 3 executing against the Sprint 2 audit findings.
+Live tracker: `data/dashboard.md`. Scope source: `data/sprints/audit/findings/synthesis.md`.
 
-### Strategic Context (updated 2026-03-19)
-- **Backbone IDs:** Three identifier systems anchor every wine: **COLA** (US regulatory, ~1.2M labels), **LWIN** (fine wine trade, 189K wines — already in canonical), **UPC** (retail barcode, fragmented sources). All stored in `external_ids`. Cross-referencing Backbone IDs is the primary dedup mechanism. See `docs/SOURCES.md` for the formal definition.
-- **Multi-source data strategy:** LWIN (canonical backbone, already loaded) → TTB COLA direct (Phase 1 running) → State DBs (COLA + UPC bridge) → Importer catalogs (enrichment) → COLA Cloud (barcode enrichment) → Retailer sitemaps.
-- **Letter-grade enrichment:** F (identity) → D (has scores/prices) → C (batch Haiku) → B (on-demand Sonnet) → A (curated). See `docs/ENRICHMENT.md`.
-- **Identity-first, accuracy-first:** User explicitly chose slow/methodical over quick MVP. On-demand enrichment for user searches. Barcodes considered from the start to avoid re-matching later.
-- **Vertical slice:** California + Burgundy as first enrichment targets.
-- **User lookup triggers B enrichment:** On-demand Sonnet for every search landing on a wine below Grade B. C is batch pre-warming. See ENRICHMENT.md.
+**Roadmap:** Build (done) → Audit (done) → **Fix (now)** → Deepen → Enrich.
+Audit→fix cycles iterate as needed before moving to Deepen.
 
-### Next Steps (cleaned 2026-04-03)
+**Core product insight (2026-04-12):** Loam's product is STRUCTURED DATA RENDERED
+CLEARLY, not AI prose. The magic is: look up any wine → see organized, trustworthy,
+connected data → same fields every time. AI enrichment supports this but is not the
+primary value. Sprint 3 reflects this — all AI prose work deferred to Sprint 4.
 
-**All Phase 1 foundation work is complete** (schema, reference data, data acquisition, LWIN promotion, TTB scraping, staging table loads, initial merge passes). See git history for details.
+### Sprint 3 Track Order (re-sorted 2026-04-12)
 
-**Active:**
-- ~~TTB barcode scan~~ **COMPLETE** (2026-04-06): 3M labels + 332K scans scanned, 106K UPCs promoted
-- Data merge paused — see "Next steps (resume here)" in merge infrastructure section
+1. **Track 2 — Staging archive relink** — unlock 140K prices + 27K scores ($0)
+2. **Track 3 — Grape repair** — fix Chardonnay/Pinot Blanc compound bug ($0)
+3. **Track 0B — UI hygiene P0s** — pages actually render structured data ($0)
+4. **Track 1 (hygiene only)** — delete describe-chemical, vendor enrich-wine, centralize model IDs ($0)
+5. **Track 0A — Doc hygiene** — 23 S2.8 findings ($0)
+6. **Track 4 — Producer metadata** — "producers are the artists" ($50-100)
+7. **Delete xwines_* tables + Riddler** — stop preserving confusing old state
 
-**Upcoming:**
-- Link Phase B wines back to TTB (6,767 new wines need canonical_wine_id backlinks)
-- Enrichment pipeline MVP (Edge Function + prompts) — next major phase
-- COLA-keyed deterministic merge (PRO/TABC/WV/Kansas/barcode → shared COLA numbers, pure SQL)
-- Importer catalog merge (10K wines against TTB+LWIN backbone)
-- TTB COLA Phase 3 AI parse (Haiku on 1.35M non-001 fanciful names, ~$10) — lower priority
-- Remaining importer scrapers (Kysela, Louis/Dressner, Broadbent)
-- Frontend resume — after canonical tables have real depth
+Deferred to Sprint 4: voice module, L3 fact-check gate, AI safety rail, signal
+collection, food pairings restoration. See `data/dashboard.md` for full checklist.
 
-**Dropped:**
-- ~~NJ OPRA request~~ — deprioritized 2026-04-03
-- ~~Vinmonopolet follow-up~~ — deprioritized 2026-04-03
-- ~~Bulk label OCR extraction~~ — tabled 2026-04-07. Bake-off done (EasyOCR 80%, RapidOCR 74% vs Claude baseline). ROI too low vs enrichment pipeline. Images preserved on D: drive.
+**ENRICHMENT_ENABLED feature flag stays OFF** through Sprint 3 into Sprint 5.
 
 ### Schema Hardening (complete — see `docs/HISTORY.md` for detail)
 3 rounds of hardening applied. Key infrastructure: `set_updated_at()` triggers on 36 tables, `validate_polymorphic_fks()` orphan checker, enrichment_log with cost/model tracking, `appellation_rules` table. `wine_vintage_scores` and `wine_vintage_prices` have `wine_vintage_id` FK (preferred join path). `retailers` table seeded with 13 retailers (all price sources).
@@ -640,7 +659,7 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 - **Alias tables:** ✅ SEEDED. region_aliases (96), label_designation_aliases (75), appellation_aliases (17,558).
 - **JSONB metadata:** ✅ CLEAN. All promotable fields moved to proper columns. Remaining metadata is appropriate for JSONB (import provenance, cooperage, clones, narrative notes).
 - **Direct Postgres connection:** ✅ `get_conn()` in `pipeline/lib/db.py` via session pooler (psycopg2). Eliminates HTTP/2 ConnectionTerminated crashes. `batch_matcher.py` and `ttb_grape_promote.py` migrated. `get_supabase()` still works for light reads.
-- **Nightly agent (Riddler):** Scheduled task at midnight. Validates data, runs promotion scripts if needed, measures readiness, tracks trends in `data/stats/`. Self-improving via journal (`data/stats/agent_journal.md`). ~$2/night Haiku budget for fuzzy matching.
+- **Nightly agent (Riddler):** ~~Scheduled task at midnight.~~ **DELETED (2026-04-12 decision).** Do not revive.
 - **Session prompts:** `data/session_prompts/` for passing focused work instructions to new sessions.
 - **Migrations in git:** All DDL via Supabase MCP. Need `supabase/migrations/` before multi-developer.
 - **FK normalization (partially addressed):** `wine_vintage_scores` and `wine_vintage_prices` now have `wine_vintage_id` FK (backfilled). `wine_vintage_grapes` already had optional `wine_vintage_id`. Legacy `wine_id + vintage_year` columns kept as convenience but `wine_vintage_id` is now the preferred join path.
@@ -669,7 +688,7 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 - Systembolaget/Alko barcode sources — still need investigation
 - UPC→price lookup tool — **RESEARCHED**: SerpAPI ($0.01-0.025/lookup), Go-UPC ($75-795/mo), Wine-Searcher API ($250-2K/mo). Decision: don't pay. We have ~82K prices in 13 staging sources already. On-demand SerpAPI at $75/mo is fallback for Grade B enrichment after merge engine runs.
 - Wine.com scraping — **BLOCKED**: DataDome 403 on all product pages and API endpoints. 262K sitemap URLs in hand for future slug parsing (Wine.com product IDs). Park until API partnership or DataDome bypass becomes viable.
-- Vivino re-scraping — **UNNECESSARY**: API returning 403 (Cloudflare). Apify scrapers work at ~$5-15/10K wines. But xwines_* tables already have 530K wines for validation. Use existing data, don't re-scrape.
+- ~~Vivino re-scraping~~ — **CLOSED**: xwines_* tables being deleted (2026-04-12 decision). No re-scrape needed.
 - TTB AVA shapefiles at https://www.ttb.gov/ava — research for boundary data
 - Tech sheet extraction tool for winery PDFs — design and build
 
@@ -678,10 +697,10 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 ## Key Phrases
 
 - **"wrap up"** — End-of-session routine: **consider every doc file** for updates, then commit and push. Go through this checklist — skip only if genuinely nothing changed for that doc:
+  - `data/dashboard.md` — **always update first** (metrics, track checklist, session log)
   - `CLAUDE.md` — always update (current state, what was accomplished)
   - `docs/DECISIONS.md` — append if any decisions were made
-  - `data/stats/loam_roadmap.json` — update if phase status or priorities changed (no more `docs/ROADMAP.md` — deleted in S14 Phase A)
-  - `data/sprints/current.json` + `data/sprints/<name>/` — update sprint state (sessions.json, budget.json, journal.md, status.md)
+  - `data/sprints/current.json` + `data/sprints/<name>/` — update sprint state (sessions.json, budget.json, journal.md)
   - `docs/SCHEMA.md` — update if schema changed (CREATE/ALTER/DROP)
   - `docs/SOURCES.md` — update if source status changed (new source, fetcher built, data loaded)
   - `docs/ENRICHMENT.md` — update if enrichment architecture changed

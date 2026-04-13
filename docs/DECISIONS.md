@@ -1617,3 +1617,15 @@ Run a S2.10 session that re-sorts the Sprint 3 backlog against the updated strat
 ### 2026-04-12: Delete xwines_* tables and Riddler scheduled task
 
 xwines_* (530K Vivino-sourced wines, ~2.2M vintages, ~32K producers) kept as "reference" is confusing things. Delete in Sprint 3. The data-accuracy-agent (Riddler) scheduled task is also dead weight — delete, don't revive.
+
+### 2026-04-12: All AI prose work deferred from Sprint 3 to Sprint 4
+
+Sprint 3 re-sorted against "structured data is the product." Voice module consolidation (Track 1 items 4-7), L3 fact-check gate (Track 7), AI safety rail (Track 6), signal collection (Track 5), and food pairings restoration (Track 8) all deferred to Sprint 4 (Deepen). Sprint 3 focuses on: staging archive relink, grape repair, UI hygiene, edge function hygiene, doc hygiene, producer metadata. This reflects the 2026-04-12 decision that Loam's core value is structured data rendered clearly, not AI prose.
+
+### 2026-04-12: Dashboard replaces multi-dashboard system
+
+`data/dashboard.md` is the single source of truth for sprint progress. Replaces `loam_roadmap.json` + `dash.ps1` + `sprint_dashboard.py` as the tracking surface. Updated at session start, milestones, and before every commit. User keeps it open in Notepad++ with auto-reload. Session open/close and sprint open/close routines written into CLAUDE.md behavioral instructions.
+
+### 2026-04-12: Roadmap simplified to Build > Audit > Fix > Deepen > Enrich
+
+Replaced the confusing 5-sprint technical sequence with 5 phases: Build (done), Audit (done), Fix (now), Deepen (next), Enrich (after). Audit→fix cycles iterate as needed before moving to Deepen. Each phase maps to roughly 1 sprint.
