@@ -636,13 +636,13 @@ primary value. Sprint 3 reflects this — all AI prose work deferred to Sprint 4
 
 ### Sprint 3 Track Order (re-sorted 2026-04-12)
 
-1. **Track 2 — Staging archive relink** — unlock 140K prices + 27K scores ($0)
-2. **Track 3 — Grape repair** — fix Chardonnay/Pinot Blanc compound bug ($0)
-3. **Track 0B — UI hygiene P0s** — pages actually render structured data ($0)
-4. **Track 1 (hygiene only)** — delete describe-chemical, vendor enrich-wine, centralize model IDs ($0)
-5. **Track 0A — Doc hygiene** — 23 S2.8 findings ($0)
-6. **Track 4 — Producer metadata** — "producers are the artists" ($50-100)
-7. **Delete xwines_* tables + Riddler** — stop preserving confusing old state
+1. **Clean house** — delete cruft from earlier iterations: xwines_*, Riddler, dead dirs/scripts/docs ($0)
+2. **Staging archive relink** — unlock 140K prices + 27K scores ($0)
+3. **Grape repair** — fix Chardonnay/Pinot Blanc compound bug ($0)
+4. **UI hygiene** — pages actually render structured data ($0)
+5. **Edge function hygiene** — delete describe-chemical, vendor enrich-wine, centralize model IDs ($0)
+6. **Doc hygiene** — 23 S2.8 findings ($0)
+7. **Producer metadata** — "producers are the artists" ($50-100)
 
 Deferred to Sprint 4: voice module, L3 fact-check gate, AI safety rail, signal
 collection, food pairings restoration. See `data/dashboard.html` for full checklist.

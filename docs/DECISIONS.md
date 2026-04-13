@@ -1629,3 +1629,15 @@ Sprint 3 re-sorted against "structured data is the product." Voice module consol
 ### 2026-04-12: Roadmap simplified to Build > Audit > Fix > Deepen > Enrich
 
 Replaced the confusing 5-sprint technical sequence with 5 phases: Build (done), Audit (done), Fix (now), Deepen (next), Enrich (after). Audit→fix cycles iterate as needed before moving to Deepen. Each phase maps to roughly 1 sprint.
+
+### 2026-04-12: Clean house is Sprint 3 Track 1
+
+Sprint 3 opens with a broad cleanup pass — not just the synthesis.md tracks but deleting anything left over from earlier iterations. Goal: single workstream, tighter project. xwines_* tables, Riddler, dead scripts, empty scaffold dirs, stale docs, bloated session entries. Clean slate before fixing bugs.
+
+### 2026-04-12: Staging relink executes directly, no dry-run pause
+
+For the staging archive relink (Track 2), execute directly and report results after. No dry-run summary step. Matches the 2026-04-12 execution pattern decision (autonomous with summaries, not per-row approval).
+
+### 2026-04-12: Sprint 3 auto-continues between tracks
+
+Within a conversation, chain tracks without pausing for user input. Only stop for decision points or errors. If conversation hits context limit, write a handoff prompt for the next conversation.

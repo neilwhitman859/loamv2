@@ -109,8 +109,8 @@
   /* Done criteria */
   .criteria { list-style: none; font-size: 0.85rem; }
   .criteria li { padding: 3px 0; }
-  .criteria li::before { content: "○ "; color: var(--muted); }
-  .criteria li.met::before { content: "● "; color: var(--green); }
+  .criteria li::before { content: "\25CB  "; color: var(--muted); }
+  .criteria li.met::before { content: "\25CF  "; color: var(--green); }
 
   /* Open questions */
   .questions { font-size: 0.85rem; color: var(--muted); }
@@ -120,7 +120,7 @@
 <body>
 
 <h1>Loam Dashboard</h1>
-<div class="updated">Last updated: 2026-04-12 20:00 &mdash; S2.10 &mdash; auto-refreshes every 5s</div>
+<div class="updated">Last updated: 2026-04-12 21:30 &mdash; S2.10 &mdash; auto-refreshes every 5s</div>
 
 <div class="status-bar">
   <div class="status-item">
@@ -145,75 +145,125 @@
   </div>
 </div>
 
-<h2>Sprint 3 &mdash; Track Checklist</h2>
+<h2>What's Been Done</h2>
+
+<div class="track done">
+  <div class="track-header">
+    <div class="track-check">&#10003;</div>
+    <span class="track-name">Phase 1 &mdash; Build</span>
+    <span class="track-est">Sprints 1&ndash;1, DONE</span>
+  </div>
+  <div class="track-desc">Assembled 155K-wine dataset from LWIN backbone + TTB COLA scrape (3.28M records) + 32 staging sources (4.35M rows). Schema hardened across 3 rounds. 78 canonical tables, reference data seeded (appellations, grapes, regions, countries, soils, weather). PostGIS geographic boundaries. Frontend built (Vite+React, 9 consumer pages).</div>
+</div>
+
+<div class="track done">
+  <div class="track-header">
+    <div class="track-check">&#10003;</div>
+    <span class="track-name">Phase 2 &mdash; Audit</span>
+    <span class="track-est">Sprint 2, 10 sessions, DONE</span>
+  </div>
+  <div class="track-desc">9 expert audits (DB canonical, DB staging, wine canonical, wine reference, code, voice, UX, meta, business) produced 275 findings. $0 spent / $25 ceiling. Key discoveries: 2,743-wine Chardonnay/Pinot Blanc grape bug, 286K dangling staging pointers locking 140K prices, 0/10,676 producers with metadata, 100% of country pages silently broken, describe-chemical rogue edge function deployed. S2.10 re-sorted the backlog against "structured data is the product."</div>
+</div>
+
+<h2>Sprint 3 &mdash; Fix (current)</h2>
 
 <div class="track pending">
   <div class="track-header">
     <div class="track-check"></div>
-    <span class="track-name">Track 2 &mdash; Staging archive relink</span>
+    <span class="track-name">1. Clean house</span>
     <span class="track-est">~1 session, $0</span>
   </div>
-  <div class="track-desc">Extend relink_staging_to_current.py from 1 to 30 tables. Unlock 140K archive prices + 27K scores.</div>
-  <div class="track-done">Done when: price coverage >12%, dangling staging pointers <10K</div>
+  <div class="track-desc">Delete cruft from earlier iterations. Drop xwines_* tables (530K Vivino dump), delete Riddler scheduled task, rm dead scripts/docs/empty dirs, prune bloated session entries, archive stale docs to docs/reference/.</div>
+  <div class="track-done">Done when: xwines_* gone, Riddler gone, docs/architecture/ + docs/pipelines/ gone, scripts_archive/ evaluated, data/stats/ pruned, data/session_prompts/ pruned</div>
 </div>
 
 <div class="track pending">
   <div class="track-header">
     <div class="track-check"></div>
-    <span class="track-name">Track 3 &mdash; Grape repair</span>
+    <span class="track-name">2. Staging archive relink</span>
+    <span class="track-est">~1 session, $0</span>
+  </div>
+  <div class="track-desc">The 30K rebuild broke 286K staging pointers. Extend relink script from 1 to 30 tables, then re-promote prices/scores/vintages. Biggest single user-visible improvement: unlocks 140K archive prices + 27K scores.</div>
+  <div class="track-done">Done when: price coverage &gt;12% (from 1.81%), dangling staging pointers &lt;10K (from 286K)</div>
+</div>
+
+<div class="track pending">
+  <div class="track-header">
+    <div class="track-check"></div>
+    <span class="track-name">3. Grape repair</span>
     <span class="track-est">~2 sessions, $0</span>
   </div>
-  <div class="track-desc">Delete PINOT BLANC polluting synonyms, fix varietal_categories, consolidate resolvers, re-run.</div>
+  <div class="track-desc">Compound bug across 5 audit experts: PINOT BLANC has VIVC synonyms that match Chardonnay, so 2,743 Chardonnay wines have wrong Pinot Blanc grape linked. Fix: delete polluting synonyms, fix varietal_categories wrong links, consolidate resolvers, re-run wine_grapes.</div>
   <div class="track-done">Done when: Chardonnay+Pinot Blanc false-positive count &le;50 (currently 2,743)</div>
 </div>
 
 <div class="track pending">
   <div class="track-header">
     <div class="track-check"></div>
-    <span class="track-name">Track 0B &mdash; UI hygiene P0s</span>
+    <span class="track-name">4. UI hygiene</span>
     <span class="track-est">~1 session, $0</span>
   </div>
-  <div class="track-desc">CountryPage column typo, WinePage display_name fallback, error boundary, 404, render 8 dead ai_* fields.</div>
-  <div class="track-done">Done when: CountryPage renders ai_overview; WinePage h1 never empty; error boundary catches failures</div>
+  <div class="track-desc">Pages need to actually render the structured data. CountryPage selects non-existent column (1-char typo, 100% of country pages broken). WinePage shows empty h1 on 12K wines. No error boundary. No 404 page. 8 ai_* fields fetched and silently discarded.</div>
+  <div class="track-done">Done when: CountryPage renders ai_overview; WinePage h1 never empty; error boundary catches failures; 8 ai_* fields visible</div>
 </div>
 
 <div class="track pending">
   <div class="track-header">
     <div class="track-check"></div>
-    <span class="track-name">Track 1 &mdash; Edge function hygiene</span>
+    <span class="track-name">5. Edge function hygiene</span>
     <span class="track-est">~0.5 session, $0</span>
   </div>
-  <div class="track-desc">Delete describe-chemical. Vendor enrich-wine into git. Centralize model IDs.</div>
-  <div class="track-done">Done when: describe-chemical absent from list_edge_functions; supabase/functions/enrich-wine/ in git</div>
+  <div class="track-desc">describe-chemical is a rogue edge function: deployed, active, verify_jwt=false, shares the Anthropic API key, has zero wine logic. Delete it. Also vendor enrich-wine source into git (not in repo today) and centralize the 3 scattered Anthropic model IDs.</div>
+  <div class="track-done">Done when: describe-chemical absent from list_edge_functions; supabase/functions/enrich-wine/ in git; pipeline/lib/models.py exists</div>
 </div>
 
 <div class="track pending">
   <div class="track-header">
     <div class="track-check"></div>
-    <span class="track-name">Track 0A &mdash; Doc hygiene</span>
+    <span class="track-name">6. Doc hygiene</span>
     <span class="track-est">~1 session, $0</span>
   </div>
-  <div class="track-desc">23 S2.8 findings. CLAUDE.md drift, archive stale docs, fix broken paths, strip hardcoded counts.</div>
-  <div class="track-done">Done when: CLAUDE.md Current Focus reads Sprint 3; docs/architecture/ and docs/pipelines/ deleted</div>
+  <div class="track-desc">23 findings from S2.8 meta audit. CLAUDE.md has internal contradictions and hardcoded counts that drift from the live DB. SOURCES.md documents wrong column names. Multiple docs reference files that moved or were deleted.</div>
+  <div class="track-done">Done when: CLAUDE.md internally consistent; docs/SOURCES.md external_ids section correct; no broken path references</div>
 </div>
 
 <div class="track pending">
   <div class="track-header">
     <div class="track-check"></div>
-    <span class="track-name">Track 4 &mdash; Producer metadata</span>
+    <span class="track-name">7. Producer metadata</span>
     <span class="track-est">~2 sessions, $50-100</span>
   </div>
-  <div class="track-desc">"Producers are the artists." Deep metadata: founding story, winemaker, philosophy, holdings.</div>
-  <div class="track-done">Done when: &ge;300 producers with website + year + coordinates. Top 15 marquee producers complete.</div>
+  <div class="track-desc">"Producers are the artists." Today: 0 of 10,676 producers have any metadata beyond a name. Goal: deep metadata on top producers &mdash; founding story, winemaker, philosophy, vineyard holdings, production methods. Hybrid approach: manual top 50 + Haiku extraction for top 500.</div>
+  <div class="track-done">Done when: &ge;300 producers with website + year + coordinates. Top 15 marquee producers (DRC, Lafite, Gaja, etc.) complete.</div>
 </div>
 
-<div class="track pending">
+<h2>What's Next (after Fix)</h2>
+
+<div class="track pending" style="opacity: 0.6;">
   <div class="track-header">
     <div class="track-check"></div>
-    <span class="track-name">Delete xwines_* + Riddler</span>
-    <span class="track-est">~5 min</span>
+    <span class="track-name">Phase 3.5 &mdash; Re-audit</span>
+    <span class="track-est">~2-3 sessions</span>
   </div>
-  <div class="track-desc">Drop xwines tables. Delete Riddler scheduled task.</div>
+  <div class="track-desc">After Fix, run another audit cycle to see what's left. Audit&rarr;fix&rarr;audit is the long-term quality pattern. Scope and findings count determine whether we iterate again or move to Deepen.</div>
+</div>
+
+<div class="track pending" style="opacity: 0.4;">
+  <div class="track-header">
+    <div class="track-check"></div>
+    <span class="track-name">Phase 4 &mdash; Deepen</span>
+    <span class="track-est">Sprint 4</span>
+  </div>
+  <div class="track-desc">Voice module consolidation (pipeline/lib/voice.py), AI safety rail (AIBadge, /about, /known-issues), L3 fact-check gate, signal collection (landing page, wine_lookups telemetry), food pairings restoration, appellation reference redesign, French AOC diacritics, 1855 classification fix.</div>
+</div>
+
+<div class="track pending" style="opacity: 0.3;">
+  <div class="track-header">
+    <div class="track-check"></div>
+    <span class="track-name">Phase 5 &mdash; Enrich</span>
+    <span class="track-est">Sprint 5, $60-100</span>
+  </div>
+  <div class="track-desc">Friends-and-family scope enrichment. Re-generate ~5K existing enriched wines through voice module + L3 gate. Grade C on ~3K high-depth wines. Grade B on ~500 demo wines. Reference regen on contaminated US + European appellations. Full corpus ($620-700) only if feedback demands it.</div>
 </div>
 
 <h2>Snapshot Metrics</h2>
@@ -276,28 +326,27 @@
 
 <h2>Done Criteria</h2>
 <ul class="criteria">
+  <li>Project cruft deleted (xwines_*, Riddler, dead dirs/scripts/docs)</li>
   <li>describe-chemical deleted, enrich-wine vendored</li>
   <li>Chardonnay/Pinot Blanc &le;50 wines (from 2,743)</li>
   <li>Price coverage &gt;12% (from 1.81%)</li>
   <li>UI P0s shipped (CountryPage, WinePage, error boundary)</li>
   <li>Doc drift fixed (CLAUDE.md, SOURCES.md, stale docs archived)</li>
   <li>&ge;300 producers with deep metadata</li>
-  <li>xwines_* tables and Riddler deleted</li>
   <li>ENRICHMENT_ENABLED flag still OFF</li>
 </ul>
 
 <h2>Deferred to Sprint 4 (Deepen)</h2>
 <ul class="deferred">
-  <li>Track 1 items 4-7 &mdash; voice module (pipeline/lib/voice.py)</li>
-  <li>Track 5 &mdash; signal collection (landing page, email signup, wine_lookups)</li>
-  <li>Track 6 &mdash; AI safety rail (AIBadge, /about, /known-issues)</li>
-  <li>Track 7 &mdash; L3 fact-check gate</li>
-  <li>Track 8 &mdash; food pairings restoration</li>
+  <li>Voice module (pipeline/lib/voice.py)</li>
+  <li>Signal collection (landing page, email signup, wine_lookups)</li>
+  <li>AI safety rail (AIBadge, /about, /known-issues)</li>
+  <li>L3 fact-check gate</li>
+  <li>Food pairings restoration</li>
 </ul>
 
 <h2>Open Questions</h2>
 <ul class="questions">
-  <li>Sprint 3 session sequence not yet locked &mdash; execute in track-priority order above</li>
   <li>After Fix phase: run Audit 2 (re-audit) before moving to Deepen? Decision: yes, iterate audit&rarr;fix</li>
 </ul>
 
