@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loam Dashboard</title>
+<meta http-equiv="refresh" content="5">
+<style>
+  :root {
+    --bg: #1a1a1a;
+    --surface: #242424;
+    --border: #333;
+    --text: #e0e0e0;
+    --muted: #888;
+    --accent: #c9a96e;
+    --green: #4caf50;
+    --red: #e57373;
+    --blue: #64b5f6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px 32px;
+    line-height: 1.5;
+  }
+  h1 { font-size: 1.5rem; color: var(--accent); margin-bottom: 4px; }
+  .updated { color: var(--muted); font-size: 0.8rem; margin-bottom: 24px; }
+  h2 {
+    font-size: 1.1rem;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+    margin: 28px 0 12px;
+  }
+  h3 { font-size: 0.95rem; color: var(--text); margin: 16px 0 8px; }
+
+  /* Status bar */
+  .status-bar {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+  .status-item { display: flex; flex-direction: column; }
+  .status-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+  .status-value { font-size: 1rem; font-weight: 600; }
+
+  /* Track list */
+  .track {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+  }
+  .track.done { opacity: 0.5; border-left: 3px solid var(--green); }
+  .track.active { border-left: 3px solid var(--blue); }
+  .track.pending { border-left: 3px solid var(--border); }
+  .track-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .track-check {
+    width: 18px; height: 18px;
+    border: 2px solid var(--muted);
+    border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; flex-shrink: 0;
+  }
+  .track.done .track-check { border-color: var(--green); color: var(--green); }
+  .track-name { font-weight: 600; font-size: 0.9rem; }
+  .track-est { color: var(--muted); font-size: 0.75rem; margin-left: auto; }
+  .track-desc { color: var(--muted); font-size: 0.8rem; margin: 4px 0 0 26px; }
+  .track-done { color: var(--muted); font-size: 0.75rem; margin: 2px 0 0 26px; font-style: italic; }
+
+  /* Metrics grid */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+  }
+  .metric {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 14px;
+  }
+  .metric-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+  .metric-value { font-size: 1.3rem; font-weight: 700; margin: 2px 0; }
+  .metric-target { font-size: 0.7rem; color: var(--muted); }
+  .metric-value.warn { color: var(--red); }
+  .metric-value.ok { color: var(--green); }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th { text-align: left; color: var(--muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+  td { padding: 6px 10px; border-bottom: 1px solid var(--border); }
+
+  /* Deferred */
+  .deferred { color: var(--muted); font-size: 0.8rem; }
+  .deferred li { margin-bottom: 2px; }
+
+  /* Done criteria */
+  .criteria { list-style: none; font-size: 0.85rem; }
+  .criteria li { padding: 3px 0; }
+  .criteria li::before { content: "○ "; color: var(--muted); }
+  .criteria li.met::before { content: "● "; color: var(--green); }
+
+  /* Open questions */
+  .questions { font-size: 0.85rem; color: var(--muted); }
+  .questions li { margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+<h1>Loam Dashboard</h1>
+<div class="updated">Last updated: 2026-04-12 20:00 &mdash; S2.10 &mdash; auto-refreshes every 5s</div>
+
+<div class="status-bar">
+  <div class="status-item">
+    <span class="status-label">Phase</span>
+    <span class="status-value">3 &mdash; Fix</span>
+  </div>
+  <div class="status-item">
+    <span class="status-label">Sprint</span>
+    <span class="status-value">3 (planning)</span>
+  </div>
+  <div class="status-item">
+    <span class="status-label">Budget</span>
+    <span class="status-value">$0 / $50</span>
+  </div>
+  <div class="status-item">
+    <span class="status-label">Sessions</span>
+    <span class="status-value">0 completed</span>
+  </div>
+  <div class="status-item">
+    <span class="status-label">Roadmap</span>
+    <span class="status-value">Build &rarr; Audit &rarr; <strong>Fix</strong> &rarr; Deepen &rarr; Enrich</span>
+  </div>
+</div>
+
+<h2>Sprint 3 &mdash; Track Checklist</h2>
+
+<div class="track pending">
+  <div class="track-header">
+    <div class="track-check"></div>
+    <span class="track-name">Track 2 &mdash; Staging archive relink</span>
+    <span class="track-est">~1 session, $0</span>
+  </div>
+  <div class="track-desc">Extend relink_staging_to_current.py from 1 to 30 tables. Unlock 140K archive prices + 27K scores.</div>
+  <div class="track-done">Done when: price coverage >12%, dangling staging pointers <10K</div>
+</div>
+
+<div class="track pending">
+  <div class="track-header">
+    <div class="track-check"></div>
+    <span class="track-name">Track 3 &mdash; Grape repair</span>
+    <span class="track-est">~2 sessions, $0</span>
+  </div>
+  <div class="track-desc">Delete PINOT BLANC polluting synonyms, fix varietal_categories, consolidate resolvers, re-run.</div>
+  <div class="track-done">Done when: Chardonnay+Pinot Blanc false-positive count &le;50 (currently 2,743)</div>
+</div>
+
+<div class="track pending">
+  <div class="track-header">
+    <div class="track-check"></div>
+    <span class="track-name">Track 0B &mdash; UI hygiene P0s</span>
+    <span class="track-est">~1 session, $0</span>
+  </div>
+  <div class="track-desc">CountryPage column typo, WinePage display_name fallback, error boundary, 404, render 8 dead ai_* fields.</div>
+  <div class="track-done">Done when: CountryPage renders ai_overview; WinePage h1 never empty; error boundary catches failures</div>
+</div>
+
+<div class="track pending">
+  <div class="track-header">
+    <div class="track-check"></div>
+    <span class="track-name">Track 1 &mdash; Edge function hygiene</span>
+    <span class="track-est">~0.5 session, $0</span>
+  </div>
+  <div class="track-desc">Delete describe-chemical. Vendor enrich-wine into git. Centralize model IDs.</div>
+  <div class="track-done">Done when: describe-chemical absent from list_edge_functions; supabase/functions/enrich-wine/ in git</div>
+</div>
+
+<div class="track pending">
+  <div class="track-header">
+    <div class="track-check"></div>
+    <span class="track-name">Track 0A &mdash; Doc hygiene</span>
+    <span class="track-est">~1 session, $0</span>
+  </div>
+  <div class="track-desc">23 S2.8 findings. CLAUDE.md drift, archive stale docs, fix broken paths, strip hardcoded counts.</div>
+  <div class="track-done">Done when: CLAUDE.md Current Focus reads Sprint 3; docs/architecture/ and docs/pipelines/ deleted</div>
+</div>
+
+<div class="track pending">
+  <div class="track-header">
+    <div class="track-check"></div>
+    <span class="track-name">Track 4 &mdash; Producer metadata</span>
+    <span class="track-est">~2 sessions, $50-100</span>
+  </div>
+  <div class="track-desc">"Producers are the artists." Deep metadata: founding story, winemaker, philosophy, holdings.</div>
+  <div class="track-done">Done when: &ge;300 producers with website + year + coordinates. Top 15 marquee producers complete.</div>
+</div>
+
+<div class="track pending">
+  <div class="track-header">
+    <div class="track-check"></div>
+    <span class="track-name">Delete xwines_* + Riddler</span>
+    <span class="track-est">~5 min</span>
+  </div>
+  <div class="track-desc">Drop xwines tables. Delete Riddler scheduled task.</div>
+</div>
+
+<h2>Snapshot Metrics</h2>
+<p style="color: var(--muted); font-size: 0.75rem; margin-bottom: 10px;">Queried 2026-04-12. Re-query at session start.</p>
+
+<div class="metrics">
+  <div class="metric">
+    <div class="metric-label">Active wines</div>
+    <div class="metric-value">155,623</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">Producers</div>
+    <div class="metric-value">10,676</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">Price coverage</div>
+    <div class="metric-value warn">1.81%</div>
+    <div class="metric-target">2,818 wines &bull; target &gt;12% &bull; archive: 139,937 waiting</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">Score coverage</div>
+    <div class="metric-value warn">1.30%</div>
+    <div class="metric-target">2,030 wines &bull; target &gt;6% &bull; archive: 27,325 waiting</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">Grape links</div>
+    <div class="metric-value">22.6%</div>
+    <div class="metric-target">35,159 wines &bull; target 25%+</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">Chardonnay/PB bug</div>
+    <div class="metric-value warn">2,743</div>
+    <div class="metric-target">target &le;50</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">Producers with metadata</div>
+    <div class="metric-value warn">0</div>
+    <div class="metric-target">of 10,676 &bull; target &ge;300</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">Wine lookups</div>
+    <div class="metric-value">0</div>
+    <div class="metric-target">deferred to Sprint 4</div>
+  </div>
+</div>
+
+<h2>Session Log</h2>
+<table>
+  <tr><th>Session</th><th>Date</th><th>Tracks</th><th>Notes</th></tr>
+  <tr><td>S2.10</td><td>2026-04-12</td><td>planning</td><td>Dashboard + reprioritization. Sprint 3 scope re-sorted.</td></tr>
+</table>
+
+<h2>Budget</h2>
+<table>
+  <tr><th>Sprint</th><th>Ceiling</th><th>Spent</th><th>Status</th></tr>
+  <tr><td>Sprint 2 (Audit)</td><td>$25</td><td>$0.00</td><td>CLOSED</td></tr>
+  <tr><td>Sprint 3 (Fix)</td><td>$50</td><td>$0.00</td><td>Active</td></tr>
+  <tr><td>Extension</td><td>+$200</td><td>&mdash;</td><td>Available on request</td></tr>
+</table>
+
+<h2>Done Criteria</h2>
+<ul class="criteria">
+  <li>describe-chemical deleted, enrich-wine vendored</li>
+  <li>Chardonnay/Pinot Blanc &le;50 wines (from 2,743)</li>
+  <li>Price coverage &gt;12% (from 1.81%)</li>
+  <li>UI P0s shipped (CountryPage, WinePage, error boundary)</li>
+  <li>Doc drift fixed (CLAUDE.md, SOURCES.md, stale docs archived)</li>
+  <li>&ge;300 producers with deep metadata</li>
+  <li>xwines_* tables and Riddler deleted</li>
+  <li>ENRICHMENT_ENABLED flag still OFF</li>
+</ul>
+
+<h2>Deferred to Sprint 4 (Deepen)</h2>
+<ul class="deferred">
+  <li>Track 1 items 4-7 &mdash; voice module (pipeline/lib/voice.py)</li>
+  <li>Track 5 &mdash; signal collection (landing page, email signup, wine_lookups)</li>
+  <li>Track 6 &mdash; AI safety rail (AIBadge, /about, /known-issues)</li>
+  <li>Track 7 &mdash; L3 fact-check gate</li>
+  <li>Track 8 &mdash; food pairings restoration</li>
+</ul>
+
+<h2>Open Questions</h2>
+<ul class="questions">
+  <li>Sprint 3 session sequence not yet locked &mdash; execute in track-priority order above</li>
+  <li>After Fix phase: run Audit 2 (re-audit) before moving to Deepen? Decision: yes, iterate audit&rarr;fix</li>
+</ul>
+
+</body>
+</html>

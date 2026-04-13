@@ -90,6 +90,7 @@ data/imports/tabc_approved_labels.csv
 data/imports/*.csv
 data/imports/*.json
 *.html
+!data/dashboard.html
 
 # Housekeeping interregnum (Session 14, 2026-04-11)
 # archive_raw/ holds 2026-03 scrape outputs, bulk dumps, producer catalogs.

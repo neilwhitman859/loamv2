@@ -16,7 +16,7 @@ Loam is a wine intelligence platform. Users look up a wine and get the full stor
 - `docs/VOICE.md` — Voice, tone, and food pairing guidance for all AI-generated content. Read before writing any enrichment prompts or insight content.
 - `docs/ENRICHMENT.md` — Letter-grade enrichment architecture (F/D/C/B/A), cost model, on-demand pipeline, wine-not-found flow. Read before building or modifying the enrichment pipeline.
 - `docs/SOURCES.md` — Master reference for all external data sources (evaluated, integrated, planned, rejected). Read when working on data acquisition or import pipelines.
-- `data/dashboard.md` — **Single source of truth for sprint progress.** Track checklist, session log, budget, snapshot metrics. Read at session start. Update at milestones and before every commit. User keeps it open in Notepad++ with auto-reload.
+- `data/dashboard.html` — **Single source of truth for sprint progress.** Track checklist, session log, budget, snapshot metrics. Read at session start. Update at milestones and before every commit. User keeps it open in Notepad++ with auto-reload.
 - `data/sprints/current.json` — Sprint state pointer. Each sprint lives under `data/sprints/<name>/` (sessions.json, budget.json, journal.md, prompts/); archived sprints under `data/sprints/_archive/<name>/`.
 - `data/stats/loam_roadmap.json` + `python -m pipeline.analyze.loam_roadmap` — Phased development plan (legacy, being superseded by dashboard.md). The JSON holds phase structure; the script renders it with live DB metrics.
 - `docs/MERGE_STRATEGY.md` — Merge pipeline decisions: Python migration, merge layer sequencing, COLA risks, wine identity definition, AI matching approach, product direction. Read before building merge/matching infrastructure.
@@ -81,19 +81,19 @@ honest. See `memory/feedback_opus_inline_reasoning.md` for full rationale and th
 S2.3 evidence.
 
 ### Dashboard
-Update `data/dashboard.md` at session start (refresh metrics), at milestones (check
+Update `data/dashboard.html` at session start (refresh metrics), at milestones (check
 off completed tracks), and before every commit. This is the single source of truth
 for sprint progress. User keeps it open in Notepad++ with auto-reload.
 
 ### Session Routines
 
 **Session open (3 steps):**
-1. Read `data/dashboard.md` + `CLAUDE.md`
+1. Read `data/dashboard.html` + `CLAUDE.md`
 2. Query DB for current metrics — update dashboard snapshot
 3. Log session start in `data/sessions.md` under Active
 
 **Session close (4 steps):**
-1. Update `data/dashboard.md` — check off tracks, refresh metrics
+1. Update `data/dashboard.html` — check off tracks, refresh metrics
 2. Update `CLAUDE.md` if anything meaningful changed
 3. Move session entry to Done in `data/sessions.md`
 4. Commit and push
@@ -624,7 +624,7 @@ See `docs/HISTORY.md` for promotion results, Tier B+C details, competition/retai
 ## Current Focus
 
 **Phase 3 — Fix.** Sprint 3 executing against the Sprint 2 audit findings.
-Live tracker: `data/dashboard.md`. Scope source: `data/sprints/audit/findings/synthesis.md`.
+Live tracker: `data/dashboard.html`. Scope source: `data/sprints/audit/findings/synthesis.md`.
 
 **Roadmap:** Build (done) → Audit (done) → **Fix (now)** → Deepen → Enrich.
 Audit→fix cycles iterate as needed before moving to Deepen.
@@ -645,7 +645,7 @@ primary value. Sprint 3 reflects this — all AI prose work deferred to Sprint 4
 7. **Delete xwines_* tables + Riddler** — stop preserving confusing old state
 
 Deferred to Sprint 4: voice module, L3 fact-check gate, AI safety rail, signal
-collection, food pairings restoration. See `data/dashboard.md` for full checklist.
+collection, food pairings restoration. See `data/dashboard.html` for full checklist.
 
 **ENRICHMENT_ENABLED feature flag stays OFF** through Sprint 3 into Sprint 5.
 
@@ -697,7 +697,7 @@ collection, food pairings restoration. See `data/dashboard.md` for full checklis
 ## Key Phrases
 
 - **"wrap up"** — End-of-session routine: **consider every doc file** for updates, then commit and push. Go through this checklist — skip only if genuinely nothing changed for that doc:
-  - `data/dashboard.md` — **always update first** (metrics, track checklist, session log)
+  - `data/dashboard.html` — **always update first** (metrics, track checklist, session log)
   - `CLAUDE.md` — always update (current state, what was accomplished)
   - `docs/DECISIONS.md` — append if any decisions were made
   - `data/sprints/current.json` + `data/sprints/<name>/` — update sprint state (sessions.json, budget.json, journal.md)
