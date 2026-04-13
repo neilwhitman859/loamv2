@@ -636,16 +636,16 @@ primary value. Sprint 3 reflects this — all AI prose work deferred to Sprint 4
 
 ### Sprint 3 Track Order (re-sorted 2026-04-12)
 
-1. **Clean house** — delete cruft from earlier iterations: xwines_*, Riddler, dead dirs/scripts/docs ($0)
+1. **Clean house** — delete cruft, deduplicate docs, strip hardcoded numbers ($0)
 2. **Staging archive relink** — unlock 140K prices + 27K scores ($0)
-3. **Grape repair** — fix Chardonnay/Pinot Blanc compound bug ($0)
-4. **UI hygiene** — pages actually render structured data ($0)
+3. **Grape repair** — Chardonnay/PB fix + display_name backfill + marquee wine fixes ($0)
+4. **UI hygiene** — CountryPage typo, WinePage h1, error boundary, 404, dead ai_* fields ($0)
 5. **Edge function hygiene** — delete describe-chemical, vendor enrich-wine, centralize model IDs ($0)
 6. **Doc hygiene** — 23 S2.8 findings ($0)
-7. **Producer metadata** — "producers are the artists" ($50-100)
 
-Deferred to Sprint 4: voice module, L3 fact-check gate, AI safety rail, signal
-collection, food pairings restoration. See `data/dashboard.html` for full checklist.
+6 tracks, $0 budget, pure cleanup and bug fixes. Auto-continues between tracks.
+Deferred to Sprint 4: producer metadata, voice module, L3 fact-check gate, AI
+safety rail, signal collection, food pairings. See `data/dashboard.html`.
 
 **ENRICHMENT_ENABLED feature flag stays OFF** through Sprint 3 into Sprint 5.
 

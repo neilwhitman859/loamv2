@@ -1641,3 +1641,11 @@ For the staging archive relink (Track 2), execute directly and report results af
 ### 2026-04-12: Sprint 3 auto-continues between tracks
 
 Within a conversation, chain tracks without pausing for user input. Only stop for decision points or errors. If conversation hits context limit, write a handoff prompt for the next conversation.
+
+### 2026-04-12: Producer metadata moved from Sprint 3 to Sprint 4
+
+Producer metadata is additive "Deepen" work, not "Fix" work. Sprint 3 is now 6 tracks at $0 budget — pure cleanup and bug fixes. Producer metadata joins voice module, L3 gate, AI safety rail, etc. in Sprint 4.
+
+### 2026-04-12: Structural fix for stale docs — no hardcoded numbers, no duplication
+
+Root cause of doc drift is duplication: Sprint 3 described in 4 places, wine counts in 3 files, etc. Fix: (1) dashboard.html is the only place for live numbers — CLAUDE.md says "see dashboard," never hardcodes counts; (2) each fact lives in exactly one file; (3) delete docs that aren't actively read. Applied during Sprint 3 Track 1 (Clean house).

@@ -120,7 +120,7 @@
 <body>
 
 <h1>Loam Dashboard</h1>
-<div class="updated">Last updated: 2026-04-12 21:30 &mdash; S2.10 &mdash; auto-refreshes every 5s</div>
+<div class="updated">Last updated: 2026-04-12 22:15 &mdash; S2.10 &mdash; auto-refreshes every 5s</div>
 
 <div class="status-bar">
   <div class="status-item">
@@ -173,8 +173,8 @@
     <span class="track-name">1. Clean house</span>
     <span class="track-est">~1 session, $0</span>
   </div>
-  <div class="track-desc">Delete cruft from earlier iterations. Drop xwines_* tables (530K Vivino dump), delete Riddler scheduled task, rm dead scripts/docs/empty dirs, prune bloated session entries, archive stale docs to docs/reference/.</div>
-  <div class="track-done">Done when: xwines_* gone, Riddler gone, docs/architecture/ + docs/pipelines/ gone, scripts_archive/ evaluated, data/stats/ pruned, data/session_prompts/ pruned</div>
+  <div class="track-desc">Delete cruft from earlier iterations AND deduplicate docs so they stop going stale. Drop xwines_* tables (530K Vivino dump), delete Riddler, rm dead scripts/docs/empty dirs, prune bloated session entries, archive stale docs to docs/reference/. Structural fix: strip all hardcoded numbers from CLAUDE.md (dashboard is the only place for live numbers), ensure each fact lives in exactly one file.</div>
+  <div class="track-done">Done when: xwines_* gone, Riddler gone, dead dirs/scripts gone, no hardcoded DB counts in CLAUDE.md, no duplicate state across docs</div>
 </div>
 
 <div class="track pending">
@@ -193,8 +193,8 @@
     <span class="track-name">3. Grape repair</span>
     <span class="track-est">~2 sessions, $0</span>
   </div>
-  <div class="track-desc">Compound bug across 5 audit experts: PINOT BLANC has VIVC synonyms that match Chardonnay, so 2,743 Chardonnay wines have wrong Pinot Blanc grape linked. Fix: delete polluting synonyms, fix varietal_categories wrong links, consolidate resolvers, re-run wine_grapes.</div>
-  <div class="track-done">Done when: Chardonnay+Pinot Blanc false-positive count &le;50 (currently 2,743)</div>
+  <div class="track-desc">Compound bug across 5 audit experts: PINOT BLANC has VIVC synonyms that match Chardonnay, so 2,743 Chardonnay wines have wrong Pinot Blanc grape linked. Fix: delete polluting synonyms, fix varietal_categories wrong links, consolidate resolvers, re-run wine_grapes. Also: backfill display_name on 50,908 LWIN long-tail wines (improves search), fix 8 broken marquee wines (DRC/Lafite wrong color, Opus One NULL display_name), fix Domaine Leroy region, NULL out 345 fake 1973 established_years.</div>
+  <div class="track-done">Done when: Chardonnay+Pinot Blanc &le;50; display_name NULL count &lt;55K (from 104K); Domaine Leroy region = Burgundy; no 1973 established_years</div>
 </div>
 
 <div class="track pending">
@@ -203,8 +203,8 @@
     <span class="track-name">4. UI hygiene</span>
     <span class="track-est">~1 session, $0</span>
   </div>
-  <div class="track-desc">Pages need to actually render the structured data. CountryPage selects non-existent column (1-char typo, 100% of country pages broken). WinePage shows empty h1 on 12K wines. No error boundary. No 404 page. 8 ai_* fields fetched and silently discarded.</div>
-  <div class="track-done">Done when: CountryPage renders ai_overview; WinePage h1 never empty; error boundary catches failures; 8 ai_* fields visible</div>
+  <div class="track-desc">Pages need to actually render the structured data. CountryPage selects non-existent column (1-char typo, 100% of country pages broken). WinePage shows empty h1 on 12K wines. No error boundary. No 404 page. 8 ai_* fields fetched and silently discarded. Also: remove HomePage autoFocus (pops mobile keyboard), delete dead LandingPage.tsx, fix wineCount inflation from F-grade wines on entity pages.</div>
+  <div class="track-done">Done when: CountryPage renders ai_overview; WinePage h1 never empty; error boundary catches failures; 8 ai_* fields visible; no dead components</div>
 </div>
 
 <div class="track pending">
@@ -227,16 +227,6 @@
   <div class="track-done">Done when: CLAUDE.md internally consistent; docs/SOURCES.md external_ids section correct; no broken path references</div>
 </div>
 
-<div class="track pending">
-  <div class="track-header">
-    <div class="track-check"></div>
-    <span class="track-name">7. Producer metadata</span>
-    <span class="track-est">~2 sessions, $50-100</span>
-  </div>
-  <div class="track-desc">"Producers are the artists." Today: 0 of 10,676 producers have any metadata beyond a name. Goal: deep metadata on top producers &mdash; founding story, winemaker, philosophy, vineyard holdings, production methods. Hybrid approach: manual top 50 + Haiku extraction for top 500.</div>
-  <div class="track-done">Done when: &ge;300 producers with website + year + coordinates. Top 15 marquee producers (DRC, Lafite, Gaja, etc.) complete.</div>
-</div>
-
 <h2>What's Next (after Fix)</h2>
 
 <div class="track pending" style="opacity: 0.6;">
@@ -254,7 +244,7 @@
     <span class="track-name">Phase 4 &mdash; Deepen</span>
     <span class="track-est">Sprint 4</span>
   </div>
-  <div class="track-desc">Voice module consolidation (pipeline/lib/voice.py), AI safety rail (AIBadge, /about, /known-issues), L3 fact-check gate, signal collection (landing page, wine_lookups telemetry), food pairings restoration, appellation reference redesign, French AOC diacritics, 1855 classification fix.</div>
+  <div class="track-desc">Producer metadata ("producers are the artists," $50-100), voice module consolidation (pipeline/lib/voice.py), AI safety rail (AIBadge, /about, /known-issues), L3 fact-check gate, signal collection (landing page, wine_lookups telemetry), food pairings restoration, appellation reference redesign, French AOC diacritics, 1855 classification fix.</div>
 </div>
 
 <div class="track pending" style="opacity: 0.3;">
@@ -299,14 +289,9 @@
     <div class="metric-target">target &le;50</div>
   </div>
   <div class="metric">
-    <div class="metric-label">Producers with metadata</div>
-    <div class="metric-value warn">0</div>
-    <div class="metric-target">of 10,676 &bull; target &ge;300</div>
-  </div>
-  <div class="metric">
-    <div class="metric-label">Wine lookups</div>
-    <div class="metric-value">0</div>
-    <div class="metric-target">deferred to Sprint 4</div>
+    <div class="metric-label">display_name coverage</div>
+    <div class="metric-value warn">32.7%</div>
+    <div class="metric-target">50,896 wines &bull; 104,727 missing &bull; target &gt;65% after backfill</div>
   </div>
 </div>
 
@@ -327,12 +312,12 @@
 <h2>Done Criteria</h2>
 <ul class="criteria">
   <li>Project cruft deleted (xwines_*, Riddler, dead dirs/scripts/docs)</li>
+  <li>No hardcoded DB counts in CLAUDE.md; no duplicate state across docs</li>
   <li>describe-chemical deleted, enrich-wine vendored</li>
   <li>Chardonnay/Pinot Blanc &le;50 wines (from 2,743)</li>
   <li>Price coverage &gt;12% (from 1.81%)</li>
-  <li>UI P0s shipped (CountryPage, WinePage, error boundary)</li>
+  <li>UI P0s shipped (CountryPage, WinePage, error boundary, 404)</li>
   <li>Doc drift fixed (CLAUDE.md, SOURCES.md, stale docs archived)</li>
-  <li>&ge;300 producers with deep metadata</li>
   <li>ENRICHMENT_ENABLED flag still OFF</li>
 </ul>
 
@@ -347,7 +332,7 @@
 
 <h2>Open Questions</h2>
 <ul class="questions">
-  <li>After Fix phase: run Audit 2 (re-audit) before moving to Deepen? Decision: yes, iterate audit&rarr;fix</li>
+  <li>None currently</li>
 </ul>
 
 </body>
