@@ -1,13 +1,12 @@
 {
-  "name": "fix",
-  "status": "complete",
-  "sprint_number": 3,
-  "started_at": "2026-04-12",
+  "name": "demo",
+  "status": "planning",
+  "sprint_number": 4,
+  "started_at": "2026-04-13",
   "previous": {
-    "name": "audit",
-    "closed_at": "2026-04-11",
-    "archive_path": "data/sprints/audit/"
+    "name": "fix",
+    "closed_at": "2026-04-13",
+    "archive_path": "data/sprints/fix/"
   },
-  "completed_at": "2026-04-13",
-  "notes": "Sprint 3 — Fix. 6 tracks, ~179 findings addressed, $0 spent. All tracks complete. Next: re-audit or Sprint 4 (Deepen)."
+  "notes": "Sprint 4 — Demo. Producer-centric enrichment for ~400 wines across 15 producers. Top-down cascade: countries → regions → appellations → grapes → producers → wines. Voice calibration via iterative human review. Goal: show to real humans, collect feedback."
 }

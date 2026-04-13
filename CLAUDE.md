@@ -164,8 +164,8 @@ constraints. **`ENRICHMENT_ENABLED=false` feature flag on `enrich-wine` stays OF
 through Sprint 3 into Sprint 5** until voice module + L3 fact-check gate + grape
 repair compound + AI-disclaimer UI all land.
 
-**Sprint sequence:** 1 (Build, done) → 2 (Audit, done) → 3 (Fix, done) → **4 (Deepen, next)** → 5 (Enrich).
-Enrichment at scale does NOT start until Sprint 5. See `data/dashboard.html` for live progress.
+**Sprint sequence:** 1 (Build, done) → 2 (Audit, done) → 3 (Fix, done) → **4 (Demo, active)** → Scale (informed by demo feedback).
+Sprint 4 plan: [`data/sprints/demo/plan.md`](data/sprints/demo/plan.md). Enrichment at scale does NOT start until after demo feedback. See `data/dashboard.html` for live progress.
 
 **Always query the DB for live numbers.** Never rely on hardcoded counts in this file.
 Live sprint state: `data/sprints/current.json`.
@@ -300,43 +300,56 @@ See `docs/HISTORY.md` for promotion results, session-by-session build history, a
 
 ## Current Focus
 
-**Phase 3 — Fix COMPLETE.** Sprint 3 finished all 6 tracks against Sprint 2's 275 findings ($0).
-Live tracker: `data/dashboard.html`. Scope source: `data/sprints/audit/findings/synthesis.md`.
+**Sprint 4 (Demo) — ACTIVE.** Producer-centric enrichment for ~400 wines across 15 producers.
+Live tracker: `data/dashboard.html`. Plan: [`data/sprints/demo/plan.md`](data/sprints/demo/plan.md).
 
-**Roadmap:** Build (done) → Audit (done) → Fix (done) → **Deepen (next)** → Enrich.
-Next: re-audit to measure remaining gaps, then Sprint 4 (Deepen).
+**Roadmap:** Build (done) → Audit (done) → Fix (done) → **Demo (active)** → Scale (informed by feedback).
 
 **Core product insight (2026-04-12):** Loam's product is STRUCTURED DATA RENDERED
 CLEARLY, not AI prose. The magic is: look up any wine → see organized, trustworthy,
 connected data → same fields every time. AI enrichment supports this but is not the
-primary value. Sprint 3 reflects this — all AI prose work deferred to Sprint 4.
+primary value.
 
-### Sprint 3 Track Order (re-sorted 2026-04-12)
+**Strategic pivot (2026-04-13):** After 3 sprints with 0 user lookups and 96.7% Grade F
+wines, the priority shifts from infrastructure to showing the product to real humans.
+Sprint 4 picks producers the user owns wines from, enriches ALL their wines + reference
+entities, and shares with 5+ real people. Future sprint scope driven by demo feedback.
 
-1. **Clean house** — ✅ DONE S3.1: dropped 15 tables, archived docs, pruned memory/stats/scripts
-2. **Staging archive relink** — ✅ DONE S3.2: relinked 100K pointers, promoted 40K prices + 30K scores, created 42K vintages
-3. **Grape repair** — ✅ DONE S3.3: Chard/PB -90% (S3.7 verified: **0 remaining**), display_name 100%, 8 pipeline fixes, search_vector 100%
-4. **UI hygiene** — ✅ DONE S3.4: 22 fixes across 15 files, error boundary, 404, AI disclaimers, a11y
-5. **Edge function hygiene** — ✅ DONE S3.5: describe-chemical neutralized, enrich-wine vendored, models.py centralized
-6. **Doc hygiene** — ✅ DONE S3.6: docs updated to reflect post-fix state, business context added
+### Sprint 4 Tracks
 
-6 tracks, $0 budget, pure cleanup and bug fixes.
-Deferred to Sprint 4: producer metadata, voice module, L3 fact-check gate, AI
-safety rail, signal collection, food pairings. See `data/dashboard.html`.
+0. **Quick fixes** — wire wine_lookups, merge 3 duplicate producers, drop temp tables, producer search_vector
+1. **Wine selection + manifest** — compile ~400 wines, map reference entity dependencies
+2. **Reference enrichment cascade** — countries → regions → appellations → grapes (top-down, each layer feeds context to next)
+3. **Producer enrichment** — build `producer_insights.py` + populate structured producer fields
+4. **Wine enrichment** — iterative voice calibration via human review, cascade-grounded prompts
+5. **Frontend polish + deploy + feedback** — show to real humans, collect feedback
 
-**ENRICHMENT_ENABLED feature flag stays OFF** through Sprint 3 into Sprint 5.
+### Demo Producer Set
 
-### Business Context (S2.9 findings, acknowledged)
+**User's collection:** Stag's Leap Wine Cellars (51), Fort Ross (28), López de Heredia (19, merge needed), CIRQ (5, merge needed), Ridge Vineyards (129, merge needed)
+**French recommendations:** Domaine Tempier (19), E. Guigal (30), Trimbach (75), Domaine Huet (58)
+**Benchmarks:** DRC (14), Krug (71), Giacomo Conterno (32), Château Margaux (4), Château Latour (3)
 
-**ICP:** Wine enthusiasts who want to understand what they're drinking (primary), beverage directors building lists (secondary). Both value structured data over AI commentary.
+### Enrichment Cascade Design
 
-**Competitive position — honest assessment:** Winning on structured data breadth (156K wines), TTB/LWIN backbone linking, appellation weather data, label image archive. Losing on enrichment depth (most wines show identity-only shells), score/price coverage (~5%), producer metadata (0%), user features (0 accounts, 0 lookups), mobile experience, and content freshness. Direct LLM queries (ChatGPT, Perplexity) currently answer most wine questions faster with no lookup friction — Loam's moat is structured data that LLMs can't reliably produce.
+```
+Countries → Regions → Appellations → Grapes → Producers → Wines
+```
+Each layer provides context to the next. Wine enrichment prompts include the already-enriched
+appellation overview, grape flavor profile, and producer winemaking style. This grounds wine
+content in specific, validated reference data rather than relying solely on LLM training data.
 
-**Terroir positioning vs data reality:** The brand promises deep terroir intelligence, but most wines currently show identity fields only. This gap closes in Sprint 5 (enrichment) — Sprint 3 fixed the data foundation that enrichment depends on.
+### Business Context (S2.9 findings + S4.0 strategic assessment)
 
-**Legal/licensing:** All integrated sources are either public domain (TTB CC0), Creative Commons (LWIN), or scraped from public-facing retail/importer catalogs. No licensed score data (Wine Spectator, Parker, CellarTracker). Score coverage is community/competition data only. If licensing commercial scores, budget ~$2K-5K/year.
+**ICP (defined 2026-04-13):** Wine enthusiast who wants a great reference tool — someone who opens a bottle and wants to understand what they're drinking. Mix of wine-savvy friends and casual enthusiasts.
 
-**Cost model:** Enrichment cost (~$620-700 for full corpus) is decoupled from revenue. No monetization model exists yet. Sprint 5 done criterion: 500 demo-quality wines with full structured data + enriched prose, sufficient for friends-and-family testing. Revenue model deferred to Sprint 6+.
+**Competitive position — honest assessment:** Winning on structured data breadth (156K wines), TTB/LWIN backbone linking, appellation weather data, label image archive. Losing on enrichment depth (most wines show identity-only shells), score/price coverage (~5%), producer metadata (0%), user features (0 accounts, 0 lookups), mobile experience, and content freshness. Direct LLM queries (ChatGPT, Perplexity) currently answer most wine questions faster with no lookup friction — Loam's moat is structured data that LLMs can't reliably produce. **Sprint 4 tests this thesis with real humans.**
+
+**Legal/licensing:** All integrated sources are either public domain (TTB CC0), Creative Commons (LWIN), or scraped from public-facing retail/importer catalogs. No licensed score data (Wine Spectator, Parker, CellarTracker). Score coverage is community/competition data only.
+
+**Cost model:** Sprint 4 budget ~$20-25 for enrichment. Full corpus enrichment (~$620-700) deferred to post-demo. No monetization model exists yet. Revenue model deferred to post-demo sprint.
+
+**ENRICHMENT_ENABLED feature flag stays OFF** for the edge function. Sprint 4 enrichment runs via Python pipeline scripts, not the edge function.
 
 ### Schema Hardening (complete — see `docs/HISTORY.md` for detail)
 3 rounds of hardening applied. Key infrastructure: `set_updated_at()` triggers on 36 tables, `validate_polymorphic_fks()` orphan checker, enrichment_log with cost/model tracking, `appellation_rules` table. `wine_vintage_scores` and `wine_vintage_prices` have `wine_vintage_id` FK (preferred join path). `retailers` table seeded with 13 retailers (all price sources).

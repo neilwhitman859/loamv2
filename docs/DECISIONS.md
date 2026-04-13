@@ -4,6 +4,32 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-13: Sprint 4 is "Demo" not "Deepen" — show the product to real humans before more infrastructure
+
+Strategic pivot from the original roadmap (Build → Audit → Fix → Deepen → Enrich) to (Build → Audit → Fix → **Demo** → Scale). After 3 sprints with 0 user lookups and 14 demo-ready wines out of 156K, the priority shifts from "build the data" to "show the product." The foundation is solid; only users can tell us if we're building the right thing on top of it. Sprint 4 picks ~400 wines from producers the user owns, enriches them end-to-end (including all reference entities in the click chain), and shares with 5+ real humans. Future sprint scope determined by demo feedback, not assumptions.
+
+### 2026-04-13: Producer-centric enrichment — enrich ALL wines from selected producers, not a cross-producer sample
+
+Instead of picking the "best 500 wines" across the whole corpus, we select ~15 producers and enrich their complete portfolios. Reasons: (1) the user can verify content against wines they personally own, (2) complete portfolios are more impressive than cherry-picked singles, (3) it tests the "everything connects to everything" principle — a user can explore an entire producer's range, (4) reference entity enrichment is shared (enrich Napa once, it serves all Napa wines).
+
+### 2026-04-13: Top-down enrichment cascade — countries → regions → appellations → grapes → producers → wines
+
+Each layer feeds context to the next. When we enrich a wine, its prompt includes the already-enriched appellation overview, grape flavor profile, and producer winemaking style. This grounds wine enrichment in specific, previously validated reference data rather than relying solely on LLM training data. A Stags Leap District wine enriched AFTER the appellation has been enriched will reference the district's specific volcanic soils and benchland geography, not generic Napa boilerplate.
+
+### 2026-04-13: Voice calibration through iterative human review, not a voice module
+
+At ~400 wines, manual review IS the quality gate. Instead of building automated voice enforcement before enriching, we enrich 5 wines → user reviews → tune prompt → repeat. Each review round improves the voice. This replaces the "voice module" and "L3 fact-check gate" prerequisites from the original Sprint 4/5 plan. At scale (155K wines), automation becomes necessary — but for demo, manual review is faster and higher quality.
+
+### 2026-04-13: Demo producer set — user's collection + French recs + benchmarks
+
+User's producers: Stag's Leap Wine Cellars, Fort Ross, López de Heredia, CIRQ, Ridge Vineyards. French recommendations (terroir-first philosophy match): Domaine Tempier (Bandol), E. Guigal (Rhône), Trimbach (Alsace), Domaine Huet (Vouvray). Benchmarks: DRC, Krug, Giacomo Conterno, Château Margaux, Château Latour. ~400 wines total, ~$20-25 enrichment budget.
+
+### 2026-04-13: ICP defined — wine enthusiast who wants a great reference tool
+
+Primary user: someone who opens a bottle and wants to understand what they're drinking — place, grapes, vintage weather, winemaking choices. Mix of wine-savvy friends (know regions and producers) and casual enthusiasts (shop by label/price but want to learn more). Both value structured data over AI commentary. This focuses the demo: wines people actually encounter, presented with organized facts.
+
+---
+
 ### 2026-04-09: Josh Test is a directional coverage metric, not a product quality metric
 
 The Josh Test measures whether wines exist in the database, not whether users would have a good experience. Limitations: (1) sample was AI-generated, not from real purchase/search data; (2) price tier distribution over-indexes premium wines ($0-10 is 13% of sample but ~40-50% of real purchases by volume); (3) "found" means any wine from the correct producer in top 10 — tests producer findability, not wine findability; (4) doesn't test natural language queries ("good red under 20"); (5) depth score rewards basic identity (color, country) rather than useful content. Keep running it for catalog coverage direction, but the enrichment success metric is qualitative: "would a user who lands on this page learn something useful?"

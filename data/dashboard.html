@@ -3,335 +3,335 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loam Dashboard</title>
+<title>Loam</title>
 <meta http-equiv="refresh" content="5">
 <style>
   :root {
-    --bg: #1a1a1a;
-    --surface: #242424;
-    --border: #333;
-    --text: #e0e0e0;
-    --muted: #888;
-    --accent: #c9a96e;
-    --green: #4caf50;
-    --red: #e57373;
-    --blue: #64b5f6;
+    --bg: #111;
+    --surface: #1c1c1c;
+    --border: #2a2a2a;
+    --text: #eee;
+    --muted: #999;
+    --accent: #d4b070;
+    --green: #66bb6a;
+    --red: #ef5350;
+    --yellow: #ffca28;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--bg);
     color: var(--text);
-    padding: 24px 32px;
+    padding: 24px;
     line-height: 1.5;
+    font-size: 14px;
   }
-  h1 { font-size: 1.5rem; color: var(--accent); margin-bottom: 4px; }
-  .updated { color: var(--muted); font-size: 0.8rem; margin-bottom: 24px; }
-  h2 {
-    font-size: 1.1rem;
-    color: var(--accent);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 6px;
-    margin: 28px 0 12px;
-  }
-  h3 { font-size: 0.95rem; color: var(--text); margin: 16px 0 8px; }
 
-  /* Status bar */
-  .status-bar {
+  /* Header */
+  .header {
     display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px 20px;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
   }
-  .status-item { display: flex; flex-direction: column; }
-  .status-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
-  .status-value { font-size: 1rem; font-weight: 600; }
+  .header h1 {
+    font-size: 1.3rem;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    font-weight: 700;
+  }
+  .header .meta { color: var(--muted); font-size: 13px; }
 
-  /* Track list */
-  .track {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 12px 16px;
-    margin-bottom: 8px;
+  /* Section labels */
+  .section-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin: 24px 0 10px;
+    font-weight: 600;
   }
-  .track.done { opacity: 0.5; border-left: 3px solid var(--green); }
-  .track.active { border-left: 3px solid var(--blue); }
-  .track.pending { border-left: 3px solid var(--border); }
-  .track-header {
+
+  /* Now */
+  .now {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  .now strong { color: var(--accent); }
+
+  /* Roadmap */
+  .roadmap { list-style: none; font-size: 14px; }
+  .roadmap li {
+    padding: 4px 0;
     display: flex;
     align-items: center;
     gap: 8px;
   }
-  .track-check {
-    width: 18px; height: 18px;
-    border: 2px solid var(--muted);
-    border-radius: 3px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 12px; flex-shrink: 0;
+  .roadmap .marker {
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
   }
-  .track.done .track-check { border-color: var(--green); color: var(--green); }
-  .track-name { font-weight: 600; font-size: 0.9rem; }
-  .track-est { color: var(--muted); font-size: 0.75rem; margin-left: auto; }
-  .track-desc { color: var(--muted); font-size: 0.8rem; margin: 4px 0 0 26px; }
-  .track-done { color: var(--muted); font-size: 0.75rem; margin: 2px 0 0 26px; font-style: italic; }
+  .roadmap .done-marker { color: var(--green); }
+  .roadmap .current-marker { color: var(--accent); }
+  .roadmap .future-marker { color: var(--border); }
+  .roadmap .current { color: var(--accent); font-weight: 600; }
+  .roadmap .future { color: var(--muted); }
+  .roadmap .detail { color: var(--muted); }
 
-  /* Metrics grid */
-  .metrics {
+  /* Quality — 2-column grid */
+  .quality-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
   }
-  .metric {
+  .quality-item {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 6px;
     padding: 12px 14px;
   }
-  .metric-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
-  .metric-value { font-size: 1.3rem; font-weight: 700; margin: 2px 0; }
-  .metric-target { font-size: 0.7rem; color: var(--muted); }
-  .metric-value.warn { color: var(--red); }
-  .metric-value.ok { color: var(--green); }
+  .quality-item.wide {
+    grid-column: 1 / -1;
+  }
+  .quality-item .q-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .quality-item .q-value {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 4px 0 2px;
+  }
+  .quality-item .q-pct {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .quality-item .q-detail {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .q-value.ok { color: var(--green); }
+  .q-value.warn { color: var(--yellow); }
+  .q-value.bad { color: var(--red); }
 
-  /* Tables */
-  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-  th { text-align: left; color: var(--muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 6px 10px; border-bottom: 1px solid var(--border); }
-  td { padding: 6px 10px; border-bottom: 1px solid var(--border); }
+  /* Gate checklist */
+  .gate {
+    list-style: none;
+    font-size: 13px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 12px;
+  }
+  .gate li { display: flex; gap: 6px; align-items: center; padding: 2px 0; }
+  .gate .g-yes { color: var(--green); }
+  .gate .g-no { color: var(--red); opacity: 0.7; }
 
-  /* Deferred */
-  .deferred { color: var(--muted); font-size: 0.8rem; }
-  .deferred li { margin-bottom: 2px; }
+  /* Priorities */
+  .priorities { list-style: none; font-size: 14px; }
+  .priorities li {
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .priorities li:last-child { border-bottom: none; }
+  .priorities .p-name { font-weight: 600; }
+  .priorities .p-why { color: var(--muted); font-size: 13px; margin-left: 4px; }
 
-  /* Done criteria */
-  .criteria { list-style: none; font-size: 0.85rem; }
-  .criteria li { padding: 3px 0; }
-  .criteria li::before { content: "\25CB  "; color: var(--muted); }
-  .criteria li.met::before { content: "\25CF  "; color: var(--green); }
+  /* Next up */
+  .next-list { list-style: none; font-size: 14px; }
+  .next-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .next-list li:last-child { border-bottom: none; }
 
-  /* Open questions */
-  .questions { font-size: 0.85rem; color: var(--muted); }
-  .questions li { margin-bottom: 4px; }
+  /* Key numbers — 4-column grid */
+  .numbers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+  .numbers .n-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 10px;
+    text-align: center;
+  }
+  .numbers .n-label {
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+  .numbers .n-value { font-weight: 700; font-size: 15px; }
+
+  /* Done */
+  .done-list { font-size: 13px; color: var(--muted); }
+  .done-list dt { color: var(--text); font-weight: 600; margin-top: 6px; }
+  .done-list dd { margin-left: 0; margin-bottom: 2px; }
+
+  /* Responsive: stack at narrow widths */
+  @media (max-width: 400px) {
+    .quality-grid { grid-template-columns: 1fr; }
+    .gate { grid-template-columns: 1fr; }
+    .numbers { grid-template-columns: 1fr 1fr; }
+  }
 </style>
 </head>
 <body>
 
-<h1>Loam Dashboard</h1>
-<div class="updated">Last updated: 2026-04-13 &mdash; S3.7b &mdash; auto-refreshes every 5s</div>
-
-<div class="status-bar">
-  <div class="status-item">
-    <span class="status-label">Phase</span>
-    <span class="status-value">3 &mdash; Fix</span>
-  </div>
-  <div class="status-item">
-    <span class="status-label">Sprint</span>
-    <span class="status-value">3 &mdash; COMPLETE (all 6 tracks done)</span>
-  </div>
-  <div class="status-item">
-    <span class="status-label">Budget</span>
-    <span class="status-value">$0 / $0</span>
-  </div>
-  <div class="status-item">
-    <span class="status-label">Findings</span>
-    <span class="status-value">179 in scope / 96 deferred</span>
-  </div>
-  <div class="status-item">
-    <span class="status-label">Roadmap</span>
-    <span class="status-value">Build &rarr; Audit &rarr; <strong>Fix</strong> &rarr; Deepen &rarr; Enrich</span>
-  </div>
+<div class="header">
+  <h1>Loam</h1>
+  <div class="meta">S4.0 &middot; Apr 13, 2026</div>
 </div>
 
-<h2>What's Been Done</h2>
-
-<div class="track done">
-  <div class="track-header">
-    <div class="track-check">&#10003;</div>
-    <span class="track-name">Phase 1 &mdash; Build</span>
-    <span class="track-est">Sprints 1&ndash;1, DONE</span>
-  </div>
-  <div class="track-desc">Assembled 155K-wine dataset from LWIN backbone + TTB COLA scrape (3.28M records) + 32 staging sources (4.35M rows). Schema hardened across 3 rounds. 78 canonical tables, reference data seeded (appellations, grapes, regions, countries, soils, weather). PostGIS geographic boundaries. Frontend built (Vite+React, 9 consumer pages).</div>
+<div class="now">
+  <strong>Sprint 4 (Demo) planned.</strong> ~400 wines across 15 producers, top-down enrichment cascade, voice calibration via human review.
 </div>
 
-<div class="track done">
-  <div class="track-header">
-    <div class="track-check">&#10003;</div>
-    <span class="track-name">Phase 2 &mdash; Audit</span>
-    <span class="track-est">Sprint 2, 10 sessions, DONE</span>
-  </div>
-  <div class="track-desc">9 expert audits (DB canonical, DB staging, wine canonical, wine reference, code, voice, UX, meta, business) produced 275 findings. $0 spent / $25 ceiling. Key discoveries: 2,743-wine Chardonnay/Pinot Blanc grape bug, 286K dangling staging pointers locking 140K prices, 0/10,676 producers with metadata, 100% of country pages silently broken, describe-chemical rogue edge function deployed. S2.10 re-sorted the backlog against "structured data is the product."</div>
-</div>
-
-<h2>Sprint 3 &mdash; Fix (current)</h2>
-<p style="color: var(--muted); font-size: 0.75rem; margin-bottom: 10px;">Full plan: data/sprints/fix/plan.md &mdash; 6 tracks, ~179 findings, $0 budget</p>
-
-<div class="track done">
-  <div class="track-header">
-    <div class="track-check">&#10003;</div>
-    <span class="track-name">1. Clean house</span>
-    <span class="track-est">S3.1, DONE</span>
-  </div>
-  <div class="track-desc">Dropped 15 tables (13 xwines + 2 temp) + wines.lwin column. Archived 5 docs + deleted 2 + emptied dirs. Pruned session_prompts (7&rarr;1), stats (5 files), scripts (6 batch). Archived vivino pipeline. Deleted LandingPage.tsx. Consolidated memory (19&rarr;11). Deduped staging (systembolaget 2x, lcbo 2x + unique constraints). Stripped all hardcoded DB counts from CLAUDE.md (711&rarr;384 lines).</div>
-</div>
-
-<div class="track done">
-  <div class="track-header">
-    <div class="track-check">&#10003;</div>
-    <span class="track-name">2. Staging repair + relink</span>
-    <span class="track-est">S3.2, DONE</span>
-  </div>
-  <div class="track-desc">Built archive&rarr;current wine mapping (124K wines via LWIN + name+producer). Relinked 100K staging pointers, NULL'd 177K unfixable (point at archive wines with no current match). Promoted prices from 14 sources + archive recovery: 23K&rarr;40K prices, 2.8K&rarr;8.5K wines with prices. Promoted scores from 7 sources + archive: 5.4K&rarr;30K scores, 2K&rarr;7.6K wines with scores. Created 42K new wine_vintages (84K&rarr;126K). Fixed 802 TEXSOM mojibake rows. Added canonical_wine_id indexes on 29 tables. Backfilled processed_at on 14 sources. Updated STAGING_TABLES_WINE to 31 entries. TTB ABV cleanup (93K) deferred &mdash; 3.28M-row table exceeds MCP API timeout, needs Python pipeline.</div>
-  <div class="track-done">Dangling pointers: 277K&rarr;0 &#10003; &bull; Price coverage: 1.81%&rarr;5.46% (target was 12%, ceiling at ~6% due to 24% archive-to-current mapping rate &mdash; further gains require retail_wine_create) &bull; Score coverage: 1.30%&rarr;4.87% &bull; 31/31 tables in relink list &#10003;</div>
-</div>
-
-<div class="track done">
-  <div class="track-header">
-    <div class="track-check">&#10003;</div>
-    <span class="track-name">3. Grape + data repair</span>
-    <span class="track-est">S3.3, DONE</span>
-  </div>
-  <div class="track-desc">Chard/PB 3,611&rarr;351 (&minus;90%, ~161 legitimate PB in remainder). display_name 32.7%&rarr;100%. search_vector 100%. 363 fake 1973 years NULLed. 61 bad insights deleted (30 Grade-F + 31 PB-confabulated). 8 pipeline bug fixes. Score rollups on 278 wines. Leroy region fixed. grape_id index added.</div>
-</div>
-
-<div class="track done">
-  <div class="track-header">
-    <div class="track-check">&#10003;</div>
-    <span class="track-name">4. UI hygiene</span>
-    <span class="track-est">S3.4, DONE</span>
-  </div>
-  <div class="track-desc">Fixed CountryPage column typo (ai_signature_grapes&rarr;ai_signature_styles) + rendered 3 missing fields. WinePage display_name fallback + classification system_name. Error boundary in main.tsx. 404 catch-all route. /about route under consumer layout. AI disclaimer labels on all ai_* prose across 6 pages. Rendered 9 dead-fetch ai_* fields (AppellationPage 3, CountryPage 3, RegionPage 1, GrapePage 2). Heading hierarchy h1&rarr;h2 on 7 pages. Clickable producer URLs (ProducerPage + WinePage). Dashboard removed producer_insights. Dev WineDetail grapes display_name. Removed autoFocus. A11y landmarks (role=banner/main/contentinfo). Footer disclaimer. Voice scan: 83 flagged instances (56 &ldquo;elegant&rdquo;, 20 &ldquo;showcases&rdquo;, 3 &ldquo;marry&rdquo;, 4 &ldquo;tapestry&rdquo;) logged for Sprint 4.</div>
-</div>
-
-<div class="track done">
-  <div class="track-header">
-    <div class="track-check">&#10003;</div>
-    <span class="track-name">5. Edge function + code cleanup</span>
-    <span class="track-est">S3.5, DONE</span>
-  </div>
-  <div class="track-desc">describe-chemical neutralized (verify_jwt=true, 410 Gone, v6). enrich-wine vendored to supabase/functions/enrich-wine/index.ts with 3 fixes: grape query reads display_name, model ID centralized, stale sonnet ID updated. pipeline/lib/models.py created; 33 files updated to import from it (10 stale claude-sonnet-4-20250514 references fixed). sys.path.insert evaluated &mdash; kept (needed for direct execution). INSERT INTO wines documented as convention in db.py (6 call sites, legitimately different columns). supabase/migrations/ dir created. ENRICHMENT_ENABLED confirmed OFF.</div>
-</div>
-
-<div class="track done">
-  <div class="track-header">
-    <div class="track-check">&#10003;</div>
-    <span class="track-name">6. Doc hygiene</span>
-    <span class="track-est">S3.6, DONE</span>
-  </div>
-  <div class="track-desc">LAST track &mdash; docs updated to reflect post-fix state. CLAUDE.md: product description fixed, business context added (ICP, competitive parity, terroir gap, Sprint 5 criterion, cost/revenue), reference heading updated, track statuses updated, frontend section updated. SOURCES.md: external_ids column/values fixed, date updated. SCHEMA.md: xwines section removed. loam_roadmap.json: Sprint 2+3 status updated. MEMORY.md: index rewritten (10 entries, all &lt;150 chars).</div>
-</div>
-
-<h2>What's Next (after Fix)</h2>
-
-<div class="track done">
-  <div class="track-header">
-    <div class="track-check">&#10003;</div>
-    <span class="track-name">S3.7 &mdash; Full Re-audit (9 experts)</span>
-    <span class="track-est">S3.7, DONE</span>
-  </div>
-  <div class="track-desc">All 9 Sprint 2 expert perspectives re-run in a single Opus session. 275 original findings: 158 fixed, 10 partial, 101 deferred, 1 missed, 1 regressed. 7 new findings surfaced. Verdict: <strong>move to Sprint 4</strong>. Output: data/sprints/fix/reaudit_findings.md.</div>
-</div>
-
-<div class="track done">
-  <div class="track-header">
-    <div class="track-check">&#10003;</div>
-    <span class="track-name">S3.7b &mdash; Quick-fix pass on re-audit findings</span>
-    <span class="track-est">S3.7b, DONE</span>
-  </div>
-  <div class="track-desc">Fixed all P0+P1+actionable P2/P3 findings from S3.7 re-audit. DB: backfilled 12,275 NULL wine names (P0), dropped wines.lwin column (missed from S3.1), dropped 6 temp work tables (468K rows), added RLS to 3 utility tables, backfilled producer search_vector (53&rarr;10,683). Frontend: dev WineDetail display_name, color dot aria-labels (3 files), removed dead regionInsight state. Duplicates: 5,193&rarr;2,669 excess (&minus;49%). Tables without RLS: 9&rarr;0. $0.</div>
-</div>
-
-<div class="track pending" style="opacity: 0.4;">
-  <div class="track-header">
-    <div class="track-check"></div>
-    <span class="track-name">Phase 4 &mdash; Deepen</span>
-    <span class="track-est">Sprint 4</span>
-  </div>
-  <div class="track-desc">Producer metadata ("producers are the artists," $50-100), voice module consolidation (pipeline/lib/voice.py), AI safety rail (AIBadge, /about, /known-issues), L3 fact-check gate, signal collection (landing page, wine_lookups telemetry), food pairings restoration, appellation reference redesign, French AOC diacritics, 1855 classification fix.</div>
-</div>
-
-<div class="track pending" style="opacity: 0.3;">
-  <div class="track-header">
-    <div class="track-check"></div>
-    <span class="track-name">Phase 5 &mdash; Enrich</span>
-    <span class="track-est">Sprint 5, $60-100</span>
-  </div>
-  <div class="track-desc">Friends-and-family scope enrichment. Re-generate ~5K existing enriched wines through voice module + L3 gate. Grade C on ~3K high-depth wines. Grade B on ~500 demo wines. Reference regen on contaminated US + European appellations. Full corpus ($620-700) only if feedback demands it.</div>
-</div>
-
-<h2>Snapshot Metrics</h2>
-<p style="color: var(--muted); font-size: 0.75rem; margin-bottom: 10px;">Queried 2026-04-13 S3.7b. Re-query at session start.</p>
-
-<div class="metrics">
-  <div class="metric">
-    <div class="metric-label">Active wines</div>
-    <div class="metric-value">156,570</div>
-  </div>
-  <div class="metric">
-    <div class="metric-label">Producers</div>
-    <div class="metric-value">10,683</div>
-  </div>
-  <div class="metric">
-    <div class="metric-label">Price coverage</div>
-    <div class="metric-value ok">5.46%</div>
-    <div class="metric-target">8,500 wines &bull; 40,193 rows &bull; was 1.81% (2,818 wines) &bull; +3x from S3.2 relink</div>
-  </div>
-  <div class="metric">
-    <div class="metric-label">Score coverage</div>
-    <div class="metric-value ok">4.87%</div>
-    <div class="metric-target">7,586 wines &bull; 30,339 rows (740 numeric) &bull; 278 wines with score rollup</div>
-  </div>
-  <div class="metric">
-    <div class="metric-label">Grape links</div>
-    <div class="metric-value">22.6%</div>
-    <div class="metric-target">35,107 wines &bull; 43,130 links &bull; was 46,028 (3K PB false positives removed)</div>
-  </div>
-  <div class="metric">
-    <div class="metric-label">Chardonnay/PB bug</div>
-    <div class="metric-value ok">0</div>
-    <div class="metric-target">was 3,611 (2,743 at audit) &bull; <strong>100% resolved</strong> (S3.7 verified)</div>
-  </div>
-  <div class="metric">
-    <div class="metric-label">display_name coverage</div>
-    <div class="metric-value ok">100%</div>
-    <div class="metric-target">156,570 wines &bull; was 32.7% (50,896) &bull; 104K backfilled from producer+appellation</div>
-  </div>
-  <div class="metric">
-    <div class="metric-label">search_vector coverage</div>
-    <div class="metric-value ok">100%</div>
-    <div class="metric-target">156,570 wines + 10,683 producers &bull; all entities 100%</div>
-  </div>
-  <div class="metric">
-    <div class="metric-label">Vintages</div>
-    <div class="metric-value">126,033</div>
-    <div class="metric-target">was 83,531 &bull; +42,502 from S3.2 relink</div>
-  </div>
-</div>
-
-<h2>Session Log</h2>
-<table>
-  <tr><th>Session</th><th>Date</th><th>Tracks</th><th>Notes</th></tr>
-  <tr><td>S3.7b</td><td>2026-04-13</td><td>Quick-fix pass</td><td>Fixed all P0+P1 from re-audit. DB: backfilled 12,275 NULL wine names, dropped wines.lwin + 6 temp tables (468K rows), added RLS to 3 utility tables, producer search_vector 53&rarr;10,683. Frontend: dev WineDetail display_name, color dot aria-labels (3 files), removed dead regionInsight. Dupes: 5,193&rarr;2,669 (&minus;49%). Tables without RLS: 9&rarr;0.</td></tr>
-  <tr><td>S3.7</td><td>2026-04-13</td><td>Re-audit DONE</td><td>9-expert re-audit of 275 S2 findings: 158 fixed, 10 partial, 101 deferred, 1 missed, 1 regressed, 7 new. Net open: 19 (1 P0, 4 P1, 10 P2, 4 P3). Verdict: <strong>move to Sprint 4</strong>. Findings: data/sprints/fix/reaudit_findings.md.</td></tr>
-  <tr><td>S3.6</td><td>2026-04-13</td><td>Track 6 DONE</td><td><strong>Sprint 3 complete.</strong> CLAUDE.md: &ldquo;wine intelligence&rdquo;&rarr;&ldquo;wine data,&rdquo; business context section (ICP, competitive parity, terroir gap, Sprint 5 criterion, cost/revenue), reference heading updated, all 6 track statuses marked done, frontend section updated. SOURCES.md: external_ids id_type&rarr;system + ttb_cola&rarr;cola + added lwin_7/qr/qr_url, date updated. SCHEMA.md: xwines section removed, table count fixed. loam_roadmap.json: Sprint 2 done + Sprint 3 done with 6 tracks. MEMORY.md: rewritten (10 entries, &lt;150 chars). project_quality_before_enrichment.md: Sprint 3 marked done.</td></tr>
-  <tr><td>S3.4</td><td>2026-04-13</td><td>Track 4 DONE</td><td><strong>P0:</strong> CountryPage column typo (ai_signature_grapes&rarr;ai_signature_styles) + 3 missing fields rendered. WinePage display_name fallback h1 + classification system_name. Error boundary. 404 catch-all. /about route. AI disclaimer labels on all ai_* prose (6 pages). <strong>P1:</strong> 9 dead-fetch ai_* fields rendered (AppellationPage 3, CountryPage 3, RegionPage 1, GrapePage 2). h1&rarr;h2 heading fix (7 pages). Clickable producer URLs. Dashboard removed producer_insights. Dev WineDetail display_name. <strong>P2:</strong> Removed autoFocus. A11y landmarks. Footer disclaimer. <strong>Voice scan:</strong> 83 flagged instances across 346 insight rows &mdash; logged for Sprint 4.</td></tr>
-  <tr><td>S3.3</td><td>2026-04-13</td><td>Track 3A+3B+3C DONE</td><td><strong>3A Grape compound:</strong> deleted 5 PB polluting synonyms, fixed 6 varietal_categories wrong-grape links, deleted 921 synonym-primary collisions, fixed MALEGUE self-parent, fixed GARRO&rarr;JACQUEZ, fixed 8 display name inversions. Synonyms 34,809&rarr;33,885. <strong>3B Pipeline:</strong> fixed grape_from_name NULL collapse+dict collision (F6+F12), split batch_pipeline primary/synonym dicts (F9), replaced haiku_grape_extract containment with suffix matching (F7+F11), added ttb_grape_promote multi-COLA conflict detection (F2+F17), externalized BATCH_0_PRODUCERS to JSON (F8). <strong>3C Data:</strong> Chard/PB 3,611&rarr;351 (&minus;90%), display_name 32.7%&rarr;100%, search_vector 100%, Leroy region fixed, 363 fake 1973 years NULLed, deleted &ldquo;Ite&rdquo; soil type, deleted 30 Grade-F wine_insights + 31 PB-confabulated insights, deleted 57 orphan external_ids, soft-deleted 46 zero-wine producers, fixed 3 vintage outliers, added grape_id index, computed score rollups (278 wines).</td></tr>
-  <tr><td>S3.2</td><td>2026-04-12</td><td>Track 2 DONE</td><td>Staging relink: built archive&rarr;current wine map (124K via LWIN+name), relinked 100K pointers, NULL'd 177K unfixable. Promoted prices (23K&rarr;40K, 14 sources + archive), scores (5.4K&rarr;30K, 7 sources + archive), vintages (84K&rarr;126K). Price coverage 1.81%&rarr;5.46%, score 1.30%&rarr;4.87%. Dangling pointers 277K&rarr;0. Fixed TEXSOM mojibake. Added 29 indexes. Backfilled processed_at on 14 sources. STAGING_TABLES_WINE 1&rarr;31. TTB ABV (93K) deferred to Python.</td></tr>
-  <tr><td>S3.5</td><td>2026-04-12</td><td>Track 5 DONE</td><td>Edge function + code cleanup: describe-chemical neutralized (JWT+410 Gone), enrich-wine vendored with grape/model fixes, pipeline/lib/models.py created, 33 files centralized, 10 stale model IDs fixed, supabase/migrations/ created, sys.path evaluated (kept), INSERT INTO wines documented.</td></tr>
-  <tr><td>S3.1</td><td>2026-04-12</td><td>Track 1 DONE</td><td>Clean house: 15 tables dropped, 5 docs archived, 2 deleted, vivino archived, memory 19&rarr;11, staging deduped, CLAUDE.md 711&rarr;384 lines, LandingPage deleted.</td></tr>
-  <tr><td>S2.10</td><td>2026-04-12</td><td>planning</td><td>Dashboard + reprioritization. Sprint 3 scope re-sorted.</td></tr>
-</table>
-
-<h2>Budget</h2>
-<p style="color: var(--muted); font-size: 0.85rem;">Sprint 3: $0 budget &mdash; pure code, SQL, and file operations. No AI spend.</p>
-
-<h2>Open Questions</h2>
-<ul class="questions">
-  <li>Sprint 4 (Deepen) ready to start &mdash; producer metadata, voice module, enrichment prep</li>
-  <li>Remaining 2,669 duplicate wines need dedup strategy in Sprint 4</li>
+<!-- ROADMAP -->
+<div class="section-label">Roadmap</div>
+<ul class="roadmap">
+  <li><span class="marker done-marker">&#10003;</span> Build <span class="detail">&mdash; 156K wines from 32 sources</span></li>
+  <li><span class="marker done-marker">&#10003;</span> Audit <span class="detail">&mdash; 9 experts, 275 findings</span></li>
+  <li><span class="marker done-marker">&#10003;</span> Fix <span class="detail">&mdash; 158 fixed, 101 deferred, $0</span></li>
+  <li><span class="marker current-marker">&#9654;</span> <span class="current">Demo</span> <span class="detail">&mdash; ~400 wines, 15 producers, show to real humans</span></li>
+  <li><span class="marker future-marker">&#9675;</span> <span class="future">Scale</span> <span class="detail">&mdash; informed by demo feedback</span></li>
 </ul>
+
+<!-- SPRINT 4 PROGRESS -->
+<div class="section-label">Sprint 4 &mdash; Demo</div>
+<div class="quality-grid">
+  <div class="quality-item">
+    <div class="q-label">Wines enriched</div>
+    <div class="q-value bad">0 <span class="q-pct">/ ~400</span></div>
+    <div class="q-detail">enriched + human reviewed</div>
+  </div>
+  <div class="quality-item">
+    <div class="q-label">Tracks</div>
+    <ul class="gate">
+      <li><span class="g-no">&#10007;</span> Quick fixes</li>
+      <li><span class="g-no">&#10007;</span> Wine selection</li>
+      <li><span class="g-no">&#10007;</span> Ref enrichment</li>
+      <li><span class="g-no">&#10007;</span> Producer pipeline</li>
+      <li><span class="g-no">&#10007;</span> Wine enrichment</li>
+      <li><span class="g-no">&#10007;</span> Deploy + feedback</li>
+    </ul>
+  </div>
+  <div class="quality-item wide">
+    <div class="q-label">Enrichment cascade</div>
+    <ul class="gate">
+      <li><span class="g-no">&#10007;</span> Countries (0 / ~6)</li>
+      <li><span class="g-no">&#10007;</span> Regions (0 / ~12)</li>
+      <li><span class="g-no">&#10007;</span> Appellations (0 / ~25)</li>
+      <li><span class="g-no">&#10007;</span> Grapes (0 / ~20)</li>
+      <li><span class="g-no">&#10007;</span> Producers (0 / 15)</li>
+      <li><span class="g-no">&#10007;</span> Wines (0 / ~400)</li>
+    </ul>
+  </div>
+  <div class="quality-item">
+    <div class="q-label">Producers</div>
+    <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
+      <tr style="color:var(--muted);"><td>Owner</td><td style="text-align:right">Wines</td><td style="text-align:right">Done</td></tr>
+      <tr><td>Stag&rsquo;s Leap WC</td><td style="text-align:right">51</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>Ridge Vineyards</td><td style="text-align:right">129</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>Fort Ross</td><td style="text-align:right">28</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>L&oacute;pez de Heredia</td><td style="text-align:right">19</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>CIRQ</td><td style="text-align:right">5</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr style="color:var(--muted);"><td>French recs</td><td style="text-align:right">Wines</td><td style="text-align:right">Done</td></tr>
+      <tr><td>Tempier</td><td style="text-align:right">19</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>E. Guigal</td><td style="text-align:right">30</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>Trimbach</td><td style="text-align:right">75</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>Domaine Huet</td><td style="text-align:right">58</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr style="color:var(--muted);"><td>Benchmarks</td><td style="text-align:right">Wines</td><td style="text-align:right">Done</td></tr>
+      <tr><td>DRC</td><td style="text-align:right">14</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>Krug</td><td style="text-align:right">71</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>G. Conterno</td><td style="text-align:right">32</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>Ch. Margaux</td><td style="text-align:right">4</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>Ch. Latour</td><td style="text-align:right">3</td><td style="text-align:right; color:var(--red);">0</td></tr>
+    </table>
+  </div>
+  <div class="quality-item">
+    <div class="q-label">Sprint vitals</div>
+    <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
+      <tr><td style="color:var(--muted);">Budget spent</td><td style="text-align:right">$0.00 / $30</td></tr>
+      <tr><td style="color:var(--muted);">Voice iterations</td><td style="text-align:right">0</td></tr>
+      <tr><td style="color:var(--muted);">User lookups</td><td style="text-align:right">0</td></tr>
+      <tr><td style="color:var(--muted);">Humans shown</td><td style="text-align:right">0 / 5</td></tr>
+      <tr><td style="color:var(--muted);">Dupes merged</td><td style="text-align:right">0 / 3</td></tr>
+      <tr><td style="color:var(--muted);">Sessions</td><td style="text-align:right">S4.0</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- QUALITY -->
+<div class="section-label">Overall Quality</div>
+<div class="quality-grid">
+  <div class="quality-item">
+    <div class="q-label">Data depth</div>
+    <div class="q-value warn">10,470 <span class="q-pct">(6.7%)</span></div>
+    <div class="q-detail">wines with 3+ dimensions</div>
+  </div>
+  <div class="quality-item">
+    <div class="q-label">Known errors</div>
+    <div class="q-value warn">4,098</div>
+    <div class="q-detail">4,079 dupes + 19 findings</div>
+  </div>
+</div>
+
+<!-- PRIORITIES -->
+<div class="section-label">Standing Priorities</div>
+<ul class="priorities">
+  <li><span class="p-name">1. Structured data depth</span> <span class="p-why">&mdash; the product is organized facts, not AI prose</span></li>
+  <li><span class="p-name">2. Data correctness</span> <span class="p-why">&mdash; NULL is better than wrong</span></li>
+  <li><span class="p-name">3. Demo readiness</span> <span class="p-why">&mdash; ~400 wines for friends-and-family</span></li>
+  <li><span class="p-name">4. Show it to real humans</span> <span class="p-why">&mdash; learn what users want from real feedback</span></li>
+</ul>
+
+<!-- NEXT UP -->
+<div class="section-label">Next Up &mdash; Sprint 4 (Demo)</div>
+<ul class="next-list">
+  <li><strong>S4.1</strong> &mdash; Quick fixes + producer merges + wine selection manifest</li>
+  <li><strong>S4.2</strong> &mdash; Reference enrichment cascade (countries &rarr; regions &rarr; appellations &rarr; grapes)</li>
+  <li><strong>S4.3</strong> &mdash; Build producer enrichment + voice calibration (first 5 wines)</li>
+  <li><strong>S4.4</strong> &mdash; Wine enrichment: user's producers (voice review loop)</li>
+  <li><strong>S4.5</strong> &mdash; Wine enrichment: French recs + benchmarks</li>
+  <li><strong>S4.6</strong> &mdash; Frontend polish + deploy + share with real humans</li>
+</ul>
+
+<!-- KEY NUMBERS -->
+<div class="section-label">Key Numbers</div>
+<div class="numbers">
+  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">156,570</div></div>
+  <div class="n-item"><div class="n-label">Producers</div><div class="n-value">10,683</div></div>
+  <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">126,033</div></div>
+  <div class="n-item"><div class="n-label">Prices</div><div class="n-value">40,193</div></div>
+  <div class="n-item"><div class="n-label">Scores</div><div class="n-value">30,339</div></div>
+  <div class="n-item"><div class="n-label">Grape links</div><div class="n-value">43,130</div></div>
+  <div class="n-item"><div class="n-label">Appellations</div><div class="n-value">3,662</div></div>
+  <div class="n-item"><div class="n-label">Insights</div><div class="n-value">5,047</div></div>
+</div>
+
+<!-- DONE -->
+<div class="section-label">Done</div>
+<dl class="done-list">
+  <dt>Sprint 1 &mdash; Build</dt>
+  <dd>156K wines, 32 sources, schema hardened, frontend built, TTB 3.28M scraped</dd>
+  <dt>Sprint 2 &mdash; Audit</dt>
+  <dd>9 expert audits, 275 findings, $0 of $25 budget</dd>
+  <dt>Sprint 3 &mdash; Fix</dt>
+  <dd>6 tracks, 158 findings fixed, 101 deferred, $0 budget. Re-audit + quick-fix pass done.</dd>
+</dl>
 
 </body>
 </html>
