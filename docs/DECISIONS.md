@@ -28,6 +28,18 @@ User's producers: Stag's Leap Wine Cellars, Fort Ross, López de Heredia, CIRQ, 
 
 Primary user: someone who opens a bottle and wants to understand what they're drinking — place, grapes, vintage weather, winemaking choices. Mix of wine-savvy friends (know regions and producers) and casual enthusiasts (shop by label/price but want to learn more). Both value structured data over AI commentary. This focuses the demo: wines people actually encounter, presented with organized facts.
 
+### 2026-04-13: S4.2 reference enrichment — Opus inline at $0, not Sonnet scripts
+
+Reference entity enrichment (regions, appellations, grapes) done via Opus 4.6 inline rather than running the existing Sonnet scripts. Reasons: (1) scripts process ALL unenriched entities in the entire DB (thousands), not just the demo set's ~84 — would blow the $30 budget; (2) Opus inline costs $0 marginal; (3) Opus wine knowledge is equal or better than Sonnet for this task; (4) can cross-reference across the batch. Will switch to Sonnet scripts for scale (post-demo) when volume exceeds what inline can handle. The scripts remain as-is for that future use.
+
+### 2026-04-13: Asymmetric enrichment depth — more content for prominent entities
+
+Reference enrichment content depth should be proportional to prominence. Napa Valley gets full multi-sentence coverage across all fields. An obscure single-vineyard appellation with 1 wine gets shorter, honest entries. The voice guide already supports this via the confidence-based depth guidance, but the principle is explicit: famous regions/appellations/grapes get richer content because that's where users will spend time.
+
+### 2026-04-13: Populate ai_notable_producers_summary in appellation_insights
+
+The column exists in the table but the existing script doesn't write to it. Since our demo producers are the notable producers for many appellations (Ridge for Santa Cruz Mountains, Tempier for Bandol, DRC for Vosne-Romanée, etc.), this field adds real value. Update the script and populate inline.
+
 ---
 
 ### 2026-04-09: Josh Test is a directional coverage metric, not a product quality metric

@@ -29,7 +29,7 @@ MAX_TOKENS = 1500
 EXPECTED_KEYS = [
     "ai_overview", "ai_climate_profile", "ai_soil_profile",
     "ai_signature_style", "ai_key_grapes", "ai_aging_generalization",
-    "confidence",
+    "ai_notable_producers_summary", "confidence",
 ]
 BANNED_WORDS = [
     "prestigious", "world-class", "exceptional", "unparalleled",
@@ -55,6 +55,7 @@ Return a JSON object with EXACTLY these keys (no others):
   "ai_signature_style": "...",
   "ai_key_grapes": "...",
   "ai_aging_generalization": "...",
+  "ai_notable_producers_summary": "...",
   "confidence": 0.9
 }
 
@@ -65,6 +66,7 @@ Field guidelines:
 - ai_signature_style (2-3 sentences): What wines from here taste and feel like. Sensory language rooted in the place.
 - ai_key_grapes (1-2 sentences): The varieties that define this appellation and why they work here.
 - ai_aging_generalization (1-2 sentences): How wines from here typically age.
+- ai_notable_producers_summary (1-3 sentences): The key producers who define this appellation and why. Mention only producers who genuinely shaped the region or represent a benchmark. Keep to 2-4 names max, woven naturally.
 - confidence: Your honest self-assessment. 0.9 = major appellation you know deeply. 0.7 = you know it moderately well. 0.5 = you know basics only. 0.3 = you're mostly guessing.
 
 CRITICAL RULES:
@@ -238,6 +240,7 @@ def write_insight(sb, appellation_id: str, parsed: dict):
         "ai_signature_style": parsed["ai_signature_style"],
         "ai_key_grapes": parsed["ai_key_grapes"],
         "ai_aging_generalization": parsed["ai_aging_generalization"],
+        "ai_notable_producers_summary": parsed.get("ai_notable_producers_summary"),
         "confidence": parsed["confidence"],
         "enriched_at": now.isoformat(),
         "refresh_after": (now + timedelta(days=90)).isoformat(),

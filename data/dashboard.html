@@ -192,11 +192,11 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">S4.1 &middot; Apr 13, 2026</div>
+  <div class="meta">S4.2 &middot; Apr 13, 2026</div>
 </div>
 
 <div class="now">
-  <strong>S4.1 complete.</strong> Track 0+1 done. 3 producer merges, 3 Ridge internal dedup/fixes, grape display names (Zinfandel/Petite Sirah). 515 wines, 14 producers. Next: reference enrichment cascade.
+  <strong>S4.2 complete.</strong> Reference enrichment cascade done via Opus inline ($0). 8 regions, 35 appellations, 41 grapes enriched. All 4 demo countries already had insights. ai_notable_producers_summary added to appellation_insights. Next: build producer enrichment pipeline + voice calibration.
 </div>
 
 <!-- ROADMAP -->
@@ -222,7 +222,7 @@
     <ul class="gate">
       <li><span class="g-yes">&#10003;</span> Quick fixes</li>
       <li><span class="g-yes">&#10003;</span> Wine selection</li>
-      <li><span class="g-no">&#10007;</span> Ref enrichment</li>
+      <li><span class="g-yes">&#10003;</span> Ref enrichment</li>
       <li><span class="g-no">&#10007;</span> Producer pipeline</li>
       <li><span class="g-no">&#10007;</span> Wine enrichment</li>
       <li><span class="g-no">&#10007;</span> Deploy + feedback</li>
@@ -232,9 +232,9 @@
     <div class="q-label">Enrichment cascade</div>
     <ul class="gate">
       <li><span class="g-yes">&#10003;</span> Countries (4 / 4)</li>
-      <li><span class="g-no">&#10007;</span> Regions (12 / 20)</li>
-      <li><span class="g-no">&#10007;</span> Appellations (17 / 51)</li>
-      <li><span class="g-no">&#10007;</span> Grapes (0 / 41)</li>
+      <li><span class="g-yes">&#10003;</span> Regions (20 / 20)</li>
+      <li><span class="g-yes">&#10003;</span> Appellations (51 / 51)</li>
+      <li><span class="g-yes">&#10003;</span> Grapes (41 / 41)</li>
       <li><span class="g-no">&#10007;</span> Producers (0 / 14)</li>
       <li><span class="g-no">&#10007;</span> Wines (0 / 518)</li>
     </ul>
@@ -269,7 +269,7 @@
       <tr><td style="color:var(--muted);">User lookups</td><td style="text-align:right">0</td></tr>
       <tr><td style="color:var(--muted);">Humans shown</td><td style="text-align:right">0 / 5</td></tr>
       <tr><td style="color:var(--muted);">Dupes merged</td><td style="text-align:right; color:var(--green);">3 / 3</td></tr>
-      <tr><td style="color:var(--muted);">Sessions</td><td style="text-align:right">S4.1</td></tr>
+      <tr><td style="color:var(--muted);">Sessions</td><td style="text-align:right">S4.2</td></tr>
     </table>
   </div>
 </div>
@@ -302,7 +302,7 @@
 <div class="section-label">Next Up &mdash; Sprint 4 (Demo)</div>
 <ul class="next-list">
   <li><strong>S4.1</strong> &mdash; <span style="color:var(--green);">&#10003;</span> Quick fixes, merges, grape display names, manifest (515 wines)</li>
-  <li><strong>S4.2</strong> &mdash; Reference enrichment cascade (countries &rarr; regions &rarr; appellations &rarr; grapes)</li>
+  <li><strong>S4.2</strong> &mdash; <span style="color:var(--green);">&#10003;</span> Reference enrichment: 8 regions, 35 appellations, 41 grapes (Opus inline, $0)</li>
   <li><strong>S4.3</strong> &mdash; Build producer enrichment + voice calibration (first 5 wines)</li>
   <li><strong>S4.4</strong> &mdash; Wine enrichment: user's producers (voice review loop)</li>
   <li><strong>S4.5</strong> &mdash; Wine enrichment: French recs + benchmarks</li>
@@ -312,14 +312,14 @@
 <!-- KEY NUMBERS -->
 <div class="section-label">Key Numbers</div>
 <div class="numbers">
-  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">155,608</div></div>
+  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">155,605</div></div>
   <div class="n-item"><div class="n-label">Producers</div><div class="n-value">10,627</div></div>
-  <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">125,972</div></div>
+  <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">125,934</div></div>
   <div class="n-item"><div class="n-label">Prices</div><div class="n-value">40,193</div></div>
   <div class="n-item"><div class="n-label">Scores</div><div class="n-value">30,339</div></div>
-  <div class="n-item"><div class="n-label">Grape links</div><div class="n-value">43,130</div></div>
+  <div class="n-item"><div class="n-label">Grape links</div><div class="n-value">43,131</div></div>
   <div class="n-item"><div class="n-label">Appellations</div><div class="n-value">3,662</div></div>
-  <div class="n-item"><div class="n-label">Insights</div><div class="n-value">5,047</div></div>
+  <div class="n-item"><div class="n-label">Insights</div><div class="n-value">5,045</div></div>
 </div>
 
 <!-- DONE -->
