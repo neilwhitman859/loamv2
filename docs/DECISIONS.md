@@ -1649,3 +1649,11 @@ Producer metadata is additive "Deepen" work, not "Fix" work. Sprint 3 is now 6 t
 ### 2026-04-12: Structural fix for stale docs — no hardcoded numbers, no duplication
 
 Root cause of doc drift is duplication: Sprint 3 described in 4 places, wine counts in 3 files, etc. Fix: (1) dashboard.html is the only place for live numbers — CLAUDE.md says "see dashboard," never hardcodes counts; (2) each fact lives in exactly one file; (3) delete docs that aren't actively read. Applied during Sprint 3 Track 1 (Clean house).
+
+### 2026-04-12: Doc and memory consolidation plan for Sprint 3 Track 1
+
+14 docs → 7: keep DECISIONS, SCHEMA, PRINCIPLES, VOICE, SOURCES, HISTORY. Archive 30K_PLAN, PATH_A_ROLLBACK, AUDIT_2026-04-01, MERGE_STRATEGY, BACKLOG to docs/reference/. Delete WORKFLOW (superseded by CLAUDE.md routines) and ENRICHMENT (contradicts current state, creates confusion). Evaluate IDENTITY_RULES. 19 memory files → 9: delete 30k_status, feedback_frontend_pause, product-architecture, workflow_session_tips, project_sprint_model_and_rf_direction, vivino-pipeline, workflow_sprint_session_naming, project_sprint2_findings. Update project_quality_before_enrichment to reflect simplified roadmap.
+
+### 2026-04-12: Sprint 3 catches all cheap fixes from the 275 findings
+
+Sprint 3 is a cleanup sprint — it should tackle everything it can, not just the synthesis.md tracks. Minor fixes (marquee wine data corrections, fake 1973 years, display_name backfill, dead components, autoFocus, wineCount inflation) folded into existing tracks.
