@@ -326,10 +326,12 @@ entities, and shares with 5+ real people. Future sprint scope driven by demo fee
 
 ### Demo Producer Set
 
-**User's collection:** Stag's Leap Wine Cellars (49), Fort Ross (28), López de Heredia (18, merged S4.1), CIRQ (4, merged S4.1), Ridge Vineyards (113, merged S4.1)
+**User's collection:** Stag's Leap Wine Cellars (49), Fort Ross (28), López de Heredia (18, merged S4.1), CIRQ (4, merged S4.1), Ridge Vineyards (110, merged S4.1 + internal dedup)
 **French recommendations:** Tempier (19), E. Guigal (30), Trimbach (75), Huet (58)
 **Benchmarks:** DRC (14), Krug (71), Giacomo Conterno (32), Château Margaux (4), Château Latour (3)
-**Total: 518 wines across 14 producers.** Reference dependencies: 4 countries, 20 regions, 51 appellations, 41 grapes.
+**Total: 515 wines across 14 producers.** Reference dependencies: 4 countries, 20 regions, 51 appellations, 41 grapes.
+
+**Grape display names (S4.1):** Country-based "what's on the bottle" display via `grape_synonyms.is_primary_in_country`. US wines show Zinfandel (not Primitivo), Petite Sirah (not Durif), Carignane (not Carignan Noir). WinePage.tsx chains a synonym lookup after grape load. Same wine can have multiple LWINs in `external_ids` (confirmed S4.1 — Lytton Springs carries both LWIN 1135828 + 1123148).
 
 ### Enrichment Cascade Design
 

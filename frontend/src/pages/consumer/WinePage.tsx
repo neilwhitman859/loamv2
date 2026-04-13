@@ -226,7 +226,32 @@ export default function WinePage() {
           p.push(supabase.from('wine_grapes')
             .select('percentage, grape:grapes!wine_grapes_grape_id_fkey(id, display_name, color)')
             .eq('wine_id', id).order('percentage', { ascending: false, nullsFirst: false })
-            .then(({ data: d }) => { if (d) setGrapes(d as unknown as GrapeLink[]) }))
+            .then(({ data: d }) => {
+              if (!d) return
+              const grapesData = d as unknown as GrapeLink[]
+              const countryId = (data.country as any)?.id
+              if (countryId && grapesData.length) {
+                // Look up country-primary synonyms ("Zinfandel" in US, "Primitivo" in Italy, etc.)
+                return supabase.from('grape_synonyms')
+                  .select('grape_id, synonym')
+                  .in('grape_id', grapesData.map(g => g.grape.id))
+                  .eq('country_id', countryId)
+                  .eq('is_primary_in_country', true)
+                  .then(({ data: syns }) => {
+                    if (syns && syns.length > 0) {
+                      const overrides = new Map(syns.map((s: any) => [s.grape_id, s.synonym]))
+                      setGrapes(grapesData.map(g => ({
+                        ...g,
+                        grape: { ...g.grape, display_name: overrides.get(g.grape.id) || g.grape.display_name }
+                      })))
+                    } else {
+                      setGrapes(grapesData)
+                    }
+                  })
+              } else {
+                setGrapes(grapesData)
+              }
+            }))
 
           p.push(supabase.from('wine_vintage_prices')
             .select('price_usd, currency, merchant_name, vintage_year, price_date')
