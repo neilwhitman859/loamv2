@@ -1,6 +1,6 @@
 # Loam v2 — Claude Context
 
-Loam is a wine intelligence platform. Users look up a wine and get the full story — place, vintage weather, soil, grapes, producer choices. All the scattered information brought together and connected by AI synthesis. The name is a soil type. Terroir is central.
+Loam is a wine data platform. Users look up a wine and get the full story — place, vintage weather, soil, grapes, producer choices — as structured, connected data. The product is organized facts rendered clearly, not AI prose. The name is a soil type. Terroir is central.
 
 **Supabase project:** `vgbppjhmvbggfjztzobl` (us-east-1)
 **GitHub:** github.com/neilwhitman859/loamv2
@@ -125,7 +125,7 @@ and `data/stats/cron_loop_journal.md` for past loop outcomes and remaining backl
 
 ## Current State
 
-**Sprint 3 (Fix) ACTIVE.** Executing against Sprint 2's 275 findings ($0 budget).
+**Sprint 3 (Fix) COMPLETE.** All 6 tracks done, $0 spent. ~179 findings addressed, ~96 deferred to Sprint 4+.
 Sprint 2 (Audit) deliverable: [`data/sprints/audit/findings/synthesis.md`](data/sprints/audit/findings/synthesis.md).
 Sprint 3 plan: [`data/sprints/fix/plan.md`](data/sprints/fix/plan.md) — 6 tracks, ~179 findings in scope.
 
@@ -163,7 +163,7 @@ constraints. **`ENRICHMENT_ENABLED=false` feature flag on `enrich-wine` stays OF
 through Sprint 3 into Sprint 5** until voice module + L3 fact-check gate + grape
 repair compound + AI-disclaimer UI all land.
 
-**Sprint sequence:** 1 (Build, done) → 2 (Audit, done) → **3 (Fix, active)** → 4 (Deepen) → 5 (Enrich).
+**Sprint sequence:** 1 (Build, done) → 2 (Audit, done) → 3 (Fix, done) → **4 (Deepen, next)** → 5 (Enrich).
 Enrichment at scale does NOT start until Sprint 5. See `data/dashboard.html` for live progress.
 
 **Always query the DB for live numbers.** Never rely on hardcoded counts in this file.
@@ -194,7 +194,7 @@ The database has two layers:
 - **Canonical tables** (`producers`, `wines`, `wine_vintages`, etc.) — curated, high-quality data. LWIN promoted as backbone. Quality bar is high.
 - **source_* staging tables** — per-source raw data for multi-source merge. Each has merge tracking columns (canonical_wine_id, canonical_producer_id, processed_at). See staging table list below for sources.
 
-### Reference Tables (audited, corrections pending in Sprint 3 Track 3)
+### Reference Tables (audited S2, corrections applied S3.3)
 Countries, regions, appellations, grapes + synonyms, varietal categories, publications, attribute definitions, tasting descriptors, farming/biodiversity certifications, soil types. All seeded, audited, and cross-validated. Query the DB for current counts. See `docs/SCHEMA.md` for field reference, `docs/HISTORY.md` for detail.
 
 ### Geographic Data (open for refinement — avoid appellation duplicates)
@@ -264,14 +264,15 @@ Staging-first architecture: all external data goes through per-source staging ta
 See `docs/HISTORY.md` for promotion results, session-by-session build history, and competition/retailer linking details. Sprint 1 session logs archived to `data/sprints/_archive/30k/journal.md`.
 
 ### Major Gaps (query DB for current numbers)
-- **Price/score coverage low** — Sprint 3 Track 2 (staging relink) is the primary unlock.
-- **Enrichment pipeline live but paused** — `ENRICHMENT_ENABLED=false`. Needs voice module + L3 gate + grape repair before re-enabling.
+- **Price/score coverage improved but still low** — S3.2 relink tripled coverage (price ~5.5%, score ~4.9%). Further gains require retail_wine_create or new source imports.
+- **Enrichment pipeline live but paused** — `ENRICHMENT_ENABLED=false`. Needs voice module + L3 gate before re-enabling (grape repair done in S3.3).
 - **Weather data: BULK COMPLETE, DRIP UPGRADING.** Nightly scheduled task (`open-meteo-weather-drip`, 3am) upgrades appellations to high-resolution data in wine-count priority order. Pipelines: `pipeline/fetch/nasa_power_weather.py` (bulk, complete), `pipeline/fetch/open_meteo_weather.py --by-wines` (drip, ongoing).
+- **Producer metadata:** 0 producers have metadata. Deferred to Sprint 4 ($50-100).
 - Many canonical tables still empty (descriptors, wine_relationships, vineyards, producer_timeline, etc.).
 
 ---
 
-## Consumer Frontend (Sprint 3 Track 4 addresses UI bugs)
+## Consumer Frontend (S3.4 UI hygiene applied)
 
 **Deployed:** loam.onrender.com (Render static site, auto-deploys from GitHub push)
 **Stack:** Vite + React + Tailwind, mobile-first PWA
@@ -290,7 +291,7 @@ See `docs/HISTORY.md` for promotion results, session-by-session build history, a
 **Routes:** `/wine/:id`, `/producer/:id`, `/appellation/:id`, `/region/:id`, `/grape/:id`, `/country/:id`, `/vineyard/:id`, `/search`, `/`
 **Dev tools preserved:** `/data/*` (data explorer), `/dev/*` (schema browser)
 
-**Why paused:** Pages render beautifully with data but most show identity-only shells. Sprint 3 Track 4 (UI hygiene) addresses rendering bugs. Data depth improves via Track 2 (staging relink) and Track 3 (grape repair).
+**Why paused:** Pages render with data but most show identity-only shells until enrichment runs. S3.4 fixed rendering bugs (error boundary, 404, AI disclaimers, heading hierarchy, accessibility). S3.2 tripled price/score depth. S3.3 fixed grape data + display names. Resumes with Sprint 5 vertical slice.
 
 **Design principle (Principle #9):** Structured data in DB → structured display in UI. Numbers, dates, percentages, enums displayed as labeled fact grids — never buried in prose.
 
@@ -298,11 +299,11 @@ See `docs/HISTORY.md` for promotion results, session-by-session build history, a
 
 ## Current Focus
 
-**Phase 3 — Fix.** Sprint 3 executing against the Sprint 2 audit findings.
+**Phase 3 — Fix COMPLETE.** Sprint 3 finished all 6 tracks against Sprint 2's 275 findings ($0).
 Live tracker: `data/dashboard.html`. Scope source: `data/sprints/audit/findings/synthesis.md`.
 
-**Roadmap:** Build (done) → Audit (done) → **Fix (now)** → Deepen → Enrich.
-Audit→fix cycles iterate as needed before moving to Deepen.
+**Roadmap:** Build (done) → Audit (done) → Fix (done) → **Deepen (next)** → Enrich.
+Next: re-audit to measure remaining gaps, then Sprint 4 (Deepen).
 
 **Core product insight (2026-04-12):** Loam's product is STRUCTURED DATA RENDERED
 CLEARLY, not AI prose. The magic is: look up any wine → see organized, trustworthy,
@@ -311,18 +312,30 @@ primary value. Sprint 3 reflects this — all AI prose work deferred to Sprint 4
 
 ### Sprint 3 Track Order (re-sorted 2026-04-12)
 
-1. **Clean house** — delete cruft, deduplicate docs, strip hardcoded numbers ($0)
-2. **Staging archive relink** — unlock 140K prices + 27K scores ($0)
-3. **Grape repair** — Chardonnay/PB fix + display_name backfill + marquee wine fixes ($0)
-4. **UI hygiene** — CountryPage typo, WinePage h1, error boundary, 404, dead ai_* fields ($0)
-5. **Edge function hygiene** — ✅ DONE S3.5: describe-chemical neutralized, enrich-wine vendored, models.py created, 33 files centralized
-6. **Doc hygiene** — 23 S2.8 findings ($0)
+1. **Clean house** — ✅ DONE S3.1: dropped 15 tables, archived docs, pruned memory/stats/scripts
+2. **Staging archive relink** — ✅ DONE S3.2: relinked 100K pointers, promoted 40K prices + 30K scores, created 42K vintages
+3. **Grape repair** — ✅ DONE S3.3: Chard/PB -90%, display_name 100%, 8 pipeline fixes, search_vector 100%
+4. **UI hygiene** — ✅ DONE S3.4: 22 fixes across 15 files, error boundary, 404, AI disclaimers, a11y
+5. **Edge function hygiene** — ✅ DONE S3.5: describe-chemical neutralized, enrich-wine vendored, models.py centralized
+6. **Doc hygiene** — ✅ DONE S3.6: docs updated to reflect post-fix state, business context added
 
-6 tracks, $0 budget, pure cleanup and bug fixes. Auto-continues between tracks.
+6 tracks, $0 budget, pure cleanup and bug fixes.
 Deferred to Sprint 4: producer metadata, voice module, L3 fact-check gate, AI
 safety rail, signal collection, food pairings. See `data/dashboard.html`.
 
 **ENRICHMENT_ENABLED feature flag stays OFF** through Sprint 3 into Sprint 5.
+
+### Business Context (S2.9 findings, acknowledged)
+
+**ICP:** Wine enthusiasts who want to understand what they're drinking (primary), beverage directors building lists (secondary). Both value structured data over AI commentary.
+
+**Competitive position — honest assessment:** Winning on structured data breadth (156K wines), TTB/LWIN backbone linking, appellation weather data, label image archive. Losing on enrichment depth (most wines show identity-only shells), score/price coverage (~5%), producer metadata (0%), user features (0 accounts, 0 lookups), mobile experience, and content freshness. Direct LLM queries (ChatGPT, Perplexity) currently answer most wine questions faster with no lookup friction — Loam's moat is structured data that LLMs can't reliably produce.
+
+**Terroir positioning vs data reality:** The brand promises deep terroir intelligence, but most wines currently show identity fields only. This gap closes in Sprint 5 (enrichment) — Sprint 3 fixed the data foundation that enrichment depends on.
+
+**Legal/licensing:** All integrated sources are either public domain (TTB CC0), Creative Commons (LWIN), or scraped from public-facing retail/importer catalogs. No licensed score data (Wine Spectator, Parker, CellarTracker). Score coverage is community/competition data only. If licensing commercial scores, budget ~$2K-5K/year.
+
+**Cost model:** Enrichment cost (~$620-700 for full corpus) is decoupled from revenue. No monetization model exists yet. Sprint 5 done criterion: 500 demo-quality wines with full structured data + enriched prose, sufficient for friends-and-family testing. Revenue model deferred to Sprint 6+.
 
 ### Schema Hardening (complete — see `docs/HISTORY.md` for detail)
 3 rounds of hardening applied. Key infrastructure: `set_updated_at()` triggers on 36 tables, `validate_polymorphic_fks()` orphan checker, enrichment_log with cost/model tracking, `appellation_rules` table. `wine_vintage_scores` and `wine_vintage_prices` have `wine_vintage_id` FK (preferred join path). `retailers` table seeded with 13 retailers (all price sources).

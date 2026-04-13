@@ -1,6 +1,6 @@
 {
   "name": "fix",
-  "status": "active",
+  "status": "complete",
   "sprint_number": 3,
   "started_at": "2026-04-12",
   "previous": {
@@ -8,5 +8,6 @@
     "closed_at": "2026-04-11",
     "archive_path": "data/sprints/audit/"
   },
-  "notes": "Sprint 3 — Fix. 6 tracks, ~179 findings, $0 budget. Executing against Sprint 2 audit findings. Track order: 1 Clean house, 2 Staging relink, 3 Grape+data repair, 4 UI hygiene, 5 Edge function+code cleanup, 6 Doc hygiene."
+  "completed_at": "2026-04-13",
+  "notes": "Sprint 3 — Fix. 6 tracks, ~179 findings addressed, $0 spent. All tracks complete. Next: re-audit or Sprint 4 (Deepen)."
 }

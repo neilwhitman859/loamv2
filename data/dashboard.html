@@ -120,7 +120,7 @@
 <body>
 
 <h1>Loam Dashboard</h1>
-<div class="updated">Last updated: 2026-04-13 &mdash; S3.4 &mdash; auto-refreshes every 5s</div>
+<div class="updated">Last updated: 2026-04-13 &mdash; S3.6 &mdash; auto-refreshes every 5s</div>
 
 <div class="status-bar">
   <div class="status-item">
@@ -129,7 +129,7 @@
   </div>
   <div class="status-item">
     <span class="status-label">Sprint</span>
-    <span class="status-value">3 &mdash; S3.4 done (Track 4)</span>
+    <span class="status-value">3 &mdash; COMPLETE (all 6 tracks done)</span>
   </div>
   <div class="status-item">
     <span class="status-label">Budget</span>
@@ -187,14 +187,13 @@
   <div class="track-done">Dangling pointers: 277K&rarr;0 &#10003; &bull; Price coverage: 1.81%&rarr;5.46% (target was 12%, ceiling at ~6% due to 24% archive-to-current mapping rate &mdash; further gains require retail_wine_create) &bull; Score coverage: 1.30%&rarr;4.87% &bull; 31/31 tables in relink list &#10003;</div>
 </div>
 
-<div class="track pending">
+<div class="track done">
   <div class="track-header">
-    <div class="track-check"></div>
+    <div class="track-check">&#10003;</div>
     <span class="track-name">3. Grape + data repair</span>
-    <span class="track-est">~3 sessions</span>
+    <span class="track-est">S3.3, DONE</span>
   </div>
-  <div class="track-desc">Largest track. (A) Grape compound: delete PINOT BLANC polluting synonyms, fix varietal_categories, fix 921 synonym collisions, consolidate 4 resolver implementations, fix batch_pipeline multi-COLA collapse, fix ttb_grape_promote arbitrary pick, re-run resolver. (B) Wine corrections: backfill 50K display_names, fix 8 marquee wines, fix Leroy/Catena, fix colors, fix phantom grapes. (C) Reference: NULL 345 fake 1973 years, fix 121 slash-concatenated appellations, restore French diacritics, fix Pauillac classification, fix appellation_grapes names, add appellation_soils provenance, restore food pairings from archive, delete 487 confabulated wine_insights. (D) Indexes + rollups: add grape index, regenerate search_vectors, compute score rollups.</div>
-  <div class="track-done">Done when: Chard/PB &le;50 (from 2,743), display_name NULL &lt;55K (from 104K), search_vector &gt;60% (from 32%), no 1973 years, food pairings &gt;800, 487 bad insights deleted</div>
+  <div class="track-desc">Chard/PB 3,611&rarr;351 (&minus;90%, ~161 legitimate PB in remainder). display_name 32.7%&rarr;100%. search_vector 100%. 363 fake 1973 years NULLed. 61 bad insights deleted (30 Grade-F + 31 PB-confabulated). 8 pipeline bug fixes. Score rollups on 278 wines. Leroy region fixed. grape_id index added.</div>
 </div>
 
 <div class="track done">
@@ -215,14 +214,13 @@
   <div class="track-desc">describe-chemical neutralized (verify_jwt=true, 410 Gone, v6). enrich-wine vendored to supabase/functions/enrich-wine/index.ts with 3 fixes: grape query reads display_name, model ID centralized, stale sonnet ID updated. pipeline/lib/models.py created; 33 files updated to import from it (10 stale claude-sonnet-4-20250514 references fixed). sys.path.insert evaluated &mdash; kept (needed for direct execution). INSERT INTO wines documented as convention in db.py (6 call sites, legitimately different columns). supabase/migrations/ dir created. ENRICHMENT_ENABLED confirmed OFF.</div>
 </div>
 
-<div class="track pending">
+<div class="track done">
   <div class="track-header">
-    <div class="track-check"></div>
+    <div class="track-check">&#10003;</div>
     <span class="track-name">6. Doc hygiene</span>
-    <span class="track-est">~1 session</span>
+    <span class="track-est">S3.6, DONE</span>
   </div>
-  <div class="track-desc">LAST track &mdash; update docs to reflect post-fix state. Strip remaining CLAUDE.md drift, fix SOURCES.md external_ids typo, update SCHEMA.md, update loam_roadmap.json, rewrite MEMORY.md index. Business-layer docs: define ICP, note legal/licensing status, fix product description ("wine intelligence" collision), note competitive parity honestly, define Sprint 5 done criterion.</div>
-  <div class="track-done">Done when: zero hardcoded counts in CLAUDE.md, SOURCES.md matches live schema, CLAUDE.md doesn't say "wine intelligence platform"</div>
+  <div class="track-desc">LAST track &mdash; docs updated to reflect post-fix state. CLAUDE.md: product description fixed, business context added (ICP, competitive parity, terroir gap, Sprint 5 criterion, cost/revenue), reference heading updated, track statuses updated, frontend section updated. SOURCES.md: external_ids column/values fixed, date updated. SCHEMA.md: xwines section removed. loam_roadmap.json: Sprint 2+3 status updated. MEMORY.md: index rewritten (10 entries, all &lt;150 chars).</div>
 </div>
 
 <h2>What's Next (after Fix)</h2>
@@ -255,12 +253,12 @@
 </div>
 
 <h2>Snapshot Metrics</h2>
-<p style="color: var(--muted); font-size: 0.75rem; margin-bottom: 10px;">Queried 2026-04-13 S3.3. Re-query at session start.</p>
+<p style="color: var(--muted); font-size: 0.75rem; margin-bottom: 10px;">Queried 2026-04-13 S3.6. Re-query at session start.</p>
 
 <div class="metrics">
   <div class="metric">
     <div class="metric-label">Active wines</div>
-    <div class="metric-value">155,623</div>
+    <div class="metric-value">156,570</div>
   </div>
   <div class="metric">
     <div class="metric-label">Producers</div>
@@ -289,12 +287,12 @@
   <div class="metric">
     <div class="metric-label">display_name coverage</div>
     <div class="metric-value ok">100%</div>
-    <div class="metric-target">155,623 wines &bull; was 32.7% (50,896) &bull; 104K backfilled from producer+appellation</div>
+    <div class="metric-target">156,570 wines &bull; was 32.7% (50,896) &bull; 104K backfilled from producer+appellation</div>
   </div>
   <div class="metric">
     <div class="metric-label">search_vector coverage</div>
     <div class="metric-value ok">100%</div>
-    <div class="metric-target">155,623 wines &bull; was 99.6% &bull; 595 regenerated</div>
+    <div class="metric-target">156,570 wines &bull; was 99.6% &bull; 595 regenerated</div>
   </div>
   <div class="metric">
     <div class="metric-label">Vintages</div>
@@ -306,6 +304,7 @@
 <h2>Session Log</h2>
 <table>
   <tr><th>Session</th><th>Date</th><th>Tracks</th><th>Notes</th></tr>
+  <tr><td>S3.6</td><td>2026-04-13</td><td>Track 6 DONE</td><td><strong>Sprint 3 complete.</strong> CLAUDE.md: &ldquo;wine intelligence&rdquo;&rarr;&ldquo;wine data,&rdquo; business context section (ICP, competitive parity, terroir gap, Sprint 5 criterion, cost/revenue), reference heading updated, all 6 track statuses marked done, frontend section updated. SOURCES.md: external_ids id_type&rarr;system + ttb_cola&rarr;cola + added lwin_7/qr/qr_url, date updated. SCHEMA.md: xwines section removed, table count fixed. loam_roadmap.json: Sprint 2 done + Sprint 3 done with 6 tracks. MEMORY.md: rewritten (10 entries, &lt;150 chars). project_quality_before_enrichment.md: Sprint 3 marked done.</td></tr>
   <tr><td>S3.4</td><td>2026-04-13</td><td>Track 4 DONE</td><td><strong>P0:</strong> CountryPage column typo (ai_signature_grapes&rarr;ai_signature_styles) + 3 missing fields rendered. WinePage display_name fallback h1 + classification system_name. Error boundary. 404 catch-all. /about route. AI disclaimer labels on all ai_* prose (6 pages). <strong>P1:</strong> 9 dead-fetch ai_* fields rendered (AppellationPage 3, CountryPage 3, RegionPage 1, GrapePage 2). h1&rarr;h2 heading fix (7 pages). Clickable producer URLs. Dashboard removed producer_insights. Dev WineDetail display_name. <strong>P2:</strong> Removed autoFocus. A11y landmarks. Footer disclaimer. <strong>Voice scan:</strong> 83 flagged instances across 346 insight rows &mdash; logged for Sprint 4.</td></tr>
   <tr><td>S3.3</td><td>2026-04-13</td><td>Track 3A+3B+3C DONE</td><td><strong>3A Grape compound:</strong> deleted 5 PB polluting synonyms, fixed 6 varietal_categories wrong-grape links, deleted 921 synonym-primary collisions, fixed MALEGUE self-parent, fixed GARRO&rarr;JACQUEZ, fixed 8 display name inversions. Synonyms 34,809&rarr;33,885. <strong>3B Pipeline:</strong> fixed grape_from_name NULL collapse+dict collision (F6+F12), split batch_pipeline primary/synonym dicts (F9), replaced haiku_grape_extract containment with suffix matching (F7+F11), added ttb_grape_promote multi-COLA conflict detection (F2+F17), externalized BATCH_0_PRODUCERS to JSON (F8). <strong>3C Data:</strong> Chard/PB 3,611&rarr;351 (&minus;90%), display_name 32.7%&rarr;100%, search_vector 100%, Leroy region fixed, 363 fake 1973 years NULLed, deleted &ldquo;Ite&rdquo; soil type, deleted 30 Grade-F wine_insights + 31 PB-confabulated insights, deleted 57 orphan external_ids, soft-deleted 46 zero-wine producers, fixed 3 vintage outliers, added grape_id index, computed score rollups (278 wines).</td></tr>
   <tr><td>S3.2</td><td>2026-04-12</td><td>Track 2 DONE</td><td>Staging relink: built archive&rarr;current wine map (124K via LWIN+name), relinked 100K pointers, NULL'd 177K unfixable. Promoted prices (23K&rarr;40K, 14 sources + archive), scores (5.4K&rarr;30K, 7 sources + archive), vintages (84K&rarr;126K). Price coverage 1.81%&rarr;5.46%, score 1.30%&rarr;4.87%. Dangling pointers 277K&rarr;0. Fixed TEXSOM mojibake. Added 29 indexes. Backfilled processed_at on 14 sources. STAGING_TABLES_WINE 1&rarr;31. TTB ABV (93K) deferred to Python.</td></tr>

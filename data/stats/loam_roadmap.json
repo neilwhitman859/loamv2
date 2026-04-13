@@ -26,32 +26,37 @@
     {
       "id": 3,
       "name": "Sprint 2 — Audit",
-      "status": "in_progress",
+      "status": "done",
+      "date": "2026-04-12",
       "summary": "Multi-expert read-only audit (DB, wine, code, voice, UX, meta, business) producing a prioritized Sprint 3 fix backlog",
       "sub_tasks": [
-        {"name": "S2.1 DB canonical + reference structural audit", "status": "in_progress"},
-        {"name": "S2.2 DB staging audit (32 source_* tables)", "status": "planned"},
-        {"name": "S2.3 Wine expert — canonical sample (100 wines + 50 producers)", "status": "planned"},
-        {"name": "S2.4 Wine expert — reference content (appellation_rules / grapes / soils)", "status": "planned"},
-        {"name": "S2.5 Code expert audit (pipeline/ + edge fn + scheduled tasks)", "status": "planned"},
-        {"name": "S2.6 Voice / editorial audit", "status": "planned"},
-        {"name": "S2.7 UX / frontend audit", "status": "planned"},
-        {"name": "S2.8 Meta audit (docs + memory + roadmap)", "status": "planned"},
-        {"name": "S2.9 Business + synthesis + Sprint 3 backlog", "status": "planned"}
+        {"name": "S2.1 DB canonical + reference structural audit", "status": "done"},
+        {"name": "S2.2 DB staging audit (32 source_* tables)", "status": "done"},
+        {"name": "S2.3 Wine expert — canonical sample (100 wines + 50 producers)", "status": "done"},
+        {"name": "S2.4 Wine expert — reference content (appellation_rules / grapes / soils)", "status": "done"},
+        {"name": "S2.5 Code expert audit (pipeline/ + edge fn + scheduled tasks)", "status": "done"},
+        {"name": "S2.6 Voice / editorial audit", "status": "done"},
+        {"name": "S2.7 UX / frontend audit", "status": "done"},
+        {"name": "S2.8 Meta audit (docs + memory + roadmap)", "status": "done"},
+        {"name": "S2.9 Business + synthesis + Sprint 3 backlog", "status": "done"}
       ],
-      "notes": "Read-only. Severity-tagged findings (P0-P3). Budget target $15, ceiling $25, part of $50 combined ceiling for Sprints 2+3. Main AI spend is S2.3 wine expert fact-checking. Quality-before-enrichment thesis: foundation must be ready before reference enrichment in Sprint 5."
+      "notes": "Complete. 9 expert sessions, 275 findings (P0-P3), $0 spent / $25 ceiling. Deliverable: data/sprints/audit/findings/synthesis.md."
     },
     {
       "id": 4,
-      "name": "Sprint 3 — Execute",
-      "status": "planned",
-      "summary": "Execute prioritized fixes from Sprint 2's backlog. Close P0 and P1 strictly before any P2/P3.",
+      "name": "Sprint 3 — Fix",
+      "status": "done",
+      "date": "2026-04-13",
+      "summary": "Execute prioritized fixes from Sprint 2's 275 findings. 6 tracks, $0 budget.",
       "sub_tasks": [
-        {"name": "Execute P0 fixes from Sprint 2 backlog", "status": "planned"},
-        {"name": "Execute P1 fixes from Sprint 2 backlog", "status": "planned"},
-        {"name": "Optional P2/P3 work (scope-permitting)", "status": "planned"}
+        {"name": "Track 1: Clean house — drop cruft, deduplicate docs", "status": "done"},
+        {"name": "Track 2: Staging repair + relink — 40K prices, 30K scores", "status": "done"},
+        {"name": "Track 3: Grape + data repair — Chard/PB -90%, display_name 100%", "status": "done"},
+        {"name": "Track 4: UI hygiene — 22 fixes across 15 files", "status": "done"},
+        {"name": "Track 5: Edge function + code cleanup — models.py centralized", "status": "done"},
+        {"name": "Track 6: Doc hygiene — docs updated to post-fix state", "status": "done"}
       ],
-      "notes": "Budget target $15, shares $50 combined ceiling with Sprint 2. Scope sized after Sprint 2 synthesis. Does NOT touch reference-table structure — that's Sprint 4 design territory."
+      "notes": "Complete. $0 spent. ~179 findings addressed, ~96 deferred to Sprint 4+. Plan: data/sprints/fix/plan.md."
     },
     {
       "id": 5,

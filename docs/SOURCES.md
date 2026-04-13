@@ -2,7 +2,7 @@
 
 Master reference for all external data sources — evaluated, integrated, planned, or rejected. Nothing gets lost.
 
-**Last updated**: 2026-03-25
+**Last updated**: 2026-04-13
 **Coverage**: All 50 US states + DC surveyed. 22+ importers researched. 12 competitions, 17 associations, 16 international retailers, 19 auction/trading platforms, 10+ wine APIs evaluated. 7 new fetchers built and run this session.
 
 ---
@@ -30,7 +30,7 @@ Three identifier systems form Loam's identity spine. Every wine should resolve t
 | **LWIN** | Liv-ex Wine Identification Number | Fine wine trade | ~189K wines, strong $30+, no grapes/barcode |
 | **UPC** | Universal Product Code (EAN/GTIN) | Retail / scanning | Fragmented across sources, best for scan-to-lookup |
 
-All three are stored in the `external_ids` table with `id_type` = `'ttb_cola'`, `'lwin'`, or `'upc'`.
+All three are stored in the `external_ids` table with `system` = `'cola'`, `'lwin'`, `'lwin_7'`, or `'upc'`. Additional system values: `'qr'`, `'qr_url'` (from TTB label barcode scans).
 
 ---
 

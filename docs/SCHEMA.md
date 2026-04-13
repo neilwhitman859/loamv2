@@ -1,6 +1,6 @@
 # Loam v2 Schema Reference
 
-All tables in the public schema. Canonical tables hold curated, high-quality data. xwines_* tables hold bulk staging data from the X-Wines dataset (reference only).
+All tables in the public schema. Canonical tables hold curated, high-quality data. source_* tables hold per-source staging data for multi-source merge.
 
 When this file is out of date, query the DB directly: `information_schema.columns`.
 
@@ -1128,29 +1128,7 @@ Flexible JSONB storage for appellation-level winemaking/production rules. Covers
 
 ---
 
-## 27. X-Wines Staging Tables (reference only)
-
-Bulk data from the X-Wines dataset (CC0 public domain). Kept for reference but not actively maintained. Data quality is lower than canonical tables.
-
-| Table | Structure | Notes |
-|---|---|---|
-| xwines_producers | Same as producers | ~32K bulk-imported producers |
-| xwines_producer_aliases | Same as producer_aliases | 266 alias records from dedup |
-| xwines_wines | Similar to wines (fewer columns) | ~530K wines |
-| xwines_wine_vintages | Similar to wine_vintages (fewer columns) | ~2.2M vintages |
-| xwines_wine_grapes | Same as wine_grapes | ~314K grape links |
-| xwines_wine_candidates | Same as wine_candidates | 100,646 original imports |
-| xwines_wine_vintage_scores | Same as wine_vintage_scores | ~306K scores |
-| xwines_wine_vintage_prices | Same as wine_vintage_prices | ~50K prices |
-| xwines_producer_dedup_staging | Same as producer_dedup_staging | 30,684 dedup candidates |
-| xwines_producer_dedup_pairs | Same as producer_dedup_pairs | 8,208 fuzzy match verdicts |
-| xwines_wine_insights | Same as wine_insights | Empty |
-| xwines_producer_insights | Same as producer_insights | Empty |
-| xwines_region_name_mappings | region_name, country, region_id, appellation_id, match_type | 183 mappings from bulk import pipeline |
-
----
-
-## 28. Food Pairings
+## 27. Food Pairings
 
 ### food_categories
 Hierarchical food category reference table (WSET + Vivino/Wine.com inspired).
@@ -1237,5 +1215,5 @@ Anonymous page view tracking for analytics and enrichment tier promotion.
 ## Table Count
 
 **Canonical:** 83 tables (Geography 6, Producers 5, Wines 4, Vintages 1, Grapes 10, Weather 1, Soil 4, Water 4, Certifications 6, Sources 1, Scores 2, Pricing 2, Documents 3, Insights 11, Trends 1, Search/Dedup 2, Enrichment 1, Vineyards 5, Bottle Formats 2, Classifications 3, Flex Fields 2, External IDs 1, Tasting Descriptors 2, Importers 2, Label Designations 3, Appellation Rules 1, Food Pairings 3, Wine Relationships 1, Producer Timeline 1, Analytics 1)
-**xwines_ staging:** 13 tables
-**Total:** 96 tables
+**xwines_ staging:** DELETED (S3.1 — 13 tables dropped)
+**Total:** 83 canonical tables + source_* staging tables
