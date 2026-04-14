@@ -192,11 +192,11 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">B5.1 &middot; Apr 14, 2026</div>
+  <div class="meta">B5.2 &middot; Apr 14, 2026</div>
 </div>
 
 <div class="now">
-  <strong>B5.1: Bake-off designed.</strong> 3-tier evaluation: 17 models for dedup (200 pairs), 17 for extraction (50 pages), 21 for prose (30 wines). Opus inline judging with 5-dimension rubric. Full design in <code>bakeoff/DESIGN.md</code>. Next: build test data (B5.2).
+  <strong>B5.2: Test data built.</strong> Task 1: 200 labeled dedup pairs (4 strata &times; 50). Task 2: 50 HTML pages from 13 producers + ground truth JSONs. Task 3: 30 curated wine context packages (3 tiers &times; 10). All in <code>bakeoff/data/</code>. Next: run Task 1 (B5.3).
 </div>
 
 <!-- ROADMAP -->
@@ -216,7 +216,7 @@
     <div class="q-label">Blocks</div>
     <ul class="gate">
       <li><span class="g-yes">&#10003;</span> B5.1 Bake-off design</li>
-      <li><span class="g-no">&#10007;</span> B5.2 Build test data</li>
+      <li><span class="g-yes">&#10003;</span> B5.2 Build test data</li>
       <li><span class="g-no">&#10007;</span> B5.3 Task 1 (dedup)</li>
       <li><span class="g-no">&#10007;</span> B5.4 Task 2 (extraction)</li>
       <li><span class="g-no">&#10007;</span> B5.5 Task 3 (prose run)</li>
@@ -231,7 +231,7 @@
       <tr><td style="color:var(--muted);">Models to test</td><td style="text-align:right">21 (Task 3)</td></tr>
       <tr><td style="color:var(--muted);">Dupes merged</td><td style="text-align:right">0</td></tr>
       <tr><td style="color:var(--muted);">Humans shown</td><td style="text-align:right">0 / 5</td></tr>
-      <tr><td style="color:var(--muted);">Block</td><td style="text-align:right">B5.1</td></tr>
+      <tr><td style="color:var(--muted);">Block</td><td style="text-align:right">B5.2</td></tr>
     </table>
   </div>
 </div>
@@ -264,7 +264,7 @@
 <div class="section-label">Next Up &mdash; Sprint 5 (AI Bakeoff)</div>
 <ul class="next-list">
   <li><strong>B5.1</strong> &mdash; <s>Design bake-off</s> DONE</li>
-  <li><strong>B5.2</strong> &mdash; Build test data: 200 dedup pairs, 50 extraction pages, 30 prose contexts</li>
+  <li><strong>B5.2</strong> &mdash; <s>Build test data</s> DONE &mdash; 200 pairs, 50 pages, 30 contexts</li>
   <li><strong>B5.3</strong> &mdash; Run + score Task 1 (dedup): 17 models &times; 200 pairs</li>
   <li><strong>B5.4</strong> &mdash; Run + score Task 2 (extraction): 17 models &times; 50 pages</li>
   <li><strong>B5.5</strong> &mdash; Run Task 3 (prose): 21 models &times; 30 wines</li>
