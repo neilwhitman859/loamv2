@@ -1715,3 +1715,7 @@ Current UUID-based URLs (/wine/7dc2a873-...) are ugly and useless for sharing. A
 ### 2026-04-13: LLM bake-off lineup for Sprint 5 scale enrichment
 
 Test 8+ models on 20 wines, blind-scored against Sonnet baseline. Tiered strategy: cheapest model per task type. Lineup: Sonnet (baseline), Haiku, Gemini 2.0 Flash, DeepSeek V3, GPT-4o Mini, Qwen 2.5 72B, Mistral Small, Llama 3.1 70B. Also test rock-bottom models (Gemini Flash Lite at $0.02/M, Qwen 7B, Llama 8B via Groq) for classification-only tasks like dedup. Three tiers: dedup/classification (cheapest that clears 90% accuracy), web scrape extraction (mid-tier, reliable JSON), customer-facing prose (best affordable at scale). DeepSeek V3 cache hits relevant — wine enrichment has a long shared prompt prefix. Open to: Yi-Lightning, GLM-4-Flash (free tier), Mistral Nemo 12B, Phi-3.5 Mini. Cost to run full bake-off: ~$1-2.
+
+### 2026-04-14: Terminology change — Sprints and Blocks, not Sessions
+
+Sprint = a collection of blocks (Sprint 5: AI Bakeoff). Block = an atomic unit of work like S5.1, always completed in one chat session. Session = a chat conversation, which may contain one or more blocks. This resolves the overloaded use of "session" to mean both "a unit of work" and "a chat conversation." New writing uses the new terms; existing docs are not mass-renamed.

@@ -192,11 +192,11 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">S5.0 &middot; Apr 14, 2026</div>
+  <div class="meta">B5.1 &middot; Apr 14, 2026</div>
 </div>
 
 <div class="now">
-  <strong>Sprint 4 (Demo) complete.</strong> Sprint 5 (AI Bakeoff) open. Bake-off runs first to pick models, then use winners for dedup, data fill, and re-enrichment. Share with friends at the end. S5.1 designs the bake-off and discusses dependencies.
+  <strong>B5.1: Bake-off designed.</strong> 3-tier evaluation: 17 models for dedup (200 pairs), 17 for extraction (50 pages), 21 for prose (30 wines). Opus inline judging with 5-dimension rubric. Full design in <code>bakeoff/DESIGN.md</code>. Next: build test data (B5.2).
 </div>
 
 <!-- ROADMAP -->
@@ -213,23 +213,25 @@
 <div class="section-label">Sprint 5 &mdash; AI Bakeoff</div>
 <div class="quality-grid">
   <div class="quality-item">
-    <div class="q-label">Tracks</div>
+    <div class="q-label">Blocks</div>
     <ul class="gate">
-      <li><span class="g-no">&#10007;</span> Model bake-off</li>
-      <li><span class="g-no">&#10007;</span> Dedup (AI-assisted)</li>
-      <li><span class="g-no">&#10007;</span> Data fill (scrape + grape)</li>
-      <li><span class="g-no">&#10007;</span> Re-enrichment</li>
-      <li><span class="g-no">&#10007;</span> Share with friends</li>
+      <li><span class="g-yes">&#10003;</span> B5.1 Bake-off design</li>
+      <li><span class="g-no">&#10007;</span> B5.2 Build test data</li>
+      <li><span class="g-no">&#10007;</span> B5.3 Task 1 (dedup)</li>
+      <li><span class="g-no">&#10007;</span> B5.4 Task 2 (extraction)</li>
+      <li><span class="g-no">&#10007;</span> B5.5 Task 3 (prose run)</li>
+      <li><span class="g-no">&#10007;</span> B5.6 Task 3 (judge)</li>
+      <li><span class="g-no">&#10007;</span> B5.7 Final report</li>
     </ul>
   </div>
   <div class="quality-item">
     <div class="q-label">Sprint vitals</div>
     <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
-      <tr><td style="color:var(--muted);">Budget spent</td><td style="text-align:right">$0 / TBD</td></tr>
-      <tr><td style="color:var(--muted);">Models tested</td><td style="text-align:right">0</td></tr>
+      <tr><td style="color:var(--muted);">Budget spent</td><td style="text-align:right">$0 / ~$25</td></tr>
+      <tr><td style="color:var(--muted);">Models to test</td><td style="text-align:right">21 (Task 3)</td></tr>
       <tr><td style="color:var(--muted);">Dupes merged</td><td style="text-align:right">0</td></tr>
       <tr><td style="color:var(--muted);">Humans shown</td><td style="text-align:right">0 / 5</td></tr>
-      <tr><td style="color:var(--muted);">Sessions</td><td style="text-align:right">S5.0</td></tr>
+      <tr><td style="color:var(--muted);">Block</td><td style="text-align:right">B5.1</td></tr>
     </table>
   </div>
 </div>
@@ -261,12 +263,20 @@
 <!-- NEXT UP -->
 <div class="section-label">Next Up &mdash; Sprint 5 (AI Bakeoff)</div>
 <ul class="next-list">
-  <li><strong>S5.1</strong> &mdash; Design bake-off: model candidates, eval criteria, test set, dependencies across tracks</li>
-  <li><strong>S5.2</strong> &mdash; Run bake-off: N models &times; 20 wines, score and pick winners</li>
-  <li><strong>S5.3</strong> &mdash; Dedup: demo set &rarr; corpus-wide (AI-assisted with winning model)</li>
-  <li><strong>S5.4</strong> &mdash; Data fill: producer website scrape + grape backfill</li>
-  <li><strong>S5.5</strong> &mdash; Re-enrichment with winning model + real data</li>
-  <li><strong>S5.6</strong> &mdash; Share with 5+ real humans, collect feedback</li>
+  <li><strong>B5.1</strong> &mdash; <s>Design bake-off</s> DONE</li>
+  <li><strong>B5.2</strong> &mdash; Build test data: 200 dedup pairs, 50 extraction pages, 30 prose contexts</li>
+  <li><strong>B5.3</strong> &mdash; Run + score Task 1 (dedup): 17 models &times; 200 pairs</li>
+  <li><strong>B5.4</strong> &mdash; Run + score Task 2 (extraction): 17 models &times; 50 pages</li>
+  <li><strong>B5.5</strong> &mdash; Run Task 3 (prose): 21 models &times; 30 wines</li>
+  <li><strong>B5.6</strong> &mdash; Score Task 3: Opus inline judging (calibrate + score)</li>
+  <li><strong>B5.7</strong> &mdash; Final report: rankings, cost projections, recommendation</li>
+</ul>
+<div class="section-label">Sprint 6 (planned after bake-off)</div>
+<ul class="next-list" style="color:var(--muted);">
+  <li>Dedup corpus-wide with winning model</li>
+  <li>Data fill: producer scrape + grape backfill + vintage discovery</li>
+  <li>Re-enrichment with winning model</li>
+  <li>Share with 5+ real humans, collect feedback</li>
 </ul>
 
 <!-- KEY NUMBERS -->

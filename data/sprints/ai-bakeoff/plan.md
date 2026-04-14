@@ -153,33 +153,37 @@ Depends on model choice:
 
 ---
 
-## Session Plan
+## Block Plan (revised B5.1)
 
-| Session | Phase | Work |
-|---------|-------|------|
-| S5.1 | A | Demo set dedup (55 groups, rule-based + safety checks) |
-| S5.2 | A | Corpus-wide dedup (AI-verified, Haiku + web search) |
-| S5.3 | B | Producer website scrape (demo 14 producers) + grape backfill |
-| S5.4 | B | Data fill: chemistry, oak, production from scrape results |
-| S5.5 | C | Prompt V3 + model bake-off (20 wines x 5 models) |
-| S5.6 | D | Scale re-enrichment with winning model |
+| Block | Work |
+|-------|------|
+| B5.1 | Design bake-off: model candidates, eval criteria, test sets, scoring methodology |
+| B5.2 | Build test data (200 dedup pairs, 50 extraction pages, 30 prose contexts) |
+| B5.3 | Run + score Task 1: dedup (17 models × 200 pairs, automated scoring) |
+| B5.4 | Run + score Task 2: extraction (17 models × 50 pages, automated scoring) |
+| B5.5 | Run Task 3: prose (21 models × 30 wines, save outputs) |
+| B5.6 | Score Task 3: Opus inline judging (calibrate + score) |
+| B5.7 | Final report: rankings, cost projections, production recommendation |
 
-~6 sessions, can compress if some phases go fast.
+Bake-off design: `bakeoff/DESIGN.md`.
+Model lists: `bakeoff_brief.md` (17/17/21 models across 3 tiers via OpenRouter).
+Blocks can be combined in one session where it makes sense (e.g., B5.3+B5.4 are both
+fast automated runs). B5.6 may need to split across sessions if context fills.
+
+**Sprint 6 (planned, not scoped):** Dedup, data fill, re-enrichment, and share with
+friends. Scope determined by bake-off results — model selection, cost projections,
+and quality findings from B5.7 feed directly into Sprint 6 planning.
 
 ---
 
-## Success Criteria
+## Success Criteria (Sprint 5)
 
-- [ ] Demo set dupes merged (~55 groups)
-- [ ] Corpus-wide dedup pass complete (4,079 candidates reviewed)
-- [ ] Producer website data scraped for demo 14 producers
-- [ ] Grape backfill complete for demo set (420 wines)
-- [ ] Blend %, oak, cases fields populated from scrape
-- [ ] Prompt V3 written with few-shot examples + real data injection
-- [ ] Model bake-off complete (5+ models, 20 wines each)
-- [ ] Scale re-enrichment executed with winning model
-- [ ] Fact grids showing real data (not "Data not available")
-- [ ] Total budget < $50 (excluding scale enrichment)
+- [ ] Bake-off design complete with test sets, rubrics, and evaluation methodology
+- [ ] Test data built: 200 labeled dedup pairs, 50 extraction pages + ground truth, 30 prose contexts
+- [ ] Bake-off executed: 17+17+21 models tested via OpenRouter
+- [ ] Opus inline judging complete with calibration protocol
+- [ ] Report delivered: model ranking per tier with quantitative scores, cost projections, production recommendation
+- [ ] Sprint 6 scope defined based on bake-off findings
 
 ## What This Sprint Does NOT Include
 
@@ -190,8 +194,10 @@ Depends on model choice:
 - Label image hosting (Cloudflare R2)
 - Frontend redesign (beyond current "Data not available" placeholders)
 
-## Open Questions for Phase C
+## Open Questions
 
-1. **Should we test local models?** (Llama 3.1, Mistral) — zero marginal cost but quality unknown
-2. **Is there a quality floor?** Below which no model is acceptable regardless of cost
-3. **Multi-model strategy?** Could use Sonnet for top 1K wines, Haiku for the rest
+1. **Multi-model strategy?** Bake-off may show different winners per data tier (famous vs obscure wines). Design scoring to surface this.
+2. **Prompt caching effectiveness?** Run Task 3 cold vs warm to measure actual cache hit rates per provider.
+3. **JSON reliability?** Some models may produce good prose but inconsistent JSON. Track parse rate.
+4. **Speed metric?** Tokens/sec matters for 170K-wine batch. Measure but don't weight heavily.
+5. **Vintage scraping volume?** Producer portfolio pages could push Task 2 to 30K-50K calls. Bake-off tests extraction quality; volume decision follows.
