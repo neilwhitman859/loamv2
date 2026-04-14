@@ -19,6 +19,7 @@ interface GrapeInsight {
   ai_food_pairing: string | null
   ai_regions_of_note: string | null
   ai_aging_characteristics: string | null
+  ai_insider_take: string | null
 }
 
 interface Synonym { synonym: string; language: string | null; country: { name: string } | null }
@@ -54,7 +55,7 @@ export default function GrapePage() {
           const p: PromiseLike<void>[] = []
 
           p.push(supabase.from('grape_insights')
-            .select('ai_overview, ai_flavor_profile, ai_growing_conditions, ai_food_pairing, ai_regions_of_note, ai_aging_characteristics')
+            .select('ai_overview, ai_flavor_profile, ai_growing_conditions, ai_food_pairing, ai_regions_of_note, ai_aging_characteristics, ai_insider_take')
             .eq('grape_id', id).maybeSingle()
             .then(({ data: d }) => { if (d) setInsight(d) }))
 
@@ -235,6 +236,13 @@ export default function GrapePage() {
       {insight?.ai_aging_characteristics && (
         <Section title="Aging">
           <p className="text-sm text-earth-600">{insight.ai_aging_characteristics} <AiLabel /></p>
+        </Section>
+      )}
+
+      {/* Insider take */}
+      {insight?.ai_insider_take && (
+        <Section title="Insider take">
+          <p className="text-sm text-earth-600">{insight.ai_insider_take} <AiLabel /></p>
         </Section>
       )}
 

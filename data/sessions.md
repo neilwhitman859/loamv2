@@ -4,7 +4,7 @@ Active and recent sessions. Read at session start, append when starting/finishin
 
 ## Active
 
-(none)
+- **2026-04-13 S4.4+S4.5: Track 3 — Wine enrichment (all demo producers)** — **515/515 wines Grade A, $17.72, 0 final errors.** S4.4: 209 wines serial (user's 5 producers, $6.59). S4.5: 306 wines 8-worker parallel (French recs + benchmarks, $11.13, 4 retried at 3500 max_tokens). Added Grade A tier + cascade context + --producer + --workers parallel to batch_enrich.py. Fixed stray López de Heredia dupe. Synced data_grades. Tables: `wine_insights`, `wine_vintage_tasting_insights`, `wines`, `producers`.
 
 ## Done
 

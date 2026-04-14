@@ -17,6 +17,7 @@ interface RegionInsight {
   ai_sub_region_comparison: string | null
   ai_signature_style: string | null
   ai_history: string | null
+  ai_insider_take: string | null
 }
 
 interface SubRegion { id: string; name: string }
@@ -56,7 +57,7 @@ export default function RegionPage() {
           }
 
           p.push(supabase.from('region_insights')
-            .select('ai_overview, ai_climate_profile, ai_sub_region_comparison, ai_signature_style, ai_history')
+            .select('ai_overview, ai_climate_profile, ai_sub_region_comparison, ai_signature_style, ai_history, ai_insider_take')
             .eq('region_id', id).maybeSingle()
             .then(({ data: d }) => { if (d) setInsight(d) }))
 
@@ -209,6 +210,13 @@ export default function RegionPage() {
       {insight?.ai_history && (
         <Section title="History">
           <p className="text-sm text-earth-600">{insight.ai_history} <AiLabel /></p>
+        </Section>
+      )}
+
+      {/* Insider take */}
+      {insight?.ai_insider_take && (
+        <Section title="Insider take">
+          <p className="text-sm text-earth-600">{insight.ai_insider_take} <AiLabel /></p>
         </Section>
       )}
 

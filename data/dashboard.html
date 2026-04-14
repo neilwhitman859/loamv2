@@ -192,11 +192,11 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">S4.3 &middot; Apr 13, 2026</div>
+  <div class="meta">S4.5 &middot; Apr 13, 2026</div>
 </div>
 
 <div class="now">
-  <strong>S4.3 complete.</strong> 14 producers enriched (structured data + insights). 5 Stag's Leap wines voice-calibrated with full field set. New: wine_comparables table (9 cross-linked pairs), ai_market_info split into 3 columns (value/market/insider), ai_insider_take on all reference tables. Next: batch wine enrichment.
+  <strong>S4.4+S4.5 complete.</strong> All 515 demo wines Grade A enriched across 14 producers. $17.72 total. S4.4: 209 wines serial (user&rsquo;s 5 producers, $6.59). S4.5: 306 wines 8-worker parallel (French recs + benchmarks, $11.13). Added --workers parallel support to batch_enrich.py. Next: S4.6 frontend polish + deploy + show to real humans.
 </div>
 
 <!-- ROADMAP -->
@@ -214,8 +214,8 @@
 <div class="quality-grid">
   <div class="quality-item">
     <div class="q-label">Wines enriched</div>
-    <div class="q-value bad">0 <span class="q-pct">/ 515</span></div>
-    <div class="q-detail">enriched + human reviewed</div>
+    <div class="q-value ok">515 <span class="q-pct">/ 515</span></div>
+    <div class="q-detail">Grade A &mdash; all 14 producers complete</div>
   </div>
   <div class="quality-item">
     <div class="q-label">Tracks</div>
@@ -223,8 +223,8 @@
       <li><span class="g-yes">&#10003;</span> Quick fixes</li>
       <li><span class="g-yes">&#10003;</span> Wine selection</li>
       <li><span class="g-yes">&#10003;</span> Ref enrichment</li>
-      <li><span class="g-no">&#10007;</span> Producer pipeline</li>
-      <li><span class="g-no">&#10007;</span> Wine enrichment</li>
+      <li><span class="g-yes">&#10003;</span> Producer pipeline</li>
+      <li><span class="g-yes">&#10003;</span> Wine enrichment</li>
       <li><span class="g-no">&#10007;</span> Deploy + feedback</li>
     </ul>
   </div>
@@ -236,40 +236,40 @@
       <li><span class="g-yes">&#10003;</span> Appellations (51 / 51)</li>
       <li><span class="g-yes">&#10003;</span> Grapes (41 / 41)</li>
       <li><span class="g-yes">&#10003;</span> Producers (14 / 14)</li>
-      <li><span class="g-no">&#10007;</span> Wines (5 / 518)</li>
+      <li><span class="g-yes">&#10003;</span> Wines (515 / 515)</li>
     </ul>
   </div>
   <div class="quality-item">
     <div class="q-label">Producers</div>
     <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
       <tr style="color:var(--muted);"><td>Owner</td><td style="text-align:right">Wines</td><td style="text-align:right">Done</td></tr>
-      <tr><td>Stag&rsquo;s Leap WC</td><td style="text-align:right">49</td><td style="text-align:right; color:var(--red);">0</td></tr>
-      <tr><td>Ridge Vineyards</td><td style="text-align:right">110</td><td style="text-align:right; color:var(--red);">0</td></tr>
-      <tr><td>Fort Ross</td><td style="text-align:right">28</td><td style="text-align:right; color:var(--red);">0</td></tr>
-      <tr><td>L&oacute;pez de Heredia</td><td style="text-align:right">18</td><td style="text-align:right; color:var(--red);">0</td></tr>
-      <tr><td>CIRQ</td><td style="text-align:right">4</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>Stag&rsquo;s Leap WC</td><td style="text-align:right">49</td><td style="text-align:right; color:var(--green);">49</td></tr>
+      <tr><td>Ridge Vineyards</td><td style="text-align:right">110</td><td style="text-align:right; color:var(--green);">110</td></tr>
+      <tr><td>Fort Ross</td><td style="text-align:right">28</td><td style="text-align:right; color:var(--green);">28</td></tr>
+      <tr><td>L&oacute;pez de Heredia</td><td style="text-align:right">18</td><td style="text-align:right; color:var(--green);">18</td></tr>
+      <tr><td>CIRQ</td><td style="text-align:right">4</td><td style="text-align:right; color:var(--green);">4</td></tr>
       <tr style="color:var(--muted);"><td>French recs</td><td style="text-align:right">Wines</td><td style="text-align:right">Done</td></tr>
-      <tr><td>Tempier</td><td style="text-align:right">19</td><td style="text-align:right; color:var(--red);">0</td></tr>
-      <tr><td>E. Guigal</td><td style="text-align:right">30</td><td style="text-align:right; color:var(--red);">0</td></tr>
-      <tr><td>Trimbach</td><td style="text-align:right">75</td><td style="text-align:right; color:var(--red);">0</td></tr>
-      <tr><td>Huet</td><td style="text-align:right">58</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>Tempier</td><td style="text-align:right">19</td><td style="text-align:right; color:var(--green);">19</td></tr>
+      <tr><td>E. Guigal</td><td style="text-align:right">30</td><td style="text-align:right; color:var(--green);">30</td></tr>
+      <tr><td>Trimbach</td><td style="text-align:right">75</td><td style="text-align:right; color:var(--green);">75</td></tr>
+      <tr><td>Huet</td><td style="text-align:right">58</td><td style="text-align:right; color:var(--green);">58</td></tr>
       <tr style="color:var(--muted);"><td>Benchmarks</td><td style="text-align:right">Wines</td><td style="text-align:right">Done</td></tr>
-      <tr><td>DRC</td><td style="text-align:right">14</td><td style="text-align:right; color:var(--red);">0</td></tr>
-      <tr><td>Krug</td><td style="text-align:right">71</td><td style="text-align:right; color:var(--red);">0</td></tr>
-      <tr><td>G. Conterno</td><td style="text-align:right">32</td><td style="text-align:right; color:var(--red);">0</td></tr>
-      <tr><td>Ch. Margaux</td><td style="text-align:right">4</td><td style="text-align:right; color:var(--red);">0</td></tr>
-      <tr><td>Ch. Latour</td><td style="text-align:right">3</td><td style="text-align:right; color:var(--red);">0</td></tr>
+      <tr><td>DRC</td><td style="text-align:right">14</td><td style="text-align:right; color:var(--green);">14</td></tr>
+      <tr><td>Krug</td><td style="text-align:right">71</td><td style="text-align:right; color:var(--green);">71</td></tr>
+      <tr><td>G. Conterno</td><td style="text-align:right">32</td><td style="text-align:right; color:var(--green);">32</td></tr>
+      <tr><td>Ch. Margaux</td><td style="text-align:right">4</td><td style="text-align:right; color:var(--green);">4</td></tr>
+      <tr><td>Ch. Latour</td><td style="text-align:right">3</td><td style="text-align:right; color:var(--green);">3</td></tr>
     </table>
   </div>
   <div class="quality-item">
     <div class="q-label">Sprint vitals</div>
     <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
-      <tr><td style="color:var(--muted);">Budget spent</td><td style="text-align:right">$0.00 / $30</td></tr>
-      <tr><td style="color:var(--muted);">Voice iterations</td><td style="text-align:right">0</td></tr>
+      <tr><td style="color:var(--muted);">Budget spent</td><td style="text-align:right">$17.72 / $30</td></tr>
+      <tr><td style="color:var(--muted);">Voice iterations</td><td style="text-align:right">1 (S4.3)</td></tr>
       <tr><td style="color:var(--muted);">User lookups</td><td style="text-align:right">0</td></tr>
       <tr><td style="color:var(--muted);">Humans shown</td><td style="text-align:right">0 / 5</td></tr>
       <tr><td style="color:var(--muted);">Dupes merged</td><td style="text-align:right; color:var(--green);">3 / 3</td></tr>
-      <tr><td style="color:var(--muted);">Sessions</td><td style="text-align:right">S4.3</td></tr>
+      <tr><td style="color:var(--muted);">Sessions</td><td style="text-align:right">S4.5</td></tr>
     </table>
   </div>
 </div>
@@ -304,8 +304,8 @@
   <li><strong>S4.1</strong> &mdash; <span style="color:var(--green);">&#10003;</span> Quick fixes, merges, grape display names, manifest (515 wines)</li>
   <li><strong>S4.2</strong> &mdash; <span style="color:var(--green);">&#10003;</span> Reference enrichment: 8 regions, 35 appellations, 41 grapes (Opus inline, $0)</li>
   <li><strong>S4.3</strong> &mdash; <span style="color:var(--green);">&#10003;</span> 14 producers enriched, 5 wines voice-calibrated, wine_comparables + 3 market columns + insider_take</li>
-  <li><strong>S4.4</strong> &mdash; Wine enrichment: user's producers (voice review loop)</li>
-  <li><strong>S4.5</strong> &mdash; Wine enrichment: French recs + benchmarks</li>
+  <li><strong>S4.4</strong> &mdash; <span style="color:var(--green);">&#10003;</span> 209 wines Grade A enriched (user&rsquo;s 5 producers, Sonnet, $6.59)</li>
+  <li><strong>S4.5</strong> &mdash; <span style="color:var(--green);">&#10003;</span> 306 wines Grade A (French recs + benchmarks, Sonnet 8-worker, $11.13)</li>
   <li><strong>S4.6</strong> &mdash; Frontend polish + deploy + share with real humans</li>
 </ul>
 
@@ -314,12 +314,12 @@
 <div class="numbers">
   <div class="n-item"><div class="n-label">Wines</div><div class="n-value">155,605</div></div>
   <div class="n-item"><div class="n-label">Producers</div><div class="n-value">10,627</div></div>
-  <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">125,934</div></div>
+  <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">125,500</div></div>
   <div class="n-item"><div class="n-label">Prices</div><div class="n-value">40,193</div></div>
   <div class="n-item"><div class="n-label">Scores</div><div class="n-value">30,339</div></div>
   <div class="n-item"><div class="n-label">Grape links</div><div class="n-value">43,131</div></div>
   <div class="n-item"><div class="n-label">Appellations</div><div class="n-value">3,662</div></div>
-  <div class="n-item"><div class="n-label">Insights</div><div class="n-value">5,045</div></div>
+  <div class="n-item"><div class="n-label">Insights</div><div class="n-value">5,480</div></div>
 </div>
 
 <!-- DONE -->

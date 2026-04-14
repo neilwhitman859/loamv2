@@ -49,6 +49,9 @@ interface WineInsight {
   ai_style_profile: string | null
   ai_cellar_recommendation: string | null
   ai_comparable_wines: string | null
+  ai_value_assessment: string | null
+  ai_market_position: string | null
+  ai_insider_take: string | null
   enrichment_tier: string | null
   typical_drinking_window_min_years: number | null
   typical_drinking_window_max_years: number | null
@@ -186,7 +189,7 @@ export default function WinePage() {
           const p: PromiseLike<void>[] = []
 
           p.push(supabase.from('wine_insights')
-            .select('ai_hook, ai_wine_summary, ai_terroir_expression, ai_vinification_summary, ai_food_pairing, ai_style_profile, ai_cellar_recommendation, ai_comparable_wines, enrichment_tier, typical_drinking_window_min_years, typical_drinking_window_max_years, typical_aging_potential_years')
+            .select('ai_hook, ai_wine_summary, ai_terroir_expression, ai_vinification_summary, ai_food_pairing, ai_style_profile, ai_cellar_recommendation, ai_comparable_wines, ai_value_assessment, ai_market_position, ai_insider_take, enrichment_tier, typical_drinking_window_min_years, typical_drinking_window_max_years, typical_aging_potential_years')
             .eq('wine_id', id).maybeSingle()
             .then(({ data: d }) => { if (d) setInsight(d) }))
 
@@ -392,11 +395,21 @@ export default function WinePage() {
           {wine.data_grade && <Tag variant="muted">Grade {wine.data_grade.toUpperCase()}</Tag>}
         </div>
 
-        {/* One-liner hook */}
+        {/* Style profile + hook */}
+        {insight?.ai_style_profile && (
+          <p className="text-xs font-medium text-earth-400 uppercase tracking-wider mt-2">{insight.ai_style_profile}</p>
+        )}
         {insight?.ai_hook && (
-          <p className="text-sm text-earth-500 mt-2 italic">{insight.ai_hook} <AiLabel /></p>
+          <p className="text-sm text-earth-500 mt-1 italic">{insight.ai_hook} <AiLabel /></p>
         )}
       </header>
+
+      {/* ── Wine Summary ──────────────────────────────── */}
+      {insight?.ai_wine_summary && (
+        <Section title="About this wine">
+          <p className="text-sm text-earth-600 whitespace-pre-line">{insight.ai_wine_summary} <AiLabel /></p>
+        </Section>
+      )}
 
       {/* ── Scores ─────────────────────────────────────── */}
       {scores.length > 0 && (
@@ -679,6 +692,27 @@ export default function WinePage() {
         </Section>
       )}
 
+      {/* ── Terroir Expression ─────────────────────────── */}
+      {insight?.ai_terroir_expression && (
+        <Section title="Terroir">
+          <p className="text-sm text-earth-600 whitespace-pre-line">{insight.ai_terroir_expression} <AiLabel /></p>
+        </Section>
+      )}
+
+      {/* ── Winemaking ────────────────────────────────── */}
+      {insight?.ai_vinification_summary && (
+        <Section title="Winemaking">
+          <p className="text-sm text-earth-600 whitespace-pre-line">{insight.ai_vinification_summary} <AiLabel /></p>
+        </Section>
+      )}
+
+      {/* ── Insider Take ──────────────────────────────── */}
+      {insight?.ai_insider_take && (
+        <Section title="Insider take">
+          <p className="text-sm text-earth-600 whitespace-pre-line">{insight.ai_insider_take} <AiLabel /></p>
+        </Section>
+      )}
+
       {/* ── Cellar ─────────────────────────────────────── */}
       {(insight?.typical_drinking_window_min_years || insight?.typical_aging_potential_years || insight?.ai_cellar_recommendation) && (
         <Section title="Cellar">
@@ -700,6 +734,18 @@ export default function WinePage() {
       {insight?.ai_food_pairing && (
         <Section title="Food pairing">
           <p className="text-sm text-earth-600">{insight.ai_food_pairing} <AiLabel /></p>
+        </Section>
+      )}
+
+      {/* ── Value & Market ────────────────────────────── */}
+      {(insight?.ai_value_assessment || insight?.ai_market_position) && (
+        <Section title="Market">
+          {insight?.ai_value_assessment && (
+            <p className="text-sm text-earth-600">{insight.ai_value_assessment} <AiLabel /></p>
+          )}
+          {insight?.ai_market_position && (
+            <p className="text-sm text-earth-600 mt-2">{insight.ai_market_position} <AiLabel /></p>
+          )}
         </Section>
       )}
 

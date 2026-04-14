@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Batch wine enrichment: Grade C (Haiku) and Grade B (Sonnet).
+"""Batch wine enrichment: Grade C (Haiku), Grade B (Sonnet), Grade A (Sonnet + cascade).
 
 Grade C: hook, style, sensory profile, comparable wines. ~$0.003-0.005/wine.
 Grade B: full narrative (wine summary, terroir, vinification, food, cellar). ~$0.02-0.04/wine.
+Grade A: full narrative + cascade context + value/market/insider. ~$0.03-0.04/wine.
 
 Usage:
     # Dry-run (prints context, no API calls)
@@ -14,6 +15,9 @@ Usage:
     # Batch: enrich top wines by score count
     python -m pipeline.enrich.batch_enrich --grade C --limit 1000 --execute --budget 5.0
 
+    # Parallel: 8 concurrent API calls (same cost, ~5x faster)
+    python -m pipeline.enrich.batch_enrich --grade A --producer UUID --limit 500 --execute --workers 8
+
     # Resume-safe: skips wines already at target grade or higher
     python -m pipeline.enrich.batch_enrich --grade C --execute --budget 15.0
 """
@@ -23,8 +27,10 @@ import json
 import os
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
+from threading import Lock
 from uuid import uuid4
 
 # Force unbuffered output on Windows
@@ -204,6 +210,59 @@ def bulk_preload_context(cur, wine_ids: list[str]) -> dict[str, dict]:
         wid = str(r[0])
         if wid in wines:
             wines[wid]["designations"].append(r[1])
+
+    # 9. Cascade context: appellation insights
+    if app_ids:
+        cur.execute(f"""
+            SELECT appellation_id, ai_overview, ai_soil_profile
+            FROM appellation_insights
+            WHERE appellation_id IN ({app_ph})
+              AND ai_overview IS NOT NULL
+        """, app_ids)
+        app_insights = {str(r[0]): {"overview": r[1], "soil": r[2]} for r in cur.fetchall()}
+        for w in wines.values():
+            aid = str(w.get("appellation_id", ""))
+            w["appellation_insight"] = app_insights.get(aid)
+
+    # 10. Cascade context: producer insights (one query for all unique producers)
+    producer_ids = list(set(str(w.get("producer_id", w.get("_producer_id", "")))
+                           for w in wines.values()))
+    # We need producer_id — it's in the wine row but not named. Re-fetch.
+    cur.execute(f"""
+        SELECT DISTINCT w.producer_id FROM wines w WHERE w.id IN ({placeholders})
+    """, wine_ids)
+    producer_ids = [str(r[0]) for r in cur.fetchall() if r[0]]
+    if producer_ids:
+        prod_ph = ",".join(["%s"] * len(producer_ids))
+        cur.execute(f"""
+            SELECT producer_id, ai_overview, ai_winemaking_style
+            FROM producer_insights
+            WHERE producer_id IN ({prod_ph})
+              AND ai_overview IS NOT NULL
+        """, producer_ids)
+        prod_insights = {str(r[0]): {"overview": r[1], "style": r[2]} for r in cur.fetchall()}
+        # Map producer_id back to wines
+        cur.execute(f"""
+            SELECT w.id, w.producer_id FROM wines w WHERE w.id IN ({placeholders})
+        """, wine_ids)
+        wine_producer_map = {str(r[0]): str(r[1]) for r in cur.fetchall()}
+        for wid, w in wines.items():
+            pid = wine_producer_map.get(wid, "")
+            w["producer_insight"] = prod_insights.get(pid)
+
+    # 11. Cascade context: grape insights (primary grape per wine)
+    cur.execute(f"""
+        SELECT DISTINCT ON (wg.wine_id) wg.wine_id, gi.ai_flavor_profile
+        FROM wine_grapes wg
+        JOIN grape_insights gi ON gi.grape_id = wg.grape_id
+        WHERE wg.wine_id IN ({placeholders})
+          AND gi.ai_flavor_profile IS NOT NULL
+        ORDER BY wg.wine_id, wg.percentage DESC NULLS LAST
+    """, wine_ids)
+    for r in cur.fetchall():
+        wid = str(r[0])
+        if wid in wines:
+            wines[wid]["grape_flavor_profile"] = r[1]
 
     return wines
 
@@ -403,13 +462,98 @@ Return a JSON object with these fields:
     return prompt
 
 
+def _cascade_context_block(ctx: dict) -> str:
+    """Build cascade context section from reference entity AI insights."""
+    sections = []
+
+    ai = ctx.get("appellation_insight")
+    if ai:
+        if ai.get("overview"):
+            sections.append(f"## Appellation Context (enriched)\n{ai['overview'][:800]}")
+        if ai.get("soil"):
+            sections.append(f"## Appellation Soil Profile (enriched)\n{ai['soil'][:500]}")
+
+    pi = ctx.get("producer_insight")
+    if pi:
+        if pi.get("style"):
+            sections.append(f"## Producer Winemaking Style (enriched)\n{pi['style'][:500]}")
+        if pi.get("overview"):
+            sections.append(f"## Producer Overview (enriched)\n{pi['overview'][:600]}")
+
+    gfp = ctx.get("grape_flavor_profile")
+    if gfp:
+        sections.append(f"## Primary Grape Flavor Profile (enriched)\n{gfp[:500]}")
+
+    if not sections:
+        return ""
+    return "\n\n".join(sections)
+
+
+def build_grade_a_prompt(ctx: dict) -> str:
+    """Grade A: full narrative + cascade context + value/market/insider. Uses Sonnet."""
+    identity = _wine_identity_block(ctx)
+    data = _data_blocks(ctx)
+    cascade = _cascade_context_block(ctx)
+
+    cascade_section = ""
+    if cascade:
+        cascade_section = f"""
+## Reference Entity Context (from enriched appellation, producer, and grape data)
+Use this to ground your writing in specific, validated context. Reference these facts when relevant.
+
+{cascade}
+"""
+
+    prompt = f"""{VOICE_PREAMBLE}
+
+Enrich this wine with a complete Grade A profile. Return ONLY valid JSON (no markdown, no backticks).
+
+## Wine Identity
+{identity}
+
+{data}
+{cascade_section}
+## Output Format
+Return a JSON object with these fields:
+{{
+  "hook": "2-3 sentences. The 30-second story — what makes this wine worth knowing about.",
+  "wine_summary": "1-2 paragraphs. The rich story: why this wine matters, what makes the producer distinctive, how terroir shapes the wine. Be specific.",
+  "terroir_expression": "1 paragraph. How the specific soil, climate, and site express themselves in this wine. Connect geology to glass. Draw from the appellation context above when available.",
+  "vinification_summary": "1 paragraph. How the wine is made and why those choices matter. Draw from producer winemaking style context when available.",
+  "food_pairing": "3-5 specific pairings with brief reasoning. Name real dishes, not categories. Include casual and fine dining.",
+  "comparable_wines": "2-3 similar wines with reasoning. Format: 'Wine Name — why it\\'s comparable.'",
+  "style_profile": "One phrase, e.g., 'Full-bodied dry red with firm tannins and earthy depth'",
+  "cellar_recommendation": "1-2 sentences on when to drink and storage advice.",
+  "value_assessment": "2-3 sentences. Is this wine worth the price? What does it compete with at its price point? Be honest and specific.",
+  "market_position": "2-3 sentences. Where this wine sits in the market — restaurant wine, collector wine, everyday drinker? Who buys it and why?",
+  "insider_take": "2-3 sentences. The honest take a knowledgeable wine shop owner would give a trusted customer. What's the real story? Have a point of view.",
+  "aging_potential_years": null or integer,
+  "drinking_window_min_years": null or integer,
+  "drinking_window_max_years": null or integer,
+  "sensory": {{
+    "acidity": 1-5,
+    "tannin": 1-5,
+    "body": 1-5,
+    "sweetness": 1-5,
+    "alcohol": 1-5,
+    "color_intensity": "pale|medium|deep",
+    "aroma_intensity": "light|medium|pronounced",
+    "finish_length": "short|medium|long",
+    "complexity": "simple|moderate|complex",
+    "quality_level": "acceptable|good|very_good|outstanding|exceptional"
+  }}
+}}"""
+    return prompt
+
+
 # ── API call ──────────────────────────────────────────────────
 
-def call_claude(client: anthropic.Anthropic, prompt: str, model: str) -> tuple[dict, dict]:
+def call_claude(client: anthropic.Anthropic, prompt: str, model: str,
+                max_tokens: int = 2000) -> tuple[dict, dict]:
     """Call Claude API and return (parsed_result, usage_info)."""
     resp = client.messages.create(
         model=model,
-        max_tokens=2000,
+        max_tokens=max_tokens,
         messages=[{"role": "user", "content": prompt}],
     )
     raw = resp.content[0].text.strip()
@@ -588,6 +732,93 @@ def write_grade_b(cur, wine_id: str, result: dict):
     """, (wine_id,))
 
 
+def write_grade_a(cur, wine_id: str, result: dict):
+    """Write Grade A results to DB (all Grade B fields + value/market/insider)."""
+    now = datetime.now(timezone.utc).isoformat()
+    refresh = datetime(2027, 4, 9, tzinfo=timezone.utc).isoformat()
+
+    cur.execute("""
+        INSERT INTO wine_insights (wine_id, ai_hook, ai_wine_summary, ai_terroir_expression,
+                                   ai_vinification_summary, ai_food_pairing, ai_comparable_wines,
+                                   ai_style_profile, ai_cellar_recommendation,
+                                   ai_value_assessment, ai_market_position, ai_insider_take,
+                                   typical_aging_potential_years,
+                                   typical_drinking_window_min_years, typical_drinking_window_max_years,
+                                   enrichment_tier, confidence, enriched_at, refresh_after)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 'A', 0.90, %s, %s)
+        ON CONFLICT (wine_id) DO UPDATE SET
+            ai_hook = EXCLUDED.ai_hook,
+            ai_wine_summary = EXCLUDED.ai_wine_summary,
+            ai_terroir_expression = EXCLUDED.ai_terroir_expression,
+            ai_vinification_summary = EXCLUDED.ai_vinification_summary,
+            ai_food_pairing = EXCLUDED.ai_food_pairing,
+            ai_comparable_wines = EXCLUDED.ai_comparable_wines,
+            ai_style_profile = EXCLUDED.ai_style_profile,
+            ai_cellar_recommendation = EXCLUDED.ai_cellar_recommendation,
+            ai_value_assessment = EXCLUDED.ai_value_assessment,
+            ai_market_position = EXCLUDED.ai_market_position,
+            ai_insider_take = EXCLUDED.ai_insider_take,
+            typical_aging_potential_years = EXCLUDED.typical_aging_potential_years,
+            typical_drinking_window_min_years = EXCLUDED.typical_drinking_window_min_years,
+            typical_drinking_window_max_years = EXCLUDED.typical_drinking_window_max_years,
+            enrichment_tier = EXCLUDED.enrichment_tier,
+            confidence = EXCLUDED.confidence,
+            enriched_at = EXCLUDED.enriched_at,
+            refresh_after = EXCLUDED.refresh_after
+    """, (wine_id,
+          result.get("hook"), result.get("wine_summary"),
+          result.get("terroir_expression"), result.get("vinification_summary"),
+          result.get("food_pairing"), result.get("comparable_wines"),
+          result.get("style_profile"), result.get("cellar_recommendation"),
+          result.get("value_assessment"), result.get("market_position"),
+          result.get("insider_take"),
+          result.get("aging_potential_years"),
+          result.get("drinking_window_min_years"), result.get("drinking_window_max_years"),
+          now, refresh))
+
+    sensory = result.get("sensory", {})
+    if sensory:
+        cur.execute("""
+            SELECT vintage_year FROM wine_vintages
+            WHERE wine_id = %s ORDER BY vintage_year DESC LIMIT 1
+        """, (wine_id,))
+        row = cur.fetchone()
+        vy = row[0] if row and row[0] else 0
+
+        cur.execute("""
+            INSERT INTO wine_vintage_tasting_insights
+                (id, wine_id, vintage_year, sensory_acidity, sensory_tannin,
+                 sensory_body, sensory_sweetness, sensory_alcohol,
+                 color_intensity, aroma_intensity, finish_length,
+                 complexity, quality_level, confidence, enriched_at, refresh_after)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 0.85, %s, %s)
+            ON CONFLICT (wine_id, vintage_year) DO UPDATE SET
+                sensory_acidity = EXCLUDED.sensory_acidity,
+                sensory_tannin = EXCLUDED.sensory_tannin,
+                sensory_body = EXCLUDED.sensory_body,
+                sensory_sweetness = EXCLUDED.sensory_sweetness,
+                sensory_alcohol = EXCLUDED.sensory_alcohol,
+                color_intensity = EXCLUDED.color_intensity,
+                aroma_intensity = EXCLUDED.aroma_intensity,
+                finish_length = EXCLUDED.finish_length,
+                complexity = EXCLUDED.complexity,
+                quality_level = EXCLUDED.quality_level,
+                confidence = EXCLUDED.confidence,
+                enriched_at = EXCLUDED.enriched_at,
+                refresh_after = EXCLUDED.refresh_after
+        """, (str(uuid4()), wine_id, vy,
+              sensory.get("acidity"), sensory.get("tannin"),
+              sensory.get("body"), sensory.get("sweetness"), sensory.get("alcohol"),
+              sensory.get("color_intensity"), sensory.get("aroma_intensity"),
+              sensory.get("finish_length"), sensory.get("complexity"),
+              sensory.get("quality_level"), now, refresh))
+
+    cur.execute("""
+        UPDATE wines SET data_grade = 'A'
+        WHERE id = %s AND (data_grade IS NULL OR data_grade IN ('F', 'D', 'C', 'B'))
+    """, (wine_id,))
+
+
 def log_enrichment(cur, wine_id: str, grade: str, model: str, usage: dict, cost: float, status: str, error: str = None):
     """Write enrichment_log entry."""
     cur.execute("""
@@ -605,7 +836,8 @@ def log_enrichment(cur, wine_id: str, grade: str, model: str, usage: dict, cost:
 
 # ── Wine selection ────────────────────────────────────────────
 
-def select_wines(cur, grade: str, limit: int, wine_ids: list[str] = None) -> list[dict]:
+def select_wines(cur, grade: str, limit: int, wine_ids: list[str] = None,
+                  producer_ids: list[str] = None) -> list[dict]:
     """Select wines to enrich, ordered by priority."""
     if wine_ids:
         placeholders = ",".join(["%s"] * len(wine_ids))
@@ -614,6 +846,26 @@ def select_wines(cur, grade: str, limit: int, wine_ids: list[str] = None) -> lis
             FROM wines w
             WHERE w.id IN ({placeholders}) AND w.deleted_at IS NULL
         """, wine_ids)
+    elif producer_ids:
+        # Select all wines from given producers that don't already have target-grade insights
+        prod_ph = ",".join(["%s"] * len(producer_ids))
+        cur.execute(f"""
+            SELECT w.id, w.display_name, w.data_grade
+            FROM wines w
+            WHERE w.deleted_at IS NULL
+              AND w.producer_id IN ({prod_ph})
+              AND NOT EXISTS (
+                  SELECT 1 FROM wine_insights wi
+                  WHERE wi.wine_id = w.id
+                  AND wi.enrichment_tier = %s
+              )
+            ORDER BY
+                (SELECT count(*) FROM wine_vintage_scores s WHERE s.wine_id = w.id) DESC,
+                (SELECT count(*) FROM wine_vintage_prices p WHERE p.wine_id = w.id) DESC,
+                (SELECT count(*) FROM wine_grapes wg WHERE wg.wine_id = w.id) DESC,
+                w.display_name
+            LIMIT %s
+        """, (*producer_ids, grade, limit))
     else:
         target_grades = ("F", "D") if grade == "C" else ("F", "D", "C")
         placeholders = ",".join(["%s"] * len(target_grades))
@@ -644,13 +896,15 @@ def select_wines(cur, grade: str, limit: int, wine_ids: list[str] = None) -> lis
 
 def main():
     parser = argparse.ArgumentParser(description="Batch wine enrichment")
-    parser.add_argument("--grade", choices=["C", "B"], required=True, help="Enrichment grade")
+    parser.add_argument("--grade", choices=["C", "B", "A"], required=True, help="Enrichment grade")
     parser.add_argument("--limit", type=int, default=10, help="Max wines to process")
     parser.add_argument("--ids", help="Comma-separated wine UUIDs (overrides selection)")
+    parser.add_argument("--producer", help="Comma-separated producer UUIDs (select all their wines)")
     parser.add_argument("--execute", action="store_true", help="Actually call API and write DB")
     parser.add_argument("--print", dest="print_results", action="store_true", help="Print enrichment results")
     parser.add_argument("--budget", type=float, default=999.0, help="Max USD to spend")
     parser.add_argument("--delay", type=float, default=0.0, help="Seconds between API calls")
+    parser.add_argument("--workers", type=int, default=1, help="Parallel API workers (1=serial, 8=fast)")
     args = parser.parse_args()
 
     model = HAIKU_MODEL if args.grade == "C" else SONNET_MODEL
@@ -661,7 +915,8 @@ def main():
 
     # Select wines
     wine_ids = args.ids.split(",") if args.ids else None
-    wines = select_wines(cur, args.grade, args.limit, wine_ids)
+    producer_ids = args.producer.split(",") if args.producer else None
+    wines = select_wines(cur, args.grade, args.limit, wine_ids, producer_ids)
     print(f"\n{'='*60}")
     print(f"  BATCH ENRICHMENT — Grade {args.grade} ({model.split('-')[1].title()})")
     print(f"{'='*60}")
@@ -715,73 +970,144 @@ def main():
         batch_ctx = bulk_preload_context(cur, batch_ids)
         all_contexts.update(batch_ctx)
     print(f"  Pre-loaded context for {len(all_contexts)} wines")
+    print(f"  Workers: {args.workers}")
     sys.stdout.flush()
 
-    for i, w in enumerate(wines):
-        wine_id = str(w["id"])
-        display = w["display_name"]
+    max_tok = 3500 if args.grade == "A" else 2000
+    print_lock = Lock()
 
-        try:
-            ctx = all_contexts.get(wine_id)
-            if not ctx:
-                print(f"  [{i+1}/{len(wines)}] SKIP {display} — not found")
-                continue
+    def _enrich_one(wine_id: str, display: str) -> tuple[str, str, dict | None, dict, float, str | None]:
+        """Call Claude API for one wine (thread-safe). Returns (wine_id, display, result, usage, cost, error)."""
+        ctx = all_contexts.get(wine_id)
+        if not ctx:
+            return wine_id, display, None, {}, 0.0, "no context"
 
-            # Build prompt
-            if args.grade == "C":
-                prompt = build_grade_c_prompt(ctx)
-            else:
-                prompt = build_grade_b_prompt(ctx)
+        if args.grade == "C":
+            prompt = build_grade_c_prompt(ctx)
+        elif args.grade == "A":
+            prompt = build_grade_a_prompt(ctx)
+        else:
+            prompt = build_grade_b_prompt(ctx)
 
-            # Call API
-            result, usage = call_claude(client, prompt, model)
-            cost = (usage["input_tokens"] * pricing["input"] / 1_000_000 +
-                    usage["output_tokens"] * pricing["output"] / 1_000_000)
+        # Call API with retry on rate limit
+        for attempt in range(3):
+            try:
+                result, usage = call_claude(client, prompt, model, max_tokens=max_tok)
+                cost = (usage["input_tokens"] * pricing["input"] / 1_000_000 +
+                        usage["output_tokens"] * pricing["output"] / 1_000_000)
+                return wine_id, display, result, usage, cost, None
+            except json.JSONDecodeError as e:
+                return wine_id, display, None, {}, 0.0, f"JSON parse: {e}"
+            except Exception as e:
+                err_str = str(e)
+                if "rate" in err_str.lower() or "429" in err_str:
+                    wait = 2 ** attempt * 5
+                    with print_lock:
+                        print(f"    Rate limited, waiting {wait}s...")
+                        sys.stdout.flush()
+                    time.sleep(wait)
+                    continue
+                return wine_id, display, None, {}, 0.0, err_str[:500]
+        return wine_id, display, None, {}, 0.0, "max retries exceeded (rate limit)"
+
+    if args.workers <= 1:
+        # ── Serial path (original behavior) ──
+        for i, w in enumerate(wines):
+            wine_id = str(w["id"])
+            display = w["display_name"]
+
+            wine_id, display, result, usage, cost, error = _enrich_one(wine_id, display)
             total_cost += cost
 
-            # Write results
-            if args.grade == "C":
-                write_grade_c(cur, wine_id, result)
-            else:
-                write_grade_b(cur, wine_id, result)
+            if error:
+                errors += 1
+                log_enrichment(cur, wine_id, args.grade, model, usage, cost, "error", error)
+                conn.commit()
+                print(f"  [{i+1}/{len(wines)}] ERROR {display} — {error}")
+            elif result:
+                if args.grade == "C":
+                    write_grade_c(cur, wine_id, result)
+                elif args.grade == "A":
+                    write_grade_a(cur, wine_id, result)
+                else:
+                    write_grade_b(cur, wine_id, result)
+                log_enrichment(cur, wine_id, args.grade, model, usage, cost, "completed")
+                conn.commit()
+                success += 1
 
-            log_enrichment(cur, wine_id, args.grade, model, usage, cost, "completed")
-            conn.commit()
-            success += 1
+                hook_preview = (result.get("hook") or "")[:120]
+                style = result.get("style_profile", "")
+                quality = result.get("sensory", {}).get("quality_level", "?")
+                print(f"  [{i+1}/{len(wines)}] {display}")
+                print(f"    -> {style} | {quality} | ${cost:.4f}")
+                print(f"    -> {hook_preview}...")
+                sys.stdout.flush()
 
-            # Print result
-            hook_preview = (result.get("hook") or "")[:120]
-            style = result.get("style_profile", "")
-            quality = result.get("sensory", {}).get("quality_level", "?")
-            print(f"  [{i+1}/{len(wines)}] {display}")
-            print(f"    -> {style} | {quality} | ${cost:.4f}")
-            print(f"    -> {hook_preview}...")
+                if args.print_results:
+                    print(f"\n{'─'*60}")
+                    print(json.dumps(result, indent=2, ensure_ascii=True))
+                    print(f"{'─'*60}\n")
 
-            sys.stdout.flush()
-
-            if args.print_results:
-                print(f"\n{'─'*60}")
-                print(json.dumps(result, indent=2, ensure_ascii=True))
-                print(f"{'─'*60}\n")
-
-            # Budget check
             if total_cost >= args.budget:
                 print(f"\n  Budget limit reached (${total_cost:.4f} >= ${args.budget:.2f})")
                 break
-
             if args.delay and i < len(wines) - 1:
                 time.sleep(args.delay)
+    else:
+        # ── Parallel path: API calls in thread pool, DB writes serial ──
+        done_count = 0
+        budget_hit = False
 
-        except json.JSONDecodeError as e:
-            errors += 1
-            log_enrichment(cur, wine_id, args.grade, model, {}, 0, "error", f"JSON parse: {e}")
-            conn.commit()
-            print(f"  [{i+1}/{len(wines)}] ERROR {display} — bad JSON: {e}")
-        except Exception as e:
-            errors += 1
-            log_enrichment(cur, wine_id, args.grade, model, {}, 0, "error", str(e)[:500])
-            conn.commit()
-            print(f"  [{i+1}/{len(wines)}] ERROR {display} — {e}")
+        with ThreadPoolExecutor(max_workers=args.workers) as pool:
+            # Submit all futures
+            future_to_wine = {}
+            for w in wines:
+                wine_id = str(w["id"])
+                display = w["display_name"]
+                fut = pool.submit(_enrich_one, wine_id, display)
+                future_to_wine[fut] = (wine_id, display)
+
+            # Process results as they complete (DB writes are serial)
+            for fut in as_completed(future_to_wine):
+                wine_id, display = future_to_wine[fut]
+                done_count += 1
+                try:
+                    wine_id, display, result, usage, cost, error = fut.result()
+                except Exception as e:
+                    error = str(e)[:500]
+                    result, usage, cost = None, {}, 0.0
+
+                total_cost += cost
+
+                if error:
+                    errors += 1
+                    log_enrichment(cur, wine_id, args.grade, model, usage, cost, "error", error)
+                    conn.commit()
+                    print(f"  [{done_count}/{len(wines)}] ERROR {display} — {error}")
+                elif result:
+                    if args.grade == "C":
+                        write_grade_c(cur, wine_id, result)
+                    elif args.grade == "A":
+                        write_grade_a(cur, wine_id, result)
+                    else:
+                        write_grade_b(cur, wine_id, result)
+                    log_enrichment(cur, wine_id, args.grade, model, usage, cost, "completed")
+                    conn.commit()
+                    success += 1
+
+                    hook_preview = (result.get("hook") or "")[:120]
+                    style = result.get("style_profile", "")
+                    quality = result.get("sensory", {}).get("quality_level", "?")
+                    print(f"  [{done_count}/{len(wines)}] {display}")
+                    print(f"    -> {style} | {quality} | ${cost:.4f}")
+                    print(f"    -> {hook_preview}...")
+
+                sys.stdout.flush()
+
+                if total_cost >= args.budget and not budget_hit:
+                    budget_hit = True
+                    print(f"\n  Budget limit reached (${total_cost:.4f} >= ${args.budget:.2f})")
+                    print(f"  Waiting for {args.workers - 1} in-flight requests to finish...")
 
     print(f"\n{'='*60}")
     print(f"  RESULTS: {success} enriched, {errors} errors, ${total_cost:.4f} spent")

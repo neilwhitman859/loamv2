@@ -35,6 +35,14 @@ interface FarmingCert { name: string; certification_status: string | null; certi
 interface BioCert { name: string }
 interface ProducerAlias { alias: string; alias_type: string | null }
 interface ChildProducer { id: string; name: string }
+interface ProducerInsight {
+  ai_overview: string | null
+  ai_winemaking_style: string | null
+  ai_reputation: string | null
+  ai_value_assessment: string | null
+  ai_portfolio_summary: string | null
+  ai_insider_take: string | null
+}
 
 const COLOR_DOTS: Record<string, string> = {
   red: 'bg-red-700',
@@ -53,6 +61,7 @@ export default function ProducerPage() {
   const [aliases, setAliases] = useState<ProducerAlias[]>([])
   const [children, setChildren] = useState<ChildProducer[]>([])
   const [parentProducer, setParentProducer] = useState<{ id: string; name: string } | null>(null)
+  const [insight, setInsight] = useState<ProducerInsight | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -110,6 +119,11 @@ export default function ProducerPage() {
             .eq('producer_id', id)
             .then(({ data: d }) => { if (d) setAliases(d) }))
 
+          p.push(supabase.from('producer_insights')
+            .select('ai_overview, ai_winemaking_style, ai_reputation, ai_value_assessment, ai_portfolio_summary, ai_insider_take')
+            .eq('producer_id', id).maybeSingle()
+            .then(({ data: d }) => { if (d) setInsight(d) }))
+
           // Child producers
           p.push(supabase.from('producers')
             .select('id, name')
@@ -156,6 +170,13 @@ export default function ProducerPage() {
           <p className="text-xs text-earth-400 mt-1">Also known as: {aliases.map(a => a.alias).join(', ')}</p>
         )}
       </header>
+
+      {/* AI Overview */}
+      {insight?.ai_overview && (
+        <Section title="Overview">
+          <p className="text-sm text-earth-600 whitespace-pre-line">{insight.ai_overview} <AiLabel /></p>
+        </Section>
+      )}
 
       {/* Facts */}
       <Section title="Details">
@@ -206,6 +227,41 @@ export default function ProducerPage() {
       {producer.philosophy && (
         <Section title="Philosophy">
           <p className="text-sm text-earth-600">{producer.philosophy}</p>
+        </Section>
+      )}
+
+      {/* Winemaking */}
+      {insight?.ai_winemaking_style && (
+        <Section title="Winemaking">
+          <p className="text-sm text-earth-600 whitespace-pre-line">{insight.ai_winemaking_style} <AiLabel /></p>
+        </Section>
+      )}
+
+      {/* Reputation */}
+      {insight?.ai_reputation && (
+        <Section title="Reputation">
+          <p className="text-sm text-earth-600 whitespace-pre-line">{insight.ai_reputation} <AiLabel /></p>
+        </Section>
+      )}
+
+      {/* Portfolio */}
+      {insight?.ai_portfolio_summary && (
+        <Section title="Portfolio">
+          <p className="text-sm text-earth-600 whitespace-pre-line">{insight.ai_portfolio_summary} <AiLabel /></p>
+        </Section>
+      )}
+
+      {/* Value */}
+      {insight?.ai_value_assessment && (
+        <Section title="Value">
+          <p className="text-sm text-earth-600 whitespace-pre-line">{insight.ai_value_assessment} <AiLabel /></p>
+        </Section>
+      )}
+
+      {/* Insider Take */}
+      {insight?.ai_insider_take && (
+        <Section title="Insider take">
+          <p className="text-sm text-earth-600 whitespace-pre-line">{insight.ai_insider_take} <AiLabel /></p>
         </Section>
       )}
 
@@ -285,6 +341,10 @@ function Fact({ label, value, link }: { label: string; value: string; link?: str
       )}
     </div>
   )
+}
+
+function AiLabel() {
+  return <span className="inline-block text-[9px] font-semibold uppercase tracking-widest text-earth-300 ml-1 align-middle" aria-label="AI-generated content">AI</span>
 }
 
 function Loading() {

@@ -36,6 +36,7 @@ interface AppellationInsight {
   ai_key_grapes: string | null
   ai_aging_generalization: string | null
   ai_notable_producers_summary: string | null
+  ai_insider_take: string | null
 }
 
 interface GrapeAssoc {
@@ -74,7 +75,7 @@ export default function AppellationPage() {
           region:regions!appellations_region_id_fkey(id, name)`)
         .eq('id', id).single(),
       supabase.from('appellation_insights')
-        .select('ai_overview, ai_climate_profile, ai_soil_profile, ai_signature_style, ai_key_grapes, ai_aging_generalization, ai_notable_producers_summary')
+        .select('ai_overview, ai_climate_profile, ai_soil_profile, ai_signature_style, ai_key_grapes, ai_aging_generalization, ai_notable_producers_summary, ai_insider_take')
         .eq('appellation_id', id).maybeSingle(),
       supabase.from('appellation_grapes')
         .select('association_type, min_percentage, max_percentage, grape:grapes!appellation_grapes_grape_id_fkey(id, display_name, color)')
@@ -285,6 +286,13 @@ export default function AppellationPage() {
       {insight?.ai_notable_producers_summary && (
         <Section title="Notable producers">
           <p className="text-sm text-earth-600">{insight.ai_notable_producers_summary} <AiLabel /></p>
+        </Section>
+      )}
+
+      {/* Insider take */}
+      {insight?.ai_insider_take && (
+        <Section title="Insider take">
+          <p className="text-sm text-earth-600">{insight.ai_insider_take} <AiLabel /></p>
         </Section>
       )}
 
