@@ -264,7 +264,7 @@
   <div class="quality-item">
     <div class="q-label">Sprint vitals</div>
     <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
-      <tr><td style="color:var(--muted);">Budget spent</td><td style="text-align:right">$17.72 / $30</td></tr>
+      <tr><td style="color:var(--muted);">Budget spent</td><td style="text-align:right">$37.44 / $50</td></tr>
       <tr><td style="color:var(--muted);">Voice iterations</td><td style="text-align:right">1 (S4.3)</td></tr>
       <tr><td style="color:var(--muted);">User lookups</td><td style="text-align:right">0</td></tr>
       <tr><td style="color:var(--muted);">Humans shown</td><td style="text-align:right">0 / 5</td></tr>
@@ -306,7 +306,8 @@
   <li><strong>S4.3</strong> &mdash; <span style="color:var(--green);">&#10003;</span> 14 producers enriched, 5 wines voice-calibrated, wine_comparables + 3 market columns + insider_take</li>
   <li><strong>S4.4</strong> &mdash; <span style="color:var(--green);">&#10003;</span> 209 wines Grade A enriched (user&rsquo;s 5 producers, Sonnet, $6.59)</li>
   <li><strong>S4.5</strong> &mdash; <span style="color:var(--green);">&#10003;</span> 306 wines Grade A (French recs + benchmarks, Sonnet 8-worker, $11.13)</li>
-  <li><strong>S4.6</strong> &mdash; Frontend polish + deploy + share with real humans</li>
+  <li><strong>S4.6</strong> &mdash; <span style="color:var(--green);">&#10003;</span> Frontend wired (6 pages, 11 fields) + deploy + voice v2 re-enrichment ($19.52)</li>
+  <li><strong>S4.7</strong> &mdash; Quality gate: grape backfill, dedup merge, hide empties, spot-check, share</li>
 </ul>
 
 <!-- KEY NUMBERS -->
@@ -321,6 +322,19 @@
   <div class="n-item"><div class="n-label">Appellations</div><div class="n-value">3,662</div></div>
   <div class="n-item"><div class="n-label">Insights</div><div class="n-value">5,480</div></div>
 </div>
+
+<!-- PARKING LOT -->
+<div class="section-label">Parking Lot</div>
+<ul class="next-list">
+  <li><strong>Dedup</strong> &mdash; Web-verified identity resolution: multi-stage Haiku dedup + web search + data fill. Open to cheap models (DeepSeek, MiniMax, StepFun). Demo set first, then corpus.</li>
+  <li><strong>Slugs</strong> &mdash; Human-readable URLs (/wine/ridge-monte-bello) before sharing. Add slug columns + resolve by slug or UUID.</li>
+  <li><strong>LLM bake-off</strong> &mdash; Test Haiku, Gemini Flash, DeepSeek V3, local models on 20 wines vs Sonnet baseline. Pick cheapest model at 80%+ quality for scale enrichment.</li>
+  <li><strong>Label images</strong> &mdash; 3M+ TTB images on external drive. Cloudflare R2 hosting (~$12/mo). Upload pipeline + wine page rendering.</li>
+  <li><strong>Voice audit</strong> &mdash; Spot-check 5 wines user personally knows. Verify factual accuracy. Determine if L3 fact-check gate needed before sharing.</li>
+  <li><strong>Producer site scrape</strong> &mdash; Run producer_site_scrape.py on demo 14 producers. Fill blend %, ABV, winemaker notes from source. Reduces AI guesswork.</li>
+  <li><strong>Demo set dupes</strong> &mdash; Scan 515 demo wines for internal dupes (Armillary confirmed). Merge before sharing.</li>
+  <li><strong>Prompt refinement</strong> &mdash; Few-shot examples in prompt to break structural templates (&ldquo;the trap with X&rdquo; pattern). Post-processing diversity pass. Sprint 5 voice iteration.</li>
+</ul>
 
 <!-- DONE -->
 <div class="section-label">Done</div>

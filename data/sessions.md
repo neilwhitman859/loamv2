@@ -4,7 +4,7 @@ Active and recent sessions. Read at session start, append when starting/finishin
 
 ## Active
 
-- **2026-04-13 S4.4+S4.5: Track 3 — Wine enrichment (all demo producers)** — **515/515 wines Grade A, $17.72, 0 final errors.** S4.4: 209 wines serial (user's 5 producers, $6.59). S4.5: 306 wines 8-worker parallel (French recs + benchmarks, $11.13, 4 retried at 3500 max_tokens). Added Grade A tier + cascade context + --producer + --workers parallel to batch_enrich.py. Fixed stray López de Heredia dupe. Synced data_grades. Tables: `wine_insights`, `wine_vintage_tasting_insights`, `wines`, `producers`.
+- **2026-04-13 S4.4–S4.6: Tracks 3–5 — Wine enrichment + frontend + voice audit + re-enrichment** — **515/515 wines Grade A, $37.44 total.** S4.4: 209 wines serial ($6.59). S4.5: 306 wines 8-worker parallel ($11.33). S4.6: Frontend wired (WinePage 11 AI fields, ProducerPage 6 producer_insights fields, ai_insider_take on Appellation/Region/Grape pages). Voice audit: found "genuinely" at 37%, "honest truth" at 19%. Revised prompt with banned words/patterns + variation rules. Re-enriched all 515 ($19.52): "honest truth" 99→0, "if a customer" 104→0, "genuinely" 190→55. Q3 data audit: 12% demo dupes (~60 wines), pH/oak/cases/notes zero across all producers, Huet 2% grape coverage. Session prompt written for S4.7 quality gate. Logged decisions: web-verified identity resolution, URL slugs, LLM bake-off lineup. Tables: `wine_insights`, `wine_vintage_tasting_insights`, `wines`, `producers`. Files: `pipeline/enrich/batch_enrich.py` (Grade A + parallel + --force), 6 frontend pages, `data/session_prompts/s4_7_quality_gate.md`.
 
 ## Done
 

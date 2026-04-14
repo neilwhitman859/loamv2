@@ -1703,3 +1703,15 @@ Root cause of doc drift is duplication: Sprint 3 described in 4 places, wine cou
 ### 2026-04-12: Sprint 3 catches all cheap fixes from the 275 findings
 
 Sprint 3 is a cleanup sprint — it should tackle everything it can, not just the synthesis.md tracks. Minor fixes (marquee wine data corrections, fake 1973 years, display_name backfill, dead components, autoFocus, wineCount inflation) folded into existing tracks.
+
+### 2026-04-13: Web-verified identity resolution — multi-stage dedup + data fill tool (Sprint 5)
+
+Build a multi-purpose pipeline that combines dedup, identity verification, and structured data extraction in one pass. Stage 1: fast Haiku dedup on metadata for obvious cases (~$3 for full corpus). Stage 2: web search + Sonnet/cheaper model for ambiguous pairs AND to fill data gaps (blend %, ABV, winemaker notes) from producer websites. Motivated by Armillary dupe: metadata-only matching missed "Armillary" vs "Armillary Cabernet Sauvignon" from same producer, and producer website had the blend data (96% Cab/4% Merlot) we were missing. Open to non-Anthropic models for cost efficiency (DeepSeek, MiniMax, StepFun). Design carefully before building — touches dedup, data verification, and enrichment grounding simultaneously.
+
+### 2026-04-13: URL slugs needed before sharing with real humans (Sprint 5)
+
+Current UUID-based URLs (/wine/7dc2a873-...) are ugly and useless for sharing. Add slug columns to wines, producers, appellations, regions, grapes, countries. Generate from display_name, handle collisions with numeric suffixes, resolve by slug OR uuid. Do before demo sharing — URLs are part of first impression.
+
+### 2026-04-13: LLM bake-off lineup for Sprint 5 scale enrichment
+
+Test 8+ models on 20 wines, blind-scored against Sonnet baseline. Tiered strategy: cheapest model per task type. Lineup: Sonnet (baseline), Haiku, Gemini 2.0 Flash, DeepSeek V3, GPT-4o Mini, Qwen 2.5 72B, Mistral Small, Llama 3.1 70B. Also test rock-bottom models (Gemini Flash Lite at $0.02/M, Qwen 7B, Llama 8B via Groq) for classification-only tasks like dedup. Three tiers: dedup/classification (cheapest that clears 90% accuracy), web scrape extraction (mid-tier, reliable JSON), customer-facing prose (best affordable at scale). DeepSeek V3 cache hits relevant — wine enrichment has a long shared prompt prefix. Open to: Yi-Lightning, GLM-4-Flash (free tier), Mistral Nemo 12B, Phi-3.5 Mini. Cost to run full bake-off: ~$1-2.

@@ -286,7 +286,20 @@ Rules:
 - Include market and value perspective where relevant
 - Explain technical concepts briefly inline when they matter
 - Food pairings: name real dishes (Nashville hot chicken, not "grilled meats"), cover casual and fine dining, explain why the pairing works
-- Never manufacture specificity — if you don't know the soil type, don't guess"""
+- Never manufacture specificity — if you don't know the soil type, don't guess
+
+BANNED WORDS — do not use these ANYWHERE in your output. Zero tolerance. If you catch yourself writing one, delete it:
+genuinely, genuine, elegant, exquisite, harmonious, remarkable, world-class, showcases, embodies, captures the essence, refined, sophisticated, masterfully, lovingly, painstakingly, defensible, intellectually honest, intellectually serious
+
+BANNED PATTERNS — do not use these structures:
+- "one of the most [adjective] [noun]" — be specific instead of superlative
+- "Here's the honest truth" / "The honest version" / "The honest caveat" — just state the point directly
+- "If a customer asks me" / "If someone comes into the shop" — you can use this framing ONCE but vary your approach: lead with a comparison, a contrarian point, a specific fact, or a price observation instead
+- "genuinely [adjective]" — drop the adverb entirely, let the fact speak
+- "Most people" as an opener — use once at most, not as a default structure
+- Starting consecutive fields with similar structures — vary your sentence openings across fields
+
+VARIATION RULE: Each field should open with a DIFFERENT sentence structure. If hook starts with the wine name, insider_take should NOT. If value_assessment starts with a price, market_position should start with a role or audience. Read your own output as if it will appear on one page — no two sections should feel templated."""
 
 
 def _wine_identity_block(ctx: dict) -> str:
@@ -516,17 +529,17 @@ Enrich this wine with a complete Grade A profile. Return ONLY valid JSON (no mar
 ## Output Format
 Return a JSON object with these fields:
 {{
-  "hook": "2-3 sentences. The 30-second story — what makes this wine worth knowing about.",
-  "wine_summary": "1-2 paragraphs. The rich story: why this wine matters, what makes the producer distinctive, how terroir shapes the wine. Be specific.",
-  "terroir_expression": "1 paragraph. How the specific soil, climate, and site express themselves in this wine. Connect geology to glass. Draw from the appellation context above when available.",
-  "vinification_summary": "1 paragraph. How the wine is made and why those choices matter. Draw from producer winemaking style context when available.",
-  "food_pairing": "3-5 specific pairings with brief reasoning. Name real dishes, not categories. Include casual and fine dining.",
+  "hook": "2-3 sentences. The 30-second story. Lead with what makes THIS wine specific — a vineyard detail, a winemaking choice, a market position. Do not start with the producer name if it's already in the wine name.",
+  "wine_summary": "1-2 paragraphs. Why this wine matters, what makes the producer distinctive, how terroir shapes the wine. Ground every claim in the facts packet or appellation context.",
+  "terroir_expression": "1 paragraph. How soil, climate, and site express in this wine. Draw from appellation context above. Connect geology to glass.",
+  "vinification_summary": "1 paragraph. How the wine is made and why those choices matter. Draw from producer winemaking style context. Explain one technical concept inline.",
+  "food_pairing": "3-5 specific pairings with brief reasoning. Name real dishes (not categories). Include casual and fine dining. Explain why each works with this specific wine.",
   "comparable_wines": "2-3 similar wines with reasoning. Format: 'Wine Name — why it\\'s comparable.'",
-  "style_profile": "One phrase, e.g., 'Full-bodied dry red with firm tannins and earthy depth'",
+  "style_profile": "One phrase. Grape + body + structure + one distinguishing trait. E.g., 'Full-bodied dry red with firm tannins and earthy depth'",
   "cellar_recommendation": "1-2 sentences on when to drink and storage advice.",
-  "value_assessment": "2-3 sentences. Is this wine worth the price? What does it compete with at its price point? Be honest and specific.",
-  "market_position": "2-3 sentences. Where this wine sits in the market — restaurant wine, collector wine, everyday drinker? Who buys it and why?",
-  "insider_take": "2-3 sentences. The honest take a knowledgeable wine shop owner would give a trusted customer. What's the real story? Have a point of view.",
+  "value_assessment": "2-3 sentences. Name the price range explicitly. Name 1-2 specific competitors at the same price. Say whether it's worth it and why — don't hedge. Open with the price, not with an adjective.",
+  "market_position": "2-3 sentences. Who drinks this wine and where — restaurant lists, retail shelves, collectors, casual drinkers? Be concrete about the audience. Open differently than value_assessment.",
+  "insider_take": "2-3 sentences. A strong opinion about this wine that helps someone decide whether to buy it. Take a side. Say what most people get wrong about it, or what the real tradeoff is, or who should skip it. Do NOT open with 'Here\\'s the honest truth' — just state the point. Vary your structure: sometimes lead with a comparison, sometimes a warning, sometimes a recommendation.",
   "aging_potential_years": null or integer,
   "drinking_window_min_years": null or integer,
   "drinking_window_max_years": null or integer,
@@ -837,7 +850,7 @@ def log_enrichment(cur, wine_id: str, grade: str, model: str, usage: dict, cost:
 # ── Wine selection ────────────────────────────────────────────
 
 def select_wines(cur, grade: str, limit: int, wine_ids: list[str] = None,
-                  producer_ids: list[str] = None) -> list[dict]:
+                  producer_ids: list[str] = None, force: bool = False) -> list[dict]:
     """Select wines to enrich, ordered by priority."""
     if wine_ids:
         placeholders = ",".join(["%s"] * len(wine_ids))
@@ -847,25 +860,35 @@ def select_wines(cur, grade: str, limit: int, wine_ids: list[str] = None,
             WHERE w.id IN ({placeholders}) AND w.deleted_at IS NULL
         """, wine_ids)
     elif producer_ids:
-        # Select all wines from given producers that don't already have target-grade insights
+        # Select all wines from given producers
         prod_ph = ",".join(["%s"] * len(producer_ids))
-        cur.execute(f"""
-            SELECT w.id, w.display_name, w.data_grade
-            FROM wines w
-            WHERE w.deleted_at IS NULL
-              AND w.producer_id IN ({prod_ph})
-              AND NOT EXISTS (
-                  SELECT 1 FROM wine_insights wi
-                  WHERE wi.wine_id = w.id
-                  AND wi.enrichment_tier = %s
-              )
-            ORDER BY
-                (SELECT count(*) FROM wine_vintage_scores s WHERE s.wine_id = w.id) DESC,
-                (SELECT count(*) FROM wine_vintage_prices p WHERE p.wine_id = w.id) DESC,
-                (SELECT count(*) FROM wine_grapes wg WHERE wg.wine_id = w.id) DESC,
-                w.display_name
-            LIMIT %s
-        """, (*producer_ids, grade, limit))
+        if force:
+            cur.execute(f"""
+                SELECT w.id, w.display_name, w.data_grade
+                FROM wines w
+                WHERE w.deleted_at IS NULL
+                  AND w.producer_id IN ({prod_ph})
+                ORDER BY w.display_name
+                LIMIT %s
+            """, (*producer_ids, limit))
+        else:
+            cur.execute(f"""
+                SELECT w.id, w.display_name, w.data_grade
+                FROM wines w
+                WHERE w.deleted_at IS NULL
+                  AND w.producer_id IN ({prod_ph})
+                  AND NOT EXISTS (
+                      SELECT 1 FROM wine_insights wi
+                      WHERE wi.wine_id = w.id
+                      AND wi.enrichment_tier = %s
+                  )
+                ORDER BY
+                    (SELECT count(*) FROM wine_vintage_scores s WHERE s.wine_id = w.id) DESC,
+                    (SELECT count(*) FROM wine_vintage_prices p WHERE p.wine_id = w.id) DESC,
+                    (SELECT count(*) FROM wine_grapes wg WHERE wg.wine_id = w.id) DESC,
+                    w.display_name
+                LIMIT %s
+            """, (*producer_ids, grade, limit))
     else:
         target_grades = ("F", "D") if grade == "C" else ("F", "D", "C")
         placeholders = ",".join(["%s"] * len(target_grades))
@@ -905,6 +928,7 @@ def main():
     parser.add_argument("--budget", type=float, default=999.0, help="Max USD to spend")
     parser.add_argument("--delay", type=float, default=0.0, help="Seconds between API calls")
     parser.add_argument("--workers", type=int, default=1, help="Parallel API workers (1=serial, 8=fast)")
+    parser.add_argument("--force", action="store_true", help="Re-enrich even if already at target grade")
     args = parser.parse_args()
 
     model = HAIKU_MODEL if args.grade == "C" else SONNET_MODEL
@@ -916,7 +940,7 @@ def main():
     # Select wines
     wine_ids = args.ids.split(",") if args.ids else None
     producer_ids = args.producer.split(",") if args.producer else None
-    wines = select_wines(cur, args.grade, args.limit, wine_ids, producer_ids)
+    wines = select_wines(cur, args.grade, args.limit, wine_ids, producer_ids, force=args.force)
     print(f"\n{'='*60}")
     print(f"  BATCH ENRICHMENT — Grade {args.grade} ({model.split('-')[1].title()})")
     print(f"{'='*60}")
