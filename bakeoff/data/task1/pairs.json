@@ -5296,7 +5296,7 @@
   {
     "pair_id": "D001",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "6a3da3b2-2397-4676-b7a7-6bebc00c42c6",
       "name": "Altenberg Alte Reben Grosse Lage Nr23",
@@ -5330,7 +5330,7 @@
       "name": "Van Volxem"
     },
     "similarity": 0.852941,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: German lot number Nr23 = distinct auction cask bottling",
     "metadata_block": "Producer: Van Volxem\nWine A color: white\nWine B color: white\nWine A grapes: RIESLING WEISS (100.0%)\nWine B grapes: RIESLING WEISS (100.0%)"
   },
   {
@@ -5472,7 +5472,7 @@
   {
     "pair_id": "D006",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "9d08e278-aacc-45dd-b7f9-67eb8bfb1e4e",
       "name": "La Strada",
@@ -5510,13 +5510,13 @@
       "name": "Fromm"
     },
     "similarity": 0.7,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: Different grape composition: Merlot alone vs Cot+Merlot blend",
     "metadata_block": "Producer: Fromm\nWine A color: red\nWine B color: red\nWine A grapes: MERLOT NOIR (100.0%)\nWine B grapes: COT, MERLOT NOIR"
   },
   {
     "pair_id": "D007",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "9b8a6fa2-1599-4eaa-94b6-72422527ba55",
       "name": "Corte",
@@ -5556,13 +5556,13 @@
       "name": "Vistalba"
     },
     "similarity": 0.75,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: Different grapes (Malbec/CabSauv vs Merlot) + 'A' suffix = different tier",
     "metadata_block": "Producer: Vistalba\nWine A color: red\nWine B color: red\nWine A grapes: COT, CABERNET SAUVIGNON\nWine B grapes: MERLOT NOIR (100.0%)\nWine B LWIN: 2275082"
   },
   {
     "pair_id": "D008",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "8b8af62b-fde1-4a3e-bb5e-656f5333b428",
       "name": "Corte C",
@@ -5606,13 +5606,13 @@
       "name": "Vistalba"
     },
     "similarity": 0.857143,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: 'C' suffix = quality tier designation, has distinct LWIN",
     "metadata_block": "Producer: Vistalba\nWine A color: red\nWine B color: red\nWine A grapes: COT (80.0%), CABERNET SAUVIGNON (20.0%)\nWine B grapes: COT, CABERNET SAUVIGNON\nWine A LWIN: 1500006"
   },
   {
     "pair_id": "D009",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "ae996a43-93e6-4df1-be9e-fed0268a4647",
       "name": "Alma Grande Cuvee Brut",
@@ -5638,13 +5638,13 @@
       "name": "Bellavista"
     },
     "similarity": 0.782609,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: 'Brut' dosage designation included/omitted — same Franciacorta cuvée",
     "metadata_block": "Producer: Bellavista\nWine A color: white\nWine B color: white\nWine A LWIN: 1734702"
   },
   {
     "pair_id": "D010",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "6a688c01-2d8c-403a-ba5f-d47c6123ee32",
       "name": "Gran Cuvee",
@@ -5670,7 +5670,7 @@
       "name": "Bellavista"
     },
     "similarity": 0.6875,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: Gran Cuvee vs Gran Cuvee Rosé — different color, different wine",
     "metadata_block": "Producer: Bellavista\nWine A color: rose\nWine B color: rose\nWine B LWIN: 1514764"
   },
   {
@@ -5883,7 +5883,7 @@
   {
     "pair_id": "D017",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "0d3a19ae-ab98-4394-8884-02705a18e47d",
       "name": "Comune di Gavi",
@@ -5914,7 +5914,7 @@
       "name": "Villadoria"
     },
     "similarity": 0.833333,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: 'Comune di Gavi' vs 'del Comune di Gavi' — Italian article variant, same Cortese",
     "metadata_block": "Producer: Villadoria\nWine A color: white\nWine B color: white\nWine A grapes: CORTESE (100.0%)\nWine B LWIN: 1928017"
   },
   {
@@ -5988,7 +5988,7 @@
   {
     "pair_id": "D020",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "91278e53-e0c7-470b-a215-267882090016",
       "name": "The Banished Dark Red",
@@ -6014,7 +6014,7 @@
       "name": "19 Crimes"
     },
     "similarity": 0.857143,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: 'The Banished Dark Red' vs 'The Banished Dark' — 'Red' descriptor variant",
     "metadata_block": "Producer: 19 Crimes\nWine A color: red\nWine B color: red\nWine A LWIN: 1976887"
   },
   {
@@ -6133,7 +6133,7 @@
   {
     "pair_id": "D024",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "51d5267f-9bf5-46a1-8b30-38e90ff7112c",
       "name": "Brut Antique",
@@ -6159,13 +6159,13 @@
       "name": "Cattier"
     },
     "similarity": 0.615385,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: 'Brut Antique' vs 'Antique' — Brut is dosage level, same Champagne cuvée",
     "metadata_block": "Producer: Cattier\nWine A color: white\nWine B color: white\nWine A LWIN: 1188039"
   },
   {
     "pair_id": "D025",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "1b5de18f-67ab-4ab2-b27c-1affd5c8dff8",
       "name": "Brut Millesime",
@@ -6191,13 +6191,13 @@
       "name": "Cattier"
     },
     "similarity": 0.666667,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: 'Brut Millesime' vs 'Millesime' — Brut dosage prefix, same vintage cuvée",
     "metadata_block": "Producer: Cattier\nWine A color: white\nWine B color: white\nWine A LWIN: 1188042"
   },
   {
     "pair_id": "D026",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "6b6c4645-f49a-4616-80b9-0b9738ba07d8",
       "name": "Black Forest Decadent",
@@ -6223,13 +6223,13 @@
       "name": "Cupcake Vineyards"
     },
     "similarity": 0.846154,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: 'Black Forest Decadent' vs 'Black Forest Decadent Red' — Red descriptor suffix",
     "metadata_block": "Producer: Cupcake Vineyards\nWine A color: red\nWine B color: red\nWine B LWIN: 2006075"
   },
   {
     "pair_id": "D027",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "016ef0e8-8058-472e-9e7f-44922e3d69a7",
       "name": "Cupcake Vineyards Moscato, Igt Tre Venezie",
@@ -6267,7 +6267,7 @@
       "name": "Cupcake Vineyards"
     },
     "similarity": 0.813953,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: Same Moscato product, 'Igt Tre Venezie' renamed to 'Trevenezie' in 2017",
     "metadata_block": "Producer: Cupcake Vineyards\nWine A color: white\nWine B color: white\nWine A grapes: MUSCAT OF ALEXANDRIA\nWine B grapes: ITALIA, MUSCAT A PETITS GRAINS ROSES"
   },
   {
@@ -6307,7 +6307,7 @@
   {
     "pair_id": "D029",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "2c263fac-8a47-4971-bda5-edf6a1ad0aea",
       "name": "Boekenhoutskloof Cabernet Sauvignon, Franschhoek",
@@ -6341,7 +6341,7 @@
       "name": "Boekenhoutskloof"
     },
     "similarity": 0.6,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: Franschhoek vs Coastal Region = different sourcing/price tier, different wines",
     "metadata_block": "Producer: Boekenhoutskloof\nWine A color: red\nWine B color: red\nWine A grapes: CABERNET SAUVIGNON\nWine B grapes: CABERNET SAUVIGNON"
   },
   {
@@ -6518,7 +6518,7 @@
   {
     "pair_id": "D035",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "4770565f-b872-40e6-98dd-20a48cf36862",
       "name": "Brecciarolo",
@@ -6551,7 +6551,7 @@
       "name": "Velenosi"
     },
     "similarity": 0.705882,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: 'Brecciarolo' vs 'Brecciarolo Gold' — Gold is quality tier designation",
     "metadata_block": "Producer: Velenosi\nWine A color: red\nWine B color: red\nWine A grapes: SANGIOVESE, MONTEPULCIANO"
   },
   {
@@ -6591,7 +6591,7 @@
   {
     "pair_id": "D037",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "2cf7d975-ce55-4166-9001-e7c104c58859",
       "name": "Blend 105 Red Table",
@@ -6617,13 +6617,13 @@
       "name": "Chatter Creek"
     },
     "similarity": 0.791667,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: 'Red Table' vs 'Red Table Wine' — legal suffix variant",
     "metadata_block": "Producer: Chatter Creek\nWine A color: red\nWine B color: red\nWine B LWIN: 2770848"
   },
   {
     "pair_id": "D038",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "8f870782-530b-4f60-872a-b78998ee79b5",
       "name": "Chatterneuf-du-Pape red Table",
@@ -6649,7 +6649,7 @@
       "name": "Chatter Creek"
     },
     "similarity": 0.857143,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: 'red Table' vs 'red Table Wine' — legal suffix variant",
     "metadata_block": "Producer: Chatter Creek\nWine A color: red\nWine B color: red\nWine B LWIN: 2770747"
   },
   {
@@ -6721,7 +6721,7 @@
   {
     "pair_id": "D041",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "298a9d40-6f56-4b6d-8057-c270e99c57ba",
       "name": "Apanage Cuvee 1874",
@@ -6747,13 +6747,13 @@
       "name": "Pommery"
     },
     "similarity": 0.791667,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: 'Apanage Cuvee 1874' vs 'Brut Apanage Cuvee 1874' — Brut dosage prefix",
     "metadata_block": "Producer: Pommery\nWine A color: white\nWine B color: white\nWine B LWIN: 3095540"
   },
   {
     "pair_id": "D042",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "3e33200c-cc52-4090-a830-f59cb230ee80",
       "name": "Brut Apanage Prestige",
@@ -6779,7 +6779,7 @@
       "name": "Pommery"
     },
     "similarity": 0.761905,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: 'Brut Apanage Prestige' vs 'Apanage Prestige' — Brut dosage prefix",
     "metadata_block": "Producer: Pommery\nWine A color: white\nWine B color: white\nWine A LWIN: 2337555"
   },
   {
@@ -6885,7 +6885,7 @@
   {
     "pair_id": "D046",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "4f0ba215-1c63-4189-9f9d-c295b567e014",
       "name": "Nymphe Emue",
@@ -6911,13 +6911,13 @@
       "name": "Maris"
     },
     "similarity": 0.705882,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: Nymphe Emue vs Nymphe Emue Rosé — different color",
     "metadata_block": "Producer: Maris\nWine A color: rose\nWine B color: rose\nWine B LWIN: 1708965"
   },
   {
     "pair_id": "D047",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "86efe49f-a0b8-437e-a90d-d0791c9a6d61",
       "name": "Happs Merlot, Margaret River",
@@ -6951,7 +6951,7 @@
       "name": "Happs"
     },
     "similarity": 0.6,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: 'Merlot' vs 'Cabernet' — different variety names despite grape data overlap",
     "metadata_block": "Producer: Happs\nWine A color: red\nWine B color: red\nWine A grapes: MERLOT NOIR (100.0%)\nWine B grapes: MERLOT NOIR (100.0%)"
   },
   {
@@ -7025,7 +7025,7 @@
   {
     "pair_id": "D050",
     "stratum": "D",
-    "ground_truth": "AMBIGUOUS",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "38142653-f8ce-49d0-8143-8c3567fa8a80",
       "name": "Birkweiler Rosenberg",
@@ -7063,7 +7063,7 @@
       "name": "Dr. Wehrheim"
     },
     "similarity": 0.869565,
-    "rationale": "Requires domain knowledge — manual review needed",
+    "rationale": "Opus analysis: Spelling variant BUT different grapes (PinotGris/Blanc vs Chardonnay) = different wines",
     "metadata_block": "Producer: Dr. Wehrheim\nWine A color: white\nWine B color: white\nWine A grapes: PINOT GRIS, PINOT BLANC\nWine B grapes: CHARDONNAY BLANC"
   }
 ]

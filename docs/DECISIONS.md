@@ -1719,3 +1719,11 @@ Test 8+ models on 20 wines, blind-scored against Sonnet baseline. Tiered strateg
 ### 2026-04-14: Terminology change — Sprints and Blocks, not Sessions
 
 Sprint = a collection of blocks (Sprint 5: AI Bakeoff). Block = an atomic unit of work like S5.1, always completed in one chat session. Session = a chat conversation, which may contain one or more blocks. This resolves the overloaded use of "session" to mean both "a unit of work" and "a chat conversation." New writing uses the new terms; existing docs are not mass-renamed.
+
+### 2026-04-14: Bake-off Tasks 1, 2, and 3 are equals — all get full rigor
+
+The bakeoff_brief.md framed Tasks 1 and 2 as secondary to Task 3 ("tested with less ceremony"). This is wrong. Structured data correctness IS the product — a wrong number in a fact grid hurts more than mediocre prose. All three tasks get equal-rigor test sets, ground truth, and evaluation. Task 2 test set rebuilt with diverse producer HTML (not 36% from 2 producers), Opus-quality ground truth extraction (not regex), and cross-validation against TTB data. Task 1 ambiguous pairs resolved to definitive labels. bakeoff_brief.md archived as historical artifact — model lists and operational notes extracted, editorial framing superseded.
+
+### 2026-04-14: bakeoff_brief.md is an archived artifact
+
+The external research brief provided model lists, OpenRouter slugs, and operational context. These facts have been incorporated into DESIGN.md and the build scripts. The brief's editorial framing (Task 3 is "the main event," Tasks 1/2 get "less ceremony") is superseded by the equal-rigor decision above. File moved to bakeoff/reference/.
