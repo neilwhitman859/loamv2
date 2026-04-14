@@ -192,11 +192,11 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">S4.7 &middot; Apr 14, 2026</div>
+  <div class="meta">S5.0 &middot; Apr 14, 2026</div>
 </div>
 
 <div class="now">
-  <strong>S4.7: Quality gate + Sprint 5 plan.</strong> Fixed critical PostgREST bug (duplicate FK constraints on wines table broke all wine pages). Added &ldquo;Data not available&rdquo; labels to empty vintage FactGrids (Chemistry/Production/Winemaking/Aging/Finishing). Removed nonexistent lwin column from query. Wrote Sprint 5 plan: Dedup &rarr; Data Fill &rarr; Model Bake-off &rarr; Scale Re-enrichment. Dedup + producer website scraping deferred per user decision.
+  <strong>Sprint 4 (Demo) complete.</strong> Sprint 5 (AI Bakeoff) open. Bake-off runs first to pick models, then use winners for dedup, data fill, and re-enrichment. Share with friends at the end. S5.1 designs the bake-off and discusses dependencies.
 </div>
 
 <!-- ROADMAP -->
@@ -205,71 +205,31 @@
   <li><span class="marker done-marker">&#10003;</span> Build <span class="detail">&mdash; 156K wines from 32 sources</span></li>
   <li><span class="marker done-marker">&#10003;</span> Audit <span class="detail">&mdash; 9 experts, 275 findings</span></li>
   <li><span class="marker done-marker">&#10003;</span> Fix <span class="detail">&mdash; 158 fixed, 101 deferred, $0</span></li>
-  <li><span class="marker current-marker">&#9654;</span> <span class="current">Demo</span> <span class="detail">&mdash; ~400 wines, 15 producers, show to real humans</span></li>
-  <li><span class="marker future-marker">&#9675;</span> <span class="future">Scale</span> <span class="detail">&mdash; informed by demo feedback</span></li>
+  <li><span class="marker done-marker">&#10003;</span> Demo <span class="detail">&mdash; 515 wines, 14 producers, $37.44</span></li>
+  <li><span class="marker current-marker">&#9654;</span> <span class="current">AI Bakeoff</span> <span class="detail">&mdash; model selection, dedup, data fill, re-enrichment, share</span></li>
 </ul>
 
-<!-- SPRINT 4 PROGRESS -->
-<div class="section-label">Sprint 4 &mdash; Demo</div>
+<!-- SPRINT 5 PROGRESS -->
+<div class="section-label">Sprint 5 &mdash; AI Bakeoff</div>
 <div class="quality-grid">
-  <div class="quality-item">
-    <div class="q-label">Wines enriched</div>
-    <div class="q-value ok">515 <span class="q-pct">/ 515</span></div>
-    <div class="q-detail">Grade A &mdash; all 14 producers complete</div>
-  </div>
   <div class="quality-item">
     <div class="q-label">Tracks</div>
     <ul class="gate">
-      <li><span class="g-yes">&#10003;</span> Quick fixes</li>
-      <li><span class="g-yes">&#10003;</span> Wine selection</li>
-      <li><span class="g-yes">&#10003;</span> Ref enrichment</li>
-      <li><span class="g-yes">&#10003;</span> Producer pipeline</li>
-      <li><span class="g-yes">&#10003;</span> Wine enrichment</li>
-      <li><span class="g-yes">&#10003;</span> Quality gate</li>
+      <li><span class="g-no">&#10007;</span> Model bake-off</li>
+      <li><span class="g-no">&#10007;</span> Dedup (AI-assisted)</li>
+      <li><span class="g-no">&#10007;</span> Data fill (scrape + grape)</li>
+      <li><span class="g-no">&#10007;</span> Re-enrichment</li>
+      <li><span class="g-no">&#10007;</span> Share with friends</li>
     </ul>
-  </div>
-  <div class="quality-item wide">
-    <div class="q-label">Enrichment cascade</div>
-    <ul class="gate">
-      <li><span class="g-yes">&#10003;</span> Countries (4 / 4)</li>
-      <li><span class="g-yes">&#10003;</span> Regions (20 / 20)</li>
-      <li><span class="g-yes">&#10003;</span> Appellations (51 / 51)</li>
-      <li><span class="g-yes">&#10003;</span> Grapes (41 / 41)</li>
-      <li><span class="g-yes">&#10003;</span> Producers (14 / 14)</li>
-      <li><span class="g-yes">&#10003;</span> Wines (515 / 515)</li>
-    </ul>
-  </div>
-  <div class="quality-item">
-    <div class="q-label">Producers</div>
-    <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
-      <tr style="color:var(--muted);"><td>Owner</td><td style="text-align:right">Wines</td><td style="text-align:right">Done</td></tr>
-      <tr><td>Stag&rsquo;s Leap WC</td><td style="text-align:right">49</td><td style="text-align:right; color:var(--green);">49</td></tr>
-      <tr><td>Ridge Vineyards</td><td style="text-align:right">110</td><td style="text-align:right; color:var(--green);">110</td></tr>
-      <tr><td>Fort Ross</td><td style="text-align:right">28</td><td style="text-align:right; color:var(--green);">28</td></tr>
-      <tr><td>L&oacute;pez de Heredia</td><td style="text-align:right">18</td><td style="text-align:right; color:var(--green);">18</td></tr>
-      <tr><td>CIRQ</td><td style="text-align:right">4</td><td style="text-align:right; color:var(--green);">4</td></tr>
-      <tr style="color:var(--muted);"><td>French recs</td><td style="text-align:right">Wines</td><td style="text-align:right">Done</td></tr>
-      <tr><td>Tempier</td><td style="text-align:right">19</td><td style="text-align:right; color:var(--green);">19</td></tr>
-      <tr><td>E. Guigal</td><td style="text-align:right">30</td><td style="text-align:right; color:var(--green);">30</td></tr>
-      <tr><td>Trimbach</td><td style="text-align:right">75</td><td style="text-align:right; color:var(--green);">75</td></tr>
-      <tr><td>Huet</td><td style="text-align:right">58</td><td style="text-align:right; color:var(--green);">58</td></tr>
-      <tr style="color:var(--muted);"><td>Benchmarks</td><td style="text-align:right">Wines</td><td style="text-align:right">Done</td></tr>
-      <tr><td>DRC</td><td style="text-align:right">14</td><td style="text-align:right; color:var(--green);">14</td></tr>
-      <tr><td>Krug</td><td style="text-align:right">71</td><td style="text-align:right; color:var(--green);">71</td></tr>
-      <tr><td>G. Conterno</td><td style="text-align:right">32</td><td style="text-align:right; color:var(--green);">32</td></tr>
-      <tr><td>Ch. Margaux</td><td style="text-align:right">4</td><td style="text-align:right; color:var(--green);">4</td></tr>
-      <tr><td>Ch. Latour</td><td style="text-align:right">3</td><td style="text-align:right; color:var(--green);">3</td></tr>
-    </table>
   </div>
   <div class="quality-item">
     <div class="q-label">Sprint vitals</div>
     <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
-      <tr><td style="color:var(--muted);">Budget spent</td><td style="text-align:right">$37.44 / $50</td></tr>
-      <tr><td style="color:var(--muted);">Voice iterations</td><td style="text-align:right">1 (S4.3)</td></tr>
-      <tr><td style="color:var(--muted);">User lookups</td><td style="text-align:right">0</td></tr>
+      <tr><td style="color:var(--muted);">Budget spent</td><td style="text-align:right">$0 / TBD</td></tr>
+      <tr><td style="color:var(--muted);">Models tested</td><td style="text-align:right">0</td></tr>
+      <tr><td style="color:var(--muted);">Dupes merged</td><td style="text-align:right">0</td></tr>
       <tr><td style="color:var(--muted);">Humans shown</td><td style="text-align:right">0 / 5</td></tr>
-      <tr><td style="color:var(--muted);">Dupes merged</td><td style="text-align:right; color:var(--green);">3 / 3</td></tr>
-      <tr><td style="color:var(--muted);">Sessions</td><td style="text-align:right">S4.7</td></tr>
+      <tr><td style="color:var(--muted);">Sessions</td><td style="text-align:right">S5.0</td></tr>
     </table>
   </div>
 </div>
@@ -299,16 +259,14 @@
 </ul>
 
 <!-- NEXT UP -->
-<div class="section-label">Next Up &mdash; Sprint 4 (Demo)</div>
+<div class="section-label">Next Up &mdash; Sprint 5 (AI Bakeoff)</div>
 <ul class="next-list">
-  <li><strong>S4.1</strong> &mdash; <span style="color:var(--green);">&#10003;</span> Quick fixes, merges, grape display names, manifest (515 wines)</li>
-  <li><strong>S4.2</strong> &mdash; <span style="color:var(--green);">&#10003;</span> Reference enrichment: 8 regions, 35 appellations, 41 grapes (Opus inline, $0)</li>
-  <li><strong>S4.3</strong> &mdash; <span style="color:var(--green);">&#10003;</span> 14 producers enriched, 5 wines voice-calibrated, wine_comparables + 3 market columns + insider_take</li>
-  <li><strong>S4.4</strong> &mdash; <span style="color:var(--green);">&#10003;</span> 209 wines Grade A enriched (user&rsquo;s 5 producers, Sonnet, $6.59)</li>
-  <li><strong>S4.5</strong> &mdash; <span style="color:var(--green);">&#10003;</span> 306 wines Grade A (French recs + benchmarks, Sonnet 8-worker, $11.13)</li>
-  <li><strong>S4.6</strong> &mdash; <span style="color:var(--green);">&#10003;</span> Frontend wired (6 pages, 11 fields) + deploy + voice v2 re-enrichment ($19.52)</li>
-  <li><strong>S4.7</strong> &mdash; <span style="color:var(--green);">&#10003;</span> Quality gate: FK fix, &ldquo;Data not available&rdquo; labels, Sprint 5 plan written</li>
-  <li><strong>S5.0</strong> &mdash; Sprint 5 open: dedup &rarr; data fill &rarr; model bake-off &rarr; scale re-enrichment</li>
+  <li><strong>S5.1</strong> &mdash; Design bake-off: model candidates, eval criteria, test set, dependencies across tracks</li>
+  <li><strong>S5.2</strong> &mdash; Run bake-off: N models &times; 20 wines, score and pick winners</li>
+  <li><strong>S5.3</strong> &mdash; Dedup: demo set &rarr; corpus-wide (AI-assisted with winning model)</li>
+  <li><strong>S5.4</strong> &mdash; Data fill: producer website scrape + grape backfill</li>
+  <li><strong>S5.5</strong> &mdash; Re-enrichment with winning model + real data</li>
+  <li><strong>S5.6</strong> &mdash; Share with 5+ real humans, collect feedback</li>
 </ul>
 
 <!-- KEY NUMBERS -->
@@ -327,14 +285,9 @@
 <!-- PARKING LOT -->
 <div class="section-label">Parking Lot</div>
 <ul class="next-list">
-  <li><strong>Dedup</strong> &mdash; Web-verified identity resolution: multi-stage Haiku dedup + web search + data fill. Open to cheap models (DeepSeek, MiniMax, StepFun). Demo set first, then corpus.</li>
   <li><strong>Slugs</strong> &mdash; Human-readable URLs (/wine/ridge-monte-bello) before sharing. Add slug columns + resolve by slug or UUID.</li>
-  <li><strong>LLM bake-off</strong> &mdash; Test Haiku, Gemini Flash, DeepSeek V3, local models on 20 wines vs Sonnet baseline. Pick cheapest model at 80%+ quality for scale enrichment.</li>
   <li><strong>Label images</strong> &mdash; 3M+ TTB images on external drive. Cloudflare R2 hosting (~$12/mo). Upload pipeline + wine page rendering.</li>
-  <li><strong>Voice audit</strong> &mdash; Spot-check 5 wines user personally knows. Verify factual accuracy. Determine if L3 fact-check gate needed before sharing.</li>
-  <li><strong>Producer site scrape</strong> &mdash; Run producer_site_scrape.py on demo 14 producers. Fill blend %, ABV, winemaker notes from source. Reduces AI guesswork.</li>
-  <li><strong>Demo set dupes</strong> &mdash; Scan 515 demo wines for internal dupes (Armillary confirmed). Merge before sharing.</li>
-  <li><strong>Prompt refinement</strong> &mdash; Few-shot examples in prompt to break structural templates (&ldquo;the trap with X&rdquo; pattern). Post-processing diversity pass. Sprint 5 voice iteration.</li>
+  <li><strong>Prompt refinement</strong> &mdash; Few-shot examples in prompt to break structural templates (&ldquo;the trap with X&rdquo; pattern). Post-processing diversity pass.</li>
 </ul>
 
 <!-- DONE -->
@@ -346,6 +299,8 @@
   <dd>9 expert audits, 275 findings, $0 of $25 budget</dd>
   <dt>Sprint 3 &mdash; Fix</dt>
   <dd>6 tracks, 158 findings fixed, 101 deferred, $0 budget. Re-audit + quick-fix pass done.</dd>
+  <dt>Sprint 4 &mdash; Demo</dt>
+  <dd>515 wines Grade A enriched across 14 producers. Cascade: 4 countries, 20 regions, 51 appellations, 41 grapes, 14 producers. Frontend wired (6 pages, 11 fields). Voice v2. $37.44 / $50 budget.</dd>
 </dl>
 
 </body>

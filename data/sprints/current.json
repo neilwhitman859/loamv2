@@ -1,12 +1,12 @@
 {
-  "name": "demo",
+  "name": "ai-bakeoff",
   "status": "active",
-  "sprint_number": 4,
-  "started_at": "2026-04-13",
+  "sprint_number": 5,
+  "started_at": "2026-04-14",
   "previous": {
-    "name": "fix",
-    "closed_at": "2026-04-13",
-    "archive_path": "data/sprints/fix/"
+    "name": "demo",
+    "closed_at": "2026-04-14",
+    "archive_path": "data/sprints/demo/"
   },
-  "notes": "Sprint 4 — Demo. Producer-centric enrichment for ~400 wines across 15 producers. Top-down cascade: countries → regions → appellations → grapes → producers → wines. Voice calibration via iterative human review. Goal: show to real humans, collect feedback."
+  "notes": "Sprint 5 — AI Bakeoff. Model bake-off first (pick cheapest model at 80%+ quality), then use winners for dedup, data fill, and re-enrichment. Share with friends at the end."
 }
