@@ -192,11 +192,11 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">S4.5 &middot; Apr 13, 2026</div>
+  <div class="meta">S4.7 &middot; Apr 14, 2026</div>
 </div>
 
 <div class="now">
-  <strong>S4.4+S4.5 complete.</strong> All 515 demo wines Grade A enriched across 14 producers. $17.72 total. S4.4: 209 wines serial (user&rsquo;s 5 producers, $6.59). S4.5: 306 wines 8-worker parallel (French recs + benchmarks, $11.13). Added --workers parallel support to batch_enrich.py. Next: S4.6 frontend polish + deploy + show to real humans.
+  <strong>S4.7: Quality gate + Sprint 5 plan.</strong> Fixed critical PostgREST bug (duplicate FK constraints on wines table broke all wine pages). Added &ldquo;Data not available&rdquo; labels to empty vintage FactGrids (Chemistry/Production/Winemaking/Aging/Finishing). Removed nonexistent lwin column from query. Wrote Sprint 5 plan: Dedup &rarr; Data Fill &rarr; Model Bake-off &rarr; Scale Re-enrichment. Dedup + producer website scraping deferred per user decision.
 </div>
 
 <!-- ROADMAP -->
@@ -225,7 +225,7 @@
       <li><span class="g-yes">&#10003;</span> Ref enrichment</li>
       <li><span class="g-yes">&#10003;</span> Producer pipeline</li>
       <li><span class="g-yes">&#10003;</span> Wine enrichment</li>
-      <li><span class="g-no">&#10007;</span> Deploy + feedback</li>
+      <li><span class="g-yes">&#10003;</span> Quality gate</li>
     </ul>
   </div>
   <div class="quality-item wide">
@@ -269,7 +269,7 @@
       <tr><td style="color:var(--muted);">User lookups</td><td style="text-align:right">0</td></tr>
       <tr><td style="color:var(--muted);">Humans shown</td><td style="text-align:right">0 / 5</td></tr>
       <tr><td style="color:var(--muted);">Dupes merged</td><td style="text-align:right; color:var(--green);">3 / 3</td></tr>
-      <tr><td style="color:var(--muted);">Sessions</td><td style="text-align:right">S4.5</td></tr>
+      <tr><td style="color:var(--muted);">Sessions</td><td style="text-align:right">S4.7</td></tr>
     </table>
   </div>
 </div>
@@ -307,7 +307,8 @@
   <li><strong>S4.4</strong> &mdash; <span style="color:var(--green);">&#10003;</span> 209 wines Grade A enriched (user&rsquo;s 5 producers, Sonnet, $6.59)</li>
   <li><strong>S4.5</strong> &mdash; <span style="color:var(--green);">&#10003;</span> 306 wines Grade A (French recs + benchmarks, Sonnet 8-worker, $11.13)</li>
   <li><strong>S4.6</strong> &mdash; <span style="color:var(--green);">&#10003;</span> Frontend wired (6 pages, 11 fields) + deploy + voice v2 re-enrichment ($19.52)</li>
-  <li><strong>S4.7</strong> &mdash; Quality gate: grape backfill, dedup merge, hide empties, spot-check, share</li>
+  <li><strong>S4.7</strong> &mdash; <span style="color:var(--green);">&#10003;</span> Quality gate: FK fix, &ldquo;Data not available&rdquo; labels, Sprint 5 plan written</li>
+  <li><strong>S5.0</strong> &mdash; Sprint 5 open: dedup &rarr; data fill &rarr; model bake-off &rarr; scale re-enrichment</li>
 </ul>
 
 <!-- KEY NUMBERS -->

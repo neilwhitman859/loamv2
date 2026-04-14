@@ -321,9 +321,25 @@ function Tag({ children, variant = 'default' }: { children: React.ReactNode; var
   return <span className={`inline-block text-xs font-medium px-2 py-0.5 rounded-full capitalize ${s[variant]}`}>{children}</span>
 }
 
-function FactGrid({ children }: { children: React.ReactNode }) {
+function FactGrid({ children, label }: { children: React.ReactNode; label?: string }) {
   const filtered = Array.isArray(children) ? children.filter(Boolean) : children ? [children] : []
-  if (filtered.length === 0) return null
+  if (filtered.length === 0) {
+    if (!label) return null
+    return (
+      <div className="mb-2">
+        <div className="text-[10px] uppercase tracking-wider text-earth-300 mb-0.5">{label}</div>
+        <p className="text-xs text-earth-300 italic">Data not available</p>
+      </div>
+    )
+  }
+  if (label) {
+    return (
+      <div className="mb-2">
+        <div className="text-[10px] uppercase tracking-wider text-earth-400 mb-1">{label}</div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-2">{filtered}</div>
+      </div>
+    )
+  }
   return <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-2 mb-2">{filtered}</div>
 }
 

@@ -175,7 +175,7 @@ export default function WinePage() {
         vinification_notes, first_vintage_year,
         soil_description, vine_age_description, vineyard_area_ha,
         altitude_m_low, altitude_m_high, aspect, slope_pct, monopole, commune,
-        data_grade, barcode, lwin,
+        data_grade, barcode,
         producer:producers!wines_producer_id_fkey(id, name, producer_type, year_established, hectares_under_vine, total_production_cases, website_url, philosophy),
         country:countries!wines_country_id_fkey(id, name),
         region:regions!wines_region_id_fkey(id, name),
@@ -475,7 +475,7 @@ export default function WinePage() {
       {v && (
         <Section title={v.vintage_year === 0 ? 'NV' : `${v.vintage_year} Vintage`}>
           {/* Chemistry */}
-          <FactGrid>
+          <FactGrid label="Chemistry">
             {v.abv && <Fact label="ABV" value={`${v.abv}%`} />}
             {v.ph && <Fact label="pH" value={v.ph.toString()} />}
             {v.ta_g_l && <Fact label="Total acidity" value={`${v.ta_g_l} g/L`} />}
@@ -488,7 +488,7 @@ export default function WinePage() {
           </FactGrid>
 
           {/* Production */}
-          <FactGrid>
+          <FactGrid label="Production">
             {v.cases_produced && <Fact label="Production" value={`${v.cases_produced.toLocaleString()} cases`} />}
             {v.yield_hl_ha && <Fact label="Yield" value={`${v.yield_hl_ha} hl/ha`} />}
             {v.bottle_format_ml && v.bottle_format_ml !== 750 && <Fact label="Format" value={`${v.bottle_format_ml}ml`} />}
@@ -499,7 +499,7 @@ export default function WinePage() {
           </FactGrid>
 
           {/* Winemaking */}
-          <FactGrid>
+          <FactGrid label="Winemaking">
             {v.harvest_start_date && (
               <Fact label="Harvest" value={
                 v.harvest_end_date
@@ -518,7 +518,7 @@ export default function WinePage() {
           </FactGrid>
 
           {/* Aging */}
-          <FactGrid>
+          <FactGrid label="Aging">
             {v.duration_in_oak_months && <Fact label="Oak aging" value={`${v.duration_in_oak_months} months`} />}
             {v.new_oak_pct != null && <Fact label="New oak" value={`${v.new_oak_pct}%`} />}
             {v.neutral_oak_pct != null && <Fact label="Neutral oak" value={`${v.neutral_oak_pct}%`} />}
@@ -531,7 +531,7 @@ export default function WinePage() {
           </FactGrid>
 
           {/* Finishing */}
-          <FactGrid>
+          <FactGrid label="Finishing">
             {v.fining && <Fact label="Fining" value={v.fining} />}
             {v.filtration && <Fact label="Filtration" value={v.filtration} />}
             {v.closure && <Fact label="Closure" value={v.closure} />}
@@ -832,10 +832,26 @@ function Tag({ children, variant = 'default' }: { children: React.ReactNode; var
   return <span className={`inline-block text-xs font-medium px-2 py-0.5 rounded-full capitalize ${s[variant]}`}>{children}</span>
 }
 
-function FactGrid({ children }: { children: React.ReactNode }) {
+function FactGrid({ children, label }: { children: React.ReactNode; label?: string }) {
   // Filter out null/false children so we don't render empty grids
   const filtered = Array.isArray(children) ? children.filter(Boolean) : children ? [children] : []
-  if (filtered.length === 0) return null
+  if (filtered.length === 0) {
+    if (!label) return null
+    return (
+      <div className="mb-2">
+        <div className="text-[10px] uppercase tracking-wider text-earth-300 mb-0.5">{label}</div>
+        <p className="text-xs text-earth-300 italic">Data not available</p>
+      </div>
+    )
+  }
+  if (label) {
+    return (
+      <div className="mb-2">
+        <div className="text-[10px] uppercase tracking-wider text-earth-400 mb-1">{label}</div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-2">{filtered}</div>
+      </div>
+    )
+  }
   return <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-2 mb-2">{filtered}</div>
 }
 
