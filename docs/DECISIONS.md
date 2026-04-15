@@ -4,6 +4,22 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-15: Bake-off rankings are current-prompt input, not a locked production decision
+
+Sprint 5 ran 29 models across 6 rounds and produced a composite leaderboard topped by openai/gpt-5.4-mini (3.96 / $452/170K). The natural next step would be to lock gpt-5.4-mini as the production enrichment model and move into Sprint 6. User reframed this at the Sprint 5 wrap-up: the bake-off ranked models *under the current enrichment prompt*, which is known to be mediocre. Cheaper models landed close enough (gemini-3-flash 3.67/$159, deepseek 3.39/$93) that prompt v2 + an L3 fact-check gate could plausibly flip the winner, and three signals support that read — search grounding fails to close the gap because the prompt doesn't exploit grounded context, DeepSeek fabricates terroir because the prompt doesn't forbid it, and the composite gaps are 0.3-0.6 which matches the scale of changes prompt changes typically produce. The bake-off findings are treated as **input** for a future prompt + model + gate decision, not a final model selection.
+
+### 2026-04-15: Sprint 6 = producer dedup only; re-enrichment deferred
+
+The original Sprint 5 plan had Sprint 6 = "Execute with winners (dedup, data fill, re-enrichment, share)." Reframed at Sprint 5 close: Sprint 6 is producer dedup ONLY (~4,079 suspected duplicates). Data fill, re-enrichment, and demo sharing are deferred to later sprints. Reason: re-enrichment under the current prompt would lock in the current-prompt ceiling for the whole corpus, making a later prompt v2 + L3 gate upgrade painful to re-roll. Dedup is also a separate model decision — don't auto-apply gpt-5.4-mini, revisit the cheap tier for classification.
+
+### 2026-04-15: Search grounding + field-split provisionally ruled out; both worth retesting after prompt v2
+
+R6 search-grounded variants: best :online (gpt-5.4-mini:online 3.89) still below gpt-5.4-mini base (3.96), DeepSeek base → :online lifted +0.23 but real cost with OpenRouter search fees is ~$1,069/170K (3-11× base), Kimi got WORSE with :online (more wrong facts, lower composite). R5 field-split: gpt-5.4-mini is top-or-tied on all 11 correctness fields; theoretical $70/170K savings from routing 2 fields to DeepSeek is cancelled by 2× API overhead. Both techniques set aside for now, but revisit once prompt v2 leverages grounded context and explicitly forbids soil/geology fabrication — per-field winners are likely to change and search may become viable.
+
+### 2026-04-15: Prompt caching not viable via OpenRouter right now
+
+Tested Anthropic cache_control on Opus 4.6 + Sonnet 4.6 via OpenRouter on the judge prompt. All calls returned `cached_tokens: 0` regardless of system/user split format. Two compounding causes: Opus 4.x requires a 4,096-token minimum (our static prefix is ~1,420), and OpenRouter has a known open bug ([OpenRouterTeam/ai-sdk-provider#35](https://github.com/OpenRouterTeam/ai-sdk-provider/issues/35)) preventing Anthropic cache_control pass-through — Sonnet's 1,024-token minimum was cleared and caching still didn't fire. Not committing cache_control to run_task3_judge.py. Revisit when OR patches the upstream issue, when we switch judge/enrichment to direct Anthropic API, or when the L3 fact-check gate pushes static prompt past 4K tokens.
+
 ### 2026-04-13: Sprint 4 is "Demo" not "Deepen" — show the product to real humans before more infrastructure
 
 Strategic pivot from the original roadmap (Build → Audit → Fix → Deepen → Enrich) to (Build → Audit → Fix → **Demo** → Scale). After 3 sprints with 0 user lookups and 14 demo-ready wines out of 156K, the priority shifts from "build the data" to "show the product." The foundation is solid; only users can tell us if we're building the right thing on top of it. Sprint 4 picks ~400 wines from producers the user owns, enriches them end-to-end (including all reference entities in the click chain), and shares with 5+ real humans. Future sprint scope determined by demo feedback, not assumptions.
