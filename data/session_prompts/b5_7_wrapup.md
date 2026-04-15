@@ -13,23 +13,41 @@ After this, you'll hand off to **B5.8 — strategy session for Sprint 6**.
 
 ## Bake-off conclusion (read first; don't re-derive)
 
-**30 models tested across 6 rounds. Production winner: `openai/gpt-5.4-mini`** at composite
-3.96 / $452 per 170K corpus. Cheap alternative: `google/gemini-3-flash-preview` at
-3.67 / $159 per 170K (best value).
+**30 models tested across 6 rounds. Current best-under-the-current-prompt:
+`openai/gpt-5.4-mini`** at composite 3.96 / $452 per 170K corpus. Cheap alternative:
+`google/gemini-3-flash-preview` at 3.67 / $159 per 170K (best value).
 
-Key findings that you should NOT re-litigate:
+**The headline takeaway is NOT "gpt-5.4-mini won."** The takeaway is:
 
-- **Search grounding does NOT close the gap.** Best `:online` model
-  (deepseek-v3.2:online) hit 3.62 composite — still 0.27 below gpt-5.4-mini base.
-  Real grounded cost is 3-11× higher than base when including ~$680/170K search fees.
-- **Field-split production NOT viable.** gpt-5.4-mini dominates 8/11 fields broadly;
-  splitting fields between models would save ~$70/170K minus 2× API overhead.
-  DeepSeek fabricates terroir badly (corr 2.67 vs 5.4-mini 3.93).
-- **Native Perplexity Sonar disappoints.** 2.85 composite, worse than DeepSeek base.
+> Cheaper models (DeepSeek at $93/170K, gemini-3-flash at $159/170K) can do the
+> work. The gap to gpt-5.4-mini ($452/170K) is small enough that a better prompt
+> + a fact-check gate + better pipeline design could easily flip the production
+> winner. Garbage-in/garbage-out applies regardless of model — the bake-off
+> showed model differentiation under the CURRENT prompt, but the prompt itself
+> is the bigger lever.
+
+**Production model selection is NOT locked.** It will be revisited in a later
+sprint after prompt v2 + L3 fact-check gate + pipeline-architecture work has
+landed. For Sprint 6 (producer dedup), use whatever cheap model is appropriate
+to the dedup task — that's a separate decision from enrichment-model selection.
+
+Key findings worth recording (but don't re-litigate or re-test in B5.7):
+
+- **Search grounding does NOT close the gap under the current prompt.** Best
+  `:online` model (deepseek-v3.2:online) hit 3.62 composite — still 0.27 below
+  gpt-5.4-mini base. Real grounded cost is 3-11× higher than base when including
+  ~$680/170K search fees. Worth retesting once the prompt does a better job of
+  using grounded results.
+- **Field-split production NOT viable under the current prompt.** gpt-5.4-mini
+  dominates 8/11 fields broadly; splitting would save ~$70/170K minus 2× API
+  overhead. DeepSeek fabricates terroir badly (corr 2.67 vs 5.4-mini 3.93) —
+  worth retesting after prompt v2 explicitly forbids fabricating soil/geology
+  details not in context.
+- **Native Perplexity Sonar disappoints.** 2.85 composite, worse than DeepSeek
+  base. Search integration ≠ better wine writing.
 - **Sonar-reasoning + sonar-reasoning-pro have parse issues** (`<think>` tags).
-  User's call: do NOT fix these — we won't use them.
+  User's call: do NOT fix these in B5.7 — we won't use those models in Sprint 6.
 - **Sprint 5 total spend: ~$52** (B5.5 prose $11.86 + B5.6 R1-R6 ~$36 + B5.1-B5.4 ~$4).
-- **Production decision LOCKED:** gpt-5.4-mini base. Don't reopen this.
 
 Authoritative artifact: [`bakeoff/scores/tournament_results.md`](bakeoff/scores/tournament_results.md)
 (currently only documents R1-R3; you'll add R4-R6 in Job 1).
@@ -75,13 +93,27 @@ to incorporate the new findings (no model change, but new cost/value framing).
    sonar-reasoning-pro      2.33  $4,664  worst + most expensive
    ```
    - Dead models: perplexity/sonar-reasoning (HTTP 404), perplexity/llama-3.1-sonar-small-128k-online (legacy retired)
-   - Conclusion: search grounding NOT the breakthrough — gpt-5.4-mini base remains the winner
+   - Conclusion: search grounding NOT viable UNDER THE CURRENT PROMPT — worth
+     retesting after prompt v2 + L3 gate work. gpt-5.4-mini base remains the
+     current-prompt leader, but the gap to cheaper models is small enough that
+     better prompting could flip it.
 
-3. Update the **Production Recommendation** section:
-   - Reaffirm gpt-5.4-mini base as primary
-   - Add gemini-3-flash-preview as the validated cheap alternative
-   - Add caveat about `:online` search-fee math
-   - Note that prompt v2 / L3 fact-check gate / field-split are deferred to later sprints
+3. Update / rewrite the **Production Recommendation** section. Critical framing
+   — **do not call this a locked decision**:
+   - Frame as "current best under the current prompt" — gpt-5.4-mini, with
+     gemini-3-flash-preview as the cheap alternative, DeepSeek as the
+     budget-grounded option
+   - State explicitly: enrichment-model selection will be revisited after
+     prompt v2 + L3 fact-check gate + pipeline-architecture work in a later
+     sprint. The bake-off ranked models under the CURRENT prompt — that ranking
+     could shift meaningfully once the prompt + pipeline improve.
+   - Headline takeaway to surface: the cheaper models can do the work; the
+     prompt is the bigger lever; garbage-in/garbage-out applies regardless of
+     model. The ~$360/170K gap between gpt-5.4-mini and gemini-3-flash isn't a
+     quality moat — it's a current-prompt artifact.
+   - Add caveat about `:online` search-fee math (token cost ≠ real cost; +$680/170K)
+   - Note search-grounded + field-split are PROVISIONALLY ruled out — both
+     worth retesting once prompting + pipeline improve
 
 4. Update the **Budget Summary** table to include R4-R6 lines and new ~$52 total.
 
@@ -174,13 +206,17 @@ Update each of the following. Skip files where genuinely nothing has changed.
    `memory/project_bakeoff_outcome.md` with frontmatter:
    ```
    ---
-   name: Bake-off outcome — gpt-5.4-mini wins
-   description: Sprint 5 production model selection. gpt-5.4-mini base for enrichment; gemini-3-flash-preview as cheap alt; search/field-split tested + ruled out; prompting/enrichment deferred to later sprints
+   name: Bake-off outcome — cheap models viable, prompt is the lever
+   description: Sprint 5 tested 30 models. gpt-5.4-mini wins under the current prompt at $452/170K, but DeepSeek ($93) and gemini-3-flash ($159) come close enough that better prompting + L3 fact-check gate could flip the winner. Model selection NOT locked — revisit after prompt v2 work.
    type: project
    ---
    ```
-   Body: 2-3 short paragraphs covering the production decision, what was tested + ruled out,
-   what was deferred. Index entry in MEMORY.md under ## Project.
+   Body: 2-3 short paragraphs covering (a) the bake-off result was a current-prompt
+   ranking, not a final production decision, (b) the real takeaway is that cheap
+   models can do the work and the prompt is the bigger lever, (c) what was tested
+   + provisionally ruled out (search grounding, field-split, native Perplexity
+   Sonar) — all worth retesting once prompting improves. Index entry in MEMORY.md
+   under ## Project.
 
 6. **data/sprints/current.json** — Update if Sprint 5 is closing. Otherwise leave for
    B5.8 to update when Sprint 6 opens.
@@ -209,9 +245,17 @@ After B5.7 is committed, B5.8 will be a pure strategy pass to:
 - Confirm Sprint 6 scope = producer dedup (~4,079 suspected dupes per dashboard)
 - Decide dedup approach (rule-based vs LLM-assisted; risk-mitigation for the
   30-35 dangerous false-positive patterns flagged in Q3 audit)
-- Park for Sprint 7+: prompt v2, L3 fact-check gate, structural diversity metric,
-  side-by-side human blind test
+- Plan the prompt v2 + L3 fact-check gate work that needs to land BEFORE
+  enrichment-model selection is finalized (this is the "garbage-in/garbage-out"
+  fix the bake-off pointed at — pipeline + prompts matter more than the marginal
+  model differences seen in Sprint 5)
+- Park for Sprint 7+: structural diversity metric, side-by-side human blind test
 - Decide whether Sprint 6 should bundle data fill or stay narrow
+
+Note that Sprint 6's enrichment-model decision (when re-enrichment eventually
+happens) is OPEN — the bake-off ranked models under the current prompt; once
+prompts + pipeline are improved, the cheap models are likely to close or even
+flip the gap. Don't pre-commit to gpt-5.4-mini in any Sprint 6 plan.
 
 You don't need to plan B5.8 — just leave clean handoff state.
 
