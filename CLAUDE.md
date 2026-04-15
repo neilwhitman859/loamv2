@@ -300,10 +300,14 @@ See `docs/HISTORY.md` for promotion results, session-by-session build history, a
 
 ## Current Focus
 
-**Sprint 4 (Demo) — ACTIVE.** Producer-centric enrichment for ~400 wines across 15 producers.
-Live tracker: `data/dashboard.html`. Plan: [`data/sprints/demo/plan.md`](data/sprints/demo/plan.md).
+**Sprint 5 (AI Bakeoff) — ACTIVE.** Model selection before scaling enrichment.
+B5.1-5.5 done. **B5.6 tournament in progress** in a separate session — scoring Task 3 prose outputs via web-grounded Opus judge in 3 rounds, eliminating models progressively. DeepSeek v3.2 protected from elimination per user preference. GPT-5-mini's max_tokens fix already applied (8000). Ground truth for all 30 wines in `bakeoff/data/task3/ground_truth.json` (3 verification passes — found and fixed errors in my own pass-1 claims). Calibration notes: `bakeoff/scores/calibration_notes.md`. Web-grounding patterns learned: `docs/WEB_GROUNDING_PATTERNS.md`.
 
-**Roadmap:** Build (done) → Audit (done) → Fix (done) → **Demo (active)** → Scale (informed by feedback).
+**Sprint 4 (Demo) closed 2026-04-14.** 515/515 wines Grade A, $37.44 spent. Full details in `data/sprints/demo/`.
+
+Live tracker: `data/dashboard.html`.
+
+**Roadmap:** Build (done) → Audit (done) → Fix (done) → Demo (done) → **AI Bakeoff (active)** → Data fill + re-enrichment with winning model → Scale.
 
 **Core product insight (2026-04-12):** Loam's product is STRUCTURED DATA RENDERED
 CLEARLY, not AI prose. The magic is: look up any wine → see organized, trustworthy,

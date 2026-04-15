@@ -192,11 +192,11 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">B5.2 &middot; Apr 14, 2026</div>
+  <div class="meta">B5.5 &middot; Apr 15, 2026</div>
 </div>
 
 <div class="now">
-  <strong>B5.2: Test data built.</strong> Task 1: 200 labeled dedup pairs (4 strata &times; 50). Task 2: 50 HTML pages from 13 producers + ground truth JSONs. Task 3: 30 curated wine context packages (3 tiers &times; 10). All in <code>bakeoff/data/</code>. Next: run Task 1 (B5.3).
+  <strong>B5.5: Task 3 (prose) DONE.</strong> 21 models &times; 30 wines = 630 calls, 0 errors, $11.86. 14 models Grade A (100% parse, &lt;10 banned words). Surprise: Sonnet 4.6 (production baseline) gets Grade C with 23 banned-word violations &mdash; Gemini 2.5 Pro, GPT-5.4, Grok 4.1 all zero. DeepSeek v3.2 Grade A at $0.016. GPT-5-mini 13% parse = dead. Next: B5.6 Opus inline judging.
 </div>
 
 <!-- ROADMAP -->
@@ -217,9 +217,9 @@
     <ul class="gate">
       <li><span class="g-yes">&#10003;</span> B5.1 Bake-off design</li>
       <li><span class="g-yes">&#10003;</span> B5.2 Build test data</li>
-      <li><span class="g-no">&#10007;</span> B5.3 Task 1 (dedup)</li>
-      <li><span class="g-no">&#10007;</span> B5.4 Task 2 (extraction)</li>
-      <li><span class="g-no">&#10007;</span> B5.5 Task 3 (prose run)</li>
+      <li><span class="g-yes">&#10003;</span> B5.3 Task 1 (dedup)</li>
+      <li><span class="g-yes">&#10003;</span> B5.4 Task 2 (extraction)</li>
+      <li><span class="g-yes">&#10003;</span> B5.5 Task 3 (prose run)</li>
       <li><span class="g-no">&#10007;</span> B5.6 Task 3 (judge)</li>
       <li><span class="g-no">&#10007;</span> B5.7 Final report</li>
     </ul>
@@ -227,11 +227,11 @@
   <div class="quality-item">
     <div class="q-label">Sprint vitals</div>
     <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
-      <tr><td style="color:var(--muted);">Budget spent</td><td style="text-align:right">$0 / ~$25</td></tr>
-      <tr><td style="color:var(--muted);">Models to test</td><td style="text-align:right">21 (Task 3)</td></tr>
+      <tr><td style="color:var(--muted);">Budget spent</td><td style="text-align:right">~$16 / ~$25</td></tr>
+      <tr><td style="color:var(--muted);">Models tested</td><td style="text-align:right">21 (Task 3 done)</td></tr>
       <tr><td style="color:var(--muted);">Dupes merged</td><td style="text-align:right">0</td></tr>
       <tr><td style="color:var(--muted);">Humans shown</td><td style="text-align:right">0 / 5</td></tr>
-      <tr><td style="color:var(--muted);">Block</td><td style="text-align:right">B5.2</td></tr>
+      <tr><td style="color:var(--muted);">Block</td><td style="text-align:right">B5.5 done</td></tr>
     </table>
   </div>
 </div>
@@ -265,9 +265,9 @@
 <ul class="next-list">
   <li><strong>B5.1</strong> &mdash; <s>Design bake-off</s> DONE</li>
   <li><strong>B5.2</strong> &mdash; <s>Build test data</s> DONE &mdash; 200 pairs, 50 pages, 30 contexts</li>
-  <li><strong>B5.3</strong> &mdash; Run + score Task 1 (dedup): 17 models &times; 200 pairs</li>
-  <li><strong>B5.4</strong> &mdash; Run + score Task 2 (extraction): 17 models &times; 50 pages</li>
-  <li><strong>B5.5</strong> &mdash; Run Task 3 (prose): 21 models &times; 30 wines</li>
+  <li><strong>B5.3</strong> &mdash; <s>Run + score Task 1 (dedup)</s> DONE &mdash; Sonnet 94.5%, Haiku 93.5%, 30 GT fixes</li>
+  <li><strong>B5.4</strong> &mdash; <s>Run + score Task 2 (extraction)</s> DONE &mdash; 17 models &times; 50 pages</li>
+  <li><strong>B5.5</strong> &mdash; <s>Run Task 3 (prose)</s> DONE &mdash; 21 models &times; 30 wines, 0 errors, $11.86</li>
   <li><strong>B5.6</strong> &mdash; Score Task 3: Opus inline judging (calibrate + score)</li>
   <li><strong>B5.7</strong> &mdash; Final report: rankings, cost projections, recommendation</li>
 </ul>
@@ -282,14 +282,14 @@
 <!-- KEY NUMBERS -->
 <div class="section-label">Key Numbers</div>
 <div class="numbers">
-  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">155,605</div></div>
-  <div class="n-item"><div class="n-label">Producers</div><div class="n-value">10,627</div></div>
-  <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">125,500</div></div>
+  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">156,570</div></div>
+  <div class="n-item"><div class="n-label">Producers</div><div class="n-value">10,683</div></div>
+  <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">125,934</div></div>
   <div class="n-item"><div class="n-label">Prices</div><div class="n-value">40,193</div></div>
   <div class="n-item"><div class="n-label">Scores</div><div class="n-value">30,339</div></div>
   <div class="n-item"><div class="n-label">Grape links</div><div class="n-value">43,131</div></div>
   <div class="n-item"><div class="n-label">Appellations</div><div class="n-value">3,662</div></div>
-  <div class="n-item"><div class="n-label">Insights</div><div class="n-value">5,480</div></div>
+  <div class="n-item"><div class="n-label">Insights</div><div class="n-value">5,485</div></div>
 </div>
 
 <!-- PARKING LOT -->
