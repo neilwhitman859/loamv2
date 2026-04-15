@@ -1,0 +1,23 @@
+{
+  "wine_id": "dffc0909-1d13-4b9f-9de7-98fd212c6b5f",
+  "wine_name": "Cakebread Cellars Cuttings Wharf Chardonnay, Los Carneros",
+  "tier": "A",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "The output describes 'heavy clay soils' and 'heavy Diablo clay loam' at Cuttings Wharf, but the ground truth states the vineyard has 'shallow loamy soils' specifically 'Haire loam soils' — not heavy clay. The Haire series is a loam, not a heavy clay.",
+    "The output mentions 'Diablo clay loam' and 'Diablo clay soils' — while Diablo series soils exist in parts of Carneros, the ground truth specifically identifies Haire loam as the soil at this vineyard. Attributing Diablo clay to this specific site appears fabricated.",
+    "The hook says 'heavy clay soils build unexpected mid-palate weight' which contradicts the ground truth of shallow loamy soils"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "The 14.2% ABV is applied broadly to characterize the wine's style, but it only appears in the context data for the 2013 vintage specifically — using it as a general descriptor is misleading"
+  ],
+  "reasoning": "The output has strong voice, specificity, and usefulness — it reads like confident, opinionated wine writing with real details and actionable pairings. However, the correctness suffers significantly. The hook and terroir sections build their entire narrative around 'heavy clay soils' and 'Diablo clay loam,' but the ground truth clearly states the vineyard has 'Haire loam soils' described as 'shallow loamy soils on a low ridge.' This is a meaningful factual error that runs through the piece. The output correctly identifies the naming origin (Cuttings Wharf Road), the single-vineyard nature, and the cool maritime climate. The mention of Haire soils in the wine_summary is correct but is paired with the incorrect Diablo clay claim. The hook contains a wrong soil characterization, which under the rubric warrants a penalty, though the naming origin aspect is correct. The 14.2% ABV is only verified for 2013 but is used as a general characterization.",
+  "judge_tokens_in": 3817,
+  "judge_tokens_out": 517
+}

@@ -1,0 +1,25 @@
+{
+  "wine_id": "6020edf8-3f23-4853-9591-a10c843f5a70",
+  "wine_name": "Catena Zapata High Mountain Vines Malbec, Mendoza",
+  "tier": "A",
+  "model": "openai/gpt-5-mini",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 3.2,
+  "wrong_facts": [
+    "Hook claims the wine is sourced from Lunlunta specifically, but ground truth shows it's blended from high-altitude vineyards in Maipu, Lujan de Cuyo, Tupungato and San Carlos — Lunlunta is listed as the appellation in the context data but the wine is a multi-region blend, not a single-site Lunlunta wine",
+    "The context data lists grapes as Cabernet Sauvignon, Cot (Malbec), and Chardonnay Blanc, but the ground truth confirms it is 100% Malbec — the output correctly treats it as Malbec but never addresses the odd grape listing",
+    "Vinification summary says 'shorter aging or neutral barrels' but ground truth states 11-13 months in French oak (mix of first, second, and third-use), which includes new oak — this is misleading",
+    "The output repeatedly emphasizes Lunlunta as the defining terroir source, building entire sections around Lunlunta's soils and character, when the wine actually draws from four different regions across Mendoza",
+    "Output calls it a 'named-vineyard bottling' in value assessment — it is not a named vineyard wine, it's a multi-region blend named for the high-altitude philosophy"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "12-14°C storage temperature is a general recommendation not from context data but is standard wine advice so minor"
+  ],
+  "reasoning": "The output's central thesis — that this is a Lunlunta-sourced wine expressing that specific terroir — is fundamentally wrong per ground truth. The wine is a multi-region blend from Maipu, Lujan de Cuyo, Tupungato, and San Carlos. The hook builds on this incorrect premise, and the terroir section elaborates extensively on Lunlunta soils that aren't the defining character of this wine. The vinification description of 'shorter aging or neutral barrels' contradicts the ground truth of 11-13 months in French oak including first-use barrels. The voice is strong — direct, opinionated, no banned words, good structure — and the specificity is good in naming real competitors and real dishes. But the factual foundation is deeply flawed, with the hook containing a wrong geographic claim about sourcing.",
+  "judge_tokens_in": 3582,
+  "judge_tokens_out": 561
+}

@@ -1,0 +1,25 @@
+{
+  "wine_id": "46a46e99-c081-41ce-abcc-bf993469fc0e",
+  "wine_name": "Kir Yianni Ramnista, Naoussa",
+  "tier": "B",
+  "model": "openai/gpt-5-mini",
+  "correctness": 3.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.925,
+  "wrong_facts": [
+    "The vinification_summary describes 'extended maceration' but the ground truth indicates a 6-day cold soak, which is not particularly extended",
+    "No mention of the actual 18 months oak aging in French and American oak (225L and 500L), or the specific winemaking details like one-third open-top tanks with pigeage",
+    "The hook and terroir sections claim 'schist-influenced soils' — while Naoussa does have some varied geology, the emphasis on schist is not verified from the ground truth and may overstate its role"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "cellar temperature 12-14°C is added detail not from context",
+    "drinking window 8-12 years is fabricated",
+    "aging_potential_years 15 is not sourced"
+  ],
+  "reasoning": "The output is well-written with strong voice and useful food pairings and comparables. However, it lacks the specific verified details (18 months oak in French/American casks, 6-day cold soak, pigeage, Stellios Boutaris as winemaker, 'royal hill' naming origin, 280-330m altitude) that would have demonstrated real knowledge. Instead it fills in with plausible but unverified terroir claims (schist emphasis) and generic vinification language. The cellar/aging numbers are reasonable estimates but fabricated. No banned words found. The hook doesn't contain a provably wrong claim — the limestone/schist mention is plausible if not fully verified — so no hard cap applies, but the lack of ground-truth details and some unverifiable specifics keep correctness moderate.",
+  "judge_tokens_in": 3489,
+  "judge_tokens_out": 412
+}

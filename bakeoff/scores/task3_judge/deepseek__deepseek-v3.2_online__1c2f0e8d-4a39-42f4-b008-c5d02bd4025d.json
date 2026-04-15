@@ -1,0 +1,27 @@
+{
+  "wine_id": "1c2f0e8d-4a39-42f4-b008-c5d02bd4025d",
+  "wine_name": "Atamisque Chardonnay, Mendoza",
+  "tier": "B",
+  "model": "deepseek/deepseek-v3.2:online",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.3,
+  "wrong_facts": [
+    "Vineyard elevation stated as 'approximately 1,100 meters' — ground truth says 1,300m",
+    "Price range '$25-$40' is fabricated with no price data provided",
+    "Claims about 'partial malolactic fermentation' and 'lees aging' are not in context data and not verifiable from ground truth",
+    "Claims about 'a portion of which are new' oak barrels is unverifiable"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "1,100 meters elevation (ground truth is 1,300m)",
+    "$25-$40 price range (no price data provided)",
+    "20°C diurnal temperature swing",
+    "3-7 years cellar recommendation window"
+  ],
+  "reasoning": "The elevation claim of ~1,100m is provably wrong — ground truth confirms 1,300m. The price range is entirely fabricated since no pricing was provided. The vinification section fabricates specific claims about partial malolactic fermentation, lees aging, and new oak proportions that aren't in the context data or ground truth (ground truth only confirms 10 months French oak). The voice is strong — direct, opinionated, well-structured with good food pairings and useful comparable wines. But the accumulation of fabricated specifics (elevation, price, winemaking details, diurnal swing number) significantly undermines correctness. The hard penalty for fabricated numbers caps correctness at 1.5, but I'm giving slight credit at 2.0 because some fabricated winemaking claims (partial MLF, lees aging) are plausible for this style even if unverifiable.",
+  "judge_tokens_in": 3358,
+  "judge_tokens_out": 408
+}

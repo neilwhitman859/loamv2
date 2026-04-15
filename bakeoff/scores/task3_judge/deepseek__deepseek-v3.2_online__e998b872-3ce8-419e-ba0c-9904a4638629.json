@@ -1,0 +1,25 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "deepseek/deepseek-v3.2:online",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Hook says 'aged in large oak' — ground truth says recent vintages ferment and age in cement tanks with no wood aging; the wine has completely dispensed with new oak",
+    "Eben Sadie described as 'the late Eben Sadie' — Eben Sadie is alive",
+    "Vinification summary says 'ages in large, neutral oak foudres for about eight months' — ground truth says recent vintages use cement tanks, not oak foudres",
+    "North-facing vineyard orientation is not verified in ground truth; the vineyard is described as steep at 600m elevation but orientation is unconfirmed",
+    "Price range of $60-$80 is fabricated — no price data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$60-$80 price range"
+  ],
+  "reasoning": "The output has strong voice, specificity, and usefulness — it reads like expert wine writing with real opinions and actionable detail. However, there are significant correctness problems. The hook and vinification section both claim the wine ages in large oak foudres, but ground truth explicitly states recent vintages have completely dispensed with wood and use cement tanks. Calling Eben Sadie 'the late' is factually wrong — he is alive. The fabricated price range and unverified north-facing claim further hurt correctness. The oak claim appearing in the hook is particularly damaging, though it doesn't quite trigger the hard cap since it's not a wrong naming origin/grape/geography — it's a wrong winemaking claim. Still, the accumulation of wrong facts is serious.",
+  "judge_tokens_in": 3550,
+  "judge_tokens_out": 401
+}

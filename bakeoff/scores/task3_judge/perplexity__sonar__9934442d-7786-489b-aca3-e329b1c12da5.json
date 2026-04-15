@@ -1,0 +1,19 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "perplexity/sonar",
+  "correctness": 1.0,
+  "voice": 1.0,
+  "specificity": 1.0,
+  "usefulness": 1.0,
+  "composite": 1.0,
+  "wrong_facts": [
+    "PARSE_FAILED"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "Output failed to parse as valid JSON. Unusable for production.",
+  "judge_tokens_in": 0,
+  "judge_tokens_out": 0
+}

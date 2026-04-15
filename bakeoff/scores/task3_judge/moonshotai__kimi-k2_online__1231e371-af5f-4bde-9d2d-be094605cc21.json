@@ -1,0 +1,42 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "moonshotai/kimi-k2:online",
+  "correctness": 1.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 3.5,
+  "composite": 3.25,
+  "wrong_facts": [
+    "Hook implies One Point Five is estate fruit that didn't make Hillside Select — ground truth shows it's a multi-site wine from hillside estate vineyards, Borderline vineyard, and selected Napa Valley sites, not just Hillside Select declassification",
+    "States 100% Cabernet Sauvignon (from context data) but ground truth shows 2022 is 92% Cab, 3% Petit Verdot, 3% Merlot, 2% Malbec",
+    "Claims 50% new French oak — ground truth says 100% new French oak (Allier & Tronçais)",
+    "Claims Hillside Select gets 32-36 months barrel aging — fabricated specific number",
+    "Claims cold soak at 50°F for five days — fabricated",
+    "Claims fermented in 1-ton open-tops with daily rack-and-return — fabricated vinification details",
+    "Claims malolactic in barrel immediately after primary — fabricated",
+    "Claims racked only twice — fabricated",
+    "Claims harvested at 29-30 Brix — fabricated",
+    "Stag's Leap Wine Cellars Cask 23 described as '10$ less on release' — Cask 23 is significantly more expensive than One Point Five, not less",
+    "Claims wine created in 2004 — unverifiable specific date",
+    "Claims Hambright-series gravel and Toomes series soils — unverifiable specifics presented as fact",
+    "Claims vineyard tops out at 600 ft — unverifiable"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "50% new French oak",
+    "32-36 months barrel for Hillside Select",
+    "29-30 Brix harvest",
+    "50°F cold soak",
+    "5 days cold soak",
+    "1-ton open-tops",
+    "600 ft elevation",
+    "2004 creation date",
+    "30°F diurnal swing",
+    "Cask 23 '10$ less on release'"
+  ],
+  "reasoning": "The output is packed with fabricated winemaking specifics that contradict ground truth: 50% new oak vs. actual 100%, the framing as Hillside Select declassification vs. multi-site sourcing, and numerous invented vinification details (Brix, cold soak temps, fermentation vessels). The hook's central claim — that this is Hillside Select's reject fruit — is misleading per ground truth. The Cask 23 price comparison is provably wrong. The voice is excellent — punchy, opinionated, specific, no banned words — but the sheer volume of fabricated numbers triggers the hard penalty cap of 1.5 on correctness.",
+  "judge_tokens_in": 3828,
+  "judge_tokens_out": 655
+}

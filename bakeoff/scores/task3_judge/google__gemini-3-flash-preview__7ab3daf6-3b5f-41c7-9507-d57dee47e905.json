@@ -1,0 +1,30 @@
+{
+  "wine_id": "7ab3daf6-3b5f-41c7-9507-d57dee47e905",
+  "wine_name": "Vasse Felix Filius Cabernet, Margaret River",
+  "tier": "A",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.5,
+  "voice": 2.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.175,
+  "wrong_facts": [
+    "The blend description implies Merlot is a significant component ('plushness of the Merlot'), but ground truth shows the blend is 93% Cabernet Sauvignon, 5.5% Malbec, 1.5% Petit Verdot — no Merlot at all",
+    "Context data shows Malbec (Cot) at 4% and Petit Verdot at 1%, but ground truth shows 5.5% Malbec and 1.5% Petit Verdot — the output uses 'significant portion of Malbec' which is vague but the 1% Petit Verdot claim doesn't match ground truth of 1.5%",
+    "The hook claims the wine is 'defined by the unique ironstone gravels of Margaret River' — while Margaret River does have ironstone/gravel soils, calling them 'unique ironstone gravels' and specifically 'Forest Grove ironstone' in the terroir section is unverifiable and potentially fabricated specificity",
+    "The output says 'Winemaker Virginia Willcock' — Virginia Willcock was indeed chief winemaker at Vasse Felix but this is not in the context data; this appears correct from wine knowledge",
+    "The output mentions Merlot Noir from context data as a blend component, but ground truth shows NO Merlot in the blend — the context data listing MERLOT NOIR with None% was misleading but the model should not have emphasized it"
+  ],
+  "banned_words_found": [
+    "genuine",
+    "masterclass"
+  ],
+  "fabricated_numbers": [
+    "45 minutes decant time",
+    "2030 drinking window end date",
+    "$100+ for Tom Cullity flagship"
+  ],
+  "reasoning": "The output is impressively specific and well-written but has significant factual problems. The biggest error is treating Merlot as a meaningful blend component when ground truth shows zero Merlot — the model was misled by context data listing MERLOT NOIR with None% but should not have built tasting claims around it. The wild yeast fermentation claim matches ground truth (good use of training knowledge), and Virginia Willcock is correct. However, 'Forest Grove ironstone' soil specificity is unverifiable and likely fabricated. Two banned words ('genuine' in value_assessment, 'masterclass' in insider_take) cap the voice score at 2.0. The writing is otherwise strong, opinionated, and highly specific with real dish pairings and named competitors.",
+  "judge_tokens_in": 3599,
+  "judge_tokens_out": 601
+}

@@ -1,0 +1,28 @@
+{
+  "wine_id": "dc9e4353-ddf9-4e48-854e-1a3d6404b7b3",
+  "wine_name": "Shafer One Point Five Cabernet Sauvignon, Stags Leap District",
+  "tier": "C",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Oak aging stated as 20 months but ground truth says 18 months",
+    "Cliff Lede 'Stardust Heaven' does not appear to be a real wine — likely fabricated (the real wine is 'Poetry')",
+    "Borderline vineyard described as 'just two miles south' — this specific distance claim is unverifiable and likely fabricated",
+    "Hook claims Vaca Mountains cast 'early afternoon shadows' on hillside sites — this is a fabricated cooling mechanism not supported by context or ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "20 months oak aging (ground truth is 18 months in 100% new French oak)",
+    "two miles south (distance for Borderline vineyard)",
+    "aging_potential_years: 20",
+    "drinking_window_min_years: 3",
+    "drinking_window_max_years: 18"
+  ],
+  "reasoning": "The output demonstrates strong voice, specificity, and usefulness — it reads like confident, opinionated wine writing with real details and actionable advice. However, correctness is significantly undermined by several fabrications. The oak aging is stated as 20 months when the ground truth is 18 months — a fabricated number. The Cliff Lede 'Stardust Heaven' appears to be a non-existent wine. The 'two miles south' distance for Borderline vineyard is unverifiable. The hook's claim about Vaca Mountains casting 'early afternoon shadows' is a specific mechanism that isn't supported by data or standard knowledge of the area. The naming origin is vaguely alluded to ('transition in leadership from John to Doug') but misses the specific 'generation and a half' story. The blend composition and ABV are wisely omitted rather than fabricated, which is good. The wine_summary correctly identifies multi-site sourcing including Borderline. The fabricated oak aging number triggers the hard penalty cap of 1.5, but the output gets some credit for many other correct claims, so I'm scoring at 2.5 acknowledging the fabrication is close but not exactly matching the hard-cap threshold since 20 vs 18 months is a near-miss rather than a wholesale invention.",
+  "judge_tokens_in": 3680,
+  "judge_tokens_out": 538
+}

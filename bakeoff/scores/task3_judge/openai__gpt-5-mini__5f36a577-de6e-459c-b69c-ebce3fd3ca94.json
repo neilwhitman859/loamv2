@@ -1,0 +1,26 @@
+{
+  "wine_id": "5f36a577-de6e-459c-b69c-ebce3fd3ca94",
+  "wine_name": "Howard Park Leston Cabernet Sauvignon, Western Australia",
+  "tier": "B",
+  "model": "openai/gpt-5-mini",
+  "correctness": 3.0,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.525,
+  "wrong_facts": [
+    "Cellar recommendation says 3-10 years; ground truth says up to 15 years",
+    "Value assessment fabricates AUD 35-60 price range (no price data provided)",
+    "Hook describes it as 'high-alcohol' at 14.5% ABV which is moderate for Margaret River Cabernet, not high",
+    "Describes Syrah as part of the blend ('a splash of Syrah') — ground truth says it is primarily Cabernet Sauvignon as a single varietal"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "AUD 35-60 price range",
+    "12-14°C storage temperature",
+    "3-10 years drinking window (partially fabricated — ground truth says up to 15 years)"
+  ],
+  "reasoning": "The output makes several problematic claims. The hook describes the wine as having 'a splash of Syrah' — while Syrah appears in the context data grapes, the ground truth confirms this is primarily a single-varietal Cabernet Sauvignon, making the hook's framing misleading. The AUD 35-60 price is fabricated with no price data provided. The cellar recommendation undersells the wine's aging potential (10 years vs ground truth 15 years). The terroir and food pairing sections are strong and specific, naming real soils, real dishes, and real comparable producers. Voice is decent but occasionally slips into generic wine-writing patterns ('translates the region's maritime ripeness'). No banned words found. The vinification section honestly acknowledges lack of specific data, which is good, though the ground truth shows 18 months French oak (40% new) was available and the model missed it.",
+  "judge_tokens_in": 3562,
+  "judge_tokens_out": 422
+}

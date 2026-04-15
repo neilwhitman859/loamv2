@@ -1,0 +1,31 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "perplexity/sonar",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.4,
+  "wrong_facts": [
+    "Hook claims '1.25-hectare parcel' — no source for this specific size",
+    "Hook claims '100-year-old' vines — ground truth says 90-year-old",
+    "Vinification summary claims 'whole-cluster carbonic maceration' — ground truth says whole cluster native fermentation with two weeks on skins, no mention of carbonic maceration as the primary technique",
+    "Price range '$120-160 per bottle' is fabricated — no prices were provided in context data",
+    "Comparable wine 'Domaine de l'Arjolle Vieilles Vignes Carignan' is dubious — Arjolle is known for IGP Côtes de Thongue varietals, not specifically old-vine Carignan from schist",
+    "Comparable wine 'Pablo Sanz old-vine Carignan' from Calatayud is unverifiable",
+    "Claims '400mm annual rain' — not in context data and Priorat typically receives closer to 500-600mm",
+    "Cooperage described as 'neutral oak' for 2022 — ground truth says recent vintages ferment and age in cement tanks, not oak"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "1.25-hectare parcel size",
+    "$120-160 price range",
+    "400mm annual rainfall",
+    "100-year-old vines (ground truth says 90)"
+  ],
+  "reasoning": "The output fabricates multiple specific numbers not in the context data: the 1.25-hectare parcel size, the $120-160 price, and 400mm rainfall. The hook's '100-year-old' contradicts ground truth's 90-year-old. The vinification description incorrectly emphasizes carbonic maceration when ground truth describes standard whole-cluster fermentation, and says 'neutral oak' when ground truth says cement tanks for recent vintages. These are significant factual errors. However, the voice is strong — direct, opinionated, specific, with no banned words. Specificity is high with named soils, competitors, and real dishes. The fabricated numbers trigger the hard penalty cap of 1.5, but I'm giving 2.0 because some claims like biodynamic farming, Dominik Huber, 600m elevation, and llicorella correctly match ground truth, showing real knowledge mixed with fabrications.",
+  "judge_tokens_in": 3527,
+  "judge_tokens_out": 579
+}

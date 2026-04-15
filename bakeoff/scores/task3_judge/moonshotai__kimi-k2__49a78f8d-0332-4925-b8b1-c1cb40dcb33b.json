@@ -1,0 +1,35 @@
+{
+  "wine_id": "49a78f8d-0332-4925-b8b1-c1cb40dcb33b",
+  "wine_name": "Wind Gap Woodruff Vineyard Pinot Noir, Santa Cruz Mountains",
+  "tier": "C",
+  "model": "moonshotai/kimi-k2",
+  "correctness": 1.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "Hook claims Woodruff Vineyard sits at 2,000 feet on fractured shale and sandstone — ground truth says it's 9 acres near Coralitos (which is at ~300-500 feet elevation, not 2,000 feet)",
+    "Terroir section repeats the 2,000 feet claim and adds fabricated detail about roots diving 12 feet and 'Pescadero Gap'",
+    "Hook describes 'Alpine Burgundy' feel which is atmospheric fabrication",
+    "Vinification claims '20-day cuvaison' and '11 months in neutral 500-liter puncheons' — not in context data or ground truth",
+    "Claims 12.8% alcohol — not in any provided data",
+    "Wine summary claims 'iron-rich shale' — not verifiable",
+    "Value assessment fabricates $45-55 retail price range"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "2,000 feet elevation",
+    "12.8% alcohol",
+    "12 feet root depth",
+    "20-day cuvaison",
+    "11 months aging",
+    "500-liter puncheons",
+    "$45-55 retail price",
+    "three weeks later ripening claim",
+    "$15-20 undercut claim"
+  ],
+  "reasoning": "The output is extremely well-written with strong voice, specificity, and usefulness — but it fabricates extensively. The hook places Woodruff Vineyard at 2,000 feet on shale/sandstone when ground truth shows it's near Coralitos at much lower elevation. Multiple specific numbers (ABV, oak duration, vessel size, cuvaison length, price) are invented wholesale. The provably wrong hook claim and massive number fabrication trigger the hard penalty caps, limiting correctness to 1.5 maximum. The winemaker (Pax Mahle), whole-cluster fermentation, native yeast, and neutral oak claims all match ground truth, which is good — but the fabrications overwhelm the correct content.",
+  "judge_tokens_in": 3206,
+  "judge_tokens_out": 491
+}

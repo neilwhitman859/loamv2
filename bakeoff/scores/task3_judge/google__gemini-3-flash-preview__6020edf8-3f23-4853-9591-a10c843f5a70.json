@@ -1,0 +1,28 @@
+{
+  "wine_id": "6020edf8-3f23-4853-9591-a10c843f5a70",
+  "wine_name": "Catena Zapata High Mountain Vines Malbec, Mendoza",
+  "tier": "A",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 1.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.225,
+  "wrong_facts": [
+    "Hook claims wine pulls from 'the Lunlunta vineyard' with '90-year-old vines at 3,000 feet' — ground truth shows the wine is blended from vineyards in Maipu, Lujan de Cuyo, Tupungato, and San Carlos, not a single Lunlunta vineyard. The vine age and specific elevation are fabricated.",
+    "Hook says the wine trades 'jammy weight of valley-floor fruit for structural tension' implying single-vineyard Lunlunta sourcing, contradicting the multi-vineyard blend ground truth.",
+    "Vinification summary states '12 months' in French oak — ground truth says 11-13 months, which is close but the specific number is fabricated.",
+    "Context data lists grapes as Cabernet Sauvignon, Cot, and Chardonnay Blanc, but ground truth confirms 100% Malbec. The output claims 'small percentages of Cabernet Sauvignon' which contradicts ground truth.",
+    "The claim about fermentation in 'stainless steel and concrete' is not in context data and is unverifiable — possibly fabricated."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "90-year-old vines",
+    "3,000 feet elevation for Lunlunta",
+    "12 months French oak aging",
+    "five-year runway/aging claim presented as specific"
+  ],
+  "reasoning": "The hook contains multiple fabricated specifics — 90-year-old vines, 3,000 feet elevation, and single-vineyard Lunlunta sourcing — all contradicted by ground truth showing a multi-vineyard blend from four different areas. This triggers the hard penalty for wrong hook facts (max 1.5 correctness). The output also fabricates the 12-month oak aging figure (ground truth: 11-13 months) and claims Cabernet Sauvignon is in the blend when ground truth confirms 100% Malbec. The voice is strong — direct, opinionated, no banned words, good food pairings with real dishes. Specificity is high with named competitors and soil descriptions, but much of that specificity is fabricated rather than verified.",
+  "judge_tokens_in": 3657,
+  "judge_tokens_out": 540
+}

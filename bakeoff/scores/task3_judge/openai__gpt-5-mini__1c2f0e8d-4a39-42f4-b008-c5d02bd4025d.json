@@ -1,0 +1,25 @@
+{
+  "wine_id": "1c2f0e8d-4a39-42f4-b008-c5d02bd4025d",
+  "wine_name": "Atamisque Chardonnay, Mendoza",
+  "tier": "B",
+  "model": "openai/gpt-5-mini",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.475,
+  "wrong_facts": [
+    "The vinification summary claims 'predominant stainless-steel fermentation or aging in neutral oak' — ground truth shows 10 months in French oak barrels, which is significant new/used oak aging, not neutral oak or stainless steel",
+    "The claim of 'limited vanilla' and restrained oak contradicts the 10-month French oak aging program confirmed by ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "US$10–US$20 price range fabricated (no price data provided)",
+    "US$12–16 for Trapiche Medalla fabricated",
+    "US$14–20 for Salentein Reserve fabricated",
+    "10–13°C storage temperature fabricated"
+  ],
+  "reasoning": "The output gets the region, appellation, and grape right, and correctly identifies the high-altitude character. However, the vinification section actively contradicts ground truth: the wine spends 10 months in French oak, yet the output claims stainless steel or neutral oak with 'limited vanilla' and 'restrained oak.' This is a meaningful factual error that mischaracterizes the wine's style. Multiple price figures are fabricated with no source data. The hook is factually acceptable — high-elevation Tupungato and gold medals are correct. The voice is strong: direct, opinionated, avoids banned words, names real dishes with reasoning. Specificity is good with named comparables and soil descriptions. But the fabricated prices and wrong vinification claims significantly hurt correctness. The price fabrications alone would normally trigger the hard cap at 1.5, but since these are in the value_assessment section (not core winemaking data like pH/ABV/blend%), and the storage temp is a recommendation rather than a wine spec, I apply a softer penalty — though it's still a significant issue.",
+  "judge_tokens_in": 3396,
+  "judge_tokens_out": 447
+}

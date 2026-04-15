@@ -1,0 +1,25 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "perplexity/sonar-reasoning-pro",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.75,
+  "wrong_facts": [
+    "Hook claims wine is from 'rocky Dentelles slopes' — ground truth says Les Routes vineyard is on clay with gravel and limestone colluviums near Hautes Garrigues, not on the Dentelles slopes themselves",
+    "Claims 'biodynamic farming' and 'biodynamic and vegan certifications' — this is not present in the context data and not confirmed in the ground truth; this appears to be a fabrication",
+    "States Grenache minimum 50% of most local reds — Gigondas requires minimum 50% Grenache but this specific number is not in context data (though it is correct from wine knowledge)",
+    "Hook says 'limestone scree' for the vineyard — ground truth says clay with gravel and limestone colluviums, not limestone scree specifically"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "~14-15% ABV range mentioned in food pairing section is loosely derived from the 2020 ABV of 14.5 but presented as a general range",
+    "$25-$38 retail price range is fabricated — no price data was provided"
+  ],
+  "reasoning": "The output makes several unverifiable or incorrect claims: biodynamic/vegan certification is stated as fact but appears nowhere in context data or ground truth, which is a significant fabrication. The vineyard location description conflates the Dentelles slopes with the actual Les Routes site (clay/gravel/limestone colluviums near Hautes Garrigues). The 50% Grenache minimum is actually correct wine knowledge. The price range is fabricated but explicitly flagged as estimated. The output misses key ground truth details like the Serine clone, Julien Bréchet, and the Chave/Reynaud bud wood provenance — missed opportunities rather than errors. Voice is strong: direct, opinionated, takes a clear stance in the insider take. Specificity is good with named soils, rotundone chemistry, and real dish pairings. Very useful structure and actionable insider take.",
+  "judge_tokens_in": 3764,
+  "judge_tokens_out": 493
+}

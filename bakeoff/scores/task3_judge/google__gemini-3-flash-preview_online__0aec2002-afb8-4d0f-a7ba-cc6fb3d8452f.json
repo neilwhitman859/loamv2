@@ -1,0 +1,31 @@
+{
+  "wine_id": "0aec2002-afb8-4d0f-a7ba-cc6fb3d8452f",
+  "wine_name": "Fritz Haag Brauneberger Juffer Sonnenuhr Riesling Auslese, Mosel",
+  "tier": "A",
+  "model": "google/gemini-3-flash-preview:online",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 5.0,
+  "usefulness": 4.5,
+  "composite": 4.075,
+  "wrong_facts": [
+    "Hook claims '70-degree gradient' — this is a specific number not verifiable from context or ground truth",
+    "Hook claims 'blue slate' — ground truth says 'Devonian slate' and 'southern slate site'; blue slate is a common Mosel descriptor but not confirmed for this specific site (Devonian slate can be blue, grey, or red)",
+    "'Brown Mountain' etymology for Brauneberg — plausible but unverifiable from provided data; Brauneberg likely refers to the village name, not necessarily 'Brown Mountain' for iron-rich soils",
+    "Claim that Fuder casks are used is plausible for Fritz Haag but not confirmed in context data",
+    "Price range of $45-$65 is fabricated — no pricing data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "70-degree gradient in the hook",
+    "$45 to $65 price range",
+    "15 and 30 years peak window",
+    "12°C storage temperature",
+    "aging_potential_years: 40",
+    "drinking_window_min_years: 10",
+    "drinking_window_max_years: 50"
+  ],
+  "reasoning": "The output is impressively detailed and well-written with strong voice and specificity — naming Devonian slate, real comparable producers (Prüm, Zilliken, Schaefer), and giving actionable food pairings. However, it fabricates several specific numbers: the 70-degree vineyard gradient, the $45-$65 price range (no pricing was provided), and various aging windows. The 'Brown Mountain' etymology for Brauneberg is unverifiable. The ABV figures (7-7.5%) correctly reference the context data for 2010/2011 vintages. The hook's '70-degree gradient' is a specific fabricated number, though the broader claim about steep south-facing slopes is correct per ground truth. The Sonnenuhr/sundial naming origin is notably absent from the output despite being a key fact. Correctness is middling due to multiple fabricated numbers, though none are catastrophically wrong — they're plausible but unsourced. The hard penalty for fabricated numbers should apply, but many of the 'fabricated' numbers here are reasonable wine knowledge estimates (aging windows, storage temp) rather than false technical specs like pH or blend %. The price fabrication is more problematic. Splitting the difference at 3.0 for correctness.",
+  "judge_tokens_in": 3638,
+  "judge_tokens_out": 591
+}

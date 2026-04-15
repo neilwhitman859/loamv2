@@ -1,0 +1,25 @@
+{
+  "wine_id": "21aa403d-a5ad-43f2-99d9-560dc9e66587",
+  "wine_name": "Lafage, Côtes Catalanes Vieilles Vignes Tessellae",
+  "tier": "B",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 5.0,
+  "usefulness": 4.5,
+  "composite": 3.9,
+  "wrong_facts": [
+    "The wine is described as a blend of Carignan, Syrah, Grenache, and Monastrell, but ground truth confirms it is 100% Carignan",
+    "The hook says 'this blend prioritizes the iron-fisted structure of Carignan and Syrah' — it is not a blend, it is 100% Carignan",
+    "Syrah is described as adding 'cracked black pepper note and mid-palate weight' and Grenache and Monastrell as rounding out edges — none of these grapes are in the wine"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "70-year-old vines (context says ground truth is 70+ years, but the model states it as exact)",
+    "55°F storage temperature",
+    "60°F serving temperature"
+  ],
+  "reasoning": "The fundamental blend error is the most damaging issue. The ground truth confirms this is 100% Carignan, yet the output treats it as a multi-grape blend and builds tasting notes around Syrah's pepper and Grenache/Monastrell contributions — all fabricated. The context data did list multiple grapes, which likely misled the model, but the ground truth is clear. The hook contains the blend error, which is a significant factual mistake in the most prominent position. However, the model correctly identifies Jean-Marc Lafage, schist soils, the Agly Valley, the Tessellae naming (though doesn't explain the Roman mosaic origin), and carbonic maceration for Carignan. The voice is excellent — direct, opinionated, specific, no banned words, and genuinely useful food pairings and comparisons. The specificity is outstanding with named soils, geological features, wind patterns, and real competitor wines. But the core blend error undermines the correctness significantly. The 70-year figure is close to ground truth (70+) and likely from training knowledge, so that's minor. The storage/serving temperatures are fabricated but are standard wine advice rather than wine-specific data claims.",
+  "judge_tokens_in": 3513,
+  "judge_tokens_out": 498
+}

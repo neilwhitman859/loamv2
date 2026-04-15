@@ -1,0 +1,42 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "moonshotai/kimi-k2:online",
+  "correctness": 1.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 3.5,
+  "composite": 3.125,
+  "wrong_facts": [
+    "Hook claims 'no new oak' and 'lateritic iron snap' — while 10 months in old French oak is confirmed by ground truth, 'lateritic iron' soil description is partially correct (gravelly loam soils confirmed) but 'lateritic' is the model's embellishment",
+    "Claims '20% whole clusters' — not in context data or ground truth, fabricated",
+    "Claims 'cold-soaked 3 days' — fabricated vinification detail",
+    "Claims 'bottled at 12.5% ABV' — fabricated number not in context data",
+    "Claims 'daily punch-downs kept under 28°C' — fabricated",
+    "Claims '3- to 6-year-old French hogsheads—large 300 L barrels' — ground truth says French oak barrels, specific age and size fabricated",
+    "Claims 'Albany 30 km away' — Albany is roughly 50+ km from Mount Barker, not 30 km",
+    "Claims '$22–26 retail in Australia, often $18 on deal' — no price data provided, fabricated",
+    "Claims Mount Difficulty is from Marlborough — Mount Difficulty is from Central Otago, New Zealand",
+    "Claims 'first winery to bottle under the Mount Barker sub-region name' — ground truth says first commercial winery in Great Southern region (1975), not specifically Mount Barker sub-region name",
+    "Claims '1.1-billion-year-old gneiss and granite' — specific geological age fabricated",
+    "market_position field contains garbled text '限时特价'"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "12.5% ABV",
+    "20% whole clusters",
+    "3 days cold soak",
+    "28°C fermentation cap",
+    "3- to 6-year-old barrels",
+    "300 L hogsheads",
+    "$22-26 retail",
+    "$18 on deal",
+    "30 km from Albany",
+    "1.1 billion years old",
+    "156 acres"
+  ],
+  "reasoning": "The output fabricates numerous specific numbers: ABV (12.5%), whole cluster percentage (20%), cold soak duration (3 days), fermentation temperature (28°C), barrel age (3-6 year), barrel size (300L), retail prices, and geological age. This triggers the hard penalty for fabricated numbers, capping correctness at 1.5. Mount Difficulty is wrongly placed in Marlborough (it's Central Otago). The market_position field contains garbled Chinese characters. The voice is strong — direct, opinionated, specific, with good food pairings and a clear insider take. Specificity is high with named soils, competitors, and dishes, though many specific claims are fabricated. The 10-month French oak aging matches ground truth, and the producer founding date of 1968 is correct.",
+  "judge_tokens_in": 3343,
+  "judge_tokens_out": 693
+}

@@ -1,0 +1,24 @@
+{
+  "wine_id": "0aba350e-fffb-49bd-ad8b-9d2ec1f32fe9",
+  "wine_name": "Vasse Felix Filius Cabernet Sauvignon, Margaret River",
+  "tier": "C",
+  "model": "openai/gpt-5-mini",
+  "correctness": 2.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 3.25,
+  "wrong_facts": [
+    "Called Filius a 'single-varietal Cab' when ground truth shows it's a blend of 93% Cabernet Sauvignon, 5.5% Malbec, 1.5% Petit Verdot",
+    "Vinification section says 'Public technical notes for Filius are limited' and infers winemaking, but ground truth shows specific details: wild-yeast fermentation in open-top fermenters, 11 months in French oak",
+    "Hook implies it's a straight Cabernet ('straight-up Margaret River Cabernet') when it's actually a blend"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "12-14°C storage temperature is not in context data (minor, general wine advice)",
+    "1-8 year drinking window is fabricated/estimated"
+  ],
+  "reasoning": "The output calls Filius a 'single-varietal Cab' and 'straight-up Margaret River Cabernet' when ground truth confirms it's a 93/5.5/1.5 blend of Cab/Malbec/Petit Verdot — this is a factual error in both the hook and wine_summary. The vinification section hedges about limited technical notes when detailed info exists (wild-yeast fermentation, 11 months French oak). The output also misses the key naming origin ('son of' in Latin). However, it correctly identifies Vasse Felix as a founding Margaret River estate, and the soil descriptions and climate details are broadly accurate. Voice is decent — direct, avoids banned words, names real dishes and competitors — but the incorrect 'single-varietal' claim and missed blend info are significant factual problems. The drinking window and storage temp are estimated but not egregiously fabricated numbers in the hard-cap sense (they're reasonable estimates, not precise technical specs). Specificity is good with named soils, competitors, and real dishes.",
+  "judge_tokens_in": 3492,
+  "judge_tokens_out": 469
+}

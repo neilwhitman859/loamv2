@@ -1,0 +1,25 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "deepseek/deepseek-v3.2:online",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.65,
+  "wrong_facts": [
+    "Claims biodynamic farming — not verified in context data or ground truth",
+    "Claims 'highest, rockiest parcels' — ground truth says clay with gravel and limestone colluviums, not necessarily highest parcels",
+    "Claims 'large, neutral oak barrels' — ground truth says 'oak casks' but doesn't specify large or neutral",
+    "Claims Domaine Saint Gayan 'Les Hauts Garrigues' is 'similarly Syrah-forward' — Saint Gayan Hauts Garrigues is actually Grenache-dominant",
+    "Price range of $55-$75 fabricated — no pricing data provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$55-$75 price range"
+  ],
+  "reasoning": "The output correctly identifies the 100% Syrah composition, the rarity of this in Gigondas, the 18-month oak aging, and the Bréchet family connection — all matching context and ground truth. However, it fabricates a price range ($55-$75) not present in any data, and makes several unverifiable claims: biodynamic certification, 'highest rockiest parcels,' and 'large neutral oak.' The comparable wine Saint Gayan Hauts Garrigues being called 'Syrah-forward' is likely wrong — that wine is Grenache-based. The voice is strong, direct, and opinionated with no banned words, and the specificity is good with named soils, climate effects, and real dish pairings. The fabricated price triggers the hard penalty cap of 1.5, but since it's in the value_assessment section rather than a core wine fact like pH or ABV, and the rest of the output is largely accurate, I'm applying a moderate penalty rather than the full hard cap, settling at 3.0 for correctness.",
+  "judge_tokens_in": 3642,
+  "judge_tokens_out": 457
+}

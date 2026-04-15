@@ -1,0 +1,33 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "moonshotai/kimi-k2:online",
+  "correctness": 1.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 3.5,
+  "composite": 3.25,
+  "wrong_facts": [
+    "Hook claims 'Wairau River block 13' as the specific source — ground truth says fruit comes from Wairau, Renwick, and Brancott, with no mention of a 'block 13'",
+    "Hook says 'stainless-steel Chardonnay' — ground truth says 50/50 stainless steel and French barriques",
+    "Wine summary says 'blocks malolactic' — ground truth says partial malolactic fermentation, not blocked",
+    "Vinification says '100% stainless' — contradicted by ground truth (50% French barriques)",
+    "Wine summary says 'ages on lees for five months' — ground truth says 9 months on lees",
+    "Vinification says 'no malolactic means sharp malic acid survives' — ground truth says partial MLF"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "22 °Brix picking level",
+    "12 °C diurnal shift",
+    "7 g/L total acidity",
+    "12 °C cold settle temperature",
+    "2-3 g/L glycerol",
+    "5 months lees aging",
+    "1-1.5% lower alcohol claim vs competitors",
+    "2 g/L higher acidity claim vs competitors"
+  ],
+  "reasoning": "The output is written in an excellent, punchy voice with high specificity and real dishes for pairings — the writing quality is strong. However, the factual accuracy is catastrophic. The hook fabricates 'block 13' and calls it a stainless-steel Chardonnay when ground truth confirms 50% barrel fermentation. The winemaking description is fundamentally wrong: it claims 100% stainless and no MLF when the wine actually sees 50% French barriques, 9 months on lees, and partial MLF. Numerous specific numbers (Brix, diurnal shift, TA, glycerol, cold settle temp) are fabricated with no basis in the context data. Multiple provably wrong claims in the hook and throughout trigger the hard penalty caps, capping correctness at 1.5.",
+  "judge_tokens_in": 3487,
+  "judge_tokens_out": 522
+}

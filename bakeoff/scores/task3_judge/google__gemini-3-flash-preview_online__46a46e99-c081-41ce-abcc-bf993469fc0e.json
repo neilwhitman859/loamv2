@@ -1,0 +1,26 @@
+{
+  "wine_id": "46a46e99-c081-41ce-abcc-bf993469fc0e",
+  "wine_name": "Kir Yianni Ramnista, Naoussa",
+  "tier": "B",
+  "model": "google/gemini-3-flash-preview:online",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.4,
+  "wrong_facts": [
+    "Hook mentions 'Yianakohori vineyard' — the ground truth says the fruit comes from 'Ramnista blocks at Kir-Yianni Estate'; Yianakohori is the village/area but calling it the vineyard name is misleading and not sourced",
+    "Vinification states '12-to-15-month aging period' — ground truth says 18 months in oak plus 6 months bottle aging",
+    "Vinification states '25% new wood' — not in context data or ground truth, fabricated",
+    "Terroir section repeats 'Yianakohori estate' framing which is not how the producer describes the source"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "12-to-15-month aging period (ground truth is 18 months oak + 6 months bottle)",
+    "25% new wood (not in any source)",
+    "225-liter barrels mentioned correctly but aging duration is wrong"
+  ],
+  "reasoning": "The output fabricates specific numbers: 12-15 months oak aging (should be 18 months) and 25% new wood (completely unsourced). These trigger the hard penalty for fabricated numbers, capping correctness at 1.5, but I'm giving 2.0 because the altitude (280-330m), oak sizes (225L and 500L), French and American oak, and founder (Yiannis Boutaris) all match ground truth correctly. The naming origin of 'Ramnista' as 'royal hill' is absent from the output, which is a missed opportunity but not an error. The voice is strong — direct, opinionated, specific, with no banned words and good food pairings. Specificity is high throughout with named comparables, real dishes, and concrete details. But the fabricated numbers are a serious problem for a data-trust product.",
+  "judge_tokens_in": 3628,
+  "judge_tokens_out": 463
+}

@@ -1,0 +1,28 @@
+{
+  "wine_id": "4647b290-7c71-4b76-9913-8e334d110814",
+  "wine_name": "Paul Hobbs Richard Dinner Cuvee Agustina Chardonnay, Sonoma Mountain",
+  "tier": "A",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 1.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "Hook claims 'Goulding clay loam and volcanic rock' as the soil type — this is unverifiable and likely fabricated (not in context data or ground truth)",
+    "Vinification summary claims '50-60% new French oak' — ground truth states 90% new French oak, which is significantly different",
+    "Vinification summary claims '15 months sur lie aging' — not in context data and unverifiable",
+    "Claims vineyard sits 'above 400 feet' — not in context data, unverifiable specific elevation claim",
+    "Price range '$100 to $150 per bottle' is fabricated — no price data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "15 months sur lie aging",
+    "50-60% new French oak (ground truth is 90%)",
+    "above 400 feet elevation",
+    "$100 to $150 price range"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity, and genuinely useful structure. However, it fabricates multiple specific numbers not present in the context data. Most critically, the oak percentage is stated as 50-60% new French oak when ground truth confirms 90% new French oak — this is a provably wrong factual claim. The 15-month lees aging, 400-foot elevation, and price range are all fabricated numbers. Per the hard penalty rule, fabricating specific numbers not in context data caps correctness at 1.5. The hook's soil claim ('Goulding clay loam') is also unverifiable. Despite the excellent writing quality, the factual unreliability is disqualifying for a data-trust product.",
+  "judge_tokens_in": 3456,
+  "judge_tokens_out": 410
+}

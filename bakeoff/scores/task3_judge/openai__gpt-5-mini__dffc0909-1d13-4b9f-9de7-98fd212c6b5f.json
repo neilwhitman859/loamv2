@@ -1,0 +1,22 @@
+{
+  "wine_id": "dffc0909-1d13-4b9f-9de7-98fd212c6b5f",
+  "wine_name": "Cakebread Cellars Cuttings Wharf Chardonnay, Los Carneros",
+  "tier": "A",
+  "model": "openai/gpt-5-mini",
+  "correctness": 3.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.825,
+  "wrong_facts": [
+    "Hook mentions 'clay soils' but ground truth specifies 'Haire loam soils' (loamy, not clay-heavy). The appellation context data does mention clay-heavy soils, but the specific vineyard has loam soils.",
+    "Terroir section mentions 'Diablo series soils' which is not in any provided data and is unverifiable for this specific vineyard site."
+  ],
+  "banned_words_found": [
+    "elegant"
+  ],
+  "fabricated_numbers": [],
+  "reasoning": "The output correctly identifies the naming origin (Cuttings Wharf Road) and mentions Haire soils in the terroir section, which matches ground truth. However, the hook emphasizes 'clay soils' when the ground truth specifies 'shallow loamy soils' (Haire loam) — this is a meaningful inaccuracy in the hook but not a completely fabricated claim since the appellation context data does reference clay. The 'Diablo series soils' mention appears fabricated — not in context data and not confirmed by ground truth. The word 'elegant' appears in the appellation context but the output itself doesn't contain banned words upon re-check — actually checking again, I don't see banned words in the output text. The vinification section appropriately hedges about limited public data. Voice is strong — direct, opinionated, avoids most generic filler. Food pairings are specific and well-reasoned. Comparables (Rombauer, Ramey) are apt and well-differentiated.",
+  "judge_tokens_in": 3751,
+  "judge_tokens_out": 717
+}

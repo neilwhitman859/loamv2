@@ -1,0 +1,26 @@
+{
+  "wine_id": "ebde8e00-350b-40fc-a762-0987259419ac",
+  "wine_name": "Howard Park Leston Shiraz, Margaret River",
+  "tier": "C",
+  "model": "deepseek/deepseek-v3.2:online",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.3,
+  "wrong_facts": [
+    "Oak aging stated as 'about 12 months' — ground truth is 18 months",
+    "Forest Grove ironstone gravels claimed as the soil type — not verifiable from context data and potentially fabricated (Leston Vineyard is in Wilyabrup, not Forest Grove)",
+    "Clonakilla Hilltops Shiraz — Clonakilla is famous for its Canberra District Shiraz/Viognier, not a 'Hilltops Shiraz'"
+  ],
+  "banned_words_found": [
+    "elegant"
+  ],
+  "fabricated_numbers": [
+    "12 months oak aging (ground truth is 18 months)",
+    "$35-$50 AUD price range (no price data provided)"
+  ],
+  "reasoning": "The output fabricates the oak aging duration as 'about 12 months' when ground truth is 18 months in oak (95% French, 5% American, 30% new). It also fabricates a price range of $35-$50 AUD when no price data was provided. The 'Forest Grove ironstone gravels' soil claim is repeated multiple times but is unverifiable — the vineyard is in Wilyabrup per ground truth. The Clonakilla comparable is misattributed to Hilltops when Clonakilla is a Canberra District producer. The word 'elegant' does not appear but 'elegance' is used in the Clonakilla description — checking banned list, 'elegant' is banned but 'elegance' is not explicitly listed, so no penalty there. Despite these factual issues, the voice is strong and direct, the specificity is good with named sub-regions and soil types, and the insider take is genuinely useful. However, the fabricated numbers trigger the hard cap on correctness.",
+  "judge_tokens_in": 3142,
+  "judge_tokens_out": 445
+}

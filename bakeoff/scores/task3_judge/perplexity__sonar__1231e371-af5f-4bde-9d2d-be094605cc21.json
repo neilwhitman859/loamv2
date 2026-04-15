@@ -1,0 +1,32 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "perplexity/sonar",
+  "correctness": 1.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 2.9,
+  "wrong_facts": [
+    "Wine is described as 100% Cabernet Sauvignon in context data but ground truth shows 2022 is 92% Cab, 3% Petite Verdot, 3% Merlot, 2% Malbec — output doesn't correct this but also doesn't flag it",
+    "Claims 'Shafer Vineyards farms 55 acres' — not in context data and unverifiable/likely fabricated",
+    "Claims wine 'pulls from multiple blocks, including Hillside Select vines' — ground truth says it sources from hillside estate vineyards, Borderline vineyard, and selected Napa sites, but NOT that it includes Hillside Select vines specifically; this conflation is misleading",
+    "Claims 'ages 28 months in French oak (50% new)' — ground truth says 18 months in 100% new French oak (Allier & Tronçais); both the duration and new oak percentage are wrong",
+    "Claims 'native yeast' fermentation — not in context data and unverifiable",
+    "Claims dry-farming approach — not in context data and unverifiable",
+    "Hook doesn't mention the naming origin but describes sourcing from 'Stags Leap District's edge' which is plausible but not precisely stated in context"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "55 acres",
+    "28 months oak aging",
+    "50% new oak",
+    "90°F afternoon temperatures",
+    "$30 by-the-glass pours",
+    "$160+ for Spottswoode"
+  ],
+  "reasoning": "The output fabricates multiple specific numbers: 28 months in 50% new French oak is provably wrong (ground truth: 18 months, 100% new French oak), 55 acres is unverifiable, and several other numbers are invented. The fabricated cooperage details directly contradict the verified tech sheet. This triggers the hard penalty for fabricated numbers, capping correctness at 1.5. The voice is reasonably direct and opinionated with good specificity in naming soils and formations, though some of those soil details (Bale loam, Hambright volcanic) may themselves be fabricated for this specific wine's vineyard sites. The food pairings are well-constructed and the insider take has personality, but the factual foundation is unreliable throughout.",
+  "judge_tokens_in": 3657,
+  "judge_tokens_out": 570
+}

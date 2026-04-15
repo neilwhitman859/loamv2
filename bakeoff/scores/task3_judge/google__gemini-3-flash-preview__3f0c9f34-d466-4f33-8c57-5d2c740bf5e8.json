@@ -1,0 +1,21 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "Claims wine uses fruit from Awatere Valley — ground truth says vineyard sources are Wairau, Renwick, and Brancott only",
+    "Describes soils as 'alluvial silt over gravel' — ground truth says 'shallow, sandy loams over gravels'",
+    "Hook claims wine 'avoids heavy-handed oak' but ground truth shows 50% fermented in French barriques with 9 months on lees"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is impressively written with strong voice, excellent specificity, and genuinely useful comparisons and food pairings. However, there are several factual issues: the Awatere Valley claim is contradicted by ground truth (only Wairau, Renwick, Brancott); the soil description is slightly wrong (sandy loams, not alluvial silt); and the hook's framing that the wine 'avoids heavy-handed oak' is misleading given 50% barrique fermentation with 9 months lees contact. The vinification section is impressively close to ground truth (split fermentation, barriques, bâtonnage, partial MLF) suggesting good training knowledge, but the hook's characterization of the wine as avoiding oak is somewhat misleading. No fabricated numbers — ABV and prices all come from context data. No banned words detected.",
+  "judge_tokens_in": 3596,
+  "judge_tokens_out": 359
+}

@@ -1,0 +1,26 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "deepseek/deepseek-v3.2:online",
+  "correctness": 2.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 3.25,
+  "wrong_facts": [
+    "Price range '$20-$30 AUD' is fabricated - no price data was provided",
+    "Claim that Great Southern was 'established as a GI in 1996' is unverifiable from context and may be inaccurate",
+    "Vinification details about 'cultured yeasts' and 'portion of older French oak barrels' are speculative - ground truth says 10 months in French oak barrels but doesn't specify old oak or cultured yeasts",
+    "Lateritic gravels mentioned repeatedly - ground truth says 'gravelly loam soils' which is close but 'lateritic' is an embellishment not confirmed"
+  ],
+  "banned_words_found": [
+    "harmonizes"
+  ],
+  "fabricated_numbers": [
+    "$20-$30 AUD price range"
+  ],
+  "reasoning": "The output fabricates a specific price range ($20-$30 AUD) not present in context data, triggering the hard penalty for fabricated numbers, capping correctness at 1.5. However, many claims align reasonably well with ground truth: Plantagenet as a pioneer, Omrah as a regional/value label, gravelly soils (close to 'gravelly loam'), and cool-climate maritime influence. The vinification section speculates about cultured yeasts and 'older' French oak when ground truth just says 10 months French oak. The banned word 'harmonizes' appears in food pairing. Voice is decent - direct and opinionated with good structure, though some generic phrases creep in. Specificity is strong with named soils, competitors, and real dishes. Applying hard caps: correctness max 1.5 for fabricated price, voice max 2.0 for banned word.",
+  "judge_tokens_in": 3254,
+  "judge_tokens_out": 860
+}

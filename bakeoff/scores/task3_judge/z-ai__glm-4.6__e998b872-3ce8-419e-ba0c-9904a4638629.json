@@ -1,0 +1,28 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "z-ai/glm-4.6",
+  "correctness": 2.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "Hook says 'Porrera' but Les Tosses is in Torroja del Priorat, not Porrera",
+    "Vinification summary mentions 'eight months in neutral oak' and 'large-format barrels—foudres—allows micro-oxygenation' but ground truth says recent vintages ferment and age in cement tanks (8 months) with no wood aging",
+    "wine_summary says 'captures the essence' which is a banned phrase, but more importantly it implies quartzite is part of the site geology without verification",
+    "Value assessment fabricates '$80' price and '$100+' comparison when no prices were provided",
+    "Comparable wine Clos Erasmus Laurel described as having 'more Grenache in the blend' — this is unverifiable and potentially wrong"
+  ],
+  "banned_words_found": [
+    "captures the essence"
+  ],
+  "fabricated_numbers": [
+    "$80 price point",
+    "$100+ comparison price"
+  ],
+  "reasoning": "The hook contains a provably wrong geographic claim — Les Tosses is in Torroja del Priorat, not Porrera, which is a hard penalty situation. The vinification description incorrectly states aging in neutral oak/foudres when ground truth confirms cement tanks with no wood aging for recent vintages. The price of ~$80 and $100+ comparison are fabricated since no prices were provided. The banned phrase 'captures the essence' appears in wine_summary. However, the output correctly identifies Dominik Huber, biodynamic farming, licorella slate, 100% Carignan, and the general stylistic positioning. The voice is fairly direct and opinionated but undermined by the factual errors. Specificity is strong with named soils, competitors, and real dishes.",
+  "judge_tokens_in": 3419,
+  "judge_tokens_out": 435
+}

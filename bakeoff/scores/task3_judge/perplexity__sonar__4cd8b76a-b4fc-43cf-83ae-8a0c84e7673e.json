@@ -1,0 +1,17 @@
+{
+  "wine_id": "4cd8b76a-b4fc-43cf-83ae-8a0c84e7673e",
+  "wine_name": "Barefoot Buttery Chardonnay, California",
+  "tier": "C",
+  "model": "perplexity/sonar",
+  "correctness": 4.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.325,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is impressively well-aligned with ground truth: Central Valley sourcing, E&J Gallo ownership, 1960s founding, malolactic fermentation as the 'buttery' mechanism — all confirmed. The hook's claim about MLF is correct per ground truth ('likely through malolactic fermentation'). No fabricated specific numbers — ABV, pH, oak months, blend percentages are all absent or correctly implied. The claim about 'oak barrels or chips' is hedged appropriately and plausible for a mass-market wine. The voice is direct, opinionated, and specific — 'Skip this if you chase minerality' is a strong take. Food pairings are real dishes with reasoning. Comparable wines are well-chosen and differentiated. Minor ding on correctness: 'alluvial soils from ancient river deposits' for Central Valley is plausible but not verified from context; the Chili's mention is unverifiable. No banned words found. Strong output overall with good specificity and genuine usefulness.",
+  "judge_tokens_in": 3157,
+  "judge_tokens_out": 293
+}

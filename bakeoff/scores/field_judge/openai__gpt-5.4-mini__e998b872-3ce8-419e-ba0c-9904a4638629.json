@@ -1,0 +1,66 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "openai/gpt-5.4-mini",
+  "scores": {
+    "hook": {
+      "correctness": 3.5,
+      "voice": 4.5,
+      "note": "Mentions 'granite-and-slate' but ground truth specifies llicorella (slate) without granite; score claims (97 points) not verifiable from context which only says '6 entries (medals/points)' without specifics."
+    },
+    "wine_summary": {
+      "correctness": 4.0,
+      "voice": 4.5,
+      "note": "Accurate on grape, philosophy, and style; 97-point claim across vintages not verifiable from provided context; otherwise well-aligned with ground truth on winemaking direction and terroir."
+    },
+    "terroir_expression": {
+      "correctness": 4.5,
+      "voice": 4.5,
+      "note": "Correctly identifies llicorella, steep slopes, altitude, Mediterranean climate; doesn't mention the specific 600m elevation or 90-year-old vines, but nothing fabricated; 'quartzite' is a minor addition not in ground truth but plausible for Priorat."
+    },
+    "vinification_summary": {
+      "correctness": 2.0,
+      "voice": 4.0,
+      "note": "Ground truth says recent vintages ferment and age in cement tanks with no wood aging; the model describes 8 months oak élevage as the core method, which directly contradicts the verified winemaking approach of dispensing with oak entirely."
+    },
+    "food_pairing": {
+      "correctness": 4.5,
+      "voice": 4.5,
+      "note": "Pairings are logical and well-reasoned for a firm, tannic, herbal Carignan; Nashville hot chicken is a creative and defensible pick; no factual errors."
+    },
+    "comparable_wines": {
+      "correctness": 3.5,
+      "voice": 4.0,
+      "note": "All three are legitimate Priorat comparisons, but none are pure Carignan like Les Tosses, which somewhat weakens the comparison; Manyetes is actually Carignan-dominant so that's a good pick, but calling it 'Grenache-led' may be inaccurate."
+    },
+    "style_profile": {
+      "correctness": 4.5,
+      "voice": 4.5,
+      "note": "Accurate and concise; correctly identifies 100% Carignan, body, tannin structure, and mineral character."
+    },
+    "cellar_recommendation": {
+      "correctness": 3.5,
+      "voice": 4.5,
+      "note": "8-12 year window is reasonable but somewhat conservative for a wine with 97-point scores and ageworthy structure from old vines; no fabricated specifics though."
+    },
+    "value_assessment": {
+      "correctness": 3.0,
+      "voice": 4.5,
+      "note": "Price range of $120-$180 is not provided in context and may be fabricated; comparisons to Clos Mogador and Clos Erasmus are reasonable but price accuracy is unverifiable."
+    },
+    "market_position": {
+      "correctness": 4.0,
+      "voice": 4.5,
+      "note": "Positioning is accurate and well-articulated; aligns with the wine's profile as a terroir-driven, collector-oriented Priorat."
+    },
+    "insider_take": {
+      "correctness": 4.5,
+      "voice": 5.0,
+      "note": "Strong, opinionated take that correctly positions the wine as architectural rather than powerful; Etna Rosso and Barolo comparisons are apt for the style; no banned words, direct and specific."
+    }
+  },
+  "overall_note": "Strong voice throughout with no banned words; main correctness issue is the vinification_summary contradicting ground truth by emphasizing oak aging when the winery has moved to cement with no wood, and unverifiable score/price claims in several fields.",
+  "judge_tokens_in": 1940,
+  "judge_tokens_out": 875
+}

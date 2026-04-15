@@ -1,0 +1,26 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "google/gemini-3-flash-preview:online",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.475,
+  "wrong_facts": [
+    "Claims Omrah fruit 'typically leans on the maritime-influenced sub-regions like Albany and Denmark' — unverifiable and likely fabricated; Omrah is a second label using younger vineyards or bought-in fruit, not specifically from those sub-regions",
+    "Claims wine uses 'Marri and Karri loams' — these are not documented soil types for Plantagenet; ground truth says gravelly loam soils",
+    "Claims 'brief maturation in older French oak barrels' — ground truth says 10 months in French oak barrels, which is not 'brief' and 'older' is unverified",
+    "States 'Twenty dollars is the standard retail price for this tier' — no price data was provided, this is fabricated",
+    "Claims diurnal temperature swing 'can exceed 15°C' — specific number not in context data and unverifiable"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "15°C diurnal temperature swing",
+    "Twenty dollars retail price"
+  ],
+  "reasoning": "The output demonstrates strong voice and specificity with opinionated, direct writing and named competitors. However, it fabricates several specific claims: the $20 price point (no price data provided), the 15°C diurnal swing, the 'Marri and Karri loams' soil terminology (ground truth says gravelly loam), and mischaracterizes the oak regime (ground truth: 10 months French oak, not 'brief' in 'older' barrels). The hook is factually reasonable — Great Southern does benefit from Southern Ocean cooling — but the accumulation of fabricated specifics across the piece undermines correctness significantly. The fabricated price number triggers the hard penalty consideration, though it's presented as an estimate rather than a precise technical measurement. Still, multiple unverifiable specific claims drag correctness down.",
+  "judge_tokens_in": 3344,
+  "judge_tokens_out": 454
+}

@@ -1,0 +1,25 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "z-ai/glm-4.6",
+  "correctness": 1.5,
+  "voice": 3.5,
+  "specificity": 3.5,
+  "usefulness": 3.0,
+  "composite": 2.7,
+  "wrong_facts": [
+    "Hook claims the wine is 'Named for the 1.5 miles separating the winery from its hillside vineyards' — this is provably wrong. The name refers to the 'generation and a half' partnership between John Shafer and his son Doug.",
+    "States the wine is 'pure Cabernet Sauvignon' / '100% Cabernet Sauvignon' focus, but the 2022 blend is actually 92% Cabernet Sauvignon, 3% Petite Verdot, 3% Merlot, 2% Malbec.",
+    "Claims Shafer established One Point Five to highlight hillside fruit 'distinct from their single-vineyard Hillside Select' — while there is a relationship, the framing implies One Point Five is also single-site hillside, when it is actually a multi-site blend including Borderline vineyard and selected Napa Valley sites.",
+    "Mentions 'Hambright series' and 'Bale loams' as specific soil types — these are plausible Napa soil series but their specific attribution to Shafer's vineyard sources is unverifiable and potentially fabricated.",
+    "Comparable wines section says Stag's Leap Wine Cellars SLV 'Shares the Stags Leap District intensity' implying One Point Five is from Stags Leap District — the wine is appellation Napa Valley, not Stags Leap District specifically."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "18 months oak aging not stated but happens to match ground truth — however the model didn't have this data, so it wasn't fabricated per se. No clearly fabricated numbers beyond what's in context, though the 10-15 years aging claim is unsourced."
+  ],
+  "reasoning": "The hook contains a provably wrong naming origin — the wine is named for the 'generation and a half' partnership between John and Doug Shafer, not for 1.5 miles. This triggers the hard cap of MAX 1.5 on correctness. The ground truth explicitly lists '1.5 miles from anywhere' as NOT TRUE. Additionally, calling it pure Cabernet Sauvignon contradicts the actual 92% Cab blend. The voice is decent — direct, opinionated, no banned words — but the factual errors undermine everything. Specificity is reasonable with named soils and competitors, though some soil claims are unverifiable. Usefulness is moderate; the insider take about ABV trade-offs is a real opinion but built on a foundation of incorrect facts.",
+  "judge_tokens_in": 3654,
+  "judge_tokens_out": 623
+}

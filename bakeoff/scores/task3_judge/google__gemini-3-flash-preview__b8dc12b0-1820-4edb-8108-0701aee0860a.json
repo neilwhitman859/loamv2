@@ -1,0 +1,27 @@
+{
+  "wine_id": "b8dc12b0-1820-4edb-8108-0701aee0860a",
+  "wine_name": "Tolosa 1772 Grenache, Edna Valley",
+  "tier": "C",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.6,
+  "wrong_facts": [
+    "Terroir section claims fog comes from 'Morro Bay through the Cuesta Grade gap' — the cooling influence comes through the Pismo Gap, not the Cuesta Grade",
+    "Vinification summary claims 'controlled fermentation in stainless steel and neutral French oak' and 'avoiding new oak' — ground truth shows 15 months in French oak puncheons with a mix of warm and cool fermentations; the stainless steel claim and 'neutral oak' are fabricated details",
+    "Terroir section names 'Positas and Diablo clay loams' as specific soil series — this is unverifiable and likely fabricated for this specific site",
+    "Value assessment fabricates a price of 'roughly $65' — no price was provided in context data",
+    "Value assessment compares to Sine Qua Non 'Distenta' series — this specific wine name appears fabricated; SQN uses different naming conventions",
+    "Hook claims 'volcanic tuff and clay' — while volcanic soils are mentioned in appellation context, 'tuff' specifically on this vineyard is unverified"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$65 price point fabricated — no price data provided",
+    "15 months in French oak puncheons is in ground truth but the model described it differently as 'stainless steel and neutral French oak'"
+  ],
+  "reasoning": "The output has strong voice — direct, opinionated, no banned words, good structure. The naming origin of 1772 is correctly identified (matching ground truth). However, there are multiple fabricated or wrong specifics: the Cuesta Grade gap vs. Pismo Gap error, fabricated soil series names (Positas and Diablo), fabricated winemaking details (stainless steel, neutral oak contradicts the actual French oak puncheon regime), fabricated price ($65), and a likely fabricated SQN cuvée name. The hook itself is mostly defensible — cool-climate Grenache framing is correct — but 'volcanic tuff and clay' is an unverified specific claim. The voice and structure are excellent, but the density of fabricated specifics significantly undermines correctness.",
+  "judge_tokens_in": 3575,
+  "judge_tokens_out": 532
+}

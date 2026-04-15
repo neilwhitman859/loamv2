@@ -1,0 +1,19 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "perplexity/sonar-reasoning-pro",
+  "correctness": 1.0,
+  "voice": 1.0,
+  "specificity": 1.0,
+  "usefulness": 1.0,
+  "composite": 1.0,
+  "wrong_facts": [
+    "PARSE_FAILED"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "Output failed to parse as valid JSON. Unusable for production.",
+  "judge_tokens_in": 0,
+  "judge_tokens_out": 0
+}

@@ -1,0 +1,19 @@
+{
+  "wine_id": "46a46e99-c081-41ce-abcc-bf993469fc0e",
+  "wine_name": "Kir Yianni Ramnista, Naoussa",
+  "tier": "B",
+  "model": "openai/gpt-5.4-mini:online",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.05,
+  "wrong_facts": [
+    "The comparable wine 'Costaripa Valtènesi Chiaretto Rosso-style Xinomavro contrast' is garbled and nonsensical — Costaripa makes Chiaretto rosé from Groppello on Lake Garda, which has nothing to do with Xinomavro or this comparison"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is factually solid on the core claims: 100% Xinomavro, Naoussa appellation, Kir Yianni producer, TEXSOM medals across listed vintages, and the $29.46 price all match context data. The hook is accurate and compelling. The terroir section describes Naoussa's soils (limestone, clay, alluvial) and climate plausibly but without sourcing from context data — these are generally correct from wine knowledge. Crucially, the output does NOT mention the ground-truth details (18 months oak, 225L/500L French and American casks, Stellios Boutaris, 'royal hill' naming origin, 280-330m altitude, cold soak, pigeage) — this is a missed opportunity but not a fabrication. The Costaripa comparable wine entry is confused and essentially wrong. No banned words found. The voice is excellent: direct, opinionated, specific, with real food pairings and honest assessments. No fabricated numbers. The vinification section is vague but carefully hedged ('usually means') rather than fabricating specifics.",
+  "judge_tokens_in": 3696,
+  "judge_tokens_out": 390
+}

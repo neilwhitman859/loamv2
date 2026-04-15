@@ -1,0 +1,25 @@
+{
+  "wine_id": "4cd8b76a-b4fc-43cf-83ae-8a0c84e7673e",
+  "wine_name": "Barefoot Buttery Chardonnay, California",
+  "tier": "C",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "Claims '100% malolactic fermentation' as a definitive fact — not in context data and not verified in ground truth (ground truth says 'likely through malolactic fermentation and/or oak')",
+    "States wine is aged with 'toasted oak staves or chips' and 'managed in large stainless steel tanks' — plausible but fabricated specifics not in context data or ground truth",
+    "Claims 'high pH' in cellar recommendation — no pH data provided",
+    "States 'high residual sugar' multiple times — no RS data in context; ground truth doesn't confirm this"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "12 to 18 months aging window claim is specific but not sourced",
+    "acidity: 1, body: 5, sweetness: 2, alcohol: 3 — all fabricated sensory scores with no data backing"
+  ],
+  "reasoning": "The output is exceptionally well-written with a strong, opinionated voice and impressive specificity — naming diacetyl, methyl octalactones, vanillin, Central Valley sourcing (which matches ground truth), and real comparable wines. However, it fabricates several technical details: '100% malolactic fermentation,' oak staves/chips in stainless steel tanks, 'high pH,' and 'high residual sugar' are all stated as facts without source data. The Central Valley sourcing and the 'Buttery' as style descriptor both match ground truth, which is good. The sensory scores are fabricated numbers but these are arguably expected outputs rather than factual claims. The voice is excellent — direct, opinionated, no banned words, comfortable being negative. The hook is plausible but states 'byproduct of malolactic fermentation' as the defining technique, which is reasonable but not confirmed. Overall, strong writing undermined by multiple unverifiable technical claims stated as fact.",
+  "judge_tokens_in": 3370,
+  "judge_tokens_out": 466
+}

@@ -1,0 +1,27 @@
+{
+  "wine_id": "1bc9b5ef-3d2d-4f0d-924b-fbfcd741e8d3",
+  "wine_name": "Montes Alpha M, Valle de Colchagua",
+  "tier": "B",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Hook claims '45-degree slopes' — Apalta's slopes are steep but the commonly cited figure is around 30-45 degrees; 45 degrees is at the extreme end and not verified",
+    "Hook claims 'poor granitic soils' — Apalta soils are decomposed granite mixed with clay, but calling them 'poor' is an oversimplification and 'granitic' is partially correct",
+    "Hook frames this as 'high-altitude viticulture' — Apalta is not high altitude; it's around 200-300m elevation. The distinction is hillside/slope viticulture, not high-altitude",
+    "Vinification says '18 months in new French oak barrels' — ground truth says 18 months in French oak with 70% new, not 100% new oak",
+    "Claims wine is 'moved entirely by gravity' — gravity-flow winemaking is plausible but not confirmed in ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "45-degree slopes",
+    "20 degrees Celsius diurnal shift",
+    "pH and TA figures are not fabricated in the output but the 'new French oak' claim misrepresents the 70% new oak ratio"
+  ],
+  "reasoning": "The output is impressively written with strong voice, excellent specificity, and genuinely useful insights. However, it has several factual issues: the hook's framing of Apalta as 'high-altitude viticulture' is wrong (it's hillside, not high-altitude), the 45-degree slope claim is unverified and at the extreme end, and the vinification section states '18 months in new French oak' when ground truth specifies only 70% new oak — this is a meaningful misrepresentation. The 20°C diurnal shift is a fabricated specific number. These errors prevent a high correctness score despite the otherwise excellent quality of the writing. The voice is direct, opinionated, and avoids banned words. Specificity and usefulness are both very strong.",
+  "judge_tokens_in": 3540,
+  "judge_tokens_out": 496
+}

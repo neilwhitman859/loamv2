@@ -1,0 +1,22 @@
+{
+  "wine_id": "4cd8b76a-b4fc-43cf-83ae-8a0c84e7673e",
+  "wine_name": "Barefoot Buttery Chardonnay, California",
+  "tier": "C",
+  "model": "z-ai/glm-4.6",
+  "correctness": 3.0,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.525,
+  "wrong_facts": [
+    "Claims sourcing from 'coastal zones' — ground truth says Central Valley grapes only",
+    "States 'residual sweetness' and 'residual sugar' as definitive characteristics without evidence — the wine may taste slightly sweet but this is unverified",
+    "Claims 'sweet-toothed demographic' and 'sweet-toothed white wine segment' — while the wine is buttery, characterizing it as sweet is an assumption not supported by data",
+    "Hook claims 'oak adjuncts' as definitive — plausible but not confirmed in context data or ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output correctly identifies Central Valley sourcing, malolactic fermentation as the source of buttery character, and the industrial scale of Barefoot/Gallo production. It correctly names Jennifer Wall's winemaking approach implicitly through describing formula-driven winemaking. However, it adds 'coastal zones' to the sourcing which contradicts ground truth (Central Valley only). The repeated characterization of the wine as sweet/having residual sugar is unverified and potentially misleading — buttery doesn't necessarily mean sweet. The tone is opinionated and direct but crosses into condescension at times ('college house parties,' 'beverage engineering,' 'pleasure receptors'), which feels more like wine snobbery than Loam's approachable voice. Specificity is good with named competitors, real dishes, and concrete winemaking details. The vinification claims about oak chips/staves and sterile filtration are plausible but unverified assumptions presented as fact.",
+  "judge_tokens_in": 3355,
+  "judge_tokens_out": 400
+}

@@ -1,0 +1,28 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "google/gemini-3-flash-preview:online",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.575,
+  "wrong_facts": [
+    "Hook claims 'steep, limestone-rich north-facing slope' — ground truth says clay with gravel and limestone colluviums, not specifically a steep north-facing slope",
+    "Claims 'appellation rules typically require at least 50% Grenache for the standard red' — Gigondas requires minimum 80% Grenache (plus Syrah/Mourvèdre), not 50%",
+    "Claims 'use of large barrels rather than small new barriques' — context says 'oak casks' but the output's specificity about large vs small is not verified",
+    "Claims 'the producer often utilizes whole clusters' — not in context data and not verified by ground truth; ground truth says 'predominantly destemmed' which contradicts whole-cluster usage",
+    "Price range '$70 and $95' is fabricated — no pricing data was provided",
+    "No mention of Serine clone origin or the Chave/Reynaud bud wood provenance, which is the most distinctive fact about this wine"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$70-$95 price range",
+    "50% Grenache requirement",
+    "12-14°C storage temperature"
+  ],
+  "reasoning": "The output correctly identifies the 100% Syrah rarity and the Dentelles de Montmirail context, and the voice is strong with good specificity and useful comparables. However, several claims are problematic: the Gigondas Grenache minimum is wrong (80%, not 50%), the whole-cluster claim directly contradicts ground truth ('predominantly destemmed'), the north-facing slope claim is unverified, and the price range is fabricated. The hook's 'steep, limestone-rich north-facing slope' is not verified but not provably wrong — the core hook claim about rare 100% Syrah is correct and valuable. The whole-cluster fabrication is particularly damaging as it contradicts ground truth.",
+  "judge_tokens_in": 3606,
+  "judge_tokens_out": 475
+}

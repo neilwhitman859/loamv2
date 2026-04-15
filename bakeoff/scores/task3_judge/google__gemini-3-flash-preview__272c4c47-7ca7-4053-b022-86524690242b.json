@@ -1,0 +1,27 @@
+{
+  "wine_id": "272c4c47-7ca7-4053-b022-86524690242b",
+  "wine_name": "Lafage Tessellae Old Vines, Côtes du Roussillon",
+  "tier": "C",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.525,
+  "wrong_facts": [
+    "The blend is stated as Grenache, Syrah, and Mourvèdre, but ground truth confirms it is 100% Carignan from old vines (70+ years)",
+    "The hook mentions 'limestone' alongside black schist, but ground truth specifies schist soils without mentioning limestone",
+    "The vinification_summary mentions carbonic maceration softening 'aggressive tannins typical of Carignan and Syrah' — while Carignan is correct, Syrah is not in this wine",
+    "The wine_summary says the blend 'relies on the regional pillars of Grenache, Syrah, and Mourvèdre' which is entirely wrong for a 100% Carignan wine"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$20 CAD price point",
+    "$35+ Châteauneuf-du-Pape comparison price",
+    "30 minutes of air recommendation",
+    "70+ year old vines is not fabricated per se but the model doesn't state this"
+  ],
+  "reasoning": "The most critical error is getting the grape composition completely wrong — this is 100% Carignan, not a GSM blend. This fundamental mistake pervades the wine_summary, vinification_summary, and food pairing rationale, undermining the entire output's credibility. The hook correctly names Jean-Marc Lafage and schist soils (matching ground truth), and the naming origin of Tessellae is not mentioned so no error there. The voice is excellent — direct, opinionated, specific, with no banned words and strong structure. The specificity is high with named competitors, soil types, and real dishes. But the wrong varietal composition is a devastating factual error that cascades through multiple sections. The fabricated $20 CAD price is not in the context data. Despite strong writing quality, the core wine identity is wrong.",
+  "judge_tokens_in": 3350,
+  "judge_tokens_out": 465
+}

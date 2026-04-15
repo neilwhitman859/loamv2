@@ -1,0 +1,40 @@
+{
+  "wine_id": "46a46e99-c081-41ce-abcc-bf993469fc0e",
+  "wine_name": "Kir Yianni Ramnista, Naoussa",
+  "tier": "B",
+  "model": "moonshotai/kimi-k2",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.525,
+  "wrong_facts": [
+    "Hook says 'south-facing marl terraces' but ground truth says southeast exposure",
+    "Claims '58 ha on the southeastern lip of Naoussa' — 58 ha is unverifiable from context or ground truth",
+    "Claims 'plots first mapped by Bordeaux consultants in the late 1990s' — fabricated/unverifiable",
+    "Claims '30% new French barriques' — not in context data or ground truth (ground truth says French and American oak casks, 225L and 500L)",
+    "Claims '12 months in bottle before release' — ground truth says 6 months bottle aging",
+    "Claims 'ferment in 10-ton open stainless steel with twice-daily pigeage for 18-20 days' — ground truth says one-third in open-top tanks with pigeage, 6-day cold soak; fermentation duration fabricated",
+    "Claims '40 hl/ha yields' — fabricated number",
+    "Claims '14% alcohol' — not in context data",
+    "Claims '6 g/l TA even in hot years' — fabricated number",
+    "Paolo Bea Barbaresco 2018 — Paolo Bea is an Umbrian producer (Sagrantino), does not make Barbaresco",
+    "Château Oumsiyat is unverifiable/likely fabricated producer name"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "58 ha",
+    "300 m (context says 280-330m, but model rounds up)",
+    "40 hl/ha",
+    "14% alcohol",
+    "13.5% (Barolo comparison)",
+    "6 g/l TA",
+    "30% new oak",
+    "10-ton tanks",
+    "18-20 days fermentation",
+    "12 months bottle aging (should be 6)"
+  ],
+  "reasoning": "The output is written in an excellent, direct, opinionated voice with high specificity and real teaching value — the writing quality is strong. However, it is riddled with fabricated numbers and several provably wrong facts. The bottle aging is stated as 12 months vs. the verified 6 months. The oak regime is described as 30% new French barriques when ground truth says French and American oak in 225L and 500L casks. Paolo Bea making Barbaresco is flatly wrong. Multiple specific numbers (58 ha, 40 hl/ha, 14% ABV, 6 g/l TA, 10-ton tanks, 18-20 day fermentation) are fabricated. The hard penalty for fabricated numbers caps correctness at 1.5, but I give 2.0 because some claims like altitude and oak duration partially align with ground truth.",
+  "judge_tokens_in": 3493,
+  "judge_tokens_out": 657
+}

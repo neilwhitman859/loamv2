@@ -1,0 +1,19 @@
+{
+  "wine_id": "46a46e99-c081-41ce-abcc-bf993469fc0e",
+  "wine_name": "Kir Yianni Ramnista, Naoussa",
+  "tier": "B",
+  "model": "perplexity/sonar-reasoning-pro",
+  "correctness": 1.0,
+  "voice": 1.0,
+  "specificity": 1.0,
+  "usefulness": 1.0,
+  "composite": 1.0,
+  "wrong_facts": [
+    "PARSE_FAILED"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "Output failed to parse as valid JSON. Unusable for production.",
+  "judge_tokens_in": 0,
+  "judge_tokens_out": 0
+}

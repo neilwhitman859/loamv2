@@ -1,0 +1,25 @@
+{
+  "wine_id": "7e9b8b66-560f-45df-b566-5419d21b395c",
+  "wine_name": "d'Arenberg The High Trellis Cabernet Sauvignon, McLaren Vale",
+  "tier": "A",
+  "model": "openai/gpt-5-mini",
+  "correctness": 2.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "The hook says the wine is 'named for its training system' — while partially correct, the ground truth specifies it was named because its vines were the first at d'Arenberg to be trained above knee-height in the 1890s, not a generic 'training system' reference. This is close but imprecise.",
+    "Vinification summary says 'Detailed public vinification notes for this bottling are limited' and then describes generic practices — but ground truth shows specific known practices: foot treading two-thirds through fermentation, no fining or filtration, 12 months in new and old French and American oak barriques and large casks, basket pressed, barrel fermented on lees. The model missed all of this.",
+    "Value assessment fabricates a price range of US$25-40 retail when no prices were provided in the context data."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "US$25-40 retail price range (no prices provided in context)",
+    "8-12 years cellar recommendation (not in context data)",
+    "13-15°C storage temperature (not in context data)"
+  ],
+  "reasoning": "The hook's naming origin claim is roughly correct but imprecise — the ground truth is more specific about the 1890s knee-height training. The biggest correctness issue is the vinification section, which claims limited public information when in fact d'Arenberg is quite transparent about foot treading, basket pressing, no fining/filtration, and specific oak regimes. This is a significant miss that makes the output less useful. The fabricated price range is a concern. The voice is decent — direct and opinionated without banned words — but the vinification section's hedging ('Detailed public vinification notes are limited') is a cop-out when the model could have drawn on training knowledge. Specificity is good with real soil types, competitor names, and concrete food pairings. The sensory profile and comparable wines sections add real value. The price fabrication triggers concern but since it's plausibly in the right range, I'm not applying the hardest penalty.",
+  "judge_tokens_in": 3650,
+  "judge_tokens_out": 504
+}

@@ -1,0 +1,22 @@
+{
+  "wine_id": "4cd8b76a-b4fc-43cf-83ae-8a0c84e7673e",
+  "wine_name": "Barefoot Buttery Chardonnay, California",
+  "tier": "C",
+  "model": "perplexity/sonar-reasoning-pro",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.05,
+  "wrong_facts": [
+    "Kim Crawford Chardonnay described as 'from New Zealand' — Kim Crawford does make a Marlborough Chardonnay but comparing it as 'same price point, similar malolactic-forward style' is a stretch since Kim Crawford Chardonnay is known for being unoaked/lighter, not malolactic-forward"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$10-12 retail price cited in hook and value_assessment — not present in context data (context shows $6.99-$23.99 range but no $10-12 figure)",
+    "sensory scores (acidity: 2, tannin: 1, body: 3, sweetness: 2, alcohol: 3) are fabricated but expected for the format"
+  ],
+  "reasoning": "The output correctly identifies Gallo ownership, malolactic fermentation as the source of buttery character, California Central Valley sourcing (described as 'interior valleys'), and the wine's mass-market positioning. The hook's claim about MLF is correct and matches ground truth about the wine's style. The $10-12 price point is fabricated — not in the context data — though it's roughly plausible as a typical retail price for Barefoot. The Kim Crawford comparison is slightly misleading since Kim Crawford Chardonnay is typically unoaked and not 'malolactic-forward.' The voice is excellent: direct, opinionated, unafraid to call the wine what it is, with specific food pairings and clear reasoning. No banned words found. The output adds genuine value by explaining MLF clearly and positioning the wine honestly in the market.",
+  "judge_tokens_in": 3475,
+  "judge_tokens_out": 410
+}

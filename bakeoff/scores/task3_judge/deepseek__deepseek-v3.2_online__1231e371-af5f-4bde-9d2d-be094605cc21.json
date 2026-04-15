@@ -1,0 +1,28 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "deepseek/deepseek-v3.2:online",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.475,
+  "wrong_facts": [
+    "The context data lists the wine as 100% Cabernet Sauvignon, but ground truth shows it is 92% Cabernet Sauvignon with 3% Petite Verdot, 3% Merlot, and 2% Malbec — the output doesn't address this but the context data itself is misleading so this is not the model's fault.",
+    "Cooperage is stated as 'approximately 20 months' in a 'mix of new and used' French oak, but ground truth says 18 months in 100% new French oak barrels (Allier & Tronçais) — both the duration and the new/used mix are fabricated.",
+    "The hook's naming origin is close but not perfectly stated — it says 'one and a half generations' which is reasonably accurate per ground truth ('generation and a half').",
+    "Specific soil types like 'Bale loam,' 'Yolo silt loam,' and 'Hambright series' are not in the context data and are unverifiable as actual Shafer vineyard soils — these are plausible Napa soil types but their specific attribution to Shafer's sourcing is fabricated.",
+    "Stags' Leap Winery is described as 'a neighbor from the same Stags Leap District' — while Shafer is in Stags Leap District, the One Point Five is a Napa Valley AVA wine sourced from multiple sites, not specifically a Stags Leap District wine."
+  ],
+  "banned_words_found": [
+    "refined"
+  ],
+  "fabricated_numbers": [
+    "20 months oak aging (ground truth is 18 months)",
+    "mix of new and used barrels (ground truth is 100% new French oak)"
+  ],
+  "reasoning": "The hook's naming origin is approximately correct (matching ground truth about the generational partnership), which is good. However, the vinification section fabricates specific cooperage details — 20 months and a mix of new/used oak — when ground truth says 18 months in 100% new French oak. The terroir section names specific soil series (Bale loam, Yolo silt loam, Hambright) that are real Napa soil types but are unverifiable as Shafer's actual sources, making them risky claims. The word 'refined' appears in the comparable wines section. The voice is generally strong — direct, opinionated, with good structure and useful insider perspective. The fabricated oak aging numbers trigger the hard penalty cap of 1.5, but since the numbers are close (20 vs 18 months) and the new/used distinction is the bigger error, I'm scoring correctness at 2.5 acknowledging the mix of good and bad claims.",
+  "judge_tokens_in": 3889,
+  "judge_tokens_out": 658
+}

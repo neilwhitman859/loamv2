@@ -1,0 +1,20 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "deepseek/deepseek-v3.2:online",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.875,
+  "wrong_facts": [
+    "Claims 'oak alternatives like staves or chips' are used — ground truth shows the wine is actually fermented 50/50 in stainless steel and French barriques (real barrels), not oak alternatives",
+    "Hook states 'oak alternatives' which contradicts the ground truth of French barriques"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output has a significant factual error: it claims Oyster Bay uses oak alternatives (staves/chips) rather than real barrels, when the ground truth confirms 50/50 stainless steel and French barriques with 9 months on lees and bâtonnage. This is a meaningful fabrication that undermines the vinification narrative and appears in both the hook and vinification summary. The hook also doesn't mention the actual 50/50 stainless/barrel split or lees aging, which are defining winemaking choices. However, the mention of controlled malolactic fermentation is correct (partial MLF per ground truth), and the terroir discussion of Wairau Valley and alluvial soils aligns with ground truth vineyard sources. The voice is excellent — direct, opinionated, unhedged, with a clear point of view. The insider take is genuinely useful and names specific sub-regions (Southern Valleys, Blind River). Food pairings are specific and well-reasoned. The comparable wines section is smart and actionable. Overall strong writing dragged down by the oak alternatives fabrication.",
+  "judge_tokens_in": 3570,
+  "judge_tokens_out": 377
+}

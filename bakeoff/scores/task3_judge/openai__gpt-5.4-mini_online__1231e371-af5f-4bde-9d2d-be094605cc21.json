@@ -1,0 +1,23 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "openai/gpt-5.4-mini:online",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 3.5,
+  "usefulness": 4.0,
+  "composite": 3.375,
+  "wrong_facts": [
+    "Hook states '100% Cabernet Sauvignon' but the 2022 blend is actually 92% Cabernet Sauvignon, 3% Petite Verdot, 3% Merlot, 2% Malbec per the official tech sheet",
+    "The wine is described throughout as 100% Cabernet Sauvignon, but ground truth confirms it is a blend",
+    "No mention of winemaker Elias Fernandez or the naming origin (generation and a half story)",
+    "No mention of 18 months in 100% new French oak (Allier & Tronçais)",
+    "Vineyard sources include Stags Leap District 'Borderline' vineyard and hillside estate vineyards, not just generic valley floor/hillside references"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The hook's claim of '100% Cabernet Sauvignon' is technically sourced from the context data (which lists 100% Cab), but the ground truth from the official tech sheet shows it's actually a 92% Cab-dominant blend. This is a significant factual error that appears in the hook and is repeated throughout the piece. The context data itself was misleading, but the model didn't add the correct blend information from training knowledge, which a knowledgeable wine model should know. The model also missed key facts like the naming origin, winemaker Elias Fernandez, and cooperage details that would have added real value. The voice is strong — direct, opinionated, no banned words, good food pairings with real dishes and reasoning. The insider take is useful and takes a clear position. However, the fundamental grape composition error running through the entire piece significantly undermines correctness. No numbers were fabricated beyond what was in the context data.",
+  "judge_tokens_in": 3997,
+  "judge_tokens_out": 451
+}

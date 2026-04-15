@@ -1,0 +1,30 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "perplexity/sonar",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.475,
+  "wrong_facts": [
+    "Hook claims Les Routes sources from 'high-elevation Dentelles slopes where limestone scree forces deep roots' — ground truth says the vineyard is on clay with gravel and limestone colluviums near Hautes Garrigues, not high-elevation Dentelles slopes",
+    "Claims 'defying the appellation's Grenache minimum' — Gigondas does not have a strict Grenache minimum that would need to be 'defied'; the appellation allows 100% Syrah",
+    "Claims biodynamic, organic, and vegan practices — not supported by context data or ground truth",
+    "Terroir section describes 'thin, rocky limestone marl and scree' — ground truth says clay with gravel and limestone colluviums",
+    "Comparable wines mentions 'Vacqueyras Les Routes by same producer' — this is unverifiable and likely fabricated",
+    "$40-50 retail price is fabricated",
+    "Clos des Papes 'seconds' comparison is fabricated/unverifiable",
+    "Cellar recommendation 'Drink 2023-2028 for 2023 vintage' is oddly short for a wine with 18 months oak aging that wouldn't even be released until 2025"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$40-50 retail price",
+    "55°F storage temperature",
+    "70% humidity"
+  ],
+  "reasoning": "The output fabricates several specific claims: the $40-50 price point, biodynamic/organic/vegan practices, the Vacqueyras comparison wine, and the Clos des Papes comparison. The hook's claim about 'defying the Grenache minimum' is misleading — Gigondas allows Syrah-dominant wines. The terroir description contradicts ground truth (clay with gravel vs. limestone scree on high slopes). However, the voice is strong and direct, specificity is good with named soils and climate patterns, and the food pairings are creative and well-reasoned. The output correctly identifies the 100% Syrah, the Serine connection is missed but the Syrah character is well-described. The fabricated price triggers the hard penalty cap of 1.5 on correctness, but the terroir errors and biodynamic claim compound the problem.",
+  "judge_tokens_in": 3378,
+  "judge_tokens_out": 554
+}

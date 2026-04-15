@@ -1,0 +1,31 @@
+{
+  "wine_id": "49a78f8d-0332-4925-b8b1-c1cb40dcb33b",
+  "wine_name": "Wind Gap Woodruff Vineyard Pinot Noir, Santa Cruz Mountains",
+  "tier": "C",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.625,
+  "wrong_facts": [
+    "Claimed vineyard planted in 1970s-era — ground truth says planted 1978, which is technically 1970s but the phrasing '1970s-era vines' is borderline acceptable",
+    "Claimed 'sandy loam and Franciscan shale' as soil types — not in context data and not verifiable from ground truth",
+    "Claimed 'sandstone and fractured shale dominate the Woodruff site' — fabricated soil detail not in context or ground truth",
+    "Claimed 'roughly 50% to 100% whole-cluster fermentation' — specific percentage range not in context data or ground truth (ground truth says 'some whole cluster')",
+    "Claimed price 'between $45 and $55' — no price data was provided",
+    "Claimed 'Wind Gap has since shuttered' — this is actually true (Pax Mahle transitioned to Pax brand), so this is correct from training knowledge",
+    "Described vineyard as 'horseshoe-shaped amphitheater' — not verifiable from any provided data"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "50% to 100% whole-cluster fermentation",
+    "$45 to $55 price range",
+    "aging_potential_years: 12",
+    "drinking_window_min_years: 4",
+    "drinking_window_max_years: 12"
+  ],
+  "reasoning": "The output is exceptionally well-written with strong voice, specificity, and usefulness — it reads like expert wine writing with actionable opinions and named comparables. However, it fabricates multiple specific numbers: the whole-cluster percentage range (ground truth says only 'some whole cluster'), the price range ($45-$55 with no price data provided), and specific soil claims (sandy loam, Franciscan shale, sandstone) that aren't in context or ground truth. The hard penalty for fabricated numbers caps correctness at 1.5, but I'm giving 2.0 because many other claims (Pax Mahle as winemaker, Corralitos location, neutral French oak, natural yeast philosophy, Wind Gap shuttering) are confirmed correct by ground truth, showing genuine knowledge. The voice is excellent — direct, opinionated, no banned words, with real food pairings and honest negative assessments.",
+  "judge_tokens_in": 3426,
+  "judge_tokens_out": 561
+}

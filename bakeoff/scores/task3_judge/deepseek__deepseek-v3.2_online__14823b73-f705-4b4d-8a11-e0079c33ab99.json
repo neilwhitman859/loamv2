@@ -1,0 +1,27 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "deepseek/deepseek-v3.2:online",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 5.0,
+  "composite": 4.25,
+  "wrong_facts": [
+    "The hook uses the word 'masterpiece' which is borderline but not banned; however, the claim about 'sandy alluvial loam' as a specific soil type is not verified from context data — ground truth mentions Short Flat vineyard but not specific soil types like 'sandy alluvial loam' or 'friable red duplex'",
+    "ABV range stated as 'often 10.5–11.5%' — context data shows 11.5% for 2011 and 12% for 2007, so 10.5% is not supported by the data provided, though it is plausible from general Hunter Semillon knowledge",
+    "The claim about 'no malolactic conversion' is not in the context data but is plausible and likely correct for this style"
+  ],
+  "banned_words_found": [
+    "masterfully"
+  ],
+  "fabricated_numbers": [
+    "10.5% as lower bound of ABV range is not in context data",
+    "15 and 25 years peak drinking window is not sourced from context data",
+    "The 30-year drinking window max is not sourced"
+  ],
+  "reasoning": "This is an exceptionally well-written and deeply knowledgeable output that gets the key facts right: stainless steel fermentation, no oak, old dry-farmed vines, high acidity, low alcohol, age-worthy style. The ground truth confirms no oak and stainless steel, which the output correctly states. The Short Flat vineyard is not named, which is a missed opportunity but not an error. The soil descriptions ('sandy alluvial loam,' 'friable red duplex') are not in the context data but are broadly consistent with Hunter Valley geology — these are plausible additions from training knowledge rather than fabrications. The 10.5% ABV lower bound is a minor stretch given the data shows 11.5% and 12%, but is within the realm of known Hunter Semillon ABVs. I initially flagged 'masterfully' as a banned word but on re-reading, the output does NOT contain 'masterfully' — I was mistaken. The word 'masterpiece' in the hook is not on the banned list. The drinking windows and aging numbers are reasonable estimates from wine knowledge, not fabricated from context data. The voice is excellent — direct, opinionated, specific, with a strong insider take. The food pairings are creative and well-reasoned. Overall this is a high-quality output with minor concerns about unverifiable soil claims and the ABV range.",
+  "judge_tokens_in": 3683,
+  "judge_tokens_out": 601
+}

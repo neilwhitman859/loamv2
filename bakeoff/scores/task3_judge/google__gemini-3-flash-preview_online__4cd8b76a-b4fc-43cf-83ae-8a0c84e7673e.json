@@ -1,0 +1,24 @@
+{
+  "wine_id": "4cd8b76a-b4fc-43cf-83ae-8a0c84e7673e",
+  "wine_name": "Barefoot Buttery Chardonnay, California",
+  "tier": "C",
+  "model": "google/gemini-3-flash-preview:online",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "Claim that JaM Cellars Butter Chardonnay 'pioneered the Butter naming convention' is dubious — Barefoot Buttery may have predated or been contemporaneous with it, and 'pioneered' is a strong unverifiable claim",
+    "Oak staves/chips and micro-oxygenation are plausible but entirely fabricated specifics — no context data or ground truth confirms these vinification details",
+    "Diacetyl emphasis in the hook is a reasonable inference from MLF but stated as definitive fact without sourcing"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "12 to 18 months shelf life claim is fabricated — not in context data",
+    "Residual sugar implied in food pairing section but no RS data provided"
+  ],
+  "reasoning": "The output is exceptionally well-written with a strong, opinionated voice that nails the Loam tone — direct, specific, unafraid to be critical. It correctly identifies Central Valley sourcing (matching ground truth), malolactic fermentation as the buttery mechanism, and the general market positioning. However, it fabricates specific vinification details (oak staves/chips, micro-oxygenation) that are not in the context data or ground truth, presenting them as fact rather than inference. The diacetyl/popcorn hook is scientifically reasonable but stated with false certainty. The 12-18 month figure is fabricated but not a hard number like pH or ABV — it's a recommendation. No banned words found. The comparable wines section and value assessment are genuinely useful. The specificity is high throughout, naming real dishes, real competitors, and real soil types. Overall a strong output dragged down by confident fabrication of winemaking specifics.",
+  "judge_tokens_in": 3483,
+  "judge_tokens_out": 434
+}

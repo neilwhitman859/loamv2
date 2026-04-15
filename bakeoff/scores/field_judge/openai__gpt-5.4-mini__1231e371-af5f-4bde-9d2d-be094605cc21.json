@@ -1,0 +1,66 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "openai/gpt-5.4-mini",
+  "scores": {
+    "hook": {
+      "correctness": 2.5,
+      "voice": 4.0,
+      "note": "The name explanation ('half-step between boardroom and bottle service') is fabricated — the real origin is the 'generation and a half' partnership between John and Doug Shafer; also says 'hillside Cabernet' but the wine is multi-site, not exclusively hillside."
+    },
+    "wine_summary": {
+      "correctness": 2.5,
+      "voice": 4.2,
+      "note": "States '100% Cabernet Sauvignon' but the 2022 blend is 92% Cab Sauv with Petite Verdot, Merlot, and Malbec; otherwise reasonable regional and stylistic description."
+    },
+    "terroir_expression": {
+      "correctness": 3.5,
+      "voice": 4.3,
+      "note": "Good geological specificity with Bale loam, Yolo silt loam, and Franciscan references; no direct contradictions with ground truth, though it doesn't mention the specific vineyard sources (Borderline, Stags Leap District)."
+    },
+    "vinification_summary": {
+      "correctness": 2.0,
+      "voice": 4.0,
+      "note": "Fails to mention the verified cooperage (18 months in 100% new French oak, Allier & Tronçais) and winemaker (Elias Fernandez); extraction details are generic and not sourced from context; ABV is correct."
+    },
+    "food_pairing": {
+      "correctness": 4.0,
+      "voice": 4.5,
+      "note": "Pairings are plausible and well-reasoned for a full-bodied Napa Cab; no factual errors, direct and specific."
+    },
+    "comparable_wines": {
+      "correctness": 3.5,
+      "voice": 3.8,
+      "note": "Reasonable comparisons for market positioning; Artemis and Silver Oak are fair comps, though Caymus is stylistically debatable as a structural comparison."
+    },
+    "style_profile": {
+      "correctness": 3.5,
+      "voice": 4.0,
+      "note": "Accurate general descriptor but omits the blend components (Petite Verdot, Merlot, Malbec) and the new French oak influence."
+    },
+    "cellar_recommendation": {
+      "correctness": 3.5,
+      "voice": 4.2,
+      "note": "Reasonable window and storage advice; no fabricated numbers, though the recommendation is generic rather than vintage-specific."
+    },
+    "value_assessment": {
+      "correctness": 4.0,
+      "voice": 4.3,
+      "note": "Price band matches context; comparisons are fair; the single-vineyard alternative suggestion is a good take, though ironic given the wine itself is multi-site."
+    },
+    "market_position": {
+      "correctness": 4.0,
+      "voice": 4.0,
+      "note": "Accurate positioning for the brand and price tier; no factual errors."
+    },
+    "insider_take": {
+      "correctness": 3.5,
+      "voice": 4.5,
+      "note": "Strong opinionated voice and accurate on the structure point; doesn't mention the generational naming story or the actual blend, but the take itself is defensible."
+    }
+  },
+  "overall_note": "The output has strong voice throughout but makes key factual errors: wrong name origin (not the generation-and-a-half story), states 100% Cabernet when the 2022 is a 92% blend, and omits verified cooperage and winemaker details.",
+  "judge_tokens_in": 2079,
+  "judge_tokens_out": 817
+}

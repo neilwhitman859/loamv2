@@ -1,0 +1,66 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "deepseek/deepseek-v3.2",
+  "scores": {
+    "hook": {
+      "correctness": 3.5,
+      "voice": 4.2,
+      "note": "Mount Barker's soils are gravelly loam, not specifically 'granite-derived'; the granite detail is plausible but not verified in ground truth, and the claim about trading fruit intensity for structure is a reasonable position."
+    },
+    "wine_summary": {
+      "correctness": 3.2,
+      "voice": 4.0,
+      "note": "Planting date stated as 1974 conflicts with ground truth (established 1968, first commercial winery 1975); 'lateritic gravelly sandy loams' is more specific than verified 'gravelly loam soils' and may be fabricated detail; 'sheep farming' origin is unverified."
+    },
+    "terroir_expression": {
+      "correctness": 3.0,
+      "voice": 4.0,
+      "note": "'Lateritic gravelly sandy loams, formed from weathered granite and iron-rich clays' adds unverified geological specifics beyond the ground truth's 'gravelly loam soils'; the climate description is reasonable but partly speculative."
+    },
+    "vinification_summary": {
+      "correctness": 1.5,
+      "voice": 3.8,
+      "note": "Ground truth says 10 months in French oak barrels; indigenous yeasts, open-top vessels, and whole-cluster fermentation are all fabricated details not supported by context or ground truth."
+    },
+    "food_pairing": {
+      "correctness": 4.0,
+      "voice": 2.0,
+      "note": "Pairings are reasonable for the style, but uses banned word 'harmonious' in the mushroom pairing."
+    },
+    "comparable_wines": {
+      "correctness": 3.5,
+      "voice": 4.0,
+      "note": "Tolpuddle and Mount Difficulty are reasonable comparisons for cool-climate Pinot Noir; Central Otago described as 'high-altitude' is somewhat misleading as it's more about latitude and continental climate."
+    },
+    "style_profile": {
+      "correctness": 3.8,
+      "voice": 3.5,
+      "note": "Reasonable descriptor for a cool-climate Great Southern Pinot Noir; 'mineral-driven core' is a position but not verifiable."
+    },
+    "cellar_recommendation": {
+      "correctness": 3.8,
+      "voice": 4.2,
+      "note": "For a 2011 Pinot Noir from a second-label range, recommending to drink now is sound and direct advice."
+    },
+    "value_assessment": {
+      "correctness": 3.5,
+      "voice": 4.0,
+      "note": "Price estimate is plausible for a second-label Australian Pinot; ground truth confirms Omrah is a value-priced second label; comparisons to De Bortoli and Yalumba are reasonable."
+    },
+    "market_position": {
+      "correctness": 3.8,
+      "voice": 4.0,
+      "note": "Accurately positions Omrah as a mid-tier, value-oriented wine consistent with ground truth's description as a second-label range."
+    },
+    "insider_take": {
+      "correctness": 3.5,
+      "voice": 4.5,
+      "note": "Takes a clear position and is direct; the lean/angular characterization is a reasonable interpretation for cool-climate Great Southern Pinot, though it's somewhat speculative without tasting notes."
+    }
+  },
+  "overall_note": "The output generally captures the spirit of the wine and region but fabricates specific winemaking details (indigenous yeasts, whole clusters, open-top fermenters) and over-specifies soil geology beyond what ground truth supports; one banned word ('harmonious') appears in food pairing.",
+  "judge_tokens_in": 1523,
+  "judge_tokens_out": 841
+}

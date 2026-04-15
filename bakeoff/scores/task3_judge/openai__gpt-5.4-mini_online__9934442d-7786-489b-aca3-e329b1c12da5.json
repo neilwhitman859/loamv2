@@ -1,0 +1,22 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "openai/gpt-5.4-mini:online",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.95,
+  "wrong_facts": [
+    "Price range US$20-35 is fabricated — no pricing data was provided",
+    "2011 vintage described as 'cool, slow ripening season' is unverifiable from context data and not confirmed by ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "US$20-35 price range"
+  ],
+  "reasoning": "The output is well-written with strong voice — direct, opinionated, no banned words, and good structure. It correctly identifies Plantagenet as an anchor name in Great Southern, correctly names the sub-regions (Mount Barker, Porongurup, Frankland River, Denmark, Albany), and the gravelly loam soils match ground truth. The mention of Omrah as a value-tier bottling aligns with ground truth about it being a second label. However, the fabricated price range (US$20-35) is a specific number not in context data, which triggers the hard penalty consideration — though it's a price estimate rather than a winemaking number like pH or ABV, it's still a fabricated specific number. The 2011 vintage characterization as cool is plausible but unverifiable. The hook doesn't contain provably wrong facts — calling Omrah a 'value lane' bottling is correct per ground truth. No mention of the verified 10 months French oak from ground truth, which is fine (model didn't have it). The vinification section hedges appropriately with 'usually' language. Overall strong but the fabricated price range and some unverifiable vintage claims hold it back on correctness.",
+  "judge_tokens_in": 3502,
+  "judge_tokens_out": 414
+}

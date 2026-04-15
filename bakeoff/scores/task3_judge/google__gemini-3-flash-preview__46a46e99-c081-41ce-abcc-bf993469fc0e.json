@@ -1,0 +1,27 @@
+{
+  "wine_id": "46a46e99-c081-41ce-abcc-bf993469fc0e",
+  "wine_name": "Kir Yianni Ramnista, Naoussa",
+  "tier": "B",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.525,
+  "wrong_facts": [
+    "Hook mentions 'Yianakohori vineyard' — ground truth says the vineyard is the Kir-Yianni Estate with Ramnista blocks, not 'Yianakohori'",
+    "Vinification states '15-to-20-day maceration period' — ground truth says 6-day cold soak, not 15-20 days",
+    "Vinification states '16 months in French and American oak barrels' — ground truth says 18 months in 225L and 500L French and American oak casks",
+    "Hook claims 'clay-heavy blocks within Naoussa' — no ground truth supports block selection by clay content",
+    "Terroir claims 'limestone and clay soils over a base of sandy loam' — not verifiable from context or ground truth",
+    "Limestone providing 'high pH levels that contribute to sharp, linear acidity' is contradictory — high pH means lower acidity, not sharper acidity"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "15-to-20-day maceration period",
+    "16 months in oak barrels"
+  ],
+  "reasoning": "The output has strong voice, specificity, and usefulness — it reads like confident, opinionated wine writing with real comparisons and actionable advice. However, it fabricates multiple specific numbers: the maceration period (6-day cold soak per ground truth, not 15-20 days), oak aging (18 months per ground truth, not 16), and invents unverifiable terroir details (limestone/clay/sandy loam soils, block-by-block clay selection). The hook references 'Yianakohori vineyard' which doesn't match ground truth naming. The limestone-acidity claim is scientifically backwards. These fabrications trigger the hard penalty cap of 1.5, but I give 2.0 because the oak aging is close (16 vs 18 months) and many other claims are correct (founding by Yiannis Boutaris, altitude 280-330m, 100% Xinomavro, Naoussa PDO rules).",
+  "judge_tokens_in": 3658,
+  "judge_tokens_out": 520
+}

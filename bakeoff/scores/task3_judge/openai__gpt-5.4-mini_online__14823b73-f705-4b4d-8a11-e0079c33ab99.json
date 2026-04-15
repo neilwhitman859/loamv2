@@ -1,0 +1,17 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "openai/gpt-5.4-mini:online",
+  "correctness": 4.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.325,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is factually strong. It correctly identifies Vat 1 as a dry, low-alcohol, age-worthy Hunter Valley Semillon with no oak influence — all consistent with ground truth. It doesn't fabricate specific numbers (pH, blend %, oak months, cases). The vinification section carefully hedges with 'usually means little to no oak influence' rather than stating definitively no oak, which is slightly weaker than it could be given ground truth confirms stainless steel only. It misses key ground truth details: Short Flat vineyard (planted 1923), the 1963 creation date, the 5-year release policy, and the 'most awarded white wine in Australia' distinction — these would have added significant value. The soil descriptions in terroir_expression are detailed and largely accurate for Hunter Valley but some specifics (volcanic basalt, black silty loam over alkaline clay) are not in the context data and while plausible for parts of Hunter Valley, are somewhat generic catalog-style listings rather than verified for the Short Flat vineyard specifically. The voice is excellent — direct, opinionated, no banned words, good food pairings with reasoning, and the insider take is genuinely useful. Comparables are well-chosen and explained. Deducting slightly on correctness for not being more definitive about no-oak (the hedging 'usually means' is weaker than warranted) and for the unverified soil specifics.",
+  "judge_tokens_in": 3735,
+  "judge_tokens_out": 382
+}

@@ -1,0 +1,30 @@
+{
+  "wine_id": "0aec2002-afb8-4d0f-a7ba-cc6fb3d8452f",
+  "wine_name": "Fritz Haag Brauneberger Juffer Sonnenuhr Riesling Auslese, Mosel",
+  "tier": "A",
+  "model": "perplexity/sonar-reasoning-pro",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "'Sonnenuhr' translated as 'sun clock' rather than 'sundial'",
+    "Claim that Fritz Haag ferments 'without added sweetness or adjustment' and allows wild yeast to ferment 'to dryness or near-dryness' is misleading for Auslese — Auslese typically has significant residual sugar, and the ground truth confirms 'rich, concentrated style with interplay between fruity sweetness and vibrant acidity'",
+    "Sweetness rated as 2 in sensory profile is too low for Auslese — with 7-7.5% ABV and Auslese must weights, residual sugar is substantial",
+    "Describing Auslese as 'not a residual-sugar guarantee' and 'not a dessert wine' significantly downplays the sweetness of this Prädikat level",
+    "Schloss Lieser described as competitor 'in the same vineyard designation' — Schloss Lieser is an estate in Lieser, not Brauneberg; a Brauneberg Auslese from them would be from the same vineyard but this is imprecise",
+    "Joh. Jos. Christoffel is from Ürzig, not the 'same appellation' in a meaningful competitive sense beyond both being Mosel"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$30-45 retail price range",
+    "$50+ for older vintages",
+    "40%+ gradient steepness",
+    "Peak drinking 5-10 years",
+    "15-20 years aging with proper storage"
+  ],
+  "reasoning": "The output has strong voice, specificity, and usefulness — it's well-written, opinionated, names real producers and dishes, and teaches effectively. However, it has a significant conceptual error running through the piece: it systematically downplays the sweetness of Auslese, framing it as near-dry and mineral-driven rather than acknowledging the substantial residual sugar that defines this Prädikat level. At 7-7.5% ABV with Auslese must weights, there's considerable RS. The sensory sweetness rating of 2/5 is too low. The hook's 'sun clock' translation is slightly off ('sundial' is correct per ground truth). Multiple prices and specific numbers are fabricated. These issues prevent a high correctness score despite the otherwise impressive output.",
+  "judge_tokens_in": 3635,
+  "judge_tokens_out": 584
+}

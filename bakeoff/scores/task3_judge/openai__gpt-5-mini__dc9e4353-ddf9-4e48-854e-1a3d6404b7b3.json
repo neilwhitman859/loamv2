@@ -1,0 +1,22 @@
+{
+  "wine_id": "dc9e4353-ddf9-4e48-854e-1a3d6404b7b3",
+  "wine_name": "Shafer One Point Five Cabernet Sauvignon, Stags Leap District",
+  "tier": "C",
+  "model": "openai/gpt-5-mini",
+  "correctness": 2.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 3.25,
+  "wrong_facts": [
+    "The hook and wine_summary imply this is a terroir-driven single expression, but ground truth confirms it is NOT single-vineyard — it draws from multiple sites including hillside estate, Borderline vineyard, and selected Napa Valley sites",
+    "The wine_summary calls it a 'secondary-label price point' which is misleading — One Point Five is not a second label, it's a distinct wine named for the generational partnership between John and Doug Shafer",
+    "The vinification_summary hedges with 'aren't listed here' but the ground truth shows 18 months in 100% new French oak (Allier & Tronçais) — the model could have known this from training data",
+    "No mention of winemaker Elias Fernandez, the naming origin (generation and a half), or the actual blend composition, all of which would have added significant value"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output avoids fabricating specific numbers, which is good, but it misses key facts that would have been available from training knowledge (naming origin, winemaker, cooperage details, blend). The 'secondary-label' framing is misleading — One Point Five is not a second label to Hillside Select but a standalone wine with its own identity. The terroir descriptions are detailed and mostly plausible but some claims (Bale clay loam, Palisades shading/thermal inversion) are unverifiable embellishments. Voice is decent — direct and specific — but leans into some repetitive mineral-silk language. The vinification section essentially punts, which hurts usefulness.",
+  "judge_tokens_in": 3615,
+  "judge_tokens_out": 410
+}

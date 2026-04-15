@@ -1,0 +1,30 @@
+{
+  "wine_id": "49a78f8d-0332-4925-b8b1-c1cb40dcb33b",
+  "wine_name": "Wind Gap Woodruff Vineyard Pinot Noir, Santa Cruz Mountains",
+  "tier": "C",
+  "model": "z-ai/glm-4.6",
+  "correctness": 2.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "Hook claims Woodruff Vineyard is 'perched above the fog line' — ground truth says it's near Coralitos, which is at relatively low elevation, not necessarily above the fog line",
+    "Claims 'sandy, sandstone soils' in the hook — not verified from context or ground truth; ground truth doesn't mention sandy soils",
+    "Claims 'fractured shale and sandstone' in terroir section — not in context data and not verified for Woodruff specifically",
+    "States 'leans heavily into whole-cluster fermentation' — ground truth says 'some whole cluster,' not heavy use",
+    "Wine summary says 'captures' which while not the exact banned phrase 'captures the essence' is borderline",
+    "Fabricated price of ~$55 and comparison to Williams Selyem at 'nearly triple the price'",
+    "Littorai 'The Pivot' — Littorai does not make a wine called 'The Pivot' from Santa Cruz Mountains; this appears fabricated",
+    "Hirsch Vineyards 'San Andreas Fault' — Hirsch makes wines from Sonoma Coast, not a wine called 'San Andreas Fault'; this appears fabricated"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$55 price point",
+    "Williams Selyem at 'nearly triple the price'",
+    "5-8 years drinking window (not in context data, though plausible)"
+  ],
+  "reasoning": "The output correctly identifies Pax Mahle as winemaker, whole-cluster fermentation, native yeast, and neutral French oak — all matching ground truth. However, it significantly overstates the whole-cluster usage ('leans heavily' vs. 'some'), fabricates specific soil descriptions for Woodruff Vineyard, invents a price point and competitor price comparison, and most damagingly fabricates two comparable wine names that don't appear to exist (Littorai 'The Pivot' and Hirsch 'San Andreas Fault'). The fabricated price triggers the hard penalty for fabricated numbers. The voice is decent — direct and opinionated — but the factual errors undermine the entire piece. Specificity is high but much of it is fabricated specificity, which is worse than being vague.",
+  "judge_tokens_in": 3256,
+  "judge_tokens_out": 554
+}

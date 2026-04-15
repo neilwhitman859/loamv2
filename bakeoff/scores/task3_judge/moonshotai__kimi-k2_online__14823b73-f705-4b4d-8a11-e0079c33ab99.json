@@ -1,0 +1,40 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "moonshotai/kimi-k2:online",
+  "correctness": 1.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "HVD blocks mentioned as a vineyard source — ground truth says Short Flat vineyard only for Vat 1; HVD is a separate Tyrrell's vineyard used for Vat 47",
+    "Claims fermentation in '70-year-old 2,700L baltic-pine vats' — ground truth says stainless steel fermentation, no oak or wood fermentation",
+    "Later refers to '120-year-old 2,700L Kaluga vats' — contradicts ground truth of stainless steel fermentation and is internally inconsistent with the earlier '70-year-old' claim",
+    "Claims 'whole-bunch pressing keeps pH around 2.9' — pH not in context data and is a fabricated specific number",
+    "Claims 'sulphured to 35 ppm free SO₂' — fabricated number not in context data",
+    "Claims 'bottled five months after harvest' — fabricated timeline not in context data",
+    "Claims 'picked at 10.5–11% potential alcohol' — fabricated number not in context data",
+    "Claims 'ferments at 14°C for six weeks' — fabricated numbers not in context data",
+    "Claims about 'night irrigation from the nearby Brokenback Range' — Brokenback Range provides cloud cover/afternoon shade, not 'night irrigation' which is nonsensical terminology",
+    "Claims '15°C diurnal shift' — fabricated specific number"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "pH 2.9",
+    "35 ppm free SO₂",
+    "five months after harvest bottling",
+    "10.5-11% potential alcohol at picking",
+    "14°C fermentation temperature",
+    "six weeks fermentation",
+    "15°C diurnal shift",
+    "2,700L vat size",
+    "70-year-old vats",
+    "120-year-old vats",
+    "30% lower price for Mount Pleasant Elizabeth"
+  ],
+  "reasoning": "The output is extremely well-written with outstanding voice and specificity, but it is riddled with fabricated numbers and provably wrong facts. The most damaging error is claiming fermentation in old wooden vats (baltic-pine, then Kaluga) when ground truth explicitly states stainless steel fermentation with NO oak or wood involvement — this is a fundamental fabrication about the wine's identity. The HVD vineyard attribution is wrong for Vat 1. The sheer volume of fabricated specific numbers (pH, SO₂, fermentation temp/duration, bottling timeline, picking Brix) triggers the hard penalty cap of 1.5 on correctness. The voice is excellent — direct, opinionated, no banned words, good structure — but correctness failures undermine the entire piece.",
+  "judge_tokens_in": 3513,
+  "judge_tokens_out": 655
+}

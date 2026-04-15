@@ -1,0 +1,29 @@
+{
+  "wine_id": "ba7c6cc5-ed69-424d-90ee-9b83ae510c36",
+  "wine_name": "Penfolds Bin 2 Mataro, South Eastern Australia",
+  "tier": "A",
+  "model": "openai/gpt-5-mini",
+  "correctness": 1.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 2.9,
+  "wrong_facts": [
+    "Hook says 'Mataro-led blend' but ground truth shows the wine is 86% Shiraz / 14% Mataro — it is Shiraz-led, not Mataro-led",
+    "Wine summary says 'it puts Monastrell (Mataro) forward' implying Mataro dominance, which contradicts the verified blend",
+    "Comparable wines section describes Bin 2 as 'Mataro-fronted' vs Stump Jump being 'Shiraz-led' — Bin 2 is also Shiraz-led",
+    "Value assessment describes it as having 'clear Monastrell-driven savory backbone' when Mataro is only 14%"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "AUD 25-45 price not in context data",
+    "Yangarra AUD 30-45 price not in context data",
+    "d'Arenberg AUD 15-25 price not in context data",
+    "elevations 50-350m not in context data",
+    "pH, TA not stated but none fabricated explicitly",
+    "9 months oak not mentioned (though that's ground truth, model didn't claim it)"
+  ],
+  "reasoning": "The fundamental error here is characterizing Bin 2 as a Mataro-led or Mataro-fronted wine when ground truth confirms it is 86% Shiraz with only 14% Mataro. This wrong claim appears in the hook — the first thing users read — which triggers the hard cap of 1.5 on correctness. The wine's entire narrative is built around Mataro dominance, which is factually incorrect. The voice is decent — direct, opinionated, avoids banned words, and makes specific claims — but the core premise is wrong. Specificity is good with named soils (terra rossa, rendzina, cracking clay), real comparables (Yangarra, d'Arenberg), and real dishes. Usefulness is undermined by the incorrect framing but the food pairings and comparable wines still offer value. Fabricated prices are a minor additional concern.",
+  "judge_tokens_in": 3461,
+  "judge_tokens_out": 517
+}

@@ -1,0 +1,17 @@
+{
+  "wine_id": "10c89e05-ecdd-4254-9c24-5a0b67894da5",
+  "wine_name": "Black Box Deep & Dark Cabernet Sauvignon, California",
+  "tier": "C",
+  "model": "openai/gpt-5-mini",
+  "correctness": 3.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.925,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is factually careful — it correctly identifies the bag-in-box format, the 13.0% ABV for 2021 (from context data), the $19.99 price, and the Central Valley sourcing (which matches ground truth). It does not fabricate specific numbers like pH, oak months, or blend percentages. The hook is accurate: 'Deep & Dark' as a marketing descriptor for dark-fruit style aligns with ground truth. The output doesn't mention the 3-liter/4-bottle equivalence or the Constellation/Gallo ownership history, which would have added value, but nothing stated is wrong. The ABV listed in ground truth is 13.5% but the output only cites the 2021 at 13.0% which matches the context data — not a fabrication. Voice is direct, opinionated, and avoids banned words. Specificity is strong with named comparables (Josh Cellars, Bogle), specific soil types (alluvial, loam), and real dish pairings. Usefulness is high — the insider take is honest and actionable, the market positioning is clear, and the food pairings are well-reasoned.",
+  "judge_tokens_in": 3352,
+  "judge_tokens_out": 329
+}

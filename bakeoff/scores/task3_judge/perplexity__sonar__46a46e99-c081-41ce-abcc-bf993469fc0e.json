@@ -1,0 +1,29 @@
+{
+  "wine_id": "46a46e99-c081-41ce-abcc-bf993469fc0e",
+  "wine_name": "Kir Yianni Ramnista, Naoussa",
+  "tier": "B",
+  "model": "perplexity/sonar",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.4,
+  "wrong_facts": [
+    "Hook says '350 meters' altitude — ground truth says 280-330m",
+    "Hook says 'French oak' only — ground truth says French AND American oak",
+    "Hook says 'iron-rich slopes' — no evidence for this specific soil claim; ground truth doesn't mention iron-rich soils",
+    "Vinification says '12-18 months in French barriques' — ground truth says 18 months in 225L and 500L French and American oak casks",
+    "Terroir claims 'phyllite and schist soils' — not verified in ground truth or context data",
+    "Comparable wines mentions 'Kitsiki' from Kir-Yianni — this is not a verified wine name from this producer"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "350 meters altitude (ground truth says 280-330m)",
+    "12-18 months oak aging (ground truth says 18 months)",
+    "Fontodi at $40 comparison price",
+    "Vietti Langhe Nebbiolo comparison"
+  ],
+  "reasoning": "The hook contains a wrong altitude claim (350m vs. 280-330m ground truth) and states only French oak when the ground truth confirms both French and American oak. The vinification section fabricates '12-18 months' when ground truth says 18 months, and omits the 6-day cold soak, open-top tank pigeage, and 6 months bottle aging. The 'iron-rich slopes' and 'phyllite and schist soils' claims are unverifiable fabrications. The naming origin of Ramnista ('royal hill') is completely absent despite being interesting ground truth. However, the voice is strong — direct, opinionated, no banned words, good food pairings with real dishes. Specificity is high with named competitors and concrete details, even if some are fabricated. The hook's wrong altitude triggers concern but doesn't quite meet the 'provably wrong factual claim' hard cap since it's close to the range; however, the accumulation of multiple wrong/fabricated facts across sections warrants a low correctness score.",
+  "judge_tokens_in": 3353,
+  "judge_tokens_out": 518
+}

@@ -1,0 +1,35 @@
+{
+  "wine_id": "46a46e99-c081-41ce-abcc-bf993469fc0e",
+  "wine_name": "Kir Yianni Ramnista, Naoussa",
+  "tier": "B",
+  "model": "moonshotai/kimi-k2:online",
+  "correctness": 1.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "Hook claims vines are 30-40 years old - not in context data and unverifiable",
+    "Altitude stated as 200-300m; ground truth says 280-330m - close but inaccurate on the lower bound",
+    "Cooperage described as '14 months in 30% new French barriques and another year in 3,000-L Slavonian casks' - ground truth says 18 months in 225L and 500L French and American oak casks plus 6 months bottle aging; no Slavonian casks mentioned",
+    "13.5% alcohol claimed - not in context data",
+    "Total acidity above 7 g/L claimed - not in context data",
+    "20-day maceration claimed - not in context data; ground truth says 6-day cold soak with one-third in open-top tanks with pigeage",
+    "Malolactic blocked until spring - not in context data or ground truth",
+    "Dual-barrel regimen with neutral Slavonian - fabricated; ground truth specifies French and American oak"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "30-40 year-old vines",
+    "200-300m altitude",
+    "14 months in 30% new French barriques",
+    "3,000-L Slavonian casks",
+    "13.5% alcohol",
+    "7 g/L total acidity",
+    "20-day maceration",
+    "2-3 m root depth"
+  ],
+  "reasoning": "The output fabricates numerous specific numbers not present in the context data: vine age, ABV, total acidity, maceration length, barrel sizes, and cooperage details. Worse, the cooperage description directly contradicts ground truth (Slavonian casks vs. French/American oak; 14 months vs. 18 months; no mention of bottle aging). The maceration claim of 20 days contradicts the 6-day cold soak in ground truth. These are not minor embellishments but wholesale fabrications of winemaking specifics. The hard penalty for fabricated numbers caps correctness at 1.5. The voice is excellent - direct, opinionated, specific, with no banned words. Specificity and usefulness are strong despite the factual problems.",
+  "judge_tokens_in": 3485,
+  "judge_tokens_out": 543
+}

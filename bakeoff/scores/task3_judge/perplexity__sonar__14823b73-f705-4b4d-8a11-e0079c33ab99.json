@@ -1,0 +1,29 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "perplexity/sonar",
+  "correctness": 1.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 2.9,
+  "wrong_facts": [
+    "Hook claims Vat 1 ferments in 'old oak vats from the 1860s' — ground truth confirms NO OAK; fermented in stainless steel with no oak fermentation or maturation",
+    "Vinification summary claims 'ferments in neutral 150-year-old oak vats' and 'barrel-ferment technique' — completely fabricated; the wine sees no oak whatsoever",
+    "Vinification mentions 'slow malolactic conversion in some years' — unverifiable and unlikely for a high-acid Hunter Semillon",
+    "Claims Tyrrell's 'pioneered single-vineyard labeling in Australia' — unverifiable and likely overstated",
+    "Comparable wines section mentions 'Yalumba Steeple Vineyard Semillon' from Barossa — this is not a well-known or verifiable wine"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "150-year-old oak vats",
+    "55°F storage temperature",
+    "Brokenwood ILR Semillon at $55",
+    "drinking_window_max_years 40",
+    "aging_potential_years 30"
+  ],
+  "reasoning": "The hook contains a provably wrong factual claim — stating the wine ferments in old oak vats from the 1860s when ground truth confirms it is fermented in stainless steel with NO oak. This is the single most damaging error possible: it's in the hook, it's specific, and it's completely fabricated. The vinification section doubles down on this fabrication with '150-year-old oak vats' and 'barrel-ferment technique.' These oak claims directly contradict verified ground truth. The HARD PENALTY for a provably wrong hook claim caps correctness at 1.5. The voice is reasonably direct and opinionated with no banned words, and specificity is good with named soils and real comparisons, but the fundamental factual errors undermine the entire output's credibility.",
+  "judge_tokens_in": 3327,
+  "judge_tokens_out": 487
+}

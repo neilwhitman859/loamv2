@@ -1,0 +1,24 @@
+{
+  "wine_id": "1bc9b5ef-3d2d-4f0d-924b-fbfcd741e8d3",
+  "wine_name": "Montes Alpha M, Valle de Colchagua",
+  "tier": "B",
+  "model": "openai/gpt-5-mini",
+  "correctness": 3.0,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.525,
+  "wrong_facts": [
+    "Vinification summary says 'commonly 12–18 months' in new French oak — ground truth says 18 months in French oak (70% new), so '12–18 months' is imprecise and the characterization of heavy new oak is slightly misleading since 70% new is not all-new",
+    "Wine summary mentions 'sourcing across Colchagua's alluvial terraces and foothills' — ground truth says Alpha M comes from the Apalta single estate, not multiple sourcing sites across Colchagua"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "12–18 months oak aging range is not in context data (ground truth is 18 months)",
+    "Cellar recommendation of 2026–2038 is fabricated",
+    "12–14°C storage temperature is a generic recommendation not from context data"
+  ],
+  "reasoning": "The output does not fabricate hard numbers like pH or blend percentages, which avoids the worst penalties. However, it states Alpha M sources from across Colchagua's terraces and foothills, when ground truth confirms it's from the single Apalta estate — a meaningful factual error. The oak aging claim of '12–18 months' is hedged but doesn't match the confirmed 18 months at 70% new. The blend is never specified (correctly cautious), but the Apalta sourcing error and vague oak claim reduce correctness. Voice is decent — direct, opinionated, avoids banned words — but has some template-like patterns ('reads as ripe and powered'). Specificity is good with named competitors, soil types, and real dishes. Usefulness is solid with actionable comparisons and a clear insider take.",
+  "judge_tokens_in": 3442,
+  "judge_tokens_out": 427
+}

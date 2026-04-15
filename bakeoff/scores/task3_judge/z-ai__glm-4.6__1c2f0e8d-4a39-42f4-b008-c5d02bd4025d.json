@@ -1,0 +1,28 @@
+{
+  "wine_id": "1c2f0e8d-4a39-42f4-b008-c5d02bd4025d",
+  "wine_name": "Atamisque Chardonnay, Mendoza",
+  "tier": "B",
+  "model": "z-ai/glm-4.6",
+  "correctness": 2.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 3.25,
+  "wrong_facts": [
+    "Vinification summary claims fermentation in French oak barrels — ground truth says 10 months aging in French oak, not necessarily barrel fermentation",
+    "Insider take claims 'heavy use of oak' masks site characteristics, but the wine only gets 10 months French oak which is moderate",
+    "Claims 'the wine typically undergoes malolactic fermentation' — this is unverified and presented as fact",
+    "Value assessment claims '$20 to $30 retail' — no price data was provided",
+    "Hook claims 'thick skins' from high altitude — altitude affects UV exposure but the thick skins claim is speculative and not in data",
+    "Alcohol sensory score of 4 is high, but the only ABV data (2010 vintage) shows 13.5% which is moderate, not high"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$20 to $30 retail price range",
+    "55°F storage temperature",
+    "alcohol sensory rating of 4 (implies high alcohol, contradicted by 13.5% ABV in data)"
+  ],
+  "reasoning": "The output makes several unverifiable or incorrect claims. The vinification section fabricates details about barrel fermentation and MLF that aren't in the context data and may not match reality (ground truth only confirms 10 months French oak aging). The price range is fabricated. The insider take is opinionated but potentially unfair — calling 10 months French oak 'heavy use of oak' is misleading. The terroir section correctly identifies 1,300m elevation, alluvial sand/clay soils, and Tupungato location, which align with ground truth. The hook doesn't contain a provably wrong fact but the 'thick skins' claim is speculative. Voice is direct and opinionated with no banned words, but some claims feel like confident fabrication rather than genuine insight. Specificity is good with named competitors and soil types. The naming origin of 'Atamisque' (native tree) is never mentioned, which is a missed opportunity but not a penalty.",
+  "judge_tokens_in": 3231,
+  "judge_tokens_out": 498
+}

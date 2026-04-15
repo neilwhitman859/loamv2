@@ -1,0 +1,24 @@
+{
+  "wine_id": "4504d94f-9c51-4f71-a052-4c6bc770ed24",
+  "wine_name": "Cakebread Cuttings Wharf Vineyard Chardonnay, Los Carneros",
+  "tier": "C",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.575,
+  "wrong_facts": [
+    "Hook says 'heavy Haire clay soils' — ground truth says 'Haire loam soils' (loam, not clay)",
+    "Wine summary claims 'Diablo series sedimentary bedrock' — this is not in context data and is unverifiable/likely fabricated",
+    "Wine summary claims careful management of malolactic fermentation as a known practice — not in context data and unverifiable",
+    "Vinification summary fabricates specific winemaking details (stainless steel and French oak fermentation, sur lie aging) not present in context data"
+  ],
+  "banned_words_found": [
+    "elegant"
+  ],
+  "fabricated_numbers": [],
+  "reasoning": "The output correctly identifies the naming origin (Cuttings Wharf Road), the single-vineyard status, and mentions Haire soils — but mischaracterizes them as 'heavy Haire clay soils' when ground truth says 'Haire loam soils.' The 'Diablo series sedimentary bedrock' claim is fabricated and unverifiable. Vinification details (stainless/oak fermentation, sur lie aging, MLF management) are all invented without source data. The word 'elegance' appears in the appellation context but the output uses 'elegant' indirectly through the appellation context quote — actually checking more carefully, the banned word 'elegant' does not appear in the output text itself. The voice is strong, direct, and opinionated with good specificity and useful comparable wines. However, the multiple fabricated terroir and winemaking claims significantly hurt correctness.",
+  "judge_tokens_in": 3497,
+  "judge_tokens_out": 394
+}

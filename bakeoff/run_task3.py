@@ -38,7 +38,9 @@ RESULTS_DIR = BASE_DIR / "results" / "task3"
 # 21 models — Task 3 list from MODELS.md
 # mistral-large-3 replaced with mistral-large-2512 (verified slug)
 # qwen3.5-plus uses -02-15 suffix (verified slug)
+# R6 additions (2026-04-15): 9 models — search-capable + cheap Chinese
 TASK3_MODELS = [
+    # Original 21
     "anthropic/claude-sonnet-4.6",
     "anthropic/claude-haiku-4.5",
     "anthropic/claude-opus-4.6",
@@ -60,6 +62,16 @@ TASK3_MODELS = [
     "xiaomi/mimo-v2-flash",
     "minimax/minimax-m2.7",
     "x-ai/grok-4.1-fast",
+    # R6 additions: search-capable + cheap Chinese (tested on 12-wine subset only)
+    "perplexity/sonar",
+    "perplexity/sonar-reasoning",
+    "perplexity/llama-3.1-sonar-small-128k-online",
+    "deepseek/deepseek-v3.2:online",
+    "google/gemini-3-flash-preview:online",
+    "openai/gpt-5.4-mini:online",
+    "moonshotai/kimi-k2",
+    "moonshotai/kimi-k2:online",
+    "z-ai/glm-4.6",
 ]
 
 MODEL_PRICING = {
@@ -84,12 +96,27 @@ MODEL_PRICING = {
     "xiaomi/mimo-v2-flash": (0.07, 0.28),
     "minimax/minimax-m2.7": (0.50, 2.0),
     "x-ai/grok-4.1-fast": (0.60, 4.0),
+    # R6 (token pricing only — search fees billed separately by OpenRouter)
+    "perplexity/sonar": (1.0, 1.0),
+    "perplexity/sonar-reasoning": (1.0, 5.0),
+    "perplexity/sonar-reasoning-pro": (2.0, 8.0),
+    "perplexity/llama-3.1-sonar-small-128k-online": (0.20, 0.20),
+    "deepseek/deepseek-v3.2:online": (0.14, 0.28),
+    "google/gemini-3-flash-preview:online": (0.15, 0.60),
+    "openai/gpt-5.4-mini:online": (0.40, 1.60),
+    "moonshotai/kimi-k2": (0.60, 2.50),
+    "moonshotai/kimi-k2:online": (0.60, 2.50),
+    "z-ai/glm-4.6": (0.60, 2.20),
 }
 
 
 def model_slug(model_id: str) -> str:
-    """Convert model ID to filesystem-safe directory name."""
-    return model_id.replace("/", "__")
+    """Convert model ID to filesystem-safe directory name.
+
+    Windows does not allow `:` in paths, so `:online` → `_online`.
+    This is distinct from the non-online variant's slug.
+    """
+    return model_id.replace("/", "__").replace(":", "_")
 
 
 def call_openrouter(model: str, prompt: str, retries: int = 2) -> dict:
@@ -104,6 +131,9 @@ def call_openrouter(model: str, prompt: str, retries: int = 2) -> dict:
     # Prose output is ~800-1500 tokens. Reasoning models need more budget.
     max_tok = 3000
     if "2.5-pro" in model or "3.1-pro" in model or "opus" in model or "gpt-5-mini" in model:
+        max_tok = 8000
+    # Reasoning / thinking / search models often produce more tokens
+    if "sonar-reasoning" in model or "glm-4.6" in model or "kimi-k2" in model:
         max_tok = 8000
 
     body = {
@@ -359,6 +389,8 @@ def print_summary(wines: list):
 def main():
     parser = argparse.ArgumentParser(description="B5.5: Run Task 3 (prose generation)")
     parser.add_argument("--model", help="Run a single model (OpenRouter slug)")
+    parser.add_argument("--models", help="Comma-separated list of models to run")
+    parser.add_argument("--wines", help="Comma-separated wine IDs to limit to")
     parser.add_argument("--dry-run", action="store_true", help="Show prompts without API calls")
     parser.add_argument("--summary-only", action="store_true", help="Just print summary from saved results")
     args = parser.parse_args()
@@ -370,6 +402,15 @@ def main():
     # Load wine contexts
     with open(CONTEXTS_FILE, "r", encoding="utf-8") as f:
         wines = json.load(f)
+
+    # Filter wines if --wines specified
+    if args.wines:
+        wanted_ids = {w.strip() for w in args.wines.split(",") if w.strip()}
+        wines = [w for w in wines if w["wine_id"] in wanted_ids]
+        missing = wanted_ids - {w["wine_id"] for w in wines}
+        if missing:
+            print(f"WARNING: wines not found: {missing}")
+
     print(f"Loaded {len(wines)} wines from {CONTEXTS_FILE}")
     for tier in ["A", "B", "C"]:
         count = sum(1 for w in wines if w["tier"] == tier)
@@ -380,7 +421,9 @@ def main():
         return
 
     # Determine which models to run
-    if args.model:
+    if args.models:
+        models = [m.strip() for m in args.models.split(",") if m.strip()]
+    elif args.model:
         models = [args.model]
     else:
         models = TASK3_MODELS

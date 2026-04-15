@@ -1,0 +1,26 @@
+{
+  "wine_id": "0aba350e-fffb-49bd-ad8b-9d2ec1f32fe9",
+  "wine_name": "Vasse Felix Filius Cabernet Sauvignon, Margaret River",
+  "tier": "C",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "Claims wine relies on 'gravelly soils of the Wilyabrup sub-region' — no context data confirms Filius fruit comes from Wilyabrup specifically",
+    "Claims 'Forest Grove ironstone and red gravelly loam soils' — this is a specific soil/sub-region claim not in the context data and not verifiable as applying to this wine",
+    "States 'nori and graphite notes' as 'characteristic' of the wine's geology — this is an unverifiable sensory-terroir link presented as fact",
+    "Does not mention the actual blend (93% Cabernet Sauvignon, 5.5% Malbec, 1.5% Petit Verdot) — presents it implicitly as a straight Cabernet",
+    "Does not mention the 11 months in French oak aging period from ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "Alcohol sensory score of 4 implies high ABV but no ABV data was provided",
+    "Drinking window 2024-2029 and aging potential 5 years are plausible but not sourced"
+  ],
+  "reasoning": "The hook is largely correct — Vasse Felix was indeed the first estate planted in Margaret River (1967, confirmed by ground truth), and the younger-vines/earlier-drinking framing matches the ground truth naming origin. However, the output fabricates specific sub-regional and soil claims (Wilyabrup, Forest Grove ironstone) that are not in the context data and are unverifiable for this specific wine. The blend is omitted entirely — the wine is actually 93% Cab Sauv with Malbec and Petit Verdot, which matters. The wild-yeast fermentation claim matches ground truth, which is good. The voice is excellent — direct, opinionated, no banned words, good food pairings with real dishes and reasoning. Specificity is high but some of it is fabricated specificity (the soil claims). No banned words found. The sub-region and soil fabrications prevent a higher correctness score, but nothing is provably wrong in the hook, and the producer history claim is verified correct.",
+  "judge_tokens_in": 3390,
+  "judge_tokens_out": 525
+}

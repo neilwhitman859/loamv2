@@ -1,0 +1,29 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "perplexity/sonar-reasoning-pro",
+  "correctness": 2.0,
+  "voice": 3.5,
+  "specificity": 3.5,
+  "usefulness": 3.0,
+  "composite": 2.875,
+  "wrong_facts": [
+    "Hook claims elevation 'up to 1,083 meters' — Great Southern's highest point (Bluff Knoll) is 1,095m, and vineyards are not planted at anything close to 1,083m; Mount Barker vineyards sit around 200-350m elevation. This dramatically overstates vineyard elevation.",
+    "Claims 'lateritic and granite-based soils' and 'granite-gneissic sandy loams' — while ground truth confirms gravelly loam soils, the specific geological terminology (lateritic, granite-gneissic) is not verified and likely fabricated detail",
+    "Value assessment fabricates a '$35–65 AUD' price range — no pricing was provided in context data",
+    "Omrah is described as representing terroir 'directly' when ground truth shows it's actually a second-label range from younger vineyards or bought-in fruit, i.e., a value tier, not a direct terroir expression"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "1,083 meters elevation",
+    "$35-65 AUD price range",
+    "200 km east-west span",
+    "100 km north-south span",
+    "100km+ ocean proximity",
+    "10 years aging claim for cool-climate Pinot structure"
+  ],
+  "reasoning": "The hook's elevation claim is misleading — while Bluff Knoll reaches ~1,095m, vineyards in Great Southern are planted at much lower elevations (200-350m), making the 1,083m figure deeply misleading in a viticultural context. The output mischaracterizes Omrah as a direct terroir expression when it's actually Plantagenet's value/second label. Multiple specific numbers are fabricated (price range, regional dimensions, elevation). The output fails to mention the verified 10 months French oak or that Plantagenet was the first commercial winery in Great Southern (1968/1975). Voice is decent — direct and opinionated without banned words — but the factual errors undermine credibility significantly.",
+  "judge_tokens_in": 3150,
+  "judge_tokens_out": 500
+}

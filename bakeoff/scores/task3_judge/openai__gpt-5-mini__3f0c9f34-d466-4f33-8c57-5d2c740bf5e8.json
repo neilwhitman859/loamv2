@@ -1,0 +1,25 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "openai/gpt-5-mini",
+  "correctness": 3.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.7,
+  "wrong_facts": [
+    "Terroir section says 'Oyster Bay does not publish single-vineyard sourcing' but ground truth shows they do specify Wairau, Renwick, and Brancott vineyard sources",
+    "Vinification summary suggests 'primary fermentation in stainless steel to preserve acidity, with limited or partial oak' as speculative, but ground truth shows 50/50 stainless steel and French barriques — the output underestimates oak usage significantly",
+    "Terroir mentions 'Awatere Valley sites' which is not confirmed by ground truth (sources are Wairau, Renwick, and Brancott)",
+    "Terroir mentions 'Torlesse greywacke' — while this is geologically present in Marlborough, it's not confirmed for Oyster Bay's specific vineyard sites"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "12-14°C storage temperature",
+    "3-4 years drinking window (though aging_potential_years says 3, the 3-4 range is a slight extrapolation)"
+  ],
+  "reasoning": "The output is generally well-structured and informative but makes several claims that conflict with ground truth. The vinification section hedges about oak usage but significantly underestimates it — ground truth shows 50/50 stainless/barrel fermentation with 9 months on lees, not 'limited or partial oak.' The terroir section incorrectly states Oyster Bay doesn't publish vineyard sourcing and speculatively adds Awatere Valley. The hook is reasonable but vague ('restrained oak' understates the actual barrel program). Voice is decent — direct and informative without banned words — but leans toward safe, template-like structure rather than truly opinionated writing. Specificity is good with named soils, competitors, and real dishes. The storage temperature is fabricated but minor.",
+  "judge_tokens_in": 3584,
+  "judge_tokens_out": 467
+}

@@ -1,0 +1,37 @@
+{
+  "wine_id": "49a78f8d-0332-4925-b8b1-c1cb40dcb33b",
+  "wine_name": "Wind Gap Woodruff Vineyard Pinot Noir, Santa Cruz Mountains",
+  "tier": "C",
+  "model": "perplexity/sonar",
+  "correctness": 1.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.0,
+  "composite": 2.8,
+  "wrong_facts": [
+    "Hook claims Woodruff Vineyard 'clings to Santa Cruz Mountains ridgelines at elevations piercing the marine fog layer' — ground truth shows Woodruff is 9 acres near Coralitos, not on ridgelines",
+    "Wine summary attributes ownership to 'Sarah Schneider' with 'WSET training' — the winemaker is Pax Mahle, no Sarah Schneider is associated with Wind Gap",
+    "Claims '480,000 acres' for the AVA and cites '27 CFR 9.31' and '85% of grapes required' — these are unverifiable specifics likely fabricated",
+    "Hook says '2013 and 2014 vintages earned silver medals at TEXSOM' — only the 2013 earned a silver at TEXSOM per the data; no TEXSOM award for 2014",
+    "Claims 'fractured shale and sandstone' soils at Woodruff — not supported by context or ground truth",
+    "Iron-rich red earth claim is fabricated for this specific vineyard",
+    "Price range $40-60 retail is fabricated — no pricing data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "480,000 acres AVA size",
+    "85% grape requirement",
+    "27 CFR 9.31 citation",
+    "under 14% alcohol",
+    "$40-60 retail",
+    "Mt. Eden at $55",
+    "Rhys at $65",
+    "15 year aging potential",
+    "Drink 2013 through 2028",
+    "2014 holds to 2029",
+    "55°F storage temperature"
+  ],
+  "reasoning": "The output fabricates a producer name (Sarah Schneider instead of Pax Mahle), invents specific regulatory citations and acreage figures, fabricates soil types and pricing, and misattributes TEXSOM awards to both vintages when only 2013 received one. The hook contains wrong claims about ridgeline positioning when Woodruff is near Coralitos at lower elevation. Multiple fabricated numbers trigger the hard penalty cap of 1.5 on correctness. The voice is reasonably direct and opinionated without banned words, and specificity is high (though much of it is fabricated). Usefulness is undermined by the unreliability of the information.",
+  "judge_tokens_in": 3153,
+  "judge_tokens_out": 565
+}

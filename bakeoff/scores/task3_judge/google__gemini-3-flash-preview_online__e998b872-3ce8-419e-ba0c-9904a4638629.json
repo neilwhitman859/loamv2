@@ -1,0 +1,29 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "google/gemini-3-flash-preview:online",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.625,
+  "wrong_facts": [
+    "Hook says vineyard is in Gratallops — ground truth says it's in Torroja del Priorat",
+    "Hook says 'single hectare' — not verifiable from context or ground truth",
+    "Hook says '80-year-old vines' — ground truth says 90-year-old",
+    "Vinification summary says '8 months in large, neutral oak foudres' — ground truth says recent vintages ferment and age in cement tanks (8 months), not oak foudres",
+    "Wine summary mentions 'Vino de Finca' classification — unverifiable claim for this specific wine",
+    "Value assessment fabricates retail price range of $250-$320 — no price data provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$250-$320 retail price range",
+    "single hectare vineyard size",
+    "80-year-old vines (should be 90)",
+    "90 minutes decant time"
+  ],
+  "reasoning": "The hook contains a provably wrong geographic claim (Gratallops instead of Torroja del Priorat), which triggers the hard penalty cap of 1.5, but the vine age is close (80 vs 90) and the cooperage claim (oak foudres vs cement tanks) is a significant factual error. However, many other claims are correct: 100% Carignan, llicorella slate, 600m elevation, whole-cluster fermentation, biodynamic farming, Dominik Huber's philosophy. The fabricated price range ($250-$320) with no price data provided also triggers the hard penalty for fabricated numbers. Despite these correctness issues, the voice is excellent — direct, opinionated, specific, no banned words, and the writing has real personality. Specificity is strong with named soils, competitors, and real dishes. I'm scoring correctness at 2.0 because the hook has a wrong village (hard cap 1.5 applies) but the overall piece has many correct claims too; however the wrong hook fact and fabricated numbers are serious. Adjusting to 2.0 given the accumulation of errors despite some correct details.",
+  "judge_tokens_in": 3647,
+  "judge_tokens_out": 522
+}

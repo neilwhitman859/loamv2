@@ -1,0 +1,39 @@
+{
+  "wine_id": "1c2f0e8d-4a39-42f4-b008-c5d02bd4025d",
+  "wine_name": "Atamisque Chardonnay, Mendoza",
+  "tier": "B",
+  "model": "moonshotai/kimi-k2",
+  "correctness": 1.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "Hook claims 1,350m elevation — ground truth says 1,300m",
+    "Claims 'calcareous sand' and 'limestone pebbles' — ground truth says 'clay and sand alluvial soils' with no mention of limestone or calcareous material",
+    "Claims Atamisque was 'the first property in Valle de Tupungato to plant Burgundian clones at 1,200-1,400m' — unverifiable and likely fabricated",
+    "Assigns 13.5% ABV to the 2018 vintage — context data shows 13.5% ABV only for the 2010 vintage",
+    "Claims '30% new French oak' — ground truth says '10 months in French oak barrels' but no percentage of new oak is specified",
+    "Claims 'limestone-poor soil' in insider_take after repeatedly referencing limestone throughout — contradictory",
+    "Fabricates 22.5°Brix, 300-liter Névers barrels, 40% malolactic, bâtonnage every two weeks for four months — none in context data or ground truth",
+    "Claims production is 'around 8,000 cases' — not in any provided data",
+    "Claims prices of USD 22-26 — no prices were provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "1,350m elevation",
+    "30% new French oak",
+    "22.5°Brix",
+    "300-liter Névers barrels",
+    "40% malolactic",
+    "bâtonnage every two weeks for four months",
+    "3m root depth",
+    "16°C diurnal temperature drop",
+    "8,000 cases production",
+    "USD 22-26 price",
+    "13.5% ABV attributed to 2018"
+  ],
+  "reasoning": "The output is extremely well-written with outstanding voice and specificity, but it is riddled with fabricated numbers and unverifiable claims. The hook states 1,350m (ground truth is 1,300m) and 'calcareous sand' (ground truth is 'clay and sand alluvial soils' — no limestone). The vinification section fabricates Brix, barrel sizes, ML percentages, and bâtonnage schedules not found anywhere. The 13.5% ABV is misattributed from the 2010 to the 2018 vintage. The internal contradiction between 'limestone snap' throughout and 'limestone-poor soil' in the insider take is jarring. Multiple fabricated specific numbers trigger the hard penalty cap of 1.5 on correctness.",
+  "judge_tokens_in": 3552,
+  "judge_tokens_out": 627
+}

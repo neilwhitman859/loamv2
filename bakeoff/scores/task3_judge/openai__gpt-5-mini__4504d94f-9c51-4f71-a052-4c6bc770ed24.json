@@ -1,0 +1,22 @@
+{
+  "wine_id": "4504d94f-9c51-4f71-a052-4c6bc770ed24",
+  "wine_name": "Cakebread Cuttings Wharf Vineyard Chardonnay, Los Carneros",
+  "tier": "C",
+  "model": "openai/gpt-5-mini",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.85,
+  "wrong_facts": [
+    "Hook and terroir mention 'Diablo series soils' — ground truth only mentions Haire loam soils, not Diablo series",
+    "Hook describes soils as 'clay-heavy' but ground truth says 'shallow loamy soils' (Haire loam), not clay-heavy",
+    "Terroir section describes 'Haire and Diablo clay soils—sedimentary in origin' but Haire is a loam soil, not a clay soil",
+    "Rombauer Carneros Chardonnay is not a single-AVA focus wine in the way described — Rombauer sources broadly"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output fabricates the 'Diablo series' soil claim — ground truth only mentions Haire loam soils, and the output repeatedly characterizes these as 'clay-heavy' and 'clay soils' when the ground truth says 'shallow loamy soils.' This is a factual error in the hook and throughout the terroir section. The naming origin is correctly identified (Cuttings Wharf Road), and the single-vineyard designation matches ground truth. The vinification section appropriately hedges what it doesn't know. Voice is strong — direct, opinionated, no banned words, good food pairings with reasoning. Specificity is high with named soils (even if one is wrong), named competitors, and concrete price comparisons. Usefulness is strong with actionable insider take and clear style positioning. The soil mischaracterization across multiple sections prevents a higher correctness score.",
+  "judge_tokens_in": 3715,
+  "judge_tokens_out": 403
+}

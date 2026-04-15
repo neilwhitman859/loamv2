@@ -1,0 +1,27 @@
+{
+  "wine_id": "10c89e05-ecdd-4254-9c24-5a0b67894da5",
+  "wine_name": "Black Box Deep & Dark Cabernet Sauvignon, California",
+  "tier": "C",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Hook claims 'extended skin contact and oak integration' as the method for achieving the Deep & Dark profile — this is speculative and not in context data",
+    "Claims 'thermo-vinification' is used — this is fabricated winemaking detail not in any source",
+    "Claims 'micro-oxygenation is likely employed' — speculative but at least hedged",
+    "States ABV implicitly as consistent with 13.0% from context but ground truth says 13.5%",
+    "Claims fruit is 'primarily from high-yield vineyards' in Central Valley — while Central Valley is confirmed by ground truth, 'high-yield' is an assumption",
+    "Claims 'later-harvested grapes' for the Deep & Dark iteration vs standard — fabricated production detail"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$5.00 per bottle calculation (3L = 4 bottles, so $19.99/4 = ~$5.00 — this is actually correctly derived from ground truth that 3L = 4 bottles, so this is valid)",
+    "six weeks of opening shelf life — this matches ground truth about bag-in-box but is not in the context data provided to the model; however it's a well-known box wine fact"
+  ],
+  "reasoning": "The output is impressively written with strong voice, excellent specificity, and genuinely useful consumer guidance. However, it fabricates multiple winemaking details (thermo-vinification, extended maceration for the Deep & Dark line, micro-oxygenation) that are not in the context data and are unverifiable. The Central Valley sourcing and 3-liter format claims match ground truth, which is good — the model correctly identified these from training knowledge. The hook's claim about 'extended skin contact and oak integration' is speculative winemaking detail presented as fact. The $5/bottle math and 6-week shelf life are actually correct derivations/facts. The voice is excellent — direct, opinionated, no banned words, takes clear positions. The specificity naming alluvial fans, sandy loam, pyrazines, and real comparable wines is strong but some soil claims are unverifiable for this specific wine. Overall: great writing undermined by fabricated vinification specifics.",
+  "judge_tokens_in": 3347,
+  "judge_tokens_out": 544
+}

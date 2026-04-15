@@ -1,0 +1,19 @@
+{
+  "wine_id": "ebde8e00-350b-40fc-a762-0987259419ac",
+  "wine_name": "Howard Park Leston Shiraz, Margaret River",
+  "tier": "C",
+  "model": "perplexity/sonar-reasoning-pro",
+  "correctness": 1.0,
+  "voice": 1.0,
+  "specificity": 1.0,
+  "usefulness": 1.0,
+  "composite": 1.0,
+  "wrong_facts": [
+    "PARSE_FAILED"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "Output failed to parse as valid JSON. Unusable for production.",
+  "judge_tokens_in": 0,
+  "judge_tokens_out": 0
+}

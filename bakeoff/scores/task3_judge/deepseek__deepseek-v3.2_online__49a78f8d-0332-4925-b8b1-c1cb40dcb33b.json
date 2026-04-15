@@ -1,0 +1,29 @@
+{
+  "wine_id": "49a78f8d-0332-4925-b8b1-c1cb40dcb33b",
+  "wine_name": "Wind Gap Woodruff Vineyard Pinot Noir, Santa Cruz Mountains",
+  "tier": "C",
+  "model": "deepseek/deepseek-v3.2:online",
+  "correctness": 1.5,
+  "voice": 3.5,
+  "specificity": 3.5,
+  "usefulness": 3.5,
+  "composite": 2.8,
+  "wrong_facts": [
+    "Woodruff Vineyard is described as 'perched at 1,500 feet on a south-facing shale slope' — ground truth says it's 9 acres near Coralitos (low elevation coastal area, not 1,500 feet)",
+    "The hook and terroir section repeatedly claim 1,500 feet elevation and fractured shale/sandstone soils — these are fabricated details not in the context data and contradicted by the vineyard's actual location near Coralitos",
+    "Claims the vineyard 'sits above the fog line' — inconsistent with its actual low-elevation coastal location near Coralitos"
+  ],
+  "banned_words_found": [
+    "elegant"
+  ],
+  "fabricated_numbers": [
+    "1,500 feet elevation",
+    "$45 to $65 price range",
+    "3-7 years cellaring recommendation",
+    "10 years aging potential",
+    "3-12 year drinking window"
+  ],
+  "reasoning": "The output fabricates specific elevation (1,500 feet) and soil composition (shale slope, fractured shale and sandstone) for Woodruff Vineyard, which is actually a 9-acre site near Coralitos — a low-elevation coastal area. These fabricated details appear in the hook, which triggers the hard penalty cap of 1.5 on correctness. The price range of $45-$65 is also fabricated. The output does correctly identify native yeast fermentation, neutral oak, and whole-cluster techniques (matching ground truth), and the voice is reasonably direct and opinionated, but the banned word 'elegant' appears in the comparable wines section. The writing has good structure and specificity, but much of that specificity is fabricated rather than real.",
+  "judge_tokens_in": 3249,
+  "judge_tokens_out": 424
+}

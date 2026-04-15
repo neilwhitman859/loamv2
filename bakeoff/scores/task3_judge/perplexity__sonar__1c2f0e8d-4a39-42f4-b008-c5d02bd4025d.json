@@ -1,0 +1,29 @@
+{
+  "wine_id": "1c2f0e8d-4a39-42f4-b008-c5d02bd4025d",
+  "wine_name": "Atamisque Chardonnay, Mendoza",
+  "tier": "B",
+  "model": "perplexity/sonar",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.475,
+  "wrong_facts": [
+    "Terroir description mentions 'calcareous deposits' and 'limestone bedrock' — ground truth says clay and sand alluvial soils, no mention of limestone or calcareous material",
+    "Vinification summary claims 'Steel tank aging dominates to retain site-driven freshness' — ground truth says 10 months in French oak barrels, which contradicts the claim that steel dominates",
+    "Partial oak fermentation and malolactic conversion details are fabricated — no such specifics in context data and ground truth only mentions 10 months French oak",
+    "Cloudy Bay Sauvignon Blanc is not a Chardonnay and is a poor comparable for style"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$15-25 retail price range",
+    "Nights drop to 10°C while days hit 25°C",
+    "store at 12-14°C",
+    "aging_potential_years: 10",
+    "Catena Alta at $30",
+    "O. Fournier Urban UCO at $18"
+  ],
+  "reasoning": "The output correctly identifies 1,300m elevation and clay/sand alluvial soils (matching ground truth) and the competition medals match context data. However, the vinification summary is significantly wrong: it claims steel tank aging dominates when ground truth shows 10 months in French oak barrels — this is a major factual error that misrepresents the wine's style. The limestone/calcareous soil claim contradicts the ground truth of clay and sand alluvial soils. Multiple prices and temperature figures are fabricated. The voice is strong — direct, opinionated, no banned words, good food pairings with real dishes. Specificity is good with named competitors and soil types, though some soil claims are wrong. The fabricated vinification details and soil claims prevent a higher correctness score, but the hard cap for fabricated numbers (prices, temperatures) applies.",
+  "judge_tokens_in": 3278,
+  "judge_tokens_out": 467
+}

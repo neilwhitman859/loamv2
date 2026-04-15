@@ -1,0 +1,25 @@
+{
+  "wine_id": "46a46e99-c081-41ce-abcc-bf993469fc0e",
+  "wine_name": "Kir Yianni Ramnista, Naoussa",
+  "tier": "B",
+  "model": "z-ai/glm-4.6",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.475,
+  "wrong_facts": [
+    "Vinification claims 'up to 20 days' extended skin contact — ground truth says 6-day cold soak, not 20 days",
+    "Claims aging in 'French oak barrels, a portion of which are new' — ground truth says 18 months in 225L and 500L French AND American oak casks; no mention of new oak proportion",
+    "Terroir description mentions 'granitic slopes' — this is unverifiable and potentially wrong; Naoussa soils are more commonly described as sandy clay/limestone, not granitic",
+    "Hook mentions 'sandy clay soils' which is plausible but not verified from ground truth which doesn't specify soil type"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "20 days skin contact (ground truth says 6-day cold soak)",
+    "18 months in French oak is partially correct but omits American oak and mischaracterizes the cooperage"
+  ],
+  "reasoning": "The output fabricates a specific number — '20 days' of skin contact — when ground truth shows a 6-day cold soak, which is a clear fabrication. The oak aging duration of 18 months matches ground truth, but the description omits American oak and fabricates 'a portion new.' The claim of 'granitic slopes' is unverifiable and likely wrong for Naoussa. However, the 18-month figure itself is correct per ground truth, so the fabrication penalty applies mainly to the 20-day claim. The hook's Barolo comparison and Mount Vermio reference are reasonable from wine knowledge. Voice is strong — direct, opinionated, no banned words, good specificity with named competitors and real dishes. The output is useful and teaches well, but the incorrect winemaking details are a significant correctness problem.",
+  "judge_tokens_in": 3247,
+  "judge_tokens_out": 440
+}

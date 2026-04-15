@@ -1,0 +1,24 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "google/gemini-3-flash-preview:online",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "The output mentions Awatere Valley as a source area, but ground truth specifies vineyard sources as Wairau, Renwick, and Brancott — not Awatere",
+    "The output says 'stainless steel to preserve zest and a portion of oak to add tactile weight' which is directionally correct but understates the 50/50 stainless steel and French barriques split from ground truth",
+    "The output says 'oak influence here is intentionally minimal' in the insider take, but ground truth shows 50% fermented in French barriques with 9 months on lees — that is not minimal oak",
+    "The comparable wine Louis Jadot Mâcon-Villages is described as 'unoaked' which is broadly correct for that wine, but it's compared as sharing an 'unoaked, high-acid profile' with Oyster Bay, which itself is significantly oaked per ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "The $15 to $18 range in value_assessment is a reasonable rounding of the context data prices ($14.73 and $17.99), not a fabrication per se"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity (naming Richmond and Kaikoura Ranges, alluvial soils, diurnal shift, real food pairings, real comparable wines), and genuinely useful insider take. However, correctness suffers from the claim that oak influence is 'intentionally minimal' when ground truth shows 50% French barriques and 9 months on lees with bâtonnage — this is a significant mischaracterization that runs through the wine summary and insider take. The Awatere Valley mention is also unsupported by ground truth vineyard sources. The partial malolactic fermentation mention is correct per ground truth. No banned words found. Overall a strong output undermined by the oak characterization error.",
+  "judge_tokens_in": 3735,
+  "judge_tokens_out": 481
+}

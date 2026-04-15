@@ -1,0 +1,38 @@
+{
+  "wine_id": "ebde8e00-350b-40fc-a762-0987259419ac",
+  "wine_name": "Howard Park Leston Shiraz, Margaret River",
+  "tier": "C",
+  "model": "moonshotai/kimi-k2:online",
+  "correctness": 1.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "Whole bunch fermentation stated as 20% — ground truth says 10%",
+    "Oak aging stated as 14 months — ground truth says 18 months",
+    "Steamed heads not toasted is unverifiable and likely fabricated",
+    "16°C diurnal swing claim is unverifiable and suspiciously specific",
+    "2°C sea breeze cooling claim is unverifiable",
+    "pH finishing malolactic claim is unverifiable speculation",
+    "14% alcohol is fabricated — not in context data",
+    "A$35-40 retail price is fabricated — no price data provided",
+    "US$32-38 price is fabricated",
+    "95% French oak detail omitted while fabricating steamed heads detail",
+    "5% American oak not mentioned"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "20% whole bunches (actual: 10%)",
+    "14 months oak aging (actual: 18 months)",
+    "16°C diurnal swing",
+    "2°C sea breeze cooling",
+    "14% alcohol",
+    "A$35-40 price",
+    "US$32-38 price",
+    "30% new French hogsheads (correct number but presented alongside wrong aging duration)"
+  ],
+  "reasoning": "The output fabricates numerous specific numbers that contradict ground truth or are entirely unsourced. Whole bunch percentage is wrong (20% vs 10%), oak aging is wrong (14 months vs 18 months), and the steamed-not-toasted cooperage detail appears invented. Prices are fabricated when none were provided. The 14% ABV is not in context data. These fabrications trigger the hard penalty cap of 1.5 on correctness. The voice is excellent — direct, opinionated, specific, no banned words, great structure. Specificity is strong with named vineyards, soils, and real comparable wines. But the factual unreliability undermines the entire piece's usefulness despite its engaging style.",
+  "judge_tokens_in": 3201,
+  "judge_tokens_out": 477
+}

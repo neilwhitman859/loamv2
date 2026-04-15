@@ -1,0 +1,30 @@
+{
+  "wine_id": "1a19854d-d7fb-4046-a2ba-9c2391b6026a",
+  "wine_name": "Terre del Barolo Arnaldo Rivera, Barolo",
+  "tier": "B",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.4,
+  "wrong_facts": [
+    "Hook claims wine sources from 'prestigious MGAs like Villero and Rocche di Castiglione' — the ground truth shows it's a multi-commune blend from Serralunga d'Alba, Castiglione Falletto, Diano d'Alba, La Morra, and Verduno, with no mention of specific MGA vineyard sites like Villero or Rocche di Castiglione",
+    "Vinification summary claims malolactic fermentation in 'large Slavonian oak botti' — ground truth says spontaneous malolactic in wood, and cooperage is French wood (tonneaux and oak casks), not Slavonian oak",
+    "Hook describes this as 'site-specific bottlings' but the ground truth confirms it's a multi-site blend",
+    "Claims 'utilizing only the top 10% of the cooperative's total fruit' — no source for this figure",
+    "Wine summary says it uses 'sandy soils' of La Morra and 'iron-rich marls' of Serralunga — while directionally plausible, the specific soil descriptions are not in context data and the geological claims in terroir_expression (Sant'Agata Fossili marls, Lequio Formation, Helvetian sandstone, calcium carbonate content) are largely fabricated or unverifiable for this specific wine",
+    "Price range of $40-$55 is fabricated, as no prices were provided",
+    "Comparison prices for Pio Cesare and Damilano starting at $70 are fabricated"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "top 10% of cooperative's total fruit",
+    "$40-$55 retail range",
+    "$70 for Pio Cesare/Damilano",
+    "38-month aging with 18 months in oak attributed to this wine specifically (these are appellation minimums, not confirmed for this wine which actually has 20 months in French wood per ground truth)"
+  ],
+  "reasoning": "The hook contains a provably wrong claim — it says the wine sources from specific MGAs like Villero and Rocche di Castiglione, which is not supported by ground truth. The ground truth shows a multi-commune blend, not site-specific MGA sourcing. The vinification section fabricates Slavonian oak botti when the actual cooperage is French wood. Multiple specific numbers are fabricated (top 10%, price ranges). The voice is strong and direct with good specificity and useful comparisons, but the factual foundation is unreliable. The hook's wrong MGA claim would normally trigger the 1.5 cap, but since the hook also contains some correct directional information about the cooperative pivot, I'm being slightly generous at 2.0 given the overall quality of writing despite the errors.",
+  "judge_tokens_in": 3694,
+  "judge_tokens_out": 668
+}

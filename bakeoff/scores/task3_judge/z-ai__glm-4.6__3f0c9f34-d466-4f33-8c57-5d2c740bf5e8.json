@@ -1,0 +1,20 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "z-ai/glm-4.6",
+  "correctness": 3.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.825,
+  "wrong_facts": [
+    "Cellar recommendation claims 'low acidity relative to age-worthy Chablis' — the wine actually has notable cool-climate acidity; the issue is more about structure/complexity than low acidity",
+    "Hook says 'stony alluvial soils usually produce razor-sharp Sauvignon Blanc' — while directionally true for Marlborough, the specific vineyard sources are shallow sandy loams over gravels, not purely stony alluvial"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output correctly identifies Wairau Valley sourcing, partial malolactic fermentation, stainless steel and French oak combination, and the general style — all matching ground truth without having seen it. The mention of greywacke stone is a known Marlborough geological feature and adds value. However, the cellar recommendation's claim about 'low acidity' contradicts the wine's cool-climate character and the output's own repeated emphasis on high acidity, which is internally inconsistent. The wine_summary mentions 'Wairau Valley' specifically but ground truth shows Wairau, Renwick, AND Brancott — so it's incomplete but not wrong. Voice is direct, opinionated, and avoids banned words. The insider take is refreshingly honest. Comparables are well-chosen and price-appropriate. No fabricated specific numbers (pH, blend %, oak months, cases).",
+  "judge_tokens_in": 3348,
+  "judge_tokens_out": 360
+}

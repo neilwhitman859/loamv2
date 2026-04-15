@@ -1,0 +1,27 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "z-ai/glm-4.6",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.475,
+  "wrong_facts": [
+    "Hook claims fruit is from 'higher-altitude sectors' — not verified; Les Routes is described as near Hautes Garrigues on clay with gravel and limestone colluviums, not necessarily higher-altitude",
+    "Claims 'decomposed limestone' in the hook and terroir section — ground truth says clay with gravel and limestone colluviums, not decomposed limestone scree",
+    "Claims 'biodynamic farming practices' in vinification — not supported by context data or ground truth",
+    "14.5% ABV is from the 2020 vintage but is applied in the vinification summary alongside the 2023 oak aging details, conflating vintages",
+    "Value assessment fabricates a price range of '$45-$55' — no prices were provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$45-$55 price range",
+    "30% undercut claim",
+    "14.5% applied to 2023 context when it belongs to 2020"
+  ],
+  "reasoning": "The output makes several unverifiable or incorrect claims: biodynamic farming is fabricated, the soil description doesn't match ground truth (clay/gravel/limestone colluviums vs. decomposed limestone scree), and the price range is entirely invented. The 14.5% ABV is from 2020 but is misleadingly presented alongside 2023 vinification details. However, the output correctly identifies the 100% Syrah, the rarity of this in Gigondas, the 18-month oak aging, and makes good use of rotundone and terroir connections. The voice is strong — direct, opinionated, specific, with good food pairings and honest insider take. The fabricated price triggers the hard penalty for fabricated numbers, capping correctness at 1.5, but the soil description errors are more 'plausibly wrong' than precisely fabricated numbers, so I'm weighing the overall mix. The $45-$55 is a clear fabricated number not in context data, which should cap correctness at 1.5.",
+  "judge_tokens_in": 3670,
+  "judge_tokens_out": 909
+}

@@ -1,0 +1,29 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "google/gemini-3-flash-preview:online",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 5.0,
+  "usefulness": 5.0,
+  "composite": 4.35,
+  "wrong_facts": [
+    "'sandy alluvial loam' - the soil type is not specified in context data; while plausible for Hunter Valley, 'alluvial' is a specific claim that may not be accurate for Short Flat",
+    "'duplex soils' and 'alkaline clay subsoils' - specific soil claims not verifiable from context data",
+    "Tyrrell family farming since 1858 - the context says Vat 1 was created in 1963 but doesn't mention 1858; this is actually correct per general knowledge of Tyrrell's founding",
+    "Avoiding malolactic fermentation - not in context data, plausible but unverifiable from provided sources",
+    "remarkably in wine_summary is close to banned word 'remarkable' but is technically a different word"
+  ],
+  "banned_words_found": [
+    "remarkably"
+  ],
+  "fabricated_numbers": [
+    "pH-driven mineral core implies pH knowledge not in data",
+    "12-14°C storage temperature is general advice not from data",
+    "$150+ White Burgundies comparison price not from data"
+  ],
+  "reasoning": "This is exceptionally well-written output with strong voice, excellent specificity, and genuinely useful information. The hook correctly identifies Short Flat vineyard, stainless steel (no oak), and the low ABV transformation — all verified by ground truth. The release policy of 5 years matches ground truth. Key facts are correct: 100% Semillon, no oak, stainless steel fermentation, Short Flat vineyard sourcing. Some soil descriptions (sandy alluvial loam, duplex soils, alkaline clay) are specific claims not fully verifiable but plausible for Hunter Valley. The word 'remarkably' is a form of the banned word 'remarkable' which should trigger a voice penalty. The fabricated numbers are relatively minor (storage temp is general advice, price comparison is contextual). Overall correctness is good but dinged slightly for unverifiable soil specifics and the borderline banned word usage. The voice is outstanding — direct, opinionated, specific, with great food pairings and a genuinely useful insider take.",
+  "judge_tokens_in": 3550,
+  "judge_tokens_out": 505
+}

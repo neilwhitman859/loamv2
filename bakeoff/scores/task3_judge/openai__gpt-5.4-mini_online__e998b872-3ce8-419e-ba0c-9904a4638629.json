@@ -1,0 +1,22 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "openai/gpt-5.4-mini:online",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "The vinification_summary states '8 months in oak' for the 2022 vintage, but ground truth indicates recent vintages ferment and age in cement tanks (8 months), not oak. The producer has completely dispensed with new oak.",
+    "The value_assessment fabricates a price range of '$100 to $150' when no prices were provided in the context data."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$100 to $150 price range not in context data"
+  ],
+  "reasoning": "The hook is strong and factually correct — old-vine Carignan, steep slate slopes, Priorat, not a blend. The output correctly identifies llicorella, biodynamic farming, 100% Carignan, and the site-first philosophy. However, the vinification summary makes a significant error: it describes '8 months in oak' when ground truth confirms recent vintages use cement tanks with no wood aging — the model misread the context data's 'Oak months: 8' and assumed oak vessel rather than checking that the producer dispensed with oak entirely. The price range is fabricated. The voice is excellent — direct, opinionated, specific, no banned words, good food pairings with reasoning. Specificity is high with named soils, competitors, and real dishes. The oak error is meaningful because it leads to an entire paragraph of wrong analysis about oak's structural role in this wine.",
+  "judge_tokens_in": 3735,
+  "judge_tokens_out": 358
+}

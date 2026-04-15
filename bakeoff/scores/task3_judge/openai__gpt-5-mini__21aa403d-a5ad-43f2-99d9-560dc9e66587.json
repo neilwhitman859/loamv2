@@ -1,0 +1,26 @@
+{
+  "wine_id": "21aa403d-a5ad-43f2-99d9-560dc9e66587",
+  "wine_name": "Lafage, Côtes Catalanes Vieilles Vignes Tessellae",
+  "tier": "B",
+  "model": "openai/gpt-5-mini",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.475,
+  "wrong_facts": [
+    "The hook and wine_summary describe Tessellae as a blend of Carignan, Grenache, Syrah, and Monastrell, but ground truth confirms it is 100% Carignan from old vines (70+ years). The context data lists multiple grapes, but the verified ground truth overrides this.",
+    "The hook says 'Old-vine Carignan is the spine of Tessellae' implying it's a blend with other grapes, when it's actually 100% Carignan.",
+    "No mention of the naming origin (tesserae/Roman mosaics) which is a key verified fact, though omission isn't a wrong fact per se."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "8-12 years cellar recommendation not sourced from context data",
+    "30-60 minutes decanting time not sourced",
+    "12-14°C storage temperature not sourced",
+    "$12-18 price range for competitors not sourced"
+  ],
+  "reasoning": "The most significant error is describing Tessellae as a multi-grape blend when ground truth confirms it is 100% Carignan. The hook explicitly frames it as a blend ('lifted by Grenache, Syrah and Monastrell'), which is provably wrong per ground truth. This is a factual error in the hook, but the model was somewhat misled by the context data listing four grapes. The wine_summary repeats this blend claim. The fabricated numbers (cellar time, decanting, storage temp, competitor pricing) are plausible wine knowledge rather than invented technical specs, so I don't apply the hard 1.5 cap for those. However, the wrong blend claim in the hook warrants the hard penalty cap of 1.5 — but I'm giving some leniency because the context data itself listed four grapes, making this a reasonable inference from the data provided even though it's wrong. Voice is strong — direct, opinionated, specific, no banned words. Specificity is good with named soils, wind patterns, real dishes, and real comparable producers. Usefulness is solid with actionable insider take and clear value assessment.",
+  "judge_tokens_in": 3449,
+  "judge_tokens_out": 521
+}

@@ -1,0 +1,66 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "google/gemini-3-flash-preview",
+  "scores": {
+    "hook": {
+      "correctness": 3.5,
+      "voice": 4.0,
+      "note": "The wine is NOT single-vineyard and draws from multiple sites beyond Stags Leap District; calling it 'sourced primarily from the Stags Leap District' is partially misleading per ground truth, and 'younger sibling to Hillside Select' is plausible but not verified in context."
+    },
+    "wine_summary": {
+      "correctness": 3.5,
+      "voice": 4.2,
+      "note": "Correctly references the John-to-Doug transition but misses the specific 'generation and a half' meaning; the wine is not exclusively a Stags Leap District wine per ground truth (multi-site including selected Napa Valley sites); good specific climate detail though some is inferred."
+    },
+    "terroir_expression": {
+      "correctness": 3.0,
+      "voice": 4.0,
+      "note": "Bale loam and volcanic soils are plausible but not verified in context or ground truth; treats the wine as purely Stags Leap District when ground truth says multi-site; 'velvety' is borderline but not on the banned list."
+    },
+    "vinification_summary": {
+      "correctness": 2.0,
+      "voice": 3.8,
+      "note": "States 20 months in oak when ground truth says 18 months; fabricated aging duration drops correctness significantly; 'long maceration' detail is unverified; 100% new French oak is correct."
+    },
+    "food_pairing": {
+      "correctness": 4.0,
+      "voice": 4.5,
+      "note": "Creative, specific pairings with reasoning tied to wine characteristics; ABV reference is correct; no fabricated data; strong direct voice with practical advice."
+    },
+    "comparable_wines": {
+      "correctness": 3.5,
+      "voice": 3.5,
+      "note": "Both comparables are reasonable Stags Leap District peers, but only two wines feels thin; 'floral lift' claim for Cliff Lede is unverified."
+    },
+    "style_profile": {
+      "correctness": 4.0,
+      "voice": 3.5,
+      "note": "Accurate and concise descriptor consistent with the wine's profile; could be slightly more specific or opinionated."
+    },
+    "cellar_recommendation": {
+      "correctness": 3.5,
+      "voice": 4.0,
+      "note": "7-10 year window is reasonable but unverified; the claim about high alcohol oxidizing floral notes is speculative; direct and practical tone."
+    },
+    "value_assessment": {
+      "correctness": 3.5,
+      "voice": 4.0,
+      "note": "Price is correct; Caymus Special Selection and Phelps are reasonable comparisons; overemphasizes Stags Leap specificity when ground truth shows multi-site sourcing."
+    },
+    "market_position": {
+      "correctness": 3.5,
+      "voice": 3.8,
+      "note": "Reasonable market positioning; 'name brand' and steakhouse audience are plausible; no fabricated data but somewhat generic."
+    },
+    "insider_take": {
+      "correctness": 4.0,
+      "voice": 4.5,
+      "note": "Strong opinionated take with specific ABV reference; honest about the wine's style tradeoffs; direct and useful advice without hedging."
+    }
+  },
+  "overall_note": "Generally strong voice throughout with no banned words, but recurring factual issues around treating the wine as single-district (Stags Leap) when ground truth confirms multi-site sourcing, and a fabricated 20-month oak aging figure (should be 18 months).",
+  "judge_tokens_in": 1598,
+  "judge_tokens_out": 829
+}

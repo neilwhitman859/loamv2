@@ -1,0 +1,26 @@
+{
+  "wine_id": "a46855f7-2916-434c-91c3-3847c981f0d0",
+  "wine_name": "Leo Hillinger, Burgenland",
+  "tier": "B",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.675,
+  "wrong_facts": [
+    "Value assessment claims '$18 to $24 is the standard retail range' but no prices were provided in context data",
+    "Claims about 'Leithaberg foothills and the Seewinkel plains' as sources — ground truth says vineyards are in Jois, Oggau, and Rust, which are near Leithaberg/Neusiedlersee but the specific claim about Seewinkel plains as a source is unverified",
+    "No mention of organic conversion in 2010, which is a key verified fact",
+    "Vinification details (stainless steel fermentation, reductive winemaking, older oak for MLF) are entirely fabricated — none of this is in the context data or verifiable from ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$18 to $24 retail price range",
+    "55°F storage temperature (generic but not from data)",
+    "five years drinking window claim in cellar_recommendation (though aging_potential_years says 6, these are internally inconsistent)"
+  ],
+  "reasoning": "The output is well-written with strong voice and impressive specificity, but it fabricates significant details. The vinification section is entirely invented — stainless steel fermentation, reductive winemaking, older oak for MLF — none sourced from context or ground truth. The price range is fabricated (no prices provided). The hook is factually reasonable (Pannonian climate, Lake Neusiedl, 100% Blaufränkisch are all correct), which saves it from the hook penalty. However, the accumulation of fabricated specifics in vinification and pricing, while not triggering the hard number-fabrication cap (those are more process claims than precise metrics like pH or blend %), still significantly undermines correctness. The voice is direct and opinionated without banned words, and the specificity and usefulness are genuinely high — the comparable wines, food pairings, and insider take all add real value.",
+  "judge_tokens_in": 3362,
+  "judge_tokens_out": 482
+}

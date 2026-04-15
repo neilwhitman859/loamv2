@@ -1,0 +1,66 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "google/gemini-3-flash-preview",
+  "scores": {
+    "hook": {
+      "correctness": 3.8,
+      "voice": 4.5,
+      "note": "Vine age stated as 80 years vs ground truth 90 years; 'neutral oak aging' is partially incorrect since recent vintages use cement tanks, not oak; altitude and slate details are correct."
+    },
+    "wine_summary": {
+      "correctness": 4.0,
+      "voice": 4.5,
+      "note": "Strong on Llicorella, Carignan focus, and Huber's philosophy; Samsó is a local synonym but less standard than Cariñena; Burgundy comparison is editorial but defensible; co-founding with Eben Sadie not mentioned but not required."
+    },
+    "terroir_expression": {
+      "correctness": 4.2,
+      "voice": 4.7,
+      "note": "Llicorella thermal regulation, altitude, diurnal swing, and lean profile all align well with ground truth; specific tasting descriptors (blood-orange, crushed stone) are plausible editorial additions."
+    },
+    "vinification_summary": {
+      "correctness": 2.5,
+      "voice": 4.3,
+      "note": "States 'large, neutral oak vats for eight months' but ground truth says recent vintages ferment and age in cement tanks (8 months); the 8-month figure matches but vessel type is wrong for recent vintages; 'infusion rather than extraction' is plausible but unverified."
+    },
+    "food_pairing": {
+      "correctness": 4.0,
+      "voice": 4.8,
+      "note": "Creative, specific pairings with reasoning tied to wine characteristics; Nashville Hot Chicken is a bold, opinionated call that fits the voice well."
+    },
+    "comparable_wines": {
+      "correctness": 3.5,
+      "voice": 4.2,
+      "note": "Ferrer Bobet and Gauby Muntada are reasonable comparisons; Muntada is actually a Grenache-dominant blend, not purely Carignan, so 'same whole-cluster Carignan DNA' is somewhat inaccurate."
+    },
+    "style_profile": {
+      "correctness": 4.2,
+      "voice": 4.0,
+      "note": "Accurate and concise; 'full-bodied' is reasonable for old-vine Carignan from Priorat though the wine may lean more medium-to-full given the described austerity."
+    },
+    "cellar_recommendation": {
+      "correctness": 3.5,
+      "voice": 4.0,
+      "note": "'Two decades' aging potential is plausible but unverified; the decanting advice is reasonable editorial guidance."
+    },
+    "value_assessment": {
+      "correctness": 3.0,
+      "voice": 4.3,
+      "note": "Price range of $250-$300 is plausible for top Priorat but not verified in context; comparisons to Fourth Growth Bordeaux and Hermitage are bold editorial positions."
+    },
+    "market_position": {
+      "correctness": 3.8,
+      "voice": 4.0,
+      "note": "Reasonable positioning; 'Burgundy drinkers looking for Mediterranean alternatives' is a smart editorial take; Michelin-starred restaurant claim is plausible but unverified."
+    },
+    "insider_take": {
+      "correctness": 4.0,
+      "voice": 4.7,
+      "note": "Strong, opinionated take that aligns with the wine's austere, non-traditional Priorat character; 'noble, brooding character' is borderline theatrical but stays within voice rules."
+    }
+  },
+  "overall_note": "Well-written with strong voice throughout and no banned words; main correctness issues are vine age (80 vs 90), vessel type (oak vs cement for recent vintages), and some unverified specifics like price and Gauby Muntada's varietal composition.",
+  "judge_tokens_in": 1796,
+  "judge_tokens_out": 879
+}

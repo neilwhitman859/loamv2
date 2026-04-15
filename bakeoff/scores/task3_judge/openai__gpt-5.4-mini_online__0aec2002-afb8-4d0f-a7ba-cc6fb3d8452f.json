@@ -1,0 +1,20 @@
+{
+  "wine_id": "0aec2002-afb8-4d0f-a7ba-cc6fb3d8452f",
+  "wine_name": "Fritz Haag Brauneberger Juffer Sonnenuhr Riesling Auslese, Mosel",
+  "tier": "A",
+  "model": "openai/gpt-5.4-mini:online",
+  "correctness": 4.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 5.0,
+  "composite": 4.425,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$45-90 price range",
+    "8-12°C storage temperature"
+  ],
+  "reasoning": "The output is factually strong. The hook correctly identifies the vineyard as a steep, south-facing slate site — matching ground truth about Juffer-Sonnenuhr being the steepest, most south-facing center cut of the Brauneberg hillside. Devonian slate is correctly named, matching ground truth. The naming origin isn't explicitly stated in the hook but nothing wrong is claimed there either. The comparable wines (Dr. Loosen Wehlener Sonnenuhr, JJ Prüm Graacher Himmelreich, Egon Müller Scharzhofberger) are all real and appropriate. The $45-90 price range and 8-12°C storage temp are fabricated numbers not in the context data, but these are general knowledge claims rather than wine-specific technical data (pH, blend %, oak months), so they don't trigger the hard cap but do prevent a 5.0 on correctness. Voice is excellent — direct, opinionated, no banned words, no hedging. The food pairings are specific and well-reasoned. The insider take is genuinely useful and takes a clear position. Specificity is high throughout with named soils, sites, and competitors.",
+  "judge_tokens_in": 3727,
+  "judge_tokens_out": 350
+}

@@ -1,0 +1,32 @@
+{
+  "wine_id": "0aec2002-afb8-4d0f-a7ba-cc6fb3d8452f",
+  "wine_name": "Fritz Haag Brauneberger Juffer Sonnenuhr Riesling Auslese, Mosel",
+  "tier": "A",
+  "model": "z-ai/glm-4.6",
+  "correctness": 3.0,
+  "voice": 3.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.625,
+  "wrong_facts": [
+    "Claims 'blue Devonian slate' — ground truth says 'fine, weathered Devonian slate' with no color specified; 'blue slate' is a common Mosel descriptor but not verified for this specific site",
+    "Claims fermentation in 'large oak casks (fuder)' — plausible for Fritz Haag but not in context data or ground truth, and the estate has modernized significantly",
+    "Claims 'up to 70% gradient' for the vineyard steepness — not in context data or ground truth; this is a specific number that may or may not be accurate",
+    "States price range '$75-100 per 375ml half-bottle' — no pricing data was provided",
+    "Claims 'half-bottle format is standard for Auslese' — this is not universally true; Auslese is commonly sold in 750ml as well",
+    "States Oliver Haag by name as current winemaker — not in context data, though this is correct from wine knowledge"
+  ],
+  "banned_words_found": [
+    "harmonize"
+  ],
+  "fabricated_numbers": [
+    "$75-100 per 375ml price range",
+    "70% gradient",
+    "55°F storage temperature",
+    "70% humidity",
+    "5-10 years aging suggestion for petrol development"
+  ],
+  "reasoning": "The output is rich in detail and specificity, naming real competitors (Egon Müller, JJ Prüm, Wegeler) and connecting terroir to taste effectively. However, it fabricates several specific numbers not in the context data — the price range, gradient percentage, and storage conditions. The 'blue' descriptor for the slate is unverified for this site specifically. The fuder fermentation claim is plausible but unverified. Oliver Haag as winemaker is correct from wine knowledge, which is good. The naming origin in the hook correctly references the sundial, matching ground truth. The hook itself is factually solid — ABV range matches context data (7.0-7.5%). The banned word 'harmonize' appears in food pairings. Voice is decent but occasionally slips into generic wine-writing patterns ('profound sweetness,' 'electric acidity' repeated multiple times). The fabricated price is particularly problematic since no pricing was provided.",
+  "judge_tokens_in": 3717,
+  "judge_tokens_out": 541
+}

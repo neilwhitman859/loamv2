@@ -40,7 +40,7 @@ RESULTS_DIR = BASE_DIR / "results" / "task3"
 SCORES_DIR = BASE_DIR / "scores"
 JUDGE_DIR = SCORES_DIR / "task3_judge"
 
-# All 21 models from run_task3.py
+# Full model list from run_task3.py (21 original + 9 R6 additions)
 TASK3_MODELS = [
     "anthropic/claude-sonnet-4.6",
     "anthropic/claude-haiku-4.5",
@@ -63,6 +63,17 @@ TASK3_MODELS = [
     "xiaomi/mimo-v2-flash",
     "minimax/minimax-m2.7",
     "x-ai/grok-4.1-fast",
+    # R6 additions
+    "perplexity/sonar",
+    "perplexity/sonar-reasoning",
+    "perplexity/sonar-reasoning-pro",
+    "perplexity/llama-3.1-sonar-small-128k-online",
+    "deepseek/deepseek-v3.2:online",
+    "google/gemini-3-flash-preview:online",
+    "openai/gpt-5.4-mini:online",
+    "moonshotai/kimi-k2",
+    "moonshotai/kimi-k2:online",
+    "z-ai/glm-4.6",
 ]
 
 MODEL_PRICING = {
@@ -87,6 +98,17 @@ MODEL_PRICING = {
     "xiaomi/mimo-v2-flash": (0.07, 0.28),
     "minimax/minimax-m2.7": (0.50, 2.0),
     "x-ai/grok-4.1-fast": (0.60, 4.0),
+    # R6 additions (token pricing only; OpenRouter :online variants add ~$4-6/1K search fees not tracked here)
+    "perplexity/sonar": (1.0, 1.0),
+    "perplexity/sonar-reasoning": (1.0, 5.0),
+    "perplexity/sonar-reasoning-pro": (2.0, 8.0),
+    "perplexity/llama-3.1-sonar-small-128k-online": (0.20, 0.20),
+    "deepseek/deepseek-v3.2:online": (0.14, 0.28),
+    "google/gemini-3-flash-preview:online": (0.15, 0.60),
+    "openai/gpt-5.4-mini:online": (0.40, 1.60),
+    "moonshotai/kimi-k2": (0.60, 2.50),
+    "moonshotai/kimi-k2:online": (0.60, 2.50),
+    "z-ai/glm-4.6": (0.60, 2.20),
 }
 
 BANNED_WORDS = [
@@ -206,7 +228,11 @@ Return ONLY valid JSON:
 
 
 def model_slug(model_id: str) -> str:
-    return model_id.replace("/", "__")
+    """Convert model ID to filesystem-safe directory name.
+
+    Windows does not allow `:` in paths, so `:online` → `_online`.
+    """
+    return model_id.replace("/", "__").replace(":", "_")
 
 
 def format_context_for_judge(wine: dict) -> str:
@@ -650,6 +676,7 @@ def main():
     parser.add_argument("--model", help="Score a single model (partial slug match)")
     parser.add_argument("--exact-models", help="Comma-separated EXACT slugs (no partial match). Overrides --model.")
     parser.add_argument("--wine", help="Score a single wine ID")
+    parser.add_argument("--wines", help="Comma-separated wine IDs (overrides --wine)")
     parser.add_argument("--dry-run", action="store_true", help="Show prompts without API calls")
     parser.add_argument("--summary-only", action="store_true", help="Regenerate summaries from saved judge results")
     args = parser.parse_args()
@@ -673,8 +700,17 @@ def main():
         ground_truth_map = {}
         print("WARNING: No ground truth file — scoring without fact-check baseline")
 
-    # Filter wines if --wine specified
-    if args.wine:
+    # Filter wines
+    if args.wines:
+        wanted = {s.strip() for s in args.wines.split(",") if s.strip()}
+        wines = [w for w in wines if w["wine_id"] in wanted]
+        missing = wanted - {w["wine_id"] for w in wines}
+        if missing:
+            print(f"WARNING: wines not found: {missing}")
+        if not wines:
+            print(f"No wines matched --wines")
+            sys.exit(1)
+    elif args.wine:
         wines = [w for w in wines if w["wine_id"] == args.wine]
         if not wines:
             print(f"Wine {args.wine} not found")

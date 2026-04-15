@@ -1,0 +1,17 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "openai/gpt-5.4-mini:online",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 3.5,
+  "usefulness": 4.0,
+  "composite": 3.85,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is factually cautious — it hedges on winemaking details ('if any oak is used,' 'when malolactic fermentation is limited or controlled') rather than stating the known ground truth (50/50 stainless/French barriques, partial MLF, 9 months on lees with bâtonnage). This means it misses an opportunity to be more specific and accurate, but it doesn't fabricate. The hook is correct — Marlborough is indeed better known for Sauvignon Blanc, and the cool maritime climate does keep Chardonnay crisp. The terroir section mentions 'alluvial river plains and gravelly, free-draining soils' which aligns with the ground truth of 'shallow, sandy loams over gravels' from Wairau, Renwick, and Brancott, though it doesn't name those specific sub-regions. No banned words found. The voice is strong — direct, opinionated, avoids sommelier theater, and the insider take is genuinely useful. The 'Auno?' fragment in comparable wines is odd and slightly unprofessional. Food pairings are specific and well-reasoned. The comparable wines section naming Cloudy Bay and Kim Crawford is apt. Overall a solid output that plays it safe on winemaking specifics rather than leveraging training knowledge about the actual production methods.",
+  "judge_tokens_in": 3763,
+  "judge_tokens_out": 368
+}

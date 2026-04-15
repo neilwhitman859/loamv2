@@ -1,0 +1,66 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "deepseek/deepseek-v3.2",
+  "scores": {
+    "hook": {
+      "correctness": 3.5,
+      "voice": 4.2,
+      "note": "The 1.5 generations concept is correct, but 'deliberate shift from mountain fruit to valley floor sourcing' is misleading—One Point Five sources from hillside estate vineyards, Borderline vineyard in Stags Leap District, AND selected Napa Valley sites, not primarily valley floor."
+    },
+    "wine_summary": {
+      "correctness": 2.5,
+      "voice": 4.0,
+      "note": "Fabricates a narrative about 'valley floor sourcing' and 'deeper alluvial soils' when ground truth says the wine sources from Shafer's hillside estate vineyards and Borderline vineyard in Stags Leap District; the framing as a pivot away from hillside fruit is incorrect."
+    },
+    "terroir_expression": {
+      "correctness": 1.5,
+      "voice": 4.0,
+      "note": "Fabricates specific soil types (Bale loam, Yolo silt loam) not in context or ground truth, and doubles down on the false valley-floor narrative; the 15.3% ABV is correct."
+    },
+    "vinification_summary": {
+      "correctness": 1.5,
+      "voice": 3.8,
+      "note": "States '100% Cabernet Sauvignon' when the 2022 blend is 92% Cab Sauv with Petite Verdot, Merlot, and Malbec; fabricates 'extended maceration' and '80-100% new' oak when ground truth specifies 100% new French oak (Allier & Tronçais) for 18 months; multiple fabricated details."
+    },
+    "food_pairing": {
+      "correctness": 3.5,
+      "voice": 4.5,
+      "note": "Pairings are plausible and well-reasoned for a full-bodied, high-ABV Napa Cab; no factual errors but no ground truth to verify against."
+    },
+    "comparable_wines": {
+      "correctness": 3.5,
+      "voice": 4.0,
+      "note": "Reasonable comparisons though Artemis is not specifically Stags Leap District fruit (it's Napa Valley appellation); takes clear positions on differences."
+    },
+    "style_profile": {
+      "correctness": 3.5,
+      "voice": 3.5,
+      "note": "Accurate but very generic for a Loam-voice description; could be more specific and opinionated."
+    },
+    "cellar_recommendation": {
+      "correctness": 3.0,
+      "voice": 3.5,
+      "note": "Reasonable estimate but the 8-12 year window is not verified; storage advice is standard and fine."
+    },
+    "value_assessment": {
+      "correctness": 3.5,
+      "voice": 4.5,
+      "note": "Price range matches context; Jordan is a lower price tier so the comparison is slightly off, but the take is direct and opinionated."
+    },
+    "market_position": {
+      "correctness": 3.5,
+      "voice": 4.5,
+      "note": "Accurate positioning and direct voice; 'wait decades' slightly overstates the contrast with Hillside Select."
+    },
+    "insider_take": {
+      "correctness": 2.5,
+      "voice": 4.5,
+      "note": "Strong voice and clear opinion, but the claim about loss of 'site-specific complexity' and 'terroir transparency' is undermined by the incorrect valley-floor narrative; the wine does source from hillside vineyards."
+    }
+  },
+  "overall_note": "Strong Loam voice throughout with no banned words, but a fundamentally incorrect narrative about valley-floor sourcing pervades multiple fields, and the blend and cooperage details contradict verified ground truth.",
+  "judge_tokens_in": 1658,
+  "judge_tokens_out": 866
+}

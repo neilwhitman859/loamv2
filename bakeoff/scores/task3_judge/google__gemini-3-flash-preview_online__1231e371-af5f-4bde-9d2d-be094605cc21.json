@@ -1,0 +1,28 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "google/gemini-3-flash-preview:online",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.4,
+  "wrong_facts": [
+    "Hook says 'Sourced primarily from the iron-rich volcanic soils of Stags Leap District' — the wine is a multi-site Napa Valley appellation wine, not primarily from Stags Leap District",
+    "Context data says 100% Cabernet Sauvignon but ground truth shows 2022 is 92% Cab Sauv with Petite Verdot, Merlot, and Malbec — the output treats it as 100% Cabernet throughout",
+    "Vinification claims '20 months' in oak — ground truth says 18 months in 100% new French oak",
+    "The wine summary overstates the Stags Leap District connection — while Shafer's estate and Borderline vineyard are in Stags Leap, the wine also includes 'selected Napa Valley sites' and carries a Napa Valley appellation, not Stags Leap District",
+    "Specific soil names 'Hambright volcanic soils' and 'Bale loam' are presented as facts about this wine's specific vineyard blocks but are unverifiable claims that may be fabricated attributions"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "20 months oak aging (actual is 18 months per ground truth)",
+    "60-minute decant recommendation",
+    "7 and 12 years peak window",
+    "55°F storage temperature"
+  ],
+  "reasoning": "The output fabricates the oak aging duration (20 months vs. actual 18 months), which is a specific number not in context data and contradicted by ground truth. The hook's claim about being 'sourced primarily from the iron-rich volcanic soils of Stags Leap District' is misleading — the wine carries a Napa Valley appellation and draws from multiple sites beyond Stags Leap. The naming origin in the hook ('One Point Five generations') is correct per ground truth, which is good. However, the persistent framing as a Stags Leap District wine throughout the output is factually problematic. The voice is strong — direct, opinionated, specific, with good food pairings and honest takes on the high alcohol. Specificity is high with named soils, competitors, and real dishes. But the fabricated 20-month oak figure triggers the hard penalty for fabricated numbers.",
+  "judge_tokens_in": 3847,
+  "judge_tokens_out": 561
+}

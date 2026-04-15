@@ -1,0 +1,29 @@
+{
+  "wine_id": "46a46e99-c081-41ce-abcc-bf993469fc0e",
+  "wine_name": "Kir Yianni Ramnista, Naoussa",
+  "tier": "B",
+  "model": "deepseek/deepseek-v3.2:online",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.675,
+  "wrong_facts": [
+    "Hook claims '35-year-old vines' — not in context data or ground truth, unverifiable",
+    "Vinification says '12 months in oak' — ground truth says 18 months in oak",
+    "Vinification says 'selected yeasts in temperature-controlled stainless steel' — ground truth says hand-picked, sorted, 6-day cold soak, one-third in open-top tanks with pigeage; no mention of selected yeasts or all stainless steel",
+    "Hook claims 'limestone and schist slopes' — ground truth mentions southeast exposure at 280-330m but does not confirm soil types; schist is unverifiable",
+    "Terroir says 'around 280 meters elevation' — ground truth says 280-330m, so 280 alone is misleading",
+    "Porto Carras described as 'Xinomavro-led blend from nearby Sithonia' — Porto Carras is primarily Cabernet Sauvignon/Limnio based, not Xinomavro-led"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "35-year-old vines",
+    "12 months oak aging (should be 18 months)",
+    "150 to 350 meters altitude range for Naoussa PDO (unverified)",
+    "$29-35 price range (context only shows $29.46)"
+  ],
+  "reasoning": "The output has strong voice, specificity, and usefulness — it reads well, names real things, and gives actionable advice. However, correctness is significantly undermined by multiple fabricated or wrong details: the oak aging is stated as 12 months when ground truth says 18 months, the vinification description contradicts the actual winemaking process (cold soak, open-top tanks, pigeage), the hook's '35-year-old vines' is unverifiable, and the Porto Carras comparable is factually wrong (it's not Xinomavro-led). The fabricated 12-month oak figure triggers the hard penalty for fabricated numbers, capping correctness at 1.5, but since the output also contains many correct claims (founder, grape, general terroir description, Naoussa-Piedmont comparison), I'm scoring slightly above the hard cap minimum at 2.5 — though the 12-month oak claim is a clear fabrication that should be penalized heavily.",
+  "judge_tokens_in": 3506,
+  "judge_tokens_out": 580
+}

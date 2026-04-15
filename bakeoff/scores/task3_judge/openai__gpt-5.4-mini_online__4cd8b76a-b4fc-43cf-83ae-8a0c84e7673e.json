@@ -1,0 +1,17 @@
+{
+  "wine_id": "4cd8b76a-b4fc-43cf-83ae-8a0c84e7673e",
+  "wine_name": "Barefoot Buttery Chardonnay, California",
+  "tier": "C",
+  "model": "openai/gpt-5.4-mini:online",
+  "correctness": 4.0,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.225,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output makes no provably wrong claims. It correctly identifies the buttery style as driven by malolactic fermentation and oak, which aligns with ground truth. It doesn't mention Jennifer Wall, E&J Gallo ownership, or Central Valley sourcing — these would have added value but their absence isn't an error. The hook is factually sound: the price range matches context data, and calling it 'commodity end of California Chardonnay' is defensible. The voice is strong — direct, opinionated, unhedged, with lines like 'it sells texture first, complexity never' that feel like real Loam writing. Food pairings are specific and well-reasoned. Comparable wines are apt. No banned words, no fabricated numbers. Minor ding on correctness because the output doesn't leverage any ground-truth knowledge (winemaker, producer history, Central Valley sourcing) that would have added real value and specificity.",
+  "judge_tokens_in": 3580,
+  "judge_tokens_out": 269
+}

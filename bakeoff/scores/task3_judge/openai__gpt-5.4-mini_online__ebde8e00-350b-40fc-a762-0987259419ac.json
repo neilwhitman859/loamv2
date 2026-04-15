@@ -1,0 +1,25 @@
+{
+  "wine_id": "ebde8e00-350b-40fc-a762-0987259419ac",
+  "wine_name": "Howard Park Leston Shiraz, Margaret River",
+  "tier": "C",
+  "model": "openai/gpt-5.4-mini:online",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.475,
+  "wrong_facts": [
+    "Price range 'AUD 30 to 55' is fabricated - no price data was provided",
+    "Soil descriptions (red gravelly loam, loamy gravel over clay, deep infertile sand, Forest Grove ironstone) are specific but unverifiable from context or ground truth",
+    "No mention that Leston is named after Jeff Burch's father (a family name) - the hook and summary miss this",
+    "No mention of 100% Shiraz, 18 months oak (95% French/5% American/30% new), 10% whole bunch fermentation, or Wilyabrup vineyard sourcing from blocks 4 and 17"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "AUD 30 to 55 price range",
+    "The soil types listed are very specific but not verifiable from provided data or ground truth"
+  ],
+  "reasoning": "The output fabricates a specific price range (AUD 30-55) not present in context data, which triggers the hard penalty for fabricated numbers, capping correctness at 1.5. However, the price claim is a range estimate rather than a precise technical number like pH or ABV, so I'm applying a softer penalty but still marking it down significantly. The soil descriptions are very specific but not verifiable from either the context data or the ground truth - they could be correct general Margaret River soil knowledge but are presented as if specific to the Leston vineyard site. The output misses key ground truth facts (naming origin, blend composition, cooperage details, whole bunch fermentation, specific vineyard blocks in Wilyabrup). The voice is strong - direct, opinionated, no banned words, good food pairings with explanations. Specificity is good with named competitors and soil types, even if some soil claims are unverifiable. The insider take is genuinely useful and actionable.",
+  "judge_tokens_in": 3583,
+  "judge_tokens_out": 458
+}

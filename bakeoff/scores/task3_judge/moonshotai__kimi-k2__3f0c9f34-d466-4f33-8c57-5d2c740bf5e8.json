@@ -1,0 +1,28 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "moonshotai/kimi-k2",
+  "correctness": 1.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 3.5,
+  "composite": 3.25,
+  "wrong_facts": [
+    "Hook claims 'no oak, no apology' and 'stainless-steel sermon' — ground truth shows 50% fermented in French barriques with 9 months on lees and bâtonnage",
+    "Wine summary claims '100% of the fruit in tank' — contradicted by ground truth 50/50 stainless/barrel split",
+    "Claims malolactic is 'deliberately blocked' — ground truth says partial malolactic fermentation occurs",
+    "Claims 'unoaked Chardonnay' repeatedly — the wine sees French oak barriques",
+    "Comparable wines section calls it 'same stainless regimen' for Kim Crawford comparison, reinforcing the false unoaked premise"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "14-16 °C fermentation temperature",
+    "48 hours cold settling",
+    "4 °C chilling temperature",
+    "QA23 yeast strain"
+  ],
+  "reasoning": "The output's entire thesis — that this is a 100% stainless-steel, unoaked, blocked-malo Chardonnay — is provably wrong. Ground truth confirms 50% French barriques, 9 months on lees with bâtonnage, and partial malolactic fermentation. The hook leads with this false premise, triggering the hard penalty. Multiple fabricated specific numbers (fermentation temps, yeast strain, cold-settling duration) compound the problem. The voice is excellent — punchy, direct, opinionated, no banned words — and the specificity is high, but the specifics are largely invented. The writing style is strong but built on a foundation of fabrication.",
+  "judge_tokens_in": 3457,
+  "judge_tokens_out": 411
+}

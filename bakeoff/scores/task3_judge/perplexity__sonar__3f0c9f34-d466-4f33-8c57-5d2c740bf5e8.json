@@ -1,0 +1,22 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "perplexity/sonar",
+  "correctness": 1.5,
+  "voice": 3.5,
+  "specificity": 3.5,
+  "usefulness": 3.0,
+  "composite": 2.7,
+  "wrong_facts": [
+    "Claims wine skips heavy oak / fermented in stainless steel without malolactic conversion — ground truth shows 50/50 stainless steel and French barriques, partial malolactic fermentation, and 9 months on lees with bâtonnage",
+    "Claims wild yeast avoidance and minimal lees stirring — ground truth shows bâtonnage (lees stirring) is a key part of the process",
+    "Claims Awatere Valley sourcing — ground truth says Wairau, Renwick, and Brancott, not Awatere",
+    "Hook claims wine 'skips heavy oak for fruit purity' — directly contradicted by 50% French barrique fermentation"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output's central thesis — that this is a lean, unoaked, no-MLF Chardonnay — is fundamentally wrong. Ground truth confirms 50% French barrique fermentation, partial malolactic, and active bâtonnage. The hook's claim about skipping heavy oak is provably false, triggering the hard cap. The Awatere Valley claim is also fabricated (should be Renwick and Brancott). While the voice is reasonably direct and the specificity attempts are decent, the core factual errors about winemaking undermine the entire piece. The hook contains a provably wrong claim, capping correctness at 1.5.",
+  "judge_tokens_in": 3400,
+  "judge_tokens_out": 372
+}

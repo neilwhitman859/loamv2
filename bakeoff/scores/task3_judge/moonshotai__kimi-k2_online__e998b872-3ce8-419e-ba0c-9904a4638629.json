@@ -1,0 +1,43 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "moonshotai/kimi-k2:online",
+  "correctness": 1.5,
+  "voice": 4.5,
+  "specificity": 5.0,
+  "usefulness": 4.0,
+  "composite": 3.45,
+  "wrong_facts": [
+    "Elevation stated as 750m; ground truth says 600m",
+    "Founded in 2004 — ground truth says 2001",
+    "Ages in 2,500L foudre — ground truth says recent vintages use cement tanks, not foudre",
+    "1.1 ha parcel size not verifiable from context or ground truth",
+    "Vines planted 1910 — ground truth says 90-year-old vines (which would be ~1930s, not 1910)",
+    "North-facing exposure not verifiable and potentially fabricated",
+    "Carbonic maceration for 21 days in 2,000L stainless vats — ground truth says whole cluster native fermentation, two weeks on skins, no mention of carbonic maceration technique specifically",
+    "13% alc for 2022 not in context data",
+    "€75-€90 / $110-$130 pricing fabricated (no prices provided)",
+    "Domaine de Courcel 'Rugiens' is a Premier Cru Pommard, not a Bourgogne Pinot Noir",
+    "Lopez de Heredia Viña Tondonia is primarily Tempranillo, not a 'Carignan blend'"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "1.1 ha parcel size",
+    "750m elevation",
+    "13% alcohol",
+    "15 hl/ha yields",
+    "6-8m root depth",
+    "14°C night temperatures",
+    "24°C fermentation temperature",
+    "20 ppm total sulfur",
+    "21 days carbonic maceration",
+    "2,500L foudre",
+    "2,000L stainless vats",
+    "€75-€90 and $110-$130 prices",
+    "30% new oak cap"
+  ],
+  "reasoning": "The output is extraordinarily confident and specific, but a huge proportion of its specificity is fabricated. The elevation is wrong (750m vs 600m ground truth), the founding year is wrong (2004 vs 2001), the cooperage is wrong (foudre vs cement tanks per ground truth), and dozens of specific numbers (parcel size, yields, root depth, temperatures, sulfur levels, prices) are invented wholesale. The comparable wines section contains provably wrong claims (Tondonia as 'Carignan blend,' Courcel Rugiens as 'Bourgogne'). The voice is excellent — direct, opinionated, no banned words, great food pairings — but the sheer volume of fabricated numbers triggers the hard penalty cap of 1.5 on correctness.",
+  "judge_tokens_in": 3818,
+  "judge_tokens_out": 627
+}

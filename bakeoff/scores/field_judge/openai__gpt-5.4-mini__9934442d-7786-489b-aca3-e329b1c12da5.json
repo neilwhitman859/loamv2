@@ -1,0 +1,66 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "openai/gpt-5.4-mini",
+  "scores": {
+    "hook": {
+      "correctness": 4.2,
+      "voice": 4.5,
+      "note": "Bronze-medal claim is consistent with '2 entries (medals/points)' context; cool-climate descriptors align with Great Southern; no fabricated specifics."
+    },
+    "wine_summary": {
+      "correctness": 4.0,
+      "voice": 4.3,
+      "note": "Soil descriptions (lateritic gravelly sandy loams, karri loams, granite/gneiss) are plausible regional geology but not verified in ground truth; the ground truth says 'gravelly loam soils' which partially aligns; no fabricated numbers."
+    },
+    "terroir_expression": {
+      "correctness": 3.8,
+      "voice": 4.4,
+      "note": "Ironstone/woodland edge and specific soil types are reasonable inferences but go beyond verified ground truth; tasting descriptors are speculative but directionally sound for the region."
+    },
+    "vinification_summary": {
+      "correctness": 2.5,
+      "voice": 3.8,
+      "note": "Ground truth says '10 months in French oak barrels' — this field omits that specific detail and instead hedges with 'enough oak to support the wine'; the parenthetical explanation of extraction feels like filler rather than specificity."
+    },
+    "food_pairing": {
+      "correctness": 4.2,
+      "voice": 4.5,
+      "note": "Pairings are well-reasoned and specific; no factual claims to contradict; good range from casual to fine dining."
+    },
+    "comparable_wines": {
+      "correctness": 3.5,
+      "voice": 4.0,
+      "note": "Frankland River and Pemberton are sub-regions of Great Southern / WA so comparisons are reasonable but somewhat circular; Burgundy regional comparison is fair; no specific producer names given which limits usefulness."
+    },
+    "style_profile": {
+      "correctness": 4.0,
+      "voice": 4.0,
+      "note": "Accurate and concise descriptor set consistent with 100% Pinot Noir from Great Southern; no issues."
+    },
+    "cellar_recommendation": {
+      "correctness": 3.5,
+      "voice": 4.2,
+      "note": "3-5 years from a 2011 wine means drinking window already passed by now (2024); storage temperature is a reasonable recommendation but not verified; the advice is sound for the wine's level."
+    },
+    "value_assessment": {
+      "correctness": 3.0,
+      "voice": 4.0,
+      "note": "Price range AUD $15-25 is fabricated — not in context or ground truth; comparison to De Bortoli and Banrock Station is reasonable positioning but Banrock Station is a much lower tier."
+    },
+    "market_position": {
+      "correctness": 4.0,
+      "voice": 4.3,
+      "note": "Correctly positions Omrah as a second-label/value tier consistent with ground truth; by-the-glass suggestion is practical and well-targeted."
+    },
+    "insider_take": {
+      "correctness": 3.8,
+      "voice": 4.5,
+      "note": "Takes a clear position and avoids theater; the earthy-grip-as-feature framing is opinionated and direct; no factual errors but also no unique insider knowledge deployed."
+    }
+  },
+  "overall_note": "Solid voice throughout with no banned words; main correctness gaps are the omission of verified cooperage details in vinification, fabricated price range, and some speculative soil/terroir claims beyond ground truth.",
+  "judge_tokens_in": 1882,
+  "judge_tokens_out": 800
+}

@@ -1,0 +1,29 @@
+{
+  "wine_id": "ebde8e00-350b-40fc-a762-0987259419ac",
+  "wine_name": "Howard Park Leston Shiraz, Margaret River",
+  "tier": "C",
+  "model": "google/gemini-3-flash-preview:online",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.575,
+  "wrong_facts": [
+    "Hook mentions 'ironstone soils' as defining Leston — while Forest Grove ironstone exists in the area, the ground truth identifies the vineyard as Leston Vineyard blocks 4 and 17 in Wilyabrup with vines planted 1996; the specific soil claim is unverifiable from context or ground truth",
+    "Vinification summary claims 'older French oak barriques rather than new American oak' — ground truth says 95% French/5% American with 30% new oak, so new oak IS used and American oak IS used",
+    "Claims about 'high concentration of pyrazines' — pyrazines are associated with green/herbaceous characters in grapes like Sauvignon Blanc and Cabernet, not typically Shiraz; this is a technically incorrect claim",
+    "Value assessment fabricates a retail price range of '$35 and $45'",
+    "No mention of 10% whole bunch fermentation or the 18-month oak regime from ground truth; instead fabricates a different winemaking narrative about 'controlled reduction'",
+    "The naming origin is not mentioned — ground truth says Leston is named after Jeff Burch's father, a family name, not a site name per se"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$35-$45 retail price",
+    "45 minutes decant time",
+    "5-8 years additional aging",
+    "alcohol sensory score of 4 (no ABV data provided)"
+  ],
+  "reasoning": "The output is impressively written with strong voice, specificity, and useful structure. However, it fabricates several key details: the price range is invented, the oak regime description contradicts ground truth (claims older French oak only when 30% new oak and 5% American are used), and the pyrazine claim is technically wrong for Shiraz. The hook frames Leston as purely a site-specific study when the naming origin is actually a family name. The vinification narrative about controlled reduction and older oak is fabricated and contradicts the actual winemaking (18 months, 30% new, 10% whole bunch). These factual errors across multiple sections significantly undermine correctness despite the otherwise strong writing quality.",
+  "judge_tokens_in": 3450,
+  "judge_tokens_out": 529
+}

@@ -1,0 +1,42 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "perplexity/sonar-reasoning-pro",
+  "correctness": 1.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.0,
+  "composite": 2.8,
+  "wrong_facts": [
+    "Hook says 350 meters elevation — ground truth says 600m elevation",
+    "Hook says 80-year-old vines — ground truth says 90-year-old",
+    "Vinification claims carbonic maceration for 21 days — ground truth says whole cluster native fermentation, two weeks on skins",
+    "Vinification claims aging in 5,000L neutral foudres — ground truth says recent vintages ferment and age in cement tanks (no wood aging)",
+    "Claims vines were planted before phylloxera hit Priorat — unverifiable and likely fabricated",
+    "Claims price of $45 — no price data provided",
+    "Claims Les Terrasses is $65 and Clos Erasmus Carinyena is $95 — fabricated prices",
+    "Claims Nashville hot chicken pairing works due to 14.5% ABV — ABV not in context data",
+    "Claims roots go 15 meters deep — fabricated specific number",
+    "Alpine orogeny 250 million years ago — the Alpine orogeny is Cenozoic (65 Ma to present), not 250 Ma"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "350 meters elevation",
+    "80-year-old vines",
+    "15 meters root depth",
+    "21 days carbonic maceration",
+    "5,000L foudres",
+    "$45 price",
+    "14.5% ABV",
+    "$65 for Les Terrasses",
+    "$95 for Clos Erasmus",
+    "250 million years",
+    "$18 by-the-glass price",
+    "$40 for Scala Dei",
+    "35°C/95°F temperatures"
+  ],
+  "reasoning": "The hook contains two provably wrong facts (350m vs 600m elevation, 80-year-old vs 90-year-old vines), triggering the hard cap of 1.5 on correctness. Beyond the hook, the output fabricates numerous specific numbers not in the context data: prices, ABV, vessel sizes, maceration duration, root depth, and geological dates. The vinification description is substantially wrong — it claims foudre aging when ground truth confirms cement tanks with no wood. The voice is reasonably direct and opinionated with no banned words, but the sheer volume of fabricated specifics undermines the entire piece's credibility. The writing style attempts Loam's directness but the fabrications make it unreliable.",
+  "judge_tokens_in": 3520,
+  "judge_tokens_out": 579
+}

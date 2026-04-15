@@ -1,0 +1,37 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "moonshotai/kimi-k2:online",
+  "correctness": 1.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "Claims 'des Bosquets farms it biodynamically' — no evidence of biodynamic farming in context or ground truth",
+    "Claims altitude of 350-500m for the vineyard — not in context data and unverifiable",
+    "Claims '100% destemmed' — ground truth says 'predominantly destemmed', not 100%",
+    "Claims '228L neutral oak (no new wood)' — context says 18 months in oak casks but barrel size and new/neutral status are not specified",
+    "Claims pH of 3.55 and TA of 5.2 g/L — completely fabricated numbers not in any data",
+    "Claims '$38-$45 retail' price — no prices were provided",
+    "Claims 'Saint-Joseph of equal quality starts at $55' — fabricated price comparison",
+    "Claims 'appears on 20% of Michelin-starred Rhône lists' — fabricated statistic",
+    "Claims 'the 2020 is the first vintage where limestone beats oak' — fabricated claim"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "3.55 pH",
+    "5.2 g/L TA",
+    "350-500m altitude",
+    "228L barrel size",
+    "$38-$45 retail price",
+    "$55 Saint-Joseph price",
+    "$10 more for Delas",
+    "20% of Michelin-starred lists",
+    "55°F/13°C cellar temp"
+  ],
+  "reasoning": "The voice and specificity are excellent — punchy, opinionated, well-structured, with real dish pairings and named competitors. However, the output is riddled with fabricated numbers: pH 3.55, TA 5.2 g/L, 228L neutral oak, altitude 350-500m, specific retail prices, and the '20% of Michelin-starred lists' statistic. The hard penalty for fabricated numbers caps correctness at 1.5. The biodynamic claim is also unverified and likely wrong. The hook itself is actually quite good and factually sound — correctly identifying the 100% Syrah anomaly in Gigondas — but the body text undermines trust with numerous invented specifics.",
+  "judge_tokens_in": 3488,
+  "judge_tokens_out": 536
+}

@@ -1,0 +1,66 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "google/gemini-3-flash-preview",
+  "scores": {
+    "hook": {
+      "correctness": 2.5,
+      "voice": 4.2,
+      "note": "Porongurup and 'ancient granite soils' are fabricated specifics not in the ground truth; the Omrah range uses younger vineyards or bought-in fruit, not necessarily Mount Barker/Porongurup granite."
+    },
+    "wine_summary": {
+      "correctness": 3.0,
+      "voice": 4.3,
+      "note": "Plantagenet established 1968 is correct, first commercial winery correct; 'lateritic gravelly sandy loams' is partially fabricated detail beyond ground truth's 'gravelly loam soils'; '200 kilometers' GI span and 2011 vintage season details are unverified fabrications."
+    },
+    "terroir_expression": {
+      "correctness": 2.0,
+      "voice": 4.5,
+      "note": "Lateritic gravels, marri loams, Porongurup granite sands, and ironstone grip are fabricated specifics not supported by ground truth; ground truth only mentions gravelly loam soils and Wyjup Vineyard."
+    },
+    "vinification_summary": {
+      "correctness": 2.0,
+      "voice": 4.0,
+      "note": "Whole-bunch fermentation and low new oak are fabricated; ground truth says only '10 months in French oak barrels' with no detail on whole bunches, MLF in barrel, or new oak percentage."
+    },
+    "food_pairing": {
+      "correctness": 3.5,
+      "voice": 4.3,
+      "note": "Pairings are plausible for the style but reference fabricated terroir details like 'lateritic soils' minerality; otherwise reasonable and specific."
+    },
+    "comparable_wines": {
+      "correctness": 3.0,
+      "voice": 3.8,
+      "note": "Paringa Estate and Felton Road are reasonable comparisons for cool-climate Pinot, but specific claims about shared characteristics are speculative; no ground truth to verify."
+    },
+    "style_profile": {
+      "correctness": 3.5,
+      "voice": 4.0,
+      "note": "Reasonable descriptor for a Great Southern Pinot Noir, though 'earth-driven tannins' is an interpretive claim without direct support."
+    },
+    "cellar_recommendation": {
+      "correctness": 3.0,
+      "voice": 4.2,
+      "note": "Reasonable advice for a 2011 Pinot Noir, but 'reached its peak maturity' and the 12-month window are unverified assertions; 13°C storage temp is fabricated precision."
+    },
+    "value_assessment": {
+      "correctness": 2.5,
+      "voice": 4.0,
+      "note": "Price range is plausible but unverified; Omrah is described as a value/second-label range in ground truth, but specific price and comparisons to Dalrymple/Giant Steps are fabricated."
+    },
+    "market_position": {
+      "correctness": 3.5,
+      "voice": 4.0,
+      "note": "Consistent with Omrah being a second-label value range; 'reliable pour' positioning is reasonable but specific bistro/retail claims are unverified."
+    },
+    "insider_take": {
+      "correctness": 2.5,
+      "voice": 4.5,
+      "note": "Strong voice and clear position, but 'ancient granite soils' and 'flinty edge' are fabricated terroir claims not in ground truth; Omrah uses younger vines/bought-in fruit, not necessarily the old-vine estate fruit implied."
+    }
+  },
+  "overall_note": "Strong, direct voice throughout with no banned words, but extensive fabrication of terroir details (granite, laterite, Porongurup), vinification specifics (whole bunches, MLF in barrel), and pricing undermines correctness across most fields.",
+  "judge_tokens_in": 1565,
+  "judge_tokens_out": 883
+}

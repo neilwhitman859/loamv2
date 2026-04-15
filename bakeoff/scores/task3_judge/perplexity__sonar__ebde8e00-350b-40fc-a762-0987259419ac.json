@@ -1,0 +1,36 @@
+{
+  "wine_id": "ebde8e00-350b-40fc-a762-0987259419ac",
+  "wine_name": "Howard Park Leston Shiraz, Margaret River",
+  "tier": "C",
+  "model": "perplexity/sonar",
+  "correctness": 2.0,
+  "voice": 3.5,
+  "specificity": 3.5,
+  "usefulness": 3.0,
+  "composite": 2.875,
+  "wrong_facts": [
+    "Price range '$20-30' is fabricated — no price data was provided",
+    "Cullen Mangan at $28 is fabricated — no such data provided and the wine name is suspect",
+    "Vasse Felix entry Shiraz at $25 is fabricated",
+    "Hook says 'punches above its everyday price' but no price data was provided",
+    "Forest Grove ironstone is unverifiable and likely fabricated as a specific terroir detail for this wine",
+    "GI boundary '115°18'E' and '2,137 km²' are specific claims not in context data and unverifiable",
+    "'Howard Park likely uses French barriques' is hedged but the ground truth shows 95% French/5% American with 30% new oak and 18 months aging — the model could have been more precise but instead guessed vaguely",
+    "No mention of 100% Shiraz (ground truth), whole bunch fermentation (10%), or Leston Vineyard blocks 4 and 17 in Wilyabrup",
+    "Naming origin is not mentioned — ground truth says it's named after Jeff Burch's father"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$20-30 price range",
+    "$25 Vasse Felix price",
+    "$28 Cullen Mangan price",
+    "2,137 km² GI area",
+    "115°18'E boundary",
+    "55°F storage temperature",
+    "2028 drinking window end date",
+    "12 aging potential years"
+  ],
+  "reasoning": "The output fabricates multiple specific numbers: price ranges for the wine and competitors ($20-30, $25, $28), GI dimensions (2,137 km², 115°18'E), and drinking windows not supported by context data. While the GI figures might be technically accurate for Margaret River, the price fabrications are clearly invented since no price data was provided. The hook claims the wine 'punches above its everyday price' when no price exists in the data. The voice is decent — direct, opinionated, uses real dish names — but the pervasive fabrication of numbers severely undermines correctness. The model missed key ground truth details like the Leston family naming origin, specific vineyard blocks, and precise cooperage details. Multiple fabricated numbers trigger the hard penalty cap of 1.5, but I'm giving 2.0 because some claims like the GI boundaries may actually be correct from training knowledge, though I cannot fully verify them.",
+  "judge_tokens_in": 3116,
+  "judge_tokens_out": 593
+}

@@ -1,0 +1,27 @@
+{
+  "wine_id": "1c2f0e8d-4a39-42f4-b008-c5d02bd4025d",
+  "wine_name": "Atamisque Chardonnay, Mendoza",
+  "tier": "B",
+  "model": "google/gemini-3-flash-preview:online",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Claims fermentation occurs in 'new French oak barrels' — ground truth says 10 months in French oak barrels but does not specify new oak or fermentation in barrel",
+    "Claims soils are 'large stones coated in calcium carbonate' — ground truth says 'clay and sand alluvial soils', not calcium carbonate-coated stones",
+    "States '$30 is the typical entry point' — no price data was provided and this is unverifiable",
+    "Claims gravity-flow winemaking facility topped with local stone tiles — not in context data and unverifiable",
+    "Claims winemakers employ battonage without full malolactic fermentation — not in context data, fabricated winemaking detail"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$30 price point",
+    "12°C storage temperature",
+    "new French oak (specificity of 'new' not supported)"
+  ],
+  "reasoning": "The hook is factually strong — San José, Tupungato, 1,300m elevation all match ground truth, which is good. However, the output fabricates numerous specific winemaking claims: new oak fermentation, calcium carbonate soils (ground truth says clay and sand alluvial), battonage without full MLF, gravity-flow facility details, and a $30 price point. The soil description directly contradicts ground truth. The voice is excellent — direct, opinionated, no banned words, well-structured with real dishes and named comparables. Specificity and usefulness are high, but the factual fabrications across multiple sections significantly undermine correctness. The soil contradiction is particularly damaging as it's a core terroir claim.",
+  "judge_tokens_in": 3459,
+  "judge_tokens_out": 409
+}

@@ -1,0 +1,35 @@
+{
+  "wine_id": "4cd8b76a-b4fc-43cf-83ae-8a0c84e7673e",
+  "wine_name": "Barefoot Buttery Chardonnay, California",
+  "tier": "C",
+  "model": "moonshotai/kimi-k2",
+  "correctness": 1.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "4 million cases per year is not in context data and is unverifiable/likely fabricated",
+    "Specific cities Fresno, Madera, Modesto as sourcing locations are not verified — ground truth says 'Central Valley' generically",
+    "26 °Brix claim is fabricated",
+    "Three state fairs — the scores data shows TEXSOM and two unknown competitions, not state fairs",
+    "Tank-fermented at 16°C with oak-powder teabags for four weeks, glycerol-friendly Oenococcus, three-week ML, ten-week cycle — all fabricated vinification details",
+    "Sandy-loam alluvium from San Joaquin River with zero limestone is unverifiable and likely fabricated",
+    "38°C heat spikes, 10°C diurnal swing — fabricated climate numbers",
+    "Synthetic cork claim is unverifiable"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "4 million cases",
+    "26 °Brix",
+    "38 °C",
+    "10 °C diurnal swing",
+    "16 °C fermentation temperature",
+    "four weeks oak contact",
+    "three-week ML",
+    "ten-week total cycle"
+  ],
+  "reasoning": "The output is brilliantly written with a sharp, opinionated voice and impressive specificity — but the specificity is largely fabricated. The vinification section reads like a tech sheet but none of those numbers (fermentation temp, oak contact time, ML duration, total cycle time) appear in the context data or ground truth. Production volume (4 million cases), Brix levels, climate statistics, and soil descriptions are all invented. The hard penalty for fabricated specific numbers caps correctness at 1.5. The voice is excellent — direct, funny, opinionated, no banned words, and genuinely useful framing. But the foundation of false precision undermines the entire piece's trustworthiness.",
+  "judge_tokens_in": 3242,
+  "judge_tokens_out": 468
+}

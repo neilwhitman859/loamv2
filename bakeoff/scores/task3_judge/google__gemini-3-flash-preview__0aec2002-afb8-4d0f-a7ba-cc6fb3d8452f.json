@@ -1,0 +1,30 @@
+{
+  "wine_id": "0aec2002-afb8-4d0f-a7ba-cc6fb3d8452f",
+  "wine_name": "Fritz Haag Brauneberger Juffer Sonnenuhr Riesling Auslese, Mosel",
+  "tier": "A",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 5.0,
+  "usefulness": 4.5,
+  "composite": 4.075,
+  "wrong_facts": [
+    "Described as 'amphitheater' — Juffer Sonnenuhr is a steep south-facing slope, not an amphitheater shape",
+    "Claimed 'blue Devonian slate' — ground truth says 'fine, weathered Devonian slate' without specifying blue",
+    "100+ grams of residual sugar is a specific claim not in context data and not necessarily accurate for all vintages",
+    "50-70% grade is a specific claim not verifiable from context data",
+    "Spontaneous fermentation in Fuder barrels is plausible for Fritz Haag but not confirmed in context data or ground truth",
+    "Price range of $50-$70 per half-bottle is fabricated — no pricing data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "100+ grams of residual sugar",
+    "50-70% grade",
+    "$50 to $70 per half-bottle",
+    "40 years aging potential",
+    "50 years drinking window max"
+  ],
+  "reasoning": "The output is impressively written with strong voice, excellent specificity, and genuinely useful comparisons and food pairings. However, it fabricates several specific numbers: residual sugar levels (100+ g/L), vineyard gradient (50-70%), and price ($50-$70/half-bottle), none of which appear in the context data. The 'amphitheater' description is inaccurate — it's a steep slope, not an amphitheater. The 'blue' slate descriptor is a minor embellishment not supported by ground truth. The hook's 'sundial' naming origin and Grosse Lage status match ground truth well. The vinification details about Fuder barrels and native yeast fermentation are plausible but unverified. The fabricated numbers are numerous but the hard cap for fabricated numbers should apply — however, many of these (aging potential, drinking windows) are judgment calls rather than presented as measured data. The price fabrication is the most problematic as it's presented as fact with no source. Correctness is capped lower due to the volume of unverifiable specific claims.",
+  "judge_tokens_in": 3503,
+  "judge_tokens_out": 516
+}

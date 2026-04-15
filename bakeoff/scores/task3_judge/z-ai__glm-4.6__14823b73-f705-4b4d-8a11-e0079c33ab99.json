@@ -1,0 +1,21 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "z-ai/glm-4.6",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.625,
+  "wrong_facts": [
+    "Vinification summary claims 'Fermentation occurs in oak vats, but the wood is old and neutral, imparting texture rather than flavor.' Ground truth confirms NO OAK — fermented in stainless steel, no oak fermentation or maturation. This is a fabrication.",
+    "The hook says 'spends years in the cellar before release' which is correct (5 years per ground truth) but is vague rather than wrong.",
+    "Sandy alluvial loam soil description is plausible but not verified from context data — the ground truth mentions Short Flat vineyard but doesn't specify soil type in detail beyond 'dry-grown old vines.'"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The critical error is the oak vat fermentation claim in the vinification summary. Ground truth explicitly states NO OAK — stainless steel fermentation only. This is a significant fabrication that directly contradicts verified facts. The output otherwise demonstrates excellent voice, specificity, and usefulness — naming real comparable wines (Brokenwood ILR, Mount Pleasant Elizabeth), specific food pairings, and giving a strong opinionated insider take. However, the oak claim is a serious factual error that undermines the wine's core identity (the whole point of Hunter Semillon is its unoaked purity). No fabricated numbers per se, and no banned words. The correctness score is capped lower due to the provably wrong oak claim, though it's not in the hook so it avoids the hook hard cap.",
+  "judge_tokens_in": 3345,
+  "judge_tokens_out": 384
+}

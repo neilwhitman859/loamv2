@@ -1,0 +1,27 @@
+{
+  "wine_id": "49a78f8d-0332-4925-b8b1-c1cb40dcb33b",
+  "wine_name": "Wind Gap Woodruff Vineyard Pinot Noir, Santa Cruz Mountains",
+  "tier": "C",
+  "model": "perplexity/sonar-reasoning-pro",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 3.5,
+  "usefulness": 3.5,
+  "composite": 3.1,
+  "wrong_facts": [
+    "Hook claims Woodruff is at '1,000+ feet elevation' — no evidence for this specific elevation; Woodruff Vineyard is near Coralitos which is at relatively low elevation (~300-400 feet), not 1,000+ feet",
+    "Hook claims 'fractured shale' as the soil type — this is not in the context data and is unverifiable for Woodruff Vineyard near Coralitos",
+    "Terroir section fabricates 'fractured shale and sandstone bedrock' and 'iron-rich red earth' — none of this is documented for Woodruff Vineyard",
+    "Price range of '$30-$45' is fabricated — no pricing data was provided",
+    "Comparable wines 'Eventide', 'Pietra Santa', and 'Fog's Rest' appear to be fabricated or extremely obscure producers that cannot be verified as real Santa Cruz Mountains Pinot Noir producers"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "1,000+ feet elevation",
+    "$30-$45 price range",
+    "alcohol sensory score of 4 (no ABV data provided)"
+  ],
+  "reasoning": "The hook contains a provably wrong claim about 1,000+ feet elevation — Woodruff Vineyard is near Coralitos at low elevation, not high elevation. The entire narrative is built around a 'high-elevation' story that doesn't match the vineyard's actual location. The soil descriptions (fractured shale, sandstone, iron-rich red earth) are fabricated with no source. The output completely misses verifiable ground truth: Pax Mahle as winemaker, the vineyard's 1978 planting date, whole cluster fermentation, neutral French oak/concrete/stainless aging. The voice is strong — direct, opinionated, no banned words — but the factual foundation is unreliable. The comparable wines appear fabricated. The wrong elevation claim in the hook triggers the hard penalty cap of 1.5, but I'm giving 2.0 because the elevation claim, while unsupported and likely wrong, is not as definitively provable as other hook errors since SCM AVA does include high-elevation sites. Still, the weight of fabricated details is significant.",
+  "judge_tokens_in": 3315,
+  "judge_tokens_out": 553
+}

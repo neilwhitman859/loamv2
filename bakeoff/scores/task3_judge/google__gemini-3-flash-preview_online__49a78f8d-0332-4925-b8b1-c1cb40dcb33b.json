@@ -1,0 +1,30 @@
+{
+  "wine_id": "49a78f8d-0332-4925-b8b1-c1cb40dcb33b",
+  "wine_name": "Wind Gap Woodruff Vineyard Pinot Noir, Santa Cruz Mountains",
+  "tier": "C",
+  "model": "google/gemini-3-flash-preview:online",
+  "correctness": 1.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.225,
+  "wrong_facts": [
+    "Hook claims Woodruff is a 'pre-phylloxera site' with 'vines planted in the early 1900s' — ground truth says planted 1978",
+    "Claims '100% whole-cluster fermentation' — ground truth says 'some whole cluster', not 100%",
+    "Claims vineyard is on 'Franciscan shale and sandstone' and 'fractured shale and sandstone soils' — not verified in context or ground truth, likely fabricated geological detail",
+    "Hook describes 'sandy loam' soil — not in context data or ground truth",
+    "Claims 'horse-shoe shaped valley' — not verifiable",
+    "States price range '$45 to $60' — no price data provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$45 to $60 price range",
+    "100% whole-cluster fermentation",
+    "aging_potential_years: 12",
+    "drinking_window_min_years: 3",
+    "drinking_window_max_years: 10"
+  ],
+  "reasoning": "The hook contains a devastating factual error: calling Woodruff a 'pre-phylloxera site' with 'vines planted in the early 1900s' when ground truth clearly states the vineyard was planted in 1978. This alone triggers the hard cap of 1.5 on correctness. Additionally, the claim of '100% whole-cluster fermentation' contradicts the ground truth of 'some whole cluster.' The fabricated price range and geological claims (Franciscan shale) compound the problem. The voice is strong — direct, opinionated, specific, no banned words — and the specificity is high with named competitors and detailed terroir descriptions, but much of that specificity is fabricated rather than factual. The writing quality and structure are excellent, which makes the factual errors even more dangerous as they sound authoritative.",
+  "judge_tokens_in": 3500,
+  "judge_tokens_out": 464
+}

@@ -1,0 +1,38 @@
+{
+  "wine_id": "ebde8e00-350b-40fc-a762-0987259419ac",
+  "wine_name": "Howard Park Leston Shiraz, Margaret River",
+  "tier": "C",
+  "model": "moonshotai/kimi-k2",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.525,
+  "wrong_facts": [
+    "Hook claims Leston vineyard sits on 'ironstone ridge' - the ground truth says Leston Vineyard is in Wilyabrup; ironstone ridge is not verified",
+    "Hook implies Leston is a place/vineyard name tied to geography - ground truth says Leston is a family name (Jeff Burch's father)",
+    "Vinification says 'destemmed but not crushed, allowing a portion of whole berries to ferment carbonically' - ground truth says 10% whole bunch fermentation (whole bunch ≠ whole berry/carbonic)",
+    "Claims 'wild-yeast fermentation peaks at 30°C for eight days' - not in context data and unverifiable",
+    "Claims 'still 4 g/L residual sugar' at pressing - fabricated number",
+    "Claims '6 tonnes/ha, half the regional average' - fabricated yield number",
+    "Claims 'afternoon sea breezes that drop temperatures 8°C before sunset' - fabricated specific number",
+    "Claims '180 m elevation' for the ridge - unverifiable/likely fabricated",
+    "Claims 'A$38-45 locally, US$32-38 import markets' - no price data provided and unverifiable",
+    "Oak regime described as '30% new French oak' matches ground truth but omits the 5% American oak component; also the whole-bunch detail is wrong (says whole berry not whole bunch)"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "6 tonnes/ha yield",
+    "8°C temperature drop",
+    "30°C fermentation temperature",
+    "4 g/L residual sugar at pressing",
+    "180 m elevation",
+    "14% alcohol",
+    "A$38-45 / US$32-38 prices",
+    "650 mm rainfall",
+    "15% regional inflation"
+  ],
+  "reasoning": "The output is extremely well-written with outstanding voice and specificity, but it fabricates numerous specific numbers (yield, fermentation temp, residual sugar, elevation, prices, temperature drop) none of which appear in the context data. The hook implies Leston is a geographic/vineyard ridge name when ground truth confirms it's a family name (Jeff Burch's father). The vinification section gets the whole-bunch detail wrong (says whole berry carbonic maceration vs. 10% whole bunch fermentation). The 18 months/30% new French oak detail matches ground truth, which is good. But the sheer volume of fabricated specifics — while making the output read convincingly — is exactly the kind of confident-sounding AI slop that damages trust. The hard penalty for fabricated numbers should apply, but there are so many fabricated numbers across multiple fields that this is a systemic issue rather than a single slip.",
+  "judge_tokens_in": 3370,
+  "judge_tokens_out": 653
+}

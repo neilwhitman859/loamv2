@@ -1,0 +1,31 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "perplexity/sonar-reasoning-pro",
+  "correctness": 1.5,
+  "voice": 2.0,
+  "specificity": 3.5,
+  "usefulness": 3.5,
+  "composite": 2.425,
+  "wrong_facts": [
+    "Hook says 'genuine expression' — uses banned word but also calls it 100% Cabernet Sauvignon implicitly when ground truth shows 2022 is 92% Cab Sauv with Petite Verdot, Merlot, and Malbec",
+    "Context data lists grapes as 100% Cabernet Sauvignon but ground truth shows it's a blend — the model didn't correct this",
+    "Hook calls it 'entry point' and 'second label' — One Point Five is not a second label; it sits below Hillside Select but is a standalone wine, not a second label in the traditional sense",
+    "Wine summary references 'John Shafer bottling' as the flagship — the flagship is Hillside Select, not a wine called 'John Shafer'",
+    "The naming origin is never mentioned — a missed opportunity, but not a wrong fact per se",
+    "Vinification summary fabricates '18-22 months' oak aging range — ground truth says 18 months in 100% new French oak; the '22 months' part is fabricated",
+    "Vinification summary says 'use of new versus neutral oak varies by vintage' — ground truth says 100% new French oak",
+    "Winemaker Elias Fernandez is never mentioned"
+  ],
+  "banned_words_found": [
+    "genuine"
+  ],
+  "fabricated_numbers": [
+    "18-22 months oak aging (ground truth is 18 months in 100% new French oak)",
+    "2,600-foot ridges elevation claim is unverifiable in context"
+  ],
+  "reasoning": "The output contains multiple factual errors that undermine trust. The vinification section fabricates an oak aging range of '18-22 months' and incorrectly states oak usage varies between new and neutral barrels, when ground truth confirms 18 months in 100% new French oak — this triggers the hard penalty for fabricated numbers (max 1.5 correctness). The hook uses the banned word 'genuine' (max 2.0 voice). The wine summary incorrectly identifies the flagship as 'John Shafer bottling' when it's Hillside Select. The blend is treated as 100% Cabernet when it's actually a multi-grape blend. Despite these errors, the output has decent specificity with named soil types and competitors, and the insider take offers a useful perspective, though built on some incorrect premises.",
+  "judge_tokens_in": 4025,
+  "judge_tokens_out": 575
+}

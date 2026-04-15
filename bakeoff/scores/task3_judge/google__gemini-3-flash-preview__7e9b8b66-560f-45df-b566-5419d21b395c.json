@@ -1,0 +1,30 @@
+{
+  "wine_id": "7e9b8b66-560f-45df-b566-5419d21b395c",
+  "wine_name": "d'Arenberg The High Trellis Cabernet Sauvignon, McLaren Vale",
+  "tier": "A",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.85,
+  "wrong_facts": [
+    "Hook says trellis refers to lifting fruit off the ground to prevent rot — ground truth says vines were the first trained above knee-height in the 1890s, which is close but the 'prevent rot' rationale is fabricated/unverifiable",
+    "Wine summary says 'Since 1912' implying the winery has been operating since then — ground truth says some vines date to 1912, not the winery's founding (d'Arenberg was founded in 1912 by Joseph Osborn, so this is actually roughly correct but conflates vine age with winery operations)",
+    "Vinification summary says 'mechanical basket press' — ground truth says basket pressed but also mentions foot treading two-thirds through fermentation, which the output omits entirely; calling it 'mechanical' may be inaccurate",
+    "Value assessment states '$18 to $22 is the standard retail price' — no price data was provided in context",
+    "Value assessment uses the word 'genuine' which is a banned word"
+  ],
+  "banned_words_found": [
+    "genuine"
+  ],
+  "fabricated_numbers": [
+    "$18 to $22 retail price",
+    "45 minutes decant time",
+    "8 years hold recommendation",
+    "pH and TA not fabricated but specific soil descriptions are unverifiable"
+  ],
+  "reasoning": "The hook's naming origin is close to ground truth but adds an unverifiable 'prevent rot' rationale. The output completely misses the signature foot-treading technique, which is a major omission and the vinification section instead focuses on basket pressing while calling it 'mechanical.' The $18-$22 price is fabricated (no price data provided). The banned word 'genuine' appears in the value assessment. However, the voice is strong — direct, opinionated, specific, with good food pairings and useful comparable wines. The terroir description is detailed and plausible. The insider take is sharp and actionable. Overall a well-written piece undermined by some factual issues and one fabricated price point.",
+  "judge_tokens_in": 3459,
+  "judge_tokens_out": 488
+}

@@ -1,0 +1,25 @@
+{
+  "wine_id": "49a78f8d-0332-4925-b8b1-c1cb40dcb33b",
+  "wine_name": "Wind Gap Woodruff Vineyard Pinot Noir, Santa Cruz Mountains",
+  "tier": "C",
+  "model": "openai/gpt-5.4-mini:online",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.425,
+  "wrong_facts": [
+    "Hook says Woodruff Vineyard 'sits high enough in the Santa Cruz Mountains' — ground truth says it's near Coralitos, which is at low elevation (~200-400 ft), not a high-elevation mountain site",
+    "Claims '100% whole clusters' — ground truth says 'some whole cluster', not 100%",
+    "Price range '$40–$50 at release' is fabricated — no price data was provided",
+    "Describes 'thin shale, sandstone, and shallow rocky soils' for Woodruff specifically — this is generic SCM description applied without evidence to this particular vineyard near Coralitos"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$40–$50 price range",
+    "100% whole clusters"
+  ],
+  "reasoning": "The hook contains a likely wrong geographic claim — Woodruff Vineyard is near Coralitos at relatively low elevation, not 'high enough in the Santa Cruz Mountains' to be above valleys. The claim of '100% whole clusters' directly contradicts ground truth ('some whole cluster'). The $40-$50 price is fabricated with no source data. These are significant factual errors. However, the voice is excellent — direct, opinionated, no banned words, well-structured with real food pairings and honest comparisons. The specificity is strong with named competitors and soil types, though some soil claims are speculative. The writing quality and usefulness are high despite the factual problems.",
+  "judge_tokens_in": 3726,
+  "judge_tokens_out": 372
+}

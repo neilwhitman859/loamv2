@@ -1,0 +1,29 @@
+{
+  "wine_id": "c815d359-5c41-4ee0-ab03-2afaf1ab5f81",
+  "wine_name": "Comando G El Reventon, Cebreros",
+  "tier": "B",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 5.0,
+  "usefulness": 4.5,
+  "composite": 3.725,
+  "wrong_facts": [
+    "Claims the wine includes Alicante Henri Bouschet — ground truth confirms it is 100% Garnacha",
+    "Claims 14 months in large neutral oak foudres — ground truth says 16 months in French oak",
+    "Claims fermentation in open-top oak vats with 100% whole clusters — not in context data and unverifiable, likely fabricated",
+    "States price range of 150-200 dollars — no price data was provided and this is unverifiable",
+    "Claims south-facing slope — not confirmed in ground truth (ground truth says steep slope but not specifically south-facing)",
+    "Hook says 'slate and schist' — ground truth says slate soils, schist is an addition not confirmed"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "150 to 200 dollars price range",
+    "13°C storage temperature",
+    "15% ABV attributed generically (only confirmed for 2020 vintage)",
+    "16 months stated as 14 months — the actual number is 16 but the output says 14"
+  ],
+  "reasoning": "The most damaging error is stating the wine includes Alicante Henri Bouschet when ground truth confirms it is 100% Garnacha. The context data listed both grapes, but the model should not have confidently described the teinturier's contribution when ground truth contradicts this. The oak aging is stated as 14 months (matching some context vintages) but ground truth says 16 months in French oak. The fabricated price range and whole-cluster fermentation details are unverifiable specifics presented as fact. The voice is excellent — direct, opinionated, specific, no banned words, great food pairings with real dishes. Specificity is outstanding with named soils, formations, and real comparable wines. But the factual errors on blend composition and vinification details significantly undermine correctness. The Alicante Bouschet claim is not a hook error per se (the hook correctly focuses on Garnacha), but it's a major wrong fact in the body. The fabricated price triggers the hard penalty for fabricated numbers.",
+  "judge_tokens_in": 3566,
+  "judge_tokens_out": 510
+}

@@ -1,0 +1,28 @@
+{
+  "wine_id": "5f36a577-de6e-459c-b69c-ebce3fd3ca94",
+  "wine_name": "Howard Park Leston Cabernet Sauvignon, Western Australia",
+  "tier": "B",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.525,
+  "wrong_facts": [
+    "Hook claims Leston Vineyard sits on 'Forest Grove ironstone' — this geological formation name is not verifiable and appears fabricated. Ground truth says the soil is free-draining gravelly loam over clay, not ironstone.",
+    "Wine summary says Howard Park sources from 'both the cooler Great Southern and the maritime-influenced Leston Vineyard' — this conflates Howard Park's broader portfolio with this specific wine, which is from Leston Vineyard in Wilyabrup only.",
+    "Value assessment fabricates a $45 retail price — no price data was provided.",
+    "The repeated 'ironstone' soil claims (hook, cellar recommendation, insider take) are not supported by ground truth which specifies gravelly loam over clay.",
+    "Vinification summary claims French oak barriques but doesn't specify 18 months or 40% new — while not wrong per se, the omission alongside other fabricated details is notable."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$45 retail price fabricated — no price data provided",
+    "60 minutes decant time — not in context data",
+    "8-12 year peak window — not in context data (ground truth says up to 15 years cellar)",
+    "5-year drinking window minimum — not in context data"
+  ],
+  "reasoning": "The hook contains a fabricated geological claim ('Forest Grove ironstone') that is not supported by ground truth or context data — the actual soil is gravelly loam over clay, not ironstone. This wrong fact in the hook triggers the hard penalty cap of 1.5, but I'm giving 2.0 because the ironstone claim is not provably impossible (ironstone does exist in parts of Margaret River), though it's unverifiable for this specific site and contradicts the ground truth soil description. The $45 price is a clear fabrication with no source data. The voice is excellent — direct, opinionated, specific, no banned words, good structure. Specificity is strong with named competitors, soil descriptions (even if some are wrong), and real dishes. Usefulness is good but undermined by incorrect claims.",
+  "judge_tokens_in": 3418,
+  "judge_tokens_out": 512
+}

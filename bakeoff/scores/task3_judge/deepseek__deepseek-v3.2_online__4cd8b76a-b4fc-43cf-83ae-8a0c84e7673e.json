@@ -1,0 +1,20 @@
+{
+  "wine_id": "4cd8b76a-b4fc-43cf-83ae-8a0c84e7673e",
+  "wine_name": "Barefoot Buttery Chardonnay, California",
+  "tier": "C",
+  "model": "deepseek/deepseek-v3.2:online",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.05,
+  "wrong_facts": [
+    "Claims low acidity 'cuts through the cream' in the food pairing — contradictory logic; low acidity doesn't cut through richness",
+    "States wine is 'almost certainly aged in oak, likely using chips or staves' — plausible but speculative, not confirmed in context data or ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output correctly identifies Central Valley sourcing (matching ground truth), correctly explains the 'Buttery' naming as a style descriptor tied to MLF (matching ground truth), and makes reasonable inferences about winemaking. No specific numbers are fabricated — the price range cited comes from context data. The claim about oak chips/staves is speculative but plausible for a wine at this price point. The food pairing logic about low acidity 'cutting through cream' is internally contradictory. The voice is excellent — direct, opinionated, unafraid to be negative about the wine's value proposition, with no banned words. The insider take about price discrepancy is genuinely useful and actionable. The comparable wines (KJ Vintner's Reserve, Cupcake) are well-chosen and accurate. It doesn't mention Jennifer Wall or the Gallo ownership, which would have added value, but nothing stated contradicts ground truth in a major way.",
+  "judge_tokens_in": 3339,
+  "judge_tokens_out": 338
+}

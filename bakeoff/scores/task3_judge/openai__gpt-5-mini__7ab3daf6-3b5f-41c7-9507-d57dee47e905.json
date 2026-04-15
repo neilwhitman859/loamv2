@@ -1,0 +1,27 @@
+{
+  "wine_id": "7ab3daf6-3b5f-41c7-9507-d57dee47e905",
+  "wine_name": "Vasse Felix Filius Cabernet, Margaret River",
+  "tier": "A",
+  "model": "openai/gpt-5-mini",
+  "correctness": 2.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "Hook says 4% Côt (Malbec) and 1% Petit Verdot — ground truth blend is 93% Cabernet Sauvignon, 5.5% Malbec, 1.5% Petit Verdot, so the percentages are wrong",
+    "Merlot is listed in the context data grapes but the ground truth blend has no Merlot — the output repeatedly references Merlot as a blend component",
+    "The vinification_summary says 'specific élevage details are not published for this bottling' but ground truth shows 11 months in French oak and wild-yeast fermentation in open-top fermenters",
+    "The hook and summary fail to mention Vasse Felix was founded in 1967 as Margaret River's founding estate — instead vaguely says 'early estate'",
+    "Forest Grove ironstone and gravelly loams are specific soil claims not verifiable from context data and potentially fabricated terroir details"
+  ],
+  "banned_words_found": [
+    "harmonize"
+  ],
+  "fabricated_numbers": [
+    "12-14°C cellar temperature recommendation not from context data"
+  ],
+  "reasoning": "The output relies on the context data's grape percentages (4% COT, 1% Petit Verdot) which differ from ground truth (5.5% Malbec, 1.5% Petit Verdot). More problematically, it includes Merlot as a blend component when ground truth shows no Merlot. The claim that élevage details aren't published is contradicted by ground truth (11 months French oak, wild-yeast fermentation). The Forest Grove ironstone terroir details are unverifiable and likely fabricated. The voice is decent — direct and opinionated with good food pairings — but uses the banned word 'harmonize.' Specificity is strong with named soils, competitors, and real dishes, though some soil claims may be fabricated. Overall useful but undermined by factual errors.",
+  "judge_tokens_in": 3666,
+  "judge_tokens_out": 485
+}

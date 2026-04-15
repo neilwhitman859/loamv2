@@ -1,0 +1,24 @@
+{
+  "wine_id": "0aec2002-afb8-4d0f-a7ba-cc6fb3d8452f",
+  "wine_name": "Fritz Haag Brauneberger Juffer Sonnenuhr Riesling Auslese, Mosel",
+  "tier": "A",
+  "model": "deepseek/deepseek-v3.2:online",
+  "correctness": 3.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.025,
+  "wrong_facts": [
+    "The value_assessment claims $70-$120 for a half-bottle and compares it to TBA from lesser sites — this price range is not in the context data and the comparison to TBA is questionable since Auslese is a very different Prädikat level",
+    "Blue slate is mentioned but the ground truth says 'fine, weathered Devonian slate' — calling it 'blue slate' or 'blue-gray slate' is a common characterization of Mosel Devonian slate but is a slight embellishment not directly supported by the verified data"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$70-$120 price range fabricated — no prices were provided in context data",
+    "50-55°F serving temperature not in context data (though reasonable wine knowledge)",
+    "1000L Fuder size is correct wine knowledge but not in context data"
+  ],
+  "reasoning": "The output is largely well-written and demonstrates strong wine knowledge. The hook is factually solid — Sonnenuhr does mean sundial, the vineyard is steep and south-facing, and Devonian slate is correct per ground truth. The mention of Oliver Haag leading the estate is plausible and likely correct from training knowledge. The vinification details about Fuder casks, native yeast fermentation, and selective harvesting are standard and likely accurate for this producer but not verifiable from context. The $70-$120 price fabrication is the most problematic specific number — no prices were provided. The 'blue slate' characterization is a minor embellishment but widely used for Mosel Devonian slate. The voice is strong — direct, opinionated, avoids banned words, and the food pairings are specific and well-reasoned. Specificity is excellent with named competitors, soil types, and real dishes. Overall very useful but docked on correctness for fabricated price and some unverifiable specifics.",
+  "judge_tokens_in": 3518,
+  "judge_tokens_out": 467
+}
