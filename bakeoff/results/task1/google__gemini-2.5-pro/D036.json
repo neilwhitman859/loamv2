@@ -1,0 +1,13 @@
+{
+  "pair_id": "D036",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The term 'Gold' in 'Superiore Brecciarolo Gold' signifies a distinct cuv\u00e9e or special selection, not just a naming variation. This is standard practice for producers to differentiate a higher-tier or specially handled bottling from their standard offering. The fact that the two wines have different LWINs provides conclusive evidence that they are cataloged as separate and distinct products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The term 'Gold' in 'Superiore Brecciarolo Gold' signifies a distinct cuv\u00e9e or special selection, not just a naming variation. This is standard practice for producers to differentiate a higher-tier or specially handled bottling from their standard offering. The fact that the two wines have different LWINs provides conclusive evidence that they are cataloged as separate and distinct products.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 1274,
+  "elapsed": 13.345764398574829,
+  "error": null
+}

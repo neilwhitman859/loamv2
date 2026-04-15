@@ -1,0 +1,27 @@
+{
+  "wine_id": "1c2f0e8d-4a39-42f4-b008-c5d02bd4025d",
+  "wine_name": "Atamisque Chardonnay, Mendoza",
+  "tier": "B",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.0,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.175,
+  "wrong_facts": [
+    "Hook states vineyards at 1,200 meters; ground truth says 1,300m elevation",
+    "Terroir section repeats 1,200 meters claim",
+    "Describes 'alluvial soils with large stones' — ground truth says 'clay and sand alluvial soils' with no mention of large stones",
+    "Claims 'full malolactic conversion' — not verifiable from context or ground truth",
+    "Claims 'founded by a French entrepreneur' — not verifiable from provided data"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "1,200 meters elevation (should be 1,300m)",
+    "$25-$35 price range not in context data",
+    "10 months oak aging is in ground truth but model didn't have access to it — however the model doesn't explicitly state 10 months so this is moot"
+  ],
+  "reasoning": "The hook contains a wrong elevation (1,200m vs. ground truth 1,300m), which is a factual error in the most prominent field. This triggers the hard penalty for a provably wrong claim in the hook, capping correctness at 1.5. However, the model does correctly identify Tupungato district, Uco Valley, alluvial soils (partially correct — it adds 'large stones' which isn't in ground truth), and the Burgundian winemaking approach including French oak and lees aging, which aligns with ground truth. The price range is fabricated. Given the hook error is a specific number that's close but wrong (1,200 vs 1,300), and there are additional unverifiable claims, I'm scoring correctness at 2.0 with some leniency since the error is a near-miss rather than wildly wrong. Voice is decent — direct, opinionated, avoids most banned words, though some sections feel slightly templated. Specificity is good with named competitors and real dishes. Usefulness is solid with actionable insider take.",
+  "judge_tokens_in": 3288,
+  "judge_tokens_out": 480
+}

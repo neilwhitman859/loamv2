@@ -1,0 +1,13 @@
+{
+  "pair_id": "D005",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"These wines have different LWIN codes (1407291 vs 1253843), which indicates they are distinct bottlings in the wine database. Wine A specifies 'Clayvin Vineyard' while Wine B is simply 'Vineyard Syrah'\u2014suggesting either different vineyard sources or different product lines from Fromm. The vineyard designation difference, combined with distinct LWINs, indicates these are separate wines a consumer would encounter as different offerings.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "These wines have different LWIN codes (1407291 vs 1253843), which indicates they are distinct bottlings in the wine database. Wine A specifies 'Clayvin Vineyard' while Wine B is simply 'Vineyard Syrah'\u2014suggesting either different vineyard sources or different product lines from Fromm. The vineyard designation difference, combined with distinct LWINs, indicates these are separate wines a consumer would encounter as different offerings.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 129,
+  "elapsed": 2.9790167808532715,
+  "error": null
+}

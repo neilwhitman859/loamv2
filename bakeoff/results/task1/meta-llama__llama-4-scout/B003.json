@@ -1,0 +1,13 @@
+{
+  "pair_id": "B003",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grape varieties, as evidenced by the varietal name 'Fiano' in Wine B, and different colors, with Wine A being red and Wine B being white. These differences indicate that the wines are distinct.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grape varieties, as evidenced by the varietal name 'Fiano' in Wine B, and different colors, with Wine A being red and Wine B being white. These differences indicate that the wines are distinct.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 70,
+  "elapsed": 1.876093864440918,
+  "error": null
+}

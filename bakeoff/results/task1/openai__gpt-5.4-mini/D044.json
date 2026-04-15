@@ -1,0 +1,13 @@
+{
+  "pair_id": "D044",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.98,\"reasoning\":\"Both records are from the same producer, Donnachadh, and both are white Chardonnay wines. The only difference is the presence of the descriptor 'Estate' in Wine A, which is typically a naming variation rather than a distinct cuv\u00e9e when no other differing designation is given.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Both records are from the same producer, Donnachadh, and both are white Chardonnay wines. The only difference is the presence of the descriptor 'Estate' in Wine A, which is typically a naming variation rather than a distinct cuv\u00e9e when no other differing designation is given.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 77,
+  "elapsed": 1.4994473457336426,
+  "error": null
+}

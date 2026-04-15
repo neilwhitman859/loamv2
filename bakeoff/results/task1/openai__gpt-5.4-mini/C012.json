@@ -1,0 +1,13 @@
+{
+  "pair_id": "C012",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct bottlings from Pommery: one is Brut Ros\u00e9 and the other is Brut (white). Ros\u00e9 vs white clearly indicates different wine styles/colors, which are treated as different wines. The differing LWINs also support that they are separate records.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct bottlings from Pommery: one is Brut Ros\u00e9 and the other is Brut (white). Ros\u00e9 vs white clearly indicates different wine styles/colors, which are treated as different wines. The differing LWINs also support that they are separate records.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 76,
+  "elapsed": 2.4106252193450928,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D002",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer (Van Volxem), vineyard (Altenberg), grape variety (Riesling), and style (white). The difference in the name 'Alte Reben GG' and 'Alte Reben' is likely due to the GG indicating a specific classification or label for the wine, which does not necessarily denote a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer (Van Volxem), vineyard (Altenberg), grape variety (Riesling), and style (white). The difference in the name 'Alte Reben GG' and 'Alte Reben' is likely due to the GG indicating a specific classification or label for the wine, which does not necessarily denote a different wine.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 97,
+  "elapsed": 3.4690558910369873,
+  "error": null
+}

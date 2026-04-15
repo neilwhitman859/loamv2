@@ -1,0 +1,28 @@
+{
+  "page_id": "page_013",
+  "model": "mistralai/mistral-large",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Bonterra Pinot Noir 2022\",\n      \"vintage_year\": 2022,\n      \"abv_pct\": null,\n      \"blend\": [\n        {\n          \"grape\": \"Pinot Noir\",\n          \"pct\": null\n        }\n      ],\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Bonterra Pinot Noir 2022",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Pinot Noir",
+          "pct": null
+        }
+      ],
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 71638,
+  "tokens_out": 122,
+  "elapsed": 35.04924416542053,
+  "error": null
+}

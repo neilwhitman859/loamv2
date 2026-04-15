@@ -1,0 +1,13 @@
+{
+  "pair_id": "A020",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a monovarietal Viura, while Wine B is a blend of Viura and Sauvignon Blanc. Under the rule that different grape compositions represent distinct bottlings, these are classified as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a monovarietal Viura, while Wine B is a blend of Viura and Sauvignon Blanc. Under the rule that different grape compositions represent distinct bottlings, these are classified as different wines.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 67,
+  "elapsed": 1.5676548480987549,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D012",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are made from different grape varieties (Boal vs. Sercial), which are distinct bottlings a consumer would encounter separately. Even though the producer, age statement, and 'Reserva' designation are the same, the grape difference makes them distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are made from different grape varieties (Boal vs. Sercial), which are distinct bottlings a consumer would encounter separately. Even though the producer, age statement, and 'Reserva' designation are the same, the grape difference makes them distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 77,
+  "elapsed": 1.716308355331421,
+  "error": null
+}

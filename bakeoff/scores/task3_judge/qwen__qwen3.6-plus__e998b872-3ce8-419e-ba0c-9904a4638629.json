@@ -1,0 +1,23 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "qwen/qwen3.6-plus",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.575,
+  "wrong_facts": [
+    "Hook says '2022 vintage spent only eight months in oak' — ground truth says recent vintages ferment and age in cement tanks (8 months), not oak",
+    "Vinification summary says 'Eight months in large, neutral oak barrels allow slow micro-oxygenation' — ground truth says cement tanks, not oak barrels",
+    "Value assessment fabricates a price range of $80-$130 per bottle, which is not in the context data"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$80-$130 price range"
+  ],
+  "reasoning": "The output repeatedly claims the wine ages in large neutral oak barrels, but ground truth clearly states recent vintages ferment and age in cement tanks with no wood aging — the producer has 'completely dispensed with new oak.' This is a significant factual error that appears in both the hook and vinification summary, undermining trust. The price range is fabricated (no prices were provided). However, many other claims are correct: 100% Carignan, llicorella slate, biodynamic farming, old vines, whole cluster fermentation. The voice is strong — direct, opinionated, specific, with no banned words. Specificity is excellent with named competitors, soil types, and real dishes. The oak error is the central problem, appearing prominently in the hook and vinification sections.",
+  "judge_tokens_in": 3654,
+  "judge_tokens_out": 342
+}

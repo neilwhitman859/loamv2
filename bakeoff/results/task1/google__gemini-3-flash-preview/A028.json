@@ -1,0 +1,13 @@
+{
+  "pair_id": "A028",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The producer Owen Roe produces a specific bottling named 'Lady Rosa' which is a Syrah. Wine B simply appends the varietal name to the proprietary name 'Lady Rosa', which is a common naming variation for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The producer Owen Roe produces a specific bottling named 'Lady Rosa' which is a Syrah. Wine B simply appends the varietal name to the proprietary name 'Lady Rosa', which is a common naming variation for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 416,
+  "tokens_out": 69,
+  "elapsed": 1.6150906085968018,
+  "error": null
+}

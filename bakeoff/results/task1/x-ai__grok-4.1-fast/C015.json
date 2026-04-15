@@ -1,0 +1,13 @@
+{
+  "pair_id": "C015",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Pertois-Lebrun) and share the core cuv\u00e9e name 'Le Fond du Bateau Blanc de Blancs' in white sparkling style. The key difference is the lot numbers (No. 10 vs No. 15), which per the rules indicate distinct bottlings similar to different lot/cask numbers. Distinct LWINs (1889864 vs 3044971) further confirm they are separate wines consumers would encounter independently.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Pertois-Lebrun) and share the core cuv\u00e9e name 'Le Fond du Bateau Blanc de Blancs' in white sparkling style. The key difference is the lot numbers (No. 10 vs No. 15), which per the rules indicate distinct bottlings similar to different lot/cask numbers. Distinct LWINs (1889864 vs 3044971) further confirm they are separate wines consumers would encounter independently.",
+  "parse_ok": true,
+  "tokens_in": 587,
+  "tokens_out": 672,
+  "elapsed": 5.943878173828125,
+  "error": null
+}

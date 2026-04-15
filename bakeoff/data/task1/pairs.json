@@ -35,7 +35,7 @@
       "name": "Santa Carolina"
     },
     "similarity": 0.727273,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Santa Carolina\nWine A color: red\nWine B color: red\nWine A grapes: CARMENERE, CABERNET FRANC\nWine B LWIN: 2968324"
   },
   {
@@ -70,7 +70,7 @@
       "name": "Firestone"
     },
     "similarity": 0.625,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Firestone\nWine A color: red\nWine B color: red\nWine A grapes: SYRAH\nWine B LWIN: 2251576"
   },
   {
@@ -105,13 +105,13 @@
       "name": "Goodfellow Family"
     },
     "similarity": 0.769231,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Goodfellow Family\nWine A color: red\nWine B color: red\nWine A grapes: PINOT NOIR\nWine B LWIN: 2602857"
   },
   {
     "pair_id": "A004",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "00550cf2-487d-4ac4-89fd-356faa740c1b",
       "name": "Selection Wormeldange Weinbour",
@@ -144,7 +144,7 @@
       "name": "Schumacher"
     },
     "similarity": 0.731707,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Range wine: Vinsmoselle makes separate Pinot Gris + Pinot Noir (web-verified) (was: SAME)",
     "metadata_block": "Producer: Schumacher\nWine A color: white\nWine B color: white\nWine A grapes: PINOT NOIR, PINOT GRIS\nWine B LWIN: 2603913"
   },
   {
@@ -154,7 +154,7 @@
     "wine_a": {
       "id": "00597ac1-49c7-45f4-b60c-75a719094e38",
       "name": "Agrelo Saint Felicien",
-      "display_name": "Catena Zapata Agrelo Saint Felicien Semillon, Luján de Cuyo",
+      "display_name": "Catena Zapata Agrelo Saint Felicien Semillon, LujÃ¡n de Cuyo",
       "color": "white",
       "grapes": [
         {
@@ -167,7 +167,7 @@
     "wine_b": {
       "id": "0e6fb81b-793f-4175-a552-75eb8cea1ed6",
       "name": "Agrelo Saint Felicien Semillon",
-      "display_name": "Catena Zapata Agrelo Saint Felicien Semillon, Luján de Cuyo",
+      "display_name": "Catena Zapata Agrelo Saint Felicien Semillon, LujÃ¡n de Cuyo",
       "color": "white",
       "grapes": [],
       "lwins": [
@@ -179,7 +179,7 @@
       "name": "Catena Zapata"
     },
     "similarity": 0.733333,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Catena Zapata\nWine A color: white\nWine B color: white\nWine A grapes: SEMILLON\nWine B LWIN: 1554201"
   },
   {
@@ -214,7 +214,7 @@
       "name": "Radio-Coteau"
     },
     "similarity": 0.52381,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Radio-Coteau\nWine A color: red\nWine B color: red\nWine A grapes: PINOT NOIR\nWine B LWIN: 1755565"
   },
   {
@@ -253,7 +253,7 @@
       "name": "Gabriel Meffre"
     },
     "similarity": 0.538462,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Gabriel Meffre\nWine A color: red\nWine B color: red\nWine A grapes: DURIF, SYRAH\nWine B LWIN: 2443379"
   },
   {
@@ -292,13 +292,13 @@
       "name": "Cuilleron"
     },
     "similarity": 0.6,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Cuilleron\nWine A color: rose\nWine B color: rose\nWine A grapes: SYRAH, DURIF\nWine B LWIN: 1695184"
   },
   {
     "pair_id": "A009",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "00d139de-685c-49b4-a298-140c3f5fdb0c",
       "name": "Bech-Kleimacher Naumberg",
@@ -331,13 +331,13 @@
       "name": "Domaines Vinsmoselle"
     },
     "similarity": 0.694444,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Range wine: Vinsmoselle makes separate Auxerrois + Pinot Gris (web-verified) (was: SAME)",
     "metadata_block": "Producer: Domaines Vinsmoselle\nWine A color: white\nWine B color: white\nWine A grapes: PINOT GRIS, PINOT NOIR\nWine B LWIN: 2584337"
   },
   {
     "pair_id": "A010",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "00f042d1-eecc-4c7d-87f9-20ea5aa6732c",
       "name": "Le Jardin de Trebogad",
@@ -366,13 +366,13 @@
       "name": "du Roi Dagobert"
     },
     "similarity": 0.666667,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Grape mismatch: A=Gewürztraminer, suffix=Pinot Gris (was: SAME)",
     "metadata_block": "Producer: du Roi Dagobert\nWine A color: white\nWine B color: white\nWine A grapes: GEWUERZTRAMINER\nWine B LWIN: 2534198"
   },
   {
     "pair_id": "A011",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "00f5ff8a-aff5-4daa-9972-49517817d19b",
       "name": "Highlands Bench",
@@ -405,7 +405,7 @@
       "name": "J. Lohr"
     },
     "similarity": 0.592593,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Range wine: J. Lohr Highlands Bench = separate Pinot Noir + Chardonnay (web-verified) (was: SAME)",
     "metadata_block": "Producer: J. Lohr\nWine A color: red\nWine B color: red\nWine A grapes: PINOT NOIR, CHARDONNAY BLANC\nWine B LWIN: 2269694"
   },
   {
@@ -440,13 +440,13 @@
       "name": "Arnot Roberts"
     },
     "similarity": 0.736842,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Arnot Roberts\nWine A color: red\nWine B color: red\nWine A grapes: SYRAH\nWine B LWIN: 1582606"
   },
   {
     "pair_id": "A013",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "012b94be-d2b2-4522-9975-913a4a63fe7a",
       "name": "Lerchenberg",
@@ -479,13 +479,13 @@
       "name": "Marc Kreydenweiss"
     },
     "similarity": 0.521739,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Grape mismatch: A=Pinot Noir/Canari Noir, suffix=Pinot Gris (was: SAME)",
     "metadata_block": "Producer: Marc Kreydenweiss\nWine A color: white\nWine B color: white\nWine A grapes: PINOT NOIR, CANARI NOIR\nWine B LWIN: 1622609"
   },
   {
     "pair_id": "A014",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "014302fa-9cdc-4e19-9668-84de4847f388",
       "name": "Grey Series Barrel Ferment",
@@ -514,7 +514,7 @@
       "name": "Anthony Road"
     },
     "similarity": 0.75,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Grape mismatch: A=Gewürztraminer, suffix=Pinot Gris (was: SAME)",
     "metadata_block": "Producer: Anthony Road\nWine A color: white\nWine B color: white\nWine A grapes: GEWUERZTRAMINER\nWine B LWIN: 1913987"
   },
   {
@@ -549,7 +549,7 @@
       "name": "Patricia Green"
     },
     "similarity": 0.72973,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Patricia Green\nWine A color: red\nWine B color: red\nWine A grapes: PINOT NOIR\nWine B LWIN: 1757165"
   },
   {
@@ -584,13 +584,13 @@
       "name": "Berton Vineyards"
     },
     "similarity": 0.592593,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Berton Vineyards\nWine A color: white\nWine B color: white\nWine A grapes: VERMENTINO\nWine B LWIN: 2127756"
   },
   {
     "pair_id": "A017",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "016f115b-7950-427a-956b-28996868023b",
       "name": "Single Valley Lot",
@@ -619,13 +619,13 @@
       "name": "Valdivieso"
     },
     "similarity": 0.782609,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Grape mismatch: A=Pinot Noir, suffix=Syrah (was: SAME)",
     "metadata_block": "Producer: Valdivieso\nWine A color: red\nWine B color: red\nWine A grapes: PINOT NOIR\nWine B LWIN: 2386133"
   },
   {
     "pair_id": "A018",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "017c49fb-a6c0-4bce-9229-ddd2a4ecdb2f",
       "name": "Quarter Acre",
@@ -654,13 +654,13 @@
       "name": "Te Awanga"
     },
     "similarity": 0.619048,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Grape mismatch: A=Chardonnay, suffix=Viognier (was: SAME)",
     "metadata_block": "Producer: Te Awanga\nWine A color: white\nWine B color: white\nWine A grapes: CHARDONNAY BLANC\nWine B LWIN: 2111544"
   },
   {
     "pair_id": "A019",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "01b67292-c5fd-473f-be5b-e35b182ee9a8",
       "name": "True Colours",
@@ -693,7 +693,7 @@
       "name": "Rob Dolan"
     },
     "similarity": 0.541667,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Range wine: Rob Dolan True Colours = range with multiple varietals (web-verified) (was: SAME)",
     "metadata_block": "Producer: Rob Dolan\nWine A color: red\nWine B color: red\nWine A grapes: PINOT NOIR, MERLOT NOIR\nWine B LWIN: 2576437"
   },
   {
@@ -728,13 +728,13 @@
       "name": "Artiga"
     },
     "similarity": 0.619048,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Artiga\nWine A color: white\nWine B color: white\nWine A grapes: SAUVIGNON BLANC\nWine B LWIN: 2450315"
   },
   {
     "pair_id": "A021",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "01eb4e45-f27b-46f1-9483-91ec49868d6f",
       "name": "Cabernet Sauvignon",
@@ -760,13 +760,13 @@
       "name": "Bench 1775"
     },
     "similarity": 0.791667,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Cab Sauv vs Cab Sauv-Syrah blend — different wines (15/16 models agree) (was: SAME)",
     "metadata_block": "Producer: Bench 1775\nWine A color: red\nWine B color: red\nWine A LWIN: 1955662\nWine B LWIN: 1955545"
   },
   {
     "pair_id": "A022",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "02082e1d-9af6-4f9b-a18a-c3e8c4fd9049",
       "name": "Andes Peaks",
@@ -795,7 +795,7 @@
       "name": "Emiliana"
     },
     "similarity": 0.545455,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Grape mismatch: A=Cabernet Sauvignon, suffix=Carmenere (was: SAME)",
     "metadata_block": "Producer: Emiliana\nWine A color: red\nWine B color: red\nWine A grapes: CABERNET SAUVIGNON\nWine B LWIN: 1596801"
   },
   {
@@ -830,13 +830,13 @@
       "name": "Fidelitas"
     },
     "similarity": 0.515152,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Fidelitas\nWine A color: red\nWine B color: red\nWine A grapes: CABERNET SAUVIGNON\nWine B LWIN: 2422170"
   },
   {
     "pair_id": "A024",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "020e79fa-686b-41f7-82bc-cc49c02054fd",
       "name": "Boutique",
@@ -865,7 +865,7 @@
       "name": "L.A. Cetto"
     },
     "similarity": 0.6,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Grape mismatch: A=Cot (Malbec), suffix=Syrah (was: SAME)",
     "metadata_block": "Producer: L.A. Cetto\nWine A color: red\nWine B color: red\nWine A grapes: COT (100.0%)\nWine B LWIN: 2662163"
   },
   {
@@ -900,7 +900,7 @@
       "name": "Gabriel Meffre"
     },
     "similarity": 0.538462,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Gabriel Meffre\nWine A color: red\nWine B color: red\nWine A grapes: SYRAH (100.0%)\nWine B LWIN: 2443379"
   },
   {
@@ -935,13 +935,13 @@
       "name": "Mount Pleasant (McWilliams)"
     },
     "similarity": 0.7,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Mount Pleasant (McWilliams)\nWine A color: white\nWine B color: white\nWine A grapes: SEMILLON\nWine B LWIN: 2886066"
   },
   {
     "pair_id": "A027",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "02815f84-a24f-46c9-b9ba-b53f1b9e5780",
       "name": "Vina Altamar",
@@ -970,7 +970,7 @@
       "name": "Hammeken"
     },
     "similarity": 0.65,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Grape mismatch: A=Tempranillo, suffix=Mencia (was: SAME)",
     "metadata_block": "Producer: Hammeken\nWine A color: red\nWine B color: red\nWine A grapes: TEMPRANILLO TINTO\nWine B LWIN: 2323493"
   },
   {
@@ -1005,7 +1005,7 @@
       "name": "Owen Roe"
     },
     "similarity": 0.625,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Owen Roe\nWine A color: red\nWine B color: red\nWine A grapes: SYRAH\nWine B LWIN: 1815337"
   },
   {
@@ -1044,7 +1044,7 @@
       "name": "Koehly"
     },
     "similarity": 0.52381,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Koehly\nWine A color: white\nWine B color: white\nWine A grapes: AUXERROIS, COT\nWine B LWIN: 2571937"
   },
   {
@@ -1079,7 +1079,7 @@
       "name": "Pegasus Bay"
     },
     "similarity": 0.588235,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Pegasus Bay\nWine A color: white\nWine B color: white\nWine A grapes: SEMILLON\nWine B LWIN: 1281088"
   },
   {
@@ -1113,7 +1113,7 @@
       "name": "Pierre Girardin"
     },
     "similarity": 0.62069,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Pierre Girardin\nWine A color: red\nWine B color: red\nWine A LWIN: 1870156, 2093138, 2471947\nWine B LWIN: 1858468"
   },
   {
@@ -1148,7 +1148,7 @@
       "name": "Sherwood Estate"
     },
     "similarity": 0.541667,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Sherwood Estate\nWine A color: red\nWine B color: red\nWine A grapes: PINOT NOIR\nWine B LWIN: 2220978"
   },
   {
@@ -1183,13 +1183,13 @@
       "name": "Calabria"
     },
     "similarity": 0.521739,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Calabria\nWine A color: white\nWine B color: white\nWine A grapes: VERMENTINO\nWine B LWIN: 1953626"
   },
   {
     "pair_id": "A034",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "0310d463-e4de-4aa9-bebb-88341b2d68a6",
       "name": "Markgraflerland SW",
@@ -1222,7 +1222,7 @@
       "name": "Martin Wassmer"
     },
     "similarity": 0.575758,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Grape mismatch: A=Chardonnay/Pinot Gris, suffix=Sauvignon Blanc (was: SAME)",
     "metadata_block": "Producer: Martin Wassmer\nWine A color: white\nWine B color: white\nWine A grapes: CHARDONNAY BLANC, PINOT GRIS\nWine B LWIN: 2492667"
   },
   {
@@ -1257,13 +1257,13 @@
       "name": "Robert Mondavi"
     },
     "similarity": 0.653061,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Robert Mondavi\nWine A color: red\nWine B color: red\nWine A grapes: CABERNET SAUVIGNON\nWine B LWIN: 1824335"
   },
   {
     "pair_id": "A036",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "03972f24-d906-473b-8195-0cb9777135a2",
       "name": "DB Family Selection",
@@ -1296,7 +1296,7 @@
       "name": "De Bortoli"
     },
     "similarity": 0.588235,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Grape mismatch: A=Pinot Noir/Chardonnay, suffix=Sauvignon Blanc (was: SAME)",
     "metadata_block": "Producer: De Bortoli\nWine A color: white\nWine B color: white\nWine A grapes: PINOT NOIR, CHARDONNAY BLANC\nWine B LWIN: 1947847"
   },
   {
@@ -1331,7 +1331,7 @@
       "name": "Squawking Magpie"
     },
     "similarity": 0.705882,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Squawking Magpie\nWine A color: red\nWine B color: red\nWine A grapes: SYRAH\nWine B LWIN: 1569142"
   },
   {
@@ -1366,7 +1366,7 @@
       "name": "Bellingham"
     },
     "similarity": 0.756757,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Bellingham\nWine A color: red\nWine B color: red\nWine A grapes: PINOTAGE\nWine B LWIN: 2120236"
   },
   {
@@ -1401,13 +1401,13 @@
       "name": "Torii Mor"
     },
     "similarity": 0.676471,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Torii Mor\nWine A color: red\nWine B color: red\nWine A grapes: PINOT NOIR\nWine B LWIN: 2501525"
   },
   {
     "pair_id": "A040",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "043d3b49-3f3d-4de9-a4be-743a6f8ba6f9",
       "name": "Appellation Series",
@@ -1440,7 +1440,7 @@
       "name": "Boschendal"
     },
     "similarity": 0.633333,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: Grape mismatch: A=Merlot/Chardonnay, suffix=Pinot Noir (was: SAME)",
     "metadata_block": "Producer: Boschendal\nWine A color: red\nWine B color: red\nWine A grapes: MERLOT NOIR, CHARDONNAY BLANC\nWine B LWIN: 2223113"
   },
   {
@@ -1475,7 +1475,7 @@
       "name": "Stephen Ross"
     },
     "similarity": 0.545455,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Stephen Ross\nWine A color: red\nWine B color: red\nWine A grapes: PINOT NOIR\nWine B LWIN: 1344721"
   },
   {
@@ -1510,13 +1510,13 @@
       "name": "Weinert"
     },
     "similarity": 0.558824,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Weinert\nWine A color: red\nWine B color: red\nWine A grapes: CABERNET FRANC\nWine B LWIN: 3050949"
   },
   {
     "pair_id": "A043",
     "stratum": "A",
-    "ground_truth": "SAME",
+    "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "047ae636-55dc-4e1b-9e21-f8b69c75f866",
       "name": "Shiraz",
@@ -1542,7 +1542,7 @@
       "name": "19 Crimes"
     },
     "similarity": 0.538462,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "CORRECTED: 19 Crimes Shiraz vs Shiraz-Durif = separate products (web-verified, 14/17 agree) (was: SAME)",
     "metadata_block": "Producer: 19 Crimes\nWine A color: red\nWine B color: red\nWine A LWIN: 1976861\nWine B LWIN: 1976874"
   },
   {
@@ -1577,7 +1577,7 @@
       "name": "Creekside"
     },
     "similarity": 0.689655,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Creekside\nWine A color: white\nWine B color: white\nWine A grapes: SEMILLON\nWine B LWIN: 2038117"
   },
   {
@@ -1612,7 +1612,7 @@
       "name": "Pax"
     },
     "similarity": 0.727273,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Pax\nWine A color: red\nWine B color: red\nWine A grapes: SYRAH\nWine B LWIN: 1694321"
   },
   {
@@ -1647,7 +1647,7 @@
       "name": "Carlisle"
     },
     "similarity": 0.666667,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Carlisle\nWine A color: red\nWine B color: red\nWine A grapes: SYRAH\nWine B LWIN: 1586910"
   },
   {
@@ -1682,7 +1682,7 @@
       "name": "Grgich Hills Estate"
     },
     "similarity": 0.571429,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Grgich Hills Estate\nWine A color: red\nWine B color: red\nWine A grapes: CABERNET FRANC\nWine B LWIN: 2791627"
   },
   {
@@ -1717,7 +1717,7 @@
       "name": "Stoneleigh"
     },
     "similarity": 0.521739,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: Stoneleigh\nWine A color: red\nWine B color: red\nWine A grapes: PINOT NOIR\nWine B LWIN: 2461450"
   },
   {
@@ -1752,7 +1752,7 @@
       "name": "del Nebbiolo"
     },
     "similarity": 0.666667,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: del Nebbiolo\nWine A color: white\nWine B color: white\nWine A grapes: ARNEIS\nWine B LWIN: 2632878"
   },
   {
@@ -1791,7 +1791,7 @@
       "name": "de Castelnau"
     },
     "similarity": 0.571429,
-    "rationale": "Varietal suffix pattern — same wine, one name appends grape variety",
+    "rationale": "Varietal suffix pattern â€” same wine, one name appends grape variety",
     "metadata_block": "Producer: de Castelnau\nWine A color: red\nWine B color: red\nWine A grapes: SYRAH, DURIF\nWine B LWIN: 1879928"
   },
   {
@@ -2313,16 +2313,16 @@
     "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "458a7044-3fa9-447e-b9d6-8112c47a509f",
-      "name": "Kress Bleger, Crémant d'Alsace",
-      "display_name": "Kress Bleger, Crémant d'Alsace",
+      "name": "Kress Bleger, CrÃ©mant d'Alsace",
+      "display_name": "Kress Bleger, CrÃ©mant d'Alsace",
       "color": "rose",
       "grapes": [],
       "lwins": []
     },
     "wine_b": {
       "id": "857816e7-a731-4a9c-a30f-384a988d1691",
-      "name": "Kress Bleger, Crémant d'Alsace Brut",
-      "display_name": "Kress Bleger, Crémant d'Alsace Brut",
+      "name": "Kress Bleger, CrÃ©mant d'Alsace Brut",
+      "display_name": "Kress Bleger, CrÃ©mant d'Alsace Brut",
       "color": "white",
       "grapes": [],
       "lwins": []
@@ -2476,8 +2476,8 @@
     "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "9f1dc869-6173-4967-9563-b66c189bf930",
-      "name": "Jean-Claude Bachelet, Bourgogne aligoté",
-      "display_name": "Jean-Claude Bachelet, Bourgogne aligoté",
+      "name": "Jean-Claude Bachelet, Bourgogne aligotÃ©",
+      "display_name": "Jean-Claude Bachelet, Bourgogne aligotÃ©",
       "color": "white",
       "grapes": [
         {
@@ -3007,7 +3007,7 @@
     "wine_a": {
       "id": "2083a802-7779-4aa2-822d-f183573b0cd8",
       "name": "Grand Clos Rose",
-      "display_name": "du Clos d'Alari Grand Clos Rose, Côtes de Provence",
+      "display_name": "du Clos d'Alari Grand Clos Rose, CÃ´tes de Provence",
       "color": "rose",
       "grapes": [],
       "lwins": [
@@ -3017,7 +3017,7 @@
     "wine_b": {
       "id": "8b093ad9-2600-4d3c-8f55-accf2f11268b",
       "name": "Grand Clos Rouge",
-      "display_name": "du Clos d'Alari Grand Clos Rouge, Côtes de Provence",
+      "display_name": "du Clos d'Alari Grand Clos Rouge, CÃ´tes de Provence",
       "color": "red",
       "grapes": [],
       "lwins": [
@@ -3039,7 +3039,7 @@
     "wine_a": {
       "id": "3ee99c80-c397-40fc-b394-ee86d23145a3",
       "name": "Petit Clos Rose",
-      "display_name": "du Clos d'Alari Petit Clos Rose, Côtes de Provence",
+      "display_name": "du Clos d'Alari Petit Clos Rose, CÃ´tes de Provence",
       "color": "rose",
       "grapes": [],
       "lwins": [
@@ -3049,7 +3049,7 @@
     "wine_b": {
       "id": "a8c85f1b-084f-460f-b95a-5ff2319a574f",
       "name": "Petit Clos Rouge",
-      "display_name": "du Clos d'Alari Petit Clos Rouge, Côtes de Provence",
+      "display_name": "du Clos d'Alari Petit Clos Rouge, CÃ´tes de Provence",
       "color": "red",
       "grapes": [],
       "lwins": [
@@ -3486,7 +3486,7 @@
     "wine_b": {
       "id": "9f7a75ec-4431-4ed7-99f0-5bd7444584d4",
       "name": "Henkenberg",
-      "display_name": "Salwey Henkenberg Weißburgunder GG, Baden",
+      "display_name": "Salwey Henkenberg WeiÃŸburgunder GG, Baden",
       "color": "white",
       "grapes": [
         {
@@ -3597,7 +3597,7 @@
       "name": "Van Volxem"
     },
     "similarity": 0.735294,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
+    "rationale": "Different German PrÃ¤dikat levels â€” distinct bottlings",
     "metadata_block": "Producer: Van Volxem\nWine A color: white\nWine B color: white\nWine A LWIN: 3083583\nWine B LWIN: 1802634"
   },
   {
@@ -3631,7 +3631,7 @@
       "name": "Van Volxem"
     },
     "similarity": 0.736842,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
+    "rationale": "Different German PrÃ¤dikat levels â€” distinct bottlings",
     "metadata_block": "Producer: Van Volxem\nWine A color: white\nWine B color: white\nWine A LWIN: 1093267\nWine B LWIN: 1268436"
   },
   {
@@ -3671,7 +3671,7 @@
   {
     "pair_id": "C004",
     "stratum": "C",
-    "ground_truth": "DIFFERENT",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "632c23f3-735e-44eb-89b6-106433c90483",
       "name": "Trauben Secco Alkoholfrei",
@@ -3699,13 +3699,13 @@
       "name": "Raumland"
     },
     "similarity": 0.8125,
-    "rationale": "Different sweetness levels — distinct bottlings",
+    "rationale": "CORRECTED: Color descriptor 'white' appended, not a classification tier (16/17 models agree) (was: DIFFERENT)",
     "metadata_block": "Producer: Raumland\nWine A color: white\nWine B color: white\nWine A LWIN: 1664137\nWine B LWIN: 1664140"
   },
   {
     "pair_id": "C005",
     "stratum": "C",
-    "ground_truth": "DIFFERENT",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "54d954bc-5886-4042-bffb-6ac0536b3089",
       "name": "Brut Rose NV",
@@ -3733,7 +3733,7 @@
       "name": "Jean Noel Haton"
     },
     "similarity": 0.769231,
-    "rationale": "Different sparkling wine dosage levels",
+    "rationale": "CORRECTED: NV designation, not a classification difference (15/17 models agree) (was: DIFFERENT)",
     "metadata_block": "Producer: Jean Noel Haton\nWine A color: rose\nWine B color: rose\nWine A LWIN: 1422081\nWine B LWIN: 1422065"
   },
   {
@@ -3743,9 +3743,9 @@
     "wine_a": {
       "id": "065f4ded-1fc0-4cba-afbe-3c324c3d990f",
       "name": "Hommage 1860 Brut",
-      "display_name": "Potzinger Hommage 1860 Brut, Südsteiermark",
+      "display_name": "Potzinger Hommage 1860 Brut, SÃ¼dsteiermark",
       "color": "white",
-      "appellation": "Südsteiermark",
+      "appellation": "SÃ¼dsteiermark",
       "grapes": [],
       "lwins": [
         "2184377"
@@ -3754,9 +3754,9 @@
     "wine_b": {
       "id": "857baebd-d565-4a70-93e4-29492615300c",
       "name": "Hommage 1860 Brut Rose",
-      "display_name": "Potzinger Hommage 1860 Brut Rose, Südsteiermark",
+      "display_name": "Potzinger Hommage 1860 Brut Rose, SÃ¼dsteiermark",
       "color": null,
-      "appellation": "Südsteiermark",
+      "appellation": "SÃ¼dsteiermark",
       "grapes": [],
       "lwins": [
         "2184423"
@@ -3768,7 +3768,7 @@
     },
     "similarity": 0.782609,
     "rationale": "Different sparkling wine dosage levels",
-    "metadata_block": "Producer: Potzinger\nWine A color: white\nWine A LWIN: 2184377\nWine B LWIN: 2184423\nWine A appellation: Südsteiermark\nWine B appellation: Südsteiermark"
+    "metadata_block": "Producer: Potzinger\nWine A color: white\nWine A LWIN: 2184377\nWine B LWIN: 2184423\nWine A appellation: SÃ¼dsteiermark\nWine B appellation: SÃ¼dsteiermark"
   },
   {
     "pair_id": "C007",
@@ -3777,9 +3777,9 @@
     "wine_a": {
       "id": "07154897-edd5-465c-ac03-614fbf563be1",
       "name": "Kaltenegg Traminer Grosse Cuvee Auslese",
-      "display_name": "Potzinger Kaltenegg Traminer Grosse Cuvee Auslese, Südsteiermark",
+      "display_name": "Potzinger Kaltenegg Traminer Grosse Cuvee Auslese, SÃ¼dsteiermark",
       "color": "white",
-      "appellation": "Südsteiermark",
+      "appellation": "SÃ¼dsteiermark",
       "grapes": [],
       "lwins": [
         "2184524"
@@ -3788,9 +3788,9 @@
     "wine_b": {
       "id": "321ee7df-ad1d-491e-b342-89e7dd69c094",
       "name": "Kaltenegg Traminer Grosse Cuvee Trockenbeerenauslese",
-      "display_name": "Potzinger Kaltenegg Traminer Grosse Cuvee Trockenbeerenauslese, Südsteiermark",
+      "display_name": "Potzinger Kaltenegg Traminer Grosse Cuvee Trockenbeerenauslese, SÃ¼dsteiermark",
       "color": "white",
-      "appellation": "Südsteiermark",
+      "appellation": "SÃ¼dsteiermark",
       "grapes": [],
       "lwins": [
         "2184566"
@@ -3801,8 +3801,8 @@
       "name": "Potzinger"
     },
     "similarity": 0.711538,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
-    "metadata_block": "Producer: Potzinger\nWine A color: white\nWine B color: white\nWine A LWIN: 2184524\nWine B LWIN: 2184566\nWine A appellation: Südsteiermark\nWine B appellation: Südsteiermark"
+    "rationale": "Different German PrÃ¤dikat levels â€” distinct bottlings",
+    "metadata_block": "Producer: Potzinger\nWine A color: white\nWine B color: white\nWine A LWIN: 2184524\nWine B LWIN: 2184566\nWine A appellation: SÃ¼dsteiermark\nWine B appellation: SÃ¼dsteiermark"
   },
   {
     "pair_id": "C008",
@@ -3903,7 +3903,7 @@
       "name": "Peter Jakob Kuhn"
     },
     "similarity": 0.833333,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
+    "rationale": "Different German PrÃ¤dikat levels â€” distinct bottlings",
     "metadata_block": "Producer: Peter Jakob Kuhn\nWine A color: white\nWine B color: white\nWine A LWIN: 1679599\nWine B LWIN: 1608630"
   },
   {
@@ -3977,7 +3977,7 @@
   {
     "pair_id": "C013",
     "stratum": "C",
-    "ground_truth": "DIFFERENT",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "8338cf8f-3402-4300-a72a-ab58dc02fde4",
       "name": "Kastanienbusch Riesling Auslese",
@@ -4005,7 +4005,7 @@
       "name": "Dr. Wehrheim"
     },
     "similarity": 0.852941,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
+    "rationale": "CORRECTED: Spelling variant + word reorder: Kastanienbusch=Kastanienbush (13/17 agree) (was: DIFFERENT)",
     "metadata_block": "Producer: Dr. Wehrheim\nWine A color: white\nWine B color: white\nWine A LWIN: 1573725\nWine B LWIN: 1573767"
   },
   {
@@ -4014,8 +4014,8 @@
     "ground_truth": "DIFFERENT",
     "wine_a": {
       "id": "35cf5df6-1e93-4d6d-a7bb-1fe71c90ad15",
-      "name": "Derrière Le Mont Aigu No.15 Blanc de Blancs",
-      "display_name": "Pertois-Lebrun Derrière Le Mont Aigu No.15 Blanc de Blancs",
+      "name": "DerriÃ¨re Le Mont Aigu No.15 Blanc de Blancs",
+      "display_name": "Pertois-Lebrun DerriÃ¨re Le Mont Aigu No.15 Blanc de Blancs",
       "color": "white",
       "appellation": null,
       "grapes": [],
@@ -4113,13 +4113,13 @@
       "name": "Bartolo Mascarello"
     },
     "similarity": 0.764706,
-    "rationale": "Riserva vs non-Riserva — different quality tier",
+    "rationale": "Riserva vs non-Riserva â€” different quality tier",
     "metadata_block": "Producer: Bartolo Mascarello\nWine A color: red\nWine B color: red\nWine A grapes: NEBBIOLO (100.0%)\nWine B grapes: NEBBIOLO (100.0%)\nWine A appellation: Barolo\nWine B appellation: Barbaresco"
   },
   {
     "pair_id": "C017",
     "stratum": "C",
-    "ground_truth": "DIFFERENT",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "45ce6663-18e8-4ca9-a5d5-225ce4a6b3a2",
       "name": "Forster Kirchenstuck Spatlese",
@@ -4147,7 +4147,7 @@
       "name": "Bassermann-Jordan"
     },
     "similarity": 0.769231,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
+    "rationale": "CORRECTED: Same Spätlese level, 'Riesling' is varietal suffix not Prädikat diff (14/17 agree) (was: DIFFERENT)",
     "metadata_block": "Producer: Bassermann-Jordan\nWine A color: white\nWine B color: white\nWine A LWIN: 1711020\nWine B LWIN: 1710948"
   },
   {
@@ -4187,7 +4187,7 @@
       "name": "des Comtes Lafon"
     },
     "similarity": 0.945946,
-    "rationale": "Echezeaux vs Grands-Echezeaux — different Grand Cru vineyards",
+    "rationale": "Echezeaux vs Grands-Echezeaux â€” different Grand Cru vineyards",
     "metadata_block": "Producer: des Comtes Lafon\nWine A color: red\nWine B color: red\nWine A grapes: PINOT NOIR\nWine B grapes: PINOT NOIR\nWine A appellation: Echezeaux\nWine B appellation: Grands-Echezeaux"
   },
   {
@@ -4255,7 +4255,7 @@
       "name": "Milz Laurentiushof"
     },
     "similarity": 0.744681,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
+    "rationale": "Different German PrÃ¤dikat levels â€” distinct bottlings",
     "metadata_block": "Producer: Milz Laurentiushof\nWine A color: white\nWine B color: white\nWine A LWIN: 1436808\nWine B LWIN: 2105925"
   },
   {
@@ -4289,7 +4289,7 @@
       "name": "Milz Laurentiushof"
     },
     "similarity": 0.830189,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
+    "rationale": "Different German PrÃ¤dikat levels â€” distinct bottlings",
     "metadata_block": "Producer: Milz Laurentiushof\nWine A color: white\nWine B color: white\nWine A LWIN: 2105895\nWine B LWIN: 2105909"
   },
   {
@@ -4323,13 +4323,13 @@
       "name": "Milz Laurentiushof"
     },
     "similarity": 0.727273,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
+    "rationale": "Different German PrÃ¤dikat levels â€” distinct bottlings",
     "metadata_block": "Producer: Milz Laurentiushof\nWine A color: white\nWine B color: white\nWine A LWIN: 2105996\nWine B LWIN: 2105925"
   },
   {
     "pair_id": "C023",
     "stratum": "C",
-    "ground_truth": "DIFFERENT",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "77e21299-d7a9-40f8-9fbd-60e22a079368",
       "name": "Uncle Dick The Red Brute",
@@ -4360,13 +4360,13 @@
       "name": "Bleasdale"
     },
     "similarity": 0.78125,
-    "rationale": "Different sparkling wine dosage levels",
+    "rationale": "CORRECTED: Varietal suffix 'Shiraz', not a dosage difference. A grapes=SYRAH (16/17 agree) (was: DIFFERENT)",
     "metadata_block": "Producer: Bleasdale\nWine A color: red\nWine B color: red\nWine A grapes: SYRAH\nWine B LWIN: 1694057\nWine A appellation: Langhorne Creek\nWine B appellation: Langhorne Creek"
   },
   {
     "pair_id": "C024",
     "stratum": "C",
-    "ground_truth": "DIFFERENT",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "54f57526-3542-4059-b061-213261a6febd",
       "name": "Murgiers Extra Brut",
@@ -4394,7 +4394,7 @@
       "name": "Francis Boulard"
     },
     "similarity": 0.833333,
-    "rationale": "Different sparkling wine dosage levels",
+    "rationale": "CORRECTED: Article 'Les' prefix difference only (15/17 models agree) (was: DIFFERENT)",
     "metadata_block": "Producer: Francis Boulard\nWine A color: white\nWine B color: white\nWine A LWIN: 1402560\nWine B LWIN: 1402573"
   },
   {
@@ -4428,7 +4428,7 @@
       "name": "Ferrari"
     },
     "similarity": 0.8,
-    "rationale": "Riserva vs non-Riserva — different quality tier",
+    "rationale": "Riserva vs non-Riserva â€” different quality tier",
     "metadata_block": "Producer: Ferrari\nWine A color: white\nWine B color: rose\nWine A LWIN: 1908349\nWine B LWIN: 1834284\nWine A appellation: Trento\nWine B appellation: Trento"
   },
   {
@@ -4502,7 +4502,7 @@
       "name": "Maison Champy"
     },
     "similarity": 0.942857,
-    "rationale": "Echezeaux vs Grands-Echezeaux — different Grand Cru vineyards",
+    "rationale": "Echezeaux vs Grands-Echezeaux â€” different Grand Cru vineyards",
     "metadata_block": "Producer: Maison Champy\nWine A color: red\nWine B color: red\nWine A grapes: PINOT NOIR\nWine B grapes: PINOT NOIR\nWine A appellation: Echezeaux\nWine B appellation: Grands-Echezeaux"
   },
   {
@@ -4610,7 +4610,7 @@
   {
     "pair_id": "C031",
     "stratum": "C",
-    "ground_truth": "DIFFERENT",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "17b95758-dd23-4be9-b95d-522ff314b20b",
       "name": "Blanc de Blancs Brut",
@@ -4638,13 +4638,13 @@
       "name": "Bonnaire"
     },
     "similarity": 0.733333,
-    "rationale": "Classification/tier difference",
+    "rationale": "CORRECTED: 'Brut' likely redundant for this Bonnaire BdB (13/16 models agree) (was: DIFFERENT)",
     "metadata_block": "Producer: Bonnaire\nWine A color: white\nWine B color: white\nWine A LWIN: 1544381\nWine B LWIN: 1937448"
   },
   {
     "pair_id": "C032",
     "stratum": "C",
-    "ground_truth": "DIFFERENT",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "a646cb25-819d-47e7-8c11-f335a5d3ca68",
       "name": "Blanc de Blancs NV",
@@ -4672,13 +4672,13 @@
       "name": "Bonnaire"
     },
     "similarity": 0.785714,
-    "rationale": "Classification/tier difference",
+    "rationale": "CORRECTED: NV vs no-NV = same wine, vintage designation not classification (16/17 agree) (was: DIFFERENT)",
     "metadata_block": "Producer: Bonnaire\nWine A color: white\nWine B color: white\nWine A LWIN: 1477283\nWine B LWIN: 1937448"
   },
   {
     "pair_id": "C033",
     "stratum": "C",
-    "ground_truth": "DIFFERENT",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "acd8355b-1ab5-411b-ac98-59f5948e9148",
       "name": "Blanc de Blancs Vintage",
@@ -4706,7 +4706,7 @@
       "name": "Bonnaire"
     },
     "similarity": 0.826087,
-    "rationale": "Classification/tier difference",
+    "rationale": "CORRECTED: 'Brut' redundant for vintage Champagne (15/17 models agree) (was: DIFFERENT)",
     "metadata_block": "Producer: Bonnaire\nWine A color: white\nWine B color: white\nWine A LWIN: 1081835\nWine B LWIN: 1535556"
   },
   {
@@ -4740,7 +4740,7 @@
       "name": "Markus Molitor"
     },
     "similarity": 0.928571,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
+    "rationale": "Different German PrÃ¤dikat levels â€” distinct bottlings",
     "metadata_block": "Producer: Markus Molitor\nWine A color: white\nWine B color: white\nWine A LWIN: 1743960\nWine B LWIN: 1991172"
   },
   {
@@ -4774,7 +4774,7 @@
       "name": "Markus Molitor"
     },
     "similarity": 0.746269,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
+    "rationale": "Different German PrÃ¤dikat levels â€” distinct bottlings",
     "metadata_block": "Producer: Markus Molitor\nWine A color: white\nWine B color: white\nWine A LWIN: 1731626\nWine B LWIN: 1731613"
   },
   {
@@ -4814,7 +4814,7 @@
       "name": "Markus Molitor"
     },
     "similarity": 0.882353,
-    "rationale": "Different star ratings — distinct quality tiers",
+    "rationale": "Different star ratings â€” distinct quality tiers",
     "metadata_block": "Producer: Markus Molitor\nWine A color: white\nWine B color: white\nWine A grapes: RIESLING WEISS (100.0%)\nWine B grapes: RIESLING WEISS (100.0%)\nWine A appellation: Mosel\nWine B appellation: Mosel"
   },
   {
@@ -4848,7 +4848,7 @@
       "name": "Stefan Gerhard"
     },
     "similarity": 0.711864,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
+    "rationale": "Different German PrÃ¤dikat levels â€” distinct bottlings",
     "metadata_block": "Producer: Stefan Gerhard\nWine A color: white\nWine B color: white\nWine A LWIN: 2894588\nWine B LWIN: 2894520"
   },
   {
@@ -4994,9 +4994,9 @@
     "wine_a": {
       "id": "876ca306-6123-454b-8d2f-fa1d2d2e6c99",
       "name": "Senorio Aguila Gran Reserva",
-      "display_name": "Virgen del Aguila Senorio Aguila Gran Reserva, Cariñena",
+      "display_name": "Virgen del Aguila Senorio Aguila Gran Reserva, CariÃ±ena",
       "color": "red",
-      "appellation": "Cariñena",
+      "appellation": "CariÃ±ena",
       "grapes": [],
       "lwins": [
         "1292875"
@@ -5005,9 +5005,9 @@
     "wine_b": {
       "id": "dfdb9c92-276c-40a7-b400-299d88dcc1e9",
       "name": "Senorio Aguila Reserva",
-      "display_name": "Virgen del Aguila Senorio Aguila Reserva, Cariñena",
+      "display_name": "Virgen del Aguila Senorio Aguila Reserva, CariÃ±ena",
       "color": "red",
-      "appellation": "Cariñena",
+      "appellation": "CariÃ±ena",
       "grapes": [],
       "lwins": [
         "1292862"
@@ -5019,7 +5019,7 @@
     },
     "similarity": 0.821429,
     "rationale": "Different Rioja classification tier",
-    "metadata_block": "Producer: Virgen del Aguila\nWine A color: red\nWine B color: red\nWine A LWIN: 1292875\nWine B LWIN: 1292862\nWine A appellation: Cariñena\nWine B appellation: Cariñena"
+    "metadata_block": "Producer: Virgen del Aguila\nWine A color: red\nWine B color: red\nWine A LWIN: 1292875\nWine B LWIN: 1292862\nWine A appellation: CariÃ±ena\nWine B appellation: CariÃ±ena"
   },
   {
     "pair_id": "C043",
@@ -5052,7 +5052,7 @@
       "name": "Von Schubert"
     },
     "similarity": 0.780488,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
+    "rationale": "Different German PrÃ¤dikat levels â€” distinct bottlings",
     "metadata_block": "Producer: Von Schubert\nWine A color: white\nWine B color: white\nWine A LWIN: 1279832\nWine B LWIN: 1156085"
   },
   {
@@ -5086,7 +5086,7 @@
       "name": "Von Schubert"
     },
     "similarity": 0.844828,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
+    "rationale": "Different German PrÃ¤dikat levels â€” distinct bottlings",
     "metadata_block": "Producer: Von Schubert\nWine A color: red\nWine B color: white\nWine A LWIN: 1679528\nWine B LWIN: 1820685"
   },
   {
@@ -5120,7 +5120,7 @@
       "name": "Von Schubert"
     },
     "similarity": 0.929825,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
+    "rationale": "Different German PrÃ¤dikat levels â€” distinct bottlings",
     "metadata_block": "Producer: Von Schubert\nWine A color: white\nWine B color: white\nWine A LWIN: 1484085\nWine B LWIN: 1484144"
   },
   {
@@ -5154,7 +5154,7 @@
       "name": "Domdechant Werner"
     },
     "similarity": 0.791667,
-    "rationale": "Different German Prädikat levels — distinct bottlings",
+    "rationale": "Different German PrÃ¤dikat levels â€” distinct bottlings",
     "metadata_block": "Producer: Domdechant Werner\nWine A color: white\nWine B color: white\nWine A LWIN: 1531981\nWine B LWIN: 1084562"
   },
   {
@@ -5638,7 +5638,7 @@
       "name": "Bellavista"
     },
     "similarity": 0.782609,
-    "rationale": "Opus analysis: 'Brut' dosage designation included/omitted — same Franciacorta cuvée",
+    "rationale": "Opus analysis: 'Brut' dosage designation included/omitted â€” same Franciacorta cuvÃ©e",
     "metadata_block": "Producer: Bellavista\nWine A color: white\nWine B color: white\nWine A LWIN: 1734702"
   },
   {
@@ -5670,13 +5670,13 @@
       "name": "Bellavista"
     },
     "similarity": 0.6875,
-    "rationale": "Opus analysis: Gran Cuvee vs Gran Cuvee Rosé — different color, different wine",
+    "rationale": "Opus analysis: Gran Cuvee vs Gran Cuvee RosÃ© â€” different color, different wine",
     "metadata_block": "Producer: Bellavista\nWine A color: rose\nWine B color: rose\nWine B LWIN: 1514764"
   },
   {
     "pair_id": "D011",
     "stratum": "D",
-    "ground_truth": "DIFFERENT",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "fba4615a-07b5-4f23-8639-e6cb98abfb47",
       "name": "Adegas Exportata Rare Rich 1870",
@@ -5711,7 +5711,7 @@
       "name": "Borges"
     },
     "similarity": 0.794872,
-    "rationale": "Significant name difference (additional word/qualifier)",
+    "rationale": "CORRECTED: 'Malmsey' is Madeira style prefix, same wine (16/17 models agree) (was: DIFFERENT)",
     "metadata_block": "Producer: Borges\nWine A color: white\nWine A grapes: MALVASIA FINA, FURMINT\nWine B LWIN: 1544642"
   },
   {
@@ -5763,8 +5763,8 @@
     },
     "wine_b": {
       "id": "cf3374ea-75f0-4487-b49f-95339a11da1e",
-      "name": "Machard de Gramont, Vosne-Romanée Premier Cru",
-      "display_name": "Machard de Gramont, Vosne-Romanée Premier Cru",
+      "name": "Machard de Gramont, Vosne-RomanÃ©e Premier Cru",
+      "display_name": "Machard de Gramont, Vosne-RomanÃ©e Premier Cru",
       "color": "red",
       "lwin": null,
       "grapes": [],
@@ -5853,7 +5853,7 @@
     "wine_a": {
       "id": "7ea4a3f9-ce98-49c0-968f-0822a5a8367c",
       "name": "Roche",
-      "display_name": "Eric Forest Roche, Pouilly-Fuissé",
+      "display_name": "Eric Forest Roche, Pouilly-FuissÃ©",
       "color": "white",
       "lwin": "1788529",
       "grapes": [],
@@ -5864,7 +5864,7 @@
     "wine_b": {
       "id": "d97ae37e-91da-4680-9d62-c21cba6db614",
       "name": "Sur Roche",
-      "display_name": "Eric Forest Sur Roche, Mâcon",
+      "display_name": "Eric Forest Sur Roche, MÃ¢con",
       "color": "white",
       "lwin": "1349579",
       "grapes": [],
@@ -5914,7 +5914,7 @@
       "name": "Villadoria"
     },
     "similarity": 0.833333,
-    "rationale": "Opus analysis: 'Comune di Gavi' vs 'del Comune di Gavi' — Italian article variant, same Cortese",
+    "rationale": "Opus analysis: 'Comune di Gavi' vs 'del Comune di Gavi' â€” Italian article variant, same Cortese",
     "metadata_block": "Producer: Villadoria\nWine A color: white\nWine B color: white\nWine A grapes: CORTESE (100.0%)\nWine B LWIN: 1928017"
   },
   {
@@ -6014,7 +6014,7 @@
       "name": "19 Crimes"
     },
     "similarity": 0.857143,
-    "rationale": "Opus analysis: 'The Banished Dark Red' vs 'The Banished Dark' — 'Red' descriptor variant",
+    "rationale": "Opus analysis: 'The Banished Dark Red' vs 'The Banished Dark' â€” 'Red' descriptor variant",
     "metadata_block": "Producer: 19 Crimes\nWine A color: red\nWine B color: red\nWine A LWIN: 1976887"
   },
   {
@@ -6024,7 +6024,7 @@
     "wine_a": {
       "id": "07154897-edd5-465c-ac03-614fbf563be1",
       "name": "Kaltenegg Traminer Grosse Cuvee Auslese",
-      "display_name": "Potzinger Kaltenegg Traminer Grosse Cuvee Auslese, Südsteiermark",
+      "display_name": "Potzinger Kaltenegg Traminer Grosse Cuvee Auslese, SÃ¼dsteiermark",
       "color": "white",
       "lwin": "2184524",
       "grapes": [],
@@ -6035,7 +6035,7 @@
     "wine_b": {
       "id": "427e5c29-eaaf-463d-bd60-db2557b6b148",
       "name": "Kaltenegg Traminer Grosse Cuvee",
-      "display_name": "Potzinger Kaltenegg Traminer Grosse Cuvee, Südsteiermark",
+      "display_name": "Potzinger Kaltenegg Traminer Grosse Cuvee, SÃ¼dsteiermark",
       "color": "white",
       "lwin": "2184511",
       "grapes": [],
@@ -6088,7 +6088,7 @@
   {
     "pair_id": "D023",
     "stratum": "D",
-    "ground_truth": "DIFFERENT",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "67acc5b2-3819-4fdc-9c78-4e2f14cd322f",
       "name": "Les Charmilles de Tour Blanche",
@@ -6127,7 +6127,7 @@
       "name": "La Tour Blanche"
     },
     "similarity": 0.724138,
-    "rationale": "Significant name difference (additional word/qualifier)",
+    "rationale": "CORRECTED: 'Blanche' is part of château name La Tour Blanche, truncation (15/16 agree) (was: DIFFERENT)",
     "metadata_block": "Producer: La Tour Blanche\nWine A color: white\nWine B color: white\nWine B grapes: SAUVIGNON BLANC (19.0%), MUSCADELLE (10.0%), MONDEUSE BLANCHE\nWine A LWIN: 1324590"
   },
   {
@@ -6159,7 +6159,7 @@
       "name": "Cattier"
     },
     "similarity": 0.615385,
-    "rationale": "Opus analysis: 'Brut Antique' vs 'Antique' — Brut is dosage level, same Champagne cuvée",
+    "rationale": "Opus analysis: 'Brut Antique' vs 'Antique' â€” Brut is dosage level, same Champagne cuvÃ©e",
     "metadata_block": "Producer: Cattier\nWine A color: white\nWine B color: white\nWine A LWIN: 1188039"
   },
   {
@@ -6191,7 +6191,7 @@
       "name": "Cattier"
     },
     "similarity": 0.666667,
-    "rationale": "Opus analysis: 'Brut Millesime' vs 'Millesime' — Brut dosage prefix, same vintage cuvée",
+    "rationale": "Opus analysis: 'Brut Millesime' vs 'Millesime' â€” Brut dosage prefix, same vintage cuvÃ©e",
     "metadata_block": "Producer: Cattier\nWine A color: white\nWine B color: white\nWine A LWIN: 1188042"
   },
   {
@@ -6223,7 +6223,7 @@
       "name": "Cupcake Vineyards"
     },
     "similarity": 0.846154,
-    "rationale": "Opus analysis: 'Black Forest Decadent' vs 'Black Forest Decadent Red' — Red descriptor suffix",
+    "rationale": "Opus analysis: 'Black Forest Decadent' vs 'Black Forest Decadent Red' â€” Red descriptor suffix",
     "metadata_block": "Producer: Cupcake Vineyards\nWine A color: red\nWine B color: red\nWine B LWIN: 2006075"
   },
   {
@@ -6384,7 +6384,7 @@
   {
     "pair_id": "D031",
     "stratum": "D",
-    "ground_truth": "DIFFERENT",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "c5b5b893-17b4-4da0-8315-43c562fec3d8",
       "name": "Hallgarten Rheinschiefer Trocken",
@@ -6410,7 +6410,7 @@
       "name": "Peter Jakob Kuhn"
     },
     "similarity": 0.78125,
-    "rationale": "Significant name difference (additional word/qualifier)",
+    "rationale": "CORRECTED: 'Trocken' often redundant in Rheingau dry Riesling (14/16 agree) (was: DIFFERENT)",
     "metadata_block": "Producer: Peter Jakob Kuhn\nWine A color: white\nWine B color: white\nWine A LWIN: 1602960"
   },
   {
@@ -6551,7 +6551,7 @@
       "name": "Velenosi"
     },
     "similarity": 0.705882,
-    "rationale": "Opus analysis: 'Brecciarolo' vs 'Brecciarolo Gold' — Gold is quality tier designation",
+    "rationale": "Opus analysis: 'Brecciarolo' vs 'Brecciarolo Gold' â€” Gold is quality tier designation",
     "metadata_block": "Producer: Velenosi\nWine A color: red\nWine B color: red\nWine A grapes: SANGIOVESE, MONTEPULCIANO"
   },
   {
@@ -6617,7 +6617,7 @@
       "name": "Chatter Creek"
     },
     "similarity": 0.791667,
-    "rationale": "Opus analysis: 'Red Table' vs 'Red Table Wine' — legal suffix variant",
+    "rationale": "Opus analysis: 'Red Table' vs 'Red Table Wine' â€” legal suffix variant",
     "metadata_block": "Producer: Chatter Creek\nWine A color: red\nWine B color: red\nWine B LWIN: 2770848"
   },
   {
@@ -6649,7 +6649,7 @@
       "name": "Chatter Creek"
     },
     "similarity": 0.857143,
-    "rationale": "Opus analysis: 'red Table' vs 'red Table Wine' — legal suffix variant",
+    "rationale": "Opus analysis: 'red Table' vs 'red Table Wine' â€” legal suffix variant",
     "metadata_block": "Producer: Chatter Creek\nWine A color: red\nWine B color: red\nWine B LWIN: 2770747"
   },
   {
@@ -6747,7 +6747,7 @@
       "name": "Pommery"
     },
     "similarity": 0.791667,
-    "rationale": "Opus analysis: 'Apanage Cuvee 1874' vs 'Brut Apanage Cuvee 1874' — Brut dosage prefix",
+    "rationale": "Opus analysis: 'Apanage Cuvee 1874' vs 'Brut Apanage Cuvee 1874' â€” Brut dosage prefix",
     "metadata_block": "Producer: Pommery\nWine A color: white\nWine B color: white\nWine B LWIN: 3095540"
   },
   {
@@ -6779,7 +6779,7 @@
       "name": "Pommery"
     },
     "similarity": 0.761905,
-    "rationale": "Opus analysis: 'Brut Apanage Prestige' vs 'Apanage Prestige' — Brut dosage prefix",
+    "rationale": "Opus analysis: 'Brut Apanage Prestige' vs 'Apanage Prestige' â€” Brut dosage prefix",
     "metadata_block": "Producer: Pommery\nWine A color: white\nWine B color: white\nWine A LWIN: 2337555"
   },
   {
@@ -6853,7 +6853,7 @@
   {
     "pair_id": "D045",
     "stratum": "D",
-    "ground_truth": "DIFFERENT",
+    "ground_truth": "SAME",
     "wine_a": {
       "id": "1ad42480-2931-4fa1-8e7d-6e894f1d28b4",
       "name": "Casse-Croute Blanc",
@@ -6879,7 +6879,7 @@
       "name": "Maris"
     },
     "similarity": 0.666667,
-    "rationale": "Significant name difference (additional word/qualifier)",
+    "rationale": "CORRECTED: 'Blanc' color descriptor on white wine, likely same (16/16 agree) (was: DIFFERENT)",
     "metadata_block": "Producer: Maris\nWine A color: white\nWine B color: white\nWine A LWIN: 3052099"
   },
   {
@@ -6911,7 +6911,7 @@
       "name": "Maris"
     },
     "similarity": 0.705882,
-    "rationale": "Opus analysis: Nymphe Emue vs Nymphe Emue Rosé — different color",
+    "rationale": "Opus analysis: Nymphe Emue vs Nymphe Emue RosÃ© â€” different color",
     "metadata_block": "Producer: Maris\nWine A color: rose\nWine B color: rose\nWine B LWIN: 1708965"
   },
   {
@@ -6951,7 +6951,7 @@
       "name": "Happs"
     },
     "similarity": 0.6,
-    "rationale": "Opus analysis: 'Merlot' vs 'Cabernet' — different variety names despite grape data overlap",
+    "rationale": "Opus analysis: 'Merlot' vs 'Cabernet' â€” different variety names despite grape data overlap",
     "metadata_block": "Producer: Happs\nWine A color: red\nWine B color: red\nWine A grapes: MERLOT NOIR (100.0%)\nWine B grapes: MERLOT NOIR (100.0%)"
   },
   {
@@ -7029,7 +7029,7 @@
     "wine_a": {
       "id": "38142653-f8ce-49d0-8143-8c3567fa8a80",
       "name": "Birkweiler Rosenberg",
-      "display_name": "Dr. Wehrheim Birkweiler Rosenberg Weißburgunder, Pfalz",
+      "display_name": "Dr. Wehrheim Birkweiler Rosenberg WeiÃŸburgunder, Pfalz",
       "color": "white",
       "lwin": null,
       "grapes": [

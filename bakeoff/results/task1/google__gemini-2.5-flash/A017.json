@@ -1,0 +1,13 @@
+{
+  "pair_id": "A017",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is explicitly stated to be Pinot Noir, while Wine B is explicitly stated to be Syrah. Different grape varieties always mean different wines, even if the vineyard name is the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is explicitly stated to be Pinot Noir, while Wine B is explicitly stated to be Syrah. Different grape varieties always mean different wines, even if the vineyard name is the same.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 61,
+  "elapsed": 1.082775354385376,
+  "error": null
+}

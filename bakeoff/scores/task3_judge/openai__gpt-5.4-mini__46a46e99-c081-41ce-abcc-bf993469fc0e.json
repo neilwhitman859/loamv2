@@ -1,0 +1,24 @@
+{
+  "wine_id": "46a46e99-c081-41ce-abcc-bf993469fc0e",
+  "wine_name": "Kir Yianni Ramnista, Naoussa",
+  "tier": "B",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.05,
+  "wrong_facts": [
+    "Vinification summary is vague and avoids specifics that ground truth shows (18 months in French and American oak, 6-day cold soak, pigeage in open-top tanks), but doesn't state anything provably wrong — it hedges with 'typically' and 'when used'",
+    "No mention of Stellios Boutaris as winemaker or the founding year 1997",
+    "The naming origin of 'Ramnista' (meaning 'royal hill') is not mentioned — a missed opportunity but not a fabrication"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "5 to 10 years of bottle age is an unsourced claim but plausible for Xinomavro",
+    "Aging potential 10 years, drinking windows 3-13 years are not in context data but are reasonable estimates"
+  ],
+  "reasoning": "Correctness is solid but not exceptional: no provably wrong facts, but the output avoids the specific cooperage, winemaking, and naming origin details that ground truth confirms. The vinification section is deliberately vague ('oak, when used') rather than stating the known 18 months in French/American oak. The hook's Nebbiolo comparison and $29 price point are well-grounded. Voice is excellent — direct, opinionated, no banned words, no hedging, comfortable being negative ('if you want soft fruit and instant charm, skip it'). Specificity is good with named soils, Mount Vermio, real comparables (Thymiopoulos, Saint-Joseph), and concrete food pairings. Usefulness is high — the insider take is genuinely actionable and the value assessment contextualizes the price well. The main weakness is that the model played it safe on vinification rather than drawing on training knowledge that would have matched ground truth.",
+  "judge_tokens_in": 3716,
+  "judge_tokens_out": 449
+}

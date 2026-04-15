@@ -1,0 +1,13 @@
+{
+  "pair_id": "B014",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is described as rose colored while Wine B is not, and the description of Wine B as 'Brut' implies it is white, indicating a difference in color and likely style between the two wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is described as rose colored while Wine B is not, and the description of Wine B as 'Brut' implies it is white, indicating a difference in color and likely style between the two wines.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 66,
+  "elapsed": 1.3604588508605957,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D042",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Pommery, and share the core name 'Apanage Prestige'. The addition of 'Brut' in Wine A is a style descriptor (dry) common for sparkling wines and does not indicate a different bottling, especially since both are white wines. This is a case of a varietal suffix difference where the shorter name is an abbreviation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Pommery, and share the core name 'Apanage Prestige'. The addition of 'Brut' in Wine A is a style descriptor (dry) common for sparkling wines and does not indicate a different bottling, especially since both are white wines. This is a case of a varietal suffix difference where the shorter name is an abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 413,
+  "tokens_out": 98,
+  "elapsed": 1.5780963897705078,
+  "error": null
+}

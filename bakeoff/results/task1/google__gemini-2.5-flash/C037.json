@@ -1,0 +1,13 @@
+{
+  "pair_id": "C037",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are from the same producer and vineyard, and are both Riesling. However, they have different German Pr\u00e4dikat levels (Kabinett vs. Sp\u00e4tlese), which indicates a distinct bottling and sweetness level, making them different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are from the same producer and vineyard, and are both Riesling. However, they have different German Pr\u00e4dikat levels (Kabinett vs. Sp\u00e4tlese), which indicates a distinct bottling and sweetness level, making them different wines.",
+  "parse_ok": true,
+  "tokens_in": 443,
+  "tokens_out": 74,
+  "elapsed": 2.020601511001587,
+  "error": null
+}

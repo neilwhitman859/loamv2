@@ -1,0 +1,13 @@
+{
+  "pair_id": "B016",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different appellation/classification wines: one is Barolo Riserva and the other is Barbaresco Riserva, which are distinct bottlings a consumer would encounter separately. They also list different grapes, with Wine A as 100% Croatina and Wine B as 100% Nebbiolo, and different grapes always mean different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different appellation/classification wines: one is Barolo Riserva and the other is Barbaresco Riserva, which are distinct bottlings a consumer would encounter separately. They also list different grapes, with Wine A as 100% Croatina and Wine B as 100% Nebbiolo, and different grapes always mean different wines.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 92,
+  "elapsed": 2.3940601348876953,
+  "error": null
+}

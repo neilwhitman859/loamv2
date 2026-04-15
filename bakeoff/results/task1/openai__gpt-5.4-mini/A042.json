@@ -1,0 +1,13 @@
+{
+  "pair_id": "A042",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.96,\"reasoning\":\"These records match on producer and base cuv\u00e9e name: \\\"Tonel Unico No. 183\\\". The only difference is the added varietal suffix \\\"Cabernet Franc\\\" in Wine B, and Wine A already lists Cabernet Franc as the grape, which fits the rule that a varietal suffix alone usually indicates the same wine. Both are red wines from Weinert, with no conflicting classification or style differences.\"}",
+  "verdict": "SAME",
+  "confidence": 0.96,
+  "reasoning": "These records match on producer and base cuv\u00e9e name: \"Tonel Unico No. 183\". The only difference is the added varietal suffix \"Cabernet Franc\" in Wine B, and Wine A already lists Cabernet Franc as the grape, which fits the rule that a varietal suffix alone usually indicates the same wine. Both are red wines from Weinert, with no conflicting classification or style differences.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 105,
+  "elapsed": 2.0261030197143555,
+  "error": null
+}

@@ -1,0 +1,23 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "The vinification summary claims the wine is essentially unoaked or minimally oaked, stating 'Oak influence, if any, is minimal and likely comes from older barrels or oak alternatives rather than new French barriques.' Ground truth shows 50% is fermented in French barriques with 9 months on lees and bâtonnage — this is significant oak treatment, not minimal.",
+    "The hook says 'without any oak ambition' which directly contradicts the ground truth of 50/50 stainless steel and French barriques fermentation.",
+    "The comparable wines section calls the wine 'unoaked' when comparing to Kim Crawford, which contradicts ground truth."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "millions of cases annually — not in context data and unverified specific production claim"
+  ],
+  "reasoning": "The output is exceptionally well-written with strong voice, great specificity, and genuinely useful comparisons and food pairings. However, the core winemaking characterization is wrong: the ground truth shows 50/50 stainless steel and French barriques fermentation with 9 months on lees and bâtonnage, yet the output repeatedly describes the wine as unoaked or minimally oaked. This error appears in the hook ('without any oak ambition'), the vinification summary, and the comparable wines section. The hook containing a provably wrong claim about oak would normally trigger the hard cap at 1.5, but the claim about being from Marlborough, Delegat, and the vineyard sourcing (Wairau Valley) are correct per ground truth. Given the hook's wrong oak claim is significant but the rest of the factual framework is largely correct, I'm applying a penalty but noting the hook error is about winemaking style rather than naming origin/geography. Still, it's a wrong factual claim in the hook that materially mischaracterizes the wine.",
+  "judge_tokens_in": 4008,
+  "judge_tokens_out": 467
+}

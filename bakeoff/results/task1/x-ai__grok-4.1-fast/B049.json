@@ -1,0 +1,13 @@
+{
+  "pair_id": "B049",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is explicitly white, while Wine B is red, representing different colors and thus distinct wine styles. The 'Rouge' suffix on Wine B confirms it as the red variant, separate from the white Casse-Croute. Same producer and base name do not override the color difference, per rules on color variations.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is explicitly white, while Wine B is red, representing different colors and thus distinct wine styles. The 'Rouge' suffix on Wine B confirms it as the red variant, separate from the white Casse-Croute. Same producer and base name do not override the color difference, per rules on color variations.",
+  "parse_ok": true,
+  "tokens_in": 557,
+  "tokens_out": 406,
+  "elapsed": 3.8887851238250732,
+  "error": null
+}

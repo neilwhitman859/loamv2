@@ -1,0 +1,13 @@
+{
+  "pair_id": "D014",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, are white sparkling Brut wines, and the name difference is only the inclusion/exclusion of 'Dry' and 'NV'\u2014common formatting variations for the same non-vintage cuv\u00e9e. There is no evidence of different grapes, vineyards, or styles to indicate separate bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, are white sparkling Brut wines, and the name difference is only the inclusion/exclusion of 'Dry' and 'NV'\u2014common formatting variations for the same non-vintage cuv\u00e9e. There is no evidence of different grapes, vineyards, or styles to indicate separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 87,
+  "elapsed": 3.5186102390289307,
+  "error": null
+}

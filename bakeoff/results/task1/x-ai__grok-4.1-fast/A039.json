@@ -1,0 +1,13 @@
+{
+  "pair_id": "A039",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines from Torii Mor share the identical core name 'Yamhill Carlton Select', with Wine B simply appending 'Pinot Noir'\u2014a varietal suffix that matches Wine A's specified grape and aligns with the rule that such differences alone indicate the same wine as an abbreviation. Both are red wines, and there is no evidence of multiple grape varieties from this vineyard/designation by the producer. This fits the encyclopedia single-page criterion perfectly.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines from Torii Mor share the identical core name 'Yamhill Carlton Select', with Wine B simply appending 'Pinot Noir'\u2014a varietal suffix that matches Wine A's specified grape and aligns with the rule that such differences alone indicate the same wine as an abbreviation. Both are red wines, and there is no evidence of multiple grape varieties from this vineyard/designation by the producer. This fits the encyclopedia single-page criterion perfectly.",
+  "parse_ok": true,
+  "tokens_in": 569,
+  "tokens_out": 500,
+  "elapsed": 5.545309066772461,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B012",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different colors and grape varieties, indicating they are different wines. Wine A is white and made from DONZELINHO BRANCO, while Wine B is red and made from a blend of MALVASIA FINA and FURMINT. The differences in color and grape composition are sufficient to classify them as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different colors and grape varieties, indicating they are different wines. Wine A is white and made from DONZELINHO BRANCO, while Wine B is red and made from a blend of MALVASIA FINA and FURMINT. The differences in color and grape composition are sufficient to classify them as different wines.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 96,
+  "elapsed": 1.698716640472412,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B041",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records represent wines made from entirely different grape varieties (Pinot Gris vs. Grenache) and different colors (White vs. Red). Even though they share the same producer and regional appellation, they are distinct bottlings that a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent wines made from entirely different grape varieties (Pinot Gris vs. Grenache) and different colors (White vs. Red). Even though they share the same producer and regional appellation, they are distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 76,
+  "elapsed": 1.90380859375,
+  "error": null
+}

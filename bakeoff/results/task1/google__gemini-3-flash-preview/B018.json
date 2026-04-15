@@ -1,0 +1,13 @@
+{
+  "pair_id": "B018",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records represent two distinct types of wine: Wine A is a Ros\u00e9 and Wine B is a White wine. Under the classification rules, different colors/wine types from the same producer and line constitute different wines, which is further confirmed by their unique LWIN identifiers.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records represent two distinct types of wine: Wine A is a Ros\u00e9 and Wine B is a White wine. Under the classification rules, different colors/wine types from the same producer and line constitute different wines, which is further confirmed by their unique LWIN identifiers.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 77,
+  "elapsed": 2.020174980163574,
+  "error": null
+}

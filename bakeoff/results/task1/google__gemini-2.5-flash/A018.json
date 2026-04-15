@@ -1,0 +1,13 @@
+{
+  "pair_id": "A018",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A is a Chardonnay, while Wine B is a Viognier, as indicated by the grape variety in its name. Even though the vineyard name 'Quarter Acre' is the same, different grape varieties always signify different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Chardonnay, while Wine B is a Viognier, as indicated by the grape variety in its name. Even though the vineyard name 'Quarter Acre' is the same, different grape varieties always signify different wines.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 82,
+  "elapsed": 1.421771764755249,
+  "error": null
+}

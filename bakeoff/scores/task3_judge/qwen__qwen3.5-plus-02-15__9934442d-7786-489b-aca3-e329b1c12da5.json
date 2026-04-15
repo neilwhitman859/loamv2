@@ -1,0 +1,29 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "qwen/qwen3.5-plus-02-15",
+  "correctness": 1.5,
+  "voice": 3.5,
+  "specificity": 3.5,
+  "usefulness": 3.0,
+  "composite": 2.7,
+  "wrong_facts": [
+    "Omrah is described as 'their premium Pinot Noir expression' when ground truth confirms it is actually the second-label/value range",
+    "Claims indigenous yeasts and whole-bunch fermentation with no supporting data — these are fabricated winemaking details",
+    "Fabricated price range of $45-60 AUD — no pricing data was provided and Omrah as a second label would likely be much cheaper",
+    "Claims sourcing from 'select blocks within Mount Barker and Frankland River sub-regions' — ground truth says Omrah uses younger vineyards or bought-in fruit",
+    "Ancient granite soils in the hook — while Great Southern has some granite, the ground truth specifies gravelly loam soils for Plantagenet's vineyards",
+    "Aging potential of 15 years is implausible for a second-label Pinot Noir that received only bronze medals",
+    "Yarra Yering Dry Red No. 1 is not a Pinot Noir competitor — it's a Bordeaux blend"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$45-60 AUD price range",
+    "14°C storage temperature",
+    "aging_potential_years: 15"
+  ],
+  "reasoning": "The most damaging error is calling Omrah a 'premium Pinot Noir expression' when ground truth confirms it's the second/value label — this fundamentally misrepresents the wine's market position and appears in the wine_summary. Multiple winemaking details (indigenous yeasts, whole-bunch fermentation) are fabricated with no basis in context or ground truth. The $45-60 AUD price is fabricated and likely too high for a value-tier label. The comparison to Yarra Yering Dry Red No. 1 is misleading since that's a Cabernet-based blend. The voice is decent — direct and opinionated — but built on a foundation of incorrect claims. Hard penalty applied for fabricated numbers.",
+  "judge_tokens_in": 3072,
+  "judge_tokens_out": 485
+}

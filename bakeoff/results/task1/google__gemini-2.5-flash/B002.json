@@ -1,0 +1,13 @@
+{
+  "pair_id": "B002",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines are listed with different colors (red vs. white). Although the grape varieties are listed identically, the color difference indicates they are distinct bottlings, likely a red blend and a white blend, even if the grape lists are erroneous or incomplete.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are listed with different colors (red vs. white). Although the grape varieties are listed identically, the color difference indicates they are distinct bottlings, likely a red blend and a white blend, even if the grape lists are erroneous or incomplete.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 74,
+  "elapsed": 1.5497572422027588,
+  "error": null
+}

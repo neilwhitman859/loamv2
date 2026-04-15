@@ -1,0 +1,13 @@
+{
+  "pair_id": "C015",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines have different identifiers (No. 10 vs No. 15) and different LWIN numbers, indicating they are distinct bottlings from the same producer. Although they share the same producer, color, and style (Blanc de Blancs), the difference in identifiers suggests different lots or cuv\u00e9es. This implies they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines have different identifiers (No. 10 vs No. 15) and different LWIN numbers, indicating they are distinct bottlings from the same producer. Although they share the same producer, color, and style (Blanc de Blancs), the difference in identifiers suggests different lots or cuv\u00e9es. This implies they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 517,
+  "tokens_out": 93,
+  "elapsed": 1.5787405967712402,
+  "error": null
+}

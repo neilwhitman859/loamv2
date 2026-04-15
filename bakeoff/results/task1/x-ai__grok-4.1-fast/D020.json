@@ -1,0 +1,13 @@
+{
+  "pair_id": "D020",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (19 Crimes) and core name 'The Banished Dark', with 'Red' in Wine A serving as a color descriptor rather than a varietal or stylistic difference. Both are explicitly red wines, ruling out color or grape variety discrepancies. This aligns with rules allowing name formatting variations (e.g., added descriptors) for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (19 Crimes) and core name 'The Banished Dark', with 'Red' in Wine A serving as a color descriptor rather than a varietal or stylistic difference. Both are explicitly red wines, ruling out color or grape variety discrepancies. This aligns with rules allowing name formatting variations (e.g., added descriptors) for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 559,
+  "tokens_out": 517,
+  "elapsed": 5.72935152053833,
+  "error": null
+}

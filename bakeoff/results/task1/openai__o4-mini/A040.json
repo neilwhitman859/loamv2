@@ -1,0 +1,13 @@
+{
+  "pair_id": "A040",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.85,\"reasoning\":\"Wine A is a Merlot/Chardonnay blend while Wine B is single-varietal Pinot Noir, so they have different grapes and represent distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A is a Merlot/Chardonnay blend while Wine B is single-varietal Pinot Noir, so they have different grapes and represent distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 234,
+  "elapsed": 5.562482833862305,
+  "error": null
+}

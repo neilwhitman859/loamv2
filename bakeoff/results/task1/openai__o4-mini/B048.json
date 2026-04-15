@@ -1,0 +1,13 @@
+{
+  "pair_id": "B048",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.95,\"reasoning\":\"They use different grape varieties (Pinot Gris vs. Pinot Blanc) and colors (red vs. white), which always indicates distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "They use different grape varieties (Pinot Gris vs. Pinot Blanc) and colors (red vs. white), which always indicates distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 416,
+  "tokens_out": 144,
+  "elapsed": 3.211573600769043,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A016",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Berton Vineyards under the 'Metal Label The' line, with Wine B simply appending the varietal name 'Vermentino' to the same base name. Wine A is confirmed to be Vermentino (white grape), matching Wine B's full name. This is a classic case of a shorter abbreviated name vs. the full name with varietal suffix, representing the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Berton Vineyards under the 'Metal Label The' line, with Wine B simply appending the varietal name 'Vermentino' to the same base name. Wine A is confirmed to be Vermentino (white grape), matching Wine B's full name. This is a classic case of a shorter abbreviated name vs. the full name with varietal suffix, representing the same wine.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 113,
+  "elapsed": 3.083028793334961,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A029",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is listed with grapes AUXERROIS and COT, indicating a blend, while Wine B is named 'Chasseresse Auxerrois,' implying a single-varietal Auxerrois wine. Different grape compositions mean distinct bottlings, even from the same producer and apparent vineyard/cuv\u00e9e. The varietal suffix rule does not apply here due to the multiple grapes in Wine A.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is listed with grapes AUXERROIS and COT, indicating a blend, while Wine B is named 'Chasseresse Auxerrois,' implying a single-varietal Auxerrois wine. Different grape compositions mean distinct bottlings, even from the same producer and apparent vineyard/cuv\u00e9e. The varietal suffix rule does not apply here due to the multiple grapes in Wine A.",
+  "parse_ok": true,
+  "tokens_in": 573,
+  "tokens_out": 1010,
+  "elapsed": 7.809471130371094,
+  "error": null
+}

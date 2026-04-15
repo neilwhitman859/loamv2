@@ -1,0 +1,13 @@
+{
+  "pair_id": "C012",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Ros\u00e9 and Wine B is a white Champagne (Brut). These represent distinct bottlings with different color profiles and production methods, which consumers would encounter as separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Ros\u00e9 and Wine B is a white Champagne (Brut). These represent distinct bottlings with different color profiles and production methods, which consumers would encounter as separate products.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 61,
+  "elapsed": 1.7232437133789062,
+  "error": null
+}

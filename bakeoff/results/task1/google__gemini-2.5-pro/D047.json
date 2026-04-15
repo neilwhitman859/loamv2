@@ -1,0 +1,13 @@
+{
+  "pair_id": "D047",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wine names explicitly state different grape varieties, 'Merlot' for Wine A and 'Cabernet' for Wine B. These represent distinct varietal bottlings from the producer. Although the provided grape data for Wine B is listed as 100% Merlot, this is a clear contradiction with its name and almost certainly a data error; a producer would not label a Merlot wine as 'Cabernet'. These are two separate products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wine names explicitly state different grape varieties, 'Merlot' for Wine A and 'Cabernet' for Wine B. These represent distinct varietal bottlings from the producer. Although the provided grape data for Wine B is listed as 100% Merlot, this is a clear contradiction with its name and almost certainly a data error; a producer would not label a Merlot wine as 'Cabernet'. These are two separate products.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 1707,
+  "elapsed": 16.692049741744995,
+  "error": null
+}

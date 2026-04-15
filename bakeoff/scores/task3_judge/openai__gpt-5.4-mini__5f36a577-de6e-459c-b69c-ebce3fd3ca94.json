@@ -1,0 +1,26 @@
+{
+  "wine_id": "5f36a577-de6e-459c-b69c-ebce3fd3ca94",
+  "wine_name": "Howard Park Leston Cabernet Sauvignon, Western Australia",
+  "tier": "B",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.575,
+  "wrong_facts": [
+    "The hook and throughout the output emphasize Syrah as a significant blending component, but ground truth confirms this is 'primarily Cabernet Sauvignon (single varietal)' — the Syrah component is minimal or absent in most vintages, making the entire narrative about Syrah's peppery contribution misleading",
+    "The value_assessment fabricates a price range of $30-$45 retail with no price data provided",
+    "Cellar recommendation says 5-8 years for 2015, but ground truth says up to 15 years cellaring potential",
+    "Forest Grove ironstone is mentioned as a soil type for the Leston vineyard, but ground truth specifies gravelly loam over clay for the Leston Vineyard in Wilyabrup — Forest Grove ironstone is a different Margaret River soil type not specific to this vineyard"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$30-$45 retail price range fabricated with no price data provided",
+    "12-14°C storage temperature not from context data (though this is standard wine knowledge, not harmful)",
+    "40% new French oak and 18 months aging are ground truth but were NOT in the context data provided to the model — however the model did not state these numbers"
+  ],
+  "reasoning": "The output's central thesis — that Syrah is a meaningful blending partner shaping the wine's character — is problematic. While Syrah appears in the grape data, the ground truth confirms this is essentially a single-varietal Cabernet Sauvignon. The entire hook, wine summary, food pairing rationale, and insider take are built around the Syrah contribution, which overstates its role significantly. The hook itself isn't provably wrong (Syrah IS listed in the context data), but the emphasis is misleading given ground truth. The fabricated price range ($30-$45) with no price data provided is a clear fabrication. The voice is strong — direct, opinionated, specific, with good food pairings and real comparable wines. Specificity is excellent with named soils, climate patterns, and real producers. But the factual foundation is shaky enough to undermine trust.",
+  "judge_tokens_in": 3729,
+  "judge_tokens_out": 525
+}

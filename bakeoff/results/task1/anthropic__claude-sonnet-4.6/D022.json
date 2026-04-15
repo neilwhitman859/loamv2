@@ -1,0 +1,13 @@
+{
+  "pair_id": "D022",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from producer La Tour Blanche, but 'Duo de la Tour Blanche' and 'Brumes de La Tour Blanche' are distinct named cuv\u00e9es with different names indicating separate bottlings. La Tour Blanche (Sauternes) produces multiple wines under different labels \u2014 the main ch\u00e2teau wine, plus secondary/different cuv\u00e9es like 'Les Charmilles de Tour Blanche' and others. 'Duo' and 'Brumes' are clearly different cuv\u00e9e names, not abbreviations of each other, and they have different LWIN codes confirming they are catalogued as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from producer La Tour Blanche, but 'Duo de la Tour Blanche' and 'Brumes de La Tour Blanche' are distinct named cuv\u00e9es with different names indicating separate bottlings. La Tour Blanche (Sauternes) produces multiple wines under different labels \u2014 the main ch\u00e2teau wine, plus secondary/different cuv\u00e9es like 'Les Charmilles de Tour Blanche' and others. 'Duo' and 'Brumes' are clearly different cuv\u00e9e names, not abbreviations of each other, and they have different LWIN codes confirming they are catalogued as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 165,
+  "elapsed": 5.769326448440552,
+  "error": null
+}

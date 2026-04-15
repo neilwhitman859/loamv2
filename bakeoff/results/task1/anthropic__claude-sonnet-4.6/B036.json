@@ -1,0 +1,13 @@
+{
+  "pair_id": "B036",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is explicitly labeled 'Blanco' (white) while Wine B has no color suffix and is classified as red. Different colors from the same producer and vineyard designation represent distinct bottlings. The LWIN codes also differ, confirming these are separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is explicitly labeled 'Blanco' (white) while Wine B has no color suffix and is classified as red. Different colors from the same producer and vineyard designation represent distinct bottlings. The LWIN codes also differ, confirming these are separate wines.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 80,
+  "elapsed": 3.2222535610198975,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D032",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.88, \"reasoning\": \"Wine B includes 'Reserve' in its name, indicating a higher-tier or special selection bottling distinct from the standard 'Hallgarten Riesling Trocken'. The 'Reserve' designation typically signifies a different quality tier or selection process, making these separate bottlings a consumer would encounter distinctly. The different LWIN codes further confirm these are catalogued as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.88,
+  "reasoning": "Wine B includes 'Reserve' in its name, indicating a higher-tier or special selection bottling distinct from the standard 'Hallgarten Riesling Trocken'. The 'Reserve' designation typically signifies a different quality tier or selection process, making these separate bottlings a consumer would encounter distinctly. The different LWIN codes further confirm these are catalogued as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 503,
+  "tokens_out": 108,
+  "elapsed": 3.886989116668701,
+  "error": null
+}

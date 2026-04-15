@@ -1,0 +1,13 @@
+{
+  "pair_id": "A031",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Pierre Girardin's 'Eclat de Calcaire' is a specific cuv\u00e9e name used for his regional Bourgogne Rouge; the addition of 'Pinot Noir' in Wine B is simply a varietal descriptor for the same wine. Since both are red wines from the same producer and cuv\u00e9e name, they represent the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Pierre Girardin's 'Eclat de Calcaire' is a specific cuv\u00e9e name used for his regional Bourgogne Rouge; the addition of 'Pinot Noir' in Wine B is simply a varietal descriptor for the same wine. Since both are red wines from the same producer and cuv\u00e9e name, they represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 90,
+  "elapsed": 1.7358498573303223,
+  "error": null
+}

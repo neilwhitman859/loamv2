@@ -1,0 +1,13 @@
+{
+  "pair_id": "B018",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.90, \"reasoning\": \"Wine A is a ros\u00e9 while Wine B is a white wine from the same producer and cuv\u00e9e name, so they represent distinct bottlings based on color.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is a ros\u00e9 while Wine B is a white wine from the same producer and cuv\u00e9e name, so they represent distinct bottlings based on color.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 203,
+  "elapsed": 4.170720815658569,
+  "error": null
+}

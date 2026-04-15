@@ -1,0 +1,13 @@
+{
+  "pair_id": "C023",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer, Bleasdale, and the same appellation, Langhorne Creek. The difference in grape specification (SYRAH vs Shiraz) is a varietal suffix difference, which usually indicates the same wine. The color and name format differences do not override this, suggesting they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer, Bleasdale, and the same appellation, Langhorne Creek. The difference in grape specification (SYRAH vs Shiraz) is a varietal suffix difference, which usually indicates the same wine. The color and name format differences do not override this, suggesting they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 90,
+  "elapsed": 2.3097822666168213,
+  "error": null
+}

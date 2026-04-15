@@ -1,0 +1,13 @@
+{
+  "pair_id": "C035",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"While both wines share the same producer (Markus Molitor), vineyard (Bernkasteler Doctor), grape (Riesling), and Pr\u00e4dikat level (Auslese), they differ in capsule color (Gold vs White) and auction designation, which indicate distinct bottlings or lots from different auction events. The different LWINs (1731626 vs 1731613) confirm these are separate wine records in the database.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "While both wines share the same producer (Markus Molitor), vineyard (Bernkasteler Doctor), grape (Riesling), and Pr\u00e4dikat level (Auslese), they differ in capsule color (Gold vs White) and auction designation, which indicate distinct bottlings or lots from different auction events. The different LWINs (1731626 vs 1731613) confirm these are separate wine records in the database.",
+  "parse_ok": true,
+  "tokens_in": 527,
+  "tokens_out": 126,
+  "elapsed": 8.50129508972168,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D007",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.98, \"reasoning\": \"Wine A contains COT and Cabernet Sauvignon while Wine B is 100% Merlot Noir \u2014 these are entirely different grape compositions. Different grapes always means different wines, regardless of the similar naming. These are distinct bottlings from Vistalba under the 'Corte' label but with different varietal content.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Wine A contains COT and Cabernet Sauvignon while Wine B is 100% Merlot Noir \u2014 these are entirely different grape compositions. Different grapes always means different wines, regardless of the similar naming. These are distinct bottlings from Vistalba under the 'Corte' label but with different varietal content.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 97,
+  "elapsed": 3.113795518875122,
+  "error": null
+}

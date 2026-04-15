@@ -1,0 +1,13 @@
+{
+  "pair_id": "C033",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are 'Blanc de Blancs' and 'Vintage' from the same producer, Bonnaire. The slight difference in the LWIN numbers is likely due to different bottlings of the same wine, as the wines share all other key attributes.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are 'Blanc de Blancs' and 'Vintage' from the same producer, Bonnaire. The slight difference in the LWIN numbers is likely due to different bottlings of the same wine, as the wines share all other key attributes.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 71,
+  "elapsed": 1.6682407855987549,
+  "error": null
+}

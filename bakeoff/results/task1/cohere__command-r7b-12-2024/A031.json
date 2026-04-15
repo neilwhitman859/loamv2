@@ -1,0 +1,13 @@
+{
+  "pair_id": "A031",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different grape varieties, which is a key differentiator. While they share the same producer and color, the distinct grape variety (Pinot Noir) indicates a different wine type, making them separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different grape varieties, which is a key differentiator. While they share the same producer and color, the distinct grape variety (Pinot Noir) indicates a different wine type, making them separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 472,
+  "tokens_out": 70,
+  "elapsed": 1.873298168182373,
+  "error": null
+}

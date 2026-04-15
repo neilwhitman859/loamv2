@@ -1,0 +1,28 @@
+{
+  "page_id": "page_040",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Chardonnay\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": null, \"oak\": {\"vessel\": \"French Oak\", \"months\": null, \"new_pct\": null, \"origin\": \"French\"}, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": \"Jason Becker\", \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Chardonnay",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "French Oak",
+        "months": null,
+        "new_pct": null,
+        "origin": "French"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jason Becker",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 13397,
+  "tokens_out": 87,
+  "elapsed": 6.050681114196777,
+  "error": null
+}

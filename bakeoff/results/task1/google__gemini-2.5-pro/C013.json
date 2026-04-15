@@ -1,0 +1,13 @@
+{
+  "pair_id": "C013",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Both records describe a wine from the same producer, Dr. Wehrheim, with the same grape (Riesling), the same vineyard (Kastanienbusch), and the same German Pr\u00e4dikat level (Auslese). The difference in word order is a simple formatting variation and does not represent a distinct wine.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both records describe a wine from the same producer, Dr. Wehrheim, with the same grape (Riesling), the same vineyard (Kastanienbusch), and the same German Pr\u00e4dikat level (Auslese). The difference in word order is a simple formatting variation and does not represent a distinct wine.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 1374,
+  "elapsed": 13.197093963623047,
+  "error": null
+}

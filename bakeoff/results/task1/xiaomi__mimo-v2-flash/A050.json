@@ -1,0 +1,13 @@
+{
+  "pair_id": "A050",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A 'Cayenne' and Wine B 'Cayenne Syrah' share the same producer (de Castelnau) and color (red), with the name difference being a simple varietal suffix. The presence of Durif in Wine A's grape list is consistent with Syrah (Durif is a synonym for Syrah), indicating they represent the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A 'Cayenne' and Wine B 'Cayenne Syrah' share the same producer (de Castelnau) and color (red), with the name difference being a simple varietal suffix. The presence of Durif in Wine A's grape list is consistent with Syrah (Durif is a synonym for Syrah), indicating they represent the same wine.",
+  "parse_ok": true,
+  "tokens_in": 488,
+  "tokens_out": 101,
+  "elapsed": 2.7212226390838623,
+  "error": null
+}

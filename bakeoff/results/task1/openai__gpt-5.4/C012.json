@@ -1,0 +1,13 @@
+{
+  "pair_id": "C012",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different bottlings because one is Brut Ros\u00e9 and the other is standard Brut white Champagne. Color/style differences (ros\u00e9 vs white) make them separate wines even when producer and cuv\u00e9e name are otherwise the same, and the distinct LWINs reinforce that they are not the same encyclopedia entry.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different bottlings because one is Brut Ros\u00e9 and the other is standard Brut white Champagne. Color/style differences (ros\u00e9 vs white) make them separate wines even when producer and cuv\u00e9e name are otherwise the same, and the distinct LWINs reinforce that they are not the same encyclopedia entry.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 84,
+  "elapsed": 2.3911619186401367,
+  "error": null
+}

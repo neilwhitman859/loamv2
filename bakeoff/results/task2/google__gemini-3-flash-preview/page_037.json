@@ -1,0 +1,28 @@
+{
+  "page_id": "page_037",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Cabernet Sauvignon\", \"vintage_year\": 2021, \"abv_pct\": null, \"blend\": [{\"grape\": \"Cabernet Sauvignon\", \"pct\": null}], \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": \"organic\"}]}",
+  "wines_found": [
+    {
+      "name": "Cabernet Sauvignon",
+      "vintage_year": 2021,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Cabernet Sauvignon",
+          "pct": null
+        }
+      ],
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 36283,
+  "tokens_out": 79,
+  "elapsed": 2.078166961669922,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A037",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine B is simply the varietal-specific name for Wine A. Since both are red wines produced by Squawking Magpie from the same Syrah grape, 'Stoned Crow' acts as the cuv\u00e9e name and 'Stoned Crow Syrah' is the full descriptive name for the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine B is simply the varietal-specific name for Wine A. Since both are red wines produced by Squawking Magpie from the same Syrah grape, 'Stoned Crow' acts as the cuv\u00e9e name and 'Stoned Crow Syrah' is the full descriptive name for the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 84,
+  "elapsed": 1.6085612773895264,
+  "error": null
+}

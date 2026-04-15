@@ -1,0 +1,13 @@
+{
+  "pair_id": "A046",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the varietal suffix 'Syrah' appended to Wine B, which is typically just an abbreviation of the same wine. Both share the same producer (Carlisle), same color (red), and the same primary grape (Syrah), with no evidence of a different vineyard or style tier.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the varietal suffix 'Syrah' appended to Wine B, which is typically just an abbreviation of the same wine. Both share the same producer (Carlisle), same color (red), and the same primary grape (Syrah), with no evidence of a different vineyard or style tier.",
+  "parse_ok": true,
+  "tokens_in": 436,
+  "tokens_out": 85,
+  "elapsed": 4.768467903137207,
+  "error": null
+}

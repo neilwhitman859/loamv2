@@ -1,0 +1,13 @@
+{
+  "pair_id": "B001",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are made from two distinct grape varieties. Although Sauvignon Gris is a color mutation of Sauvignon Blanc, they are considered separate grapes that produce different wine profiles. The rule states that different grapes always constitute different wines, making these two separate bottlings from the same producer.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are made from two distinct grape varieties. Although Sauvignon Gris is a color mutation of Sauvignon Blanc, they are considered separate grapes that produce different wine profiles. The rule states that different grapes always constitute different wines, making these two separate bottlings from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 1099,
+  "elapsed": 11.068885087966919,
+  "error": null
+}

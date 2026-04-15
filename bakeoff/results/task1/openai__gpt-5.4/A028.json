@@ -1,0 +1,13 @@
+{
+  "pair_id": "A028",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.96,\"reasoning\":\"Both records are from Owen Roe and refer to the same red wine, with Wine A explicitly listing Syrah as the grape. The only difference is that Wine B appends the varietal name to the cuv\u00e9e, which is typically just a naming variation rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.96,
+  "reasoning": "Both records are from Owen Roe and refer to the same red wine, with Wine A explicitly listing Syrah as the grape. The only difference is that Wine B appends the varietal name to the cuv\u00e9e, which is typically just a naming variation rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 416,
+  "tokens_out": 79,
+  "elapsed": 2.4246110916137695,
+  "error": null
+}

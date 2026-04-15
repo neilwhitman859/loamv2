@@ -1,0 +1,13 @@
+{
+  "pair_id": "C047",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records represent distinct wine styles based on color and composition: Wine A is a white Champagne (Brut Nature) while Wine B is a Ros\u00e9 (Brut Rose Nature). In Champagne production, these are separate bottlings with different vinification processes and market identities.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent distinct wine styles based on color and composition: Wine A is a white Champagne (Brut Nature) while Wine B is a Ros\u00e9 (Brut Rose Nature). In Champagne production, these are separate bottlings with different vinification processes and market identities.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 78,
+  "elapsed": 1.6002907752990723,
+  "error": null
+}

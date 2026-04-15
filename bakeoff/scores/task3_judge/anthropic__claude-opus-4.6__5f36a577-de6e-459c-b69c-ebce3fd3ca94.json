@@ -1,0 +1,30 @@
+{
+  "wine_id": "5f36a577-de6e-459c-b69c-ebce3fd3ca94",
+  "wine_name": "Howard Park Leston Cabernet Sauvignon, Western Australia",
+  "tier": "B",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "Price range of $30-40 AUD is fabricated - no price data was provided",
+    "Wilyabrup described as 'the warmest, most structured part of the appellation' - Wilyabrup is not typically characterized as the warmest sub-region; that distinction often goes to Carbunup or other inland areas",
+    "Shiraz blend percentage stated as 'typically around 5-10%' is fabricated - no blend percentages were provided",
+    "Diana Madeline described as having 'a higher Merlot percentage' - Diana Madeline is actually a Cabernet-dominant blend, and the comparison implies Leston has significant Merlot which it doesn't",
+    "The ground truth says the wine is 'primarily Cabernet Sauvignon (single varietal)' yet the output repeatedly emphasizes the Shiraz component as a defining feature - the context data does list Syrah as a grape but the ground truth suggests it's marketed as a single-varietal Cabernet"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$30-40 AUD price range",
+    "$20-28 USD price range",
+    "5-10% Shiraz blend percentage",
+    "3% of Australia's wine production figure for Margaret River",
+    "Store at 12-15°C",
+    "$60+ premium for flagship bottlings"
+  ],
+  "reasoning": "The output is exceptionally well-written with strong voice, specificity, and usefulness - it reads like expert wine writing with real opinions and actionable information. However, it fabricates multiple specific numbers not present in the context data (prices, blend percentages, production statistics, storage temperatures). The Wilyabrup characterization as 'warmest' is questionable. The heavy emphasis on Shiraz as a defining feature conflicts with ground truth showing this is marketed as a single-varietal Cabernet. The soil description (gravelly loam over clay) matches ground truth well. The hook's claim about Wilyabrup being 'the warmest, most structured part' is not provably wrong enough to trigger the hook hard cap, but the fabricated numbers trigger the numbers hard cap consideration. Given the volume of fabricated numbers, correctness is capped significantly, though many qualitative claims are accurate.",
+  "judge_tokens_in": 4039,
+  "judge_tokens_out": 541
+}

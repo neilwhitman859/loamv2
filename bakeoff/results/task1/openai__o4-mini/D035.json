@@ -1,0 +1,13 @@
+{
+  "pair_id": "D035",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.75, \"reasoning\": \"The suffix \u201cGold\u201d indicates a distinct cuv\u00e9e rather than a simple varietal abbreviation. Despite shared producer and base name, it denotes a separate bottling with its own designation, so these are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.75,
+  "reasoning": "The suffix \u201cGold\u201d indicates a distinct cuv\u00e9e rather than a simple varietal abbreviation. Despite shared producer and base name, it denotes a separate bottling with its own designation, so these are different wines.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 275,
+  "elapsed": 11.532496213912964,
+  "error": null
+}

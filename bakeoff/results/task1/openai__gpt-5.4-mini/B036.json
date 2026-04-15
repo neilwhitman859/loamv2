@@ -1,0 +1,13 @@
+{
+  "pair_id": "B036",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are explicitly different by color: Wine A is Blanco (white) while Wine B is red, and color difference means distinct wines. The shared producer and cuv\u00e9e name do not override that they are separate bottlings. The differing LWINs also support that they are not the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are explicitly different by color: Wine A is Blanco (white) while Wine B is red, and color difference means distinct wines. The shared producer and cuv\u00e9e name do not override that they are separate bottlings. The differing LWINs also support that they are not the same wine.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 82,
+  "elapsed": 1.7693147659301758,
+  "error": null
+}

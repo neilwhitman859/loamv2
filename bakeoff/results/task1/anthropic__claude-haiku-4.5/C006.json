@@ -1,0 +1,13 @@
+{
+  "pair_id": "C006",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a white/brut sparkling wine while Wine B is explicitly labeled as ros\u00e9, representing two distinct color styles from the same producer and cuv\u00e9e. Different colors (white vs ros\u00e9) constitute different wines that consumers would encounter and purchase separately, even when sharing the same base name and classification.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a white/brut sparkling wine while Wine B is explicitly labeled as ros\u00e9, representing two distinct color styles from the same producer and cuv\u00e9e. Different colors (white vs ros\u00e9) constitute different wines that consumers would encounter and purchase separately, even when sharing the same base name and classification.",
+  "parse_ok": true,
+  "tokens_in": 525,
+  "tokens_out": 92,
+  "elapsed": 1.9414591789245605,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D040",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, Santi, and the same color, red. The difference in name, 'Solane Superiore' vs 'Superiore', suggests a possible abbreviation or stylistic variation, which is a common reason for same-wine record differences.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, Santi, and the same color, red. The difference in name, 'Solane Superiore' vs 'Superiore', suggests a possible abbreviation or stylistic variation, which is a common reason for same-wine record differences.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 78,
+  "elapsed": 1.869377851486206,
+  "error": null
+}

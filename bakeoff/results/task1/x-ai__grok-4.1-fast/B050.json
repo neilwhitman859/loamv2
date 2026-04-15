@@ -1,0 +1,13 @@
+{
+  "pair_id": "B050",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":1.0,\"reasoning\":\"Both are Cr\u00e9mant sparkling wines from producer Happs, but Wine A is white while Wine B is ros\u00e9, indicated by the color and name 'Cremant Rose'. Different colors (white vs ros\u00e9) mean distinct bottlings that consumers encounter separately, similar to the rule for ros\u00e9 vs red. Distinct LWIN numbers further confirm they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both are Cr\u00e9mant sparkling wines from producer Happs, but Wine A is white while Wine B is ros\u00e9, indicated by the color and name 'Cremant Rose'. Different colors (white vs ros\u00e9) mean distinct bottlings that consumers encounter separately, similar to the rule for ros\u00e9 vs red. Distinct LWIN numbers further confirm they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 563,
+  "tokens_out": 458,
+  "elapsed": 3.087170362472534,
+  "error": null
+}

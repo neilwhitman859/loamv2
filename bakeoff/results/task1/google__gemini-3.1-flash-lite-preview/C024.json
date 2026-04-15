@@ -1,0 +1,13 @@
+{
+  "pair_id": "C024",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"Francis Boulard's 'Les Murgiers' is a well-known cuv\u00e9e that is frequently referred to simply as 'Murgiers' in trade listings and databases. The difference in LWIN codes is common for the same wine when different database entries exist for the same product, but the name, producer, and technical specifications (Extra Brut, white) confirm they are the same bottling.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Francis Boulard's 'Les Murgiers' is a well-known cuv\u00e9e that is frequently referred to simply as 'Murgiers' in trade listings and databases. The difference in LWIN codes is common for the same wine when different database entries exist for the same product, but the name, producer, and technical specifications (Extra Brut, white) confirm they are the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 107,
+  "elapsed": 1.970533847808838,
+  "error": null
+}

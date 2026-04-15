@@ -1,0 +1,13 @@
+{
+  "pair_id": "D022",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines have different names (Duo de la Tour Blanche vs Brumes de La Tour Blanche) and different LWIN numbers, indicating they are likely different cuv\u00e9es or bottlings from the same producer. Without further information on their grape varieties or styles, the difference in names and LWINs suggests they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines have different names (Duo de la Tour Blanche vs Brumes de La Tour Blanche) and different LWIN numbers, indicating they are likely different cuv\u00e9es or bottlings from the same producer. Without further information on their grape varieties or styles, the difference in names and LWINs suggests they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 89,
+  "elapsed": 1.9847288131713867,
+  "error": null
+}

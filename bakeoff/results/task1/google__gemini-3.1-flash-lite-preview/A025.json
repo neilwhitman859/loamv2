@@ -1,0 +1,13 @@
+{
+  "pair_id": "A025",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Laurus is the premium range produced by Gabriel Meffre, and the 'Laurus Syrah' is the specific varietal bottling within that range. Since the producer is the same and the base wine is a 100% Syrah, the addition of the varietal name is simply a descriptive suffix for the same product.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Laurus is the premium range produced by Gabriel Meffre, and the 'Laurus Syrah' is the specific varietal bottling within that range. Since the producer is the same and the base wine is a 100% Syrah, the addition of the varietal name is simply a descriptive suffix for the same product.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 90,
+  "elapsed": 1.199225664138794,
+  "error": null
+}

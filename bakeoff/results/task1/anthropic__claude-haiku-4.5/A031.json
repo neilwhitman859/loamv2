@@ -1,0 +1,13 @@
+{
+  "pair_id": "A031",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.92, \"reasoning\": \"Both wines are from the same producer (Pierre Girardin) with the same base name (Eclat de Calcaire) and color (red). Wine B simply appends the varietal suffix 'Pinot Noir' to Wine A's name, which is a common naming convention where the shorter name is an abbreviation of the longer one. Unless Pierre Girardin produces multiple distinct bottlings from this vineyard with different grape varieties, this represents the same wine with variant naming.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.92,
+  "reasoning": "Both wines are from the same producer (Pierre Girardin) with the same base name (Eclat de Calcaire) and color (red). Wine B simply appends the varietal suffix 'Pinot Noir' to Wine A's name, which is a common naming convention where the shorter name is an abbreviation of the longer one. Unless Pierre Girardin produces multiple distinct bottlings from this vineyard with different grape varieties, this represents the same wine with variant naming.",
+  "parse_ok": true,
+  "tokens_in": 507,
+  "tokens_out": 132,
+  "elapsed": 4.356384754180908,
+  "error": null
+}

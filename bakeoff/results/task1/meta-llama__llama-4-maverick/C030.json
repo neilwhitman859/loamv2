@@ -1,0 +1,13 @@
+{
+  "pair_id": "C030",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is labeled as 'Reserva' while Wine B is labeled as 'Gran Reserva', indicating different classification tiers within the same producer's portfolio, which is a key differentiator according to the rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is labeled as 'Reserva' while Wine B is labeled as 'Gran Reserva', indicating different classification tiers within the same producer's portfolio, which is a key differentiator according to the rules.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 64,
+  "elapsed": 1.491781234741211,
+  "error": null
+}

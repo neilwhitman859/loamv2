@@ -1,0 +1,13 @@
+{
+  "pair_id": "B012",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines are made from entirely different grape varieties; Wine A is made from Donzelinho Branco, while Wine B is a blend of Malvasia Fina and Furmint. According to the rules, different grapes always mean a different wine. Additionally, the wines have different colors (white vs. red) and the term 'Colheita' signifies a specific single-vintage classification of Madeira, distinguishing it from a more generic bottling.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from entirely different grape varieties; Wine A is made from Donzelinho Branco, while Wine B is a blend of Malvasia Fina and Furmint. According to the rules, different grapes always mean a different wine. Additionally, the wines have different colors (white vs. red) and the term 'Colheita' signifies a specific single-vintage classification of Madeira, distinguishing it from a more generic bottling.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 1156,
+  "elapsed": 11.869347333908081,
+  "error": null
+}

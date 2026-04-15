@@ -1,0 +1,13 @@
+{
+  "pair_id": "D012",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grape varieties, Boal and Sercial, which indicates they are different wines. Despite sharing the same producer, Borges, and classification as Reserva, the varietal difference takes precedence.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grape varieties, Boal and Sercial, which indicates they are different wines. Despite sharing the same producer, Borges, and classification as Reserva, the varietal difference takes precedence.",
+  "parse_ok": true,
+  "tokens_in": 414,
+  "tokens_out": 64,
+  "elapsed": 1.125032663345337,
+  "error": null
+}

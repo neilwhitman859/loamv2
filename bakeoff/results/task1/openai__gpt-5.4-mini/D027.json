@@ -1,0 +1,13 @@
+{
+  "pair_id": "D027",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Although both records are Cupcake Vineyards Moscato from Tre Venezie and share the same white style, the grape compositions are not the same. Wine A is listed as Muscat of Alexandria, while Wine B is a blend of Italia and Muscat \u00e0 Petits Grains Roses, which makes them distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Although both records are Cupcake Vineyards Moscato from Tre Venezie and share the same white style, the grape compositions are not the same. Wine A is listed as Muscat of Alexandria, while Wine B is a blend of Italia and Muscat \u00e0 Petits Grains Roses, which makes them distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 448,
+  "tokens_out": 86,
+  "elapsed": 1.8084149360656738,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C009",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Cattier) and are white sparkling wines labeled 'Blanc de Blancs Brut'. The name 'Roses' in Wine A is likely a formatting difference or a specific cuv\u00e9e name that is an abbreviation of the same base wine, as the key descriptors (producer, color, style) are identical.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Cattier) and are white sparkling wines labeled 'Blanc de Blancs Brut'. The name 'Roses' in Wine A is likely a formatting difference or a specific cuv\u00e9e name that is an abbreviation of the same base wine, as the key descriptors (producer, color, style) are identical.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 94,
+  "elapsed": 2.2568531036376953,
+  "error": null
+}

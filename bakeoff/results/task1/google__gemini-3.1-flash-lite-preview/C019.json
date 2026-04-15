@@ -1,0 +1,13 @@
+{
+  "pair_id": "C019",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines represent different classification tiers within the producer's portfolio, specifically 'Reserva' versus 'Gran Reserva'. In sparkling wine production, these designations indicate distinct aging requirements and quality levels, making them separate bottlings for the consumer.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines represent different classification tiers within the producer's portfolio, specifically 'Reserva' versus 'Gran Reserva'. In sparkling wine production, these designations indicate distinct aging requirements and quality levels, making them separate bottlings for the consumer.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 75,
+  "elapsed": 1.74320387840271,
+  "error": null
+}

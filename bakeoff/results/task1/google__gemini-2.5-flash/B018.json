@@ -1,0 +1,13 @@
+{
+  "pair_id": "B018",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A is explicitly a 'Rose' wine, while Wine B is a 'white' wine, as indicated by the provided color information. Different colors (Ros\u00e9 vs. White) from the same producer and vineyard designate different wines, even if the base name is similar.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is explicitly a 'Rose' wine, while Wine B is a 'white' wine, as indicated by the provided color information. Different colors (Ros\u00e9 vs. White) from the same producer and vineyard designate different wines, even if the base name is similar.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 90,
+  "elapsed": 1.7405600547790527,
+  "error": null
+}

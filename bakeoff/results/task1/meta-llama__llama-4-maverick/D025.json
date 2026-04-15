@@ -1,0 +1,13 @@
+{
+  "pair_id": "D025",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Cattier, and have similar names ('Brut Millesime' and 'Millesime'), suggesting they are the same wine with a varietal or style descriptor omitted in one record. The color is the same (white), and the style is likely the same given the matching name and producer.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Cattier, and have similar names ('Brut Millesime' and 'Millesime'), suggesting they are the same wine with a varietal or style descriptor omitted in one record. The color is the same (white), and the style is likely the same given the matching name and producer.",
+  "parse_ok": true,
+  "tokens_in": 481,
+  "tokens_out": 91,
+  "elapsed": 1.7084264755249023,
+  "error": null
+}

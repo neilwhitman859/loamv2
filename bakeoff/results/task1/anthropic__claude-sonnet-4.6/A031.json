@@ -1,0 +1,13 @@
+{
+  "pair_id": "A031",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.85, \"reasoning\": \"Both wines are from Pierre Girardin and share the name 'Eclat de Calcaire', with Wine B simply appending 'Pinot Noir' as a varietal suffix. Both are red wines, and Burgundy producers like Pierre Girardin typically make their Eclat de Calcaire as a Pinot Noir, making the varietal suffix an abbreviation rather than a distinction. This follows the rule that a varietal suffix difference alone typically means the same wine unless the producer makes multiple versions with different grapes.\"}",
+  "verdict": "SAME",
+  "confidence": 0.85,
+  "reasoning": "Both wines are from Pierre Girardin and share the name 'Eclat de Calcaire', with Wine B simply appending 'Pinot Noir' as a varietal suffix. Both are red wines, and Burgundy producers like Pierre Girardin typically make their Eclat de Calcaire as a Pinot Noir, making the varietal suffix an abbreviation rather than a distinction. This follows the rule that a varietal suffix difference alone typically means the same wine unless the producer makes multiple versions with different grapes.",
+  "parse_ok": true,
+  "tokens_in": 507,
+  "tokens_out": 140,
+  "elapsed": 3.489764928817749,
+  "error": null
+}

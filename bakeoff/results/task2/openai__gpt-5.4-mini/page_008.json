@@ -1,0 +1,28 @@
+{
+  "page_id": "page_008",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"wines_found\":[{\"name\":\"Chardonnay\",\"vintage_year\":2023,\"abv_pct\":null,\"blend\":null,\"oak\":{\"vessel\":\"new American oak barrels\",\"months\":8,\"new_pct\":null,\"origin\":\"American\"},\"cases_produced\":null,\"chemistry\":null,\"winemaker\":null,\"farming\":\"sustainable\"}]}",
+  "wines_found": [
+    {
+      "name": "Chardonnay",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "new American oak barrels",
+        "months": 8,
+        "new_pct": null,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "sustainable"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 20718,
+  "tokens_out": 79,
+  "elapsed": 2.0668296813964844,
+  "error": null
+}

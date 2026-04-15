@@ -1,0 +1,13 @@
+{
+  "pair_id": "A039",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Torii Mor and reference the 'Yamhill Carlton Select' cuv\u00e9e. Wine B simply appends 'Pinot Noir' as a varietal suffix to the same base name, and Wine A is already identified as Pinot Noir. This is a classic case of an abbreviated name vs. a name with varietal suffix appended, representing the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Torii Mor and reference the 'Yamhill Carlton Select' cuv\u00e9e. Wine B simply appends 'Pinot Noir' as a varietal suffix to the same base name, and Wine A is already identified as Pinot Noir. This is a classic case of an abbreviated name vs. a name with varietal suffix appended, representing the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 110,
+  "elapsed": 3.326763153076172,
+  "error": null
+}

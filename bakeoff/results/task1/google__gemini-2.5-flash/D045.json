@@ -1,0 +1,13 @@
+{
+  "pair_id": "D045",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer and the names are very similar, with 'Blanc' being a common varietal or style suffix. Given that both wines are white, it's highly probable that 'Casse-Croute' is simply an abbreviated name for 'Casse-Croute Blanc', representing the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer and the names are very similar, with 'Blanc' being a common varietal or style suffix. Given that both wines are white, it's highly probable that 'Casse-Croute' is simply an abbreviated name for 'Casse-Croute Blanc', representing the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 86,
+  "elapsed": 1.5187182426452637,
+  "error": null
+}

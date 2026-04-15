@@ -1,0 +1,13 @@
+{
+  "pair_id": "D004",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines 'Arrowhead Cabernet Sauvignon' and 'Arete Cabernet Sauvignon' from Chimney Rock have different names and LWINs, indicating they are likely different cuv\u00e9es or bottlings. Although both are Cabernet Sauvignon, the distinct names suggest different vineyard designations or wine styles. The difference in LWINs further supports that they are distinct products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines 'Arrowhead Cabernet Sauvignon' and 'Arete Cabernet Sauvignon' from Chimney Rock have different names and LWINs, indicating they are likely different cuv\u00e9es or bottlings. Although both are Cabernet Sauvignon, the distinct names suggest different vineyard designations or wine styles. The difference in LWINs further supports that they are distinct products.",
+  "parse_ok": true,
+  "tokens_in": 494,
+  "tokens_out": 94,
+  "elapsed": 1.4738349914550781,
+  "error": null
+}

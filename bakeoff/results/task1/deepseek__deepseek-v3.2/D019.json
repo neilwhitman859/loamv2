@@ -1,0 +1,13 @@
+{
+  "pair_id": "D019",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Masut Da Rive), have the same grape (Pinot Nero), and the same color (red). 'Maurus Pinot Nero' appears to be a named cuv\u00e9e or label for the same base wine as 'Pinot Nero', indicating a varietal suffix or branding difference, not a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Masut Da Rive), have the same grape (Pinot Nero), and the same color (red). 'Maurus Pinot Nero' appears to be a named cuv\u00e9e or label for the same base wine as 'Pinot Nero', indicating a varietal suffix or branding difference, not a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 448,
+  "tokens_out": 96,
+  "elapsed": 3.4914486408233643,
+  "error": null
+}

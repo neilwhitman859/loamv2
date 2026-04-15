@@ -1,0 +1,13 @@
+{
+  "pair_id": "D043",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (Timbrus) and are red wines from the Purcari region, but they have different LWIN numbers and are designated as 'Note #1' and 'Note #2', indicating they are distinct bottlings or cuv\u00e9es from the same producer, likely representing different blends or vineyard lots.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (Timbrus) and are red wines from the Purcari region, but they have different LWIN numbers and are designated as 'Note #1' and 'Note #2', indicating they are distinct bottlings or cuv\u00e9es from the same producer, likely representing different blends or vineyard lots.",
+  "parse_ok": true,
+  "tokens_in": 502,
+  "tokens_out": 93,
+  "elapsed": 4.1046764850616455,
+  "error": null
+}

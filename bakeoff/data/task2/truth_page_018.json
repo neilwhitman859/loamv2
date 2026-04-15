@@ -6,18 +6,22 @@
   "extraction": {
     "name": "Chardonnay",
     "producer": "Cupcake Vineyards",
-    "vintage_year": 2026,
+    "vintage_year": null,
     "abv_pct": null,
     "blend": null,
     "oak": {
-      "vessel": "barrel"
+      "vessel": "barrel",
+      "months": null,
+      "new_pct": null,
+      "origin": null
     },
     "cases_produced": null,
     "chemistry": null,
-    "winemaker": "Explore our other award",
+    "winemaker": "Jessica Tomei",
     "farming": null
   },
-  "data_richness": 3,
+  "data_richness": 2,
   "total_fields": 8,
-  "text_length": 79251
+  "text_length": 79251,
+  "consensus_models": 14
 }

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C026",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, with Wine A being white and Wine B being ros\u00e9. This difference in color indicates that they are distinct wines. Additionally, the presence of 'Brut' and 'Brut Rose' suggests a style difference, further supporting the conclusion that they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, with Wine A being white and Wine B being ros\u00e9. This difference in color indicates that they are distinct wines. Additionally, the presence of 'Brut' and 'Brut Rose' suggests a style difference, further supporting the conclusion that they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 83,
+  "elapsed": 2.026183843612671,
+  "error": null
+}

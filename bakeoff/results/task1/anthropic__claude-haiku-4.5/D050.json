@@ -1,0 +1,13 @@
+{
+  "pair_id": "D050",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Although both wines share the same producer (Dr. Wehrheim) and vineyard designation (Birkweiler/Birkweiller Rosenberg), they are composed of fundamentally different grape varieties. Wine A is a blend of Pinot Gris and Pinot Blanc, while Wine B is made from Chardonnay Blanc. Different grapes always indicate different wines, even when the vineyard name matches.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Although both wines share the same producer (Dr. Wehrheim) and vineyard designation (Birkweiler/Birkweiller Rosenberg), they are composed of fundamentally different grape varieties. Wine A is a blend of Pinot Gris and Pinot Blanc, while Wine B is made from Chardonnay Blanc. Different grapes always indicate different wines, even when the vineyard name matches.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 122,
+  "elapsed": 4.133537530899048,
+  "error": null
+}

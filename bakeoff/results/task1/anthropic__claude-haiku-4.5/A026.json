@@ -1,0 +1,13 @@
+{
+  "pair_id": "A026",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Mount Pleasant's Lovedale Cellar Aged line, both are white Semillon wines. Wine A's grape variety (Semillon) matches Wine B's varietal suffix. The difference in naming (with/without 'Semillon' appended) is a standard abbreviation variation, not a distinct bottling.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Mount Pleasant's Lovedale Cellar Aged line, both are white Semillon wines. Wine A's grape variety (Semillon) matches Wine B's varietal suffix. The difference in naming (with/without 'Semillon' appended) is a standard abbreviation variation, not a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 102,
+  "elapsed": 12.109513759613037,
+  "error": null
+}

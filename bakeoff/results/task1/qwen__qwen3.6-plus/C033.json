@@ -1,0 +1,13 @@
+{
+  "pair_id": "C033",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both records refer to Bonnaire's vintage-dated, 100% Chardonnay Champagne, with the only difference being the explicit inclusion of 'Brut' in Wine B. In Champagne, 'Brut' denotes the standard dry style that is implicitly understood when omitted, making this a simple naming variation rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both records refer to Bonnaire's vintage-dated, 100% Chardonnay Champagne, with the only difference being the explicit inclusion of 'Brut' in Wine B. In Champagne, 'Brut' denotes the standard dry style that is implicitly understood when omitted, making this a simple naming variation rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 464,
+  "tokens_out": 1752,
+  "elapsed": 33.25419569015503,
+  "error": null
+}

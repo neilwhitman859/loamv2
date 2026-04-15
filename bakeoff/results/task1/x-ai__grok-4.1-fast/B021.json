@@ -1,0 +1,13 @@
+{
+  "pair_id": "B021",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from producer Buehler and derive from Zinfandel grapes, but Wine A is White Zinfandel (ros\u00e9 color) while Wine B is Zinfandel (red color). The explicit color difference (rose vs red) and distinct styles (ros\u00e9 vs red) make them separate bottlings consumers encounter independently. Rules specify ros\u00e9 vs red from the same producer as DIFFERENT wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from producer Buehler and derive from Zinfandel grapes, but Wine A is White Zinfandel (ros\u00e9 color) while Wine B is Zinfandel (red color). The explicit color difference (rose vs red) and distinct styles (ros\u00e9 vs red) make them separate bottlings consumers encounter independently. Rules specify ros\u00e9 vs red from the same producer as DIFFERENT wines.",
+  "parse_ok": true,
+  "tokens_in": 565,
+  "tokens_out": 540,
+  "elapsed": 3.8922324180603027,
+  "error": null
+}

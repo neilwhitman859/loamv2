@@ -1,0 +1,13 @@
+{
+  "pair_id": "B024",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors (white vs red) and different grape varieties, which are key factors in determining if two wines are the same or different. Despite having the same vineyard name 'Les Jardins' and producer 'La Tour Blanche', the differences in color and grapes indicate they are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors (white vs red) and different grape varieties, which are key factors in determining if two wines are the same or different. Despite having the same vineyard name 'Les Jardins' and producer 'La Tour Blanche', the differences in color and grapes indicate they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 452,
+  "tokens_out": 84,
+  "elapsed": 2.074934244155884,
+  "error": null
+}

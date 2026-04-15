@@ -1,0 +1,13 @@
+{
+  "pair_id": "C011",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are produced by the same producer, have the same grape variety (Cabernet Sauvignon), the same color (red), and the same appellation (Valle del Maipo). The slight difference in the name (Gran Reserva vs Reserva) is a common variation in naming conventions and does not indicate a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are produced by the same producer, have the same grape variety (Cabernet Sauvignon), the same color (red), and the same appellation (Valle del Maipo). The slight difference in the name (Gran Reserva vs Reserva) is a common variation in naming conventions and does not indicate a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 467,
+  "tokens_out": 83,
+  "elapsed": 1.4916620254516602,
+  "error": null
+}

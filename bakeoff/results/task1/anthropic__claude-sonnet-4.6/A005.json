@@ -1,0 +1,13 @@
+{
+  "pair_id": "A005",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from Catena Zapata's Agrelo Saint Felicien label, both white wines made from Semillon. Wine B simply appends the varietal name 'Semillon' to the label, which is a common abbreviation pattern where the shorter name omits the grape variety. There is no indication of multiple different grape varieties under this label, so this is a classic case of the same wine with and without the varietal suffix.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from Catena Zapata's Agrelo Saint Felicien label, both white wines made from Semillon. Wine B simply appends the varietal name 'Semillon' to the label, which is a common abbreviation pattern where the shorter name omits the grape variety. There is no indication of multiple different grape varieties under this label, so this is a classic case of the same wine with and without the varietal suffix.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 120,
+  "elapsed": 3.1498265266418457,
+  "error": null
+}

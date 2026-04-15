@@ -1,0 +1,13 @@
+{
+  "pair_id": "C049",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct bottlings: one is Brut Nature and the other is Brut, which indicates different sweetness levels and therefore different sparkling wine styles. The records also list different colors, reinforcing that they are not the same wine. Even though the producer and base name match, the dosage/style difference makes them different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct bottlings: one is Brut Nature and the other is Brut, which indicates different sweetness levels and therefore different sparkling wine styles. The records also list different colors, reinforcing that they are not the same wine. Even though the producer and base name match, the dosage/style difference makes them different wines.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 84,
+  "elapsed": 1.6685457229614258,
+  "error": null
+}

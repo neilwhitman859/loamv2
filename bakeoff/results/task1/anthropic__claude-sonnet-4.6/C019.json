@@ -1,0 +1,13 @@
+{
+  "pair_id": "C019",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.98, \"reasoning\": \"These are two distinct Cava bottlings from Bohigas differentiated by their aging classification: Reserva (minimum 15 months aging) vs Gran Reserva (minimum 30 months aging). Different classification tiers represent distinct products that a consumer would encounter separately, with different price points and flavor profiles. The different LWIN codes (2327127 vs 2327202) confirm these are catalogued as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These are two distinct Cava bottlings from Bohigas differentiated by their aging classification: Reserva (minimum 15 months aging) vs Gran Reserva (minimum 30 months aging). Different classification tiers represent distinct products that a consumer would encounter separately, with different price points and flavor profiles. The different LWIN codes (2327127 vs 2327202) confirm these are catalogued as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 116,
+  "elapsed": 3.003340244293213,
+  "error": null
+}

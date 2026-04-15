@@ -1,0 +1,13 @@
+{
+  "pair_id": "D020",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.96,\"reasoning\":\"Both records are from 19 Crimes and refer to the same red bottling, with the only difference being the appended style descriptor 'Red' in Wine A. 'The Banished Dark' and 'The Banished Dark Red' appear to be formatting variants rather than distinct cuv\u00e9es, since there is no evidence of a different grape, tier, vineyard, or style.\"}",
+  "verdict": "SAME",
+  "confidence": 0.96,
+  "reasoning": "Both records are from 19 Crimes and refer to the same red bottling, with the only difference being the appended style descriptor 'Red' in Wine A. 'The Banished Dark' and 'The Banished Dark Red' appear to be formatting variants rather than distinct cuv\u00e9es, since there is no evidence of a different grape, tier, vineyard, or style.",
+  "parse_ok": true,
+  "tokens_in": 413,
+  "tokens_out": 96,
+  "elapsed": 2.618114948272705,
+  "error": null
+}

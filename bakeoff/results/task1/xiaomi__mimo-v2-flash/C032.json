@@ -1,0 +1,13 @@
+{
+  "pair_id": "C032",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer (Bonnaire) and share the same name 'Blanc de Blancs', indicating the same cuv\u00e9e. The 'NV' designation on Wine A simply specifies it is a non-vintage release, which is a common format for this style of sparkling wine and does not represent a different bottling from the base cuv\u00e9e name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer (Bonnaire) and share the same name 'Blanc de Blancs', indicating the same cuv\u00e9e. The 'NV' designation on Wine A simply specifies it is a non-vintage release, which is a common format for this style of sparkling wine and does not represent a different bottling from the base cuv\u00e9e name.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 98,
+  "elapsed": 3.544086456298828,
+  "error": null
+}

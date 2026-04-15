@@ -1,0 +1,13 @@
+{
+  "pair_id": "D015",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, grape variety, and color. The 'Reserve' designation in Wine A is likely a stylistic choice or a sub-designation of the main Cabernet Sauvignon bottling, rather than a distinct wine, especially given the LWINs are close.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, grape variety, and color. The 'Reserve' designation in Wine A is likely a stylistic choice or a sub-designation of the main Cabernet Sauvignon bottling, rather than a distinct wine, especially given the LWINs are close.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 75,
+  "elapsed": 1.5424933433532715,
+  "error": null
+}

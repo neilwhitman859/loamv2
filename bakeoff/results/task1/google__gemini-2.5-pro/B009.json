@@ -1,0 +1,13 @@
+{
+  "pair_id": "B009",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although the producer is the same and the cuv\u00e9e names are nearly identical, the wines have different colors. Wine A is specified as 'white' and Wine B as 'rose'. A white wine and a ros\u00e9 are distinct products, even if they share a brand name, and are therefore considered different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the producer is the same and the cuv\u00e9e names are nearly identical, the wines have different colors. Wine A is specified as 'white' and Wine B as 'rose'. A white wine and a ros\u00e9 are distinct products, even if they share a brand name, and are therefore considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 396,
+  "tokens_out": 1138,
+  "elapsed": 12.762216567993164,
+  "error": null
+}

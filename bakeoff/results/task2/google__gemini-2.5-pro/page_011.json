@@ -1,0 +1,50 @@
+{
+  "page_id": "page_011",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Bonterra Merlot\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": 13.8,\n      \"blend\": [\n        {\n          \"grape\": \"Merlot\",\n          \"pct\": 81\n        },\n        {\n          \"grape\": \"Petite Sirah\",\n          \"pct\": 10\n        },\n        {\n          \"grape\": \"Malbec\",\n          \"pct\": 5\n        },\n        {\n          \"grape\": \"Cabernet Sauvignon\",\n          \"pct\": 4\n        }\n      ],\n      \"oak\": {\n        \"vessel\": \"French oak\",\n        \"months\": 12,\n        \"new_pct\": 30,\n        \"origin\": \"French\"\n      },\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": 3.64,\n        \"ta_g_l\": 5.7,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": null,\n      \"farming\": \"organic\"\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Bonterra Merlot",
+      "vintage_year": 2023,
+      "abv_pct": 13.8,
+      "blend": [
+        {
+          "grape": "Merlot",
+          "pct": 81
+        },
+        {
+          "grape": "Petite Sirah",
+          "pct": 10
+        },
+        {
+          "grape": "Malbec",
+          "pct": 5
+        },
+        {
+          "grape": "Cabernet Sauvignon",
+          "pct": 4
+        }
+      ],
+      "oak": {
+        "vessel": "French oak",
+        "months": 12,
+        "new_pct": 30,
+        "origin": "French"
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": 3.64,
+        "ta_g_l": 5.7,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 71155,
+  "tokens_out": 3504,
+  "elapsed": 62.90264534950256,
+  "error": null
+}

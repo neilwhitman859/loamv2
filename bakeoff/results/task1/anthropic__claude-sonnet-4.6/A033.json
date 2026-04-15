@@ -1,0 +1,13 @@
+{
+  "pair_id": "A033",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.92, \"reasoning\": \"Both wines are from Calabria and labeled 'Private Bin', with Wine B simply having the varietal suffix 'Vermentino' appended. Wine A is confirmed as Vermentino (white), matching Wine B's grape variety. This is a classic case of the shorter name being an abbreviation of the full name, representing the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.92,
+  "reasoning": "Both wines are from Calabria and labeled 'Private Bin', with Wine B simply having the varietal suffix 'Vermentino' appended. Wine A is confirmed as Vermentino (white), matching Wine B's grape variety. This is a classic case of the shorter name being an abbreviation of the full name, representing the same wine.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 99,
+  "elapsed": 3.3870201110839844,
+  "error": null
+}

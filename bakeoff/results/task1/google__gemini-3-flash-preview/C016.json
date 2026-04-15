@@ -1,0 +1,13 @@
+{
+  "pair_id": "C016",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are from two distinct DOCG regions, Barolo and Barbaresco, which represent different vineyard sources and production regulations. Even though they share the same producer and grape variety, they are separate bottlings that would never be considered the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are from two distinct DOCG regions, Barolo and Barbaresco, which represent different vineyard sources and production regulations. Even though they share the same producer and grape variety, they are separate bottlings that would never be considered the same wine.",
+  "parse_ok": true,
+  "tokens_in": 464,
+  "tokens_out": 74,
+  "elapsed": 2.0275886058807373,
+  "error": null
+}

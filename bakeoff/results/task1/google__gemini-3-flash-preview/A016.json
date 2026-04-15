@@ -1,0 +1,13 @@
+{
+  "pair_id": "A016",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.98, \"reasoning\": \"Wine A is an abbreviated version of Wine B, both belonging to Berton Vineyards' 'Metal Label' range. Since both are white wines and Wine A is explicitly identified as Vermentino in the grape metadata, they represent the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Wine A is an abbreviated version of Wine B, both belonging to Berton Vineyards' 'Metal Label' range. Since both are white wines and Wine A is explicitly identified as Vermentino in the grape metadata, they represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 72,
+  "elapsed": 1.4960131645202637,
+  "error": null
+}

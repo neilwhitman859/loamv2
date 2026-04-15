@@ -1,0 +1,41 @@
+{
+  "page_id": "page_019",
+  "model": "mistralai/mistral-large",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Red Velvet\",\n      \"vintage_year\": null,\n      \"abv_pct\": null,\n      \"blend\": [\n        {\n          \"grape\": \"Merlot\",\n          \"pct\": null\n        },\n        {\n          \"grape\": \"Zinfandel\",\n          \"pct\": null\n        },\n        {\n          \"grape\": \"Petite Sirah\",\n          \"pct\": null\n        }\n      ],\n      \"oak\": {\n        \"vessel\": \"oak\",\n        \"months\": null,\n        \"new_pct\": null,\n        \"origin\": null\n      },\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": \"Jessica Tomei\",\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Red Velvet",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Merlot",
+          "pct": null
+        },
+        {
+          "grape": "Zinfandel",
+          "pct": null
+        },
+        {
+          "grape": "Petite Sirah",
+          "pct": null
+        }
+      ],
+      "oak": {
+        "vessel": "oak",
+        "months": null,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 43131,
+  "tokens_out": 186,
+  "elapsed": 18.65380883216858,
+  "error": null
+}

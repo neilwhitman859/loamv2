@@ -1,0 +1,13 @@
+{
+  "pair_id": "D049",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine B includes 'Koppel' as a distinct vineyard designation within Birkweiler Kastanienbusch, indicating a specific parcel or sub-vineyard that differentiates it from Wine A. Different vineyard designations represent distinct bottlings that consumers would encounter separately, even when from the same producer and grape variety. The different LWINs (1422153 vs 1422166) confirm these are separate wine records.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine B includes 'Koppel' as a distinct vineyard designation within Birkweiler Kastanienbusch, indicating a specific parcel or sub-vineyard that differentiates it from Wine A. Different vineyard designations represent distinct bottlings that consumers would encounter separately, even when from the same producer and grape variety. The different LWINs (1422153 vs 1422166) confirm these are separate wine records.",
+  "parse_ok": true,
+  "tokens_in": 518,
+  "tokens_out": 125,
+  "elapsed": 5.178679704666138,
+  "error": null
+}

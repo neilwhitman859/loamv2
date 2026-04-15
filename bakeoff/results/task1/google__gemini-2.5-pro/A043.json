@@ -1,0 +1,13 @@
+{
+  "pair_id": "A043",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines have different grape compositions. Wine A is a single varietal Shiraz, while Wine B is explicitly named as a 'Shiraz Durif' blend. A difference in grape varieties, even when one is a blend and the other is a component of that blend, constitutes a different wine.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines have different grape compositions. Wine A is a single varietal Shiraz, while Wine B is explicitly named as a 'Shiraz Durif' blend. A difference in grape varieties, even when one is a blend and the other is a component of that blend, constitutes a different wine.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 1183,
+  "elapsed": 12.48492169380188,
+  "error": null
+}

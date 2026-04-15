@@ -1,0 +1,13 @@
+{
+  "pair_id": "D012",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B differ in the grape variety, as Wine A is made from Boal and Wine B from Sercial. This is a key differentiator, as different grapes result in different wines, even if the vineyard and producer are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B differ in the grape variety, as Wine A is made from Boal and Wine B from Sercial. This is a key differentiator, as different grapes result in different wines, even if the vineyard and producer are the same.",
+  "parse_ok": true,
+  "tokens_in": 439,
+  "tokens_out": 75,
+  "elapsed": 1.2752888202667236,
+  "error": null
+}

@@ -1,0 +1,28 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "anthropic/claude-haiku-4.5",
+  "correctness": 1.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 2.9,
+  "wrong_facts": [
+    "Hook claims the name refers to the winery's founding at 1.5 acres — the actual naming origin is the 'generation and a half' partnership between John Shafer and his son Doug",
+    "Hook calls One Point Five the 'entry-level Cabernet' and references 'Hillside or One Point Five Reserve bottlings' — there is no 'One Point Five Reserve' bottling from Shafer",
+    "Context data says 100% Cabernet Sauvignon but ground truth shows 2022 is 92% Cab Sauv with Petite Verdot, Merlot, and Malbec — the output doesn't mention the blend but doesn't contradict it either",
+    "Vinification says 'mix of new and neutral cooperage' and '18-20 months' — ground truth says 100% new French oak for 18 months, so 'neutral cooperage' and the upper range of 20 months are wrong"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "1.5 acres founding claim",
+    "18-20 months oak aging (ground truth is 18 months in 100% new oak)",
+    "$80+ price difference for Hillside bottling",
+    "2024-2032 drinking window",
+    "Caymus being $5-10 more expensive"
+  ],
+  "reasoning": "The hook contains a fabricated naming origin — the '1.5 acres' founding story is provably wrong per ground truth (it's about the generational partnership). This triggers the hard cap of 1.5 on correctness. Additionally, the hook invents a 'One Point Five Reserve' bottling that doesn't exist. The cooperage details are partially wrong (claims neutral oak when it's 100% new). The voice is decent — direct, opinionated, avoids most banned words — but the factual errors undermine the entire piece. Specificity is good with named soil types and competitor comparisons, though some details are fabricated. Usefulness is moderate; the structure and food pairings add value but the wrong facts reduce trustworthiness.",
+  "judge_tokens_in": 4028,
+  "judge_tokens_out": 510
+}

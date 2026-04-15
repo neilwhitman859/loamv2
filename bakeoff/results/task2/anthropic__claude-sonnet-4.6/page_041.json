@@ -1,0 +1,28 @@
+{
+  "page_id": "page_041",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Cabernet Sauvignon\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": null, \"oak\": {\"vessel\": \"barrel\", \"months\": null, \"new_pct\": null, \"origin\": \"French and American\"}, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": \"Jason Becker\", \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Cabernet Sauvignon",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "barrel",
+        "months": null,
+        "new_pct": null,
+        "origin": "French and American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jason Becker",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 14963,
+  "tokens_out": 102,
+  "elapsed": 2.1325509548187256,
+  "error": null
+}

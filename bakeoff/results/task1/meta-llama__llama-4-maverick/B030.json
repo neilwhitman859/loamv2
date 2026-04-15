@@ -1,0 +1,13 @@
+{
+  "pair_id": "B030",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a red Cabernet Sauvignon, while Wine B is a white Sauvignon Blanc, indicating different grape varieties and colors, which are key factors in determining they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a red Cabernet Sauvignon, while Wine B is a white Sauvignon Blanc, indicating different grape varieties and colors, which are key factors in determining they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 506,
+  "tokens_out": 59,
+  "elapsed": 1.5047457218170166,
+  "error": null
+}

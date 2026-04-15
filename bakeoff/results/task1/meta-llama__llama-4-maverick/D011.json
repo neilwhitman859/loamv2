@@ -1,0 +1,13 @@
+{
+  "pair_id": "D011",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer 'Borges' and have very similar names, with 'Malmsey Adegas Exportata Rare Rich 1870' likely being a more specific name for 'Adegas Exportata Rare Rich 1870'. The varietal suffix difference is likely an abbreviation, and without information suggesting multiple wines from the same vineyard with different grapes, they are considered the same.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer 'Borges' and have very similar names, with 'Malmsey Adegas Exportata Rare Rich 1870' likely being a more specific name for 'Adegas Exportata Rare Rich 1870'. The varietal suffix difference is likely an abbreviation, and without information suggesting multiple wines from the same vineyard with different grapes, they are considered the same.",
+  "parse_ok": true,
+  "tokens_in": 504,
+  "tokens_out": 104,
+  "elapsed": 2.1342856884002686,
+  "error": null
+}

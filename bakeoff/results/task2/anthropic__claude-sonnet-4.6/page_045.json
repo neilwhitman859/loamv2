@@ -1,0 +1,23 @@
+{
+  "page_id": "page_045",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Bonterra Red Blend 2023\", \"vintage_year\": 2023, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Bonterra Red Blend 2023",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 51436,
+  "tokens_out": 77,
+  "elapsed": 2.676460027694702,
+  "error": null
+}

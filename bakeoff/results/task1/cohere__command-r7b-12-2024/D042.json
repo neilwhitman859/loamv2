@@ -1,0 +1,13 @@
+{
+  "pair_id": "D042",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are from the same producer, Pommery, and have the same color (white). The slight difference in name (Brut Apanage Prestige vs Apanage Prestige) is likely due to labeling conventions and does not indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are from the same producer, Pommery, and have the same color (white). The slight difference in name (Brut Apanage Prestige vs Apanage Prestige) is likely due to labeling conventions and does not indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 73,
+  "elapsed": 1.523921012878418,
+  "error": null
+}

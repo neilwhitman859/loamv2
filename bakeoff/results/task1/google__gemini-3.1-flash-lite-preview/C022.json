@@ -1,0 +1,13 @@
+{
+  "pair_id": "C022",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines represent different German Pr\u00e4dikat levels (Trockenbeerenauslese vs. Auslese). According to the provided rules, different Pr\u00e4dikat levels indicate distinct bottlings that are considered different wines.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines represent different German Pr\u00e4dikat levels (Trockenbeerenauslese vs. Auslese). According to the provided rules, different Pr\u00e4dikat levels indicate distinct bottlings that are considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 74,
+  "elapsed": 1.5194454193115234,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A030",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from Pegasus Bay, white, with names 'Sauvignon' and 'Sauvignon Semillon' differing only by varietal suffix, which per rules indicates the shorter is an abbreviation for the same wine. Pegasus Bay produces a known Sauvignon Blanc/Semillon blend under this naming. Wine A grapes listed as Semillon aligns with the blend composition, with no evidence of distinct bottlings or different grapes.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from Pegasus Bay, white, with names 'Sauvignon' and 'Sauvignon Semillon' differing only by varietal suffix, which per rules indicates the shorter is an abbreviation for the same wine. Pegasus Bay produces a known Sauvignon Blanc/Semillon blend under this naming. Wine A grapes listed as Semillon aligns with the blend composition, with no evidence of distinct bottlings or different grapes.",
+  "parse_ok": true,
+  "tokens_in": 560,
+  "tokens_out": 1050,
+  "elapsed": 6.887486457824707,
+  "error": null
+}

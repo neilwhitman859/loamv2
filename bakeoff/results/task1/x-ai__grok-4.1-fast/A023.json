@@ -1,0 +1,13 @@
+{
+  "pair_id": "A023",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the producer Fidelitas and the Blackwood Canyon designation, with Wine A explicitly listed as Cabernet Sauvignon (red) and Wine B appending the varietal to the name. Per key rules, varietal suffix differences alone indicate the same wine as an abbreviation, with no evidence of multiple grapes from this vineyard. Matching color and grapes confirm they represent the identical bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the producer Fidelitas and the Blackwood Canyon designation, with Wine A explicitly listed as Cabernet Sauvignon (red) and Wine B appending the varietal to the name. Per key rules, varietal suffix differences alone indicate the same wine as an abbreviation, with no evidence of multiple grapes from this vineyard. Matching color and grapes confirm they represent the identical bottling.",
+  "parse_ok": true,
+  "tokens_in": 568,
+  "tokens_out": 390,
+  "elapsed": 2.984182357788086,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A038",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A lists 'Bush Vine' with Pinotage as the grape variety, while Wine B explicitly names the varietal as 'Bush Vine Pinotage.' This is a classic case of varietal suffix formatting difference\u2014the shorter name is simply an abbreviation of the longer one. Both are red wines from the same producer (Bellingham) and same vineyard/cuv\u00e9e designation (The Bernard Series Bush Vine), differing only in whether the grape variety is stated separately or appended to the name.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A lists 'Bush Vine' with Pinotage as the grape variety, while Wine B explicitly names the varietal as 'Bush Vine Pinotage.' This is a classic case of varietal suffix formatting difference\u2014the shorter name is simply an abbreviation of the longer one. Both are red wines from the same producer (Bellingham) and same vineyard/cuv\u00e9e designation (The Bernard Series Bush Vine), differing only in whether the grape variety is stated separately or appended to the name.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 139,
+  "elapsed": 4.254069805145264,
+  "error": null
+}

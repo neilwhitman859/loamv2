@@ -1,0 +1,13 @@
+{
+  "pair_id": "A009",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a blend containing both Pinot Gris and Pinot Noir (a red grape), making it a ros\u00e9 or light red blend, while Wine B is explicitly labeled as Pinot Gris, a white wine made from a single varietal. Different grape compositions represent distinct bottlings that consumers would encounter separately.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a blend containing both Pinot Gris and Pinot Noir (a red grape), making it a ros\u00e9 or light red blend, while Wine B is explicitly labeled as Pinot Gris, a white wine made from a single varietal. Different grape compositions represent distinct bottlings that consumers would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 521,
+  "tokens_out": 99,
+  "elapsed": 2.6287124156951904,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A041",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from Stephen Ross and both are red wines from the Bien Nacido vineyard. Wine A explicitly lists Pinot Noir as the grape, and Wine B's name 'Bien Nacido Pinot Noir' confirms the same grape variety. The difference is simply that Wine B appends the varietal name to the vineyard name, which is a common abbreviation/formatting variation for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from Stephen Ross and both are red wines from the Bien Nacido vineyard. Wine A explicitly lists Pinot Noir as the grape, and Wine B's name 'Bien Nacido Pinot Noir' confirms the same grape variety. The difference is simply that Wine B appends the varietal name to the vineyard name, which is a common abbreviation/formatting variation for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 114,
+  "elapsed": 2.9442520141601562,
+  "error": null
+}

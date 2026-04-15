@@ -1,0 +1,13 @@
+{
+  "pair_id": "C030",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines represent two distinct classification tiers from the same producer. 'Reserva' and 'Gran Reserva' signify different aging requirements and are considered separate bottlings, even when the producer and grape variety are the same.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines represent two distinct classification tiers from the same producer. 'Reserva' and 'Gran Reserva' signify different aging requirements and are considered separate bottlings, even when the producer and grape variety are the same.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 1016,
+  "elapsed": 11.221675395965576,
+  "error": null
+}

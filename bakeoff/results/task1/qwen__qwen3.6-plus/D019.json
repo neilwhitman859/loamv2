@@ -1,0 +1,13 @@
+{
+  "pair_id": "D019",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both records share the same producer and grape variety, with 'Maurus' serving as the specific cuv\u00e9e name for Masut Da Rive's Pinot Nero. The shorter record is a standard abbreviation that omits the cuv\u00e9e designation, and both describe the identical red wine style. The differing LWINs likely reflect vintage variations or database cataloging splits rather than distinct bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both records share the same producer and grape variety, with 'Maurus' serving as the specific cuv\u00e9e name for Masut Da Rive's Pinot Nero. The shorter record is a standard abbreviation that omits the cuv\u00e9e designation, and both describe the identical red wine style. The differing LWINs likely reflect vintage variations or database cataloging splits rather than distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 465,
+  "tokens_out": 2134,
+  "elapsed": 40.10064768791199,
+  "error": null
+}

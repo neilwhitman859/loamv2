@@ -1,0 +1,13 @@
+{
+  "pair_id": "C003",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"In sparkling wine production, 'Brut' and 'Brut Nature' represent distinct sweetness levels (dosage), which are treated as separate bottlings by consumers and critics. Raumland produces these as specific, different expressions of the Cuvee Katharina, as evidenced by their distinct LWIN identifiers.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "In sparkling wine production, 'Brut' and 'Brut Nature' represent distinct sweetness levels (dosage), which are treated as separate bottlings by consumers and critics. Raumland produces these as specific, different expressions of the Cuvee Katharina, as evidenced by their distinct LWIN identifiers.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 83,
+  "elapsed": 2.0601258277893066,
+  "error": null
+}

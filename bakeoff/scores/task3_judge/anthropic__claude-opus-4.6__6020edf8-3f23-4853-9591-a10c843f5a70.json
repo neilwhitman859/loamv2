@@ -1,0 +1,27 @@
+{
+  "wine_id": "6020edf8-3f23-4853-9591-a10c843f5a70",
+  "wine_name": "Catena Zapata High Mountain Vines Malbec, Mendoza",
+  "tier": "A",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "The hook states the wine sources from vineyards in the Lunlunta district specifically, but ground truth shows it's blended from high-altitude vineyards in Maipu, Lujan de Cuyo, Tupungato and San Carlos — not just Lunlunta",
+    "The hook claims '900+ meters' for the vineyards, which is plausible but unverified and presented as fact",
+    "The vinification summary speculates 'concrete and oak aging' when ground truth shows 11-13 months in French oak barrels (mix of first, second, and third-use) with no mention of concrete",
+    "The blend data interpretation suggesting Cabernet Sauvignon and Chardonnay are in the wine is misleading — ground truth confirms 100% Malbec",
+    "The output states the wine is sourced from Lunlunta district specifically, contradicting ground truth that it's a multi-district blend from Maipu, Lujan de Cuyo, Tupungato and San Carlos"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "900+ meters elevation claim",
+    "20°C diurnal temperature swing",
+    "900 to 1,000 meters for Lunlunta district"
+  ],
+  "reasoning": "The output is exceptionally well-written with strong voice, specificity, and usefulness — it reads like expert wine writing with real opinions and actionable information. However, correctness is significantly compromised. The hook incorrectly narrows sourcing to Lunlunta when ground truth shows a multi-district blend. The wine is 100% Malbec per ground truth, but the output spends considerable space speculating about Cabernet Sauvignon and Chardonnay in the blend (understandable given the misleading context data, but the model should have been more skeptical). The vinification section fabricates concrete aging when the actual cooperage is French oak. Several specific numbers (900+ meters, 20°C swings) are not in context data and presented as fact. The hook's claim about Lunlunta sourcing is provably wrong per ground truth, which triggers the hook penalty, but since the context data itself listed Lunlunta as the appellation, I'm being somewhat lenient — the model was misled by its input data. Still, the accumulation of incorrect claims about blend, sourcing geography, and winemaking drags correctness down significantly.",
+  "judge_tokens_in": 4178,
+  "judge_tokens_out": 576
+}

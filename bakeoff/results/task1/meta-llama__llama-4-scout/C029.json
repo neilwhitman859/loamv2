@@ -1,0 +1,13 @@
+{
+  "pair_id": "C029",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer (Mayu), grape variety (Cabernet Sauvignon), and classification style (Gran Reserva), and have the same color (red). The difference in the presence of 'Don Amerigo' in Wine A's name may be a formatting variation, and is not sufficient to consider them different given the other matching information.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer (Mayu), grape variety (Cabernet Sauvignon), and classification style (Gran Reserva), and have the same color (red). The difference in the presence of 'Don Amerigo' in Wine A's name may be a formatting variation, and is not sufficient to consider them different given the other matching information.",
+  "parse_ok": true,
+  "tokens_in": 474,
+  "tokens_out": 97,
+  "elapsed": 1.1104240417480469,
+  "error": null
+}

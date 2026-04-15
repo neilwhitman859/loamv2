@@ -1,0 +1,13 @@
+{
+  "pair_id": "C048",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white wine (Brut) while Wine B is a ros\u00e9 wine (Brut Rose), indicating a difference in color and style, which classifies them as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white wine (Brut) while Wine B is a ros\u00e9 wine (Brut Rose), indicating a difference in color and style, which classifies them as different wines.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 63,
+  "elapsed": 1.7376430034637451,
+  "error": null
+}

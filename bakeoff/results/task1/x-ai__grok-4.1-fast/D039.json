@@ -1,0 +1,13 @@
+{
+  "pair_id": "D039",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from Vina Tarapaca, share the 'Biodiversity' cuv\u00e9e name, and are red blends. However, Wine B includes 'Reserva', indicating a distinct classification tier with different aging requirements or style, similar to Rioja Reserva vs non-Reserva distinctions. Per guidelines, different classification tiers represent separate bottlings consumers encounter distinctly.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from Vina Tarapaca, share the 'Biodiversity' cuv\u00e9e name, and are red blends. However, Wine B includes 'Reserva', indicating a distinct classification tier with different aging requirements or style, similar to Rioja Reserva vs non-Reserva distinctions. Per guidelines, different classification tiers represent separate bottlings consumers encounter distinctly.",
+  "parse_ok": true,
+  "tokens_in": 561,
+  "tokens_out": 503,
+  "elapsed": 6.611211776733398,
+  "error": null
+}

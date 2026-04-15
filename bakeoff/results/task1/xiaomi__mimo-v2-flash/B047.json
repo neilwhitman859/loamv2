@@ -1,0 +1,13 @@
+{
+  "pair_id": "B047",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white wine (Spatburgunder GG, likely Pinot Noir Blanc) from the Eichberg vineyard, while Wine B is a red wine from the Kirchberg vineyard. Different vineyards and different colors definitively indicate distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white wine (Spatburgunder GG, likely Pinot Noir Blanc) from the Eichberg vineyard, while Wine B is a red wine from the Kirchberg vineyard. Different vineyards and different colors definitively indicate distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 80,
+  "elapsed": 2.043097496032715,
+  "error": null
+}

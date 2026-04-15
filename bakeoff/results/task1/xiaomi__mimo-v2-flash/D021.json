@@ -1,0 +1,13 @@
+{
+  "pair_id": "D021",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is an Auslese, while Wine B has no Pr\u00e4dikat level indicated; different German Pr\u00e4dikat levels are always different wines. The shared producer, vineyard, and grape variety are insufficient to override this classification difference.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is an Auslese, while Wine B has no Pr\u00e4dikat level indicated; different German Pr\u00e4dikat levels are always different wines. The shared producer, vineyard, and grape variety are insufficient to override this classification difference.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 76,
+  "elapsed": 1.7290287017822266,
+  "error": null
+}

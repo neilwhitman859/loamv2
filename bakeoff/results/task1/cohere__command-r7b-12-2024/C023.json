@@ -1,0 +1,13 @@
+{
+  "pair_id": "C023",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"The wines differ in grape variety, with Wine A being SYRAH and Wine B being a blend of SYRAH and SHIRAZ. This is a key differentiator, as different grape varieties result in distinct wines, even if they share the same producer, vineyard, and appellation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "The wines differ in grape variety, with Wine A being SYRAH and Wine B being a blend of SYRAH and SHIRAZ. This is a key differentiator, as different grape varieties result in distinct wines, even if they share the same producer, vineyard, and appellation.",
+  "parse_ok": true,
+  "tokens_in": 463,
+  "tokens_out": 81,
+  "elapsed": 1.4514737129211426,
+  "error": null
+}

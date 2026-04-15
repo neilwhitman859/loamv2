@@ -1,0 +1,33 @@
+{
+  "wine_id": "1a19854d-d7fb-4046-a2ba-9c2391b6026a",
+  "wine_name": "Terre del Barolo Arnaldo Rivera, Barolo",
+  "tier": "B",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "Hook says 'named after the man who founded the co-op in 1958' — while Arnaldo Rivera did found the cooperative in 1958, this is correct per ground truth, so not wrong.",
+    "Claims aging in 'large Slavonian oak botti' — ground truth says French wood (25% used tonneaux, 50% 25hL oak casks, 25% 50hL oak casks), not Slavonian oak botti. This is a significant fabrication about cooperage.",
+    "Lists Barolo village and Diano d'Alba communes — ground truth lists Serralunga d'Alba, Castiglione Falletto, Diano d'Alba, La Morra, and Verduno. The output includes 'Barolo' commune but omits Diano d'Alba and Verduno, and doesn't mention Diano d'Alba at all.",
+    "States '18-month oak minimum is standard Barolo, and the cooperative likely doesn't push far beyond it' — ground truth says 20 months in French wood, so they do push beyond it.",
+    "Claims 'extended maceration' — ground truth says 13 days skin fermentation, which is moderate, not extended.",
+    "States 'over 300 grower-members farming roughly 600 hectares' — not in context data, plausible but unverifiable from provided sources."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$25-$40 retail price range",
+    "300 grower-members",
+    "600 hectares",
+    "55°F storage temperature",
+    "$30 Fontanafredda price",
+    "$35 Marchesi di Barolo price",
+    "$60+ Vietti/Conterno price",
+    "$100+ bottle price"
+  ],
+  "reasoning": "The hook is factually correct about the founding in 1958, which matches ground truth — good. However, the vinification section contains a significant error: it claims Slavonian oak botti when ground truth specifies French wood in various formats (tonneaux and oak casks). It also claims 'extended maceration' when the actual skin fermentation is 13 days, which is moderate for Barolo. The output fabricates numerous price figures not in the context data. The voice is excellent — direct, opinionated, specific, with no banned words and strong Loam-style writing. Specificity is high with geological details (Tortonian marl, Helvetian sandstone, Lequio Formation) and named comparables. But the cooperage error is a meaningful factual mistake that undermines the vinification section's credibility.",
+  "judge_tokens_in": 4261,
+  "judge_tokens_out": 629
+}

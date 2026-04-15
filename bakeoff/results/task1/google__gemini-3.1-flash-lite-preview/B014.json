@@ -1,0 +1,13 @@
+{
+  "pair_id": "B014",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are distinct because they have different colors (Ros\u00e9 vs. White). Even though they share the same producer and appellation, a Ros\u00e9 Cr\u00e9mant and a White Cr\u00e9mant are separate bottlings that would be listed as distinct entries in a wine encyclopedia.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are distinct because they have different colors (Ros\u00e9 vs. White). Even though they share the same producer and appellation, a Ros\u00e9 Cr\u00e9mant and a White Cr\u00e9mant are separate bottlings that would be listed as distinct entries in a wine encyclopedia.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 84,
+  "elapsed": 2.009566068649292,
+  "error": null
+}

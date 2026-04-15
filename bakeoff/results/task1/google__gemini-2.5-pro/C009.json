@@ -1,0 +1,13 @@
+{
+  "pair_id": "C009",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are Blanc de Blancs Brut from the same producer, Wine A includes the specific cuv\u00e9e name 'Roses'. This designates it as a distinct bottling from the producer's standard 'Blanc de Blancs Brut' (Wine B). The different LWINs further confirm they are separate products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are Blanc de Blancs Brut from the same producer, Wine A includes the specific cuv\u00e9e name 'Roses'. This designates it as a distinct bottling from the producer's standard 'Blanc de Blancs Brut' (Wine B). The different LWINs further confirm they are separate products.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 1546,
+  "elapsed": 15.637142896652222,
+  "error": null
+}

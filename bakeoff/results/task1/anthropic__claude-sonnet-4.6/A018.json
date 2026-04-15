@@ -1,0 +1,13 @@
+{
+  "pair_id": "A018",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A 'Quarter Acre' is explicitly identified as Chardonnay Blanc, while Wine B 'Quarter Acre Viognier' is a Viognier \u2014 these are different grape varieties. Although the varietal suffix rule might suggest they're the same wine with an abbreviation, here the grapes are definitively different (Chardonnay vs Viognier), making them distinct bottlings. Different grapes always means different wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A 'Quarter Acre' is explicitly identified as Chardonnay Blanc, while Wine B 'Quarter Acre Viognier' is a Viognier \u2014 these are different grape varieties. Although the varietal suffix rule might suggest they're the same wine with an abbreviation, here the grapes are definitively different (Chardonnay vs Viognier), making them distinct bottlings. Different grapes always means different wine.",
+  "parse_ok": true,
+  "tokens_in": 488,
+  "tokens_out": 121,
+  "elapsed": 2.6896324157714844,
+  "error": null
+}

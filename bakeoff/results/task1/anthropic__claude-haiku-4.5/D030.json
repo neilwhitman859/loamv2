@@ -1,0 +1,13 @@
+{
+  "pair_id": "D030",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a Cabernet Sauvignon while Wine B is a Merlot, representing two distinct grape varieties from the same producer. Different grapes always indicate different wines, regardless of shared vineyard or producer name.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a Cabernet Sauvignon while Wine B is a Merlot, representing two distinct grape varieties from the same producer. Different grapes always indicate different wines, regardless of shared vineyard or producer name.",
+  "parse_ok": true,
+  "tokens_in": 502,
+  "tokens_out": 76,
+  "elapsed": 2.203178644180298,
+  "error": null
+}

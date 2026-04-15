@@ -1,0 +1,13 @@
+{
+  "pair_id": "A002",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer (Firestone), same clone (174), and same color (red). The only difference is the explicit mention of the grape variety 'Syrah' in Wine B, which is likely an elaboration of the information in Wine A, given that Wine A's grapes are listed as 'SYRAH'.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer (Firestone), same clone (174), and same color (red). The only difference is the explicit mention of the grape variety 'Syrah' in Wine B, which is likely an elaboration of the information in Wine A, given that Wine A's grapes are listed as 'SYRAH'.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 91,
+  "elapsed": 2.8405492305755615,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A024",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Wine A is listed as 'Boutique' with 100% COT (a synonym for Syrah), and Wine B is 'Boutique Syrah'. This is a classic varietal suffix difference, indicating the shorter name is an abbreviation. Both are from the same producer (L.A. Cetto) and are red, with no evidence of different vineyard designations or styles.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Wine A is listed as 'Boutique' with 100% COT (a synonym for Syrah), and Wine B is 'Boutique Syrah'. This is a classic varietal suffix difference, indicating the shorter name is an abbreviation. Both are from the same producer (L.A. Cetto) and are red, with no evidence of different vineyard designations or styles.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 103,
+  "elapsed": 5.427300453186035,
+  "error": null
+}

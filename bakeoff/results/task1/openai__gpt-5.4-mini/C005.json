@@ -1,0 +1,13 @@
+{
+  "pair_id": "C005",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.96,\"reasoning\":\"Both records are for Jean Noel Haton Brut Ros\u00e9, with the only naming difference being the presence of NV on one record. Since both are the same producer, style, and color, and NV here appears to be just a formatting/label omission rather than a distinct cuv\u00e9e, they should be treated as the same wine. The close LWIN match also supports this equivalence.\"}",
+  "verdict": "SAME",
+  "confidence": 0.96,
+  "reasoning": "Both records are for Jean Noel Haton Brut Ros\u00e9, with the only naming difference being the presence of NV on one record. Since both are the same producer, style, and color, and NV here appears to be just a formatting/label omission rather than a distinct cuv\u00e9e, they should be treated as the same wine. The close LWIN match also supports this equivalence.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 105,
+  "elapsed": 2.519835948944092,
+  "error": null
+}

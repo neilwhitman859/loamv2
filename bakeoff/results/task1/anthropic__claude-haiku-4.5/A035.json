@@ -1,0 +1,13 @@
+{
+  "pair_id": "A035",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A lists Cabernet Sauvignon as the grape variety, and Wine B explicitly includes 'Cabernet Sauvignon' in its name. Both are Robert Mondavi's 'Private Selection Bourbon Barrels' red wines from the same producer. The difference is merely in name formatting\u2014Wine B includes the varietal suffix while Wine A omits it, which is a standard abbreviation practice and does not indicate a different bottling.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A lists Cabernet Sauvignon as the grape variety, and Wine B explicitly includes 'Cabernet Sauvignon' in its name. Both are Robert Mondavi's 'Private Selection Bourbon Barrels' red wines from the same producer. The difference is merely in name formatting\u2014Wine B includes the varietal suffix while Wine A omits it, which is a standard abbreviation practice and does not indicate a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 124,
+  "elapsed": 12.290729522705078,
+  "error": null
+}

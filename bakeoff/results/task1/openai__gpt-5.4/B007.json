@@ -1,0 +1,13 @@
+{
+  "pair_id": "B007",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct Vistalba bottlings because they have different cuv\u00e9e names (Corte A vs Corte B) and clearly different grape compositions. Corte A is 100% Merlot, while Corte B is a blend of Cot, Cabernet Sauvignon, and Dolcetto, so they would be separate wines in an encyclopedia.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct Vistalba bottlings because they have different cuv\u00e9e names (Corte A vs Corte B) and clearly different grape compositions. Corte A is 100% Merlot, while Corte B is a blend of Cot, Cabernet Sauvignon, and Dolcetto, so they would be separate wines in an encyclopedia.",
+  "parse_ok": true,
+  "tokens_in": 466,
+  "tokens_out": 89,
+  "elapsed": 2.4268553256988525,
+  "error": null
+}

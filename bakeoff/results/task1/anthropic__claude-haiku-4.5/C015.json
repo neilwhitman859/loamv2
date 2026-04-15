@@ -1,0 +1,13 @@
+{
+  "pair_id": "C015",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"These are distinct bottlings from Pertois-Lebrun identified by different lot/cask numbers (No. 10 vs No. 15), which represent separate releases that a consumer would encounter as distinct products. While both are Blanc de Blancs from the same producer, the numbered designation indicates different production batches or cuv\u00e9es, making them different wines in the encyclopedia sense.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "These are distinct bottlings from Pertois-Lebrun identified by different lot/cask numbers (No. 10 vs No. 15), which represent separate releases that a consumer would encounter as distinct products. While both are Blanc de Blancs from the same producer, the numbered designation indicates different production batches or cuv\u00e9es, making them different wines in the encyclopedia sense.",
+  "parse_ok": true,
+  "tokens_in": 517,
+  "tokens_out": 110,
+  "elapsed": 2.692962646484375,
+  "error": null
+}

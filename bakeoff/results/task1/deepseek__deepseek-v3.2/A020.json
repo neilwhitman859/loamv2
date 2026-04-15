@@ -1,0 +1,13 @@
+{
+  "pair_id": "A020",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the omission of the grape 'Sauvignon Blanc' in Wine A's name, which is a varietal suffix difference alone. Both wines share the same producer (Artiga), the same base name (Castillo de la Pena), and the same color (white), indicating they are the same bottling with a name formatting variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the omission of the grape 'Sauvignon Blanc' in Wine A's name, which is a varietal suffix difference alone. Both wines share the same producer (Artiga), the same base name (Castillo de la Pena), and the same color (white), indicating they are the same bottling with a name formatting variation.",
+  "parse_ok": true,
+  "tokens_in": 453,
+  "tokens_out": 95,
+  "elapsed": 6.418625831604004,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B041",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Chatter Creek) and region (Columbia Valley), but feature entirely different primary grapes: Pinot Gris (with Pinot Noir) for Wine A versus Grenache (Garnacha Tinta) for Wine B. The rule states that different grapes always mean different wines, even if vineyard or producer matches. Color difference (white vs red) provides additional confirmation of distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Chatter Creek) and region (Columbia Valley), but feature entirely different primary grapes: Pinot Gris (with Pinot Noir) for Wine A versus Grenache (Garnacha Tinta) for Wine B. The rule states that different grapes always mean different wines, even if vineyard or producer matches. Color difference (white vs red) provides additional confirmation of distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 578,
+  "tokens_out": 503,
+  "elapsed": 4.810669183731079,
+  "error": null
+}

@@ -1,0 +1,23 @@
+{
+  "page_id": "page_010",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"wines_found\":[{\"name\":\"Bonterra Cabernet Sauvignon 2023\",\"vintage_year\":2023,\"abv_pct\":null,\"blend\":null,\"oak\":null,\"cases_produced\":null,\"chemistry\":null,\"winemaker\":null,\"farming\":\"organic\"}]}",
+  "wines_found": [
+    {
+      "name": "Bonterra Cabernet Sauvignon 2023",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 50573,
+  "tokens_out": 63,
+  "elapsed": 5.107554912567139,
+  "error": null
+}

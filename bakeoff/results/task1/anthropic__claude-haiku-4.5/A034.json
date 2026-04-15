@@ -1,0 +1,13 @@
+{
+  "pair_id": "A034",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a blend of Chardonnay Blanc and Pinot Gris, while Wine B is explicitly labeled as Sauvignon Blanc. Different grape varieties constitute different wines according to the classification rules. These would be distinct bottlings a consumer would encounter separately from the same producer.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a blend of Chardonnay Blanc and Pinot Gris, while Wine B is explicitly labeled as Sauvignon Blanc. Different grape varieties constitute different wines according to the classification rules. These would be distinct bottlings a consumer would encounter separately from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 91,
+  "elapsed": 3.607326030731201,
+  "error": null
+}

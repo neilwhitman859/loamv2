@@ -1,0 +1,13 @@
+{
+  "pair_id": "D001",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"The presence of 'Nr23' in Wine A suggests a specific lot or cask number, which indicates a distinct bottling from Wine B, even though both share the same vineyard, producer, and grape variety. In German wine classification, different lot numbers at the same Pr\u00e4dikat level (implied Grosse Lage here) typically denote different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The presence of 'Nr23' in Wine A suggests a specific lot or cask number, which indicates a distinct bottling from Wine B, even though both share the same vineyard, producer, and grape variety. In German wine classification, different lot numbers at the same Pr\u00e4dikat level (implied Grosse Lage here) typically denote different wines.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 106,
+  "elapsed": 1.5739004611968994,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C008",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct bottlings from Cattier: Clos du Moulin Brut is the white Brut, while Clos du Moulin Ros\u00e9 Brut is the ros\u00e9 version. The color/style difference alone means they would be separate wines and separate encyclopedia entries.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct bottlings from Cattier: Clos du Moulin Brut is the white Brut, while Clos du Moulin Ros\u00e9 Brut is the ros\u00e9 version. The color/style difference alone means they would be separate wines and separate encyclopedia entries.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 70,
+  "elapsed": 1.9438278675079346,
+  "error": null
+}

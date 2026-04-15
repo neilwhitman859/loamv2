@@ -1,0 +1,13 @@
+{
+  "pair_id": "C029",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The two wines have different LWINs (2371234 vs 2371247), which indicates they are distinct bottlings in the wine database. Additionally, Wine A includes 'Don Amerigo' in its name while Wine B does not, suggesting these are separate products from Mayu\u2014likely different vineyard designations or bottlings despite sharing the same classification tier and grape variety.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The two wines have different LWINs (2371234 vs 2371247), which indicates they are distinct bottlings in the wine database. Additionally, Wine A includes 'Don Amerigo' in its name while Wine B does not, suggesting these are separate products from Mayu\u2014likely different vineyard designations or bottlings despite sharing the same classification tier and grape variety.",
+  "parse_ok": true,
+  "tokens_in": 500,
+  "tokens_out": 110,
+  "elapsed": 7.550774574279785,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A049",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines have the same producer, color, and grape variety. The difference in name is likely due to abbreviation, as 'Arenarium' and 'Arenarium Arneis' refer to the same wine, with 'Arneis' being the grape variety.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines have the same producer, color, and grape variety. The difference in name is likely due to abbreviation, as 'Arenarium' and 'Arenarium Arneis' refer to the same wine, with 'Arneis' being the grape variety.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 78,
+  "elapsed": 1.4991259574890137,
+  "error": null
+}

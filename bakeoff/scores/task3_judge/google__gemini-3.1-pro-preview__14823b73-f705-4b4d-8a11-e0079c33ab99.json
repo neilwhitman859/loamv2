@@ -1,0 +1,21 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 4.0,
+  "voice": 4.5,
+  "specificity": 5.0,
+  "usefulness": 5.0,
+  "composite": 4.525,
+  "wrong_facts": [
+    "Sandy alluvial loam over deep clay base for Short Flat vineyard is not verifiable from context data or ground truth — plausible but unconfirmed",
+    "Claim that MLF is blocked is not in context data — plausible for the style but unverifiable",
+    "Screwcap closure is not confirmed in context data"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is exceptionally well-written with strong voice, specificity, and usefulness. It correctly identifies Short Flat vineyard, stainless steel fermentation (no oak), the early harvest/low ABV approach, the aging transformation, and the 5-year release policy — all matching ground truth the model didn't see. The hook is factually accurate and compelling. The soil description for Short Flat (sandy alluvial loam over clay) is not verifiable from either the context data or the ground truth provided, though it's plausible for Hunter Valley. The MLF blocking claim and screwcap detail are similarly unverifiable but stylistically consistent. No fabricated numbers — the 11.5% ABV is in the context data. No banned words. The comparable wines are well-chosen and the food pairings are specific and well-reasoned. The insider take is opinionated and actionable. Minor deduction on correctness for the unverifiable soil and vinification specifics.",
+  "judge_tokens_in": 3606,
+  "judge_tokens_out": 354
+}

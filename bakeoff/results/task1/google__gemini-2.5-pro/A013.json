@@ -1,0 +1,13 @@
+{
+  "pair_id": "A013",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are from the same producer and share the 'Lerchenberg' vineyard name, the provided data indicates they are made from different grape varieties. Wine A is listed as a blend of Pinot Noir and Canari Noir, while Wine B is explicitly named 'Lerchenberg Pinot Gris', indicating it is made from Pinot Gris. Different grape compositions always mean the wines are different.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are from the same producer and share the 'Lerchenberg' vineyard name, the provided data indicates they are made from different grape varieties. Wine A is listed as a blend of Pinot Noir and Canari Noir, while Wine B is explicitly named 'Lerchenberg Pinot Gris', indicating it is made from Pinot Gris. Different grape compositions always mean the wines are different.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 1444,
+  "elapsed": 14.266489744186401,
+  "error": null
+}

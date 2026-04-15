@@ -1,0 +1,13 @@
+{
+  "pair_id": "D026",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (Cupcake Vineyards), same color (red), and the names differ only by the suffix 'Red' which is a varietal suffix appended to the shorter name. The key rule states that varietal suffix difference alone usually means SAME, as the shorter name is just an abbreviation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (Cupcake Vineyards), same color (red), and the names differ only by the suffix 'Red' which is a varietal suffix appended to the shorter name. The key rule states that varietal suffix difference alone usually means SAME, as the shorter name is just an abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 480,
+  "tokens_out": 89,
+  "elapsed": 1.837003231048584,
+  "error": null
+}

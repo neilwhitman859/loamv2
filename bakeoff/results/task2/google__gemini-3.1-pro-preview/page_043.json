@@ -1,0 +1,54 @@
+{
+  "page_id": "page_043",
+  "model": "google/gemini-3.1-pro-preview",
+  "raw_content": "{\n  \"wines_found\": [\n    {\n      \"name\": \"2023 Lytton Springs\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": 14.4,\n      \"blend\": [\n        {\n          \"grape\": \"Zinfandel\",\n          \"pct\": 76\n        },\n        {\n          \"grape\": \"Petite Sirah\",\n          \"pct\": 14\n        },\n        {\n          \"grape\": \"Carignane\",\n          \"pct\": 7\n        },\n        {\n          \"grape\": \"Alicante Bouschet\",\n          \"pct\": 2\n        },\n        {\n          \"grape\": \"Mataro\",\n          \"pct\": 1\n        }\n      ],\n      \"oak\": {\n        \"vessel\": \"barrel\",\n        \"months\": 16,\n        \"new_pct\": 19,\n        \"origin\": \"American\"\n      },\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": 3.66,\n        \"ta_g_l\": 7.39,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": null,\n      \"farming\": \"organic\"\n    }\n  ]\n}",
+  "wines_found": [
+    {
+      "name": "2023 Lytton Springs",
+      "vintage_year": 2023,
+      "abv_pct": 14.4,
+      "blend": [
+        {
+          "grape": "Zinfandel",
+          "pct": 76
+        },
+        {
+          "grape": "Petite Sirah",
+          "pct": 14
+        },
+        {
+          "grape": "Carignane",
+          "pct": 7
+        },
+        {
+          "grape": "Alicante Bouschet",
+          "pct": 2
+        },
+        {
+          "grape": "Mataro",
+          "pct": 1
+        }
+      ],
+      "oak": {
+        "vessel": "barrel",
+        "months": 16,
+        "new_pct": 19,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": 3.66,
+        "ta_g_l": 7.39,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 10414,
+  "tokens_out": 2057,
+  "elapsed": 17.836606979370117,
+  "error": null
+}

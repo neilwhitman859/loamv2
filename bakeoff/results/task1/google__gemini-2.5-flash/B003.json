@@ -1,0 +1,13 @@
+{
+  "pair_id": "B003",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are explicitly stated to be different colors (red vs. white), which indicates different grape varieties and thus different wines. Additionally, Wine B specifies 'Fiano', a white grape, while Wine A is red, confirming distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are explicitly stated to be different colors (red vs. white), which indicates different grape varieties and thus different wines. Additionally, Wine B specifies 'Fiano', a white grape, while Wine A is red, confirming distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 72,
+  "elapsed": 1.214585781097412,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C028",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"In Chilean wine classification, 'Reserva' and 'Gran Reserva' represent distinct quality tiers with different aging requirements and price points. These are marketed as separate products within Mayu's portfolio, as evidenced by the distinct LWIN identifiers.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "In Chilean wine classification, 'Reserva' and 'Gran Reserva' represent distinct quality tiers with different aging requirements and price points. These are marketed as separate products within Mayu's portfolio, as evidenced by the distinct LWIN identifiers.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 72,
+  "elapsed": 1.665788173675537,
+  "error": null
+}

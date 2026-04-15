@@ -1,0 +1,13 @@
+{
+  "pair_id": "D042",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Pommery) and share the core name 'Apanage Prestige', with 'Brut' being a standard stylistic descriptor for a sparkling wine rather than a distinct cuv\u00e9e. The difference is merely in name formatting, and there is no evidence of different grapes, classifications, or vineyard designations that would indicate separate bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Pommery) and share the core name 'Apanage Prestige', with 'Brut' being a standard stylistic descriptor for a sparkling wine rather than a distinct cuv\u00e9e. The difference is merely in name formatting, and there is no evidence of different grapes, classifications, or vineyard designations that would indicate separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 478,
+  "tokens_out": 101,
+  "elapsed": 1.7234606742858887,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A016",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.98,\"reasoning\":\"Both records are from Berton Vineyards and are white wines, with Wine B explicitly identified as \\\"Metal Label The Vermentino\\\" and Wine A shortened to \\\"Metal Label The.\\\" The grape match (Vermentino) indicates the shorter name is likely an abbreviated listing of the same bottling rather than a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Both records are from Berton Vineyards and are white wines, with Wine B explicitly identified as \"Metal Label The Vermentino\" and Wine A shortened to \"Metal Label The.\" The grape match (Vermentino) indicates the shorter name is likely an abbreviated listing of the same bottling rather than a different wine.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 86,
+  "elapsed": 2.0571091175079346,
+  "error": null
+}

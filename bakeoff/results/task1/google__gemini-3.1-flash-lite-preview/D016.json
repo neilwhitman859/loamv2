@@ -1,0 +1,13 @@
+{
+  "pair_id": "D016",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"Eric Forest produces distinct wines under these names; 'Roche' and 'Sur Roche' are separate vineyard-designated bottlings from the M\u00e2connais region. The distinct LWIN numbers confirm they are tracked as separate entities in the wine trade, representing different parcels or cuv\u00e9es.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Eric Forest produces distinct wines under these names; 'Roche' and 'Sur Roche' are separate vineyard-designated bottlings from the M\u00e2connais region. The distinct LWIN numbers confirm they are tracked as separate entities in the wine trade, representing different parcels or cuv\u00e9es.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 86,
+  "elapsed": 1.7772724628448486,
+  "error": null
+}

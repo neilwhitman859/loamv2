@@ -1,0 +1,13 @@
+{
+  "pair_id": "D015",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The term 'Reserve' in California winemaking typically denotes a distinct, higher-tier bottling compared to the standard varietal offering. The presence of two distinct LWINs (1976597 and 1976627) confirms that these are tracked as separate commercial products by the producer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The term 'Reserve' in California winemaking typically denotes a distinct, higher-tier bottling compared to the standard varietal offering. The presence of two distinct LWINs (1976597 and 1976627) confirms that these are tracked as separate commercial products by the producer.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 89,
+  "elapsed": 2.4168548583984375,
+  "error": null
+}

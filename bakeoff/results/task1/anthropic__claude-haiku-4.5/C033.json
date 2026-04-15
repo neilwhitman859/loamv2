@@ -1,0 +1,13 @@
+{
+  "pair_id": "C033",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Blanc de Blancs Brut and Blanc de Blancs Vintage represent different sweetness/dosage levels in sparkling wine classification. 'Brut' specifies a dry dosage level, while 'Vintage' alone does not specify dosage and may indicate a different bottling style. The different LWINs (1081835 vs 1535556) confirm these are distinct products in the market.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Blanc de Blancs Brut and Blanc de Blancs Vintage represent different sweetness/dosage levels in sparkling wine classification. 'Brut' specifies a dry dosage level, while 'Vintage' alone does not specify dosage and may indicate a different bottling style. The different LWINs (1081835 vs 1535556) confirm these are distinct products in the market.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 121,
+  "elapsed": 3.781208038330078,
+  "error": null
+}

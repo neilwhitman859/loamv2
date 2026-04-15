@@ -1,0 +1,13 @@
+{
+  "pair_id": "B027",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are not the same bottling: Wine B is explicitly a ros\u00e9 brut, while Wine A is listed as white. Under the rules, ros\u00e9 vs. white from the same producer/cuv\u00e9e designation are different wines, even if the base name is similar.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are not the same bottling: Wine B is explicitly a ros\u00e9 brut, while Wine A is listed as white. Under the rules, ros\u00e9 vs. white from the same producer/cuv\u00e9e designation are different wines, even if the base name is similar.",
+  "parse_ok": true,
+  "tokens_in": 412,
+  "tokens_out": 76,
+  "elapsed": 1.6161720752716064,
+  "error": null
+}

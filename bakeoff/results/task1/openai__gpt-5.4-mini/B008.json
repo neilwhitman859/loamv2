@@ -1,0 +1,13 @@
+{
+  "pair_id": "B008",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different grape varieties: Cabernet Sauvignon vs Sauvignon Blanc. They also differ in color, with Wine A being red and Wine B white, which confirms they are distinct bottlings rather than name-format variations.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different grape varieties: Cabernet Sauvignon vs Sauvignon Blanc. They also differ in color, with Wine A being red and Wine B white, which confirms they are distinct bottlings rather than name-format variations.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 63,
+  "elapsed": 1.8524627685546875,
+  "error": null
+}

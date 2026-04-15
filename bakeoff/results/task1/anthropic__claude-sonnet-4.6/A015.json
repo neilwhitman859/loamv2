@@ -1,0 +1,13 @@
+{
+  "pair_id": "A015",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.97, \"reasoning\": \"Both wines are from Patricia Green's Freedom Hill vineyard with the 'Perspicacious' cuv\u00e9e name. Wine B simply appends 'Pinot Noir' as a varietal suffix to the same cuv\u00e9e name, and both records confirm the grape is Pinot Noir. This is a classic case of the shorter name being an abbreviation of the full name \u2014 same producer, same vineyard, same cuv\u00e9e, same grape.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "Both wines are from Patricia Green's Freedom Hill vineyard with the 'Perspicacious' cuv\u00e9e name. Wine B simply appends 'Pinot Noir' as a varietal suffix to the same cuv\u00e9e name, and both records confirm the grape is Pinot Noir. This is a classic case of the shorter name being an abbreviation of the full name \u2014 same producer, same vineyard, same cuv\u00e9e, same grape.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 121,
+  "elapsed": 4.2927186489105225,
+  "error": null
+}

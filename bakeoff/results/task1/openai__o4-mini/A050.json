@@ -1,0 +1,13 @@
+{
+  "pair_id": "A050",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.85,\"reasoning\":\"Wine A is a Syrah\u2013Durif blend while Wine B is labeled as Syrah only, indicating different grape compositions and thus distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A is a Syrah\u2013Durif blend while Wine B is labeled as Syrah only, indicating different grape compositions and thus distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 193,
+  "elapsed": 5.167968273162842,
+  "error": null
+}

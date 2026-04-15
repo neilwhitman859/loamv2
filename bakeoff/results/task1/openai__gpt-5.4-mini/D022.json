@@ -1,0 +1,13 @@
+{
+  "pair_id": "D022",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.97,\"reasoning\":\"Both wines come from the same producer and are both white, but the cuv\u00e9e names are clearly distinct: \\\"Duo de la Tour Blanche\\\" versus \\\"Brumes de La Tour Blanche.\\\" These are not simple formatting variants or varietal suffix omissions, so they should be treated as separate bottlings. The differing LWINs also support that they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "Both wines come from the same producer and are both white, but the cuv\u00e9e names are clearly distinct: \"Duo de la Tour Blanche\" versus \"Brumes de La Tour Blanche.\" These are not simple formatting variants or varietal suffix omissions, so they should be treated as separate bottlings. The differing LWINs also support that they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 102,
+  "elapsed": 1.793447732925415,
+  "error": null
+}

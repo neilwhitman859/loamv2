@@ -1,0 +1,13 @@
+{
+  "pair_id": "C028",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.92, \"reasoning\": \"One wine is labeled Gran Reserva and the other Reserva, indicating different Rioja classification tiers, which makes them distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.92,
+  "reasoning": "One wine is labeled Gran Reserva and the other Reserva, indicating different Rioja classification tiers, which makes them distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 148,
+  "elapsed": 4.287678003311157,
+  "error": null
+}

@@ -1,0 +1,32 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "xiaomi/mimo-v2-pro",
+  "correctness": 1.5,
+  "voice": 2.0,
+  "specificity": 3.5,
+  "usefulness": 3.0,
+  "composite": 2.325,
+  "wrong_facts": [
+    "Hook claims 'ancient granite and gneiss soils' — ground truth says gravelly loam soils, not granite/gneiss",
+    "Claims fruit is sourced from Porongurup sub-region — no evidence for this; Plantagenet is based in Mount Barker",
+    "Elevation claim of 'up to 1083m' is misleading — that's the peak of the Stirling Range, not vineyard elevation",
+    "Claims 'whole clusters' and 'cold soak' vinification details are fabricated — no context data or ground truth supports these",
+    "Omrah is described as a benchmark/terroir wine when ground truth says it's a second-label value range from younger vineyards or bought-in fruit",
+    "States '$20-$25 USD' price — no price data was provided",
+    "Claims 'older French oak barrels' — ground truth says 10 months in French oak barrels but doesn't specify old oak",
+    "Felton Road Bannockburn described as 'warmer, drier sub-region' than Great Southern — Central Otago is not warmer than Great Southern"
+  ],
+  "banned_words_found": [
+    "genuinely"
+  ],
+  "fabricated_numbers": [
+    "$20-$25 USD price",
+    "1083m elevation",
+    "2028 drinking window endpoint"
+  ],
+  "reasoning": "The output fabricates multiple specific claims: soil types (granite/gneiss vs. gravelly loam), sub-regional sourcing (Porongurup), vinification details (cold soak, whole clusters), and a price range. The hook's soil claim is provably wrong per ground truth. The entire framing treats Omrah as a terroir-driven benchmark when it's actually a second-label value range — a fundamental mischaracterization. The banned word 'genuinely' appears in the terroir section. Multiple fabricated numbers trigger the hard penalty cap on correctness.",
+  "judge_tokens_in": 3258,
+  "judge_tokens_out": 465
+}

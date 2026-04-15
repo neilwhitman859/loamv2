@@ -1,0 +1,13 @@
+{
+  "pair_id": "A033",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, 'Calabria', and share the same core name 'Private Bin'. Wine A explicitly lists 'VERMENTINO' as its grape, and Wine B is named 'Private Bin Vermentino'. This indicates that 'Private Bin' is likely the name of the Vermentino bottling, with Wine A being an abbreviated form.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, 'Calabria', and share the same core name 'Private Bin'. Wine A explicitly lists 'VERMENTINO' as its grape, and Wine B is named 'Private Bin Vermentino'. This indicates that 'Private Bin' is likely the name of the Vermentino bottling, with Wine A being an abbreviated form.",
+  "parse_ok": true,
+  "tokens_in": 415,
+  "tokens_out": 94,
+  "elapsed": 1.6231393814086914,
+  "error": null
+}

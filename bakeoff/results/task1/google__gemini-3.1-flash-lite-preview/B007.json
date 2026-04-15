@@ -1,0 +1,13 @@
+{
+  "pair_id": "B007",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are distinct bottlings with different grape compositions. Corte A is a 100% Merlot wine, while Corte B is a blend of Cot, Cabernet Sauvignon, and Dolcetto.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are distinct bottlings with different grape compositions. Corte A is a 100% Merlot wine, while Corte B is a blend of Cot, Cabernet Sauvignon, and Dolcetto.",
+  "parse_ok": true,
+  "tokens_in": 471,
+  "tokens_out": 69,
+  "elapsed": 1.768690586090088,
+  "error": null
+}

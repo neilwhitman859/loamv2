@@ -1,0 +1,13 @@
+{
+  "pair_id": "C042",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines represent different Rioja-style classification tiers (Gran Reserva vs Reserva). According to the provided rules, different classification tiers indicate distinct bottlings that a consumer would encounter separately.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines represent different Rioja-style classification tiers (Gran Reserva vs Reserva). According to the provided rules, different classification tiers indicate distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 64,
+  "elapsed": 1.681312084197998,
+  "error": null
+}

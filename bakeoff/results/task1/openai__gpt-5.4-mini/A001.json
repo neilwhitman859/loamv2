@@ -1,0 +1,13 @@
+{
+  "pair_id": "A001",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Wine B explicitly names the grape Carmenere, while Wine A is a blend of Carmenere and Cabernet Franc. Under the rules, different grapes/composition mean different wines even if the cuv\u00e9e base name matches. The shared producer and similar naming are not enough to make them the same bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Wine B explicitly names the grape Carmenere, while Wine A is a blend of Carmenere and Cabernet Franc. Under the rules, different grapes/composition mean different wines even if the cuv\u00e9e base name matches. The shared producer and similar naming are not enough to make them the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 82,
+  "elapsed": 1.6462395191192627,
+  "error": null
+}

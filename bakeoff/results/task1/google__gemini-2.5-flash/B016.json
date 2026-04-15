@@ -1,0 +1,13 @@
+{
+  "pair_id": "B016",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are made from different grape varieties (Croatina vs. Nebbiolo). Additionally, they come from different appellations (Barolo vs. Barbaresco), which are distinct wine regions in Piedmont, Italy.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are made from different grape varieties (Croatina vs. Nebbiolo). Additionally, they come from different appellations (Barolo vs. Barbaresco), which are distinct wine regions in Piedmont, Italy.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 67,
+  "elapsed": 1.4231443405151367,
+  "error": null
+}

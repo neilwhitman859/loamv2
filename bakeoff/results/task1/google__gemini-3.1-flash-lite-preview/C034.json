@@ -1,0 +1,13 @@
+{
+  "pair_id": "C034",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"Markus Molitor uses the star system (1*, 2*, 3*) to denote different quality tiers and selections within the same vineyard and Pr\u00e4dikat level. Because these represent distinct bottlings with different star ratings, they are treated as separate wines in the producer's portfolio.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Markus Molitor uses the star system (1*, 2*, 3*) to denote different quality tiers and selections within the same vineyard and Pr\u00e4dikat level. Because these represent distinct bottlings with different star ratings, they are treated as separate wines in the producer's portfolio.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 86,
+  "elapsed": 1.891721487045288,
+  "error": null
+}

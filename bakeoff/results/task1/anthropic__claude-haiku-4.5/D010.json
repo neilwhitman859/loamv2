@@ -1,0 +1,13 @@
+{
+  "pair_id": "D010",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is labeled 'Gran Cuvee' while Wine B is explicitly labeled 'Gran Cuvee Rose'. Despite both being ros\u00e9 in color, the naming distinction indicates these are separate bottlings from Bellavista's product line. The addition of 'Rose' to the name signals a distinct wine that would appear as a separate entry in a wine encyclopedia.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is labeled 'Gran Cuvee' while Wine B is explicitly labeled 'Gran Cuvee Rose'. Despite both being ros\u00e9 in color, the naming distinction indicates these are separate bottlings from Bellavista's product line. The addition of 'Rose' to the name signals a distinct wine that would appear as a separate entry in a wine encyclopedia.",
+  "parse_ok": true,
+  "tokens_in": 476,
+  "tokens_out": 107,
+  "elapsed": 4.294708013534546,
+  "error": null
+}

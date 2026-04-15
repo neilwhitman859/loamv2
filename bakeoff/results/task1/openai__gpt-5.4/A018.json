@@ -1,0 +1,13 @@
+{
+  "pair_id": "A018",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"The records share producer and a similar cuv\u00e9e name, but Wine B explicitly identifies the grape as Viognier while Wine A lists Chardonnay Blanc. Different grapes always indicate different wines, even when the vineyard/cuv\u00e9e name matches. Therefore these are separate bottlings from Te Awanga's Quarter Acre line.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "The records share producer and a similar cuv\u00e9e name, but Wine B explicitly identifies the grape as Viognier while Wine A lists Chardonnay Blanc. Different grapes always indicate different wines, even when the vineyard/cuv\u00e9e name matches. Therefore these are separate bottlings from Te Awanga's Quarter Acre line.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 84,
+  "elapsed": 2.267314910888672,
+  "error": null
+}

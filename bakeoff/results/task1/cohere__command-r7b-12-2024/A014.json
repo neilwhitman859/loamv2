@@ -1,0 +1,13 @@
+{
+  "pair_id": "A014",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is made from Gew\u00fcrztraminer, while Wine B is made from Pinot Gris, which are different grape varieties. This is a clear indicator of different wines, as the grape variety is a defining characteristic of the wine's identity.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is made from Gew\u00fcrztraminer, while Wine B is made from Pinot Gris, which are different grape varieties. This is a clear indicator of different wines, as the grape variety is a defining characteristic of the wine's identity.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 72,
+  "elapsed": 1.323908805847168,
+  "error": null
+}

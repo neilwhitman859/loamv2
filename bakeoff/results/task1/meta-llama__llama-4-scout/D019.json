@@ -1,0 +1,13 @@
+{
+  "pair_id": "D019",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Masut Da Rive), color (red), and grape variety (Pinot Nero). The difference in name formatting ('Pinot Nero' vs 'Maurus Pinot Nero') is a varietal suffix difference, which usually indicates the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Masut Da Rive), color (red), and grape variety (Pinot Nero). The difference in name formatting ('Pinot Nero' vs 'Maurus Pinot Nero') is a varietal suffix difference, which usually indicates the same wine.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 79,
+  "elapsed": 2.5610854625701904,
+  "error": null
+}

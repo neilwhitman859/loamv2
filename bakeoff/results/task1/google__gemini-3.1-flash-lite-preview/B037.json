@@ -1,0 +1,13 @@
+{
+  "pair_id": "B037",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines have different colors (red vs. white), which indicates they are distinct bottlings produced by Parra Jimenez. Even if they share the same brand name 'Camino', a red wine and a white wine are fundamentally different products.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines have different colors (red vs. white), which indicates they are distinct bottlings produced by Parra Jimenez. Even if they share the same brand name 'Camino', a red wine and a white wine are fundamentally different products.",
+  "parse_ok": true,
+  "tokens_in": 392,
+  "tokens_out": 77,
+  "elapsed": 1.9395978450775146,
+  "error": null
+}

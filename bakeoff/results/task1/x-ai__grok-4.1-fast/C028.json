@@ -1,0 +1,13 @@
+{
+  "pair_id": "C028",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both are red Carmenere from producer Mayu, but Wine A is 'Gran Reserva' while Wine B is 'Reserva', representing different classification tiers that indicate distinct bottlings with varying aging and quality levels. Different LWINs (1372546 vs 2371159) further confirm they are separate wines a consumer would encounter independently. Varietal naming differences are minor formatting, but the tier distinction overrides this.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both are red Carmenere from producer Mayu, but Wine A is 'Gran Reserva' while Wine B is 'Reserva', representing different classification tiers that indicate distinct bottlings with varying aging and quality levels. Different LWINs (1372546 vs 2371159) further confirm they are separate wines a consumer would encounter independently. Varietal naming differences are minor formatting, but the tier distinction overrides this.",
+  "parse_ok": true,
+  "tokens_in": 565,
+  "tokens_out": 631,
+  "elapsed": 7.274899244308472,
+  "error": null
+}

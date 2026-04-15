@@ -1,0 +1,13 @@
+{
+  "pair_id": "D004",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from the same producer, Chimney Rock, and have the same grape variety, Cabernet Sauvignon. The color of both wines is red, and there are no other distinguishing differences mentioned, suggesting they are the same wine with potentially different name formatting.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from the same producer, Chimney Rock, and have the same grape variety, Cabernet Sauvignon. The color of both wines is red, and there are no other distinguishing differences mentioned, suggesting they are the same wine with potentially different name formatting.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 74,
+  "elapsed": 2.8710386753082275,
+  "error": null
+}

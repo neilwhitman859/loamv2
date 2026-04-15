@@ -1,0 +1,13 @@
+{
+  "pair_id": "C045",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Both wines are Maximin Grunhauser Abtsberg Riesling Kabinett Auktion from Von Schubert, but Wine B specifies 'Nr8' (lot/cask number 8), indicating a specific numbered auction lot. Per the rules, different lot/cask numbers at the same Pr\u00e4dikat level constitute different wines. The distinct LWIN codes (1484085 vs 1484144) further confirm these are catalogued as separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Both wines are Maximin Grunhauser Abtsberg Riesling Kabinett Auktion from Von Schubert, but Wine B specifies 'Nr8' (lot/cask number 8), indicating a specific numbered auction lot. Per the rules, different lot/cask numbers at the same Pr\u00e4dikat level constitute different wines. The distinct LWIN codes (1484085 vs 1484144) further confirm these are catalogued as separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 527,
+  "tokens_out": 132,
+  "elapsed": 3.573397636413574,
+  "error": null
+}

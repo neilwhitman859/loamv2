@@ -1,0 +1,24 @@
+{
+  "wine_id": "1bc9b5ef-3d2d-4f0d-924b-fbfcd741e8d3",
+  "wine_name": "Montes Alpha M, Valle de Colchagua",
+  "tier": "B",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.85,
+  "wrong_facts": [
+    "Hook claims 'granite slopes' — Apalta is known for granite-influenced soils but the specific claim of 'granite slopes' as the geological gamble is not well-established; Apalta's soils are more commonly described as a mix of clay,ite, and decomposed granite, not purely granite",
+    "Vinification states wine is aged in 'new French oak' — ground truth says 70% new French oak, not 100% new",
+    "Terroir section describes 'granite bedrock and alluvial clay deposits' — while partially plausible, the specific geological description is embellished beyond what's verifiable"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "18 months in new French oak — the 18 months is correct per ground truth but the 'new' qualifier is wrong (should be 70% new)",
+    "ABV 14.8% and pH 3.50 are not fabricated in the output but the output doesn't cite them either"
+  ],
+  "reasoning": "The output correctly identifies the Apalta vineyard source, the Bordeaux-blend composition (Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot), and the 18-month French oak aging — all matching ground truth. However, it states the wine is aged in 'new French oak' when ground truth specifies 70% new, which is a meaningful inaccuracy. The granite-focused terroir narrative is somewhat embellished beyond verifiable claims. No blend percentages are fabricated (none are stated), which is smart. The voice is strong — direct, opinionated, avoids banned words, and the insider take has genuine edge. Specificity is high with real comparables (Almaviva, Catena Alta) and concrete food pairings. The 'new French oak' error and the granite embellishment prevent a higher correctness score.",
+  "judge_tokens_in": 3479,
+  "judge_tokens_out": 466
+}

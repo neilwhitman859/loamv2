@@ -1,0 +1,13 @@
+{
+  "pair_id": "C039",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Caballo Dorado) and appellation (Valle de Colchagua) but have different classification tiers: Gran Reserva vs Reserva. According to the rules, different Rioja-style classification tiers (Reserva vs Gran Reserva) represent distinct bottlings and are therefore different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Caballo Dorado) and appellation (Valle de Colchagua) but have different classification tiers: Gran Reserva vs Reserva. According to the rules, different Rioja-style classification tiers (Reserva vs Gran Reserva) represent distinct bottlings and are therefore different wines.",
+  "parse_ok": true,
+  "tokens_in": 517,
+  "tokens_out": 91,
+  "elapsed": 2.0239269733428955,
+  "error": null
+}

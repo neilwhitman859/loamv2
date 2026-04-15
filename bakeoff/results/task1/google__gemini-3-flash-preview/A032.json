@@ -1,0 +1,13 @@
+{
+  "pair_id": "A032",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A is an abbreviated version of Wine B, as both share the same producer, color, and grape variety (Pinot Noir). Sherwood Estate uses 'Stoney Range' as a specific product line, and the addition of the varietal name in Record B is a formatting difference rather than a distinction in bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A is an abbreviated version of Wine B, as both share the same producer, color, and grape variety (Pinot Noir). Sherwood Estate uses 'Stoney Range' as a specific product line, and the addition of the varietal name in Record B is a formatting difference rather than a distinction in bottling.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 85,
+  "elapsed": 1.5206568241119385,
+  "error": null
+}

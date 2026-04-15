@@ -1,0 +1,13 @@
+{
+  "pair_id": "C029",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.93,\"reasoning\":\"These are not just formatting variants: Wine A includes the specific cuv\u00e9e name \\\"Don Amerigo\\\" while Wine B does not, so they likely represent different bottlings within Mayu's lineup. The shared \\\"Gran Reserva Cabernet Sauvignon\\\" wording is not enough to make them the same wine when one record has an additional named wine designation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.93,
+  "reasoning": "These are not just formatting variants: Wine A includes the specific cuv\u00e9e name \"Don Amerigo\" while Wine B does not, so they likely represent different bottlings within Mayu's lineup. The shared \"Gran Reserva Cabernet Sauvignon\" wording is not enough to make them the same wine when one record has an additional named wine designation.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 90,
+  "elapsed": 2.05771541595459,
+  "error": null
+}

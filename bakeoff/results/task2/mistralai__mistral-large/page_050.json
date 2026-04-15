@@ -1,0 +1,28 @@
+{
+  "page_id": "page_050",
+  "model": "mistralai/mistral-large",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Riesling\",\n      \"vintage_year\": null,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": null,\n        \"ta_g_l\": null,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": \"Jessica Tomei\",\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Riesling",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 43131,
+  "tokens_out": 127,
+  "elapsed": 6.4289937019348145,
+  "error": null
+}

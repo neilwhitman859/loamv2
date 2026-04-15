@@ -1,0 +1,13 @@
+{
+  "pair_id": "D002",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (Van Volxem), vineyard (Altenberg), grape (Riesling), and style designation (Alte Reben). The only difference is the 'GG' suffix on Wine A, which is a German quality classification (Grosses Gew\u00e4chs) appended to the name, not a different grape, vineyard, or wine type.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (Van Volxem), vineyard (Altenberg), grape (Riesling), and style designation (Alte Reben). The only difference is the 'GG' suffix on Wine A, which is a German quality classification (Grosses Gew\u00e4chs) appended to the name, not a different grape, vineyard, or wine type.",
+  "parse_ok": true,
+  "tokens_in": 457,
+  "tokens_out": 98,
+  "elapsed": 3.997750997543335,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C044",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The records represent different bottlings of the same vineyard; Wine A is a specific auction lot (Nr 17), while Wine B refers to the general auction bottling. Furthermore, the provided metadata indicates a discrepancy in wine color (red vs white), which confirms they are distinct products.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records represent different bottlings of the same vineyard; Wine A is a specific auction lot (Nr 17), while Wine B refers to the general auction bottling. Furthermore, the provided metadata indicates a discrepancy in wine color (red vs white), which confirms they are distinct products.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 85,
+  "elapsed": 2.4156277179718018,
+  "error": null
+}

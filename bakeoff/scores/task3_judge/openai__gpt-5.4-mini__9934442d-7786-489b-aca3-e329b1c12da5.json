@@ -1,0 +1,24 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.65,
+  "wrong_facts": [
+    "Price range 'AUD $15–25' is fabricated — no pricing data was provided in context",
+    "Competitors De Bortoli and Banrock Station named as price competitors without basis — Banrock Station is a mass-market brand unlikely to be a meaningful comparison for Great Southern Pinot",
+    "Frankland River and Pemberton comparisons are sub-regions/regions, not specific wines or producers"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "AUD $15–25 price range",
+    "12-14°C storage temperature"
+  ],
+  "reasoning": "The output fabricates a specific price range (AUD $15–25) not present in context data, which triggers concern, though it's a plausible estimate rather than a technical winemaking number. The storage temperature is general wine knowledge rather than a wine-specific fabrication. The hook is factually safe — it doesn't make false claims about naming origin or grape variety. The output correctly identifies Great Southern's cool-climate character and aligns with ground truth about gravelly loam soils and Plantagenet's long history. However, it misses confirmed ground truth details like 10 months French oak, 100% Pinot Noir confirmation, Omrah being a second label, and Plantagenet being the first commercial winery in Great Southern (1968/1975). Voice is strong — direct, opinionated, avoids banned words, and takes clear positions. Specificity is good with named soil types and sub-regions. The insider take is genuinely useful and actionable.",
+  "judge_tokens_in": 3570,
+  "judge_tokens_out": 386
+}

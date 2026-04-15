@@ -1,0 +1,13 @@
+{
+  "pair_id": "D032",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"In German wine classification, the inclusion of 'Reserve' in a wine name typically denotes a distinct, higher-tier bottling with different aging or selection criteria compared to the standard 'Trocken' bottling. The distinct LWIN numbers further confirm that these are managed as separate commercial products by the producer.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "In German wine classification, the inclusion of 'Reserve' in a wine name typically denotes a distinct, higher-tier bottling with different aging or selection criteria compared to the standard 'Trocken' bottling. The distinct LWIN numbers further confirm that these are managed as separate commercial products by the producer.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 89,
+  "elapsed": 1.9371931552886963,
+  "error": null
+}

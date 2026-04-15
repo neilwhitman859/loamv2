@@ -1,0 +1,13 @@
+{
+  "pair_id": "D008",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer (Vistalba), vineyard (Corte), color (red), and grape varieties (COT, CABERNET SAUVIGNON). The difference in name formatting ('Corte C' vs 'Corte') and the presence of a varietal suffix in one of the names do not indicate a different wine, as the key attributes match.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer (Vistalba), vineyard (Corte), color (red), and grape varieties (COT, CABERNET SAUVIGNON). The difference in name formatting ('Corte C' vs 'Corte') and the presence of a varietal suffix in one of the names do not indicate a different wine, as the key attributes match.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 100,
+  "elapsed": 1.6118595600128174,
+  "error": null
+}

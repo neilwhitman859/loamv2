@@ -1,0 +1,13 @@
+{
+  "pair_id": "A040",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is listed as a blend containing Merlot and Chardonnay, whereas Wine B is specifically identified by its LWIN and name as a Pinot Noir. Since the grape varieties differ significantly between the two records, they represent distinct bottlings within the producer's Appellation Series.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is listed as a blend containing Merlot and Chardonnay, whereas Wine B is specifically identified by its LWIN and name as a Pinot Noir. Since the grape varieties differ significantly between the two records, they represent distinct bottlings within the producer's Appellation Series.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 77,
+  "elapsed": 1.817314863204956,
+  "error": null
+}

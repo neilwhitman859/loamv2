@@ -1,0 +1,13 @@
+{
+  "pair_id": "C044",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a specific auction bottling (Auktion Nr17), which in German wine classification denotes a unique lot or cask number distinct from the standard auction release or other numbered lots. Furthermore, the metadata indicates a color discrepancy (red vs white), though both are Rieslings, confirming they are treated as distinct commercial entities (LWINs).\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a specific auction bottling (Auktion Nr17), which in German wine classification denotes a unique lot or cask number distinct from the standard auction release or other numbered lots. Furthermore, the metadata indicates a color discrepancy (red vs white), though both are Rieslings, confirming they are treated as distinct commercial entities (LWINs).",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 94,
+  "elapsed": 1.707127571105957,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B004",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different grape varieties (Pinot Noir vs Chardonnay Blanc, Pinot Noir) and different colors (red vs white), which makes them distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different grape varieties (Pinot Noir vs Chardonnay Blanc, Pinot Noir) and different colors (red vs white), which makes them distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 466,
+  "tokens_out": 64,
+  "elapsed": 3.709656238555908,
+  "error": null
+}

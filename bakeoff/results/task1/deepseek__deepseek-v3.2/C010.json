@@ -1,0 +1,13 @@
+{
+  "pair_id": "C010",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Peter Jakob Kuhn), have the same grape (Riesling), the same Pr\u00e4dikat level (Auslese), and the same color (white). The only differences are the order of the terms and the presence of a lot number ('Nr12') in Wine A, which is a specific bottling detail but does not indicate a different wine type or classification tier.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Peter Jakob Kuhn), have the same grape (Riesling), the same Pr\u00e4dikat level (Auslese), and the same color (white). The only differences are the order of the terms and the presence of a lot number ('Nr12') in Wine A, which is a specific bottling detail but does not indicate a different wine type or classification tier.",
+  "parse_ok": true,
+  "tokens_in": 454,
+  "tokens_out": 105,
+  "elapsed": 4.464422941207886,
+  "error": null
+}

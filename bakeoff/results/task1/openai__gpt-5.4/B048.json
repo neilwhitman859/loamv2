@@ -1,0 +1,13 @@
+{
+  "pair_id": "B048",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines because they have different grape varieties: Wine A is Pinot Gris and Wine B is Pinot Blanc. Even though the producer and vineyard/cuv\u00e9e name 'Henkenberg' match, different grapes always indicate separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines because they have different grape varieties: Wine A is Pinot Gris and Wine B is Pinot Blanc. Even though the producer and vineyard/cuv\u00e9e name 'Henkenberg' match, different grapes always indicate separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 416,
+  "tokens_out": 70,
+  "elapsed": 2.0932586193084717,
+  "error": null
+}

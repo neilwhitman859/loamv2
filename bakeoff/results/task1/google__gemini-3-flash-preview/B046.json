@@ -1,0 +1,13 @@
+{
+  "pair_id": "B046",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines represent distinct blends within a numbered series ('Note #2' vs 'Note #3') and are different colors (Red vs White). In the Polifonia series by Purcari/Timbrus, each 'Note' corresponds to a specific, different grape composition and wine style.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines represent distinct blends within a numbered series ('Note #2' vs 'Note #3') and are different colors (Red vs White). In the Polifonia series by Purcari/Timbrus, each 'Note' corresponds to a specific, different grape composition and wine style.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 81,
+  "elapsed": 1.6087427139282227,
+  "error": null
+}

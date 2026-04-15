@@ -1,0 +1,23 @@
+{
+  "page_id": "page_025",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\"wines_found\": [{\"name\": \"Russian River Valley Chardonnay\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}]}\n```",
+  "wines_found": [
+    {
+      "name": "Russian River Valley Chardonnay",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 14092,
+  "tokens_out": 67,
+  "elapsed": 1.6526086330413818,
+  "error": null
+}

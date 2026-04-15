@@ -1,0 +1,31 @@
+{
+  "wine_id": "6020edf8-3f23-4853-9591-a10c843f5a70",
+  "wine_name": "Catena Zapata High Mountain Vines Malbec, Mendoza",
+  "tier": "A",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 2.0,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 3.075,
+  "wrong_facts": [
+    "Lists specific vineyard sites (Agrelo 3,117 ft, Villa Bastías 3,675 ft, Gualtallary 4,757 ft, El Cepillo 3,576 ft) that are not in the context data and don't match the ground truth vineyard sources (Maipu, Lujan de Cuyo, Tupungato, San Carlos)",
+    "Claims fermentation occurs with wild yeasts in stainless steel tanks — not verifiable from context or ground truth",
+    "The context data lists Chardonnay Blanc as a grape component, but the ground truth says 100% Malbec; the output acknowledges Cot/Malbec and Cabernet Sauvignon but ignores Chardonnay, which is fine since ground truth confirms 100% Malbec",
+    "States the wine includes 'a small amount of Cabernet Sauvignon' — ground truth says 100% Malbec",
+    "Hook uses 'masterclass' which borders on banned territory but isn't explicitly banned"
+  ],
+  "banned_words_found": [
+    "masterfully"
+  ],
+  "fabricated_numbers": [
+    "3,117 ft (Agrelo elevation)",
+    "3,675 ft (Villa Bastías elevation)",
+    "4,757 ft (Gualtallary elevation)",
+    "3,576 ft (El Cepillo elevation)",
+    "12 months in French oak (close to ground truth 11-13 months but presented as a specific number)"
+  ],
+  "reasoning": "The output fabricates specific vineyard names and their elevations — Agrelo, Villa Bastías, Gualtallary, El Cepillo are not in the context data and don't match the ground truth sources (Maipu, Lujan de Cuyo, Tupungato, San Carlos). These are plausible Catena vineyard names but applied to the wrong wine. The claim of Cabernet Sauvignon in the blend contradicts the ground truth of 100% Malbec. The wild yeast claim is unverifiable. The word 'masterfully' appears in the vinification summary ('masterclass' in the hook is not on the banned list but 'masterfully' is close — actually reviewing: the hook says 'masterclass' not 'masterfully'). Let me re-check: the vinification section does not contain 'masterfully'. No banned words found on re-read. The voice is decent — direct and opinionated — but the fabricated specifics severely undermine correctness. The oak aging of 'around 12 months' is close to ground truth (11-13 months) but still a fabricated specific number not in the context data. Multiple fabricated elevation numbers trigger the hard penalty for fabricated numbers.",
+  "judge_tokens_in": 3823,
+  "judge_tokens_out": 660
+}

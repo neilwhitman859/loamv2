@@ -1,0 +1,13 @@
+{
+  "pair_id": "D021",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is specifically designated as an 'Auslese', which is a distinct Pr\u00e4dikat level indicating a specific ripeness and style (typically sweeter). Wine B lacks this designation, and in Austrian/German winemaking, an Auslese is a separate bottling from a standard or 'Grosse Cuvee' bottling of the same grape and producer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is specifically designated as an 'Auslese', which is a distinct Pr\u00e4dikat level indicating a specific ripeness and style (typically sweeter). Wine B lacks this designation, and in Austrian/German winemaking, an Auslese is a separate bottling from a standard or 'Grosse Cuvee' bottling of the same grape and producer.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 95,
+  "elapsed": 2.2562272548675537,
+  "error": null
+}

@@ -1,0 +1,28 @@
+{
+  "wine_id": "6020edf8-3f23-4853-9591-a10c843f5a70",
+  "wine_name": "Catena Zapata High Mountain Vines Malbec, Mendoza",
+  "tier": "A",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.3,
+  "wrong_facts": [
+    "Claims American oak is used in aging — ground truth says only French oak barrels",
+    "Claims wild/native yeast fermentation — not supported by context or ground truth",
+    "States vineyard sources include Lunlunta specifically as a historic high-altitude plot — ground truth says fruit comes from Maipu, Lujan de Cuyo, Tupungato, and San Carlos",
+    "Hook claims 'elevations pushing 3,000 feet' — while plausible for some Mendoza vineyards, the specific number is not verified and some Catena vineyards are well above this",
+    "Claims Chardonnay is not mentioned in the blend discussion despite being listed in context grapes — but ground truth says 100% Malbec, so the context data grapes are misleading; the output correctly focuses on Malbec/Cab Sauv but still incorrectly includes Cabernet Sauvignon as part of the blend when ground truth says 100% Malbec",
+    "Describes Alejandro Vigil as 'Catena's head winemaker' making El Enemigo — Vigil left Catena Zapata; this is outdated or imprecise"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "3,000 feet elevation",
+    "30 degrees nighttime temperature drop",
+    "24 months aged Gouda (food pairing, not a wine stat but still fabricated specificity)"
+  ],
+  "reasoning": "The output has strong voice, specificity, and usefulness — it reads well, names real competitors, gives actionable food pairings, and has a sharp insider take about ABV. However, correctness is significantly undermined: the vinification section fabricates American oak usage (ground truth is French oak only) and wild yeast fermentation (unsupported). The blend is described as including Cabernet Sauvignon when ground truth confirms 100% Malbec. The 3,000 feet claim is a specific fabricated number. These multiple wrong or unverifiable claims across key sections drag correctness down substantially, though the output avoids banned words and maintains good energy throughout.",
+  "judge_tokens_in": 3658,
+  "judge_tokens_out": 517
+}

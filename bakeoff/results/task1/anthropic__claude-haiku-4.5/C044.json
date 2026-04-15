@@ -1,0 +1,13 @@
+{
+  "pair_id": "C044",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is listed as red while Wine B is white; Riesling from Maximin Grunhaus is characteristically white, making Wine A's red classification anomalous and suggesting a data error or misidentification. Additionally, the auction lot numbers differ (Nr17 vs no number specified), and the different LWINs (1679528 vs 1820685) confirm these are distinct records in the database. The color discrepancy alone is disqualifying for same-wine classification.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is listed as red while Wine B is white; Riesling from Maximin Grunhaus is characteristically white, making Wine A's red classification anomalous and suggesting a data error or misidentification. Additionally, the auction lot numbers differ (Nr17 vs no number specified), and the different LWINs (1679528 vs 1820685) confirm these are distinct records in the database. The color discrepancy alone is disqualifying for same-wine classification.",
+  "parse_ok": true,
+  "tokens_in": 523,
+  "tokens_out": 135,
+  "elapsed": 3.468640089035034,
+  "error": null
+}

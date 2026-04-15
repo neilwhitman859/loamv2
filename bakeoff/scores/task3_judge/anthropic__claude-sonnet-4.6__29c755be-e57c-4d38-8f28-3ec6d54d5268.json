@@ -1,0 +1,27 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "anthropic/claude-sonnet-4.6",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.675,
+  "wrong_facts": [
+    "The hook claims Gigondas requires at least 50% Grenache and that Les Routes is 'declassified' because 100% Syrah cannot legally carry the Gigondas AOC. While Gigondas does typically require Grenache dominance, the context data actually labels this wine as 'Gigondas Les Routes' — it appears to carry the Gigondas appellation name. The ground truth lists it as a Gigondas wine. The declassification narrative may be fabricated or at least overstated.",
+    "Claims biodynamic farming by des Bosquets — not present in context data and not confirmed in ground truth. Ground truth mentions no biodynamic certification.",
+    "Price range of $30-$45 is fabricated — no prices were provided in context data.",
+    "The hook uses the banned word 'genuine' in the insider_take section."
+  ],
+  "banned_words_found": [
+    "genuine"
+  ],
+  "fabricated_numbers": [
+    "$30-$45 retail price range",
+    "$35-45 sweet spot in market_position"
+  ],
+  "reasoning": "The output is impressively detailed and well-written with strong voice and specificity. However, it builds a central narrative around declassification (vin de table/IGP status) that appears to be fabricated — the wine is listed as appellation Gigondas in the context data and ground truth. The biodynamic farming claim is not verified in either source. The price ranges are fabricated since no prices were provided. The banned word 'genuine' appears in the insider_take. The Serine clone detail from ground truth was missed, as was the Julien Bréchet winemaker detail. Despite these issues, the terroir description, food pairings, and comparable wines sections are strong and mostly well-grounded.",
+  "judge_tokens_in": 4474,
+  "judge_tokens_out": 439
+}

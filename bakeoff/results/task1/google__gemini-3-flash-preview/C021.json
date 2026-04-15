@@ -1,0 +1,13 @@
+{
+  "pair_id": "C021",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Beerenauslese (BA) and Wine B is a Trockenbeerenauslese (TBA). In German wine classification, these represent distinct Pr\u00e4dikat levels based on different grape ripeness and must weights, resulting in different styles and price points.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Beerenauslese (BA) and Wine B is a Trockenbeerenauslese (TBA). In German wine classification, these represent distinct Pr\u00e4dikat levels based on different grape ripeness and must weights, resulting in different styles and price points.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 81,
+  "elapsed": 1.6818037033081055,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D017",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from producer Villadoria and the names 'Comune di Gavi' and 'del Comune di Gavi' refer to the same Gavi del Comune di Gavi designation, with one simply being an abbreviated form. Both are white wines, and Wine A is confirmed as 100% Cortese, which is the standard grape for Gavi. The difference is purely in name formatting/abbreviation, not in any substantive wine characteristic.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from producer Villadoria and the names 'Comune di Gavi' and 'del Comune di Gavi' refer to the same Gavi del Comune di Gavi designation, with one simply being an abbreviated form. Both are white wines, and Wine A is confirmed as 100% Cortese, which is the standard grape for Gavi. The difference is purely in name formatting/abbreviation, not in any substantive wine characteristic.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 126,
+  "elapsed": 6.621038436889648,
+  "error": null
+}

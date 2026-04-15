@@ -1,0 +1,13 @@
+{
+  "pair_id": "B042",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a ros\u00e9 while Wine B is a white Chardonnay, representing different colors and grape varieties. Even with the same producer and region, these are distinct bottlings a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a ros\u00e9 while Wine B is a white Chardonnay, representing different colors and grape varieties. Even with the same producer and region, these are distinct bottlings a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 68,
+  "elapsed": 1.9962549209594727,
+  "error": null
+}

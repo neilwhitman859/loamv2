@@ -1,0 +1,13 @@
+{
+  "pair_id": "D046",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer Maris and base name 'Nymphe Emue', with Wine B's 'Rose' suffix matching the rose color explicitly stated for both records. This aligns with rules where varietal/style suffix differences alone indicate the same wine, as the shorter name is an abbreviation. No differences in grapes, classifications, or other distinct bottling factors are present.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer Maris and base name 'Nymphe Emue', with Wine B's 'Rose' suffix matching the rose color explicitly stated for both records. This aligns with rules where varietal/style suffix differences alone indicate the same wine, as the shorter name is an abbreviation. No differences in grapes, classifications, or other distinct bottling factors are present.",
+  "parse_ok": true,
+  "tokens_in": 559,
+  "tokens_out": 520,
+  "elapsed": 3.9737372398376465,
+  "error": null
+}

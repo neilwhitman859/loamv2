@@ -1,0 +1,13 @@
+{
+  "pair_id": "A034",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.92, \"reasoning\": \"Wine A is explicitly identified as containing Chardonnay Blanc and Pinot Gris grapes, while Wine B's name specifies 'Sauvignon Blanc' as the grape variety. These are distinct grape varieties, making these different wines despite sharing the same producer and regional designation. The varietal suffix rule applies here: the suffix indicates a genuinely different grape composition, not merely an abbreviation of the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.92,
+  "reasoning": "Wine A is explicitly identified as containing Chardonnay Blanc and Pinot Gris grapes, while Wine B's name specifies 'Sauvignon Blanc' as the grape variety. These are distinct grape varieties, making these different wines despite sharing the same producer and regional designation. The varietal suffix rule applies here: the suffix indicates a genuinely different grape composition, not merely an abbreviation of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 115,
+  "elapsed": 3.9226462841033936,
+  "error": null
+}

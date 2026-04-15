@@ -1,0 +1,13 @@
+{
+  "pair_id": "A015",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from producer Patricia Green, with identical vineyard (Freedom Hill) and cuv\u00e9e (Perspicacious), and Wine B's Pinot Noir varietal matches Wine A's specified grapes. The sole difference is the varietal suffix on Wine B, which per rules indicates the same wine as an abbreviation. No evidence of multiple grape varieties from this vineyard by the producer, and both are red with no other distinctions.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from producer Patricia Green, with identical vineyard (Freedom Hill) and cuv\u00e9e (Perspicacious), and Wine B's Pinot Noir varietal matches Wine A's specified grapes. The sole difference is the varietal suffix on Wine B, which per rules indicates the same wine as an abbreviation. No evidence of multiple grape varieties from this vineyard by the producer, and both are red with no other distinctions.",
+  "parse_ok": true,
+  "tokens_in": 569,
+  "tokens_out": 444,
+  "elapsed": 4.952635049819946,
+  "error": null
+}

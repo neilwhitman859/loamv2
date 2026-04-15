@@ -1,0 +1,13 @@
+{
+  "pair_id": "D037",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Chatter Creek) and share the same core name 'Blend 105 Red Table', with Wine B simply adding the word 'Wine' as a descriptive suffix. They are both red table wines with no indication of different grapes, classifications, or vineyard designations that would make them distinct bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Chatter Creek) and share the same core name 'Blend 105 Red Table', with Wine B simply adding the word 'Wine' as a descriptive suffix. They are both red table wines with no indication of different grapes, classifications, or vineyard designations that would make them distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 482,
+  "tokens_out": 94,
+  "elapsed": 1.875375747680664,
+  "error": null
+}

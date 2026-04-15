@@ -1,0 +1,37 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "minimax/minimax-m2.7",
+  "correctness": 1.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 3.025,
+  "wrong_facts": [
+    "Hook claims elevation ranges 'from sea level to over 1,000 meters' — Great Southern's highest points are around 400m, not over 1,000m",
+    "Claims Omrah is 'upper-middle tier' sourced from 'estate vineyards rather than purchased fruit' — ground truth confirms Omrah is the second label made from younger vineyards or bought-in fruit, i.e., the value tier",
+    "Claims 10-14 months in French oak — ground truth says 10 months, but the output hedges this as speculative so partially forgivable",
+    "Fabricated vintage details about 2011 being a 'cool, extended growing season' pushing harvest into April — not in context data and unverifiable",
+    "Fabricated price range AUD 28-38",
+    "Fabricated diurnal range exceeding 20°C during veraison",
+    "Drinking window min 13 years and max 18 years from vintage (2024-2029) seems oddly stated as years rather than vintage dates, and the cellar recommendation contradicts by saying drink now through 2027"
+  ],
+  "banned_words_found": [
+    "showcases"
+  ],
+  "fabricated_numbers": [
+    "200 kilometers span",
+    "elevation over 1,000 meters",
+    "diurnal range exceeding 20°C",
+    "10-14 months in French oak",
+    "AUD 28-38 price range",
+    "12-14°C storage temperature",
+    "drinking_window_min_years: 13",
+    "drinking_window_max_years: 18",
+    "aging_potential_years: 7"
+  ],
+  "reasoning": "The hook contains a provably wrong claim about elevation exceeding 1,000 meters in Great Southern (actual max ~400m), triggering the hard cap at 1.5 for correctness. The output also fundamentally mischaracterizes Omrah as upper-middle tier estate fruit when it's actually the value/second label from younger vines or bought-in fruit — this is directly contradicted by ground truth. Numerous specific numbers are fabricated (price, diurnal range, elevation, oak duration range). The voice is strong — direct, opinionated, well-structured with good food pairings and a punchy insider take. Specificity is good with named soils, sub-regions, and comparable wines. But the factual errors are too numerous and too central to score correctness above the hard cap. Note: 'showcases' appears in the insider take ('showcase wine'), which while used as a noun rather than verb, still triggers the banned word penalty on voice.",
+  "judge_tokens_in": 3901,
+  "judge_tokens_out": 618
+}

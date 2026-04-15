@@ -1,0 +1,13 @@
+{
+  "pair_id": "D042",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The producer (Pommery) and the core cuv\u00e9e name ('Apanage Prestige') are identical. 'Brut' is the standard sweetness level for this type of Champagne and is often omitted from the name for brevity. Since both are white wines, 'Apanage Prestige' is simply a shorter, less formal name for the 'Brut Apanage Prestige' bottling.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The producer (Pommery) and the core cuv\u00e9e name ('Apanage Prestige') are identical. 'Brut' is the standard sweetness level for this type of Champagne and is often omitted from the name for brevity. Since both are white wines, 'Apanage Prestige' is simply a shorter, less formal name for the 'Brut Apanage Prestige' bottling.",
+  "parse_ok": true,
+  "tokens_in": 413,
+  "tokens_out": 1484,
+  "elapsed": 14.786255836486816,
+  "error": null
+}

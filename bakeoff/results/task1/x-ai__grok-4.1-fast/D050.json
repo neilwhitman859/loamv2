@@ -1,0 +1,13 @@
+{
+  "pair_id": "D050",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The vineyard names 'Birkweiler Rosenberg' and 'Birkweiller Rosenberg' are nearly identical, differing only in spelling, with the same producer (Dr. Wehrheim) and white color. However, the grapes differ: Wine A is PINOT GRIS and PINOT BLANC, while Wine B is CHARDONNAY BLANC. Per the rules, different grapes always indicate different wines, even if the vineyard name matches.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The vineyard names 'Birkweiler Rosenberg' and 'Birkweiller Rosenberg' are nearly identical, differing only in spelling, with the same producer (Dr. Wehrheim) and white color. However, the grapes differ: Wine A is PINOT GRIS and PINOT BLANC, while Wine B is CHARDONNAY BLANC. Per the rules, different grapes always indicate different wines, even if the vineyard name matches.",
+  "parse_ok": true,
+  "tokens_in": 577,
+  "tokens_out": 502,
+  "elapsed": 3.8752009868621826,
+  "error": null
+}

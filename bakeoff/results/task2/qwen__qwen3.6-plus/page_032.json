@@ -1,0 +1,23 @@
+{
+  "page_id": "page_032",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Monterey Chardonnay\", \"vintage_year\": 2023, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": \"sustainable\"}]}",
+  "wines_found": [
+    {
+      "name": "Monterey Chardonnay",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "sustainable"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 25094,
+  "tokens_out": 1764,
+  "elapsed": 34.77064776420593,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B026",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are different versions of the same base cuv\u00e9e. Wine A is explicitly named 'Brut Antique Rose' and has the color 'rose', while Wine B is the standard 'Brut Antique' and has the color 'white'. A ros\u00e9 and a white wine are distinct products, even if they share a producer and part of the name.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are different versions of the same base cuv\u00e9e. Wine A is explicitly named 'Brut Antique Rose' and has the color 'rose', while Wine B is the standard 'Brut Antique' and has the color 'white'. A ros\u00e9 and a white wine are distinct products, even if they share a producer and part of the name.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 1207,
+  "elapsed": 13.270751476287842,
+  "error": null
+}

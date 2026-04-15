@@ -1,0 +1,13 @@
+{
+  "pair_id": "D034",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A specifies 'Neuberg' as a distinct vineyard designation within Bollenberg, while Wine B lists only 'Bollenberg' without vineyard specificity. The different LWINs (2377731 vs 1679573) confirm these are separate bottlings. Neuberg represents a specific vineyard parcel that would be a distinct bottling from a general Bollenberg blend.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A specifies 'Neuberg' as a distinct vineyard designation within Bollenberg, while Wine B lists only 'Bollenberg' without vineyard specificity. The different LWINs (2377731 vs 1679573) confirm these are separate bottlings. Neuberg represents a specific vineyard parcel that would be a distinct bottling from a general Bollenberg blend.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 115,
+  "elapsed": 8.254223108291626,
+  "error": null
+}

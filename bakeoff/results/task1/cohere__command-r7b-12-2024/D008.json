@@ -1,0 +1,13 @@
+{
+  "pair_id": "D008",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are from the same producer, Vistalba, and have the same grape varieties, COT and Cabernet Sauvignon. The slight difference in the name 'Corte C' and 'Corte' is likely due to name formatting, which is considered the same wine according to the rules.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are from the same producer, Vistalba, and have the same grape varieties, COT and Cabernet Sauvignon. The slight difference in the name 'Corte C' and 'Corte' is likely due to name formatting, which is considered the same wine according to the rules.",
+  "parse_ok": true,
+  "tokens_in": 468,
+  "tokens_out": 77,
+  "elapsed": 1.3387441635131836,
+  "error": null
+}

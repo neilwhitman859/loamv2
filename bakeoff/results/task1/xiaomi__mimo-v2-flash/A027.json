@@ -1,0 +1,13 @@
+{
+  "pair_id": "A027",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer (Hammeken) and share the base name 'Vina Altamar', with Wine B simply adding the grape variety 'Mencia' as a suffix. The producer likely makes a single 'Vina Altamar' wine from Mencia, and the name difference is just a formatting variation, not a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer (Hammeken) and share the base name 'Vina Altamar', with Wine B simply adding the grape variety 'Mencia' as a suffix. The producer likely makes a single 'Vina Altamar' wine from Mencia, and the name difference is just a formatting variation, not a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 94,
+  "elapsed": 2.3385612964630127,
+  "error": null
+}

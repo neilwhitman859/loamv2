@@ -1,0 +1,33 @@
+{
+  "page_id": "page_032",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Monterey Chardonnay\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": 13.5,\n      \"blend\": null,\n      \"oak\": {\n        \"vessel\": \"barrel\",\n        \"months\": null,\n        \"new_pct\": null,\n        \"origin\": null\n      },\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": 3.55,\n        \"ta_g_l\": null,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": null,\n      \"farming\": \"sustainable\"\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Monterey Chardonnay",
+      "vintage_year": 2023,
+      "abv_pct": 13.5,
+      "blend": null,
+      "oak": {
+        "vessel": "barrel",
+        "months": null,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": 3.55,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "sustainable"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 27018,
+  "tokens_out": 2654,
+  "elapsed": 25.18860173225403,
+  "error": null
+}

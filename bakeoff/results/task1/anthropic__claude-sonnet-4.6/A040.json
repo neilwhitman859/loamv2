@@ -1,0 +1,13 @@
+{
+  "pair_id": "A040",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A 'Appellation Series' contains Merlot Noir and Chardonnay Blanc grapes, while Wine B 'Appellation Series Pinot Noir' is explicitly a Pinot Noir. These are different grape varieties, which means they are distinct wines even though they share the same series name and producer. The varietal suffix rule applies here: the suffix 'Pinot Noir' indicates a different grape, not merely an abbreviation of the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A 'Appellation Series' contains Merlot Noir and Chardonnay Blanc grapes, while Wine B 'Appellation Series Pinot Noir' is explicitly a Pinot Noir. These are different grape varieties, which means they are distinct wines even though they share the same series name and producer. The varietal suffix rule applies here: the suffix 'Pinot Noir' indicates a different grape, not merely an abbreviation of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 500,
+  "tokens_out": 130,
+  "elapsed": 2.986088275909424,
+  "error": null
+}

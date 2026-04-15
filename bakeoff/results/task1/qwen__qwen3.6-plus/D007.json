@@ -1,0 +1,13 @@
+{
+  "pair_id": "D007",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines have completely different grape compositions (Cot/Cabernet Sauvignon vs. 100% Merlot), which definitively classifies them as distinct bottlings according to the rule that different grapes always mean different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines have completely different grape compositions (Cot/Cabernet Sauvignon vs. 100% Merlot), which definitively classifies them as distinct bottlings according to the rule that different grapes always mean different wines.",
+  "parse_ok": true,
+  "tokens_in": 474,
+  "tokens_out": 873,
+  "elapsed": 17.30493712425232,
+  "error": null
+}

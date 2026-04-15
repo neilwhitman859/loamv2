@@ -1,0 +1,13 @@
+{
+  "pair_id": "C026",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white Maximum Brut and Wine B is a ros\u00e9 Maximum Brut Ros\u00e9, indicating a difference in color and style. The producer Ferrari makes both wines, but the difference in color (white vs ros\u00e9) signifies distinct bottlings. The LWIN numbers are also different, further supporting that they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white Maximum Brut and Wine B is a ros\u00e9 Maximum Brut Ros\u00e9, indicating a difference in color and style. The producer Ferrari makes both wines, but the difference in color (white vs ros\u00e9) signifies distinct bottlings. The LWIN numbers are also different, further supporting that they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 90,
+  "elapsed": 1.9259319305419922,
+  "error": null
+}

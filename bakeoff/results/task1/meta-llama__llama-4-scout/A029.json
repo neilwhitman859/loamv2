@@ -1,0 +1,13 @@
+{
+  "pair_id": "A029",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, Koehly, and the same color, white. The difference in name and varietal suffix ('Chasseresse' vs 'Chasseresse Auxerrois') suggests an abbreviation, and Auxerrois is a grape variety listed for Wine A, indicating likely the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, Koehly, and the same color, white. The difference in name and varietal suffix ('Chasseresse' vs 'Chasseresse Auxerrois') suggests an abbreviation, and Auxerrois is a grape variety listed for Wine A, indicating likely the same wine.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 87,
+  "elapsed": 1.0687122344970703,
+  "error": null
+}

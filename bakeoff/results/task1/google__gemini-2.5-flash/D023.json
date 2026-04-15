@@ -1,0 +1,13 @@
+{
+  "pair_id": "D023",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The names 'Les Charmilles de Tour Blanche' and 'Les Charmilles de Tour' are very similar, with 'Blanche' likely being an omitted suffix in Wine B. Both wines are white and from the same producer, La Tour Blanche. The grape varieties listed for Wine B are typical for a white Bordeaux blend, which aligns with the producer's region and the 'Blanche' in Wine A's name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The names 'Les Charmilles de Tour Blanche' and 'Les Charmilles de Tour' are very similar, with 'Blanche' likely being an omitted suffix in Wine B. Both wines are white and from the same producer, La Tour Blanche. The grape varieties listed for Wine B are typical for a white Bordeaux blend, which aligns with the producer's region and the 'Blanche' in Wine A's name.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 107,
+  "elapsed": 1.6088337898254395,
+  "error": null
+}

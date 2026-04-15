@@ -1,0 +1,13 @@
+{
+  "pair_id": "B005",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines are made from different grape varieties (Pinot Noir vs. Chardonnay) and have different colors (red vs. white). Even though they share the same producer and vineyard name, they represent distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from different grape varieties (Pinot Noir vs. Chardonnay) and have different colors (red vs. white). Even though they share the same producer and vineyard name, they represent distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 413,
+  "tokens_out": 67,
+  "elapsed": 1.9280242919921875,
+  "error": null
+}

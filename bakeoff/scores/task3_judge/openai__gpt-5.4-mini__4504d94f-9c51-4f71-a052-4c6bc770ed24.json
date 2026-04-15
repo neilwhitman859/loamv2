@@ -1,0 +1,20 @@
+{
+  "wine_id": "4504d94f-9c51-4f71-a052-4c6bc770ed24",
+  "wine_name": "Cakebread Cuttings Wharf Vineyard Chardonnay, Los Carneros",
+  "tier": "C",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 4.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.325,
+  "wrong_facts": [
+    "Hook describes 'clay-heavy soils' but ground truth says Haire loam soils (loamy, not clay-heavy)",
+    "Terroir section mentions 'Diablo series' soils which is not verified for this specific vineyard site"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is largely accurate and well-written. The hook's mention of 'clay-heavy soils' is slightly misleading — the appellation context data does say 'clay-heavy soils' for Los Carneros generally, but the ground truth specifies Haire loam soils for this specific vineyard, which is a meaningful distinction the model partially gets right in the terroir section (naming Haire series) but muddles by also emphasizing clay. The Diablo series mention is unverifiable for this site. The naming origin in the hook is implied correctly (Cuttings Wharf Vineyard) without fabrication. The model correctly identifies the vineyard's cool-climate character, mentions Haire soils (matching ground truth), and provides genuinely useful comparables, food pairings, and value assessment. The $30 price point is correctly sourced from the 2023 vintage data. Voice is strong — direct, opinionated, avoids banned words, and takes clear positions. No fabricated numbers.",
+  "judge_tokens_in": 3761,
+  "judge_tokens_out": 344
+}

@@ -1,0 +1,28 @@
+{
+  "wine_id": "c815d359-5c41-4ee0-ab03-2afaf1ab5f81",
+  "wine_name": "Comando G El Reventon, Cebreros",
+  "tier": "B",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.4,
+  "wrong_facts": [
+    "Hook claims 'fermented with whole bunches in concrete vats and aged in neutral oak' — whole-cluster fermentation and concrete vats are not in context data and not verified by ground truth",
+    "Hook says 'granite terroir' but ground truth says slate soils",
+    "Wine summary says 'decomposed granite soils' but ground truth says slate soils at El Reventón",
+    "Terroir section describes decomposed granite ('arena gorda') but the verified vineyard is on slate",
+    "Wine is 100% Garnacha per ground truth, but output treats Alicante Bouschet as part of the blend and discusses its contribution",
+    "Vinification summary claims 'large, neutral oak foudres' but ground truth says French oak (16 months), not specified as neutral foudres",
+    "Oak aging described as 14 months but ground truth says 16 months in French oak",
+    "Price range '$45 and $60' is fabricated — no price data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$45 to $60 price range"
+  ],
+  "reasoning": "The output has a fundamental soil error: ground truth confirms El Reventón is on slate soils at 900m, but the output repeatedly claims decomposed granite ('arena gorda'), which is a significant factual error that pervades the hook, wine summary, and terroir sections. The blend is 100% Garnacha per ground truth, yet the output discusses Alicante Bouschet's contribution as if it's part of the wine. The hook contains the granite claim which is provably wrong. Whole-cluster fermentation in concrete vats is fabricated detail not supported by any source. The price range is invented. The voice is strong — direct, opinionated, well-structured — and the specificity is high, but much of that specificity is wrong. The winemaker names (Landi and García) are correct, and the general Sierra de Gredos framing is accurate, but the core terroir and blend claims undermine trust significantly.",
+  "judge_tokens_in": 3430,
+  "judge_tokens_out": 501
+}

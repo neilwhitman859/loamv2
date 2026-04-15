@@ -1,0 +1,13 @@
+{
+  "pair_id": "A044",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"The wines share the same producer, 'Creekside', and have similar names, 'Under Current Naked' and 'Under Current Naked Semillon'. The difference in name is due to the varietal suffix, which is likely an abbreviation. Both wines are white and Wine A is made from Semillon grapes, supporting the conclusion that they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "The wines share the same producer, 'Creekside', and have similar names, 'Under Current Naked' and 'Under Current Naked Semillon'. The difference in name is due to the varietal suffix, which is likely an abbreviation. Both wines are white and Wine A is made from Semillon grapes, supporting the conclusion that they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 97,
+  "elapsed": 1.6828029155731201,
+  "error": null
+}

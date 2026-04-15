@@ -1,0 +1,25 @@
+{
+  "wine_id": "1bc9b5ef-3d2d-4f0d-924b-fbfcd741e8d3",
+  "wine_name": "Montes Alpha M, Valle de Colchagua",
+  "tier": "B",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "Claims 'roughly 18 months in new French oak barriques' — ground truth says 70% new, not 100% new",
+    "Claims 45-degree slopes — this is a commonly cited figure but may be exaggerated; Montes markets some slopes at 45 degrees for Folly but Alpha M sourcing from Apalta estate more broadly",
+    "Claims 'decomposed granite and red clay soils' — granite is commonly associated with Apalta but 'red clay' is not verified from ground truth",
+    "Tinguiririca River influence is plausible but not confirmed in ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "45-degree slopes (not in context data, though commonly cited for Montes vineyards)",
+    "pH 3.50 and TA 3.57 are NOT stated in the output so no fabrication there"
+  ],
+  "reasoning": "The output correctly identifies the blend components (Cab Sauv, Cab Franc, Merlot, Petit Verdot) matching ground truth, correctly names Aurelio Montes as the winemaker, correctly identifies Apalta as the source, and gets the 18-month French oak aging right. However, it says 'new French oak barriques' implying 100% new when ground truth specifies 70% new — this is a meaningful inaccuracy. The horseshoe-shaped valley description, optical sorting, and general terroir claims are plausible and widely reported. The voice is excellent — direct, opinionated, specific, with no banned words and strong takes in the insider section. Specificity is high with named soils, competitors with reasoning, and real dish pairings with explanations. The 'new' oak claim and some unverifiable terroir details prevent a higher correctness score.",
+  "judge_tokens_in": 3532,
+  "judge_tokens_out": 449
+}

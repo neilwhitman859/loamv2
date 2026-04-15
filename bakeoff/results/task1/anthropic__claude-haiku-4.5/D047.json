@@ -1,0 +1,13 @@
+{
+  "pair_id": "D047",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is labeled as 'Merlot' while Wine B is labeled as 'Cabernet', indicating different varietal names on the label despite both being 100% Merlot Noir. This labeling discrepancy suggests these are distinct bottlings or product lines from Happs that a consumer would encounter separately, even though the grape composition is identical.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is labeled as 'Merlot' while Wine B is labeled as 'Cabernet', indicating different varietal names on the label despite both being 100% Merlot Noir. This labeling discrepancy suggests these are distinct bottlings or product lines from Happs that a consumer would encounter separately, even though the grape composition is identical.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 107,
+  "elapsed": 2.823824644088745,
+  "error": null
+}

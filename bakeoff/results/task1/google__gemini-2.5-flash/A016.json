@@ -1,0 +1,13 @@
+{
+  "pair_id": "A016",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Wine A is named 'Metal Label The' and Wine B is 'Metal Label The Vermentino'. Both are from Berton Vineyards and are white wines. Wine A's grape is explicitly listed as Vermentino, matching the varietal suffix of Wine B. This suggests Wine A is an abbreviated name for the same Vermentino bottling.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Wine A is named 'Metal Label The' and Wine B is 'Metal Label The Vermentino'. Both are from Berton Vineyards and are white wines. Wine A's grape is explicitly listed as Vermentino, matching the varietal suffix of Wine B. This suggests Wine A is an abbreviated name for the same Vermentino bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 105,
+  "elapsed": 1.3899681568145752,
+  "error": null
+}

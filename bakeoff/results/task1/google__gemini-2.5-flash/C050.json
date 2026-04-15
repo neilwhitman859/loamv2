@@ -1,0 +1,13 @@
+{
+  "pair_id": "C050",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The key difference here is the Rioja classification: 'Reserva' versus 'Gran Reserva'. These represent distinct aging requirements and quality tiers for wines from the same producer and grape, making them different bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The key difference here is the Rioja classification: 'Reserva' versus 'Gran Reserva'. These represent distinct aging requirements and quality tiers for wines from the same producer and grape, making them different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 78,
+  "elapsed": 1.62040114402771,
+  "error": null
+}

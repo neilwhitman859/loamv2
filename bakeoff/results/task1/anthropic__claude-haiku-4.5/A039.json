@@ -1,0 +1,13 @@
+{
+  "pair_id": "A039",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Torii Mor's Yamhill Carlton Select line, made from Pinot Noir, and are red wines. Wine B simply includes the varietal suffix 'Pinot Noir' while Wine A omits it\u2014this is a standard naming abbreviation rather than a distinct bottling. They represent the same wine with different label formatting.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Torii Mor's Yamhill Carlton Select line, made from Pinot Noir, and are red wines. Wine B simply includes the varietal suffix 'Pinot Noir' while Wine A omits it\u2014this is a standard naming abbreviation rather than a distinct bottling. They represent the same wine with different label formatting.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 105,
+  "elapsed": 2.6750152111053467,
+  "error": null
+}

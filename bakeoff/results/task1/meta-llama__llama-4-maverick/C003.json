@@ -1,0 +1,13 @@
+{
+  "pair_id": "C003",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines 'Cuvee Katharina Brut' and 'Cuvee Katharina Brut Nature' have different names indicating different levels of sweetness or dosage, with 'Brut' typically being less dry than 'Brut Nature'. This difference in style suggests they are different wines. The producer, Raumland, is the same, but the LWIN numbers are different, further supporting that they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines 'Cuvee Katharina Brut' and 'Cuvee Katharina Brut Nature' have different names indicating different levels of sweetness or dosage, with 'Brut' typically being less dry than 'Brut Nature'. This difference in style suggests they are different wines. The producer, Raumland, is the same, but the LWIN numbers are different, further supporting that they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 105,
+  "elapsed": 1.5286574363708496,
+  "error": null
+}

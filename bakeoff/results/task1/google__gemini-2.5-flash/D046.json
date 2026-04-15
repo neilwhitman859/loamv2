@@ -1,0 +1,13 @@
+{
+  "pair_id": "D046",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Maris, and share the core name 'Nymphe Emue'. The addition of 'Rose' to Wine B is likely a varietal suffix or a clarification of the wine's color, which is already indicated as rose for both. This suggests they are the same bottling with a slightly different naming convention.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Maris, and share the core name 'Nymphe Emue'. The addition of 'Rose' to Wine B is likely a varietal suffix or a clarification of the wine's color, which is already indicated as rose for both. This suggests they are the same bottling with a slightly different naming convention.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 91,
+  "elapsed": 1.505103588104248,
+  "error": null
+}

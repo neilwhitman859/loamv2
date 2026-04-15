@@ -1,0 +1,13 @@
+{
+  "pair_id": "A037",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.96,\"reasoning\":\"Both records are from the same producer, Squawking Magpie, and both are red wines. 'Stoned Crow Syrah' strongly indicates the grape-specific full name of the wine, while 'Stoned Crow' appears to be a shortened form; with Wine A explicitly listed as Syrah, this is a varietal suffix difference only, which usually means the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.96,
+  "reasoning": "Both records are from the same producer, Squawking Magpie, and both are red wines. 'Stoned Crow Syrah' strongly indicates the grape-specific full name of the wine, while 'Stoned Crow' appears to be a shortened form; with Wine A explicitly listed as Syrah, this is a varietal suffix difference only, which usually means the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 98,
+  "elapsed": 2.6184844970703125,
+  "error": null
+}

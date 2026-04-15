@@ -1,0 +1,13 @@
+{
+  "pair_id": "B048",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Although both records are named Henkenberg and come from Salwey, they are different wines because the grape varieties differ: Pinot Gris vs Pinot Blanc. The color also differs (red vs white), which confirms they are distinct bottlings rather than naming variants of the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Although both records are named Henkenberg and come from Salwey, they are different wines because the grape varieties differ: Pinot Gris vs Pinot Blanc. The color also differs (red vs white), which confirms they are distinct bottlings rather than naming variants of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 416,
+  "tokens_out": 77,
+  "elapsed": 1.514958143234253,
+  "error": null
+}

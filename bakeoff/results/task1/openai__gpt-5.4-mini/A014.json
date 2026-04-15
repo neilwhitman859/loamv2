@@ -1,0 +1,13 @@
+{
+  "pair_id": "A014",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These are different grape varieties: Wine A is Gew\u00fcrztraminer, while Wine B is Pinot Gris. Under the rules, different grapes always mean different wines even if the producer and general cuv\u00e9e name are similar.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These are different grape varieties: Wine A is Gew\u00fcrztraminer, while Wine B is Pinot Gris. Under the rules, different grapes always mean different wines even if the producer and general cuv\u00e9e name are similar.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 67,
+  "elapsed": 1.5369598865509033,
+  "error": null
+}

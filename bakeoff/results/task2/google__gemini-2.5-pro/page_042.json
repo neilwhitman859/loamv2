@@ -1,0 +1,232 @@
+{
+  "page_id": "page_042",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Alder Springs Falanghina\",\n      \"vintage_year\": 2025,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Heringer Chenin Blanc\",\n      \"vintage_year\": 2025,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Lytton Estate Rosé\",\n      \"vintage_year\": 2025,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Ponzo Gamay Noir\",\n      \"vintage_year\": 2025,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Alder Springs Falanghina\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Belloni Zinfandel\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"East Bench Zinfandel\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Estate Chardonnay\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Frediani Valdiguié\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Geyserville Vineyard\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Green & Red Zinfandel\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Grenache Blanc\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Heringer Chenin Blanc\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Historic Vines Blanc\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Lytton Estate Rosé\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Paso Robles Zinfandel\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Petaluma Gap Pinot Noir\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Three Valleys\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Alder Springs\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    },\n    {\n      \"name\": \"Benito Dusi Zinfandel\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Alder Springs Falanghina",
+      "vintage_year": 2025,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Heringer Chenin Blanc",
+      "vintage_year": 2025,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Lytton Estate Rosé",
+      "vintage_year": 2025,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Ponzo Gamay Noir",
+      "vintage_year": 2025,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Alder Springs Falanghina",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Belloni Zinfandel",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "East Bench Zinfandel",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Estate Chardonnay",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Frediani Valdiguié",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Geyserville Vineyard",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Green & Red Zinfandel",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Grenache Blanc",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Heringer Chenin Blanc",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Historic Vines Blanc",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Lytton Estate Rosé",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Paso Robles Zinfandel",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Petaluma Gap Pinot Noir",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Three Valleys",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Alder Springs",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Benito Dusi Zinfandel",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 13909,
+  "tokens_out": 3957,
+  "elapsed": 49.459221839904785,
+  "error": null
+}

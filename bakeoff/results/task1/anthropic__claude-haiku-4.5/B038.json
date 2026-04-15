@@ -1,0 +1,13 @@
+{
+  "pair_id": "B038",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is red while Wine B is white, representing fundamentally different wine styles from the same producer and vineyard name. Different colors (red vs white) constitute different wines that would be listed separately in a wine encyclopedia, even when sharing the same vineyard designation.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is red while Wine B is white, representing fundamentally different wine styles from the same producer and vineyard name. Different colors (red vs white) constitute different wines that would be listed separately in a wine encyclopedia, even when sharing the same vineyard designation.",
+  "parse_ok": true,
+  "tokens_in": 490,
+  "tokens_out": 82,
+  "elapsed": 3.1130402088165283,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B031",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, with Wine A being red and Wine B being white. Additionally, Wine B is made from Sauvignon Blanc grapes, while Wine A is made from Merlot, indicating a difference in grape variety. These differences indicate that the wines are distinct.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, with Wine A being red and Wine B being white. Additionally, Wine B is made from Sauvignon Blanc grapes, while Wine A is made from Merlot, indicating a difference in grape variety. These differences indicate that the wines are distinct.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 77,
+  "elapsed": 2.068357229232788,
+  "error": null
+}

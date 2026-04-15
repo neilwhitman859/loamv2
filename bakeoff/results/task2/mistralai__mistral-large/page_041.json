@@ -1,0 +1,28 @@
+{
+  "page_id": "page_041",
+  "model": "mistralai/mistral-large",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Cabernet Sauvignon\",\n      \"vintage_year\": null,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": {\n        \"vessel\": \"barrel\",\n        \"months\": null,\n        \"new_pct\": null,\n        \"origin\": \"French and American\"\n      },\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": \"Jason Becker\",\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Cabernet Sauvignon",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "barrel",
+        "months": null,
+        "new_pct": null,
+        "origin": "French and American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jason Becker",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 15344,
+  "tokens_out": 127,
+  "elapsed": 3.1450798511505127,
+  "error": null
+}

@@ -1,0 +1,50 @@
+{
+  "page_id": "page_053",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"wines_found\":[{\"name\":\"2023 Patelin de Tablas\",\"vintage_year\":2023,\"abv_pct\":13,\"blend\":[{\"grape\":\"Syrah\",\"pct\":45},{\"grape\":\"Grenache\",\"pct\":30},{\"grape\":\"Mourvedre\",\"pct\":23},{\"grape\":\"Counoise\",\"pct\":2}],\"oak\":{\"vessel\":\"1500-gallon oak upright tanks\",\"months\":6,\"new_pct\":null,\"origin\":null},\"cases_produced\":7452,\"chemistry\":{\"ph\":null,\"ta_g_l\":null,\"rs_g_l\":null,\"so2_total_mg_l\":null},\"winemaker\":null,\"farming\":\"organic\"}]}",
+  "wines_found": [
+    {
+      "name": "2023 Patelin de Tablas",
+      "vintage_year": 2023,
+      "abv_pct": 13,
+      "blend": [
+        {
+          "grape": "Syrah",
+          "pct": 45
+        },
+        {
+          "grape": "Grenache",
+          "pct": 30
+        },
+        {
+          "grape": "Mourvedre",
+          "pct": 23
+        },
+        {
+          "grape": "Counoise",
+          "pct": 2
+        }
+      ],
+      "oak": {
+        "vessel": "1500-gallon oak upright tanks",
+        "months": 6,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": 7452,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 18807,
+  "tokens_out": 151,
+  "elapsed": 2.829068183898926,
+  "error": null
+}

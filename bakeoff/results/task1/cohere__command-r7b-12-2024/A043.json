@@ -1,0 +1,13 @@
+{
+  "pair_id": "A043",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is a Shiraz, while Wine B is a Shiraz Durif, which is a different grape variety. This is a clear indicator of different wines, as the grape variety is a defining characteristic.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is a Shiraz, while Wine B is a Shiraz Durif, which is a different grape variety. This is a clear indicator of different wines, as the grape variety is a defining characteristic.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 63,
+  "elapsed": 1.5685079097747803,
+  "error": null
+}

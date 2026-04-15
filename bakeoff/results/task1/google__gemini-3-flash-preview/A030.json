@@ -1,0 +1,13 @@
+{
+  "pair_id": "A030",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Pegasus Bay produces a single white Bordeaux-style blend of Sauvignon Blanc and Semillon. The record for Wine A is an abbreviated name for the same bottling, as evidenced by the grape variety 'Semillon' being listed for Wine A despite the name only saying 'Sauvignon'.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Pegasus Bay produces a single white Bordeaux-style blend of Sauvignon Blanc and Semillon. The record for Wine A is an abbreviated name for the same bottling, as evidenced by the grape variety 'Semillon' being listed for Wine A despite the name only saying 'Sauvignon'.",
+  "parse_ok": true,
+  "tokens_in": 414,
+  "tokens_out": 78,
+  "elapsed": 1.5727739334106445,
+  "error": null
+}

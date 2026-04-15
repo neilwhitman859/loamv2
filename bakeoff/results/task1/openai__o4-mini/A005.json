@@ -1,0 +1,13 @@
+{
+  "pair_id": "A005",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.89, \"reasoning\": \"Both records are Catena Zapata\u2019s Agrelo Saint Felicien white wines made from Semillon; the only difference is the varietal suffix, indicating the shorter name is an abbreviation rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.89,
+  "reasoning": "Both records are Catena Zapata\u2019s Agrelo Saint Felicien white wines made from Semillon; the only difference is the varietal suffix, indicating the shorter name is an abbreviation rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 154,
+  "elapsed": 4.2584168910980225,
+  "error": null
+}

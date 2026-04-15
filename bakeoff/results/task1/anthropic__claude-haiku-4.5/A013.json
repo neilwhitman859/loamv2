@@ -1,0 +1,13 @@
+{
+  "pair_id": "A013",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is made from Pinot Noir and Canari Noir (a red/dark grape blend), while Wine B is explicitly labeled as Pinot Gris (a white wine grape). Despite both being white in color and from the same producer and vineyard, the different grape compositions make these distinct bottlings that a consumer would encounter separately.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is made from Pinot Noir and Canari Noir (a red/dark grape blend), while Wine B is explicitly labeled as Pinot Gris (a white wine grape). Despite both being white in color and from the same producer and vineyard, the different grape compositions make these distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 502,
+  "tokens_out": 102,
+  "elapsed": 2.618316411972046,
+  "error": null
+}

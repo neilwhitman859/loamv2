@@ -1,0 +1,13 @@
+{
+  "pair_id": "D026",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine B simply appends the varietal/style suffix 'Red' to the name 'Decadent'. Both records refer to the same proprietary red blend from Cupcake Vineyards, where 'Red' is a descriptive addition rather than a distinct classification or different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine B simply appends the varietal/style suffix 'Red' to the name 'Decadent'. Both records refer to the same proprietary red blend from Cupcake Vineyards, where 'Red' is a descriptive addition rather than a distinct classification or different bottling.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 76,
+  "elapsed": 1.6689205169677734,
+  "error": null
+}

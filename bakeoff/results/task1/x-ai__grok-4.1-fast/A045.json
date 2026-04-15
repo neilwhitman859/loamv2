@@ -1,0 +1,13 @@
+{
+  "pair_id": "A045",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from producer Pax with the name 'Lauterbach Hill', where Wine B adds the 'Syrah' varietal suffix that matches Wine A's specified SYRAH grapes. Per guidelines, varietal suffix differences alone indicate the same wine as an abbreviation, with no evidence of multiple grape varieties from this vineyard by Pax. Both are red, confirming no color or style discrepancies.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from producer Pax with the name 'Lauterbach Hill', where Wine B adds the 'Syrah' varietal suffix that matches Wine A's specified SYRAH grapes. Per guidelines, varietal suffix differences alone indicate the same wine as an abbreviation, with no evidence of multiple grape varieties from this vineyard by Pax. Both are red, confirming no color or style discrepancies.",
+  "parse_ok": true,
+  "tokens_in": 564,
+  "tokens_out": 459,
+  "elapsed": 3.565669059753418,
+  "error": null
+}

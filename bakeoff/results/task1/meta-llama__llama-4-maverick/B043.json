@@ -1,0 +1,13 @@
+{
+  "pair_id": "B043",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Brut (white) champagne, while Wine B is a Brut Rose (ros\u00e9) champagne. The difference in color indicates a different style of wine, making them different wines. The producer, Pommery, is the same, but the color difference is sufficient to classify them as different.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Brut (white) champagne, while Wine B is a Brut Rose (ros\u00e9) champagne. The difference in color indicates a different style of wine, making them different wines. The producer, Pommery, is the same, but the color difference is sufficient to classify them as different.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 86,
+  "elapsed": 1.5307412147521973,
+  "error": null
+}

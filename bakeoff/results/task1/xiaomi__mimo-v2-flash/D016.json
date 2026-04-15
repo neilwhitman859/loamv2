@@ -1,0 +1,13 @@
+{
+  "pair_id": "D016",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is 'Roche' and Wine B is 'Sur Roche', which are distinct cuv\u00e9es from the same producer. The prefix 'Sur' indicates a different vineyard or plot designation, making them separate bottlings that a consumer would encounter as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is 'Roche' and Wine B is 'Sur Roche', which are distinct cuv\u00e9es from the same producer. The prefix 'Sur' indicates a different vineyard or plot designation, making them separate bottlings that a consumer would encounter as different wines.",
+  "parse_ok": true,
+  "tokens_in": 485,
+  "tokens_out": 81,
+  "elapsed": 1.7867376804351807,
+  "error": null
+}

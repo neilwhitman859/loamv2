@@ -1,0 +1,13 @@
+{
+  "pair_id": "D012",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is 'Boal Reserva 10 YO' and Wine B is 'Sercial Reserva 10 YO', indicating different grape varieties (Boal vs Sercial), which means they are different wines according to the given rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is 'Boal Reserva 10 YO' and Wine B is 'Sercial Reserva 10 YO', indicating different grape varieties (Boal vs Sercial), which means they are different wines according to the given rules.",
+  "parse_ok": true,
+  "tokens_in": 482,
+  "tokens_out": 70,
+  "elapsed": 1.4926965236663818,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D010",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.88,\"reasoning\":\"Both records are by Bellavista, and both are explicitly ros\u00e9. Bellavista\u2019s \\\"Gran Cuv\u00e9e\\\" ros\u00e9 bottling is commonly written either as \\\"Gran Cuv\u00e9e\\\" or \\\"Gran Cuv\u00e9e Ros\u00e9,\\\" so the added Ros\u00e9 term appears to clarify color/style rather than indicate a separate wine. There is no conflicting grape, tier, or vineyard designation suggesting a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.88,
+  "reasoning": "Both records are by Bellavista, and both are explicitly ros\u00e9. Bellavista\u2019s \"Gran Cuv\u00e9e\" ros\u00e9 bottling is commonly written either as \"Gran Cuv\u00e9e\" or \"Gran Cuv\u00e9e Ros\u00e9,\" so the added Ros\u00e9 term appears to clarify color/style rather than indicate a separate wine. There is no conflicting grape, tier, or vineyard designation suggesting a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 409,
+  "tokens_out": 103,
+  "elapsed": 2.9069156646728516,
+  "error": null
+}

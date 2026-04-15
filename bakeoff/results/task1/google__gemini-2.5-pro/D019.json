@@ -1,0 +1,13 @@
+{
+  "pair_id": "D019",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"While both wines are Pinot Nero from the same producer, 'Maurus' is a specific cuv\u00e9e name, indicating a distinct bottling from the producer's standard 'Pinot Nero'. This is analogous to a 'Reserve' or single-vineyard designation, making them different products. The different LWINs further confirm they are cataloged as separate wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "While both wines are Pinot Nero from the same producer, 'Maurus' is a specific cuv\u00e9e name, indicating a distinct bottling from the producer's standard 'Pinot Nero'. This is analogous to a 'Reserve' or single-vineyard designation, making them different products. The different LWINs further confirm they are cataloged as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 1303,
+  "elapsed": 23.903756380081177,
+  "error": null
+}

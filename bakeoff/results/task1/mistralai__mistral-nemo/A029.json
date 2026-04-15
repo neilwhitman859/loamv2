@@ -1,0 +1,13 @@
+{
+  "pair_id": "A029",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different grape varieties: Auxerrois and Cot (Malbec) in Wine A, and only Auxerrois in Wine B. Different grapes always mean different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different grape varieties: Auxerrois and Cot (Malbec) in Wine A, and only Auxerrois in Wine B. Different grapes always mean different wines.",
+  "parse_ok": true,
+  "tokens_in": 471,
+  "tokens_out": 65,
+  "elapsed": 3.852491855621338,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D008",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Vistalba produces three distinct tiers of wine labeled Corte A, Corte B, and Corte C. In this context, 'Corte' is the brand name and 'C' is the specific bottling; the record for 'Corte' is an abbreviated reference to the same blend of Malbec (Cot) and Cabernet Sauvignon.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Vistalba produces three distinct tiers of wine labeled Corte A, Corte B, and Corte C. In this context, 'Corte' is the brand name and 'C' is the specific bottling; the record for 'Corte' is an abbreviated reference to the same blend of Malbec (Cot) and Cabernet Sauvignon.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 88,
+  "elapsed": 1.8199949264526367,
+  "error": null
+}

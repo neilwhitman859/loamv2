@@ -1,0 +1,13 @@
+{
+  "pair_id": "A050",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A contains both Syrah and Durif grapes, while Wine B is explicitly named 'Cayenne Syrah', implying it is a varietal Syrah. Even if 'Cayenne' is a vineyard, the difference in grape composition makes these distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A contains both Syrah and Durif grapes, while Wine B is explicitly named 'Cayenne Syrah', implying it is a varietal Syrah. Even if 'Cayenne' is a vineyard, the difference in grape composition makes these distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 75,
+  "elapsed": 1.4031167030334473,
+  "error": null
+}

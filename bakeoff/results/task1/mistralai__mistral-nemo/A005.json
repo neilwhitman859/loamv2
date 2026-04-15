@@ -1,0 +1,13 @@
+{
+  "pair_id": "A005",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different grape varieties (Semillon vs unknown). According to the rules, different grapes always mean different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different grape varieties (Semillon vs unknown). According to the rules, different grapes always mean different wines.",
+  "parse_ok": true,
+  "tokens_in": 473,
+  "tokens_out": 53,
+  "elapsed": 3.126965284347534,
+  "error": null
+}

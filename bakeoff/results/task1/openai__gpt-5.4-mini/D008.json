@@ -1,0 +1,13 @@
+{
+  "pair_id": "D008",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.98,\"reasoning\":\"Both records are from Vistalba and are the same red blend with matching grapes: COT and Cabernet Sauvignon. The only difference is name formatting, where \\\"Corte C\\\" appears to be an abbreviated form of \\\"Corte\\\" rather than a distinct cuv\u00e9e.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Both records are from Vistalba and are the same red blend with matching grapes: COT and Cabernet Sauvignon. The only difference is name formatting, where \"Corte C\" appears to be an abbreviated form of \"Corte\" rather than a distinct cuv\u00e9e.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 77,
+  "elapsed": 1.5800096988677979,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D010",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both records refer to Bellavista's 'Gran Cuv\u00e9e' sparkling wine in its ros\u00e9 expression. Since Wine A is explicitly identified as ros\u00e9 in the metadata and Wine B includes 'Rose' in the name, they represent the same specific bottling rather than a white vs. ros\u00e9 distinction.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both records refer to Bellavista's 'Gran Cuv\u00e9e' sparkling wine in its ros\u00e9 expression. Since Wine A is explicitly identified as ros\u00e9 in the metadata and Wine B includes 'Rose' in the name, they represent the same specific bottling rather than a white vs. ros\u00e9 distinction.",
+  "parse_ok": true,
+  "tokens_in": 409,
+  "tokens_out": 78,
+  "elapsed": 2.105907440185547,
+  "error": null
+}

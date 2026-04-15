@@ -1,0 +1,13 @@
+{
+  "pair_id": "A002",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the varietal suffix 'Syrah' appended to Wine B, which is typically just an abbreviation of the grape already implied in Wine A. Both are from the same producer, same color, and there is no evidence of multiple distinct bottlings from the same vineyard with different grapes.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the varietal suffix 'Syrah' appended to Wine B, which is typically just an abbreviation of the grape already implied in Wine A. Both are from the same producer, same color, and there is no evidence of multiple distinct bottlings from the same vineyard with different grapes.",
+  "parse_ok": true,
+  "tokens_in": 440,
+  "tokens_out": 83,
+  "elapsed": 2.4450199604034424,
+  "error": null
+}

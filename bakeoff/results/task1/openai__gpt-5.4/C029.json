@@ -1,0 +1,13 @@
+{
+  "pair_id": "C029",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.95,\"reasoning\":\"Both records are from Mayu and are red Cabernet Sauvignon Gran Reserva wines, but 'Don Amerigo' appears to be a distinct cuv\u00e9e name rather than a mere formatting variant of the generic 'Gran Reserva Cabernet Sauvignon.' The different LWINs also support that these are cataloged as separate bottlings, which a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both records are from Mayu and are red Cabernet Sauvignon Gran Reserva wines, but 'Don Amerigo' appears to be a distinct cuv\u00e9e name rather than a mere formatting variant of the generic 'Gran Reserva Cabernet Sauvignon.' The different LWINs also support that these are cataloged as separate bottlings, which a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 91,
+  "elapsed": 2.205037832260132,
+  "error": null
+}

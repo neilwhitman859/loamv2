@@ -1,0 +1,13 @@
+{
+  "pair_id": "C008",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white wine (Brut) while Wine B is a ros\u00e9 (Ros\u00e9 Brut), even though they share the same producer and vineyard. Different colors indicate different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white wine (Brut) while Wine B is a ros\u00e9 (Ros\u00e9 Brut), even though they share the same producer and vineyard. Different colors indicate different wines.",
+  "parse_ok": true,
+  "tokens_in": 472,
+  "tokens_out": 65,
+  "elapsed": 3.209132671356201,
+  "error": null
+}

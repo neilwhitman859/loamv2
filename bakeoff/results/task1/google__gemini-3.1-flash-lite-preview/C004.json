@@ -1,0 +1,13 @@
+{
+  "pair_id": "C004",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"The records refer to the same non-alcoholic sparkling product from Raumland. The addition of 'white' in Wine B is a descriptive clarification of the color, which is identical for both records, rather than a distinction between different product lines.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The records refer to the same non-alcoholic sparkling product from Raumland. The addition of 'white' in Wine B is a descriptive clarification of the color, which is identical for both records, rather than a distinction between different product lines.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 75,
+  "elapsed": 2.33431077003479,
+  "error": null
+}

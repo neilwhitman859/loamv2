@@ -1,0 +1,13 @@
+{
+  "pair_id": "A002",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from producer Firestone, with names 'Clone 174' and 'Clone 174 Syrah', matching the rule where a varietal suffix alone indicates the same wine as an abbreviation. Wine A is explicitly Syrah and red, aligning with Wine B's red color and Syrah implication. No evidence suggests Firestone produces multiple grape varieties from this clone, confirming they represent the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from producer Firestone, with names 'Clone 174' and 'Clone 174 Syrah', matching the rule where a varietal suffix alone indicates the same wine as an abbreviation. Wine A is explicitly Syrah and red, aligning with Wine B's red color and Syrah implication. No evidence suggests Firestone produces multiple grape varieties from this clone, confirming they represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 564,
+  "tokens_out": 430,
+  "elapsed": 3.331754684448242,
+  "error": null
+}

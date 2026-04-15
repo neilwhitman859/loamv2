@@ -1,0 +1,13 @@
+{
+  "pair_id": "B001",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"The wines differ in grape variety, with Wine A being Sauvignon Blanc and Wine B being Sauvignon Gris. This is a clear indicator of different wines, as the grape variety is a defining characteristic of the wine's style and flavor profile.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "The wines differ in grape variety, with Wine A being Sauvignon Blanc and Wine B being Sauvignon Gris. This is a clear indicator of different wines, as the grape variety is a defining characteristic of the wine's style and flavor profile.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 69,
+  "elapsed": 1.5143928527832031,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C041",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records differ in classification tier (Reserva vs. Gran Reserva), which denotes distinct aging requirements and quality levels. Per the provided rules, different classification tiers represent separate bottlings, a conclusion further supported by their distinct LWIN identifiers.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records differ in classification tier (Reserva vs. Gran Reserva), which denotes distinct aging requirements and quality levels. Per the provided rules, different classification tiers represent separate bottlings, a conclusion further supported by their distinct LWIN identifiers.",
+  "parse_ok": true,
+  "tokens_in": 490,
+  "tokens_out": 1384,
+  "elapsed": 26.57570195198059,
+  "error": null
+}

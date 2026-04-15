@@ -1,0 +1,13 @@
+{
+  "pair_id": "D017",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The names 'Comune di Gavi' and 'del Comune di Gavi' refer to the same specific wine designation within the Gavi DOCG. The inclusion of the Italian preposition 'del' ('of the') is a minor grammatical or formatting variation, not an indicator of a different wine. Both are white wines from the same producer, and the designation implies they are both made from 100% Cortese grapes.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The names 'Comune di Gavi' and 'del Comune di Gavi' refer to the same specific wine designation within the Gavi DOCG. The inclusion of the Italian preposition 'del' ('of the') is a minor grammatical or formatting variation, not an indicator of a different wine. Both are white wines from the same producer, and the designation implies they are both made from 100% Cortese grapes.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 1559,
+  "elapsed": 16.015810251235962,
+  "error": null
+}

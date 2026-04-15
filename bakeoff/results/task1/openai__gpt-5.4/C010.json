@@ -1,0 +1,13 @@
+{
+  "pair_id": "C010",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.97,\"reasoning\":\"Both are Peter Jakob Kuhn white Riesling Auslese wines from Lenchen, but Wine A explicitly includes the lot/cask designation 'Nr12' while Wine B does not. Under the matching rules, different lot/cask numbers at the same Pr\u00e4dikat level are different wines, and the distinct LWINs support that these are separate bottlings rather than mere formatting variants.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "Both are Peter Jakob Kuhn white Riesling Auslese wines from Lenchen, but Wine A explicitly includes the lot/cask designation 'Nr12' while Wine B does not. Under the matching rules, different lot/cask numbers at the same Pr\u00e4dikat level are different wines, and the distinct LWINs support that these are separate bottlings rather than mere formatting variants.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 99,
+  "elapsed": 2.604731321334839,
+  "error": null
+}

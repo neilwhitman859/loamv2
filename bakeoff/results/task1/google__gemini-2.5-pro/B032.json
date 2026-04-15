@@ -1,0 +1,13 @@
+{
+  "pair_id": "B032",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines are made from completely different grape varieties and are different colors. Wine A is a white wine made from Gewurztraminer, while Wine B is a red wine made from Pinot Noir. According to the rules, a difference in grape variety always means the wines are different.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from completely different grape varieties and are different colors. Wine A is a white wine made from Gewurztraminer, while Wine B is a red wine made from Pinot Noir. According to the rules, a difference in grape variety always means the wines are different.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 1326,
+  "elapsed": 14.612905263900757,
+  "error": null
+}

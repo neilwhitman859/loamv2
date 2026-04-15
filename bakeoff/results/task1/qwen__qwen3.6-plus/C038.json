@@ -1,0 +1,13 @@
+{
+  "pair_id": "C038",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The distinct LWINs indicate these are cataloged as separate commercial bottlings. 'Risco' is a specific cuv\u00e9e designation from Antonio Saramago, making it a distinct wine from a generic 'Reserva Tinto' rather than a simple formatting abbreviation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The distinct LWINs indicate these are cataloged as separate commercial bottlings. 'Risco' is a specific cuv\u00e9e designation from Antonio Saramago, making it a distinct wine from a generic 'Reserva Tinto' rather than a simple formatting abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 463,
+  "tokens_out": 1689,
+  "elapsed": 34.053871393203735,
+  "error": null
+}

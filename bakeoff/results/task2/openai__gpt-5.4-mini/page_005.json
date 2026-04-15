@@ -1,0 +1,23 @@
+{
+  "page_id": "page_005",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"wines_found\":[{\"name\":\"Old Vine Zinfandel\",\"vintage_year\":2022,\"abv_pct\":null,\"blend\":null,\"oak\":null,\"cases_produced\":null,\"chemistry\":null,\"winemaker\":null,\"farming\":\"sustainable\"}]}",
+  "wines_found": [
+    {
+      "name": "Old Vine Zinfandel",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "sustainable"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 21542,
+  "tokens_out": 62,
+  "elapsed": 1.565370798110962,
+  "error": null
+}

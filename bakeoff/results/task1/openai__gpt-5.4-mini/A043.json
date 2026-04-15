@@ -1,0 +1,13 @@
+{
+  "pair_id": "A043",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These are not just formatting variants: Wine B explicitly adds \\\"Durif,\\\" indicating a different grape blend/varietal designation from the plain Shiraz bottling. Under the rules, different grapes mean different wines even if the producer and color are the same. The distinct LWINs also support that they are separate records.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These are not just formatting variants: Wine B explicitly adds \"Durif,\" indicating a different grape blend/varietal designation from the plain Shiraz bottling. Under the rules, different grapes mean different wines even if the producer and color are the same. The distinct LWINs also support that they are separate records.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 93,
+  "elapsed": 1.6638727188110352,
+  "error": null
+}

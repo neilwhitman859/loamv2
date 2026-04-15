@@ -1,0 +1,13 @@
+{
+  "pair_id": "D048",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.92,\"reasoning\":\"Both records are from Happs and are red Cabernet Merlot blends, but the cuv\u00e9e names differ materially: 'iSeries Cabernet Merlot' versus the generic 'Cabernet Merlot.' 'iSeries' appears to be a distinct branded bottling line rather than a mere formatting abbreviation, and the different LWINs support that these are separate wines consumers would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.92,
+  "reasoning": "Both records are from Happs and are red Cabernet Merlot blends, but the cuv\u00e9e names differ materially: 'iSeries Cabernet Merlot' versus the generic 'Cabernet Merlot.' 'iSeries' appears to be a distinct branded bottling line rather than a mere formatting abbreviation, and the different LWINs support that these are separate wines consumers would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 98,
+  "elapsed": 3.270156145095825,
+  "error": null
+}

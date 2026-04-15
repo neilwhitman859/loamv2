@@ -1,0 +1,13 @@
+{
+  "pair_id": "A031",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The records differ only by the inclusion of the varietal suffix 'Pinot Noir,' which is a standard naming variation for the same bottling. Both share the identical producer, base name, and color, confirming they represent the exact same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The records differ only by the inclusion of the varietal suffix 'Pinot Noir,' which is a standard naming variation for the same bottling. Both share the identical producer, base name, and color, confirming they represent the exact same wine.",
+  "parse_ok": true,
+  "tokens_in": 488,
+  "tokens_out": 1350,
+  "elapsed": 26.855324268341064,
+  "error": null
+}

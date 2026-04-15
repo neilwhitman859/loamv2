@@ -1,0 +1,13 @@
+{
+  "pair_id": "C032",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.75, \"reasoning\": \"Both wines are Bonnaire Blanc de Blancs Champagne, same producer, same cuv\u00e9e name, same color. The only difference is that Wine A explicitly notes 'NV' (non-vintage) while Wine B omits this designation, but Blanc de Blancs from Bonnaire is typically a non-vintage bottling, so this is likely just a formatting difference. The different LWIN codes introduce some uncertainty, but this could reflect database entry variations rather than distinct wines.\"}",
+  "verdict": "SAME",
+  "confidence": 0.75,
+  "reasoning": "Both wines are Bonnaire Blanc de Blancs Champagne, same producer, same cuv\u00e9e name, same color. The only difference is that Wine A explicitly notes 'NV' (non-vintage) while Wine B omits this designation, but Blanc de Blancs from Bonnaire is typically a non-vintage bottling, so this is likely just a formatting difference. The different LWIN codes introduce some uncertainty, but this could reflect database entry variations rather than distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 488,
+  "tokens_out": 129,
+  "elapsed": 5.613433599472046,
+  "error": null
+}

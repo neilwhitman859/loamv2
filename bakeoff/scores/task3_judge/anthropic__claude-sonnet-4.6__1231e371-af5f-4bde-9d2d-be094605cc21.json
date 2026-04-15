@@ -1,0 +1,24 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "anthropic/claude-sonnet-4.6",
+  "correctness": 1.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "Hook claims the name refers to '1.5 AVA miles between the winery and its Hillside Select vineyards' — ground truth confirms the name refers to the 'generation and a half' partnership between John Shafer and his son Doug",
+    "States '100% Cabernet Sauvignon' but ground truth shows 2022 blend is 92% Cabernet Sauvignon, 3% Petite Verdot, 3% Merlot, 2% Malbec",
+    "Claims One Point Five uses lower percentage of new oak than Hillside Select — ground truth shows it uses 100% new French oak (Allier & Tronçais)",
+    "Describes wine as single-estate sourced from Stags Leap District — ground truth confirms multi-site sourcing including Borderline vineyard and selected Napa Valley sites, not exclusively Stags Leap District"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "1994 as the year Elias Fernandez started (not in context data, though this is actually correct per public records)"
+  ],
+  "reasoning": "The hook contains a fabricated naming origin — claiming the name refers to 1.5 AVA miles when it actually refers to the generational partnership between John and Doug Shafer. This is a provably wrong factual claim in the hook, triggering the hard cap at 1.5 for correctness. Additional errors compound: the wine is stated as 100% Cabernet Sauvignon (context data says this, but ground truth shows it's a blend), the oak regime is described as less new oak than Hillside Select when it's actually 100% new French oak, and the sourcing is described as estate/Stags Leap District when it's multi-site across Napa Valley. The voice is excellent — direct, opinionated, specific, no banned words, well-structured with real personality. Specificity is strong with named soils, competitors, and concrete comparisons. Usefulness is good with actionable food pairings and honest value assessment, though undermined by the factual errors.",
+  "judge_tokens_in": 4328,
+  "judge_tokens_out": 516
+}

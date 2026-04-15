@@ -1,0 +1,13 @@
+{
+  "pair_id": "A030",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grapes, with Wine A being Sauvignon and Wine B being Sauvignon Semillon. This difference in grape variety indicates that they are different wines. Additionally, Wine A's grapes are listed as SEMILLON which seems to be an error but still indicates a difference.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grapes, with Wine A being Sauvignon and Wine B being Sauvignon Semillon. This difference in grape variety indicates that they are different wines. Additionally, Wine A's grapes are listed as SEMILLON which seems to be an error but still indicates a difference.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 78,
+  "elapsed": 2.1500132083892822,
+  "error": null
+}

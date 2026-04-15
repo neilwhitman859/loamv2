@@ -1,0 +1,13 @@
+{
+  "pair_id": "B007",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grape varieties, with Wine A being 100% Merlot Noir and Wine B being a blend of Cot, Cabernet Sauvignon, and Dolcetto. This difference in grape composition indicates they are distinct wines. The same producer and color (red) do not override this key difference.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grape varieties, with Wine A being 100% Merlot Noir and Wine B being a blend of Cot, Cabernet Sauvignon, and Dolcetto. This difference in grape composition indicates they are distinct wines. The same producer and color (red) do not override this key difference.",
+  "parse_ok": true,
+  "tokens_in": 469,
+  "tokens_out": 84,
+  "elapsed": 1.0653681755065918,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B043",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different Pommery bottlings: Brut Apanage is the white/brut cuv\u00e9e, while Apanage Brut Ros\u00e9 is a ros\u00e9 version. The color difference alone makes them distinct wines, and the names indicate separate products rather than simple formatting variants.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different Pommery bottlings: Brut Apanage is the white/brut cuv\u00e9e, while Apanage Brut Ros\u00e9 is a ros\u00e9 version. The color difference alone makes them distinct wines, and the names indicate separate products rather than simple formatting variants.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 78,
+  "elapsed": 1.7246298789978027,
+  "error": null
+}

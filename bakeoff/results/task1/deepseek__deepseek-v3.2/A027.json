@@ -1,0 +1,13 @@
+{
+  "pair_id": "A027",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.9, \"reasoning\": \"Wine A is made from Tempranillo Tinto, while Wine B is a Menc\u00eda. Different grape varieties always indicate different wines, even when the producer and base name (Vi\u00f1a Altamar) are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "Wine A is made from Tempranillo Tinto, while Wine B is a Menc\u00eda. Different grape varieties always indicate different wines, even when the producer and base name (Vi\u00f1a Altamar) are the same.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 71,
+  "elapsed": 2.169340133666992,
+  "error": null
+}

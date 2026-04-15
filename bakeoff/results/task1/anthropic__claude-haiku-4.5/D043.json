@@ -1,0 +1,13 @@
+{
+  "pair_id": "D043",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"These are explicitly labeled as distinct notes (Note #1 vs Note #2) from the same producer and vineyard, indicating separate bottlings or cuv\u00e9es. The different LWIN codes (2695026 vs 2695042) confirm these are registered as distinct wines in the database, suggesting they represent different blends, vintages, or selections despite sharing the same producer and vineyard name.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "These are explicitly labeled as distinct notes (Note #1 vs Note #2) from the same producer and vineyard, indicating separate bottlings or cuv\u00e9es. The different LWIN codes (2695026 vs 2695042) confirm these are registered as distinct wines in the database, suggesting they represent different blends, vintages, or selections despite sharing the same producer and vineyard name.",
+  "parse_ok": true,
+  "tokens_in": 500,
+  "tokens_out": 112,
+  "elapsed": 2.9054126739501953,
+  "error": null
+}

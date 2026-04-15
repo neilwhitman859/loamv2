@@ -1,0 +1,13 @@
+{
+  "pair_id": "C011",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from the same producer and appellation, but they have different classification tiers: Gran Reserva vs Reserva. According to the rules, different Rioja classification levels represent distinct bottlings that a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from the same producer and appellation, but they have different classification tiers: Gran Reserva vs Reserva. According to the rules, different Rioja classification levels represent distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 523,
+  "tokens_out": 70,
+  "elapsed": 2.2253804206848145,
+  "error": null
+}

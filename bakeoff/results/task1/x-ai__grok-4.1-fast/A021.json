@@ -1,0 +1,13 @@
+{
+  "pair_id": "A021",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer (Bench 1775) and are red, but Wine A is labeled 'Cabernet Sauvignon' while Wine B is 'Cabernet Sauvignon Syrah', indicating different grape compositions (monovarietal CS vs. CS-Syrah blend). The rule states different grapes always mean DIFFERENT wines. Distinct LWIN numbers (1955662 vs. 1955545) further support they are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer (Bench 1775) and are red, but Wine A is labeled 'Cabernet Sauvignon' while Wine B is 'Cabernet Sauvignon Syrah', indicating different grape compositions (monovarietal CS vs. CS-Syrah blend). The rule states different grapes always mean DIFFERENT wines. Distinct LWIN numbers (1955662 vs. 1955545) further support they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 568,
+  "tokens_out": 670,
+  "elapsed": 4.778365135192871,
+  "error": null
+}

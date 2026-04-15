@@ -1,0 +1,40 @@
+{
+  "page_id": "page_053",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\"wines_found\": [{\"name\": \"2023 Patelin de Tablas\", \"vintage_year\": 2023, \"abv_pct\": 13.0, \"blend\": [{\"grape\": \"Syrah\", \"pct\": 45}, {\"grape\": \"Grenache\", \"pct\": 30}, {\"grape\": \"Mourvedre\", \"pct\": 23}, {\"grape\": \"Counoise\", \"pct\": 2}], \"oak\": null, \"cases_produced\": 7452, \"chemistry\": null, \"winemaker\": null, \"farming\": null}]}\n```",
+  "wines_found": [
+    {
+      "name": "2023 Patelin de Tablas",
+      "vintage_year": 2023,
+      "abv_pct": 13.0,
+      "blend": [
+        {
+          "grape": "Syrah",
+          "pct": 45
+        },
+        {
+          "grape": "Grenache",
+          "pct": 30
+        },
+        {
+          "grape": "Mourvedre",
+          "pct": 23
+        },
+        {
+          "grape": "Counoise",
+          "pct": 2
+        }
+      ],
+      "oak": null,
+      "cases_produced": 7452,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 21601,
+  "tokens_out": 144,
+  "elapsed": 1.5636088848114014,
+  "error": null
+}

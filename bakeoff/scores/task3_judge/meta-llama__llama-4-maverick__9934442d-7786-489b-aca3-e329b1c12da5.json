@@ -1,0 +1,33 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "meta-llama/llama-4-maverick",
+  "correctness": 1.5,
+  "voice": 1.5,
+  "specificity": 2.5,
+  "usefulness": 1.5,
+  "composite": 1.7,
+  "wrong_facts": [
+    "Hook uses 'showcases' (banned word) and claims 'aged vines and low yields contribute to its depth' — Omrah is specifically the second-label range made from younger vineyards or bought-in fruit, not aged vines",
+    "Comparable wine 'Yalumba The Cigar Pinot Noir' does not exist — Yalumba's 'The Cigar' is a Cabernet Sauvignon",
+    "Tim Adams 'The Vision' Pinot Noir from Clare Valley is fabricated — Tim Adams is known for Riesling and Shiraz, not Pinot Noir, and Clare Valley is not a Pinot region",
+    "Comparing Omrah (a value second label) to Domaine de la Romanée-Conti Bourgogne is absurd",
+    "Price estimate of $40-$60 is wildly wrong — Omrah is a value label typically priced around $12-$18",
+    "The hook claims 'lateritic gravelly sandy loams and marri loams' — while Great Southern has diverse soils, these specific soil types are not verified for Omrah vineyards; the ground truth says 'gravelly loam soils'",
+    "Insider take mentions 'relatively unknown grape clone' as if that's a selling point — this is nonsensical",
+    "Aging potential of 10 years and drinking window of 5-15 years is excessive for a bronze-medal value-tier Pinot Noir from 2011"
+  ],
+  "banned_words_found": [
+    "showcases"
+  ],
+  "fabricated_numbers": [
+    "$40-$60 price",
+    "aging_potential_years: 10",
+    "drinking_window_min_years: 5",
+    "drinking_window_max_years: 15"
+  ],
+  "reasoning": "The output is riddled with fabrications and wrong facts. The hook incorrectly attributes 'aged vines' to a wine that is specifically a second-label value range from younger vineyards. The price is fabricated at $40-$60 when Omrah is a ~$15 value label. Two of three comparable wines are fabricated or wrong (Yalumba 'The Cigar' is Cabernet, Tim Adams doesn't make that Pinot). The DRC comparison is absurd for a value second label. The banned word 'showcases' appears in the hook. The vinification section speculates wildly when ground truth shows 10 months French oak. Quality assessment is inflated throughout — treating a bronze-medal value wine as age-worthy and complex.",
+  "judge_tokens_in": 3090,
+  "judge_tokens_out": 621
+}

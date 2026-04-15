@@ -1,0 +1,13 @@
+{
+  "pair_id": "D002",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Both wines are from the same producer, Van Volxem, and share the same vineyard designation 'Altenberg Riesling Alte Reben'. The 'GG' (Grosses Gew\u00e4chs) suffix in Wine A indicates a dry, top-tier wine from a Grosse Lage vineyard, which is a classification rather than a distinct bottling that would differentiate it from the base 'Altenberg Riesling Alte Reben' if the latter is also a dry Riesling from the same vineyard. Given the producer and vineyard, it's highly probable that 'Altenberg Riesling Alte Reben' is simply an abbreviated name for the 'GG' bottling.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Van Volxem, and share the same vineyard designation 'Altenberg Riesling Alte Reben'. The 'GG' (Grosses Gew\u00e4chs) suffix in Wine A indicates a dry, top-tier wine from a Grosse Lage vineyard, which is a classification rather than a distinct bottling that would differentiate it from the base 'Altenberg Riesling Alte Reben' if the latter is also a dry Riesling from the same vineyard. Given the producer and vineyard, it's highly probable that 'Altenberg Riesling Alte Reben' is simply an abbreviated name for the 'GG' bottling.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 163,
+  "elapsed": 2.3608920574188232,
+  "error": null
+}

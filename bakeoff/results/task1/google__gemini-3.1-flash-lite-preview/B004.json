@@ -1,0 +1,13 @@
+{
+  "pair_id": "B004",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are distinct because they have different colors (red vs. white) and different grape compositions. Even though they share the same producer and vineyard name, a Pinot Noir and a Chardonnay-based blend represent separate bottlings.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are distinct because they have different colors (red vs. white) and different grape compositions. Even though they share the same producer and vineyard name, a Pinot Noir and a Chardonnay-based blend represent separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 74,
+  "elapsed": 1.3813235759735107,
+  "error": null
+}

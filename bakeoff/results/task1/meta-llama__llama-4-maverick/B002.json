@@ -1,0 +1,13 @@
+{
+  "pair_id": "B002",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": \"1.0\", \"reasoning\": \"Wine A is a red wine while Wine B is a white wine, and they have different colors, which indicates they are different wines. Although they share the same producer and similar grape varieties, the difference in color is a decisive factor. The grape varieties are almost the same but the color difference is enough to classify them as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a red wine while Wine B is a white wine, and they have different colors, which indicates they are different wines. Although they share the same producer and similar grape varieties, the difference in color is a decisive factor. The grape varieties are almost the same but the color difference is enough to classify them as different wines.",
+  "parse_ok": true,
+  "tokens_in": 526,
+  "tokens_out": 91,
+  "elapsed": 1.5057415962219238,
+  "error": null
+}

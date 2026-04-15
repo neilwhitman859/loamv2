@@ -1,0 +1,25 @@
+{
+  "wine_id": "6020edf8-3f23-4853-9591-a10c843f5a70",
+  "wine_name": "Catena Zapata High Mountain Vines Malbec, Mendoza",
+  "tier": "A",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 1.5,
+  "voice": 4.0,
+  "specificity": 3.5,
+  "usefulness": 3.5,
+  "composite": 2.925,
+  "wrong_facts": [
+    "Hook claims wine is sourced from 'three high-altitude vineyards in Lunlunta' — ground truth shows it's blended from vineyards in Maipu, Lujan de Cuyo, Tupungato, and San Carlos (four distinct areas, not three vineyards in Lunlunta)",
+    "Hook fabricates elevation range of '950 to 1,100 meters' — not in context data or verifiable",
+    "Vinification claims aging in 'a combination of French oak barrels and concrete' — ground truth says 11-13 months in French oak barrels only, no mention of concrete",
+    "Wine summary claims fruit is harvested 'from different elevations within Lunlunta' — ground truth shows multiple regions across Mendoza, not just Lunlunta"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "950 to 1,100 meters elevation range",
+    "concrete aging vessel claim (fabricated detail)"
+  ],
+  "reasoning": "The hook contains a provably wrong factual claim: it states the wine comes from 'three high-altitude vineyards in Lunlunta' with a specific elevation range of 950-1,100m. Ground truth shows the wine is blended from four distinct areas (Maipu, Lujan de Cuyo, Tupungato, San Carlos), not three vineyards in Lunlunta. The elevation numbers are fabricated. The vinification section fabricates concrete aging, contradicting the ground truth of French oak only. These are serious factual errors in the hook and body, triggering the hard cap of 1.5 on correctness. The voice is strong — direct, opinionated, avoids banned words, and reads well. Specificity and usefulness are decent but undermined by the incorrect specifics.",
+  "judge_tokens_in": 3524,
+  "judge_tokens_out": 444
+}

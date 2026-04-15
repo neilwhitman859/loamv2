@@ -1,0 +1,24 @@
+{
+  "wine_id": "6020edf8-3f23-4853-9591-a10c843f5a70",
+  "wine_name": "Catena Zapata High Mountain Vines Malbec, Mendoza",
+  "tier": "A",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.6,
+  "wrong_facts": [
+    "The hook places the wine in Lunlunta/Maipú as if that's the sole source, but ground truth shows the wine is blended from high-altitude vineyards in Maipu, Lujan de Cuyo, Tupungato, and San Carlos — it's a multi-region blend, not a single-appellation wine",
+    "The wine is 100% Malbec per ground truth, but the output hedges around the context data's incorrect grape listing (Cabernet Sauvignon, Cot, Chardonnay) without clearly stating it's 100% Malbec",
+    "The vinification_summary discusses malolactic fermentation and Chardonnay relevance, which is misleading — the wine is 100% Malbec with no Chardonnay component",
+    "Catena Appellation Malbec Lunlunta listed as a comparable is not a verified real product"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "4-6 years cellar recommendation is not in context data but is a reasonable estimate, not a hard fabrication"
+  ],
+  "reasoning": "The hook's framing of the wine as a Lunlunta-specific expression is misleading — ground truth shows it's a multi-region blend from Maipu, Lujan de Cuyo, Tupungato, and San Carlos. The output never clearly states the wine is 100% Malbec, instead awkwardly referencing the context data's erroneous grape listing. The vinification section's discussion of Chardonnay and malolactic fermentation is a red herring given the wine contains no Chardonnay. However, the voice is excellent — direct, opinionated, specific, with no banned words and strong food pairings. The specificity of terroir description and comparable wines is good, though some comparables may not be real products. The output does a good job navigating bad context data but doesn't go far enough in correcting it.",
+  "judge_tokens_in": 3830,
+  "judge_tokens_out": 487
+}

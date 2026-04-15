@@ -1,0 +1,13 @@
+{
+  "pair_id": "A050",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.72,\"reasoning\":\"The names differ only by the varietal suffix, which often indicates the same wine, but Wine A is explicitly listed as a blend of Syrah and Durif. Since different grapes mean different wines, 'Cayenne' cannot be assumed to be the same bottling as a wine specifically labeled 'Cayenne Syrah'.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.72,
+  "reasoning": "The names differ only by the varietal suffix, which often indicates the same wine, but Wine A is explicitly listed as a blend of Syrah and Durif. Since different grapes mean different wines, 'Cayenne' cannot be assumed to be the same bottling as a wine specifically labeled 'Cayenne Syrah'.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 89,
+  "elapsed": 2.7028844356536865,
+  "error": null
+}

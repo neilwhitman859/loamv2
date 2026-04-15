@@ -1,0 +1,13 @@
+{
+  "pair_id": "A003",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.97, \"reasoning\": \"Both wines are from Goodfellow Family, both reference the same vineyard designation 'Whistling Ridge' and the same 'Heritage No. 15' cuv\u00e9e. Wine B simply appends 'Pinot Noir' as a varietal suffix, while Wine A's grapes are confirmed as Pinot Noir \u2014 this is a classic abbreviation case. Both are red wines from the same producer and vineyard, so they represent the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "Both wines are from Goodfellow Family, both reference the same vineyard designation 'Whistling Ridge' and the same 'Heritage No. 15' cuv\u00e9e. Wine B simply appends 'Pinot Noir' as a varietal suffix, while Wine A's grapes are confirmed as Pinot Noir \u2014 this is a classic abbreviation case. Both are red wines from the same producer and vineyard, so they represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 503,
+  "tokens_out": 124,
+  "elapsed": 2.896226167678833,
+  "error": null
+}

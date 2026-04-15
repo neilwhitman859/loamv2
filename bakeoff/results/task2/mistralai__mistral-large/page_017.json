@@ -1,0 +1,38 @@
+{
+  "page_id": "page_017",
+  "model": "mistralai/mistral-large",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Sauvignon Blanc\",\n      \"vintage_year\": null,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": null,\n        \"ta_g_l\": null,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": \"Jessica Tomei\",\n      \"farming\": null,\n      \"region\": \"Marlborough, New Zealand\",\n      \"tasting_notes\": \"Vibrant & bright with notes of citrus and melon\",\n      \"winemaking_notes\": \"“Our Sauvignon Blanc is vibrant and crisp, crafted from grapes grown in the esteemed vineyards of the Wairau and Awatere Valleys in Marlborough, New Zealand. The cool growing season allows for slow ripening, enhancing the exceptional complexity and character of the grapes. The diverse soil of the Rapaura region, with its ancient riverbed remnants, produces concentrated flavors. Harvested at night, these grapes are immediately pressed to undergo cool fermentation in 100% stainless steel tanks to preserve the fresh, fruity, and aromatic qualities of the wine. An extended sur lie fermentation adds richness, highlighting the natural acidity and zest.”\",\n      \"nutritional_info\": {\n        \"serving_size\": \"5 fl. oz.\",\n        \"calories\": 110,\n        \"carbohydrates_g\": 3,\n        \"protein_g\": 0,\n        \"fat_g\": 0\n      }\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Sauvignon Blanc",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": "Jessica Tomei",
+      "farming": null,
+      "region": "Marlborough, New Zealand",
+      "tasting_notes": "Vibrant & bright with notes of citrus and melon",
+      "winemaking_notes": "“Our Sauvignon Blanc is vibrant and crisp, crafted from grapes grown in the esteemed vineyards of the Wairau and Awatere Valleys in Marlborough, New Zealand. The cool growing season allows for slow ripening, enhancing the exceptional complexity and character of the grapes. The diverse soil of the Rapaura region, with its ancient riverbed remnants, produces concentrated flavors. Harvested at night, these grapes are immediately pressed to undergo cool fermentation in 100% stainless steel tanks to preserve the fresh, fruity, and aromatic qualities of the wine. An extended sur lie fermentation adds richness, highlighting the natural acidity and zest.”",
+      "nutritional_info": {
+        "serving_size": "5 fl. oz.",
+        "calories": 110,
+        "carbohydrates_g": 3,
+        "protein_g": 0,
+        "fat_g": 0
+      }
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 43367,
+  "tokens_out": 363,
+  "elapsed": 19.595311403274536,
+  "error": null
+}

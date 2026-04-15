@@ -1,0 +1,23 @@
+{
+  "page_id": "page_018",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"wines_found\":[{\"name\":\"Chardonnay\",\"vintage_year\":null,\"abv_pct\":null,\"blend\":null,\"oak\":null,\"cases_produced\":null,\"chemistry\":null,\"winemaker\":\"Jessica Tomei\",\"farming\":null}]}",
+  "wines_found": [
+    {
+      "name": "Chardonnay",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 34200,
+  "tokens_out": 825,
+  "elapsed": 5.831307649612427,
+  "error": null
+}

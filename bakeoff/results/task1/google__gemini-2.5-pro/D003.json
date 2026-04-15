@@ -1,0 +1,13 @@
+{
+  "pair_id": "D003",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The producer, Chimney Rock, makes several distinct Cabernet Sauvignon bottlings. 'Alpine' refers to their 'Alpine Vineyard' single-vineyard wine, which is a specific and separate product from their more general 'Cabernet Sauvignon' Stags Leap District bottling. These are different vineyard designations, and the different LWINs confirm they are tracked as separate wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The producer, Chimney Rock, makes several distinct Cabernet Sauvignon bottlings. 'Alpine' refers to their 'Alpine Vineyard' single-vineyard wine, which is a specific and separate product from their more general 'Cabernet Sauvignon' Stags Leap District bottling. These are different vineyard designations, and the different LWINs confirm they are tracked as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 1280,
+  "elapsed": 12.686346530914307,
+  "error": null
+}

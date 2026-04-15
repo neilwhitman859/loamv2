@@ -1,0 +1,13 @@
+{
+  "pair_id": "B045",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines are distinct bottlings as indicated by their different colors (red vs. white) and unique LWIN identifiers. Furthermore, the 'Note' designation (Note #1 vs. Note #3) signifies different cuv\u00e9es within the Polifonia range.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are distinct bottlings as indicated by their different colors (red vs. white) and unique LWIN identifiers. Furthermore, the 'Note' designation (Note #1 vs. Note #3) signifies different cuv\u00e9es within the Polifonia range.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 81,
+  "elapsed": 2.0694305896759033,
+  "error": null
+}

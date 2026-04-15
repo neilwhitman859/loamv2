@@ -1,0 +1,13 @@
+{
+  "pair_id": "A006",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Radio-Coteau) and vineyard (Clos Platt), with Wine B explicitly adding the 'Pinot Noir' varietal suffix to the name matching Wine A, which is listed as Pinot Noir grapes. Both are red wines, fitting the rule that varietal suffix differences alone indicate the same wine as an abbreviation. No evidence of multiple grape varieties from this vineyard by the producer.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Radio-Coteau) and vineyard (Clos Platt), with Wine B explicitly adding the 'Pinot Noir' varietal suffix to the name matching Wine A, which is listed as Pinot Noir grapes. Both are red wines, fitting the rule that varietal suffix differences alone indicate the same wine as an abbreviation. No evidence of multiple grape varieties from this vineyard by the producer.",
+  "parse_ok": true,
+  "tokens_in": 567,
+  "tokens_out": 370,
+  "elapsed": 3.4140641689300537,
+  "error": null
+}

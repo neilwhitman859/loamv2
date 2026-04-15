@@ -1,0 +1,13 @@
+{
+  "pair_id": "C031",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines have the same producer, Bonnaire, and the same name, 'Blanc de Blancs', with the only difference being the presence of 'Brut' in Wine A's name, which is not a significant difference in this context as it doesn't indicate a different style or type. The color is the same for both wines, white. The absence of a significant differentiator suggests they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines have the same producer, Bonnaire, and the same name, 'Blanc de Blancs', with the only difference being the presence of 'Brut' in Wine A's name, which is not a significant difference in this context as it doesn't indicate a different style or type. The color is the same for both wines, white. The absence of a significant differentiator suggests they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 106,
+  "elapsed": 2.003044366836548,
+  "error": null
+}

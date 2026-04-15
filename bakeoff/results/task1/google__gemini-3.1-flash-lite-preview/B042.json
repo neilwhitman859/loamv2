@@ -1,0 +1,13 @@
+{
+  "pair_id": "B042",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are different colors (ros\u00e9 vs. white) and represent different varietal bottlings. A ros\u00e9 wine and a Chardonnay from the same producer are distinct products that would not share a single encyclopedia entry.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are different colors (ros\u00e9 vs. white) and represent different varietal bottlings. A ros\u00e9 wine and a Chardonnay from the same producer are distinct products that would not share a single encyclopedia entry.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 65,
+  "elapsed": 1.9729015827178955,
+  "error": null
+}

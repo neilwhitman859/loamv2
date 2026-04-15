@@ -1,0 +1,58 @@
+{
+  "page_id": "page_051",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"2023 Esprit de Tablas\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": 14.0,\n      \"blend\": [\n        {\n          \"grape\": \"Mourvèdre\",\n          \"pct\": 33\n        },\n        {\n          \"grape\": \"Syrah\",\n          \"pct\": 31\n        },\n        {\n          \"grape\": \"Grenache\",\n          \"pct\": 26\n        },\n        {\n          \"grape\": \"Cinsaut\",\n          \"pct\": 6\n        },\n        {\n          \"grape\": \"Vaccarese\",\n          \"pct\": 2\n        },\n        {\n          \"grape\": \"Counoise\",\n          \"pct\": 2\n        }\n      ],\n      \"oak\": {\n        \"vessel\": \"foudre\",\n        \"months\": null,\n        \"new_pct\": null,\n        \"origin\": null\n      },\n      \"cases_produced\": 3452,\n      \"chemistry\": {\n        \"ph\": null,\n        \"ta_g_l\": null,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": null,\n      \"farming\": \"biodynamic\"\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "2023 Esprit de Tablas",
+      "vintage_year": 2023,
+      "abv_pct": 14.0,
+      "blend": [
+        {
+          "grape": "Mourvèdre",
+          "pct": 33
+        },
+        {
+          "grape": "Syrah",
+          "pct": 31
+        },
+        {
+          "grape": "Grenache",
+          "pct": 26
+        },
+        {
+          "grape": "Cinsaut",
+          "pct": 6
+        },
+        {
+          "grape": "Vaccarese",
+          "pct": 2
+        },
+        {
+          "grape": "Counoise",
+          "pct": 2
+        }
+      ],
+      "oak": {
+        "vessel": "foudre",
+        "months": null,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": 3452,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "biodynamic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 20800,
+  "tokens_out": 351,
+  "elapsed": 6.302320241928101,
+  "error": null
+}

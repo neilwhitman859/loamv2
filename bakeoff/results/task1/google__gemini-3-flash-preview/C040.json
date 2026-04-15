@@ -1,0 +1,13 @@
+{
+  "pair_id": "C040",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records represent two distinct quality tiers within the producer's hierarchy: Reserva and Gran Reserva. In Chilean wine classification, these tiers indicate different levels of aging and quality standards, making them separate products for a consumer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records represent two distinct quality tiers within the producer's hierarchy: Reserva and Gran Reserva. In Chilean wine classification, these tiers indicate different levels of aging and quality standards, making them separate products for a consumer.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 66,
+  "elapsed": 2.2439346313476562,
+  "error": null
+}

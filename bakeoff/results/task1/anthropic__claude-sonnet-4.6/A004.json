@@ -1,0 +1,13 @@
+{
+  "pair_id": "A004",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.75, \"reasoning\": \"Wine A lists both PINOT NOIR and PINOT GRIS as grapes, suggesting it may be a blend or an assemblage, while Wine B is specifically labeled as Pinot Gris only. Since the producer makes wines from the same Wormeldange Weinbour vineyard with different grape compositions, the varietal suffix difference here likely indicates distinct bottlings rather than mere abbreviation. Different grape compositions = DIFFERENT wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.75,
+  "reasoning": "Wine A lists both PINOT NOIR and PINOT GRIS as grapes, suggesting it may be a blend or an assemblage, while Wine B is specifically labeled as Pinot Gris only. Since the producer makes wines from the same Wormeldange Weinbour vineyard with different grape compositions, the varietal suffix difference here likely indicates distinct bottlings rather than mere abbreviation. Different grape compositions = DIFFERENT wine.",
+  "parse_ok": true,
+  "tokens_in": 509,
+  "tokens_out": 118,
+  "elapsed": 3.035691976547241,
+  "error": null
+}

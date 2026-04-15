@@ -1,0 +1,13 @@
+{
+  "pair_id": "A014",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The core wine name 'Grey Series Barrel Ferment' is identical, and the addition of 'Pinot Gris' to Wine B is a varietal suffix, which alone usually indicates the same wine. Both are white wines from the same producer, and there is no evidence that Anthony Road makes multiple 'Grey Series Barrel Ferment' wines with different grape varieties.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The core wine name 'Grey Series Barrel Ferment' is identical, and the addition of 'Pinot Gris' to Wine B is a varietal suffix, which alone usually indicates the same wine. Both are white wines from the same producer, and there is no evidence that Anthony Road makes multiple 'Grey Series Barrel Ferment' wines with different grape varieties.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 97,
+  "elapsed": 3.839629888534546,
+  "error": null
+}

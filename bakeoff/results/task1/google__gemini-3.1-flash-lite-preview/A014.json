@@ -1,0 +1,13 @@
+{
+  "pair_id": "A014",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"Wine A is explicitly identified as a Gew\u00fcrztraminer, while Wine B is identified as a Pinot Gris. Since these are different grape varieties produced by the same winery, they represent distinct bottlings.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is explicitly identified as a Gew\u00fcrztraminer, while Wine B is identified as a Pinot Gris. Since these are different grape varieties produced by the same winery, they represent distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 68,
+  "elapsed": 1.5303211212158203,
+  "error": null
+}

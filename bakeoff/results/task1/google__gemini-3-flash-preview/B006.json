@@ -1,0 +1,13 @@
+{
+  "pair_id": "B006",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Vistalba produces a specific tiered range of wines labeled 'Corte A', 'Corte B', and 'Corte C', which represent distinct quality levels and different grape blends. 'Corte' is likely an incomplete reference to one of these specific tiers, and the inclusion of Dolcetto in Wine B's blend confirms it is the specific 'Corte B' bottling rather than a generic entry.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Vistalba produces a specific tiered range of wines labeled 'Corte A', 'Corte B', and 'Corte C', which represent distinct quality levels and different grape blends. 'Corte' is likely an incomplete reference to one of these specific tiers, and the inclusion of Dolcetto in Wine B's blend confirms it is the specific 'Corte B' bottling rather than a generic entry.",
+  "parse_ok": true,
+  "tokens_in": 454,
+  "tokens_out": 107,
+  "elapsed": 2.5143325328826904,
+  "error": null
+}

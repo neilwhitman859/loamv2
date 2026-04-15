@@ -1,0 +1,13 @@
+{
+  "pair_id": "B026",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct Cattier Champagne bottlings: 'Brut Antique Ros\u00e9' and 'Brut Antique' differ by color/style, with one explicitly ros\u00e9 and the other white. Ros\u00e9 vs white from the same producer and cuv\u00e9e line are separate wines that consumers would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct Cattier Champagne bottlings: 'Brut Antique Ros\u00e9' and 'Brut Antique' differ by color/style, with one explicitly ros\u00e9 and the other white. Ros\u00e9 vs white from the same producer and cuv\u00e9e line are separate wines that consumers would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 82,
+  "elapsed": 2.1658594608306885,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C003",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both are white sparkling wines from Raumland under the Cuvee Katharina name, but 'Brut Nature' specifies a drier style with zero or near-zero dosage, distinct from standard 'Brut'. Different sweetness levels indicate separate bottlings, akin to classification differences. Distinct LWIN numbers confirm they are treated as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both are white sparkling wines from Raumland under the Cuvee Katharina name, but 'Brut Nature' specifies a drier style with zero or near-zero dosage, distinct from standard 'Brut'. Different sweetness levels indicate separate bottlings, akin to classification differences. Distinct LWIN numbers confirm they are treated as different wines.",
+  "parse_ok": true,
+  "tokens_in": 569,
+  "tokens_out": 461,
+  "elapsed": 3.743903398513794,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A008",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records refer to the same producer (Cuilleron) and the same ros\u00e9 wine. The addition of 'Syrah' in Wine B is a common varietal suffix abbreviation, and since both share the same color and producer, they represent the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records refer to the same producer (Cuilleron) and the same ros\u00e9 wine. The addition of 'Syrah' in Wine B is a common varietal suffix abbreviation, and since both share the same color and producer, they represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 74,
+  "elapsed": 1.2779455184936523,
+  "error": null
+}

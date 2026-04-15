@@ -1,0 +1,33 @@
+{
+  "page_id": "page_040",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Chardonnay\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": null, \"oak\": {\"vessel\": null, \"months\": null, \"new_pct\": null, \"origin\": \"French\"}, \"cases_produced\": null, \"chemistry\": {\"ph\": null, \"ta_g_l\": null, \"rs_g_l\": null, \"so2_total_mg_l\": null}, \"winemaker\": \"Jason Becker\", \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Chardonnay",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": null,
+        "months": null,
+        "new_pct": null,
+        "origin": "French"
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": "Jason Becker",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 15051,
+  "tokens_out": 115,
+  "elapsed": 2.6016457080841064,
+  "error": null
+}

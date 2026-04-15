@@ -1,0 +1,26 @@
+{
+  "wine_id": "1c2f0e8d-4a39-42f4-b008-c5d02bd4025d",
+  "wine_name": "Atamisque Chardonnay, Mendoza",
+  "tier": "B",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "Describes soils as 'sandy-loam top layer over deep beds of gravel and river stones coated in calcium carbonate' — ground truth says 'clay and sand alluvial soils' with no mention of calcium carbonate or calcareous layers",
+    "Claims winery limits malolactic fermentation — not verifiable from context or ground truth",
+    "Describes Domaine William Fèvre Chablis as 'unoaked or lightly oaked' which is somewhat misleading as Fèvre uses oak significantly on premier/grand cru",
+    "Price range of $20-$25 is fabricated — no price data was provided"
+  ],
+  "banned_words_found": [
+    "masterclass"
+  ],
+  "fabricated_numbers": [
+    "$20 to $25 price range"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity, and genuinely useful insights. The hook correctly identifies the 1,300m elevation and Tupungato location, which matches ground truth. However, there are several unverifiable embellishments: the calcium carbonate/calcareous soil description contradicts the ground truth (clay and sand alluvial), the MLF limitation claim is unverified, and the price range is fabricated. The output never mentions the 10 months French oak aging or winemaker Philippe Caraguel from ground truth, which would have added value. The word 'masterclass' isn't on the banned list but the voice is otherwise excellent — direct, opinionated, specific. No mention of the naming origin (native tree) which is a missed opportunity. The fabricated price ($20-$25) triggers the hard penalty consideration, though it's presented as approximate market positioning rather than a precise tech sheet number.",
+  "judge_tokens_in": 3526,
+  "judge_tokens_out": 424
+}

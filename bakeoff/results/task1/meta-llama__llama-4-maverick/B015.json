@@ -1,0 +1,13 @@
+{
+  "pair_id": "B015",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a ros\u00e9 while Wine B is a red wine, despite sharing the same producer and base name 'Pinot Noir Fut de Chene', indicating they are different wines due to the difference in color.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a ros\u00e9 while Wine B is a red wine, despite sharing the same producer and base name 'Pinot Noir Fut de Chene', indicating they are different wines due to the difference in color.",
+  "parse_ok": true,
+  "tokens_in": 502,
+  "tokens_out": 67,
+  "elapsed": 1.5386075973510742,
+  "error": null
+}

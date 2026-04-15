@@ -1,0 +1,24 @@
+{
+  "wine_id": "ba7c6cc5-ed69-424d-90ee-9b83ae510c36",
+  "wine_name": "Penfolds Bin 2 Mataro, South Eastern Australia",
+  "tier": "A",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.575,
+  "wrong_facts": [
+    "Vinification states 'approximately 12 months' in oak — ground truth says 9 months",
+    "Hook says 'First created in 1960, it was intended as a softer, more approachable red' — the 1960 date is correct per ground truth, but 'intended as a softer, more approachable red' is unverifiable and potentially fabricated framing",
+    "States 'seasoned French and American oak hogsheads' without new oak — ground truth says 'new and seasoned hogsheads'"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "12 months oak aging (ground truth is 9 months)",
+    "$25 price (no price data provided)"
+  ],
+  "reasoning": "The output fabricates specific numbers: 12 months oak aging (actual is 9 months per ground truth) and a $25 price point not in the context data. These trigger the hard penalty for fabricated numbers, capping correctness at 1.5. However, many other claims are correct — the 1960 origin, the Shiraz-Mataro blend composition, McLaren Vale terroir details, Peter Gago not mentioned but not claimed either. The oak aging claim is specifically wrong (12 vs 9 months) and omits new oak. The voice is strong — direct, opinionated, no banned words, good structure. Specificity is high with named soils, Gulf St Vincent, rotundone. Usefulness is excellent with actionable food pairings and honest insider take. But the fabricated numbers are a serious issue for a data-trust platform.",
+  "judge_tokens_in": 3768,
+  "judge_tokens_out": 759
+}

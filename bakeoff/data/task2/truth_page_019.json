@@ -6,16 +6,30 @@
   "extraction": {
     "name": "Red Velvet",
     "producer": "Cupcake Vineyards",
-    "vintage_year": 2026,
+    "vintage_year": null,
     "abv_pct": null,
-    "blend": null,
+    "blend": [
+      {
+        "grape": "Merlot",
+        "pct": null
+      },
+      {
+        "grape": "Zinfandel",
+        "pct": null
+      },
+      {
+        "grape": "Petite Sirah",
+        "pct": null
+      }
+    ],
     "oak": null,
     "cases_produced": null,
     "chemistry": null,
-    "winemaker": "Explore our other award",
+    "winemaker": "Jessica Tomei",
     "farming": null
   },
   "data_richness": 2,
   "total_fields": 8,
-  "text_length": 79229
+  "text_length": 79229,
+  "consensus_models": 14
 }

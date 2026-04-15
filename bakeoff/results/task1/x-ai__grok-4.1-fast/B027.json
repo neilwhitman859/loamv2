@@ -1,0 +1,13 @@
+{
+  "pair_id": "B027",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is explicitly white while Wine B is ros\u00e9, indicating different colors from the same producer and base vineyard name. The 'Rose Brut' designation on Wine B further specifies a sparkling ros\u00e9 style, differing from the presumed still white style of Wine A. Per guidelines, different colors (ros\u00e9 vs white) make these distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is explicitly white while Wine B is ros\u00e9, indicating different colors from the same producer and base vineyard name. The 'Rose Brut' designation on Wine B further specifies a sparkling ros\u00e9 style, differing from the presumed still white style of Wine A. Per guidelines, different colors (ros\u00e9 vs white) make these distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 556,
+  "tokens_out": 530,
+  "elapsed": 3.600482225418091,
+  "error": null
+}

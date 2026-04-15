@@ -1,0 +1,13 @@
+{
+  "pair_id": "B003",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines are different colors (red vs. white) and have distinct LWIN identifiers. Since they are made from different grapes and represent different wine types, they are distinct bottlings.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are different colors (red vs. white) and have distinct LWIN identifiers. Since they are made from different grapes and represent different wine types, they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 65,
+  "elapsed": 1.1645305156707764,
+  "error": null
+}

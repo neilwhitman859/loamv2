@@ -1,0 +1,13 @@
+{
+  "pair_id": "D035",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Velenosi produces both a standard 'Brecciarolo' (Rosso Piceno Superiore) and a 'Brecciarolo Gold' (Rosso Piceno Superiore Selezione). The 'Gold' label represents a higher-tier selection with different aging requirements and a distinct price point, making them separate bottlings for a consumer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Velenosi produces both a standard 'Brecciarolo' (Rosso Piceno Superiore) and a 'Brecciarolo Gold' (Rosso Piceno Superiore Selezione). The 'Gold' label represents a higher-tier selection with different aging requirements and a distinct price point, making them separate bottlings for a consumer.",
+  "parse_ok": true,
+  "tokens_in": 416,
+  "tokens_out": 94,
+  "elapsed": 1.458561897277832,
+  "error": null
+}

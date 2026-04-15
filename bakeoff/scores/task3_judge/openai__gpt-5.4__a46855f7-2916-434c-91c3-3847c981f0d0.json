@@ -1,0 +1,19 @@
+{
+  "wine_id": "a46855f7-2916-434c-91c3-3847c981f0d0",
+  "wine_name": "Leo Hillinger, Burgenland",
+  "tier": "B",
+  "model": "openai/gpt-5.4",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.05,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$15-25 price range"
+  ],
+  "reasoning": "The output is factually careful — it correctly identifies 100% Blaufränkisch, 13% ABV, the broad Burgenland appellation, and Leo Hillinger as a high-visibility producer. It wisely avoids fabricating cellar details it doesn't have. The $15-25 price estimate is not in the context data but is plausible for this category, so it's a soft fabrication rather than a hard one. The hook is accurate and well-constructed — no wrong claims there. The ground truth confirms organic conversion in 2010 and vineyards in Jois, Oggau, and Rust, none of which the output mentions, but it also doesn't claim anything contradictory. The voice is excellent: direct, opinionated ('the anti-jam red'), avoids banned words, names real dishes with reasoning, and is comfortable with limitations ('assigning one soil profile would be guesswork'). Comparables (Moric, Heinrich, Wachter-Wiesler) are all real and well-chosen. Specificity is strong with Pannonian climate, soil types mentioned cautiously, and named competitors. Very useful for a buyer trying to understand this wine's place in the market.",
+  "judge_tokens_in": 3643,
+  "judge_tokens_out": 341
+}

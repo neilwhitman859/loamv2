@@ -1,0 +1,13 @@
+{
+  "pair_id": "D004",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from Chimney Rock and are red Cabernet Sauvignons, but 'Arrowhead' and 'Arete' are distinct cuv\u00e9e or vineyard designations. Different vineyard/cuv\u00e9e names mean they represent separate bottlings consumers would encounter independently. Unique LWINs (1750485 vs 1991273) confirm they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from Chimney Rock and are red Cabernet Sauvignons, but 'Arrowhead' and 'Arete' are distinct cuv\u00e9e or vineyard designations. Different vineyard/cuv\u00e9e names mean they represent separate bottlings consumers would encounter independently. Unique LWINs (1750485 vs 1991273) confirm they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 568,
+  "tokens_out": 465,
+  "elapsed": 3.616161584854126,
+  "error": null
+}

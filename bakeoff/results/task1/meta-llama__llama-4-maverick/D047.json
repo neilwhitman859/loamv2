@@ -1,0 +1,13 @@
+{
+  "pair_id": "D047",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is labeled as 'Happs Merlot' while Wine B is labeled as 'Happs Cabernet', indicating different grape varieties. Although the producer and region are the same, the difference in grape variety (Merlot vs Cabernet) signifies they are different wines. The provided grape composition confirms Wine A is Merlot and Wine B is also Merlot, contradicting the initial name indication, but the names suggest a potential difference in the intended grape variety.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is labeled as 'Happs Merlot' while Wine B is labeled as 'Happs Cabernet', indicating different grape varieties. Although the producer and region are the same, the difference in grape variety (Merlot vs Cabernet) signifies they are different wines. The provided grape composition confirms Wine A is Merlot and Wine B is also Merlot, contradicting the initial name indication, but the names suggest a potential difference in the intended grape variety.",
+  "parse_ok": true,
+  "tokens_in": 506,
+  "tokens_out": 115,
+  "elapsed": 2.0784764289855957,
+  "error": null
+}

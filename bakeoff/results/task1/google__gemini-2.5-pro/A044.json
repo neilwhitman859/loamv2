@@ -1,0 +1,13 @@
+{
+  "pair_id": "A044",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The producer is the same, and the names follow a common pattern where one is a base name ('Under Current Naked') and the other includes the grape varietal ('Under Current Naked Semillon'). Since Wine A is explicitly made from Semillon, this confirms both records refer to the same single-varietal wine, with one name being a shorter abbreviation.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The producer is the same, and the names follow a common pattern where one is a base name ('Under Current Naked') and the other includes the grape varietal ('Under Current Naked Semillon'). Since Wine A is explicitly made from Semillon, this confirms both records refer to the same single-varietal wine, with one name being a shorter abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 1296,
+  "elapsed": 13.13747262954712,
+  "error": null
+}

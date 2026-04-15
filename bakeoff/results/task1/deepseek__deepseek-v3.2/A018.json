@@ -1,0 +1,13 @@
+{
+  "pair_id": "A018",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The grapes are different: Wine A is made from Chardonnay Blanc, while Wine B is a Viognier. Different grape varieties always indicate different wines, even if the producer and core name (Quarter Acre) are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The grapes are different: Wine A is made from Chardonnay Blanc, while Wine B is a Viognier. Different grape varieties always indicate different wines, even if the producer and core name (Quarter Acre) are the same.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 72,
+  "elapsed": 3.4624552726745605,
+  "error": null
+}

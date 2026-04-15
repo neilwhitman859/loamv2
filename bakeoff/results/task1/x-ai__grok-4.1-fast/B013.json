@@ -1,0 +1,13 @@
+{
+  "pair_id": "B013",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Heidsieck & Co) and 'Monopole Diamant' prefix, but differ in name suffix (Bleu vs Rose) and explicitly stated colors (white vs rose). Different colors represent distinct wine styles, similar to the rule that ros\u00e9 vs red from the same vineyard are different. Unique LWINs confirm separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Heidsieck & Co) and 'Monopole Diamant' prefix, but differ in name suffix (Bleu vs Rose) and explicitly stated colors (white vs rose). Different colors represent distinct wine styles, similar to the rule that ros\u00e9 vs red from the same vineyard are different. Unique LWINs confirm separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 576,
+  "tokens_out": 501,
+  "elapsed": 4.142506122589111,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A030",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is labeled 'Sauvignon' while Wine B is 'Sauvignon Semillon', indicating different grape compositions. The producer Pegasus Bay makes distinct wines from these grapes, and different grape blends represent separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is labeled 'Sauvignon' while Wine B is 'Sauvignon Semillon', indicating different grape compositions. The producer Pegasus Bay makes distinct wines from these grapes, and different grape blends represent separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 484,
+  "tokens_out": 74,
+  "elapsed": 1.9167430400848389,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C003",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Raumland and share the base name 'Cuvee Katharina Brut', but 'Brut Nature' indicates a specific dosage level (zero dosage) which is a distinct bottling from the standard 'Brut'. In sparkling wine production, different dosage levels represent different stylistic bottlings that consumers would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Raumland and share the base name 'Cuvee Katharina Brut', but 'Brut Nature' indicates a specific dosage level (zero dosage) which is a distinct bottling from the standard 'Brut'. In sparkling wine production, different dosage levels represent different stylistic bottlings that consumers would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 93,
+  "elapsed": 2.687389612197876,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D009",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer, Bellavista, and have very similar names, 'Alma Grande Cuvee Brut' and 'Alma Grande Cuvee', suggesting the difference is in the naming style or varietal suffix. The color is the same (white), and there's no indication of different grapes or styles beyond the 'Brut' designation, which is common for sparkling wines and doesn't necessarily indicate a different wine. The absence of other distinguishing factors suggests they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer, Bellavista, and have very similar names, 'Alma Grande Cuvee Brut' and 'Alma Grande Cuvee', suggesting the difference is in the naming style or varietal suffix. The color is the same (white), and there's no indication of different grapes or styles beyond the 'Brut' designation, which is common for sparkling wines and doesn't necessarily indicate a different wine. The absence of other distinguishing factors suggests they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 120,
+  "elapsed": 1.7077579498291016,
+  "error": null
+}

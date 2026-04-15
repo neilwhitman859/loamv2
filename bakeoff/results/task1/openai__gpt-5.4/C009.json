@@ -1,0 +1,13 @@
+{
+  "pair_id": "C009",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.95,\"reasoning\":\"Cattier's 'Roses' is a distinct named Champagne cuv\u00e9e, while 'Blanc de Blancs Brut' is the generic Blanc de Blancs bottling. A named cuv\u00e9e versus the standard cuv\u00e9e indicates separate products, and the different LWINs support that these are different wines rather than formatting variants.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Cattier's 'Roses' is a distinct named Champagne cuv\u00e9e, while 'Blanc de Blancs Brut' is the generic Blanc de Blancs bottling. A named cuv\u00e9e versus the standard cuv\u00e9e indicates separate products, and the different LWINs support that these are different wines rather than formatting variants.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 90,
+  "elapsed": 2.376980781555176,
+  "error": null
+}

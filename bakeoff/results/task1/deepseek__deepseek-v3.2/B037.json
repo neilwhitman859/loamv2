@@ -1,0 +1,13 @@
+{
+  "pair_id": "B037",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines share the same producer and name, but one is red and the other is white. Different colors indicate distinct wine types or styles, which are considered different wines under the rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines share the same producer and name, but one is red and the other is white. Different colors indicate distinct wine types or styles, which are considered different wines under the rules.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 61,
+  "elapsed": 2.188312292098999,
+  "error": null
+}

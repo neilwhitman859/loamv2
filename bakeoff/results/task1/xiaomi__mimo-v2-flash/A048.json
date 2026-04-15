@@ -1,0 +1,13 @@
+{
+  "pair_id": "A048",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (Stoneleigh) and are red wines made from Pinot Noir. The only difference is the name formatting, where 'Wild Valley Pinot Noir' is the full name and 'Wild Valley' is the abbreviated version, which is a common naming convention for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (Stoneleigh) and are red wines made from Pinot Noir. The only difference is the name formatting, where 'Wild Valley Pinot Noir' is the full name and 'Wild Valley' is the abbreviated version, which is a common naming convention for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 482,
+  "tokens_out": 84,
+  "elapsed": 2.3332419395446777,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D027",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Although both wines share the same producer, region (Tre Venezie/Trevenezie), and 'Moscato' label name, the grape varieties are different. Wine A uses Muscat of Alexandria, while Wine B uses Italia and Muscat \u00e0 Petits Grains Ros\u00e9s \u2014 these are distinct grape varieties producing wines with different flavor profiles. Different grapes always means different wines, even when the label name and producer match.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Although both wines share the same producer, region (Tre Venezie/Trevenezie), and 'Moscato' label name, the grape varieties are different. Wine A uses Muscat of Alexandria, while Wine B uses Italia and Muscat \u00e0 Petits Grains Ros\u00e9s \u2014 these are distinct grape varieties producing wines with different flavor profiles. Different grapes always means different wines, even when the label name and producer match.",
+  "parse_ok": true,
+  "tokens_in": 532,
+  "tokens_out": 119,
+  "elapsed": 2.978846311569214,
+  "error": null
+}

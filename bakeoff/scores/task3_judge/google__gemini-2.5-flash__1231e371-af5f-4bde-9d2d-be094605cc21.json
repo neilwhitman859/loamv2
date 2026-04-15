@@ -1,0 +1,29 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "google/gemini-2.5-flash",
+  "correctness": 2.5,
+  "voice": 2.0,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 2.875,
+  "wrong_facts": [
+    "The context data lists the wine as 100% Cabernet Sauvignon, but ground truth shows it is a blend (92% Cab, 3% Petite Verdot, 3% Merlot, 2% Malbec) — the output calls it 'Cabernet Sauvignon' throughout without noting the blend, which is consistent with the context data but factually incomplete.",
+    "The hook says 'named for the father-son team of John and Doug Shafer' — while directionally correct, it omits the specific meaning: 'generation and a half' partnership, not simply 'named for' the team. This is imprecise but not outright wrong.",
+    "The hook claims it 'consistently delivers a powerful expression of Stags Leap District fruit' — ground truth confirms multi-site sourcing including Stags Leap District, Borderline vineyard, and other Napa sites, so framing it as primarily Stags Leap District fruit is misleading.",
+    "The food pairing section uses the word 'harmonize' which is a form of the banned word 'harmonious', and uses 'sophisticated' which is a banned word.",
+    "Joseph Phelps Insignia price of $275+ and Stag's Leap Wine Cellars S.L.V. at $175+ are fabricated numbers not in the context data — these are plausible market prices but unverifiable from provided data."
+  ],
+  "banned_words_found": [
+    "harmonize",
+    "sophisticated"
+  ],
+  "fabricated_numbers": [
+    "$275+ for Joseph Phelps Insignia",
+    "$175+ for Stag's Leap Wine Cellars S.L.V."
+  ],
+  "reasoning": "The output has several issues. The hook's naming origin claim is directionally correct but imprecise — it doesn't capture the 'generation and a half' meaning. The wine is presented as primarily Stags Leap District fruit when ground truth shows multi-site sourcing. The output fabricates competitor price points not in the context data, though these are roughly plausible from market knowledge. Two banned words ('harmonize' and 'sophisticated') appear, capping voice at 2.0. The specificity is good — naming Hambright series soils, Bale loam, Yolo silt loam, and specific comparable producers. However, the vinification section doesn't mention the verified 18 months in 100% new French oak (Allier & Tronçais) or winemaker Elias Fernandez, instead giving generic descriptions. The overall tone leans toward generic wine writing with some hedging and template patterns.",
+  "judge_tokens_in": 3983,
+  "judge_tokens_out": 631
+}

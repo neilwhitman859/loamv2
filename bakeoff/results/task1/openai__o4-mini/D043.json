@@ -1,0 +1,13 @@
+{
+  "pair_id": "D043",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.80, \"reasoning\": \"Although they share producer, vineyard and red style, the distinct \u2018Note #1\u2019 vs \u2018Note #2\u2019 numbering indicates separate bottlings or cuv\u00e9e versions, so they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Although they share producer, vineyard and red style, the distinct \u2018Note #1\u2019 vs \u2018Note #2\u2019 numbering indicates separate bottlings or cuv\u00e9e versions, so they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 240,
+  "elapsed": 6.613387107849121,
+  "error": null
+}

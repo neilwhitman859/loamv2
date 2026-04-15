@@ -1,0 +1,13 @@
+{
+  "pair_id": "B027",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines are distinct products because they differ in color (white vs. ros\u00e9) and style (Brut vs. Ros\u00e9 Brut). In the context of Champagne, a standard white cuv\u00e9e and a ros\u00e9 cuv\u00e9e from the same vineyard are considered separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are distinct products because they differ in color (white vs. ros\u00e9) and style (Brut vs. Ros\u00e9 Brut). In the context of Champagne, a standard white cuv\u00e9e and a ros\u00e9 cuv\u00e9e from the same vineyard are considered separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 410,
+  "tokens_out": 77,
+  "elapsed": 1.7531638145446777,
+  "error": null
+}

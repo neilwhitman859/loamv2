@@ -1,0 +1,26 @@
+{
+  "wine_id": "1c2f0e8d-4a39-42f4-b008-c5d02bd4025d",
+  "wine_name": "Atamisque Chardonnay, Mendoza",
+  "tier": "B",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.3,
+  "wrong_facts": [
+    "Fermented entirely in new French oak barrels — ground truth says 10 months in French oak barrels but does not specify 'new' or that fermentation occurs in barrel",
+    "Aged for 12 months in barrels — ground truth says 10 months in French oak",
+    "Limestone-rich soils / significant calcium carbonate deposits — ground truth says clay and sand alluvial soils, no mention of limestone or calcium carbonate",
+    "Price point of $20-25 — no price data was provided in context"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "12 months oak aging (ground truth is 10 months)",
+    "4,265 feet elevation (context data doesn't specify this; ground truth says 1,300m which is ~4,265 feet, so this is actually correct)",
+    "$20-25 price point (no price data provided)"
+  ],
+  "reasoning": "The hook's altitude claim (4,265 feet = ~1,300m) actually matches ground truth, so that's fine. However, the output fabricates several specific numbers and claims: 12 months aging vs. the verified 10 months, 'new French oak' and 'fermented in barrel' without support, limestone/calcium carbonate soils when ground truth says clay and sand alluvial soils, and a $20-25 price point with no data. The limestone soil claim is particularly problematic as it's stated confidently and is contradicted by ground truth. The voice is strong — direct, opinionated, well-structured with good food pairings and useful comparables. But the multiple fabricated specifics significantly undermine correctness.",
+  "judge_tokens_in": 3734,
+  "judge_tokens_out": 409
+}

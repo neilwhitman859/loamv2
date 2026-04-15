@@ -1,0 +1,13 @@
+{
+  "pair_id": "A003",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from the same producer (Goodfellow Family), share the exact designation 'Heritage No. 15 Whistling Ridge', are red, and specify Pinot Noir grapes. The only difference is the varietal suffix added to Wine B's name, which matches the rule for abbreviations indicating the SAME wine. No evidence suggests multiple grape varieties from this vineyard by the producer.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from the same producer (Goodfellow Family), share the exact designation 'Heritage No. 15 Whistling Ridge', are red, and specify Pinot Noir grapes. The only difference is the varietal suffix added to Wine B's name, which matches the rule for abbreviations indicating the SAME wine. No evidence suggests multiple grape varieties from this vineyard by the producer.",
+  "parse_ok": true,
+  "tokens_in": 579,
+  "tokens_out": 484,
+  "elapsed": 3.8917295932769775,
+  "error": null
+}

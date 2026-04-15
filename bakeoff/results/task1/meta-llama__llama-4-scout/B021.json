@@ -1,0 +1,13 @@
+{
+  "pair_id": "B021",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer (Buehler) and grape variety (Zinfandel). The difference in color (rose vs red) and name formatting (White Zinfandel vs Zinfandel) are not sufficient to classify them as different wines, given that White Zinfandel is a style of Zinfandel.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer (Buehler) and grape variety (Zinfandel). The difference in color (rose vs red) and name formatting (White Zinfandel vs Zinfandel) are not sufficient to classify them as different wines, given that White Zinfandel is a style of Zinfandel.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 88,
+  "elapsed": 2.4686050415039062,
+  "error": null
+}

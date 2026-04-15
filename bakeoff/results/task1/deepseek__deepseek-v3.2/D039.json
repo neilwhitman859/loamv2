@@ -1,0 +1,13 @@
+{
+  "pair_id": "D039",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The key difference is the classification tier: Wine B is labeled 'Reserva' while Wine A is not. According to the rules, different Rioja classification levels (Reserva/Gran Reserva/Crianza) always indicate DIFFERENT wines, as they represent distinct bottlings a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The key difference is the classification tier: Wine B is labeled 'Reserva' while Wine A is not. According to the rules, different Rioja classification levels (Reserva/Gran Reserva/Crianza) always indicate DIFFERENT wines, as they represent distinct bottlings a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 86,
+  "elapsed": 3.5855798721313477,
+  "error": null
+}

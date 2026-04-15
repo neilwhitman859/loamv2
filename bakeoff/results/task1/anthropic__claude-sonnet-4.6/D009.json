@@ -1,0 +1,13 @@
+{
+  "pair_id": "D009",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.85, \"reasoning\": \"Both wines are from Bellavista and share the 'Alma Grande Cuvee' name, with Wine A simply appending 'Brut' to indicate the sweetness/style designation. The 'Brut' suffix is a standard sparkling wine descriptor that may have been omitted in the shorter name as an abbreviation, similar to how varietal suffixes are sometimes dropped. Both are white wines from the same producer, suggesting these represent the same bottling with one record including the style descriptor and the other omitting it.\"}",
+  "verdict": "SAME",
+  "confidence": 0.85,
+  "reasoning": "Both wines are from Bellavista and share the 'Alma Grande Cuvee' name, with Wine A simply appending 'Brut' to indicate the sweetness/style designation. The 'Brut' suffix is a standard sparkling wine descriptor that may have been omitted in the shorter name as an abbreviation, similar to how varietal suffixes are sometimes dropped. Both are white wines from the same producer, suggesting these represent the same bottling with one record including the style descriptor and the other omitting it.",
+  "parse_ok": true,
+  "tokens_in": 482,
+  "tokens_out": 138,
+  "elapsed": 4.071263790130615,
+  "error": null
+}

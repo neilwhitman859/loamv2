@@ -1,0 +1,13 @@
+{
+  "pair_id": "B041",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white Pinot Gris, while Wine B is a red Grenache (Garnacha Tinta). Different grape varieties always indicate different wines, regardless of sharing the same producer and region.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white Pinot Gris, while Wine B is a red Grenache (Garnacha Tinta). Different grape varieties always indicate different wines, regardless of sharing the same producer and region.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 67,
+  "elapsed": 1.9727952480316162,
+  "error": null
+}

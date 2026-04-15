@@ -1,0 +1,17 @@
+{
+  "wine_id": "dc9e4353-ddf9-4e48-854e-1a3d6404b7b3",
+  "wine_name": "Shafer One Point Five Cabernet Sauvignon, Stags Leap District",
+  "tier": "C",
+  "model": "openai/gpt-5.4",
+  "correctness": 4.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.325,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is impressively careful about not fabricating specifics — it explicitly states 'Specific cellar details are not provided here, so I won't invent them,' which is exactly the right approach given the context data lacked cooperage, ABV, and blend details. The hook is factually sound: Stags Leap District texture claims are well-grounded, and the positioning relative to Hillside Select is accurate. The naming origin reference ('partnership between generations') is vague but directionally correct per ground truth (the 'generation and a half' story). It doesn't fabricate the specific naming story, which is good. No banned words found. The voice is strong — direct, opinionated ('skip it if you want stern, mountain-grown Cabernet'), names real competitors with reasoning, and the food pairings are specific and well-explained. The Palisades references and geological details (volcanic tuff, Bale clay loam) add real specificity. One minor issue: the output doesn't mention the actual blend, winemaker (Elias Fernandez), or cooperage (100% new French oak), which would have added value, but since these weren't in the context data and the model chose not to guess, that's a responsible choice rather than a penalty. The comparable wines section is well-chosen and reasoned. Overall this is high-quality work that respects the boundary between known and unknown.",
+  "judge_tokens_in": 4116,
+  "judge_tokens_out": 370
+}

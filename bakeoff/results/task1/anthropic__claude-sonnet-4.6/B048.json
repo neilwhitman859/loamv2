@@ -1,0 +1,13 @@
+{
+  "pair_id": "B048",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Although both wines share the same producer (Salwey) and vineyard name (Henkenberg), they are made from different grape varieties \u2014 Pinot Gris vs Pinot Blanc. Different grapes always constitute different wines, regardless of shared vineyard or producer. Additionally, the color fields differ (red vs white), further confirming these are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Although both wines share the same producer (Salwey) and vineyard name (Henkenberg), they are made from different grape varieties \u2014 Pinot Gris vs Pinot Blanc. Different grapes always constitute different wines, regardless of shared vineyard or producer. Additionally, the color fields differ (red vs white), further confirming these are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 485,
+  "tokens_out": 103,
+  "elapsed": 3.114313840866089,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C036",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different lot/cask numbers (1* vs 3*) at the same Pr\u00e4dikat level, which indicates different bottlings. Despite sharing the same producer, vineyard, grape variety, and appellation, the distinct lot numbers signify separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different lot/cask numbers (1* vs 3*) at the same Pr\u00e4dikat level, which indicates different bottlings. Despite sharing the same producer, vineyard, grape variety, and appellation, the distinct lot numbers signify separate wines.",
+  "parse_ok": true,
+  "tokens_in": 462,
+  "tokens_out": 76,
+  "elapsed": 2.381457567214966,
+  "error": null
+}

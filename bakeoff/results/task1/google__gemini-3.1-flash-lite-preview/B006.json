@@ -1,0 +1,13 @@
+{
+  "pair_id": "B006",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.9,\n\"reasoning\": \"While both wines share the 'Corte' name and producer, the grape compositions are significantly different. Wine B includes Dolcetto, which is absent in Wine A, and the specific percentages provided for Wine B indicate it is a distinct blend/bottling from Wine A.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "While both wines share the 'Corte' name and producer, the grape compositions are significantly different. Wine B includes Dolcetto, which is absent in Wine A, and the specific percentages provided for Wine B indicate it is a distinct blend/bottling from Wine A.",
+  "parse_ok": true,
+  "tokens_in": 454,
+  "tokens_out": 83,
+  "elapsed": 1.4828684329986572,
+  "error": null
+}

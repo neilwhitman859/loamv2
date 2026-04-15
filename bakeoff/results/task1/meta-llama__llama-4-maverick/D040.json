@@ -1,0 +1,13 @@
+{
+  "pair_id": "D040",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines 'Solane Superiore' and 'Superiore' from producer Santi are likely the same wine, as the difference is only in the name formatting with 'Solane' potentially being an omitted prefix or vineyard designation. Both wines are red and share the same producer, suggesting a high likelihood of being the same wine. The name difference is likely due to abbreviation or varietal suffix variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines 'Solane Superiore' and 'Superiore' from producer Santi are likely the same wine, as the difference is only in the name formatting with 'Solane' potentially being an omitted prefix or vineyard designation. Both wines are red and share the same producer, suggesting a high likelihood of being the same wine. The name difference is likely due to abbreviation or varietal suffix variation.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 104,
+  "elapsed": 2.3641867637634277,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D006",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These are not just formatting variants: Wine A is a single-varietal Merlot Noir bottling, while Wine B is a blend of Cot and Merlot Noir. Different grape composition means they are distinct wines even if the names are closely related.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These are not just formatting variants: Wine A is a single-varietal Merlot Noir bottling, while Wine B is a blend of Cot and Merlot Noir. Different grape composition means they are distinct wines even if the names are closely related.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 72,
+  "elapsed": 1.9734690189361572,
+  "error": null
+}

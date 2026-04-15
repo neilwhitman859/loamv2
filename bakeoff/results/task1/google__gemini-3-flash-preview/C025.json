@@ -1,0 +1,13 @@
+{
+  "pair_id": "C025",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Blanc de Blancs (white) sparkling wine, while Wine B is a Ros\u00e9. These are distinct bottlings with different grape compositions and color classifications, even though they share the 'Giulio Ferrari' branding.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Blanc de Blancs (white) sparkling wine, while Wine B is a Ros\u00e9. These are distinct bottlings with different grape compositions and color classifications, even though they share the 'Giulio Ferrari' branding.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 70,
+  "elapsed": 1.8603081703186035,
+  "error": null
+}

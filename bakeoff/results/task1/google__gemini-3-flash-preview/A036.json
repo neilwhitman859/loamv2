@@ -1,0 +1,13 @@
+{
+  "pair_id": "A036",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a blend of Pinot Noir and Chardonnay (likely a sparkling or white blend), whereas Wine B is a varietal Sauvignon Blanc. Since the grape compositions are fundamentally different, they represent distinct bottlings within the producer's 'Family Selection' range.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a blend of Pinot Noir and Chardonnay (likely a sparkling or white blend), whereas Wine B is a varietal Sauvignon Blanc. Since the grape compositions are fundamentally different, they represent distinct bottlings within the producer's 'Family Selection' range.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 76,
+  "elapsed": 1.5604753494262695,
+  "error": null
+}

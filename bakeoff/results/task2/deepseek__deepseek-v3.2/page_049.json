@@ -1,0 +1,28 @@
+{
+  "page_id": "page_049",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "```json\n{\n    \"wines_found\": [\n        {\n            \"name\": \"Merlot\",\n            \"vintage_year\": null,\n            \"abv_pct\": null,\n            \"blend\": null,\n            \"oak\": {\n                \"vessel\": null,\n                \"months\": null,\n                \"new_pct\": null,\n                \"origin\": \"American\"\n            },\n            \"cases_produced\": null,\n            \"chemistry\": null,\n            \"winemaker\": \"Jessica Tomei\",\n            \"farming\": null\n        }\n    ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Merlot",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": null,
+        "months": null,
+        "new_pct": null,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 34773,
+  "tokens_out": 121,
+  "elapsed": 6.014537811279297,
+  "error": null
+}

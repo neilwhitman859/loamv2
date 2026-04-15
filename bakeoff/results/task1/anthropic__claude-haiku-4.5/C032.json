@@ -1,0 +1,13 @@
+{
+  "pair_id": "C032",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"While both are Blanc de Blancs from Bonnaire, they have different LWINs (1477283 vs 1937448), which typically indicates distinct bottlings or vintages. The NV designation on Wine A suggests a non-vintage blend, while Wine B's lack of vintage specification combined with a different LWIN suggests these are separate commercial bottlings that a consumer would encounter as distinct products.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "While both are Blanc de Blancs from Bonnaire, they have different LWINs (1477283 vs 1937448), which typically indicates distinct bottlings or vintages. The NV designation on Wine A suggests a non-vintage blend, while Wine B's lack of vintage specification combined with a different LWIN suggests these are separate commercial bottlings that a consumer would encounter as distinct products.",
+  "parse_ok": true,
+  "tokens_in": 488,
+  "tokens_out": 115,
+  "elapsed": 2.2719621658325195,
+  "error": null
+}

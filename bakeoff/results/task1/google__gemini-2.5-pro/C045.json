@@ -1,0 +1,13 @@
+{
+  "pair_id": "C045",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Both wines are Riesling Kabinett from the Abtsberg vineyard and are designated as auction wines. However, Wine B specifies 'Nr8', which indicates a specific cask (Fuder) number. For German auction wines, different cask numbers represent distinct bottlings that are sold and evaluated separately, thus they are considered different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are Riesling Kabinett from the Abtsberg vineyard and are designated as auction wines. However, Wine B specifies 'Nr8', which indicates a specific cask (Fuder) number. For German auction wines, different cask numbers represent distinct bottlings that are sold and evaluated separately, thus they are considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 1155,
+  "elapsed": 11.46596622467041,
+  "error": null
+}

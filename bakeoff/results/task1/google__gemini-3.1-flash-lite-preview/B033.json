@@ -1,0 +1,13 @@
+{
+  "pair_id": "B033",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are distinct because they are made from different grape varieties (Pinot Noir vs. Gew\u00fcrztraminer) and have different colors (red vs. white). Even though they share the 'Bollenberg' vineyard designation, these are clearly separate bottlings produced by Valentin Zusslin.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are distinct because they are made from different grape varieties (Pinot Noir vs. Gew\u00fcrztraminer) and have different colors (red vs. white). Even though they share the 'Bollenberg' vineyard designation, these are clearly separate bottlings produced by Valentin Zusslin.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 88,
+  "elapsed": 1.9848403930664062,
+  "error": null
+}

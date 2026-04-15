@@ -1,0 +1,13 @@
+{
+  "pair_id": "A016",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wine names differ only by the addition of the varietal suffix 'Vermentino'. The provided data confirms that Wine A, with the shorter name 'Metal Label The', is made from the Vermentino grape. This indicates that the shorter name is simply an abbreviation for the full name of the same wine.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wine names differ only by the addition of the varietal suffix 'Vermentino'. The provided data confirms that Wine A, with the shorter name 'Metal Label The', is made from the Vermentino grape. This indicates that the shorter name is simply an abbreviation for the full name of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 1377,
+  "elapsed": 13.619624376296997,
+  "error": null
+}

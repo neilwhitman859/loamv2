@@ -1,0 +1,13 @@
+{
+  "pair_id": "D030",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Wine A is Cabernet Sauvignon while Wine B is a Merlot bottling; different grape varieties always indicate different wines. The varietal suffix here reflects an actual difference, not just naming shorthand.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Wine A is Cabernet Sauvignon while Wine B is a Merlot bottling; different grape varieties always indicate different wines. The varietal suffix here reflects an actual difference, not just naming shorthand.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 215,
+  "elapsed": 4.9193127155303955,
+  "error": null
+}

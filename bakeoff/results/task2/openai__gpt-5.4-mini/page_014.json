@@ -1,0 +1,23 @@
+{
+  "page_id": "page_014",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"wines_found\":[{\"name\":\"Low Sugar Organic Red Wines\",\"vintage_year\":null,\"abv_pct\":null,\"blend\":null,\"oak\":null,\"cases_produced\":null,\"chemistry\":null,\"winemaker\":null,\"farming\":\"organic\"}]}",
+  "wines_found": [
+    {
+      "name": "Low Sugar Organic Red Wines",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 50606,
+  "tokens_out": 60,
+  "elapsed": 2.1461827754974365,
+  "error": null
+}

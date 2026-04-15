@@ -1,0 +1,13 @@
+{
+  "pair_id": "B036",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records represent two distinct wines based on color: Wine A is a white wine (Blanco) and Wine B is a red wine. Under the classification rules, different colors from the same producer/line constitute different wines, which is further confirmed by their unique LWIN identifiers.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records represent two distinct wines based on color: Wine A is a white wine (Blanco) and Wine B is a red wine. Under the classification rules, different colors from the same producer/line constitute different wines, which is further confirmed by their unique LWIN identifiers.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 79,
+  "elapsed": 1.6524043083190918,
+  "error": null
+}

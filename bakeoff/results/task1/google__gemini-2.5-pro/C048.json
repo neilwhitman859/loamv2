@@ -1,0 +1,13 @@
+{
+  "pair_id": "C048",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are different colors, as explicitly stated in the names and the provided metadata. Wine A is a white sparkling wine ('Brut'), while Wine B is a ros\u00e9 sparkling wine ('Brut Rose'). A white wine and a ros\u00e9 are always considered different products, even if they share the same producer and brand line.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are different colors, as explicitly stated in the names and the provided metadata. Wine A is a white sparkling wine ('Brut'), while Wine B is a ros\u00e9 sparkling wine ('Brut Rose'). A white wine and a ros\u00e9 are always considered different products, even if they share the same producer and brand line.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 1110,
+  "elapsed": 11.358175039291382,
+  "error": null
+}

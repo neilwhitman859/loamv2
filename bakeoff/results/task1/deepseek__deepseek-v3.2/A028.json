@@ -1,0 +1,13 @@
+{
+  "pair_id": "A028",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the varietal suffix 'Syrah' appended to Wine B, which is likely just a more explicit naming of the same wine, as both share the same producer, color, and the core name 'Lady Rosa'. There is no evidence that Owen Roe makes multiple distinct 'Lady Rosa' wines from different grapes.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the varietal suffix 'Syrah' appended to Wine B, which is likely just a more explicit naming of the same wine, as both share the same producer, color, and the core name 'Lady Rosa'. There is no evidence that Owen Roe makes multiple distinct 'Lady Rosa' wines from different grapes.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 89,
+  "elapsed": 3.5041985511779785,
+  "error": null
+}

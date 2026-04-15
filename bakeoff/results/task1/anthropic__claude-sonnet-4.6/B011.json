@@ -1,0 +1,13 @@
+{
+  "pair_id": "B011",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is listed as red with Semillon grapes and is a 15-year-old expression, while Wine B is white and a 5-year-old expression. The age designations (15 YO vs 5 YO) indicate different tiers/expressions of Madeira-style Boal, and the conflicting color/grape data further confirms these are distinct bottlings. Even setting aside the data inconsistencies, different age statements in fortified/Madeira wines represent distinct products a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is listed as red with Semillon grapes and is a 15-year-old expression, while Wine B is white and a 5-year-old expression. The age designations (15 YO vs 5 YO) indicate different tiers/expressions of Madeira-style Boal, and the conflicting color/grape data further confirms these are distinct bottlings. Even setting aside the data inconsistencies, different age statements in fortified/Madeira wines represent distinct products a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 138,
+  "elapsed": 5.869983911514282,
+  "error": null
+}

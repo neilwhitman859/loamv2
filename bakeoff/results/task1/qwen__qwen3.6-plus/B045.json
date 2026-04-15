@@ -1,0 +1,13 @@
+{
+  "pair_id": "B045",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are explicitly listed with different colors (red vs. white), which definitively classifies them as distinct wines. Additionally, the 'Note #1' and 'Note #3' designations indicate separate bottlings within the producer's series, further confirmed by their different LWINs.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are explicitly listed with different colors (red vs. white), which definitively classifies them as distinct wines. Additionally, the 'Note #1' and 'Note #3' designations indicate separate bottlings within the producer's series, further confirmed by their different LWINs.",
+  "parse_ok": true,
+  "tokens_in": 473,
+  "tokens_out": 1126,
+  "elapsed": 22.03409242630005,
+  "error": null
+}

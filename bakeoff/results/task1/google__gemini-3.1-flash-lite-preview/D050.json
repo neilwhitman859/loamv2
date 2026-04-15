@@ -1,0 +1,13 @@
+{
+  "pair_id": "D050",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are made from different grape varieties (Pinot Gris/Pinot Blanc versus Chardonnay). Even though they share the same vineyard designation and producer, different grape compositions constitute distinct bottlings.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from different grape varieties (Pinot Gris/Pinot Blanc versus Chardonnay). Even though they share the same vineyard designation and producer, different grape compositions constitute distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 67,
+  "elapsed": 1.7076873779296875,
+  "error": null
+}

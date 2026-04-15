@@ -1,0 +1,28 @@
+{
+  "page_id": "page_040",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\n  \"wines_found\": [\n    {\n      \"name\": \"Chardonnay\",\n      \"vintage_year\": null,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": {\n        \"vessel\": null,\n        \"months\": null,\n        \"new_pct\": null,\n        \"origin\": \"French\"\n      },\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": \"Jason Becker\",\n      \"farming\": null\n    }\n  ]\n}",
+  "wines_found": [
+    {
+      "name": "Chardonnay",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": null,
+        "months": null,
+        "new_pct": null,
+        "origin": "French"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jason Becker",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 14004,
+  "tokens_out": 117,
+  "elapsed": 12.764018297195435,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B012",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different colors (white vs red) and different grape varieties (Donzelinho Branco vs Malvasia Fina, Furmint). Different grapes and different colors are definitive criteria for different wines, even when the producer and region match.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors (white vs red) and different grape varieties (Donzelinho Branco vs Malvasia Fina, Furmint). Different grapes and different colors are definitive criteria for different wines, even when the producer and region match.",
+  "parse_ok": true,
+  "tokens_in": 456,
+  "tokens_out": 75,
+  "elapsed": 2.2265427112579346,
+  "error": null
+}

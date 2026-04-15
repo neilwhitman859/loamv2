@@ -1,0 +1,13 @@
+{
+  "pair_id": "B050",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.91, \"reasoning\": \"One is a white cr\u00e9mant and the other is a ros\u00e9 cr\u00e9mant, representing different wine styles despite sharing the same producer and cuv\u00e9e name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.91,
+  "reasoning": "One is a white cr\u00e9mant and the other is a ros\u00e9 cr\u00e9mant, representing different wine styles despite sharing the same producer and cuv\u00e9e name.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 123,
+  "elapsed": 4.934727430343628,
+  "error": null
+}

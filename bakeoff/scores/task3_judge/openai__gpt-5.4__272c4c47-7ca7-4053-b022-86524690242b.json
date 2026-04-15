@@ -1,0 +1,24 @@
+{
+  "wine_id": "272c4c47-7ca7-4053-b022-86524690242b",
+  "wine_name": "Lafage Tessellae Old Vines, Côtes du Roussillon",
+  "tier": "C",
+  "model": "openai/gpt-5.4",
+  "correctness": 3.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.925,
+  "wrong_facts": [
+    "The hook lists Carignan alongside Grenache, Mourvèdre, Syrah, and Lledoner Pelut as the key red grapes, but the wine is actually 100% Carignan — the output hedges by saying the exact cépage is not provided, which is technically true from the context data but misses the ground truth",
+    "The wine_summary and terroir_expression repeatedly frame this as a likely blend when ground truth confirms it is 100% Carignan",
+    "The naming origin of 'Tessellae' (referring to Roman mosaic tiles/tesserae) is never mentioned, which is a missed opportunity though not a wrong fact per se"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "CAD 18-25 price range is not in the context data (price listed as $None)",
+    "70+ year old vines is ground truth but not in context data — however the output doesn't state this specific number"
+  ],
+  "reasoning": "The output is well-structured, honest about data gaps, and avoids fabricating winemaking details. However, it consistently frames the wine as a probable blend of multiple southern French varieties when ground truth shows it's 100% Carignan — this isn't a provably wrong claim from the context data alone (grapes were NOT PROVIDED), but it's misleading given reality. The CAD 18-25 price is fabricated but presented as approximate/conditional ('if priced where comparable reds usually land'), which softens the fabrication somewhat. The voice is strong — direct, opinionated, avoids banned words, and the food pairings are specific and well-reasoned. The insider take is genuinely useful. The naming origin (tesserae/Roman mosaics) is completely missed, which would have added significant value. No banned words detected. Specificity is good with real competitor names and regional soil types mentioned.",
+  "judge_tokens_in": 3719,
+  "judge_tokens_out": 463
+}

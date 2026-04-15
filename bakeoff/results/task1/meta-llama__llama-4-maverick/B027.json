@@ -1,0 +1,13 @@
+{
+  "pair_id": "B027",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is white while Wine B is ros\u00e9, and the name 'Rose Brut' in Wine B indicates a different style and possibly different grape blend or production method, making them different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is white while Wine B is ros\u00e9, and the name 'Rose Brut' in Wine B indicates a different style and possibly different grape blend or production method, making them different wines.",
+  "parse_ok": true,
+  "tokens_in": 484,
+  "tokens_out": 63,
+  "elapsed": 1.5382955074310303,
+  "error": null
+}

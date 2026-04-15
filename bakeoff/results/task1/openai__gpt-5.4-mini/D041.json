@@ -1,0 +1,13 @@
+{
+  "pair_id": "D041",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"Both records share the same producer and cuv\u00e9e name, with Wine B simply adding the common style descriptor \\\"Brut.\\\" That indicates the same sparkling wine bottling rather than a different wine. The matching white color and identical cuv\u00e9e naming support that they are the same record.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "Both records share the same producer and cuv\u00e9e name, with Wine B simply adding the common style descriptor \"Brut.\" That indicates the same sparkling wine bottling rather than a different wine. The matching white color and identical cuv\u00e9e naming support that they are the same record.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 78,
+  "elapsed": 1.493110179901123,
+  "error": null
+}

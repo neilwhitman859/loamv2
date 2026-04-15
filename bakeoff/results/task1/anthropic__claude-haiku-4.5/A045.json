@@ -1,0 +1,13 @@
+{
+  "pair_id": "A045",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Pax), same vineyard (Lauterbach Hill), same grape variety (Syrah), and same color (red). Wine A's name is simply an abbreviated version of Wine B's name, which is a common naming convention where the varietal suffix is omitted in the shorter form.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Pax), same vineyard (Lauterbach Hill), same grape variety (Syrah), and same color (red). Wine A's name is simply an abbreviated version of Wine B's name, which is a common naming convention where the varietal suffix is omitted in the shorter form.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 99,
+  "elapsed": 3.241053819656372,
+  "error": null
+}

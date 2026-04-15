@@ -1,0 +1,13 @@
+{
+  "pair_id": "C045",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Both wines are from the same producer and vineyard, but the distinguishing element is the Pr\u00e4dikat/bottling designation: \\\"Kabinett Auktion\\\" vs \\\"Kabinett Nr8 Auktion.\\\" The rules state that different lot/cask numbers at the same Pr\u00e4dikat level are different wines, and the LWINs are also different, confirming separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Both wines are from the same producer and vineyard, but the distinguishing element is the Pr\u00e4dikat/bottling designation: \"Kabinett Auktion\" vs \"Kabinett Nr8 Auktion.\" The rules state that different lot/cask numbers at the same Pr\u00e4dikat level are different wines, and the LWINs are also different, confirming separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 448,
+  "tokens_out": 97,
+  "elapsed": 1.8883085250854492,
+  "error": null
+}

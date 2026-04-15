@@ -1,0 +1,13 @@
+{
+  "pair_id": "B030",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"These wines have fundamentally different grape varieties (Cabernet Sauvignon vs Sauvignon Blanc) and different colors (red vs white), which are core distinguishing characteristics. Despite sharing the same producer and vineyard designation, different grapes always indicate different wines that a consumer would encounter as separate bottlings.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These wines have fundamentally different grape varieties (Cabernet Sauvignon vs Sauvignon Blanc) and different colors (red vs white), which are core distinguishing characteristics. Despite sharing the same producer and vineyard designation, different grapes always indicate different wines that a consumer would encounter as separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 509,
+  "tokens_out": 94,
+  "elapsed": 2.072157859802246,
+  "error": null
+}

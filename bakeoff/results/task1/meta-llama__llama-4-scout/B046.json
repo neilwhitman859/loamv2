@@ -1,0 +1,13 @@
+{
+  "pair_id": "B046",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors (red vs white), which indicates they are different wines. Additionally, they have different LWIN numbers, supporting the conclusion that they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors (red vs white), which indicates they are different wines. Additionally, they have different LWIN numbers, supporting the conclusion that they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 60,
+  "elapsed": 1.4451100826263428,
+  "error": null
+}

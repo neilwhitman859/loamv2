@@ -1,0 +1,13 @@
+{
+  "pair_id": "D007",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are different because they are composed of entirely different grape varieties. Wine A is a blend of Cot and Cabernet Sauvignon, while Wine B is 100% Merlot Noir, indicating they are distinct bottlings.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are different because they are composed of entirely different grape varieties. Wine A is a blend of Cot and Cabernet Sauvignon, while Wine B is 100% Merlot Noir, indicating they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 73,
+  "elapsed": 1.4803879261016846,
+  "error": null
+}

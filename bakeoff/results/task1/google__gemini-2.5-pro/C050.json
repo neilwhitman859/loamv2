@@ -1,0 +1,13 @@
+{
+  "pair_id": "C050",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines have different aging classifications, which represent distinct bottlings. Wine A is a 'Reserva' and Wine B is a 'Gran Reserva'. These terms indicate different aging requirements and are considered separate products by the producer and consumers, even when made from the same grape.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different aging classifications, which represent distinct bottlings. Wine A is a 'Reserva' and Wine B is a 'Gran Reserva'. These terms indicate different aging requirements and are considered separate products by the producer and consumers, even when made from the same grape.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 1093,
+  "elapsed": 12.47126293182373,
+  "error": null
+}

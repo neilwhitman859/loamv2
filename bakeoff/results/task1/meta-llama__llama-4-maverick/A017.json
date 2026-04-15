@@ -1,0 +1,13 @@
+{
+  "pair_id": "A017",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is made from Pinot Noir, while Wine B's grape variety is not explicitly stated but is described as 'Single Valley Lot Syrah', indicating different grapes and thus different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is made from Pinot Noir, while Wine B's grape variety is not explicitly stated but is described as 'Single Valley Lot Syrah', indicating different grapes and thus different wines.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 61,
+  "elapsed": 1.1331379413604736,
+  "error": null
+}

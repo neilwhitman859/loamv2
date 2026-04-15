@@ -1,0 +1,33 @@
+{
+  "wine_id": "dc9e4353-ddf9-4e48-854e-1a3d6404b7b3",
+  "wine_name": "Shafer One Point Five Cabernet Sauvignon, Stags Leap District",
+  "tier": "C",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.625,
+  "wrong_facts": [
+    "Hook says 'Doug Shafer was the first generation, his son Elias is the 1.5' — the naming actually refers to founder John Shafer and his son Doug, not Doug and Elias. Elias Fernandez is the winemaker, not Doug's son.",
+    "Vinification says 'typically around 20 months' oak aging — ground truth says 18 months in 100% new French oak (Allier & Tronçais)",
+    "Vinification says 'significant percentage of new oak' — ground truth says 100% new French oak",
+    "Wine summary says 'One Point Five launched in 2003' — this is plausible but not in context data and unverifiable from provided sources",
+    "States '100% estate fruit' — ground truth says the wine draws from multiple sites including 'selected Napa Valley sites,' not strictly single-estate"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "20 months oak aging (actual is 18 months)",
+    "2003 launch year",
+    "$300+ for Hillside Select",
+    "$80-100 for ARTEMIS",
+    "$90-110 for Chimney Rock",
+    "$100-130 for Joseph Phelps",
+    "$200-280 restaurant markup",
+    "Caymus Special Selection $200",
+    "Opus One $400+"
+  ],
+  "reasoning": "The hook contains a provably wrong factual claim — it misidentifies the generational relationship as Doug and his son Elias, when the naming actually refers to John Shafer and his son Doug. Elias Fernandez is the winemaker, not a family member. This is a critical error in the hook. The oak aging is stated as ~20 months when it's actually 18 months, and 'significant percentage of new oak' understates the 100% new oak reality. The claim of '100% estate fruit' contradicts ground truth showing selected Napa Valley sites beyond the estate. However, the voice is excellent — direct, opinionated, specific, with no banned words. The specificity and usefulness are strong throughout, with named soils, real comparables, and actionable food pairings. The wrong hook fact is devastating but the rest of the output is high quality.",
+  "judge_tokens_in": 4294,
+  "judge_tokens_out": 544
+}

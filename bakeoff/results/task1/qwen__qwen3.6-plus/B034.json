@@ -1,0 +1,13 @@
+{
+  "pair_id": "B034",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records explicitly differ in color (ros\u00e9 vs. red), which indicates distinct bottlings from the same producer. Per the classification guidelines, ros\u00e9 and red wines from the same vineyard are always considered different wines, and the separate LWINs further confirm they are unique commercial products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records explicitly differ in color (ros\u00e9 vs. red), which indicates distinct bottlings from the same producer. Per the classification guidelines, ros\u00e9 and red wines from the same vineyard are always considered different wines, and the separate LWINs further confirm they are unique commercial products.",
+  "parse_ok": true,
+  "tokens_in": 465,
+  "tokens_out": 1127,
+  "elapsed": 21.894081592559814,
+  "error": null
+}

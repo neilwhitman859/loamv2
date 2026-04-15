@@ -1,0 +1,13 @@
+{
+  "pair_id": "B043",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are distinct products due to their different colors (white vs. ros\u00e9). In the context of Champagne, a Brut and a Brut Ros\u00e9 are separate bottlings with different production methods and flavor profiles, even when sharing a brand name like Apanage.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are distinct products due to their different colors (white vs. ros\u00e9). In the context of Champagne, a Brut and a Brut Ros\u00e9 are separate bottlings with different production methods and flavor profiles, even when sharing a brand name like Apanage.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 81,
+  "elapsed": 1.5392141342163086,
+  "error": null
+}

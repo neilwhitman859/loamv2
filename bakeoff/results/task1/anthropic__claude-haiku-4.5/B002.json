@@ -1,0 +1,13 @@
+{
+  "pair_id": "B002",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is red while Wine B is white, making them fundamentally different wine types that a consumer would encounter as separate bottlings. Although both are named 'Elevage' from Chimney Rock and share similar grape components, the color difference indicates distinct winemaking styles and consumer experiences that would not share a single encyclopedia page.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is red while Wine B is white, making them fundamentally different wine types that a consumer would encounter as separate bottlings. Although both are named 'Elevage' from Chimney Rock and share similar grape components, the color difference indicates distinct winemaking styles and consumer experiences that would not share a single encyclopedia page.",
+  "parse_ok": true,
+  "tokens_in": 524,
+  "tokens_out": 97,
+  "elapsed": 3.2735114097595215,
+  "error": null
+}

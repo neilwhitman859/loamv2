@@ -1,0 +1,30 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "mistralai/mistral-nemo",
+  "correctness": 1.5,
+  "voice": 2.0,
+  "specificity": 3.0,
+  "usefulness": 2.5,
+  "composite": 2.125,
+  "wrong_facts": [
+    "Alvaro Palacios is NOT a co-founder of Terroir Al Limit — it was co-founded by Dominik Huber and Eben Sadie",
+    "Les Tosses is from Torroja del Priorat, not El Lloar",
+    "Les Tosses does NOT undergo carbonic maceration — it uses whole cluster native fermentation with two weeks on skins",
+    "The wine is NOT aged in French oak barrels — recent vintages ferment and age in cement tanks",
+    "Llicorella is slate/schist, not described as 'red, iron-rich soils'",
+    "Fabricated price of ~€25 and competitor prices of €20 and €28"
+  ],
+  "banned_words_found": [
+    "harmonious"
+  ],
+  "fabricated_numbers": [
+    "€25 price for Les Tosses",
+    "€20 price for Domaine de Fontsaint",
+    "€28 price for Domaine de l'Echelette"
+  ],
+  "reasoning": "Multiple serious factual errors drive the correctness score down hard. The co-founder attribution (Alvaro Palacios instead of Eben Sadie) is a major fabrication. The village is wrong (El Lloar vs. Torroja del Priorat). The vinification description is largely fabricated — carbonic maceration and French oak aging are both wrong per ground truth (whole cluster fermentation in cement tanks). Prices are entirely fabricated. The banned word 'harmonious' appears in the food pairing section. While some details are correct (100% Carignan, biodynamic, llicorella/slate mention, Priorat), the density of wrong facts makes this unreliable. The comparable wines are obscure and possibly fabricated producers.",
+  "judge_tokens_in": 3412,
+  "judge_tokens_out": 438
+}

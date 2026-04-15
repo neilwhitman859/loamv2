@@ -1,0 +1,13 @@
+{
+  "pair_id": "A014",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is explicitly labeled as Gew\u00fcrztraminer, while Wine B's name includes 'Pinot Gris,' indicating different grape varieties. Although both share the 'Grey Series Barrel Ferment' base name and are from Anthony Road, the different grape varieties make these distinct wines. The varietal suffix rule applies here: the producer makes multiple wines under the Grey Series Barrel Ferment label with different grapes, so these are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is explicitly labeled as Gew\u00fcrztraminer, while Wine B's name includes 'Pinot Gris,' indicating different grape varieties. Although both share the 'Grey Series Barrel Ferment' base name and are from Anthony Road, the different grape varieties make these distinct wines. The varietal suffix rule applies here: the producer makes multiple wines under the Grey Series Barrel Ferment label with different grapes, so these are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 122,
+  "elapsed": 3.129957437515259,
+  "error": null
+}

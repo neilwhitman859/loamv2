@@ -1,0 +1,13 @@
+{
+  "pair_id": "C011",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, Vina Tarapaca, and have the same grape variety, Cabernet Sauvignon, and color, red. The difference in classification (Gran Reserva vs Reserva) suggests different aging requirements but likely the same wine style and origin.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, Vina Tarapaca, and have the same grape variety, Cabernet Sauvignon, and color, red. The difference in classification (Gran Reserva vs Reserva) suggests different aging requirements but likely the same wine style and origin.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 74,
+  "elapsed": 2.4964663982391357,
+  "error": null
+}

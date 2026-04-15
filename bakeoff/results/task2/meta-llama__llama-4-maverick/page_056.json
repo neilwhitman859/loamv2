@@ -1,0 +1,23 @@
+{
+  "page_id": "page_056",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"wines_found\": [{\"name\": \"2023 Hilltop Cabernet Sauvignon\", \"vintage_year\": 2023, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "2023 Hilltop Cabernet Sauvignon",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 31900,
+  "tokens_out": 67,
+  "elapsed": 28.745632648468018,
+  "error": null
+}

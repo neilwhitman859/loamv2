@@ -1,0 +1,13 @@
+{
+  "pair_id": "A049",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records refer to the same producer and the same white wine variety (Arneis). The addition of the varietal name 'Arneis' to the shorter 'Arenarium' title is a common naming convention for the same bottling, and there is no evidence of multiple Arneis-based wines from this producer.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records refer to the same producer and the same white wine variety (Arneis). The addition of the varietal name 'Arneis' to the shorter 'Arenarium' title is a common naming convention for the same bottling, and there is no evidence of multiple Arneis-based wines from this producer.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 84,
+  "elapsed": 1.5335485935211182,
+  "error": null
+}

@@ -1,0 +1,28 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "google/gemini-2.5-flash",
+  "correctness": 2.5,
+  "voice": 2.0,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 2.875,
+  "wrong_facts": [
+    "Price claim of $120-$150 is fabricated — no price data was provided",
+    "Comparing price to L'Ermita is misleading — L'Ermita is typically $500+, far above Les Tosses",
+    "Value assessment implies price parity with Clos Erasmus and L'Ermita which is incorrect",
+    "Wine summary uses 'showcasing' which is a banned word variant"
+  ],
+  "banned_words_found": [
+    "showcases",
+    "showcasing"
+  ],
+  "fabricated_numbers": [
+    "$120-$150 price range fabricated with no source data",
+    "Drinking window 2027-2040 for 2022 vintage is invented"
+  ],
+  "reasoning": "The output correctly identifies Dominik Huber, Eben Sadie partnership, llicorella soils, biodynamic farming, 100% Carignan, and 8 months oak from context. However, it fabricates a specific price range ($120-$150) when no price data was provided, and the L'Ermita comparison is wildly off — L'Ermita sells for $500+. The ground truth reveals the wine has moved to cement tanks (not oak) for recent vintages, and the output doesn't mention the 90-year-old vines at 600m elevation or the whole-cluster fermentation. The hook is factually correct but generic. Uses banned word 'showcases/showcasing' twice. Voice is competent but reads like template wine writing with hedging phrases like 'suggesting' and 'indicating.' The comparable wines section is strong and specific. Overall useful but undermined by fabricated pricing and banned words.",
+  "judge_tokens_in": 3746,
+  "judge_tokens_out": 407
+}

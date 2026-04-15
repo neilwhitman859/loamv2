@@ -1,0 +1,13 @@
+{
+  "pair_id": "B011",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is a red wine made from Semillon grapes, while Wine B is a white wine. Different grape varieties are a clear indicator of different wines, even if the producer and vineyard are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is a red wine made from Semillon grapes, while Wine B is a white wine. Different grape varieties are a clear indicator of different wines, even if the producer and vineyard are the same.",
+  "parse_ok": true,
+  "tokens_in": 443,
+  "tokens_out": 64,
+  "elapsed": 1.7047595977783203,
+  "error": null
+}

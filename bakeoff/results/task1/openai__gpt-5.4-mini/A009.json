@@ -1,0 +1,13 @@
+{
+  "pair_id": "A009",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Wine B explicitly names Pinot Gris, while Wine A\u2019s grape composition includes Pinot Gris and Pinot Noir, indicating a different blend rather than a simple abbreviated name. Since different grapes/blends constitute different wines, these are distinct bottlings even though the vineyard name matches and both are white.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Wine B explicitly names Pinot Gris, while Wine A\u2019s grape composition includes Pinot Gris and Pinot Noir, indicating a different blend rather than a simple abbreviated name. Since different grapes/blends constitute different wines, these are distinct bottlings even though the vineyard name matches and both are white.",
+  "parse_ok": true,
+  "tokens_in": 444,
+  "tokens_out": 78,
+  "elapsed": 1.3418970108032227,
+  "error": null
+}

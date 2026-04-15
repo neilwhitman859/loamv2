@@ -1,0 +1,13 @@
+{
+  "pair_id": "D001",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Van Volxem), vineyard (Altenberg Alte Reben Grosse Lage), color (white), and grape variety (RIESLING WEISS). The difference in designation (Nr23 vs no number) does not indicate a different wine as it likely refers to a specific lot or block within the vineyard.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Van Volxem), vineyard (Altenberg Alte Reben Grosse Lage), color (white), and grape variety (RIESLING WEISS). The difference in designation (Nr23 vs no number) does not indicate a different wine as it likely refers to a specific lot or block within the vineyard.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 91,
+  "elapsed": 2.247296094894409,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C046",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although the wines share the same producer, vineyard, and grape, they have different German Pr\u00e4dikat levels. 'Beerenauslese' (BA) and 'Auslese' are distinct ripeness and quality classifications that represent fundamentally different styles of wine and are considered separate bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the wines share the same producer, vineyard, and grape, they have different German Pr\u00e4dikat levels. 'Beerenauslese' (BA) and 'Auslese' are distinct ripeness and quality classifications that represent fundamentally different styles of wine and are considered separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 444,
+  "tokens_out": 1153,
+  "elapsed": 11.106957912445068,
+  "error": null
+}

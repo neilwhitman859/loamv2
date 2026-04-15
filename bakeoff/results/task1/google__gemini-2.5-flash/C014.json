@@ -1,0 +1,13 @@
+{
+  "pair_id": "C014",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are from the same producer and are both Blanc de Blancs, but they have different 'No.' designations (No.15 vs No.17). This indicates different bottlings or lots, making them distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are from the same producer and are both Blanc de Blancs, but they have different 'No.' designations (No.15 vs No.17). This indicates different bottlings or lots, making them distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 454,
+  "tokens_out": 70,
+  "elapsed": 1.762329339981079,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C040",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both are Chardonnay whites from Caballo Dorado in Valle de Colchagua, but Wine A is Gran Reserva while Wine B is Reserva, indicating different classification tiers with distinct aging and quality levels. Different LWIN numbers (2440147 vs 2440293) confirm separate bottlings. Guidelines specify that different classification tiers (Reserva vs Gran Reserva) represent DIFFERENT wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both are Chardonnay whites from Caballo Dorado in Valle de Colchagua, but Wine A is Gran Reserva while Wine B is Reserva, indicating different classification tiers with distinct aging and quality levels. Different LWIN numbers (2440147 vs 2440293) confirm separate bottlings. Guidelines specify that different classification tiers (Reserva vs Gran Reserva) represent DIFFERENT wines.",
+  "parse_ok": true,
+  "tokens_in": 587,
+  "tokens_out": 550,
+  "elapsed": 4.239654064178467,
+  "error": null
+}

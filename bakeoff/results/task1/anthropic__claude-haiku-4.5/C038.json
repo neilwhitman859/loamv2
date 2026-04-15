@@ -1,0 +1,13 @@
+{
+  "pair_id": "C038",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine B includes a specific vineyard designation 'Risco' while Wine A is simply labeled 'Reserva Tinto' with no vineyard identifier. Different vineyard designations represent distinct bottlings that consumers would encounter separately. The different LWINs (2454140 vs 2454052) confirm these are separate products in the database.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine B includes a specific vineyard designation 'Risco' while Wine A is simply labeled 'Reserva Tinto' with no vineyard identifier. Different vineyard designations represent distinct bottlings that consumers would encounter separately. The different LWINs (2454140 vs 2454052) confirm these are separate products in the database.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 104,
+  "elapsed": 2.4050183296203613,
+  "error": null
+}

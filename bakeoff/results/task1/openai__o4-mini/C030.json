@@ -1,0 +1,13 @@
+{
+  "pair_id": "C030",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.92,\"reasoning\":\"The two wines differ in Rioja classification level (Reserva vs Gran Reserva). Different classification tiers represent distinct bottlings, so they are not the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.92,
+  "reasoning": "The two wines differ in Rioja classification level (Reserva vs Gran Reserva). Different classification tiers represent distinct bottlings, so they are not the same wine.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 134,
+  "elapsed": 2.542783737182617,
+  "error": null
+}

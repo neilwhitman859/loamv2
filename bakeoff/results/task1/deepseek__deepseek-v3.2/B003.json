@@ -1,0 +1,13 @@
+{
+  "pair_id": "B003",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different colors (red vs white), which always indicates different wines. Additionally, the grape variety differs (Wine A's red grape is unspecified, Wine B is explicitly Fiano, a white grape), and different grapes always mean different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors (red vs white), which always indicates different wines. Additionally, the grape variety differs (Wine A's red grape is unspecified, Wine B is explicitly Fiano, a white grape), and different grapes always mean different wines.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 75,
+  "elapsed": 4.4161083698272705,
+  "error": null
+}

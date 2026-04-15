@@ -1,0 +1,13 @@
+{
+  "pair_id": "D050",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Although the producer and vineyard (Rosenberg) are the same, the grape varieties are entirely different (Pinot Gris/Blanc vs. Chardonnay). According to the rules, different grapes always constitute different wines even if the vineyard name matches.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the producer and vineyard (Rosenberg) are the same, the grape varieties are entirely different (Pinot Gris/Blanc vs. Chardonnay). According to the rules, different grapes always constitute different wines even if the vineyard name matches.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 70,
+  "elapsed": 1.598407506942749,
+  "error": null
+}

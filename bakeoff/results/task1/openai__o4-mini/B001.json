@@ -1,0 +1,13 @@
+{
+  "pair_id": "B001",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.95,\"reasoning\":\"The two wines use different grape varieties (Sauvignon Blanc vs Sauvignon Gris), which always denotes distinct wines even from the same producer and region.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The two wines use different grape varieties (Sauvignon Blanc vs Sauvignon Gris), which always denotes distinct wines even from the same producer and region.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 109,
+  "elapsed": 2.4557483196258545,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A005",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.96,\"reasoning\":\"Both records refer to Catena Zapata\u2019s Agrelo Saint Felicien, and the only difference is that Wine B includes the varietal suffix \\\"Semillon.\\\" Since Wine A is already identified as white and lists Semillon as its grape, this looks like the same wine with the varietal name expanded. There is no evidence of a different tier, color, vineyard, or grape blend.\"}",
+  "verdict": "SAME",
+  "confidence": 0.96,
+  "reasoning": "Both records refer to Catena Zapata\u2019s Agrelo Saint Felicien, and the only difference is that Wine B includes the varietal suffix \"Semillon.\" Since Wine A is already identified as white and lists Semillon as its grape, this looks like the same wine with the varietal name expanded. There is no evidence of a different tier, color, vineyard, or grape blend.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 100,
+  "elapsed": 1.738492488861084,
+  "error": null
+}

@@ -1,0 +1,28 @@
+{
+  "page_id": "page_041",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Cabernet Sauvignon\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": null, \"oak\": {\"vessel\": \"oak\", \"months\": null, \"new_pct\": null, \"origin\": \"French and American\"}, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": \"Jason Becker\", \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Cabernet Sauvignon",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "oak",
+        "months": null,
+        "new_pct": null,
+        "origin": "French and American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jason Becker",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 14966,
+  "tokens_out": 1528,
+  "elapsed": 29.880146503448486,
+  "error": null
+}

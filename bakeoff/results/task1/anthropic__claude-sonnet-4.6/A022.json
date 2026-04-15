@@ -1,0 +1,13 @@
+{
+  "pair_id": "A022",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A (Andes Peaks) is explicitly identified as Cabernet Sauvignon, while Wine B is Andes Peaks Carmenere \u2014 these are different grape varieties. Although the shorter name could normally be an abbreviation, here we have explicit grape information showing Wine A is Cabernet Sauvignon and Wine B is Carmenere. Different grapes always means different wines, even when the base name matches.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A (Andes Peaks) is explicitly identified as Cabernet Sauvignon, while Wine B is Andes Peaks Carmenere \u2014 these are different grape varieties. Although the shorter name could normally be an abbreviation, here we have explicit grape information showing Wine A is Cabernet Sauvignon and Wine B is Carmenere. Different grapes always means different wines, even when the base name matches.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 116,
+  "elapsed": 3.527538537979126,
+  "error": null
+}

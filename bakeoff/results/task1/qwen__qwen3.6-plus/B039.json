@@ -1,0 +1,13 @@
+{
+  "pair_id": "B039",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records differ in both color (ros\u00e9 vs. white) and wine style (still vs. sparkling, indicated by 'Brut'). According to the classification guidelines, different colors and different wine types definitively represent distinct bottlings that would not share a single encyclopedia page.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records differ in both color (ros\u00e9 vs. white) and wine style (still vs. sparkling, indicated by 'Brut'). According to the classification guidelines, different colors and different wine types definitively represent distinct bottlings that would not share a single encyclopedia page.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 1141,
+  "elapsed": 22.543140411376953,
+  "error": null
+}

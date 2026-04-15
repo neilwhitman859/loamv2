@@ -1,0 +1,13 @@
+{
+  "pair_id": "C036",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The 1* and 3* star ratings on Markus Molitor's gold capsules denote distinct ripeness and quality tiers that function as different German Pr\u00e4dikat levels. Since the classification rules explicitly state that different Pr\u00e4dikat or quality tiers represent separate bottlings, these records correspond to different wines despite sharing the same producer, vineyard, and grape variety.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The 1* and 3* star ratings on Markus Molitor's gold capsules denote distinct ripeness and quality tiers that function as different German Pr\u00e4dikat levels. Since the classification rules explicitly state that different Pr\u00e4dikat or quality tiers represent separate bottlings, these records correspond to different wines despite sharing the same producer, vineyard, and grape variety.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 1596,
+  "elapsed": 30.315870761871338,
+  "error": null
+}

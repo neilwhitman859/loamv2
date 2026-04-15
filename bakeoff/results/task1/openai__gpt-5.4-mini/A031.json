@@ -1,0 +1,13 @@
+{
+  "pair_id": "A031",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.95,\"reasoning\":\"These appear to be the same Pierre Girardin wine, with Wine B simply adding the varietal suffix \\\"Pinot Noir\\\" to the shorter cuv\u00e9e name. Both are red wines, and the naming pattern fits the common abbreviation rule where the grape is appended or omitted without indicating a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "These appear to be the same Pierre Girardin wine, with Wine B simply adding the varietal suffix \"Pinot Noir\" to the shorter cuv\u00e9e name. Both are red wines, and the naming pattern fits the common abbreviation rule where the grape is appended or omitted without indicating a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 82,
+  "elapsed": 1.8091108798980713,
+  "error": null
+}

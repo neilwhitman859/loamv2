@@ -1,0 +1,13 @@
+{
+  "pair_id": "B002",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is red and Wine B is white, which makes them fundamentally different wines despite sharing the same producer and wine name 'Elevage'. Even though the grape varieties listed are the same (Petit Verdot, Merlot, Cabernet Franc, Cabernet Sauvignon), a white wine made from these red grapes would be a distinct bottling (likely a blanc de noirs or similar style) that a consumer would encounter separately from the red version. Different colors = different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is red and Wine B is white, which makes them fundamentally different wines despite sharing the same producer and wine name 'Elevage'. Even though the grape varieties listed are the same (Petit Verdot, Merlot, Cabernet Franc, Cabernet Sauvignon), a white wine made from these red grapes would be a distinct bottling (likely a blanc de noirs or similar style) that a consumer would encounter separately from the red version. Different colors = different wines.",
+  "parse_ok": true,
+  "tokens_in": 524,
+  "tokens_out": 132,
+  "elapsed": 3.4324824810028076,
+  "error": null
+}

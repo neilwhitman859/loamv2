@@ -1,0 +1,13 @@
+{
+  "pair_id": "C036",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer and vineyard (Bernkasteler Lay) but have different star ratings (1* vs 3*), which indicates different quality tiers or selection levels. In German wine classification, different star ratings typically represent distinct bottlings or cuv\u00e9es, even if from the same vineyard and grape variety.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer and vineyard (Bernkasteler Lay) but have different star ratings (1* vs 3*), which indicates different quality tiers or selection levels. In German wine classification, different star ratings typically represent distinct bottlings or cuv\u00e9es, even if from the same vineyard and grape variety.",
+  "parse_ok": true,
+  "tokens_in": 528,
+  "tokens_out": 93,
+  "elapsed": 2.335425615310669,
+  "error": null
+}

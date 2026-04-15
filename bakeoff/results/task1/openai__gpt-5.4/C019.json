@@ -1,0 +1,13 @@
+{
+  "pair_id": "C019",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are both Bohigas white sparkling wines, but they differ in classification tier: one is Brut Nature Reserva and the other is Brut Nature Gran Reserva. Reserva vs Gran Reserva indicates distinct bottlings that are sold separately, so they should be treated as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are both Bohigas white sparkling wines, but they differ in classification tier: one is Brut Nature Reserva and the other is Brut Nature Gran Reserva. Reserva vs Gran Reserva indicates distinct bottlings that are sold separately, so they should be treated as different wines.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 74,
+  "elapsed": 2.292370557785034,
+  "error": null
+}

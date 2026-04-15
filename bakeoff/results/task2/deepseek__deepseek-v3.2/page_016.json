@@ -1,0 +1,28 @@
+{
+  "page_id": "page_016",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Pinot Noir\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": null, \"oak\": {\"vessel\": null, \"months\": null, \"new_pct\": null, \"origin\": \"French and American\"}, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": \"Jessica Tomei\", \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Pinot Noir",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": null,
+        "months": null,
+        "new_pct": null,
+        "origin": "French and American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 34764,
+  "tokens_out": 96,
+  "elapsed": 14.898019790649414,
+  "error": null
+}

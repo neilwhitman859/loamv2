@@ -1,0 +1,13 @@
+{
+  "pair_id": "C025",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different Ferrari bottlings within the Giulio Ferrari/Fondatore range. Wine B is explicitly Ros\u00e9 while Wine A is white, and color/style differences make them separate wines even when producer and appellation are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different Ferrari bottlings within the Giulio Ferrari/Fondatore range. Wine B is explicitly Ros\u00e9 while Wine A is white, and color/style differences make them separate wines even when producer and appellation are the same.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 68,
+  "elapsed": 2.0809221267700195,
+  "error": null
+}

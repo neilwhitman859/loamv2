@@ -1,0 +1,20 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 3.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.925,
+  "wrong_facts": [
+    "Claims grapes are sourced from 'Wairau and Awatere Valleys' — ground truth says Wairau, Renwick, and Brancott (no mention of Awatere)",
+    "Says 'A portion is fermented in French oak barriques... while the rest is likely done in stainless steel tanks' — this is actually correct per ground truth (50/50 split), but the hedging word 'likely' understates what could have been stated more confidently"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is largely accurate and well-written. The vinification details about French barriques, partial malolactic fermentation, and stainless steel fermentation all align with ground truth, which is impressive since the model didn't see that data. However, the claim about Awatere Valley sourcing is not supported by ground truth (which specifies Wairau, Renwick, and Brancott subregions). The hook is factually sound — no fabricated naming origin or wrong claims there. No fabricated numbers. Voice is direct and opinionated without banned words, with good specificity in food pairings and comparables. The insider take is honest and useful. The Awatere Valley error is a moderate factual issue that prevents a higher correctness score.",
+  "judge_tokens_in": 3675,
+  "judge_tokens_out": 343
+}

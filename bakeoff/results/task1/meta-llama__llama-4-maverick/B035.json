@@ -1,0 +1,13 @@
+{
+  "pair_id": "B035",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a ros\u00e9 while Wine B is red, and they come from the same producer 'du Clos d'Alari'. The difference in color indicates they are different wines. The LWIN numbers are also different, further supporting that they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a ros\u00e9 while Wine B is red, and they come from the same producer 'du Clos d'Alari'. The difference in color indicates they are different wines. The LWIN numbers are also different, further supporting that they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 496,
+  "tokens_out": 77,
+  "elapsed": 1.4350214004516602,
+  "error": null
+}

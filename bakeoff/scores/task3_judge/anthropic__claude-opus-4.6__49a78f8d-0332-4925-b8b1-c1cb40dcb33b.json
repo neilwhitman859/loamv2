@@ -1,0 +1,24 @@
+{
+  "wine_id": "49a78f8d-0332-4925-b8b1-c1cb40dcb33b",
+  "wine_name": "Wind Gap Woodruff Vineyard Pinot Noir, Santa Cruz Mountains",
+  "tier": "C",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "Hook claims 'fractured shale and sandstone soils' for Woodruff Vineyard — ground truth says the vineyard is near Coralitos but doesn't specify these exact soil types; this is plausible for Santa Cruz Mountains but unverifiable for this specific site",
+    "Wind Gap described as Pax Mahle's 'second label' — Wind Gap was actually a separate project/label, not strictly a 'second label' in the traditional sense, though this is a minor characterization issue",
+    "Claims Woodruff is on 'western slopes' — ground truth says near Coralitos which is on the southern/southwestern side, not specifically 'western slopes'"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$35-$45 release price is not in context data and not in ground truth — fabricated price range",
+    "9 acres vineyard size is from ground truth but model wasn't given this, however the model didn't cite this number so no issue"
+  ],
+  "reasoning": "The output is impressively written with strong voice, specificity, and usefulness. Correctness is the main concern: the model correctly identifies Pax Mahle as winemaker, whole-cluster fermentation, native yeast, and neutral French oak — all confirmed by ground truth, which is excellent since these weren't in the context data. However, the $35-$45 price fabrication is a specific number not in context data. The soil descriptions (fractured shale and sandstone) for Woodruff specifically are unverifiable — plausible for SCM generally but stated as fact for this vineyard. The hook doesn't contain a provably wrong fact but does contain unverifiable specifics. The voice is excellent — direct, opinionated, no banned words, great food pairings with real dishes and reasoning. The insider take is genuinely useful and actionable. The price fabrication triggers concern but since it's in the value_assessment section rather than being a winemaking number like pH or ABV, and the model frames it as approximate, I'm applying a moderate penalty rather than the hard cap which is meant for winemaking specs.",
+  "judge_tokens_in": 3817,
+  "judge_tokens_out": 516
+}

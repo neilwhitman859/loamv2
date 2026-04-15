@@ -1,0 +1,13 @@
+{
+  "pair_id": "B024",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wines differ in color (white vs. red) and grape composition, so they represent distinct bottlings despite identical names and producer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wines differ in color (white vs. red) and grape composition, so they represent distinct bottlings despite identical names and producer.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 158,
+  "elapsed": 5.823157548904419,
+  "error": null
+}

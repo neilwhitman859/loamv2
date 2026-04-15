@@ -1,0 +1,23 @@
+{
+  "page_id": "page_056",
+  "model": "mistralai/mistral-large",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"2023 Hilltop Cabernet Sauvignon\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "2023 Hilltop Cabernet Sauvignon",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 37212,
+  "tokens_out": 102,
+  "elapsed": 20.632604360580444,
+  "error": null
+}

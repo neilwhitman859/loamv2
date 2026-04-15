@@ -1,0 +1,13 @@
+{
+  "pair_id": "D044",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer, Donnachadh, and the same grape variety, Chardonnay. The difference in name formatting, with Wine A including 'Estate' which may be a vineyard or cuv\u00e9e designation, and Wine B being a more straightforward varietal name, suggests they could be the same wine, especially since there's no indication of different grapes, classification tiers, or other distinguishing factors.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer, Donnachadh, and the same grape variety, Chardonnay. The difference in name formatting, with Wine A including 'Estate' which may be a vineyard or cuv\u00e9e designation, and Wine B being a more straightforward varietal name, suggests they could be the same wine, especially since there's no indication of different grapes, classification tiers, or other distinguishing factors.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 103,
+  "elapsed": 2.098888874053955,
+  "error": null
+}

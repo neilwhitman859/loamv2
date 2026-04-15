@@ -1,0 +1,13 @@
+{
+  "pair_id": "A009",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Domaines Vinsmoselle) and vineyard (Naumberg), with Wine B's name being a longer form of Wine A's name. The grape difference (Wine A lists Pinot Noir and Pinot Gris, while Wine B is Pinot Gris) is consistent with the same wine being a blend or the same cuv\u00e9e, and the varietal suffix difference alone does not indicate a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Domaines Vinsmoselle) and vineyard (Naumberg), with Wine B's name being a longer form of Wine A's name. The grape difference (Wine A lists Pinot Noir and Pinot Gris, while Wine B is Pinot Gris) is consistent with the same wine being a blend or the same cuv\u00e9e, and the varietal suffix difference alone does not indicate a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 510,
+  "tokens_out": 119,
+  "elapsed": 2.063204050064087,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D020",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are produced by the same producer, 19 Crimes, and have the same color, red. The slight difference in the name, from 'Dark Red' to 'Dark', is likely due to name formatting and does not indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are produced by the same producer, 19 Crimes, and have the same color, red. The slight difference in the name, from 'Dark Red' to 'Dark', is likely due to name formatting and does not indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 73,
+  "elapsed": 1.5270569324493408,
+  "error": null
+}

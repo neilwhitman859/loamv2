@@ -1,0 +1,13 @@
+{
+  "pair_id": "D027",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both records refer to the same commercial product, the Cupcake Vineyards Moscato from the Trevenezie IGT. The differences in grape varieties listed are likely due to varying levels of detail in the database (listing specific Muscat clones vs. general Muscat) rather than representing distinct bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both records refer to the same commercial product, the Cupcake Vineyards Moscato from the Trevenezie IGT. The differences in grape varieties listed are likely due to varying levels of detail in the database (listing specific Muscat clones vs. general Muscat) rather than representing distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 443,
+  "tokens_out": 80,
+  "elapsed": 2.3742783069610596,
+  "error": null
+}

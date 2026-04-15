@@ -1,0 +1,13 @@
+{
+  "pair_id": "A041",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Stephen Ross, and share the 'Bien Nacido' vineyard name. Wine A is explicitly Pinot Noir, and Wine B is named 'Bien Nacido Pinot Noir', suggesting the shorter name for Wine A is an abbreviation for the same wine, especially since both are red.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Stephen Ross, and share the 'Bien Nacido' vineyard name. Wine A is explicitly Pinot Noir, and Wine B is named 'Bien Nacido Pinot Noir', suggesting the shorter name for Wine A is an abbreviation for the same wine, especially since both are red.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 83,
+  "elapsed": 1.6350657939910889,
+  "error": null
+}

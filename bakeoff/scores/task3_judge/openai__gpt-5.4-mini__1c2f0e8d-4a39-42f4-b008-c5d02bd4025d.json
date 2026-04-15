@@ -1,0 +1,22 @@
+{
+  "wine_id": "1c2f0e8d-4a39-42f4-b008-c5d02bd4025d",
+  "wine_name": "Atamisque Chardonnay, Mendoza",
+  "tier": "B",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.95,
+  "wrong_facts": [
+    "Vinification summary speculates about stainless steel or neutral barrels, but ground truth shows 10 months in French oak barrels — the hedging ('likely in stainless steel or neutral barrels') is misleading",
+    "Price range of $15–$25 is fabricated — no price data was provided in context"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$15–$25 price range not in context data"
+  ],
+  "reasoning": "The output is well-written with strong voice — direct, opinionated, no banned words, good food pairings with explanations. It correctly identifies Valle de Tupungato, Uco Valley, alluvial soils (matching ground truth of clay and sand alluvial soils), and high altitude. However, the vinification section hedges toward stainless steel/neutral barrels when the wine actually sees 10 months in French oak — this is a meaningful miss that could mislead readers. The price range is fabricated since no pricing was provided. The output doesn't mention the winemaker (Philippe Caraguel), the naming origin (native tree), or the specific 1,300m elevation and San José vineyard location from ground truth, which are missed opportunities but not errors. The hook is factually correct. Overall solid but the vinification speculation and fabricated price hurt correctness.",
+  "judge_tokens_in": 3722,
+  "judge_tokens_out": 340
+}

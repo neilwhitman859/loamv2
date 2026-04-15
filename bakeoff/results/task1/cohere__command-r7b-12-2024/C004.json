@@ -1,0 +1,13 @@
+{
+  "pair_id": "C004",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are produced by the same producer, have the same color, and share the same LWIN number, indicating they are likely the same wine, despite the slight difference in the name 'Trauben Secco Alkoholfrei' vs 'Trauben Secco Alkoholfrei white'.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are produced by the same producer, have the same color, and share the same LWIN number, indicating they are likely the same wine, despite the slight difference in the name 'Trauben Secco Alkoholfrei' vs 'Trauben Secco Alkoholfrei white'.",
+  "parse_ok": true,
+  "tokens_in": 455,
+  "tokens_out": 80,
+  "elapsed": 1.0969297885894775,
+  "error": null
+}

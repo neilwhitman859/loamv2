@@ -1,0 +1,13 @@
+{
+  "pair_id": "D028",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines are made from different grape varieties (Cabernet Sauvignon vs. Cabernet Franc). According to the provided rules, different grapes always indicate different wines, even when the producer and vineyard designation are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from different grape varieties (Cabernet Sauvignon vs. Cabernet Franc). According to the provided rules, different grapes always indicate different wines, even when the producer and vineyard designation are the same.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 65,
+  "elapsed": 1.7954916954040527,
+  "error": null
+}

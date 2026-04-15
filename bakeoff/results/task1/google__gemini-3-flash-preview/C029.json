@@ -1,0 +1,13 @@
+{
+  "pair_id": "C029",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"Both records refer to the Gran Reserva Cabernet Sauvignon produced by Mayu. 'Don Amerigo' is the specific brand name/line for this producer's Gran Reserva tier, and its omission in Wine B is a common naming abbreviation rather than a distinction in bottling.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records refer to the Gran Reserva Cabernet Sauvignon produced by Mayu. 'Don Amerigo' is the specific brand name/line for this producer's Gran Reserva tier, and its omission in Wine B is a common naming abbreviation rather than a distinction in bottling.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 80,
+  "elapsed": 2.0490336418151855,
+  "error": null
+}

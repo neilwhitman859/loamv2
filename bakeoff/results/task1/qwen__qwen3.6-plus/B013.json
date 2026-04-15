@@ -1,0 +1,13 @@
+{
+  "pair_id": "B013",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines differ in color and style (white vs. ros\u00e9), which are distinct bottlings for this Champagne producer. The explicit 'Bleu' versus 'Rose' naming and different LWINs confirm they are separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines differ in color and style (white vs. ros\u00e9), which are distinct bottlings for this Champagne producer. The explicit 'Bleu' versus 'Rose' naming and different LWINs confirm they are separate products.",
+  "parse_ok": true,
+  "tokens_in": 471,
+  "tokens_out": 951,
+  "elapsed": 18.898229598999023,
+  "error": null
+}

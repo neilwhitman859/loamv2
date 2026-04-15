@@ -1,0 +1,13 @@
+{
+  "pair_id": "D002",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The 'GG' (Gro\u00dfes Gew\u00e4chs) suffix denotes a specific VDP classification for dry, top-tier German wines, while its absence in Wine B indicates a different Pr\u00e4dikat level or sweetness style. Under the provided rules, different German classification tiers and styles from the same producer and vineyard represent distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The 'GG' (Gro\u00dfes Gew\u00e4chs) suffix denotes a specific VDP classification for dry, top-tier German wines, while its absence in Wine B indicates a different Pr\u00e4dikat level or sweetness style. Under the provided rules, different German classification tiers and styles from the same producer and vineyard represent distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 468,
+  "tokens_out": 1401,
+  "elapsed": 26.7706458568573,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C005",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are Brut Rose from the same producer, Jean Noel Haton, and have the same color. The absence of 'NV' in Wine B's name is likely due to name formatting, as 'NV' is often omitted in some references. The LWIN numbers are different but close, suggesting they could be related or the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are Brut Rose from the same producer, Jean Noel Haton, and have the same color. The absence of 'NV' in Wine B's name is likely due to name formatting, as 'NV' is often omitted in some references. The LWIN numbers are different but close, suggesting they could be related or the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 93,
+  "elapsed": 1.6185476779937744,
+  "error": null
+}

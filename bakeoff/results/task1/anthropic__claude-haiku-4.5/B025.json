@@ -1,0 +1,13 @@
+{
+  "pair_id": "B025",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is white and Wine B is red, representing fundamentally different wine types from the same producer. Different colors indicate distinct bottlings that consumers would encounter separately, regardless of shared vineyard name. The different LWINs and color distinction confirm these are separate wines.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is white and Wine B is red, representing fundamentally different wine types from the same producer. Different colors indicate distinct bottlings that consumers would encounter separately, regardless of shared vineyard name. The different LWINs and color distinction confirm these are separate wines.",
+  "parse_ok": true,
+  "tokens_in": 502,
+  "tokens_out": 83,
+  "elapsed": 2.406399726867676,
+  "error": null
+}

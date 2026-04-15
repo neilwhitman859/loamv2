@@ -1,0 +1,13 @@
+{
+  "pair_id": "A023",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.98,\"reasoning\":\"The two records share the same producer, color, and vineyard/cuv\u00e9e name: Blackwood Canyon. The only difference is that Wine B appends the varietal suffix Cabernet Sauvignon, which is usually just an expanded form of the shorter name when no other conflicting Blackwood Canyon bottlings are indicated.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "The two records share the same producer, color, and vineyard/cuv\u00e9e name: Blackwood Canyon. The only difference is that Wine B appends the varietal suffix Cabernet Sauvignon, which is usually just an expanded form of the shorter name when no other conflicting Blackwood Canyon bottlings are indicated.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 81,
+  "elapsed": 1.828287124633789,
+  "error": null
+}

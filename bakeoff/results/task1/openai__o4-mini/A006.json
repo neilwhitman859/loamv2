@@ -1,0 +1,13 @@
+{
+  "pair_id": "A006",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.90, \"reasoning\": \"Both records are the same producer, vineyard and grape (Clos Platt Pinot Noir), with the only difference being the varietal suffix in the name. This is a common abbreviated naming variant rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both records are the same producer, vineyard and grape (Clos Platt Pinot Noir), with the only difference being the varietal suffix in the name. This is a common abbreviated naming variant rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 151,
+  "elapsed": 16.818535566329956,
+  "error": null
+}

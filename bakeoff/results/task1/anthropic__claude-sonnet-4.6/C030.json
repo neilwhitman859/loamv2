@@ -1,0 +1,13 @@
+{
+  "pair_id": "C030",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a Reserva and Wine B is a Gran Reserva, which are distinct classification tiers requiring different aging periods and representing separate bottlings. Even though both are Cabernet Sauvignon from the same producer Mayu, the Reserva vs Gran Reserva distinction means these are different wines a consumer would encounter separately. Different classification tiers always constitute different wines per the classification rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a Reserva and Wine B is a Gran Reserva, which are distinct classification tiers requiring different aging periods and representing separate bottlings. Even though both are Cabernet Sauvignon from the same producer Mayu, the Reserva vs Gran Reserva distinction means these are different wines a consumer would encounter separately. Different classification tiers always constitute different wines per the classification rules.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 109,
+  "elapsed": 3.0240960121154785,
+  "error": null
+}

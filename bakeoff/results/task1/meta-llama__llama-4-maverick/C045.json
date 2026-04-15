@@ -1,0 +1,13 @@
+{
+  "pair_id": "C045",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines are from the same producer, vineyard, and grape variety, and have the same color and Pr\u00e4dikat level (Kabinett). However, they have different lot/cask numbers ('Nr8' vs no designation), indicating they are different bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines are from the same producer, vineyard, and grape variety, and have the same color and Pr\u00e4dikat level (Kabinett). However, they have different lot/cask numbers ('Nr8' vs no designation), indicating they are different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 516,
+  "tokens_out": 77,
+  "elapsed": 1.6795637607574463,
+  "error": null
+}

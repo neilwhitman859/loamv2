@@ -1,0 +1,13 @@
+{
+  "pair_id": "B015",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a ros\u00e9 (Rose) while Wine B is a red wine (Rouge), representing distinct color styles that a consumer would encounter as separate bottlings. Although both share the same producer, vineyard name (Fut de Chene), and grape variety (Pinot Noir), the color difference is a fundamental classification that makes these different wines. The different LWINs confirm these are separate products.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a ros\u00e9 (Rose) while Wine B is a red wine (Rouge), representing distinct color styles that a consumer would encounter as separate bottlings. Although both share the same producer, vineyard name (Fut de Chene), and grape variety (Pinot Noir), the color difference is a fundamental classification that makes these different wines. The different LWINs confirm these are separate products.",
+  "parse_ok": true,
+  "tokens_in": 504,
+  "tokens_out": 114,
+  "elapsed": 2.82501220703125,
+  "error": null
+}

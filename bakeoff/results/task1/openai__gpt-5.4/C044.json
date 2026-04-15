@@ -1,0 +1,13 @@
+{
+  "pair_id": "C044",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.95,\"reasoning\":\"Both records are Von Schubert Herrenberg Riesling Auslese Auktion, but Wine A includes the specific lot designation 'Nr17' while Wine B does not. For German auction wines, different lot/cask numbers at the same Pr\u00e4dikat level are treated as different bottlings; the differing LWINs also support that these are separate records rather than simple formatting variants.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both records are Von Schubert Herrenberg Riesling Auslese Auktion, but Wine A includes the specific lot designation 'Nr17' while Wine B does not. For German auction wines, different lot/cask numbers at the same Pr\u00e4dikat level are treated as different bottlings; the differing LWINs also support that these are separate records rather than simple formatting variants.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 98,
+  "elapsed": 2.7987732887268066,
+  "error": null
+}

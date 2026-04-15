@@ -1,0 +1,70 @@
+{
+  "page_id": "page_005",
+  "model": "mistralai/mistral-large",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Old Vine Zinfandel\",\n      \"vintage_year\": 2022,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": {\n        \"vessel\": null,\n        \"months\": null,\n        \"new_pct\": null,\n        \"origin\": null\n      },\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": null,\n        \"ta_g_l\": null,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": null,\n      \"farming\": null,\n      \"tasting_notes\": {\n        \"aromas\": \"cranberries and raspberries\",\n        \"palate\": \"red fruits, marionberry pie and baking spices\"\n      },\n      \"winemaking_notes\": \"A core of Zinfandel from 60-80 year-old head-trained vines, carefully handpicked.\",\n      \"vine_age\": {\n        \"min_years\": 60,\n        \"max_years\": 80\n      },\n      \"vine_training\": \"head-trained\",\n      \"dry_farmed\": true,\n      \"fruit_intensity\": \"high\",\n      \"oak_intensity\": 55,\n      \"body\": 70,\n      \"dryness\": 25,\n      \"certifications\": [\"gluten-free\", \"vegan-friendly\", \"sustainable\"],\n      \"pairing_suggestions\": [\n        \"Lamb Chops with Orange Blueberry Demi-Glace Served with Sweet Potato Mash\",\n        \"Osso Bucco\",\n        \"Buffalo Cauliflower Pizza\"\n      ],\n      \"accolades\": [\n        {\n          \"source\": null,\n          \"rating\": null,\n          \"year\": null\n        },\n        {\n          \"source\": null,\n          \"rating\": 91,\n          \"year\": null\n        }\n      ]\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Old Vine Zinfandel",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": null,
+        "months": null,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": null,
+      "tasting_notes": {
+        "aromas": "cranberries and raspberries",
+        "palate": "red fruits, marionberry pie and baking spices"
+      },
+      "winemaking_notes": "A core of Zinfandel from 60-80 year-old head-trained vines, carefully handpicked.",
+      "vine_age": {
+        "min_years": 60,
+        "max_years": 80
+      },
+      "vine_training": "head-trained",
+      "dry_farmed": true,
+      "fruit_intensity": "high",
+      "oak_intensity": 55,
+      "body": 70,
+      "dryness": 25,
+      "certifications": [
+        "gluten-free",
+        "vegan-friendly",
+        "sustainable"
+      ],
+      "pairing_suggestions": [
+        "Lamb Chops with Orange Blueberry Demi-Glace Served with Sweet Potato Mash",
+        "Osso Bucco",
+        "Buffalo Cauliflower Pizza"
+      ],
+      "accolades": [
+        {
+          "source": null,
+          "rating": null,
+          "year": null
+        },
+        {
+          "source": null,
+          "rating": 91,
+          "year": null
+        }
+      ]
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 29120,
+  "tokens_out": 439,
+  "elapsed": 13.96615219116211,
+  "error": null
+}

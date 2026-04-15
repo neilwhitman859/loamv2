@@ -1,0 +1,13 @@
+{
+  "pair_id": "A041",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from producer Stephen Ross, the Bien Nacido vineyard, and specified as red Pinot Noir, matching the rule that a varietal suffix alone (e.g., 'Bien Nacido' vs 'Bien Nacido Pinot Noir') indicates the same wine as an abbreviation. No evidence of multiple grape varieties from this vineyard by the producer. Colors and grapes align perfectly.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from producer Stephen Ross, the Bien Nacido vineyard, and specified as red Pinot Noir, matching the rule that a varietal suffix alone (e.g., 'Bien Nacido' vs 'Bien Nacido Pinot Noir') indicates the same wine as an abbreviation. No evidence of multiple grape varieties from this vineyard by the producer. Colors and grapes align perfectly.",
+  "parse_ok": true,
+  "tokens_in": 565,
+  "tokens_out": 401,
+  "elapsed": 4.8782525062561035,
+  "error": null
+}

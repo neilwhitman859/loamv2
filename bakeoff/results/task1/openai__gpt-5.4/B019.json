@@ -1,0 +1,13 @@
+{
+  "pair_id": "B019",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Wine A is explicitly Bourgogne Aligote made from the Aligote grape, while Wine B is a generic Bourgogne blanc listed with Chardonnay Blanc and Pinot Blanc. Different grape composition means they are different wines, not just naming variants.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Wine A is explicitly Bourgogne Aligote made from the Aligote grape, while Wine B is a generic Bourgogne blanc listed with Chardonnay Blanc and Pinot Blanc. Different grape composition means they are different wines, not just naming variants.",
+  "parse_ok": true,
+  "tokens_in": 443,
+  "tokens_out": 70,
+  "elapsed": 2.243192434310913,
+  "error": null
+}

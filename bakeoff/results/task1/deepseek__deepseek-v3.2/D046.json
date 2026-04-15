@@ -1,0 +1,13 @@
+{
+  "pair_id": "D046",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.9, \"reasoning\": \"Wine B is explicitly labeled 'Rose' while Wine A is not, and the LWIN for Wine B is a specific identifier. Since ros\u00e9 vs. non-ros\u00e9 from the same producer and name base are distinct bottlings, they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "Wine B is explicitly labeled 'Rose' while Wine A is not, and the LWIN for Wine B is a specific identifier. Since ros\u00e9 vs. non-ros\u00e9 from the same producer and name base are distinct bottlings, they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 77,
+  "elapsed": 4.049646615982056,
+  "error": null
+}

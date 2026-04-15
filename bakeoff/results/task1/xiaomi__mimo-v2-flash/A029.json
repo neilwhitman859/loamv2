@@ -1,0 +1,13 @@
+{
+  "pair_id": "A029",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Koehly) and share the base name 'Chasseresse', with Wine B simply adding the varietal suffix 'Auxerrois'. The presence of Auxerrois in Wine A's grape list confirms the suffix is descriptive, not a distinct bottling. No other differentiating factors like classification or vineyard designation are present.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Koehly) and share the base name 'Chasseresse', with Wine B simply adding the varietal suffix 'Auxerrois'. The presence of Auxerrois in Wine A's grape list confirms the suffix is descriptive, not a distinct bottling. No other differentiating factors like classification or vineyard designation are present.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 100,
+  "elapsed": 3.223806142807007,
+  "error": null
+}

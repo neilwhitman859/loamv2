@@ -1,0 +1,13 @@
+{
+  "pair_id": "D013",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These are different appellation/vineyard-designated wines from the same producer: Beaune Premier Cru versus Vosne-Roman\u00e9e Premier Cru. In Burgundy, those indicate distinct geographic origins and separate bottlings that would be listed on separate encyclopedia pages.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These are different appellation/vineyard-designated wines from the same producer: Beaune Premier Cru versus Vosne-Roman\u00e9e Premier Cru. In Burgundy, those indicate distinct geographic origins and separate bottlings that would be listed on separate encyclopedia pages.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 72,
+  "elapsed": 2.4482781887054443,
+  "error": null
+}

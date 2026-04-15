@@ -1,0 +1,13 @@
+{
+  "pair_id": "B019",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are not the same wine because the grape composition differs: Wine A is Bourgogne Aligot\u00e9 made from Aligot\u00e9, while Wine B is a Bourgogne blend of Chardonnay Blanc and Pinot Blanc. Different grapes mean different bottlings even if the producer is the same and both are white Burgundy.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are not the same wine because the grape composition differs: Wine A is Bourgogne Aligot\u00e9 made from Aligot\u00e9, while Wine B is a Bourgogne blend of Chardonnay Blanc and Pinot Blanc. Different grapes mean different bottlings even if the producer is the same and both are white Burgundy.",
+  "parse_ok": true,
+  "tokens_in": 443,
+  "tokens_out": 82,
+  "elapsed": 2.5323498249053955,
+  "error": null
+}

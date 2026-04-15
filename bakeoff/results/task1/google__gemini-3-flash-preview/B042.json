@@ -1,0 +1,13 @@
+{
+  "pair_id": "B042",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records specify different wine colors (Ros\u00e9 vs. White) and different grape compositions. Even though they share the same producer and broad regional designation, a Ros\u00e9 and a Chardonnay are distinct bottlings that a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records specify different wine colors (Ros\u00e9 vs. White) and different grape compositions. Even though they share the same producer and broad regional designation, a Ros\u00e9 and a Chardonnay are distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 70,
+  "elapsed": 1.8131184577941895,
+  "error": null
+}

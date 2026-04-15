@@ -1,0 +1,13 @@
+{
+  "pair_id": "C005",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.75, \"reasoning\": \"Both are Jean Noel Haton Brut Ros\u00e9 wines, but Wine A is explicitly labeled NV (non-vintage) while Wine B has no vintage designation shown. The different LWIN codes (1422081 vs 1422065) confirm these are catalogued as distinct products. The NV designation on Wine A versus its absence on Wine B may indicate a different cuv\u00e9e or bottling tier, though it's also possible one is simply missing the NV label \u2014 the distinct LWINs suggest they are treated as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.75,
+  "reasoning": "Both are Jean Noel Haton Brut Ros\u00e9 wines, but Wine A is explicitly labeled NV (non-vintage) while Wine B has no vintage designation shown. The different LWIN codes (1422081 vs 1422065) confirm these are catalogued as distinct products. The NV designation on Wine A versus its absence on Wine B may indicate a different cuv\u00e9e or bottling tier, though it's also possible one is simply missing the NV label \u2014 the distinct LWINs suggest they are treated as different wines.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 141,
+  "elapsed": 4.415419101715088,
+  "error": null
+}

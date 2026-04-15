@@ -1,0 +1,13 @@
+{
+  "pair_id": "D037",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.99, \"reasoning\": \"Both wines are from Chatter Creek and share the identical name 'Blend 105 Red Table' \u2014 Wine B simply appends the word 'Wine' which is a common formatting variation with no substantive difference. Both are red wines from the same producer. This is clearly the same bottling with a minor name formatting difference.\"}",
+  "verdict": "SAME",
+  "confidence": 0.99,
+  "reasoning": "Both wines are from Chatter Creek and share the identical name 'Blend 105 Red Table' \u2014 Wine B simply appends the word 'Wine' which is a common formatting variation with no substantive difference. Both are red wines from the same producer. This is clearly the same bottling with a minor name formatting difference.",
+  "parse_ok": true,
+  "tokens_in": 480,
+  "tokens_out": 93,
+  "elapsed": 3.130850076675415,
+  "error": null
+}

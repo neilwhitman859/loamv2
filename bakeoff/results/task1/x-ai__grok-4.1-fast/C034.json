@@ -1,0 +1,13 @@
+{
+  "pair_id": "C034",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Markus Molitor, Bernkasteler Badstube vineyard, Riesling Auslese with green capsules, but differ in star ratings (2* vs 3*), which indicate distinct quality tiers or ripeness levels within Auslese for this producer. Different LWIN numbers (1743960 vs 1991172) confirm they are separate bottlings. This aligns with rules treating sub-level differences at the same Pr\u00e4dikat as different wines, like lot variations.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Markus Molitor, Bernkasteler Badstube vineyard, Riesling Auslese with green capsules, but differ in star ratings (2* vs 3*), which indicate distinct quality tiers or ripeness levels within Auslese for this producer. Different LWIN numbers (1743960 vs 1991172) confirm they are separate bottlings. This aligns with rules treating sub-level differences at the same Pr\u00e4dikat as different wines, like lot variations.",
+  "parse_ok": true,
+  "tokens_in": 590,
+  "tokens_out": 643,
+  "elapsed": 4.7206501960754395,
+  "error": null
+}

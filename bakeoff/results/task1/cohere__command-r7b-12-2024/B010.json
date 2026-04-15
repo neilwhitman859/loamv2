@@ -1,0 +1,13 @@
+{
+  "pair_id": "B010",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is a white wine, while Wine B is a ros\u00e9, indicating different wine types. Additionally, the names 'Alma Grande Cuvee Brut' and 'Gran Cuvee Alma' suggest different cuv\u00e9es, further supporting the classification as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is a white wine, while Wine B is a ros\u00e9, indicating different wine types. Additionally, the names 'Alma Grande Cuvee Brut' and 'Gran Cuvee Alma' suggest different cuv\u00e9es, further supporting the classification as different wines.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 74,
+  "elapsed": 2.035403251647949,
+  "error": null
+}

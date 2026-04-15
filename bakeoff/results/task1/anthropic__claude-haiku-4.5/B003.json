@@ -1,0 +1,13 @@
+{
+  "pair_id": "B003",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is red and Wine B is white, representing fundamentally different wine types from the same producer. Additionally, Wine B explicitly includes 'Fiano' (a white grape variety) in its name while Wine A does not, and they have distinct LWINs (2683782 vs 2683913), confirming these are separate bottlings a consumer would encounter distinctly.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is red and Wine B is white, representing fundamentally different wine types from the same producer. Additionally, Wine B explicitly includes 'Fiano' (a white grape variety) in its name while Wine A does not, and they have distinct LWINs (2683782 vs 2683913), confirming these are separate bottlings a consumer would encounter distinctly.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 109,
+  "elapsed": 3.486344337463379,
+  "error": null
+}

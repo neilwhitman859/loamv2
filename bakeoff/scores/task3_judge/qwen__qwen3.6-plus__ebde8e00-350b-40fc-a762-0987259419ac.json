@@ -1,0 +1,28 @@
+{
+  "wine_id": "ebde8e00-350b-40fc-a762-0987259419ac",
+  "wine_name": "Howard Park Leston Shiraz, Margaret River",
+  "tier": "C",
+  "model": "qwen/qwen3.6-plus",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.575,
+  "wrong_facts": [
+    "Hook claims 'ironstone-rich gravel soils' for Leston vineyard — ground truth says Leston Vineyard is in Wilyabrup but doesn't mention ironstone gravel specifically for Leston; the output later attributes 'Forest Grove ironstone gravel' to the terroir, but Forest Grove is a different subregion from Wilyabrup",
+    "Output refers to the grape as 'Syrah' in wine_summary — Howard Park labels it Shiraz, and ground truth confirms 100% Shiraz",
+    "Cullen Mangan Vineyard Shiraz is not a well-known benchmark wine and may be fabricated or confused with another Cullen wine",
+    "The reductive opening claim attributed to 'critics' is unverifiable and likely fabricated",
+    "Price range $30-$45 USD is fabricated — no price data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$30-$45 USD price range",
+    "30-minute decant recommendation",
+    "15 year aging potential",
+    "The specific oak details are omitted but the output says 'French oak' and 'higher proportion of new barrels' — ground truth says 95% French/5% American and 30% new, so 'higher proportion of new' is vague but not precisely wrong"
+  ],
+  "reasoning": "The output is well-written with strong voice and specificity, but has significant factual problems. The Forest Grove ironstone gravel attribution is wrong — Leston Vineyard is in Wilyabrup, not Forest Grove. The naming origin of 'Leston' (a family name honoring Jeff Burch's father) is completely missed. The 10% whole bunch fermentation and specific cooperage details (18 months, 95% French/5% American, 30% new) from ground truth are absent, replaced with vague or partially incorrect claims. The price range is fabricated. The Cullen Mangan Vineyard Shiraz comparable is likely fabricated. However, the Wilyabrup sourcing is correctly identified, and the general Margaret River climate description is sound. The voice is direct and opinionated without banned words.",
+  "judge_tokens_in": 3316,
+  "judge_tokens_out": 532
+}

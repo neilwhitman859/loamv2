@@ -1,0 +1,13 @@
+{
+  "pair_id": "C020",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"While both wines are white Riesling Auslese from the same producer, they come from different vineyards (Trittenheimer Altarchen and Trittenheimer Leiterchen), making them distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "While both wines are white Riesling Auslese from the same producer, they come from different vineyards (Trittenheimer Altarchen and Trittenheimer Leiterchen), making them distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 67,
+  "elapsed": 2.1485886573791504,
+  "error": null
+}

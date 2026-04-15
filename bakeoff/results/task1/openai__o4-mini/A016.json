@@ -1,0 +1,13 @@
+{
+  "pair_id": "A016",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.92,\"reasoning\":\"Both records share the same producer, color, and grape variety; the only difference is the inclusion of the varietal suffix \u201cVermentino,\u201d which is a naming variant rather than a separate bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.92,
+  "reasoning": "Both records share the same producer, color, and grape variety; the only difference is the inclusion of the varietal suffix \u201cVermentino,\u201d which is a naming variant rather than a separate bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 145,
+  "elapsed": 2.7374653816223145,
+  "error": null
+}

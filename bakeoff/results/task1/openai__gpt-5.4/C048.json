@@ -1,0 +1,13 @@
+{
+  "pair_id": "C048",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are separate bottlings because one is Brut and the other is Brut Ros\u00e9. The color/style difference alone makes them different wines, and the distinct LWINs support that they are not the same encyclopedia entry.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are separate bottlings because one is Brut and the other is Brut Ros\u00e9. The color/style difference alone makes them different wines, and the distinct LWINs support that they are not the same encyclopedia entry.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 65,
+  "elapsed": 2.387493371963501,
+  "error": null
+}

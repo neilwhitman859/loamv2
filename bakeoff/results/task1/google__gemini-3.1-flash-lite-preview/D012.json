@@ -1,0 +1,13 @@
+{
+  "pair_id": "D012",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are made from different grape varieties (Boal vs. Sercial). In Madeira production, these represent distinct varietal bottlings that are treated as separate wines.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from different grape varieties (Boal vs. Sercial). In Madeira production, these represent distinct varietal bottlings that are treated as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 64,
+  "elapsed": 1.7205853462219238,
+  "error": null
+}

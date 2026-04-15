@@ -1,0 +1,13 @@
+{
+  "pair_id": "D022",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are white from the same producer, La Tour Blanche, and the names 'Duo de la Tour Blanche' and 'Brumes de La Tour Blanche' appear to be different cuv\u00e9es or bottlings from the same estate. However, without specific details on grape variety or vineyard designation, the naming similarity and shared producer suggest they could be the same wine with different label names, but the distinct LWINs and names indicate they are likely different bottlings. Given the ambiguity, the verdict is SAME based on the producer and color match, but with lower confidence due to the distinct names.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are white from the same producer, La Tour Blanche, and the names 'Duo de la Tour Blanche' and 'Brumes de La Tour Blanche' appear to be different cuv\u00e9es or bottlings from the same estate. However, without specific details on grape variety or vineyard designation, the naming similarity and shared producer suggest they could be the same wine with different label names, but the distinct LWINs and names indicate they are likely different bottlings. Given the ambiguity, the verdict is SAME based on the producer and color match, but with lower confidence due to the distinct names.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 146,
+  "elapsed": 2.5486900806427,
+  "error": null
+}

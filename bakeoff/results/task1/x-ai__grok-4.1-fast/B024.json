@@ -1,0 +1,13 @@
+{
+  "pair_id": "B024",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the name 'Les Jardins' and producer 'La Tour Blanche', but Wine A is white made from Sauvignon Blanc, Muscadelle, and Mondeuse Blanche, while Wine B is red from Mondeuse Blanche and Merlot Noir. Different colors and grape varieties indicate they are distinct bottlings that consumers would encounter separately. Rules explicitly state different colors (white vs red) mean different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the name 'Les Jardins' and producer 'La Tour Blanche', but Wine A is white made from Sauvignon Blanc, Muscadelle, and Mondeuse Blanche, while Wine B is red from Mondeuse Blanche and Merlot Noir. Different colors and grape varieties indicate they are distinct bottlings that consumers would encounter separately. Rules explicitly state different colors (white vs red) mean different wines.",
+  "parse_ok": true,
+  "tokens_in": 593,
+  "tokens_out": 387,
+  "elapsed": 3.0312626361846924,
+  "error": null
+}

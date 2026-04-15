@@ -1,0 +1,13 @@
+{
+  "pair_id": "B023",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A is described as 'red' and Wine B as 'white'. Even if the base name 'Snoop Dogg Cali' is similar, the difference in color indicates different grape varieties and thus distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is described as 'red' and Wine B as 'white'. Even if the base name 'Snoop Dogg Cali' is similar, the difference in color indicates different grape varieties and thus distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 399,
+  "tokens_out": 79,
+  "elapsed": 1.6862099170684814,
+  "error": null
+}

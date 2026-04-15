@@ -1,0 +1,13 @@
+{
+  "pair_id": "A003",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The only difference is the omission of the grape 'Pinot Noir' in Wine A, which is a classic varietal suffix difference. Both share the same producer (Goodfellow Family), the same vineyard/cuv\u00e9e designation ('Heritage No. 15 Whistling Ridge'), and the same grape (Pinot Noir, explicitly stated for A and implied in B's name). There is no evidence of different grapes, classification, or style.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The only difference is the omission of the grape 'Pinot Noir' in Wine A, which is a classic varietal suffix difference. Both share the same producer (Goodfellow Family), the same vineyard/cuv\u00e9e designation ('Heritage No. 15 Whistling Ridge'), and the same grape (Pinot Noir, explicitly stated for A and implied in B's name). There is no evidence of different grapes, classification, or style.",
+  "parse_ok": true,
+  "tokens_in": 456,
+  "tokens_out": 112,
+  "elapsed": 17.364569187164307,
+  "error": null
+}

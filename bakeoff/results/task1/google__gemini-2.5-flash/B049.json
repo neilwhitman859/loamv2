@@ -1,0 +1,13 @@
+{
+  "pair_id": "B049",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A is described as 'white' and Wine B as 'red'. Even if the names are similar, different colors always indicate different wines, as they represent distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is described as 'white' and Wine B as 'red'. Even if the names are similar, different colors always indicate different wines, as they represent distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 72,
+  "elapsed": 1.8211686611175537,
+  "error": null
+}

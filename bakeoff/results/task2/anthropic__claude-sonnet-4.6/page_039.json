@@ -1,0 +1,28 @@
+{
+  "page_id": "page_039",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Pinot Noir\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": null, \"oak\": {\"vessel\": \"barrel\", \"months\": null, \"new_pct\": null, \"origin\": \"French\"}, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": \"Jason Becker\", \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Pinot Noir",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "barrel",
+        "months": null,
+        "new_pct": null,
+        "origin": "French"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jason Becker",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 15049,
+  "tokens_out": 98,
+  "elapsed": 3.1226885318756104,
+  "error": null
+}

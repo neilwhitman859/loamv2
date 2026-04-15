@@ -1,0 +1,45 @@
+{
+  "page_id": "page_007",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\n  \"wines_found\": [\n    {\n      \"name\": \"Essential Red\",\n      \"vintage_year\": 2022,\n      \"abv_pct\": null,\n      \"blend\": [\n        {\"grape\": \"Old Vine Zinfandel\", \"pct\": null},\n        {\"grape\": \"Syrah\", \"pct\": null},\n        {\"grape\": \"Cabernet Sauvignon\", \"pct\": null},\n        {\"grape\": \"Petite Sirah\", \"pct\": null}\n      ],\n      \"oak\": {\"vessel\": \"barrel\", \"months\": 12, \"new_pct\": null, \"origin\": \"American\"},\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    }\n  ]\n}",
+  "wines_found": [
+    {
+      "name": "Essential Red",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Old Vine Zinfandel",
+          "pct": null
+        },
+        {
+          "grape": "Syrah",
+          "pct": null
+        },
+        {
+          "grape": "Cabernet Sauvignon",
+          "pct": null
+        },
+        {
+          "grape": "Petite Sirah",
+          "pct": null
+        }
+      ],
+      "oak": {
+        "vessel": "barrel",
+        "months": 12,
+        "new_pct": null,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 21230,
+  "tokens_out": 181,
+  "elapsed": 31.2004234790802,
+  "error": null
+}

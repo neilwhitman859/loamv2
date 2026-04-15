@@ -1,0 +1,13 @@
+{
+  "pair_id": "A047",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records share the same producer, base name, color, and explicitly list Cabernet Franc as the grape variety. The only difference is the appended varietal in Wine B, which follows the standard naming convention where the shorter title is simply an abbreviation of the full bottling name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records share the same producer, base name, color, and explicitly list Cabernet Franc as the grape variety. The only difference is the appended varietal in Wine B, which follows the standard naming convention where the shorter title is simply an abbreviation of the full bottling name.",
+  "parse_ok": true,
+  "tokens_in": 465,
+  "tokens_out": 1426,
+  "elapsed": 28.188516855239868,
+  "error": null
+}

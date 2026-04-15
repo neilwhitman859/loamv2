@@ -1,0 +1,13 @@
+{
+  "pair_id": "A045",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer, vineyard, color, and grape variety. The difference is only in the varietal suffix, which is an abbreviation in one case and a full name in the other, indicating they represent the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer, vineyard, color, and grape variety. The difference is only in the varietal suffix, which is an abbreviation in one case and a full name in the other, indicating they represent the same wine.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 70,
+  "elapsed": 2.1719977855682373,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C017",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The only difference is the explicit inclusion of 'Riesling' in Wine B, which is a varietal suffix. Both share the same producer, vineyard (Forster Kirchenst\u00fcck), Pr\u00e4dikat level (Sp\u00e4tlese), and color, indicating they are the same bottling with a naming variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The only difference is the explicit inclusion of 'Riesling' in Wine B, which is a varietal suffix. Both share the same producer, vineyard (Forster Kirchenst\u00fcck), Pr\u00e4dikat level (Sp\u00e4tlese), and color, indicating they are the same bottling with a naming variation.",
+  "parse_ok": true,
+  "tokens_in": 460,
+  "tokens_out": 87,
+  "elapsed": 6.692269563674927,
+  "error": null
+}

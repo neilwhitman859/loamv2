@@ -1,0 +1,13 @@
+{
+  "pair_id": "D038",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.98, \"reasoning\": \"The only difference between the two records is the addition of the word 'Wine' to the style description 'Table'. Both records refer to the same producer, color, and specific cuv\u00e9e name 'Chatterneuf-du-Pape', which is a proprietary blend name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "The only difference between the two records is the addition of the word 'Wine' to the style description 'Table'. Both records refer to the same producer, color, and specific cuv\u00e9e name 'Chatterneuf-du-Pape', which is a proprietary blend name.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 77,
+  "elapsed": 1.7050514221191406,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B001",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines because they are made from different grape varieties: Sauvignon Blanc versus Sauvignon Gris. Under the matching rules, different grapes always mean different wines, even when the producer and appellation are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines because they are made from different grape varieties: Sauvignon Blanc versus Sauvignon Gris. Under the matching rules, different grapes always mean different wines, even when the producer and appellation are the same.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 64,
+  "elapsed": 2.3849856853485107,
+  "error": null
+}

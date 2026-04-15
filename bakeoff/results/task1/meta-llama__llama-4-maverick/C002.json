@@ -1,0 +1,13 @@
+{
+  "pair_id": "C002",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Sp\u00e4tlese and Wine B is an Auslese, indicating different German Pr\u00e4dikat levels, which signifies different wines according to the given rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Sp\u00e4tlese and Wine B is an Auslese, indicating different German Pr\u00e4dikat levels, which signifies different wines according to the given rules.",
+  "parse_ok": true,
+  "tokens_in": 507,
+  "tokens_out": 59,
+  "elapsed": 1.6251037120819092,
+  "error": null
+}

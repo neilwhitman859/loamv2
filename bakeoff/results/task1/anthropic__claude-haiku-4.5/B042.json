@@ -1,0 +1,13 @@
+{
+  "pair_id": "B042",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a ros\u00e9 while Wine B is a white wine (Chardonnay), representing distinctly different wine types that a consumer would encounter separately. Different colors indicate different production methods and grape handling, making these separate bottlings despite sharing the same producer and region.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a ros\u00e9 while Wine B is a white wine (Chardonnay), representing distinctly different wine types that a consumer would encounter separately. Different colors indicate different production methods and grape handling, making these separate bottlings despite sharing the same producer and region.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 84,
+  "elapsed": 1.955352544784546,
+  "error": null
+}

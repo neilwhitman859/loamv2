@@ -1,0 +1,43 @@
+{
+  "page_id": "page_018",
+  "model": "mistralai/mistral-large",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Chardonnay\",\n      \"vintage_year\": null,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": {\n        \"vessel\": \"barrel\",\n        \"months\": null,\n        \"new_pct\": null,\n        \"origin\": null\n      },\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": null,\n        \"ta_g_l\": null,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": \"Jessica Tomei\",\n      \"farming\": null,\n      \"region\": \"Monterey County, California\",\n      \"tasting_notes\": \"Creamy & rich with elegant citrus flavors.\",\n      \"winemaking_notes\": \"Our signature Chardonnay is crafted from grapes grown in the esteemed California coastal vineyards of Monterey County, where the cool climate and long growing season create an ideal terroir for balanced ripening. Morning fog and warm, sunny afternoons allow the grapes to fully ripen while maintaining the natural acidity, floral aromas, and citrus flavors characteristic of a California Chardonnay. Barrel fermentation enhances the wine’s texture, contributing to a rich and creamy finish.\",\n      \"nutritional_info\": {\n        \"serving_size_fl_oz\": 5,\n        \"calories\": 120,\n        \"carbohydrates_g\": 3,\n        \"protein_g\": 0,\n        \"fat_g\": 0\n      }\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Chardonnay",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "barrel",
+        "months": null,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": "Jessica Tomei",
+      "farming": null,
+      "region": "Monterey County, California",
+      "tasting_notes": "Creamy & rich with elegant citrus flavors.",
+      "winemaking_notes": "Our signature Chardonnay is crafted from grapes grown in the esteemed California coastal vineyards of Monterey County, where the cool climate and long growing season create an ideal terroir for balanced ripening. Morning fog and warm, sunny afternoons allow the grapes to fully ripen while maintaining the natural acidity, floral aromas, and citrus flavors characteristic of a California Chardonnay. Barrel fermentation enhances the wine’s texture, contributing to a rich and creamy finish.",
+      "nutritional_info": {
+        "serving_size_fl_oz": 5,
+        "calories": 120,
+        "carbohydrates_g": 3,
+        "protein_g": 0,
+        "fat_g": 0
+      }
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 43201,
+  "tokens_out": 356,
+  "elapsed": 28.376749277114868,
+  "error": null
+}

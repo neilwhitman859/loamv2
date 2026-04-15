@@ -1,0 +1,13 @@
+{
+  "pair_id": "A038",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.97, \"reasoning\": \"Both wines are from Bellingham's Bernard Series Bush Vine line, both red, and Wine A is confirmed as Pinotage while Wine B appends 'Pinotage' as a varietal suffix. This is a classic case of the shorter name being an abbreviation of the full name with varietal appended, representing the same bottling. No conflicting grape information exists.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "Both wines are from Bellingham's Bernard Series Bush Vine line, both red, and Wine A is confirmed as Pinotage while Wine B appends 'Pinotage' as a varietal suffix. This is a classic case of the shorter name being an abbreviation of the full name with varietal appended, representing the same bottling. No conflicting grape information exists.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 105,
+  "elapsed": 3.6632163524627686,
+  "error": null
+}

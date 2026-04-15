@@ -1,0 +1,13 @@
+{
+  "pair_id": "D045",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from producer Maris and share the core name 'Casse-Croute'. Wine A includes 'Blanc' (white) as a descriptor, which is a stylistic suffix rather than a distinct cuv\u00e9e designation. Since both are white wines from the same producer with the same base name, 'Blanc' is a clarifying descriptor rather than indicating a separate bottling.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from producer Maris and share the core name 'Casse-Croute'. Wine A includes 'Blanc' (white) as a descriptor, which is a stylistic suffix rather than a distinct cuv\u00e9e designation. Since both are white wines from the same producer with the same base name, 'Blanc' is a clarifying descriptor rather than indicating a separate bottling.",
+  "parse_ok": true,
+  "tokens_in": 479,
+  "tokens_out": 114,
+  "elapsed": 2.8554635047912598,
+  "error": null
+}

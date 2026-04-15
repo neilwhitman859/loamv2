@@ -1,0 +1,28 @@
+{
+  "page_id": "page_039",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"wines_found\":[{\"name\":\"Pinot Noir\",\"vintage_year\":null,\"abv_pct\":null,\"blend\":null,\"oak\":{\"vessel\":null,\"months\":null,\"new_pct\":null,\"origin\":\"French\"},\"cases_produced\":null,\"chemistry\":null,\"winemaker\":\"Jason Becker\",\"farming\":null}]}",
+  "wines_found": [
+    {
+      "name": "Pinot Noir",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": null,
+        "months": null,
+        "new_pct": null,
+        "origin": "French"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jason Becker",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 13442,
+  "tokens_out": 1140,
+  "elapsed": 8.390934705734253,
+  "error": null
+}

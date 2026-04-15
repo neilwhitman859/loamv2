@@ -1,0 +1,13 @@
+{
+  "pair_id": "B017",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines have different colors (red vs. white) and different grape varieties (Braquet Gris vs. unspecified white). These differences indicate distinct bottlings that would not share a single entry in a wine encyclopedia.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines have different colors (red vs. white) and different grape varieties (Braquet Gris vs. unspecified white). These differences indicate distinct bottlings that would not share a single entry in a wine encyclopedia.",
+  "parse_ok": true,
+  "tokens_in": 407,
+  "tokens_out": 66,
+  "elapsed": 2.1050076484680176,
+  "error": null
+}

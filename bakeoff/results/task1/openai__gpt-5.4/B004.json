@@ -1,0 +1,13 @@
+{
+  "pair_id": "B004",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines because they differ in both color and grape composition. Wine A is a red Pinot Noir, while Wine B is a white wine made from Chardonnay Blanc and Pinot Noir, so they would be separate bottlings rather than the same encyclopedia entry.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines because they differ in both color and grape composition. Wine A is a red Pinot Noir, while Wine B is a white wine made from Chardonnay Blanc and Pinot Noir, so they would be separate bottlings rather than the same encyclopedia entry.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 73,
+  "elapsed": 2.3869011402130127,
+  "error": null
+}

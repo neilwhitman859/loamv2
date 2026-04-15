@@ -1,0 +1,13 @@
+{
+  "pair_id": "C039",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The difference in Rioja classification (Gran Reserva vs Reserva) indicates different wines. Despite the same producer, grape variety, and appellation, the classification tier is a determining factor for different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The difference in Rioja classification (Gran Reserva vs Reserva) indicates different wines. Despite the same producer, grape variety, and appellation, the classification tier is a determining factor for different wines.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 62,
+  "elapsed": 1.4422197341918945,
+  "error": null
+}

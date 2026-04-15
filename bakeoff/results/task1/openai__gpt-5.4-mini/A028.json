@@ -1,0 +1,13 @@
+{
+  "pair_id": "A028",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"These records differ only by the varietal suffix: \\\"Lady Rosa\\\" vs \\\"Lady Rosa Syrah.\\\" The producer is the same (Owen Roe), the color matches, and the grape listed for Wine A is Syrah, so the shorter name is very likely just an abbreviated form of the full cuv\u00e9e name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "These records differ only by the varietal suffix: \"Lady Rosa\" vs \"Lady Rosa Syrah.\" The producer is the same (Owen Roe), the color matches, and the grape listed for Wine A is Syrah, so the shorter name is very likely just an abbreviated form of the full cuv\u00e9e name.",
+  "parse_ok": true,
+  "tokens_in": 416,
+  "tokens_out": 86,
+  "elapsed": 1.6465022563934326,
+  "error": null
+}

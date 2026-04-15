@@ -1,0 +1,25 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.675,
+  "wrong_facts": [
+    "The hook states des Bosquets forgoes 'the appellation's mandatory Grenache component' — but the wine IS labeled as Gigondas, not declassified to Vin de France. The context data clearly shows it as 'Gigondas Les Routes' appellation.",
+    "The wine_summary claims 'Gigondas AOP rules mandate a minimum of 50% Grenache' and that the wine is 'technically declassified to Vin de France' — this is wrong. Gigondas rules require a minimum of 50% Grenache for most blends but allow exceptions, and this wine IS labeled as Gigondas per the context data.",
+    "Claims the vineyard is 'high-altitude, terraced' — the ground truth says it's clay with gravel and limestone colluviums near the Hautes Garrigues, with no mention of terracing or high altitude.",
+    "Claims the estate is 'farmed biodynamically' — not verifiable from context data or ground truth.",
+    "The price range '$70-$90' is fabricated — no pricing data was provided."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$70-$90 price range"
+  ],
+  "reasoning": "The output has a critical factual error in the hook and wine_summary: it claims the wine is declassified to Vin de France because Gigondas mandates 50% Grenache, but the wine is clearly labeled as Gigondas in the context data. This is a provably wrong claim in the hook. The output also fabricates a price range and makes unverifiable claims about biodynamic farming and terraced high-altitude vineyards. However, it correctly identifies Julien Bréchet as winemaker (matching ground truth), correctly notes 100% Syrah and 18 months oak, and the Serine clone connection is missed but not contradicted. The voice is strong — direct, opinionated, well-structured with good specificity on soils, comparables, and food pairings. The insider take is genuinely useful. But the core factual errors about declassification significantly undermine trust.",
+  "judge_tokens_in": 3943,
+  "judge_tokens_out": 524
+}

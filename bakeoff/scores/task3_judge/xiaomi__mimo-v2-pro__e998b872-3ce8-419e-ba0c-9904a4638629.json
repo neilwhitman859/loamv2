@@ -1,0 +1,19 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "xiaomi/mimo-v2-pro",
+  "correctness": 1.0,
+  "voice": 1.0,
+  "specificity": 1.0,
+  "usefulness": 1.0,
+  "composite": 1.0,
+  "wrong_facts": [
+    "PARSE_FAILED"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "Output failed to parse as valid JSON. Unusable for production.",
+  "judge_tokens_in": 0,
+  "judge_tokens_out": 0
+}

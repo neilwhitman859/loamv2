@@ -1,0 +1,13 @@
+{
+  "pair_id": "C044",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Von Schubert), vineyard (Herrenberg), grape (Riesling), and Pr\u00e4dikat level (Auslese Auktion), with only minor spelling and abbreviation differences. However, Wine A is explicitly red while Wine B is white, which indicates fundamentally different wines by color. The 'Nr17' specifier in Wine A further suggests a distinct auction lot bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Von Schubert), vineyard (Herrenberg), grape (Riesling), and Pr\u00e4dikat level (Auslese Auktion), with only minor spelling and abbreviation differences. However, Wine A is explicitly red while Wine B is white, which indicates fundamentally different wines by color. The 'Nr17' specifier in Wine A further suggests a distinct auction lot bottling.",
+  "parse_ok": true,
+  "tokens_in": 586,
+  "tokens_out": 682,
+  "elapsed": 9.252467155456543,
+  "error": null
+}

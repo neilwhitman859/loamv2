@@ -1,0 +1,13 @@
+{
+  "pair_id": "B037",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is red, while Wine B is white, indicating a different wine type. This is a clear differentiator, as different colors suggest different grape varieties or production methods.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is red, while Wine B is white, indicating a different wine type. This is a clear differentiator, as different colors suggest different grape varieties or production methods.",
+  "parse_ok": true,
+  "tokens_in": 412,
+  "tokens_out": 58,
+  "elapsed": 1.707275390625,
+  "error": null
+}

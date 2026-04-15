@@ -1,0 +1,13 @@
+{
+  "pair_id": "D009",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"The addition of 'Brut' to the name 'Alma Grande Cuvee' describes the sweetness level of the same sparkling wine produced by Bellavista. In the context of this specific producer's portfolio, these names refer to the same bottling, with 'Brut' being a descriptive suffix rather than a distinct tier.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The addition of 'Brut' to the name 'Alma Grande Cuvee' describes the sweetness level of the same sparkling wine produced by Bellavista. In the context of this specific producer's portfolio, these names refer to the same bottling, with 'Brut' being a descriptive suffix rather than a distinct tier.",
+  "parse_ok": true,
+  "tokens_in": 412,
+  "tokens_out": 91,
+  "elapsed": 1.974024772644043,
+  "error": null
+}

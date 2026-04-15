@@ -1,0 +1,13 @@
+{
+  "pair_id": "D008",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are produced by Vistalba with nearly identical names ('Corte C' vs 'Corte'), differing only in formatting as per the varietal abbreviation rule. They match exactly in grape varieties (Cot and Cabernet Sauvignon), color (red), and lack any differences in vineyard, classification, or style. No evidence suggests multiple wines from the same vineyard with different grapes by this producer.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are produced by Vistalba with nearly identical names ('Corte C' vs 'Corte'), differing only in formatting as per the varietal abbreviation rule. They match exactly in grape varieties (Cot and Cabernet Sauvignon), color (red), and lack any differences in vineyard, classification, or style. No evidence suggests multiple wines from the same vineyard with different grapes by this producer.",
+  "parse_ok": true,
+  "tokens_in": 593,
+  "tokens_out": 505,
+  "elapsed": 3.938654899597168,
+  "error": null
+}

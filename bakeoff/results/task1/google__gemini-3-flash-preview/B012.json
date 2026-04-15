@@ -1,0 +1,13 @@
+{
+  "pair_id": "B012",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine B is a 'Colheita' (a specific vintage-dated tawny style), whereas Wine A is a generic Madeira bottling. Furthermore, the records indicate completely different grape compositions and colors (white vs. red), which signifies distinct products within the producer's portfolio.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine B is a 'Colheita' (a specific vintage-dated tawny style), whereas Wine A is a generic Madeira bottling. Furthermore, the records indicate completely different grape compositions and colors (white vs. red), which signifies distinct products within the producer's portfolio.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 80,
+  "elapsed": 1.8831367492675781,
+  "error": null
+}

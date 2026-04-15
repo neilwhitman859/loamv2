@@ -1,0 +1,13 @@
+{
+  "pair_id": "C004",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.85, \"reasoning\": \"Both wines are from producer Raumland, both are white, and both share the name 'Trauben Secco Alkoholfrei' \u2014 Wine B simply has 'white' appended as a color descriptor rather than a distinct product name. The addition of 'white' appears to be a formatting clarification rather than indicating a different wine, as both records already share the same color classification. The different LWIN numbers may reflect a database cataloging difference rather than a genuinely distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.85,
+  "reasoning": "Both wines are from producer Raumland, both are white, and both share the name 'Trauben Secco Alkoholfrei' \u2014 Wine B simply has 'white' appended as a color descriptor rather than a distinct product name. The addition of 'white' appears to be a formatting clarification rather than indicating a different wine, as both records already share the same color classification. The different LWIN numbers may reflect a database cataloging difference rather than a genuinely distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 132,
+  "elapsed": 3.320666790008545,
+  "error": null
+}

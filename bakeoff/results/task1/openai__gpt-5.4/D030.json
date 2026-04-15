@@ -1,0 +1,13 @@
+{
+  "pair_id": "D030",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.94,\"reasoning\":\"Boekenhoutskloof's Porcupine Ridge line includes multiple varietal bottlings, so the bare name 'Porcupine Ridge' is ambiguous and not safely treated as the same wine as a named varietal. Wine A is explicitly Cabernet Sauvignon, while Wine B is 'Merlot Porcupine Ridge'; different grapes always mean different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.94,
+  "reasoning": "Boekenhoutskloof's Porcupine Ridge line includes multiple varietal bottlings, so the bare name 'Porcupine Ridge' is ambiguous and not safely treated as the same wine as a named varietal. Wine A is explicitly Cabernet Sauvignon, while Wine B is 'Merlot Porcupine Ridge'; different grapes always mean different wines.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 93,
+  "elapsed": 2.0953762531280518,
+  "error": null
+}

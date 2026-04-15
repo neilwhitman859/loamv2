@@ -1,0 +1,13 @@
+{
+  "pair_id": "C028",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.97,\"reasoning\":\"These are different classification tiers from the same producer and grape: Wine A is Gran Reserva Carmenere, while Wine B is Reserva Carmenere. Under the rules, Reserva vs Gran Reserva indicates distinct bottlings that would be sold and documented separately, even when producer, grape, and color match.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "These are different classification tiers from the same producer and grape: Wine A is Gran Reserva Carmenere, while Wine B is Reserva Carmenere. Under the rules, Reserva vs Gran Reserva indicates distinct bottlings that would be sold and documented separately, even when producer, grape, and color match.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 80,
+  "elapsed": 3.263669490814209,
+  "error": null
+}

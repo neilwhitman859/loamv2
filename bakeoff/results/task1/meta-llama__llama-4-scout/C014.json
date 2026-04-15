@@ -1,0 +1,13 @@
+{
+  "pair_id": "C014",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer, vineyard, and grape variety (Blanc de Blancs). The difference in lot numbers (No.15 vs No.17) is not sufficient to classify them as different wines, as they are likely to be part of the same production line.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer, vineyard, and grape variety (Blanc de Blancs). The difference in lot numbers (No.15 vs No.17) is not sufficient to classify them as different wines, as they are likely to be part of the same production line.",
+  "parse_ok": true,
+  "tokens_in": 454,
+  "tokens_out": 79,
+  "elapsed": 2.055447816848755,
+  "error": null
+}

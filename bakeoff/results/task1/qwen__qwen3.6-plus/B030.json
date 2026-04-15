@@ -1,0 +1,13 @@
+{
+  "pair_id": "B030",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines are made from completely different grape varieties (Cabernet Sauvignon vs. Sauvignon Blanc), resulting in distinct red and white wines. According to the classification rules, different grape varieties always indicate different wines, regardless of sharing the same producer and 'Porcupine Ridge' label. The differing LWINs further confirm they are separate commercial bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from completely different grape varieties (Cabernet Sauvignon vs. Sauvignon Blanc), resulting in distinct red and white wines. According to the classification rules, different grape varieties always indicate different wines, regardless of sharing the same producer and 'Porcupine Ridge' label. The differing LWINs further confirm they are separate commercial bottlings.",
+  "parse_ok": true,
+  "tokens_in": 476,
+  "tokens_out": 1026,
+  "elapsed": 19.95087718963623,
+  "error": null
+}

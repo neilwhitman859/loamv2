@@ -1,0 +1,13 @@
+{
+  "pair_id": "D007",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.85,\"reasoning\":\"Wine A is a Cabernet Sauvignon/Carm\u00e9n\u00e8re blend, while Wine B is 100% Merlot. Different grape varieties always indicate distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A is a Cabernet Sauvignon/Carm\u00e9n\u00e8re blend, while Wine B is 100% Merlot. Different grape varieties always indicate distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 136,
+  "elapsed": 4.379471063613892,
+  "error": null
+}

@@ -1,0 +1,28 @@
+{
+  "page_id": "page_020",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Cabernet Sauvignon\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": null, \"oak\": {\"vessel\": \"oak\", \"months\": null, \"new_pct\": null, \"origin\": null}, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": \"Jessica Tomei\", \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Cabernet Sauvignon",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "oak",
+        "months": null,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 36702,
+  "tokens_out": 98,
+  "elapsed": 2.649233341217041,
+  "error": null
+}

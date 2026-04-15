@@ -1,0 +1,13 @@
+{
+  "pair_id": "D021",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.96,\"reasoning\":\"Both records are Potzinger's white Traminer from Kaltenegg/Grosse Cuvee, but Wine A explicitly includes the Pr\u00e4dikat level Auslese while Wine B does not. Under the rules, different German/Austrian-style Pr\u00e4dikat levels are treated as distinct bottlings, and the separate LWINs support that these are cataloged as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.96,
+  "reasoning": "Both records are Potzinger's white Traminer from Kaltenegg/Grosse Cuvee, but Wine A explicitly includes the Pr\u00e4dikat level Auslese while Wine B does not. Under the rules, different German/Austrian-style Pr\u00e4dikat levels are treated as distinct bottlings, and the separate LWINs support that these are cataloged as different wines.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 97,
+  "elapsed": 2.295470714569092,
+  "error": null
+}

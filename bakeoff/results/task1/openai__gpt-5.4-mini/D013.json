@@ -1,0 +1,13 @@
+{
+  "pair_id": "D013",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are two different Premier Cru wines from different appellations/vineyards: Beaune Premier Cru vs Vosne-Roman\u00e9e Premier Cru. Even though the producer and color match, the vineyard/appellation designation is distinct, so they would be separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are two different Premier Cru wines from different appellations/vineyards: Beaune Premier Cru vs Vosne-Roman\u00e9e Premier Cru. Even though the producer and color match, the vineyard/appellation designation is distinct, so they would be separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 74,
+  "elapsed": 1.3822190761566162,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A011",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the varietal suffix 'Pinot Noir' appended to Wine B, which is an abbreviation of the grapes listed for Wine A. Both share the same producer (J. Lohr), vineyard name (Highlands Bench), and color, with no evidence of different grapes or distinct bottling tiers.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the varietal suffix 'Pinot Noir' appended to Wine B, which is an abbreviation of the grapes listed for Wine A. Both share the same producer (J. Lohr), vineyard name (Highlands Bench), and color, with no evidence of different grapes or distinct bottling tiers.",
+  "parse_ok": true,
+  "tokens_in": 452,
+  "tokens_out": 86,
+  "elapsed": 2.9410552978515625,
+  "error": null
+}

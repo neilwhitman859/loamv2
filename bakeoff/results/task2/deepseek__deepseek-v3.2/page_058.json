@@ -1,0 +1,23 @@
+{
+  "page_id": "page_058",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"wines_found\": [{\"name\": \"2023 Seven Oaks Cabernet Sauvignon\", \"vintage_year\": 2023, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "2023 Seven Oaks Cabernet Sauvignon",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 32977,
+  "tokens_out": 75,
+  "elapsed": 8.380835056304932,
+  "error": null
+}

@@ -1,0 +1,36 @@
+{
+  "page_id": "page_019",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Red Velvet\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": [{\"grape\": \"Merlot\", \"pct\": null}, {\"grape\": \"Zinfandel\", \"pct\": null}, {\"grape\": \"Petite Sirah\", \"pct\": null}], \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": \"Jessica Tomei\", \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Red Velvet",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Merlot",
+          "pct": null
+        },
+        {
+          "grape": "Zinfandel",
+          "pct": null
+        },
+        {
+          "grape": "Petite Sirah",
+          "pct": null
+        }
+      ],
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 42659,
+  "tokens_out": 1780,
+  "elapsed": 34.37384104728699,
+  "error": null
+}

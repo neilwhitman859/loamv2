@@ -1,0 +1,13 @@
+{
+  "pair_id": "C018",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, color, and grape variety. The appellation names 'Echezeaux Grand Cru' and 'Grands-Echezeaux Grand Cru' refer to the same vineyard, with 'Grands-Echezeaux' being a common alternative name or more detailed specification of 'Echezeaux'. The slight difference in naming does not indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, color, and grape variety. The appellation names 'Echezeaux Grand Cru' and 'Grands-Echezeaux Grand Cru' refer to the same vineyard, with 'Grands-Echezeaux' being a common alternative name or more detailed specification of 'Echezeaux'. The slight difference in naming does not indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 468,
+  "tokens_out": 102,
+  "elapsed": 2.9549126625061035,
+  "error": null
+}

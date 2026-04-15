@@ -1,0 +1,13 @@
+{
+  "pair_id": "C010",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A specifies 'Nr12', indicating a specific lot or cask number for the Auslese. Wine B does not have this designation, suggesting it is a different bottling, even if from the same vineyard and Pr\u00e4dikat level. Different lot numbers for German Pr\u00e4dikat wines signify distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A specifies 'Nr12', indicating a specific lot or cask number for the Auslese. Wine B does not have this designation, suggesting it is a different bottling, even if from the same vineyard and Pr\u00e4dikat level. Different lot numbers for German Pr\u00e4dikat wines signify distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 98,
+  "elapsed": 1.7999277114868164,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B034",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have the same producer and vineyard designation (Grand Clos), but one is a ros\u00e9 and the other is a red wine. A difference in color indicates distinct wine styles and production methods, meaning they are separate bottlings a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have the same producer and vineyard designation (Grand Clos), but one is a ros\u00e9 and the other is a red wine. A difference in color indicates distinct wine styles and production methods, meaning they are separate bottlings a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 76,
+  "elapsed": 2.0765929222106934,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D003",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Alpine and Cabernet Sauvignon are distinct bottlings from Chimney Rock, confirmed by different LWINs (1810866 vs 1599945). Alpine appears to be a specific vineyard or cuv\u00e9e designation, making it a separate wine from the producer's standard Cabernet Sauvignon bottling.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Alpine and Cabernet Sauvignon are distinct bottlings from Chimney Rock, confirmed by different LWINs (1810866 vs 1599945). Alpine appears to be a specific vineyard or cuv\u00e9e designation, making it a separate wine from the producer's standard Cabernet Sauvignon bottling.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 99,
+  "elapsed": 12.688525199890137,
+  "error": null
+}

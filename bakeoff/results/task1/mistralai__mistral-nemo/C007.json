@@ -1,0 +1,13 @@
+{
+  "pair_id": "C007",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer and appellation, but the Pr\u00e4dikat levels (Auslese and Trockenbeerenauslese) indicate different sweetness levels, making them distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer and appellation, but the Pr\u00e4dikat levels (Auslese and Trockenbeerenauslese) indicate different sweetness levels, making them distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 521,
+  "tokens_out": 65,
+  "elapsed": 5.143808841705322,
+  "error": null
+}

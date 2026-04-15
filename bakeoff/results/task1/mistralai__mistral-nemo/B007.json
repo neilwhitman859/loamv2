@@ -1,0 +1,13 @@
+{
+  "pair_id": "B007",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different grape compositions. Wine A is 100% Merlot Noir, while Wine B is a blend of Cot (81%), Cabernet Sauvignon (11%), and Dolcetto (8%). Different grapes indicate different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different grape compositions. Wine A is 100% Merlot Noir, while Wine B is a blend of Cot (81%), Cabernet Sauvignon (11%), and Dolcetto (8%). Different grapes indicate different wines.",
+  "parse_ok": true,
+  "tokens_in": 524,
+  "tokens_out": 83,
+  "elapsed": 4.628951072692871,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C037",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from the same producer (Stefan Gerhard), same vineyard (Hattenheimer Schutzenhaus), and same grape (Riesling), but they differ in German Pr\u00e4dikat level: Wine A is Kabinett and Wine B is Sp\u00e4tlese. Per the classification rules, different Pr\u00e4dikat levels always constitute different wines, as they represent distinct ripeness levels and sweetness/style profiles. These would be sold and encountered as separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from the same producer (Stefan Gerhard), same vineyard (Hattenheimer Schutzenhaus), and same grape (Riesling), but they differ in German Pr\u00e4dikat level: Wine A is Kabinett and Wine B is Sp\u00e4tlese. Per the classification rules, different Pr\u00e4dikat levels always constitute different wines, as they represent distinct ripeness levels and sweetness/style profiles. These would be sold and encountered as separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 518,
+  "tokens_out": 128,
+  "elapsed": 3.0047245025634766,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D032",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The inclusion of 'Reserve' in Wine B indicates a distinct classification tier or quality level from the standard bottling in Wine A. Even though both are Hallgarten Riesling Trocken from the same producer, 'Reserve' designations typically represent separate bottlings with different aging, selection criteria, or vineyard parcels, making them distinct products a consumer would encounter separately. The different LWINs confirm these are separate bottlings.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The inclusion of 'Reserve' in Wine B indicates a distinct classification tier or quality level from the standard bottling in Wine A. Even though both are Hallgarten Riesling Trocken from the same producer, 'Reserve' designations typically represent separate bottlings with different aging, selection criteria, or vineyard parcels, making them distinct products a consumer would encounter separately. The different LWINs confirm these are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 503,
+  "tokens_out": 123,
+  "elapsed": 7.987147092819214,
+  "error": null
+}

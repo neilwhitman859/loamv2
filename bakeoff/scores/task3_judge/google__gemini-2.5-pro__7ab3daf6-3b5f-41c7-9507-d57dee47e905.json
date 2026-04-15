@@ -1,0 +1,24 @@
+{
+  "wine_id": "7ab3daf6-3b5f-41c7-9507-d57dee47e905",
+  "wine_name": "Vasse Felix Filius Cabernet, Margaret River",
+  "tier": "A",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "The blend description includes Merlot as a component, but the ground truth blend is 93% Cabernet Sauvignon, 5.5% Malbec, 1.5% Petit Verdot — no Merlot. The context data does list MERLOT NOIR but with no percentage, and the ground truth confirms it's not in the blend.",
+    "Claims fermentation in stainless steel tanks — ground truth says open-top fermenters with wild yeast, not stainless steel specifically.",
+    "The terroir section names 'Forest Grove ironstone' soil type, which is not in the context data and is unverifiable — likely fabricated or at least unconfirmable.",
+    "Petit Verdot percentage in context is 1.0% but ground truth says 1.5%; Malbec/Cot in context is 4.0% but ground truth says 5.5%"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "Forest Grove ironstone soil type is a specific claim not in context data and potentially fabricated"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity, and genuinely useful comparisons and food pairings. However, it includes Merlot in the blend when ground truth shows no Merlot, and fabricates the fermentation vessel (stainless steel vs. open-top fermenters). The 'Forest Grove ironstone' soil claim is unverifiable. The hook correctly identifies the founding estate status and the Filius concept, and the naming origin ('son of') matches ground truth perfectly. The wine_summary correctly notes 1967 founding. These factual errors on blend and vinification prevent a higher correctness score, but the overall quality of writing and insight is high.",
+  "judge_tokens_in": 3935,
+  "judge_tokens_out": 439
+}

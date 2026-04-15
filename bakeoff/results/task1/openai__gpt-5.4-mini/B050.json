@@ -1,0 +1,13 @@
+{
+  "pair_id": "B050",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct bottlings from Happs: Wine A is Cremant (white) while Wine B is Cremant Rose (ros\u00e9). A color/style difference like white vs ros\u00e9 means they are different wines, not just alternate name formatting.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct bottlings from Happs: Wine A is Cremant (white) while Wine B is Cremant Rose (ros\u00e9). A color/style difference like white vs ros\u00e9 means they are different wines, not just alternate name formatting.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 71,
+  "elapsed": 2.1712098121643066,
+  "error": null
+}

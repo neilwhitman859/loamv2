@@ -1,0 +1,13 @@
+{
+  "pair_id": "A011",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (J. Lohr) and share the same vineyard designation (Highlands Bench). The only difference is the name formatting, where 'Highlands Bench Pinot Noir' is a more specific version of the abbreviated 'Highlands Bench', which is a common naming convention for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (J. Lohr) and share the same vineyard designation (Highlands Bench). The only difference is the name formatting, where 'Highlands Bench Pinot Noir' is a more specific version of the abbreviated 'Highlands Bench', which is a common naming convention for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 496,
+  "tokens_out": 90,
+  "elapsed": 2.464621067047119,
+  "error": null
+}

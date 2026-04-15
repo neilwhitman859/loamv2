@@ -1,0 +1,13 @@
+{
+  "pair_id": "A011",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.90, \"reasoning\": \"Wine A lists both Pinot Noir and Chardonnay while Wine B is a Pinot Noir bottling; different grape varieties means distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A lists both Pinot Noir and Chardonnay while Wine B is a Pinot Noir bottling; different grape varieties means distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 194,
+  "elapsed": 3.580735921859741,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B010",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a white sparkling wine, while Wine B is a ros\u00e9 sparkling wine; different colors from the same producer indicate distinct bottlings. The name similarity (Alma Grande vs Gran Cuvee Alma) suggests they are different cuv\u00e9es in Bellavista's lineup.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a white sparkling wine, while Wine B is a ros\u00e9 sparkling wine; different colors from the same producer indicate distinct bottlings. The name similarity (Alma Grande vs Gran Cuvee Alma) suggests they are different cuv\u00e9es in Bellavista's lineup.",
+  "parse_ok": true,
+  "tokens_in": 478,
+  "tokens_out": 83,
+  "elapsed": 2.638827323913574,
+  "error": null
+}

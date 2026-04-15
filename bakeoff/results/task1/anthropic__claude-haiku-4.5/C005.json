@@ -1,0 +1,13 @@
+{
+  "pair_id": "C005",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine A is explicitly labeled 'Brut Rose NV' (non-vintage), while Wine B is labeled 'Brut Rose' without vintage designation. More critically, they have different LWINs (1422081 vs 1422065), which are unique identifiers assigned to distinct bottlings. Different LWINs indicate these are separate products in the wine database, likely representing different releases or bottlings from Jean Noel Haton.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A is explicitly labeled 'Brut Rose NV' (non-vintage), while Wine B is labeled 'Brut Rose' without vintage designation. More critically, they have different LWINs (1422081 vs 1422065), which are unique identifiers assigned to distinct bottlings. Different LWINs indicate these are separate products in the wine database, likely representing different releases or bottlings from Jean Noel Haton.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 126,
+  "elapsed": 2.59267258644104,
+  "error": null
+}

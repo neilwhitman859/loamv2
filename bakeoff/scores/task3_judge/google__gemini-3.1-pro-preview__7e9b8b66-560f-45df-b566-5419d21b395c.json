@@ -1,0 +1,25 @@
+{
+  "wine_id": "7e9b8b66-560f-45df-b566-5419d21b395c",
+  "wine_name": "d'Arenberg The High Trellis Cabernet Sauvignon, McLaren Vale",
+  "tier": "A",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "Claims wine matures in 'older French and American oak barriques' — ground truth says 'new and old French and American oak barriques and large casks', so omitting new oak and large casks is misleading",
+    "Claims 'dry-grown (unirrigated) vines' — not confirmed in context data or ground truth; while some d'Arenberg vineyards may be dry-farmed, this is not verified for High Trellis specifically",
+    "States price is 'roughly $20' — no price data was provided in context, though this is plausibly close to market price",
+    "Terra rossa over limestone soil claim for these specific vineyards is unverified — McLaren Vale does have varied soils but the specific soil type for High Trellis vineyards is not confirmed in the data"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$20 price point not in context data",
+    "30-minute decant recommendation is invented"
+  ],
+  "reasoning": "The hook is factually strong — the naming origin about vines trained above knee height in the late 19th century matches ground truth well (ground truth says 1890s). The output correctly identifies foot-treading and basket pressing from ground truth. However, it omits new oak and large casks from the cooperage description, making it misleading. The dry-farming claim and specific terra rossa soil attribution are unverified. The $20 price is fabricated but plausibly close to reality. Voice is excellent — direct, opinionated, no banned words, specific food pairings with reasoning, honest insider take. Specificity is very strong with named competitors, soil types, and climate mechanisms. The fabricated price doesn't trigger the hard cap since it's approximate and plausible rather than a precise technical number like pH or blend %.",
+  "judge_tokens_in": 3650,
+  "judge_tokens_out": 446
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A041",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines have the same producer, Stephen Ross, and the same vineyard name 'Bien Nacido'. The grape variety for Wine A is PINOT NOIR, and although Wine B's grape variety is not explicitly stated, the name 'Bien Nacido Pinot Noir' suggests it is also PINOT NOIR. The difference in name is likely due to varietal suffix difference alone.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines have the same producer, Stephen Ross, and the same vineyard name 'Bien Nacido'. The grape variety for Wine A is PINOT NOIR, and although Wine B's grape variety is not explicitly stated, the name 'Bien Nacido Pinot Noir' suggests it is also PINOT NOIR. The difference in name is likely due to varietal suffix difference alone.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 99,
+  "elapsed": 1.4816627502441406,
+  "error": null
+}

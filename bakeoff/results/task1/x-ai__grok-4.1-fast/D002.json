@@ -1,0 +1,13 @@
+{
+  "pair_id": "D002",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The records share the same producer (Van Volxem), vineyard (Altenberg), grape (Riesling), and 'Alte Reben' (old vines) details, with Wine A including the 'GG' (Grosses Gew\u00e4chs) suffix that Wine B omits, consistent with name formatting or abbreviation rules where such suffixes alone indicate the same wine. No indication of multiple grape varieties from this vineyard by the producer, and both are white Rieslings. Different LWINs likely represent different vintages of the identical cuv\u00e9e.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The records share the same producer (Van Volxem), vineyard (Altenberg), grape (Riesling), and 'Alte Reben' (old vines) details, with Wine A including the 'GG' (Grosses Gew\u00e4chs) suffix that Wine B omits, consistent with name formatting or abbreviation rules where such suffixes alone indicate the same wine. No indication of multiple grape varieties from this vineyard by the producer, and both are white Rieslings. Different LWINs likely represent different vintages of the identical cuv\u00e9e.",
+  "parse_ok": true,
+  "tokens_in": 577,
+  "tokens_out": 2399,
+  "elapsed": 18.101935625076294,
+  "error": null
+}

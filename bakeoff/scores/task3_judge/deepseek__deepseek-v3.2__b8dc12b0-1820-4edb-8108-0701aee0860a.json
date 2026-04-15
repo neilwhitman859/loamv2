@@ -1,0 +1,27 @@
+{
+  "wine_id": "b8dc12b0-1820-4edb-8108-0701aee0860a",
+  "wine_name": "Tolosa 1772 Grenache, Edna Valley",
+  "tier": "C",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 3.5,
+  "usefulness": 3.5,
+  "composite": 3.1,
+  "wrong_facts": [
+    "Vinification claims native yeast fermentation — not in context data and not verified in ground truth",
+    "Claims aging in neutral French oak and concrete — ground truth says 15 months in French oak puncheons, no mention of concrete",
+    "Mentions 'Positas and Diablo clay loam soils' in terroir section — these specific soil series are not in the context data and not verified; while they exist in SLO County, attributing them specifically to Tolosa's vineyard sites is unverifiable",
+    "Price range of $28-$35 is fabricated — no pricing data was provided",
+    "Domaine Tempier Bandol Rosé as a comparable to a still red Grenache is a stretch and odd comparison"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$28-$35 price range fabricated",
+    "Native yeast fermentation fabricated",
+    "Aging in neutral French oak and concrete fabricated — actual is 15 months in French oak puncheons"
+  ],
+  "reasoning": "The output fabricates several specific winemaking details that contradict ground truth: it claims concrete and neutral French oak aging when the actual cooperage is French oak puncheons for 15 months, and it invents native yeast fermentation. The price range is entirely fabricated. The hook is reasonable and not provably wrong, but the vinification section is largely invented. The voice is strong — direct, opinionated, well-structured with good food pairings and a useful insider take. The output misses the naming origin of '1772' (the founding year of Mission San Luis Obispo de Tolosa) and the specific vineyard sections (Poletti and Salaal), which would have added real value. Specificity is moderate — some real geographic details but mixed with unverifiable soil claims.",
+  "judge_tokens_in": 3430,
+  "judge_tokens_out": 445
+}

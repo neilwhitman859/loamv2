@@ -1,0 +1,13 @@
+{
+  "pair_id": "B007",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is 100% Merlot Noir while Wine B is a blend of C\u00f4t (81%), Cabernet Sauvignon (11%), and Dolcetto (8%). Different grape compositions represent distinct bottlings that consumers would encounter separately. The different LWIN numbers confirm these are separate products from Vistalba.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is 100% Merlot Noir while Wine B is a blend of C\u00f4t (81%), Cabernet Sauvignon (11%), and Dolcetto (8%). Different grape compositions represent distinct bottlings that consumers would encounter separately. The different LWIN numbers confirm these are separate products from Vistalba.",
+  "parse_ok": true,
+  "tokens_in": 535,
+  "tokens_out": 101,
+  "elapsed": 2.535048723220825,
+  "error": null
+}

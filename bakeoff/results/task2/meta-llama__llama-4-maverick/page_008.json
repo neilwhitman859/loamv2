@@ -1,0 +1,28 @@
+{
+  "page_id": "page_008",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Chardonnay\", \"vintage_year\": 2023, \"abv_pct\": null, \"blend\": null, \"oak\": {\"vessel\": \"barrel\", \"months\": 8, \"new_pct\": 50, \"origin\": \"American\"}, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Chardonnay",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "barrel",
+        "months": 8,
+        "new_pct": 50,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 20739,
+  "tokens_out": 88,
+  "elapsed": 5.009671449661255,
+  "error": null
+}

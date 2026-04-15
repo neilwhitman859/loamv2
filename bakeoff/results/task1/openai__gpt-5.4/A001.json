@@ -1,0 +1,13 @@
+{
+  "pair_id": "A001",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.95,\"reasoning\":\"Both records are from Santa Carolina and share the same core cuv\u00e9e name, 'El Pacto Agreement No 2.' The addition of 'Carmenere' in Wine B is most likely a varietal-style suffix, while Wine A already shows the wine is Carmenere-led with Cabernet Franc in the blend. There is no evidence here of a separate bottling with the same 'Agreement No 2' name but a different grape or designation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records are from Santa Carolina and share the same core cuv\u00e9e name, 'El Pacto Agreement No 2.' The addition of 'Carmenere' in Wine B is most likely a varietal-style suffix, while Wine A already shows the wine is Carmenere-led with Cabernet Franc in the blend. There is no evidence here of a separate bottling with the same 'Agreement No 2' name but a different grape or designation.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 111,
+  "elapsed": 2.8144612312316895,
+  "error": null
+}

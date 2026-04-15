@@ -1,0 +1,13 @@
+{
+  "pair_id": "D019",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, grape variety, and color. 'Maurus' appears to be a specific vineyard or cuv\u00e9e designation for the 'Pinot Nero' wine, which is a common practice where the shorter name refers to the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, grape variety, and color. 'Maurus' appears to be a specific vineyard or cuv\u00e9e designation for the 'Pinot Nero' wine, which is a common practice where the shorter name refers to the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 72,
+  "elapsed": 1.878417730331421,
+  "error": null
+}

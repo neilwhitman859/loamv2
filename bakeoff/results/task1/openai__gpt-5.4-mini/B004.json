@@ -1,0 +1,13 @@
+{
+  "pair_id": "B004",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Although both records use the same cuv\u00e9e name, they are different wines because the colors and grape compositions do not match. Wine A is a red Pinot Noir, while Wine B is a white blend of Chardonnay Blanc and Pinot Noir, which makes them distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Although both records use the same cuv\u00e9e name, they are different wines because the colors and grape compositions do not match. Wine A is a red Pinot Noir, while Wine B is a white blend of Chardonnay Blanc and Pinot Noir, which makes them distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 76,
+  "elapsed": 2.4362614154815674,
+  "error": null
+}

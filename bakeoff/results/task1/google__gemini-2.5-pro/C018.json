@@ -1,0 +1,13 @@
+{
+  "pair_id": "C018",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although the producer and grape variety are the same, the wines originate from two distinct and legally separate Grand Cru vineyards. In Burgundy, Echezeaux and Grands-Echezeaux are neighboring but different appellations, resulting in two separate and distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the producer and grape variety are the same, the wines originate from two distinct and legally separate Grand Cru vineyards. In Burgundy, Echezeaux and Grands-Echezeaux are neighboring but different appellations, resulting in two separate and distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 460,
+  "tokens_out": 1091,
+  "elapsed": 11.544220447540283,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B004",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors (red vs white) and different primary grapes (PINOT NOIR vs CHARDONNAY BLANC, PINOT NOIR). The presence of CHARDONNAY BLANC in Wine B but not Wine A indicates a different wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors (red vs white) and different primary grapes (PINOT NOIR vs CHARDONNAY BLANC, PINOT NOIR). The presence of CHARDONNAY BLANC in Wine B but not Wine A indicates a different wine.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 79,
+  "elapsed": 2.999565839767456,
+  "error": null
+}

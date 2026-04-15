@@ -1,0 +1,13 @@
+{
+  "pair_id": "B040",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The two wines use distinct grape varieties (Albari\u00f1o vs Barbera), which always indicates different wines, regardless of shared producer and region.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The two wines use distinct grape varieties (Albari\u00f1o vs Barbera), which always indicates different wines, regardless of shared producer and region.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 106,
+  "elapsed": 3.339188814163208,
+  "error": null
+}

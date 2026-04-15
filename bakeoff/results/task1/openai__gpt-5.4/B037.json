@@ -1,0 +1,13 @@
+{
+  "pair_id": "B037",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Both records are from the same producer and share the wine name Camino, but they differ in color: one is red and the other is white. Different colors represent distinct bottlings that consumers would encounter separately, so these are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Both records are from the same producer and share the wine name Camino, but they differ in color: one is red and the other is white. Different colors represent distinct bottlings that consumers would encounter separately, so these are different wines.",
+  "parse_ok": true,
+  "tokens_in": 398,
+  "tokens_out": 69,
+  "elapsed": 1.998197317123413,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C041",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Both wines are from Caballo Dorado in Valle de Colchagua and share the same grape (Cabernet Sauvignon), but they differ in classification tier: Wine A is a Reserva and Wine B is a Gran Reserva. Per the key rules, different classification tiers (Reserva vs Gran Reserva) always constitute different wines. They also have distinct LWIN codes confirming they are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Both wines are from Caballo Dorado in Valle de Colchagua and share the same grape (Cabernet Sauvignon), but they differ in classification tier: Wine A is a Reserva and Wine B is a Gran Reserva. Per the key rules, different classification tiers (Reserva vs Gran Reserva) always constitute different wines. They also have distinct LWIN codes confirming they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 527,
+  "tokens_out": 119,
+  "elapsed": 3.7049827575683594,
+  "error": null
+}

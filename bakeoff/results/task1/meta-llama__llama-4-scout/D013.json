@@ -1,0 +1,13 @@
+{
+  "pair_id": "D013",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines come from different vineyards, Beaune Premier Cru and Vosne-Roman\u00e9e Premier Cru. This difference in vineyard designation indicates they are distinct wines. The same producer and red color do not override this difference.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines come from different vineyards, Beaune Premier Cru and Vosne-Roman\u00e9e Premier Cru. This difference in vineyard designation indicates they are distinct wines. The same producer and red color do not override this difference.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 68,
+  "elapsed": 2.2876577377319336,
+  "error": null
+}

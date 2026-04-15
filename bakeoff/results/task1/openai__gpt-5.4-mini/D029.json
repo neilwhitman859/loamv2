@@ -1,0 +1,13 @@
+{
+  "pair_id": "D029",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.93,\"reasoning\":\"Although both records are Boekenhoutskloof Cabernet Sauvignon and share the same grape and color, the geographic designation differs: Franschhoek versus Coastal Region. In South African wine labeling, a different origin/appellation typically indicates a different bottling rather than the same encyclopedia entry.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.93,
+  "reasoning": "Although both records are Boekenhoutskloof Cabernet Sauvignon and share the same grape and color, the geographic designation differs: Franschhoek versus Coastal Region. In South African wine labeling, a different origin/appellation typically indicates a different bottling rather than the same encyclopedia entry.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 78,
+  "elapsed": 1.9709968566894531,
+  "error": null
+}

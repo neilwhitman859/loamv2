@@ -1,0 +1,13 @@
+{
+  "pair_id": "C038",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.96,\"reasoning\":\"Although both are red Reserva wines from Antonio Saramago, Wine B includes the specific cuv\u00e9e name \\\"Risco\\\" while Wine A is only the generic \\\"Reserva Tinto.\\\" That indicates distinct bottlings rather than a simple formatting difference, and the different LWINs support that they are separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.96,
+  "reasoning": "Although both are red Reserva wines from Antonio Saramago, Wine B includes the specific cuv\u00e9e name \"Risco\" while Wine A is only the generic \"Reserva Tinto.\" That indicates distinct bottlings rather than a simple formatting difference, and the different LWINs support that they are separate wines.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 90,
+  "elapsed": 2.603165864944458,
+  "error": null
+}

@@ -1,0 +1,46 @@
+{
+  "page_id": "page_038",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Small HILL Red 2023\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": 13,\n      \"blend\": [\n        {\n          \"grape\": \"Merlot\",\n          \"pct\": 50\n        },\n        {\n          \"grape\": \"Pinot Noir\",\n          \"pct\": 25\n        },\n        {\n          \"grape\": \"St. Laurent\",\n          \"pct\": 25\n        }\n      ],\n      \"oak\": {\n        \"vessel\": \"Barrique\",\n        \"months\": null,\n        \"new_pct\": 10,\n        \"origin\": null\n      },\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": null,\n        \"ta_g_l\": 4.5,\n        \"rs_g_l\": 5.9,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": null,\n      \"farming\": \"organic\"\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Small HILL Red 2023",
+      "vintage_year": 2023,
+      "abv_pct": 13,
+      "blend": [
+        {
+          "grape": "Merlot",
+          "pct": 50
+        },
+        {
+          "grape": "Pinot Noir",
+          "pct": 25
+        },
+        {
+          "grape": "St. Laurent",
+          "pct": 25
+        }
+      ],
+      "oak": {
+        "vessel": "Barrique",
+        "months": null,
+        "new_pct": 10,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": 4.5,
+        "rs_g_l": 5.9,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 36192,
+  "tokens_out": 275,
+  "elapsed": 3.2775659561157227,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D044",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.75, \"reasoning\": \"Both wines are from Donnachadh and are white Chardonnay, but 'Estate Chardonnay' vs plain 'Chardonnay' may represent different tiers or bottlings from this producer. The different LWIN codes (2140265 vs 3076273) strongly suggest these are catalogued as distinct wines. While the varietal suffix rule might suggest SAME, the 'Estate' designation typically indicates a specific, distinct bottling rather than just an abbreviation of the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.75,
+  "reasoning": "Both wines are from Donnachadh and are white Chardonnay, but 'Estate Chardonnay' vs plain 'Chardonnay' may represent different tiers or bottlings from this producer. The different LWIN codes (2140265 vs 3076273) strongly suggest these are catalogued as distinct wines. While the varietal suffix rule might suggest SAME, the 'Estate' designation typically indicates a specific, distinct bottling rather than just an abbreviation of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 136,
+  "elapsed": 4.810373544692993,
+  "error": null
+}

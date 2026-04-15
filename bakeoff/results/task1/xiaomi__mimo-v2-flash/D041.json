@@ -1,0 +1,13 @@
+{
+  "pair_id": "D041",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Pommery) and share the core name 'Apanage Cuvee 1874', with 'Brut' being a standard stylistic descriptor for a sparkling wine's dryness level rather than a distinct wine. The 'Brut' designation is a common suffix for Champagne styles and does not indicate a different bottling, vineyard, or grape composition.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Pommery) and share the core name 'Apanage Cuvee 1874', with 'Brut' being a standard stylistic descriptor for a sparkling wine's dryness level rather than a distinct wine. The 'Brut' designation is a common suffix for Champagne styles and does not indicate a different bottling, vineyard, or grape composition.",
+  "parse_ok": true,
+  "tokens_in": 490,
+  "tokens_out": 107,
+  "elapsed": 2.1786000728607178,
+  "error": null
+}

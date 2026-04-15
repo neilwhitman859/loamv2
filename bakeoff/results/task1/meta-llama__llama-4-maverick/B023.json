@@ -1,0 +1,13 @@
+{
+  "pair_id": "B023",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, with Wine A being red and Wine B being white, indicating they are different wines. The producer is the same, but the color difference is a clear distinction. The name difference between 'Cali' and 'Cali Gold' also suggests a different bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, with Wine A being red and Wine B being white, indicating they are different wines. The producer is the same, but the color difference is a clear distinction. The name difference between 'Cali' and 'Cali Gold' also suggests a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 477,
+  "tokens_out": 83,
+  "elapsed": 1.4938745498657227,
+  "error": null
+}

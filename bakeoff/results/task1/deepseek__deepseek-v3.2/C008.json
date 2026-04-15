@@ -1,0 +1,13 @@
+{
+  "pair_id": "C008",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.95, \"reasoning\": \"The wines have different colors: Wine A is a white (Brut) and Wine B is a ros\u00e9 (Rose Brut). According to the rules, ros\u00e9 vs. red/white from the same vineyard is a different wine, as they represent distinct bottlings with different styles.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors: Wine A is a white (Brut) and Wine B is a ros\u00e9 (Rose Brut). According to the rules, ros\u00e9 vs. red/white from the same vineyard is a different wine, as they represent distinct bottlings with different styles.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 81,
+  "elapsed": 2.3275415897369385,
+  "error": null
+}

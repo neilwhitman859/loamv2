@@ -1,0 +1,13 @@
+{
+  "pair_id": "D021",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is labeled as 'Auslese', a specific German Pr\u00e4dikat level, while Wine B lacks this designation, indicating a difference in quality classification and thus representing different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is labeled as 'Auslese', a specific German Pr\u00e4dikat level, while Wine B lacks this designation, indicating a difference in quality classification and thus representing different wines.",
+  "parse_ok": true,
+  "tokens_in": 507,
+  "tokens_out": 61,
+  "elapsed": 1.6966726779937744,
+  "error": null
+}

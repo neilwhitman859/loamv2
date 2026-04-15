@@ -1,0 +1,28 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.575,
+  "wrong_facts": [
+    "Hook says 'north-facing slope' — ground truth does not confirm this and it's a specific claim about aspect that could be wrong (Priorat vineyards are often south-facing)",
+    "Hook says '80-year-old' vines — ground truth says 90-year-old",
+    "Vinification says wine ages in 'large Stockinger foudres' for recent vintages — ground truth says recent vintages ferment and age in cement tanks (8 months), not Stockinger fuder. Stockinger fuder was used for older vintages with 18-24 months aging.",
+    "Value assessment claims price '$400-$550' — no price data was provided and this is a fabricated range",
+    "Vinification describes intracellular fermentation happening inside uncrushed berries as part of whole-cluster — ground truth says whole cluster native fermentation with two weeks on skins, not carbonic/semi-carbonic maceration"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$400-$550 price range",
+    "80-year-old vines (should be 90)",
+    "10-25 year drinking window specifics",
+    "3-5 year slumber recommendation"
+  ],
+  "reasoning": "The output demonstrates strong wine knowledge and voice — it correctly identifies Dominik Huber, llicorella slate, whole-cluster fermentation, and the philosophy of minimal intervention. However, it makes several factual errors: vine age is wrong (80 vs 90 years), the cooperage description conflates older and newer vintage practices (claiming Stockinger foudres for current vintages when ground truth says cement tanks), and the north-facing aspect claim is unverifiable and potentially wrong. The fabricated price range of $400-$550 is a specific number not in context data. The hook's '80-year-old' claim is wrong per ground truth. These errors collectively undermine trust despite otherwise excellent specificity and voice.",
+  "judge_tokens_in": 3903,
+  "judge_tokens_out": 474
+}

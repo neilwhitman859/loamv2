@@ -1,0 +1,13 @@
+{
+  "pair_id": "A033",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The name 'Private Bin' is an abbreviation of 'Private Bin Vermentino'. The explicit grape information for Wine A is Vermentino, which directly matches the varietal suffix in Wine B's name. This confirms they are the same wine, with one name being a shortened version of the other.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The name 'Private Bin' is an abbreviation of 'Private Bin Vermentino'. The explicit grape information for Wine A is Vermentino, which directly matches the varietal suffix in Wine B's name. This confirms they are the same wine, with one name being a shortened version of the other.",
+  "parse_ok": true,
+  "tokens_in": 415,
+  "tokens_out": 1091,
+  "elapsed": 11.459104776382446,
+  "error": null
+}

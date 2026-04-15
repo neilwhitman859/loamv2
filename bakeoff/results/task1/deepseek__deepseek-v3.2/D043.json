@@ -1,0 +1,13 @@
+{
+  "pair_id": "D043",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines have different LWINs and are explicitly designated as 'Note #1' and 'Note #2', which indicates distinct lot or cask numbers. According to the rules, different lot/cask numbers at the same Pr\u00e4dikat level (or analogous designation) represent different bottlings and thus different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines have different LWINs and are explicitly designated as 'Note #1' and 'Note #2', which indicates distinct lot or cask numbers. According to the rules, different lot/cask numbers at the same Pr\u00e4dikat level (or analogous designation) represent different bottlings and thus different wines.",
+  "parse_ok": true,
+  "tokens_in": 456,
+  "tokens_out": 87,
+  "elapsed": 3.830491542816162,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D021",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"The presence of 'Auslese' in Wine A indicates a specific Pr\u00e4dikat level, which denotes a distinct sweetness and quality classification in Austrian/German wine labeling. Wine B lacks this designation, implying it is a different bottling tier or a standard version of the cuv\u00e9e. Therefore, these represent two distinct products that a consumer would encounter separately.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The presence of 'Auslese' in Wine A indicates a specific Pr\u00e4dikat level, which denotes a distinct sweetness and quality classification in Austrian/German wine labeling. Wine B lacks this designation, implying it is a different bottling tier or a standard version of the cuv\u00e9e. Therefore, these represent two distinct products that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 99,
+  "elapsed": 1.7610366344451904,
+  "error": null
+}

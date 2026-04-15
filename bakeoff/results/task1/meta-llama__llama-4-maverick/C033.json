@@ -1,0 +1,13 @@
+{
+  "pair_id": "C033",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Bonnaire, and have the same name 'Blanc de Blancs Vintage/Brut Vintage', indicating they are likely the same cuv\u00e9e with 'Brut' being a style descriptor. The color is the same (white), and the difference in naming is minor, suggesting a single wine with varying descriptions.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Bonnaire, and have the same name 'Blanc de Blancs Vintage/Brut Vintage', indicating they are likely the same cuv\u00e9e with 'Brut' being a style descriptor. The color is the same (white), and the difference in naming is minor, suggesting a single wine with varying descriptions.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 93,
+  "elapsed": 1.470435380935669,
+  "error": null
+}

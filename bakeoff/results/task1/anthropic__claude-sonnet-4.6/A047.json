@@ -1,0 +1,13 @@
+{
+  "pair_id": "A047",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from Grgich Hills Estate and share the name 'Miljenko's Selection,' with Wine B simply appending the varietal 'Cabernet Franc' as a suffix. Wine A is explicitly identified as Cabernet Franc, confirming the grape variety matches. This is a classic case of the shorter name being an abbreviation of the full name, indicating the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from Grgich Hills Estate and share the name 'Miljenko's Selection,' with Wine B simply appending the varietal 'Cabernet Franc' as a suffix. Wine A is explicitly identified as Cabernet Franc, confirming the grape variety matches. This is a classic case of the shorter name being an abbreviation of the full name, indicating the same wine.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 108,
+  "elapsed": 4.871370077133179,
+  "error": null
+}

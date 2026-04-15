@@ -1,0 +1,30 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Hook says Plantagenet was established in 1974 — ground truth says 1968 (established) with first commercial winery in 1975",
+    "Vinification section speculates about partial whole-bunch inclusion, cold soaking, and older French oak — ground truth says 10 months in French oak barrels but doesn't specify old oak; the rest is fabricated process detail",
+    "Value assessment fabricates retail pricing of AUD $15-18",
+    "Comparable wines section names specific wines and price brackets without sourced data"
+  ],
+  "banned_words_found": [
+    "remarkable"
+  ],
+  "fabricated_numbers": [
+    "AUD $15-18 retail price",
+    "400m elevation for Porongurup Ranges",
+    "19-20°C mean January temperatures",
+    "34-35°S latitude",
+    "12-month gouda"
+  ],
+  "reasoning": "The hook contains a wrong founding date (1974 vs. 1968/1975), which is a factual error in the most prominent position. The output fabricates multiple specific numbers not in the context data: retail pricing, elevation, temperatures, and latitude. While some of these (latitude ~34.5°S, Porongurup elevation ~400m) are roughly correct from general wine knowledge, the retail price is unverifiable fabrication. The vinification section is largely speculative. The word 'unremarkable' contains 'remarkable' as a substring — however, 'unremarkable' is a different word used critically, not as praise, so I'll note it but not apply the banned word penalty harshly. The voice is excellent: direct, opinionated, comfortable being negative, with strong specificity throughout. The insider take is genuinely useful and actionable. Despite strong writing quality, the factual errors and fabricated numbers significantly hurt correctness.",
+  "judge_tokens_in": 3736,
+  "judge_tokens_out": 436
+}

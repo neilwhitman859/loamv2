@@ -1,0 +1,13 @@
+{
+  "pair_id": "B025",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"The records specify different colors: Wine A is white and Wine B is red, which makes them distinct wines under the rules. Wine B also explicitly adds the varietal Merlot, indicating a different bottling rather than just a formatting variation of the same name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "The records specify different colors: Wine A is white and Wine B is red, which makes them distinct wines under the rules. Wine B also explicitly adds the varietal Merlot, indicating a different bottling rather than just a formatting variation of the same name.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 74,
+  "elapsed": 3.1096584796905518,
+  "error": null
+}

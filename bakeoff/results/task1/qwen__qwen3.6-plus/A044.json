@@ -1,0 +1,13 @@
+{
+  "pair_id": "A044",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The only difference is the inclusion of the grape variety 'Semillon' in Wine B's name, which is a standard naming variation for the same bottling. Both records share the same producer, color, and grape variety, confirming they represent the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The only difference is the inclusion of the grape variety 'Semillon' in Wine B's name, which is a standard naming variation for the same bottling. Both records share the same producer, color, and grape variety, confirming they represent the same wine.",
+  "parse_ok": true,
+  "tokens_in": 455,
+  "tokens_out": 974,
+  "elapsed": 19.364339113235474,
+  "error": null
+}

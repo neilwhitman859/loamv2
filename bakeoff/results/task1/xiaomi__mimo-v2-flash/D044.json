@@ -1,0 +1,13 @@
+{
+  "pair_id": "D044",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Donnachadh) and are white Chardonnay. The name 'Estate Chardonnay' is simply a more specific designation of the same wine, likely indicating the estate's standard bottling, which is a common naming convention and does not represent a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Donnachadh) and are white Chardonnay. The name 'Estate Chardonnay' is simply a more specific designation of the same wine, likely indicating the estate's standard bottling, which is a common naming convention and does not represent a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 89,
+  "elapsed": 1.5697548389434814,
+  "error": null
+}

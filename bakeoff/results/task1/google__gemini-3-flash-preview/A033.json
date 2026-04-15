@@ -1,0 +1,13 @@
+{
+  "pair_id": "A033",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A is an abbreviated name for the specific bottling 'Private Bin Vermentino'. Since both records share the same producer, color, and grape variety, the difference is merely the omission of the varietal suffix in the first record.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A is an abbreviated name for the specific bottling 'Private Bin Vermentino'. Since both records share the same producer, color, and grape variety, the difference is merely the omission of the varietal suffix in the first record.",
+  "parse_ok": true,
+  "tokens_in": 415,
+  "tokens_out": 69,
+  "elapsed": 1.5168757438659668,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C042",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, Virgen del Aguila, and the same appellation, Cari\u00f1ena. The difference lies in the Rioja classification, with Wine A being Gran Reserva and Wine B being Reserva. However, given that they have the same color, and likely grape variety, and the classification difference is a nuance within the same wine style, they likely represent the same wine with a classification variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, Virgen del Aguila, and the same appellation, Cari\u00f1ena. The difference lies in the Rioja classification, with Wine A being Gran Reserva and Wine B being Reserva. However, given that they have the same color, and likely grape variety, and the classification difference is a nuance within the same wine style, they likely represent the same wine with a classification variation.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 105,
+  "elapsed": 3.156324625015259,
+  "error": null
+}

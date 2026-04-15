@@ -1,0 +1,28 @@
+{
+  "page_id": "page_016",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Pinot Noir\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": null, \"oak\": {\"vessel\": null, \"months\": null, \"new_pct\": null, \"origin\": \"French and American\"}, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": \"Jessica Tomei\", \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Pinot Noir",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": null,
+        "months": null,
+        "new_pct": null,
+        "origin": "French and American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 42842,
+  "tokens_out": 90,
+  "elapsed": 4.066591501235962,
+  "error": null
+}

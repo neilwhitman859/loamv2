@@ -1,0 +1,32 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.0,
+  "voice": 2.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 2.9,
+  "wrong_facts": [
+    "Hook claims the site sits on 'gray limestone and blue clay that mimics the geology of the Northern Rhône' — the ground truth says clay with gravel and limestone colluviums, not specifically gray limestone and blue clay, and the Northern Rhône comparison is fabricated geology",
+    "Wine summary claims 1.5-hectare parcel — not in context data or ground truth, likely fabricated",
+    "Wine summary claims biodynamic farming — not verified in context or ground truth",
+    "Terroir expression claims 'Tortonian blue marl' — specific geological age/type not in any provided data, likely fabricated",
+    "Terroir expression claims rain shadow from Dentelles — plausible but unverified specific microclimate claim",
+    "Vinification summary claims 'truncated concrete vats' — not in context data or ground truth",
+    "Vinification summary claims demi-muids (600-liter barrels) — ground truth says 'oak casks' without specifying size",
+    "Value assessment claims pricing $70-$90 — no pricing data provided",
+    "Does not mention the Serine clone origin or the Chave/Reynaud bud wood provenance which is a key distinguishing fact"
+  ],
+  "banned_words_found": [
+    "world-class"
+  ],
+  "fabricated_numbers": [
+    "1.5-hectare parcel size",
+    "$70-$90 price range"
+  ],
+  "reasoning": "The output fabricates multiple specific details: the 1.5-hectare parcel size, Tortonian blue marl geology, concrete vat fermentation, demi-muid specification, biodynamic farming claim, and the $70-$90 price range — none of which appear in context data or ground truth. While the hook correctly identifies the 100% Syrah anomaly and the limestone/clay soil type broadly, it adds unverified geological specifics. The 'world-class' banned word caps voice at 2.0. The writing is highly specific and engaging, and the food pairings and comparable wines are well-chosen, but the density of fabricated details severely undermines correctness. The Serine clone provenance — the most interesting verified fact — is completely missed.",
+  "judge_tokens_in": 3658,
+  "judge_tokens_out": 524
+}

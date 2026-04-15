@@ -1,0 +1,13 @@
+{
+  "pair_id": "D047",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Although the grape data provided in the metadata suggests both are 100% Merlot, the wine names explicitly identify them as 'Merlot' and 'Cabernet' respectively. In the context of a producer like Happs in Margaret River, these represent two distinct varietal bottlings that a consumer would purchase as separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Although the grape data provided in the metadata suggests both are 100% Merlot, the wine names explicitly identify them as 'Merlot' and 'Cabernet' respectively. In the context of a producer like Happs in Margaret River, these represent two distinct varietal bottlings that a consumer would purchase as separate products.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 90,
+  "elapsed": 1.5293526649475098,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C013",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records describe the identical Dr. Wehrheim Riesling Auslese from the Kastanienbusch vineyard, differing only in word order and a minor typographical omission of the 'c' in the second record. They share the same producer, grape variety, color, and German Pr\u00e4dikat level, confirming they represent the same bottling despite the differing LWINs.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records describe the identical Dr. Wehrheim Riesling Auslese from the Kastanienbusch vineyard, differing only in word order and a minor typographical omission of the 'c' in the second record. They share the same producer, grape variety, color, and German Pr\u00e4dikat level, confirming they represent the same bottling despite the differing LWINs.",
+  "parse_ok": true,
+  "tokens_in": 475,
+  "tokens_out": 1477,
+  "elapsed": 28.37457776069641,
+  "error": null
+}

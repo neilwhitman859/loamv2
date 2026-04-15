@@ -1,0 +1,13 @@
+{
+  "pair_id": "A021",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A is a single varietal Cabernet Sauvignon, while Wine B is a blend of Cabernet Sauvignon and Syrah. Different grape compositions, even from the same producer, always indicate different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a single varietal Cabernet Sauvignon, while Wine B is a blend of Cabernet Sauvignon and Syrah. Different grape compositions, even from the same producer, always indicate different wines.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 74,
+  "elapsed": 1.6868035793304443,
+  "error": null
+}

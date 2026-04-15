@@ -1,0 +1,13 @@
+{
+  "pair_id": "D025",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from producer Cattier, both white, and share the core 'Millesime' designation typical for vintage Champagnes. 'Brut' in Wine A is a style descriptor (dryness level) often omitted in shorthand listings, akin to varietal suffixes where shorter names are abbreviations. No differences in grapes, vineyard, color, or classification tiers indicate they are the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from producer Cattier, both white, and share the core 'Millesime' designation typical for vintage Champagnes. 'Brut' in Wine A is a style descriptor (dryness level) often omitted in shorthand listings, akin to varietal suffixes where shorter names are abbreviations. No differences in grapes, vineyard, color, or classification tiers indicate they are the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 555,
+  "tokens_out": 505,
+  "elapsed": 4.726942777633667,
+  "error": null
+}

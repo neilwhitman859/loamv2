@@ -1,0 +1,13 @@
+{
+  "pair_id": "A011",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.97,\"reasoning\":\"These are not just a formatting difference: Wine A is a blend listed with Pinot Noir and Chardonnay Blanc, while Wine B is explicitly the Pinot Noir version. Since different grapes means different wine, they should be treated as distinct bottlings. The shared base name suggests a related line, but not the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "These are not just a formatting difference: Wine A is a blend listed with Pinot Noir and Chardonnay Blanc, while Wine B is explicitly the Pinot Noir version. Since different grapes means different wine, they should be treated as distinct bottlings. The shared base name suggests a related line, but not the same wine.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 84,
+  "elapsed": 1.3941867351531982,
+  "error": null
+}

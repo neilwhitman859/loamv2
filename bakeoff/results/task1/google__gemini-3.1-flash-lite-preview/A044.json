@@ -1,0 +1,13 @@
+{
+  "pair_id": "A044",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 1.0,\n\"reasoning\": \"Both records refer to the same producer (Creekside) and the same wine name (Under Current Naked). The addition of 'Semillon' in Wine B is a varietal suffix that clarifies the composition of the wine, which is consistent with the grape listed for Wine A.\"\n}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both records refer to the same producer (Creekside) and the same wine name (Under Current Naked). The addition of 'Semillon' in Wine B is a varietal suffix that clarifies the composition of the wine, which is consistent with the grape listed for Wine A.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 82,
+  "elapsed": 1.8141286373138428,
+  "error": null
+}

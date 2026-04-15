@@ -1,0 +1,13 @@
+{
+  "pair_id": "C014",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are distinct bottlings identified by specific lot or release numbers ('No. 15' vs 'No. 17'). In the context of Pertois-Lebrun's 'Derri\u00e8re le Mont Aigu' range, these numbered releases represent different base wines or disgorgement batches, which are treated as separate products in the market.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are distinct bottlings identified by specific lot or release numbers ('No. 15' vs 'No. 17'). In the context of Pertois-Lebrun's 'Derri\u00e8re le Mont Aigu' range, these numbered releases represent different base wines or disgorgement batches, which are treated as separate products in the market.",
+  "parse_ok": true,
+  "tokens_in": 455,
+  "tokens_out": 100,
+  "elapsed": 1.8983252048492432,
+  "error": null
+}

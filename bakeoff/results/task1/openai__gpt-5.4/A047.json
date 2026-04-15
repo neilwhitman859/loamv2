@@ -1,0 +1,13 @@
+{
+  "pair_id": "A047",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.95,\"reasoning\":\"Both records are from Grgich Hills Estate, are red, and Wine A explicitly lists Cabernet Franc as the grape. The only difference is that Wine B appends the varietal to the cuv\u00e9e name, which is typically just a fuller naming format rather than a distinct bottling. There is no evidence here of multiple different-grape 'Miljenko's Selection' wines that would make the shorter name ambiguous.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records are from Grgich Hills Estate, are red, and Wine A explicitly lists Cabernet Franc as the grape. The only difference is that Wine B appends the varietal to the cuv\u00e9e name, which is typically just a fuller naming format rather than a distinct bottling. There is no evidence here of multiple different-grape 'Miljenko's Selection' wines that would make the shorter name ambiguous.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 105,
+  "elapsed": 2.9708619117736816,
+  "error": null
+}

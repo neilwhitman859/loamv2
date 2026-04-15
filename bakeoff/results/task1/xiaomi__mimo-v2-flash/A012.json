@@ -1,0 +1,13 @@
+{
+  "pair_id": "A012",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Arnot Roberts) and vineyard (Alder Springs), and both are red wines made from Syrah. The only difference is the name formatting, where 'Alder Springs' is an abbreviation of 'Alder Springs Syrah', which is a common practice and does not indicate a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Arnot Roberts) and vineyard (Alder Springs), and both are red wines made from Syrah. The only difference is the name formatting, where 'Alder Springs' is an abbreviation of 'Alder Springs Syrah', which is a common practice and does not indicate a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 484,
+  "tokens_out": 92,
+  "elapsed": 2.0908682346343994,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D015",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The term 'Reserve' indicates a distinct, higher-tier bottling from the standard 'Cabernet Sauvignon'. This is a common practice for producers to differentiate wines based on barrel selection or aging, creating two separate products. The presence of two different LWINs strongly confirms that these are recognized as two distinct wines in the industry.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The term 'Reserve' indicates a distinct, higher-tier bottling from the standard 'Cabernet Sauvignon'. This is a common practice for producers to differentiate wines based on barrel selection or aging, creating two separate products. The presence of two different LWINs strongly confirms that these are recognized as two distinct wines in the industry.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 1355,
+  "elapsed": 13.738299369812012,
+  "error": null
+}

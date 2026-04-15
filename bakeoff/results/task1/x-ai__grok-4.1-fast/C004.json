@@ -1,0 +1,13 @@
+{
+  "pair_id": "C004",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (Raumland) and nearly identical names, with Wine B appending 'white' as a color descriptor that matches Wine A's explicit white color. No differences in grape variety, style, vineyard, or other attributes; the variation is consistent with name formatting/abbreviation rules. Distinct LWIN numbers likely reflect database entries rather than distinct bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (Raumland) and nearly identical names, with Wine B appending 'white' as a color descriptor that matches Wine A's explicit white color. No differences in grape variety, style, vineyard, or other attributes; the variation is consistent with name formatting/abbreviation rules. Distinct LWIN numbers likely reflect database entries rather than distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 575,
+  "tokens_out": 599,
+  "elapsed": 7.489403009414673,
+  "error": null
+}

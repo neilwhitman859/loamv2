@@ -1,0 +1,13 @@
+{
+  "pair_id": "A045",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Pax) and share the same vineyard name (Lauterbach Hill). The only difference is the varietal suffix 'Syrah' on Wine B, which is a standard abbreviation of the grape variety listed for Wine A, indicating they represent the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Pax) and share the same vineyard name (Lauterbach Hill). The only difference is the varietal suffix 'Syrah' on Wine B, which is a standard abbreviation of the grape variety listed for Wine A, indicating they represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 484,
+  "tokens_out": 87,
+  "elapsed": 2.4585299491882324,
+  "error": null
+}

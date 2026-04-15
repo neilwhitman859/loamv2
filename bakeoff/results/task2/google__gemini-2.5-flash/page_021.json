@@ -1,0 +1,28 @@
+{
+  "page_id": "page_021",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\"wines_found\": [{\"name\": \"Prosecco\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": [{\"grape\": \"Glera\", \"pct\": null}], \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": \"Jessica Tomei\", \"farming\": null}]}\n```",
+  "wines_found": [
+    {
+      "name": "Prosecco",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Glera",
+          "pct": null
+        }
+      ],
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 43528,
+  "tokens_out": 80,
+  "elapsed": 1.687347173690796,
+  "error": null
+}

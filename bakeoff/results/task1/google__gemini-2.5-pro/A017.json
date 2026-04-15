@@ -1,0 +1,13 @@
+{
+  "pair_id": "A017",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are made from different grape varieties, which always signifies different wines. Wine A is specified as being made from Pinot Noir, while Wine B's name explicitly identifies it as Syrah. Even though they share the 'Single Valley Lot' name, the different grapes mean they are distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are made from different grape varieties, which always signifies different wines. Wine A is specified as being made from Pinot Noir, while Wine B's name explicitly identifies it as Syrah. Even though they share the 'Single Valley Lot' name, the different grapes mean they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 991,
+  "elapsed": 10.171107530593872,
+  "error": null
+}

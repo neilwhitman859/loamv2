@@ -1,0 +1,13 @@
+{
+  "pair_id": "A044",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Creekside producer, both white wines, and Wine A is identified as Semillon grape. Wine B's name 'Under Current Naked Semillon' is simply Wine A's 'Under Current Naked' with the varietal suffix appended, which is a classic abbreviation pattern. There is no indication of multiple different grape varieties under this label, so these represent the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Creekside producer, both white wines, and Wine A is identified as Semillon grape. Wine B's name 'Under Current Naked Semillon' is simply Wine A's 'Under Current Naked' with the varietal suffix appended, which is a classic abbreviation pattern. There is no indication of multiple different grape varieties under this label, so these represent the same wine.",
+  "parse_ok": true,
+  "tokens_in": 485,
+  "tokens_out": 110,
+  "elapsed": 4.209282398223877,
+  "error": null
+}

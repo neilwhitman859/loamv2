@@ -1,0 +1,13 @@
+{
+  "pair_id": "B038",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records represent different wines because they have different colors (red vs. white) and different grape varieties (Verdicchio for the white, while the red Querciantica is typically Lacrima di Morro d'Alba). Under the provided rules, different grapes and colors always constitute different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent different wines because they have different colors (red vs. white) and different grape varieties (Verdicchio for the white, while the red Querciantica is typically Lacrima di Morro d'Alba). Under the provided rules, different grapes and colors always constitute different wines.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 85,
+  "elapsed": 2.082486629486084,
+  "error": null
+}

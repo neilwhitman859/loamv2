@@ -1,0 +1,13 @@
+{
+  "pair_id": "B050",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are distinct products due to their different colors (white vs. rose). In wine classification, a rose version of a sparkling wine is considered a separate bottling from the standard white version, as evidenced by their distinct LWIN identifiers.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are distinct products due to their different colors (white vs. rose). In wine classification, a rose version of a sparkling wine is considered a separate bottling from the standard white version, as evidenced by their distinct LWIN identifiers.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 76,
+  "elapsed": 2.0308520793914795,
+  "error": null
+}

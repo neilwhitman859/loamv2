@@ -1,0 +1,13 @@
+{
+  "pair_id": "B010",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines have different colors (white vs ros\u00e9), which always indicates distinct wines. Additionally, the names are not simple formatting variants but appear to be different cuv\u00e9es (Alma Grande Cuvee Brut vs Gran Cuvee Alma), suggesting separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines have different colors (white vs ros\u00e9), which always indicates distinct wines. Additionally, the names are not simple formatting variants but appear to be different cuv\u00e9es (Alma Grande Cuvee Brut vs Gran Cuvee Alma), suggesting separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 76,
+  "elapsed": 3.7272274494171143,
+  "error": null
+}

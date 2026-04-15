@@ -1,0 +1,13 @@
+{
+  "pair_id": "B033",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records represent different wines because they are made from different grape varieties (Pinot Noir vs. Gewurztraminer) and have different colors (Red vs. White). In Alsace, 'Bollenberg' is a specific vineyard site from which Valentin Zusslin produces several distinct varietal bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent different wines because they are made from different grape varieties (Pinot Noir vs. Gewurztraminer) and have different colors (Red vs. White). In Alsace, 'Bollenberg' is a specific vineyard site from which Valentin Zusslin produces several distinct varietal bottlings.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 86,
+  "elapsed": 2.214505672454834,
+  "error": null
+}

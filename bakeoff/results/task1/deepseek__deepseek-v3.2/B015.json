@@ -1,0 +1,13 @@
+{
+  "pair_id": "B015",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have the same producer, vineyard/cuv\u00e9e (Fut de Chene), and grape (Pinot Noir), but one is a ros\u00e9 and the other is a red. A difference in color (ros\u00e9 vs red) from the same vineyard indicates distinct bottlings and styles, which are considered different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have the same producer, vineyard/cuv\u00e9e (Fut de Chene), and grape (Pinot Noir), but one is a ros\u00e9 and the other is a red. A difference in color (ros\u00e9 vs red) from the same vineyard indicates distinct bottlings and styles, which are considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 454,
+  "tokens_out": 89,
+  "elapsed": 2.4684460163116455,
+  "error": null
+}

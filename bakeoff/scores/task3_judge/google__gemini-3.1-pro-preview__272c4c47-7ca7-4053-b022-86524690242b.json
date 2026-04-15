@@ -1,0 +1,26 @@
+{
+  "wine_id": "272c4c47-7ca7-4053-b022-86524690242b",
+  "wine_name": "Lafage Tessellae Old Vines, Côtes du Roussillon",
+  "tier": "C",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "The wine is 100% Carignan according to ground truth, but the output describes it as a blend of Grenache, Syrah, and Carignan — mentioning 'Syrah and Carignan' in food pairing and 'Grenache, Syrah, and Carignan' in the wine summary",
+    "Comparable wine Domaine Lafond Lirac is described as 'Grenache-driven' implying the Tessellae is also Grenache-driven, but it's 100% Carignan",
+    "The Agly Valley sourcing claim is plausible but unverifiable from context or ground truth",
+    "Cold maceration and concrete vat aging are specific vinification claims not supported by context data and potentially fabricated"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$15 to $20 USD price range not in context data",
+    "70+ year old vines age not in context data (though matches ground truth)",
+    "55°F storage temperature is generic advice not data-sourced"
+  ],
+  "reasoning": "The output is exceptionally well-written with strong voice, specificity, and usefulness — it reads like expert wine writing with real opinions and actionable information. However, the critical error is misidentifying the blend: the wine is 100% Carignan, but the output repeatedly treats it as a multi-grape blend including Grenache and Syrah. This is a significant factual error that undermines trust. The vinification details (cold maceration, concrete vats) are plausible but unverifiable and could be fabricated. The hook mentions Jean-Marc Lafage and schist soils correctly (matching ground truth), and the naming origin isn't addressed. The price range is fabricated but plausible. The blend error is the most damaging issue, appearing in multiple sections.",
+  "judge_tokens_in": 3392,
+  "judge_tokens_out": 456
+}

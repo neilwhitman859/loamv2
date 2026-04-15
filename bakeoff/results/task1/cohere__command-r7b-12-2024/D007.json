@@ -1,0 +1,13 @@
+{
+  "pair_id": "D007",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different grape varieties, with Wine A containing a blend of COT and CABERNET SAUVIGNON, while Wine B is a single-varietal MERLOT NOIR. This difference in grape composition is a clear indicator of distinct bottlings, as the same vineyard and producer do not guarantee the same wine if the grape variety changes.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different grape varieties, with Wine A containing a blend of COT and CABERNET SAUVIGNON, while Wine B is a single-varietal MERLOT NOIR. This difference in grape composition is a clear indicator of distinct bottlings, as the same vineyard and producer do not guarantee the same wine if the grape variety changes.",
+  "parse_ok": true,
+  "tokens_in": 458,
+  "tokens_out": 97,
+  "elapsed": 1.9915049076080322,
+  "error": null
+}

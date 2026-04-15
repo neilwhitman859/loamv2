@@ -1,0 +1,27 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "mistralai/mistral-large",
+  "correctness": 1.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.25,
+  "wrong_facts": [
+    "Context data says 100% Cabernet Sauvignon but ground truth shows 92% Cab, 3% Petite Verdot, 3% Merlot, 2% Malbec — the output never corrects this but doesn't explicitly claim 100% either",
+    "Vinification claims '20 months in a mix of new and used French and American oak (roughly 30% new)' — ground truth says 18 months in 100% new French oak (Allier & Tronçais). This is fabricated and wrong on multiple counts: duration, percentage new, and inclusion of American oak",
+    "Claims fruit comes from 'estate vineyards in the southern valley (near Oak Knoll) and select grower sites' — ground truth says multi-site including hillside estate vineyards, Borderline vineyard in Stags Leap District, and selected Napa Valley sites. The Oak Knoll claim is unverifiable/likely fabricated",
+    "Specific soil types 'Bale loam and Yolo silt loam' are not in context data and appear fabricated for this specific wine",
+    "Winemaker Elias Fernandez is never mentioned despite being a key figure"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "20 months oak aging (actual: 18 months)",
+    "30% new oak (actual: 100% new)",
+    "American oak inclusion (actual: 100% French oak)"
+  ],
+  "reasoning": "The vinification section contains multiple fabricated specifics that directly contradict ground truth: 20 months vs 18 months, ~30% new oak vs 100% new, and French+American vs French only. These are not minor — they fundamentally misrepresent how the wine is made. The fabricated oak regimen (30% new, American oak included) is presented as a deliberate stylistic contrast with Hillside Select, making the error even more misleading since it builds a false narrative. The soil types (Bale loam, Yolo silt loam) and Oak Knoll sourcing claims are also unverifiable fabrications. The hook is actually quite good and doesn't contain provably wrong facts. The voice is strong — direct, opinionated, specific, with real personality and no banned words. But the hard penalty for fabricated numbers caps correctness at 1.5.",
+  "judge_tokens_in": 4456,
+  "judge_tokens_out": 573
+}

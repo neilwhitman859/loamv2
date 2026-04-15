@@ -1,0 +1,26 @@
+{
+  "wine_id": "ba7c6cc5-ed69-424d-90ee-9b83ae510c36",
+  "wine_name": "Penfolds Bin 2 Mataro, South Eastern Australia",
+  "tier": "A",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 1.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 2.9,
+  "wrong_facts": [
+    "Insider take says 'Ignore the Shiraz on the label; this wine is really about Mataro' — ground truth confirms the wine is 86% Shiraz and only 14% Mataro, so Shiraz is overwhelmingly dominant, not secondary",
+    "Hook says Penfolds blends 'Shiraz with the savory, structured spine of Spanish Monastrell (Mataro)' implying Mataro is a co-equal or dominant partner, when it's only 14%",
+    "Vinification summary claims 'older American and French oak hogsheads' — ground truth says 'new and seasoned hogsheads', so claiming only older oak is wrong",
+    "The wine name is 'Bin 2 Mataro' but the output repeatedly frames it as if Mataro is the star grape when it's actually 86% Shiraz"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$20-$25 price range not in context data",
+    "3-5 years hold recommendation fabricated",
+    "8 years aging potential fabricated"
+  ],
+  "reasoning": "The fundamental framing of this wine is wrong. The insider take explicitly says 'this wine is really about Mataro' when ground truth confirms it's 86% Shiraz / 14% Mataro. The hook reinforces this mischaracterization. This is a provably wrong factual claim in the hook — the wine is primarily Shiraz, not a Mataro-driven wine. The vinification details about only older oak contradict ground truth (new and seasoned). Multiple fabricated numbers ($20-$25, aging years). The hook contains a wrong characterization that poisons the entire entry. Hard cap of 1.5 on correctness applies due to wrong hook claim and fabricated numbers. Voice is decent — direct, opinionated, no banned words — but the confidence in wrong claims undermines it. Specificity is good with named soils and real comparables. Usefulness is undermined by the fundamentally misleading framing.",
+  "judge_tokens_in": 3440,
+  "judge_tokens_out": 500
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A008",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine A 'Sybel' is a ros\u00e9 blend of SYRAH and DURIF, while Wine B 'Sybel Syrah' appears to be a Syrah-only ros\u00e9 based on the varietal suffix. The presence of DURIF in Wine A suggests it is a distinct blend, not merely an abbreviated name for the same wine. If Wine B is 100% Syrah and Wine A contains both Syrah and Durif, these represent different bottlings despite sharing the same producer and base name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A 'Sybel' is a ros\u00e9 blend of SYRAH and DURIF, while Wine B 'Sybel Syrah' appears to be a Syrah-only ros\u00e9 based on the varietal suffix. The presence of DURIF in Wine A suggests it is a distinct blend, not merely an abbreviated name for the same wine. If Wine B is 100% Syrah and Wine A contains both Syrah and Durif, these represent different bottlings despite sharing the same producer and base name.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 140,
+  "elapsed": 3.7583141326904297,
+  "error": null
+}

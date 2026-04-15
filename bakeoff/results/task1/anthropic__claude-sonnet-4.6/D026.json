@@ -1,0 +1,13 @@
+{
+  "pair_id": "D026",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.92, \"reasoning\": \"Both wines are from Cupcake Vineyards and share the name 'Black Forest Decadent,' with Wine B simply appending 'Red' as a color descriptor. Both are listed as red wines, so the addition of 'Red' is just a clarifying suffix rather than indicating a distinct bottling. This follows the varietal/descriptor suffix rule where the shorter name is an abbreviation of the fuller name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.92,
+  "reasoning": "Both wines are from Cupcake Vineyards and share the name 'Black Forest Decadent,' with Wine B simply appending 'Red' as a color descriptor. Both are listed as red wines, so the addition of 'Red' is just a clarifying suffix rather than indicating a distinct bottling. This follows the varietal/descriptor suffix rule where the shorter name is an abbreviation of the fuller name.",
+  "parse_ok": true,
+  "tokens_in": 486,
+  "tokens_out": 114,
+  "elapsed": 3.0275535583496094,
+  "error": null
+}

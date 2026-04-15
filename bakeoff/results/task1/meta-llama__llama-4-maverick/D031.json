@@ -1,0 +1,13 @@
+{
+  "pair_id": "D031",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, Peter Jakob Kuhn, and have very similar names, with 'Hallgarten Rheinschiefer Trocken' and 'Hallgarten Rheinschiefer' likely referring to the same wine, as 'Trocken' is a style designation that may be omitted. Both wines are white, further supporting they are the same. The difference in name is likely due to abbreviation or style variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, Peter Jakob Kuhn, and have very similar names, with 'Hallgarten Rheinschiefer Trocken' and 'Hallgarten Rheinschiefer' likely referring to the same wine, as 'Trocken' is a style designation that may be omitted. Both wines are white, further supporting they are the same. The difference in name is likely due to abbreviation or style variation.",
+  "parse_ok": true,
+  "tokens_in": 490,
+  "tokens_out": 106,
+  "elapsed": 1.8716468811035156,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C050",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct Rioja-style classification tiers: Malbec Reserva and Gran Reserva Malbec are not just formatting variants, but different bottlings. The presence of Reserva vs Gran Reserva indicates different aging/classification levels, which should be treated as separate wines even though the producer and grape are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct Rioja-style classification tiers: Malbec Reserva and Gran Reserva Malbec are not just formatting variants, but different bottlings. The presence of Reserva vs Gran Reserva indicates different aging/classification levels, which should be treated as separate wines even though the producer and grape are the same.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 80,
+  "elapsed": 1.9448621273040771,
+  "error": null
+}

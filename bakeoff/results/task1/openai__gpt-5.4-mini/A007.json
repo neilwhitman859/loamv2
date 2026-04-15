@@ -1,0 +1,13 @@
+{
+  "pair_id": "A007",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"These appear to be the same wine: Wine A is the abbreviated cuv\u00e9e name \\\"Laurus,\\\" while Wine B expands it to \\\"Laurus Syrah.\\\" The producer matches, both are red, and the grape composition for Wine A includes Syrah (with Durif), which is consistent with a varietal-suffix naming variant rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "These appear to be the same wine: Wine A is the abbreviated cuv\u00e9e name \"Laurus,\" while Wine B expands it to \"Laurus Syrah.\" The producer matches, both are red, and the grape composition for Wine A includes Syrah (with Durif), which is consistent with a varietal-suffix naming variant rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 95,
+  "elapsed": 1.8306455612182617,
+  "error": null
+}

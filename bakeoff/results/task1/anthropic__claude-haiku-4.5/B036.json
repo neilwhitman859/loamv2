@@ -1,0 +1,13 @@
+{
+  "pair_id": "B036",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is explicitly labeled 'Blanco' (white) while Wine B has no color designation but is recorded as red. Different colors from the same producer and vineyard designation represent distinct bottlings that consumers would encounter separately. The different LWINs (2976804 vs 2976790) further confirm these are separate products.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is explicitly labeled 'Blanco' (white) while Wine B has no color designation but is recorded as red. Different colors from the same producer and vineyard designation represent distinct bottlings that consumers would encounter separately. The different LWINs (2976804 vs 2976790) further confirm these are separate products.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 99,
+  "elapsed": 12.488462448120117,
+  "error": null
+}

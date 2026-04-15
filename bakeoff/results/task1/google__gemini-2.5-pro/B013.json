@@ -1,0 +1,13 @@
+{
+  "pair_id": "B013",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are different colors and types. Wine A, 'Diamant Bleu', is a white Champagne, while Wine B, 'Diamant Rose', is a ros\u00e9 Champagne. A white wine and a ros\u00e9 are always considered distinct bottlings, even when from the same producer and sharing a brand family name.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are different colors and types. Wine A, 'Diamant Bleu', is a white Champagne, while Wine B, 'Diamant Rose', is a ros\u00e9 Champagne. A white wine and a ros\u00e9 are always considered distinct bottlings, even when from the same producer and sharing a brand family name.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 1070,
+  "elapsed": 11.800567865371704,
+  "error": null
+}

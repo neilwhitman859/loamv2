@@ -1,0 +1,13 @@
+{
+  "pair_id": "D001",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"In German Riesling production, specifically with producers like Van Volxem, a 'Fuder' or 'Nr' (cask) designation indicates a specific, distinct bottling from a single vineyard. Under the provided rules, different lot or cask numbers at the same quality level are considered different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "In German Riesling production, specifically with producers like Van Volxem, a 'Fuder' or 'Nr' (cask) designation indicates a specific, distinct bottling from a single vineyard. Under the provided rules, different lot or cask numbers at the same quality level are considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 84,
+  "elapsed": 2.207282304763794,
+  "error": null
+}

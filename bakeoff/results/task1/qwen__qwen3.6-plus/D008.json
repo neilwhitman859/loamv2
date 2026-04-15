@@ -1,0 +1,13 @@
+{
+  "pair_id": "D008",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records share the same producer, color, and identical grape blend of Cot and Cabernet Sauvignon. The name variation ('Corte C' vs 'Corte') is a standard abbreviation where the 'C' likely denotes the grape composition or serves as a stylistic suffix. With no differences in classification, vineyard designation, or winemaking style, they represent the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records share the same producer, color, and identical grape blend of Cot and Cabernet Sauvignon. The name variation ('Corte C' vs 'Corte') is a standard abbreviation where the 'C' likely denotes the grape composition or serves as a stylistic suffix. With no differences in classification, vineyard designation, or winemaking style, they represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 484,
+  "tokens_out": 1746,
+  "elapsed": 32.981165409088135,
+  "error": null
+}

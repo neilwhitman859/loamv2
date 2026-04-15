@@ -1,0 +1,13 @@
+{
+  "pair_id": "A032",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Both wines are from the same producer, 'Sherwood Estate', and share the base name 'Stoney Range'. Wine A is identified as 'PINOT NOIR' and Wine B has 'Pinot Noir' in its name. The difference in name formatting (one with and one without the varietal suffix) is a common abbreviation practice, and given the explicit grape match, they likely refer to the same bottling.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, 'Sherwood Estate', and share the base name 'Stoney Range'. Wine A is identified as 'PINOT NOIR' and Wine B has 'Pinot Noir' in its name. The difference in name formatting (one with and one without the varietal suffix) is a common abbreviation practice, and given the explicit grape match, they likely refer to the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 118,
+  "elapsed": 2.1602797508239746,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C039",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Gran Reserva and Reserva are distinct classification tiers in Chilean wine law, representing different aging requirements and quality designations. These are separate bottlings that consumers would encounter as distinct products, similar to how Rioja Reserva vs Gran Reserva are classified as different wines. The different LWINs confirm these are separate bottlings.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Gran Reserva and Reserva are distinct classification tiers in Chilean wine law, representing different aging requirements and quality designations. These are separate bottlings that consumers would encounter as distinct products, similar to how Rioja Reserva vs Gran Reserva are classified as different wines. The different LWINs confirm these are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 521,
+  "tokens_out": 101,
+  "elapsed": 10.793384552001953,
+  "error": null
+}

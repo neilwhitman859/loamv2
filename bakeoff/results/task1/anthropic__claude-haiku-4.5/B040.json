@@ -1,0 +1,13 @@
+{
+  "pair_id": "B040",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a white wine made from Albarinho while Wine B is a red wine made from Barbera Nera. Different grape varieties always indicate different wines, regardless of shared producer or region. These would be encountered as distinct bottlings by consumers.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a white wine made from Albarinho while Wine B is a red wine made from Barbera Nera. Different grape varieties always indicate different wines, regardless of shared producer or region. These would be encountered as distinct bottlings by consumers.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 82,
+  "elapsed": 3.853037118911743,
+  "error": null
+}

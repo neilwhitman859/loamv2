@@ -7,12 +7,8 @@
     "name": "Small Hill Red",
     "producer": "Leo Hillinger",
     "vintage_year": 2023,
-    "abv_pct": null,
+    "abv_pct": 13,
     "blend": [
-      {
-        "grape": "Restzucker",
-        "pct": 13
-      },
       {
         "grape": "Merlot",
         "pct": 50
@@ -22,19 +18,23 @@
         "pct": 25
       },
       {
-        "grape": "St",
+        "grape": "St. Laurent",
         "pct": 25
       }
     ],
     "oak": {
-      "vessel": "barrique"
+      "vessel": "barrique",
+      "months": null,
+      "new_pct": null,
+      "origin": null
     },
     "cases_produced": null,
     "chemistry": null,
     "winemaker": null,
     "farming": null
   },
-  "data_richness": 3,
+  "data_richness": 4,
   "total_fields": 8,
-  "text_length": 4540
+  "text_length": 4540,
+  "consensus_models": 14
 }

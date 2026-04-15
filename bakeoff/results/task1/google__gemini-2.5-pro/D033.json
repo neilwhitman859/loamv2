@@ -1,0 +1,13 @@
+{
+  "pair_id": "D033",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are from the same producer, vineyard (Bollenberg), and grape (Pinot Noir), they have distinct cuv\u00e9e names: 'Luft' and 'Harmonie'. These are not naming variations but represent two separate and distinct bottlings that a consumer would encounter as different products. The different LWINs further confirm they are cataloged as separate wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are from the same producer, vineyard (Bollenberg), and grape (Pinot Noir), they have distinct cuv\u00e9e names: 'Luft' and 'Harmonie'. These are not naming variations but represent two separate and distinct bottlings that a consumer would encounter as different products. The different LWINs further confirm they are cataloged as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 1193,
+  "elapsed": 11.539257287979126,
+  "error": null
+}

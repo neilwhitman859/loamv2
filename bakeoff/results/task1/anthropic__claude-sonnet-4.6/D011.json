@@ -1,0 +1,13 @@
+{
+  "pair_id": "D011",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.85, \"reasoning\": \"Wine B includes 'Malmsey' as a prefix, which is the English name for Malvasia-based Madeira wine, consistent with Wine A's grape varieties (Malvasia Fina, Furmint). Both share the same producer (Borges) and the same core name 'Adegas Exportata Rare Rich 1870', suggesting Wine B simply adds the varietal/style descriptor as a prefix. This appears to be the same bottling with different name formatting conventions.\"}",
+  "verdict": "SAME",
+  "confidence": 0.85,
+  "reasoning": "Wine B includes 'Malmsey' as a prefix, which is the English name for Malvasia-based Madeira wine, consistent with Wine A's grape varieties (Malvasia Fina, Furmint). Both share the same producer (Borges) and the same core name 'Adegas Exportata Rare Rich 1870', suggesting Wine B simply adds the varietal/style descriptor as a prefix. This appears to be the same bottling with different name formatting conventions.",
+  "parse_ok": true,
+  "tokens_in": 504,
+  "tokens_out": 134,
+  "elapsed": 4.220486640930176,
+  "error": null
+}

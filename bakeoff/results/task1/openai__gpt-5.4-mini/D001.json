@@ -1,0 +1,13 @@
+{
+  "pair_id": "D001",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.96,\"reasoning\":\"Both wines share the same producer, vineyard, grape, and color, but Wine A includes the specific lot/cask designation \\\"Nr23\\\" while Wine B does not. Under the rules, different lot/cask numbers at the same style and level are treated as different bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.96,
+  "reasoning": "Both wines share the same producer, vineyard, grape, and color, but Wine A includes the specific lot/cask designation \"Nr23\" while Wine B does not. Under the rules, different lot/cask numbers at the same style and level are treated as different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 78,
+  "elapsed": 1.6212348937988281,
+  "error": null
+}

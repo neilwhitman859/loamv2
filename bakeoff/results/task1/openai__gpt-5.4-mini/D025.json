@@ -1,0 +1,13 @@
+{
+  "pair_id": "D025",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.88,\"reasoning\":\"Both records are from Cattier and share the cuv\u00e9e name Millesime; the only difference is that Wine A includes the style descriptor \\\"Brut.\\\" In Champagne, Brut is a sweetness/style indication rather than a separate cuv\u00e9e, so this is most likely the same wine. The matching white color and the presence of an LWIN for Wine A support that they refer to the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.88,
+  "reasoning": "Both records are from Cattier and share the cuv\u00e9e name Millesime; the only difference is that Wine A includes the style descriptor \"Brut.\" In Champagne, Brut is a sweetness/style indication rather than a separate cuv\u00e9e, so this is most likely the same wine. The matching white color and the presence of an LWIN for Wine A support that they refer to the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 104,
+  "elapsed": 1.8183948993682861,
+  "error": null
+}

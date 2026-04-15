@@ -1,0 +1,13 @@
+{
+  "pair_id": "A020",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different grape varieties, with Wine A being Viura and Wine B being Viura Sauvignon Blanc. This is a clear indicator of different wines, as the grape variety is a defining characteristic of the wine type.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different grape varieties, with Wine A being Viura and Wine B being Viura Sauvignon Blanc. This is a clear indicator of different wines, as the grape variety is a defining characteristic of the wine type.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 70,
+  "elapsed": 1.5677483081817627,
+  "error": null
+}

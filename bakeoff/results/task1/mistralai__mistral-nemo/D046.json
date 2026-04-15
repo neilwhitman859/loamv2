@@ -1,0 +1,13 @@
+{
+  "pair_id": "D046",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines have the same producer and color, but they differ in the variety (Wine A is likely a red, while Wine B is explicitly stated as a ros\u00e9).\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines have the same producer and color, but they differ in the variety (Wine A is likely a red, while Wine B is explicitly stated as a ros\u00e9).",
+  "parse_ok": true,
+  "tokens_in": 457,
+  "tokens_out": 60,
+  "elapsed": 1.5595314502716064,
+  "error": null
+}

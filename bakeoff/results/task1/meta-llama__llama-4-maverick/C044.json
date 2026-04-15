@@ -1,0 +1,13 @@
+{
+  "pair_id": "C044",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white wine (Riesling Auslese) while the color information provided for Wine A is red, which contradicts the typical color for Riesling. Wine B is also a white wine (Riesling Auslese), and its color is white. The color discrepancy for Wine A makes it impossible to match with Wine B, and the LWIN numbers are different, indicating they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white wine (Riesling Auslese) while the color information provided for Wine A is red, which contradicts the typical color for Riesling. Wine B is also a white wine (Riesling Auslese), and its color is white. The color discrepancy for Wine A makes it impossible to match with Wine B, and the LWIN numbers are different, indicating they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 514,
+  "tokens_out": 108,
+  "elapsed": 1.9667067527770996,
+  "error": null
+}

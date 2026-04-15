@@ -1,0 +1,21 @@
+{
+  "wine_id": "4cd8b76a-b4fc-43cf-83ae-8a0c84e7673e",
+  "wine_name": "Barefoot Buttery Chardonnay, California",
+  "tier": "C",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 5.0,
+  "composite": 4.25,
+  "wrong_facts": [
+    "Claims full malolactic fermentation as fact — plausible but not confirmed in context data or ground truth",
+    "Claims oak alternatives (staves/chips in stainless steel) as fact — plausible inference but not confirmed",
+    "Mentions Lodi specifically as a sourcing region — ground truth says Central Valley generally, Lodi is not specifically confirmed"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is impressively well-written with strong voice, excellent specificity, and genuinely useful information for a consumer. The hook is accurate — 'buttery' as a style descriptor matches ground truth. Key facts like E&J Gallo ownership, Central Valley sourcing, NV blending, and Jennifer Wall's role (though she's not named) align with ground truth. However, several vinification claims (full MLF, oak alternatives/chips/staves) are stated as definitive facts when they are reasonable inferences but unverified. Mentioning Lodi specifically goes slightly beyond what ground truth confirms. These are plausible claims from wine knowledge rather than fabrications, but they're stated with more certainty than warranted. No banned words, no fabricated numbers, and the voice is direct, opinionated, and specific — exactly what Loam wants.",
+  "judge_tokens_in": 3644,
+  "judge_tokens_out": 328
+}

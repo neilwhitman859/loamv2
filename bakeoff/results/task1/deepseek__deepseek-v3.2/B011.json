@@ -1,0 +1,13 @@
+{
+  "pair_id": "B011",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different colors (red vs white) and different grape varieties (Semillon listed for Wine A, none specified for Wine B but color mismatch implies different grapes). Different color and different grapes always indicate distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors (red vs white) and different grape varieties (Semillon listed for Wine A, none specified for Wine B but color mismatch implies different grapes). Different color and different grapes always indicate distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 68,
+  "elapsed": 2.4827792644500732,
+  "error": null
+}

@@ -1,0 +1,24 @@
+{
+  "wine_id": "1a19854d-d7fb-4046-a2ba-9c2391b6026a",
+  "wine_name": "Terre del Barolo Arnaldo Rivera, Barolo",
+  "tier": "B",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.675,
+  "wrong_facts": [
+    "Vinification summary claims wine ages in large Slavonian oak casks — ground truth says 20 months in French wood (mix of tonneaux and oak casks of various sizes), not Slavonian oak",
+    "Price range of $45-$55 is fabricated — no price data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$45-$55 price range fabricated",
+    "over 300 growers — not in context data and unverifiable",
+    "5-8 years cellar recommendation is a specific claim not grounded in data"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity (naming specific soil formations like Sant'Agata Fossili marl, Lequio Formation, Tortonian marl, Helvetian sandstone), and genuinely useful structure. However, the vinification section makes a specific wrong claim about Slavonian oak when the ground truth clearly states French wood in various vessel sizes. The price fabrication ($45-$55) and the '300 growers' claim are unsourced. The hook is reasonable — calling it a co-operative and standard-bearer is fair, though it doesn't mention the naming origin (Arnaldo Rivera the founder). The mention of La Morra and Serralunga as source communes aligns with ground truth. The Slavonian oak error is a meaningful factual mistake for a wine platform focused on trustworthy data, but it's not in the hook. The fabricated price triggers the hard penalty for fabricated numbers, capping correctness at 1.5, but the price is arguably a market estimate rather than a technical specification like pH or ABV — I'll treat it as a softer fabrication but still penalize. The Slavonian oak claim is provably wrong against ground truth, which is more damaging.",
+  "judge_tokens_in": 3531,
+  "judge_tokens_out": 448
+}

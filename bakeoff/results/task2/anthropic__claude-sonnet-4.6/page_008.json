@@ -1,0 +1,28 @@
+{
+  "page_id": "page_008",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Chardonnay\", \"vintage_year\": 2023, \"abv_pct\": null, \"blend\": null, \"oak\": {\"vessel\": \"barrel\", \"months\": null, \"new_pct\": null, \"origin\": \"American\"}, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Chardonnay",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "barrel",
+        "months": null,
+        "new_pct": null,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 22841,
+  "tokens_out": 96,
+  "elapsed": 2.486372470855713,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D044",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the prefix 'Estate' in Wine A, which is likely a vineyard or cuv\u00e9e designation, but the core wine is the same producer's Chardonnay. Both are white wines from the same producer (Donnachadh) and the same grape variety (Chardonnay), indicating they represent the same bottling with a minor name variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the prefix 'Estate' in Wine A, which is likely a vineyard or cuv\u00e9e designation, but the core wine is the same producer's Chardonnay. Both are white wines from the same producer (Donnachadh) and the same grape variety (Chardonnay), indicating they represent the same bottling with a minor name variation.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 99,
+  "elapsed": 4.197784900665283,
+  "error": null
+}

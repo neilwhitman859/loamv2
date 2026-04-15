@@ -1,0 +1,13 @@
+{
+  "pair_id": "D024",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a sparkling white wine (Brut), while Wine B is a still white wine. Different wine types (sparkling vs still) indicate different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a sparkling white wine (Brut), while Wine B is a still white wine. Different wine types (sparkling vs still) indicate different wines.",
+  "parse_ok": true,
+  "tokens_in": 453,
+  "tokens_out": 59,
+  "elapsed": 2.0791854858398438,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C044",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.91,\"reasoning\":\"The two records differ in wine color (one red, one white), and one includes a specific auction number (Nr17) while the other does not, indicating distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.91,
+  "reasoning": "The two records differ in wine color (one red, one white), and one includes a specific auction number (Nr17) while the other does not, indicating distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 192,
+  "elapsed": 3.0044491291046143,
+  "error": null
+}

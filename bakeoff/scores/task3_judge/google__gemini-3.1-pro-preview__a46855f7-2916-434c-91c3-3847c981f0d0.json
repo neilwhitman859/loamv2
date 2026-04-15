@@ -1,0 +1,24 @@
+{
+  "wine_id": "a46855f7-2916-434c-91c3-3847c981f0d0",
+  "wine_name": "Leo Hillinger, Burgenland",
+  "tier": "B",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "Price range of $18-$22 is not in context data and unverifiable",
+    "Vinification details (stainless steel fermentation, malolactic in large neutral wooden casks) are not in context data and are speculative",
+    "Claim about 'architecturally striking winery in Jois' — while Hillinger does have a notable winery, the specific architectural claim and its location in Jois specifically is plausible but not fully verified from context"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$18 to $22 price range",
+    "3-5 years aging claim (though cellar recommendation of 5 years is stated separately)"
+  ],
+  "reasoning": "The output is exceptionally well-written with strong voice, specificity, and usefulness — it reads like expert wine writing with real opinions and actionable advice. However, correctness suffers from several fabricated details: the price range ($18-$22) is not in the context data (prices were listed as NONE PROVIDED), and the vinification details are entirely speculative since no winemaking data was provided. The hook is defensible — Lake Neusiedl is indeed in Burgenland and the Pannonian climate description is accurate. The mention of Jois as a vineyard source aligns with ground truth. The organic conversion in 2010 from ground truth is not mentioned, which is a missed opportunity but not an error. The soil descriptions (loam, limestone, schist) are plausible for Burgenland but not verified from context. The fabricated price triggers concern but since it's presented as approximate and isn't a technical wine number (pH, oak months, blend %), I'm treating it as an unverifiable claim rather than applying the hard cap. The vinification section is entirely invented, which is a significant correctness issue.",
+  "judge_tokens_in": 3499,
+  "judge_tokens_out": 447
+}

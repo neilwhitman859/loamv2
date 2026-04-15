@@ -1,0 +1,13 @@
+{
+  "pair_id": "B017",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are explicitly stated to have different colors (red vs. white) and different grape varieties (BRAQUET GRIS for Wine A, and an implied white grape for Wine B given its color). These are fundamental differences that would result in distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are explicitly stated to have different colors (red vs. white) and different grape varieties (BRAQUET GRIS for Wine A, and an implied white grape for Wine B given its color). These are fundamental differences that would result in distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 407,
+  "tokens_out": 89,
+  "elapsed": 1.489168405532837,
+  "error": null
+}

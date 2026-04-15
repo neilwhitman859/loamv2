@@ -1,0 +1,13 @@
+{
+  "pair_id": "A009",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A is an abbreviated name of the specific bottling described in Wine B. Since both share the same producer, vineyard (Naumberg), and color, the addition of the varietal 'Pinot Gris' in Record B is a naming clarification rather than a distinction of a different product.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A is an abbreviated name of the specific bottling described in Wine B. Since both share the same producer, vineyard (Naumberg), and color, the addition of the varietal 'Pinot Gris' in Record B is a naming clarification rather than a distinction of a different product.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 80,
+  "elapsed": 1.6523966789245605,
+  "error": null
+}

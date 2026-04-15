@@ -1,0 +1,13 @@
+{
+  "pair_id": "C006",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.95, \"reasoning\": \"Wine A is a white sparkling wine (Brut), while Wine B is explicitly labeled as a ros\u00e9 sparkling wine (Brut Rose). Different colors (white vs ros\u00e9) represent distinct wine types and styles, which are always considered different wines according to the rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "Wine A is a white sparkling wine (Brut), while Wine B is explicitly labeled as a ros\u00e9 sparkling wine (Brut Rose). Different colors (white vs ros\u00e9) represent distinct wine types and styles, which are always considered different wines according to the rules.",
+  "parse_ok": true,
+  "tokens_in": 472,
+  "tokens_out": 79,
+  "elapsed": 6.077553033828735,
+  "error": null
+}

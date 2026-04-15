@@ -1,0 +1,13 @@
+{
+  "pair_id": "A050",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine B is simply the varietal-specific name for Wine A, which is a common naming convention for this producer. Since both are red wines from the same producer and 'Cayenne' is the specific cuv\u00e9e name, the addition of 'Syrah' is a formatting difference rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine B is simply the varietal-specific name for Wine A, which is a common naming convention for this producer. Since both are red wines from the same producer and 'Cayenne' is the specific cuv\u00e9e name, the addition of 'Syrah' is a formatting difference rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 84,
+  "elapsed": 2.088674306869507,
+  "error": null
+}

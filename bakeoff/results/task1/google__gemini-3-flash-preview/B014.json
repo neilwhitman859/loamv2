@@ -1,0 +1,13 @@
+{
+  "pair_id": "B014",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records represent wines of different colors (Ros\u00e9 vs White). In the context of Cr\u00e9mant d'Alsace, a Ros\u00e9 and a Blanc (Brut) are distinct bottlings made from different grape varieties (typically 100% Pinot Noir for the Ros\u00e9) and are sold as separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent wines of different colors (Ros\u00e9 vs White). In the context of Cr\u00e9mant d'Alsace, a Ros\u00e9 and a Blanc (Brut) are distinct bottlings made from different grape varieties (typically 100% Pinot Noir for the Ros\u00e9) and are sold as separate products.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 89,
+  "elapsed": 1.8996360301971436,
+  "error": null
+}

@@ -8,17 +8,37 @@
     "producer": "Bogle",
     "vintage_year": 2022,
     "abv_pct": null,
-    "blend": null,
+    "blend": [
+      {
+        "grape": "Old Vine Zinfandel",
+        "pct": null
+      },
+      {
+        "grape": "Syrah",
+        "pct": null
+      },
+      {
+        "grape": "Cabernet Sauvignon",
+        "pct": null
+      },
+      {
+        "grape": "Petite Sirah",
+        "pct": null
+      }
+    ],
     "oak": {
-      "origin": "American",
-      "vessel": "barrel"
+      "vessel": "barrels",
+      "months": 12,
+      "new_pct": null,
+      "origin": "american"
     },
     "cases_produced": null,
     "chemistry": null,
     "winemaker": null,
-    "farming": "sustainable"
+    "farming": null
   },
   "data_richness": 3,
   "total_fields": 8,
-  "text_length": 2575
+  "text_length": 2575,
+  "consensus_models": 14
 }

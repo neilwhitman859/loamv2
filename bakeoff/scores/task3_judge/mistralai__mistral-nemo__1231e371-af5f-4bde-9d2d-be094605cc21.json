@@ -1,0 +1,35 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "mistralai/mistral-nemo",
+  "correctness": 1.5,
+  "voice": 1.5,
+  "specificity": 3.0,
+  "usefulness": 2.5,
+  "composite": 2.0,
+  "wrong_facts": [
+    "Hook says wine 'embodies the region's diverse geology' — uses banned word and is vague/misleading",
+    "Wine_summary says 'sourced from the hillside vineyards of the Stag's Leap District' — ground truth confirms it is multi-site (Shafer's hillside estate, Borderline vineyard in Stags Leap District, AND selected Napa Valley sites), not solely from Stags Leap hillside vineyards",
+    "Context data says 100% Cabernet Sauvignon but ground truth confirms it's a blend (92% Cab, 3% Petit Verdot, 3% Merlot, 2% Malbec) — the output doesn't address this but implicitly treats it as 100% Cab",
+    "Vinification_summary fabricates claims about native yeast fermentation and extended maceration — not in context data and unverifiable",
+    "Vinification_summary fabricates 'small tanks' detail",
+    "The naming origin is never addressed — a major missed opportunity given the interesting 'generation and a half' story",
+    "Winemaker Elias Fernandez is never mentioned",
+    "Cooperage (18 months in 100% new French oak, Allier & Tronçais) is never mentioned"
+  ],
+  "banned_words_found": [
+    "embodies",
+    "elegant",
+    "showcases",
+    "showcasing",
+    "sophisticated"
+  ],
+  "fabricated_numbers": [
+    "Opus One price of $250",
+    "Caymus Special Selection price of $200"
+  ],
+  "reasoning": "The hook contains the banned word 'embodies' and is vague. The wine_summary incorrectly implies the wine is sourced solely from Stags Leap District hillside vineyards when ground truth confirms multi-site sourcing. Multiple banned words appear throughout (elegant, showcases, embodies). The vinification section fabricates specific winemaking details (native yeasts, small tanks, extended maceration) not present in context data. Competitor prices for Opus One and Caymus are fabricated numbers. The output misses key facts like the naming origin, winemaker Elias Fernandez, and cooperage details. The Hambright series soils mention adds some specificity but is unverifiable. Overall, too many fabrications and banned words for acceptable quality.",
+  "judge_tokens_in": 3481,
+  "judge_tokens_out": 557
+}

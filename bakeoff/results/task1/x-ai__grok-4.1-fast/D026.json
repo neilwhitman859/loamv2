@@ -1,0 +1,13 @@
+{
+  "pair_id": "D026",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are produced by Cupcake Vineyards, share the core name 'Black Forest Decadent', and are both explicitly red, with 'Red' in Wine B serving as a color descriptor rather than a varietal or style differentiator. This matches the rule that varietal/color suffix differences alone indicate the same wine, as an abbreviation or formatting variation. No evidence suggests different grapes, vineyards, or classifications between them.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are produced by Cupcake Vineyards, share the core name 'Black Forest Decadent', and are both explicitly red, with 'Red' in Wine B serving as a color descriptor rather than a varietal or style differentiator. This matches the rule that varietal/color suffix differences alone indicate the same wine, as an abbreviation or formatting variation. No evidence suggests different grapes, vineyards, or classifications between them.",
+  "parse_ok": true,
+  "tokens_in": 563,
+  "tokens_out": 502,
+  "elapsed": 5.740231037139893,
+  "error": null
+}

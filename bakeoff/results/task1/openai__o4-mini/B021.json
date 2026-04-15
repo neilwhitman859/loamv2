@@ -1,0 +1,13 @@
+{
+  "pair_id": "B021",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"White Zinfandel is a ros\u00e9-style wine while Zinfandel is a red; they represent different color and style bottlings from the same producer and thus are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "White Zinfandel is a ros\u00e9-style wine while Zinfandel is a red; they represent different color and style bottlings from the same producer and thus are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 140,
+  "elapsed": 3.057112455368042,
+  "error": null
+}

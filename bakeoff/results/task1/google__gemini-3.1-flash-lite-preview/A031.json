@@ -1,0 +1,13 @@
+{
+  "pair_id": "A031",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"Pierre Girardin's 'Eclat de Calcaire' is a specific cuv\u00e9e produced from a consistent source, and the addition of 'Pinot Noir' to the name is a common varietal clarification rather than a distinction between different bottlings. As both are red wines from the same producer and vineyard designation, they represent the same wine entity.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Pierre Girardin's 'Eclat de Calcaire' is a specific cuv\u00e9e produced from a consistent source, and the addition of 'Pinot Noir' to the name is a common varietal clarification rather than a distinction between different bottlings. As both are red wines from the same producer and vineyard designation, they represent the same wine entity.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 98,
+  "elapsed": 1.658656358718872,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B049",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records specify different colors (white vs red) for the same brand name. Under the producer Maris, 'Casse-Croute' is a line of wines where the white and red bottlings are distinct products made from different grape varieties.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records specify different colors (white vs red) for the same brand name. Under the producer Maris, 'Casse-Croute' is a line of wines where the white and red bottlings are distinct products made from different grape varieties.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 72,
+  "elapsed": 1.7376642227172852,
+  "error": null
+}

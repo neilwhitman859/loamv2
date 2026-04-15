@@ -1,0 +1,21 @@
+{
+  "wine_id": "10c89e05-ecdd-4254-9c24-5a0b67894da5",
+  "wine_name": "Black Box Deep & Dark Cabernet Sauvignon, California",
+  "tier": "C",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.05,
+  "wrong_facts": [
+    "The output does not mention the 3-liter format specifically (equivalent to 4 bottles), though it references 'large-format' which is vague but not wrong",
+    "ABV from context data is 13.0% for 2021 and ground truth says 13.5% — the output avoids stating ABV, which is safe",
+    "No mention of Constellation Brands launching Black Box in 2003 or E&J Gallo acquiring it in 2021, but these are omissions not errors"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is impressively careful about not fabricating numbers — no pH, no blend percentages, no oak months, no ABV stated. It correctly identifies the bag-in-box format, California-wide sourcing, Cabernet Sauvignon grape, and the approximate price point. The mention of Central Valley as a likely fruit source aligns with ground truth. The hook is factually sound — it's a marketing-descriptor style wine in bag-in-box format at a competitive price. Voice is strong: direct, opinionated, no banned words, takes clear positions (e.g., 'skip it if you want herb, graphite, and structural austerity'). Food pairings are specific and well-reasoned. Comparables are appropriate. The only weakness is that some terroir claims about alluvial soils and coastal influence are speculative rather than sourced, but they're framed conditionally and are plausible for California-wide Cabernet. No provably wrong facts found.",
+  "judge_tokens_in": 3729,
+  "judge_tokens_out": 395
+}

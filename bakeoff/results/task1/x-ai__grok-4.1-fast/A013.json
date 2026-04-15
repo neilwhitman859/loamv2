@@ -1,0 +1,13 @@
+{
+  "pair_id": "A013",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A specifies grapes as PINOT NOIR and CANARI NOIR, while Wine B is named 'Lerchenberg Pinot Gris' indicating Pinot Gris grape. Different grapes mean different wines, even from the same vineyard and producer. The varietal suffix here signals distinct grape varieties rather than mere abbreviation, as the producer likely makes multiple wines from Lerchenberg with different grapes.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A specifies grapes as PINOT NOIR and CANARI NOIR, while Wine B is named 'Lerchenberg Pinot Gris' indicating Pinot Gris grape. Different grapes mean different wines, even from the same vineyard and producer. The varietal suffix here signals distinct grape varieties rather than mere abbreviation, as the producer likely makes multiple wines from Lerchenberg with different grapes.",
+  "parse_ok": true,
+  "tokens_in": 578,
+  "tokens_out": 736,
+  "elapsed": 8.044206857681274,
+  "error": null
+}

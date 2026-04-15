@@ -1,0 +1,13 @@
+{
+  "pair_id": "A006",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Radio-Coteau), share the same vineyard name (Clos Platt), and are red wines made from Pinot Noir. The only difference is the name formatting, where 'Clos Platt Pinot Noir' is the full name and 'Clos Platt' is the abbreviated version, which is a common practice and does not indicate a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Radio-Coteau), share the same vineyard name (Clos Platt), and are red wines made from Pinot Noir. The only difference is the name formatting, where 'Clos Platt Pinot Noir' is the full name and 'Clos Platt' is the abbreviated version, which is a common practice and does not indicate a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 488,
+  "tokens_out": 103,
+  "elapsed": 2.4016597270965576,
+  "error": null
+}

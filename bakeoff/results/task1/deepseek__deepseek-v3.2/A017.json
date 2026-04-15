@@ -1,0 +1,13 @@
+{
+  "pair_id": "A017",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"Wine A is explicitly made from Pinot Noir, while Wine B is a Syrah. Different grape varieties always indicate different wines, even if the producer and vineyard designation ('Single Valley Lot') are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "Wine A is explicitly made from Pinot Noir, while Wine B is a Syrah. Different grape varieties always indicate different wines, even if the producer and vineyard designation ('Single Valley Lot') are the same.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 67,
+  "elapsed": 4.638610601425171,
+  "error": null
+}

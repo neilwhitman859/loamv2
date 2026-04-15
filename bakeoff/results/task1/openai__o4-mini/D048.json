@@ -1,0 +1,13 @@
+{
+  "pair_id": "D048",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both records describe a red Cabernet Merlot from Happs with identical grape composition; the only difference is the inclusion of the series name \u201ciSeries\u201d in Wine A, which is a naming variation rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both records describe a red Cabernet Merlot from Happs with identical grape composition; the only difference is the inclusion of the series name \u201ciSeries\u201d in Wine A, which is a naming variation rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 203,
+  "elapsed": 5.626824855804443,
+  "error": null
+}

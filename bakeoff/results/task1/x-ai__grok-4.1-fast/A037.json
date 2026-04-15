@@ -1,0 +1,13 @@
+{
+  "pair_id": "A037",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the producer Squawking Magpie and the base name 'Stoned Crow', with Wine B adding the 'Syrah' varietal suffix. Wine A is confirmed as red SYRAH, matching Wine B's red color and Syrah grape. The rules state that varietal suffix differences alone typically indicate the same wine, with no evidence here of multiple grapes or other distinctions from this producer.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the producer Squawking Magpie and the base name 'Stoned Crow', with Wine B adding the 'Syrah' varietal suffix. Wine A is confirmed as red SYRAH, matching Wine B's red color and Syrah grape. The rules state that varietal suffix differences alone typically indicate the same wine, with no evidence here of multiple grapes or other distinctions from this producer.",
+  "parse_ok": true,
+  "tokens_in": 570,
+  "tokens_out": 439,
+  "elapsed": 4.961304187774658,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B014",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are not the same wine because Wine A is ros\u00e9 while Wine B is white, and color differences indicate distinct bottlings. The Brut designation also points to a specific style level for the white Cr\u00e9mant, whereas the ros\u00e9 and white versions would be separate wines even under the same producer and base name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are not the same wine because Wine A is ros\u00e9 while Wine B is white, and color differences indicate distinct bottlings. The Brut designation also points to a specific style level for the white Cr\u00e9mant, whereas the ros\u00e9 and white versions would be separate wines even under the same producer and base name.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 85,
+  "elapsed": 1.6413822174072266,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C011",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.90,\"reasoning\":\"The two bottlings differ in classification tier (Reserva vs Gran Reserva), which constitutes distinct consumer-facing wines despite identical producer, grape, color, and appellation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The two bottlings differ in classification tier (Reserva vs Gran Reserva), which constitutes distinct consumer-facing wines despite identical producer, grape, color, and appellation.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 131,
+  "elapsed": 4.228509902954102,
+  "error": null
+}

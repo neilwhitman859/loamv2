@@ -1,0 +1,13 @@
+{
+  "pair_id": "B008",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a red Cabernet Sauvignon and Wine B is a white Sauvignon Blanc, representing different grape varieties and colors. Even though they share the same producer and vineyard name, different grapes always constitute different wines. The LWIN numbers are also distinct, confirming they are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a red Cabernet Sauvignon and Wine B is a white Sauvignon Blanc, representing different grape varieties and colors. Even though they share the same producer and vineyard name, different grapes always constitute different wines. The LWIN numbers are also distinct, confirming they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 87,
+  "elapsed": 1.9687860012054443,
+  "error": null
+}

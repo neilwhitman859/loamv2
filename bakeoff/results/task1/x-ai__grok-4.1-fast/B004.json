@@ -1,0 +1,13 @@
+{
+  "pair_id": "B004",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the producer Fromm and the name Brancott Valley, but Wine A is red Pinot Noir while Wine B is white from Chardonnay Blanc and Pinot Noir. Different colors (red vs white) and different grape varieties make them distinct bottlings. Rules explicitly state different colors and different grapes mean DIFFERENT wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the producer Fromm and the name Brancott Valley, but Wine A is red Pinot Noir while Wine B is white from Chardonnay Blanc and Pinot Noir. Different colors (red vs white) and different grape varieties make them distinct bottlings. Rules explicitly state different colors and different grapes mean DIFFERENT wines.",
+  "parse_ok": true,
+  "tokens_in": 572,
+  "tokens_out": 416,
+  "elapsed": 3.18939471244812,
+  "error": null
+}

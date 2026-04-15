@@ -1,0 +1,13 @@
+{
+  "pair_id": "C016",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different appellations (Barolo vs Barbaresco), which are distinct vineyard designations from separate DOCG zones. Different appellations always indicate different wines, even when the producer and grape variety are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different appellations (Barolo vs Barbaresco), which are distinct vineyard designations from separate DOCG zones. Different appellations always indicate different wines, even when the producer and grape variety are the same.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 69,
+  "elapsed": 6.764573574066162,
+  "error": null
+}

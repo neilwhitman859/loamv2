@@ -1,0 +1,13 @@
+{
+  "pair_id": "C024",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The only difference is the French definite article 'Les,' which is routinely added or omitted in wine databases without altering the wine's identity. Both records share the same producer, color, and Extra Brut style, confirming they refer to the same single-vineyard Champagne cuv\u00e9e. The differing LWINs likely indicate vintage or packaging variations rather than distinct bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The only difference is the French definite article 'Les,' which is routinely added or omitted in wine databases without altering the wine's identity. Both records share the same producer, color, and Extra Brut style, confirming they refer to the same single-vineyard Champagne cuv\u00e9e. The differing LWINs likely indicate vintage or packaging variations rather than distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 464,
+  "tokens_out": 1580,
+  "elapsed": 30.010395050048828,
+  "error": null
+}

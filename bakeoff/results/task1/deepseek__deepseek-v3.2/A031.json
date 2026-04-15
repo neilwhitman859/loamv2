@@ -1,0 +1,13 @@
+{
+  "pair_id": "A031",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the addition of the varietal suffix 'Pinot Noir' to Wine B, which is typically just an abbreviation or clarification. Both wines share the same producer (Pierre Girardin), the same cuv\u00e9e name (Eclat de Calcaire), and are both red, indicating the same style and bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the addition of the varietal suffix 'Pinot Noir' to Wine B, which is typically just an abbreviation or clarification. Both wines share the same producer (Pierre Girardin), the same cuv\u00e9e name (Eclat de Calcaire), and are both red, indicating the same style and bottling.",
+  "parse_ok": true,
+  "tokens_in": 463,
+  "tokens_out": 91,
+  "elapsed": 3.0289957523345947,
+  "error": null
+}

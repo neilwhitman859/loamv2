@@ -1,0 +1,13 @@
+{
+  "pair_id": "D032",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The key difference is the term 'Reserve' in Wine B. While not a formal German Pr\u00e4dikat level, producers use 'Reserve' to designate a distinct, higher-quality bottling, often with longer aging or from select parcels. This creates a separate product tier from the standard 'Hallgarten Riesling Trocken', making them different wines that a consumer would encounter separately.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The key difference is the term 'Reserve' in Wine B. While not a formal German Pr\u00e4dikat level, producers use 'Reserve' to designate a distinct, higher-quality bottling, often with longer aging or from select parcels. This creates a separate product tier from the standard 'Hallgarten Riesling Trocken', making them different wines that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 1519,
+  "elapsed": 20.689674139022827,
+  "error": null
+}

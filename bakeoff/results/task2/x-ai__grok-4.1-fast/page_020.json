@@ -1,0 +1,23 @@
+{
+  "page_id": "page_020",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"wines_found\":[{\"name\":\"Cabernet Sauvignon\",\"vintage_year\":null,\"abv_pct\":null,\"blend\":null,\"oak\":null,\"cases_produced\":null,\"chemistry\":null,\"winemaker\":\"Jessica Tomei\",\"farming\":null}]}",
+  "wines_found": [
+    {
+      "name": "Cabernet Sauvignon",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 34167,
+  "tokens_out": 828,
+  "elapsed": 8.026293516159058,
+  "error": null
+}

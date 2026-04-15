@@ -1,0 +1,13 @@
+{
+  "pair_id": "A046",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Carlisle) and share the same vineyard name (James Berry). The only difference is the varietal suffix 'Syrah' in Wine B, which is a common abbreviation and does not indicate a different bottling since both are red wines with the same grape variety.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Carlisle) and share the same vineyard name (James Berry). The only difference is the varietal suffix 'Syrah' in Wine B, which is a common abbreviation and does not indicate a different bottling since both are red wines with the same grape variety.",
+  "parse_ok": true,
+  "tokens_in": 480,
+  "tokens_out": 86,
+  "elapsed": 2.255654811859131,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B009",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is white and Wine B is rose, which are different colors and thus represent distinct bottlings. Even though both are from Bellavista and share similar 'Cuvee' naming, the color difference alone makes them different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is white and Wine B is rose, which are different colors and thus represent distinct bottlings. Even though both are from Bellavista and share similar 'Cuvee' naming, the color difference alone makes them different wines.",
+  "parse_ok": true,
+  "tokens_in": 462,
+  "tokens_out": 74,
+  "elapsed": 2.2549946308135986,
+  "error": null
+}

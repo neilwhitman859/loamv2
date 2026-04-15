@@ -1,0 +1,13 @@
+{
+  "pair_id": "A027",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is explicitly identified as being made from Tempranillo, while Wine B is identified as Mencia. Since these are two distinct grape varieties used for different bottlings by the same producer under the Vina Altamar brand, they represent different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is explicitly identified as being made from Tempranillo, while Wine B is identified as Mencia. Since these are two distinct grape varieties used for different bottlings by the same producer under the Vina Altamar brand, they represent different wines.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 75,
+  "elapsed": 1.5259759426116943,
+  "error": null
+}

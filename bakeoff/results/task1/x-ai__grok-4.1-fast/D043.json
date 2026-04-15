@@ -1,0 +1,13 @@
+{
+  "pair_id": "D043",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (Timbrus) and base name 'Polifonia de Purcari,' but differ explicitly in 'Note #1' vs 'Note #2,' indicating distinct editions or bottlings akin to different lot numbers. Different LWINs (2695026 vs 2695042) confirm they are separate records. They would not share a single encyclopedia page, as consumers encounter them as unique releases.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (Timbrus) and base name 'Polifonia de Purcari,' but differ explicitly in 'Note #1' vs 'Note #2,' indicating distinct editions or bottlings akin to different lot numbers. Different LWINs (2695026 vs 2695042) confirm they are separate records. They would not share a single encyclopedia page, as consumers encounter them as unique releases.",
+  "parse_ok": true,
+  "tokens_in": 580,
+  "tokens_out": 622,
+  "elapsed": 4.0936596393585205,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B016",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct appellation-level wines: Barolo Riserva and Barbaresco Riserva are different DOCG bottlings, so they would not share a single encyclopedia page. They also use different grapes here (Croatina vs Nebbiolo), which independently confirms they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct appellation-level wines: Barolo Riserva and Barbaresco Riserva are different DOCG bottlings, so they would not share a single encyclopedia page. They also use different grapes here (Croatina vs Nebbiolo), which independently confirms they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 79,
+  "elapsed": 2.196699857711792,
+  "error": null
+}

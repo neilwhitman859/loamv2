@@ -1,0 +1,13 @@
+{
+  "pair_id": "B004",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different colors (red vs white) and different primary grape compositions (Pinot Noir vs a blend including Chardonnay Blanc). Different grapes and different colors are definitive rules for classifying wines as distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors (red vs white) and different primary grape compositions (Pinot Noir vs a blend including Chardonnay Blanc). Different grapes and different colors are definitive rules for classifying wines as distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 69,
+  "elapsed": 2.88332200050354,
+  "error": null
+}

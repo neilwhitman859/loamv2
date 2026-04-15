@@ -1,0 +1,28 @@
+{
+  "page_id": "page_040",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"wines_found\":[{\"name\":\"Chardonnay\",\"vintage_year\":null,\"abv_pct\":null,\"blend\":null,\"oak\":{\"vessel\":null,\"months\":null,\"new_pct\":null,\"origin\":\"French\"},\"cases_produced\":null,\"chemistry\":null,\"winemaker\":\"Jason Becker\",\"farming\":null}]}",
+  "wines_found": [
+    {
+      "name": "Chardonnay",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": null,
+        "months": null,
+        "new_pct": null,
+        "origin": "French"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jason Becker",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 13411,
+  "tokens_out": 1069,
+  "elapsed": 8.850650310516357,
+  "error": null
+}

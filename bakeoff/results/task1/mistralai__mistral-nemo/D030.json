@@ -1,0 +1,13 @@
+{
+  "pair_id": "D030",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Boekenhoutskloof), grape variety (Cabernet Sauvignon), and vineyard/cuv\u00e9e (Porcupine Ridge). The difference in name formatting ('Porcupine Ridge' vs 'Merlot Porcupine Ridge') is common and indicates that 'Porcupine Ridge' is an abbreviation.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Boekenhoutskloof), grape variety (Cabernet Sauvignon), and vineyard/cuv\u00e9e (Porcupine Ridge). The difference in name formatting ('Porcupine Ridge' vs 'Merlot Porcupine Ridge') is common and indicates that 'Porcupine Ridge' is an abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 478,
+  "tokens_out": 94,
+  "elapsed": 2.4559149742126465,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D037",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines have the same producer, 'Chatter Creek', and the same name, 'Blend 105 Red Table', with a minor variation in the name that is likely due to abbreviation. Both wines are red, and there is no information suggesting different grapes, vineyard designations, or other distinguishing factors.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines have the same producer, 'Chatter Creek', and the same name, 'Blend 105 Red Table', with a minor variation in the name that is likely due to abbreviation. Both wines are red, and there is no information suggesting different grapes, vineyard designations, or other distinguishing factors.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 84,
+  "elapsed": 1.8908801078796387,
+  "error": null
+}

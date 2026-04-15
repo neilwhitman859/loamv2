@@ -1,0 +1,13 @@
+{
+  "pair_id": "A001",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine B is simply the varietal-specific name for Wine A, which is a Carmenere-dominant blend from Santa Carolina's 'El Pacto' series. The addition of the grape name 'Carmenere' to the 'Agreement No 2' title is a common naming variation for the same specific bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine B is simply the varietal-specific name for Wine A, which is a Carmenere-dominant blend from Santa Carolina's 'El Pacto' series. The addition of the grape name 'Carmenere' to the 'Agreement No 2' title is a common naming variation for the same specific bottling.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 86,
+  "elapsed": 1.8077032566070557,
+  "error": null
+}

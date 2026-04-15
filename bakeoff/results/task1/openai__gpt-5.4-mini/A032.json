@@ -1,0 +1,13 @@
+{
+  "pair_id": "A032",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.98,\"reasoning\":\"These appear to be the same wine, with Wine B simply adding the varietal suffix \\\"Pinot Noir\\\" to the shorter label \\\"Stoney Range.\\\" The producer is the same and both are red Pinot Noir, with no evidence of a different tier, vineyard, or style. Under the rules, a varietal suffix difference alone usually indicates the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "These appear to be the same wine, with Wine B simply adding the varietal suffix \"Pinot Noir\" to the shorter label \"Stoney Range.\" The producer is the same and both are red Pinot Noir, with no evidence of a different tier, vineyard, or style. Under the rules, a varietal suffix difference alone usually indicates the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 94,
+  "elapsed": 1.6844818592071533,
+  "error": null
+}

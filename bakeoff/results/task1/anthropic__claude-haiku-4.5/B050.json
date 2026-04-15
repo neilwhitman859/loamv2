@@ -1,0 +1,13 @@
+{
+  "pair_id": "B050",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a white Cremant while Wine B is a ros\u00e9 Cremant from the same producer Happs. Different colors (white vs ros\u00e9) represent distinct bottlings that consumers would encounter separately, making them different wines despite sharing the same base classification and producer. The different LWINs (1958692 vs 1958706) further confirm these are separate products.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a white Cremant while Wine B is a ros\u00e9 Cremant from the same producer Happs. Different colors (white vs ros\u00e9) represent distinct bottlings that consumers would encounter separately, making them different wines despite sharing the same base classification and producer. The different LWINs (1958692 vs 1958706) further confirm these are separate products.",
+  "parse_ok": true,
+  "tokens_in": 481,
+  "tokens_out": 109,
+  "elapsed": 2.372554302215576,
+  "error": null
+}

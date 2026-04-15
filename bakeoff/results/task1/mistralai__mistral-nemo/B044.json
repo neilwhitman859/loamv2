@@ -1,0 +1,13 @@
+{
+  "pair_id": "B044",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a ros\u00e9 while Wine B is a white wine, indicating they are made from different grapes and thus represent different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a ros\u00e9 while Wine B is a white wine, indicating they are made from different grapes and thus represent different wines.",
+  "parse_ok": true,
+  "tokens_in": 479,
+  "tokens_out": 54,
+  "elapsed": 2.5849080085754395,
+  "error": null
+}

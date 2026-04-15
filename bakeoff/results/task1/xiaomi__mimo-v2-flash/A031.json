@@ -1,0 +1,13 @@
+{
+  "pair_id": "A031",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (Pierre Girardin) and the base name 'Eclat de Calcaire', with Wine B simply adding the grape variety 'Pinot Noir' as a suffix. The color is identical (red), and the suffix difference alone typically indicates the same wine, as the shorter name is an abbreviation of the full designation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (Pierre Girardin) and the base name 'Eclat de Calcaire', with Wine B simply adding the grape variety 'Pinot Noir' as a suffix. The color is identical (red), and the suffix difference alone typically indicates the same wine, as the shorter name is an abbreviation of the full designation.",
+  "parse_ok": true,
+  "tokens_in": 517,
+  "tokens_out": 95,
+  "elapsed": 2.449871301651001,
+  "error": null
+}

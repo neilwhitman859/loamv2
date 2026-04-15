@@ -1,0 +1,13 @@
+{
+  "pair_id": "D048",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer (Happs), grape varieties (Cabernet Merlot), and color (red). The difference in name formatting (presence of 'iSeries' in Wine A) is a minor variation that does not affect the classification as the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer (Happs), grape varieties (Cabernet Merlot), and color (red). The difference in name formatting (presence of 'iSeries' in Wine A) is a minor variation that does not affect the classification as the same wine.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 77,
+  "elapsed": 1.6172807216644287,
+  "error": null
+}

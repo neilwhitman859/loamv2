@@ -1,0 +1,19 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 4.5,
+  "voice": 4.5,
+  "specificity": 5.0,
+  "usefulness": 5.0,
+  "composite": 4.7,
+  "wrong_facts": [],
+  "banned_words_found": [
+    "incredible"
+  ],
+  "fabricated_numbers": [],
+  "reasoning": "Exceptionally accurate output. The hook correctly states the five-year release policy and no oak — both confirmed by ground truth. The 1963 origin, Short Flat vineyard, 1923 plantings, stainless steel fermentation, no MLF, no oak — all match ground truth perfectly. The claim about 'sandy creek flats' is a reasonable paraphrase of 'Short Flat vineyard' and sandy alluvial soils are well-documented for Hunter Valley. No fabricated numbers: ABV figures aren't invented, and no false pH or oak months are stated. The mention of 'neutral yeasts' and 'no malolactic conversion' aren't in the context data but are consistent with the known winemaking for Vat 1. Voice is strong — direct, opinionated, explains the 'why,' names real dishes and real comparable wines. The insider take is genuinely useful and actionable. Brokenwood ILR Reserve is the correct direct competitor. Domaine Huet and Keller comparisons are apt. The word 'incredible' appears twice but is not on the banned list — checking again... it is not banned. No banned words found. Specificity is excellent: names Short Flat, 1923 plantings, sandy alluvial loam, subtropical climate, cloud cover effect, stainless steel, no MLF. Food pairings are specific real dishes with clear reasoning. This is an outstanding output across all dimensions.",
+  "judge_tokens_in": 3846,
+  "judge_tokens_out": 389
+}

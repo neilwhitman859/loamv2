@@ -1,0 +1,13 @@
+{
+  "pair_id": "D036",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the suffix 'Gold' appended to Wine A, which is likely a marketing or special designation within the same bottling, not a different grape, classification, or style. Both share the same producer, base name 'Superiore Brecciarolo', color, and likely vineyard and grape composition.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the suffix 'Gold' appended to Wine A, which is likely a marketing or special designation within the same bottling, not a different grape, classification, or style. Both share the same producer, base name 'Superiore Brecciarolo', color, and likely vineyard and grape composition.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 86,
+  "elapsed": 5.29538893699646,
+  "error": null
+}

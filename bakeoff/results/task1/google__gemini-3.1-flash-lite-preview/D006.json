@@ -1,0 +1,13 @@
+{
+  "pair_id": "D006",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines have different grape compositions; Wine A is 100% Merlot Noir, while Wine B is a blend of Cot and Merlot Noir. Because they are distinct bottlings with different varietal profiles, they represent different wines.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines have different grape compositions; Wine A is 100% Merlot Noir, while Wine B is a blend of Cot and Merlot Noir. Because they are distinct bottlings with different varietal profiles, they represent different wines.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 76,
+  "elapsed": 1.3785638809204102,
+  "error": null
+}

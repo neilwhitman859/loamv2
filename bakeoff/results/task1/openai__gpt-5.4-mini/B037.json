@@ -1,0 +1,13 @@
+{
+  "pair_id": "B037",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"The producer is the same and the wine name matches, but the colors differ: Wine A is red and Wine B is white. Different color/style means these are distinct bottlings rather than the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "The producer is the same and the wine name matches, but the colors differ: Wine A is red and Wine B is white. Different color/style means these are distinct bottlings rather than the same wine.",
+  "parse_ok": true,
+  "tokens_in": 398,
+  "tokens_out": 64,
+  "elapsed": 1.794912576675415,
+  "error": null
+}

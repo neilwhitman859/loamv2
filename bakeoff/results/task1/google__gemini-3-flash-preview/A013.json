@@ -1,0 +1,13 @@
+{
+  "pair_id": "A013",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is listed as containing Pinot Noir and Canari Noir (red grapes, likely a 'blanc de noirs' or light red style), whereas Wine B is specifically identified as Pinot Gris (a white grape). Even though they share the same vineyard name (Lerchenberg), the difference in grape varieties makes them distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is listed as containing Pinot Noir and Canari Noir (red grapes, likely a 'blanc de noirs' or light red style), whereas Wine B is specifically identified as Pinot Gris (a white grape). Even though they share the same vineyard name (Lerchenberg), the difference in grape varieties makes them distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 91,
+  "elapsed": 1.6856231689453125,
+  "error": null
+}

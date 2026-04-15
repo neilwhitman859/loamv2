@@ -1,0 +1,13 @@
+{
+  "pair_id": "D034",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.97,\"reasoning\":\"These appear to be distinct cuv\u00e9es from Valentin Zusslin. Wine A includes the vineyard/designation \\\"Neuberg\\\" while Wine B is the broader \\\"Bollenberg Pinot Noir\\\" without that specific vineyard cue, which indicates a different bottling rather than a simple formatting variation. The differing LWINs also support that they are separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "These appear to be distinct cuv\u00e9es from Valentin Zusslin. Wine A includes the vineyard/designation \"Neuberg\" while Wine B is the broader \"Bollenberg Pinot Noir\" without that specific vineyard cue, which indicates a different bottling rather than a simple formatting variation. The differing LWINs also support that they are separate wines.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 93,
+  "elapsed": 1.8493883609771729,
+  "error": null
+}

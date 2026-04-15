@@ -1,0 +1,17 @@
+{
+  "wine_id": "10c89e05-ecdd-4254-9c24-5a0b67894da5",
+  "wine_name": "Black Box Deep & Dark Cabernet Sauvignon, California",
+  "tier": "C",
+  "model": "openai/gpt-5.4",
+  "correctness": 4.0,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.225,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is factually careful — it correctly notes the $19.99 price, 2021 ABV of 13.0%, the gold medal for 2022, and the lack of stated appellation. It does not fabricate blend percentages, pH, oak months, or other numbers not in the data. It doesn't mention the 3-liter format explicitly by volume but references 'boxed wine' and 'larger format,' which is consistent with ground truth. It doesn't mention Constellation or Gallo ownership, which would have added value but isn't wrong to omit. The hook is accurate — 'Deep & Dark' as a style descriptor aligns with ground truth's 'marketing descriptor for the wine style.' The voice is excellent: direct, opinionated, honest about limitations ('I cannot name a soil type without inventing details'), uses real dish names in pairings with reasoning, and avoids all banned words. The comparable wines are real and well-chosen. The insider take is sharp and actionable. Minor ding on correctness: the ground truth ABV is 13.5% (not 13.0%), but the output correctly attributes 13.0% to the 2021 vintage from the context data — the ground truth may reflect a different vintage or source, so this isn't clearly wrong. Overall a strong, honest, useful output.",
+  "judge_tokens_in": 3645,
+  "judge_tokens_out": 359
+}

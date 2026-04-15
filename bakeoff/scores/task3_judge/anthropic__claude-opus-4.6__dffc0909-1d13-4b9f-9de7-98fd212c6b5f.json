@@ -1,0 +1,30 @@
+{
+  "wine_id": "dffc0909-1d13-4b9f-9de7-98fd212c6b5f",
+  "wine_name": "Cakebread Cellars Cuttings Wharf Chardonnay, Los Carneros",
+  "tier": "A",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Hook says 'heavy clay soils' but ground truth says 'shallow loamy soils' (Haire loam)",
+    "Wine summary mentions 'heavy clay that slows ripening' but the vineyard has Haire loam soils, not heavy clay",
+    "Terroir section says 'heavy clay loam soils' and 'Haire and Diablo series clays' — Haire is a loam series, not clay, and Diablo series is fabricated/unverifiable for this specific site",
+    "Hook says vineyard is 'along the Napa River' — ground truth says it's 'on a low ridge in eastern Carneros', not along the river",
+    "Vinification claims '25-30% new barrels' which is not in context data and unverifiable",
+    "Claims about 'partial malolactic fermentation' are not in context data and unverifiable"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "25-30% new barrels in vinification summary",
+    "Kistler Les Noisetiers price $55-65",
+    "Hyde de Villaine price $60-75",
+    "Far Niente Chardonnay price $50-55",
+    "Patz & Hall Sonoma Coast price $35-40"
+  ],
+  "reasoning": "The output has strong voice, specificity, and usefulness — it reads like expert wine writing with real opinions and actionable comparisons. However, the core soil description is wrong: ground truth says 'shallow loamy soils' and 'Haire loam,' but the output repeatedly emphasizes 'heavy clay soils' and fabricates 'Diablo series clays.' This error appears in the hook and is repeated throughout, which is a significant factual problem. The hook also places the vineyard 'along the Napa River' when it's actually on a low ridge. Multiple winemaking numbers (new oak %, competitor prices) are fabricated. The soil error in the hook is provably wrong per ground truth, triggering the hook penalty, but the naming origin (Cuttings Wharf Road) is correct. Given the wrong soil claim in the hook and repeated throughout, plus fabricated numbers, correctness is severely penalized.",
+  "judge_tokens_in": 4307,
+  "judge_tokens_out": 543
+}

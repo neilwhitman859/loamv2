@@ -1,0 +1,13 @@
+{
+  "pair_id": "C028",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are from the same producer, Mayu, and have the same grape variety, Carmenere. The only difference is the classification tier, with Wine A being Gran Reserva and Wine B being Reserva. However, the confidence is moderate as the classification tier is a key differentiator, but the wines are likely to be similar in style and quality.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are from the same producer, Mayu, and have the same grape variety, Carmenere. The only difference is the classification tier, with Wine A being Gran Reserva and Wine B being Reserva. However, the confidence is moderate as the classification tier is a key differentiator, but the wines are likely to be similar in style and quality.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 91,
+  "elapsed": 1.522953748703003,
+  "error": null
+}

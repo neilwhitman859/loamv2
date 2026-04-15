@@ -1,0 +1,13 @@
+{
+  "pair_id": "C047",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The key difference here is the color and style: 'Brut Nature' is typically a white sparkling wine, while 'Brut Rose Nature' is a ros\u00e9 sparkling wine. These represent distinct bottlings that a consumer would encounter separately, even from the same producer and with similar names.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The key difference here is the color and style: 'Brut Nature' is typically a white sparkling wine, while 'Brut Rose Nature' is a ros\u00e9 sparkling wine. These represent distinct bottlings that a consumer would encounter separately, even from the same producer and with similar names.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 93,
+  "elapsed": 1.770819902420044,
+  "error": null
+}

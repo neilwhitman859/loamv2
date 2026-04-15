@@ -1,0 +1,13 @@
+{
+  "pair_id": "A017",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"The two records name different grape varieties: Wine A is Pinot Noir, while Wine B is Syrah. Under the rules, different grapes always mean different wines even if the producer and base cuv\u00e9e name are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "The two records name different grape varieties: Wine A is Pinot Noir, while Wine B is Syrah. Under the rules, different grapes always mean different wines even if the producer and base cuv\u00e9e name are the same.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 67,
+  "elapsed": 1.5810632705688477,
+  "error": null
+}

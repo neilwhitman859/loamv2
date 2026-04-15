@@ -1,0 +1,13 @@
+{
+  "pair_id": "D040",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Although both are red wines from Santi, the names indicate different bottlings: \\\"Solane Superiore\\\" is a specific cuv\u00e9e/vineyard-style name, while \\\"Superiore\\\" is a more generic label. The LWINs are also different, supporting that these are separate wines rather than a formatting variant.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Although both are red wines from Santi, the names indicate different bottlings: \"Solane Superiore\" is a specific cuv\u00e9e/vineyard-style name, while \"Superiore\" is a more generic label. The LWINs are also different, supporting that these are separate wines rather than a formatting variant.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 87,
+  "elapsed": 1.6771419048309326,
+  "error": null
+}

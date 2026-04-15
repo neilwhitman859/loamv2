@@ -1,0 +1,13 @@
+{
+  "pair_id": "C023",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the addition of the grape 'Shiraz' (Syrah) as a suffix to the name, which is a varietal suffix difference alone. Both wines share the same producer (Bleasdale), appellation, color, and the core name 'Uncle Dick The Red Brute', indicating they are the same bottling with a naming variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the addition of the grape 'Shiraz' (Syrah) as a suffix to the name, which is a varietal suffix difference alone. Both wines share the same producer (Bleasdale), appellation, color, and the core name 'Uncle Dick The Red Brute', indicating they are the same bottling with a naming variation.",
+  "parse_ok": true,
+  "tokens_in": 470,
+  "tokens_out": 99,
+  "elapsed": 24.909034729003906,
+  "error": null
+}

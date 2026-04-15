@@ -1,0 +1,26 @@
+{
+  "wine_id": "dc9e4353-ddf9-4e48-854e-1a3d6404b7b3",
+  "wine_name": "Shafer One Point Five Cabernet Sauvignon, Stags Leap District",
+  "tier": "C",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.65,
+  "wrong_facts": [
+    "Oak aging stated as 'roughly 20 months' — ground truth is 18 months",
+    "Hook says 'Named for the generational transition between John and Doug Shafer' — this is close but imprecise; ground truth specifies it's about the 'generation and a half' partnership, not simply a 'generational transition'",
+    "Mentions 'Bale clay loam' as a specific soil type in Stags Leap District — this is unverifiable and likely fabricated or misattributed (Bale loam is more associated with upper Napa/St. Helena)",
+    "References 'Palisades rock formation' providing afternoon shade — the Palisades are near Calistoga, not Stags Leap District; this is geographically wrong"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "20 months oak aging (ground truth is 18 months)",
+    "55°F cellar temperature (not in context data, though this is standard advice)",
+    "5 and 15 years peak window (not in context data)"
+  ],
+  "reasoning": "The output has strong voice, specificity, and usefulness — it names real competitors with reasoning, gives concrete food pairings, and takes a clear stance in the insider take. However, correctness suffers from several issues: the oak aging is stated as ~20 months when it's actually 18 months (a fabricated number), the 'Palisades rock formation' providing afternoon shade is geographically wrong (Palisades are near Calistoga, not Stags Leap), and 'Bale clay loam' is likely misattributed to this AVA. The hook's naming origin is close but imprecise — it misses the key 'one and a half generations' concept that gives the wine its name. The 20-month oak claim is a fabricated number not matching ground truth, triggering the hard penalty consideration, though it's close enough to be borderline. Overall a well-written piece undermined by factual errors in terroir details and vinification.",
+  "judge_tokens_in": 3683,
+  "judge_tokens_out": 506
+}

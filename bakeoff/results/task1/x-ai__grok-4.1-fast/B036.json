@@ -1,0 +1,13 @@
+{
+  "pair_id": "B036",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Parra Jimenez) and base cuv\u00e9e name 'Arriburra Gran Fudre Selection', but Wine A is explicitly Blanco (white) while Wine B is red. Different colors mean they are distinct wines, similar to the rule that Ros\u00e9 vs Red from the same vineyard are DIFFERENT. Distinct LWIN numbers (2976804 vs 2976790) further confirm separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Parra Jimenez) and base cuv\u00e9e name 'Arriburra Gran Fudre Selection', but Wine A is explicitly Blanco (white) while Wine B is red. Different colors mean they are distinct wines, similar to the rule that Ros\u00e9 vs Red from the same vineyard are DIFFERENT. Distinct LWIN numbers (2976804 vs 2976790) further confirm separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 577,
+  "tokens_out": 483,
+  "elapsed": 3.76835298538208,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B014",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, one being a ros\u00e9 and the other a white wine. Despite sharing the same producer and wine type (Cr\u00e9mant d'Alsace), the color difference indicates they are distinct wines. The 'Brut' designation in Wine B does not alone signify a difference, but combined with the color difference, it's clear they are different.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, one being a ros\u00e9 and the other a white wine. Despite sharing the same producer and wine type (Cr\u00e9mant d'Alsace), the color difference indicates they are distinct wines. The 'Brut' designation in Wine B does not alone signify a difference, but combined with the color difference, it's clear they are different.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 97,
+  "elapsed": 1.4063258171081543,
+  "error": null
+}

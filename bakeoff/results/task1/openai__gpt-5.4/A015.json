@@ -1,0 +1,13 @@
+{
+  "pair_id": "A015",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"Both records are Patricia Green red wines from the Freedom Hill vineyard/cuv\u00e9e named Perspicacious. Wine A explicitly lists the grape as Pinot Noir, and Wine B simply appends that varietal to the same cuv\u00e9e name, which is typically just a fuller naming format rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "Both records are Patricia Green red wines from the Freedom Hill vineyard/cuv\u00e9e named Perspicacious. Wine A explicitly lists the grape as Pinot Noir, and Wine B simply appends that varietal to the same cuv\u00e9e name, which is typically just a fuller naming format rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 83,
+  "elapsed": 2.393038749694824,
+  "error": null
+}

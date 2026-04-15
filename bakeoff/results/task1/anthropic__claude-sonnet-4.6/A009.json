@@ -1,0 +1,13 @@
+{
+  "pair_id": "A009",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A lists both PINOT GRIS and PINOT NOIR as grapes, suggesting it may be a blend or the record is ambiguous, while Wine B is specifically labeled as Pinot Gris. More critically, if the producer makes multiple wines from the Naumberg vineyard with different grape varieties, the varietal suffix 'Pinot Gris' on Wine B indicates a distinct bottling. The presence of Pinot Noir in Wine A's grape list alongside Pinot Gris suggests Wine A may represent a different or blended wine from the same vineyard, making these different bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A lists both PINOT GRIS and PINOT NOIR as grapes, suggesting it may be a blend or the record is ambiguous, while Wine B is specifically labeled as Pinot Gris. More critically, if the producer makes multiple wines from the Naumberg vineyard with different grape varieties, the varietal suffix 'Pinot Gris' on Wine B indicates a distinct bottling. The presence of Pinot Noir in Wine A's grape list alongside Pinot Gris suggests Wine A may represent a different or blended wine from the same vineyard, making these different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 521,
+  "tokens_out": 158,
+  "elapsed": 3.644195079803467,
+  "error": null
+}

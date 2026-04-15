@@ -1,0 +1,13 @@
+{
+  "pair_id": "C037",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different classification tiers (Kabinett vs. Spatlese) and different lot/cask numbers (2894588 vs. 2894520), indicating distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different classification tiers (Kabinett vs. Spatlese) and different lot/cask numbers (2894588 vs. 2894520), indicating distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 462,
+  "tokens_out": 73,
+  "elapsed": 1.3132224082946777,
+  "error": null
+}

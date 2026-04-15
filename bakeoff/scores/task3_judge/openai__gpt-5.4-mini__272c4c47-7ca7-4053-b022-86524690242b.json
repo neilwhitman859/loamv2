@@ -1,0 +1,20 @@
+{
+  "wine_id": "272c4c47-7ca7-4053-b022-86524690242b",
+  "wine_name": "Lafage Tessellae Old Vines, Côtes du Roussillon",
+  "tier": "C",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.875,
+  "wrong_facts": [
+    "Hook mentions 'old-vine Carignan and Grenache' — ground truth confirms the wine is 100% Carignan, not a Carignan-Grenache blend",
+    "Wine summary lists Grenache, Lledoner Pelut, Mourvèdre, and Syrah as possible components, but the wine is 100% Carignan per ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The hook incorrectly implies Grenache is part of the wine's composition — ground truth confirms 100% Carignan from 70+ year old vines. The output also never mentions the naming origin (tesserae/Roman mosaics) which is a missed opportunity given ground truth, and doesn't name Jean-Marc Lafage. However, the output correctly identifies schist soils, the tramontane wind, and the old-vine character. The voice is strong — direct, opinionated, specific, with real food pairings and honest insider take. No banned words. No fabricated numbers. The Grenache mention in the hook is problematic but not a provably wrong 'hook fact' in the hard-cap sense since the model hedges by saying 'Carignan and Grenache can turn sun into structure' rather than stating the blend — still, it's misleading given the wine is 100% Carignan. Specificity is good with named soils, wind patterns, and real comparable producers.",
+  "judge_tokens_in": 3580,
+  "judge_tokens_out": 377
+}

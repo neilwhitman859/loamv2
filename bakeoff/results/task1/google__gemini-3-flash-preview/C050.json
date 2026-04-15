@@ -1,0 +1,13 @@
+{
+  "pair_id": "C050",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"In Argentinian wine labeling, 'Reserva' and 'Gran Reserva' represent distinct classification tiers with different aging requirements and price points. These are separate bottlings within the producer's portfolio, as evidenced by their unique LWIN identifiers.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "In Argentinian wine labeling, 'Reserva' and 'Gran Reserva' represent distinct classification tiers with different aging requirements and price points. These are separate bottlings within the producer's portfolio, as evidenced by their unique LWIN identifiers.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 71,
+  "elapsed": 1.532083511352539,
+  "error": null
+}

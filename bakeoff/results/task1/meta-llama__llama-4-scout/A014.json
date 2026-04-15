@@ -1,0 +1,13 @@
+{
+  "pair_id": "A014",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer, vineyard/cuv\u00e9e (Grey Series Barrel Ferment), and color (white). The difference in grape variety name (GEWUERZTRAMINER vs Pinot Gris) is likely due to synonymy or abbreviation, as Gew\u00fcrztraminer is sometimes referred to as Pinot Gris in certain contexts, and Gew\u00fcrztraminer is a known alias for Pinot Gris/Traminer.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer, vineyard/cuv\u00e9e (Grey Series Barrel Ferment), and color (white). The difference in grape variety name (GEWUERZTRAMINER vs Pinot Gris) is likely due to synonymy or abbreviation, as Gew\u00fcrztraminer is sometimes referred to as Pinot Gris in certain contexts, and Gew\u00fcrztraminer is a known alias for Pinot Gris/Traminer.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 108,
+  "elapsed": 2.1708691120147705,
+  "error": null
+}

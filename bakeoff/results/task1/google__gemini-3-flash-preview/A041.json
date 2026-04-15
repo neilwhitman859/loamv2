@@ -1,0 +1,13 @@
+{
+  "pair_id": "A041",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.98, \"reasoning\": \"Wine B is simply the varietal-specific name for Wine A. Since both records share the same producer, vineyard (Bien Nacido), and grape variety (Pinot Noir), they represent the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Wine B is simply the varietal-specific name for Wine A. Since both records share the same producer, vineyard (Bien Nacido), and grape variety (Pinot Noir), they represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 64,
+  "elapsed": 1.8633205890655518,
+  "error": null
+}

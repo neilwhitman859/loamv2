@@ -1,0 +1,13 @@
+{
+  "pair_id": "D039",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The key evidence is the 'Reserva' designation in Wine B, which indicates a different classification tier than Wine A. This difference in classification tier means the wines are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The key evidence is the 'Reserva' designation in Wine B, which indicates a different classification tier than Wine A. This difference in classification tier means the wines are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 60,
+  "elapsed": 1.7231004238128662,
+  "error": null
+}

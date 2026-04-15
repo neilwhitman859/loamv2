@@ -1,0 +1,13 @@
+{
+  "pair_id": "A010",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, vineyard, and color. Although Wine A lists GEWUERZTRAMINER and Wine B lists Pinot Gris, the varietal suffix difference alone usually means they are the same wine, with the shorter name being an abbreviation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, vineyard, and color. Although Wine A lists GEWUERZTRAMINER and Wine B lists Pinot Gris, the varietal suffix difference alone usually means they are the same wine, with the shorter name being an abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 75,
+  "elapsed": 2.1922500133514404,
+  "error": null
+}

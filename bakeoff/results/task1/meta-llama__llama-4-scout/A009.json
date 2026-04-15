@@ -1,0 +1,13 @@
+{
+  "pair_id": "A009",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The producer and vineyard name match, and the color of both wines is white. Although Wine A lists multiple grapes including Pinot Gris, which matches Wine B, the presence of Pinot Noir in Wine A does not necessarily indicate a different wine since the primary match is with Pinot Gris.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The producer and vineyard name match, and the color of both wines is white. Although Wine A lists multiple grapes including Pinot Gris, which matches Wine B, the presence of Pinot Noir in Wine A does not necessarily indicate a different wine since the primary match is with Pinot Gris.",
+  "parse_ok": true,
+  "tokens_in": 448,
+  "tokens_out": 78,
+  "elapsed": 2.0313305854797363,
+  "error": null
+}

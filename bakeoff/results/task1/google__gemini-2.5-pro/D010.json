@@ -1,0 +1,13 @@
+{
+  "pair_id": "D010",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The addition of 'Rose' to the name 'Gran Cuvee' indicates a different style of wine. Producers market their standard cuv\u00e9e and their ros\u00e9 cuv\u00e9e as distinct products, which are different bottlings that a consumer would encounter separately.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The addition of 'Rose' to the name 'Gran Cuvee' indicates a different style of wine. Producers market their standard cuv\u00e9e and their ros\u00e9 cuv\u00e9e as distinct products, which are different bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 409,
+  "tokens_out": 1192,
+  "elapsed": 20.52911067008972,
+  "error": null
+}

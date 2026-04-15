@@ -1,0 +1,13 @@
+{
+  "pair_id": "D030",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.9,\n\"reasoning\": \"Porcupine Ridge is a range produced by Boekenhoutskloof that includes multiple distinct varietal wines, such as Cabernet Sauvignon, Merlot, and Syrah. Because the producer makes multiple wines under the same brand name using different grape varieties, the addition of 'Merlot' to the name indicates a specific, distinct bottling rather than an abbreviation of the same wine.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Porcupine Ridge is a range produced by Boekenhoutskloof that includes multiple distinct varietal wines, such as Cabernet Sauvignon, Merlot, and Syrah. Because the producer makes multiple wines under the same brand name using different grape varieties, the addition of 'Merlot' to the name indicates a specific, distinct bottling rather than an abbreviation of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 103,
+  "elapsed": 1.8074133396148682,
+  "error": null
+}

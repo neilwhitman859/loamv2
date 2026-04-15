@@ -1,0 +1,13 @@
+{
+  "pair_id": "B029",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different grape varieties: Merlot for Wine A and Chardonnay for Wine B. They also differ in color, with Wine A being red and Wine B white, so they are distinct wines rather than the same bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different grape varieties: Merlot for Wine A and Chardonnay for Wine B. They also differ in color, with Wine A being red and Wine B white, so they are distinct wines rather than the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 67,
+  "elapsed": 1.746497392654419,
+  "error": null
+}

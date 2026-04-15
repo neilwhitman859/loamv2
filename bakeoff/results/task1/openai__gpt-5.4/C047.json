@@ -1,0 +1,13 @@
+{
+  "pair_id": "C047",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct bottlings from Arlaux: one is Brut Nature and the other is Brut Ros\u00e9 Nature. The ros\u00e9 designation and differing recorded colors (white vs ros\u00e9) indicate different wine styles, which should be treated as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct bottlings from Arlaux: one is Brut Nature and the other is Brut Ros\u00e9 Nature. The ros\u00e9 designation and differing recorded colors (white vs ros\u00e9) indicate different wine styles, which should be treated as different wines.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 72,
+  "elapsed": 2.5280916690826416,
+  "error": null
+}

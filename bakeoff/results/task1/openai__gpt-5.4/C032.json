@@ -1,0 +1,13 @@
+{
+  "pair_id": "C032",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.95,\"reasoning\":\"Both records are Bonnaire's white Blanc de Blancs, with identical producer, cuv\u00e9e name, and style. The only difference is that Wine A explicitly says NV while Wine B omits the vintage designation, which is commonly just a shortened naming format for the same non-vintage bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records are Bonnaire's white Blanc de Blancs, with identical producer, cuv\u00e9e name, and style. The only difference is that Wine A explicitly says NV while Wine B omits the vintage designation, which is commonly just a shortened naming format for the same non-vintage bottling.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 81,
+  "elapsed": 2.2415122985839844,
+  "error": null
+}

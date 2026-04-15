@@ -1,0 +1,13 @@
+{
+  "pair_id": "D026",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The names differ only by the addition of the color descriptor 'Red', which is a formatting or suffix difference indicating the same underlying wine. Both share the same producer, base name, and color, with no evidence of different grapes, classification, or style.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The names differ only by the addition of the color descriptor 'Red', which is a formatting or suffix difference indicating the same underlying wine. Both share the same producer, base name, and color, with no evidence of different grapes, classification, or style.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 74,
+  "elapsed": 3.1150496006011963,
+  "error": null
+}

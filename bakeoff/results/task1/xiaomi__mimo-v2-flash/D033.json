@@ -1,0 +1,13 @@
+{
+  "pair_id": "D033",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Valentin Zusslin) and are red Pinot Noir, but they have different vineyard designations: 'Luft' and 'Harmonie' are distinct cuv\u00e9es or vineyard plots. Different vineyard designations indicate separate bottlings that a consumer would encounter as distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Valentin Zusslin) and are red Pinot Noir, but they have different vineyard designations: 'Luft' and 'Harmonie' are distinct cuv\u00e9es or vineyard plots. Different vineyard designations indicate separate bottlings that a consumer would encounter as distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 93,
+  "elapsed": 2.3407628536224365,
+  "error": null
+}

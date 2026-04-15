@@ -1,0 +1,40 @@
+{
+  "page_id": "page_047",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Rosé\",\n      \"vintage_year\": null,\n      \"abv_pct\": null,\n      \"blend\": [\n        {\"grape\": \"Grenache\", \"pct\": null},\n        {\"grape\": \"Pinot Noir\", \"pct\": null},\n        {\"grape\": \"Syrah\", \"pct\": null},\n        {\"grape\": \"Merlot\", \"pct\": null}\n      ],\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": \"Jessica Tomei\",\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Rosé",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Grenache",
+          "pct": null
+        },
+        {
+          "grape": "Pinot Noir",
+          "pct": null
+        },
+        {
+          "grape": "Syrah",
+          "pct": null
+        },
+        {
+          "grape": "Merlot",
+          "pct": null
+        }
+      ],
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 34335,
+  "tokens_out": 145,
+  "elapsed": 6.965131759643555,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B002",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two records represent wines of different colors; Wine A is red and Wine B is white. A red wine and a white wine are fundamentally distinct products, even if they share a producer and a cuv\u00e9e name. This indicates they are separate bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent wines of different colors; Wine A is red and Wine B is white. A red wine and a white wine are fundamentally distinct products, even if they share a producer and a cuv\u00e9e name. This indicates they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 1307,
+  "elapsed": 13.55995512008667,
+  "error": null
+}

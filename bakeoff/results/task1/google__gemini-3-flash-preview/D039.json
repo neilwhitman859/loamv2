@@ -1,0 +1,13 @@
+{
+  "pair_id": "D039",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"In Chilean wine classification, 'Reserva' denotes a specific quality tier and aging requirement that distinguishes it from a standard entry-level bottling. These represent two distinct commercial products within the producer's hierarchy rather than just a naming variation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "In Chilean wine classification, 'Reserva' denotes a specific quality tier and aging requirement that distinguishes it from a standard entry-level bottling. These represent two distinct commercial products within the producer's hierarchy rather than just a naming variation.",
+  "parse_ok": true,
+  "tokens_in": 415,
+  "tokens_out": 71,
+  "elapsed": 1.6304826736450195,
+  "error": null
+}

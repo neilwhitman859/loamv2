@@ -1,0 +1,13 @@
+{
+  "pair_id": "D018",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Truchard produces both a standard Cabernet Sauvignon and a Reserve Cabernet Sauvignon as distinct bottlings with different tier classifications. The 'Reserve' designation indicates a higher-tier wine with different selection criteria, aging, or production methods \u2014 not merely an abbreviation of the same wine. The different LWIN codes (1300707 vs 2716635) confirm these are catalogued as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Truchard produces both a standard Cabernet Sauvignon and a Reserve Cabernet Sauvignon as distinct bottlings with different tier classifications. The 'Reserve' designation indicates a higher-tier wine with different selection criteria, aging, or production methods \u2014 not merely an abbreviation of the same wine. The different LWIN codes (1300707 vs 2716635) confirm these are catalogued as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 115,
+  "elapsed": 3.158869504928589,
+  "error": null
+}

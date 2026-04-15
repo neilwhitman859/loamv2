@@ -1,0 +1,13 @@
+{
+  "pair_id": "B045",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are distinct bottlings within a numbered series (Note #1 vs Note #3) and have different colors (Red vs White). In the Polifonia de Purcari series, each 'Note' represents a different blend of grape varieties.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are distinct bottlings within a numbered series (Note #1 vs Note #3) and have different colors (Red vs White). In the Polifonia de Purcari series, each 'Note' represents a different blend of grape varieties.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 73,
+  "elapsed": 1.713360071182251,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B021",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines are different styles made from the same grape. Wine A is a 'White Zinfandel,' which is a ros\u00e9 wine, as confirmed by its 'rose' color. Wine B is a standard Zinfandel, which is a red wine. A ros\u00e9 and a red wine are always considered different products, even if from the same producer.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are different styles made from the same grape. Wine A is a 'White Zinfandel,' which is a ros\u00e9 wine, as confirmed by its 'rose' color. Wine B is a standard Zinfandel, which is a red wine. A ros\u00e9 and a red wine are always considered different products, even if from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 1121,
+  "elapsed": 12.02581524848938,
+  "error": null
+}

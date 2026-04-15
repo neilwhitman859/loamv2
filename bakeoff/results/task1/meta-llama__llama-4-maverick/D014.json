@@ -1,0 +1,13 @@
+{
+  "pair_id": "D014",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Heidsieck & Co, and have the same style (Brut) and color (white). The difference in name is due to the presence of 'Dry' and 'NV' in Wine B, which is likely an abbreviation or additional descriptor rather than a different wine. The LWIN numbers are different, but this is not a determining factor in this case.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Heidsieck & Co, and have the same style (Brut) and color (white). The difference in name is due to the presence of 'Dry' and 'NV' in Wine B, which is likely an abbreviation or additional descriptor rather than a different wine. The LWIN numbers are different, but this is not a determining factor in this case.",
+  "parse_ok": true,
+  "tokens_in": 500,
+  "tokens_out": 104,
+  "elapsed": 1.6815648078918457,
+  "error": null
+}

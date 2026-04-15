@@ -1,0 +1,13 @@
+{
+  "pair_id": "B019",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are made from different grape varieties. Wine A is an Aligot\u00e9, while Wine B is a blend of Chardonnay and Pinot Blanc, representing distinct bottlings.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from different grape varieties. Wine A is an Aligot\u00e9, while Wine B is a blend of Chardonnay and Pinot Blanc, representing distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 63,
+  "elapsed": 1.9446635246276855,
+  "error": null
+}

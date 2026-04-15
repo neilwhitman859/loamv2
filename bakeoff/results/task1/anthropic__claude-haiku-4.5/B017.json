@@ -1,0 +1,13 @@
+{
+  "pair_id": "B017",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a red wine made from Braquet Gris, while Wine B is a white wine. Different colors indicate different wine types that would be listed separately in a wine encyclopedia, regardless of shared producer and region. Color difference is a fundamental distinguishing characteristic.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a red wine made from Braquet Gris, while Wine B is a white wine. Different colors indicate different wine types that would be listed separately in a wine encyclopedia, regardless of shared producer and region. Color difference is a fundamental distinguishing characteristic.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 83,
+  "elapsed": 7.726098537445068,
+  "error": null
+}

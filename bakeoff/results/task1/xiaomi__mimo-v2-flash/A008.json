@@ -1,0 +1,13 @@
+{
+  "pair_id": "A008",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are ros\u00e9 from the same producer (Cuilleron) and share the same base name 'Sybel'; Wine B simply appends the grape 'Syrah' to the name, which is a common naming convention and not a distinct bottling. The grape information for Wine A (SYRAH, DURIF) indicates Syrah is the primary grape, consistent with Wine B's name. No evidence of different classification tiers, vineyard designations, or other distinguishing factors that would make them separate wines.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are ros\u00e9 from the same producer (Cuilleron) and share the same base name 'Sybel'; Wine B simply appends the grape 'Syrah' to the name, which is a common naming convention and not a distinct bottling. The grape information for Wine A (SYRAH, DURIF) indicates Syrah is the primary grape, consistent with Wine B's name. No evidence of different classification tiers, vineyard designations, or other distinguishing factors that would make them separate wines.",
+  "parse_ok": true,
+  "tokens_in": 486,
+  "tokens_out": 128,
+  "elapsed": 2.602283239364624,
+  "error": null
+}

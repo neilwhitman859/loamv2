@@ -1,0 +1,13 @@
+{
+  "pair_id": "C004",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Raumland), share the same base name 'Trauben Secco Alkoholfrei', and are both white. The only difference is the suffix 'white' in Wine B, which is a stylistic clarification of the same base wine, not a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Raumland), share the same base name 'Trauben Secco Alkoholfrei', and are both white. The only difference is the suffix 'white' in Wine B, which is a stylistic clarification of the same base wine, not a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 87,
+  "elapsed": 1.6411664485931396,
+  "error": null
+}

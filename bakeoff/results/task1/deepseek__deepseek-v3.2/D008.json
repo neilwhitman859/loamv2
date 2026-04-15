@@ -1,0 +1,13 @@
+{
+  "pair_id": "D008",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The names 'Corte C' and 'Corte' differ only by a suffix, which alone suggests the same wine. The producer, color, and grape composition (COT/Malbec and Cabernet Sauuvignon) are identical, indicating a single bottling with a minor name variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The names 'Corte C' and 'Corte' differ only by a suffix, which alone suggests the same wine. The producer, color, and grape composition (COT/Malbec and Cabernet Sauuvignon) are identical, indicating a single bottling with a minor name variation.",
+  "parse_ok": true,
+  "tokens_in": 470,
+  "tokens_out": 83,
+  "elapsed": 4.413615942001343,
+  "error": null
+}

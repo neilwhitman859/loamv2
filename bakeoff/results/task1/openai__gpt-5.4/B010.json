@@ -1,0 +1,13 @@
+{
+  "pair_id": "B010",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These Bellavista records differ in color: Wine A is white while Wine B is ros\u00e9. Color differences represent distinct bottlings, and the names also do not clearly indicate the same cuv\u00e9e in different formatting.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These Bellavista records differ in color: Wine A is white while Wine B is ros\u00e9. Color differences represent distinct bottlings, and the names also do not clearly indicate the same cuv\u00e9e in different formatting.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 65,
+  "elapsed": 2.7899436950683594,
+  "error": null
+}

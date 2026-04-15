@@ -1,0 +1,13 @@
+{
+  "pair_id": "D011",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.94,\"reasoning\":\"Both records share the same producer (Borges), the same core cuv\u00e9e name (Adegas Exportata Rare Rich 1870), and the only difference is the addition of \\\"Malmsey\\\" in Wine B. Malmsey is a sweetness/grape-style descriptor commonly appended to Madeira bottlings rather than indicating a separate vineyard or classification tier here, so this looks like the same bottling with one record using a fuller style name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.94,
+  "reasoning": "Both records share the same producer (Borges), the same core cuv\u00e9e name (Adegas Exportata Rare Rich 1870), and the only difference is the addition of \"Malmsey\" in Wine B. Malmsey is a sweetness/grape-style descriptor commonly appended to Madeira bottlings rather than indicating a separate vineyard or classification tier here, so this looks like the same bottling with one record using a fuller style name.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 110,
+  "elapsed": 2.9691858291625977,
+  "error": null
+}

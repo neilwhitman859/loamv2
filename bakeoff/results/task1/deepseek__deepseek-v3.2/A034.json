@@ -1,0 +1,13 @@
+{
+  "pair_id": "A034",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.9, \"reasoning\": \"The grapes are different: Wine A is a blend of Chardonnay Blanc and Pinot Gris, while Wine B is Sauvignon Blanc. Different grape composition always indicates different wines, even when the producer and regional designation (Markgr\u00e4flerland) are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The grapes are different: Wine A is a blend of Chardonnay Blanc and Pinot Gris, while Wine B is Sauvignon Blanc. Different grape composition always indicates different wines, even when the producer and regional designation (Markgr\u00e4flerland) are the same.",
+  "parse_ok": true,
+  "tokens_in": 457,
+  "tokens_out": 80,
+  "elapsed": 4.907381534576416,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A045",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Pax, and share the 'Lauterbach Hill' vineyard name. Wine A is explicitly Syrah, and Wine B is named 'Lauterbach Hill Syrah', indicating the varietal suffix is merely an elaboration of the same wine. There is no information to suggest Pax makes multiple wines from Lauterbach Hill with different grapes.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Pax, and share the 'Lauterbach Hill' vineyard name. Wine A is explicitly Syrah, and Wine B is named 'Lauterbach Hill Syrah', indicating the varietal suffix is merely an elaboration of the same wine. There is no information to suggest Pax makes multiple wines from Lauterbach Hill with different grapes.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 96,
+  "elapsed": 1.6471617221832275,
+  "error": null
+}

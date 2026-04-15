@@ -1,0 +1,13 @@
+{
+  "pair_id": "A025",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Gabriel Meffre, share identical red color and 100% Syrah composition. 'Laurus' and 'Laurus Syrah' represent the same wine with the varietal suffix omitted in the shorter name, following standard naming conventions where the grape variety is appended for clarity but not required for identification.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Gabriel Meffre, share identical red color and 100% Syrah composition. 'Laurus' and 'Laurus Syrah' represent the same wine with the varietal suffix omitted in the shorter name, following standard naming conventions where the grape variety is appended for clarity but not required for identification.",
+  "parse_ok": true,
+  "tokens_in": 490,
+  "tokens_out": 102,
+  "elapsed": 12.550588607788086,
+  "error": null
+}

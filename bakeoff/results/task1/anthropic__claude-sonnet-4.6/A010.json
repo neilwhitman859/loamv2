@@ -1,0 +1,13 @@
+{
+  "pair_id": "A010",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine A is explicitly labeled as Gewurztraminer while Wine B is labeled as Pinot Gris \u2014 these are different grape varieties. Even though both share the same 'Le Jardin de Trebogad' vineyard name and producer (du Roi Dagobert), different grapes always means different wines. This is not a simple varietal suffix abbreviation case; the suffix specifies a different grape entirely.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A is explicitly labeled as Gewurztraminer while Wine B is labeled as Pinot Gris \u2014 these are different grape varieties. Even though both share the same 'Le Jardin de Trebogad' vineyard name and producer (du Roi Dagobert), different grapes always means different wines. This is not a simple varietal suffix abbreviation case; the suffix specifies a different grape entirely.",
+  "parse_ok": true,
+  "tokens_in": 507,
+  "tokens_out": 115,
+  "elapsed": 2.983858823776245,
+  "error": null
+}

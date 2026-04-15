@@ -1,0 +1,13 @@
+{
+  "pair_id": "C035",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"In German wine auctions, different capsule colors (Gold vs. White) denote distinct bottlings with different quality levels or selection criteria, even when the vineyard and Pr\u00e4dikat are identical. These are treated as separate wines in the marketplace and have distinct LWIN identifiers.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "In German wine auctions, different capsule colors (Gold vs. White) denote distinct bottlings with different quality levels or selection criteria, even when the vineyard and Pr\u00e4dikat are identical. These are treated as separate wines in the marketplace and have distinct LWIN identifiers.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 81,
+  "elapsed": 2.139458179473877,
+  "error": null
+}

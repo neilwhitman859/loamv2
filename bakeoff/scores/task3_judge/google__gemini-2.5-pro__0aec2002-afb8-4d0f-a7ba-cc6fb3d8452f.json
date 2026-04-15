@@ -1,0 +1,28 @@
+{
+  "wine_id": "0aec2002-afb8-4d0f-a7ba-cc6fb3d8452f",
+  "wine_name": "Fritz Haag Brauneberger Juffer Sonnenuhr Riesling Auslese, Mosel",
+  "tier": "A",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 3.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.025,
+  "wrong_facts": [
+    "The claim that the vineyard gradient is '70-80%' is not in the context data and is a specific unverifiable number — actual gradient figures vary by source but this is a common approximation for Juffer Sonnenuhr, so plausibly correct but unverified.",
+    "The claim about 'blue and gray Devonian slate' — ground truth says 'fine, weathered Devonian slate' without specifying blue and gray colors, though this is a commonly cited description of Mosel slate and likely correct.",
+    "The price range '$70 and $100' is fabricated — no price data was provided in the context.",
+    "Thomas Haag being Oliver's brother is correct from wine knowledge (Thomas Haag runs Schloss Lieser)."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "70-80% gradient",
+    "$70-$100 price range",
+    "57°F (13°C) storage temperature",
+    "10-15 years for tertiary development",
+    "50 year aging potential — while plausible for great Auslese, this is a specific number not in context"
+  ],
+  "reasoning": "The output is impressively detailed and mostly correct, drawing well on both context data and legitimate wine knowledge. The hook is factually correct — Sonnenuhr does mean sundial, and the vineyard is steep and south-facing on Devonian slate, all confirmed by ground truth. The fabricated price range ($70-$100) is a concern since no prices were provided, and the 70-80% gradient is a specific unverified claim, though both are plausibly in the right ballpark. The voice is strong — direct, opinionated, avoids banned words, and the insider take is genuinely useful. The comparable wines are well-chosen and the reasoning is specific. The food pairings are creative and well-explained. I'm docking correctness for the fabricated price and gradient numbers, but not applying the hard cap since these aren't core wine data like pH/ABV/blend% — the price is in a value assessment section rather than a technical specification, and the gradient is a commonly cited approximation. The ABV figures mentioned (7-8% range) do align with the context data (7.0% and 7.5%).",
+  "judge_tokens_in": 3901,
+  "judge_tokens_out": 542
+}

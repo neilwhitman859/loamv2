@@ -1,0 +1,13 @@
+{
+  "pair_id": "D017",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.98, \"reasoning\": \"The difference between 'Comune di Gavi' and 'del Comune di Gavi' is purely grammatical (the inclusion of the preposition 'del'). Both records refer to the same DOCG classification for Gavi produced within the specific municipality of Gavi using 100% Cortese grapes by the same producer.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "The difference between 'Comune di Gavi' and 'del Comune di Gavi' is purely grammatical (the inclusion of the preposition 'del'). Both records refer to the same DOCG classification for Gavi produced within the specific municipality of Gavi using 100% Cortese grapes by the same producer.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 86,
+  "elapsed": 1.7881262302398682,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B048",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are made from different grape varieties (Pinot Gris vs. Pinot Blanc) and have different colors (red vs. white). Even though they share the same vineyard designation and producer, these fundamental differences in composition define them as distinct bottlings.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from different grape varieties (Pinot Gris vs. Pinot Blanc) and have different colors (red vs. white). Even though they share the same vineyard designation and producer, these fundamental differences in composition define them as distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 413,
+  "tokens_out": 79,
+  "elapsed": 2.4130470752716064,
+  "error": null
+}

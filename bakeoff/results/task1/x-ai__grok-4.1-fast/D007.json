@@ -1,0 +1,13 @@
+{
+  "pair_id": "D007",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A lists grapes as COT (Malbec) and CABERNET SAUVIGNON, while Wine B is 100% MERLOT NOIR. The key rule states that different grapes always mean DIFFERENT wines, even if vineyard or name matches. Similar names ('Corte' vs 'Corte A') and shared producer/color do not override the grape discrepancy.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A lists grapes as COT (Malbec) and CABERNET SAUVIGNON, while Wine B is 100% MERLOT NOIR. The key rule states that different grapes always mean DIFFERENT wines, even if vineyard or name matches. Similar names ('Corte' vs 'Corte A') and shared producer/color do not override the grape discrepancy.",
+  "parse_ok": true,
+  "tokens_in": 583,
+  "tokens_out": 401,
+  "elapsed": 3.8253417015075684,
+  "error": null
+}

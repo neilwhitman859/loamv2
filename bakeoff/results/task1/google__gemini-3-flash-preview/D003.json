@@ -1,0 +1,13 @@
+{
+  "pair_id": "D003",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Chimney Rock produces several distinct Cabernet Sauvignon bottlings, including a standard Stags Leap District estate bottling and specific single-vineyard designates like 'Alpine Vineyard'. Because 'Alpine' is a specific vineyard designation and the producer has a separate entry for a general Cabernet Sauvignon, these represent distinct products in their portfolio.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Chimney Rock produces several distinct Cabernet Sauvignon bottlings, including a standard Stags Leap District estate bottling and specific single-vineyard designates like 'Alpine Vineyard'. Because 'Alpine' is a specific vineyard designation and the producer has a separate entry for a general Cabernet Sauvignon, these represent distinct products in their portfolio.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 86,
+  "elapsed": 1.6383476257324219,
+  "error": null
+}

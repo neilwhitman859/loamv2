@@ -1,0 +1,30 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "xiaomi/mimo-v2-flash",
+  "correctness": 1.0,
+  "voice": 2.0,
+  "specificity": 3.5,
+  "usefulness": 2.0,
+  "composite": 1.95,
+  "wrong_facts": [
+    "Hook claims it is a 'single-vineyard Cabernet from the Stags Leap District' — ground truth confirms it is NOT single-vineyard, it is multi-site sourced from hillside estate vineyards, Borderline vineyard, and selected Napa Valley sites",
+    "Hook claims the name refers to 'the Shafer family's 15-year commitment to the estate' — ground truth explicitly states this is NOT true; the name refers to the 'generation and a half' partnership between John and Doug Shafer",
+    "Context data says 100% Cabernet Sauvignon but ground truth says 2022 is 92% Cab Sauv, 3% Petite Verdot, 3% Merlot, 2% Malbec — the output doubles down on single-vineyard site-specific expression narrative which is false",
+    "States 'One Point Five is the flagship expression' — Hillside Select is Shafer's flagship, not One Point Five",
+    "Claims oak aging is 'typically 20-24 months' — ground truth says 18 months in 100% new French oak",
+    "Repeatedly claims the wine is from Stags Leap District specifically, but the appellation in context data is Napa Valley, not Stags Leap District"
+  ],
+  "banned_words_found": [
+    "elegant"
+  ],
+  "fabricated_numbers": [
+    "20-24 months oak aging (ground truth is 18 months)",
+    "2028-2040 drinking window fabricated",
+    "15 years aging potential fabricated"
+  ],
+  "reasoning": "The hook contains two provably wrong claims: calling it single-vineyard (it's multi-site) and attributing the name to a '15-year commitment' (ground truth explicitly lists this as NOT true — it's about the 'generation and a half' partnership). These are devastating errors that trigger the hard cap at 1.5, but the sheer volume of additional wrong facts (wrong flagship designation, wrong oak aging duration, wrong appellation specificity, wrong single-vineyard narrative throughout) pushes this to 1.0. The word 'elegance' appears via 'overt elegance' in the Cask 23 comparison. Voice has some directness but is undermined by the fabricated narrative and the banned word.",
+  "judge_tokens_in": 3796,
+  "judge_tokens_out": 556
+}

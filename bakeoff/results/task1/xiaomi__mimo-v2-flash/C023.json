@@ -1,0 +1,13 @@
+{
+  "pair_id": "C023",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (Bleasdale), vineyard/appellation (Langhorne Creek), grape variety (Syrah), and color (red). The only difference is the name formatting, where 'The Red Brute Shiraz' is the full name and 'The Red Brute' is an abbreviation, which is a common practice and does not indicate a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (Bleasdale), vineyard/appellation (Langhorne Creek), grape variety (Syrah), and color (red). The only difference is the name formatting, where 'The Red Brute Shiraz' is the full name and 'The Red Brute' is an abbreviation, which is a common practice and does not indicate a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 512,
+  "tokens_out": 102,
+  "elapsed": 2.810586929321289,
+  "error": null
+}

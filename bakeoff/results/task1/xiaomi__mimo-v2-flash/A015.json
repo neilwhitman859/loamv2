@@ -1,0 +1,13 @@
+{
+  "pair_id": "A015",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Patricia Green) and vineyard (Freedom Hill), with the same color (red) and grape variety (Pinot Noir). The name difference is merely a varietal suffix appended to the shorter name, which is a formatting variation that does not indicate a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Patricia Green) and vineyard (Freedom Hill), with the same color (red) and grape variety (Pinot Noir). The name difference is merely a varietal suffix appended to the shorter name, which is a formatting variation that does not indicate a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 488,
+  "tokens_out": 87,
+  "elapsed": 2.7472145557403564,
+  "error": null
+}

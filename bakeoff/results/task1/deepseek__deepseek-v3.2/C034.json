@@ -1,0 +1,13 @@
+{
+  "pair_id": "C034",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.9, \"reasoning\": \"The wines share the same producer, vineyard, grape, style, and Pr\u00e4dikat level (Auslese), but they have different lot/cask designations (2* vs 3*). For German Pr\u00e4dikat wines, different lot or cask numbers at the same Pr\u00e4dikat level indicate distinct bottlings, which are considered different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines share the same producer, vineyard, grape, style, and Pr\u00e4dikat level (Auslese), but they have different lot/cask designations (2* vs 3*). For German Pr\u00e4dikat wines, different lot or cask numbers at the same Pr\u00e4dikat level indicate distinct bottlings, which are considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 472,
+  "tokens_out": 95,
+  "elapsed": 7.773341417312622,
+  "error": null
+}

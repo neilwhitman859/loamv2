@@ -1,0 +1,13 @@
+{
+  "pair_id": "C023",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines from Bleasdale share the identical base name 'Uncle Dick The Red Brute', red color, Syrah/Shiraz grape, and Langhorne Creek appellation. The 'Shiraz' suffix in Wine B is a varietal addition typical of abbreviations, indicating the same wine per rules. No evidence suggests multiple grape variants from this producer's lineup for this cuv\u00e9e.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines from Bleasdale share the identical base name 'Uncle Dick The Red Brute', red color, Syrah/Shiraz grape, and Langhorne Creek appellation. The 'Shiraz' suffix in Wine B is a varietal addition typical of abbreviations, indicating the same wine per rules. No evidence suggests multiple grape variants from this producer's lineup for this cuv\u00e9e.",
+  "parse_ok": true,
+  "tokens_in": 592,
+  "tokens_out": 464,
+  "elapsed": 3.7190563678741455,
+  "error": null
+}

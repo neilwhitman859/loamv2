@@ -1,0 +1,13 @@
+{
+  "pair_id": "A006",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, 'Radio-Coteau', and share the core name 'Clos Platt'. Wine A lists 'PINOT NOIR' as its grape, and Wine B explicitly includes 'Pinot Noir' in its name. This suggests that 'Clos Platt' is the Pinot Noir bottling from Radio-Coteau, and the longer name for Wine B is simply more explicit.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, 'Radio-Coteau', and share the core name 'Clos Platt'. Wine A lists 'PINOT NOIR' as its grape, and Wine B explicitly includes 'Pinot Noir' in its name. This suggests that 'Clos Platt' is the Pinot Noir bottling from Radio-Coteau, and the longer name for Wine B is simply more explicit.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 103,
+  "elapsed": 1.7779734134674072,
+  "error": null
+}

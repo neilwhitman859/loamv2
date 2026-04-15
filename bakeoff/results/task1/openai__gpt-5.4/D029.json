@@ -1,0 +1,13 @@
+{
+  "pair_id": "D029",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.84,\"reasoning\":\"These records indicate different appellation/designation levels: one is labeled Franschhoek and the other Coastal Region. In South African wine, region stated on the label reflects the wine\u2019s geographic origin, so consumers would encounter these as distinct bottlings rather than formatting variants of the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.84,
+  "reasoning": "These records indicate different appellation/designation levels: one is labeled Franschhoek and the other Coastal Region. In South African wine, region stated on the label reflects the wine\u2019s geographic origin, so consumers would encounter these as distinct bottlings rather than formatting variants of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 79,
+  "elapsed": 2.669264078140259,
+  "error": null
+}

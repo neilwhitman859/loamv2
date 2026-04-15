@@ -1,0 +1,13 @@
+{
+  "pair_id": "A041",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Both records are for a red wine from the producer Stephen Ross and the Bien Nacido vineyard. The provided data confirms that Wine A, named simply 'Bien Nacido', is made from Pinot Noir, which matches the explicit varietal in Wine B's name. This is a classic case where one name is a common abbreviation of the more specific name for the same bottling.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both records are for a red wine from the producer Stephen Ross and the Bien Nacido vineyard. The provided data confirms that Wine A, named simply 'Bien Nacido', is made from Pinot Noir, which matches the explicit varietal in Wine B's name. This is a classic case where one name is a common abbreviation of the more specific name for the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 1356,
+  "elapsed": 24.065837621688843,
+  "error": null
+}

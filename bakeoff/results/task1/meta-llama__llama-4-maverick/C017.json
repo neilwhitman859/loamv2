@@ -1,0 +1,13 @@
+{
+  "pair_id": "C017",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Bassermann-Jordan, and have the same vineyard designation, Forster Kirchenstuck, and the same Pr\u00e4dikat level, Sp\u00e4tlese. The difference in name is due to the inclusion of 'Riesling' in Wine B, which is likely the grape variety and not indicative of a different wine. The color and producer match, supporting the conclusion that they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Bassermann-Jordan, and have the same vineyard designation, Forster Kirchenstuck, and the same Pr\u00e4dikat level, Sp\u00e4tlese. The difference in name is due to the inclusion of 'Riesling' in Wine B, which is likely the grape variety and not indicative of a different wine. The color and producer match, supporting the conclusion that they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 508,
+  "tokens_out": 111,
+  "elapsed": 1.670363187789917,
+  "error": null
+}

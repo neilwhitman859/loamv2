@@ -1,0 +1,13 @@
+{
+  "pair_id": "B007",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is 100% Merlot Noir, while Wine B is a blend of Cot (81%), Cabernet Sauvignon (11%), and Dolcetto (8%), representing entirely different grape compositions. The names 'Corte A' and 'Corte B' suggest distinct cuv\u00e9es from the same producer Vistalba. Per rules, different grapes always indicate different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is 100% Merlot Noir, while Wine B is a blend of Cot (81%), Cabernet Sauvignon (11%), and Dolcetto (8%), representing entirely different grape compositions. The names 'Corte A' and 'Corte B' suggest distinct cuv\u00e9es from the same producer Vistalba. Per rules, different grapes always indicate different wines.",
+  "parse_ok": true,
+  "tokens_in": 610,
+  "tokens_out": 410,
+  "elapsed": 3.5457828044891357,
+  "error": null
+}

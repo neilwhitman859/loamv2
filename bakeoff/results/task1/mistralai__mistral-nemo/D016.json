@@ -1,0 +1,13 @@
+{
+  "pair_id": "D016",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, color, and have similar names ('Roche' and 'Sur Roche'), suggesting they are likely the same wine with a slight variation in name formatting.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, color, and have similar names ('Roche' and 'Sur Roche'), suggesting they are likely the same wine with a slight variation in name formatting.",
+  "parse_ok": true,
+  "tokens_in": 464,
+  "tokens_out": 59,
+  "elapsed": 2.0168235301971436,
+  "error": null
+}

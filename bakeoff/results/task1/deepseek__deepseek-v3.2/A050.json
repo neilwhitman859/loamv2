@@ -1,0 +1,13 @@
+{
+  "pair_id": "A050",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"The core name 'Cayenne' matches, and 'Syrah' in Wine B is likely a varietal suffix appended to the same wine, as both are red wines from the same producer. The rule states varietal suffix difference alone usually means SAME, unless the producer makes multiple wines from that vineyard with different grapes; here, Wine A's listed grapes (SYRAH, DURIF) indicate it is a Syrah blend, consistent with Wine B being called 'Cayenne Syrah', suggesting the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "The core name 'Cayenne' matches, and 'Syrah' in Wine B is likely a varietal suffix appended to the same wine, as both are red wines from the same producer. The rule states varietal suffix difference alone usually means SAME, unless the producer makes multiple wines from that vineyard with different grapes; here, Wine A's listed grapes (SYRAH, DURIF) indicate it is a Syrah blend, consistent with Wine B being called 'Cayenne Syrah', suggesting the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 132,
+  "elapsed": 4.359021902084351,
+  "error": null
+}

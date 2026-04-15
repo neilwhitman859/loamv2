@@ -1,0 +1,13 @@
+{
+  "pair_id": "C007",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines represent different Pr\u00e4dikat levels (Auslese vs. Trockenbeerenauslese), which denote distinct sweetness levels and harvest selections. According to the provided rules, different Pr\u00e4dikat levels constitute different wines, and the distinct LWIN numbers further confirm they are separate bottlings.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines represent different Pr\u00e4dikat levels (Auslese vs. Trockenbeerenauslese), which denote distinct sweetness levels and harvest selections. According to the provided rules, different Pr\u00e4dikat levels constitute different wines, and the distinct LWIN numbers further confirm they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 471,
+  "tokens_out": 88,
+  "elapsed": 2.001317024230957,
+  "error": null
+}

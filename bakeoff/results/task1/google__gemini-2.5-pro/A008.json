@@ -1,0 +1,13 @@
+{
+  "pair_id": "A008",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although the producer and base name 'Sybel' are the same, the grape compositions are different. Wine A is explicitly a blend of Syrah and Durif. Wine B's name, 'Sybel Syrah', indicates it is a varietal Syrah, not a blend containing Durif. A difference in grape composition always means the wines are different.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the producer and base name 'Sybel' are the same, the grape compositions are different. Wine A is explicitly a blend of Syrah and Durif. Wine B's name, 'Sybel Syrah', indicates it is a varietal Syrah, not a blend containing Durif. A difference in grape composition always means the wines are different.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 1488,
+  "elapsed": 14.50836730003357,
+  "error": null
+}

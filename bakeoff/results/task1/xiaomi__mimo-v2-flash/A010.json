@@ -1,0 +1,13 @@
+{
+  "pair_id": "A010",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (du Roi Dagobert) and base name 'Le Jardin de Trebogad', with Wine B simply having the varietal suffix 'Pinot Gris' appended. The key evidence is that Wine A is labeled as Gewuerztraminer, but the LWIN for Wine B (2534198) corresponds to Pinot Gris, indicating they are the same bottling with a name variation where the shorter name omits the grape variety.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (du Roi Dagobert) and base name 'Le Jardin de Trebogad', with Wine B simply having the varietal suffix 'Pinot Gris' appended. The key evidence is that Wine A is labeled as Gewuerztraminer, but the LWIN for Wine B (2534198) corresponds to Pinot Gris, indicating they are the same bottling with a name variation where the shorter name omits the grape variety.",
+  "parse_ok": true,
+  "tokens_in": 508,
+  "tokens_out": 128,
+  "elapsed": 2.615067481994629,
+  "error": null
+}

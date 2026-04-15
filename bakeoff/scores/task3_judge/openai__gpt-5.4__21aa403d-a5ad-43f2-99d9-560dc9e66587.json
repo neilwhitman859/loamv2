@@ -1,0 +1,21 @@
+{
+  "wine_id": "21aa403d-a5ad-43f2-99d9-560dc9e66587",
+  "wine_name": "Lafage, Côtes Catalanes Vieilles Vignes Tessellae",
+  "tier": "B",
+  "model": "openai/gpt-5.4",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.875,
+  "wrong_facts": [
+    "The wine is described as a blend of Syrah, Carignan Noir, Garnacha Tinta, and Monastrell, but ground truth confirms it is 100% Carignan from old vines (70+ years). The context data listed multiple grapes, but the model should not have presented the blend as fact when the actual wine is 100% Carignan.",
+    "The hook says 'Old-vine Carignan is the spine of Tessellae' — while directionally correct (it IS all Carignan), calling it the 'spine' implies other grapes are present, which contradicts the 100% Carignan ground truth.",
+    "No mention of the naming origin 'Tessellae' referring to Roman mosaic tiles (tesserae), which is a key fact from ground truth — not wrong per se, but a missed opportunity."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The biggest correctness issue is treating this as a multi-grape blend when ground truth confirms it's 100% Carignan. The context data did list multiple grapes, so the model wasn't fabricating — but it confidently described Mourvèdre and Syrah contributions to the flavor profile, which is factually wrong. The model was admirably honest about what it didn't know (no invented soil specifics, no fake tech sheet details), and the voice is excellent — direct, opinionated, specific, with no banned words. Food pairings are creative and well-reasoned. The insider take is sharp and useful. But the blend error pervades the wine_summary and terroir sections, undermining trust in the core description.",
+  "judge_tokens_in": 3940,
+  "judge_tokens_out": 418
+}

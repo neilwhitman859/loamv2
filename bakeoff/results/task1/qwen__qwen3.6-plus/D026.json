@@ -1,0 +1,13 @@
+{
+  "pair_id": "D026",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The only difference is the addition of the word 'Red' as a suffix, which acts as a descriptive label rather than indicating a distinct bottling. Both records share the same producer, core name, and color, aligning with the rule that suffix differences alone typically denote the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The only difference is the addition of the word 'Red' as a suffix, which acts as a descriptive label rather than indicating a distinct bottling. Both records share the same producer, core name, and color, aligning with the rule that suffix differences alone typically denote the same wine.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 1295,
+  "elapsed": 25.042291164398193,
+  "error": null
+}

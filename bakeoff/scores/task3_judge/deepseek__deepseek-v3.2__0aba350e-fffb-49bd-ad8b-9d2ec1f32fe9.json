@@ -1,0 +1,23 @@
+{
+  "wine_id": "0aba350e-fffb-49bd-ad8b-9d2ec1f32fe9",
+  "wine_name": "Vasse Felix Filius Cabernet Sauvignon, Margaret River",
+  "tier": "C",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.575,
+  "wrong_facts": [
+    "Claims fruit is 'destemmed and fermented in stainless steel and concrete vats' — ground truth says wild-yeast fermentation in open-top fermenters with 11 months French oak",
+    "Claims 'a portion of whole bunches in some ferments' with intracellular fermentation — not supported by ground truth and likely fabricated",
+    "Claims vineyards across 'Wilyabrup and Wallcliffe' subregions — not verifiable from context or ground truth",
+    "Hook says 'deep gravelly loam' as if it's a known specific fact about the vineyard sites for Filius — plausible but unverified",
+    "Does not mention the actual blend (93% Cab Sauv, 5.5% Malbec, 1.5% Petit Verdot) and implies it's pure Cabernet Sauvignon"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output gets several important things right: Vasse Felix as founding estate (1967), the Filius concept as a second-tier early-drinking wine, the $26 price point, and Margaret River's general terroir characteristics. However, the vinification section is substantially fabricated — the ground truth specifies wild-yeast fermentation in open-top fermenters with 11 months French oak, while the output invents stainless steel/concrete fermentation and whole-bunch inclusion. The wine is actually a blend (93% Cab, 5.5% Malbec, 1.5% Petit Verdot) but is treated as pure Cabernet throughout. The voice is strong — direct, opinionated, specific, with good food pairings and useful comparables. No banned words. The fabricated vinification details are a significant correctness problem, though no specific numbers were invented.",
+  "judge_tokens_in": 3346,
+  "judge_tokens_out": 460
+}

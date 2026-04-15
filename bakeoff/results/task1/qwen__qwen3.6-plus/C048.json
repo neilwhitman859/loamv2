@@ -1,0 +1,13 @@
+{
+  "pair_id": "C048",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records differ in color (white vs. ros\u00e9) and style designation (Brut vs. Brut Ros\u00e9), indicating distinct bottlings. According to the classification guidelines, different colors or styles from the same producer represent separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records differ in color (white vs. ros\u00e9) and style designation (Brut vs. Brut Ros\u00e9), indicating distinct bottlings. According to the classification guidelines, different colors or styles from the same producer represent separate wines.",
+  "parse_ok": true,
+  "tokens_in": 460,
+  "tokens_out": 919,
+  "elapsed": 18.106847047805786,
+  "error": null
+}

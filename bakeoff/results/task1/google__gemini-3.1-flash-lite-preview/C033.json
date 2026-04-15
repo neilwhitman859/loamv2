@@ -1,0 +1,13 @@
+{
+  "pair_id": "C033",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"Bonnaire's 'Blanc de Blancs Vintage' and 'Blanc de Blancs Brut Vintage' refer to the same cuv\u00e9e, as 'Brut' is a standard stylistic descriptor often omitted in shorthand. The LWIN discrepancy is common in databases for the same wine due to variations in label naming conventions, but they represent the same vintage-dated sparkling wine from this producer.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Bonnaire's 'Blanc de Blancs Vintage' and 'Blanc de Blancs Brut Vintage' refer to the same cuv\u00e9e, as 'Brut' is a standard stylistic descriptor often omitted in shorthand. The LWIN discrepancy is common in databases for the same wine due to variations in label naming conventions, but they represent the same vintage-dated sparkling wine from this producer.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 104,
+  "elapsed": 2.5876097679138184,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A008",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine A is a blend of Syrah and Durif, while Wine B is labeled as a pure Syrah wine. Different grape compositions constitute different wines even when from the same producer. The varietal suffix in Wine B's name indicates a single-varietal bottling distinct from Wine A's blend.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A is a blend of Syrah and Durif, while Wine B is labeled as a pure Syrah wine. Different grape compositions constitute different wines even when from the same producer. The varietal suffix in Wine B's name indicates a single-varietal bottling distinct from Wine A's blend.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 92,
+  "elapsed": 2.2784759998321533,
+  "error": null
+}

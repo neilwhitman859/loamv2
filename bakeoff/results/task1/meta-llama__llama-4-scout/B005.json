@@ -1,0 +1,13 @@
+{
+  "pair_id": "B005",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors (red vs white) and different grapes (Pinot Noir vs Chardonnay Blanc), which are key indicators of different wines. Despite sharing the same vineyard name 'Clayvin' and producer 'Fromm', these differences take precedence.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors (red vs white) and different grapes (Pinot Noir vs Chardonnay Blanc), which are key indicators of different wines. Despite sharing the same vineyard name 'Clayvin' and producer 'Fromm', these differences take precedence.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 76,
+  "elapsed": 2.164947271347046,
+  "error": null
+}

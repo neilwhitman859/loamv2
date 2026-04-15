@@ -1,0 +1,13 @@
+{
+  "pair_id": "D001",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The key difference is 'Nr23' in Wine A, which likely indicates a specific lot or cask number. According to the rules, different lot/cask numbers at the same Pr\u00e4dikat level (here, both are Grosse Lage) represent distinct bottlings and therefore different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The key difference is 'Nr23' in Wine A, which likely indicates a specific lot or cask number. According to the rules, different lot/cask numbers at the same Pr\u00e4dikat level (here, both are Grosse Lage) represent distinct bottlings and therefore different wines.",
+  "parse_ok": true,
+  "tokens_in": 470,
+  "tokens_out": 82,
+  "elapsed": 5.204960346221924,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C003",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although the producer and base cuv\u00e9e name ('Cuvee Katharina') are the same, 'Brut' and 'Brut Nature' denote distinct and legally defined dosage (sweetness) levels for sparkling wine. These are separate bottlings with different winemaking styles, resulting in two different wines that a consumer would encounter separately.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the producer and base cuv\u00e9e name ('Cuvee Katharina') are the same, 'Brut' and 'Brut Nature' denote distinct and legally defined dosage (sweetness) levels for sparkling wine. These are separate bottlings with different winemaking styles, resulting in two different wines that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 1182,
+  "elapsed": 12.668761968612671,
+  "error": null
+}

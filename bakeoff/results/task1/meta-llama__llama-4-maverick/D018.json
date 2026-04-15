@@ -1,0 +1,13 @@
+{
+  "pair_id": "D018",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines have different names, 'Cabernet Sauvignon' and 'Reserve Cabernet Sauvignon', and different LWIN numbers, indicating they are likely different bottlings from the same producer. The term 'Reserve' often signifies a different classification or tier within a producer's portfolio. Without more information on Truchard's specific wines, the difference in naming and LWIN suggests they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines have different names, 'Cabernet Sauvignon' and 'Reserve Cabernet Sauvignon', and different LWIN numbers, indicating they are likely different bottlings from the same producer. The term 'Reserve' often signifies a different classification or tier within a producer's portfolio. Without more information on Truchard's specific wines, the difference in naming and LWIN suggests they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 100,
+  "elapsed": 1.675288200378418,
+  "error": null
+}

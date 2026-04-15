@@ -1,0 +1,13 @@
+{
+  "pair_id": "C048",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Vicente Gandia) and base name 'El Miracle Brut', but Wine A is white while Wine B is ros\u00e9 (Brut Rose). The rules explicitly state that different colors (e.g., ros\u00e9 vs red or white) indicate DIFFERENT wines. Distinct LWIN numbers (2685249 vs 2685223) confirm separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Vicente Gandia) and base name 'El Miracle Brut', but Wine A is white while Wine B is ros\u00e9 (Brut Rose). The rules explicitly state that different colors (e.g., ros\u00e9 vs red or white) indicate DIFFERENT wines. Distinct LWIN numbers (2685249 vs 2685223) confirm separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 567,
+  "tokens_out": 489,
+  "elapsed": 3.7345736026763916,
+  "error": null
+}

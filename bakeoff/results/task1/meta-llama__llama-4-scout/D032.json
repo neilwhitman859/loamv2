@@ -1,0 +1,13 @@
+{
+  "pair_id": "D032",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different LWIN numbers, and Wine B has a 'Reserve' designation which implies a different classification level or quality tier compared to Wine A. Despite sharing the same producer, vineyard, grape variety, and style, the 'Reserve' label typically signifies a distinct bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different LWIN numbers, and Wine B has a 'Reserve' designation which implies a different classification level or quality tier compared to Wine A. Despite sharing the same producer, vineyard, grape variety, and style, the 'Reserve' label typically signifies a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 81,
+  "elapsed": 1.2847046852111816,
+  "error": null
+}

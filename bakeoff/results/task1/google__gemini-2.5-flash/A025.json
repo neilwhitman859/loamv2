@@ -1,0 +1,13 @@
+{
+  "pair_id": "A025",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Both wines are from the same producer, Gabriel Meffre, and share the same core name 'Laurus'. Wine A is explicitly 100% Syrah, and Wine B adds 'Syrah' to the name, indicating it's the same varietal. The addition of the varietal name to Wine B is likely just a more specific naming convention for the same bottling.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Gabriel Meffre, and share the same core name 'Laurus'. Wine A is explicitly 100% Syrah, and Wine B adds 'Syrah' to the name, indicating it's the same varietal. The addition of the varietal name to Wine B is likely just a more specific naming convention for the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 113,
+  "elapsed": 1.5302603244781494,
+  "error": null
+}

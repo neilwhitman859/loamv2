@@ -1,0 +1,13 @@
+{
+  "pair_id": "C016",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Although both wines are from the same producer (Bartolo Mascarello), use the same grape (Nebbiolo), and share the same classification tier (Riserva), they come from different appellations: Barolo and Barbaresco. These are distinct DOCG regions in Piedmont with different terroir, regulations, and vineyard designations, making them separate bottlings that a consumer would encounter as different wines.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Although both wines are from the same producer (Bartolo Mascarello), use the same grape (Nebbiolo), and share the same classification tier (Riserva), they come from different appellations: Barolo and Barbaresco. These are distinct DOCG regions in Piedmont with different terroir, regulations, and vineyard designations, making them separate bottlings that a consumer would encounter as different wines.",
+  "parse_ok": true,
+  "tokens_in": 538,
+  "tokens_out": 120,
+  "elapsed": 10.170130729675293,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C028",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different tiered bottlings from the same producer: one is Gran Reserva and the other is Reserva. By the rules, different classification tiers indicate different wines even when the grape variety (Carmenere) and color are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different tiered bottlings from the same producer: one is Gran Reserva and the other is Reserva. By the rules, different classification tiers indicate different wines even when the grape variety (Carmenere) and color are the same.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 70,
+  "elapsed": 1.901139259338379,
+  "error": null
+}

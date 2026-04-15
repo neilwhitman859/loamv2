@@ -1,0 +1,13 @@
+{
+  "pair_id": "C026",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white sparkling wine (Brut), while Wine B is a ros\u00e9 sparkling wine (Brut Rose). Despite sharing the same producer and base name, the difference in color indicates distinct bottlings that a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white sparkling wine (Brut), while Wine B is a ros\u00e9 sparkling wine (Brut Rose). Despite sharing the same producer and base name, the difference in color indicates distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 71,
+  "elapsed": 1.4284274578094482,
+  "error": null
+}

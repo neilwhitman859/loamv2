@@ -1,0 +1,13 @@
+{
+  "pair_id": "A029",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Wine A is an abbreviated name for the specific bottling 'Chasseresse Auxerrois' produced by Koehly. While Wine A lists 'COT' (Malbec) in the metadata, Koehly's 'Chasseresse' is a known line of varietal wines, and the presence of Auxerrois in both records indicates they refer to the same specific white wine bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Wine A is an abbreviated name for the specific bottling 'Chasseresse Auxerrois' produced by Koehly. While Wine A lists 'COT' (Malbec) in the metadata, Koehly's 'Chasseresse' is a known line of varietal wines, and the presence of Auxerrois in both records indicates they refer to the same specific white wine bottling.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 102,
+  "elapsed": 2.0875556468963623,
+  "error": null
+}

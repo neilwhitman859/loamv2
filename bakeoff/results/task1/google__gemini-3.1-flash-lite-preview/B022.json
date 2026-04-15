@@ -1,0 +1,13 @@
+{
+  "pair_id": "B022",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are distinct products due to their different colors (white vs. ros\u00e9). In Champagne production, a ros\u00e9 bottling is considered a separate wine from the standard white cuv\u00e9e, even when both are NV Extra Brut.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are distinct products due to their different colors (white vs. ros\u00e9). In Champagne production, a ros\u00e9 bottling is considered a separate wine from the standard white cuv\u00e9e, even when both are NV Extra Brut.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 72,
+  "elapsed": 1.9394729137420654,
+  "error": null
+}

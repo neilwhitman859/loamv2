@@ -1,0 +1,13 @@
+{
+  "pair_id": "C030",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Reserva and Gran Reserva represent distinct classification tiers in wine production, indicating different aging requirements, quality levels, and separate bottlings that consumers encounter as distinct products. The different LWINs (2371191 vs 2371247) confirm these are separate wine records in the database. Although both are Cabernet Sauvignon from Mayu, the classification difference alone makes them different wines.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Reserva and Gran Reserva represent distinct classification tiers in wine production, indicating different aging requirements, quality levels, and separate bottlings that consumers encounter as distinct products. The different LWINs (2371191 vs 2371247) confirm these are separate wine records in the database. Although both are Cabernet Sauvignon from Mayu, the classification difference alone makes them different wines.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 115,
+  "elapsed": 2.0520811080932617,
+  "error": null
+}

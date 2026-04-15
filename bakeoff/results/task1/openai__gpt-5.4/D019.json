@@ -1,0 +1,13 @@
+{
+  "pair_id": "D019",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Both wines are from the same producer and grape, but 'Maurus Pinot Nero' includes a distinct cuv\u00e9e name rather than a mere formatting variant of 'Pinot Nero.' That indicates a separate bottling a consumer would encounter separately, and the different LWINs further support that they are not the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Both wines are from the same producer and grape, but 'Maurus Pinot Nero' includes a distinct cuv\u00e9e name rather than a mere formatting variant of 'Pinot Nero.' That indicates a separate bottling a consumer would encounter separately, and the different LWINs further support that they are not the same wine.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 86,
+  "elapsed": 2.4457170963287354,
+  "error": null
+}

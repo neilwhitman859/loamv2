@@ -1,0 +1,13 @@
+{
+  "pair_id": "D003",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Chimney Rock appears to make both a named cuv\u00e9e, Alpine Cabernet Sauvignon, and a separate Cabernet Sauvignon bottling. The presence of distinct LWINs also indicates they are separate wine entries rather than a simple naming variation. Same producer and color do not override the different cuv\u00e9e names.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Chimney Rock appears to make both a named cuv\u00e9e, Alpine Cabernet Sauvignon, and a separate Cabernet Sauvignon bottling. The presence of distinct LWINs also indicates they are separate wine entries rather than a simple naming variation. Same producer and color do not override the different cuv\u00e9e names.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 89,
+  "elapsed": 1.5104036331176758,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A039",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The only difference is the varietal suffix 'Pinot Noir' appended to Wine B, which is an abbreviation case per the key rules. Both share the same producer (Torii Mor), same designation (Yamhill Carlton Select), same grape (Pinot Noir), and same color (red).\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The only difference is the varietal suffix 'Pinot Noir' appended to Wine B, which is an abbreviation case per the key rules. Both share the same producer (Torii Mor), same designation (Yamhill Carlton Select), same grape (Pinot Noir), and same color (red).",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 83,
+  "elapsed": 4.873441457748413,
+  "error": null
+}

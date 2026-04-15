@@ -1,0 +1,13 @@
+{
+  "pair_id": "D041",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Pommery with the identical core name 'Apanage Cuvee 1874'; Wine B adds 'Brut' as a style descriptor for this white sparkling Champagne, similar to allowable name formatting differences like abbreviations or suffixes. Colors match as white, and no evidence of distinct bottlings, grapes, or sweetness levels. Pommery's Apanage Cuv\u00e9e 1874 is a known Brut Champagne, making these the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Pommery with the identical core name 'Apanage Cuvee 1874'; Wine B adds 'Brut' as a style descriptor for this white sparkling Champagne, similar to allowable name formatting differences like abbreviations or suffixes. Colors match as white, and no evidence of distinct bottlings, grapes, or sweetness levels. Pommery's Apanage Cuv\u00e9e 1874 is a known Brut Champagne, making these the same wine.",
+  "parse_ok": true,
+  "tokens_in": 567,
+  "tokens_out": 731,
+  "elapsed": 5.428651332855225,
+  "error": null
+}

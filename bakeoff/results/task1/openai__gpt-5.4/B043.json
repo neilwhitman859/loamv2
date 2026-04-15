@@ -1,0 +1,13 @@
+{
+  "pair_id": "B043",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different Pommery Apanage bottlings because Wine B is explicitly 'Brut Rose' while Wine A is a white Brut. Color/style differences (white vs ros\u00e9) make them separate wines, and the different LWINs support that they are distinct entries.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different Pommery Apanage bottlings because Wine B is explicitly 'Brut Rose' while Wine A is a white Brut. Color/style differences (white vs ros\u00e9) make them separate wines, and the different LWINs support that they are distinct entries.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 78,
+  "elapsed": 2.3701913356781006,
+  "error": null
+}

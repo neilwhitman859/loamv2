@@ -1,0 +1,28 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 1.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.225,
+  "wrong_facts": [
+    "Hook calls the producer 'Domaine de la Terre Rouge' — the producer is Terroir Al Limit, not Domaine de la Terre Rouge (which is a completely different California producer)",
+    "Hook claims '100-year-old' vines — ground truth says 90-year-old",
+    "Hook mentions 'whole-cluster carbonic maceration' — ground truth says whole cluster native fermentation with two weeks on skins, no mention of carbonic maceration as the primary technique",
+    "Vinification summary says wine ages in 'large, neutral oak foudres' — ground truth says recent vintages ferment and age in cement tanks, not oak foudres",
+    "Terroir description says 'north-facing slope' — not verified in ground truth (ground truth doesn't specify aspect)",
+    "Value assessment fabricates price range '$80 and $100' — no prices provided in context data"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "100-year-old vines (context/ground truth says 90-year-old)",
+    "$80-$100 price range (no prices provided)",
+    "55°F storage temperature (not in context data, though this is standard advice)"
+  ],
+  "reasoning": "The hook contains a devastating error: calling the producer 'Domaine de la Terre Rouge' instead of Terroir Al Limit. This is a completely wrong producer name — Domaine de la Terre Rouge is a real but unrelated California winery. This alone triggers the hard cap of 1.5 on correctness. Additionally, the vine age is wrong (100 vs 90 years), the vinification description incorrectly states carbonic maceration and oak foudre aging when ground truth says native fermentation in cement tanks with no wood, and the price is fabricated. The voice is strong — direct, opinionated, well-structured with good specificity throughout. But the factual errors are too numerous and too prominent to overlook.",
+  "judge_tokens_in": 3662,
+  "judge_tokens_out": 475
+}

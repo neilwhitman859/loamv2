@@ -1,0 +1,13 @@
+{
+  "pair_id": "B022",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines differ in color (white vs. ros\u00e9) and have distinct LWIN identifiers, confirming they are separate bottlings. Per the classification rules, different colors or styles represent distinct wines that would not share a single encyclopedia page.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines differ in color (white vs. ros\u00e9) and have distinct LWIN identifiers, confirming they are separate bottlings. Per the classification rules, different colors or styles represent distinct wines that would not share a single encyclopedia page.",
+  "parse_ok": true,
+  "tokens_in": 462,
+  "tokens_out": 1042,
+  "elapsed": 20.777479648590088,
+  "error": null
+}

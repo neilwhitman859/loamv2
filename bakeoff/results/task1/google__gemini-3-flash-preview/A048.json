@@ -1,0 +1,13 @@
+{
+  "pair_id": "A048",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.98, \"reasoning\": \"Wine B is simply the varietal-specific name for Wine A. Stoneleigh's 'Wild Valley' is a specific range where the Pinot Noir is a single distinct bottling, and the presence of the grape name in one record and its omission in the other is a standard naming variation for the same product.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Wine B is simply the varietal-specific name for Wine A. Stoneleigh's 'Wild Valley' is a specific range where the Pinot Noir is a single distinct bottling, and the presence of the grape name in one record and its omission in the other is a standard naming variation for the same product.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 84,
+  "elapsed": 2.055931329727173,
+  "error": null
+}

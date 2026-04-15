@@ -1,0 +1,13 @@
+{
+  "pair_id": "C010",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.96,\"reasoning\":\"Both wines share the same producer and vineyard name (Lenchen) and the same Pr\u00e4dikat level Auslese, but Wine A includes the specific lot/cask designation \\\"Nr12\\\" while Wine B does not. Under the rules, different lot/cask numbers at the same Pr\u00e4dikat level indicate different wines, and the differing LWINs support that they are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.96,
+  "reasoning": "Both wines share the same producer and vineyard name (Lenchen) and the same Pr\u00e4dikat level Auslese, but Wine A includes the specific lot/cask designation \"Nr12\" while Wine B does not. Under the rules, different lot/cask numbers at the same Pr\u00e4dikat level indicate different wines, and the differing LWINs support that they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 100,
+  "elapsed": 1.8009235858917236,
+  "error": null
+}

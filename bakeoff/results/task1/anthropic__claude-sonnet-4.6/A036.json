@@ -1,0 +1,13 @@
+{
+  "pair_id": "A036",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A 'DB Family Selection' contains Pinot Noir and Chardonnay Blanc grapes, suggesting it may be a blend or ros\u00e9, while Wine B 'DB Family Selection Sauvignon Blanc' is explicitly a Sauvignon Blanc. The grape varieties are different (Pinot Noir/Chardonnay vs Sauvignon Blanc), which means these are distinct wines even though they share the same base name and producer. Different grapes always means different wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A 'DB Family Selection' contains Pinot Noir and Chardonnay Blanc grapes, suggesting it may be a blend or ros\u00e9, while Wine B 'DB Family Selection Sauvignon Blanc' is explicitly a Sauvignon Blanc. The grape varieties are different (Pinot Noir/Chardonnay vs Sauvignon Blanc), which means these are distinct wines even though they share the same base name and producer. Different grapes always means different wine.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 133,
+  "elapsed": 3.6889781951904297,
+  "error": null
+}

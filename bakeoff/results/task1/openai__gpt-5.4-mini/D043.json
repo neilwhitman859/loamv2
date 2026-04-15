@@ -1,0 +1,13 @@
+{
+  "pair_id": "D043",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"The two records are explicitly different bottlings: \\\"Note #1\\\" versus \\\"Note #2\\\". They also have different LWIN identifiers, which strongly indicates separate wines rather than name-format variants. Same producer and color are not enough to make them the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "The two records are explicitly different bottlings: \"Note #1\" versus \"Note #2\". They also have different LWIN identifiers, which strongly indicates separate wines rather than name-format variants. Same producer and color are not enough to make them the same wine.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 76,
+  "elapsed": 1.4566237926483154,
+  "error": null
+}

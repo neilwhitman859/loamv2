@@ -1,0 +1,23 @@
+{
+  "page_id": "page_013",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Bonterra Pinot Noir 2022\", \"vintage_year\": 2022, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Bonterra Pinot Noir 2022",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 71565,
+  "tokens_out": 1485,
+  "elapsed": 30.541900396347046,
+  "error": null
+}

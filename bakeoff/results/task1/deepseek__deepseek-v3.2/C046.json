@@ -1,0 +1,13 @@
+{
+  "pair_id": "C046",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different German Pr\u00e4dikat levels: Wine A is Beerenauslese (BA) and Wine B is Auslese. Different Pr\u00e4dikat levels always indicate different wines, as they represent distinct quality classifications and sweetness levels.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different German Pr\u00e4dikat levels: Wine A is Beerenauslese (BA) and Wine B is Auslese. Different Pr\u00e4dikat levels always indicate different wines, as they represent distinct quality classifications and sweetness levels.",
+  "parse_ok": true,
+  "tokens_in": 462,
+  "tokens_out": 73,
+  "elapsed": 5.724048137664795,
+  "error": null
+}

@@ -1,0 +1,46 @@
+{
+  "page_id": "page_056",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"2023 Hilltop Cabernet Sauvignon\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": 14.9,\n      \"blend\": [\n        {\n          \"grape\": \"Cabernet Sauvignon\",\n          \"pct\": 97\n        },\n        {\n          \"grape\": \"Petit Verdot\",\n          \"pct\": 2\n        },\n        {\n          \"grape\": \"Malbec\",\n          \"pct\": 1\n        }\n      ],\n      \"oak\": {\n        \"vessel\": \"French oak barrels\",\n        \"months\": 12,\n        \"new_pct\": 20,\n        \"origin\": \"French\"\n      },\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": 3.69,\n        \"ta_g_l\": 6.1,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": \"Steve Peck\",\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "2023 Hilltop Cabernet Sauvignon",
+      "vintage_year": 2023,
+      "abv_pct": 14.9,
+      "blend": [
+        {
+          "grape": "Cabernet Sauvignon",
+          "pct": 97
+        },
+        {
+          "grape": "Petit Verdot",
+          "pct": 2
+        },
+        {
+          "grape": "Malbec",
+          "pct": 1
+        }
+      ],
+      "oak": {
+        "vessel": "French oak barrels",
+        "months": 12,
+        "new_pct": 20,
+        "origin": "French"
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": 3.69,
+        "ta_g_l": 6.1,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": "Steve Peck",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 38765,
+  "tokens_out": 2704,
+  "elapsed": 26.4510600566864,
+  "error": null
+}

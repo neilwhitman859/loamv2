@@ -1,0 +1,13 @@
+{
+  "pair_id": "A013",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records list different grape varieties (Pinot Noir and Canari Noir versus Pinot Gris). Per the explicit classification rules, different grapes always indicate distinct wines, even when the producer and vineyard name are identical.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records list different grape varieties (Pinot Noir and Canari Noir versus Pinot Gris). Per the explicit classification rules, different grapes always indicate distinct wines, even when the producer and vineyard name are identical.",
+  "parse_ok": true,
+  "tokens_in": 468,
+  "tokens_out": 1686,
+  "elapsed": 31.651299953460693,
+  "error": null
+}

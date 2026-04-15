@@ -1,0 +1,13 @@
+{
+  "pair_id": "B047",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different Salwey bottlings because the vineyard designations differ: Eichberg vs Kirchberg. They also conflict on color, with Wine A listed as white and Wine B as red, which alone would make them separate wines. Even though both mention Sp\u00e4tburgunder, different vineyard/cuv\u00e9e names indicate distinct encyclopedia entries.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different Salwey bottlings because the vineyard designations differ: Eichberg vs Kirchberg. They also conflict on color, with Wine A listed as white and Wine B as red, which alone would make them separate wines. Even though both mention Sp\u00e4tburgunder, different vineyard/cuv\u00e9e names indicate distinct encyclopedia entries.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 88,
+  "elapsed": 2.4507110118865967,
+  "error": null
+}

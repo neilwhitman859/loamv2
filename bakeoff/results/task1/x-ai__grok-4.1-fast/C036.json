@@ -1,0 +1,13 @@
+{
+  "pair_id": "C036",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Markus Molitor), vineyard (Bernkasteler Lay), grape (Riesling), color (white), and appellation (Mosel), but differ in Gold Capsule star ratings (1* vs 3*). For Markus Molitor, these stars denote distinct ripeness and quality levels, analogous to different Pr\u00e4dikat tiers (e.g., Sp\u00e4tlese vs Auslese). Per rules, different German quality levels mean DIFFERENT wines, representing separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Markus Molitor), vineyard (Bernkasteler Lay), grape (Riesling), color (white), and appellation (Mosel), but differ in Gold Capsule star ratings (1* vs 3*). For Markus Molitor, these stars denote distinct ripeness and quality levels, analogous to different Pr\u00e4dikat tiers (e.g., Sp\u00e4tlese vs Auslese). Per rules, different German quality levels mean DIFFERENT wines, representing separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 602,
+  "tokens_out": 705,
+  "elapsed": 5.1971118450164795,
+  "error": null
+}

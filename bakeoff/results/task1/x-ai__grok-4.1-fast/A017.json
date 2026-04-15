@@ -1,0 +1,13 @@
+{
+  "pair_id": "A017",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is explicitly Pinot Noir while Wine B is Syrah, indicating different grape varieties from the same producer and vineyard designation. The rules state that different grapes always mean different wines, even if names match otherwise. The varietal suffix on Wine B confirms the grape distinction, overriding abbreviation assumptions.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is explicitly Pinot Noir while Wine B is Syrah, indicating different grape varieties from the same producer and vineyard designation. The rules state that different grapes always mean different wines, even if names match otherwise. The varietal suffix on Wine B confirms the grape distinction, overriding abbreviation assumptions.",
+  "parse_ok": true,
+  "tokens_in": 567,
+  "tokens_out": 492,
+  "elapsed": 3.7435007095336914,
+  "error": null
+}

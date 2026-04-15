@@ -1,0 +1,13 @@
+{
+  "pair_id": "A034",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Martin Wassmer) and vineyard (Markgraflerland SW), with Wine B simply adding the varietal suffix 'Sauvignon Blanc' to the abbreviated name. The key evidence is that the producer makes a single wine from this vineyard, and the grapes listed for Wine A (Chardonnay Blanc, Pinot Gris) are consistent with a white blend, while the LWIN for Wine B confirms it's the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Martin Wassmer) and vineyard (Markgraflerland SW), with Wine B simply adding the varietal suffix 'Sauvignon Blanc' to the abbreviated name. The key evidence is that the producer makes a single wine from this vineyard, and the grapes listed for Wine A (Chardonnay Blanc, Pinot Gris) are consistent with a white blend, while the LWIN for Wine B confirms it's the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 124,
+  "elapsed": 2.0758261680603027,
+  "error": null
+}

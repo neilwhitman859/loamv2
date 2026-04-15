@@ -1,0 +1,13 @@
+{
+  "pair_id": "B024",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different colors and grape compositions, indicating they are different wines. Wine A is a white wine with Sauvignon Blanc and Muscadelle, while Wine B is a red wine with Merlot Noir. The differences in color and grape variety are sufficient to conclude they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different colors and grape compositions, indicating they are different wines. Wine A is a white wine with Sauvignon Blanc and Muscadelle, while Wine B is a red wine with Merlot Noir. The differences in color and grape variety are sufficient to conclude they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 520,
+  "tokens_out": 84,
+  "elapsed": 1.8167331218719482,
+  "error": null
+}

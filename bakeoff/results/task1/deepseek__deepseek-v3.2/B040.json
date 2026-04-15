@@ -1,0 +1,13 @@
+{
+  "pair_id": "B040",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different grape varieties (Alvarinho vs Barbera), which is a definitive rule for different wines. They also differ in color (white vs red), which further confirms they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different grape varieties (Alvarinho vs Barbera), which is a definitive rule for different wines. They also differ in color (white vs red), which further confirms they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 66,
+  "elapsed": 3.18479585647583,
+  "error": null
+}

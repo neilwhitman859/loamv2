@@ -1,0 +1,13 @@
+{
+  "pair_id": "D004",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.95, \"reasoning\": \"The wines have different names ('Arrowhead' vs 'Arete'), which are distinct vineyard or cuv\u00e9e designations from the same producer. Different vineyard/cuv\u00e9e designations, even with the same grape variety, represent separate bottlings and different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different names ('Arrowhead' vs 'Arete'), which are distinct vineyard or cuv\u00e9e designations from the same producer. Different vineyard/cuv\u00e9e designations, even with the same grape variety, represent separate bottlings and different wines.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 76,
+  "elapsed": 5.92188572883606,
+  "error": null
+}

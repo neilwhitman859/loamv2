@@ -1,0 +1,13 @@
+{
+  "pair_id": "C031",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Both wines are 'Blanc de Blancs' from the same producer, Bonnaire, and are both white. The only difference is the 'Brut' designation, which indicates a dryness level for sparkling wine and is often omitted in informal naming or when it's the standard bottling. This is likely the same wine with a slightly more specific name for Wine A.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are 'Blanc de Blancs' from the same producer, Bonnaire, and are both white. The only difference is the 'Brut' designation, which indicates a dryness level for sparkling wine and is often omitted in informal naming or when it's the standard bottling. This is likely the same wine with a slightly more specific name for Wine A.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 108,
+  "elapsed": 2.2705512046813965,
+  "error": null
+}

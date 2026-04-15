@@ -1,0 +1,13 @@
+{
+  "pair_id": "C042",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Gran Reserva and Reserva are distinct classification tiers in Spanish wine law, representing different aging requirements and quality designations. These are separate bottlings that consumers would encounter as distinct products, even from the same producer and appellation. The different LWINs confirm these are separate wine records.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Gran Reserva and Reserva are distinct classification tiers in Spanish wine law, representing different aging requirements and quality designations. These are separate bottlings that consumers would encounter as distinct products, even from the same producer and appellation. The different LWINs confirm these are separate wine records.",
+  "parse_ok": true,
+  "tokens_in": 527,
+  "tokens_out": 90,
+  "elapsed": 2.0854804515838623,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B012",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines are distinct because they utilize different grape varieties and have different wine colors. Furthermore, a 'Colheita' Madeira is a specific vintage-dated category that represents a different bottling tier compared to a standard non-vintage Borges Madeira.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are distinct because they utilize different grape varieties and have different wine colors. Furthermore, a 'Colheita' Madeira is a specific vintage-dated category that represents a different bottling tier compared to a standard non-vintage Borges Madeira.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 72,
+  "elapsed": 1.934530258178711,
+  "error": null
+}

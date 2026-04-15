@@ -1,0 +1,13 @@
+{
+  "pair_id": "D002",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Van Volxem) and vineyard (Altenberg), share the same grape (Riesling) and style (Alte Reben). The only difference is the 'GG' suffix on Wine A, which is a varietal suffix difference alone, indicating the same wine with a formatting variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Van Volxem) and vineyard (Altenberg), share the same grape (Riesling) and style (Alte Reben). The only difference is the 'GG' suffix on Wine A, which is a varietal suffix difference alone, indicating the same wine with a formatting variation.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 93,
+  "elapsed": 2.5628390312194824,
+  "error": null
+}

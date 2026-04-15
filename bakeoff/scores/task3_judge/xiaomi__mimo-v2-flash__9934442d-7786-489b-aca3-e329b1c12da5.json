@@ -1,0 +1,31 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "xiaomi/mimo-v2-flash",
+  "correctness": 1.5,
+  "voice": 2.0,
+  "specificity": 3.5,
+  "usefulness": 3.0,
+  "composite": 2.325,
+  "wrong_facts": [
+    "Hook claims wine comes from 'Frankland River sub-region' — not verified and likely wrong; Omrah is a second-label range sourcing from younger vineyards or bought-in fruit, not necessarily Frankland River",
+    "Hook claims 'lateritic gravelly sandy loams' — ground truth says 'gravelly loam soils', the 'lateritic' and 'sandy' additions are unverified fabrications",
+    "Vinification section fabricates 'whole-bunch fermentation' and 'native yeasts' — no evidence for these claims; ground truth says 10 months in French oak barrels but nothing about whole-bunch or native yeasts",
+    "Wine summary says 'showcasing the producer's focus on site expression' — uses banned word 'showcases/showcasing'",
+    "Terroir section claims 'granite and gneissic sandy loams' — unverified geological specifics not in context or ground truth",
+    "Value assessment fabricates '$15-20 USD' price — no price data provided"
+  ],
+  "banned_words_found": [
+    "showcasing"
+  ],
+  "fabricated_numbers": [
+    "$15-20 USD price range",
+    "10 months aging not stated but implied through 'older French oak' — though ground truth confirms 10 months, the model didn't cite it correctly",
+    "55°F (13°C) storage temperature",
+    "5 aging_potential_years"
+  ],
+  "reasoning": "The hook contains a provably wrong claim about Frankland River sub-region — Omrah is a second-label range and there's no evidence it's specifically from Frankland River. This triggers the hard cap of 1.5 on correctness. The vinification section fabricates whole-bunch fermentation and native yeast claims with no basis. The price of $15-20 USD is fabricated. The banned word 'showcasing' appears in the wine_summary. The output is detailed and specific but much of that specificity is fabricated rather than grounded in actual data, making it unreliable despite sounding authoritative.",
+  "judge_tokens_in": 3457,
+  "judge_tokens_out": 496
+}

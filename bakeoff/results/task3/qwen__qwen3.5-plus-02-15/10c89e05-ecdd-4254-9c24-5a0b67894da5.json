@@ -1,0 +1,40 @@
+{
+  "wine_id": "10c89e05-ecdd-4254-9c24-5a0b67894da5",
+  "model": "qwen/qwen3.5-plus-02-15",
+  "tier": "C",
+  "display_name": "Black Box Deep & Dark Cabernet Sauvignon, California",
+  "raw_content": "{\n  \"hook\": \"California Cabernet at this price point usually sacrifices varietal character for bulk, but this blend targets a specific dark fruit profile. The Deep & Dark label signals a winemaking focus on extraction and oak rather than regional typicity.\",\n  \"wine_summary\": \"Black Box operates on a model of volume and consistency rather than vineyard specificity. Sourcing fruit across California allows the winemaking team to blend away vintage variation, resulting in a stable product year after year. This approach prioritizes drinkability over expression of place, making it a utility wine for high-volume consumption.\",\n  \"terroir_expression\": \"Without a designated appellation, this wine does not express a specific soil type or microclimate. The warm climate of California's Central Valley likely dominates the blend, pushing fruit toward ripe black plum rather than herbal notes. Expect sun-driven sweetness in the fruit rather than mineral structure from specific geological formations.\",\n  \"vinification_summary\": \"Oak chips or staves are likely used during fermentation to impart vanilla and cedar notes without the cost of barrel aging. This technique mimics the effect of barrel maturation on a budget while softening the tannin structure. The result is a smoother mouthfeel that masks the rougher edges of high-yield fruit.\",\n  \"food_pairing\": \"BBQ Beef Brisket — smoke matches oak influence.\\nMushroom Burger — earthiness complements fruit.\\nSpicy Sausage Pasta — fat cuts through tannin.\\nMeatloaf with Glaze — sweetness mirrors fruit.\\nAged Cheddar — fat coats palate.\",\n  \"comparable_wines\": \"Franzia Vineyards Cabernet — similar box format and price tier.\\nCharles Shaw Cabernet — lower price, similar bulk blend strategy.\\nBogle Cabernet — step up in price, single appellation.\",\n  \"style_profile\": \"Full-bodied dry red with soft tannins and ripe fruit focus.\",\n  \"cellar_recommendation\": \"Drink immediately upon purchase. Box packaging limits oxygen exposure but does not support long-term aging potential.\",\n  \"value_assessment\": \"$19.99 for a three-liter box breaks down to roughly $5 per bottle. Competitors like Franzia or Carlo Rossi sit at this same price point but often lack the varietal focus. It is worth the cost for parties where volume matters more than nuance.\",\n  \"market_position\": \"Casual drinkers and college students dominate the consumer base for this label. You will find this on retail shelves and at tailgates rather than restaurant lists. It serves as a utility wine for events where breaking glass is a risk.\",\n  \"insider_take\": \"Skip this if you want to taste distinct Cabernet Sauvignon character. The blend sacrifices typicity for consistency, making it a reliable pour for crowds but a poor choice for study. Buy it for the convenience of the package, not the quality of the juice.\",\n  \"aging_potential_years\": 0,\n  \"drinking_window_min_years\": 0,\n  \"drinking_window_max_years\": 1,\n  \"sensory\": {\n    \"acidity\": 2,\n    \"tannin\": 3,\n    \"body\": 4,\n    \"sweetness\": 2,\n    \"alcohol\": 3,\n    \"color_intensity\": \"deep\",\n    \"aroma_intensity\": \"medium\",\n    \"finish_length\": \"short\",\n    \"complexity\": \"simple\",\n    \"quality_level\": \"acceptable\"\n  }\n}",
+  "parsed": {
+    "hook": "California Cabernet at this price point usually sacrifices varietal character for bulk, but this blend targets a specific dark fruit profile. The Deep & Dark label signals a winemaking focus on extraction and oak rather than regional typicity.",
+    "wine_summary": "Black Box operates on a model of volume and consistency rather than vineyard specificity. Sourcing fruit across California allows the winemaking team to blend away vintage variation, resulting in a stable product year after year. This approach prioritizes drinkability over expression of place, making it a utility wine for high-volume consumption.",
+    "terroir_expression": "Without a designated appellation, this wine does not express a specific soil type or microclimate. The warm climate of California's Central Valley likely dominates the blend, pushing fruit toward ripe black plum rather than herbal notes. Expect sun-driven sweetness in the fruit rather than mineral structure from specific geological formations.",
+    "vinification_summary": "Oak chips or staves are likely used during fermentation to impart vanilla and cedar notes without the cost of barrel aging. This technique mimics the effect of barrel maturation on a budget while softening the tannin structure. The result is a smoother mouthfeel that masks the rougher edges of high-yield fruit.",
+    "food_pairing": "BBQ Beef Brisket — smoke matches oak influence.\nMushroom Burger — earthiness complements fruit.\nSpicy Sausage Pasta — fat cuts through tannin.\nMeatloaf with Glaze — sweetness mirrors fruit.\nAged Cheddar — fat coats palate.",
+    "comparable_wines": "Franzia Vineyards Cabernet — similar box format and price tier.\nCharles Shaw Cabernet — lower price, similar bulk blend strategy.\nBogle Cabernet — step up in price, single appellation.",
+    "style_profile": "Full-bodied dry red with soft tannins and ripe fruit focus.",
+    "cellar_recommendation": "Drink immediately upon purchase. Box packaging limits oxygen exposure but does not support long-term aging potential.",
+    "value_assessment": "$19.99 for a three-liter box breaks down to roughly $5 per bottle. Competitors like Franzia or Carlo Rossi sit at this same price point but often lack the varietal focus. It is worth the cost for parties where volume matters more than nuance.",
+    "market_position": "Casual drinkers and college students dominate the consumer base for this label. You will find this on retail shelves and at tailgates rather than restaurant lists. It serves as a utility wine for events where breaking glass is a risk.",
+    "insider_take": "Skip this if you want to taste distinct Cabernet Sauvignon character. The blend sacrifices typicity for consistency, making it a reliable pour for crowds but a poor choice for study. Buy it for the convenience of the package, not the quality of the juice.",
+    "aging_potential_years": 0,
+    "drinking_window_min_years": 0,
+    "drinking_window_max_years": 1,
+    "sensory": {
+      "acidity": 2,
+      "tannin": 3,
+      "body": 4,
+      "sweetness": 2,
+      "alcohol": 3,
+      "color_intensity": "deep",
+      "aroma_intensity": "medium",
+      "finish_length": "short",
+      "complexity": "simple",
+      "quality_level": "acceptable"
+    }
+  },
+  "parse_ok": true,
+  "tokens_in": 1633,
+  "tokens_out": 10930,
+  "elapsed": 222.5713906288147,
+  "error": null
+}

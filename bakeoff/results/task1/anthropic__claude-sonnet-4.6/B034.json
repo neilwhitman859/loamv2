@@ -1,0 +1,13 @@
+{
+  "pair_id": "B034",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is explicitly a Ros\u00e9 ('Rose') and Wine B is explicitly a Red ('Rouge'), both from the same producer du Clos d'Alari. Per the classification rules, Ros\u00e9 vs Red from the same vineyard are DIFFERENT wines. The different LWIN codes (1602625 vs 1602670) further confirm these are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is explicitly a Ros\u00e9 ('Rose') and Wine B is explicitly a Red ('Rouge'), both from the same producer du Clos d'Alari. Per the classification rules, Ros\u00e9 vs Red from the same vineyard are DIFFERENT wines. The different LWIN codes (1602625 vs 1602670) further confirm these are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 496,
+  "tokens_out": 104,
+  "elapsed": 3.3730103969573975,
+  "error": null
+}

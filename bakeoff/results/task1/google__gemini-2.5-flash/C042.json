@@ -1,0 +1,13 @@
+{
+  "pair_id": "C042",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are from the same producer and appellation, but one is a 'Gran Reserva' and the other is a 'Reserva'. These are distinct classification tiers in Rioja (and similar Spanish regions like Cari\u00f1ena), indicating different aging requirements and quality levels, making them different bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are from the same producer and appellation, but one is a 'Gran Reserva' and the other is a 'Reserva'. These are distinct classification tiers in Rioja (and similar Spanish regions like Cari\u00f1ena), indicating different aging requirements and quality levels, making them different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 96,
+  "elapsed": 1.7395045757293701,
+  "error": null
+}

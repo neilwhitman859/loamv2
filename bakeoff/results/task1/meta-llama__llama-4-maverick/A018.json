@@ -1,0 +1,13 @@
+{
+  "pair_id": "A018",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines have different names, 'Quarter Acre' and 'Quarter Acre Viognier', and the grape variety for Wine A is CHARDONNAY BLANC, while Wine B's variety is not specified but its name suggests it is Viognier, indicating different grape varieties.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines have different names, 'Quarter Acre' and 'Quarter Acre Viognier', and the grape variety for Wine A is CHARDONNAY BLANC, while Wine B's variety is not specified but its name suggests it is Viognier, indicating different grape varieties.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 81,
+  "elapsed": 1.1560006141662598,
+  "error": null
+}

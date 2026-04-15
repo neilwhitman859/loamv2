@@ -1,0 +1,13 @@
+{
+  "pair_id": "B011",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different Madeira styles/ages: Wine A is Boal Medium Sweet 15 YO, while Wine B is Medium Sweet 5 YO. The grape/color also differ in the record details (Boal/white for B vs Semillon/red for A), indicating separate bottlings rather than naming variants of the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different Madeira styles/ages: Wine A is Boal Medium Sweet 15 YO, while Wine B is Medium Sweet 5 YO. The grape/color also differ in the record details (Boal/white for B vs Semillon/red for A), indicating separate bottlings rather than naming variants of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 87,
+  "elapsed": 1.6381292343139648,
+  "error": null
+}

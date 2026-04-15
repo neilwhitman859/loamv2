@@ -1,0 +1,50 @@
+{
+  "page_id": "page_007",
+  "model": "mistralai/mistral-large",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Essential Red\",\n      \"vintage_year\": 2022,\n      \"abv_pct\": null,\n      \"blend\": [\n        {\n          \"grape\": \"Old Vine Zinfandel\",\n          \"pct\": null\n        },\n        {\n          \"grape\": \"Syrah\",\n          \"pct\": null\n        },\n        {\n          \"grape\": \"Cabernet Sauvignon\",\n          \"pct\": null\n        },\n        {\n          \"grape\": \"Petite Sirah\",\n          \"pct\": null\n        }\n      ],\n      \"oak\": {\n        \"vessel\": \"American oak barrels\",\n        \"months\": 12,\n        \"new_pct\": null,\n        \"origin\": \"American\"\n      },\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": null,\n        \"ta_g_l\": null,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": null,\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Essential Red",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Old Vine Zinfandel",
+          "pct": null
+        },
+        {
+          "grape": "Syrah",
+          "pct": null
+        },
+        {
+          "grape": "Cabernet Sauvignon",
+          "pct": null
+        },
+        {
+          "grape": "Petite Sirah",
+          "pct": null
+        }
+      ],
+      "oak": {
+        "vessel": "American oak barrels",
+        "months": 12,
+        "new_pct": null,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 28128,
+  "tokens_out": 252,
+  "elapsed": 58.427525997161865,
+  "error": null
+}

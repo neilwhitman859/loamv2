@@ -1,0 +1,13 @@
+{
+  "pair_id": "B044",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, one being a ros\u00e9 and the other white. This difference in color indicates they are distinct wines. Despite sharing the same producer and cuv\u00e9e name, the color difference takes precedence.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, one being a ros\u00e9 and the other white. This difference in color indicates they are distinct wines. Despite sharing the same producer and cuv\u00e9e name, the color difference takes precedence.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 66,
+  "elapsed": 1.9489753246307373,
+  "error": null
+}

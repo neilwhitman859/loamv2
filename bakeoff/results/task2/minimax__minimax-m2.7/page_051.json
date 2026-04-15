@@ -1,0 +1,48 @@
+{
+  "page_id": "page_051",
+  "model": "minimax/minimax-m2.7",
+  "raw_content": "{\"wines_found\": [{\"name\": \"2023 Esprit de Tablas\", \"vintage_year\": 2023, \"abv_pct\": 14.0, \"blend\": [{\"grape\": \"Mourvèdre\", \"pct\": 33}, {\"grape\": \"Syrah\", \"pct\": 31}, {\"grape\": \"Grenache\", \"pct\": 26}, {\"grape\": \"Cinsaut\", \"pct\": 6}, {\"grape\": \"Vaccarese\", \"pct\": 2}, {\"grape\": \"Counoise\", \"pct\": 2}], \"oak\": null, \"cases_produced\": 3452, \"chemistry\": null, \"winemaker\": null, \"farming\": \"biodynamic\"}]}",
+  "wines_found": [
+    {
+      "name": "2023 Esprit de Tablas",
+      "vintage_year": 2023,
+      "abv_pct": 14.0,
+      "blend": [
+        {
+          "grape": "Mourvèdre",
+          "pct": 33
+        },
+        {
+          "grape": "Syrah",
+          "pct": 31
+        },
+        {
+          "grape": "Grenache",
+          "pct": 26
+        },
+        {
+          "grape": "Cinsaut",
+          "pct": 6
+        },
+        {
+          "grape": "Vaccarese",
+          "pct": 2
+        },
+        {
+          "grape": "Counoise",
+          "pct": 2
+        }
+      ],
+      "oak": null,
+      "cases_produced": 3452,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "biodynamic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 19040,
+  "tokens_out": 1128,
+  "elapsed": 10.347055196762085,
+  "error": null
+}

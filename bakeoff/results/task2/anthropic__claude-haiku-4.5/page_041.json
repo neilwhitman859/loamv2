@@ -1,0 +1,28 @@
+{
+  "page_id": "page_041",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Cabernet Sauvignon\",\n      \"vintage_year\": null,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": {\n        \"vessel\": \"barrel\",\n        \"months\": null,\n        \"new_pct\": null,\n        \"origin\": \"French and American\"\n      },\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": \"Jason Becker\",\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Cabernet Sauvignon",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "barrel",
+        "months": null,
+        "new_pct": null,
+        "origin": "French and American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jason Becker",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 14963,
+  "tokens_out": 148,
+  "elapsed": 2.0998456478118896,
+  "error": null
+}

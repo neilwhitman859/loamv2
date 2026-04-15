@@ -1,0 +1,13 @@
+{
+  "pair_id": "C038",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine B includes 'Risco', likely a specific vineyard or cuv\u00e9e designation absent in Wine A, indicating distinct vineyard designations per the rules. Both share producer, Reserva Tinto style, and red color, but the name difference beyond formatting suggests separate bottlings. Distinct LWINs confirm they are treated as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine B includes 'Risco', likely a specific vineyard or cuv\u00e9e designation absent in Wine A, indicating distinct vineyard designations per the rules. Both share producer, Reserva Tinto style, and red color, but the name difference beyond formatting suggests separate bottlings. Distinct LWINs confirm they are treated as different wines.",
+  "parse_ok": true,
+  "tokens_in": 570,
+  "tokens_out": 735,
+  "elapsed": 7.270658254623413,
+  "error": null
+}

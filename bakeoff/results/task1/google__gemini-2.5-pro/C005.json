@@ -1,0 +1,13 @@
+{
+  "pair_id": "C005",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Both records describe a Brut Ros\u00e9 from the producer Jean Noel Haton. In Champagne, the 'NV' (Non-Vintage) designation is the default for a house's standard cuv\u00e9e and is often omitted in naming. Therefore, 'Brut Rose' is a common shorthand for 'Brut Rose NV', and they represent the same conceptual wine, not distinct bottlings.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both records describe a Brut Ros\u00e9 from the producer Jean Noel Haton. In Champagne, the 'NV' (Non-Vintage) designation is the default for a house's standard cuv\u00e9e and is often omitted in naming. Therefore, 'Brut Rose' is a common shorthand for 'Brut Rose NV', and they represent the same conceptual wine, not distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 1802,
+  "elapsed": 17.97968339920044,
+  "error": null
+}

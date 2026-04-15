@@ -1,0 +1,13 @@
+{
+  "pair_id": "A007",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Gabriel Meffre uses the 'Laurus' label as a range of premium wines; in this context, 'Laurus' is the brand/line and 'Laurus Syrah' is the specific varietal bottling within that line. Since both are red wines from the same producer and 'Laurus' is frequently used as a shorthand for the specific varietal wine in trade listings, they represent the same product.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Gabriel Meffre uses the 'Laurus' label as a range of premium wines; in this context, 'Laurus' is the brand/line and 'Laurus Syrah' is the specific varietal bottling within that line. Since both are red wines from the same producer and 'Laurus' is frequently used as a shorthand for the specific varietal wine in trade listings, they represent the same product.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 105,
+  "elapsed": 2.2214393615722656,
+  "error": null
+}

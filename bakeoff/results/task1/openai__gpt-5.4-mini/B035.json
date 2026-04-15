@@ -1,0 +1,13 @@
+{
+  "pair_id": "B035",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct cuv\u00e9es from the same producer, with different colors clearly indicated: Petit Clos Rose versus Petit Clos Rouge. Ros\u00e9 and red wines are separate bottlings and should not be merged into one encyclopedia entry.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct cuv\u00e9es from the same producer, with different colors clearly indicated: Petit Clos Rose versus Petit Clos Rouge. Ros\u00e9 and red wines are separate bottlings and should not be merged into one encyclopedia entry.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 66,
+  "elapsed": 1.669412612915039,
+  "error": null
+}

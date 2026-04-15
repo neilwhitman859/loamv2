@@ -1,0 +1,13 @@
+{
+  "pair_id": "C008",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a white Brut and Wine B is a Ros\u00e9 Brut \u2014 they differ in color/style, which represents distinct bottlings a consumer would encounter separately. Different colors from the same producer and cuv\u00e9e name constitute different wines per classification rules.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a white Brut and Wine B is a Ros\u00e9 Brut \u2014 they differ in color/style, which represents distinct bottlings a consumer would encounter separately. Different colors from the same producer and cuv\u00e9e name constitute different wines per classification rules.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 84,
+  "elapsed": 2.0472633838653564,
+  "error": null
+}

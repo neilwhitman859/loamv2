@@ -1,0 +1,13 @@
+{
+  "pair_id": "D046",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.89,\"reasoning\":\"The names indicate the same cuv\u00e9e, with Wine B adding the color/style descriptor \\\"Rose\\\" to \\\"Nymphe Emue.\\\" Both records are from the same producer, Maris, and both are marked rose, so this looks like a naming-format difference rather than a distinct bottling. There is no evidence of differing grapes, classification, or other separate cuv\u00e9e details.\"}",
+  "verdict": "SAME",
+  "confidence": 0.89,
+  "reasoning": "The names indicate the same cuv\u00e9e, with Wine B adding the color/style descriptor \"Rose\" to \"Nymphe Emue.\" Both records are from the same producer, Maris, and both are marked rose, so this looks like a naming-format difference rather than a distinct bottling. There is no evidence of differing grapes, classification, or other separate cuv\u00e9e details.",
+  "parse_ok": true,
+  "tokens_in": 413,
+  "tokens_out": 99,
+  "elapsed": 1.7356898784637451,
+  "error": null
+}

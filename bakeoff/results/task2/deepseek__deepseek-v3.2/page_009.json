@@ -1,0 +1,33 @@
+{
+  "page_id": "page_009",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Cabernet Sauvignon\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": {\n        \"vessel\": null,\n        \"months\": null,\n        \"new_pct\": null,\n        \"origin\": null\n      },\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": null,\n        \"ta_g_l\": null,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": null,\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Cabernet Sauvignon",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": null,
+        "months": null,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 21095,
+  "tokens_out": 154,
+  "elapsed": 7.399461507797241,
+  "error": null
+}

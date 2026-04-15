@@ -1,0 +1,13 @@
+{
+  "pair_id": "C020",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are both Riesling Auslese wines from Milz Laurentiushof, but they come from different vineyard sites: Trittenheimer Altarchen vs Trittenheimer Leiterchen. Different vineyard designation means distinct bottlings and therefore different wines. The matching grape, style, and producer do not override the site difference.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are both Riesling Auslese wines from Milz Laurentiushof, but they come from different vineyard sites: Trittenheimer Altarchen vs Trittenheimer Leiterchen. Different vineyard designation means distinct bottlings and therefore different wines. The matching grape, style, and producer do not override the site difference.",
+  "parse_ok": true,
+  "tokens_in": 441,
+  "tokens_out": 87,
+  "elapsed": 1.7369771003723145,
+  "error": null
+}

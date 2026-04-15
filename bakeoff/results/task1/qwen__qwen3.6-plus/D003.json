@@ -1,0 +1,13 @@
+{
+  "pair_id": "D003",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The 'Alpine' designation in Wine A indicates a specific vineyard or cuv\u00e9e bottling from Chimney Rock, whereas Wine B represents the producer's standard Cabernet Sauvignon. Different vineyard or cuv\u00e9e designations from the same producer constitute distinct commercial wines, which is further confirmed by their separate LWIN identifiers.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The 'Alpine' designation in Wine A indicates a specific vineyard or cuv\u00e9e bottling from Chimney Rock, whereas Wine B represents the producer's standard Cabernet Sauvignon. Different vineyard or cuv\u00e9e designations from the same producer constitute distinct commercial wines, which is further confirmed by their separate LWIN identifiers.",
+  "parse_ok": true,
+  "tokens_in": 462,
+  "tokens_out": 1485,
+  "elapsed": 28.30966067314148,
+  "error": null
+}

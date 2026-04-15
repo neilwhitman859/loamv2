@@ -1,0 +1,13 @@
+{
+  "pair_id": "C023",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.98, \"reasoning\": \"Wine B is simply the varietal-suffixed version of Wine A. Both records share the same producer, specific cuv\u00e9e name ('The Red Brute'), color, and appellation, with 'Shiraz' and 'Syrah' being synonymous for this Australian bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Wine B is simply the varietal-suffixed version of Wine A. Both records share the same producer, specific cuv\u00e9e name ('The Red Brute'), color, and appellation, with 'Shiraz' and 'Syrah' being synonymous for this Australian bottling.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 77,
+  "elapsed": 2.0260109901428223,
+  "error": null
+}

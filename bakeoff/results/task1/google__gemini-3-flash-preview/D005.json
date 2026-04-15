@@ -1,0 +1,13 @@
+{
+  "pair_id": "D005",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine B is an abbreviated version of Wine A; Fromm produces a specific Syrah from the Clayvin Vineyard, and 'Vineyard Syrah' in this context refers to that single site-specific bottling. There is no evidence of Fromm producing multiple distinct Syrahs from different vineyards that would make 'Vineyard Syrah' a separate product.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine B is an abbreviated version of Wine A; Fromm produces a specific Syrah from the Clayvin Vineyard, and 'Vineyard Syrah' in this context refers to that single site-specific bottling. There is no evidence of Fromm producing multiple distinct Syrahs from different vineyards that would make 'Vineyard Syrah' a separate product.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 93,
+  "elapsed": 2.0345606803894043,
+  "error": null
+}

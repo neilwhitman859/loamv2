@@ -1,0 +1,13 @@
+{
+  "pair_id": "A030",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.85,\"reasoning\":\"Wine A is labeled as pure Semillon while Wine B is a Sauvignon\u2013Semillon blend",
+  "verdict": "DIFFERENT",
+  "confidence": null,
+  "reasoning": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.85,\"reasoning\":\"Wine A is labeled as pure Semillon while Wine B is a Sauvignon\u2013Semillon blend",
+  "parse_ok": false,
+  "tokens_in": 414,
+  "tokens_out": 300,
+  "elapsed": 6.96354603767395,
+  "error": null
+}

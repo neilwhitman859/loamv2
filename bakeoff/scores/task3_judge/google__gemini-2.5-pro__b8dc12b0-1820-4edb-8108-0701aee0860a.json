@@ -1,0 +1,24 @@
+{
+  "wine_id": "b8dc12b0-1820-4edb-8108-0701aee0860a",
+  "wine_name": "Tolosa 1772 Grenache, Edna Valley",
+  "tier": "C",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "Whole cluster fermentation is speculated without basis - ground truth shows mix of warm and cool fermentations in large oak puncheons, no mention of whole cluster",
+    "Price claimed as 'around $45' is fabricated - no price data was provided",
+    "Diablo clay loams mentioned as soil type is not in context data and unverifiable for this specific site",
+    "Tuff mentioned as soil component is not verified in context data"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$45 price point"
+  ],
+  "reasoning": "The output is well-written with strong voice and specificity, but has several correctness issues. The vinification section speculates about whole cluster fermentation when the ground truth indicates a mix of warm and cool fermentations in French oak puncheons - this is a fabrication presented as plausible inference. The $45 price is fabricated since no price data was provided. The hook is factually sound - Edna Valley is indeed one of California's coolest valleys and the Pismo Gap claim is supported by context. The output misses key ground truth details like the Poletti and Salaal vineyard sections, the 1772 naming origin (Mission San Luis Obispo de Tolosa founded in 1772), and the 15 months in French oak puncheons. The comparable wines and food pairings are thoughtful and specific. Voice is excellent - direct, opinionated, no banned words, good use of contrast and specificity.",
+  "judge_tokens_in": 3886,
+  "judge_tokens_out": 370
+}

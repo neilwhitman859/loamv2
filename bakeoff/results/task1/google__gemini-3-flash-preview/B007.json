@@ -1,0 +1,13 @@
+{
+  "pair_id": "B007",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Vistalba produces a tiered range of wines labeled 'Corte A', 'Corte B', and 'Corte C'. These represent distinct quality levels and entirely different grape blends, as evidenced by the 100% Merlot in Corte A versus the Malbec (Cot) based blend in Corte B.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Vistalba produces a tiered range of wines labeled 'Corte A', 'Corte B', and 'Corte C'. These represent distinct quality levels and entirely different grape blends, as evidenced by the 100% Merlot in Corte A versus the Malbec (Cot) based blend in Corte B.",
+  "parse_ok": true,
+  "tokens_in": 471,
+  "tokens_out": 86,
+  "elapsed": 1.7243154048919678,
+  "error": null
+}

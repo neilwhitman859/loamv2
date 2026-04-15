@@ -1,0 +1,13 @@
+{
+  "pair_id": "A016",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":1.0,\"reasoning\":\"Both wines are produced by Berton Vineyards, are white, and Wine A explicitly lists VERMENTINO grapes matching the varietal suffix in Wine B's name. The only difference is the appended 'Vermentino' in Wine B, which per rules indicates the shorter name in Wine A is an abbreviation for the same wine. No evidence of multiple wines from this producer under 'Metal Label The' with different grapes or other distinguishing factors.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are produced by Berton Vineyards, are white, and Wine A explicitly lists VERMENTINO grapes matching the varietal suffix in Wine B's name. The only difference is the appended 'Vermentino' in Wine B, which per rules indicates the shorter name in Wine A is an abbreviation for the same wine. No evidence of multiple wines from this producer under 'Metal Label The' with different grapes or other distinguishing factors.",
+  "parse_ok": true,
+  "tokens_in": 569,
+  "tokens_out": 505,
+  "elapsed": 4.17922306060791,
+  "error": null
+}

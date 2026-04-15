@@ -1,0 +1,13 @@
+{
+  "pair_id": "D042",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Pommery) and the same name ('Apanage Prestige'), with the only difference being the addition of 'Brut' in Wine A, which is likely an abbreviation for Brut Champagne, indicating a dry sparkling wine. Therefore, they represent the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Pommery) and the same name ('Apanage Prestige'), with the only difference being the addition of 'Brut' in Wine A, which is likely an abbreviation for Brut Champagne, indicating a dry sparkling wine. Therefore, they represent the same wine.",
+  "parse_ok": true,
+  "tokens_in": 459,
+  "tokens_out": 85,
+  "elapsed": 2.2433807849884033,
+  "error": null
+}

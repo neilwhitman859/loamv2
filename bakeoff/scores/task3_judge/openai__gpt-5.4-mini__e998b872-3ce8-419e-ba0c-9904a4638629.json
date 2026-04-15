@@ -1,0 +1,23 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.875,
+  "wrong_facts": [
+    "Hook mentions 'granite-and-slate core' but Priorat's signature soil is llicorella (slate and quartzite), not granite — the output later correctly says llicorella but the hook introduces granite incorrectly",
+    "Value assessment states '$120 to $180' but no prices were provided in context data — this is a fabricated price range",
+    "Vinification summary implies the 2022 spends 8 months in oak barrels, but ground truth says recent vintages ferment and age in cement tanks (8 months), not oak"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$120 to $180 price range not in context data"
+  ],
+  "reasoning": "The hook's mention of 'granite' is incorrect — Priorat's llicorella is slate and quartzite, not granite. The vinification summary mischaracterizes the élevage: ground truth says recent vintages use cement tanks, not oak, so the entire oak discussion is misleading despite the context data mentioning '8 oak months.' The price range is fabricated. However, the output correctly identifies 100% Carignan, llicorella soils (in the terroir section), steep slopes, and the wine's stylistic positioning. Voice is strong — direct, opinionated, no banned words, good food pairings with reasoning. The insider take comparing to Etna Rosso and Barolo is genuinely useful. The comparable wines section is well-chosen. Despite these strengths, the granite error in the hook and the fabricated price/oak claims pull correctness down significantly.",
+  "judge_tokens_in": 3759,
+  "judge_tokens_out": 400
+}

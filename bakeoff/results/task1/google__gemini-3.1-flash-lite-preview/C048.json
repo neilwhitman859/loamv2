@@ -1,0 +1,13 @@
+{
+  "pair_id": "C048",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines are distinct products due to their different colors (white vs. ros\u00e9). In the context of sparkling wine, a Brut and a Brut Ros\u00e9 are considered separate bottlings with different production profiles and market identities.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are distinct products due to their different colors (white vs. ros\u00e9). In the context of sparkling wine, a Brut and a Brut Ros\u00e9 are considered separate bottlings with different production profiles and market identities.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 71,
+  "elapsed": 1.5897536277770996,
+  "error": null
+}

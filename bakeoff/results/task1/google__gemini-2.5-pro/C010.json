@@ -1,0 +1,13 @@
+{
+  "pair_id": "C010",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Both wines are Riesling Auslese from the Lenchen vineyard. However, Wine A specifies 'Nr12', which is a lot or cask number. According to the rules, different lot/cask numbers at the same German Pr\u00e4dikat level represent distinct bottlings and are therefore considered different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are Riesling Auslese from the Lenchen vineyard. However, Wine A specifies 'Nr12', which is a lot or cask number. According to the rules, different lot/cask numbers at the same German Pr\u00e4dikat level represent distinct bottlings and are therefore considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 639,
+  "elapsed": 7.399440765380859,
+  "error": null
+}

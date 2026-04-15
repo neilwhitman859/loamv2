@@ -1,0 +1,27 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "meta-llama/llama-4-maverick",
+  "correctness": 1.5,
+  "voice": 2.0,
+  "specificity": 2.5,
+  "usefulness": 2.5,
+  "composite": 2.025,
+  "wrong_facts": [
+    "Hook says the wine is from 'Stag's Leap District' — it is a Napa Valley appellation wine sourced from multiple sites, not exclusively Stags Leap District",
+    "Hook and wine_summary call it 100% Cabernet Sauvignon — the 2022 blend is actually 92% Cabernet Sauvignon with Petite Verdot, Merlot, and Malbec",
+    "Comparable wines section says Silver Oak uses '100% Cabernet and aging in American oak' — Silver Oak Alexander Valley is not 100% Cab and the comparison to One Point Five is misleading since Shafer uses French oak (Allier & Tronçais)",
+    "No mention of the actual naming origin (generation and a half between John and Doug Shafer)",
+    "Terroir section places Shafer's vineyards on 'western hills' near Mayacamas — Shafer's estate is on the eastern side in Stags Leap District near the Vaca Range"
+  ],
+  "banned_words_found": [
+    "showcases"
+  ],
+  "fabricated_numbers": [
+    "plantings dating back to 1978 is not in context data and unverifiable from what was provided"
+  ],
+  "reasoning": "The hook contains a provably wrong claim — calling this a 'Stag's Leap District' wine when the appellation is Napa Valley and it's sourced from multiple sites. The blend is stated as 100% Cabernet Sauvignon but ground truth shows 92% Cab with three other varieties. The terroir section incorrectly places Shafer on the western hills (Mayacamas) when the estate is on the eastern side (Vaca Range). Silver Oak comparable is misleading regarding oak type. Uses banned word 'showcases.' The voice is generic and hedging, lacking Loam's directness and opinion. Multiple factual errors trigger the hard cap on correctness.",
+  "judge_tokens_in": 3554,
+  "judge_tokens_out": 472
+}

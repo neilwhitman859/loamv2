@@ -1,0 +1,13 @@
+{
+  "pair_id": "A047",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer (Grgich Hills Estate), same color (red), and the same primary grape (Cabernet Franc). The name difference ('Miljenko's Selection' vs 'Miljenko's Selection Cabernet Franc') is a typical varietal suffix addition, indicating the shorter name is an abbreviation of the full name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer (Grgich Hills Estate), same color (red), and the same primary grape (Cabernet Franc). The name difference ('Miljenko's Selection' vs 'Miljenko's Selection Cabernet Franc') is a typical varietal suffix addition, indicating the shorter name is an abbreviation of the full name.",
+  "parse_ok": true,
+  "tokens_in": 453,
+  "tokens_out": 92,
+  "elapsed": 4.858453035354614,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D034",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Valentin Zusslin produces multiple distinct Pinot Noir bottlings from the Bollenberg hill; 'Neuberg' refers to a specific lieu-dit (sub-plot) within Bollenberg, whereas the generic 'Bollenberg' bottling represents a different tier or blend of parcels. In Alsace viticulture, a specific lieu-dit designation indicates a distinct bottling from the estate's entry-level or communal version.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Valentin Zusslin produces multiple distinct Pinot Noir bottlings from the Bollenberg hill; 'Neuberg' refers to a specific lieu-dit (sub-plot) within Bollenberg, whereas the generic 'Bollenberg' bottling represents a different tier or blend of parcels. In Alsace viticulture, a specific lieu-dit designation indicates a distinct bottling from the estate's entry-level or communal version.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 110,
+  "elapsed": 2.203280448913574,
+  "error": null
+}

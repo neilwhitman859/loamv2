@@ -1,0 +1,13 @@
+{
+  "pair_id": "D025",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from Cattier, are white, and share the core designation 'Millesime'. 'Brut' is a sweetness/style descriptor for sparkling wine, but since both are likely the same vintage-dated cuv\u00e9e from the same producer, the addition of 'Brut' alone does not indicate a different bottling, only a more complete name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from Cattier, are white, and share the core designation 'Millesime'. 'Brut' is a sweetness/style descriptor for sparkling wine, but since both are likely the same vintage-dated cuv\u00e9e from the same producer, the addition of 'Brut' alone does not indicate a different bottling, only a more complete name.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 97,
+  "elapsed": 3.6298887729644775,
+  "error": null
+}

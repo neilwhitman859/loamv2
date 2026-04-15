@@ -1,0 +1,13 @@
+{
+  "pair_id": "C022",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although the wines share the same producer, vineyard (Trittenheimer Leiterchen), and grape (Riesling), they have different German Pr\u00e4dikat levels. 'Trockenbeerenauslese' (TBA) and 'Auslese' represent distinct levels of grape ripeness and sweetness, making them separate and different bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the wines share the same producer, vineyard (Trittenheimer Leiterchen), and grape (Riesling), they have different German Pr\u00e4dikat levels. 'Trockenbeerenauslese' (TBA) and 'Auslese' represent distinct levels of grape ripeness and sweetness, making them separate and different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 998,
+  "elapsed": 9.839304447174072,
+  "error": null
+}

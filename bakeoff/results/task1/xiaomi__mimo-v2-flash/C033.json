@@ -1,0 +1,13 @@
+{
+  "pair_id": "C033",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Bonnaire) and are white sparkling wines labeled 'Blanc de Blancs Vintage'. The only difference is the addition of 'Brut' in Wine B, which is a standard sweetness/style designation and does not indicate a different bottling. The LWIN difference is likely due to separate database entries for the same wine with minor naming variations.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Bonnaire) and are white sparkling wines labeled 'Blanc de Blancs Vintage'. The only difference is the addition of 'Brut' in Wine B, which is a standard sweetness/style designation and does not indicate a different bottling. The LWIN difference is likely due to separate database entries for the same wine with minor naming variations.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 100,
+  "elapsed": 2.5245752334594727,
+  "error": null
+}

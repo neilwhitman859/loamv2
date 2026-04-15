@@ -1,0 +1,13 @@
+{
+  "pair_id": "A019",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, 'Rob Dolan', and the same color, 'red'. Although Wine A lists multiple grapes ('PINOT NOIR, MERLOT NOIR') and Wine B specifies 'Pinot Noir', the presence of 'Pinot Noir' in both and the possibility of 'Merlot Noir' being a minor component or blending term suggests they could be the same wine, with the varietal suffix difference being an abbreviation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, 'Rob Dolan', and the same color, 'red'. Although Wine A lists multiple grapes ('PINOT NOIR, MERLOT NOIR') and Wine B specifies 'Pinot Noir', the presence of 'Pinot Noir' in both and the possibility of 'Merlot Noir' being a minor component or blending term suggests they could be the same wine, with the varietal suffix difference being an abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 114,
+  "elapsed": 1.492342233657837,
+  "error": null
+}

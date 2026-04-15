@@ -1,0 +1,13 @@
+{
+  "pair_id": "A009",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines share the same producer, vineyard, and color. The difference in name is likely due to the varietal suffix being appended or omitted, which is a common abbreviation and not a significant difference.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines share the same producer, vineyard, and color. The difference in name is likely due to the varietal suffix being appended or omitted, which is a common abbreviation and not a significant difference.",
+  "parse_ok": true,
+  "tokens_in": 516,
+  "tokens_out": 63,
+  "elapsed": 1.1379823684692383,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C038",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Wine B includes 'Risco' in its name, which is likely a specific vineyard or cuv\u00e9e designation. Wine A, 'Reserva Tinto', lacks this specific designation, suggesting it's a different bottling from the same producer, even if both are 'Reserva Tinto' in style.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine B includes 'Risco' in its name, which is likely a specific vineyard or cuv\u00e9e designation. Wine A, 'Reserva Tinto', lacks this specific designation, suggesting it's a different bottling from the same producer, even if both are 'Reserva Tinto' in style.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 95,
+  "elapsed": 1.8246538639068604,
+  "error": null
+}

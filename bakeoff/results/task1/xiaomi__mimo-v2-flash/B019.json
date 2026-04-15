@@ -1,0 +1,13 @@
+{
+  "pair_id": "B019",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a Bourgogne Aligot\u00e9, made exclusively from the Aligot\u00e9 grape, while Wine B is a Bourgogne Blanc made from Chardonnay and Pinot Blanc. Different grape varieties always constitute different wines, even under the same producer and appellation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a Bourgogne Aligot\u00e9, made exclusively from the Aligot\u00e9 grape, while Wine B is a Bourgogne Blanc made from Chardonnay and Pinot Blanc. Different grape varieties always constitute different wines, even under the same producer and appellation.",
+  "parse_ok": true,
+  "tokens_in": 514,
+  "tokens_out": 85,
+  "elapsed": 2.5601139068603516,
+  "error": null
+}

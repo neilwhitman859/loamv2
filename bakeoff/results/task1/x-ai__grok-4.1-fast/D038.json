@@ -1,0 +1,13 @@
+{
+  "pair_id": "D038",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":1.0,\"reasoning\":\"Both records share the same producer 'Chatter Creek' and nearly identical names 'Chatterneuf-du-Pape red Table' vs 'Chatterneuf-du-Pape red Table Wine', differing only in the addition of 'Wine', which is a minor formatting variation or abbreviation. Both are explicitly red with no differences in grape, style, classification, or other distinguishing factors. This aligns with the rule allowing name formatting differences for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both records share the same producer 'Chatter Creek' and nearly identical names 'Chatterneuf-du-Pape red Table' vs 'Chatterneuf-du-Pape red Table Wine', differing only in the addition of 'Wine', which is a minor formatting variation or abbreviation. Both are explicitly red with no differences in grape, style, classification, or other distinguishing factors. This aligns with the rule allowing name formatting differences for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 565,
+  "tokens_out": 516,
+  "elapsed": 4.216806650161743,
+  "error": null
+}

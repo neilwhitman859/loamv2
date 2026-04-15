@@ -1,0 +1,13 @@
+{
+  "pair_id": "B023",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines differ in color (red vs. white), indicating they are made from different grape varieties and represent distinct styles. The 'Gold' suffix denotes a separate commercial bottling rather than a simple name abbreviation, confirming they are different products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines differ in color (red vs. white), indicating they are made from different grape varieties and represent distinct styles. The 'Gold' suffix denotes a separate commercial bottling rather than a simple name abbreviation, confirming they are different products.",
+  "parse_ok": true,
+  "tokens_in": 436,
+  "tokens_out": 832,
+  "elapsed": 16.55144739151001,
+  "error": null
+}

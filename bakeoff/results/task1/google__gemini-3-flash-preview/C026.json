@@ -1,0 +1,13 @@
+{
+  "pair_id": "C026",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white sparkling wine (Blanc de Blancs) while Wine B is a Ros\u00e9. In sparkling wine production, these represent distinct bottlings with different grape compositions and color profiles, even though they share the 'Maximum' branding.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white sparkling wine (Blanc de Blancs) while Wine B is a Ros\u00e9. In sparkling wine production, these represent distinct bottlings with different grape compositions and color profiles, even though they share the 'Maximum' branding.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 72,
+  "elapsed": 1.6883530616760254,
+  "error": null
+}

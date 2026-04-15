@@ -1,0 +1,13 @@
+{
+  "pair_id": "B031",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two records represent different wines from the same producer's 'Porcupine Ridge' range. Wine A is a red wine made from Merlot, as indicated by its name. Wine B is a white wine made from Sauvignon Blanc. Different grape varieties and different colors always constitute different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent different wines from the same producer's 'Porcupine Ridge' range. Wine A is a red wine made from Merlot, as indicated by its name. Wine B is a white wine made from Sauvignon Blanc. Different grape varieties and different colors always constitute different wines.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 1080,
+  "elapsed": 11.126786470413208,
+  "error": null
+}

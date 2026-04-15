@@ -1,0 +1,28 @@
+{
+  "page_id": "page_009",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Cabernet Sauvignon\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": {\n        \"vessel\": \"American oak barrels\",\n        \"months\": null,\n        \"new_pct\": null,\n        \"origin\": \"American\"\n      },\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": \"sustainable\"\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Cabernet Sauvignon",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "American oak barrels",
+        "months": null,
+        "new_pct": null,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "sustainable"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 22693,
+  "tokens_out": 149,
+  "elapsed": 2.5233049392700195,
+  "error": null
+}

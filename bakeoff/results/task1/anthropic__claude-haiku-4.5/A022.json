@@ -1,0 +1,13 @@
+{
+  "pair_id": "A022",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is made from Cabernet Sauvignon while Wine B is made from Carmenere\u2014different grape varieties always indicate different wines. Although both are red wines from the same producer (Emiliana) with similar naming, the distinct varietal composition means these would be separate bottlings a consumer would encounter distinctly in the market.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is made from Cabernet Sauvignon while Wine B is made from Carmenere\u2014different grape varieties always indicate different wines. Although both are red wines from the same producer (Emiliana) with similar naming, the distinct varietal composition means these would be separate bottlings a consumer would encounter distinctly in the market.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 100,
+  "elapsed": 2.2368485927581787,
+  "error": null
+}

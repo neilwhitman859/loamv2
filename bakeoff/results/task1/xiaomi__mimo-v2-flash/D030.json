@@ -1,0 +1,13 @@
+{
+  "pair_id": "D030",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Boekenhoutskloof) and share the vineyard/cuv\u00e9e name 'Porcupine Ridge'. The difference in name is just a varietal suffix (Merlot vs. unspecified), which is a common abbreviation for the same wine line. The LWIN for Wine B confirms it is a Merlot, which is a known varietal in the Porcupine Ridge range, making them the same wine with different name formatting.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Boekenhoutskloof) and share the vineyard/cuv\u00e9e name 'Porcupine Ridge'. The difference in name is just a varietal suffix (Merlot vs. unspecified), which is a common abbreviation for the same wine line. The LWIN for Wine B confirms it is a Merlot, which is a known varietal in the Porcupine Ridge range, making them the same wine with different name formatting.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 121,
+  "elapsed": 2.061206102371216,
+  "error": null
+}

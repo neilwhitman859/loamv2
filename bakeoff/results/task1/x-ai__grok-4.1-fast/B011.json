@@ -1,0 +1,13 @@
+{
+  "pair_id": "B011",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is red while Wine B is white, indicating fundamentally different wine types that consumers would encounter separately. Wine A specifies Semillon grapes and 15 years old aging, contrasting with Wine B's 5 years old, suggesting distinct bottlings despite shared producer and 'Medium Sweet' descriptor. Different colors alone violate the criteria for being the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is red while Wine B is white, indicating fundamentally different wine types that consumers would encounter separately. Wine A specifies Semillon grapes and 15 years old aging, contrasting with Wine B's 5 years old, suggesting distinct bottlings despite shared producer and 'Medium Sweet' descriptor. Different colors alone violate the criteria for being the same wine.",
+  "parse_ok": true,
+  "tokens_in": 566,
+  "tokens_out": 641,
+  "elapsed": 4.7296226024627686,
+  "error": null
+}

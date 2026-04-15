@@ -1,0 +1,23 @@
+{
+  "page_id": "page_011",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Bonterra Merlot 2023\", \"vintage_year\": 2023, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": \"sustainable\"}]}",
+  "wines_found": [
+    {
+      "name": "Bonterra Merlot 2023",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "sustainable"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 50432,
+  "tokens_out": 71,
+  "elapsed": 3.974858522415161,
+  "error": null
+}

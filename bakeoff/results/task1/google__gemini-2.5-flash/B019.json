@@ -1,0 +1,13 @@
+{
+  "pair_id": "B019",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A is explicitly an Aligot\u00e9, while Wine B is a Bourgogne Blanc, which typically implies Chardonnay. The grape information confirms this, with Wine A being Aligot\u00e9 and Wine B being Chardonnay/Pinot Blanc, indicating different grape varieties and thus different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is explicitly an Aligot\u00e9, while Wine B is a Bourgogne Blanc, which typically implies Chardonnay. The grape information confirms this, with Wine A being Aligot\u00e9 and Wine B being Chardonnay/Pinot Blanc, indicating different grape varieties and thus different wines.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 90,
+  "elapsed": 1.4683761596679688,
+  "error": null
+}

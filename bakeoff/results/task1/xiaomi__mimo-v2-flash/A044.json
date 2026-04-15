@@ -1,0 +1,13 @@
+{
+  "pair_id": "A044",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Creekside) and are white wines made from Semillon. The name difference is just a varietal suffix appended to the shorter name, which is a common formatting variation for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Creekside) and are white wines made from Semillon. The name difference is just a varietal suffix appended to the shorter name, which is a common formatting variation for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 484,
+  "tokens_out": 72,
+  "elapsed": 2.157818555831909,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A009",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A lists grapes as PINOT GRIS and PINOT NOIR, indicating a blend, while Wine B is specified as Pinot Gris only, implying a varietal wine. Different grape compositions mean different wines, even from the same producer and vineyard. The added varietal suffix on Wine B suggests a distinct bottling rather than just an abbreviation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A lists grapes as PINOT GRIS and PINOT NOIR, indicating a blend, while Wine B is specified as Pinot Gris only, implying a varietal wine. Different grape compositions mean different wines, even from the same producer and vineyard. The added varietal suffix on Wine B suggests a distinct bottling rather than just an abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 590,
+  "tokens_out": 1040,
+  "elapsed": 9.712098598480225,
+  "error": null
+}

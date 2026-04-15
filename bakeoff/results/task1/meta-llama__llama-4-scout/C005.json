@@ -1,0 +1,13 @@
+{
+  "pair_id": "C005",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are produced by Jean Noel Haton, have the same color (rose), and are classified as Brut. The only difference is the NV (non-vintage) designation in Wine A, which may indicate a non-vintage bottling of the same wine as Wine B.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are produced by Jean Noel Haton, have the same color (rose), and are classified as Brut. The only difference is the NV (non-vintage) designation in Wine A, which may indicate a non-vintage bottling of the same wine as Wine B.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 79,
+  "elapsed": 2.620882987976074,
+  "error": null
+}

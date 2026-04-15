@@ -1,0 +1,13 @@
+{
+  "pair_id": "C025",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is white and Wine B is ros\u00e9, indicating different colors. The producer Ferrari makes both wines, but the color difference signifies distinct bottlings. Therefore, they are considered different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is white and Wine B is ros\u00e9, indicating different colors. The producer Ferrari makes both wines, but the color difference signifies distinct bottlings. Therefore, they are considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 512,
+  "tokens_out": 63,
+  "elapsed": 1.3978605270385742,
+  "error": null
+}

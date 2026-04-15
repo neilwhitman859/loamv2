@@ -1,0 +1,13 @@
+{
+  "pair_id": "C008",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Cattier) and base name 'Clos du Moulin Brut', but Wine A is white while Wine B is ros\u00e9. The classification rules explicitly state that different colors make wines DIFFERENT, and ros\u00e9 vs. other colors (like white here) from the same vineyard represent distinct bottlings a consumer would encounter separately. Distinct LWIN numbers further confirm they are separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Cattier) and base name 'Clos du Moulin Brut', but Wine A is white while Wine B is ros\u00e9. The classification rules explicitly state that different colors make wines DIFFERENT, and ros\u00e9 vs. other colors (like white here) from the same vineyard represent distinct bottlings a consumer would encounter separately. Distinct LWIN numbers further confirm they are separate wines.",
+  "parse_ok": true,
+  "tokens_in": 567,
+  "tokens_out": 510,
+  "elapsed": 4.542038202285767,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A011",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Wine A lists both Pinot Noir and Chardonnay Blanc as grapes, while Wine B is specifically 'Highlands Bench Pinot Noir'. This indicates that Wine A is likely a blend or a different wine altogether, as it includes a white grape variety, making it distinct from a pure Pinot Noir bottling.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A lists both Pinot Noir and Chardonnay Blanc as grapes, while Wine B is specifically 'Highlands Bench Pinot Noir'. This indicates that Wine A is likely a blend or a different wine altogether, as it includes a white grape variety, making it distinct from a pure Pinot Noir bottling.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 93,
+  "elapsed": 1.5686841011047363,
+  "error": null
+}

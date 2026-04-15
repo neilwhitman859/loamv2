@@ -1,0 +1,13 @@
+{
+  "pair_id": "D040",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Wine A is 'Solane Superiore' and Wine B is 'Superiore' from the same producer (Santi), both red. The difference appears to be only the omission of the vineyard/cuv\u00e9e name 'Solane' in Wine B, which is a name formatting/abbreviation issue consistent with the rule that varietal or designation suffix differences alone usually indicate the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Wine A is 'Solane Superiore' and Wine B is 'Superiore' from the same producer (Santi), both red. The difference appears to be only the omission of the vineyard/cuv\u00e9e name 'Solane' in Wine B, which is a name formatting/abbreviation issue consistent with the rule that varietal or designation suffix differences alone usually indicate the same wine.",
+  "parse_ok": true,
+  "tokens_in": 440,
+  "tokens_out": 103,
+  "elapsed": 3.915013313293457,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D050",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grape varieties, with Wine A being a blend of PINOT GRIS and PINOT BLANC, while Wine B is CHARDONNAY BLANC. Despite sharing the same producer, Dr. Wehrheim, and vineyard, Birkweiler Rosenberg, the difference in grape varieties is a key factor in determining them as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grape varieties, with Wine A being a blend of PINOT GRIS and PINOT BLANC, while Wine B is CHARDONNAY BLANC. Despite sharing the same producer, Dr. Wehrheim, and vineyard, Birkweiler Rosenberg, the difference in grape varieties is a key factor in determining them as different wines.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 94,
+  "elapsed": 1.2100200653076172,
+  "error": null
+}

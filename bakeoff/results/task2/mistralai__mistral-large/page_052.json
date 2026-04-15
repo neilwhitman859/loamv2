@@ -1,0 +1,33 @@
+{
+  "page_id": "page_052",
+  "model": "mistralai/mistral-large",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"2023 Mourvèdre\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": 12.5,\n      \"blend\": [\n        {\n          \"grape\": \"Mourvèdre\",\n          \"pct\": 100\n        }\n      ],\n      \"oak\": {\n        \"vessel\": \"foudre\",\n        \"months\": 12,\n        \"new_pct\": null,\n        \"origin\": null\n      },\n      \"cases_produced\": 330,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": \"Regenerative Organic Certified®\"\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "2023 Mourvèdre",
+      "vintage_year": 2023,
+      "abv_pct": 12.5,
+      "blend": [
+        {
+          "grape": "Mourvèdre",
+          "pct": 100
+        }
+      ],
+      "oak": {
+        "vessel": "foudre",
+        "months": 12,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": 330,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "Regenerative Organic Certified®"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 21118,
+  "tokens_out": 170,
+  "elapsed": 6.8539886474609375,
+  "error": null
+}

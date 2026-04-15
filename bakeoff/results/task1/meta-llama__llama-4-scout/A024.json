@@ -1,0 +1,13 @@
+{
+  "pair_id": "A024",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grapes, Wine A is made from COT (100.0%) while Wine B is Syrah. Despite the producer and color being the same, the difference in grape variety is a key factor in determining different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grapes, Wine A is made from COT (100.0%) while Wine B is Syrah. Despite the producer and color being the same, the difference in grape variety is a key factor in determining different wines.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 71,
+  "elapsed": 1.9087796211242676,
+  "error": null
+}

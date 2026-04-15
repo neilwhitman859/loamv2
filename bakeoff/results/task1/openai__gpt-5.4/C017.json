@@ -1,0 +1,13 @@
+{
+  "pair_id": "C017",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"Both records are Bassermann-Jordan white wines from the same vineyard designation, Forster Kirchenstuck, at the same Pr\u00e4dikat level, Spatlese. The only difference is that Wine B explicitly includes the grape Riesling, which is the standard grape for this Pfalz single-vineyard Spatlese and functions here as a varietal suffix rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "Both records are Bassermann-Jordan white wines from the same vineyard designation, Forster Kirchenstuck, at the same Pr\u00e4dikat level, Spatlese. The only difference is that Wine B explicitly includes the grape Riesling, which is the standard grape for this Pfalz single-vineyard Spatlese and functions here as a varietal suffix rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 436,
+  "tokens_out": 101,
+  "elapsed": 2.6509451866149902,
+  "error": null
+}

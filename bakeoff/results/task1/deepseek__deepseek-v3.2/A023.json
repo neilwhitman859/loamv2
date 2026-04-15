@@ -1,0 +1,13 @@
+{
+  "pair_id": "A023",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Wine B explicitly adds the varietal suffix 'Cabernet Sauvignon' to the name 'Blackwood Canyon', while Wine A's grapes are listed as CABERNET SAUVIGNON, confirming they are the same grape. According to the rules, a varietal suffix difference alone, with the same producer and no indication of multiple distinct bottlings from that vineyard, usually means the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Wine B explicitly adds the varietal suffix 'Cabernet Sauvignon' to the name 'Blackwood Canyon', while Wine A's grapes are listed as CABERNET SAUVIGNON, confirming they are the same grape. According to the rules, a varietal suffix difference alone, with the same producer and no indication of multiple distinct bottlings from that vineyard, usually means the same wine.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 104,
+  "elapsed": 3.189582586288452,
+  "error": null
+}

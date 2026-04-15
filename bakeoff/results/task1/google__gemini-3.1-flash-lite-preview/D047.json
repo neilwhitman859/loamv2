@@ -1,0 +1,13 @@
+{
+  "pair_id": "D047",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"Although the provided grape data for Wine B is labeled as Merlot, the wine names explicitly identify them as two distinct varietal bottlings: a Merlot and a Cabernet. In the context of wine production, a Cabernet Sauvignon and a Merlot are distinct wines, even if produced by the same winery in the same region.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the provided grape data for Wine B is labeled as Merlot, the wine names explicitly identify them as two distinct varietal bottlings: a Merlot and a Cabernet. In the context of wine production, a Cabernet Sauvignon and a Merlot are distinct wines, even if produced by the same winery in the same region.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 90,
+  "elapsed": 1.5736336708068848,
+  "error": null
+}

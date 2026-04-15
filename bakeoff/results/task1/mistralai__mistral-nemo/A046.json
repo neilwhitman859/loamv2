@@ -1,0 +1,13 @@
+{
+  "pair_id": "A046",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, vineyard, and grape variety. The only difference is the varietal suffix in Wine B, which is a common abbreviation.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, vineyard, and grape variety. The only difference is the varietal suffix in Wine B, which is a common abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 468,
+  "tokens_out": 56,
+  "elapsed": 3.122114658355713,
+  "error": null
+}

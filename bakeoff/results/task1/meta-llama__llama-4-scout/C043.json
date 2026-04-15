@@ -1,0 +1,13 @@
+{
+  "pair_id": "C043",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have the same producer and vineyard, but different Pr\u00e4dikat levels (Spatlese vs Auslese), which indicates different levels of ripeness and sweetness. This difference in Pr\u00e4dikat level is a key factor in determining that they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have the same producer and vineyard, but different Pr\u00e4dikat levels (Spatlese vs Auslese), which indicates different levels of ripeness and sweetness. This difference in Pr\u00e4dikat level is a key factor in determining that they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 439,
+  "tokens_out": 78,
+  "elapsed": 2.3284785747528076,
+  "error": null
+}

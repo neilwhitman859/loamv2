@@ -1,0 +1,13 @@
+{
+  "pair_id": "D033",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Valentin Zusslin, and share the same vineyard, Bollenberg. They also have the same grape variety, Pinot Noir, and are both red wines, indicating they are likely the same wine with different cuv\u00e9e names.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Valentin Zusslin, and share the same vineyard, Bollenberg. They also have the same grape variety, Pinot Noir, and are both red wines, indicating they are likely the same wine with different cuv\u00e9e names.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 76,
+  "elapsed": 2.174074649810791,
+  "error": null
+}

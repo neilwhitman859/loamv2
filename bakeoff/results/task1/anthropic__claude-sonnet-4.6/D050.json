@@ -1,0 +1,13 @@
+{
+  "pair_id": "D050",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is made from Pinot Gris and Pinot Blanc, while Wine B is made from Chardonnay Blanc. Different grape varieties always constitute different wines, regardless of the matching producer, vineyard name (Birkweiler/Birkweiller Rosenberg is just a spelling variant), and color. The grape difference is the decisive factor here.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is made from Pinot Gris and Pinot Blanc, while Wine B is made from Chardonnay Blanc. Different grape varieties always constitute different wines, regardless of the matching producer, vineyard name (Birkweiler/Birkweiller Rosenberg is just a spelling variant), and color. The grape difference is the decisive factor here.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 105,
+  "elapsed": 3.3246138095855713,
+  "error": null
+}

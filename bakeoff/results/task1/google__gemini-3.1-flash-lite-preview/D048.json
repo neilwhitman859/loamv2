@@ -1,0 +1,13 @@
+{
+  "pair_id": "D048",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.9,\n\"reasoning\": \"Happs produces a single 'Cabernet Merlot' blend, and the 'iSeries' is a specific product line/branding tier rather than a distinct vineyard designation or quality classification like Reserva. The difference in LWIN codes often occurs in database management for the same product when a sub-brand or series name is added to the record. Therefore, these represent the same wine bottling.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Happs produces a single 'Cabernet Merlot' blend, and the 'iSeries' is a specific product line/branding tier rather than a distinct vineyard designation or quality classification like Reserva. The difference in LWIN codes often occurs in database management for the same product when a sub-brand or series name is added to the record. Therefore, these represent the same wine bottling.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 102,
+  "elapsed": 1.524108648300171,
+  "error": null
+}

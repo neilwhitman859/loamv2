@@ -1,0 +1,13 @@
+{
+  "pair_id": "C045",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The 'Nr8' in Wine B indicates a specific auction lot or cask number. Per the explicit rules provided, different lot/cask numbers at the same Pr\u00e4dikat level represent distinct bottlings, making these different wines despite sharing the same producer, vineyard, grape, and classification.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The 'Nr8' in Wine B indicates a specific auction lot or cask number. Per the explicit rules provided, different lot/cask numbers at the same Pr\u00e4dikat level represent distinct bottlings, making these different wines despite sharing the same producer, vineyard, grape, and classification.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 1192,
+  "elapsed": 23.150525331497192,
+  "error": null
+}

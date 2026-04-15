@@ -1,0 +1,13 @@
+{
+  "pair_id": "A007",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A 'Laurus' and Wine B 'Laurus Syrah' share the same producer Gabriel Meffre and are both red wines. The difference in name is merely a varietal suffix, which is allowed as an abbreviation, and the grape listing for Wine A includes Syrah, indicating they represent the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A 'Laurus' and Wine B 'Laurus Syrah' share the same producer Gabriel Meffre and are both red wines. The difference in name is merely a varietal suffix, which is allowed as an abbreviation, and the grape listing for Wine A includes Syrah, indicating they represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 488,
+  "tokens_out": 91,
+  "elapsed": 2.8147647380828857,
+  "error": null
+}

@@ -1,0 +1,27 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 3.2,
+  "wrong_facts": [
+    "Hook says 'sourced primarily from the Stags Leap District' — ground truth shows it's multi-site including Stags Leap District, hillside estate vineyards, and selected Napa Valley sites, not primarily from one district",
+    "Context data says 100% Cabernet Sauvignon but ground truth shows 92% Cab Sauv with Petite Verdot, Merlot, and Malbec — the output doesn't address the blend but doesn't contradict it either",
+    "Vinification says '20 months' in oak — ground truth says 18 months in 100% new French oak",
+    "The naming origin is described as 'transition of leadership from John Shafer to his son Doug' which is vague but not wrong per se — ground truth specifies 'generation and a half' partnership, not a simple transition",
+    "Terroir claims about 'Bale loam' and 'iron-rich volcanic soils at the base of the Stags Leap palisades' are unverifiable and likely fabricated specifics",
+    "The wine is presented as a Stags Leap District wine throughout, but its appellation is Napa Valley, not Stags Leap District"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "20 months oak aging (ground truth is 18 months)",
+    "7 to 10 years peak window is unsourced"
+  ],
+  "reasoning": "The output fabricates a specific number (20 months oak aging vs. the verified 18 months), which triggers the hard penalty cap of 1.5 on correctness. However, the overall framing of the wine as primarily a Stags Leap District wine is misleading — the appellation is Napa Valley and it's multi-site sourced. The 'Bale loam' terroir detail is unverifiable and likely fabricated. The voice is strong — direct, opinionated, specific, with good food pairings and honest insider take. Specificity is high with named competitors and soil types, though some soil claims appear invented. I'm giving correctness 2.0 rather than 1.5 because the oak months fabrication (20 vs 18) is close but still wrong, and the Stags Leap framing is misleading but not entirely false since Borderline vineyard is there.",
+  "judge_tokens_in": 3629,
+  "judge_tokens_out": 571
+}

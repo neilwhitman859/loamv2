@@ -1,0 +1,13 @@
+{
+  "pair_id": "C003",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The wines differ in sweetness level, as 'Brut' and 'Brut Nature' represent distinct dosage categories in sparkling wine production. This distinction is further confirmed by their different LWIN identifiers (2774501 vs 2774514), which catalog them as separate commercial bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The wines differ in sweetness level, as 'Brut' and 'Brut Nature' represent distinct dosage categories in sparkling wine production. This distinction is further confirmed by their different LWIN identifiers (2774501 vs 2774514), which catalog them as separate commercial bottlings.",
+  "parse_ok": true,
+  "tokens_in": 464,
+  "tokens_out": 1133,
+  "elapsed": 22.118324279785156,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D022",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines have distinct cuv\u00e9e names, 'Duo' and 'Brumes'. Research confirms that 'Brumes de La Tour Blanche' is the third sweet wine of the estate, while 'Duo de la Tour Blanche' is a separate, distinct bottling (often a dry white). These are not naming variations but represent two different products from the same producer.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have distinct cuv\u00e9e names, 'Duo' and 'Brumes'. Research confirms that 'Brumes de La Tour Blanche' is the third sweet wine of the estate, while 'Duo de la Tour Blanche' is a separate, distinct bottling (often a dry white). These are not naming variations but represent two different products from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 1383,
+  "elapsed": 13.37885308265686,
+  "error": null
+}

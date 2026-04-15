@@ -1,0 +1,13 @@
+{
+  "pair_id": "D039",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, grape variety (blend), and color. The 'Reserva' in Wine B is likely a classification tier, but in Rioja, it's not a distinct grape or vineyard designation, so they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, grape variety (blend), and color. The 'Reserva' in Wine B is likely a classification tier, but in Rioja, it's not a distinct grape or vineyard designation, so they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 466,
+  "tokens_out": 76,
+  "elapsed": 1.7674939632415771,
+  "error": null
+}

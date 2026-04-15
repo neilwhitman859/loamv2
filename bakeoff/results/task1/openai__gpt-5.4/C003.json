@@ -1,0 +1,13 @@
+{
+  "pair_id": "C003",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.97,\"reasoning\":\"Both wines are from Raumland and share the same cuv\u00e9e name, but 'Brut' versus 'Brut Nature' indicates different sweetness/dosage levels, which are distinct sparkling wine styles sold as separate bottlings. The different LWINs further support that these are separate wines rather than formatting variants of the same entry.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "Both wines are from Raumland and share the same cuv\u00e9e name, but 'Brut' versus 'Brut Nature' indicates different sweetness/dosage levels, which are distinct sparkling wine styles sold as separate bottlings. The different LWINs further support that these are separate wines rather than formatting variants of the same entry.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 89,
+  "elapsed": 2.812561511993408,
+  "error": null
+}

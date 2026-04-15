@@ -1,0 +1,13 @@
+{
+  "pair_id": "C031",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"Both wines are 'Blanc de Blancs' from the same producer. 'Brut' is the standard and most common sweetness level for Champagne, and it is frequently omitted from the name for brevity. It is highly probable that 'Blanc de Blancs' is simply a shorter name for the same 'Blanc de Blancs Brut' bottling, not a distinct wine with a different sweetness level.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are 'Blanc de Blancs' from the same producer. 'Brut' is the standard and most common sweetness level for Champagne, and it is frequently omitted from the name for brevity. It is highly probable that 'Blanc de Blancs' is simply a shorter name for the same 'Blanc de Blancs Brut' bottling, not a distinct wine with a different sweetness level.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 1552,
+  "elapsed": 15.933435678482056,
+  "error": null
+}

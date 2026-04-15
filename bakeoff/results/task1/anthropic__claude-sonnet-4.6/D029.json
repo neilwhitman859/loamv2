@@ -1,0 +1,13 @@
+{
+  "pair_id": "D029",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Although both wines are Boekenhoutskloof Cabernet Sauvignon with the same grape, they carry different geographic appellations: Franschhoek (a specific ward within Coastal Region) versus the broader Coastal Region designation. In South African wine labeling, these represent distinct bottlings \u2014 the Franschhoek-labeled wine sources fruit specifically from that valley, while the Coastal Region label indicates a broader, likely different blend of sources. A consumer would encounter these as separate products on the shelf.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Although both wines are Boekenhoutskloof Cabernet Sauvignon with the same grape, they carry different geographic appellations: Franschhoek (a specific ward within Coastal Region) versus the broader Coastal Region designation. In South African wine labeling, these represent distinct bottlings \u2014 the Franschhoek-labeled wine sources fruit specifically from that valley, while the Coastal Region label indicates a broader, likely different blend of sources. A consumer would encounter these as separate products on the shelf.",
+  "parse_ok": true,
+  "tokens_in": 528,
+  "tokens_out": 133,
+  "elapsed": 4.294406175613403,
+  "error": null
+}

@@ -1,0 +1,23 @@
+{
+  "page_id": "page_006",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Petite Sirah\",\n      \"vintage_year\": 2022,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": \"sustainable\"\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Petite Sirah",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "sustainable"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 29584,
+  "tokens_out": 2319,
+  "elapsed": 21.99078345298767,
+  "error": null
+}

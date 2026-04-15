@@ -1,0 +1,20 @@
+{
+  "wine_id": "21aa403d-a5ad-43f2-99d9-560dc9e66587",
+  "wine_name": "Lafage, Côtes Catalanes Vieilles Vignes Tessellae",
+  "tier": "B",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Hook and wine_summary describe the blend as Syrah, Carignan, Grenache, and Monastrell, but ground truth confirms Tessellae Vieilles Vignes is 100% Carignan from old vines (70+ years). The context data listed multiple grapes but with 'None%' for all, and the model assumed it was a blend rather than recognizing it as 100% Carignan.",
+    "The naming origin of 'Tessellae' (referring to Roman mosaic tiles/tesserae) is never mentioned, which is a missed opportunity but not a wrong fact per se."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The most significant error is describing the wine as a multi-grape blend when ground truth confirms it is 100% Carignan. This wrong claim appears in the hook — the first thing users read — which triggers the hard penalty cap of 1.5 on correctness. However, the context data itself listed four grapes with no percentages, making this a somewhat understandable misinterpretation rather than pure fabrication. I'm scoring slightly above the hard cap at 2.5 because the model was working from ambiguous context data that listed four grapes, and the error is traceable to that ambiguity rather than invention. The voice is excellent — direct, opinionated, specific, no banned words, no hedging. Specificity is strong with named soils (schist, gneiss), climate details (Tramontane), and real comparable producers. Usefulness is high with actionable food pairings, real competitors, and a clear insider take. But the fundamental blend error undermines the wine's identity throughout the piece.",
+  "judge_tokens_in": 3671,
+  "judge_tokens_out": 428
+}

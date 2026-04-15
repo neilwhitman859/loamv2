@@ -1,0 +1,13 @@
+{
+  "pair_id": "B045",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The most definitive evidence is the color difference: Wine A is red and Wine B is white. Red and white wines are fundamentally different products, made from different grapes, and would never be considered the same wine. The naming convention, 'Note #1' versus 'Note #3', further reinforces that these are distinct bottlings within a series.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The most definitive evidence is the color difference: Wine A is red and Wine B is white. Red and white wines are fundamentally different products, made from different grapes, and would never be considered the same wine. The naming convention, 'Note #1' versus 'Note #3', further reinforces that these are distinct bottlings within a series.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 1336,
+  "elapsed": 14.041813850402832,
+  "error": null
+}

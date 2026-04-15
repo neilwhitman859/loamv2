@@ -1,0 +1,13 @@
+{
+  "pair_id": "B047",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The wines have different vineyard designations (Eichberg vs Kirchberg), which indicates distinct terroirs and bottlings. Additionally, they have different colors (white vs red), which is a definitive difference in wine type according to the rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The wines have different vineyard designations (Eichberg vs Kirchberg), which indicates distinct terroirs and bottlings. Additionally, they have different colors (white vs red), which is a definitive difference in wine type according to the rules.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 73,
+  "elapsed": 4.228672027587891,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D034",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A includes the specific sub-vineyard 'Neuberg' within Bollenberg, while Wine B is only designated as Bollenberg Pinot Noir, indicating distinct vineyard designations. Both share the same producer, grape variety (Pinot Noir), and color (red), but the differing specificity in vineyard name and unique LWIN numbers (2377731 vs 1679573) point to separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A includes the specific sub-vineyard 'Neuberg' within Bollenberg, while Wine B is only designated as Bollenberg Pinot Noir, indicating distinct vineyard designations. Both share the same producer, grape variety (Pinot Noir), and color (red), but the differing specificity in vineyard name and unique LWIN numbers (2377731 vs 1679573) point to separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 575,
+  "tokens_out": 800,
+  "elapsed": 5.973586082458496,
+  "error": null
+}

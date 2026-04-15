@@ -1,0 +1,13 @@
+{
+  "pair_id": "D037",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, 'Chatter Creek', and the same core name 'Blend 105 Red Table'. The only difference is the addition of 'Wine' to Wine B, which is a common stylistic variation or more complete naming for the same product.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, 'Chatter Creek', and the same core name 'Blend 105 Red Table'. The only difference is the addition of 'Wine' to Wine B, which is a common stylistic variation or more complete naming for the same product.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 76,
+  "elapsed": 1.8609857559204102,
+  "error": null
+}

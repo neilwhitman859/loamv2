@@ -1,0 +1,13 @@
+{
+  "pair_id": "A030",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Wine A is named 'Sauvignon' but its listed grape is SEMILLON, which is inconsistent; Wine B is 'Sauvignon Semillon', suggesting a blend. The key rule states a varietal suffix difference alone (e.g., 'Sauvignon' vs 'Sauvignon Semillon') usually means SAME, as the shorter name is likely an abbreviation. However, the listed grape for Wine A creates uncertainty, but given the same producer, color, and typical naming conventions, they likely represent the same blended wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Wine A is named 'Sauvignon' but its listed grape is SEMILLON, which is inconsistent; Wine B is 'Sauvignon Semillon', suggesting a blend. The key rule states a varietal suffix difference alone (e.g., 'Sauvignon' vs 'Sauvignon Semillon') usually means SAME, as the shorter name is likely an abbreviation. However, the listed grape for Wine A creates uncertainty, but given the same producer, color, and typical naming conventions, they likely represent the same blended wine.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 133,
+  "elapsed": 4.533174991607666,
+  "error": null
+}

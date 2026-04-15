@@ -1,0 +1,13 @@
+{
+  "pair_id": "A016",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines have the same producer, Berton Vineyards, and the same grape variety, Vermentino. The difference in name is likely due to abbreviation, with 'Metal Label The' being a shortened form of 'Metal Label The Vermentino'. The color is also the same, white.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines have the same producer, Berton Vineyards, and the same grape variety, Vermentino. The difference in name is likely due to abbreviation, with 'Metal Label The' being a shortened form of 'Metal Label The Vermentino'. The color is also the same, white.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 83,
+  "elapsed": 1.1624410152435303,
+  "error": null
+}

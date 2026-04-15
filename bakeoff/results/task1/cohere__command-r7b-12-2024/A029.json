@@ -1,0 +1,13 @@
+{
+  "pair_id": "A029",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are produced by Koehly and have the same grape variety (AUXERROIS, COT), color (white), and producer. The slight difference in the name (Chasseresse vs Chasseresse Auxerrois) is likely due to name formatting and does not indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are produced by Koehly and have the same grape variety (AUXERROIS, COT), color (white), and producer. The slight difference in the name (Chasseresse vs Chasseresse Auxerrois) is likely due to name formatting and does not indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 448,
+  "tokens_out": 83,
+  "elapsed": 1.6342830657958984,
+  "error": null
+}

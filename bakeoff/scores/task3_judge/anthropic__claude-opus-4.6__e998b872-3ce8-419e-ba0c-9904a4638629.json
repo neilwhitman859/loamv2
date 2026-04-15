@@ -1,0 +1,28 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "Hook claims wine is 'under €80' — no price data was provided in context, and this is unverifiable",
+    "Vinification summary says 'whole-cluster or partial whole-cluster fermentation' hedging — ground truth confirms whole cluster native fermentation definitively",
+    "2022 described as '8 months in oak' but ground truth says recent vintages ferment and age in cement tanks (8 months), not oak",
+    "Value assessment fabricates €55-80 price range and competitor price ranges (Finca Dofí €60-90, Clos Mogador €70-100) — no prices were provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "€55-80 price range",
+    "€60-90 for Finca Dofí",
+    "€70-100 for Clos Mogador",
+    "90-year-old vines (context says nothing about vine age; ground truth says 90-year-old but model didn't have access to this — this is actually correct from training knowledge)",
+    "600m elevation not in context data but matches ground truth — correct from training knowledge"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity, and genuinely useful insights. However, there are meaningful correctness issues: the most significant is describing the 2022 as aged in oak when ground truth confirms recent vintages use cement tanks (the 8 months figure is correct but the vessel is wrong). Price fabrications (€55-80, competitor prices) are specific numbers not in context data — though these are price estimates rather than winemaking specs, they still represent unsourced specificity. The vine age (90 years) and elevation (600m) are correct per ground truth and represent good training knowledge. The hook's 'under €80' claim is unverifiable. The Eben Sadie co-founding detail and departure are correct per ground truth. Overall strong output with a few factual missteps that prevent a top correctness score.",
+  "judge_tokens_in": 4216,
+  "judge_tokens_out": 488
+}

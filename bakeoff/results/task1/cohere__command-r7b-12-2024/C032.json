@@ -1,0 +1,13 @@
+{
+  "pair_id": "C032",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are 'Blanc de Blancs' from the same producer, Bonnaire, and are white wines. The 'NV' (non-vintage) designation in Wine A is a common practice for sparkling wines and does not change the fundamental characteristics of the wine, thus they are considered the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are 'Blanc de Blancs' from the same producer, Bonnaire, and are white wines. The 'NV' (non-vintage) designation in Wine A is a common practice for sparkling wines and does not change the fundamental characteristics of the wine, thus they are considered the same wine.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 82,
+  "elapsed": 1.4361953735351562,
+  "error": null
+}

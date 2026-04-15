@@ -1,0 +1,13 @@
+{
+  "pair_id": "B016",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are from two distinct and geographically separate Italian appellations, Barolo and Barbaresco. Furthermore, the provided data shows they are made from completely different grape varieties (Croatina vs. Nebbiolo), which is a definitive indicator of two different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are from two distinct and geographically separate Italian appellations, Barolo and Barbaresco. Furthermore, the provided data shows they are made from completely different grape varieties (Croatina vs. Nebbiolo), which is a definitive indicator of two different wines.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 1339,
+  "elapsed": 15.073102235794067,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C032",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Both records refer to Bonnaire's 'Blanc de Blancs'. The 'NV' (Non-Vintage) on Wine A is an explicit designation, while the absence of a vintage year on Wine B implies it is the same non-vintage bottling. These are simply two different ways of writing the name for the same core product.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both records refer to Bonnaire's 'Blanc de Blancs'. The 'NV' (Non-Vintage) on Wine A is an explicit designation, while the absence of a vintage year on Wine B implies it is the same non-vintage bottling. These are simply two different ways of writing the name for the same core product.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 1040,
+  "elapsed": 11.417221784591675,
+  "error": null
+}

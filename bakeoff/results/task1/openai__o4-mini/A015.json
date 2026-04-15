@@ -1,0 +1,13 @@
+{
+  "pair_id": "A015",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.92, \"reasoning\": \"Both records share the same producer (Patricia Green), vineyard/cuv\u00e9e name (Freedom Hill Perspicacious), grape variety (Pinot Noir), and wine style (red). The only difference is the optional varietal suffix in Wine B\u2019s name, which denotes the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.92,
+  "reasoning": "Both records share the same producer (Patricia Green), vineyard/cuv\u00e9e name (Freedom Hill Perspicacious), grape variety (Pinot Noir), and wine style (red). The only difference is the optional varietal suffix in Wine B\u2019s name, which denotes the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 171,
+  "elapsed": 2.381795883178711,
+  "error": null
+}

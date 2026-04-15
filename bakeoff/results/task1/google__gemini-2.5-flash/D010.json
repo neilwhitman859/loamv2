@@ -1,0 +1,13 @@
+{
+  "pair_id": "D010",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is named 'Gran Cuvee' and Wine B is 'Gran Cuvee Rose'. The presence of 'Rose' in Wine B's name, especially when Wine A's color is not specified as rose, strongly suggests they are distinct bottlings. If Wine A were also a ros\u00e9, the naming convention would be redundant for Wine B, implying a difference in style or type.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is named 'Gran Cuvee' and Wine B is 'Gran Cuvee Rose'. The presence of 'Rose' in Wine B's name, especially when Wine A's color is not specified as rose, strongly suggests they are distinct bottlings. If Wine A were also a ros\u00e9, the naming convention would be redundant for Wine B, implying a difference in style or type.",
+  "parse_ok": true,
+  "tokens_in": 409,
+  "tokens_out": 107,
+  "elapsed": 1.5162396430969238,
+  "error": null
+}

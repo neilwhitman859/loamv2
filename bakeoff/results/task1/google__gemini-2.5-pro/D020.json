@@ -1,0 +1,13 @@
+{
+  "pair_id": "D020",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The producer and color are identical. The name 'The Banished Dark Red' is a more descriptive version of 'The Banished Dark'. Since 19 Crimes makes a single red wine under this label, these two names refer to the same product, with the difference being a minor naming variation.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The producer and color are identical. The name 'The Banished Dark Red' is a more descriptive version of 'The Banished Dark'. Since 19 Crimes makes a single red wine under this label, these two names refer to the same product, with the difference being a minor naming variation.",
+  "parse_ok": true,
+  "tokens_in": 415,
+  "tokens_out": 1362,
+  "elapsed": 14.693822860717773,
+  "error": null
+}

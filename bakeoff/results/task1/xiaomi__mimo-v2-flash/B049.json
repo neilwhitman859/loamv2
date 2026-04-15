@@ -1,0 +1,13 @@
+{
+  "pair_id": "B049",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white wine and Wine B is a red wine, which are distinct colors and styles. The addition of 'Rouge' to the name indicates a different grape variety and bottling, not just a name abbreviation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white wine and Wine B is a red wine, which are distinct colors and styles. The addition of 'Rouge' to the name indicates a different grape variety and bottling, not just a name abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 474,
+  "tokens_out": 72,
+  "elapsed": 2.7561659812927246,
+  "error": null
+}

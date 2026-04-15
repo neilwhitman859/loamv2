@@ -1,0 +1,13 @@
+{
+  "pair_id": "D020",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are produced by 19 Crimes and have the same color (red). The difference in name is likely due to abbreviation, as 'Dark Red' is a plausible abbreviation of 'Dark Red' with the varietal or style implied.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are produced by 19 Crimes and have the same color (red). The difference in name is likely due to abbreviation, as 'Dark Red' is a plausible abbreviation of 'Dark Red' with the varietal or style implied.",
+  "parse_ok": true,
+  "tokens_in": 485,
+  "tokens_out": 71,
+  "elapsed": 1.3690247535705566,
+  "error": null
+}

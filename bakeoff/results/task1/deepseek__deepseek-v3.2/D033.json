@@ -1,0 +1,13 @@
+{
+  "pair_id": "D033",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.9, \"reasoning\": \"The wines have different vineyard/cuv\u00e9e designations ('Luft' vs 'Harmonie') from the same producer and region, which indicates distinct bottlings from separate plots or blends. Different vineyard designations, even with the same grape variety (Pinot Noir), constitute different wines according to the rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different vineyard/cuv\u00e9e designations ('Luft' vs 'Harmonie') from the same producer and region, which indicates distinct bottlings from separate plots or blends. Different vineyard designations, even with the same grape variety (Pinot Noir), constitute different wines according to the rules.",
+  "parse_ok": true,
+  "tokens_in": 455,
+  "tokens_out": 85,
+  "elapsed": 8.149218320846558,
+  "error": null
+}

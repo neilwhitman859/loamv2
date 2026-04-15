@@ -1,0 +1,13 @@
+{
+  "pair_id": "C030",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different classification tiers from the same producer: one is Reserva Cabernet Sauvignon and the other is Gran Reserva Cabernet Sauvignon. Under the rules, Reserva vs Gran Reserva are distinct bottlings that consumers encounter separately, even when producer, grape, and color match.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different classification tiers from the same producer: one is Reserva Cabernet Sauvignon and the other is Gran Reserva Cabernet Sauvignon. Under the rules, Reserva vs Gran Reserva are distinct bottlings that consumers encounter separately, even when producer, grape, and color match.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 73,
+  "elapsed": 2.0668561458587646,
+  "error": null
+}

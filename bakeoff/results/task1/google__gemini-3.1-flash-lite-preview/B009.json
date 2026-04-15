@@ -1,0 +1,13 @@
+{
+  "pair_id": "B009",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are distinct products because they have different colors (white vs. ros\u00e9). Even though they share similar naming conventions, Bellavista produces these as separate bottlings to distinguish between their white and ros\u00e9 sparkling wine styles.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are distinct products because they have different colors (white vs. ros\u00e9). Even though they share similar naming conventions, Bellavista produces these as separate bottlings to distinguish between their white and ros\u00e9 sparkling wine styles.",
+  "parse_ok": true,
+  "tokens_in": 397,
+  "tokens_out": 72,
+  "elapsed": 1.5335643291473389,
+  "error": null
+}

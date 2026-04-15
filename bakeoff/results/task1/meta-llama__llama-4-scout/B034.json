@@ -1,0 +1,13 @@
+{
+  "pair_id": "B034",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, one being a ros\u00e9 and the other a red wine, from the same producer and vineyard. According to the rules, different colors from the same vineyard result in different wines. Therefore, Wine A and Wine B represent different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, one being a ros\u00e9 and the other a red wine, from the same producer and vineyard. According to the rules, different colors from the same vineyard result in different wines. Therefore, Wine A and Wine B represent different wines.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 76,
+  "elapsed": 1.849120855331421,
+  "error": null
+}

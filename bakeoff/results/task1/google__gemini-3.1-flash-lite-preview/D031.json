@@ -1,0 +1,13 @@
+{
+  "pair_id": "D031",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"In German wine labeling, 'Trocken' (dry) is a style designation rather than a distinct vineyard or Pr\u00e4dikat level. Peter Jakob Kuhn produces this wine as a single dry Riesling bottling, and the omission of 'Trocken' in the second record is a common shorthand for the same product.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "In German wine labeling, 'Trocken' (dry) is a style designation rather than a distinct vineyard or Pr\u00e4dikat level. Peter Jakob Kuhn produces this wine as a single dry Riesling bottling, and the omission of 'Trocken' in the second record is a common shorthand for the same product.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 91,
+  "elapsed": 2.8438527584075928,
+  "error": null
+}

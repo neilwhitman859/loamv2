@@ -1,0 +1,35 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "x-ai/grok-4.1-fast",
+  "correctness": 1.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 3.025,
+  "wrong_facts": [
+    "Hook says vines are 110 years old; ground truth says 90-year-old vines",
+    "Hook says vineyard is in Poboleda; ground truth says it's in Torroja del Priorat",
+    "Hook claims 1,500 bottles per hectare yield — fabricated number not in context data",
+    "Hook claims 45-degree pitches — fabricated specific number",
+    "Wine summary says co-founded by Dominik Huber and Jaume Sabaté; ground truth says co-founded with Eben Sadie",
+    "Terroir section says 500-meter altitude; ground truth says 600m elevation",
+    "Vinification says 8 months in neutral French oak; ground truth says recent vintages ferment and age in cement tanks, no wood aging",
+    "Vinification mentions foot-treading — not in context data or ground truth",
+    "Vinification says 'short macerations'; ground truth says two weeks on skins",
+    "Value assessment fabricates $110-140 price range — no prices provided in context"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "110-year-old vines",
+    "45-degree pitches",
+    "1,500 bottles per hectare",
+    "500-meter altitude",
+    "$110-140 price",
+    "8 months in neutral French oak (context says 8 months oak but ground truth says cement tanks)"
+  ],
+  "reasoning": "The hook contains two provably wrong facts (Poboleda instead of Torroja, 110-year-old instead of 90-year-old vines) which triggers the hard cap of 1.5 on correctness. Multiple fabricated numbers compound the problem: yield per hectare, slope angle, price range, and altitude are all invented. The co-founder is wrong (Jaume Sabaté instead of Eben Sadie). The vinification description claims neutral French oak when ground truth says cement tanks with no wood. Voice is strong — direct, opinionated, no banned words, good structure. Specificity is good in naming soils, producers, and dishes, but many specific claims are wrong. Usefulness is undermined by the factual errors despite good structural information.",
+  "judge_tokens_in": 3559,
+  "judge_tokens_out": 532
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C045",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"These are distinct bottlings from the same producer and vineyard. In German wine production, specifically at the Maximin Gr\u00fcnhaus estate, 'Auktion' wines with different cask numbers (Nr8 vs others) are separate bottlings released at the same Pr\u00e4dikat level, as indicated by their distinct LWIN codes.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "These are distinct bottlings from the same producer and vineyard. In German wine production, specifically at the Maximin Gr\u00fcnhaus estate, 'Auktion' wines with different cask numbers (Nr8 vs others) are separate bottlings released at the same Pr\u00e4dikat level, as indicated by their distinct LWIN codes.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 93,
+  "elapsed": 1.8089768886566162,
+  "error": null
+}

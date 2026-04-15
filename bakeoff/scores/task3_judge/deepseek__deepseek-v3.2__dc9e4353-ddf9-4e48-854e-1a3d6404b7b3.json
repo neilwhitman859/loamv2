@@ -1,0 +1,23 @@
+{
+  "wine_id": "dc9e4353-ddf9-4e48-854e-1a3d6404b7b3",
+  "wine_name": "Shafer One Point Five Cabernet Sauvignon, Stags Leap District",
+  "tier": "C",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.65,
+  "wrong_facts": [
+    "Hook implies the wine is built on the same ground as Hillside Select, suggesting single-vineyard or estate-only sourcing, but ground truth confirms it is multi-site including 'Borderline' vineyard and selected Napa Valley sites — it is NOT single-vineyard",
+    "Vinification summary describes oak program as 'restrained' but ground truth shows 100% new French oak for 18 months, which is the opposite of restrained",
+    "No mention of the actual naming origin (generation and a half partnership between John and Doug Shafer), which is a missed opportunity but not a wrong claim per se"
+  ],
+  "banned_words_found": [
+    "refined"
+  ],
+  "fabricated_numbers": [],
+  "reasoning": "The output avoids fabricating specific numbers (no ABV, blend %, or oak months stated), which is good. However, it makes misleading claims: calling the wine 'site-specific' and implying it comes from the same ground as Hillside Select contradicts the ground truth that it's a multi-site wine. Describing the oak program as 'restrained' is factually wrong given 100% new French oak. The word 'refined' appears in the comparable wines section, triggering the banned word penalty. Voice is otherwise strong — direct, opinionated, with good specificity on soils and climate. The insider take is genuinely useful and honest. Specificity is good with named soils (volcanic tuff, Bale clay loam), formations (Palisades), and real competitor wines.",
+  "judge_tokens_in": 3565,
+  "judge_tokens_out": 378
+}

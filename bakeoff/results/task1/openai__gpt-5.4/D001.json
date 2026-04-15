@@ -1,0 +1,13 @@
+{
+  "pair_id": "D001",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.92,\"reasoning\":\"Both are Van Volxem Riesling whites from Altenberg Alte Reben Grosse Lage, but Wine A includes the specific designation 'Nr23' while Wine B does not. A numbered parcel/lot identifier is typically a distinct bottling rather than a mere formatting variant, so these would likely appear as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.92,
+  "reasoning": "Both are Van Volxem Riesling whites from Altenberg Alte Reben Grosse Lage, but Wine A includes the specific designation 'Nr23' while Wine B does not. A numbered parcel/lot identifier is typically a distinct bottling rather than a mere formatting variant, so these would likely appear as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 86,
+  "elapsed": 2.8369174003601074,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C045",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.96,\"reasoning\":\"Both wines are Von Schubert Grunhauser Abtsberg Riesling Kabinett Auktion, but Wine B includes the specific lot/cask designation 'Nr8'. Under the rule that different lot or cask numbers at the same Pr\u00e4dikat level are separate bottlings, these should be treated as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.96,
+  "reasoning": "Both wines are Von Schubert Grunhauser Abtsberg Riesling Kabinett Auktion, but Wine B includes the specific lot/cask designation 'Nr8'. Under the rule that different lot or cask numbers at the same Pr\u00e4dikat level are separate bottlings, these should be treated as different wines.",
+  "parse_ok": true,
+  "tokens_in": 448,
+  "tokens_out": 87,
+  "elapsed": 2.110170602798462,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B038",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a red wine, while Wine B is a white wine made from Verdicchio grapes. Different colors and grape varieties always indicate different wines, even if the producer and base name are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a red wine, while Wine B is a white wine made from Verdicchio grapes. Different colors and grape varieties always indicate different wines, even if the producer and base name are the same.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 65,
+  "elapsed": 1.74031662940979,
+  "error": null
+}

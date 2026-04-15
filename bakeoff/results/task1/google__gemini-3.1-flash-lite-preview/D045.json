@@ -1,0 +1,13 @@
+{
+  "pair_id": "D045",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The records refer to the same producer and the same white wine. The addition of 'Blanc' in Wine A is a common varietal descriptor used to clarify the color of the wine, which is consistent with Wine B.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The records refer to the same producer and the same white wine. The addition of 'Blanc' in Wine A is a common varietal descriptor used to clarify the color of the wine, which is consistent with Wine B.",
+  "parse_ok": true,
+  "tokens_in": 412,
+  "tokens_out": 66,
+  "elapsed": 1.532745599746704,
+  "error": null
+}

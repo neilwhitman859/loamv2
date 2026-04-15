@@ -1,0 +1,13 @@
+{
+  "pair_id": "A010",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B are different wines due to the different grape varieties. Wine A is made from Gew\u00fcrztraminer, while Wine B is made from Pinot Gris, which is a distinct grape variety. This difference in grapes alone is sufficient to classify them as different wines, even if they share the same producer and vineyard.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B are different wines due to the different grape varieties. Wine A is made from Gew\u00fcrztraminer, while Wine B is made from Pinot Gris, which is a distinct grape variety. This difference in grapes alone is sufficient to classify them as different wines, even if they share the same producer and vineyard.",
+  "parse_ok": true,
+  "tokens_in": 455,
+  "tokens_out": 89,
+  "elapsed": 1.594461441040039,
+  "error": null
+}

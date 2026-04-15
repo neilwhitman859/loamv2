@@ -1,0 +1,13 @@
+{
+  "pair_id": "A005",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Catena Zapata, and share the core name 'Agrelo Saint Felicien'. Wine A explicitly states 'SEMILLON' as its grape, and Wine B adds 'Semillon' to its name. This suggests Wine B is simply a more descriptive naming of the same varietal wine, rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Catena Zapata, and share the core name 'Agrelo Saint Felicien'. Wine A explicitly states 'SEMILLON' as its grape, and Wine B adds 'Semillon' to its name. This suggests Wine B is simply a more descriptive naming of the same varietal wine, rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 94,
+  "elapsed": 1.5169074535369873,
+  "error": null
+}

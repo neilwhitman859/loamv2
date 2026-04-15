@@ -1,0 +1,32 @@
+{
+  "page_id": "page_045",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Bonterra Red Blend\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": null,\n      \"blend\": [\n        {\"grape\": \"Petite Sirah\", \"pct\": null},\n        {\"grape\": \"Merlot\", \"pct\": null}\n      ],\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Bonterra Red Blend",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Petite Sirah",
+          "pct": null
+        },
+        {
+          "grape": "Merlot",
+          "pct": null
+        }
+      ],
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 50584,
+  "tokens_out": 125,
+  "elapsed": 19.02900457382202,
+  "error": null
+}

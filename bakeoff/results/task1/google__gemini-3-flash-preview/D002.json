@@ -1,0 +1,13 @@
+{
+  "pair_id": "D002",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"In the VDP classification system used by Van Volxem, the 'GG' (Grosses Gew\u00e4chs) designation indicates a dry wine from a top-tier site, whereas the non-GG 'Alte Reben' (Old Vines) bottling is typically a separate product tier with different technical specifications or residual sugar levels. These represent distinct quality classifications and bottlings that a consumer would distinguish between.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "In the VDP classification system used by Van Volxem, the 'GG' (Grosses Gew\u00e4chs) designation indicates a dry wine from a top-tier site, whereas the non-GG 'Alte Reben' (Old Vines) bottling is typically a separate product tier with different technical specifications or residual sugar levels. These represent distinct quality classifications and bottlings that a consumer would distinguish between.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 105,
+  "elapsed": 1.7208890914916992,
+  "error": null
+}

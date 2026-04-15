@@ -1,0 +1,13 @@
+{
+  "pair_id": "A013",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"The two records are not just a formatting variant: Wine A is explicitly made from Pinot Noir and Canari Noir, while Wine B is Pinot Gris. Different grapes always indicate different wines, even if the vineyard/cuv\u00e9e name is the same. The shared name \\\"Lerchenberg\\\" likely refers to the vineyard, but the varietal difference means these are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "The two records are not just a formatting variant: Wine A is explicitly made from Pinot Noir and Canari Noir, while Wine B is Pinot Gris. Different grapes always indicate different wines, even if the vineyard/cuv\u00e9e name is the same. The shared name \"Lerchenberg\" likely refers to the vineyard, but the varietal difference means these are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 98,
+  "elapsed": 1.575516700744629,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A028",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.94, \"reasoning\": \"Both records are red wines from Owen Roe made from Syrah; the only difference is the varietal suffix in the name, indicating an abbreviation rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.94,
+  "reasoning": "Both records are red wines from Owen Roe made from Syrah; the only difference is the varietal suffix in the name, indicating an abbreviation rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 416,
+  "tokens_out": 179,
+  "elapsed": 4.60958456993103,
+  "error": null
+}

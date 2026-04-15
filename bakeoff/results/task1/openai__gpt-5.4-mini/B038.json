@@ -1,0 +1,13 @@
+{
+  "pair_id": "B038",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Although the wine name is the same (Querciantica) and the producer is the same (Velenosi), the records indicate different colors: Wine A is red while Wine B is white. Wine B is also explicitly identified as Verdicchio, which makes it a different bottling/style from a red wine under the same name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Although the wine name is the same (Querciantica) and the producer is the same (Velenosi), the records indicate different colors: Wine A is red while Wine B is white. Wine B is also explicitly identified as Verdicchio, which makes it a different bottling/style from a red wine under the same name.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 90,
+  "elapsed": 1.6320374011993408,
+  "error": null
+}

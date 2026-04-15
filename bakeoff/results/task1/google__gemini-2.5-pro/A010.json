@@ -1,0 +1,13 @@
+{
+  "pair_id": "A010",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines are made from different grape varieties. Wine A is specified as being made from Gew\u00fcrztraminer, while Wine B's name, 'Le Jardin de Trebogad Pinot Gris', explicitly identifies it as a Pinot Gris. Even though they share a producer and a core brand name, wines made from different grapes are always considered different.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from different grape varieties. Wine A is specified as being made from Gew\u00fcrztraminer, while Wine B's name, 'Le Jardin de Trebogad Pinot Gris', explicitly identifies it as a Pinot Gris. Even though they share a producer and a core brand name, wines made from different grapes are always considered different.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 1262,
+  "elapsed": 11.975643873214722,
+  "error": null
+}

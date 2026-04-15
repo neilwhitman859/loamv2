@@ -1,0 +1,27 @@
+{
+  "wine_id": "c815d359-5c41-4ee0-ab03-2afaf1ab5f81",
+  "wine_name": "Comando G El Reventon, Cebreros",
+  "tier": "B",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.4,
+  "wrong_facts": [
+    "Hook and throughout: claims Alicante Bouschet is in the blend — ground truth confirms El Reventon is 100% Garnacha",
+    "Vinification: claims co-fermentation of Garnacha and Alicante Bouschet together",
+    "Terroir: states elevation as 900-1000m — ground truth says 900m",
+    "Vinification: states 14 months in large neutral French oak foudres — ground truth says 16 months in French oak; 14 months appears in context data for 2022 vintage but ground truth corrects this to 16 months",
+    "Value assessment: fabricates price range of $250-$350"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$250-$350 price range",
+    "900-1000m elevation range (ground truth is 900m)",
+    "15-20+ years aging claim"
+  ],
+  "reasoning": "The most damaging error is the repeated claim that Alicante Bouschet is part of the blend — the ground truth confirms this is 100% Garnacha. While the context data listed both grapes, the model should not have built its entire narrative around the Alicante Bouschet inclusion, and the hook centers on this wrong claim. The fabricated price range ($250-$350) is a specific number not in the context data. The voice is strong — direct, opinionated, well-structured with good specificity on soils, comparables, and food pairings. However, the fundamental factual errors about the blend composition pervade the entire output and undermine its trustworthiness. The hook contains a provably wrong claim (Alicante Bouschet in the blend), which would normally cap correctness at 1.5, but the model was somewhat misled by the context data listing both grapes. I give slight leniency to 2.0 since the context data was ambiguous, but the ground truth is clear.",
+  "judge_tokens_in": 3880,
+  "judge_tokens_out": 481
+}

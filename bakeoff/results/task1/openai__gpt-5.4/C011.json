@@ -1,0 +1,13 @@
+{
+  "pair_id": "C011",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different Rioja-style classification tiers from the same producer and appellation: one is Cabernet Sauvignon Gran Reserva and the other is Cabernet Sauvignon Reserva. Classification differences like Reserva vs Gran Reserva indicate distinct bottlings that consumers would encounter separately, not just naming variation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different Rioja-style classification tiers from the same producer and appellation: one is Cabernet Sauvignon Gran Reserva and the other is Cabernet Sauvignon Reserva. Classification differences like Reserva vs Gran Reserva indicate distinct bottlings that consumers would encounter separately, not just naming variation.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 73,
+  "elapsed": 2.134462594985962,
+  "error": null
+}

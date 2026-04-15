@@ -1,0 +1,13 @@
+{
+  "pair_id": "D011",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines share the same producer, vineyard/cuv\u00e9e, grape variety, and style. The slight difference in name formatting (\\\"Malmsey\\\" vs. \\\"Adegas Exportata\\\") is a common practice and does not indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines share the same producer, vineyard/cuv\u00e9e, grape variety, and style. The slight difference in name formatting (\"Malmsey\" vs. \"Adegas Exportata\") is a common practice and does not indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 456,
+  "tokens_out": 73,
+  "elapsed": 1.2278385162353516,
+  "error": null
+}

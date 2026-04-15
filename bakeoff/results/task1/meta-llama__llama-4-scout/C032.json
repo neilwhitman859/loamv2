@@ -1,0 +1,13 @@
+{
+  "pair_id": "C032",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are Blanc de Blancs from the same producer, Bonnaire, and have the same color, white. The NV (non-vintage) designation in Wine A does not necessarily indicate a different wine, as it could simply be a non-vintage expression of the same wine as Wine B.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are Blanc de Blancs from the same producer, Bonnaire, and have the same color, white. The NV (non-vintage) designation in Wine A does not necessarily indicate a different wine, as it could simply be a non-vintage expression of the same wine as Wine B.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 83,
+  "elapsed": 1.0900821685791016,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C043",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The Pr\u00e4dikat level for Wine A is Sp\u00e4tlese, while for Wine B it is Auslese. According to the rules, different Pr\u00e4dikat levels indicate different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The Pr\u00e4dikat level for Wine A is Sp\u00e4tlese, while for Wine B it is Auslese. According to the rules, different Pr\u00e4dikat levels indicate different wines.",
+  "parse_ok": true,
+  "tokens_in": 485,
+  "tokens_out": 63,
+  "elapsed": 3.4102847576141357,
+  "error": null
+}

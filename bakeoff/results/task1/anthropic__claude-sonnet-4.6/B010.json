@@ -1,0 +1,13 @@
+{
+  "pair_id": "B010",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is white (Alma Grande Cuvee Brut) while Wine B is ros\u00e9 (Gran Cuvee Alma), and different colors constitute different wines even from the same producer. The name ordering differs but both reference Bellavista's Alma/Gran Cuvee line; however, the white vs. ros\u00e9 distinction is definitive. A consumer would encounter these as separate bottlings on a wine list or shelf.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is white (Alma Grande Cuvee Brut) while Wine B is ros\u00e9 (Gran Cuvee Alma), and different colors constitute different wines even from the same producer. The name ordering differs but both reference Bellavista's Alma/Gran Cuvee line; however, the white vs. ros\u00e9 distinction is definitive. A consumer would encounter these as separate bottlings on a wine list or shelf.",
+  "parse_ok": true,
+  "tokens_in": 482,
+  "tokens_out": 117,
+  "elapsed": 3.298569440841675,
+  "error": null
+}

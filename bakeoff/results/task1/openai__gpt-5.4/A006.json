@@ -1,0 +1,13 @@
+{
+  "pair_id": "A006",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"Both records are from Radio-Coteau and refer to the Clos Platt bottling, with no evidence of a second distinct wine from that vineyard under the same producer. The only difference is the explicit varietal suffix 'Pinot Noir,' which here functions as a naming clarification rather than indicating a separate bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "Both records are from Radio-Coteau and refer to the Clos Platt bottling, with no evidence of a second distinct wine from that vineyard under the same producer. The only difference is the explicit varietal suffix 'Pinot Noir,' which here functions as a naming clarification rather than indicating a separate bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 84,
+  "elapsed": 2.2897305488586426,
+  "error": null
+}

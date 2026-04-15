@@ -1,0 +1,13 @@
+{
+  "pair_id": "B042",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a ros\u00e9 and Wine B is a white wine (Chardonnay), which are fundamentally different products. Different colors alone constitute different wines, and the grape variety difference (Chardonnay vs whatever grape makes the ros\u00e9) confirms they are distinct bottlings a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a ros\u00e9 and Wine B is a white wine (Chardonnay), which are fundamentally different products. Different colors alone constitute different wines, and the grape variety difference (Chardonnay vs whatever grape makes the ros\u00e9) confirms they are distinct bottlings a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 88,
+  "elapsed": 5.584360122680664,
+  "error": null
+}

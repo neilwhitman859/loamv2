@@ -1,0 +1,13 @@
+{
+  "pair_id": "B030",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is a red Cabernet Sauvignon, while Wine B is a white Sauvignon Blanc. Different grape varieties are a clear indicator of different wines, even from the same producer and vineyard.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is a red Cabernet Sauvignon, while Wine B is a white Sauvignon Blanc. Different grape varieties are a clear indicator of different wines, even from the same producer and vineyard.",
+  "parse_ok": true,
+  "tokens_in": 454,
+  "tokens_out": 59,
+  "elapsed": 1.632493019104004,
+  "error": null
+}

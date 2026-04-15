@@ -1,0 +1,13 @@
+{
+  "pair_id": "D016",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"\u2018Roche\u2019 and \u2018Sur Roche\u2019 are distinct vineyard designations/cuv\u00e9es from Eric Forest, so they represent separate bottlings despite both being white wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "\u2018Roche\u2019 and \u2018Sur Roche\u2019 are distinct vineyard designations/cuv\u00e9es from Eric Forest, so they represent separate bottlings despite both being white wines.",
+  "parse_ok": true,
+  "tokens_in": 415,
+  "tokens_out": 247,
+  "elapsed": 4.954055547714233,
+  "error": null
+}

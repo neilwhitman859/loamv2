@@ -1,0 +1,13 @@
+{
+  "pair_id": "B022",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is white Extra Brut NV, while Wine B is Ros\u00e9 Extra Brut NV from the same producer, Jean Noel Haton. The difference in color (white vs ros\u00e9) indicates they are different wines. The distinct LWIN numbers also confirm they are separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is white Extra Brut NV, while Wine B is Ros\u00e9 Extra Brut NV from the same producer, Jean Noel Haton. The difference in color (white vs ros\u00e9) indicates they are different wines. The distinct LWIN numbers also confirm they are separate products.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 79,
+  "elapsed": 1.372697353363037,
+  "error": null
+}

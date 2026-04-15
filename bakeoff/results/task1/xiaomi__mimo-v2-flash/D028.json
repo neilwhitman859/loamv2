@@ -1,0 +1,13 @@
+{
+  "pair_id": "D028",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Cabernet Sauvignon and Wine B is a Cabernet Franc, which are different grape varieties. Different grapes always represent different wines, even if they share the same producer and naming convention.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Cabernet Sauvignon and Wine B is a Cabernet Franc, which are different grape varieties. Different grapes always represent different wines, even if they share the same producer and naming convention.",
+  "parse_ok": true,
+  "tokens_in": 502,
+  "tokens_out": 67,
+  "elapsed": 1.9493749141693115,
+  "error": null
+}

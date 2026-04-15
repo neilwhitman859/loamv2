@@ -1,0 +1,13 @@
+{
+  "pair_id": "A039",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The only difference is the explicit inclusion of the varietal 'Pinot Noir' in Wine B's name, which is a standard naming abbreviation. Both records share the same producer, color, and grape variety, confirming they represent the identical bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The only difference is the explicit inclusion of the varietal 'Pinot Noir' in Wine B's name, which is a standard naming abbreviation. Both records share the same producer, color, and grape variety, confirming they represent the identical bottling.",
+  "parse_ok": true,
+  "tokens_in": 459,
+  "tokens_out": 1059,
+  "elapsed": 21.42927598953247,
+  "error": null
+}

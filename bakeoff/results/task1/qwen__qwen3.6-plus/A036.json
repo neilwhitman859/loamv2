@@ -1,0 +1,13 @@
+{
+  "pair_id": "A036",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is explicitly a Pinot Noir and Chardonnay blend, while Wine B is a Sauvignon Blanc. Although the names differ only by a varietal suffix, De Bortoli produces multiple distinct bottlings under the 'DB Family Selection' label, and different grape varieties always indicate different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is explicitly a Pinot Noir and Chardonnay blend, while Wine B is a Sauvignon Blanc. Although the names differ only by a varietal suffix, De Bortoli produces multiple distinct bottlings under the 'DB Family Selection' label, and different grape varieties always indicate different wines.",
+  "parse_ok": true,
+  "tokens_in": 467,
+  "tokens_out": 1171,
+  "elapsed": 22.86040425300598,
+  "error": null
+}

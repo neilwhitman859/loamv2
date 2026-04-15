@@ -1,0 +1,26 @@
+{
+  "wine_id": "21aa403d-a5ad-43f2-99d9-560dc9e66587",
+  "wine_name": "Lafage, Côtes Catalanes Vieilles Vignes Tessellae",
+  "tier": "B",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "The hook says 'ancient Carignan and Grenache vines' implying a blend, but ground truth confirms the wine is 100% Carignan from old vines (70+ years)",
+    "The output describes the wine as a blend of Syrah, Grenache, Carignan, and Mourvèdre throughout, but ground truth states it is 100% Carignan",
+    "The style_profile calls it a 'Syrah-Carignan blend' which contradicts the 100% Carignan ground truth",
+    "The hook says 'dry-farmed blend' — ground truth says 100% Carignan, not a blend"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "Serve at 60°F — not in context data",
+    "Store at 55°F — not in context data",
+    "70+ year old vines is close to ground truth but the specific number isn't in context data (though it matches ground truth so this is acceptable)"
+  ],
+  "reasoning": "The output is exceptionally well-written with strong voice, great specificity (schist soils, Tramontane wind, concrete fermentation, named competitors), and genuinely useful comparisons and food pairings. However, the fundamental factual error — treating this as a multi-grape blend when ground truth confirms it's 100% Carignan — pervades the entire output from hook through style profile. The context data did list multiple grapes with 'None%' blend percentages, which is ambiguous, but the model confidently built its entire narrative around a four-grape blend that contradicts the verified ground truth. This is a significant correctness problem that undermines the otherwise excellent writing. The hook specifically names 'Carignan and Grenache vines' which is wrong per ground truth. The naming origin for Tessellae (mosaic tiles) matches ground truth, and Jean-Marc Lafage is correctly identified.",
+  "judge_tokens_in": 3531,
+  "judge_tokens_out": 476
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D034",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Valentin Zusslin), same color (red), and same grape (Pinot Noir). The name difference is just a varietal suffix abbreviation, where 'Bollenberg Neuberg Pinot Noir' is the full name and 'Bollenberg Pinot Noir' is the shortened version, indicating they represent the same single vineyard bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Valentin Zusslin), same color (red), and same grape (Pinot Noir). The name difference is just a varietal suffix abbreviation, where 'Bollenberg Neuberg Pinot Noir' is the full name and 'Bollenberg Pinot Noir' is the shortened version, indicating they represent the same single vineyard bottling.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 103,
+  "elapsed": 2.2956109046936035,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A017",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grape varieties, Wine A is made from PINOT NOIR while Wine B is made from Syrah. Despite sharing the same producer and vineyard designation, the difference in grape variety is a key factor in determining that they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grape varieties, Wine A is made from PINOT NOIR while Wine B is made from Syrah. Despite sharing the same producer and vineyard designation, the difference in grape variety is a key factor in determining that they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 75,
+  "elapsed": 1.4382414817810059,
+  "error": null
+}

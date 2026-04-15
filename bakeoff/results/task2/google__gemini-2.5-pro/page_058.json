@@ -1,0 +1,11 @@
+{
+  "page_id": "page_058",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "I've found the main content section. It's a bit truncated in the provided HTML, but the key parts are there.\n\nLet's assemble the data.\n\n-   **name**: \"Seven Oaks Cabernet Sauvignon\". The `h1` is `2023 Seven Oaks Cabernet Sauvignon`. The vintage is a separate field. So the name is `Seven Oaks Cabernet Sauvignon`.\n-   **vintage_year**: 2023. Found in the `h1` and `<title>`.\n-   **abv_pct**: 13.9. Found under \"CHEMISTRY\" as \"ALCOHOL: 13.9% by volume\".\n-   **blend**: Found under \"COMPOSITION\".\n    -   87% Cabernet Sauvignon\n    -   5% Petite Sirah\n    -   4% Petit Verdot\n    -   2% Merlot\n    -   2% Other Red\n    This will be an array of objects: `[{\"grape\": \"Cabernet Sauvignon\", \"pct\": 87}, {\"grape\": \"Petite Sirah\", \"pct\": 5}, {\"grape\": \"Petit Verdot\", \"pct\": 4}, {\"grape\": \"Merlot\", \"pct\": 2}, {\"grape\": \"Other Red\", \"pct\": 2}]`.\n-   **oak**: Found under \"AGING\". \"12 months in American oak, 20% new\".\n    -   `vessel`: \"American",
+  "wines_found": [],
+  "parse_ok": true,
+  "tokens_in": 38690,
+  "tokens_out": 7996,
+  "elapsed": 66.45247101783752,
+  "error": null
+}

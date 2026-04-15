@@ -1,0 +1,13 @@
+{
+  "pair_id": "B012",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors (white vs red) and different grape varieties (DONZELINHO BRANCO vs MALVASIA FINA, FURMINT). These differences indicate distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors (white vs red) and different grape varieties (DONZELINHO BRANCO vs MALVASIA FINA, FURMINT). These differences indicate distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 474,
+  "tokens_out": 58,
+  "elapsed": 1.8232736587524414,
+  "error": null
+}

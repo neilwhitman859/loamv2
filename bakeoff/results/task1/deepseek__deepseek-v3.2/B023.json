@@ -1,0 +1,13 @@
+{
+  "pair_id": "B023",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different colors (red vs white), which always indicates different wines. Additionally, the name difference ('Cali' vs 'Cali Gold') likely reflects this distinct style and grape composition.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors (red vs white), which always indicates different wines. Additionally, the name difference ('Cali' vs 'Cali Gold') likely reflects this distinct style and grape composition.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 64,
+  "elapsed": 2.2548930644989014,
+  "error": null
+}

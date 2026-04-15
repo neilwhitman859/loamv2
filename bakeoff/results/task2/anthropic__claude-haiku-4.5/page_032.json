@@ -1,0 +1,23 @@
+{
+  "page_id": "page_032",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Monterey Chardonnay\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": \"sustainable\"\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Monterey Chardonnay",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "sustainable"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 28632,
+  "tokens_out": 112,
+  "elapsed": 2.8441362380981445,
+  "error": null
+}

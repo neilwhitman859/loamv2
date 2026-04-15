@@ -1,0 +1,13 @@
+{
+  "pair_id": "A002",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.96,\"reasoning\":\"Both records are from Firestone and refer to the same cuv\u00e9e name, 'Clone 174,' with record B simply appending the grape variety 'Syrah.' Since record A is already identified as Syrah and both are red, this matches the rule that a varietal suffix alone usually indicates the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.96,
+  "reasoning": "Both records are from Firestone and refer to the same cuv\u00e9e name, 'Clone 174,' with record B simply appending the grape variety 'Syrah.' Since record A is already identified as Syrah and both are red, this matches the rule that a varietal suffix alone usually indicates the same wine.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 85,
+  "elapsed": 2.6108462810516357,
+  "error": null
+}

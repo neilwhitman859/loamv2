@@ -1,0 +1,13 @@
+{
+  "pair_id": "B012",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is made from Donzelinho Branco while Wine B is made from Malvasia Fina and Furmint \u2014 completely different grape varieties. Additionally, Wine A is classified as white and Wine B as red, further confirming these are distinct bottlings. The 'Colheita' designation on Wine B also indicates a vintage-dated single-harvest style, making these clearly separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is made from Donzelinho Branco while Wine B is made from Malvasia Fina and Furmint \u2014 completely different grape varieties. Additionally, Wine A is classified as white and Wine B as red, further confirming these are distinct bottlings. The 'Colheita' designation on Wine B also indicates a vintage-dated single-harvest style, making these clearly separate products.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 111,
+  "elapsed": 7.6468682289123535,
+  "error": null
+}

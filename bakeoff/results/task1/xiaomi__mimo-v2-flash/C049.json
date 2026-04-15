@@ -1,0 +1,13 @@
+{
+  "pair_id": "C049",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white sparkling wine (Brut Nature) while Wine B is a red still wine (Brut), representing fundamentally different wine types and colors. Even though they share the same producer, the color and style differences mean they are distinct bottlings that a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white sparkling wine (Brut Nature) while Wine B is a red still wine (Brut), representing fundamentally different wine types and colors. Even though they share the same producer, the color and style differences mean they are distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 83,
+  "elapsed": 2.0627810955047607,
+  "error": null
+}

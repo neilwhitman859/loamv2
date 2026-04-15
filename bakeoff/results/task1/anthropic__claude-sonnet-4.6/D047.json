@@ -1,0 +1,13 @@
+{
+  "pair_id": "D047",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.85, \"reasoning\": \"Both wines are from Happs in Margaret River and both are made from 100% Merlot Noir. Despite the name difference ('Merlot' vs 'Cabernet'), the grape data confirms both are identical Merlot-based wines, suggesting 'Happs Cabernet' is likely a mislabeling or data error. The grape composition being identical (100% Merlot Noir) is the definitive factor here, indicating these represent the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.85,
+  "reasoning": "Both wines are from Happs in Margaret River and both are made from 100% Merlot Noir. Despite the name difference ('Merlot' vs 'Cabernet'), the grape data confirms both are identical Merlot-based wines, suggesting 'Happs Cabernet' is likely a mislabeling or data error. The grape composition being identical (100% Merlot Noir) is the definitive factor here, indicating these represent the same wine.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 130,
+  "elapsed": 3.349039077758789,
+  "error": null
+}

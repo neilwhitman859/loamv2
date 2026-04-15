@@ -1,0 +1,13 @@
+{
+  "pair_id": "C003",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"Brut and Brut Nature represent distinct sweetness levels in sparkling wine production, which are treated as separate bottlings. The different LWIN numbers further confirm that these are distinct products in the producer's portfolio.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Brut and Brut Nature represent distinct sweetness levels in sparkling wine production, which are treated as separate bottlings. The different LWIN numbers further confirm that these are distinct products in the producer's portfolio.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 69,
+  "elapsed": 1.647237777709961,
+  "error": null
+}

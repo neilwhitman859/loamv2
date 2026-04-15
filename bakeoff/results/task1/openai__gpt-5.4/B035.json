@@ -1,0 +1,13 @@
+{
+  "pair_id": "B035",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different color/designation bottlings from the same producer: Wine A is 'Petit Clos Rose' and Wine B is 'Petit Clos Rouge.' Ros\u00e9 vs red is explicitly a different wine, and the distinct LWINs reinforce that they are separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different color/designation bottlings from the same producer: Wine A is 'Petit Clos Rose' and Wine B is 'Petit Clos Rouge.' Ros\u00e9 vs red is explicitly a different wine, and the distinct LWINs reinforce that they are separate products.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 75,
+  "elapsed": 2.231635570526123,
+  "error": null
+}

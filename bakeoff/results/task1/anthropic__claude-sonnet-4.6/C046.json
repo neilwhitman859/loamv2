@@ -1,0 +1,13 @@
+{
+  "pair_id": "C046",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from the same producer (Domdechant Werner) and same vineyard (Hochheimer Domdechaney) with the same grape (Riesling), but they differ in German Pr\u00e4dikat level: Wine A is Beerenauslese (BA) and Wine B is Auslese. Per the key rules, different German Pr\u00e4dikat levels always constitute different wines, as they represent distinct sweetness/ripeness tiers that consumers would encounter as separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from the same producer (Domdechant Werner) and same vineyard (Hochheimer Domdechaney) with the same grape (Riesling), but they differ in German Pr\u00e4dikat level: Wine A is Beerenauslese (BA) and Wine B is Auslese. Per the key rules, different German Pr\u00e4dikat levels always constitute different wines, as they represent distinct sweetness/ripeness tiers that consumers would encounter as separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 517,
+  "tokens_out": 133,
+  "elapsed": 3.9175238609313965,
+  "error": null
+}

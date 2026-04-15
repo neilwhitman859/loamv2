@@ -1,0 +1,13 @@
+{
+  "pair_id": "B039",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.98, \"reasoning\": \"Wine A is a ros\u00e9 still wine, whereas Wine B is a white Brut sparkling made from Mostosa; they differ in color, style, and grape variety, so they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Wine A is a ros\u00e9 still wine, whereas Wine B is a white Brut sparkling made from Mostosa; they differ in color, style, and grape variety, so they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 412,
+  "tokens_out": 155,
+  "elapsed": 4.929955005645752,
+  "error": null
+}

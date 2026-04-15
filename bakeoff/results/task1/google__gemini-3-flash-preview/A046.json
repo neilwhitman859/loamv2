@@ -1,0 +1,13 @@
+{
+  "pair_id": "A046",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine B is simply the varietal-suffixed version of Wine A. Carlisle produces a single Syrah bottling from the James Berry Vineyard, and the addition of the grape name to the vineyard name is a common formatting variation for the same product.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine B is simply the varietal-suffixed version of Wine A. Carlisle produces a single Syrah bottling from the James Berry Vineyard, and the addition of the grape name to the vineyard name is a common formatting variation for the same product.",
+  "parse_ok": true,
+  "tokens_in": 414,
+  "tokens_out": 71,
+  "elapsed": 1.4562740325927734,
+  "error": null
+}

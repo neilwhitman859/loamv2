@@ -1,0 +1,13 @@
+{
+  "pair_id": "B002",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Despite identical names and grape composition, one is a red wine and the other is a white wine, making them distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Despite identical names and grape composition, one is a red wine and the other is a white wine, making them distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 452,
+  "tokens_out": 172,
+  "elapsed": 4.979074954986572,
+  "error": null
+}

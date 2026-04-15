@@ -1,0 +1,13 @@
+{
+  "pair_id": "D018",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The term 'Reserve' signifies a distinct quality tier and a separate bottling from the producer's standard offering. This is a substantive difference, not a formatting variation, indicating a different wine in the producer's portfolio, similar to how a 'Reserva' and 'Gran Reserva' are considered different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The term 'Reserve' signifies a distinct quality tier and a separate bottling from the producer's standard offering. This is a substantive difference, not a formatting variation, indicating a different wine in the producer's portfolio, similar to how a 'Reserva' and 'Gran Reserva' are considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 1363,
+  "elapsed": 13.850037574768066,
+  "error": null
+}

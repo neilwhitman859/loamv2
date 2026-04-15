@@ -1,0 +1,13 @@
+{
+  "pair_id": "D036",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"Velenosi produces these as distinct bottlings; the 'Gold' designation signifies a specific selection or higher-tier version of the Brecciarolo wine, often involving different aging or grape selection. The distinct LWIN numbers confirm that the trade treats these as separate products rather than mere naming variations.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Velenosi produces these as distinct bottlings; the 'Gold' designation signifies a specific selection or higher-tier version of the Brecciarolo wine, often involving different aging or grape selection. The distinct LWIN numbers confirm that the trade treats these as separate products rather than mere naming variations.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 89,
+  "elapsed": 1.3854222297668457,
+  "error": null
+}

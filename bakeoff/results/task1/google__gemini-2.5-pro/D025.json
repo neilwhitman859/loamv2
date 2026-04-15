@@ -1,0 +1,13 @@
+{
+  "pair_id": "D025",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Both records refer to a vintage ('Millesime') Champagne from the producer Cattier. 'Brut' is the most common sweetness level for Champagne and is often implied. It is highly likely that 'Millesime' is simply an abbreviated name for the standard 'Brut Millesime' bottling, rather than a distinct wine with a different sweetness level.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both records refer to a vintage ('Millesime') Champagne from the producer Cattier. 'Brut' is the most common sweetness level for Champagne and is often implied. It is highly likely that 'Millesime' is simply an abbreviated name for the standard 'Brut Millesime' bottling, rather than a distinct wine with a different sweetness level.",
+  "parse_ok": true,
+  "tokens_in": 409,
+  "tokens_out": 1166,
+  "elapsed": 11.850104093551636,
+  "error": null
+}

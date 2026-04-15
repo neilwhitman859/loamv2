@@ -1,0 +1,26 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "openai/gpt-5-mini",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.75,
+  "wrong_facts": [
+    "Claims wine is 'certified biodynamic and vegan' — not verifiable from context data or ground truth; ground truth mentions biodynamic/organic practices are not confirmed this specifically",
+    "Describes vineyard as 'rocky slopes of the Dentelles de Montmirail' — ground truth says Les Routes vineyard is on clay with gravel and limestone colluviums near the Hautes Garrigues, not necessarily on the rocky slopes themselves",
+    "Comparable wine Domaine du Cayron is known as a traditional Grenache-dominant Gigondas, not particularly for 'peppery Syrah contribution' or 'minerally fruit' — it's a classic blend, making this comparison somewhat misleading",
+    "Santa Duc 'Les Hautes Garrigues' is described as having 'peppery Syrah contribution' but it is predominantly Grenache-based"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "Price range $30-$60 retail is not in context data",
+    "Cellar temperature 12-14°C is generic advice but not sourced",
+    "Drinking window 2026-2036 is fabricated/inferred"
+  ],
+  "reasoning": "The output correctly identifies the 100% Syrah composition and the 18-month oak aging, and makes a strong narrative about this being an unusual Syrah-forward Gigondas. However, the 'certified biodynamic and vegan' claim is unverifiable and potentially fabricated — ground truth doesn't confirm this certification. The soil description in the hook ('limestone scree and stony marl') doesn't match ground truth ('clay with gravel and limestone colluviums'). The price range is fabricated. The comparable wines section is somewhat misleading — Cayron is a classic Grenache producer, not a Syrah-forward one. The voice is strong and direct with good specificity and useful food pairings. The insider take is genuinely helpful. No banned words found. The fabricated price range triggers concern but since it's plausible and not a precise number like pH or blend %, I'm treating it as an unverifiable claim rather than applying the hard cap.",
+  "judge_tokens_in": 3558,
+  "judge_tokens_out": 526
+}

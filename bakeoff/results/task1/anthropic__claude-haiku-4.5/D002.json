@@ -1,0 +1,13 @@
+{
+  "pair_id": "D002",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The 'GG' designation (Grosses Gew\u00e4chs) indicates a specific German classification tier for dry Rieslings from top vineyard sites, representing a distinct quality/style tier from the base Altenberg Riesling. Different LWINs (1742543 vs 1226663) confirm these are separate bottlings. These would appear as distinct products in a wine encyclopedia or retailer listing.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The 'GG' designation (Grosses Gew\u00e4chs) indicates a specific German classification tier for dry Rieslings from top vineyard sites, representing a distinct quality/style tier from the base Altenberg Riesling. Different LWINs (1742543 vs 1226663) confirm these are separate bottlings. These would appear as distinct products in a wine encyclopedia or retailer listing.",
+  "parse_ok": true,
+  "tokens_in": 504,
+  "tokens_out": 118,
+  "elapsed": 3.9307451248168945,
+  "error": null
+}

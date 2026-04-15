@@ -1,0 +1,26 @@
+{
+  "wine_id": "5f36a577-de6e-459c-b69c-ebce3fd3ca94",
+  "wine_name": "Howard Park Leston Cabernet Sauvignon, Western Australia",
+  "tier": "B",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Hook claims the soils are 'Forest Grove ironstone' — this specific geological term is not in the context data and is not verified by ground truth, which describes the soils as 'free-draining gravelly loam over clay'. While ironstone may exist in parts of Margaret River, attributing this specific formation to the Leston vineyard is unverifiable and potentially fabricated.",
+    "The wine is described as a blend with 'a small percentage of Syrah' throughout, but ground truth says it is 'primarily Cabernet Sauvignon (single varietal)'. While the context data lists Syrah as a grape, the ground truth contradicts the emphasis on Syrah as a defining blending component.",
+    "The value assessment fabricates a price range of '$40-$50' which is not in the context data (prices listed as NONE PROVIDED).",
+    "Howard Park is described as 'a founding estate of the Margaret River region' — this is questionable; Howard Park was founded in 1986, well after Margaret River's pioneering estates like Vasse Felix (1967) and Cullen (1971)."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$40-$50 price range not in context data",
+    "Forest Grove ironstone soil type not verified",
+    "18 months French oak and 40% new oak details are NOT stated in the output but the output vaguely references 'extended period of maturation in French oak barriques' without specific numbers — this is acceptable"
+  ],
+  "reasoning": "The output is exceptionally well-written with strong voice, specificity, and usefulness — it reads like expert wine writing with real opinions and actionable information. However, correctness suffers from several issues: the hook's 'Forest Grove ironstone' claim is unverifiable and likely fabricated as a specific geological term; the repeated emphasis on Syrah as a key blending component contradicts ground truth which describes this as a single-varietal Cabernet; calling Howard Park a 'founding estate' of Margaret River is historically inaccurate; and the $40-$50 price is fabricated since no price data was provided. The hook's ironstone claim, while not provably wrong about the broader region, is presented with false specificity about the Leston vineyard site.",
+  "judge_tokens_in": 3818,
+  "judge_tokens_out": 549
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A011",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is a blend of Pinot Noir and Chardonnay, while Wine B is likely a Pinot Noir as indicated by its name; different grape compositions indicate different wines, even if they share the same producer and vineyard name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is a blend of Pinot Noir and Chardonnay, while Wine B is likely a Pinot Noir as indicated by its name; different grape compositions indicate different wines, even if they share the same producer and vineyard name.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 68,
+  "elapsed": 1.2649288177490234,
+  "error": null
+}

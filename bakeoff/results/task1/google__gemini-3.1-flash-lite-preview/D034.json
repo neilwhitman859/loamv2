@@ -1,0 +1,13 @@
+{
+  "pair_id": "D034",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.9,\n\"reasoning\": \"Valentin Zusslin produces distinct bottlings from the Bollenberg site, specifically differentiating between the 'Neuberg' lieu-dit and the general Bollenberg cuv\u00e9e. These are marketed as separate wines with different LWIN identifiers, indicating they are distinct bottlings rather than just a naming variation.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Valentin Zusslin produces distinct bottlings from the Bollenberg site, specifically differentiating between the 'Neuberg' lieu-dit and the general Bollenberg cuv\u00e9e. These are marketed as separate wines with different LWIN identifiers, indicating they are distinct bottlings rather than just a naming variation.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 90,
+  "elapsed": 1.7136623859405518,
+  "error": null
+}

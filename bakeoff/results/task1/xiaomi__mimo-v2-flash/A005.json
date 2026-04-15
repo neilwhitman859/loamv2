@@ -1,0 +1,13 @@
+{
+  "pair_id": "A005",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Catena Zapata, share the 'Agrelo Saint Felicien' name, and are white. The only difference is the explicit 'Semillon' suffix on Wine B, which is a varietal suffix difference alone, indicating Wine A is an abbreviation of the same cuv\u00e9e.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Catena Zapata, share the 'Agrelo Saint Felicien' name, and are white. The only difference is the explicit 'Semillon' suffix on Wine B, which is a varietal suffix difference alone, indicating Wine A is an abbreviation of the same cuv\u00e9e.",
+  "parse_ok": true,
+  "tokens_in": 494,
+  "tokens_out": 87,
+  "elapsed": 2.944199800491333,
+  "error": null
+}

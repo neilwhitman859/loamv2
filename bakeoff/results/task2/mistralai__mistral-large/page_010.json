@@ -1,0 +1,23 @@
+{
+  "page_id": "page_010",
+  "model": "mistralai/mistral-large",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Bonterra Cabernet Sauvignon 2023\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": \"organic\"\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Bonterra Cabernet Sauvignon 2023",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 71706,
+  "tokens_out": 104,
+  "elapsed": 39.391281843185425,
+  "error": null
+}

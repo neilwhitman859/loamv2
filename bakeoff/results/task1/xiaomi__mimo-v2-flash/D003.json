@@ -1,0 +1,13 @@
+{
+  "pair_id": "D003",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Chimney Rock) and are red Cabernet Sauvignon. The name 'Alpine Cabernet Sauvignon' is likely a specific vineyard designation or cuv\u00e9e name, but since the producer and grape are identical and no other distinguishing factors (like classification or color) are mentioned, they represent the same wine with just a name formatting difference.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Chimney Rock) and are red Cabernet Sauvignon. The name 'Alpine Cabernet Sauvignon' is likely a specific vineyard designation or cuv\u00e9e name, but since the producer and grape are identical and no other distinguishing factors (like classification or color) are mentioned, they represent the same wine with just a name formatting difference.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 103,
+  "elapsed": 1.8171374797821045,
+  "error": null
+}

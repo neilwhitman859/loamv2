@@ -1,0 +1,13 @@
+{
+  "pair_id": "A020",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, vineyard, and color. The difference in grape variety name is due to one being an abbreviated form, as 'Viura' is a synonym for 'Sauvignon Blanc' in some regions, and the LWIN number suggests a specific wine identity that aligns with the detailed grape information.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, vineyard, and color. The difference in grape variety name is due to one being an abbreviated form, as 'Viura' is a synonym for 'Sauvignon Blanc' in some regions, and the LWIN number suggests a specific wine identity that aligns with the detailed grape information.",
+  "parse_ok": true,
+  "tokens_in": 477,
+  "tokens_out": 89,
+  "elapsed": 1.5242412090301514,
+  "error": null
+}

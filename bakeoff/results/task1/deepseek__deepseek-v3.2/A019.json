@@ -1,0 +1,13 @@
+{
+  "pair_id": "A019",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Wine B is explicitly 'True Colours Pinot Noir', which appears to be the full varietal name for Wine A, which is simply 'True Colours' but lists Pinot Noir and Merlot Noir as its grapes. The key rule states that a varietal suffix difference alone usually means the same wine, as the shorter name is an abbreviation. There is no evidence the producer makes multiple distinct 'True Colours' wines with different grapes from the same source.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Wine B is explicitly 'True Colours Pinot Noir', which appears to be the full varietal name for Wine A, which is simply 'True Colours' but lists Pinot Noir and Merlot Noir as its grapes. The key rule states that a varietal suffix difference alone usually means the same wine, as the shorter name is an abbreviation. There is no evidence the producer makes multiple distinct 'True Colours' wines with different grapes from the same source.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 118,
+  "elapsed": 4.025804758071899,
+  "error": null
+}

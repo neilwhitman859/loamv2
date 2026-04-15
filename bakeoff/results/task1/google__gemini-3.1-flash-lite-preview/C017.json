@@ -1,0 +1,13 @@
+{
+  "pair_id": "C017",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"The addition of 'Riesling' in Wine B is a varietal clarification rather than a change in wine type, as Forster Kirchenst\u00fcck is a famous Riesling vineyard. Both records refer to the same producer, vineyard, and Pr\u00e4dikat level (Sp\u00e4tlese), indicating they represent the same bottling.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The addition of 'Riesling' in Wine B is a varietal clarification rather than a change in wine type, as Forster Kirchenst\u00fcck is a famous Riesling vineyard. Both records refer to the same producer, vineyard, and Pr\u00e4dikat level (Sp\u00e4tlese), indicating they represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 90,
+  "elapsed": 1.8893623352050781,
+  "error": null
+}

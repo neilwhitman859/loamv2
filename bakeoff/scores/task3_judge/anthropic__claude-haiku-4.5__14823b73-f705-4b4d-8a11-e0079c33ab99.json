@@ -1,0 +1,28 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "anthropic/claude-haiku-4.5",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "Hook claims Hunter Valley has 'cool maritime influence' — Hunter Valley is actually warm and humid, not cool maritime; the Tasman Sea moderates but the region is classified as warm",
+    "Terroir section mentions 'altitude near the Great Dividing Range' as a moderating factor — Hunter Valley vineyards are low-altitude, not significantly moderated by the Great Dividing Range",
+    "Terroir section mentions 'volcanic basalt and black silty loam over alkaline clay' — this is not verified for Tyrrell's Short Flat vineyard and may be fabricated or confused with other Hunter sub-regions",
+    "Comparable wines section says Graves Blanc is 'Sauvignon Blanc-based' — Domaine de Chevalier Blanc and Château de Fieuzal Blanc are Sauvignon Blanc/Semillon blends, not purely Sauvignon Blanc-based (though Sauvignon often dominates)",
+    "Does not mention Short Flat vineyard or 1923 plantings, which are key provenance facts",
+    "Cellar recommendation says 'entering its sweet spot at five years old' for the 2015 — but the ground truth says Tyrrell's doesn't release until 5 years of age, so at release it's just beginning, not in its sweet spot",
+    "Value assessment mentions 'Tyrrell's Vat 101' as a comparable — Vat 101 is actually a Chardonnay, not a Semillon"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "15-20 years aging potential is a reasonable estimate but not in context data",
+    "50-55°F storage temperature is general wine knowledge, not fabricated per se"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity, and genuinely useful food pairings and comparisons. However, there are several factual issues: the characterization of Hunter Valley as having 'cool maritime influence' is misleading, the mention of volcanic basalt soils for Tyrrell's is unverified and likely wrong for Short Flat, and calling Vat 101 a comparable Semillon when it's actually a Chardonnay is a clear error. The stainless steel/no oak claim is correct per ground truth, which is good. The omission of Short Flat vineyard and 1923 plantings is a missed opportunity. The Graves comparison calling it 'Sauvignon Blanc-based' is an oversimplification. No banned words found, and the voice is direct, opinionated, and specific throughout.",
+  "judge_tokens_in": 3857,
+  "judge_tokens_out": 625
+}

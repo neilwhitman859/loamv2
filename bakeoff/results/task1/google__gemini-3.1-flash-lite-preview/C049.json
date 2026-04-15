@@ -1,0 +1,13 @@
+{
+  "pair_id": "C049",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines have different colors (white vs. red) and distinct LWIN identifiers, indicating they are separate bottlings. Furthermore, 'Brut Nature' and 'Brut' represent different sweetness levels in sparkling wine production, which classifies them as distinct products.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors (white vs. red) and distinct LWIN identifiers, indicating they are separate bottlings. Furthermore, 'Brut Nature' and 'Brut' represent different sweetness levels in sparkling wine production, which classifies them as distinct products.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 80,
+  "elapsed": 2.0016283988952637,
+  "error": null
+}

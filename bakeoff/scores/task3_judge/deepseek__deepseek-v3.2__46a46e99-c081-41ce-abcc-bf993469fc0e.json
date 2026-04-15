@@ -1,0 +1,29 @@
+{
+  "wine_id": "46a46e99-c081-41ce-abcc-bf993469fc0e",
+  "wine_name": "Kir Yianni Ramnista, Naoussa",
+  "tier": "B",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.3,
+  "wrong_facts": [
+    "Oak aging stated as 12 months — ground truth is 18 months in oak plus 6 months bottle aging",
+    "Hook claims 'oldest vineyards' — not supported by context or ground truth; ground truth says 'Ramnista blocks' at 280-330m, no mention of oldest vines",
+    "'Sun-baked slopes of Mount Vermio' is misleading — the vineyard has southeast exposure at 280-330m, not described as sun-baked",
+    "Soils described as 'sandy clay and limestone over schist bedrock' — not verifiable from context or ground truth, potentially fabricated",
+    "Fermentation described as 'stainless steel tanks with selected yeasts' — ground truth says one-third in open-top tanks with pigeage, plus 6-day cold soak",
+    "2017 described as 'a hot, challenging year in Naoussa' — unverifiable claim presented as fact",
+    "Clonal research commitment mentioned — not in context data or ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "12 months oak aging (ground truth is 18 months)",
+    "150 to 450 meters elevation range for Naoussa PDO (context only shows 280-330m for the specific vineyard)",
+    "60-minute decant recommendation"
+  ],
+  "reasoning": "The output has strong voice, specificity, and usefulness — it reads well, names real comparables, gives actionable food pairings, and has a clear point of view. However, correctness is significantly compromised. The oak aging duration is fabricated as 12 months when ground truth says 18 months. The vinification description misses the cold soak and open-top tank pigeage entirely, instead fabricating stainless steel fermentation. The soil description and elevation range for the broader appellation are unverifiable. The hook's 'oldest vineyards' claim is unsupported. Multiple specific numbers are fabricated. The 12-month oak claim triggers the hard penalty for fabricated numbers, capping correctness at 1.5, but I'm giving 2.0 because some claims like Mount Vermio location and the Barolo comparison are reasonable, and the overall structure shows knowledge — though the fabricated specifics are damaging.",
+  "judge_tokens_in": 3571,
+  "judge_tokens_out": 552
+}

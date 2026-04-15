@@ -1,0 +1,23 @@
+{
+  "page_id": "page_015",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\"wines_found\": [{\"name\": \"Bonterra Zinfandel\", \"vintage_year\": 2022, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": \"organic\"}]}\n```",
+  "wines_found": [
+    {
+      "name": "Bonterra Zinfandel",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 71249,
+  "tokens_out": 74,
+  "elapsed": 2.1808905601501465,
+  "error": null
+}

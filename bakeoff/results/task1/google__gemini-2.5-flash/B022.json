@@ -1,0 +1,13 @@
+{
+  "pair_id": "B022",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white Extra Brut NV, while Wine B is a Ros\u00e9 Extra Brut NV. The difference in color (white vs. ros\u00e9) indicates they are distinct bottlings, even if other aspects of the name are similar.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white Extra Brut NV, while Wine B is a Ros\u00e9 Extra Brut NV. The difference in color (white vs. ros\u00e9) indicates they are distinct bottlings, even if other aspects of the name are similar.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 70,
+  "elapsed": 2.03594970703125,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B040",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different varietal wines from the same producer and region: Wine A is Albari\u00f1o/Alvarinho, while Wine B is Barbera. They also differ in color, with A being white and B red, so they would be separate bottlings rather than the same wine under variant naming.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different varietal wines from the same producer and region: Wine A is Albari\u00f1o/Alvarinho, while Wine B is Barbera. They also differ in color, with A being white and B red, so they would be separate bottlings rather than the same wine under variant naming.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 83,
+  "elapsed": 2.7918035984039307,
+  "error": null
+}

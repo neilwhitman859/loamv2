@@ -1,0 +1,13 @@
+{
+  "pair_id": "D029",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, Boekenhoutskloof, and have the same grape variety, Cabernet Sauvignon. The difference in region (Franschhoek vs Coastal Region) may indicate a difference in vineyard location, but it does not necessarily imply a different wine if the vineyard name is the same or if the region is a broader area encompassing the specific location.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, Boekenhoutskloof, and have the same grape variety, Cabernet Sauvignon. The difference in region (Franschhoek vs Coastal Region) may indicate a difference in vineyard location, but it does not necessarily imply a different wine if the vineyard name is the same or if the region is a broader area encompassing the specific location.",
+  "parse_ok": true,
+  "tokens_in": 455,
+  "tokens_out": 97,
+  "elapsed": 3.0970897674560547,
+  "error": null
+}

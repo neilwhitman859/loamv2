@@ -1,0 +1,13 @@
+{
+  "pair_id": "D014",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"Heidsieck & Co Monopole 'Dry Monopole' is the standard non-vintage Brut bottling for this producer, and the terms are used interchangeably in the market to refer to the same wine. The difference in LWIN codes often reflects legacy database entries for the same product, and the naming convention represents a common abbreviation of the full brand name.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Heidsieck & Co Monopole 'Dry Monopole' is the standard non-vintage Brut bottling for this producer, and the terms are used interchangeably in the market to refer to the same wine. The difference in LWIN codes often reflects legacy database entries for the same product, and the naming convention represents a common abbreviation of the full brand name.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 99,
+  "elapsed": 1.7928881645202637,
+  "error": null
+}

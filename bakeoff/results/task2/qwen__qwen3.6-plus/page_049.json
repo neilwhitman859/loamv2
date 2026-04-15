@@ -1,0 +1,33 @@
+{
+  "page_id": "page_049",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Merlot\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": null, \"oak\": {\"vessel\": null, \"months\": null, \"new_pct\": null, \"origin\": \"American\"}, \"cases_produced\": null, \"chemistry\": {\"ph\": null, \"ta_g_l\": null, \"rs_g_l\": null, \"so2_total_mg_l\": null}, \"winemaker\": \"Jessica Tomei\", \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Merlot",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": null,
+        "months": null,
+        "new_pct": null,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 42810,
+  "tokens_out": 835,
+  "elapsed": 19.868584632873535,
+  "error": null
+}

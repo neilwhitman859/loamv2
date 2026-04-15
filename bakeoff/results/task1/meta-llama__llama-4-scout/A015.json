@@ -1,0 +1,13 @@
+{
+  "pair_id": "A015",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The producer, vineyard, and color are the same. The difference in name formatting, with Wine A being a shorter version of Wine B, and Wine B specifying the grape variety, supports the conclusion that they are the same wine. The LWIN number for Wine B further supports a detailed match.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The producer, vineyard, and color are the same. The difference in name formatting, with Wine A being a shorter version of Wine B, and Wine B specifying the grape variety, supports the conclusion that they are the same wine. The LWIN number for Wine B further supports a detailed match.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 82,
+  "elapsed": 1.5226283073425293,
+  "error": null
+}

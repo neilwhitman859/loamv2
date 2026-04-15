@@ -1,0 +1,13 @@
+{
+  "pair_id": "A042",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Weinert), same vineyard/cuv\u00e9e (Tonel Unico No. 183), same grape variety (Cabernet Franc), and same style (red wine). The difference in grape variety mention is likely a formatting variation, as Wine A is explicitly stated to be Cabernet Franc and Wine B has it mentioned directly.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Weinert), same vineyard/cuv\u00e9e (Tonel Unico No. 183), same grape variety (Cabernet Franc), and same style (red wine). The difference in grape variety mention is likely a formatting variation, as Wine A is explicitly stated to be Cabernet Franc and Wine B has it mentioned directly.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 94,
+  "elapsed": 1.6831417083740234,
+  "error": null
+}

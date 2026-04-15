@@ -1,0 +1,26 @@
+{
+  "wine_id": "4cd8b76a-b4fc-43cf-83ae-8a0c84e7673e",
+  "wine_name": "Barefoot Buttery Chardonnay, California",
+  "tier": "C",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "The hook says 'before you even pull the cork' — Barefoot Buttery Chardonnay almost certainly uses a screw cap, not a cork",
+    "The value assessment claims higher prices reflect 1.5L or 3L formats, but this is speculative and not supported by context data — the $23.99 prices could simply be different retailers with different markups"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "acidity: 1",
+    "tannin: 1",
+    "body: 4",
+    "sweetness: 2",
+    "alcohol: 4"
+  ],
+  "reasoning": "The output is impressively written with strong voice, real specificity, and genuine usefulness. It correctly identifies E&J Gallo ownership, Central Valley sourcing, Jennifer Wall is not mentioned but the winemaking team reference is acceptable. The malolactic fermentation and oak alternatives claims are plausible and align with ground truth about the 'buttery' style descriptor. The cork reference in the hook is likely wrong for this price tier product. The sensory numbers are fabricated (no ABV, pH, or sensory data in context), but sensory scores are arguably subjective assessments rather than factual claims from tech sheets, so I'm not applying the hard fabrication cap. The $23.99 explanation as larger formats is speculative. Overall strong output with minor factual issues.",
+  "judge_tokens_in": 3476,
+  "judge_tokens_out": 349
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C013",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": -0.95, \"reasoning\": \"Both wines share the same producer (Dr. Wehrheim), the same vineyard (Kastanienbusch/Kastanienbush, a clear spelling variation), the same grape (Riesling), and the same Pr\u00e4dikat level (Auslese). The only differences are the order of words and a minor spelling variation, which are formatting issues, not substantive differences in bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.0,
+  "reasoning": "Both wines share the same producer (Dr. Wehrheim), the same vineyard (Kastanienbusch/Kastanienbush, a clear spelling variation), the same grape (Riesling), and the same Pr\u00e4dikat level (Auslese). The only differences are the order of words and a minor spelling variation, which are formatting issues, not substantive differences in bottling.",
+  "parse_ok": true,
+  "tokens_in": 460,
+  "tokens_out": 104,
+  "elapsed": 5.7052271366119385,
+  "error": null
+}

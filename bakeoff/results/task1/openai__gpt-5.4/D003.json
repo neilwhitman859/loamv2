@@ -1,0 +1,13 @@
+{
+  "pair_id": "D003",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.79,\"reasoning\":\"Both wines are from Chimney Rock and are red Cabernet Sauvignon, but the presence of the specific cuv\u00e9e/vineyard designation 'Alpine' indicates a distinct bottling rather than a formatting variation. Since producers often bottle both a general Cabernet Sauvignon and a vineyard-designated Cabernet separately, these would likely appear on separate encyclopedia pages.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.79,
+  "reasoning": "Both wines are from Chimney Rock and are red Cabernet Sauvignon, but the presence of the specific cuv\u00e9e/vineyard designation 'Alpine' indicates a distinct bottling rather than a formatting variation. Since producers often bottle both a general Cabernet Sauvignon and a vineyard-designated Cabernet separately, these would likely appear on separate encyclopedia pages.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 89,
+  "elapsed": 2.808464527130127,
+  "error": null
+}

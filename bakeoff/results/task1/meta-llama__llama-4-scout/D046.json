@@ -1,0 +1,13 @@
+{
+  "pair_id": "D046",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, Maris, and the same vineyard/cuv\u00e9e, Nymphe Emue. The color of both wines is rose, and despite Wine B being explicitly labeled as a rose, there is no indication of different grapes or other distinguishing factors that would classify them as different wines.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, Maris, and the same vineyard/cuv\u00e9e, Nymphe Emue. The color of both wines is rose, and despite Wine B being explicitly labeled as a rose, there is no indication of different grapes or other distinguishing factors that would classify them as different wines.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 85,
+  "elapsed": 1.0893969535827637,
+  "error": null
+}

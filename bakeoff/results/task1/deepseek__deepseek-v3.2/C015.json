@@ -1,0 +1,13 @@
+{
+  "pair_id": "C015",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.9, \"reasoning\": \"The wines have different lot/cask numbers (No. 10 vs No. 15), which are distinct bottlings from the same producer and style. Different lot numbers at the same Pr\u00e4dikat level (or equivalent) indicate different wines, as they represent separate releases or cuv\u00e9es.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different lot/cask numbers (No. 10 vs No. 15), which are distinct bottlings from the same producer and style. Different lot numbers at the same Pr\u00e4dikat level (or equivalent) indicate different wines, as they represent separate releases or cuv\u00e9es.",
+  "parse_ok": true,
+  "tokens_in": 467,
+  "tokens_out": 83,
+  "elapsed": 8.508369445800781,
+  "error": null
+}

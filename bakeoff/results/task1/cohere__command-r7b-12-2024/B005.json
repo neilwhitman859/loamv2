@@ -1,0 +1,13 @@
+{
+  "pair_id": "B005",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is a red wine made from Pinot Noir grapes, while Wine B is a white wine made from Chardonnay Blanc grapes. This is a clear indication of different wines, as the grape varieties are distinct and would be classified separately in an encyclopedia.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is a red wine made from Pinot Noir grapes, while Wine B is a white wine made from Chardonnay Blanc grapes. This is a clear indication of different wines, as the grape varieties are distinct and would be classified separately in an encyclopedia.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 72,
+  "elapsed": 1.665795087814331,
+  "error": null
+}

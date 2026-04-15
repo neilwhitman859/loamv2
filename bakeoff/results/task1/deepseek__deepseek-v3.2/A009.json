@@ -1,0 +1,13 @@
+{
+  "pair_id": "A009",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Wine A's listed grapes are Pinot Gris and Pinot Noir, but Wine B is specifically labeled as Pinot Gris, suggesting Wine A may be a blend. However, the key rule states that a varietal suffix difference alone (Naumberg vs Naumberg Pinot Gris) usually indicates the same wine, as the shorter name is an abbreviation. There is no evidence the producer makes multiple distinct wines from the Naumberg vineyard with different grapes, so they likely represent the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Wine A's listed grapes are Pinot Gris and Pinot Noir, but Wine B is specifically labeled as Pinot Gris, suggesting Wine A may be a blend. However, the key rule states that a varietal suffix difference alone (Naumberg vs Naumberg Pinot Gris) usually indicates the same wine, as the shorter name is an abbreviation. There is no evidence the producer makes multiple distinct wines from the Naumberg vineyard with different grapes, so they likely represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 467,
+  "tokens_out": 125,
+  "elapsed": 3.571263074874878,
+  "error": null
+}

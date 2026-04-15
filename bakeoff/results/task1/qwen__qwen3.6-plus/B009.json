@@ -1,0 +1,13 @@
+{
+  "pair_id": "B009",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Although the names are minor formatting variations of the same base cuv\u00e9e, the explicit difference in color (white vs. ros\u00e9) indicates they are distinct bottlings. Per the classification rules, different colors represent separate wines that consumers would encounter independently, and Bellavista produces both a white and ros\u00e9 version of its Alma Franciacorta.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the names are minor formatting variations of the same base cuv\u00e9e, the explicit difference in color (white vs. ros\u00e9) indicates they are distinct bottlings. Per the classification rules, different colors represent separate wines that consumers would encounter independently, and Bellavista produces both a white and ros\u00e9 version of its Alma Franciacorta.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 1518,
+  "elapsed": 28.897757530212402,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A036",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The grapes are completely different: Wine A uses Pinot Noir and Chardonnay, while Wine B is explicitly Sauvignon Blanc. Different grape varieties always indicate different wines, even when the producer and base name match.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The grapes are completely different: Wine A uses Pinot Noir and Chardonnay, while Wine B is explicitly Sauvignon Blanc. Different grape varieties always indicate different wines, even when the producer and base name match.",
+  "parse_ok": true,
+  "tokens_in": 455,
+  "tokens_out": 69,
+  "elapsed": 5.236433744430542,
+  "error": null
+}

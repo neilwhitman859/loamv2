@@ -1,0 +1,13 @@
+{
+  "pair_id": "B001",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different grape varieties, Sauvignon Blanc and Sauvignon Gris respectively, which indicates they are different wines according to the given rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different grape varieties, Sauvignon Blanc and Sauvignon Gris respectively, which indicates they are different wines according to the given rules.",
+  "parse_ok": true,
+  "tokens_in": 504,
+  "tokens_out": 53,
+  "elapsed": 1.1387102603912354,
+  "error": null
+}

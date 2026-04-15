@@ -1,0 +1,13 @@
+{
+  "pair_id": "A020",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both records share the same producer and core name, with Wine B simply appending the grape variety to the label. Since Wine A's listed grape composition is explicitly Sauvignon Blanc, the difference is purely a naming convention or abbreviation rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both records share the same producer and core name, with Wine B simply appending the grape variety to the label. Since Wine A's listed grape composition is explicitly Sauvignon Blanc, the difference is purely a naming convention or abbreviation rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 463,
+  "tokens_out": 2175,
+  "elapsed": 40.99588894844055,
+  "error": null
+}

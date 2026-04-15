@@ -1,0 +1,13 @@
+{
+  "pair_id": "C028",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"The wines represent different classification tiers within the Mayu producer's portfolio: Gran Reserva versus Reserva. In wine classification, these tiers denote distinct aging processes and quality levels, meaning they are marketed and sold as separate bottlings.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The wines represent different classification tiers within the Mayu producer's portfolio: Gran Reserva versus Reserva. In wine classification, these tiers denote distinct aging processes and quality levels, meaning they are marketed and sold as separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 74,
+  "elapsed": 1.614314317703247,
+  "error": null
+}

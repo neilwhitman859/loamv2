@@ -1,0 +1,25 @@
+{
+  "wine_id": "7ab3daf6-3b5f-41c7-9507-d57dee47e905",
+  "wine_name": "Vasse Felix Filius Cabernet, Margaret River",
+  "tier": "A",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "The blend description mentions Merlot as a component, but the ground truth blend is 93% Cabernet Sauvignon, 5.5% Malbec, 1.5% Petit Verdot — no Merlot. The context data lists MERLOT NOIR but with no percentage, and the ground truth confirms it's not in the blend.",
+    "The output says 4% Malbec (Cot) and 1% Petit Verdot, but ground truth says 5.5% Malbec and 1.5% Petit Verdot.",
+    "Oak aging stated as 'around 12 months' but ground truth says 11 months in French oak.",
+    "The output does not mention wild-yeast fermentation in open-top fermenters, which is the actual method per ground truth."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "12 months oak aging (ground truth is 11 months)",
+    "The blend percentages are slightly off from ground truth: 4% Malbec vs 5.5%, 1% Petit Verdot vs 1.5%"
+  ],
+  "reasoning": "The hook is correct — 'Filius' does mean 'son' in Latin and Vasse Felix is Margaret River's founding estate, both verified by ground truth. However, the output includes Merlot as a blend component when the ground truth blend has no Merlot (93% Cab, 5.5% Malbec, 1.5% PV). The context data listed Merlot Noir with no percentage, which the model interpreted as present; this is a meaningful error since it's discussed at length. The oak aging is stated as 'around 12 months' when ground truth says 11 months — close but fabricated. The blend percentages from context data (4% Cot, 1% PV) don't match ground truth (5.5% Malbec, 1.5% PV), but the model used what it was given. The voice is excellent — direct, opinionated, specific, no banned words. Terroir description is detailed and largely accurate. Food pairings are creative and well-reasoned. The insider take is sharp and actionable.",
+  "judge_tokens_in": 4120,
+  "judge_tokens_out": 553
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B003",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a red wine and Wine B is a white wine, which are different colors and therefore distinct bottlings. The producer is the same, but the color difference alone makes them different wines a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a red wine and Wine B is a white wine, which are different colors and therefore distinct bottlings. The producer is the same, but the color difference alone makes them different wines a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 494,
+  "tokens_out": 70,
+  "elapsed": 1.7742395401000977,
+  "error": null
+}

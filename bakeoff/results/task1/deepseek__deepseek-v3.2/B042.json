@@ -1,0 +1,13 @@
+{
+  "pair_id": "B042",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.95, \"reasoning\": \"Wine A is a ros\u00e9, while Wine B is a white wine made from Chardonnay Blanc. Different colors and different grape composition (Wine A's grape is unspecified but implied to be different for ros\u00e9) always indicate distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "Wine A is a ros\u00e9, while Wine B is a white wine made from Chardonnay Blanc. Different colors and different grape composition (Wine A's grape is unspecified but implied to be different for ros\u00e9) always indicate distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 75,
+  "elapsed": 4.549312353134155,
+  "error": null
+}

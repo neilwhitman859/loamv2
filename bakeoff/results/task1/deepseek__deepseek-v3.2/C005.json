@@ -1,0 +1,13 @@
+{
+  "pair_id": "C005",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer (Jean Noel Haton), are Brut Ros\u00e9, and share the same style and color. The only difference is 'NV' (non-vintage) designation, which, for a producer's standard Brut Ros\u00e9, typically indicates the same continuous bottling rather than a distinct cuv\u00e9e.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer (Jean Noel Haton), are Brut Ros\u00e9, and share the same style and color. The only difference is 'NV' (non-vintage) designation, which, for a producer's standard Brut Ros\u00e9, typically indicates the same continuous bottling rather than a distinct cuv\u00e9e.",
+  "parse_ok": true,
+  "tokens_in": 443,
+  "tokens_out": 89,
+  "elapsed": 2.8250443935394287,
+  "error": null
+}

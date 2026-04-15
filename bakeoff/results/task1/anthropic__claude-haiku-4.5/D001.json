@@ -1,0 +1,13 @@
+{
+  "pair_id": "D001",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine A includes 'Nr23' (lot/cask number 23), while Wine B omits this designation. In German Riesling production, especially for Grosse Lage wines, lot numbers typically indicate distinct bottlings from different parcels or production batches. This numeric suffix represents a specific, distinct bottling that a consumer would encounter separately from the base Altenberg Alte Reben Grosse Lage.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A includes 'Nr23' (lot/cask number 23), while Wine B omits this designation. In German Riesling production, especially for Grosse Lage wines, lot numbers typically indicate distinct bottlings from different parcels or production batches. This numeric suffix represents a specific, distinct bottling that a consumer would encounter separately from the base Altenberg Alte Reben Grosse Lage.",
+  "parse_ok": true,
+  "tokens_in": 522,
+  "tokens_out": 121,
+  "elapsed": 5.481019735336304,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D043",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines 'Polifonia de Purcari Note #1' and 'Polifonia De Purcari Note #2' have different numbers in their names, suggesting they are different cuv\u00e9es or bottlings from the same producer, Timbrus. Although they are both red wines, the difference in their names and LWIN numbers indicates they are likely different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines 'Polifonia de Purcari Note #1' and 'Polifonia De Purcari Note #2' have different numbers in their names, suggesting they are different cuv\u00e9es or bottlings from the same producer, Timbrus. Although they are both red wines, the difference in their names and LWIN numbers indicates they are likely different wines.",
+  "parse_ok": true,
+  "tokens_in": 506,
+  "tokens_out": 99,
+  "elapsed": 1.624941110610962,
+  "error": null
+}

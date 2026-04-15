@@ -1,0 +1,13 @@
+{
+  "pair_id": "C034",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"While both wines are from the same producer, vineyard, and Pr\u00e4dikat level (Auslese), the star system used by Markus Molitor indicates distinct bottlings. The '2*' and '3*' denote different levels of grape selection and quality, resulting in two separate wines that are marketed, priced, and reviewed as distinct products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "While both wines are from the same producer, vineyard, and Pr\u00e4dikat level (Auslese), the star system used by Markus Molitor indicates distinct bottlings. The '2*' and '3*' denote different levels of grape selection and quality, resulting in two separate wines that are marketed, priced, and reviewed as distinct products.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 1176,
+  "elapsed": 12.124908208847046,
+  "error": null
+}

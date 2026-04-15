@@ -1,0 +1,13 @@
+{
+  "pair_id": "C025",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct bottlings from Ferrari: one is the white Giulio Ferrari Riserva del Fondatore, while the other is the ros\u00e9 Giulio Ferrari Riserva Fondatore Ros\u00e9. The color difference alone makes them different wines, and the names indicate separate cuv\u00e9es rather than simple formatting variants.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct bottlings from Ferrari: one is the white Giulio Ferrari Riserva del Fondatore, while the other is the ros\u00e9 Giulio Ferrari Riserva Fondatore Ros\u00e9. The color difference alone makes them different wines, and the names indicate separate cuv\u00e9es rather than simple formatting variants.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 83,
+  "elapsed": 4.088292837142944,
+  "error": null
+}

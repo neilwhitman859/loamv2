@@ -1,0 +1,13 @@
+{
+  "pair_id": "D049",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer and vineyard (Kastanienbusch) but have different vineyard designations (GG vs Koppel), indicating distinct bottlings. The 'Koppel' designation suggests a specific parcel or cuv\u00e9e within the vineyard, making them separate wines a consumer would encounter.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer and vineyard (Kastanienbusch) but have different vineyard designations (GG vs Koppel), indicating distinct bottlings. The 'Koppel' designation suggests a specific parcel or cuv\u00e9e within the vineyard, making them separate wines a consumer would encounter.",
+  "parse_ok": true,
+  "tokens_in": 516,
+  "tokens_out": 89,
+  "elapsed": 2.778918504714966,
+  "error": null
+}

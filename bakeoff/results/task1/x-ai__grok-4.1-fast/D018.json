@@ -1,0 +1,13 @@
+{
+  "pair_id": "D018",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Both wines are red Cabernet Sauvignon from Truchard, but 'Reserve Cabernet Sauvignon' indicates a distinct classification tier or selection, akin to Reserva vs. Gran Reserva, making them separate bottlings consumers would encounter differently. The different LWIN numbers (1300707 vs. 2716635) confirm they are unique entries. The varietal suffix rule does not apply, as 'Reserve' denotes a quality level rather than mere abbreviation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Both wines are red Cabernet Sauvignon from Truchard, but 'Reserve Cabernet Sauvignon' indicates a distinct classification tier or selection, akin to Reserva vs. Gran Reserva, making them separate bottlings consumers would encounter differently. The different LWIN numbers (1300707 vs. 2716635) confirm they are unique entries. The varietal suffix rule does not apply, as 'Reserve' denotes a quality level rather than mere abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 565,
+  "tokens_out": 623,
+  "elapsed": 4.175541162490845,
+  "error": null
+}

@@ -1,0 +1,27 @@
+{
+  "wine_id": "21aa403d-a5ad-43f2-99d9-560dc9e66587",
+  "wine_name": "Lafage, Côtes Catalanes Vieilles Vignes Tessellae",
+  "tier": "B",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.0,
+  "voice": 2.0,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 2.7,
+  "wrong_facts": [
+    "Hook calls it a 'field blend' — ground truth says it's 100% Carignan, not a blend",
+    "Hook says carbonic maceration transforms 'Carignan and Mourvèdre' — the wine is 100% Carignan",
+    "Wine summary describes blend of 'old-vine Carignan, Grenache, and Mourvèdre' — it's 100% Carignan",
+    "Monastrell is not 'known locally as Monastrell' in Roussillon — Monastrell is the Spanish name; in France it's Mourvèdre",
+    "Food pairing references 'peppery Syrah component' — there is no Syrah in this wine per ground truth",
+    "Vinification claims concrete vat aging — not verifiable from context or ground truth, likely fabricated",
+    "Comparable wine Borie de Maurel 'Esprit de Font Caude' described as Côtes du Roussillon — this wine is actually from Minervois"
+  ],
+  "banned_words_found": [
+    "masterclass"
+  ],
+  "fabricated_numbers": [],
+  "reasoning": "The most critical error is treating this as a multi-grape blend when ground truth confirms it's 100% Carignan. The hook's 'field blend' claim and references to Syrah, Grenache, and Mourvèdre components throughout are fundamentally wrong. The model was misled by the context data listing multiple grapes but should not have confidently described blend components. The hook contains a provably wrong claim ('field blend'), triggering the hard cap. 'Masterclass' triggers the banned word penalty on voice. The terroir and vinification details about schist, Tramontane, and carbonic maceration are plausible and add specificity, but the core identity of the wine is wrong throughout.",
+  "judge_tokens_in": 3454,
+  "judge_tokens_out": 457
+}

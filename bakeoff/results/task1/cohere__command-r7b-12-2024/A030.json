@@ -1,0 +1,13 @@
+{
+  "pair_id": "A030",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is made from 100% Semillon, while Wine B is a blend of Sauvignon and Semillon. This difference in grape variety is a clear indicator that the wines are distinct, despite being produced by the same producer and having the same color.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is made from 100% Semillon, while Wine B is a blend of Sauvignon and Semillon. This difference in grape variety is a clear indicator that the wines are distinct, despite being produced by the same producer and having the same color.",
+  "parse_ok": true,
+  "tokens_in": 436,
+  "tokens_out": 76,
+  "elapsed": 1.6854758262634277,
+  "error": null
+}

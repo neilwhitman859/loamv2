@@ -1,0 +1,13 @@
+{
+  "pair_id": "B031",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a red Merlot from Porcupine Ridge, while Wine B is a white Sauvignon Blanc from the same Porcupine Ridge cuv\u00e9e by Boekenhoutskloof. Different grape varieties (Merlot vs Sauvignon Blanc) and different colors (red vs white) mean they are distinct wines, even from the same producer and vineyard designation. The varietal suffix rule does not apply here due to the explicit grape and color differences.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a red Merlot from Porcupine Ridge, while Wine B is a white Sauvignon Blanc from the same Porcupine Ridge cuv\u00e9e by Boekenhoutskloof. Different grape varieties (Merlot vs Sauvignon Blanc) and different colors (red vs white) mean they are distinct wines, even from the same producer and vineyard designation. The varietal suffix rule does not apply here due to the explicit grape and color differences.",
+  "parse_ok": true,
+  "tokens_in": 579,
+  "tokens_out": 505,
+  "elapsed": 5.581153154373169,
+  "error": null
+}

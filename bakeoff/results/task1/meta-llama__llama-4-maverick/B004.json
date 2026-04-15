@@ -1,0 +1,13 @@
+{
+  "pair_id": "B004",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a red wine made from Pinot Noir, while Wine B is a white wine made from a blend of Chardonnay Blanc and Pinot Noir, indicating different grape compositions and colors, which are key factors in determining they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a red wine made from Pinot Noir, while Wine B is a white wine made from a blend of Chardonnay Blanc and Pinot Noir, indicating different grape compositions and colors, which are key factors in determining they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 72,
+  "elapsed": 1.1455342769622803,
+  "error": null
+}

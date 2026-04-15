@@ -1,0 +1,13 @@
+{
+  "pair_id": "B045",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is red while Wine B is white, indicating different colors and thus distinct wines per the rules. The names differ in 'Note #1' vs 'Note #3', suggesting separate bottlings in the Polifonia de Purcari series from the same producer. Different LWIN numbers (2695026 vs 2695055) further confirm they are treated as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is red while Wine B is white, indicating different colors and thus distinct wines per the rules. The names differ in 'Note #1' vs 'Note #3', suggesting separate bottlings in the Polifonia de Purcari series from the same producer. Different LWIN numbers (2695026 vs 2695055) further confirm they are treated as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 580,
+  "tokens_out": 509,
+  "elapsed": 4.437934875488281,
+  "error": null
+}

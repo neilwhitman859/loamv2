@@ -1,0 +1,13 @@
+{
+  "pair_id": "A002",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same name 'Clone 174' with the only difference being the varietal suffix 'Syrah' appended to Wine B, indicating that Wine B is likely an expanded or more specific version of Wine A's name. The producer 'Firestone' is the same for both, and Wine A's grape is 'SYRAH', matching the suffix in Wine B's name. This suggests that the difference is merely in naming convention, not in the wine itself.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same name 'Clone 174' with the only difference being the varietal suffix 'Syrah' appended to Wine B, indicating that Wine B is likely an expanded or more specific version of Wine A's name. The producer 'Firestone' is the same for both, and Wine A's grape is 'SYRAH', matching the suffix in Wine B's name. This suggests that the difference is merely in naming convention, not in the wine itself.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 118,
+  "elapsed": 2.8392739295959473,
+  "error": null
+}

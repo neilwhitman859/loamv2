@@ -1,0 +1,26 @@
+{
+  "wine_id": "5f36a577-de6e-459c-b69c-ebce3fd3ca94",
+  "wine_name": "Howard Park Leston Cabernet Sauvignon, Western Australia",
+  "tier": "B",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.575,
+  "wrong_facts": [
+    "Hook claims 'ironstone-rich vineyard' — ground truth says gravelly loam over clay, no mention of ironstone",
+    "Claims Syrah is blended in as 'a local trick' — ground truth says this is primarily a single varietal Cabernet Sauvignon, not a deliberate Cab-Syrah blend",
+    "Vinification claims 'co-fermentation of a small portion of the Syrah with the Cabernet' and calls this a 'traditional Bordeaux method (where Syrah stands in for Merlot)' — Syrah is not used in Bordeaux blends and this co-fermentation claim is fabricated",
+    "Forest Grove ironstone is a specific geological claim not verifiable from context or ground truth",
+    "Price claim of '$40-50 AUD' is fabricated — no price data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$40-50 AUD price range",
+    "drinking window 'now through 2028' for 2016 vintage is a specific claim not directly supported"
+  ],
+  "reasoning": "The output has strong voice, specificity, and usefulness — it reads well and names real things. However, it has significant correctness problems. The ground truth says this is primarily a single-varietal Cabernet Sauvignon, yet the output treats the Syrah component as a defining, intentional feature of the wine and builds narrative around it (hook, terroir, vinification). The claim about co-fermentation as a 'traditional Bordeaux method where Syrah stands in for Merlot' is factually wrong — Syrah is not a Bordeaux variety. The 'Forest Grove ironstone' geological detail appears fabricated. The price is fabricated. While the hook's claim about the Leston vineyard being a single site with gravelly loam is partially correct per ground truth, the ironstone claim and the emphasis on Syrah blending mischaracterize the wine.",
+  "judge_tokens_in": 3395,
+  "judge_tokens_out": 485
+}

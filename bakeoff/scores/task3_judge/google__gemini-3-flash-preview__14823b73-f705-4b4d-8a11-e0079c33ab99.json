@@ -1,0 +1,21 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 4.0,
+  "voice": 4.5,
+  "specificity": 5.0,
+  "usefulness": 5.0,
+  "composite": 4.525,
+  "wrong_facts": [
+    "Claim that Tyrrell's avoids malolactic fermentation is not verifiable from context data or ground truth — plausible but unconfirmed",
+    "Basket-pressed claim is not verifiable from context data or ground truth",
+    "Short period on fine lees is not verifiable from context data or ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The hook is factually strong — correctly identifies no oak contact, Short Flat vineyard, and 1923 planting date, all confirmed by ground truth. The 1963 first release, stainless steel fermentation, no oak, 5-year release policy, and 'most awarded' status all align with verified ground truth. The ABV figures (11.5%, 12%) come directly from context data. Several vinification details (basket pressing, no MLF, fine lees) are not verifiable from either context or ground truth but are plausible for this style — these are minor unsourced claims that don't rise to fabrication of numbers. The voice is excellent: direct, opinionated, specific, with no banned words and no hedging. The insider take is genuinely useful and takes a clear position. Food pairings are specific and well-reasoned. Comparable wines are well-chosen and explained. The only reason correctness isn't 4.5 or 5.0 is the cluster of unverifiable winemaking process claims presented as fact.",
+  "judge_tokens_in": 3587,
+  "judge_tokens_out": 367
+}

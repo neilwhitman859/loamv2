@@ -1,0 +1,13 @@
+{
+  "pair_id": "C031",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"The two records have distinct LWIN identifiers, which typically denote separate stock keeping units or specific bottlings in wine databases. While both are Blanc de Blancs, the presence of 'Brut' in one name and its absence in the other, combined with the distinct LWINs, indicates they are treated as separate commercial products by the producer.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The two records have distinct LWIN identifiers, which typically denote separate stock keeping units or specific bottlings in wine databases. While both are Blanc de Blancs, the presence of 'Brut' in one name and its absence in the other, combined with the distinct LWINs, indicates they are treated as separate commercial products by the producer.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 98,
+  "elapsed": 1.8405559062957764,
+  "error": null
+}

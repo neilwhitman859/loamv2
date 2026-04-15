@@ -1,0 +1,13 @@
+{
+  "pair_id": "A006",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Radio-Coteau produces a single wine under the 'Clos Platt' label, which is a Pinot Noir. The addition of the varietal name in Wine B is a common naming variation for the same bottling, and there is no evidence of multiple distinct wines produced by this producer under the Clos Platt name.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Radio-Coteau produces a single wine under the 'Clos Platt' label, which is a Pinot Noir. The addition of the varietal name in Wine B is a common naming variation for the same bottling, and there is no evidence of multiple distinct wines produced by this producer under the Clos Platt name.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 83,
+  "elapsed": 1.3342339992523193,
+  "error": null
+}

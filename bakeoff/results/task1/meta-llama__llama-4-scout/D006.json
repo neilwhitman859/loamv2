@@ -1,0 +1,13 @@
+{
+  "pair_id": "D006",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grapes, with Wine A being 100% MERLOT NOIR and Wine B being a blend of COT and MERLOT NOIR. This difference in grape composition indicates that they are different wines. Despite the possible name formatting difference, the grape difference takes precedence.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grapes, with Wine A being 100% MERLOT NOIR and Wine B being a blend of COT and MERLOT NOIR. This difference in grape composition indicates that they are different wines. Despite the possible name formatting difference, the grape difference takes precedence.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 82,
+  "elapsed": 2.9073171615600586,
+  "error": null
+}

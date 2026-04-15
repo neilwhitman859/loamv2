@@ -1,0 +1,23 @@
+{
+  "page_id": "page_048",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\"wines_found\": [{\"name\": \"Bonterra Rosé 2022\", \"vintage_year\": 2022, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}]}\n```",
+  "wines_found": [
+    {
+      "name": "Bonterra Rosé 2022",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 71364,
+  "tokens_out": 76,
+  "elapsed": 2.2551159858703613,
+  "error": null
+}

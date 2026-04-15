@@ -1,0 +1,13 @@
+{
+  "pair_id": "D044",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"The two records have distinct LWIN identifiers, which are industry-standard codes used to differentiate specific wine bottlings. While both are Chardonnays from Donnachadh, the different LWINs indicate they represent separate product entries or distinct bottlings within the producer's portfolio.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The two records have distinct LWIN identifiers, which are industry-standard codes used to differentiate specific wine bottlings. While both are Chardonnays from Donnachadh, the different LWINs indicate they represent separate product entries or distinct bottlings within the producer's portfolio.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 86,
+  "elapsed": 2.0445239543914795,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D013",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records represent wines from entirely different villages in Burgundy: Beaune and Vosne-Roman\u00e9e. These are distinct geographical appellations located in different parts of the C\u00f4te d'Or, representing different vineyard holdings and terroir.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent wines from entirely different villages in Burgundy: Beaune and Vosne-Roman\u00e9e. These are distinct geographical appellations located in different parts of the C\u00f4te d'Or, representing different vineyard holdings and terroir.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 68,
+  "elapsed": 1.7666442394256592,
+  "error": null
+}

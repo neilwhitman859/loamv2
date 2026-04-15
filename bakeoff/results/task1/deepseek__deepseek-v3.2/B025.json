@@ -1,0 +1,13 @@
+{
+  "pair_id": "B025",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different colors (white vs red), which always indicates different wines. Additionally, the different LWIN codes and the explicit mention of 'Merlot' in Wine B suggest a distinct grape variety or style from Wine A.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors (white vs red), which always indicates different wines. Additionally, the different LWIN codes and the explicit mention of 'Merlot' in Wine B suggest a distinct grape variety or style from Wine A.",
+  "parse_ok": true,
+  "tokens_in": 452,
+  "tokens_out": 70,
+  "elapsed": 2.559509515762329,
+  "error": null
+}

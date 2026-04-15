@@ -1,0 +1,13 @@
+{
+  "pair_id": "B030",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are made from different grape varieties (Cabernet Sauvignon vs. Sauvignon Blanc) and have different colors (red vs. white). These represent distinct bottlings within the Porcupine Ridge range.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from different grape varieties (Cabernet Sauvignon vs. Sauvignon Blanc) and have different colors (red vs. white). These represent distinct bottlings within the Porcupine Ridge range.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 68,
+  "elapsed": 1.988664150238037,
+  "error": null
+}

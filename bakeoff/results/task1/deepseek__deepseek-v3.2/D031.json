@@ -1,0 +1,13 @@
+{
+  "pair_id": "D031",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The only difference is the word 'Trocken', which indicates a dry style. Since both wines are from the same producer, vineyard (Hallgarten Rheinschiefer), and are white, 'Trocken' is a stylistic descriptor and not a different wine type or classification. This matches the rule that differences in name formatting or stylistic suffixes alone usually indicate the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The only difference is the word 'Trocken', which indicates a dry style. Since both wines are from the same producer, vineyard (Hallgarten Rheinschiefer), and are white, 'Trocken' is a stylistic descriptor and not a different wine type or classification. This matches the rule that differences in name formatting or stylistic suffixes alone usually indicate the same wine.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 100,
+  "elapsed": 3.7396974563598633,
+  "error": null
+}

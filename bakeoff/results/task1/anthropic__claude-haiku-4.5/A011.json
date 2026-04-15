@@ -1,0 +1,13 @@
+{
+  "pair_id": "A011",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a blend of Pinot Noir and Chardonnay Blanc, while Wine B is a varietal Pinot Noir. Different grape compositions represent distinct bottlings that would appear separately in a wine encyclopedia, even from the same producer and vineyard. This is not a simple naming variation but a fundamental difference in wine composition.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a blend of Pinot Noir and Chardonnay Blanc, while Wine B is a varietal Pinot Noir. Different grape compositions represent distinct bottlings that would appear separately in a wine encyclopedia, even from the same producer and vineyard. This is not a simple naming variation but a fundamental difference in wine composition.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 101,
+  "elapsed": 12.185639381408691,
+  "error": null
+}

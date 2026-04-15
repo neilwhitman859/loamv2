@@ -1,0 +1,13 @@
+{
+  "pair_id": "B043",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a white Brut champagne while Wine B is a ros\u00e9 Brut champagne\u2014different colors represent distinct bottlings that consumers encounter separately. Although both are from Pommery's Apanage line and share the Brut dosage level, the color difference (white vs ros\u00e9) is a fundamental distinction that makes these different wines.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a white Brut champagne while Wine B is a ros\u00e9 Brut champagne\u2014different colors represent distinct bottlings that consumers encounter separately. Although both are from Pommery's Apanage line and share the Brut dosage level, the color difference (white vs ros\u00e9) is a fundamental distinction that makes these different wines.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 105,
+  "elapsed": 2.296250581741333,
+  "error": null
+}

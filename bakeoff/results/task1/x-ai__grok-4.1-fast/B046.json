@@ -1,0 +1,13 @@
+{
+  "pair_id": "B046",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the producer Timbrus and the Polifonia De Purcari name but differ in specific notes (#2 vs #3) and explicitly in color (red for A, white for B). Different colors indicate distinct wines, likely from different grapes, which always means DIFFERENT per the rules. Unique LWIN numbers (2695042 vs 2695055) confirm separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the producer Timbrus and the Polifonia De Purcari name but differ in specific notes (#2 vs #3) and explicitly in color (red for A, white for B). Different colors indicate distinct wines, likely from different grapes, which always means DIFFERENT per the rules. Unique LWIN numbers (2695042 vs 2695055) confirm separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 580,
+  "tokens_out": 474,
+  "elapsed": 3.4168739318847656,
+  "error": null
+}

@@ -1,0 +1,40 @@
+{
+  "page_id": "page_054",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\"wines_found\": [{\"name\": \"2025 Dianthus\", \"vintage_year\": 2025, \"abv_pct\": 14.0, \"blend\": [{\"grape\": \"Mourvèdre\", \"pct\": 42}, {\"grape\": \"Grenache\", \"pct\": 40}, {\"grape\": \"Counoise\", \"pct\": 13}, {\"grape\": \"Cinsaut\", \"pct\": 5}], \"oak\": null, \"cases_produced\": 887, \"chemistry\": null, \"winemaker\": null, \"farming\": \"organic\"}]}\n```",
+  "wines_found": [
+    {
+      "name": "2025 Dianthus",
+      "vintage_year": 2025,
+      "abv_pct": 14.0,
+      "blend": [
+        {
+          "grape": "Mourvèdre",
+          "pct": 42
+        },
+        {
+          "grape": "Grenache",
+          "pct": 40
+        },
+        {
+          "grape": "Counoise",
+          "pct": 13
+        },
+        {
+          "grape": "Cinsaut",
+          "pct": 5
+        }
+      ],
+      "oak": null,
+      "cases_produced": 887,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 20433,
+  "tokens_out": 144,
+  "elapsed": 1.6240170001983643,
+  "error": null
+}

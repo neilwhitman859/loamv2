@@ -1,0 +1,13 @@
+{
+  "pair_id": "D038",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines have the same producer 'Chatter Creek', same appellation 'Chatterneuf-du-Pape', and same color 'red'. The difference in name is minor and likely due to abbreviation or formatting, with 'Table Wine' being a common descriptive suffix that doesn't change the wine's identity.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines have the same producer 'Chatter Creek', same appellation 'Chatterneuf-du-Pape', and same color 'red'. The difference in name is minor and likely due to abbreviation or formatting, with 'Table Wine' being a common descriptive suffix that doesn't change the wine's identity.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 84,
+  "elapsed": 1.6191940307617188,
+  "error": null
+}

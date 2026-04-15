@@ -1,0 +1,13 @@
+{
+  "pair_id": "C017",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.85, \"reasoning\": \"Both wines are from Bassermann-Jordan, same vineyard (Forster Kirchenstuck), same Pr\u00e4dikat level (Sp\u00e4tlese), and same color (white). Wine B simply appends 'Riesling' as a varietal suffix, which is a common formatting difference where the shorter name is an abbreviation. The different LWIN numbers may reflect catalog entry differences rather than distinct wines, but all substantive attributes match.\"}",
+  "verdict": "SAME",
+  "confidence": 0.85,
+  "reasoning": "Both wines are from Bassermann-Jordan, same vineyard (Forster Kirchenstuck), same Pr\u00e4dikat level (Sp\u00e4tlese), and same color (white). Wine B simply appends 'Riesling' as a varietal suffix, which is a common formatting difference where the shorter name is an abbreviation. The different LWIN numbers may reflect catalog entry differences rather than distinct wines, but all substantive attributes match.",
+  "parse_ok": true,
+  "tokens_in": 504,
+  "tokens_out": 120,
+  "elapsed": 3.858381509780884,
+  "error": null
+}

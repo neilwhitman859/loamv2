@@ -1,0 +1,13 @@
+{
+  "pair_id": "A022",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a Cabernet Sauvignon, while Wine B is a Carmenere, representing different grape varieties. Even though both are from the same producer (Emiliana) and share a similar name format, different grapes always indicate distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a Cabernet Sauvignon, while Wine B is a Carmenere, representing different grape varieties. Even though both are from the same producer (Emiliana) and share a similar name format, different grapes always indicate distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 486,
+  "tokens_out": 76,
+  "elapsed": 1.6994192600250244,
+  "error": null
+}

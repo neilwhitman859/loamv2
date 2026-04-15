@@ -1,0 +1,13 @@
+{
+  "pair_id": "C049",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are different colors (white vs. red), which indicates they are fundamentally distinct products. Additionally, 'Brut Nature' and 'Brut' denote different sweetness levels (dosage) in sparkling wine, which are considered separate bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are different colors (white vs. red), which indicates they are fundamentally distinct products. Additionally, 'Brut Nature' and 'Brut' denote different sweetness levels (dosage) in sparkling wine, which are considered separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 1366,
+  "elapsed": 14.11925196647644,
+  "error": null
+}

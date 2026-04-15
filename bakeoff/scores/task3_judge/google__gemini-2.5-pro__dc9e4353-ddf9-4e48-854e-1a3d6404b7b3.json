@@ -1,0 +1,24 @@
+{
+  "wine_id": "dc9e4353-ddf9-4e48-854e-1a3d6404b7b3",
+  "wine_name": "Shafer One Point Five Cabernet Sauvignon, Stags Leap District",
+  "tier": "C",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 3.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.025,
+  "wrong_facts": [
+    "Oak aging stated as 'around 20 months' when ground truth says 18 months",
+    "Describes wine as 'powerful yet restrained' — Shafer OPF at 15.3% ABV is not particularly restrained",
+    "Claims Palisades rock formation provides afternoon shade — this is a specific geological claim that conflates features of the district"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "20 months oak aging (ground truth is 18 months)",
+    "Sensory alcohol rating of 4 is reasonable given 15.3% ABV but ABV itself not stated — borderline"
+  ],
+  "reasoning": "The hook correctly identifies the naming origin (generation-and-a-half partnership between John and Doug Shafer), which matches ground truth perfectly and was not in the context data — strong positive. The output correctly identifies Borderline vineyard, multi-site sourcing, the blend components (Malbec, Merlot, Petit Verdot), winemaker approach with 100% new French oak, and the general terroir of Stags Leap District. However, the oak aging is stated as 'around 20 months' when ground truth says 18 months — this is a fabricated/wrong number. The voice is strong, direct, opinionated, and avoids banned words. Specificity is excellent with named vineyards, soil types (volcanic tuff, Bale clay loam), and real comparable wines. Usefulness is high with actionable food pairings, clear insider take, and meaningful comparisons. The 20-month oak claim prevents a higher correctness score but doesn't trigger the hard cap since it's hedged with 'around' — though it's still wrong enough to penalize.",
+  "judge_tokens_in": 4023,
+  "judge_tokens_out": 433
+}

@@ -1,0 +1,33 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "meta-llama/llama-4-maverick",
+  "correctness": 1.5,
+  "voice": 1.5,
+  "specificity": 2.5,
+  "usefulness": 2.0,
+  "composite": 1.8,
+  "wrong_facts": [
+    "Hook says '8 months of oak aging' but ground truth shows recent vintages ferment and age in cement tanks, not oak",
+    "Hook calls it 'a masterful blend of power and finesse' — it's not a blend, it's 100% Carignan",
+    "Vinification claims carbonic maceration is used — no evidence of this; ground truth says whole cluster native fermentation with two weeks on skins",
+    "Comparable wines: Mas de Daumas Gassac is described as 'Priorat-inspired' and focused on 'old-vine Carignan' — it's actually a Languedoc estate famous for Cabernet Sauvignon-based blends",
+    "Domaine du Pegau comparison mentions 'schist soil' — Châteauneuf-du-Pape is famous for galets roulés (rounded stones) over clay/limestone, not schist",
+    "Value assessment fabricates a price range of €50-€70 and claims Alvaro Palacios is €80 — no prices were provided",
+    "Cellar recommendation says 'store upright' which is wrong for cork-finished wines"
+  ],
+  "banned_words_found": [
+    "embodies",
+    "masterful",
+    "showcases",
+    "refined"
+  ],
+  "fabricated_numbers": [
+    "€50-€70 price range",
+    "€80 for Alvaro Palacios"
+  ],
+  "reasoning": "The hook contains multiple banned words ('embodies', 'masterful', 'showcases') and the factually wrong claim about oak aging (ground truth shows cement tanks for recent vintages). The vinification section fabricates the use of carbonic maceration. Comparable wines are largely wrong — Mas de Daumas Gassac is not Priorat-inspired nor Carignan-focused, and Pegau's terroir is mischaracterized. Prices are fabricated. The output reads as generic wine copy with template patterns and multiple factual errors, failing both correctness and voice standards.",
+  "judge_tokens_in": 3487,
+  "judge_tokens_out": 492
+}

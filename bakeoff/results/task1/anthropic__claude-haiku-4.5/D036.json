@@ -1,0 +1,13 @@
+{
+  "pair_id": "D036",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The addition of 'Gold' to Wine A's name indicates a distinct classification tier or special bottling within the Superiore Brecciarolo line, similar to how producers distinguish between standard and premium versions of the same vineyard wine. The different LWINs (1478206 vs 1478222) confirm these are separate bottlings that would appear as distinct products in a wine encyclopedia. This is a classification/tier distinction rather than a simple naming abbreviation.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The addition of 'Gold' to Wine A's name indicates a distinct classification tier or special bottling within the Superiore Brecciarolo line, similar to how producers distinguish between standard and premium versions of the same vineyard wine. The different LWINs (1478206 vs 1478222) confirm these are separate bottlings that would appear as distinct products in a wine encyclopedia. This is a classification/tier distinction rather than a simple naming abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 127,
+  "elapsed": 11.075770616531372,
+  "error": null
+}

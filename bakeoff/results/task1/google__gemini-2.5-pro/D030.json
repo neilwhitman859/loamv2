@@ -1,0 +1,13 @@
+{
+  "pair_id": "D030",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are from the same producer and brand line ('Porcupine Ridge'), they are made from different grape varieties. The data explicitly states Wine A is a Cabernet Sauvignon, while Wine B's name, 'Merlot Porcupine Ridge', indicates it is a Merlot. Wines made from different grapes are always considered different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are from the same producer and brand line ('Porcupine Ridge'), they are made from different grape varieties. The data explicitly states Wine A is a Cabernet Sauvignon, while Wine B's name, 'Merlot Porcupine Ridge', indicates it is a Merlot. Wines made from different grapes are always considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 1130,
+  "elapsed": 11.960312128067017,
+  "error": null
+}

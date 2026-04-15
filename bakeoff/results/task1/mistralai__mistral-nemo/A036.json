@@ -1,0 +1,13 @@
+{
+  "pair_id": "A036",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A contains a blend of Pinot Noir and Chardonnay Blanc, while Wine B is a Sauvignon Blanc. Despite the same producer and similar names, the different grape varieties make them distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A contains a blend of Pinot Noir and Chardonnay Blanc, while Wine B is a Sauvignon Blanc. Despite the same producer and similar names, the different grape varieties make them distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 479,
+  "tokens_out": 69,
+  "elapsed": 3.7628488540649414,
+  "error": null
+}

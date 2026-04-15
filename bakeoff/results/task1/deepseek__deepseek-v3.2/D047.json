@@ -1,0 +1,13 @@
+{
+  "pair_id": "D047",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The provided grape data is contradictory: the names suggest 'Merlot' vs 'Cabernet', but the detailed percentages both list MERLOT NOIR (100.0%). If the detailed data is correct, they are the SAME wine with a naming discrepancy. However, the core rule states different grapes always mean DIFFERENT wines, and the names strongly imply different grapes.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The provided grape data is contradictory: the names suggest 'Merlot' vs 'Cabernet', but the detailed percentages both list MERLOT NOIR (100.0%). If the detailed data is correct, they are the SAME wine with a naming discrepancy. However, the core rule states different grapes always mean DIFFERENT wines, and the names strongly imply different grapes.",
+  "parse_ok": true,
+  "tokens_in": 456,
+  "tokens_out": 100,
+  "elapsed": 4.092433214187622,
+  "error": null
+}

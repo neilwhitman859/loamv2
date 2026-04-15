@@ -1,0 +1,13 @@
+{
+  "pair_id": "A036",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"Wine A is a blend of Pinot Noir and Chardonnay, which is characteristic of a sparkling wine base, whereas Wine B is explicitly identified as a Sauvignon Blanc. Since the grape compositions are fundamentally different, these represent distinct bottlings produced by De Bortoli.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a blend of Pinot Noir and Chardonnay, which is characteristic of a sparkling wine base, whereas Wine B is explicitly identified as a Sauvignon Blanc. Since the grape compositions are fundamentally different, these represent distinct bottlings produced by De Bortoli.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 79,
+  "elapsed": 1.6354131698608398,
+  "error": null
+}

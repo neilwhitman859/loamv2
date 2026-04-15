@@ -1,0 +1,13 @@
+{
+  "pair_id": "A041",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Stephen Ross) and vineyard (Bien Nacido), with the same grape (Pinot Noir) and color (red). 'Bien Nacido Pinot Noir' is just the full varietal-suffixed name for the wine abbreviated as 'Bien Nacido', indicating the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Stephen Ross) and vineyard (Bien Nacido), with the same grape (Pinot Noir) and color (red). 'Bien Nacido Pinot Noir' is just the full varietal-suffixed name for the wine abbreviated as 'Bien Nacido', indicating the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 444,
+  "tokens_out": 95,
+  "elapsed": 3.578108072280884,
+  "error": null
+}

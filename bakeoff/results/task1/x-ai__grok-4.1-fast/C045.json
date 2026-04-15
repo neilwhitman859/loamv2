@@ -1,0 +1,13 @@
+{
+  "pair_id": "C045",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (Von Schubert), vineyard (Maximin Grunhauser Abtsberg), grape (Riesling), and Pr\u00e4dikat level (Kabinett Auktion), but Wine B specifies 'Nr8', indicating a distinct lot or cask number. Per the rules, different lot/cask numbers at the same Pr\u00e4dikat level designate DIFFERENT wines. Distinct LWINs (1484085 vs 1484144) further confirm they are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (Von Schubert), vineyard (Maximin Grunhauser Abtsberg), grape (Riesling), and Pr\u00e4dikat level (Kabinett Auktion), but Wine B specifies 'Nr8', indicating a distinct lot or cask number. Per the rules, different lot/cask numbers at the same Pr\u00e4dikat level designate DIFFERENT wines. Distinct LWINs (1484085 vs 1484144) further confirm they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 590,
+  "tokens_out": 639,
+  "elapsed": 4.527685165405273,
+  "error": null
+}

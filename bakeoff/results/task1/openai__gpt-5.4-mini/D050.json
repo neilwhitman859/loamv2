@@ -1,0 +1,13 @@
+{
+  "pair_id": "D050",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Although the vineyard name is effectively the same spelling variant, the grape compositions are different: Wine A is Pinot Gris/Pinot Blanc, while Wine B is Chardonnay Blanc. Different grapes indicate distinct bottlings, so these are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Although the vineyard name is effectively the same spelling variant, the grape compositions are different: Wine A is Pinot Gris/Pinot Blanc, while Wine B is Chardonnay Blanc. Different grapes indicate distinct bottlings, so these are different wines.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 69,
+  "elapsed": 1.5418336391448975,
+  "error": null
+}

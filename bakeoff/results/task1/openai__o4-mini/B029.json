@@ -1,0 +1,13 @@
+{
+  "pair_id": "B029",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.93, \"reasoning\": \"The two wines use different grape varieties (Merlot vs Chardonnay) and are different colors (red vs white), which makes them distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.93,
+  "reasoning": "The two wines use different grape varieties (Merlot vs Chardonnay) and are different colors (red vs white), which makes them distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 121,
+  "elapsed": 4.191195487976074,
+  "error": null
+}

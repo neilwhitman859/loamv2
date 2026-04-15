@@ -1,0 +1,13 @@
+{
+  "pair_id": "C009",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Cattier, and have the same style (Blanc de Blancs Brut) and color (white). The difference in name is likely due to abbreviation, as 'Roses Blanc de Blancs Brut' can be shortened to 'Blanc de Blancs Brut'. The LWIN numbers are different, but this does not necessarily indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Cattier, and have the same style (Blanc de Blancs Brut) and color (white). The difference in name is likely due to abbreviation, as 'Roses Blanc de Blancs Brut' can be shortened to 'Blanc de Blancs Brut'. The LWIN numbers are different, but this does not necessarily indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 101,
+  "elapsed": 1.9782819747924805,
+  "error": null
+}

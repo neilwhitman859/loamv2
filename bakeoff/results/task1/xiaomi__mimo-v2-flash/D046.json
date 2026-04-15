@@ -1,0 +1,13 @@
+{
+  "pair_id": "D046",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer (Maris) and share the core name 'Nymphe Emue', with 'Rose' being a varietal suffix indicating the same ros\u00e9 style. The color is identical (rose), and the suffix difference alone typically indicates the same wine, not a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer (Maris) and share the core name 'Nymphe Emue', with 'Rose' being a varietal suffix indicating the same ros\u00e9 style. The color is identical (rose), and the suffix difference alone typically indicates the same wine, not a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 476,
+  "tokens_out": 86,
+  "elapsed": 2.2837677001953125,
+  "error": null
+}

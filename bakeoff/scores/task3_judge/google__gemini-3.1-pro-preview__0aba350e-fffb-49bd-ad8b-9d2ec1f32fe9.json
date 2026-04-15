@@ -1,0 +1,20 @@
+{
+  "wine_id": "0aba350e-fffb-49bd-ad8b-9d2ec1f32fe9",
+  "wine_name": "Vasse Felix Filius Cabernet Sauvignon, Margaret River",
+  "tier": "C",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "'Forest Grove ironstone and loamy gravel over clay' as the defining geological feature is a specific claim not verifiable from context data and potentially fabricated — Forest Grove is a sub-region but the specific soil description is unverifiable",
+    "Claim about 'residual sugar' in Napa Cabernets and Daou is misleading — these wines are technically dry, though they may taste sweeter due to fruit ripeness and oak"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output correctly identifies Vasse Felix as Margaret River's founding estate (1967), correctly explains 'Filius' as Latin for 'son of,' and correctly notes wild yeast fermentation — all matching ground truth the model didn't see, which is impressive. It avoids fabricating specific numbers (no pH, no blend percentages, no specific oak months stated). The Forest Grove ironstone soil claim is specific but unverifiable and may be inaccurate for the specific vineyard sources. The voice is excellent — direct, opinionated, specific, with no banned words and strong food pairings with reasoning. The insider take is genuinely useful and takes a clear position. The comparable wines section is well-chosen with meaningful differentiation. Minor ding on correctness for the unverifiable soil claim and the slightly misleading 'residual sugar' comparison.",
+  "judge_tokens_in": 3478,
+  "judge_tokens_out": 344
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B016",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B are from different appellations (Barolo vs Barbaresco) and have different grape varieties (CROATINA vs NEBBIOLO), indicating they are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B are from different appellations (Barolo vs Barbaresco) and have different grape varieties (CROATINA vs NEBBIOLO), indicating they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 64,
+  "elapsed": 1.5066020488739014,
+  "error": null
+}

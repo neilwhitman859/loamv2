@@ -1,0 +1,13 @@
+{
+  "pair_id": "B017",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is red and Wine B is white, indicating a difference in color. Additionally, Wine A is made from Braquet Gris grapes, but there is no information about the grapes used in Wine B, further suggesting they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is red and Wine B is white, indicating a difference in color. Additionally, Wine A is made from Braquet Gris grapes, but there is no information about the grapes used in Wine B, further suggesting they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 484,
+  "tokens_out": 72,
+  "elapsed": 1.4817631244659424,
+  "error": null
+}

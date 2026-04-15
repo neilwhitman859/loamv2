@@ -1,0 +1,50 @@
+{
+  "page_id": "page_053",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"wines_found\": [{\"name\": \"2023 Patelin de Tablas\", \"vintage_year\": 2023, \"abv_pct\": 13.0, \"blend\": [{\"grape\": \"Syrah\", \"pct\": 45}, {\"grape\": \"Grenache\", \"pct\": 30}, {\"grape\": \"Mourvedre\", \"pct\": 23}, {\"grape\": \"Counoise\", \"pct\": 2}], \"oak\": {\"vessel\": null, \"months\": null, \"new_pct\": null, \"origin\": null}, \"cases_produced\": 7452, \"chemistry\": {\"ph\": null, \"ta_g_l\": null, \"rs_g_l\": null, \"so2_total_mg_l\": null}, \"winemaker\": null, \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "2023 Patelin de Tablas",
+      "vintage_year": 2023,
+      "abv_pct": 13.0,
+      "blend": [
+        {
+          "grape": "Syrah",
+          "pct": 45
+        },
+        {
+          "grape": "Grenache",
+          "pct": 30
+        },
+        {
+          "grape": "Mourvedre",
+          "pct": 23
+        },
+        {
+          "grape": "Counoise",
+          "pct": 2
+        }
+      ],
+      "oak": {
+        "vessel": null,
+        "months": null,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": 7452,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 21193,
+  "tokens_out": 194,
+  "elapsed": 3.5304977893829346,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D045",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines 'Casse-Croute Blanc' and 'Casse-Croute' have the same producer, Maris, and the same color, white. The difference in name is likely due to a varietal suffix being appended or omitted, which typically indicates the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines 'Casse-Croute Blanc' and 'Casse-Croute' have the same producer, Maris, and the same color, white. The difference in name is likely due to a varietal suffix being appended or omitted, which typically indicates the same wine.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 78,
+  "elapsed": 1.648137092590332,
+  "error": null
+}

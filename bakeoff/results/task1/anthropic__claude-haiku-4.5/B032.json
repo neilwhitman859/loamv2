@@ -1,0 +1,13 @@
+{
+  "pair_id": "B032",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a white Gew\u00fcrztraminer while Wine B is a red Pinot Noir from the same producer. Different grape varieties and different colors (white vs red) are definitive indicators of distinct wines that would be listed separately in a wine encyclopedia, regardless of the similar vineyard naming.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a white Gew\u00fcrztraminer while Wine B is a red Pinot Noir from the same producer. Different grape varieties and different colors (white vs red) are definitive indicators of distinct wines that would be listed separately in a wine encyclopedia, regardless of the similar vineyard naming.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 91,
+  "elapsed": 12.023826122283936,
+  "error": null
+}

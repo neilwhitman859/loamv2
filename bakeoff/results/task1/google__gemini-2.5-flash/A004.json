@@ -1,0 +1,13 @@
+{
+  "pair_id": "A004",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A lists both Pinot Noir and Pinot Gris as grapes, while Wine B explicitly states 'Pinot Gris' in its name. This suggests that Wine A might be a blend or a generic 'Selection Wormeldange Weinbour' that could encompass different grape varieties, whereas Wine B is specifically a Pinot Gris bottling. Given the rule that different grapes mean different wines, and the potential for Wine A to be a blend or a different varietal, they are classified as different.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A lists both Pinot Noir and Pinot Gris as grapes, while Wine B explicitly states 'Pinot Gris' in its name. This suggests that Wine A might be a blend or a generic 'Selection Wormeldange Weinbour' that could encompass different grape varieties, whereas Wine B is specifically a Pinot Gris bottling. Given the rule that different grapes mean different wines, and the potential for Wine A to be a blend or a different varietal, they are classified as different.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 118,
+  "elapsed": 1.5055594444274902,
+  "error": null
+}

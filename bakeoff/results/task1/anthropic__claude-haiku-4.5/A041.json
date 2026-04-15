@@ -1,0 +1,13 @@
+{
+  "pair_id": "A041",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Stephen Ross producer, same vineyard (Bien Nacido), same grape (Pinot Noir), and same color (red). Wine A's name is simply an abbreviated version of Wine B's full name, which is a common naming convention where the varietal suffix is omitted in the shorter form.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Stephen Ross producer, same vineyard (Bien Nacido), same grape (Pinot Noir), and same color (red). Wine A's name is simply an abbreviated version of Wine B's full name, which is a common naming convention where the varietal suffix is omitted in the shorter form.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 96,
+  "elapsed": 3.2239885330200195,
+  "error": null
+}

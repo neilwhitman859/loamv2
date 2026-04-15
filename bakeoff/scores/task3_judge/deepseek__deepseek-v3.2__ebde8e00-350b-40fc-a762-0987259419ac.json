@@ -1,0 +1,28 @@
+{
+  "wine_id": "ebde8e00-350b-40fc-a762-0987259419ac",
+  "wine_name": "Howard Park Leston Shiraz, Margaret River",
+  "tier": "C",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.0,
+  "voice": 2.0,
+  "specificity": 3.5,
+  "usefulness": 3.5,
+  "composite": 2.6,
+  "wrong_facts": [
+    "Hook claims 'Forest Grove ironstone soils of the southern sub-region' — the Leston vineyard is in Wilyabrup, not Forest Grove/southern sub-region",
+    "Terroir section repeats the Forest Grove ironstone claim, which is fabricated",
+    "The naming origin is not mentioned but the vineyard location is materially wrong — Wilyabrup is in the northern/central part of Margaret River, not the cooler southern part",
+    "Hook uses 'elegant' which is a banned word variant ('structured elegance')",
+    "Food pairing uses 'harmonizes' which is a form of banned word 'harmonious'"
+  ],
+  "banned_words_found": [
+    "elegance",
+    "harmonizes"
+  ],
+  "fabricated_numbers": [
+    "$40-$55 AUD price estimate"
+  ],
+  "reasoning": "The output's central terroir claim — that Leston is from Forest Grove ironstone soils in the cooler southern sub-region — is provably wrong. Ground truth confirms the vineyard is in Wilyabrup, which is in the warmer northern/central part of Margaret River. This error pervades the hook, wine summary, and terroir sections, making the core narrative fabricated. The vinification section hedges with 'likely' and 'typically' but does get the whole-bunch inclusion and French oak broadly right. The price is fabricated. Two banned words appear ('elegance' in the hook, 'harmonizes' in food pairing). Voice is hurt by banned words and some generic phrasing. Specificity is moderate — it names real things but the wrong real things. Usefulness is undermined by the incorrect geographic framing.",
+  "judge_tokens_in": 3226,
+  "judge_tokens_out": 408
+}

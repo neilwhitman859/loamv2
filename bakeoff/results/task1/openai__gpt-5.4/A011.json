@@ -1,0 +1,13 @@
+{
+  "pair_id": "A011",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.94,\"reasoning\":\"Both records are from J. Lohr and share the same core cuv\u00e9e/vineyard name, Highlands Bench, with the only naming difference being that Wine B appends the varietal Pinot Noir. That kind of varietal suffix is usually just a fuller label form, and there is no evidence here that J. Lohr makes multiple distinct Highlands Bench red wines by different grapes; the mixed grape field on Wine A is likely noisy data.\"}",
+  "verdict": "SAME",
+  "confidence": 0.94,
+  "reasoning": "Both records are from J. Lohr and share the same core cuv\u00e9e/vineyard name, Highlands Bench, with the only naming difference being that Wine B appends the varietal Pinot Noir. That kind of varietal suffix is usually just a fuller label form, and there is no evidence here that J. Lohr makes multiple distinct Highlands Bench red wines by different grapes; the mixed grape field on Wine A is likely noisy data.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 110,
+  "elapsed": 3.0476322174072266,
+  "error": null
+}

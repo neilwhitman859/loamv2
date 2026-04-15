@@ -1,0 +1,13 @@
+{
+  "pair_id": "A043",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a varietal Shiraz, while Wine B is a specific blend of Shiraz and Durif (Petite Sirah). These are distinct bottlings within the 19 Crimes portfolio with different grape compositions and unique LWIN identifiers.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a varietal Shiraz, while Wine B is a specific blend of Shiraz and Durif (Petite Sirah). These are distinct bottlings within the 19 Crimes portfolio with different grape compositions and unique LWIN identifiers.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 71,
+  "elapsed": 1.667696475982666,
+  "error": null
+}

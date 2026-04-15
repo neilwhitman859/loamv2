@@ -1,0 +1,13 @@
+{
+  "pair_id": "B033",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines from the same producer but with clearly different grapes and colors: Wine A is Pinot Noir red, while Wine B is Gewuerztraminer white. Different grape varieties always indicate distinct bottlings, regardless of the shared Bollenberg name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines from the same producer but with clearly different grapes and colors: Wine A is Pinot Noir red, while Wine B is Gewuerztraminer white. Different grape varieties always indicate distinct bottlings, regardless of the shared Bollenberg name.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 74,
+  "elapsed": 1.779203176498413,
+  "error": null
+}

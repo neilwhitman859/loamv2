@@ -1,0 +1,13 @@
+{
+  "pair_id": "B005",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Although both records share the name Clayvin and producer Fromm, they are different wines because the grape variety and color do not match. Wine A is a red Pinot Noir, while Wine B is a white Chardonnay Blanc, which indicates distinct bottlings from the same vineyard/site name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Although both records share the name Clayvin and producer Fromm, they are different wines because the grape variety and color do not match. Wine A is a red Pinot Noir, while Wine B is a white Chardonnay Blanc, which indicates distinct bottlings from the same vineyard/site name.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 78,
+  "elapsed": 2.083613872528076,
+  "error": null
+}

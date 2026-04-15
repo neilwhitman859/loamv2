@@ -1,0 +1,13 @@
+{
+  "pair_id": "B018",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a ros\u00e9 and Wine B is a white, representing different colors and styles from the same producer. Different colors from the same producer typically indicate distinct bottlings, even if the base name is similar. The LWIN numbers are also different, confirming they are separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a ros\u00e9 and Wine B is a white, representing different colors and styles from the same producer. Different colors from the same producer typically indicate distinct bottlings, even if the base name is similar. The LWIN numbers are also different, confirming they are separate products.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 83,
+  "elapsed": 2.289942979812622,
+  "error": null
+}

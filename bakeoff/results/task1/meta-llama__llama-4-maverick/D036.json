@@ -1,0 +1,13 @@
+{
+  "pair_id": "D036",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines have the same producer, Velenosi, and similar names, 'Superiore Brecciarolo Gold' and 'Superiore Brecciarolo', suggesting the 'Gold' is likely a stylistic or marketing variation rather than indicating a different wine. Both wines are red and have the same producer, supporting the conclusion they are the same wine. The difference in name is minor and could be due to abbreviation or naming variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines have the same producer, Velenosi, and similar names, 'Superiore Brecciarolo Gold' and 'Superiore Brecciarolo', suggesting the 'Gold' is likely a stylistic or marketing variation rather than indicating a different wine. Both wines are red and have the same producer, supporting the conclusion they are the same wine. The difference in name is minor and could be due to abbreviation or naming variation.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 111,
+  "elapsed": 1.6988015174865723,
+  "error": null
+}

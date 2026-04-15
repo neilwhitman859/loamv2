@@ -1,0 +1,13 @@
+{
+  "pair_id": "A034",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.83, \"reasoning\": \"Wine A is a white blend of Chardonnay and Pinot Gris, while Wine B is a Sauvignon Blanc; different grape variety compositions make them distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.83,
+  "reasoning": "Wine A is a white blend of Chardonnay and Pinot Gris, while Wine B is a Sauvignon Blanc; different grape variety compositions make them distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 155,
+  "elapsed": 3.7259323596954346,
+  "error": null
+}

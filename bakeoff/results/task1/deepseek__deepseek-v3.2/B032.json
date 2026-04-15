@@ -1,0 +1,13 @@
+{
+  "pair_id": "B032",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different primary grape varieties (Gew\u00fcrztraminer vs Pinot Noir) and different colors (white vs red), which are definitive criteria for distinct wines according to the rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different primary grape varieties (Gew\u00fcrztraminer vs Pinot Noir) and different colors (white vs red), which are definitive criteria for distinct wines according to the rules.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 63,
+  "elapsed": 1.9763906002044678,
+  "error": null
+}

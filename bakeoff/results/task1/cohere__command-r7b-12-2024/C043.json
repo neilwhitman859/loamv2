@@ -1,0 +1,13 @@
+{
+  "pair_id": "C043",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different classification tiers: Spatlese and Auslese, respectively. This indicates different sweetness levels and ripeness, leading to a different wine experience.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different classification tiers: Spatlese and Auslese, respectively. This indicates different sweetness levels and ripeness, leading to a different wine experience.",
+  "parse_ok": true,
+  "tokens_in": 459,
+  "tokens_out": 58,
+  "elapsed": 1.271944284439087,
+  "error": null
+}

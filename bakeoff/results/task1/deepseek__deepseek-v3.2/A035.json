@@ -1,0 +1,13 @@
+{
+  "pair_id": "A035",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the explicit inclusion of 'Cabernet Sauvignon' in Wine B's name, which is a varietal suffix appended to the same base name. Both wines share the same producer, color, and the listed grape for Wine A is Cabernet Sauvignon, indicating this is a varietal abbreviation case, not a different grape composition.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the explicit inclusion of 'Cabernet Sauvignon' in Wine B's name, which is a varietal suffix appended to the same base name. Both wines share the same producer, color, and the listed grape for Wine A is Cabernet Sauvignon, indicating this is a varietal abbreviation case, not a different grape composition.",
+  "parse_ok": true,
+  "tokens_in": 455,
+  "tokens_out": 95,
+  "elapsed": 3.2583093643188477,
+  "error": null
+}

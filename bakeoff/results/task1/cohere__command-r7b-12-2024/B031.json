@@ -1,0 +1,13 @@
+{
+  "pair_id": "B031",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is a red wine made from Merlot, while Wine B is a white wine made from Sauvignon Blanc. Different grape varieties indicate different wines, even if they share the same vineyard designation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is a red wine made from Merlot, while Wine B is a white wine made from Sauvignon Blanc. Different grape varieties indicate different wines, even if they share the same vineyard designation.",
+  "parse_ok": true,
+  "tokens_in": 448,
+  "tokens_out": 61,
+  "elapsed": 1.3275010585784912,
+  "error": null
+}

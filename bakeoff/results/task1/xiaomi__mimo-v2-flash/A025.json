@@ -1,0 +1,13 @@
+{
+  "pair_id": "A025",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Gabriel Meffre), are red, and share the same grape variety (Syrah). The only difference is the name formatting, where 'Laurus' is the abbreviated name for the full 'Laurus Syrah', which is a common practice and does not indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Gabriel Meffre), are red, and share the same grape variety (Syrah). The only difference is the name formatting, where 'Laurus' is the abbreviated name for the full 'Laurus Syrah', which is a common practice and does not indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 89,
+  "elapsed": 2.283158779144287,
+  "error": null
+}

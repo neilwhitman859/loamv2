@@ -1,0 +1,13 @@
+{
+  "pair_id": "B039",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different styles/colors: Wine A is ros\u00e9 while Wine B is white sparkling Brut. Wine B also specifies a grape, Mostosa, indicating a distinct bottling rather than a simple name-format variation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different styles/colors: Wine A is ros\u00e9 while Wine B is white sparkling Brut. Wine B also specifies a grape, Mostosa, indicating a distinct bottling rather than a simple name-format variation.",
+  "parse_ok": true,
+  "tokens_in": 412,
+  "tokens_out": 64,
+  "elapsed": 1.418825626373291,
+  "error": null
+}

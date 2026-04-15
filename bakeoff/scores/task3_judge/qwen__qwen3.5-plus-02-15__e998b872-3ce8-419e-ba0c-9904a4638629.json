@@ -1,0 +1,26 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "qwen/qwen3.5-plus-02-15",
+  "correctness": 1.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 2.9,
+  "wrong_facts": [
+    "Eric Solomon and Ebbe Lindell are NOT the founders — the winery was co-founded by Dominik Huber and Eben Sadie",
+    "Vines described as 'over 50 years old' when ground truth says 90-year-old vines",
+    "DOQ Priorat is used instead of DOCa Priorat (DOQ is the Catalan designation, DOCa is the Castilian — this is debatable but less precise)",
+    "Price range of $50-$60 is fabricated — no price data was provided",
+    "Hook mentions 'decomposed slate and quartz' — quartz is not mentioned in ground truth for this vineyard"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$50 to $60 retail price fabricated with no price data provided",
+    "Vines over 50 years old — ground truth says 90 years old"
+  ],
+  "reasoning": "The most damaging error is the completely fabricated producer founders — Eric Solomon is a US wine importer, and Ebbe Lindell doesn't appear connected to this estate. The actual founders are Dominik Huber and Eben Sadie. This is a major factual error in the wine_summary. The vine age is significantly understated (50 vs 90 years). The price range is fabricated from no data. The hook itself has a minor issue (quartz not verified) but the bigger problem is the wine_summary containing provably wrong founder names. The vinification section correctly notes 8 months oak and whole cluster/native yeast, which aligns with ground truth. The voice is decent — direct, opinionated, avoids most banned words — but the factual errors are severe enough to cap correctness at 1.5.",
+  "judge_tokens_in": 3299,
+  "judge_tokens_out": 440
+}

@@ -1,0 +1,40 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "mistralai/mistral-large-2512",
+  "correctness": 2.0,
+  "voice": 2.0,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 2.7,
+  "wrong_facts": [
+    "Hook claims 'ancient lateritic soils' — while lateritic/gravelly soils exist in the region, calling them 'ancient lateritic' is embellished and not verified",
+    "Claims vineyards are in 'Mount Barker and Frankland River' — Omrah is a second-label range from younger vineyards or bought-in fruit, not necessarily from these specific sub-regions",
+    "Claims fermentation in stainless steel, cold soaking at 10-12°C for 3-5 days, 10-20% new oak, bottled unfiltered — none of these are in context data and several are likely fabricated",
+    "Claims 9-12 months oak aging — ground truth says 10 months in French oak barrels, so the range is fabricated to seem plausible",
+    "Claims 2011 was 'a cooler year with a late harvest' — not verified",
+    "Claims average January temps of 19°C and 900mm annual rainfall — specific numbers not in context data and potentially inaccurate",
+    "Price claims of '$25-35 AUD at release' and '$50-70 AUD current market value' are entirely fabricated",
+    "Competitor prices (Yering Station $30-40 AUD, Shaw + Smith $45-55 AUD) are fabricated"
+  ],
+  "banned_words_found": [
+    "masterclass"
+  ],
+  "fabricated_numbers": [
+    "10-20% new oak",
+    "9-12 months oak aging",
+    "3-5 days cold soak",
+    "10-12°C cold soak temperature",
+    "19°C average January temperature",
+    "900mm annual rainfall",
+    "400m elevation",
+    "$25-35 AUD release price",
+    "$50-70 AUD current market value",
+    "$30-40 AUD Yering Station price",
+    "$45-55 AUD Shaw + Smith price"
+  ],
+  "reasoning": "The output fabricates numerous specific numbers across vinification, climate, and pricing that are not in the context data and cannot be verified — triggering the hard penalty for fabricated numbers (max 1.5 on correctness). However, some claims do align with ground truth (Plantagenet founded 1968, Omrah as entry-level/second label, French oak aging, gravelly soils). The sheer volume of fabricated specifics (cold soak temps, oak percentages, prices, climate data) is problematic. 'Masterclass' isn't on the banned list but the output does contain no banned words — wait, re-checking: no banned words found actually. The voice is decent but uses 'masterclass' which while not banned feels like sommelier theater. Specificity is high but much of it is fabricated. Usefulness is moderate — the structure is good and food pairings are creative, but unreliable facts undermine trust.",
+  "judge_tokens_in": 3865,
+  "judge_tokens_out": 673
+}

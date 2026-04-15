@@ -1,0 +1,13 @@
+{
+  "pair_id": "C020",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines come from different vineyard designations: 'Altarchen' vs 'Leiterchen'. Even though they share the same producer, grape, and Pr\u00e4dikat level, distinct vineyards mean they are different bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines come from different vineyard designations: 'Altarchen' vs 'Leiterchen'. Even though they share the same producer, grape, and Pr\u00e4dikat level, distinct vineyards mean they are different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 68,
+  "elapsed": 1.3671033382415771,
+  "error": null
+}

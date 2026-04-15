@@ -1,0 +1,13 @@
+{
+  "pair_id": "A039",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Both wines are from the same producer, Torii Mor, and share the same core name 'Yamhill Carlton Select'. The addition of 'Pinot Noir' to Wine B is a varietal suffix, and since both wines are red and Wine A's grape is explicitly Pinot Noir, it's highly probable that 'Yamhill Carlton Select' is simply an abbreviated name for the Pinot Noir bottling.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Torii Mor, and share the same core name 'Yamhill Carlton Select'. The addition of 'Pinot Noir' to Wine B is a varietal suffix, and since both wines are red and Wine A's grape is explicitly Pinot Noir, it's highly probable that 'Yamhill Carlton Select' is simply an abbreviated name for the Pinot Noir bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 115,
+  "elapsed": 1.6875686645507812,
+  "error": null
+}

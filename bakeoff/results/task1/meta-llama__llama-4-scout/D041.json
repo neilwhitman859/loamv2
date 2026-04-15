@@ -1,0 +1,13 @@
+{
+  "pair_id": "D041",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer (Pommery), vineyard/cuv\u00e9e (Apanage Cuvee 1874), and color (white). The difference is that Wine B is labeled as 'Brut', which indicates a style difference (sparkling vs still), but given that 'Brut' typically denotes a sparkling wine and the base cuv\u00e9e matches, they likely represent the same wine with a style variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer (Pommery), vineyard/cuv\u00e9e (Apanage Cuvee 1874), and color (white). The difference is that Wine B is labeled as 'Brut', which indicates a style difference (sparkling vs still), but given that 'Brut' typically denotes a sparkling wine and the base cuv\u00e9e matches, they likely represent the same wine with a style variation.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 106,
+  "elapsed": 2.431398630142212,
+  "error": null
+}

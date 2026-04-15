@@ -1,0 +1,23 @@
+{
+  "page_id": "page_048",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Bonterra Ros\\u00e9 2022\", \"vintage_year\": 2022, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": \"organic\"}]}",
+  "wines_found": [
+    {
+      "name": "Bonterra Rosé 2022",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 50540,
+  "tokens_out": 73,
+  "elapsed": 4.48424768447876,
+  "error": null
+}

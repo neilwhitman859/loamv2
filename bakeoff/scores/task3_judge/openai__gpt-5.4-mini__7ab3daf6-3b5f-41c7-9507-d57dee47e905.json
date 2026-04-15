@@ -1,0 +1,24 @@
+{
+  "wine_id": "7ab3daf6-3b5f-41c7-9507-d57dee47e905",
+  "wine_name": "Vasse Felix Filius Cabernet, Margaret River",
+  "tier": "A",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "The context data lists COT (Malbec) at 4.0% and Petit Verdot at 1.0%, but ground truth shows the blend is 93% Cabernet Sauvignon, 5.5% Malbec, 1.5% Petit Verdot — the output doesn't state wrong percentages but treats Merlot Noir as a blend component when ground truth doesn't include Merlot in the blend",
+    "The output omits the key naming origin of Filius ('son of' in Latin, referring to the flagship Cabernet) which is a missed opportunity but not a wrong fact per se",
+    "No mention of wild-yeast fermentation in open-top fermenters or 11 months French oak from ground truth — not wrong claims but missed enrichment",
+    "The output does not mention Vasse Felix being founded in 1967 by Dr Tom Cullity as Margaret River's founding estate, which would have been valuable and correct"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "5 to 8 years cellar recommendation is not sourced from context data but is a reasonable estimate, not a hard fabrication"
+  ],
+  "reasoning": "The output is well-written with strong voice, specificity, and usefulness. It correctly uses the context data's grape listings (including Merlot Noir and COT/Malbec) but the ground truth shows no Merlot in the blend — the model followed its input data faithfully but that creates a factual discrepancy with reality. The hook is solid and factually safe but generic rather than leveraging the interesting 'Filius = son of' naming origin. No banned words, no fabricated hard numbers. The soil descriptions (red gravelly loam, ironstone, etc.) are specific and plausible for Margaret River. The comparable wines are well-chosen and real. The main correctness issue is including Merlot as a blend component when ground truth excludes it, and missing key producer/naming facts that would have added significant value.",
+  "judge_tokens_in": 3925,
+  "judge_tokens_out": 497
+}

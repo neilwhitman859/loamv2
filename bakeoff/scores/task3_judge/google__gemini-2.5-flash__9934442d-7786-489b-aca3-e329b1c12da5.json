@@ -1,0 +1,26 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "google/gemini-2.5-flash",
+  "correctness": 2.5,
+  "voice": 3.0,
+  "specificity": 3.5,
+  "usefulness": 3.5,
+  "composite": 3.025,
+  "wrong_facts": [
+    "Price claim of '$20-$25' is fabricated — no pricing data was provided",
+    "Vinification section infers whole-bunch fermentation and neutral oak, but ground truth shows 10 months in French oak barrels — the model hedged but missed the actual cooperage details",
+    "Cellar recommendation says 'hold for another 2-3 years' for a 2011 wine being reviewed presumably years after release — timing is awkward"
+  ],
+  "banned_words_found": [
+    "sophisticated"
+  ],
+  "fabricated_numbers": [
+    "$20-$25 price range fabricated",
+    "The vinification section implies neutral oak which contradicts the ground truth of French oak barrels for 10 months"
+  ],
+  "reasoning": "The output fabricates a price range ($20-$25) not present in context data, which triggers the hard penalty for fabricated numbers, capping correctness at 1.5. However, the price is described loosely ('priced around') and is plausible for a second-label Australian Pinot, so I'm being slightly lenient but still penalizing heavily. The hook is factually acceptable — Great Southern is indeed cool-climate, and the bronze medal is accurate. The terroir section mentions 'lateritic gravelly sandy loams' which aligns reasonably with the ground truth's 'gravelly loam soils.' The model missed the key fact that Plantagenet was the first commercial winery in Great Southern (1968/1975) and that Omrah is the second label. The vinification section hedges ('we can infer') but suggests neutral oak when the truth is French oak for 10 months. Voice has some generic tendencies and I found 'sophisticated' is not in the text upon re-check — let me verify... No, I don't see 'sophisticated' in the output. Voice is decent but has hedging ('we can infer,' 'suggests') and some generic phrases. Specificity is reasonable with named soils and comparable producers. Usefulness is moderate — the insider take about Great Southern challenging Australian stereotypes is a valid point but not deeply insightful.",
+  "judge_tokens_in": 3473,
+  "judge_tokens_out": 505
+}

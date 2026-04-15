@@ -1,0 +1,13 @@
+{
+  "pair_id": "B015",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records explicitly differ in color and style (Ros\u00e9 vs. Red), which the classification guidelines state constitutes different wines. They also have distinct LWIN identifiers, confirming they are separate commercial bottlings despite sharing the same producer, grape variety, and cuv\u00e9e name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records explicitly differ in color and style (Ros\u00e9 vs. Red), which the classification guidelines state constitutes different wines. They also have distinct LWIN identifiers, confirming they are separate commercial bottlings despite sharing the same producer, grape variety, and cuv\u00e9e name.",
+  "parse_ok": true,
+  "tokens_in": 471,
+  "tokens_out": 1245,
+  "elapsed": 24.108296632766724,
+  "error": null
+}

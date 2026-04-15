@@ -1,0 +1,13 @@
+{
+  "pair_id": "B012",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different bottlings because they differ in both color and grape composition: Wine A is a white Madeira from Donzelinho Branco, while Wine B is a red Madeira from Malvasia Fina and Furmint. In addition, 'Colheita' indicates a distinct labeled wine rather than just a formatting variation of the base 'Borges, Madeira' entry.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different bottlings because they differ in both color and grape composition: Wine A is a white Madeira from Donzelinho Branco, while Wine B is a red Madeira from Malvasia Fina and Furmint. In addition, 'Colheita' indicates a distinct labeled wine rather than just a formatting variation of the base 'Borges, Madeira' entry.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 97,
+  "elapsed": 2.8958311080932617,
+  "error": null
+}

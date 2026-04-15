@@ -1,0 +1,13 @@
+{
+  "pair_id": "C049",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white wine described as 'Brut Nature', while Wine B is listed as red, indicating a difference in color. The producer is the same, but the color difference alone is sufficient to classify them as different wines. Additionally, the LWIN numbers are different, further supporting that they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white wine described as 'Brut Nature', while Wine B is listed as red, indicating a difference in color. The producer is the same, but the color difference alone is sufficient to classify them as different wines. Additionally, the LWIN numbers are different, further supporting that they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 89,
+  "elapsed": 1.4499104022979736,
+  "error": null
+}

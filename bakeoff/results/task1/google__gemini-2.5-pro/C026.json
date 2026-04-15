@@ -1,0 +1,13 @@
+{
+  "pair_id": "C026",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines are different colors: one is a white sparkling wine and the other is a ros\u00e9. A white wine and a ros\u00e9 are always considered different products, even if they share a producer and a base cuv\u00e9e name. The names themselves, 'Maximum Brut' versus 'Maximum Brut Rose', clearly indicate two distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are different colors: one is a white sparkling wine and the other is a ros\u00e9. A white wine and a ros\u00e9 are always considered different products, even if they share a producer and a base cuv\u00e9e name. The names themselves, 'Maximum Brut' versus 'Maximum Brut Rose', clearly indicate two distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 1160,
+  "elapsed": 12.850480556488037,
+  "error": null
+}

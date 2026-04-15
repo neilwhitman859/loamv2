@@ -1,0 +1,13 @@
+{
+  "pair_id": "D023",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grape varieties, which is a key differentiator. Wine B lists specific grapes (SAUVIGNON BLANC, MUSCADELLE, MONDEUSE BLANCHE), while Wine A's grapes are not provided, but the difference in grape varieties is enough to conclude they are different wines. Additionally, the names 'Les Charmilles de Tour Blanche' and 'Les Charmilles de Tour' may suggest a relationship, but the difference in the detailed grape listing indicates distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grape varieties, which is a key differentiator. Wine B lists specific grapes (SAUVIGNON BLANC, MUSCADELLE, MONDEUSE BLANCHE), while Wine A's grapes are not provided, but the difference in grape varieties is enough to conclude they are different wines. Additionally, the names 'Les Charmilles de Tour Blanche' and 'Les Charmilles de Tour' may suggest a relationship, but the difference in the detailed grape listing indicates distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 123,
+  "elapsed": 2.786648988723755,
+  "error": null
+}

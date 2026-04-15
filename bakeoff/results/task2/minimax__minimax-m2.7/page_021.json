@@ -1,0 +1,28 @@
+{
+  "page_id": "page_021",
+  "model": "minimax/minimax-m2.7",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Prosecco\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": [{\"grape\": \"Glera\", \"pct\": null}], \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": \"Jessica Tomei\", \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Prosecco",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Glera",
+          "pct": null
+        }
+      ],
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 34380,
+  "tokens_out": 422,
+  "elapsed": 5.891927242279053,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B021",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a White Zinfandel, which is typically a ros\u00e9 wine, and its color is specified as rose, while Wine B is a red wine. The difference in color indicates different styles or types of wine, making them different wines. The producer, Buehler, is the same, but the difference in color is sufficient to classify them as different.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a White Zinfandel, which is typically a ros\u00e9 wine, and its color is specified as rose, while Wine B is a red wine. The difference in color indicates different styles or types of wine, making them different wines. The producer, Buehler, is the same, but the difference in color is sufficient to classify them as different.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 98,
+  "elapsed": 1.3621034622192383,
+  "error": null
+}

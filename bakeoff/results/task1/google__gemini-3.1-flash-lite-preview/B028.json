@@ -1,0 +1,13 @@
+{
+  "pair_id": "B028",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are made from entirely different grape varieties (Chardonnay vs. Merlot) and have different wine colors (white vs. red). These represent distinct bottlings that a consumer would encounter as separate products.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from entirely different grape varieties (Chardonnay vs. Merlot) and have different wine colors (white vs. red). These represent distinct bottlings that a consumer would encounter as separate products.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 70,
+  "elapsed": 1.9582676887512207,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D035",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from Velenosi, red, and share the base name 'Brecciarolo' with the same grape blend indicated for Wine A, but 'Gold' denotes a premium tier or special bottling, akin to classification differences like Reserva vs Gran Reserva which are explicitly different. Consumers would encounter and purchase them as distinct products, not sharing a single encyclopedia page. No evidence suggests 'Gold' is merely formatting; it signals a separate wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from Velenosi, red, and share the base name 'Brecciarolo' with the same grape blend indicated for Wine A, but 'Gold' denotes a premium tier or special bottling, akin to classification differences like Reserva vs Gran Reserva which are explicitly different. Consumers would encounter and purchase them as distinct products, not sharing a single encyclopedia page. No evidence suggests 'Gold' is merely formatting; it signals a separate wine.",
+  "parse_ok": true,
+  "tokens_in": 566,
+  "tokens_out": 598,
+  "elapsed": 5.041411638259888,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C041",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B differ in classification tier (Reserva vs Gran Reserva), which is a significant indicator of different bottlings. This, combined with the same producer and appellation, suggests they are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B differ in classification tier (Reserva vs Gran Reserva), which is a significant indicator of different bottlings. This, combined with the same producer and appellation, suggests they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 467,
+  "tokens_out": 65,
+  "elapsed": 1.2436699867248535,
+  "error": null
+}

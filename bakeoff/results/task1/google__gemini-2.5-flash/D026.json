@@ -1,0 +1,13 @@
+{
+  "pair_id": "D026",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"The wines share the same producer and the core name 'Black Forest Decadent'. The addition of 'Red' to Wine B is a common varietal suffix or descriptor that does not indicate a distinct bottling, especially since both wines are already identified as red. This is a typical case of name formatting difference.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer and the core name 'Black Forest Decadent'. The addition of 'Red' to Wine B is a common varietal suffix or descriptor that does not indicate a distinct bottling, especially since both wines are already identified as red. This is a typical case of name formatting difference.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 96,
+  "elapsed": 1.9084291458129883,
+  "error": null
+}

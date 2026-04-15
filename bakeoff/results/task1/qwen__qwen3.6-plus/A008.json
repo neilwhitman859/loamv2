@@ -1,0 +1,13 @@
+{
+  "pair_id": "A008",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Both records share the same producer (Cuilleron), cuv\u00e9e name (Sybel), color (ros\u00e9), and primary grape variety (Syrah). The addition of 'Syrah' in Wine B is a standard varietal suffix that aligns with the rule indicating abbreviated versus full naming conventions for the same bottling. No conflicting classification tiers, vineyard designations, or styles are present to suggest they are distinct wines.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both records share the same producer (Cuilleron), cuv\u00e9e name (Sybel), color (ros\u00e9), and primary grape variety (Syrah). The addition of 'Syrah' in Wine B is a standard varietal suffix that aligns with the rule indicating abbreviated versus full naming conventions for the same bottling. No conflicting classification tiers, vineyard designations, or styles are present to suggest they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 456,
+  "tokens_out": 1768,
+  "elapsed": 33.26519227027893,
+  "error": null
+}

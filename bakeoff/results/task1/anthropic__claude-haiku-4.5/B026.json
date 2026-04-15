@@ -1,0 +1,13 @@
+{
+  "pair_id": "B026",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a ros\u00e9 while Wine B is a white wine\u2014different colors represent distinct bottlings that consumers encounter separately. Additionally, they have different LWINs (1709917 vs 1188039), confirming these are separate products from Cattier's Brut Antique line.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a ros\u00e9 while Wine B is a white wine\u2014different colors represent distinct bottlings that consumers encounter separately. Additionally, they have different LWINs (1709917 vs 1188039), confirming these are separate products from Cattier's Brut Antique line.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 92,
+  "elapsed": 2.242281198501587,
+  "error": null
+}

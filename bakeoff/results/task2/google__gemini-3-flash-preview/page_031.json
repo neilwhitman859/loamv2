@@ -1,0 +1,67 @@
+{
+  "page_id": "page_031",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Sonoma County Cabernet Sauvignon\", \"vintage_year\": 2023, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}, {\"name\": \"Sonoma Coast Chardonnay\", \"vintage_year\": 2023, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}, {\"name\": \"Sonoma Coast Pinot Noir\", \"vintage_year\": 2023, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}, {\"name\": \"Russian River Valley Sparkling Rosé\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}, {\"name\": \"Saralee's Vineyard Blanc de Blancs\", \"vintage_year\": 2019, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Sonoma County Cabernet Sauvignon",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Sonoma Coast Chardonnay",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Sonoma Coast Pinot Noir",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Russian River Valley Sparkling Rosé",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    },
+    {
+      "name": "Saralee's Vineyard Blanc de Blancs",
+      "vintage_year": 2019,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 27349,
+  "tokens_out": 311,
+  "elapsed": 3.2302749156951904,
+  "error": null
+}

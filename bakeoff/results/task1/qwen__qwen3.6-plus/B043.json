@@ -1,0 +1,13 @@
+{
+  "pair_id": "B043",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records explicitly list different colors (white vs. ros\u00e9) and have distinct LWIN identifiers, confirming they are separate commercial bottlings. In Champagne, a standard Brut and a Brut Ros\u00e9 are distinct styles with different grape blends and production methods, making them different wines despite sharing the Apanage cuv\u00e9e name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records explicitly list different colors (white vs. ros\u00e9) and have distinct LWIN identifiers, confirming they are separate commercial bottlings. In Champagne, a standard Brut and a Brut Ros\u00e9 are distinct styles with different grape blends and production methods, making them different wines despite sharing the Apanage cuv\u00e9e name.",
+  "parse_ok": true,
+  "tokens_in": 462,
+  "tokens_out": 1550,
+  "elapsed": 29.68040108680725,
+  "error": null
+}

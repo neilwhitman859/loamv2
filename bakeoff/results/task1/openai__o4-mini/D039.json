@@ -1,0 +1,13 @@
+{
+  "pair_id": "D039",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"The presence of Reserva indicates a higher classification tier distinct from a non\u2010Reserva bottling, so these represent separate consumer\u2010facing wines despite similar naming.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "The presence of Reserva indicates a higher classification tier distinct from a non\u2010Reserva bottling, so these represent separate consumer\u2010facing wines despite similar naming.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 167,
+  "elapsed": 6.909460544586182,
+  "error": null
+}

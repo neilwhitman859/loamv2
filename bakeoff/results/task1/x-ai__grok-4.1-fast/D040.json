@@ -1,0 +1,13 @@
+{
+  "pair_id": "D040",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from producer Santi and are red, but Wine A includes 'Solane' as a likely vineyard or specific cuv\u00e9e designation prefixed to 'Superiore', while Wine B is simply 'Superiore'. Different vineyard/cuv\u00e9e designations indicate distinct bottlings that would not share a single page in a wine encyclopedia. The differing LWINs confirm they are treated as separate wines in databases.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from producer Santi and are red, but Wine A includes 'Solane' as a likely vineyard or specific cuv\u00e9e designation prefixed to 'Superiore', while Wine B is simply 'Superiore'. Different vineyard/cuv\u00e9e designations indicate distinct bottlings that would not share a single page in a wine encyclopedia. The differing LWINs confirm they are treated as separate wines in databases.",
+  "parse_ok": true,
+  "tokens_in": 562,
+  "tokens_out": 986,
+  "elapsed": 6.558607816696167,
+  "error": null
+}

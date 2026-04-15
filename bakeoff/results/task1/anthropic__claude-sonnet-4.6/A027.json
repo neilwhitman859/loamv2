@@ -1,0 +1,13 @@
+{
+  "pair_id": "A027",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine A is explicitly labeled as Tempranillo Tinto, while Wine B is labeled as Mencia \u2014 these are two distinct grape varieties. Even though both share the 'Vina Altamar' name and Hammeken producer, different grapes always means different wines. This is a case where the producer makes multiple wines under the same vineyard/brand name with different grapes, so the varietal suffix difference indicates a genuinely different bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A is explicitly labeled as Tempranillo Tinto, while Wine B is labeled as Mencia \u2014 these are two distinct grape varieties. Even though both share the 'Vina Altamar' name and Hammeken producer, different grapes always means different wines. This is a case where the producer makes multiple wines under the same vineyard/brand name with different grapes, so the varietal suffix difference indicates a genuinely different bottling.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 121,
+  "elapsed": 3.9164493083953857,
+  "error": null
+}

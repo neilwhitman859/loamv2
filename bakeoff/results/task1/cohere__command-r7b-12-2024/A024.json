@@ -1,0 +1,13 @@
+{
+  "pair_id": "A024",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines are produced by L.A. Cetto, have the same color (red), and the same grape variety (COT with 100% COT). The slight difference in the name (Boutique vs Boutique Syrah) is an abbreviation and does not change the classification.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are produced by L.A. Cetto, have the same color (red), and the same grape variety (COT with 100% COT). The slight difference in the name (Boutique vs Boutique Syrah) is an abbreviation and does not change the classification.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 80,
+  "elapsed": 1.4626185894012451,
+  "error": null
+}

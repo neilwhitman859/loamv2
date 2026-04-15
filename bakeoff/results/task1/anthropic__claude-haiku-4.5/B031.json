@@ -1,0 +1,13 @@
+{
+  "pair_id": "B031",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a red Merlot while Wine B is a white Sauvignon Blanc from the same producer's Porcupine Ridge line. Different grape varieties and different colors (red vs white) are definitive indicators of distinct wines that a consumer would encounter separately.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a red Merlot while Wine B is a white Sauvignon Blanc from the same producer's Porcupine Ridge line. Different grape varieties and different colors (red vs white) are definitive indicators of distinct wines that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 87,
+  "elapsed": 1.9548709392547607,
+  "error": null
+}

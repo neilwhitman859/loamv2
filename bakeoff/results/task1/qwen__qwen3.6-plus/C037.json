@@ -1,0 +1,13 @@
+{
+  "pair_id": "C037",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines differ in their German Pr\u00e4dikat level (Kabinett vs. Sp\u00e4tlese), which legally denotes distinct grape ripeness levels and separate commercial bottlings. Per the explicit classification rules, different Pr\u00e4dikat levels always indicate different wines, even when the producer, vineyard, and grape variety are identical.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines differ in their German Pr\u00e4dikat level (Kabinett vs. Sp\u00e4tlese), which legally denotes distinct grape ripeness levels and separate commercial bottlings. Per the explicit classification rules, different Pr\u00e4dikat levels always indicate different wines, even when the producer, vineyard, and grape variety are identical.",
+  "parse_ok": true,
+  "tokens_in": 475,
+  "tokens_out": 1133,
+  "elapsed": 21.98514723777771,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B045",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines share the same producer and cuv\u00e9e name (Polifonia de Purcari), but Wine A is red and Wine B is white. A difference in color (red vs. white) indicates fundamentally different wine types, meaning they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines share the same producer and cuv\u00e9e name (Polifonia de Purcari), but Wine A is red and Wine B is white. A difference in color (red vs. white) indicates fundamentally different wine types, meaning they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 456,
+  "tokens_out": 78,
+  "elapsed": 5.118424892425537,
+  "error": null
+}

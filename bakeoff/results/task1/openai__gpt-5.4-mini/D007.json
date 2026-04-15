@@ -1,0 +1,13 @@
+{
+  "pair_id": "D007",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Although the names are closely related, the grape compositions are clearly different: Wine A is a Cabernet Sauvignon/Cot blend, while Wine B is 100% Merlot. Different grapes always indicate different wines, even when the producer and core cuv\u00e9e name are similar.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Although the names are closely related, the grape compositions are clearly different: Wine A is a Cabernet Sauvignon/Cot blend, while Wine B is 100% Merlot. Different grapes always indicate different wines, even when the producer and core cuv\u00e9e name are similar.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 82,
+  "elapsed": 1.7991089820861816,
+  "error": null
+}

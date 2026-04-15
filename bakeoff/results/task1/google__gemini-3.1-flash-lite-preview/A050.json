@@ -1,0 +1,13 @@
+{
+  "pair_id": "A050",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"Wine A is a blend of Syrah and Durif, whereas Wine B is explicitly labeled as a varietal Syrah. Since the grape compositions differ, these represent distinct bottlings rather than a simple naming variation.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a blend of Syrah and Durif, whereas Wine B is explicitly labeled as a varietal Syrah. Since the grape compositions differ, these represent distinct bottlings rather than a simple naming variation.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 72,
+  "elapsed": 1.761366605758667,
+  "error": null
+}

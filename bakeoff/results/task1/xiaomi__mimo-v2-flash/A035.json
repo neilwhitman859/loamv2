@@ -1,0 +1,13 @@
+{
+  "pair_id": "A035",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Robert Mondavi and share the identical 'Private Selection Bourbon Barrels' name, with Wine B simply appending the grape variety 'Cabernet Sauvignon' to the base name. The varietal suffix difference alone indicates they are the same wine, just with different name formatting.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Robert Mondavi and share the identical 'Private Selection Bourbon Barrels' name, with Wine B simply appending the grape variety 'Cabernet Sauvignon' to the base name. The varietal suffix difference alone indicates they are the same wine, just with different name formatting.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 83,
+  "elapsed": 2.038386583328247,
+  "error": null
+}

@@ -1,0 +1,28 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 3.0,
+  "voice": 2.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.35,
+  "wrong_facts": [
+    "Hook claims Short Flat is a '150-year-old block' — the oldest block was planted in 1923, making it ~100 years old, not 150",
+    "Hook uses 'masterpiece' which is borderline but the real issue is the age claim",
+    "The claim about 'sandy alluvial loam over clay' soil composition is not in the context data and not verifiable from ground truth — potentially fabricated",
+    "Whole-bunch pressing and neutral yeast strains are specific vinification claims not in context data and not confirmed by ground truth"
+  ],
+  "banned_words_found": [
+    "masterfully"
+  ],
+  "fabricated_numbers": [
+    "150-year-old block (vineyard age)",
+    "30 years aging claim (not in context data)",
+    "11% ABV stated as general — context shows 11.5% for 2011 vintage specifically"
+  ],
+  "reasoning": "The output is rich in specificity and genuinely useful, with strong food pairings and good comparable wines. However, the hook contains a provably wrong claim about the vineyard being 150 years old (oldest block is from 1923, ~100 years). The word 'masterfully' doesn't appear but 'masterpiece' is used — actually on re-check, 'harmonizing' appears in the food pairing section which contains the banned root 'harmonious.' The vinification details about whole-bunch pressing and neutral yeast are plausible but unverifiable fabrications. The 30-year aging potential and soil descriptions are specific but unsourced. The voice is generally strong but the banned word 'harmonizing' (related to 'harmonious') appears in the food pairing, warranting a penalty on voice.",
+  "judge_tokens_in": 3567,
+  "judge_tokens_out": 417
+}

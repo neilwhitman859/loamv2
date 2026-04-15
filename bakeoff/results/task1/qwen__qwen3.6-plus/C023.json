@@ -1,0 +1,13 @@
+{
+  "pair_id": "C023",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The only difference is the addition of the varietal 'Shiraz' to Wine B's name, which corresponds to the Syrah listed for Wine A. Per the guidelines, a varietal suffix difference alone indicates the same wine, as the shorter name is simply an abbreviation. Both share the same producer, appellation, color, and core cuv\u00e9e name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The only difference is the addition of the varietal 'Shiraz' to Wine B's name, which corresponds to the Syrah listed for Wine A. Per the guidelines, a varietal suffix difference alone indicates the same wine, as the shorter name is simply an abbreviation. Both share the same producer, appellation, color, and core cuv\u00e9e name.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 1133,
+  "elapsed": 22.218708276748657,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A007",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Laurus is a blend of Durif and Syrah, while Laurus Syrah indicates a single-varietal bottling; different grape composition makes them distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Laurus is a blend of Durif and Syrah, while Laurus Syrah indicates a single-varietal bottling; different grape composition makes them distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 171,
+  "elapsed": 3.9490511417388916,
+  "error": null
+}

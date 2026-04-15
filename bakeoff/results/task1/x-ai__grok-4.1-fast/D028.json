@@ -1,0 +1,13 @@
+{
+  "pair_id": "D028",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":1.0,\"reasoning\":\"Both wines share the same producer (Laura Hartwig) and 'Seleccion del Viticultor' designation, but differ in grape variety: Cabernet Sauvignon for Wine A versus Cabernet Franc for Wine B. The rules explicitly state that different grapes always mean different wines, even if vineyard or cuv\u00e9e names match. Distinct LWINs (2369990 vs 2369987) confirm separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Laura Hartwig) and 'Seleccion del Viticultor' designation, but differ in grape variety: Cabernet Sauvignon for Wine A versus Cabernet Franc for Wine B. The rules explicitly state that different grapes always mean different wines, even if vineyard or cuv\u00e9e names match. Distinct LWINs (2369990 vs 2369987) confirm separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 576,
+  "tokens_out": 473,
+  "elapsed": 4.017691612243652,
+  "error": null
+}

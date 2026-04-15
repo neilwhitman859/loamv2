@@ -1,0 +1,33 @@
+{
+  "page_id": "page_008",
+  "model": "google/gemini-3.1-pro-preview",
+  "raw_content": "{\n  \"wines_found\": [\n    {\n      \"name\": \"Chardonnay\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": {\n        \"vessel\": \"barrel\",\n        \"months\": 8,\n        \"new_pct\": null,\n        \"origin\": \"American\"\n      },\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": null,\n        \"ta_g_l\": null,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": null,\n      \"farming\": null\n    }\n  ]\n}",
+  "wines_found": [
+    {
+      "name": "Chardonnay",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "barrel",
+        "months": 8,
+        "new_pct": null,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 28948,
+  "tokens_out": 2148,
+  "elapsed": 20.334856271743774,
+  "error": null
+}

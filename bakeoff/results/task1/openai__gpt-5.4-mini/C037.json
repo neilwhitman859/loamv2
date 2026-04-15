@@ -1,0 +1,13 @@
+{
+  "pair_id": "C037",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are the same vineyard and grape, but they differ in German Pr\u00e4dikat level: Kabinett versus Sp\u00e4tlese. Under the rules, different Pr\u00e4dikat levels are distinct wines even when the producer, vineyard, and Trocken style match.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are the same vineyard and grape, but they differ in German Pr\u00e4dikat level: Kabinett versus Sp\u00e4tlese. Under the rules, different Pr\u00e4dikat levels are distinct wines even when the producer, vineyard, and Trocken style match.",
+  "parse_ok": true,
+  "tokens_in": 443,
+  "tokens_out": 74,
+  "elapsed": 1.6699342727661133,
+  "error": null
+}

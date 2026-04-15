@@ -1,0 +1,13 @@
+{
+  "pair_id": "B019",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different grape compositions: Wine A is 100% Aligot\u00e9, while Wine B is a blend of Chardonnay Blanc and Pinot Blanc. Different primary grape varieties always indicate distinct wines, even when the producer and regional appellation (Bourgogne) are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different grape compositions: Wine A is 100% Aligot\u00e9, while Wine B is a blend of Chardonnay Blanc and Pinot Blanc. Different primary grape varieties always indicate distinct wines, even when the producer and regional appellation (Bourgogne) are the same.",
+  "parse_ok": true,
+  "tokens_in": 472,
+  "tokens_out": 85,
+  "elapsed": 2.9221091270446777,
+  "error": null
+}

@@ -1,0 +1,38 @@
+{
+  "page_id": "page_052",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"2023 Mourvèdre\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": 12.5,\n      \"blend\": [\n        {\n          \"grape\": \"Mourvèdre\",\n          \"pct\": 100\n        }\n      ],\n      \"oak\": {\n        \"vessel\": \"neutral oak\",\n        \"months\": 12,\n        \"new_pct\": 0,\n        \"origin\": null\n      },\n      \"cases_produced\": 330,\n      \"chemistry\": {\n        \"ph\": null,\n        \"ta_g_l\": null,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": null,\n      \"farming\": \"biodynamic\"\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "2023 Mourvèdre",
+      "vintage_year": 2023,
+      "abv_pct": 12.5,
+      "blend": [
+        {
+          "grape": "Mourvèdre",
+          "pct": 100
+        }
+      ],
+      "oak": {
+        "vessel": "neutral oak",
+        "months": 12,
+        "new_pct": 0,
+        "origin": null
+      },
+      "cases_produced": 330,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "biodynamic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 21128,
+  "tokens_out": 1788,
+  "elapsed": 16.526731729507446,
+  "error": null
+}

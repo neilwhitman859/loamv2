@@ -1,0 +1,13 @@
+{
+  "pair_id": "B018",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.95, \"reasoning\": \"The wines have different colors: Wine A is a ros\u00e9 and Wine B is a white wine. Different colors indicate distinct wine types or styles, which are considered different wines according to the rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors: Wine A is a ros\u00e9 and Wine B is a white wine. Different colors indicate distinct wine types or styles, which are considered different wines according to the rules.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 63,
+  "elapsed": 1.9848830699920654,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A020",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is listed as 'Viura' while Wine B includes 'Sauvignon Blanc' in its name, suggesting different grape varieties. The grape variety for Wine A is not explicitly stated but is likely Viura given the name, while Wine A's grapes are listed as 'SAUVIGNON BLANC', indicating they are different wines. Different grapes mean different wines according to the given rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is listed as 'Viura' while Wine B includes 'Sauvignon Blanc' in its name, suggesting different grape varieties. The grape variety for Wine A is not explicitly stated but is likely Viura given the name, while Wine A's grapes are listed as 'SAUVIGNON BLANC', indicating they are different wines. Different grapes mean different wines according to the given rules.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 103,
+  "elapsed": 1.3754050731658936,
+  "error": null
+}

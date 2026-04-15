@@ -1,0 +1,13 @@
+{
+  "pair_id": "B007",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are clearly distinct bottlings from the same producer: Corte A is 100% Merlot Noir, while Corte B is a blend of Cot, Cabernet Sauvignon, and Dolcetto. Different grape composition means they cannot be the same wine, even though both are red and share a similar name pattern.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are clearly distinct bottlings from the same producer: Corte A is 100% Merlot Noir, while Corte B is a blend of Cot, Cabernet Sauvignon, and Dolcetto. Different grape composition means they cannot be the same wine, even though both are red and share a similar name pattern.",
+  "parse_ok": true,
+  "tokens_in": 466,
+  "tokens_out": 83,
+  "elapsed": 1.6836695671081543,
+  "error": null
+}

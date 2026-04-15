@@ -1,0 +1,13 @@
+{
+  "pair_id": "C048",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, one being a Brut and the other a Brut Ros\u00e9. This difference in color and style indicates they are distinct wines. Despite being from the same producer and having the same base name, the color difference is a key distinguishing factor.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, one being a Brut and the other a Brut Ros\u00e9. This difference in color and style indicates they are distinct wines. Despite being from the same producer and having the same base name, the color difference is a key distinguishing factor.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 76,
+  "elapsed": 2.8086469173431396,
+  "error": null
+}

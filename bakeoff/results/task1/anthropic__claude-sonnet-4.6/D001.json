@@ -1,0 +1,13 @@
+{
+  "pair_id": "D001",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine A includes 'Nr23' (lot/cask number 23) while Wine B has no such designation, indicating these are distinct bottlings from the same vineyard and Pr\u00e4dikat level. By analogy with the rule that different lot/cask numbers at the same Pr\u00e4dikat level constitute different wines, the numbered cask designation 'Nr23' distinguishes Wine A as a specific single-cask or lot selection separate from the general Altenberg Alte Reben Grosse Lage bottling. A consumer would encounter these as separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A includes 'Nr23' (lot/cask number 23) while Wine B has no such designation, indicating these are distinct bottlings from the same vineyard and Pr\u00e4dikat level. By analogy with the rule that different lot/cask numbers at the same Pr\u00e4dikat level constitute different wines, the numbered cask designation 'Nr23' distinguishes Wine A as a specific single-cask or lot selection separate from the general Altenberg Alte Reben Grosse Lage bottling. A consumer would encounter these as separate products.",
+  "parse_ok": true,
+  "tokens_in": 522,
+  "tokens_out": 145,
+  "elapsed": 4.079113483428955,
+  "error": null
+}

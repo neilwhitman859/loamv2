@@ -1,0 +1,19 @@
+{
+  "wine_id": "1a19854d-d7fb-4046-a2ba-9c2391b6026a",
+  "wine_name": "Terre del Barolo Arnaldo Rivera, Barolo",
+  "tier": "B",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$35-$60 price range"
+  ],
+  "reasoning": "The output is largely correct and well-written. It correctly identifies the cooperative nature, 100% Nebbiolo, Barolo aging requirements, and multi-source character. It doesn't mention the specific naming origin of Arnaldo Rivera (the founder/teacher/mayor/partisan), which is a missed opportunity but not a fabrication. The terroir section's geological detail about Tortonian vs Helvetian formations is accurate wine knowledge. The $35-$60 price range is fabricated (no prices were provided), but since it's framed as a range estimate rather than a precise number, and is roughly plausible, I'm not applying the hard cap but still penalizing. The vineyard sources (Serralunga, La Morra) are mentioned in passing in the terroir and value sections, which aligns with ground truth without being explicitly stated as sourcing communes. No banned words found. Voice is strong — direct, opinionated, specific, with real food pairings and honest assessments. The insider take is genuinely useful and takes a clear position.",
+  "judge_tokens_in": 4134,
+  "judge_tokens_out": 303
+}

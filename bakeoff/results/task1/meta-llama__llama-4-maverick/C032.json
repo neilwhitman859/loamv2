@@ -1,0 +1,13 @@
+{
+  "pair_id": "C032",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are Blanc de Blancs from the same producer Bonnaire, with the same color. The difference is only in the presence or absence of 'NV', which may not necessarily indicate different bottlings. The high confidence is based on the matching producer, wine name, and color.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are Blanc de Blancs from the same producer Bonnaire, with the same color. The difference is only in the presence or absence of 'NV', which may not necessarily indicate different bottlings. The high confidence is based on the matching producer, wine name, and color.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 80,
+  "elapsed": 1.3998348712921143,
+  "error": null
+}

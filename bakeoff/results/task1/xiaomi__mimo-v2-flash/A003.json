@@ -1,0 +1,13 @@
+{
+  "pair_id": "A003",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (Goodfellow Family), vineyard (Whistling Ridge), and grape variety (Pinot Noir). The only difference is the name formatting, where Wine B appends the varietal suffix to the abbreviated name of Wine A, which is a common practice and does not indicate a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (Goodfellow Family), vineyard (Whistling Ridge), and grape variety (Pinot Noir). The only difference is the name formatting, where Wine B appends the varietal suffix to the abbreviated name of Wine A, which is a common practice and does not indicate a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 502,
+  "tokens_out": 91,
+  "elapsed": 2.8812522888183594,
+  "error": null
+}

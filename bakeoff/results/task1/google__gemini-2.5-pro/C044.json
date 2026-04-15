@@ -1,0 +1,13 @@
+{
+  "pair_id": "C044",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A includes 'Nr17', which signifies a specific cask number ('Fuder' number) for an auction wine. In German fine wine, different cask numbers, even at the same Pr\u00e4dikat level, are considered distinct and separate bottlings. Furthermore, the provided data lists conflicting colors (red vs. white), which is a fundamental difference between wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A includes 'Nr17', which signifies a specific cask number ('Fuder' number) for an auction wine. In German fine wine, different cask numbers, even at the same Pr\u00e4dikat level, are considered distinct and separate bottlings. Furthermore, the provided data lists conflicting colors (red vs. white), which is a fundamental difference between wines.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 1530,
+  "elapsed": 16.330207586288452,
+  "error": null
+}

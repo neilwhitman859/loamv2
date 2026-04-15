@@ -1,0 +1,13 @@
+{
+  "pair_id": "D040",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.75, \"reasoning\": \"Wine A is 'Solane Superiore' which appears to be a specific named cuv\u00e9e (Solane) with the Superiore designation, while Wine B is simply 'Superiore' \u2014 a different, more generic bottling from Santi. The 'Solane' designation likely refers to a specific vineyard or cuv\u00e9e selection, making these distinct products with different LWIN codes confirming they are separate bottlings. A consumer would encounter these as separate wines on a shelf.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.75,
+  "reasoning": "Wine A is 'Solane Superiore' which appears to be a specific named cuv\u00e9e (Solane) with the Superiore designation, while Wine B is simply 'Superiore' \u2014 a different, more generic bottling from Santi. The 'Solane' designation likely refers to a specific vineyard or cuv\u00e9e selection, making these distinct products with different LWIN codes confirming they are separate bottlings. A consumer would encounter these as separate wines on a shelf.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 132,
+  "elapsed": 4.393125534057617,
+  "error": null
+}

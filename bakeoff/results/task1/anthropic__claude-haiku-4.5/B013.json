@@ -1,0 +1,13 @@
+{
+  "pair_id": "B013",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is white (Diamant Bleu) while Wine B is ros\u00e9 (Diamant Rose), representing distinct color styles that a consumer would encounter as separate bottlings. Different colors from the same producer constitute different wines per classification guidelines. The different LWINs and explicit color designation in the names confirm these are distinct products.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is white (Diamant Bleu) while Wine B is ros\u00e9 (Diamant Rose), representing distinct color styles that a consumer would encounter as separate bottlings. Different colors from the same producer constitute different wines per classification guidelines. The different LWINs and explicit color designation in the names confirm these are distinct products.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 98,
+  "elapsed": 4.022172689437866,
+  "error": null
+}

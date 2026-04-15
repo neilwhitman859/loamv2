@@ -1,0 +1,28 @@
+{
+  "page_id": "page_009",
+  "model": "qwen/qwen3.5-plus-02-15",
+  "raw_content": "{\n  \"wines_found\": [\n    {\n      \"name\": \"Cabernet Sauvignon\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": {\n        \"vessel\": \"barrels\",\n        \"months\": null,\n        \"new_pct\": null,\n        \"origin\": \"American\"\n      },\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    }\n  ]\n}",
+  "wines_found": [
+    {
+      "name": "Cabernet Sauvignon",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "barrels",
+        "months": null,
+        "new_pct": null,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 27548,
+  "tokens_out": 6240,
+  "elapsed": 115.88065385818481,
+  "error": null
+}

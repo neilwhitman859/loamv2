@@ -1,0 +1,13 @@
+{
+  "pair_id": "B029",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records represent different grape varieties (Merlot vs. Chardonnay) and different wine colors (Red vs. White). Under the provided rules, different grapes always constitute different wines even if the producer and region are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent different grape varieties (Merlot vs. Chardonnay) and different wine colors (Red vs. White). Under the provided rules, different grapes always constitute different wines even if the producer and region are the same.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 68,
+  "elapsed": 1.9917142391204834,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A039",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Torii Mor) and share the same vineyard designation (Yamhill Carlton Select). The only difference is the appended varietal suffix 'Pinot Noir' in Wine B, which is a common abbreviation of the full name and does not indicate a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Torii Mor) and share the same vineyard designation (Yamhill Carlton Select). The only difference is the appended varietal suffix 'Pinot Noir' in Wine B, which is a common abbreviation of the full name and does not indicate a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 488,
+  "tokens_out": 86,
+  "elapsed": 2.9166996479034424,
+  "error": null
+}

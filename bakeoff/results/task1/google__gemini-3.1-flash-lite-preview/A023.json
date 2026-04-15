@@ -1,0 +1,13 @@
+{
+  "pair_id": "A023",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"The records refer to the same producer and the same wine, with the second record simply including the varietal name for clarity. As both are red wines from Fidelitas and the varietal matches, the addition of 'Cabernet Sauvignon' is a standard naming convention for the same bottling.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The records refer to the same producer and the same wine, with the second record simply including the varietal name for clarity. As both are red wines from Fidelitas and the varietal matches, the addition of 'Cabernet Sauvignon' is a standard naming convention for the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 84,
+  "elapsed": 1.9939889907836914,
+  "error": null
+}

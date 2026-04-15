@@ -1,0 +1,13 @@
+{
+  "pair_id": "D047",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"Both records are from Happs in Margaret River and the structured grape data lists the same grape for each: Merlot Noir (100%). The difference in the wine names appears to be only a varietal label mismatch/abbreviation issue, not a distinct cuv\u00e9e, style, or classification. Given the identical producer, region, color, and grape composition, these should be treated as the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "Both records are from Happs in Margaret River and the structured grape data lists the same grape for each: Merlot Noir (100%). The difference in the wine names appears to be only a varietal label mismatch/abbreviation issue, not a distinct cuv\u00e9e, style, or classification. Given the identical producer, region, color, and grape composition, these should be treated as the same wine.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 102,
+  "elapsed": 1.9412307739257812,
+  "error": null
+}

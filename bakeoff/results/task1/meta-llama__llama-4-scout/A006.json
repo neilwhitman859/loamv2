@@ -1,0 +1,13 @@
+{
+  "pair_id": "A006",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Radio-Coteau), vineyard (Clos Platt), and grape variety (Pinot Noir). The difference in name formatting, with Wine A being a shorter version of Wine B, is not sufficient to classify them as different wines.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Radio-Coteau), vineyard (Clos Platt), and grape variety (Pinot Noir). The difference in name formatting, with Wine A being a shorter version of Wine B, is not sufficient to classify them as different wines.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 76,
+  "elapsed": 2.0244226455688477,
+  "error": null
+}

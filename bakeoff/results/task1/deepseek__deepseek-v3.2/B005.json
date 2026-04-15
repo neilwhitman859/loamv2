@@ -1,0 +1,13 @@
+{
+  "pair_id": "B005",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different colors (red vs white) and different grape varieties (Pinot Noir vs Chardonnay Blanc), which are definitive criteria for distinct wines according to the rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors (red vs white) and different grape varieties (Pinot Noir vs Chardonnay Blanc), which are definitive criteria for distinct wines according to the rules.",
+  "parse_ok": true,
+  "tokens_in": 439,
+  "tokens_out": 61,
+  "elapsed": 2.2867443561553955,
+  "error": null
+}

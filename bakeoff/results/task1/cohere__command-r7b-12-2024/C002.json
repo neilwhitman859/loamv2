@@ -1,0 +1,13 @@
+{
+  "pair_id": "C002",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different German Pr\u00e4dikat levels (Spatlese and Auslese, respectively), which indicates different sweetness levels and ripeness, leading to distinct flavor profiles and characteristics.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different German Pr\u00e4dikat levels (Spatlese and Auslese, respectively), which indicates different sweetness levels and ripeness, leading to distinct flavor profiles and characteristics.",
+  "parse_ok": true,
+  "tokens_in": 457,
+  "tokens_out": 61,
+  "elapsed": 1.5504710674285889,
+  "error": null
+}

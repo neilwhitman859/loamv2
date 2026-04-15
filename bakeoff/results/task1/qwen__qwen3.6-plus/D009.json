@@ -1,0 +1,13 @@
+{
+  "pair_id": "D009",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records refer to Bellavista's flagship non-vintage Franciacorta, with the only difference being the inclusion of 'Brut' in Wine A. 'Brut' denotes the standard dry style for this specific cuv\u00e9e and is routinely omitted in abbreviated naming conventions. Since the producer, core cuv\u00e9e name, and wine type are identical, they represent the exact same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records refer to Bellavista's flagship non-vintage Franciacorta, with the only difference being the inclusion of 'Brut' in Wine A. 'Brut' denotes the standard dry style for this specific cuv\u00e9e and is routinely omitted in abbreviated naming conventions. Since the producer, core cuv\u00e9e name, and wine type are identical, they represent the exact same bottling.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 1872,
+  "elapsed": 35.17368507385254,
+  "error": null
+}

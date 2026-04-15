@@ -1,0 +1,13 @@
+{
+  "pair_id": "C007",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The Pr\u00e4dikat level is different between the two wines, with Wine A being Auslese and Wine B being Trockenbeerenauslese. This difference in Pr\u00e4dikat level indicates that they are different wines. Additionally, the producer and other characteristics such as color and appellation match, but the Pr\u00e4dikat level takes precedence in this classification.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The Pr\u00e4dikat level is different between the two wines, with Wine A being Auslese and Wine B being Trockenbeerenauslese. This difference in Pr\u00e4dikat level indicates that they are different wines. Additionally, the producer and other characteristics such as color and appellation match, but the Pr\u00e4dikat level takes precedence in this classification.",
+  "parse_ok": true,
+  "tokens_in": 472,
+  "tokens_out": 96,
+  "elapsed": 2.402623176574707,
+  "error": null
+}

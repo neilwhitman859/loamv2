@@ -1,0 +1,13 @@
+{
+  "pair_id": "D017",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records are from producer Villadoria, white wines made from 100% Cortese grapes, with names 'Comune di Gavi' and 'del Comune di Gavi' that differ only in minor formatting ('del' prefix likely part of full phrasing). Gavi wines are typically monovarietal Cortese, and no differences in vineyard, style, or classification are indicated. The LWIN for Wine B provides a unique ID but aligns with the shared attributes.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records are from producer Villadoria, white wines made from 100% Cortese grapes, with names 'Comune di Gavi' and 'del Comune di Gavi' that differ only in minor formatting ('del' prefix likely part of full phrasing). Gavi wines are typically monovarietal Cortese, and no differences in vineyard, style, or classification are indicated. The LWIN for Wine B provides a unique ID but aligns with the shared attributes.",
+  "parse_ok": true,
+  "tokens_in": 569,
+  "tokens_out": 609,
+  "elapsed": 5.842922925949097,
+  "error": null
+}

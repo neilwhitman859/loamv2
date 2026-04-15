@@ -1,0 +1,13 @@
+{
+  "pair_id": "C047",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.9, \"reasoning\": \"The wines have different colors (white vs ros\u00e9), which is a key rule for different wines. Additionally, the names 'Brut Nature' and 'Brut Rose Nature' indicate a difference in style/type, not just a varietal suffix abbreviation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors (white vs ros\u00e9), which is a key rule for different wines. Additionally, the names 'Brut Nature' and 'Brut Rose Nature' indicate a difference in style/type, not just a varietal suffix abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 441,
+  "tokens_out": 76,
+  "elapsed": 3.5468122959136963,
+  "error": null
+}

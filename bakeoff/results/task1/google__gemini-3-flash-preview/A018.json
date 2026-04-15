@@ -1,0 +1,13 @@
+{
+  "pair_id": "A018",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is explicitly identified as Chardonnay, while Wine B is identified as Viognier. Since different grape varieties constitute distinct bottlings even from the same producer and range, these are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is explicitly identified as Chardonnay, while Wine B is identified as Viognier. Since different grape varieties constitute distinct bottlings even from the same producer and range, these are different wines.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 63,
+  "elapsed": 1.4252469539642334,
+  "error": null
+}

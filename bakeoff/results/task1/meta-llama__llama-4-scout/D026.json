@@ -1,0 +1,13 @@
+{
+  "pair_id": "D026",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The producer and wine name are identical, and the color is the same for both wines. The addition of 'Red' in Wine B's name does not indicate a different wine style or grape variety, but rather a specification of the wine's color, which is already stated to be red for both wines.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The producer and wine name are identical, and the color is the same for both wines. The addition of 'Red' in Wine B's name does not indicate a different wine style or grape variety, but rather a specification of the wine's color, which is already stated to be red for both wines.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 84,
+  "elapsed": 2.642805576324463,
+  "error": null
+}

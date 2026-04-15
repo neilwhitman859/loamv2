@@ -1,0 +1,13 @@
+{
+  "pair_id": "B033",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a red Pinot Noir, while Wine B is a white Gewuerztraminer. Different grape varieties and colors always indicate distinct wines, even if they share the same vineyard name and producer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a red Pinot Noir, while Wine B is a white Gewuerztraminer. Different grape varieties and colors always indicate distinct wines, even if they share the same vineyard name and producer.",
+  "parse_ok": true,
+  "tokens_in": 488,
+  "tokens_out": 68,
+  "elapsed": 1.7374935150146484,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A004",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"While the names differ only by a varietal suffix, Wine A lists both Pinot Noir and Pinot Gris as its grape composition, whereas Wine B is specifically Pinot Gris. The provided rules state that different grape compositions always indicate distinct wines, overriding the typical suffix abbreviation convention. Therefore, they represent separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "While the names differ only by a varietal suffix, Wine A lists both Pinot Noir and Pinot Gris as its grape composition, whereas Wine B is specifically Pinot Gris. The provided rules state that different grape compositions always indicate distinct wines, overriding the typical suffix abbreviation convention. Therefore, they represent separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 468,
+  "tokens_out": 2178,
+  "elapsed": 40.466506481170654,
+  "error": null
+}

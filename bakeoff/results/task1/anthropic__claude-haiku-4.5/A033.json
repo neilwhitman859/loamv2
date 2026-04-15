@@ -1,0 +1,13 @@
+{
+  "pair_id": "A033",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Calabria, white wines made from Vermentino. Wine A lists the grape explicitly while Wine B includes it in the name; this is a standard naming variation where the shorter 'Private Bin' is an abbreviation of 'Private Bin Vermentino.' The LWIN reference confirms Wine B's identity without contradicting the grape match.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Calabria, white wines made from Vermentino. Wine A lists the grape explicitly while Wine B includes it in the name; this is a standard naming variation where the shorter 'Private Bin' is an abbreviation of 'Private Bin Vermentino.' The LWIN reference confirms Wine B's identity without contradicting the grape match.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 107,
+  "elapsed": 2.489150047302246,
+  "error": null
+}

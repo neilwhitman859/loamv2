@@ -1,0 +1,13 @@
+{
+  "pair_id": "B011",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines represent different age statements (15 Year Old vs 5 Year Old), which are distinct commercial bottlings. Furthermore, the records indicate different colors (red vs white) and Wine A specifies the Boal grape while Wine B does not, confirming they are separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines represent different age statements (15 Year Old vs 5 Year Old), which are distinct commercial bottlings. Furthermore, the records indicate different colors (red vs white) and Wine A specifies the Boal grape while Wine B does not, confirming they are separate products.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 80,
+  "elapsed": 1.8294994831085205,
+  "error": null
+}

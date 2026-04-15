@@ -1,0 +1,13 @@
+{
+  "pair_id": "D018",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Truchard) and are red Cabernet Sauvignon, with 'Reserve' being a stylistic designation that does not constitute a different classification tier like Rioja Reserva vs Gran Reserva. The only difference is the 'Reserve' suffix, which is a common naming variation for the same bottling and does not indicate a distinct vineyard, grape, or wine type.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Truchard) and are red Cabernet Sauvignon, with 'Reserve' being a stylistic designation that does not constitute a different classification tier like Rioja Reserva vs Gran Reserva. The only difference is the 'Reserve' suffix, which is a common naming variation for the same bottling and does not indicate a distinct vineyard, grape, or wine type.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 109,
+  "elapsed": 2.255284309387207,
+  "error": null
+}

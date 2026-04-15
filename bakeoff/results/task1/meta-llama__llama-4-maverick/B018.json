@@ -1,0 +1,13 @@
+{
+  "pair_id": "B018",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a ros\u00e9, while Wine B is white, indicating different colors and likely different wines. The producer 'd'Angelo' is the same, but the color difference is a key differentiator. The LWIN numbers are also different, further supporting that they are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a ros\u00e9, while Wine B is white, indicating different colors and likely different wines. The producer 'd'Angelo' is the same, but the color difference is a key differentiator. The LWIN numbers are also different, further supporting that they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 83,
+  "elapsed": 1.642232894897461,
+  "error": null
+}

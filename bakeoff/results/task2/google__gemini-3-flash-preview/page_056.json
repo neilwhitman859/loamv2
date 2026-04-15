@@ -1,0 +1,23 @@
+{
+  "page_id": "page_056",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"wines_found\": [{\"name\": \"2023 Hilltop Cabernet Sauvignon\", \"vintage_year\": 2023, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": \"sustainable\"}]}",
+  "wines_found": [
+    {
+      "name": "2023 Hilltop Cabernet Sauvignon",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "sustainable"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 38765,
+  "tokens_out": 72,
+  "elapsed": 2.034816026687622,
+  "error": null
+}

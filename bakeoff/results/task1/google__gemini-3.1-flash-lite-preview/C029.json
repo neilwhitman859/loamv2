@@ -1,0 +1,13 @@
+{
+  "pair_id": "C029",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"The two records have distinct LWIN numbers, which are unique identifiers for specific wine bottlings. Furthermore, the presence of 'Don Amerigo' in Wine A indicates a specific brand or tier designation that is absent in Wine B, suggesting they are distinct products within the Mayu portfolio.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The two records have distinct LWIN numbers, which are unique identifiers for specific wine bottlings. Furthermore, the presence of 'Don Amerigo' in Wine A indicates a specific brand or tier designation that is absent in Wine B, suggesting they are distinct products within the Mayu portfolio.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 86,
+  "elapsed": 1.8728487491607666,
+  "error": null
+}

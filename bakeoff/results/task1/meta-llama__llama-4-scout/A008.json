@@ -1,0 +1,13 @@
+{
+  "pair_id": "A008",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer (Cuilleron), vineyard/cuv\u00e9e (Sybel), and color (rose). The difference in name formatting (omission of varietal suffix) and grapes listed (Wine A explicitly lists Syrah and Durif, while Wine B only mentions Syrah) does not impact the classification as the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer (Cuilleron), vineyard/cuv\u00e9e (Sybel), and color (rose). The difference in name formatting (omission of varietal suffix) and grapes listed (Wine A explicitly lists Syrah and Durif, while Wine B only mentions Syrah) does not impact the classification as the same wine.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 92,
+  "elapsed": 3.3274471759796143,
+  "error": null
+}

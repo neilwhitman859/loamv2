@@ -1,0 +1,13 @@
+{
+  "pair_id": "D049",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Dr. Wehrheim's Birkweiler Kastanienbusch vineyard and are Riesling GG (Grosses Gew\u00e4chs), but Wine B specifies the 'Koppel' sub-parcel/lieu-dit within the Kastanienbusch vineyard. This represents a distinct vineyard designation \u2014 a specific parcel bottling versus the broader Kastanienbusch GG \u2014 which would be sold and encountered separately by consumers. The different LWIN codes (1422153 vs 1422166) confirm these are catalogued as distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Dr. Wehrheim's Birkweiler Kastanienbusch vineyard and are Riesling GG (Grosses Gew\u00e4chs), but Wine B specifies the 'Koppel' sub-parcel/lieu-dit within the Kastanienbusch vineyard. This represents a distinct vineyard designation \u2014 a specific parcel bottling versus the broader Kastanienbusch GG \u2014 which would be sold and encountered separately by consumers. The different LWIN codes (1422153 vs 1422166) confirm these are catalogued as distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 518,
+  "tokens_out": 158,
+  "elapsed": 4.672025203704834,
+  "error": null
+}

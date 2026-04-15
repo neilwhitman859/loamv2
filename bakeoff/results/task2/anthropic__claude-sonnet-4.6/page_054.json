@@ -1,0 +1,45 @@
+{
+  "page_id": "page_054",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"wines_found\": [{\"name\": \"2025 Dianthus\", \"vintage_year\": 2025, \"abv_pct\": 14.0, \"blend\": [{\"grape\": \"Mourvèdre\", \"pct\": 42}, {\"grape\": \"Grenache\", \"pct\": 40}, {\"grape\": \"Counoise\", \"pct\": 13}, {\"grape\": \"Cinsaut\", \"pct\": 5}], \"oak\": null, \"cases_produced\": 887, \"chemistry\": {\"ph\": null, \"ta_g_l\": null, \"rs_g_l\": null, \"so2_total_mg_l\": null}, \"winemaker\": null, \"farming\": \"biodynamic\"}]}",
+  "wines_found": [
+    {
+      "name": "2025 Dianthus",
+      "vintage_year": 2025,
+      "abv_pct": 14.0,
+      "blend": [
+        {
+          "grape": "Mourvèdre",
+          "pct": 42
+        },
+        {
+          "grape": "Grenache",
+          "pct": 40
+        },
+        {
+          "grape": "Counoise",
+          "pct": 13
+        },
+        {
+          "grape": "Cinsaut",
+          "pct": 5
+        }
+      ],
+      "oak": null,
+      "cases_produced": 887,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "biodynamic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 19491,
+  "tokens_out": 178,
+  "elapsed": 3.3071043491363525,
+  "error": null
+}

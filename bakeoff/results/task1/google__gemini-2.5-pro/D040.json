@@ -1,0 +1,13 @@
+{
+  "pair_id": "D040",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"The name 'Solane' acts as a specific cuv\u00e9e or vineyard designation, distinguishing it from a potentially more generic 'Superiore' bottling from the same producer. This is not a simple formatting difference but indicates a distinct product. The different LWINs for each wine provide strong evidence that they are tracked as separate and distinct bottlings in the market.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The name 'Solane' acts as a specific cuv\u00e9e or vineyard designation, distinguishing it from a potentially more generic 'Superiore' bottling from the same producer. This is not a simple formatting difference but indicates a distinct product. The different LWINs for each wine provide strong evidence that they are tracked as separate and distinct bottlings in the market.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 1596,
+  "elapsed": 17.09993076324463,
+  "error": null
+}

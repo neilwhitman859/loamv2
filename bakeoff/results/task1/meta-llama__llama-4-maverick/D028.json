@@ -1,0 +1,13 @@
+{
+  "pair_id": "D028",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Cabernet Sauvignon and Wine B is a Cabernet Franc, indicating different grape varieties, which always means different wines. The producer, Laura Hartwig, makes wines from different grapes, so the varietal difference is not just a naming variation. The LWIN numbers are also different, further supporting that they are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Cabernet Sauvignon and Wine B is a Cabernet Franc, indicating different grape varieties, which always means different wines. The producer, Laura Hartwig, makes wines from different grapes, so the varietal difference is not just a naming variation. The LWIN numbers are also different, further supporting that they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 504,
+  "tokens_out": 90,
+  "elapsed": 1.8549516201019287,
+  "error": null
+}

@@ -1,0 +1,28 @@
+{
+  "page_id": "page_052",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"2023 Mourvèdre\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": 12.5,\n      \"blend\": [\n        {\n          \"grape\": \"Mourvèdre\",\n          \"pct\": 100\n        }\n      ],\n      \"oak\": null,\n      \"cases_produced\": 330,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "2023 Mourvèdre",
+      "vintage_year": 2023,
+      "abv_pct": 12.5,
+      "blend": [
+        {
+          "grape": "Mourvèdre",
+          "pct": 100
+        }
+      ],
+      "oak": null,
+      "cases_produced": 330,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 18812,
+  "tokens_out": 122,
+  "elapsed": 4.31502628326416,
+  "error": null
+}

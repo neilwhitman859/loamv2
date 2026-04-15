@@ -1,0 +1,13 @@
+{
+  "pair_id": "C025",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are from the same producer and share the 'Giulio Ferrari Riserva del Fondatore' cuv\u00e9e name, they are distinct bottlings. Wine A is the standard white version, while Wine B is explicitly the 'Rose' version. A white wine and a ros\u00e9 are always considered different wines, even if they come from the same cuv\u00e9e line.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are from the same producer and share the 'Giulio Ferrari Riserva del Fondatore' cuv\u00e9e name, they are distinct bottlings. Wine A is the standard white version, while Wine B is explicitly the 'Rose' version. A white wine and a ros\u00e9 are always considered different wines, even if they come from the same cuv\u00e9e line.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 1206,
+  "elapsed": 11.860563278198242,
+  "error": null
+}

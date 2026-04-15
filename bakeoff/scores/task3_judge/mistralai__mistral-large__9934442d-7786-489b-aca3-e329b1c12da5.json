@@ -1,0 +1,29 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "mistralai/mistral-large",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.4,
+  "wrong_facts": [
+    "Vinification claims about stainless steel fermentation, 8-10 months aging, 10-20% new oak, and cold soaking are fabricated — ground truth says 10 months in French oak barrels with no detail on new oak percentage or fermentation method",
+    "Alcohol claimed as 'around 13.5%' is fabricated — not in context data",
+    "Frankland River mentioned as a vineyard source — not supported by context or ground truth (ground truth says Wyjup Vineyard, Mount Barker)",
+    "Rainfall figure of 600-800mm is not in context data and unverifiable from provided sources",
+    "Price of $20-$25 AUD is fabricated — no price data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "13.5% alcohol",
+    "10-20% new oak",
+    "8-10 months aging (ground truth says 10 months, not a range)",
+    "600-800mm rainfall",
+    "$20-$25 AUD price"
+  ],
+  "reasoning": "The output fabricates multiple specific numbers: ABV (13.5%), new oak percentage (10-20%), aging duration as a range (8-10 months vs. ground truth 10 months), rainfall, and price. The vinification section is largely invented — stainless steel fermentation, cold soaking, and new oak percentages are not in context data and not confirmed by ground truth. The hook's claim about 'lateritic gravels' is plausible for Great Southern but not directly confirmed; the TEXSOM bronze is correct. The voice is strong — direct, opinionated, specific, no banned words, good food pairings with real dishes and reasoning. Specificity is high with named soils, competitors, and climate details, but many of those specific claims are unverifiable or wrong. The hard penalty for fabricated numbers caps correctness at 1.5, but some claims like the 1968 founding date and the general terroir description are correct, so I'm giving a small benefit at 2.0.",
+  "judge_tokens_in": 3760,
+  "judge_tokens_out": 500
+}

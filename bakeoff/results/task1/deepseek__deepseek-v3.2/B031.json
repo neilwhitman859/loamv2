@@ -1,0 +1,13 @@
+{
+  "pair_id": "B031",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"Wine A is a red Merlot, while Wine B is a white wine made from Sauvignon Blanc. Different grape varieties and different colors always indicate distinct wines, even when the producer and brand name (Porcupine Ridge) are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "Wine A is a red Merlot, while Wine B is a white wine made from Sauvignon Blanc. Different grape varieties and different colors always indicate distinct wines, even when the producer and brand name (Porcupine Ridge) are the same.",
+  "parse_ok": true,
+  "tokens_in": 455,
+  "tokens_out": 75,
+  "elapsed": 1.9547138214111328,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D048",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Both wines are from Happs and share the same grape blend (Cabernet Merlot), but Wine A carries the 'iSeries' designation which indicates a distinct product line or tier from Happs. The 'iSeries' prefix suggests a separate bottling with its own identity rather than a mere abbreviation, and the different LWIN codes (1958650 vs 1958764) confirm these are catalogued as distinct wines. A consumer would encounter these as separate bottlings in the market.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Both wines are from Happs and share the same grape blend (Cabernet Merlot), but Wine A carries the 'iSeries' designation which indicates a distinct product line or tier from Happs. The 'iSeries' prefix suggests a separate bottling with its own identity rather than a mere abbreviation, and the different LWIN codes (1958650 vs 1958764) confirm these are catalogued as distinct wines. A consumer would encounter these as separate bottlings in the market.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 134,
+  "elapsed": 4.110630035400391,
+  "error": null
+}

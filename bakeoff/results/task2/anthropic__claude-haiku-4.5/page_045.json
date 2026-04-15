@@ -1,0 +1,32 @@
+{
+  "page_id": "page_045",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Bonterra Red Blend\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": null,\n      \"blend\": [\n        {\n          \"grape\": \"Petite Sirah\",\n          \"pct\": null\n        },\n        {\n          \"grape\": \"Merlot\",\n          \"pct\": null\n        }\n      ],\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": \"organic\"\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Bonterra Red Blend",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Petite Sirah",
+          "pct": null
+        },
+        {
+          "grape": "Merlot",
+          "pct": null
+        }
+      ],
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 51436,
+  "tokens_out": 163,
+  "elapsed": 2.7177672386169434,
+  "error": null
+}

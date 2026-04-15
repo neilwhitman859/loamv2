@@ -1,0 +1,13 @@
+{
+  "pair_id": "D006",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The names 'La Strada' and 'Strada' differ only in formatting, suggesting they could be the same cuv\u00e9e from producer Fromm, and both are red wines. However, Wine A is 100% Merlot Noir, while Wine B is a blend of Cot (Malbec) and Merlot Noir, indicating different grape compositions. Per the rules, different grapes always mean DIFFERENT wines, even if vineyard names match.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The names 'La Strada' and 'Strada' differ only in formatting, suggesting they could be the same cuv\u00e9e from producer Fromm, and both are red wines. However, Wine A is 100% Merlot Noir, while Wine B is a blend of Cot (Malbec) and Merlot Noir, indicating different grape compositions. Per the rules, different grapes always mean DIFFERENT wines, even if vineyard names match.",
+  "parse_ok": true,
+  "tokens_in": 568,
+  "tokens_out": 520,
+  "elapsed": 3.628397226333618,
+  "error": null
+}

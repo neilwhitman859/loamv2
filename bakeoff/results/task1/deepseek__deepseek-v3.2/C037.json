@@ -1,0 +1,13 @@
+{
+  "pair_id": "C037",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different German Pr\u00e4dikat levels (Kabinett vs Sp\u00e4tlese), which are distinct classifications indicating different ripeness levels at harvest and separate bottlings. This rule explicitly states different Pr\u00e4dikat levels mean DIFFERENT wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different German Pr\u00e4dikat levels (Kabinett vs Sp\u00e4tlese), which are distinct classifications indicating different ripeness levels at harvest and separate bottlings. This rule explicitly states different Pr\u00e4dikat levels mean DIFFERENT wines.",
+  "parse_ok": true,
+  "tokens_in": 465,
+  "tokens_out": 75,
+  "elapsed": 9.348695516586304,
+  "error": null
+}

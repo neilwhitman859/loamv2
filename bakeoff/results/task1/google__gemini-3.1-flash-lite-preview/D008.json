@@ -1,0 +1,13 @@
+{
+  "pair_id": "D008",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both records refer to the same producer (Vistalba) and the same wine blend (Cot and Cabernet Sauvignon). 'Corte C' is the full name of the specific Vistalba bottling, while 'Corte' is a common shorthand reference to this specific wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both records refer to the same producer (Vistalba) and the same wine blend (Cot and Cabernet Sauvignon). 'Corte C' is the full name of the specific Vistalba bottling, while 'Corte' is a common shorthand reference to this specific wine.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 76,
+  "elapsed": 2.162968873977661,
+  "error": null
+}

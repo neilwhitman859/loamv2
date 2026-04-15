@@ -1,0 +1,30 @@
+{
+  "wine_id": "49a78f8d-0332-4925-b8b1-c1cb40dcb33b",
+  "wine_name": "Wind Gap Woodruff Vineyard Pinot Noir, Santa Cruz Mountains",
+  "tier": "C",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "Claim that Wind Gap is 'now-shuttered' — Wind Gap was folded into Pax Wines but Pax Mahle continues making wine under the Pax label; calling it 'now-shuttered' is misleading but partially true as the Wind Gap label was discontinued",
+    "Corralitos is spelled 'Corralitos' in the output but the ground truth says 'Coralitos' — minor discrepancy, though both spellings appear in various sources",
+    "Fractured shale and sandstone soils are stated as fact but not verifiable from context data or ground truth — the ground truth doesn't specify soil types, making this a potentially fabricated detail",
+    "Dry-farmed claim in the hook is not verified by ground truth or context data",
+    "Own-rooted vines claim is not verified by ground truth or context data",
+    "Secondary market price of $50-$65 is fabricated — no price data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$50 to $65 secondary market price",
+    "55 degrees storage temperature",
+    "aging_potential_years: 12",
+    "drinking_window_min_years: 5",
+    "drinking_window_max_years: 12"
+  ],
+  "reasoning": "The output is impressively written with strong voice, excellent specificity, and genuinely useful comparables and food pairings. However, it fabricates several specific claims: soil composition (fractured shale/sandstone), dry-farmed and own-rooted vine status, and a secondary market price range — none of which appear in the context data or ground truth. The hook's claims about dry-farmed, own-rooted vines are unverifiable and potentially wrong. The vineyard was planted in 1978 per ground truth, so '1970s' is close but slightly imprecise. The 'benchmark for the lower-alcohol, whole-cluster movement' framing is opinion but defensible. The wine's correct details (Pax Mahle, whole-cluster, neutral oak, native yeast, near Coralitos) match ground truth well. The fabricated price ($50-$65) triggers concern but isn't a hard-capped number like pH or ABV. Overall, strong writing undermined by several unverifiable specific claims presented as fact.",
+  "judge_tokens_in": 3523,
+  "judge_tokens_out": 558
+}

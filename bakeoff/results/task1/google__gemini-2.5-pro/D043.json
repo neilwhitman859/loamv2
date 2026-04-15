@@ -1,0 +1,13 @@
+{
+  "pair_id": "D043",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are distinguished by 'Note #1' and 'Note #2' in their names. This numbering indicates two separate and distinct bottlings or expressions within the 'Polifonia de Purcari' line. The different LWINs for each wine provide strong confirmation that these are treated as unique products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are distinguished by 'Note #1' and 'Note #2' in their names. This numbering indicates two separate and distinct bottlings or expressions within the 'Polifonia de Purcari' line. The different LWINs for each wine provide strong confirmation that these are treated as unique products.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 1310,
+  "elapsed": 14.074123620986938,
+  "error": null
+}

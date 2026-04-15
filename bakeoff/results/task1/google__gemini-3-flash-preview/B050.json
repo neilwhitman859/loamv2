@@ -1,0 +1,13 @@
+{
+  "pair_id": "B050",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records represent two distinct styles of sparkling wine: a white Cremant and a Rose Cremant. According to the rules, different colors and wine types from the same producer/vineyard constitute different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records represent two distinct styles of sparkling wine: a white Cremant and a Rose Cremant. According to the rules, different colors and wine types from the same producer/vineyard constitute different wines.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 64,
+  "elapsed": 1.6169848442077637,
+  "error": null
+}

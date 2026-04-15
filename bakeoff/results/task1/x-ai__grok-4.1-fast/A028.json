@@ -1,0 +1,13 @@
+{
+  "pair_id": "A028",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from producer Owen Roe, share the core name 'Lady Rosa', and Wine B's 'Syrah' suffix matches Wine A's listed SYRAH grape variety. The varietal suffix difference alone indicates the shorter name is an abbreviation for the same wine. Both are red, with no evidence of multiple vineyard wines or other distinguishing factors like classification or color.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from producer Owen Roe, share the core name 'Lady Rosa', and Wine B's 'Syrah' suffix matches Wine A's listed SYRAH grape variety. The varietal suffix difference alone indicates the shorter name is an abbreviation for the same wine. Both are red, with no evidence of multiple vineyard wines or other distinguishing factors like classification or color.",
+  "parse_ok": true,
+  "tokens_in": 562,
+  "tokens_out": 418,
+  "elapsed": 3.2601377964019775,
+  "error": null
+}

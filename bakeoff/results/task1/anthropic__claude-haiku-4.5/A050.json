@@ -1,0 +1,13 @@
+{
+  "pair_id": "A050",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A 'Cayenne' and Wine B 'Cayenne Syrah' are both red wines from de Castelnau with Syrah as a primary component. The addition of 'Syrah' in Wine B's name is a varietal suffix clarification rather than indicating a different bottling, consistent with the rule that such naming variations typically represent the same wine with abbreviated vs. full nomenclature.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A 'Cayenne' and Wine B 'Cayenne Syrah' are both red wines from de Castelnau with Syrah as a primary component. The addition of 'Syrah' in Wine B's name is a varietal suffix clarification rather than indicating a different bottling, consistent with the rule that such naming variations typically represent the same wine with abbreviated vs. full nomenclature.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 118,
+  "elapsed": 2.3989973068237305,
+  "error": null
+}

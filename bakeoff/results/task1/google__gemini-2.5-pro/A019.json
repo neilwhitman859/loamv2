@@ -1,0 +1,13 @@
+{
+  "pair_id": "A019",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although the core name 'True Colours' is the same, the grape composition is different. Wine A is explicitly listed as a blend of Pinot Noir and Merlot. Wine B's name, 'True Colours Pinot Noir', indicates it is a single-varietal Pinot Noir. Wines made from different grapes or different blends are considered different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the core name 'True Colours' is the same, the grape composition is different. Wine A is explicitly listed as a blend of Pinot Noir and Merlot. Wine B's name, 'True Colours Pinot Noir', indicates it is a single-varietal Pinot Noir. Wines made from different grapes or different blends are considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 1001,
+  "elapsed": 10.186806917190552,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A010",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.98, \"reasoning\": \"Wine A is a Gew\u00fcrztraminer while Wine B is a Pinot Gris, and different grape varieties always indicate distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Wine A is a Gew\u00fcrztraminer while Wine B is a Pinot Gris, and different grape varieties always indicate distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 179,
+  "elapsed": 4.683785438537598,
+  "error": null
+}

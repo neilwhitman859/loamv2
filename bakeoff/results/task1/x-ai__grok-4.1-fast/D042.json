@@ -1,0 +1,13 @@
+{
+  "pair_id": "D042",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Pommery, share the core name 'Apanage Prestige', and are white; 'Brut' in Wine A is a standard sparkling wine style descriptor (dryness level) often included or omitted without changing the wine identity. No differences in producer, color, grapes, or classification tiers. This matches the rule where style suffix differences alone indicate the same wine, with the shorter name as an abbreviation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Pommery, share the core name 'Apanage Prestige', and are white; 'Brut' in Wine A is a standard sparkling wine style descriptor (dryness level) often included or omitted without changing the wine identity. No differences in producer, color, grapes, or classification tiers. This matches the rule where style suffix differences alone indicate the same wine, with the shorter name as an abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 559,
+  "tokens_out": 539,
+  "elapsed": 4.905409336090088,
+  "error": null
+}

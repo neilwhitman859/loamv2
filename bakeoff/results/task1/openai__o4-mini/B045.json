@@ -1,0 +1,13 @@
+{
+  "pair_id": "B045",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.92, \"reasoning\": \"One is a red wine (Note #1) and the other is a white wine (Note #3), indicating different styles, so they represent distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.92,
+  "reasoning": "One is a red wine (Note #1) and the other is a white wine (Note #3), indicating different styles, so they represent distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 152,
+  "elapsed": 3.9649429321289062,
+  "error": null
+}

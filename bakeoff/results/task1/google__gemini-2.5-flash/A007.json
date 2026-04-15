@@ -1,0 +1,13 @@
+{
+  "pair_id": "A007",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"The wines share the same producer and the name 'Laurus' is present in both. 'Laurus Syrah' is a common way to specify the grape variety for a wine named 'Laurus', especially since Wine A already lists Syrah as a grape. Without evidence of a separate 'Laurus' bottling that is not Syrah-based, these are likely the same wine with one name being more specific.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer and the name 'Laurus' is present in both. 'Laurus Syrah' is a common way to specify the grape variety for a wine named 'Laurus', especially since Wine A already lists Syrah as a grape. Without evidence of a separate 'Laurus' bottling that is not Syrah-based, these are likely the same wine with one name being more specific.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 118,
+  "elapsed": 1.7195794582366943,
+  "error": null
+}

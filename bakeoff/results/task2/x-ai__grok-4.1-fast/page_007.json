@@ -1,0 +1,28 @@
+{
+  "page_id": "page_007",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"wines_found\":[{\"name\":\"Essential Red\",\"vintage_year\":2022,\"abv_pct\":null,\"blend\":null,\"oak\":{\"vessel\":\"American oak barrels\",\"months\":12,\"new_pct\":null,\"origin\":\"American\"},\"cases_produced\":null,\"chemistry\":null,\"winemaker\":null,\"farming\":null}]}",
+  "wines_found": [
+    {
+      "name": "Essential Red",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "American oak barrels",
+        "months": 12,
+        "new_pct": null,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 20767,
+  "tokens_out": 1400,
+  "elapsed": 8.711825370788574,
+  "error": null
+}

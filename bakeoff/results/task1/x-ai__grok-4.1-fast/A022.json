@@ -1,0 +1,13 @@
+{
+  "pair_id": "A022",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is explicitly Cabernet Sauvignon, while Wine B is Carmenere, indicating different grape varieties. The rules state that different grapes always mean different wines, even if the vineyard or base name matches. The 'Andes Peaks' name with varietal suffixes represents distinct bottlings from the same producer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is explicitly Cabernet Sauvignon, while Wine B is Carmenere, indicating different grape varieties. The rules state that different grapes always mean different wines, even if the vineyard or base name matches. The 'Andes Peaks' name with varietal suffixes represents distinct bottlings from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 566,
+  "tokens_out": 449,
+  "elapsed": 6.238379240036011,
+  "error": null
+}

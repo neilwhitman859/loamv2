@@ -1,0 +1,13 @@
+{
+  "pair_id": "D033",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.98, \"reasoning\": \"Both wines are Pinot Noir from Valentin Zusslin's Bollenberg vineyard, but they carry distinct cuv\u00e9e names: 'Luft' and 'Harmonie'. These are separate, named bottlings/cuv\u00e9es from the same producer and vineyard, representing different selections or parcels that a consumer would encounter as distinct wines. Different cuv\u00e9e names from the same vineyard = DIFFERENT wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Both wines are Pinot Noir from Valentin Zusslin's Bollenberg vineyard, but they carry distinct cuv\u00e9e names: 'Luft' and 'Harmonie'. These are separate, named bottlings/cuv\u00e9es from the same producer and vineyard, representing different selections or parcels that a consumer would encounter as distinct wines. Different cuv\u00e9e names from the same vineyard = DIFFERENT wines.",
+  "parse_ok": true,
+  "tokens_in": 504,
+  "tokens_out": 117,
+  "elapsed": 3.0659611225128174,
+  "error": null
+}

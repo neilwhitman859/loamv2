@@ -1,0 +1,13 @@
+{
+  "pair_id": "B006",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.95,\"reasoning\":\"Wine A lists grapes as COT and CABERNET SAUVIGNON, while Wine B specifies COT (81%), CABERNET SAUVIGNON (11%), and DOLCETTO (8%), introducing a different grape not present in A. The rules state that different grapes always indicate different wines, even with matching vineyard/cuv\u00e9e names and producer. Name similarity ('Corte' vs 'Corte B') and shared red color/style do not override the grape composition discrepancy.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A lists grapes as COT and CABERNET SAUVIGNON, while Wine B specifies COT (81%), CABERNET SAUVIGNON (11%), and DOLCETTO (8%), introducing a different grape not present in A. The rules state that different grapes always indicate different wines, even with matching vineyard/cuv\u00e9e names and producer. Name similarity ('Corte' vs 'Corte B') and shared red color/style do not override the grape composition discrepancy.",
+  "parse_ok": true,
+  "tokens_in": 601,
+  "tokens_out": 722,
+  "elapsed": 6.75171685218811,
+  "error": null
+}

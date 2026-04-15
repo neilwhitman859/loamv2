@@ -1,0 +1,13 @@
+{
+  "pair_id": "C014",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (Pertois-Lebrun), vineyard/cuv\u00e9e name (Derri\u00e8re Le Mont Aigu, minor accent variation), color (white), and style (Blanc de Blancs). However, they differ in lot numbers (No.15 vs No.17), which per key rules indicates distinct bottlings consumers would encounter separately. Distinct LWIN numbers (2982162 vs 1889792) further confirm they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (Pertois-Lebrun), vineyard/cuv\u00e9e name (Derri\u00e8re Le Mont Aigu, minor accent variation), color (white), and style (Blanc de Blancs). However, they differ in lot numbers (No.15 vs No.17), which per key rules indicates distinct bottlings consumers would encounter separately. Distinct LWIN numbers (2982162 vs 1889792) further confirm they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 592,
+  "tokens_out": 597,
+  "elapsed": 6.514372825622559,
+  "error": null
+}

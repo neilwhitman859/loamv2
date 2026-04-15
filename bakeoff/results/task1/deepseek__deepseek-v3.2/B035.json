@@ -1,0 +1,13 @@
+{
+  "pair_id": "B035",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have the same producer and vineyard designation (Petit Clos), but one is a ros\u00e9 and the other is a red wine. A difference in color indicates distinct wine types and styles, which are considered different wines according to the rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have the same producer and vineyard designation (Petit Clos), but one is a ros\u00e9 and the other is a red wine. A difference in color indicates distinct wine types and styles, which are considered different wines according to the rules.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 74,
+  "elapsed": 2.018040180206299,
+  "error": null
+}

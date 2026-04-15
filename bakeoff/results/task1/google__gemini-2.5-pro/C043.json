@@ -1,0 +1,13 @@
+{
+  "pair_id": "C043",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are from the same producer and vineyard, but they have different German Pr\u00e4dikat levels. 'Spatlese' and 'Auslese' denote distinct levels of grape ripeness at harvest, which results in two separate and different bottlings that a consumer would encounter as distinct products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are from the same producer and vineyard, but they have different German Pr\u00e4dikat levels. 'Spatlese' and 'Auslese' denote distinct levels of grape ripeness at harvest, which results in two separate and different bottlings that a consumer would encounter as distinct products.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 1133,
+  "elapsed": 18.34386444091797,
+  "error": null
+}

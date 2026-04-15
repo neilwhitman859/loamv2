@@ -1,0 +1,13 @@
+{
+  "pair_id": "A022",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"The wines have the same producer, 'Emiliana', and the same color, 'red'. The difference in name is due to the varietal suffix, 'Carmenere', being appended to 'Andes Peaks', which is likely an abbreviation. The main grape for Wine A is 'CABERNET SAUVIGNON', but without the grape information for Wine B, we rely on the naming convention indicating it's likely the same wine with a varietal suffix.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "The wines have the same producer, 'Emiliana', and the same color, 'red'. The difference in name is due to the varietal suffix, 'Carmenere', being appended to 'Andes Peaks', which is likely an abbreviation. The main grape for Wine A is 'CABERNET SAUVIGNON', but without the grape information for Wine B, we rely on the naming convention indicating it's likely the same wine with a varietal suffix.",
+  "parse_ok": true,
+  "tokens_in": 494,
+  "tokens_out": 119,
+  "elapsed": 1.56290864944458,
+  "error": null
+}

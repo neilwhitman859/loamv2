@@ -1,0 +1,13 @@
+{
+  "pair_id": "D040",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Santi produces a Valpolicella Ripasso Classico Superiore under the name 'Solane'. 'Superiore' is a classification level rather than a distinct wine name in this context, and Wine B is simply an abbreviated record of the Solane bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Santi produces a Valpolicella Ripasso Classico Superiore under the name 'Solane'. 'Superiore' is a classification level rather than a distinct wine name in this context, and Wine B is simply an abbreviated record of the Solane bottling.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 74,
+  "elapsed": 1.9534404277801514,
+  "error": null
+}

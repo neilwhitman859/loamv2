@@ -1,0 +1,13 @@
+{
+  "pair_id": "A003",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.82,\"reasoning\":\"Both records share identical producer, vineyard name, grape variety and style; the only difference is the explicit varietal suffix in B, which denotes the same Pinot Noir bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.82,
+  "reasoning": "Both records share identical producer, vineyard name, grape variety and style; the only difference is the explicit varietal suffix in B, which denotes the same Pinot Noir bottling.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 137,
+  "elapsed": 4.355711936950684,
+  "error": null
+}

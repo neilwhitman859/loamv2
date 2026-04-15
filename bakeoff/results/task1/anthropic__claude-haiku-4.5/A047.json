@@ -1,0 +1,13 @@
+{
+  "pair_id": "A047",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A 'Miljenko's Selection' and Wine B 'Miljenko's Selection Cabernet Franc' are from the same producer (Grgich Hills Estate), same color (red), and same grape (Cabernet Franc). The difference is merely a varietal suffix appended to Wine B, which represents standard name formatting variation rather than a distinct bottling.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A 'Miljenko's Selection' and Wine B 'Miljenko's Selection Cabernet Franc' are from the same producer (Grgich Hills Estate), same color (red), and same grape (Cabernet Franc). The difference is merely a varietal suffix appended to Wine B, which represents standard name formatting variation rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 109,
+  "elapsed": 2.281013250350952,
+  "error": null
+}

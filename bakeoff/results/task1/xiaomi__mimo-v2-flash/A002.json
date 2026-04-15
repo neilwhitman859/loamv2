@@ -1,0 +1,13 @@
+{
+  "pair_id": "A002",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Firestone) and are red wines made from Syrah. The name 'Clone 174' is simply an abbreviation of 'Clone 174 Syrah', which is a common naming convention where the varietal suffix is omitted in the shorter name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Firestone) and are red wines made from Syrah. The name 'Clone 174' is simply an abbreviation of 'Clone 174 Syrah', which is a common naming convention where the varietal suffix is omitted in the shorter name.",
+  "parse_ok": true,
+  "tokens_in": 486,
+  "tokens_out": 85,
+  "elapsed": 2.1783018112182617,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B001",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is made from Sauvignon Blanc, while Wine B is made from Sauvignon Gris, which are distinct grape varieties. Different grapes always constitute different wines, even when produced by the same producer and in the same region.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is made from Sauvignon Blanc, while Wine B is made from Sauvignon Gris, which are distinct grape varieties. Different grapes always constitute different wines, even when produced by the same producer and in the same region.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 74,
+  "elapsed": 1.8181138038635254,
+  "error": null
+}

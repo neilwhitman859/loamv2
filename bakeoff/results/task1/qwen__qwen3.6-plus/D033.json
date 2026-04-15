@@ -1,0 +1,13 @@
+{
+  "pair_id": "D033",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The records feature distinct cuv\u00e9e designations ('Luft' vs 'Harmonie') rather than simple formatting variations, indicating separate bottlings from the same producer. The different LWINs further confirm they are tracked as distinct commercial wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The records feature distinct cuv\u00e9e designations ('Luft' vs 'Harmonie') rather than simple formatting variations, indicating separate bottlings from the same producer. The different LWINs further confirm they are tracked as distinct commercial wines.",
+  "parse_ok": true,
+  "tokens_in": 472,
+  "tokens_out": 1644,
+  "elapsed": 31.3608820438385,
+  "error": null
+}

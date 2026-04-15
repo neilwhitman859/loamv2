@@ -1,0 +1,13 @@
+{
+  "pair_id": "B011",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is red and Wine B is white, indicating a difference in color. Additionally, the age statements (15 YO vs 5 YO) differ, and the LWIN is only provided for Wine A, but the color difference alone is sufficient to classify them as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is red and Wine B is white, indicating a difference in color. Additionally, the age statements (15 YO vs 5 YO) differ, and the LWIN is only provided for Wine A, but the color difference alone is sufficient to classify them as different wines.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 80,
+  "elapsed": 1.5733017921447754,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A040",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines have different grape compositions, with Wine A being a blend of Merlot and Chardonnay, while Wine B is specifically a Pinot Noir, indicating they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines have different grape compositions, with Wine A being a blend of Merlot and Chardonnay, while Wine B is specifically a Pinot Noir, indicating they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 502,
+  "tokens_out": 59,
+  "elapsed": 1.4038562774658203,
+  "error": null
+}

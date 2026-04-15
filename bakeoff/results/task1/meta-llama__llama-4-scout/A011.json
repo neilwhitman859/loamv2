@@ -1,0 +1,13 @@
+{
+  "pair_id": "A011",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The presence of multiple grapes in Wine A (PINOT NOIR, CHARDONNAY BLANC) versus a single grape in Wine B (PINOT NOIR) indicates a difference. Despite the same producer and vineyard, the difference in grape varieties is a key factor in determining different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The presence of multiple grapes in Wine A (PINOT NOIR, CHARDONNAY BLANC) versus a single grape in Wine B (PINOT NOIR) indicates a difference. Despite the same producer and vineyard, the difference in grape varieties is a key factor in determining different wines.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 84,
+  "elapsed": 2.072721242904663,
+  "error": null
+}

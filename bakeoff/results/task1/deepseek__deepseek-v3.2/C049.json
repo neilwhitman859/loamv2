@@ -1,0 +1,13 @@
+{
+  "pair_id": "C049",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.9, \"reasoning\": \"The wines have different colors (white vs red), which always indicates a different wine. Additionally, 'Brut Nature' and 'Brut' signify different sweetness levels, a further distinction.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors (white vs red), which always indicates a different wine. Additionally, 'Brut Nature' and 'Brut' signify different sweetness levels, a further distinction.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 62,
+  "elapsed": 6.388580322265625,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B041",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different bottlings because they are made from different grape varieties: Wine A is Pinot Gris-based (with Pinot Noir listed), while Wine B is Grenache. They also differ in color and style, with Wine A being white and Wine B red, so they would not share a single encyclopedia page.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different bottlings because they are made from different grape varieties: Wine A is Pinot Gris-based (with Pinot Noir listed), while Wine B is Grenache. They also differ in color and style, with Wine A being white and Wine B red, so they would not share a single encyclopedia page.",
+  "parse_ok": true,
+  "tokens_in": 436,
+  "tokens_out": 83,
+  "elapsed": 2.616218328475952,
+  "error": null
+}

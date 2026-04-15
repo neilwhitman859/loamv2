@@ -1,0 +1,13 @@
+{
+  "pair_id": "A007",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is explicitly a blend of Durif and Syrah grapes, while Wine B is named 'Laurus Syrah' implying a Syrah-focused or varietal wine without Durif. Different grape compositions indicate distinct bottlings, overriding the varietal suffix abbreviation rule since the producer offers multiple wines under the Laurus name with varying grapes. Both are red from Gabriel Meffre, but grape differences make them separate wines consumers would encounter differently.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is explicitly a blend of Durif and Syrah grapes, while Wine B is named 'Laurus Syrah' implying a Syrah-focused or varietal wine without Durif. Different grape compositions indicate distinct bottlings, overriding the varietal suffix abbreviation rule since the producer offers multiple wines under the Laurus name with varying grapes. Both are red from Gabriel Meffre, but grape differences make them separate wines consumers would encounter differently.",
+  "parse_ok": true,
+  "tokens_in": 569,
+  "tokens_out": 956,
+  "elapsed": 11.655349016189575,
+  "error": null
+}

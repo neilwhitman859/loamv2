@@ -1,0 +1,13 @@
+{
+  "pair_id": "D044",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records share the same producer, grape variety, and color. The only difference is the 'Estate' prefix, which is a common naming variation or marketing term rather than a distinct bottling or classification tier.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records share the same producer, grape variety, and color. The only difference is the 'Estate' prefix, which is a common naming variation or marketing term rather than a distinct bottling or classification tier.",
+  "parse_ok": true,
+  "tokens_in": 462,
+  "tokens_out": 1272,
+  "elapsed": 24.499860763549805,
+  "error": null
+}

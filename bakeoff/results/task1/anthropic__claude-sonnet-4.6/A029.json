@@ -1,0 +1,13 @@
+{
+  "pair_id": "A029",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.75, \"reasoning\": \"Wine A 'Chasseresse' lists grapes as AUXERROIS and COT (a blend), while Wine B 'Chasseresse Auxerrois' specifies only Auxerrois in its name, suggesting it is a single-varietal bottling. The varietal suffix 'Auxerrois' on Wine B likely distinguishes it as a separate, single-grape wine from a blended version under the same 'Chasseresse' label. This follows the rule that different grapes/composition = different wine, especially when the producer appears to make multiple wines under the same vineyard/cuv\u00e9e name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.75,
+  "reasoning": "Wine A 'Chasseresse' lists grapes as AUXERROIS and COT (a blend), while Wine B 'Chasseresse Auxerrois' specifies only Auxerrois in its name, suggesting it is a single-varietal bottling. The varietal suffix 'Auxerrois' on Wine B likely distinguishes it as a separate, single-grape wine from a blended version under the same 'Chasseresse' label. This follows the rule that different grapes/composition = different wine, especially when the producer appears to make multiple wines under the same vineyard/cuv\u00e9e name.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 164,
+  "elapsed": 4.315294027328491,
+  "error": null
+}

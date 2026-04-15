@@ -1,0 +1,13 @@
+{
+  "pair_id": "C050",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are from the same producer, have the same grape variety (Malbec), and the same style (Reserva). The slight difference in the name (Reserva vs Gran Reserva) is a common practice in wine classification and does not indicate a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are from the same producer, have the same grape variety (Malbec), and the same style (Reserva). The slight difference in the name (Reserva vs Gran Reserva) is a common practice in wine classification and does not indicate a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 74,
+  "elapsed": 1.65126633644104,
+  "error": null
+}

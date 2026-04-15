@@ -1,0 +1,38 @@
+{
+  "page_id": "page_046",
+  "model": "mistralai/mistral-large",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Moscato\",\n      \"vintage_year\": null,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": null,\n        \"ta_g_l\": null,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": \"Jessica Tomei\",\n      \"farming\": null,\n      \"region\": \"California\",\n      \"tasting_notes\": \"Sweet & smooth with notes of peach and honey.\",\n      \"winemaking_notes\": \"Our Moscato is crafted with grapes grown in the sun-drenched vineyards of California, combining those grown in warmer climates to increase ripeness, with grapes grown in cooler climates to produce a sweet, fruit-forward wine. We pick our grapes at the optimal ripeness to ensure concentrated fruit flavors and aromas.\",\n      \"serving_suggestion\": \"Serve chilled with mixed berries and lounging by the pool.\",\n      \"nutritional_info\": {\n        \"calories\": 130,\n        \"carbohydrates_g\": 11,\n        \"protein_g\": 0,\n        \"fat_g\": 0\n      }\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Moscato",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": "Jessica Tomei",
+      "farming": null,
+      "region": "California",
+      "tasting_notes": "Sweet & smooth with notes of peach and honey.",
+      "winemaking_notes": "Our Moscato is crafted with grapes grown in the sun-drenched vineyards of California, combining those grown in warmer climates to increase ripeness, with grapes grown in cooler climates to produce a sweet, fruit-forward wine. We pick our grapes at the optimal ripeness to ensure concentrated fruit flavors and aromas.",
+      "serving_suggestion": "Serve chilled with mixed berries and lounging by the pool.",
+      "nutritional_info": {
+        "calories": 130,
+        "carbohydrates_g": 11,
+        "protein_g": 0,
+        "fat_g": 0
+      }
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 43301,
+  "tokens_out": 297,
+  "elapsed": 9.46692442893982,
+  "error": null
+}

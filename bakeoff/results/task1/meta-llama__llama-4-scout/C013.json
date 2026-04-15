@@ -1,0 +1,13 @@
+{
+  "pair_id": "C013",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, Dr. Wehrheim, and have the same grape variety (Riesling), style (Auslese), and color (white). The slight difference in vineyard name formatting (Kastanienbusch vs Kastanienbush) is likely a minor spelling variation, suggesting they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, Dr. Wehrheim, and have the same grape variety (Riesling), style (Auslese), and color (white). The slight difference in vineyard name formatting (Kastanienbusch vs Kastanienbush) is likely a minor spelling variation, suggesting they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 439,
+  "tokens_out": 91,
+  "elapsed": 3.1887078285217285,
+  "error": null
+}

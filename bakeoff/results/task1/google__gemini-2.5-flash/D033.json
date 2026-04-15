@@ -1,0 +1,13 @@
+{
+  "pair_id": "D033",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different vineyard/cuv\u00e9e names ('Luft' vs 'Harmonie') despite sharing the same producer and grape variety. This indicates they are distinct bottlings from different parcels or blends, making them different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different vineyard/cuv\u00e9e names ('Luft' vs 'Harmonie') despite sharing the same producer and grape variety. This indicates they are distinct bottlings from different parcels or blends, making them different wines.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 68,
+  "elapsed": 1.483475685119629,
+  "error": null
+}

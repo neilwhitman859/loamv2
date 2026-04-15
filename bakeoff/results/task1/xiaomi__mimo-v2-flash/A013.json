@@ -1,0 +1,13 @@
+{
+  "pair_id": "A013",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Marc Kreydenweiss) and share the vineyard name 'Lerchenberg'. Wine B is simply Wine A with the varietal suffix 'Pinot Gris' appended, which is a common abbreviation format. The key rule states that varietal suffix difference alone usually means SAME, and there is no evidence the producer makes multiple Lerchenberg wines with different grapes.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Marc Kreydenweiss) and share the vineyard name 'Lerchenberg'. Wine B is simply Wine A with the varietal suffix 'Pinot Gris' appended, which is a common abbreviation format. The key rule states that varietal suffix difference alone usually means SAME, and there is no evidence the producer makes multiple Lerchenberg wines with different grapes.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 109,
+  "elapsed": 2.4350550174713135,
+  "error": null
+}

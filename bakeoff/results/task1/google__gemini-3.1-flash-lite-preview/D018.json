@@ -1,0 +1,13 @@
+{
+  "pair_id": "D018",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"Truchard produces distinct bottlings for their standard Cabernet Sauvignon and their Reserve Cabernet Sauvignon. These are marketed as separate tiers with different price points and production selections, as evidenced by their unique LWIN identifiers.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Truchard produces distinct bottlings for their standard Cabernet Sauvignon and their Reserve Cabernet Sauvignon. These are marketed as separate tiers with different price points and production selections, as evidenced by their unique LWIN identifiers.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 70,
+  "elapsed": 2.122089385986328,
+  "error": null
+}

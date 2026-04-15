@@ -1,0 +1,13 @@
+{
+  "pair_id": "B026",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a ros\u00e9 Champagne (Brut Antique Rose) and Wine B is a white Champagne (Brut Antique), both from Cattier. Ros\u00e9 vs. white are fundamentally different wines that a consumer would encounter separately, even when sharing the same base cuv\u00e9e name. The different LWIN codes confirm these are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a ros\u00e9 Champagne (Brut Antique Rose) and Wine B is a white Champagne (Brut Antique), both from Cattier. Ros\u00e9 vs. white are fundamentally different wines that a consumer would encounter separately, even when sharing the same base cuv\u00e9e name. The different LWIN codes confirm these are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 106,
+  "elapsed": 2.436293125152588,
+  "error": null
+}

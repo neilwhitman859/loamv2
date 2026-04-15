@@ -1,0 +1,13 @@
+{
+  "pair_id": "C029",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are Gran Reserva Cabernet Sauvignon from the same producer, Wine A has the specific cuv\u00e9e name 'Don Amerigo' while Wine B does not. This is a significant difference, not just a formatting variation, indicating two distinct bottlings. The fact that they have different LWINs, which are unique wine identifiers, confirms they are treated as separate products in the market.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are Gran Reserva Cabernet Sauvignon from the same producer, Wine A has the specific cuv\u00e9e name 'Don Amerigo' while Wine B does not. This is a significant difference, not just a formatting variation, indicating two distinct bottlings. The fact that they have different LWINs, which are unique wine identifiers, confirms they are treated as separate products in the market.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 1670,
+  "elapsed": 17.434837102890015,
+  "error": null
+}

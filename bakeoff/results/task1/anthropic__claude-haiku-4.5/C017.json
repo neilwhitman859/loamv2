@@ -1,0 +1,13 @@
+{
+  "pair_id": "C017",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Bassermann-Jordan), same vineyard (Forster Kirchenstuck), same Pr\u00e4dikat level (Sp\u00e4tlese), and same color (white). Wine B simply includes the varietal suffix 'Riesling,' which is a standard naming convention for German Rieslings from this region and represents the same bottling, not a distinct wine. The different LWINs likely reflect database entry variations rather than different bottlings.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Bassermann-Jordan), same vineyard (Forster Kirchenstuck), same Pr\u00e4dikat level (Sp\u00e4tlese), and same color (white). Wine B simply includes the varietal suffix 'Riesling,' which is a standard naming convention for German Rieslings from this region and represents the same bottling, not a distinct wine. The different LWINs likely reflect database entry variations rather than different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 504,
+  "tokens_out": 132,
+  "elapsed": 5.803167343139648,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A042",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the explicit addition of 'Cabernet Franc' in Wine B, which is a varietal suffix; Wine A's listed grape is also Cabernet Franc, confirming they are the same bottling. Both share the same producer, same 'Tonel Unico No. 183' designation, and same color, indicating no meaningful distinction in style, tier, or vineyard.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the explicit addition of 'Cabernet Franc' in Wine B, which is a varietal suffix; Wine A's listed grape is also Cabernet Franc, confirming they are the same bottling. Both share the same producer, same 'Tonel Unico No. 183' designation, and same color, indicating no meaningful distinction in style, tier, or vineyard.",
+  "parse_ok": true,
+  "tokens_in": 453,
+  "tokens_out": 101,
+  "elapsed": 8.853628635406494,
+  "error": null
+}

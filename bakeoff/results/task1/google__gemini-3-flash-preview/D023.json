@@ -1,0 +1,13 @@
+{
+  "pair_id": "D023",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine B is simply a truncated version of Wine A's name, both referring to the second wine of Ch\u00e2teau La Tour Blanche. The producer and color match, and 'Les Charmilles' is a specific, unique cuv\u00e9e name that identifies this particular bottling regardless of the minor naming variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine B is simply a truncated version of Wine A's name, both referring to the second wine of Ch\u00e2teau La Tour Blanche. The producer and color match, and 'Les Charmilles' is a specific, unique cuv\u00e9e name that identifies this particular bottling regardless of the minor naming variation.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 80,
+  "elapsed": 2.0381505489349365,
+  "error": null
+}

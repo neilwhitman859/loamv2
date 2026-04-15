@@ -1,0 +1,13 @@
+{
+  "pair_id": "A049",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.95,\"reasoning\":\"Both records are from the same producer, del Nebbiolo, and both are white wines. Wine A explicitly lists the grape as Arneis, so 'Arenarium' vs 'Arenarium Arneis' is best interpreted as a naming variation where the second record appends the varietal, not a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records are from the same producer, del Nebbiolo, and both are white wines. Wine A explicitly lists the grape as Arneis, so 'Arenarium' vs 'Arenarium Arneis' is best interpreted as a naming variation where the second record appends the varietal, not a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 89,
+  "elapsed": 2.529447078704834,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A009",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"The records refer to the same vineyard site (Bech-Kleimacher Naumberg) produced by Domaines Vinsmoselle. The addition of 'Pinot Gris' in Wine B is a varietal suffix that clarifies the composition of the wine, and since the producer does not distinguish these as separate tiers, they represent the same bottling.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The records refer to the same vineyard site (Bech-Kleimacher Naumberg) produced by Domaines Vinsmoselle. The addition of 'Pinot Gris' in Wine B is a varietal suffix that clarifies the composition of the wine, and since the producer does not distinguish these as separate tiers, they represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 97,
+  "elapsed": 1.254857063293457,
+  "error": null
+}

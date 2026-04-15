@@ -1,0 +1,13 @@
+{
+  "pair_id": "C032",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"Bonnaire Blanc de Blancs is a well-known non-vintage Champagne cuv\u00e9e. The presence or absence of 'NV' in the name is a common formatting variation for the exact same product, and the LWIN discrepancy likely reflects different database entries for the same wine.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Bonnaire Blanc de Blancs is a well-known non-vintage Champagne cuv\u00e9e. The presence or absence of 'NV' in the name is a common formatting variation for the exact same product, and the LWIN discrepancy likely reflects different database entries for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 83,
+  "elapsed": 1.3860998153686523,
+  "error": null
+}

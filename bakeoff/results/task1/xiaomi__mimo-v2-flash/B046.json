@@ -1,0 +1,13 @@
+{
+  "pair_id": "B046",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a red wine and Wine B is a white wine, representing different colors and likely different grape varieties. The 'Note #2' and 'Note #3' designations indicate distinct bottlings or cuv\u00e9es from the same producer. Different colors alone are sufficient to classify them as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a red wine and Wine B is a white wine, representing different colors and likely different grape varieties. The 'Note #2' and 'Note #3' designations indicate distinct bottlings or cuv\u00e9es from the same producer. Different colors alone are sufficient to classify them as different wines.",
+  "parse_ok": true,
+  "tokens_in": 502,
+  "tokens_out": 87,
+  "elapsed": 1.8976969718933105,
+  "error": null
+}

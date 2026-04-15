@@ -1,0 +1,13 @@
+{
+  "pair_id": "B013",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different colors: 'Diamant Bleu' is a white wine, while 'Diamant Rose' is a ros\u00e9. Different colors from the same producer and base name indicate distinct bottlings that a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors: 'Diamant Bleu' is a white wine, while 'Diamant Rose' is a ros\u00e9. Different colors from the same producer and base name indicate distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 453,
+  "tokens_out": 74,
+  "elapsed": 2.452731132507324,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A028",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Owen Roe, and share the same core name 'Lady Rosa'. Wine A is identified as Syrah, and Wine B is also identified as Syrah (implied by the name 'Lady Rosa Syrah' and confirmed by the LWIN data if available). The difference in name formatting (one with 'Syrah' appended, one without) is a common abbreviation practice for single-varietal wines.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Owen Roe, and share the same core name 'Lady Rosa'. Wine A is identified as Syrah, and Wine B is also identified as Syrah (implied by the name 'Lady Rosa Syrah' and confirmed by the LWIN data if available). The difference in name formatting (one with 'Syrah' appended, one without) is a common abbreviation practice for single-varietal wines.",
+  "parse_ok": true,
+  "tokens_in": 416,
+  "tokens_out": 110,
+  "elapsed": 3.05849552154541,
+  "error": null
+}

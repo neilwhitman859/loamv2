@@ -1,0 +1,17 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "openai/gpt-5.4",
+  "correctness": 4.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 5.0,
+  "composite": 4.6,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "Exceptionally well-executed output. Every major claim checks out against ground truth: no oak (stainless steel), low alcohol (11.5-12% matches context data), early picking, bottle-aged complexity rather than barrel-derived. The hook correctly identifies the key attributes — low alcohol, no oak, citrus snap, aging into toast/beeswax/lanolin. The output doesn't explicitly mention Short Flat vineyard or the 1923 planting or the 1963 creation date, which would have added value, but nothing stated is wrong. The soil descriptions (sandy alluvial loam) are consistent with Hunter Valley GI information and plausibly correct from wine knowledge, though not in the provided context data — this adds value rather than fabricating. The comparable wines (Brokenwood ILR, Mount Pleasant Lovedale, Domaine Huet Vouvray Sec) are all apt and well-reasoned. Voice is direct, opinionated, and specific throughout with no banned words. The insider take is genuinely useful — 'the anti-oaky trophy white' is a strong, clear positioning statement. Food pairings are specific and well-explained. The only minor ding on correctness is that some soil details aren't verifiable from the provided data, though they appear accurate from general Hunter Valley knowledge.",
+  "judge_tokens_in": 3872,
+  "judge_tokens_out": 355
+}

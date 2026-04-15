@@ -1,0 +1,13 @@
+{
+  "pair_id": "C034",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines have different lot/cask numbers (2* vs 3*) at the same Pr\u00e4dikat level (Auslese), which indicates they are different wines. Additionally, they have distinct LWIN numbers (1743960 vs 1991172), supporting the conclusion that they are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines have different lot/cask numbers (2* vs 3*) at the same Pr\u00e4dikat level (Auslese), which indicates they are different wines. Additionally, they have distinct LWIN numbers (1743960 vs 1991172), supporting the conclusion that they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 452,
+  "tokens_out": 87,
+  "elapsed": 2.138669490814209,
+  "error": null
+}

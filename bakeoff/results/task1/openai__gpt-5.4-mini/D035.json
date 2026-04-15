@@ -1,0 +1,13 @@
+{
+  "pair_id": "D035",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Both wines are from Velenosi and share the base name Brecciarolo, but Wine B adds the distinct cuv\u00e9e designation \\\"Gold,\\\" which indicates a separate bottling rather than a simple label variation. Since this is not just a varietal suffix and likely denotes a different wine tier/style, they should be treated as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Both wines are from Velenosi and share the base name Brecciarolo, but Wine B adds the distinct cuv\u00e9e designation \"Gold,\" which indicates a separate bottling rather than a simple label variation. Since this is not just a varietal suffix and likely denotes a different wine tier/style, they should be treated as different wines.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 91,
+  "elapsed": 1.7771332263946533,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A039",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.98, \"reasoning\": \"Wine B simply appends the grape variety 'Pinot Noir' to the name of Wine A, which is a common naming convention. Since both records share the same producer, color, and grape variety, they represent the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Wine B simply appends the grape variety 'Pinot Noir' to the name of Wine A, which is a common naming convention. Since both records share the same producer, color, and grape variety, they represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 69,
+  "elapsed": 1.710740089416504,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B026",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is a rose, while Wine B is a white wine, indicating different wine types. This is a clear differentiator, as the same producer and vineyard/cuv\u00e9e information do not override the fundamental difference in wine type.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is a rose, while Wine B is a white wine, indicating different wine types. This is a clear differentiator, as the same producer and vineyard/cuv\u00e9e information do not override the fundamental difference in wine type.",
+  "parse_ok": true,
+  "tokens_in": 443,
+  "tokens_out": 70,
+  "elapsed": 1.3021342754364014,
+  "error": null
+}

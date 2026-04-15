@@ -1,0 +1,13 @@
+{
+  "pair_id": "B033",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.90, \"reasoning\": \"The two wines come from the same vineyard but use different grape varieties (Pinot Noir vs Gew\u00fcrztraminer) and are different colors, so they represent distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The two wines come from the same vineyard but use different grape varieties (Pinot Noir vs Gew\u00fcrztraminer) and are different colors, so they represent distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 148,
+  "elapsed": 4.74156928062439,
+  "error": null
+}

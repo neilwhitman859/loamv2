@@ -1,0 +1,13 @@
+{
+  "pair_id": "B030",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are two distinct Porcupine Ridge bottlings from the same producer, but they are different grape varieties: Cabernet Sauvignon versus Sauvignon Blanc. They also differ in color, red versus white, which confirms they are separate wines rather than name-format variants of the same cuv\u00e9e.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are two distinct Porcupine Ridge bottlings from the same producer, but they are different grape varieties: Cabernet Sauvignon versus Sauvignon Blanc. They also differ in color, red versus white, which confirms they are separate wines rather than name-format variants of the same cuv\u00e9e.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 78,
+  "elapsed": 1.369295358657837,
+  "error": null
+}

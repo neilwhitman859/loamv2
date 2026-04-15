@@ -6,18 +6,22 @@
   "extraction": {
     "name": "Pinot Noir",
     "producer": "Meiomi",
-    "vintage_year": 2026,
+    "vintage_year": null,
     "abv_pct": null,
     "blend": null,
     "oak": {
-      "origin": "French"
+      "vessel": null,
+      "months": null,
+      "new_pct": null,
+      "origin": "french"
     },
     "cases_produced": null,
     "chemistry": null,
-    "winemaker": "Explore Meiomi\nPinot Noir",
+    "winemaker": "Jason Becker",
     "farming": null
   },
-  "data_richness": 3,
+  "data_richness": 2,
   "total_fields": 8,
-  "text_length": 2345
+  "text_length": 2345,
+  "consensus_models": 14
 }

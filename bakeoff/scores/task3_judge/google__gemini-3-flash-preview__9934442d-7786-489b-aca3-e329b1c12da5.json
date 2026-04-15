@@ -1,0 +1,29 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "google/gemini-3-flash-preview",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.575,
+  "wrong_facts": [
+    "Hook claims fruit is from Mount Barker and Porongurup - the Omrah range is a second label using younger vineyards or bought-in fruit, not necessarily from these specific sub-regions",
+    "Claims 'older vines planted in lateritic gravelly sandy loams' - Omrah is specifically the value/second-label range from younger vineyards, not older vines",
+    "Whole-bunch fermentation and malolactic in French oak barriques are unverifiable vinification details not in context data",
+    "Price claim of $25-$30 is fabricated - no pricing data was provided",
+    "Claims 'ancient granite soils' in the hook for Porongurup sourcing is unverified for this second-label wine"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$25-$30 retail price",
+    "200 kilometers GI span",
+    "13°C storage temperature",
+    "12 aging potential years",
+    "The specific sensory scores are all fabricated"
+  ],
+  "reasoning": "The output is well-written with strong voice and impressive specificity, but it fundamentally mischaracterizes the Omrah range. Ground truth confirms Omrah is Plantagenet's second label made from younger vineyards or bought-in fruit, yet the output claims it uses 'older vines' and specifies Mount Barker and Porongurup sourcing as if confirmed. The vinification details (whole-bunch fermentation, MLF in barriques) are entirely fabricated - not in context data and unverifiable. The price of $25-$30 is fabricated. However, the establishment date of 1968 and first commercial winery claim match ground truth, and the general terroir description of Great Southern is largely accurate. The hook's claim about Mount Barker and Porongurup sourcing is unverifiable for this specific second-label wine, which is problematic but not provably wrong. Multiple fabricated numbers would normally trigger the hard cap at 1.5, but some numbers like storage temp are general recommendations rather than wine-specific fabrications. Still, the price and vinification specifics warrant a significant penalty.",
+  "judge_tokens_in": 3255,
+  "judge_tokens_out": 521
+}

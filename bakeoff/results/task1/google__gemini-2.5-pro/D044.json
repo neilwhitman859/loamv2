@@ -1,0 +1,13 @@
+{
+  "pair_id": "D044",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The 'Estate' designation in Wine A indicates a specific bottling made from the producer's own vineyards. This is a distinct product from a more general 'Chardonnay' bottling (Wine B), which may use sourced grapes or be a different blend. The different LWINs for each wine strongly support that they are tracked and sold as separate, distinct products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The 'Estate' designation in Wine A indicates a specific bottling made from the producer's own vineyards. This is a distinct product from a more general 'Chardonnay' bottling (Wine B), which may use sourced grapes or be a different blend. The different LWINs for each wine strongly support that they are tracked and sold as separate, distinct products.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 1037,
+  "elapsed": 11.218019247055054,
+  "error": null
+}

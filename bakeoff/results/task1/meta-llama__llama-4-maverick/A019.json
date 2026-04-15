@@ -1,0 +1,13 @@
+{
+  "pair_id": "A019",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"The wines share the same producer, Rob Dolan, and have similar names, 'True Colours' and 'True Colours Pinot Noir', suggesting the latter is a varietal specification of the former. Both wines are red, and while Wine A's grapes are listed as PINOT NOIR and MERLOT NOIR, the presence of 'Pinot Noir' in Wine B's name aligns with one of the grapes in Wine A. The varietal suffix difference alone is not conclusive evidence of difference.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "The wines share the same producer, Rob Dolan, and have similar names, 'True Colours' and 'True Colours Pinot Noir', suggesting the latter is a varietal specification of the former. Both wines are red, and while Wine A's grapes are listed as PINOT NOIR and MERLOT NOIR, the presence of 'Pinot Noir' in Wine B's name aligns with one of the grapes in Wine A. The varietal suffix difference alone is not conclusive evidence of difference.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 125,
+  "elapsed": 1.5958571434020996,
+  "error": null
+}

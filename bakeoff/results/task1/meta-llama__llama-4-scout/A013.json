@@ -1,0 +1,13 @@
+{
+  "pair_id": "A013",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The grapes used in Wine A (PINOT NOIR, CANARI NOIR) are different from those in Wine B (PINOT GRIS). Despite the same producer and vineyard, different grapes indicate different wines. The color of both wines being white is consistent with the grape differences.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The grapes used in Wine A (PINOT NOIR, CANARI NOIR) are different from those in Wine B (PINOT GRIS). Despite the same producer and vineyard, different grapes indicate different wines. The color of both wines being white is consistent with the grape differences.",
+  "parse_ok": true,
+  "tokens_in": 436,
+  "tokens_out": 81,
+  "elapsed": 1.997647762298584,
+  "error": null
+}

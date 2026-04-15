@@ -1,0 +1,30 @@
+{
+  "wine_id": "ebde8e00-350b-40fc-a762-0987259419ac",
+  "wine_name": "Howard Park Leston Shiraz, Margaret River",
+  "tier": "C",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 2.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "'Forest Grove ironstone' soil type is not verified and likely fabricated - no evidence this is the specific soil classification at Leston vineyard",
+    "The hook claims 'iron-rich, gravelly loam soils' which is plausible but not verified from context or ground truth",
+    "Comparable wine description for Chave Offerus uses banned word 'showcasing'",
+    "Value assessment fabricates price range of '$35-$45'",
+    "Shaw + Smith comparison claims it costs less than Shaw + Smith - unverifiable pricing claim",
+    "No mention of the verified 10% whole bunch fermentation, 18 months in oak (95% French, 5% American, 30% new) - instead hedges with 'likely occurs in French oak barrels'"
+  ],
+  "banned_words_found": [
+    "showcasing"
+  ],
+  "fabricated_numbers": [
+    "$35-$45 price range",
+    "7-10 years aging improvement claim (though aging_potential_years of 10 is stated separately)",
+    "30-45 minutes decanting time"
+  ],
+  "reasoning": "The output fabricates a specific price range ($35-$45) not present in context data, which triggers the hard penalty for fabricated numbers, capping correctness at 1.5. However, the price is plausible and framed as 'around,' so I'll be slightly lenient but still penalize heavily. The 'Forest Grove ironstone' soil claim is a specific geological assertion that appears fabricated. The ground truth reveals 18 months oak aging (95% French, 5% American, 30% new) and 10% whole bunch fermentation, none of which the output mentions - instead it hedges vaguely about 'likely French oak.' The banned word 'showcasing' appears in the comparable wines section. The voice is generally good - direct, opinionated, with useful food pairings and comparisons - but the fabricated specifics undermine trust. Specificity is strong with named soils, competitors, and real dishes, even if some details are invented.",
+  "judge_tokens_in": 3570,
+  "judge_tokens_out": 886
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A023",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Fidelitas) and are red wines made from Cabernet Sauvignon. The name difference is purely a varietal suffix, where 'Blackwood Canyon' is the abbreviated name for the 'Blackwood Canyon Cabernet Sauvignon' bottling, which fits the rule for same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Fidelitas) and are red wines made from Cabernet Sauvignon. The name difference is purely a varietal suffix, where 'Blackwood Canyon' is the abbreviated name for the 'Blackwood Canyon Cabernet Sauvignon' bottling, which fits the rule for same wine.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 91,
+  "elapsed": 2.2591283321380615,
+  "error": null
+}

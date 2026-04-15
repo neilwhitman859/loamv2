@@ -1,0 +1,17 @@
+{
+  "wine_id": "4cd8b76a-b4fc-43cf-83ae-8a0c84e7673e",
+  "wine_name": "Barefoot Buttery Chardonnay, California",
+  "tier": "C",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 4.0,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.225,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is factually solid. The hook correctly identifies malolactic fermentation as the source of the 'buttery' character, which aligns with ground truth. No specific numbers are fabricated — the price range is drawn from context data. The mention of 'inland and warmer vineyard sources' is consistent with the ground truth of Central Valley grapes without explicitly naming it, which is cautious but not wrong. The output doesn't mention Jennifer Wall or E&J Gallo ownership, which would have added value, but their absence isn't an error. Voice is strong — direct, opinionated ('at $23.99, it is a hard pass'), no banned words, no hedging. The 'buttered dinner roll' metaphor in the insider take is memorable and useful. Comparables (Canyon Road, Black Box, Apothic White) are well-chosen and real. The only minor weakness is that the terroir section is necessarily vague given the lack of appellation data, but the output handles this honestly. Slight ding on correctness because Franzia is mentioned as a 'better California bottling' in the value assessment, which is debatable — Franzia is a box wine brand at an even lower tier, making this comparison slightly odd.",
+  "judge_tokens_in": 3606,
+  "judge_tokens_out": 335
+}

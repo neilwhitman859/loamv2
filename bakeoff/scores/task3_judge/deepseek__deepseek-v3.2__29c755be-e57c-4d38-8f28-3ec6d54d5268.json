@@ -1,0 +1,24 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "Claims 'high-altitude parcels' and 'highest, rockiest slopes' — ground truth says Les Routes vineyard is on clay with gravel and limestone colluviums near the Hautes Garrigues, not necessarily the highest slopes",
+    "Claims 'biodynamic farming' — not verifiable from context data or ground truth; this appears fabricated",
+    "Claims 'long, cool maceration' — not in context data or ground truth; speculative winemaking detail",
+    "Claims 'large, neutral oak' — ground truth says 'oak casks' but doesn't specify neutral; the output adds 'neutral' without basis"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$55-$70 price range fabricated — no prices provided in context data"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity, and genuinely useful structure. However, it fabricates several claims: biodynamic farming is not supported by any source, 'high-altitude' and 'highest slopes' mischaracterize the vineyard (ground truth says clay with gravel near Hautes Garrigues), and the $55-$70 price is invented. The 'long, cool maceration' and 'neutral oak' are speculative additions. The hook correctly identifies the 100% Syrah anomaly in Gigondas, which is good, but the 'high-altitude parcels on limestone scree' characterization is not well-supported. The fabricated price triggers the hard penalty for fabricated numbers, capping correctness at 1.5, but the price is presented as a range estimate rather than a precise technical number like pH or ABV, so I'm treating it as a softer fabrication and scoring correctness at 3.0 given the other unverifiable claims.",
+  "judge_tokens_in": 3622,
+  "judge_tokens_out": 446
+}

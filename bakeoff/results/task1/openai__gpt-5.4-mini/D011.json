@@ -1,0 +1,13 @@
+{
+  "pair_id": "D011",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"Both records share the same producer and the distinctive cuv\u00e9e name \\\"Adegas Exportata Rare Rich 1870.\\\" Wine B adds \\\"Malmsey,\\\" which is a style/name commonly used for a sweet white Madeira and here appears to be a varietal/style label rather than a separate bottling. Since the rest of the identification matches and there is no evidence of a different classification tier or vineyard, these are best treated as the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "Both records share the same producer and the distinctive cuv\u00e9e name \"Adegas Exportata Rare Rich 1870.\" Wine B adds \"Malmsey,\" which is a style/name commonly used for a sweet white Madeira and here appears to be a varietal/style label rather than a separate bottling. Since the rest of the identification matches and there is no evidence of a different classification tier or vineyard, these are best treated as the same wine.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 111,
+  "elapsed": 2.1570749282836914,
+  "error": null
+}

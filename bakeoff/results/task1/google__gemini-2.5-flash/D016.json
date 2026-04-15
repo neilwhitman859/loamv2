@@ -1,0 +1,13 @@
+{
+  "pair_id": "D016",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The names 'Roche' and 'Sur Roche' suggest distinct vineyard designations or cuv\u00e9es, even from the same producer and with the same color. The LWINs are also different, further supporting that these are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The names 'Roche' and 'Sur Roche' suggest distinct vineyard designations or cuv\u00e9es, even from the same producer and with the same color. The LWINs are also different, further supporting that these are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 70,
+  "elapsed": 1.6389186382293701,
+  "error": null
+}

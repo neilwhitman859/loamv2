@@ -1,0 +1,13 @@
+{
+  "pair_id": "A019",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is explicitly a blend of Pinot Noir and Merlot Noir, while Wine B is 'True Colours Pinot Noir,' indicating a varietal Pinot Noir bottling. Different grape compositions mean distinct wines, per the rule that different grapes always make wines DIFFERENT, even with matching names and producer. The varietal suffix here signals a separate bottling rather than mere abbreviation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is explicitly a blend of Pinot Noir and Merlot Noir, while Wine B is 'True Colours Pinot Noir,' indicating a varietal Pinot Noir bottling. Different grape compositions mean distinct wines, per the rule that different grapes always make wines DIFFERENT, even with matching names and producer. The varietal suffix here signals a separate bottling rather than mere abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 568,
+  "tokens_out": 768,
+  "elapsed": 5.644402503967285,
+  "error": null
+}

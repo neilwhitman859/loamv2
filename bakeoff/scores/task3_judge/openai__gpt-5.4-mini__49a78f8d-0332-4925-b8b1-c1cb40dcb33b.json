@@ -1,0 +1,24 @@
+{
+  "wine_id": "49a78f8d-0332-4925-b8b1-c1cb40dcb33b",
+  "wine_name": "Wind Gap Woodruff Vineyard Pinot Noir, Santa Cruz Mountains",
+  "tier": "C",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.6,
+  "wrong_facts": [
+    "Hook claims Woodruff Vineyard 'sits high in the Santa Cruz Mountains' with 'thin shale and sandstone soils' — ground truth shows Woodruff is a 9-acre vineyard near Coralitos, which is in the lowlands/foothills, not high in the mountains. The shale and sandstone soil claim is unverifiable and likely fabricated.",
+    "No mention of Pax Mahle as winemaker, which is a key fact.",
+    "The vineyard was planted in 1978 and is near Coralitos — the output's framing of it as a high-elevation mountain site is misleading at best."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$35–$55 price range is fabricated (no price data provided)",
+    "The specific soil claims (shale and sandstone) are not in context data and not verifiable from ground truth"
+  ],
+  "reasoning": "The hook's central claim — that Woodruff Vineyard sits high in the Santa Cruz Mountains on shale and sandstone — is problematic. Ground truth shows the vineyard is near Coralitos, which is in the lower foothills, not on high ridgelines. The soil composition is fabricated and unverifiable. The output correctly identifies Wind Gap's whole-cluster approach and low-intervention style (matching ground truth), and the voice is excellent — direct, opinionated, specific, with no banned words. But the fabricated geography in the hook and invented price range are significant correctness issues. The comparable wines and food pairings are well-chosen and specific.",
+  "judge_tokens_in": 3540,
+  "judge_tokens_out": 399
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B015",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a ros\u00e9 and Wine B is a red, which are different colors and styles. Even though they share the same producer and vineyard designation (Fut de Chene), the color difference alone makes them distinct bottlings. The LWIN numbers are also different, confirming they are separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a ros\u00e9 and Wine B is a red, which are different colors and styles. Even though they share the same producer and vineyard designation (Fut de Chene), the color difference alone makes them distinct bottlings. The LWIN numbers are also different, confirming they are separate products.",
+  "parse_ok": true,
+  "tokens_in": 500,
+  "tokens_out": 88,
+  "elapsed": 2.2332980632781982,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B047",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.97, \"reasoning\": \"They are from different vineyards (Eichberg vs Kirchberg) and have different color indications (white vs red), indicating distinct bottlings despite the shared varietal.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "They are from different vineyards (Eichberg vs Kirchberg) and have different color indications (white vs red), indicating distinct bottlings despite the shared varietal.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 221,
+  "elapsed": 8.762757539749146,
+  "error": null
+}

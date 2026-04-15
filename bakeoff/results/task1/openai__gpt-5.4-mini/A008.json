@@ -1,0 +1,13 @@
+{
+  "pair_id": "A008",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"Both records are from Cuilleron and share the same color (ros\u00e9). The only meaningful difference is that Wine B adds the varietal suffix \\\"Syrah,\\\" which commonly indicates the same cuv\u00e9e with the grape appended for clarity rather than a separate bottling. Wine A already lists Syrah among its grapes, so these are best treated as the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "Both records are from Cuilleron and share the same color (ros\u00e9). The only meaningful difference is that Wine B adds the varietal suffix \"Syrah,\" which commonly indicates the same cuv\u00e9e with the grape appended for clarity rather than a separate bottling. Wine A already lists Syrah among its grapes, so these are best treated as the same wine.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 101,
+  "elapsed": 1.8434019088745117,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A016",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The records refer to the same wine from Berton Vineyards. 'Metal Label The' is an abbreviated reference to 'Metal Label The Vermentino', and both records identify the wine as a white Vermentino.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The records refer to the same wine from Berton Vineyards. 'Metal Label The' is an abbreviated reference to 'Metal Label The Vermentino', and both records identify the wine as a white Vermentino.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 65,
+  "elapsed": 1.4707179069519043,
+  "error": null
+}

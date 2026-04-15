@@ -1,0 +1,13 @@
+{
+  "pair_id": "B035",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is explicitly labeled 'Ros\u00e9' and Wine B is labeled 'Rouge' (red), confirmed by their respective color designations. Ros\u00e9 vs Red from the same producer/vineyard are always classified as different wines. The different LWIN codes further confirm these are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is explicitly labeled 'Ros\u00e9' and Wine B is labeled 'Rouge' (red), confirmed by their respective color designations. Ros\u00e9 vs Red from the same producer/vineyard are always classified as different wines. The different LWIN codes further confirm these are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 87,
+  "elapsed": 3.462733030319214,
+  "error": null
+}

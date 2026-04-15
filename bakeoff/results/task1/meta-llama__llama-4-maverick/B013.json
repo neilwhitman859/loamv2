@@ -1,0 +1,13 @@
+{
+  "pair_id": "B013",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is white and Wine B is ros\u00e9, indicating different colors. The producer is the same, but the color difference signifies distinct wines. Different LWINs also suggest separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is white and Wine B is ros\u00e9, indicating different colors. The producer is the same, but the color difference signifies distinct wines. Different LWINs also suggest separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 503,
+  "tokens_out": 63,
+  "elapsed": 2.0075197219848633,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B019",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are produced by Jean-Claude Bachelet and are classified as Bourgogne, a white wine style. The key difference is the grape variety, with Wine A using only Aligot\u00e9 and Wine B using Chardonnay Blanc and Pinot Blanc. However, the producer and style are consistent, and the use of different grapes is a minor variation that does not change the fundamental nature of the wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are produced by Jean-Claude Bachelet and are classified as Bourgogne, a white wine style. The key difference is the grape variety, with Wine A using only Aligot\u00e9 and Wine B using Chardonnay Blanc and Pinot Blanc. However, the producer and style are consistent, and the use of different grapes is a minor variation that does not change the fundamental nature of the wine.",
+  "parse_ok": true,
+  "tokens_in": 456,
+  "tokens_out": 97,
+  "elapsed": 2.1274163722991943,
+  "error": null
+}

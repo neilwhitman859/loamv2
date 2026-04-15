@@ -1,0 +1,13 @@
+{
+  "pair_id": "D024",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Cattier), color (white), and likely style (champagne). The 'Brut Antique' and 'Antique' names suggest a possible varietal suffix difference, with 'Brut' indicating a level of sweetness, which can be considered a minor name formatting difference.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Cattier), color (white), and likely style (champagne). The 'Brut Antique' and 'Antique' names suggest a possible varietal suffix difference, with 'Brut' indicating a level of sweetness, which can be considered a minor name formatting difference.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 87,
+  "elapsed": 1.8925254344940186,
+  "error": null
+}

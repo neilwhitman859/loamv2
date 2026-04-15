@@ -1,0 +1,13 @@
+{
+  "pair_id": "C014",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"These are distinct numbered bottlings (No. 15 vs No. 17) from Pertois-Lebrun's Derri\u00e8re Le Mont Aigu Blanc de Blancs series. Different lot/cask numbers at the same classification level represent separate bottlings that consumers would encounter as distinct products, confirmed by different LWINs (2982162 vs 1889792).\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "These are distinct numbered bottlings (No. 15 vs No. 17) from Pertois-Lebrun's Derri\u00e8re Le Mont Aigu Blanc de Blancs series. Different lot/cask numbers at the same classification level represent separate bottlings that consumers would encounter as distinct products, confirmed by different LWINs (2982162 vs 1889792).",
+  "parse_ok": true,
+  "tokens_in": 526,
+  "tokens_out": 113,
+  "elapsed": 4.4021897315979,
+  "error": null
+}

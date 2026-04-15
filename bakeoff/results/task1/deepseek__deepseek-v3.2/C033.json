@@ -1,0 +1,13 @@
+{
+  "pair_id": "C033",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Bonnaire), are Blanc de Blancs (Chardonnay), and are vintage. 'Brut' is a sweetness/style descriptor for sparkling wine, not a different grape, vineyard, or classification tier, so it is likely a formatting or labeling variation of the same cuv\u00e9e.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Bonnaire), are Blanc de Blancs (Chardonnay), and are vintage. 'Brut' is a sweetness/style descriptor for sparkling wine, not a different grape, vineyard, or classification tier, so it is likely a formatting or labeling variation of the same cuv\u00e9e.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 90,
+  "elapsed": 11.06770396232605,
+  "error": null
+}

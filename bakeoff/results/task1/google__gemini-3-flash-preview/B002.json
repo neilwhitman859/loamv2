@@ -1,0 +1,13 @@
+{
+  "pair_id": "B002",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records refer to Chimney Rock's 'Elevage' proprietary blend, which consists of the same four Bordeaux grape varieties. Although the colors are listed as red and white, this is a data entry error as 'Elevage' is a well-known red blend and the listed grape varieties (Cabernet Sauvignon, Merlot, etc.) are all red wine grapes.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records refer to Chimney Rock's 'Elevage' proprietary blend, which consists of the same four Bordeaux grape varieties. Although the colors are listed as red and white, this is a data entry error as 'Elevage' is a well-known red blend and the listed grape varieties (Cabernet Sauvignon, Merlot, etc.) are all red wine grapes.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 96,
+  "elapsed": 1.6158623695373535,
+  "error": null
+}

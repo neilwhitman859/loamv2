@@ -1,0 +1,13 @@
+{
+  "pair_id": "C038",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines are Reserva Tinto from the same producer, Antonio Saramago, with the same color (red). The only difference is the name formatting, with 'Risco' being an optional prefix, which is a common practice in wine naming.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are Reserva Tinto from the same producer, Antonio Saramago, with the same color (red). The only difference is the name formatting, with 'Risco' being an optional prefix, which is a common practice in wine naming.",
+  "parse_ok": true,
+  "tokens_in": 475,
+  "tokens_out": 74,
+  "elapsed": 3.194838285446167,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D048",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Despite sharing the same producer (Happs), grape blend (Cabernet Merlot), and color (red), these wines have distinct LWIN codes (1958650 vs 1958764), indicating they are separate bottlings in the wine database. The 'iSeries' designation in Wine A suggests a distinct product line or vintage/release that differentiates it from the standard Cabernet Merlot offering.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Despite sharing the same producer (Happs), grape blend (Cabernet Merlot), and color (red), these wines have distinct LWIN codes (1958650 vs 1958764), indicating they are separate bottlings in the wine database. The 'iSeries' designation in Wine A suggests a distinct product line or vintage/release that differentiates it from the standard Cabernet Merlot offering.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 121,
+  "elapsed": 2.6129395961761475,
+  "error": null
+}

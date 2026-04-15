@@ -1,0 +1,13 @@
+{
+  "pair_id": "C047",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is a white sparkling wine, while Wine B is a ros\u00e9 sparkling wine, which are different wine types. This is a clear indicator of different wines, even with the same producer and LWIN number.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is a white sparkling wine, while Wine B is a ros\u00e9 sparkling wine, which are different wine types. This is a clear indicator of different wines, even with the same producer and LWIN number.",
+  "parse_ok": true,
+  "tokens_in": 443,
+  "tokens_out": 66,
+  "elapsed": 1.6176860332489014,
+  "error": null
+}

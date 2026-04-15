@@ -1,0 +1,13 @@
+{
+  "pair_id": "B043",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a white Brut Champagne while Wine B is a Ros\u00e9 Brut Champagne, as explicitly indicated by 'Rose' in the name and confirmed by the different colors (white vs ros\u00e9). Ros\u00e9 vs white from the same producer and cuv\u00e9e name constitutes a different wine. The different LWIN codes further confirm these are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a white Brut Champagne while Wine B is a Ros\u00e9 Brut Champagne, as explicitly indicated by 'Rose' in the name and confirmed by the different colors (white vs ros\u00e9). Ros\u00e9 vs white from the same producer and cuv\u00e9e name constitutes a different wine. The different LWIN codes further confirm these are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 106,
+  "elapsed": 4.69091272354126,
+  "error": null
+}

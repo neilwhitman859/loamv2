@@ -1,0 +1,13 @@
+{
+  "pair_id": "B039",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.97, \"reasoning\": \"Wine A is a ros\u00e9 while Wine B is a white wine, and they differ in style (Wine B is a Brut sparkling wine made from Mostosa grapes). Different colors and different wine types (still ros\u00e9 vs sparkling white) make these clearly distinct bottlings that a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "Wine A is a ros\u00e9 while Wine B is a white wine, and they differ in style (Wine B is a Brut sparkling wine made from Mostosa grapes). Different colors and different wine types (still ros\u00e9 vs sparkling white) make these clearly distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 482,
+  "tokens_out": 89,
+  "elapsed": 2.6430723667144775,
+  "error": null
+}

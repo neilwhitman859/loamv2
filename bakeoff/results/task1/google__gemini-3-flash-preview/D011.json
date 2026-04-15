@@ -1,0 +1,13 @@
+{
+  "pair_id": "D011",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine B includes the varietal 'Malmsey' (Malvasia), which is the grape used for this specific Madeira bottling. Wine A is simply an abbreviated name for the same historical 'Rare Rich 1870' release by Borges (Adegas Exportata).\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine B includes the varietal 'Malmsey' (Malvasia), which is the grape used for this specific Madeira bottling. Wine A is simply an abbreviated name for the same historical 'Rare Rich 1870' release by Borges (Adegas Exportata).",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 79,
+  "elapsed": 1.6373775005340576,
+  "error": null
+}

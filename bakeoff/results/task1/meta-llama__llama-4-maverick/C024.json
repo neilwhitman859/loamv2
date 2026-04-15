@@ -1,0 +1,13 @@
+{
+  "pair_id": "C024",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines have the same producer, Francis Boulard, and the same style, Extra Brut. The names 'Murgiers Extra Brut' and 'Les Murgiers Extra Brut' are very similar, with the difference being a minor variation in naming that is likely due to abbreviation or formatting. The color is the same for both wines, white.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines have the same producer, Francis Boulard, and the same style, Extra Brut. The names 'Murgiers Extra Brut' and 'Les Murgiers Extra Brut' are very similar, with the difference being a minor variation in naming that is likely due to abbreviation or formatting. The color is the same for both wines, white.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 93,
+  "elapsed": 1.5487329959869385,
+  "error": null
+}

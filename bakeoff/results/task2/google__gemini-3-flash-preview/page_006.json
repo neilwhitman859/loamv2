@@ -1,0 +1,28 @@
+{
+  "page_id": "page_006",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Petite Sirah\", \"vintage_year\": 2022, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": {\"ph\": null, \"ta_g_l\": null, \"rs_g_l\": null, \"so2_total_mg_l\": null}, \"winemaker\": null, \"farming\": \"sustainable\"}]}",
+  "wines_found": [
+    {
+      "name": "Petite Sirah",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "sustainable"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 29584,
+  "tokens_out": 101,
+  "elapsed": 2.121199607849121,
+  "error": null
+}

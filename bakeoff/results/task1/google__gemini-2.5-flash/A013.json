@@ -1,0 +1,13 @@
+{
+  "pair_id": "A013",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A lists 'PINOT NOIR, CANARI NOIR' as its grapes, while Wine B is explicitly 'Pinot Gris'. These are different grape varieties, making them distinct wines despite sharing the 'Lerchenberg' vineyard name from the same producer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A lists 'PINOT NOIR, CANARI NOIR' as its grapes, while Wine B is explicitly 'Pinot Gris'. These are different grape varieties, making them distinct wines despite sharing the 'Lerchenberg' vineyard name from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 77,
+  "elapsed": 1.4667208194732666,
+  "error": null
+}

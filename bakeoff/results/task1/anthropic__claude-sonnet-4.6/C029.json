@@ -1,0 +1,13 @@
+{
+  "pair_id": "C029",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is 'Don Amerigo Gran Reserva Cabernet Sauvignon' while Wine B is 'Gran Reserva Cabernet Sauvignon' by producer Mayu \u2014 these appear to be from different producers or different product lines. The 'Don Amerigo' designation in Wine A suggests a distinct label or brand, not merely an abbreviation of Wine B. The different LWIN codes (2371234 vs 2371247) further confirm these are catalogued as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is 'Don Amerigo Gran Reserva Cabernet Sauvignon' while Wine B is 'Gran Reserva Cabernet Sauvignon' by producer Mayu \u2014 these appear to be from different producers or different product lines. The 'Don Amerigo' designation in Wine A suggests a distinct label or brand, not merely an abbreviation of Wine B. The different LWIN codes (2371234 vs 2371247) further confirm these are catalogued as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 500,
+  "tokens_out": 135,
+  "elapsed": 3.9824578762054443,
+  "error": null
+}

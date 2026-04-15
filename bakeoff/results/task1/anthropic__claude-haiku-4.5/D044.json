@@ -1,0 +1,13 @@
+{
+  "pair_id": "D044",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"The two wines have different LWINs (2140265 vs 3076273), which indicates they are distinct bottlings in the wine database. While both are Chardonnays from Donnachadh, the 'Estate' designation in Wine A suggests a specific vineyard or classification tier that distinguishes it from the generic 'Chardonnay' in Wine B. Different LWINs combined with the Estate designation difference indicates these are separate products a consumer would encounter as distinct offerings.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "The two wines have different LWINs (2140265 vs 3076273), which indicates they are distinct bottlings in the wine database. While both are Chardonnays from Donnachadh, the 'Estate' designation in Wine A suggests a specific vineyard or classification tier that distinguishes it from the generic 'Chardonnay' in Wine B. Different LWINs combined with the Estate designation difference indicates these are separate products a consumer would encounter as distinct offerings.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 135,
+  "elapsed": 2.6427392959594727,
+  "error": null
+}

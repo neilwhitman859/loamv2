@@ -1,0 +1,13 @@
+{
+  "pair_id": "A044",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the omission of the grape 'Semillon' in Wine A's name, which is a varietal suffix difference alone. Both wines share the same producer (Creekside), the same cuv\u00e9e name ('Under Current Naked'), and the same color, indicating they are the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the omission of the grape 'Semillon' in Wine A's name, which is a varietal suffix difference alone. Both wines share the same producer (Creekside), the same cuv\u00e9e name ('Under Current Naked'), and the same color, indicating they are the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 444,
+  "tokens_out": 87,
+  "elapsed": 3.137476682662964,
+  "error": null
+}

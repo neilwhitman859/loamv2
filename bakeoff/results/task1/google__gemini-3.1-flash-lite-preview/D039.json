@@ -1,0 +1,13 @@
+{
+  "pair_id": "D039",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"In the context of Chilean wine labeling, the inclusion of 'Reserva' typically denotes a specific quality tier or bottling level distinct from the standard 'Biodiversity' label. Since these represent different classification tiers within the Vina Tarapaca portfolio, they are considered separate wines.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "In the context of Chilean wine labeling, the inclusion of 'Reserva' typically denotes a specific quality tier or bottling level distinct from the standard 'Biodiversity' label. Since these represent different classification tiers within the Vina Tarapaca portfolio, they are considered separate wines.",
+  "parse_ok": true,
+  "tokens_in": 415,
+  "tokens_out": 84,
+  "elapsed": 1.1021630764007568,
+  "error": null
+}

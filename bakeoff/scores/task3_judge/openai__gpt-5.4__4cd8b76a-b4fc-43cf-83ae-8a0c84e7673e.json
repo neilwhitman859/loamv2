@@ -1,0 +1,17 @@
+{
+  "wine_id": "4cd8b76a-b4fc-43cf-83ae-8a0c84e7673e",
+  "wine_name": "Barefoot Buttery Chardonnay, California",
+  "tier": "C",
+  "model": "openai/gpt-5.4",
+  "correctness": 4.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 5.0,
+  "composite": 4.5,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "Extremely well-executed output with no fabricated numbers or provably wrong facts. The hook correctly identifies the wine's buttery style intent, which aligns with ground truth about the naming origin. The mention of malolactic fermentation as the source of buttery character is correct and matches ground truth. The output doesn't mention Jennifer Wall or E&J Gallo ownership, which would have added value, but omitting known facts isn't a penalty — it just misses bonus points. The Central Valley sourcing from ground truth aligns with the output's 'warmer inland zones' language without overclaiming specifics. Voice is direct, opinionated, and avoids all banned words. The value assessment is particularly sharp, calling out the price spread and naming specific competitors at the higher price point. Food pairings are specific real dishes with reasoning. The only minor ding on correctness is that the output says 'cork or screwcap' without knowing the closure, and the comparable wines section names real, appropriate competitors. Specificity loses a point because terroir discussion is necessarily limited by the wine's nature, but the output handles this honestly rather than fabricating details.",
+  "judge_tokens_in": 3708,
+  "judge_tokens_out": 311
+}

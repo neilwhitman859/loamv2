@@ -1,0 +1,13 @@
+{
+  "pair_id": "B014",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.97, \"reasoning\": \"Wine A is a ros\u00e9 Cr\u00e9mant d'Alsace while Wine B is a white Cr\u00e9mant d'Alsace. Different colors represent distinct bottlings that a consumer would encounter separately, even from the same producer and appellation. The 'Brut' designation on Wine B is a style descriptor for the white version, not a differentiator from Wine A.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "Wine A is a ros\u00e9 Cr\u00e9mant d'Alsace while Wine B is a white Cr\u00e9mant d'Alsace. Different colors represent distinct bottlings that a consumer would encounter separately, even from the same producer and appellation. The 'Brut' designation on Wine B is a style descriptor for the white version, not a differentiator from Wine A.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 105,
+  "elapsed": 4.256874084472656,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A018",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, Te Awanga, and the same vineyard, Quarter Acre. Although Wine A is listed as Chardonnay Blanc and Wine B as Viognier, the varietal difference could be due to abbreviation or omission, as the key rules suggest that a varietal suffix difference alone usually means the wines are the same.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, Te Awanga, and the same vineyard, Quarter Acre. Although Wine A is listed as Chardonnay Blanc and Wine B as Viognier, the varietal difference could be due to abbreviation or omission, as the key rules suggest that a varietal suffix difference alone usually means the wines are the same.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 91,
+  "elapsed": 2.2424049377441406,
+  "error": null
+}

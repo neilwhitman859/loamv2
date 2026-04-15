@@ -1,0 +1,27 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.7,
+  "wrong_facts": [
+    "Hook says 'deliberate shift from mountain fruit to valley floor sourcing' — ground truth shows One Point Five sources from multiple sites including hillside estate vineyards and Borderline vineyard in Stags Leap District, not primarily valley floor",
+    "Wine is described as '100% Cabernet Sauvignon' but ground truth shows 2022 is 92% Cab Sauv, 3% Petite Verdot, 3% Merlot, 2% Malbec",
+    "Vinification claims '80-100% new' French oak — ground truth says 100% new French oak (Allier & Tronçais)",
+    "Soil types 'Bale loam and Yolo silt loam' are specific claims not verifiable from context and likely fabricated for this specific wine's vineyard sources",
+    "No mention of winemaker Elias Fernandez",
+    "The framing of One Point Five as primarily valley floor sourcing is contradicted by ground truth showing hillside estate vineyards are part of the blend"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "80-100% new oak (actual is 100% new)",
+    "8-12 years improvement window"
+  ],
+  "reasoning": "The output has strong voice, specificity, and usefulness — it reads like confident, opinionated wine writing with real food pairings and useful comparisons. However, the core narrative is built on a false premise: that One Point Five is a 'valley floor' wine representing a 'shift from mountain fruit.' Ground truth shows it sources from hillside estate vineyards and Stags Leap District sites. The blend is listed as 100% Cab Sauv when it's actually a 92% Cab blend. The soil types named appear fabricated for this specific context. The hook's naming origin ('1.5 generations bridging father and son') is close to correct per ground truth, which saves it from the hook penalty. The oak percentage claim is close but wrong. These factual errors undermine what is otherwise well-crafted writing.",
+  "judge_tokens_in": 3691,
+  "judge_tokens_out": 507
+}

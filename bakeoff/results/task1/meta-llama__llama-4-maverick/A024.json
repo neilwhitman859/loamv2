@@ -1,0 +1,13 @@
+{
+  "pair_id": "A024",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"The producer is the same, L.A. Cetto, and the wine names 'Boutique' and 'Boutique Syrah' likely refer to the same wine, with the latter being a more specific name including the grape variety. The color is the same (red) and Wine A explicitly states the grape is COT (likely Syrah/Cot), supporting they are the same wine. The varietal suffix difference alone suggests they are the same.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "The producer is the same, L.A. Cetto, and the wine names 'Boutique' and 'Boutique Syrah' likely refer to the same wine, with the latter being a more specific name including the grape variety. The color is the same (red) and Wine A explicitly states the grape is COT (likely Syrah/Cot), supporting they are the same wine. The varietal suffix difference alone suggests they are the same.",
+  "parse_ok": true,
+  "tokens_in": 494,
+  "tokens_out": 115,
+  "elapsed": 1.7777128219604492,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A024",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"Wine A is identified as 100% COT (Malbec), whereas Wine B is explicitly labeled as Syrah. Since the grape varieties are different, these represent distinct bottlings produced by L.A. Cetto.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is identified as 100% COT (Malbec), whereas Wine B is explicitly labeled as Syrah. Since the grape varieties are different, these represent distinct bottlings produced by L.A. Cetto.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 75,
+  "elapsed": 1.653735637664795,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B022",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from producer Jean Noel Haton and share 'Extra Brut NV' sparkling style, but Wine B includes 'Rose' and is explicitly rose-colored while Wine A is white. Different colors (white vs ros\u00e9) mean they are distinct wines consumers would encounter separately, per the rules on color differences. Distinct LWINs (1551431 vs 1551457) confirm separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from producer Jean Noel Haton and share 'Extra Brut NV' sparkling style, but Wine B includes 'Rose' and is explicitly rose-colored while Wine A is white. Different colors (white vs ros\u00e9) mean they are distinct wines consumers would encounter separately, per the rules on color differences. Distinct LWINs (1551431 vs 1551457) confirm separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 569,
+  "tokens_out": 473,
+  "elapsed": 5.042992115020752,
+  "error": null
+}

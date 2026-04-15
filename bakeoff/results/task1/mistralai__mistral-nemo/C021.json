@@ -1,0 +1,13 @@
+{
+  "pair_id": "C021",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from the same producer and vineyard, but they have different Pr\u00e4dikat levels (Beerenauslese and Trockenbeerenauslese), which indicates different sweetness levels and thus different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from the same producer and vineyard, but they have different Pr\u00e4dikat levels (Beerenauslese and Trockenbeerenauslese), which indicates different sweetness levels and thus different wines.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 70,
+  "elapsed": 4.122680187225342,
+  "error": null
+}

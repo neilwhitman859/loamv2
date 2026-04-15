@@ -1,0 +1,13 @@
+{
+  "pair_id": "B021",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines because they are different colors and styles: Buehler White Zinfandel is a ros\u00e9/blush wine, while Buehler Zinfandel is a red wine. The prompt explicitly states ros\u00e9 vs red from the same producer or vineyard is DIFFERENT.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines because they are different colors and styles: Buehler White Zinfandel is a ros\u00e9/blush wine, while Buehler Zinfandel is a red wine. The prompt explicitly states ros\u00e9 vs red from the same producer or vineyard is DIFFERENT.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 79,
+  "elapsed": 2.2862930297851562,
+  "error": null
+}

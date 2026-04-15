@@ -1,0 +1,13 @@
+{
+  "pair_id": "D038",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.98,\"reasoning\":\"Both records have the same producer (Chatter Creek), the same wine name core ('Chatterneuf-du-Pape'), and the same color/style (red table wine). The only difference is a trivial formatting expansion from 'Table' to 'Table Wine,' which does not indicate a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Both records have the same producer (Chatter Creek), the same wine name core ('Chatterneuf-du-Pape'), and the same color/style (red table wine). The only difference is a trivial formatting expansion from 'Table' to 'Table Wine,' which does not indicate a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 82,
+  "elapsed": 2.3285930156707764,
+  "error": null
+}

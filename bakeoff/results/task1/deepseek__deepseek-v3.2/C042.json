@@ -1,0 +1,13 @@
+{
+  "pair_id": "C042",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.95, \"reasoning\": \"The wines have different Rioja classification tiers: 'Gran Reserva' versus 'Reserva'. According to the key rules, different classification tiers (Reserva vs Gran Reserva) always indicate different wines, as they represent distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different Rioja classification tiers: 'Gran Reserva' versus 'Reserva'. According to the key rules, different classification tiers (Reserva vs Gran Reserva) always indicate different wines, as they represent distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 477,
+  "tokens_out": 72,
+  "elapsed": 5.127898454666138,
+  "error": null
+}

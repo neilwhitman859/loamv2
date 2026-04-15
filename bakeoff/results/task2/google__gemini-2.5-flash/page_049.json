@@ -1,0 +1,23 @@
+{
+  "page_id": "page_049",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\"wines_found\": [{\"name\": \"Merlot\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": null, \"oak\": \"American oak\", \"cases_produced\": null, \"chemistry\": null, \"winemaker\": \"Jessica Tomei\", \"farming\": null}]}\n```",
+  "wines_found": [
+    {
+      "name": "Merlot",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": "American oak",
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 43607,
+  "tokens_out": 70,
+  "elapsed": 1.9204485416412354,
+  "error": null
+}

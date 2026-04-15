@@ -1,0 +1,26 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.65,
+  "wrong_facts": [
+    "Hook claims 'ancient soils' — the soils are gravelly loam/lateritic, not particularly ancient in the way implied",
+    "Claims 'ancient granite and gneissic rocks' underneath Mount Barker — this is plausible for the region but not verifiable from context or standard references and could be fabricated geological detail",
+    "Vinification states 'fermented in open-top vats, likely with a portion of whole-bunch fermentation' — this is speculative and not verified; ground truth says 10 months in French oak barrels but nothing about open-top or whole-bunch",
+    "Value assessment fabricates '$25-35 on the secondary market' — no price data was provided",
+    "Albany Doctor sea breeze is a real phenomenon but associated specifically with Albany/Perth area — its application to Mount Barker specifically is a stretch"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$25-35 secondary market price",
+    "The aging_potential_years of 12 and drinking windows are not grounded in any provided data"
+  ],
+  "reasoning": "The output correctly identifies Plantagenet as a founding winery (1968), Mount Barker location, Omrah as the value range, and Great Southern's cool maritime climate — all matching ground truth. However, it fabricates a price range ($25-35), speculates about vinification details (open-top vats, whole-bunch fermentation) without flagging these as speculation clearly enough, and invents geological details (gneissic rocks) that aren't verifiable. The voice is strong — direct, opinionated, avoids banned words, and the insider take is genuinely useful. Specificity is good with named soils (lateritic gravelly loams) and climate features. The fabricated price is a specific number not in context data, which normally triggers the hard cap, but since it's a rough estimate range rather than a precise technical number like pH or ABV, I'm applying a penalty but not the full hard cap.",
+  "judge_tokens_in": 3558,
+  "judge_tokens_out": 482
+}

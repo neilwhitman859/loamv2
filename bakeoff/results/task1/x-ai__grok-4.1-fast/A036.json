@@ -1,0 +1,13 @@
+{
+  "pair_id": "A036",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a blend of Pinot Noir and Chardonnay Blanc, while Wine B is Sauvignon Blanc, confirming different grape varieties. The rule explicitly states that different grapes always indicate different wines, even if names partially match. The shared 'DB Family Selection' prefix with a varietal suffix on Wine B suggests distinct bottlings from the same producer line.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a blend of Pinot Noir and Chardonnay Blanc, while Wine B is Sauvignon Blanc, confirming different grape varieties. The rule explicitly states that different grapes always indicate different wines, even if names partially match. The shared 'DB Family Selection' prefix with a varietal suffix on Wine B suggests distinct bottlings from the same producer line.",
+  "parse_ok": true,
+  "tokens_in": 575,
+  "tokens_out": 465,
+  "elapsed": 3.760622262954712,
+  "error": null
+}

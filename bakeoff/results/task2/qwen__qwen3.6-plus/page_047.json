@@ -1,0 +1,40 @@
+{
+  "page_id": "page_047",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Rosé\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": [{\"grape\": \"Grenache\", \"pct\": null}, {\"grape\": \"Pinot Noir\", \"pct\": null}, {\"grape\": \"Syrah\", \"pct\": null}, {\"grape\": \"Merlot\", \"pct\": null}], \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": \"Jessica Tomei\", \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Rosé",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Grenache",
+          "pct": null
+        },
+        {
+          "grape": "Pinot Noir",
+          "pct": null
+        },
+        {
+          "grape": "Syrah",
+          "pct": null
+        },
+        {
+          "grape": "Merlot",
+          "pct": null
+        }
+      ],
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 42839,
+  "tokens_out": 2137,
+  "elapsed": 40.88099932670593,
+  "error": null
+}

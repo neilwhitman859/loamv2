@@ -1,0 +1,23 @@
+{
+  "wine_id": "10c89e05-ecdd-4254-9c24-5a0b67894da5",
+  "wine_name": "Black Box Deep & Dark Cabernet Sauvignon, California",
+  "tier": "C",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "The output repeatedly claims or strongly implies the wine is off-dry with residual sugar — this is not confirmed in any context data or ground truth. While plausible for this category, stating it as fact ('winemakers likely halt fermentation with a few grams of residual sugar') and labeling the style as 'off-dry' is speculative presented as fact.",
+    "The ABV in context data for 2021 is 13.0%, and ground truth says 13.5% — the output doesn't state a specific ABV, so no direct conflict there, but the hook says 'four bottles for twenty dollars' which is correct per the ground truth (3L box = 4 bottles at ~$20)."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "The claim of '$5 per standard bottle' is a calculation derived from context data ($20/4 bottles) — this is reasonable math, not fabrication.",
+    "No specific fabricated numbers like pH, oak months, or blend percentages were invented."
+  ],
+  "reasoning": "The output is impressively written with strong voice, real specificity (Central Valley alluvial soils, naming competitors like Bota Box Nighthawk Black and Apothic Red), and genuinely useful food pairings and market positioning. The hook correctly identifies the 3L/4-bottle format and $20 price point, both confirmed by ground truth. However, the repeated characterization of the wine as 'off-dry' with residual sugar is presented as near-fact when it's unverified speculation — this is a meaningful correctness issue since it shapes the entire narrative. The vinification section speculates heavily about oak alternatives and residual sugar as though these are known facts. The Central Valley sourcing claim aligns with ground truth. No banned words were used. The voice is excellent — direct, opinionated, specific, and comfortable being critical without being dismissive.",
+  "judge_tokens_in": 3297,
+  "judge_tokens_out": 463
+}

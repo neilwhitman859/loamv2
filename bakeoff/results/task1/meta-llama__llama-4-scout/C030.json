@@ -1,0 +1,13 @@
+{
+  "pair_id": "C030",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different Rioja classification levels, with Wine A being Reserva and Wine B being Gran Reserva. This difference in classification tier indicates that they are distinct wines. Additionally, they have different LWIN numbers, further supporting that they are separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different Rioja classification levels, with Wine A being Reserva and Wine B being Gran Reserva. This difference in classification tier indicates that they are distinct wines. Additionally, they have different LWIN numbers, further supporting that they are separate wines.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 73,
+  "elapsed": 2.1930766105651855,
+  "error": null
+}

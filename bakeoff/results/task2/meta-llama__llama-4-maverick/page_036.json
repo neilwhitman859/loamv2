@@ -1,0 +1,33 @@
+{
+  "page_id": "page_036",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Blaufränkisch 2024\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": 13,\n      \"blend\": null,\n      \"oak\": {\"vessel\": \"barrel\", \"months\": 12, \"new_pct\": null, \"origin\": null},\n      \"cases_produced\": null,\n      \"chemistry\": {\"ph\": null, \"ta_g_l\": 5.9, \"rs_g_l\": 1, \"so2_total_mg_l\": null},\n      \"winemaker\": \"Leo Hillinger\",\n      \"farming\": \"organic\"\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Blaufränkisch 2024",
+      "vintage_year": 2024,
+      "abv_pct": 13,
+      "blend": null,
+      "oak": {
+        "vessel": "barrel",
+        "months": 12,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": 5.9,
+        "rs_g_l": 1,
+        "so2_total_mg_l": null
+      },
+      "winemaker": "Leo Hillinger",
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 29190,
+  "tokens_out": 151,
+  "elapsed": 3.3809497356414795,
+  "error": null
+}

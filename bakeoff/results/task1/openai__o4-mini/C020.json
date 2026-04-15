@@ -1,0 +1,13 @@
+{
+  "pair_id": "C020",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.90, \"reasoning\": \"Although both are Auslese Rieslings from Milz Laurentiushof, they come from distinct vineyard sites (Alt\u00e4rchen vs Leiterchen), constituting separate cuv\u00e9es and therefore different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Although both are Auslese Rieslings from Milz Laurentiushof, they come from distinct vineyard sites (Alt\u00e4rchen vs Leiterchen), constituting separate cuv\u00e9es and therefore different wines.",
+  "parse_ok": true,
+  "tokens_in": 441,
+  "tokens_out": 180,
+  "elapsed": 5.2181336879730225,
+  "error": null
+}

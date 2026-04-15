@@ -1,0 +1,13 @@
+{
+  "pair_id": "D020",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The producer, 19 Crimes, is the same for both wines. The color of both wines is red, and although the names are slightly different, 'The Banished Dark Red' and 'The Banished Dark' likely refer to the same wine, with the varietal suffix 'Red' being omitted in one case. The LWIN numbers are not provided for both wines, but based on the given information, they appear to be the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The producer, 19 Crimes, is the same for both wines. The color of both wines is red, and although the names are slightly different, 'The Banished Dark Red' and 'The Banished Dark' likely refer to the same wine, with the varietal suffix 'Red' being omitted in one case. The LWIN numbers are not provided for both wines, but based on the given information, they appear to be the same wine.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 114,
+  "elapsed": 2.8339157104492188,
+  "error": null
+}

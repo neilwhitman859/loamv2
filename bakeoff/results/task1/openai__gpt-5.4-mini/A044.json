@@ -1,0 +1,13 @@
+{
+  "pair_id": "A044",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.96,\"reasoning\":\"Both records are from the same producer, Creekside, and the only difference is that Wine B includes the varietal suffix \\\"Semillon\\\" while Wine A is the shorter form \\\"Under Current Naked.\\\" Since the grape listed for Wine A is Semillon and both are white wines, this is the standard case where the shorter name is an abbreviation of the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.96,
+  "reasoning": "Both records are from the same producer, Creekside, and the only difference is that Wine B includes the varietal suffix \"Semillon\" while Wine A is the shorter form \"Under Current Naked.\" Since the grape listed for Wine A is Semillon and both are white wines, this is the standard case where the shorter name is an abbreviation of the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 95,
+  "elapsed": 1.7851736545562744,
+  "error": null
+}

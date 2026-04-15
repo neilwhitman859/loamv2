@@ -1,0 +1,13 @@
+{
+  "pair_id": "B007",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Corte A and Corte B are distinct wines from Vistalba with completely different grape compositions. Corte A is 100% Merlot Noir, while Corte B is a blend of Cot (81%), Cabernet Sauvignon (11%), and Dolcetto (8%). Different grapes always means different wines, and these are clearly separate bottlings in Vistalba's lineup.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Corte A and Corte B are distinct wines from Vistalba with completely different grape compositions. Corte A is 100% Merlot Noir, while Corte B is a blend of Cot (81%), Cabernet Sauvignon (11%), and Dolcetto (8%). Different grapes always means different wines, and these are clearly separate bottlings in Vistalba's lineup.",
+  "parse_ok": true,
+  "tokens_in": 535,
+  "tokens_out": 117,
+  "elapsed": 2.6504547595977783,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A005",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The producer (Catena Zapata) and vineyard (Agrelo Saint Felicien) are identical. Wine B explicitly states the grape as Semillon, and Wine A's listed grape is also SEMILLON, confirming they are the same varietal. The name difference ('Semillon' appended) is a classic varietal suffix difference alone, indicating the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The producer (Catena Zapata) and vineyard (Agrelo Saint Felicien) are identical. Wine B explicitly states the grape as Semillon, and Wine A's listed grape is also SEMILLON, confirming they are the same varietal. The name difference ('Semillon' appended) is a classic varietal suffix difference alone, indicating the same wine.",
+  "parse_ok": true,
+  "tokens_in": 452,
+  "tokens_out": 98,
+  "elapsed": 13.82835578918457,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C050",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines represent different classification tiers within the producer's portfolio. In the context of Argentine wine, 'Reserva' and 'Gran Reserva' denote distinct aging requirements and quality levels, making them separate bottlings for a consumer.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines represent different classification tiers within the producer's portfolio. In the context of Argentine wine, 'Reserva' and 'Gran Reserva' denote distinct aging requirements and quality levels, making them separate bottlings for a consumer.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 74,
+  "elapsed": 2.296882390975952,
+  "error": null
+}

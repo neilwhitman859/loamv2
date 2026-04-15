@@ -1,0 +1,13 @@
+{
+  "pair_id": "C029",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer Mayu, both are red Gran Reserva Cabernet Sauvignon, matching grape variety and style. The 'Don Amerigo' prefix in Wine A is likely a cuv\u00e9e or line designation omitted in Wine B's shorter name, consistent with allowed name formatting abbreviations. No evidence of different vineyards, grapes, or classifications; different LWINs likely reflect database entries for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer Mayu, both are red Gran Reserva Cabernet Sauvignon, matching grape variety and style. The 'Don Amerigo' prefix in Wine A is likely a cuv\u00e9e or line designation omitted in Wine B's shorter name, consistent with allowed name formatting abbreviations. No evidence of different vineyards, grapes, or classifications; different LWINs likely reflect database entries for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 569,
+  "tokens_out": 1998,
+  "elapsed": 18.268990993499756,
+  "error": null
+}

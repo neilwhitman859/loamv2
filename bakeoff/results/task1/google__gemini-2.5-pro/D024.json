@@ -1,0 +1,13 @@
+{
+  "pair_id": "D024",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"The producer and core name 'Antique' are identical. 'Brut' is a standard style descriptor for Champagne indicating a dry sweetness level. It is highly probable that 'Antique' is simply an abbreviated or incomplete name for the full 'Brut Antique' cuv\u00e9e, as this is a common practice and there is no evidence of a different, non-Brut 'Antique' bottling from Cattier.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The producer and core name 'Antique' are identical. 'Brut' is a standard style descriptor for Champagne indicating a dry sweetness level. It is highly probable that 'Antique' is simply an abbreviated or incomplete name for the full 'Brut Antique' cuv\u00e9e, as this is a common practice and there is no evidence of a different, non-Brut 'Antique' bottling from Cattier.",
+  "parse_ok": true,
+  "tokens_in": 406,
+  "tokens_out": 1304,
+  "elapsed": 25.638896226882935,
+  "error": null
+}

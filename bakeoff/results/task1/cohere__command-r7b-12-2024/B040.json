@@ -1,0 +1,13 @@
+{
+  "pair_id": "B040",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is a white wine made from Alvarinho grapes, while Wine B is a red wine made from Barbera Nera grapes. Different grape varieties are a clear indicator of different wines, even if the producer and vineyard are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is a white wine made from Alvarinho grapes, while Wine B is a red wine made from Barbera Nera grapes. Different grape varieties are a clear indicator of different wines, even if the producer and vineyard are the same.",
+  "parse_ok": true,
+  "tokens_in": 443,
+  "tokens_out": 69,
+  "elapsed": 1.2434592247009277,
+  "error": null
+}

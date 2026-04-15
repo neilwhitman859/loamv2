@@ -1,0 +1,13 @@
+{
+  "pair_id": "B048",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":1.0,\"reasoning\":\"Both wines share the name 'Henkenberg' and producer Salwey, but Wine A is red from Pinot Gris while Wine B is white from Pinot Blanc. Different grape varieties explicitly make them different wines, even if the vineyard name matches. Different colors further confirm they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the name 'Henkenberg' and producer Salwey, but Wine A is red from Pinot Gris while Wine B is white from Pinot Blanc. Different grape varieties explicitly make them different wines, even if the vineyard name matches. Different colors further confirm they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 564,
+  "tokens_out": 431,
+  "elapsed": 2.888246536254883,
+  "error": null
+}

@@ -1,0 +1,24 @@
+{
+  "wine_id": "0aba350e-fffb-49bd-ad8b-9d2ec1f32fe9",
+  "wine_name": "Vasse Felix Filius Cabernet Sauvignon, Margaret River",
+  "tier": "C",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "The hook claims Cabernet is planted on 'iron-rich gravel' as if this is a defining characteristic of the Filius vineyard specifically — while Margaret River does have gravelly loam and ironstone soils, the output presents this as a specific fact about the wine's site without sourcing",
+    "The vinification summary describes the wine as 'polished, early-drinking' with 'supple tannins' but doesn't mention the actual winemaking details (wild-yeast fermentation in open-top fermenters, 11 months French oak, 93% Cab/5.5% Malbec/1.5% Petit Verdot) — it avoids fabricating specifics but also misses the real story",
+    "No mention of the naming origin ('Filius' = 'son of' in Latin, referring to the flagship Cabernet) which is a key piece of the wine's identity"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "Drink 2023 from now through about 2032 — the 2032 endpoint is not in context data, though it's a reasonable inference",
+    "30-60 minutes of air — not sourced from context data"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity on Margaret River terroir (naming real soil types like Forest Grove ironstone, gravelly loam), and genuinely useful food pairings and comparisons. However, it misses key ground-truth facts: the blend composition (93% Cab/5.5% Malbec/1.5% Petit Verdot), the 11 months French oak, wild-yeast fermentation, and critically the 'Filius' naming origin which would have been a perfect hook detail. The vinification section is vague rather than wrong — it describes style intent without fabricating specific numbers, which shows restraint. The drinking window and aeration time are reasonable inferences rather than hard fabrications. No banned words found. The hook's 'iron-rich gravel' claim is plausible for Margaret River but presented with more specificity to the wine than warranted. Overall strong output that plays it safe on winemaking details but misses opportunities to be more informative.",
+  "judge_tokens_in": 3473,
+  "judge_tokens_out": 541
+}

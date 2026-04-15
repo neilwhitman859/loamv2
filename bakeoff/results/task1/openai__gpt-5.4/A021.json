@@ -1,0 +1,13 @@
+{
+  "pair_id": "A021",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These are distinct bottlings because the grape composition differs: one is Cabernet Sauvignon, while the other is a Cabernet Sauvignon\u2013Syrah blend. Different grapes/blends always indicate different wines, even from the same producer and color category.",
+  "verdict": null,
+  "confidence": null,
+  "reasoning": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These are distinct bottlings because the grape composition differs: one is Cabernet Sauvignon, while the other is a Cabernet Sauvignon\u2013Syrah blend",
+  "parse_ok": false,
+  "tokens_in": 422,
+  "tokens_out": 67,
+  "elapsed": 1.9959373474121094,
+  "error": null
+}

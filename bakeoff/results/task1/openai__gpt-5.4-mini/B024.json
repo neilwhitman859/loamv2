@@ -1,0 +1,13 @@
+{
+  "pair_id": "B024",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Although both records share the same cuv\u00e9e name, they are clearly different wines because the color differs: Wine A is white and Wine B is red. The grape compositions also differ substantially, with Wine A built around Sauvignon Blanc/Muscadelle and Wine B around Mondeuse Blanche/Merlot Noir, indicating distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Although both records share the same cuv\u00e9e name, they are clearly different wines because the color differs: Wine A is white and Wine B is red. The grape compositions also differ substantially, with Wine A built around Sauvignon Blanc/Muscadelle and Wine B around Mondeuse Blanche/Merlot Noir, indicating distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 88,
+  "elapsed": 1.7576627731323242,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A042",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer (Weinert), have the same color (red), and the same primary grape (Cabernet Franc). The difference in name is likely due to abbreviation, with 'Tonel Unico No. 183' being a shorter form of 'Tonel Unico No. 183 Cabernet Franc'.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer (Weinert), have the same color (red), and the same primary grape (Cabernet Franc). The difference in name is likely due to abbreviation, with 'Tonel Unico No. 183' being a shorter form of 'Tonel Unico No. 183 Cabernet Franc'.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 90,
+  "elapsed": 1.4550280570983887,
+  "error": null
+}

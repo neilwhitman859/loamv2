@@ -1,0 +1,13 @@
+{
+  "pair_id": "C032",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from Bonnaire, are Blanc de Blancs, and are white. The only difference is 'NV' (non-vintage) designation, which is a style detail that does not inherently indicate a different cuv\u00e9e or bottling for a Champagne producer's core Blanc de Blancs.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from Bonnaire, are Blanc de Blancs, and are white. The only difference is 'NV' (non-vintage) designation, which is a style detail that does not inherently indicate a different cuv\u00e9e or bottling for a Champagne producer's core Blanc de Blancs.",
+  "parse_ok": true,
+  "tokens_in": 443,
+  "tokens_out": 83,
+  "elapsed": 8.153324842453003,
+  "error": null
+}

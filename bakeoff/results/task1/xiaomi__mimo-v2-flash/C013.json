@@ -1,0 +1,13 @@
+{
+  "pair_id": "C013",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Dr. Wehrheim), same vineyard (Kastanienbusch), same grape (Riesling), and same Pr\u00e4dikat level (Auslese). The only difference is a minor spelling variation in the vineyard name (Kastanienbush vs Kastanienbusch), which is a formatting difference and does not represent a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Dr. Wehrheim), same vineyard (Kastanienbusch), same grape (Riesling), and same Pr\u00e4dikat level (Auslese). The only difference is a minor spelling variation in the vineyard name (Kastanienbush vs Kastanienbusch), which is a formatting difference and does not represent a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 510,
+  "tokens_out": 109,
+  "elapsed": 2.6272590160369873,
+  "error": null
+}

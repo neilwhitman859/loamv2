@@ -1,0 +1,13 @@
+{
+  "pair_id": "C031",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Bonnaire's flagship wine is their Blanc de Blancs Grand Cru, which is a Brut style by default. The presence or absence of the word 'Brut' in the name is a formatting variation rather than a distinction in product tier, as 'Blanc de Blancs' describes the grape/style and 'Brut' describes the sweetness level of that same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Bonnaire's flagship wine is their Blanc de Blancs Grand Cru, which is a Brut style by default. The presence or absence of the word 'Brut' in the name is a formatting variation rather than a distinction in product tier, as 'Blanc de Blancs' describes the grape/style and 'Brut' describes the sweetness level of that same wine.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 97,
+  "elapsed": 2.200427532196045,
+  "error": null
+}

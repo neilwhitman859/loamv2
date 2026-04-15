@@ -1,0 +1,21 @@
+{
+  "wine_id": "b8dc12b0-1820-4edb-8108-0701aee0860a",
+  "wine_name": "Tolosa 1772 Grenache, Edna Valley",
+  "tier": "C",
+  "model": "openai/gpt-5.4",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.05,
+  "wrong_facts": [
+    "Price range of $25-$35 is fabricated — no pricing data was provided in the context"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$25-$35 price range"
+  ],
+  "reasoning": "The output is largely accurate and well-constructed. The hook correctly identifies Edna Valley as a Chardonnay/Pinot region and correctly describes the Pismo Gap cooling effect — both verifiable from context data. The 13.8% ABV for 2021 matches context. TEXSOM awards are accurately cited. The vinification section honestly admits it lacks cellar details, which is good — though the ground truth shows 15 months in French oak puncheons and specific vineyard sections (Poletti and Salaal), the model didn't fabricate anything here. The model missed the naming origin of '1772' (Mission San Luis Obispo de Tolosa founded that year), which would have added significant value. The $25-$35 price is fabricated since no pricing was provided, though it's plausibly in the right range. Soil references to 'Positas and Diablo clay loams' are specific but unverifiable from context — these are real SLO County soil series, so this adds value. Voice is excellent: direct, opinionated, the 'anti-Paso Grenache' insider take is sharp and actionable. No banned words. Strong food pairings with real reasoning.",
+  "judge_tokens_in": 3932,
+  "judge_tokens_out": 365
+}

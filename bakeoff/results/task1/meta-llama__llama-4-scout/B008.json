@@ -1,0 +1,13 @@
+{
+  "pair_id": "B008",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grape varieties, Cabernet Sauvignon and Sauvignon Blanc, which indicates they are different wines. Additionally, they have different colors, red and white, further supporting the conclusion that they are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grape varieties, Cabernet Sauvignon and Sauvignon Blanc, which indicates they are different wines. Additionally, they have different colors, red and white, further supporting the conclusion that they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 65,
+  "elapsed": 1.7307720184326172,
+  "error": null
+}

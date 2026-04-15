@@ -1,0 +1,13 @@
+{
+  "pair_id": "B009",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The two wines differ in color: Wine A is white while Wine B is ros\u00e9. Color is a fundamental stylistic distinction that makes these separate bottlings a consumer would encounter distinctly. Despite similar naming conventions and the same producer, different colors represent different wines.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The two wines differ in color: Wine A is white while Wine B is ros\u00e9. Color is a fundamental stylistic distinction that makes these separate bottlings a consumer would encounter distinctly. Despite similar naming conventions and the same producer, different colors represent different wines.",
+  "parse_ok": true,
+  "tokens_in": 468,
+  "tokens_out": 81,
+  "elapsed": 2.146648406982422,
+  "error": null
+}

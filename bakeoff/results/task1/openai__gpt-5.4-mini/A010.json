@@ -1,0 +1,13 @@
+{
+  "pair_id": "A010",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Although the producer and color match, the wine names indicate different grape varieties: Wine A is the cuv\u00e9e Le Jardin de Trebogad, while Wine B is Le Jardin de Trebogad Pinot Gris. Different grapes always mean different wines, even when the base vineyard/cuv\u00e9e name is the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Although the producer and color match, the wine names indicate different grape varieties: Wine A is the cuv\u00e9e Le Jardin de Trebogad, while Wine B is Le Jardin de Trebogad Pinot Gris. Different grapes always mean different wines, even when the base vineyard/cuv\u00e9e name is the same.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 90,
+  "elapsed": 1.6425256729125977,
+  "error": null
+}

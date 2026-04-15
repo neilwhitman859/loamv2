@@ -1,0 +1,13 @@
+{
+  "pair_id": "B007",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines are made from entirely different grape compositions. Wine A is 100% Merlot, while Wine B is a blend of Cot (Malbec), Cabernet Sauvignon, and Dolcetto. The distinct names, 'Corte A' and 'Corte B', also clearly designate them as separate bottlings within the producer's portfolio.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from entirely different grape compositions. Wine A is 100% Merlot, while Wine B is a blend of Cot (Malbec), Cabernet Sauvignon, and Dolcetto. The distinct names, 'Corte A' and 'Corte B', also clearly designate them as separate bottlings within the producer's portfolio.",
+  "parse_ok": true,
+  "tokens_in": 471,
+  "tokens_out": 1158,
+  "elapsed": 11.76761245727539,
+  "error": null
+}

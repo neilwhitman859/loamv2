@@ -1,0 +1,13 @@
+{
+  "pair_id": "A042",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, vineyard (Tonel Unico), and grape variety (Cabernet Franc). The only difference is the varietal suffix in Wine B, which is a common abbreviation and does not indicate a different grape.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, vineyard (Tonel Unico), and grape variety (Cabernet Franc). The only difference is the varietal suffix in Wine B, which is a common abbreviation and does not indicate a different grape.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 72,
+  "elapsed": 3.2885043621063232,
+  "error": null
+}

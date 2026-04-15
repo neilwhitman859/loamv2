@@ -1,0 +1,13 @@
+{
+  "pair_id": "B007",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have completely different grape compositions: Wine A is 100% Merlot Noir, while Wine B is a blend of Cot, Cabernet Sauvignon, and Dolcetto. Different grapes always indicate different wines, even when the producer and naming structure (Corte A vs Corte B) are similar.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have completely different grape compositions: Wine A is 100% Merlot Noir, while Wine B is a blend of Cot, Cabernet Sauvignon, and Dolcetto. Different grapes always indicate different wines, even when the producer and naming structure (Corte A vs Corte B) are similar.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 87,
+  "elapsed": 4.613067150115967,
+  "error": null
+}

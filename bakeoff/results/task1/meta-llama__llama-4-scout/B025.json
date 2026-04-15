@@ -1,0 +1,13 @@
+{
+  "pair_id": "B025",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors (white vs red), which indicates they are different wines. Additionally, Wine B has a specified grape variety (Merlot), while Wine A does not, suggesting they may have different grape compositions.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors (white vs red), which indicates they are different wines. Additionally, Wine B has a specified grape variety (Merlot), while Wine A does not, suggesting they may have different grape compositions.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 68,
+  "elapsed": 1.8683364391326904,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A040",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These are distinct wines because the named grape composition does not match: Wine A is a Merlot Noir/Chardonnay Blanc blend, while Wine B is explicitly Pinot Noir. Different grapes mean different bottlings even if the series name is the same. The shared producer and series do not override the varietal difference.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These are distinct wines because the named grape composition does not match: Wine A is a Merlot Noir/Chardonnay Blanc blend, while Wine B is explicitly Pinot Noir. Different grapes mean different bottlings even if the series name is the same. The shared producer and series do not override the varietal difference.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 84,
+  "elapsed": 1.8763151168823242,
+  "error": null
+}

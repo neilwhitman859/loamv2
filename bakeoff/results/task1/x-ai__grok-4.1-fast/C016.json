@@ -1,0 +1,13 @@
+{
+  "pair_id": "C016",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":1.0,\"reasoning\":\"Both wines share the same producer (Bartolo Mascarello), grape (100% Nebbiolo), color (red), and Riserva style, but differ in appellation: Barolo vs. Barbaresco, which are distinct DOCG regions in Piedmont representing different vineyard designations. Per the rules, different vineyard/appellation designations make them different wines, even with matching producer, grape, and style. They would not share a single encyclopedia page as separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Bartolo Mascarello), grape (100% Nebbiolo), color (red), and Riserva style, but differ in appellation: Barolo vs. Barbaresco, which are distinct DOCG regions in Piedmont representing different vineyard designations. Per the rules, different vineyard/appellation designations make them different wines, even with matching producer, grape, and style. They would not share a single encyclopedia page as separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 608,
+  "tokens_out": 540,
+  "elapsed": 4.778223752975464,
+  "error": null
+}

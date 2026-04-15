@@ -1,0 +1,13 @@
+{
+  "pair_id": "A001",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.85, \"reasoning\": \"Wine B 'El Pacto Agreement No 2 Carmenere' appears to be the same wine as Wine A 'El Pacto Agreement No 2' with a varietal suffix appended. Wine A's listed grapes include Carmenere (and Cabernet Franc as a blend component), and the varietal suffix 'Carmenere' likely refers to the dominant grape in the blend rather than indicating a separate single-varietal wine. Both are from Santa Carolina and the naming pattern follows the common abbreviation rule where the shorter name omits the varietal descriptor.\"}",
+  "verdict": "SAME",
+  "confidence": 0.85,
+  "reasoning": "Wine B 'El Pacto Agreement No 2 Carmenere' appears to be the same wine as Wine A 'El Pacto Agreement No 2' with a varietal suffix appended. Wine A's listed grapes include Carmenere (and Cabernet Franc as a blend component), and the varietal suffix 'Carmenere' likely refers to the dominant grape in the blend rather than indicating a separate single-varietal wine. Both are from Santa Carolina and the naming pattern follows the common abbreviation rule where the shorter name omits the varietal descriptor.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 150,
+  "elapsed": 3.658144950866699,
+  "error": null
+}

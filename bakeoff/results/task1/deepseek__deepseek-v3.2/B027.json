@@ -1,0 +1,13 @@
+{
+  "pair_id": "B027",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.95, \"reasoning\": \"Wine A is a white wine, while Wine B is explicitly a ros\u00e9 sparkling wine (Rose Brut). Different color and style (still vs sparkling) always indicate different wines, even when the producer and base name are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "Wine A is a white wine, while Wine B is explicitly a ros\u00e9 sparkling wine (Rose Brut). Different color and style (still vs sparkling) always indicate different wines, even when the producer and base name are the same.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 71,
+  "elapsed": 2.1231601238250732,
+  "error": null
+}

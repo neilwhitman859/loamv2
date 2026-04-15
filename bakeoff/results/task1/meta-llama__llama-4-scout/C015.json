@@ -1,0 +1,13 @@
+{
+  "pair_id": "C015",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer, Pertois-Lebrun, and the same wine style, Blanc de Blancs, indicating they are likely from the same vineyard and grape variety. The difference in lot/cask numbers (No. 10 vs No. 15) is not sufficient to classify them as different wines, as this typically indicates different bottlings of the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer, Pertois-Lebrun, and the same wine style, Blanc de Blancs, indicating they are likely from the same vineyard and grape variety. The difference in lot/cask numbers (No. 10 vs No. 15) is not sufficient to classify them as different wines, as this typically indicates different bottlings of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 100,
+  "elapsed": 3.0710387229919434,
+  "error": null
+}

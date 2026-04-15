@@ -1,0 +1,13 @@
+{
+  "pair_id": "D025",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Cattier) and are white sparkling wines. 'Brut Millesime' and 'Millesime' refer to the same bottling, with 'Brut' being the sweetness level and 'Millesime' indicating a vintage-dated cuv\u00e9e, which is a standard naming convention for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Cattier) and are white sparkling wines. 'Brut Millesime' and 'Millesime' refer to the same bottling, with 'Brut' being the sweetness level and 'Millesime' indicating a vintage-dated cuv\u00e9e, which is a standard naming convention for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 474,
+  "tokens_out": 96,
+  "elapsed": 2.181148052215576,
+  "error": null
+}

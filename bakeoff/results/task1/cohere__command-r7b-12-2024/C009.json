@@ -1,0 +1,13 @@
+{
+  "pair_id": "C009",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are produced by Cattier, have the same color (white), and are classified as Brut. The slight difference in their names (\\\"Blanc de Blancs\\\" vs. \\\"Blanc de Blancs Brut\\\") is likely due to name formatting and does not indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are produced by Cattier, have the same color (white), and are classified as Brut. The slight difference in their names (\"Blanc de Blancs\" vs. \"Blanc de Blancs Brut\") is likely due to name formatting and does not indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 76,
+  "elapsed": 1.5527019500732422,
+  "error": null
+}

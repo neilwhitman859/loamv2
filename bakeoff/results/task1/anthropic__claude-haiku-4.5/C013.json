@@ -1,0 +1,13 @@
+{
+  "pair_id": "C013",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.92, \"reasoning\": \"Both wines are from Dr. Wehrheim, share identical grape variety (Riesling) and Pr\u00e4dikat level (Auslese), and differ only in name formatting/word order (Kastanienbusch/Kastanienbush appears to be the same vineyard with minor spelling variation). The different LWINs likely reflect database entry variations rather than distinct bottlings, as all other parameters align with a single encyclopedia entry.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.92,
+  "reasoning": "Both wines are from Dr. Wehrheim, share identical grape variety (Riesling) and Pr\u00e4dikat level (Auslese), and differ only in name formatting/word order (Kastanienbusch/Kastanienbush appears to be the same vineyard with minor spelling variation). The different LWINs likely reflect database entry variations rather than distinct bottlings, as all other parameters align with a single encyclopedia entry.",
+  "parse_ok": true,
+  "tokens_in": 507,
+  "tokens_out": 123,
+  "elapsed": 4.208293914794922,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B015",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is explicitly labeled 'Rose' (ros\u00e9) and Wine B is labeled 'Rouge' (red), confirming they are different colors. The rules clearly state that Ros\u00e9 vs Red from the same vineyard are DIFFERENT wines. Despite sharing the same producer and 'Fut de Chene' designation, these are distinct bottlings a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is explicitly labeled 'Rose' (ros\u00e9) and Wine B is labeled 'Rouge' (red), confirming they are different colors. The rules clearly state that Ros\u00e9 vs Red from the same vineyard are DIFFERENT wines. Despite sharing the same producer and 'Fut de Chene' designation, these are distinct bottlings a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 504,
+  "tokens_out": 103,
+  "elapsed": 4.059221506118774,
+  "error": null
+}

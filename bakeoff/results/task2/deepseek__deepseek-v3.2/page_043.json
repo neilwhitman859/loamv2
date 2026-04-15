@@ -1,0 +1,54 @@
+{
+  "page_id": "page_043",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "```json\n{\n    \"wines_found\": [\n        {\n            \"name\": \"2023 Lytton Springs\",\n            \"vintage_year\": 2023,\n            \"abv_pct\": 14.4,\n            \"blend\": [\n                {\"grape\": \"Zinfandel\", \"pct\": 76},\n                {\"grape\": \"Petite Sirah\", \"pct\": 14},\n                {\"grape\": \"Carignane\", \"pct\": 7},\n                {\"grape\": \"Alicante Bouschet\", \"pct\": 2},\n                {\"grape\": \"Mataro\", \"pct\": 1}\n            ],\n            \"oak\": {\n                \"vessel\": \"air-dried American oak barrels\",\n                \"months\": 16,\n                \"new_pct\": 19,\n                \"origin\": \"American\"\n            },\n            \"cases_produced\": null,\n            \"chemistry\": {\n                \"ph\": 3.66,\n                \"ta_g_l\": 7.39,\n                \"rs_g_l\": null,\n                \"so2_total_mg_l\": null\n            },\n            \"winemaker\": null,\n            \"farming\": \"organic\"\n        }\n    ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "2023 Lytton Springs",
+      "vintage_year": 2023,
+      "abv_pct": 14.4,
+      "blend": [
+        {
+          "grape": "Zinfandel",
+          "pct": 76
+        },
+        {
+          "grape": "Petite Sirah",
+          "pct": 14
+        },
+        {
+          "grape": "Carignane",
+          "pct": 7
+        },
+        {
+          "grape": "Alicante Bouschet",
+          "pct": 2
+        },
+        {
+          "grape": "Mataro",
+          "pct": 1
+        }
+      ],
+      "oak": {
+        "vessel": "air-dried American oak barrels",
+        "months": 16,
+        "new_pct": 19,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": 3.66,
+        "ta_g_l": 7.39,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 9727,
+  "tokens_out": 264,
+  "elapsed": 11.243027925491333,
+  "error": null
+}

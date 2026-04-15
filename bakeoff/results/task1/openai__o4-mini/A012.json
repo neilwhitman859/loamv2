@@ -1,0 +1,13 @@
+{
+  "pair_id": "A012",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.90,\"reasoning\":\"Both records share the same producer, vineyard name and grape variety; one name simply appends the varietal, indicating a naming shorthand rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both records share the same producer, vineyard name and grape variety; one name simply appends the varietal, indicating a naming shorthand rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 162,
+  "elapsed": 4.5465404987335205,
+  "error": null
+}

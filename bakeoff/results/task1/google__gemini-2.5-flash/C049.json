@@ -1,0 +1,13 @@
+{
+  "pair_id": "C049",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The primary reason these wines are different is the color distinction (white vs. red), indicating different grape varieties or winemaking styles. Additionally, 'Brut Nature' and 'Brut' can sometimes denote different sweetness levels, further supporting them as distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The primary reason these wines are different is the color distinction (white vs. red), indicating different grape varieties or winemaking styles. Additionally, 'Brut Nature' and 'Brut' can sometimes denote different sweetness levels, further supporting them as distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 89,
+  "elapsed": 1.7763617038726807,
+  "error": null
+}

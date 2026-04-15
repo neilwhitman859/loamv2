@@ -1,0 +1,13 @@
+{
+  "pair_id": "D025",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Cattier Millesime and Brut Millesime refer to the same vintage-dated sparkling wine. The inclusion of 'Brut' is a stylistic descriptor of the sweetness level common to the entire Millesime production, and the LWIN provided confirms they represent the same entity in trade databases.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Cattier Millesime and Brut Millesime refer to the same vintage-dated sparkling wine. The inclusion of 'Brut' is a stylistic descriptor of the sweetness level common to the entire Millesime production, and the LWIN provided confirms they represent the same entity in trade databases.",
+  "parse_ok": true,
+  "tokens_in": 410,
+  "tokens_out": 82,
+  "elapsed": 1.825674295425415,
+  "error": null
+}

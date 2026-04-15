@@ -1,0 +1,13 @@
+{
+  "pair_id": "B002",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors (red vs white) and different primary grape varieties (Merlot Noir and Cabernet Franc for Wine A, Verdot Petit and Merlot Noir for Wine B).\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors (red vs white) and different primary grape varieties (Merlot Noir and Cabernet Franc for Wine A, Verdot Petit and Merlot Noir for Wine B).",
+  "parse_ok": true,
+  "tokens_in": 516,
+  "tokens_out": 65,
+  "elapsed": 1.6220169067382812,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B023",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines are distinct products within the 19 Crimes Snoop Dogg collaboration; 'Cali Red' is a red blend while 'Cali Gold' is a sparkling white wine. Because they represent different wine styles and colors, they are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are distinct products within the 19 Crimes Snoop Dogg collaboration; 'Cali Red' is a red blend while 'Cali Gold' is a sparkling white wine. Because they represent different wine styles and colors, they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 399,
+  "tokens_out": 75,
+  "elapsed": 2.150322914123535,
+  "error": null
+}

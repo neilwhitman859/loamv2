@@ -1,0 +1,13 @@
+{
+  "pair_id": "C029",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines have different LWIN numbers, indicating they are distinct bottlings. Although they share the same producer, 'Mayu', and have similar names, 'Don Amerigo Gran Reserva Cabernet Sauvignon' and 'Gran Reserva Cabernet Sauvignon', the difference in LWIN suggests they are different wines. The classification 'Gran Reserva' is the same for both, but the presence of 'Don Amerigo' in one name could imply a different cuv\u00e9e or vineyard.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines have different LWIN numbers, indicating they are distinct bottlings. Although they share the same producer, 'Mayu', and have similar names, 'Don Amerigo Gran Reserva Cabernet Sauvignon' and 'Gran Reserva Cabernet Sauvignon', the difference in LWIN suggests they are different wines. The classification 'Gran Reserva' is the same for both, but the presence of 'Don Amerigo' in one name could imply a different cuv\u00e9e or vineyard.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 115,
+  "elapsed": 2.2722854614257812,
+  "error": null
+}

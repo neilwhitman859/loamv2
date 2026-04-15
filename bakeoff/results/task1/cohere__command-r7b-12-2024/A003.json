@@ -1,0 +1,13 @@
+{
+  "pair_id": "A003",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, vineyard/cuv\u00e9e (Whistling Ridge), grape variety (Pinot Noir), and style. The slight difference in the name (No. 15 vs. No. 15 Pinot Noir) is a common abbreviation used in wine terminology and does not change the fundamental characteristics of the wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, vineyard/cuv\u00e9e (Whistling Ridge), grape variety (Pinot Noir), and style. The slight difference in the name (No. 15 vs. No. 15 Pinot Noir) is a common abbreviation used in wine terminology and does not change the fundamental characteristics of the wine.",
+  "parse_ok": true,
+  "tokens_in": 455,
+  "tokens_out": 90,
+  "elapsed": 1.7160799503326416,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A020",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"While both wines share the same producer and vineyard name, they are listed with different grape compositions. Wine A is identified as a Viura, while Wine B is a Sauvignon Blanc; since the producer makes distinct varietal bottlings under the same vineyard name, these represent different wines.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "While both wines share the same producer and vineyard name, they are listed with different grape compositions. Wine A is identified as a Viura, while Wine B is a Sauvignon Blanc; since the producer makes distinct varietal bottlings under the same vineyard name, these represent different wines.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 85,
+  "elapsed": 1.4233572483062744,
+  "error": null
+}

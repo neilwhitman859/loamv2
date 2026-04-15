@@ -1,0 +1,13 @@
+{
+  "pair_id": "B047",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is described as white, while Wine B is red, indicating a difference in color. The grape variety 'Spatburgunder' is the same, but the color difference suggests different wines. Additionally, the vineyard designations 'Eichberg' and 'Kirchberg' are different.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is described as white, while Wine B is red, indicating a difference in color. The grape variety 'Spatburgunder' is the same, but the color difference suggests different wines. Additionally, the vineyard designations 'Eichberg' and 'Kirchberg' are different.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 84,
+  "elapsed": 1.307366132736206,
+  "error": null
+}

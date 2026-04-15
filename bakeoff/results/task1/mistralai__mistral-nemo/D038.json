@@ -1,0 +1,13 @@
+{
+  "pair_id": "D038",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines have the same producer, grape variety (implied by the appellation 'Chatterneuf-du-Pape'), color, and style (table wine). The difference in name formatting ('Chatterneuf-du-Pape red Table' vs 'Chatterneuf-du-Pape red Table Wine') is common and indicates the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines have the same producer, grape variety (implied by the appellation 'Chatterneuf-du-Pape'), color, and style (table wine). The difference in name formatting ('Chatterneuf-du-Pape red Table' vs 'Chatterneuf-du-Pape red Table Wine') is common and indicates the same wine.",
+  "parse_ok": true,
+  "tokens_in": 467,
+  "tokens_out": 93,
+  "elapsed": 2.203575611114502,
+  "error": null
+}

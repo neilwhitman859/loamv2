@@ -1,0 +1,13 @@
+{
+  "pair_id": "A030",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"The producer, Pegasus Bay, is the same for both wines. \\\"Sauvignon\\\" is a common and logical abbreviation for their well-known \\\"Sauvignon Semillon\\\" blend. The grape data for Wine A, listing only \\\"SEMILLON\\\" for a wine named \\\"Sauvignon\\\", is almost certainly a data entry error, as this naming and grape combination is nonsensical. Both records point to the same signature white blend from this producer.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The producer, Pegasus Bay, is the same for both wines. \"Sauvignon\" is a common and logical abbreviation for their well-known \"Sauvignon Semillon\" blend. The grape data for Wine A, listing only \"SEMILLON\" for a wine named \"Sauvignon\", is almost certainly a data entry error, as this naming and grape combination is nonsensical. Both records point to the same signature white blend from this producer.",
+  "parse_ok": true,
+  "tokens_in": 414,
+  "tokens_out": 1208,
+  "elapsed": 12.228445291519165,
+  "error": null
+}

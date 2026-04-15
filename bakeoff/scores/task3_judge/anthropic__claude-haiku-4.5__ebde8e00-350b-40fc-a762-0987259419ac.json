@@ -1,0 +1,31 @@
+{
+  "wine_id": "ebde8e00-350b-40fc-a762-0987259419ac",
+  "wine_name": "Howard Park Leston Shiraz, Margaret River",
+  "tier": "C",
+  "model": "anthropic/claude-haiku-4.5",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.3,
+  "wrong_facts": [
+    "Founded in 1986 — Howard Park was actually founded in 1986 by Jeff Burch, but the winery started in Denmark/Great Southern, not Margaret River as implied",
+    "Forest Grove ironstone fragments — unverifiable claim, not in context data or ground truth",
+    "Natural fermentation with native yeasts — not confirmed in ground truth; ground truth mentions 10% whole bunch fermentation but nothing about native yeasts",
+    "Minimal sulfur additions — fabricated claim not in context data or ground truth",
+    "Reductivity from native yeasts — speculative and unsupported",
+    "Leeuwin Estate Art Series Shiraz — Leeuwin Estate's Art Series is known for Chardonnay and Cabernet Sauvignon, not Shiraz; this comparable may be fabricated",
+    "Tyrrell's Vat 9 Shiraz — the well-known Tyrrell's single vineyard Shiraz is Vat 9, but Hunter Valley is warm, not cool-climate as stated",
+    "Blend percentage of French vs American oak is stated correctly (matching ground truth) but 10% whole bunch fermentation is omitted",
+    "Vines planted 1996 not mentioned; naming origin (family name) not mentioned"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$28-$38 USD price range not in context data",
+    "13.5-14.5% typical alcohol range fabricated",
+    "Founded 1986 — plausibly correct but not in context data"
+  ],
+  "reasoning": "The output fabricates several specific claims: price range ($28-$38), typical alcohol range (13.5-14.5%), Forest Grove ironstone fragments, native yeast fermentation, and minimal sulfur additions. The Leeuwin Estate Art Series Shiraz comparable is likely wrong — their Art Series is famous for Chardonnay and Cabernet, not Shiraz. The oak aging detail (18 months, French and American) matches ground truth, which is good. However, the output misses key ground truth facts like 10% whole bunch fermentation, 95% French/5% American oak split, 30% new oak, the Leston family naming origin, and specific vineyard blocks. The voice is strong — direct, opinionated, specific, with good food pairings and a clear insider take. But the fabricated numbers and unverifiable claims significantly hurt correctness. The alcohol range fabrication triggers the hard penalty cap of 1.5, but I'm giving 2.0 because the 18-month oak claim matches ground truth and shows some real knowledge.",
+  "judge_tokens_in": 3369,
+  "judge_tokens_out": 621
+}

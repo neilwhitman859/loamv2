@@ -1,0 +1,13 @@
+{
+  "pair_id": "D004",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Arrowhead and Arete are distinct vineyard/cuv\u00e9e designations from Chimney Rock, not formatting variations of the same wine. The different LWINs (1750485 vs 1991273) confirm these are separate bottlings that would appear as distinct products in a wine encyclopedia.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Arrowhead and Arete are distinct vineyard/cuv\u00e9e designations from Chimney Rock, not formatting variations of the same wine. The different LWINs (1750485 vs 1991273) confirm these are separate bottlings that would appear as distinct products in a wine encyclopedia.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 94,
+  "elapsed": 4.462460279464722,
+  "error": null
+}

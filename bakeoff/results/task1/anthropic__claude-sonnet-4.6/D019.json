@@ -1,0 +1,13 @@
+{
+  "pair_id": "D019",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Both wines are from Masut Da Rive and are Pinot Nero, but 'Maurus Pinot Nero' appears to be a distinct, named cuv\u00e9e (Maurus) rather than simply an abbreviated version of the same wine. The 'Maurus' designation suggests a specific vineyard selection or reserve-style bottling that would be encountered separately from the standard Pinot Nero. The different LWIN codes (2955256 vs 2955302) further confirm these are catalogued as distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Both wines are from Masut Da Rive and are Pinot Nero, but 'Maurus Pinot Nero' appears to be a distinct, named cuv\u00e9e (Maurus) rather than simply an abbreviated version of the same wine. The 'Maurus' designation suggests a specific vineyard selection or reserve-style bottling that would be encountered separately from the standard Pinot Nero. The different LWIN codes (2955256 vs 2955302) further confirm these are catalogued as distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 141,
+  "elapsed": 4.122448921203613,
+  "error": null
+}

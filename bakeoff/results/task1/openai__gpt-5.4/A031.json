@@ -1,0 +1,13 @@
+{
+  "pair_id": "A031",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.9,\"reasoning\":\"Both records are from Pierre Girardin, are red, and share the identical cuv\u00e9e/vineyard name 'Eclat de Calcaire.' The only difference is that Wine B appends the grape variety 'Pinot Noir,' which for Burgundy is often an omitted or added varietal suffix rather than a distinct bottling, with no evidence here of multiple grape versions under the same name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both records are from Pierre Girardin, are red, and share the identical cuv\u00e9e/vineyard name 'Eclat de Calcaire.' The only difference is that Wine B appends the grape variety 'Pinot Noir,' which for Burgundy is often an omitted or added varietal suffix rather than a distinct bottling, with no evidence here of multiple grape versions under the same name.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 100,
+  "elapsed": 2.893789768218994,
+  "error": null
+}

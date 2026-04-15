@@ -1,0 +1,13 @@
+{
+  "pair_id": "D018",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The key difference is the designation 'Reserve' on Wine B, which indicates a different classification tier or bottling from the same producer. Under the rules, different classification tiers (like Reserva vs non-Reserva) constitute different wines, as they are distinct bottlings a consumer would encounter separately. The matching producer, grape, and color are insufficient to override this classification difference.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The key difference is the designation 'Reserve' on Wine B, which indicates a different classification tier or bottling from the same producer. Under the rules, different classification tiers (like Reserva vs non-Reserva) constitute different wines, as they are distinct bottlings a consumer would encounter separately. The matching producer, grape, and color are insufficient to override this classification difference.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 99,
+  "elapsed": 29.06867265701294,
+  "error": null
+}

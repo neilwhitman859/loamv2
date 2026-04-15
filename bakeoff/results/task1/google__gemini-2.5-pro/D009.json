@@ -1,0 +1,13 @@
+{
+  "pair_id": "D009",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The core name 'Alma Grande Cuvee' is identical for both wines. 'Brut' specifies the sweetness level of this sparkling wine. Since Bellavista's flagship non-vintage is the 'Alma Grande Cuv\u00e9e Brut', the name without 'Brut' is simply an incomplete record for the same bottling, not a distinct wine with a different sweetness level.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The core name 'Alma Grande Cuvee' is identical for both wines. 'Brut' specifies the sweetness level of this sparkling wine. Since Bellavista's flagship non-vintage is the 'Alma Grande Cuv\u00e9e Brut', the name without 'Brut' is simply an incomplete record for the same bottling, not a distinct wine with a different sweetness level.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 928,
+  "elapsed": 11.901367664337158,
+  "error": null
+}

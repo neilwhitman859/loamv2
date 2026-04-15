@@ -1,0 +1,13 @@
+{
+  "pair_id": "D043",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines 'Polifonia de Purcari Note #1' and 'Polifonia De Purcari Note #2' clearly indicate distinct bottlings or editions within the same line from Timbrus. The 'Note #1' and 'Note #2' designations signify different, separately encountered wines, similar to different lot or cask numbers.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines 'Polifonia de Purcari Note #1' and 'Polifonia De Purcari Note #2' clearly indicate distinct bottlings or editions within the same line from Timbrus. The 'Note #1' and 'Note #2' designations signify different, separately encountered wines, similar to different lot or cask numbers.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 104,
+  "elapsed": 1.6853289604187012,
+  "error": null
+}

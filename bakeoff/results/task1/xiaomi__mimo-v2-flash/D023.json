@@ -1,0 +1,13 @@
+{
+  "pair_id": "D023",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (La Tour Blanche) and appear to be the same vineyard/cuv\u00e9e (Les Charmilles), with the only difference being a truncated name format in Wine B. The grape composition is consistent with a white Bordeaux blend, and no evidence suggests different grapes, classification, or style.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (La Tour Blanche) and appear to be the same vineyard/cuv\u00e9e (Les Charmilles), with the only difference being a truncated name format in Wine B. The grape composition is consistent with a white Bordeaux blend, and no evidence suggests different grapes, classification, or style.",
+  "parse_ok": true,
+  "tokens_in": 516,
+  "tokens_out": 87,
+  "elapsed": 2.3169312477111816,
+  "error": null
+}

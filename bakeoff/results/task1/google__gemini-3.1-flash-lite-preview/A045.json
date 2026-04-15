@@ -1,0 +1,13 @@
+{
+  "pair_id": "A045",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records refer to the same producer (Pax) and the same vineyard/cuv\u00e9e (Lauterbach Hill). The addition of 'Syrah' in Wine B is a varietal suffix that clarifies the composition of the wine, which is consistent with the red color and Syrah grape identified for Wine A.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records refer to the same producer (Pax) and the same vineyard/cuv\u00e9e (Lauterbach Hill). The addition of 'Syrah' in Wine B is a varietal suffix that clarifies the composition of the wine, which is consistent with the red color and Syrah grape identified for Wine A.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 84,
+  "elapsed": 1.782064437866211,
+  "error": null
+}

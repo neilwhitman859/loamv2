@@ -1,0 +1,13 @@
+{
+  "pair_id": "D009",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Bellavista) and share the same base name 'Alma Grande Cuvee', with Wine A specifying the 'Brut' style. The 'Brut' designation is a stylistic classification for sparkling wine, not a different grape or vineyard, and the shorter name is an abbreviation of the full cuv\u00e9e name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Bellavista) and share the same base name 'Alma Grande Cuvee', with Wine A specifying the 'Brut' style. The 'Brut' designation is a stylistic classification for sparkling wine, not a different grape or vineyard, and the shorter name is an abbreviation of the full cuv\u00e9e name.",
+  "parse_ok": true,
+  "tokens_in": 478,
+  "tokens_out": 98,
+  "elapsed": 1.7103571891784668,
+  "error": null
+}

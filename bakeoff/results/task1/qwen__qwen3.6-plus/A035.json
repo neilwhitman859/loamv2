@@ -1,0 +1,13 @@
+{
+  "pair_id": "A035",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The only difference between the records is the explicit inclusion of the grape variety in Wine B's name, while Wine A omits it. Both share the same producer, color, and grape variety, confirming they represent the same bottling with a minor naming variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The only difference between the records is the explicit inclusion of the grape variety in Wine B's name, while Wine A omits it. Both share the same producer, color, and grape variety, confirming they represent the same bottling with a minor naming variation.",
+  "parse_ok": true,
+  "tokens_in": 465,
+  "tokens_out": 1509,
+  "elapsed": 28.83680295944214,
+  "error": null
+}

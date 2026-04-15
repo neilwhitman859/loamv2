@@ -1,0 +1,13 @@
+{
+  "pair_id": "C045",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.90,\"reasoning\":\"Both are Riesling Kabinett from Abtsberg Auktion but one specifies a lot number (Nr8), and different lot/cask numbers at the same Pr\u00e4dikat level constitute distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Both are Riesling Kabinett from Abtsberg Auktion but one specifies a lot number (Nr8), and different lot/cask numbers at the same Pr\u00e4dikat level constitute distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 448,
+  "tokens_out": 196,
+  "elapsed": 4.535915374755859,
+  "error": null
+}

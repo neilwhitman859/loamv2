@@ -1,0 +1,46 @@
+{
+  "page_id": "page_038",
+  "model": "qwen/qwen3.5-plus-02-15",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Small HILL Red 2023\", \"vintage_year\": 2023, \"abv_pct\": 13.0, \"blend\": [{\"grape\": \"Merlot\", \"pct\": 50}, {\"grape\": \"Pinot Noir\", \"pct\": 25}, {\"grape\": \"St. Laurent\", \"pct\": 25}], \"oak\": {\"vessel\": \"Barrique\", \"months\": null, \"new_pct\": 0, \"origin\": null}, \"cases_produced\": null, \"chemistry\": {\"ph\": null, \"ta_g_l\": 4.5, \"rs_g_l\": 5.9, \"so2_total_mg_l\": null}, \"winemaker\": null, \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Small HILL Red 2023",
+      "vintage_year": 2023,
+      "abv_pct": 13.0,
+      "blend": [
+        {
+          "grape": "Merlot",
+          "pct": 50
+        },
+        {
+          "grape": "Pinot Noir",
+          "pct": 25
+        },
+        {
+          "grape": "St. Laurent",
+          "pct": 25
+        }
+      ],
+      "oak": {
+        "vessel": "Barrique",
+        "months": null,
+        "new_pct": 0,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": 4.5,
+        "rs_g_l": 5.9,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 32342,
+  "tokens_out": 978,
+  "elapsed": 22.102186918258667,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A039",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The producer is the same, and the core wine name 'Yamhill Carlton Select' is identical. The only difference is the addition of the varietal suffix 'Pinot Noir' to Wine B's name. Since the provided data confirms Wine A is also made from Pinot Noir, these records represent the same wine, with one name being a common abbreviation of the other.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The producer is the same, and the core wine name 'Yamhill Carlton Select' is identical. The only difference is the addition of the varietal suffix 'Pinot Noir' to Wine B's name. Since the provided data confirms Wine A is also made from Pinot Noir, these records represent the same wine, with one name being a common abbreviation of the other.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 1552,
+  "elapsed": 15.59398365020752,
+  "error": null
+}

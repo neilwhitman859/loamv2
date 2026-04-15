@@ -1,0 +1,13 @@
+{
+  "pair_id": "B023",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, one being red and the other white. This difference in color indicates they are distinct wines. Additionally, the presence of 'Gold' in Wine B's name may suggest a different style or classification.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, one being red and the other white. This difference in color indicates they are distinct wines. Additionally, the presence of 'Gold' in Wine B's name may suggest a different style or classification.",
+  "parse_ok": true,
+  "tokens_in": 409,
+  "tokens_out": 69,
+  "elapsed": 2.5382955074310303,
+  "error": null
+}

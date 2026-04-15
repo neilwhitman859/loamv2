@@ -1,0 +1,13 @@
+{
+  "pair_id": "B016",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a Barolo Riserva made from Croatina, while Wine B is a Barbaresco Riserva made from Nebbiolo. These are distinct DOCG regions in Piedmont with different grape requirements and classification standards. Different grapes and different appellations make these separate bottlings that a consumer would encounter distinctly.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a Barolo Riserva made from Croatina, while Wine B is a Barbaresco Riserva made from Nebbiolo. These are distinct DOCG regions in Piedmont with different grape requirements and classification standards. Different grapes and different appellations make these separate bottlings that a consumer would encounter distinctly.",
+  "parse_ok": true,
+  "tokens_in": 507,
+  "tokens_out": 103,
+  "elapsed": 2.3273048400878906,
+  "error": null
+}

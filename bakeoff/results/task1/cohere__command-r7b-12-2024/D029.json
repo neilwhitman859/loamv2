@@ -1,0 +1,13 @@
+{
+  "pair_id": "D029",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B are different wines due to their vineyard designation. While they share the same producer and grape variety, the Coastal Region is a different vineyard from the one in Franschhoek, indicating distinct bottlings that a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B are different wines due to their vineyard designation. While they share the same producer and grape variety, the Coastal Region is a different vineyard from the one in Franschhoek, indicating distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 461,
+  "tokens_out": 73,
+  "elapsed": 1.815291166305542,
+  "error": null
+}

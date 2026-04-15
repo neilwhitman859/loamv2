@@ -1,0 +1,13 @@
+{
+  "pair_id": "D008",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines have the same producer, Vistalba, and similar names, 'Corte C' and 'Corte', with the difference likely being a varietal suffix or abbreviation. The grape varieties for both wines are the same, COT and CABERNET SAUVIGNON, with Wine A providing specific percentages. The color of both wines is red, further supporting they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines have the same producer, Vistalba, and similar names, 'Corte C' and 'Corte', with the difference likely being a varietal suffix or abbreviation. The grape varieties for both wines are the same, COT and CABERNET SAUVIGNON, with Wine A providing specific percentages. The color of both wines is red, further supporting they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 517,
+  "tokens_out": 104,
+  "elapsed": 1.819901704788208,
+  "error": null
+}

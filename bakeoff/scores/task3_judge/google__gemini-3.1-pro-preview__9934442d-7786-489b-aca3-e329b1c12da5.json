@@ -1,0 +1,24 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.7,
+  "wrong_facts": [
+    "Vinification summary claims fermentation in stainless steel with brief maceration and neutral French oak — ground truth says 10 months in French oak barrels, which is significant oak treatment, not minimal/neutral oak",
+    "Lateritic gravelly sandy loams over granite bedrock is partially fabricated — ground truth says gravelly loam soils, no mention of laterite or granite bedrock",
+    "Release price of $15-$20 is fabricated — no price data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$15 to $20 release price",
+    "200 kilometers span of region"
+  ],
+  "reasoning": "The output has strong voice, specificity, and usefulness — it's opinionated, direct, names real comparables, gives actionable advice about not aging this wine, and the food pairings are well-reasoned. However, correctness suffers significantly. The vinification section directly contradicts ground truth: the wine actually sees 10 months in French oak barrels, not brief stainless steel fermentation with neutral oak. The soil description adds laterite and granite bedrock not supported by any source. The $15-$20 price and 200km region span are fabricated numbers. The hook is largely correct (Plantagenet's first winery status, Omrah as second label), and the 1968 founding date matches ground truth. But the vinification fabrication is a substantial factual error that misleads users about the wine's actual style.",
+  "judge_tokens_in": 3265,
+  "judge_tokens_out": 371
+}

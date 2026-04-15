@@ -1,0 +1,13 @@
+{
+  "pair_id": "C006",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is a Brut, while Wine B is a Brut Ros\u00e9, indicating a difference in style or color. The LWIN numbers are different, suggesting they are distinct products. The color difference (white vs ros\u00e9) is a key factor in determining they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is a Brut, while Wine B is a Brut Ros\u00e9, indicating a difference in style or color. The LWIN numbers are different, suggesting they are distinct products. The color difference (white vs ros\u00e9) is a key factor in determining they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 521,
+  "tokens_out": 80,
+  "elapsed": 1.6131906509399414,
+  "error": null
+}

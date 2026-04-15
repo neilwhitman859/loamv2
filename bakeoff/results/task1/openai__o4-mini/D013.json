@@ -1,0 +1,13 @@
+{
+  "pair_id": "D013",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.92,\"reasoning\":\"These wines list distinct Premier Cru appellations (Beaune vs Vosne-Roman\u00e9e), indicating different vineyard sites, so they are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.92,
+  "reasoning": "These wines list distinct Premier Cru appellations (Beaune vs Vosne-Roman\u00e9e), indicating different vineyard sites, so they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 181,
+  "elapsed": 5.37864351272583,
+  "error": null
+}

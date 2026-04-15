@@ -1,0 +1,13 @@
+{
+  "pair_id": "A009",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, vineyard (Naumberg), and grape variety (Pinot Gris). The difference in the name is likely due to the varietal suffix, which is a common abbreviation.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, vineyard (Naumberg), and grape variety (Pinot Gris). The difference in the name is likely due to the varietal suffix, which is a common abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 66,
+  "elapsed": 8.134738683700562,
+  "error": null
+}

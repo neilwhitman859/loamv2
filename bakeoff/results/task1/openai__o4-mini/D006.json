@@ -1,0 +1,13 @@
+{
+  "pair_id": "D006",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.89, \"reasoning\": \"Wine A is 100% Merlot, whereas Wine B is a blend of Cot and Merlot, representing different grape compositions and thus distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.89,
+  "reasoning": "Wine A is 100% Merlot, whereas Wine B is a blend of Cot and Merlot, representing different grape compositions and thus distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 137,
+  "elapsed": 4.635730743408203,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B049",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.97, \"reasoning\": \"One bottling is white and the other is red, indicating different grape varieties and wine styles, so they are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "One bottling is white and the other is red, indicating different grape varieties and wine styles, so they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 110,
+  "elapsed": 3.662444591522217,
+  "error": null
+}

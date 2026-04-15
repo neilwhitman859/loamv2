@@ -1,0 +1,13 @@
+{
+  "pair_id": "A005",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Catena Zapata's Agrelo Saint Felicien vineyard and are white Semillons. Wine A omits the varietal suffix while Wine B includes it\u2014this is a standard naming convention difference where the shorter name is an abbreviation of the fuller name. They represent the same bottling.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Catena Zapata's Agrelo Saint Felicien vineyard and are white Semillons. Wine A omits the varietal suffix while Wine B includes it\u2014this is a standard naming convention difference where the shorter name is an abbreviation of the fuller name. They represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 98,
+  "elapsed": 2.3091864585876465,
+  "error": null
+}

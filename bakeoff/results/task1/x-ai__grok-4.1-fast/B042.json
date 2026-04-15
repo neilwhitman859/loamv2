@@ -1,0 +1,13 @@
+{
+  "pair_id": "B042",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is specified as ros\u00e9 (pink color), while Wine B is white Chardonnay. Different colors indicate distinct wine styles, as ros\u00e9 and white wines from the same producer are separate bottlings. Even with the same producer and region, the color and grape details (Chardonnay Blanc for B) confirm they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is specified as ros\u00e9 (pink color), while Wine B is white Chardonnay. Different colors indicate distinct wine styles, as ros\u00e9 and white wines from the same producer are separate bottlings. Even with the same producer and region, the color and grape details (Chardonnay Blanc for B) confirm they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 573,
+  "tokens_out": 467,
+  "elapsed": 3.3262288570404053,
+  "error": null
+}

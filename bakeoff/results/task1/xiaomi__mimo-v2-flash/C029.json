@@ -1,0 +1,13 @@
+{
+  "pair_id": "C029",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are produced by Mayu, are red, and share the same grape variety (Cabernet Sauvignon) and classification (Gran Reserva). The only difference is the name formatting, where 'Don Amerigo' is likely a producer or brand prefix that can be omitted, which is allowed under the rules for same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are produced by Mayu, are red, and share the same grape variety (Cabernet Sauvignon) and classification (Gran Reserva). The only difference is the name formatting, where 'Don Amerigo' is likely a producer or brand prefix that can be omitted, which is allowed under the rules for same wine.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 90,
+  "elapsed": 1.9590489864349365,
+  "error": null
+}

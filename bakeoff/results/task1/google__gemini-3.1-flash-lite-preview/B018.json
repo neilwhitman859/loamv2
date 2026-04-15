@@ -1,0 +1,13 @@
+{
+  "pair_id": "B018",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines are distinct products as indicated by their different colors (Ros\u00e9 vs. White) and unique LWIN identifiers. In the context of the d'Angelo producer, these represent separate bottlings rather than a naming variation.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are distinct products as indicated by their different colors (Ros\u00e9 vs. White) and unique LWIN identifiers. In the context of the d'Angelo producer, these represent separate bottlings rather than a naming variation.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 73,
+  "elapsed": 1.463148593902588,
+  "error": null
+}

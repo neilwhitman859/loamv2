@@ -1,0 +1,27 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "Claims the estate farms biodynamically — not verified in context data or ground truth",
+    "Claims fermenting with native yeasts — not verified in context data or ground truth",
+    "Price claim of $80-$100 is fabricated and not in context data",
+    "Price comparison to Côte-Rôtie from Jamet or Guigal at $150+ is fabricated",
+    "Claims organic farming — not verified in context data or ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$80 to $100 price range",
+    "$150 price comparison for Côte-Rôtie",
+    "55°F storage temperature"
+  ],
+  "reasoning": "The output correctly identifies the key anomaly of 100% Syrah in Gigondas and the 18-month oak aging from context data. It correctly references the Dentelles de Montmirail, limestone soils, and rotundone/black pepper connection. However, it fabricates several claims: biodynamic/organic farming, native yeast fermentation, and specific price points ($80-$100, $150+) that are nowhere in the context data. It misses the crucial ground truth detail about the Serine clone and the Chave/Reynaud provenance of the bud wood, and that Les Routes is a specific lieu-dit on clay with gravel and limestone colluviums. The voice is excellent — direct, opinionated, no banned words, strong food pairings with real dishes and explanations. Specificity is high with named comparables and real flavor compounds. The fabricated prices trigger the hard penalty consideration, but since they're price estimates rather than technical wine data (pH, ABV, blend %), I'm applying a moderate penalty rather than the hard cap. The biodynamic claim is more concerning as a specific factual assertion.",
+  "judge_tokens_in": 3803,
+  "judge_tokens_out": 446
+}

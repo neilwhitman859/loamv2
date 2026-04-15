@@ -1,0 +1,13 @@
+{
+  "pair_id": "A050",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A is explicitly a blend of Syrah and Durif. Wine B's name, 'Cayenne Syrah', strongly indicates it is a varietal Syrah. Since the grape compositions are different (a blend versus a likely single-varietal wine), they are considered different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is explicitly a blend of Syrah and Durif. Wine B's name, 'Cayenne Syrah', strongly indicates it is a varietal Syrah. Since the grape compositions are different (a blend versus a likely single-varietal wine), they are considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 1261,
+  "elapsed": 13.659639596939087,
+  "error": null
+}

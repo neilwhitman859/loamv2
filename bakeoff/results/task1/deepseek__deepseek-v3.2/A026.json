@@ -1,0 +1,13 @@
+{
+  "pair_id": "A026",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer (Mount Pleasant), same vineyard/cuv\u00e9e name (Lovedale Cellar Aged), and same color (white). The only difference is that Wine B explicitly appends the grape variety 'Semillon' to the name, which is a varietal suffix difference alone, indicating the shorter name is just an abbreviation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer (Mount Pleasant), same vineyard/cuv\u00e9e name (Lovedale Cellar Aged), and same color (white). The only difference is that Wine B explicitly appends the grape variety 'Semillon' to the name, which is a varietal suffix difference alone, indicating the shorter name is just an abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 456,
+  "tokens_out": 92,
+  "elapsed": 4.781161785125732,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B013",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is 'Diamant Bleu' (white/blanc) and Wine B is 'Diamant Rose' (ros\u00e9), representing distinctly different colored wines from Heidsieck & Co's Monopole range. The color difference alone (white vs ros\u00e9) makes these different wines, as they are separate bottlings a consumer would encounter independently. They have different LWIN codes confirming they are catalogued as distinct products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is 'Diamant Bleu' (white/blanc) and Wine B is 'Diamant Rose' (ros\u00e9), representing distinctly different colored wines from Heidsieck & Co's Monopole range. The color difference alone (white vs ros\u00e9) makes these different wines, as they are separate bottlings a consumer would encounter independently. They have different LWIN codes confirming they are catalogued as distinct products.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 119,
+  "elapsed": 4.023151874542236,
+  "error": null
+}

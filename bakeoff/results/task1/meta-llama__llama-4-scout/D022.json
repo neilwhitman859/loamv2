@@ -1,0 +1,13 @@
+{
+  "pair_id": "D022",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines A and B come from the same producer, La Tour Blanche, and have the same color, white. The difference in name formatting suggests they could be the same wine, with 'Duo' and 'Brumes' possibly being different labels or cuv\u00e9e names for the same vineyard wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines A and B come from the same producer, La Tour Blanche, and have the same color, white. The difference in name formatting suggests they could be the same wine, with 'Duo' and 'Brumes' possibly being different labels or cuv\u00e9e names for the same vineyard wine.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 84,
+  "elapsed": 2.0847952365875244,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D025",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.75, \"reasoning\": \"Both wines are from Cattier and appear to reference the same vintage Champagne ('Millesime' means vintage in French). 'Brut Millesime' likely includes the style descriptor 'Brut' while 'Millesime' is the abbreviated name for the same wine. The color matches (both white) and the naming difference is consistent with a simple abbreviation pattern.\"}",
+  "verdict": "SAME",
+  "confidence": 0.75,
+  "reasoning": "Both wines are from Cattier and appear to reference the same vintage Champagne ('Millesime' means vintage in French). 'Brut Millesime' likely includes the style descriptor 'Brut' while 'Millesime' is the abbreviated name for the same wine. The color matches (both white) and the naming difference is consistent with a simple abbreviation pattern.",
+  "parse_ok": true,
+  "tokens_in": 474,
+  "tokens_out": 109,
+  "elapsed": 5.471787691116333,
+  "error": null
+}

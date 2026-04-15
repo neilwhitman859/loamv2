@@ -1,0 +1,13 @@
+{
+  "pair_id": "D037",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines have the same producer, color, and wine type (red table wine). The slight difference in name ('Blend 105 Red Table' vs 'Blend 105 Red Table Wine') is likely due to formatting and does not indicate a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines have the same producer, color, and wine type (red table wine). The slight difference in name ('Blend 105 Red Table' vs 'Blend 105 Red Table Wine') is likely due to formatting and does not indicate a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 465,
+  "tokens_out": 79,
+  "elapsed": 1.966585397720337,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D042",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from Pommery and share the 'Apanage Prestige' cuv\u00e9e name. The only difference is that Wine A includes 'Brut' as a style descriptor prefix, which is a common formatting variation where the style designation is sometimes included or omitted in the wine name. This is analogous to a varietal suffix difference \u2014 the shorter name is simply an abbreviation of the full name, and both refer to the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from Pommery and share the 'Apanage Prestige' cuv\u00e9e name. The only difference is that Wine A includes 'Brut' as a style descriptor prefix, which is a common formatting variation where the style designation is sometimes included or omitted in the wine name. This is analogous to a varietal suffix difference \u2014 the shorter name is simply an abbreviation of the full name, and both refer to the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 482,
+  "tokens_out": 123,
+  "elapsed": 3.310933828353882,
+  "error": null
+}

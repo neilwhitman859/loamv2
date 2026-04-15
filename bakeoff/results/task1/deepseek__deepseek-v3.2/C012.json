@@ -1,0 +1,13 @@
+{
+  "pair_id": "C012",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.95, \"reasoning\": \"The wines have different colors (ros\u00e9 vs white), which according to the rules always indicates different wines. They also have distinct LWIN identifiers, supporting that they are separate bottlings from the same producer and prestige line.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors (ros\u00e9 vs white), which according to the rules always indicates different wines. They also have distinct LWIN identifiers, supporting that they are separate bottlings from the same producer and prestige line.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 68,
+  "elapsed": 3.197683334350586,
+  "error": null
+}

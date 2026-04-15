@@ -1,0 +1,13 @@
+{
+  "pair_id": "A040",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A lists grapes as MERLOT NOIR and CHARDONNAY BLANC, indicating a blend, while Wine B is explicitly 'Pinot Noir'. Different grapes always mean different wines, overriding the varietal suffix rule where 'Appellation Series' vs 'Appellation Series Pinot Noir' might otherwise suggest the same. Both are red from Boschendal, but grape composition confirms distinction.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A lists grapes as MERLOT NOIR and CHARDONNAY BLANC, indicating a blend, while Wine B is explicitly 'Pinot Noir'. Different grapes always mean different wines, overriding the varietal suffix rule where 'Appellation Series' vs 'Appellation Series Pinot Noir' might otherwise suggest the same. Both are red from Boschendal, but grape composition confirms distinction.",
+  "parse_ok": true,
+  "tokens_in": 573,
+  "tokens_out": 652,
+  "elapsed": 6.610617160797119,
+  "error": null
+}

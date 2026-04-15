@@ -1,0 +1,13 @@
+{
+  "pair_id": "A046",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the producer Carlisle and the core name 'James Berry', with Wine B adding the 'Syrah' varietal suffix that matches Wine A's specified SYRAH grapes and red color. The rules state that varietal suffix differences alone typically indicate the same wine, as the shorter name is an abbreviation. No evidence suggests multiple distinct Syrah bottlings from this vineyard by the producer.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the producer Carlisle and the core name 'James Berry', with Wine B adding the 'Syrah' varietal suffix that matches Wine A's specified SYRAH grapes and red color. The rules state that varietal suffix differences alone typically indicate the same wine, as the shorter name is an abbreviation. No evidence suggests multiple distinct Syrah bottlings from this vineyard by the producer.",
+  "parse_ok": true,
+  "tokens_in": 560,
+  "tokens_out": 434,
+  "elapsed": 4.091762065887451,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B047",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are from two distinct vineyard sites: 'Eichberg' and 'Kirchberg'. Additionally, the provided data indicates a color difference, with Wine A being white and Wine B being red. Different vineyards and different colors are definitive indicators of two separate and distinct wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are from two distinct vineyard sites: 'Eichberg' and 'Kirchberg'. Additionally, the provided data indicates a color difference, with Wine A being white and Wine B being red. Different vineyards and different colors are definitive indicators of two separate and distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 1441,
+  "elapsed": 14.590351819992065,
+  "error": null
+}

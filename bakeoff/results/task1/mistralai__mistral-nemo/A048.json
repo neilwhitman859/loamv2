@@ -1,0 +1,13 @@
+{
+  "pair_id": "A048",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, vineyard (implied by the same name 'Wild Valley'), and grape variety (Pinot Noir). The varietal suffix difference ('Wild Valley' vs 'Wild Valley Pinot Noir') is common and usually indicates an abbreviation.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, vineyard (implied by the same name 'Wild Valley'), and grape variety (Pinot Noir). The varietal suffix difference ('Wild Valley' vs 'Wild Valley Pinot Noir') is common and usually indicates an abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 463,
+  "tokens_out": 76,
+  "elapsed": 4.648323059082031,
+  "error": null
+}

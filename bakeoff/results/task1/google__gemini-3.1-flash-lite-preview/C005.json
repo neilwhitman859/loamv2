@@ -1,0 +1,13 @@
+{
+  "pair_id": "C005",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"Both records refer to the same Jean Noel Haton Brut Ros\u00e9 NV. The difference in LWIN codes reflects minor database variations for the same non-vintage bottling, and the omission of 'NV' in the second record is a common naming convention for the same wine.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records refer to the same Jean Noel Haton Brut Ros\u00e9 NV. The difference in LWIN codes reflects minor database variations for the same non-vintage bottling, and the omission of 'NV' in the second record is a common naming convention for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 81,
+  "elapsed": 2.246509075164795,
+  "error": null
+}

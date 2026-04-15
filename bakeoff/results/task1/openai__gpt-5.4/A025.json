@@ -1,0 +1,13 @@
+{
+  "pair_id": "A025",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.96,\"reasoning\":\"Both records are from Gabriel Meffre, are red, and Wine A explicitly lists 100% Syrah. The only difference is that Wine B appends the varietal name to 'Laurus,' which is typically just a fuller formatting of the same cuv\u00e9e name when no evidence suggests multiple Laurus bottlings from this producer with different grapes.\"}",
+  "verdict": "SAME",
+  "confidence": 0.96,
+  "reasoning": "Both records are from Gabriel Meffre, are red, and Wine A explicitly lists 100% Syrah. The only difference is that Wine B appends the varietal name to 'Laurus,' which is typically just a fuller formatting of the same cuv\u00e9e name when no evidence suggests multiple Laurus bottlings from this producer with different grapes.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 92,
+  "elapsed": 2.6048707962036133,
+  "error": null
+}

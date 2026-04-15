@@ -1,0 +1,13 @@
+{
+  "pair_id": "B028",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a white Chardonnay while Wine B is a red Merlot\u2014they are fundamentally different grape varieties and colors. These represent distinct bottlings that a consumer would encounter separately on a wine retailer's shelf, not the same wine with different naming conventions.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a white Chardonnay while Wine B is a red Merlot\u2014they are fundamentally different grape varieties and colors. These represent distinct bottlings that a consumer would encounter separately on a wine retailer's shelf, not the same wine with different naming conventions.",
+  "parse_ok": true,
+  "tokens_in": 516,
+  "tokens_out": 87,
+  "elapsed": 3.0537312030792236,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B002",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different grape varieties, which is a key differentiator. While they share some grapes, the presence of 'Cabernet Sauvignon' in Wine A and its absence in Wine B, along with the different primary grape varieties, indicates distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different grape varieties, which is a key differentiator. While they share some grapes, the presence of 'Cabernet Sauvignon' in Wine A and its absence in Wine B, along with the different primary grape varieties, indicates distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 470,
+  "tokens_out": 77,
+  "elapsed": 1.592284917831421,
+  "error": null
+}

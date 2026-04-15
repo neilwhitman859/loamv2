@@ -1,0 +1,13 @@
+{
+  "pair_id": "C040",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Gran Reserva Chardonnay and Wine B is a Reserva Chardonnay, indicating different classification tiers within the same producer and grape variety, which is a key differentiator according to the rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Gran Reserva Chardonnay and Wine B is a Reserva Chardonnay, indicating different classification tiers within the same producer and grape variety, which is a key differentiator according to the rules.",
+  "parse_ok": true,
+  "tokens_in": 517,
+  "tokens_out": 64,
+  "elapsed": 1.2704451084136963,
+  "error": null
+}

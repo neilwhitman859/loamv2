@@ -1,0 +1,13 @@
+{
+  "pair_id": "A004",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A lists grapes as PINOT NOIR and PINOT GRIS, indicating a blend, while Wine B specifies only Pinot Gris as a varietal suffix. Different grape compositions mean different wines, even from the same producer and vineyard designation (Selection Wormeldange Weinbour). The rule states different grapes always indicate distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A lists grapes as PINOT NOIR and PINOT GRIS, indicating a blend, while Wine B specifies only Pinot Gris as a varietal suffix. Different grape compositions mean different wines, even from the same producer and vineyard designation (Selection Wormeldange Weinbour). The rule states different grapes always indicate distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 574,
+  "tokens_out": 737,
+  "elapsed": 5.791863203048706,
+  "error": null
+}

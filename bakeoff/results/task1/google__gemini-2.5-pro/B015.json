@@ -1,0 +1,13 @@
+{
+  "pair_id": "B015",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wine names explicitly distinguish between 'Rose' and 'Rouge' (red), which are two different styles of wine. The provided metadata confirms this, listing one wine's color as 'rose' and the other as 'red'. A ros\u00e9 and a red wine are always considered different products, even if from the same producer and grape.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wine names explicitly distinguish between 'Rose' and 'Rouge' (red), which are two different styles of wine. The provided metadata confirms this, listing one wine's color as 'rose' and the other as 'red'. A ros\u00e9 and a red wine are always considered different products, even if from the same producer and grape.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 1177,
+  "elapsed": 12.3213210105896,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D048",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines have different names, with Wine A belonging to the 'iSeries' range while Wine B does not. This indicates they are from different product lines from the same producer. The most definitive evidence is that they have two distinct LWINs, which are unique identifiers for separate wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different names, with Wine A belonging to the 'iSeries' range while Wine B does not. This indicates they are from different product lines from the same producer. The most definitive evidence is that they have two distinct LWINs, which are unique identifiers for separate wines.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 1361,
+  "elapsed": 14.189647912979126,
+  "error": null
+}

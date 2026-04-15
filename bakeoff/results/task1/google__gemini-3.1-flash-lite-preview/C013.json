@@ -1,0 +1,13 @@
+{
+  "pair_id": "C013",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"While the names refer to the same vineyard and Pr\u00e4dikat level, the distinct LWIN numbers indicate that these are tracked as separate database entries, likely representing different specific bottlings or lots. In German wine classification, even within the same vineyard and Pr\u00e4dikat, different LWINs typically denote distinct production runs or cask selections that are treated as separate wines.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "While the names refer to the same vineyard and Pr\u00e4dikat level, the distinct LWIN numbers indicate that these are tracked as separate database entries, likely representing different specific bottlings or lots. In German wine classification, even within the same vineyard and Pr\u00e4dikat, different LWINs typically denote distinct production runs or cask selections that are treated as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 101,
+  "elapsed": 1.446462631225586,
+  "error": null
+}

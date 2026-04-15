@@ -1,0 +1,20 @@
+{
+  "wine_id": "4cd8b76a-b4fc-43cf-83ae-8a0c84e7673e",
+  "wine_name": "Barefoot Buttery Chardonnay, California",
+  "tier": "C",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.05,
+  "wrong_facts": [
+    "Hook claims fruit is sourced from 'California's warm Central Valley and coastal regions' — ground truth only confirms Central Valley, not coastal regions",
+    "Vinification summary states oak influence is 'likely via chips or staves' — this is speculative and not confirmed by any source"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is largely well-written with strong voice — direct, opinionated, and specific. It correctly identifies Central Valley sourcing, malolactic fermentation as the source of the 'buttery' style, and Jennifer Wall is not mentioned but no wrong claim is made about the winemaker. The addition of 'coastal regions' to the sourcing in the hook is not supported by ground truth (only Central Valley is confirmed), which is a minor fabrication but appears in the hook. The oak chips/staves claim is plausible speculation but stated with too much confidence. The comparable wines (Woodbridge, Bogle) are well-chosen and accurate. The diacetyl/movie theater popcorn comparison in the insider take is sharp and useful. No banned words found. No fabricated numbers. The sensory profile is reasonable for this style. The value assessment intelligently addresses the wide price range and names specific alternatives like Louis Jadot Mâcon-Villages. Overall strong output with minor factual liberties that prevent a higher correctness score.",
+  "judge_tokens_in": 3369,
+  "judge_tokens_out": 349
+}

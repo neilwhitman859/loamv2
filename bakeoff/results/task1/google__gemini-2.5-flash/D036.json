@@ -1,0 +1,13 @@
+{
+  "pair_id": "D036",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"The wines share the same producer, 'Velenosi', and the core name 'Superiore Brecciarolo'. The addition of 'Gold' to Wine A likely indicates a special edition or a specific bottling within the same wine line, rather than a fundamentally different wine that would warrant a separate encyclopedia entry.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, 'Velenosi', and the core name 'Superiore Brecciarolo'. The addition of 'Gold' to Wine A likely indicates a special edition or a specific bottling within the same wine line, rather than a fundamentally different wine that would warrant a separate encyclopedia entry.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 96,
+  "elapsed": 2.041752576828003,
+  "error": null
+}

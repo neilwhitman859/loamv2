@@ -1,0 +1,13 @@
+{
+  "pair_id": "A043",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is labeled simply 'Shiraz' (pure Syrah), while Wine B is 'Shiraz Durif', indicating a blend with Durif (Petite Sirah), a different grape variety. Different grape compositions mean distinct wines per the rules, even from the same producer. Distinct LWINs (1976861 vs 1976874) further confirm separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is labeled simply 'Shiraz' (pure Syrah), while Wine B is 'Shiraz Durif', indicating a blend with Durif (Petite Sirah), a different grape variety. Different grape compositions mean distinct wines per the rules, even from the same producer. Distinct LWINs (1976861 vs 1976874) further confirm separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 566,
+  "tokens_out": 555,
+  "elapsed": 3.770758628845215,
+  "error": null
+}

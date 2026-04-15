@@ -1,0 +1,13 @@
+{
+  "pair_id": "D005",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, grape variety, and color. The only difference in the name is the omission of 'Clayvin' in Wine B, which is likely an abbreviation or a common way to refer to the wine when the vineyard is well-known for that specific bottling. There is no indication of different styles or classifications.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, grape variety, and color. The only difference in the name is the omission of 'Clayvin' in Wine B, which is likely an abbreviation or a common way to refer to the wine when the vineyard is well-known for that specific bottling. There is no indication of different styles or classifications.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 88,
+  "elapsed": 1.7748651504516602,
+  "error": null
+}

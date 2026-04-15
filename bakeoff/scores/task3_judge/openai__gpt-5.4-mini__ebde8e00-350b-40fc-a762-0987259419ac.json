@@ -1,0 +1,24 @@
+{
+  "wine_id": "ebde8e00-350b-40fc-a762-0987259419ac",
+  "wine_name": "Howard Park Leston Shiraz, Margaret River",
+  "tier": "C",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.775,
+  "wrong_facts": [
+    "Price range of A$40-A$70 is fabricated - no pricing data was provided",
+    "Leeuwin Estate Shiraz mentioned as competitor but not verified",
+    "Claims about ironstone-driven earthiness connecting to the wine's character are speculative",
+    "No mention of the verified ground truth: Leston named after Jeff Burch's father, 100% Shiraz, 18 months oak (95% French/5% American/30% new), Leston Vineyard blocks 4 and 17 in Wilyabrup, 10% whole bunch fermentation"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "A$40-A$70 price range"
+  ],
+  "reasoning": "The output fabricates a price range (A$40-A$70) not present in the context data, which triggers the hard penalty consideration for fabricated numbers. However, this is a price estimate rather than a technical wine number like pH or ABV, so I'm treating it as a lesser fabrication but still penalizing correctness. The output misses key verified facts (naming origin, specific vineyard blocks, oak program, whole bunch fermentation) that would have added real value, and instead builds speculative narratives around reduction and winemaking from tasting notes. The vinification section is entirely speculative — guessing at winemaking from a tasting note rather than stating known facts. Voice is strong: direct, opinionated, no banned words, good food pairings with reasoning. Specificity is good on regional terroir but lacks the actual verified vineyard and winemaking details that would make it truly useful.",
+  "judge_tokens_in": 3400,
+  "judge_tokens_out": 402
+}

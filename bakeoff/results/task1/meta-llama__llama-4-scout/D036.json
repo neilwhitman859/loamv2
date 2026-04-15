@@ -1,0 +1,13 @@
+{
+  "pair_id": "D036",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer (Velenosi), vineyard/cuv\u00e9e (Brecciarolo), and color (red). The difference in name (presence of 'Gold' in Wine A) may be a formatting variation or a specific bottling, but without further information indicating different grapes, classification tiers, or other distinguishing factors, it is likely they represent the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer (Velenosi), vineyard/cuv\u00e9e (Brecciarolo), and color (red). The difference in name (presence of 'Gold' in Wine A) may be a formatting variation or a specific bottling, but without further information indicating different grapes, classification tiers, or other distinguishing factors, it is likely they represent the same wine.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 99,
+  "elapsed": 2.196004867553711,
+  "error": null
+}

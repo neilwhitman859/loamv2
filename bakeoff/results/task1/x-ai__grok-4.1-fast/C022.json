@@ -1,0 +1,13 @@
+{
+  "pair_id": "C022",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Milz Laurentiushof), vineyard (Trittenheimer Leiterchen), grape (Riesling), and color (white), but differ in German Pr\u00e4dikat levels: Trockenbeerenauslese (TBA) vs Auslese. The rules explicitly state that different Pr\u00e4dikat levels (including Auslese and TBA) mean DIFFERENT wines, as they represent distinct bottlings with varying sweetness and concentration. Different LWINs (2105996 vs 2105925) confirm they are separate entries.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Milz Laurentiushof), vineyard (Trittenheimer Leiterchen), grape (Riesling), and color (white), but differ in German Pr\u00e4dikat levels: Trockenbeerenauslese (TBA) vs Auslese. The rules explicitly state that different Pr\u00e4dikat levels (including Auslese and TBA) mean DIFFERENT wines, as they represent distinct bottlings with varying sweetness and concentration. Different LWINs (2105996 vs 2105925) confirm they are separate entries.",
+  "parse_ok": true,
+  "tokens_in": 591,
+  "tokens_out": 508,
+  "elapsed": 3.8778140544891357,
+  "error": null
+}

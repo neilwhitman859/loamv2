@@ -1,0 +1,13 @@
+{
+  "pair_id": "C017",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Both wines are from the same producer, the same vineyard (Forster Kirchenstuck), and have the same German Pr\u00e4dikat level (Spatlese). The only difference is the explicit mention of the grape 'Riesling' in Wine B. For a prestigious German site like Kirchenst\u00fcck, a Sp\u00e4tlese wine is implicitly Riesling, so Wine A is just an abbreviated name for Wine B.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from the same producer, the same vineyard (Forster Kirchenstuck), and have the same German Pr\u00e4dikat level (Spatlese). The only difference is the explicit mention of the grape 'Riesling' in Wine B. For a prestigious German site like Kirchenst\u00fcck, a Sp\u00e4tlese wine is implicitly Riesling, so Wine A is just an abbreviated name for Wine B.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 1290,
+  "elapsed": 12.637520551681519,
+  "error": null
+}

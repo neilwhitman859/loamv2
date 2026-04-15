@@ -1,0 +1,27 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "qwen/qwen3.6-plus",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 3.2,
+  "wrong_facts": [
+    "States 100% Cabernet Sauvignon — ground truth shows 2022 is 92% Cab, 3% Petite Verdot, 3% Merlot, 2% Malbec",
+    "Claims valley-floor alluvial deposits as the sourcing — ground truth says multi-site including hillside estate vineyards and Borderline vineyard in Stags Leap District, not just valley floor",
+    "States 60 to 75 percent new oak — ground truth says 100% new French oak (Allier & Tronçais)",
+    "Hook implies contrast with hillside vineyards by saying 'valley-floor alluvial deposits rather than steep hillside vineyards' — ground truth confirms vineyard sources include hillside estate vineyards",
+    "No mention of winemaker Elias Fernandez",
+    "No mention of the actual naming origin (generation and a half between John and Doug Shafer)",
+    "Attributes the wine to Doug Shafer building his reputation — the naming origin is about the partnership between John and Doug"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "60 to 75 percent new barrels — ground truth says 100% new French oak"
+  ],
+  "reasoning": "The output fabricates a specific cooperage number (60-75% new oak vs. the actual 100% new French oak), which triggers the hard penalty for fabricated numbers, capping correctness at 1.5. However, the 100% Cab claim comes from the context data itself (which listed it as 100% Cabernet Sauvignon), so the model was misled by its input — I'll give slight leniency there. The fundamental framing of the wine as valley-floor sourced contradicts ground truth showing hillside estate vineyard sourcing. The oak percentage fabrication is entirely unsourced. Voice is strong — direct, opinionated, specific, no banned words. Specificity is good with named soils and competitors. Usefulness is moderate but undermined by incorrect core claims about sourcing and winemaking.",
+  "judge_tokens_in": 3994,
+  "judge_tokens_out": 504
+}

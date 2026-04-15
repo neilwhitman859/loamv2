@@ -1,0 +1,13 @@
+{
+  "pair_id": "D040",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"The wines share the same producer and color. 'Superiore' is a common designation that can be abbreviated, and 'Solane Superiore' likely refers to the same wine with a more complete name. Without further information on distinct bottlings, they are considered the same.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "The wines share the same producer and color. 'Superiore' is a common designation that can be abbreviated, and 'Solane Superiore' likely refers to the same wine with a more complete name. Without further information on distinct bottlings, they are considered the same.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 76,
+  "elapsed": 1.9767842292785645,
+  "error": null
+}

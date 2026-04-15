@@ -1,0 +1,13 @@
+{
+  "pair_id": "D030",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records specify different grape varieties, with Wine A being Cabernet Sauvignon and Wine B being Merlot. According to the classification rules, different grape varieties always indicate distinct wines, regardless of sharing the same producer or label series.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records specify different grape varieties, with Wine A being Cabernet Sauvignon and Wine B being Merlot. According to the classification rules, different grape varieties always indicate distinct wines, regardless of sharing the same producer or label series.",
+  "parse_ok": true,
+  "tokens_in": 469,
+  "tokens_out": 1502,
+  "elapsed": 28.598750352859497,
+  "error": null
+}

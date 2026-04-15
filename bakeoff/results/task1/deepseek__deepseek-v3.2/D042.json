@@ -1,0 +1,13 @@
+{
+  "pair_id": "D042",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the omission of the word 'Brut' in Wine B, which indicates sweetness level. However, both are from the same producer (Pommery) and share the same cuv\u00e9e name 'Apanage Prestige'. Since 'Brut' is a standard designation for a dry sparkling wine and not a distinct cuv\u00e9e, this is likely a formatting or abbreviation difference.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the omission of the word 'Brut' in Wine B, which indicates sweetness level. However, both are from the same producer (Pommery) and share the same cuv\u00e9e name 'Apanage Prestige'. Since 'Brut' is a standard designation for a dry sparkling wine and not a distinct cuv\u00e9e, this is likely a formatting or abbreviation difference.",
+  "parse_ok": true,
+  "tokens_in": 436,
+  "tokens_out": 104,
+  "elapsed": 5.32077431678772,
+  "error": null
+}

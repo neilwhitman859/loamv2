@@ -1,0 +1,13 @@
+{
+  "pair_id": "A048",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Stoneleigh, and share the 'Wild Valley' name. Wine A is identified as Pinot Noir, and Wine B is also identified as Pinot Noir through its name. The only difference is the varietal suffix in Wine B, which is a common abbreviation practice when the grape is already known.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Stoneleigh, and share the 'Wild Valley' name. Wine A is identified as Pinot Noir, and Wine B is also identified as Pinot Noir through its name. The only difference is the varietal suffix in Wine B, which is a common abbreviation practice when the grape is already known.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 87,
+  "elapsed": 1.6480293273925781,
+  "error": null
+}

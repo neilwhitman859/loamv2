@@ -1,0 +1,13 @@
+{
+  "pair_id": "D031",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer (Peter Jakob Kuhn), vineyard (Rheinschiefer), and style (Trocken/dry). The difference in 'Trocken' being omitted in Wine B's name is a minor formatting difference, as 'Trocken' is a common designation for dry wines and its omission does not change the wine's identity.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer (Peter Jakob Kuhn), vineyard (Rheinschiefer), and style (Trocken/dry). The difference in 'Trocken' being omitted in Wine B's name is a minor formatting difference, as 'Trocken' is a common designation for dry wines and its omission does not change the wine's identity.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 92,
+  "elapsed": 2.1705472469329834,
+  "error": null
+}

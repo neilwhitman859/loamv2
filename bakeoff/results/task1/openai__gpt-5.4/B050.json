@@ -1,0 +1,13 @@
+{
+  "pair_id": "B050",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different bottlings from the same producer: one is Happs Cremant (white) and the other is Happs Cremant Rose (ros\u00e9). Color/style differences alone make them separate wines, and the distinct LWINs reinforce that they are not the same encyclopedia entry.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different bottlings from the same producer: one is Happs Cremant (white) and the other is Happs Cremant Rose (ros\u00e9). Color/style differences alone make them separate wines, and the distinct LWINs reinforce that they are not the same encyclopedia entry.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 79,
+  "elapsed": 2.265615940093994,
+  "error": null
+}

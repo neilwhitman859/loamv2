@@ -1,0 +1,13 @@
+{
+  "pair_id": "A009",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A lists Pinot Gris and Pinot Noir as grapes, while Wine B explicitly states 'Pinot Gris' in its name. This suggests that Wine A might be a blend or a different wine altogether, as the presence of Pinot Noir in Wine A makes it distinct from a pure Pinot Gris bottling like Wine B, even if they share the 'Naumberg' designation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A lists Pinot Gris and Pinot Noir as grapes, while Wine B explicitly states 'Pinot Gris' in its name. This suggests that Wine A might be a blend or a different wine altogether, as the presence of Pinot Noir in Wine A makes it distinct from a pure Pinot Gris bottling like Wine B, even if they share the 'Naumberg' designation.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 97,
+  "elapsed": 1.3891966342926025,
+  "error": null
+}

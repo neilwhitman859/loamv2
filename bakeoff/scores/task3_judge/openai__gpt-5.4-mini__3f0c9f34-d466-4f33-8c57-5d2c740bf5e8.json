@@ -1,0 +1,17 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.05,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is factually cautious — it hedges with 'likely' and 'usually' when discussing winemaking, which avoids outright fabrication but also misses the opportunity to state known facts (e.g., 50/50 stainless/barrel fermentation, partial MLF, specific vineyard sources like Wairau, Renwick, Brancott, sandy loams over gravels). The ground truth confirms partial MLF and barrel use, so saying 'limited oak influence' and pointing toward restrained MLF is directionally correct but understated — the wine actually sees 9 months in French barriques for half the blend, which is more oak than the output implies. No outright wrong facts, but the characterization as 'anti-butter' and 'light-bodied' may slightly misrepresent a wine with significant barrel and lees work. The voice is excellent — direct, opinionated, no banned words, no filler, takes clear positions. Specificity is good with named soils (Wairau/Awatere alluvial), climate details, and real competitor names. Usefulness is strong: the insider take is actionable, food pairings are specific and well-reasoned, and the value assessment is practical.",
+  "judge_tokens_in": 3775,
+  "judge_tokens_out": 344
+}

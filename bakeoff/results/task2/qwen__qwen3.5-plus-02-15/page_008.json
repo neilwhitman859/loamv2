@@ -1,0 +1,23 @@
+{
+  "page_id": "page_008",
+  "model": "qwen/qwen3.5-plus-02-15",
+  "raw_content": "{\n  \"wines_found\": [\n    {\n      \"name\": \"Chardonnay\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    }\n  ]\n}",
+  "wines_found": [
+    {
+      "name": "Chardonnay",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 27881,
+  "tokens_out": 3350,
+  "elapsed": 65.39729690551758,
+  "error": null
+}

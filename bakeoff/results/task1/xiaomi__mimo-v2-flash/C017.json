@@ -1,0 +1,13 @@
+{
+  "pair_id": "C017",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Bassermann-Jordan) and the same vineyard (Forster Kirchenstuck) with the same Pr\u00e4dikat level (Spatlese). The only difference is the inclusion of the grape variety 'Riesling' in Wine B's name, which is a common varietal suffix and does not indicate a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Bassermann-Jordan) and the same vineyard (Forster Kirchenstuck) with the same Pr\u00e4dikat level (Spatlese). The only difference is the inclusion of the grape variety 'Riesling' in Wine B's name, which is a common varietal suffix and does not indicate a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 507,
+  "tokens_out": 102,
+  "elapsed": 2.592409133911133,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C020",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.95, \"reasoning\": \"The wines have different vineyard designations: 'Altarchen' and 'Leiterchen' are distinct vineyards within the Trittenheim region. Different vineyard designations, even with the same producer, grape variety, and Pr\u00e4dikat level, represent separate bottlings and different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different vineyard designations: 'Altarchen' and 'Leiterchen' are distinct vineyards within the Trittenheim region. Different vineyard designations, even with the same producer, grape variety, and Pr\u00e4dikat level, represent separate bottlings and different wines.",
+  "parse_ok": true,
+  "tokens_in": 464,
+  "tokens_out": 81,
+  "elapsed": 7.289801359176636,
+  "error": null
+}

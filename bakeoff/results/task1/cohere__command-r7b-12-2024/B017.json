@@ -1,0 +1,13 @@
+{
+  "pair_id": "B017",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is red, while Wine B is white. Different colors indicate different wines, even if they share the same producer and vineyard.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is red, while Wine B is white. Different colors indicate different wines, even if they share the same producer and vineyard.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 50,
+  "elapsed": 1.2642171382904053,
+  "error": null
+}

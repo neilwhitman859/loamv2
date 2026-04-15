@@ -1,0 +1,13 @@
+{
+  "pair_id": "B037",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.97, \"reasoning\": \"The two wines share the same producer and name but differ in color (red vs white), indicating different grape varieties and thus distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "The two wines share the same producer and name but differ in color (red vs white), indicating different grape varieties and thus distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 398,
+  "tokens_out": 110,
+  "elapsed": 3.5997538566589355,
+  "error": null
+}

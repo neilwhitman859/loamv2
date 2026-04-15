@@ -1,0 +1,13 @@
+{
+  "pair_id": "B023",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines are different colors; Wine A is a red wine and Wine B is a white wine. Red and white wines are fundamentally different products, made from different grapes and/or with different winemaking processes, and are always considered distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are different colors; Wine A is a red wine and Wine B is a white wine. Red and white wines are fundamentally different products, made from different grapes and/or with different winemaking processes, and are always considered distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 399,
+  "tokens_out": 1148,
+  "elapsed": 12.972965478897095,
+  "error": null
+}

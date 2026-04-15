@@ -1,0 +1,13 @@
+{
+  "pair_id": "B027",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a white wine, while Wine B is a ros\u00e9, which are distinct colors and styles. The producer and base name 'Clos du Moulin' are the same, but the color difference alone makes them separate bottlings that a consumer would encounter as different products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a white wine, while Wine B is a ros\u00e9, which are distinct colors and styles. The producer and base name 'Clos du Moulin' are the same, but the color difference alone makes them separate bottlings that a consumer would encounter as different products.",
+  "parse_ok": true,
+  "tokens_in": 479,
+  "tokens_out": 83,
+  "elapsed": 2.4733340740203857,
+  "error": null
+}

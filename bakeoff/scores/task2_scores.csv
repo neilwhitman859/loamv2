@@ -1,0 +1,2 @@
+model,num_accuracy,halluc_rate,null_recall,miss_rate,text_correct,text_hallucinated,blend_correct,blend_hallucinated,parse_rate,avg_tokens_in,avg_tokens_out,cost_per_call,cost_at_50k,errors,total
+qwen/qwen3.6-plus,0.9216,0.0173,0.9827,0.0588,22,0,6,0,1.0,32340,2002,0.015339,766.95,0,57

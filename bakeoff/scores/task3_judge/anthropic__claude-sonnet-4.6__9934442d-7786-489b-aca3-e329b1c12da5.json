@@ -1,0 +1,30 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "anthropic/claude-sonnet-4.6",
+  "correctness": 2.5,
+  "voice": 2.0,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.075,
+  "wrong_facts": [
+    "Plantagenet established in 1974 — ground truth says 1968 (first commercial winery 1975)",
+    "Price stated as AUD $20-25 — no price data was provided in context",
+    "Diurnal range of 15-20°C is a specific unverifiable claim",
+    "2011 vintage described as 'cool and late' — not in context data and unverifiable",
+    "Partial whole-bunch inclusion and open-top fermentation are speculative — ground truth says 10 months French oak barrels but nothing about whole-bunch or vessel type"
+  ],
+  "banned_words_found": [
+    "genuine",
+    "genuinely"
+  ],
+  "fabricated_numbers": [
+    "AUD $20-25 price",
+    "15-20°C diurnal range",
+    "AUD $40-50 for estate-level bottling"
+  ],
+  "reasoning": "The output is impressively detailed and useful, with strong specificity about soils, comparables, and food pairings. However, it fabricates multiple specific numbers (price points, diurnal range) not present in context data, gets the founding date wrong (says 1974, ground truth is 1968), and speculates about winemaking details (whole-bunch, open-top vessels) that aren't supported. Two banned words appear: 'genuine' in terroir_expression and 'genuinely' in food_pairing, capping voice at 2.0. The founding date error is notable but not in the hook. The fabricated prices and diurnal range trigger the hard penalty for fabricated numbers, capping correctness at 1.5 — but the gravelly loam soils detail and regional positioning are correct per ground truth, and many claims are plausibly correct from wine knowledge, so I'm giving slight benefit at 2.5 acknowledging the mix of correct and fabricated specifics.",
+  "judge_tokens_in": 3914,
+  "judge_tokens_out": 454
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B035",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different colors (rose vs red), which is a clear indicator of different wines. The producer, vineyard, and grape variety are the same, but the color difference is significant and would be noted in an encyclopedia, suggesting distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different colors (rose vs red), which is a clear indicator of different wines. The producer, vineyard, and grape variety are the same, but the color difference is significant and would be noted in an encyclopedia, suggesting distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 452,
+  "tokens_out": 76,
+  "elapsed": 1.5875885486602783,
+  "error": null
+}

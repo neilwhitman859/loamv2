@@ -1,0 +1,13 @@
+{
+  "pair_id": "A023",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The producer and core wine name 'Blackwood Canyon' are identical. Wine A is explicitly listed as being made from Cabernet Sauvignon, and Wine B's name includes the varietal 'Cabernet Sauvignon'. This is a classic case where one name is an abbreviation of the other, representing the same bottling.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The producer and core wine name 'Blackwood Canyon' are identical. Wine A is explicitly listed as being made from Cabernet Sauvignon, and Wine B's name includes the varietal 'Cabernet Sauvignon'. This is a classic case where one name is an abbreviation of the other, representing the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 1291,
+  "elapsed": 13.73695421218872,
+  "error": null
+}

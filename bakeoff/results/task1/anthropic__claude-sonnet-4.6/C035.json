@@ -1,0 +1,13 @@
+{
+  "pair_id": "C035",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are Bernkasteler Doctor Riesling Auslese 3* from Markus Molitor, but they differ in capsule color: Gold Capsule vs White Capsule. At Markus Molitor, different capsule colors denote distinct bottlings/selections with different sweetness levels or quality tiers within the same Pr\u00e4dikat level \u2014 Gold Capsule typically indicates a sweeter, richer selection than White Capsule. The different LWIN codes (1731626 vs 1731613) confirm these are catalogued as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are Bernkasteler Doctor Riesling Auslese 3* from Markus Molitor, but they differ in capsule color: Gold Capsule vs White Capsule. At Markus Molitor, different capsule colors denote distinct bottlings/selections with different sweetness levels or quality tiers within the same Pr\u00e4dikat level \u2014 Gold Capsule typically indicates a sweeter, richer selection than White Capsule. The different LWIN codes (1731626 vs 1731613) confirm these are catalogued as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 527,
+  "tokens_out": 151,
+  "elapsed": 3.9794437885284424,
+  "error": null
+}

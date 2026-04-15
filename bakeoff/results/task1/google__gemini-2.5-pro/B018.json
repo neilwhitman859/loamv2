@@ -1,0 +1,13 @@
+{
+  "pair_id": "B018",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two records represent different wines because they have different colors. Wine A is explicitly a 'Rose', while the provided metadata confirms Wine B is a white wine. A ros\u00e9 and a white wine are fundamentally different styles and are considered distinct bottlings, even if they share a base name.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent different wines because they have different colors. Wine A is explicitly a 'Rose', while the provided metadata confirms Wine B is a white wine. A ros\u00e9 and a white wine are fundamentally different styles and are considered distinct bottlings, even if they share a base name.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 1005,
+  "elapsed": 10.808370351791382,
+  "error": null
+}

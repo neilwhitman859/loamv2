@@ -1,0 +1,13 @@
+{
+  "pair_id": "D020",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records share the same producer (19 Crimes) and red color, with the only difference being the explicit addition of the word 'Red' in Wine A's name. This follows the guideline that minor descriptive or varietal suffix variations typically indicate the same bottling with different formatting. There is no indication of different grapes, classification tiers, or vineyard designations.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records share the same producer (19 Crimes) and red color, with the only difference being the explicit addition of the word 'Red' in Wine A's name. This follows the guideline that minor descriptive or varietal suffix variations typically indicate the same bottling with different formatting. There is no indication of different grapes, classification tiers, or vineyard designations.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 1680,
+  "elapsed": 32.38440489768982,
+  "error": null
+}

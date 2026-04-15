@@ -1,0 +1,13 @@
+{
+  "pair_id": "B032",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a white Gewurztraminer and Wine B is a red Pinot Noir \u2014 different grape varieties and different colors. Additionally, Wine B has a specific vineyard designation 'Neuberg' that Wine A lacks. Different grapes alone is sufficient to classify these as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a white Gewurztraminer and Wine B is a red Pinot Noir \u2014 different grape varieties and different colors. Additionally, Wine B has a specific vineyard designation 'Neuberg' that Wine A lacks. Different grapes alone is sufficient to classify these as different wines.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 87,
+  "elapsed": 2.8648526668548584,
+  "error": null
+}

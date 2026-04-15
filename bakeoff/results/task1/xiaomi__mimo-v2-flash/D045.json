@@ -1,0 +1,13 @@
+{
+  "pair_id": "D045",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Maris) and share the same base name 'Casse-Croute' with the same white color. The only difference is the suffix 'Blanc' in Wine A, which is a standard varietal indicator for a white wine and does not indicate a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Maris) and share the same base name 'Casse-Croute' with the same white color. The only difference is the suffix 'Blanc' in Wine A, which is a standard varietal indicator for a white wine and does not indicate a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 474,
+  "tokens_out": 87,
+  "elapsed": 2.3767428398132324,
+  "error": null
+}

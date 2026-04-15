@@ -1,0 +1,13 @@
+{
+  "pair_id": "D018",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Truchard produces both a standard estate Cabernet Sauvignon and a 'Reserve' bottling, which represent different quality tiers and price points. In wine classification, a 'Reserve' designation typically indicates a distinct bottling with different barrel aging or fruit selection, and the unique LWINs confirm these are tracked as separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Truchard produces both a standard estate Cabernet Sauvignon and a 'Reserve' bottling, which represent different quality tiers and price points. In wine classification, a 'Reserve' designation typically indicates a distinct bottling with different barrel aging or fruit selection, and the unique LWINs confirm these are tracked as separate products.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 86,
+  "elapsed": 1.9892663955688477,
+  "error": null
+}

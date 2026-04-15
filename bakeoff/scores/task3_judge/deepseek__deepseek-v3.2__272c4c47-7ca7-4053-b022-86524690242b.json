@@ -1,0 +1,25 @@
+{
+  "wine_id": "272c4c47-7ca7-4053-b022-86524690242b",
+  "wine_name": "Lafage Tessellae Old Vines, Côtes du Roussillon",
+  "tier": "C",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.4,
+  "wrong_facts": [
+    "Hook claims the blend includes Grenache and Syrah — ground truth says 100% Carignan",
+    "Wine summary says 'appellation rules mandate a blend led by Carignan, Grenache, or Syrah' implying this is a blend, but ground truth confirms 100% Carignan",
+    "Wine summary says 'some exceeding 60 years' — ground truth says 70+ years",
+    "Vinification summary describes blending Carignan with Grenache's flesh, but the wine is 100% Carignan"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "60 years for vine age (ground truth is 70+)",
+    "$20-25 CAD price range not in context data"
+  ],
+  "reasoning": "The hook contains a provably wrong claim — stating the wine includes Grenache and Syrah when ground truth confirms it is 100% Carignan. This wrong-grape-in-hook error triggers the hard cap of 1.5, but I'm giving 2.0 because the Carignan and schist claims are correct and the model correctly identifies Jean-Marc Lafage and the tessellae concept (though it doesn't explain the naming origin). The blend fabrication pervades the entire output — vinification, hook, and summary all reference a multi-grape blend that doesn't exist. The voice is strong: direct, opinionated, specific, with good food pairings and a useful insider take. Specificity is high with named soils, wind patterns, and real comparable producers. But the fundamental factual error about the blend undermines the entire piece's credibility.",
+  "judge_tokens_in": 3175,
+  "judge_tokens_out": 408
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D002",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The key difference is the 'GG' (Grosses Gew\u00e4chs) designation on Wine A. This is a specific, legally defined classification for the highest quality dry German wines from a Grosse Lage (Grand Cru) vineyard. A wine from the same producer and vineyard without the 'GG' designation is a different bottling, representing a different quality tier or style, much like the distinction between a Reserva and a Gran Reserva.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The key difference is the 'GG' (Grosses Gew\u00e4chs) designation on Wine A. This is a specific, legally defined classification for the highest quality dry German wines from a Grosse Lage (Grand Cru) vineyard. A wine from the same producer and vineyard without the 'GG' designation is a different bottling, representing a different quality tier or style, much like the distinction between a Reserva and a Gran Reserva.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 1345,
+  "elapsed": 13.84429669380188,
+  "error": null
+}

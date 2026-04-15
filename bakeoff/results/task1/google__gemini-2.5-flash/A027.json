@@ -1,0 +1,13 @@
+{
+  "pair_id": "A027",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A is made from Tempranillo Tinto, while Wine B is explicitly named 'Mencia', indicating it is made from the Mencia grape. Different grape varieties always mean different wines, even if the vineyard name is similar.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is made from Tempranillo Tinto, while Wine B is explicitly named 'Mencia', indicating it is made from the Mencia grape. Different grape varieties always mean different wines, even if the vineyard name is similar.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 83,
+  "elapsed": 2.114867925643921,
+  "error": null
+}

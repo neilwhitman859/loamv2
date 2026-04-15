@@ -1,0 +1,13 @@
+{
+  "pair_id": "C031",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Bonnaire, and have the same color, white. The difference in 'Brut' and the LWIN numbers may suggest different vintages or formats, but 'Blanc de Blancs' is a common designation that can be considered a style rather than a distinct wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Bonnaire, and have the same color, white. The difference in 'Brut' and the LWIN numbers may suggest different vintages or formats, but 'Blanc de Blancs' is a common designation that can be considered a style rather than a distinct wine.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 86,
+  "elapsed": 3.1516010761260986,
+  "error": null
+}

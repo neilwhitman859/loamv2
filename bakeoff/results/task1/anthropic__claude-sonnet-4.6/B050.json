@@ -1,0 +1,13 @@
+{
+  "pair_id": "B050",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a white Cr\u00e9mant while Wine B is a Cr\u00e9mant Ros\u00e9, explicitly different colors as confirmed by both the name and the color fields. Ros\u00e9 vs white from the same producer is always a different wine. The distinct LWIN codes further confirm these are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a white Cr\u00e9mant while Wine B is a Cr\u00e9mant Ros\u00e9, explicitly different colors as confirmed by both the name and the color fields. Ros\u00e9 vs white from the same producer is always a different wine. The distinct LWIN codes further confirm these are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 481,
+  "tokens_out": 88,
+  "elapsed": 3.438540458679199,
+  "error": null
+}

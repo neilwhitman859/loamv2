@@ -1,0 +1,13 @@
+{
+  "pair_id": "D035",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"The names differ only by the suffix 'Gold', which likely indicates a branding or labeling variation, not a different wine type. Both are red wines from the same producer, and there is no evidence of different grapes, classification, or style to suggest they are distinct bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "The names differ only by the suffix 'Gold', which likely indicates a branding or labeling variation, not a different wine type. Both are red wines from the same producer, and there is no evidence of different grapes, classification, or style to suggest they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 441,
+  "tokens_out": 78,
+  "elapsed": 3.581141233444214,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A001",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"Wine A lists 'CARMENERE, CABERNET FRANC' as grapes, while Wine B is specifically 'Carmenere'. Even though the name 'Agreement No 2' matches, the difference in grape composition (A is a blend, B is a single varietal) indicates these are distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A lists 'CARMENERE, CABERNET FRANC' as grapes, while Wine B is specifically 'Carmenere'. Even though the name 'Agreement No 2' matches, the difference in grape composition (A is a blend, B is a single varietal) indicates these are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 99,
+  "elapsed": 5.036604166030884,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B024",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white blend with Sauvignon Blanc and Muscadelle, while Wine B is a red blend with Merlot Noir. Different colors and grape compositions indicate distinct bottlings that a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white blend with Sauvignon Blanc and Muscadelle, while Wine B is a red blend with Merlot Noir. Different colors and grape compositions indicate distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 514,
+  "tokens_out": 69,
+  "elapsed": 1.926321029663086,
+  "error": null
+}

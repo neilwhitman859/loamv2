@@ -1,0 +1,13 @@
+{
+  "pair_id": "D007",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grape varieties, Wine A being COT and CABERNET SAUVIGNON while Wine B is MERLOT NOIR. This difference in grape varieties is enough to classify the wines as different.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grape varieties, Wine A being COT and CABERNET SAUVIGNON while Wine B is MERLOT NOIR. This difference in grape varieties is enough to classify the wines as different.",
+  "parse_ok": true,
+  "tokens_in": 441,
+  "tokens_out": 67,
+  "elapsed": 1.1905016899108887,
+  "error": null
+}

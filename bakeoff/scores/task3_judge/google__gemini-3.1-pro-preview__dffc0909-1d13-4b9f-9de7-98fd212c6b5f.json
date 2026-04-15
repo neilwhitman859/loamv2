@@ -1,0 +1,25 @@
+{
+  "wine_id": "dffc0909-1d13-4b9f-9de7-98fd212c6b5f",
+  "wine_name": "Cakebread Cellars Cuttings Wharf Chardonnay, Los Carneros",
+  "tier": "A",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.675,
+  "wrong_facts": [
+    "Hook says 'heavy clay soils' but ground truth says 'shallow loamy soils' (Haire loam)",
+    "References 'Diablo clay soils' repeatedly — not mentioned in context data or ground truth; ground truth specifies Haire loam soils, not Diablo series clay",
+    "Says 'heavy Haire and Diablo clay soils' but ground truth says 'Haire loam soils' — loam is not heavy clay",
+    "Hook says 'Cakebread is famous for their richer Rutherford whites' — Cakebread's main Chardonnay is from Napa Valley broadly, not specifically Rutherford; their Rutherford fame is for Cabernet Sauvignon",
+    "14.2% ABV is from the 2013 vintage only but is presented as a general characteristic of the wine"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "14.2% alcohol presented as a general wine characteristic rather than vintage-specific"
+  ],
+  "reasoning": "The output has strong voice, specificity, and usefulness — it reads like confident, opinionated wine writing with real details and actionable pairings. However, the soil description is fundamentally wrong: the ground truth clearly states 'Haire loam soils' and 'shallow loamy soils,' while the output repeatedly claims 'heavy clay soils' and fabricates 'Diablo series clay.' This is a core terroir claim that's wrong in the hook and throughout. The hook also questionably claims Cakebread is famous for 'richer Rutherford whites' when their Rutherford reputation is built on Cabernet. These soil errors pervade the terroir_expression section, building an entire narrative on incorrect geology. The 14.2% ABV from a single vintage (2013) is generalized as a characteristic of the wine. Despite excellent writing quality, the factual errors on soil type — central to the terroir narrative — significantly undermine correctness.",
+  "judge_tokens_in": 3940,
+  "judge_tokens_out": 497
+}

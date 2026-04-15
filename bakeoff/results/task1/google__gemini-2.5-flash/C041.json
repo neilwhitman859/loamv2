@@ -1,0 +1,13 @@
+{
+  "pair_id": "C041",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines differ in their Rioja classification, with one being a 'Reserva' and the other a 'Gran Reserva'. These classifications denote distinct aging requirements and quality tiers, making them different bottlings that a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines differ in their Rioja classification, with one being a 'Reserva' and the other a 'Gran Reserva'. These classifications denote distinct aging requirements and quality tiers, making them different bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 70,
+  "elapsed": 1.2708799839019775,
+  "error": null
+}

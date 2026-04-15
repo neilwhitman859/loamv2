@@ -1,0 +1,13 @@
+{
+  "pair_id": "B002",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Although both records share the same cuv\u00e9e name, the wine colors differ: one is red and the other is white. That indicates distinct bottlings, not just a naming variation. The grape lists are the same varieties in a different order, so the color difference is the \u0928\u093f\u0930\u094d\u0923ining factor.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Although both records share the same cuv\u00e9e name, the wine colors differ: one is red and the other is white. That indicates distinct bottlings, not just a naming variation. The grape lists are the same varieties in a different order, so the color difference is the \u0928\u093f\u0930\u094d\u0923ining factor.",
+  "parse_ok": true,
+  "tokens_in": 452,
+  "tokens_out": 81,
+  "elapsed": 1.9083819389343262,
+  "error": null
+}

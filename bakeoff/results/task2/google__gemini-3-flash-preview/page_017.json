@@ -1,0 +1,23 @@
+{
+  "page_id": "page_017",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Sauvignon Blanc\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": \"Jessica Tomei\", \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Sauvignon Blanc",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 43712,
+  "tokens_out": 65,
+  "elapsed": 1.9152414798736572,
+  "error": null
+}

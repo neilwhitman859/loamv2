@@ -1,0 +1,13 @@
+{
+  "pair_id": "B012",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different colors (white vs red) and different grapes (Donzelinho Branco vs Malvasia Fina and Furmint), which always indicates different wines per the rules. Same producer and Madeira region do not override these distinctions. Wine B's 'Colheita' designation further points to a distinct single-vintage bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different colors (white vs red) and different grapes (Donzelinho Branco vs Malvasia Fina and Furmint), which always indicates different wines per the rules. Same producer and Madeira region do not override these distinctions. Wine B's 'Colheita' designation further points to a distinct single-vintage bottling.",
+  "parse_ok": true,
+  "tokens_in": 572,
+  "tokens_out": 619,
+  "elapsed": 4.010575771331787,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C049",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.98, \"reasoning\": \"Wine A is white and Wine B is red, which alone makes them different wines. Additionally, 'Brut Nature' and 'Brut' indicate different sweetness/dosage levels in sparkling wine terminology, representing distinct bottlings. The different colors and different style designations confirm these are separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Wine A is white and Wine B is red, which alone makes them different wines. Additionally, 'Brut Nature' and 'Brut' indicate different sweetness/dosage levels in sparkling wine terminology, representing distinct bottlings. The different colors and different style designations confirm these are separate wines.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 89,
+  "elapsed": 3.1127710342407227,
+  "error": null
+}

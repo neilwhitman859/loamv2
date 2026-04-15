@@ -1,0 +1,13 @@
+{
+  "pair_id": "D034",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Bollenberg and Neuberg are distinct vineyard designations, and the classification rules explicitly state that different vineyard designations represent separate bottlings. The differing LWIN identifiers further confirm they are tracked as distinct products in wine databases.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Bollenberg and Neuberg are distinct vineyard designations, and the classification rules explicitly state that different vineyard designations represent separate bottlings. The differing LWIN identifiers further confirm they are tracked as distinct products in wine databases.",
+  "parse_ok": true,
+  "tokens_in": 471,
+  "tokens_out": 2682,
+  "elapsed": 50.304535150527954,
+  "error": null
+}

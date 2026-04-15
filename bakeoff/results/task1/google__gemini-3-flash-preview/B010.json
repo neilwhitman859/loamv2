@@ -1,0 +1,13 @@
+{
+  "pair_id": "B010",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records specify different colors (white vs. rose), which indicates distinct bottlings. In the Bellavista portfolio, the 'Alma' line includes both a standard Brut (white) and a separate Ros\u00e9 bottling, which are distinct products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records specify different colors (white vs. rose), which indicates distinct bottlings. In the Bellavista portfolio, the 'Alma' line includes both a standard Brut (white) and a separate Ros\u00e9 bottling, which are distinct products.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 71,
+  "elapsed": 1.7020986080169678,
+  "error": null
+}

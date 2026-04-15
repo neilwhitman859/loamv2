@@ -1,0 +1,13 @@
+{
+  "pair_id": "D037",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The names differ only by the appended 'Wine' suffix, which is a formatting difference consistent with abbreviation. All other key attributes (producer, blend name, color, and implied style) are identical, indicating the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The names differ only by the appended 'Wine' suffix, which is a formatting difference consistent with abbreviation. All other key attributes (producer, blend name, color, and implied style) are identical, indicating the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 71,
+  "elapsed": 4.31542706489563,
+  "error": null
+}

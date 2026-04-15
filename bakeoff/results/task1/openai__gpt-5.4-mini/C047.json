@@ -1,0 +1,13 @@
+{
+  "pair_id": "C047",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different styles/colors: Wine A is Brut Nature (white) while Wine B is Brut Ros\u00e9 Nature (ros\u00e9). Even with the same producer, ros\u00e9 vs white sparkling wines are distinct bottlings and would not share a single encyclopedia entry. The different LWINs also support that they are separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different styles/colors: Wine A is Brut Nature (white) while Wine B is Brut Ros\u00e9 Nature (ros\u00e9). Even with the same producer, ros\u00e9 vs white sparkling wines are distinct bottlings and would not share a single encyclopedia entry. The different LWINs also support that they are separate wines.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 86,
+  "elapsed": 2.0294203758239746,
+  "error": null
+}

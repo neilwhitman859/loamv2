@@ -1,0 +1,38 @@
+{
+  "page_id": "page_052",
+  "model": "qwen/qwen3.5-plus-02-15",
+  "raw_content": "{\"wines_found\": [{\"name\": \"2023 Mourvèdre\", \"vintage_year\": 2023, \"abv_pct\": 12.5, \"blend\": [{\"grape\": \"Mourvèdre\", \"pct\": 100}], \"oak\": {\"vessel\": \"neutral oak\", \"months\": 12, \"new_pct\": 0, \"origin\": null}, \"cases_produced\": 330, \"chemistry\": {\"ph\": null, \"ta_g_l\": null, \"rs_g_l\": null, \"so2_total_mg_l\": null}, \"winemaker\": null, \"farming\": \"biodynamic\"}]}",
+  "wines_found": [
+    {
+      "name": "2023 Mourvèdre",
+      "vintage_year": 2023,
+      "abv_pct": 12.5,
+      "blend": [
+        {
+          "grape": "Mourvèdre",
+          "pct": 100
+        }
+      ],
+      "oak": {
+        "vessel": "neutral oak",
+        "months": 12,
+        "new_pct": 0,
+        "origin": null
+      },
+      "cases_produced": 330,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "biodynamic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 20642,
+  "tokens_out": 1350,
+  "elapsed": 27.20102858543396,
+  "error": null
+}

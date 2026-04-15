@@ -1,0 +1,23 @@
+{
+  "wine_id": "dffc0909-1d13-4b9f-9de7-98fd212c6b5f",
+  "wine_name": "Cakebread Cellars Cuttings Wharf Chardonnay, Los Carneros",
+  "tier": "A",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 3.5,
+  "voice": 3.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.9,
+  "wrong_facts": [
+    "Mentions 'Diablo series' soils - ground truth only mentions Haire loam soils, no Diablo series mentioned",
+    "Describes the vineyard as 'cool, maritime flats' when ground truth says it's on 'a low ridge'",
+    "Claims 'heavy, clay-loam soils' when ground truth specifies 'shallow loamy soils' and 'Haire loam soils' - not described as heavy or clay-loam"
+  ],
+  "banned_words_found": [
+    "showcasing"
+  ],
+  "fabricated_numbers": [],
+  "reasoning": "The output correctly identifies the naming origin (Cuttings Wharf Road), the single-vineyard sourcing, and Haire soils — all matching ground truth. However, it fabricates the 'Diablo series' soil reference, incorrectly describes the vineyard as 'flats' when it's on a low ridge, and mischaracterizes the soils as 'heavy, clay-loam' when they are 'shallow loamy.' The hook is factually correct and well-constructed. The voice is mostly strong and opinionated but uses the banned word 'showcasing' in the comparable wines section. Specificity is excellent with named soil types, climate mechanisms, and real comparable wines. The insider take is genuinely useful and actionable, distinguishing this bottling from Cakebread's broader lineup.",
+  "judge_tokens_in": 4044,
+  "judge_tokens_out": 356
+}

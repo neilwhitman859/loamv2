@@ -1,0 +1,46 @@
+{
+  "page_id": "page_019",
+  "model": "google/gemini-3.1-pro-preview",
+  "raw_content": "{\n  \"wines_found\": [\n    {\n      \"name\": \"Red Velvet\",\n      \"vintage_year\": null,\n      \"abv_pct\": null,\n      \"blend\": [\n        {\n          \"grape\": \"Merlot\",\n          \"pct\": null\n        },\n        {\n          \"grape\": \"Zinfandel\",\n          \"pct\": null\n        },\n        {\n          \"grape\": \"Petite Sirah\",\n          \"pct\": null\n        }\n      ],\n      \"oak\": {\n        \"vessel\": null,\n        \"months\": null,\n        \"new_pct\": null,\n        \"origin\": null\n      },\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": null,\n        \"ta_g_l\": null,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": \"Jessica Tomei\",\n      \"farming\": null\n    }\n  ]\n}",
+  "wines_found": [
+    {
+      "name": "Red Velvet",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Merlot",
+          "pct": null
+        },
+        {
+          "grape": "Zinfandel",
+          "pct": null
+        },
+        {
+          "grape": "Petite Sirah",
+          "pct": null
+        }
+      ],
+      "oak": {
+        "vessel": null,
+        "months": null,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 43436,
+  "tokens_out": 1452,
+  "elapsed": 11.899396657943726,
+  "error": null
+}

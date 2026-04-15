@@ -1,0 +1,27 @@
+{
+  "wine_id": "ebde8e00-350b-40fc-a762-0987259419ac",
+  "wine_name": "Howard Park Leston Shiraz, Margaret River",
+  "tier": "C",
+  "model": "anthropic/claude-sonnet-4.6",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.625,
+  "wrong_facts": [
+    "Hook and wine_summary place Leston Vineyard in the 'southern end of Margaret River' — ground truth confirms it's in Wilyabrup, which is in the northern sub-region of Margaret River",
+    "Claims Howard Park has been making Leston Shiraz 'since the early 2000s' — vines were planted in 1996 and the label likely started earlier than implied, though 2003 is the earliest vintage in the data",
+    "Vinification summary says 'French oak rather than American' — ground truth says 95% French, 5% American, which is mostly correct but the output implies exclusively French",
+    "States fermentation is 'almost certainly in open-top tanks' — ground truth confirms 10% whole bunch fermentation, which the output misses entirely"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "AUD $30-45 price range and USD $20-30 equivalent not in context data",
+    "12-18 months barrel maturation stated as estimate — ground truth says 18 months specifically with 30% new oak",
+    "Storage temperature 12-14°C is fabricated detail",
+    "Drinking windows 2026-2028 fabricated"
+  ],
+  "reasoning": "The most damaging error is the geographic misplacement of Leston Vineyard. Ground truth clearly states it's in Wilyabrup, which is in the northern part of Margaret River — the output builds its entire narrative around a 'southern Margaret River, cooler-climate' thesis that is fundamentally wrong. This error appears in the hook and pervades the terroir section, wine summary, and comparable wines rationale. The voice is excellent — direct, opinionated, specific, no banned words, great food pairings with reasoning. Specificity is strong with named soils, rotundone chemistry, and real comparable wines. But the core geographic claim being wrong undermines the entire piece's credibility. Several numbers are fabricated (price, barrel time estimate, storage temp) though the barrel time estimate of 12-18 months happens to bracket the true 18 months. The hook contains a provably wrong claim about southern Margaret River location, triggering the hard cap.",
+  "judge_tokens_in": 3998,
+  "judge_tokens_out": 526
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D006",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Although the names 'La Strada' and 'Strada' are likely formatting variations of the same cuv\u00e9e, the grape compositions differ significantly (100% Merlot versus a Merlot and Cot blend). Per the explicit classification rules, different grape varieties always indicate distinct wines regardless of shared producer or similar naming.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Although the names 'La Strada' and 'Strada' are likely formatting variations of the same cuv\u00e9e, the grape compositions differ significantly (100% Merlot versus a Merlot and Cot blend). Per the explicit classification rules, different grape varieties always indicate distinct wines regardless of shared producer or similar naming.",
+  "parse_ok": true,
+  "tokens_in": 456,
+  "tokens_out": 1045,
+  "elapsed": 20.490421056747437,
+  "error": null
+}

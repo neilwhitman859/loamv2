@@ -1,0 +1,13 @@
+{
+  "pair_id": "C006",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white Brut sparkling wine while Wine B is a Brut Ros\u00e9 sparkling wine. The 'Rose' designation explicitly indicates a different color/style of wine. White vs Ros\u00e9 are always considered different wines even when from the same producer and vineyard.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white Brut sparkling wine while Wine B is a Brut Ros\u00e9 sparkling wine. The 'Rose' designation explicitly indicates a different color/style of wine. White vs Ros\u00e9 are always considered different wines even when from the same producer and vineyard.",
+  "parse_ok": true,
+  "tokens_in": 525,
+  "tokens_out": 85,
+  "elapsed": 3.332528591156006,
+  "error": null
+}

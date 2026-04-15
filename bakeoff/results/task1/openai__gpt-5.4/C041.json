@@ -1,0 +1,13 @@
+{
+  "pair_id": "C041",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different classification tiers from the same producer and grape: one is Reserva and the other is Gran Reserva. Per the rules, differences in Reserva/Gran Reserva indicate distinct bottlings that consumers would encounter separately, even when producer, color, grape, and appellation match.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different classification tiers from the same producer and grape: one is Reserva and the other is Gran Reserva. Per the rules, differences in Reserva/Gran Reserva indicate distinct bottlings that consumers would encounter separately, even when producer, color, grape, and appellation match.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 77,
+  "elapsed": 1.9848380088806152,
+  "error": null
+}

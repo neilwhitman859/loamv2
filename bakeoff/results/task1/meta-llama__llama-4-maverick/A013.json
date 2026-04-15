@@ -1,0 +1,13 @@
+{
+  "pair_id": "A013",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is made from Pinot Noir and Canari Noir grapes, while Wine B is specifically labeled as Pinot Gris, indicating different grape varieties. The difference in grape composition between the two wines suggests they are different wines. The producer's use of the same vineyard name 'Lerchenberg' for different grape varieties indicates they make multiple wines from that vineyard.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is made from Pinot Noir and Canari Noir grapes, while Wine B is specifically labeled as Pinot Gris, indicating different grape varieties. The difference in grape composition between the two wines suggests they are different wines. The producer's use of the same vineyard name 'Lerchenberg' for different grape varieties indicates they make multiple wines from that vineyard.",
+  "parse_ok": true,
+  "tokens_in": 504,
+  "tokens_out": 95,
+  "elapsed": 1.4462578296661377,
+  "error": null
+}

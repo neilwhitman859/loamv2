@@ -1,0 +1,13 @@
+{
+  "pair_id": "D022",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"Duo de la Tour Blanche and Brumes de La Tour Blanche are distinct cuv\u00e9es produced by Ch\u00e2teau La Tour Blanche. They represent different wine labels within the producer's portfolio, as evidenced by their unique LWIN identifiers.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Duo de la Tour Blanche and Brumes de La Tour Blanche are distinct cuv\u00e9es produced by Ch\u00e2teau La Tour Blanche. They represent different wine labels within the producer's portfolio, as evidenced by their unique LWIN identifiers.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 74,
+  "elapsed": 2.112826347351074,
+  "error": null
+}

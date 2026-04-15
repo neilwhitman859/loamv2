@@ -1,0 +1,13 @@
+{
+  "pair_id": "B027",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a white still wine while Wine B is explicitly labeled as Ros\u00e9 Brut (sparkling). Different colors and different wine types (still vs sparkling) are definitive indicators of distinct bottlings that consumers would encounter separately.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a white still wine while Wine B is explicitly labeled as Ros\u00e9 Brut (sparkling). Different colors and different wine types (still vs sparkling) are definitive indicators of distinct bottlings that consumers would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 481,
+  "tokens_out": 78,
+  "elapsed": 1.9539289474487305,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B049",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is white and Wine B is red, representing distinct color styles from the same producer. Different colors (white vs red) constitute different wines that consumers would encounter and purchase separately, even when sharing the same base name.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is white and Wine B is red, representing distinct color styles from the same producer. Different colors (white vs red) constitute different wines that consumers would encounter and purchase separately, even when sharing the same base name.",
+  "parse_ok": true,
+  "tokens_in": 478,
+  "tokens_out": 73,
+  "elapsed": 10.573574542999268,
+  "error": null
+}

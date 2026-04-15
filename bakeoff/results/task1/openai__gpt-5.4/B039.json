@@ -1,0 +1,13 @@
+{
+  "pair_id": "B039",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines because they differ in both color and style designation. Wine A is a ros\u00e9 Marche wine, while Wine B is a white sparkling Marche Brut made from Mostosa, which would be a separate bottling consumers encounter independently.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines because they differ in both color and style designation. Wine A is a ros\u00e9 Marche wine, while Wine B is a white sparkling Marche Brut made from Mostosa, which would be a separate bottling consumers encounter independently.",
+  "parse_ok": true,
+  "tokens_in": 412,
+  "tokens_out": 70,
+  "elapsed": 2.3020823001861572,
+  "error": null
+}

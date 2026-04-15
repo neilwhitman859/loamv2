@@ -1,0 +1,13 @@
+{
+  "pair_id": "C016",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Although both wines are made by Bartolo Mascarello from 100% Nebbiolo, they come from different appellations: Barolo and Barbaresco. These are distinct DOCG designations representing different geographic areas and separate bottlings that a consumer would encounter separately. Different appellation = different wine, regardless of shared grape variety and producer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Although both wines are made by Bartolo Mascarello from 100% Nebbiolo, they come from different appellations: Barolo and Barbaresco. These are distinct DOCG designations representing different geographic areas and separate bottlings that a consumer would encounter separately. Different appellation = different wine, regardless of shared grape variety and producer.",
+  "parse_ok": true,
+  "tokens_in": 538,
+  "tokens_out": 98,
+  "elapsed": 4.91601300239563,
+  "error": null
+}

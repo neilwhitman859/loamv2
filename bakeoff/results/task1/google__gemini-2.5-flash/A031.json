@@ -1,0 +1,13 @@
+{
+  "pair_id": "A031",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer and core name 'Eclat de Calcaire'. The addition of 'Pinot Noir' to Wine B is likely a varietal suffix, indicating the grape used for the wine, rather than a distinct bottling, especially since both are red wines. This is a common naming convention for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer and core name 'Eclat de Calcaire'. The addition of 'Pinot Noir' to Wine B is likely a varietal suffix, indicating the grape used for the wine, rather than a distinct bottling, especially since both are red wines. This is a common naming convention for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 88,
+  "elapsed": 1.6717064380645752,
+  "error": null
+}

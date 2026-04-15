@@ -1,0 +1,13 @@
+{
+  "pair_id": "D037",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The producer and wine color are identical. The names 'Blend 105 Red Table' and 'Blend 105 Red Table Wine' differ only by the addition of the word 'Wine', which is a minor and common formatting variation that does not signify a different product.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The producer and wine color are identical. The names 'Blend 105 Red Table' and 'Blend 105 Red Table Wine' differ only by the addition of the word 'Wine', which is a minor and common formatting variation that does not signify a different product.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 1088,
+  "elapsed": 11.295944929122925,
+  "error": null
+}

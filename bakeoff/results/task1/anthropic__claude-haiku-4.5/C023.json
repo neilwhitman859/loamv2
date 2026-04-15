@@ -1,0 +1,13 @@
+{
+  "pair_id": "C023",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Bleasdale), same appellation (Langhorne Creek), same color (red), and same grape variety (Syrah). Wine B simply appends the varietal suffix 'Shiraz' to the name, which is a common naming convention variation for the same wine rather than a distinct bottling.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Bleasdale), same appellation (Langhorne Creek), same color (red), and same grape variety (Syrah). Wine B simply appends the varietal suffix 'Shiraz' to the name, which is a common naming convention variation for the same wine rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 513,
+  "tokens_out": 102,
+  "elapsed": 2.3884778022766113,
+  "error": null
+}

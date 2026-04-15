@@ -1,0 +1,13 @@
+{
+  "pair_id": "A008",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from producer Cuilleron and are ros\u00e9. The names 'Sybel' and 'Sybel Syrah' differ only by a varietal suffix, which per rules usually indicates the same wine where the shorter name is an abbreviation. Wine A grapes (Syrah, Durif) are consistent with a Syrah-led blend often labeled as 'Syrah'.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from producer Cuilleron and are ros\u00e9. The names 'Sybel' and 'Sybel Syrah' differ only by a varietal suffix, which per rules usually indicates the same wine where the shorter name is an abbreviation. Wine A grapes (Syrah, Durif) are consistent with a Syrah-led blend often labeled as 'Syrah'.",
+  "parse_ok": true,
+  "tokens_in": 567,
+  "tokens_out": 804,
+  "elapsed": 10.61100459098816,
+  "error": null
+}

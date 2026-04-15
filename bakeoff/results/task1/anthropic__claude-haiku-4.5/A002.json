@@ -1,0 +1,13 @@
+{
+  "pair_id": "A002",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Firestone producer, same varietal (Syrah), same color (red), and represent the same vineyard/cuv\u00e9e designation (Clone 174). Wine B simply includes the varietal suffix 'Syrah' while Wine A omits it\u2014this is a formatting difference consistent with the same wine being referenced with and without the grape variety appended.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Firestone producer, same varietal (Syrah), same color (red), and represent the same vineyard/cuv\u00e9e designation (Clone 174). Wine B simply includes the varietal suffix 'Syrah' while Wine A omits it\u2014this is a formatting difference consistent with the same wine being referenced with and without the grape variety appended.",
+  "parse_ok": true,
+  "tokens_in": 482,
+  "tokens_out": 108,
+  "elapsed": 7.671658515930176,
+  "error": null
+}

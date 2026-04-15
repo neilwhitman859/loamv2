@@ -1,0 +1,13 @@
+{
+  "pair_id": "C039",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both are Carmenere reds from Caballo Dorado in Valle de Colchagua, but Wine A is Gran Reserva while Wine B is Reserva, representing different classification tiers which indicate distinct bottlings per the rules. Different LWIN numbers (2440118 vs 2440235) confirm they are separate wines. No evidence suggests the tiers are interchangeable or abbreviated forms of the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both are Carmenere reds from Caballo Dorado in Valle de Colchagua, but Wine A is Gran Reserva while Wine B is Reserva, representing different classification tiers which indicate distinct bottlings per the rules. Different LWIN numbers (2440118 vs 2440235) confirm they are separate wines. No evidence suggests the tiers are interchangeable or abbreviated forms of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 589,
+  "tokens_out": 477,
+  "elapsed": 4.021597623825073,
+  "error": null
+}

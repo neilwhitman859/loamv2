@@ -1,0 +1,13 @@
+{
+  "pair_id": "C003",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Brut and Brut Nature represent distinct sweetness classifications in sparkling wine production, with Brut Nature containing minimal to no added dosage while Brut contains up to 12 g/L residual sugar. These are separate bottlings that consumers would encounter as distinct products. The different LWINs (2774501 vs 2774514) confirm they are registered as separate wines.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Brut and Brut Nature represent distinct sweetness classifications in sparkling wine production, with Brut Nature containing minimal to no added dosage while Brut contains up to 12 g/L residual sugar. These are separate bottlings that consumers would encounter as distinct products. The different LWINs (2774501 vs 2774514) confirm they are registered as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 114,
+  "elapsed": 2.6684799194335938,
+  "error": null
+}

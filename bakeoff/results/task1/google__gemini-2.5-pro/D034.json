@@ -1,0 +1,13 @@
+{
+  "pair_id": "D034",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines have different vineyard designations. Wine A is from the specific 'Neuberg' parcel within the larger 'Bollenberg' lieu-dit, while Wine B is a more general 'Bollenberg' bottling. These represent distinct bottlings from different plots of land and are considered separate wines, which is confirmed by their different LWINs.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different vineyard designations. Wine A is from the specific 'Neuberg' parcel within the larger 'Bollenberg' lieu-dit, while Wine B is a more general 'Bollenberg' bottling. These represent distinct bottlings from different plots of land and are considered separate wines, which is confirmed by their different LWINs.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 1333,
+  "elapsed": 14.95019793510437,
+  "error": null
+}

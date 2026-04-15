@@ -1,0 +1,13 @@
+{
+  "pair_id": "B046",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different bottlings in the producer\u2019s 'Polifonia De Purcari' Note series: Note #2 vs Note #3 are distinct cuv\u00e9es, not naming variants. The records also differ in color (red vs white), which by itself makes them different wines, and they have different LWINs.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different bottlings in the producer\u2019s 'Polifonia De Purcari' Note series: Note #2 vs Note #3 are distinct cuv\u00e9es, not naming variants. The records also differ in color (red vs white), which by itself makes them different wines, and they have different LWINs.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 87,
+  "elapsed": 3.320591688156128,
+  "error": null
+}

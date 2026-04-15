@@ -1,0 +1,28 @@
+{
+  "wine_id": "1a19854d-d7fb-4046-a2ba-9c2391b6026a",
+  "wine_name": "Terre del Barolo Arnaldo Rivera, Barolo",
+  "tier": "B",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Vinification claims wine is aged in large Slavonian oak botti grandi, but ground truth shows 20 months in French wood (25% used tonneaux, 50% 25hL oak casks, 25% 50hL oak casks)",
+    "Maceration described as 'typically long, around 20-30 days' but ground truth shows 13 days skin fermentation",
+    "Claims 300-plus members — plausible but unverifiable from context data",
+    "Monforte d'Alba listed as a source commune but ground truth lists Serralunga d'Alba, Castiglione Falletto, Diano d'Alba, La Morra, and Verduno"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "300-plus members",
+    "20-30 days maceration",
+    "$45-$60 price range",
+    "8 years post-vintage drinking window",
+    "15-20+ years aging"
+  ],
+  "reasoning": "The output is exceptionally well-written with strong voice, excellent specificity on Barolo geology (Tortonian vs Helvetian soils, Lequio Formation), and genuinely useful comparable wines and food pairings. However, it makes two significant factual errors about vinification: it claims Slavonian oak botti grandi when the wine actually uses French wood in various formats, and it estimates 20-30 day maceration when the actual is 13 days. These are specific, verifiable claims that contradict ground truth. The naming origin for Arnaldo Rivera and the 1958 founding date are correct per ground truth, which is good. The fabricated price range and member count are less damaging but still unsourced. The Slavonian oak claim is a common assumption for traditional Barolo but wrong here, and the maceration length is presented as hedged ('typically') but still misleading. Multiple fabricated numbers are present but most are hedged estimates rather than precise claims, so I don't apply the hard 1.5 cap — the maceration range and oak type are presented as general descriptions rather than precise tech-sheet numbers, though they are still wrong.",
+  "judge_tokens_in": 3987,
+  "judge_tokens_out": 520
+}

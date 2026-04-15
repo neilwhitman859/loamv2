@@ -1,0 +1,13 @@
+{
+  "pair_id": "A006",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Radio-Coteau's Clos Platt vineyard and are Pinot Noir. Wine A omits the varietal suffix while Wine B includes it\u2014this is a standard naming abbreviation pattern. The matching producer, vineyard, grape variety, and color confirm these represent the same bottling.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Radio-Coteau's Clos Platt vineyard and are Pinot Noir. Wine A omits the varietal suffix while Wine B includes it\u2014this is a standard naming abbreviation pattern. The matching producer, vineyard, grape variety, and color confirm these represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 97,
+  "elapsed": 1.864499807357788,
+  "error": null
+}

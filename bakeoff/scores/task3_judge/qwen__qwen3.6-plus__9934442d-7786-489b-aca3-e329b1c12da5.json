@@ -1,0 +1,34 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "qwen/qwen3.6-plus",
+  "correctness": 2.0,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 3.075,
+  "wrong_facts": [
+    "Hook claims 'ancient granite and gneissic sandy loams' — ground truth says gravelly loam soils, no mention of gneissic geology",
+    "Claims 'lateritic gravelly and marri loams' as soil type — ground truth says gravelly loam soils; 'lateritic' and 'marri loams' are unverified additions",
+    "Claims wild yeast fermentation and whole-bunch inclusion — no context data supports this and ground truth doesn't mention it",
+    "Claims 'shorter maceration times' for 2011 — fabricated winemaking detail",
+    "States '$35–$45 AUD' price range — no pricing data was provided",
+    "Claims 2011 had 'higher-than-average rainfall' — unverifiable specific vintage claim",
+    "Claims 'harvesting earlier' in 2011 — fabricated vintage-specific winemaking decision",
+    "Compares to Bellarmine Estate Pinot Noir and Leeuwin Estate Art Series Pinot — Leeuwin Estate Art Series is primarily known for Chardonnay and Cabernet, not Pinot Noir",
+    "States aging potential of 12 years for a bronze-medal entry-level Pinot — implausible for a second-label wine",
+    "Ground truth says 10 months French oak — output never mentions this verified fact"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$35-$45 AUD price",
+    "12 years aging potential",
+    "10°C diurnal temperature drop",
+    "20 minutes decanting time",
+    "drinking window 2-10 years"
+  ],
+  "reasoning": "The output fabricates numerous specific claims not supported by context data or ground truth: soil types (gneissic, lateritic, marri loams vs. verified gravelly loam), winemaking details (wild yeast, whole-bunch, shorter maceration), pricing ($35-$45 AUD), and vintage conditions (higher rainfall, earlier harvest). The hook contains the fabricated 'gneissic sandy loams' claim. The Leeuwin Estate Art Series comparison is misleading as that range is famous for Chardonnay, not Pinot. The output completely misses the verified 10 months French oak aging. While the voice is reasonably direct and the specificity is high in terms of named details, many of those details appear fabricated. The fabricated price triggers the hard penalty for fabricated numbers, capping correctness at 1.5, but I'm giving 2.0 because some claims (Plantagenet established late 1960s, Omrah as entry-level label) do match ground truth.",
+  "judge_tokens_in": 3363,
+  "judge_tokens_out": 637
+}

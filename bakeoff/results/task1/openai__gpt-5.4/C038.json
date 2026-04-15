@@ -1,0 +1,13 @@
+{
+  "pair_id": "C038",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.87,\"reasoning\":\"\\\"Risco\\\" appears to be a specific cuv\u00e9e/vineyard designation, while \\\"Reserva Tinto\\\" is a more generic reserva red designation. Since these are distinct product names under the same producer and both have separate LWINs, they are most likely separate bottlings rather than formatting variants of the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.87,
+  "reasoning": "\"Risco\" appears to be a specific cuv\u00e9e/vineyard designation, while \"Reserva Tinto\" is a more generic reserva red designation. Since these are distinct product names under the same producer and both have separate LWINs, they are most likely separate bottlings rather than formatting variants of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 87,
+  "elapsed": 2.748526096343994,
+  "error": null
+}

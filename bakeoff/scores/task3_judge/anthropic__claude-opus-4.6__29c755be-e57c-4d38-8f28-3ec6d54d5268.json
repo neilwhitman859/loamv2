@@ -1,0 +1,24 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 5.0,
+  "composite": 4.25,
+  "wrong_facts": [
+    "Hook claims Gigondas legally requires at least 50% Grenache for reds — the actual AOC rules require a minimum of 50% Grenache but allow exceptions/derogations, and this wine exists as 100% Syrah within the appellation, so the framing of 'bending the rules' is misleading though not entirely wrong",
+    "Claims biodynamic and organic certifications — the context data does not mention biodynamic or organic certification, and this is not confirmed in the ground truth",
+    "States Les Routes 'likely sources from higher-elevation parcels where clay-limestone gives way to stony marl and decomposed limestone scree' — ground truth says the vineyard is on clay with gravel and limestone colluviums near the Hautes Garrigues, not stony marl",
+    "Price range of $30-$45 is fabricated — no pricing data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$30-$45 retail price range is fabricated with no source data"
+  ],
+  "reasoning": "The output is impressively written with strong voice, excellent specificity, and genuinely useful comparisons and food pairings. However, there are several factual concerns: the biodynamic/organic certification claim appears repeatedly and is not supported by context data or ground truth; the price range is fabricated; the soil description for Les Routes doesn't match ground truth (clay with gravel and limestone colluviums, not stony marl); and the hook's claim about Gigondas requiring 50% Grenache, while broadly correct about the appellation rules, creates a misleading framing since the wine clearly exists within the AOC. The output misses key ground truth details like the Serine clone provenance from Chave via Reynaud and winemaker Julien Bréchet. The fabricated price range triggers the hard penalty consideration, though it's a plausible estimate rather than a precise technical number like pH or blend %. The voice is excellent — direct, opinionated, specific, with no banned words and strong food pairings.",
+  "judge_tokens_in": 4123,
+  "judge_tokens_out": 522
+}

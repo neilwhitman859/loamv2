@@ -1,0 +1,13 @@
+{
+  "pair_id": "C026",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":1.0,\"reasoning\":\"Both wines share the same producer (Ferrari) and appellation (Trento), with similar names 'Maximum Brut' vs 'Maximum Brut Rose'. However, Wine A is explicitly white while Wine B is ros\u00e9, representing different color variants. The rules specify that ros\u00e9 vs non-ros\u00e9 (white) from the same producer constitutes different wines, as they are distinct bottlings consumers encounter separately, confirmed by different LWINs.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Ferrari) and appellation (Trento), with similar names 'Maximum Brut' vs 'Maximum Brut Rose'. However, Wine A is explicitly white while Wine B is ros\u00e9, representing different color variants. The rules specify that ros\u00e9 vs non-ros\u00e9 (white) from the same producer constitutes different wines, as they are distinct bottlings consumers encounter separately, confirmed by different LWINs.",
+  "parse_ok": true,
+  "tokens_in": 575,
+  "tokens_out": 599,
+  "elapsed": 4.525826692581177,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C008",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines share the same producer and cuv\u00e9e name ('Clos du Moulin'), one is a standard white Brut and the other is a Ros\u00e9 Brut. A white sparkling wine and a ros\u00e9 sparkling wine are distinct products, which is confirmed by the provided color metadata ('white' vs 'rose').\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines share the same producer and cuv\u00e9e name ('Clos du Moulin'), one is a standard white Brut and the other is a Ros\u00e9 Brut. A white sparkling wine and a ros\u00e9 sparkling wine are distinct products, which is confirmed by the provided color metadata ('white' vs 'rose').",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 1094,
+  "elapsed": 11.535221099853516,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A026",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.98, \"reasoning\": \"Wine B includes the varietal 'Semillon' which is the specific grape used for the 'Lovedale' vineyard bottling. Wine A is simply an abbreviated name for the same wine, as Mount Pleasant only produces one 'Lovedale' white wine, which is always 100% Semillon.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Wine B includes the varietal 'Semillon' which is the specific grape used for the 'Lovedale' vineyard bottling. Wine A is simply an abbreviated name for the same wine, as Mount Pleasant only produces one 'Lovedale' white wine, which is always 100% Semillon.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 83,
+  "elapsed": 1.6062588691711426,
+  "error": null
+}

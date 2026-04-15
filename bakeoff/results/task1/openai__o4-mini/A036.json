@@ -1,0 +1,13 @@
+{
+  "pair_id": "A036",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.92,\"reasoning\":\"\u2018DB Family Selection\u2019 is a proprietary white blend of Pinot Noir and Chardonnay, whereas \u2018DB Family Selection Sauvignon Blanc\u2019 is a single\u2010varietal Sauvignon Blanc. Different grape composition indicates they are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.92,
+  "reasoning": "\u2018DB Family Selection\u2019 is a proprietary white blend of Pinot Noir and Chardonnay, whereas \u2018DB Family Selection Sauvignon Blanc\u2019 is a single\u2010varietal Sauvignon Blanc. Different grape composition indicates they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 187,
+  "elapsed": 2.827162504196167,
+  "error": null
+}

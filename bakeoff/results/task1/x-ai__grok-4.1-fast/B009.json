@@ -1,0 +1,13 @@
+{
+  "pair_id": "B009",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is explicitly white while Wine B is ros\u00e9, indicating different colors and styles, which always means different wines per the rules. Even though the names 'Alma Grande Cuvee' and 'Gran Cuvee Alma' from the same producer Bellavista appear to be naming variations of a cuv\u00e9e, the color difference overrides any potential match. Ros\u00e9 and white wines from the same producer are distinct bottlings consumers encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is explicitly white while Wine B is ros\u00e9, indicating different colors and styles, which always means different wines per the rules. Even though the names 'Alma Grande Cuvee' and 'Gran Cuvee Alma' from the same producer Bellavista appear to be naming variations of a cuv\u00e9e, the color difference overrides any potential match. Ros\u00e9 and white wines from the same producer are distinct bottlings consumers encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 546,
+  "tokens_out": 424,
+  "elapsed": 4.346733570098877,
+  "error": null
+}

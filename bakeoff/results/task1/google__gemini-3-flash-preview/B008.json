@@ -1,0 +1,13 @@
+{
+  "pair_id": "B008",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records represent different grape varieties (Cabernet Sauvignon vs. Sauvignon Blanc) and different wine colors (Red vs. White). Under the provided rules, different grapes always constitute different wines, even when produced under the same brand line.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent different grape varieties (Cabernet Sauvignon vs. Sauvignon Blanc) and different wine colors (Red vs. White). Under the provided rules, different grapes always constitute different wines, even when produced under the same brand line.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 70,
+  "elapsed": 1.6986172199249268,
+  "error": null
+}

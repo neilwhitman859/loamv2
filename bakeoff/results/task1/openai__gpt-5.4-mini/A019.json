@@ -1,0 +1,13 @@
+{
+  "pair_id": "A019",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Wine A is a blend of Pinot Noir and Merlot Noir, while Wine B is explicitly Pinot Noir. Since different grapes/blends indicate distinct bottlings, these are not the same wine. The shared producer and similar base name are not enough to override the grape composition difference.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Wine A is a blend of Pinot Noir and Merlot Noir, while Wine B is explicitly Pinot Noir. Since different grapes/blends indicate distinct bottlings, these are not the same wine. The shared producer and similar base name are not enough to override the grape composition difference.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 77,
+  "elapsed": 2.07995343208313,
+  "error": null
+}

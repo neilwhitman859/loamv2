@@ -1,0 +1,13 @@
+{
+  "pair_id": "C031",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.7, \"reasoning\": \"Both wines are Bonnaire Blanc de Blancs Champagnes, with Wine A simply having 'Brut' appended as a sweetness/style descriptor. For Champagne, 'Brut' is the standard default style, and 'Blanc de Blancs' without a sweetness designation typically implies Brut, so these likely represent the same bottling with one record omitting the explicit Brut designation. However, the different LWIN codes introduce some uncertainty, as Bonnaire could potentially have distinct cuv\u00e9es.\"}",
+  "verdict": "SAME",
+  "confidence": 0.7,
+  "reasoning": "Both wines are Bonnaire Blanc de Blancs Champagnes, with Wine A simply having 'Brut' appended as a sweetness/style descriptor. For Champagne, 'Brut' is the standard default style, and 'Blanc de Blancs' without a sweetness designation typically implies Brut, so these likely represent the same bottling with one record omitting the explicit Brut designation. However, the different LWIN codes introduce some uncertainty, as Bonnaire could potentially have distinct cuv\u00e9es.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 143,
+  "elapsed": 5.037901163101196,
+  "error": null
+}

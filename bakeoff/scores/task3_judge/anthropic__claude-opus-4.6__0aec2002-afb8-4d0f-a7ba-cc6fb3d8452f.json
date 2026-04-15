@@ -1,0 +1,39 @@
+{
+  "wine_id": "0aec2002-afb8-4d0f-a7ba-cc6fb3d8452f",
+  "wine_name": "Fritz Haag Brauneberger Juffer Sonnenuhr Riesling Auslese, Mosel",
+  "tier": "A",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 5.0,
+  "usefulness": 4.5,
+  "composite": 3.95,
+  "wrong_facts": [
+    "The claim that the sundial has been mounted on the slope 'since the 18th century' is not verifiable from the context data or ground truth — the ground truth only says 'Sonnenuhr' means sundial referring to the sundial on the hillside, without specifying when it was placed",
+    "Fifth-generation estate claim is unverifiable from context data",
+    "Wilhelm Haag putting the domaine on the modern map in the 1960s is unverifiable",
+    "Oliver Haag running the estate is unverifiable from context data",
+    "Around 8 hectares is unverifiable",
+    "South-southwest aspect — ground truth says 'most south-facing' without specifying southwest"
+  ],
+  "banned_words_found": [
+    "genuine",
+    "world-class"
+  ],
+  "fabricated_numbers": [
+    "83° Oechsle minimum",
+    "195 g/L sugar at harvest",
+    "80-100 g/L residual sugar",
+    "9 g/L total acidity",
+    "120-200 meters elevation",
+    "60% gradient",
+    "400 million years for Devonian slate",
+    "1,000-liter Fuder cask size",
+    "$40-$70 retail price",
+    "$50-$90 for Climens/Suduiraut",
+    "$150-$400 for Egon Müller Auslese"
+  ],
+  "reasoning": "The output is extraordinarily detailed and specific, with strong voice and genuinely useful comparisons and food pairings. However, it fabricates numerous specific numbers not present in the context data — Oechsle levels, residual sugar, total acidity, elevation, gradient, prices, and competitor prices. Many of these numbers are plausibly correct based on general wine knowledge (Devonian slate IS ~400 million years old, Fuder ARE 1,000L, Auslese minimum IS 83° Oechsle), which prevents a lower correctness score, but the sheer volume of unsourced specifics is concerning. The value_assessment section contains two banned words ('genuine bargains in world-class sweet wine'), capping voice at 2.0. The hook's '18th century' sundial dating is unverifiable but not provably wrong. The ABV figures (7-7.5%) correctly match the context data.",
+  "judge_tokens_in": 4231,
+  "judge_tokens_out": 552
+}

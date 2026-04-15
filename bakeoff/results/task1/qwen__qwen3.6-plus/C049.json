@@ -1,0 +1,13 @@
+{
+  "pair_id": "C049",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records explicitly list different colors (white vs. red), which automatically classifies them as distinct wines per the provided rules. They also have different LWIN identifiers and differ in sweetness/style designations (Brut Nature vs. Brut), confirming they are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records explicitly list different colors (white vs. red), which automatically classifies them as distinct wines per the provided rules. They also have different LWIN identifiers and differ in sweetness/style designations (Brut Nature vs. Brut), confirming they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 468,
+  "tokens_out": 1144,
+  "elapsed": 22.083847045898438,
+  "error": null
+}

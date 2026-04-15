@@ -26,115 +26,28 @@
         "pct": 2
       },
       {
-        "grape": "Mataro\nOrganically Grown",
-        "pct": 1
-      },
-      {
-        "grape": "Winemaker Tasting Notes\nNose",
-        "pct": 4
-      },
-      {
-        "grape": "Natural",
-        "pct": 100
-      },
-      {
-        "grape": "Zinfandel",
-        "pct": 76
-      },
-      {
-        "grape": "Petite Sirah",
-        "pct": 14
-      },
-      {
-        "grape": "Carignane",
-        "pct": 7
-      },
-      {
-        "grape": "Alicante Bouschet",
-        "pct": 2
-      },
-      {
-        "grape": "Mataro",
-        "pct": 1
-      },
-      {
-        "grape": "Petite Sirah",
-        "pct": 14
-      },
-      {
-        "grape": "Zinfandel",
-        "pct": 76
-      },
-      {
-        "grape": "Petite Sirah",
-        "pct": 14
-      },
-      {
-        "grape": "Carignane",
-        "pct": 7
-      },
-      {
-        "grape": "Alicante Bouschet",
-        "pct": 2
-      },
-      {
-        "grape": "Mataro",
-        "pct": 1
-      },
-      {
-        "grape": "Zinfandel",
-        "pct": 76
-      },
-      {
-        "grape": "Petite Sirah",
-        "pct": 14
-      },
-      {
-        "grape": "Carignane",
-        "pct": 7
-      },
-      {
-        "grape": "Alicante Bouschet",
-        "pct": 2
-      },
-      {
-        "grape": "Mataro",
-        "pct": 1
-      },
-      {
-        "grape": "Zinfandel",
-        "pct": 76
-      },
-      {
-        "grape": "Petite Sirah",
-        "pct": 14
-      },
-      {
-        "grape": "Carignane",
-        "pct": 7
-      },
-      {
-        "grape": "Alicante Bouschet",
-        "pct": 2
-      },
-      {
         "grape": "Mataro",
         "pct": 1
       }
     ],
     "oak": {
-      "origin": "American",
-      "vessel": "barrel"
+      "vessel": "air-dried american oak barrels",
+      "months": 16,
+      "new_pct": 19.0,
+      "origin": "american"
     },
     "cases_produced": null,
     "chemistry": {
       "ph": 3.66,
-      "ta_g_l": 7.39
+      "ta_g_l": 7.39,
+      "rs_g_l": null,
+      "so2_total_mg_l": null
     },
-    "winemaker": "Tasting Notes\nNose of",
+    "winemaker": null,
     "farming": "organic"
   },
-  "data_richness": 7,
+  "data_richness": 6,
   "total_fields": 8,
-  "text_length": 9195
+  "text_length": 9195,
+  "consensus_models": 14
 }

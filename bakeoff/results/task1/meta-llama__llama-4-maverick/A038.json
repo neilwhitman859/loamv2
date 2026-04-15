@@ -1,0 +1,13 @@
+{
+  "pair_id": "A038",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines have the same name 'The Bernard Series Bush Vine' and 'The Bernard Series Bush Vine Pinotage', with the latter having the grape 'Pinotage' appended, which is likely an abbreviation difference. The producer 'Bellingham' is the same and the color is red for Wine A. Wine B's grape is not explicitly stated but is likely Pinotage given the name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines have the same name 'The Bernard Series Bush Vine' and 'The Bernard Series Bush Vine Pinotage', with the latter having the grape 'Pinotage' appended, which is likely an abbreviation difference. The producer 'Bellingham' is the same and the color is red for Wine A. Wine B's grape is not explicitly stated but is likely Pinotage given the name.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 102,
+  "elapsed": 1.4743900299072266,
+  "error": null
+}

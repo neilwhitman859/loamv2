@@ -1,0 +1,13 @@
+{
+  "pair_id": "D026",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"The addition of 'Red' to the name is a common varietal suffix used to clarify the wine type, and both records share the same producer and color. As Cupcake Vineyards does not produce a non-red version of this specific cuv\u00e9e, the two names refer to the same bottling.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The addition of 'Red' to the name is a common varietal suffix used to clarify the wine type, and both records share the same producer and color. As Cupcake Vineyards does not produce a non-red version of this specific cuv\u00e9e, the two names refer to the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 87,
+  "elapsed": 3.7185511589050293,
+  "error": null
+}

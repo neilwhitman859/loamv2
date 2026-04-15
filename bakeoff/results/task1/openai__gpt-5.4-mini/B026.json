@@ -1,0 +1,13 @@
+{
+  "pair_id": "B026",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct bottlings from Cattier: Wine A is Brut Antique Ros\u00e9, while Wine B is Brut Antique (white). The color difference alone makes them different wines under the rules, and the LWINs are also different.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct bottlings from Cattier: Wine A is Brut Antique Ros\u00e9, while Wine B is Brut Antique (white). The color difference alone makes them different wines under the rules, and the LWINs are also different.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 70,
+  "elapsed": 2.3659377098083496,
+  "error": null
+}

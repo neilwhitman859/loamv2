@@ -1,0 +1,13 @@
+{
+  "pair_id": "C042",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines have different Spanish aging classifications, which are legally defined and represent distinct bottlings. Wine A is a 'Gran Reserva' and Wine B is a 'Reserva'. These tiers have different minimum aging requirements in barrel and bottle, making them separate products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different Spanish aging classifications, which are legally defined and represent distinct bottlings. Wine A is a 'Gran Reserva' and Wine B is a 'Reserva'. These tiers have different minimum aging requirements in barrel and bottle, making them separate products.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 1073,
+  "elapsed": 10.790191411972046,
+  "error": null
+}

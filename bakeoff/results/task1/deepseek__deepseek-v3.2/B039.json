@@ -1,0 +1,13 @@
+{
+  "pair_id": "B039",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.9, \"reasoning\": \"Wine A is a ros\u00e9, while Wine B is a white wine with the specified grape 'MOSTOSA'; different color and the explicit grape designation for Wine B indicate distinct bottlings. Additionally, Wine B is labeled 'Brut', suggesting a sparkling style, which further distinguishes it from a likely still ros\u00e9.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "Wine A is a ros\u00e9, while Wine B is a white wine with the specified grape 'MOSTOSA'; different color and the explicit grape designation for Wine B indicate distinct bottlings. Additionally, Wine B is labeled 'Brut', suggesting a sparkling style, which further distinguishes it from a likely still ros\u00e9.",
+  "parse_ok": true,
+  "tokens_in": 436,
+  "tokens_out": 90,
+  "elapsed": 9.88413119316101,
+  "error": null
+}

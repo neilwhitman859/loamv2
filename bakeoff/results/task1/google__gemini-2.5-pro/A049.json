@@ -1,0 +1,13 @@
+{
+  "pair_id": "A049",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The producer is the same, and the core wine name 'Arenarium' is identical. Wine B simply appends the grape variety, 'Arneis', which is the same grape listed for Wine A. This is a classic case of a naming variation where the shorter name is an abbreviation for the full name including the varietal.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The producer is the same, and the core wine name 'Arenarium' is identical. Wine B simply appends the grape variety, 'Arneis', which is the same grape listed for Wine A. This is a classic case of a naming variation where the shorter name is an abbreviation for the full name including the varietal.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 1230,
+  "elapsed": 12.706315755844116,
+  "error": null
+}

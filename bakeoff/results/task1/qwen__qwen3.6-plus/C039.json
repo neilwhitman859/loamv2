@@ -1,0 +1,13 @@
+{
+  "pair_id": "C039",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The records differ in classification tier, with Wine A designated as Gran Reserva and Wine B as Reserva. Per the guidelines, different classification tiers represent distinct bottlings with separate aging requirements and quality levels. This distinction is further confirmed by their unique LWIN identifiers, which catalog them as separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The records differ in classification tier, with Wine A designated as Gran Reserva and Wine B as Reserva. Per the guidelines, different classification tiers represent distinct bottlings with separate aging requirements and quality levels. This distinction is further confirmed by their unique LWIN identifiers, which catalog them as separate products.",
+  "parse_ok": true,
+  "tokens_in": 486,
+  "tokens_out": 1451,
+  "elapsed": 27.771500825881958,
+  "error": null
+}

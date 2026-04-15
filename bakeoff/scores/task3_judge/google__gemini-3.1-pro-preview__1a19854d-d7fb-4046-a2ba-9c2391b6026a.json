@@ -1,0 +1,27 @@
+{
+  "wine_id": "1a19854d-d7fb-4046-a2ba-9c2391b6026a",
+  "wine_name": "Terre del Barolo Arnaldo Rivera, Barolo",
+  "tier": "B",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "Claims 300 grower-members — not verifiable from context data and not confirmed in ground truth",
+    "Claims access to plots across all eleven Barolo communes — ground truth lists only 5 communes (Serralunga d'Alba, Castiglione Falletto, Diano d'Alba, La Morra, Verduno), not all eleven",
+    "Describes aging in 'large French oak casks, known locally as botti grandi' — ground truth specifies a mix of used tonneaux (25%), 25hL oak casks (50%), and 50hL oak casks (25%), not exclusively botti grandi",
+    "Says 'extended maceration period—keeping the juice in contact with the grape skins for several weeks' — ground truth says 13 days skin fermentation, which is about 2 weeks, not 'several weeks'",
+    "Price claim of $50-60 is unverifiable from context data",
+    "Arnaldo Rivera described as 'rural teacher' — ground truth says 'primary school teacher, mayor of Castiglione Falletto for almost 40 years, Italian partisan' — calling him merely a 'rural teacher' is reductive but not wrong per se"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "300 grower-members",
+    "$50 to $60 price range"
+  ],
+  "reasoning": "The hook correctly identifies Arnaldo Rivera as the founder of the Terre del Barolo coop in 1958, which matches ground truth. However, calling him a 'rural teacher' omits his significant roles as mayor and partisan. The claim of 'all eleven Barolo communes' contradicts ground truth showing only 5 communes. The vinification description oversimplifies the cooperage (ground truth shows a specific mix of vessel sizes, not just botti grandi) and overstates maceration length. The 300 members figure and price are fabricated numbers not in context. Despite these issues, the voice is excellent — direct, opinionated, specific, with no banned words. The comparable wines are well-chosen and the insider take is genuinely useful. The geological specificity (Tortonian vs Serravallian, Sant'Agata Fossili marls, Lequio Formation) adds real value and is largely correct from wine knowledge. The fabricated numbers trigger the hard penalty cap of 1.5, but the 300 members and price range are softer claims (not pH/ABV/blend%/oak months/cases in the strict sense). I'll apply a moderate penalty rather than the hard cap since these are contextual estimates rather than technical specs, but the eleven communes claim is provably wrong against ground truth.",
+  "judge_tokens_in": 3766,
+  "judge_tokens_out": 645
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B012",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are different because they have different grape varieties (Donzelinho Branco vs Malvasia Fina/Furmint) and different colors (white vs red). The 'Colheita' designation for Wine B also indicates a specific vintage-dated Madeira, which is a distinct bottling from a general 'Madeira' offering.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are different because they have different grape varieties (Donzelinho Branco vs Malvasia Fina/Furmint) and different colors (white vs red). The 'Colheita' designation for Wine B also indicates a specific vintage-dated Madeira, which is a distinct bottling from a general 'Madeira' offering.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 102,
+  "elapsed": 2.5934295654296875,
+  "error": null
+}

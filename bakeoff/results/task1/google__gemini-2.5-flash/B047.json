@@ -1,0 +1,13 @@
+{
+  "pair_id": "B047",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are from different vineyards, 'Eichberg' and 'Kirchberg'. Even though the grape variety (Sp\u00e4tburgunder) is the same, different vineyards always indicate different wines. Additionally, the colors are different (white vs. red), which is a strong indicator of distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are from different vineyards, 'Eichberg' and 'Kirchberg'. Even though the grape variety (Sp\u00e4tburgunder) is the same, different vineyards always indicate different wines. Additionally, the colors are different (white vs. red), which is a strong indicator of distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 84,
+  "elapsed": 1.4701669216156006,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A047",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from Grgich Hills Estate, share the core name 'Miljenko's Selection', and Wine B's varietal suffix 'Cabernet Franc' matches the grape variety explicitly listed for Wine A. This matches the key rule that varietal suffix differences alone typically indicate the same wine, with the shorter name as an abbreviation. Both are red wines with no conflicting details like different grapes, classifications, or vineyard designations.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from Grgich Hills Estate, share the core name 'Miljenko's Selection', and Wine B's varietal suffix 'Cabernet Franc' matches the grape variety explicitly listed for Wine A. This matches the key rule that varietal suffix differences alone typically indicate the same wine, with the shorter name as an abbreviation. Both are red wines with no conflicting details like different grapes, classifications, or vineyard designations.",
+  "parse_ok": true,
+  "tokens_in": 575,
+  "tokens_out": 450,
+  "elapsed": 4.245514392852783,
+  "error": null
+}

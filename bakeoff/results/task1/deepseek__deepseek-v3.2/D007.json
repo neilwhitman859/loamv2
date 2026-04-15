@@ -1,0 +1,13 @@
+{
+  "pair_id": "D007",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have completely different grape compositions: Wine A uses COT (Malbec) and Cabernet Sauvignon, while Wine B is 100% Merlot Noir. Different grapes always indicate different wines, even when the producer and core name are similar.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have completely different grape compositions: Wine A uses COT (Malbec) and Cabernet Sauvignon, while Wine B is 100% Merlot Noir. Different grapes always indicate different wines, even when the producer and core name are similar.",
+  "parse_ok": true,
+  "tokens_in": 461,
+  "tokens_out": 76,
+  "elapsed": 6.486176252365112,
+  "error": null
+}

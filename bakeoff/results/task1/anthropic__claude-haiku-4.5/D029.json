@@ -1,0 +1,13 @@
+{
+  "pair_id": "D029",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"These wines have different geographic origins: Franschhoek is a specific, prestigious wine region within South Africa, while Coastal Region is a broader appellation that encompasses multiple areas including Franschhoek. Different vineyard/terroir designations indicate distinct bottlings that would appear separately in a wine encyclopedia, even though they share the same producer and grape variety.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "These wines have different geographic origins: Franschhoek is a specific, prestigious wine region within South Africa, while Coastal Region is a broader appellation that encompasses multiple areas including Franschhoek. Different vineyard/terroir designations indicate distinct bottlings that would appear separately in a wine encyclopedia, even though they share the same producer and grape variety.",
+  "parse_ok": true,
+  "tokens_in": 528,
+  "tokens_out": 103,
+  "elapsed": 5.321836948394775,
+  "error": null
+}

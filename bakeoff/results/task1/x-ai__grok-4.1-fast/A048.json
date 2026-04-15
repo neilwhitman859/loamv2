@@ -1,0 +1,13 @@
+{
+  "pair_id": "A048",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are produced by Stoneleigh and share the 'Wild Valley' name, with Wine A explicitly listed as Pinot Noir grapes matching Wine B's varietal suffix. Colors are both red, and no evidence of multiple grape varieties from this vineyard by the producer. Per rules, varietal suffix difference alone indicates the shorter name is an abbreviation for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are produced by Stoneleigh and share the 'Wild Valley' name, with Wine A explicitly listed as Pinot Noir grapes matching Wine B's varietal suffix. Colors are both red, and no evidence of multiple grape varieties from this vineyard by the producer. Per rules, varietal suffix difference alone indicates the shorter name is an abbreviation for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 563,
+  "tokens_out": 437,
+  "elapsed": 3.790417432785034,
+  "error": null
+}

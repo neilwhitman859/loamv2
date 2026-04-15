@@ -1,0 +1,13 @@
+{
+  "pair_id": "D049",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines have different vineyard designations, 'Kastanienbusch' and 'Kastanienbusch Koppel', indicating they are likely from different vineyard plots or cuv\u00e9es, despite sharing the same producer, grape variety, and style.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines have different vineyard designations, 'Kastanienbusch' and 'Kastanienbusch Koppel', indicating they are likely from different vineyard plots or cuv\u00e9es, despite sharing the same producer, grape variety, and style.",
+  "parse_ok": true,
+  "tokens_in": 510,
+  "tokens_out": 75,
+  "elapsed": 1.5896844863891602,
+  "error": null
+}

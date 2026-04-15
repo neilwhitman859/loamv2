@@ -1,0 +1,13 @@
+{
+  "pair_id": "D016",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.97,\"reasoning\":\"Although both wines are from the same producer and are white, the names indicate distinct cuv\u00e9es: \\\"Roche\\\" versus \\\"Sur Roche.\\\" This is not just a varietal suffix abbreviation; it appears to be a different named bottling, and the differing LWINs support that they are separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "Although both wines are from the same producer and are white, the names indicate distinct cuv\u00e9es: \"Roche\" versus \"Sur Roche.\" This is not just a varietal suffix abbreviation; it appears to be a different named bottling, and the differing LWINs support that they are separate wines.",
+  "parse_ok": true,
+  "tokens_in": 415,
+  "tokens_out": 84,
+  "elapsed": 1.7058322429656982,
+  "error": null
+}

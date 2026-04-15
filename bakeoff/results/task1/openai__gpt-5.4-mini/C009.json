@@ -1,0 +1,13 @@
+{
+  "pair_id": "C009",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.97,\"reasoning\":\"Both are Cattier white sparkling wines, but the names indicate distinct cuv\u00e9es: one is \\\"Roses Blanc de Blancs Brut\\\" and the other is simply \\\"Blanc de Blancs Brut.\\\" The added \\\"Roses\\\" designation is part of the wine name, not just a varietal suffix, so these would be separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "Both are Cattier white sparkling wines, but the names indicate distinct cuv\u00e9es: one is \"Roses Blanc de Blancs Brut\" and the other is simply \"Blanc de Blancs Brut.\" The added \"Roses\" designation is part of the wine name, not just a varietal suffix, so these would be separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 93,
+  "elapsed": 1.8614501953125,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D044",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are Chardonnay from the same producer Donnachadh and both are white, matching grape variety, producer, and color. The 'Estate' prefix in Wine A likely denotes estate-grown fruit but is a name formatting variation, not indicating a distinct cuv\u00e9e or vineyard per the rules on abbreviations. No evidence of multiple Chardonnay bottlings or differing styles from this producer.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are Chardonnay from the same producer Donnachadh and both are white, matching grape variety, producer, and color. The 'Estate' prefix in Wine A likely denotes estate-grown fruit but is a name formatting variation, not indicating a distinct cuv\u00e9e or vineyard per the rules on abbreviations. No evidence of multiple Chardonnay bottlings or differing styles from this producer.",
+  "parse_ok": true,
+  "tokens_in": 563,
+  "tokens_out": 716,
+  "elapsed": 6.299207925796509,
+  "error": null
+}

@@ -1,0 +1,54 @@
+{
+  "page_id": "page_043",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"wines_found\":[{\"name\":\"2023 Lytton Springs\",\"vintage_year\":2023,\"abv_pct\":14.4,\"blend\":[{\"grape\":\"Zinfandel\",\"pct\":76},{\"grape\":\"Petite Sirah\",\"pct\":14},{\"grape\":\"Carignane\",\"pct\":7},{\"grape\":\"Alicante Bouschet\",\"pct\":2},{\"grape\":\"Mataro\",\"pct\":1}],\"oak\":{\"vessel\":\"air-dried American oak barrels\",\"months\":16,\"new_pct\":19,\"origin\":\"American\"},\"cases_produced\":null,\"chemistry\":{\"ph\":3.66,\"ta_g_l\":7.39,\"rs_g_l\":null,\"so2_total_mg_l\":89},\"winemaker\":null,\"farming\":\"organic\"}]}",
+  "wines_found": [
+    {
+      "name": "2023 Lytton Springs",
+      "vintage_year": 2023,
+      "abv_pct": 14.4,
+      "blend": [
+        {
+          "grape": "Zinfandel",
+          "pct": 76
+        },
+        {
+          "grape": "Petite Sirah",
+          "pct": 14
+        },
+        {
+          "grape": "Carignane",
+          "pct": 7
+        },
+        {
+          "grape": "Alicante Bouschet",
+          "pct": 2
+        },
+        {
+          "grape": "Mataro",
+          "pct": 1
+        }
+      ],
+      "oak": {
+        "vessel": "air-dried American oak barrels",
+        "months": 16,
+        "new_pct": 19,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": 3.66,
+        "ta_g_l": 7.39,
+        "rs_g_l": null,
+        "so2_total_mg_l": 89
+      },
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 9206,
+  "tokens_out": 172,
+  "elapsed": 3.0119378566741943,
+  "error": null
+}

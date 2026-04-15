@@ -1,0 +1,23 @@
+{
+  "page_id": "page_044",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\"wines_found\": [{\"name\": \"White Zinfandel\", \"vintage_year\": null, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}]}\n```",
+  "wines_found": [
+    {
+      "name": "White Zinfandel",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 10814,
+  "tokens_out": 67,
+  "elapsed": 4.048904180526733,
+  "error": null
+}

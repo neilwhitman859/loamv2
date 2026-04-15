@@ -1,0 +1,13 @@
+{
+  "pair_id": "B039",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records represent wines of different colors (Ros\u00e9 vs White) and different styles. Wine B is specifically identified as a 'Brut' (sparkling) made from the Mostosa grape, whereas Wine A is a still Ros\u00e9, making them distinct products in the producer's portfolio.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent wines of different colors (Ros\u00e9 vs White) and different styles. Wine B is specifically identified as a 'Brut' (sparkling) made from the Mostosa grape, whereas Wine A is a still Ros\u00e9, making them distinct products in the producer's portfolio.",
+  "parse_ok": true,
+  "tokens_in": 408,
+  "tokens_out": 83,
+  "elapsed": 1.653991937637329,
+  "error": null
+}

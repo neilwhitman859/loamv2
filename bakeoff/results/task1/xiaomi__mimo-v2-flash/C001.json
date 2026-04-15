@@ -1,0 +1,13 @@
+{
+  "pair_id": "C001",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Van Volxem) and vineyard (Altenberg) but represent different German Pr\u00e4dikat levels: Beerenauslese (BA) and Auslese. According to the rules, different Pr\u00e4dikat levels always indicate different wines, even if all other factors are identical.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Van Volxem) and vineyard (Altenberg) but represent different German Pr\u00e4dikat levels: Beerenauslese (BA) and Auslese. According to the rules, different Pr\u00e4dikat levels always indicate different wines, even if all other factors are identical.",
+  "parse_ok": true,
+  "tokens_in": 504,
+  "tokens_out": 93,
+  "elapsed": 2.7008888721466064,
+  "error": null
+}

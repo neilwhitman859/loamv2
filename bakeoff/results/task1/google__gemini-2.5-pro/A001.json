@@ -1,0 +1,13 @@
+{
+  "pair_id": "A001",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although the base names are the same, the grape compositions are different. Wine A is explicitly listed as a blend of Carmenere and Cabernet Franc. Wine B's name, \\\"El Pacto Agreement No 2 Carmenere,\\\" indicates it is a single-varietal Carmenere, which is a distinct bottling from the blend. Different grape compositions always mean different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the base names are the same, the grape compositions are different. Wine A is explicitly listed as a blend of Carmenere and Cabernet Franc. Wine B's name, \"El Pacto Agreement No 2 Carmenere,\" indicates it is a single-varietal Carmenere, which is a distinct bottling from the blend. Different grape compositions always mean different wines.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 1336,
+  "elapsed": 12.903760433197021,
+  "error": null
+}

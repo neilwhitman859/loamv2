@@ -1,0 +1,13 @@
+{
+  "pair_id": "C045",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer, vineyard, and Pr\u00e4dikat level (Kabinett), but Wine B includes 'Nr8' which indicates a specific lot or cask number designation. In German auction wines (Auktion), different lot numbers represent distinct bottlings that would be separately catalogued and sold. The different LWINs (1484085 vs 1484144) confirm these are separate records in the wine database.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer, vineyard, and Pr\u00e4dikat level (Kabinett), but Wine B includes 'Nr8' which indicates a specific lot or cask number designation. In German auction wines (Auktion), different lot numbers represent distinct bottlings that would be separately catalogued and sold. The different LWINs (1484085 vs 1484144) confirm these are separate records in the wine database.",
+  "parse_ok": true,
+  "tokens_in": 527,
+  "tokens_out": 123,
+  "elapsed": 3.8868494033813477,
+  "error": null
+}

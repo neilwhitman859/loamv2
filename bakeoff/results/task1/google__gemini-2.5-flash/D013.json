@@ -1,0 +1,13 @@
+{
+  "pair_id": "D013",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"These wines are from different vineyard designations within Burgundy (Beaune Premier Cru vs. Vosne-Roman\u00e9e Premier Cru). Even though they share the same producer and color, the distinct vineyard origins mean they are different bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "These wines are from different vineyard designations within Burgundy (Beaune Premier Cru vs. Vosne-Roman\u00e9e Premier Cru). Even though they share the same producer and color, the distinct vineyard origins mean they are different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 81,
+  "elapsed": 1.803840160369873,
+  "error": null
+}

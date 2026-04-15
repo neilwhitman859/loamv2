@@ -1,0 +1,13 @@
+{
+  "pair_id": "A043",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.90,\"reasoning\":\"Wine A is pure Shiraz while Wine B is a Shiraz\u2013Durif blend, indicating different grape composition. Different grape varieties always denote distinct wines. Thus they would not share the same encyclopedia page.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is pure Shiraz while Wine B is a Shiraz\u2013Durif blend, indicating different grape composition. Different grape varieties always denote distinct wines. Thus they would not share the same encyclopedia page.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 210,
+  "elapsed": 4.582728147506714,
+  "error": null
+}

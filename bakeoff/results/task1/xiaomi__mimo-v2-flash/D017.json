@@ -1,0 +1,13 @@
+{
+  "pair_id": "D017",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Villadoria), are white, and made from 100% Cortese grapes. The names 'Comune di Gavi' and 'del Comune di Gavi' are minor formatting variations of the same Gavi di Gavi appellation, with no evidence of different vineyard designations, classifications, or grape blends.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Villadoria), are white, and made from 100% Cortese grapes. The names 'Comune di Gavi' and 'del Comune di Gavi' are minor formatting variations of the same Gavi di Gavi appellation, with no evidence of different vineyard designations, classifications, or grape blends.",
+  "parse_ok": true,
+  "tokens_in": 494,
+  "tokens_out": 100,
+  "elapsed": 2.4872124195098877,
+  "error": null
+}

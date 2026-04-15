@@ -1,0 +1,13 @@
+{
+  "pair_id": "C019",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"These are distinct classification tiers in Spanish sparkling wine (Cava): Reserva requires minimum 18 months aging while Gran Reserva requires minimum 30 months aging. Different Cava classifications represent separate bottlings that consumers encounter distinctly, similar to Rioja classification differences. The different LWINs confirm these are separate products.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "These are distinct classification tiers in Spanish sparkling wine (Cava): Reserva requires minimum 18 months aging while Gran Reserva requires minimum 30 months aging. Different Cava classifications represent separate bottlings that consumers encounter distinctly, similar to Rioja classification differences. The different LWINs confirm these are separate products.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 102,
+  "elapsed": 2.8248331546783447,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A029",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The names differ only by the varietal suffix 'Auxerrois', which typically indicates abbreviation. Both wines are from the same producer (Koehly), are white, and Wine A's listed grapes include Auxerrois, strongly suggesting Wine B is just a more specific name for the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The names differ only by the varietal suffix 'Auxerrois', which typically indicates abbreviation. Both wines are from the same producer (Koehly), are white, and Wine A's listed grapes include Auxerrois, strongly suggesting Wine B is just a more specific name for the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 88,
+  "elapsed": 2.7184908390045166,
+  "error": null
+}

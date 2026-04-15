@@ -1,0 +1,13 @@
+{
+  "pair_id": "A023",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Wine A 'Blackwood Canyon' and Wine B 'Blackwood Canyon Cabernet Sauvignon' are from the same producer (Fidelitas) and both are red wines. Wine A is explicitly identified as Cabernet Sauvignon, matching the varietal suffix in Wine B's name. This is a classic case of the shorter name being an abbreviation of the full varietal name, indicating the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Wine A 'Blackwood Canyon' and Wine B 'Blackwood Canyon Cabernet Sauvignon' are from the same producer (Fidelitas) and both are red wines. Wine A is explicitly identified as Cabernet Sauvignon, matching the varietal suffix in Wine B's name. This is a classic case of the shorter name being an abbreviation of the full varietal name, indicating the same wine.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 116,
+  "elapsed": 2.7534778118133545,
+  "error": null
+}

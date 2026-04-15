@@ -1,0 +1,13 @@
+{
+  "pair_id": "C037",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines have different German Pr\u00e4dikat levels, which are distinct classifications based on grape ripeness at harvest. Wine A is a 'Kabinett' and Wine B is a 'Sp\u00e4tlese'. These are considered separate bottlings and represent different tiers of wine, even when from the same producer and vineyard.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different German Pr\u00e4dikat levels, which are distinct classifications based on grape ripeness at harvest. Wine A is a 'Kabinett' and Wine B is a 'Sp\u00e4tlese'. These are considered separate bottlings and represent different tiers of wine, even when from the same producer and vineyard.",
+  "parse_ok": true,
+  "tokens_in": 444,
+  "tokens_out": 1222,
+  "elapsed": 22.113078117370605,
+  "error": null
+}

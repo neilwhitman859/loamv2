@@ -1,0 +1,13 @@
+{
+  "pair_id": "B025",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.98, \"reasoning\": \"One is a white wine (\u2018Les Jardins de La Tour Blanche\u2019) and the other is clearly a Merlot red: different grape and color means they are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "One is a white wine (\u2018Les Jardins de La Tour Blanche\u2019) and the other is clearly a Merlot red: different grape and color means they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 131,
+  "elapsed": 4.4480438232421875,
+  "error": null
+}

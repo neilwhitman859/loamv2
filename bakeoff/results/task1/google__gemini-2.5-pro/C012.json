@@ -1,0 +1,13 @@
+{
+  "pair_id": "C012",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although the wines share the same core cuv\u00e9e name ('Grand Prestige Brut'), one is explicitly a 'Rose' and the other is not. The provided metadata confirms this color difference. A ros\u00e9 and a white version of the same Champagne are distinct bottlings, made differently, and are therefore considered different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the wines share the same core cuv\u00e9e name ('Grand Prestige Brut'), one is explicitly a 'Rose' and the other is not. The provided metadata confirms this color difference. A ros\u00e9 and a white version of the same Champagne are distinct bottlings, made differently, and are therefore considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 1179,
+  "elapsed": 12.41242241859436,
+  "error": null
+}

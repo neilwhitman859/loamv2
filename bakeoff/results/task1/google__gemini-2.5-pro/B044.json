@@ -1,0 +1,13 @@
+{
+  "pair_id": "B044",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines share the 'Cuvee Louise' name from producer Pommery, one is a Ros\u00e9 and the other is a standard white Champagne. Different colors, such as Ros\u00e9 versus White, are considered distinct bottlings and therefore different wines. The different LWINs for each wine further confirm they are separate products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines share the 'Cuvee Louise' name from producer Pommery, one is a Ros\u00e9 and the other is a standard white Champagne. Different colors, such as Ros\u00e9 versus White, are considered distinct bottlings and therefore different wines. The different LWINs for each wine further confirm they are separate products.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 986,
+  "elapsed": 11.157886505126953,
+  "error": null
+}

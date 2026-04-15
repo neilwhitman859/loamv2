@@ -1,0 +1,13 @@
+{
+  "pair_id": "D033",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from producer Valentin Zusslin, the Bollenberg vineyard, and are red Pinot Noir, but feature distinct cuv\u00e9e names 'Luft' vs 'Harmonie'. Different cuv\u00e9e designations indicate separate bottlings that consumers would encounter as distinct wines. Unique LWIN numbers (2377760 vs 2450823) further confirm they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from producer Valentin Zusslin, the Bollenberg vineyard, and are red Pinot Noir, but feature distinct cuv\u00e9e names 'Luft' vs 'Harmonie'. Different cuv\u00e9e designations indicate separate bottlings that consumers would encounter as distinct wines. Unique LWIN numbers (2377760 vs 2450823) further confirm they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 575,
+  "tokens_out": 676,
+  "elapsed": 4.921605825424194,
+  "error": null
+}

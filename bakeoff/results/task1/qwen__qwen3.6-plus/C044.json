@@ -1,0 +1,13 @@
+{
+  "pair_id": "C044",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The records have different LWINs and explicitly list different colors (red vs. white), which directly indicates distinct wines per the classification rules. Additionally, the 'Nr17' suffix denotes a specific auction lot, and different lot numbers at the same Pr\u00e4dikat level are classified as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The records have different LWINs and explicitly list different colors (red vs. white), which directly indicates distinct wines per the classification rules. Additionally, the 'Nr17' suffix denotes a specific auction lot, and different lot numbers at the same Pr\u00e4dikat level are classified as different wines.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 2048,
+  "elapsed": 41.15239334106445,
+  "error": null
+}

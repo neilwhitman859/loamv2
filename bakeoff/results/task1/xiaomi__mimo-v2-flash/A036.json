@@ -1,0 +1,13 @@
+{
+  "pair_id": "A036",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A is 'DB Family Selection' and Wine B is 'DB Family Selection Sauvignon Blanc', both from De Bortoli. The difference is only a varietal suffix, which is a common naming abbreviation and does not indicate a distinct bottling. The producer does not make multiple wines from the same vineyard with different grapes in this context, so they represent the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A is 'DB Family Selection' and Wine B is 'DB Family Selection Sauvignon Blanc', both from De Bortoli. The difference is only a varietal suffix, which is a common naming abbreviation and does not indicate a distinct bottling. The producer does not make multiple wines from the same vineyard with different grapes in this context, so they represent the same wine.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 103,
+  "elapsed": 4.697099924087524,
+  "error": null
+}

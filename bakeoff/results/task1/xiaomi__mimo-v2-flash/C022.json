@@ -1,0 +1,13 @@
+{
+  "pair_id": "C022",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Trockenbeerenauslese (TBA) and Wine B is an Auslese, which are distinct German Pr\u00e4dikat levels. Different Pr\u00e4dikat levels always represent different wines, even if they share the same producer, vineyard, and grape variety.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Trockenbeerenauslese (TBA) and Wine B is an Auslese, which are distinct German Pr\u00e4dikat levels. Different Pr\u00e4dikat levels always represent different wines, even if they share the same producer, vineyard, and grape variety.",
+  "parse_ok": true,
+  "tokens_in": 516,
+  "tokens_out": 85,
+  "elapsed": 1.9104185104370117,
+  "error": null
+}

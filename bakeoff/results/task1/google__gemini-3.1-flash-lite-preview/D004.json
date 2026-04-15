@@ -1,0 +1,13 @@
+{
+  "pair_id": "D004",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"Arrowhead and Arete are two distinct, named vineyard-designate bottlings produced by Chimney Rock. Because they represent different vineyard sources, they are considered separate wines.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Arrowhead and Arete are two distinct, named vineyard-designate bottlings produced by Chimney Rock. Because they represent different vineyard sources, they are considered separate wines.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 63,
+  "elapsed": 1.7878162860870361,
+  "error": null
+}

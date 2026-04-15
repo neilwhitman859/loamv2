@@ -1,0 +1,13 @@
+{
+  "pair_id": "D047",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grape varieties, with Wine A being Merlot and Wine B being Cabernet. This difference in grape variety indicates that they are different wines, despite sharing the same producer and region.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grape varieties, with Wine A being Merlot and Wine B being Cabernet. This difference in grape variety indicates that they are different wines, despite sharing the same producer and region.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 63,
+  "elapsed": 1.434049367904663,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A022",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, 'Emiliana', and the same vineyard/cuv\u00e9e, 'Andes Peaks'. The difference in grape variety information ('CABERNET SAUVIGNON' vs 'Carmenere') is likely a formatting difference, as the color is the same ('red') and often varietal suffix differences indicate the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, 'Emiliana', and the same vineyard/cuv\u00e9e, 'Andes Peaks'. The difference in grape variety information ('CABERNET SAUVIGNON' vs 'Carmenere') is likely a formatting difference, as the color is the same ('red') and often varietal suffix differences indicate the same wine.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 97,
+  "elapsed": 2.5850892066955566,
+  "error": null
+}

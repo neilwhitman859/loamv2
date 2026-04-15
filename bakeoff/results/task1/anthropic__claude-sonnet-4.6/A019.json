@@ -1,0 +1,13 @@
+{
+  "pair_id": "A019",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine A 'True Colours' lists grapes as Pinot Noir AND Merlot Noir (a blend), while Wine B 'True Colours Pinot Noir' specifies only Pinot Noir. Although the varietal suffix rule would normally suggest these are the same wine with an abbreviated name, the explicit grape data for Wine A shows a blend rather than a single-varietal wine. Different grape compositions mean these are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A 'True Colours' lists grapes as Pinot Noir AND Merlot Noir (a blend), while Wine B 'True Colours Pinot Noir' specifies only Pinot Noir. Although the varietal suffix rule would normally suggest these are the same wine with an abbreviated name, the explicit grape data for Wine A shows a blend rather than a single-varietal wine. Different grape compositions mean these are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 494,
+  "tokens_out": 122,
+  "elapsed": 3.90132999420166,
+  "error": null
+}

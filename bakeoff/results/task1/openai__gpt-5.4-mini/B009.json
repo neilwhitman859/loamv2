@@ -1,0 +1,13 @@
+{
+  "pair_id": "B009",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"The two records are different because the listed colors do not match: Wine A is white and Wine B is ros\u00e9. Even though the names are very similar and the producer is the same, ros\u00e9 versus white indicates distinct wine bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "The two records are different because the listed colors do not match: Wine A is white and Wine B is ros\u00e9. Even though the names are very similar and the producer is the same, ros\u00e9 versus white indicates distinct wine bottlings.",
+  "parse_ok": true,
+  "tokens_in": 400,
+  "tokens_out": 70,
+  "elapsed": 1.426872968673706,
+  "error": null
+}

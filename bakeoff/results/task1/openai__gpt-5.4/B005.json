@@ -1,0 +1,13 @@
+{
+  "pair_id": "B005",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines because they are made from different grapes: Pinot Noir versus Chardonnay Blanc. They also differ in color, with one red and one white, so they would be separate bottlings even though both are Fromm's Clayvin.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines because they are made from different grapes: Pinot Noir versus Chardonnay Blanc. They also differ in color, with one red and one white, so they would be separate bottlings even though both are Fromm's Clayvin.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 70,
+  "elapsed": 2.009016275405884,
+  "error": null
+}

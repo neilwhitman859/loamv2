@@ -1,0 +1,13 @@
+{
+  "pair_id": "A049",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine B is simply the varietal-suffixed version of Wine A. Since both are white wines produced by del Nebbiolo from the Arneis grape, 'Arenarium' is the cuv\u00e9e name and 'Arneis' is the grape designation, representing the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine B is simply the varietal-suffixed version of Wine A. Since both are white wines produced by del Nebbiolo from the Arneis grape, 'Arenarium' is the cuv\u00e9e name and 'Arneis' is the grape designation, representing the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 78,
+  "elapsed": 1.5624339580535889,
+  "error": null
+}

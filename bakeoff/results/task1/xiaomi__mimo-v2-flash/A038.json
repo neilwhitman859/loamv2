@@ -1,0 +1,13 @@
+{
+  "pair_id": "A038",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Bellingham) and share the identical vineyard designation 'Bush Vine'. Wine B's name is simply Wine A's name with the varietal suffix 'Pinotage' appended, which is a common naming convention and does not indicate a different bottling. The grape variety is the same (Pinotage) and both are red wines, so they represent the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Bellingham) and share the identical vineyard designation 'Bush Vine'. Wine B's name is simply Wine A's name with the varietal suffix 'Pinotage' appended, which is a common naming convention and does not indicate a different bottling. The grape variety is the same (Pinotage) and both are red wines, so they represent the same wine.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 108,
+  "elapsed": 2.175902843475342,
+  "error": null
+}

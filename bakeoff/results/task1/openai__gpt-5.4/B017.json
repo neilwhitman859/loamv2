@@ -1,0 +1,13 @@
+{
+  "pair_id": "B017",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These records do not match because the color differs: Wine A is red while Wine B is white, and color/style differences indicate separate bottlings. Also, Wine A specifies the grape Braquet Gris while Wine B provides no matching evidence beyond the producer and region name variant (Piemonte/Piedmont), which is just a translation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These records do not match because the color differs: Wine A is red while Wine B is white, and color/style differences indicate separate bottlings. Also, Wine A specifies the grape Braquet Gris while Wine B provides no matching evidence beyond the producer and region name variant (Piemonte/Piedmont), which is just a translation.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 88,
+  "elapsed": 2.642911195755005,
+  "error": null
+}

@@ -1,0 +1,32 @@
+{
+  "wine_id": "272c4c47-7ca7-4053-b022-86524690242b",
+  "wine_name": "Lafage Tessellae Old Vines, Côtes du Roussillon",
+  "tier": "C",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 2.0,
+  "voice": 2.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.0,
+  "wrong_facts": [
+    "Hook claims the wine is 'Old-vine Carignan, Grenache, and Syrah' — ground truth confirms it is 100% Carignan",
+    "Wine summary mentions 'Grenache Noir' as part of the blend — contradicts 100% Carignan ground truth",
+    "Vinification summary describes separate handling of 'Grenache and Syrah' components that don't exist in a 100% Carignan wine",
+    "Food pairing references 'peppery Syrah component' — there is no Syrah in this wine",
+    "Old vines described as '80+ years' — ground truth says 70+ years"
+  ],
+  "banned_words_found": [
+    "genuinely"
+  ],
+  "fabricated_numbers": [
+    "160 hectares",
+    "80+ years old vines",
+    "below 25 hectoliters per hectare",
+    "200-400 meters altitude",
+    "300+ days of sunshine",
+    "$12-18 USD price range"
+  ],
+  "reasoning": "The most critical error is the blend: the hook and multiple sections claim this is a Carignan-Grenache-Syrah blend when ground truth confirms it is 100% Carignan. This is a provably wrong factual claim in the hook, which triggers the hard cap. The naming origin (tessellae/Roman mosaic tiles) and winemaker (Jean-Marc Lafage) are correct per ground truth, and the schist soils detail is confirmed. However, the wrong blend pervades the entire output — affecting vinification, food pairing rationale, and comparable wines sections. The word 'genuinely' appears in the value assessment, triggering the voice hard cap. The output is impressively detailed and specific in its terroir and regional knowledge, and the writing style is mostly strong, but the fundamental blend error undermines the entire piece's credibility.",
+  "judge_tokens_in": 3908,
+  "judge_tokens_out": 453
+}

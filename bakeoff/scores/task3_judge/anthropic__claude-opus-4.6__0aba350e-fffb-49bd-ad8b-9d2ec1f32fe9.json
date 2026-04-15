@@ -1,0 +1,29 @@
+{
+  "wine_id": "0aba350e-fffb-49bd-ad8b-9d2ec1f32fe9",
+  "wine_name": "Vasse Felix Filius Cabernet Sauvignon, Margaret River",
+  "tier": "C",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 5.0,
+  "composite": 4.25,
+  "wrong_facts": [
+    "Cape Mentelle is described as having 'second-tier positioning' but its main Cabernet Sauvignon is actually a flagship wine, not a second label",
+    "Vinification summary claims fermentation in 'stainless steel and concrete' — ground truth says wild-yeast fermentation in open-top fermenters",
+    "Oak description says 'likely a combination of French barriques with a modest percentage of new wood' — ground truth specifies 11 months in French oak but the 'modest new wood' is speculative",
+    "Specific tasting notes attributed to Halliday (mint, nori, savory herbal edge) are not in the context data and may be fabricated attributions"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$5-10 more for Cape Mentelle",
+    "$22 for Cape Mentelle Trinders Cabernet",
+    "$20 for Louis Martini Sonoma Cabernet",
+    "$25 for Decoy by Duckhorn",
+    "$50-80 for top Margaret River Cabernets",
+    "$60+ bottles reference"
+  ],
+  "reasoning": "The hook is factually correct — 'Filius' does mean 'son' in Latin, matching ground truth that it means 'son of.' The producer history (1967, Dr. Tom Cullity, founding estate) is correct per ground truth. However, the vinification summary fabricates details about stainless steel and concrete fermentation when the actual method is wild-yeast in open-top fermenters. The blend composition (93% Cab, 5.5% Malbec, 1.5% Petit Verdot) is never mentioned, which is a missed opportunity but not an error. Many price comparisons are fabricated numbers not in context data, though these are market knowledge rather than wine specs. The voice is excellent — direct, opinionated, specific, with no banned words and strong actionable advice. Specificity is very high with named soils, competitors, and real dishes. The fabricated vinification details and speculative Halliday tasting note attributions prevent a higher correctness score.",
+  "judge_tokens_in": 3899,
+  "judge_tokens_out": 518
+}

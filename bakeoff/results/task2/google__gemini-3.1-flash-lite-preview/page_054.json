@@ -1,0 +1,45 @@
+{
+  "page_id": "page_054",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n  \"wines_found\": [\n    {\n      \"name\": \"2025 Dianthus\",\n      \"vintage_year\": 2025,\n      \"abv_pct\": 14.0,\n      \"blend\": [\n        {\n          \"grape\": \"Mourvèdre\",\n          \"pct\": 42\n        },\n        {\n          \"grape\": \"Grenache\",\n          \"pct\": 40\n        },\n        {\n          \"grape\": \"Counoise\",\n          \"pct\": 13\n        },\n        {\n          \"grape\": \"Cinsaut\",\n          \"pct\": 5\n        }\n      ],\n      \"oak\": null,\n      \"cases_produced\": 887,\n      \"chemistry\": {\n        \"ph\": null,\n        \"ta_g_l\": null,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": null,\n      \"farming\": \"biodynamic\"\n    }\n  ]\n}",
+  "wines_found": [
+    {
+      "name": "2025 Dianthus",
+      "vintage_year": 2025,
+      "abv_pct": 14.0,
+      "blend": [
+        {
+          "grape": "Mourvèdre",
+          "pct": 42
+        },
+        {
+          "grape": "Grenache",
+          "pct": 40
+        },
+        {
+          "grape": "Counoise",
+          "pct": 13
+        },
+        {
+          "grape": "Cinsaut",
+          "pct": 5
+        }
+      ],
+      "oak": null,
+      "cases_produced": 887,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "biodynamic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 20433,
+  "tokens_out": 256,
+  "elapsed": 1.9573020935058594,
+  "error": null
+}

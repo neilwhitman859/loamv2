@@ -1,0 +1,13 @@
+{
+  "pair_id": "A019",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Rob Dolan) and are red wines. Wine B's name 'True Colours Pinot Noir' is a varietal suffix appended to the base name 'True Colours', which is a common naming convention for the same wine. The LWIN provided for Wine B does not indicate a different bottling, and the grape list for Wine A includes Pinot Noir, aligning with Wine B's name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Rob Dolan) and are red wines. Wine B's name 'True Colours Pinot Noir' is a varietal suffix appended to the base name 'True Colours', which is a common naming convention for the same wine. The LWIN provided for Wine B does not indicate a different bottling, and the grape list for Wine A includes Pinot Noir, aligning with Wine B's name.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 114,
+  "elapsed": 2.425488233566284,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D030",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The producer Boekenhoutskloof has multiple wines from Porcupine Ridge, and the presence of 'Merlot' in Wine B's name suggests it may be a different blend or wine from Wine A, which is a Cabernet Sauvignon. The difference in naming (presence of 'Merlot' in one and not the other) is not just a varietal suffix difference but indicates a potential difference in grape composition. Without more information on Wine B's grapes, the difference in naming suggests they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The producer Boekenhoutskloof has multiple wines from Porcupine Ridge, and the presence of 'Merlot' in Wine B's name suggests it may be a different blend or wine from Wine A, which is a Cabernet Sauvignon. The difference in naming (presence of 'Merlot' in one and not the other) is not just a varietal suffix difference but indicates a potential difference in grape composition. Without more information on Wine B's grapes, the difference in naming suggests they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 506,
+  "tokens_out": 128,
+  "elapsed": 1.8076283931732178,
+  "error": null
+}

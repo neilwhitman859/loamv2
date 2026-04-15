@@ -1,0 +1,23 @@
+{
+  "page_id": "page_057",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"wines_found\": [{\"name\": \"2024 Arroyo Vista Chardonnay\", \"vintage_year\": 2024, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "2024 Arroyo Vista Chardonnay",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 36621,
+  "tokens_out": 859,
+  "elapsed": 17.87456202507019,
+  "error": null
+}

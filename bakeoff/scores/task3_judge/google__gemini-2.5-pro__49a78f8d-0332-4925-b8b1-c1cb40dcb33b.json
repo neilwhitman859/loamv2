@@ -1,0 +1,30 @@
+{
+  "wine_id": "49a78f8d-0332-4925-b8b1-c1cb40dcb33b",
+  "wine_name": "Wind Gap Woodruff Vineyard Pinot Noir, Santa Cruz Mountains",
+  "tier": "C",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.3,
+  "wrong_facts": [
+    "Hook claims Woodruff Vineyard is planted at 1,600 feet on a cool, windswept ridge — ground truth says it's 9 acres near Coralitos (which is at low elevation, roughly 200-400 feet, not 1,600 feet)",
+    "Hook and terroir section describe the vineyard as 'high above the fog line' and 'high-elevation' — Coralitos is a low-elevation area in southern Santa Cruz County",
+    "Terroir section fabricates specific soil composition ('fractured shale and sandstone over a base of marine deposits') not in context data and not verifiable for this specific vineyard",
+    "Value assessment fabricates a price range of $60-$75 not present in context data",
+    "Vinification summary says 'significant whole-cluster fermentation' — ground truth says 'some whole cluster,' which is different from 'significant'",
+    "Ground truth says aging in neutral French oak/concrete/stainless, but output only mentions neutral French oak barrels"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "1,600 feet elevation",
+    "$60-$75 price range",
+    "aging_potential_years: 10",
+    "drinking_window_min_years: 3",
+    "drinking_window_max_years: 12"
+  ],
+  "reasoning": "The hook contains a provably wrong factual claim — Woodruff Vineyard is near Coralitos at low elevation, not at 1,600 feet on a ridge. This wrong geography in the hook is devastating and cascades through the entire piece, as the 'high-elevation' narrative is the central thesis. The output also fabricates specific soil types, a price range, and overstates whole-cluster usage. However, it correctly identifies Pax Mahle as winemaker, native yeast fermentation, and neutral oak aging. The voice is strong and direct with good specificity and useful comparable wines, but the factual foundation is unreliable. The wrong hook claim triggers the hard cap, but the fabricated price range also triggers the fabricated numbers penalty. Multiple fabricated numbers present.",
+  "judge_tokens_in": 3573,
+  "judge_tokens_out": 514
+}

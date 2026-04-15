@@ -1,0 +1,23 @@
+{
+  "page_id": "page_011",
+  "model": "qwen/qwen3.5-plus-02-15",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Bonterra Merlot\", \"vintage_year\": 2023, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Bonterra Merlot",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 71384,
+  "tokens_out": 3266,
+  "elapsed": 62.65375256538391,
+  "error": null
+}

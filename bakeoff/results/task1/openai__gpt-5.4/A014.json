@@ -1,0 +1,13 @@
+{
+  "pair_id": "A014",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These are not the same wine because the grape information conflicts: Wine A is explicitly Gewurztraminer, while Wine B is Pinot Gris. Different grapes always indicate different wines, even when the producer and cuv\u00e9e wording are otherwise similar.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These are not the same wine because the grape information conflicts: Wine A is explicitly Gewurztraminer, while Wine B is Pinot Gris. Different grapes always indicate different wines, even when the producer and cuv\u00e9e wording are otherwise similar.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 70,
+  "elapsed": 2.4891903400421143,
+  "error": null
+}

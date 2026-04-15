@@ -1,0 +1,13 @@
+{
+  "pair_id": "B002",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Although the producer and wine name are identical, the records differ in color: one is red and the other is white. Color/style differences indicate distinct consumer-facing bottlings, even when the listed grapes overlap.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Although the producer and wine name are identical, the records differ in color: one is red and the other is white. Color/style differences indicate distinct consumer-facing bottlings, even when the listed grapes overlap.",
+  "parse_ok": true,
+  "tokens_in": 452,
+  "tokens_out": 63,
+  "elapsed": 2.0626964569091797,
+  "error": null
+}

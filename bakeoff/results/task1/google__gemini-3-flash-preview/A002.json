@@ -1,0 +1,13 @@
+{
+  "pair_id": "A002",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine B is simply the varietal-suffixed version of Wine A. Both records share the same producer, color, and specific clone designation (Clone 174), indicating they represent the same bottling of Syrah.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine B is simply the varietal-suffixed version of Wine A. Both records share the same producer, color, and specific clone designation (Clone 174), indicating they represent the same bottling of Syrah.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 67,
+  "elapsed": 1.5993430614471436,
+  "error": null
+}

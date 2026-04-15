@@ -1,0 +1,13 @@
+{
+  "pair_id": "A038",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, 'Bellingham', and share the core name 'The Bernard Series Bush Vine'. Wine A explicitly states 'PINOTAGE' as its grape, and Wine B adds 'Pinotage' as a varietal suffix to its name. This strongly suggests they are the same wine, with Wine B simply being more explicit about the grape variety.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, 'Bellingham', and share the core name 'The Bernard Series Bush Vine'. Wine A explicitly states 'PINOTAGE' as its grape, and Wine B adds 'Pinotage' as a varietal suffix to its name. This strongly suggests they are the same wine, with Wine B simply being more explicit about the grape variety.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 97,
+  "elapsed": 1.5613977909088135,
+  "error": null
+}

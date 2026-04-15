@@ -1,0 +1,13 @@
+{
+  "pair_id": "D048",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer (Happs), same grape blend (Cabernet Merlot), and same color (red). The difference 'iSeries' vs no prefix appears to be a name formatting or branding variation, not indicating a different vineyard, classification, or wine type.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer (Happs), same grape blend (Cabernet Merlot), and same color (red). The difference 'iSeries' vs no prefix appears to be a name formatting or branding variation, not indicating a different vineyard, classification, or wine type.",
+  "parse_ok": true,
+  "tokens_in": 444,
+  "tokens_out": 79,
+  "elapsed": 5.227295875549316,
+  "error": null
+}

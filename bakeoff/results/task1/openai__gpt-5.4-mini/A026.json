@@ -1,0 +1,13 @@
+{
+  "pair_id": "A026",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.98,\"reasoning\":\"Both records are from the same producer and share the same base cuv\u00e9e name, \\\"Lovedale Cellar Aged.\\\" The only difference is that Wine B explicitly appends the varietal \\\"Semillon,\\\" which matches Wine A\u2019s listed grape, so this is most likely just a name formatting difference for the same white wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Both records are from the same producer and share the same base cuv\u00e9e name, \"Lovedale Cellar Aged.\" The only difference is that Wine B explicitly appends the varietal \"Semillon,\" which matches Wine A\u2019s listed grape, so this is most likely just a name formatting difference for the same white wine.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 87,
+  "elapsed": 1.595623254776001,
+  "error": null
+}

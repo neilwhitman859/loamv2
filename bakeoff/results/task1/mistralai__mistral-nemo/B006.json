@@ -1,0 +1,13 @@
+{
+  "pair_id": "B006",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine B contains an additional grape variety (DOLCETTO) not present in Wine A, making them distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine B contains an additional grape variety (DOLCETTO) not present in Wine A, making them distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 507,
+  "tokens_out": 51,
+  "elapsed": 4.289915323257446,
+  "error": null
+}

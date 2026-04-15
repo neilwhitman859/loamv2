@@ -1,0 +1,13 @@
+{
+  "pair_id": "A050",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.75, \"reasoning\": \"Wine A 'Cayenne' and Wine B 'Cayenne Syrah' are from the same producer de Castelnau, both red wines. The 'Cayenne Syrah' name appears to be the full varietal-suffixed name while 'Cayenne' is the abbreviated version. Wine A lists SYRAH and DURIF as grapes, which is consistent with a Syrah-dominant blend that might be marketed under the Syrah name; the varietal suffix difference alone typically indicates the same wine under the key rules.\"}",
+  "verdict": "SAME",
+  "confidence": 0.75,
+  "reasoning": "Wine A 'Cayenne' and Wine B 'Cayenne Syrah' are from the same producer de Castelnau, both red wines. The 'Cayenne Syrah' name appears to be the full varietal-suffixed name while 'Cayenne' is the abbreviated version. Wine A lists SYRAH and DURIF as grapes, which is consistent with a Syrah-dominant blend that might be marketed under the Syrah name; the varietal suffix difference alone typically indicates the same wine under the key rules.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 144,
+  "elapsed": 3.418720245361328,
+  "error": null
+}

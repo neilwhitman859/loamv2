@@ -1,0 +1,32 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "mistralai/mistral-nemo",
+  "correctness": 1.5,
+  "voice": 2.0,
+  "specificity": 3.5,
+  "usefulness": 3.0,
+  "composite": 2.325,
+  "wrong_facts": [
+    "Hook uses 'Darling Range' — the Darling Range is near Perth, not in Great Southern/Mount Barker area (the Stirling Range and Porongurup Range are the relevant formations)",
+    "Claims Omrah is from 'the coolest vineyard on their Mount Barker property' — ground truth says Omrah is a second label from younger vineyards or bought-in fruit, not a specific vineyard",
+    "Names 'Carol Payne' as winemaker — not verifiable and likely fabricated",
+    "Claims cold soaking and open-vat fermentation with punch-downs — not in context data and unverifiable",
+    "Fabricates elevation of 'around 250m'",
+    "Fabricates price of 'around $30'",
+    "Claims wine is from 'the Omrah vineyard' — Omrah is a label/range name, not a vineyard name"
+  ],
+  "banned_words_found": [
+    "elegant"
+  ],
+  "fabricated_numbers": [
+    "250m elevation",
+    "$30 price",
+    "portion new oak (vague but unsourced)",
+    "5 years cellar recommendation"
+  ],
+  "reasoning": "The output contains multiple fabrications: wrong geography in the hook (Darling Range instead of Stirling/Porongurup), a fabricated winemaker name, invented elevation, invented price, and fundamentally mischaracterizes Omrah as a specific vineyard rather than a second-label range. The hook's wrong geography triggers the hard penalty cap of 1.5 on correctness. The use of 'elegant' triggers the banned word penalty capping voice at 2.0. While the output is reasonably specific and structured, the density of fabricated details undermines its usefulness and trustworthiness. It does correctly identify Plantagenet's 1968 founding and Mount Barker location, and the gravelly loam soils partially match ground truth, but these correct details are overwhelmed by the fabrications.",
+  "judge_tokens_in": 3084,
+  "judge_tokens_out": 478
+}

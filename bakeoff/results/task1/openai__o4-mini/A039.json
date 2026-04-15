@@ -1,0 +1,13 @@
+{
+  "pair_id": "A039",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.90, \"reasoning\": \"Both records share the same producer, vineyard designation and grape variety; the only difference is the varietal suffix in the name, indicating an abbreviation rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both records share the same producer, vineyard designation and grape variety; the only difference is the varietal suffix in the name, indicating an abbreviation rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 148,
+  "elapsed": 3.883138418197632,
+  "error": null
+}

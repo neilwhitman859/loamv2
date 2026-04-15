@@ -1,0 +1,13 @@
+{
+  "pair_id": "D012",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"Boal and Sercial are different grape varieties, which is a fundamental distinction that always indicates different wines. Even though both are from the same producer, share the same age designation (10 YO), and the same classification (Reserva), the different grapes mean they are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "Boal and Sercial are different grape varieties, which is a fundamental distinction that always indicates different wines. Even though both are from the same producer, share the same age designation (10 YO), and the same classification (Reserva), the different grapes mean they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 83,
+  "elapsed": 5.023080587387085,
+  "error": null
+}

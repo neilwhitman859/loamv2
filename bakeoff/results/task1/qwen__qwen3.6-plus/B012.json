@@ -1,0 +1,13 @@
+{
+  "pair_id": "B012",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The records specify different colors and entirely different grape varieties, which definitively indicates distinct wines according to the provided rules. Additionally, the 'Colheita' designation denotes a specific single-vintage style that differs from a standard non-vintage Madeira bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The records specify different colors and entirely different grape varieties, which definitively indicates distinct wines according to the provided rules. Additionally, the 'Colheita' designation denotes a specific single-vintage style that differs from a standard non-vintage Madeira bottling.",
+  "parse_ok": true,
+  "tokens_in": 458,
+  "tokens_out": 1546,
+  "elapsed": 29.354595184326172,
+  "error": null
+}

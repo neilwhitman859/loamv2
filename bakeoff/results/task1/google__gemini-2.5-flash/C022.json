@@ -1,0 +1,13 @@
+{
+  "pair_id": "C022",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"These wines are different because they represent distinct German Pr\u00e4dikat levels. Wine A is a Trockenbeerenauslese, while Wine B is an Auslese, indicating different ripeness levels of the grapes at harvest and resulting in different styles of wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "These wines are different because they represent distinct German Pr\u00e4dikat levels. Wine A is a Trockenbeerenauslese, while Wine B is an Auslese, indicating different ripeness levels of the grapes at harvest and resulting in different styles of wine.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 76,
+  "elapsed": 1.6502156257629395,
+  "error": null
+}

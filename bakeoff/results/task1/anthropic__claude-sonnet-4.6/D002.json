@@ -1,0 +1,13 @@
+{
+  "pair_id": "D002",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.82, \"reasoning\": \"Wine A includes 'GG' (Grosses Gew\u00e4chs), which is a specific classification designation indicating the highest tier of dry German wine, while Wine B lacks this designation. GG represents a distinct classification tier similar to how Reserva vs Gran Reserva would differ in Rioja \u2014 it's not merely a formatting abbreviation but a meaningful quality/classification distinction. The different LWIN codes (1742543 vs 1226663) further confirm these are treated as separate bottlings in wine databases.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.82,
+  "reasoning": "Wine A includes 'GG' (Grosses Gew\u00e4chs), which is a specific classification designation indicating the highest tier of dry German wine, while Wine B lacks this designation. GG represents a distinct classification tier similar to how Reserva vs Gran Reserva would differ in Rioja \u2014 it's not merely a formatting abbreviation but a meaningful quality/classification distinction. The different LWIN codes (1742543 vs 1226663) further confirm these are treated as separate bottlings in wine databases.",
+  "parse_ok": true,
+  "tokens_in": 504,
+  "tokens_out": 133,
+  "elapsed": 3.9113385677337646,
+  "error": null
+}

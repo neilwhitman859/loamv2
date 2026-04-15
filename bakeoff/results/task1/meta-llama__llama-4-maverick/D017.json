@@ -1,0 +1,13 @@
+{
+  "pair_id": "D017",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines have the same producer, Villadoria, and the same color, white. The name difference is minor and likely due to abbreviation, as 'Comune di Gavi' and 'del Comune di Gavi' refer to the same appellation. The grape variety for Wine A is Cortese, which is consistent with Gavi being a Cortese-based wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines have the same producer, Villadoria, and the same color, white. The name difference is minor and likely due to abbreviation, as 'Comune di Gavi' and 'del Comune di Gavi' refer to the same appellation. The grape variety for Wine A is Cortese, which is consistent with Gavi being a Cortese-based wine.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 97,
+  "elapsed": 1.867788553237915,
+  "error": null
+}

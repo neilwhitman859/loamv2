@@ -1,0 +1,13 @@
+{
+  "pair_id": "D039",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a 'Red Blend' while Wine B is a 'Reserva Red Blend', indicating different classification tiers. The 'Reserva' designation represents a distinct bottling with specific aging requirements, making it a different wine from the non-reserva version.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a 'Red Blend' while Wine B is a 'Reserva Red Blend', indicating different classification tiers. The 'Reserva' designation represents a distinct bottling with specific aging requirements, making it a different wine from the non-reserva version.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 78,
+  "elapsed": 1.538217306137085,
+  "error": null
+}

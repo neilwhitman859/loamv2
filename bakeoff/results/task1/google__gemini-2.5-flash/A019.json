@@ -1,0 +1,13 @@
+{
+  "pair_id": "A019",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A lists two grape varieties (Pinot Noir, Merlot Noir), while Wine B is explicitly named 'True Colours Pinot Noir'. This suggests that 'True Colours' might be a range, and 'True Colours Pinot Noir' is a specific bottling, distinct from a blend or another single varietal wine within the 'True Colours' range. The presence of Merlot Noir in Wine A makes it different from a pure Pinot Noir bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A lists two grape varieties (Pinot Noir, Merlot Noir), while Wine B is explicitly named 'True Colours Pinot Noir'. This suggests that 'True Colours' might be a range, and 'True Colours Pinot Noir' is a specific bottling, distinct from a blend or another single varietal wine within the 'True Colours' range. The presence of Merlot Noir in Wine A makes it different from a pure Pinot Noir bottling.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 109,
+  "elapsed": 1.4615683555603027,
+  "error": null
+}

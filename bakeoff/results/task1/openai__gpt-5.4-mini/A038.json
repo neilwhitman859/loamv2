@@ -1,0 +1,13 @@
+{
+  "pair_id": "A038",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.98,\"reasoning\":\"Both records are by Bellingham and share the same core cuv\u00e9e name, \\\"The Bernard Series Bush Vine.\\\" Wine A already lists the grape as Pinotage, and Wine B simply appends \\\"Pinotage,\\\" which matches the varietal-suffix-only rule. Since the color is the same and there is no indication of a different vineyard, tier, or style, these represent the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Both records are by Bellingham and share the same core cuv\u00e9e name, \"The Bernard Series Bush Vine.\" Wine A already lists the grape as Pinotage, and Wine B simply appends \"Pinotage,\" which matches the varietal-suffix-only rule. Since the color is the same and there is no indication of a different vineyard, tier, or style, these represent the same wine.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 103,
+  "elapsed": 1.5770173072814941,
+  "error": null
+}

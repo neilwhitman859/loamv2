@@ -1,0 +1,13 @@
+{
+  "pair_id": "C014",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are from the same producer, Pertois-Lebrun, and are described as 'Blanc de Blancs' white wines. The slight variation in the name, with 'No.15' vs 'No. 17', is likely an internal reference and does not indicate a different bottling or significant change in the wine's characteristics.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are from the same producer, Pertois-Lebrun, and are described as 'Blanc de Blancs' white wines. The slight variation in the name, with 'No.15' vs 'No. 17', is likely an internal reference and does not indicate a different bottling or significant change in the wine's characteristics.",
+  "parse_ok": true,
+  "tokens_in": 475,
+  "tokens_out": 90,
+  "elapsed": 1.5502839088439941,
+  "error": null
+}

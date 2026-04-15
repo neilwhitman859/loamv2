@@ -1,0 +1,13 @@
+{
+  "pair_id": "A024",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The names differ only by a varietal suffix ('Boutique' vs 'Boutique Syrah'), which per guidelines indicates the same wine as the shorter form is an abbreviation. Both are red wines from the same producer L.A. Cetto, with no indication of multiple 'Boutique' bottlings in different grapes. The COT grape (100%) for Wine A aligns with Syrah expectations for this producer's Boutique wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The names differ only by a varietal suffix ('Boutique' vs 'Boutique Syrah'), which per guidelines indicates the same wine as the shorter form is an abbreviation. Both are red wines from the same producer L.A. Cetto, with no indication of multiple 'Boutique' bottlings in different grapes. The COT grape (100%) for Wine A aligns with Syrah expectations for this producer's Boutique wine.",
+  "parse_ok": true,
+  "tokens_in": 569,
+  "tokens_out": 1942,
+  "elapsed": 12.883793592453003,
+  "error": null
+}

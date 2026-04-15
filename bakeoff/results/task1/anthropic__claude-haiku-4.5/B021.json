@@ -1,0 +1,13 @@
+{
+  "pair_id": "B021",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"White Zinfandel is a ros\u00e9 wine (pink/salmon colored), while Zinfandel refers to the red wine style. These are fundamentally different wine types and colors that a consumer would encounter as separate bottlings. The different LWINs and color classifications confirm these are distinct products from the same producer.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "White Zinfandel is a ros\u00e9 wine (pink/salmon colored), while Zinfandel refers to the red wine style. These are fundamentally different wine types and colors that a consumer would encounter as separate bottlings. The different LWINs and color classifications confirm these are distinct products from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 96,
+  "elapsed": 2.6751177310943604,
+  "error": null
+}

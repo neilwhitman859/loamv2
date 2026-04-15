@@ -1,0 +1,13 @@
+{
+  "pair_id": "A016",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Berton Vineyards, are white, and share the grape variety Vermentino. The name 'Metal Label The' is simply an abbreviated form of 'Metal Label The Vermentino', which is a common naming convention for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Berton Vineyards, are white, and share the grape variety Vermentino. The name 'Metal Label The' is simply an abbreviated form of 'Metal Label The Vermentino', which is a common naming convention for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 76,
+  "elapsed": 2.1859569549560547,
+  "error": null
+}

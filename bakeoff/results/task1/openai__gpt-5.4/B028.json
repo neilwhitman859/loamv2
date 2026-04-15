@@ -1,0 +1,13 @@
+{
+  "pair_id": "B028",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different varietal bottlings from the same producer: one is Chardonnay and the other is Merlot. They also differ in color and grape variety, which makes them separate wines rather than name variants of the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different varietal bottlings from the same producer: one is Chardonnay and the other is Merlot. They also differ in color and grape variety, which makes them separate wines rather than name variants of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 67,
+  "elapsed": 3.476670980453491,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C027",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, Maison Champy, and the same grape variety, Pinot Noir. The appellation difference between Echezeaux Grand Cru and Grands-Echezeaux Grand Cru likely refers to a slight variation in vineyard designation within the same grand cru, which does not typically denote a different wine. The color and style appear to be the same, indicating they are likely the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, Maison Champy, and the same grape variety, Pinot Noir. The appellation difference between Echezeaux Grand Cru and Grands-Echezeaux Grand Cru likely refers to a slight variation in vineyard designation within the same grand cru, which does not typically denote a different wine. The color and style appear to be the same, indicating they are likely the same wine.",
+  "parse_ok": true,
+  "tokens_in": 460,
+  "tokens_out": 105,
+  "elapsed": 3.113128900527954,
+  "error": null
+}

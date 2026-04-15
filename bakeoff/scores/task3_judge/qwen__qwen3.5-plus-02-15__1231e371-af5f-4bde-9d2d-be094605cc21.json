@@ -1,0 +1,22 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "qwen/qwen3.5-plus-02-15",
+  "correctness": 1.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 2.9,
+  "wrong_facts": [
+    "Hook claims the name refers to '1.5 miles between the Stags Leap District vineyard and the winery cave' — this is fabricated and provably wrong. The name actually refers to the 'generation and a half' partnership between John Shafer and his son Doug.",
+    "States the wine is 100% Cabernet Sauvignon (from context data), but the verified 2022 blend is 92% Cabernet Sauvignon, 3% Petite Verdot, 3% Merlot, 2% Malbec. The output describes it as purely estate Cab without acknowledging the blend.",
+    "Describes Rutherford and Oakville as 'cooler sub-appellations' — both are actually warmer benchland/valley floor areas, not cooler than Stags Leap District.",
+    "Claims the wine is the 'entry point to their portfolio' — Shafer also produces a Chardonnay and other wines; One Point Five is not necessarily the entry point."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The hook contains a provably wrong naming origin — the '1.5 miles' claim is explicitly listed in the ground truth as NOT TRUE. This triggers the hard penalty cap of 1.5 on correctness. Additionally, calling Rutherford and Oakville 'cooler sub-appellations' is geographically incorrect. The voice is decent — direct, opinionated, avoids most banned words and hedging — but the factual errors undermine the entire piece. Specificity is good with named soils, competitors, and real dishes, but several specific claims are wrong, which limits the usefulness despite otherwise solid structure.",
+  "judge_tokens_in": 3596,
+  "judge_tokens_out": 429
+}

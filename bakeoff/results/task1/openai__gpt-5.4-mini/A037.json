@@ -1,0 +1,13 @@
+{
+  "pair_id": "A037",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"The records share the same producer and base cuv\u00e9e name, and Wine B only adds the varietal suffix \\\"Syrah.\\\" By the stated rules, a varietal suffix alone usually indicates the same wine when it is just an expanded naming format. Both are red and Wine B\u2019s grape matches the implied varietal, so these are the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "The records share the same producer and base cuv\u00e9e name, and Wine B only adds the varietal suffix \"Syrah.\" By the stated rules, a varietal suffix alone usually indicates the same wine when it is just an expanded naming format. Both are red and Wine B\u2019s grape matches the implied varietal, so these are the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 93,
+  "elapsed": 1.8709032535552979,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B003",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different grape varieties (red vs white), which is a clear indicator of different wines. The producer and vineyard/cuv\u00e9e information is the same, but the grape variety is a significant differentiator.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different grape varieties (red vs white), which is a clear indicator of different wines. The producer and vineyard/cuv\u00e9e information is the same, but the grape variety is a significant differentiator.",
+  "parse_ok": true,
+  "tokens_in": 448,
+  "tokens_out": 69,
+  "elapsed": 1.499861240386963,
+  "error": null
+}

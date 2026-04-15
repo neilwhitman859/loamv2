@@ -6,16 +6,22 @@
   "extraction": {
     "name": "Hill",
     "producer": "Leo Hillinger",
-    "vintage_year": null,
+    "vintage_year": 2021,
     "abv_pct": null,
-    "blend": null,
+    "blend": [
+      {
+        "grape": "Cabernet Sauvignon",
+        "pct": null
+      }
+    ],
     "oak": null,
     "cases_produced": null,
     "chemistry": null,
     "winemaker": null,
     "farming": "organic"
   },
-  "data_richness": 1,
+  "data_richness": 3,
   "total_fields": 8,
-  "text_length": 4647
+  "text_length": 4647,
+  "consensus_models": 14
 }

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B042",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A is a ros\u00e9, while Wine B is a white wine made from Chardonnay. Different colors always indicate different wines, even if other details like producer and region are the same.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a ros\u00e9, while Wine B is a white wine made from Chardonnay. Different colors always indicate different wines, even if other details like producer and region are the same.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 72,
+  "elapsed": 1.8747162818908691,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B008",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are from the same producer and share the 'Arch Terrace' name, they are made from two distinct grape varieties: Cabernet Sauvignon and Sauvignon Blanc. A difference in grape variety always indicates a different wine. This is further confirmed by the different colors, red and white, which represent fundamentally different bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are from the same producer and share the 'Arch Terrace' name, they are made from two distinct grape varieties: Cabernet Sauvignon and Sauvignon Blanc. A difference in grape variety always indicates a different wine. This is further confirmed by the different colors, red and white, which represent fundamentally different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 1183,
+  "elapsed": 11.854848146438599,
+  "error": null
+}

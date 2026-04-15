@@ -1,0 +1,13 @@
+{
+  "pair_id": "D030",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The producer is the same, and the wine color is red for both. The difference in name and grape variety (Cabernet Sauvignon vs Merlot) could suggest different wines, but the varietal suffix difference alone often indicates the same wine, with the shorter name being an abbreviation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The producer is the same, and the wine color is red for both. The difference in name and grape variety (Cabernet Sauvignon vs Merlot) could suggest different wines, but the varietal suffix difference alone often indicates the same wine, with the shorter name being an abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 79,
+  "elapsed": 1.271050214767456,
+  "error": null
+}

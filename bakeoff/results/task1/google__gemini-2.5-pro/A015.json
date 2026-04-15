@@ -1,0 +1,13 @@
+{
+  "pair_id": "A015",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wine names are nearly identical, with Wine B simply adding the grape 'Pinot Noir' as a suffix. The provided data confirms that Wine A is also made from Pinot Noir. This indicates that 'Freedom Hill Perspicacious' is the cuv\u00e9e name and the two records refer to the same Pinot Noir bottling from the same producer.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wine names are nearly identical, with Wine B simply adding the grape 'Pinot Noir' as a suffix. The provided data confirms that Wine A is also made from Pinot Noir. This indicates that 'Freedom Hill Perspicacious' is the cuv\u00e9e name and the two records refer to the same Pinot Noir bottling from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 1323,
+  "elapsed": 13.440506219863892,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C038",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The producer Antonio Saramago produces multiple distinct 'Reserva' bottlings; 'Risco' is a specific brand/label within their portfolio that is distinct from the standard Antonio Saramago Reserva. The different LWINs (2454140 vs 2454052) confirm these are tracked as separate commercial products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The producer Antonio Saramago produces multiple distinct 'Reserva' bottlings; 'Risco' is a specific brand/label within their portfolio that is distinct from the standard Antonio Saramago Reserva. The different LWINs (2454140 vs 2454052) confirm these are tracked as separate commercial products.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 97,
+  "elapsed": 1.6482203006744385,
+  "error": null
+}

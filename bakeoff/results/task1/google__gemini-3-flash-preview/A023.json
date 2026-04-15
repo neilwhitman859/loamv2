@@ -1,0 +1,13 @@
+{
+  "pair_id": "A023",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A is an abbreviated name for the specific bottling, while Wine B includes the varietal suffix. Since both are red wines from the same producer and vineyard (Blackwood Canyon) using the same grape (Cabernet Sauvignon), they represent the same product.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A is an abbreviated name for the specific bottling, while Wine B includes the varietal suffix. Since both are red wines from the same producer and vineyard (Blackwood Canyon) using the same grape (Cabernet Sauvignon), they represent the same product.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 73,
+  "elapsed": 1.5363459587097168,
+  "error": null
+}

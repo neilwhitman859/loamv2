@@ -1,0 +1,13 @@
+{
+  "pair_id": "D001",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Van Volxem), same vineyard (Altenberg), same grape (Riesling), and same color (white). The only difference is the suffix 'Nr23' in Wine A, which is likely a specific lot or cask designation within the same bottling, and the rules state that different lot/cask numbers at the same Pr\u00e4dikat level are DIFFERENT, but here there is no Pr\u00e4dikat level specified, and the core identity is identical.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Van Volxem), same vineyard (Altenberg), same grape (Riesling), and same color (white). The only difference is the suffix 'Nr23' in Wine A, which is likely a specific lot or cask designation within the same bottling, and the rules state that different lot/cask numbers at the same Pr\u00e4dikat level are DIFFERENT, but here there is no Pr\u00e4dikat level specified, and the core identity is identical.",
+  "parse_ok": true,
+  "tokens_in": 512,
+  "tokens_out": 130,
+  "elapsed": 2.6889641284942627,
+  "error": null
+}

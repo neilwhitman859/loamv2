@@ -1,0 +1,13 @@
+{
+  "pair_id": "D032",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The presence of 'Reserve' in Wine B indicates a distinct classification or aging regimen compared to the standard 'Riesling Trocken' of Wine A. This difference in classification makes them distinct bottlings that a consumer would encounter separately.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The presence of 'Reserve' in Wine B indicates a distinct classification or aging regimen compared to the standard 'Riesling Trocken' of Wine A. This difference in classification makes them distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 83,
+  "elapsed": 1.6250312328338623,
+  "error": null
+}

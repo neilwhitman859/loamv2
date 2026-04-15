@@ -1,0 +1,13 @@
+{
+  "pair_id": "D016",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"The distinct LWINs indicate separate database entries, and the names 'Roche' and 'Sur Roche' represent different vineyard designations or cuv\u00e9es rather than simple formatting variations. In wine classification, distinct lieu-dit names from the same producer denote separate bottlings that would have their own encyclopedia pages.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "The distinct LWINs indicate separate database entries, and the names 'Roche' and 'Sur Roche' represent different vineyard designations or cuv\u00e9es rather than simple formatting variations. In wine classification, distinct lieu-dit names from the same producer denote separate bottlings that would have their own encyclopedia pages.",
+  "parse_ok": true,
+  "tokens_in": 454,
+  "tokens_out": 1916,
+  "elapsed": 36.273061752319336,
+  "error": null
+}

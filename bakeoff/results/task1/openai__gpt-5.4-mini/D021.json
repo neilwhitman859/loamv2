@@ -1,0 +1,13 @@
+{
+  "pair_id": "D021",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are both Potzinger white wines from the same cuv\u00e9e, but Wine A explicitly includes the German Pr\u00e4dikat level \\\"Auslese\\\" while Wine B does not. Under the rules, different Pr\u00e4dikat levels indicate different wines, not just a naming variation. The differing LWINs also support that they are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are both Potzinger white wines from the same cuv\u00e9e, but Wine A explicitly includes the German Pr\u00e4dikat level \"Auslese\" while Wine B does not. Under the rules, different Pr\u00e4dikat levels indicate different wines, not just a naming variation. The differing LWINs also support that they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 92,
+  "elapsed": 2.251113176345825,
+  "error": null
+}

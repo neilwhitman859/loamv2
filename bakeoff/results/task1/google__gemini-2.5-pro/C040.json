@@ -1,0 +1,13 @@
+{
+  "pair_id": "C040",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines have different classification tiers, 'Gran Reserva' versus 'Reserva'. These terms denote distinct aging requirements and represent separate, different bottlings in a producer's portfolio. The different LWINs for each wine further confirm they are tracked as unique products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different classification tiers, 'Gran Reserva' versus 'Reserva'. These terms denote distinct aging requirements and represent separate, different bottlings in a producer's portfolio. The different LWINs for each wine further confirm they are tracked as unique products.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 1064,
+  "elapsed": 11.10300898551941,
+  "error": null
+}

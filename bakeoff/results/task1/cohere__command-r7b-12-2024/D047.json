@@ -1,0 +1,13 @@
+{
+  "pair_id": "D047",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines are produced by the same producer, Happs, and have the same grape variety, Merlot Noir, and color, red. The slight difference in the name, 'Merlot' vs 'Merlot Noir', is a common practice and does not indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are produced by the same producer, Happs, and have the same grape variety, Merlot Noir, and color, red. The slight difference in the name, 'Merlot' vs 'Merlot Noir', is a common practice and does not indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 454,
+  "tokens_out": 77,
+  "elapsed": 1.4668748378753662,
+  "error": null
+}

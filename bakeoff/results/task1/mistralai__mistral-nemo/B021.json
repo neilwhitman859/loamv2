@@ -1,0 +1,13 @@
+{
+  "pair_id": "B021",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a rose (White Zinfandel), while Wine B is a red (Zinfandel), indicating different colors and thus different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a rose (White Zinfandel), while Wine B is a red (Zinfandel), indicating different colors and thus different wines.",
+  "parse_ok": true,
+  "tokens_in": 470,
+  "tokens_out": 56,
+  "elapsed": 2.2925047874450684,
+  "error": null
+}

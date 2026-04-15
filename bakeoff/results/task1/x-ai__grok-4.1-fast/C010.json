@@ -1,0 +1,13 @@
+{
+  "pair_id": "C010",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from producer Peter Jakob Kuhn, same vineyard 'Lenchen', grape Riesling, Pr\u00e4dikat Auslese level, and white. However, Wine A includes 'Nr12', indicating a specific lot or cask number, while Wine B does not; rules state different lot/cask numbers at the same Pr\u00e4dikat level are DIFFERENT wines. Distinct LWIN numbers (1679599 vs 1608630) further confirm separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from producer Peter Jakob Kuhn, same vineyard 'Lenchen', grape Riesling, Pr\u00e4dikat Auslese level, and white. However, Wine A includes 'Nr12', indicating a specific lot or cask number, while Wine B does not; rules state different lot/cask numbers at the same Pr\u00e4dikat level are DIFFERENT wines. Distinct LWIN numbers (1679599 vs 1608630) further confirm separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 574,
+  "tokens_out": 829,
+  "elapsed": 5.397150993347168,
+  "error": null
+}

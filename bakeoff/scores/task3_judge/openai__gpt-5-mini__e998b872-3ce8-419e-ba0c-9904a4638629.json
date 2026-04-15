@@ -1,0 +1,28 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "openai/gpt-5-mini",
+  "correctness": 3.0,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.525,
+  "wrong_facts": [
+    "Vinification summary says 'the estate keeps vinification details limited' and 'specific fermentation regime for Les Tosses is not publicly detailed' — but ground truth shows whole cluster native fermentation, two weeks on skins, no wood aging (cement tanks), which is publicly known",
+    "Hook says '2022's eight months in oak' — ground truth says recent vintages ferment and age in cement tanks (8 months), not oak; the context data says 'oak months: 8' but ground truth clarifies this is cement, not oak",
+    "Comparable wine Domaine Gauby Les Calcinaires is actually a blend (Syrah/Grenache/Carignan/Mourvèdre) and not an old-vine Carignan wine as described",
+    "Value assessment fabricates a price range of $40-$70 when no price data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$40-$70 price range",
+    "12-14°C storage temperature",
+    "2026-2036 drinking window",
+    "45 minutes decant time",
+    "90-year-old vines (though this matches ground truth, it wasn't in context data — this is actually correct from training knowledge)"
+  ],
+  "reasoning": "The output gets the broad strokes right — 100% Carignan, llicorella slate, Priorat, biodynamic farming — but makes a significant error calling the 8-month aging 'in oak' when ground truth confirms it's cement tanks. The vinification section hedges about details being unavailable when they actually are publicly known (whole cluster, no wood). The fabricated price range and the misidentification of Gauby Les Calcinaires as a single-varietal Carignan are additional errors. Voice is decent but slightly template-like with some hedging. Specificity is good with real soil descriptions and named comparables, though one comparable is inaccurately described.",
+  "judge_tokens_in": 3624,
+  "judge_tokens_out": 479
+}

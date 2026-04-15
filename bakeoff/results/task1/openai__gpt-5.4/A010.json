@@ -1,0 +1,13 @@
+{
+  "pair_id": "A010",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.95,\"reasoning\":\"These should be treated as different wines because the records indicate different grape varieties. Wine A is explicitly Gewurztraminer, while Wine B is labeled Pinot Gris; different grapes always mean different wines even when the producer and vineyard/cuv\u00e9e name match. The shared 'Le Jardin de Trebogad' wording is therefore likely a site/cuv\u00e9e line used for multiple varietal bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "These should be treated as different wines because the records indicate different grape varieties. Wine A is explicitly Gewurztraminer, while Wine B is labeled Pinot Gris; different grapes always mean different wines even when the producer and vineyard/cuv\u00e9e name match. The shared 'Le Jardin de Trebogad' wording is therefore likely a site/cuv\u00e9e line used for multiple varietal bottlings.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 100,
+  "elapsed": 3.0382192134857178,
+  "error": null
+}

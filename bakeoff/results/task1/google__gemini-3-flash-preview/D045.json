@@ -1,0 +1,13 @@
+{
+  "pair_id": "D045",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine B is simply an abbreviated name for Wine A, as both share the same producer and color. In the context of the Maris 'Casse-Croute' line, 'Blanc' is a descriptive suffix for the white wine bottling rather than a distinct tier or separate cuv\u00e9e.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine B is simply an abbreviated name for Wine A, as both share the same producer and color. In the context of the Maris 'Casse-Croute' line, 'Blanc' is a descriptive suffix for the white wine bottling rather than a distinct tier or separate cuv\u00e9e.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 79,
+  "elapsed": 1.8035950660705566,
+  "error": null
+}

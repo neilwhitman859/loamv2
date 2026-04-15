@@ -1,0 +1,13 @@
+{
+  "pair_id": "D026",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"These records match on producer and color, and the only substantive name difference is the added style suffix 'Red.' For Cupcake Vineyards, 'Black Forest Decadent' and 'Black Forest Decadent Red' are most plausibly the same bottling, with the shorter form functioning as an abbreviated name rather than indicating a distinct wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "These records match on producer and color, and the only substantive name difference is the added style suffix 'Red.' For Cupcake Vineyards, 'Black Forest Decadent' and 'Black Forest Decadent Red' are most plausibly the same bottling, with the shorter form functioning as an abbreviated name rather than indicating a distinct wine.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 90,
+  "elapsed": 2.672077178955078,
+  "error": null
+}

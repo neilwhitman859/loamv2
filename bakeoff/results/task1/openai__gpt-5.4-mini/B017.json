@@ -1,0 +1,13 @@
+{
+  "pair_id": "B017",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"The records share the same producer name, but the grape and color do not match: Wine A is red and made from Braquet Gris, while Wine B is white. Different grapes and different color indicate distinct bottlings, not the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "The records share the same producer name, but the grape and color do not match: Wine A is red and made from Braquet Gris, while Wine B is white. Different grapes and different color indicate distinct bottlings, not the same wine.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 71,
+  "elapsed": 1.36492919921875,
+  "error": null
+}

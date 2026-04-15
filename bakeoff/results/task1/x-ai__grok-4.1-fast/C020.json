@@ -1,0 +1,13 @@
+{
+  "pair_id": "C020",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines are Riesling Auslese from producer Milz Laurentiushof in Trittenheim, but they specify different vineyards: Altarchen vs Leiterchen, which are distinct sites. Different vineyard designations mean they are separate bottlings per the rules. Distinct LWINs (1436808 vs 2105925) confirm they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are Riesling Auslese from producer Milz Laurentiushof in Trittenheim, but they specify different vineyards: Altarchen vs Leiterchen, which are distinct sites. Different vineyard designations mean they are separate bottlings per the rules. Distinct LWINs (1436808 vs 2105925) confirm they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 586,
+  "tokens_out": 487,
+  "elapsed": 6.215947389602661,
+  "error": null
+}

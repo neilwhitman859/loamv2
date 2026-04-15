@@ -1,0 +1,13 @@
+{
+  "pair_id": "B029",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A is a Merlot, a red grape, while Wine B is a Chardonnay, a white grape. Different grape varieties always indicate different wines, even if the producer and vineyard are the same.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Merlot, a red grape, while Wine B is a Chardonnay, a white grape. Different grape varieties always indicate different wines, even if the producer and vineyard are the same.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 75,
+  "elapsed": 1.3828203678131104,
+  "error": null
+}

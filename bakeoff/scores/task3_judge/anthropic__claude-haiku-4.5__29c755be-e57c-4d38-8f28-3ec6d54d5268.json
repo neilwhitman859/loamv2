@@ -1,0 +1,32 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "anthropic/claude-haiku-4.5",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 3.2,
+  "wrong_facts": [
+    "Hook claims vineyard is on 'steep, rocky slopes of the Dentelles de Montmirail' — ground truth says Les Routes is on clay with gravel and limestone colluviums near the Hautes Garrigues, not steep rocky slopes",
+    "Claims 'the appellation requires minimum 50% Grenache and allows Syrah only as a complementary grape' — Gigondas requires minimum 50% Grenache but Syrah is allowed as a primary grape up to 15% max of Mourvèdre, not restricted as 'complementary only'",
+    "Claims des Bosquets farms biodynamically — not verifiable from context data or ground truth; this appears fabricated",
+    "Claims vegan protocol — not verifiable from context data or ground truth",
+    "Claims minimal sulfur addition — not in context data, unverifiable",
+    "Claims fine lees aging post-fermentation — not in context data, unverifiable",
+    "Claims natural yeast fermentation — not in context data, unverifiable",
+    "Domaine de la Côte Gigondas does not appear to be a real producer — likely fabricated comparable",
+    "Limestone bedrock pulling minerals into the grape creating rotundone is scientifically wrong — rotundone is biosynthesized by the vine, not absorbed from soil minerals",
+    "2021 scored 94 and 2022 scored 93, but text says '2022 and 2021 both at 94 and 93 respectively' which reverses the order/attribution"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$28-$38 USD price range",
+    "30-50% more for Vieux Télégraphe comparison",
+    "55°F storage temperature is standard advice but presented as specific to this wine"
+  ],
+  "reasoning": "The output fabricates multiple specific claims: biodynamic farming, vegan certification, natural yeasts, fine lees aging, and minimal sulfur — none present in context or ground truth. The hook's geographic description ('steep, rocky slopes') contradicts ground truth showing clay/gravel/limestone colluviums. The comparable wine 'Domaine de la Côte Gigondas' appears fabricated. Price range is invented. The Gigondas appellation rules are slightly mischaracterized. However, the voice is strong and opinionated, the writing is specific and direct, and the core insight about 100% Syrah being unusual in Gigondas is correct and well-developed. The fabricated biodynamic/vegan claims and invented comparables significantly undermine correctness despite good writing quality.",
+  "judge_tokens_in": 3891,
+  "judge_tokens_out": 621
+}

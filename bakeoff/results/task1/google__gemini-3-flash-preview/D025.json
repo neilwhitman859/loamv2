@@ -1,0 +1,13 @@
+{
+  "pair_id": "D025",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"In the context of Champagne, 'Millesime' refers to a vintage bottling, and 'Brut' is the standard sweetness classification for this specific wine. 'Millesime' is simply a shorthand for 'Brut Millesime' as Cattier does not produce multiple distinct sweetness levels or styles within their standard vintage range.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "In the context of Champagne, 'Millesime' refers to a vintage bottling, and 'Brut' is the standard sweetness classification for this specific wine. 'Millesime' is simply a shorthand for 'Brut Millesime' as Cattier does not produce multiple distinct sweetness levels or styles within their standard vintage range.",
+  "parse_ok": true,
+  "tokens_in": 409,
+  "tokens_out": 89,
+  "elapsed": 1.7407195568084717,
+  "error": null
+}

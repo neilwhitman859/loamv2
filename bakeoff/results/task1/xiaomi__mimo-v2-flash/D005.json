@@ -1,0 +1,13 @@
+{
+  "pair_id": "D005",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are red Syrah from the same producer, Fromm. The only difference is the name formatting, where 'Clayvin Vineyard Syrah' is the full name and 'Vineyard Syrah' is an abbreviated version, which is a common naming convention for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are red Syrah from the same producer, Fromm. The only difference is the name formatting, where 'Clayvin Vineyard Syrah' is the full name and 'Vineyard Syrah' is an abbreviated version, which is a common naming convention for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 490,
+  "tokens_out": 83,
+  "elapsed": 1.9833803176879883,
+  "error": null
+}

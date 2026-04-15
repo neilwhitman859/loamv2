@@ -1,0 +1,13 @@
+{
+  "pair_id": "A032",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Sherwood Estate, both are red, and Wine A's grapes are listed as Pinot Noir matching Wine B's varietal suffix. 'Stoney Range' is simply an abbreviated form of 'Stoney Range Pinot Noir' \u2014 a classic case where the shorter name omits the varietal suffix. No conflicting information suggests these are distinct bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Sherwood Estate, both are red, and Wine A's grapes are listed as Pinot Noir matching Wine B's varietal suffix. 'Stoney Range' is simply an abbreviated form of 'Stoney Range Pinot Noir' \u2014 a classic case where the shorter name omits the varietal suffix. No conflicting information suggests these are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 109,
+  "elapsed": 3.7328176498413086,
+  "error": null
+}

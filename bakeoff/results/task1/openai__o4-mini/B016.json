@@ -1,0 +1,13 @@
+{
+  "pair_id": "B016",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.90, \"reasoning\": \"Wine A is 100% Croatina Barolo Riserva, while Wine B is 100% Nebbiolo Barbaresco Riserva; they use different grape varieties and represent distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is 100% Croatina Barolo Riserva, while Wine B is 100% Nebbiolo Barbaresco Riserva; they use different grape varieties and represent distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 174,
+  "elapsed": 5.870423316955566,
+  "error": null
+}

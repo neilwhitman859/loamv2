@@ -1,0 +1,13 @@
+{
+  "pair_id": "B010",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are explicitly identified as having different colors (white vs. ros\u00e9). In the context of Bellavista, these represent distinct bottlings with different production profiles, confirming they are not the same wine.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are explicitly identified as having different colors (white vs. ros\u00e9). In the context of Bellavista, these represent distinct bottlings with different production profiles, confirming they are not the same wine.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 69,
+  "elapsed": 2.369913101196289,
+  "error": null
+}

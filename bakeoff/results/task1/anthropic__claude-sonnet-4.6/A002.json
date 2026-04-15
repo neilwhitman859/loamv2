@@ -1,0 +1,13 @@
+{
+  "pair_id": "A002",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Firestone and share the name 'Clone 174', with Wine B simply appending the varietal suffix 'Syrah'. Wine A is explicitly identified as Syrah, confirming the grape variety matches. This is a classic case of an abbreviated name vs. full name for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Firestone and share the name 'Clone 174', with Wine B simply appending the varietal suffix 'Syrah'. Wine A is explicitly identified as Syrah, confirming the grape variety matches. This is a classic case of an abbreviated name vs. full name for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 482,
+  "tokens_out": 91,
+  "elapsed": 2.6447672843933105,
+  "error": null
+}

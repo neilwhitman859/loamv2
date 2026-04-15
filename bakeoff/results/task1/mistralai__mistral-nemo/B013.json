@@ -1,0 +1,13 @@
+{
+  "pair_id": "B013",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different colors (white vs ros\u00e9), which indicates they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different colors (white vs ros\u00e9), which indicates they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 480,
+  "tokens_out": 48,
+  "elapsed": 2.46441912651062,
+  "error": null
+}

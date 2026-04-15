@@ -1,0 +1,13 @@
+{
+  "pair_id": "C012",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Pommery) and base cuv\u00e9e 'Greno Grand Prestige Brut', but Wine A is explicitly Ros\u00e9 (pink color) while Wine B is white, making them distinct bottlings differentiated by color. Guidelines specify that different colors, such as Ros\u00e9 vs non-Ros\u00e9, indicate different wines that consumers encounter separately. Distinct LWIN numbers (1814268 vs 1364633) confirm they are separate entries.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Pommery) and base cuv\u00e9e 'Greno Grand Prestige Brut', but Wine A is explicitly Ros\u00e9 (pink color) while Wine B is white, making them distinct bottlings differentiated by color. Guidelines specify that different colors, such as Ros\u00e9 vs non-Ros\u00e9, indicate different wines that consumers encounter separately. Distinct LWIN numbers (1814268 vs 1364633) confirm they are separate entries.",
+  "parse_ok": true,
+  "tokens_in": 571,
+  "tokens_out": 558,
+  "elapsed": 4.588475942611694,
+  "error": null
+}

@@ -1,0 +1,30 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "x-ai/grok-4.1-fast",
+  "correctness": 1.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.0,
+  "composite": 2.8,
+  "wrong_facts": [
+    "Hook says 'sources from younger estate vines in Stags Leap District' — ground truth shows it's multi-site (Shafer hillside estate, Borderline vineyard in Stags Leap District, AND selected Napa Valley sites), not just younger estate vines in Stags Leap",
+    "Hook says '100% Cab' — ground truth 2022 blend is 92% Cabernet Sauvignon, 3% Petite Verdot, 3% Merlot, 2% Malbec",
+    "Vinification says '20 months in French oak' — ground truth is 18 months in 100% new French oak",
+    "Vinification says 'mostly new' oak — ground truth is 100% new French oak",
+    "Wine summary references '1976 Judgment of Paris where a Shafer relative shone' — Shafer had no involvement in the 1976 Judgment of Paris; this is fabricated",
+    "Wine summary claims '50 hillside acres' — not in context data and unverifiable",
+    "Spottswoode is NOT in Stags Leap District — it's in St. Helena",
+    "No mention of the actual naming origin (generation and a half between John and Doug Shafer)"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "20 months oak aging (actual is 18 months)",
+    "50 hillside acres",
+    "122,735 acres"
+  ],
+  "reasoning": "The hook contains two provably wrong claims: calling it 100% Cab (it's a 92% Cab blend) and mischaracterizing the sourcing as 'younger estate vines in Stags Leap District' when it's multi-site. The Judgment of Paris reference involving Shafer is fabricated — Stag's Leap Wine Cellars (a different producer) was in the Judgment, not Shafer Vineyards. Oak aging is stated as 20 months mostly new when ground truth is 18 months 100% new. Multiple fabricated numbers (20 months, 50 acres, 122,735 acres) trigger the hard cap. The voice is decent — direct and opinionated without banned words — but the factual errors are severe and undermine the entire output.",
+  "judge_tokens_in": 3703,
+  "judge_tokens_out": 555
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B043",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are from the same producer and share the 'Apanage' cuv\u00e9e name, they are different types of wine. Wine A is a standard white Brut Champagne, while Wine B is a Ros\u00e9 Champagne, as indicated by its name and the provided color data. Different colors (white vs. ros\u00e9) represent distinct bottlings and are always considered different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are from the same producer and share the 'Apanage' cuv\u00e9e name, they are different types of wine. Wine A is a standard white Brut Champagne, while Wine B is a Ros\u00e9 Champagne, as indicated by its name and the provided color data. Different colors (white vs. ros\u00e9) represent distinct bottlings and are always considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 1070,
+  "elapsed": 11.342710494995117,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B006",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.9,\"reasoning\":\"These appear to be distinct bottlings from Vistalba: the names differ materially ('Corte' vs 'Corte B'), not just by a varietal suffix or formatting. The blends also differ, with Wine B explicitly including 8% Dolcetto while Wine A lists only Cot and Cabernet Sauvignon, which is strong evidence they would be sold as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "These appear to be distinct bottlings from Vistalba: the names differ materially ('Corte' vs 'Corte B'), not just by a varietal suffix or formatting. The blends also differ, with Wine B explicitly including 8% Dolcetto while Wine A lists only Cot and Cabernet Sauvignon, which is strong evidence they would be sold as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 457,
+  "tokens_out": 97,
+  "elapsed": 2.654033899307251,
+  "error": null
+}

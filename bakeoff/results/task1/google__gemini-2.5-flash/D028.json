@@ -1,0 +1,13 @@
+{
+  "pair_id": "D028",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are made from different grape varieties (Cabernet Sauvignon vs. Cabernet Franc), which always indicates a different wine. Even though the producer and the 'Seleccion del Viticultor' designation are the same, the grape difference makes them distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are made from different grape varieties (Cabernet Sauvignon vs. Cabernet Franc), which always indicates a different wine. Even though the producer and the 'Seleccion del Viticultor' designation are the same, the grape difference makes them distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 88,
+  "elapsed": 2.0994327068328857,
+  "error": null
+}

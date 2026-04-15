@@ -1,0 +1,13 @@
+{
+  "pair_id": "A020",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different grape varieties: Viura and Sauvignon Blanc respectively. According to the rules, different grapes always mean different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different grape varieties: Viura and Sauvignon Blanc respectively. According to the rules, different grapes always mean different wines.",
+  "parse_ok": true,
+  "tokens_in": 477,
+  "tokens_out": 57,
+  "elapsed": 1.4259569644927979,
+  "error": null
+}

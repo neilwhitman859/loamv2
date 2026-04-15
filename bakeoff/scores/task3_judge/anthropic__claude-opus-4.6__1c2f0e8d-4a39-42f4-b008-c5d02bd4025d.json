@@ -1,0 +1,31 @@
+{
+  "wine_id": "1c2f0e8d-4a39-42f4-b008-c5d02bd4025d",
+  "wine_name": "Atamisque Chardonnay, Mendoza",
+  "tier": "B",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Hook states 1,200 meters elevation; ground truth says 1,300m",
+    "Wine summary mentions 'rocky, well-drained calcareous soils' — ground truth says 'clay and sand alluvial soils' with no mention of calcareous character",
+    "Vinification summary hedges 'likely a mix of stainless steel and French oak' — ground truth confirms 10 months in French oak barrels specifically",
+    "Value assessment fabricates a $12-18 USD price range when no prices were provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "1,200 meters elevation (actual is 1,300m)",
+    "$12-18 USD price range (no prices provided)",
+    "200mm annual rainfall",
+    "20°C diurnal temperature swing",
+    "below 10°C night temperatures",
+    "2-4 years drinking window stated as recommendation (though this appears in structured fields too)",
+    "5-6 years aging claim",
+    "$15 price in insider take"
+  ],
+  "reasoning": "The output is exceptionally well-written with strong voice, specificity, and usefulness — it reads like genuine Loam content with real opinions and actionable comparisons. However, correctness suffers significantly. The hook states 1,200m elevation when ground truth confirms 1,300m — a factual error in the hook. The soil description adds 'calcareous' character not supported by ground truth (clay and sand alluvial soils). Multiple specific numbers are fabricated: the price range ($12-18), rainfall (200mm), diurnal swing (20°C), and night temperatures. The vinification section hedges about oak use when ground truth confirms 10 months in French oak. The fabricated price range and elevation error are particularly problematic. While many fabricated numbers are plausible climate statistics from training knowledge, the elevation error directly contradicts ground truth.",
+  "judge_tokens_in": 3988,
+  "judge_tokens_out": 459
+}

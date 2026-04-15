@@ -1,0 +1,13 @@
+{
+  "pair_id": "D022",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are produced by the same producer, La Tour Blanche, and have the same color (white). The slight difference in their names, Duo de la Tour Blanche and Brumes de La Tour Blanche, is likely due to different name formats or abbreviations, which is considered the same wine according to the rules.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are produced by the same producer, La Tour Blanche, and have the same color (white). The slight difference in their names, Duo de la Tour Blanche and Brumes de La Tour Blanche, is likely due to different name formats or abbreviations, which is considered the same wine according to the rules.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 83,
+  "elapsed": 1.4946515560150146,
+  "error": null
+}

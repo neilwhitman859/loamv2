@@ -1,0 +1,20 @@
+{
+  "wine_id": "1bc9b5ef-3d2d-4f0d-924b-fbfcd741e8d3",
+  "wine_name": "Montes Alpha M, Valle de Colchagua",
+  "tier": "B",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.05,
+  "wrong_facts": [
+    "The output says 'the grape blend is undisclosed here' in market_position, but the style_profile correctly identifies it as Cabernet-based — this is internally inconsistent but not strictly wrong since grapes were NOT PROVIDED in context data",
+    "The hook doesn't mention Apalta specifically, which is the actual single-estate source — instead it vaguely references Colchagua"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is well-written with strong voice, no banned words, and no fabricated numbers. It correctly identifies the wine as Cabernet-based and makes plausible claims about Colchagua terroir. However, it misses key ground-truth details it could have known from training data: the specific blend (80% CS, 10% CF, 5% Merlot, 5% PV), the Apalta vineyard source, 18 months in French oak (70% new), and the 1996 first vintage. The comparable wines (Almaviva, Seña, Don Melchor) are all correctly identified and well-characterized. The vinification section is generic rather than specific — it describes general winemaking concepts rather than what Montes actually does. The food pairings are creative and well-reasoned. The insider take is genuinely useful. No hard penalty triggers apply since no specific numbers were fabricated and no provably wrong claims appear in the hook.",
+  "judge_tokens_in": 3754,
+  "judge_tokens_out": 367
+}

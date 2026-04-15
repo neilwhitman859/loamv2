@@ -1,0 +1,13 @@
+{
+  "pair_id": "D012",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Boal and Sercial are two distinct grape varieties used in Madeira production that result in completely different styles of wine (Boal is medium-sweet, while Sercial is dry). Even though they share the same producer and age statement, they represent different bottlings that a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Boal and Sercial are two distinct grape varieties used in Madeira production that result in completely different styles of wine (Boal is medium-sweet, while Sercial is dry). Even though they share the same producer and age statement, they represent different bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 84,
+  "elapsed": 1.958319902420044,
+  "error": null
+}

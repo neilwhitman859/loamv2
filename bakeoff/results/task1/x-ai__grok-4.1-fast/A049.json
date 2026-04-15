@@ -1,0 +1,13 @@
+{
+  "pair_id": "A049",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are white from producer del Nebbiolo with Wine A explicitly listed as ARNEIS grapes, matching the Arneis varietal in Wine B's name. The only difference is the varietal suffix 'Arneis' on Wine B, which per rules indicates the same wine as an abbreviation of the full name. No evidence of different grapes, bottlings, or multiple wines from this vineyard by the producer.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are white from producer del Nebbiolo with Wine A explicitly listed as ARNEIS grapes, matching the Arneis varietal in Wine B's name. The only difference is the varietal suffix 'Arneis' on Wine B, which per rules indicates the same wine as an abbreviation of the full name. No evidence of different grapes, bottlings, or multiple wines from this vineyard by the producer.",
+  "parse_ok": true,
+  "tokens_in": 566,
+  "tokens_out": 469,
+  "elapsed": 4.50174880027771,
+  "error": null
+}

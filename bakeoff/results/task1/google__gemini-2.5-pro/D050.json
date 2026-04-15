@@ -1,0 +1,13 @@
+{
+  "pair_id": "D050",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although the producer and vineyard name are the same (with a minor spelling variation), the wines are made from entirely different grape varieties. Wine A is a blend of Pinot Gris and Pinot Blanc, while Wine B is made from Chardonnay. A difference in grape composition always signifies a different wine.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the producer and vineyard name are the same (with a minor spelling variation), the wines are made from entirely different grape varieties. Wine A is a blend of Pinot Gris and Pinot Blanc, while Wine B is made from Chardonnay. A difference in grape composition always signifies a different wine.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 1036,
+  "elapsed": 10.347774744033813,
+  "error": null
+}

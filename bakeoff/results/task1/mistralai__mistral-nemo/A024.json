@@ -1,0 +1,13 @@
+{
+  "pair_id": "A024",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (L.A. Cetto) and the same grape variety (Syrah). The difference in name ('Boutique' vs 'Boutique Syrah') is likely an abbreviation, as the varietal suffix is often omitted in wine names.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (L.A. Cetto) and the same grape variety (Syrah). The difference in name ('Boutique' vs 'Boutique Syrah') is likely an abbreviation, as the varietal suffix is often omitted in wine names.",
+  "parse_ok": true,
+  "tokens_in": 470,
+  "tokens_out": 80,
+  "elapsed": 1.3738572597503662,
+  "error": null
+}

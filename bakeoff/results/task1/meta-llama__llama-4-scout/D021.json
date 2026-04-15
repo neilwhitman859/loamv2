@@ -1,0 +1,13 @@
+{
+  "pair_id": "D021",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer (Potzinger), vineyard (Kaltenegg), grape variety (Traminer), and style (white). The difference in 'Auslese' designation is a potential concern, but since Wine B does not specify a Pr\u00e4dikat level, it is likely an abbreviation or omission of the same wine. The LWIN numbers are different, but this is not decisive evidence for different wines in this context.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer (Potzinger), vineyard (Kaltenegg), grape variety (Traminer), and style (white). The difference in 'Auslese' designation is a potential concern, but since Wine B does not specify a Pr\u00e4dikat level, it is likely an abbreviation or omission of the same wine. The LWIN numbers are different, but this is not decisive evidence for different wines in this context.",
+  "parse_ok": true,
+  "tokens_in": 439,
+  "tokens_out": 111,
+  "elapsed": 2.4808402061462402,
+  "error": null
+}

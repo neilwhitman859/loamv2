@@ -1,0 +1,13 @@
+{
+  "pair_id": "D004",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Chimney Rock and share the same grape variety (Cabernet Sauvignon), but they have different wine names: 'Arrowhead' and 'Arete'. These are distinct named cuv\u00e9es/vineyard designations from the same producer, representing separate bottlings that a consumer would encounter separately. The different LWIN codes (1750485 vs 1991273) further confirm these are catalogued as distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Chimney Rock and share the same grape variety (Cabernet Sauvignon), but they have different wine names: 'Arrowhead' and 'Arete'. These are distinct named cuv\u00e9es/vineyard designations from the same producer, representing separate bottlings that a consumer would encounter separately. The different LWIN codes (1750485 vs 1991273) further confirm these are catalogued as distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 122,
+  "elapsed": 4.109472751617432,
+  "error": null
+}

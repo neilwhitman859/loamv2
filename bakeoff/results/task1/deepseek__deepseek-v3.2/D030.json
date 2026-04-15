@@ -1,0 +1,13 @@
+{
+  "pair_id": "D030",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.9, \"reasoning\": \"Wine A is explicitly made from Cabernet Sauvignon, while Wine B is a Merlot. Different grape varieties always indicate different wines, even if the producer and vineyard/range name (Porcupine Ridge) are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "Wine A is explicitly made from Cabernet Sauvignon, while Wine B is a Merlot. Different grape varieties always indicate different wines, even if the producer and vineyard/range name (Porcupine Ridge) are the same.",
+  "parse_ok": true,
+  "tokens_in": 456,
+  "tokens_out": 72,
+  "elapsed": 2.4334957599639893,
+  "error": null
+}

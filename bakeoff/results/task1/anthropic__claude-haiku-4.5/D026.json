@@ -1,0 +1,13 @@
+{
+  "pair_id": "D026",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Cupcake Vineyards with the same base name 'Black Forest Decadent' and identical red color. The addition of 'Red' in Wine B is a descriptive suffix clarifying the wine type, analogous to varietal suffixes, and represents the same bottling rather than a distinct product.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Cupcake Vineyards with the same base name 'Black Forest Decadent' and identical red color. The addition of 'Red' in Wine B is a descriptive suffix clarifying the wine type, analogous to varietal suffixes, and represents the same bottling rather than a distinct product.",
+  "parse_ok": true,
+  "tokens_in": 486,
+  "tokens_out": 100,
+  "elapsed": 4.716921329498291,
+  "error": null
+}

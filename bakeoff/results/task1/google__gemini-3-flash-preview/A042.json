@@ -1,0 +1,13 @@
+{
+  "pair_id": "A042",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.98, \"reasoning\": \"Wine B simply appends the grape variety 'Cabernet Franc' to the specific lot name 'Tonel Unico No. 183'. Since both records share the same producer, specific barrel/lot number, and grape variety, they represent the same unique bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Wine B simply appends the grape variety 'Cabernet Franc' to the specific lot name 'Tonel Unico No. 183'. Since both records share the same producer, specific barrel/lot number, and grape variety, they represent the same unique bottling.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 76,
+  "elapsed": 1.8430595397949219,
+  "error": null
+}

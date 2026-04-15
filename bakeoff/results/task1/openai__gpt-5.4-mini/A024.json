@@ -1,0 +1,13 @@
+{
+  "pair_id": "A024",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"The key difference is the grape: Wine A is COT 100%, while Wine B is identified as Boutique Syrah, indicating Syrah. Different grapes always mean different wines, even if the producer and color match. The shorter name on Wine A is not just an omitted varietal suffix because the varietal itself does not match Wine B.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "The key difference is the grape: Wine A is COT 100%, while Wine B is identified as Boutique Syrah, indicating Syrah. Different grapes always mean different wines, even if the producer and color match. The shorter name on Wine A is not just an omitted varietal suffix because the varietal itself does not match Wine B.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 91,
+  "elapsed": 2.7454843521118164,
+  "error": null
+}

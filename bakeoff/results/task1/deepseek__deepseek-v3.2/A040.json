@@ -1,0 +1,13 @@
+{
+  "pair_id": "A040",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different grape compositions: Wine A is a blend of Merlot and Chardonnay, while Wine B is a single-varietal Pinot Noir. Different grapes always indicate different wines, even if the producer and series name are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different grape compositions: Wine A is a blend of Merlot and Chardonnay, while Wine B is a single-varietal Pinot Noir. Different grapes always indicate different wines, even if the producer and series name are the same.",
+  "parse_ok": true,
+  "tokens_in": 453,
+  "tokens_out": 76,
+  "elapsed": 2.7362277507781982,
+  "error": null
+}

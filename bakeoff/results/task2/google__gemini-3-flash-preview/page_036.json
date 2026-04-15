@@ -1,0 +1,33 @@
+{
+  "page_id": "page_036",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Blaufr\\u00e4nkisch 2024\", \"vintage_year\": 2024, \"abv_pct\": 13.0, \"blend\": null, \"oak\": {\"vessel\": \"1/3 gebrauchtes Holz\", \"months\": 12, \"new_pct\": null, \"origin\": null}, \"cases_produced\": null, \"chemistry\": {\"ph\": null, \"ta_g_l\": 5.9, \"rs_g_l\": 1.0, \"so2_total_mg_l\": null}, \"winemaker\": \"Leo Hillinger\", \"farming\": \"organic\"}]}",
+  "wines_found": [
+    {
+      "name": "Blaufränkisch 2024",
+      "vintage_year": 2024,
+      "abv_pct": 13.0,
+      "blend": null,
+      "oak": {
+        "vessel": "1/3 gebrauchtes Holz",
+        "months": 12,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": 5.9,
+        "rs_g_l": 1.0,
+        "so2_total_mg_l": null
+      },
+      "winemaker": "Leo Hillinger",
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 34955,
+  "tokens_out": 156,
+  "elapsed": 2.3421363830566406,
+  "error": null
+}

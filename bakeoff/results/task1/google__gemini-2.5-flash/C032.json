@@ -1,0 +1,13 @@
+{
+  "pair_id": "C032",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are 'Blanc de Blancs' from the same producer, Bonnaire. The 'NV' (non-vintage) designation is often omitted in wine names, especially when it's the standard bottling for a producer's Blanc de Blancs. Without further information indicating distinct bottlings, they are likely the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are 'Blanc de Blancs' from the same producer, Bonnaire. The 'NV' (non-vintage) designation is often omitted in wine names, especially when it's the standard bottling for a producer's Blanc de Blancs. Without further information indicating distinct bottlings, they are likely the same wine.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 89,
+  "elapsed": 1.3698954582214355,
+  "error": null
+}

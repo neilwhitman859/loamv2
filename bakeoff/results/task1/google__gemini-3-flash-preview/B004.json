@@ -1,0 +1,13 @@
+{
+  "pair_id": "B004",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records represent different wines based on grape variety and color. Wine A is a red wine made from Pinot Noir, while Wine B is a white wine (likely a Chardonnay or a blend) containing Chardonnay Blanc, representing distinct bottlings from the same vineyard.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent different wines based on grape variety and color. Wine A is a red wine made from Pinot Noir, while Wine B is a white wine (likely a Chardonnay or a blend) containing Chardonnay Blanc, representing distinct bottlings from the same vineyard.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 75,
+  "elapsed": 1.7458186149597168,
+  "error": null
+}

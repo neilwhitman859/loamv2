@@ -1,0 +1,13 @@
+{
+  "pair_id": "A015",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different grape varieties, with Wine A being PINOT NOIR and Wine B being PINOT NOIR Pinot Noir. This is a clear indication of different wines, as the addition of 'Pinot Noir' to the name suggests a different grape variety, even though the vineyard and producer are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different grape varieties, with Wine A being PINOT NOIR and Wine B being PINOT NOIR Pinot Noir. This is a clear indication of different wines, as the addition of 'Pinot Noir' to the name suggests a different grape variety, even though the vineyard and producer are the same.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 89,
+  "elapsed": 1.7431349754333496,
+  "error": null
+}

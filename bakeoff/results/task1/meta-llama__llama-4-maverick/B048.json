@@ -1,0 +1,13 @@
+{
+  "pair_id": "B048",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different colors and grape varieties, with Wine A being a red PINOT GRIS and Wine B being a white PINOT BLANC, indicating they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different colors and grape varieties, with Wine A being a red PINOT GRIS and Wine B being a white PINOT BLANC, indicating they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 490,
+  "tokens_out": 63,
+  "elapsed": 1.7420306205749512,
+  "error": null
+}

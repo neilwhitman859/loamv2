@@ -1,0 +1,13 @@
+{
+  "pair_id": "B033",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a red Pinot Noir and Wine B is a white Gewurztraminer \u2014 different grape varieties and different colors. Even though both come from the Bollenberg vineyard by Valentin Zusslin, different grapes always means different wines. These are clearly distinct bottlings a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a red Pinot Noir and Wine B is a white Gewurztraminer \u2014 different grape varieties and different colors. Even though both come from the Bollenberg vineyard by Valentin Zusslin, different grapes always means different wines. These are clearly distinct bottlings a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 93,
+  "elapsed": 2.3590428829193115,
+  "error": null
+}

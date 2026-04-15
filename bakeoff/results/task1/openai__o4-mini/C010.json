@@ -1,0 +1,13 @@
+{
+  "pair_id": "C010",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"The presence of \u2018Nr12\u2019 indicates a specific lot/cask at the Auslese level, and different lot numbers at the same Pr\u00e4dikat level count as distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "The presence of \u2018Nr12\u2019 indicates a specific lot/cask at the Auslese level, and different lot numbers at the same Pr\u00e4dikat level count as distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 180,
+  "elapsed": 5.224556922912598,
+  "error": null
+}

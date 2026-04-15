@@ -1,0 +1,13 @@
+{
+  "pair_id": "C007",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines differ in their Pr\u00e4dikat level (Auslese vs. Trockenbeerenauslese), which indicates distinct sweetness levels and grape selection standards. According to the classification rules, different Pr\u00e4dikat levels always represent different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines differ in their Pr\u00e4dikat level (Auslese vs. Trockenbeerenauslese), which indicates distinct sweetness levels and grape selection standards. According to the classification rules, different Pr\u00e4dikat levels always represent different wines.",
+  "parse_ok": true,
+  "tokens_in": 507,
+  "tokens_out": 759,
+  "elapsed": 15.716561555862427,
+  "error": null
+}

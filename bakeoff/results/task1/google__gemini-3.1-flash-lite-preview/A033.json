@@ -1,0 +1,13 @@
+{
+  "pair_id": "A033",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The records refer to the same producer and the same wine line. The addition of 'Vermentino' in Wine B is a varietal suffix that clarifies the grape composition of the 'Private Bin' bottling, which is consistent with the grape information provided for Wine A.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The records refer to the same producer and the same wine line. The addition of 'Vermentino' in Wine B is a varietal suffix that clarifies the grape composition of the 'Private Bin' bottling, which is consistent with the grape information provided for Wine A.",
+  "parse_ok": true,
+  "tokens_in": 416,
+  "tokens_out": 76,
+  "elapsed": 2.192870616912842,
+  "error": null
+}

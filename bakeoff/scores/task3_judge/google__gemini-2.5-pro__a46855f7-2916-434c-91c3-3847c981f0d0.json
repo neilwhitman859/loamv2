@@ -1,0 +1,23 @@
+{
+  "wine_id": "a46855f7-2916-434c-91c3-3847c981f0d0",
+  "wine_name": "Leo Hillinger, Burgenland",
+  "tier": "B",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.65,
+  "wrong_facts": [
+    "Price claim of '$15-$20' is not in context data and unverifiable",
+    "Claim about 'temperature-controlled stainless steel tanks' and 'large, neutral oak casks' for vinification is fabricated — no vinification details were provided",
+    "Comparison of Blaufränkisch to Pinot Noir or Nebbiolo in the hook is debatable — it's more commonly compared to Gamay or sometimes Syrah in terms of profile"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$15-$20 price range"
+  ],
+  "reasoning": "The output is well-written with strong voice and good specificity — naming Leithakalk limestone, Lake Neusiedl, Pannonian climate, and real comparable wines. However, the vinification section fabricates specific winemaking details (stainless steel, neutral oak casks) not present in context data or ground truth. The price range is also fabricated. The hook's Pinot Noir/Nebbiolo comparison is a stretch but not provably wrong — Blaufränkisch is sometimes compared to these grapes in terms of site-sensitivity, though it's not the most common comparison. The output correctly identifies organic practices (matching ground truth's 2010 conversion) and the multi-site sourcing across Burgenland. The fabricated vinification details and price prevent a higher correctness score, but since these aren't hard numbers like pH or oak months, and the price fabrication is a range estimate rather than a precise figure, I'm scoring at 3.0 rather than applying the hard cap.",
+  "judge_tokens_in": 3445,
+  "judge_tokens_out": 399
+}

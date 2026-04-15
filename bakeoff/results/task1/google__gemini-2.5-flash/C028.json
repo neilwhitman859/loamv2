@@ -1,0 +1,13 @@
+{
+  "pair_id": "C028",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are classified as 'Gran Reserva' and 'Reserva' respectively. These are distinct classification tiers in Chilean wine, indicating different aging requirements and quality levels, making them different bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are classified as 'Gran Reserva' and 'Reserva' respectively. These are distinct classification tiers in Chilean wine, indicating different aging requirements and quality levels, making them different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 75,
+  "elapsed": 1.6020433902740479,
+  "error": null
+}

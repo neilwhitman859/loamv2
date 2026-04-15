@@ -1,0 +1,25 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "openai/gpt-5-mini",
+  "correctness": 3.0,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.525,
+  "wrong_facts": [
+    "Vinification summary says 'minimal new oak' — ground truth confirms NO OAK at all, fermented in stainless steel with no oak fermentation or maturation",
+    "No mention of Short Flat vineyard (the actual source) or the 1923 planting date or the 1963 creation date",
+    "Sandy alluvial loam soil claims for the specific vineyard are not verified — the output generalizes Hunter Valley GI soils as if they apply to Vat 1's specific site",
+    "harmonize used in food pairing section is a banned word variant but 'harmonize' itself is not on the list — however the concept is borderline"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "12-14°C storage temperature not in context data (though reasonable general advice)",
+    "3-25 year drinking window and 30-year aging potential are not sourced from context data"
+  ],
+  "reasoning": "The output is mostly well-structured and informative, but the vinification section's mention of 'minimal new oak' directly contradicts the ground truth that Vat 1 sees NO oak whatsoever. This is a meaningful factual error for a wine whose identity is defined by its complete absence of oak. The hook correctly identifies it as tank-fermented and unoaked, which is good, but the vinification section undermines this. The soil descriptions are plausible generalizations about Hunter Valley but are presented as if specific to Vat 1's vineyard without naming Short Flat. The output misses key facts like the 1963 origin, Short Flat vineyard, 1923 plantings, and the wine's status as Australia's most awarded white. The voice is decent but occasionally slips into generic wine-writing patterns. No banned words detected. The 'minimal new oak' claim in vinification is a factual error but not a fabricated number per se — it's a wrong qualitative claim. Overall solid but the oak error and missing key provenance details hold it back.",
+  "judge_tokens_in": 3606,
+  "judge_tokens_out": 485
+}

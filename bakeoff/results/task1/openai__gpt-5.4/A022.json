@@ -1,0 +1,13 @@
+{
+  "pair_id": "A022",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These records conflict on grape: Wine A is explicitly Cabernet Sauvignon, while Wine B is labeled Carmenere. Different grapes mean different wines, even when the producer and Andes Peaks range name match. The shorter name is not just an abbreviation here because Emiliana appears to make multiple Andes Peaks varietal bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These records conflict on grape: Wine A is explicitly Cabernet Sauvignon, while Wine B is labeled Carmenere. Different grapes mean different wines, even when the producer and Andes Peaks range name match. The shorter name is not just an abbreviation here because Emiliana appears to make multiple Andes Peaks varietal bottlings.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 83,
+  "elapsed": 2.115513801574707,
+  "error": null
+}

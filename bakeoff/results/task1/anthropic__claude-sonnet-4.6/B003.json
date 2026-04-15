@@ -1,0 +1,13 @@
+{
+  "pair_id": "B003",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.97, \"reasoning\": \"Wine A is red and Wine B is white (Fiano is a white grape variety), so these are fundamentally different wines by color and grape variety. Although 'Labellum' could be an abbreviation of 'Labellum Fiano,' the explicit color difference (red vs white) confirms these are distinct bottlings. Different grape varieties and colors always constitute different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "Wine A is red and Wine B is white (Fiano is a white grape variety), so these are fundamentally different wines by color and grape variety. Although 'Labellum' could be an abbreviation of 'Labellum Fiano,' the explicit color difference (red vs white) confirms these are distinct bottlings. Different grape varieties and colors always constitute different wines.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 105,
+  "elapsed": 5.345646619796753,
+  "error": null
+}

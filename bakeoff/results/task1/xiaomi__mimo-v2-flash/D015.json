@@ -1,0 +1,13 @@
+{
+  "pair_id": "D015",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Amizetta), same color (red), and same grape (Cabernet Sauvignon). The only difference is the name formatting, where 'Reserve' is a stylistic suffix that does not indicate a different classification tier or distinct bottling, making them the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Amizetta), same color (red), and same grape (Cabernet Sauvignon). The only difference is the name formatting, where 'Reserve' is a stylistic suffix that does not indicate a different classification tier or distinct bottling, making them the same wine.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 87,
+  "elapsed": 1.8232688903808594,
+  "error": null
+}

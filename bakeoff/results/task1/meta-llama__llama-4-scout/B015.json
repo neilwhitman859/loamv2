@@ -1,0 +1,13 @@
+{
+  "pair_id": "B015",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, one being a rose and the other a red. This difference in color classification indicates they are distinct wines. Despite sharing the same producer, vineyard, and grape variety, the color difference takes precedence.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, one being a rose and the other a red. This difference in color classification indicates they are distinct wines. Despite sharing the same producer, vineyard, and grape variety, the color difference takes precedence.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 69,
+  "elapsed": 2.336437702178955,
+  "error": null
+}

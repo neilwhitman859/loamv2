@@ -1,0 +1,13 @@
+{
+  "pair_id": "C001",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"These wines are different because they represent distinct German Pr\u00e4dikat levels. Beerenauslese and Auslese are different classification tiers indicating different ripeness levels of the grapes at harvest, leading to distinct wine styles and sweetness levels.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "These wines are different because they represent distinct German Pr\u00e4dikat levels. Beerenauslese and Auslese are different classification tiers indicating different ripeness levels of the grapes at harvest, leading to distinct wine styles and sweetness levels.",
+  "parse_ok": true,
+  "tokens_in": 436,
+  "tokens_out": 83,
+  "elapsed": 1.6703205108642578,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A005",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A and Wine B share the same producer, vineyard designation (Agrelo), and brand name (Saint Felicien). The addition of the varietal 'Semillon' in Wine B is a naming convention difference rather than a distinct bottling, as both records indicate the same grape and color.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A and Wine B share the same producer, vineyard designation (Agrelo), and brand name (Saint Felicien). The addition of the varietal 'Semillon' in Wine B is a naming convention difference rather than a distinct bottling, as both records indicate the same grape and color.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 81,
+  "elapsed": 1.5933327674865723,
+  "error": null
+}

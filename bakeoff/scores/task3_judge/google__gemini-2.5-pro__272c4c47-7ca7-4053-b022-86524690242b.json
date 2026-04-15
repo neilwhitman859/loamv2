@@ -1,0 +1,26 @@
+{
+  "wine_id": "272c4c47-7ca7-4053-b022-86524690242b",
+  "wine_name": "Lafage Tessellae Old Vines, Côtes du Roussillon",
+  "tier": "C",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 1.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 3.025,
+  "wrong_facts": [
+    "Hook states the wine is made from 70-year-old Grenache, Syrah, and Mourvèdre vines — ground truth confirms it is 100% Carignan from 70+ year old vines",
+    "Wine summary describes it as a GSM blend (Grenache, Syrah, Mourvèdre) — it is 100% Carignan",
+    "Vinification summary describes separate vinification of Syrah, Mourvèdre, and Grenache with semi-carbonic maceration for Grenache — the wine is 100% Carignan, so this is fabricated",
+    "Food pairing references Mourvèdre and Syrah contributions — these grapes are not in the wine",
+    "Comparable wine reasoning references Mourvèdre in the blend — incorrect"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$15 to $20 price range not in context data",
+    "70-year-old vines stated in hook (though 70+ years is in ground truth, the grape attribution is wrong)"
+  ],
+  "reasoning": "The fundamental and fatal error is getting the grape variety completely wrong. The hook — the first thing users read — states the wine is from Grenache, Syrah, and Mourvèdre, when ground truth confirms it is 100% Carignan. This wrong fact in the hook triggers the hard cap of 1.5 on correctness. The entire wine summary, vinification, and food pairing reasoning are built on this incorrect GSM blend assumption, compounding the error throughout. The writing voice is strong — direct, opinionated, specific, with no banned words — and the structure is well-organized with good specificity (schist soils, Agly Valley, Tramontane wind, named comparables). But the core factual error about the grape variety undermines the entire output's trustworthiness.",
+  "judge_tokens_in": 3710,
+  "judge_tokens_out": 472
+}

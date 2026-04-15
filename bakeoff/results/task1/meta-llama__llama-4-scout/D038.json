@@ -1,0 +1,13 @@
+{
+  "pair_id": "D038",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer, Chatter Creek, and the same vineyard/cuv\u00e9e, Chatterneuf-du-Pape. The difference in name formatting, with Wine B including 'Wine', does not affect the classification. Both wines are also red in color and classified as Table wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer, Chatter Creek, and the same vineyard/cuv\u00e9e, Chatterneuf-du-Pape. The difference in name formatting, with Wine B including 'Wine', does not affect the classification. Both wines are also red in color and classified as Table wine.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 82,
+  "elapsed": 1.407907485961914,
+  "error": null
+}

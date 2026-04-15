@@ -1,0 +1,13 @@
+{
+  "pair_id": "C035",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from Markus Molitor's Bernkasteler Doctor vineyard, Riesling Auslese at 3* quality from auction (Auktion), but differ in capsule color (Gold vs White), indicating distinct lots or selections. Different LWIN numbers (1731626 vs 1731613) confirm they are treated as separate bottlings. Per rules, differences like this at the same Pr\u00e4dikat level (e.g., lot designations) mean DIFFERENT wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from Markus Molitor's Bernkasteler Doctor vineyard, Riesling Auslese at 3* quality from auction (Auktion), but differ in capsule color (Gold vs White), indicating distinct lots or selections. Different LWIN numbers (1731626 vs 1731613) confirm they are treated as separate bottlings. Per rules, differences like this at the same Pr\u00e4dikat level (e.g., lot designations) mean DIFFERENT wines.",
+  "parse_ok": true,
+  "tokens_in": 590,
+  "tokens_out": 793,
+  "elapsed": 9.411452054977417,
+  "error": null
+}

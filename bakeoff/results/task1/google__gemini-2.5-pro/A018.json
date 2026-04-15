@@ -1,0 +1,13 @@
+{
+  "pair_id": "A018",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines are made from different grape varieties. Wine A is explicitly listed as being made from Chardonnay Blanc, while Wine B's name, 'Quarter Acre Viognier', indicates it is made from Viognier. According to the rules, wines made from different grapes are always considered different, even if they share a vineyard or cuv\u00e9e name.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from different grape varieties. Wine A is explicitly listed as being made from Chardonnay Blanc, while Wine B's name, 'Quarter Acre Viognier', indicates it is made from Viognier. According to the rules, wines made from different grapes are always considered different, even if they share a vineyard or cuv\u00e9e name.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 920,
+  "elapsed": 9.610473871231079,
+  "error": null
+}

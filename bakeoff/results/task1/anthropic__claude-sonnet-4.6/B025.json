@@ -1,0 +1,13 @@
+{
+  "pair_id": "B025",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is white and Wine B is red (Merlot), making them fundamentally different wines despite sharing the same producer and base name. La Tour Blanche is primarily known as a Sauternes producer, so the white 'Les Jardins de La Tour Blanche' is likely a dry white wine, while the Merlot is a red wine \u2014 different grapes and different colors confirm these are distinct bottlings. The different LWIN codes further confirm these are catalogued as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is white and Wine B is red (Merlot), making them fundamentally different wines despite sharing the same producer and base name. La Tour Blanche is primarily known as a Sauternes producer, so the white 'Les Jardins de La Tour Blanche' is likely a dry white wine, while the Merlot is a red wine \u2014 different grapes and different colors confirm these are distinct bottlings. The different LWIN codes further confirm these are catalogued as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 502,
+  "tokens_out": 132,
+  "elapsed": 3.5306155681610107,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B032",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B differ in grape variety (Gew\u00fcrztraminer vs Pinot Noir), which is a clear indicator of different wines, even if they share the same producer and vineyard.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B differ in grape variety (Gew\u00fcrztraminer vs Pinot Noir), which is a clear indicator of different wines, even if they share the same producer and vineyard.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 61,
+  "elapsed": 1.830474615097046,
+  "error": null
+}

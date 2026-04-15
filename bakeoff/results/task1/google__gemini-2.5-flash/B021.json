@@ -1,0 +1,13 @@
+{
+  "pair_id": "B021",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A is a White Zinfandel, which is a ros\u00e9 wine, while Wine B is a Zinfandel, which is a red wine. Despite sharing the 'Zinfandel' grape name, the color difference (ros\u00e9 vs. red) indicates these are distinct bottlings and different wine types.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a White Zinfandel, which is a ros\u00e9 wine, while Wine B is a Zinfandel, which is a red wine. Despite sharing the 'Zinfandel' grape name, the color difference (ros\u00e9 vs. red) indicates these are distinct bottlings and different wine types.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 98,
+  "elapsed": 1.3728744983673096,
+  "error": null
+}

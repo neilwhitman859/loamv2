@@ -1,0 +1,13 @@
+{
+  "pair_id": "D015",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.97,\"reasoning\":\"The only naming difference is the classification term 'Reserve' in Wine A, while both are Amizetta red Cabernet Sauvignon. A reserve designation is a distinct bottling/tier that consumers would encounter separately, not just a formatting abbreviation, and the different LWINs support that these are separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "The only naming difference is the classification term 'Reserve' in Wine A, while both are Amizetta red Cabernet Sauvignon. A reserve designation is a distinct bottling/tier that consumers would encounter separately, not just a formatting abbreviation, and the different LWINs support that these are separate wines.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 82,
+  "elapsed": 2.135807991027832,
+  "error": null
+}

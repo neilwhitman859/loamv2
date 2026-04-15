@@ -1,0 +1,13 @@
+{
+  "pair_id": "D001",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines have the same producer, Van Volxem, and the same grape variety, Riesling Weiss. The difference in name is likely due to the presence of 'Nr23' in Wine A's name, which could be a specific lot or vineyard designation, but the core name 'Altenberg Alte Reben Grosse Lage' is the same for both. The color and grape composition are also identical.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines have the same producer, Van Volxem, and the same grape variety, Riesling Weiss. The difference in name is likely due to the presence of 'Nr23' in Wine A's name, which could be a specific lot or vineyard designation, but the core name 'Altenberg Alte Reben Grosse Lage' is the same for both. The color and grape composition are also identical.",
+  "parse_ok": true,
+  "tokens_in": 515,
+  "tokens_out": 105,
+  "elapsed": 1.8366007804870605,
+  "error": null
+}

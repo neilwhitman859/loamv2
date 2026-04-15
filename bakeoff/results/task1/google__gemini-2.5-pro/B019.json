@@ -1,0 +1,13 @@
+{
+  "pair_id": "B019",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines are made from different grape varieties. Wine A is made from Aligot\u00e9, while Wine B is made from Chardonnay and Pinot Blanc. In Burgundy, 'Bourgogne Aligot\u00e9' is a distinct appellation and wine type, separate from the standard 'Bourgogne' blanc, which is typically made from Chardonnay.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from different grape varieties. Wine A is made from Aligot\u00e9, while Wine B is made from Chardonnay and Pinot Blanc. In Burgundy, 'Bourgogne Aligot\u00e9' is a distinct appellation and wine type, separate from the standard 'Bourgogne' blanc, which is typically made from Chardonnay.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 1182,
+  "elapsed": 13.166247129440308,
+  "error": null
+}

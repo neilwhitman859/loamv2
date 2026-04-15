@@ -1,0 +1,13 @@
+{
+  "pair_id": "B002",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have the same name, producer, and grape composition, but Wine A is red while Wine B is white. A difference in color (red vs white) from the same producer and vineyard indicates distinct bottlings that a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have the same name, producer, and grape composition, but Wine A is red while Wine B is white. A difference in color (red vs white) from the same producer and vineyard indicates distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 480,
+  "tokens_out": 74,
+  "elapsed": 5.726005554199219,
+  "error": null
+}

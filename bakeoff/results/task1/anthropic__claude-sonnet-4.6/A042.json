@@ -1,0 +1,13 @@
+{
+  "pair_id": "A042",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.92, \"reasoning\": \"Both wines are from producer Weinert and share the identical name 'Tonel Unico No. 183', with Wine B simply appending the varietal 'Cabernet Franc' as a suffix. Wine A is already identified as Cabernet Franc, confirming the grape variety matches. This is a classic case of the shorter name being an abbreviation of the full name, representing the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.92,
+  "reasoning": "Both wines are from producer Weinert and share the identical name 'Tonel Unico No. 183', with Wine B simply appending the varietal 'Cabernet Franc' as a suffix. Wine A is already identified as Cabernet Franc, confirming the grape variety matches. This is a classic case of the shorter name being an abbreviation of the full name, representing the same wine.",
+  "parse_ok": true,
+  "tokens_in": 500,
+  "tokens_out": 112,
+  "elapsed": 2.794240713119507,
+  "error": null
+}

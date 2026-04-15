@@ -1,0 +1,13 @@
+{
+  "pair_id": "D049",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The presence of 'Koppel' in Wine B's name suggests a different vineyard designation or a specific bottling that distinguishes it from Wine A. Given that both wines share the same producer, vineyard, grape variety, and style, but have distinct names, they likely represent different wines due to the unique identifier 'Koppel'.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The presence of 'Koppel' in Wine B's name suggests a different vineyard designation or a specific bottling that distinguishes it from Wine A. Given that both wines share the same producer, vineyard, grape variety, and style, but have distinct names, they likely represent different wines due to the unique identifier 'Koppel'.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 90,
+  "elapsed": 2.0181918144226074,
+  "error": null
+}

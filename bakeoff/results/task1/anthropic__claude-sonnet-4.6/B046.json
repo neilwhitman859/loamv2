@@ -1,0 +1,13 @@
+{
+  "pair_id": "B046",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A (Note #2) is red and Wine B (Note #3) is white, making them clearly different wines. Additionally, they have different note numbers (#2 vs #3), different LWIN codes, and different colors \u2014 all confirming these are distinct bottlings in the Polifonia De Purcari series. Different colors alone is sufficient to classify them as DIFFERENT wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A (Note #2) is red and Wine B (Note #3) is white, making them clearly different wines. Additionally, they have different note numbers (#2 vs #3), different LWIN codes, and different colors \u2014 all confirming these are distinct bottlings in the Polifonia De Purcari series. Different colors alone is sufficient to classify them as DIFFERENT wines.",
+  "parse_ok": true,
+  "tokens_in": 500,
+  "tokens_out": 107,
+  "elapsed": 2.868489980697632,
+  "error": null
+}

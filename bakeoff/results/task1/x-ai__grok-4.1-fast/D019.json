@@ -1,0 +1,13 @@
+{
+  "pair_id": "D019",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Both wines are from the same producer Masut Da Rive, same grape (Pinot Nero), and same color (red), but Wine B specifies the 'Maurus' cuv\u00e9e while Wine A is simply 'Pinot Nero', indicating distinct bottlings or tiers rather than mere name formatting differences. Different LWIN numbers (2955256 vs 2955302) further confirm they are treated as separate wines. This aligns with criteria for different cuv\u00e9e designations.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Both wines are from the same producer Masut Da Rive, same grape (Pinot Nero), and same color (red), but Wine B specifies the 'Maurus' cuv\u00e9e while Wine A is simply 'Pinot Nero', indicating distinct bottlings or tiers rather than mere name formatting differences. Different LWIN numbers (2955256 vs 2955302) further confirm they are treated as separate wines. This aligns with criteria for different cuv\u00e9e designations.",
+  "parse_ok": true,
+  "tokens_in": 570,
+  "tokens_out": 798,
+  "elapsed": 6.038996696472168,
+  "error": null
+}

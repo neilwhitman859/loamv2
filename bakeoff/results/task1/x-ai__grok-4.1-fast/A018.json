@@ -1,0 +1,13 @@
+{
+  "pair_id": "A018",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is specified as Chardonnay Blanc (Chardonnay grape), while Wine B is explicitly 'Viognier', indicating different grape varieties. The rule states that different grapes always mean DIFFERENT wines, even if the vineyard name matches. Although both are white wines from the same producer and share the 'Quarter Acre' name, the producer makes multiple wines from this vineyard with different grapes, confirming they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is specified as Chardonnay Blanc (Chardonnay grape), while Wine B is explicitly 'Viognier', indicating different grape varieties. The rule states that different grapes always mean DIFFERENT wines, even if the vineyard name matches. Although both are white wines from the same producer and share the 'Quarter Acre' name, the producer makes multiple wines from this vineyard with different grapes, confirming they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 569,
+  "tokens_out": 528,
+  "elapsed": 3.690316915512085,
+  "error": null
+}

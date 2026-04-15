@@ -1,0 +1,13 @@
+{
+  "pair_id": "A010",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is made from Gew\u00fcrztraminer while Wine B is made from Pinot Gris\u2014different grape varieties constitute different wines even when sharing the same vineyard/cuv\u00e9e name. The producer du Roi Dagobert makes distinct bottlings from Le Jardin de Trebogad with different varietal expressions, so the varietal suffix is not merely an abbreviation but indicates a separate wine.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is made from Gew\u00fcrztraminer while Wine B is made from Pinot Gris\u2014different grape varieties constitute different wines even when sharing the same vineyard/cuv\u00e9e name. The producer du Roi Dagobert makes distinct bottlings from Le Jardin de Trebogad with different varietal expressions, so the varietal suffix is not merely an abbreviation but indicates a separate wine.",
+  "parse_ok": true,
+  "tokens_in": 507,
+  "tokens_out": 117,
+  "elapsed": 12.199033260345459,
+  "error": null
+}

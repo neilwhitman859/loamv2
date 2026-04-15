@@ -1,0 +1,13 @@
+{
+  "pair_id": "B010",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white 'Cuvee Brut' while Wine B is a ros\u00e9, and the color difference indicates they are different wines. The producer, Bellavista, is the same, but the color and likely style differences make them distinct. The LWIN is only provided for Wine A, but the color difference alone is sufficient to conclude they are different.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white 'Cuvee Brut' while Wine B is a ros\u00e9, and the color difference indicates they are different wines. The producer, Bellavista, is the same, but the color and likely style differences make them distinct. The LWIN is only provided for Wine A, but the color difference alone is sufficient to conclude they are different.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 96,
+  "elapsed": 1.6812922954559326,
+  "error": null
+}

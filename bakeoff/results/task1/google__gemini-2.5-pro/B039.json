@@ -1,0 +1,13 @@
+{
+  "pair_id": "B039",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines are different in color and type. Wine A is a ros\u00e9, while Wine B is a white sparkling wine, as indicated by the 'Brut' in its name. A still ros\u00e9 and a white sparkling wine are fundamentally different products that would never be considered the same.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are different in color and type. Wine A is a ros\u00e9, while Wine B is a white sparkling wine, as indicated by the 'Brut' in its name. A still ros\u00e9 and a white sparkling wine are fundamentally different products that would never be considered the same.",
+  "parse_ok": true,
+  "tokens_in": 408,
+  "tokens_out": 1254,
+  "elapsed": 12.84586215019226,
+  "error": null
+}

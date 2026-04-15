@@ -1,0 +1,13 @@
+{
+  "pair_id": "B048",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors (red vs white) and different grapes (Pinot Gris vs Pinot Blanc), which are key indicators of different wines. Despite sharing the same producer and vineyard name, these differences classify them as distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors (red vs white) and different grapes (Pinot Gris vs Pinot Blanc), which are key indicators of different wines. Despite sharing the same producer and vineyard name, these differences classify them as distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 70,
+  "elapsed": 2.154137372970581,
+  "error": null
+}

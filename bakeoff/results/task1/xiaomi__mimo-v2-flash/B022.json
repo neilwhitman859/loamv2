@@ -1,0 +1,13 @@
+{
+  "pair_id": "B022",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a white Extra Brut NV, while Wine B is a ros\u00e9 Extra Brut NV, both from the same producer. Different colors (white vs ros\u00e9) from the same producer and vintage designation represent distinct bottlings. The color difference alone makes them different wines, even if they share the same producer and style name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a white Extra Brut NV, while Wine B is a ros\u00e9 Extra Brut NV, both from the same producer. Different colors (white vs ros\u00e9) from the same producer and vintage designation represent distinct bottlings. The color difference alone makes them different wines, even if they share the same producer and style name.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 92,
+  "elapsed": 3.146946668624878,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B029",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Cupcake Vineyards) and region (California). However, Wine A is Merlot (red grape, MERLOT NOIR) while Wine B is Chardonnay (white grape, CHARDONNAY BLANC), representing entirely different grape varieties and colors. The rules state that different grapes always indicate different wines, regardless of shared producer or region.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Cupcake Vineyards) and region (California). However, Wine A is Merlot (red grape, MERLOT NOIR) while Wine B is Chardonnay (white grape, CHARDONNAY BLANC), representing entirely different grape varieties and colors. The rules state that different grapes always indicate different wines, regardless of shared producer or region.",
+  "parse_ok": true,
+  "tokens_in": 578,
+  "tokens_out": 437,
+  "elapsed": 3.064441680908203,
+  "error": null
+}

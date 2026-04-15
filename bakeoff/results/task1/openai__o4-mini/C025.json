@@ -1,0 +1,13 @@
+{
+  "pair_id": "C025",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.90, \"reasoning\": \"One wine is a white Riserva del Fondatore and the other is a ros\u00e9 variant (Riserva Fondatore Rose); different colors constitute different wines even under the same cuv\u00e9e name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "One wine is a white Riserva del Fondatore and the other is a ros\u00e9 variant (Riserva Fondatore Rose); different colors constitute different wines even under the same cuv\u00e9e name.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 141,
+  "elapsed": 3.915043354034424,
+  "error": null
+}

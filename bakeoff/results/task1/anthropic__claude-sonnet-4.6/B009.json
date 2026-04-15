@@ -1,0 +1,13 @@
+{
+  "pair_id": "B009",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is white and Wine B is ros\u00e9, which are fundamentally different bottlings even from the same producer. Bellavista produces both a white and a ros\u00e9 version of their Alma Grande/Gran Cuvee Alma Franciacorta, and the color difference alone is sufficient to classify these as different wines. A consumer would encounter these as separate products on a wine list or in a shop.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is white and Wine B is ros\u00e9, which are fundamentally different bottlings even from the same producer. Bellavista produces both a white and a ros\u00e9 version of their Alma Grande/Gran Cuvee Alma Franciacorta, and the color difference alone is sufficient to classify these as different wines. A consumer would encounter these as separate products on a wine list or in a shop.",
+  "parse_ok": true,
+  "tokens_in": 468,
+  "tokens_out": 110,
+  "elapsed": 3.0648531913757324,
+  "error": null
+}

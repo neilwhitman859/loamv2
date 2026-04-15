@@ -1,0 +1,13 @@
+{
+  "pair_id": "C034",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The asterisk notation (2* vs 3*) indicates different ripeness levels or must weight classifications within the Auslese Pr\u00e4dikat category at Markus Molitor. These represent distinct bottlings with different sweetness/concentration levels that a consumer would encounter as separate products. The different LWINs confirm these are separate bottlings.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The asterisk notation (2* vs 3*) indicates different ripeness levels or must weight classifications within the Auslese Pr\u00e4dikat category at Markus Molitor. These represent distinct bottlings with different sweetness/concentration levels that a consumer would encounter as separate products. The different LWINs confirm these are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 528,
+  "tokens_out": 102,
+  "elapsed": 2.5296337604522705,
+  "error": null
+}

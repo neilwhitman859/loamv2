@@ -1,0 +1,13 @@
+{
+  "pair_id": "D023",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records share the same producer, color, and core cuv\u00e9e name, with the only difference being the inclusion of 'Blanche' in Wine A's title. This is a standard naming variation or truncation rather than an indicator of a different grape, style, or classification tier.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records share the same producer, color, and core cuv\u00e9e name, with the only difference being the inclusion of 'Blanche' in Wine A's title. This is a standard naming variation or truncation rather than an indicator of a different grape, style, or classification tier.",
+  "parse_ok": true,
+  "tokens_in": 486,
+  "tokens_out": 1344,
+  "elapsed": 26.047056913375854,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B001",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The grapes are different: Sauvignon Blanc and Sauvignon Gris are distinct grape varieties. According to the rules, different grapes always means different wines, even if the producer and region are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The grapes are different: Sauvignon Blanc and Sauvignon Gris are distinct grape varieties. According to the rules, different grapes always means different wines, even if the producer and region are the same.",
+  "parse_ok": true,
+  "tokens_in": 460,
+  "tokens_out": 65,
+  "elapsed": 4.863769054412842,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A043",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"These are distinct bottlings with different grape compositions. Wine A is a varietal Shiraz, while Wine B is a blend of Shiraz and Durif, which are marketed as separate products by the producer.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "These are distinct bottlings with different grape compositions. Wine A is a varietal Shiraz, while Wine B is a blend of Shiraz and Durif, which are marketed as separate products by the producer.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 68,
+  "elapsed": 1.6180400848388672,
+  "error": null
+}

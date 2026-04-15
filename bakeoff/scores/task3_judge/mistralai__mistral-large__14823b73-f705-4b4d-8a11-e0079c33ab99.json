@@ -1,0 +1,26 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "mistralai/mistral-large",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.85,
+  "wrong_facts": [
+    "Murray Tyrrell planted the original 'Vat 1' block — the ground truth says Vat 1 was created in 1963 as a single-vineyard wine from Short Flat vineyard (oldest block planted 1923), not that Murray Tyrrell planted it",
+    "Brokenwood ILR Reserve Semillon has 'a touch of oak in some vintages' — ILR Reserve is also unoaked stainless steel Semillon",
+    "The wine is bottled early (often within six months of harvest) — this is unverifiable and potentially contradicts the ground truth that the wine is not released until 5 years of age, though bottling and release are different",
+    "Volcanic basalt pockets in the Brokenback Range — while there is some volcanic geology in Hunter Valley, attributing a 'saline tang' to these specific pockets is speculative"
+  ],
+  "banned_words_found": [
+    "harmonizes"
+  ],
+  "fabricated_numbers": [
+    "six months bottling timeframe"
+  ],
+  "reasoning": "The output is rich in detail and has strong voice, but contains several unverifiable or incorrect claims. The hook is largely correct — Hunter Semillon is indeed unique, Vat 1 is a benchmark, and the flavor evolution described is accurate. However, the claim that Murray Tyrrell 'planted' the Vat 1 block is misleading (Short Flat's oldest block dates to 1923, predating Murray's involvement). The Brokenwood ILR oak claim is wrong — it's also unoaked. The output correctly identifies stainless steel fermentation and no oak for Vat 1, which matches ground truth. The 'harmonizes' banned word appears in food pairings. The six-month bottling claim is fabricated. Overall strong writing with good specificity but enough factual issues to limit the correctness score.",
+  "judge_tokens_in": 4251,
+  "judge_tokens_out": 459
+}

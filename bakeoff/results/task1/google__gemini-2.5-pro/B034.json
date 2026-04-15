@@ -1,0 +1,13 @@
+{
+  "pair_id": "B034",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although the producer and the vineyard name ('Grand Clos') are the same, the wines are of different colors and styles. Wine A is a 'Rose' (ros\u00e9) and Wine B is a 'Rouge' (red). A ros\u00e9 and a red wine are considered distinct bottlings, even if from the same vineyard.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the producer and the vineyard name ('Grand Clos') are the same, the wines are of different colors and styles. Wine A is a 'Rose' (ros\u00e9) and Wine B is a 'Rouge' (red). A ros\u00e9 and a red wine are considered distinct bottlings, even if from the same vineyard.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 1066,
+  "elapsed": 11.186541557312012,
+  "error": null
+}

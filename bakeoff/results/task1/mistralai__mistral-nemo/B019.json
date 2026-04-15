@@ -1,0 +1,13 @@
+{
+  "pair_id": "B019",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different grape varieties: Aligot\u00e9 and a blend of Chardonnay Blanc and Pinot Blanc respectively. Different grapes always mean different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different grape varieties: Aligot\u00e9 and a blend of Chardonnay Blanc and Pinot Blanc respectively. Different grapes always mean different wines.",
+  "parse_ok": true,
+  "tokens_in": 485,
+  "tokens_out": 62,
+  "elapsed": 4.297485113143921,
+  "error": null
+}

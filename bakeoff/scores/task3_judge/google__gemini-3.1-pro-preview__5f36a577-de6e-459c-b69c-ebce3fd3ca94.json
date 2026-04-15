@@ -1,0 +1,27 @@
+{
+  "wine_id": "5f36a577-de6e-459c-b69c-ebce3fd3ca94",
+  "wine_name": "Howard Park Leston Cabernet Sauvignon, Western Australia",
+  "tier": "B",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.4,
+  "wrong_facts": [
+    "Forest Grove ironstone is fabricated — the ground truth says the soil is 'free-draining gravelly loam over clay' with no mention of Forest Grove ironstone",
+    "The hook says 'injecting Syrah into the region's gravelly loam creates a distinctly Australian structural profile' — the ground truth says this is primarily a single-varietal Cabernet Sauvignon, not a Cab-Syrah blend as the output repeatedly emphasizes",
+    "Price stated as '$45 a bottle' is fabricated — no price data was provided",
+    "Cellar recommendation of '5 to 8 years' understates the ground truth of 'up to 15 years' and the aging_potential_years field itself says 15, creating internal inconsistency",
+    "The hook's claim about 'Forest Grove ironstone' giving a 'graphite-edged backbone' is a fabricated terroir detail repeated throughout the output"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$45 price point",
+    "18 months in French oak (matches ground truth but was NOT in context data — this is actually correct per ground truth, so not a fabrication)",
+    "Forest Grove ironstone is a fabricated geological feature"
+  ],
+  "reasoning": "The output is well-written with strong voice, specificity, and useful food pairings and comparables. However, it has significant correctness problems. The repeated emphasis on Syrah as a major blend component contradicts the ground truth that this is primarily a single-varietal Cabernet Sauvignon. The 'Forest Grove ironstone' is a fabricated geological detail that appears in the hook, terroir section, and cellar recommendation — it's not in the context data or ground truth. The $45 price is fabricated. The 18-month French oak detail actually matches ground truth, which is good. But the hook contains the fabricated Forest Grove ironstone claim and overplays the Syrah component, which are significant errors. The Syrah mischaracterization is somewhat mitigated by the fact that the context data does list Syrah as a grape, but the ground truth clarifies it's primarily single-varietal Cabernet. The fabricated price triggers the hard penalty for fabricated numbers.",
+  "judge_tokens_in": 3573,
+  "judge_tokens_out": 538
+}

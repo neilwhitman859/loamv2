@@ -1,0 +1,32 @@
+{
+  "wine_id": "b8dc12b0-1820-4edb-8108-0701aee0860a",
+  "wine_name": "Tolosa 1772 Grenache, Edna Valley",
+  "tier": "C",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.675,
+  "wrong_facts": [
+    "Value assessment states '$28-35 is the typical retail range' — no price data was provided and this is unverifiable",
+    "Vinification summary says 'limited information is available on specific fermentation vessels or aging regimen' but ground truth shows 15 months in French oak puncheons with mix of warm and cool fermentations — the model missed this and speculated incorrectly about 'neutral oak or concrete aging'",
+    "Positas and Diablo clay loams are named as specific soil types in Edna Valley — while these soil series do exist in the area, attributing them specifically to Tolosa's vineyard sites is unverified",
+    "Temperature differential claim of '10-15°F cooler than Paso Robles' is a specific fabricated number",
+    "Tablas Creek Grenache at '14.5%+' is a fabricated specific number",
+    "Birichino Grenache Vieilles Vignes '$22-28' is a fabricated price",
+    "No mention of the two vineyard sections (Poletti and Salaal) that are the actual sources per ground truth"
+  ],
+  "banned_words_found": [
+    "genuine"
+  ],
+  "fabricated_numbers": [
+    "10-15°F temperature differential",
+    "$28-35 retail range",
+    "Tablas Creek at 14.5%+",
+    "Birichino at $22-28"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity, and genuinely useful structure. However, it fabricates multiple specific numbers not in the context data: the price range, the temperature differential, competitor ABVs, and competitor prices. The vinification section speculates about 'neutral oak or concrete aging' when ground truth shows 15 months in French oak puncheons — this is misleading. The naming origin for 1772 is correctly identified. The banned word 'genuine' appears in the value assessment. The fabricated numbers are numerous enough to warrant a significant correctness penalty, though the hard cap of 1.5 applies to fabricated numbers about the wine itself — the 10-15°F and prices are about context/comparisons rather than the wine's own specs, so I'm applying a heavy penalty but not the absolute floor.",
+  "judge_tokens_in": 4052,
+  "judge_tokens_out": 534
+}

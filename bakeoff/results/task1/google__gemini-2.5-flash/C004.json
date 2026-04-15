@@ -1,0 +1,13 @@
+{
+  "pair_id": "C004",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are 'Trauben Secco Alkoholfrei' from the same producer, Raumland. The addition of 'white' to Wine B is merely a descriptive clarification of the color, which is already consistent between both records, and does not indicate a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are 'Trauben Secco Alkoholfrei' from the same producer, Raumland. The addition of 'white' to Wine B is merely a descriptive clarification of the color, which is already consistent between both records, and does not indicate a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 76,
+  "elapsed": 1.3444747924804688,
+  "error": null
+}

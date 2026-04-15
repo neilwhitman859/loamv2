@@ -1,0 +1,13 @@
+{
+  "pair_id": "C015",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are the 'Le Fond du Bateau Blanc de Blancs' from the same producer, the numbers 'No. 10' and 'No. 15' indicate different base vintages or disgorgement lots. These are distinct, sequential bottlings of the same non-vintage cuv\u00e9e, treated as separate wines by consumers and critics.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are the 'Le Fond du Bateau Blanc de Blancs' from the same producer, the numbers 'No. 10' and 'No. 15' indicate different base vintages or disgorgement lots. These are distinct, sequential bottlings of the same non-vintage cuv\u00e9e, treated as separate wines by consumers and critics.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 1353,
+  "elapsed": 16.01526117324829,
+  "error": null
+}

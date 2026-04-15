@@ -1,0 +1,13 @@
+{
+  "pair_id": "B015",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different color/style bottlings from the same producer and cuv\u00e9e line: Wine A is Ros\u00e9 and Wine B is Rouge (red). Color differences are treated as separate wines, and the distinct LWINs further support that they are separate encyclopedia entries.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different color/style bottlings from the same producer and cuv\u00e9e line: Wine A is Ros\u00e9 and Wine B is Rouge (red). Color differences are treated as separate wines, and the distinct LWINs further support that they are separate encyclopedia entries.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 75,
+  "elapsed": 2.4768483638763428,
+  "error": null
+}

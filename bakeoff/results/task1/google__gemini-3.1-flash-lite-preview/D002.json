@@ -1,0 +1,13 @@
+{
+  "pair_id": "D002",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"The addition of 'GG' (Grosses Gew\u00e4chs) to the name denotes the VDP classification level for a dry wine from a specific vineyard, but it does not represent a distinct bottling from the 'Alte Reben' (old vines) version of the same wine. Van Volxem uses these terms interchangeably to describe the same top-tier dry Riesling from the Altenberg site. The LWIN difference is likely a database artifact reflecting the inclusion or omission of the classification suffix.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The addition of 'GG' (Grosses Gew\u00e4chs) to the name denotes the VDP classification level for a dry wine from a specific vineyard, but it does not represent a distinct bottling from the 'Alte Reben' (old vines) version of the same wine. Van Volxem uses these terms interchangeably to describe the same top-tier dry Riesling from the Altenberg site. The LWIN difference is likely a database artifact reflecting the inclusion or omission of the classification suffix.",
+  "parse_ok": true,
+  "tokens_in": 436,
+  "tokens_out": 126,
+  "elapsed": 1.8564977645874023,
+  "error": null
+}

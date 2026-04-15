@@ -1,0 +1,13 @@
+{
+  "pair_id": "C012",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.75,\"reasoning\":\"Although both share the same cuv\u00e9e name, the Rose is a ros\u00e9 style while the other is a standard Brut (white), and different colors constitute different wines for consumers.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.75,
+  "reasoning": "Although both share the same cuv\u00e9e name, the Rose is a ros\u00e9 style while the other is a standard Brut (white), and different colors constitute different wines for consumers.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 119,
+  "elapsed": 2.4487433433532715,
+  "error": null
+}

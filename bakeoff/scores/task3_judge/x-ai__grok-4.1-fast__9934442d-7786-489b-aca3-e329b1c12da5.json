@@ -1,0 +1,34 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "x-ai/grok-4.1-fast",
+  "correctness": 1.5,
+  "voice": 3.0,
+  "specificity": 3.5,
+  "usefulness": 2.5,
+  "composite": 2.475,
+  "wrong_facts": [
+    "Hook mentions 'granite and gneissic sandy loams' — ground truth says 'gravelly loam soils', no mention of granite or gneiss",
+    "Wine summary says 'single-vineyard expression' — ground truth says Omrah is a second-label range made from younger vineyards or bought-in fruit, not single-vineyard",
+    "Wine summary says '2,545 hectares' — this specific number is not in context data and is unverifiable",
+    "Terroir section mentions 'lateritic gravelly sandy loams and karri loams' and '0-1,083m elevation range' and '17,131 km²' — none in context data, fabricated specifics",
+    "Vinification summary claims 'wild yeast ferments, common in regional Pinots' and 'cool fermentation in small open fermenters' — not in context data and unverifiable for this wine",
+    "Value assessment fabricates '$30-45 AUD' price range — no price data provided",
+    "Market position claims 'under $15 retail' on US lists — fabricated"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "2,545 hectares",
+    "0-1,083m elevation",
+    "17,131 km²",
+    "$30-45 AUD",
+    "$15 retail",
+    "10 months French oak not stated but implied via 'French oak maturation'",
+    "15 years aging potential",
+    "55°F storage temperature"
+  ],
+  "reasoning": "The output fabricates numerous specific numbers not present in the context data (hectares, elevation ranges, area in km², price ranges), triggering the hard penalty cap of 1.5 on correctness. The hook's claim about 'granite and gneissic sandy loams' is not supported by ground truth (gravelly loam soils). Calling Omrah a 'single-vineyard expression' directly contradicts ground truth that it's a second-label range from younger vineyards or bought-in fruit. The voice avoids banned words and has some directness, but the fabricated specificity undermines trust throughout. Some useful framing (cool-climate positioning, food pairings) is present but diluted by unreliable claims.",
+  "judge_tokens_in": 3093,
+  "judge_tokens_out": 540
+}

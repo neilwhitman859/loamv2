@@ -1,0 +1,13 @@
+{
+  "pair_id": "A022",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is explicitly identified as a Cabernet Sauvignon, while Wine B is a Carmenere. Since the producer makes different varietal wines under the same brand name, these represent distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is explicitly identified as a Cabernet Sauvignon, while Wine B is a Carmenere. Since the producer makes different varietal wines under the same brand name, these represent distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 62,
+  "elapsed": 1.5971784591674805,
+  "error": null
+}

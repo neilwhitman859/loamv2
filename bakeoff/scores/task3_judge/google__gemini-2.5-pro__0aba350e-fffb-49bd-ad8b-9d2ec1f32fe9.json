@@ -1,0 +1,22 @@
+{
+  "wine_id": "0aba350e-fffb-49bd-ad8b-9d2ec1f32fe9",
+  "wine_name": "Vasse Felix Filius Cabernet Sauvignon, Margaret River",
+  "tier": "C",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.75,
+  "wrong_facts": [
+    "Blend described as 'Malbec, Merlot, and Petit Verdot' — ground truth shows 93% Cabernet Sauvignon, 5.5% Malbec, 1.5% Petit Verdot with no Merlot",
+    "Vinification states 'fermented in stainless steel tanks' — ground truth says wild-yeast fermentation in open-top fermenters",
+    "Vinification states 'aged for over a year in French oak barriques' — ground truth says 11 months in French oak",
+    "Hook says 'blended from multiple estate vineyards to create a consistent, regional snapshot' — ground truth says the name means 'son of' referring to the flagship Cabernet, made from younger vines (~20 years), not primarily about multi-vineyard blending"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output includes several factual errors: adding Merlot to the blend (ground truth is Malbec and Petit Verdot only), claiming stainless steel fermentation when the actual method is wild-yeast in open-top fermenters, stating 'over a year' in oak when it's 11 months, and mischaracterizing the naming origin in the hook (it means 'son of' the flagship, from younger vines, not just a multi-vineyard blend). The hook's claim about the naming origin is partially correct ('son' in Latin) but misses the key meaning — it's the 'son of' the flagship Cabernet. These errors are not catastrophic individually but accumulate. The voice is strong — direct, opinionated, avoids banned words, and reads well. Specificity is good with mentions of Wilyabrup soils, Fremantle Doctor, and concrete comparables. Usefulness is high with actionable food pairings and a clear insider take.",
+  "judge_tokens_in": 3668,
+  "judge_tokens_out": 478
+}

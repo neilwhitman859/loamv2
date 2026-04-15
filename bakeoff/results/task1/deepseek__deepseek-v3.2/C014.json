@@ -1,0 +1,13 @@
+{
+  "pair_id": "C014",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.9, \"reasoning\": \"The wines have different lot/cask numbers (No.15 vs No.17). For Blanc de Blancs Champagne, different disgorgement or lot numbers typically indicate distinct bottlings that a consumer would encounter separately, even if the producer, vineyard, and style are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different lot/cask numbers (No.15 vs No.17). For Blanc de Blancs Champagne, different disgorgement or lot numbers typically indicate distinct bottlings that a consumer would encounter separately, even if the producer, vineyard, and style are the same.",
+  "parse_ok": true,
+  "tokens_in": 470,
+  "tokens_out": 81,
+  "elapsed": 5.361048221588135,
+  "error": null
+}

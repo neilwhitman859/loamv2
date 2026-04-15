@@ -1,0 +1,13 @@
+{
+  "pair_id": "B011",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different age statements (15 YO vs 5 YO), indicating distinct bottlings. Even if the 'Boal' in Wine A refers to a grape, the age difference alone is sufficient to classify them as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different age statements (15 YO vs 5 YO), indicating distinct bottlings. Even if the 'Boal' in Wine A refers to a grape, the age difference alone is sufficient to classify them as different wines.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 71,
+  "elapsed": 2.496873378753662,
+  "error": null
+}

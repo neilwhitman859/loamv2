@@ -1,0 +1,13 @@
+{
+  "pair_id": "B014",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Cr\u00e9mant d'Alsace Ros\u00e9, while Wine B is a Cr\u00e9mant d'Alsace Brut (white). Despite sharing the same producer and general wine type, the difference in color (ros\u00e9 vs. white) indicates they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Cr\u00e9mant d'Alsace Ros\u00e9, while Wine B is a Cr\u00e9mant d'Alsace Brut (white). Despite sharing the same producer and general wine type, the difference in color (ros\u00e9 vs. white) indicates they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 81,
+  "elapsed": 1.4910783767700195,
+  "error": null
+}

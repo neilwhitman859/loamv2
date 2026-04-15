@@ -1,0 +1,13 @@
+{
+  "pair_id": "A022",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.85,\"reasoning\":\"Wine A is labeled as Cabernet Sauvignon while Wine B\u2019s name indicates Carmen\u00e8re; different grape varieties always denote distinct wines regardless of naming format.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A is labeled as Cabernet Sauvignon while Wine B\u2019s name indicates Carmen\u00e8re; different grape varieties always denote distinct wines regardless of naming format.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 172,
+  "elapsed": 3.681994676589966,
+  "error": null
+}

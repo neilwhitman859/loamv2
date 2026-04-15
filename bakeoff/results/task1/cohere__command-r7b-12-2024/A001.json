@@ -1,0 +1,13 @@
+{
+  "pair_id": "A001",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are produced by the same producer, have the same color, and the same grape variety (CARMENERE, CABERNET FRANC). The slight difference in the name (\\\"No 2\\\" vs. \\\"No 2 Carmenere\\\") is a common practice for varietal suffixes and does not indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are produced by the same producer, have the same color, and the same grape variety (CARMENERE, CABERNET FRANC). The slight difference in the name (\"No 2\" vs. \"No 2 Carmenere\") is a common practice for varietal suffixes and does not indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 453,
+  "tokens_out": 88,
+  "elapsed": 1.8331639766693115,
+  "error": null
+}

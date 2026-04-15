@@ -1,0 +1,13 @@
+{
+  "pair_id": "D020",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (19 Crimes) and color (red), and the names 'The Banished Dark Red' and 'The Banished Dark' are likely variations of the same bottling, with 'Dark Red' being a more specific descriptor of the same wine. The LWIN is provided for only one wine, but the naming difference appears to be a formatting or branding variation rather than a distinct product. No evidence of different grapes, classifications, or vineyard designations is present.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (19 Crimes) and color (red), and the names 'The Banished Dark Red' and 'The Banished Dark' are likely variations of the same bottling, with 'Dark Red' being a more specific descriptor of the same wine. The LWIN is provided for only one wine, but the naming difference appears to be a formatting or branding variation rather than a distinct product. No evidence of different grapes, classifications, or vineyard designations is present.",
+  "parse_ok": true,
+  "tokens_in": 478,
+  "tokens_out": 124,
+  "elapsed": 2.0129058361053467,
+  "error": null
+}

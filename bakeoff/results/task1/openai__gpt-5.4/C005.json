@@ -1,0 +1,13 @@
+{
+  "pair_id": "C005",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.95,\"reasoning\":\"Both records are from Jean Noel Haton and have the identical cuv\u00e9e/style name 'Brut Rose,' with the only difference being the explicit inclusion of 'NV' on Wine A. Since NV is a vintage-status notation rather than a distinct bottling name, these records most likely refer to the same non-vintage ros\u00e9 Champagne.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records are from Jean Noel Haton and have the identical cuv\u00e9e/style name 'Brut Rose,' with the only difference being the explicit inclusion of 'NV' on Wine A. Since NV is a vintage-status notation rather than a distinct bottling name, these records most likely refer to the same non-vintage ros\u00e9 Champagne.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 89,
+  "elapsed": 2.4913675785064697,
+  "error": null
+}

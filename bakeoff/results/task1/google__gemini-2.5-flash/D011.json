@@ -1,0 +1,13 @@
+{
+  "pair_id": "D011",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Wine B includes 'Malmsey' which is a synonym for Malvasia Fina, one of the grapes in Wine A. Given the identical name 'Adegas Exportata Rare Rich 1870' and producer, it's highly probable that 'Malmsey' in Wine B is simply a more specific descriptor for the same wine, rather than indicating a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Wine B includes 'Malmsey' which is a synonym for Malvasia Fina, one of the grapes in Wine A. Given the identical name 'Adegas Exportata Rare Rich 1870' and producer, it's highly probable that 'Malmsey' in Wine B is simply a more specific descriptor for the same wine, rather than indicating a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 101,
+  "elapsed": 1.3679203987121582,
+  "error": null
+}

@@ -1,0 +1,28 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 1.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.225,
+  "wrong_facts": [
+    "Hook and summary claim One Point Five is named for '1.5 miles between Shafer's winery and their Stags Leap District vineyards' — ground truth says it's named for the 'generation and a half' partnership between John and Doug Shafer",
+    "States '100% Cabernet Sauvignon composition — no Merlot or Petit Verdot for softening' — ground truth shows 2022 is 92% Cab Sauv, 3% Petite Verdot, 3% Merlot, 2% Malbec",
+    "States oak is 'historically around 50-60%' new — ground truth says 100% new French oak (Allier & Tronçais)",
+    "States 'roughly 20 months' in oak — ground truth says 18 months",
+    "Describes wine as from 'estate Cabernet from their home vineyard blocks' suggesting single-estate, but ground truth explicitly says multi-site including Borderline vineyard and selected Napa Valley sites"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "14 to 18 days extended maceration",
+    "50-60% new oak",
+    "20 months in barrel",
+    "$35-45 by the glass pricing"
+  ],
+  "reasoning": "The output has a fabricated naming origin in the hook ('1.5 miles') which is provably wrong per ground truth — this triggers the hard cap of 1.5 on correctness. Additionally, the blend is stated as 100% Cabernet Sauvignon when it's actually a multi-grape blend, the oak program is completely wrong (50-60% new vs 100% new, 20 months vs 18 months), and multiple specific numbers are fabricated. The voice is strong — direct, opinionated, no banned words, good structure. Specificity is high with named competitors, soil types, and climate patterns. Usefulness is good with actionable comparisons and food pairings. But the factual errors are severe and numerous, undermining the core value proposition of trustworthy data.",
+  "judge_tokens_in": 4479,
+  "judge_tokens_out": 514
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A026",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, vineyard, and grape variety. The only difference is the addition of 'Semillon' in Wine B, which is likely an abbreviation of the grape variety already mentioned in Wine A.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, vineyard, and grape variety. The only difference is the addition of 'Semillon' in Wine B, which is likely an abbreviation of the grape variety already mentioned in Wine A.",
+  "parse_ok": true,
+  "tokens_in": 488,
+  "tokens_out": 68,
+  "elapsed": 2.089016914367676,
+  "error": null
+}

@@ -1,0 +1,36 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "mistralai/mistral-large",
+  "correctness": 2.0,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.175,
+  "wrong_facts": [
+    "15-hectare parcel claim is unverifiable and likely fabricated",
+    "Altitude 250-350m is unverifiable",
+    "Certified biodynamic since 2012 is unverifiable and not in context data or ground truth",
+    "Decomposed limestone and sandstone scree — ground truth says clay with gravel and limestone colluviums, not sandstone",
+    "20-30% new oak in barriques is fabricated",
+    "No fining or filtration claim is unverifiable",
+    "2023 ABV stated as 14.5% — the context data only gives 14.5% for 2020, not 2023",
+    "Concrete vat fermentation and native yeast claims are unverifiable",
+    "Santa Duc Aux Lieux-Dits described as biodynamic is unverifiable",
+    "Price range $45-$55 is fabricated (no prices provided)"
+  ],
+  "banned_words_found": [
+    "harmonize"
+  ],
+  "fabricated_numbers": [
+    "15-hectare parcel",
+    "250-350m altitude",
+    "20-30% new oak",
+    "14.5% ABV attributed to 2023 (only verified for 2020)",
+    "$45-$55 retail price"
+  ],
+  "reasoning": "The output is impressively detailed and well-written with strong voice and specificity, but it fabricates numerous specific numbers and claims not present in the context data or ground truth. The 15-hectare parcel size, altitude range, biodynamic certification date, 20-30% new oak, no fining/filtration, concrete vat fermentation, native yeasts, and the price range are all invented. The soil description contradicts ground truth (sandstone scree vs. clay with gravel and limestone colluviums). The ABV of 14.5% is attributed to 2023 but only appears for 2020 in the data. Notably, the output correctly identifies the Serine clone connection implicitly through Northern Rhône comparisons but never names it, and misses the Chave/Reynaud provenance story which would have been genuinely useful. The hook is factually reasonable but the body is riddled with fabrications. The banned word 'harmonize' appears in food pairings.",
+  "judge_tokens_in": 4309,
+  "judge_tokens_out": 540
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B009",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Even though the names appear to be reordered versions of the same cuv\u00e9e wording, the records list different colors: Wine A is white and Wine B is ros\u00e9. Color differences indicate distinct bottlings that consumers would encounter separately, so these are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Even though the names appear to be reordered versions of the same cuv\u00e9e wording, the records list different colors: Wine A is white and Wine B is ros\u00e9. Color differences indicate distinct bottlings that consumers would encounter separately, so these are different wines.",
+  "parse_ok": true,
+  "tokens_in": 400,
+  "tokens_out": 74,
+  "elapsed": 2.1325674057006836,
+  "error": null
+}

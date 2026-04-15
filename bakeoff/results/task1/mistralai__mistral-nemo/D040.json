@@ -1,0 +1,13 @@
+{
+  "pair_id": "D040",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Santi) and the same color (red). The only difference is the addition of 'Solane' in Wine A, which could be an abbreviation or a vineyard name. Without more information, it's likely they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Santi) and the same color (red). The only difference is the addition of 'Solane' in Wine A, which could be an abbreviation or a vineyard name. Without more information, it's likely they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 465,
+  "tokens_out": 79,
+  "elapsed": 1.8880183696746826,
+  "error": null
+}

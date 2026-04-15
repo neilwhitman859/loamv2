@@ -1,0 +1,13 @@
+{
+  "pair_id": "A023",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Fidelitas producer, same vineyard (Blackwood Canyon), same grape (Cabernet Sauvignon), and same color (red). Wine A's name is simply an abbreviated version of Wine B's full name, which is a common naming convention where the varietal suffix is omitted in the shorter form.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Fidelitas producer, same vineyard (Blackwood Canyon), same grape (Cabernet Sauvignon), and same color (red). Wine A's name is simply an abbreviated version of Wine B's full name, which is a common naming convention where the varietal suffix is omitted in the shorter form.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 99,
+  "elapsed": 3.0652964115142822,
+  "error": null
+}

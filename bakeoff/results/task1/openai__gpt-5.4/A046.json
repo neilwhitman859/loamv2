@@ -1,0 +1,13 @@
+{
+  "pair_id": "A046",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.96,\"reasoning\":\"Both records are from Carlisle and refer to the James Berry bottling, with no conflicting vineyard, tier, or style information. Wine A explicitly lists Syrah, and the addition of the varietal in Wine B is most likely just a naming suffix rather than a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.96,
+  "reasoning": "Both records are from Carlisle and refer to the James Berry bottling, with no conflicting vineyard, tier, or style information. Wine A explicitly lists Syrah, and the addition of the varietal in Wine B is most likely just a naming suffix rather than a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 414,
+  "tokens_out": 77,
+  "elapsed": 2.4510011672973633,
+  "error": null
+}

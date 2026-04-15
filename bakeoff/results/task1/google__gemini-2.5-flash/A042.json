@@ -1,0 +1,13 @@
+{
+  "pair_id": "A042",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Both wines share the same producer, 'Weinert', and the same core name 'Tonel Unico No. 183'. Wine A explicitly states 'CABERNET FRANC' as its grape, while Wine B appends 'Cabernet Franc' to its name, indicating a varietal suffix. Given the same producer and core name, this is a case of a varietal suffix being added to the name, which typically signifies the same wine.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer, 'Weinert', and the same core name 'Tonel Unico No. 183'. Wine A explicitly states 'CABERNET FRANC' as its grape, while Wine B appends 'Cabernet Franc' to its name, indicating a varietal suffix. Given the same producer and core name, this is a case of a varietal suffix being added to the name, which typically signifies the same wine.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 126,
+  "elapsed": 1.8508398532867432,
+  "error": null
+}

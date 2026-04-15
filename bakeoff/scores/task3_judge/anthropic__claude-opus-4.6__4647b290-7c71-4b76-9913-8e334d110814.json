@@ -1,0 +1,29 @@
+{
+  "wine_id": "4647b290-7c71-4b76-9913-8e334d110814",
+  "wine_name": "Paul Hobbs Richard Dinner Cuvee Agustina Chardonnay, Sonoma Mountain",
+  "tier": "A",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "Price range of $60-$80 is fabricated - no price data was provided in context",
+    "Kistler Sonoma Mountain price of $70-$85 is fabricated",
+    "Ramey Ritchie Vineyard price of $55-$65 is fabricated",
+    "Elevation of 1,200 feet is not in context data and unverifiable from ground truth",
+    "Claim that oak program is 'calibrated to frame rather than dominate' and sits 'behind the fruit' conflicts with ground truth showing 90% new French oak, which is an extremely high new oak percentage",
+    "Eastern slope location is not verified in ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "1,200 feet elevation",
+    "$60-$80 price",
+    "$70-$85 Kistler price",
+    "$55-$65 Ramey price"
+  ],
+  "reasoning": "The output correctly identifies the naming origin (Paul Hobbs's daughter), single-vineyard status, and competition medal history matching context data. However, it fabricates multiple specific price points not in the provided data, and the elevation figure is unverifiable. The description of oak as restrained contradicts the ground truth of 90% new French oak - that's a very heavy oak program, not one that 'frames rather than dominates.' The voice is excellent - direct, opinionated, specific, with no banned words and strong food pairings. Specificity is high throughout with named competitors, soil types, and real dishes. But the fabricated numbers and the misleading oak characterization significantly hurt correctness.",
+  "judge_tokens_in": 4001,
+  "judge_tokens_out": 398
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A043",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (19 Crimes) and are red wines. 'Shiraz Durif' is simply the full varietal name for 'Shiraz' (Durif is the synonym for Shiraz), so the name difference is just a formatting/abbreviation variation, not a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (19 Crimes) and are red wines. 'Shiraz Durif' is simply the full varietal name for 'Shiraz' (Durif is the synonym for Shiraz), so the name difference is just a formatting/abbreviation variation, not a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 490,
+  "tokens_out": 89,
+  "elapsed": 2.542391777038574,
+  "error": null
+}

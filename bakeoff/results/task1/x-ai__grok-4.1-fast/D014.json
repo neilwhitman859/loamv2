@@ -1,0 +1,13 @@
+{
+  "pair_id": "D014",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer Heidsieck & Co, share the core name 'Monopole Brut', and are white sparkling (Brut style). Wine B adds 'Dry' (synonym for Brut) and 'NV' (non-vintage), which are descriptive expansions rather than indicating a distinct bottling. This fits the rule for name formatting differences (abbreviations or suffixes) allowing SAME verdict, despite different LWINs likely from database variations.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer Heidsieck & Co, share the core name 'Monopole Brut', and are white sparkling (Brut style). Wine B adds 'Dry' (synonym for Brut) and 'NV' (non-vintage), which are descriptive expansions rather than indicating a distinct bottling. This fits the rule for name formatting differences (abbreviations or suffixes) allowing SAME verdict, despite different LWINs likely from database variations.",
+  "parse_ok": true,
+  "tokens_in": 574,
+  "tokens_out": 573,
+  "elapsed": 5.092965126037598,
+  "error": null
+}

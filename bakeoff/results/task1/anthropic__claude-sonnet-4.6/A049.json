@@ -1,0 +1,13 @@
+{
+  "pair_id": "A049",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (del Nebbiolo), same color (white), and Wine A is explicitly identified as Arneis grape. Wine B 'Arenarium Arneis' simply appends the varietal name to the same base wine name 'Arenarium', which is a classic abbreviation pattern. There is no indication of multiple wines under the Arenarium label with different grapes, so this is the same wine with and without the varietal suffix.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (del Nebbiolo), same color (white), and Wine A is explicitly identified as Arneis grape. Wine B 'Arenarium Arneis' simply appends the varietal name to the same base wine name 'Arenarium', which is a classic abbreviation pattern. There is no indication of multiple wines under the Arenarium label with different grapes, so this is the same wine with and without the varietal suffix.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 127,
+  "elapsed": 3.254423141479492,
+  "error": null
+}

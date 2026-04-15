@@ -1,0 +1,13 @@
+{
+  "pair_id": "C030",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines represent different classification tiers (Reserva vs. Gran Reserva) from the same producer. According to the provided rules, different classification tiers indicate distinct bottlings that a consumer would encounter separately.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines represent different classification tiers (Reserva vs. Gran Reserva) from the same producer. According to the provided rules, different classification tiers indicate distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 67,
+  "elapsed": 1.281806468963623,
+  "error": null
+}

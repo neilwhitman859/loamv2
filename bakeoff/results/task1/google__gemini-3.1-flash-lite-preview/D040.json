@@ -1,0 +1,13 @@
+{
+  "pair_id": "D040",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"Santi Solane is a well-known Valpolicella Ripasso Superiore. 'Superiore' is simply a truncated reference to the wine's classification and style, and both records refer to the same red wine produced by Santi.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Santi Solane is a well-known Valpolicella Ripasso Superiore. 'Superiore' is simply a truncated reference to the wine's classification and style, and both records refer to the same red wine produced by Santi.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 76,
+  "elapsed": 1.6533713340759277,
+  "error": null
+}

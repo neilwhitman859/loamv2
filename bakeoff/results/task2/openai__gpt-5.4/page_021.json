@@ -1,0 +1,38 @@
+{
+  "page_id": "page_021",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"wines_found\":[{\"name\":\"Prosecco\",\"vintage_year\":null,\"abv_pct\":null,\"blend\":[{\"grape\":\"Glera\",\"pct\":null}],\"oak\":{\"vessel\":null,\"months\":null,\"new_pct\":null,\"origin\":null},\"cases_produced\":null,\"chemistry\":{\"ph\":null,\"ta_g_l\":null,\"rs_g_l\":null,\"so2_total_mg_l\":null},\"winemaker\":\"Jessica Tomei\",\"farming\":null}]}",
+  "wines_found": [
+    {
+      "name": "Prosecco",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Glera",
+          "pct": null
+        }
+      ],
+      "oak": {
+        "vessel": null,
+        "months": null,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 34258,
+  "tokens_out": 109,
+  "elapsed": 3.3375916481018066,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D015",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer Amizetta and share the same grape variety (Cabernet Sauvignon) and color (red), but Wine A includes a 'Reserve' designation indicating a distinct quality tier or style, similar to classification differences like Reserva vs non-Reserva that define separate bottlings. The different LWIN numbers (1976597 vs 1976627) further confirm they are distinct records representing separate wines consumers would encounter. While varietal suffixes alone often mean SAME, the additional 'Reserve' prefix suggests a different cuv\u00e9e or tier, not mere abbreviation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer Amizetta and share the same grape variety (Cabernet Sauvignon) and color (red), but Wine A includes a 'Reserve' designation indicating a distinct quality tier or style, similar to classification differences like Reserva vs non-Reserva that define separate bottlings. The different LWIN numbers (1976597 vs 1976627) further confirm they are distinct records representing separate wines consumers would encounter. While varietal suffixes alone often mean SAME, the additional 'Reserve' prefix suggests a different cuv\u00e9e or tier, not mere abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 565,
+  "tokens_out": 842,
+  "elapsed": 8.817898035049438,
+  "error": null
+}

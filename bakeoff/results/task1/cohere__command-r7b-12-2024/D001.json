@@ -1,0 +1,13 @@
+{
+  "pair_id": "D001",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines are produced by Van Volxem, have the same vineyard designation (Altenberg Alte Reben Grosse Lage), and the same grape variety (Riesling Weiss). The slight difference in the name formatting (Nr23 vs. no number) is an abbreviation and does not change the classification.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are produced by Van Volxem, have the same vineyard designation (Altenberg Alte Reben Grosse Lage), and the same grape variety (Riesling Weiss). The slight difference in the name formatting (Nr23 vs. no number) is an abbreviation and does not change the classification.",
+  "parse_ok": true,
+  "tokens_in": 463,
+  "tokens_out": 81,
+  "elapsed": 1.7436749935150146,
+  "error": null
+}

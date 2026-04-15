@@ -1,0 +1,13 @@
+{
+  "pair_id": "B031",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines from the same producer. Wine A is Porcupine Ridge Merlot, a red wine, while Wine B is Porcupine Ridge Sauvignon Blanc, a white wine; different grape and different color always indicate separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines from the same producer. Wine A is Porcupine Ridge Merlot, a red wine, while Wine B is Porcupine Ridge Sauvignon Blanc, a white wine; different grape and different color always indicate separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 71,
+  "elapsed": 2.0085978507995605,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D050",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are made from different grape varieties (Pinot Gris/Pinot Blanc vs. Chardonnay Blanc), which always indicates different wines, even if the vineyard name is the same. A consumer would encounter these as distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are made from different grape varieties (Pinot Gris/Pinot Blanc vs. Chardonnay Blanc), which always indicates different wines, even if the vineyard name is the same. A consumer would encounter these as distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 69,
+  "elapsed": 1.3759729862213135,
+  "error": null
+}

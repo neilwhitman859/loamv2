@@ -1,0 +1,13 @@
+{
+  "pair_id": "D013",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":1.0,\"reasoning\":\"Both wines are produced by Machard de Gramont and are red Premier Cru Burgundies. However, Wine A is from Beaune Premier Cru, while Wine B is from Vosne-Roman\u00e9e Premier Cru, which are distinct village appellations in Burgundy. Different vineyard designations indicate they are separate wines that would not share a single encyclopedia page.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are produced by Machard de Gramont and are red Premier Cru Burgundies. However, Wine A is from Beaune Premier Cru, while Wine B is from Vosne-Roman\u00e9e Premier Cru, which are distinct village appellations in Burgundy. Different vineyard designations indicate they are separate wines that would not share a single encyclopedia page.",
+  "parse_ok": true,
+  "tokens_in": 568,
+  "tokens_out": 424,
+  "elapsed": 3.288332939147949,
+  "error": null
+}

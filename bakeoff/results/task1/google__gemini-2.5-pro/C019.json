@@ -1,0 +1,13 @@
+{
+  "pair_id": "C019",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines have different aging classifications: 'Reserva' and 'Gran Reserva'. In Spanish wine law, including for Cava, these are distinct legal categories with different minimum aging requirements, making them separate and distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different aging classifications: 'Reserva' and 'Gran Reserva'. In Spanish wine law, including for Cava, these are distinct legal categories with different minimum aging requirements, making them separate and distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 1178,
+  "elapsed": 19.858819723129272,
+  "error": null
+}

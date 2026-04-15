@@ -1,0 +1,13 @@
+{
+  "pair_id": "C018",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different Grand Cru appellations in Burgundy: Echezeaux and Grands-Echezeaux are separate vineyard designations, not formatting variants of the same wine. Even though the producer, color, and grape are the same, distinct vineyard/appellation names indicate separate bottlings that would have separate encyclopedia entries.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different Grand Cru appellations in Burgundy: Echezeaux and Grands-Echezeaux are separate vineyard designations, not formatting variants of the same wine. Even though the producer, color, and grape are the same, distinct vineyard/appellation names indicate separate bottlings that would have separate encyclopedia entries.",
+  "parse_ok": true,
+  "tokens_in": 464,
+  "tokens_out": 86,
+  "elapsed": 2.3697142601013184,
+  "error": null
+}

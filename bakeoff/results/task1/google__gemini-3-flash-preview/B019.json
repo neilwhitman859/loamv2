@@ -1,0 +1,13 @@
+{
+  "pair_id": "B019",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines are made from different grape varieties: Wine A is an Aligot\u00e9, while Wine B is a standard Bourgogne Blanc (Chardonnay/Pinot Blanc). In Burgundy, 'Bourgogne Aligot\u00e9' and 'Bourgogne' (Blanc) are distinct AOC designations representing different bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from different grape varieties: Wine A is an Aligot\u00e9, while Wine B is a standard Bourgogne Blanc (Chardonnay/Pinot Blanc). In Burgundy, 'Bourgogne Aligot\u00e9' and 'Bourgogne' (Blanc) are distinct AOC designations representing different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 86,
+  "elapsed": 1.80659818649292,
+  "error": null
+}

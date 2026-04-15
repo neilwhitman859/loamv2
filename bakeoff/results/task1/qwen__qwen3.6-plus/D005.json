@@ -1,0 +1,13 @@
+{
+  "pair_id": "D005",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Wine B's name 'Vineyard Syrah' is a clear truncation or data-entry abbreviation of Wine A's 'Clayvin Vineyard Syrah' from the same producer, sharing identical grape variety and color. The differing LWINs likely indicate different vintages or database formatting variations rather than distinct commercial bottlings, as no separate 'Vineyard Syrah' exists in Fromm's portfolio.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Wine B's name 'Vineyard Syrah' is a clear truncation or data-entry abbreviation of Wine A's 'Clayvin Vineyard Syrah' from the same producer, sharing identical grape variety and color. The differing LWINs likely indicate different vintages or database formatting variations rather than distinct commercial bottlings, as no separate 'Vineyard Syrah' exists in Fromm's portfolio.",
+  "parse_ok": true,
+  "tokens_in": 461,
+  "tokens_out": 2446,
+  "elapsed": 45.60160303115845,
+  "error": null
+}

@@ -1,0 +1,30 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "anthropic/claude-sonnet-4.6",
+  "correctness": 3.5,
+  "voice": 2.0,
+  "specificity": 4.5,
+  "usefulness": 5.0,
+  "composite": 3.625,
+  "wrong_facts": [
+    "The hook claims ABV 'around 10-11%' but context data shows 11.5% (2011) and 12% (2007) — the 10% figure is fabricated/misleading",
+    "Claims wine is 'released young' but ground truth says it's not released until 5 years of age",
+    "Claims Broke Fordwich subregion and specific soil types (sandy alluvial loam, friable red duplex) — the vineyard is Short Flat, and while these soil descriptions are plausible for Hunter Valley, the specific attribution to Vat 1 vines is unverifiable from context data",
+    "No malolactic fermentation claim is plausible but not verified in context or ground truth",
+    "Claims 'bottled early' which contradicts the 5-year release policy"
+  ],
+  "banned_words_found": [
+    "genuine",
+    "genuinely"
+  ],
+  "fabricated_numbers": [
+    "10-11% ABV in hook (context shows 11.5% and 12%)",
+    "55-58°F cellar temperature",
+    "10-15 dollars cheaper for Mount Pleasant Lovedale"
+  ],
+  "reasoning": "The output is impressively detailed and highly useful, with excellent specificity on terroir, vinification, food pairings, and comparables. However, correctness suffers from several issues: the hook's '10-11% ABV' claim is misleading given actual data shows 11.5-12%; the claim that wine is 'released young' directly contradicts the ground truth 5-year hold policy; and some soil/subregion details appear fabricated or unverifiable. The voice is strong and opinionated throughout but uses 'genuine' in the wine_summary and 'genuinely' in market_position, triggering the banned word penalty. The piece is exceptionally useful — the insider take about not opening too early, the specific food pairings, and the value assessment all provide real actionable guidance.",
+  "judge_tokens_in": 4353,
+  "judge_tokens_out": 476
+}

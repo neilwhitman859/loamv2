@@ -1,0 +1,13 @@
+{
+  "pair_id": "B019",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from the same producer, Jean-Claude Bachelet, and the Bourgogne region, and both are white. However, Wine A is explicitly Bourgogne Aligot\u00e9 made from the Aligot\u00e9 grape, while Wine B is Bourgogne made from Chardonnay Blanc and Pinot Blanc. Different grapes always indicate different wines, even with matching producer and region.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from the same producer, Jean-Claude Bachelet, and the Bourgogne region, and both are white. However, Wine A is explicitly Bourgogne Aligot\u00e9 made from the Aligot\u00e9 grape, while Wine B is Bourgogne made from Chardonnay Blanc and Pinot Blanc. Different grapes always indicate different wines, even with matching producer and region.",
+  "parse_ok": true,
+  "tokens_in": 587,
+  "tokens_out": 384,
+  "elapsed": 2.888639450073242,
+  "error": null
+}

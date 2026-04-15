@@ -1,0 +1,13 @@
+{
+  "pair_id": "B019",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grape varieties, with Wine A being made from Aligot\u00e9 and Wine B from Chardonnay Blanc and Pinot Blanc. This difference in grape variety is a key factor in determining that they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grape varieties, with Wine A being made from Aligot\u00e9 and Wine B from Chardonnay Blanc and Pinot Blanc. This difference in grape variety is a key factor in determining that they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 69,
+  "elapsed": 1.9398815631866455,
+  "error": null
+}

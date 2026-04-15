@@ -1,0 +1,13 @@
+{
+  "pair_id": "C025",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white wine, while Wine B is a ros\u00e9. Despite sharing the 'Riserva del Fondatore' designation and producer, the difference in color indicates distinct bottlings and grape compositions, making them different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white wine, while Wine B is a ros\u00e9. Despite sharing the 'Riserva del Fondatore' designation and producer, the difference in color indicates distinct bottlings and grape compositions, making them different wines.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 68,
+  "elapsed": 1.7888367176055908,
+  "error": null
+}

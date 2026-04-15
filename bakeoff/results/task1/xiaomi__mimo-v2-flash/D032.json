@@ -1,0 +1,13 @@
+{
+  "pair_id": "D032",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a standard 'Hallgarten Riesling Trocken' while Wine B is a 'Hallgarten Reserve Riesling Trocken', indicating a higher classification tier (Reserve) which represents a distinct bottling. The 'Reserve' designation is not merely a name formatting difference but a specific quality level, making them different wines a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a standard 'Hallgarten Riesling Trocken' while Wine B is a 'Hallgarten Reserve Riesling Trocken', indicating a higher classification tier (Reserve) which represents a distinct bottling. The 'Reserve' designation is not merely a name formatting difference but a specific quality level, making them different wines a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 503,
+  "tokens_out": 102,
+  "elapsed": 2.374506950378418,
+  "error": null
+}

@@ -1,0 +1,23 @@
+{
+  "page_id": "page_057",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"wines_found\": [{\"name\": \"J. Lohr Arroyo Vista Chardonnay\", \"vintage_year\": 2024, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": \"sustainable\"}]}",
+  "wines_found": [
+    {
+      "name": "J. Lohr Arroyo Vista Chardonnay",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "sustainable"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 38703,
+  "tokens_out": 71,
+  "elapsed": 2.3342034816741943,
+  "error": null
+}

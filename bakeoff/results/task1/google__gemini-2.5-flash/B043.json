@@ -1,0 +1,13 @@
+{
+  "pair_id": "B043",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"These wines are different because Wine A is a white sparkling wine ('Brut Apanage') and Wine B is a ros\u00e9 sparkling wine ('Apanage Brut Rose'). The difference in color (white vs. ros\u00e9) indicates distinct bottlings, even if the base cuv\u00e9e name is similar.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "These wines are different because Wine A is a white sparkling wine ('Brut Apanage') and Wine B is a ros\u00e9 sparkling wine ('Apanage Brut Rose'). The difference in color (white vs. ros\u00e9) indicates distinct bottlings, even if the base cuv\u00e9e name is similar.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 82,
+  "elapsed": 1.3494293689727783,
+  "error": null
+}

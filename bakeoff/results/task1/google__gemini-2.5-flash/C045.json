@@ -1,0 +1,13 @@
+{
+  "pair_id": "C045",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Both wines are Maximin Grunhauser Abtsberg Riesling Kabinett Auktion, but Wine B includes 'Nr8'. This indicates a specific lot or cask number, which, for German Pr\u00e4dikat wines, signifies a distinct bottling even at the same Pr\u00e4dikat level. Therefore, they are different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are Maximin Grunhauser Abtsberg Riesling Kabinett Auktion, but Wine B includes 'Nr8'. This indicates a specific lot or cask number, which, for German Pr\u00e4dikat wines, signifies a distinct bottling even at the same Pr\u00e4dikat level. Therefore, they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 100,
+  "elapsed": 1.5795557498931885,
+  "error": null
+}

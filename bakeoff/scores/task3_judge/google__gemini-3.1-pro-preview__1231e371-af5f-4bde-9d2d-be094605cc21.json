@@ -1,0 +1,25 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "The wine is described as 100% Cabernet Sauvignon in the context data, but ground truth shows the 2022 is 92% Cabernet Sauvignon, 3% Petite Verdot, 3% Merlot, 2% Malbec — the output doesn't correct this but also doesn't explicitly claim 100%",
+    "The hook says 'father-and-son partnership' as the naming origin — this is close but imprecise; the ground truth specifies it was named for the 'generation and a half' concept, not simply a father-son partnership",
+    "Specific soil types 'Bale loam and Yolo silt loam' are stated as fact but are not in the context data and are unverifiable fabrications",
+    "Franciscan formations on Napa's eastern slopes is a plausible but unverified claim for Shafer's specific vineyard sites",
+    "100% new French oak barrels for 'nearly two years' — ground truth says 18 months in 100% new French oak (Allier & Tronçais), so 'nearly two years' is a stretch of 18 months but the 100% new French oak claim matches"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "Bale loam and Yolo silt loam soil types are fabricated specifics not in context data"
+  ],
+  "reasoning": "The output has strong voice, specificity, and usefulness — it's opinionated, direct, names real competitors with reasoning, and gives actionable food pairings. However, correctness suffers from several issues: the specific soil types (Bale loam, Yolo silt loam) appear fabricated to add false precision; the naming origin in the hook is close but misses the key 'generation and a half' concept that is the actual origin; and the cooperage claim of 'nearly two years' stretches the actual 18 months. The hook's naming origin claim isn't provably wrong (it IS about the father-son partnership) but misses the specific meaning. The soil fabrication is concerning but not a number fabrication per se. Overall the writing quality is excellent but factual precision is lacking in key areas.",
+  "judge_tokens_in": 3904,
+  "judge_tokens_out": 544
+}

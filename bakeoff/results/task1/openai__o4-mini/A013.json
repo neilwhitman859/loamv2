@@ -1,0 +1,13 @@
+{
+  "pair_id": "A013",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.94,\"reasoning\":\"Wine A is a blend of Pinot Noir and Canari Noir, whereas Wine B is 100% Pinot Gris; different grape varieties always indicate different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.94,
+  "reasoning": "Wine A is a blend of Pinot Noir and Canari Noir, whereas Wine B is 100% Pinot Gris; different grape varieties always indicate different wines.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 213,
+  "elapsed": 8.744714260101318,
+  "error": null
+}

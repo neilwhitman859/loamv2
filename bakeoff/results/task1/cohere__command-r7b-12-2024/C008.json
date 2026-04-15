@@ -1,0 +1,13 @@
+{
+  "pair_id": "C008",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different colors (white vs rose), different wine types (Brut vs Brut Rose), and different sweetness levels (implied by the different types). These differences indicate distinct bottlings, even if they share the same producer and vineyard name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different colors (white vs rose), different wine types (Brut vs Brut Rose), and different sweetness levels (implied by the different types). These differences indicate distinct bottlings, even if they share the same producer and vineyard name.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 76,
+  "elapsed": 1.6258001327514648,
+  "error": null
+}

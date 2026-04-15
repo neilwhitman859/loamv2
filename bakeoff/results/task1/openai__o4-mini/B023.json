@@ -1,0 +1,13 @@
+{
+  "pair_id": "B023",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.90, \"reasoning\": \"One wine is red and the other is white, indicating different grape varieties; wines of different colors are always distinct products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "One wine is red and the other is white, indicating different grape varieties; wines of different colors are always distinct products.",
+  "parse_ok": true,
+  "tokens_in": 405,
+  "tokens_out": 134,
+  "elapsed": 3.3117315769195557,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B044",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Ros\u00e9 Champagne and Wine B is a Blanc Champagne. These represent distinct bottlings with different production methods and color classifications, even though they both belong to the prestige 'Cuv\u00e9e Louise' line.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Ros\u00e9 Champagne and Wine B is a Blanc Champagne. These represent distinct bottlings with different production methods and color classifications, even though they both belong to the prestige 'Cuv\u00e9e Louise' line.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 67,
+  "elapsed": 1.7592909336090088,
+  "error": null
+}

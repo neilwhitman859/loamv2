@@ -1,0 +1,40 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "mistralai/mistral-large",
+  "correctness": 2.0,
+  "voice": 2.0,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 2.7,
+  "wrong_facts": [
+    "Elevation stated as 700 meters; ground truth says 600 meters",
+    "Claims grapes are destemmed; ground truth says whole cluster native fermentation",
+    "Claims whole-cluster fermentation for 'around 20%' of the fruit; ground truth says whole cluster fermentation (not partial)",
+    "Claims fermentation in stainless steel; ground truth says cement tanks for recent vintages",
+    "Claims 8 months in neutral oak/used barrels; ground truth says recent vintages ferment and age in cement tanks with no wood aging",
+    "Mentions Vino de Finca status and yield limits of 30 hl/ha vs 40 — unverifiable and likely fabricated",
+    "Price range of $80-$100 fabricated (no prices provided)",
+    "Clos Mogador Manyetes price of $90 fabricated",
+    "L'Ermita price of $800 fabricated"
+  ],
+  "banned_words_found": [
+    "harmonious",
+    "world-class",
+    "showcases"
+  ],
+  "fabricated_numbers": [
+    "700 meters elevation",
+    "20 meters root depth",
+    "20% whole-cluster",
+    "30 hl/ha and 40 hl/ha yield limits",
+    "below 20 hl/ha harvest yields",
+    "$80-$100 retail price",
+    "$90 Manyetes price",
+    "$800 L'Ermita price"
+  ],
+  "reasoning": "The output is highly specific and reads well, but it's riddled with factual errors. The elevation is wrong (700m vs 600m ground truth). The vinification description is substantially wrong: ground truth says whole cluster fermentation in cement tanks with no wood aging, while the output claims destemming, stainless steel fermentation, partial whole-cluster (20%), and 8 months in neutral oak barrels. The hook states 700 meters which is wrong. Multiple prices and yield numbers are fabricated. Three banned words appear (harmonious, world-class, showcases). The voice is engaging but the banned words and some generic phrasing pull it down. Specificity is strong with named soils, producers, and comparisons, but many specific claims are wrong.",
+  "judge_tokens_in": 4447,
+  "judge_tokens_out": 520
+}

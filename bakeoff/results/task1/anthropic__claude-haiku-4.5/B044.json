@@ -1,0 +1,13 @@
+{
+  "pair_id": "B044",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"These are distinct bottlings from Pommery's Cuv\u00e9e Louise line: one is a ros\u00e9 and one is white/champagne, representing fundamentally different wine styles and colors. Different colors (ros\u00e9 vs white) constitute different wines that consumers would encounter and purchase separately, even when sharing the same cuv\u00e9e name.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "These are distinct bottlings from Pommery's Cuv\u00e9e Louise line: one is a ros\u00e9 and one is white/champagne, representing fundamentally different wine styles and colors. Different colors (ros\u00e9 vs white) constitute different wines that consumers would encounter and purchase separately, even when sharing the same cuv\u00e9e name.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 97,
+  "elapsed": 4.139039993286133,
+  "error": null
+}

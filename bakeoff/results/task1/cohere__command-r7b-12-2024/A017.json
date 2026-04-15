@@ -1,0 +1,13 @@
+{
+  "pair_id": "A017",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B are different wines due to the different grape varieties. Wine A is made from Pinot Noir, while Wine B is a Syrah, indicating distinct bottlings that a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B are different wines due to the different grape varieties. Wine A is made from Pinot Noir, while Wine B is a Syrah, indicating distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 443,
+  "tokens_out": 65,
+  "elapsed": 1.4066848754882812,
+  "error": null
+}

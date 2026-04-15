@@ -1,0 +1,22 @@
+{
+  "wine_id": "4504d94f-9c51-4f71-a052-4c6bc770ed24",
+  "wine_name": "Cakebread Cuttings Wharf Vineyard Chardonnay, Los Carneros",
+  "tier": "C",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.625,
+  "wrong_facts": [
+    "Hook and wine_summary claim Wharf Vineyard is on the Sonoma side of Los Carneros — ground truth says it's in eastern Carneros in Napa Valley (Cuttings Wharf Road Vineyard in the Carneros district of Napa Valley)",
+    "Hook describes 'Cuttings' as a line that isolates single-vineyard lots from estate blends — ground truth indicates the wine is simply named after Cuttings Wharf Road, the vineyard's location",
+    "Mentions Diablo soils alongside Haire soils — ground truth only mentions Haire loam soils, Diablo is unverified",
+    "Terroir section claims soils are 'formed from ancient sedimentary bedrock' — not supported by context or ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is exceptionally well-written with strong voice, specificity, and usefulness — the food pairings, comparables, and value assessment are all excellent. However, the hook contains a provably wrong geographic claim: it places Wharf Vineyard on the Sonoma side of Carneros, when ground truth clearly states it's in eastern Carneros in Napa Valley. This is a critical factual error in the hook that would mislead users. The 'Cuttings line' framing also misrepresents the naming origin. The Sonoma-side claim is repeated in the wine_summary and terroir sections, compounding the error. Under the hard penalty rule for a provably wrong hook claim, correctness is capped at 1.5, but I'm giving 2.0 because the Haire loam soil mention and other details do match ground truth, showing some genuine knowledge.",
+  "judge_tokens_in": 4126,
+  "judge_tokens_out": 441
+}

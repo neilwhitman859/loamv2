@@ -1,0 +1,13 @@
+{
+  "pair_id": "C016",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"These wines are from different appellations (Barolo vs. Barbaresco), which are distinct wine regions in Piedmont, Italy. Even though they share the same producer and grape variety, the different appellations mean they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "These wines are from different appellations (Barolo vs. Barbaresco), which are distinct wine regions in Piedmont, Italy. Even though they share the same producer and grape variety, the different appellations mean they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 464,
+  "tokens_out": 71,
+  "elapsed": 1.435927391052246,
+  "error": null
+}

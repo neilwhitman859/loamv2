@@ -1,0 +1,13 @@
+{
+  "pair_id": "D020",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.85, \"reasoning\": \"Both wines are from 19 Crimes with nearly identical names differing only by the word 'Red' suffix. Following the varietal suffix rule, 'Dark Red' vs 'Dark' represents a formatting difference where the shorter name is likely an abbreviation. Both are red wines from the same producer, suggesting this is a single wine with inconsistent naming across records.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.85,
+  "reasoning": "Both wines are from 19 Crimes with nearly identical names differing only by the word 'Red' suffix. Following the varietal suffix rule, 'Dark Red' vs 'Dark' represents a formatting difference where the shorter name is likely an abbreviation. Both are red wines from the same producer, suggesting this is a single wine with inconsistent naming across records.",
+  "parse_ok": true,
+  "tokens_in": 478,
+  "tokens_out": 106,
+  "elapsed": 2.9182159900665283,
+  "error": null
+}

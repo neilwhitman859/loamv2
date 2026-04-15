@@ -1,0 +1,13 @@
+{
+  "pair_id": "A027",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine A is made from Tempranillo Tinto, while Wine B is made from Menc\u00eda\u2014these are distinctly different grape varieties. Even though both are red wines from the same producer (Hammeken) with similar naming, different grapes represent different wines that a consumer would encounter as separate bottlings.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A is made from Tempranillo Tinto, while Wine B is made from Menc\u00eda\u2014these are distinctly different grape varieties. Even though both are red wines from the same producer (Hammeken) with similar naming, different grapes represent different wines that a consumer would encounter as separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 94,
+  "elapsed": 2.006758689880371,
+  "error": null
+}

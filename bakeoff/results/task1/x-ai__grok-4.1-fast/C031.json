@@ -1,0 +1,13 @@
+{
+  "pair_id": "C031",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer Bonnaire, same white color, and share the core name 'Blanc de Blancs,' a specific Champagne cuv\u00e9e style. The addition of 'Brut' in Wine A indicates dosage level (dry), which is standard for Blanc de Blancs and akin to a formatting suffix rather than a distinct bottling. Different LWINs likely reflect vintages or database entries, but they represent the same wine sharing an encyclopedia page.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer Bonnaire, same white color, and share the core name 'Blanc de Blancs,' a specific Champagne cuv\u00e9e style. The addition of 'Brut' in Wine A indicates dosage level (dry), which is standard for Blanc de Blancs and akin to a formatting suffix rather than a distinct bottling. Different LWINs likely reflect vintages or database entries, but they represent the same wine sharing an encyclopedia page.",
+  "parse_ok": true,
+  "tokens_in": 569,
+  "tokens_out": 804,
+  "elapsed": 6.771607398986816,
+  "error": null
+}

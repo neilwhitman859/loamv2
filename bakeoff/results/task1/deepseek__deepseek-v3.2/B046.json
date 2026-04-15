@@ -1,0 +1,13 @@
+{
+  "pair_id": "B046",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different colors (red vs white), which always indicates different wines. Additionally, they have distinct LWINs and different 'Note' numbers (#2 vs #3), suggesting they are separate bottlings from the same producer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors (red vs white), which always indicates different wines. Additionally, they have distinct LWINs and different 'Note' numbers (#2 vs #3), suggesting they are separate bottlings from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 456,
+  "tokens_out": 71,
+  "elapsed": 4.90523362159729,
+  "error": null
+}

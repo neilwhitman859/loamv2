@@ -1,0 +1,13 @@
+{
+  "pair_id": "B011",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a red Semillon Boal with 15 years of age, while Wine B is a white wine with only 5 years of age. Different colors, different grape varieties (Boal is a Madeira varietal distinct from Semillon), and different aging periods make these distinct bottlings that a consumer would encounter separately.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a red Semillon Boal with 15 years of age, while Wine B is a white wine with only 5 years of age. Different colors, different grape varieties (Boal is a Madeira varietal distinct from Semillon), and different aging periods make these distinct bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 102,
+  "elapsed": 2.877488851547241,
+  "error": null
+}

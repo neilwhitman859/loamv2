@@ -1,0 +1,13 @@
+{
+  "pair_id": "D009",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer (Bellavista), same vineyard/cuv\u00e9e (Alma Grande Cuvee), and same color (white). The difference in 'Brut' designation for Wine A suggests a sparkling wine, but this does not necessarily imply a different wine, as it could be a formatting variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer (Bellavista), same vineyard/cuv\u00e9e (Alma Grande Cuvee), and same color (white). The difference in 'Brut' designation for Wine A suggests a sparkling wine, but this does not necessarily imply a different wine, as it could be a formatting variation.",
+  "parse_ok": true,
+  "tokens_in": 415,
+  "tokens_out": 85,
+  "elapsed": 1.1718904972076416,
+  "error": null
+}

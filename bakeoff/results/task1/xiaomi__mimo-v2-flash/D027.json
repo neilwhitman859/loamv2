@@ -1,0 +1,13 @@
+{
+  "pair_id": "D027",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Cupcake Vineyards), same color (white), and same region (Trevenezie/Tre Venezie). The grape names 'MUSCAT OF ALEXANDRIA' and 'ITALIA, MUSCAT A PETITS GRAINS ROSES' are both Muscat varieties, and the name difference is likely just a formatting variation of the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Cupcake Vineyards), same color (white), and same region (Trevenezie/Tre Venezie). The grape names 'MUSCAT OF ALEXANDRIA' and 'ITALIA, MUSCAT A PETITS GRAINS ROSES' are both Muscat varieties, and the name difference is likely just a formatting variation of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 514,
+  "tokens_out": 106,
+  "elapsed": 1.829716682434082,
+  "error": null
+}

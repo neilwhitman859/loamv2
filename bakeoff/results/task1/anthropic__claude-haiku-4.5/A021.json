@@ -1,0 +1,13 @@
+{
+  "pair_id": "A021",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a pure Cabernet Sauvignon while Wine B is a Cabernet Sauvignon-Syrah blend, representing distinct grape compositions. Different grape blends constitute different bottlings that consumers would encounter separately, even from the same producer. The different LWINs confirm these are separate wine records in the database.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a pure Cabernet Sauvignon while Wine B is a Cabernet Sauvignon-Syrah blend, representing distinct grape compositions. Different grape blends constitute different bottlings that consumers would encounter separately, even from the same producer. The different LWINs confirm these are separate wine records in the database.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 99,
+  "elapsed": 5.189024448394775,
+  "error": null
+}

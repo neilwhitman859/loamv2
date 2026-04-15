@@ -1,0 +1,13 @@
+{
+  "pair_id": "D049",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.97,\"reasoning\":\"Both wines are from Dr. Wehrheim and the Kastanienbusch site, but Wine B includes the additional vineyard designation 'Koppel,' indicating a distinct named parcel/cuv\u00e9e within Kastanienbusch rather than a formatting variant. Different vineyard designations/parcels are treated as separate bottlings, and the different LWINs support that these are not the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "Both wines are from Dr. Wehrheim and the Kastanienbusch site, but Wine B includes the additional vineyard designation 'Koppel,' indicating a distinct named parcel/cuv\u00e9e within Kastanienbusch rather than a formatting variant. Different vineyard designations/parcels are treated as separate bottlings, and the different LWINs support that these are not the same wine.",
+  "parse_ok": true,
+  "tokens_in": 440,
+  "tokens_out": 100,
+  "elapsed": 3.3983843326568604,
+  "error": null
+}

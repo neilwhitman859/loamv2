@@ -1,0 +1,13 @@
+{
+  "pair_id": "C047",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines are different colors, as specified in the data (white vs. rose). The names also clearly distinguish them, with one being a standard 'Brut Nature' and the other a 'Brut Rose Nature'. A ros\u00e9 is a distinct bottling from a white wine, even if they share a producer and style descriptor.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are different colors, as specified in the data (white vs. rose). The names also clearly distinguish them, with one being a standard 'Brut Nature' and the other a 'Brut Rose Nature'. A ros\u00e9 is a distinct bottling from a white wine, even if they share a producer and style descriptor.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 1111,
+  "elapsed": 11.941823959350586,
+  "error": null
+}

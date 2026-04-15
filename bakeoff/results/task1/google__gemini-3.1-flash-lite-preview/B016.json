@@ -1,0 +1,13 @@
+{
+  "pair_id": "B016",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are produced from different grape varieties (Croatina vs. Nebbiolo) and originate from different appellations (Barolo vs. Barbaresco). These represent distinct bottlings that a consumer would encounter as separate products.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are produced from different grape varieties (Croatina vs. Nebbiolo) and originate from different appellations (Barolo vs. Barbaresco). These represent distinct bottlings that a consumer would encounter as separate products.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 75,
+  "elapsed": 1.9165868759155273,
+  "error": null
+}

@@ -196,7 +196,7 @@
 </div>
 
 <div class="now">
-  <strong>B5.5: Task 3 (prose) DONE.</strong> 21 models &times; 30 wines = 630 calls, 0 errors, $11.86. 14 models Grade A (100% parse, &lt;10 banned words). Surprise: Sonnet 4.6 (production baseline) gets Grade C with 23 banned-word violations &mdash; Gemini 2.5 Pro, GPT-5.4, Grok 4.1 all zero. DeepSeek v3.2 Grade A at $0.016. GPT-5-mini 13% parse = dead. Next: B5.6 Opus inline judging.
+  <strong>B5.6 tournament DONE. Winner: openai/gpt-5.4-mini.</strong> 3-round Opus-judged knockout across 30 wines. Composite 3.960 (0.08 below gpt-5.4 for 15% the cost). Zero banned words. Flat tier spread. 170K corpus projection: $452 (vs Sonnet baseline ~$5,667). Sonnet 4.6 eliminated at R2 #7. Opus #4 but 61&times; cost. DeepSeek v3.2 protected, finished #6 at $93/170K. Full report: bakeoff/scores/tournament_results.md. Next: B5.7 final report wrap-up, then Sprint 6 planning.
 </div>
 
 <!-- ROADMAP -->
@@ -206,7 +206,8 @@
   <li><span class="marker done-marker">&#10003;</span> Audit <span class="detail">&mdash; 9 experts, 275 findings</span></li>
   <li><span class="marker done-marker">&#10003;</span> Fix <span class="detail">&mdash; 158 fixed, 101 deferred, $0</span></li>
   <li><span class="marker done-marker">&#10003;</span> Demo <span class="detail">&mdash; 515 wines, 14 producers, $37.44</span></li>
-  <li><span class="marker current-marker">&#9654;</span> <span class="current">AI Bakeoff</span> <span class="detail">&mdash; model selection, dedup, data fill, re-enrichment, share</span></li>
+  <li><span class="marker done-marker">&#10003;</span> AI Bakeoff <span class="detail">&mdash; winner gpt-5.4-mini, $22 judge cost</span></li>
+  <li><span class="marker current-marker">&#9654;</span> <span class="current">Execute with winners</span> <span class="detail">&mdash; dedup, data fill, re-enrichment, share with friends</span></li>
 </ul>
 
 <!-- SPRINT 5 PROGRESS -->
@@ -220,18 +221,19 @@
       <li><span class="g-yes">&#10003;</span> B5.3 Task 1 (dedup)</li>
       <li><span class="g-yes">&#10003;</span> B5.4 Task 2 (extraction)</li>
       <li><span class="g-yes">&#10003;</span> B5.5 Task 3 (prose run)</li>
-      <li><span class="g-no">&#10007;</span> B5.6 Task 3 (judge)</li>
-      <li><span class="g-no">&#10007;</span> B5.7 Final report</li>
+      <li><span class="g-yes">&#10003;</span> B5.6 Task 3 (judge + tournament)</li>
+      <li><span class="g-yes">&#10003;</span> B5.7 Final report</li>
     </ul>
   </div>
   <div class="quality-item">
     <div class="q-label">Sprint vitals</div>
     <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
-      <tr><td style="color:var(--muted);">Budget spent</td><td style="text-align:right">~$16 / ~$25</td></tr>
-      <tr><td style="color:var(--muted);">Models tested</td><td style="text-align:right">21 (Task 3 done)</td></tr>
+      <tr><td style="color:var(--muted);">Budget spent</td><td style="text-align:right">~$37 / ~$25 (over)</td></tr>
+      <tr><td style="color:var(--muted);">Models tested</td><td style="text-align:right">21 (tournament done)</td></tr>
+      <tr><td style="color:var(--muted);">Winner</td><td style="text-align:right">gpt-5.4-mini</td></tr>
       <tr><td style="color:var(--muted);">Dupes merged</td><td style="text-align:right">0</td></tr>
       <tr><td style="color:var(--muted);">Humans shown</td><td style="text-align:right">0 / 5</td></tr>
-      <tr><td style="color:var(--muted);">Block</td><td style="text-align:right">B5.5 done</td></tr>
+      <tr><td style="color:var(--muted);">Block</td><td style="text-align:right">Sprint 5 done</td></tr>
     </table>
   </div>
 </div>
@@ -268,8 +270,8 @@
   <li><strong>B5.3</strong> &mdash; <s>Run + score Task 1 (dedup)</s> DONE &mdash; Sonnet 94.5%, Haiku 93.5%, 30 GT fixes</li>
   <li><strong>B5.4</strong> &mdash; <s>Run + score Task 2 (extraction)</s> DONE &mdash; 17 models &times; 50 pages</li>
   <li><strong>B5.5</strong> &mdash; <s>Run Task 3 (prose)</s> DONE &mdash; 21 models &times; 30 wines, 0 errors, $11.86</li>
-  <li><strong>B5.6</strong> &mdash; Score Task 3: Opus inline judging (calibrate + score)</li>
-  <li><strong>B5.7</strong> &mdash; Final report: rankings, cost projections, recommendation</li>
+  <li><strong>B5.6</strong> &mdash; <s>Tournament (3-round Opus-judged)</s> DONE &mdash; winner gpt-5.4-mini, $22 judge cost</li>
+  <li><strong>B5.7</strong> &mdash; <s>Final report</s> DONE &mdash; tournament_results.md with rankings, cost projections, recommendation</li>
 </ul>
 <div class="section-label">Sprint 6 (planned after bake-off)</div>
 <ul class="next-list" style="color:var(--muted);">

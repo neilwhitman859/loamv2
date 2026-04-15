@@ -1,0 +1,13 @@
+{
+  "pair_id": "B001",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"Although both wines are produced by Chimney Rock, they are made from distinct grape varieties (Sauvignon Blanc vs. Sauvignon Gris). According to the provided rules, different grape varieties represent distinct bottlings and therefore constitute different wines.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are produced by Chimney Rock, they are made from distinct grape varieties (Sauvignon Blanc vs. Sauvignon Gris). According to the provided rules, different grape varieties represent distinct bottlings and therefore constitute different wines.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 74,
+  "elapsed": 1.4137446880340576,
+  "error": null
+}

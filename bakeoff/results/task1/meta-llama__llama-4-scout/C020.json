@@ -1,0 +1,13 @@
+{
+  "pair_id": "C020",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different vineyard designations, 'Altarchen' and 'Leiterchen', which indicates they are distinct bottlings. Despite sharing the same producer, grape variety, and Pr\u00e4dikat level (Auslese), the different vineyard names take precedence.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different vineyard designations, 'Altarchen' and 'Leiterchen', which indicates they are distinct bottlings. Despite sharing the same producer, grape variety, and Pr\u00e4dikat level (Auslese), the different vineyard names take precedence.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 77,
+  "elapsed": 1.417867660522461,
+  "error": null
+}

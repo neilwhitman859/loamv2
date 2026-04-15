@@ -1,0 +1,13 @@
+{
+  "pair_id": "A039",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer (Torii Mor), vineyard (Yamhill Carlton Select), and color (red). The grape variety for Wine A is PINOT NOIR, which matches Wine B's implicit grape variety, and the varietal suffix difference ('Select' vs 'Select Pinot Noir') usually indicates the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer (Torii Mor), vineyard (Yamhill Carlton Select), and color (red). The grape variety for Wine A is PINOT NOIR, which matches Wine B's implicit grape variety, and the varietal suffix difference ('Select' vs 'Select Pinot Noir') usually indicates the same wine.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 89,
+  "elapsed": 2.491152763366699,
+  "error": null
+}

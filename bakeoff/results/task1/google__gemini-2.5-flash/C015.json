@@ -1,0 +1,13 @@
+{
+  "pair_id": "C015",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different 'No.' designations (No. 10 vs No. 15), which typically indicates distinct bottlings or lots, even if other elements like producer and style (Blanc de Blancs) are the same. These are distinct products a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different 'No.' designations (No. 10 vs No. 15), which typically indicates distinct bottlings or lots, even if other elements like producer and style (Blanc de Blancs) are the same. These are distinct products a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 81,
+  "elapsed": 1.615891456604004,
+  "error": null
+}

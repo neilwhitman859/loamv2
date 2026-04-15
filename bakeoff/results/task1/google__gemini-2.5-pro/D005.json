@@ -1,0 +1,13 @@
+{
+  "pair_id": "D005",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A is a single-vineyard wine from the specific 'Clayvin Vineyard'. Wine B, 'Vineyard Syrah', is a more generic designation that represents a different bottling, likely a blend of vineyards or from a different site. The distinct LWINs for each wine confirm they are separate products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a single-vineyard wine from the specific 'Clayvin Vineyard'. Wine B, 'Vineyard Syrah', is a more generic designation that represents a different bottling, likely a blend of vineyards or from a different site. The distinct LWINs for each wine confirm they are separate products.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 1275,
+  "elapsed": 13.352685451507568,
+  "error": null
+}

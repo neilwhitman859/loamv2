@@ -1,0 +1,28 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "openai/gpt-5-mini",
+  "correctness": 2.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "Hook mentions 'granite- and gneiss-derived soils' — while granite soils exist in Great Southern, the ground truth specifies 'gravelly loam soils' for Plantagenet's vineyards; gneiss is not mentioned and is unverifiable for this specific producer",
+    "Price stated as 'AUD 20–30' is fabricated — no price data was provided",
+    "Howard Park 'Scotsdale' is described as comparable but then in value_assessment called a 'single-vineyard offering' at similar price — this comparison is questionable as Howard Park Scotsdale is a higher-tier wine",
+    "Food pairing uses 'harmonize' which is close to banned 'harmonious' but technically a different word"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "AUD 20-30 price range",
+    "10 months French oak not stated (though matches ground truth, it was presented speculatively)",
+    "12-14°C storage temperature",
+    "aging_potential_years: 8",
+    "drinking_window_max_years: 12"
+  ],
+  "reasoning": "The output is generally well-structured and demonstrates good wine knowledge about Great Southern. However, it fabricates a price range (AUD 20-30) not in the context data, and several specific numbers (aging windows, storage temps) are invented. The hook's mention of gneiss-derived soils is unverifiable for this specific producer — ground truth says 'gravelly loam soils.' The vinification section appropriately hedges about unknown details, which is good. The output correctly doesn't fabricate oak aging specifics (it hedges), though it doesn't mention the 10 months French oak from ground truth since it wasn't in context data. The voice is decent — direct and opinionated — but occasionally slips into generic territory. No banned words detected. The comparable wines and food pairings are specific and useful. The fabricated price triggers concern but since it's plausible for a second-label wine, it's less damaging than fabricating winemaking numbers.",
+  "judge_tokens_in": 3418,
+  "judge_tokens_out": 503
+}

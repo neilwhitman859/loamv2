@@ -1,0 +1,13 @@
+{
+  "pair_id": "D031",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.82, \"reasoning\": \"Both wines are from the same producer (Peter Jakob Kuhn) and the same vineyard/cuv\u00e9e (Hallgarten Rheinschiefer), both white wines. The only difference is the 'Trocken' suffix on Wine A, which indicates a dry style designation that is sometimes appended or omitted in naming. In German wine labeling, 'Trocken' can be part of the official label name or omitted in shorthand references, and without evidence that Peter Jakob Kuhn produces both a Trocken and a non-Trocken version of this wine, this is most likely the same bottling referenced with and without the style suffix.\"}",
+  "verdict": "SAME",
+  "confidence": 0.82,
+  "reasoning": "Both wines are from the same producer (Peter Jakob Kuhn) and the same vineyard/cuv\u00e9e (Hallgarten Rheinschiefer), both white wines. The only difference is the 'Trocken' suffix on Wine A, which indicates a dry style designation that is sometimes appended or omitted in naming. In German wine labeling, 'Trocken' can be part of the official label name or omitted in shorthand references, and without evidence that Peter Jakob Kuhn produces both a Trocken and a non-Trocken version of this wine, this is most likely the same bottling referenced with and without the style suffix.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 170,
+  "elapsed": 3.9790749549865723,
+  "error": null
+}

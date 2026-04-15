@@ -1,0 +1,13 @@
+{
+  "pair_id": "D041",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The presence of 'Brut' in Wine B's name indicates it is a specific style of sparkling wine, likely referring to its level of sweetness, whereas Wine A lacks this designation. This difference in naming suggests a difference in style or type. Given that one is labeled 'Brut' and the other is not, they are likely different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The presence of 'Brut' in Wine B's name indicates it is a specific style of sparkling wine, likely referring to its level of sweetness, whereas Wine A lacks this designation. This difference in naming suggests a difference in style or type. Given that one is labeled 'Brut' and the other is not, they are likely different wines.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 94,
+  "elapsed": 1.4712283611297607,
+  "error": null
+}

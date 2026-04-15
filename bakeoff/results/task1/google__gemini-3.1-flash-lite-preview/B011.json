@@ -1,0 +1,13 @@
+{
+  "pair_id": "B011",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines have different age statements (15 YO vs 5 YO) and different grape varieties (Semillon vs unspecified/implied different), which represent distinct bottlings. Additionally, the color difference (red vs white) confirms they are separate products within the producer's portfolio.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different age statements (15 YO vs 5 YO) and different grape varieties (Semillon vs unspecified/implied different), which represent distinct bottlings. Additionally, the color difference (red vs white) confirms they are separate products within the producer's portfolio.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 85,
+  "elapsed": 1.600243330001831,
+  "error": null
+}

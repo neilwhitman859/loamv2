@@ -1,0 +1,13 @@
+{
+  "pair_id": "D004",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is 'Arrowhead Cabernet Sauvignon' and Wine B is 'Arete Cabernet Sauvignon', both from producer Chimney Rock. While they share the same producer, grape, and color, the names 'Arrowhead' and 'Arete' refer to distinct vineyard designations or bottlings, indicating separate products a consumer would encounter.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is 'Arrowhead Cabernet Sauvignon' and Wine B is 'Arete Cabernet Sauvignon', both from producer Chimney Rock. While they share the same producer, grape, and color, the names 'Arrowhead' and 'Arete' refer to distinct vineyard designations or bottlings, indicating separate products a consumer would encounter.",
+  "parse_ok": true,
+  "tokens_in": 496,
+  "tokens_out": 100,
+  "elapsed": 2.1244218349456787,
+  "error": null
+}

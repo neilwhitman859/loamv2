@@ -1,0 +1,13 @@
+{
+  "pair_id": "D024",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.75, \"reasoning\": \"Both wines are from Cattier and share the name 'Antique', with Wine A simply having the style descriptor 'Brut' prepended. The shorter name 'Antique' appears to be an abbreviation of 'Brut Antique', which is a known Cattier Champagne cuv\u00e9e. Both are white wines from the same producer, suggesting this is a naming formatting difference rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.75,
+  "reasoning": "Both wines are from Cattier and share the name 'Antique', with Wine A simply having the style descriptor 'Brut' prepended. The shorter name 'Antique' appears to be an abbreviation of 'Brut Antique', which is a known Cattier Champagne cuv\u00e9e. Both are white wines from the same producer, suggesting this is a naming formatting difference rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 472,
+  "tokens_out": 119,
+  "elapsed": 3.847493886947632,
+  "error": null
+}

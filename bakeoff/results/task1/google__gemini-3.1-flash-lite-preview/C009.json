@@ -1,0 +1,13 @@
+{
+  "pair_id": "C009",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"The two wines have distinct LWIN identifiers, which are unique global wine identification numbers used to distinguish specific bottlings. While both are Blanc de Blancs Brut from Cattier, the difference in LWINs indicates they are separate commercial products, likely representing different cuv\u00e9es or market releases.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The two wines have distinct LWIN identifiers, which are unique global wine identification numbers used to distinguish specific bottlings. While both are Blanc de Blancs Brut from Cattier, the difference in LWINs indicates they are separate commercial products, likely representing different cuv\u00e9es or market releases.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 87,
+  "elapsed": 2.2769646644592285,
+  "error": null
+}

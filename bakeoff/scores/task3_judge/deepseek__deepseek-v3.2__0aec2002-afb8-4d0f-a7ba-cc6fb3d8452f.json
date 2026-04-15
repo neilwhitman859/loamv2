@@ -1,0 +1,30 @@
+{
+  "wine_id": "0aec2002-afb8-4d0f-a7ba-cc6fb3d8452f",
+  "wine_name": "Fritz Haag Brauneberger Juffer Sonnenuhr Riesling Auslese, Mosel",
+  "tier": "A",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.5,
+  "voice": 2.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.175,
+  "wrong_facts": [
+    "The claim of '60-70% slope' is a specific fabricated number not verifiable from context data or ground truth",
+    "Price range '$80-$120 per 750ml bottle' is fabricated — no pricing data was provided",
+    "The claim about 'south-southwest exposure' is not in context data (ground truth says 'southern')",
+    "The claim about fermentation in 'traditional Mosel Fuder (1000L oak casks)' and 'spontaneous fermentation with native yeasts' is not verifiable from context data — while plausible for Fritz Haag, these are specific vinification claims presented as fact",
+    "The claim about not using süssreserve is presented as definitive fact but is not in the context data"
+  ],
+  "banned_words_found": [
+    "harmonious",
+    "elegant"
+  ],
+  "fabricated_numbers": [
+    "60-70% slope angle",
+    "$80-$120 price range",
+    "50°F (10°C) and 55-60°F (13-16°C) serving temperatures"
+  ],
+  "reasoning": "The output contains two banned words ('harmonious' in vinification_summary and 'elegant' in comparable_wines section describing Willi Schaefer), triggering the voice hard cap at 2.0. Multiple specific numbers are fabricated: the 60-70% slope gradient, the $80-$120 price range (no prices were provided), and specific serving temperatures presented as critical advice. The slope percentage and price are the most problematic fabricated numbers. However, many claims align well with ground truth — the Devonian slate, the sundial naming origin, the Grosse Lage status implied, and the general terroir description. The specificity is excellent with real competitor names, real dishes, and geological detail. The usefulness is high with actionable pairing advice and cellar recommendations. But the fabricated numbers and banned words significantly hurt the score. Applying the hard penalty for fabricated numbers: the slope percentage and price are specific fabricated numbers, capping correctness at 1.5. However, the slope claim is arguably common knowledge about Brauneberg (it is indeed extremely steep), and serving temperatures are general wine service knowledge rather than wine-specific fabrications. I'll be somewhat lenient on the serving temps but strict on the slope % and price, settling at 2.5 for correctness given the mix of accurate and fabricated specifics.",
+  "judge_tokens_in": 3657,
+  "judge_tokens_out": 571
+}

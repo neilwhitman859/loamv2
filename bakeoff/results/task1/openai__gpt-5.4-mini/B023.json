@@ -1,0 +1,13 @@
+{
+  "pair_id": "B023",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct 19 Crimes bottlings: 'Snoop Dogg Cali' and 'Snoop Dogg Cali Gold' are separate named wines rather than a simple abbreviation/formatting variant. The color difference also indicates different wine styles, with Wine A listed as red and Wine B as white, which makes them different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct 19 Crimes bottlings: 'Snoop Dogg Cali' and 'Snoop Dogg Cali Gold' are separate named wines rather than a simple abbreviation/formatting variant. The color difference also indicates different wine styles, with Wine A listed as red and Wine B as white, which makes them different wines.",
+  "parse_ok": true,
+  "tokens_in": 405,
+  "tokens_out": 88,
+  "elapsed": 2.2432589530944824,
+  "error": null
+}

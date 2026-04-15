@@ -1,0 +1,13 @@
+{
+  "pair_id": "A029",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The records differ only by the varietal suffix 'Auxerrois' appended to the base cuv\u00e9e name 'Chasseresse', which directly aligns with the rule that suffix differences alone typically indicate the same bottling. Both share the same producer, color, and primary grape variety, confirming they represent the same wine with minor database naming variations.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The records differ only by the varietal suffix 'Auxerrois' appended to the base cuv\u00e9e name 'Chasseresse', which directly aligns with the rule that suffix differences alone typically indicate the same bottling. Both share the same producer, color, and primary grape variety, confirming they represent the same wine with minor database naming variations.",
+  "parse_ok": true,
+  "tokens_in": 462,
+  "tokens_out": 2009,
+  "elapsed": 38.28193736076355,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D005",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Fromm) and the same grape variety (Syrah). The only difference is the vineyard name abbreviation in Wine B, which is common and does not indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Fromm) and the same grape variety (Syrah). The only difference is the vineyard name abbreviation in Wine B, which is common and does not indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 480,
+  "tokens_out": 67,
+  "elapsed": 2.443429708480835,
+  "error": null
+}

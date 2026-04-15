@@ -1,0 +1,13 @@
+{
+  "pair_id": "C006",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different colors (white vs rose), which is a clear indicator of different wines. The same producer and appellation do not override this difference, as the color is a fundamental characteristic that distinguishes the two wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different colors (white vs rose), which is a clear indicator of different wines. The same producer and appellation do not override this difference, as the color is a fundamental characteristic that distinguishes the two wines.",
+  "parse_ok": true,
+  "tokens_in": 469,
+  "tokens_out": 69,
+  "elapsed": 1.338829517364502,
+  "error": null
+}

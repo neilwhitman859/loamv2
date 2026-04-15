@@ -1,0 +1,13 @@
+{
+  "pair_id": "A040",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a blend of Merlot Noir and Chardonnay Blanc, while Wine B is a Pinot Noir\u2014fundamentally different grape compositions. Different grapes always indicate different wines, even when from the same producer and series. These would be distinct bottlings a consumer encounters separately.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a blend of Merlot Noir and Chardonnay Blanc, while Wine B is a Pinot Noir\u2014fundamentally different grape compositions. Different grapes always indicate different wines, even when from the same producer and series. These would be distinct bottlings a consumer encounters separately.",
+  "parse_ok": true,
+  "tokens_in": 500,
+  "tokens_out": 94,
+  "elapsed": 2.7641515731811523,
+  "error": null
+}

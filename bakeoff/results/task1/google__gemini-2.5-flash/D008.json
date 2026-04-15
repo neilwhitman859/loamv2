@@ -1,0 +1,13 @@
+{
+  "pair_id": "D008",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wine names 'Corte C' and 'Corte' are very similar, with 'C' likely being an abbreviation or a minor stylistic difference. Both wines share the same producer (Vistalba), color (red), and grape composition (COT and Cabernet Sauvignon). This suggests they are the same bottling with a slight naming variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wine names 'Corte C' and 'Corte' are very similar, with 'C' likely being an abbreviation or a minor stylistic difference. Both wines share the same producer (Vistalba), color (red), and grape composition (COT and Cabernet Sauvignon). This suggests they are the same bottling with a slight naming variation.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 89,
+  "elapsed": 1.5396597385406494,
+  "error": null
+}

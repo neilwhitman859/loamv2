@@ -1,0 +1,13 @@
+{
+  "pair_id": "C043",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines differ in their German Pr\u00e4dikat classification (Sp\u00e4tlese vs. Auslese), which denotes distinct grape ripeness levels and separate commercial bottlings. Per the explicit classification rules, different Pr\u00e4dikat levels always indicate different wines, which is further confirmed by their unique LWIN codes.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines differ in their German Pr\u00e4dikat classification (Sp\u00e4tlese vs. Auslese), which denotes distinct grape ripeness levels and separate commercial bottlings. Per the explicit classification rules, different Pr\u00e4dikat levels always indicate different wines, which is further confirmed by their unique LWIN codes.",
+  "parse_ok": true,
+  "tokens_in": 476,
+  "tokens_out": 1102,
+  "elapsed": 21.748932123184204,
+  "error": null
+}

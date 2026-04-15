@@ -1,0 +1,13 @@
+{
+  "pair_id": "D013",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"These wines come from different appellations: Beaune Premier Cru and Vosne-Roman\u00e9e Premier Cru are distinct villages in Burgundy with separate vineyard designations. Even from the same producer, wines from different village appellations represent entirely different bottlings that a consumer would encounter separately. This is a clear geographic/appellation difference.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These wines come from different appellations: Beaune Premier Cru and Vosne-Roman\u00e9e Premier Cru are distinct villages in Burgundy with separate vineyard designations. Even from the same producer, wines from different village appellations represent entirely different bottlings that a consumer would encounter separately. This is a clear geographic/appellation difference.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 99,
+  "elapsed": 2.5179102420806885,
+  "error": null
+}

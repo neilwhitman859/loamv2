@@ -1,0 +1,13 @@
+{
+  "pair_id": "D005",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"Clayvin Vineyard is a specific, prestigious single-vineyard site, whereas 'Vineyard Syrah' is a generic or different bottling that does not carry the specific site designation. The distinct LWIN numbers confirm that these are tracked as separate commercial products by the producer.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Clayvin Vineyard is a specific, prestigious single-vineyard site, whereas 'Vineyard Syrah' is a generic or different bottling that does not carry the specific site designation. The distinct LWIN numbers confirm that these are tracked as separate commercial products by the producer.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 83,
+  "elapsed": 1.6550703048706055,
+  "error": null
+}

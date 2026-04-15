@@ -1,0 +1,13 @@
+{
+  "pair_id": "D030",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is explicitly Cabernet Sauvignon from Porcupine Ridge, while Wine B is Merlot Porcupine Ridge, indicating different grape varieties. The rules state that different grapes always mean DIFFERENT wines, even if the vineyard name matches. This fits the exception where the producer makes multiple wines from the same vineyard with different grapes.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is explicitly Cabernet Sauvignon from Porcupine Ridge, while Wine B is Merlot Porcupine Ridge, indicating different grape varieties. The rules state that different grapes always mean DIFFERENT wines, even if the vineyard name matches. This fits the exception where the producer makes multiple wines from the same vineyard with different grapes.",
+  "parse_ok": true,
+  "tokens_in": 580,
+  "tokens_out": 568,
+  "elapsed": 4.306033611297607,
+  "error": null
+}

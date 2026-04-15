@@ -1,0 +1,13 @@
+{
+  "pair_id": "C006",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are separate bottlings because Wine B is explicitly Brut Rose while Wine A is Brut white. Color/style differences are treated as different wines even when producer, cuv\u00e9e family, and appellation match, and the distinct LWINs support that they are separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are separate bottlings because Wine B is explicitly Brut Rose while Wine A is Brut white. Color/style differences are treated as different wines even when producer, cuv\u00e9e family, and appellation match, and the distinct LWINs support that they are separate products.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 76,
+  "elapsed": 2.5898311138153076,
+  "error": null
+}

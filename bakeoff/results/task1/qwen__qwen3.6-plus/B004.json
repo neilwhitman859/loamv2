@@ -1,0 +1,13 @@
+{
+  "pair_id": "B004",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines have different colors and distinct grape compositions, with Wine A being a red Pinot Noir and Wine B being a white Chardonnay/Pinot Noir blend. According to the classification rules, different grape varieties always indicate separate wines, regardless of sharing the same producer and vineyard designation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines have different colors and distinct grape compositions, with Wine A being a red Pinot Noir and Wine B being a white Chardonnay/Pinot Noir blend. According to the classification rules, different grape varieties always indicate separate wines, regardless of sharing the same producer and vineyard designation.",
+  "parse_ok": true,
+  "tokens_in": 457,
+  "tokens_out": 1055,
+  "elapsed": 20.708183526992798,
+  "error": null
+}

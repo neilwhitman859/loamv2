@@ -1,0 +1,13 @@
+{
+  "pair_id": "D013",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different vineyard designations, Beaune Premier Cru and Vosne-Roman\u00e9e Premier Cru, indicating they are different wines from distinct locations.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different vineyard designations, Beaune Premier Cru and Vosne-Roman\u00e9e Premier Cru, indicating they are different wines from distinct locations.",
+  "parse_ok": true,
+  "tokens_in": 494,
+  "tokens_out": 57,
+  "elapsed": 1.2027838230133057,
+  "error": null
+}

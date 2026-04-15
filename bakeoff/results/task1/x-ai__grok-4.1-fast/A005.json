@@ -1,0 +1,13 @@
+{
+  "pair_id": "A005",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.95,\"reasoning\":\"Both wines share the producer Catena Zapata and the core name 'Agrelo Saint Felicien', with Wine B appending 'Semillon' which matches the grape variety explicitly listed for Wine A. Both are white wines from Semillon grapes, fitting the rule that varietal suffixes alone typically indicate the same wine as an abbreviation rather than a distinct bottling. No evidence suggests multiple wines from this vineyard with different grapes by the producer.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the producer Catena Zapata and the core name 'Agrelo Saint Felicien', with Wine B appending 'Semillon' which matches the grape variety explicitly listed for Wine A. Both are white wines from Semillon grapes, fitting the rule that varietal suffixes alone typically indicate the same wine as an abbreviation rather than a distinct bottling. No evidence suggests multiple wines from this vineyard with different grapes by the producer.",
+  "parse_ok": true,
+  "tokens_in": 574,
+  "tokens_out": 509,
+  "elapsed": 5.438624620437622,
+  "error": null
+}

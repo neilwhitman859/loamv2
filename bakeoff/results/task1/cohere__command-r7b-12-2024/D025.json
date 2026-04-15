@@ -1,0 +1,13 @@
+{
+  "pair_id": "D025",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are from the same producer, Cattier, and have the same color, white. The 'Brut Millesime' and 'Millesime' names are similar, suggesting they are the same style and likely the same wine, especially since the producer is consistent.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are from the same producer, Cattier, and have the same color, white. The 'Brut Millesime' and 'Millesime' names are similar, suggesting they are the same style and likely the same wine, especially since the producer is consistent.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 77,
+  "elapsed": 1.6584203243255615,
+  "error": null
+}

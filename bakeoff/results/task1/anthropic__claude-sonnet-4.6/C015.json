@@ -1,0 +1,13 @@
+{
+  "pair_id": "C015",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are Blanc de Blancs from Pertois-Lebrun under the 'Le Fond du Bateau' label, but they carry different lot/cask numbers (No. 10 vs No. 15). By analogy with the rule that different lot/cask numbers at the same level constitute different wines, these are distinct bottlings that a consumer would encounter separately. The different LWIN codes further confirm they are catalogued as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are Blanc de Blancs from Pertois-Lebrun under the 'Le Fond du Bateau' label, but they carry different lot/cask numbers (No. 10 vs No. 15). By analogy with the rule that different lot/cask numbers at the same level constitute different wines, these are distinct bottlings that a consumer would encounter separately. The different LWIN codes further confirm they are catalogued as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 517,
+  "tokens_out": 124,
+  "elapsed": 3.034273862838745,
+  "error": null
+}

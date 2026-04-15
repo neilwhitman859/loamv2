@@ -1,0 +1,23 @@
+{
+  "page_id": "page_046",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"wines_found\":[{\"name\":\"Moscato\",\"vintage_year\":null,\"abv_pct\":null,\"blend\":null,\"oak\":null,\"cases_produced\":null,\"chemistry\":null,\"winemaker\":\"Jessica Tomei\",\"farming\":\"conventional\"}]}",
+  "wines_found": [
+    {
+      "name": "Moscato",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": "conventional"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 34326,
+  "tokens_out": 61,
+  "elapsed": 3.1063084602355957,
+  "error": null
+}

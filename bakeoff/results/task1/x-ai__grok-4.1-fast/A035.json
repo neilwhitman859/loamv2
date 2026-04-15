@@ -1,0 +1,13 @@
+{
+  "pair_id": "A035",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from Robert Mondavi with the identical core name 'Private Selection Bourbon Barrels', both red, and Wine A's specified grape (Cabernet Sauvignon) matches the varietal suffix in Wine B. This fits the rule where a varietal suffix difference alone (shorter abbreviation vs full name) indicates the same wine. No evidence of multiple grape varieties or other distinguishing factors like classifications or vineyards.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from Robert Mondavi with the identical core name 'Private Selection Bourbon Barrels', both red, and Wine A's specified grape (Cabernet Sauvignon) matches the varietal suffix in Wine B. This fits the rule where a varietal suffix difference alone (shorter abbreviation vs full name) indicates the same wine. No evidence of multiple grape varieties or other distinguishing factors like classifications or vineyards.",
+  "parse_ok": true,
+  "tokens_in": 574,
+  "tokens_out": 433,
+  "elapsed": 3.2255313396453857,
+  "error": null
+}

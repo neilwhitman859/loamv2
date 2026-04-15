@@ -1,0 +1,13 @@
+{
+  "pair_id": "D024",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Cattier and share the core name 'Antique.' The 'Brut' designation in Wine A is a sweetness classification (dry) standard for Champagne/sparkling wines, not a distinct cuv\u00e9e identifier. Wine A 'Brut Antique' is the full commercial name, while Wine B 'Antique' is likely an abbreviated reference to the same bottling.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Cattier and share the core name 'Antique.' The 'Brut' designation in Wine A is a sweetness classification (dry) standard for Champagne/sparkling wines, not a distinct cuv\u00e9e identifier. Wine A 'Brut Antique' is the full commercial name, while Wine B 'Antique' is likely an abbreviated reference to the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 472,
+  "tokens_out": 120,
+  "elapsed": 3.89520001411438,
+  "error": null
+}

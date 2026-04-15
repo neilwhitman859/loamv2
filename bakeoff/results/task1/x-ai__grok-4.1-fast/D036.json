@@ -1,0 +1,13 @@
+{
+  "pair_id": "D036",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from producer Velenosi, share the base name 'Superiore Brecciarolo', and differ only by the 'Gold' suffix in Wine A, which aligns with the rule that varietal or descriptive suffix differences alone typically indicate the same wine (abbreviation or formatting). Both are red with no differences in grapes, style, vineyard, or classification tiers noted. Different LWINs likely reflect database entries rather than distinct bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from producer Velenosi, share the base name 'Superiore Brecciarolo', and differ only by the 'Gold' suffix in Wine A, which aligns with the rule that varietal or descriptive suffix differences alone typically indicate the same wine (abbreviation or formatting). Both are red with no differences in grapes, style, vineyard, or classification tiers noted. Different LWINs likely reflect database entries rather than distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 573,
+  "tokens_out": 849,
+  "elapsed": 6.250066757202148,
+  "error": null
+}

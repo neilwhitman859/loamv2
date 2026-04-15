@@ -1,0 +1,25 @@
+{
+  "wine_id": "7e9b8b66-560f-45df-b566-5419d21b395c",
+  "wine_name": "d'Arenberg The High Trellis Cabernet Sauvignon, McLaren Vale",
+  "tier": "A",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.475,
+  "wrong_facts": [
+    "Hook claims 'The High Trellis refers to a specific vine training system' but doesn't capture the actual naming origin — it was nicknamed because its vines were the first at d'Arenberg to be trained above knee-height in the 1890s, not a generic 'vine training system' reference",
+    "Oak aging described as '12-18 months' in older American and French oak — ground truth says 'Av. 12 months in new and old French and American oak barriques and large casks', so both the duration range and the claim of 'older' oak (excluding new oak) are wrong",
+    "Claims the wine avoids 'overt vanilla or toast notes' due to 'older oak' — ground truth confirms new oak IS used",
+    "The hook's focus on 'dark cracking clay' as THE key soil is presented as definitive but is not verified in the context data or ground truth — McLaren Vale has diverse soils"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "12-18 months oak aging (ground truth says avg 12 months)",
+    "$18-$25 price range (no price data provided)"
+  ],
+  "reasoning": "The hook partially captures the naming origin (it IS about vine training) but misses the specific historical detail about being the first vines trained above knee-height in the 1890s, making it vague rather than wrong. More problematic: the oak aging claim of '12-18 months in older American and French oak' contradicts ground truth (avg 12 months in new AND old oak), and the repeated emphasis on 'older oak' excluding new oak is factually wrong. The $18-$25 price is fabricated. The voice is strong — direct, opinionated, specific, with good food pairings and useful comparisons. But the factual errors on winemaking details and the fabricated price/oak duration bring correctness down significantly. The hook isn't provably wrong (it IS about vine training) but it's misleadingly incomplete.",
+  "judge_tokens_in": 3508,
+  "judge_tokens_out": 491
+}

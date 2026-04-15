@@ -1,0 +1,13 @@
+{
+  "pair_id": "C001",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although the producer, vineyard (Altenberg), and grape (Riesling) are the same, the wines have different German Pr\u00e4dikat levels. 'Beerenauslese' and 'Auslese' are distinct, legally defined ripeness levels that result in separate bottlings with different levels of sweetness, concentration, and style.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the producer, vineyard (Altenberg), and grape (Riesling) are the same, the wines have different German Pr\u00e4dikat levels. 'Beerenauslese' and 'Auslese' are distinct, legally defined ripeness levels that result in separate bottlings with different levels of sweetness, concentration, and style.",
+  "parse_ok": true,
+  "tokens_in": 436,
+  "tokens_out": 1110,
+  "elapsed": 12.705523014068604,
+  "error": null
+}

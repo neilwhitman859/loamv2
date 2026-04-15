@@ -1,0 +1,13 @@
+{
+  "pair_id": "A030",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A is explicitly listed as 'SEMILLON' for its grape, while Wine B is 'Sauvignon Semillon', indicating a blend. Even if 'Sauvignon' in Wine A's name is an abbreviation, the explicit grape listing for Wine A as Semillon and Wine B as a blend means they are distinct wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is explicitly listed as 'SEMILLON' for its grape, while Wine B is 'Sauvignon Semillon', indicating a blend. Even if 'Sauvignon' in Wine A's name is an abbreviation, the explicit grape listing for Wine A as Semillon and Wine B as a blend means they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 414,
+  "tokens_out": 105,
+  "elapsed": 1.9186151027679443,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B041",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grape varieties, Pinot Gris for Wine A and Grenache for Wine B. Additionally, they have different colors, white for Wine A and red for Wine B. These differences indicate that Wine A and Wine B are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grape varieties, Pinot Gris for Wine A and Grenache for Wine B. Additionally, they have different colors, white for Wine A and red for Wine B. These differences indicate that Wine A and Wine B are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 440,
+  "tokens_out": 73,
+  "elapsed": 2.6709699630737305,
+  "error": null
+}

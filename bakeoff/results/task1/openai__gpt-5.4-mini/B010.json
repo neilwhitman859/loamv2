@@ -1,0 +1,13 @@
+{
+  "pair_id": "B010",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"The records indicate different wine colors: Wine A is white while Wine B is ros\u00e9, which makes them distinct bottlings under the classification rules. Although the names are similar and both are Bellavista cuv\u00e9es, color alone is sufficient to classify them as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "The records indicate different wine colors: Wine A is white while Wine B is ros\u00e9, which makes them distinct bottlings under the classification rules. Although the names are similar and both are Bellavista cuv\u00e9es, color alone is sufficient to classify them as different wines.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 76,
+  "elapsed": 1.553450107574463,
+  "error": null
+}

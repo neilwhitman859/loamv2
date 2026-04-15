@@ -1,0 +1,13 @@
+{
+  "pair_id": "B026",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Cattier) and base name 'Brut Antique', but Wine A is explicitly rose-colored while Wine B is white. The rule specifies that ros\u00e9 vs. other colors (like white) from the same producer or vineyard are DIFFERENT wines, as they represent distinct bottlings encountered separately by consumers. Distinct LWIN numbers (1709917 vs 1188039) confirm they are separate entries.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Cattier) and base name 'Brut Antique', but Wine A is explicitly rose-colored while Wine B is white. The rule specifies that ros\u00e9 vs. other colors (like white) from the same producer or vineyard are DIFFERENT wines, as they represent distinct bottlings encountered separately by consumers. Distinct LWIN numbers (1709917 vs 1188039) confirm they are separate entries.",
+  "parse_ok": true,
+  "tokens_in": 563,
+  "tokens_out": 555,
+  "elapsed": 4.215863943099976,
+  "error": null
+}

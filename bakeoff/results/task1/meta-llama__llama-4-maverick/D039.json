@@ -1,0 +1,13 @@
+{
+  "pair_id": "D039",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The presence of 'Reserva' in Wine B's name indicates a different classification tier compared to Wine A, suggesting a different wine. The producer, Vina Tarapaca, is likely to have different tiers of wines with distinct characteristics. This classification difference is a strong indicator that the wines are different.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The presence of 'Reserva' in Wine B's name indicates a different classification tier compared to Wine A, suggesting a different wine. The producer, Vina Tarapaca, is likely to have different tiers of wines with distinct characteristics. This classification difference is a strong indicator that the wines are different.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 84,
+  "elapsed": 1.5538549423217773,
+  "error": null
+}

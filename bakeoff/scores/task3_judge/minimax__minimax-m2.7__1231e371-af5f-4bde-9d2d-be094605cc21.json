@@ -1,0 +1,26 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "minimax/minimax-m2.7",
+  "correctness": 1.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 3.025,
+  "wrong_facts": [
+    "Hook claims the name 'One Point Five' comes from a Bay Area joke about drive time from Shafer's Stags Leap vineyard to San Francisco — this is explicitly listed as NOT TRUE in the ground truth. The real naming origin is the 'generation and a half' partnership between John Shafer and his son Doug.",
+    "The context data lists the wine as 100% Cabernet Sauvignon, but the ground truth shows the 2022 is actually 92% Cabernet Sauvignon with Petite Verdot, Merlot, and Malbec — the output doesn't mention the blend but doesn't contradict it either.",
+    "The comparable wines section claims Dominus Estate 'consistently trades on naming a specific time-to-city' — this is fabricated nonsense. Dominus is named after the Latin word for 'lord/master' and has nothing to do with drive times.",
+    "The wine is described as having 'broader Napa Valley character than a single-vineyard wine' which is correct per ground truth, but the appellation is described as Stags Leap District throughout when the wine carries a Napa Valley appellation.",
+    "The market_position section repeats the fabricated Bay Area joke claim about the name."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "8-12 years aging claim is not in context data",
+    "18 months elevage is actually correct per ground truth but was not in the context data provided to the model — this is a case where training knowledge matched reality"
+  ],
+  "reasoning": "The hook contains a provably wrong naming origin — the ground truth explicitly flags 'NOT a Bay Area joke about drive time' as false, yet this is the central claim of the hook. This triggers the hard penalty cap of 1.5 on correctness. The Dominus comparable wine entry fabricates a claim about its naming convention. The voice is strong — direct, opinionated, specific, with good food pairings and a clear insider take. The specificity is good with real soil types (Hambright series, Yolo silt loam) and geological references. But the foundational factual errors in the hook and comparables undermine the entire piece's trustworthiness.",
+  "judge_tokens_in": 4351,
+  "judge_tokens_out": 537
+}

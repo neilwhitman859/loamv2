@@ -1,0 +1,13 @@
+{
+  "pair_id": "B018",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.98, \"reasoning\": \"Wine A is a ros\u00e9 and Wine B is a white wine, both from producer d'Angelo under the Villa dei Pini label. Different colors represent distinct bottlings that a consumer would encounter separately. The rule explicitly states Ros\u00e9 vs Red (and by extension Ros\u00e9 vs White) from the same vineyard = DIFFERENT.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Wine A is a ros\u00e9 and Wine B is a white wine, both from producer d'Angelo under the Villa dei Pini label. Different colors represent distinct bottlings that a consumer would encounter separately. The rule explicitly states Ros\u00e9 vs Red (and by extension Ros\u00e9 vs White) from the same vineyard = DIFFERENT.",
+  "parse_ok": true,
+  "tokens_in": 485,
+  "tokens_out": 93,
+  "elapsed": 2.8041605949401855,
+  "error": null
+}

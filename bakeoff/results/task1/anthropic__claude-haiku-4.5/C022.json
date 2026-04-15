@@ -1,0 +1,13 @@
+{
+  "pair_id": "C022",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"These wines differ in German Pr\u00e4dikat classification: Trockenbeerenauslese (TBA) is the highest ripeness level, while Auslese is a lower tier. According to the classification rules, different German Pr\u00e4dikat levels represent distinct bottlings that consumers encounter separately. The different LWINs confirm these are separate products.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These wines differ in German Pr\u00e4dikat classification: Trockenbeerenauslese (TBA) is the highest ripeness level, while Auslese is a lower tier. According to the classification rules, different German Pr\u00e4dikat levels represent distinct bottlings that consumers encounter separately. The different LWINs confirm these are separate products.",
+  "parse_ok": true,
+  "tokens_in": 521,
+  "tokens_out": 103,
+  "elapsed": 8.409448146820068,
+  "error": null
+}

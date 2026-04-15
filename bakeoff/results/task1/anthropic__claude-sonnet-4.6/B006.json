@@ -1,0 +1,13 @@
+{
+  "pair_id": "B006",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine B 'Corte B' contains Dolcetto (8%) as a third grape variety, while Wine A 'Corte' does not include Dolcetto in its blend. The different names ('Corte' vs 'Corte B') combined with the distinct grape compositions suggest these are separate bottlings/tiers in Vistalba's Corte lineup, not merely a formatting variation. The inclusion of a letter suffix 'B' alongside a meaningfully different blend composition indicates these are distinct wines a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine B 'Corte B' contains Dolcetto (8%) as a third grape variety, while Wine A 'Corte' does not include Dolcetto in its blend. The different names ('Corte' vs 'Corte B') combined with the distinct grape compositions suggest these are separate bottlings/tiers in Vistalba's Corte lineup, not merely a formatting variation. The inclusion of a letter suffix 'B' alongside a meaningfully different blend composition indicates these are distinct wines a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 522,
+  "tokens_out": 142,
+  "elapsed": 4.942741870880127,
+  "error": null
+}

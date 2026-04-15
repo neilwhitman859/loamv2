@@ -1,0 +1,13 @@
+{
+  "pair_id": "D008",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.85, \"reasoning\": \"Both wines are from Vistalba, both red, and both share the same grape blend of COT and Cabernet Sauvignon. 'Corte C' and 'Corte' appear to be the same wine with 'Corte C' being a more specific designation or abbreviation variant of the same bottling. The grape composition matches exactly (COT ~80%, Cabernet Sauvignon ~20%), supporting that these represent the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.85,
+  "reasoning": "Both wines are from Vistalba, both red, and both share the same grape blend of COT and Cabernet Sauvignon. 'Corte C' and 'Corte' appear to be the same wine with 'Corte C' being a more specific designation or abbreviation variant of the same bottling. The grape composition matches exactly (COT ~80%, Cabernet Sauvignon ~20%), supporting that these represent the same wine.",
+  "parse_ok": true,
+  "tokens_in": 513,
+  "tokens_out": 126,
+  "elapsed": 4.4341654777526855,
+  "error": null
+}

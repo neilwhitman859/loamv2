@@ -1,0 +1,13 @@
+{
+  "pair_id": "B036",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.95,\"reasoning\":\"One is labeled Blanco (white) and the other is a red; different colors from the same cuv\u00e9e indicate distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "One is labeled Blanco (white) and the other is a red; different colors from the same cuv\u00e9e indicate distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 124,
+  "elapsed": 3.9641737937927246,
+  "error": null
+}

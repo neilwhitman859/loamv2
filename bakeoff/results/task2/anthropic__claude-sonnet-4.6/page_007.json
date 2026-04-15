@@ -1,0 +1,28 @@
+{
+  "page_id": "page_007",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Essential Red\", \"vintage_year\": 2022, \"abv_pct\": null, \"blend\": null, \"oak\": {\"vessel\": \"American oak barrels\", \"months\": 12, \"new_pct\": null, \"origin\": \"American\"}, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}]}",
+  "wines_found": [
+    {
+      "name": "Essential Red",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "American oak barrels",
+        "months": 12,
+        "new_pct": null,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 22781,
+  "tokens_out": 97,
+  "elapsed": 2.486558675765991,
+  "error": null
+}

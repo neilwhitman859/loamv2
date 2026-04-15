@@ -1,0 +1,13 @@
+{
+  "pair_id": "D035",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer (Velenosi), share the same color (red), and have identical grape varieties (Sangiovese, Montepulciano). The name 'Brecciarolo Gold' is a varietal suffix difference from 'Brecciarolo', which typically indicates the same wine with a different branding or cuv\u00e9e designation, not a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer (Velenosi), share the same color (red), and have identical grape varieties (Sangiovese, Montepulciano). The name 'Brecciarolo Gold' is a varietal suffix difference from 'Brecciarolo', which typically indicates the same wine with a different branding or cuv\u00e9e designation, not a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 479,
+  "tokens_out": 104,
+  "elapsed": 2.219161033630371,
+  "error": null
+}

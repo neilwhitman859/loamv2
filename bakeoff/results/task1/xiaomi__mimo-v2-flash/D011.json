@@ -1,0 +1,13 @@
+{
+  "pair_id": "D011",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (Borges), the same name 'Adegas Exportata Rare Rich 1870', and the same grape varieties (MALVASIA FINA, FURMINT). The only difference is the prefix 'Malmsey' in Wine B, which is a stylistic descriptor for the wine's sweetness level and does not indicate a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (Borges), the same name 'Adegas Exportata Rare Rich 1870', and the same grape varieties (MALVASIA FINA, FURMINT). The only difference is the prefix 'Malmsey' in Wine B, which is a stylistic descriptor for the wine's sweetness level and does not indicate a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 103,
+  "elapsed": 2.096243381500244,
+  "error": null
+}

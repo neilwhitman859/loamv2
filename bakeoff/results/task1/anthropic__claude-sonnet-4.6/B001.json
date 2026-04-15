@@ -1,0 +1,13 @@
+{
+  "pair_id": "B001",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is made from Sauvignon Blanc while Wine B is made from Sauvignon Gris, which are distinct grape varieties (Sauvignon Gris is a pink-skinned mutation of Sauvignon Blanc). Different grapes always means different wines, regardless of shared producer and region. These would be encountered as separate bottlings by a consumer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is made from Sauvignon Blanc while Wine B is made from Sauvignon Gris, which are distinct grape varieties (Sauvignon Gris is a pink-skinned mutation of Sauvignon Blanc). Different grapes always means different wines, regardless of shared producer and region. These would be encountered as separate bottlings by a consumer.",
+  "parse_ok": true,
+  "tokens_in": 510,
+  "tokens_out": 103,
+  "elapsed": 3.028947353363037,
+  "error": null
+}

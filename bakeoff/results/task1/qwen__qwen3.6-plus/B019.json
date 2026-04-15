@@ -1,0 +1,13 @@
+{
+  "pair_id": "B019",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines are made from completely different grape varieties, with Wine A using Aligot\u00e9 and Wine B using Chardonnay and Pinot Blanc. According to the explicit classification rules, different grape compositions always indicate distinct wines regardless of shared producer or regional appellation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from completely different grape varieties, with Wine A using Aligot\u00e9 and Wine B using Chardonnay and Pinot Blanc. According to the explicit classification rules, different grape compositions always indicate distinct wines regardless of shared producer or regional appellation.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 1330,
+  "elapsed": 25.660938262939453,
+  "error": null
+}

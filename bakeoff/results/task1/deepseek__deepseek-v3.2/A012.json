@@ -1,0 +1,13 @@
+{
+  "pair_id": "A012",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (Arnot Roberts) and vineyard designation (Alder Springs). Wine A's listed grape is Syrah, and Wine B's name 'Alder Springs Syrah' is a varietal suffix addition, which alone indicates the same wine. There is no evidence of multiple distinct bottlings from Alder Springs with different grapes.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (Arnot Roberts) and vineyard designation (Alder Springs). Wine A's listed grape is Syrah, and Wine B's name 'Alder Springs Syrah' is a varietal suffix addition, which alone indicates the same wine. There is no evidence of multiple distinct bottlings from Alder Springs with different grapes.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 94,
+  "elapsed": 3.482556104660034,
+  "error": null
+}

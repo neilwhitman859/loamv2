@@ -1,0 +1,13 @@
+{
+  "pair_id": "B012",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"These are distinct Madeira wines from Borges with different grape varieties (Donzelinho Branco vs Malvasia Fina/Furmint), different colors (white vs red), and different style designations (generic Madeira vs Colheita, which is a specific vintage-dated category). A consumer would encounter these as separate bottlings in the market.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "These are distinct Madeira wines from Borges with different grape varieties (Donzelinho Branco vs Malvasia Fina/Furmint), different colors (white vs red), and different style designations (generic Madeira vs Colheita, which is a specific vintage-dated category). A consumer would encounter these as separate bottlings in the market.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 110,
+  "elapsed": 2.200761079788208,
+  "error": null
+}

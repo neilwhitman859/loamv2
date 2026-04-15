@@ -1,0 +1,13 @@
+{
+  "pair_id": "A028",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Owen Roe) and are red wines made from Syrah. The name 'Lady Rosa' is simply an abbreviation of 'Lady Rosa Syrah', which is a common naming convention and does not indicate a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Owen Roe) and are red wines made from Syrah. The name 'Lady Rosa' is simply an abbreviation of 'Lady Rosa Syrah', which is a common naming convention and does not indicate a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 480,
+  "tokens_out": 76,
+  "elapsed": 2.1778345108032227,
+  "error": null
+}

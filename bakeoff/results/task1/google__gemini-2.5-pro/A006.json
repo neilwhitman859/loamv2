@@ -1,0 +1,13 @@
+{
+  "pair_id": "A006",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The producer, Radio-Coteau, is the same for both wines. The names differ only by the varietal suffix 'Pinot Noir', and the provided data confirms that Wine A is also made from Pinot Noir. This indicates that 'Clos Platt' is simply an abbreviated name for the 'Clos Platt Pinot Noir' bottling.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The producer, Radio-Coteau, is the same for both wines. The names differ only by the varietal suffix 'Pinot Noir', and the provided data confirms that Wine A is also made from Pinot Noir. This indicates that 'Clos Platt' is simply an abbreviated name for the 'Clos Platt Pinot Noir' bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 1358,
+  "elapsed": 13.159456253051758,
+  "error": null
+}

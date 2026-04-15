@@ -1,0 +1,13 @@
+{
+  "pair_id": "A020",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wine names indicate different grape compositions. Wine A is named 'Viura', suggesting it is a single-varietal wine, while Wine B is explicitly named 'Viura Sauvignon Blanc', indicating it is a blend of two grape varieties. Wines with different grape makeups are always considered different.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wine names indicate different grape compositions. Wine A is named 'Viura', suggesting it is a single-varietal wine, while Wine B is explicitly named 'Viura Sauvignon Blanc', indicating it is a blend of two grape varieties. Wines with different grape makeups are always considered different.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 1594,
+  "elapsed": 15.816455602645874,
+  "error": null
+}

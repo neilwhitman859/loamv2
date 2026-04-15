@@ -1,0 +1,13 @@
+{
+  "pair_id": "C013",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.75, \"reasoning\": \"Both wines are Dr. Wehrheim Kastanienbusch Riesling Auslese, but they have different LWIN codes (1573725 vs 1573767), which typically indicates distinct bottlings. At the Auslese level, different cask/lot selections are common and would be assigned separate LWINs. The name difference ('Kastanienbusch' vs 'Kastanienbush') appears to be a spelling variant of the same vineyard, but the different LWINs suggest these are separate Auslese selections from that vineyard.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.75,
+  "reasoning": "Both wines are Dr. Wehrheim Kastanienbusch Riesling Auslese, but they have different LWIN codes (1573725 vs 1573767), which typically indicates distinct bottlings. At the Auslese level, different cask/lot selections are common and would be assigned separate LWINs. The name difference ('Kastanienbusch' vs 'Kastanienbush') appears to be a spelling variant of the same vineyard, but the different LWINs suggest these are separate Auslese selections from that vineyard.",
+  "parse_ok": true,
+  "tokens_in": 507,
+  "tokens_out": 152,
+  "elapsed": 3.5633890628814697,
+  "error": null
+}

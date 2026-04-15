@@ -1,0 +1,13 @@
+{
+  "pair_id": "B020",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"The records differ in color: Wine A is explicitly a red wine ('Vieilles Vignes Rouge') while Wine B is a white wine. Color difference alone makes them separate bottlings, and the distinct LWINs further support that these are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "The records differ in color: Wine A is explicitly a red wine ('Vieilles Vignes Rouge') while Wine B is a white wine. Color difference alone makes them separate bottlings, and the distinct LWINs further support that these are different wines.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 73,
+  "elapsed": 2.1377484798431396,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C024",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, color, and 'Extra Brut' style. The only difference is the presence of 'Les' in Wine B's name, which is a common naming convention variation for the same vineyard or cuv\u00e9e. Given the high LWIN similarity and the minor naming difference, these likely refer to the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, color, and 'Extra Brut' style. The only difference is the presence of 'Les' in Wine B's name, which is a common naming convention variation for the same vineyard or cuv\u00e9e. Given the high LWIN similarity and the minor naming difference, these likely refer to the same wine.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 89,
+  "elapsed": 1.6767010688781738,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B036",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines are explicitly identified as having different colors (white vs. red) and possess distinct LWIN identifiers. Even if the names are similar, a difference in wine color indicates they are distinct bottlings produced by the same winery.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are explicitly identified as having different colors (white vs. red) and possess distinct LWIN identifiers. Even if the names are similar, a difference in wine color indicates they are distinct bottlings produced by the same winery.",
+  "parse_ok": true,
+  "tokens_in": 436,
+  "tokens_out": 74,
+  "elapsed": 2.5815839767456055,
+  "error": null
+}

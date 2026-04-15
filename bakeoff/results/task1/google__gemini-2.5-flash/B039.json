@@ -1,0 +1,13 @@
+{
+  "pair_id": "B039",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A is a ros\u00e9, while Wine B is a white wine, as indicated by their respective colors. Additionally, Wine B is explicitly labeled as 'Brut' and made from 'Mostosa' grapes, further distinguishing it from Wine A, which is simply 'Marche' and a ros\u00e9.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a ros\u00e9, while Wine B is a white wine, as indicated by their respective colors. Additionally, Wine B is explicitly labeled as 'Brut' and made from 'Mostosa' grapes, further distinguishing it from Wine A, which is simply 'Marche' and a ros\u00e9.",
+  "parse_ok": true,
+  "tokens_in": 408,
+  "tokens_out": 96,
+  "elapsed": 1.4866859912872314,
+  "error": null
+}

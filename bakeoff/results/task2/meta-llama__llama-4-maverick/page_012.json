@@ -1,0 +1,23 @@
+{
+  "page_id": "page_012",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Bonterra Sauvignon Blanc 2024\", \"vintage_year\": 2024, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": \"organic\"}]}",
+  "wines_found": [
+    {
+      "name": "Bonterra Sauvignon Blanc 2024",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 50581,
+  "tokens_out": 70,
+  "elapsed": 3.4792237281799316,
+  "error": null
+}

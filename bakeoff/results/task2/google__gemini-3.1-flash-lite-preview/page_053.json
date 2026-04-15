@@ -1,0 +1,50 @@
+{
+  "page_id": "page_053",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n  \"wines_found\": [\n    {\n      \"name\": \"2023 Patelin de Tablas\",\n      \"vintage_year\": 2023,\n      \"abv_pct\": 13.0,\n      \"blend\": [\n        {\n          \"grape\": \"Syrah\",\n          \"pct\": 45\n        },\n        {\n          \"grape\": \"Grenache\",\n          \"pct\": 30\n        },\n        {\n          \"grape\": \"Mourvedre\",\n          \"pct\": 23\n        },\n        {\n          \"grape\": \"Counoise\",\n          \"pct\": 2\n        }\n      ],\n      \"oak\": {\n        \"vessel\": \"oak upright tanks\",\n        \"months\": 6,\n        \"new_pct\": null,\n        \"origin\": null\n      },\n      \"cases_produced\": 7452,\n      \"chemistry\": {\n        \"ph\": null,\n        \"ta_g_l\": null,\n        \"rs_g_l\": null,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": null,\n      \"farming\": null\n    }\n  ]\n}",
+  "wines_found": [
+    {
+      "name": "2023 Patelin de Tablas",
+      "vintage_year": 2023,
+      "abv_pct": 13.0,
+      "blend": [
+        {
+          "grape": "Syrah",
+          "pct": 45
+        },
+        {
+          "grape": "Grenache",
+          "pct": 30
+        },
+        {
+          "grape": "Mourvedre",
+          "pct": 23
+        },
+        {
+          "grape": "Counoise",
+          "pct": 2
+        }
+      ],
+      "oak": {
+        "vessel": "oak upright tanks",
+        "months": 6,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": 7452,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 21601,
+  "tokens_out": 291,
+  "elapsed": 2.3938443660736084,
+  "error": null
+}

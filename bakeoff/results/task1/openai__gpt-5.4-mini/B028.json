@@ -1,0 +1,13 @@
+{
+  "pair_id": "B028",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different grape varieties: Chardonnay is a white wine grape and Merlot is a red wine grape. They are also explicitly different colors (white vs red), so they cannot be the same wine even though the producer and region match.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different grape varieties: Chardonnay is a white wine grape and Merlot is a red wine grape. They are also explicitly different colors (white vs red), so they cannot be the same wine even though the producer and region match.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 69,
+  "elapsed": 2.0291976928710938,
+  "error": null
+}

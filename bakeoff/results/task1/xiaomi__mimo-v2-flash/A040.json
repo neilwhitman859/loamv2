@@ -1,0 +1,13 @@
+{
+  "pair_id": "A040",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a blend of Merlot Noir and Chardonnay Blanc, while Wine B is a Pinot Noir, indicating different grape compositions. The presence of a specific LWIN code for Wine B suggests a distinct bottling. Different grape varieties always constitute different wines, regardless of shared producer or appellation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a blend of Merlot Noir and Chardonnay Blanc, while Wine B is a Pinot Noir, indicating different grape compositions. The presence of a specific LWIN code for Wine B suggests a distinct bottling. Different grape varieties always constitute different wines, regardless of shared producer or appellation.",
+  "parse_ok": true,
+  "tokens_in": 494,
+  "tokens_out": 89,
+  "elapsed": 2.98848295211792,
+  "error": null
+}

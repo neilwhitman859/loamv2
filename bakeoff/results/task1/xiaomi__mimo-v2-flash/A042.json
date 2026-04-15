@@ -1,0 +1,13 @@
+{
+  "pair_id": "A042",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (Weinert), the same vineyard/cuv\u00e9e name (Tonel Unico No. 183), and the same grape variety (Cabernet Franc). The only difference is the name formatting, where Wine B appends the varietal suffix, which is a common abbreviation practice and does not indicate a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (Weinert), the same vineyard/cuv\u00e9e name (Tonel Unico No. 183), and the same grape variety (Cabernet Franc). The only difference is the name formatting, where Wine B appends the varietal suffix, which is a common abbreviation practice and does not indicate a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 98,
+  "elapsed": 2.5089759826660156,
+  "error": null
+}

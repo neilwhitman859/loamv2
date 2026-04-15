@@ -1,0 +1,13 @@
+{
+  "pair_id": "B006",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grape varieties, with Wine A being a blend of COT and CABERNET SAUVIGNON, while Wine B includes additional grapes such as DOLCETTO. This difference in grape composition indicates that they are distinct wines. Despite sharing the same producer and presumably the same vineyard, the variation in grapes takes precedence.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grape varieties, with Wine A being a blend of COT and CABERNET SAUVIGNON, while Wine B includes additional grapes such as DOLCETTO. This difference in grape composition indicates that they are distinct wines. Despite sharing the same producer and presumably the same vineyard, the variation in grapes takes precedence.",
+  "parse_ok": true,
+  "tokens_in": 458,
+  "tokens_out": 91,
+  "elapsed": 1.6011624336242676,
+  "error": null
+}

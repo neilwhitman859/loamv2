@@ -1,0 +1,33 @@
+{
+  "page_id": "page_013",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Bonterra Pinot Noir 2022\", \"vintage_year\": 2022, \"abv_pct\": null, \"blend\": null, \"oak\": {\"vessel\": null, \"months\": null, \"new_pct\": null, \"origin\": null}, \"cases_produced\": null, \"chemistry\": {\"ph\": null, \"ta_g_l\": null, \"rs_g_l\": null, \"so2_total_mg_l\": null}, \"winemaker\": null, \"farming\": \"organic\"}]}",
+  "wines_found": [
+    {
+      "name": "Bonterra Pinot Noir 2022",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": null,
+        "months": null,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 71325,
+  "tokens_out": 127,
+  "elapsed": 2.5394768714904785,
+  "error": null
+}

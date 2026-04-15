@@ -1,0 +1,13 @@
+{
+  "pair_id": "D015",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"These are distinct classification tiers from the same producer: 'Reserve' indicates a premium bottling with different aging/selection criteria compared to the standard 'Cabernet Sauvignon.' The different LWINs (1976597 vs 1976627) confirm these are separate bottlings that consumers would encounter as distinct products on a wine list or retailer shelf.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "These are distinct classification tiers from the same producer: 'Reserve' indicates a premium bottling with different aging/selection criteria compared to the standard 'Cabernet Sauvignon.' The different LWINs (1976597 vs 1976627) confirm these are separate bottlings that consumers would encounter as distinct products on a wine list or retailer shelf.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 107,
+  "elapsed": 2.8348934650421143,
+  "error": null
+}

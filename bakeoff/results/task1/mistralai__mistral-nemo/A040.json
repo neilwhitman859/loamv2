@@ -1,0 +1,13 @@
+{
+  "pair_id": "A040",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a blend of Merlot Noir and Chardonnay Blanc, while Wine B is a single varietal Pinot Noir. Different grapes always result in different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a blend of Merlot Noir and Chardonnay Blanc, while Wine B is a single varietal Pinot Noir. Different grapes always result in different wines.",
+  "parse_ok": true,
+  "tokens_in": 476,
+  "tokens_out": 62,
+  "elapsed": 4.309008359909058,
+  "error": null
+}

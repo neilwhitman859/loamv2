@@ -1,0 +1,13 @@
+{
+  "pair_id": "B021",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines are distinct products: White Zinfandel is a ros\u00e9 wine, while Zinfandel is a red wine. Furthermore, they have different LWIN identifiers, confirming they are separate bottlings produced by Buehler.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are distinct products: White Zinfandel is a ros\u00e9 wine, while Zinfandel is a red wine. Furthermore, they have different LWIN identifiers, confirming they are separate bottlings produced by Buehler.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 72,
+  "elapsed": 2.0299816131591797,
+  "error": null
+}

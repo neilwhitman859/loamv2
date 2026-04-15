@@ -1,0 +1,13 @@
+{
+  "pair_id": "C025",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a white sparkling wine (Blanc de Blancs from Chardonnay) while Wine B is a ros\u00e9 sparkling wine, as explicitly indicated by their colors and the 'Rose' suffix in Wine B's name. Different colors/styles constitute distinct bottlings that consumers would encounter separately. The different LWIN codes (1908349 vs 1834284) further confirm these are catalogued as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a white sparkling wine (Blanc de Blancs from Chardonnay) while Wine B is a ros\u00e9 sparkling wine, as explicitly indicated by their colors and the 'Rose' suffix in Wine B's name. Different colors/styles constitute distinct bottlings that consumers would encounter separately. The different LWIN codes (1908349 vs 1834284) further confirm these are catalogued as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 512,
+  "tokens_out": 116,
+  "elapsed": 3.513017416000366,
+  "error": null
+}

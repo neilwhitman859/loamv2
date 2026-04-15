@@ -1,0 +1,13 @@
+{
+  "pair_id": "D031",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Peter Jakob Kuhn) and share the same vineyard designation (Rheinschiefer). The only difference is the suffix 'Trocken' in Wine A, which indicates dryness level and is a stylistic descriptor, not a different wine. According to the rules, varietal suffix difference alone usually means the same wine, and here it's just a stylistic clarification.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Peter Jakob Kuhn) and share the same vineyard designation (Rheinschiefer). The only difference is the suffix 'Trocken' in Wine A, which indicates dryness level and is a stylistic descriptor, not a different wine. According to the rules, varietal suffix difference alone usually means the same wine, and here it's just a stylistic clarification.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 110,
+  "elapsed": 2.9909756183624268,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B017",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records represent wines of different colors (red vs. white). Even though the names 'Piemonte' and 'Piedmont' are just linguistic variations of the same region, the fundamental difference in wine type and grape composition makes them distinct products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records represent wines of different colors (red vs. white). Even though the names 'Piemonte' and 'Piedmont' are just linguistic variations of the same region, the fundamental difference in wine type and grape composition makes them distinct products.",
+  "parse_ok": true,
+  "tokens_in": 407,
+  "tokens_out": 74,
+  "elapsed": 1.840470790863037,
+  "error": null
+}

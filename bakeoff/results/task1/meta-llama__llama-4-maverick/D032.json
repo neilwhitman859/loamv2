@@ -1,0 +1,13 @@
+{
+  "pair_id": "D032",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines have different names, 'Hallgarten Riesling Trocken' and 'Hallgarten Reserve Riesling Trocken', with the latter including 'Reserve', indicating a potential difference in classification or style. For German wines, such a difference in naming often signifies a different level of quality or aging, which would make them different wines. The LWIN numbers are also different, supporting the conclusion that they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines have different names, 'Hallgarten Riesling Trocken' and 'Hallgarten Reserve Riesling Trocken', with the latter including 'Reserve', indicating a potential difference in classification or style. For German wines, such a difference in naming often signifies a different level of quality or aging, which would make them different wines. The LWIN numbers are also different, supporting the conclusion that they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 110,
+  "elapsed": 1.8390774726867676,
+  "error": null
+}

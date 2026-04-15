@@ -1,0 +1,13 @@
+{
+  "pair_id": "A033",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"The two records share the same producer and color, and Wine B appears to be the varietal-expanded form of Wine A. Since Wine B is explicitly \\\"Private Bin Vermentino\\\" and Wine A is just \\\"Private Bin\\\" with grape Vermentino, this is most likely the same bottling with the varietal suffix omitted in one record. There is no evidence of a different grape, classification, or style.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "The two records share the same producer and color, and Wine B appears to be the varietal-expanded form of Wine A. Since Wine B is explicitly \"Private Bin Vermentino\" and Wine A is just \"Private Bin\" with grape Vermentino, this is most likely the same bottling with the varietal suffix omitted in one record. There is no evidence of a different grape, classification, or style.",
+  "parse_ok": true,
+  "tokens_in": 415,
+  "tokens_out": 105,
+  "elapsed": 1.8804194927215576,
+  "error": null
+}

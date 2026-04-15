@@ -1,0 +1,13 @@
+{
+  "pair_id": "D017",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": -0.95, \"reasoning\": \"The names 'Comune di Gavi' and 'del Comune di Gavi' differ only in the preposition 'del', which is a minor formatting or stylistic variation. Both wines are from the same producer (Villadoria), are white, and Wine A is specified as 100% Cortese, which is the grape required for the Gavi DOCG, strongly indicating Wine B is also Cortese.\"}",
+  "verdict": "SAME",
+  "confidence": 0.0,
+  "reasoning": "The names 'Comune di Gavi' and 'del Comune di Gavi' differ only in the preposition 'del', which is a minor formatting or stylistic variation. Both wines are from the same producer (Villadoria), are white, and Wine A is specified as 100% Cortese, which is the grape required for the Gavi DOCG, strongly indicating Wine B is also Cortese.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 107,
+  "elapsed": 3.0798861980438232,
+  "error": null
+}

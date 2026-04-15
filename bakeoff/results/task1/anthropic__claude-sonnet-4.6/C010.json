@@ -1,0 +1,13 @@
+{
+  "pair_id": "C010",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.88, \"reasoning\": \"Both wines are Peter Jakob Kuhn Lenchen Riesling Auslese, but Wine A specifies 'Nr12' (lot/cask number 12) while Wine B has no lot number. Per the rules, different lot/cask numbers at the same Pr\u00e4dikat level constitute DIFFERENT wines, as these represent distinct bottlings a consumer would encounter separately. The different LWIN codes (1679599 vs 1608630) further confirm these are catalogued as distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.88,
+  "reasoning": "Both wines are Peter Jakob Kuhn Lenchen Riesling Auslese, but Wine A specifies 'Nr12' (lot/cask number 12) while Wine B has no lot number. Per the rules, different lot/cask numbers at the same Pr\u00e4dikat level constitute DIFFERENT wines, as these represent distinct bottlings a consumer would encounter separately. The different LWIN codes (1679599 vs 1608630) further confirm these are catalogued as distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 502,
+  "tokens_out": 132,
+  "elapsed": 3.213118076324463,
+  "error": null
+}

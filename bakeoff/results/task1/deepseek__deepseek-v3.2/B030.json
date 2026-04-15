@@ -1,0 +1,13 @@
+{
+  "pair_id": "B030",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different primary grape varieties (Cabernet Sauvignon vs Sauvignon Blanc) and different colors (red vs white). Different grapes always indicate different wines, even when the producer and vineyard name match.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different primary grape varieties (Cabernet Sauvignon vs Sauvignon Blanc) and different colors (red vs white). Different grapes always indicate different wines, even when the producer and vineyard name match.",
+  "parse_ok": true,
+  "tokens_in": 461,
+  "tokens_out": 67,
+  "elapsed": 2.2059240341186523,
+  "error": null
+}

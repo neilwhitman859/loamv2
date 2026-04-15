@@ -1,0 +1,13 @@
+{
+  "pair_id": "A034",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.97,\"reasoning\":\"Wine B explicitly names Sauvignon Blanc, while Wine A is listed with Chardonnay Blanc and Pinot Gris. Different grape varieties mean different wines under the matching rules, even if the producer and regional designation are the same. The shared 'Markgraflerland SW' appears to be a line or abbreviated label, not enough to override the grape mismatch.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "Wine B explicitly names Sauvignon Blanc, while Wine A is listed with Chardonnay Blanc and Pinot Gris. Different grape varieties mean different wines under the matching rules, even if the producer and regional designation are the same. The shared 'Markgraflerland SW' appears to be a line or abbreviated label, not enough to override the grape mismatch.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 89,
+  "elapsed": 2.4278342723846436,
+  "error": null
+}

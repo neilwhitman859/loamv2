@@ -1,0 +1,13 @@
+{
+  "pair_id": "B020",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is explicitly labeled as red (Rouge) while Wine B is white, making them fundamentally different wines despite sharing the 'Vieilles Vignes' name. Different colors from the same producer and vineyard designation represent distinct bottlings that consumers would encounter separately, meeting the criterion for DIFFERENT wines.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is explicitly labeled as red (Rouge) while Wine B is white, making them fundamentally different wines despite sharing the 'Vieilles Vignes' name. Different colors from the same producer and vineyard designation represent distinct bottlings that consumers would encounter separately, meeting the criterion for DIFFERENT wines.",
+  "parse_ok": true,
+  "tokens_in": 500,
+  "tokens_out": 93,
+  "elapsed": 1.9874038696289062,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D011",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The producer 'Borges' and the core wine name 'Adegas Exportata Rare Rich 1870' are identical. The term 'Malmsey' in Wine B's name is a traditional synonym for the Malvasia grape, which is listed as a primary grape ('MALVASIA FINA') for Wine A. This is a classic case of one name being a more complete version of the other by including the varietal, so they represent the same wine.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The producer 'Borges' and the core wine name 'Adegas Exportata Rare Rich 1870' are identical. The term 'Malmsey' in Wine B's name is a traditional synonym for the Malvasia grape, which is listed as a primary grape ('MALVASIA FINA') for Wine A. This is a classic case of one name being a more complete version of the other by including the varietal, so they represent the same wine.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 742,
+  "elapsed": 7.667620420455933,
+  "error": null
+}

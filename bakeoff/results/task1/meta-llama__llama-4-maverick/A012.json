@@ -1,0 +1,13 @@
+{
+  "pair_id": "A012",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines have the same producer, Arnot Roberts, and the same grape variety, Syrah, and are red in color. The difference in name is likely due to abbreviation, with 'Alder Springs Syrah' being the fuller name and 'Alder Springs' being a shortened version. The absence of any other distinguishing differences supports the conclusion that they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines have the same producer, Arnot Roberts, and the same grape variety, Syrah, and are red in color. The difference in name is likely due to abbreviation, with 'Alder Springs Syrah' being the fuller name and 'Alder Springs' being a shortened version. The absence of any other distinguishing differences supports the conclusion that they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 490,
+  "tokens_out": 99,
+  "elapsed": 2.762639284133911,
+  "error": null
+}

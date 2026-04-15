@@ -1,0 +1,13 @@
+{
+  "pair_id": "C014",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Pertois-Lebrun's Derri\u00e8re Le Mont Aigu Blanc de Blancs, but they carry different lot/cask numbers (No. 15 vs No. 17). By analogy with the rule that different lot/cask numbers at the same Pr\u00e4dikat level constitute different wines, different numbered cuv\u00e9es from the same vineyard represent distinct bottlings that a consumer would encounter separately. The different LWIN codes confirm these are catalogued as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Pertois-Lebrun's Derri\u00e8re Le Mont Aigu Blanc de Blancs, but they carry different lot/cask numbers (No. 15 vs No. 17). By analogy with the rule that different lot/cask numbers at the same Pr\u00e4dikat level constitute different wines, different numbered cuv\u00e9es from the same vineyard represent distinct bottlings that a consumer would encounter separately. The different LWIN codes confirm these are catalogued as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 526,
+  "tokens_out": 133,
+  "elapsed": 4.1844518184661865,
+  "error": null
+}

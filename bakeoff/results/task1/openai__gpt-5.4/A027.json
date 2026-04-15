@@ -1,0 +1,13 @@
+{
+  "pair_id": "A027",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.96,\"reasoning\":\"These records conflict on grape: Wine A is explicitly Tempranillo, while Wine B is labeled Mencia. Different grapes always indicate different wines, even when producer and base name match. The shared 'Vina Altamar' wording likely refers to a line or vineyard name used for separate varietal bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.96,
+  "reasoning": "These records conflict on grape: Wine A is explicitly Tempranillo, while Wine B is labeled Mencia. Different grapes always indicate different wines, even when producer and base name match. The shared 'Vina Altamar' wording likely refers to a line or vineyard name used for separate varietal bottlings.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 85,
+  "elapsed": 2.475473642349243,
+  "error": null
+}

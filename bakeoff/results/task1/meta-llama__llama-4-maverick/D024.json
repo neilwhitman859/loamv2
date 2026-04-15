@@ -1,0 +1,13 @@
+{
+  "pair_id": "D024",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Cattier, and have similar names, 'Brut Antique' and 'Antique', suggesting a strong connection. The 'Brut' prefix is often used to denote a specific style of sparkling wine, and its absence doesn't necessarily indicate a different wine. The shared color and producer information support the conclusion that they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Cattier, and have similar names, 'Brut Antique' and 'Antique', suggesting a strong connection. The 'Brut' prefix is often used to denote a specific style of sparkling wine, and its absence doesn't necessarily indicate a different wine. The shared color and producer information support the conclusion that they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 479,
+  "tokens_out": 99,
+  "elapsed": 1.8268606662750244,
+  "error": null
+}

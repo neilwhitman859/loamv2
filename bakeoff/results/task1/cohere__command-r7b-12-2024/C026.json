@@ -1,0 +1,13 @@
+{
+  "pair_id": "C026",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B are different wines due to their distinct colors (white vs rose) and the presence of different grape varieties, even though they share the same producer, appellation, and producer ID.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B are different wines due to their distinct colors (white vs rose) and the presence of different grape varieties, even though they share the same producer, appellation, and producer ID.",
+  "parse_ok": true,
+  "tokens_in": 453,
+  "tokens_out": 63,
+  "elapsed": 1.3714137077331543,
+  "error": null
+}

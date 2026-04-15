@@ -1,0 +1,13 @@
+{
+  "pair_id": "C017",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different grape varieties, even though they share the same producer, vineyard, and style. The presence of 'Riesling' in Wine B's name indicates a different grape, which is a key differentiator according to the rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different grape varieties, even though they share the same producer, vineyard, and style. The presence of 'Riesling' in Wine B's name indicates a different grape, which is a key differentiator according to the rules.",
+  "parse_ok": true,
+  "tokens_in": 458,
+  "tokens_out": 75,
+  "elapsed": 1.558887004852295,
+  "error": null
+}

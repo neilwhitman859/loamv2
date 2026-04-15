@@ -1,0 +1,13 @@
+{
+  "pair_id": "A017",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is made from Pinot Noir, while Wine B is Syrah. Different grapes always mean different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is made from Pinot Noir, while Wine B is Syrah. Different grapes always mean different wines.",
+  "parse_ok": true,
+  "tokens_in": 468,
+  "tokens_out": 49,
+  "elapsed": 1.7517151832580566,
+  "error": null
+}

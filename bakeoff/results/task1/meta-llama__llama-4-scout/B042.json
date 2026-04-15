@@ -1,0 +1,13 @@
+{
+  "pair_id": "B042",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, one being ros\u00e9 and the other white. Additionally, Wine B specifies the grape variety as Chardonnay, which is not mentioned in Wine A, further supporting that they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, one being ros\u00e9 and the other white. Additionally, Wine B specifies the grape variety as Chardonnay, which is not mentioned in Wine A, further supporting that they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 67,
+  "elapsed": 2.0292651653289795,
+  "error": null
+}

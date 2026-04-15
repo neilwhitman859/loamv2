@@ -1,0 +1,13 @@
+{
+  "pair_id": "C001",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records differ in their German Pr\u00e4dikat levels, with one being a Beerenauslese and the other an Auslese. According to the explicit classification rules, different Pr\u00e4dikat levels represent distinct bottlings with different ripeness and sweetness standards, making them different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records differ in their German Pr\u00e4dikat levels, with one being a Beerenauslese and the other an Auslese. According to the explicit classification rules, different Pr\u00e4dikat levels represent distinct bottlings with different ripeness and sweetness standards, making them different wines.",
+  "parse_ok": true,
+  "tokens_in": 466,
+  "tokens_out": 858,
+  "elapsed": 16.910587549209595,
+  "error": null
+}

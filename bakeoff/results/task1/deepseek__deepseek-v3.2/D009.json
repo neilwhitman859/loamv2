@@ -1,0 +1,13 @@
+{
+  "pair_id": "D009",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer (Bellavista), the same cuv\u00e9e name (Alma Grande Cuvee), and are both white. The only difference is the suffix 'Brut' in Wine A, which indicates a sweetness level, but since both are sparkling wines from the same cuv\u00e9e, 'Brut' is likely a standard designation for that bottling and not a distinct wine type.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer (Bellavista), the same cuv\u00e9e name (Alma Grande Cuvee), and are both white. The only difference is the suffix 'Brut' in Wine A, which indicates a sweetness level, but since both are sparkling wines from the same cuv\u00e9e, 'Brut' is likely a standard designation for that bottling and not a distinct wine type.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 105,
+  "elapsed": 5.486201524734497,
+  "error": null
+}

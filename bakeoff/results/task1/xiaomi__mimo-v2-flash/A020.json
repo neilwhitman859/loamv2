@@ -1,0 +1,13 @@
+{
+  "pair_id": "A020",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer (Artiga) and vineyard name (Castillo de la Pena). The difference in name is a varietal suffix (Viura vs Viura Sauvignon Blanc), which the rules state usually means the same wine, as the shorter name is an abbreviation. The LWIN data for Wine B confirms the grape is Sauvignon Blanc, but the producer and vineyard match indicates they are the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer (Artiga) and vineyard name (Castillo de la Pena). The difference in name is a varietal suffix (Viura vs Viura Sauvignon Blanc), which the rules state usually means the same wine, as the shorter name is an abbreviation. The LWIN data for Wine B confirms the grape is Sauvignon Blanc, but the producer and vineyard match indicates they are the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 114,
+  "elapsed": 2.3846912384033203,
+  "error": null
+}

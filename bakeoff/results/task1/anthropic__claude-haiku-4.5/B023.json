@@ -1,0 +1,13 @@
+{
+  "pair_id": "B023",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is red and Wine B is white, representing fundamentally different wine types from the same producer and brand line. Different colors indicate distinct bottlings that consumers would encounter and purchase separately, making them different wines despite sharing the 'Snoop Dogg Cali' brand name.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is red and Wine B is white, representing fundamentally different wine types from the same producer and brand line. Different colors indicate distinct bottlings that consumers would encounter and purchase separately, making them different wines despite sharing the 'Snoop Dogg Cali' brand name.",
+  "parse_ok": true,
+  "tokens_in": 475,
+  "tokens_out": 88,
+  "elapsed": 2.497967004776001,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B046",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is red while Wine B is white, representing fundamentally different wine types from the same producer's Polifonia De Purcari series. Different colors constitute distinct bottlings that consumers would encounter separately, regardless of shared producer and series name. The different LWINs and note designations (Note #2 vs Note #3) further confirm these are separate wines.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is red while Wine B is white, representing fundamentally different wine types from the same producer's Polifonia De Purcari series. Different colors constitute distinct bottlings that consumers would encounter separately, regardless of shared producer and series name. The different LWINs and note designations (Note #2 vs Note #3) further confirm these are separate wines.",
+  "parse_ok": true,
+  "tokens_in": 500,
+  "tokens_out": 107,
+  "elapsed": 3.708786964416504,
+  "error": null
+}

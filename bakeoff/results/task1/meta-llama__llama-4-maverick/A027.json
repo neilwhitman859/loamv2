@@ -1,0 +1,13 @@
+{
+  "pair_id": "A027",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is listed as Tempranillo Tinto, while Wine B is named Mencia, suggesting different grape varieties. The producer Hammeken makes wines from different grapes, and different grapes always mean different wines. The LWIN for Wine B does not provide information about its grape variety, but the name difference is a strong indicator.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is listed as Tempranillo Tinto, while Wine B is named Mencia, suggesting different grape varieties. The producer Hammeken makes wines from different grapes, and different grapes always mean different wines. The LWIN for Wine B does not provide information about its grape variety, but the name difference is a strong indicator.",
+  "parse_ok": true,
+  "tokens_in": 496,
+  "tokens_out": 91,
+  "elapsed": 1.3434178829193115,
+  "error": null
+}

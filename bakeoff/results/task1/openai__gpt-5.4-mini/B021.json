@@ -1,0 +1,13 @@
+{
+  "pair_id": "B021",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wine styles and colors from the same producer: White Zinfandel is a ros\u00e9 wine, while Zinfandel is a red wine. Under the rules, ros\u00e9 vs red from the same producer/vineyard are different wines, not just formatting variants.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wine styles and colors from the same producer: White Zinfandel is a ros\u00e9 wine, while Zinfandel is a red wine. Under the rules, ros\u00e9 vs red from the same producer/vineyard are different wines, not just formatting variants.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 77,
+  "elapsed": 1.9142329692840576,
+  "error": null
+}

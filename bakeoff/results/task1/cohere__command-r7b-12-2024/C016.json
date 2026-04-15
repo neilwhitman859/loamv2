@@ -1,0 +1,13 @@
+{
+  "pair_id": "C016",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is classified as Barolo Riserva, while Wine B is classified as Barbaresco Riserva. This is a significant difference in appellation, indicating a different wine style and grape expression, even though the producer and grapes are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is classified as Barolo Riserva, while Wine B is classified as Barbaresco Riserva. This is a significant difference in appellation, indicating a different wine style and grape expression, even though the producer and grapes are the same.",
+  "parse_ok": true,
+  "tokens_in": 478,
+  "tokens_out": 71,
+  "elapsed": 1.4947142601013184,
+  "error": null
+}

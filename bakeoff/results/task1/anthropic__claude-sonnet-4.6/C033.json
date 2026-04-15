@@ -1,0 +1,13 @@
+{
+  "pair_id": "C033",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.75, \"reasoning\": \"Both wines are Bonnaire Blanc de Blancs Vintage Champagnes, with Wine B simply having 'Brut' inserted as a descriptor of the sweetness/style. The 'Brut' designation is a standard labeling addition that may appear on some bottlings/markets but not others, and does not indicate a fundamentally different wine. Both are white vintage Blanc de Blancs from the same producer, suggesting these represent the same wine with minor label formatting differences.\"}",
+  "verdict": "SAME",
+  "confidence": 0.75,
+  "reasoning": "Both wines are Bonnaire Blanc de Blancs Vintage Champagnes, with Wine B simply having 'Brut' inserted as a descriptor of the sweetness/style. The 'Brut' designation is a standard labeling addition that may appear on some bottlings/markets but not others, and does not indicate a fundamentally different wine. Both are white vintage Blanc de Blancs from the same producer, suggesting these represent the same wine with minor label formatting differences.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 128,
+  "elapsed": 4.367306709289551,
+  "error": null
+}

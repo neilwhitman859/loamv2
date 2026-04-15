@@ -1,0 +1,13 @@
+{
+  "pair_id": "A024",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A 'Boutique' is made from COT (Malbec) at 100%, while Wine B 'Boutique Syrah' explicitly indicates Syrah as the grape variety. Different grape varieties means these are distinct wines, even though they share the same producer (L.A. Cetto) and base name 'Boutique'. This is not a simple abbreviation case \u2014 the producer makes multiple Boutique wines with different grapes.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A 'Boutique' is made from COT (Malbec) at 100%, while Wine B 'Boutique Syrah' explicitly indicates Syrah as the grape variety. Different grape varieties means these are distinct wines, even though they share the same producer (L.A. Cetto) and base name 'Boutique'. This is not a simple abbreviation case \u2014 the producer makes multiple Boutique wines with different grapes.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 124,
+  "elapsed": 3.8798415660858154,
+  "error": null
+}

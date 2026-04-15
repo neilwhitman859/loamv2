@@ -1,0 +1,13 @@
+{
+  "pair_id": "A016",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.93,\"reasoning\":\"Both records are from Berton Vineyards and refer to the same white wine. Wine A explicitly lists the grape as Vermentino, and Wine B appears to be the fuller form of the same label name: 'The Metal Label Vermentino' versus the abbreviated 'Metal Label The'. There is no evidence of a distinct cuv\u00e9e, vineyard, or style difference.\"}",
+  "verdict": "SAME",
+  "confidence": 0.93,
+  "reasoning": "Both records are from Berton Vineyards and refer to the same white wine. Wine A explicitly lists the grape as Vermentino, and Wine B appears to be the fuller form of the same label name: 'The Metal Label Vermentino' versus the abbreviated 'Metal Label The'. There is no evidence of a distinct cuv\u00e9e, vineyard, or style difference.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 96,
+  "elapsed": 2.686955451965332,
+  "error": null
+}

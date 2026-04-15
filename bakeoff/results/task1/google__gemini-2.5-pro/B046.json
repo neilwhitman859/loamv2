@@ -1,0 +1,13 @@
+{
+  "pair_id": "B046",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines are different colors; one is red and the other is white. The names 'Note #2' and 'Note #3' also clearly designate them as separate, distinct bottlings within the 'Polifonia De Purcari' series, which is further confirmed by their different LWINs.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are different colors; one is red and the other is white. The names 'Note #2' and 'Note #3' also clearly designate them as separate, distinct bottlings within the 'Polifonia De Purcari' series, which is further confirmed by their different LWINs.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 1349,
+  "elapsed": 13.893771886825562,
+  "error": null
+}

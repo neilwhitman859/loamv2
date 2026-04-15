@@ -1,0 +1,13 @@
+{
+  "pair_id": "C041",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.90, \"reasoning\": \"The two bottlings are labeled Reserva and Gran Reserva, which are distinct classification tiers, so they represent different wines despite the same producer, grape, and appellation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The two bottlings are labeled Reserva and Gran Reserva, which are distinct classification tiers, so they represent different wines despite the same producer, grape, and appellation.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 138,
+  "elapsed": 4.749949932098389,
+  "error": null
+}

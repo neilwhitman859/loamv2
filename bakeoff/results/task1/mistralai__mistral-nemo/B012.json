@@ -1,0 +1,13 @@
+{
+  "pair_id": "B012",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different grape varieties (Donzelinho Branco vs Malvasia Fina, Furmint) and different colors (white vs red), which makes them distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different grape varieties (Donzelinho Branco vs Malvasia Fina, Furmint) and different colors (white vs red), which makes them distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 469,
+  "tokens_out": 65,
+  "elapsed": 2.5549817085266113,
+  "error": null
+}

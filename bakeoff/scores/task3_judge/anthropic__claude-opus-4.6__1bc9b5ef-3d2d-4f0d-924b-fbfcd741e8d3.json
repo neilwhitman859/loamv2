@@ -1,0 +1,33 @@
+{
+  "wine_id": "1bc9b5ef-3d2d-4f0d-924b-fbfcd741e8d3",
+  "wine_name": "Montes Alpha M, Valle de Colchagua",
+  "tier": "B",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 2.5,
+  "voice": 3.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.55,
+  "wrong_facts": [
+    "Claims 100% new oak in most vintages — ground truth says 70% new French oak",
+    "Claims 'granite-laced hillside' in hook — Apalta soils include decomposed granite, clay, and alluvial deposits but 'granite-laced' overstates and the characterization as a single hillside is misleading",
+    "States the wine launched 'in the early 1990s' — ground truth says first released in 1996, which is mid-1990s",
+    "Claims winemaker is 'Aurelio Montes Jr.' — ground truth identifies Aurelio Montes (co-founder/Sr.) as the winemaker with no mention of a Jr. in the winemaking role",
+    "States Almaviva has 'more Carménère influence' — Almaviva is Cabernet Sauvignon/Carménère/Cabernet Franc but calling it 'more Carménère influence' relative to Alpha M is potentially misleading since Almaviva is still Cab-dominant",
+    "Describes exact proportions as shifting by vintage while hedging — ground truth gives a specific 80/10/5/5 blend"
+  ],
+  "banned_words_found": [
+    "genuinely"
+  ],
+  "fabricated_numbers": [
+    "45-hectare parcel size",
+    "300 meters elevation",
+    "25-30 days maceration",
+    "30°C daytime highs",
+    "12-14°C nighttime lows",
+    "100% new oak"
+  ],
+  "reasoning": "The output fabricates multiple specific numbers not in the context data: 45-hectare parcel, 300m elevation, 25-30 day maceration, and critically states 100% new oak which contradicts the ground truth of 70% new. The banned word 'genuinely' appears in the cellar recommendation. The hook's 'granite-laced hillside' is an overstatement but not entirely wrong. The attribution to 'Aurelio Montes Jr.' as winemaker contradicts ground truth. Despite these errors, the output is highly specific, well-structured, and useful — the voice is mostly good but uses the banned word. The 100% new oak fabrication is a significant factual error that contradicts verified data.",
+  "judge_tokens_in": 4063,
+  "judge_tokens_out": 542
+}

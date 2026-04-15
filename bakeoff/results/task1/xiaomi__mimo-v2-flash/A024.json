@@ -1,0 +1,13 @@
+{
+  "pair_id": "A024",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are red from the same producer (L.A. Cetto) and share the same grape variety (COT, which is likely a typo or abbreviation for Cabernet Sauvignon). The name difference ('Boutique' vs 'Boutique Syrah') is a varietal suffix variation, which typically indicates the same wine with different name formatting, and there is no evidence of different vineyards, classifications, or other distinguishing factors.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are red from the same producer (L.A. Cetto) and share the same grape variety (COT, which is likely a typo or abbreviation for Cabernet Sauvignon). The name difference ('Boutique' vs 'Boutique Syrah') is a varietal suffix variation, which typically indicates the same wine with different name formatting, and there is no evidence of different vineyards, classifications, or other distinguishing factors.",
+  "parse_ok": true,
+  "tokens_in": 490,
+  "tokens_out": 114,
+  "elapsed": 2.852724313735962,
+  "error": null
+}

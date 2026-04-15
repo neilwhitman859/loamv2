@@ -1,0 +1,13 @@
+{
+  "pair_id": "C042",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.90,\"reasoning\":\"The two wines carry different reserva classifications (Reserva vs Gran Reserva), indicating distinct bottlings at different aging tiers, so they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The two wines carry different reserva classifications (Reserva vs Gran Reserva), indicating distinct bottlings at different aging tiers, so they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 172,
+  "elapsed": 3.1354098320007324,
+  "error": null
+}

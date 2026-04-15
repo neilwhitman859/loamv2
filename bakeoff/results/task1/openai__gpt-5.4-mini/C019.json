@@ -1,0 +1,13 @@
+{
+  "pair_id": "C019",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different Rioja/Cava-style classification tiers: Brut Nature Reserva vs Brut Nature Gran Reserva. Under the rules, Reserva and Gran Reserva are distinct bottlings and should be treated as different wines even when the producer and color are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different Rioja/Cava-style classification tiers: Brut Nature Reserva vs Brut Nature Gran Reserva. Under the rules, Reserva and Gran Reserva are distinct bottlings and should be treated as different wines even when the producer and color are the same.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 70,
+  "elapsed": 1.7903523445129395,
+  "error": null
+}

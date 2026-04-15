@@ -1,0 +1,13 @@
+{
+  "pair_id": "C022",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different German Pr\u00e4dikat levels: Trockenbeerenauslese (TBA) vs Auslese. Different Pr\u00e4dikat levels always indicate different wines, as they represent distinct sweetness levels and quality classifications.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different German Pr\u00e4dikat levels: Trockenbeerenauslese (TBA) vs Auslese. Different Pr\u00e4dikat levels always indicate different wines, as they represent distinct sweetness levels and quality classifications.",
+  "parse_ok": true,
+  "tokens_in": 469,
+  "tokens_out": 71,
+  "elapsed": 5.498856067657471,
+  "error": null
+}

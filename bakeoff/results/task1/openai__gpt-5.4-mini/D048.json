@@ -1,0 +1,13 @@
+{
+  "pair_id": "D048",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Although both records are red and from Happs, the names indicate distinct bottlings: Wine A includes the proprietary prefix \\\"iSeries,\\\" while Wine B is simply \\\"Cabernet Merlot.\\\" This is more than a varietal suffix abbreviation, and the differing LWINs also support that they are separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Although both records are red and from Happs, the names indicate distinct bottlings: Wine A includes the proprietary prefix \"iSeries,\" while Wine B is simply \"Cabernet Merlot.\" This is more than a varietal suffix abbreviation, and the differing LWINs also support that they are separate wines.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 84,
+  "elapsed": 1.9689700603485107,
+  "error": null
+}

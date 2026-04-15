@@ -1,0 +1,13 @@
+{
+  "pair_id": "A020",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.75, \"reasoning\": \"Wine A is 'Castillo de la Pena Viura' and Wine B is 'Castillo de la Pena Viura Sauvignon Blanc' \u2014 the longer name appears to append a varietal suffix to the same base name. Although 'Viura' is itself a grape variety name (a white Spanish grape), Wine A's listed grape is Sauvignon Blanc, suggesting the wine name 'Viura' may be a brand/cuv\u00e9e name rather than indicating the grape variety. Both are white wines from producer Artiga, and the varietal suffix difference alone typically indicates the same wine with an abbreviated vs. full name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.75,
+  "reasoning": "Wine A is 'Castillo de la Pena Viura' and Wine B is 'Castillo de la Pena Viura Sauvignon Blanc' \u2014 the longer name appears to append a varietal suffix to the same base name. Although 'Viura' is itself a grape variety name (a white Spanish grape), Wine A's listed grape is Sauvignon Blanc, suggesting the wine name 'Viura' may be a brand/cuv\u00e9e name rather than indicating the grape variety. Both are white wines from producer Artiga, and the varietal suffix difference alone typically indicates the same wine with an abbreviated vs. full name.",
+  "parse_ok": true,
+  "tokens_in": 503,
+  "tokens_out": 169,
+  "elapsed": 4.202004671096802,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D035",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The 'Gold' designation indicates a different, higher-tier bottling. The standard 'Brecciarolo' is a Rosso Piceno DOC, while 'Brecciarolo Gold' is a Rosso Piceno Superiore DOC. This difference in classification, similar to a Reserva vs. Gran Reserva, makes them distinct wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The 'Gold' designation indicates a different, higher-tier bottling. The standard 'Brecciarolo' is a Rosso Piceno DOC, while 'Brecciarolo Gold' is a Rosso Piceno Superiore DOC. This difference in classification, similar to a Reserva vs. Gran Reserva, makes them distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 1280,
+  "elapsed": 23.560085773468018,
+  "error": null
+}

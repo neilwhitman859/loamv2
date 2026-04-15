@@ -1,0 +1,13 @@
+{
+  "pair_id": "D008",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"Both records are from the same producer, Vistalba, and share the same grape composition: a blend of Cot (Malbec) and Cabernet Sauvignon. Vistalba produces a line of wines named 'Corte A', 'Corte B', and 'Corte C', each with a distinct blend. Since both records describe the Cot/Cabernet Sauvignon blend, 'Corte' is simply an incomplete name for 'Corte C', and they represent the same wine.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records are from the same producer, Vistalba, and share the same grape composition: a blend of Cot (Malbec) and Cabernet Sauvignon. Vistalba produces a line of wines named 'Corte A', 'Corte B', and 'Corte C', each with a distinct blend. Since both records describe the Cot/Cabernet Sauvignon blend, 'Corte' is simply an incomplete name for 'Corte C', and they represent the same wine.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 1340,
+  "elapsed": 12.873285055160522,
+  "error": null
+}

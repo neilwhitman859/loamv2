@@ -1,0 +1,13 @@
+{
+  "pair_id": "C011",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different Rioja-style classification tiers (Gran Reserva vs Reserva), which are distinct bottlings. All other details (producer, grape, color, appellation) are identical, but the classification difference alone mandates a different wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different Rioja-style classification tiers (Gran Reserva vs Reserva), which are distinct bottlings. All other details (producer, grape, color, appellation) are identical, but the classification difference alone mandates a different wine.",
+  "parse_ok": true,
+  "tokens_in": 477,
+  "tokens_out": 74,
+  "elapsed": 4.247182607650757,
+  "error": null
+}

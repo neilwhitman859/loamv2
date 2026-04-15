@@ -1,0 +1,13 @@
+{
+  "pair_id": "A024",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines share the base name 'Boutique' from the same producer, they are made from different grape varieties. Wine A is made from 100% Cot (Malbec), while Wine B's name, 'Boutique Syrah', indicates it is made from Syrah. Wines made from different grapes are always considered different products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines share the base name 'Boutique' from the same producer, they are made from different grape varieties. Wine A is made from 100% Cot (Malbec), while Wine B's name, 'Boutique Syrah', indicates it is made from Syrah. Wines made from different grapes are always considered different products.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 698,
+  "elapsed": 15.778613328933716,
+  "error": null
+}

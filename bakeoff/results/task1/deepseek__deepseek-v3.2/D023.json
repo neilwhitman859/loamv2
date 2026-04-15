@@ -1,0 +1,13 @@
+{
+  "pair_id": "D023",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The producer (La Tour Blanche) is identical, and the names differ only by the omission of 'Blanche' in Wine B, which is a minor formatting/abbreviation difference consistent with the same wine. Both are white wines from the same vineyard designation ('Les Charmilles de Tour'), and no evidence indicates different grapes, styles, or classification tiers.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The producer (La Tour Blanche) is identical, and the names differ only by the omission of 'Blanche' in Wine B, which is a minor formatting/abbreviation difference consistent with the same wine. Both are white wines from the same vineyard designation ('Les Charmilles de Tour'), and no evidence indicates different grapes, styles, or classification tiers.",
+  "parse_ok": true,
+  "tokens_in": 468,
+  "tokens_out": 95,
+  "elapsed": 3.859583854675293,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B011",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, one being red and the other white, and different grape varieties, SEMILLON for Wine A and unspecified for Wine B. This combination of differences indicates they are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, one being red and the other white, and different grape varieties, SEMILLON for Wine A and unspecified for Wine B. This combination of differences indicates they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 65,
+  "elapsed": 1.1176083087921143,
+  "error": null
+}

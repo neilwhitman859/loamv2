@@ -1,0 +1,28 @@
+{
+  "page_id": "page_013",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Bonterra Pinot Noir 2022\", \"vintage_year\": 2022, \"abv_pct\": null, \"blend\": [{\"grape\": \"Pinot Noir\", \"pct\": 100}], \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": \"organic\"}]}",
+  "wines_found": [
+    {
+      "name": "Bonterra Pinot Noir 2022",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Pinot Noir",
+          "pct": 100
+        }
+      ],
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 50551,
+  "tokens_out": 83,
+  "elapsed": 4.4434592723846436,
+  "error": null
+}

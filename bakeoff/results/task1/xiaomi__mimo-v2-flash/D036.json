@@ -1,0 +1,13 @@
+{
+  "pair_id": "D036",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer (Velenosi), same color (red), and share the core name 'Brecciarolo'. The 'Gold' suffix in Wine A is a stylistic or branding variation, not a different grape, vineyard, or classification tier. The LWIN difference is due to packaging or vintage, not a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer (Velenosi), same color (red), and share the core name 'Brecciarolo'. The 'Gold' suffix in Wine A is a stylistic or branding variation, not a different grape, vineyard, or classification tier. The LWIN difference is due to packaging or vintage, not a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 95,
+  "elapsed": 1.9465487003326416,
+  "error": null
+}

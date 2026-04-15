@@ -1,0 +1,13 @@
+{
+  "pair_id": "C028",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.97, \"reasoning\": \"Both wines are from Mayu and use Carmenere, but Wine A is a Gran Reserva while Wine B is a Reserva. Different classification tiers (Reserva vs Gran Reserva) represent distinct bottlings with different aging requirements and quality levels, making these DIFFERENT wines. The different LWIN codes further confirm these are catalogued as separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "Both wines are from Mayu and use Carmenere, but Wine A is a Gran Reserva while Wine B is a Reserva. Different classification tiers (Reserva vs Gran Reserva) represent distinct bottlings with different aging requirements and quality levels, making these DIFFERENT wines. The different LWIN codes further confirm these are catalogued as separate products.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 103,
+  "elapsed": 2.861077308654785,
+  "error": null
+}

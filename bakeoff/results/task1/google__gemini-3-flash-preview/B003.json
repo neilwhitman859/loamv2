@@ -1,0 +1,13 @@
+{
+  "pair_id": "B003",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records represent two distinct wines based on color and grape variety: Wine A is a red wine (likely Aglianico del Vulture), while Wine B is a white wine made from the Fiano grape. Despite sharing the 'Labellum' brand name from the same producer, they are separate bottlings that a consumer would encounter as different products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records represent two distinct wines based on color and grape variety: Wine A is a red wine (likely Aglianico del Vulture), while Wine B is a white wine made from the Fiano grape. Despite sharing the 'Labellum' brand name from the same producer, they are separate bottlings that a consumer would encounter as different products.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 93,
+  "elapsed": 2.112204074859619,
+  "error": null
+}

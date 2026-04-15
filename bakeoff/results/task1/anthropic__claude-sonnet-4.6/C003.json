@@ -1,0 +1,13 @@
+{
+  "pair_id": "C003",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Brut and Brut Nature represent different dosage levels \u2014 Brut typically has 6-12 g/L residual sugar while Brut Nature has 0-3 g/L with no added dosage. These are distinct bottlings that a consumer would encounter separately, with meaningfully different sweetness profiles. The different LWIN codes (2774501 vs 2774514) further confirm these are catalogued as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Brut and Brut Nature represent different dosage levels \u2014 Brut typically has 6-12 g/L residual sugar while Brut Nature has 0-3 g/L with no added dosage. These are distinct bottlings that a consumer would encounter separately, with meaningfully different sweetness profiles. The different LWIN codes (2774501 vs 2774514) further confirm these are catalogued as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 120,
+  "elapsed": 2.9382050037384033,
+  "error": null
+}

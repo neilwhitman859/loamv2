@@ -1,0 +1,13 @@
+{
+  "pair_id": "A036",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is a white wine made from Pinot Noir and Chardonnay, while Wine B is labeled as Sauvignon Blanc, indicating a different grape variety. The difference in grape variety is a strong indication that they are different wines. The producer De Bortoli makes multiple wines, so the varietal suffix difference is not alone and suggests they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is a white wine made from Pinot Noir and Chardonnay, while Wine B is labeled as Sauvignon Blanc, indicating a different grape variety. The difference in grape variety is a strong indication that they are different wines. The producer De Bortoli makes multiple wines, so the varietal suffix difference is not alone and suggests they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 503,
+  "tokens_out": 95,
+  "elapsed": 1.5983121395111084,
+  "error": null
+}

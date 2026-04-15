@@ -1,0 +1,13 @@
+{
+  "pair_id": "C033",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, color, and core name 'Blanc de Blancs Vintage'. The addition of 'Brut' in Wine B is a common style descriptor for Champagne and does not indicate a different wine bottling, but rather a specific sweetness level of the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, color, and core name 'Blanc de Blancs Vintage'. The addition of 'Brut' in Wine B is a common style descriptor for Champagne and does not indicate a different wine bottling, but rather a specific sweetness level of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 77,
+  "elapsed": 1.4435863494873047,
+  "error": null
+}

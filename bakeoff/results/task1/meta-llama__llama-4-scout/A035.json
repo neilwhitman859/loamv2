@@ -1,0 +1,13 @@
+{
+  "pair_id": "A035",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The producer is the same, and the wine names 'Private Selection Bourbon Barrels' and 'Private Selection Bourbon Barrels Cabernet Sauvignon' differ only by the inclusion of the varietal suffix, which typically indicates the same wine. The color and implied grape variety also match, supporting the conclusion that they represent the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The producer is the same, and the wine names 'Private Selection Bourbon Barrels' and 'Private Selection Bourbon Barrels Cabernet Sauvignon' differ only by the inclusion of the varietal suffix, which typically indicates the same wine. The color and implied grape variety also match, supporting the conclusion that they represent the same wine.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 85,
+  "elapsed": 2.4481894969940186,
+  "error": null
+}

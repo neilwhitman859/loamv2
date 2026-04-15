@@ -1,0 +1,13 @@
+{
+  "pair_id": "D050",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different grape varieties, with Wine A containing Pinot Gris and Pinot Blanc, and Wine B containing Chardonnay Blanc. This is a clear indicator of different wines, as the grape variety is a defining characteristic of a wine's identity.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different grape varieties, with Wine A containing Pinot Gris and Pinot Blanc, and Wine B containing Chardonnay Blanc. This is a clear indicator of different wines, as the grape variety is a defining characteristic of a wine's identity.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 73,
+  "elapsed": 1.5008349418640137,
+  "error": null
+}

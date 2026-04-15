@@ -1,0 +1,13 @@
+{
+  "pair_id": "B006",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines have different grape compositions. Wine A contains COT and Cabernet Sauvignon, while Wine B includes COT, Cabernet Sauvignon, and Dolcetto, making them distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grape compositions. Wine A contains COT and Cabernet Sauvignon, while Wine B includes COT, Cabernet Sauvignon, and Dolcetto, making them distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 454,
+  "tokens_out": 71,
+  "elapsed": 1.697404146194458,
+  "error": null
+}

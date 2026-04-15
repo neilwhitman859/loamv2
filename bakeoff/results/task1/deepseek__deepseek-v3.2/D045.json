@@ -1,0 +1,13 @@
+{
+  "pair_id": "D045",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the word 'Blanc' appended to Wine A, which is a varietal suffix indicating color/style. Both wines are from the same producer (Maris), same color (white), and the shorter name 'Casse-Croute' is likely an abbreviation. There is no evidence of different grapes or distinct bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the word 'Blanc' appended to Wine A, which is a varietal suffix indicating color/style. Both wines are from the same producer (Maris), same color (white), and the shorter name 'Casse-Croute' is likely an abbreviation. There is no evidence of different grapes or distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 91,
+  "elapsed": 3.299832344055176,
+  "error": null
+}

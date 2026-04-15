@@ -1,0 +1,13 @@
+{
+  "pair_id": "A032",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The producer and core wine name 'Stoney Range' are identical for both records. Wine B adds the varietal suffix 'Pinot Noir', and the data for Wine A confirms it is also made from Pinot Noir. This is a classic example of an abbreviated name versus the full name for the same wine.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The producer and core wine name 'Stoney Range' are identical for both records. Wine B adds the varietal suffix 'Pinot Noir', and the data for Wine A confirms it is also made from Pinot Noir. This is a classic example of an abbreviated name versus the full name for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 1032,
+  "elapsed": 12.122906923294067,
+  "error": null
+}

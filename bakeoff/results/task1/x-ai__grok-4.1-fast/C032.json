@@ -1,0 +1,13 @@
+{
+  "pair_id": "C032",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records are from producer Bonnaire with the identical name 'Blanc de Blancs' (one with NV specifier, common for non-vintage Champagnes), same white color, and matching style as a Chardonnay-based sparkling wine. The NV designation on Wine A aligns with standard non-vintage bottlings of this cuv\u00e9e, and name formatting differences alone indicate the same wine. Different LWIN numbers likely reflect separate listings or vintages of the same core product.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records are from producer Bonnaire with the identical name 'Blanc de Blancs' (one with NV specifier, common for non-vintage Champagnes), same white color, and matching style as a Chardonnay-based sparkling wine. The NV designation on Wine A aligns with standard non-vintage bottlings of this cuv\u00e9e, and name formatting differences alone indicate the same wine. Different LWIN numbers likely reflect separate listings or vintages of the same core product.",
+  "parse_ok": true,
+  "tokens_in": 569,
+  "tokens_out": 523,
+  "elapsed": 5.509687423706055,
+  "error": null
+}

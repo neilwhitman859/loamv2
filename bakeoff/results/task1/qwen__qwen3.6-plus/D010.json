@@ -1,0 +1,13 @@
+{
+  "pair_id": "D010",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records share the same producer and are explicitly listed as ros\u00e9 wines. The inclusion of 'Rose' in Wine B's name is simply a stylistic descriptor that matches Wine A's color attribute, confirming they are the same bottling with minor naming variation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records share the same producer and are explicitly listed as ros\u00e9 wines. The inclusion of 'Rose' in Wine B's name is simply a stylistic descriptor that matches Wine A's color attribute, confirming they are the same bottling with minor naming variation.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 1616,
+  "elapsed": 30.58966898918152,
+  "error": null
+}

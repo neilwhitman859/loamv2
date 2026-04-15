@@ -1,0 +1,13 @@
+{
+  "pair_id": "A041",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, vineyard, and grape variety (Pinot Noir). The difference in name formatting, with 'Bien Nacido' being an abbreviated form of 'Bien Nacido Pinot Noir', suggests they are the same wine. The color and producer match, further supporting this conclusion.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, vineyard, and grape variety (Pinot Noir). The difference in name formatting, with 'Bien Nacido' being an abbreviated form of 'Bien Nacido Pinot Noir', suggests they are the same wine. The color and producer match, further supporting this conclusion.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 82,
+  "elapsed": 2.2739858627319336,
+  "error": null
+}

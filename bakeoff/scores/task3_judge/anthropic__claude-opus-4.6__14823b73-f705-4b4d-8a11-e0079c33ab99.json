@@ -1,0 +1,24 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 5.0,
+  "composite": 4.25,
+  "wrong_facts": [
+    "Claims Vat 1 has been made since 1967 — ground truth says it was created in 1963",
+    "Claims fruit comes from 'the oldest blocks on the estate, some dating back to the 1920s' — while the Short Flat vineyard's oldest block was planted in 1923, the output doesn't name Short Flat and vaguely attributes this to multiple blocks"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "10-11° Baumé picking level is not in the context data and is a specific fabricated number",
+    "60-100 meters elevation for Hunter Valley is a specific claim not in context data (though plausibly correct)",
+    "10-14°C storage temperature is fabricated detail"
+  ],
+  "reasoning": "The most significant factual error is stating Vat 1 has been made since 1967 when ground truth confirms 1963. The Baumé picking level (10-11°) is a specific number not in the context data — though it's a reasonable inference from the ABV data, it's still a fabricated specific number. However, the Baumé claim is arguably derivable from the ABV data provided, so it's borderline. The 1967 date is clearly wrong. The output doesn't name Short Flat vineyard, which is a missed opportunity but not a fabrication. The voice is excellent — direct, opinionated, specific, with no banned words and strong takes. The specificity is very high with named competitors, real dishes, and concrete details. The usefulness is outstanding — the insider take about patience, the value comparison to Burgundy, and the food pairings are all genuinely helpful. The 1967 error prevents a higher correctness score but doesn't trigger the hard cap since it's not a fabricated number per se, just a wrong date.",
+  "judge_tokens_in": 4098,
+  "judge_tokens_out": 449
+}

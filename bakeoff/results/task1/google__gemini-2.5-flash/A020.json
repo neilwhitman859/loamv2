@@ -1,0 +1,13 @@
+{
+  "pair_id": "A020",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is labeled 'Viura' while Wine B is labeled 'Viura Sauvignon Blanc'. This indicates a blend in Wine B that is not present in Wine A, suggesting different grape compositions. Even if 'Viura' in Wine A is an abbreviation, the explicit mention of 'Sauvignon Blanc' in Wine B implies a distinct blend or a different wine altogether.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is labeled 'Viura' while Wine B is labeled 'Viura Sauvignon Blanc'. This indicates a blend in Wine B that is not present in Wine A, suggesting different grape compositions. Even if 'Viura' in Wine A is an abbreviation, the explicit mention of 'Sauvignon Blanc' in Wine B implies a distinct blend or a different wine altogether.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 98,
+  "elapsed": 1.6547589302062988,
+  "error": null
+}

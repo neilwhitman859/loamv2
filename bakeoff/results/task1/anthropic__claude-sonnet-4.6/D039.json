@@ -1,0 +1,13 @@
+{
+  "pair_id": "D039",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.92, \"reasoning\": \"Wine B includes 'Reserva' in its name, indicating a higher classification tier with different aging requirements compared to the standard 'Biodiversity Red Blend' (Wine A). Different classification tiers represent distinct bottlings that consumers would encounter separately, even from the same producer and vineyard. This is analogous to the Rioja Reserva vs standard rule \u2014 different tiers = different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.92,
+  "reasoning": "Wine B includes 'Reserva' in its name, indicating a higher classification tier with different aging requirements compared to the standard 'Biodiversity Red Blend' (Wine A). Different classification tiers represent distinct bottlings that consumers would encounter separately, even from the same producer and vineyard. This is analogous to the Rioja Reserva vs standard rule \u2014 different tiers = different wines.",
+  "parse_ok": true,
+  "tokens_in": 486,
+  "tokens_out": 108,
+  "elapsed": 3.9260904788970947,
+  "error": null
+}

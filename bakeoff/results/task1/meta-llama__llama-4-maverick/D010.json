@@ -1,0 +1,13 @@
+{
+  "pair_id": "D010",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Bellavista, and have the same color, rose. The name difference is likely due to abbreviation, as 'Gran Cuvee' and 'Gran Cuvee Rose' refer to the same wine, with 'Rose' indicating the color.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Bellavista, and have the same color, rose. The name difference is likely due to abbreviation, as 'Gran Cuvee' and 'Gran Cuvee Rose' refer to the same wine, with 'Rose' indicating the color.",
+  "parse_ok": true,
+  "tokens_in": 481,
+  "tokens_out": 78,
+  "elapsed": 1.3875832557678223,
+  "error": null
+}

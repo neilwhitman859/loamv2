@@ -1,0 +1,13 @@
+{
+  "pair_id": "A012",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.95,\"reasoning\":\"Both records are by Arnot Roberts and refer to the Alder Springs bottling, with Wine A explicitly listing Syrah as the grape. Since the only difference is that Wine B appends the varietal name 'Syrah' to the vineyard/cuv\u00e9e name, this matches the rule that varietal suffix differences alone usually indicate the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records are by Arnot Roberts and refer to the Alder Springs bottling, with Wine A explicitly listing Syrah as the grape. Since the only difference is that Wine B appends the varietal name 'Syrah' to the vineyard/cuv\u00e9e name, this matches the rule that varietal suffix differences alone usually indicate the same wine.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 90,
+  "elapsed": 2.2666330337524414,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B047",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"These are clearly different wines: Wine A is from the Eichberg vineyard while Wine B is from the Kirchberg vineyard \u2014 two distinct vineyard designations. Additionally, Wine A is listed as white despite being labeled Sp\u00e4tburgunder (which may indicate a Weissherbst or blanc de noir style), while Wine B is red. Different vineyard sources alone make these different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are clearly different wines: Wine A is from the Eichberg vineyard while Wine B is from the Kirchberg vineyard \u2014 two distinct vineyard designations. Additionally, Wine A is listed as white despite being labeled Sp\u00e4tburgunder (which may indicate a Weissherbst or blanc de noir style), while Wine B is red. Different vineyard sources alone make these different wines.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 109,
+  "elapsed": 3.2032124996185303,
+  "error": null
+}

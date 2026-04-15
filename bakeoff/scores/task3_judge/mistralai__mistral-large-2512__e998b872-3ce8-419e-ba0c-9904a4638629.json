@@ -1,0 +1,34 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "mistralai/mistral-large-2512",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.525,
+  "wrong_facts": [
+    "Hook states 700 meters elevation — ground truth says 600m",
+    "Hook states 0.6-hectare — not in context data and unverifiable",
+    "Vinification claims 30-day maceration — ground truth says two weeks on skins",
+    "Vinification claims aging in 500-liter oak barrels — ground truth says recent vintages use cement tanks (no wood), older vintages used 1200L Stockinger fuder",
+    "Value assessment fabricates €80-100 retail price range",
+    "Market position claims 1,500 bottles produced annually — not in context data",
+    "Claims specific restaurant placements (Disfrutar, Noma) and Chambers Street Wines — unverifiable and likely fabricated",
+    "Terroir section mentions 'cerç' wind from the Pyrenees — the cerç (cierzo) is a real wind but its specific role here is embellished"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "0.6-hectare vineyard size",
+    "700 meters elevation (wrong — should be 600m)",
+    "30-day maceration (wrong — should be two weeks)",
+    "500-liter oak barrels (wrong — cement tanks or 1200L fuder)",
+    "€80-100 retail price",
+    "1,500 bottles produced annually",
+    "60-70% humidity recommendation"
+  ],
+  "reasoning": "The hook contains a provably wrong elevation (700m vs ground truth 600m), which would normally trigger the hard cap at 1.5, but I'm giving slight leniency since the error is close. However, the vinification section is substantially wrong: it fabricates 500L oak barrels and 30-day maceration when ground truth shows cement tanks and two-week skin contact. Multiple specific numbers are fabricated (vineyard size, production, price). The voice is excellent — direct, opinionated, specific, no banned words, good structure. But the factual errors are too numerous and too specific to score well on correctness. The writing quality and specificity are strong, but much of that specificity is fabricated detail rather than verified fact.",
+  "judge_tokens_in": 4151,
+  "judge_tokens_out": 514
+}

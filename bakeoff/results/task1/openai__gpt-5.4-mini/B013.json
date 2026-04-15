@@ -1,0 +1,13 @@
+{
+  "pair_id": "B013",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct cuv\u00e9es from Heidsieck & Co: Monopole Diamant Bleu and Monopole Diamant Rose. The colors also differ, with Wine A listed as white and Wine B as ros\u00e9, and ros\u00e9 vs white are separate wines under the rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct cuv\u00e9es from Heidsieck & Co: Monopole Diamant Bleu and Monopole Diamant Rose. The colors also differ, with Wine A listed as white and Wine B as ros\u00e9, and ros\u00e9 vs white are separate wines under the rules.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 79,
+  "elapsed": 1.9335086345672607,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D022",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.80, \"reasoning\": \"Although both are white wines from La Tour Blanche, 'Duo de la Tour Blanche' and 'Brumes de La Tour Blanche' are distinct cuv\u00e9e names indicating separate bottlings rather than simple varietal suffix or formatting variants.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Although both are white wines from La Tour Blanche, 'Duo de la Tour Blanche' and 'Brumes de La Tour Blanche' are distinct cuv\u00e9e names indicating separate bottlings rather than simple varietal suffix or formatting variants.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 165,
+  "elapsed": 4.301194667816162,
+  "error": null
+}

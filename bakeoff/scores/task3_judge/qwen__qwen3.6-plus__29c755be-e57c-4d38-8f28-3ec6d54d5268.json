@@ -1,0 +1,28 @@
+{
+  "wine_id": "29c755be-e57c-4d38-8f28-3ec6d54d5268",
+  "wine_name": "des Bosquets, Gigondas Les Routes",
+  "tier": "B",
+  "model": "qwen/qwen3.6-plus",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.85,
+  "wrong_facts": [
+    "Hook claims Gigondas mandates minimum 50% Grenache for red wine — the actual regulation requires 80% minimum of Grenache plus Syrah and Mourvèdre combined, with at most 15% Mourvèdre; there is no standalone 50% Grenache minimum",
+    "Claims Domaine des Bosquets is certified biodynamic — this is not confirmed in the context data or ground truth; ground truth mentions organic/biodynamic is not verified",
+    "Beaucastel Hommage à Perrin is described as leaning heavily on Mourvèdre — it is actually a 100% old-vine Mourvèdre cuvée, so 'leans heavily' understates it, though this is minor",
+    "Vieux Télégraphe described as having a 'Syrah-forward cuvée' — their Châteauneuf is predominantly Grenache-based, not Syrah-forward",
+    "Claims retail price of $35-$45 — no price data was provided in context"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$35-$45 retail price range",
+    "55°F storage temperature",
+    "45 minutes decant time",
+    "Drink now through 2028 window for 2020/2022"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity, and genuinely useful food pairings and comparable wines. However, the hook's claim about a 50% Grenache minimum in Gigondas is factually wrong — the actual regulation is different. The biodynamic certification claim is unverifiable and likely fabricated. The comparable wines section contains errors about Vieux Télégraphe being Syrah-forward. The fabricated price range ($35-$45) is a specific number not in context data. Despite these issues, the output correctly identifies the 100% Syrah rarity, the Serine-related terroir details partially align with ground truth (clay with limestone), and the 18-month oak aging matches. The voice is direct and opinionated without banned words, and the food pairings are specific and well-reasoned.",
+  "judge_tokens_in": 3885,
+  "judge_tokens_out": 533
+}

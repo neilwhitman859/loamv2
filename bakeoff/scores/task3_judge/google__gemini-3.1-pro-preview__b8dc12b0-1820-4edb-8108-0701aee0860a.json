@@ -1,0 +1,26 @@
+{
+  "wine_id": "b8dc12b0-1820-4edb-8108-0701aee0860a",
+  "wine_name": "Tolosa 1772 Grenache, Edna Valley",
+  "tier": "C",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Hook and summary say marine air comes from 'Morro Bay and the Pismo Gap' — the context data says the Pismo Gap specifically, and Morro Bay is north of SLO, not the source of the Edna Valley marine influence",
+    "Terroir section names 'Positas and Diablo clay loams' as specific soil types — these are not in the context data and are unverifiable for this specific vineyard; the actual vineyard sections are Poletti and Salaal per ground truth",
+    "The '1772 tier represents their estate-focused, barrel-selected lots' — ground truth says 1772 refers to the year Mission San Luis Obispo de Tolosa was founded, not a tier designation for barrel selection",
+    "Vinification section describes 'careful punch-downs' and 'neutral and lightly toasted French oak' — ground truth says aging is in French oak puncheons for 15 months with a mix of warm and cool fermentations; the output fabricates specifics about neutral oak and punch-down technique",
+    "Value assessment states 'roughly $75 a bottle' — no price data was provided in context"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$75 price point fabricated — no price data provided",
+    "15% alcohol described as 'typical' for Grenache is an editorial claim but the grape profile says 14-16% so this is loosely supported"
+  ],
+  "reasoning": "The output is exceptionally well-written with strong voice, specificity, and usefulness — it reads like expert wine writing with clear opinions and actionable information. However, correctness suffers from several fabrications and errors. The naming origin of '1772' is described as a 'tier' for 'estate-focused, barrel-selected lots' when it actually refers to the founding year of Mission San Luis Obispo de Tolosa. The soil types (Positas and Diablo clay loams) appear fabricated for this specific site. The vineyard sources (Poletti and Salaal) are completely missed. The $75 price is fabricated with no source data. The vinification details about punch-downs and neutral oak don't match the ground truth of puncheon aging and mixed fermentation temperatures. These are significant factual issues despite the excellent writing quality.",
+  "judge_tokens_in": 3592,
+  "judge_tokens_out": 556
+}

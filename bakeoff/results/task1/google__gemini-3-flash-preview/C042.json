@@ -1,0 +1,13 @@
+{
+  "pair_id": "C042",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines represent different classification tiers within the Spanish aging system (Gran Reserva vs. Reserva). These tiers have distinct legal requirements for aging and are marketed as separate products with different price points and flavor profiles.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines represent different classification tiers within the Spanish aging system (Gran Reserva vs. Reserva). These tiers have distinct legal requirements for aging and are marketed as separate products with different price points and flavor profiles.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 63,
+  "elapsed": 1.7576625347137451,
+  "error": null
+}

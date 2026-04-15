@@ -1,0 +1,13 @@
+{
+  "pair_id": "D042",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer (Pommery), name (Apanage Prestige), and color (white). The difference in 'Brut' designation indicates a potential difference in sparkling style, but given that 'Brut' is a common designation for sparkling wines and does not change the base wine characteristics, it suggests the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer (Pommery), name (Apanage Prestige), and color (white). The difference in 'Brut' designation indicates a potential difference in sparkling style, but given that 'Brut' is a common designation for sparkling wines and does not change the base wine characteristics, it suggests the same wine.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 91,
+  "elapsed": 1.312962293624878,
+  "error": null
+}

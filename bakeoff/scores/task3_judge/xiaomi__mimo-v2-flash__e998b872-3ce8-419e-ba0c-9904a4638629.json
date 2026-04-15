@@ -1,0 +1,28 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "xiaomi/mimo-v2-flash",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.475,
+  "wrong_facts": [
+    "Hook says '80-year-old' vines but ground truth says 90-year-old",
+    "Claims carbonic maceration is used — ground truth says whole cluster native fermentation with two weeks on skins, not carbonic maceration",
+    "Says '8 months in oak' but ground truth for recent vintages says ferment and age in cement tanks (8 months), not oak",
+    "Value assessment fabricates price range of $45-55 — no prices were provided in context data",
+    "Comparable wine 'Clos Mogador Manyetes' described as 100% Carignan — Manyetes is actually a blend, not 100% Carignan"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$45-55 price range",
+    "$50-60 for Clos Mogador Manyetes",
+    "$40-50 for Terroir Al Limit Arbossar",
+    "80-year-old vines (should be 90)"
+  ],
+  "reasoning": "Several factual errors undermine correctness significantly. The carbonic maceration claim contradicts ground truth (whole cluster fermentation, two weeks on skins). The hook states '8 months in oak' when ground truth says cement tanks for recent vintages. Vine age is wrong (80 vs 90 years). Multiple prices are fabricated when none were provided. The Clos Mogador Manyetes claim as 100% Carignan is likely wrong. However, the voice is strong — direct, opinionated, specific, with good structure and no banned words. Specificity is good with named soils, producers, and real dishes. The fabricated prices trigger the hard penalty for fabricated numbers.",
+  "judge_tokens_in": 3766,
+  "judge_tokens_out": 425
+}

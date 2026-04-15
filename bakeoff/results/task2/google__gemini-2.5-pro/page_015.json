@@ -1,0 +1,42 @@
+{
+  "page_id": "page_015",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Bonterra Zinfandel\",\n      \"vintage_year\": 2022,\n      \"abv_pct\": 14.5,\n      \"blend\": [\n        {\n          \"grape\": \"Zinfandel\",\n          \"pct\": 98\n        },\n        {\n          \"grape\": \"Petite Sirah\",\n          \"pct\": 2\n        }\n      ],\n      \"oak\": {\n        \"vessel\": \"oak\",\n        \"months\": 12,\n        \"new_pct\": 30,\n        \"origin\": \"French and American\"\n      },\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": 3.72,\n        \"ta_g_l\": 5.7,\n        \"rs_g_l\": 2.5,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": \"Jeff Cichocki\",\n      \"farming\": \"organic\"\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Bonterra Zinfandel",
+      "vintage_year": 2022,
+      "abv_pct": 14.5,
+      "blend": [
+        {
+          "grape": "Zinfandel",
+          "pct": 98
+        },
+        {
+          "grape": "Petite Sirah",
+          "pct": 2
+        }
+      ],
+      "oak": {
+        "vessel": "oak",
+        "months": 12,
+        "new_pct": 30,
+        "origin": "French and American"
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": 3.72,
+        "ta_g_l": 5.7,
+        "rs_g_l": 2.5,
+        "so2_total_mg_l": null
+      },
+      "winemaker": "Jeff Cichocki",
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 71249,
+  "tokens_out": 2663,
+  "elapsed": 37.403499126434326,
+  "error": null
+}

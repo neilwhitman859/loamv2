@@ -1,0 +1,13 @@
+{
+  "pair_id": "A020",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines from producer Artiga share the core name 'Castillo de la Pena Viura', with Wine B appending the varietal 'Sauvignon Blanc' that matches Wine A's listed grape (SAUVIGNON BLANC). This fits the rule where varietal suffix differences alone indicate the same wine, as the shorter name is an abbreviation. Both are white wines with no evidence of different grapes, vineyards, or styles.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines from producer Artiga share the core name 'Castillo de la Pena Viura', with Wine B appending the varietal 'Sauvignon Blanc' that matches Wine A's listed grape (SAUVIGNON BLANC). This fits the rule where varietal suffix differences alone indicate the same wine, as the shorter name is an abbreviation. Both are white wines with no evidence of different grapes, vineyards, or styles.",
+  "parse_ok": true,
+  "tokens_in": 573,
+  "tokens_out": 833,
+  "elapsed": 6.726150989532471,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D009",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records share the same producer (Bellavista) and core cuv\u00e9e name 'Alma Grande Cuvee', with Wine A including 'Brut' as a style descriptor for dryness in sparkling wine, consistent with white color. This matches the rule where suffix additions like style indicators (similar to varietal suffixes) alone indicate abbreviation, not a distinct bottling. No differences in grapes, vineyard, classification, or other distinguishing factors.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records share the same producer (Bellavista) and core cuv\u00e9e name 'Alma Grande Cuvee', with Wine A including 'Brut' as a style descriptor for dryness in sparkling wine, consistent with white color. This matches the rule where suffix additions like style indicators (similar to varietal suffixes) alone indicate abbreviation, not a distinct bottling. No differences in grapes, vineyard, classification, or other distinguishing factors.",
+  "parse_ok": true,
+  "tokens_in": 557,
+  "tokens_out": 578,
+  "elapsed": 8.237335443496704,
+  "error": null
+}

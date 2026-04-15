@@ -1,0 +1,26 @@
+{
+  "wine_id": "7e9b8b66-560f-45df-b566-5419d21b395c",
+  "wine_name": "d'Arenberg The High Trellis Cabernet Sauvignon, McLaren Vale",
+  "tier": "A",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "Hook says vines were planted on a 'high trellis system in the 19th century' — ground truth says the vines were 'the first at d'Arenberg to be trained above knee-height in the 1890s,' which is about training height, not a 'high trellis system' per se, though this is close enough to be plausible",
+    "Claims vineyard is planted on 'heavy Biscay clay loam' — this specific soil type is not in the context data and is unverifiable; may be correct but could be fabricated",
+    "States vines were 'planted in the late 1800s' — ground truth says some old vines date to 1912, not the 1800s",
+    "Price claim of '$25-$30' is not in context data and is fabricated"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$25-$30 price range",
+    "15-20 years cellar potential",
+    "5 years post-vintage drinking window"
+  ],
+  "reasoning": "The output is well-written with strong voice, specificity, and usefulness. It correctly identifies Chester Osborn as 4th generation, foot-treading, basket pressing, no fining/filtration, and French/American oak — all matching ground truth. However, it fabricates a price range ($25-$30) not in context data, and the claim that vines were 'planted in the late 1800s' conflicts with ground truth showing old vines dating to 1912. The 'Biscay clay loam' soil claim is unverifiable. The hook's description of the naming origin is close to ground truth but slightly off — it was about training vines above knee-height, not necessarily a 'high trellis system' as we'd understand it today, though this is a minor distinction. The fabricated price triggers concern but isn't a hard-capped number like pH or ABV. Overall strong output with some unverifiable/slightly wrong claims pulling correctness down.",
+  "judge_tokens_in": 3819,
+  "judge_tokens_out": 494
+}

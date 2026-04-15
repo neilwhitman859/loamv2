@@ -1,0 +1,13 @@
+{
+  "pair_id": "A048",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 1.0,\n\"reasoning\": \"The records refer to the same producer (Stoneleigh) and the same wine (Wild Valley). The addition of 'Pinot Noir' in Wine B is a varietal suffix that clarifies the grape variety already identified in Wine A, confirming they are the same bottling.\"\n}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The records refer to the same producer (Stoneleigh) and the same wine (Wild Valley). The addition of 'Pinot Noir' in Wine B is a varietal suffix that clarifies the grape variety already identified in Wine A, confirming they are the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 79,
+  "elapsed": 1.712386131286621,
+  "error": null
+}

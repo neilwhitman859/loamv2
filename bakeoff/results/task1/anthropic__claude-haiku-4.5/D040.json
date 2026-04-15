@@ -1,0 +1,13 @@
+{
+  "pair_id": "D040",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"These wines have different LWINs (2753168 vs 2572077), which indicates they are distinct bottlings in the wine database. 'Solane Superiore' and 'Superiore' appear to be different wines from Santi\u2014one is a specific vineyard/cuv\u00e9e designation (Solane) while the other is a generic classification level. The name difference is not merely formatting variation but represents different product lines.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "These wines have different LWINs (2753168 vs 2572077), which indicates they are distinct bottlings in the wine database. 'Solane Superiore' and 'Superiore' appear to be different wines from Santi\u2014one is a specific vineyard/cuv\u00e9e designation (Solane) while the other is a generic classification level. The name difference is not merely formatting variation but represents different product lines.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 124,
+  "elapsed": 3.8075408935546875,
+  "error": null
+}

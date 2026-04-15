@@ -1,0 +1,13 @@
+{
+  "pair_id": "B024",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different colors (white vs red) and completely different grape compositions, with no shared primary grape. Different color and different grapes are definitive rules for different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors (white vs red) and completely different grape compositions, with no shared primary grape. Different color and different grapes are definitive rules for different wines.",
+  "parse_ok": true,
+  "tokens_in": 470,
+  "tokens_out": 58,
+  "elapsed": 2.3726086616516113,
+  "error": null
+}

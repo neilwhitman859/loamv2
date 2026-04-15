@@ -1,0 +1,13 @@
+{
+  "pair_id": "A020",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Although the short form could sometimes be an abbreviation, these records indicate different grape compositions: Wine A is listed as Viura, while Wine B is explicitly Sauvignon Blanc. Under the rules, different grapes always mean different wines, even if the producer and brand name are otherwise similar.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Although the short form could sometimes be an abbreviation, these records indicate different grape compositions: Wine A is listed as Viura, while Wine B is explicitly Sauvignon Blanc. Under the rules, different grapes always mean different wines, even if the producer and brand name are otherwise similar.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 77,
+  "elapsed": 1.7322945594787598,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B036",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, with Wine A being white (Blanco) and Wine B being red. This difference in color indicates they are distinct wines. Despite sharing the same producer and vineyard designation, the color difference takes precedence.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, with Wine A being white (Blanco) and Wine B being red. This difference in color indicates they are distinct wines. Despite sharing the same producer and vineyard designation, the color difference takes precedence.",
+  "parse_ok": true,
+  "tokens_in": 439,
+  "tokens_out": 70,
+  "elapsed": 1.8764286041259766,
+  "error": null
+}

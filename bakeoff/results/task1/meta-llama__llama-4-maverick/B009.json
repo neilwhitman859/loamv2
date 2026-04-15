@@ -1,0 +1,13 @@
+{
+  "pair_id": "B009",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different colors, white and rose respectively, which indicates they are different wines despite having similar names and being produced by the same producer, Bellavista.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different colors, white and rose respectively, which indicates they are different wines despite having similar names and being produced by the same producer, Bellavista.",
+  "parse_ok": true,
+  "tokens_in": 472,
+  "tokens_out": 59,
+  "elapsed": 1.5783476829528809,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B042",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines are different colors and therefore different styles. Wine A is a ros\u00e9, while Wine B is a white wine made from Chardonnay grapes. A ros\u00e9 and a white wine are distinct bottlings, even if from the same producer.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are different colors and therefore different styles. Wine A is a ros\u00e9, while Wine B is a white wine made from Chardonnay grapes. A ros\u00e9 and a white wine are distinct bottlings, even if from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 1171,
+  "elapsed": 13.035233497619629,
+  "error": null
+}

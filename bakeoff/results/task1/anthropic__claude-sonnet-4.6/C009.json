@@ -1,0 +1,13 @@
+{
+  "pair_id": "C009",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine A is 'Roses Blanc de Blancs Brut' while Wine B is simply 'Blanc de Blancs Brut', both by Cattier. The 'Roses' designation in Wine A suggests a distinct cuv\u00e9e or vineyard designation (likely from the 'Clos du Moulin' or a specific lieu-dit called 'Roses'), making it a separate bottling from Cattier's standard Blanc de Blancs Brut. The different LWIN codes (1592630 vs 1592601) further confirm these are catalogued as distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A is 'Roses Blanc de Blancs Brut' while Wine B is simply 'Blanc de Blancs Brut', both by Cattier. The 'Roses' designation in Wine A suggests a distinct cuv\u00e9e or vineyard designation (likely from the 'Clos du Moulin' or a specific lieu-dit called 'Roses'), making it a separate bottling from Cattier's standard Blanc de Blancs Brut. The different LWIN codes (1592630 vs 1592601) further confirm these are catalogued as distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 494,
+  "tokens_out": 158,
+  "elapsed": 3.987534284591675,
+  "error": null
+}

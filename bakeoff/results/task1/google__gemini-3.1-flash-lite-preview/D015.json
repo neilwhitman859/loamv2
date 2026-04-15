@@ -1,0 +1,13 @@
+{
+  "pair_id": "D015",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"Amizetta produces distinct bottlings for their 'Reserve' Cabernet Sauvignon and their standard 'Cabernet Sauvignon'. The different LWIN numbers confirm that these are tracked as separate commercial products with distinct market identities and price points.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Amizetta produces distinct bottlings for their 'Reserve' Cabernet Sauvignon and their standard 'Cabernet Sauvignon'. The different LWIN numbers confirm that these are tracked as separate commercial products with distinct market identities and price points.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 73,
+  "elapsed": 1.5944809913635254,
+  "error": null
+}

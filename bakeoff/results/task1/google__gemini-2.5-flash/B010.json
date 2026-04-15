@@ -1,0 +1,13 @@
+{
+  "pair_id": "B010",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Wine A is a white wine ('Brut' typically implies white or ros\u00e9 sparkling, but LWIN confirms white), while Wine B is a ros\u00e9. Even if the names 'Alma Grande Cuvee' and 'Gran Cuvee Alma' refer to the same base cuv\u00e9e, the difference in color (white vs. ros\u00e9) indicates distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white wine ('Brut' typically implies white or ros\u00e9 sparkling, but LWIN confirms white), while Wine B is a ros\u00e9. Even if the names 'Alma Grande Cuvee' and 'Gran Cuvee Alma' refer to the same base cuv\u00e9e, the difference in color (white vs. ros\u00e9) indicates distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 412,
+  "tokens_out": 105,
+  "elapsed": 3.3816146850585938,
+  "error": null
+}

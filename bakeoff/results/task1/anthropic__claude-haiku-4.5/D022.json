@@ -1,0 +1,13 @@
+{
+  "pair_id": "D022",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"These are two distinct white wine bottlings from La Tour Blanche with different names ('Duo de la Tour Blanche' vs 'Brumes de La Tour Blanche') and different LWINs (1561188 vs 1369756), indicating separate cuv\u00e9es or bottlings. Different names combined with different wine identification numbers indicate these would be encountered as separate products by consumers.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "These are two distinct white wine bottlings from La Tour Blanche with different names ('Duo de la Tour Blanche' vs 'Brumes de La Tour Blanche') and different LWINs (1561188 vs 1369756), indicating separate cuv\u00e9es or bottlings. Different names combined with different wine identification numbers indicate these would be encountered as separate products by consumers.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 113,
+  "elapsed": 2.784749746322632,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A001",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine A is a blend of Carmenere and Cabernet Franc, while Wine B is a single-varietal Carmenere. Different grape compositions represent distinct bottlings that consumers would encounter separately, even when sharing the same cuv\u00e9e name and producer.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A is a blend of Carmenere and Cabernet Franc, while Wine B is a single-varietal Carmenere. Different grape compositions represent distinct bottlings that consumers would encounter separately, even when sharing the same cuv\u00e9e name and producer.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 84,
+  "elapsed": 2.1950018405914307,
+  "error": null
+}

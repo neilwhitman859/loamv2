@@ -1,0 +1,13 @@
+{
+  "pair_id": "D032",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are produced by the same producer, have the same grape variety (Riesling), the same color (white), and the same style (Trocken). The slight difference in the name (Reserve vs. Trocken) is a common practice in wine labeling and does not indicate a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are produced by the same producer, have the same grape variety (Riesling), the same color (white), and the same style (Trocken). The slight difference in the name (Reserve vs. Trocken) is a common practice in wine labeling and does not indicate a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 453,
+  "tokens_out": 83,
+  "elapsed": 1.7173023223876953,
+  "error": null
+}

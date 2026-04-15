@@ -1,0 +1,13 @@
+{
+  "pair_id": "C026",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct Ferrari bottlings: Maximum Brut is the white sparkling wine, while Maximum Brut Rose is the ros\u00e9 version. The color difference alone makes them different wines, and the names indicate separate cuv\u00e9es rather than simple formatting variants.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct Ferrari bottlings: Maximum Brut is the white sparkling wine, while Maximum Brut Rose is the ros\u00e9 version. The color difference alone makes them different wines, and the names indicate separate cuv\u00e9es rather than simple formatting variants.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 70,
+  "elapsed": 1.5800690650939941,
+  "error": null
+}

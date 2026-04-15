@@ -1,0 +1,28 @@
+{
+  "wine_id": "7ab3daf6-3b5f-41c7-9507-d57dee47e905",
+  "wine_name": "Vasse Felix Filius Cabernet, Margaret River",
+  "tier": "A",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Blend mentions Merlot in vinification summary but ground truth shows 93% Cabernet Sauvignon, 5.5% Malbec, 1.5% Petit Verdot — no Merlot",
+    "States 4% Petit Verdot but ground truth says 1.5%",
+    "States 12 months in French oak, about 30% new — ground truth says 11 months, no mention of 30% new oak",
+    "Describes 'whole berries to soften tannin extraction' and Merlot handling — fabricated winemaking details",
+    "Hook mentions 'gravelly loam soils' which is plausible but unverified specific claim"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "12 months in French oak",
+    "30% new oak",
+    "4% Petit Verdot in vinification (context says 4% Malbec/COT, 1% Petit Verdot)",
+    "20 years average vine age mentioned nowhere in context data — though it matches ground truth"
+  ],
+  "reasoning": "The output is exceptionally well-written with strong voice, specificity, and usefulness — it reads like quality Loam content. However, correctness is significantly undermined by multiple fabricated or wrong details. The blend description in vinification mentions Merlot (which is in the context data as MERLOT NOIR but NOT in the ground truth blend), misattributes percentages (says 4% Petit Verdot when context says 1% PV and 4% COT/Malbec), fabricates oak details (12 months/30% new vs. ground truth 11 months), and invents winemaking specifics about whole-berry fermentation and Merlot handling. The 30% new oak figure is a clear fabrication not in any provided data. The mention of 'younger vines (average 20 years)' is absent from context but matches ground truth, which is good. The hook's claim about 'gravelly loam soils' is plausible regional knowledge. Multiple fabricated numbers (12 months oak, 30% new) trigger the hard penalty cap of 1.5, but given some numbers are close approximations and the vine age claim matches ground truth, I'm being slightly lenient at 2.5.",
+  "judge_tokens_in": 3422,
+  "judge_tokens_out": 568
+}

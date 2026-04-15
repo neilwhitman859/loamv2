@@ -1,0 +1,13 @@
+{
+  "pair_id": "A043",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine B is 'Shiraz Durif' \u2014 a blend of two grape varieties (Shiraz and Durif) \u2014 while Wine A is simply 'Shiraz', indicating a single-varietal wine. Different grape compositions mean these are distinct bottlings a consumer would encounter separately. The different LWIN codes (1976861 vs 1976874) further confirm these are catalogued as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine B is 'Shiraz Durif' \u2014 a blend of two grape varieties (Shiraz and Durif) \u2014 while Wine A is simply 'Shiraz', indicating a single-varietal wine. Different grape compositions mean these are distinct bottlings a consumer would encounter separately. The different LWIN codes (1976861 vs 1976874) further confirm these are catalogued as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 113,
+  "elapsed": 2.73429536819458,
+  "error": null
+}

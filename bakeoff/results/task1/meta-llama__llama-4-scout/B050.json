@@ -1,0 +1,13 @@
+{
+  "pair_id": "B050",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, with Wine A being white and Wine B being ros\u00e9. This difference in color indicates that they are distinct wines, despite sharing the same producer and type (Cremant).\" }",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, with Wine A being white and Wine B being ros\u00e9. This difference in color indicates that they are distinct wines, despite sharing the same producer and type (Cremant).",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 65,
+  "elapsed": 4.123709678649902,
+  "error": null
+}

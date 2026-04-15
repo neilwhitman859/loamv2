@@ -1,0 +1,13 @@
+{
+  "pair_id": "B030",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":1.0,\"reasoning\":\"Wine A is Cabernet Sauvignon (red) from Porcupine Ridge, while Wine B is Sauvignon Blanc (white) from the same ridge and producer Boekenhoutskloof, but they use different grape varieties. The rules explicitly state that different grapes always indicate different wines, even if vineyard and producer match. Distinct LWIN numbers (2222901 vs 1301225) and colors confirm separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is Cabernet Sauvignon (red) from Porcupine Ridge, while Wine B is Sauvignon Blanc (white) from the same ridge and producer Boekenhoutskloof, but they use different grape varieties. The rules explicitly state that different grapes always indicate different wines, even if vineyard and producer match. Distinct LWIN numbers (2222901 vs 1301225) and colors confirm separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 580,
+  "tokens_out": 486,
+  "elapsed": 3.0982065200805664,
+  "error": null
+}

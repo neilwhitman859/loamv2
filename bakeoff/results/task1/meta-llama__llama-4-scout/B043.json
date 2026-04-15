@@ -1,0 +1,13 @@
+{
+  "pair_id": "B043",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, one being a white Brut and the other a ros\u00e9 Brut. This difference in color classification indicates they are distinct wines. Additionally, they have different LWIN numbers, further supporting that they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, one being a white Brut and the other a ros\u00e9 Brut. This difference in color classification indicates they are distinct wines. Additionally, they have different LWIN numbers, further supporting that they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 71,
+  "elapsed": 2.2159829139709473,
+  "error": null
+}

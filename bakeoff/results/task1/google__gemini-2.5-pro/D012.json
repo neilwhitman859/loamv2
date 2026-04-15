@@ -1,0 +1,13 @@
+{
+  "pair_id": "D012",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are 10-year-old Reservas from the same producer, Borges, they are made from different grape varieties. Wine A is made from Boal and Wine B is made from Sercial. These are two of the distinct noble grapes of Madeira, which produce wines with different styles and sweetness levels, making them fundamentally different products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are 10-year-old Reservas from the same producer, Borges, they are made from different grape varieties. Wine A is made from Boal and Wine B is made from Sercial. These are two of the distinct noble grapes of Madeira, which produce wines with different styles and sweetness levels, making them fundamentally different products.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 1234,
+  "elapsed": 28.30609679222107,
+  "error": null
+}

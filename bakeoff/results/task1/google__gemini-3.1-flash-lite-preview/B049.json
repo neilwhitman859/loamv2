@@ -1,0 +1,13 @@
+{
+  "pair_id": "B049",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines are explicitly identified as having different colors (white vs. red). According to the provided rules, Ros\u00e9 or Red wines from the same producer/vineyard are considered different wines.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are explicitly identified as having different colors (white vs. red). According to the provided rules, Ros\u00e9 or Red wines from the same producer/vineyard are considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 66,
+  "elapsed": 1.5120749473571777,
+  "error": null
+}

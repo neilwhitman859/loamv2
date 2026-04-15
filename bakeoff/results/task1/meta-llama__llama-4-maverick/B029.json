@@ -1,0 +1,13 @@
+{
+  "pair_id": "B029",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B are different wines because they are made from different grape varieties (Merlot vs Chardonnay) and have different colors (red vs white), indicating distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B are different wines because they are made from different grape varieties (Merlot vs Chardonnay) and have different colors (red vs white), indicating distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 506,
+  "tokens_out": 61,
+  "elapsed": 1.5352885723114014,
+  "error": null
+}

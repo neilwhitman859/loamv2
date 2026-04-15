@@ -1,0 +1,13 @@
+{
+  "pair_id": "C009",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are 'Blanc de Blancs Brut' from the same producer, Cattier. The only difference is the inclusion of 'Roses' in Wine A, which likely refers to a specific bottling or a stylistic element within the broader 'Blanc de Blancs Brut' offering, but not a fundamentally different wine type or grape composition. Given the LWINs are close, it suggests they are related bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are 'Blanc de Blancs Brut' from the same producer, Cattier. The only difference is the inclusion of 'Roses' in Wine A, which likely refers to a specific bottling or a stylistic element within the broader 'Blanc de Blancs Brut' offering, but not a fundamentally different wine type or grape composition. Given the LWINs are close, it suggests they are related bottlings.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 103,
+  "elapsed": 1.8378560543060303,
+  "error": null
+}

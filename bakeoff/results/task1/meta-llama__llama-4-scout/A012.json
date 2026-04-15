@@ -1,0 +1,13 @@
+{
+  "pair_id": "A012",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from the same producer, Arnot Roberts, and the same vineyard, Alder Springs. The grape variety is Syrah for Wine B, and Wine A is also red, suggesting a likely match, with the name difference being a possible abbreviation.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from the same producer, Arnot Roberts, and the same vineyard, Alder Springs. The grape variety is Syrah for Wine B, and Wine A is also red, suggesting a likely match, with the name difference being a possible abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 74,
+  "elapsed": 2.3965728282928467,
+  "error": null
+}

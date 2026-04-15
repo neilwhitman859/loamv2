@@ -1,0 +1,31 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "anthropic/claude-sonnet-4.6",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "Jean-François Nicq 'Les Foulards Rouges' is based in Roussillon, not Priorat — he does not make Priorat wines",
+    "Price range of €60-90 and specific €75-80 for 2022 is fabricated — no pricing data was provided",
+    "Clos Mogador is not biodynamically farmed — it is certified organic but not biodynamic",
+    "The 2022 vintage is described as aging 8 months in oak, but ground truth says recent vintages ferment and age in cement tanks (8 months), not oak"
+  ],
+  "banned_words_found": [
+    "genuine"
+  ],
+  "fabricated_numbers": [
+    "€60-90 price range",
+    "€75-80 for 2022",
+    "20-30% cheaper for Gauby",
+    "10+ meters root depth",
+    "40°C summer temperatures",
+    "12-14°C storage temperature"
+  ],
+  "reasoning": "The output is impressively written with strong voice, specificity, and usefulness — it reads like expert wine writing and gives actionable advice. However, correctness suffers from several issues: the ground truth specifies recent vintages use cement tanks not oak (the output says '8 months in oak' for 2022), Les Foulards Rouges is misattributed to Priorat, multiple prices are fabricated from no data, and the word 'genuine' appears in the vinification section. The hook itself is largely correct — llicorella, biodynamic, 100% Carignan, Dominik Huber, 97 points across vintages all check out. The cement vs. oak error is significant since it contradicts ground truth and is repeated multiple times. Many fabricated numbers (prices, percentages, temperatures) are plausible but unverifiable from context data.",
+  "judge_tokens_in": 4196,
+  "judge_tokens_out": 453
+}

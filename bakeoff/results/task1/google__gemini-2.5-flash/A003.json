@@ -1,0 +1,13 @@
+{
+  "pair_id": "A003",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"The wines share the same producer, 'Goodfellow Family', and the same core wine name, 'Heritage No. 15 Whistling Ridge'. Wine B simply appends 'Pinot Noir', which is the grape variety listed for Wine A. This is a common naming convention where the varietal is sometimes omitted for brevity, especially when it's the primary or only grape used for that specific vineyard/cuv\u00e9e.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, 'Goodfellow Family', and the same core wine name, 'Heritage No. 15 Whistling Ridge'. Wine B simply appends 'Pinot Noir', which is the grape variety listed for Wine A. This is a common naming convention where the varietal is sometimes omitted for brevity, especially when it's the primary or only grape used for that specific vineyard/cuv\u00e9e.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 120,
+  "elapsed": 3.132612943649292,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C046",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer and vineyard (Domdechant Werner, Hochheimer Domdechaney Riesling), but they have different German Pr\u00e4dikat levels (Beerenauslese vs Auslese). According to the rules, different Pr\u00e4dikat levels always represent different wines, as they indicate distinct sweetness levels and production methods.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer and vineyard (Domdechant Werner, Hochheimer Domdechaney Riesling), but they have different German Pr\u00e4dikat levels (Beerenauslese vs Auslese). According to the rules, different Pr\u00e4dikat levels always represent different wines, as they indicate distinct sweetness levels and production methods.",
+  "parse_ok": true,
+  "tokens_in": 510,
+  "tokens_out": 97,
+  "elapsed": 2.062793016433716,
+  "error": null
+}

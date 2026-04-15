@@ -1,0 +1,13 @@
+{
+  "pair_id": "D034",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"The wines share the same producer, grape variety, and the core vineyard name 'Bollenberg Pinot Noir'. The addition of 'Neuberg' in Wine A likely refers to a specific parcel within the Bollenberg vineyard, which is a common practice for single-vineyard wines and does not necessarily indicate a distinct bottling in the same way a different grape or classification would. Given the same producer and grape, it's highly probable these are the same wine, with 'Neuberg' being a more specific designation.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, grape variety, and the core vineyard name 'Bollenberg Pinot Noir'. The addition of 'Neuberg' in Wine A likely refers to a specific parcel within the Bollenberg vineyard, which is a common practice for single-vineyard wines and does not necessarily indicate a distinct bottling in the same way a different grape or classification would. Given the same producer and grape, it's highly probable these are the same wine, with 'Neuberg' being a more specific designation.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 140,
+  "elapsed": 2.057750701904297,
+  "error": null
+}

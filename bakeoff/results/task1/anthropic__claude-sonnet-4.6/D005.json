@@ -1,0 +1,13 @@
+{
+  "pair_id": "D005",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Both wines are from Fromm and are Syrah, but Wine A is specifically labeled 'Clayvin Vineyard Syrah' while Wine B is simply 'Vineyard Syrah' \u2014 likely referring to a different vineyard designation or a general vineyard bottling. The different LWIN codes (1407291 vs 1253843) confirm these are catalogued as distinct wines. Fromm produces multiple vineyard-designated Syrahs, so these likely represent separate bottlings from different vineyard sources.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Both wines are from Fromm and are Syrah, but Wine A is specifically labeled 'Clayvin Vineyard Syrah' while Wine B is simply 'Vineyard Syrah' \u2014 likely referring to a different vineyard designation or a general vineyard bottling. The different LWIN codes (1407291 vs 1253843) confirm these are catalogued as distinct wines. Fromm produces multiple vineyard-designated Syrahs, so these likely represent separate bottlings from different vineyard sources.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 138,
+  "elapsed": 3.1886117458343506,
+  "error": null
+}

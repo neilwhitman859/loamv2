@@ -1,0 +1,13 @@
+{
+  "pair_id": "D024",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer and the names 'Brut Antique' and 'Antique' are highly similar. 'Brut' is a common style designation for sparkling wines, and its omission in 'Antique' likely represents an abbreviation rather than a distinct bottling, especially given both are white wines.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer and the names 'Brut Antique' and 'Antique' are highly similar. 'Brut' is a common style designation for sparkling wines, and its omission in 'Antique' likely represents an abbreviation rather than a distinct bottling, especially given both are white wines.",
+  "parse_ok": true,
+  "tokens_in": 405,
+  "tokens_out": 80,
+  "elapsed": 1.7465178966522217,
+  "error": null
+}

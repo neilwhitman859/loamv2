@@ -1,0 +1,13 @@
+{
+  "pair_id": "B034",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines because they are explicitly different colors: Wine A is ros\u00e9 and Wine B is red (rouge). Even with the same producer and vineyard/cuv\u00e9e name 'Grand Clos,' ros\u00e9 vs red are separate bottlings and should not share a single encyclopedia page.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines because they are explicitly different colors: Wine A is ros\u00e9 and Wine B is red (rouge). Even with the same producer and vineyard/cuv\u00e9e name 'Grand Clos,' ros\u00e9 vs red are separate bottlings and should not share a single encyclopedia page.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 79,
+  "elapsed": 2.9231131076812744,
+  "error": null
+}

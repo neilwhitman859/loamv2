@@ -1,0 +1,13 @@
+{
+  "pair_id": "A041",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Stephen Ross) and the same vineyard (Bien Nacido), and both are red wines made from Pinot Noir. The only difference is the name formatting, where 'Bien Nacido' is an abbreviation of 'Bien Nacido Pinot Noir', which is allowed under the rules.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Stephen Ross) and the same vineyard (Bien Nacido), and both are red wines made from Pinot Noir. The only difference is the name formatting, where 'Bien Nacido' is an abbreviation of 'Bien Nacido Pinot Noir', which is allowed under the rules.",
+  "parse_ok": true,
+  "tokens_in": 486,
+  "tokens_out": 91,
+  "elapsed": 2.425260305404663,
+  "error": null
+}

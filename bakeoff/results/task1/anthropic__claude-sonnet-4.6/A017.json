@@ -1,0 +1,13 @@
+{
+  "pair_id": "A017",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is explicitly labeled as Pinot Noir, while Wine B's name includes 'Syrah' as a varietal suffix. These are different grape varieties, which always constitutes a different wine regardless of shared vineyard/lot name. Valdivieso's Single Valley Lot line produces multiple varietal-specific wines, confirming these are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is explicitly labeled as Pinot Noir, while Wine B's name includes 'Syrah' as a varietal suffix. These are different grape varieties, which always constitutes a different wine regardless of shared vineyard/lot name. Valdivieso's Single Valley Lot line produces multiple varietal-specific wines, confirming these are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 102,
+  "elapsed": 3.8993310928344727,
+  "error": null
+}

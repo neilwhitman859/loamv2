@@ -1,0 +1,13 @@
+{
+  "pair_id": "B043",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the producer Pommery and 'Apanage' cuv\u00e9e with 'Brut' style, but Wine A is white while Wine B is explicitly ros\u00e9. The rule states that ros\u00e9 vs. other colors (like white) from the same vineyard/cuv\u00e9e are DIFFERENT wines, representing distinct bottlings. Distinct LWIN numbers (1611405 vs 1593422) confirm they are separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the producer Pommery and 'Apanage' cuv\u00e9e with 'Brut' style, but Wine A is white while Wine B is explicitly ros\u00e9. The rule states that ros\u00e9 vs. other colors (like white) from the same vineyard/cuv\u00e9e are DIFFERENT wines, representing distinct bottlings. Distinct LWIN numbers (1611405 vs 1593422) confirm they are separate products.",
+  "parse_ok": true,
+  "tokens_in": 569,
+  "tokens_out": 489,
+  "elapsed": 3.35805082321167,
+  "error": null
+}

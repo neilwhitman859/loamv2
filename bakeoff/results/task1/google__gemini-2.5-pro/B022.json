@@ -1,0 +1,13 @@
+{
+  "pair_id": "B022",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are Extra Brut NV from the same producer, Wine B is explicitly a Ros\u00e9, which is confirmed by the provided color data. A standard white Champagne and a Ros\u00e9 Champagne are fundamentally different wines, produced differently and marketed as separate products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are Extra Brut NV from the same producer, Wine B is explicitly a Ros\u00e9, which is confirmed by the provided color data. A standard white Champagne and a Ros\u00e9 Champagne are fundamentally different wines, produced differently and marketed as separate products.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 998,
+  "elapsed": 10.72296690940857,
+  "error": null
+}

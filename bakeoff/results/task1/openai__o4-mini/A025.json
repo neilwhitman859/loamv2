@@ -1,0 +1,13 @@
+{
+  "pair_id": "A025",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.85, \"reasoning\": \"Both records refer to a Gabriel Meffre red wine called Laurus with 100% Syrah \u2013 the addition of 'Syrah' is a varietal suffix, not a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.85,
+  "reasoning": "Both records refer to a Gabriel Meffre red wine called Laurus with 100% Syrah \u2013 the addition of 'Syrah' is a varietal suffix, not a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 204,
+  "elapsed": 2.895595073699951,
+  "error": null
+}

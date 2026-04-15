@@ -1,0 +1,13 @@
+{
+  "pair_id": "C020",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although the producer, grape (Riesling), and Pr\u00e4dikat level (Auslese) are the same, the wines originate from two distinct single vineyards. 'Trittenheimer Altarchen' and 'Trittenheimer Leiterchen' are different, named vineyard sites (Einzellagen) in the Mosel region, making these two separate and distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the producer, grape (Riesling), and Pr\u00e4dikat level (Auslese) are the same, the wines originate from two distinct single vineyards. 'Trittenheimer Altarchen' and 'Trittenheimer Leiterchen' are different, named vineyard sites (Einzellagen) in the Mosel region, making these two separate and distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 1299,
+  "elapsed": 12.908967018127441,
+  "error": null
+}

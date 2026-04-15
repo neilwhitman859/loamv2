@@ -1,0 +1,13 @@
+{
+  "pair_id": "D005",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from producer Fromm, both red Syrah (same grape and style). 'Vineyard Syrah' appears to be an abbreviation of 'Clayvin Vineyard Syrah,' omitting the specific vineyard prefix, which aligns with the rule allowing name formatting differences for the same wine. Different LWINs likely indicate vintages or catalog entries, not distinct bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from producer Fromm, both red Syrah (same grape and style). 'Vineyard Syrah' appears to be an abbreviation of 'Clayvin Vineyard Syrah,' omitting the specific vineyard prefix, which aligns with the rule allowing name formatting differences for the same wine. Different LWINs likely indicate vintages or catalog entries, not distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 566,
+  "tokens_out": 1490,
+  "elapsed": 10.546529293060303,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C050",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Sur de los Andes) and are red Malbec, but they have different classification tiers: 'Malbec Reserva' and 'Gran Reserva Malbec'. According to the rules, different Rioja classification tiers (Reserva vs Gran Reserva) represent distinct bottlings and are therefore different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Sur de los Andes) and are red Malbec, but they have different classification tiers: 'Malbec Reserva' and 'Gran Reserva Malbec'. According to the rules, different Rioja classification tiers (Reserva vs Gran Reserva) represent distinct bottlings and are therefore different wines.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 94,
+  "elapsed": 2.367673635482788,
+  "error": null
+}

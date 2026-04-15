@@ -1,0 +1,13 @@
+{
+  "pair_id": "A004",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Although the base cuv\u00e9e name is the same, Wine A is listed as a blend of Pinot Noir and Pinot Gris, while Wine B is specifically Pinot Gris. Different grapes mean different wines under the rules, even if the vineyard/cuv\u00e9e name matches. The varietal suffix here is not just an abbreviation because it changes the grape composition.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Although the base cuv\u00e9e name is the same, Wine A is listed as a blend of Pinot Noir and Pinot Gris, while Wine B is specifically Pinot Gris. Different grapes mean different wines under the rules, even if the vineyard/cuv\u00e9e name matches. The varietal suffix here is not just an abbreviation because it changes the grape composition.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 91,
+  "elapsed": 1.45513916015625,
+  "error": null
+}

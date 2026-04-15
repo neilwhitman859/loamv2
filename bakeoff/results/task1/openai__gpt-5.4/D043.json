@@ -1,0 +1,13 @@
+{
+  "pair_id": "D043",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"The only substantive difference between these records is the cuv\u00e9e designation: 'Note #1' versus 'Note #2'. Numbered bottlings like this indicate distinct wines that a consumer would encounter separately, and the different LWINs strongly support that they are separate entries rather than formatting variants.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "The only substantive difference between these records is the cuv\u00e9e designation: 'Note #1' versus 'Note #2'. Numbered bottlings like this indicate distinct wines that a consumer would encounter separately, and the different LWINs strongly support that they are separate entries rather than formatting variants.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 81,
+  "elapsed": 3.0884265899658203,
+  "error": null
+}

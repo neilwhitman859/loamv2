@@ -1,0 +1,13 @@
+{
+  "pair_id": "C021",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"These are different German Pr\u00e4dikat levels: Beerenauslese (BA) and Trockenbeerenauslese (TBA) are distinct classifications representing different levels of grape concentration and sweetness. Per the key rules, different German Pr\u00e4dikat levels always constitute different wines. Both are from the same producer, vineyard, and grape variety, but the Pr\u00e4dikat difference alone makes them distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "These are different German Pr\u00e4dikat levels: Beerenauslese (BA) and Trockenbeerenauslese (TBA) are distinct classifications representing different levels of grape concentration and sweetness. Per the key rules, different German Pr\u00e4dikat levels always constitute different wines. Both are from the same producer, vineyard, and grape variety, but the Pr\u00e4dikat difference alone makes them distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 524,
+  "tokens_out": 115,
+  "elapsed": 6.417554616928101,
+  "error": null
+}

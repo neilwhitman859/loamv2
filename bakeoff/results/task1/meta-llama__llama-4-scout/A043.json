@@ -1,0 +1,13 @@
+{
+  "pair_id": "A043",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grape varieties, Shiraz and Shiraz Durif, which indicates they are different wines. Despite having the same producer and color, the difference in grape variety is a key factor in determining them as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grape varieties, Shiraz and Shiraz Durif, which indicates they are different wines. Despite having the same producer and color, the difference in grape variety is a key factor in determining them as different wines.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 70,
+  "elapsed": 1.8760907649993896,
+  "error": null
+}

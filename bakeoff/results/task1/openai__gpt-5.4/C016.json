@@ -1,0 +1,13 @@
+{
+  "pair_id": "C016",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines because they are from different appellations: Barolo vs Barbaresco. Even though both are red 100% Nebbiolo from the same producer and both are labeled Riserva, appellation here identifies distinct bottlings that consumers would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines because they are from different appellations: Barolo vs Barbaresco. Even though both are red 100% Nebbiolo from the same producer and both are labeled Riserva, appellation here identifies distinct bottlings that consumers would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 462,
+  "tokens_out": 76,
+  "elapsed": 2.641876697540283,
+  "error": null
+}

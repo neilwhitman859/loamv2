@@ -1,0 +1,24 @@
+{
+  "wine_id": "7e9b8b66-560f-45df-b566-5419d21b395c",
+  "wine_name": "d'Arenberg The High Trellis Cabernet Sauvignon, McLaren Vale",
+  "tier": "A",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "The hook implies the 'High Trellis' name refers to d'Arenberg training vines high to lift the canopy above heat and wind. The ground truth says the vineyard was nicknamed because its vines were the first at d'Arenberg to be trained above knee-height in the 1890s — the output's framing is close but misleadingly presents it as a current viticultural technique rather than a historical naming origin.",
+    "No mention of foot treading, basket pressing, or the specific cooperage (12 months in new and old French and American oak barriques and large casks) which are key winemaking details from ground truth.",
+    "No mention of old vines dating to 1912, Chester Osborn as winemaker, or the Jimmy Watson trophy win in 1969 — all significant facts from ground truth.",
+    "The price range 'US$18-30' is fabricated — no pricing data was provided in the context."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "US$18-30 price range (no prices provided in context data)"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity on McLaren Vale terroir (soils, climate, geography), and genuinely useful comparable wines and food pairings. However, correctness suffers because: (1) the hook's explanation of the High Trellis name is plausible but misframes the historical naming origin as a current viticultural rationale; (2) the vinification section completely misses the distinctive d'Arenberg winemaking methods (foot treading, basket pressing, specific oak regime, no fining/filtration) that are central to the wine's identity; (3) a price range is fabricated without source data. The price fabrication would normally trigger the hard cap at 1.5, but since it's in the value_assessment section rather than claiming a specific technical number like pH or ABV, and the range is roughly plausible, I'm applying a softer penalty but still marking it down significantly.",
+  "judge_tokens_in": 3980,
+  "judge_tokens_out": 498
+}

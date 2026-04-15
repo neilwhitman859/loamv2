@@ -1,0 +1,13 @@
+{
+  "pair_id": "A008",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Both wines are from the same producer, Cuilleron, and share the base name 'Sybel'. Wine A lists Syrah as a grape, and Wine B adds 'Syrah' as a varietal suffix, which is a common abbreviation practice. Given the same producer and base name, it's highly probable they refer to the same wine, with one name being a more specific descriptor.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Cuilleron, and share the base name 'Sybel'. Wine A lists Syrah as a grape, and Wine B adds 'Syrah' as a varietal suffix, which is a common abbreviation practice. Given the same producer and base name, it's highly probable they refer to the same wine, with one name being a more specific descriptor.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 114,
+  "elapsed": 1.463731288909912,
+  "error": null
+}

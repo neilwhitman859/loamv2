@@ -1,0 +1,13 @@
+{
+  "pair_id": "A016",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer (Berton Vineyards), are white, and the primary grape is Vermentino. 'Metal Label The' is almost certainly an abbreviated name for 'Metal Label The Vermentino', as varietal suffix differences alone typically indicate the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer (Berton Vineyards), are white, and the primary grape is Vermentino. 'Metal Label The' is almost certainly an abbreviated name for 'Metal Label The Vermentino', as varietal suffix differences alone typically indicate the same wine.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 80,
+  "elapsed": 3.050201892852783,
+  "error": null
+}

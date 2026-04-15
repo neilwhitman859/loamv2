@@ -1,0 +1,13 @@
+{
+  "pair_id": "C024",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"While both are Extra Brut sparkling wines from Francis Boulard with similar names, the distinct LWINs (1402560 vs 1402573) indicate these are separate bottlings in the producer's catalog. The naming difference ('Murgiers' vs 'Les Murgiers') combined with different product codes suggests these represent distinct cuv\u00e9es rather than simple formatting variations of the same wine.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "While both are Extra Brut sparkling wines from Francis Boulard with similar names, the distinct LWINs (1402560 vs 1402573) indicate these are separate bottlings in the producer's catalog. The naming difference ('Murgiers' vs 'Les Murgiers') combined with different product codes suggests these represent distinct cuv\u00e9es rather than simple formatting variations of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 117,
+  "elapsed": 2.6845273971557617,
+  "error": null
+}

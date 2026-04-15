@@ -1,0 +1,13 @@
+{
+  "pair_id": "D047",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"The cuv\u00e9e names differ: one is labeled Merlot and the other Cabernet. Different grapes always indicate different wines, and even though the provided grape field for Wine B appears inconsistent, the explicit wine name 'Cabernet' strongly supports that these are separate bottlings from Happs Margaret River.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "The cuv\u00e9e names differ: one is labeled Merlot and the other Cabernet. Different grapes always indicate different wines, and even though the provided grape field for Wine B appears inconsistent, the explicit wine name 'Cabernet' strongly supports that these are separate bottlings from Happs Margaret River.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 81,
+  "elapsed": 2.9733917713165283,
+  "error": null
+}

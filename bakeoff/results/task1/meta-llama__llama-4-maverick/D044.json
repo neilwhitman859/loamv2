@@ -1,0 +1,13 @@
+{
+  "pair_id": "D044",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Donnachadh, and are white, indicating they are likely the same varietal. The difference in name is due to the varietal suffix being omitted in Wine B, which is a common abbreviation. The color and producer match, supporting the conclusion that they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Donnachadh, and are white, indicating they are likely the same varietal. The difference in name is due to the varietal suffix being omitted in Wine B, which is a common abbreviation. The color and producer match, supporting the conclusion that they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 87,
+  "elapsed": 1.8356351852416992,
+  "error": null
+}

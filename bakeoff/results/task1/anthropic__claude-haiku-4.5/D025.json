@@ -1,0 +1,13 @@
+{
+  "pair_id": "D025",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Cattier and share the core name 'Millesime' (vintage champagne). 'Brut' is a sweetness classification (dry style) that is typically appended to champagne names rather than representing a distinct bottling. The difference is stylistic descriptor only, not a separate cuv\u00e9e or classification tier.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Cattier and share the core name 'Millesime' (vintage champagne). 'Brut' is a sweetness classification (dry style) that is typically appended to champagne names rather than representing a distinct bottling. The difference is stylistic descriptor only, not a separate cuv\u00e9e or classification tier.",
+  "parse_ok": true,
+  "tokens_in": 474,
+  "tokens_out": 102,
+  "elapsed": 3.5722243785858154,
+  "error": null
+}

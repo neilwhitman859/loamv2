@@ -1,0 +1,13 @@
+{
+  "pair_id": "D047",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is named 'Happs Merlot' while Wine B is 'Happs Cabernet', indicating different grape varieties (Merlot vs Cabernet Sauvignon). Although grape data lists both as 100% MERLOT NOIR, the explicit varietal names in the records signify distinct cuv\u00e9es that consumers would treat as separate bottlings. Rules state different grapes always mean different wines, and varietal naming differences beyond abbreviation confirm this.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is named 'Happs Merlot' while Wine B is 'Happs Cabernet', indicating different grape varieties (Merlot vs Cabernet Sauvignon). Although grape data lists both as 100% MERLOT NOIR, the explicit varietal names in the records signify distinct cuv\u00e9es that consumers would treat as separate bottlings. Rules state different grapes always mean different wines, and varietal naming differences beyond abbreviation confirm this.",
+  "parse_ok": true,
+  "tokens_in": 577,
+  "tokens_out": 1957,
+  "elapsed": 11.614249229431152,
+  "error": null
+}

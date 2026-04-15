@@ -1,0 +1,22 @@
+{
+  "wine_id": "7ab3daf6-3b5f-41c7-9507-d57dee47e905",
+  "wine_name": "Vasse Felix Filius Cabernet, Margaret River",
+  "tier": "A",
+  "model": "openai/gpt-5.4",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Hook states blend includes Merlot, but ground truth shows 93% Cabernet Sauvignon, 5.5% Malbec, 1.5% Petit Verdot — no Merlot in the blend",
+    "Hook states 4% Malbec and 1% Petit Verdot, but ground truth shows 5.5% Malbec and 1.5% Petit Verdot",
+    "Malbec is listed as COT in context data (correct synonym), but the blend percentages from context (4% COT, 1% Petit Verdot) don't match ground truth (5.5% Malbec, 1.5% Petit Verdot)",
+    "Throughout the output, Merlot is repeatedly cited as a blend component when it is not in the actual blend per ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is exceptionally well-written with strong voice, specificity, and usefulness — the food pairings are creative and well-reasoned, the terroir section names real soil types, and the insider take is genuinely opinionated. However, the blend is wrong in a significant way: the output repeatedly includes Merlot as a blend component when ground truth confirms the wine contains no Merlot (it's 93% Cab Sauv, 5.5% Malbec, 1.5% Petit Verdot). The context data listed MERLOT NOIR with no percentage, which the model interpreted as present; this is understandable but still factually wrong per ground truth. The hook contains this wrong blend claim, which is a significant error. The percentages for Malbec and Petit Verdot are also slightly off versus ground truth. The vinification section admirably declines to fabricate details, which is good practice, though ground truth shows wild-yeast fermentation in open-top fermenters with 11 months French oak. The naming origin ('son of' the flagship) is not mentioned, which is a missed opportunity but not an error.",
+  "judge_tokens_in": 4134,
+  "judge_tokens_out": 515
+}

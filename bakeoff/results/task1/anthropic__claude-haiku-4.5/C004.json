@@ -1,0 +1,13 @@
+{
+  "pair_id": "C004",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Raumland with identical names 'Trauben Secco Alkoholfrei' and both are white wines. Wine B's descriptor 'white' is redundant labeling rather than a distinct product designation. The different LWINs likely reflect database entry variations or packaging formats of the same bottling rather than separate wines.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Raumland with identical names 'Trauben Secco Alkoholfrei' and both are white wines. Wine B's descriptor 'white' is redundant labeling rather than a distinct product designation. The different LWINs likely reflect database entry variations or packaging formats of the same bottling rather than separate wines.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 104,
+  "elapsed": 2.015552520751953,
+  "error": null
+}

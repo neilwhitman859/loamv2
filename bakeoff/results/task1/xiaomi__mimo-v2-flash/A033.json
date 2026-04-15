@@ -1,0 +1,13 @@
+{
+  "pair_id": "A033",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Calabria), are white, and share the same grape variety (Vermentino). The name 'Private Bin' is an abbreviation of 'Private Bin Vermentino', which is a common naming convention and does not indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Calabria), are white, and share the same grape variety (Vermentino). The name 'Private Bin' is an abbreviation of 'Private Bin Vermentino', which is a common naming convention and does not indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 80,
+  "elapsed": 2.223541498184204,
+  "error": null
+}

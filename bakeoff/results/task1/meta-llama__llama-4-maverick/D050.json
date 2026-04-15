@@ -1,0 +1,13 @@
+{
+  "pair_id": "D050",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines have different grape varieties; Wine A is a blend of Pinot Gris and Pinot Blanc, while Wine B is made from Chardonnay Blanc, indicating they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines have different grape varieties; Wine A is a blend of Pinot Gris and Pinot Blanc, while Wine B is made from Chardonnay Blanc, indicating they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 60,
+  "elapsed": 1.8879785537719727,
+  "error": null
+}

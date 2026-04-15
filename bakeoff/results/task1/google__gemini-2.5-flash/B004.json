@@ -1,0 +1,13 @@
+{
+  "pair_id": "B004",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are different colors (red vs white) and have different primary grape varieties (Pinot Noir vs Chardonnay Blanc/Pinot Noir blend). These are distinct bottlings despite sharing the 'Brancott Valley' name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are different colors (red vs white) and have different primary grape varieties (Pinot Noir vs Chardonnay Blanc/Pinot Noir blend). These are distinct bottlings despite sharing the 'Brancott Valley' name.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 68,
+  "elapsed": 1.5734105110168457,
+  "error": null
+}

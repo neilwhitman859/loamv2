@@ -1,0 +1,13 @@
+{
+  "pair_id": "D006",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although the names 'La Strada' and 'Strada' are very similar, the grape compositions are distinct. Wine A is a single-varietal Merlot, while Wine B is a blend of Cot (Malbec) and Merlot. A difference in grape varieties always indicates two different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the names 'La Strada' and 'Strada' are very similar, the grape compositions are distinct. Wine A is a single-varietal Merlot, while Wine B is a blend of Cot (Malbec) and Merlot. A difference in grape varieties always indicates two different wines.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 1062,
+  "elapsed": 11.226926803588867,
+  "error": null
+}

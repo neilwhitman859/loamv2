@@ -1,0 +1,28 @@
+{
+  "wine_id": "c815d359-5c41-4ee0-ab03-2afaf1ab5f81",
+  "wine_name": "Comando G El Reventon, Cebreros",
+  "tier": "B",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 1.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "Hook claims 1,100-meter granite plot — ground truth says 900m elevation on slate soils, not granite at 1,100m",
+    "Hook says co-fermented with Alicante Henri Bouschet — ground truth says 100% Garnacha",
+    "Claims granite soils throughout — ground truth says slate soils",
+    "States 14 months in oak — ground truth says 16 months in French oak",
+    "Entire terroir_expression section built on granite premise is wrong — the vineyard is on slate",
+    "Claims Alicante Henri Bouschet is co-fermented and integral to the wine's character — the wine is 100% Garnacha per ground truth"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "1,100 meters elevation (actual is 900m)",
+    "$90-$140 price range not in context data",
+    "70-year-old vines not stated in context data (though matches ground truth)"
+  ],
+  "reasoning": "The hook contains two provably wrong facts: the elevation (1,100m vs. actual 900m), the soil type (granite vs. actual slate), and the claim of Alicante Henri Bouschet co-fermentation when the wine is 100% Garnacha. The entire narrative architecture of the output — granite minerality, teinturier co-ferment giving darkness and structure — is built on fabricated premises that contradict ground truth. While the context data does list Alicante Henri Bouschet as a grape, the ground truth confirms 100% Garnacha, and the model doubled down on the Bouschet narrative extensively. The oak aging is stated as 14 months but ground truth says 16 months in French oak. The voice and writing quality are excellent — direct, opinionated, specific, well-structured — but the factual foundation is deeply flawed. Multiple wrong facts in the hook trigger the hard cap of 1.5 on correctness.",
+  "judge_tokens_in": 4227,
+  "judge_tokens_out": 481
+}

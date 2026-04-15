@@ -1,0 +1,13 @@
+{
+  "pair_id": "C049",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors (white vs red), which indicates they are different wines. Despite sharing the same producer and vineyard name, the color difference is a key factor in determining them as distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors (white vs red), which indicates they are different wines. Despite sharing the same producer and vineyard name, the color difference is a key factor in determining them as distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 64,
+  "elapsed": 2.0894198417663574,
+  "error": null
+}

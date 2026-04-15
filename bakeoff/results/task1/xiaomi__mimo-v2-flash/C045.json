@@ -1,0 +1,13 @@
+{
+  "pair_id": "C045",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Von Schubert), same vineyard (Abtsberg), same grape (Riesling), same style (Kabinett), and same auction designation (Auktion). The only difference is the 'Nr8' suffix in Wine B, which is a lot/cask number and does not indicate a different wine under the key rules.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Von Schubert), same vineyard (Abtsberg), same grape (Riesling), same style (Kabinett), and same auction designation (Auktion). The only difference is the 'Nr8' suffix in Wine B, which is a lot/cask number and does not indicate a different wine under the key rules.",
+  "parse_ok": true,
+  "tokens_in": 522,
+  "tokens_out": 101,
+  "elapsed": 2.180142641067505,
+  "error": null
+}

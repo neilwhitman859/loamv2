@@ -1,0 +1,13 @@
+{
+  "pair_id": "C034",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"In German wine classification, particularly with producers like Markus Molitor, the star rating (1*, 2*, 3*) indicates different levels of must weight, quality, or selection within the same Pr\u00e4dikat. These represent distinct bottlings with different price points and market identities, similar to different lot or cask numbers.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "In German wine classification, particularly with producers like Markus Molitor, the star rating (1*, 2*, 3*) indicates different levels of must weight, quality, or selection within the same Pr\u00e4dikat. These represent distinct bottlings with different price points and market identities, similar to different lot or cask numbers.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 87,
+  "elapsed": 2.009571075439453,
+  "error": null
+}

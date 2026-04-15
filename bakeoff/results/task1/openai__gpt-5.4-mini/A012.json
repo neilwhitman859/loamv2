@@ -1,0 +1,13 @@
+{
+  "pair_id": "A012",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.98,\"reasoning\":\"Both records are from Arnot Roberts and share the same vineyard/cuv\u00e9e name, Alder Springs. The only difference is that Wine B adds the grape varietal Syrah, which is a suffix-style clarification rather than a different bottling, and both are red.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Both records are from Arnot Roberts and share the same vineyard/cuv\u00e9e name, Alder Springs. The only difference is that Wine B adds the grape varietal Syrah, which is a suffix-style clarification rather than a different bottling, and both are red.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 74,
+  "elapsed": 1.5231573581695557,
+  "error": null
+}

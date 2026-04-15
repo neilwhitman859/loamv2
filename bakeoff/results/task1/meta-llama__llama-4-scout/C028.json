@@ -1,0 +1,13 @@
+{
+  "pair_id": "C028",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer (Mayu), grape variety (Carmenere), and color (red). The difference in classification (Gran Reserva vs Reserva) and name formatting (with/without varietal suffix) suggests they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer (Mayu), grape variety (Carmenere), and color (red). The difference in classification (Gran Reserva vs Reserva) and name formatting (with/without varietal suffix) suggests they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 73,
+  "elapsed": 1.9045798778533936,
+  "error": null
+}

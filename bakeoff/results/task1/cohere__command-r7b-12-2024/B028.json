@@ -1,0 +1,13 @@
+{
+  "pair_id": "B028",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is a white Chardonnay, while Wine B is a red Merlot. Different grape varieties and colors indicate different wines, even from the same producer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is a white Chardonnay, while Wine B is a red Merlot. Different grape varieties and colors indicate different wines, even from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 53,
+  "elapsed": 1.583202600479126,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B038",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is red while Wine B is white with VERDICCHIO grapes, indicating different colors and likely different grape varieties, which are key factors in determining they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is red while Wine B is white with VERDICCHIO grapes, indicating different colors and likely different grape varieties, which are key factors in determining they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 60,
+  "elapsed": 1.6813676357269287,
+  "error": null
+}

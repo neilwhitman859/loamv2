@@ -1,0 +1,13 @@
+{
+  "pair_id": "D029",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines are from different geographical origins (Franschhoek vs. Coastal Region). In South African wine labeling, Boekenhoutskloof produces these as distinct bottlings with different price points and sourcing profiles, representing separate products in their portfolio.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are from different geographical origins (Franschhoek vs. Coastal Region). In South African wine labeling, Boekenhoutskloof produces these as distinct bottlings with different price points and sourcing profiles, representing separate products in their portfolio.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 74,
+  "elapsed": 2.079014539718628,
+  "error": null
+}

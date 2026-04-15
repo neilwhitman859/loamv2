@@ -1,0 +1,13 @@
+{
+  "pair_id": "A014",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Wine A is listed as Gew\u00fcrztraminer, while Wine B is explicitly identified as Pinot Gris. Despite sharing the 'Grey Series Barrel Ferment' name, different grape varieties always indicate different wines, even from the same producer and vineyard designation.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is listed as Gew\u00fcrztraminer, while Wine B is explicitly identified as Pinot Gris. Despite sharing the 'Grey Series Barrel Ferment' name, different grape varieties always indicate different wines, even from the same producer and vineyard designation.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 85,
+  "elapsed": 1.3647706508636475,
+  "error": null
+}

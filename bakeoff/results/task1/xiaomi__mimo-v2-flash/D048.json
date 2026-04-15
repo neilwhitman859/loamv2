@@ -1,0 +1,13 @@
+{
+  "pair_id": "D048",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Happs), share the same color (red), and have nearly identical names where 'iSeries' is likely a branding prefix for the same Cabernet Merlot blend. The different LWINs are consistent with different vintages or bottling runs of the same wine, not different wines.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Happs), share the same color (red), and have nearly identical names where 'iSeries' is likely a branding prefix for the same Cabernet Merlot blend. The different LWINs are consistent with different vintages or bottling runs of the same wine, not different wines.",
+  "parse_ok": true,
+  "tokens_in": 490,
+  "tokens_out": 90,
+  "elapsed": 2.9828689098358154,
+  "error": null
+}

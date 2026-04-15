@@ -1,0 +1,13 @@
+{
+  "pair_id": "C016",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are made by the same producer from the same grape (Nebbiolo), they come from two distinct and prestigious appellations: Barolo and Barbaresco. These are legally separate DOCGs in Piedmont, Italy, and are always considered different wines, even when made by the same producer.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are made by the same producer from the same grape (Nebbiolo), they come from two distinct and prestigious appellations: Barolo and Barbaresco. These are legally separate DOCGs in Piedmont, Italy, and are always considered different wines, even when made by the same producer.",
+  "parse_ok": true,
+  "tokens_in": 464,
+  "tokens_out": 1138,
+  "elapsed": 12.17376446723938,
+  "error": null
+}

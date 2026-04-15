@@ -1,0 +1,13 @@
+{
+  "pair_id": "B034",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines are distinct products based on their color (Ros\u00e9 vs. Rouge). According to the provided rules, Ros\u00e9 and Red wines from the same producer and vineyard are considered different wines.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are distinct products based on their color (Ros\u00e9 vs. Rouge). According to the provided rules, Ros\u00e9 and Red wines from the same producer and vineyard are considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 66,
+  "elapsed": 1.4120850563049316,
+  "error": null
+}

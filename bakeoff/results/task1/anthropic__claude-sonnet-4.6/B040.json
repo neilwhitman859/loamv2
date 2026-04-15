@@ -1,0 +1,13 @@
+{
+  "pair_id": "B040",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is made from Alvarinho (Albari\u00f1o), a white grape, while Wine B is made from Barbera Nera, a red grape. Different grape varieties always constitute different wines, regardless of shared producer and region. These are clearly distinct bottlings a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is made from Alvarinho (Albari\u00f1o), a white grape, while Wine B is made from Barbera Nera, a red grape. Different grape varieties always constitute different wines, regardless of shared producer and region. These are clearly distinct bottlings a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 86,
+  "elapsed": 2.840256690979004,
+  "error": null
+}

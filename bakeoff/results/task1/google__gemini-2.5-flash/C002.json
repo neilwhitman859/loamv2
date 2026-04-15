@@ -1,0 +1,13 @@
+{
+  "pair_id": "C002",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are from the same producer and vineyard, and are both Riesling. However, they differ in their German Pr\u00e4dikat level (Spatlese vs. Auslese), which signifies a distinct sweetness and ripeness level, making them different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are from the same producer and vineyard, and are both Riesling. However, they differ in their German Pr\u00e4dikat level (Spatlese vs. Auslese), which signifies a distinct sweetness and ripeness level, making them different wines.",
+  "parse_ok": true,
+  "tokens_in": 441,
+  "tokens_out": 76,
+  "elapsed": 1.9925031661987305,
+  "error": null
+}

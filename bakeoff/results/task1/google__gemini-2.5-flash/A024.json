@@ -1,0 +1,13 @@
+{
+  "pair_id": "A024",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Wine A is made from 100% COT (Malbec), while Wine B is identified as 'Boutique Syrah'. Since the grape varieties are different (Malbec vs. Syrah), these are distinct wines, even if they share the 'Boutique' designation from the same producer.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is made from 100% COT (Malbec), while Wine B is identified as 'Boutique Syrah'. Since the grape varieties are different (Malbec vs. Syrah), these are distinct wines, even if they share the 'Boutique' designation from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 99,
+  "elapsed": 1.386061668395996,
+  "error": null
+}

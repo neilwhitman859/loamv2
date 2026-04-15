@@ -1,0 +1,13 @@
+{
+  "pair_id": "B004",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a red Pinot Noir, while Wine B is a white wine with Chardonnay Blanc and Pinot Noir grapes, indicating different colors and grape compositions. Even though both are from the same producer and vineyard, the distinct color and grape blend mean they are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a red Pinot Noir, while Wine B is a white wine with Chardonnay Blanc and Pinot Noir grapes, indicating different colors and grape compositions. Even though both are from the same producer and vineyard, the distinct color and grape blend mean they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 486,
+  "tokens_out": 85,
+  "elapsed": 2.551666259765625,
+  "error": null
+}

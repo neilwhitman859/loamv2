@@ -1,0 +1,13 @@
+{
+  "pair_id": "A045",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.95,\"reasoning\":\"Both records are from Pax and refer to the same Lauterbach Hill red wine. Wine A explicitly lists the grape as Syrah, while Wine B appends the varietal to the vineyard/cuv\u00e9e name, which is typically just a naming variation rather than a distinct bottling. There is no evidence here of Pax making multiple Lauterbach Hill wines from different grapes or styles.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records are from Pax and refer to the same Lauterbach Hill red wine. Wine A explicitly lists the grape as Syrah, while Wine B appends the varietal to the vineyard/cuv\u00e9e name, which is typically just a naming variation rather than a distinct bottling. There is no evidence here of Pax making multiple Lauterbach Hill wines from different grapes or styles.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 98,
+  "elapsed": 3.188251495361328,
+  "error": null
+}

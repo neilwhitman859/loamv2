@@ -648,6 +648,7 @@ def print_leaderboard(summaries: list):
 def main():
     parser = argparse.ArgumentParser(description="B5.6: Score Task 3 outputs via Opus judge")
     parser.add_argument("--model", help="Score a single model (partial slug match)")
+    parser.add_argument("--exact-models", help="Comma-separated EXACT slugs (no partial match). Overrides --model.")
     parser.add_argument("--wine", help="Score a single wine ID")
     parser.add_argument("--dry-run", action="store_true", help="Show prompts without API calls")
     parser.add_argument("--summary-only", action="store_true", help="Regenerate summaries from saved judge results")
@@ -680,7 +681,16 @@ def main():
             sys.exit(1)
 
     # Filter models
-    if args.model:
+    if args.exact_models:
+        wanted = [s.strip() for s in args.exact_models.split(",") if s.strip()]
+        models = [m for m in TASK3_MODELS if m in wanted]
+        missing = [s for s in wanted if s not in TASK3_MODELS]
+        if missing:
+            print(f"WARNING: Unknown slugs ignored: {missing}")
+        if not models:
+            print(f"No models matched --exact-models: {wanted}")
+            sys.exit(1)
+    elif args.model:
         models = [m for m in TASK3_MODELS if args.model.lower() in m.lower()]
         if not models:
             print(f"No model matching '{args.model}'")

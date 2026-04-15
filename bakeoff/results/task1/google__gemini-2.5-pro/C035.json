@@ -1,0 +1,13 @@
+{
+  "pair_id": "C035",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The key difference is the capsule color indicated in the name. For producer Markus Molitor, the capsule color denotes the wine's style and sweetness level. A 'Gold Capsule' (Goldkapsel) indicates a sweet (s\u00fc\u00df) wine, while a 'White Capsule' (Wei\u00dfekapsel) indicates a dry (trocken) wine. Since these are two distinct styles from the same Pr\u00e4dikat level, they are considered different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The key difference is the capsule color indicated in the name. For producer Markus Molitor, the capsule color denotes the wine's style and sweetness level. A 'Gold Capsule' (Goldkapsel) indicates a sweet (s\u00fc\u00df) wine, while a 'White Capsule' (Wei\u00dfekapsel) indicates a dry (trocken) wine. Since these are two distinct styles from the same Pr\u00e4dikat level, they are considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 1379,
+  "elapsed": 13.433869123458862,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C027",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Echezeaux and Grands-Echezeaux are two distinct Grand Cru vineyard designations in Burgundy's C\u00f4te de Nuits, each with separate appellations and terroir. Although both are produced by the same house from Pinot Noir, they represent different vineyard sites that would appear on separate encyclopedia pages and are encountered as distinct bottlings by consumers.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Echezeaux and Grands-Echezeaux are two distinct Grand Cru vineyard designations in Burgundy's C\u00f4te de Nuits, each with separate appellations and terroir. Although both are produced by the same house from Pinot Noir, they represent different vineyard sites that would appear on separate encyclopedia pages and are encountered as distinct bottlings by consumers.",
+  "parse_ok": true,
+  "tokens_in": 540,
+  "tokens_out": 113,
+  "elapsed": 3.8535914421081543,
+  "error": null
+}

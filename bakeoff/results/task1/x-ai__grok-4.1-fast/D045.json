@@ -1,0 +1,13 @@
+{
+  "pair_id": "D045",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are produced by Maris and are white, with 'Casse-Croute Blanc' explicitly naming the color while 'Casse-Croute' is the shorter form without the 'Blanc' suffix. This matches the rule where varietal/color suffix differences alone indicate the same wine, as it's likely an abbreviation. No differences in grapes, style, vineyard, or classifications are evident.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are produced by Maris and are white, with 'Casse-Croute Blanc' explicitly naming the color while 'Casse-Croute' is the shorter form without the 'Blanc' suffix. This matches the rule where varietal/color suffix differences alone indicate the same wine, as it's likely an abbreviation. No differences in grapes, style, vineyard, or classifications are evident.",
+  "parse_ok": true,
+  "tokens_in": 557,
+  "tokens_out": 456,
+  "elapsed": 3.4028167724609375,
+  "error": null
+}

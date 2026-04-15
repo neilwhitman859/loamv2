@@ -1,0 +1,13 @@
+{
+  "pair_id": "D011",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer (Borges) and identical core name 'Adegas Exportata Rare Rich 1870', with Wine B prefixed by 'Malmsey', a style/grape designation matching Wine A's Malvasia Fina grape. Varietal specifier addition alone indicates abbreviation/formatting difference, not distinct bottlings. No evidence of different grapes, styles, or classifications beyond this.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer (Borges) and identical core name 'Adegas Exportata Rare Rich 1870', with Wine B prefixed by 'Malmsey', a style/grape designation matching Wine A's Malvasia Fina grape. Varietal specifier addition alone indicates abbreviation/formatting difference, not distinct bottlings. No evidence of different grapes, styles, or classifications beyond this.",
+  "parse_ok": true,
+  "tokens_in": 576,
+  "tokens_out": 1021,
+  "elapsed": 9.79359483718872,
+  "error": null
+}

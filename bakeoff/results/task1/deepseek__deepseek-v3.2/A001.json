@@ -1,0 +1,13 @@
+{
+  "pair_id": "A001",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Wine A's listed grapes are Carmenere and Cabernet Franc, and Wine B's name is 'El Pacto Agreement No 2 Carmenere,' which is consistent with Wine A's primary grape. The difference appears to be only a varietal suffix appended to the same base name 'El Pacto Agreement No 2,' indicating the same bottling from the same producer.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Wine A's listed grapes are Carmenere and Cabernet Franc, and Wine B's name is 'El Pacto Agreement No 2 Carmenere,' which is consistent with Wine A's primary grape. The difference appears to be only a varietal suffix appended to the same base name 'El Pacto Agreement No 2,' indicating the same bottling from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 454,
+  "tokens_out": 99,
+  "elapsed": 8.262632369995117,
+  "error": null
+}

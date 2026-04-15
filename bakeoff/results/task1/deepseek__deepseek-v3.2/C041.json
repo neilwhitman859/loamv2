@@ -1,0 +1,13 @@
+{
+  "pair_id": "C041",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The key rule states different Rioja classification (Reserva/Gran Reserva/Crianza) means DIFFERENT wines. Here, Wine A is 'Reserva' and Wine B is 'Gran Reserva', which are distinct classification tiers from the same producer and grape, indicating separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The key rule states different Rioja classification (Reserva/Gran Reserva/Crianza) means DIFFERENT wines. Here, Wine A is 'Reserva' and Wine B is 'Gran Reserva', which are distinct classification tiers from the same producer and grape, indicating separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 479,
+  "tokens_out": 84,
+  "elapsed": 5.643310546875,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A022",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"While the names suggest Wine A might be an abbreviation of Wine B, the metadata explicitly lists Wine A as Cabernet Sauvignon and Wine B as Carmenere. Since they are made from different grape varieties, they represent distinct bottlings within the producer's portfolio.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "While the names suggest Wine A might be an abbreviation of Wine B, the metadata explicitly lists Wine A as Cabernet Sauvignon and Wine B as Carmenere. Since they are made from different grape varieties, they represent distinct bottlings within the producer's portfolio.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 75,
+  "elapsed": 1.586726188659668,
+  "error": null
+}

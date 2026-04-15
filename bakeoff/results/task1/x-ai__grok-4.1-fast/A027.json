@@ -1,0 +1,13 @@
+{
+  "pair_id": "A027",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the producer Hammeken and base name 'Vina Altamar', but Wine A is specified as Tempranillo Tinto while Wine B is 'Vina Altamar Mencia', indicating Mencia grapes\u2014a different variety. Different grapes always mean different wines, overriding the varietal suffix rule exception for multiple wines from the same vineyard. Both are red, but grape disparity confirms they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the producer Hammeken and base name 'Vina Altamar', but Wine A is specified as Tempranillo Tinto while Wine B is 'Vina Altamar Mencia', indicating Mencia grapes\u2014a different variety. Different grapes always mean different wines, overriding the varietal suffix rule exception for multiple wines from the same vineyard. Both are red, but grape disparity confirms they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 570,
+  "tokens_out": 566,
+  "elapsed": 4.9101808071136475,
+  "error": null
+}

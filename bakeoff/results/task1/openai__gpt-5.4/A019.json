@@ -1,0 +1,13 @@
+{
+  "pair_id": "A019",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.9,\"reasoning\":\"The producer matches, but Wine B is explicitly labeled 'True Colours Pinot Noir' while Wine A is listed with grapes 'Pinot Noir, Merlot Noir,' indicating a different blend/composition. Different grape makeup means different wines, not just a naming abbreviation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The producer matches, but Wine B is explicitly labeled 'True Colours Pinot Noir' while Wine A is listed with grapes 'Pinot Noir, Merlot Noir,' indicating a different blend/composition. Different grape makeup means different wines, not just a naming abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 74,
+  "elapsed": 2.3156211376190186,
+  "error": null
+}

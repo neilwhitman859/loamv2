@@ -1,0 +1,13 @@
+{
+  "pair_id": "B030",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a red Cabernet Sauvignon and Wine B is a white Sauvignon Blanc, representing different grape varieties and colors. Even though they share the same producer and vineyard designation (Porcupine Ridge), the different grapes make them distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a red Cabernet Sauvignon and Wine B is a white Sauvignon Blanc, representing different grape varieties and colors. Even though they share the same producer and vineyard designation (Porcupine Ridge), the different grapes make them distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 507,
+  "tokens_out": 78,
+  "elapsed": 1.7925472259521484,
+  "error": null
+}

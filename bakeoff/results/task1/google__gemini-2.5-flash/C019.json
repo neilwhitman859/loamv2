@@ -1,0 +1,13 @@
+{
+  "pair_id": "C019",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are from the same producer and are both 'Brut Nature', but they differ in their classification: 'Reserva' vs 'Gran Reserva'. In Spanish wine law, these classifications denote different aging requirements and quality tiers, making them distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are from the same producer and are both 'Brut Nature', but they differ in their classification: 'Reserva' vs 'Gran Reserva'. In Spanish wine law, these classifications denote different aging requirements and quality tiers, making them distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 75,
+  "elapsed": 1.4959874153137207,
+  "error": null
+}

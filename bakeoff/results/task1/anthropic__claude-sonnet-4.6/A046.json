@@ -1,0 +1,13 @@
+{
+  "pair_id": "A046",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from Carlisle and refer to the James Berry vineyard. Wine B simply appends the varietal 'Syrah' to the vineyard name, which matches Wine A's grape variety (Syrah). This is a classic case of a varietal suffix being added to an abbreviated name, indicating the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from Carlisle and refer to the James Berry vineyard. Wine B simply appends the varietal 'Syrah' to the vineyard name, which matches Wine A's grape variety (Syrah). This is a classic case of a varietal suffix being added to an abbreviated name, indicating the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 479,
+  "tokens_out": 94,
+  "elapsed": 2.657320499420166,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B003",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is red, while Wine B is white (Fiano, a white grape variety), making them different colors and grapes, which always indicates distinct wines. Even with the shared 'Labellum' name and same producer (Vitis in Vulture), the varietal suffix here specifies a different grape and style, not just an abbreviation. Distinct LWIN numbers (2683782 vs 2683913) confirm separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is red, while Wine B is white (Fiano, a white grape variety), making them different colors and grapes, which always indicates distinct wines. Even with the shared 'Labellum' name and same producer (Vitis in Vulture), the varietal suffix here specifies a different grape and style, not just an abbreviation. Distinct LWIN numbers (2683782 vs 2683913) confirm separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 570,
+  "tokens_out": 514,
+  "elapsed": 5.418802261352539,
+  "error": null
+}

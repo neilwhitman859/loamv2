@@ -1,0 +1,13 @@
+{
+  "pair_id": "A036",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is a blend of Pinot Noir and Chardonnay, while Wine B is a Sauvignon Blanc. Even though the 'Family Selection' name is shared, the different grape varieties indicate these are distinct bottlings, making them different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is a blend of Pinot Noir and Chardonnay, while Wine B is a Sauvignon Blanc. Even though the 'Family Selection' name is shared, the different grape varieties indicate these are distinct bottlings, making them different wines.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 69,
+  "elapsed": 1.44484543800354,
+  "error": null
+}

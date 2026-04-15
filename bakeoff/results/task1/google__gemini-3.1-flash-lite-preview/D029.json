@@ -1,0 +1,13 @@
+{
+  "pair_id": "D029",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"These wines are sourced from different geographical regions (Franschhoek vs. Coastal Region). In the context of South African wine, these represent distinct bottlings with different terroir profiles and sourcing strategies, rather than a simple naming variation.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "These wines are sourced from different geographical regions (Franschhoek vs. Coastal Region). In the context of South African wine, these represent distinct bottlings with different terroir profiles and sourcing strategies, rather than a simple naming variation.",
+  "parse_ok": true,
+  "tokens_in": 448,
+  "tokens_out": 74,
+  "elapsed": 1.7840218544006348,
+  "error": null
+}

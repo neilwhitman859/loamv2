@@ -1,0 +1,13 @@
+{
+  "pair_id": "C048",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"The two records are different styles of the same cuv\u00e9e: Wine A is a Brut white sparkling wine, while Wine B is Brut Ros\u00e9. Ros\u00e9 vs white from the same producer and line are distinct consumer-facing bottlings, not mere naming variations.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "The two records are different styles of the same cuv\u00e9e: Wine A is a Brut white sparkling wine, while Wine B is Brut Ros\u00e9. Ros\u00e9 vs white from the same producer and line are distinct consumer-facing bottlings, not mere naming variations.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 74,
+  "elapsed": 1.4746026992797852,
+  "error": null
+}

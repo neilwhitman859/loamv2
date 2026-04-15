@@ -1,0 +1,13 @@
+{
+  "pair_id": "B044",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is 'Cuvee Louise Rose' explicitly marked as ros\u00e9 color, while Wine B is 'Cuvee Louise' as white color, indicating distinct bottlings by color variation. The rules specify that different colors (e.g., ros\u00e9 vs. others) mean DIFFERENT wines, even from the same producer and cuv\u00e9e base name. Different LWIN numbers (1303812 vs. 1082890) further confirm they are separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is 'Cuvee Louise Rose' explicitly marked as ros\u00e9 color, while Wine B is 'Cuvee Louise' as white color, indicating distinct bottlings by color variation. The rules specify that different colors (e.g., ros\u00e9 vs. others) mean DIFFERENT wines, even from the same producer and cuv\u00e9e base name. Different LWIN numbers (1303812 vs. 1082890) further confirm they are separate wines.",
+  "parse_ok": true,
+  "tokens_in": 567,
+  "tokens_out": 513,
+  "elapsed": 3.4584004878997803,
+  "error": null
+}

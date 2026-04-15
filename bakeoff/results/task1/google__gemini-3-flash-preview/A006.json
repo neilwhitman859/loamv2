@@ -1,0 +1,13 @@
+{
+  "pair_id": "A006",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.98, \"reasoning\": \"Wine B is simply the varietal-suffixed version of Wine A. Radio-Coteau produces a single red wine from the 'Clos Platt' vineyard, which is a Pinot Noir, making these records refer to the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Wine B is simply the varietal-suffixed version of Wine A. Radio-Coteau produces a single red wine from the 'Clos Platt' vineyard, which is a Pinot Noir, making these records refer to the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 70,
+  "elapsed": 1.6416451930999756,
+  "error": null
+}

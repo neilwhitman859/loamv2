@@ -1,0 +1,13 @@
+{
+  "pair_id": "B003",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines because they differ in both grape/style and color: 'Labellum Fiano' is explicitly a white Fiano bottling, while 'Labellum' is listed as red. Different grapes and different colors indicate separate consumer-facing bottlings, not just a naming abbreviation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines because they differ in both grape/style and color: 'Labellum Fiano' is explicitly a white Fiano bottling, while 'Labellum' is listed as red. Different grapes and different colors indicate separate consumer-facing bottlings, not just a naming abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 81,
+  "elapsed": 2.719655752182007,
+  "error": null
+}

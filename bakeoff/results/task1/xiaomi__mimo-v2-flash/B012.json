@@ -1,0 +1,13 @@
+{
+  "pair_id": "B012",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a white Madeira from Donzelinho Branco, while Wine B is a red Madeira from Malvasia Fina and Furmint. Different grape varieties and different colors indicate distinct bottlings, not just name formatting differences.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a white Madeira from Donzelinho Branco, while Wine B is a red Madeira from Malvasia Fina and Furmint. Different grape varieties and different colors indicate distinct bottlings, not just name formatting differences.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 75,
+  "elapsed": 1.7572565078735352,
+  "error": null
+}

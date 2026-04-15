@@ -1,0 +1,13 @@
+{
+  "pair_id": "D050",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a blend of Pinot Gris and Pinot Blanc, while Wine B is Chardonnay Blanc. Different grape varieties always represent different wines, even if the vineyard name and producer are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a blend of Pinot Gris and Pinot Blanc, while Wine B is Chardonnay Blanc. Different grape varieties always represent different wines, even if the vineyard name and producer are the same.",
+  "parse_ok": true,
+  "tokens_in": 494,
+  "tokens_out": 70,
+  "elapsed": 2.7195611000061035,
+  "error": null
+}

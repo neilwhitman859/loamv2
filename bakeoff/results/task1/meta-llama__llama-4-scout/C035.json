@@ -1,0 +1,13 @@
+{
+  "pair_id": "C035",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer (Markus Molitor), vineyard (Bernkasteler Doctor), grape variety (Riesling), and Pr\u00e4dikat level (Auslese). The differences in capsule color and auction details do not affect the classification as the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer (Markus Molitor), vineyard (Bernkasteler Doctor), grape variety (Riesling), and Pr\u00e4dikat level (Auslese). The differences in capsule color and auction details do not affect the classification as the same wine.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 77,
+  "elapsed": 1.535597562789917,
+  "error": null
+}

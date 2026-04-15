@@ -1,0 +1,13 @@
+{
+  "pair_id": "C006",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from producer Potzinger in S\u00fcdsteiermark with similar names 'Hommage 1860 Brut' vs 'Hommage 1860 Brut Rose'. Wine A is specified as white, while Wine B includes 'Rose' indicating ros\u00e9 color. Different colors (white vs ros\u00e9) make them distinct bottlings per the rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from producer Potzinger in S\u00fcdsteiermark with similar names 'Hommage 1860 Brut' vs 'Hommage 1860 Brut Rose'. Wine A is specified as white, while Wine B includes 'Rose' indicating ros\u00e9 color. Different colors (white vs ros\u00e9) make them distinct bottlings per the rules.",
+  "parse_ok": true,
+  "tokens_in": 595,
+  "tokens_out": 522,
+  "elapsed": 4.887913703918457,
+  "error": null
+}

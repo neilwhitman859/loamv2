@@ -1,0 +1,13 @@
+{
+  "pair_id": "B026",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Ros\u00e9 Champagne and Wine B is a White (Blanc) Champagne. In the Champagne region, Ros\u00e9 and Blanc bottlings are distinct products with different production methods and market identities, even within the same 'Antique' range.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Ros\u00e9 Champagne and Wine B is a White (Blanc) Champagne. In the Champagne region, Ros\u00e9 and Blanc bottlings are distinct products with different production methods and market identities, even within the same 'Antique' range.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 72,
+  "elapsed": 2.130901575088501,
+  "error": null
+}

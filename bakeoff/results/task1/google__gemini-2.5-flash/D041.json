@@ -1,0 +1,13 @@
+{
+  "pair_id": "D041",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, 'Pommery', and the core name 'Apanage Cuvee 1874'. The addition of 'Brut' to Wine B is a style descriptor (dryness level for sparkling wine) and does not indicate a different bottling, especially since both are white wines from the same producer.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, 'Pommery', and the core name 'Apanage Cuvee 1874'. The addition of 'Brut' to Wine B is a style descriptor (dryness level for sparkling wine) and does not indicate a different bottling, especially since both are white wines from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 90,
+  "elapsed": 2.062389373779297,
+  "error": null
+}

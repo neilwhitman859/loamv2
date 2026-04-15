@@ -1,0 +1,13 @@
+{
+  "pair_id": "C045",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, vineyard, grape variety, and Pr\u00e4dikat level (Kabinett). The difference in the lot/cask number (Auktion vs Nr8 Auktion) at the same Pr\u00e4dikat level suggests they might be different bottlings but within the same wine category, not changing the fact that they represent the same wine style and origin.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, vineyard, grape variety, and Pr\u00e4dikat level (Kabinett). The difference in the lot/cask number (Auktion vs Nr8 Auktion) at the same Pr\u00e4dikat level suggests they might be different bottlings but within the same wine category, not changing the fact that they represent the same wine style and origin.",
+  "parse_ok": true,
+  "tokens_in": 448,
+  "tokens_out": 97,
+  "elapsed": 2.79099702835083,
+  "error": null
+}

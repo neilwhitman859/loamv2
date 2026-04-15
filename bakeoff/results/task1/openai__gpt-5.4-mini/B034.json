@@ -1,0 +1,13 @@
+{
+  "pair_id": "B034",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"The two records are explicitly different by color and style: Grand Clos Ros\u00e9 is a ros\u00e9 wine, while Grand Clos Rouge is a red wine. Under the classification rules, ros\u00e9 vs red from the same producer/vineyard are different wines, even if the base cuv\u00e9e name is similar.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "The two records are explicitly different by color and style: Grand Clos Ros\u00e9 is a ros\u00e9 wine, while Grand Clos Rouge is a red wine. Under the classification rules, ros\u00e9 vs red from the same producer/vineyard are different wines, even if the base cuv\u00e9e name is similar.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 83,
+  "elapsed": 1.8298203945159912,
+  "error": null
+}

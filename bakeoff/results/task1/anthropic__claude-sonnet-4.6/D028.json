@@ -1,0 +1,13 @@
+{
+  "pair_id": "D028",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is made from Cabernet Sauvignon while Wine B is made from Cabernet Franc \u2014 these are distinct grape varieties. Different grapes always constitute different wines, regardless of shared producer name or series name. The different LWIN codes further confirm these are separately catalogued bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is made from Cabernet Sauvignon while Wine B is made from Cabernet Franc \u2014 these are distinct grape varieties. Different grapes always constitute different wines, regardless of shared producer name or series name. The different LWIN codes further confirm these are separately catalogued bottlings.",
+  "parse_ok": true,
+  "tokens_in": 506,
+  "tokens_out": 86,
+  "elapsed": 5.033004283905029,
+  "error": null
+}

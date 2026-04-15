@@ -1,0 +1,41 @@
+{
+  "page_id": "page_019",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Red Velvet\",\n      \"vintage_year\": null,\n      \"abv_pct\": null,\n      \"blend\": [\n        {\"grape\": \"Merlot\", \"pct\": null},\n        {\"grape\": \"Zinfandel\", \"pct\": null},\n        {\"grape\": \"Petite Sirah\", \"pct\": null}\n      ],\n      \"oak\": {\"vessel\": null, \"months\": null, \"new_pct\": null, \"origin\": null},\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": \"Jessica Tomei\",\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Red Velvet",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Merlot",
+          "pct": null
+        },
+        {
+          "grape": "Zinfandel",
+          "pct": null
+        },
+        {
+          "grape": "Petite Sirah",
+          "pct": null
+        }
+      ],
+      "oak": {
+        "vessel": null,
+        "months": null,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 34217,
+  "tokens_out": 154,
+  "elapsed": 5.916067123413086,
+  "error": null
+}

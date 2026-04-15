@@ -1,0 +1,33 @@
+{
+  "page_id": "page_036",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n  \"wines_found\": [\n    {\n      \"name\": \"Blaufränkisch 2024\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": 13.0,\n      \"blend\": null,\n      \"oak\": {\n        \"vessel\": \"wood\",\n        \"months\": 12,\n        \"new_pct\": null,\n        \"origin\": null\n      },\n      \"cases_produced\": null,\n      \"chemistry\": {\n        \"ph\": null,\n        \"ta_g_l\": 5.9,\n        \"rs_g_l\": 1.0,\n        \"so2_total_mg_l\": null\n      },\n      \"winemaker\": null,\n      \"farming\": \"organic\"\n    }\n  ]\n}",
+  "wines_found": [
+    {
+      "name": "Blaufränkisch 2024",
+      "vintage_year": 2024,
+      "abv_pct": 13.0,
+      "blend": null,
+      "oak": {
+        "vessel": "wood",
+        "months": 12,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": 5.9,
+        "rs_g_l": 1.0,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 34955,
+  "tokens_out": 195,
+  "elapsed": 1.690497875213623,
+  "error": null
+}

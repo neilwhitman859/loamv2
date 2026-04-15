@@ -1,0 +1,13 @@
+{
+  "pair_id": "B017",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Villadoria) and region (Piemonte/Piedmont), but Wine A is red with Brachet Gris grapes while Wine B is white. Different colors indicate distinct wines per the rules. No evidence suggests these are the same bottling despite matching producer and region.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Villadoria) and region (Piemonte/Piedmont), but Wine A is red with Brachet Gris grapes while Wine B is white. Different colors indicate distinct wines per the rules. No evidence suggests these are the same bottling despite matching producer and region.",
+  "parse_ok": true,
+  "tokens_in": 556,
+  "tokens_out": 401,
+  "elapsed": 4.150150299072266,
+  "error": null
+}

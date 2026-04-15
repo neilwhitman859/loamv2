@@ -1,0 +1,13 @@
+{
+  "pair_id": "D032",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from producer Peter Jakob Kuhn, Hallgarten vineyard, Riesling grape, white, and trocken (dry) style. However, Wine B's 'Reserve' designation indicates a distinct classification tier or premium selection, akin to different quality levels that consumers encounter as separate bottlings. Different LWIN numbers (2006352 vs 3028719) further confirm they are treated as distinct entries.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from producer Peter Jakob Kuhn, Hallgarten vineyard, Riesling grape, white, and trocken (dry) style. However, Wine B's 'Reserve' designation indicates a distinct classification tier or premium selection, akin to different quality levels that consumers encounter as separate bottlings. Different LWIN numbers (2006352 vs 3028719) further confirm they are treated as distinct entries.",
+  "parse_ok": true,
+  "tokens_in": 577,
+  "tokens_out": 773,
+  "elapsed": 7.142734527587891,
+  "error": null
+}

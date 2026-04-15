@@ -1,0 +1,13 @@
+{
+  "pair_id": "D023",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.95,\"reasoning\":\"Both records are from the same producer, La Tour Blanche, and the names show a clear abbreviation pattern: 'Les Charmilles de Tour Blanche' vs 'Les Charmilles de Tour'. The color matches, and the grape listing for Wine B is consistent with a white Bordeaux-style blend rather than indicating a different cuv\u00e9e. This looks like the same wine with the producer name shortened in one record.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records are from the same producer, La Tour Blanche, and the names show a clear abbreviation pattern: 'Les Charmilles de Tour Blanche' vs 'Les Charmilles de Tour'. The color matches, and the grape listing for Wine B is consistent with a white Bordeaux-style blend rather than indicating a different cuv\u00e9e. This looks like the same wine with the producer name shortened in one record.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 101,
+  "elapsed": 1.9687106609344482,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A025",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines have the same producer, Gabriel Meffre, and the same grape variety, Syrah. The difference in name is likely due to abbreviation, as 'Laurus' is a shortened form of 'Laurus Syrah'. The color is also the same, red.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines have the same producer, Gabriel Meffre, and the same grape variety, Syrah. The difference in name is likely due to abbreviation, as 'Laurus' is a shortened form of 'Laurus Syrah'. The color is also the same, red.",
+  "parse_ok": true,
+  "tokens_in": 496,
+  "tokens_out": 79,
+  "elapsed": 1.2559292316436768,
+  "error": null
+}

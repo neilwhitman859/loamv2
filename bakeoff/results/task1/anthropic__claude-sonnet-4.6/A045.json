@@ -1,0 +1,13 @@
+{
+  "pair_id": "A045",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from producer Pax, both are red wines, and Wine A is explicitly listed as Syrah grapes. Wine B's name 'Lauterbach Hill Syrah' simply appends the varietal name to 'Lauterbach Hill,' which matches the varietal suffix rule \u2014 the shorter name is an abbreviation of the full name. There is no evidence of multiple different grape varieties from this vineyard, so these represent the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from producer Pax, both are red wines, and Wine A is explicitly listed as Syrah grapes. Wine B's name 'Lauterbach Hill Syrah' simply appends the varietal name to 'Lauterbach Hill,' which matches the varietal suffix rule \u2014 the shorter name is an abbreviation of the full name. There is no evidence of multiple different grape varieties from this vineyard, so these represent the same wine.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 124,
+  "elapsed": 3.6797640323638916,
+  "error": null
+}

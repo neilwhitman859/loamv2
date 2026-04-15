@@ -1,0 +1,13 @@
+{
+  "pair_id": "D037",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Chatter Creek), share the identical core name 'Blend 105 Red Table', and are the same color (red). The only difference is the addition of 'Wine' in Wine B's name, which is a minor formatting/labeling variation rather than a distinct bottling. This appears to be the same wine with slightly different label nomenclature.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Chatter Creek), share the identical core name 'Blend 105 Red Table', and are the same color (red). The only difference is the addition of 'Wine' in Wine B's name, which is a minor formatting/labeling variation rather than a distinct bottling. This appears to be the same wine with slightly different label nomenclature.",
+  "parse_ok": true,
+  "tokens_in": 480,
+  "tokens_out": 112,
+  "elapsed": 4.609153747558594,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A035",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"These records appear to be the same Robert Mondavi wine, with Wine B simply adding the varietal suffix Cabernet Sauvignon to the shorter base name. The producer matches, both are red, and there is no evidence of a different cuv\u00e9e, vineyard, or classification tier. Under the stated rules, a varietal suffix difference alone usually indicates the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "These records appear to be the same Robert Mondavi wine, with Wine B simply adding the varietal suffix Cabernet Sauvignon to the shorter base name. The producer matches, both are red, and there is no evidence of a different cuv\u00e9e, vineyard, or classification tier. Under the stated rules, a varietal suffix difference alone usually indicates the same wine.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 93,
+  "elapsed": 1.5234556198120117,
+  "error": null
+}

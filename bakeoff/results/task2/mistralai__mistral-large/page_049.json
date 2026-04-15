@@ -1,0 +1,38 @@
+{
+  "page_id": "page_049",
+  "model": "mistralai/mistral-large",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Merlot\",\n      \"vintage_year\": null,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": {\n        \"vessel\": \"American oak\",\n        \"months\": null,\n        \"new_pct\": null,\n        \"origin\": \"American\"\n      },\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": \"Jessica Tomei\",\n      \"farming\": null,\n      \"region\": \"California\",\n      \"tasting_notes\": \"Jammy & elegant with notes of raspberry and spice.\",\n      \"winemaking_notes\": \"Our Merlot is a jammy, elegantly textured wine crafted from luscious grapes sourced primarily from California’s Central Coast. The warm, sunny days and cool nights allow for a long growing season that makes for a full-bodied, yet smooth wine with ripe red fruit aromas and flavors. The soft tannins and color are carefully extracted from the grapes before being pressed and aged on American oak to enhance richness and complexity.\",\n      \"nutritional_info\": {\n        \"calories\": 130,\n        \"carbohydrates_g\": 4,\n        \"protein_g\": 0,\n        \"fat_g\": 0,\n        \"serving_size_fl_oz\": 5\n      }\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Merlot",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "American oak",
+        "months": null,
+        "new_pct": null,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null,
+      "region": "California",
+      "tasting_notes": "Jammy & elegant with notes of raspberry and spice.",
+      "winemaking_notes": "Our Merlot is a jammy, elegantly textured wine crafted from luscious grapes sourced primarily from California’s Central Coast. The warm, sunny days and cool nights allow for a long growing season that makes for a full-bodied, yet smooth wine with ripe red fruit aromas and flavors. The soft tannins and color are carefully extracted from the grapes before being pressed and aged on American oak to enhance richness and complexity.",
+      "nutritional_info": {
+        "calories": 130,
+        "carbohydrates_g": 4,
+        "protein_g": 0,
+        "fat_g": 0,
+        "serving_size_fl_oz": 5
+      }
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 43284,
+  "tokens_out": 307,
+  "elapsed": 18.594587802886963,
+  "error": null
+}

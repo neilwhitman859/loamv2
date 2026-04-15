@@ -1,0 +1,13 @@
+{
+  "pair_id": "D032",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.90, \"reasoning\": \"The addition of \u201cReserve\u201d denotes a distinct classification tier for the Riesling Trocken, indicating a separate bottling; this difference in tier makes them different wines under the classification rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The addition of \u201cReserve\u201d denotes a distinct classification tier for the Riesling Trocken, indicating a separate bottling; this difference in tier makes them different wines under the classification rules.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 195,
+  "elapsed": 4.658986806869507,
+  "error": null
+}

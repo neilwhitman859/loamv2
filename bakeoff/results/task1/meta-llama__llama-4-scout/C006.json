@@ -1,0 +1,13 @@
+{
+  "pair_id": "C006",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, one being a Brut and the other a Brut Ros\u00e9. Despite sharing the same producer, appellation, and base name 'Hommage 1860 Brut', the color difference indicates they are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, one being a Brut and the other a Brut Ros\u00e9. Despite sharing the same producer, appellation, and base name 'Hommage 1860 Brut', the color difference indicates they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 453,
+  "tokens_out": 72,
+  "elapsed": 1.102074146270752,
+  "error": null
+}

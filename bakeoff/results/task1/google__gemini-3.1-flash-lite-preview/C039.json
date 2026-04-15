@@ -1,0 +1,13 @@
+{
+  "pair_id": "C039",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines represent different classification tiers (Gran Reserva vs. Reserva). In wine production, these designations indicate distinct aging requirements and quality levels, meaning they are marketed as separate bottlings.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines represent different classification tiers (Gran Reserva vs. Reserva). In wine production, these designations indicate distinct aging requirements and quality levels, meaning they are marketed as separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 64,
+  "elapsed": 1.8131566047668457,
+  "error": null
+}

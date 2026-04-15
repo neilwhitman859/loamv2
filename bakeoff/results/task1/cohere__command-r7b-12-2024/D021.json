@@ -1,0 +1,13 @@
+{
+  "pair_id": "D021",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines share the same producer, vineyard/cuv\u00e9e, grape variety, and color. The slight difference in the name (Grosse Cuvee Auslese vs Grosse Cuvee) is likely due to name formatting and does not indicate a different bottling or distinct wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines share the same producer, vineyard/cuv\u00e9e, grape variety, and color. The slight difference in the name (Grosse Cuvee Auslese vs Grosse Cuvee) is likely due to name formatting and does not indicate a different bottling or distinct wine.",
+  "parse_ok": true,
+  "tokens_in": 454,
+  "tokens_out": 75,
+  "elapsed": 1.4162030220031738,
+  "error": null
+}

@@ -1,0 +1,40 @@
+{
+  "page_id": "page_054",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"2025 Dianthus\",\n      \"vintage_year\": 2025,\n      \"abv_pct\": 14.0,\n      \"blend\": [\n        {\"grape\": \"Mourvèdre\", \"pct\": 42},\n        {\"grape\": \"Grenache\", \"pct\": 40},\n        {\"grape\": \"Counoise\", \"pct\": 13},\n        {\"grape\": \"Cinsaut\", \"pct\": 5}\n      ],\n      \"oak\": null,\n      \"cases_produced\": 887,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": \"biodynamic\"\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "2025 Dianthus",
+      "vintage_year": 2025,
+      "abv_pct": 14.0,
+      "blend": [
+        {
+          "grape": "Mourvèdre",
+          "pct": 42
+        },
+        {
+          "grape": "Grenache",
+          "pct": 40
+        },
+        {
+          "grape": "Counoise",
+          "pct": 13
+        },
+        {
+          "grape": "Cinsaut",
+          "pct": 5
+        }
+      ],
+      "oak": null,
+      "cases_produced": 887,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "biodynamic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 18212,
+  "tokens_out": 169,
+  "elapsed": 40.07173562049866,
+  "error": null
+}

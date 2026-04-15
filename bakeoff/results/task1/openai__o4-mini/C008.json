@@ -1,0 +1,13 @@
+{
+  "pair_id": "C008",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.92, \"reasoning\": \"One is a white brut and the other a ros\u00e9 brut from the same producer and cuv\u00e9e name, but differing in color (ros\u00e9 vs white) indicates they are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.92,
+  "reasoning": "One is a white brut and the other a ros\u00e9 brut from the same producer and cuv\u00e9e name, but differing in color (ros\u00e9 vs white) indicates they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 146,
+  "elapsed": 3.3300344944000244,
+  "error": null
+}

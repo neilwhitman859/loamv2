@@ -1,0 +1,13 @@
+{
+  "pair_id": "C047",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are distinct products due to their different colors (white vs. rose). In the context of Champagne production, a Brut Nature and a Brut Rose Nature represent separate bottlings with different production methods and flavor profiles.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are distinct products due to their different colors (white vs. rose). In the context of Champagne production, a Brut Nature and a Brut Rose Nature represent separate bottlings with different production methods and flavor profiles.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 72,
+  "elapsed": 1.9934370517730713,
+  "error": null
+}

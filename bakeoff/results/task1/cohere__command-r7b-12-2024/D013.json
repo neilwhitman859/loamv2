@@ -1,0 +1,13 @@
+{
+  "pair_id": "D013",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"The wines are from different vineyards, with Wine A being from Beaune Premier Cru and Wine B from Vosne-Roman\u00e9e Premier Cru. This is a clear indication of different bottlings, as the same producer would not typically produce wines from different vineyards with the same name, especially in the same classification tier.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "The wines are from different vineyards, with Wine A being from Beaune Premier Cru and Wine B from Vosne-Roman\u00e9e Premier Cru. This is a clear indication of different bottlings, as the same producer would not typically produce wines from different vineyards with the same name, especially in the same classification tier.",
+  "parse_ok": true,
+  "tokens_in": 441,
+  "tokens_out": 84,
+  "elapsed": 1.2444772720336914,
+  "error": null
+}

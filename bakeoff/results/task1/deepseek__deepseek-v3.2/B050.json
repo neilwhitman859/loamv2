@@ -1,0 +1,13 @@
+{
+  "pair_id": "B050",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.95, \"reasoning\": \"The wines differ in color: Wine A is a white Cr\u00e9mant, while Wine B is a Cr\u00e9mant Ros\u00e9. Ros\u00e9 and white are distinct wine types, even from the same producer and base style, representing different bottlings a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines differ in color: Wine A is a white Cr\u00e9mant, while Wine B is a Cr\u00e9mant Ros\u00e9. Ros\u00e9 and white are distinct wine types, even from the same producer and base style, representing different bottlings a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 439,
+  "tokens_out": 78,
+  "elapsed": 4.0230231285095215,
+  "error": null
+}

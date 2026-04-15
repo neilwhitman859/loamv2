@@ -1,0 +1,13 @@
+{
+  "pair_id": "C017",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records share the same producer, vineyard (Forster Kirchenst\u00fcck), Pr\u00e4dikat level (Sp\u00e4tlese), and color. The only difference is the explicit inclusion of 'Riesling' in Wine B, which is a standard naming variation in German wines where the grape variety is frequently omitted as it is the default for this prestigious site. This aligns with the rule that a varietal suffix difference alone indicates the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records share the same producer, vineyard (Forster Kirchenst\u00fcck), Pr\u00e4dikat level (Sp\u00e4tlese), and color. The only difference is the explicit inclusion of 'Riesling' in Wine B, which is a standard naming variation in German wines where the grape variety is frequently omitted as it is the default for this prestigious site. This aligns with the rule that a varietal suffix difference alone indicates the same wine.",
+  "parse_ok": true,
+  "tokens_in": 473,
+  "tokens_out": 2245,
+  "elapsed": 42.46103024482727,
+  "error": null
+}

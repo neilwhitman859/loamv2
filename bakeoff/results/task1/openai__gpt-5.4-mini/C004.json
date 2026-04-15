@@ -1,0 +1,13 @@
+{
+  "pair_id": "C004",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"Both records share the same producer and the same core cuv\u00e9e name, Trauben Secco Alkoholfrei. The only difference is the addition of the color descriptor \\\"white\\\" in Wine B, and both records are already listed as white, indicating this is just a naming/formatting variation rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "Both records share the same producer and the same core cuv\u00e9e name, Trauben Secco Alkoholfrei. The only difference is the addition of the color descriptor \"white\" in Wine B, and both records are already listed as white, indicating this is just a naming/formatting variation rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 88,
+  "elapsed": 2.2056031227111816,
+  "error": null
+}

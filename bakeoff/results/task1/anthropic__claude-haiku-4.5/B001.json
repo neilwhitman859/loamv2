@@ -1,0 +1,13 @@
+{
+  "pair_id": "B001",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Sauvignon Blanc and Sauvignon Gris are distinct grape varieties, not merely formatting variations of the same wine. Although both are white wines from the same producer and region, they represent different bottlings that a consumer would encounter separately, as they are made from different grapes with different characteristics.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Sauvignon Blanc and Sauvignon Gris are distinct grape varieties, not merely formatting variations of the same wine. Although both are white wines from the same producer and region, they represent different bottlings that a consumer would encounter separately, as they are made from different grapes with different characteristics.",
+  "parse_ok": true,
+  "tokens_in": 510,
+  "tokens_out": 92,
+  "elapsed": 7.2649290561676025,
+  "error": null
+}

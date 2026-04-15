@@ -1,0 +1,13 @@
+{
+  "pair_id": "D034",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the vineyard designation 'Neuberg' in Wine A, which is a specific plot within the broader Bollenberg vineyard. Since the producer, grape variety (Pinot Noir), color, and region are identical, and 'Neuberg' likely indicates a sub-parcel of the same vineyard, these represent the same wine style and bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the vineyard designation 'Neuberg' in Wine A, which is a specific plot within the broader Bollenberg vineyard. Since the producer, grape variety (Pinot Noir), color, and region are identical, and 'Neuberg' likely indicates a sub-parcel of the same vineyard, these represent the same wine style and bottling.",
+  "parse_ok": true,
+  "tokens_in": 454,
+  "tokens_out": 95,
+  "elapsed": 3.2953989505767822,
+  "error": null
+}

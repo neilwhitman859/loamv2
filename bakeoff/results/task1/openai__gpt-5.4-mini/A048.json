@@ -1,0 +1,13 @@
+{
+  "pair_id": "A048",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.98,\"reasoning\":\"Both records are from Stoneleigh and the only difference is that Wine B appends the varietal suffix \u201cPinot Noir.\u201d Under the rules, a varietal suffix difference alone usually indicates the same wine when the producer/cuv\u00e9e match, and both are red Pinot Noir wines.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Both records are from Stoneleigh and the only difference is that Wine B appends the varietal suffix \u201cPinot Noir.\u201d Under the rules, a varietal suffix difference alone usually indicates the same wine when the producer/cuv\u00e9e match, and both are red Pinot Noir wines.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 77,
+  "elapsed": 1.4810678958892822,
+  "error": null
+}

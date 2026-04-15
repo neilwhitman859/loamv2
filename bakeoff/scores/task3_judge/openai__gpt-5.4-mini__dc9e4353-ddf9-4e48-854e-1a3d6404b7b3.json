@@ -1,0 +1,23 @@
+{
+  "wine_id": "dc9e4353-ddf9-4e48-854e-1a3d6404b7b3",
+  "wine_name": "Shafer One Point Five Cabernet Sauvignon, Stags Leap District",
+  "tier": "C",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "The output never mentions the actual naming origin (generation and a half between John and Doug Shafer), which is a missed opportunity but not a wrong claim since it doesn't fabricate an alternative",
+    "The output implies the wine is primarily estate/district fruit without acknowledging it draws from multiple sites including selected Napa Valley sites beyond Stags Leap District",
+    "The output does not mention the winemaker Elias Fernandez, the 100% new French oak program, or the actual blend composition, but also doesn't fabricate alternatives"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "The 10 to 12 years aging claim and 14-year drinking window are not sourced from context data but are plausible estimates rather than fabricated technical numbers"
+  ],
+  "reasoning": "The output is well-written with strong voice, specificity about terroir (volcanic tuff, Bale clay loam, Palisades shadow, Vaca Mountains), and genuinely useful comparables and food pairings. No banned words detected. The hook is factually defensible — it describes the district's geology and character accurately. However, the output omits key verifiable facts (naming origin, winemaker, blend, 100% new French oak, 15.3% ABV, multi-site sourcing beyond the district) that would have added significant value. It doesn't fabricate specific technical numbers like pH or oak months, but it also doesn't provide them when they exist. The description slightly misleads by framing the wine as purely district-driven when ground truth shows it includes selected Napa Valley sites outside Stags Leap District. The sensory alcohol rating of 4 is consistent with the actual 15.3% ABV. Overall, correct but incomplete — a solid output that plays it safe by not stating what it doesn't know, which is the right instinct but leaves value on the table.",
+  "judge_tokens_in": 3864,
+  "judge_tokens_out": 458
+}

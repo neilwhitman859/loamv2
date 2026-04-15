@@ -1,0 +1,13 @@
+{
+  "pair_id": "C042",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"These are different classification tiers within the Rioja/Spanish wine system: Gran Reserva requires longer aging than Reserva, representing distinct bottlings a consumer would encounter separately. The key rule explicitly states different Rioja classifications (Reserva vs Gran Reserva) = DIFFERENT. Both wines are from the same producer (Virgen del Aguila) and appellation (Cari\u00f1ena), but the classification tier difference makes them distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different classification tiers within the Rioja/Spanish wine system: Gran Reserva requires longer aging than Reserva, representing distinct bottlings a consumer would encounter separately. The key rule explicitly states different Rioja classifications (Reserva vs Gran Reserva) = DIFFERENT. Both wines are from the same producer (Virgen del Aguila) and appellation (Cari\u00f1ena), but the classification tier difference makes them distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 527,
+  "tokens_out": 121,
+  "elapsed": 3.6836791038513184,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B047",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different vineyard-designated bottlings from Salwey: Eichberg Sp\u00e4tburgunder GG versus Kirchberg Sp\u00e4tburgunder. The vineyard name differs, and the GG classification on one label indicates a distinct cuv\u00e9e/tier rather than a mere naming variation. The provided color metadata also conflicts, reinforcing that they are not the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different vineyard-designated bottlings from Salwey: Eichberg Sp\u00e4tburgunder GG versus Kirchberg Sp\u00e4tburgunder. The vineyard name differs, and the GG classification on one label indicates a distinct cuv\u00e9e/tier rather than a mere naming variation. The provided color metadata also conflicts, reinforcing that they are not the same wine.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 92,
+  "elapsed": 3.1777994632720947,
+  "error": null
+}

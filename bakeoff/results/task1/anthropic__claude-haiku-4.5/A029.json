@@ -1,0 +1,13 @@
+{
+  "pair_id": "A029",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine A is a blend of Auxerrois and C\u00f4t (a red grape), making it a white-red blend, while Wine B is labeled as Auxerrois, indicating a single varietal white wine. Different grape compositions constitute different wines, even from the same producer and vineyard.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A is a blend of Auxerrois and C\u00f4t (a red grape), making it a white-red blend, while Wine B is labeled as Auxerrois, indicating a single varietal white wine. Different grape compositions constitute different wines, even from the same producer and vineyard.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 92,
+  "elapsed": 2.1543478965759277,
+  "error": null
+}

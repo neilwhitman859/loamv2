@@ -1,0 +1,13 @@
+{
+  "pair_id": "A031",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, Pierre Girardin, and the same name, Eclat de Calcaire. The difference in varietal suffix in Wine B (Pinot Noir) compared to Wine A suggests it could be an abbreviation, indicating they are likely the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, Pierre Girardin, and the same name, Eclat de Calcaire. The difference in varietal suffix in Wine B (Pinot Noir) compared to Wine A suggests it could be an abbreviation, indicating they are likely the same wine.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 79,
+  "elapsed": 1.8619530200958252,
+  "error": null
+}

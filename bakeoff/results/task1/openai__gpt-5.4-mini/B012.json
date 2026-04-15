@@ -1,0 +1,13 @@
+{
+  "pair_id": "B012",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different Madeira bottlings: Wine B is explicitly a Colheita, which is a distinct aged vintage style, while Wine A is the base Borges Madeira. They also differ in grape composition, with Wine A from Donzelinho Branco and Wine B from Malvasia Fina and Furmint, confirming they are not the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different Madeira bottlings: Wine B is explicitly a Colheita, which is a distinct aged vintage style, while Wine A is the base Borges Madeira. They also differ in grape composition, with Wine A from Donzelinho Branco and Wine B from Malvasia Fina and Furmint, confirming they are not the same wine.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 92,
+  "elapsed": 1.6322007179260254,
+  "error": null
+}

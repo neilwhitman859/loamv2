@@ -1,0 +1,22 @@
+{
+  "wine_id": "6020edf8-3f23-4853-9591-a10c843f5a70",
+  "wine_name": "Catena Zapata High Mountain Vines Malbec, Mendoza",
+  "tier": "A",
+  "model": "openai/gpt-5.4",
+  "correctness": 4.0,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.225,
+  "wrong_facts": [
+    "The context data lists grapes as Cabernet Sauvignon, Cot, and Chardonnay Blanc, but the ground truth confirms 100% Malbec. The output correctly identifies this as a Malbec-led bottling and flags the data issue, which is good. However, it hedges by calling it 'Malbec-led' rather than stating it's 100% Malbec.",
+    "The output says vineyard sources are unclear, but ground truth confirms blending from Maipu, Lujan de Cuyo, Tupungato, and San Carlos — the model could have known this from training data but didn't state it."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "5-7 years cellar recommendation is not in context data but is a reasonable editorial judgment, not a fabricated technical number"
+  ],
+  "reasoning": "The output is impressively well-written with strong voice — direct, opinionated, and specific without resorting to banned words or sommelier theater. It correctly identifies the wine as Malbec despite misleading context data and transparently flags the data discrepancy, which is excellent editorial judgment. It doesn't fabricate technical numbers (no fake pH, oak months, or blend percentages). The hook is factually sound — Catena did build this label around high-altitude sites. Minor dings: it doesn't mention the specific vineyard regions (Maipu, Tupungato, San Carlos) that ground truth confirms, and it doesn't mention the 11-13 months French oak aging that could have been known from training data. The food pairings are excellent and specific. Comparables are well-chosen and differentiated. Overall a very strong output that prioritizes honesty over fabrication.",
+  "judge_tokens_in": 3982,
+  "judge_tokens_out": 434
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A029",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Although both records are from the same producer and both are white, Wine A is a blend of Auxerrois and Cot, while Wine B is explicitly the Auxerrois wine. Different grape composition means they are distinct bottlings, not just a naming variation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Although both records are from the same producer and both are white, Wine A is a blend of Auxerrois and Cot, while Wine B is explicitly the Auxerrois wine. Different grape composition means they are distinct bottlings, not just a naming variation.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 74,
+  "elapsed": 1.8274481296539307,
+  "error": null
+}

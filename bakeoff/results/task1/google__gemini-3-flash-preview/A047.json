@@ -1,0 +1,13 @@
+{
+  "pair_id": "A047",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A is an abbreviated name for the specific bottling identified in Wine B. Grgich Hills Estate produces a 'Miljenko's Selection' Cabernet Franc, and since both records share the same producer, color, and grape variety, Wine A is simply the shortened version of the full varietal name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A is an abbreviated name for the specific bottling identified in Wine B. Grgich Hills Estate produces a 'Miljenko's Selection' Cabernet Franc, and since both records share the same producer, color, and grape variety, Wine A is simply the shortened version of the full varietal name.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 84,
+  "elapsed": 1.5964360237121582,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B004",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different grape varieties, with Wine A being PINOT NOIR and Wine B featuring CHARDONNAY BLANC and PINOT NOIR. This difference in grapes alone is sufficient to classify them as different wines, even though they share the same producer and vineyard name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different grape varieties, with Wine A being PINOT NOIR and Wine B featuring CHARDONNAY BLANC and PINOT NOIR. This difference in grapes alone is sufficient to classify them as different wines, even though they share the same producer and vineyard name.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 83,
+  "elapsed": 2.103739023208618,
+  "error": null
+}

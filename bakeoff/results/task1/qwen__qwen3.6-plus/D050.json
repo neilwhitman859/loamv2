@@ -1,0 +1,13 @@
+{
+  "pair_id": "D050",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Although both wines share the same producer and vineyard designation, they are made from completely different grape varieties (Pinot Gris/Blanc versus Chardonnay). According to the explicit classification rules, different grapes always indicate distinct wines, regardless of shared producer or vineyard name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines share the same producer and vineyard designation, they are made from completely different grape varieties (Pinot Gris/Blanc versus Chardonnay). According to the explicit classification rules, different grapes always indicate distinct wines, regardless of shared producer or vineyard name.",
+  "parse_ok": true,
+  "tokens_in": 464,
+  "tokens_out": 1183,
+  "elapsed": 22.881099700927734,
+  "error": null
+}

@@ -1,0 +1,22 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "openai/gpt-5.4-mini",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "The output does not mention that Vat 1 is fermented in stainless steel with no oak, which is a key fact. However, it also does not claim oak is used — it says 'minimal interference' and mentions no oak, which is consistent.",
+    "The output does not mention the Short Flat vineyard or the 1923 planting date, which are key sourcing details from ground truth.",
+    "The output does not mention the 5-year release policy, which is a distinctive and important fact.",
+    "The output does not mention that Vat 1 is Australia's most awarded white wine (~5,500 medals)."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is factually careful — it avoids fabricating numbers or making provably wrong claims. The terroir description with 'sandy alluvial loam along river flats, deep friable loam, black silty loam over alkaline clay, friable red duplex soils, and pockets of volcanic basalt' is detailed but unverifiable for the specific Vat 1 vineyard source (Short Flat); these read as general Hunter Valley soil descriptions applied to the wine, which is somewhat misleading but not provably wrong. The output misses several key ground-truth facts (Short Flat vineyard, 1923 vines, stainless steel fermentation, 5-year release policy, most-awarded status) that would have added significant value. The voice is excellent — direct, opinionated, no banned words, good food pairings with real dishes and reasoning. Specificity is strong with named comparables and detailed terroir. The Cullen Kevin John comparison is a stretch (Margaret River SSB vs Hunter Semillon) but the output acknowledges the difference.",
+  "judge_tokens_in": 3752,
+  "judge_tokens_out": 439
+}

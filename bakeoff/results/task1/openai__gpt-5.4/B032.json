@@ -1,0 +1,13 @@
+{
+  "pair_id": "B032",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines because they differ in both grape variety and color: Wine A is a white Gewurztraminer, while Wine B is a red Pinot Noir. Even though both are from Valentin Zusslin and reference Bollenberg, different grapes always indicate separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines because they differ in both grape variety and color: Wine A is a white Gewurztraminer, while Wine B is a red Pinot Noir. Even though both are from Valentin Zusslin and reference Bollenberg, different grapes always indicate separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 78,
+  "elapsed": 2.7247581481933594,
+  "error": null
+}

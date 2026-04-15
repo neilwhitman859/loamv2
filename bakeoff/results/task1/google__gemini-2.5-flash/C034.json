@@ -1,0 +1,13 @@
+{
+  "pair_id": "C034",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are from the same producer, vineyard, and grape variety, and are both Auslese. However, the '2*' and '3*' designations indicate different lot/cask numbers, which represent distinct bottlings even within the same Pr\u00e4dikat level.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are from the same producer, vineyard, and grape variety, and are both Auslese. However, the '2*' and '3*' designations indicate different lot/cask numbers, which represent distinct bottlings even within the same Pr\u00e4dikat level.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 77,
+  "elapsed": 1.9108085632324219,
+  "error": null
+}

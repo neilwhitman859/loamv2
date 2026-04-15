@@ -1,0 +1,13 @@
+{
+  "pair_id": "C031",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.95,\"reasoning\":\"Bonnaire\u2019s \\\"Blanc de Blancs Brut\\\" and \\\"Blanc de Blancs\\\" are most likely different bottlings because the Brut designation is part of the wine\u2019s style and label identity. Since both are white sparkling wines from the same producer but only one explicitly includes the brut sweetness/style level, they should be treated as separate wines unless clearly shown to be an abbreviation, which is not the case here.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Bonnaire\u2019s \"Blanc de Blancs Brut\" and \"Blanc de Blancs\" are most likely different bottlings because the Brut designation is part of the wine\u2019s style and label identity. Since both are white sparkling wines from the same producer but only one explicitly includes the brut sweetness/style level, they should be treated as separate wines unless clearly shown to be an abbreviation, which is not the case here.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 106,
+  "elapsed": 2.2132785320281982,
+  "error": null
+}

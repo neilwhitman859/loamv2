@@ -1,0 +1,13 @@
+{
+  "pair_id": "A047",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both records refer to the same producer and the same specific wine bottling. The addition of 'Cabernet Franc' to the name is a varietal suffix that clarifies the composition of the 'Miljenko's Selection' label, which is a known single-varietal wine from Grgich Hills Estate.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both records refer to the same producer and the same specific wine bottling. The addition of 'Cabernet Franc' to the name is a varietal suffix that clarifies the composition of the 'Miljenko's Selection' label, which is a known single-varietal wine from Grgich Hills Estate.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 83,
+  "elapsed": 1.5406789779663086,
+  "error": null
+}

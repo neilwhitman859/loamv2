@@ -1,0 +1,13 @@
+{
+  "pair_id": "C003",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These are distinct sparkling wine styles from Raumland: \\\"Brut\\\" and \\\"Brut Nature\\\" indicate different dosage/sweetness levels, which count as different wines. The LWINs are also different, supporting separate bottlings rather than name formatting variants.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These are distinct sparkling wine styles from Raumland: \"Brut\" and \"Brut Nature\" indicate different dosage/sweetness levels, which count as different wines. The LWINs are also different, supporting separate bottlings rather than name formatting variants.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 74,
+  "elapsed": 1.6110570430755615,
+  "error": null
+}

@@ -1,0 +1,45 @@
+{
+  "page_id": "page_007",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Essential Red\",\n      \"vintage_year\": 2022,\n      \"abv_pct\": null,\n      \"blend\": [\n        {\n          \"grape\": \"Old Vine Zinfandel\",\n          \"pct\": null\n        },\n        {\n          \"grape\": \"Syrah\",\n          \"pct\": null\n        },\n        {\n          \"grape\": \"Cabernet Sauvignon\",\n          \"pct\": null\n        },\n        {\n          \"grape\": \"Petite Sirah\",\n          \"pct\": null\n        }\n      ],\n      \"oak\": {\n        \"vessel\": \"barrel\",\n        \"months\": 12,\n        \"new_pct\": null,\n        \"origin\": \"American\"\n      },\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": \"sustainable\"\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Essential Red",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Old Vine Zinfandel",
+          "pct": null
+        },
+        {
+          "grape": "Syrah",
+          "pct": null
+        },
+        {
+          "grape": "Cabernet Sauvignon",
+          "pct": null
+        },
+        {
+          "grape": "Petite Sirah",
+          "pct": null
+        }
+      ],
+      "oak": {
+        "vessel": "barrel",
+        "months": 12,
+        "new_pct": null,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "sustainable"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 22781,
+  "tokens_out": 248,
+  "elapsed": 5.422476530075073,
+  "error": null
+}

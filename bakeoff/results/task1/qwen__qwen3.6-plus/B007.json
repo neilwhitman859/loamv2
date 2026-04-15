@@ -1,0 +1,13 @@
+{
+  "pair_id": "B007",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records represent distinct bottlings with completely different grape compositions (100% Merlot versus a blend of Cot, Cabernet Sauvignon, and Dolcetto) and different cuv\u00e9e names (Corte A vs. Corte B). The differing LWINs further confirm they are separate wines from the same producer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent distinct bottlings with completely different grape compositions (100% Merlot versus a blend of Cot, Cabernet Sauvignon, and Dolcetto) and different cuv\u00e9e names (Corte A vs. Corte B). The differing LWINs further confirm they are separate wines from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 510,
+  "tokens_out": 1015,
+  "elapsed": 20.18148708343506,
+  "error": null
+}

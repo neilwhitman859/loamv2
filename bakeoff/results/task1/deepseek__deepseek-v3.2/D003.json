@@ -1,0 +1,13 @@
+{
+  "pair_id": "D003",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer (Chimney Rock), are red, and the varietal difference ('Alpine Cabernet Sauvignon' vs 'Cabernet Sauvignon') appears to be a suffix/prefix addition alone. Without evidence that Chimney Rock makes multiple distinct Cabernet Sauvignons from the same 'Alpine' designation, the core grape and producer match indicates the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer (Chimney Rock), are red, and the varietal difference ('Alpine Cabernet Sauvignon' vs 'Cabernet Sauvignon') appears to be a suffix/prefix addition alone. Without evidence that Chimney Rock makes multiple distinct Cabernet Sauvignons from the same 'Alpine' designation, the core grape and producer match indicates the same wine.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 106,
+  "elapsed": 4.069463491439819,
+  "error": null
+}

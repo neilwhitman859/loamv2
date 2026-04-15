@@ -1,0 +1,13 @@
+{
+  "pair_id": "B005",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer and name but are made from completely different grape varieties (Pinot Noir vs. Chardonnay Blanc) and have different colors. Per the classification rules, different grapes always indicate distinct wines, regardless of shared vineyard or producer names.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer and name but are made from completely different grape varieties (Pinot Noir vs. Chardonnay Blanc) and have different colors. Per the classification rules, different grapes always indicate distinct wines, regardless of shared vineyard or producer names.",
+  "parse_ok": true,
+  "tokens_in": 448,
+  "tokens_out": 881,
+  "elapsed": 17.618928909301758,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D038",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Chatter Creek) and share the identical name 'Chatterneuf-du-Pape red Table' with only a minor formatting difference in the second record. The color, grape variety, and style are the same, and there is no evidence of different classification tiers or vineyard designations that would indicate distinct bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Chatter Creek) and share the identical name 'Chatterneuf-du-Pape red Table' with only a minor formatting difference in the second record. The color, grape variety, and style are the same, and there is no evidence of different classification tiers or vineyard designations that would indicate distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 486,
+  "tokens_out": 95,
+  "elapsed": 2.6082327365875244,
+  "error": null
+}

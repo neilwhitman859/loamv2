@@ -1,0 +1,13 @@
+{
+  "pair_id": "D041",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are produced by Pommery, have the same vineyard/cuv\u00e9e name (Apanage Cuvee 1874), and are white wines. The only difference is the style (Brut vs. non-specified), which is a minor variation and does not typically indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are produced by Pommery, have the same vineyard/cuv\u00e9e name (Apanage Cuvee 1874), and are white wines. The only difference is the style (Brut vs. non-specified), which is a minor variation and does not typically indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 85,
+  "elapsed": 1.7557668685913086,
+  "error": null
+}

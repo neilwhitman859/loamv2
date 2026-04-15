@@ -1,0 +1,13 @@
+{
+  "pair_id": "D034",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer (Valentin Zusslin), vineyard (Bollenberg), and grape variety (Pinot Noir). The difference in the name (Neuberg vs omitted) and LWIN codes do not affect the classification as the same wine, given that the style and other key attributes match.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer (Valentin Zusslin), vineyard (Bollenberg), and grape variety (Pinot Noir). The difference in the name (Neuberg vs omitted) and LWIN codes do not affect the classification as the same wine, given that the style and other key attributes match.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 86,
+  "elapsed": 1.9895820617675781,
+  "error": null
+}

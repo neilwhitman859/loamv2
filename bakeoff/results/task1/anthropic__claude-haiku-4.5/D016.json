@@ -1,0 +1,13 @@
+{
+  "pair_id": "D016",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"These are two distinct wines from Eric Forest with different names ('Roche' vs 'Sur Roche') and different LWINs (1788529 vs 1349579), indicating separate bottlings. While both are white wines from the same producer, the name variation suggests different vineyard designations or cuv\u00e9es rather than a simple abbreviation, and the distinct identifiers confirm they are separate products a consumer would encounter as different offerings.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "These are two distinct wines from Eric Forest with different names ('Roche' vs 'Sur Roche') and different LWINs (1788529 vs 1349579), indicating separate bottlings. While both are white wines from the same producer, the name variation suggests different vineyard designations or cuv\u00e9es rather than a simple abbreviation, and the distinct identifiers confirm they are separate products a consumer would encounter as different offerings.",
+  "parse_ok": true,
+  "tokens_in": 479,
+  "tokens_out": 122,
+  "elapsed": 2.6808295249938965,
+  "error": null
+}

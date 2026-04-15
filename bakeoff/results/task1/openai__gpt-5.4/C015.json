@@ -1,0 +1,13 @@
+{
+  "pair_id": "C015",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Both records are Pertois-Lebrun Blanc de Blancs, but the cuv\u00e9e designation differs: 'Le Fond du Bateau No. 10' versus 'Le Fond du Bateau No. 15'. These numbered bottlings function like distinct release/lot identifiers, and different lot/cask numbers are treated as separate wines consumers would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Both records are Pertois-Lebrun Blanc de Blancs, but the cuv\u00e9e designation differs: 'Le Fond du Bateau No. 10' versus 'Le Fond du Bateau No. 15'. These numbered bottlings function like distinct release/lot identifiers, and different lot/cask numbers are treated as separate wines consumers would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 95,
+  "elapsed": 3.2116193771362305,
+  "error": null
+}

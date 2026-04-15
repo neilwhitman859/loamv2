@@ -1,0 +1,13 @@
+{
+  "pair_id": "C023",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, appellation, and color. The only difference is the varietal suffix 'Shiraz' in Wine B, which is a common abbreviation for Syrah, the grape listed for Wine A. This suggests Wine B is simply a more specific naming of the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, appellation, and color. The only difference is the varietal suffix 'Shiraz' in Wine B, which is a common abbreviation for Syrah, the grape listed for Wine A. This suggests Wine B is simply a more specific naming of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 81,
+  "elapsed": 1.2869517803192139,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C027",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":1.0,\"reasoning\":\"Both wines are from the same producer, Maison Champy, made from Pinot Noir, and classified as red Grand Cru, but they come from distinct Burgundy Grand Cru vineyards: Echezeaux vs. Grands-Echezeaux, which are separate appellations. Different vineyard designations indicate distinct bottlings that would not share a single page in a wine encyclopedia. Per the rules, different vineyard designations mean DIFFERENT wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from the same producer, Maison Champy, made from Pinot Noir, and classified as red Grand Cru, but they come from distinct Burgundy Grand Cru vineyards: Echezeaux vs. Grands-Echezeaux, which are separate appellations. Different vineyard designations indicate distinct bottlings that would not share a single page in a wine encyclopedia. Per the rules, different vineyard designations mean DIFFERENT wines.",
+  "parse_ok": true,
+  "tokens_in": 602,
+  "tokens_out": 484,
+  "elapsed": 4.181739091873169,
+  "error": null
+}

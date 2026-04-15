@@ -1,0 +1,13 @@
+{
+  "pair_id": "B024",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors (white vs. red) and distinct grape compositions. Wine A is a white blend featuring Sauvignon Blanc and Muscadelle, while Wine B is a red blend containing Merlot Noir.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors (white vs. red) and distinct grape compositions. Wine A is a white blend featuring Sauvignon Blanc and Muscadelle, while Wine B is a red blend containing Merlot Noir.",
+  "parse_ok": true,
+  "tokens_in": 444,
+  "tokens_out": 64,
+  "elapsed": 1.6885902881622314,
+  "error": null
+}

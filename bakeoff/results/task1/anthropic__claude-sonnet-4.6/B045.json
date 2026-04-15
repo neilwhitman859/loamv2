@@ -1,0 +1,13 @@
+{
+  "pair_id": "B045",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a red wine and Wine B is a white wine, which alone makes them different bottlings. Additionally, they have different note numbers (#1 vs #3), indicating distinct cuv\u00e9es within the Polifonia de Purcari series. Different colors and different lot/note designations confirm these are separate wines a consumer would encounter independently.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a red wine and Wine B is a white wine, which alone makes them different bottlings. Additionally, they have different note numbers (#1 vs #3), indicating distinct cuv\u00e9es within the Polifonia de Purcari series. Different colors and different lot/note designations confirm these are separate wines a consumer would encounter independently.",
+  "parse_ok": true,
+  "tokens_in": 500,
+  "tokens_out": 97,
+  "elapsed": 3.606623888015747,
+  "error": null
+}

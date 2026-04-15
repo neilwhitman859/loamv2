@@ -1,0 +1,13 @@
+{
+  "pair_id": "D011",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Wine B's name 'Malmsey' is a common synonym for the Malvasia grape, which is present in Wine A's blend (MALVASIA FINA). The core identifiers\u2014producer (Borges), cuv\u00e9e name (Rare Rich 1870), and vintage\u2014are identical, and the varietal suffix difference alone typically indicates abbreviation or synonym use, not a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Wine B's name 'Malmsey' is a common synonym for the Malvasia grape, which is present in Wine A's blend (MALVASIA FINA). The core identifiers\u2014producer (Borges), cuv\u00e9e name (Rare Rich 1870), and vintage\u2014are identical, and the varietal suffix difference alone typically indicates abbreviation or synonym use, not a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 455,
+  "tokens_out": 109,
+  "elapsed": 19.252406358718872,
+  "error": null
+}

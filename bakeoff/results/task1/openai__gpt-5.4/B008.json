@@ -1,0 +1,13 @@
+{
+  "pair_id": "B008",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines because they are made from different grape varieties: Cabernet Sauvignon vs Sauvignon Blanc. They also differ in color and have distinct LWIN identifiers, indicating separate bottlings under the same producer and vineyard name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines because they are made from different grape varieties: Cabernet Sauvignon vs Sauvignon Blanc. They also differ in color and have distinct LWIN identifiers, indicating separate bottlings under the same producer and vineyard name.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 65,
+  "elapsed": 2.3068044185638428,
+  "error": null
+}

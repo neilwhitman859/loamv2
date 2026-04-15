@@ -1,0 +1,13 @@
+{
+  "pair_id": "D017",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Villadoria, white, 100% Cortese from the Gavi region. The names 'Comune di Gavi' and 'del Comune di Gavi' are formatting variations of the same wine\u2014'del' is simply an Italian article prepended to the name. This is a standard naming convention difference, not a distinct bottling.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Villadoria, white, 100% Cortese from the Gavi region. The names 'Comune di Gavi' and 'del Comune di Gavi' are formatting variations of the same wine\u2014'del' is simply an Italian article prepended to the name. This is a standard naming convention difference, not a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 110,
+  "elapsed": 2.8315646648406982,
+  "error": null
+}

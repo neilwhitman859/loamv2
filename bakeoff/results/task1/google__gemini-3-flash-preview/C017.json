@@ -1,0 +1,13 @@
+{
+  "pair_id": "C017",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine B simply includes the grape variety 'Riesling' in the name, which is the standard grape for the Forster Kirchenst\u00fcck vineyard. Both records represent the same producer, vineyard, and Pr\u00e4dikat level (Sp\u00e4tlese), making them the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine B simply includes the grape variety 'Riesling' in the name, which is the standard grape for the Forster Kirchenst\u00fcck vineyard. Both records represent the same producer, vineyard, and Pr\u00e4dikat level (Sp\u00e4tlese), making them the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 76,
+  "elapsed": 1.7222213745117188,
+  "error": null
+}

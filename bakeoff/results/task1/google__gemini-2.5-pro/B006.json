@@ -1,0 +1,13 @@
+{
+  "pair_id": "B006",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are different because they have distinct grape compositions. While both are red blends from Vistalba containing Cot and Cabernet Sauvignon, Wine B also includes Dolcetto in the blend, which is absent from Wine A. The name difference, 'Corte' versus 'Corte B', further reinforces that these are separate and distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are different because they have distinct grape compositions. While both are red blends from Vistalba containing Cot and Cabernet Sauvignon, Wine B also includes Dolcetto in the blend, which is absent from Wine A. The name difference, 'Corte' versus 'Corte B', further reinforces that these are separate and distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 454,
+  "tokens_out": 897,
+  "elapsed": 10.854140520095825,
+  "error": null
+}

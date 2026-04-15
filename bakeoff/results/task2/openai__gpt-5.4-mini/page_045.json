@@ -1,0 +1,32 @@
+{
+  "page_id": "page_045",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"wines_found\":[{\"name\":\"Bonterra Red Blend 2023\",\"vintage_year\":2023,\"abv_pct\":null,\"blend\":[{\"grape\":\"Petite Sirah\",\"pct\":null},{\"grape\":\"Merlot\",\"pct\":null}],\"oak\":null,\"cases_produced\":null,\"chemistry\":null,\"winemaker\":null,\"farming\":\"organic\"}]}",
+  "wines_found": [
+    {
+      "name": "Bonterra Red Blend 2023",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": [
+        {
+          "grape": "Petite Sirah",
+          "pct": null
+        },
+        {
+          "grape": "Merlot",
+          "pct": null
+        }
+      ],
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 50481,
+  "tokens_out": 85,
+  "elapsed": 6.795740604400635,
+  "error": null
+}

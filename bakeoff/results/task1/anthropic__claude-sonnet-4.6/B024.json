@@ -1,0 +1,13 @@
+{
+  "pair_id": "B024",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.98, \"reasoning\": \"Although both wines share the same name 'Les Jardins' and producer 'La Tour Blanche', Wine A is white (Sauvignon Blanc, Muscadelle, Mondeuse Blanche) while Wine B is red (Mondeuse Blanche, Merlot Noir). Different colors and different grape compositions mean these are distinct bottlings a consumer would encounter separately. Different grapes = DIFFERENT wine, always.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Although both wines share the same name 'Les Jardins' and producer 'La Tour Blanche', Wine A is white (Sauvignon Blanc, Muscadelle, Mondeuse Blanche) while Wine B is red (Mondeuse Blanche, Merlot Noir). Different colors and different grape compositions mean these are distinct bottlings a consumer would encounter separately. Different grapes = DIFFERENT wine, always.",
+  "parse_ok": true,
+  "tokens_in": 517,
+  "tokens_out": 121,
+  "elapsed": 2.4826884269714355,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B024",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"Although both wines share the name 'Les Jardins' from the same producer, they are distinct wines because they have different colors (white vs. red) and different grape compositions. The presence of different primary grape varieties confirms these are separate bottlings.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines share the name 'Les Jardins' from the same producer, they are distinct wines because they have different colors (white vs. red) and different grape compositions. The presence of different primary grape varieties confirms these are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 78,
+  "elapsed": 1.9024717807769775,
+  "error": null
+}

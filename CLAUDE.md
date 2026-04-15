@@ -164,8 +164,8 @@ constraints. **`ENRICHMENT_ENABLED=false` feature flag on `enrich-wine` stays OF
 through Sprint 3 into Sprint 5** until voice module + L3 fact-check gate + grape
 repair compound + AI-disclaimer UI all land.
 
-**Sprint sequence:** 1 (Build, done) → 2 (Audit, done) → 3 (Fix, done) → **4 (Demo, active)** → Scale (informed by demo feedback).
-Sprint 4 plan: [`data/sprints/demo/plan.md`](data/sprints/demo/plan.md). Enrichment at scale does NOT start until after demo feedback. See `data/dashboard.html` for live progress.
+**Sprint sequence:** 1 (Build, done) → 2 (Audit, done) → 3 (Fix, done) → 4 (Demo, done) → **5 (AI Bakeoff, done)** → 6 (Execute with winners: dedup, data fill, re-enrichment, share).
+Sprint 4 plan: [`data/sprints/demo/plan.md`](data/sprints/demo/plan.md). Sprint 5 plan: [`data/sprints/ai-bakeoff/plan.md`](data/sprints/ai-bakeoff/plan.md). Sprint 5 outcome: [`bakeoff/scores/tournament_results.md`](bakeoff/scores/tournament_results.md). See `data/dashboard.html` for live progress.
 
 **Always query the DB for live numbers.** Never rely on hardcoded counts in this file.
 Live sprint state: `data/sprints/current.json`.
@@ -300,14 +300,20 @@ See `docs/HISTORY.md` for promotion results, session-by-session build history, a
 
 ## Current Focus
 
-**Sprint 5 (AI Bakeoff) — ACTIVE.** Model selection before scaling enrichment.
-B5.1-5.5 done. **B5.6 tournament in progress** in a separate session — scoring Task 3 prose outputs via web-grounded Opus judge in 3 rounds, eliminating models progressively. DeepSeek v3.2 protected from elimination per user preference. GPT-5-mini's max_tokens fix already applied (8000). Ground truth for all 30 wines in `bakeoff/data/task3/ground_truth.json` (3 verification passes — found and fixed errors in my own pass-1 claims). Calibration notes: `bakeoff/scores/calibration_notes.md`. Web-grounding patterns learned: `docs/WEB_GROUNDING_PATTERNS.md`.
+**Sprint 5 (AI Bakeoff) — COMPLETE 2026-04-15.** Production model chosen: **openai/gpt-5.4-mini**.
+B5.1–B5.7 all done. 3-round Opus-judged tournament across 30 wines × 21 models. gpt-5.4-mini at composite 3.960 (0.08 below gpt-5.4 for 15% the cost) with zero banned-word violations and flat tier performance. Sonnet 4.6 (production baseline) eliminated at R2 rank 7 — gpt-5.4-mini beats it by 0.41 points at 1/13 the cost. DeepSeek v3.2 protected per user preference, finished 6th at $93/170K — budget-tier option. Full report: [`bakeoff/scores/tournament_results.md`](bakeoff/scores/tournament_results.md). Sprint 5 total spend: ~$37 (~$22 B5.6 tournament within user's target, Sprint 5 over original $25 cap).
+
+**Production implications (Sprint 6 inputs):**
+- Re-enriching 515 demo wines with gpt-5.4-mini: ~$1.40 (vs ~$18 on Sonnet baseline)
+- Full 156K corpus projection with gpt-5.4-mini: ~$415 (vs ~$5,200 on Sonnet baseline)
+- Judge calibration caveat: auto-judge systematically scored Anthropic models lower on correctness than hand-calibration did (hard-cap over-application). Rankings still valid relatively; consumers will likely perceive Opus/Sonnet quality slightly higher than judge composites suggest.
+- `ENRICHMENT_ENABLED=false` feature flag stays OFF — Sprint 6 runs via Python pipeline scripts with gpt-5.4-mini (OpenRouter), not the edge function.
 
 **Sprint 4 (Demo) closed 2026-04-14.** 515/515 wines Grade A, $37.44 spent. Full details in `data/sprints/demo/`.
 
 Live tracker: `data/dashboard.html`.
 
-**Roadmap:** Build (done) → Audit (done) → Fix (done) → Demo (done) → **AI Bakeoff (active)** → Data fill + re-enrichment with winning model → Scale.
+**Roadmap:** Build (done) → Audit (done) → Fix (done) → Demo (done) → AI Bakeoff (done) → **Execute with winners (next): dedup, data fill, re-enrichment with gpt-5.4-mini, share with friends.**
 
 **Core product insight (2026-04-12):** Loam's product is STRUCTURED DATA RENDERED
 CLEARLY, not AI prose. The magic is: look up any wine → see organized, trustworthy,

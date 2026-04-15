@@ -1,0 +1,13 @@
+{
+  "pair_id": "D012",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different Madeira wines from Borges: Boal and Sercial are distinct grape varieties/traditionally distinct styles, not mere naming variants. Even though both are labeled Reserva 10 YO, the varietal difference means they are separate bottlings that would be listed separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different Madeira wines from Borges: Boal and Sercial are distinct grape varieties/traditionally distinct styles, not mere naming variants. Even though both are labeled Reserva 10 YO, the varietal difference means they are separate bottlings that would be listed separately.",
+  "parse_ok": true,
+  "tokens_in": 410,
+  "tokens_out": 76,
+  "elapsed": 1.8673052787780762,
+  "error": null
+}

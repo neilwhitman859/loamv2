@@ -1,0 +1,13 @@
+{
+  "pair_id": "A018",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"The wines have different grape varieties: Wine A is Chardonnay Blanc, while Wine B is Viognier. Under the rules, different grapes always indicate different wines even if the producer and cuv\u00e9e name are similar. The shared 'Quarter Acre' name therefore does not make them the same bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "The wines have different grape varieties: Wine A is Chardonnay Blanc, while Wine B is Viognier. Under the rules, different grapes always indicate different wines even if the producer and cuv\u00e9e name are similar. The shared 'Quarter Acre' name therefore does not make them the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 82,
+  "elapsed": 1.5002391338348389,
+  "error": null
+}

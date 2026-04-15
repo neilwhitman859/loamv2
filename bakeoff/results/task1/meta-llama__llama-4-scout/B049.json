@@ -1,0 +1,13 @@
+{
+  "pair_id": "B049",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, Wine A being white and Wine B being red, which is a key factor in determining different wines. Despite sharing the same producer and name, the color difference indicates they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, Wine A being white and Wine B being red, which is a key factor in determining different wines. Despite sharing the same producer and name, the color difference indicates they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 415,
+  "tokens_out": 68,
+  "elapsed": 1.146012783050537,
+  "error": null
+}

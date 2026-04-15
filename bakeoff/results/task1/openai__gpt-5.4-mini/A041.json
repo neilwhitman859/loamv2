@@ -1,0 +1,13 @@
+{
+  "pair_id": "A041",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"Both records are from Stephen Ross and share the Bien Nacido vineyard/cuv\u00e9e name, with the second record simply adding the grape variety Pinot Noir. Since the color matches and there is no evidence of a different tier, style, or distinct bottling, the varietal suffix difference alone indicates the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "Both records are from Stephen Ross and share the Bien Nacido vineyard/cuv\u00e9e name, with the second record simply adding the grape variety Pinot Noir. Since the color matches and there is no evidence of a different tier, style, or distinct bottling, the varietal suffix difference alone indicates the same wine.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 84,
+  "elapsed": 1.6101198196411133,
+  "error": null
+}

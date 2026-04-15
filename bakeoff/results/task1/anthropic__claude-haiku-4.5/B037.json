@@ -1,0 +1,13 @@
+{
+  "pair_id": "B037",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer (Parra Jimenez) and name (Camino), but they differ fundamentally in color: Wine A is red while Wine B is white. Red and white wines from the same producer and vineyard are distinct bottlings that consumers would encounter separately, representing different grape varieties and styles.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer (Parra Jimenez) and name (Camino), but they differ fundamentally in color: Wine A is red while Wine B is white. Red and white wines from the same producer and vineyard are distinct bottlings that consumers would encounter separately, representing different grape varieties and styles.",
+  "parse_ok": true,
+  "tokens_in": 466,
+  "tokens_out": 96,
+  "elapsed": 2.5513510704040527,
+  "error": null
+}

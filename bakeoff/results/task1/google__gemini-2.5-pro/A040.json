@@ -1,0 +1,13 @@
+{
+  "pair_id": "A040",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines are made from different grapes. Wine A is a blend of Merlot and Chardonnay, while Wine B is a Pinot Noir. The name 'Appellation Series' refers to a line of wines from the producer, and these are two distinct bottlings within that series, differentiated by their grape variety.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from different grapes. Wine A is a blend of Merlot and Chardonnay, while Wine B is a Pinot Noir. The name 'Appellation Series' refers to a line of wines from the producer, and these are two distinct bottlings within that series, differentiated by their grape variety.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 752,
+  "elapsed": 11.08301305770874,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C004",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The two wine records have the same producer (Raumland), the same name (Trauben Secco Alkoholfrei), and the same color (white). The addition of 'white' in Wine B's name does not indicate a different wine style or composition, and the LWIN numbers are likely related but not identical, which can occur due to different data entries.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The two wine records have the same producer (Raumland), the same name (Trauben Secco Alkoholfrei), and the same color (white). The addition of 'white' in Wine B's name does not indicate a different wine style or composition, and the LWIN numbers are likely related but not identical, which can occur due to different data entries.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 98,
+  "elapsed": 1.1247522830963135,
+  "error": null
+}

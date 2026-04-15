@@ -1,0 +1,13 @@
+{
+  "pair_id": "A033",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the producer Calabria, white color, and Wine A explicitly lists VERMENTINO grapes, matching the varietal suffix in Wine B's 'Private Bin Vermentino'. The name difference is solely the addition of the grape variety, which rules state typically indicates the same wine as an abbreviation. No conflicting details like different grapes, classifications, or vineyards are present.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the producer Calabria, white color, and Wine A explicitly lists VERMENTINO grapes, matching the varietal suffix in Wine B's 'Private Bin Vermentino'. The name difference is solely the addition of the grape variety, which rules state typically indicates the same wine as an abbreviation. No conflicting details like different grapes, classifications, or vineyards are present.",
+  "parse_ok": true,
+  "tokens_in": 561,
+  "tokens_out": 441,
+  "elapsed": 4.39275860786438,
+  "error": null
+}

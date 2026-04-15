@@ -1,0 +1,13 @@
+{
+  "pair_id": "D016",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"The names 'Roche' and 'Sur Roche' suggest different vineyard designations or cuv\u00e9es from the same producer. While the producer and color are the same, the distinct LWIN numbers and the naming difference indicate these are likely separate bottlings, not just a formatting variation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "The names 'Roche' and 'Sur Roche' suggest different vineyard designations or cuv\u00e9es from the same producer. While the producer and color are the same, the distinct LWIN numbers and the naming difference indicate these are likely separate bottlings, not just a formatting variation.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 81,
+  "elapsed": 2.5758516788482666,
+  "error": null
+}

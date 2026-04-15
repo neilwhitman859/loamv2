@@ -1,0 +1,13 @@
+{
+  "pair_id": "C044",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A specifies lot number 'Nr17' (Auktion Nr17) while Wine B is the general Auslese Auktion without a specific lot number \u2014 different lot/cask numbers at the same Pr\u00e4dikat level constitute different wines. Additionally, the color metadata shows Wine A as red and Wine B as white, which would make them definitively different wines. The specific auction lot designation Nr17 alone is sufficient to classify these as different bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A specifies lot number 'Nr17' (Auktion Nr17) while Wine B is the general Auslese Auktion without a specific lot number \u2014 different lot/cask numbers at the same Pr\u00e4dikat level constitute different wines. Additionally, the color metadata shows Wine A as red and Wine B as white, which would make them definitively different wines. The specific auction lot designation Nr17 alone is sufficient to classify these as different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 523,
+  "tokens_out": 122,
+  "elapsed": 4.463339328765869,
+  "error": null
+}

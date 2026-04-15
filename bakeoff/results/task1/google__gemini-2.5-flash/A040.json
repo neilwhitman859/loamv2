@@ -1,0 +1,13 @@
+{
+  "pair_id": "A040",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a blend of Merlot and Chardonnay, while Wine B is a Pinot Noir. Even though they share the 'Appellation Series' name, the different grape varieties indicate they are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a blend of Merlot and Chardonnay, while Wine B is a Pinot Noir. Even though they share the 'Appellation Series' name, the different grape varieties indicate they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 63,
+  "elapsed": 1.328373670578003,
+  "error": null
+}

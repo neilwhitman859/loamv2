@@ -1,0 +1,13 @@
+{
+  "pair_id": "C049",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is white while Wine B is red, indicating fundamentally different wines by color. 'Brut Nature' is drier (zero dosage) than 'Brut', representing distinct sweetness levels in sparkling wines. Despite sharing producer Vicente Gandia and base name Hoya de Cadenas, these differences confirm separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is white while Wine B is red, indicating fundamentally different wines by color. 'Brut Nature' is drier (zero dosage) than 'Brut', representing distinct sweetness levels in sparkling wines. Despite sharing producer Vicente Gandia and base name Hoya de Cadenas, these differences confirm separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 573,
+  "tokens_out": 528,
+  "elapsed": 7.491831302642822,
+  "error": null
+}

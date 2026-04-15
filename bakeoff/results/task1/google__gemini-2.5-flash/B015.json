@@ -1,0 +1,13 @@
+{
+  "pair_id": "B015",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Ros\u00e9 wine, while Wine B is a Red wine, as indicated by 'Rose' and 'Rouge' in their names and explicitly stated in the color attributes. These are distinct bottlings that a consumer would encounter separately, even if from the same producer and vineyard.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Ros\u00e9 wine, while Wine B is a Red wine, as indicated by 'Rose' and 'Rouge' in their names and explicitly stated in the color attributes. These are distinct bottlings that a consumer would encounter separately, even if from the same producer and vineyard.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 82,
+  "elapsed": 1.270289659500122,
+  "error": null
+}

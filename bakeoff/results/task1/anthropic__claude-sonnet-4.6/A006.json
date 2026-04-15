@@ -1,0 +1,13 @@
+{
+  "pair_id": "A006",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Radio-Coteau and refer to 'Clos Platt' \u2014 Wine A is simply the abbreviated name while Wine B appends the varietal 'Pinot Noir'. Both are red wines made from Pinot Noir, confirming they are the same bottling. The varietal suffix difference alone does not indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Radio-Coteau and refer to 'Clos Platt' \u2014 Wine A is simply the abbreviated name while Wine B appends the varietal 'Pinot Noir'. Both are red wines made from Pinot Noir, confirming they are the same bottling. The varietal suffix difference alone does not indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 102,
+  "elapsed": 3.845649480819702,
+  "error": null
+}

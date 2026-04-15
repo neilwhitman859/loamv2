@@ -1,0 +1,13 @@
+{
+  "pair_id": "A033",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines have the same producer, grape variety, and color. The only difference is the presence of 'Vermentino' in Wine B, which is likely an abbreviation for the grape variety already listed in Wine A.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines have the same producer, grape variety, and color. The only difference is the presence of 'Vermentino' in Wine B, which is likely an abbreviation for the grape variety already listed in Wine A.",
+  "parse_ok": true,
+  "tokens_in": 462,
+  "tokens_out": 67,
+  "elapsed": 3.3242712020874023,
+  "error": null
+}

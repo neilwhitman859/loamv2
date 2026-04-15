@@ -1,0 +1,13 @@
+{
+  "pair_id": "C043",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"These wines differ in German Pr\u00e4dikat level: Sp\u00e4tlese vs Auslese represent distinct ripeness classifications that produce different sweetness and alcohol profiles. According to the classification rules, different Pr\u00e4dikat levels constitute different wines, even when vineyard, producer, and grape variety are identical.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These wines differ in German Pr\u00e4dikat level: Sp\u00e4tlese vs Auslese represent distinct ripeness classifications that produce different sweetness and alcohol profiles. According to the classification rules, different Pr\u00e4dikat levels constitute different wines, even when vineyard, producer, and grape variety are identical.",
+  "parse_ok": true,
+  "tokens_in": 512,
+  "tokens_out": 92,
+  "elapsed": 3.2592761516571045,
+  "error": null
+}

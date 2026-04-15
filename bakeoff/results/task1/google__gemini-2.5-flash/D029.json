@@ -1,0 +1,13 @@
+{
+  "pair_id": "D029",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"While both wines are Cabernet Sauvignon from the same producer, the different regional designations (Franschhoek vs. Coastal Region) indicate they are sourced from different vineyards or appellations. This distinction would typically result in two separate bottlings and distinct wines for a consumer.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "While both wines are Cabernet Sauvignon from the same producer, the different regional designations (Franschhoek vs. Coastal Region) indicate they are sourced from different vineyards or appellations. This distinction would typically result in two separate bottlings and distinct wines for a consumer.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 88,
+  "elapsed": 1.6440668106079102,
+  "error": null
+}

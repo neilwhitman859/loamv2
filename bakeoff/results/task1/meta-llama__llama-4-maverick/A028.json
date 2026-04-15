@@ -1,0 +1,13 @@
+{
+  "pair_id": "A028",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"The wines have the same producer, Owen Roe, and the same grape variety, Syrah. The difference in name is likely due to abbreviation, with 'Lady Rosa Syrah' being the full name and 'Lady Rosa' being a shortened version. The color of both wines is red, further supporting they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "The wines have the same producer, Owen Roe, and the same grape variety, Syrah. The difference in name is likely due to abbreviation, with 'Lady Rosa Syrah' being the full name and 'Lady Rosa' being a shortened version. The color of both wines is red, further supporting they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 488,
+  "tokens_out": 89,
+  "elapsed": 1.565680742263794,
+  "error": null
+}

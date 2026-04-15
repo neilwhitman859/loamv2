@@ -1,0 +1,13 @@
+{
+  "pair_id": "C016",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different appellations, Barolo and Barbaresco, which are distinct regions within Piedmont, Italy. Despite sharing the same producer, Bartolo Mascarello, and grape variety, Nebbiolo, the difference in appellation indicates they are different wines. Additionally, both wines are classified as Riserva, but the combination of producer, grape, and especially appellation leads to the conclusion that they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different appellations, Barolo and Barbaresco, which are distinct regions within Piedmont, Italy. Despite sharing the same producer, Bartolo Mascarello, and grape variety, Nebbiolo, the difference in appellation indicates they are different wines. Additionally, both wines are classified as Riserva, but the combination of producer, grape, and especially appellation leads to the conclusion that they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 466,
+  "tokens_out": 111,
+  "elapsed": 1.3744451999664307,
+  "error": null
+}

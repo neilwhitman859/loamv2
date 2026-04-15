@@ -1,0 +1,13 @@
+{
+  "pair_id": "A037",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are produced by Squawking Magpie, have the same color (red), and share the same grape variety (Syrah). The difference in name is likely due to abbreviation, with 'Stoned Crow Syrah' being a more explicit version of 'Stoned Crow'. The absence of information suggesting multiple Syrah wines from the same producer increases the likelihood that they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are produced by Squawking Magpie, have the same color (red), and share the same grape variety (Syrah). The difference in name is likely due to abbreviation, with 'Stoned Crow Syrah' being a more explicit version of 'Stoned Crow'. The absence of information suggesting multiple Syrah wines from the same producer increases the likelihood that they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 496,
+  "tokens_out": 103,
+  "elapsed": 1.4632577896118164,
+  "error": null
+}

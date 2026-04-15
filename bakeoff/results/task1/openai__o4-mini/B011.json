@@ -1,0 +1,13 @@
+{
+  "pair_id": "B011",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is red made from Semillon and aged 15 years, while Wine B is a white Medium Sweet aged 5 years; they have different color, grape variety, and age, indicating distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is red made from Semillon and aged 15 years, while Wine B is a white Medium Sweet aged 5 years; they have different color, grape variety, and age, indicating distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 232,
+  "elapsed": 3.805691719055176,
+  "error": null
+}

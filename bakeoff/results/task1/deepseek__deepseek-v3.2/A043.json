@@ -1,0 +1,13 @@
+{
+  "pair_id": "A043",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Shiraz and Shiraz Durif refer to the same grape variety (Durif is the synonym for Petite Sirah, but here it's appended as a suffix, likely for naming clarity). The producer, color, and LWINs are closely sequential, indicating a single wine with a minor name variation, not a different grape composition.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Shiraz and Shiraz Durif refer to the same grape variety (Durif is the synonym for Petite Sirah, but here it's appended as a suffix, likely for naming clarity). The producer, color, and LWINs are closely sequential, indicating a single wine with a minor name variation, not a different grape composition.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 93,
+  "elapsed": 3.5846779346466064,
+  "error": null
+}

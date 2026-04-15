@@ -1,0 +1,13 @@
+{
+  "pair_id": "C006",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although the wines share a producer and base name ('Hommage 1860 Brut'), Wine B is explicitly a 'Rose' version. A ros\u00e9 is a distinct style and color of wine from a standard white brut (Wine A). These are two separate bottlings, not a simple naming variation.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the wines share a producer and base name ('Hommage 1860 Brut'), Wine B is explicitly a 'Rose' version. A ros\u00e9 is a distinct style and color of wine from a standard white brut (Wine A). These are two separate bottlings, not a simple naming variation.",
+  "parse_ok": true,
+  "tokens_in": 453,
+  "tokens_out": 1041,
+  "elapsed": 10.595643520355225,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D029",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Boekenhoutskloof and are Cabernet Sauvignon, but they are from different geographical indications (Franschhoek vs Coastal Region), which indicates distinct vineyard sourcing or appellation bottlings. In wine classification, different regions or vineyard designations typically represent separate bottlings that a consumer would encounter as distinct products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Boekenhoutskloof and are Cabernet Sauvignon, but they are from different geographical indications (Franschhoek vs Coastal Region), which indicates distinct vineyard sourcing or appellation bottlings. In wine classification, different regions or vineyard designations typically represent separate bottlings that a consumer would encounter as distinct products.",
+  "parse_ok": true,
+  "tokens_in": 519,
+  "tokens_out": 98,
+  "elapsed": 2.3214361667633057,
+  "error": null
+}

@@ -1,0 +1,20 @@
+{
+  "wine_id": "dffc0909-1d13-4b9f-9de7-98fd212c6b5f",
+  "wine_name": "Cakebread Cellars Cuttings Wharf Chardonnay, Los Carneros",
+  "tier": "A",
+  "model": "openai/gpt-5.4",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.05,
+  "wrong_facts": [
+    "The output mentions 'Diablo-type clay soils' which is not verified in the context data or ground truth - ground truth specifies 'Haire loam soils' specifically, not Diablo-type clays",
+    "The output describes 'clay-heavy soils' and 'heavy clay loam' repeatedly, but the ground truth says 'shallow loamy soils' and 'Haire loam soils' - loam is not the same as heavy clay loam, and the appellation context's 'clay-heavy soils' is a general Carneros description, not specific to this vineyard"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output correctly identifies the naming origin (Cuttings Wharf Road) and the cool-climate Carneros character, and it honestly flags when it lacks cellar details. However, it over-emphasizes clay and heavy clay loam for this specific vineyard when the ground truth says 'Haire loam soils' and 'shallow loamy soils' — loam and heavy clay loam are meaningfully different soil types, and the Diablo reference appears fabricated. The mention of Haire soils is correct but paired with the wrong Diablo addition. Voice is strong: direct, opinionated, no banned words, good food pairings with reasoning, honest about unknowns. Specificity is good with named competitors and soil types, though the soil characterization is partially wrong. Very useful insider take and market positioning.",
+  "judge_tokens_in": 4089,
+  "judge_tokens_out": 385
+}

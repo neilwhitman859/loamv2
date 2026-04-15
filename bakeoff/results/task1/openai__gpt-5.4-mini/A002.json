@@ -1,0 +1,13 @@
+{
+  "pair_id": "A002",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.98,\"reasoning\":\"Both records are from Firestone and share the same base cuv\u00e9e name, \u201cClone 174.\u201d The only difference is that Wine B appends the varietal suffix \u201cSyrah,\u201d and Wine A already lists the grape as Syrah, which fits the rule that a varietal suffix alone usually indicates the same wine. Both are also red, with no evidence of a different classification or bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Both records are from Firestone and share the same base cuv\u00e9e name, \u201cClone 174.\u201d The only difference is that Wine B appends the varietal suffix \u201cSyrah,\u201d and Wine A already lists the grape as Syrah, which fits the rule that a varietal suffix alone usually indicates the same wine. Both are also red, with no evidence of a different classification or bottling.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 102,
+  "elapsed": 2.7452313899993896,
+  "error": null
+}

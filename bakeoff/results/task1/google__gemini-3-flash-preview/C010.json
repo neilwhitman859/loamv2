@@ -1,0 +1,13 @@
+{
+  "pair_id": "C010",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is specifically designated as 'Nr12', which in German winemaking (particularly for Peter Jakob Kuhn) indicates a specific auction lot or cask number. Since different lot numbers at the same Pr\u00e4dikat level represent distinct bottlings, and Wine B lacks this specific identifier, they are treated as different products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is specifically designated as 'Nr12', which in German winemaking (particularly for Peter Jakob Kuhn) indicates a specific auction lot or cask number. Since different lot numbers at the same Pr\u00e4dikat level represent distinct bottlings, and Wine B lacks this specific identifier, they are treated as different products.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 87,
+  "elapsed": 1.6232283115386963,
+  "error": null
+}

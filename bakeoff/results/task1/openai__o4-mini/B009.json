@@ -1,0 +1,13 @@
+{
+  "pair_id": "B009",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"One is a white cuv\u00e9e and the other is a ros\u00e9\u2014different wine styles are always distinct even if names are similar.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "One is a white cuv\u00e9e and the other is a ros\u00e9\u2014different wine styles are always distinct even if names are similar.",
+  "parse_ok": true,
+  "tokens_in": 400,
+  "tokens_out": 144,
+  "elapsed": 4.665799856185913,
+  "error": null
+}

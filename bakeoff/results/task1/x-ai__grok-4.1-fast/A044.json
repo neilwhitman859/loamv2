@@ -1,0 +1,13 @@
+{
+  "pair_id": "A044",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":1.0,\"reasoning\":\"Both wines share the same producer (Creekside) and base name 'Under Current Naked', with Wine B adding the 'Semillon' varietal suffix that matches Wine A's specified grape (SEMILLON). This fits the rule where varietal suffix differences alone indicate the same wine, as the shorter name is an abbreviation. Both are white wines with no evidence of multiple wines from the same vineyard using different grapes or other distinguishing factors like classification or sweetness.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Creekside) and base name 'Under Current Naked', with Wine B adding the 'Semillon' varietal suffix that matches Wine A's specified grape (SEMILLON). This fits the rule where varietal suffix differences alone indicate the same wine, as the shorter name is an abbreviation. Both are white wines with no evidence of multiple wines from the same vineyard using different grapes or other distinguishing factors like classification or sweetness.",
+  "parse_ok": true,
+  "tokens_in": 566,
+  "tokens_out": 479,
+  "elapsed": 3.6762490272521973,
+  "error": null
+}

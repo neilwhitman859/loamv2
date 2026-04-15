@@ -1,0 +1,13 @@
+{
+  "pair_id": "C038",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.80,\"reasoning\":\"Both records refer to the producer\u2019s Reserva red (\u201cTinto\u201d) and differ only by inclusion of the cuv\u00e9e name \u201cRisco.\u201d No evidence of multiple Reserva bottlings from different vineyards, so this is an abbreviated naming of the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both records refer to the producer\u2019s Reserva red (\u201cTinto\u201d) and differ only by inclusion of the cuv\u00e9e name \u201cRisco.\u201d No evidence of multiple Reserva bottlings from different vineyards, so this is an abbreviated naming of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 271,
+  "elapsed": 6.2402262687683105,
+  "error": null
+}

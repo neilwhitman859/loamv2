@@ -1,0 +1,13 @@
+{
+  "pair_id": "D021",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A specifies 'Auslese', a German Pr\u00e4dikat level, while Wine B does not, indicating different ripeness/quality tiers which are explicitly ruled as distinct wines. Both share the same producer (Potzinger), vineyard/cuv\u00e9e ('Kaltenegg Traminer Grosse Cuvee'), and color (white), but the Pr\u00e4dikat difference alone makes them separate bottlings. Distinct LWIN numbers (2184524 vs 2184511) further support they are treated as different entries.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A specifies 'Auslese', a German Pr\u00e4dikat level, while Wine B does not, indicating different ripeness/quality tiers which are explicitly ruled as distinct wines. Both share the same producer (Potzinger), vineyard/cuv\u00e9e ('Kaltenegg Traminer Grosse Cuvee'), and color (white), but the Pr\u00e4dikat difference alone makes them separate bottlings. Distinct LWIN numbers (2184524 vs 2184511) further support they are treated as different entries.",
+  "parse_ok": true,
+  "tokens_in": 580,
+  "tokens_out": 748,
+  "elapsed": 6.683390378952026,
+  "error": null
+}

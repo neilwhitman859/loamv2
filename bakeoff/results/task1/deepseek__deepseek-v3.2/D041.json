@@ -1,0 +1,13 @@
+{
+  "pair_id": "D041",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer (Pommery), same cuv\u00e9e name (Apanage Cuvee 1874), and are both white. The only difference is the addition of 'Brut' in Wine B, which indicates sweetness level, but for Champagne, 'Brut' is the standard style for a cuv\u00e9e like this and is likely an omitted/added descriptor rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer (Pommery), same cuv\u00e9e name (Apanage Cuvee 1874), and are both white. The only difference is the addition of 'Brut' in Wine B, which indicates sweetness level, but for Champagne, 'Brut' is the standard style for a cuv\u00e9e like this and is likely an omitted/added descriptor rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 108,
+  "elapsed": 5.224847316741943,
+  "error": null
+}

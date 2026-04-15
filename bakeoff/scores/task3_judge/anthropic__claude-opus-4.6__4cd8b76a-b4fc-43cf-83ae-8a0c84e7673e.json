@@ -1,0 +1,22 @@
+{
+  "wine_id": "4cd8b76a-b4fc-43cf-83ae-8a0c84e7673e",
+  "wine_name": "Barefoot Buttery Chardonnay, California",
+  "tier": "C",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 5.0,
+  "composite": 4.25,
+  "wrong_facts": [
+    "Woodbridge Chardonnay is not necessarily Gallo-owned in the way stated — Woodbridge by Robert Mondavi is indeed under the Constellation Brands umbrella after the Mondavi acquisition, not E&J Gallo. Actually, Robert Mondavi was acquired by Constellation Brands in 2004, so Woodbridge is Constellation, not Gallo.",
+    "The claim that residual sugar is 'probably 8-12 g/L' is a fabricated specific number range not present in context data."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "8-12 g/L residual sugar"
+  ],
+  "reasoning": "The output is exceptionally well-written with a strong, opinionated voice that perfectly matches Loam's style — direct, honest, specific, and unafraid to be blunt about a mass-market wine. It correctly identifies E&J Gallo ownership, Central Valley sourcing, malolactic fermentation as the buttery mechanism, and the naming origin as a style descriptor — all matching ground truth. However, the fabricated RS range of 8-12 g/L triggers the hard penalty cap of 1.5... but on reflection, the phrasing 'probably 8-12 g/L' is hedged as speculation rather than stated as fact. Still, it's a specific number range presented with enough confidence to mislead. The Woodbridge/Gallo ownership claim is provably wrong (it's Constellation Brands). These errors prevent a high correctness score. The voice is outstanding — no banned words, sharp opinions, real dishes in pairings, honest about the wine's limitations. Specificity is excellent with named competitors, named regions, and chemical explanations. Usefulness is top-tier.",
+  "judge_tokens_in": 3805,
+  "judge_tokens_out": 1000
+}

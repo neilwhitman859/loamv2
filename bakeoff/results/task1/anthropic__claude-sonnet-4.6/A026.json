@@ -1,0 +1,13 @@
+{
+  "pair_id": "A026",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.98, \"reasoning\": \"Both wines are from the same producer (Mount Pleasant/McWilliams) and share the same base name 'Lovedale Cellar Aged.' Wine B simply appends the varietal suffix 'Semillon,' which matches Wine A's listed grape variety. This is a classic case of an abbreviated name vs. full name for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "Both wines are from the same producer (Mount Pleasant/McWilliams) and share the same base name 'Lovedale Cellar Aged.' Wine B simply appends the varietal suffix 'Semillon,' which matches Wine A's listed grape variety. This is a classic case of an abbreviated name vs. full name for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 100,
+  "elapsed": 2.9485490322113037,
+  "error": null
+}

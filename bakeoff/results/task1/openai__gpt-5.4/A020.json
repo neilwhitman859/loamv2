@@ -1,0 +1,13 @@
+{
+  "pair_id": "A020",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.96,\"reasoning\":\"These records conflict on grape/varietal: Wine A is labeled 'Viura' in the name but its grape field says Sauvignon Blanc, while Wine B is explicitly 'Viura Sauvignon Blanc.' Under the stated rules, different grapes make wines different, and the combined naming on Wine B suggests a distinct bottling rather than a simple abbreviation of 'Viura.'\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.96,
+  "reasoning": "These records conflict on grape/varietal: Wine A is labeled 'Viura' in the name but its grape field says Sauvignon Blanc, while Wine B is explicitly 'Viura Sauvignon Blanc.' Under the stated rules, different grapes make wines different, and the combined naming on Wine B suggests a distinct bottling rather than a simple abbreviation of 'Viura.'",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 95,
+  "elapsed": 3.247736930847168,
+  "error": null
+}

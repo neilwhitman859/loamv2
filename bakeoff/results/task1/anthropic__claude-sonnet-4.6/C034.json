@@ -1,0 +1,13 @@
+{
+  "pair_id": "C034",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.98, \"reasoning\": \"Both wines are Bernkasteler Badstube Riesling Auslese from Markus Molitor with Green Capsule, but they differ in their star designation (2* vs 3*). Markus Molitor uses star ratings (1*, 2*, 3*) to denote different quality/selection tiers within the same Pr\u00e4dikat level and vineyard, representing distinct lots or barrel selections. Different lot/cask designations at the same Pr\u00e4dikat level constitute different wines, and they have different LWIN codes confirming they are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Both wines are Bernkasteler Badstube Riesling Auslese from Markus Molitor with Green Capsule, but they differ in their star designation (2* vs 3*). Markus Molitor uses star ratings (1*, 2*, 3*) to denote different quality/selection tiers within the same Pr\u00e4dikat level and vineyard, representing distinct lots or barrel selections. Different lot/cask designations at the same Pr\u00e4dikat level constitute different wines, and they have different LWIN codes confirming they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 528,
+  "tokens_out": 153,
+  "elapsed": 4.190483808517456,
+  "error": null
+}

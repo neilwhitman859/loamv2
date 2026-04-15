@@ -1,0 +1,13 @@
+{
+  "pair_id": "B049",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"The records explicitly differ in color: Wine A is white and Wine B is red. 'Rouge' also indicates a red bottling, so these are distinct wines rather than formatting variants of the same cuv\u00e9e.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "The records explicitly differ in color: Wine A is white and Wine B is red. 'Rouge' also indicates a red bottling, so these are distinct wines rather than formatting variants of the same cuv\u00e9e.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 66,
+  "elapsed": 2.165339231491089,
+  "error": null
+}

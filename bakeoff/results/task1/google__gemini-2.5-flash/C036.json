@@ -1,0 +1,13 @@
+{
+  "pair_id": "C036",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"These wines are different because the German Pr\u00e4dikat system's star ratings (1* vs 3* Gold Capsule) denote distinct bottlings, often indicating different levels of selection or quality within the same Pr\u00e4dikat level. A consumer would encounter these as separate products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "These wines are different because the German Pr\u00e4dikat system's star ratings (1* vs 3* Gold Capsule) denote distinct bottlings, often indicating different levels of selection or quality within the same Pr\u00e4dikat level. A consumer would encounter these as separate products.",
+  "parse_ok": true,
+  "tokens_in": 458,
+  "tokens_out": 91,
+  "elapsed": 1.52937650680542,
+  "error": null
+}

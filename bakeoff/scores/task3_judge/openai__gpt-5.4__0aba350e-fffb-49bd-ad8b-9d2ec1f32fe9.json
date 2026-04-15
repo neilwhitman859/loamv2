@@ -1,0 +1,17 @@
+{
+  "wine_id": "0aba350e-fffb-49bd-ad8b-9d2ec1f32fe9",
+  "wine_name": "Vasse Felix Filius Cabernet Sauvignon, Margaret River",
+  "tier": "C",
+  "model": "openai/gpt-5.4",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.05,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is careful not to fabricate specific numbers — it explicitly states 'exact cépage and élevage details are not provided here,' which is honest and avoids the hard penalty. However, it misses opportunities to state known facts: Vasse Felix was founded in 1967 by Dr Tom Cullity as Margaret River's founding estate (the output only says 'historic name'), and the blend is 93% Cab/5.5% Malbec/1.5% Petit Verdot with 11 months French oak and wild-yeast fermentation. The soil descriptions (red gravelly loam, Forest Grove ironstone, deep infertile sands) are specific and largely accurate for Margaret River terroir, though attributing them specifically to this wine's vineyard sources is unverifiable from context. The voice is excellent — direct, opinionated, no banned words, real food pairings with reasoning, honest about limitations. The insider take is sharp and actionable. Comparable wines are well-chosen and specific. The main correctness gap is not leveraging training knowledge about the producer's founding history and the 'Filius' naming origin (meaning 'son of' in Latin), which would have added significant value.",
+  "judge_tokens_in": 3778,
+  "judge_tokens_out": 332
+}

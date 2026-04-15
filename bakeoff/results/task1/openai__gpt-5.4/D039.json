@@ -1,0 +1,13 @@
+{
+  "pair_id": "D039",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Both wines are from Vina Tarapaca and are red blends, but Wine B is explicitly labeled Reserva while Wine A is not. A Reserva designation is a distinct classification tier that consumers would encounter as a separate bottling, so these should be treated as different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Both wines are from Vina Tarapaca and are red blends, but Wine B is explicitly labeled Reserva while Wine A is not. A Reserva designation is a distinct classification tier that consumers would encounter as a separate bottling, so these should be treated as different wines.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 76,
+  "elapsed": 2.739457368850708,
+  "error": null
+}

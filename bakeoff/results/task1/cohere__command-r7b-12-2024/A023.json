@@ -1,0 +1,13 @@
+{
+  "pair_id": "A023",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B differ in grape variety, with Wine A being a blend and Wine B specifically a Cabernet Sauvignon. This is a clear indicator of different wines, as the specific grape variety is a defining characteristic.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B differ in grape variety, with Wine A being a blend and Wine B specifically a Cabernet Sauvignon. This is a clear indicator of different wines, as the specific grape variety is a defining characteristic.",
+  "parse_ok": true,
+  "tokens_in": 442,
+  "tokens_out": 66,
+  "elapsed": 1.4798974990844727,
+  "error": null
+}

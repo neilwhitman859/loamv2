@@ -1,0 +1,13 @@
+{
+  "pair_id": "A005",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer (Catena Zapata), vineyard/cuv\u00e9e (Agrelo Saint Felicien), and color (white). The difference in grape variety description (SEMILLON vs Semillon) is likely a formatting difference, with one being an abbreviation or omission of the varietal suffix, which typically indicates the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer (Catena Zapata), vineyard/cuv\u00e9e (Agrelo Saint Felicien), and color (white). The difference in grape variety description (SEMILLON vs Semillon) is likely a formatting difference, with one being an abbreviation or omission of the varietal suffix, which typically indicates the same wine.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 92,
+  "elapsed": 2.289776563644409,
+  "error": null
+}

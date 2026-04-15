@@ -1,0 +1,13 @@
+{
+  "pair_id": "A018",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A 'Quarter Acre' and Wine B 'Quarter Acre Viognier' share the same producer (Te Awanga) and vineyard designation (Quarter Acre). The only difference is the varietal suffix 'Viognier' on Wine B, which is a standard abbreviation of the full name and does not indicate a different grape variety, as the LWIN for Wine B is not provided to contradict this.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A 'Quarter Acre' and Wine B 'Quarter Acre Viognier' share the same producer (Te Awanga) and vineyard designation (Quarter Acre). The only difference is the varietal suffix 'Viognier' on Wine B, which is a standard abbreviation of the full name and does not indicate a different grape variety, as the LWIN for Wine B is not provided to contradict this.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 110,
+  "elapsed": 2.35003662109375,
+  "error": null
+}

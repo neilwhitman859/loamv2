@@ -1,0 +1,13 @@
+{
+  "pair_id": "C001",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are from the same producer, have the same grape variety (Riesling), and the same classification tier (Auslese and Beerenauslese are both Pr\u00e4dikat levels). The slight difference in the name (Beerenauslese vs Auslese) is a common abbreviation and does not change the nature of the wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are from the same producer, have the same grape variety (Riesling), and the same classification tier (Auslese and Beerenauslese are both Pr\u00e4dikat levels). The slight difference in the name (Beerenauslese vs Auslese) is a common abbreviation and does not change the nature of the wine.",
+  "parse_ok": true,
+  "tokens_in": 453,
+  "tokens_out": 86,
+  "elapsed": 1.1631748676300049,
+  "error": null
+}

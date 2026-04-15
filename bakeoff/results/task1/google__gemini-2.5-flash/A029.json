@@ -1,0 +1,13 @@
+{
+  "pair_id": "A029",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A lists 'AUXERROIS, COT' as its grapes, while Wine B is specifically named 'Chasseresse Auxerrois'. This implies that Wine B is a single varietal Auxerrois, whereas Wine A is a blend including Auxerrois and Cot. Different grape compositions, even from the same vineyard, constitute different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A lists 'AUXERROIS, COT' as its grapes, while Wine B is specifically named 'Chasseresse Auxerrois'. This implies that Wine B is a single varietal Auxerrois, whereas Wine A is a blend including Auxerrois and Cot. Different grape compositions, even from the same vineyard, constitute different wines.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 94,
+  "elapsed": 1.3672823905944824,
+  "error": null
+}

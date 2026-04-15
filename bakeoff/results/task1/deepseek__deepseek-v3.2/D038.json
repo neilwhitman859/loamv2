@@ -1,0 +1,13 @@
+{
+  "pair_id": "D038",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": -0.95, \"reasoning\": \"Both wines are from the same producer (Chatter Creek), same region (Chatterneuf-du-Pape), same color (red), and same type (Table Wine). The only difference is the slightly more descriptive name in Wine B, which is a formatting variation consistent with abbreviation rules.\"}",
+  "verdict": "SAME",
+  "confidence": 0.0,
+  "reasoning": "Both wines are from the same producer (Chatter Creek), same region (Chatterneuf-du-Pape), same color (red), and same type (Table Wine). The only difference is the slightly more descriptive name in Wine B, which is a formatting variation consistent with abbreviation rules.",
+  "parse_ok": true,
+  "tokens_in": 440,
+  "tokens_out": 81,
+  "elapsed": 4.489027500152588,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C035",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Markus Molitor), same vineyard (Bernkasteler Doctor), same grape (Riesling), same classification (Auslese), and same auction tier (3*). The only differences are capsule color (Gold vs White) and minor name formatting (Auction vs Auktion), which are typical variations for the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Markus Molitor), same vineyard (Bernkasteler Doctor), same grape (Riesling), same classification (Auslese), and same auction tier (3*). The only differences are capsule color (Gold vs White) and minor name formatting (Auction vs Auktion), which are typical variations for the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 520,
+  "tokens_out": 101,
+  "elapsed": 2.4985158443450928,
+  "error": null
+}

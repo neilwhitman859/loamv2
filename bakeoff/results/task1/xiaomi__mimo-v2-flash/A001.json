@@ -1,0 +1,13 @@
+{
+  "pair_id": "A001",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A and Wine B share the same producer (Santa Carolina) and the same base name 'El Pacto Agreement No 2'. Wine B's name simply appends the grape variety 'Carmenere' as a suffix, which is a common naming convention and does not indicate a different bottling. Both are red wines, and the grape list for Wine A includes Carmenere, confirming they represent the same blend.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A and Wine B share the same producer (Santa Carolina) and the same base name 'El Pacto Agreement No 2'. Wine B's name simply appends the grape variety 'Carmenere' as a suffix, which is a common naming convention and does not indicate a different bottling. Both are red wines, and the grape list for Wine A includes Carmenere, confirming they represent the same blend.",
+  "parse_ok": true,
+  "tokens_in": 497,
+  "tokens_out": 109,
+  "elapsed": 2.687405586242676,
+  "error": null
+}

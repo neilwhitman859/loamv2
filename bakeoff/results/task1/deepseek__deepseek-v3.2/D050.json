@@ -1,0 +1,13 @@
+{
+  "pair_id": "D050",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have completely different grape compositions: Wine A uses Pinot Gris and Pinot Blanc, while Wine B uses Chardonnay Blanc. Different grapes always indicate different wines, even when the producer and vineyard name (Birkweiler Rosenberg) are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have completely different grape compositions: Wine A uses Pinot Gris and Pinot Blanc, while Wine B uses Chardonnay Blanc. Different grapes always indicate different wines, even when the producer and vineyard name (Birkweiler Rosenberg) are the same.",
+  "parse_ok": true,
+  "tokens_in": 454,
+  "tokens_out": 78,
+  "elapsed": 3.511821985244751,
+  "error": null
+}

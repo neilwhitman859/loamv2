@@ -1,0 +1,13 @@
+{
+  "pair_id": "B039",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer Velenosi and region Marche, but Wine A is specified as ros\u00e9 while Wine B is white and labeled 'Brut' (indicating sparkling style) with Mostosa grapes. The explicit color difference (ros\u00e9 vs white) and likely style difference (still vs sparkling) make them distinct bottlings that consumers would treat separately. Per rules, different colors alone confirm they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer Velenosi and region Marche, but Wine A is specified as ros\u00e9 while Wine B is white and labeled 'Brut' (indicating sparkling style) with Mostosa grapes. The explicit color difference (ros\u00e9 vs white) and likely style difference (still vs sparkling) make them distinct bottlings that consumers would treat separately. Per rules, different colors alone confirm they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 558,
+  "tokens_out": 497,
+  "elapsed": 3.281965732574463,
+  "error": null
+}

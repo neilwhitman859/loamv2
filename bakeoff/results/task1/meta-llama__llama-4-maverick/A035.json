@@ -1,0 +1,13 @@
+{
+  "pair_id": "A035",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines have the same producer, Robert Mondavi, and the same name 'Private Selection Bourbon Barrels', with the only difference being the varietal suffix 'Cabernet Sauvignon' appended to Wine B's name, which is likely an abbreviation. The grape variety for Wine A is confirmed as CABERNET SAUVIGNON, matching the suffix. The color of both wines is red.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines have the same producer, Robert Mondavi, and the same name 'Private Selection Bourbon Barrels', with the only difference being the varietal suffix 'Cabernet Sauvignon' appended to Wine B's name, which is likely an abbreviation. The grape variety for Wine A is confirmed as CABERNET SAUVIGNON, matching the suffix. The color of both wines is red.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 100,
+  "elapsed": 1.4772534370422363,
+  "error": null
+}

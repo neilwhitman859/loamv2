@@ -1,0 +1,28 @@
+{
+  "wine_id": "0aec2002-afb8-4d0f-a7ba-cc6fb3d8452f",
+  "wine_name": "Fritz Haag Brauneberger Juffer Sonnenuhr Riesling Auslese, Mosel",
+  "tier": "A",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 5.0,
+  "usefulness": 5.0,
+  "composite": 4.175,
+  "wrong_facts": [
+    "'Devonian blue slate' — ground truth says 'fine, weathered Devonian slate' with no mention of 'blue'; blue slate is more associated with Ürziger Würzgarten and other Mosel sites, not specifically confirmed for Brauneberg",
+    "Price claim of '$65 to $85' is not in context data and is unverifiable — could be plausible but is a specific fabricated number",
+    "70-degree gradients is a specific claim not in context data and not easily verifiable",
+    "Claim about Fuder casks and spontaneous fermentation is plausible for the estate but not confirmed in context data",
+    "Mutage via temperature control is a specific vinification claim not in context data"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$65 to $85 price range",
+    "70-degree gradients",
+    "1,000-liter Fuder casks (plausible general knowledge but not in context)",
+    "30 to 40 years aging"
+  ],
+  "reasoning": "The output is impressively detailed, opinionated, and specific — the voice is excellent and the food pairings are creative and well-reasoned. However, it fabricates several specific numbers not present in the context data: the $65-$85 price range, 70-degree slope gradients, and detailed vinification specifics (Fuder casks, spontaneous fermentation, mutage). The 'blue slate' descriptor is not confirmed by ground truth which simply says 'Devonian slate.' The 7.5% ABV is correctly sourced from the 2011 vintage data but is presented as if it applies generally. Many claims are plausible from wine knowledge (Oliver Haag, 1605 founding date matches ground truth, Sonnenuhr naming origin is correct), which prevents a lower score. The hook's 'blue slate' claim is not provably wrong — it's a common descriptor for Mosel slate — but it's an embellishment beyond what's confirmed. The fabricated price number is the most concerning specific fabrication.",
+  "judge_tokens_in": 3781,
+  "judge_tokens_out": 505
+}

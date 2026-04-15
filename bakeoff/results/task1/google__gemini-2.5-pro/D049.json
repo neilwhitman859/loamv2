@@ -1,0 +1,13 @@
+{
+  "pair_id": "D049",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are Riesling GG from the Birkweiler Kastanienbusch vineyard, 'Koppel' designates a specific, named parcel (a 'Gewann') within that larger vineyard. Wines from a specific, named parcel are considered distinct bottlings from those made from a blend of the wider vineyard site. The different LWINs for each wine confirm they are treated as separate products in the market.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are Riesling GG from the Birkweiler Kastanienbusch vineyard, 'Koppel' designates a specific, named parcel (a 'Gewann') within that larger vineyard. Wines from a specific, named parcel are considered distinct bottlings from those made from a blend of the wider vineyard site. The different LWINs for each wine confirm they are treated as separate products in the market.",
+  "parse_ok": true,
+  "tokens_in": 440,
+  "tokens_out": 1395,
+  "elapsed": 13.83746075630188,
+  "error": null
+}

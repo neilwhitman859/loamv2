@@ -1,0 +1,13 @@
+{
+  "pair_id": "D021",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A includes the Auslese Pr\u00e4dikat while Wine B does not specify any Pr\u00e4dikat level, indicating different sweetness/classification tiers and thus different bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A includes the Auslese Pr\u00e4dikat while Wine B does not specify any Pr\u00e4dikat level, indicating different sweetness/classification tiers and thus different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 198,
+  "elapsed": 4.493457317352295,
+  "error": null
+}

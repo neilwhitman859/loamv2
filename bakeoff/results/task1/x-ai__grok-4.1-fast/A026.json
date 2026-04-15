@@ -1,0 +1,13 @@
+{
+  "pair_id": "A026",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer Mount Pleasant (McWilliams) and base name 'Lovedale Cellar Aged', with Wine B adding the varietal 'Semillon' which matches Wine A's specified grape SEMILLON. Both are white wines, fitting the rule that varietal suffix differences alone indicate the same wine as an abbreviation. No evidence of multiple wines from different grapes or other distinguishing features like classification or vineyard variations.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer Mount Pleasant (McWilliams) and base name 'Lovedale Cellar Aged', with Wine B adding the varietal 'Semillon' which matches Wine A's specified grape SEMILLON. Both are white wines, fitting the rule that varietal suffix differences alone indicate the same wine as an abbreviation. No evidence of multiple wines from different grapes or other distinguishing features like classification or vineyard variations.",
+  "parse_ok": true,
+  "tokens_in": 574,
+  "tokens_out": 451,
+  "elapsed": 4.944782972335815,
+  "error": null
+}

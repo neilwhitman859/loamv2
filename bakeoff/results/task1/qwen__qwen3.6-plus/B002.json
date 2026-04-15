@@ -1,0 +1,13 @@
+{
+  "pair_id": "B002",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records explicitly specify different colors (red versus white), which the classification rules define as a criterion for distinct wines. Even though the producer, name, and grape varieties match, a red and white bottling represent separate products that consumers would encounter independently.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records explicitly specify different colors (red versus white), which the classification rules define as a criterion for distinct wines. Even though the producer, name, and grape varieties match, a red and white bottling represent separate products that consumers would encounter independently.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 1480,
+  "elapsed": 28.965198040008545,
+  "error": null
+}

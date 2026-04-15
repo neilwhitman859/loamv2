@@ -1,0 +1,13 @@
+{
+  "pair_id": "C003",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"The wines differ in their sweetness level, with Wine A being Brut (dry) and Wine B being Brut Nature (very dry). This is a significant difference in style, which would lead a consumer to consider them as separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "The wines differ in their sweetness level, with Wine A being Brut (dry) and Wine B being Brut Nature (very dry). This is a significant difference in style, which would lead a consumer to consider them as separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 70,
+  "elapsed": 1.0579426288604736,
+  "error": null
+}

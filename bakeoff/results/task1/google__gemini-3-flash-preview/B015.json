@@ -1,0 +1,13 @@
+{
+  "pair_id": "B015",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records represent different wine styles (Ros\u00e9 vs. Rouge) produced from the same grape variety. According to the rules, different colors/styles from the same producer and vineyard are considered distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent different wine styles (Ros\u00e9 vs. Rouge) produced from the same grape variety. According to the rules, different colors/styles from the same producer and vineyard are considered distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 65,
+  "elapsed": 1.8489270210266113,
+  "error": null
+}

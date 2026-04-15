@@ -1,0 +1,13 @@
+{
+  "pair_id": "D020",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"The names differ only by the omission of the color descriptor 'Red', which is a minor formatting difference. Both wines share the same producer, base name ('The Banished Dark'), and color, with no indication of different grapes, styles, or classifications.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The names differ only by the omission of the color descriptor 'Red', which is a minor formatting difference. Both wines share the same producer, base name ('The Banished Dark'), and color, with no indication of different grapes, styles, or classifications.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 74,
+  "elapsed": 2.801386833190918,
+  "error": null
+}

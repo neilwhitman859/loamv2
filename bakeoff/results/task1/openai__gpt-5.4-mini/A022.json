@@ -1,0 +1,13 @@
+{
+  "pair_id": "A022",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Wine A and Wine B are not just a formatting variant: Wine A is identified as Cabernet Sauvignon, while Wine B is explicitly Carmenere. Different grapes always indicate different wines, even when the producer and base name are the same. Both being red from Emiliana does not override the grape-level difference.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A and Wine B are not just a formatting variant: Wine A is identified as Cabernet Sauvignon, while Wine B is explicitly Carmenere. Different grapes always indicate different wines, even when the producer and base name are the same. Both being red from Emiliana does not override the grape-level difference.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 88,
+  "elapsed": 1.6367793083190918,
+  "error": null
+}

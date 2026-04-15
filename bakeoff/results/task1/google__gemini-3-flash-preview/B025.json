@@ -1,0 +1,13 @@
+{
+  "pair_id": "B025",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a white wine (the second wine of the Sauternes estate Ch\u00e2teau La Tour Blanche, made from Semillon/Sauvignon Blanc), while Wine B is a red wine (Merlot). Despite the similar names, the difference in color and grape variety indicates they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a white wine (the second wine of the Sauternes estate Ch\u00e2teau La Tour Blanche, made from Semillon/Sauvignon Blanc), while Wine B is a red wine (Merlot). Despite the similar names, the difference in color and grape variety indicates they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 83,
+  "elapsed": 1.819969892501831,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D001",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are from the same producer, vineyard, and grape, but Wine A includes 'Nr23'. 'Nr' is the German abbreviation for 'Nummer' (number), which signifies a specific cask, lot, or parcel number. This is a deliberate distinction by the producer to identify a unique bottling, not a simple formatting difference, making them different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are from the same producer, vineyard, and grape, but Wine A includes 'Nr23'. 'Nr' is the German abbreviation for 'Nummer' (number), which signifies a specific cask, lot, or parcel number. This is a deliberate distinction by the producer to identify a unique bottling, not a simple formatting difference, making them different wines.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 1190,
+  "elapsed": 12.014265298843384,
+  "error": null
+}

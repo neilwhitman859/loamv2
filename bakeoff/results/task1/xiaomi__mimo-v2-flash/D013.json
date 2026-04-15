@@ -1,0 +1,13 @@
+{
+  "pair_id": "D013",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is from Beaune Premier Cru and Wine B is from Vosne-Romanee Premier Cru, which are distinct vineyards and appellations. Even with the same producer and color, different vineyard designations represent separate bottlings that a consumer would encounter as distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is from Beaune Premier Cru and Wine B is from Vosne-Romanee Premier Cru, which are distinct vineyards and appellations. Even with the same producer and color, different vineyard designations represent separate bottlings that a consumer would encounter as distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 482,
+  "tokens_out": 83,
+  "elapsed": 2.090615749359131,
+  "error": null
+}

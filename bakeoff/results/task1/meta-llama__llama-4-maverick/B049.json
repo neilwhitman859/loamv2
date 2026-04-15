@@ -1,0 +1,13 @@
+{
+  "pair_id": "B049",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is white and Wine B is red, indicating different colors and likely different grape varieties, which means they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is white and Wine B is red, indicating different colors and likely different grape varieties, which means they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 483,
+  "tokens_out": 50,
+  "elapsed": 1.243072509765625,
+  "error": null
+}

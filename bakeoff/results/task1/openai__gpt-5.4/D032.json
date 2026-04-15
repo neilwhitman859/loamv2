@@ -1,0 +1,13 @@
+{
+  "pair_id": "D032",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.94,\"reasoning\":\"These appear to be two distinct bottlings from Peter Jakob Kuhn: one labeled simply \\\"Hallgarten Riesling Trocken\\\" and the other explicitly \\\"Hallgarten Reserve Riesling Trocken.\\\" The addition of \\\"Reserve\\\" is not just a varietal suffix or formatting variation; it indicates a separate cuv\u00e9e/tier that consumers would encounter as a different wine, reinforced by the different LWINs.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.94,
+  "reasoning": "These appear to be two distinct bottlings from Peter Jakob Kuhn: one labeled simply \"Hallgarten Riesling Trocken\" and the other explicitly \"Hallgarten Reserve Riesling Trocken.\" The addition of \"Reserve\" is not just a varietal suffix or formatting variation; it indicates a separate cuv\u00e9e/tier that consumers would encounter as a different wine, reinforced by the different LWINs.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 103,
+  "elapsed": 3.4340622425079346,
+  "error": null
+}

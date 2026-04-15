@@ -1,0 +1,13 @@
+{
+  "pair_id": "A014",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.91, \"reasoning\": \"One is made from Gewurztraminer and the other from Pinot Gris. Different grape variety always indicates a different wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.91,
+  "reasoning": "One is made from Gewurztraminer and the other from Pinot Gris. Different grape variety always indicates a different wine.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 163,
+  "elapsed": 4.43174934387207,
+  "error": null
+}

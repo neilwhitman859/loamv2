@@ -1,0 +1,13 @@
+{
+  "pair_id": "D030",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are from the same producer, Boekenhoutskloof, and the same vineyard/cuv\u00e9e, Porcupine Ridge. They differ only in the grape variety, with Wine A being Cabernet Sauvignon and Wine B being Merlot, but this is a common practice for producing different styles of wine from the same vineyard.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are from the same producer, Boekenhoutskloof, and the same vineyard/cuv\u00e9e, Porcupine Ridge. They differ only in the grape variety, with Wine A being Cabernet Sauvignon and Wine B being Merlot, but this is a common practice for producing different styles of wine from the same vineyard.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 85,
+  "elapsed": 1.8778817653656006,
+  "error": null
+}

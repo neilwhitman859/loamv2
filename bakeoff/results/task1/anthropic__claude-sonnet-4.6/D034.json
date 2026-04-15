@@ -1,0 +1,13 @@
+{
+  "pair_id": "D034",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.88, \"reasoning\": \"Wine A specifies 'Neuberg' as a specific vineyard designation within the Bollenberg, while Wine B is simply 'Bollenberg Pinot Noir' without the Neuberg sub-designation. These represent distinct bottlings from different vineyard parcels within the Bollenberg, not merely a formatting abbreviation. Valentin Zusslin is known to produce multiple single-vineyard Pinot Noirs from different parcels of the Bollenberg, making these separate wines a consumer would encounter distinctly.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.88,
+  "reasoning": "Wine A specifies 'Neuberg' as a specific vineyard designation within the Bollenberg, while Wine B is simply 'Bollenberg Pinot Noir' without the Neuberg sub-designation. These represent distinct bottlings from different vineyard parcels within the Bollenberg, not merely a formatting abbreviation. Valentin Zusslin is known to produce multiple single-vineyard Pinot Noirs from different parcels of the Bollenberg, making these separate wines a consumer would encounter distinctly.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 137,
+  "elapsed": 3.4928946495056152,
+  "error": null
+}

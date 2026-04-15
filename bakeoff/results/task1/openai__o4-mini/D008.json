@@ -1,0 +1,13 @@
+{
+  "pair_id": "D008",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.90,\"reasoning\":\"Both entries are from Vistalba, same grape blend (COT/Malbec and Cabernet Sauvignon) and style, differing only in name formatting (varietal suffix omitted). No classification or vineyard differences present.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both entries are from Vistalba, same grape blend (COT/Malbec and Cabernet Sauvignon) and style, differing only in name formatting (varietal suffix omitted). No classification or vineyard differences present.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 197,
+  "elapsed": 4.878943920135498,
+  "error": null
+}

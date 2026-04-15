@@ -1,0 +1,13 @@
+{
+  "pair_id": "D042",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Pommery's Apanage Prestige line. 'Brut' is a sweetness classification for Champagne (dry style), not a distinct cuv\u00e9e designation. The difference is merely stylistic naming convention where 'Brut' describes the dosage level of the same underlying wine, similar to how varietal suffixes are treated.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Pommery's Apanage Prestige line. 'Brut' is a sweetness classification for Champagne (dry style), not a distinct cuv\u00e9e designation. The difference is merely stylistic naming convention where 'Brut' describes the dosage level of the same underlying wine, similar to how varietal suffixes are treated.",
+  "parse_ok": true,
+  "tokens_in": 482,
+  "tokens_out": 109,
+  "elapsed": 3.7322142124176025,
+  "error": null
+}

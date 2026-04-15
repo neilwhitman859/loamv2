@@ -1,0 +1,13 @@
+{
+  "pair_id": "B032",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors (white vs red) and different grapes (Gew\u00fcrztraminer vs Pinot Noir). These differences indicate distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors (white vs red) and different grapes (Gew\u00fcrztraminer vs Pinot Noir). These differences indicate distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 54,
+  "elapsed": 1.7715919017791748,
+  "error": null
+}

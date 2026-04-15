@@ -1,0 +1,27 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "anthropic/claude-haiku-4.5",
+  "correctness": 2.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.35,
+  "wrong_facts": [
+    "Hook says 'ages it just 8 months in oak' — ground truth says recent vintages ferment and age in cement tanks (8 months), not oak. The wine has completely dispensed with wood aging.",
+    "Vinification summary claims 'Terroir Al Limit uses older, neutral oak (not new French oak)' — ground truth says they have completely dispensed with new oak and use cement tanks.",
+    "No mention of whole cluster native fermentation or two weeks on skins, which are key winemaking details.",
+    "Les Tosses vineyard is described as 90-year-old head-pruned vines at 600m elevation in Torroja del Priorat — the output says 'decades-old' vines which understates their age.",
+    "Domaines Binner is an Alsace producer, not Languedoc — and they are not known for Carignan Vieilles Vignes."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$35-50 USD price range is fabricated — no price data was provided",
+    "South-facing slopes claim is unverified",
+    "Vegan certification claim is unverifiable from context data"
+  ],
+  "reasoning": "The most damaging error is the central claim about oak aging — the hook and vinification section both state the wine ages in oak, when ground truth confirms recent vintages use cement tanks with no wood aging at all. This is a fundamental mischaracterization of the wine's winemaking philosophy. The Domaines Binner comparable is wrong (Alsace producer, not Languedoc Carignan). The fabricated price range and vegan certification claims add further unreliability. The voice is decent — direct and opinionated without banned words — and the specificity is good with real geological and viticultural detail, but the core factual errors about cooperage undermine the entire piece. The hook's wrong claim about oak aging would normally trigger the hard cap at 1.5, but the claim about llicorella slate and 100% Carignan are correct, so I'm giving slight credit above the hard cap floor.",
+  "judge_tokens_in": 3982,
+  "judge_tokens_out": 512
+}

@@ -1,0 +1,28 @@
+{
+  "wine_id": "46a46e99-c081-41ce-abcc-bf993469fc0e",
+  "wine_name": "Kir Yianni Ramnista, Naoussa",
+  "tier": "B",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 5.0,
+  "usefulness": 5.0,
+  "composite": 4.0,
+  "wrong_facts": [
+    "Vinification claims: '15-20 days maceration' — ground truth says 6-day cold soak, not 15-20 days",
+    "Oak aging claimed as 'approximately 12 months in French oak' — ground truth is 18 months in French AND American oak (225L and 500L)",
+    "No mention of American oak or the 500L cask size, which are part of the actual cooperage program",
+    "Claims 'roughly 50 hectares' for the estate — not in context data and unverifiable from provided ground truth",
+    "Ramnista naming origin not mentioned but also not fabricated, so neutral"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "15-20 days maceration (ground truth: 6-day cold soak)",
+    "12 months oak aging (ground truth: 18 months)",
+    "50 hectares estate size (not in context data)",
+    "250-350 meters altitude range (context/ground truth says 280-330m, close but slightly expanded)"
+  ],
+  "reasoning": "The output is exceptionally well-written with outstanding voice, specificity, and usefulness — the comparables, food pairings, and market positioning are all excellent. However, the vinification section contains multiple fabricated numbers that directly contradict ground truth: maceration is stated as 15-20 days vs. the actual 6-day cold soak, oak aging is stated as ~12 months in French oak vs. the actual 18 months in French AND American oak. The estate size of 50 hectares is also unsourced. These fabricated specifics in the vinification section trigger the hard penalty for fabricated numbers. The hook is factually solid — elevation, southeastern slopes, and flagship status all check out against ground truth. The correct identification of Yiannis Boutaris founding in 1997 and the Boutari family connection adds real value. But the vinification fabrications are significant enough to cap correctness.",
+  "judge_tokens_in": 3950,
+  "judge_tokens_out": 479
+}

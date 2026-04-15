@@ -1,0 +1,13 @@
+{
+  "pair_id": "B002",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"Although the grape composition is identical, the wines are distinct products because they are different colors (red vs. white). In the context of wine production, a red wine and a white wine from the same producer and vineyard are considered separate bottlings.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although the grape composition is identical, the wines are distinct products because they are different colors (red vs. white). In the context of wine production, a red wine and a white wine from the same producer and vineyard are considered separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 77,
+  "elapsed": 1.7105493545532227,
+  "error": null
+}

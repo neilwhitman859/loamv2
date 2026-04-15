@@ -1,0 +1,13 @@
+{
+  "pair_id": "C010",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Peter Jakob Kuhn), same vineyard (Lenchen), same grape (Riesling), and same classification (Auslese). The only difference is the name formatting, with 'Nr12' likely being a lot or cask number, which does not constitute a different wine under the rules.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Peter Jakob Kuhn), same vineyard (Lenchen), same grape (Riesling), and same classification (Auslese). The only difference is the name formatting, with 'Nr12' likely being a lot or cask number, which does not constitute a different wine under the rules.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 93,
+  "elapsed": 2.042696714401245,
+  "error": null
+}

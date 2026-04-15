@@ -1,0 +1,13 @@
+{
+  "pair_id": "A026",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are from the same producer, Mount Pleasant (McWilliams), and have the same color and grape variety (Semillon). The difference in name is likely due to abbreviation, with 'Lovedale Cellar Aged' being a shortened form of 'Lovedale Cellar Aged Semillon'.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are from the same producer, Mount Pleasant (McWilliams), and have the same color and grape variety (Semillon). The difference in name is likely due to abbreviation, with 'Lovedale Cellar Aged' being a shortened form of 'Lovedale Cellar Aged Semillon'.",
+  "parse_ok": true,
+  "tokens_in": 500,
+  "tokens_out": 84,
+  "elapsed": 1.3778448104858398,
+  "error": null
+}

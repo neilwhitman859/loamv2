@@ -1,0 +1,13 @@
+{
+  "pair_id": "D035",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are produced by Velenosi, have the same color (red), and the only differences are the 'Gold' suffix in Wine B's name and the specified grapes in Wine A. The presence of 'Gold' does not indicate a different classification tier, vineyard, or grape variety, which are key factors for determining different wines.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are produced by Velenosi, have the same color (red), and the only differences are the 'Gold' suffix in Wine B's name and the specified grapes in Wine A. The presence of 'Gold' does not indicate a different classification tier, vineyard, or grape variety, which are key factors for determining different wines.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 91,
+  "elapsed": 1.4783861637115479,
+  "error": null
+}

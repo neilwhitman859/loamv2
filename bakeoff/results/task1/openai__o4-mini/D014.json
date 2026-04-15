@@ -1,0 +1,13 @@
+{
+  "pair_id": "D014",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.90, \"reasoning\": \"Both listings refer to the Heidsieck & Co NV Brut Monopole: \u201cDry Monopole Brut NV\u201d simply adds the dryness descriptor and vintage status, while \u201cMonopole Brut\u201d omits it. There\u2019s no difference in cuv\u00e9e or style beyond naming.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both listings refer to the Heidsieck & Co NV Brut Monopole: \u201cDry Monopole Brut NV\u201d simply adds the dryness descriptor and vintage status, while \u201cMonopole Brut\u201d omits it. There\u2019s no difference in cuv\u00e9e or style beyond naming.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 177,
+  "elapsed": 4.12826681137085,
+  "error": null
+}

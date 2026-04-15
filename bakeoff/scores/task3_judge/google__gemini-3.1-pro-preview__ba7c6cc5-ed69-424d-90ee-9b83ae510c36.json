@@ -1,0 +1,24 @@
+{
+  "wine_id": "ba7c6cc5-ed69-424d-90ee-9b83ae510c36",
+  "wine_name": "Penfolds Bin 2 Mataro, South Eastern Australia",
+  "tier": "A",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 1.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.225,
+  "wrong_facts": [
+    "Hook claims wine was 'Originally crafted in 1990 to mimic the softer, medium-bodied styles of the Rhône' — ground truth says Bin 2 was first released in 1960, not 1990",
+    "Hook and throughout implies Mataro is the dominant grape ('relies heavily on the savory, structural grip of Mataro', 'high Mataro percentage', 'The Mataro does the heavy lifting') — ground truth confirms the wine is 86% Shiraz / 14% Mataro, making Shiraz overwhelmingly dominant",
+    "Value assessment states price '$25 and $35' — no price data was provided in context",
+    "Vinification mentions 'older, seasoned American and French oak hogsheads' — ground truth says 'new and seasoned hogsheads', not just older/seasoned"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$25 to $35 price range not in context data"
+  ],
+  "reasoning": "The hook contains a provably wrong naming origin (1990 vs. 1960) which triggers the hard cap of 1.5 on correctness. Additionally, the entire framing of the wine as Mataro-dominant is fundamentally wrong — ground truth shows it's 86% Shiraz with only 14% Mataro. This mischaracterization pervades the hook, wine summary, insider take, and value assessment, making the output structurally misleading. The voice is strong — direct, opinionated, no banned words, good specificity with named soils, producers, and real dishes. But the factual foundation is deeply flawed.",
+  "judge_tokens_in": 3509,
+  "judge_tokens_out": 413
+}

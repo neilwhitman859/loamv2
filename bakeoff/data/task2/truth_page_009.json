@@ -6,19 +6,22 @@
   "extraction": {
     "name": "Cabernet Sauvignon",
     "producer": "Bogle",
-    "vintage_year": 2022,
+    "vintage_year": 2023,
     "abv_pct": null,
     "blend": null,
     "oak": {
-      "origin": "American",
-      "vessel": "barrel"
+      "vessel": "american oak barrels",
+      "months": null,
+      "new_pct": null,
+      "origin": "american"
     },
     "cases_produced": null,
     "chemistry": null,
     "winemaker": null,
-    "farming": "sustainable"
+    "farming": null
   },
-  "data_richness": 3,
+  "data_richness": 2,
   "total_fields": 8,
-  "text_length": 2573
+  "text_length": 2573,
+  "consensus_models": 14
 }

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C039",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different Rioja-style classification tiers: Gran Reserva and Reserva are distinct bottlings, not mere name variants. Even though the producer, grape, color, and appellation match, the classification difference means they would be separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different Rioja-style classification tiers: Gran Reserva and Reserva are distinct bottlings, not mere name variants. Even though the producer, grape, color, and appellation match, the classification difference means they would be separate wines.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 68,
+  "elapsed": 1.5129339694976807,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B036",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are explicitly stated to be different colors (white vs. red), which indicates they are distinct bottlings even if other elements of the name are similar. This is a fundamental difference in wine type.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are explicitly stated to be different colors (white vs. red), which indicates they are distinct bottlings even if other elements of the name are similar. This is a fundamental difference in wine type.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 64,
+  "elapsed": 1.5351388454437256,
+  "error": null
+}

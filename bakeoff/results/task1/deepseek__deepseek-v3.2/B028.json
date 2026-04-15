@@ -1,0 +1,13 @@
+{
+  "pair_id": "B028",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different primary grape varieties (Chardonnay vs Merlot), which always indicates different wines. They also differ in color (white vs red), which is a further, definitive distinction between separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different primary grape varieties (Chardonnay vs Merlot), which always indicates different wines. They also differ in color (white vs red), which is a further, definitive distinction between separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 458,
+  "tokens_out": 68,
+  "elapsed": 2.134275197982788,
+  "error": null
+}

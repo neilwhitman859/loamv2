@@ -1,0 +1,13 @@
+{
+  "pair_id": "D035",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"The addition of 'Gold' to the wine name typically indicates a distinct bottling tier or special selection within a producer's lineup, suggesting different quality classification or production method. Without confirmation that both wines share identical grape composition, vineyard source, and production specifications, the naming distinction warrants classification as different wines that a consumer would encounter as separate offerings.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "The addition of 'Gold' to the wine name typically indicates a distinct bottling tier or special selection within a producer's lineup, suggesting different quality classification or production method. Without confirmation that both wines share identical grape composition, vineyard source, and production specifications, the naming distinction warrants classification as different wines that a consumer would encounter as separate offerings.",
+  "parse_ok": true,
+  "tokens_in": 482,
+  "tokens_out": 99,
+  "elapsed": 2.941741466522217,
+  "error": null
+}

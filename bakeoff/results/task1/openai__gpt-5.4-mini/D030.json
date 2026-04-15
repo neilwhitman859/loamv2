@@ -1,0 +1,13 @@
+{
+  "pair_id": "D030",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Wine A is Porcupine Ridge Cabernet Sauvignon, while Wine B is Merlot Porcupine Ridge. The grape variety differs, and different grapes always indicate different wines even if the brand/cuv\u00e9e name is the same. Both are red and from the same producer, but they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Wine A is Porcupine Ridge Cabernet Sauvignon, while Wine B is Merlot Porcupine Ridge. The grape variety differs, and different grapes always indicate different wines even if the brand/cuv\u00e9e name is the same. Both are red and from the same producer, but they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 83,
+  "elapsed": 1.9897682666778564,
+  "error": null
+}

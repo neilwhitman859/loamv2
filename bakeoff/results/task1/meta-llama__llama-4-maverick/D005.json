@@ -1,0 +1,13 @@
+{
+  "pair_id": "D005",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are Syrah from the same producer, Fromm, and have similar names suggesting they are from the same vineyard. The color is the same (red), and there is no indication of different classifications or styles. The difference in name could be due to abbreviation.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are Syrah from the same producer, Fromm, and have similar names suggesting they are from the same vineyard. The color is the same (red), and there is no indication of different classifications or styles. The difference in name could be due to abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 494,
+  "tokens_out": 77,
+  "elapsed": 1.3335144519805908,
+  "error": null
+}

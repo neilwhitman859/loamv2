@@ -1,0 +1,13 @@
+{
+  "pair_id": "B006",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.94,\"reasoning\":\"Wine B includes Dolcetto in its blend whereas Wine A lists only COT and Cabernet Sauvignon, indicating different grape composition and thus a distinct bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.94,
+  "reasoning": "Wine B includes Dolcetto in its blend whereas Wine A lists only COT and Cabernet Sauvignon, indicating different grape composition and thus a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 457,
+  "tokens_out": 184,
+  "elapsed": 4.521195411682129,
+  "error": null
+}

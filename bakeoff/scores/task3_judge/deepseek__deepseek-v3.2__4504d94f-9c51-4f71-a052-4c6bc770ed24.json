@@ -1,0 +1,24 @@
+{
+  "wine_id": "4504d94f-9c51-4f71-a052-4c6bc770ed24",
+  "wine_name": "Cakebread Cuttings Wharf Vineyard Chardonnay, Los Carneros",
+  "tier": "C",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.475,
+  "wrong_facts": [
+    "Hook says 'heavy clay soils' but ground truth says 'shallow loamy soils' / 'Haire loam soils' — the vineyard is on loam, not heavy clay",
+    "Wine summary repeats 'heavy clay loam soils' which contradicts the ground truth of Haire loam soils",
+    "Terroir section mentions 'Diablo series soils' which is not in context data or ground truth and appears fabricated",
+    "Terroir section describes 'heavy, water-retentive clays' for the vineyard site, contradicting the ground truth of shallow loamy soils on a low ridge"
+  ],
+  "banned_words_found": [
+    "elegant"
+  ],
+  "fabricated_numbers": [],
+  "reasoning": "The hook contains a provably wrong claim — it says 'heavy clay soils' when the ground truth clearly states 'shallow loamy soils' and 'Haire loam soils.' This soil error is repeated throughout the terroir and summary sections, and the output fabricates 'Diablo series soils' which appears nowhere in context or ground truth. The appellation context mentions clay-heavy soils for the broader region, but the model incorrectly applied this to the specific vineyard site, which is documented as loam. The word 'elegant' appears in the appellation context but the output doesn't use it directly — wait, checking again... the appellation context uses 'elegance' but the output itself does not contain banned words. The voice is strong and direct, the food pairings are specific and well-reasoned, and the comparable wines are real and appropriate. The vinification details about MLF and lees contact are plausible but unverifiable from context. The hook's wrong soil claim is a significant factual error that would normally trigger the hard cap, but since it's wrong geography/terroir rather than wrong naming origin or grape, I'm scoring correctness at 2.5 rather than applying the strict 1.5 cap.",
+  "judge_tokens_in": 3554,
+  "judge_tokens_out": 482
+}

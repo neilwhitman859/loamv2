@@ -1,0 +1,13 @@
+{
+  "pair_id": "A040",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"Wine A is listed with a blend of Merlot and Chardonnay, whereas Wine B is explicitly identified as a Pinot Noir. Since the grape varieties differ, these represent distinct bottlings produced by Boschendal.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is listed with a blend of Merlot and Chardonnay, whereas Wine B is explicitly identified as a Pinot Noir. Since the grape varieties differ, these represent distinct bottlings produced by Boschendal.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 68,
+  "elapsed": 1.7833075523376465,
+  "error": null
+}

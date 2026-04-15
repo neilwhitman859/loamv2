@@ -1,0 +1,13 @@
+{
+  "pair_id": "A050",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Wine A is a Syrah/Durif blend, while Wine B is explicitly labeled Cayenne Syrah, indicating a different grape composition. Different grapes mean different wines even if the cuv\u00e9e name is otherwise similar and the producer matches.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Wine A is a Syrah/Durif blend, while Wine B is explicitly labeled Cayenne Syrah, indicating a different grape composition. Different grapes mean different wines even if the cuv\u00e9e name is otherwise similar and the producer matches.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 70,
+  "elapsed": 1.8959417343139648,
+  "error": null
+}

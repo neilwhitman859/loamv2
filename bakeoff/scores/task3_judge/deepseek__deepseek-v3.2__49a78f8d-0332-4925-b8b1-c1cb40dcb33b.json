@@ -1,0 +1,26 @@
+{
+  "wine_id": "49a78f8d-0332-4925-b8b1-c1cb40dcb33b",
+  "wine_name": "Wind Gap Woodruff Vineyard Pinot Noir, Santa Cruz Mountains",
+  "tier": "C",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.3,
+  "wrong_facts": [
+    "Hook claims 'high-elevation site perched above the fog line' — ground truth shows Woodruff Vineyard is near Coralitos, which is a low-elevation area (around 300-400 feet), not a high-elevation site above the fog line",
+    "Hook claims 'thin shale soils' — no evidence of shale soils at Woodruff Vineyard; this appears fabricated",
+    "Terroir section claims 'shallow, rocky shale and sandstone soils' — fabricated soil composition not supported by any source",
+    "Price range of $55-70 is fabricated — no price data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$55-70 price range",
+    "drinking_window_min_years: 8",
+    "drinking_window_max_years: 12"
+  ],
+  "reasoning": "The hook contains a provably wrong claim about Woodruff being a 'high-elevation site perched above the fog line' — ground truth shows it's a 9-acre vineyard near Coralitos, which is a low-elevation coastal area. The shale/sandstone soil claims are fabricated with no supporting evidence. The model correctly identifies Pax Mahle, whole-cluster fermentation, neutral oak, and native yeast (all matching ground truth), which shows good training knowledge. However, the hook error and fabricated terroir details are serious. The voice is strong — direct, opinionated, well-structured with good food pairings and useful comparable wines. The price range is fabricated. Despite good voice and structure, the foundational terroir claims are invented, which undermines the core value proposition of site-driven wine writing.",
+  "judge_tokens_in": 3326,
+  "judge_tokens_out": 421
+}

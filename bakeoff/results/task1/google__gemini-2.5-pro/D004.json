@@ -1,0 +1,13 @@
+{
+  "pair_id": "D004",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are Cabernet Sauvignon from the same producer, 'Arrowhead' and 'Arete' are distinct cuv\u00e9e or vineyard names. These represent two separate, distinct bottlings from Chimney Rock, not a simple formatting difference. The different LWINs further confirm they are treated as separate wines in the market.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are Cabernet Sauvignon from the same producer, 'Arrowhead' and 'Arete' are distinct cuv\u00e9e or vineyard names. These represent two separate, distinct bottlings from Chimney Rock, not a simple formatting difference. The different LWINs further confirm they are treated as separate wines in the market.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 1255,
+  "elapsed": 22.34602403640747,
+  "error": null
+}

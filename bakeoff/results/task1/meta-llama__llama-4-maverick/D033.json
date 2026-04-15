@@ -1,0 +1,13 @@
+{
+  "pair_id": "D033",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines 'Bollenberg Luft Pinot Noir' and 'Bollenberg Harmonie Pinot Noir' from Valentin Zusslin have different vineyard designations ('Luft' vs 'Harmonie'), indicating they are likely different cuv\u00e9es or vineyard plots, hence different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines 'Bollenberg Luft Pinot Noir' and 'Bollenberg Harmonie Pinot Noir' from Valentin Zusslin have different vineyard designations ('Luft' vs 'Harmonie'), indicating they are likely different cuv\u00e9es or vineyard plots, hence different wines.",
+  "parse_ok": true,
+  "tokens_in": 501,
+  "tokens_out": 78,
+  "elapsed": 1.4913792610168457,
+  "error": null
+}

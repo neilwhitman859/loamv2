@@ -1,0 +1,13 @@
+{
+  "pair_id": "B011",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different bottlings because the age designation differs: 15 YO versus 5 YO is a distinct product category consumers would encounter separately. The records also conflict on color and naming, reinforcing that they are not the same wine even though both are from Borges and share the 'Medium Sweet' descriptor.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different bottlings because the age designation differs: 15 YO versus 5 YO is a distinct product category consumers would encounter separately. The records also conflict on color and naming, reinforcing that they are not the same wine even though both are from Borges and share the 'Medium Sweet' descriptor.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 82,
+  "elapsed": 2.5329408645629883,
+  "error": null
+}

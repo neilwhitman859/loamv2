@@ -1,0 +1,13 @@
+{
+  "pair_id": "A008",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer (Cuilleron), have the same color (ros\u00e9), and the primary grape (Syrah) is present in both. 'Sybel Syrah' is likely just a varietal suffix appended to the base name 'Sybel', indicating the same wine, especially since no evidence suggests Cuilleron makes multiple distinct ros\u00e9 wines from the same source with different grape blends.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer (Cuilleron), have the same color (ros\u00e9), and the primary grape (Syrah) is present in both. 'Sybel Syrah' is likely just a varietal suffix appended to the base name 'Sybel', indicating the same wine, especially since no evidence suggests Cuilleron makes multiple distinct ros\u00e9 wines from the same source with different grape blends.",
+  "parse_ok": true,
+  "tokens_in": 444,
+  "tokens_out": 106,
+  "elapsed": 4.761637449264526,
+  "error": null
+}

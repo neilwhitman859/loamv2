@@ -1,0 +1,13 @@
+{
+  "pair_id": "A037",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The producer and core wine name 'Stoned Crow' are identical. Wine B adds the varietal suffix 'Syrah', and the provided data confirms that Wine A is also made from Syrah grapes. This is a classic example of a wine being referred to by both its proprietary name and its full name including the grape, representing the same bottling.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The producer and core wine name 'Stoned Crow' are identical. Wine B adds the varietal suffix 'Syrah', and the provided data confirms that Wine A is also made from Syrah grapes. This is a classic example of a wine being referred to by both its proprietary name and its full name including the grape, representing the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 1041,
+  "elapsed": 10.990222692489624,
+  "error": null
+}

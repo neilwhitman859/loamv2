@@ -1,0 +1,13 @@
+{
+  "pair_id": "B035",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a ros\u00e9 and Wine B is a red, which are different colors and styles. Even though they share the same producer and vineyard name (Petit Clos), the color difference alone makes them distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a ros\u00e9 and Wine B is a red, which are different colors and styles. Even though they share the same producer and vineyard name (Petit Clos), the color difference alone makes them distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 72,
+  "elapsed": 1.8073337078094482,
+  "error": null
+}

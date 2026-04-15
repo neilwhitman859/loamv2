@@ -1,0 +1,13 @@
+{
+  "pair_id": "A008",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.76,\"reasoning\":\"Although both are ros\u00e9 wines from Cuilleron and share the core name 'Sybel,' Wine B is explicitly labeled 'Sybel Syrah,' indicating a single-grape Syrah bottling. Wine A lists grapes as Syrah and Durif, and different grape compositions mean different wines unless the suffix is clearly just shorthand for the same bottling, which is not supported here.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.76,
+  "reasoning": "Although both are ros\u00e9 wines from Cuilleron and share the core name 'Sybel,' Wine B is explicitly labeled 'Sybel Syrah,' indicating a single-grape Syrah bottling. Wine A lists grapes as Syrah and Durif, and different grape compositions mean different wines unless the suffix is clearly just shorthand for the same bottling, which is not supported here.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 99,
+  "elapsed": 2.666464328765869,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A002",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Firestone, and share the core name 'Clone 174'. The addition of 'Syrah' to Wine B is likely a varietal suffix, as both wines are red and Wine A's grape is explicitly Syrah, indicating they are the same bottling with a slightly different naming convention.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Firestone, and share the core name 'Clone 174'. The addition of 'Syrah' to Wine B is likely a varietal suffix, as both wines are red and Wine A's grape is explicitly Syrah, indicating they are the same bottling with a slightly different naming convention.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 90,
+  "elapsed": 3.5448052883148193,
+  "error": null
+}

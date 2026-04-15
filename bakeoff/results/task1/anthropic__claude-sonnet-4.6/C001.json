@@ -1,0 +1,13 @@
+{
+  "pair_id": "C001",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Both wines are from Van Volxem's Altenberg vineyard with Riesling, but they differ in German Pr\u00e4dikat level: Wine A is Beerenauslese (BA) and Wine B is Auslese. Per the classification rules, different Pr\u00e4dikat levels always constitute different wines, as they represent distinct sweetness/ripeness tiers that consumers would encounter as separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Both wines are from Van Volxem's Altenberg vineyard with Riesling, but they differ in German Pr\u00e4dikat level: Wine A is Beerenauslese (BA) and Wine B is Auslese. Per the classification rules, different Pr\u00e4dikat levels always constitute different wines, as they represent distinct sweetness/ripeness tiers that consumers would encounter as separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 503,
+  "tokens_out": 113,
+  "elapsed": 3.572230815887451,
+  "error": null
+}

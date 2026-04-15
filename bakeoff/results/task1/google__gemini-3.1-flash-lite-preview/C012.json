@@ -1,0 +1,13 @@
+{
+  "pair_id": "C012",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are distinct products as indicated by their different colors (Ros\u00e9 vs. White) and unique LWIN identifiers. In the context of Champagne, a Ros\u00e9 bottling is considered a separate wine from the standard Brut cuv\u00e9e.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are distinct products as indicated by their different colors (Ros\u00e9 vs. White) and unique LWIN identifiers. In the context of Champagne, a Ros\u00e9 bottling is considered a separate wine from the standard Brut cuv\u00e9e.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 75,
+  "elapsed": 4.2053656578063965,
+  "error": null
+}

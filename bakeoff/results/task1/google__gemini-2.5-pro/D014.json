@@ -1,0 +1,13 @@
+{
+  "pair_id": "D014",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Both records refer to the standard non-vintage Brut from Heidsieck & Co's Monopole line. 'Brut' is a standard sweetness level for Champagne indicating a dry style, making the word 'Dry' in Wine B a redundant descriptor. The explicit 'NV' (Non-Vintage) in Wine B simply states what is implied for a standard Brut Champagne like Wine A, which lacks a vintage year.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both records refer to the standard non-vintage Brut from Heidsieck & Co's Monopole line. 'Brut' is a standard sweetness level for Champagne indicating a dry style, making the word 'Dry' in Wine B a redundant descriptor. The explicit 'NV' (Non-Vintage) in Wine B simply states what is implied for a standard Brut Champagne like Wine A, which lacks a vintage year.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 1403,
+  "elapsed": 14.468401908874512,
+  "error": null
+}

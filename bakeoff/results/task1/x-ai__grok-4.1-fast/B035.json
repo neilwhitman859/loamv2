@@ -1,0 +1,13 @@
+{
+  "pair_id": "B035",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":1.0,\"reasoning\":\"Both wines share the same producer (du Clos d'Alari) and 'Petit Clos' name, but differ explicitly in color: Wine A is ros\u00e9 and Wine B is red. The rules state that ros\u00e9 vs red from the same vineyard are DIFFERENT wines. Distinct LWIN numbers (1602638 vs 1602683) confirm separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (du Clos d'Alari) and 'Petit Clos' name, but differ explicitly in color: Wine A is ros\u00e9 and Wine B is red. The rules state that ros\u00e9 vs red from the same vineyard are DIFFERENT wines. Distinct LWIN numbers (1602638 vs 1602683) confirm separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 570,
+  "tokens_out": 422,
+  "elapsed": 2.8799774646759033,
+  "error": null
+}

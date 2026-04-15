@@ -1,0 +1,13 @@
+{
+  "pair_id": "B016",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines represent two distinct DOCG regions in Piedmont (Barolo vs. Barbaresco) which are geographically separate. Furthermore, Wine A is incorrectly listed as Croatina while Wine B is Nebbiolo; even if the grapes were both Nebbiolo, the different appellations and production regulations make them distinct products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines represent two distinct DOCG regions in Piedmont (Barolo vs. Barbaresco) which are geographically separate. Furthermore, Wine A is incorrectly listed as Croatina while Wine B is Nebbiolo; even if the grapes were both Nebbiolo, the different appellations and production regulations make them distinct products.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 87,
+  "elapsed": 1.7630479335784912,
+  "error": null
+}

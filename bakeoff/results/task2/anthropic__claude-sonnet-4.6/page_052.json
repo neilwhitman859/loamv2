@@ -1,0 +1,38 @@
+{
+  "page_id": "page_052",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"wines_found\": [{\"name\": \"2023 Mourvèdre\", \"vintage_year\": 2023, \"abv_pct\": 12.5, \"blend\": [{\"grape\": \"Mourvèdre\", \"pct\": 100}], \"oak\": {\"vessel\": \"neutral oak foudres (1200-gallon)\", \"months\": null, \"new_pct\": 0, \"origin\": null}, \"cases_produced\": 330, \"chemistry\": {\"ph\": null, \"ta_g_l\": null, \"rs_g_l\": null, \"so2_total_mg_l\": null}, \"winemaker\": null, \"farming\": \"biodynamic\"}]}",
+  "wines_found": [
+    {
+      "name": "2023 Mourvèdre",
+      "vintage_year": 2023,
+      "abv_pct": 12.5,
+      "blend": [
+        {
+          "grape": "Mourvèdre",
+          "pct": 100
+        }
+      ],
+      "oak": {
+        "vessel": "neutral oak foudres (1200-gallon)",
+        "months": null,
+        "new_pct": 0,
+        "origin": null
+      },
+      "cases_produced": 330,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "biodynamic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 20113,
+  "tokens_out": 167,
+  "elapsed": 3.1938493251800537,
+  "error": null
+}

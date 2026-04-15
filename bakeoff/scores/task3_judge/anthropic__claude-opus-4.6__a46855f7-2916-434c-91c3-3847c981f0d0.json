@@ -1,0 +1,24 @@
+{
+  "wine_id": "a46855f7-2916-434c-91c3-3847c981f0d0",
+  "wine_name": "Leo Hillinger, Burgenland",
+  "tier": "B",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 5.0,
+  "composite": 4.25,
+  "wrong_facts": [
+    "Price range of $12-18 is not in context data and unverifiable",
+    "Claim that Hillinger's winery is 'glass-and-steel' in Jois is plausible and matches ground truth location but the architectural description is not verified from provided data"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$12-18 retail price range",
+    "$10 more for Moric comparison",
+    "$20 price threshold"
+  ],
+  "reasoning": "This is an exceptionally well-written output with strong voice, specificity, and usefulness. The hook correctly identifies Blaufränkisch, Burgenland, and the competition medals. The mention of Jois matches ground truth vineyard sources. The comparison to Syrah/Gamay is opinionated and useful. However, the output fabricates specific price points ($12-18, $10 more, under $20) that are not in the context data — these are plausible but unverifiable. The vinification details (short maceration, stainless steel and used oak mix) are presented as likely rather than definitive, which is appropriate hedging. The glass-and-steel winery description is a specific architectural claim not in the data. No banned words found. The organic conversion mentioned in ground truth (2010) is notably absent but that's an omission, not an error. Overall correctness is dinged for fabricated prices but the wine knowledge demonstrated is strong and mostly accurate.",
+  "judge_tokens_in": 3751,
+  "judge_tokens_out": 365
+}

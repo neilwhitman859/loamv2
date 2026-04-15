@@ -1,0 +1,13 @@
+{
+  "pair_id": "A036",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grape varieties, with Wine A being a blend of PINOT NOIR and CHARDONNAY BLANC, while Wine B is a Sauvignon Blanc. This difference in grape variety indicates that they are different wines. Additionally, Wine B's specific mention of Sauvignon Blanc suggests a distinct bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grape varieties, with Wine A being a blend of PINOT NOIR and CHARDONNAY BLANC, while Wine B is a Sauvignon Blanc. This difference in grape variety indicates that they are different wines. Additionally, Wine B's specific mention of Sauvignon Blanc suggests a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 87,
+  "elapsed": 3.353611946105957,
+  "error": null
+}

@@ -1,0 +1,33 @@
+{
+  "page_id": "page_005",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Old Vine Zinfandel\", \"vintage_year\": 2022, \"abv_pct\": null, \"blend\": null, \"oak\": {\"vessel\": \"American oak barrels\", \"months\": null, \"new_pct\": null, \"origin\": \"American\"}, \"cases_produced\": null, \"chemistry\": {\"ph\": null, \"ta_g_l\": null, \"rs_g_l\": null, \"so2_total_mg_l\": null}, \"winemaker\": null, \"farming\": \"sustainable\"}]}",
+  "wines_found": [
+    {
+      "name": "Old Vine Zinfandel",
+      "vintage_year": 2022,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "American oak barrels",
+        "months": null,
+        "new_pct": null,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": null,
+        "rs_g_l": null,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "sustainable"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 29930,
+  "tokens_out": 127,
+  "elapsed": 2.488246440887451,
+  "error": null
+}

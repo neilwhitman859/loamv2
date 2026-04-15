@@ -1,0 +1,17 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "openai/gpt-5.4",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 4.05,
+  "wrong_facts": [],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is factually cautious — it avoids fabricating specific numbers (no invented pH, oak months, or blend percentages) and hedges appropriately where it lacks data ('without vineyard-specific sourcing, I would not claim a precise soil mix'). However, it misses an opportunity to reflect the ground truth: the wine is actually fermented 50/50 in stainless steel and French barriques with 9 months on lees and partial MLF, yet the output reads the wine as 'restrained' on oak and MLF, which is somewhat misleading — the wine actually has significant barrel influence. The vinification summary is plausible but inaccurate relative to ground truth. The hook is safe and correct — Marlborough's cool nights and long sunny days are well-established facts. Voice is strong: direct, opinionated, no banned words, no hedging, takes clear positions ('the anti-butter Chardonnay'). Food pairings are specific and well-reasoned. Comparables are apt and useful. The mention of Wairau river system aligns with ground truth vineyard sources. Overall a well-written, useful entry that errs slightly by inferring a fresher/less-oaked style than the wine actually has.",
+  "judge_tokens_in": 3928,
+  "judge_tokens_out": 341
+}

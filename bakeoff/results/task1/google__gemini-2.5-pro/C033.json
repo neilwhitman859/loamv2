@@ -1,0 +1,13 @@
+{
+  "pair_id": "C033",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"In Champagne, 'Brut' is the standard and most common sweetness level. Its omission from a wine name, like in Wine A, is typically an abbreviation or implies the default Brut style, rather than indicating a different wine. Both records refer to the same vintage-dated Blanc de Blancs bottling from Bonnaire.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "In Champagne, 'Brut' is the standard and most common sweetness level. Its omission from a wine name, like in Wine A, is typically an abbreviation or implies the default Brut style, rather than indicating a different wine. Both records refer to the same vintage-dated Blanc de Blancs bottling from Bonnaire.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 1620,
+  "elapsed": 21.1354341506958,
+  "error": null
+}

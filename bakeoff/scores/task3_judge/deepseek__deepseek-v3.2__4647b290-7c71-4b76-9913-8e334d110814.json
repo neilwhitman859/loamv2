@@ -1,0 +1,31 @@
+{
+  "wine_id": "4647b290-7c71-4b76-9913-8e334d110814",
+  "wine_name": "Paul Hobbs Richard Dinner Cuvee Agustina Chardonnay, Sonoma Mountain",
+  "tier": "A",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.0,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.175,
+  "wrong_facts": [
+    "Hook claims 'planted at 800 feet above the fog line' — specific elevation claim not in context data and not verifiable",
+    "Terroir section claims '400-800 ft elevation of the Richard Dinner Vineyard' — fabricated specific range",
+    "Terroir section claims 'diurnal shift of 30-40°F' — fabricated specific number",
+    "Vinification claims 'aged in French oak barrels... for about 10 months' — ground truth says 90% new French oak but no aging duration is provided; 10 months is fabricated",
+    "Vinification describes 'moderate, rather than heavy, new oak' — ground truth says 90% new French oak, which is decidedly heavy new oak, contradicting this claim",
+    "Wine summary says Agustina represents 'a specific, high-elevation block' — ground truth says it's a single-vineyard wine from Richard Dinner Vineyard, not a specific block within it",
+    "Value assessment fabricates '$75-$90' price range — no price data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "800 feet elevation",
+    "400-800 ft elevation range",
+    "30-40°F diurnal shift",
+    "10 months oak aging",
+    "$75-$90 price range"
+  ],
+  "reasoning": "Multiple fabricated numbers (elevation, diurnal shift, oak aging duration, price) trigger the hard penalty cap of 1.5, but the naming origin in the hook isn't provably wrong — it's vague rather than false. However, the claim about 'moderate new oak' directly contradicts ground truth of 90% new French oak, which is a significant factual error that undermines the vinification narrative. The voice is decent — direct, opinionated, avoids most banned words — but the sheer volume of fabricated specifics severely damages correctness. The output is well-structured and would be useful if accurate, with good food pairings and comparables.",
+  "judge_tokens_in": 3462,
+  "judge_tokens_out": 483
+}

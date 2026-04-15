@@ -1,0 +1,13 @@
+{
+  "pair_id": "A047",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"These records appear to be the same wine: the shorter name \\\"Miljenko's Selection\\\" is consistent with an abbreviated label for \\\"Miljenko's Selection Cabernet Franc.\\\" Both are from Grgich Hills Estate, both are red, and the grape information for Wine A is Cabernet Franc, matching the varietal suffix in Wine B. There is no evidence of a different vineyard, tier, style, or grape blend.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "These records appear to be the same wine: the shorter name \"Miljenko's Selection\" is consistent with an abbreviated label for \"Miljenko's Selection Cabernet Franc.\" Both are from Grgich Hills Estate, both are red, and the grape information for Wine A is Cabernet Franc, matching the varietal suffix in Wine B. There is no evidence of a different vineyard, tier, style, or grape blend.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 106,
+  "elapsed": 1.9679312705993652,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A025",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from producer Gabriel Meffre, both red, and Wine A is explicitly 100% Syrah while Wine B is 'Laurus Syrah', matching the varietal. The difference is only a varietal suffix on Wine B, which per rules indicates the shorter 'Laurus' is an abbreviation for the same wine. No evidence of multiple Syrah or other grape wines from this producer under 'Laurus'.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from producer Gabriel Meffre, both red, and Wine A is explicitly 100% Syrah while Wine B is 'Laurus Syrah', matching the varietal. The difference is only a varietal suffix on Wine B, which per rules indicates the shorter 'Laurus' is an abbreviation for the same wine. No evidence of multiple Syrah or other grape wines from this producer under 'Laurus'.",
+  "parse_ok": true,
+  "tokens_in": 570,
+  "tokens_out": 352,
+  "elapsed": 3.761518716812134,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A005",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records refer to the same single-vineyard white wine from Catena Zapata, with Wine B simply appending the grape variety (Semillon) to the name. The difference is purely a naming convention, as both share the same producer, vineyard designation, color, and grape variety.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records refer to the same single-vineyard white wine from Catena Zapata, with Wine B simply appending the grape variety (Semillon) to the name. The difference is purely a naming convention, as both share the same producer, vineyard designation, color, and grape variety.",
+  "parse_ok": true,
+  "tokens_in": 463,
+  "tokens_out": 1434,
+  "elapsed": 27.95376229286194,
+  "error": null
+}

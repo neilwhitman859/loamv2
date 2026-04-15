@@ -1,0 +1,13 @@
+{
+  "pair_id": "B036",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The provided data explicitly states that Wine A is a white wine and Wine B is a red wine. A red wine and a white wine are fundamentally different products, even if they share a similar brand name, and would be considered distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The provided data explicitly states that Wine A is a white wine and Wine B is a red wine. A red wine and a white wine are fundamentally different products, even if they share a similar brand name, and would be considered distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 956,
+  "elapsed": 11.895328283309937,
+  "error": null
+}

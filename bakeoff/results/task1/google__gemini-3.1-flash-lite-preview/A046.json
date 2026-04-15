@@ -1,0 +1,13 @@
+{
+  "pair_id": "A046",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 1.0,\n\"reasoning\": \"Carlisle produces a single red wine from the James Berry Vineyard which is a varietal Syrah. The two records refer to the same bottling, where one is simply the abbreviated name and the other includes the varietal designation.\"\n}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Carlisle produces a single red wine from the James Berry Vineyard which is a varietal Syrah. The two records refer to the same bottling, where one is simply the abbreviated name and the other includes the varietal designation.",
+  "parse_ok": true,
+  "tokens_in": 414,
+  "tokens_out": 71,
+  "elapsed": 2.2538132667541504,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A017",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Although the names differ only by the varietal suffix, that rule applies only when the producer does not make multiple grape-specific wines under the same cuv\u00e9e. Here Wine B is explicitly \\\"Single Valley Lot Syrah,\\\" while Wine A is listed as Pinot Noir, so they are different grape bottlings from the same producer line and therefore different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Although the names differ only by the varietal suffix, that rule applies only when the producer does not make multiple grape-specific wines under the same cuv\u00e9e. Here Wine B is explicitly \"Single Valley Lot Syrah,\" while Wine A is listed as Pinot Noir, so they are different grape bottlings from the same producer line and therefore different wines.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 92,
+  "elapsed": 2.5353991985321045,
+  "error": null
+}

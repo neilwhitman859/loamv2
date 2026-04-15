@@ -1,0 +1,13 @@
+{
+  "pair_id": "C015",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer and are Blanc de Blancs, but they have different lot numbers (No. 10 vs No. 15). Different lot numbers at the same Pr\u00e4dikat level indicate distinct bottlings, making them different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer and are Blanc de Blancs, but they have different lot numbers (No. 10 vs No. 15). Different lot numbers at the same Pr\u00e4dikat level indicate distinct bottlings, making them different wines.",
+  "parse_ok": true,
+  "tokens_in": 515,
+  "tokens_out": 79,
+  "elapsed": 1.9138708114624023,
+  "error": null
+}

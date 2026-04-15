@@ -1,0 +1,13 @@
+{
+  "pair_id": "A050",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, 'de Castelnau', and the same color, 'red'. Although Wine A lists grapes as 'SYRAH, DURIF' and Wine B is specified as 'Syrah', the name 'Cayenne' and 'Cayenne Syrah' suggest a likely match with Syrah being a primary grape, and varietal suffix difference alone usually means same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, 'de Castelnau', and the same color, 'red'. Although Wine A lists grapes as 'SYRAH, DURIF' and Wine B is specified as 'Syrah', the name 'Cayenne' and 'Cayenne Syrah' suggest a likely match with Syrah being a primary grape, and varietal suffix difference alone usually means same wine.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 106,
+  "elapsed": 2.6211636066436768,
+  "error": null
+}

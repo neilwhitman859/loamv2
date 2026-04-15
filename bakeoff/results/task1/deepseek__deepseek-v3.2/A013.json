@@ -1,0 +1,13 @@
+{
+  "pair_id": "A013",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The grapes are completely different: Wine A uses Pinot Noir and Canari Noir (red grapes), while Wine B is Pinot Gris (a white grape). Different grape varieties always indicate different wines, even when the vineyard name (Lerchenberg) and producer match.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The grapes are completely different: Wine A uses Pinot Noir and Canari Noir (red grapes), while Wine B is Pinot Gris (a white grape). Different grape varieties always indicate different wines, even when the vineyard name (Lerchenberg) and producer match.",
+  "parse_ok": true,
+  "tokens_in": 457,
+  "tokens_out": 79,
+  "elapsed": 3.458812713623047,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D033",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Both wines are from Valentin Zusslin and share the Bollenberg vineyard, but they are different named cuv\u00e9es: Luft vs Harmonie. Since these are distinct bottlings rather than a simple varietal-suffix abbreviation difference, they should be treated as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Both wines are from Valentin Zusslin and share the Bollenberg vineyard, but they are different named cuv\u00e9es: Luft vs Harmonie. Since these are distinct bottlings rather than a simple varietal-suffix abbreviation difference, they should be treated as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 77,
+  "elapsed": 1.7333617210388184,
+  "error": null
+}

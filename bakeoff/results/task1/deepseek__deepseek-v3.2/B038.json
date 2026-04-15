@@ -1,0 +1,13 @@
+{
+  "pair_id": "B038",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines share the same producer and name, but Wine A is red and Wine B is white and made from Verdicchio grapes. Different color and different grape variety always indicate different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines share the same producer and name, but Wine A is red and Wine B is white and made from Verdicchio grapes. Different color and different grape variety always indicate different wines.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 62,
+  "elapsed": 8.536259889602661,
+  "error": null
+}

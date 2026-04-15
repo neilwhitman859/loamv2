@@ -1,0 +1,13 @@
+{
+  "pair_id": "D005",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the vineyard name prefix 'Clayvin' in Wine A, which is likely a formatting or abbreviation variation of the same vineyard designation. Both wines share the same producer (Fromm), grape (Syrah), color (red), and no other differentiating factors like classification or style are indicated.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the vineyard name prefix 'Clayvin' in Wine A, which is likely a formatting or abbreviation variation of the same vineyard designation. Both wines share the same producer (Fromm), grape (Syrah), color (red), and no other differentiating factors like classification or style are indicated.",
+  "parse_ok": true,
+  "tokens_in": 444,
+  "tokens_out": 84,
+  "elapsed": 3.571990489959717,
+  "error": null
+}

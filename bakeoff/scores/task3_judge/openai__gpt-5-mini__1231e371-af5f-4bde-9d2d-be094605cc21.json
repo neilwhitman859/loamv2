@@ -1,0 +1,21 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "openai/gpt-5-mini",
+  "correctness": 2.0,
+  "voice": 3.5,
+  "specificity": 3.5,
+  "usefulness": 3.5,
+  "composite": 2.975,
+  "wrong_facts": [
+    "Claims wine is '100% Cabernet Sauvignon' and 'single-varietal' — ground truth shows 2022 is 92% Cab Sauv, 3% Petite Verdot, 3% Merlot, 2% Malbec",
+    "States 'Precise vineyard sources and oak regimen for One Point Five are not published' — ground truth shows Shafer publishes tech sheets detailing 18 months in 100% new French oak (Allier & Tronçais) and multi-site vineyard sourcing including Stags Leap District 'Borderline' vineyard",
+    "Hook says 'trades hillside austerity for broad, immediate dark-fruit presence sourced from across the valley' — ground truth shows the wine actually includes hillside estate vineyards and Stags Leap District fruit, not just valley-floor sourcing"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output's central framing — that this is a 100% Cabernet Sauvignon single-varietal wine with unpublished winemaking details — is contradicted by ground truth. The 2022 blend is 92% Cab with three other varieties, the winemaker is Elias Fernandez, cooperage is 18 months in 100% new French oak, and vineyard sources include hillside estate and Stags Leap District parcels. The model also completely missed the naming origin (generation and a half between John and Doug Shafer), which is the wine's most distinctive story. The voice is decent — direct, avoids banned words, makes opinionated claims — but the factual foundation is weak. Specificity on Napa soils and terroir is reasonable but partly misdirected given the wrong vineyard-sourcing assumptions. The 100% Cab claim comes from the context data (which lists 100%), so the model isn't fabricating per se, but it doubled down on it as a defining characteristic when ground truth shows otherwise, and it failed to add the correct information from training knowledge.",
+  "judge_tokens_in": 3997,
+  "judge_tokens_out": 514
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B013",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines are distinct products due to their different colors (white vs. ros\u00e9). In the context of Champagne, a 'Diamant Bleu' (white) and a 'Diamant Ros\u00e9' are separate bottlings with different production methods and sensory profiles, representing different wines.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are distinct products due to their different colors (white vs. ros\u00e9). In the context of Champagne, a 'Diamant Bleu' (white) and a 'Diamant Ros\u00e9' are separate bottlings with different production methods and sensory profiles, representing different wines.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 84,
+  "elapsed": 1.3885819911956787,
+  "error": null
+}

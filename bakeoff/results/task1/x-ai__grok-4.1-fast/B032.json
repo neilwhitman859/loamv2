@@ -1,0 +1,13 @@
+{
+  "pair_id": "B032",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines are produced by Valentin Zusslin and share the Bollenberg vineyard reference, but Wine A is a white Gewuerztraminer while Wine B is a red Pinot Noir from Bollenberg Neuberg. Different grape varieties (Gewuerztraminer vs. Pinot Noir) and colors (white vs. red) make them distinct bottlings that would not share a single encyclopedia page. The rules explicitly state that different grapes always indicate different wines, even if vineyard names partially match.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are produced by Valentin Zusslin and share the Bollenberg vineyard reference, but Wine A is a white Gewuerztraminer while Wine B is a red Pinot Noir from Bollenberg Neuberg. Different grape varieties (Gewuerztraminer vs. Pinot Noir) and colors (white vs. red) make them distinct bottlings that would not share a single encyclopedia page. The rules explicitly state that different grapes always indicate different wines, even if vineyard names partially match.",
+  "parse_ok": true,
+  "tokens_in": 572,
+  "tokens_out": 429,
+  "elapsed": 2.6724178791046143,
+  "error": null
+}

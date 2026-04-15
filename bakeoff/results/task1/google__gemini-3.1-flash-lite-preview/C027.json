@@ -1,0 +1,13 @@
+{
+  "pair_id": "C027",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"Echezeaux and Grands-Echezeaux are distinct Grand Cru appellations in Burgundy with different vineyard boundaries and terroir. Even though both are produced by Maison Champy from Pinot Noir, they are separate bottlings representing different vineyard sites.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Echezeaux and Grands-Echezeaux are distinct Grand Cru appellations in Burgundy with different vineyard boundaries and terroir. Even though both are produced by Maison Champy from Pinot Noir, they are separate bottlings representing different vineyard sites.",
+  "parse_ok": true,
+  "tokens_in": 453,
+  "tokens_out": 77,
+  "elapsed": 2.1613123416900635,
+  "error": null
+}

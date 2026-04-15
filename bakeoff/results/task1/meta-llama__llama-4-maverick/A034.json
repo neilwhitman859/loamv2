@@ -1,0 +1,13 @@
+{
+  "pair_id": "A034",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is a blend of Chardonnay Blanc and Pinot Gris, while Wine B is specifically labeled as Sauvignon Blanc, indicating different grape compositions. The presence of different grapes is a strong indicator that they are different wines. The LWIN (Wine B) and the grape list (Wine A) provide sufficient information to conclude they are not the same bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is a blend of Chardonnay Blanc and Pinot Gris, while Wine B is specifically labeled as Sauvignon Blanc, indicating different grape compositions. The presence of different grapes is a strong indicator that they are different wines. The LWIN (Wine B) and the grape list (Wine A) provide sufficient information to conclude they are not the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 95,
+  "elapsed": 1.5178842544555664,
+  "error": null
+}

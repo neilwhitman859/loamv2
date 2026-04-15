@@ -1,0 +1,13 @@
+{
+  "pair_id": "D013",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are from the same producer and share the Premier Cru classification, they originate from two distinct and separate village appellations in Burgundy. Beaune and Vosne-Roman\u00e9e are different geographical locations, each with its own unique terroir, making these two entirely different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are from the same producer and share the Premier Cru classification, they originate from two distinct and separate village appellations in Burgundy. Beaune and Vosne-Roman\u00e9e are different geographical locations, each with its own unique terroir, making these two entirely different wines.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 1164,
+  "elapsed": 11.971663475036621,
+  "error": null
+}

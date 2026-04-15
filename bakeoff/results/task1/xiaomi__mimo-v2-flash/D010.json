@@ -1,0 +1,13 @@
+{
+  "pair_id": "D010",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer (Bellavista) and are ros\u00e9 wines. The names 'Gran Cuvee' and 'Gran Cuvee Rose' are likely the same bottling, with 'Rose' being a descriptive suffix indicating the color, which is already specified as rose for both.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer (Bellavista) and are ros\u00e9 wines. The names 'Gran Cuvee' and 'Gran Cuvee Rose' are likely the same bottling, with 'Rose' being a descriptive suffix indicating the color, which is already specified as rose for both.",
+  "parse_ok": true,
+  "tokens_in": 476,
+  "tokens_out": 84,
+  "elapsed": 2.4056825637817383,
+  "error": null
+}

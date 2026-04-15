@@ -1,0 +1,22 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "openai/gpt-5.4",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "The context data lists the wine as 100% Cabernet Sauvignon, but the ground truth shows the 2022 blend is 92% Cabernet Sauvignon, 3% Petite Verdot, 3% Merlot, 2% Malbec — the output doesn't address this but doesn't contradict it either since it follows the context data.",
+    "The hook says 'Built from estate Cabernet on the Stags Leap District side of Napa' — while Shafer does have vineyards in Stags Leap District, the wine is labeled Napa Valley appellation and sources from multiple sites including but not limited to Stags Leap District. Calling it 'built from estate Cabernet on the Stags Leap District side' is misleading.",
+    "The vinification summary says 'Exact lot-by-lot details are not provided here, so I won't invent cooperage or fermentation specifics' — this is honest, but the ground truth shows 18 months in 100% new French oak (Allier & Tronçais). The model correctly avoided fabricating but missed an opportunity.",
+    "The model does not mention winemaker Elias Fernandez, a significant omission."
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output correctly identifies the naming origin (generation and a half) which matches ground truth and is not in the context data — a strong positive. It avoids fabricating cooperage or fermentation numbers, which is commendable. However, the hook's framing of the wine as primarily 'estate Cabernet on the Stags Leap District side' is somewhat misleading given the wine is a multi-site Napa Valley blend. The voice is excellent — direct, opinionated, specific, with no banned words and strong food pairings. Specificity is high with named soils, competitors, and real dishes. The insider take is genuinely useful and actionable. The main correctness issue is the slightly misleading geographic framing rather than outright fabrication.",
+  "judge_tokens_in": 4304,
+  "judge_tokens_out": 511
+}

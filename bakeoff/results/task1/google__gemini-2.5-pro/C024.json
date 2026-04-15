@@ -1,0 +1,13 @@
+{
+  "pair_id": "C024",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"The producer, color, and style (Extra Brut) are identical for both records. The only difference is the presence of the French definite article 'Les' in one name. This is a very common naming variation where the shorter name is an abbreviation, and both refer to the same single-vineyard cuv\u00e9e.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The producer, color, and style (Extra Brut) are identical for both records. The only difference is the presence of the French definite article 'Les' in one name. This is a very common naming variation where the shorter name is an abbreviation, and both refer to the same single-vineyard cuv\u00e9e.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 1623,
+  "elapsed": 23.4436457157135,
+  "error": null
+}

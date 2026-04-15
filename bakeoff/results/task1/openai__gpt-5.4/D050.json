@@ -1,0 +1,13 @@
+{
+  "pair_id": "D050",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.96,\"reasoning\":\"These records share the same producer and vineyard name, but the grape varieties differ: Wine A is a Pinot Gris/Pinot Blanc blend, while Wine B is Chardonnay. Different grapes always indicate different wines, even when the vineyard designation matches. The spelling difference Birkweiler/Birkweiller looks like a formatting variant, but it does not override the grape mismatch.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.96,
+  "reasoning": "These records share the same producer and vineyard name, but the grape varieties differ: Wine A is a Pinot Gris/Pinot Blanc blend, while Wine B is Chardonnay. Different grapes always indicate different wines, even when the vineyard designation matches. The spelling difference Birkweiler/Birkweiller looks like a formatting variant, but it does not override the grape mismatch.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 95,
+  "elapsed": 3.262140989303589,
+  "error": null
+}

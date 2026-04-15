@@ -1,0 +1,13 @@
+{
+  "pair_id": "B013",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.92, \"reasoning\": \"One is a white wine (Diamant Bleu) and the other is a ros\u00e9 (Diamant Rose), which is a different style/color and thus a separate bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.92,
+  "reasoning": "One is a white wine (Diamant Bleu) and the other is a ros\u00e9 (Diamant Rose), which is a different style/color and thus a separate bottling.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 144,
+  "elapsed": 4.600832223892212,
+  "error": null
+}

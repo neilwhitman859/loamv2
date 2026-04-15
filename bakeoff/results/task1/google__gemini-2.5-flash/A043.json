@@ -1,0 +1,13 @@
+{
+  "pair_id": "A043",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is a Shiraz, while Wine B is a Shiraz Durif. The inclusion of 'Durif' in Wine B indicates a blend with a different grape variety, making them distinct wines even if from the same producer and generally similar style.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is a Shiraz, while Wine B is a Shiraz Durif. The inclusion of 'Durif' in Wine B indicates a blend with a different grape variety, making them distinct wines even if from the same producer and generally similar style.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 72,
+  "elapsed": 1.6522912979125977,
+  "error": null
+}

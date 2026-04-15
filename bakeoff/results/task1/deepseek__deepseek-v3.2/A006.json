@@ -1,0 +1,13 @@
+{
+  "pair_id": "A006",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Radio-Coteau) and share the same vineyard designation (Clos Platt). Wine A explicitly lists Pinot Noir as its grape, and Wine B's name appends 'Pinot Noir' as a varietal suffix, which is typically just an abbreviation or formatting difference. There is no evidence of a different grape, style, or classification tier.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Radio-Coteau) and share the same vineyard designation (Clos Platt). Wine A explicitly lists Pinot Noir as its grape, and Wine B's name appends 'Pinot Noir' as a varietal suffix, which is typically just an abbreviation or formatting difference. There is no evidence of a different grape, style, or classification tier.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 100,
+  "elapsed": 6.094103574752808,
+  "error": null
+}

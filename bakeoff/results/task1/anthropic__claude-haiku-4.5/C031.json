@@ -1,0 +1,13 @@
+{
+  "pair_id": "C031",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"While both are Blanc de Blancs from Bonnaire, Wine A is explicitly labeled 'Brut' (a specific dosage level indicating dry champagne/sparkling wine) whereas Wine B has no dosage designation specified. These represent distinct bottlings with different sweetness profiles that a consumer would encounter separately. The different LWINs confirm they are separate products.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "While both are Blanc de Blancs from Bonnaire, Wine A is explicitly labeled 'Brut' (a specific dosage level indicating dry champagne/sparkling wine) whereas Wine B has no dosage designation specified. These represent distinct bottlings with different sweetness profiles that a consumer would encounter separately. The different LWINs confirm they are separate products.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 107,
+  "elapsed": 4.726995944976807,
+  "error": null
+}

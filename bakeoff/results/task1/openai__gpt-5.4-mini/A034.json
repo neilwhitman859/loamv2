@@ -1,0 +1,13 @@
+{
+  "pair_id": "A034",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These are different grape compositions: Wine A is Chardonnay Blanc/Pinot Gris, while Wine B is explicitly Sauvignon Blanc. Under the rules, different grapes always \u10dc\u10d8\u10e8\u10dc\u10d0\u10d5\u10e1 a different wine even if the base vineyard/cuv\u00e9e name is the same. The shared 'Markgraflerland SW' portion is not enough to make them the same bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These are different grape compositions: Wine A is Chardonnay Blanc/Pinot Gris, while Wine B is explicitly Sauvignon Blanc. Under the rules, different grapes always \u10dc\u10d8\u10e8\u10dc\u10d0\u10d5\u10e1 a different wine even if the base vineyard/cuv\u00e9e name is the same. The shared 'Markgraflerland SW' portion is not enough to make them the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 91,
+  "elapsed": 1.872809886932373,
+  "error": null
+}

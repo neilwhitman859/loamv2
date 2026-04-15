@@ -1,0 +1,13 @@
+{
+  "pair_id": "B004",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a red Pinot Noir while Wine B is a white wine made from Chardonnay Blanc and Pinot Noir \u2014 different colors and different grape compositions. Different grapes/color always means different wines, even when the vineyard name and producer match. These would be encountered as separate bottlings by a consumer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a red Pinot Noir while Wine B is a white wine made from Chardonnay Blanc and Pinot Noir \u2014 different colors and different grape compositions. Different grapes/color always means different wines, even when the vineyard name and producer match. These would be encountered as separate bottlings by a consumer.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 95,
+  "elapsed": 3.4079456329345703,
+  "error": null
+}

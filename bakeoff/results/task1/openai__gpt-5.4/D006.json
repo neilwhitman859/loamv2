@@ -1,0 +1,13 @@
+{
+  "pair_id": "D006",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.94,\"reasoning\":\"These appear to be different bottlings because the grape compositions do not match: Wine A is 100% Merlot Noir, while Wine B is a blend of Cot and Merlot Noir. The names are similar, but the dropped article alone would not matter; the decisive evidence is the different grape makeup.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.94,
+  "reasoning": "These appear to be different bottlings because the grape compositions do not match: Wine A is 100% Merlot Noir, while Wine B is a blend of Cot and Merlot Noir. The names are similar, but the dropped article alone would not matter; the decisive evidence is the different grape makeup.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 83,
+  "elapsed": 3.011488914489746,
+  "error": null
+}

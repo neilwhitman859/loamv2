@@ -1,0 +1,13 @@
+{
+  "pair_id": "A030",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These are not just name-format variants: Wine A is labeled only \\\"Sauvignon,\\\" while Wine B is \\\"Sauvignon Semillon,\\\" indicating a different grape blend. Under the rules, different grapes mean different wines even when the producer and color match. The LWIN for Wine B also supports that it is a distinct bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These are not just name-format variants: Wine A is labeled only \"Sauvignon,\" while Wine B is \"Sauvignon Semillon,\" indicating a different grape blend. Under the rules, different grapes mean different wines even when the producer and color match. The LWIN for Wine B also supports that it is a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 414,
+  "tokens_out": 96,
+  "elapsed": 1.7686512470245361,
+  "error": null
+}

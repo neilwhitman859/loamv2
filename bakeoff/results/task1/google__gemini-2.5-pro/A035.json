@@ -1,0 +1,13 @@
+{
+  "pair_id": "A035",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The producer is identical. Wine B's name is simply Wine A's name with the varietal 'Cabernet Sauvignon' appended. The provided data confirms that Wine A is made from Cabernet Sauvignon, making this a classic case where the shorter name is an abbreviation for the full varietal-specific name. Both records refer to the same red wine.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The producer is identical. Wine B's name is simply Wine A's name with the varietal 'Cabernet Sauvignon' appended. The provided data confirms that Wine A is made from Cabernet Sauvignon, making this a classic case where the shorter name is an abbreviation for the full varietal-specific name. Both records refer to the same red wine.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 1400,
+  "elapsed": 14.331485509872437,
+  "error": null
+}

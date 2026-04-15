@@ -1,0 +1,13 @@
+{
+  "pair_id": "A038",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.97,\"reasoning\":\"Both records are from Bellingham\u2019s Bernard Series and share the identical cuv\u00e9e name 'Bush Vine.' Record A explicitly lists the grape as Pinotage, while Record B appends 'Pinotage' to the wine name, which is typically just a varietal suffix rather than a distinct bottling. There is no evidence here that Bellingham makes multiple different Bush Vine wines under this exact Bernard Series name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "Both records are from Bellingham\u2019s Bernard Series and share the identical cuv\u00e9e name 'Bush Vine.' Record A explicitly lists the grape as Pinotage, while Record B appends 'Pinotage' to the wine name, which is typically just a varietal suffix rather than a distinct bottling. There is no evidence here that Bellingham makes multiple different Bush Vine wines under this exact Bernard Series name.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 105,
+  "elapsed": 3.021263837814331,
+  "error": null
+}

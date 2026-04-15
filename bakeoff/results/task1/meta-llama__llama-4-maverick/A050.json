@@ -1,0 +1,13 @@
+{
+  "pair_id": "A050",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is made from Syrah and Durif grapes, while Wine B's grape composition is unknown but its name 'Cayenne Syrah' suggests it may be made from Syrah alone; if the producer makes multiple wines from the same vineyard with different grapes, the varietal suffix difference is significant; without the exact grape composition of Wine B, the difference in grape composition between the two wines is a strong indication they are different.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is made from Syrah and Durif grapes, while Wine B's grape composition is unknown but its name 'Cayenne Syrah' suggests it may be made from Syrah alone; if the producer makes multiple wines from the same vineyard with different grapes, the varietal suffix difference is significant; without the exact grape composition of Wine B, the difference in grape composition between the two wines is a strong indication they are different.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 112,
+  "elapsed": 1.7971601486206055,
+  "error": null
+}

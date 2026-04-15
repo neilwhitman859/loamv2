@@ -1,0 +1,13 @@
+{
+  "pair_id": "D035",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, grape varieties (Sangiovese and Montepulciano), and color (red). The only difference is the name, which likely indicates a different label or vintage, but not a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, grape varieties (Sangiovese and Montepulciano), and color (red). The only difference is the name, which likely indicates a different label or vintage, but not a different wine.",
+  "parse_ok": true,
+  "tokens_in": 461,
+  "tokens_out": 70,
+  "elapsed": 1.6592068672180176,
+  "error": null
+}

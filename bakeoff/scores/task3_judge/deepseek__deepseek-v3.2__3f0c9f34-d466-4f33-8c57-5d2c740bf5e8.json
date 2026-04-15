@@ -1,0 +1,21 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.0,
+  "usefulness": 4.5,
+  "composite": 3.875,
+  "wrong_facts": [
+    "The vinification summary claims the wine is 'primarily fermented and aged in stainless steel tanks, with a minority portion seeing large-format oak' — ground truth shows it's fermented 50/50 in stainless steel and French barriques, not primarily stainless steel with minority oak",
+    "The hook mentions 'riverbed stones' and 'glacial soils' — the ground truth describes shallow sandy loams over gravels, which is alluvial not glacial",
+    "The terroir section focuses exclusively on the Wairau Valley, but ground truth shows vineyards also include Renwick and Brancott sub-areas"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output has strong voice — direct, opinionated, no banned words, and genuinely useful comparisons and food pairings. However, the vinification description materially misrepresents the oak/stainless split (claiming primarily stainless when it's actually 50/50), which is a significant factual error. The hook's 'glacial soils' claim is inaccurate — the soils are alluvial sandy loams over gravels. The mention of Wairau Valley vineyards is partially correct but incomplete per ground truth. The output correctly identifies partial malolactic fermentation and lees aging conceptually, but gets the balance wrong. No fabricated specific numbers. The comparable wines and food pairings are well-chosen and actionable.",
+  "judge_tokens_in": 3568,
+  "judge_tokens_out": 372
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A015",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer and core vineyard/cuv\u00e9e name ('Freedom Hill Perspicacious'). The only difference is the explicit mention of 'Pinot Noir' in Wine B, which is also the grape listed for Wine A. This indicates Wine B is simply a more descriptive naming of the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer and core vineyard/cuv\u00e9e name ('Freedom Hill Perspicacious'). The only difference is the explicit mention of 'Pinot Noir' in Wine B, which is also the grape listed for Wine A. This indicates Wine B is simply a more descriptive naming of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 83,
+  "elapsed": 1.2584209442138672,
+  "error": null
+}

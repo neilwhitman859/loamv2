@@ -1,0 +1,13 @@
+{
+  "pair_id": "C025",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are produced by the same producer, have the same appellation, and the same grape variety (Riserva del Fondatore and Riserva Fondatore, respectively). The slight difference in the name formatting (Riserva vs Riserva Rose) is a common practice and does not indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are produced by the same producer, have the same appellation, and the same grape variety (Riserva del Fondatore and Riserva Fondatore, respectively). The slight difference in the name formatting (Riserva vs Riserva Rose) is a common practice and does not indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 462,
+  "tokens_out": 81,
+  "elapsed": 1.4550104141235352,
+  "error": null
+}

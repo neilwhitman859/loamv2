@@ -1,0 +1,13 @@
+{
+  "pair_id": "B010",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":1.0,\"reasoning\":\"Both wines are produced by Bellavista with similar naming ('Alma Grande Cuvee Brut' vs 'Gran Cuvee Alma'), suggesting they may be related sparkling cuv\u00e9es. However, Wine A is explicitly white while Wine B is ros\u00e9, indicating different colors. Per the rules, ros\u00e9 vs white (like ros\u00e9 vs red) represents distinct wines that consumers would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are produced by Bellavista with similar naming ('Alma Grande Cuvee Brut' vs 'Gran Cuvee Alma'), suggesting they may be related sparkling cuv\u00e9es. However, Wine A is explicitly white while Wine B is ros\u00e9, indicating different colors. Per the rules, ros\u00e9 vs white (like ros\u00e9 vs red) represents distinct wines that consumers would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 557,
+  "tokens_out": 569,
+  "elapsed": 3.963606119155884,
+  "error": null
+}

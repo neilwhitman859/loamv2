@@ -1,0 +1,13 @@
+{
+  "pair_id": "D037",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.99,\"reasoning\":\"Both records share the same producer, Chatter Creek, and the wine name is the same aside from a trivial formatting/wording difference: \\\"Blend 105 Red Table\\\" vs \\\"Blend 105 Red Table Wine.\\\" They also match in color (red), and there is no indication of a different cuv\u00e9e, grape blend, or classification tier.\"}",
+  "verdict": "SAME",
+  "confidence": 0.99,
+  "reasoning": "Both records share the same producer, Chatter Creek, and the wine name is the same aside from a trivial formatting/wording difference: \"Blend 105 Red Table\" vs \"Blend 105 Red Table Wine.\" They also match in color (red), and there is no indication of a different cuv\u00e9e, grape blend, or classification tier.",
+  "parse_ok": true,
+  "tokens_in": 415,
+  "tokens_out": 92,
+  "elapsed": 1.9948019981384277,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C030",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The key rules state that different Rioja classification tiers (Reserva vs Gran Reserva) always indicate DIFFERENT wines. Both wines are from the same producer (Mayu) and grape (Cabernet Sauvignon), but the classification difference signifies distinct bottlings with different aging requirements and market positions.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The key rules state that different Rioja classification tiers (Reserva vs Gran Reserva) always indicate DIFFERENT wines. Both wines are from the same producer (Mayu) and grape (Cabernet Sauvignon), but the classification difference signifies distinct bottlings with different aging requirements and market positions.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 85,
+  "elapsed": 3.3070476055145264,
+  "error": null
+}

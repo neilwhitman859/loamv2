@@ -1,0 +1,24 @@
+{
+  "wine_id": "10c89e05-ecdd-4254-9c24-5a0b67894da5",
+  "wine_name": "Black Box Deep & Dark Cabernet Sauvignon, California",
+  "tier": "C",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 5.0,
+  "composite": 4.25,
+  "wrong_facts": [
+    "The 2021 ABV is stated as 13.0% in the context data, but the ground truth says 13.5% — the model used the context data figure (13.0%) which may be incorrect per the ground truth, though the model was only given the context data so this is not a fabrication by the model",
+    "Lodi and northern San Joaquin Valley are plausible but speculative sourcing claims — ground truth says Central Valley generally"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "Six weeks freshness after opening — not in context data, though this is a well-known bag-in-box characteristic",
+    "Cold-soak details are speculative vinification claims not sourced from context data",
+    "The $5 per bottle equivalent calculation is derived math, not fabricated"
+  ],
+  "reasoning": "This is an exceptionally well-written output with strong voice, real specificity, and genuinely useful information. The hook is accurate — 3 liters for ~$20 matches context data, and 'Deep & Dark' as a marketing descriptor matches ground truth. The model correctly identifies the 3-liter format, Central Valley sourcing, and Constellation/Gallo ownership is not mentioned but not contradicted. The vinification section is largely speculative (cold-soak, stainless steel, oak alternatives) but presented with appropriate hedging language ('likely,' 'almost certainly'). The ABV discrepancy (13.0% vs ground truth 13.5%) is from the context data the model was given, not a fabrication. The speculative terroir and vinification details are plausible and hedged, but they are still unverifiable additions. The voice is excellent — direct, opinionated, no banned words, practical and honest about the wine's limitations. Food pairings are specific and well-reasoned. The insider take is genuinely useful and takes a clear position.",
+  "judge_tokens_in": 3744,
+  "judge_tokens_out": 464
+}

@@ -1,0 +1,33 @@
+{
+  "page_id": "page_052",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\"wines_found\": [{\"name\": \"2023 Mourvèdre\", \"vintage_year\": 2023, \"abv_pct\": 12.5, \"blend\": [{\"grape\": \"Mourvèdre\", \"pct\": 100}], \"oak\": {\"vessel\": \"foudres\", \"months\": null, \"new_pct\": null, \"origin\": \"neutral\"}, \"cases_produced\": 330, \"chemistry\": null, \"winemaker\": null, \"farming\": \"biodynamic\"}]}\n```",
+  "wines_found": [
+    {
+      "name": "2023 Mourvèdre",
+      "vintage_year": 2023,
+      "abv_pct": 12.5,
+      "blend": [
+        {
+          "grape": "Mourvèdre",
+          "pct": 100
+        }
+      ],
+      "oak": {
+        "vessel": "foudres",
+        "months": null,
+        "new_pct": null,
+        "origin": "neutral"
+      },
+      "cases_produced": 330,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": "biodynamic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 21128,
+  "tokens_out": 127,
+  "elapsed": 1.5296688079833984,
+  "error": null
+}

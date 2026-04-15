@@ -1,0 +1,66 @@
+{
+  "wine_id": "1a19854d-d7fb-4046-a2ba-9c2391b6026a",
+  "model": "google/gemini-2.5-pro",
+  "tier": "B",
+  "display_name": "Terre del Barolo Arnaldo Rivera, Barolo",
+  "raw_content": "```json\n{\n  \"hook\": \"This Barolo is a blend from hundreds of small growers across the appellation, a signature of the Terre del Barolo cooperative. This approach creates a wine that isn't about a single plot, but a balanced, panoramic snapshot of the entire Barolo zone. It's the key to its consistent, classic style and accessible price.\",\n  \"wine_summary\": \"Named for the cooperative's influential founder, Arnaldo Rivera, this wine represents the collective effort of the 300-plus members of Terre del Barolo. Founded in 1958, the cooperative provides a vital platform for small growers to vinify and market their fruit. The Arnaldo Rivera bottling is the top of their range, a deliberate blend of grapes from across Barolo's eleven communes. This sourcing strategy allows them to balance the aromatic, softer-tannin profile of the western Tortonian soils with the powerful, structured character from the eastern Helvetian soils, creating a highly representative and consistent expression of the appellation.\",\n  \"terroir_expression\": \"The wine's structural balance comes directly from blending across Barolo’s great geological divide. Grapes from western communes like La Morra, grown on younger, blue-gray Tortonian calcareous marl, contribute the high-toned aromatics—rose petal, red cherry, and a more approachable tannic profile. This is balanced by fruit from the east, such as Serralunga d'Alba and Monforte, where older, iron-rich Helvetian sandstone soils of the Lequio Formation build a powerful, rigid frame of tannin and deliver deeper notes of licorice and tar. The result is not a wine of a single place, but a complex composition of Barolo itself.\",\n  \"vinification_summary\": \"Following a traditional approach, the Nebbiolo grapes undergo fermentation and maceration in stainless steel tanks. The key decision here is the maceration length—the time the juice spends in contact with the skins—which for a classic Barolo is typically long, around 20-30 days, to build the wine's formidable structure. The wine is then aged in large, neutral Slavonian oak casks, known as `botti grandi`. This slow, oxidative aging softens the tannins over years without imparting new oak flavors like vanilla or toast, preserving the pure, terroir-driven character of Nebbiolo.\",\n  \"food_pairing\": [\n    {\n      \"dish\": \"Tajarin al Tartufo\",\n      \"reasoning\": \"A classic Piedmontese pairing. The richness of the egg-yolk pasta softens the wine's tannins, while the Barolo's own earthy, aged notes of dried leaves and mushroom directly complement the shaved truffles.\"\n    },\n    {\n      \"dish\": \"Braised Beef Shank with Saffron Risotto\",\n      \"reasoning\": \"The wine's high acidity cuts through the richness of the slow-cooked meat, and its massive tannins are tamed by the protein and gelatin. The savory, ferrous notes in the wine find a home with the deep flavor of the beef.\"\n    },\n    {\n      \"dish\": \"Nashville Hot Chicken\",\n      \"reasoning\": \"An unconventional but effective match. The wine’s bright acidity cleanses the palate from the fried chicken's fat, while the firm structure and bold fruit stand up to the intense cayenne heat without being overpowered.\"\n    },\n    {\n      \"dish\": \"Mushroom and Lentil Shepherd's Pie\",\n      \"reasoning\": \"The deep umami of the mushrooms and the earthiness of the lentils echo the savory, tertiary notes in the wine. The protein in the lentils and fat from the potato topping help to manage the tannins.\"\n    }\n  ],\n  \"comparable_wines\": [\n    {\n      \"wine\": \"Produttori del Barbaresco, Barbaresco DOCG\",\n      \"reasoning\": \"The 'other' great Piedmontese cooperative. While from Barbaresco, it shares the same philosophy of blending top sites to create a benchmark wine at a fair price, offering a similarly traditional expression.\"\n    },\n    {\n      \"wine\": \"Damilano 'Lecinquevigne' Barolo DOCG\",\n      \"reasoning\": \"Another blended Barolo that sources from five different vineyards. It offers a similar 'panoramic' style and aims for balance between the different terroirs, often at a comparable price point.\"\n    }\n  ],\n  \"style_profile\": \"Full-bodied dry red with massive tannins and classic rose and tar aromatics\",\n  \"cellar_recommendation\": \"While approachable for a Barolo due to the blend, this will reward patience. Drink from 8 years post-vintage to allow the tannins to resolve; it will hold for 15-20+ years in strong vintages. Store horizontally in a cool, dark, stable-temperature environment.\",\n  \"value_assessment\": \"At around $45-$60, this wine sits in a competitive sweet spot for non-single-vineyard Barolo. It offers a more complete and traditional expression than many private-label or bulk-bottled options in the same bracket. Compared to a producer like Fontanafredda's base Barolo, the Arnaldo Rivera often delivers more structure and classicism for the money, making it a strong choice for an authentic introduction to the appellation.\",\n  \"market_position\": \"This is a workhorse Barolo for savvy retail buyers and by-the-glass programs in Italian restaurants that want to pour a real Barolo. Its appeal lies in offering a legitimate experience—real structure, classic aromatics—at a price that doesn't require a special occasion. It's the bottle you buy to understand what Barolo is all about before graduating to pricier single-vineyard crus.\",\n  \"insider_take\": \"Do not buy this wine expecting the singular, jagged personality of a top single-vineyard Barolo. Its strength—blending across terroirs for balance and accessibility—is also what sands off the extreme edges you might find in a pure Serralunga or La Morra. This is an excellent 'any night' Barolo for a seasoned drinker or a fantastic, non-intimidating introduction for a newcomer, but it is not a collector's centerpiece.\",\n  \"aging_potential_years\": 20,\n  \"drinking_window_min_years\": 8,\n  \"drinking_window_max_years\": 20,\n  \"sensory\": {\n    \"acidity\": 4,\n    \"tannin\": 5,\n    \"body\": 4,\n    \"sweetness\": 1,\n    \"alcohol\": 4,\n    \"color_intensity\": \"pale\",\n    \"aroma_intensity\": \"pronounced\",\n    \"finish_length\": \"long\",\n    \"complexity\": \"complex\",\n    \"quality_level\": \"very_good\"\n  }\n}\n```",
+  "parsed": {
+    "hook": "This Barolo is a blend from hundreds of small growers across the appellation, a signature of the Terre del Barolo cooperative. This approach creates a wine that isn't about a single plot, but a balanced, panoramic snapshot of the entire Barolo zone. It's the key to its consistent, classic style and accessible price.",
+    "wine_summary": "Named for the cooperative's influential founder, Arnaldo Rivera, this wine represents the collective effort of the 300-plus members of Terre del Barolo. Founded in 1958, the cooperative provides a vital platform for small growers to vinify and market their fruit. The Arnaldo Rivera bottling is the top of their range, a deliberate blend of grapes from across Barolo's eleven communes. This sourcing strategy allows them to balance the aromatic, softer-tannin profile of the western Tortonian soils with the powerful, structured character from the eastern Helvetian soils, creating a highly representative and consistent expression of the appellation.",
+    "terroir_expression": "The wine's structural balance comes directly from blending across Barolo’s great geological divide. Grapes from western communes like La Morra, grown on younger, blue-gray Tortonian calcareous marl, contribute the high-toned aromatics—rose petal, red cherry, and a more approachable tannic profile. This is balanced by fruit from the east, such as Serralunga d'Alba and Monforte, where older, iron-rich Helvetian sandstone soils of the Lequio Formation build a powerful, rigid frame of tannin and deliver deeper notes of licorice and tar. The result is not a wine of a single place, but a complex composition of Barolo itself.",
+    "vinification_summary": "Following a traditional approach, the Nebbiolo grapes undergo fermentation and maceration in stainless steel tanks. The key decision here is the maceration length—the time the juice spends in contact with the skins—which for a classic Barolo is typically long, around 20-30 days, to build the wine's formidable structure. The wine is then aged in large, neutral Slavonian oak casks, known as `botti grandi`. This slow, oxidative aging softens the tannins over years without imparting new oak flavors like vanilla or toast, preserving the pure, terroir-driven character of Nebbiolo.",
+    "food_pairing": [
+      {
+        "dish": "Tajarin al Tartufo",
+        "reasoning": "A classic Piedmontese pairing. The richness of the egg-yolk pasta softens the wine's tannins, while the Barolo's own earthy, aged notes of dried leaves and mushroom directly complement the shaved truffles."
+      },
+      {
+        "dish": "Braised Beef Shank with Saffron Risotto",
+        "reasoning": "The wine's high acidity cuts through the richness of the slow-cooked meat, and its massive tannins are tamed by the protein and gelatin. The savory, ferrous notes in the wine find a home with the deep flavor of the beef."
+      },
+      {
+        "dish": "Nashville Hot Chicken",
+        "reasoning": "An unconventional but effective match. The wine’s bright acidity cleanses the palate from the fried chicken's fat, while the firm structure and bold fruit stand up to the intense cayenne heat without being overpowered."
+      },
+      {
+        "dish": "Mushroom and Lentil Shepherd's Pie",
+        "reasoning": "The deep umami of the mushrooms and the earthiness of the lentils echo the savory, tertiary notes in the wine. The protein in the lentils and fat from the potato topping help to manage the tannins."
+      }
+    ],
+    "comparable_wines": [
+      {
+        "wine": "Produttori del Barbaresco, Barbaresco DOCG",
+        "reasoning": "The 'other' great Piedmontese cooperative. While from Barbaresco, it shares the same philosophy of blending top sites to create a benchmark wine at a fair price, offering a similarly traditional expression."
+      },
+      {
+        "wine": "Damilano 'Lecinquevigne' Barolo DOCG",
+        "reasoning": "Another blended Barolo that sources from five different vineyards. It offers a similar 'panoramic' style and aims for balance between the different terroirs, often at a comparable price point."
+      }
+    ],
+    "style_profile": "Full-bodied dry red with massive tannins and classic rose and tar aromatics",
+    "cellar_recommendation": "While approachable for a Barolo due to the blend, this will reward patience. Drink from 8 years post-vintage to allow the tannins to resolve; it will hold for 15-20+ years in strong vintages. Store horizontally in a cool, dark, stable-temperature environment.",
+    "value_assessment": "At around $45-$60, this wine sits in a competitive sweet spot for non-single-vineyard Barolo. It offers a more complete and traditional expression than many private-label or bulk-bottled options in the same bracket. Compared to a producer like Fontanafredda's base Barolo, the Arnaldo Rivera often delivers more structure and classicism for the money, making it a strong choice for an authentic introduction to the appellation.",
+    "market_position": "This is a workhorse Barolo for savvy retail buyers and by-the-glass programs in Italian restaurants that want to pour a real Barolo. Its appeal lies in offering a legitimate experience—real structure, classic aromatics—at a price that doesn't require a special occasion. It's the bottle you buy to understand what Barolo is all about before graduating to pricier single-vineyard crus.",
+    "insider_take": "Do not buy this wine expecting the singular, jagged personality of a top single-vineyard Barolo. Its strength—blending across terroirs for balance and accessibility—is also what sands off the extreme edges you might find in a pure Serralunga or La Morra. This is an excellent 'any night' Barolo for a seasoned drinker or a fantastic, non-intimidating introduction for a newcomer, but it is not a collector's centerpiece.",
+    "aging_potential_years": 20,
+    "drinking_window_min_years": 8,
+    "drinking_window_max_years": 20,
+    "sensory": {
+      "acidity": 4,
+      "tannin": 5,
+      "body": 4,
+      "sweetness": 1,
+      "alcohol": 4,
+      "color_intensity": "pale",
+      "aroma_intensity": "pronounced",
+      "finish_length": "long",
+      "complexity": "complex",
+      "quality_level": "very_good"
+    }
+  },
+  "parse_ok": true,
+  "tokens_in": 2106,
+  "tokens_out": 5156,
+  "elapsed": 48.47909474372864,
+  "error": null
+}

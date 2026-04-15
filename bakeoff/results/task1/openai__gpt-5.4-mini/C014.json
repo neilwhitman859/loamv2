@@ -1,0 +1,13 @@
+{
+  "pair_id": "C014",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Both wines are from Pertois-Lebrun and share the same base cuv\u00e9e name, but the lot/number designation is different: No.15 vs No.17. Under the rules, different lot/cask numbers indicate distinct bottlings, so they would not share the same encyclopedia page.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Both wines are from Pertois-Lebrun and share the same base cuv\u00e9e name, but the lot/number designation is different: No.15 vs No.17. Under the rules, different lot/cask numbers indicate distinct bottlings, so they would not share the same encyclopedia page.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 83,
+  "elapsed": 2.4160664081573486,
+  "error": null
+}

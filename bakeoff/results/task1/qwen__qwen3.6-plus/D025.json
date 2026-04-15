@@ -1,0 +1,13 @@
+{
+  "pair_id": "D025",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records refer to the same vintage Champagne bottling from producer Cattier. The term 'Brut' simply denotes the standard dry style of this cuv\u00e9e, and its omission in 'Millesime' is a common naming abbreviation rather than a distinct wine. They share the same producer, color, and core cuv\u00e9e identity, indicating they would occupy a single encyclopedia entry.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records refer to the same vintage Champagne bottling from producer Cattier. The term 'Brut' simply denotes the standard dry style of this cuv\u00e9e, and its omission in 'Millesime' is a common naming abbreviation rather than a distinct wine. They share the same producer, color, and core cuv\u00e9e identity, indicating they would occupy a single encyclopedia entry.",
+  "parse_ok": true,
+  "tokens_in": 443,
+  "tokens_out": 1110,
+  "elapsed": 21.596648454666138,
+  "error": null
+}

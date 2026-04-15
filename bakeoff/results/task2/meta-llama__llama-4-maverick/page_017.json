@@ -1,0 +1,28 @@
+{
+  "page_id": "page_017",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"Sauvignon Blanc\",\n      \"vintage_year\": null,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": {\"vessel\": \"stainless steel\", \"months\": null, \"new_pct\": null, \"origin\": null},\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": \"Jessica Tomei\",\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "Sauvignon Blanc",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "stainless steel",
+        "months": null,
+        "new_pct": null,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 34378,
+  "tokens_out": 112,
+  "elapsed": 4.433679819107056,
+  "error": null
+}

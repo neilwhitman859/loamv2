@@ -1,0 +1,13 @@
+{
+  "pair_id": "B044",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.9, \"reasoning\": \"The wines have different colors (ros\u00e9 vs white), which indicates they are distinct wine types. Different LWIN codes also support they are separate bottlings, not just a naming variation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors (ros\u00e9 vs white), which indicates they are distinct wine types. Different LWIN codes also support they are separate bottlings, not just a naming variation.",
+  "parse_ok": true,
+  "tokens_in": 443,
+  "tokens_out": 61,
+  "elapsed": 3.615431547164917,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C004",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two records have different LWINs (1664137 vs 1664140), which are unique identifiers for distinct wines. The producer, Raumland, also makes a ros\u00e9 version of their 'Trauben Secco Alkoholfrei'. Therefore, the explicit 'white' descriptor on Wine B is a meaningful distinction to separate it from the ros\u00e9 bottling, not just a formatting variation.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records have different LWINs (1664137 vs 1664140), which are unique identifiers for distinct wines. The producer, Raumland, also makes a ros\u00e9 version of their 'Trauben Secco Alkoholfrei'. Therefore, the explicit 'white' descriptor on Wine B is a meaningful distinction to separate it from the ros\u00e9 bottling, not just a formatting variation.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 1712,
+  "elapsed": 30.267669916152954,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B008",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"These wines have fundamentally different grape varieties (Cabernet Sauvignon vs Sauvignon Blanc) and different colors (red vs white), making them distinct bottlings that a consumer would encounter separately. Different grape varieties is an absolute criterion for classification as different wines.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These wines have fundamentally different grape varieties (Cabernet Sauvignon vs Sauvignon Blanc) and different colors (red vs white), making them distinct bottlings that a consumer would encounter separately. Different grape varieties is an absolute criterion for classification as different wines.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 85,
+  "elapsed": 2.107569456100464,
+  "error": null
+}

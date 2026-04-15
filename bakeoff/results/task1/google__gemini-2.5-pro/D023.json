@@ -1,0 +1,13 @@
+{
+  "pair_id": "D023",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"The producer, La Tour Blanche, is identical. The wine names 'Les Charmilles de Tour Blanche' and 'Les Charmilles de Tour' are extremely similar, with the latter being a very likely abbreviation of the former, especially since the producer's name contains 'Blanche'. Both are white wines, and there is no conflicting information to suggest they are different products.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The producer, La Tour Blanche, is identical. The wine names 'Les Charmilles de Tour Blanche' and 'Les Charmilles de Tour' are extremely similar, with the latter being a very likely abbreviation of the former, especially since the producer's name contains 'Blanche'. Both are white wines, and there is no conflicting information to suggest they are different products.",
+  "parse_ok": true,
+  "tokens_in": 448,
+  "tokens_out": 1139,
+  "elapsed": 22.49645757675171,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C038",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Both wines are from Antonio Saramago and are red Reserva Tinto wines, but Wine B has the additional designation 'Risco' which appears to be a specific vineyard or cuv\u00e9e name. The different LWIN codes (2454140 vs 2454052) confirm these are catalogued as distinct wines. The 'Risco' designation in Wine B suggests it is a separate, named bottling rather than simply an abbreviated version of the same wine.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Both wines are from Antonio Saramago and are red Reserva Tinto wines, but Wine B has the additional designation 'Risco' which appears to be a specific vineyard or cuv\u00e9e name. The different LWIN codes (2454140 vs 2454052) confirm these are catalogued as distinct wines. The 'Risco' designation in Wine B suggests it is a separate, named bottling rather than simply an abbreviated version of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 127,
+  "elapsed": 3.024113893508911,
+  "error": null
+}

@@ -1,0 +1,33 @@
+{
+  "page_id": "page_036",
+  "model": "minimax/minimax-m2.7",
+  "raw_content": "{\"wines_found\": [{\"name\": \"Blaufränkisch 2024\", \"vintage_year\": 2024, \"abv_pct\": 13, \"blend\": null, \"oak\": {\"vessel\": \"used wood\", \"months\": 12, \"new_pct\": 0, \"origin\": null}, \"cases_produced\": null, \"chemistry\": {\"ph\": null, \"ta_g_l\": 5.9, \"rs_g_l\": 1, \"so2_total_mg_l\": null}, \"winemaker\": null, \"farming\": \"organic\"}]}",
+  "wines_found": [
+    {
+      "name": "Blaufränkisch 2024",
+      "vintage_year": 2024,
+      "abv_pct": 13,
+      "blend": null,
+      "oak": {
+        "vessel": "used wood",
+        "months": 12,
+        "new_pct": 0,
+        "origin": null
+      },
+      "cases_produced": null,
+      "chemistry": {
+        "ph": null,
+        "ta_g_l": 5.9,
+        "rs_g_l": 1,
+        "so2_total_mg_l": null
+      },
+      "winemaker": null,
+      "farming": "organic"
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 29701,
+  "tokens_out": 724,
+  "elapsed": 12.241381645202637,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B025",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The wines are distinct because they have different colors (white vs. red) and different grape varieties. Even though they share a similar name, the color and varietal differences indicate they are separate bottlings produced by the estate.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are distinct because they have different colors (white vs. red) and different grape varieties. Even though they share a similar name, the color and varietal differences indicate they are separate bottlings produced by the estate.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 73,
+  "elapsed": 2.388640880584717,
+  "error": null
+}

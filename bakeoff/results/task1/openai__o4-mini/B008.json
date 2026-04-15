@@ -1,0 +1,13 @@
+{
+  "pair_id": "B008",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Though both share the \u2018Arch Terrace\u2019 designation and producer, one is Cabernet Sauvignon (red) and the other is Sauvignon Blanc (white), representing different grape varieties and thus different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Though both share the \u2018Arch Terrace\u2019 designation and producer, one is Cabernet Sauvignon (red) and the other is Sauvignon Blanc (white), representing different grape varieties and thus different wines.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 115,
+  "elapsed": 3.044872760772705,
+  "error": null
+}

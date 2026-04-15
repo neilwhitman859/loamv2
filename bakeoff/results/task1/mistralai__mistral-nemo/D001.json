@@ -1,0 +1,13 @@
+{
+  "pair_id": "D001",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, vineyard/cuv\u00e9e (Altenberg Alte Reben Grosse Lage), grape variety (Riesling Weiss), and color (white). The only difference is the lot number (Nr23) in Wine A, which is not a determinant for different wines in this case.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, vineyard/cuv\u00e9e (Altenberg Alte Reben Grosse Lage), grape variety (Riesling Weiss), and color (white). The only difference is the lot number (Nr23) in Wine A, which is not a determinant for different wines in this case.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 87,
+  "elapsed": 3.7285821437835693,
+  "error": null
+}

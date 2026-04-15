@@ -1,0 +1,13 @@
+{
+  "pair_id": "D042",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer, Pommery, and have the same name 'Apanage Prestige', with the only difference being 'Brut' in Wine A's name, which likely refers to the style or level of sweetness, not a different wine. The color is the same (white), and there's no indication of different grapes or other distinguishing factors. The presence of 'Brut' may simply indicate a specific style within the same cuv\u00e9e.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer, Pommery, and have the same name 'Apanage Prestige', with the only difference being 'Brut' in Wine A's name, which likely refers to the style or level of sweetness, not a different wine. The color is the same (white), and there's no indication of different grapes or other distinguishing factors. The presence of 'Brut' may simply indicate a specific style within the same cuv\u00e9e.",
+  "parse_ok": true,
+  "tokens_in": 485,
+  "tokens_out": 114,
+  "elapsed": 1.4070053100585938,
+  "error": null
+}

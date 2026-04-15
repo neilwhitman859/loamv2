@@ -1,0 +1,13 @@
+{
+  "pair_id": "A015",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.98,\"reasoning\":\"These records refer to the same Patricia Green wine from Freedom Hill. The only difference is that Wine B includes the varietal suffix \\\"Pinot Noir,\\\" which matches Wine A\u2019s grape and is commonly just a longer naming form for the same bottling. Both are red Pinot Noir, with no conflicting vineyard, classification, or style information.\"}",
+  "verdict": "SAME",
+  "confidence": 0.98,
+  "reasoning": "These records refer to the same Patricia Green wine from Freedom Hill. The only difference is that Wine B includes the varietal suffix \"Pinot Noir,\" which matches Wine A\u2019s grape and is commonly just a longer naming form for the same bottling. Both are red Pinot Noir, with no conflicting vineyard, classification, or style information.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 94,
+  "elapsed": 1.5754280090332031,
+  "error": null
+}

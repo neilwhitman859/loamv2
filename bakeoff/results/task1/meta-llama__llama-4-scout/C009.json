@@ -1,0 +1,13 @@
+{
+  "pair_id": "C009",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Cattier, and share the same Blanc de Blancs and Brut designations, indicating the same grape variety (Chardonnay) and style (sparkling). The color is white for both, further supporting they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Cattier, and share the same Blanc de Blancs and Brut designations, indicating the same grape variety (Chardonnay) and style (sparkling). The color is white for both, further supporting they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 78,
+  "elapsed": 2.122568130493164,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D031",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is explicitly labeled 'Trocken' (dry), indicating a specific German Pr\u00e4dikat level or style classification, while Wine B lacks this designation. In German wine classification, Trocken vs. non-Trocken (which could be Halbtrocken, Lieblich, or S\u00fcss) represents different sweetness levels and are distinct bottlings that consumers would encounter separately.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is explicitly labeled 'Trocken' (dry), indicating a specific German Pr\u00e4dikat level or style classification, while Wine B lacks this designation. In German wine classification, Trocken vs. non-Trocken (which could be Halbtrocken, Lieblich, or S\u00fcss) represents different sweetness levels and are distinct bottlings that consumers would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 115,
+  "elapsed": 3.0280721187591553,
+  "error": null
+}

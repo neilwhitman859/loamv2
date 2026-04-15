@@ -1,0 +1,13 @@
+{
+  "pair_id": "B035",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.92, \"reasoning\": \"Petit Clos Rose and Petit Clos Rouge are different wine styles (ros\u00e9 vs red) from the same producer, so they represent distinct bottlings a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.92,
+  "reasoning": "Petit Clos Rose and Petit Clos Rouge are different wine styles (ros\u00e9 vs red) from the same producer, so they represent distinct bottlings a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 152,
+  "elapsed": 3.725645065307617,
+  "error": null
+}

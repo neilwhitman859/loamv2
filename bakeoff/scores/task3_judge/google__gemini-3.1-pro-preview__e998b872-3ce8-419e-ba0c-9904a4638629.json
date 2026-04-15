@@ -1,0 +1,25 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "Hook says '80-year-old' vines but ground truth says 90-year-old",
+    "Hook says 'two-hectare plot' — not verifiable from context data or ground truth",
+    "Vinification says 'ages for eight months in large, neutral oak foudres' but ground truth says recent vintages ferment and age in cement tanks (8 months), not oak foudres",
+    "Value assessment fabricates '$250 to $300 a bottle' — no price data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$250 to $300 price range fabricated — no price data provided",
+    "two-hectare plot size not in context data or ground truth"
+  ],
+  "reasoning": "The output is exceptionally well-written with strong voice, specificity, and usefulness — the food pairings are creative and well-reasoned, the comparables are apt, and the insider take is genuinely opinionated. However, there are several factual issues: the vine age is stated as 80 years (ground truth: 90), the cooperage is described as neutral oak foudres when ground truth says cement tanks for recent vintages, the plot size of two hectares is unverifiable, and the price of $250-$300 is completely fabricated with no price data provided. The fabricated price is a specific number not in context data, which triggers the hard penalty consideration, though it's in the value_assessment rather than a technical winemaking number. The foudre vs cement tank error is significant as it directly contradicts the ground truth about a key winemaking decision. These errors collectively bring correctness down substantially despite the otherwise excellent output.",
+  "judge_tokens_in": 3785,
+  "judge_tokens_out": 413
+}

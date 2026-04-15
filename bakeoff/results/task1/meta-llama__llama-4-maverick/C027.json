@@ -1,0 +1,13 @@
+{
+  "pair_id": "C027",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines have different appellations, Echezeaux and Grands-Echezeaux, which are distinct Grand Cru designations within Burgundy, indicating they are different wines despite sharing the same producer and grape variety.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines have different appellations, Echezeaux and Grands-Echezeaux, which are distinct Grand Cru designations within Burgundy, indicating they are different wines despite sharing the same producer and grape variety.",
+  "parse_ok": true,
+  "tokens_in": 528,
+  "tokens_out": 68,
+  "elapsed": 1.3957722187042236,
+  "error": null
+}

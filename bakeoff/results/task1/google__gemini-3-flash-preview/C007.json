@@ -1,0 +1,13 @@
+{
+  "pair_id": "C007",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines represent different German/Austrian Pr\u00e4dikat levels: Wine A is an Auslese and Wine B is a Trockenbeerenauslese. These classifications indicate significantly different levels of grape ripeness, sugar content, and production methods, resulting in distinct products for the consumer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines represent different German/Austrian Pr\u00e4dikat levels: Wine A is an Auslese and Wine B is a Trockenbeerenauslese. These classifications indicate significantly different levels of grape ripeness, sugar content, and production methods, resulting in distinct products for the consumer.",
+  "parse_ok": true,
+  "tokens_in": 470,
+  "tokens_out": 83,
+  "elapsed": 1.9115097522735596,
+  "error": null
+}

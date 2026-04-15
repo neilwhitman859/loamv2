@@ -1,0 +1,13 @@
+{
+  "pair_id": "A022",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines are made from different grape varieties. Wine A is explicitly listed as being made from Cabernet Sauvignon, while Wine B's name, 'Andes Peaks Carmenere,' indicates it is made from the Carmenere grape. Even though they share a producer and a base name, different grape varieties always constitute different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from different grape varieties. Wine A is explicitly listed as being made from Cabernet Sauvignon, while Wine B's name, 'Andes Peaks Carmenere,' indicates it is made from the Carmenere grape. Even though they share a producer and a base name, different grape varieties always constitute different wines.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 1126,
+  "elapsed": 11.219861030578613,
+  "error": null
+}

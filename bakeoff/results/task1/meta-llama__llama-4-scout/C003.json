@@ -1,0 +1,13 @@
+{
+  "pair_id": "C003",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The presence of 'Brut' and 'Brut Nature' indicates a difference in sweetness level, which is a key factor in determining if two wines are different. 'Brut Nature' typically implies a stricter dosage of sugar, making it distinct from 'Brut'. Therefore, despite sharing the same producer, vineyard, and grape variety, the difference in style makes them different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The presence of 'Brut' and 'Brut Nature' indicates a difference in sweetness level, which is a key factor in determining if two wines are different. 'Brut Nature' typically implies a stricter dosage of sugar, making it distinct from 'Brut'. Therefore, despite sharing the same producer, vineyard, and grape variety, the difference in style makes them different wines.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 102,
+  "elapsed": 1.3551833629608154,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A043",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The records specify different grape compositions, with Wine A being pure Shiraz and Wine B being a Shiraz-Durif blend. Per the classification guidelines, different grape varieties always constitute distinct wines, a conclusion further supported by their separate LWIN identifiers.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The records specify different grape compositions, with Wine A being pure Shiraz and Wine B being a Shiraz-Durif blend. Per the classification guidelines, different grape varieties always constitute distinct wines, a conclusion further supported by their separate LWIN identifiers.",
+  "parse_ok": true,
+  "tokens_in": 461,
+  "tokens_out": 1401,
+  "elapsed": 27.293468475341797,
+  "error": null
+}

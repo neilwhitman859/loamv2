@@ -1,0 +1,13 @@
+{
+  "pair_id": "A009",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.83, \"reasoning\": \"Wine A is a blend of Pinot Gris and Pinot Noir while Wine B is pure Pinot Gris, so they represent distinct bottlings despite sharing the Naumberg designation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.83,
+  "reasoning": "Wine A is a blend of Pinot Gris and Pinot Noir while Wine B is pure Pinot Gris, so they represent distinct bottlings despite sharing the Naumberg designation.",
+  "parse_ok": true,
+  "tokens_in": 444,
+  "tokens_out": 271,
+  "elapsed": 5.284388542175293,
+  "error": null
+}

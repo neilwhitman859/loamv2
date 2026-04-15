@@ -1,0 +1,13 @@
+{
+  "pair_id": "A049",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from del Nebbiolo, white wines made from Arneis grapes. Wine A lists the grape explicitly while Wine B appends it as a varietal suffix to the vineyard name 'Arenarium.' This is a standard naming convention difference where the shorter name is an abbreviation of the fuller designation.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from del Nebbiolo, white wines made from Arneis grapes. Wine A lists the grape explicitly while Wine B appends it as a varietal suffix to the vineyard name 'Arenarium.' This is a standard naming convention difference where the shorter name is an abbreviation of the fuller designation.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 97,
+  "elapsed": 3.4986424446105957,
+  "error": null
+}

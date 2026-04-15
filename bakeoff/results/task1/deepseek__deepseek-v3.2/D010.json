@@ -1,0 +1,13 @@
+{
+  "pair_id": "D010",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.9, \"reasoning\": \"Wine A is named 'Gran Cuvee' while Wine B is explicitly 'Gran Cuvee Rose'. The designation of 'Rose' indicates a different color/style, and a ros\u00e9 and a non-ros\u00e9 (likely a white or red) from the same producer and cuv\u00e9e name are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "Wine A is named 'Gran Cuvee' while Wine B is explicitly 'Gran Cuvee Rose'. The designation of 'Rose' indicates a different color/style, and a ros\u00e9 and a non-ros\u00e9 (likely a white or red) from the same producer and cuv\u00e9e name are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 88,
+  "elapsed": 5.183548450469971,
+  "error": null
+}

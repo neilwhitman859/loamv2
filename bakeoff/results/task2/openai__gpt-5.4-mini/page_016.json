@@ -1,0 +1,28 @@
+{
+  "page_id": "page_016",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"wines_found\":[{\"name\":\"Pinot Noir\",\"vintage_year\":null,\"abv_pct\":null,\"blend\":null,\"oak\":{\"vessel\":\"oak\",\"months\":null,\"new_pct\":null,\"origin\":\"French and American\"},\"cases_produced\":null,\"chemistry\":null,\"winemaker\":\"Jessica Tomei\",\"farming\":null}]}",
+  "wines_found": [
+    {
+      "name": "Pinot Noir",
+      "vintage_year": null,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "oak",
+        "months": null,
+        "new_pct": null,
+        "origin": "French and American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": "Jessica Tomei",
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 34309,
+  "tokens_out": 79,
+  "elapsed": 2.688767671585083,
+  "error": null
+}

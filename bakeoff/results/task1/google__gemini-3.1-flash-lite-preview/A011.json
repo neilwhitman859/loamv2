@@ -1,0 +1,13 @@
+{
+  "pair_id": "A011",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 0.95,\n\"reasoning\": \"J. Lohr produces distinct wines under the 'Highlands Bench' label for different varietals, specifically a Pinot Noir and a Chardonnay. Because Wine A lists both Pinot Noir and Chardonnay Blanc while Wine B is specifically the Pinot Noir bottling, they represent different products within the producer's portfolio.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "J. Lohr produces distinct wines under the 'Highlands Bench' label for different varietals, specifically a Pinot Noir and a Chardonnay. Because Wine A lists both Pinot Noir and Chardonnay Blanc while Wine B is specifically the Pinot Noir bottling, they represent different products within the producer's portfolio.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 89,
+  "elapsed": 1.3192875385284424,
+  "error": null
+}

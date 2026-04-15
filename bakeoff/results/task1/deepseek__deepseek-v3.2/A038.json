@@ -1,0 +1,13 @@
+{
+  "pair_id": "A038",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The only difference is the varietal suffix 'Pinotage' appended to Wine B, which is an abbreviation/clarification of the grape already implied in Wine A. Both share the same producer, series, vineyard designation, color, and grape variety, indicating they are the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The only difference is the varietal suffix 'Pinotage' appended to Wine B, which is an abbreviation/clarification of the grape already implied in Wine A. Both share the same producer, series, vineyard designation, color, and grape variety, indicating they are the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 82,
+  "elapsed": 3.343442916870117,
+  "error": null
+}

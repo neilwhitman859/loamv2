@@ -1,0 +1,13 @@
+{
+  "pair_id": "C018",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines are from the same producer, des Comtes Lafon, and are made from the same grape, Pinot Noir, but they have different appellations, Echezeaux and Grands-Echezeaux, indicating they are distinct wines. Although both are Grand Cru and red, the difference in appellation signifies a different vineyard designation. This suggests they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines are from the same producer, des Comtes Lafon, and are made from the same grape, Pinot Noir, but they have different appellations, Echezeaux and Grands-Echezeaux, indicating they are distinct wines. Although both are Grand Cru and red, the difference in appellation signifies a different vineyard designation. This suggests they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 536,
+  "tokens_out": 100,
+  "elapsed": 1.7174797058105469,
+  "error": null
+}

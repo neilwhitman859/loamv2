@@ -1,0 +1,13 @@
+{
+  "pair_id": "A034",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"Wine A is explicitly identified as a blend of Chardonnay and Pinot Gris, whereas Wine B is a varietal Sauvignon Blanc. Since the grape compositions are distinct, these represent two different bottlings produced by Martin Wassmer.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is explicitly identified as a blend of Chardonnay and Pinot Gris, whereas Wine B is a varietal Sauvignon Blanc. Since the grape compositions are distinct, these represent two different bottlings produced by Martin Wassmer.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 71,
+  "elapsed": 1.6907522678375244,
+  "error": null
+}

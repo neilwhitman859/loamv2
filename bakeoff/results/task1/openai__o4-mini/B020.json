@@ -1,0 +1,13 @@
+{
+  "pair_id": "B020",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Although names differ only by a varietal suffix, the color indicates Wine A is red and Wine B is white, thus they are distinct bottlings and cannot share a single encyclopedia entry.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Although names differ only by a varietal suffix, the color indicates Wine A is red and Wine B is white, thus they are distinct bottlings and cannot share a single encyclopedia entry.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 123,
+  "elapsed": 4.156569957733154,
+  "error": null
+}

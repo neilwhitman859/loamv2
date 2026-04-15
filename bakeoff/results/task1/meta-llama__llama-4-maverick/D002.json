@@ -1,0 +1,13 @@
+{
+  "pair_id": "D002",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines have the same producer, Van Volxem, and the same vineyard designation, Altenberg Riesling Alte Reben, with the difference in name being a varietal suffix omission, which is considered an abbreviation. The color is the same for both wines, white. The presence of 'GG' in Wine A's name likely indicates a specific classification, but without more information on Van Volxem's naming conventions, it's assumed to be the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines have the same producer, Van Volxem, and the same vineyard designation, Altenberg Riesling Alte Reben, with the difference in name being a varietal suffix omission, which is considered an abbreviation. The color is the same for both wines, white. The presence of 'GG' in Wine A's name likely indicates a specific classification, but without more information on Van Volxem's naming conventions, it's assumed to be the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 503,
+  "tokens_out": 116,
+  "elapsed": 1.8749475479125977,
+  "error": null
+}

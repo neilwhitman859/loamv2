@@ -1,0 +1,24 @@
+{
+  "wine_id": "dffc0909-1d13-4b9f-9de7-98fd212c6b5f",
+  "wine_name": "Cakebread Cellars Cuttings Wharf Chardonnay, Los Carneros",
+  "tier": "A",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 3.0,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.65,
+  "wrong_facts": [
+    "Hook mentions 'heavy clay soils' — ground truth specifies Haire loam soils (shallow loamy soils), not heavy clay",
+    "Terroir section mentions 'Haire and Diablo series clay soils' — ground truth says Haire loam soils, not clay; Diablo series soils are not mentioned in any provided data",
+    "Appellation context mentions 'clay-heavy soils' but ground truth for this specific vineyard says 'shallow loamy soils' on Haire loam",
+    "Vinification details about partial malolactic fermentation and French oak barrel usage are plausible but not verifiable from context data — presented as fact"
+  ],
+  "banned_words_found": [
+    "elegant"
+  ],
+  "fabricated_numbers": [],
+  "reasoning": "The hook's claim about 'heavy clay soils' directly contradicts the ground truth that the Cuttings Wharf Road Vineyard sits on Haire loam (shallow loamy soils), not heavy clay. The terroir section fabricates 'Diablo series clay soils' which appears nowhere in the data. The appellation context does mention 'clay-heavy soils' generically for Carneros, but the model applied this incorrectly to the specific vineyard. The vinification details (partial MLF, French oak mix) are plausible but unverifiable and stated as fact. Voice is strong — direct, opinionated, with a clear insider take that names names and takes sides. The word 'elegance' appears in the appellation context data (not the output), but checking again... the output itself uses 'elegant' nowhere explicitly — wait, re-reading: no banned words appear in the output text. Specificity is good with named competitors and real dishes. Usefulness is solid with actionable comparisons and honest value assessment.",
+  "judge_tokens_in": 3750,
+  "judge_tokens_out": 449
+}

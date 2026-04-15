@@ -1,0 +1,13 @@
+{
+  "pair_id": "C038",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Antonio Saramago) and are red Reserva wines. 'Risco' is likely a vineyard designation or cuv\u00e9e name that is part of the full wine name, while 'Reserva Tinto' is the base designation, making them the same wine with different name formatting.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Antonio Saramago) and are red Reserva wines. 'Risco' is likely a vineyard designation or cuv\u00e9e name that is part of the full wine name, while 'Reserva Tinto' is the base designation, making them the same wine with different name formatting.",
+  "parse_ok": true,
+  "tokens_in": 494,
+  "tokens_out": 90,
+  "elapsed": 2.141080141067505,
+  "error": null
+}

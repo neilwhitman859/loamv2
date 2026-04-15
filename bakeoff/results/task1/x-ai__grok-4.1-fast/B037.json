@@ -1,0 +1,13 @@
+{
+  "pair_id": "B037",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the name 'Camino' and producer Parra Jimenez, suggesting a possible match in naming. However, Wine A is explicitly red while Wine B is white, indicating fundamentally different wine types. Different colors always mean distinct wines, as no single bottling can be both red and white.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the name 'Camino' and producer Parra Jimenez, suggesting a possible match in naming. However, Wine A is explicitly red while Wine B is white, indicating fundamentally different wine types. Different colors always mean distinct wines, as no single bottling can be both red and white.",
+  "parse_ok": true,
+  "tokens_in": 542,
+  "tokens_out": 382,
+  "elapsed": 2.59948468208313,
+  "error": null
+}

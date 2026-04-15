@@ -1,0 +1,13 @@
+{
+  "pair_id": "B006",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a blend of COT and CABERNET SAUVIGNON, while Wine B includes DOLCETTO in its blend, making them distinct bottlings. The presence of a different grape variety (Dolcetto) in Wine B means they are different wines, even if the producer and color are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a blend of COT and CABERNET SAUVIGNON, while Wine B includes DOLCETTO in its blend, making them distinct bottlings. The presence of a different grape variety (Dolcetto) in Wine B means they are different wines, even if the producer and color are the same.",
+  "parse_ok": true,
+  "tokens_in": 527,
+  "tokens_out": 94,
+  "elapsed": 2.3069093227386475,
+  "error": null
+}

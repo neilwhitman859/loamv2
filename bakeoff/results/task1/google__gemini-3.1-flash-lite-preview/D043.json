@@ -1,0 +1,13 @@
+{
+  "pair_id": "D043",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are distinct bottlings identified by specific 'Note' numbers (Note #1 vs Note #2). In the context of the Timbrus Polifonia series, these represent different blends or experimental batches, as evidenced by their unique LWIN identifiers.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are distinct bottlings identified by specific 'Note' numbers (Note #1 vs Note #2). In the context of the Timbrus Polifonia series, these represent different blends or experimental batches, as evidenced by their unique LWIN identifiers.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 74,
+  "elapsed": 2.9483704566955566,
+  "error": null
+}

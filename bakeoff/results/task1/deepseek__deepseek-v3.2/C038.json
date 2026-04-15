@@ -1,0 +1,13 @@
+{
+  "pair_id": "C038",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"The wines have different LWIN identifiers, indicating distinct bottlings. While the producer and classification (Reserva Tinto) match, the name 'Reserva Tinto' versus 'Risco Reserva Tinto' suggests 'Risco' is likely a specific vineyard or cuv\u00e9e designation, which would make them different wines under the rules.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "The wines have different LWIN identifiers, indicating distinct bottlings. While the producer and classification (Reserva Tinto) match, the name 'Reserva Tinto' versus 'Risco Reserva Tinto' suggests 'Risco' is likely a specific vineyard or cuv\u00e9e designation, which would make them different wines under the rules.",
+  "parse_ok": true,
+  "tokens_in": 448,
+  "tokens_out": 93,
+  "elapsed": 6.446749448776245,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A039",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Torii Mor, and have the same vineyard designation, Yamhill Carlton Select. The difference in name is likely due to the varietal suffix being omitted in Wine A, which is a common abbreviation. The color and grape variety (Pinot Noir) are consistent between the two wines.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Torii Mor, and have the same vineyard designation, Yamhill Carlton Select. The difference in name is likely due to the varietal suffix being omitted in Wine A, which is a common abbreviation. The color and grape variety (Pinot Noir) are consistent between the two wines.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 88,
+  "elapsed": 1.6429173946380615,
+  "error": null
+}

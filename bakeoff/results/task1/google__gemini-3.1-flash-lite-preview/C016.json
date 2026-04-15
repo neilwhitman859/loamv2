@@ -1,0 +1,13 @@
+{
+  "pair_id": "C016",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"Although both wines are produced by Bartolo Mascarello using 100% Nebbiolo, they originate from two distinct and geographically separate appellations: Barolo and Barbaresco. These represent different vineyard sources and distinct wine bottlings that are treated as separate entities in any wine encyclopedia.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are produced by Bartolo Mascarello using 100% Nebbiolo, they originate from two distinct and geographically separate appellations: Barolo and Barbaresco. These represent different vineyard sources and distinct wine bottlings that are treated as separate entities in any wine encyclopedia.",
+  "parse_ok": true,
+  "tokens_in": 465,
+  "tokens_out": 88,
+  "elapsed": 1.8286402225494385,
+  "error": null
+}

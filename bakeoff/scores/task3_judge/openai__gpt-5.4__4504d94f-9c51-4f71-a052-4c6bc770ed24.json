@@ -1,0 +1,21 @@
+{
+  "wine_id": "4504d94f-9c51-4f71-a052-4c6bc770ed24",
+  "wine_name": "Cakebread Cuttings Wharf Vineyard Chardonnay, Los Carneros",
+  "tier": "C",
+  "model": "openai/gpt-5.4",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "The output describes 'clay-heavy soils' and 'heavy clay and clay loam soils' for the vineyard, but the ground truth specifies 'shallow loamy soils' and 'Haire loam soils' — loam is distinct from clay-heavy soil",
+    "The output says Los Carneros is 'at the northern edge of San Pablo Bay' — it's at the southern end of Napa/Sonoma valleys, which is the northern shore of San Pablo Bay, so this is imprecise but not strictly wrong",
+    "The output mentions 'Diablo series' soils specifically for this site, which is not in the context data or ground truth and may be a fabrication for this specific vineyard"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is well-written with strong voice, excellent specificity, and genuinely useful comparisons and food pairings. However, it gets the soil type wrong — the ground truth says 'Haire loam soils' and 'shallow loamy soils,' while the output repeatedly emphasizes 'clay-heavy soils' and 'heavy clay and clay loam.' The output does correctly mention 'Haire' soils but pairs it with 'Diablo series' which isn't verified for this site. The appellation context data did mention 'clay-heavy soils' so the model was somewhat misled, but the ground truth for this specific vineyard contradicts that characterization. The hook doesn't contain a provably wrong fact per se (it references the appellation-level clay description), but the repeated emphasis on clay as the defining soil character is misleading given the vineyard's actual loam soils. No fabricated numbers, no banned words, and the vinification section honestly disclaims lack of specific data.",
+  "judge_tokens_in": 4048,
+  "judge_tokens_out": 448
+}

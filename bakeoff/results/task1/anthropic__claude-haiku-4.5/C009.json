@@ -1,0 +1,13 @@
+{
+  "pair_id": "C009",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine A is 'Roses Blanc de Blancs Brut' while Wine B is simply 'Blanc de Blancs Brut' from the same producer Cattier. The 'Roses' designation indicates a distinct cuv\u00e9e or vineyard designation that differentiates it from the base Blanc de Blancs. The different LWINs (1592630 vs 1592601) confirm these are separate bottlings in the producer's portfolio.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A is 'Roses Blanc de Blancs Brut' while Wine B is simply 'Blanc de Blancs Brut' from the same producer Cattier. The 'Roses' designation indicates a distinct cuv\u00e9e or vineyard designation that differentiates it from the base Blanc de Blancs. The different LWINs (1592630 vs 1592601) confirm these are separate bottlings in the producer's portfolio.",
+  "parse_ok": true,
+  "tokens_in": 494,
+  "tokens_out": 131,
+  "elapsed": 4.490692138671875,
+  "error": null
+}

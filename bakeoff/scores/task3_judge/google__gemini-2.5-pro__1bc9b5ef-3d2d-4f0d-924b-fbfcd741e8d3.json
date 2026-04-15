@@ -1,0 +1,24 @@
+{
+  "wine_id": "1bc9b5ef-3d2d-4f0d-924b-fbfcd741e8d3",
+  "wine_name": "Montes Alpha M, Valle de Colchagua",
+  "tier": "B",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Claims 100% new French oak — ground truth says 70% new French oak",
+    "Claims 'late 1990s' for breaking the premium price barrier — first released in 1996, which is mid-1990s",
+    "45-degree slopes claim in the hook is a specific and commonly repeated but unverifiable detail — Montes markets steep slopes but '45 degrees' is a specific number that may be exaggerated or imprecise"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "100% new French oak (ground truth is 70% new)",
+    "45-degree slopes (not in context data, commonly cited but specific angle is debatable)"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity, and genuinely useful insights. However, the claim of '100% new French oak' directly contradicts the ground truth of 70% new French oak — this is a fabricated number that triggers the hard penalty. The 45-degree slope claim is a commonly repeated Montes marketing figure and is plausibly correct (Montes does market extreme slope angles in Apalta), so I'm treating it as a minor issue rather than a hard fabrication. The blend description (predominantly Cab Sauv with Cab Franc, Merlot, Petit Verdot) matches ground truth well without fabricating specific percentages. The oak percentage fabrication is the most damaging error, as it's a specific number that's provably wrong. Applying the hard penalty cap of 1.5 would be warranted for the 100% new oak claim, but since the output correctly identifies many other facts (Aurelio Montes, Apalta, the blend components, 18 months oak aging, first icon wine status), I'm scoring at 2.5 acknowledging the fabricated oak percentage is a serious but not catastrophic error in the context of otherwise strong accuracy.",
+  "judge_tokens_in": 3751,
+  "judge_tokens_out": 464
+}

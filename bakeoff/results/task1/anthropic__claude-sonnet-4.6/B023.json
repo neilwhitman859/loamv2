@@ -1,0 +1,13 @@
+{
+  "pair_id": "B023",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A (Snoop Dogg Cali) is a red wine while Wine B (Snoop Dogg Cali Gold) is a white wine \u2014 different colors constitute different wines. The 'Gold' suffix in Wine B's name also indicates a distinct bottling, not merely an abbreviation of the same wine. A consumer would encounter these as separate products on the shelf.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A (Snoop Dogg Cali) is a red wine while Wine B (Snoop Dogg Cali Gold) is a white wine \u2014 different colors constitute different wines. The 'Gold' suffix in Wine B's name also indicates a distinct bottling, not merely an abbreviation of the same wine. A consumer would encounter these as separate products on the shelf.",
+  "parse_ok": true,
+  "tokens_in": 475,
+  "tokens_out": 106,
+  "elapsed": 3.2395787239074707,
+  "error": null
+}

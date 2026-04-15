@@ -1,0 +1,13 @@
+{
+  "pair_id": "C044",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The primary reason these wines are different is the stated color difference (Wine A is red, Wine B is white). Even if the names were otherwise identical, a red and white wine from the same producer and vineyard are distinct bottlings. Additionally, the 'Nr17' in Wine A suggests a specific lot or cask number, which would differentiate it from a general 'Auktion' Auslese, even if the colors were the same.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The primary reason these wines are different is the stated color difference (Wine A is red, Wine B is white). Even if the names were otherwise identical, a red and white wine from the same producer and vineyard are distinct bottlings. Additionally, the 'Nr17' in Wine A suggests a specific lot or cask number, which would differentiate it from a general 'Auktion' Auslese, even if the colors were the same.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 126,
+  "elapsed": 1.6935935020446777,
+  "error": null
+}

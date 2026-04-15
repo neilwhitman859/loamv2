@@ -1,0 +1,13 @@
+{
+  "pair_id": "B016",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grapes (Croatina vs Nebbiolo) and different classifications (Barolo vs Barbaresco), both of which indicate different wines. Additionally, the different denominations (Barolo and Barbaresco) imply distinct vineyards or regions.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grapes (Croatina vs Nebbiolo) and different classifications (Barolo vs Barbaresco), both of which indicate different wines. Additionally, the different denominations (Barolo and Barbaresco) imply distinct vineyards or regions.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 77,
+  "elapsed": 2.3824002742767334,
+  "error": null
+}

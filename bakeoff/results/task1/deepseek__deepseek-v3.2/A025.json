@@ -1,0 +1,13 @@
+{
+  "pair_id": "A025",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer (Gabriel Meffre), are red, and Wine A's listed grape is 100% Syrah, matching Wine B's varietal suffix. The name 'Laurus' vs 'Laurus Syrah' is a classic varietal suffix difference, indicating the same core wine, with no evidence the producer makes multiple distinct 'Laurus' wines from different grapes.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer (Gabriel Meffre), are red, and Wine A's listed grape is 100% Syrah, matching Wine B's varietal suffix. The name 'Laurus' vs 'Laurus Syrah' is a classic varietal suffix difference, indicating the same core wine, with no evidence the producer makes multiple distinct 'Laurus' wines from different grapes.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 105,
+  "elapsed": 3.431046962738037,
+  "error": null
+}

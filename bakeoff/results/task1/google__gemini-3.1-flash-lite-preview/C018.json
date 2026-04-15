@@ -1,0 +1,13 @@
+{
+  "pair_id": "C018",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"Echezeaux and Grands-Echezeaux are two distinct Grand Cru appellations in Burgundy with different vineyard boundaries. Even though they are produced by the same estate using the same grape variety, they represent two separate bottlings from different terroirs.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Echezeaux and Grands-Echezeaux are two distinct Grand Cru appellations in Burgundy with different vineyard boundaries. Even though they are produced by the same estate using the same grape variety, they represent two separate bottlings from different terroirs.",
+  "parse_ok": true,
+  "tokens_in": 460,
+  "tokens_out": 80,
+  "elapsed": 1.3962125778198242,
+  "error": null
+}

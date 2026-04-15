@@ -1,0 +1,13 @@
+{
+  "pair_id": "B040",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":1.0,\"reasoning\":\"Both wines share the same producer (Chatter Creek) and Yakima Valley origin, but feature entirely different grape varieties: Albarino (white) for Wine A and Barbera (red) for Wine B. The rules explicitly state that different grapes always mean different wines, regardless of matching producer or region. The color difference (white vs. red) provides additional confirmation of distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Chatter Creek) and Yakima Valley origin, but feature entirely different grape varieties: Albarino (white) for Wine A and Barbera (red) for Wine B. The rules explicitly state that different grapes always mean different wines, regardless of matching producer or region. The color difference (white vs. red) provides additional confirmation of distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 574,
+  "tokens_out": 475,
+  "elapsed": 4.342366695404053,
+  "error": null
+}

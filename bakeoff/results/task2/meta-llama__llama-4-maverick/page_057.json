@@ -1,0 +1,23 @@
+{
+  "page_id": "page_057",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "```json\n{\n  \"wines_found\": [\n    {\n      \"name\": \"2024 Arroyo Vista Chardonnay\",\n      \"vintage_year\": 2024,\n      \"abv_pct\": null,\n      \"blend\": null,\n      \"oak\": null,\n      \"cases_produced\": null,\n      \"chemistry\": null,\n      \"winemaker\": null,\n      \"farming\": null\n    }\n  ]\n}\n```",
+  "wines_found": [
+    {
+      "name": "2024 Arroyo Vista Chardonnay",
+      "vintage_year": 2024,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 31864,
+  "tokens_out": 90,
+  "elapsed": 3.134718894958496,
+  "error": null
+}

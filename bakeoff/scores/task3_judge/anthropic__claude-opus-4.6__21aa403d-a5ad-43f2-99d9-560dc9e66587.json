@@ -1,0 +1,25 @@
+{
+  "wine_id": "21aa403d-a5ad-43f2-99d9-560dc9e66587",
+  "wine_name": "Lafage, Côtes Catalanes Vieilles Vignes Tessellae",
+  "tier": "B",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 5.0,
+  "usefulness": 4.5,
+  "composite": 3.9,
+  "wrong_facts": [
+    "The ground truth states Tessellae Vieilles Vignes is 100% Carignan, but the output describes it as a blend of Carignan, Grenache, Syrah, and Mourvèdre throughout — in the hook, wine summary, vinification summary, and elsewhere",
+    "The hook claims vines averaging 80+ years, which is not in the context data (ground truth says 70+ years)",
+    "The output describes semi-carbonic maceration for Carignan and traditional maceration for Syrah/Mourvèdre as part of the vinification — but since the wine is 100% Carignan per ground truth, the blending and multi-variety vinification description is fabricated"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "80+ years vine age (ground truth says 70+)",
+    "200 hectares farmed by Lafage (not in context data, though plausibly correct from training knowledge)",
+    "annual rainfall below 500mm (not in context data)"
+  ],
+  "reasoning": "The fundamental error here is treating this as a multi-variety blend when ground truth confirms it is 100% Carignan. This permeates the entire output — the hook, wine summary, vinification, food pairings, and comparable wines all reference the blend composition incorrectly. The hook contains a provably wrong claim (calling it a blend of four grapes when it's 100% Carignan), which would normally trigger the hard cap at 1.5, but the naming origin (Roman mosaic tiles) and schist soils are correct per ground truth, and the winemaker name is correct. The voice is excellent — direct, opinionated, specific, no banned words, great food pairings with real dishes and reasoning. Specificity is outstanding with named soils, wind patterns, competitors, and real places. But the core factual error about the blend undermines the entire piece's trustworthiness. I'm scoring correctness at 2.5 rather than applying the full hard cap because the hook's blend claim, while wrong, reflects what the context data itself suggested (listing four grapes), so the model was somewhat misled by its input data.",
+  "judge_tokens_in": 4004,
+  "judge_tokens_out": 533
+}

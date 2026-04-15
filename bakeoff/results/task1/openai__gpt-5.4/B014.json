@@ -1,0 +1,13 @@
+{
+  "pair_id": "B014",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.97,\"reasoning\":\"These records differ in color: Wine A is ros\u00e9 while Wine B is white, and ros\u00e9 vs white/sparkling blanc are separate bottlings. Although both are Cr\u00e9mant d'Alsace from the same producer and 'Brut' may just indicate dosage, the color difference alone makes them different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "These records differ in color: Wine A is ros\u00e9 while Wine B is white, and ros\u00e9 vs white/sparkling blanc are separate bottlings. Although both are Cr\u00e9mant d'Alsace from the same producer and 'Brut' may just indicate dosage, the color difference alone makes them different wines.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 86,
+  "elapsed": 2.912264823913574,
+  "error": null
+}

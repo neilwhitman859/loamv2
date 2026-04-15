@@ -1,0 +1,13 @@
+{
+  "pair_id": "D029",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, grape variety (Cabernet Sauvignon), and color (red). The only difference is the region, but since the producer is the same, it's likely that these are different bottlings from the same winery.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, grape variety (Cabernet Sauvignon), and color (red). The only difference is the region, but since the producer is the same, it's likely that these are different bottlings from the same winery.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 75,
+  "elapsed": 1.823617696762085,
+  "error": null
+}

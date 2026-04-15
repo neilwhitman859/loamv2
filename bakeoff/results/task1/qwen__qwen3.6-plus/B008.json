@@ -1,0 +1,13 @@
+{
+  "pair_id": "B008",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are made from entirely different grape varieties (Cabernet Sauvignon vs. Sauvignon Blanc) and have different colors (red vs. white). Per the classification rules, different grapes always indicate distinct wines, which is further confirmed by their unique LWIN codes.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are made from entirely different grape varieties (Cabernet Sauvignon vs. Sauvignon Blanc) and have different colors (red vs. white). Per the classification rules, different grapes always indicate distinct wines, which is further confirmed by their unique LWIN codes.",
+  "parse_ok": true,
+  "tokens_in": 462,
+  "tokens_out": 1053,
+  "elapsed": 20.8473539352417,
+  "error": null
+}

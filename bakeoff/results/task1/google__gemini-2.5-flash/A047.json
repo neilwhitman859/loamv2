@@ -1,0 +1,13 @@
+{
+  "pair_id": "A047",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Grgich Hills Estate, and share the core name 'Miljenko's Selection'. Wine A is identified as Cabernet Franc, and Wine B adds 'Cabernet Franc' as a varietal suffix. This is a common naming convention where the shorter name is an abbreviation for the varietal-specific bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Grgich Hills Estate, and share the core name 'Miljenko's Selection'. Wine A is identified as Cabernet Franc, and Wine B adds 'Cabernet Franc' as a varietal suffix. This is a common naming convention where the shorter name is an abbreviation for the varietal-specific bottling.",
+  "parse_ok": true,
+  "tokens_in": 432,
+  "tokens_out": 92,
+  "elapsed": 1.279313087463379,
+  "error": null
+}

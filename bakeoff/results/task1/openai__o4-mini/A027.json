@@ -1,0 +1,13 @@
+{
+  "pair_id": "A027",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.92, \"reasoning\": \"Wine A is a Tempranillo and Wine B is a Menc\u00eda; different grape varieties always indicate distinct wines even if the vineyard name matches.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.92,
+  "reasoning": "Wine A is a Tempranillo and Wine B is a Menc\u00eda; different grape varieties always indicate distinct wines even if the vineyard name matches.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 156,
+  "elapsed": 2.786008596420288,
+  "error": null
+}

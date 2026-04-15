@@ -1,0 +1,13 @@
+{
+  "pair_id": "C029",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer (Mayu), have the same grape (Cabernet Sauvignon), and the same classification (Gran Reserva). 'Don Amerigo' appears to be a cuv\u00e9e or brand name appended to the core wine, which is a formatting difference consistent with the same underlying bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer (Mayu), have the same grape (Cabernet Sauvignon), and the same classification (Gran Reserva). 'Don Amerigo' appears to be a cuv\u00e9e or brand name appended to the core wine, which is a formatting difference consistent with the same underlying bottling.",
+  "parse_ok": true,
+  "tokens_in": 453,
+  "tokens_out": 88,
+  "elapsed": 3.5879428386688232,
+  "error": null
+}

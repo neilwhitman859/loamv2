@@ -1,0 +1,23 @@
+{
+  "page_id": "page_008",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\"wines_found\": [{\"name\": \"Chardonnay\", \"vintage_year\": 2023, \"abv_pct\": null, \"blend\": null, \"oak\": null, \"cases_produced\": null, \"chemistry\": null, \"winemaker\": null, \"farming\": null}]}\n```",
+  "wines_found": [
+    {
+      "name": "Chardonnay",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": null,
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 28949,
+  "tokens_out": 1459,
+  "elapsed": 38.81043362617493,
+  "error": null
+}

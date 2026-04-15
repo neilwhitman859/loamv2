@@ -1,0 +1,36 @@
+{
+  "wine_id": "e998b872-3ce8-419e-ba0c-9904a4638629",
+  "wine_name": "Terroir Al Limit Les Tosses, Catalunya",
+  "tier": "B",
+  "model": "minimax/minimax-m2.7",
+  "correctness": 2.0,
+  "voice": 2.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 2.8,
+  "wrong_facts": [
+    "The 2022 spent 8 months in oak — ground truth says recent vintages ferment and age in cement tanks (8 months), not oak",
+    "Neutral French barriques claimed for aging — ground truth says cement tanks for recent vintages, older vintages used 1200L Stockinger fuder",
+    "Whole-cluster fermentation described as 30-40% whole berries — ground truth says whole cluster fermentation but the specific percentage is fabricated",
+    "No mention of Dominik Huber or the founding story with Eben Sadie",
+    "Celler de l'Abcisi and D'Aiguan Bobal appear to be fabricated producers",
+    "Root depth of 15-20 meters is unverifiable and likely fabricated",
+    "Annual output of 3,000 cases is unverifiable",
+    "Price range $45-65 fabricated (no prices provided in context)"
+  ],
+  "banned_words_found": [
+    "genuinely"
+  ],
+  "fabricated_numbers": [
+    "30-40% whole berries",
+    "15-20 meters root depth",
+    "3-4 weeks fermentation time",
+    "3,000 cases annual output",
+    "$45-65 retail price",
+    "$20-30 entry-level Priorat",
+    "$80-150 icon wines"
+  ],
+  "reasoning": "The most critical error is stating the 2022 aged in oak (neutral French barriques) when ground truth confirms recent vintages use cement tanks — this is in the hook and throughout the vinification section, making it a central factual error. The output also fabricates numerous specific numbers not in the context data (whole berry %, root depth, case production, prices, fermentation duration). The banned word 'genuinely' appears in the wine_summary. Several comparable wines appear to be fabricated producers. Despite these issues, the output is highly specific and detailed, with good voice in places and useful food pairings and insider perspective — but the factual foundation is unreliable. The hard penalty for banned word caps voice at 2.0. Multiple fabricated numbers would normally cap correctness at 1.5, but the oak claim being the central error and contradicting ground truth is the most damaging issue.",
+  "judge_tokens_in": 4059,
+  "judge_tokens_out": 528
+}

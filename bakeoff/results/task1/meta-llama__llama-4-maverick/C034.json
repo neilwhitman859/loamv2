@@ -1,0 +1,13 @@
+{
+  "pair_id": "C034",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines are from the same producer, Markus Molitor, and have the same vineyard designation, grape variety, and style, but differ in their rating (2* vs 3*), indicating different lots or selections, which is a key differentiator for Markus Molitor wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are from the same producer, Markus Molitor, and have the same vineyard designation, grape variety, and style, but differ in their rating (2* vs 3*), indicating different lots or selections, which is a key differentiator for Markus Molitor wines.",
+  "parse_ok": true,
+  "tokens_in": 520,
+  "tokens_out": 81,
+  "elapsed": 1.5493004322052002,
+  "error": null
+}

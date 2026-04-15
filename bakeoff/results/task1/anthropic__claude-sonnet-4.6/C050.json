@@ -1,0 +1,13 @@
+{
+  "pair_id": "C050",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Sur de los Andes and are Malbec, but Wine A is a Reserva and Wine B is a Gran Reserva. These represent different classification tiers, which by the key rules means they are DIFFERENT wines. They also have distinct LWIN codes (2593771 vs 2594130), confirming they are catalogued as separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Sur de los Andes and are Malbec, but Wine A is a Reserva and Wine B is a Gran Reserva. These represent different classification tiers, which by the key rules means they are DIFFERENT wines. They also have distinct LWIN codes (2593771 vs 2594130), confirming they are catalogued as separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 107,
+  "elapsed": 2.452162027359009,
+  "error": null
+}

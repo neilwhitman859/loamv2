@@ -1,0 +1,13 @@
+{
+  "pair_id": "B032",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are different because Wine A is a white wine made from Gew\u00fcrztraminer grapes, while Wine B is a red wine made from Pinot Noir grapes. Different grape varieties always indicate different wines, even if the vineyard name is similar.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are different because Wine A is a white wine made from Gew\u00fcrztraminer grapes, while Wine B is a red wine made from Pinot Noir grapes. Different grape varieties always indicate different wines, even if the vineyard name is similar.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 71,
+  "elapsed": 1.4636797904968262,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A016",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The wines share the same producer, Berton Vineyards, and the same color, white. The grape variety is explicitly stated as VERMENTINO for Wine A and implied to be VERMENTINO for Wine B, with the LWIN code providing additional verification.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer, Berton Vineyards, and the same color, white. The grape variety is explicitly stated as VERMENTINO for Wine A and implied to be VERMENTINO for Wine B, with the LWIN code providing additional verification.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 75,
+  "elapsed": 1.9659557342529297,
+  "error": null
+}

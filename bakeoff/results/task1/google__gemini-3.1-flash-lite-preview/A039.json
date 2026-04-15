@@ -1,0 +1,13 @@
+{
+  "pair_id": "A039",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 1.0,\n\"reasoning\": \"The records refer to the same producer and the same vineyard/cuv\u00e9e designation. The addition of 'Pinot Noir' in Wine B is a varietal suffix that clarifies the grape variety already present in Wine A, confirming they are the same bottling.\"\n}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The records refer to the same producer and the same vineyard/cuv\u00e9e designation. The addition of 'Pinot Noir' in Wine B is a varietal suffix that clarifies the grape variety already present in Wine A, confirming they are the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 76,
+  "elapsed": 1.7547791004180908,
+  "error": null
+}

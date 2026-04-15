@@ -1,0 +1,13 @@
+{
+  "pair_id": "C008",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a white (Blanc de Blancs or Blanc de Noirs) Brut Champagne while Wine B is explicitly a Ros\u00e9 Brut, representing different colors and distinct bottlings. The rules clearly state that Ros\u00e9 vs Red (or in this case Ros\u00e9 vs White) from the same vineyard/cuv\u00e9e are DIFFERENT wines. These would be encountered as separate products by consumers despite sharing the same Clos du Moulin vineyard designation and producer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a white (Blanc de Blancs or Blanc de Noirs) Brut Champagne while Wine B is explicitly a Ros\u00e9 Brut, representing different colors and distinct bottlings. The rules clearly state that Ros\u00e9 vs Red (or in this case Ros\u00e9 vs White) from the same vineyard/cuv\u00e9e are DIFFERENT wines. These would be encountered as separate products by consumers despite sharing the same Clos du Moulin vineyard designation and producer.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 131,
+  "elapsed": 3.338320732116699,
+  "error": null
+}

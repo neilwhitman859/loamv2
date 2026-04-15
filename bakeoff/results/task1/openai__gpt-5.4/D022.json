@@ -1,0 +1,13 @@
+{
+  "pair_id": "D022",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.94,\"reasoning\":\"These are different named cuv\u00e9es from Ch\u00e2teau/La Tour Blanche: 'Duo de la Tour Blanche' and 'Brumes de La Tour Blanche' are not simple formatting variants of the same wine name. They also have different LWIN identifiers, which strongly supports that they are separate bottlings a consumer would encounter distinctly.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.94,
+  "reasoning": "These are different named cuv\u00e9es from Ch\u00e2teau/La Tour Blanche: 'Duo de la Tour Blanche' and 'Brumes de La Tour Blanche' are not simple formatting variants of the same wine name. They also have different LWIN identifiers, which strongly supports that they are separate bottlings a consumer would encounter distinctly.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 87,
+  "elapsed": 2.208071708679199,
+  "error": null
+}

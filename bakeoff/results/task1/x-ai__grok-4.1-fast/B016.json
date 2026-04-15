@@ -1,0 +1,13 @@
+{
+  "pair_id": "B016",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":1.0,\"reasoning\":\"Both wines share the same producer (Villadoria) and are red Riserva styles, but they differ in appellation (Barolo vs Barbaresco) and grape variety (Croatina 100% vs Nebbiolo 100%). Different grapes always indicate distinct wines, per the rules. Barolo and Barbaresco are separate DOCG regions in Piedmont, confirming they are different bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Villadoria) and are red Riserva styles, but they differ in appellation (Barolo vs Barbaresco) and grape variety (Croatina 100% vs Nebbiolo 100%). Different grapes always indicate distinct wines, per the rules. Barolo and Barbaresco are separate DOCG regions in Piedmont, confirming they are different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 578,
+  "tokens_out": 476,
+  "elapsed": 4.595635652542114,
+  "error": null
+}

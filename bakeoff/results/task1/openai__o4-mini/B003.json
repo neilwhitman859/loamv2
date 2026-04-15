@@ -1,0 +1,13 @@
+{
+  "pair_id": "B003",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Labellum (red) and Labellum Fiano (white) are made from different grape varieties and produce different colors, indicating distinct wines despite the shared name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Labellum (red) and Labellum Fiano (white) are made from different grape varieties and produce different colors, indicating distinct wines despite the shared name.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 140,
+  "elapsed": 3.9656457901000977,
+  "error": null
+}

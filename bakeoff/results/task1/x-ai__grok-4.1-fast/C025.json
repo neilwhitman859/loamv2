@@ -1,0 +1,13 @@
+{
+  "pair_id": "C025",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer (Ferrari) and appellation (Trento), with nearly identical names except for 'del' formatting and 'Rose' suffix on Wine B. However, Wine A is explicitly white while Wine B is ros\u00e9, representing different colors and styles. Per guidelines, different colors (ros\u00e9 vs white) indicate distinct bottlings that consumers encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (Ferrari) and appellation (Trento), with nearly identical names except for 'del' formatting and 'Rose' suffix on Wine B. However, Wine A is explicitly white while Wine B is ros\u00e9, representing different colors and styles. Per guidelines, different colors (ros\u00e9 vs white) indicate distinct bottlings that consumers encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 584,
+  "tokens_out": 499,
+  "elapsed": 6.087222337722778,
+  "error": null
+}

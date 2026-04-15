@@ -1,0 +1,13 @@
+{
+  "pair_id": "A044",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.85, \"reasoning\": \"Both records are white Semillon wines from the same producer and cuv\u00e9e; the presence of \u201cSemillon\u201d in B\u2019s name is a varietal suffix and does not indicate a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.85,
+  "reasoning": "Both records are white Semillon wines from the same producer and cuv\u00e9e; the presence of \u201cSemillon\u201d in B\u2019s name is a varietal suffix and does not indicate a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 159,
+  "elapsed": 4.248572111129761,
+  "error": null
+}

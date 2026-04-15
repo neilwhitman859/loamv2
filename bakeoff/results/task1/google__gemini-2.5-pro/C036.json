@@ -1,0 +1,13 @@
+{
+  "pair_id": "C036",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"For the producer Markus Molitor, the star system (1*, 2*, 3*) on the capsule denotes distinct bottlings from the same vineyard. These represent different levels of grape selection, quality, or sweetness, and are considered separate, unique wines by the producer and the market. A '1* Gold Capsule' is a different wine from a '3* Gold Capsule'.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "For the producer Markus Molitor, the star system (1*, 2*, 3*) on the capsule denotes distinct bottlings from the same vineyard. These represent different levels of grape selection, quality, or sweetness, and are considered separate, unique wines by the producer and the market. A '1* Gold Capsule' is a different wine from a '3* Gold Capsule'.",
+  "parse_ok": true,
+  "tokens_in": 458,
+  "tokens_out": 1265,
+  "elapsed": 12.465040922164917,
+  "error": null
+}

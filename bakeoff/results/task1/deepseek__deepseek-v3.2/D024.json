@@ -1,0 +1,13 @@
+{
+  "pair_id": "D024",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer (Cattier), are white, and the names differ only by the style suffix 'Brut', which indicates sweetness level. Since the base name 'Antique' is identical and no evidence suggests different grapes or vineyards, this is likely a naming variation of the same cuv\u00e9e.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer (Cattier), are white, and the names differ only by the style suffix 'Brut', which indicates sweetness level. Since the base name 'Antique' is identical and no evidence suggests different grapes or vineyards, this is likely a naming variation of the same cuv\u00e9e.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 88,
+  "elapsed": 3.2065014839172363,
+  "error": null
+}

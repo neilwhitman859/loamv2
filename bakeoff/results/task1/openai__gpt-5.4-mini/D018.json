@@ -1,0 +1,13 @@
+{
+  "pair_id": "D018",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.96,\"reasoning\":\"Both wines are from Truchard and share the Cabernet Sauvignon variety, but one is explicitly labeled Reserve while the other is the standard bottling. Under the classification rules, different tiers such as Reserve vs non-Reserve are distinct wines because they represent separate bottlings a consumer would encounter.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.96,
+  "reasoning": "Both wines are from Truchard and share the Cabernet Sauvignon variety, but one is explicitly labeled Reserve while the other is the standard bottling. Under the classification rules, different tiers such as Reserve vs non-Reserve are distinct wines because they represent separate bottlings a consumer would encounter.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 79,
+  "elapsed": 2.3291187286376953,
+  "error": null
+}

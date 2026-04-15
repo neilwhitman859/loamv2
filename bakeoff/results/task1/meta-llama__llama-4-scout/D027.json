@@ -1,0 +1,13 @@
+{
+  "pair_id": "D027",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different grapes, with Wine A being made from MUSCAT OF ALEXANDRIA and Wine B from ITALIA and MUSCAT A PETITS GRAINS ROSES. This difference in grape variety indicates that they are different wines. Despite sharing the same producer, vineyard, and style, the variation in grapes takes precedence.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different grapes, with Wine A being made from MUSCAT OF ALEXANDRIA and Wine B from ITALIA and MUSCAT A PETITS GRAINS ROSES. This difference in grape variety indicates that they are different wines. Despite sharing the same producer, vineyard, and style, the variation in grapes takes precedence.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 90,
+  "elapsed": 2.642343044281006,
+  "error": null
+}

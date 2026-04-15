@@ -1,0 +1,13 @@
+{
+  "pair_id": "A011",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are produced by J. Lohr, have the same vineyard designation (Highlands Bench), and the same grape variety (Pinot Noir). The presence of Chardonnay Blanc in Wine A is a minor variation, but it is not significant enough to classify them as different wines.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are produced by J. Lohr, have the same vineyard designation (Highlands Bench), and the same grape variety (Pinot Noir). The presence of Chardonnay Blanc in Wine A is a minor variation, but it is not significant enough to classify them as different wines.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 77,
+  "elapsed": 1.649219036102295,
+  "error": null
+}

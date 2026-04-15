@@ -1,0 +1,13 @@
+{
+  "pair_id": "A049",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, 'del Nebbiolo', and share the 'Arenarium' name. Wine A is explicitly listed as 'ARNEIS' grapes, and Wine B's name 'Arenarium Arneis' strongly suggests it is also Arneis. The difference in naming is likely just a varietal suffix being added to Wine B, which is a common abbreviation practice for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, 'del Nebbiolo', and share the 'Arenarium' name. Wine A is explicitly listed as 'ARNEIS' grapes, and Wine B's name 'Arenarium Arneis' strongly suggests it is also Arneis. The difference in naming is likely just a varietal suffix being added to Wine B, which is a common abbreviation practice for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 105,
+  "elapsed": 1.6387732028961182,
+  "error": null
+}

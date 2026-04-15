@@ -1,0 +1,13 @@
+{
+  "pair_id": "B049",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These records differ by color/style: Wine A is white, while Wine B is explicitly 'Casse-Croute Rouge,' a red wine. Red vs white are separate bottlings that consumers encounter separately, so they should not share a single encyclopedia entry.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These records differ by color/style: Wine A is white, while Wine B is explicitly 'Casse-Croute Rouge,' a red wine. Red vs white are separate bottlings that consumers encounter separately, so they should not share a single encyclopedia entry.",
+  "parse_ok": true,
+  "tokens_in": 411,
+  "tokens_out": 72,
+  "elapsed": 2.359718084335327,
+  "error": null
+}

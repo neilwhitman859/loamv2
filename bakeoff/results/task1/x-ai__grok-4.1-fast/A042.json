@@ -1,0 +1,13 @@
+{
+  "pair_id": "A042",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":1.0,\"reasoning\":\"Both wines are from producer Weinert, share the identical base name 'Tonel Unico No. 183', are red, and specify Cabernet Franc as the grape. The varietal suffix 'Cabernet Franc' in Wine B matches Wine A's grape listing and aligns with the rule that such suffixes alone indicate the same wine as an abbreviation. No evidence of different grapes, classifications, or bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from producer Weinert, share the identical base name 'Tonel Unico No. 183', are red, and specify Cabernet Franc as the grape. The varietal suffix 'Cabernet Franc' in Wine B matches Wine A's grape listing and aligns with the rule that such suffixes alone indicate the same wine as an abbreviation. No evidence of different grapes, classifications, or bottlings.",
+  "parse_ok": true,
+  "tokens_in": 575,
+  "tokens_out": 453,
+  "elapsed": 3.5000030994415283,
+  "error": null
+}

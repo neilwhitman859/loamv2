@@ -1,0 +1,13 @@
+{
+  "pair_id": "B034",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":1.0,\"reasoning\":\"Both wines share the same producer (du Clos d'Alari) and 'Grand Clos' designation, but differ explicitly in color: ros\u00e9 (Rose) vs red (Rouge). The rules state that Ros\u00e9 vs Red from the same vineyard are DIFFERENT wines. Distinct LWINs (1602625 vs 1602670) confirm they are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer (du Clos d'Alari) and 'Grand Clos' designation, but differ explicitly in color: ros\u00e9 (Rose) vs red (Rouge). The rules state that Ros\u00e9 vs Red from the same vineyard are DIFFERENT wines. Distinct LWINs (1602625 vs 1602670) confirm they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 570,
+  "tokens_out": 445,
+  "elapsed": 2.7716825008392334,
+  "error": null
+}

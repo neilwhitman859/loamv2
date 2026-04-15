@@ -1,0 +1,13 @@
+{
+  "pair_id": "D023",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines share the same producer La Tour Blanche and are white, with names that differ only in the inclusion of 'Blanche' in Wine A, likely an abbreviation consistent with formatting variations for the same cuv\u00e9e. Wine B's grapes (Sauvignon Blanc, Muscadelle, Mondeuse Blanche) are all white varieties matching Wine A's color, with no indications of different vineyards, styles, or bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines share the same producer La Tour Blanche and are white, with names that differ only in the inclusion of 'Blanche' in Wine A, likely an abbreviation consistent with formatting variations for the same cuv\u00e9e. Wine B's grapes (Sauvignon Blanc, Muscadelle, Mondeuse Blanche) are all white varieties matching Wine A's color, with no indications of different vineyards, styles, or bottlings.",
+  "parse_ok": true,
+  "tokens_in": 592,
+  "tokens_out": 710,
+  "elapsed": 5.4151434898376465,
+  "error": null
+}

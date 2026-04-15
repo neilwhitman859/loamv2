@@ -1,0 +1,13 @@
+{
+  "pair_id": "D049",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Wine B includes 'Koppel' in its name, which likely indicates a specific parcel or sub-vineyard within the larger Kastanienbusch vineyard. This distinction suggests two separate bottlings, even if both are Riesling GG from the same producer and general vineyard.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine B includes 'Koppel' in its name, which likely indicates a specific parcel or sub-vineyard within the larger Kastanienbusch vineyard. This distinction suggests two separate bottlings, even if both are Riesling GG from the same producer and general vineyard.",
+  "parse_ok": true,
+  "tokens_in": 440,
+  "tokens_out": 90,
+  "elapsed": 1.8488430976867676,
+  "error": null
+}

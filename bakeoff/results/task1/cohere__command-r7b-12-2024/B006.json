@@ -1,0 +1,13 @@
+{
+  "pair_id": "B006",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B have different grape varieties, with Wine B containing Dolcetto, which is not listed for Wine A. This constitutes a different wine, even though they share the same producer and vineyard name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B have different grape varieties, with Wine B containing Dolcetto, which is not listed for Wine A. This constitutes a different wine, even though they share the same producer and vineyard name.",
+  "parse_ok": true,
+  "tokens_in": 477,
+  "tokens_out": 66,
+  "elapsed": 1.5473756790161133,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D038",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, color, and the core name 'Chatterneuf-du-Pape red Table'. The only difference is the addition of 'Wine' in Wine B, which is a minor stylistic variation and does not indicate a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, color, and the core name 'Chatterneuf-du-Pape red Table'. The only difference is the addition of 'Wine' in Wine B, which is a minor stylistic variation and does not indicate a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 74,
+  "elapsed": 1.3106803894042969,
+  "error": null
+}

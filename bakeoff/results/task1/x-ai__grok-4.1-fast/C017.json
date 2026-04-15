@@ -1,0 +1,13 @@
+{
+  "pair_id": "C017",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from Bassermann-Jordan, the same Forster Kirchenstuck vineyard, same Sp\u00e4tlese Pr\u00e4dikat level, and both white, with Wine B specifying Riesling\u2014a varietal suffix commonly omitted in abbreviations for this producer's signature Riesling from that site. No evidence of multiple grape varieties from this vineyard by the producer. Different LWINs likely reflect vintages or minor variants, but core identity matches for a single encyclopedia entry.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from Bassermann-Jordan, the same Forster Kirchenstuck vineyard, same Sp\u00e4tlese Pr\u00e4dikat level, and both white, with Wine B specifying Riesling\u2014a varietal suffix commonly omitted in abbreviations for this producer's signature Riesling from that site. No evidence of multiple grape varieties from this vineyard by the producer. Different LWINs likely reflect vintages or minor variants, but core identity matches for a single encyclopedia entry.",
+  "parse_ok": true,
+  "tokens_in": 580,
+  "tokens_out": 732,
+  "elapsed": 5.869561672210693,
+  "error": null
+}

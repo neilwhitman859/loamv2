@@ -1,0 +1,13 @@
+{
+  "pair_id": "B004",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The two wines have different colors (red vs. white) and are made from different grapes. Wine A is a red Pinot Noir, while Wine B is a white wine made from a blend of Chardonnay and Pinot Noir. These are clearly distinct bottlings from the same producer and vineyard.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines have different colors (red vs. white) and are made from different grapes. Wine A is a red Pinot Noir, while Wine B is a white wine made from a blend of Chardonnay and Pinot Noir. These are clearly distinct bottlings from the same producer and vineyard.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 1110,
+  "elapsed": 12.992849588394165,
+  "error": null
+}

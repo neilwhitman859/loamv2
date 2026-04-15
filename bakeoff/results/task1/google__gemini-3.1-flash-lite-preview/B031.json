@@ -1,0 +1,13 @@
+{
+  "pair_id": "B031",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two records represent different wines because they have different colors (red vs white) and different grape varieties (Merlot vs Sauvignon Blanc). Even though they share the same producer brand, they are distinct bottlings.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent different wines because they have different colors (red vs white) and different grape varieties (Merlot vs Sauvignon Blanc). Even though they share the same producer brand, they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 70,
+  "elapsed": 2.370032787322998,
+  "error": null
+}

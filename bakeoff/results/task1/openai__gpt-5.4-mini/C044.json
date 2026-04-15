@@ -1,0 +1,13 @@
+{
+  "pair_id": "C044",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.96,\"reasoning\":\"Both records describe the same producer and same base wine: Maximin Grunhaus/Grunhauser Herrenberg Riesling Auslese Auktion. The only visible difference is the lot number formatting, with Wine A specifying 'Nr17', which is consistent with a specific auction lot of the same bottling rather than a different wine style or classification. The color fields appear inconsistent with the named wine (Riesling Auslese should be white), so they are not reliable evidence of a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.96,
+  "reasoning": "Both records describe the same producer and same base wine: Maximin Grunhaus/Grunhauser Herrenberg Riesling Auslese Auktion. The only visible difference is the lot number formatting, with Wine A specifying 'Nr17', which is consistent with a specific auction lot of the same bottling rather than a different wine style or classification. The color fields appear inconsistent with the named wine (Riesling Auslese should be white), so they are not reliable evidence of a different wine.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 123,
+  "elapsed": 2.5659844875335693,
+  "error": null
+}

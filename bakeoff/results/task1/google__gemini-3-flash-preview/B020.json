@@ -1,0 +1,13 @@
+{
+  "pair_id": "B020",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records represent two distinct wines based on color: Wine A is a red wine (Rouge) while Wine B is a white wine. Jean-Claude Bachelet produces both red and white 'Vieilles Vignes' bottlings from different grape varieties (Pinot Noir vs. Chardonnay), which constitutes different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records represent two distinct wines based on color: Wine A is a red wine (Rouge) while Wine B is a white wine. Jean-Claude Bachelet produces both red and white 'Vieilles Vignes' bottlings from different grape varieties (Pinot Noir vs. Chardonnay), which constitutes different wines.",
+  "parse_ok": true,
+  "tokens_in": 440,
+  "tokens_out": 86,
+  "elapsed": 1.705420732498169,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D003",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A specifies 'Alpine' as a likely vineyard or cuv\u00e9e designation, while Wine B lacks this detail and is simply 'Cabernet Sauvignon', indicating distinct bottlings from the same producer. Different LWIN numbers (1810866 vs 1599945) further confirm they are separate records for different wines. Although both are red Cabernet Sauvignon from Chimney Rock, the differing vineyard/cuv\u00e9e reference violates the criteria for sharing a single encyclopedia page.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A specifies 'Alpine' as a likely vineyard or cuv\u00e9e designation, while Wine B lacks this detail and is simply 'Cabernet Sauvignon', indicating distinct bottlings from the same producer. Different LWIN numbers (1810866 vs 1599945) further confirm they are separate records for different wines. Although both are red Cabernet Sauvignon from Chimney Rock, the differing vineyard/cuv\u00e9e reference violates the criteria for sharing a single encyclopedia page.",
+  "parse_ok": true,
+  "tokens_in": 565,
+  "tokens_out": 1125,
+  "elapsed": 7.141900062561035,
+  "error": null
+}

@@ -1,0 +1,24 @@
+{
+  "wine_id": "4504d94f-9c51-4f71-a052-4c6bc770ed24",
+  "wine_name": "Cakebread Cuttings Wharf Vineyard Chardonnay, Los Carneros",
+  "tier": "C",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 4.15,
+  "wrong_facts": [
+    "Claims 'heavy, clay-based soils, specifically the Haire and Diablo series' — ground truth says 'Haire loam soils' (loam, not clay-based), and Diablo series is not mentioned in any verified source",
+    "Describes the vineyard as having 'heavy, clay-based soils' when ground truth specifies 'shallow loamy soils'",
+    "Saline minerality and oyster-shell character are speculative tasting descriptors presented as fact tied to bayside location — this is unverifiable"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "5-8 years cellar recommendation is not sourced from context data",
+    "aging_potential_years: 8 is fabricated"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity, and genuinely useful comparisons and food pairings. However, it fabricates soil details — calling the soils 'heavy, clay-based' and naming the 'Diablo series' when ground truth says 'shallow loamy soils' and only mentions 'Haire loam.' This is a meaningful factual error about terroir, the core of the wine's story. The aging potential numbers (5-8 years, 8 years) are not sourced from context data but are plausible estimates rather than precise technical specs, so they're less damaging. The hook is largely correct — the vineyard is in Carneros facing San Pablo Bay — though 'saline minerality' is an editorial assertion. No banned words found. Overall strong output marred by the soil fabrication.",
+  "judge_tokens_in": 3855,
+  "judge_tokens_out": 406
+}

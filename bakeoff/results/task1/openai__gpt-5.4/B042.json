@@ -1,0 +1,13 @@
+{
+  "pair_id": "B042",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These are different wines because Wine B explicitly identifies Chardonnay, while Wine A has no grape specified and is listed as ros\u00e9. Color difference alone (ros\u00e9 vs white) makes them separate bottlings even from the same producer and region.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These are different wines because Wine B explicitly identifies Chardonnay, while Wine A has no grape specified and is listed as ros\u00e9. Color difference alone (ros\u00e9 vs white) makes them separate bottlings even from the same producer and region.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 69,
+  "elapsed": 2.8173928260803223,
+  "error": null
+}

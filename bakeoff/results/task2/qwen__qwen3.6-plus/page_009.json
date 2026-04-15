@@ -1,0 +1,28 @@
+{
+  "page_id": "page_009",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"wines_found\":[{\"name\":\"Cabernet Sauvignon\",\"vintage_year\":2023,\"abv_pct\":null,\"blend\":null,\"oak\":{\"vessel\":\"barrels\",\"months\":null,\"new_pct\":null,\"origin\":\"American\"},\"cases_produced\":null,\"chemistry\":null,\"winemaker\":null,\"farming\":null}]}",
+  "wines_found": [
+    {
+      "name": "Cabernet Sauvignon",
+      "vintage_year": 2023,
+      "abv_pct": null,
+      "blend": null,
+      "oak": {
+        "vessel": "barrels",
+        "months": null,
+        "new_pct": null,
+        "origin": "American"
+      },
+      "cases_produced": null,
+      "chemistry": null,
+      "winemaker": null,
+      "farming": null
+    }
+  ],
+  "parse_ok": true,
+  "tokens_in": 27548,
+  "tokens_out": 1858,
+  "elapsed": 36.0630156993866,
+  "error": null
+}

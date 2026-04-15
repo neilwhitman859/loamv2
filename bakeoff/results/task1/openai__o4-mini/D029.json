@@ -1,0 +1,13 @@
+{
+  "pair_id": "D029",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.85,\"reasoning\":\"Both labels refer to the same producer Cabernet Sauvignon cuv\u00e9e; the differing geographic indication (Franschhoek vs broader Coastal Region) is just labeling specificity, not a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.85,
+  "reasoning": "Both labels refer to the same producer Cabernet Sauvignon cuv\u00e9e; the differing geographic indication (Franschhoek vs broader Coastal Region) is just labeling specificity, not a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 196,
+  "elapsed": 5.589224338531494,
+  "error": null
+}

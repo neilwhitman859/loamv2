@@ -1,0 +1,29 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.0,
+  "voice": 2.0,
+  "specificity": 3.5,
+  "usefulness": 3.5,
+  "composite": 2.6,
+  "wrong_facts": [
+    "Plantagenet planted vineyards in 1974 — ground truth says established 1968, first commercial winery 1975; 1974 is not documented",
+    "Fermentation typically occurs with indigenous yeasts in open-top vessels — not in context data or ground truth, likely fabricated winemaking detail",
+    "The choice to use a portion of whole clusters during fermentation — not in context data or ground truth, fabricated winemaking detail",
+    "Granite-derived soils in the hook — ground truth says gravelly loam soils, not granite-derived",
+    "Lateritic gravelly sandy loams formed from weathered granite and iron-rich clays — ground truth says gravelly loam soils; the granite and iron-rich clay detail is unverifiable/fabricated"
+  ],
+  "banned_words_found": [
+    "harmonious"
+  ],
+  "fabricated_numbers": [
+    "$20-25 USD estimated price",
+    "drinking_window_min_years: 5",
+    "drinking_window_max_years: 10"
+  ],
+  "reasoning": "The output fabricates multiple specific winemaking claims (indigenous yeasts, open-top vessels, whole-cluster fermentation) that are not in the context data or ground truth. The soil description elaborates beyond what's verified — ground truth says 'gravelly loam soils' not 'granite-derived' or 'lateritic gravelly sandy loams formed from weathered granite and iron-rich clays.' The 1974 planting date is wrong. Price is fabricated. The banned word 'harmonious' appears in the food pairing section. The Omrah line being a second label (key ground truth fact) is never mentioned. Voice is decent but undermined by the banned word and some generic phrasing. Specificity is moderate — it names real competitors and real soil types, but many details are unverifiable fabrications rather than confirmed facts.",
+  "judge_tokens_in": 3201,
+  "judge_tokens_out": 457
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C043",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"Both wines are from the same producer and vineyard, but they have different German Pr\u00e4dikat levels: Sp\u00e4tlese vs Auslese. Under the rules, different Pr\u00e4dikat levels are distinct wines and should not be treated as the same bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Both wines are from the same producer and vineyard, but they have different German Pr\u00e4dikat levels: Sp\u00e4tlese vs Auslese. Under the rules, different Pr\u00e4dikat levels are distinct wines and should not be treated as the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 439,
+  "tokens_out": 74,
+  "elapsed": 1.584198236465454,
+  "error": null
+}

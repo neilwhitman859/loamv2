@@ -1,0 +1,13 @@
+{
+  "pair_id": "D017",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.92, \"reasoning\": \"Both records share the same producer, grape variety (100% Cortese), color (white) and vineyard designation, with only a minor naming variation (\u2018Comune di Gavi\u2019 vs \u2018del Comune di Gavi\u2019). This is a typical abbreviation/formatting difference rather than a distinct bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.92,
+  "reasoning": "Both records share the same producer, grape variety (100% Cortese), color (white) and vineyard designation, with only a minor naming variation (\u2018Comune di Gavi\u2019 vs \u2018del Comune di Gavi\u2019). This is a typical abbreviation/formatting difference rather than a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 182,
+  "elapsed": 3.537033796310425,
+  "error": null
+}

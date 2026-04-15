@@ -1,0 +1,13 @@
+{
+  "pair_id": "B028",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A and Wine B have different grape varieties (Chardonnay vs Merlot) and colors (white vs red), indicating they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A and Wine B have different grape varieties (Chardonnay vs Merlot) and colors (white vs red), indicating they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 506,
+  "tokens_out": 54,
+  "elapsed": 1.2720680236816406,
+  "error": null
+}

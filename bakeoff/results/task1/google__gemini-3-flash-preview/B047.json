@@ -1,0 +1,13 @@
+{
+  "pair_id": "B047",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records represent wines from two distinct Grosses Gew\u00e4chs (Grand Cru) vineyards: Eichberg and Kirchberg. Additionally, Wine A is incorrectly listed as white in the metadata while Wine B is red, but even if both were red, the different vineyard designations make them distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent wines from two distinct Grosses Gew\u00e4chs (Grand Cru) vineyards: Eichberg and Kirchberg. Additionally, Wine A is incorrectly listed as white in the metadata while Wine B is red, but even if both were red, the different vineyard designations make them distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 82,
+  "elapsed": 1.901796817779541,
+  "error": null
+}

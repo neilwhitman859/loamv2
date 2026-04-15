@@ -1,0 +1,13 @@
+{
+  "pair_id": "B021",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A is a White Zinfandel, while Wine B is a Red Zinfandel. Different wine types (still vs sparkling) are considered different wines, even if they share the same producer and vineyard.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A is a White Zinfandel, while Wine B is a Red Zinfandel. Different wine types (still vs sparkling) are considered different wines, even if they share the same producer and vineyard.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 65,
+  "elapsed": 1.4059126377105713,
+  "error": null
+}

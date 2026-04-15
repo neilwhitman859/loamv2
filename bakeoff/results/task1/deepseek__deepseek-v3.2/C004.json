@@ -1,0 +1,13 @@
+{
+  "pair_id": "C004",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Raumland), have the same base name 'Trauben Secco Alkoholfrei', and are both white. The only difference is the explicit 'white' designation in Wine B, which is likely just a descriptive addition to the name, not indicating a different style or grape composition.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Raumland), have the same base name 'Trauben Secco Alkoholfrei', and are both white. The only difference is the explicit 'white' designation in Wine B, which is likely just a descriptive addition to the name, not indicating a different style or grape composition.",
+  "parse_ok": true,
+  "tokens_in": 451,
+  "tokens_out": 89,
+  "elapsed": 3.7245709896087646,
+  "error": null
+}

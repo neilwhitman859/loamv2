@@ -1,0 +1,13 @@
+{
+  "pair_id": "D017",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are produced by Villadoria, have the same grape variety (Cortese), and are white wines. The slight difference in the name formatting (Common di Gavi vs. del Comune di Gavi) is likely an abbreviation and does not indicate a different wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are produced by Villadoria, have the same grape variety (Cortese), and are white wines. The slight difference in the name formatting (Common di Gavi vs. del Comune di Gavi) is likely an abbreviation and does not indicate a different wine.",
+  "parse_ok": true,
+  "tokens_in": 448,
+  "tokens_out": 75,
+  "elapsed": 1.1879918575286865,
+  "error": null
+}

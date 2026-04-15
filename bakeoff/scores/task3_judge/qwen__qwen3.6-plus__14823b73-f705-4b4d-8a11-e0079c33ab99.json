@@ -1,0 +1,29 @@
+{
+  "wine_id": "14823b73-f705-4b4d-8a11-e0079c33ab99",
+  "wine_name": "Tyrrell's Vat 1 Semillon, New South Wales",
+  "tier": "A",
+  "model": "qwen/qwen3.6-plus",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "Hook claims Hunter Valley Semillon 'breaks the standard rule that cool-climate grapes make age-worthy whites' — Hunter Valley is not cool-climate, and the hook's framing is confused; it implies Semillon is a cool-climate grape making age-worthy whites in a warm region, but the logic is muddled",
+    "Claims Bruce Tyrrell created the wine in 1963 — the wine was created in 1963 but attributing it specifically to Bruce Tyrrell is questionable; Bruce Tyrrell is the current generation, the original creator was Murray Tyrrell",
+    "Claims harvest at '10.5–11.5% ABV while the berries are still tart and green' — the 10.5% figure is not in the context data",
+    "Claims 'Pokolbin subregion' for the vineyard source — ground truth says Short Flat vineyard, not specifically Pokolbin (though Short Flat is in the Pokolbin area, the specificity is unverified)",
+    "Claims fermentation at '12–14°C' — not in context data",
+    "Claims 'six to eight months on fine lees' — not in context data",
+    "Claims bâtonnage is used — not in context data and potentially fabricated"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "10.5% ABV harvest claim",
+    "12-14°C fermentation temperature",
+    "six to eight months on fine lees"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity, and genuinely useful insights. However, it fabricates several specific winemaking numbers (fermentation temperature, lees aging duration, harvest ABV floor of 10.5%) that are not in the context data and cannot be verified. The attribution to Bruce Tyrrell rather than Murray Tyrrell is likely wrong. The hook's framing about 'cool-climate grapes' is logically confused — Hunter Valley is warm, and the hook seems to be saying Semillon breaks a rule about cool-climate grapes, but the logic doesn't track cleanly. The stainless steel/no oak claims match ground truth perfectly, and the overall structure and food pairings are excellent. The fabricated numbers trigger the hard penalty consideration, though some (like fermentation temp) are plausible industry knowledge rather than pure invention. Applying a moderate penalty for the accumulation of unverifiable specifics.",
+  "judge_tokens_in": 3601,
+  "judge_tokens_out": 577
+}

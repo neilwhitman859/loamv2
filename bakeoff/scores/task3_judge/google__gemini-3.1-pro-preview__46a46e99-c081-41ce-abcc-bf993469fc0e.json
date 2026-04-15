@@ -1,0 +1,24 @@
+{
+  "wine_id": "46a46e99-c081-41ce-abcc-bf993469fc0e",
+  "wine_name": "Kir Yianni Ramnista, Naoussa",
+  "tier": "B",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Oak aging stated as 'roughly 16 months' — ground truth says 18 months in oak plus 6 months bottle aging",
+    "Hook mentions 'Giannakochori estate' — the ground truth refers to 'Kir-Yianni Estate' with Ramnista blocks at 280-330m altitude, southeast exposure; Giannakochori is the village location but calling it the 'Giannakochori estate' is misleading/inaccurate as a vineyard name",
+    "Ramnista naming origin is not addressed — ground truth says it means 'royal hill' in local idiom, not mentioned or contradicted but the hook implies the name relates to taming ferocity, which is misleading"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "16 months oak aging (ground truth is 18 months)",
+    "280-330m altitude not mentioned but Giannakochori estate name is fabricated as a vineyard designation"
+  ],
+  "reasoning": "The output is exceptionally well-written with strong voice, specificity, and usefulness — the food pairings are creative and well-reasoned, the comparable wines are apt, and the insider take is genuinely helpful. However, correctness suffers from the fabricated '16 months' oak aging claim (ground truth is 18 months in oak), and the hook's reference to 'Giannakochori estate' is not how the producer identifies the vineyard source (it's the Kir-Yianni Estate, Ramnista blocks). The soil descriptions (calcareous clay, sandy loam, limestone) and specific terroir claims about Mount Vermio are plausible but unverifiable from the provided data. The vinification detail about cold soak matches ground truth, and the producer history (Yiannis Boutaris, 1997, son Stellios) is correct. The fabricated oak aging number triggers the hard penalty cap of 1.5, but since 16 vs 18 months is close and the rest is largely accurate, I'm applying the penalty but noting the overall quality is high otherwise. On reflection, the 16 months is a specific fabricated number not in context data, triggering the hard cap.",
+  "judge_tokens_in": 3779,
+  "judge_tokens_out": 953
+}

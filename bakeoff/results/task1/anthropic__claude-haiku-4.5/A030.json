@@ -1,0 +1,13 @@
+{
+  "pair_id": "A030",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is labeled as pure Semillon, while Wine B is explicitly a Sauvignon Semillon blend. Different grape compositions represent distinct bottlings that consumers would encounter separately. These are two different wines from the same producer, not formatting variations of the same wine.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is labeled as pure Semillon, while Wine B is explicitly a Sauvignon Semillon blend. Different grape compositions represent distinct bottlings that consumers would encounter separately. These are two different wines from the same producer, not formatting variations of the same wine.",
+  "parse_ok": true,
+  "tokens_in": 485,
+  "tokens_out": 84,
+  "elapsed": 2.7516822814941406,
+  "error": null
+}

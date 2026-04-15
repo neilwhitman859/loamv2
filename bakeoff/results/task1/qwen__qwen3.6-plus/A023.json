@@ -1,0 +1,13 @@
+{
+  "pair_id": "A023",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records share the same producer, vineyard designation, grape variety, and color. The only difference is the explicit inclusion of the varietal suffix in Wine B, which aligns with the rule that varietal naming variations alone indicate the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records share the same producer, vineyard designation, grape variety, and color. The only difference is the explicit inclusion of the varietal suffix in Wine B, which aligns with the rule that varietal naming variations alone indicate the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 459,
+  "tokens_out": 1287,
+  "elapsed": 24.886606693267822,
+  "error": null
+}

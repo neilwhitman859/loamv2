@@ -1,0 +1,28 @@
+{
+  "wine_id": "c815d359-5c41-4ee0-ab03-2afaf1ab5f81",
+  "wine_name": "Comando G El Reventon, Cebreros",
+  "tier": "B",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.0,
+  "composite": 3.525,
+  "wrong_facts": [
+    "Ground truth states El Reventon is 100% Garnacha, but the output treats it as a Garnacha + Alicante Henri Bouschet blend throughout, making this a fundamental factual error that pervades the entire piece",
+    "Ground truth says 16 months in French oak, output says 14 months (likely pulled from context data which listed 14 for some vintages, but the verified ground truth is 16)",
+    "The hook and throughout describe schist soils; ground truth says slate soils — these are related but the output also says 'schist and slate' in terroir section, partially correct",
+    "Output describes the vineyard as planted on schist rather than granite, which is partially supported by ground truth (slate soils), but the framing as 'rare vein of schist' vs the region's granite is unverifiable embellishment",
+    "Whole-cluster fermentation and foudre aging are fabricated winemaking details not in context data and not verifiable",
+    "Price range of $90-$120 is fabricated — no price data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$90 to $120 price range",
+    "70-year-old vines (not in context data, though close to ground truth which says ~70-year-old)",
+    "1-hectare parcel size mentioned implicitly through specificity but not fabricated as a number in output"
+  ],
+  "reasoning": "The fundamental and pervasive error is treating El Reventon as a Garnacha + Alicante Henri Bouschet blend when ground truth confirms it is 100% Garnacha. The context data listed both grapes, but the model should not have built its entire narrative around the blend — the hook, terroir, vinification, food pairing, insider take, and style profile all center on the Alicante Bouschet component that doesn't exist in this wine. This is a catastrophic correctness failure that undermines the entire piece. The voice is excellent — direct, opinionated, specific, no banned words, great food pairings with reasoning. Specificity is strong with named comparables and detailed terroir claims. But the core factual premise is wrong, which caps correctness severely. The fabricated price range and whole-cluster fermentation details add further problems.",
+  "judge_tokens_in": 3870,
+  "judge_tokens_out": 558
+}

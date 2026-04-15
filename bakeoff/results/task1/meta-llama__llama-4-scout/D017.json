@@ -1,0 +1,13 @@
+{
+  "pair_id": "D017",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Villadoria, and have the same color, white. The difference in name formatting and the presence of LWIN for Wine B do not indicate a different wine, as the key details such as producer, color, and likely vineyard/cuv\u00e9e match.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Villadoria, and have the same color, white. The difference in name formatting and the presence of LWIN for Wine B do not indicate a different wine, as the key details such as producer, color, and likely vineyard/cuv\u00e9e match.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 81,
+  "elapsed": 2.0505924224853516,
+  "error": null
+}

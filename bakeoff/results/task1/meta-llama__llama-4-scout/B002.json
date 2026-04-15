@@ -1,0 +1,13 @@
+{
+  "pair_id": "B002",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, one being red and the other white, which indicates a different wine. Despite sharing the same producer and similar grape composition, the color difference takes precedence.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, one being red and the other white, which indicates a different wine. Despite sharing the same producer and similar grape composition, the color difference takes precedence.",
+  "parse_ok": true,
+  "tokens_in": 458,
+  "tokens_out": 60,
+  "elapsed": 1.0216138362884521,
+  "error": null
+}

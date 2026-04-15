@@ -1,0 +1,13 @@
+{
+  "pair_id": "D035",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines 'Brecciarolo' and 'Brecciarolo Gold' by Velenosi are likely different due to the suffix 'Gold', which may indicate a different blend, quality tier, or other distinguishing characteristic. Although they share the same producer and color, the name difference suggests a potential difference in the wine's composition or style. The presence of 'Gold' in one name could imply a different bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines 'Brecciarolo' and 'Brecciarolo Gold' by Velenosi are likely different due to the suffix 'Gold', which may indicate a different blend, quality tier, or other distinguishing characteristic. Although they share the same producer and color, the name difference suggests a potential difference in the wine's composition or style. The presence of 'Gold' in one name could imply a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 109,
+  "elapsed": 2.386216402053833,
+  "error": null
+}

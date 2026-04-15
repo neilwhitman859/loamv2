@@ -1,0 +1,13 @@
+{
+  "pair_id": "B027",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are from the same producer and share the 'Clos du Moulin' cuv\u00e9e name, they are different styles. Wine A is a white wine, while Wine B is explicitly a 'Rose'. A white Champagne and a Ros\u00e9 Champagne are considered distinct bottlings, even from the same vineyard.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are from the same producer and share the 'Clos du Moulin' cuv\u00e9e name, they are different styles. Wine A is a white wine, while Wine B is explicitly a 'Rose'. A white Champagne and a Ros\u00e9 Champagne are considered distinct bottlings, even from the same vineyard.",
+  "parse_ok": true,
+  "tokens_in": 410,
+  "tokens_out": 1081,
+  "elapsed": 11.418894052505493,
+  "error": null
+}

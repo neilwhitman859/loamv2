@@ -1,0 +1,13 @@
+{
+  "pair_id": "D040",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are red from the same producer (Santi) and share the 'Superiore' designation, which is a stylistic classification. The name 'Solane Superiore' is likely a full name where 'Superiore' is the abbreviated form, fitting the rule that varietal suffix differences alone indicate the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are red from the same producer (Santi) and share the 'Superiore' designation, which is a stylistic classification. The name 'Solane Superiore' is likely a full name where 'Superiore' is the abbreviated form, fitting the rule that varietal suffix differences alone indicate the same wine.",
+  "parse_ok": true,
+  "tokens_in": 486,
+  "tokens_out": 88,
+  "elapsed": 1.6711020469665527,
+  "error": null
+}

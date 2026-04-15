@@ -1,0 +1,13 @@
+{
+  "pair_id": "A046",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Both wines are from the same producer, Carlisle, and share the 'James Berry' vineyard name. Wine A is explicitly identified as Syrah, and Wine B is named 'James Berry Syrah'. The addition of 'Syrah' to Wine B's name is a varietal suffix, which typically indicates the same wine when the producer and vineyard match, especially since Wine A is also Syrah.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Carlisle, and share the 'James Berry' vineyard name. Wine A is explicitly identified as Syrah, and Wine B is named 'James Berry Syrah'. The addition of 'Syrah' to Wine B's name is a varietal suffix, which typically indicates the same wine when the producer and vineyard match, especially since Wine A is also Syrah.",
+  "parse_ok": true,
+  "tokens_in": 414,
+  "tokens_out": 115,
+  "elapsed": 1.5493173599243164,
+  "error": null
+}

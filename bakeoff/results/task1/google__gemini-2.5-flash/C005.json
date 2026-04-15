@@ -1,0 +1,13 @@
+{
+  "pair_id": "C005",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.9,\n  \"reasoning\": \"Both wines are described as 'Brut Rose' from the same producer, Jean Noel Haton, and both are rose in color. The 'NV' in Wine A simply indicates 'non-vintage', which is often omitted in the name but implied for many Brut Rose bottlings, suggesting they are the same core product.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are described as 'Brut Rose' from the same producer, Jean Noel Haton, and both are rose in color. The 'NV' in Wine A simply indicates 'non-vintage', which is often omitted in the name but implied for many Brut Rose bottlings, suggesting they are the same core product.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 99,
+  "elapsed": 1.7322804927825928,
+  "error": null
+}

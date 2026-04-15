@@ -1,0 +1,13 @@
+{
+  "pair_id": "A010",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from producer du Roi Dagobert and share the vineyard name 'Le Jardin de Trebogad', with both being white wines. However, Wine A is explicitly Gewuerztraminer, while Wine B specifies Pinot Gris, indicating different grape varieties. Per the rules, different grapes always mean different wines, even from the same vineyard, overriding the usual 'same' verdict for varietal suffixes.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from producer du Roi Dagobert and share the vineyard name 'Le Jardin de Trebogad', with both being white wines. However, Wine A is explicitly Gewuerztraminer, while Wine B specifies Pinot Gris, indicating different grape varieties. Per the rules, different grapes always mean different wines, even from the same vineyard, overriding the usual 'same' verdict for varietal suffixes.",
+  "parse_ok": true,
+  "tokens_in": 576,
+  "tokens_out": 600,
+  "elapsed": 8.472698211669922,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C020",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"DIFFERENT\",\n\"confidence\": 1.0,\n\"reasoning\": \"The two wines originate from distinct vineyards, Trittenheimer Altarchen and Trittenheimer Leiterchen. Even though they share the same producer, grape variety, and Pr\u00e4dikat level, they are separate vineyard-designated bottlings.\"\n}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines originate from distinct vineyards, Trittenheimer Altarchen and Trittenheimer Leiterchen. Even though they share the same producer, grape variety, and Pr\u00e4dikat level, they are separate vineyard-designated bottlings.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 76,
+  "elapsed": 2.065268039703369,
+  "error": null
+}

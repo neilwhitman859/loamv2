@@ -1,0 +1,13 @@
+{
+  "pair_id": "D003",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"The wines have the same producer, Chimney Rock, and are both red Cabernet Sauvignon. The difference in name is likely due to abbreviation, as 'Alpine Cabernet Sauvignon' is not a standard varietal designation and 'Alpine' is likely a vineyard or cuv\u00e9e name not relevant to the varietal difference. The varietal suffix difference alone suggests they are the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "The wines have the same producer, Chimney Rock, and are both red Cabernet Sauvignon. The difference in name is likely due to abbreviation, as 'Alpine Cabernet Sauvignon' is not a standard varietal designation and 'Alpine' is likely a vineyard or cuv\u00e9e name not relevant to the varietal difference. The varietal suffix difference alone suggests they are the same wine.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 99,
+  "elapsed": 1.6321444511413574,
+  "error": null
+}

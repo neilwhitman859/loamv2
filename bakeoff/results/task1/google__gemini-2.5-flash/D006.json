@@ -1,0 +1,13 @@
+{
+  "pair_id": "D006",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is 100% Merlot Noir, while Wine B contains both Cot (Malbec) and Merlot Noir. Even though the names are similar, the difference in grape composition indicates these are distinct bottlings, making them different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is 100% Merlot Noir, while Wine B contains both Cot (Malbec) and Merlot Noir. Even though the names are similar, the difference in grape composition indicates these are distinct bottlings, making them different wines.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 72,
+  "elapsed": 1.4364547729492188,
+  "error": null
+}

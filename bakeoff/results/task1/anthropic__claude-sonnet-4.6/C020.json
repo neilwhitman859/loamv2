@@ -1,0 +1,13 @@
+{
+  "pair_id": "C020",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"These wines come from two distinct vineyard sites: Trittenheimer Altarchen and Trittenheimer Leiterchen. Even though both are Riesling Auslese from the same producer (Milz Laurentiushof), different vineyard designations represent separate bottlings that a consumer would encounter as distinct wines. The different LWIN codes confirm they are catalogued as separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These wines come from two distinct vineyard sites: Trittenheimer Altarchen and Trittenheimer Leiterchen. Even though both are Riesling Auslese from the same producer (Milz Laurentiushof), different vineyard designations represent separate bottlings that a consumer would encounter as distinct wines. The different LWIN codes confirm they are catalogued as separate wines.",
+  "parse_ok": true,
+  "tokens_in": 516,
+  "tokens_out": 110,
+  "elapsed": 5.394023418426514,
+  "error": null
+}

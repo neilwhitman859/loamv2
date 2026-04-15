@@ -1,0 +1,13 @@
+{
+  "pair_id": "A014",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is made from Gew\u00fcrztraminer while Wine B is made from Pinot Gris\u2014different grape varieties always indicate different wines. Although both are from Anthony Road's Grey Series and share the Barrel Ferment designation, the distinct varietal composition means these are separate bottlings a consumer would encounter distinctly.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is made from Gew\u00fcrztraminer while Wine B is made from Pinot Gris\u2014different grape varieties always indicate different wines. Although both are from Anthony Road's Grey Series and share the Barrel Ferment designation, the distinct varietal composition means these are separate bottlings a consumer would encounter distinctly.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 97,
+  "elapsed": 3.2954089641571045,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D014",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.75, \"reasoning\": \"Both wines are from Heidsieck & Co and share the 'Monopole Brut' name, with Wine B simply adding 'Dry' as a descriptor and 'NV' as the vintage designation. The 'Dry' qualifier likely refers to the Brut style rather than indicating a separate product line, as Brut champagne is by definition dry. These appear to be the same bottling with slightly different label naming conventions, though the different LWIN codes introduce some uncertainty.\"}",
+  "verdict": "SAME",
+  "confidence": 0.75,
+  "reasoning": "Both wines are from Heidsieck & Co and share the 'Monopole Brut' name, with Wine B simply adding 'Dry' as a descriptor and 'NV' as the vintage designation. The 'Dry' qualifier likely refers to the Brut style rather than indicating a separate product line, as Brut champagne is by definition dry. These appear to be the same bottling with slightly different label naming conventions, though the different LWIN codes introduce some uncertainty.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 132,
+  "elapsed": 3.632831573486328,
+  "error": null
+}

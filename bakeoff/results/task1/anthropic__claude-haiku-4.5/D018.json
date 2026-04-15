@@ -1,0 +1,13 @@
+{
+  "pair_id": "D018",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Truchard produces distinct Cabernet Sauvignon bottlings at different classification tiers: a standard Cabernet Sauvignon and a Reserve Cabernet Sauvignon. These represent different quality/aging tiers that consumers would encounter as separate products. The different LWINs (1300707 vs 2716535) confirm these are distinct bottlings in the wine database.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Truchard produces distinct Cabernet Sauvignon bottlings at different classification tiers: a standard Cabernet Sauvignon and a Reserve Cabernet Sauvignon. These represent different quality/aging tiers that consumers would encounter as separate products. The different LWINs (1300707 vs 2716535) confirm these are distinct bottlings in the wine database.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 112,
+  "elapsed": 2.533734083175659,
+  "error": null
+}

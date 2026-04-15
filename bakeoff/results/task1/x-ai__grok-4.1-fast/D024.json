@@ -1,0 +1,13 @@
+{
+  "pair_id": "D024",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from producer Cattier, white in color, and share the core name 'Antique' with 'Brut' as a dosage/style prefix on Wine A, which is a common abbreviation/formatting difference. No indications of different grapes, vineyards, cuv\u00e9es, or classifications like Pr\u00e4dikat levels. Per rules, such varietal/style suffix differences alone typically mean the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from producer Cattier, white in color, and share the core name 'Antique' with 'Brut' as a dosage/style prefix on Wine A, which is a common abbreviation/formatting difference. No indications of different grapes, vineyards, cuv\u00e9es, or classifications like Pr\u00e4dikat levels. Per rules, such varietal/style suffix differences alone typically mean the same wine.",
+  "parse_ok": true,
+  "tokens_in": 551,
+  "tokens_out": 532,
+  "elapsed": 3.9586336612701416,
+  "error": null
+}

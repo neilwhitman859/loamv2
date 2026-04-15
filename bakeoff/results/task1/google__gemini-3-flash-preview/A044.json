@@ -1,0 +1,13 @@
+{
+  "pair_id": "A044",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine B is simply the varietal-specific name for Wine A. Since both are white wines from the same producer and vineyard line ('Under Current Naked') and Wine A is identified as Semillon, the names refer to the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine B is simply the varietal-specific name for Wine A. Since both are white wines from the same producer and vineyard line ('Under Current Naked') and Wine A is identified as Semillon, the names refer to the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 70,
+  "elapsed": 1.726165533065796,
+  "error": null
+}

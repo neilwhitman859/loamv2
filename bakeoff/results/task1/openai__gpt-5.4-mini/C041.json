@@ -1,0 +1,13 @@
+{
+  "pair_id": "C041",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct Rioja-style tiered bottlings: Reserva and Gran Reserva are different classifications and therefore different wines. They also have different LWINs, even though the producer, grape, color, and appellation match.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct Rioja-style tiered bottlings: Reserva and Gran Reserva are different classifications and therefore different wines. They also have different LWINs, even though the producer, grape, color, and appellation match.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 66,
+  "elapsed": 3.0461111068725586,
+  "error": null
+}

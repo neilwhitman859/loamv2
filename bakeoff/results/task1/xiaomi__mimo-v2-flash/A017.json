@@ -1,0 +1,13 @@
+{
+  "pair_id": "A017",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Wine A is 'Single Valley Lot' and Wine B is 'Single Valley Lot Syrah' from the same producer Valdivieso, which is a typical varietal suffix addition. The LWIN for Wine B (2386133) is not provided with grape details, but the naming pattern and same producer/color strongly indicate they are the same wine with an abbreviated vs full name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Wine A is 'Single Valley Lot' and Wine B is 'Single Valley Lot Syrah' from the same producer Valdivieso, which is a typical varietal suffix addition. The LWIN for Wine B (2386133) is not provided with grape details, but the naming pattern and same producer/color strongly indicate they are the same wine with an abbreviated vs full name.",
+  "parse_ok": true,
+  "tokens_in": 487,
+  "tokens_out": 105,
+  "elapsed": 2.4983723163604736,
+  "error": null
+}

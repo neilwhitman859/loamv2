@@ -1,0 +1,13 @@
+{
+  "pair_id": "B020",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is red and Wine B is white, indicating different colors, which means they are different wines. The color difference is a clear distinction according to the given rules. Therefore, they represent different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is red and Wine B is white, indicating different colors, which means they are different wines. The color difference is a clear distinction according to the given rules. Therefore, they represent different wines.",
+  "parse_ok": true,
+  "tokens_in": 504,
+  "tokens_out": 65,
+  "elapsed": 1.4306066036224365,
+  "error": null
+}

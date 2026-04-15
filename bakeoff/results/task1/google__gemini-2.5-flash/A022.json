@@ -1,0 +1,13 @@
+{
+  "pair_id": "A022",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Cabernet Sauvignon, while Wine B is a Carmenere. Even though the vineyard name 'Andes Peaks' is the same, different grape varieties always indicate different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Cabernet Sauvignon, while Wine B is a Carmenere. Even though the vineyard name 'Andes Peaks' is the same, different grape varieties always indicate different wines.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 60,
+  "elapsed": 1.0784995555877686,
+  "error": null
+}

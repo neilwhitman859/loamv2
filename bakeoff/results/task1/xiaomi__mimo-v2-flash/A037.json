@@ -1,0 +1,13 @@
+{
+  "pair_id": "A037",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Squawking Magpie) and are red wines made from Syrah. The name 'Stoned Crow' is simply an abbreviation of 'Stoned Crow Syrah', which is a common naming convention and does not indicate a different bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Squawking Magpie) and are red wines made from Syrah. The name 'Stoned Crow' is simply an abbreviation of 'Stoned Crow Syrah', which is a common naming convention and does not indicate a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 488,
+  "tokens_out": 81,
+  "elapsed": 2.3808865547180176,
+  "error": null
+}

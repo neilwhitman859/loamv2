@@ -1,0 +1,13 @@
+{
+  "pair_id": "D038",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.97, \"reasoning\": \"Both wines are from Chatter Creek and are red table wines. The only difference is that Wine B appends 'Wine' to the name, which is simply a formatting variation of the same product. Same producer, same color, same style \u2014 this is clearly the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "Both wines are from Chatter Creek and are red table wines. The only difference is that Wine B appends 'Wine' to the name, which is simply a formatting variation of the same product. Same producer, same color, same style \u2014 this is clearly the same wine.",
+  "parse_ok": true,
+  "tokens_in": 492,
+  "tokens_out": 81,
+  "elapsed": 3.0713789463043213,
+  "error": null
+}

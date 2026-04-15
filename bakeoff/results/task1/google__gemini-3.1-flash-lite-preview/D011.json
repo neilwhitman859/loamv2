@@ -1,0 +1,13 @@
+{
+  "pair_id": "D011",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 0.95,\n\"reasoning\": \"The records refer to the same specific bottling from Borges. 'Malmsey' is a traditional synonym for Malvasia, and the inclusion of the varietal name in Wine B is a common naming variation that does not denote a different wine or classification tier.\"\n}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The records refer to the same specific bottling from Borges. 'Malmsey' is a traditional synonym for Malvasia, and the inclusion of the varietal name in Wine B is a common naming variation that does not denote a different wine or classification tier.",
+  "parse_ok": true,
+  "tokens_in": 436,
+  "tokens_out": 79,
+  "elapsed": 2.137180805206299,
+  "error": null
+}

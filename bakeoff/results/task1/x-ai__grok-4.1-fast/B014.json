@@ -1,0 +1,13 @@
+{
+  "pair_id": "B014",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both are Cr\u00e9mant d'Alsace from producer Kress Bleger, but Wine A is specified as ros\u00e9 while Wine B is white. Different colors (ros\u00e9 vs white) mean they are distinct bottlings that consumers would encounter separately, per the rules on color differences. The 'Brut' on Wine B indicates dryness level but does not override the color distinction.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both are Cr\u00e9mant d'Alsace from producer Kress Bleger, but Wine A is specified as ros\u00e9 while Wine B is white. Different colors (ros\u00e9 vs white) mean they are distinct bottlings that consumers would encounter separately, per the rules on color differences. The 'Brut' on Wine B indicates dryness level but does not override the color distinction.",
+  "parse_ok": true,
+  "tokens_in": 569,
+  "tokens_out": 510,
+  "elapsed": 3.933915615081787,
+  "error": null
+}

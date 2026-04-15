@@ -1,0 +1,13 @@
+{
+  "pair_id": "B031",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.97,\"reasoning\":\"Wine A is a red Merlot from Porcupine Ridge, Wine B is a white Sauvignon Blanc from the same producer. Different grape varieties and colors indicate they are distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.97,
+  "reasoning": "Wine A is a red Merlot from Porcupine Ridge, Wine B is a white Sauvignon Blanc from the same producer. Different grape varieties and colors indicate they are distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 137,
+  "elapsed": 2.491008996963501,
+  "error": null
+}

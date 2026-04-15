@@ -1,0 +1,13 @@
+{
+  "pair_id": "A024",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"These are different wines because the grape varieties do not match. Wine A is explicitly 100% C\u00f4t, while Wine B is identified as Boutique Syrah, and different grapes always indicate separate bottlings even when producer and style are otherwise similar.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "These are different wines because the grape varieties do not match. Wine A is explicitly 100% C\u00f4t, while Wine B is identified as Boutique Syrah, and different grapes always indicate separate bottlings even when producer and style are otherwise similar.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 71,
+  "elapsed": 1.9508562088012695,
+  "error": null
+}

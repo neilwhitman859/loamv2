@@ -1,0 +1,23 @@
+{
+  "wine_id": "10c89e05-ecdd-4254-9c24-5a0b67894da5",
+  "wine_name": "Black Box Deep & Dark Cabernet Sauvignon, California",
+  "tier": "C",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 3.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 5.0,
+  "composite": 4.25,
+  "wrong_facts": [
+    "Mentions Lodi specifically as a sourcing region - this is plausible but not confirmed in context data or ground truth",
+    "Claims about residual sugar, oak alternatives (chips/staves), heavy fining/filtering are reasonable inferences but not verified facts"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "4-6 weeks after opening freshness claim is a common industry figure for bag-in-box but not in context data",
+    "ABV not stated in output but context shows 13.0% for 2021 while ground truth says 13.5% - no conflict in output since it doesn't cite ABV"
+  ],
+  "reasoning": "This is an exceptionally well-written output that nails the Loam voice — direct, opinionated, honest about what the wine is without being dismissive. The hook correctly identifies the 3L box format (confirmed by ground truth) and frames the wine's purpose accurately. The 'Deep & Dark' naming origin as a style descriptor matches ground truth. The mention of Central Valley sourcing aligns with ground truth. However, several vinification details (oak alternatives, residual sugar, heavy fining) are educated guesses presented as near-facts, and the Lodi mention is unverified. These are plausible industry practices for this category but technically unconfirmed. The insider take is genuinely useful and the comparable wines are well-chosen. The food pairings are specific and well-reasoned. The correctness score is held back slightly by the speculative winemaking claims presented with more confidence than warranted, but nothing is provably wrong.",
+  "judge_tokens_in": 3651,
+  "judge_tokens_out": 394
+}

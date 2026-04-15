@@ -1,0 +1,13 @@
+{
+  "pair_id": "D037",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"The two records refer to the same wine from Chatter Creek, with the second record simply including the word 'Wine' as a descriptor. There are no differences in producer, vineyard, or style to suggest these are distinct bottlings.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "The two records refer to the same wine from Chatter Creek, with the second record simply including the word 'Wine' as a descriptor. There are no differences in producer, vineyard, or style to suggest these are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 417,
+  "tokens_out": 67,
+  "elapsed": 1.4175150394439697,
+  "error": null
+}

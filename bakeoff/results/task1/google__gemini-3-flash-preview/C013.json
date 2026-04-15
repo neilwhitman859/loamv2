@@ -1,0 +1,13 @@
+{
+  "pair_id": "C013",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"While both records share the same producer, vineyard (Kastanienbusch), grape, and Pr\u00e4dikat level (Auslese), they have distinct LWINs (1573725 vs 1573767). In German Pr\u00e4dikat wines, this typically indicates different auction lots, cask numbers (Fuder), or specific bottlings (e.g., Goldkapsel vs. standard) which are treated as distinct products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "While both records share the same producer, vineyard (Kastanienbusch), grape, and Pr\u00e4dikat level (Auslese), they have distinct LWINs (1573725 vs 1573767). In German Pr\u00e4dikat wines, this typically indicates different auction lots, cask numbers (Fuder), or specific bottlings (e.g., Goldkapsel vs. standard) which are treated as distinct products.",
+  "parse_ok": true,
+  "tokens_in": 438,
+  "tokens_out": 118,
+  "elapsed": 2.1855359077453613,
+  "error": null
+}

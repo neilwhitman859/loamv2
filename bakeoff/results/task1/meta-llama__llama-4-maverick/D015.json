@@ -1,0 +1,13 @@
+{
+  "pair_id": "D015",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines have the same producer, grape variety, and color. The difference in name is due to the presence of 'Reserve' in Wine A, which is likely a stylistic or marketing variation rather than a different wine. The LWIN numbers are different, but this alone does not necessarily indicate different wines.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines have the same producer, grape variety, and color. The difference in name is due to the presence of 'Reserve' in Wine A, which is likely a stylistic or marketing variation rather than a different wine. The LWIN numbers are different, but this alone does not necessarily indicate different wines.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 85,
+  "elapsed": 1.4123101234436035,
+  "error": null
+}

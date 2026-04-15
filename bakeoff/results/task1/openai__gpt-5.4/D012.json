@@ -1,0 +1,13 @@
+{
+  "pair_id": "D012",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines because they are made from different grape varieties: Boal vs Sercial. Even though both are Borges Madeira Reservas aged 10 years, different grapes always indicate separate bottlings rather than naming variants.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines because they are made from different grape varieties: Boal vs Sercial. Even though both are Borges Madeira Reservas aged 10 years, different grapes always indicate separate bottlings rather than naming variants.",
+  "parse_ok": true,
+  "tokens_in": 410,
+  "tokens_out": 66,
+  "elapsed": 2.0398666858673096,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D012",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Boal and Sercial are distinct grape varieties used in Madeira wines from Borges, with Sercial typically drier and Boal sweeter. The key rule states that different grapes always indicate different wines, even from the same producer and style. While both are Reserva 10 YO, the grape difference means they are separate bottlings consumers would encounter distinctly.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Boal and Sercial are distinct grape varieties used in Madeira wines from Borges, with Sercial typically drier and Boal sweeter. The key rule states that different grapes always indicate different wines, even from the same producer and style. While both are Reserva 10 YO, the grape difference means they are separate bottlings consumers would encounter distinctly.",
+  "parse_ok": true,
+  "tokens_in": 556,
+  "tokens_out": 396,
+  "elapsed": 3.1946604251861572,
+  "error": null
+}

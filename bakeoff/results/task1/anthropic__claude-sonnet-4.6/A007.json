@@ -1,0 +1,13 @@
+{
+  "pair_id": "A007",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine A (Laurus) contains both DURIF and SYRAH grapes, making it a blend, while Wine B (Laurus Syrah) is specifically labeled as Syrah, suggesting it is a single-varietal bottling. Although the producer and base name are the same, the grape composition differs \u2014 a blend vs. a single varietal represents distinct bottlings a consumer would encounter separately. This is not merely a naming abbreviation difference, as the blend includes Durif which would not be present in a pure Syrah bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine A (Laurus) contains both DURIF and SYRAH grapes, making it a blend, while Wine B (Laurus Syrah) is specifically labeled as Syrah, suggesting it is a single-varietal bottling. Although the producer and base name are the same, the grape composition differs \u2014 a blend vs. a single varietal represents distinct bottlings a consumer would encounter separately. This is not merely a naming abbreviation difference, as the blend includes Durif which would not be present in a pure Syrah bottling.",
+  "parse_ok": true,
+  "tokens_in": 489,
+  "tokens_out": 141,
+  "elapsed": 4.247636795043945,
+  "error": null
+}

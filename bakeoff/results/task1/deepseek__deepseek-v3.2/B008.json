@@ -1,0 +1,13 @@
+{
+  "pair_id": "B008",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The wines have different grape varieties (Cabernet Sauvignon vs Sauvignon Blanc), which is a definitive rule for different wines. They also differ in color (red vs white), which further confirms they are distinct bottlings from the same producer and vineyard designation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The wines have different grape varieties (Cabernet Sauvignon vs Sauvignon Blanc), which is a definitive rule for different wines. They also differ in color (red vs white), which further confirms they are distinct bottlings from the same producer and vineyard designation.",
+  "parse_ok": true,
+  "tokens_in": 449,
+  "tokens_out": 77,
+  "elapsed": 4.436677694320679,
+  "error": null
+}

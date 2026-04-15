@@ -1,0 +1,13 @@
+{
+  "pair_id": "B022",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a white Extra Brut NV Champagne while Wine B is a Ros\u00e9 Extra Brut NV Champagne from the same producer Jean Noel Haton. The color difference (white vs ros\u00e9) makes these distinct bottlings that consumers would encounter separately. Per the classification rules, Ros\u00e9 vs Red (or white) from the same producer are DIFFERENT wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a white Extra Brut NV Champagne while Wine B is a Ros\u00e9 Extra Brut NV Champagne from the same producer Jean Noel Haton. The color difference (white vs ros\u00e9) makes these distinct bottlings that consumers would encounter separately. Per the classification rules, Ros\u00e9 vs Red (or white) from the same producer are DIFFERENT wines.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 109,
+  "elapsed": 2.9851808547973633,
+  "error": null
+}

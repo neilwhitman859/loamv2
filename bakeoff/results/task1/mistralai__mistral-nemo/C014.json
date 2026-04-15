@@ -1,0 +1,13 @@
+{
+  "pair_id": "C014",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, vineyard designation ('Derri\u00c3\u00a8re Le Mont Aigu'), grape variety (Blanc de Blancs), and color (white). The only difference is the lot number, which is not sufficient to classify them as different wines according to the given rules.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, vineyard designation ('Derri\u00c3\u00a8re Le Mont Aigu'), grape variety (Blanc de Blancs), and color (white). The only difference is the lot number, which is not sufficient to classify them as different wines according to the given rules.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 82,
+  "elapsed": 5.1182873249053955,
+  "error": null
+}

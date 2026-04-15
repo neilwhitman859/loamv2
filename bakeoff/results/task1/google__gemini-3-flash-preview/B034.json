@@ -1,0 +1,13 @@
+{
+  "pair_id": "B034",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records represent two distinct styles of wine: a Ros\u00e9 and a Red (Rouge). According to the rules, different colors from the same producer and vineyard designation constitute different wines that a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records represent two distinct styles of wine: a Ros\u00e9 and a Red (Rouge). According to the rules, different colors from the same producer and vineyard designation constitute different wines that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 66,
+  "elapsed": 1.6279513835906982,
+  "error": null
+}

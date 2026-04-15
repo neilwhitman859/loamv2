@@ -1,0 +1,27 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "xiaomi/mimo-v2-pro",
+  "correctness": 2.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.625,
+  "wrong_facts": [
+    "Hook says 'Named for the father-son partnership that rebuilt Shafer in the 1970s and '80s' — while the naming origin is related to the father-son partnership, the ground truth specifies it's about the 'generation and a half' concept, not about 'rebuilding' Shafer",
+    "Context data says 100% Cabernet Sauvignon but ground truth says 2022 is 92% Cab Sauv, 3% Petite Verdot, 3% Merlot, 2% Malbec — the output doesn't correct this but also doesn't claim 100%",
+    "Vinification claims '60-65% new French oak barrels for roughly 20 months' — ground truth says 100% new French oak for 18 months",
+    "Hook calls it 'entry point into Stags Leap District power' — ground truth says it's a multi-site Napa Valley wine, NOT a Stags Leap District wine specifically",
+    "Wine summary says 'John Shafer left a Chicago publishing career' — he was actually in the publishing industry in Chicago, this appears correct from wine knowledge"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "60-65% new French oak (ground truth: 100% new French oak)",
+    "20 months aging (ground truth: 18 months)",
+    "Hillside Select commanding $300+"
+  ],
+  "reasoning": "The hook contains a problematic claim calling One Point Five an 'entry point into Stags Leap District power' when ground truth confirms it's a multi-site Napa Valley wine, not a Stags Leap District wine. The vinification section fabricates specific cooperage numbers (60-65% new oak, 20 months) that contradict the ground truth of 100% new French oak for 18 months — these are fabricated numbers that are provably wrong. The voice is excellent: direct, opinionated, specific, with real comparisons and actionable advice. The insider take about alcohol heat and the Bordeaux/Barolo comparison is genuinely useful. But the fabricated cooperage numbers and the misleading Stags Leap District framing significantly hurt correctness.",
+  "judge_tokens_in": 4090,
+  "judge_tokens_out": 537
+}

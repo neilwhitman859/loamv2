@@ -1,0 +1,26 @@
+{
+  "wine_id": "46a46e99-c081-41ce-abcc-bf993469fc0e",
+  "wine_name": "Kir Yianni Ramnista, Naoussa",
+  "tier": "B",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Oak aging stated as 16 months; ground truth says 18 months",
+    "25% new oak is not in context data or ground truth and is likely fabricated",
+    "Soils described as 'sandy clay and clay-loam over limestone subsoil' are not verified in context data or ground truth — plausible but unverifiable",
+    "Hook calls Ramnista a 'single vineyard' — ground truth says 'Ramnista blocks' (plural), and the naming origin refers to 'royal hill' in local idiom referring to rolling hills of the estate, not necessarily a single vineyard in the strict sense"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "16 months oak aging (ground truth is 18 months)",
+    "25% new oak (not in any source)",
+    "15+ years aging claim (not sourced, though plausible)"
+  ],
+  "reasoning": "The output is well-written with strong voice, excellent specificity, and genuinely useful comparisons and food pairings. However, it fabricates the oak aging duration (16 months vs. the verified 18 months) and invents a 25% new oak figure that appears nowhere in the data. The soil description is detailed but unverifiable. The hook's 'single vineyard' framing is somewhat misleading given the ground truth describes 'Ramnista blocks' at the estate. These fabricated numbers trigger the hard penalty cap of 1.5, but since the oak duration is close (16 vs 18) and the single vineyard claim is debatable rather than provably wrong, I'm applying a moderate penalty rather than the absolute floor — though the 25% new oak is a clear fabrication with no source.",
+  "judge_tokens_in": 3794,
+  "judge_tokens_out": 423
+}

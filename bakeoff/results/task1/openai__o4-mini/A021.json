@@ -1,0 +1,13 @@
+{
+  "pair_id": "A021",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.90, \"reasoning\": \"Wine B is a blend of Cabernet Sauvignon and Syrah, while Wine A is 100% Cabernet Sauvignon, representing distinct grape compositions and thus different bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine B is a blend of Cabernet Sauvignon and Syrah, while Wine A is 100% Cabernet Sauvignon, representing distinct grape compositions and thus different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 168,
+  "elapsed": 4.107311487197876,
+  "error": null
+}

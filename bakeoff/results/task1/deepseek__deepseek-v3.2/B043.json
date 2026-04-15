@@ -1,0 +1,13 @@
+{
+  "pair_id": "B043",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.95, \"reasoning\": \"The wines differ in color (white vs ros\u00e9), which is a key rule for distinct wines. Additionally, the name difference ('Brut Apanage' vs 'Apanage Brut Rose') indicates a stylistic variation beyond just formatting, suggesting separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines differ in color (white vs ros\u00e9), which is a key rule for distinct wines. Additionally, the name difference ('Brut Apanage' vs 'Apanage Brut Rose') indicates a stylistic variation beyond just formatting, suggesting separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 77,
+  "elapsed": 8.836026191711426,
+  "error": null
+}

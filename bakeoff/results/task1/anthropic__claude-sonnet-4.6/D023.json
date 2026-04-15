@@ -1,0 +1,13 @@
+{
+  "pair_id": "D023",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from producer La Tour Blanche and share nearly identical names \u2014 'Les Charmilles de Tour Blanche' vs 'Les Charmilles de Tour' \u2014 where the latter appears to be a truncated version of the former. Both are white wines from the same producer, and the name difference is simply an abbreviation (dropping 'Blanche' from the end). The grape composition (Sauvignon Blanc, Muscadelle, Mondeuse Blanche) is consistent with a Sauternes-region white wine from La Tour Blanche, supporting that these represent the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from producer La Tour Blanche and share nearly identical names \u2014 'Les Charmilles de Tour Blanche' vs 'Les Charmilles de Tour' \u2014 where the latter appears to be a truncated version of the former. Both are white wines from the same producer, and the name difference is simply an abbreviation (dropping 'Blanche' from the end). The grape composition (Sauvignon Blanc, Muscadelle, Mondeuse Blanche) is consistent with a Sauternes-region white wine from La Tour Blanche, supporting that these represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 517,
+  "tokens_out": 160,
+  "elapsed": 4.944739818572998,
+  "error": null
+}

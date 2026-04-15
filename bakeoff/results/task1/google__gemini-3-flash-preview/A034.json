@@ -1,0 +1,13 @@
+{
+  "pair_id": "A034",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a blend containing Chardonnay and Pinot Gris, whereas Wine B is a varietal Sauvignon Blanc. Even though they share the same producer and regional designation (Markgr\u00e4flerland SW), the difference in grape varieties indicates they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a blend containing Chardonnay and Pinot Gris, whereas Wine B is a varietal Sauvignon Blanc. Even though they share the same producer and regional designation (Markgr\u00e4flerland SW), the difference in grape varieties indicates they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 75,
+  "elapsed": 1.5464801788330078,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B006",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"The two records specify different grape compositions, with Wine B containing 8% Dolcetto while Wine A does not. According to the classification rules, different grape blends always constitute distinct wines. The naming difference ('Corte' vs. 'Corte B') further indicates they are separate bottlings or cuv\u00e9es from the producer.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The two records specify different grape compositions, with Wine B containing 8% Dolcetto while Wine A does not. According to the classification rules, different grape blends always constitute distinct wines. The naming difference ('Corte' vs. 'Corte B') further indicates they are separate bottlings or cuv\u00e9es from the producer.",
+  "parse_ok": true,
+  "tokens_in": 493,
+  "tokens_out": 1631,
+  "elapsed": 30.931801557540894,
+  "error": null
+}

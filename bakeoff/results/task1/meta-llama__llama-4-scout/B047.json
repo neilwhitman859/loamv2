@@ -1,0 +1,13 @@
+{
+  "pair_id": "B047",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, one being white and the other red, which indicates they are different wines. Additionally, the vineyard names 'Eichberg' and 'Kirchberg' are not the same, further supporting the conclusion that they are different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, one being white and the other red, which indicates they are different wines. Additionally, the vineyard names 'Eichberg' and 'Kirchberg' are not the same, further supporting the conclusion that they are different wines.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 76,
+  "elapsed": 2.3011064529418945,
+  "error": null
+}

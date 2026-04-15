@@ -7,15 +7,21 @@
     "name": "Blaufrankisch",
     "producer": "Leo Hillinger",
     "vintage_year": 2024,
-    "abv_pct": null,
+    "abv_pct": 13,
     "blend": null,
-    "oak": null,
+    "oak": {
+      "vessel": null,
+      "months": 12,
+      "new_pct": null,
+      "origin": null
+    },
     "cases_produced": null,
     "chemistry": null,
     "winemaker": null,
-    "farming": null
+    "farming": "organic"
   },
-  "data_richness": 1,
+  "data_richness": 4,
   "total_fields": 8,
-  "text_length": 4787
+  "text_length": 4787,
+  "consensus_models": 14
 }

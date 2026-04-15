@@ -1,0 +1,13 @@
+{
+  "pair_id": "B046",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, with Wine A being red and Wine B being white, indicating they are different wines. The difference in color is a key factor in determining they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, with Wine A being red and Wine B being white, indicating they are different wines. The difference in color is a key factor in determining they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 506,
+  "tokens_out": 63,
+  "elapsed": 1.4564311504364014,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D034",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.75,\"reasoning\":\"The two bottlings differ in vineyard designation: one is specifically \u2018Bollenberg Neuberg\u2019 while the other is simply \u2018Bollenberg.\u2019 That indicates distinct cuv\u00e9es rather than a naming abbreviation.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.75,
+  "reasoning": "The two bottlings differ in vineyard designation: one is specifically \u2018Bollenberg Neuberg\u2019 while the other is simply \u2018Bollenberg.\u2019 That indicates distinct cuv\u00e9es rather than a naming abbreviation.",
+  "parse_ok": true,
+  "tokens_in": 428,
+  "tokens_out": 281,
+  "elapsed": 10.247909784317017,
+  "error": null
+}

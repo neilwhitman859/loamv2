@@ -1,0 +1,13 @@
+{
+  "pair_id": "A013",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A (Lerchenberg) lists grapes as PINOT NOIR and CANARI NOIR, while Wine B (Lerchenberg Pinot Gris) is explicitly a Pinot Gris. Different grape varieties mean these are definitively different wines, even though they share the same vineyard name and producer. The varietal suffix rule applies here: the producer makes multiple wines from Lerchenberg with different grapes, so the shorter name is not merely an abbreviation of the longer one.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A (Lerchenberg) lists grapes as PINOT NOIR and CANARI NOIR, while Wine B (Lerchenberg Pinot Gris) is explicitly a Pinot Gris. Different grape varieties mean these are definitively different wines, even though they share the same vineyard name and producer. The varietal suffix rule applies here: the producer makes multiple wines from Lerchenberg with different grapes, so the shorter name is not merely an abbreviation of the longer one.",
+  "parse_ok": true,
+  "tokens_in": 502,
+  "tokens_out": 133,
+  "elapsed": 3.079007148742676,
+  "error": null
+}

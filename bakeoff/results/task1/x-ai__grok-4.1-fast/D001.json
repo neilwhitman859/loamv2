@@ -1,0 +1,13 @@
+{
+  "pair_id": "D001",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Both wines share the same producer (Van Volxem), vineyard designation (Altenberg Alte Reben Grosse Lage), grape (Riesling Weiss 100%), and color (white). The key difference is 'Nr23' in Wine A, which indicates a specific lot or cask number. Per the rules, different lot/cask numbers at the same classification level (here Grosse Lage) mean they are DIFFERENT wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Both wines share the same producer (Van Volxem), vineyard designation (Altenberg Alte Reben Grosse Lage), grape (Riesling Weiss 100%), and color (white). The key difference is 'Nr23' in Wine A, which indicates a specific lot or cask number. Per the rules, different lot/cask numbers at the same classification level (here Grosse Lage) mean they are DIFFERENT wines.",
+  "parse_ok": true,
+  "tokens_in": 588,
+  "tokens_out": 811,
+  "elapsed": 8.794672727584839,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C044",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -1.0, \"reasoning\": \"The wines have different colors (red vs white), which is a definitive difference according to the rules. Additionally, Wine A specifies a lot number ('Nr17') while Wine B does not, and at the same Pr\u00e4dikat level (Auslese), different lot/cask numbers indicate different bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different colors (red vs white), which is a definitive difference according to the rules. Additionally, Wine A specifies a lot number ('Nr17') while Wine B does not, and at the same Pr\u00e4dikat level (Auslese), different lot/cask numbers indicate different bottlings.",
+  "parse_ok": true,
+  "tokens_in": 471,
+  "tokens_out": 85,
+  "elapsed": 4.001337289810181,
+  "error": null
+}

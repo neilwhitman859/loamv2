@@ -1,0 +1,13 @@
+{
+  "pair_id": "B044",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are distinct Pommery bottlings: Cuvee Louise Rose is a ros\u00e9, while Cuvee Louise is a white wine. The color difference alone means they are different wines, and the different LWINs support that they are separately cataloged entries.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are distinct Pommery bottlings: Cuvee Louise Rose is a ros\u00e9, while Cuvee Louise is a white wine. The color difference alone means they are different wines, and the different LWINs support that they are separately cataloged entries.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 74,
+  "elapsed": 1.4067935943603516,
+  "error": null
+}

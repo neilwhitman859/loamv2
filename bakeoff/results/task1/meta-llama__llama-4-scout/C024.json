@@ -1,0 +1,13 @@
+{
+  "pair_id": "C024",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The wines share the same producer, Francis Boulard, and have similar names with a minor variation, 'Murgiers' vs 'Les Murgiers'. The style and color are also the same, both being Extra Brut and white, indicating they are likely the same wine with a minor name formatting difference.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The wines share the same producer, Francis Boulard, and have similar names with a minor variation, 'Murgiers' vs 'Les Murgiers'. The style and color are also the same, both being Extra Brut and white, indicating they are likely the same wine with a minor name formatting difference.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 85,
+  "elapsed": 2.105617046356201,
+  "error": null
+}

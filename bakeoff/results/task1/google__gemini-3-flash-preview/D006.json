@@ -1,0 +1,13 @@
+{
+  "pair_id": "D006",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a monovarietal Merlot, whereas Wine B is a blend of Cot (Malbec) and Merlot. Under the rule that different grape compositions constitute different wines even if the names are similar, these are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a monovarietal Merlot, whereas Wine B is a blend of Cot (Malbec) and Merlot. Under the rule that different grape compositions constitute different wines even if the names are similar, these are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 72,
+  "elapsed": 1.8601570129394531,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A019",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine B is simply the varietal-specific name for Wine A. In the Rob Dolan 'True Colours' range, the Pinot Noir is the primary red offering, and the inclusion of a small amount of Merlot in the blend (Wine A) is standard for the bottling often labeled simply as 'True Colours Pinot Noir'.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine B is simply the varietal-specific name for Wine A. In the Rob Dolan 'True Colours' range, the Pinot Noir is the primary red offering, and the inclusion of a small amount of Merlot in the blend (Wine A) is standard for the bottling often labeled simply as 'True Colours Pinot Noir'.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 86,
+  "elapsed": 1.7278931140899658,
+  "error": null
+}

@@ -1,0 +1,25 @@
+{
+  "wine_id": "a46855f7-2916-434c-91c3-3847c981f0d0",
+  "wine_name": "Leo Hillinger, Burgenland",
+  "tier": "B",
+  "model": "deepseek/deepseek-v3.2",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.0,
+  "usefulness": 4.0,
+  "composite": 3.475,
+  "wrong_facts": [
+    "Hook claims wine thrives on 'warm, stony soils of the Leithaberg' — the ground truth says Hillinger's vineyards are in Jois, Oggau, and Rust, which are Neusiedlersee/Leithaberg-adjacent but the wine is labeled simply 'Burgenland' and there's no evidence this specific wine is sourced from Leithaberg soils",
+    "Vinification details (stainless steel fermentation, 500-liter neutral oak casks, avoidance of new barriques) are entirely fabricated — none of this is in the context data or verifiable from ground truth",
+    "Price range of $18-$25 is fabricated — no pricing data was provided"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$18-$25 price range",
+    "500-liter oak casks",
+    "3-7 years drinking window specifics beyond what data supports"
+  ],
+  "reasoning": "The output is well-written with strong voice and specificity, but fabricates significant details. The vinification section is entirely invented — fermentation vessels, oak sizes, and winemaking philosophy are all unverifiable claims presented as fact. The Leithaberg soil attribution in the hook is misleading for a wine labeled simply 'Burgenland' from vineyards in Jois, Oggau, and Rust. The price fabrication triggers the hard penalty for fabricated numbers. However, the output correctly identifies 100% Blaufränkisch, the Pannonian climate, Lake Neusiedl's influence, and the Kékfrankos/Hungarian connection. The organic conversion (2010) from ground truth is missed. The comparable wines section names real producers (Moric, Heinrich) which adds value. The voice is direct and opinionated without banned words.",
+  "judge_tokens_in": 3438,
+  "judge_tokens_out": 458
+}

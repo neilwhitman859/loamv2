@@ -1,0 +1,13 @@
+{
+  "pair_id": "D031",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Peter Jakob Kuhn's 'Hallgarten Rheinschiefer' is a specific Riesling bottling produced in a dry style. The addition of 'Trocken' in Wine A is a stylistic descriptor of the same wine, as the producer does not make a separate non-dry version under this specific vineyard/label name.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Peter Jakob Kuhn's 'Hallgarten Rheinschiefer' is a specific Riesling bottling produced in a dry style. The addition of 'Trocken' in Wine A is a stylistic descriptor of the same wine, as the producer does not make a separate non-dry version under this specific vineyard/label name.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 87,
+  "elapsed": 1.9189367294311523,
+  "error": null
+}

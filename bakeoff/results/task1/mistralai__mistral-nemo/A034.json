@@ -1,0 +1,13 @@
+{
+  "pair_id": "A034",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A contains a blend of Chardonnay Blanc and Pinot Gris, while Wine B is a Sauvignon Blanc. Different grapes always mean different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A contains a blend of Chardonnay Blanc and Pinot Gris, while Wine B is a Sauvignon Blanc. Different grapes always mean different wines.",
+  "parse_ok": true,
+  "tokens_in": 481,
+  "tokens_out": 60,
+  "elapsed": 3.99460768699646,
+  "error": null
+}

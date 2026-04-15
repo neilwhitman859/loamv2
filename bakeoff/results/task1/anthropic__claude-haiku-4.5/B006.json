@@ -1,0 +1,13 @@
+{
+  "pair_id": "B006",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.85, \"reasoning\": \"Wine B includes Dolcetto (8%) as a third grape variety, while Wine A contains only Cot and Cabernet Sauvignon. Different grape compositions represent distinct bottlings that would be encountered separately by consumers. The 'B' designation in Wine B's name further suggests these are separate cuv\u00e9es from Vistalba.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.85,
+  "reasoning": "Wine B includes Dolcetto (8%) as a third grape variety, while Wine A contains only Cot and Cabernet Sauvignon. Different grape compositions represent distinct bottlings that would be encountered separately by consumers. The 'B' designation in Wine B's name further suggests these are separate cuv\u00e9es from Vistalba.",
+  "parse_ok": true,
+  "tokens_in": 522,
+  "tokens_out": 101,
+  "elapsed": 3.1473803520202637,
+  "error": null
+}

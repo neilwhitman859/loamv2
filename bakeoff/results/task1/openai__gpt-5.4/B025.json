@@ -1,0 +1,13 @@
+{
+  "pair_id": "B025",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines because they differ in both grape/color and likely bottling identity: Wine A is a white Les Jardins de La Tour Blanche, while Wine B is explicitly Les Jardins de La Tour Blanche Merlot and red. Different grape composition/color always makes them separate wines, even when producer and core cuv\u00e9e name overlap.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines because they differ in both grape/color and likely bottling identity: Wine A is a white Les Jardins de La Tour Blanche, while Wine B is explicitly Les Jardins de La Tour Blanche Merlot and red. Different grape composition/color always makes them separate wines, even when producer and core cuv\u00e9e name overlap.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 90,
+  "elapsed": 2.455138921737671,
+  "error": null
+}

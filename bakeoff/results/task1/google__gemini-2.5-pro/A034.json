@@ -1,0 +1,13 @@
+{
+  "pair_id": "A034",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are made from different grape varieties. Wine A is a blend of Chardonnay and Pinot Gris, while Wine B's name, 'Markgraflerland SW Sauvignon Blanc', indicates it is made from Sauvignon Blanc. Wines with different grape compositions are always considered different.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are made from different grape varieties. Wine A is a blend of Chardonnay and Pinot Gris, while Wine B's name, 'Markgraflerland SW Sauvignon Blanc', indicates it is made from Sauvignon Blanc. Wines with different grape compositions are always considered different.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 1188,
+  "elapsed": 11.924601793289185,
+  "error": null
+}

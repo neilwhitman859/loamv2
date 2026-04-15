@@ -1,0 +1,13 @@
+{
+  "pair_id": "A024",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.90, \"reasoning\": \"Wine A is 100% COT (Cabernet), whereas Wine B is labeled Syrah, indicating different grape varieties and thus distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is 100% COT (Cabernet), whereas Wine B is labeled Syrah, indicating different grape varieties and thus distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 240,
+  "elapsed": 5.229101657867432,
+  "error": null
+}

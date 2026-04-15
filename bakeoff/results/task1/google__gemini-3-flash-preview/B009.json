@@ -1,0 +1,13 @@
+{
+  "pair_id": "B009",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The records specify different colors (white vs. rose). In the context of Bellavista's production, the 'Alma' line includes distinct bottlings for their Alma Grande Cuv\u00e9e (white/brut) and their Alma Grande Cuv\u00e9e Ros\u00e9, which are separate products.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The records specify different colors (white vs. rose). In the context of Bellavista's production, the 'Alma' line includes distinct bottlings for their Alma Grande Cuv\u00e9e (white/brut) and their Alma Grande Cuv\u00e9e Ros\u00e9, which are separate products.",
+  "parse_ok": true,
+  "tokens_in": 396,
+  "tokens_out": 79,
+  "elapsed": 2.25229811668396,
+  "error": null
+}

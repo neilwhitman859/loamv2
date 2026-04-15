@@ -1,0 +1,13 @@
+{
+  "pair_id": "B034",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.87, \"reasoning\": \"The two bottlings differ in color/style (ros\u00e9 vs red) from the same producer and cuv\u00e9e, which constitutes distinct consumer products and therefore different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.87,
+  "reasoning": "The two bottlings differ in color/style (ros\u00e9 vs red) from the same producer and cuv\u00e9e, which constitutes distinct consumer products and therefore different wines.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 113,
+  "elapsed": 4.364729642868042,
+  "error": null
+}

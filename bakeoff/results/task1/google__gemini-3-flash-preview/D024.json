@@ -1,0 +1,13 @@
+{
+  "pair_id": "D024",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Cattier produces a specific cuv\u00e9e branded as 'Antique' which is a Brut Champagne. The presence or absence of the 'Brut' descriptor is a naming variation for the same product, as 'Antique' is the specific line name within the producer's portfolio.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Cattier produces a specific cuv\u00e9e branded as 'Antique' which is a Brut Champagne. The presence or absence of the 'Brut' descriptor is a naming variation for the same product, as 'Antique' is the specific line name within the producer's portfolio.",
+  "parse_ok": true,
+  "tokens_in": 405,
+  "tokens_out": 77,
+  "elapsed": 2.4528915882110596,
+  "error": null
+}

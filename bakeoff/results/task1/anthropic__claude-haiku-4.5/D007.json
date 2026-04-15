@@ -1,0 +1,13 @@
+{
+  "pair_id": "D007",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a blend of C\u00f4t and Cabernet Sauvignon, while Wine B is 100% Merlot Noir. Different grape compositions represent distinct bottlings that a consumer would encounter separately, making these different wines despite the similar naming and shared producer.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a blend of C\u00f4t and Cabernet Sauvignon, while Wine B is 100% Merlot Noir. Different grape compositions represent distinct bottlings that a consumer would encounter separately, making these different wines despite the similar naming and shared producer.",
+  "parse_ok": true,
+  "tokens_in": 505,
+  "tokens_out": 86,
+  "elapsed": 12.836212158203125,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D030",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"Wine A is identified as 'Porcupine Ridge' with Cabernet Sauvignon grapes, while Wine B is 'Merlot Porcupine Ridge'. The presence of 'Merlot' in Wine B's name strongly suggests it is a Merlot varietal wine, distinct from the Cabernet Sauvignon of Wine A, even though both share the 'Porcupine Ridge' designation from the same producer. Different grape varieties always indicate different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "Wine A is identified as 'Porcupine Ridge' with Cabernet Sauvignon grapes, while Wine B is 'Merlot Porcupine Ridge'. The presence of 'Merlot' in Wine B's name strongly suggests it is a Merlot varietal wine, distinct from the Cabernet Sauvignon of Wine A, even though both share the 'Porcupine Ridge' designation from the same producer. Different grape varieties always indicate different wines.",
+  "parse_ok": true,
+  "tokens_in": 431,
+  "tokens_out": 105,
+  "elapsed": 1.615105390548706,
+  "error": null
+}

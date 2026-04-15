@@ -1,0 +1,13 @@
+{
+  "pair_id": "B030",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Cabernet Sauvignon (red) and Wine B is a Sauvignon Blanc (white), which are completely different grape varieties. Different grapes always constitute different wines, regardless of sharing the same 'Porcupine Ridge' label and producer (Boekenhoutskloof). These are distinct bottlings a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Cabernet Sauvignon (red) and Wine B is a Sauvignon Blanc (white), which are completely different grape varieties. Different grapes always constitute different wines, regardless of sharing the same 'Porcupine Ridge' label and producer (Boekenhoutskloof). These are distinct bottlings a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 509,
+  "tokens_out": 104,
+  "elapsed": 3.099379062652588,
+  "error": null
+}

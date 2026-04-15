@@ -1,0 +1,13 @@
+{
+  "pair_id": "B006",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The wines have different grape compositions, with Wine A listing only COT and CABERNET SAUVIGNON, while Wine B includes DOLCETTO in addition to COT and CABERNET SAUVIGNON, indicating different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The wines have different grape compositions, with Wine A listing only COT and CABERNET SAUVIGNON, while Wine B includes DOLCETTO in addition to COT and CABERNET SAUVIGNON, indicating different wines.",
+  "parse_ok": true,
+  "tokens_in": 526,
+  "tokens_out": 71,
+  "elapsed": 1.1618573665618896,
+  "error": null
+}

@@ -1,0 +1,37 @@
+{
+  "wine_id": "1231e371-af5f-4bde-9d2d-be094605cc21",
+  "wine_name": "Shafer Vineyards One Point Five, Napa Valley",
+  "tier": "A",
+  "model": "mistralai/mistral-large-2512",
+  "correctness": 1.5,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 2.9,
+  "wrong_facts": [
+    "Hook claims fruit comes from 'the same Stags Leap District vineyards as their flagship Hillside Select' — ground truth says One Point Five is sourced from multiple sites including Stags Leap District, Borderline vineyard, and selected Napa Valley sites, not exclusively from Hillside Select vineyards",
+    "Claims 30% new French oak — ground truth says 100% new French oak (Allier & Tronçais)",
+    "Claims 20 months in oak — ground truth says 18 months",
+    "Claims wine is 100% Cabernet Sauvignon — ground truth 2022 blend is 92% Cab, 3% Petit Verdot, 3% Merlot, 2% Malbec",
+    "Fabricates specific vineyard block names 'Firebreak' and 'Sunspot'",
+    "Fabricates vine age claim of '15-25 years old'",
+    "Claims it's a 'second label' — it's not a second label but a distinct wine in the portfolio",
+    "Hook says 'oak regimen dialed back' when in fact One Point Five uses 100% new French oak, same as Hillside Select",
+    "Extended maceration of 'up to 30 days' is unverifiable and likely fabricated"
+  ],
+  "banned_words_found": [
+    "elegant"
+  ],
+  "fabricated_numbers": [
+    "30% new French oak",
+    "20 months in oak",
+    "15-25 years old vines",
+    "30 days extended maceration",
+    "$300 price for Hillside Select (unverified)",
+    "$75-$85 for Artemis",
+    "$45-$55 for Decoy"
+  ],
+  "reasoning": "This output is riddled with fabricated specifics that directly contradict the verified ground truth. The oak program is stated as 30% new French oak when it's actually 100% new; aging is stated as 20 months vs. actual 18 months; the blend is listed as 100% Cab when it's actually a multi-grape blend. The hook's central claim — that the fruit comes from the same Hillside Select vineyards — is misleading per ground truth. Vineyard block names (Firebreak, Sunspot) and vine ages appear fabricated. The voice is decent but uses 'elegant' (banned word) and the sheer volume of wrong specifics makes this fundamentally unreliable despite its confident, detailed tone.",
+  "judge_tokens_in": 4570,
+  "judge_tokens_out": 588
+}

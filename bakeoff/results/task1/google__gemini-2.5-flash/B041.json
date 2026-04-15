@@ -1,0 +1,13 @@
+{
+  "pair_id": "B041",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"These wines are made from different grape varieties (Pinot Gris vs. Grenache) and have different colors (white vs. red). This clearly indicates they are distinct bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "These wines are made from different grape varieties (Pinot Gris vs. Grenache) and have different colors (white vs. red). This clearly indicates they are distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 427,
+  "tokens_out": 59,
+  "elapsed": 1.4283452033996582,
+  "error": null
+}

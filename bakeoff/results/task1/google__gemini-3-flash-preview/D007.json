@@ -1,0 +1,13 @@
+{
+  "pair_id": "D007",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Vistalba produces three distinct tiered blends labeled 'Corte A', 'Corte B', and 'Corte C'. The records show different grape compositions (one being a Malbec/Cabernet blend and the other being Merlot-based), confirming they represent distinct bottlings within the producer's hierarchy.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Vistalba produces three distinct tiered blends labeled 'Corte A', 'Corte B', and 'Corte C'. The records show different grape compositions (one being a Malbec/Cabernet blend and the other being Merlot-based), confirming they represent distinct bottlings within the producer's hierarchy.",
+  "parse_ok": true,
+  "tokens_in": 437,
+  "tokens_out": 85,
+  "elapsed": 2.178117036819458,
+  "error": null
+}

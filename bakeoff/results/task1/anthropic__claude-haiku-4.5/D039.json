@@ -1,0 +1,13 @@
+{
+  "pair_id": "D039",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine B is explicitly labeled 'Reserva,' indicating a distinct classification tier with different aging requirements and quality designation from Wine A, which carries no such designation. In Chilean wine classification, Reserva represents a specific quality tier that distinguishes it as a separate bottling from the standard version, making these different wines a consumer would encounter separately.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine B is explicitly labeled 'Reserva,' indicating a distinct classification tier with different aging requirements and quality designation from Wine A, which carries no such designation. In Chilean wine classification, Reserva represents a specific quality tier that distinguishes it as a separate bottling from the standard version, making these different wines a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 486,
+  "tokens_out": 98,
+  "elapsed": 2.520171880722046,
+  "error": null
+}

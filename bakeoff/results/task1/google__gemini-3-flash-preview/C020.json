@@ -1,0 +1,13 @@
+{
+  "pair_id": "C020",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines are from two distinct vineyards: Trittenheimer Alt\u00e4rchen and Trittenheimer Leiterchen. In German viticulture, these represent different terroir designations and are bottled as separate products by the producer Milz Laurentiushof.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are from two distinct vineyards: Trittenheimer Alt\u00e4rchen and Trittenheimer Leiterchen. In German viticulture, these represent different terroir designations and are bottled as separate products by the producer Milz Laurentiushof.",
+  "parse_ok": true,
+  "tokens_in": 446,
+  "tokens_out": 71,
+  "elapsed": 1.4423189163208008,
+  "error": null
+}

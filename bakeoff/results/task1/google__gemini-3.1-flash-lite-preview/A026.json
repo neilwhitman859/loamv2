@@ -1,0 +1,13 @@
+{
+  "pair_id": "A026",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 1.0,\n\"reasoning\": \"Mount Pleasant's 'Lovedale' is a famous single-vineyard Semillon. The addition of 'Semillon' to the name is a descriptive suffix that does not denote a different wine, as the producer does not make other varietals under the 'Lovedale Cellar Aged' label.\"\n}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Mount Pleasant's 'Lovedale' is a famous single-vineyard Semillon. The addition of 'Semillon' to the name is a descriptive suffix that does not denote a different wine, as the producer does not make other varietals under the 'Lovedale Cellar Aged' label.",
+  "parse_ok": true,
+  "tokens_in": 430,
+  "tokens_out": 87,
+  "elapsed": 1.8199372291564941,
+  "error": null
+}

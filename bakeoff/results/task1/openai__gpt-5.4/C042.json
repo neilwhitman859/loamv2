@@ -1,0 +1,13 @@
+{
+  "pair_id": "C042",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different Rioja-style aging classifications from the same producer and cuv\u00e9e line: one is Gran Reserva and the other is Reserva. Classification-tier differences represent distinct bottlings that consumers encounter separately, so they should not be merged.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different Rioja-style aging classifications from the same producer and cuv\u00e9e line: one is Gran Reserva and the other is Reserva. Classification-tier differences represent distinct bottlings that consumers encounter separately, so they should not be merged.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 68,
+  "elapsed": 1.9251928329467773,
+  "error": null
+}

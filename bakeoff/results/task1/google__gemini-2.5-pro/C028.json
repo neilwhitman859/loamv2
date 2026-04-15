@@ -1,0 +1,13 @@
+{
+  "pair_id": "C028",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines have different classification tiers, which represent distinct bottlings. Wine A is a 'Gran Reserva' and Wine B is a 'Reserva'. These terms denote different aging requirements and quality levels, making them separate products from the same producer.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different classification tiers, which represent distinct bottlings. Wine A is a 'Gran Reserva' and Wine B is a 'Reserva'. These terms denote different aging requirements and quality levels, making them separate products from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 1253,
+  "elapsed": 13.8321053981781,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B013",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different colors, one being white and the other ros\u00e9. This difference in color, with the same producer and likely vineyard, indicates they are different wines. The style and grape variety are not explicitly mentioned but color difference alone is sufficient for a DIFFERENT classification.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different colors, one being white and the other ros\u00e9. This difference in color, with the same producer and likely vineyard, indicates they are different wines. The style and grape variety are not explicitly mentioned but color difference alone is sufficient for a DIFFERENT classification.",
+  "parse_ok": true,
+  "tokens_in": 435,
+  "tokens_out": 79,
+  "elapsed": 2.416581869125366,
+  "error": null
+}

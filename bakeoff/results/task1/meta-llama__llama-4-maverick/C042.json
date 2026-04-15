@@ -1,0 +1,13 @@
+{
+  "pair_id": "C042",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines have different classification tiers, with Wine A being a Gran Reserva and Wine B being a Reserva, which indicates they are different wines according to the given rules. Both wines are from the same producer, Virgen del Aguila, and have the same color and appellation, but the difference in classification is sufficient to conclude they are different. The LWIN numbers are also different, further supporting this conclusion.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines have different classification tiers, with Wine A being a Gran Reserva and Wine B being a Reserva, which indicates they are different wines according to the given rules. Both wines are from the same producer, Virgen del Aguila, and have the same color and appellation, but the difference in classification is sufficient to conclude they are different. The LWIN numbers are also different, further supporting this conclusion.",
+  "parse_ok": true,
+  "tokens_in": 519,
+  "tokens_out": 105,
+  "elapsed": 1.931126594543457,
+  "error": null
+}

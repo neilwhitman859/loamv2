@@ -1,0 +1,13 @@
+{
+  "pair_id": "C031",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":0.93,\"reasoning\":\"Both records are Bonnaire Blanc de Blancs white wines with no differing vineyard, grape, tier, or cuv\u00e9e information. The only difference is the explicit inclusion of the sweetness/style term 'Brut' in Wine A, which for Champagne-style Blanc de Blancs is commonly omitted in shorthand when referring to the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.93,
+  "reasoning": "Both records are Bonnaire Blanc de Blancs white wines with no differing vineyard, grape, tier, or cuv\u00e9e information. The only difference is the explicit inclusion of the sweetness/style term 'Brut' in Wine A, which for Champagne-style Blanc de Blancs is commonly omitted in shorthand when referring to the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 421,
+  "tokens_out": 88,
+  "elapsed": 2.6083931922912598,
+  "error": null
+}

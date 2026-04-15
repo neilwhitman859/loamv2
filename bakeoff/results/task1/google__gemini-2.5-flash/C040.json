@@ -1,0 +1,13 @@
+{
+  "pair_id": "C040",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"These wines are different because they represent distinct classification tiers within the Rioja system (Gran Reserva vs. Reserva). While they share the same producer, grape, and appellation, these classification differences indicate different aging requirements and quality levels, making them distinct bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "These wines are different because they represent distinct classification tiers within the Rioja system (Gran Reserva vs. Reserva). While they share the same producer, grape, and appellation, these classification differences indicate different aging requirements and quality levels, making them distinct bottlings.",
+  "parse_ok": true,
+  "tokens_in": 445,
+  "tokens_out": 88,
+  "elapsed": 1.9346840381622314,
+  "error": null
+}

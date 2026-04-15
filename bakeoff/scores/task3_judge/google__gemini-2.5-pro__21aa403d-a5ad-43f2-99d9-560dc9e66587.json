@@ -1,0 +1,25 @@
+{
+  "wine_id": "21aa403d-a5ad-43f2-99d9-560dc9e66587",
+  "wine_name": "Lafage, Côtes Catalanes Vieilles Vignes Tessellae",
+  "tier": "B",
+  "model": "google/gemini-2.5-pro",
+  "correctness": 2.5,
+  "voice": 4.0,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.675,
+  "wrong_facts": [
+    "Hook claims the wine is built on '70-year-old Carignan and Grenache vines' — ground truth says it is 100% Carignan, not a blend with Grenache",
+    "Hook says 'Tessellae' refers to 'the mosaic of vineyard parcels that are blended to create the final wine' — ground truth says it refers to tesserae, the small tiles in Roman mosaics, referencing Roussillon's Roman heritage, not vineyard parcels",
+    "Wine summary describes the blend as Syrah, Grenache, Mourvèdre, and old-vine Carignan — ground truth says it is 100% Carignan",
+    "Vinification summary describes destemming Syrah and Grenache separately — contradicts the 100% Carignan ground truth",
+    "Vinification details about concrete tanks with small fraction of neutral oak are not in context data and unverifiable — likely fabricated"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "70-year-old vines (context says 70+ which is close but the output attributes this to both Carignan and Grenache)"
+  ],
+  "reasoning": "The most damaging error is the blend composition: ground truth confirms this is 100% Carignan, but the output repeatedly describes it as a multi-grape blend of Syrah, Grenache, Mourvèdre, and Carignan. The model was misled by the context data listing four grapes, but the ground truth is clear. The hook contains two wrong claims — the blend attribution and the naming origin explanation (vineyard parcels vs. Roman mosaic tiles). These are significant factual errors in the most prominent field. The voice is strong — direct, opinionated, well-structured, avoids banned words, and reads like quality wine writing. Specificity is excellent with named soils, wind patterns, and real comparable wines. Usefulness is high with actionable food pairings and honest insider take. But the fundamental incorrectness of the blend and naming origin severely undermines trust.",
+  "judge_tokens_in": 3877,
+  "judge_tokens_out": 509
+}

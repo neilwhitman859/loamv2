@@ -1,0 +1,13 @@
+{
+  "pair_id": "B016",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.8, \"reasoning\": \"Wine A and Wine B are different wines due to the different grape varieties. While they share the same producer and vineyard, the presence of 'Barolo Riserva' and 'Barbaresco Riserva' indicates different styles, and the grape variety (Croata vs Nebbiolo) is a key differentiator.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.8,
+  "reasoning": "Wine A and Wine B are different wines due to the different grape varieties. While they share the same producer and vineyard, the presence of 'Barolo Riserva' and 'Barbaresco Riserva' indicates different styles, and the grape variety (Croata vs Nebbiolo) is a key differentiator.",
+  "parse_ok": true,
+  "tokens_in": 455,
+  "tokens_out": 86,
+  "elapsed": 1.4423446655273438,
+  "error": null
+}

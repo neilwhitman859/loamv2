@@ -1,0 +1,13 @@
+{
+  "pair_id": "C049",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines represent different sweetness levels (Brut Nature vs. Brut), which are distinct commercial bottlings. Furthermore, the metadata indicates a fundamental difference in color (white vs. red) and they possess unique LWIN identifiers.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines represent different sweetness levels (Brut Nature vs. Brut), which are distinct commercial bottlings. Furthermore, the metadata indicates a fundamental difference in color (white vs. red) and they possess unique LWIN identifiers.",
+  "parse_ok": true,
+  "tokens_in": 433,
+  "tokens_out": 69,
+  "elapsed": 2.125959634780884,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B024",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is white (Sauvignon Blanc, Muscadelle, Mondeuse Blanche) while Wine B is red (Mondeuse Blanche, Merlot Noir). Different colors represent distinct bottlings that consumers would encounter separately, making these different wines despite sharing the same name and producer.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is white (Sauvignon Blanc, Muscadelle, Mondeuse Blanche) while Wine B is red (Mondeuse Blanche, Merlot Noir). Different colors represent distinct bottlings that consumers would encounter separately, making these different wines despite sharing the same name and producer.",
+  "parse_ok": true,
+  "tokens_in": 517,
+  "tokens_out": 98,
+  "elapsed": 3.3448007106781006,
+  "error": null
+}

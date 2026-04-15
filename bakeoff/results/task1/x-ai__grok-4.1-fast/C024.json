@@ -1,0 +1,13 @@
+{
+  "pair_id": "C024",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer, Francis Boulard, and share nearly identical names ('Murgiers Extra Brut' vs 'Les Murgiers Extra Brut'), differing only in formatting with 'Les' likely being the French article for the same vineyard or cuv\u00e9e. They are both white Extra Brut sparkling wines, matching in style, color, and no indications of different grapes, classifications, or bottlings. Different LWINs reflect database entries but not distinct wines per encyclopedia standards.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer, Francis Boulard, and share nearly identical names ('Murgiers Extra Brut' vs 'Les Murgiers Extra Brut'), differing only in formatting with 'Les' likely being the French article for the same vineyard or cuv\u00e9e. They are both white Extra Brut sparkling wines, matching in style, color, and no indications of different grapes, classifications, or bottlings. Different LWINs reflect database entries but not distinct wines per encyclopedia standards.",
+  "parse_ok": true,
+  "tokens_in": 571,
+  "tokens_out": 496,
+  "elapsed": 5.62815523147583,
+  "error": null
+}

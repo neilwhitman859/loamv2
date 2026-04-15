@@ -1,0 +1,13 @@
+{
+  "pair_id": "A003",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Goodfellow Family), same vineyard (Whistling Ridge), same classification number (Heritage No. 15), and same grape variety (Pinot Noir). Wine A's varietal suffix is simply omitted in the name, which is a common naming convention abbreviation rather than indicating a different bottling.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Goodfellow Family), same vineyard (Whistling Ridge), same classification number (Heritage No. 15), and same grape variety (Pinot Noir). Wine A's varietal suffix is simply omitted in the name, which is a common naming convention abbreviation rather than indicating a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 503,
+  "tokens_out": 102,
+  "elapsed": 10.57506775856018,
+  "error": null
+}

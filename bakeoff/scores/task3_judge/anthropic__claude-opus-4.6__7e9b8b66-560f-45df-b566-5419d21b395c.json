@@ -1,0 +1,24 @@
+{
+  "wine_id": "7e9b8b66-560f-45df-b566-5419d21b395c",
+  "wine_name": "d'Arenberg The High Trellis Cabernet Sauvignon, McLaren Vale",
+  "tier": "A",
+  "model": "anthropic/claude-opus-4.6",
+  "correctness": 3.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.975,
+  "wrong_facts": [
+    "Hook claims the name comes from a trellising system adopted in the 1960s — ground truth says the High Trellis vineyard was nicknamed because its vines were the first at d'Arenberg to be trained above knee-height in the 1890s, not the 1960s",
+    "States the wine sees time in 'older oak' — ground truth says average 12 months in new AND old French and American oak barriques and large casks, so claiming only older oak is misleading",
+    "Claims wild yeast fermentation — not confirmed in ground truth (ground truth mentions foot treading, basket pressing, no fining/filtration, but doesn't specifically mention wild yeast)"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "$15-20 price range (no prices provided in context data)",
+    "$25-30 comparison price (fabricated)"
+  ],
+  "reasoning": "The hook contains a wrong date for the naming origin — ground truth says 1890s, not 1960s. This is a significant factual error in the most prominent field. The price claims ($15-20) are fabricated since no prices were provided, though they may be roughly correct from general knowledge. The 'older oak only' claim contradicts ground truth which specifies new and old oak. Wild yeast is unverifiable. However, the voice is excellent — direct, opinionated, specific, with no banned words. The specificity is strong with named competitors, real soil types, and concrete food pairings. The output is highly useful with actionable comparisons and a clear insider take. The correctness penalty is driven by the wrong hook date and the fabricated price numbers, though the price fabrication is plausible enough to avoid the hard cap since it's not a technical wine number like pH or blend %.",
+  "judge_tokens_in": 4080,
+  "judge_tokens_out": 439
+}

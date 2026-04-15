@@ -1,0 +1,13 @@
+{
+  "pair_id": "A015",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Wine A 'Freedom Hill Perspicacious' and Wine B 'Freedom Hill Perspicacious Pinot Noir' are from the same producer (Patricia Green), same vineyard/cuv\u00e9e (Freedom Hill Perspicacious), same grape variety (Pinot Noir), and same color (red). The difference is merely in name formatting\u2014Wine B includes the varietal suffix 'Pinot Noir' while Wine A omits it, which is a standard abbreviation practice and does not constitute a different bottling.\"}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Wine A 'Freedom Hill Perspicacious' and Wine B 'Freedom Hill Perspicacious Pinot Noir' are from the same producer (Patricia Green), same vineyard/cuv\u00e9e (Freedom Hill Perspicacious), same grape variety (Pinot Noir), and same color (red). The difference is merely in name formatting\u2014Wine B includes the varietal suffix 'Pinot Noir' while Wine A omits it, which is a standard abbreviation practice and does not constitute a different bottling.",
+  "parse_ok": true,
+  "tokens_in": 491,
+  "tokens_out": 145,
+  "elapsed": 5.01056694984436,
+  "error": null
+}

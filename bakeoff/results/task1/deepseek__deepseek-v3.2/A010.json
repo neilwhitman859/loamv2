@@ -1,0 +1,13 @@
+{
+  "pair_id": "A010",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.9, \"reasoning\": \"Wine A is explicitly made from Gew\u00fcrztraminer, while Wine B is a Pinot Gris. Different grape varieties always indicate different wines, even when the producer and base vineyard name ('Le Jardin de Trebogad') are the same.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "Wine A is explicitly made from Gew\u00fcrztraminer, while Wine B is a Pinot Gris. Different grape varieties always indicate different wines, even when the producer and base vineyard name ('Le Jardin de Trebogad') are the same.",
+  "parse_ok": true,
+  "tokens_in": 465,
+  "tokens_out": 76,
+  "elapsed": 2.319567918777466,
+  "error": null
+}

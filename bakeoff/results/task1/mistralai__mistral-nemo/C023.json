@@ -1,0 +1,13 @@
+{
+  "pair_id": "C023",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines share the same producer, grape variety (Syrah), appellation (Langhorne Creek), and color (red). The difference in name is likely due to the varietal suffix 'Shiraz' being appended to Wine B, which is a common abbreviation in Australia.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines share the same producer, grape variety (Syrah), appellation (Langhorne Creek), and color (red). The difference in name is likely due to the varietal suffix 'Shiraz' being appended to Wine B, which is a common abbreviation in Australia.",
+  "parse_ok": true,
+  "tokens_in": 496,
+  "tokens_out": 80,
+  "elapsed": 3.3122692108154297,
+  "error": null
+}

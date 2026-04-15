@@ -1,0 +1,25 @@
+{
+  "wine_id": "ebde8e00-350b-40fc-a762-0987259419ac",
+  "wine_name": "Howard Park Leston Shiraz, Margaret River",
+  "tier": "C",
+  "model": "openai/gpt-5-mini",
+  "correctness": 2.0,
+  "voice": 3.5,
+  "specificity": 3.5,
+  "usefulness": 3.5,
+  "composite": 2.975,
+  "wrong_facts": [
+    "Hook implies the wine is a 'take on Syrah' as if distinguishing Shiraz from Syrah stylistically, which is misleading — it's 100% Shiraz and the label says Shiraz",
+    "Vinification summary says 'Howard Park's packet lacks specific cellar notes for Leston' and then speculates about neutral/lightly toasted French oak — ground truth shows 95% French, 5% American, 30% new, 18 months in oak, plus 10% whole bunch fermentation, none of which was mentioned",
+    "No mention of Leston Vineyard in Wilyabrup (blocks 4 and 17, vines planted 1996) — the naming origin (Jeff Burch's father, a family name) is completely absent",
+    "Terroir description references 'Forest Grove ironstone' and multiple Margaret River GI soil types as if they apply to this specific wine — the wine comes from Leston Vineyard in Wilyabrup, and these generic regional soils may not apply"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [
+    "AUD 25-40 price range fabricated (no price data provided)",
+    "30% new oak claim absent but the output didn't state it — however the output fabricated 'neutral or lightly toasted French oak' which contradicts 30% new"
+  ],
+  "reasoning": "The output fabricates a price range (AUD 25-40) not present in context data, triggering the hard penalty for fabricated numbers. It also misses key ground truth facts: the Leston name origin (Jeff Burch's father), the specific vineyard (Wilyabrup, blocks 4 and 17), and the actual winemaking details (18 months oak, 95% French/5% American, 30% new, 10% whole bunch). The terroir section applies generic Margaret River GI soil descriptions to a specific vineyard site without verification. The voice is decent — direct, avoids most banned words, and takes positions — but the vinification section hedges heavily with 'typical regional' speculation that contradicts actual practice. Specificity is moderate: it names real competitors and real soil types, but the soil types are generic to the region rather than verified for this vineyard.",
+  "judge_tokens_in": 3224,
+  "judge_tokens_out": 551
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "C005",
+  "model": "cohere/command-r7b-12-2024",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.8, \"reasoning\": \"Both wines are Brut Rose from the same producer, Jean Noel Haton, and have the same color. The slight difference in LWIN numbers (1422081 vs 1422065) is likely due to lot or batch variations, which does not change the fundamental similarity of the wines.\"}",
+  "verdict": "SAME",
+  "confidence": 0.8,
+  "reasoning": "Both wines are Brut Rose from the same producer, Jean Noel Haton, and have the same color. The slight difference in LWIN numbers (1422081 vs 1422065) is likely due to lot or batch variations, which does not change the fundamental similarity of the wines.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 87,
+  "elapsed": 1.387993335723877,
+  "error": null
+}

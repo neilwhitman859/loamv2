@@ -1,0 +1,13 @@
+{
+  "pair_id": "C011",
+  "model": "meta-llama/llama-4-maverick",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Wine A is a Gran Reserva and Wine B is a Reserva, indicating different classification tiers within the same producer and grape variety, which is a key differentiator.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Wine A is a Gran Reserva and Wine B is a Reserva, indicating different classification tiers within the same producer and grape variety, which is a key differentiator.",
+  "parse_ok": true,
+  "tokens_in": 517,
+  "tokens_out": 56,
+  "elapsed": 1.2375884056091309,
+  "error": null
+}

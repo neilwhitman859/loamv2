@@ -1,0 +1,22 @@
+{
+  "wine_id": "4504d94f-9c51-4f71-a052-4c6bc770ed24",
+  "wine_name": "Cakebread Cuttings Wharf Vineyard Chardonnay, Los Carneros",
+  "tier": "C",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 2.5,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 4.5,
+  "composite": 3.8,
+  "wrong_facts": [
+    "Hook claims 'heavy clay soils' but ground truth says 'shallow loamy soils' / 'Haire loam soils' — the vineyard is on loam, not heavy clay",
+    "Terroir section mentions 'Diablo clay soils' — ground truth only mentions Haire loam soils, Diablo series is not verified for this vineyard",
+    "Repeated references to 'heavy clay loam' and 'clay soils' throughout contradict the ground truth of loamy soils on a low ridge",
+    "Hook says vineyard is 'near the edge of San Pablo Bay' — ground truth says it's on a low ridge in eastern Carneros, not necessarily at the bay's edge"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The hook contains a provably wrong claim about 'heavy clay soils' when the ground truth clearly states 'Haire loam soils' and 'shallow loamy soils.' This soil mischaracterization is repeated throughout the output (terroir section adds fabricated 'Diablo clay soils'). The wrong hook claim triggers the hard cap of MAX 1.5, but the rest of the output is well-written and many claims are correct (Cakebread purchasing the vineyard, Carneros geography, winemaking approach). I'm scoring at 2.5 because while the hook soil claim is wrong, it's a partial error (loam vs clay loam is a spectrum) rather than a completely fabricated naming origin — but it's still clearly wrong per ground truth. The voice is excellent — direct, opinionated, specific, no banned words. Specificity is strong with named soils (even if wrong), real comparables, real dishes. Usefulness is high with actionable comparisons and clear insider perspective.",
+  "judge_tokens_in": 3741,
+  "judge_tokens_out": 450
+}

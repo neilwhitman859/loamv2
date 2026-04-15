@@ -1,0 +1,13 @@
+{
+  "pair_id": "A012",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are produced by Arnot Roberts from the Alder Springs vineyard/designation, with Wine A explicitly listed as Syrah and both being red. The difference is only the varietal suffix 'Syrah' added to Wine B, which per the rules indicates the same wine as an abbreviation. No evidence suggests multiple grape varieties from this vineyard by the producer.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are produced by Arnot Roberts from the Alder Springs vineyard/designation, with Wine A explicitly listed as Syrah and both being red. The difference is only the varietal suffix 'Syrah' added to Wine B, which per the rules indicates the same wine as an abbreviation. No evidence suggests multiple grape varieties from this vineyard by the producer.",
+  "parse_ok": true,
+  "tokens_in": 564,
+  "tokens_out": 413,
+  "elapsed": 3.209230899810791,
+  "error": null
+}

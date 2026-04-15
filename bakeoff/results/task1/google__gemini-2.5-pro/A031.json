@@ -1,0 +1,13 @@
+{
+  "pair_id": "A031",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"SAME\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"The producer and core wine name, 'Eclat de Calcaire', are identical. The only difference is the addition of the varietal suffix 'Pinot Noir' to Wine B. This is a classic example of an abbreviation, where the shorter name refers to the same specific bottling, especially since both are red wines from a Burgundy producer.\"\n}\n```",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "The producer and core wine name, 'Eclat de Calcaire', are identical. The only difference is the addition of the varietal suffix 'Pinot Noir' to Wine B. This is a classic example of an abbreviation, where the shorter name refers to the same specific bottling, especially since both are red wines from a Burgundy producer.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 1373,
+  "elapsed": 13.816038608551025,
+  "error": null
+}

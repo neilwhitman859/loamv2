@@ -1,0 +1,13 @@
+{
+  "pair_id": "C014",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer and vineyard, but they have different lot numbers (No.15 vs No. 17), which indicates distinct bottlings. Different lot numbers at the same Pr\u00e4dikat level represent different wines, even if all other attributes match.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer and vineyard, but they have different lot numbers (No.15 vs No. 17), which indicates distinct bottlings. Different lot numbers at the same Pr\u00e4dikat level represent different wines, even if all other attributes match.",
+  "parse_ok": true,
+  "tokens_in": 520,
+  "tokens_out": 82,
+  "elapsed": 3.6049911975860596,
+  "error": null
+}

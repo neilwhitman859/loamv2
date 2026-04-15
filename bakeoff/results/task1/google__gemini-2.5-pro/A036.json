@@ -1,0 +1,13 @@
+{
+  "pair_id": "A036",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"Although both wines are from the same producer and share the 'DB Family Selection' line name, they are made from different grapes. Wine A is a blend of Pinot Noir and Chardonnay, while Wine B's name explicitly identifies it as a Sauvignon Blanc. Different grape varieties always constitute different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines are from the same producer and share the 'DB Family Selection' line name, they are made from different grapes. Wine A is a blend of Pinot Noir and Chardonnay, while Wine B's name explicitly identifies it as a Sauvignon Blanc. Different grape varieties always constitute different wines.",
+  "parse_ok": true,
+  "tokens_in": 429,
+  "tokens_out": 1061,
+  "elapsed": 11.537799835205078,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D029",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": -0.9, \"reasoning\": \"The wines have different vineyard designations (Franschhoek vs Coastal Region), which indicates distinct bottlings from different sub-regions. Since the producer, grape, and style are otherwise identical, the key differentiator is the specific vineyard or regional designation, which makes them different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.0,
+  "reasoning": "The wines have different vineyard designations (Franschhoek vs Coastal Region), which indicates distinct bottlings from different sub-regions. Since the producer, grape, and style are otherwise identical, the key differentiator is the specific vineyard or regional designation, which makes them different wines.",
+  "parse_ok": true,
+  "tokens_in": 479,
+  "tokens_out": 81,
+  "elapsed": 2.5712766647338867,
+  "error": null
+}

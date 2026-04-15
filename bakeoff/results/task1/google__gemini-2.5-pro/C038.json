@@ -1,0 +1,13 @@
+{
+  "pair_id": "C038",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines are different because Wine B includes the specific designation 'Risco', which likely refers to a particular vineyard or cuv\u00e9e. Wine A is a more generic 'Reserva Tinto' from the same producer. The presence of this distinct name element, along with the different LWINs, indicates they are separate bottlings.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines are different because Wine B includes the specific designation 'Risco', which likely refers to a particular vineyard or cuv\u00e9e. Wine A is a more generic 'Reserva Tinto' from the same producer. The presence of this distinct name element, along with the different LWINs, indicates they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 426,
+  "tokens_out": 1233,
+  "elapsed": 12.549628019332886,
+  "error": null
+}

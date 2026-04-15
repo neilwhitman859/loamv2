@@ -1,0 +1,13 @@
+{
+  "pair_id": "C034",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer and vineyard, but the star ratings (2* vs 3*) indicate different selection levels or lots within the Auslese classification. Different lot/cask numbers at the same Pr\u00e4dikat level are considered different wines, as they represent distinct bottlings a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer and vineyard, but the star ratings (2* vs 3*) indicate different selection levels or lots within the Auslese classification. Different lot/cask numbers at the same Pr\u00e4dikat level are considered different wines, as they represent distinct bottlings a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 520,
+  "tokens_out": 90,
+  "elapsed": 2.8827035427093506,
+  "error": null
+}

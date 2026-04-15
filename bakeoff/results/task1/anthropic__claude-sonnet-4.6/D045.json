@@ -1,0 +1,13 @@
+{
+  "pair_id": "D045",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.85, \"reasoning\": \"Both wines are from producer Maris, both are white wines, and 'Casse-Croute Blanc' vs 'Casse-Croute' follows the pattern of a full name vs abbreviated name. The 'Blanc' suffix simply specifies the color explicitly, which is consistent with the same wine having two name formats, especially since both records share the same color (white). This matches the varietal/descriptor suffix rule where the shorter name is an abbreviation of the longer one.\"}",
+  "verdict": "SAME",
+  "confidence": 0.85,
+  "reasoning": "Both wines are from producer Maris, both are white wines, and 'Casse-Croute Blanc' vs 'Casse-Croute' follows the pattern of a full name vs abbreviated name. The 'Blanc' suffix simply specifies the color explicitly, which is consistent with the same wine having two name formats, especially since both records share the same color (white). This matches the varietal/descriptor suffix rule where the shorter name is an abbreviation of the longer one.",
+  "parse_ok": true,
+  "tokens_in": 479,
+  "tokens_out": 131,
+  "elapsed": 3.2161684036254883,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D031",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 1.0,\n  \"reasoning\": \"The wines share the same producer and vineyard, 'Hallgarten Rheinschiefer'. However, Wine A is explicitly labeled 'Trocken', a German term for a dry wine. Wine B, lacking this designation, represents a different bottling with a different sweetness level, likely the off-dry (feinherb) version. Different sweetness levels are considered different wines.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines share the same producer and vineyard, 'Hallgarten Rheinschiefer'. However, Wine A is explicitly labeled 'Trocken', a German term for a dry wine. Wine B, lacking this designation, represents a different bottling with a different sweetness level, likely the off-dry (feinherb) version. Different sweetness levels are considered different wines.",
+  "parse_ok": true,
+  "tokens_in": 418,
+  "tokens_out": 989,
+  "elapsed": 9.907753467559814,
+  "error": null
+}

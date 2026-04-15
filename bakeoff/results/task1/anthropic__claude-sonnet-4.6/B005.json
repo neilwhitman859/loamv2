@@ -1,0 +1,13 @@
+{
+  "pair_id": "B005",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Although both wines share the same producer (Fromm) and vineyard name (Clayvin), they are made from different grape varieties \u2014 Pinot Noir (red) vs Chardonnay Blanc (white). Different grapes always constitute different wines, regardless of shared vineyard or producer. A consumer would encounter these as entirely separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Although both wines share the same producer (Fromm) and vineyard name (Clayvin), they are made from different grape varieties \u2014 Pinot Noir (red) vs Chardonnay Blanc (white). Different grapes always constitute different wines, regardless of shared vineyard or producer. A consumer would encounter these as entirely separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 482,
+  "tokens_out": 98,
+  "elapsed": 3.1288132667541504,
+  "error": null
+}

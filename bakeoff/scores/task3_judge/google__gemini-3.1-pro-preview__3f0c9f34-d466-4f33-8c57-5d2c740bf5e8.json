@@ -1,0 +1,20 @@
+{
+  "wine_id": "3f0c9f34-d466-4f33-8c57-5d2c740bf5e8",
+  "wine_name": "Oyster Bay Chardonnay, Marlborough",
+  "tier": "A",
+  "model": "google/gemini-3.1-pro-preview",
+  "correctness": 4.0,
+  "voice": 4.5,
+  "specificity": 4.5,
+  "usefulness": 5.0,
+  "composite": 4.425,
+  "wrong_facts": [
+    "Hook says 'unoaked-leaning style' but ground truth shows 50/50 stainless steel and French barriques fermentation, plus 9 months on lees — this is not unoaked-leaning",
+    "Terroir section mentions Awatere Valley but ground truth specifies vineyard sources as Wairau, Renwick, and Brancott — no mention of Awatere"
+  ],
+  "banned_words_found": [],
+  "fabricated_numbers": [],
+  "reasoning": "The output is impressively detailed and well-written with strong voice, actionable food pairings, and useful comparable wines. However, the hook's characterization of the wine as 'unoaked-leaning' contradicts the ground truth showing 50% French barrique fermentation and 9 months on lees with bâtonnage — this is a meaningful mischaracterization in the hook, though not as severe as a completely fabricated fact since the wine does have a stainless steel component. The Awatere Valley mention is unverified given the ground truth specifies Wairau, Renwick, and Brancott. The vinification summary correctly identifies partial malolactic and French oak contact, which aligns well with ground truth. The Delegat ownership, price range, and general style descriptions are all accurate. No fabricated numbers — all claims about ABV and pricing match context data.",
+  "judge_tokens_in": 3651,
+  "judge_tokens_out": 356
+}

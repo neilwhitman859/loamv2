@@ -1,0 +1,13 @@
+{
+  "pair_id": "C018",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The wines come from two distinct Grand Cru vineyards in Burgundy: Echezeaux and Grands-Echezeaux. These are separate vineyard designations, indicating different bottlings that a consumer would encounter separately.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The wines come from two distinct Grand Cru vineyards in Burgundy: Echezeaux and Grands-Echezeaux. These are separate vineyard designations, indicating different bottlings that a consumer would encounter separately.",
+  "parse_ok": true,
+  "tokens_in": 460,
+  "tokens_out": 64,
+  "elapsed": 1.5461268424987793,
+  "error": null
+}

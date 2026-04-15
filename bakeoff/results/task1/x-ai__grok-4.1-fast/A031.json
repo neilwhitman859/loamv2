@@ -1,0 +1,13 @@
+{
+  "pair_id": "A031",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines from producer Pierre Girardin share the identical base name 'Eclat de Calcaire', with Wine B adding the varietal suffix 'Pinot Noir', fitting the rule that such differences alone indicate the same wine via abbreviation. Both are red, consistent with Pinot Noir, and no evidence suggests multiple grape varieties from this cuv\u00e9e. Different LWINs reflect database variations for the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines from producer Pierre Girardin share the identical base name 'Eclat de Calcaire', with Wine B adding the varietal suffix 'Pinot Noir', fitting the rule that such differences alone indicate the same wine via abbreviation. Both are red, consistent with Pinot Noir, and no evidence suggests multiple grape varieties from this cuv\u00e9e. Different LWINs reflect database variations for the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 584,
+  "tokens_out": 507,
+  "elapsed": 4.219122409820557,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B005",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.99, \"reasoning\": \"Wine A is a red Pinot Noir while Wine B is a white Chardonnay Blanc. Different grape varieties and different colors (red vs white) are definitive indicators of distinct wines, even when sharing the same producer and vineyard/cuv\u00e9e name. These would be encountered as separate bottlings by consumers.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "Wine A is a red Pinot Noir while Wine B is a white Chardonnay Blanc. Different grape varieties and different colors (red vs white) are definitive indicators of distinct wines, even when sharing the same producer and vineyard/cuv\u00e9e name. These would be encountered as separate bottlings by consumers.",
+  "parse_ok": true,
+  "tokens_in": 482,
+  "tokens_out": 97,
+  "elapsed": 12.523867845535278,
+  "error": null
+}

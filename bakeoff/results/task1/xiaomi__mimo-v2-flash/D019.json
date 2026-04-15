@@ -1,0 +1,13 @@
+{
+  "pair_id": "D019",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both wines are from the same producer (Masut Da Rive), same color (red), and same grape (Pinot Nero). The name difference is just a formatting variation where 'Maurus' is likely a producer or vineyard designation that is omitted in the shorter name, which is allowed per the rules.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both wines are from the same producer (Masut Da Rive), same color (red), and same grape (Pinot Nero). The name difference is just a formatting variation where 'Maurus' is likely a producer or vineyard designation that is omitted in the shorter name, which is allowed per the rules.",
+  "parse_ok": true,
+  "tokens_in": 494,
+  "tokens_out": 86,
+  "elapsed": 2.759126663208008,
+  "error": null
+}

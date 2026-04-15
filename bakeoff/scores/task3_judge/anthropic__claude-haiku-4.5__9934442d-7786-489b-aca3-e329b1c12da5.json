@@ -1,0 +1,30 @@
+{
+  "wine_id": "9934442d-7786-489b-aca3-e329b1c12da5",
+  "wine_name": "Plantagenet Omrah Pinot Noir, Great Southern",
+  "tier": "C",
+  "model": "anthropic/claude-haiku-4.5",
+  "correctness": 2.0,
+  "voice": 3.5,
+  "specificity": 4.0,
+  "usefulness": 3.5,
+  "composite": 3.075,
+  "wrong_facts": [
+    "Plantagenet established in 1974 — ground truth says 1968 (founded) with first commercial winery in 1975",
+    "Omrah described as 'site-specific expression' when ground truth says it's a second-label range from younger vineyards or bought-in fruit",
+    "Claims vineyard sits in Mount Barker subregion — Omrah is a value/second label, not necessarily single-vineyard Mount Barker fruit",
+    "Yalumba Pepperjack Shiraz described as 'cool-vintage red with mineral-driven profile' — Pepperjack is a warm-climate Barossa Shiraz, fruit-forward and not mineral-driven",
+    "Granite and lateritic soils in hook — ground truth says gravelly loam soils"
+  ],
+  "banned_words_found": [
+    "elegant"
+  ],
+  "fabricated_numbers": [
+    "AUD $25-35 price range",
+    "1,400 heat degree-days",
+    "elevation up to 300m",
+    "156 acres not mentioned but implied vineyard specifics"
+  ],
+  "reasoning": "Multiple factual errors undermine correctness: the founding date is wrong (1974 vs 1968), the Omrah line is mischaracterized as site-specific when it's actually a second label from younger vines/bought-in fruit, the soil description contradicts ground truth (granite/lateritic vs gravelly loam), and the Pepperjack comparable is fundamentally wrong. Several numbers are fabricated (price, HDD, elevation). The word 'elegant' appears in the insider take ('Tasmanian elegance'). The voice is reasonably direct and opinionated but marred by speculative claims presented as fact ('likely means whole-bunch fermentation'). Specificity is high but much of it is fabricated or wrong, which undermines its value.",
+  "judge_tokens_in": 3650,
+  "judge_tokens_out": 454
+}

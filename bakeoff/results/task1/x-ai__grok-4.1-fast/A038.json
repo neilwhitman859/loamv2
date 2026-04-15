@@ -1,0 +1,13 @@
+{
+  "pair_id": "A038",
+  "model": "x-ai/grok-4.1-fast",
+  "raw_content": "{\"verdict\":\"SAME\",\"confidence\":1.0,\"reasoning\":\"Both wines are from producer Bellingham, share the core name 'The Bernard Series Bush Vine,' are red, and are specified as Pinotage grapes. The varietal suffix in Wine B ('Pinotage') is a standard abbreviation difference that alone indicates the same wine, with no evidence of multiple grape varieties or distinct bottlings from this series. All provided details align perfectly without discrepancies in style, vineyard, or classification.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from producer Bellingham, share the core name 'The Bernard Series Bush Vine,' are red, and are specified as Pinotage grapes. The varietal suffix in Wine B ('Pinotage') is a standard abbreviation difference that alone indicates the same wine, with no evidence of multiple grape varieties or distinct bottlings from this series. All provided details align perfectly without discrepancies in style, vineyard, or classification.",
+  "parse_ok": true,
+  "tokens_in": 568,
+  "tokens_out": 522,
+  "elapsed": 4.308034896850586,
+  "error": null
+}

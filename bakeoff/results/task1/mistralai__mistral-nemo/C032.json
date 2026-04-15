@@ -1,0 +1,13 @@
+{
+  "pair_id": "C032",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines are Blanc de Blancs, produced by Bonnaire, and are white sparkling wines. The 'NV' in Wine A indicates it's a non-vintage blend, while Wine B is likely a specific vintage, but this does not change the fact that they are both made from white grapes and follow the same production method.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are Blanc de Blancs, produced by Bonnaire, and are white sparkling wines. The 'NV' in Wine A indicates it's a non-vintage blend, while Wine B is likely a specific vintage, but this does not change the fact that they are both made from white grapes and follow the same production method.",
+  "parse_ok": true,
+  "tokens_in": 470,
+  "tokens_out": 90,
+  "elapsed": 3.629518985748291,
+  "error": null
+}

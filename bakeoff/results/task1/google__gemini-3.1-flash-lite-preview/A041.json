@@ -1,0 +1,13 @@
+{
+  "pair_id": "A041",
+  "model": "google/gemini-3.1-flash-lite-preview",
+  "raw_content": "{\n\"verdict\": \"SAME\",\n\"confidence\": 1.0,\n\"reasoning\": \"Stephen Ross produces a single Pinot Noir from the Bien Nacido vineyard. The inclusion of 'Pinot Noir' in the second record is a varietal clarification rather than a distinction between different bottlings, as both records refer to the same red wine.\"\n}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Stephen Ross produces a single Pinot Noir from the Bien Nacido vineyard. The inclusion of 'Pinot Noir' in the second record is a varietal clarification rather than a distinction between different bottlings, as both records refer to the same red wine.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 76,
+  "elapsed": 1.8550548553466797,
+  "error": null
+}

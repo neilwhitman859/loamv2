@@ -1,0 +1,13 @@
+{
+  "pair_id": "C030",
+  "model": "xiaomi/mimo-v2-flash",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"Both wines are from the same producer (Mayu) and are Cabernet Sauvignon, but they have different Rioja classification tiers: Reserva vs Gran Reserva. According to the rules, different classification tiers represent distinct bottlings and are therefore different wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "Both wines are from the same producer (Mayu) and are Cabernet Sauvignon, but they have different Rioja classification tiers: Reserva vs Gran Reserva. According to the rules, different classification tiers represent distinct bottlings and are therefore different wines.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 77,
+  "elapsed": 1.9508912563323975,
+  "error": null
+}

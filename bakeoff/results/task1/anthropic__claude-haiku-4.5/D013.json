@@ -1,0 +1,13 @@
+{
+  "pair_id": "D013",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"These are wines from two distinct appellations within Burgundy: Beaune Premier Cru and Vosne-Roman\u00e9e Premier Cru. Although both are Premier Cru designations from the same producer, they represent different vineyard locations with different terroir characteristics and would appear on separate pages in a wine encyclopedia. Different appellations constitute different wines even when from the same producer.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "These are wines from two distinct appellations within Burgundy: Beaune Premier Cru and Vosne-Roman\u00e9e Premier Cru. Although both are Premier Cru designations from the same producer, they represent different vineyard locations with different terroir characteristics and would appear on separate pages in a wine encyclopedia. Different appellations constitute different wines even when from the same producer.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 111,
+  "elapsed": 3.3581600189208984,
+  "error": null
+}

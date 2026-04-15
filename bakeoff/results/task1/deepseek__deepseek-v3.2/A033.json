@@ -1,0 +1,13 @@
+{
+  "pair_id": "A033",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The key difference is the varietal suffix 'Vermentino' appended to Wine B, which is an abbreviation/clarification of the grape in Wine A. Both wines share the same producer (Calabria), color (white), and the listed grape for Wine A is Vermentino, indicating they are the same core bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The key difference is the varietal suffix 'Vermentino' appended to Wine B, which is an abbreviation/clarification of the grape in Wine A. Both wines share the same producer (Calabria), color (white), and the listed grape for Wine A is Vermentino, indicating they are the same core bottling.",
+  "parse_ok": true,
+  "tokens_in": 439,
+  "tokens_out": 91,
+  "elapsed": 3.284991502761841,
+  "error": null
+}

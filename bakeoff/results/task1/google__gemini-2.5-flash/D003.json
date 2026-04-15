@@ -1,0 +1,13 @@
+{
+  "pair_id": "D003",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Chimney Rock, and are identified as Cabernet Sauvignon. The name 'Alpine Cabernet Sauvignon' likely refers to a specific vineyard or sub-designation within Chimney Rock's Cabernet Sauvignon offerings, but without further information indicating a distinct bottling, it's reasonable to assume 'Cabernet Sauvignon' is the broader or abbreviated name for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Chimney Rock, and are identified as Cabernet Sauvignon. The name 'Alpine Cabernet Sauvignon' likely refers to a specific vineyard or sub-designation within Chimney Rock's Cabernet Sauvignon offerings, but without further information indicating a distinct bottling, it's reasonable to assume 'Cabernet Sauvignon' is the broader or abbreviated name for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 99,
+  "elapsed": 1.8893506526947021,
+  "error": null
+}

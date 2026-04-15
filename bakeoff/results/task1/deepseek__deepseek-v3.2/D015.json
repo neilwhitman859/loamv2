@@ -1,0 +1,13 @@
+{
+  "pair_id": "D015",
+  "model": "deepseek/deepseek-v3.2",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.9, \"reasoning\": \"The key term 'Reserve' in Wine A indicates a different classification tier or style from the standard 'Cabernet Sauvignon' (Wine B). Different classification tiers (like Reserva vs standard) are explicitly defined as DIFFERENT wines. The distinct LWIN codes further support they are separate bottlings.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.9,
+  "reasoning": "The key term 'Reserve' in Wine A indicates a different classification tier or style from the standard 'Cabernet Sauvignon' (Wine B). Different classification tiers (like Reserva vs standard) are explicitly defined as DIFFERENT wines. The distinct LWIN codes further support they are separate bottlings.",
+  "parse_ok": true,
+  "tokens_in": 447,
+  "tokens_out": 88,
+  "elapsed": 3.1921210289001465,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B032",
+  "model": "google/gemini-3-flash-preview",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two records represent different wines because they are made from different grape varieties (Gew\u00fcrztraminer vs. Pinot Noir) and have different colors (White vs. Red). Additionally, 'Neuberg' is a specific sub-parcel within the Bollenberg vineyard, indicating a distinct bottling.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two records represent different wines because they are made from different grape varieties (Gew\u00fcrztraminer vs. Pinot Noir) and have different colors (White vs. Red). Additionally, 'Neuberg' is a specific sub-parcel within the Bollenberg vineyard, indicating a distinct bottling.",
+  "parse_ok": true,
+  "tokens_in": 420,
+  "tokens_out": 82,
+  "elapsed": 2.113410711288452,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "B018",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different wines because the records indicate different colors: Wine A is ros\u00e9 while Wine B is white. Color/style differences represent distinct bottlings, and the different LWINs further support that they are separate wines rather than naming variants.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different wines because the records indicate different colors: Wine A is ros\u00e9 while Wine B is white. Color/style differences represent distinct bottlings, and the different LWINs further support that they are separate wines rather than naming variants.",
+  "parse_ok": true,
+  "tokens_in": 425,
+  "tokens_out": 70,
+  "elapsed": 2.53076434135437,
+  "error": null
+}

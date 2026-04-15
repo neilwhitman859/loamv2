@@ -1,0 +1,13 @@
+{
+  "pair_id": "A011",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.75, \"reasoning\": \"Wine A 'Highlands Bench' lists both PINOT NOIR and CHARDONNAY BLANC as grapes, suggesting it may be a blend or that the record covers multiple varietals under that label. Wine B 'Highlands Bench Pinot Noir' specifically designates Pinot Noir. Since J. Lohr likely produces both a Pinot Noir and a Chardonnay under the Highlands Bench label as separate bottlings, the presence of Chardonnay in Wine A's grape list suggests these are different wines rather than the same wine with an abbreviated name.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.75,
+  "reasoning": "Wine A 'Highlands Bench' lists both PINOT NOIR and CHARDONNAY BLANC as grapes, suggesting it may be a blend or that the record covers multiple varietals under that label. Wine B 'Highlands Bench Pinot Noir' specifically designates Pinot Noir. Since J. Lohr likely produces both a Pinot Noir and a Chardonnay under the Highlands Bench label as separate bottlings, the presence of Chardonnay in Wine A's grape list suggests these are different wines rather than the same wine with an abbreviated name.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 155,
+  "elapsed": 4.162415981292725,
+  "error": null
+}

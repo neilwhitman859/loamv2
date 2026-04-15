@@ -1,0 +1,13 @@
+{
+  "pair_id": "A035",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.97, \"reasoning\": \"Both wines are Robert Mondavi Private Selection Bourbon Barrels, with Wine A explicitly identified as Cabernet Sauvignon. Wine B's full name 'Private Selection Bourbon Barrels Cabernet Sauvignon' simply appends the varietal name to the same base wine name. This is a classic case of a varietal suffix being added to an abbreviated name, representing the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.97,
+  "reasoning": "Both wines are Robert Mondavi Private Selection Bourbon Barrels, with Wine A explicitly identified as Cabernet Sauvignon. Wine B's full name 'Private Selection Bourbon Barrels Cabernet Sauvignon' simply appends the varietal name to the same base wine name. This is a classic case of a varietal suffix being added to an abbreviated name, representing the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 499,
+  "tokens_out": 111,
+  "elapsed": 3.134831428527832,
+  "error": null
+}

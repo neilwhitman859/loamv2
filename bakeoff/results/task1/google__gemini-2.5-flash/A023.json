@@ -1,0 +1,13 @@
+{
+  "pair_id": "A023",
+  "model": "google/gemini-2.5-flash",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"Both wines are from the same producer, Fidelitas, and share the same core name 'Blackwood Canyon'. Wine A explicitly lists 'CABERNET SAUVIGNON' as its grape, which matches the varietal suffix in Wine B. This suggests Wine B is simply a more descriptive name for the same wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "Both wines are from the same producer, Fidelitas, and share the same core name 'Blackwood Canyon'. Wine A explicitly lists 'CABERNET SAUVIGNON' as its grape, which matches the varietal suffix in Wine B. This suggests Wine B is simply a more descriptive name for the same wine.",
+  "parse_ok": true,
+  "tokens_in": 422,
+  "tokens_out": 85,
+  "elapsed": 1.2681419849395752,
+  "error": null
+}

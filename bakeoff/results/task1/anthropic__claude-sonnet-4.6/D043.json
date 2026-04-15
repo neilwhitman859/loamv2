@@ -1,0 +1,13 @@
+{
+  "pair_id": "D043",
+  "model": "anthropic/claude-sonnet-4.6",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is 'Note #1' and Wine B is 'Note #2' \u2014 these are explicitly numbered as distinct bottlings within the Polifonia de Purcari series. The different lot/note numbers indicate separate cuv\u00e9es or blends, analogous to different cask/lot numbers, which represent different wines a consumer would encounter separately. The different LWIN codes (2695026 vs 2695042) further confirm these are catalogued as distinct wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is 'Note #1' and Wine B is 'Note #2' \u2014 these are explicitly numbered as distinct bottlings within the Polifonia de Purcari series. The different lot/note numbers indicate separate cuv\u00e9es or blends, analogous to different cask/lot numbers, which represent different wines a consumer would encounter separately. The different LWIN codes (2695026 vs 2695042) further confirm these are catalogued as distinct wines.",
+  "parse_ok": true,
+  "tokens_in": 500,
+  "tokens_out": 126,
+  "elapsed": 3.349760055541992,
+  "error": null
+}

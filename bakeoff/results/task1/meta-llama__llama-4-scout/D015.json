@@ -1,0 +1,13 @@
+{
+  "pair_id": "D015",
+  "model": "meta-llama/llama-4-scout",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.9, \"reasoning\": \"The producer is the same (Amizetta), and the grape variety is the same (Cabernet Sauvignon). The difference in the varietal suffix ('Reserve' vs none) and the color (red) do not indicate a different wine, as the 'Reserve' likely refers to a classification or designation that does not change the fundamental nature of the wine.\"}",
+  "verdict": "SAME",
+  "confidence": 0.9,
+  "reasoning": "The producer is the same (Amizetta), and the grape variety is the same (Cabernet Sauvignon). The difference in the varietal suffix ('Reserve' vs none) and the color (red) do not indicate a different wine, as the 'Reserve' likely refers to a classification or designation that does not change the fundamental nature of the wine.",
+  "parse_ok": true,
+  "tokens_in": 423,
+  "tokens_out": 94,
+  "elapsed": 2.2774386405944824,
+  "error": null
+}

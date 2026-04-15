@@ -1,0 +1,13 @@
+{
+  "pair_id": "A036",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a white blend of Pinot Noir and Chardonnay, while Wine B is a Sauvignon Blanc. Different grape varieties constitute different wines, even when from the same producer and product line. These would be distinct bottlings a consumer encounters separately.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a white blend of Pinot Noir and Chardonnay, while Wine B is a Sauvignon Blanc. Different grape varieties constitute different wines, even when from the same producer and product line. These would be distinct bottlings a consumer encounters separately.",
+  "parse_ok": true,
+  "tokens_in": 498,
+  "tokens_out": 87,
+  "elapsed": 2.2076961994171143,
+  "error": null
+}

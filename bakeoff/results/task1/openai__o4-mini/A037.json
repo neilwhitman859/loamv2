@@ -1,0 +1,13 @@
+{
+  "pair_id": "A037",
+  "model": "openai/o4-mini",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records share the same producer, grape variety (Syrah), wine style (red), and cuv\u00e9e name, with B simply appending the varietal suffix. No classification or vineyard differences are indicated.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records share the same producer, grape variety (Syrah), wine style (red), and cuv\u00e9e name, with B simply appending the varietal suffix. No classification or vineyard differences are indicated.",
+  "parse_ok": true,
+  "tokens_in": 424,
+  "tokens_out": 181,
+  "elapsed": 4.1307220458984375,
+  "error": null
+}

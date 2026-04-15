@@ -1,0 +1,13 @@
+{
+  "pair_id": "D032",
+  "model": "mistralai/mistral-nemo",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 1.0, \"reasoning\": \"Both wines are produced by the same winery, Peter Jakob Kuhn, and are both white Riesling Trocken. The only difference is the addition of 'Reserve' in Wine B, which is likely an indication of a specific cuv\u00e9e or selection within the Trocken range, not a distinct wine.\"}",
+  "verdict": "SAME",
+  "confidence": 1.0,
+  "reasoning": "Both wines are produced by the same winery, Peter Jakob Kuhn, and are both white Riesling Trocken. The only difference is the addition of 'Reserve' in Wine B, which is likely an indication of a specific cuv\u00e9e or selection within the Trocken range, not a distinct wine.",
+  "parse_ok": true,
+  "tokens_in": 476,
+  "tokens_out": 84,
+  "elapsed": 1.6883015632629395,
+  "error": null
+}

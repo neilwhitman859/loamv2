@@ -1,0 +1,13 @@
+{
+  "pair_id": "C014",
+  "model": "openai/gpt-5.4",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.98,\"reasoning\":\"Both wines are from the same producer and cuv\u00e9e line, but the numbered designations differ: No.15 vs No.17. In Champagne, these numbered releases function as distinct bottlings/releases that consumers would encounter separately, not mere formatting variants. The different LWINs further support that these are separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.98,
+  "reasoning": "Both wines are from the same producer and cuv\u00e9e line, but the numbered designations differ: No.15 vs No.17. In Champagne, these numbered releases function as distinct bottlings/releases that consumers would encounter separately, not mere formatting variants. The different LWINs further support that these are separate wines.",
+  "parse_ok": true,
+  "tokens_in": 450,
+  "tokens_out": 86,
+  "elapsed": 2.942092180252075,
+  "error": null
+}

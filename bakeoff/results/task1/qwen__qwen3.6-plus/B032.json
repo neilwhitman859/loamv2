@@ -1,0 +1,13 @@
+{
+  "pair_id": "B032",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"DIFFERENT\", \"confidence\": 1.0, \"reasoning\": \"The two wines are made from completely different grape varieties (Gew\u00fcrztraminer vs. Pinot Noir) and have different colors (white vs. red). According to the classification rules, different grapes always indicate distinct wines, regardless of shared vineyard names or producers.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 1.0,
+  "reasoning": "The two wines are made from completely different grape varieties (Gew\u00fcrztraminer vs. Pinot Noir) and have different colors (white vs. red). According to the classification rules, different grapes always indicate distinct wines, regardless of shared vineyard names or producers.",
+  "parse_ok": true,
+  "tokens_in": 459,
+  "tokens_out": 904,
+  "elapsed": 17.953288078308105,
+  "error": null
+}

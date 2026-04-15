@@ -1,0 +1,13 @@
+{
+  "pair_id": "B046",
+  "model": "openai/gpt-5.4-mini",
+  "raw_content": "{\"verdict\":\"DIFFERENT\",\"confidence\":0.99,\"reasoning\":\"These are different numbered notes in the Polifonia De Purcari line: Note #2 versus Note #3, which indicates distinct bottlings rather than formatting variants. They also differ in color, with Wine A listed as red and Wine B as white, which makes them clearly separate wines.\"}",
+  "verdict": "DIFFERENT",
+  "confidence": 0.99,
+  "reasoning": "These are different numbered notes in the Polifonia De Purcari line: Note #2 versus Note #3, which indicates distinct bottlings rather than formatting variants. They also differ in color, with Wine A listed as red and Wine B as white, which makes them clearly separate wines.",
+  "parse_ok": true,
+  "tokens_in": 434,
+  "tokens_out": 81,
+  "elapsed": 2.2519779205322266,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "D016",
+  "model": "google/gemini-2.5-pro",
+  "raw_content": "```json\n{\n  \"verdict\": \"DIFFERENT\",\n  \"confidence\": 0.95,\n  \"reasoning\": \"The names 'Roche' and 'Sur Roche' are distinct and likely refer to two different single vineyard plots (lieux-dits) in Pouilly-Fuiss\u00e9. In Burgundy, where this producer is based, such specific naming differences almost always denote separate bottlings. This is strongly supported by the fact that the two wines have different LWINs, indicating they are cataloged as distinct products.\"\n}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "The names 'Roche' and 'Sur Roche' are distinct and likely refer to two different single vineyard plots (lieux-dits) in Pouilly-Fuiss\u00e9. In Burgundy, where this producer is based, such specific naming differences almost always denote separate bottlings. This is strongly supported by the fact that the two wines have different LWINs, indicating they are cataloged as distinct products.",
+  "parse_ok": true,
+  "tokens_in": 419,
+  "tokens_out": 1652,
+  "elapsed": 17.92717170715332,
+  "error": null
+}

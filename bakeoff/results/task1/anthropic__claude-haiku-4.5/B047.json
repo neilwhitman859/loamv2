@@ -1,0 +1,13 @@
+{
+  "pair_id": "B047",
+  "model": "anthropic/claude-haiku-4.5",
+  "raw_content": "```json\n{\"verdict\": \"DIFFERENT\", \"confidence\": 0.95, \"reasoning\": \"Wine A is a white Sp\u00e4tburgunder (Eichberg vineyard, GG classification) while Wine B is a red Sp\u00e4tburgunder (Kirchberg vineyard). Different vineyard designations combined with different colors (white vs red) make these distinct bottlings that a consumer would encounter separately. The different LWINs and color specifications confirm these are separate wines.\"}\n```",
+  "verdict": "DIFFERENT",
+  "confidence": 0.95,
+  "reasoning": "Wine A is a white Sp\u00e4tburgunder (Eichberg vineyard, GG classification) while Wine B is a red Sp\u00e4tburgunder (Kirchberg vineyard). Different vineyard designations combined with different colors (white vs red) make these distinct bottlings that a consumer would encounter separately. The different LWINs and color specifications confirm these are separate wines.",
+  "parse_ok": true,
+  "tokens_in": 495,
+  "tokens_out": 111,
+  "elapsed": 4.746628761291504,
+  "error": null
+}

@@ -1,0 +1,13 @@
+{
+  "pair_id": "A045",
+  "model": "qwen/qwen3.6-plus",
+  "raw_content": "{\"verdict\": \"SAME\", \"confidence\": 0.95, \"reasoning\": \"Both records refer to the same red wine from producer Pax, with the only difference being the explicit inclusion of the Syrah varietal suffix in Wine B. Since the producer does not make multiple distinct wines from the Lauterbach Hill vineyard with different grapes, the suffix variation is merely a formatting difference. Therefore, they represent the same bottling.\"}",
+  "verdict": "SAME",
+  "confidence": 0.95,
+  "reasoning": "Both records refer to the same red wine from producer Pax, with the only difference being the explicit inclusion of the Syrah varietal suffix in Wine B. Since the producer does not make multiple distinct wines from the Lauterbach Hill vineyard with different grapes, the suffix variation is merely a formatting difference. Therefore, they represent the same bottling.",
+  "parse_ok": true,
+  "tokens_in": 453,
+  "tokens_out": 1716,
+  "elapsed": 32.6266074180603,
+  "error": null
+}
