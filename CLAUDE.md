@@ -300,20 +300,37 @@ See `docs/HISTORY.md` for promotion results, session-by-session build history, a
 
 ## Current Focus
 
-**Sprint 5 (AI Bakeoff) — COMPLETE 2026-04-15.** Production model chosen: **openai/gpt-5.4-mini**.
-B5.1–B5.7 all done. 3-round Opus-judged tournament across 30 wines × 21 models. gpt-5.4-mini at composite 3.960 (0.08 below gpt-5.4 for 15% the cost) with zero banned-word violations and flat tier performance. Sonnet 4.6 (production baseline) eliminated at R2 rank 7 — gpt-5.4-mini beats it by 0.41 points at 1/13 the cost. DeepSeek v3.2 protected per user preference, finished 6th at $93/170K — budget-tier option. Full report: [`bakeoff/scores/tournament_results.md`](bakeoff/scores/tournament_results.md). Sprint 5 total spend: ~$37 (~$22 B5.6 tournament within user's target, Sprint 5 over original $25 cap).
+**Sprint 5 (AI Bakeoff) — COMPLETE 2026-04-15.** Current-prompt leader: **openai/gpt-5.4-mini**.
+**Production model selection is NOT locked.** The bake-off ranked 29 models under the *current*
+enrichment prompt across 6 rounds. gpt-5.4-mini topped the leaderboard (composite 3.960, zero
+banned-word violations, flat tier performance, $452/170K). But cheap models came close enough
+that a better prompt + L3 fact-check gate could flip the ranking — DeepSeek v3.2 at $93/170K
+and gemini-3-flash-preview at $159/170K are both viable under better prompting. Full tournament
+report: [`bakeoff/scores/tournament_results.md`](bakeoff/scores/tournament_results.md).
+Sprint 5 total spend: ~$55 (B5.1-B5.4 ~$3 + B5.5 prose $11.86 + B5.6 tournament R1-R6 ~$40 + B5.7 caching test $0.82).
 
-**Production implications (Sprint 6 inputs):**
-- Re-enriching 515 demo wines with gpt-5.4-mini: ~$1.40 (vs ~$18 on Sonnet baseline)
-- Full 156K corpus projection with gpt-5.4-mini: ~$415 (vs ~$5,200 on Sonnet baseline)
-- Judge calibration caveat: auto-judge systematically scored Anthropic models lower on correctness than hand-calibration did (hard-cap over-application). Rankings still valid relatively; consumers will likely perceive Opus/Sonnet quality slightly higher than judge composites suggest.
-- `ENRICHMENT_ENABLED=false` feature flag stays OFF — Sprint 6 runs via Python pipeline scripts with gpt-5.4-mini (OpenRouter), not the edge function.
+**Headline takeaway:** cheaper models can do the work; the prompt is the bigger lever.
+Garbage-in/garbage-out applies regardless of which model sits at the top of the composite
+score. Search grounding and field-split multi-model generation were both provisionally ruled
+out — both worth retesting once prompt v2 + L3 fact-check gate land.
+
+**B5.7 additional findings:**
+- R4 repechage validated gemini-3-flash-preview as cheap-tier value winner (3.67 / $159)
+- R5 field-specialization test: gpt-5.4-mini wins 7/11 correctness fields outright, ties on 4; split-generation not viable
+- R6 search-grounded + Chinese: best :online at 3.89 still below gpt-5.4-mini base at 3.96; Sonar disappoints at 2.85
+- Prompt caching via OpenRouter: tested, NOT viable currently (OR upstream bug + Opus 4,096-token minimum). Revisit when OR fixes it, when we switch to direct Anthropic API, or when the L3 gate pushes the prompt over 4K static tokens.
+
+**Sprint 6 inputs (pending B5.8 strategy):**
+- Sprint 6 scope = **producer dedup** (~4,079 suspected duplicates per dashboard). Dedup is a separate model decision — don't auto-apply gpt-5.4-mini; revisit cheap tier for classification.
+- Re-enrichment of 515 demo wines + full-corpus enrichment is **deferred** to a later sprint that lands prompt v2 + L3 fact-check gate first. Using current-prompt rankings as-is would bake in the current-prompt ceiling.
+- Preliminary cost projections (current-prompt basis, not a commitment): gpt-5.4-mini ~$452/170K, gemini-3-flash ~$159/170K, DeepSeek base ~$93/170K, Sonnet baseline ~$5,953/170K.
+- `ENRICHMENT_ENABLED=false` feature flag stays OFF indefinitely — re-enrichment runs via Python pipeline scripts, not the edge function.
 
 **Sprint 4 (Demo) closed 2026-04-14.** 515/515 wines Grade A, $37.44 spent. Full details in `data/sprints/demo/`.
 
 Live tracker: `data/dashboard.html`.
 
-**Roadmap:** Build (done) → Audit (done) → Fix (done) → Demo (done) → AI Bakeoff (done) → **Execute with winners (next): dedup, data fill, re-enrichment with gpt-5.4-mini, share with friends.**
+**Roadmap:** Build (done) → Audit (done) → Fix (done) → Demo (done) → AI Bakeoff (done) → **Sprint 6 (next): producer dedup.** Re-enrichment + prompt v2 + L3 gate follow in a later sprint.
 
 **Core product insight (2026-04-12):** Loam's product is STRUCTURED DATA RENDERED
 CLEARLY, not AI prose. The magic is: look up any wine → see organized, trustworthy,

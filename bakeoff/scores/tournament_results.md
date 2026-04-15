@@ -141,47 +141,212 @@ Gemini-3-flash-preview missed by 0.121 — just outside the 0.1 tie window. At $
 
 ---
 
+## Round 4 — Repechage (full-30 on two near-miss finalists)
+
+**Why:** `gemini-3-flash-preview` missed R2 by 0.121 and `gpt-5-mini` missed R1 by 0.125 — both close enough that a judge-noise run on the full 30 could have reordered the board. Ran both to the full 30-wine set to confirm or flip their standing.
+
+**Models scored:** 2 (`google/gemini-3-flash-preview`, `openai/gpt-5-mini`)
+**New wines per model:** 27 each (R1+R2 already cached)
+**Judge cost:** ~$4.50 marginal
+
+### Repechage results (30 wines cumulative)
+
+| Model | Comp | Corr | Voice | Spec | Use | Tier A / B / C | Wrong | Ban | $/170K |
+|-------|------|------|-------|------|-----|----------------|-------|-----|--------|
+| google/gemini-3-flash-preview | **3.669** | 2.43 | 4.22 | 4.53 | 4.28 | 3.69 / 3.60 / 3.73 | 153 | 5 | **$159** |
+| openai/gpt-5-mini | 3.441 | 2.65 | 3.73 | 3.98 | 3.92 | 3.43 / 3.54 / 3.35 | 98 | 3 | $819 |
+
+### Conclusion
+
+- **gemini-3-flash-preview validated as the cheap-tier value winner at 3.67 / $159.** Tier spread 0.13 — reasonably flat. Sits between finalists (Opus 3.87, Sonnet 3.55) at ~3% of Opus cost. The single banned-word hit plus 153 wrong facts are the cost of the cheap-tier discount; worth revisiting after prompt v2 + L3 fact-check gate land.
+- **gpt-5-mini at 3.44 / $819 is neither cheapest nor best.** gpt-5.4-mini beats it on every axis at roughly half the cost ($452 vs $819). No reason to pick gpt-5-mini over gpt-5.4-mini going forward.
+- Neither model reorders the top 6. Finalists stand.
+
+---
+
+## Round 5 — Field specialization test (3 wines × 3 cheap models, $0.81 budget)
+
+**Why:** The final prose output has ~11 fields (hook, wine_summary, terroir_expression, vinification_summary, food_pairing, comparable_wines, style_profile, cellar_recommendation, value_assessment, market_position, insider_take). If different models win different fields, a split-generation approach could stack the best per field at cheap cost. Tested on 3 calibration wines (Shafer, Terroir Al Limit, Plantagenet — A/B/C).
+
+**Models tested:** `openai/gpt-5.4-mini`, `deepseek/deepseek-v3.2`, `google/gemini-3-flash-preview`
+**Judge:** Opus scored each wine output field-by-field via `bakeoff/run_field_judge.py`
+**Per-field data:** `bakeoff/scores/field_judge/` (9 JSON files, one per model × wine)
+
+### Per-field correctness (averages across 3 wines)
+
+| Field | gpt-5.4-mini | gemini-3-flash | deepseek-v3.2 | Notes |
+|-------|-------------:|---------------:|--------------:|-------|
+| hook | **3.40** | 3.27 | 3.33 | gpt-5.4-mini narrow edge |
+| wine_summary | 3.50 | **3.50** | 3.17 | tie at top |
+| terroir_expression | **3.93** | 3.07 | 2.67 | DeepSeek fabricates soils — 1.26 below gpt-5.4-mini |
+| vinification_summary | 2.17 | **2.17** | 1.67 | tie at top; all weak on oak specifics |
+| food_pairing | **4.23** | 3.83 | 3.83 | gpt-5.4-mini 0.40 ahead |
+| comparable_wines | 3.50 | 3.33 | **3.50** | tie with DeepSeek |
+| style_profile | **4.00** | 3.90 | 3.60 | |
+| cellar_recommendation | **3.50** | 3.33 | 3.43 | |
+| value_assessment | 3.33 | 3.00 | **3.33** | tie with DeepSeek |
+| market_position | **4.00** | 3.60 | 3.60 | |
+| insider_take | **3.93** | 3.50 | 3.33 | |
+
+**Tally (correctness, counting ties):** gpt-5.4-mini wins outright in **7/11** fields, ties at the top in 4 more; gemini-3-flash wins 2 (both ties); DeepSeek wins 2 (both ties). **gpt-5.4-mini appears in the top score for 11/11 fields** — no field where it's clearly beaten.
+
+**Voice (averages, same 3 wines):** gpt-5.4-mini wins outright in **6/11**, ties at the top in 4, bottom in 1 (comparable_wines: deepseek-v3.2 4.07 > gpt-5.4-mini 3.93).
+
+### Conclusion — field-split NOT viable under current prompt
+
+- **gpt-5.4-mini dominates broadly.** It's at the top of every correctness field (7 outright + 4 ties out of 11). DeepSeek and gemini-3-flash only tie it — they don't clearly beat it on any single field.
+- **Split savings math:** Routing comparable_wines + value_assessment to DeepSeek might save ~$70/170K in tokens, but adds 2× API call overhead per wine plus orchestration complexity. Net effect isn't a real savings under current per-field data.
+- **DeepSeek fabricates terroir badly:** 2.67 on terroir_expression correctness vs gpt-5.4-mini's 3.93 — DeepSeek invents soil types and geological formations that aren't in context. A prompt that explicitly forbids fabricating soil/geology details would likely narrow this gap; worth retesting after prompt v2.
+- **Field-split provisionally ruled out for Sprint 6 re-enrichment** — retest after prompt work.
+
+---
+
+## Round 6 — Search-grounded + cheap Chinese (8 models × 12 wines, ~$13 total)
+
+**Why:** If search grounding catches fabricated facts at the source (instead of relying on a downstream L3 fact-check gate), expensive :online variants could beat base models on correctness. Also pulled in cheap Chinese frontier models (glm-4.6, kimi-k2) that weren't in the original 21. Scored on 12 wines (subset of the 30-wine tournament set) to keep cost bounded.
+
+**Models tested:** 8
+- `openai/gpt-5.4-mini:online`, `google/gemini-3-flash-preview:online`, `deepseek/deepseek-v3.2:online`
+- `perplexity/sonar`, `perplexity/sonar-reasoning-pro`
+- `moonshotai/kimi-k2`, `moonshotai/kimi-k2:online`
+- `z-ai/glm-4.6`
+
+**Dead models excluded:**
+- `perplexity/sonar-reasoning` — HTTP 404 on OpenRouter
+- `perplexity/llama-3.1-sonar-small-128k-online` — legacy endpoint retired
+
+**Judge cost:** ~$13 marginal
+
+### R6 leaderboard (12 wines each)
+
+| Model | Comp | Corr | Voice | Spec | Use | Wrong | Ban | Token $/170K | Real $/170K (inc search) |
+|-------|------|------|-------|------|-----|-------|-----|-------------:|-------------------------:|
+| openai/gpt-5.4-mini:online | **3.89** | 3.21 | 4.42 | 4.04 | 4.29 | 25 | 0 | $844 | ~$1,524 |
+| google/gemini-3-flash-preview:online | 3.72 | 2.54 | 4.25 | 4.54 | 4.29 | 60 | 1 | $474 | ~$1,154 |
+| deepseek/deepseek-v3.2:online ★ | 3.62 | 2.67 | 4.08 | 4.12 | 4.21 | 44 | 5 | $389 | ~$1,069 |
+| z-ai/glm-4.6 | 3.41 | 2.54 | 3.79 | 4.04 | 3.83 | 56 | 2 | $1,867 | $1,867 |
+| moonshotai/kimi-k2 | 3.23 | 1.62 | 4.17 | 4.33 | 3.75 | 97 | 0 | $640 | $640 |
+| moonshotai/kimi-k2:online | 3.15 | 1.46 | 4.17 | 4.38 | 3.62 | 120 | 0 | $1,840 | ~$2,520 |
+| perplexity/sonar | 2.85 | 1.92 | 3.33 | 3.54 | 3.21 | 60 | 0 | $433 | $433 |
+| perplexity/sonar-reasoning-pro | 2.33 | 1.79 | 2.58 | 2.67 | 2.62 | 43 | 1 | $4,664 | $4,664 |
+
+★ **DeepSeek v3.2 search variant is the headline result** — composite jumped from 3.39 (base, 30 wines) to 3.62 (online, 12 wines). That +0.23 lift is the biggest delta we saw from any prompt/grounding intervention. But — see caveats below.
+
+### Conclusion — search grounding NOT viable under the current prompt
+
+- **Search grounding doesn't close the gap.** The best `:online` model (gpt-5.4-mini:online at 3.89) is still 0.07 BELOW gpt-5.4-mini base (3.96) on the same judge. The grounded variants don't consistently beat their base counterparts in composite.
+- **DeepSeek's +0.23 lift is the one real signal** — but it still lands at 3.62, below four base models. And see the real-cost math: OpenRouter charges ~$4-6 per 1K search queries on top of token costs. At ~$680/170K added search fees, deepseek-v3.2:online's *real* cost is ~$1,069/170K — 11× base DeepSeek.
+- **Search HURT Kimi.** `kimi-k2:online` scored WORSE than `kimi-k2` base (3.15 vs 3.23) and added 23 more wrong-fact flags (120 vs 97). Search grounding without a good prompt can introduce noise.
+- **Native Perplexity Sonar is uncompetitive.** Sonar at 2.85 is worse than base DeepSeek at 3.39 despite being search-first. Sonar-reasoning-pro at 2.33 is the single worst composite AND highest cost in the entire R6 set — $4,664/170K for wine writing that's measurably worse than gpt-5.4-mini-mini at $452.
+- **GLM-4.6 and Kimi-K2 are competitive with the low end of the 30-wine field** (3.41 and 3.23) but don't beat any of the original 6 finalists.
+
+**Search grounding + field-split are PROVISIONALLY ruled out — both worth retesting once prompt v2 + L3 fact-check gate land.** The bake-off ranked models under the CURRENT prompt, and the current prompt doesn't exploit grounded context well.
+
+### What surprised us
+
+- Native search models (Perplexity) are much worse than general models with search add-ons. Being "search-first" doesn't substitute for writing quality.
+- The Chinese frontier tier (glm-4.6, kimi-k2) is now roughly where the American mid-tier was a year ago — not ahead, not embarrassing either.
+- Sonar-reasoning-pro emits `<think>` tags that wreck JSON parsing; sonar-reasoning had HTTP 404s on OpenRouter. **User's call: do NOT fix these for B5.7 — we won't use them in Sprint 6.** Parse issues are logged but not patched.
+
+---
+
 ## Production Recommendation
 
-### Primary winner: **openai/gpt-5.4-mini**
+> **This is NOT a locked decision.** The bake-off ranked models under the CURRENT
+> enrichment prompt (the one used in B5.5). A better prompt + an L3 fact-check
+> gate + pipeline-architecture work are all pending, and any of those could
+> materially shift the ranking — especially between the top model and the cheap
+> tier. The ~$360/170K gap between gpt-5.4-mini and gemini-3-flash is not a
+> quality moat; it's a current-prompt artifact.
+>
+> Enrichment-model selection will be revisited in a later sprint after prompt v2
+> + L3 fact-check gate + pipeline improvements land. Sprint 6 is producer dedup,
+> which is a separate model decision (pick whatever cheap model fits the dedup
+> task).
+
+### Headline takeaway
+
+**Cheaper models can do the work. The prompt is the bigger lever.**
+
+Garbage-in/garbage-out applies regardless of which model sits at the top of the
+composite score. The rank order above reflects how well each model rescued a
+mediocre prompt — not a ceiling on what the cheap models can produce. Once the
+prompt stops tolerating fabricated soils / vague hedging / and starts putting
+the right context blocks in, the differentiator shifts from model to pipeline.
+
+### Current best under the current prompt: `openai/gpt-5.4-mini`
 
 - Composite **3.960** (0.076 below gpt-5.4, 0.091 above gemini-3.1-pro-preview)
-- **15% the cost of gpt-5.4, 1.6% the cost of claude-opus-4.6, 8% the cost of current production Sonnet 4.6**
-- **Zero banned-word violations across 30 wines**
+- **Zero banned-word violations across 30 wines** — cleaner voice than any Claude model in the set
 - Flat tier performance (0.08 spread A→C)
-- 170K corpus cost: **$452** vs Sonnet baseline ~$5,667 → savings of $5,215 at full corpus
-- Savings vs original plan (re-enrich 515 demo wines with Sonnet at ~$18): ~$16.50 saved, but the number that matters is the scale math
+- Token-only cost: **$452/170K**, vs Sonnet baseline ~$5,953 → ~92% savings if Sprint 6 re-enriches at scale
 
-### Rationale
+The composite gap between gpt-5.4 (4.036) and gpt-5.4-mini (3.960) is 0.076 — well within judge noise (half-point granularity). gpt-5.4 wins correctness by 0.25 (~1 wrong fact per 4 wines more careful) but loses on voice and costs 7× more per call.
 
-The composite gap between gpt-5.4 (4.036) and gpt-5.4-mini (3.960) is **0.076** — well within judge noise (half-point granularity). On voice and banned-word behavior gpt-5.4-mini is actually slightly better. On correctness gpt-5.4 wins by 0.25, but that's ~1 wrong fact per 4 wines. For Loam's use case — enriching at scale with a downstream fact-check gate (L3 per Sprint 3 plan) — the quality gap is not worth ~7× the per-call cost.
+### Cheap-tier alternative: `google/gemini-3-flash-preview`
 
-**Skip the expensive tier entirely.** gemini-3.1-pro-preview is third at $8,524/170K, Opus is fourth at $27,693/170K — neither beats gpt-5.4 on quality, and both cost 10–60× more than gpt-5.4-mini. They're only worth it for a small, handpicked "flagship" subset, if at all.
+- Composite **3.669** (R4 repechage, full 30 wines)
+- **$159/170K — ~3% of gpt-5.4 cost, ~35% of gpt-5.4-mini cost**
+- The headline cheap choice if budget becomes binding. 0.29 composite below gpt-5.4-mini — real gap, but the right ~$300/170K saved could fund better prompting + gate work instead of a fancier model.
+- 153 wrong facts / 30 wines (5.1/wine) — meaningfully higher than gpt-5.4-mini (80 / 30 = 2.7/wine). An L3 fact-check gate would catch most of these.
 
-### Runner-up (fallback): **openai/gpt-5.4**
+### Budget-grounded option: `deepseek/deepseek-v3.2`
 
-If gpt-5.4-mini shows unexpected quality drift at full scale, swap to gpt-5.4:
-- 7× the cost but highest composite (4.036)
-- Most careful on correctness (1.9 wrong facts/wine)
-- Zero banned words
-- $3,088/170K — still 9× cheaper than Opus, 55% cheaper than Sonnet baseline
+- Composite **3.388** (base, 30 wines) or **3.621** (`:online`, 12 wines with grounding)
+- **$93/170K** base — the cheapest credible option in the whole field, 59× cheaper than Sonnet baseline
+- `:online` lifts correctness noticeably (+0.23 composite) but REAL cost is ~$1,069/170K once OpenRouter's search fees are included. At that price the gap to gpt-5.4-mini is only ~$620/170K and you still lose quality.
+- **User preference:** DeepSeek was protected from elimination across R1-R3 per the user's production hunch; it finished 6th on composite but cost-per-dollar-of-quality remains its selling point.
+- Weaknesses: 10 banned-word violations, highest base wrong-fact rate (4.6/wine). Needs a tight fact-check gate to be safe at production scale.
 
-### Budget option: **deepseek/deepseek-v3.2**
+### Caveat on `:online` and search-fee math
 
-If cost is a hard constraint (or for a Grade B cheap-and-fast tier for obscure Tier C wines):
-- Composite 3.388 — clearly lower but not failing
-- **$93/170K — 59× cheaper than Sonnet, 5× cheaper than gpt-5.4-mini**
-- Most consistent tier spread (0.11)
-- Weaknesses: 10 banned-word violations, highest wrong-fact rate (4.6/wine)
-- Would need a tight fact-check gate to be safe at scale
+OpenRouter charges ~$4-6 per 1K searches on top of token costs for `:online` variants. This is NOT in the $/170K token figures above. Real grounded cost for a 170K corpus with ~1 search per wine is **$680/170K extra minimum, often higher**. At that level, `:online` variants are not cost-competitive with base models UNLESS grounding actually moved the correctness needle — and under the current prompt, it mostly did not (R6 showed best `:online` at 3.89, still below gpt-5.4-mini base at 3.96).
 
-**Multi-model strategy (optional):** gpt-5.4-mini for default enrichment + DeepSeek for a cheap "bulk data" mode on Tier C wines where deep accuracy is less critical. Both have flat tier performance, so the split would be about marginal economics, not quality.
+### Provisionally ruled out (both worth retesting after prompt v2)
 
-### Not recommended
+- **Search-grounded `:online` variants** — token-cost-competitive but not quality-competitive under the current prompt. Revisit once prompt v2 explicitly leverages grounded context.
+- **Field-split multi-model generation** — gpt-5.4-mini wins 9/11 correctness fields. DeepSeek dominates only 2 (comparable_wines, value_assessment). Split savings are real (~$70/170K) but swamped by 2× API overhead. Revisit if prompt v2 changes field-level winners.
 
-- **claude-sonnet-4.6** (production baseline) — eliminated at R2 with 3.554 composite; loses to gpt-5.4-mini by 0.41 points and costs 12.5× more. **No reason to keep using Sonnet once gpt-5.4-mini is in place.**
-- **claude-opus-4.6** — excellent specificity (4.55, highest) but only 4th overall at $27,693/170K. 61× the cost of gpt-5.4-mini for 0.087 worse composite. Use only for a tiny, curated flagship set if at all.
-- **google/gemini-\* (2.5 family)** — decent mid-tier but beaten by gpt-5.4-mini on every axis except judge noise.
+### Not competitive under any framing
+
+- **`claude-sonnet-4.6`** (the production baseline) — eliminated at R2 with 3.554 composite. Loses to gpt-5.4-mini by 0.41 points at 13× the cost. No reason to stick with Sonnet for enrichment.
+- **`claude-opus-4.6`** — highest specificity (4.55) but only 4th overall at $27,693/170K. 61× gpt-5.4-mini's cost for 0.087 lower composite. Reserved for tiny curated flagship subset if at all.
+- **`perplexity/sonar*`** — native search-first models are measurably worse than general models with search add-ons. Sonar-reasoning-pro was the single worst composite (2.33) AND most expensive ($4,664/170K) in the R6 set.
+- **`meta-llama/llama-4-maverick`**, **`mistralai/mistral-nemo`**, **`xiaomi/mimo-v2-*`**, **`qwen/qwen3.5-plus-02-15`**, **`x-ai/grok-4.1-fast`** — bottom of the R1 field (1.84-2.77 composite). Aggressive fabrication and/or banned-word violations.
+
+---
+
+## Prompt caching: not viable via OpenRouter right now
+
+**Tested B5.7 on anthropic/claude-opus-4.6 + anthropic/claude-sonnet-4.6 via OpenRouter.**
+
+The judge prompt has a ~1,420-token static prefix (rubric + voice reference + format spec) repeated on every call. Anthropic prompt caching theoretically gives a 90% discount on cache-read input tokens, which would cut ~15-30% off future judge runs.
+
+### What was tried
+
+- Split `JUDGE_PROMPT` into static prefix + dynamic suffix (wine context, ground truth, model output)
+- Sent `{"type": "text", "text": STATIC, "cache_control": {"type": "ephemeral"}}` in both a single-user-message content array AND a dedicated system-role message
+- Tested across 3 calls each on Opus 4.6 and Sonnet 4.6
+
+### Result
+
+- **All 9 calls: `cached_tokens: 0`, `cache_write_tokens: 0`** in OpenRouter's `prompt_tokens_details`
+- Per-call cost was identical to baseline (no cache-read discount applied)
+- OpenRouter's schema accepts and reports caching fields, but the values stayed at 0 regardless of format
+
+### Why
+
+Two compounding problems:
+
+1. **Opus 4.x requires a 4,096-token minimum cached prefix.** Our prefix is ~1,420 tokens — too small for Opus to cache at all ([Anthropic docs](https://platform.claude.com/docs/en/build-with-claude/prompt-caching)).
+2. **OpenRouter + Anthropic caching is a known-broken path.** [OpenRouterTeam/ai-sdk-provider#35](https://github.com/OpenRouterTeam/ai-sdk-provider/issues/35) is still open; multiple users confirm user-message caching fails and system-role partial-works-sometimes across Claude and Gemini routes even when token minimums are met. Sonnet's 1,024-token minimum was cleared and still no cache fired.
+
+### Decision
+
+- **Not committing** `cache_control` changes to `bakeoff/run_task3_judge.py` — no measurable benefit through the current OR route.
+- **Test script `bakeoff/test_prompt_caching.py` kept** as a reference for re-testing once upstream issues resolve or when the L3 fact-check gate grows the static portion past 4,096 tokens.
+- **Revisit in Sprint 6+** when: (a) OR patches the Anthropic cache forward, OR (b) we switch judge calls to direct Anthropic API (bypassing OR) for cost-sensitive runs, OR (c) the L3 gate rubric pushes static portion over 4K tokens.
+- **B5.7 Job 2 test cost:** ~$0.82 across 9 calls (3 Opus + 6 Sonnet).
 
 ---
 
@@ -199,36 +364,71 @@ The ranking of gpt-5.4-mini > gpt-5.4 > gemini-3.1-pro > claude-opus was also br
 
 | Component | Cost |
 |-----------|-----:|
-| Pre-tournament: GPT-5-mini rerun (30 calls × gpt-5-mini) | $0.14 |
+| B5.1–B5.4 design + test data build | ~$3 |
+| B5.5 prose generation (21 models × 30 wines) | $11.86 |
+| Pre-tournament: GPT-5-mini rerun (30 calls, max_tokens fix) | $0.14 |
 | R1 judging (3 wines × 20 models, automated) | $5.33 |
 | R1 gpt-5-mini backfill (3 judge calls) | $0.28 |
 | R2 judging (3 wines × 12 survivors) | $3.37 |
 | R3 judging (24 new wines × 6 finalists, marginal) | ~$13.36 |
-| **B5.6 total** | **~$22.48** |
-| B5.5 prose generation (21 models × 30 wines) | $11.86 |
-| B5.1–B5.4 design + test data build | ~$3 |
-| **Sprint 5 total** | **~$37.34** |
+| R4 repechage (27 × 2 models, gemini-3-flash-preview + gpt-5-mini) | ~$4.50 |
+| R5 field-specialization test (3 wines × 3 models, per-field judge) | $0.81 |
+| R6 search-grounded + Chinese (8 models × 12 wines, prose + judge) | ~$13 |
+| **B5.6 total (R1-R6 judge + R4 prose + R6 prose)** | **~$40.79** |
+| **Sprint 5 total** | **~$55.65** |
 
-Judge total was $22.34 per the regenerated summary (at $22.48 when you add the $0.14 GPT-5-mini prose rerun). Within the user's $22 target for B5.6; Sprint 5 exceeded the original $25 cap, an expected trade-off per the user's tournament prompt.
+Notes:
+- Judge-call total from the regenerated summary is $34.57 (387 judge calls across R1-R6)
+- R6 prose generation on 8 new models added ~$4-6 to B5.6 (token costs plus `:online` search fees)
+- B5.6 ran over the original $22 tournament budget due to R4-R6 expansion; user-authorized in the tournament prompt
 
 ---
 
 ## Files Produced
 
-- `bakeoff/scores/task3_scores.csv` — 243 per-wine per-model rows
-- `bakeoff/scores/task3_summary.csv` — 21-model leaderboard
-- `bakeoff/scores/task3_judge/` — 243 individual judge JSON files (one per model × wine)
+- `bakeoff/scores/task3_scores.csv` — 387 per-wine per-model judge rows (R1-R6)
+- `bakeoff/scores/task3_summary.csv` — 29-model leaderboard (R1-R6, includes all :online variants)
+- `bakeoff/scores/task3_judge/` — 387 individual judge JSON files (one per model × wine)
+- `bakeoff/scores/field_judge/` — 9 R5 per-field judge JSONs (3 models × 3 wines)
 - `bakeoff/scores/task3_calibration_A.md` — hand-calibrated Shafer reference (pre-tournament)
 - `bakeoff/scores/tournament_results.md` — this file
 - `bakeoff/tournament.py` — cumulative-composite + tie-aware cut helper
 - `bakeoff/run_task3_judge.py` — judge script, extended with `--exact-models` flag
+- `bakeoff/run_field_judge.py` — R5 per-field judge script
 
 ---
 
 ## Sprint 6 Input
 
-Production recommendation: **gpt-5.4-mini** for all new re-enrichment. DeepSeek v3.2 as optional Tier-C/bulk mode.
-Cost for re-enriching 515 demo wines: ~$1.40 (vs ~$18 for Sonnet baseline).
-Cost for full 156K corpus: ~$415 (vs ~$5,200 for Sonnet baseline).
+**Sprint 6 scope = producer dedup**, not re-enrichment. Dedup is a separate model
+decision — the Sprint 5 bake-off ranked *enrichment-prose* models on 11-field
+structured output with a voice rubric. Producer dedup is a one-field classification
+task with different failure modes. Do NOT auto-apply gpt-5.4-mini to Sprint 6;
+revisit the cheap tier (DeepSeek, gemini-3-flash, Haiku) for dedup specifically.
 
-The bake-off has unlocked a ~$4,800 budget shift vs the Sonnet-baseline Sprint 6 plan; consider reinvesting in producer-site scraping depth or label-image hosting rather than banking it.
+**Re-enrichment of the 515 demo wines + full-corpus enrichment is deferred** to a
+post-Sprint-6 sprint that lands prompt v2 + L3 fact-check gate first. Using these
+bake-off rankings as-is today would bake in the current-prompt ceiling. The
+re-enrichment sprint should:
+
+1. Land prompt v2 (explicitly forbid fabricated soils/geology, require source
+   attribution for specific claims, leverage grounded context if used)
+2. Build the L3 fact-check gate (reads ground truth from provenance + fails loud
+   on contradictions)
+3. Re-run a short bake-off on prompt v2 — the rank order above is likely to shift
+4. THEN pick the enrichment model
+
+**Preliminary cost projections** (useful for budgeting, not a commitment):
+
+| Scenario (current-prompt basis) | 515 demo | Full 156K corpus |
+|--------------------------------|---------:|-----------------:|
+| Sonnet 4.6 baseline (eliminated) | ~$18 | ~$5,953 |
+| gpt-5.4-mini (current-prompt top) | ~$1.40 | ~$452 |
+| gemini-3-flash-preview (cheap tier) | ~$0.50 | ~$159 |
+| deepseek-v3.2 base (budget) | ~$0.28 | ~$93 |
+| deepseek-v3.2:online (grounded) | ~$3.20 real | ~$1,069 real |
+
+Cost is not the constraint for Sprint 6 — there's $4,000+ of headroom vs the old
+Sonnet baseline under any of these options. The constraint is correctness, which
+is a prompt + pipeline problem. That's what the next sprint (not Sprint 6) should
+solve.

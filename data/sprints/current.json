@@ -1,12 +1,13 @@
 {
   "name": "ai-bakeoff",
-  "status": "active",
+  "status": "closed",
   "sprint_number": 5,
   "started_at": "2026-04-14",
+  "closed_at": "2026-04-15",
   "previous": {
     "name": "demo",
     "closed_at": "2026-04-14",
     "archive_path": "data/sprints/demo/"
   },
-  "notes": "Sprint 5 — AI Bakeoff. Model bake-off first (pick cheapest model at 80%+ quality), then use winners for dedup, data fill, and re-enrichment. Share with friends at the end."
+  "notes": "Sprint 5 — AI Bakeoff CLOSED 2026-04-15. 29 models tested across 6 rounds, ~$55 spent. Current-prompt leader: openai/gpt-5.4-mini ($452/170K). Cheap alternative: gemini-3-flash-preview ($159). Budget option: deepseek-v3.2 ($93). Model selection NOT locked — revisit after prompt v2 + L3 fact-check gate land. Search grounding + field-split provisionally ruled out. Prompt caching via OR not viable (upstream bug + Opus 4K min). B5.8 strategy session opens Sprint 6 (producer dedup)."
 }

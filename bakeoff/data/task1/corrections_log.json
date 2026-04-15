@@ -1,0 +1,122 @@
+{
+  "A010": [
+    "DIFFERENT",
+    "Grape mismatch: A=Gew\u00fcrztraminer, suffix=Pinot Gris"
+  ],
+  "A013": [
+    "DIFFERENT",
+    "Grape mismatch: A=Pinot Noir/Canari Noir, suffix=Pinot Gris"
+  ],
+  "A014": [
+    "DIFFERENT",
+    "Grape mismatch: A=Gew\u00fcrztraminer, suffix=Pinot Gris"
+  ],
+  "A017": [
+    "DIFFERENT",
+    "Grape mismatch: A=Pinot Noir, suffix=Syrah"
+  ],
+  "A018": [
+    "DIFFERENT",
+    "Grape mismatch: A=Chardonnay, suffix=Viognier"
+  ],
+  "A022": [
+    "DIFFERENT",
+    "Grape mismatch: A=Cabernet Sauvignon, suffix=Carmenere"
+  ],
+  "A024": [
+    "DIFFERENT",
+    "Grape mismatch: A=Cot (Malbec), suffix=Syrah"
+  ],
+  "A027": [
+    "DIFFERENT",
+    "Grape mismatch: A=Tempranillo, suffix=Mencia"
+  ],
+  "A034": [
+    "DIFFERENT",
+    "Grape mismatch: A=Chardonnay/Pinot Gris, suffix=Sauvignon Blanc"
+  ],
+  "A036": [
+    "DIFFERENT",
+    "Grape mismatch: A=Pinot Noir/Chardonnay, suffix=Sauvignon Blanc"
+  ],
+  "A040": [
+    "DIFFERENT",
+    "Grape mismatch: A=Merlot/Chardonnay, suffix=Pinot Noir"
+  ],
+  "A004": [
+    "DIFFERENT",
+    "Range wine: Vinsmoselle makes separate Pinot Gris + Pinot Noir (web-verified)"
+  ],
+  "A009": [
+    "DIFFERENT",
+    "Range wine: Vinsmoselle makes separate Auxerrois + Pinot Gris (web-verified)"
+  ],
+  "A011": [
+    "DIFFERENT",
+    "Range wine: J. Lohr Highlands Bench = separate Pinot Noir + Chardonnay (web-verified)"
+  ],
+  "A019": [
+    "DIFFERENT",
+    "Range wine: Rob Dolan True Colours = range with multiple varietals (web-verified)"
+  ],
+  "A021": [
+    "DIFFERENT",
+    "Cab Sauv vs Cab Sauv-Syrah blend \u2014 different wines (15/16 models agree)"
+  ],
+  "A043": [
+    "DIFFERENT",
+    "19 Crimes Shiraz vs Shiraz-Durif = separate products (web-verified, 14/17 agree)"
+  ],
+  "C004": [
+    "SAME",
+    "Color descriptor 'white' appended, not a classification tier (16/17 models agree)"
+  ],
+  "C005": [
+    "SAME",
+    "NV designation, not a classification difference (15/17 models agree)"
+  ],
+  "C013": [
+    "SAME",
+    "Spelling variant + word reorder: Kastanienbusch=Kastanienbush (13/17 agree)"
+  ],
+  "C017": [
+    "SAME",
+    "Same Sp\u00e4tlese level, 'Riesling' is varietal suffix not Pr\u00e4dikat diff (14/17 agree)"
+  ],
+  "C023": [
+    "SAME",
+    "Varietal suffix 'Shiraz', not a dosage difference. A grapes=SYRAH (16/17 agree)"
+  ],
+  "C024": [
+    "SAME",
+    "Article 'Les' prefix difference only (15/17 models agree)"
+  ],
+  "C031": [
+    "SAME",
+    "'Brut' likely redundant for this Bonnaire BdB (13/16 models agree)"
+  ],
+  "C032": [
+    "SAME",
+    "NV vs no-NV = same wine, vintage designation not classification (16/17 agree)"
+  ],
+  "C033": [
+    "SAME",
+    "'Brut' redundant for vintage Champagne (15/17 models agree)"
+  ],
+  "D011": [
+    "SAME",
+    "'Malmsey' is Madeira style prefix, same wine (16/17 models agree)"
+  ],
+  "D023": [
+    "SAME",
+    "'Blanche' is part of ch\u00e2teau name La Tour Blanche, truncation (15/16 agree)"
+  ],
+  "D031": [
+    "SAME",
+    "'Trocken' often redundant in Rheingau dry Riesling (14/16 agree)"
+  ],
+  "D045": [
+    "SAME",
+    "'Blanc' color descriptor on white wine, likely same (16/16 agree)"
+  ]
+}
