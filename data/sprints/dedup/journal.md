@@ -184,6 +184,86 @@ blocking dry-run + L1 Haiku batched on all definitive-list pairs.)
   `pipeline/promote/lwin_backfill_producer_id.py` as closeout, backfilled
   26,878 rows. Dedup universe ready for B6.3.
 
+- **B6.2.2 — LWIN wine recovery via display_name + corpus-wide display_name
+  backfill.** Triggered by a multi-turn user push: "zero-wine producers" are
+  actually real wines that LWIN models with wine_name=NULL but
+  display_name populated ("Comte Senard, Meursault"). Reading the LWIN
+  Guide V1.2 + auditing the source_lwin schema revealed a `display_name`
+  column we had been ignoring, populated on 189,348 of 189,359 rows (Liv-ex's
+  own authoritative combined-wine name, including Premier Cru / Grand Cru /
+  lieu-dit info). Every LWIN-7 is a real for-sale bottled product per
+  Liv-ex — Wikipedia-analog of an ISBN.
+
+  **Design decision (logged to DECISIONS.md):** (a) fix the 26,878
+  skipped rows by using display_name (producer prefix stripped) as the
+  wine identifier; (b) backfill wines.display_name on all LWIN-linked
+  wines from source_lwin.display_name; (c) explicitly REJECT rewriting
+  wines.name on the existing 162,458 (would churn slugs, invalidate
+  enrichment caches, risk uniqueness collisions, deliver zero
+  user-visible gain).
+
+  **Script changes:** added `derive_wine_identifier(display_name,
+  wine_name)` helper + `--recover-missing-wines` mode to
+  `pipeline/promote/lwin_long_tail.py`. Threads `display_name` through to
+  `match_or_create_wine` for storage on INSERT. Resume filter uses
+  `canonical_wine_id IS NULL` instead of `processed_at IS NULL` since
+  the prior closeout helper populated processed_at on wine_name-NULL rows.
+
+  **Recovery run:** 93.9 min, 10,365 producers (all matched to existing
+  canonical), 26,878 rows processed. 26,616 wines created, 248 matched,
+  14 failed (wine_names normalizing to empty string: `?`, `+`, `"..."`
+  + 11 rows with all-NULL wine/display/sub-region fields). 26,864
+  source_lwin rows linked. $0.
+
+  **Display_name backfill:** single SQL migration
+  `2026-04-16_backfill_wines_display_name_from_lwin.sql` matching
+  `wines.id` ↔ `external_ids.entity_id` ↔ `source_lwin.lwin` (all 189,319
+  LWIN external_ids are 7-digit; single-column JOIN avoids the planner
+  blowup an OR-join caused on first attempt). Populated display_name on
+  the remaining pre-B6.2 wines. Every LWIN-linked canonical wine (and
+  ~40K non-LWIN wines from other sources) now has display_name.
+
+  **Final state (verified):**
+  - Canonical wines: **224,316** (up from ~197,700 pre-recovery)
+  - Wines with display_name: **224,316 (100%)**
+  - LWIN rows linked to canonical wines: 189,319 (99.98%)
+  - LWIN rows residual: 40 (12 pathological producer_name-includes-color
+    + 3 garbage wine_name + 25 NULL-producer_name assortment/Madeira
+    rows — all unsuitable for the canonical schema)
+  - Zero-wine producers: **11** (down from 5,372 after B6.2; the
+    remaining 11 are NULL-producer-name LWIN meta-entities)
+  - `search_catalog('leroy nuits-saint-georges')` returns the plain
+    village Nuits-Saint-Georges by Leroy as rank #1, followed by lieu-dit
+    and Premier Cru variants — authoritative display names preserved.
+
+  **Marquee wines recovered:** Leroy / Nuits-Saint-Georges (village);
+  William Fèvre / Chablis; Louis Jadot / Nuits-Saint-Georges +
+  Gevrey-Chambertin + Chassagne-Montrachet; Olivier Leflaive /
+  Puligny-Montrachet + Chassagne-Montrachet; Dominique Laurent /
+  Nuits-Saint-Georges; Henri Gouges / Nuits-Saint-Georges; Antinori / Vin
+  Santo del Chianti; Dujac Fils et Pere / Clos de la Roche Grand Cru;
+  Pierre Morey / Montrachet Grand Cru; and ~26,600 more.
+
+  **Meta-lesson logged to CLAUDE.md + DECISIONS.md:** the multi-turn
+  back-and-forth ("zero-wine producers as residuals" → "fallback chain" →
+  "display_name in the schema") was entirely avoidable by doing a proper
+  web search of the LWIN data dictionary + a `SELECT column_name FROM
+  information_schema.columns WHERE table_name='source_lwin'` up front.
+  New Behavioral Instruction: Check Assumptions with Web Search — Often,
+  and Early. Triggers: any claim about an external system's data shape,
+  any invented fallback rule when the upstream source may already ship
+  the answer, any "I don't think X supports Y" before actually looking.
+  Overuse is cheaper than underuse.
+
+  Tables: `wines` (+26,616 rows, 100% display_name coverage), `source_lwin`
+  (26,864 rows linked), `external_ids` (+26,864 lwin rows). Files:
+  `pipeline/promote/lwin_long_tail.py` (extended with --recover-missing-wines +
+  derive_wine_identifier), `supabase/migrations/2026-04-16_backfill_wines_display_name_from_lwin.sql`
+  (new), `data/stats/lwin_recover_log.txt` (progress log), `CLAUDE.md` (new
+  Check Assumptions with Web Search section), `docs/DECISIONS.md` (3 new
+  entries: web-search behavioral rule, wine-recovery scope decision,
+  display_name-as-source-of-truth decision).
+
 - **B6.2.1 — Pre-B6.3 hygiene (search_vector trigger fix + Opus 4.7 review).**
   Triggered by user asking "is new LWIN data in the same spot as existing data
   before dedup?" + "revisit anything with 4.7 upgrade?" Audited 5 search-vector

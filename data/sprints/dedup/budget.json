@@ -4,7 +4,8 @@
   "sessions": {
     "B6.1": 0.00,
     "B6.2": 0.00,
-    "B6.2.1": 0.00
+    "B6.2.1": 0.00,
+    "B6.2.2": 0.00
   },
   "note": "Tiered AI ladder with batching at L1 (10/call) and L2 (5/call). L3 Sonnet 4.6 with Anthropic native web_search tool. L4 Opus-inline-1M audit (free in-session). B6.2 LWIN import used simple matching (no AI) — $0. Budget $250 ceiling per B6.1 user decision. Projected $100-220. Reserve $30-60 for B6.7+ iteration. Cost not the constraint; quality is."
 }

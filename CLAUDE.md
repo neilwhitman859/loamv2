@@ -59,6 +59,42 @@ If the user is going a long stretch without wrapping up, if decisions are being 
 ### Session Whiteboard
 Read `data/sessions.md` at session start. Log what you're working on under **Active** (include tables you're writing to). At wrap-up, move your entry to **Done** with a summary. If another session is active, don't edit CLAUDE.md or docs/ — the next solo session merges it in.
 
+### Check Assumptions with Web Search — Often, and Early
+
+Before defending a claim about how an external system works (an API, data
+format, standard, file schema, third-party library, domain convention), **do a
+web search first**. Training data is stale and incomplete — especially for
+niche trade systems (LWIN, TTB, COLA, Open Food Facts, wine regulatory bodies,
+obscure retailer schemas). Asking the user to make a design decision that a
+30-second search would settle is a failure mode: it wastes a full round-trip
+and risks the user having to correct a flawed premise.
+
+**Trigger the search when you catch yourself:**
+- Claiming "X doesn't support Y" or "X only has fields A, B, C"
+- Inventing a fallback rule, synthesis convention, or mapping for data
+  coming from an external source (check whether the source already ships
+  the answer — e.g. a pre-computed display/canonical name field)
+- About to answer a factual question about a third-party system from
+  training data alone
+- Defending a design choice rooted in your understanding of an external
+  spec, especially after the user pushes back
+- Saying "I don't think anyone has documented this" before actually
+  looking
+
+**Overuse is cheaper than underuse.** A superfluous search costs ~5 seconds
+of wall time. A missed search costs a full back-and-forth, burns user
+patience, and can anchor bad decisions. Lean hard toward searching — even
+on ~20% uncertainty. Search inline while reasoning; don't save it for the
+end as a formality. If the search returns an authoritative doc (e.g. a PDF
+guide, an official API reference), read it properly before answering.
+
+Also check the local repo: if the user asks whether data has field X, look
+at the actual table schema via MCP `execute_sql` against
+`information_schema.columns` before assuming.
+
+See `docs/DECISIONS.md` 2026-04-16 (LWIN display_name trigger) for the
+avoidable round-trip that motivated this rule.
+
 ### Prefer Opus Inline for Audit & Reasoning
 For audit-class and reasoning-class work — data audits, primary-source fact-checking,
 cross-record pattern recognition, findings synthesis, quality/severity judgments —
@@ -306,15 +342,19 @@ See `docs/HISTORY.md` for promotion results, session-by-session build history, a
 multi-method auto-apply + 50-150 curated user-reviewed toughest pairs +
 UNCERTAIN flagged as known-open.
 
-**LWIN-first (B6.2 COMPLETE):** Long-tail sweep via `lwin_long_tail.py
---resume-unlinked` (2h 51m) + `lwin_backfill_producer_id.py` closeout (15s)
-imported the 24,762 unlinked LWIN producers discovered in B6.1. Producers
-table **10,683 → 33,281 (33,225 active)**, +22,598 new canonical producers.
-42,095 canonical wines + 42,566 LWIN external_ids created. 0 distinct LWIN
-producer_names remain unlinked; 26 residual rows (all NULL producer_name,
-pre-existing LWIN garbage) well under the <100 threshold. 99.86% of active
-producers now have at least one source_lwin row pointing at them. Dedup
-universe is ready. $0 spent. Details in `data/sprints/dedup/journal.md`.
+**LWIN-first (B6.2 + B6.2.1 + B6.2.2 COMPLETE):** Three-stage LWIN import.
+B6.2 long-tail sweep imported 22,598 new producers (10,683 → 33,281).
+B6.2.1 patched a pre-existing INSERT-trigger bug on producers + wines
+search_vector. **B6.2.2** discovered that `source_lwin.display_name`
+(Liv-ex's authoritative combined-wine name) is populated on 99.994% of
+rows and that every LWIN-7 is a real bottled product — recovered 26,616
+wines we had previously skipped due to NULL wine_name (Burgundy village
+wines, Chablis, Italian DOCs), using display_name minus producer prefix
+as wine.name. Also backfilled `wines.display_name` on all LWIN-linked
+wines from source_lwin. **Final state: 224,316 canonical wines (100%
+display_name coverage), 33,214 producers with ≥1 wine (up from 27,842),
+99.98% of source_lwin linked, 40 explainable residuals.** $0 spent
+across all three stages. Details in `data/sprints/dedup/journal.md`.
 
 **Tiered AI ladder (Claude models direct via Anthropic SDK, not OpenRouter):**
 

@@ -84,17 +84,43 @@ def fetch_eligible_producers(
     intl_min_wines: int,
     us_junk: set[str],
     resume_unlinked: bool = False,
+    recover_missing_wines: bool = False,
 ) -> list[tuple[str, str, int]]:
     """Return list of (producer_name, country, wine_count) for producers to process.
 
-    Two modes:
-      - default: US all + INTL >= intl_min_wines (Session 13 cutoff)
-      - resume_unlinked: every (producer_name, country) with at least one source_lwin
-        row where canonical_producer_id IS NULL. Drops country/wine-count filter;
-        junk filter still applies to US producers if enabled. Used by B6.2 to close
-        the long tail left behind by the Session 13 run.
+    Modes (in priority order):
+      - recover_missing_wines: every (producer_name, country) with at least one
+        source_lwin row where canonical_wine_id IS NULL. Used to re-sweep rows
+        previously skipped because wine_name was NULL — the 2026-04-16 pass now
+        uses source_lwin.display_name as the authoritative wine identifier.
+      - resume_unlinked: every (producer_name, country) with at least one
+        source_lwin row where canonical_producer_id IS NULL. Used by B6.2 to
+        close the long tail left behind by the Session 13 run.
+      - default: US all + INTL >= intl_min_wines (Session 13 cutoff).
+
+    Junk filter still applies to US producers if enabled.
     """
-    if resume_unlinked:
+    if recover_missing_wines:
+        sql = """
+            WITH buckets AS (
+                SELECT producer_name, country, COUNT(*) AS wines
+                FROM source_lwin
+                WHERE producer_name IS NOT NULL
+                  AND TRIM(producer_name) != ''
+                  AND canonical_wine_id IS NULL
+                GROUP BY producer_name, country
+            )
+            SELECT producer_name, country, wines
+            FROM buckets
+            ORDER BY
+                CASE WHEN country = 'United States' THEN 0 ELSE 1 END,
+                wines DESC,
+                producer_name
+        """
+        with conn.cursor() as cur:
+            cur.execute(sql)
+            rows = cur.fetchall()
+    elif resume_unlinked:
         # Count only unlinked rows so progress output reflects remaining work.
         sql = """
             WITH buckets AS (
@@ -145,31 +171,88 @@ def fetch_eligible_producers(
             continue
         eligible.append((name, country, int(wines)))
 
-    mode_label = "resume-unlinked" if resume_unlinked else f"default (US all + INTL >= {intl_min_wines})"
+    if recover_missing_wines:
+        mode_label = "recover-missing-wines"
+    elif resume_unlinked:
+        mode_label = "resume-unlinked"
+    else:
+        mode_label = f"default (US all + INTL >= {intl_min_wines})"
     print(f"  Eligible [{mode_label}]: {len(eligible):,} producers ({skipped_junk} US junk filtered)")
     return eligible
 
 
-def fetch_lwin_rows_for_producer(conn, producer_name: str, country: str | None) -> list[dict]:
-    """Fetch all source_lwin rows for a producer+country combo, unprocessed only.
+def fetch_lwin_rows_for_producer(
+    conn, producer_name: str, country: str | None,
+    recover_missing_wines: bool = False,
+) -> list[dict]:
+    """Fetch all source_lwin rows for a producer+country combo.
 
     Uses `country IS NOT DISTINCT FROM %s` so NULL country pairs match correctly
     (35 such rows exist in the B6.2 long-tail). source_lwin has no numeric `id`
-    — the primary key is `lwin` (text).
+    — the primary key is `lwin` (text). Also returns `display_name` (Liv-ex's
+    canonical combined wine identifier — used in preference to `wine_name` for
+    rows where wine_name is NULL but the wine exists, per LWIN Guide V1.2 and
+    2026-04-16 DECISIONS entry).
+
+    Row filter:
+      - default: `processed_at IS NULL` — matches the resume-safe flow Session
+        13 + B6.2 have always used.
+      - recover_missing_wines: `canonical_wine_id IS NULL` — picks up rows that
+        were processed (producer linked) but never got a canonical wine due to
+        the old wine_name-only logic.
     """
-    sql = """
-        SELECT lwin, lwin_7, producer_name, wine_name, country,
+    if recover_missing_wines:
+        filter_sql = "canonical_wine_id IS NULL"
+    else:
+        filter_sql = "processed_at IS NULL"
+    sql = f"""
+        SELECT lwin, lwin_7, producer_name, wine_name, display_name, country,
                region, sub_region, appellation, colour, wine_type, designation
         FROM source_lwin
         WHERE producer_name = %s
           AND country IS NOT DISTINCT FROM %s
-          AND processed_at IS NULL
+          AND {filter_sql}
         ORDER BY wine_name, lwin
     """
     with conn.cursor() as cur:
         cur.execute(sql, (producer_name, country))
         cols = [d[0] for d in cur.description]
         return [dict(zip(cols, row)) for row in cur.fetchall()]
+
+
+def derive_wine_identifier(display_name: str | None, wine_name: str | None) -> tuple[str | None, str | None]:
+    """Return (effective_wine_name, full_display_name) for a source_lwin row.
+
+    Priority:
+      1. If wine_name is populated (LWIN's distinguishing-attribute field): use
+         it as-is — matches the convention used by the original import on 162K
+         rows. full_display_name comes from source_lwin.display_name as a
+         trusted passthrough.
+      2. Else if display_name is populated: strip the producer-prefix portion
+         (everything before the first ", ") to get the wine-identifier part.
+         This recovers Premier Cru / Grand Cru / vineyard-site info that LWIN
+         encodes in display_name but not in wine_name for unnamed cuvées.
+         Example: "Dujac Fils et Pere, Clos de la Roche Grand Cru" →
+         effective_wine_name = "Clos de la Roche Grand Cru".
+      3. Else: (None, None) — caller should skip this row.
+
+    Returns (effective_wine_name, full_display_name). Either may be None.
+    """
+    wn = (wine_name or "").strip()
+    dn = (display_name or "").strip()
+
+    if wn:
+        return wn, (dn or None)
+
+    if dn:
+        # Split on first ", " to separate producer portion from wine portion
+        parts = dn.split(", ", 1)
+        if len(parts) == 2 and parts[1].strip():
+            return parts[1].strip(), dn
+        # display_name has no comma — degenerate case, treat whole string as identifier
+        return dn, dn
+
+    return None, None
 
 
 def normalize_color(raw: str | None) -> str | None:
@@ -331,12 +414,18 @@ def match_or_create_wine(
     wine_type: str, effervescence: str,
     dry_run: bool,
     existing_wines_cache: dict[str, str] | None = None,
+    display_name: str | None = None,
 ) -> tuple[str | None, str]:
     """Return (wine_id, action). action in {'matched', 'created', 'dry', 'error'}.
 
     If existing_wines_cache is provided (pre-fetched {name_normalized: wine_id}),
     uses it instead of querying. Successfully inserted wines are added to the cache
     so same-producer duplicates within a batch are de-duplicated too.
+
+    On INSERT, also stores `display_name` if provided (Liv-ex's canonical
+    combined wine identifier, e.g. "Dujac Fils et Pere, Clos de la Roche Grand Cru").
+    Not used for match/dedup — only rendering. On MATCH, caller is responsible
+    for backfilling display_name separately if needed.
 
     Does NOT commit — caller is responsible for committing the transaction.
     """
@@ -383,15 +472,15 @@ def match_or_create_wine(
                     INSERT INTO wines (
                         name, name_normalized, slug, producer_id,
                         country_id, region_id, appellation_id, color,
-                        wine_type, effervescence
+                        wine_type, effervescence, display_name
                     )
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                     RETURNING id
                     """,
                     (
                         wine_name, norm, attempt_slug, producer_id,
                         country_id, region_id, appellation_id, color,
-                        wine_type, effervescence,
+                        wine_type, effervescence, display_name,
                     ),
                 )
                 new_id = str(cur.fetchone()[0])
@@ -483,12 +572,20 @@ def run_sweep(
     progress_file: Path | None = None,
     apply_junk_filter: bool = False,
     resume_unlinked: bool = False,
+    recover_missing_wines: bool = False,
 ):
     """Run the LWIN long-tail promotion sweep."""
     print("=" * 70)
-    print(f"  LWIN Long-Tail Sweep" + (" — B6.2 resume-unlinked" if resume_unlinked else " — Session 13"))
+    if recover_missing_wines:
+        print(f"  LWIN Sweep — 2026-04-16 recover-missing-wines (display_name logic)")
+    elif resume_unlinked:
+        print(f"  LWIN Long-Tail Sweep — B6.2 resume-unlinked")
+    else:
+        print(f"  LWIN Long-Tail Sweep — Session 13")
     junk_label = "w/ junk filter" if apply_junk_filter else "all (inclusive)"
-    if resume_unlinked:
+    if recover_missing_wines:
+        print(f"  Scope: every source_lwin row with canonical_wine_id IS NULL ({junk_label})")
+    elif resume_unlinked:
         print(f"  Scope: every producer with unlinked source_lwin rows ({junk_label})")
     else:
         print(f"  US: {junk_label}  |  INTL: >= {intl_min_wines} wines")
@@ -502,7 +599,11 @@ def run_sweep(
     resolver.init_sync()
 
     us_junk = load_junk_set(apply=apply_junk_filter)
-    eligible = fetch_eligible_producers(conn, intl_min_wines, us_junk, resume_unlinked=resume_unlinked)
+    eligible = fetch_eligible_producers(
+        conn, intl_min_wines, us_junk,
+        resume_unlinked=resume_unlinked,
+        recover_missing_wines=recover_missing_wines,
+    )
 
     if sample_count:
         # Sample producers across several buckets for dry-run inspection
@@ -569,7 +670,9 @@ def run_sweep(
         producers_seen += 1
 
         # Fetch all LWIN rows for this producer
-        lwin_rows = fetch_lwin_rows_for_producer(conn, producer_name, country)
+        lwin_rows = fetch_lwin_rows_for_producer(
+            conn, producer_name, country, recover_missing_wines=recover_missing_wines
+        )
         if not lwin_rows:
             continue
 
@@ -621,8 +724,17 @@ def run_sweep(
         # Process each LWIN row for this producer
         for row in lwin_rows:
             stats["lwin_rows_processed"] += 1
-            wine_name = row.get("wine_name")
-            if not wine_name:
+
+            # Derive effective wine identifier from display_name (preferred) or
+            # wine_name (legacy). See 2026-04-16 DECISIONS entry + LWIN Guide
+            # V1.2 for the full rationale. Every row with either field
+            # populated represents a real bottled wine in the LWIN registry.
+            effective_wine_name, lwin_display_name = derive_wine_identifier(
+                row.get("display_name"), row.get("wine_name")
+            )
+            if not effective_wine_name:
+                # True residual: neither wine_name nor display_name populated
+                stats["wines_failed"] += 1
                 continue
 
             # LWIN's `sub_region` is the ACTUAL appellation name (Meursault, Chablis,
@@ -646,13 +758,14 @@ def run_sweep(
 
             color = normalize_color(row.get("colour"))
             wine_type, effervescence = classify_wine_type_effervescence(
-                wine_name, lwin_region_name, sub_region_name, tier, row.get("wine_type")
+                effective_wine_name, lwin_region_name, sub_region_name, tier, row.get("wine_type")
             )
 
             wine_id, wine_action = match_or_create_wine(
-                conn, producer_id, wine_name, country_id, effective_region_id,
+                conn, producer_id, effective_wine_name, country_id, effective_region_id,
                 appellation_id, color, wine_type, effervescence, dry_run,
                 existing_wines_cache=existing_wines_cache,
+                display_name=lwin_display_name,
             )
 
             if wine_action == "matched":
@@ -672,7 +785,7 @@ def run_sweep(
                 pending_source_lwin.append((row["lwin"], wine_id, producer_id))
 
             if sample_count and producers_seen <= 10:
-                _log(f"        -> {wine_name!r} [{wine_action}] "
+                _log(f"        -> {effective_wine_name!r} [{wine_action}] "
                      f"appel={sub_region_name or '-'}({'ok' if appellation_id else 'miss'}) "
                      f"color={color or '-'} type={wine_type}")
 
@@ -734,6 +847,10 @@ def main():
     parser.add_argument("--resume-unlinked", action="store_true",
                        help="B6.2 mode: process every producer with unlinked source_lwin rows, "
                             "ignoring the Session 13 US-all + INTL>=N filter. Idempotent / resume-safe.")
+    parser.add_argument("--recover-missing-wines", action="store_true",
+                       help="2026-04-16 mode: process every source_lwin row where canonical_wine_id "
+                            "IS NULL, using display_name as the wine identifier (producer prefix stripped). "
+                            "Picks up rows the old wine_name-only logic skipped. Idempotent.")
     args = parser.parse_args()
 
     if not any([args.analyze, args.dry_run, args.execute]):
@@ -743,7 +860,9 @@ def main():
         conn = get_conn()
         us_junk = load_junk_set(apply=args.apply_junk_filter)
         eligible = fetch_eligible_producers(
-            conn, args.intl_min_wines, us_junk, resume_unlinked=args.resume_unlinked
+            conn, args.intl_min_wines, us_junk,
+            resume_unlinked=args.resume_unlinked,
+            recover_missing_wines=args.recover_missing_wines,
         )
         total_wines = sum(p[2] for p in eligible)
         us_count = sum(1 for p in eligible if p[1] == "United States")
@@ -778,6 +897,7 @@ def main():
         progress_file=progress_file,
         apply_junk_filter=args.apply_junk_filter,
         resume_unlinked=args.resume_unlinked,
+        recover_missing_wines=args.recover_missing_wines,
     )
 
 

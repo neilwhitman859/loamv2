@@ -22,5 +22,13 @@
     "shape": "hygiene",
     "spent": 0.00,
     "notes": "User-prompted: (1) anything to revisit after Opus 4.7 1M Max upgrade? (2) is new LWIN data in same spot as existing before dedup? Q1: no plan reshape; 4 carry-forwards logged to DECISIONS.md (B6.5 review sizing upper-end, IDENTITY_RULES v1 publishable-quality, Sprint 8 bake-off judge includes 4.7, Sprint 8 L3 gate candidate); strategy-sync on open S2.9 business findings deferred to between Sprint 6 close + Sprint 7 open. Q2: audited 5 search-vector tables, found pre-existing INSERT-trigger bug on producers + wines (build_*_search_vector(NEW.id) self-query returned zero rows on BEFORE INSERT). B6.2's raw INSERTs exposed it at scale: 22,598 + 42,095 NULL search_vectors. Grapes / appellations / regions correctly inline. Migration 2026-04-16_fix_producer_wine_search_vector_trigger.sql: rewrote both functions inline (mirrors grape pattern) + backfilled NULLs via SELECT-side helper. Verified 0 NULLs, probe-INSERT populates vector, search_catalog smoke-tested. Noted for B6.3 (not fix pre-dedup): 7 NULL-country meta-entities + 5,372 zero-wine LWIN producers. Updated docs/SCHEMA.md §16 with search infra docs + patch note."
+  },
+  {
+    "id": "B6.2.2",
+    "date": "2026-04-16",
+    "title": "LWIN wine recovery via display_name + corpus-wide display_name backfill",
+    "shape": "hygiene",
+    "spent": 0.00,
+    "notes": "Multi-turn user push surfaced that 'zero-wine producers' were actually real wines. LWIN Guide V1.2 + source_lwin schema audit revealed a display_name column populated on 99.994% of rows (Liv-ex's authoritative combined-wine name, including Premier Cru/Grand Cru/lieu-dit info). Every LWIN-7 = real for-sale bottled product. Design: fix 26,878 skipped rows using display_name (producer prefix stripped) as wine.name; backfill wines.display_name on all LWIN-linked wines from source_lwin.display_name; REJECT rewriting wines.name on existing 162,458 (would churn slugs, invalidate caches, zero user-visible gain). Script: derive_wine_identifier() helper + --recover-missing-wines mode. Recovery run: 93.9 min, 26,616 wines created, 248 matched, 14 failed. Display_name backfill migration 2026-04-16_backfill_wines_display_name_from_lwin.sql: 100% wines.display_name coverage (all 224,316 canonical wines). Producers-with-wines: 27,842 → 33,214 (+5,372 zero-wine producers now have their village bottlings). 40 explainable residuals (pathological producer_name-includes-color + garbage wine_names + NULL-producer_name assortment cases). Meta-lesson: avoidable multi-turn back-and-forth — new CLAUDE.md Behavioral Instruction 'Check Assumptions with Web Search' logged to prevent recurrence. 3 DECISIONS.md entries."
   }
 ]
