@@ -1,13 +1,13 @@
 {
-  "name": "ai-bakeoff",
-  "status": "closed",
-  "sprint_number": 5,
-  "started_at": "2026-04-14",
-  "closed_at": "2026-04-15",
+  "name": "dedup",
+  "status": "active",
+  "sprint_number": 6,
+  "started_at": "2026-04-16",
   "previous": {
-    "name": "demo",
-    "closed_at": "2026-04-14",
-    "archive_path": "data/sprints/demo/"
+    "name": "ai-bakeoff",
+    "sprint_number": 5,
+    "closed_at": "2026-04-15",
+    "archive_path": "data/sprints/ai-bakeoff/"
   },
-  "notes": "Sprint 5 — AI Bakeoff CLOSED 2026-04-15. 29 models tested across 6 rounds, ~$55 spent. Current-prompt leader: openai/gpt-5.4-mini ($452/170K). Cheap alternative: gemini-3-flash-preview ($159). Budget option: deepseek-v3.2 ($93). Model selection NOT locked — revisit after prompt v2 + L3 fact-check gate land. Search grounding + field-split provisionally ruled out. Prompt caching via OR not viable (upstream bug + Opus 4K min). B5.8 strategy session opens Sprint 6 (producer dedup)."
+  "notes": "Sprint 6 — Producer dedup. User directive: dedup all 10,683 producers + build a reusable method for future imports. Throw the kitchen sink at it, use AI creatively. Sprint 7 = wine dedup. Sprint 8 = prompt v2 + L3 gate + re-enrichment. B5.8 opened the sprint (2026-04-16) with scope + research; detailed design deferred to B6.1 planning session. See data/sprints/dedup/plan.md + data/session_prompts/b6_1_planning.md."
 }

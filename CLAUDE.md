@@ -300,7 +300,25 @@ See `docs/HISTORY.md` for promotion results, session-by-session build history, a
 
 ## Current Focus
 
-**Sprint 5 (AI Bakeoff) — COMPLETE 2026-04-15.** Current-prompt leader: **openai/gpt-5.4-mini**.
+**Sprint 6 (Dedup — Producers) — OPENED 2026-04-16.** User directive: dedup all 10,683
+producers + build a reusable method for future staging imports. "Kitchen sink" approach —
+use AI in new and creative ways. Detailed design deferred to B6.1 planning session — see
+[`data/sprints/dedup/plan.md`](data/sprints/dedup/plan.md) for scope + research gathered in
+B5.8, and [`data/session_prompts/b6_1_planning.md`](data/session_prompts/b6_1_planning.md)
+for the 10 design questions B6.1 resolves.
+
+**Sprint 6/7/8 sequence (locked 2026-04-16):**
+- Sprint 6 (now): producer dedup
+- Sprint 7: wine dedup (~4,079 suspected + 30-35 dangerous false-positive patterns from Q3 audit)
+- Sprint 8: prompt v2 + L3 fact-check gate + re-enrichment + demo sharing
+
+Re-enrichment deliberately deferred until prompt + gate land, so we don't lock in the
+current-prompt ceiling. Enrichment-model selection remains OPEN — see
+[`bakeoff/scores/tournament_results.md`](bakeoff/scores/tournament_results.md).
+
+---
+
+**Sprint 5 (AI Bakeoff) — CLOSED 2026-04-15.** Current-prompt leader: **openai/gpt-5.4-mini**.
 **Production model selection is NOT locked.** The bake-off ranked 29 models under the *current*
 enrichment prompt across 6 rounds. gpt-5.4-mini topped the leaderboard (composite 3.960, zero
 banned-word violations, flat tier performance, $452/170K). But cheap models came close enough

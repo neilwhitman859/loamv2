@@ -192,11 +192,11 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">B5.7 DONE &middot; Sprint 5 closed &middot; Apr 15, 2026</div>
+  <div class="meta">B5.8 DONE &middot; Sprint 6 OPEN &middot; Apr 16, 2026</div>
 </div>
 
 <div class="now">
-  <strong>Sprint 5 CLOSED. Bake-off ranking is NOT locked.</strong> 29 models tested across 6 rounds. Current-prompt leader: <strong>openai/gpt-5.4-mini</strong> (composite 3.960, $452/170K). Cheap alternative: gemini-3-flash-preview (3.67, $159/170K). Budget: deepseek-v3.2 (3.39, $93/170K). Sonnet 4.6 baseline eliminated at R2. Takeaway: cheaper models can do the work; prompt is the bigger lever. Search grounding + field-split provisionally ruled out. Prompt caching via OR tested, not viable (upstream bug + 4K-token Opus min). Total Sprint 5 spend: ~$55. Next: B5.8 strategy session &#8594; Sprint 6 (producer dedup).
+  <strong>Sprint 6 OPENED: Producer dedup.</strong> User directive &mdash; dedup all 10,683 producers + build a reusable method for future imports. "Kitchen sink" &mdash; use AI in new and creative ways. Detailed design deferred to B6.1 planning session (10 open questions in session prompt). Sprint sequence locked: S6 producer dedup &#8594; S7 wine dedup &#8594; S8 prompt v2 + L3 gate + re-enrichment. Re-enrichment deferred so we don't lock in current-prompt ceiling. Sprint 5 closed at ~$55. Next: open B6.1 in a fresh session using <code>data/session_prompts/b6_1_planning.md</code>.
 </div>
 
 <!-- ROADMAP -->
@@ -207,37 +207,39 @@
   <li><span class="marker done-marker">&#10003;</span> Fix <span class="detail">&mdash; 158 fixed, 101 deferred, $0</span></li>
   <li><span class="marker done-marker">&#10003;</span> Demo <span class="detail">&mdash; 515 wines, 14 producers, $37.44</span></li>
   <li><span class="marker done-marker">&#10003;</span> AI Bakeoff <span class="detail">&mdash; current-prompt leader gpt-5.4-mini, 29 models tested, ~$55</span></li>
-  <li><span class="marker current-marker">&#9654;</span> <span class="current">Sprint 6: Producer dedup</span> <span class="detail">&mdash; ~4,079 suspected dupes (rule-based vs LLM-assisted; B5.8 strategy next)</span></li>
-  <li><span class="marker todo-marker">&#9675;</span> Later: prompt v2 + L3 fact-check gate <span class="detail">&mdash; re-enrichment decisions depend on these</span></li>
+  <li><span class="marker current-marker">&#9654;</span> <span class="current">Sprint 6: Producer dedup</span> <span class="detail">&mdash; 10,683 producers, kitchen-sink AI approach, B6.1 plans it</span></li>
+  <li><span class="marker todo-marker">&#9675;</span> Sprint 7: Wine dedup <span class="detail">&mdash; ~4,079 suspected, 30-35 dangerous false-positive patterns</span></li>
+  <li><span class="marker todo-marker">&#9675;</span> Sprint 8: Prompt v2 + L3 gate + re-enrichment + share</li>
 </ul>
 
-<!-- SPRINT 5 PROGRESS -->
-<div class="section-label">Sprint 5 &mdash; AI Bakeoff</div>
+<!-- SPRINT 6 PROGRESS -->
+<div class="section-label">Sprint 6 &mdash; Dedup (Producers)</div>
 <div class="quality-grid">
   <div class="quality-item">
     <div class="q-label">Blocks</div>
     <ul class="gate">
-      <li><span class="g-yes">&#10003;</span> B5.1 Bake-off design</li>
-      <li><span class="g-yes">&#10003;</span> B5.2 Build test data</li>
-      <li><span class="g-yes">&#10003;</span> B5.3 Task 1 (dedup)</li>
-      <li><span class="g-yes">&#10003;</span> B5.4 Task 2 (extraction)</li>
-      <li><span class="g-yes">&#10003;</span> B5.5 Task 3 (prose run)</li>
-      <li><span class="g-yes">&#10003;</span> B5.6 Task 3 (judge + tournament)</li>
-      <li><span class="g-yes">&#10003;</span> B5.7 Final report</li>
+      <li><span class="g-yes">&#10003;</span> B5.8 Close S5 / open S6</li>
+      <li><span class="g-no">&#9675;</span> B6.1 Planning &amp; design</li>
+      <li><span class="g-no">&#9675;</span> B6.2+ Execution (TBD)</li>
     </ul>
   </div>
   <div class="quality-item">
     <div class="q-label">Sprint vitals</div>
     <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
-      <tr><td style="color:var(--muted);">Budget spent</td><td style="text-align:right">~$55 / ~$25 (over, authorized)</td></tr>
-      <tr><td style="color:var(--muted);">Models tested</td><td style="text-align:right">29 across 6 rounds</td></tr>
-      <tr><td style="color:var(--muted);">Current-prompt leader</td><td style="text-align:right">gpt-5.4-mini (3.96)</td></tr>
-      <tr><td style="color:var(--muted);">Cheap alternative</td><td style="text-align:right">gemini-3-flash ($159)</td></tr>
-      <tr><td style="color:var(--muted);">Budget option</td><td style="text-align:right">deepseek-v3.2 ($93)</td></tr>
-      <tr><td style="color:var(--muted);">Model selection</td><td style="text-align:right">NOT locked</td></tr>
-      <tr><td style="color:var(--muted);">Block</td><td style="text-align:right">Sprint 5 CLOSED</td></tr>
+      <tr><td style="color:var(--muted);">Budget</td><td style="text-align:right">TBD in B6.1</td></tr>
+      <tr><td style="color:var(--muted);">Producers</td><td style="text-align:right">10,683 total</td></tr>
+      <tr><td style="color:var(--muted);">Exact-name dupes</td><td style="text-align:right">67 groups</td></tr>
+      <tr><td style="color:var(--muted);">Approach</td><td style="text-align:right">Kitchen sink + AI</td></tr>
+      <tr><td style="color:var(--muted);">Session prompt</td><td style="text-align:right">b6_1_planning.md</td></tr>
+      <tr><td style="color:var(--muted);">Block</td><td style="text-align:right">pre-B6.1</td></tr>
     </table>
   </div>
+</div>
+
+<!-- SPRINT 5 (closed, collapsed) -->
+<div class="section-label">Sprint 5 &mdash; AI Bakeoff (CLOSED)</div>
+<div style="color:var(--muted); font-size:12px; padding: 4px 0 8px;">
+  B5.1&ndash;B5.8 all done. 29 models tested, 6 rounds, ~$55. Current-prompt leader: gpt-5.4-mini ($452/170K). Model selection NOT locked. See <code>bakeoff/scores/tournament_results.md</code>.
 </div>
 
 <!-- QUALITY -->
@@ -265,21 +267,16 @@
 </ul>
 
 <!-- NEXT UP -->
-<div class="section-label">Next Up &mdash; Sprint 5 (AI Bakeoff)</div>
+<div class="section-label">Next Up &mdash; Sprint 6 (Dedup)</div>
 <ul class="next-list">
-  <li><strong>B5.1</strong> &mdash; <s>Design bake-off</s> DONE</li>
-  <li><strong>B5.2</strong> &mdash; <s>Build test data</s> DONE &mdash; 200 pairs, 50 pages, 30 contexts</li>
-  <li><strong>B5.3</strong> &mdash; <s>Run + score Task 1 (dedup)</s> DONE &mdash; Sonnet 94.5%, Haiku 93.5%, 30 GT fixes</li>
-  <li><strong>B5.4</strong> &mdash; <s>Run + score Task 2 (extraction)</s> DONE &mdash; 17 models &times; 50 pages</li>
-  <li><strong>B5.5</strong> &mdash; <s>Run Task 3 (prose)</s> DONE &mdash; 21 models &times; 30 wines, 0 errors, $11.86</li>
-  <li><strong>B5.6</strong> &mdash; <s>Tournament (R1-R6, Opus-judged)</s> DONE &mdash; 29 models, gpt-5.4-mini leader under current prompt, ~$40 judge spend</li>
-  <li><strong>B5.7</strong> &mdash; <s>Sprint wrap-up</s> DONE &mdash; R4-R6 tabulated, prompt caching tested (not viable via OR), ~$0.82</li>
-  <li><strong>B5.8</strong> &mdash; Strategy session &rarr; Sprint 6 scope (dedup), prompt v2 + L3 gate plan for post-Sprint-6</li>
+  <li><strong>B5.8</strong> &mdash; <s>Close S5 / open S6</s> DONE &mdash; Sprint 6 scope written, B6.1 session prompt prepared</li>
+  <li><strong>B6.1</strong> &mdash; Planning &amp; design session. Resolve 10 open design questions (signal fusion, blocking, embeddings, LLM ladder, web grounding, validation gold, human-in-the-loop gate, parent/child, reversibility, reusable-pipeline scope). See <code>data/session_prompts/b6_1_planning.md</code>.</li>
+  <li><strong>B6.2+</strong> &mdash; Execution. Phases depend on B6.1 plan.</li>
 </ul>
-<div class="section-label">Sprint 6 (next, scoped in B5.8)</div>
+<div class="section-label">Sprint 7/8 (after dedup)</div>
 <ul class="next-list" style="color:var(--muted);">
-  <li><strong>Producer dedup</strong> &mdash; ~4,079 suspected duplicates. Model TBD (separate decision from enrichment).</li>
-  <li style="color:var(--muted);"><em>Data fill, re-enrichment, and sharing are deferred to later sprints — re-enrichment gated on prompt v2 + L3 fact-check gate so we don't bake in current-prompt ceiling.</em></li>
+  <li><strong>Sprint 7</strong> &mdash; Wine dedup (~4,079 suspected + 30-35 dangerous false-positive patterns from Q3 audit)</li>
+  <li><strong>Sprint 8</strong> &mdash; Prompt v2 + L3 fact-check gate + re-enrichment + demo sharing</li>
 </ul>
 
 <!-- KEY NUMBERS -->
