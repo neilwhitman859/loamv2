@@ -1,10 +1,40 @@
 # B6.3 — Schema + IDENTITY_RULES Section 11 + Blocking Dry-Run + L1 Haiku
 
 You are opening B6.3 of Sprint 6 (Producer Dedup). B6.1 locked the plan; B6.2
-completed the LWIN long-tail import. The producers table now holds **33,281
-rows (33,225 active)** up from 10,683 — the complete dedup universe.
+completed the LWIN long-tail import plus a small hygiene pass. The producers
+table now holds **33,281 rows (33,225 active)** up from 10,683 — the
+complete dedup universe.
 
 Full plan: `data/sprints/dedup/plan.md`. Journal: `data/sprints/dedup/journal.md`.
+
+## Pre-B6.3 state you should be aware of (done in B6.2 closeout, not your job)
+
+1. **search_vector is clean on all 5 searchable tables.** A pre-existing
+   trigger bug (`update_producer_search_vector` + `update_wine_search_vector`
+   self-queried NEW.id on BEFORE INSERT and got nothing) was patched +
+   backfilled in the 2026-04-16_fix_producer_wine_search_vector_trigger
+   migration. All 22,598 new producers + 42,095 new wines now have populated
+   tsvectors. See `docs/SCHEMA.md` §16 Search Infrastructure for the patch
+   detail. You can trust FTS blocking strategies.
+
+2. **Known data-quality tails to watch in blocking (not fix pre-dedup):**
+   - 7 new producers have NULL country_id — 3 are LWIN meta-entities that
+     shouldn't be producers (`Sotheby's`, `LVMH`, `Cooper's Hawk & Boisset`)
+     and 4 are ambiguous partnership strings (`Penfolds & Domaine de la
+     Chapelle`, etc.). Flag these for user review when they surface; the
+     meta-entities likely soft-delete rather than merge.
+   - 5,372 new producers (23.8% of new cohort) have zero wines — their
+     source_lwin rows all had NULL wine_name. They exist as canonical
+     identity rows for LWIN coverage. Treat normally in dedup, just expect
+     weaker signal (no wine-catalog overlap strategy will fire on them).
+   - 573 new producers have suffix-disambiguated slugs (normal retry
+     behavior). No action needed.
+
+3. **Model note:** we're on Opus 4.7 1M Max now (upgraded mid-B6.2). Four
+   carry-forwards logged to DECISIONS.md on 2026-04-16 — most relevant to
+   you: IDENTITY_RULES Section 11 v1 should aim for publishable-quality
+   first-pass (but still iterate with user, do not skip v1→v2). B6.5
+   review-size biases toward upper end of 50-150 range.
 
 ---
 

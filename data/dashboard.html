@@ -192,11 +192,11 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">B6.2 DONE &middot; Sprint 6 ACTIVE &middot; Apr 16, 2026</div>
+  <div class="meta">B6.2.1 DONE &middot; Sprint 6 ACTIVE &middot; Apr 16, 2026</div>
 </div>
 
 <div class="now">
-  <strong>B6.2 LWIN import DONE (2026-04-16):</strong> long-tail sweep + backfill closeout imported 22,598 new LWIN producers (producers 10,683 &rarr; 33,281 / 33,225 active). 0 distinct LWIN producer_names remain unlinked; 26 residual rows (all NULL producer_name, pre-existing LWIN garbage) well under the &lt;100 residual threshold. 157,346 canonical wines carry an LWIN external_id. Runtime 2h 51m, $0. <strong>Next: B6.3</strong> &mdash; schema migration (producer_dedup_pairs extensions + producer_merge_history) + IDENTITY_RULES.md Section 11 (producer identity) + blocking dry-run (union of 9 strategies) + L1 Haiku batched 10/call on the full definitive list. Projected L1 spend $60-130. Plan: <code>data/sprints/dedup/plan.md</code>. Prompt: <code>data/session_prompts/b6_3_schema_and_l1.md</code>.
+  <strong>B6.2 + B6.2.1 DONE (2026-04-16, $0):</strong> LWIN long-tail sweep + backfill closeout imported 22,598 new LWIN producers (10,683 &rarr; 33,281 / 33,225 active). Plus pre-B6.3 hygiene pass: patched pre-existing BEFORE-INSERT trigger bug on producers + wines `search_vector` (22,598 + 42,095 rows backfilled), logged 4 Opus-4.7-upgrade carry-forwards to DECISIONS.md, noted 7 NULL-country meta-entities + 5,372 zero-wine LWIN producers for B6.3 blocking to surface. <strong>Next: B6.3</strong> &mdash; schema migration (producer_dedup_pairs extensions + producer_merge_history) + IDENTITY_RULES.md Section 11 (producer identity) + blocking dry-run (union of 9 strategies) + L1 Haiku batched 10/call on the full definitive list. Projected L1 spend $60-130. Plan: <code>data/sprints/dedup/plan.md</code>. Prompt: <code>data/session_prompts/b6_3_schema_and_l1.md</code>.
 </div>
 
 <!-- ROADMAP -->
@@ -222,6 +222,7 @@
       <li><span class="g-yes">&#10003;</span> B5.8 Close S5 / open S6</li>
       <li><span class="g-yes">&#10003;</span> B6.1 Planning &amp; design</li>
       <li><span class="g-yes">&#10003;</span> B6.2 LWIN producer import (+22,598 producers)</li>
+      <li><span class="g-yes">&#10003;</span> B6.2.1 Hygiene (search_vector trigger + 4.7 review)</li>
       <li><span class="g-no">&#9675;</span> B6.3 Schema + IDENTITY_RULES + blocking + L1</li>
       <li><span class="g-no">&#9675;</span> B6.4 L2 + L3 + anchor set + ablation</li>
       <li><span class="g-no">&#9675;</span> B6.5 L4 Opus audit + toughest-pairs review</li>

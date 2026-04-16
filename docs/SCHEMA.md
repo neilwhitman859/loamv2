@@ -706,11 +706,35 @@ Single polymorphic table. id UUID PK, entity_type (appellation/region/country/pr
 
 ~~wine_candidates~~ **DROPPED** (2026-03-16). All wines live in `wines` table with `data_grade` tracking completeness. No separate staging area.
 
+### Search infrastructure
+
+`search_vector` tsvector columns + GIN indexes on `wines`, `producers`, `appellations`, `regions`, `grapes`. Trigram indexes on searchable name columns. Auto-populated via BEFORE INSERT/UPDATE triggers.
+
+**Trigger functions:**
+
+- `update_producer_search_vector()` — computes inline from `NEW.name` (A) + region.name (B) + country.name (B). Runs the region/country lookups in plpgsql locals so BEFORE INSERT works.
+- `update_wine_search_vector()` — computes inline from `NEW.name` (A) + producer.name (B) + appellation.name (C) + region.name (C) + country.name (D) + wine_grapes grape list (C). The grape subquery returns NULL on INSERT (wine_grapes rows don't exist yet), populated on subsequent UPDATE.
+- `update_simple_search_vector()` — used by `appellations` + `regions`. Weight A on `NEW.name`.
+- `update_grape_search_vector()` — inline `NEW.display_name` (A) + `NEW.name` (B).
+
+**Helper functions (for ad-hoc recomputes of an existing row):**
+- `build_producer_search_vector(uuid)` / `build_wine_search_vector(uuid)` — SELECT-side helpers that query the table by id. Useful for backfill; do NOT call from a BEFORE INSERT trigger (row doesn't exist yet in the heap).
+
+**2026-04-16 fix (B6.2 closeout):** the producer + wine trigger functions used to call `build_*_search_vector(NEW.id)`, which self-queried the target table and returned zero rows on BEFORE INSERT, leaving `search_vector = NULL` on every inserted row. Bug lay dormant because prior pipelines happened to UPDATE inserted rows post-insert. B6.2's bulk insert of 22,598 producers + 42,095 wines without a follow-up UPDATE exposed the bug at scale — all got NULL search_vectors. Migration `2026-04-16_fix_producer_wine_search_vector_trigger.sql` rewrites both functions to compute inline and backfills the NULLs via the SELECT-side helper. Grapes / appellations / regions unaffected — always computed inline.
+
+**RPC functions for search:**
+- `search_catalog(query text, result_limit int, entity_types text[])` — unified cross-entity search bar.
+- `search_wines(query text, filter_*, sort_by text, limit int, offset int)` — filtered wine browse.
+Both granted to anon + authenticated.
+
 ### producer_dedup_staging
 id SERIAL PK, producer_name, country, norm, wine_count. Currently empty — canonical dedup staging.
 
 ### producer_dedup_pairs
-id SERIAL PK, name_a, name_b, country, similarity, wines_a, wines_b, verdict, verdict_source. Currently empty — canonical dedup pairs.
+id SERIAL PK, name_a, name_b, country, similarity, wines_a, wines_b, verdict, verdict_source. Currently empty — canonical dedup pairs. **Sprint 6 B6.3 extends** with producer_id_a/_b uuid, method_name, confidence, reasoning, cost_cents, signals/ttb_evidence/web_evidence jsonb, flag_reason.
+
+### producer_merge_history (planned B6.3)
+Full JSON snapshot of every merged pair + repointed-rows audit for programmatic rollback. Columns: `id uuid pk`, `merged_at timestamptz`, `survivor_id uuid`, `absorbed_id uuid`, `absorbed_snapshot jsonb`, `repointed_counts jsonb`, `method_name text`, `reasoning text`, `reviewed_by text`. Not created yet — lands with B6.3 schema migration.
 
 ---
 

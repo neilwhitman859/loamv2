@@ -14,5 +14,13 @@
     "shape": "execution",
     "spent": 0.00,
     "notes": "Extended pipeline/promote/lwin_long_tail.py with --resume-unlinked flag + NULL-country handling. Ran full long-tail import: 2h 51m, 24,762 producers processed (2,164 matched / 22,598 created / 0 failed), 42,566 wines + external_ids upserted, 42,566 source_lwin rows updated. Post-run discovered 26,878 rows left unlinked because wine_name was NULL/empty (main script skips those before updating source_lwin); built pipeline/promote/lwin_backfill_producer_id.py as closeout helper, backfilled all 26,878 rows via (name_normalized, country_id) lookup. Final: producers 10,683 → 33,281 (33,225 active), 0 unlinked LWIN producer_names, 26 NULL-producer_name residuals (pre-existing LWIN garbage, cannot be linked). Acceptance gate passed cleanly."
+  },
+  {
+    "id": "B6.2.1",
+    "date": "2026-04-16",
+    "title": "Pre-B6.3 hygiene: search_vector trigger fix + Opus 4.7 review",
+    "shape": "hygiene",
+    "spent": 0.00,
+    "notes": "User-prompted: (1) anything to revisit after Opus 4.7 1M Max upgrade? (2) is new LWIN data in same spot as existing before dedup? Q1: no plan reshape; 4 carry-forwards logged to DECISIONS.md (B6.5 review sizing upper-end, IDENTITY_RULES v1 publishable-quality, Sprint 8 bake-off judge includes 4.7, Sprint 8 L3 gate candidate); strategy-sync on open S2.9 business findings deferred to between Sprint 6 close + Sprint 7 open. Q2: audited 5 search-vector tables, found pre-existing INSERT-trigger bug on producers + wines (build_*_search_vector(NEW.id) self-query returned zero rows on BEFORE INSERT). B6.2's raw INSERTs exposed it at scale: 22,598 + 42,095 NULL search_vectors. Grapes / appellations / regions correctly inline. Migration 2026-04-16_fix_producer_wine_search_vector_trigger.sql: rewrote both functions inline (mirrors grape pattern) + backfilled NULLs via SELECT-side helper. Verified 0 NULLs, probe-INSERT populates vector, search_catalog smoke-tested. Noted for B6.3 (not fix pre-dedup): 7 NULL-country meta-entities + 5,372 zero-wine LWIN producers. Updated docs/SCHEMA.md §16 with search infra docs + patch note."
   }
 ]

@@ -183,3 +183,21 @@ blocking dry-run + L1 Haiku batched on all definitive-list pairs.)
   canonical_producer_id empty, built
   `pipeline/promote/lwin_backfill_producer_id.py` as closeout, backfilled
   26,878 rows. Dedup universe ready for B6.3.
+
+- **B6.2.1 — Pre-B6.3 hygiene (search_vector trigger fix + Opus 4.7 review).**
+  Triggered by user asking "is new LWIN data in the same spot as existing data
+  before dedup?" + "revisit anything with 4.7 upgrade?" Audited 5 search-vector
+  tables; found pre-existing INSERT-trigger bug on producers + wines (functions
+  self-queried NEW.id, got zero rows on BEFORE INSERT, NULLed the vector).
+  22,598 + 42,095 B6.2 rows had NULL search_vectors; pre-B6.2 rows didn't
+  because prior pipelines UPDATEd after INSERT. Grapes / appellations /
+  regions triggers already correct. Migration
+  `supabase/migrations/2026-04-16_fix_producer_wine_search_vector_trigger.sql`
+  rewrites both trigger functions to compute inline + backfills. Applied;
+  verified 0 NULLs across all 5 tables; probe-insert + search_catalog smoke
+  test pass. Also noted for B6.3 to handle (not fix pre-dedup): 7 NULL-country
+  meta-entities (Sotheby's, LVMH, partnerships) to flag/soft-delete in
+  review; 5,372 zero-wine LWIN producers (24% of new cohort) to treat
+  normally with weak signal. Logged 2 DECISIONS.md entries (Opus 4.7
+  carry-forwards, trigger-bug root cause). Updated `docs/SCHEMA.md` §16 with
+  search infrastructure documentation including 2026-04-16 patch note. $0.
