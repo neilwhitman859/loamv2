@@ -1743,3 +1743,75 @@ The bakeoff_brief.md framed Tasks 1 and 2 as secondary to Task 3 ("tested with l
 ### 2026-04-14: bakeoff_brief.md is an archived artifact
 
 The external research brief provided model lists, OpenRouter slugs, and operational context. These facts have been incorporated into DESIGN.md and the build scripts. The brief's editorial framing (Task 3 is "the main event," Tasks 1/2 get "less ceremony") is superseded by the equal-rigor decision above. File moved to bakeoff/reference/.
+
+### 2026-04-16: Sprint 6 quality bar = final-state correctness, not per-method accuracy
+
+User initially framed "close to 100%" as the Sprint 6 target. After dialog in B6.1, this is operationalized as **final-state correctness of the producers table**, not as any single AI method's accuracy on a gold set. The bar is achieved via (a) multi-method AI agreement for auto-apply (≈0 FPR on applied merges), (b) curated user review of 50-150 "toughest pairs" with Claude recommendations, (c) UNCERTAIN pairs flagged as known-open rather than auto-merged, (d) user sign-off on execution. Per-method 99% on a 203-pair gold was considered and rejected as the gate — gold set too small for tight CIs, and ensembles can deliver near-zero FPR without any single model clearing 99%.
+
+### 2026-04-16: Sprint 6 = evaluation + execution in one sprint, not two
+
+Considered splitting producer dedup into Sprint 6 (evaluate) + Sprint 6b/7 (execute). Decided against: Sprint 6 runs through execution once the quality gate clears in-block, to avoid re-planning friction and allow B6.6+ iteration to flow naturally into apply. Failure mode is pre-negotiated as "iterate in-sprint (B6.6+) until gate met" — no hard block cap.
+
+### 2026-04-16: Producer identity = brand-on-label rule
+
+A producer is the entity named on the bottle as the wine-making party. One producer = one brand identity on a label. Sub-brands under a corporate parent each get their own producer row; corporate parent is a separate row with parent_producer_id set on its children. Private-label brands (Charles Shaw, Kirkland Signature) are producers; actual vintner captured per-wine in `wines.metadata.actual_vintner` when it varies. Retailers (Trader Joe's, Costco) are NEVER producers. Second wines are wines under their producer, not separate producers. Négociant + estate of same name = PARENT-CHILD. Dissolved+reopened under same brand = one continuous producer. Renames = MERGE with old name in producer_aliases. This rule gets written verbatim into `docs/IDENTITY_RULES.md` as a B6.2 prereq and embedded in every LLM prompt.
+
+### 2026-04-16: Sprint 6 uses tiered AI ladder, not single-model approach
+
+All pairs get AI attention but rigor scales with difficulty. L1 deterministic + cheap LLM + TTB signals on all pairs in definitive list → L2 Haiku on uncertain → L3 web-grounded Sonnet on tough → L4 Opus-inline-1M cross-pair audit. User requested "AI on every pair" originally as web-grounded on all, but the cost math (~$500-1000 web-grounded on 50K-100K pairs) pushed the design to reserve web-grounded for the rigor tier. Budget projection drops from $1,000-1,500 to $65-150, ceiling $200. Rationale: cheap LLM reliably classifies ~80% of pairs (clear-MERGE and clear-SKIP), Haiku covers most of the remaining 20%, web-grounded Sonnet earns its cost on ambiguous cases where real-world verification matters.
+
+### 2026-04-16: TTB permittee_basic_permit is the primary US producer dedup signal
+
+`source_ttb_colas.permittee_basic_permit` is a legally-unique federal identifier per US wine-producing entity. Two canonical producers linked to the same permittee are almost certainly the same operational entity. Sprint 6 pre-computes a TTB fingerprint (permittee_basic_permit, permittee_name, address, brand_name list, COLA count) per producer, uses it as (a) blocking strategy #6 in candidate generation and (b) prompt-context evidence for the LLM ladder. Bake-off lesson (Sprint 5) explicitly ported: richer prompt context lifts precision without new model spend. TTB coverage is US-only; non-US producers fall back to web-grounded + string signals + LWIN.
+
+### 2026-04-16: Use existing producers.parent_producer_id for S6; defer producer_relationships table
+
+Sprint 6 uses the existing (currently unused) `producers.parent_producer_id` column for all parent-child relationships. Dedicated `producer_relationships` table supporting multiple relationship types (subsidiary, sister, successor, co-venture) deferred until post-Sprint-6. Decision based on: the one-parent case covers every example we could name (LVMH→Krug, Gallo→Barefoot, Torres ES→Torres Chile, Louis Jadot→Domaine Louis Jadot); richer relationship modeling is premature until Sprint 6 surfaces cases needing it. Sprint 6 emits PARENT_CHILD as a distinct verdict so future data has the distribution visible.
+
+### 2026-04-16: S4.1 merges (Ridge, López de Heredia, CIRQ) are NOT trusted gold
+
+User directive: "i don't want to assume that S4.1 is right." Sprint 6 re-verifies those three historical merges as part of the B6.2 anchor set using the pipeline's own signals, rather than assuming they were correct. If re-verification disagrees with S4.1, we learn that in B6.2 and reverse if needed. Anchor set composition: 3 S4.1 re-verification + 14 demo producers + 15 stress-test cases + 20 stratified random = ~50 hand-labeled pairs.
+
+### 2026-04-16: Human review = curated toughest pairs with Claude recommendations, target 50-150 pairs
+
+Shifted from "random review batches of 20" to "Claude curates the toughest pairs (AI disagreements, mid-confidence, policy edge cases, high-wine-count pairs), presents each with evidence + recommendation, user signs off." User's rationale: on obscure producers they'd just web-search anyway, which AI can do — so reserve human judgment for pattern-level calls rather than per-pair verification. Target load 50-150 pairs, up from an earlier 30-50 because user prefers reviewing a few extra over overlooking. User sign-off remains required for all non-auto-apply merges.
+
+### 2026-04-16: Sprint 6 = LWIN import first (B6.2), THEN dedup (B6.3+)
+
+B6.1 discovered 24,762 unlinked LWIN producers in source_lwin staging (~69,444 wine rows). Prior `lwin_long_tail.py` (Session 13) only covered US producers + international with ≥8 LWIN wines — the long tail (international <8 wines) was deliberately skipped. Running Sprint 6 dedup on an incomplete producer universe means we'd have to re-dedup after a later LWIN import. Instead, B6.2 is dedicated to closing the LWIN gap before dedup starts. User decision: "let's make B6.2 only LWIN" + "same as prior method that way the dedup has a similar starting point." Expected outcome: producers table grows from 10,683 to ~25-35K rows; Sprint 6 dedup runs on the complete universe.
+
+### 2026-04-16: LWIN import uses simple matching (same as prior method), not AI-ladder matching
+
+Considered using the full L1/L2/L3 tiered ladder for LWIN-to-canonical matching during B6.2 import. Rejected per user: "same as prior method that way the dedup has a similar starting point." The simple rule (exact normalized name + same country → link, else create) is fast, deterministic, no AI cost, and any dupes it creates get caught by Sprint 6's dedup cascade in B6.3-B6.6 anyway. Paying for AI matching at import AND at dedup is paying twice. Saves $50-100 and keeps the starting point predictable.
+
+### 2026-04-16: Claude models direct via Anthropic SDK, not OpenRouter
+
+User preference: for any Claude model call in Sprint 6 pipeline code, use `anthropic.Anthropic()` SDK directly. Non-Claude models (if any) stay on OpenRouter for cross-provider access. Key unlock: Anthropic direct supports reliable 1-hour prompt caching TTL. OpenRouter's caching is buggy for Anthropic (Sprint 5 B5.7 confirmed: open bug in OpenRouterTeam/ai-sdk-provider#35 preventing cache_control from working). For Sprint 6 dedup, the shared prefix (IDENTITY_RULES Section 11 + schema + few-shot examples ~2K tokens) cached with TTL saves ~85% on input cost after first call in a 1-hour window. Pipeline scripts use `pipeline/lib/models.py` constants; Anthropic SDK wraps Haiku/Sonnet/Opus calls.
+
+### 2026-04-16: L3 rigor tier uses Anthropic native web_search tool, not OpenRouter :online
+
+Considered OpenRouter `:online` suffix (~$0.004/search, supports any model) vs Anthropic native `web_search_20250305` tool ($0.01/search, Claude-only). Chose Anthropic native for L3 despite higher per-search cost: (a) user preference for direct Anthropic, (b) more reliable than OpenRouter's general-purpose search wrapper, (c) better first-party integration with Sonnet tool-use, (d) Sprint 5 R6 found `:online` didn't help prose (though prose ≠ dedup). For 500-1.5K L3 pairs × $0.01 = $5-15 web-search cost — affordable within $250 ceiling.
+
+### 2026-04-16: L1 + L2 use batched prompts (10 and 5 pairs/call), L3 does not batch
+
+Lever 3 cost-reduction: batch Haiku prompts at L1 (10 pairs per API call) and L2 (5 pairs per call, smaller because richer prompt per pair). Each batched call emits a JSON array of verdicts. Amortizes per-call overhead (system prompt, cached prefix). L3 Sonnet does NOT batch because each pair needs its own web search. Expected savings $20-35. Quality: neutral — same model, same content, just grouped per call. Cap: 10 pairs at L1, 5 at L2 (larger batches confuse the model).
+
+### 2026-04-16: Lever 4 — run blocking first, see actuals before committing L1 spend
+
+B6.3's first step runs only the 9 blocking strategies as SQL (no LLM calls) and reports: total union size, per-strategy contribution + unique catches, anchor-set recall check, estimated L1 cost at measured pair count. Then user decides: if actual pair count is 80K → proceed (under budget). If 300K → tighten thresholds (trigram 0.3→0.35, embedding 0.5→0.6) and re-run before any L1 spend. Prevents surprise overruns. No quality impact — just cost predictability.
+
+### 2026-04-16: Auto-apply exact-name matches still needs L1 LLM verification
+
+Initially proposed (Lever 1) to skip LLM on pairs matching only Rule 1 (exact normalized name + same country) — save $15-35. User pushed back: there are real edge cases where same normalized name + same country ≠ same producer (two different "Château Bellevue" in Bordeaux, commune-overlap pattern). Keeping L1 Haiku on every pair (including exact matches) costs maybe $5-10 extra but catches the rare edge case. User: "wouldn't this lower quality?" — correct, it would. Lever 1 rejected.
+
+### 2026-04-16: L3 runs on all L2 MERGE/UNCERTAIN — no Opus pre-filter
+
+Initially proposed (Lever 2) to have Opus-inline-1M pre-filter L3's input queue, skipping pairs where L2 was already high-confidence. Would save $10-25 by cutting L3 volume from ~1K to ~200-400 pairs. User rejected: "these can be done through human review or we could find a more fitting method" + "the whole point of L3 is web-grounded verification as the rigor tier" — letting Opus decide which pairs "don't need it" undermines that design. L4 Opus-inline runs AFTER L3 as audit, not BEFORE as pre-filter.
+
+### 2026-04-16: Budget ceiling $250 — no further cost-optimization at quality expense
+
+Proposed multiple cost-reduction levers totaling ~$40-80 savings. User declined aggressive optimization: "just do the $250" + "I want to do it right the first time and be able to just move on." Lever 3 (batching) and Lever 4 (blocking-first) kept because they don't trade off quality. Levers 1 and 2 dropped because they do. Final budget ceiling $250, projected $100-220. Cost not the constraint; quality is.
+
+### 2026-04-16: Flag-for-later implementation = verdict 'FLAGGED' + open_questions.md pattern log
+
+During toughest-pairs review (B6.5), user can mark a pair as 'FLAGGED' with a `flag_reason` text note in `producer_dedup_pairs`. Those pairs: (a) excluded from auto-apply, (b) stay visible as "review deferred" state, (c) re-surface in B6.7+ iteration or a future sprint. In parallel, pattern-level observations go to `data/sprints/dedup/open_questions.md` for "we don't have a good rule for joint ventures — a future sprint should decide." Captures the individual pair punt AND the systemic learning. Approaches A (FLAGGED verdict) + C (open_questions.md pattern log) both on; approaches B (separate deferred table) rejected as overkill.

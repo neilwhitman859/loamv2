@@ -164,7 +164,7 @@ constraints. **`ENRICHMENT_ENABLED=false` feature flag on `enrich-wine` stays OF
 through Sprint 3 into Sprint 5** until voice module + L3 fact-check gate + grape
 repair compound + AI-disclaimer UI all land.
 
-**Sprint sequence:** 1 (Build, done) → 2 (Audit, done) → 3 (Fix, done) → 4 (Demo, done) → 5 (AI Bakeoff, done) → **6 (next): producer dedup** → later: prompt v2 + L3 fact-check gate → later: re-enrichment + share. The bake-off ranked models under the *current* prompt; re-enrichment is deferred until prompt + gate work lands so we don't bake in the current-prompt ceiling.
+**Sprint sequence:** 1 (Build, done) → 2 (Audit, done) → 3 (Fix, done) → 4 (Demo, done) → 5 (AI Bakeoff, done) → **6 (active): LWIN import + producer dedup — B6.1 plan locked, LWIN-first (B6.2) then tiered AI ladder (L1 Haiku batched → L2 Haiku batched → L3 Sonnet+web_search → L4 Opus-inline), evaluation + execution same sprint, 50-150 user-reviewed toughest pairs** → Sprint 7: wine dedup → Sprint 8: prompt v2 + L3 fact-check gate + re-enrichment + share. The bake-off ranked models under the *current* prompt; re-enrichment is deferred until prompt + gate work lands so we don't bake in the current-prompt ceiling.
 Sprint 4 plan: [`data/sprints/demo/plan.md`](data/sprints/demo/plan.md). Sprint 5 plan: [`data/sprints/ai-bakeoff/plan.md`](data/sprints/ai-bakeoff/plan.md). Sprint 5 outcome: [`bakeoff/scores/tournament_results.md`](bakeoff/scores/tournament_results.md). See `data/dashboard.html` for live progress.
 
 **Always query the DB for live numbers.** Never rely on hardcoded counts in this file.
@@ -300,17 +300,96 @@ See `docs/HISTORY.md` for promotion results, session-by-session build history, a
 
 ## Current Focus
 
-**Sprint 6 (Dedup — Producers) — OPENED 2026-04-16.** User directive: dedup all 10,683
-producers + build a reusable method for future staging imports. "Kitchen sink" approach —
-use AI in new and creative ways. Detailed design deferred to B6.1 planning session — see
-[`data/sprints/dedup/plan.md`](data/sprints/dedup/plan.md) for scope + research gathered in
-B5.8, and [`data/session_prompts/b6_1_planning.md`](data/session_prompts/b6_1_planning.md)
-for the 10 design questions B6.1 resolves.
+**Sprint 6 (Producer Dedup) — B6.1 PLAN LOCKED 2026-04-16.** Plan covers
+**LWIN import + evaluation + execution in one sprint.** User quality bar =
+**final-state correctness ~100%** of producers table, achieved via unanimous
+multi-method auto-apply + 50-150 curated user-reviewed toughest pairs +
+UNCERTAIN flagged as known-open.
 
-**Sprint 6/7/8 sequence (locked 2026-04-16):**
-- Sprint 6 (now): producer dedup
-- Sprint 7: wine dedup (~4,079 suspected + 30-35 dangerous false-positive patterns from Q3 audit)
-- Sprint 8: prompt v2 + L3 fact-check gate + re-enrichment + demo sharing
+**LWIN-first:** B6.1 discovered 24,762 unlinked LWIN producers (69K wine
+rows) in staging. Prior `lwin_long_tail.py` (Session 13) only covered US +
+intl≥8 wines. **B6.2 completes the LWIN import** via simple matching
+(exact normalized name + country — same method as prior run) before dedup
+begins. Expected producers table growth: 10,683 → ~25-35K.
+
+**Tiered AI ladder (Claude models direct via Anthropic SDK, not OpenRouter):**
+
+- **L1:** Haiku 4.5 with cached prefix, **batched 10/call** — all pairs in definitive list (~100K-250K post-LWIN, $60-130)
+- **L2:** Haiku 4.5 rich prompt, **batched 5/call** — L1 uncertain (~10K-25K, $25-60)
+- **L3:** Sonnet 4.6 + **Anthropic native `web_search_20250305` tool** — L2 MERGE/UNCERTAIN (~500-1.5K, $15-35). Rigor tier.
+- **L4:** Opus-inline-1M cross-pair audit in-session (~100 pairs, ~$0)
+- **Review:** 50-150 toughest pairs curated for user with Claude's recommendation + context pack
+
+**Candidate-list generation — union of 9 blocking strategies** (lever 4:
+blocking only first, see actuals before committing L1 spend):
+
+1. Same country + exact normalized name
+2. Same country + trigram ≥ 0.3
+3. Same country + embedding cosine ≥ 0.5
+4. Same country + first-3-char + token overlap
+5. Shared external_id (LWIN_7, website host)
+6. **Shared TTB permittee_basic_permit** — biggest new signal, federally-unique US identity
+7. Cross-country with strong signal (shared LWIN or ≥5 matching wines)
+8. Wine-catalog overlap ≥ 30% shared named wines
+9. Producer-name substring containment
+
+**TTB primary US dedup signal:** `permittee_basic_permit` legally unique per
+entity. TTB fingerprint (permittee, address, brand_name list, COLA count)
+pre-computed per producer and injected verbatim into every LLM prompt for US
+pairs. Sprint 5 bake-off lesson ported: richer prompt context lifts precision.
+
+**Producer identity — brand-on-label rule.** MERGE = same brand identity on
+label. PARENT-CHILD = distinct brands with ownership. SKIP = unrelated. Edge
+cases resolved: renames → MERGE + alias; dissolved+reopened → same producer
+(continuous brand); private-labels (Charles Shaw / Kirkland) → producer with
+per-wine actual_vintner in wines.metadata; retailers (Trader Joe's, Costco)
+→ never producers; second wines → wines not producers; négociant + estate →
+PARENT-CHILD; accent variants → MERGE with survivor matching actual label form.
+
+**Key infrastructure:**
+- `docs/IDENTITY_RULES.md` — existing file (Session 2, wine identity) gets
+  new Section 11 (Producer Identity Rules) drafted in B6.3, user reviews
+  before L1 runs. Section 11 embedded verbatim in every LLM prompt.
+- Schema: extend `producer_dedup_pairs` with producer_id_a/_b, method_name,
+  confidence, reasoning, cost_cents, signals/ttb_evidence/web_evidence jsonb,
+  flag_reason. CREATE `producer_merge_history` for full JSON snapshot +
+  repointed-rows audit (programmatic rollback).
+- Parent-child via existing `producers.parent_producer_id` column. Dedicated
+  `producer_relationships` table deferred post-S6.
+- Module `pipeline/identity/producer_dedup.py` replaces stub; staging-import
+  promote scripts refactor to import from it in S7+.
+
+**Anchor set (~50 hand-labeled, built in B6.4):** S4.1 re-verification
+(3 pairs — NOT assumed correct); 14 demo producers; 15 stress-test cases
+(abbreviation, translation, parent-child, accent, private-label, rename,
+importer-prefix, retailer-as-producer, commune overlap); 20 stratified random.
+
+**Cost levers applied:** Lever 3 (batching at L1+L2) ON. Lever 4 (blocking
+first + see actuals) ON. Lever 1 (skip LLM on exact matches) OFF — commune
+overlap risk. Lever 2 (Opus pre-filter L3) OFF — undermines rigor tier.
+
+**Budget:** $250 ceiling (projected $100-220). Cost not the constraint; quality is.
+
+**7 quality gates:** IDENTITY_RULES review → schema migration on branch →
+blocking dry-run → TTB fingerprint spot-check → L1 pilot on 200 pairs →
+L2+L3 ablation + cache hit rate → merge execution dry-run on branch.
+
+**5 review upgrades:** prefetched context pack per pair; batched by pattern
+not random; decision log with notes; flag-for-later (FLAGGED verdict + open_questions.md pattern log); calibration exercise with user before B6.3.
+
+**2 safety nets:** unblocked spot-check (~$1, B6.4) + post-execution
+leftover scan ($5-10, B6.N).
+
+**Block cadence:** B6.2 LWIN import (~$0) → B6.3 schema + IDENTITY_RULES
+Section 11 + blocking dry-run + L1 batched ($60-130) → B6.4 L2 batched + L3
+web-grounded + anchor + ablation ($40-95) → B6.5 L4 Opus audit +
+toughest-pairs review ($0-10) → B6.6 execution ($0) → B6.7+ iterate if
+needed (reserve $30-60) → B6.N close.
+
+**Sprint sequencing:**
+- Sprint 6 (now): LWIN import + producer dedup (evaluation + execution)
+- Sprint 7 (later): wine dedup
+- Sprint 8 (later): prompt v2 + L3 fact-check gate + re-enrichment + demo sharing
 
 Re-enrichment deliberately deferred until prompt + gate land, so we don't lock in the
 current-prompt ceiling. Enrichment-model selection remains OPEN — see

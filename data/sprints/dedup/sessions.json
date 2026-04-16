@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": "B6.1",
+    "date": "2026-04-16",
+    "title": "Sprint 6 planning & design",
+    "shape": "planning",
+    "spent": 0.00,
+    "notes": "Multiple rounds of design dialog — 10 initial + 8 clarifying + 4 edge-case definition questions. Plan reshaped 3x. Final shape: B6.2 LWIN import → B6.3 schema+rules+L1 → B6.4 L2+L3+anchor+ablation → B6.5 L4+review → B6.6 execution → B6.7+ iterate → B6.N close. Tiered AI ladder with batching at L1+L2, web-grounded Sonnet at L3, Opus-inline audit at L4. Budget ceiling $250. Claude models direct via Anthropic SDK. Brand-on-label producer identity. Simple matching for LWIN import (same as prior method). 5 review upgrades + 2 safety nets + 7 gates."
+  }
+]
