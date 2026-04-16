@@ -1,8 +1,8 @@
 # Sprint 6: Dedup (Producers) — journal
 
 **Opened:** 2026-04-16
-**Status:** Active — LWIN import first, then dedup evaluation + execution
-**Current block:** B6.1 complete; B6.2 next (LWIN import)
+**Status:** Active — LWIN import done, dedup evaluation next
+**Current block:** B6.2 complete; B6.3 next (schema + IDENTITY_RULES Section 11 + blocking + L1)
 
 ---
 
@@ -107,12 +107,64 @@
   b6_2_lwin_import.md` (new), `CLAUDE.md`, `data/dashboard.html`,
   `docs/DECISIONS.md`, `data/sessions.md`.
 
+- **B6.2 (2026-04-16):** LWIN long-tail producer import. Added
+  `--resume-unlinked` flag + NULL-country handling to
+  `pipeline/promote/lwin_long_tail.py` (same simple matching as Session 13:
+  exact normalized name + country; junk filter stays disabled per B6.1).
+  Dry-run sample of ~164 producers looked clean, ran full execute.
+
+  **Script run (2h 51m, $0):** processed 24,762 producers, 69,444 source_lwin
+  rows. 2,164 producers matched, 22,598 created, 0 failed. Wines: 471 matched,
+  42,095 created, 3 failed (wine_names that normalize to empty string — `?`,
+  `+`, `"..."`; acceptable LWIN garbage). 42,566 LWIN external_ids upserted,
+  42,566 source_lwin rows marked processed.
+
+  **Post-run gap discovered:** 26,878 source_lwin rows whose producer is now
+  canonical still had `canonical_producer_id IS NULL`. Root cause: the main
+  script skips rows where `wine_name` is NULL/empty (all 26,875 of 26,878),
+  which leaves `source_lwin` untouched for those rows. Built
+  `pipeline/promote/lwin_backfill_producer_id.py` as a closeout helper —
+  builds an in-memory index of `(name_normalized, country_id) → producer_id`,
+  looks up each skipped row, bulk-updates `canonical_producer_id +
+  processed_at`. Dry-run: 26,878 matched / 0 unresolvable. Execute: 26,878
+  source_lwin rows backfilled, $0, 15 seconds.
+
+  **Final state:**
+  - Producers: **10,683 → 33,281 total (33,225 active)** — inside the 20-40K
+    expected range. +22,598 new canonical producers from LWIN long tail.
+  - source_lwin: 0 distinct unlinked producer_names (down from 24,762). 26
+    rows still NULL canonical_producer_id, all of them `producer_name IS
+    NULL` (pre-existing LWIN garbage, can't be linked — well under the <100
+    residual threshold).
+  - 157,346 canonical wines now carry an LWIN external_id; 99.86% of active
+    producers (33,177 of 33,225) have at least one source_lwin row pointing
+    at them.
+
+  **Acceptance gate passed cleanly:** 0 unlinked producers, 33K in range, 10
+  newly-created rows spot-checked sane (Zurab Topuridze, Zunino Basilio, zum
+  Sternen, Zuccotti, Zorzettig, Zohlhof, Zohar, Zironda, Zio Porco,
+  Zimmermann-Graeff), no duplicate `(name_normalized, country_id)` pairs
+  among producers created today, 0 Python exceptions.
+
+  **Notes for B6.3 dedup:** simple matching is known-inclusive — some
+  spelling variants created new rows when a canonical fuzzy-match already
+  existed. Examples surfaced during dry-run: US `'Ridge'` created despite
+  existing `'Ridge Vineyards'`; `'Cape Winemakers Guild (Bruwer Raats)'`
+  created despite existing Bruwer Raats etc. Dedup (B6.3-B6.6) catches
+  these. No attempt to clean them up at import time per B6.1 directive.
+
+  Tables: `producers` (+22,598 rows), `source_lwin` (69,444 rows updated),
+  `external_ids` (42,566 lwin_7 rows upserted), `wines` (42,095 rows
+  created). Files: `pipeline/promote/lwin_long_tail.py` (extended),
+  `pipeline/promote/lwin_backfill_producer_id.py` (new), `data/stats/
+  lwin_b6_2_log.txt` (progress log).
+
 ---
 
 ## Active
 
-(B6.1 done. B6.2 queued — LWIN long-tail producer import via
-`pipeline/promote/lwin_long_tail.py` with `--resume-unlinked` extension.)
+(B6.2 done. B6.3 queued — schema migration + IDENTITY_RULES Section 11 +
+blocking dry-run + L1 Haiku batched on all definitive-list pairs.)
 
 ---
 
@@ -124,3 +176,10 @@
   shape: LWIN import first (B6.2), then tiered AI dedup ladder (B6.3-B6.5),
   then in-sprint execution (B6.6), iterate if needed (B6.7+). Budget ceiling
   $250. $0 spent in B6.1.
+
+- **B6.2 — LWIN long-tail producer import.** Main sweep (2h 51m, $0) + tail
+  backfill (~15s, $0). Producers 10,683 → 33,281; 0 unlinked LWIN producers
+  remain. Plus: caught main-script edge case where wine_name-NULL rows left
+  canonical_producer_id empty, built
+  `pipeline/promote/lwin_backfill_producer_id.py` as closeout, backfilled
+  26,878 rows. Dedup universe ready for B6.3.

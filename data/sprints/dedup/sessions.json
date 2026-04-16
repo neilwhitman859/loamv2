@@ -6,5 +6,13 @@
     "shape": "planning",
     "spent": 0.00,
     "notes": "Multiple rounds of design dialog — 10 initial + 8 clarifying + 4 edge-case definition questions. Plan reshaped 3x. Final shape: B6.2 LWIN import → B6.3 schema+rules+L1 → B6.4 L2+L3+anchor+ablation → B6.5 L4+review → B6.6 execution → B6.7+ iterate → B6.N close. Tiered AI ladder with batching at L1+L2, web-grounded Sonnet at L3, Opus-inline audit at L4. Budget ceiling $250. Claude models direct via Anthropic SDK. Brand-on-label producer identity. Simple matching for LWIN import (same as prior method). 5 review upgrades + 2 safety nets + 7 gates."
+  },
+  {
+    "id": "B6.2",
+    "date": "2026-04-16",
+    "title": "LWIN long-tail producer import",
+    "shape": "execution",
+    "spent": 0.00,
+    "notes": "Extended pipeline/promote/lwin_long_tail.py with --resume-unlinked flag + NULL-country handling. Ran full long-tail import: 2h 51m, 24,762 producers processed (2,164 matched / 22,598 created / 0 failed), 42,566 wines + external_ids upserted, 42,566 source_lwin rows updated. Post-run discovered 26,878 rows left unlinked because wine_name was NULL/empty (main script skips those before updating source_lwin); built pipeline/promote/lwin_backfill_producer_id.py as closeout helper, backfilled all 26,878 rows via (name_normalized, country_id) lookup. Final: producers 10,683 → 33,281 (33,225 active), 0 unlinked LWIN producer_names, 26 NULL-producer_name residuals (pre-existing LWIN garbage, cannot be linked). Acceptance gate passed cleanly."
   }
 ]

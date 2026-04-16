@@ -21,6 +21,11 @@ Usage:
     python -m pipeline.promote.lwin_long_tail --execute --limit-producers 50
     python -m pipeline.promote.lwin_long_tail --execute --progress-file data/stats/lwin_long_tail_log.txt
 
+    # B6.2 — close the LWIN long-tail import skipped by the Session 13 run:
+    python -m pipeline.promote.lwin_long_tail --resume-unlinked --dry-run --sample 20
+    python -m pipeline.promote.lwin_long_tail --resume-unlinked --execute \\
+        --progress-file data/stats/lwin_b6_2_log.txt
+
 Thresholds:
     --intl-min-wines N  (default 8)  — INTL producers with fewer than N wines are skipped
     US producers are ALL processed (except Haiku-flagged junk)
@@ -74,32 +79,63 @@ def load_junk_set(apply: bool = False) -> set[str]:
     return junk
 
 
-def fetch_eligible_producers(conn, intl_min_wines: int, us_junk: set[str]) -> list[tuple[str, str, int]]:
+def fetch_eligible_producers(
+    conn,
+    intl_min_wines: int,
+    us_junk: set[str],
+    resume_unlinked: bool = False,
+) -> list[tuple[str, str, int]]:
     """Return list of (producer_name, country, wine_count) for producers to process.
 
-    - US: all producers, excluding junk set
-    - INTL: producers with >= intl_min_wines
+    Two modes:
+      - default: US all + INTL >= intl_min_wines (Session 13 cutoff)
+      - resume_unlinked: every (producer_name, country) with at least one source_lwin
+        row where canonical_producer_id IS NULL. Drops country/wine-count filter;
+        junk filter still applies to US producers if enabled. Used by B6.2 to close
+        the long tail left behind by the Session 13 run.
     """
-    sql = """
-        WITH buckets AS (
-            SELECT producer_name, country, COUNT(*) AS wines
-            FROM source_lwin
-            WHERE producer_name IS NOT NULL
-              AND TRIM(producer_name) != ''
-            GROUP BY producer_name, country
-        )
-        SELECT producer_name, country, wines
-        FROM buckets
-        WHERE (country = 'United States')
-           OR (country != 'United States' AND wines >= %s)
-        ORDER BY
-            CASE WHEN country = 'United States' THEN 0 ELSE 1 END,
-            wines DESC,
-            producer_name
-    """
-    with conn.cursor() as cur:
-        cur.execute(sql, (intl_min_wines,))
-        rows = cur.fetchall()
+    if resume_unlinked:
+        # Count only unlinked rows so progress output reflects remaining work.
+        sql = """
+            WITH buckets AS (
+                SELECT producer_name, country, COUNT(*) AS wines
+                FROM source_lwin
+                WHERE producer_name IS NOT NULL
+                  AND TRIM(producer_name) != ''
+                  AND canonical_producer_id IS NULL
+                GROUP BY producer_name, country
+            )
+            SELECT producer_name, country, wines
+            FROM buckets
+            ORDER BY
+                CASE WHEN country = 'United States' THEN 0 ELSE 1 END,
+                wines DESC,
+                producer_name
+        """
+        with conn.cursor() as cur:
+            cur.execute(sql)
+            rows = cur.fetchall()
+    else:
+        sql = """
+            WITH buckets AS (
+                SELECT producer_name, country, COUNT(*) AS wines
+                FROM source_lwin
+                WHERE producer_name IS NOT NULL
+                  AND TRIM(producer_name) != ''
+                GROUP BY producer_name, country
+            )
+            SELECT producer_name, country, wines
+            FROM buckets
+            WHERE (country = 'United States')
+               OR (country != 'United States' AND wines >= %s)
+            ORDER BY
+                CASE WHEN country = 'United States' THEN 0 ELSE 1 END,
+                wines DESC,
+                producer_name
+        """
+        with conn.cursor() as cur:
+            cur.execute(sql, (intl_min_wines,))
+            rows = cur.fetchall()
 
     eligible = []
     skipped_junk = 0
@@ -109,21 +145,24 @@ def fetch_eligible_producers(conn, intl_min_wines: int, us_junk: set[str]) -> li
             continue
         eligible.append((name, country, int(wines)))
 
-    print(f"  Eligible: {len(eligible):,} producers ({skipped_junk} US junk filtered)")
+    mode_label = "resume-unlinked" if resume_unlinked else f"default (US all + INTL >= {intl_min_wines})"
+    print(f"  Eligible [{mode_label}]: {len(eligible):,} producers ({skipped_junk} US junk filtered)")
     return eligible
 
 
-def fetch_lwin_rows_for_producer(conn, producer_name: str, country: str) -> list[dict]:
+def fetch_lwin_rows_for_producer(conn, producer_name: str, country: str | None) -> list[dict]:
     """Fetch all source_lwin rows for a producer+country combo, unprocessed only.
 
-    Note: source_lwin has no numeric `id` — the primary key is `lwin` (text).
+    Uses `country IS NOT DISTINCT FROM %s` so NULL country pairs match correctly
+    (35 such rows exist in the B6.2 long-tail). source_lwin has no numeric `id`
+    — the primary key is `lwin` (text).
     """
     sql = """
         SELECT lwin, lwin_7, producer_name, wine_name, country,
                region, sub_region, appellation, colour, wine_type, designation
         FROM source_lwin
         WHERE producer_name = %s
-          AND country = %s
+          AND country IS NOT DISTINCT FROM %s
           AND processed_at IS NULL
         ORDER BY wine_name, lwin
     """
@@ -443,12 +482,16 @@ def run_sweep(
     limit_producers: int | None = None,
     progress_file: Path | None = None,
     apply_junk_filter: bool = False,
+    resume_unlinked: bool = False,
 ):
     """Run the LWIN long-tail promotion sweep."""
     print("=" * 70)
-    print(f"  LWIN Long-Tail Sweep — Session 13")
+    print(f"  LWIN Long-Tail Sweep" + (" — B6.2 resume-unlinked" if resume_unlinked else " — Session 13"))
     junk_label = "w/ junk filter" if apply_junk_filter else "all (inclusive)"
-    print(f"  US: {junk_label}  |  INTL: >= {intl_min_wines} wines")
+    if resume_unlinked:
+        print(f"  Scope: every producer with unlinked source_lwin rows ({junk_label})")
+    else:
+        print(f"  US: {junk_label}  |  INTL: >= {intl_min_wines} wines")
     print(f"  Mode: {'DRY-RUN' if dry_run else 'EXECUTE'}")
     if sample_count:
         print(f"  SAMPLE MODE: {sample_count} random producers per bucket")
@@ -459,7 +502,7 @@ def run_sweep(
     resolver.init_sync()
 
     us_junk = load_junk_set(apply=apply_junk_filter)
-    eligible = fetch_eligible_producers(conn, intl_min_wines, us_junk)
+    eligible = fetch_eligible_producers(conn, intl_min_wines, us_junk, resume_unlinked=resume_unlinked)
 
     if sample_count:
         # Sample producers across several buckets for dry-run inspection
@@ -688,6 +731,9 @@ def main():
     parser.add_argument("--progress-file", type=str, help="Append progress lines to this file")
     parser.add_argument("--apply-junk-filter", action="store_true",
                        help="Apply Haiku junk filter to US producers (default: inclusive, no filter)")
+    parser.add_argument("--resume-unlinked", action="store_true",
+                       help="B6.2 mode: process every producer with unlinked source_lwin rows, "
+                            "ignoring the Session 13 US-all + INTL>=N filter. Idempotent / resume-safe.")
     args = parser.parse_args()
 
     if not any([args.analyze, args.dry_run, args.execute]):
@@ -696,16 +742,23 @@ def main():
     if args.analyze:
         conn = get_conn()
         us_junk = load_junk_set(apply=args.apply_junk_filter)
-        eligible = fetch_eligible_producers(conn, args.intl_min_wines, us_junk)
+        eligible = fetch_eligible_producers(
+            conn, args.intl_min_wines, us_junk, resume_unlinked=args.resume_unlinked
+        )
         total_wines = sum(p[2] for p in eligible)
         us_count = sum(1 for p in eligible if p[1] == "United States")
-        intl_count = len(eligible) - us_count
+        null_count = sum(1 for p in eligible if p[1] is None)
+        intl_count = len(eligible) - us_count - null_count
         us_wines = sum(p[2] for p in eligible if p[1] == "United States")
-        intl_wines = total_wines - us_wines
+        null_wines = sum(p[2] for p in eligible if p[1] is None)
+        intl_wines = total_wines - us_wines - null_wines
+        intl_label = "INTL (unlinked)" if args.resume_unlinked else f"INTL>={args.intl_min_wines}"
         print("\n=== Eligible totals ===")
-        print(f"  US:       {us_count:>6,} producers   {us_wines:>7,} wines")
-        print(f"  INTL>={args.intl_min_wines}: {intl_count:>6,} producers   {intl_wines:>7,} wines")
-        print(f"  TOTAL:    {len(eligible):>6,} producers   {total_wines:>7,} wines")
+        print(f"  US:              {us_count:>6,} producers   {us_wines:>7,} wines")
+        print(f"  {intl_label:<15}: {intl_count:>6,} producers   {intl_wines:>7,} wines")
+        if null_count:
+            print(f"  NULL country:    {null_count:>6,} producers   {null_wines:>7,} wines")
+        print(f"  TOTAL:           {len(eligible):>6,} producers   {total_wines:>7,} wines")
         conn.close()
         return
 
@@ -724,6 +777,7 @@ def main():
         limit_producers=args.limit_producers,
         progress_file=progress_file,
         apply_junk_filter=args.apply_junk_filter,
+        resume_unlinked=args.resume_unlinked,
     )
 
 

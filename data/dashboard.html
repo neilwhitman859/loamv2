@@ -192,11 +192,11 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">B6.1 DONE &middot; Sprint 6 ACTIVE &middot; Apr 16, 2026</div>
+  <div class="meta">B6.2 DONE &middot; Sprint 6 ACTIVE &middot; Apr 16, 2026</div>
 </div>
 
 <div class="now">
-  <strong>Sprint 6 plan LOCKED (B6.1):</strong> Producer dedup via tiered AI ladder, LWIN-first. Quality bar = final-state correctness (~100%) via unanimous-method auto-apply + 50-150 curated user-reviewed toughest pairs + UNCERTAIN flagged. Sprint covers LWIN import + evaluation + execution. <strong>B6.2 = LWIN import only</strong> (~24,762 unlinked LWIN producers to import via simple matching). B6.3+ = tiered ladder: L1 Haiku batched (10/call) &rarr; L2 Haiku batched (5/call) &rarr; L3 Sonnet + Anthropic native web_search tool &rarr; L4 Opus-inline-1M audit. Claude models direct via Anthropic SDK (not OpenRouter). Candidate list = union of 9 blocking strategies incl. TTB permittee. Producer definition = brand-on-label. IDENTITY_RULES.md Section 11 drafted in B6.3, user reviews. Budget $250 ceiling, projected $100-220. 7 quality gates throughout. Plan: <code>data/sprints/dedup/plan.md</code>. Next: B6.2 session prompt at <code>data/session_prompts/b6_2_lwin_import.md</code>.
+  <strong>B6.2 LWIN import DONE (2026-04-16):</strong> long-tail sweep + backfill closeout imported 22,598 new LWIN producers (producers 10,683 &rarr; 33,281 / 33,225 active). 0 distinct LWIN producer_names remain unlinked; 26 residual rows (all NULL producer_name, pre-existing LWIN garbage) well under the &lt;100 residual threshold. 157,346 canonical wines carry an LWIN external_id. Runtime 2h 51m, $0. <strong>Next: B6.3</strong> &mdash; schema migration (producer_dedup_pairs extensions + producer_merge_history) + IDENTITY_RULES.md Section 11 (producer identity) + blocking dry-run (union of 9 strategies) + L1 Haiku batched 10/call on the full definitive list. Projected L1 spend $60-130. Plan: <code>data/sprints/dedup/plan.md</code>. Prompt: <code>data/session_prompts/b6_3_schema_and_l1.md</code>.
 </div>
 
 <!-- ROADMAP -->
@@ -221,7 +221,7 @@
     <ul class="gate">
       <li><span class="g-yes">&#10003;</span> B5.8 Close S5 / open S6</li>
       <li><span class="g-yes">&#10003;</span> B6.1 Planning &amp; design</li>
-      <li><span class="g-no">&#9675;</span> B6.2 LWIN producer import (~24K producers)</li>
+      <li><span class="g-yes">&#10003;</span> B6.2 LWIN producer import (+22,598 producers)</li>
       <li><span class="g-no">&#9675;</span> B6.3 Schema + IDENTITY_RULES + blocking + L1</li>
       <li><span class="g-no">&#9675;</span> B6.4 L2 + L3 + anchor set + ablation</li>
       <li><span class="g-no">&#9675;</span> B6.5 L4 Opus audit + toughest-pairs review</li>
@@ -237,11 +237,11 @@
       <tr><td style="color:var(--muted);">Projected</td><td style="text-align:right">$100&ndash;220</td></tr>
       <tr><td style="color:var(--muted);">Spent</td><td style="text-align:right">$0.00</td></tr>
       <tr><td style="color:var(--muted);">Producers (pre-LWIN)</td><td style="text-align:right">10,683</td></tr>
-      <tr><td style="color:var(--muted);">Producers (post-LWIN)</td><td style="text-align:right">~25&ndash;35K</td></tr>
-      <tr><td style="color:var(--muted);">LWIN unlinked</td><td style="text-align:right">24,762 producers</td></tr>
+      <tr><td style="color:var(--muted);">Producers (post-LWIN)</td><td style="text-align:right">33,281 (33,225 active)</td></tr>
+      <tr><td style="color:var(--muted);">LWIN unlinked</td><td style="text-align:right">0 distinct / 26 NULL residuals</td></tr>
       <tr><td style="color:var(--muted);">Review load target</td><td style="text-align:right">50&ndash;150 pairs</td></tr>
       <tr><td style="color:var(--muted);">Quality bar</td><td style="text-align:right">final-state ~100%</td></tr>
-      <tr><td style="color:var(--muted);">Next block</td><td style="text-align:right">B6.2 LWIN import</td></tr>
+      <tr><td style="color:var(--muted);">Next block</td><td style="text-align:right">B6.3 schema + L1</td></tr>
     </table>
   </div>
   <div class="quality-item wide">
@@ -305,7 +305,7 @@
 <ul class="next-list">
   <li><strong>B5.8</strong> &mdash; <s>Close S5 / open S6</s> DONE</li>
   <li><strong>B6.1</strong> &mdash; <s>Planning &amp; design</s> DONE &mdash; plan reshaped 3x through dialog. Final: LWIN-first, tiered AI ladder, brand-on-label, batched L1+L2, web-grounded L3. Plan: <code>data/sprints/dedup/plan.md</code>. Prompt for B6.2: <code>data/session_prompts/b6_2_lwin_import.md</code>.</li>
-  <li><strong>B6.2</strong> &mdash; LWIN producer import. ~24,762 distinct LWIN producers currently unlinked in source_lwin (69K wine rows). Extend <code>pipeline/promote/lwin_long_tail.py</code> with <code>--resume-unlinked</code> flag. Simple matching (exact normalized + country). No AI. ~$0. Expected: producers table grows 10,683 &rarr; ~25-35K.</li>
+  <li><strong>B6.2</strong> &mdash; <s>LWIN producer import.</s> DONE &mdash; <code>lwin_long_tail.py --resume-unlinked</code> (2h 51m) + <code>lwin_backfill_producer_id.py</code> (15s closeout). Producers 10,683 &rarr; 33,281 (+22,598). 0 unlinked LWIN producer_names, 26 NULL-name residuals. 42,095 canonical wines + 42,566 external_ids created. $0. Journal: <code>data/sprints/dedup/journal.md</code>.</li>
   <li><strong>B6.3</strong> &mdash; Schema ALTER producer_dedup_pairs + CREATE producer_merge_history. Draft IDENTITY_RULES.md Section 11 (producer rules). Build <code>pipeline/identity/producer_dedup.py</code>. Run blocking only (lever 4 &mdash; see actuals) &rarr; report pair count. Then run L1 Haiku batched 10/call with prompt caching + TTB injection. $60&ndash;130.</li>
   <li><strong>B6.4</strong> &mdash; Build anchor set (~50 hand-labeled). Run L2 Haiku batched 5/call. Run L3 Sonnet + Anthropic native web_search tool. Ablation tests (L2 w/wo web, L3 w/wo web, cache hit rate). Cross-method agreement matrix. $40&ndash;95.</li>
   <li><strong>B6.5</strong> &mdash; L4 Opus-inline-1M audit. Flag toughest pairs. Claude presents w/ context pack (website, Wikipedia, LWIN, TTB, wines) + recommendation. User signs off. $0&ndash;10.</li>
@@ -323,7 +323,7 @@
 <div class="section-label">Key Numbers</div>
 <div class="numbers">
   <div class="n-item"><div class="n-label">Wines</div><div class="n-value">156,570</div></div>
-  <div class="n-item"><div class="n-label">Producers</div><div class="n-value">10,683</div></div>
+  <div class="n-item"><div class="n-label">Producers</div><div class="n-value">33,281</div></div>
   <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">125,934</div></div>
   <div class="n-item"><div class="n-label">Prices</div><div class="n-value">40,193</div></div>
   <div class="n-item"><div class="n-label">Scores</div><div class="n-value">30,339</div></div>

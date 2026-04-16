@@ -300,17 +300,21 @@ See `docs/HISTORY.md` for promotion results, session-by-session build history, a
 
 ## Current Focus
 
-**Sprint 6 (Producer Dedup) — B6.1 PLAN LOCKED 2026-04-16.** Plan covers
+**Sprint 6 (Producer Dedup) — B6.2 DONE 2026-04-16. B6.3 NEXT.** Plan covers
 **LWIN import + evaluation + execution in one sprint.** User quality bar =
 **final-state correctness ~100%** of producers table, achieved via unanimous
 multi-method auto-apply + 50-150 curated user-reviewed toughest pairs +
 UNCERTAIN flagged as known-open.
 
-**LWIN-first:** B6.1 discovered 24,762 unlinked LWIN producers (69K wine
-rows) in staging. Prior `lwin_long_tail.py` (Session 13) only covered US +
-intl≥8 wines. **B6.2 completes the LWIN import** via simple matching
-(exact normalized name + country — same method as prior run) before dedup
-begins. Expected producers table growth: 10,683 → ~25-35K.
+**LWIN-first (B6.2 COMPLETE):** Long-tail sweep via `lwin_long_tail.py
+--resume-unlinked` (2h 51m) + `lwin_backfill_producer_id.py` closeout (15s)
+imported the 24,762 unlinked LWIN producers discovered in B6.1. Producers
+table **10,683 → 33,281 (33,225 active)**, +22,598 new canonical producers.
+42,095 canonical wines + 42,566 LWIN external_ids created. 0 distinct LWIN
+producer_names remain unlinked; 26 residual rows (all NULL producer_name,
+pre-existing LWIN garbage) well under the <100 threshold. 99.86% of active
+producers now have at least one source_lwin row pointing at them. Dedup
+universe is ready. $0 spent. Details in `data/sprints/dedup/journal.md`.
 
 **Tiered AI ladder (Claude models direct via Anthropic SDK, not OpenRouter):**
 
@@ -380,11 +384,11 @@ not random; decision log with notes; flag-for-later (FLAGGED verdict + open_ques
 **2 safety nets:** unblocked spot-check (~$1, B6.4) + post-execution
 leftover scan ($5-10, B6.N).
 
-**Block cadence:** B6.2 LWIN import (~$0) → B6.3 schema + IDENTITY_RULES
-Section 11 + blocking dry-run + L1 batched ($60-130) → B6.4 L2 batched + L3
-web-grounded + anchor + ablation ($40-95) → B6.5 L4 Opus audit +
-toughest-pairs review ($0-10) → B6.6 execution ($0) → B6.7+ iterate if
-needed (reserve $30-60) → B6.N close.
+**Block cadence:** ~~B6.2 LWIN import~~ DONE ($0) → **B6.3 next** — schema
++ IDENTITY_RULES Section 11 + blocking dry-run + L1 batched ($60-130) →
+B6.4 L2 batched + L3 web-grounded + anchor + ablation ($40-95) → B6.5 L4
+Opus audit + toughest-pairs review ($0-10) → B6.6 execution ($0) → B6.7+
+iterate if needed (reserve $30-60) → B6.N close.
 
 **Sprint sequencing:**
 - Sprint 6 (now): LWIN import + producer dedup (evaluation + execution)
