@@ -336,11 +336,27 @@ See `docs/HISTORY.md` for promotion results, session-by-session build history, a
 
 ## Current Focus
 
-**Sprint 6 (Producer Dedup) — B6.2 DONE 2026-04-16. B6.3 NEXT.** Plan covers
-**LWIN import + evaluation + execution in one sprint.** User quality bar =
-**final-state correctness ~100%** of producers table, achieved via unanimous
-multi-method auto-apply + 50-150 curated user-reviewed toughest pairs +
-UNCERTAIN flagged as known-open.
+**Sprint 6 (Producer Dedup) — B6.3 IN PROGRESS (full L1 running 2026-04-17).
+B6.2 + B6.2.1 + B6.2.2 DONE.** Plan covers **LWIN import + evaluation +
+execution in one sprint.** User quality bar = **final-state correctness
+~100%** of producers table, achieved via unanimous multi-method auto-apply +
+50-150 curated user-reviewed toughest pairs + UNCERTAIN flagged as known-open.
+
+**B6.3 progress (2026-04-17):** Schema migration applied
+(`2026-04-16_b6_3_producer_dedup_schema.sql` — producer_dedup_pairs extended
++ producer_merge_history created). IDENTITY_RULES §11 drafted + user-reviewed
++ 11.4.g holdco carve-out applied. Blocking complete: **151,150 pairs** across
+8 active strategies (S1 exact, S2 trigram≥0.35, S5 shared wine-LWIN, S6 shared
+TTB BW permit capped ≤10 producers, S7 cross-country exact/trigram/LWIN, S8
+shared distinguishing wines ≥30% overlap, S9 same-country substring, S10
+shared rare wine (≤5 producers global) [caught DRC↔Romanée-Conti], S11
+cross-country word-subset [caught Mondavi↔Mondavi&Frescobaldi]). S3 embedding
++ S4 first-3-char dropped. L1 pilot 200 pairs passed 7/7 anchors at 0.06¢/pair.
+**Full L1 run launched 8 workers, budget cap $130, ETA ~5 hrs, projected $75-90.**
+User-decided: symmetric threshold (0.92-0.93) for L2 escalation, but decision
+deferred to B6.4 with full distribution + anchor set in hand. Post-cache-warmup
+per-batch cost 0.5¢ — below plan estimate. B6.4 queued: `data/session_prompts/
+b6_4_l2_l3_anchor.md` (L2 rich + L3 Sonnet web-grounded + anchor set + ablation).
 
 **LWIN-first (B6.2 + B6.2.1 + B6.2.2 COMPLETE):** Three-stage LWIN import.
 B6.2 long-tail sweep imported 22,598 new producers (10,683 → 33,281).

@@ -1,8 +1,8 @@
 # Sprint 6: Dedup (Producers) — journal
 
 **Opened:** 2026-04-16
-**Status:** Active — LWIN import done, dedup evaluation next
-**Current block:** B6.2 complete; B6.3 next (schema + IDENTITY_RULES Section 11 + blocking + L1)
+**Status:** Active — B6.3 L1 run in progress (background)
+**Current block:** B6.3 full L1 Haiku classification running on 150,950 pairs; B6.4 queued (L2 rich + L3 web-grounded + anchor set + ablation).
 
 ---
 
@@ -161,10 +161,163 @@
 
 ---
 
+- **B6.3 (2026-04-17):** Schema + IDENTITY_RULES §11 + blocking + L1 pilot +
+  full L1 run. Six-hour execution session.
+
+  **Part A — Schema:** Migration
+  `2026-04-16_b6_3_producer_dedup_schema.sql` applied directly to production
+  (additive, zero-risk; Supabase branch reserved for B6.6 merge execution
+  dry-run per plan). Extended `producer_dedup_pairs` with 12 new columns
+  (producer_id_a/_b, method_name, confidence, reasoning, cost_cents,
+  signals/ttb_evidence/web_evidence jsonb, flag_reason, created_at,
+  updated_at) + UNIQUE INDEX on (producer_id_a, producer_id_b, method_name).
+  Created `producer_merge_history` table with RLS for reversible merge audit.
+  Follow-up migration `b6_3_producer_dedup_pairs_id_default` added
+  `producer_dedup_pairs_id_seq` sequence for id column (pre-existing integer
+  PK had no default). Total schema work: two migrations, ~50 lines SQL.
+
+  **Part B — IDENTITY_RULES §11 drafted:** Appended ~140 lines (8
+  subsections) to `docs/IDENTITY_RULES.md`:
+  - 11.0 Core principle: brand-on-label
+  - 11.1 MERGE criterion + signal table
+  - 11.2 PARENT-CHILD criterion + signal table
+  - 11.3 SKIP criterion + signal table
+  - 11.4 Edge cases (a-l): renames, dissolved+reopened, private labels,
+    retailers-never-producers, second wines, négociant+estate, corporate
+    holdcos (with 1E carve-out for label-appearing brands like E. & J. Gallo),
+    accent variants, importer prefixes, TTB permits, commune overlap, JVs
+  - 11.5 UNCERTAIN/FLAGGED verdict semantics + propagation
+  - 11.6 Survivor selection priority (label > accent > metadata > wine count
+    > LWIN > older)
+  - 11.7 Verbatim LLM-embed policy preamble
+  - 11.8 In-sprint rule amendment process (DECISIONS.md log)
+
+  User reviewed all 6 judgment calls (abbreviations + no-translate, JV
+  standalone, rename = label-continuous, private labels, holdcos, survivor
+  priority). Approved 5 as-is; asked for 1E amendment (holdco carve-out for
+  names that DO appear on consumer labels, e.g. E. & J. Gallo). Amendment
+  applied to 11.4.g.
+
+  **Part C — Blocking (`pipeline/identity/producer_blocking.py`):** 8 active
+  strategies; S3 (embeddings, no producer embedding col; revisit post-L1)
+  and S4 (first-3-char; too permissive at 33K scale, timed out at all
+  tuning levels) dropped.
+
+  Final strategy counts (method_name='blocking'):
+  - S1 exact-norm same-country: 0 (B6.2 already caught these)
+  - S2 trigram ≥0.35 same-country: 114,494 (was 247K at 0.30; tightened per plan lever 4)
+  - S5 shared wine-LWIN_7: 1
+  - S6 shared TTB BW permit (BW-only filter, capped 10 producers/permit): 7,595
+    (was 4M unfiltered; BW-only fix excludes importer/wholesaler permits;
+    per-permit cap excludes custom-crush facilities like Bronco)
+  - S7 cross-country exact-OR-trigram≥0.5 OR shared LWIN: 8,227
+  - S8 shared distinguishing wines ≥30% overlap (name in ≤20 producers globally): 2,018
+    (was 1.78M at raw ≥30% with generic grape names; distinguishing-name filter essential)
+  - S9 same-country substring containment: 11,786
+  - S10 shared rare wine name (appears in ≤5 producers globally): 15,693
+  - S11 cross-country word-subset containment: 3,619
+
+  **Union total: 151,150 pairs.** Multi-strategy agreement: 11,521 at 2-sig,
+  283 at 3-sig, 64 at 4-sig, 1 at 5-sig.
+
+  Deep-think audit mid-session (after user pushback on "are we testing US
+  retail producers") surfaced two structural gaps that required new
+  strategies:
+  1. **Cross-country exact-name dupes** missed — B6.2's country-aware
+     matching created "Cupcake Vineyards" × 3 (US/IT/NZ) and "Josh" × 2
+     (US/IT) as distinct rows that no prior strategy caught. Fix: broadened
+     S7 from shared-LWIN-only to also include cross-country exact-name
+     AND cross-country trigram ≥0.5. +8,227 pairs.
+  2. **Abbreviation / initialism dupes** missed — DRC ↔ de la Romanee-Conti
+     trigram=0.03, no shared BW permit, no substring relation, only 1
+     shared wine. Previously 0 pairs. Fix: added S10 shared-rare-wine with
+     name-frequency filter; catches via shared 'marey monge' lieu-dit.
+     +15,693 pairs. Also added S11 cross-country word-subset for Mondavi
+     ↔ Mondavi & Frescobaldi case. +3,619 pairs.
+
+  **Part D — TTB spot-check:** 15 random US producers pulled from S6 pool.
+  BW permits + permittee names + addresses + brand names all look clean
+  (Kenneth Volk BW-CA-7040 + BW-MI-23, Emeritus BW-CA-6867, Ransom multi-
+  state BW-OR-278/BW-OR-26/BW-NY-882, Ridge legacy+modern BW forms, etc.).
+  One edge case flagged: foreign producers like Errazuriz (CL) and Hospices
+  de Beaune (FR) have US BW permits — these are US importer/rebottler
+  filings on their behalf; LLM will have enough context to correctly SKIP
+  these via brand-name + country cues.
+
+  **Part E — L1 pipeline (`pipeline/identity/producer_dedup_l1.py`):** Built
+  claude-haiku-4-5 classifier with prompt caching (§11 preamble ~5.4K
+  tokens marked `cache_control: ephemeral`), batched 10 pairs/call,
+  concurrent workers. Static preamble: §11 verbatim + output schema + 5
+  few-shot examples (Ridge MERGE, Stag's Leap SKIP, Silver Oak+Twomey
+  PARENT_CHILD, Jordan US+ZA SKIP, DRC MERGE). Per-pair context: producer
+  name/country/wine count/LWIN link count/top 5 wine names/TTB fingerprint
+  (BW permits, permittees, addresses, brand names, cola count)/blocking
+  signals fired. Output: JSON array per batch with verdict, confidence,
+  reasoning per pair.
+
+  **Pilot (200 pairs, 20 calls, $0.12, 3.3 min):**
+  - Cache behavior confirmed: first call wrote cache (~6.3K tokens);
+    batches 2+ read cache at 90% discount.
+  - Verdict distribution: MERGE=15 (avg conf 0.92), PARENT_CHILD=21
+    (0.87), SKIP=161 (0.93), UNCERTAIN=3 (0.56).
+  - **Anchor accuracy: 7/7.** Ridge/Duckhorn/Caymus/DRC/Silver Oak all MERGE
+    at 0.94-0.98; Stag's Leap WC vs Stags' Leap Winery SKIP 0.96 despite
+    0.72 trigram; Silver Oak + Twomey PARENT_CHILD 0.93 via shared
+    BW-CA-5455.
+  - **Interesting find: Wakefield ↔ Taylors [AU] MERGE 0.97** — L1
+    correctly identified these as the same Clare Valley producer (sold as
+    Wakefield in UK/US due to Taylor's Port trademark conflict).
+  - **Defensible SKIP on Cupcake Vineyards US/IT/NZ:** L1 said SKIP despite
+    these being the same Gallo global brand — from L1's local evidence
+    (no TTB overlap, no shared LWIN, no shared wines due to global
+    sourcing), SKIP is defensible. L3 web search in B6.4 should flip to
+    MERGE after verifying Cupcake is a Gallo brand.
+  - Per-pair cost: 0.06¢. Extrapolated full-corpus cost: $89.79 for 151K.
+
+  **Threshold discussion + decision deferral:** User noted avg confidences
+  for non-SKIP verdicts (MERGE 0.92, PARENT_CHILD 0.87) are lower than
+  SKIP (0.93), and questioned whether raising the threshold for L2
+  escalation would reduce L1 overconfidence. Walked through 6 symmetric
+  thresholds (0.85, 0.88, 0.90, 0.92, 0.93, 0.95); at 0.92 symmetric 35%
+  escalation ≈ 53K pairs to L2 ≈ $74 L2 cost ≈ $214 sprint total (fits
+  $250 ceiling); at 0.93 ≈ 50% escalation ≈ $256 (slightly over ceiling).
+  User decision: **run L1 on all pairs first, pick threshold at B6.4**
+  with full distribution + anchor set calibration in hand. Thresholds
+  are post-processing decisions; no L1 re-run needed. User preference:
+  **symmetric not asymmetric** ("do it right the first time" — willing to
+  pay L2 to verify SKIPs at same threshold as MERGE/PARENT_CHILD).
+
+  **Full L1 run launched 2026-04-17** with 8 concurrent workers, budget
+  cap $130. Processing 150,950 remaining blocking pairs. ETA ~5 hours
+  (throughput ~2.5 pairs/sec with 8 workers). Projected cost: $75-90.
+  Post-cache-warmup per-batch cost stabilized at ~0.5¢/batch (vs 1.1¢
+  for initial 8 concurrent cache-write calls). Run uses `--resume` filter
+  (NOT EXISTS on producer_dedup_pairs.method_name='l1_haiku_batch'), so
+  interruption + restart is idempotent.
+
+  **Files:** `supabase/migrations/2026-04-16_b6_3_producer_dedup_schema.sql`
+  (new), `supabase/migrations/b6_3_producer_dedup_pairs_id_default.sql`
+  (new), `docs/IDENTITY_RULES.md` (§11 appended + 11.4.g carve-out),
+  `pipeline/identity/producer_blocking.py` (new, 870 lines), `pipeline/
+  identity/producer_dedup_l1.py` (new, 670 lines), `data/stats/
+  b6_3_blocking_run.log`, `data/stats/b6_3_ttb_spotcheck.log`, `data/stats/
+  b6_3_l1_pilot.log`, `data/stats/b6_3_l1_full.log` (running), `data/
+  session_prompts/b6_4_l2_l3_anchor.md` (new).
+
+  **Tables touched:** `producer_dedup_pairs` (151,150 'blocking' rows +
+  200 'l1_haiku_batch' pilot rows + ongoing full L1 writes), `producer_
+  merge_history` (created, empty). No existing data changed.
+
+---
+
 ## Active
 
-(B6.2 done. B6.3 queued — schema migration + IDENTITY_RULES Section 11 +
-blocking dry-run + L1 Haiku batched on all definitive-list pairs.)
+- **B6.3 full L1 run** (background): 150,950 pairs, 8 workers, $130 budget.
+  ETA ~5 hrs. Check progress via `data/stats/b6_3_l1_full.log`. Final
+  count will be in `producer_dedup_pairs WHERE method_name='l1_haiku_batch'`
+  when done. Sum `cost_cents` for actual spend.
+
+(B6.4 queued once L1 completes — see `data/session_prompts/b6_4_l2_l3_anchor.md`.)
 
 ---
 

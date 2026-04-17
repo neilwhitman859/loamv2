@@ -192,11 +192,11 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">B6.2.2 DONE &middot; Sprint 6 ACTIVE &middot; Apr 16, 2026</div>
+  <div class="meta">B6.3 L1 RUN IN PROGRESS &middot; Sprint 6 ACTIVE &middot; Apr 17, 2026</div>
 </div>
 
 <div class="now">
-  <strong>B6.2 + B6.2.1 + B6.2.2 DONE (2026-04-16, $0):</strong> LWIN long-tail sweep imported 22,598 producers (10,683 &rarr; 33,281). B6.2.1 hygiene patched the pre-existing search_vector trigger bug + backfilled 22,598 + 42,095 NULL vectors + 4 Opus-4.7 carry-forwards logged. <strong>B6.2.2:</strong> realized LWIN's own `source_lwin.display_name` column (99.994% populated) is Liv-ex's authoritative combined-wine name, and every LWIN-7 represents a real bottled product. Recovered 26,616 wines previously skipped (Burgundy village wines, Chablis, Italian DOCs &mdash; Leroy/NSG village, William F&egrave;vre/Chablis, Louis Jadot/Nuits-Saint-Georges + Gevrey-Chambertin, Dominique Laurent, Pierre Morey/Montrachet GC, etc.) using display_name minus producer prefix. Backfilled wines.display_name on all LWIN-linked wines via external_ids JOIN. <strong>Final: 224,316 canonical wines (100% display_name), 33,214 producers with wines (up from 27,842 &mdash; +5,372 recovered their village bottlings), 99.98% of source_lwin linked, 40 explainable residuals.</strong> New CLAUDE.md Behavioral Instruction &ldquo;Check Assumptions with Web Search&rdquo; logged to prevent the avoidable multi-turn back-and-forth that surfaced this. <strong>Next: B6.3</strong> &mdash; schema migration (producer_dedup_pairs extensions + producer_merge_history) + IDENTITY_RULES.md Section 11 + blocking dry-run + L1 Haiku. Projected L1 spend $60-130. Plan: <code>data/sprints/dedup/plan.md</code>. Prompt: <code>data/session_prompts/b6_3_schema_and_l1.md</code>.
+  <strong>B6.3 blocking + L1 pilot DONE, full L1 run in-flight (2026-04-17, ~$0.12 pilot + $75-90 projected):</strong> Schema migration applied (producer_dedup_pairs extended + producer_merge_history created). IDENTITY_RULES.md &sect;11 drafted + user-reviewed + 11.4.g holdco carve-out applied. Blocking produced <strong>151,150 candidate pairs</strong> across 8 active strategies &mdash; trigram &ge;0.35 (114K), substring (12K), shared-rare-wine (16K, catches DRC&harr;Roman&eacute;e-Conti via &lsquo;marey monge&rsquo;), cross-country exact/trigram (8K, catches Cupcake US/IT/NZ splits from B6.2), shared BW permit (8K), cross-country word-subset (4K, catches Mondavi&harr;Mondavi&amp;Frescobaldi), catalog overlap (2K), shared wine-LWIN (1). Two deep-think gap fixes mid-session. S3 embedding + S4 first-3-char dropped. Multi-strategy agreement: 11,521 @ 2-sig, 283 @ 3-sig, 64 @ 4-sig, 1 @ 5-sig. <strong>L1 pilot 200 pairs passed 7/7 anchors at $0.12</strong> (Ridge/Duckhorn/Caymus/DRC/Silver Oak all MERGE 0.94-0.98; Stag&rsquo;s Leap WC vs Stags&rsquo; Leap SKIP 0.96 despite 0.72 trigram; Silver Oak+Twomey PARENT_CHILD 0.93). Full L1 launched 8 workers, $130 cap, ETA ~5 hrs, projected $75-90. User-deferred threshold decision (symmetric 0.92-0.93 preferred) to B6.4 with full distribution + anchor-set calibration. <strong>Next: B6.4</strong> &mdash; anchor set (~50 labeled pairs) + L2 Haiku rich-prompt + L3 Sonnet native web_search + ablation + safety net. Prompt: <code>data/session_prompts/b6_4_l2_l3_anchor.md</code>.
 </div>
 
 <!-- ROADMAP -->
@@ -224,7 +224,7 @@
       <li><span class="g-yes">&#10003;</span> B6.2 LWIN producer import (+22,598 producers)</li>
       <li><span class="g-yes">&#10003;</span> B6.2.1 Hygiene (search_vector trigger + 4.7 review)</li>
       <li><span class="g-yes">&#10003;</span> B6.2.2 LWIN wine recovery (+26,616 wines via display_name)</li>
-      <li><span class="g-no">&#9675;</span> B6.3 Schema + IDENTITY_RULES + blocking + L1</li>
+      <li><span class="g-yes">&#10003;</span> B6.3 Schema + IDENTITY_RULES + blocking + L1 (pilot done, full L1 in-flight)</li>
       <li><span class="g-no">&#9675;</span> B6.4 L2 + L3 + anchor set + ablation</li>
       <li><span class="g-no">&#9675;</span> B6.5 L4 Opus audit + toughest-pairs review</li>
       <li><span class="g-no">&#9675;</span> B6.6 Execution (auto-apply + reviewed)</li>
@@ -237,13 +237,15 @@
     <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
       <tr><td style="color:var(--muted);">Budget ceiling</td><td style="text-align:right">$250</td></tr>
       <tr><td style="color:var(--muted);">Projected</td><td style="text-align:right">$100&ndash;220</td></tr>
-      <tr><td style="color:var(--muted);">Spent</td><td style="text-align:right">$0.00</td></tr>
-      <tr><td style="color:var(--muted);">Producers (pre-LWIN)</td><td style="text-align:right">10,683</td></tr>
-      <tr><td style="color:var(--muted);">Producers (post-LWIN)</td><td style="text-align:right">33,281 (33,225 active)</td></tr>
-      <tr><td style="color:var(--muted);">LWIN unlinked</td><td style="text-align:right">0 distinct / 26 NULL residuals</td></tr>
+      <tr><td style="color:var(--muted);">Spent (pilot)</td><td style="text-align:right">$0.12</td></tr>
+      <tr><td style="color:var(--muted);">Full L1 projected</td><td style="text-align:right">$75&ndash;90</td></tr>
+      <tr><td style="color:var(--muted);">Producers (active)</td><td style="text-align:right">33,225</td></tr>
+      <tr><td style="color:var(--muted);">Blocking pairs</td><td style="text-align:right">151,150</td></tr>
+      <tr><td style="color:var(--muted);">Multi-strategy pairs</td><td style="text-align:right">11,869 (2+ signals)</td></tr>
+      <tr><td style="color:var(--muted);">L1 anchor accuracy</td><td style="text-align:right">7/7 in pilot</td></tr>
       <tr><td style="color:var(--muted);">Review load target</td><td style="text-align:right">50&ndash;150 pairs</td></tr>
       <tr><td style="color:var(--muted);">Quality bar</td><td style="text-align:right">final-state ~100%</td></tr>
-      <tr><td style="color:var(--muted);">Next block</td><td style="text-align:right">B6.3 schema + L1</td></tr>
+      <tr><td style="color:var(--muted);">Next block</td><td style="text-align:right">B6.4 L2+L3+anchor</td></tr>
     </table>
   </div>
   <div class="quality-item wide">
