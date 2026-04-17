@@ -1,16 +1,15 @@
 {
   "budget": 250.00,
-  "spent": 0.00,
+  "spent": 78.44,
   "sessions": {
     "B6.1": 0.00,
     "B6.2": 0.00,
     "B6.2.1": 0.00,
     "B6.2.2": 0.00,
     "B6.3_pilot": 0.12,
-    "B6.3_full_l1": "in_progress_projected_75_90"
+    "B6.3_full_l1": 78.32
   },
-  "spent_approx": 0.12,
-  "spent_projected_b6_3": "75-90",
-  "remaining_projected": "135-155",
-  "note": "Tiered AI ladder with batching at L1 (10/call) and L2 (5/call). L3 Sonnet 4.6 with Anthropic native web_search tool. L4 Opus-inline-1M audit (free in-session). B6.2 LWIN import used simple matching (no AI) — $0. B6.3 pilot spent $0.12 on 200 pairs; full L1 run launched 2026-04-17, $130 budget cap, projected $75-90 total. Symmetric threshold (0.92-0.93) decision deferred to B6.4 with full distribution in hand. Budget $250 ceiling per B6.1 user decision. Projected $100-220. Reserve $30-60 for B6.7+ iteration. Cost not the constraint; quality is."
+  "remaining_projected_b6_4_thru_close": "80-100",
+  "remaining_sprint_ceiling": 171.56,
+  "note": "Tiered AI ladder with batching at L1 (10/call) and L2 (5/call). L3 Sonnet 4.6 with Anthropic native web_search tool. L4 Opus-inline-1M audit (free in-session). B6.2 LWIN import used simple matching (no AI) — $0. B6.3 pilot $0.12 + full L1 run $78.32 = $78.44 total. Full L1 processed 151,120 of 151,150 pairs (30 parse failures acceptable, 99.98% completion). Final verdicts: 2,606 MERGE + 2,121 PARENT_CHILD + 145,310 SKIP + 1,083 UNCERTAIN. Symmetric threshold decision deferred to B6.4 with L3-oracle calibration (500-700 pairs). B6.4 budget projected $80-95 (calibration $12-15 + L2 ~$44 + L2.5 ~$2.50 + L3 ~$30-45). Sprint total projection $160-175, $75-90 reserve under $250 ceiling. Budget $250 ceiling per B6.1 user decision. Cost not the constraint; quality is."
 }

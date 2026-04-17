@@ -336,27 +336,47 @@ See `docs/HISTORY.md` for promotion results, session-by-session build history, a
 
 ## Current Focus
 
-**Sprint 6 (Producer Dedup) — B6.3 IN PROGRESS (full L1 running 2026-04-17).
-B6.2 + B6.2.1 + B6.2.2 DONE.** Plan covers **LWIN import + evaluation +
-execution in one sprint.** User quality bar = **final-state correctness
-~100%** of producers table, achieved via unanimous multi-method auto-apply +
-50-150 curated user-reviewed toughest pairs + UNCERTAIN flagged as known-open.
+**Sprint 6 (Producer Dedup) — B6.3 DONE 2026-04-17, B6.4 NEXT.**
+B6.2 + B6.2.1 + B6.2.2 + B6.3 complete. Plan covers **LWIN import +
+evaluation + execution in one sprint.** User quality bar = **final-state
+correctness ~100%** of producers table, achieved via unanimous multi-method
+auto-apply + 50-150 curated user-reviewed toughest pairs + UNCERTAIN flagged
+as known-open.
 
-**B6.3 progress (2026-04-17):** Schema migration applied
-(`2026-04-16_b6_3_producer_dedup_schema.sql` — producer_dedup_pairs extended
-+ producer_merge_history created). IDENTITY_RULES §11 drafted + user-reviewed
-+ 11.4.g holdco carve-out applied. Blocking complete: **151,150 pairs** across
-8 active strategies (S1 exact, S2 trigram≥0.35, S5 shared wine-LWIN, S6 shared
-TTB BW permit capped ≤10 producers, S7 cross-country exact/trigram/LWIN, S8
-shared distinguishing wines ≥30% overlap, S9 same-country substring, S10
-shared rare wine (≤5 producers global) [caught DRC↔Romanée-Conti], S11
-cross-country word-subset [caught Mondavi↔Mondavi&Frescobaldi]). S3 embedding
-+ S4 first-3-char dropped. L1 pilot 200 pairs passed 7/7 anchors at 0.06¢/pair.
-**Full L1 run launched 8 workers, budget cap $130, ETA ~5 hrs, projected $75-90.**
-User-decided: symmetric threshold (0.92-0.93) for L2 escalation, but decision
-deferred to B6.4 with full distribution + anchor set in hand. Post-cache-warmup
-per-batch cost 0.5¢ — below plan estimate. B6.4 queued: `data/session_prompts/
-b6_4_l2_l3_anchor.md` (L2 rich + L3 Sonnet web-grounded + anchor set + ablation).
+**B6.3 DONE (2026-04-17, $78.44):** Schema migration applied (producer_dedup_pairs
+extended + producer_merge_history created). IDENTITY_RULES §11 drafted +
+user-reviewed + 11.4.g holdco carve-out applied (E. & J. Gallo / label-appearing
+brands kept; pure holdcos like LVMH soft-deleted). Blocking produced **151,150
+pairs** across 8 active strategies (S1 exact 0, S2 trigram≥0.35 114K, S5 shared
+wine-LWIN 1, S6 shared TTB BW permit capped 8K, S7 cross-country exact/trigram
+8K, S8 shared distinguishing wines 2K, S9 substring 12K, S10 shared rare wine
+≤5-producers globally 16K [caught DRC↔Romanée-Conti via 'marey monge'], S11
+cross-country word-subset 4K [caught Mondavi↔Mondavi&Frescobaldi]). S3 embedding
++ S4 first-3-char dropped. **Full L1 Haiku 4.5 run complete:** 151,120 of
+151,150 processed (99.98%, 30 parse failures), $78.32 in 5h10m on 8 workers,
+0.052¢/pair. Prompt caching confirmed (90% discount on 5.4K-token §11 preamble
+after initial cache-writes). **Final verdicts: MERGE 2,606 + PARENT_CHILD 2,121
++ SKIP 145,310 + UNCERTAIN 1,083 = 4,727 total MERGE+PC candidates for ladder.**
+Multi-strategy agreement: 11,518 pairs at 2-sig, 283 at 3-sig, 64 at 4-sig, 1
+at 5-sig. Pilot 200 pairs validated 7/7 anchors. User-designed threshold
+architecture (Scenario E): L1 auto-accept ≥0.97 = 29.3K (19.4%), L1.5 Gemini
+cross-check 0.92-0.97 = 101K (66.8%), direct-to-L2 <0.92 or UNCERTAIN = 20.8K
+(13.8%). L2 thresholds: 0.96 auto-accept / 0.90 floor (principled — L2 <0.90 =
+knowledge gap → L3, not cross-check). Extended ladder with L2.5 Gemini
+cross-check mirroring L1.5. Cross-model verification design validated by
+Task 1 bakeoff showing Haiku (cautious: FPR 0.7% / FNR 21%) and Gemini
+(aggressive: FPR 9% / FNR 3.5%) have inverse error profiles — joint agreement
+collapses to ~0.06% FPR / ~0.7% FNR. Thresholds are DEFAULTS not commitments;
+B6.4 calibration with L3 Sonnet + web_search_20250305 oracle on 500-700 pair
+test set tunes them from measured accuracy-per-confidence curves (no user
+hand-labeling — user not a wine expert for obscure producers).
+
+**B6.4 queued** (`data/session_prompts/b6_4_l2_l3_anchor.md`): 10-phase
+calibration-first plan — build synthetic ground truth via L3 oracle → L1/L1.5
+calibration → L2 Haiku rich → L2 calibration → L2.5 Gemini rich → L3 Sonnet+web
++ ablation → agreement matrix → Safety Net A unblocked spot-check → final
+threshold commitment → held-out validation. B6.4 budget projected $80-95.
+Sprint total projection $158-173, $77-92 reserve under $250 ceiling.
 
 **LWIN-first (B6.2 + B6.2.1 + B6.2.2 COMPLETE):** Three-stage LWIN import.
 B6.2 long-tail sweep imported 22,598 new producers (10,683 → 33,281).

@@ -1,8 +1,8 @@
 # Sprint 6: Dedup (Producers) — journal
 
 **Opened:** 2026-04-16
-**Status:** Active — B6.3 L1 run in progress (background)
-**Current block:** B6.3 full L1 Haiku classification running on 150,950 pairs; B6.4 queued (L2 rich + L3 web-grounded + anchor set + ablation).
+**Status:** Active — B6.3 COMPLETE 2026-04-17, B6.4 next
+**Current block:** B6.3 closed (L1 full run done, $78.44 spent, 151,120/151,150 processed). B6.4 queued — calibration-first: build 500-700 pair synthetic ground truth via L3 oracle, then L2 Haiku rich + L2.5 Gemini rich + L3 Sonnet+web + ablation. Prompt: `data/session_prompts/b6_4_l2_l3_anchor.md`.
 
 ---
 
@@ -287,13 +287,78 @@
   **symmetric not asymmetric** ("do it right the first time" — willing to
   pay L2 to verify SKIPs at same threshold as MERGE/PARENT_CHILD).
 
-  **Full L1 run launched 2026-04-17** with 8 concurrent workers, budget
-  cap $130. Processing 150,950 remaining blocking pairs. ETA ~5 hours
-  (throughput ~2.5 pairs/sec with 8 workers). Projected cost: $75-90.
-  Post-cache-warmup per-batch cost stabilized at ~0.5¢/batch (vs 1.1¢
-  for initial 8 concurrent cache-write calls). Run uses `--resume` filter
-  (NOT EXISTS on producer_dedup_pairs.method_name='l1_haiku_batch'), so
-  interruption + restart is idempotent.
+  **Full L1 run COMPLETE 2026-04-17:** 8 concurrent workers, runtime
+  ~5h10m, **$78.32 spent** (vs $75-90 projected — right in target range).
+  Processed **151,120 of 151,150 pairs (99.98%)** — 30 parse failures
+  acceptable at this scale. Per-pair cost 0.052¢ (post-cache-warmup was
+  stable at 0.5¢/batch). Cache performance confirmed — initial 8
+  concurrent cache-writes, then cache_read dominated (90% discount on
+  5.4K-token §11 preamble per call).
+
+  **Final L1 verdict distribution:**
+  - MERGE: **2,606** (1.72%, avg conf 0.88)
+  - PARENT_CHILD: **2,121** (1.40%, avg conf 0.86)
+  - SKIP: **145,310** (96.16%, avg conf 0.95)
+  - UNCERTAIN: **1,083** (0.72%, avg conf 0.56)
+  - **Total MERGE+PC candidates for ladder: 4,727**
+
+  **Multi-strategy blocking agreement (gold signal quality):**
+  - 1 strategy: 139,254 pairs — mostly SKIP (98% are S2 trigram-only, expected)
+  - 2 strategies: 11,518 pairs — MERGE 1,517, PC 671, SKIP 8,787
+  - 3 strategies: 283 pairs — MERGE 175, PC 49, SKIP 43 (overwhelmingly non-SKIP)
+  - 4 strategies: 64 pairs — MERGE 55, PC 4, SKIP 4 (near-certain)
+  - 5 strategies: 1 pair — MERGE (definitively)
+
+  **Scenario E routing preview (user's chosen thresholds, as default):**
+  - L1 auto-accept ≥0.97: **29,301 pairs (19.4%)** — mostly high-conf SKIPs
+  - L1.5 Gemini cross-check 0.92-0.97: **101,018 pairs (66.8%)**
+  - Direct to L2 <0.92 OR UNCERTAIN: **20,801 pairs (13.8%)**
+
+  These volumes match B6.4 planning; budget projections hold.
+
+  **Threshold discussion mid-session:** User initially proposed symmetric
+  0.92-0.93 for L2 escalation. Walked through 6 threshold scenarios with
+  real distribution data. User refined to 0.96/0.90 for L2 (ceiling/floor)
+  with principled reasoning: "<0.90 after rich L2 context = knowledge gap
+  → skip L2.5, go direct to L3 web search". Extended ladder to include
+  L2.5 Gemini rich-prompt mirroring L1.5's cross-model pattern.
+  **Final decision: thresholds are DEFAULTS, not commitments.**
+  Calibration in B6.4 will tune them from measured accuracy-per-confidence
+  curves using L3-oracle labels (NOT user hand-labeling — user not a
+  wine expert for obscure producers).
+
+  **Vendor-neutrality audit triggered by user:** User questioned whether
+  Haiku choice was biased toward Anthropic products. Pulled Task 1 bakeoff
+  data; Haiku 93.5% accuracy tied with gpt-5.4-mini but Haiku's
+  confidence correlation (0.53) much better than gpt-5.4-mini (0.21).
+  Calibration advantage matters for threshold-based escalation but isn't
+  dispositive. Decision: keep Haiku for L1 (already 18% in, $30-60
+  potential savings not worth mid-run switch), broaden vendor
+  consideration at L2/L3 via B6.4 bake-off.
+
+  **Cross-model architecture (user-designed):** L1.5 Gemini and L2.5
+  Gemini as complementary verification tiers. Logic validated by Task 1
+  bake-off showing Haiku and Gemini have inverse error profiles
+  (Haiku: low FPR 0.7%, high FNR 21% — cautious; Gemini: FPR 9%, FNR 3.5%
+  — aggressive). Joint agreement collapses: FPR ~0.06%, FNR ~0.7%.
+  Extra L3 routing rule: L1.5 disagreements where Gemini said MERGE but
+  Haiku said SKIP at high confidence → go directly to L3 (FNR candidates
+  needing web grounding).
+
+  **B6.4 plan updated** via `data/session_prompts/b6_4_l2_l3_anchor.md`:
+  - Phase A: build 500-700 pair synthetic ground truth (L3 oracle, $4-10)
+  - Phase B-C: L1 + L1.5 calibration analysis
+  - Phase D-F: L2 + L2.5 runs on full escalated set
+  - Phase G: L3 Sonnet + web + ablation on web-grounding value
+  - Phase H: cross-method agreement matrix
+  - Phase I: Safety Net A
+  - Phase J: final threshold commitment + held-out validation
+  Projected B6.4 cost: $80-95. Sprint total $158-173, $77-92 headroom.
+
+  **L1 run stable throughout:** 0 errors beyond the 30 parse failures
+  (0.02% failure rate). Run uses `--resume` filter (NOT EXISTS on
+  producer_dedup_pairs.method_name='l1_haiku_batch') so restart is
+  idempotent if needed.
 
   **Files:** `supabase/migrations/2026-04-16_b6_3_producer_dedup_schema.sql`
   (new), `supabase/migrations/b6_3_producer_dedup_pairs_id_default.sql`
@@ -312,12 +377,9 @@
 
 ## Active
 
-- **B6.3 full L1 run** (background): 150,950 pairs, 8 workers, $130 budget.
-  ETA ~5 hrs. Check progress via `data/stats/b6_3_l1_full.log`. Final
-  count will be in `producer_dedup_pairs WHERE method_name='l1_haiku_batch'`
-  when done. Sum `cost_cents` for actual spend.
-
-(B6.4 queued once L1 completes — see `data/session_prompts/b6_4_l2_l3_anchor.md`.)
+(B6.3 done. B6.4 queued — `data/session_prompts/b6_4_l2_l3_anchor.md`:
+calibration-first via L3 oracle, then L2 Haiku rich + L2.5 Gemini rich +
+L3 Sonnet+web + ablation + Safety Net A + held-out validation.)
 
 ---
 
