@@ -336,47 +336,59 @@ See `docs/HISTORY.md` for promotion results, session-by-session build history, a
 
 ## Current Focus
 
-**Sprint 6 (Producer Dedup) — B6.3 DONE 2026-04-17, B6.4 NEXT.**
-B6.2 + B6.2.1 + B6.2.2 + B6.3 complete. Plan covers **LWIN import +
+**Sprint 6 (Producer Dedup) — B6.4 DONE 2026-04-17, B6.5a NEXT.**
+B6.2 + B6.2.1 + B6.2.2 + B6.3 + B6.4 complete. Plan covers **LWIN import +
 evaluation + execution in one sprint.** User quality bar = **final-state
-correctness ~100%** of producers table, achieved via unanimous multi-method
-auto-apply + 50-150 curated user-reviewed toughest pairs + UNCERTAIN flagged
-as known-open.
+correctness ~100%** of producers table, achieved via cross-family auto-apply
++ 1,500-3,000 user-reviewed pairs + FLAGGED open questions.
 
-**B6.3 DONE (2026-04-17, $78.44):** Schema migration applied (producer_dedup_pairs
-extended + producer_merge_history created). IDENTITY_RULES §11 drafted +
-user-reviewed + 11.4.g holdco carve-out applied (E. & J. Gallo / label-appearing
-brands kept; pure holdcos like LVMH soft-deleted). Blocking produced **151,150
-pairs** across 8 active strategies (S1 exact 0, S2 trigram≥0.35 114K, S5 shared
-wine-LWIN 1, S6 shared TTB BW permit capped 8K, S7 cross-country exact/trigram
-8K, S8 shared distinguishing wines 2K, S9 substring 12K, S10 shared rare wine
-≤5-producers globally 16K [caught DRC↔Romanée-Conti via 'marey monge'], S11
-cross-country word-subset 4K [caught Mondavi↔Mondavi&Frescobaldi]). S3 embedding
-+ S4 first-3-char dropped. **Full L1 Haiku 4.5 run complete:** 151,120 of
-151,150 processed (99.98%, 30 parse failures), $78.32 in 5h10m on 8 workers,
-0.052¢/pair. Prompt caching confirmed (90% discount on 5.4K-token §11 preamble
-after initial cache-writes). **Final verdicts: MERGE 2,606 + PARENT_CHILD 2,121
-+ SKIP 145,310 + UNCERTAIN 1,083 = 4,727 total MERGE+PC candidates for ladder.**
-Multi-strategy agreement: 11,518 pairs at 2-sig, 283 at 3-sig, 64 at 4-sig, 1
-at 5-sig. Pilot 200 pairs validated 7/7 anchors. User-designed threshold
-architecture (Scenario E): L1 auto-accept ≥0.97 = 29.3K (19.4%), L1.5 Gemini
-cross-check 0.92-0.97 = 101K (66.8%), direct-to-L2 <0.92 or UNCERTAIN = 20.8K
-(13.8%). L2 thresholds: 0.96 auto-accept / 0.90 floor (principled — L2 <0.90 =
-knowledge gap → L3, not cross-check). Extended ladder with L2.5 Gemini
-cross-check mirroring L1.5. Cross-model verification design validated by
-Task 1 bakeoff showing Haiku (cautious: FPR 0.7% / FNR 21%) and Gemini
-(aggressive: FPR 9% / FNR 3.5%) have inverse error profiles — joint agreement
-collapses to ~0.06% FPR / ~0.7% FNR. Thresholds are DEFAULTS not commitments;
-B6.4 calibration with L3 Sonnet + web_search_20250305 oracle on 500-700 pair
-test set tunes them from measured accuracy-per-confidence curves (no user
-hand-labeling — user not a wine expert for obscure producers).
+**B6.4 DONE (2026-04-17, $24.51):** Calibration only — 600-pair stratified
+set, gold-labeled 367 pairs (200 proxy + 167 from Sonnet+web oracle). Ran
+L1.5 Gemini basic ($0.13, 100% MERGE precision at any conf ≥0.85 on 88 pairs),
+L2 Haiku rich ($0.59, 97.6% MERGE precision), L2.5 Gemini rich ($0.19, 98.8%).
+**Headline:** any Haiku-tier + any Gemini-tier both MERGE at conf ≥0.85 =
+**100% precision** across all cross-family pairings (70-78 gold each). PC
+precision 6-10% across all tiers at ALL confidence bands — confidence
+magnitude doesn't fix PC; cross-tier agreement and rich-prompt source do.
+Safety Net A: 0 of 100 unblocked pairs flagged as MERGE (blocking recall
+solid). L3 web ablation thin (4 overlap pairs, 100% agreement) — decision
+deferred to mid-B6.5a.
 
-**B6.4 queued** (`data/session_prompts/b6_4_l2_l3_anchor.md`): 10-phase
-calibration-first plan — build synthetic ground truth via L3 oracle → L1/L1.5
-calibration → L2 Haiku rich → L2 calibration → L2.5 Gemini rich → L3 Sonnet+web
-+ ablation → agreement matrix → Safety Net A unblocked spot-check → final
-threshold commitment → held-out validation. B6.4 budget projected $80-95.
-Sprint total projection $158-173, $77-92 reserve under $250 ceiling.
+**Committed thresholds (symmetric, cross-family):**
+- Stage 1: L1+L1.5 both MERGE ≥**0.88** → auto; both SKIP ≥**0.97** → auto
+- Stage 2: L2+L2.5 both MERGE ≥**0.90** → auto; both SKIP ≥**0.95** → auto
+- L3 Sonnet: MERGE ≥**0.92** → auto; SKIP ≥**0.90** → auto
+- L3 web: **deferred mid-run** based on Stage 2 residual count (<1K=web,
+  1-3K=web, 3-10K=no-web bulk + web on disagreements, >10K=tighten)
+- **PC refined rule:** user review iff (a) 2+ tiers emit PC at any conf,
+  OR (b) L2/L2.5 rich PC at conf ≥0.90, OR (c) L3 Sonnet PC at any conf.
+  Single-tier basic-prompt PC is noise; follow cross-tier non-PC consensus.
+- SKIP audit added: 200 auto-SKIPs through L2+L3 in B6.5a to validate
+  3.2% calibration FN rate at scale.
+
+**Full analysis:** `data/sprints/dedup/b6_4_analysis.md`. Committed
+thresholds: `data/sprints/dedup/final_thresholds.json`.
+
+**B6.5 split into two blocks** to separate automated from interactive work:
+- **B6.5a** (`data/session_prompts/b6_5a_production_ladder.md`): L1.5 on
+  151K → Stage 1 sort → SKIP audit → L2+L2.5 → Stage 2 sort → L3 web
+  decision → L3 run → L4 Opus audit → produce review_queue.json.
+  Budget $35-80, ~3h automated.
+- **B6.5b** (`data/session_prompts/b6_5b_interactive_review.md`): batched
+  user review of 1,500-3,000 pairs with Claude context packs. Budget
+  $0-5, 1-3h interactive with user.
+
+Sprint total projection: $78 (B6.3) + $25 (B6.4) + $35-85 (B6.5a+b) =
+**$138-188 of $250 ceiling** with $62-112 reserve.
+
+**B6.3 DONE (2026-04-17, $78.44):** Schema migration applied
+(`producer_dedup_pairs` extended + `producer_merge_history` created).
+IDENTITY_RULES §11 drafted + user-reviewed + 11.4.g holdco carve-out
+applied. Blocking produced **151,150 pairs** across 8 active strategies.
+L1 Haiku 4.5 on 151,120 pairs (99.98%) at 0.052¢/pair with prompt caching.
+Pilot 200 validated 7/7 anchors (Ridge MERGE 0.98, Stag's Leap WC vs Stags'
+Leap Winery SKIP 0.96, Silver Oak+Twomey PARENT_CHILD 0.93). Full verdicts:
+MERGE 2,606 + PARENT_CHILD 2,121 + SKIP 145,310 + UNCERTAIN 1,083.
 
 **LWIN-first (B6.2 + B6.2.1 + B6.2.2 COMPLETE):** Three-stage LWIN import.
 B6.2 long-tail sweep imported 22,598 new producers (10,683 → 33,281).
@@ -392,79 +404,31 @@ display_name coverage), 33,214 producers with ≥1 wine (up from 27,842),
 99.98% of source_lwin linked, 40 explainable residuals.** $0 spent
 across all three stages. Details in `data/sprints/dedup/journal.md`.
 
-**Tiered AI ladder (Claude models direct via Anthropic SDK, not OpenRouter):**
+**Calibrated AI ladder (post-B6.4, direct Anthropic SDK + OpenRouter for Gemini):**
 
-- **L1:** Haiku 4.5 with cached prefix, **batched 10/call** — all pairs in definitive list (~100K-250K post-LWIN, $60-130)
-- **L2:** Haiku 4.5 rich prompt, **batched 5/call** — L1 uncertain (~10K-25K, $25-60)
-- **L3:** Sonnet 4.6 + **Anthropic native `web_search_20250305` tool** — L2 MERGE/UNCERTAIN (~500-1.5K, $15-35). Rigor tier.
-- **L4:** Opus-inline-1M cross-pair audit in-session (~100 pairs, ~$0)
-- **Review:** 50-150 toughest pairs curated for user with Claude's recommendation + context pack
+- **L1 Haiku** (done in B6.3): 151K pairs classified, 0.052¢/pair cached
+- **L1.5 Gemini basic** (B6.5a): runs on ALL 151K, cross-family cross-check, 0.023¢/pair
+- **L2 Haiku rich** (B6.5a): runs on Stage-1 escalations (~25-40K), 0.10¢/pair
+- **L2.5 Gemini rich** (B6.5a): cross-family cross-check on same set, 0.03¢/pair
+- **L3 Sonnet no-web or web** (B6.5a): rigor tier on Stage-2 residual (~1.5-3K), web deferred to mid-run
+- **L4 Opus-inline-1M** (B6.5a): cross-pair audit, $0 marginal
+- **User review** (B6.5b): 1,500-3,000 pairs with Claude context packs + recommendations
 
-**Candidate-list generation — union of 9 blocking strategies** (lever 4:
-blocking only first, see actuals before committing L1 spend):
+**Producer identity — brand-on-label rule (IDENTITY_RULES §11).** MERGE = same
+brand on label. PARENT-CHILD = distinct brands with ownership. SKIP = unrelated.
+12 edge cases resolved in §11.4 (renames, dissolved+reopened, private-labels,
+retailers-never-producers, second wines, négociant+estate, holdcos with 11.4.g
+carve-out for label-appearing brands, accent variants, importer prefixes, TTB
+permits, commune overlap, joint ventures).
 
-1. Same country + exact normalized name
-2. Same country + trigram ≥ 0.3
-3. Same country + embedding cosine ≥ 0.5
-4. Same country + first-3-char + token overlap
-5. Shared external_id (LWIN_7, website host)
-6. **Shared TTB permittee_basic_permit** — biggest new signal, federally-unique US identity
-7. Cross-country with strong signal (shared LWIN or ≥5 matching wines)
-8. Wine-catalog overlap ≥ 30% shared named wines
-9. Producer-name substring containment
-
-**TTB primary US dedup signal:** `permittee_basic_permit` legally unique per
-entity. TTB fingerprint (permittee, address, brand_name list, COLA count)
-pre-computed per producer and injected verbatim into every LLM prompt for US
-pairs. Sprint 5 bake-off lesson ported: richer prompt context lifts precision.
-
-**Producer identity — brand-on-label rule.** MERGE = same brand identity on
-label. PARENT-CHILD = distinct brands with ownership. SKIP = unrelated. Edge
-cases resolved: renames → MERGE + alias; dissolved+reopened → same producer
-(continuous brand); private-labels (Charles Shaw / Kirkland) → producer with
-per-wine actual_vintner in wines.metadata; retailers (Trader Joe's, Costco)
-→ never producers; second wines → wines not producers; négociant + estate →
-PARENT-CHILD; accent variants → MERGE with survivor matching actual label form.
-
-**Key infrastructure:**
-- `docs/IDENTITY_RULES.md` — existing file (Session 2, wine identity) gets
-  new Section 11 (Producer Identity Rules) drafted in B6.3, user reviews
-  before L1 runs. Section 11 embedded verbatim in every LLM prompt.
-- Schema: extend `producer_dedup_pairs` with producer_id_a/_b, method_name,
-  confidence, reasoning, cost_cents, signals/ttb_evidence/web_evidence jsonb,
-  flag_reason. CREATE `producer_merge_history` for full JSON snapshot +
-  repointed-rows audit (programmatic rollback).
-- Parent-child via existing `producers.parent_producer_id` column. Dedicated
-  `producer_relationships` table deferred post-S6.
-- Module `pipeline/identity/producer_dedup.py` replaces stub; staging-import
-  promote scripts refactor to import from it in S7+.
-
-**Anchor set (~50 hand-labeled, built in B6.4):** S4.1 re-verification
-(3 pairs — NOT assumed correct); 14 demo producers; 15 stress-test cases
-(abbreviation, translation, parent-child, accent, private-label, rename,
-importer-prefix, retailer-as-producer, commune overlap); 20 stratified random.
-
-**Cost levers applied:** Lever 3 (batching at L1+L2) ON. Lever 4 (blocking
-first + see actuals) ON. Lever 1 (skip LLM on exact matches) OFF — commune
-overlap risk. Lever 2 (Opus pre-filter L3) OFF — undermines rigor tier.
-
-**Budget:** $250 ceiling (projected $100-220). Cost not the constraint; quality is.
-
-**7 quality gates:** IDENTITY_RULES review → schema migration on branch →
-blocking dry-run → TTB fingerprint spot-check → L1 pilot on 200 pairs →
-L2+L3 ablation + cache hit rate → merge execution dry-run on branch.
-
-**5 review upgrades:** prefetched context pack per pair; batched by pattern
-not random; decision log with notes; flag-for-later (FLAGGED verdict + open_questions.md pattern log); calibration exercise with user before B6.3.
-
-**2 safety nets:** unblocked spot-check (~$1, B6.4) + post-execution
-leftover scan ($5-10, B6.N).
-
-**Block cadence:** ~~B6.2 LWIN import~~ DONE ($0) → **B6.3 next** — schema
-+ IDENTITY_RULES Section 11 + blocking dry-run + L1 batched ($60-130) →
-B6.4 L2 batched + L3 web-grounded + anchor + ablation ($40-95) → B6.5 L4
-Opus audit + toughest-pairs review ($0-10) → B6.6 execution ($0) → B6.7+
-iterate if needed (reserve $30-60) → B6.N close.
+**Block cadence (post-B6.4):**
+- ~~B6.1 planning~~ DONE / ~~B6.2 LWIN import~~ DONE / ~~B6.3 schema+blocking+L1~~ DONE ($78.44)
+- ~~B6.4 calibration + committed thresholds~~ DONE ($24.51)
+- **B6.5a next** — production ladder + SKIP audit + L4 Opus audit ($35-80)
+- **B6.5b** — interactive review ($0-5)
+- **B6.6** — merge execution + producer_merge_history ($0)
+- **B6.7+** — iterate if quality gate unmet (reserve $30-60)
+- **B6.N** — sprint close + handoff to Sprint 7 wine dedup
 
 **Sprint sequencing:**
 - Sprint 6 (now): LWIN import + producer dedup (evaluation + execution)

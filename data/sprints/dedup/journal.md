@@ -377,9 +377,112 @@
 
 ## Active
 
-(B6.3 done. B6.4 queued — `data/session_prompts/b6_4_l2_l3_anchor.md`:
-calibration-first via L3 oracle, then L2 Haiku rich + L2.5 Gemini rich +
-L3 Sonnet+web + ablation + Safety Net A + held-out validation.)
+(B6.4 done. B6.5 queued — split into B6.5a automated ladder run
+(`data/session_prompts/b6_5a_production_ladder.md`) and B6.5b interactive
+user review (`data/session_prompts/b6_5b_interactive_review.md`).)
+
+---
+
+- **B6.4 (2026-04-17):** Calibration only — built 600-pair calibration set,
+  gold-labeled 367 pairs (200 proxy + 167 Sonnet 4.6 + web_search_20250305
+  oracle before hitting $30 budget cap at pair 167), ran 4 classifier tiers
+  (L1 already done in B6.3, plus L1.5 Gemini basic, L2 Haiku rich, L2.5
+  Gemini rich), measured accuracy against gold, committed thresholds.
+
+  **Headline finding:** any Haiku-tier + any Gemini-tier both saying MERGE
+  at conf ≥0.85 is 100% precision across 70-78 gold-labeled pairs per
+  pairing. Cross-family agreement is the reliability anchor, not confidence
+  magnitude.
+
+  **Per-tier calibration results:**
+  - L1 Haiku: MERGE 98.7% (75/76), PC 6.7% (5/75), SKIP@≥0.97 = 100% (100/100)
+  - L1.5 Gemini basic (595 pairs, $0.13): MERGE 100% at any conf ≥0.85 (88/88), PC 9.2%, SKIP@≥0.97 = 96.2% (76/79)
+  - L2 Haiku rich (600 pairs, $0.59): MERGE 97.6% (82/84), MERGE@≥0.92 = 100% (70/70), PC 9.9%
+  - L2.5 Gemini rich (600 pairs, $0.19): MERGE 98.8% (83/84), MERGE@≥0.97 = 100% (42/42), PC 9.8%
+
+  **Cross-family agreement (MERGE precision when both agree):**
+  - L1 Haiku × L1.5 Gemini basic: 70/70 = 100%
+  - L1 Haiku × L2 Haiku rich: 75/76 = 98.7% (1 FP — same-family)
+  - L1 Haiku × L2.5 Gemini rich: 73/73 = 100%
+  - L1.5 Gemini × L2 Haiku rich: 76/76 = 100%
+  - L1.5 Gemini × L2.5 Gemini rich: 78/78 = 100% (same family, no FP)
+  - L2 Haiku × L2.5 Gemini rich: 77/78 = 98.7% (1 FP — same-family blip)
+
+  **4-way unanimous:**
+  - All 4 MERGE (min conf ≥0.85): 97 pairs, 63/63 gold-labeled = **100%**
+  - All 4 SKIP (min conf ≥0.90): 235 pairs, 151/156 = 96.8% (5 FN MERGEs)
+  - All 4 PC: 86 pairs — still only ~10% precision (PC is noise at every tier)
+
+  **Calibration routing:**
+  - 66% auto-handled (auto-MERGE + auto-SKIP at Stage 1 or 2)
+  - 32% user review (PC at any tier, UNCERTAINs)
+  - 2% L3 rigor
+
+  **Ablation results:**
+  - L3 web vs no-web: 4 overlap pairs, 100% agreement. Thin sample.
+    Cost delta $0.147/pair (web) vs $0.012/pair (no-web). Decision: defer
+    web choice to mid-B6.5a based on actual Stage 2 residual count.
+  - Safety Net A: 100 unblocked random same-country pairs run through
+    Haiku + Gemini. **0 flagged as MERGE at conf >0.85** — blocking recall
+    looks solid on the sample.
+
+  **Committed thresholds (symmetric, cross-family):**
+  - Stage 1 auto-MERGE: L1 MERGE ≥0.88 AND L1.5 MERGE ≥0.88 (user chose 0.88
+    over calibration-supported 0.85 for safety margin)
+  - Stage 1 auto-SKIP: L1 SKIP ≥0.97 AND L1.5 SKIP ≥0.97
+  - Stage 2 auto-MERGE: L2 MERGE ≥0.90 AND L2.5 MERGE ≥0.90
+  - Stage 2 auto-SKIP: L2 SKIP ≥0.95 AND L2.5 SKIP ≥0.95
+  - Stage 3 (L3 Sonnet): MERGE ≥0.92 auto, SKIP ≥0.90 auto, else user review
+  - L3 web: DEFERRED — decided mid-run based on residual count
+  - PC at any tier any conf: user review always
+  - SKIP audit in B6.5a: 200 random auto-SKIPs through L2+L3 to verify FN rate
+
+  **Key process changes vs B6.3 plan:**
+  1. L1.5 Gemini on ALL 151K (was only the 0.92-0.97 L1 band)
+  2. L1 auto-MERGE now requires cross-family agreement (was L1 alone ≥0.97)
+  3. MERGE threshold LOWERED from 0.97 solo to 0.88 cross-family
+  4. PC always escalates (was unspecified)
+  5. L3 web decision deferred (was always-on)
+  6. B6.5 split into B6.5a (automated) + B6.5b (interactive review)
+  7. SKIP audit added to validate FN rate at scale
+
+  **Spend:** $24.51 (oracle $22.93 + Gemini basic $0.13 + L2 Haiku rich $0.59
+  + Gemini rich $0.19 + L3 no-web ablation $0.65 + Safety Net A $0.05 +
+  calibration set build $0).
+
+  **Under budget:** $56-71 below the $80-95 plan. Oracle came in 2x high
+  per-pair; L2 calibration runs came in ~70x low because calibration was
+  only 600 pairs (full escalated run moves to B6.5a).
+
+  **Scripts built:**
+  - `pipeline/identity/build_calibration_set.py` — stratified 5-tier sampler
+  - `pipeline/identity/calibration_oracle.py` — Sonnet 4.6 + web_search_20250305 gold labeler
+  - `pipeline/identity/producer_dedup_gemini.py` — Gemini 3 Flash via OpenRouter (basic or rich mode)
+  - `pipeline/identity/producer_dedup_l2.py` — L2 Haiku rich prompt, batched 5/call
+  - `pipeline/identity/producer_dedup_l3.py` — L3 Sonnet rigor (web or no-web)
+  - `pipeline/identity/sync_calibration.py` — DB → calibration_set.json sync
+  - `pipeline/identity/calibration_analysis.py` — per-tier accuracy reports
+  - `pipeline/identity/crossmodel_agreement.py` — pairwise agreement matrix
+  - `pipeline/identity/agreement_matrix.py` — production routing classifier
+  - `pipeline/identity/l3_ablation.py` — web vs no-web comparison
+  - `pipeline/identity/safety_net_a.py` — unblocked spot-check
+  - `pipeline/identity/final_thresholds.py` — threshold sweep + commitment
+
+  **Files:** `data/sprints/dedup/b6_4_analysis.md` (full + simplified analysis),
+  `data/sprints/dedup/final_thresholds.json` + `.md` (committed rules),
+  `data/sprints/dedup/calibration_set.json` (600 pairs + verdicts + gold),
+  per-tier calibration reports (`l1_calibration.md`, `l1_gemini_basic_calibration.md`,
+  `l2_haiku_rich_calibration.md`, `l2_gemini_rich_calibration.md`),
+  `data/sprints/dedup/crossmodel_agreement.md`,
+  `data/sprints/dedup/agreement_matrix.md`, `data/sprints/dedup/l3_ablation.md`,
+  `data/sprints/dedup/safety_net_a.md`, logs in `data/stats/b6_4_*.log`,
+  `data/session_prompts/b6_5a_production_ladder.md` (new),
+  `data/session_prompts/b6_5b_interactive_review.md` (new).
+
+  **Tables touched:** `producer_dedup_pairs` gained 3 new method_names:
+  `l1_gemini_basic_calibration` (595 rows), `l2_haiku_rich` (600),
+  `l2_gemini_rich_calibration` (600), `l3_sonnet_noweb_ablation_calibration`
+  (45). Zero production `producers` / `wines` changes.
 
 ---
 

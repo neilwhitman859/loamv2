@@ -1,0 +1,142 @@
+{
+  "sprint": "6",
+  "block": "6.4",
+  "committed_at": "2026-04-17",
+  "calibration_source": "data/sprints/dedup/calibration_set.json",
+  "calibration_pairs": 600,
+  "gold_labeled_pairs": 367,
+  "gold_sources": {
+    "proxy_T1_T2": 200,
+    "l3_sonnet_web_oracle": 167
+  },
+
+  "stage_1_l1_cross_l1_5": {
+    "runs": "L1 Haiku (done in B6.3) + L1.5 Gemini basic (B6.5a on full 151K)",
+    "auto_merge": {
+      "rule": "L1 Haiku MERGE >= 0.88 AND L1.5 Gemini basic MERGE >= 0.88",
+      "calibration_precision": "100% (70/70 at >=0.85 cross-family)",
+      "threshold_choice_rationale": "user chose 0.88 vs calibration-supported 0.85 for safety margin; costs 15-20 auto-applies vs 0.85"
+    },
+    "auto_skip": {
+      "rule": "L1 Haiku SKIP >= 0.97 AND L1.5 Gemini basic SKIP >= 0.97",
+      "calibration_precision": "~99% (L1 alone 100% @0.97, L1.5 alone 96.2% @0.97; joint expected higher)",
+      "fn_risk": "At 4-way SKIP >=0.90 saw 3.2% FN rate; tight ~0.97 threshold should cut FN significantly"
+    },
+    "escalate_to_stage_2": [
+      "All L1 PARENT_CHILD (PC precision 6.7%)",
+      "All L1 UNCERTAIN",
+      "L1 MERGE < 0.88 OR L1.5 MERGE < 0.88",
+      "L1 SKIP < 0.97 OR L1.5 SKIP < 0.97",
+      "L1 and L1.5 disagreement"
+    ]
+  },
+
+  "stage_2_l2_cross_l2_5": {
+    "runs": "L2 Haiku rich + L2.5 Gemini rich on Stage 1 escalations",
+    "auto_merge": {
+      "rule": "L2 Haiku rich MERGE >= 0.90 AND L2.5 Gemini rich MERGE >= 0.90",
+      "calibration_precision": "100% (78/78 cross-family agreement)"
+    },
+    "auto_skip": {
+      "rule": "L2 Haiku rich SKIP >= 0.95 AND L2.5 Gemini rich SKIP >= 0.95",
+      "calibration_precision": "~93%"
+    },
+    "escalate_to_stage_3": [
+      "L2 PARENT_CHILD (PC precision 9.9%)",
+      "L2 UNCERTAIN",
+      "L2+L2.5 disagreement",
+      "L2 MERGE or SKIP below auto-thresholds"
+    ]
+  },
+
+  "stage_3_l3_sonnet": {
+    "model": "claude-sonnet-4-6",
+    "web_search": {
+      "status": "deferred mid-run decision",
+      "decision_rule": "Based on L3 residual count after Stage 2:\n- <1,000 pairs -> use web ($15-30)\n- 1,000-3,000 -> use web ($30-90)\n- 3,000-10,000 -> L3 no-web bulk + web on sub-sample of disagreements\n- 10,000+ -> revisit Stage 2 thresholds before running L3",
+      "calibration_evidence": "Ablation was thin (4 overlap pairs, 100% agreement). Cost per pair $0.147 with web vs $0.012 no-web."
+    },
+    "auto_merge": {
+      "rule": "L3 MERGE >= 0.92"
+    },
+    "auto_skip": {
+      "rule": "L3 SKIP >= 0.90"
+    },
+    "user_review": [
+      "L3 PARENT_CHILD (any conf)",
+      "L3 UNCERTAIN",
+      "L3 MERGE conf 0.70-0.92"
+    ]
+  },
+
+  "l4_opus_audit": {
+    "model": "claude-opus-4-7",
+    "context": "1M",
+    "cost": "$0 (Opus-inline)",
+    "role": "cross-pair pattern check on full B6.5a output before B6.5b review",
+    "looks_for": [
+      "MERGE pairs that look wrong in aggregate",
+      "Inconsistent handling of structurally-similar pairs",
+      "PC patterns that suggest new IDENTITY_RULES subsection",
+      "Suspicious unanimous-auto-SKIPs that warrant review"
+    ]
+  },
+
+  "user_review_rules": [
+    "L3 UNCERTAIN",
+    "L3 MERGE at conf < 0.92",
+    "Unresolved disagreements after L3",
+    "PC routing (see pc_routing_rule below)"
+  ],
+
+  "pc_routing_rule": {
+    "principle": "Basic-prompt PC (L1, L1.5) is noise regardless of confidence (6-9% precision across all bands). Rich-prompt PC (L2, L2.5) at high confidence is more trustworthy. Cross-tier PC agreement is the strongest signal.",
+    "calibration_precision_by_band": {
+      "L1_Haiku_PC_any_conf": "5/75 = 6.7%",
+      "L1_5_Gemini_PC_any_conf": "6/65 = 9.2%",
+      "L2_Haiku_rich_PC_0.92-0.97": "7/69 = 10.1%",
+      "L2_5_Gemini_rich_PC_at_0.97": "2/2 = 100% (n too small)",
+      "L2_5_Gemini_rich_PC_0.92-0.97": "7/69 = 10.1%"
+    },
+    "route_to_user_review_iff": [
+      "2+ tiers emit PARENT_CHILD at any confidence (cross-tier agreement)",
+      "L2 Haiku rich OR L2.5 Gemini rich emits PARENT_CHILD at conf >= 0.90 (rich-prompt high-conf PC)",
+      "L3 Sonnet emits PARENT_CHILD at any confidence (rigor tier always routes PC to user)"
+    ],
+    "otherwise": "Treat single-tier basic-prompt PC or rich-prompt low-conf PC as noise. Follow cross-tier non-PC consensus (apply MERGE/SKIP auto-thresholds to the non-PC verdicts).",
+    "projected_review_pile_reduction": "Previous rule (any PC -> review) projected 3,000-5,000 pairs. Refined rule projects 1,500-3,000 pairs."
+  },
+
+  "skip_audit": {
+    "purpose": "Verify 4-way SKIP FN rate at scale",
+    "sample_size": 200,
+    "pairs_source": "random sample of auto-SKIP bucket post Stage 1",
+    "run_through": "L2 Haiku rich + L3 no-web",
+    "decision_rule": "FN rate <2% -> thresholds OK. FN 2-5% -> tighten SKIP threshold. FN >5% -> re-run ladder with tighter thresholds.",
+    "cost": "~$5"
+  },
+
+  "b6_5_a_scope": [
+    "L1.5 Gemini basic on all 151K pairs",
+    "Apply Stage 1 thresholds (bucket sort)",
+    "SKIP audit spot-check (200 pairs through L2+L3)",
+    "L2 Haiku rich + L2.5 Gemini rich on Stage 1 escalations",
+    "Apply Stage 2 thresholds",
+    "Decide L3 web on/off based on residual count",
+    "L3 Sonnet on Stage 2 residual",
+    "L4 Opus inline audit across full output",
+    "Produce merge queue preview for B6.5b"
+  ],
+  "b6_5_a_budget_range": [35, 80],
+
+  "b6_5_b_scope": [
+    "Batch user review of 1,500-5,000 flagged pairs",
+    "Claude presents context pack + recommendation per pair",
+    "User signs off in batches by pattern (parent-child, rename, private-label, accent, importer-prefix)",
+    "Build final merge queue for B6.6 execution",
+    "Write open_questions.md for FLAGGED deferrals"
+  ],
+  "b6_5_b_budget_range": [0, 5],
+
+  "notes": "All thresholds committed by user 2026-04-17 based on calibration results. Symmetric thresholds per B6.3 user preference ('do it right the first time'). Cross-family agreement is the reliability anchor, not confidence magnitude. PC always escalates. L3 web defer decision preserves safety on hard cases while managing cost."
+}
