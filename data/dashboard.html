@@ -3,27 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loam</title>
 <meta http-equiv="refresh" content="5">
+<title>Loam</title>
 <style>
   :root {
-    --bg: #111;
-    --surface: #1c1c1c;
-    --border: #2a2a2a;
-    --text: #eee;
-    --muted: #999;
-    --accent: #d4b070;
-    --green: #66bb6a;
-    --red: #ef5350;
-    --yellow: #ffca28;
+    --bg:      #fafaf7;
+    --surface: #ffffff;
+    --border:  #e5e1d8;
+    --text:    #2a2622;
+    --muted:   #6b7280;
+    --accent:  #7c5a3a;
+    --accent-soft: #f0e7dc;
+    --green:   #15803d;
+    --amber:   #b45309;
+    --red:     #b91c1c;
+    --track:   #efebe1;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--bg);
     color: var(--text);
-    padding: 24px;
-    line-height: 1.5;
+    padding: 20px 24px 40px;
+    max-width: 880px;
+    margin: 0 auto;
+    line-height: 1.55;
     font-size: 14px;
   }
 
@@ -32,43 +36,171 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 4px;
     padding-bottom: 12px;
     border-bottom: 1px solid var(--border);
+    gap: 12px;
+    flex-wrap: wrap;
   }
   .header h1 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: var(--accent);
     letter-spacing: 0.04em;
     font-weight: 700;
   }
-  .header .meta { color: var(--muted); font-size: 13px; }
+  .header .meta { color: var(--muted); font-size: 12px; }
 
-  /* Section labels */
-  .section-label {
-    font-size: 11px;
+  /* Session token strip */
+  .session-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .session-cell {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 10px;
+  }
+  .session-cell.total {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+  }
+  .session-cell .s-label {
+    font-size: 9.5px;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     color: var(--muted);
-    margin: 24px 0 10px;
+    font-weight: 700;
+  }
+  .session-cell .s-cost {
+    font-size: 15px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    margin: 2px 0 0;
+  }
+  .session-cell .s-detail {
+    font-size: 11px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  @media (max-width: 560px) {
+    .session-strip { grid-template-columns: 1fr; }
+  }
+
+  .section-label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin: 22px 0 8px;
+    font-weight: 700;
+  }
+
+  /* Current block — hero card */
+  .block-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+  .block-card h2 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+    color: var(--accent);
+  }
+  .block-card .goal {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .block-progress {
+    font-size: 13px;
+    padding: 8px 10px;
+    background: var(--accent-soft);
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .block-progress .pstep {
+    font-weight: 600;
+    color: var(--text);
+  }
+  .block-progress .pstats {
+    margin-top: 4px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .progress-bar {
+    height: 8px;
+    background: var(--track);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 6px 0 4px;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    transition: width 0.3s ease-out;
+  }
+
+  /* Step list (inside current block) */
+  .steps {
+    list-style: none;
+    font-size: 13px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    margin-top: 10px;
+  }
+  .steps li {
+    padding: 2px 0;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .steps .marker { width: 16px; text-align: center; flex-shrink: 0; }
+  .steps .done-s { color: var(--green); }
+  .steps .current-s { color: var(--accent); font-weight: 600; }
+  .steps .pending-s { color: var(--muted); }
+
+  /* Current sprint — single-column compact */
+  .sprint-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+  .sprint-card .goal {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .sprint-card .vitals {
+    margin-top: 12px;
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+  }
+  .vitals table {
+    width: 100%;
+    font-size: 12.5px;
+    border-collapse: collapse;
+  }
+  .vitals td { padding: 3px 0; }
+  .vitals td:first-child { color: var(--muted); }
+  .vitals td:last-child {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
     font-weight: 600;
   }
 
-  /* Now */
-  .now {
-    background: var(--surface);
-    border-left: 3px solid var(--accent);
-    padding: 10px 14px;
-    font-size: 14px;
-  }
-  .now strong { color: var(--accent); }
-
-  /* Roadmap */
+  /* Roadmap (combined with Done) */
   .roadmap { list-style: none; font-size: 14px; }
   .roadmap li {
     padding: 4px 0;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 8px;
   }
   .roadmap .marker {
@@ -78,82 +210,12 @@
   }
   .roadmap .done-marker { color: var(--green); }
   .roadmap .current-marker { color: var(--accent); }
-  .roadmap .future-marker { color: var(--border); }
-  .roadmap .current { color: var(--accent); font-weight: 600; }
+  .roadmap .future-marker { color: #c9c3b4; }
+  .roadmap .current { color: var(--accent); font-weight: 700; }
   .roadmap .future { color: var(--muted); }
-  .roadmap .detail { color: var(--muted); }
+  .roadmap .detail { color: var(--muted); font-size: 13px; }
 
-  /* Quality — 2-column grid */
-  .quality-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-  .quality-item {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 12px 14px;
-  }
-  .quality-item.wide {
-    grid-column: 1 / -1;
-  }
-  .quality-item .q-label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--muted);
-    font-weight: 600;
-  }
-  .quality-item .q-value {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 4px 0 2px;
-  }
-  .quality-item .q-pct {
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--muted);
-  }
-  .quality-item .q-detail {
-    font-size: 12px;
-    color: var(--muted);
-  }
-  .q-value.ok { color: var(--green); }
-  .q-value.warn { color: var(--yellow); }
-  .q-value.bad { color: var(--red); }
-
-  /* Gate checklist */
-  .gate {
-    list-style: none;
-    font-size: 13px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px 12px;
-  }
-  .gate li { display: flex; gap: 6px; align-items: center; padding: 2px 0; }
-  .gate .g-yes { color: var(--green); }
-  .gate .g-no { color: var(--red); opacity: 0.7; }
-
-  /* Priorities */
-  .priorities { list-style: none; font-size: 14px; }
-  .priorities li {
-    padding: 5px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .priorities li:last-child { border-bottom: none; }
-  .priorities .p-name { font-weight: 600; }
-  .priorities .p-why { color: var(--muted); font-size: 13px; margin-left: 4px; }
-
-  /* Next up */
-  .next-list { list-style: none; font-size: 14px; }
-  .next-list li {
-    padding: 5px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .next-list li:last-child { border-bottom: none; }
-
-  /* Key numbers — 4-column grid */
+  /* Key numbers */
   .numbers {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -163,7 +225,7 @@
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 6px;
-    padding: 8px 10px;
+    padding: 10px 10px;
     text-align: center;
   }
   .numbers .n-label {
@@ -173,17 +235,24 @@
     letter-spacing: 0.05em;
     font-weight: 600;
   }
-  .numbers .n-value { font-weight: 700; font-size: 15px; }
+  .numbers .n-value {
+    font-weight: 700;
+    font-size: 16px;
+    font-variant-numeric: tabular-nums;
+    margin-top: 2px;
+  }
 
-  /* Done */
-  .done-list { font-size: 13px; color: var(--muted); }
-  .done-list dt { color: var(--text); font-weight: 600; margin-top: 6px; }
-  .done-list dd { margin-left: 0; margin-bottom: 2px; }
+  /* Parking lot */
+  .parking-list { list-style: none; font-size: 13px; }
+  .parking-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .parking-list li:last-child { border-bottom: none; }
+  .parking-list .p-name { font-weight: 600; }
+  .parking-list .p-why { color: var(--muted); }
 
-  /* Responsive: stack at narrow widths */
-  @media (max-width: 400px) {
-    .quality-grid { grid-template-columns: 1fr; }
-    .gate { grid-template-columns: 1fr; }
+  @media (max-width: 560px) {
     .numbers { grid-template-columns: 1fr 1fr; }
   }
 </style>
@@ -192,178 +261,167 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">B6.4 DONE &middot; Sprint 6 ACTIVE &middot; Apr 17, 2026</div>
+  <div class="meta">Sprint 6 &middot; B6.5a in progress &middot; <!--updated-->updated 2026-04-18 01:30<!--/updated--></div>
 </div>
 
-<div class="now">
-  <strong>B6.4 COMPLETE (2026-04-17, $24.51):</strong> Calibration only &mdash; zero production pairs touched. Built <strong>600-pair stratified calibration set</strong>, gold-labeled 367 pairs (200 proxy + 167 via Sonnet 4.6 + web_search_20250305 oracle; oracle hit budget cap before finishing all 400 hard cases). Ran four classifier tiers against it: L1 Haiku (98.7% MERGE precision), L1.5 Gemini basic (100% MERGE precision on 88 pairs, $0.13), L2 Haiku rich (97.6% precision, MERGE@&ge;0.92 = 100%, $0.59), L2.5 Gemini rich (98.8% precision, MERGE@&ge;0.97 = 100%, $0.19). <strong>Headline finding: any Haiku-tier + any Gemini-tier both MERGE at conf &ge;0.85 = 100% precision</strong> across 70&ndash;78 gold pairs per cross-family pairing. Same-family (Haiku+Haiku or Gemini+Gemini) had a 1-FP blip at 98.7%. PC verdicts are uniformly 6&ndash;10% precision across all tiers across all confidence bands &mdash; confidence doesn't fix PC precision; cross-tier agreement and rich-prompt source do. 4-way MERGE unanimous: 100% (63/63). 4-way SKIP @&ge;0.90: 96.8% (151/156, 5 FN MERGEs). Calibration routing: <strong>~66% auto-handled, ~18% user review (refined PC rule), ~2% L3 rigor</strong>. L3 ablation thin (4 overlap pairs, 100% web vs no-web agreement) &mdash; web decision deferred to mid-B6.5a based on residual count. Safety Net A: 100 unblocked pairs, 0 flagged as MERGE at conf &gt;0.85 (blocking recall solid). Under budget by $56&ndash;71 vs $80&ndash;95 plan. Full analysis: <code>data/sprints/dedup/b6_4_analysis.md</code>. Committed thresholds: <code>data/sprints/dedup/final_thresholds.json</code>. <strong>Committed thresholds:</strong> Stage 1 MERGE 0.88+0.88, SKIP 0.97+0.97; Stage 2 MERGE 0.90+0.90, SKIP 0.95+0.95; L3 MERGE &ge;0.92, SKIP &ge;0.90. Refined PC rule: route to review iff 2+ tiers PC OR L2/L2.5 rich PC &ge;0.90 OR L3 PC any conf (single-tier basic-prompt PC is treated as noise). <strong>Next: B6.5 (split).</strong> B6.5a: production ladder on 151K + SKIP audit + L4 Opus audit, produces review queue ($35&ndash;80). B6.5b: interactive user review of ~1,500&ndash;3,000 pairs, builds merge queue for B6.6 ($0&ndash;5). Prompts: <code>data/session_prompts/b6_5a_production_ladder.md</code>, <code>data/session_prompts/b6_5b_interactive_review.md</code>.
+<!-- ============= SESSION TOKENS ============= -->
+<!--session-strip-->
+<div class="session-strip">
+  <div class="session-cell">
+    <div class="s-label">Opus 4.7 chat tokens</div>
+    <div class="s-cost">231.1M</div>
+    <div class="s-detail">636 msgs &middot; 230.4M in &middot; 704K out</div>
+  </div>
+  <div class="session-cell">
+    <div class="s-label">Pipeline tokens</div>
+    <div class="s-cost">396.8M</div>
+    <div class="s-detail">l2: 57,459 pairs &middot; 106.4M in &middot; 9.2M out &nbsp;|&nbsp; l2_5: 57,570 pairs &middot; 92.8M in &middot; 4.8M out &nbsp;|&nbsp; gemini: 150,885 pairs &middot; 171.6M in &middot; 10.7M out &nbsp;|&nbsp; audit_l2: 600 pairs &middot; 1.2M in &middot; 96K out</div>
+  </div>
+  <div class="session-cell total">
+    <div class="s-label">Session total tokens</div>
+    <div class="s-cost">628.0M</div>
+    <div class="s-detail">602.5M in &middot; 25.4M out</div>
+  </div>
+</div>
+<!--/session-strip-->
+
+<!-- ============= CURRENT BLOCK ============= -->
+<div class="section-label">Current block</div>
+<div class="block-card">
+  <h2>B6.5a &mdash; Production ladder on 151K</h2>
+  <div class="goal">Apply committed thresholds at scale across L1.5 &rarr; L2 &rarr; L2.5 &rarr; L3. Deliver <code>review_queue.json</code> for B6.5b interactive review.</div>
+
+  <!--progress-block-->
+  <div class="block-progress">
+    <div class="pstep">B6.5a-partial COMPLETE through Stage 2 + probes. Analysis report ready. Awaiting Path 1/2/3 decision.</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats">57,459 / 57,474 pairs (100.0%) &middot; $42.86 &middot; ETA 0 min &middot; 0 parse errors (0.00%) &middot; 0.075¢/pair</div>
+  </div>
+  <!--/progress-block-->
+
+  <!--block-steps-->
+  <ul class="steps">
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 1 — L1.5 Gemini basic on 151K</span></li>
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 2 — Build Stage 1 routing (SQL)</span></li>
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 3 — SKIP audit on 600 pairs (3 bands)</span></li>
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 4 — L2 Haiku rich on Stage 1 escalations</span></li>
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 5 — L2.5 Gemini rich on same escalations</span></li>
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 6 — Build Stage 2 routing (SQL)</span></li>
+    <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 7 — L3 web/no-web decision</span></li>
+    <li><span class="marker current-s">&#9654;</span><span class="current-s">Step 8 — L3 Sonnet on Stage 2 residual</span></li>
+    <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 9 — Stage 3 final routing (SQL)</span></li>
+    <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 10 — L4 Opus-inline cross-pair audit</span></li>
+    <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 11 — Write review_queue.json + close out</span></li>
+  </ul>
+  <!--/block-steps-->
 </div>
 
-<!-- ROADMAP -->
+<!-- ============= CURRENT SPRINT ============= -->
+<div class="section-label">Current sprint &mdash; Sprint 6: Producer Dedup</div>
+<div class="sprint-card">
+  <div class="goal">
+    Dedup all ~33K producers via tiered AI ladder + user-reviewed toughest pairs.
+    Quality bar: <strong>~100% final-state correctness</strong> of the producers table.
+    Single sprint covers LWIN import + evaluation + execution.
+  </div>
+  <ul class="steps">
+    <li><span class="marker done-s">&#10003;</span><span>B6.1 Planning</span></li>
+    <li><span class="marker done-s">&#10003;</span><span>B6.2 LWIN long-tail import (+22,598 producers)</span></li>
+    <li><span class="marker done-s">&#10003;</span><span>B6.2.1 Pre-dedup hygiene (search_vector trigger fix)</span></li>
+    <li><span class="marker done-s">&#10003;</span><span>B6.2.2 LWIN wine recovery via display_name (+26,616 wines)</span></li>
+    <li><span class="marker done-s">&#10003;</span><span>B6.3 Schema + IDENTITY_RULES &sect;11 + blocking (151K pairs) + L1</span></li>
+    <li><span class="marker done-s">&#10003;</span><span>B6.4 Calibration + committed thresholds ($24.51)</span></li>
+    <li><span class="marker current-s">&#9654;</span><span class="current-s">B6.5a Production ladder (active)</span></li>
+    <li><span class="marker pending-s">&#9675;</span><span>B6.5b Interactive review 1,500&ndash;3,000 pairs</span></li>
+    <li><span class="marker pending-s">&#9675;</span><span>B6.6 Execution &mdash; apply merges + producer_merge_history</span></li>
+    <li><span class="marker pending-s">&#9675;</span><span>B6.7+ Iterate if quality gate unmet (reserve)</span></li>
+    <li><span class="marker pending-s">&#9675;</span><span>B6.N Sprint close + handoff to Sprint 7</span></li>
+  </ul>
+
+  <div class="vitals">
+    <table>
+      <tr><td>Budget spent</td><td>$102.95 / $250 ceiling</td></tr>
+      <tr><td>B6.5a projected</td><td>$35&ndash;80</td></tr>
+      <tr><td>Sprint projected total</td><td>$138&ndash;188</td></tr>
+      <tr><td>Reserve</td><td>$62&ndash;112</td></tr>
+      <tr><td>Blocking pairs generated</td><td>151,150</td></tr>
+      <tr><td>L1 Haiku processed</td><td>151,120 (99.98%)</td></tr>
+      <tr><td>Cross-family MERGE precision</td><td>100% on gold labels</td></tr>
+      <tr><td>Expected user review pile</td><td>1,500&ndash;3,000 pairs</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============= ROADMAP (sprints done + current + future) ============= -->
 <div class="section-label">Roadmap</div>
 <ul class="roadmap">
-  <li><span class="marker done-marker">&#10003;</span> Build <span class="detail">&mdash; 156K wines from 32 sources</span></li>
-  <li><span class="marker done-marker">&#10003;</span> Audit <span class="detail">&mdash; 9 experts, 275 findings</span></li>
-  <li><span class="marker done-marker">&#10003;</span> Fix <span class="detail">&mdash; 158 fixed, 101 deferred, $0</span></li>
-  <li><span class="marker done-marker">&#10003;</span> Demo <span class="detail">&mdash; 515 wines, 14 producers, $37.44</span></li>
-  <li><span class="marker done-marker">&#10003;</span> AI Bakeoff <span class="detail">&mdash; current-prompt leader gpt-5.4-mini, 29 models tested, ~$55</span></li>
-  <li><span class="marker current-marker">&#9654;</span> <span class="current">Sprint 6: Producer dedup EVAL</span> <span class="detail">&mdash; dry-run 6 method variants, gate on &ge;99% + 0 FPs, no merges yet</span></li>
-  <li><span class="marker todo-marker">&#9675;</span> Sprint 6b/7: Producer dedup EXECUTION <span class="detail">&mdash; after S6 quality gate + user sign-off</span></li>
-  <li><span class="marker todo-marker">&#9675;</span> Later: Wine dedup <span class="detail">&mdash; ~4,079 suspected, 30-35 dangerous false-positive patterns</span></li>
-  <li><span class="marker todo-marker">&#9675;</span> Later: Prompt v2 + L3 gate + re-enrichment + share</li>
+  <li><span class="marker done-marker">&#10003;</span> <span>Sprint 1 Build</span> <span class="detail">&mdash; 156K wines from 32 sources, schema hardened, frontend built</span></li>
+  <li><span class="marker done-marker">&#10003;</span> <span>Sprint 2 Audit</span> <span class="detail">&mdash; 9 expert audits, 275 findings, $0</span></li>
+  <li><span class="marker done-marker">&#10003;</span> <span>Sprint 3 Fix</span> <span class="detail">&mdash; 158 fixed, 101 deferred, $0</span></li>
+  <li><span class="marker done-marker">&#10003;</span> <span>Sprint 4 Demo</span> <span class="detail">&mdash; 515 wines Grade A across 14 producers, $37.44</span></li>
+  <li><span class="marker done-marker">&#10003;</span> <span>Sprint 5 AI Bakeoff</span> <span class="detail">&mdash; 29 models, current-prompt leader gpt-5.4-mini, ~$55</span></li>
+  <li><span class="marker current-marker">&#9654;</span> <span class="current">Sprint 6 Producer Dedup</span> <span class="detail">&mdash; LWIN import + eval + exec, $103/$250 so far</span></li>
+  <li><span class="marker future-marker">&#9675;</span> <span class="future">Sprint 7 Wine Dedup</span> <span class="detail">&mdash; ~4,079 suspected + dangerous FP patterns</span></li>
+  <li><span class="marker future-marker">&#9675;</span> <span class="future">Sprint 8</span> <span class="detail">&mdash; prompt v2 + L3 fact-check gate + re-enrichment + sharing</span></li>
 </ul>
 
-<!-- SPRINT 6 PROGRESS -->
-<div class="section-label">Sprint 6 &mdash; Producer Dedup (LWIN import + Eval + Exec)</div>
-<div class="quality-grid">
-  <div class="quality-item">
-    <div class="q-label">Blocks</div>
-    <ul class="gate">
-      <li><span class="g-yes">&#10003;</span> B5.8 Close S5 / open S6</li>
-      <li><span class="g-yes">&#10003;</span> B6.1 Planning &amp; design</li>
-      <li><span class="g-yes">&#10003;</span> B6.2 LWIN producer import (+22,598 producers)</li>
-      <li><span class="g-yes">&#10003;</span> B6.2.1 Hygiene (search_vector trigger + 4.7 review)</li>
-      <li><span class="g-yes">&#10003;</span> B6.2.2 LWIN wine recovery (+26,616 wines via display_name)</li>
-      <li><span class="g-yes">&#10003;</span> B6.3 Schema + IDENTITY_RULES + blocking + L1 full run</li>
-      <li><span class="g-yes">&#10003;</span> B6.4 Calibration (600-pair set, 4 tiers, thresholds committed)</li>
-      <li><span class="g-no">&#9675;</span> B6.5a Production ladder (L1.5+L2+L2.5+L3) + SKIP audit + L4 Opus</li>
-      <li><span class="g-no">&#9675;</span> B6.5b Interactive review of ~1,500&ndash;3,000 pairs &rarr; merge queue</li>
-      <li><span class="g-no">&#9675;</span> B6.6 Execution (apply merges + producer_merge_history)</li>
-      <li><span class="g-no">&#9675;</span> B6.7+ Iterate if gate unmet (reserve)</li>
-      <li><span class="g-no">&#9675;</span> B6.N Close + handoff to S7</li>
-    </ul>
-  </div>
-  <div class="quality-item">
-    <div class="q-label">Sprint vitals</div>
-    <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
-      <tr><td style="color:var(--muted);">Budget ceiling</td><td style="text-align:right">$250</td></tr>
-      <tr><td style="color:var(--muted);">Spent (B6.1&ndash;B6.4)</td><td style="text-align:right">$102.95</td></tr>
-      <tr><td style="color:var(--muted);">B6.5 projected</td><td style="text-align:right">$50&ndash;85</td></tr>
-      <tr><td style="color:var(--muted);">Sprint projected</td><td style="text-align:right">$153&ndash;188</td></tr>
-      <tr><td style="color:var(--muted);">Reserve</td><td style="text-align:right">$62&ndash;97</td></tr>
-      <tr><td style="color:var(--muted);">Producers (active)</td><td style="text-align:right">33,225</td></tr>
-      <tr><td style="color:var(--muted);">Blocking pairs</td><td style="text-align:right">151,150</td></tr>
-      <tr><td style="color:var(--muted);">L1 processed</td><td style="text-align:right">151,120 (99.98%)</td></tr>
-      <tr><td style="color:var(--muted);">Calibration pairs labeled</td><td style="text-align:right">367 / 600</td></tr>
-      <tr><td style="color:var(--muted);">Cross-family MERGE precision</td><td style="text-align:right">100% (gold)</td></tr>
-      <tr><td style="color:var(--muted);">4-way SKIP @&ge;0.90 precision</td><td style="text-align:right">96.8%</td></tr>
-      <tr><td style="color:var(--muted);">PC precision across tiers</td><td style="text-align:right">6&ndash;10% (always escalate)</td></tr>
-      <tr><td style="color:var(--muted);">Safety Net A flagged</td><td style="text-align:right">0/100 unblocked</td></tr>
-      <tr><td style="color:var(--muted);">Auto-handled @calibration</td><td style="text-align:right">66%</td></tr>
-      <tr><td style="color:var(--muted);">Review load target</td><td style="text-align:right">50&ndash;150 pairs</td></tr>
-      <tr><td style="color:var(--muted);">Quality bar</td><td style="text-align:right">final-state ~100%</td></tr>
-      <tr><td style="color:var(--muted);">Next block</td><td style="text-align:right">B6.5 production run</td></tr>
-    </table>
-  </div>
-  <div class="quality-item wide">
-    <div class="q-label">Tiered AI ladder (Claude direct via Anthropic SDK, batched at L1+L2, web-grounded at L3)</div>
-    <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
-      <tr><td style="color:var(--muted); padding:2px 8px 2px 0;">L1</td><td>Haiku 4.5 with cached prefix, <strong>batched 10/call</strong> &mdash; all pairs in definitive list</td><td style="text-align:right; color:var(--muted);">100K&ndash;250K / $60&ndash;130</td></tr>
-      <tr><td style="color:var(--muted); padding:2px 8px 2px 0;">L2</td><td>Haiku 4.5 rich prompt, <strong>batched 5/call</strong> &mdash; L1 uncertain</td><td style="text-align:right; color:var(--muted);">10K&ndash;25K / $25&ndash;60</td></tr>
-      <tr><td style="color:var(--muted); padding:2px 8px 2px 0;">L3</td><td>Sonnet 4.6 + <strong>Anthropic native web_search tool</strong> &mdash; L2 MERGE/UNCERTAIN (rigor tier)</td><td style="text-align:right; color:var(--muted);">500&ndash;1.5K / $15&ndash;35</td></tr>
-      <tr><td style="color:var(--muted); padding:2px 8px 2px 0;">L4</td><td>Opus-inline-1M cross-pair audit (in-session, no script)</td><td style="text-align:right; color:var(--muted);">~100 / ~$0</td></tr>
-      <tr><td style="color:var(--muted); padding:2px 8px 2px 0;">Review</td><td>Toughest pairs curated, Claude presents with context pack + recommendation</td><td style="text-align:right; color:var(--muted);">50&ndash;150 / $0</td></tr>
-    </table>
-  </div>
-  <div class="quality-item wide">
-    <div class="q-label">Candidate-list generation (union of 9 blocking strategies, lever 4: blocking-first + see-actuals)</div>
-    <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:6px;">
-      <tr><td style="color:var(--muted); padding:2px 8px 2px 0;">1</td><td>Same country + exact normalized name</td></tr>
-      <tr><td style="color:var(--muted); padding:2px 8px 2px 0;">2</td><td>Same country + trigram &ge; 0.3</td></tr>
-      <tr><td style="color:var(--muted); padding:2px 8px 2px 0;">3</td><td>Same country + embedding cosine &ge; 0.5</td></tr>
-      <tr><td style="color:var(--muted); padding:2px 8px 2px 0;">4</td><td>Same country + first-3-char match + token overlap</td></tr>
-      <tr><td style="color:var(--muted); padding:2px 8px 2px 0;">5</td><td>Shared external_id (LWIN_7, website host)</td></tr>
-      <tr><td style="color:var(--muted); padding:2px 8px 2px 0;">6</td><td><strong>Shared TTB permittee_basic_permit</strong> &mdash; federally-unique US identity</td></tr>
-      <tr><td style="color:var(--muted); padding:2px 8px 2px 0;">7</td><td>Cross-country w/ strong signal (shared LWIN or &ge;5 matching wines)</td></tr>
-      <tr><td style="color:var(--muted); padding:2px 8px 2px 0;">8</td><td>Wine-catalog overlap &ge; 30% shared named wines</td></tr>
-      <tr><td style="color:var(--muted); padding:2px 8px 2px 0;">9</td><td>Producer-name substring containment</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- SPRINT 5 (closed, collapsed) -->
-<div class="section-label">Sprint 5 &mdash; AI Bakeoff (CLOSED)</div>
-<div style="color:var(--muted); font-size:12px; padding: 4px 0 8px;">
-  B5.1&ndash;B5.8 all done. 29 models tested, 6 rounds, ~$55. Current-prompt leader: gpt-5.4-mini ($452/170K). Model selection NOT locked. See <code>bakeoff/scores/tournament_results.md</code>.
-</div>
-
-<!-- QUALITY -->
-<div class="section-label">Overall Quality</div>
-<div class="quality-grid">
-  <div class="quality-item">
-    <div class="q-label">Data depth</div>
-    <div class="q-value warn">10,470 <span class="q-pct">(6.7%)</span></div>
-    <div class="q-detail">wines with 3+ dimensions</div>
-  </div>
-  <div class="quality-item">
-    <div class="q-label">Known errors</div>
-    <div class="q-value warn">4,098</div>
-    <div class="q-detail">4,079 dupes + 19 findings</div>
-  </div>
-</div>
-
-<!-- PRIORITIES -->
-<div class="section-label">Standing Priorities</div>
-<ul class="priorities">
-  <li><span class="p-name">1. Structured data depth</span> <span class="p-why">&mdash; the product is organized facts, not AI prose</span></li>
-  <li><span class="p-name">2. Data correctness</span> <span class="p-why">&mdash; NULL is better than wrong</span></li>
-  <li><span class="p-name">3. Demo readiness</span> <span class="p-why">&mdash; ~400 wines for friends-and-family</span></li>
-  <li><span class="p-name">4. Show it to real humans</span> <span class="p-why">&mdash; learn what users want from real feedback</span></li>
-</ul>
-
-<!-- NEXT UP -->
-<div class="section-label">Next Up &mdash; Sprint 6 (LWIN + Dedup)</div>
-<ul class="next-list">
-  <li><strong>B5.8</strong> &mdash; <s>Close S5 / open S6</s> DONE</li>
-  <li><strong>B6.1</strong> &mdash; <s>Planning &amp; design</s> DONE &mdash; plan reshaped 3x through dialog. Final: LWIN-first, tiered AI ladder, brand-on-label, batched L1+L2, web-grounded L3. Plan: <code>data/sprints/dedup/plan.md</code>. Prompt for B6.2: <code>data/session_prompts/b6_2_lwin_import.md</code>.</li>
-  <li><strong>B6.2</strong> &mdash; <s>LWIN producer import.</s> DONE &mdash; <code>lwin_long_tail.py --resume-unlinked</code> (2h 51m) + <code>lwin_backfill_producer_id.py</code> (15s closeout). Producers 10,683 &rarr; 33,281 (+22,598). 0 unlinked LWIN producer_names, 26 NULL-name residuals. 42,095 canonical wines + 42,566 external_ids created. $0. Journal: <code>data/sprints/dedup/journal.md</code>.</li>
-  <li><strong>B6.3</strong> &mdash; <s>Schema + IDENTITY_RULES §11 + blocking + L1 Haiku on 151K pairs.</s> DONE &mdash; $78.44 spent. 151,120 L1 verdicts written (2,606 MERGE / 2,121 PC / 145,310 SKIP / 1,083 UNCERTAIN).</li>
-  <li><strong>B6.4</strong> &mdash; <s>Calibration only.</s> DONE &mdash; $24.51. 600-pair calibration set + 367 gold labels (200 proxy + 167 Sonnet+web oracle). Ran L1.5 Gemini basic / L2 Haiku rich / L2.5 Gemini rich on all 600. L3 no-web ablation (thin, 4 overlaps, 100% agreement). Safety Net A (100 unblocked pairs, 0 MERGEs flagged &mdash; blocking recall solid). Cross-family MERGE agreement = 100% precision; PC verdicts 6&ndash;10% precision across all tiers &rarr; always escalate. Thresholds committed at <code>data/sprints/dedup/final_thresholds.json</code>. Full analysis at <code>data/sprints/dedup/b6_4_analysis.md</code>.</li>
-  <li><strong>B6.5a</strong> &mdash; <strong>Automated production ladder run.</strong> (1) L1.5 Gemini basic on all 151K (~$3&ndash;4, ~30 min). (2) Apply Stage 1 thresholds (L1+L1.5 MERGE &ge;0.88, SKIP &ge;0.97). (3) SKIP audit: 200 random auto-SKIPs through L2+L3 to validate 3.2% calibration FN rate (~$5). (4) L2 Haiku rich on escalations (~25&ndash;40K, ~$25&ndash;40). (5) L2.5 Gemini rich on same escalations (~$3&ndash;5). (6) Apply Stage 2 thresholds + refined PC rule (2+ tier PC OR L2/L2.5 rich PC &ge;0.90). (7) Decide L3 web on/off based on residual count (&lt;1K = web; 1&ndash;3K = web; 3&ndash;10K = no-web bulk + web on disagreements; &gt;10K = tighten thresholds). (8) L3 Sonnet run on Stage 2 residual (~$20&ndash;40). (9) L4 Opus-inline audit across full output for cross-pair patterns (~$0). (10) Produce <code>review_queue.json</code> with context packs + Claude recommendations. $35&ndash;80.</li>
-  <li><strong>B6.5b</strong> &mdash; <strong>Interactive user review.</strong> Claude batches ~1,500&ndash;3,000 pairs by pattern (rename, PC-confirmed, private-label, accent, importer-prefix, commune-collision, L3 low-conf, UNCERTAIN, L4-flagged). User signs off each pair via context pack + Claude recommendation. FLAGGED verdicts go to <code>open_questions.md</code>. Build <code>producer_merge_queue</code> for B6.6 execution. Expected 1&ndash;3h interactive. $0&ndash;5.</li>
-  <li><strong>B6.6</strong> &mdash; Execution. 3-pair dry-run on Supabase branch, then full execute. producer_merge_history per merge. producer_aliases + parent_producer_id populated. Safety Net B (post-execution leftover scan). $0.</li>
-  <li><strong>B6.7+</strong> &mdash; Iterate if quality gate unmet. Reserve $30&ndash;60.</li>
-  <li><strong>B6.N</strong> &mdash; Sprint close + evaluation.md + open_questions.md + handoff to Sprint 7 wine dedup.</li>
-</ul>
-<div class="section-label">Follow-on sprints (after S6)</div>
-<ul class="next-list" style="color:var(--muted);">
-  <li><strong>Sprint 7</strong> &mdash; Wine dedup (~4,079 suspected + 30-35 dangerous false-positive patterns from Q3 audit)</li>
-  <li><strong>Sprint 8</strong> &mdash; Prompt v2 + L3 fact-check gate + re-enrichment + demo sharing</li>
-</ul>
-
-<!-- KEY NUMBERS -->
-<div class="section-label">Key Numbers</div>
+<!-- ============= KEY NUMBERS ============= -->
+<div class="section-label">Key numbers</div>
+<!--key-numbers-->
 <div class="numbers">
   <div class="n-item"><div class="n-label">Wines</div><div class="n-value">224,316</div></div>
-  <div class="n-item"><div class="n-label">Producers</div><div class="n-value">33,281</div></div>
+  <div class="n-item"><div class="n-label">Producers</div><div class="n-value">33,225</div></div>
   <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">125,934</div></div>
   <div class="n-item"><div class="n-label">Prices</div><div class="n-value">40,193</div></div>
   <div class="n-item"><div class="n-label">Scores</div><div class="n-value">30,339</div></div>
   <div class="n-item"><div class="n-label">Grape links</div><div class="n-value">43,131</div></div>
   <div class="n-item"><div class="n-label">Appellations</div><div class="n-value">3,662</div></div>
-  <div class="n-item"><div class="n-label">Insights</div><div class="n-value">5,485</div></div>
+  <div class="n-item"><div class="n-label">Insights</div><div class="n-value">11,598</div></div>
 </div>
+<!--/key-numbers-->
 
-<!-- PARKING LOT -->
-<div class="section-label">Parking Lot</div>
-<ul class="next-list">
-  <li><strong>Slugs</strong> &mdash; Human-readable URLs (/wine/ridge-monte-bello) before sharing. Add slug columns + resolve by slug or UUID.</li>
-  <li><strong>Label images</strong> &mdash; 3M+ TTB images on external drive. Cloudflare R2 hosting (~$12/mo). Upload pipeline + wine page rendering.</li>
-  <li><strong>Prompt refinement</strong> &mdash; Few-shot examples in prompt to break structural templates (&ldquo;the trap with X&rdquo; pattern). Post-processing diversity pass.</li>
+<!-- ============= PARKING LOT ============= -->
+<div class="section-label">Parking lot</div>
+<ul class="parking-list">
+  <li><span class="p-name">Slugs</span> <span class="p-why">&mdash; human-readable URLs (/wine/ridge-monte-bello) before wider sharing. Add slug columns + resolve by slug or UUID.</span></li>
+  <li><span class="p-name">Label images</span> <span class="p-why">&mdash; 3M+ TTB images on external drive. Cloudflare R2 hosting (~$12/mo). Upload pipeline + WinePage rendering.</span></li>
+  <li><span class="p-name">Prompt v2</span> <span class="p-why">&mdash; few-shot to break structural templates (&ldquo;the trap with X&rdquo; pattern). Diversity pass + L3 fact-check gate. Sprint 8.</span></li>
+  <li><span class="p-name">Revenue model</span> <span class="p-why">&mdash; undefined. Deferred to post-demo. S2.9 finding.</span></li>
+  <li><span class="p-name">Producer metadata</span> <span class="p-why">&mdash; 0 producers have metadata. Deferred post-Sprint 6 (after dedup stabilizes the set).</span></li>
 </ul>
 
-<!-- DONE -->
-<div class="section-label">Done</div>
-<dl class="done-list">
-  <dt>Sprint 1 &mdash; Build</dt>
-  <dd>156K wines, 32 sources, schema hardened, frontend built, TTB 3.28M scraped</dd>
-  <dt>Sprint 2 &mdash; Audit</dt>
-  <dd>9 expert audits, 275 findings, $0 of $25 budget</dd>
-  <dt>Sprint 3 &mdash; Fix</dt>
-  <dd>6 tracks, 158 findings fixed, 101 deferred, $0 budget. Re-audit + quick-fix pass done.</dd>
-  <dt>Sprint 4 &mdash; Demo</dt>
-  <dd>515 wines Grade A enriched across 14 producers. Cascade: 4 countries, 20 regions, 51 appellations, 41 grapes, 14 producers. Frontend wired (6 pages, 11 fields). Voice v2. $37.44 / $50 budget.</dd>
-</dl>
+<!-- ============= SPEND BREAKDOWN ============= -->
+<div class="section-label">Spend breakdown</div>
+<!--spend-breakdown-->
+<div class="sprint-card">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
+    <div>
+      <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; margin-bottom: 6px;">By sprint</div>
+      <table style="width:100%; font-size:12.5px; border-collapse:collapse;">
+        <tr><td style="color:var(--muted);">Sprint 1 Build</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
+        <tr><td style="color:var(--muted);">Sprint 2 Audit</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
+        <tr><td style="color:var(--muted);">Sprint 3 Fix</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
+        <tr><td style="color:var(--muted);">Sprint 4 Demo</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$37.44</td></tr>
+        <tr><td style="color:var(--muted);">Sprint 5 AI Bakeoff</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$55.00</td></tr>
+        <tr><td style="color:var(--accent); font-weight:700;">Sprint 6 Producer Dedup</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$195.23</td></tr>
+        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Total project spend</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$287.67</td></tr>
+      </table>
+    </div>
+    <div>
+      <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; margin-bottom: 6px;">Sprint 6 by block</div>
+      <table style="width:100%; font-size:12.5px; border-collapse:collapse;">
+        <tr><td style="color:var(--muted);">B6.1 Planning</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
+        <tr><td style="color:var(--muted);">B6.2 LWIN import</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
+        <tr><td style="color:var(--muted);">B6.2.1 Hygiene</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
+        <tr><td style="color:var(--muted);">B6.2.2 Wine recovery</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
+        <tr><td style="color:var(--muted);">B6.3 Schema + L1</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$78.44</td></tr>
+        <tr><td style="color:var(--muted);">B6.4 Calibration</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$24.51</td></tr>
+        <tr><td style="color:var(--accent); font-weight:700;">B6.5a Production ladder</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$92.28</td></tr>
+        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Sprint 6 spent</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$195.23</td></tr>
+        <tr><td style="color:var(--muted); color:var(--green);">Remaining of $250 ceiling</td><td style="text-align:right; font-variant-numeric: tabular-nums; color:var(--green);">$54.77</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+<!--/spend-breakdown-->
 
 </body>
 </html>

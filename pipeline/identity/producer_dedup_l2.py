@@ -414,14 +414,14 @@ def call_l2(client, static_preamble: str, batch_block: str,
     }
 
 
-def write_l2(cur, pair_verdicts):
+def write_l2(cur, pair_verdicts, method_name: str = "l2_haiku_rich"):
     for pair, verdict, cost_cents in pair_verdicts:
         cur.execute("""
           INSERT INTO producer_dedup_pairs
             (producer_id_a, producer_id_b, name_a, name_b, country, similarity,
              wines_a, wines_b, method_name, verdict, confidence, reasoning,
              cost_cents, signals, created_at, updated_at)
-          VALUES (%s, %s, %s, %s, %s, %s, %s, %s, 'l2_haiku_rich',
+          VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s,
                   %s, %s, %s, %s, %s, now(), now())
           ON CONFLICT (producer_id_a, producer_id_b, method_name)
           DO UPDATE SET
@@ -435,6 +435,7 @@ def write_l2(cur, pair_verdicts):
             pair["producer_id_a"], pair["producer_id_b"],
             pair["name_a"], pair["name_b"], pair["country"], pair["similarity"],
             pair["wines_a"], pair["wines_b"],
+            method_name,
             verdict.get("verdict"),
             verdict.get("confidence"),
             verdict.get("reasoning"),
@@ -481,11 +482,16 @@ def _row_to_pair(row) -> dict:
     }
 
 
-def load_pairs(cur, args) -> list[dict]:
+def load_pairs(cur, args, method_name: str = "l2_haiku_rich") -> list[dict]:
     """Determine the pair set based on mode."""
-    if args.calibration:
-        cal = json.loads(CALIBRATION_PATH.read_text(encoding="utf-8"))
-        pair_ids = [p["pair_id"] for tier, pairs in cal["tiers"].items() for p in pairs]
+    if args.pair_ids_file or args.calibration:
+        if args.pair_ids_file:
+            pair_ids = json.loads(Path(args.pair_ids_file).read_text(encoding="utf-8"))
+        else:
+            cal = json.loads(CALIBRATION_PATH.read_text(encoding="utf-8"))
+            pair_ids = [p["pair_id"] for tier, pairs in cal["tiers"].items() for p in pairs]
+        if not pair_ids:
+            return []
         placeholders = ",".join(["%s"] * len(pair_ids))
         cur.execute(f"""
             SELECT b.id, b.producer_id_a, b.producer_id_b, b.name_a, b.name_b,
@@ -500,13 +506,12 @@ def load_pairs(cur, args) -> list[dict]:
         """, pair_ids)
         pairs = [_row_to_pair(r) for r in cur.fetchall()]
         if args.resume:
-            # Filter out pairs already processed
             existing = set()
             cur.execute("""
                 SELECT producer_id_a, producer_id_b
                 FROM producer_dedup_pairs
-                WHERE method_name='l2_haiku_rich'
-            """)
+                WHERE method_name=%s
+            """, (method_name,))
             for a, b in cur.fetchall():
                 existing.add((str(a), str(b)))
             pairs = [p for p in pairs if (p["producer_id_a"], p["producer_id_b"]) not in existing]
@@ -530,8 +535,9 @@ def load_pairs(cur, args) -> list[dict]:
             SELECT 1 FROM producer_dedup_pairs ddp2
             WHERE ddp2.producer_id_a = l.producer_id_a
               AND ddp2.producer_id_b = l.producer_id_b
-              AND ddp2.method_name = 'l2_haiku_rich'
+              AND ddp2.method_name = %s
         )""")
+        params.append(method_name)
     where = " AND ".join(conditions) if conditions else "1=1"
 
     cur.execute(f"""
@@ -575,6 +581,10 @@ def main() -> int:
     ap.add_argument("--resume", action="store_true", default=True)
     ap.add_argument("--no-resume", dest="resume", action="store_false")
     ap.add_argument("--print-sample", type=int, default=5)
+    ap.add_argument("--pair-ids-file", default=None,
+                    help="JSON file with flat list of pair_ids to classify")
+    ap.add_argument("--method-name", default="l2_haiku_rich",
+                    help="override method_name for produced rows")
     args = ap.parse_args()
 
     if not (args.execute or args.dry_run):
@@ -584,13 +594,15 @@ def main() -> int:
     section_11 = load_section_11()
     preamble = build_static_preamble(section_11)
     print(f"Preamble: {len(preamble)} chars (~{len(preamble)//4} tokens est.)")
+    print(f"method_name: {args.method_name}")
 
     conn = get_conn()
     conn.autocommit = False
     cur = conn.cursor()
 
-    pairs = load_pairs(cur, args)
-    print(f"Sampled {len(pairs)} pairs (mode={'calibration' if args.calibration else 'production'})")
+    pairs = load_pairs(cur, args, args.method_name)
+    mode = "pair_ids_file" if args.pair_ids_file else ("calibration" if args.calibration else "production")
+    print(f"Sampled {len(pairs)} pairs (mode={mode})")
     if not pairs:
         cur.close(); conn.close()
         return 0
@@ -683,7 +695,7 @@ def main() -> int:
 
             if args.execute:
                 with state_lock:
-                    write_l2(cur, for_write)
+                    write_l2(cur, for_write, args.method_name)
                     conn.commit()
 
             processed = sum(verdict_counts.values())

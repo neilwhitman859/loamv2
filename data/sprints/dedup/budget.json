@@ -1,6 +1,6 @@
 {
   "budget": 250.00,
-  "spent": 102.95,
+  "spent": 208.80,
   "sessions": {
     "B6.1": 0.00,
     "B6.2": 0.00,
@@ -14,9 +14,22 @@
     "B6.4_gemini_rich": 0.19,
     "B6.4_l3_noweb_ablation": 0.65,
     "B6.4_safety_net_a": 0.05,
-    "B6.4_total": 24.51
+    "B6.4_total": 24.51,
+    "B6.5a_l1_gemini_basic": 32.13,
+    "B6.5a_skip_audit_l2": 0.51,
+    "B6.5a_skip_audit_l3": 6.06,
+    "B6.5a_l2_haiku_rich_prod": 38.04,
+    "B6.5a_l2_gemini_rich_prod": 13.10,
+    "B6.5a_probe_l3_noweb": 7.00,
+    "B6.5a_probe_l3_web": 9.01,
+    "B6.5a_total_partial": 105.85
   },
-  "remaining_projected_b6_5_thru_close": "50-90",
-  "remaining_sprint_ceiling": 147.05,
-  "note": "B6.4 complete $24.51 — calibration only, zero production pairs touched. 600-pair set + 367 gold labels. Headline: any Haiku-tier + any Gemini-tier both MERGE at conf >=0.85 = 100% precision. Committed thresholds: Stage 1 MERGE 0.88/0.88 SKIP 0.97/0.97; Stage 2 MERGE 0.90/0.90 SKIP 0.95/0.95; L3 MERGE >=0.92 SKIP >=0.90; L3 web deferred mid-run based on residual count. Refined PC rule: review iff 2+ tiers PC OR rich-prompt PC >=0.90 OR L3 PC any conf. B6.5 split into B6.5a ($35-80, automated ladder + SKIP audit + L4 Opus) and B6.5b ($0-5, interactive review of 1,500-3,000 pairs). Sprint total projection $138-188 of $250 ceiling, $62-112 reserve. Budget $250 ceiling per B6.1 user decision. Cost not the constraint; quality is."
+  "remaining_projected_b6_5_thru_close": "9-242 depending on path",
+  "remaining_sprint_ceiling": 41.20,
+  "paths_for_continuation": {
+    "path_1_pragmatic": {"total_add": 9, "sprint_total": 218, "in_ceiling": true, "user_review_pile": "~11K"},
+    "path_2_balanced": {"total_add": 104, "sprint_total": 313, "need_ceiling_raise": true, "user_review_pile": "~2-3K", "recommended": true},
+    "path_3_rigor": {"total_add": 242, "sprint_total": 451, "need_ceiling_raise": "to $500", "user_review_pile": "~1.5-2K"}
+  },
+  "note": "B6.5a-partial COMPLETE. Ran through Stage 2 routing + $16 exploratory probes. Stopped per user directive for reassessment before L3. Key findings: (1) Stage 2 auto-MERGE has 10% FP rate — do not auto-apply without L3 validation. (2) Stage 2 SKIP threshold too tight — 0.93/0.93 drops residual from 19.5K to 7.3K with 2% measured FN. (3) L3 web earns 11x cost only on cross-family disagreements + négociant patterns; random residual delta is 5%. (4) Stage 2 auto-merge cross-family precision at >=0.90 is 81-90% in production vs calibration's 98.7%. Recommendations: Path 2 (balanced) if $320 ceiling acceptable; Path 1 (pragmatic in-ceiling) if not. Full analysis at data/sprints/dedup/b6_5a_stage2_analysis.md."
 }

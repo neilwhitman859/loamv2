@@ -4,6 +4,26 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-17: OpenRouter key hit $200 cap mid-L2.5 run; L2.5 paused; L2 (direct Anthropic) continues
+
+Second OR cap hit of B6.5a. First hit at $100 during L1.5 Gemini basic; user raised to $200. Second hit now during L2.5 Gemini rich on the 57,810 Stage 1 escalation set, at pair 17,335 of 57,810 (30%). L2 Haiku rich (direct Anthropic, separate credit pool) continues unaffected at ~15% / 57,474.
+
+Resume plan when cap raised: relaunch `producer_dedup_gemini.py --mode rich` with same args; `--resume` default skips the 17,335 already processed. ~40,475 pairs remain, projected ~$13 more. Also need to raise cap before L3 Sonnet run in Step 8 if we end up using L3 web (L3 web_search is direct Anthropic but the ~$30-90 spend here would land in the same session, so OR cap doesn't matter for L3 unless we switch models).
+
+Lesson: set key limits higher at project start for cross-family cascades. $200 should have been sufficient for B6.5a alone but didn't account for the full-151K L1.5 pre-pause burn of $10 that was already on the key from earlier in the day. Recommend: raise OR cap to $500 for remainder of Sprint 6. Sprint 7 wine dedup should set cap at $200-300 up front.
+
+Files: `data/stats/b6_5a_l2_gemini_rich.log` shows the 403 cascade starting around batch 3,815. `producer_dedup_pairs` has 17,335 rows under `method_name='l2_gemini_rich'` pending the rest.
+
+### 2026-04-17: B6.5a Stage 1 SKIP threshold lowered from 0.97/0.97 to 0.95/0.95 based on production-scale audit
+
+At Stage 1 bucket-sort on the 150,885 L1+L1.5 pairs, the committed 0.97/0.97 SKIP threshold auto-skipped only 24,178 pairs (vs B6.4's projection of 100-125K) and sent 125K to L2/L2.5 escalation — tripping the plan's "pause and re-examine" rule (auto-skip <80K / escalate >60K). Root cause: L1 Haiku's median SKIP confidence is 0.95, so most real SKIPs never clear 0.97 on both tiers simultaneously. The B6.4 calibration's 156 pairs didn't surface this because the stratified sample over-weighted the high-conf tail.
+
+User chose Option B from four — spend $8 and 45 min to audit production pairs across three confidence bands before re-thresholding. Sampled 200 random both-SKIP pairs from each of (≥0.97, 0.95-0.96, 0.93-0.94), ran through L2 Haiku rich + L3 Sonnet no-web. Results: **0/200 MERGE at A (≥0.97), 1/400 MERGE at A∪B (≥0.95, and that one was L3 MERGE 0.82 — below the L3 auto-merge threshold 0.92), 4/600 MERGE at A∪B∪C (≥0.93, all L3 MERGE 0.72-0.82, all BBR/Hospices de Beaune négociant-prefix edge cases).** None of the observed MERGEs would auto-merge under the committed L3 threshold, so the effective FN for auto-applied errors is 0 at all bands.
+
+Picked **0.95/0.95 (Option 2)** over 0.93/0.93 (Option 3) as the balanced call: matches B6.4's original 100-125K projection (91,555 auto-skip, 57,810 escalations), measured FN 0.25% with 0 real auto-apply errors, the one observed case was an ambiguous BBR own-label pattern that belongs in user review anyway. MERGE threshold stays at 0.88/0.88. Rejected 0.97/0.97 (would burn $50-100 extra on L2/L2.5/L3 for safety the audit showed isn't buying anything), 0.93/0.93 (auto-skips the BBR/HdB négociant patterns that deserve review), and asymmetric L1 0.95 + L1.5 0.97 (principled but unvalidated; user's B6.3 preference was symmetric).
+
+Audit data: `_b6_5a_skip_audit_sample` + 600 rows each in `producer_dedup_pairs` under method_names `l2_skip_audit` and `l3_skip_audit`. Cost: ~$8 for the audit.
+
 ### 2026-04-16: Opus 4.7 1M Max — upgrade reinforces plan; four concrete carry-forwards
 
 User upgraded from Opus 4.6 to Opus 4.7 1M Max mid-B6.2. Quick audit of whether Sprint 6 plan needs reshape: no, the tiered ladder (Haiku for batched classification, Opus-inline for reasoning and cross-pair audit) was deliberately shaped around Opus-inline reasoning per `memory/feedback_opus_inline_reasoning.md`, and 4.7 reinforces that pattern rather than changing it. Four concrete carry-forwards decided: (1) bias B6.5 toward the upper end of the 50-150 curated-pairs review range since L4 is ~$0 and 4.7 sharpens the recommendations — final number chosen in B6.5 context; (2) IDENTITY_RULES.md Section 11 v1 draft at B6.3 aims for publishable v1 with fewer revision rounds, but still iterate with user (do not skip v1→v2); (3) **Sprint 8 bake-off re-run must include Opus 4.7 in the judge lineup** (Sprint 5 used 4.6); (4) **Sprint 8 L3 fact-check gate should include Opus 4.7 as a candidate gate model**, not just judge. Strategy-sync on open S2.9 business findings (monetization, ICP, moat-vs-LLMs, user-signal absence) held until **after Sprint 6 closes, before Sprint 7 opens** — user confirmed this is the right sequencing.

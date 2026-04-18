@@ -377,9 +377,7 @@
 
 ## Active
 
-(B6.4 done. B6.5 queued — split into B6.5a automated ladder run
-(`data/session_prompts/b6_5a_production_ladder.md`) and B6.5b interactive
-user review (`data/session_prompts/b6_5b_interactive_review.md`).)
+(B6.5a PARTIAL — stopped after L2+L2.5+Stage 2 routing + $16 analysis probes per user reassessment directive. Full analysis report + 3 recommendation paths at `data/sprints/dedup/b6_5a_stage2_analysis.md`. Awaiting user decision between Path 1 (pragmatic $218), Path 2 (balanced $313, my rec), Path 3 (rigor $451) before resuming L3 + execution.)
 
 ---
 
@@ -483,6 +481,143 @@ user review (`data/session_prompts/b6_5b_interactive_review.md`).)
   `l1_gemini_basic_calibration` (595 rows), `l2_haiku_rich` (600),
   `l2_gemini_rich_calibration` (600), `l3_sonnet_noweb_ablation_calibration`
   (45). Zero production `producers` / `wines` changes.
+
+---
+
+- **B6.5a-partial (2026-04-17 → 2026-04-18):** Production ladder through
+  Stage 2 + $16 of exploratory probes. STOPPED after L2+L2.5 per user
+  reassessment directive; L3 + L4 + review_queue deferred pending user Path
+  decision.
+
+  **Step 1 — L1.5 Gemini basic on all 151K pairs ($32.13):** 150,885 of
+  151,120 pairs classified (99.84%, 235 parse failures at Gemini 3 Flash
+  Preview). Mid-run OR key cap hit at $100 after 48,675 pairs; user raised
+  to $200; resumed, completed cleanly. Verdict distribution: SKIP 139,470
+  (92.4% @ avg 0.97), MERGE 5,658 (3.75% @ avg 0.93), PC 5,233 (3.47% @
+  avg 0.89), UNCERTAIN 524 (0.35% @ avg 0.73). Gemini more aggressive on
+  non-SKIP than Haiku (2.17x MERGE, 2.47x PC), as expected from calibration.
+
+  **Step 2 — Stage 1 routing threshold change (0.97/0.97 → 0.95/0.95)
+  based on production-scale SKIP audit.** Initial bucket-sort at 0.97/0.97
+  gave 24,178 auto-skip vs 100-125K projected — tripping plan's "auto-SKIP
+  <80K = pause" rule. Root: Haiku's median rich-SKIP conf is 0.94, below
+  0.97. Ran 600-pair band-stratified SKIP audit (200 each at ≥0.97 / 0.95-
+  0.96 / 0.93-0.94, $8 total) through L2 + L3 no-web. Measured **0 auto-
+  apply MERGE FNs across all bands** — the 4 L3-MERGE dissents were all
+  BBR/Hospices de Beaune négociant patterns at L3 conf 0.72-0.82, below
+  auto-merge threshold. User chose Option 2 (0.95/0.95 symmetric) over
+  keeping 0.97 (too strict, $80-100 extra L2 burn), lowering to 0.93
+  (same-night ambiguity, belongs in user review), or asymmetric (principled
+  but unvalidated). Final Stage 1 routing: auto-skip 91,555, auto-merge
+  1,520, escalations 57,810 (40% of total, in-range). DECISIONS.md entry
+  logged.
+
+  **Steps 4+5 — L2 Haiku rich + L2.5 Gemini rich on 57,810 escalations
+  (parallel, $51.14 combined):** L2 Haiku rich 57,459 at $38.04; L2.5
+  Gemini rich 57,570 at $13.10. Second OR cap hit mid-L2.5 at $200; user
+  raised to $300; resumed, completed. L2 verdicts: SKIP 53,872 (93.8%),
+  MERGE 1,393 (2.4%), PC 1,709 (3.0%), UNCERTAIN 482. L2.5 verdicts:
+  SKIP 52,217 (90.7%), MERGE 2,493 (4.3%), PC 2,807 (4.9%), UNCERTAIN 53.
+  Cross-family MERGE consensus: 1,097 pairs; SKIP consensus: 51,357 pairs
+  (89.2%). Aggressive-Gemini bucket (L2 SKIP × L2.5 MERGE): 1,055 pairs.
+
+  **Step 6 — Stage 2 routing ($0):** Applied committed thresholds (MERGE
+  0.90/0.90, SKIP 0.95/0.95, refined PC rule). Distribution: auto-skip
+  34,078 (59.2%), auto-merge 676 (1.2%), PC user-review 3,226 (5.6%),
+  residual 19,575 (34.0%), missing-tier 255 (0.4%). **Residual above 10K
+  trigger point** — same root cause as Stage 1: Haiku median rich-SKIP
+  0.94 doesn't clear 0.95/0.95 joint threshold. 88% of residual (17,214
+  pairs) is both-tier SKIP consensus below threshold. Lowering SKIP to
+  0.93/0.93 would drop residual to ~7,330 (in range).
+
+  **Stage 2 analysis probes ($16.01, 470 no-web + 65 web):** Six probe
+  categories to validate decisions and measure L3 strategy trade-offs.
+
+  - Probe 1 (Stage 2 SKIP residual 0.93-0.94 band, 100 pairs): **2% L3
+    MERGE rate** — threshold can drop to 0.93 safely.
+  - Probe 2 (Stage 2 auto-SKIP control, 100 pairs): **1% L3 MERGE FN rate**
+    — current SKIP threshold is safe; Safety Net B catches tail.
+  - Probe 3 (Stage 2 auto-MERGE validation, 100 pairs): **🚨 10% L3 SKIP
+    + 7% UNCERTAIN = 17% dissent.** Real patterns cross-family misses:
+    shared-surname splits (Faustino vs Faustino Rivero Ulecia, Janisson
+    Baradon vs Janisson, Tertre Daugay vs Daugay, Andre Lorentz vs
+    Lorentz, Jacques Saumaize vs Saumaize), HdB négociant variants (Morey
+    Blanc vs Cecile Tremblay, Lejeune vs short form), same-name cross-
+    country (McPherson US/AU), collaboration labels (Savart & Chartogne vs
+    Savart), Weingut Johannisberg vs Schloss Johannisberg ambiguity.
+    **Auto-applying 676 would merge ~68 wrong producers.** Recommend
+    routing all Stage 2 auto-MERGEs through L3 validation ($9) before
+    execution.
+  - Probe 4 (random residual preview, 100 pairs): 6% L3 MERGE yield → L3
+    on 19,575 residual = ~1,175 MERGEs to find; 87% are confirmed SKIPs.
+  - Probe 5 (cross-family disagreement L2 SKIP × L2.5 MERGE, 50 pairs):
+    **60% L3 MERGE** — Gemini catches real merges Haiku missed. 1,055
+    such pairs → ~633 real merges in production. Need L3 arbitration.
+  - Probe 6 (random residual A/B web vs no-web, 20 pairs): **5% web delta**
+    (4 MERGE web vs 3 MERGE no-web). Marginal value on random residuals.
+  - Probe 7 (négociant patterns, 20 web pairs): 20% MERGE — mostly SKIP,
+    L3 web confirms BBR/HdB remain distinct variants.
+  - Probe 8 (cross-family disagreement, 15 web pairs): **67% L3 MERGE**
+    — web strongly arbitrates disagreements. Worth the 11x cost premium
+    on this specific bucket.
+  - Probe 9 (cross-country same-brand, 10 web pairs): 30% MERGE — some
+    global brands (Gallo-owned), most are distinct country producers.
+
+  **Key findings distilled:**
+  1. Stage 2 auto-MERGE has ~10% FP rate — do NOT auto-apply without L3.
+  2. Stage 2 SKIP threshold is too tight; 0.93/0.93 safe and drops
+     residual from 19.5K to 7.3K.
+  3. L3 web earns 11x cost only on disagreements + négociant patterns;
+     random residual delta is 5%.
+  4. §11 needs amendments (shared-surname-split, cross-country same-name,
+     collaboration-label) before B6.6 execution.
+  5. Stage 2 Haiku+Gemini cross-family precision at ≥0.90 on MERGE is
+     ~81-90% in production (vs calibration's 98.7%); need rigor-tier
+     confirmation on the applied set.
+
+  **Recommendations delivered in `b6_5a_stage2_analysis.md`:** three paths
+  with cost/quality tradeoffs:
+  - Path 1 (Pragmatic $218, in ceiling): lower SKIP to 0.93, L3 validate
+    the 676 auto-MERGEs, skip rest of L3, user reviews ~11K pairs in B6.5b.
+  - Path 2 (Balanced $313, need $320 ceiling raise, MY REC): lower SKIP
+    to 0.93, L3 no-web on 7.3K residual + 676 auto-MERGEs, user reviews
+    ~2-3K pairs.
+  - Path 3 (Rigor $451, need $500 raise): hybrid L3 no-web + web on
+    disagreements/négociants; smallest user pile ~1.5-2K.
+  
+  **Cheaper web search researched:** Anthropic web_search $10/1K; Serper.dev
+  $1/1K (10x cheaper); pre-fetch + Haiku rich architecture would drop L3
+  web from $0.147/pair to $0.008/pair (18x cheaper). Worth investing 1
+  session in Sprint 7 opening for wine dedup ($600-1,200 savings projected).
+
+  **Meta-tooling built this session:**
+  - `pipeline/analyze/session_tokens.py` — parse transcript + log cost
+  - `pipeline/analyze/update_dashboard.py` — live dashboard updater with
+    `<!--markers-->` for session strip, progress block, step list, spend
+    breakdown
+  - Extended `producer_dedup_l2.py`, `producer_dedup_l3.py`,
+    `producer_dedup_gemini.py` with `--pair-ids-file` + `--method-name`
+  - `data/stats/spend_ledger.md` — running spend ledger
+  - `data/dashboard.html` — fully rewritten light-mode, single-column
+    current-sprint, combined roadmap+done, live token strip, 10-min
+    auto-tick, spend breakdown at bottom
+
+  **Spend this block: $32.13 + $51.14 + $6.57 (Stage 1 SKIP audit) + $16.01
+  (analysis probes) = $105.85.** Sprint 6 total: ~$208.80 of $250 ceiling,
+  $41.20 remaining. Path 2/3 need ceiling raise.
+
+  **Files:** `data/sprints/dedup/b6_5a_stage2_analysis.md` (recommendations
+  report), `b6_5a_stage1_escalations.json`, `b6_5a_skip_audit_pair_ids.json`,
+  `b6_5a_probe_*.json` (9 files), `b6_5a_routing_sql.md`, `b6_5a_l4_audit_queries.sql`.
+  
+  **Tables:** 7 new method_names in `producer_dedup_pairs`
+  (l1_gemini_basic, l2_haiku_rich prod, l2_gemini_rich prod, l2_skip_audit,
+  l3_skip_audit, l3_probe_noweb, l3_probe_web). 2 working tables:
+  `producer_dedup_routing_stage1` (151K), `producer_dedup_routing_stage2`
+  (57K). Zero `producers`/`wines` changes.
+
+  **DECISIONS.md:** 2 entries added — Stage 1 SKIP threshold 0.97→0.95
+  based on production-scale audit; OR key cap hit twice with resume plan.
 
 ---
 

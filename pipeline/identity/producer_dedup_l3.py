@@ -263,9 +263,14 @@ def _row_to_pair(row):
 
 
 def load_pairs(cur, args, method_name):
-    if args.calibration:
-        cal = json.loads(CALIBRATION_PATH.read_text(encoding="utf-8"))
-        pair_ids = [p["pair_id"] for tier, pairs in cal["tiers"].items() for p in pairs]
+    if args.pair_ids_file or args.calibration:
+        if args.pair_ids_file:
+            pair_ids = json.loads(Path(args.pair_ids_file).read_text(encoding="utf-8"))
+        else:
+            cal = json.loads(CALIBRATION_PATH.read_text(encoding="utf-8"))
+            pair_ids = [p["pair_id"] for tier, pairs in cal["tiers"].items() for p in pairs]
+        if not pair_ids:
+            return []
         placeholders = ",".join(["%s"] * len(pair_ids))
         cur.execute(f"""
             SELECT b.id, b.producer_id_a, b.producer_id_b, b.name_a, b.name_b,
@@ -345,6 +350,8 @@ def main() -> int:
     ap.add_argument("--resume", action="store_true", default=True)
     ap.add_argument("--no-resume", dest="resume", action="store_false")
     ap.add_argument("--method-name", default=None)
+    ap.add_argument("--pair-ids-file", default=None,
+                    help="JSON file with flat list of pair_ids to classify")
     args = ap.parse_args()
 
     if not (args.execute or args.dry_run):

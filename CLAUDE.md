@@ -336,11 +336,24 @@ See `docs/HISTORY.md` for promotion results, session-by-session build history, a
 
 ## Current Focus
 
-**Sprint 6 (Producer Dedup) — B6.4 DONE 2026-04-17, B6.5a NEXT.**
-B6.2 + B6.2.1 + B6.2.2 + B6.3 + B6.4 complete. Plan covers **LWIN import +
+**Sprint 6 (Producer Dedup) — B6.5a-partial DONE 2026-04-18, PAUSED for user reassess.**
+Steps 1-6 of 11 complete. L1.5 Gemini basic on 151K → Stage 1 routing (user lowered SKIP 0.97→0.95 after production SKIP audit showed 0 auto-apply FNs across 600 pairs) → L2 Haiku rich + L2.5 Gemini rich on 57,810 escalations → Stage 2 routing (676 auto-merge, 34K auto-skip, 3.2K PC review, 19.5K residual). $16 exploratory probes (470 L3 no-web + 65 L3 web) revealed:
+- **Stage 2 auto-MERGE has 10% FP rate** — must validate with L3 before execution (~$9). Patterns Haiku+Gemini trip on: shared-surname splits (Faustino/FRU, Janisson/Janisson Baradon), HdB négociant variants, same-name cross-country (McPherson US/AU), collaboration labels (Savart & Chartogne).
+- **Stage 2 SKIP 0.95/0.95 too tight** — 0.93/0.93 drops residual from 19.5K to 7.3K at measured 2% FN (same safety as Stage 1 at 0.95).
+- **L3 web delta marginal on random residuals (5%)** but high on cross-family disagreements (67% MERGE yield). Recommend hybrid not full web.
+- §11 amendments needed for shared-surname, cross-country, collaboration patterns.
+
+Three paths presented in `data/sprints/dedup/b6_5a_stage2_analysis.md`:
+- **Path 1 Pragmatic ($218 total, in $250 ceiling):** lower SKIP to 0.93, L3 validate 676 auto-MERGEs, skip rest of L3. User reviews ~11K pairs in B6.5b.
+- **Path 2 Balanced ($313, need $320 raise, MY REC):** lower SKIP to 0.93, L3 no-web on 7.3K residual + 676 auto-MERGEs. User reviews ~2-3K pairs.
+- **Path 3 Rigor ($451, need $500 raise):** hybrid L3 no-web + web on disagreements/négociants. User reviews ~1.5-2K pairs.
+
+**Cheaper L3 architecture for Sprint 7 (wine dedup):** Serper.dev ($1/1K) + pre-fetch + Haiku rich would reduce L3 web from $0.147/pair to $0.008/pair (18x cheaper, $600-1,200 savings on 300-500K wine pairs).
+
+B6.2 + B6.2.1 + B6.2.2 + B6.3 + B6.4 + B6.5a-partial complete. Plan covers **LWIN import +
 evaluation + execution in one sprint.** User quality bar = **final-state
 correctness ~100%** of producers table, achieved via cross-family auto-apply
-+ 1,500-3,000 user-reviewed pairs + FLAGGED open questions.
++ user-reviewed pairs + FLAGGED open questions.
 
 **B6.4 DONE (2026-04-17, $24.51):** Calibration only — 600-pair stratified
 set, gold-labeled 367 pairs (200 proxy + 167 from Sonnet+web oracle). Ran
