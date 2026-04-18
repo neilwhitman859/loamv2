@@ -1,0 +1,63 @@
+{
+  "description": "Target producers for dedup evaluation — wines Americans actually drink, ranked by encounter frequency. Built 2026-04-18.",
+  "tiers": {
+    "A_mass_market": {
+      "description": "Supermarket / grocery-store wines that millions buy weekly. Biggest user-query volume expected.",
+      "names": [
+        "Barefoot", "Yellow Tail", "Cupcake Vineyards", "Meiomi", "Josh Cellars",
+        "Kendall-Jackson", "Beringer", "Sutter Home", "Robert Mondavi", "Apothic",
+        "Bread & Butter", "La Crema", "Dark Horse", "Menage a Trois", "Black Box",
+        "Gallo", "E. & J. Gallo", "Bogle", "Bogle Vineyards", "Fetzer",
+        "Chateau Ste. Michelle", "19 Crimes", "Clos du Bois",
+        "Francis Ford Coppola", "Coppola"
+      ]
+    },
+    "B_premium_american": {
+      "description": "Restaurant-list American premium. Special-occasion household name wines.",
+      "names": [
+        "Stag's Leap Wine Cellars", "Ridge Vineyards", "Caymus", "Caymus Vineyards",
+        "Silver Oak", "Silver Oak Cellars", "Opus One", "Duckhorn", "Duckhorn Vineyards",
+        "Jordan", "Jordan Vineyard & Winery", "Cakebread", "Cakebread Cellars",
+        "Rombauer", "Rombauer Vineyards", "Joseph Phelps", "Phelps",
+        "Shafer", "Shafer Vineyards", "Quintessa", "Far Niente",
+        "Schramsberg", "Schramsberg Vineyards", "Twomey", "Stags' Leap Winery",
+        "Spottswoode", "Corison", "Rudd Estate", "Grgich Hills", "Hess Collection",
+        "ZD Wines", "Frog's Leap", "Heitz Cellar", "Freemark Abbey",
+        "Chateau Montelena", "Pine Ridge", "Sterling", "Mondavi Reserve"
+      ]
+    },
+    "C_collector_fine_wine": {
+      "description": "Fine wine / collector tier. Smaller audience but very high value per lookup.",
+      "names": [
+        "Domaine de la Romanée-Conti", "Domaine Leflaive", "Domaine Leroy",
+        "Henri Jayer", "Jean-François Coche-Dury", "Coche-Dury",
+        "Château Margaux", "Château Latour", "Château Lafite Rothschild",
+        "Château Mouton Rothschild", "Château Haut-Brion", "Château Petrus", "Petrus",
+        "Château d'Yquem", "Krug", "Dom Pérignon", "Louis Roederer", "Salon",
+        "Bollinger", "Screaming Eagle", "Harlan Estate", "Sine Qua Non",
+        "Giacomo Conterno", "Bruno Giacosa", "Gaja", "Biondi-Santi",
+        "Soldera", "Sassicaia", "Ornellaia", "Tignanello", "Masseto",
+        "Penfolds", "Henschke"
+      ]
+    },
+    "D_european_imports": {
+      "description": "European importer staples — widely distributed in US through Kermit Lynch / Skurnik / Polaner / Winebow.",
+      "names": [
+        "Trimbach", "Hugel", "Domaine Weinbach", "Dirler-Cadé",
+        "E. Guigal", "M. Chapoutier", "Chapoutier", "Paul Jaboulet Aîné", "Jean-Louis Chave",
+        "Louis Jadot", "Joseph Drouhin", "Louis Latour", "Bouchard Père et Fils",
+        "Faiveley", "Joseph Faiveley", "Olivier Leflaive",
+        "Domaine Tempier", "Tempier", "Château de Beaucastel", "Pegau", "Vieux Télégraphe",
+        "Domaine Huet", "Huet", "Château Pichon Baron", "Pichon-Longueville",
+        "Antinori", "Marchesi Antinori", "Frescobaldi", "Marchesi de' Frescobaldi",
+        "Ruffino", "Banfi", "Santa Margherita",
+        "Torres", "Miguel Torres", "López de Heredia", "Lopez de Heredia",
+        "Bodegas Muga", "Muga", "Vega Sicilia", "Marqués de Riscal", "Marques de Riscal",
+        "Bodegas Faustino", "Protos",
+        "Symington", "Graham's", "Taylor Fladgate", "Taylor's", "Fonseca", "Dow's",
+        "Cloudy Bay", "Kim Crawford", "Oyster Bay",
+        "Catena Zapata", "Catena"
+      ]
+    }
+  }
+}

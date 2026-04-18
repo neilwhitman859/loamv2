@@ -22,10 +22,15 @@
     "B6.5a_l2_gemini_rich_prod": 13.10,
     "B6.5a_probe_l3_noweb": 7.00,
     "B6.5a_probe_l3_web": 9.01,
-    "B6.5a_total_partial": 105.85
+    "B6.5a_probe_demo": 0.79,
+    "B6.5a_serper_validation_65": 0.24,
+    "B6.5a_serper_broad_269": 0.92,
+    "B6.5a_serper_broad_930": 5.60,
+    "B6.5a_phase3a_haiku_serper_3403": 20.00,
+    "B6.5a_total_partial_v2": 142.40
   },
-  "remaining_projected_b6_5_thru_close": "9-242 depending on path",
-  "remaining_sprint_ceiling": 41.20,
+  "remaining_projected_b6_5_thru_close": "5-15 for Phase 4-8",
+  "remaining_sprint_ceiling": 18.33,
   "paths_for_continuation": {
     "path_1_pragmatic": {"total_add": 9, "sprint_total": 218, "in_ceiling": true, "user_review_pile": "~11K"},
     "path_2_balanced": {"total_add": 104, "sprint_total": 313, "need_ceiling_raise": true, "user_review_pile": "~2-3K", "recommended": true},
