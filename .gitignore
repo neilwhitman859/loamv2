@@ -5,6 +5,16 @@ node_modules/
 *.jsonl
 *.log
 
+# Sprint 6 dedup deliverable: execution bundle + chrome_validation verdict sources
+# These are authoritative artifacts for Sprint 6 B6.6 — must be in git for review.
+!data/sprints/dedup/execution_bundle/*.jsonl
+!data/sprints/dedup/chrome_validation/yellow_verdicts.jsonl
+!data/sprints/dedup/chrome_validation/core_verdicts.jsonl
+!data/sprints/dedup/chrome_validation/mid_verdicts.jsonl
+!data/sprints/dedup/chrome_validation/tail_verdicts.jsonl
+!data/sprints/dedup/chrome_validation/_rechrome_core_verdicts.jsonl
+!data/sprints/dedup/chrome_validation/_rechrome_rest_verdicts.jsonl
+
 # Vivino pipeline artifacts
 vivino_*.json
 vivino_mega_*.json

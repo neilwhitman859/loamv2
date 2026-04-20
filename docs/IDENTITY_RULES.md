@@ -860,11 +860,20 @@ Do NOT MERGE a private label with its bottling winery (e.g., do not MERGE "Charl
 
 If a staging import created one as a producer, SKIP the candidate MERGE with the main producer and flag the row for soft-delete / re-link downstream.
 
-#### 11.4.f — Négociant + estate (same entity bottles both)
+#### 11.4.f — Generational succession / historical name forms
 
-When one legal entity bottles both a négociant line and an estate line under **distinct brand identities** on the label, treat as PARENT-CHILD. Example: "Louis Jadot" négociant releases + "Domaine Gagey" (estate line owned by Jadot) = PARENT-CHILD.
+When the same estate bottles wine across generations and the canonical name evolves (short form → full form, father's name → son's name, founder → current vigneron), treat as MERGE when the **estate address, the wine portfolio, and the brand-on-label are continuous**. This is a specialization of §11.4.a (renames with continuity): the wine family's business didn't change — only the name printed on the label evolved.
 
-When the négociant line and the estate line share a single brand identity on the label (e.g., "Maison Louis Latour" for both), treat as MERGE.
+Representative Chrome pairs (B6.5a, confirmed by B6.6 re-Chrome):
+- pair 25412: "Guy Castagnier" ⇔ "Castagnier" (Morey-Saint-Denis; father → Jérôme, brand continuous) → MERGE
+- pair 52229: "Amiot Bonfils" ⇔ "Guy Amiot et Fils" (Chassagne-Montrachet; same estate, current vs prior label form) → MERGE
+- pair 77833: "Henry Lamarche" ⇔ "Nicole Lamarche" (same Vosne-Romanée estate across generations, La Grande Rue monopole) → MERGE
+
+**Counter-example (SKIP despite matching pattern):** pair 25960 "Cheurlin Noellat" ⇔ "Maxime Cheurlin Noellat" — B6.6 Chrome re-verification showed these are **two unrelated estates** despite the near-identical names. Side A is Champagne Richard Cheurlin (Celles-sur-Ource, Aube) bottling Brut Rosé / Carte d'Or / Cuvée Privilège; side B is Maxime Cheurlin Noellat in Vosne-Romanée (Georges Noellat successor). Different region, different grapes, different family. This is actually a §11.4.m shared-surname split, not a §11.4.f succession. The lesson: §11.4.f requires region + family continuity, not just surname overlap.
+
+If the succession produced a **new distinct brand** (sibling splits the estate, new domaine launches from same land), apply §11.4.m (shared-surname split) instead → SKIP.
+
+For négociant + estate under the same legal entity with distinct brand identities on label (e.g., "Louis Jadot" négociant + "Domaine Gagey" estate line), see §11.4.r.
 
 #### 11.4.g — Corporate holdcos (Constellation, Treasury Wine Estates, LVMH, Pernod Ricard)
 
@@ -880,15 +889,22 @@ Rule of thumb: if a bottle walking into a consumer's hand could plausibly show t
 
 When in doubt, search the name on Wine-Searcher or the official producer website — if they market wines under that name, keep.
 
-#### 11.4.h — Accent / diacritic variants
+#### 11.4.h — Accent / diacritic / orthographic variants
 
-Same producer, different rendering. MERGE. The survivor name should match the **form that appears on most labels today** (see §11.6).
+Same producer, different rendering. MERGE. The survivor name should match the **form that appears on most labels today** (see §11.6). Sub-patterns all fall under 11.4.h:
 
-- "Lopez de Heredia" ⇔ "López de Heredia" → survivor "López de Heredia" (official label)
-- "Chateau Margaux" ⇔ "Château Margaux" → survivor "Château Margaux"
-- "Ramon Bilbao" ⇔ "Ramón Bilbao" → survivor "Ramón Bilbao"
+- **Accents/diacritics:** "Lopez de Heredia" ⇔ "López de Heredia" → "López de Heredia" (official label)
+- **Typos/spelling:** "Chateau Margaux" ⇔ "Château Margaux" → "Château Margaux"
+- **Article presence:** "de Chevalier" ⇔ "Domaine de Chevalier" → whichever matches the bottle label most often
+- **Short/full form:** "Vocoret" ⇔ "Vocoret et Fils" → "Domaine Vocoret et Fils" (full form wins when on the label)
+- **Title/suffix variants:** "Baron de Rothschild" ⇔ "Barons de Rothschild (Lafite)" (see DBR Lafite) — MERGE when same holdco and same label brand
+- **Empty/placeholder row:** an orphan row with 0 wines and the same name as a populated row is always an earlier-import duplicate to absorb.
 
-Preserve the stripped-accent form in `producer_aliases` so that search still matches user typing without accents.
+Preserve the stripped-accent and article-less form in `producer_aliases` so search still matches user typing without diacritics or "de/la/du".
+
+Representative Chrome pairs (B6.5a): 4067, 13568, 13580 (MERGE cases).
+
+**Do not MERGE when the differentiating token encodes a distinct brand** — "Beynat" vs "Haut Beynat" (pair 13076) → SKIP, because "Haut Beynat" is a separate Bordeaux estate, not a rendering variant. Cross-ref §11.4.k (first-word-collision).
 
 #### 11.4.i — Importer prefixes ("a Becky Wasserman Selection", "Skurnik Wines Imports")
 
@@ -898,9 +914,19 @@ Record the importer relationship in `producer_importers`, not in the producer na
 
 #### 11.4.j — US producers sharing a TTB `permit_no` (permittee basic permit)
 
-The TTB `permit_no` (column `permit_no` on `source_ttb_colas`; also seen as `permit_number` in newer rows) is **federally unique per licensed entity**. Two US producer rows with the same `permit_no` are almost always the same brand. Treat shared `permit_no` as a **very strong MERGE signal** (confidence ≥ 0.90).
+The TTB `permit_no` (column `permit_no` on `source_ttb_colas`; also seen as `permit_number` in newer rows) is **federally unique per licensed entity**, but it **encodes the physical bonded-winery facility, not the brand on the label**. Custom-crush facilities host many unrelated brands under one permit.
 
-Edge case: some TTB-licensed entities hold multiple brand names. If the two producer rows share a `permit_no` but have clearly distinct brand identities on their respective labels (e.g., a custom-crush facility that licenses two different brands), it may be PARENT-CHILD rather than MERGE. Use the wine catalog overlap to disambiguate: if the same wines appear under both rows, MERGE; if the wine catalogs are disjoint, PARENT-CHILD with the custom-crush facility as parent.
+Application (revised 2026-04-19, B6.5a Chrome):
+- Shared `permit_no` AND identical or near-identical brand names AND overlapping wine catalog → MERGE (confidence ≥ 0.90).
+- Shared `permit_no` BUT clearly distinct brand identities AND disjoint wine catalogs → **SKIP** (custom-crush facility; neither brand is the "parent" of the other — they are unrelated clients sharing a venue).
+- Shared `permit_no` AND one row is the physical winery itself (not a client) with other brands orbiting it → PARENT-CHILD with the facility-brand as parent (rare; only when the facility actively bottles and labels its own wine).
+
+Representative Chrome pairs (B6.5a, all SKIP):
+- pair 115288: "Lafond" ⇔ "Margerum" (Santa Barbara custom-crush) → SKIP
+- pair 115471: "Summerwood" ⇔ "Treana" (Paso Robles shared facility) → SKIP
+- pair 116758: "Due Vigne" ⇔ "Clarksburg Wine Company" → SKIP
+
+The prior §11.4.j guidance (custom-crush → PARENT-CHILD with facility as parent) is superseded. A custom-crush facility has no brand relationship to its clients; SKIP is correct.
 
 #### 11.4.k — Commune overlap / first-word collision
 
@@ -908,7 +934,102 @@ Many producers share the same first word with unrelated producers (e.g., "Châte
 
 #### 11.4.l — Joint ventures and brand partnerships
 
-Treat the JV brand as its own producer row. Example: "Opus One" is its own producer even though it is historically 50/50 Mondavi / Rothschild. If one of the parent brands also appears separately in the database, record PARENT-CHILD as appropriate, but do NOT MERGE the JV into either parent.
+Treat the JV brand as its own producer row. Example: "Opus One" is its own producer even though it is historically 50/50 Mondavi / Rothschild. If one of the parent brands also appears separately in the database, record PARENT-CHILD as appropriate, but do NOT MERGE the JV into either parent. See §11.4.o for the dedup-time application.
+
+#### 11.4.m — Shared-surname family splits (default SKIP)
+
+Wine families often split across generations or branches into **distinct brand-on-label entities** that nonetheless share a surname. Burgundy, Bordeaux, Alsace, Mosel, Kamptal, and Rioja are especially dense with this pattern. Default verdict: **SKIP** — distinct brands, no ownership relation, just shared family name.
+
+Representative Chrome pairs (B6.5a, all SKIP):
+- pair 1517: "de Montille" (Volnay estate) ⇔ "Deux Montille" (Maison Deux Montille Soeur et Frère négociant) — same family, two brands on label → SKIP
+- pair 3324: "Willi Brundlmayer" ⇔ "Josef & Philip Brundlmayer" (Kamptal siblings, distinct estates) → SKIP
+- pair 3709: "Haselgrove" ⇔ "James Haselgrove" (McLaren Vale branches) → SKIP
+- pair 7234: "Ruhlmann" ⇔ "Ruhlmann Dirringer" (Alsace family, distinct estates) → SKIP
+
+**Override to MERGE** only when strong evidence shows the two rows describe the same brand-on-label entity (e.g., one row is a typo or abbreviation of the other — that's §11.4.h, not §11.4.m).
+
+**Cross-country same-surname case** — same surname appearing in two different countries is usually SKIP unless the same individual is actively producing under the name in both places. Example: "Melka" (Philippe Melka, California + Bordeaux consulting label) → MERGE because one person; "William Cole" (Napa) vs "William Cole" (Chile) → SKIP (coincidental naming, unrelated). Cross-ref §11.4.b.
+
+#### 11.4.n — Global brands with multi-country sourcing (MERGE across country rows)
+
+Some brands (Tussock Jumper, Cupcake Vineyards, 90+ Cellars, Prophecy, Pieroth, Thomson & Scott, Bernard Magrez brand collections) bottle wines from many origins under a **single global brand identity**. Staging imports sometimes create one `producers` row per origin country. These are **MERGE** — the shopper sees one brand on the label regardless of which vineyard sourced the grapes.
+
+Representative Chrome pairs (B6.5a, all MERGE):
+- pair 136068: "Selaks" ⇔ "Selaks" (same brand, country-split rows) → MERGE
+- pair 136270: "Tussock Jumper" ⇔ "Tussock Jumper" → MERGE
+- pair 137796: "Cupcake Vineyards" ⇔ "Cupcake Vineyards" → MERGE
+- pair 142095: "90+ Cellars" ⇔ "90+ Cellars" (US + NZ country rows) → MERGE
+
+Survivor: prefer the row with the higher wine count or the one whose country matches the brand's legal domicile. Preserve country-split sourcing detail on the `wines` rows (via appellation/region), not the producer row.
+
+#### 11.4.o — Joint-venture / collaboration labels at dedup time
+
+Complements §11.4.l. When dedup surfaces a pair where one row is a JV/collab label (pattern: "X & Y", "X x Y", "X with Y", or a dedicated JV brand name) and the other is one of the collaborating principals:
+
+- If the JV has a dedicated brand identity that stands on its own (Opus One, DVO, Cheval des Andes), the JV is its **own producer**. Dedup verdict against a principal: PARENT-CHILD if one principal is dominant (the JV lives inside their portfolio/website), otherwise SKIP (both principals stay separate).
+- If the JV brand is simply the partners' names concatenated (e.g., "Wheeler & Fromm", "Wilson & Valdespino", "XU x Eva Fricke", "David Duband & Louis Max"), PARENT-CHILD with the **more established / larger-portfolio principal as parent**.
+- When neither principal is dominant AND the JV is a one-off collab with no ongoing portfolio → SKIP both sides from PC; leave the JV as its own row without a parent link.
+
+Representative Chrome pairs (B6.5a):
+- pair 31354: "Wilson & Valdespino" → PC under Valdespino
+- pair 38882: "Fromm" ⇔ "Wheeler & Fromm" → PC under Fromm
+- pair 40820: "Eva Fricke" ⇔ "XU x Eva Fricke" → PC under Eva Fricke
+- pair 42479: "Louis Max" ⇔ "David Duband & Louis Max" → PC under Louis Max
+
+The ~50% SKIP rate for §11.4.o pairs reflects cases where the JV was already handled correctly (distinct brand, no principal overlap in our DB).
+
+#### 11.4.p — Merchant / restaurant / retailer curation prefixes
+
+Similar to §11.4.i (importer prefixes) but for **restaurants, merchants, and curation-house labels** that prefix or parenthesize the actual producer. These are not private labels (§11.4.c) — the actual producer's brand identity is still on the label, just with a curator attribution.
+
+- `"Taillevent (Joseph Drouhin)"` → a Drouhin cuvée bottled for Taillevent restaurant. **MERGE into Joseph Drouhin.**
+- `"Mouton Rothschild (Luze)"` → Château Mouton Rothschild bottled by old Luze négociant. MERGE into Château Mouton Rothschild.
+- `"Schloss Gobelsburg (Taillevent)"` → MERGE into Schloss Gobelsburg.
+
+When the prefix entity is itself a **distinct branded operation** (rather than a merchant curator) AND the parent entity matters for parentage, record PARENT-CHILD instead. Example:
+- pair 71929: "Franck Massard" ⇔ "Epicure (Franck Massard)" — Epicure is Massard's distribution/second-label arm → PC with Franck Massard as parent.
+
+SKIP only when the prefix represents a genuinely distinct brand and there is no ownership link (pair 123050: "Manigley" ⇔ "Roche de Bellene" — Manigley estate, bottled in some years by Roche de Bellene négociant, but distinct brands on label).
+
+Representative Chrome pairs (B6.5a): 47775 (MERGE), 71929 (PC), 123050 (SKIP).
+
+#### 11.4.q — Hospices de Beaune / Hospices de Nuits auction négociant-bottlings
+
+The Hospices de Beaune annual auction sells barrels of wine from the charity's domain to commercial négociants, who bottle and label them as **"Hospices de Beaune — [Cuvée Name], bottled by [Négociant]"**. The same Hospices cuvée may end up in the bottles of Pierre André, Joseph Drouhin, Louis Jadot, Albert Bichot, etc.
+
+- `Hospices de Beaune (X)` ⇔ `Hospices de Beaune (Y)` where X ≠ Y → **SKIP** (two different négociant bottlings of the shared auction lot; each is a distinct product on shelf).
+- `Generic "Hospice de Beaune"` ⇔ `"Hospices de Beaune (X)"` → **SKIP** (the generic row is an unresolved staging artifact; the specific-négociant row is the real bottling).
+- `X` (négociant) ⇔ `Hospices de Beaune (X)` → **PARENT-CHILD** with X as the parent. The HdB-branded cuvée lives inside X's portfolio.
+- Apply the same logic to Hospices de Nuits.
+
+Representative Chrome pairs (B6.5a):
+- pair 18712: "Pierre André" ⇔ "Hospices de Beaune (Andre Pierre)" → PC under Pierre André
+- pair 20486: "Hospices de Beaune (Dominique Laurent)" ⇔ "Hospices de Beaune (Alexis Lichine & Co)" → SKIP
+- pair 20506: "Hospices de Beaune (Pierre André)" ⇔ "Hospices de Beaune (Alexis Lichine & Co)" → SKIP
+- pair 4666: "Hospice de Beaune" ⇔ "Hospices de Beaune (Marche aux Vins)" → SKIP
+
+#### 11.4.r — Négociant + estate lines under one legal entity (distinct brands)
+
+When one legal entity bottles both a négociant line and an estate line under **distinct brand identities** on the label, treat as PARENT-CHILD with the négociant as the parent. (Moved from the former §11.4.f to make room for generational-succession at §11.4.f.)
+
+Example: "Louis Jadot" négociant releases + "Domaine Gagey" (estate line owned by Jadot) = PARENT-CHILD with Louis Jadot as parent.
+
+When the négociant line and the estate line share a single brand identity on the label (e.g., "Maison Louis Latour" for both), treat as MERGE (§11.4.f or §11.4.h as appropriate).
+
+#### 11.4.s — Sub-brands, cuvée-lines, and named product tiers under a parent
+
+Producers commonly market branded sub-lines — tiered value ranges, vineyard-designated collections, or named cuvée series — that share the parent's brand equity but carry a **distinct brand identity on the bottle**. Default verdict: **PARENT-CHILD** with the umbrella brand as parent. MERGE applies only when the "sub-brand" turns out to be a wine name inside the parent's portfolio (§11.4.e second-wine logic).
+
+Representative Chrome pairs (B6.5a):
+- pair 6721: "Verget" ⇔ "Verget au Sud" (Verget Burgundy négociant + Southern France sub-line) → PC under Verget
+- pair 10187: "Haan" ⇔ "Haan Hanenhof" (Barossa estate + vineyard-designated sub-brand) → PC under Haan
+- pair 12202: "Argento" ⇔ "Artesano de Argento" (Mendoza brand + artisan sub-line) → PC under Argento
+- pair 79706: "Koerner" ⇔ "Brothers Koerner" (Clare Valley parent + sibling-collaboration sub-line) → PC under Koerner
+
+MERGE examples (rare, sub-brand was actually a wine name):
+- CVNE (Contino) row with 3 wines that duplicate Contino entries already under the main CVNE row → MERGE (Contino is a CVNE single-vineyard wine, not its own producer).
+
+Cross-ref §11.4.e — if the "sub-brand" is in fact a **second wine** (cuvée-as-pseudo-producer), SKIP the PC and flag the row for re-link as a wine of the parent.
 
 ### 11.5 UNCERTAIN / FLAGGED verdicts
 

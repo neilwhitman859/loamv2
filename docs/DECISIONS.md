@@ -4,6 +4,23 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-19: Survivor selection for producer dedup = US-market label form
+
+User (2026-04-19): "Keep the survivor that is written on the bottle. Call producers what producers want to be called in America."
+
+Refines �11.6 survivor priority to: (1) US-market label form (TTB brand_name + LWIN display_name + US-importer staging), (2) accent preservation matching label, (3) metadata completeness, (4) wine count, (5) LWIN presence, (6) older created_at. See `memory/feedback_producer_survivor_selection.md` for full spec.
+
+Examples: `Ch�teau Margaux` wins over `Chateau Margaux`; `Ridge Vineyards` wins over `Ridge`; `Domaine de la Roman�e-Conti` wins over `DRC`; `Tenuta San Guido` wins over `San Guido Estate`.
+
+Implementation: Step 10 execution SQL queries TTB + LWIN + US-importer staging per merge pair, picks most-frequent US-market label form. Ties fall to existing �11.6 order.
+
+### 2026-04-19: Step 10 scorecard moved PRE-execution (audit before applying merges)
+
+Audit pass on remaining Sprint 6 plan revealed the original Step 10c placement (post-execution quality audit) was a one-way-door risk: if scorecard revealed bad merges, DB was already corrupted. Plan revised so Step 10c runs as a pre-execution SIMULATION � audits the planned merges by reading routing_stage3 + producer/wine state WITHOUT applying them. Only after scorecard passes does Step 10a execute. Much smaller post-execution verification (100 pairs) confirms execution did what the plan said.
+
+Trade-off: one additional pass over the routing data before execution. Tokens ~500K Opus inline. Benefit: irreversible-action safety.
+
+
 ### 2026-04-17: OpenRouter key hit $200 cap mid-L2.5 run; L2.5 paused; L2 (direct Anthropic) continues
 
 Second OR cap hit of B6.5a. First hit at $100 during L1.5 Gemini basic; user raised to $200. Second hit now during L2.5 Gemini rich on the 57,810 Stage 1 escalation set, at pair 17,335 of 57,810 (30%). L2 Haiku rich (direct Anthropic, separate credit pool) continues unaffected at ~15% / 57,474.
@@ -1879,3 +1896,29 @@ B6.5 in the original plan combined production-scale ladder runs with user review
 ### 2026-04-17: B6.4 — SKIP audit added to B6.5a to validate FN rate at scale
 
 Calibration showed 4-way SKIP at ≥0.90 had 3.2% false-negative rate (5 real MERGEs in 156 auto-SKIPs). At production scale this would be ~4,000 missed merges out of ~125,000 auto-SKIPs. To validate the FN rate at scale before committing to the committed SKIP thresholds, B6.5a includes a SKIP audit step: sample 200 random auto-SKIP pairs from Stage 1, run through L2 Haiku rich + L3 no-web. If measured FN >5%, re-run ladder with stricter SKIP thresholds. If 2-5%, tighten. If <2%, proceed as-is. Cost ~$5. Cheap insurance.
+
+### 2026-04-19: B6.6 — §11.4 amendments codified against 493 Chrome-validated pairs
+
+All 493 B6.5a Chrome-validated verdicts (yellow 71 + Core 143 + Mid 138 + Tail 141) are frozen. B6.6 Step 1 audited §11.4 against nine pattern clusters that Chrome validation actually applied and codified the drift vs the pre-sprint text. Changes:
+
+1. **§11.4.f renamed** — was "Négociant + estate (same entity bottles both)," now "Generational succession / historical name forms." Chrome applied the `§11.4.f` tag to 18 MERGE pairs for estate-name-evolution-across-generations (pair 25412 Guy Castagnier ⇔ Castagnier, pair 25960 Cheurlin Noellat ⇔ Maxime Cheurlin Noellat, pair 52229 Amiot Bonfils ⇔ Guy Amiot et Fils, pair 77833 Henry Lamarche ⇔ Nicole Lamarche). This is a specialization of §11.4.a. The original négociant-plus-estate content moved to new §11.4.r.
+
+2. **§11.4.h extended** — was "Accent / diacritic variants," now "Accent / diacritic / orthographic variants." Chrome applied the tag to 90 pairs covering accents, typos, article presence (de, la, du), short-vs-full form ("Vocoret" ⇔ "Vocoret et Fils"), and empty-placeholder-row absorption. 3 of 90 were SKIP (pair 13076 "Beynat" ⇔ "Haut Beynat" is a commune-overlap case, cross-ref §11.4.k).
+
+3. **§11.4.j inverted** — custom-crush shared-permit with disjoint wine catalogs now resolves to **SKIP, not PARENT-CHILD**. Chrome applied the tag to 33 pairs, all SKIP. Reasoning: a custom-crush facility hosts unrelated clients; it is not a brand "parent" of any of them. The prior PARENT-CHILD guidance is superseded. Representative pairs: 115288 Lafond ⇔ Margerum, 115471 Summerwood ⇔ Treana, 116758 Due Vigne ⇔ Clarksburg Wine Company.
+
+4. **§11.4.m added** — shared-surname family splits, default SKIP. 121 Chrome pairs (de Montille ⇔ Deux Montille, Brundlmayer siblings, Haselgrove branches, Ruhlmann family, etc.). Cross-country same-surname handled here; same-person cross-country stays MERGE via §11.4.b extension.
+
+5. **§11.4.n added** — global brands with multi-country sourcing (Tussock Jumper, Cupcake, 90+ Cellars, Selaks). 14 Chrome pairs, all MERGE. Country-split rows collapse to single producer.
+
+6. **§11.4.o added** — JV/collab labels at dedup time. 42 Chrome pairs (21 PC + 21 SKIP). PC with dominant principal when JV name is concatenation (Wheeler & Fromm, XU x Eva Fricke); SKIP when JV has independent standing (Opus One).
+
+7. **§11.4.p added** — merchant/restaurant/retailer curation prefixes (Taillevent, Epicure). 13 pairs (6 MERGE, 2 PC, 5 SKIP). Distinct from §11.4.c private labels and §11.4.i importer prefixes.
+
+8. **§11.4.q added** — Hospices de Beaune / Nuits auction négociant-bottling pattern. 18 Chrome pairs (1 PC, 17 SKIP). HdB(X) ⇔ HdB(Y) with distinct X/Y is SKIP (different bottlings of shared auction cuvée); X ⇔ HdB(X) is PC with X as parent.
+
+9. **§11.4.r added** — moved-from §11.4.f: Négociant + estate same legal entity, distinct brands = PC.
+
+10. **§11.4.s added** — sub-brands / cuvée-lines / named product tiers under a parent. 29 Chrome pairs (25 PC, 2 MERGE, 2 SKIP). Verget ⇔ Verget au Sud, Haan ⇔ Haan Hanenhof, Argento ⇔ Artesano de Argento, Koerner ⇔ Brothers Koerner.
+
+None of these amendments change any verdict already frozen in the four verdict JSONL files — they retrospectively describe what Chrome did. §11.8 logging is satisfied. All 493 verdicts remain the source of truth for B6.6 execution; §11.4 is the documentation of *why* those verdicts are correct.
