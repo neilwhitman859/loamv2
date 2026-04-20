@@ -1,8 +1,8 @@
 # Sprint 6: Dedup (Producers) — journal
 
 **Opened:** 2026-04-16
-**Status:** Active — B6.3 COMPLETE 2026-04-17, B6.4 next
-**Current block:** B6.3 closed (L1 full run done, $78.44 spent, 151,120/151,150 processed). B6.4 queued — calibration-first: build 500-700 pair synthetic ground truth via L3 oracle, then L2 Haiku rich + L2.5 Gemini rich + L3 Sonnet+web + ablation. Prompt: `data/session_prompts/b6_4_l2_l3_anchor.md`.
+**Status:** Active — B6.5a Phase B Chrome validation in progress (Path A, plan locked 2026-04-19)
+**Current block:** B6.5a Phase B — Chrome-validating 71 yellow-flag top producers + 143 Core escalate pairs. Plan LOCKED per `data/sprints/dedup/chrome_validation/PLAN_LOCK.md` — do not redesign, do not substitute §11 defaults for Chrome on Core. Working log: `yellow_verdicts.jsonl` (producer idx). Resume from last logged idx. Prior Sonnet session drifted to heuristic shortcuts; user re-committed to rigorous Chrome-per-pair.
 
 ---
 

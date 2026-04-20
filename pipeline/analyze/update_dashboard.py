@@ -28,19 +28,19 @@ MARK = lambda name: re.compile(
     rf"(<!--{name}-->)(.*?)(<!--/{name}-->)", re.DOTALL
 )
 
-# B6.5a step definitions (in order)
+# Sprint 6 Steps (flattened, replaces old B6.X/Phase-X nomenclature)
 B6_5A_STEPS = [
-    "Step 1 — L1.5 Gemini basic on 151K",
-    "Step 2 — Build Stage 1 routing (SQL)",
-    "Step 3 — SKIP audit on 600 pairs (3 bands)",
-    "Step 4 — L2 Haiku rich on Stage 1 escalations",
-    "Step 5 — L2.5 Gemini rich on same escalations",
-    "Step 6 — Build Stage 2 routing (SQL)",
-    "Step 7 — L3 web/no-web decision",
-    "Step 8 — L3 Sonnet on Stage 2 residual",
-    "Step 9 — Stage 3 final routing (SQL)",
-    "Step 10 — L4 Opus-inline cross-pair audit",
-    "Step 11 — Write review_queue.json + close out",
+    "Step 1 — Plan lock-in",
+    "Step 2 — LWIN import (+22,598 producers)",
+    "Step 3 — Schema + L1 classification (151K pairs)",
+    "Step 4 — Calibration + committed thresholds",
+    "Step 5 — Full AI classification (L1.5, L2, L2.5)",
+    "Step 6 — Phase 3a web-validation on 3,398 high-risk pairs",
+    "Step 7 — Expand web coverage (Core + Tail escalations + audit)",
+    "Step 8 — Build routing_stage3 decision table",
+    "Step 9 — Opus pattern audit + §11 amendments + 50-pair user signoff",
+    "Step 10 — Execute merges + Safety Net B + quality audit",
+    "Step 11 — Sprint close + Sprint 7 handoff",
 ]
 
 
@@ -135,12 +135,11 @@ SPRINT_HISTORY = [
 ]
 
 B6_BLOCKS_HISTORICAL = [
-    ("B6.1 Planning",          0.00),
-    ("B6.2 LWIN import",       0.00),
-    ("B6.2.1 Hygiene",         0.00),
-    ("B6.2.2 Wine recovery",   0.00),
-    ("B6.3 Schema + L1",      78.44),
-    ("B6.4 Calibration",      24.51),
+    ("Step 1-2 Plan + LWIN import",   0.00),
+    ("Step 3 Schema + L1 classify", 78.44),
+    ("Step 4 Calibration",          24.51),
+    ("Step 5 L1.5 + L2 + L2.5",    115.85),
+    ("Step 6 Phase 3a web-validate", 12.87),
 ]
 
 
@@ -172,7 +171,7 @@ def build_spend_breakdown(logs: dict, sprint_ceiling: float) -> str:
     sprint_rows += "\n        " + row("Total project spend", total_project, bold=True, border_top=True)
 
     block_rows = "\n        ".join(row(lbl, v) for lbl, v in B6_BLOCKS_HISTORICAL)
-    block_rows += "\n        " + row("B6.5a Production ladder", b6_5a_spend, highlight=True)
+    block_rows += "\n        " + row("Step 7 Coverage expansion", b6_5a_spend, highlight=True)
     block_rows += "\n        " + row("Sprint 6 spent", sprint6_spend, bold=True, border_top=True)
     color = "var(--green)" if remaining > 30 else ("var(--amber)" if remaining > 0 else "var(--red)")
     block_rows += "\n        " + row(f"Remaining of ${sprint_ceiling:.0f} ceiling", remaining, color=color)
@@ -197,13 +196,88 @@ def build_spend_breakdown(logs: dict, sprint_ceiling: float) -> str:
 <!--/spend-breakdown-->"""
 
 
+STEP7_LINE_RE = re.compile(r"(\d+)/(\d+)\s*\|\s*(\w+)\s+[\d.]+\s*\|\s*llm=([\d.]+)c\s+web=([\d.]+)c\s*\|\s*\$([\d.]+)\s*total\s*\|\s*eta=(\d+)m")
+STEP7_CREDITS_RE = re.compile(r"Serper credits used:\s*(\d+)")
+
+
+def parse_step7_log(path) -> dict:
+    """Parse Step 7 log format:
+      N/M | VERDICT 0.95 | llm=0.14c web=0.20c | $X.XX total | eta=Nm
+    Plus periodic 'Serper credits used: N' lines.
+    """
+    from pathlib import Path as _P
+    p = _P(path)
+    out = {"processed": 0, "total": 0, "cost": 0.0, "eta_min": None,
+           "serper_credits": 0, "errors": 0}
+    if not p.exists():
+        return out
+    last_progress = None
+    last_credits = 0
+    err = 0
+    for line in p.read_text(encoding="utf-8", errors="replace").splitlines():
+        m = STEP7_LINE_RE.search(line)
+        if m:
+            last_progress = m
+        if STEP7_CREDITS_RE.search(line):
+            last_credits = int(STEP7_CREDITS_RE.search(line).group(1))
+        if "ERR " in line or "error:" in line.lower():
+            err += 1
+    if last_progress:
+        out["processed"] = int(last_progress.group(1))
+        out["total"] = int(last_progress.group(2))
+        out["cost"] = float(last_progress.group(6))
+        out["eta_min"] = int(last_progress.group(7))
+    out["serper_credits"] = last_credits
+    out["errors"] = err
+    return out
+
+
 def build_progress_block(step_label: str, logs: dict) -> str:
-    # Use the first log as the primary progress source
+    """Render progress block. If multiple logs, stack per-run rows."""
     if not logs:
         inner = (
             f'<div class="pstep">{step_label}</div>'
             f'<div class="pstats">(no active job log)</div>'
         )
+        return f'<!--progress-block-->\n  <div class="block-progress">\n    {inner}\n  </div>\n  <!--/progress-block-->'
+
+    # Try Step 7 format first (3 parallel runs); fall back to single-run format
+    step7_data = {}
+    for label, path_or_parsed in logs.items():
+        # If the path was passed as a Path-like (log filename), try parsing as Step 7
+        pth = getattr(path_or_parsed, '_path', None) if hasattr(path_or_parsed, '_path') else None
+    # Simpler: re-parse each log path directly if we can find it
+    # We don't have raw paths here; fall back to using the existing parse_log data
+    is_step7 = all(l.startswith("step7") or l in ("core", "tail", "audit") for l in logs.keys())
+
+    if is_step7 and len(logs) >= 2:
+        rows = []
+        total_processed = 0
+        total_cost = 0.0
+        total_credits = 0
+        for label, p in logs.items():
+            processed = p.get("processed") or 0
+            total = p.get("total") or 0
+            pct = (processed / total * 100) if total else 0
+            cost = p.get("cost_usd") or p.get("cost") or 0
+            eta = p.get("eta_min")
+            eta_str = f"ETA {eta}m" if eta is not None else "ETA --"
+            credits = p.get("serper_credits", 0)
+            total_processed += processed
+            total_cost += cost
+            total_credits += credits
+            rows.append(
+                f'<div class="pstep" style="font-size:12px; margin-top:6px;">{label}</div>'
+                f'<div class="progress-bar"><div class="progress-fill" style="width: {pct:.1f}%"></div></div>'
+                f'<div class="pstats" style="font-size:11.5px;">{processed:,} / {total:,} ({pct:.1f}%) &middot; '
+                f'${cost:.2f} &middot; {eta_str} &middot; {credits:,} Serper credits</div>'
+            )
+        header = (
+            f'<div class="pstep">{step_label}</div>'
+            f'<div class="pstats">combined: {total_processed:,} pairs processed &middot; '
+            f'${total_cost:.2f} spent &middot; {total_credits:,} Serper credits</div>'
+        )
+        inner = header + "\n    " + "\n    ".join(rows)
     else:
         label, p = next(iter(logs.items()))
         processed = p.get("processed") or p.get("pairs") or 0
@@ -229,9 +303,9 @@ def main() -> int:
     ap.add_argument("--dashboard", required=True)
     ap.add_argument("--transcript", default=None)
     ap.add_argument("--log", action="append", default=[])
-    ap.add_argument("--step", default="Step 1 of 11 — L1.5 Gemini basic on all 151K pairs")
-    ap.add_argument("--sprint-spent", type=float, default=107.76)
-    ap.add_argument("--sprint-ceiling", type=float, default=250)
+    ap.add_argument("--step", default="Step 7 of 11 — Web-validation coverage expansion (Core + Tail + Audit in parallel)")
+    ap.add_argument("--sprint-spent", type=float, default=231.67)
+    ap.add_argument("--sprint-ceiling", type=float, default=450)
     ap.add_argument("--done-up-to", type=int, default=0,
                     help="all steps <= this number are marked done (1-indexed)")
     ap.add_argument("--current-steps", default="",
@@ -242,7 +316,22 @@ def main() -> int:
     logs = {}
     for entry in args.log:
         label, pth = entry.split("=", 1) if "=" in entry else (Path(entry).stem, entry)
-        logs[label] = parse_log(Path(pth))
+        path_obj = Path(pth)
+        # If this looks like a Step 7 log (filename contains step7), use the dedicated parser.
+        if "step7" in path_obj.name or label in ("core", "tail", "audit"):
+            parsed = parse_step7_log(path_obj)
+            # session_tokens.parse_log also parses cost/tokens for spend breakdown;
+            # run it additionally so spend_breakdown has token-level data when available
+            sess = parse_log(path_obj)
+            parsed["cost_usd"] = parsed.get("cost") or sess.get("cost_usd", 0)
+            parsed["input_tokens"] = sess.get("input_tokens", 0)
+            parsed["output_tokens"] = sess.get("output_tokens", 0)
+            parsed["cache_read"] = sess.get("cache_read", 0)
+            parsed["cache_write"] = sess.get("cache_write", 0)
+            parsed["pairs"] = parsed.get("processed", 0)
+            logs[label] = parsed
+        else:
+            logs[label] = parse_log(path_obj)
 
     dash_path = Path(args.dashboard)
     text = dash_path.read_text(encoding="utf-8")

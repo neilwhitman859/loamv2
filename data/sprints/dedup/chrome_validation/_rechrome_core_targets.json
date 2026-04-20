@@ -1,0 +1,662 @@
+[
+  {
+    "pair_id": 645,
+    "verdict": "MERGE",
+    "cluster": "11.1",
+    "survivor_name": "De Stefani",
+    "parent_name": null,
+    "reasoning": "Strong-rich-tier-dissent resolved: De Stefani canonical Venetian producer (Valdobbiadene). Stefen 1624 is De Stefani signature cuvee. Stefani row in DB duplicates. MERGE.",
+    "name_a": "De Stefani",
+    "name_b": "Stefani"
+  },
+  {
+    "pair_id": 4067,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Domaine Vocoret",
+    "parent_name": null,
+    "reasoning": "Vocoret and Vocoret et Fils are the same 1870-founded Chablis estate (Vocoret & Fils legal name, Vocoret casual short form). Four generations at one domaine. MERGE.",
+    "name_a": "Vocoret",
+    "name_b": "Vocoret et Fils"
+  },
+  {
+    "pair_id": 6721,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.s",
+    "survivor_name": null,
+    "parent_name": "Verget",
+    "reasoning": "Verget is the parent Burgundy negociant. Verget Au Sud is a distinct branded Southern France sub-line. Per 11.2 + 11.4.s distinct brand under same parent = PARENT_CHILD with Verget as parent.",
+    "name_a": "Verget",
+    "name_b": "Verget au Sud"
+  },
+  {
+    "pair_id": 10187,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.s",
+    "survivor_name": null,
+    "parent_name": "Haan",
+    "reasoning": "Haan = parent family estate. Haan Hanenhof = vineyard-designated sub-brand. Per 11.2/11.4.s distinct branded line under same producer = PARENT_CHILD with Haan as parent.",
+    "name_a": "Haan",
+    "name_b": "Haan Hanenhof"
+  },
+  {
+    "pair_id": 12202,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.s",
+    "survivor_name": null,
+    "parent_name": "Argento",
+    "reasoning": "Artesano de Argento = branded sub-line under Argento umbrella. Per 11.4.s PARENT_CHILD with Argento as parent.",
+    "name_a": "Argento",
+    "name_b": "Artesano de Argento"
+  },
+  {
+    "pair_id": 13568,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Barons de Rothschild",
+    "parent_name": null,
+    "reasoning": "Singular Baron de Rothschild is orthographic variant of canonical plural Barons de Rothschild. Per 11.4.h MERGE. Survivor: Barons de Rothschild.",
+    "name_a": "Baron de Rothschild",
+    "name_b": "Barons de Rothschild"
+  },
+  {
+    "pair_id": 13580,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Barons de Rothschild (Lafite)",
+    "parent_name": null,
+    "reasoning": "Both rows refer to Domaines Barons de Rothschild (Lafite). Parenthetical form is disambiguated, non-parenthetical is short form. MERGE.",
+    "name_a": "Barons de Rothschild (Lafite)",
+    "name_b": "Barons de Rothschild"
+  },
+  {
+    "pair_id": 18712,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.q",
+    "survivor_name": null,
+    "parent_name": "Pierre Andre",
+    "reasoning": "Per 11.4.q.2 HdB cuvee bottled by Pierre Andre is a distinct HdB-branded wine within Pierre Andre umbrella. PC with Pierre Andre as parent.",
+    "name_a": "Pierre Andre",
+    "name_b": "Hospices de Beaune (Andre Pierre)"
+  },
+  {
+    "pair_id": 25412,
+    "verdict": "MERGE",
+    "cluster": "11.4.f",
+    "survivor_name": "Castagnier",
+    "parent_name": null,
+    "reasoning": "Same Morey-Saint-Denis domaine: Guy Castagnier was the father, Jerome succeeded. Estate continues under Castagnier name. Per 11.4.f historical name variant MERGE.",
+    "name_a": "Guy Castagnier",
+    "name_b": "Castagnier"
+  },
+  {
+    "pair_id": 25960,
+    "verdict": "MERGE",
+    "cluster": "11.4.f",
+    "survivor_name": "Maxime Cheurlin Noellat",
+    "parent_name": null,
+    "reasoning": "Same Vosne-Romanee estate: Cheurlin Noellat (historical short form) vs Maxime Cheurlin Noellat (current canonical name). Per 11.4.f succession MERGE.",
+    "name_a": "Cheurlin Noellat",
+    "name_b": "Maxime Cheurlin Noellat"
+  },
+  {
+    "pair_id": 31354,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "Valdespino",
+    "reasoning": "Valdespino is the parent Sherry house. Wilson & Valdespino is a collab/JV label under Valdespino umbrella. Per 11.4.o PC with Valdespino as parent.",
+    "name_a": "Wilson & Valdespino",
+    "name_b": "Valdespino"
+  },
+  {
+    "pair_id": 37630,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Robert Mondavi",
+    "parent_name": null,
+    "reasoning": "Mondavi 4-wine row with generic Cab/Chardonnay is the short form of Robert Mondavi (incl Private Selection). MERGE into Robert Mondavi.",
+    "name_a": "Robert Mondavi",
+    "name_b": "Mondavi"
+  },
+  {
+    "pair_id": 38882,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "Fromm",
+    "reasoning": "JV label between Fromm and partners. Per 11.4.o PC with Fromm as parent.",
+    "name_a": "Fromm",
+    "name_b": "Wheeler & Fromm"
+  },
+  {
+    "pair_id": 40820,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "Eva Fricke",
+    "reasoning": "JV/collaboration label under Eva Fricke partnership. Per 11.4.o PC.",
+    "name_a": "Eva Fricke",
+    "name_b": "XU x Eva Fricke"
+  },
+  {
+    "pair_id": 42479,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "Louis Max",
+    "reasoning": "JV label between Louis Max negociant and David Duband vigneron. Per 11.4.o PC with Louis Max as parent (the larger entity).",
+    "name_a": "Louis Max",
+    "name_b": "David Duband & Louis Max"
+  },
+  {
+    "pair_id": 44807,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "M. Chapoutier",
+    "reasoning": "JV/collab between Champagne Devaux and M. Chapoutier. Per 11.4.o PC with M. Chapoutier as parent.",
+    "name_a": "M. Chapoutier",
+    "name_b": "Devaux & Michel Chapoutier"
+  },
+  {
+    "pair_id": 47775,
+    "verdict": "MERGE",
+    "cluster": "11.4.p",
+    "survivor_name": "Joseph Drouhin",
+    "parent_name": null,
+    "reasoning": "Taillevent restaurant curated Chambolle-Musigny bottled by Joseph Drouhin. Per 11.4.p merchant-prefix MERGE into Joseph Drouhin.",
+    "name_a": "Taillevent (Joseph Drouhin)",
+    "name_b": "Joseph Drouhin"
+  },
+  {
+    "pair_id": 52229,
+    "verdict": "MERGE",
+    "cluster": "11.4.f",
+    "survivor_name": "Guy Amiot et Fils",
+    "parent_name": null,
+    "reasoning": "Same Chassagne-Montrachet estate under historical name (Amiot Bonfils) vs current (Guy Amiot et Fils). Per 11.4.f MERGE.",
+    "name_a": "Amiot Bonfils",
+    "name_b": "Guy Amiot et Fils"
+  },
+  {
+    "pair_id": 54064,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Michel & Tina Gassier",
+    "parent_name": null,
+    "reasoning": "Both rows = same Domaine Gassier. Label variants (Gassier short form vs Michel & Tina Gassier full form). Per 11.4.h MERGE.",
+    "name_a": "Gassier",
+    "name_b": "Michel & Tina Gassier"
+  },
+  {
+    "pair_id": 55533,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Edouard Delaunay",
+    "parent_name": null,
+    "reasoning": "Edouard = short form of Edouard Delaunay. Per 11.4.h MERGE.",
+    "name_a": "Edouard Delaunay",
+    "name_b": "Edouard"
+  },
+  {
+    "pair_id": 57771,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "Alex Moreau",
+    "reasoning": "Alex Moreau primary estate with brothers collab sub-label. Per 11.4.o PC with Alex Moreau as parent.",
+    "name_a": "Alex Moreau",
+    "name_b": "Alex et Benoit Moreau"
+  },
+  {
+    "pair_id": 59536,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Pascal Jolivet",
+    "parent_name": null,
+    "reasoning": "Jolivet is short form of Pascal Jolivet. Per 11.4.h MERGE.",
+    "name_a": "Pascal Jolivet",
+    "name_b": "Jolivet"
+  },
+  {
+    "pair_id": 61689,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Fabio Cordella",
+    "parent_name": null,
+    "reasoning": "Cordella is short-form of Fabio Cordella. Same Puglia producer. Per 11.4.h MERGE.",
+    "name_a": "Cordella",
+    "name_b": "Fabio Cordella"
+  },
+  {
+    "pair_id": 62908,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Beau-Sejour Becot",
+    "parent_name": null,
+    "reasoning": "Beausejour short form of Chateau Beau-Sejour Becot. Per 11.4.h MERGE. Note: there is also Chateau Beausejour Duffau-Lagarrosse (distinct estate that split from same 1869 origin), but DB cuvees point to Becot.",
+    "name_a": "Beausejour",
+    "name_b": "Beau-Sejour Becot"
+  },
+  {
+    "pair_id": 68320,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Moillard",
+    "parent_name": null,
+    "reasoning": "Thomas-Moillard = label variant of Maison Moillard. Per 11.4.h MERGE.",
+    "name_a": "Thomas-Moillard",
+    "name_b": "Moillard"
+  },
+  {
+    "pair_id": 71588,
+    "verdict": "MERGE",
+    "cluster": "11.4.g",
+    "survivor_name": "Louis Jadot",
+    "parent_name": null,
+    "reasoning": "Both are Maison Louis Jadot umbrella labels (Jacques = Beaujolais estate, Heritiers = commercial line). MERGE into Louis Jadot.",
+    "name_a": "Louis Jadot (Jacques)",
+    "name_b": "des Heritiers Louis Jadot"
+  },
+  {
+    "pair_id": 71929,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.p",
+    "survivor_name": null,
+    "parent_name": "Franck Massard",
+    "reasoning": "Franck Massard = estate brand; Epicure = his distribution company with distinct brand on label. Per 11.4.p merchant-prefix PC with Franck Massard as parent.",
+    "name_a": "Franck Massard",
+    "name_b": "Epicure (Franck Massard)"
+  },
+  {
+    "pair_id": 77572,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Bertrand Bachelet",
+    "parent_name": null,
+    "reasoning": "B. Bachelet is orthographic short form of Bertrand Bachelet. Per 11.4.h MERGE.",
+    "name_a": "Bertrand Bachelet",
+    "name_b": "B. Bachelet"
+  },
+  {
+    "pair_id": 77833,
+    "verdict": "MERGE",
+    "cluster": "11.4.f",
+    "survivor_name": "Nicole Lamarche",
+    "parent_name": null,
+    "reasoning": "Same Vosne-Romanee estate: Henry Lamarche (father) to Nicole Lamarche (daughter, current). Per 11.4.f succession MERGE.",
+    "name_a": "Henry Lamarche",
+    "name_b": "Nicole Lamarche"
+  },
+  {
+    "pair_id": 79706,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.s",
+    "survivor_name": null,
+    "parent_name": "Koerner",
+    "reasoning": "Brothers Koerner is a branded sub-line under Koerner family operation. Per 11.4.s PC with Koerner as parent.",
+    "name_a": "Koerner",
+    "name_b": "Brothers Koerner"
+  },
+  {
+    "pair_id": 95181,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "Neil Ellis",
+    "reasoning": "JV/collab between Neil Ellis Stellenbosch and Werner Nakel. Per 11.4.o PC with Neil Ellis as parent.",
+    "name_a": "Werner Nakel (Neil Ellis)",
+    "name_b": "Neil Ellis"
+  },
+  {
+    "pair_id": 96369,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Stadt Krems",
+    "parent_name": null,
+    "reasoning": "Krems is short form of Weingut Stadt Krems. Per 11.4.h MERGE.",
+    "name_a": "Stadt Krems",
+    "name_b": "Krems"
+  },
+  {
+    "pair_id": 96741,
+    "verdict": "MERGE",
+    "cluster": "11.4.f",
+    "survivor_name": "Bertram-Baltes",
+    "parent_name": null,
+    "reasoning": "Benedikt Baltes (pre-2018 solo label) merged into Bertram-Baltes (current Ahr biodynamic estate). Per 11.4.f MERGE.",
+    "name_a": "Benedikt Baltes",
+    "name_b": "Bertram-Baltes"
+  },
+  {
+    "pair_id": 99815,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "Cooper's Hawk",
+    "reasoning": "JV between Coopers Hawk (main brand 58w) and Chateau Ste Michelle. Per 11.4.o PC with Coopers Hawk as parent.",
+    "name_a": "Cooper's Hawk & Ste. Michelle",
+    "name_b": "Cooper's Hawk"
+  },
+  {
+    "pair_id": 99816,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "Cooper's Hawk",
+    "reasoning": "JV between Coopers Hawk and John Legend LVE brand. Per 11.4.o PC with Coopers Hawk as parent.",
+    "name_a": "Cooper's Hawk & LVE",
+    "name_b": "Cooper's Hawk"
+  },
+  {
+    "pair_id": 100006,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Bart",
+    "parent_name": null,
+    "reasoning": "Andre Bart is older historical form of Domaine Bart Marsannay estate. Per 11.4.h/f MERGE.",
+    "name_a": "Bart",
+    "name_b": "Andre Bart"
+  },
+  {
+    "pair_id": 100454,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "Charles Dufour",
+    "reasoning": "Francoise Martinot is Charles Dufour partner; collab label distinct from solo Charles Dufour. Per 11.4.o PC.",
+    "name_a": "Charles Dufour",
+    "name_b": "Francoise Martinot (Charles Dufour)"
+  },
+  {
+    "pair_id": 100909,
+    "verdict": "MERGE",
+    "cluster": "11.4.f",
+    "survivor_name": "Francois Carillon",
+    "parent_name": null,
+    "reasoning": "Historical name of Carillon family domaine (pre-split). Per 11.4.f MERGE into Francois Carillon (current form).",
+    "name_a": "Francois Carillon",
+    "name_b": "Jacques et Francois Carillon"
+  },
+  {
+    "pair_id": 101840,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.s",
+    "survivor_name": null,
+    "parent_name": "Olivier Leflaive",
+    "reasoning": "Esprit Leflaive is branded sub-line under Olivier Leflaive umbrella. Per 11.4.s PC.",
+    "name_a": "Esprit Leflaive",
+    "name_b": "Olivier Leflaive"
+  },
+  {
+    "pair_id": 102676,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Eric de Suremain",
+    "parent_name": null,
+    "reasoning": "de Suremain is short form of Eric de Suremain Monthelie estate. Per 11.4.h MERGE.",
+    "name_a": "Eric de Suremain",
+    "name_b": "de Suremain"
+  },
+  {
+    "pair_id": 103518,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Clavelier et Fils",
+    "parent_name": null,
+    "reasoning": "Clavelier = short form of Clavelier et Fils. Per 11.4.h MERGE.",
+    "name_a": "Clavelier",
+    "name_b": "Clavelier et Fils"
+  },
+  {
+    "pair_id": 104522,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Thieuley",
+    "parent_name": null,
+    "reasoning": "Empty Hermitage Thieuley placeholder row merges into Thieuley main row. Per 11.4.h MERGE.",
+    "name_a": "Hermitage Thieuley",
+    "name_b": "Thieuley"
+  },
+  {
+    "pair_id": 104541,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Lafite Rothschild",
+    "parent_name": null,
+    "reasoning": "Two label-form variants of DBR Lafite / Chateau Lafite Rothschild. Per 11.4.h MERGE.",
+    "name_a": "Lafite Rothschild",
+    "name_b": "Barons de Rothschild (Lafite)"
+  },
+  {
+    "pair_id": 110317,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Lafage",
+    "parent_name": null,
+    "reasoning": "Orthographic variant. Per 11.4.h MERGE.",
+    "name_a": "Lafage",
+    "name_b": "La Fage"
+  },
+  {
+    "pair_id": 112554,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "Giaconda",
+    "reasoning": "JV label with Giaconda as lead/primary. Per 11.4.o PC with Giaconda as parent.",
+    "name_a": "Giaconda",
+    "name_b": "M. Chapoutier & Giaconda"
+  },
+  {
+    "pair_id": 113145,
+    "verdict": "MERGE",
+    "cluster": "11.4.s",
+    "survivor_name": "Passopisciaro",
+    "parent_name": null,
+    "reasoning": "Santo Spirito is a Passopisciaro cru-designated wine, not a separate producer. Per 11.4.s MERGE (cuvee-as-producer data issue).",
+    "name_a": "Passopisciaro",
+    "name_b": "Santo Spirito Passopisciaro"
+  },
+  {
+    "pair_id": 115931,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.s",
+    "survivor_name": null,
+    "parent_name": "Two Vintners",
+    "reasoning": "Starside is micro-sub-label under Two Vintners main brand. Per 11.4.s PC with Two Vintners as parent.",
+    "name_a": "Starside",
+    "name_b": "Two Vintners"
+  },
+  {
+    "pair_id": 117740,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.s",
+    "survivor_name": null,
+    "parent_name": "Erath",
+    "reasoning": "Bishop Creek Cellars = Erath vineyard-designated sub-label. Per 11.4.s PC with Erath as parent.",
+    "name_a": "Erath",
+    "name_b": "Bishop Creek Cellars"
+  },
+  {
+    "pair_id": 123240,
+    "verdict": "MERGE",
+    "cluster": "11.4.p",
+    "survivor_name": "Frederic Cossard",
+    "parent_name": null,
+    "reasoning": "Chat Botte is merchant-curator; actual producer is Frederic Cossard. Per 11.4.p merchant-prefix MERGE into Frederic Cossard.",
+    "name_a": "La Barrique du Chat Botte",
+    "name_b": "Frederic Cossard"
+  },
+  {
+    "pair_id": 136068,
+    "verdict": "MERGE",
+    "cluster": "11.4.n",
+    "survivor_name": "Selaks",
+    "parent_name": null,
+    "reasoning": "Same Selaks brand across two country rows. Per 11.4.n MERGE.",
+    "name_a": "Selaks",
+    "name_b": "Selaks"
+  },
+  {
+    "pair_id": 136220,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "M. Chapoutier",
+    "reasoning": "JV/collab label. Per 11.4.o PC with M. Chapoutier as parent.",
+    "name_a": "M. Chapoutier",
+    "name_b": "Santos & Chapoutier"
+  },
+  {
+    "pair_id": 137013,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "M. Chapoutier",
+    "reasoning": "JV/collab label. Per 11.4.o PC with M. Chapoutier as parent.",
+    "name_a": "M. Chapoutier",
+    "name_b": "Bento & Chapoutier"
+  },
+  {
+    "pair_id": 141630,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "Chapoutier",
+    "reasoning": "Same JV relationship reversed. Per 11.4.o PC with Chapoutier as parent.",
+    "name_a": "Santos & Chapoutier",
+    "name_b": "Chapoutier"
+  },
+  {
+    "pair_id": 137389,
+    "verdict": "MERGE",
+    "cluster": "11.4.b",
+    "survivor_name": "Melka",
+    "parent_name": null,
+    "reasoning": "Same Philippe Melka person producing across US (Melka Estates California) and FR (Bordeaux consulting label). Per 11.4.b cross-border same person MERGE.",
+    "name_a": "Melka",
+    "name_b": "Melka"
+  },
+  {
+    "pair_id": 138090,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Lafite Rothschild",
+    "parent_name": null,
+    "reasoning": "Same DBR Lafite brand, cross-country listing. Per 11.4.h MERGE.",
+    "name_a": "Barons de Rothschild (Lafite)",
+    "name_b": "Lafite Rothschild"
+  },
+  {
+    "pair_id": 139102,
+    "verdict": "MERGE",
+    "cluster": "11.4.p",
+    "survivor_name": "Boutinot",
+    "parent_name": null,
+    "reasoning": "Same merchant brand (Boutinot) across CL and FR country rows. Per 11.4.p MERGE (merchant on label).",
+    "name_a": "Boutinot",
+    "name_b": "Boutinot"
+  },
+  {
+    "pair_id": 141172,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Barons de Rothschild (Lafite)",
+    "parent_name": null,
+    "reasoning": "Country-coded label variants of same DBR Lafite brand. Per 11.4.h MERGE.",
+    "name_a": "Barons de Rothschild (Lafite)",
+    "name_b": "Barons de Rothschild"
+  },
+  {
+    "pair_id": 141176,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Barons de Rothschild (Lafite)",
+    "parent_name": null,
+    "reasoning": "Same DBR Lafite brand. Per 11.4.h MERGE.",
+    "name_a": "Barons de Rothschild (Lafite)",
+    "name_b": "Barons de Rothschild"
+  },
+  {
+    "pair_id": 142038,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "Barons de Rothschild",
+    "reasoning": "Argentine JV (Caro) between DBR and Catena. Per 11.4.o PC with Barons de Rothschild as parent.",
+    "name_a": "Barons de Rothschild",
+    "name_b": "Catena (Baron Rothschild)"
+  },
+  {
+    "pair_id": 142095,
+    "verdict": "MERGE",
+    "cluster": "11.4.n",
+    "survivor_name": "90+ Cellars",
+    "parent_name": null,
+    "reasoning": "Single global curation brand across US + NZ country rows. Per 11.4.n MERGE.",
+    "name_a": "90+ Cellars",
+    "name_b": "90+ Cellars"
+  },
+  {
+    "pair_id": 142528,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Chalk Hill",
+    "parent_name": null,
+    "reasoning": "Same brand, country-mismatch data artifact. Per 11.4.h MERGE.",
+    "name_a": "Chalk Hill",
+    "name_b": "Chalk Hill"
+  },
+  {
+    "pair_id": 143638,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "Alex Gambal",
+    "reasoning": "California JV collab under Alex Gambal. Per 11.4.o PC with Alex Gambal as parent.",
+    "name_a": "Alex Gambal Peter Work",
+    "name_b": "Alex Gambal"
+  },
+  {
+    "pair_id": 147297,
+    "verdict": "MERGE",
+    "cluster": "11.1",
+    "survivor_name": "Chateau de Vaux",
+    "parent_name": null,
+    "reasoning": "Same estate (Chateau de Vaux by Molozay family) with two name variants. Per 11.1 MERGE.",
+    "name_a": "Romuald Petit",
+    "name_b": "Molozay Chateau de Vaux"
+  },
+  {
+    "pair_id": 151521,
+    "verdict": "MERGE",
+    "cluster": "11.4.h",
+    "survivor_name": "Comte Senard",
+    "parent_name": null,
+    "reasoning": "Daniel Senard short form of Domaine Comte Senard Aloxe-Corton. Per 11.4.h MERGE.",
+    "name_a": "Comte Senard",
+    "name_b": "Daniel Senard"
+  },
+  {
+    "pair_id": 156806,
+    "verdict": "MERGE",
+    "cluster": "11.4.f",
+    "survivor_name": "Rijckaert",
+    "parent_name": null,
+    "reasoning": "Succession: Jean Rijckaert founder -> Florent Rouve successor (2013). Same continuous Burgundy estate. Per 11.4.f MERGE.",
+    "name_a": "Florent Rouve",
+    "name_b": "Jean Rijckaert"
+  },
+  {
+    "pair_id": 162921,
+    "verdict": "PARENT_CHILD",
+    "cluster": "11.4.o",
+    "survivor_name": null,
+    "parent_name": "Fromm",
+    "reasoning": "JV Marlborough. Per 11.4.o PC with Fromm as parent (same as pair 38882).",
+    "name_a": "Fromm",
+    "name_b": "Wheeler & Fromm"
+  }
+]
