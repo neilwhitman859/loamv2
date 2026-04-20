@@ -155,16 +155,46 @@ script does not hard-delete any producer row.
 
 See `reversibility.md` for the undo procedure.
 
+## What this bundle does cover (updated 2026-04-20)
+
+Per user directive, the bundle includes **all dedup decisions** surfaced by
+Sprint 6, split into two phases:
+
+### Phase 1 — Chrome-validated (fully reviewed)
+
+493 pairs in `verdict_ledger.jsonl`, produced by:
+- B6.5a Chrome-per-pair validation (original verdicts in `chrome_validation/*_verdicts.jsonl`)
+- B6.6 re-Chrome override (29 FLIP_TO_SKIP + 1 FLIP_DIRECTION + 2 FLIP_TO_MERGE
+  + 1 FLIP_TO_PC + 5 NEEDS_HUMAN_REVIEW + 155 KEEP)
+
+These are ready for execution after user testing. The execute script
+resolves them with canonical-row redirect, union-find chain resolution, and
+§11.6 survivor selection.
+
+### Phase 2 — pipeline auto-decided (not Chrome-validated)
+
+151,150 decisions in `producer_dedup_routing_stage3`, split:
+- **146,471 SKIP-family decisions** — no-ops
+- **3,939 auto-apply mutations** — 3,154 MERGE + 785 PC
+- **740 user-review queue items** — need human judgment before execution
+
+Phase 2 is packaged for external review in `phase2_actionable_decisions.jsonl`
+(4,679 rows: 3,939 auto-apply + 740 review-queue) and
+`phase2_skip_sample.jsonl` (500-row random sample of the 146,435 SKIPs for
+spot-checking).
+
+**Critical:** Phase 2 auto-apply MERGEs have plausible 3-10% flip rate
+(extrapolated from Phase 1 Chrome rigor on easier cases). Before execution,
+a sampled Chrome audit is recommended. See `phase2_risk_analysis.md`.
+
 ## What this bundle does NOT cover
 
-- The ~600K producer pairs that L1+L1.5+L2+L2.5+L3 handled without needing
-  Chrome validation. Those verdicts are applied via a separate routing table
-  (`producer_dedup_routing_stage3`) and executed separately. This bundle
-  only covers the 493 Chrome-validated pairs.
 - Wine dedup (same wine across multiple wine rows). That's Sprint 7 scope.
 - Re-enrichment of affected producers (prompt v2 work). That's Sprint 8 scope.
 - Schema changes for multi-parent collaborations (DVO case). Flagged for
   Sprint 7 in `open_questions.md`.
+- Generic-château per-wine re-splitting (Beausejour-style row dumpsters).
+  Flagged in `open_questions.md`.
 
 ## Why do this at all
 

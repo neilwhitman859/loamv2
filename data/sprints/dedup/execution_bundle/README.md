@@ -1,61 +1,80 @@
 # Sprint 6 Producer Dedup — Execution Bundle
 
-**Status:** frozen for review, NOT yet executed against the DB.
+**Status:** frozen for external review. **Nothing has been written to the DB.**
 
-This bundle contains everything needed to (a) understand what dedup decisions
-Sprint 6 proposes to apply, (b) review those decisions before execution, and
-(c) execute them deterministically once approved. Every file is self-contained
-and designed to be readable by another AI reviewer without access to the full
-session history.
+This bundle is the complete decision record for Sprint 6 producer dedup. It's
+designed to be read by external AI reviewers (paste-able into ChatGPT,
+Gemini, or a fresh Claude session) as well as human reviewers.
 
 ## What this bundle is
 
-A **frozen ledger** of 493 Chrome-validated producer-dedup decisions plus all
-overrides discovered during B6.6 re-verification, packaged with:
-- The decision methodology (how we got here)
-- The verdict ledger itself (one JSON record per pair)
-- A scorecard (aggregate counts, FK surface, flags)
-- An executable SQL file (commented line-by-line with verdict rationale)
-- A Python execute script (dry-run-by-default, gated on `--execute`)
-- A reversibility plan (how to undo any merge)
-- A deferred-to-Sprint-7 list (pairs we deliberately did not resolve)
-- A testing guide for reviewers
+A **frozen, unexecuted** record of every producer-dedup decision Sprint 6
+produced — 151,150 pipeline decisions + 493 Chrome-validated decisions —
+packaged with full methodology, sprint writeup, risk analysis, and
+reversibility plan.
+
+## Start here
+
+1. **Read `sprint_writeup.md` first.** It's the complete sprint narrative
+   from B6.1 through B6.6: what was planned, what was executed, what was
+   decided, what was learned, what's open.
+2. Then read `methodology.md` for the decision-making framework.
+3. Then open one of:
+   - `verdict_ledger_summary.md` for Phase 1 (Chrome-validated) decisions
+   - `phase2_summary.md` for Phase 2 (pipeline auto-decided) decisions
+   - `scorecard.md` for Phase 1 aggregate stats + top-20 lists
+
+## Phase 1 vs Phase 2
+
+**Phase 1** = 493 pairs that the AI ladder flagged for human review. These
+were Chrome-validated per-pair in B6.5a, then re-Chrome'd in B6.6 for
+rigor. Result: 109 MERGE + 50 PC + 334 no-ops. **Ready for execution after
+user testing.**
+
+**Phase 2** = 150,657 pairs the AI ladder decided without Chrome. Of these:
+- 146,471 are SKIP (no DB change)
+- 3,939 are auto-apply MERGE+PC (would mutate DB)
+- 740 are user-review queues (need human judgment)
+
+**Phase 2 has NOT been Chrome-validated.** It's packaged here for external
+review, with a risk analysis suggesting a sampled audit before execution.
 
 ## Files in this directory
 
-| File | What it is |
-|------|------------|
-| `README.md` | This file. |
-| `methodology.md` | The full dedup pipeline (B6.1 → B6.6) and how decisions were made. |
-| `verdict_ledger.jsonl` | **Primary artifact.** One JSON record per verdict, 493 rows. |
-| `verdict_ledger_summary.md` | Human-readable summary of the ledger (counts, breakdown). |
-| `scorecard.md` | Pre-execution scorecard: aggregate counts, FK surface, flags, top merges. |
-| `execution_plan.sql` | All SQL that would be executed, commented with verdict rationale. |
-| `execution_plan.md` | Step-by-step narrative of what the SQL does. |
-| `deferred_to_sprint_7.md` | Pairs explicitly not resolved here. Rationale per pair. |
-| `reversibility.md` | Design and usage of `producer_merge_history` for undoing merges. |
-| `testing_guide.md` | How to test this bundle before approving execution. |
-| `rechrome_flips.md` | Every B6.6 re-Chrome override with before/after evidence. |
-| `open_questions.md` | Schema / product questions this surfaced for Sprint 7+. |
+### Top-level (sprint-wide)
 
-## How to review
+| File | What |
+|------|------|
+| `README.md` | this file |
+| `sprint_writeup.md` | **full B6.1→B6.6 narrative** — start here |
+| `methodology.md` | decision-making framework and pipeline architecture |
+| `open_questions.md` | Sprint 7+ agenda (schema changes, family cleanups) |
+| `reversibility.md` | how to undo merges via `producer_merge_history` |
+| `testing_guide.md` | suggested tests before executing |
 
-If you're another AI asked to review this bundle:
-1. Start with `methodology.md` to understand the decision-making framework.
-2. Read `scorecard.md` for aggregate counts and any flags.
-3. Open `verdict_ledger.jsonl` and spot-check ~20 random entries. Each has the
-   original verdict, any override applied, and the final decision with evidence.
-4. Skim `rechrome_flips.md` to see the specific cases where B6.6 found Chrome
-   validation to be wrong.
-5. Open `execution_plan.sql` and read through a representative slice — every
-   transaction is commented with the `ledger_key` so you can cross-reference.
-6. Identify any decisions that look wrong and add them to `open_questions.md`
-   or flag them for human review.
+### Phase 1 — Chrome-validated (493 pairs)
 
-If you're a human reviewer, same flow, but `scorecard.md` and
-`rechrome_flips.md` are the highest-leverage starts.
+| File | What |
+|------|------|
+| `verdict_ledger.jsonl` | **primary artifact.** 493 records, one JSON line per pair |
+| `verdict_ledger_summary.md` | counts + tier breakdown |
+| `scorecard.md` | aggregate stats, FK surface, top-20 lists, flags |
+| `execution_plan.md` | narrative of what SQL will run |
+| `rechrome_flips.md` | every B6.6 override with Chrome evidence |
+| `deferred_to_sprint_7.md` | pair-level deferrals with rationale |
 
-## The numbers
+### Phase 2 — pipeline auto-decided (151,150 decisions)
+
+| File | What |
+|------|------|
+| `phase2_summary.md` | per-action breakdown, core/tail split, weakest auto-applies |
+| `phase2_actionable_decisions.jsonl` | **4,679 records.** Full data for every MERGE + PC + review-queue decision |
+| `phase2_skip_sample.jsonl` | 500 random `auto_apply_skip` pairs for spot-checking |
+| `phase2_risk_analysis.md` | what could go wrong + recommended handling |
+
+## The numbers (complete picture)
+
+### Phase 1 (Chrome-validated)
 
 | metric | value |
 |---|---|
@@ -65,53 +84,98 @@ If you're a human reviewer, same flow, but `scorecard.md` and
 | SKIP (no-op) | **296** |
 | KEEP_AS_IS (yellow no-op) | **33** |
 | DEFERRED_SPRINT_7 | **5** |
-| B6.6 overrides applied | **193** |
-|   FLIP_TO_SKIP | 29 |
-|   FLIP_TO_MERGE | 2 |
-|   FLIP_TO_PC | 1 |
-|   FLIP_DIRECTION | 1 |
-|   NEEDS_HUMAN_REVIEW | 5 |
-|   KEEP (confirmed original) | 155 |
+| B6.6 overrides applied | **193** (189 subagent + 4 manual) |
+|   — FLIP_TO_SKIP | 29 |
+|   — FLIP_TO_MERGE | 2 |
+|   — FLIP_TO_PC | 1 |
+|   — FLIP_DIRECTION | 1 |
+|   — NEEDS_HUMAN_REVIEW | 5 |
+|   — KEEP (confirmed original) | 155 |
 | Canonical-row redirects | **17** |
-| Unique producer rows soft-deleted | ~109 |
-| Wines re-pointed | ~359 |
-| Pairs flagged for Sprint 7 follow-up | 7 |
+| Pairs flagged for Sprint 7 follow-up | **7** |
 
-### Flip rate context
+### Phase 2 (pipeline auto-decided)
 
-The 29 FLIP_TO_SKIP + 1 FLIP_DIRECTION + 2 FLIP_TO_MERGE + 1 FLIP_TO_PC = **33 verdicts changed**
-out of the 193 Chrome-validated MERGE+PC decisions across all four tiers (17% flip rate).
-Essentially identical rates on Core (18%) and Mid/Tail/Yellow (17%). The systemic
-pattern: original Chrome over-MERGEd on shared-surname French/Italian/Spanish family
-names. The single most reliable red flag is **DB wine-list region/appellation
-incompatibility** — 13 of 22 Mid/Tail/Yellow flips had incompatible regions visible
-directly from the wine list without needing web lookup.
+| stage3_action | Count | If executed |
+|---|---|---|
+| `auto_apply_skip` | **146,435** | no-op |
+| `auto_apply_merge` | **3,154** | **mutation** |
+| `auto_apply_pc` | **785** | **mutation** |
+| `user_review_pc` | 470 | needs human review |
+| `user_review_merge_lowconf` | 246 | needs human review |
+| `auto_apply_skip_missing` | 32 | no-op (edge case) |
+| `user_review_missing` | 23 | needs human review |
+| `auto_apply_skip_residual` | 4 | no-op |
+| `user_review_merge_unvalidated` | 1 | needs human review |
+| **Total** | **151,150** | |
+
+### Cross-tier systemic finding
+
+The B6.6 re-Chrome pass flipped **17-18%** of Chrome-validated MERGE+PC
+verdicts across every tier. The single most reliable red flag for false
+MERGE was **DB wine-list region/appellation incompatibility** — 13 of 22
+Mid/Tail/Yellow flips had incompatible regions visible directly from the
+wine list without any web lookup. Pipeline prompts don't see this signal
+at L1/L1.5. This is the main Sprint 7 / prompt-engineering candidate.
 
 ## Status of the DB
 
-**Nothing in this bundle has been written to the database yet.** The ledger is
-frozen as-of this commit; the execute script exists but is dry-run by default.
-The user is performing independent testing before approving execution.
+**Nothing in this bundle has been written to the database yet.**
 
-## When execution happens
+- `producer_merge_history` row count: 0
+- No producer rows soft-deleted
+- No `parent_producer_id` set
+- No FKs re-pointed
 
-Run `python scripts/sprint6_step10_execute.py --execute --ledger
-data/sprints/dedup/execution_bundle/verdict_ledger.jsonl`. It will:
-1. Re-read the ledger
-2. For each MERGE: start a transaction, re-point FKs, write
-   `producer_merge_history` row with full snapshot, soft-delete loser.
-3. For each PARENT_CHILD: set `producers.parent_producer_id` on child.
-4. For each SKIP / KEEP_AS_IS / DEFERRED_SPRINT_7: no-op.
+The execute script (`scripts/sprint6_step10_execute.py`) is dry-run by
+default; `--execute` flag is required for mutation.
 
-Every operation is individually reversible via `producer_merge_history`.
+## When execution happens (future)
+
+Phase 1 execution (if Phase 2 is deferred):
+
+```bash
+python -m scripts.sprint6_step10_execute --execute \
+    --ledger data/sprints/dedup/execution_bundle/verdict_ledger.jsonl
+```
+
+Phase 2 execution is not yet wired up in a script. It would require:
+1. A sampled Chrome audit of the auto-apply queue (200-300 pairs)
+2. A separate execute script that reads `phase2_actionable_decisions.jsonl`
+3. Handling for the user-review queues (740 items)
+
+## How to review (for external AI reviewers)
+
+1. Read `sprint_writeup.md` for the narrative.
+2. Scan `verdict_ledger_summary.md` and `phase2_summary.md` for counts.
+3. Open `verdict_ledger.jsonl` and sample 20 entries — verify they make
+   sense given the names, cluster, and final verdict.
+4. Open `phase2_actionable_decisions.jsonl` and sample 30 entries (mix of
+   `auto_apply_merge`, `auto_apply_pc`, `user_review_pc`) — assess whether
+   the pipeline's confidence signals look adequate.
+5. Read `rechrome_flips.md` to see the specific cases where rigor was
+   needed.
+6. Check `testing_guide.md` for red-flag patterns to watch for.
+7. If you find a decision that looks wrong, flag it by pair_id — the
+   ledger entries include `ledger_key` for Phase 1 and `pair_id` for Phase
+   2, so flags are crisp.
 
 ## Provenance
 
-- Sprint 6 Block 6.3 (2026-04-17): LWIN import + §11 identity rules drafted, L1 Haiku on 151K pairs
+- Sprint 6 Block 6.3 (2026-04-17): LWIN import + §11 identity rules drafted,
+  L1 Haiku on 151K pairs
 - Block 6.4 (2026-04-17): calibration + committed thresholds
-- Block 6.5a (2026-04-19 / 20): Chrome-per-pair validation of 450+ pairs (producer of this ledger)
-- Block 6.6 (2026-04-20, this session): §11.4 amendments + re-Chrome of all 66 Core + 127 Mid/Tail/Yellow MERGE+PC verdicts
-- Block 6.7 (future, after user testing): execution
+- Block 6.5a (2026-04-18 → 2026-04-20): Chrome-per-pair validation of 493
+  pairs, producing `{yellow,core,mid,tail}_verdicts.jsonl`
+- Block 6.6 (2026-04-20): §11.4 amendments + re-Chrome of all Core (66) +
+  Mid/Tail/Yellow (127) MERGE+PC verdicts. Full bundle produced.
+- (Future) User testing → approval → Phase 1 execution → Phase 2 handling
 
-Commit hash of this bundle is in the git log. Every source JSONL cited here is
-also in `data/sprints/dedup/chrome_validation/`.
+Commit hash of this bundle is in the git log. All source files cited
+(`data/sprints/dedup/chrome_validation/*_verdicts.jsonl`,
+`producer_dedup_pairs`, `producer_dedup_routing_stage3`) are in-repo or in
+DB.
+
+---
+
+*Sprint 6 paused 2026-04-20 pending external review.*
