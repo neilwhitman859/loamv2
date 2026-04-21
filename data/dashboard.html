@@ -291,7 +291,7 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">Sprint 6 &middot; Merge-only rebuild checkpoint &middot; <!--updated-->updated 2026-04-21 07:49 ET<!--/updated--></div>
+  <div class="meta">Sprint 6 &middot; Merge-only rebuild checkpoint &middot; <!--updated-->updated 2026-04-21 09:06 ET<!--/updated--></div>
 </div>
 
 <!-- ============= SESSION TOKENS ============= -->
@@ -318,15 +318,15 @@
 <!-- ============= CURRENT STEP ============= -->
 <div class="section-label">Current step</div>
 <div class="block-card">
-  <h2>Rebuild checkpoint &mdash; unresolved-official backstop landed, fresh proof passed, full rerun now awaits explicit approval</h2>
-  <div class="goal">Session 9.2 found that the prior proof artifacts were still using stale pre-v3 packets, forced a fresh packet rebuild, and added the minimum unresolved-official / secondary-evidence backstop needed for acquisition, rename, former-estate, and thin secondary-driven merge stories. The rebuilt 36-case proof subset passed cleanly: zero false merges on the 8-case continuity add-on and zero false merges on the reused 28-case base for Sonnet, Gemini, and consensus.</div>
+  <h2>Rebuild checkpoint &mdash; the fresh 152-case rerun is complete, the proof stayed clean, and queue-building remains blocked</h2>
+  <div class="goal">Session 9.3 reran the proof-cleared `session9_2_unresolved_official_backstop` path on fresh `v2.1` packets. The proof subset passed again, and the full 152-case rerun confirmed that the unresolved-official backstop fixed the dangerous continuity false-merge cluster. But no contender cleared the frozen Session 4 production or fallback gates because the new safety posture still leaves too many true merges as `SKIP` or `FLAGGED`.</div>
   <!--progress-block-->
   <div class="block-progress">
-    <div class="pstep">Rebuild artifacts now include the Session 9.2 unresolved-official backstop and fresh proof rerun: rules tightened, pair corpus audited, benchmark frozen, evidence packets v1+v2 built, bakeoff rules locked, harness plumbing built, the first real contender run scored, the v2 redesign memo implemented, the full v2 rerun published, the v3 redesign specified, the stale-packet issue corrected, and the proof-only rerun executed on fresh packets</div><div class="pstats">Session 1 = pair corpus audit &middot; Session 2 = benchmark freeze &middot; Session 3 = evidence packet &middot; Session 4 = broad bakeoff design &middot; Session 5 = packet generator + evaluation harness &middot; Session 6 = first real adjudication bakeoff &middot; Session 7 = v2 design memo &middot; Session 8 = v2 implementation + rerun &middot; Session 9 = v3 continuity audit + redesign memo &middot; Session 9.1 = v3 continuity implementation + first proof rerun &middot; Session 9.2 = unresolved-official backstop + fresh proof rerun</div>
+    <div class="pstep">Rebuild artifacts now include the Session 9.2 unresolved-official backstop, the fresh proof rerun, and the full Session 9.3 scorecard on rebuilt `v2.1` packets</div><div class="pstats">Session 1 = pair corpus audit &middot; Session 2 = benchmark freeze &middot; Session 3 = evidence packet &middot; Session 4 = broad bakeoff design &middot; Session 5 = packet generator + evaluation harness &middot; Session 6 = first real adjudication bakeoff &middot; Session 7 = v2 design memo &middot; Session 8 = v2 implementation + rerun &middot; Session 9 = v3 continuity audit + redesign memo &middot; Session 9.1 = v3 continuity implementation + first proof rerun &middot; Session 9.2 = unresolved-official backstop + fresh proof rerun &middot; Session 9.3 = approved full rerun on fresh packets</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">direction and rules</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">merge-only path locked &middot; PARENT_CHILD deferred &middot; core/tail redefined by product risk</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">benchmark + evidence</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">152 benchmark pairs frozen &middot; JSONL-first evidence packet defined &middot; hidden benchmark overlay split from visible evidence</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">bakeoff spec</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">v1 contender set frozen &middot; `FLAGGED` semantics locked &middot; production/fallback gates explicit</div>
-    <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div><div class="progress-bar"><div class="progress-fill" style="width: 92%"></div></div><div class="pstats" style="font-size:11.5px;">36-case proof rerun complete on fresh `v2.1` packets &middot; add-on false merges = 0 for Sonnet, Gemini, and consensus &middot; reused-base false merges dropped to 0 for all three &middot; full 152-case rerun did not execute and still requires explicit user approval</div>
+    <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div><div class="progress-bar"><div class="progress-fill" style="width: 94%"></div></div><div class="pstats" style="font-size:11.5px;">Proof PASS on fresh `v2.1` packets &middot; Sonnet full run = 1 false merge / 5 hard missed / 44 soft missed &middot; Gemini = 0 / 9 / 42 &middot; consensus = 0 / 4 / 47 &middot; no contender cleared the frozen production or fallback gates</div>
   </div>
   <!--/progress-block-->
   <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current rebuild doctrine:</strong> ground adjudication in official-domain evidence, local wine-list coherence, and deterministic identity rules. Search is retrieval, not truth by itself. Session 9.1 proved that weak continuity hints can no longer waive the veto, but unresolved-official cases still need a stronger backstop so secondary/catalog evidence cannot carry unsafe merges by itself.</div>
@@ -340,7 +340,7 @@
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 6 &mdash; Broad bakeoff design</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 7 &mdash; Packet generator + evaluation harness</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 8 &mdash; First adjudication bakeoff</span></li>
-    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 9 &mdash; Build core adjudication queue (proof is now clean, but queue work still stays paused until an explicitly approved fresh 152-case rerun lands)</span></li>
+    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 9 &mdash; Build core adjudication queue (fresh rerun landed, but queue work stays paused because no contender cleared the frozen gates)</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 10 &mdash; Build tail adjudication queue</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 11 &mdash; Publish pre-execution scorecard</span></li>
   </ul>
@@ -350,7 +350,7 @@
 <div class="section-label">Sprint 6 &mdash; Core/Tail split &amp; quality targets</div>
 <div class="sprint-card">
   <div class="goal">
-    Producer dedup on 33,225 rows and 224,316 wines. Core/tail is now a product-risk split used for evaluation, not the old routing-stage execution plan. The immediate quality task is no longer diagnosing the residual proof failures; it is waiting for explicit approval to rerun the full 152-case benchmark on fresh `v2.1` packets and measure the new backstop at full scale.
+    Producer dedup on 33,281 rows and 225,281 wines. Core/tail is now a product-risk split used for evaluation, not the old routing-stage execution plan. The immediate quality task is no longer rerun approval or packet freshness. It is deciding whether the Session 9.3 result justifies one more narrow redesign to recover recall without reopening the false-merge problem.
   </div>
   <table class="metrics-table">
     <tr>
@@ -377,14 +377,14 @@
   </table>
   <div class="vitals">
     <table>
-      <tr><td>Live canonical snapshot</td><td>33,225 producers &middot; 224,316 wines &middot; 125,934 vintages</td></tr>
+      <tr><td>Live canonical snapshot</td><td>33,281 producers &middot; 225,281 wines &middot; 125,934 vintages</td></tr>
       <tr><td>Benchmark state</td><td><code>benchmark_v1</code> frozen at 152 merge-only cases</td></tr>
-      <tr><td>Evidence packet state</td><td><code>evidence_packet_v1</code> defined as JSONL-first with hidden benchmark overlay</td></tr>
-      <tr><td>Bakeoff state</td><td>v1 real run is preserved under <code>session6_first_real_bakeoff_v1</code>; v2 real run is canonical under <code>session7_first_real_bakeoff_v2</code>; Session 9.2 proof-only artifacts now live under <code>session9_2_unresolved_official_backstop_proof_subset</code> on fresh <code>v2.1</code> packets, and the full rerun did not execute</td></tr>
-      <tr><td>Immediate next artifact</td><td><code>session9_2_unresolved_official_backstop_proof_subset_memo.md</code>: proof memo showing zero add-on false merges and zero reused-base false merges across Sonnet, Gemini, and consensus</td></tr>
-      <tr><td>After that</td><td>wait for explicit user approval before running the fresh 152-case rerun; keep queue-building blocked until that rerun lands and is reviewed</td></tr>
+      <tr><td>Evidence packet state</td><td><code>evidence_packet_v2</code> rebuilt as fresh <code>v2.1</code> packets with hidden benchmark overlay stripped from model-visible inputs</td></tr>
+      <tr><td>Bakeoff state</td><td>v1 real run is preserved under <code>session6_first_real_bakeoff_v1</code>; v2 real run is canonical under <code>session7_first_real_bakeoff_v2</code>; Session 9.2 proof-only artifacts live under <code>session9_2_unresolved_official_backstop_proof_subset</code> on fresh <code>v2.1</code> packets; Session 9.3 completed the approved full rerun under <code>session9_3_full_rerun_if_approved</code></td></tr>
+      <tr><td>Immediate next artifact</td><td><code>session9_3_full_rerun_if_approved_gate_memo.md</code>: proof stayed clean, but no contender cleared the frozen gates because recall / flag burden remains too high</td></tr>
+      <tr><td>After that</td><td>run a focused post-rerun failure audit before considering any further redesign; queue-building remains blocked</td></tr>
       <tr><td>Execution status</td><td>no producer-merge execution path is active yet</td></tr>
-      <tr><td>Primary risk</td><td>the proof slice is now clean, but the 152-case rerun has not been repeated on fresh <code>v2.1</code> packets yet, so full-benchmark recall / precision tradeoffs from the new backstop are still unmeasured</td></tr>
+      <tr><td>Primary risk</td><td>the unsafe continuity false merges are now largely controlled, but merge recall and queue burden are still far outside the frozen execution bar, so the adjudication path remains non-execution-ready</td></tr>
     </table>
   </div>
 </div>
@@ -419,8 +419,8 @@
     <tr>
       <td>Step 9 &mdash; core adjudication queue</td>
       <td>blocked</td>
-      <td>Blocked pending explicit approval: Session 9.2 passed the fresh proof rerun on rebuilt <code>v2.1</code> packets, so the next move is a user-approved 152-case rerun, not queue-building yet</td>
-      <td class="num">$3.63</td>
+      <td>Fresh rerun complete: no contender cleared the frozen production or fallback gates, so queue-building remains blocked pending a focused post-rerun failure audit</td>
+      <td class="num">$5.58</td>
     </tr>
     <tr>
       <td>Step 10 &mdash; tail adjudication queue</td>
@@ -429,9 +429,9 @@
       <td class="num">TBD</td>
     </tr>
     <tr style="background:#fff4e5;">
-      <td><strong>Next user touchpoint</strong> &mdash; review the clean Session 9.2 proof memo and decide whether to authorize the fresh 152-case rerun</td>
+      <td><strong>Next user touchpoint</strong> &mdash; review the Session 9.3 scorecard, diff, and gate memo, then decide whether to authorize the post-rerun failure audit</td>
       <td>&mdash;</td>
-      <td>One execution session to run the full rerun on fresh <code>v2.1</code> packets if explicitly approved; otherwise stop here</td>
+      <td>One analysis session to inspect the remaining hard-miss / soft-miss clusters and decide whether a minimal next redesign is justified</td>
       <td class="num">&mdash;</td>
     </tr>
   </table>
@@ -518,8 +518,8 @@
 <div class="section-label">Key numbers (DB state)</div>
 <!--key-numbers-->
 <div class="numbers">
-  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">224,316</div></div>
-  <div class="n-item"><div class="n-label">Producers</div><div class="n-value">33,225</div></div>
+  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">225,281</div></div>
+  <div class="n-item"><div class="n-label">Producers</div><div class="n-value">33,281</div></div>
   <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">125,934</div></div>
   <div class="n-item"><div class="n-label">Prices</div><div class="n-value">40,193</div></div>
   <div class="n-item"><div class="n-label">Scores</div><div class="n-value">30,339</div></div>
@@ -552,8 +552,8 @@
         <tr><td style="color:var(--muted);">Sprint 3 Fix</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
         <tr><td style="color:var(--muted);">Sprint 4 Demo</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$37.44</td></tr>
         <tr><td style="color:var(--muted);">Sprint 5 AI Bakeoff</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$55.00</td></tr>
-        <tr><td style="color:var(--accent); font-weight:700;">Sprint 6 Producer Dedup</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$317.00</td></tr>
-        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Total project spend</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$409.44</td></tr>
+        <tr><td style="color:var(--accent); font-weight:700;">Sprint 6 Producer Dedup</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$318.95</td></tr>
+        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Total project spend</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$411.39</td></tr>
       </table>
     </div>
     <div>
@@ -566,9 +566,9 @@
         <tr><td style="color:var(--muted);">Step 6 Phase 3a web-validate</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$12.87</td></tr>
         <tr><td style="color:var(--muted);">Step 7 Coverage expansion</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$78.81</td></tr>
         <tr><td style="color:var(--muted);">Step 8 First real adjudication bakeoff</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$2.89</td></tr>
-        <tr><td style="color:var(--accent); font-weight:700;">Step 9 v2 implementation + rerun</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$3.63</td></tr>
-        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Sprint 6 spent</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$317.00</td></tr>
-        <tr><td style="color:var(--muted); color:var(--green);">Remaining of $450 ceiling</td><td style="text-align:right; font-variant-numeric: tabular-nums; color:var(--green);">$133.00</td></tr>
+        <tr><td style="color:var(--accent); font-weight:700;">Step 9 v2 implementation + rerun</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$5.58</td></tr>
+        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Sprint 6 spent</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$318.95</td></tr>
+        <tr><td style="color:var(--muted); color:var(--green);">Remaining of $450 ceiling</td><td style="text-align:right; font-variant-numeric: tabular-nums; color:var(--green);">$131.05</td></tr>
       </table>
     </div>
   </div>
