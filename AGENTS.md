@@ -90,6 +90,8 @@ Every user-facing session wrap-up should also include:
 - the biggest concern about the work done this session
 - the biggest concern about the sprint as a whole
 - the producer-dedup confidence % at wrap-up
+- what would move confidence up or down next session
+- the exact user decision needed before the next session starts
 - budget estimate versus actual API spend
 - the next-session prompt in a fenced code block, even if it is only a pointer to an `.md` file
 
@@ -681,6 +683,6 @@ content in specific, validated reference data rather than relying solely on LLM 
   - `docs/SOURCES.md` — update if source status changed (new source, fetcher built, data loaded)
   - `docs/PRINCIPLES.md` — update if product philosophy changed
   - `docs/VOICE.md` — update if tone/content guidance changed
-  - final user-facing wrap-up — always include project-fit summary, next-session-fit summary, biggest concern this session, biggest concern this sprint, producer-dedup confidence %, budget estimate vs actual API spend, and the next-session prompt in a fenced code block
+  - final user-facing wrap-up — always include project-fit summary, next-session-fit summary, biggest concern this session, biggest concern this sprint, producer-dedup confidence %, what would move confidence up or down next session, the exact user decision needed before the next session starts, budget estimate vs actual API spend, and the next-session prompt in a fenced code block
 - **"log that"** — Force a DECISIONS.md entry.
 - **"briefing"** — Give current state summary anytime mid-session.

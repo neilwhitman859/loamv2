@@ -21,6 +21,8 @@ Wrap-up standard for the user-facing close-out:
 - Biggest concern about this session's work
 - Biggest concern about the current sprint as a whole
 - Confidence producer dedup can still reach spec (as a %)
+- What would move confidence up or down next session
+- Exact user decision needed before the next session starts
 - Budget estimate vs actual API spend
 - Next session prompt in a fenced code block, even if it just points to an `.md`
 
