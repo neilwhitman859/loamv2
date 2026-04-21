@@ -10,7 +10,8 @@ Working plan from the 2026-04-20 Codex audit. This is a focused rebuild for **pr
 - [x] Audit current pair corpus / blocking strategies
 - [x] Freeze benchmark set
 - [x] Design evidence-packet schema
-- [ ] Run broad bakeoff on methods and models
+- [x] Design broad bakeoff on methods and models
+- [ ] Build packet generator + evaluation harness
 - [ ] Build core adjudication queue
 - [ ] Build tail adjudication queue
 - [ ] Publish pre-execution scorecard
@@ -106,15 +107,18 @@ Gate:
 Compare both **methods** and **models**, not just models.
 
 Bake off:
-- Candidate-generation variants
-- Evidence-packet variants
-- Adjudication models
-- Search/retrieval strategies
+- Deterministic control vs grounded adjudication
+- Single-model adjudicators
+- Cross-family consensus adjudication
+- Cost / auditability tradeoffs under one frozen packet
 
-Initial contenders:
-- Haiku + external search retrieval
-- Gemini variant + same evidence packet
-- A deterministic-only control on easy cases
+Frozen contender set:
+- `deterministic_control_v1` (shadow baseline only)
+- `haiku_single_v1`
+- `gemini_single_v1`
+- `gpt5mini_single_v1`
+- `haiku_gemini_consensus_v1`
+- `sonnet_single_v1`
 
 Score on:
 - false merges,
@@ -124,7 +128,7 @@ Score on:
 - auditability of reasoning.
 
 Gate:
-- Pick one production path and one fallback, with measured tradeoffs.
+- Pick one production path and one fallback, with measured tradeoffs and explicit queue-building gates.
 
 ### Phase 5 - Core adjudication
 
@@ -175,6 +179,6 @@ Rule:
 
 ## Immediate Next Steps
 
-1. Design the broad bakeoff so contenders, scoring rules, and the exact packet/output contract are locked before implementation starts.
-2. Build the packet generator plus evaluation harness that can render `benchmark_v1` pairs into `evidence_packet_v1` inputs without leaking benchmark overlays.
-3. Run the first adjudication bakeoff and choose one production path plus one fallback before building execution queues.
+1. Build the packet generator plus evaluation harness that can render `benchmark_v1` pairs into `evidence_packet_v1` inputs without leaking benchmark overlays.
+2. Run the first adjudication bakeoff against the frozen contender set and choose one production path plus one fallback.
+3. Build execution queues only if the bakeoff clears the hard gates.

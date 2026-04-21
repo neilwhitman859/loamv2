@@ -384,9 +384,10 @@ Completed rebuild artifacts so far:
 - `data/sprints/dedup/session1_pair_corpus_audit.md`
 - `data/sprints/dedup/benchmark_v1.json` plus `data/sprints/dedup/benchmark_v1.md`
 - `data/sprints/dedup/evidence_packet_v1.md`
+- `data/sprints/dedup/session4_bakeoff_design.md`
 
 Immediate next session target:
-- broad bakeoff design to lock contenders, scoring, and the exact `evidence_packet_v1` input/output contract before building the packet generator or adjudication queues
+- build the packet generator + evaluation harness against the frozen Session 4 bakeoff spec, with benchmark-overlay stripping and normalized adjudication result rows
 
 Historical artifacts worth keeping:
 - B6.2 + B6.2.1 + B6.2.2 + B6.3 + B6.4 + B6.5a-partial outputs
@@ -395,7 +396,7 @@ Historical artifacts worth keeping:
 
 These are still useful for benchmark comparison and failure-mode mining, but they are **not** assumed to be production-ready execution inputs.
 
-**Cheaper rigor-tier architecture for the rebuild:** external search retrieval + smaller adjudication model remains attractive (e.g. Haiku + Serper-style retrieval) because it is dramatically cheaper than full Sonnet web-search and better suited to pair-by-pair evidence packets.
+**Cheaper rigor-tier architecture for the rebuild:** external search retrieval + smaller adjudication model remains attractive (e.g. Haiku + Serper-style retrieval) because it is dramatically cheaper than full Sonnet web-search and better suited to pair-by-pair evidence packets. Session 4 locked the first adjudication bakeoff as a frozen, packet-based comparison among `haiku_single_v1`, `gemini_single_v1`, `gpt5mini_single_v1`, `haiku_gemini_consensus_v1`, and `sonnet_single_v1`, with a deterministic control reported separately but excluded from winner selection.
 
 **B6.4 DONE (2026-04-17, $24.51):** Calibration only — 600-pair stratified
 set, gold-labeled 367 pairs (200 proxy + 167 from Sonnet+web oracle). Ran

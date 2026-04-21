@@ -1968,3 +1968,14 @@ Session 3 ("Evidence Packet Design") created `data/sprints/dedup/evidence_packet
 3. **v1 remains merge-only** — allowed adjudication outputs are `MERGE`, `SKIP`, and `FLAGGED`; `PARENT_CHILD` stays out of scope. If the schema later needs richer scope, create `evidence_packet_v2` instead of mutating `v1` mid-bakeoff.
 
 Reason: the same packet must serve both the bakeoff harness and the later queue builder, so it needs to be stable, auditable, and impossible to contaminate with the answer key.
+
+### 2026-04-20: Producer dedup Session 4 freezes the first adjudication bakeoff as a packet-based method/model comparison with explicit gates
+
+Session 4 ("Broad Bakeoff Design") created `data/sprints/dedup/session4_bakeoff_design.md` and locked the first adjudication bakeoff before any packet-generator or queue-building work starts. The key decisions:
+
+1. **v1 tests adjudication only; packet shape and retrieval stay fixed.** `benchmark_v1` remains the hidden answer key and `evidence_packet_v1` remains the visible packet. Retrieval belongs to packet generation, not adjudication, so the first bakeoff varies method/model choice instead of re-opening packet or search design.
+2. **Frozen contender set:** `haiku_single_v1`, `gemini_single_v1`, `gpt5mini_single_v1`, `haiku_gemini_consensus_v1`, and `sonnet_single_v1`, plus `deterministic_control_v1` as a scored shadow baseline that is excluded from winner selection.
+3. **`FLAGGED` is not neutral.** It is reported separately and treated as queue burden: `FLAGGED` on a true merge counts as a soft missed merge, while `FLAGGED` on a true skip counts as a safe flag. It never counts as a false merge.
+4. **Queue-building is blocked on hard gates, not one blended score.** Production eligibility requires zero false merges on the benchmark, zero hard missed merges in the blind core audit, strong survivor accuracy and auditability, and a second fallback contender that also clears its own gate set. If the bakeoff fails these gates, the next step is a deliberate v2 design session, not quietly proceeding to queue construction.
+
+Reason: the rebuild needs a stable, non-gameable evaluation frame. Freezing contender scope, `FLAGGED` semantics, and queue-building gates now prevents the next implementation session from changing the rules halfway through.
