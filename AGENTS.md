@@ -380,6 +380,14 @@ Recent audit changed direction:
 - **Core/tail:** product-risk split, not old routing buckets. See `data/sprints/dedup/metrics_and_goals.md`.
 - **Working plan:** `data/sprints/dedup/rebuild_roadmap.md`.
 
+Completed rebuild artifacts so far:
+- `data/sprints/dedup/session1_pair_corpus_audit.md`
+- `data/sprints/dedup/benchmark_v1.json` plus `data/sprints/dedup/benchmark_v1.md`
+- `data/sprints/dedup/evidence_packet_v1.md`
+
+Immediate next session target:
+- broad bakeoff design to lock contenders, scoring, and the exact `evidence_packet_v1` input/output contract before building the packet generator or adjudication queues
+
 Historical artifacts worth keeping:
 - B6.2 + B6.2.1 + B6.2.2 + B6.3 + B6.4 + B6.5a-partial outputs
 - `producer_dedup_pairs` / `producer_dedup_routing_stage3`

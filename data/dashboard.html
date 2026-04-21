@@ -291,7 +291,7 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">Sprint 6 &middot; Step 9 of 11 (Chrome Phase B) &middot; <!--updated-->updated 2026-04-20 16:45 ET<!--/updated--></div>
+  <div class="meta">Sprint 6 &middot; Merge-only rebuild checkpoint &middot; <!--updated-->updated 2026-04-20 20:55 ET<!--/updated--></div>
 </div>
 
 <!-- ============= SESSION TOKENS ============= -->
@@ -318,43 +318,38 @@
 <!-- ============= CURRENT STEP ============= -->
 <div class="section-label">Current step</div>
 <div class="block-card">
-  <h2>Step 9 Phase B &mdash; Claude-in-Chrome per-pair validation (PLAN LOCKED)</h2>
-  <div class="goal">Rigorous Chrome validation of 450 escalate pairs. Every pair gets real browser navigation to producer websites or Wine-Searcher/Wikipedia with URL-cited evidence. No §11-default shortcuts. No stale-text re-reads. Method locked after prior Sonnet session drifted to batch heuristics.</div>
-
+  <h2>Rebuild checkpoint &mdash; benchmark + evidence complete</h2>
+  <div class="goal">The producer-dedup rebuild has now locked direction, audited the current pair corpus, frozen the benchmark, and defined the standard evidence packet. The next artifact is the broad bakeoff design, not queue execution.</div>
   <!--progress-block-->
   <div class="block-progress">
-    <div class="pstep">Chrome validation: 493/493 pairs 100% rigor (2+ content pages each) &middot; 31 verdict corrections from re-Chrome</div><div class="pstats">Yellow 71/71 &middot; Core 143/143 &middot; Mid 138/138 &middot; Tail 141/141 &middot; Final: 138 MERGE / 55 PC / 267 SKIP / 33 KEEP</div>
-    <div class="pstep" style="font-size:12px; margin-top:6px;">yellow (71 top producers)</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">71 / 71 (100%) &middot; 33 KEEP / 21 SKIP / 13 MERGE / 4 PC &middot; 67 URL-cited, 4 sparse-web</div>
-    <div class="pstep" style="font-size:12px; margin-top:6px;">core (max_wc &ge; 10)</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">143 / 143 (100%) &middot; 77 SKIP / 40 MERGE / 26 PC</div>
-    <div class="pstep" style="font-size:12px; margin-top:6px;">mid (max_wc 3-9)</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">138 / 138 (100%) &middot; 82 SKIP / 46 MERGE / 10 PC</div>
-    <div class="pstep" style="font-size:12px; margin-top:6px;">tail (max_wc &lt; 3)</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">141 / 141 (100%) &middot; 103 SKIP / 34 MERGE / 4 PC</div>
+    <div class="pstep">Rebuild artifacts complete: rules tightened, pair corpus audited, benchmark frozen, evidence packet designed</div><div class="pstats">Session 1 = pair corpus audit &middot; Session 2 = benchmark freeze &middot; Session 3 = evidence packet</div>
+    <div class="pstep" style="font-size:12px; margin-top:6px;">direction and rules</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">merge-only path locked &middot; PARENT_CHILD deferred &middot; core/tail redefined by product risk</div>
+    <div class="pstep" style="font-size:12px; margin-top:6px;">benchmark + evidence</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">152 benchmark pairs frozen &middot; JSONL-first evidence packet defined &middot; hidden benchmark overlay split from visible evidence</div>
+    <div class="pstep" style="font-size:12px; margin-top:6px;">next up</div><div class="progress-bar"><div class="progress-fill" style="width: 20%"></div></div><div class="pstats" style="font-size:11.5px;">broad bakeoff design next &middot; then packet generator + harness &middot; then first adjudication bakeoff</div>
   </div>
   <!--/progress-block-->
-
-  <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Method (locked):</strong> For each pair, Claude-in-Chrome navigates to 2+ content-loaded pages (producer official site, Wine-Searcher producer page, or Wikipedia) confirming identity of name_a and name_b separately. Verdict (MERGE / SKIP / PARENT_CHILD / KEEP_AS_IS / FLAG_FOR_NEXT_SPRINT) logged to JSONL with URL citations. Plan-lock doc: <code>data/sprints/dedup/chrome_validation/PLAN_LOCK.md</code>. Memory: <code>memory/feedback_sprint6_b6_5a_chrome_plan_lock.md</code>.</div>
-
+  <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current rebuild doctrine:</strong> ground adjudication in official-domain evidence, local wine-list coherence, and deterministic identity rules. Search is retrieval, not truth by itself. The bakeoff should compare methods as well as models, using <code>benchmark_v1</code> and <code>evidence_packet_v1</code> as the shared test bed.</div>
   <!--block-steps-->
   <ul class="steps">
-    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 1 — Plan lock-in</span></li>
-    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 2 — LWIN import (+22,598 producers)</span></li>
-    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 3 — Schema + L1 classification (151K pairs)</span></li>
-    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 4 — Calibration + committed thresholds</span></li>
-    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 5 — Full AI classification (L1.5, L2, L2.5)</span></li>
-    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 6 — Phase 3a web-validation on 3,398 high-risk pairs</span></li>
-    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 7 — Expand web coverage (Core + Tail escalations + audit)</span></li>
-    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 8 — Build routing_stage3 decision table</span></li>
-    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 9 — Phase A auto-decide + Phase B Claude-in-Chrome on 450 escalate pairs</span></li>
-    <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 10 — §11.4 amendments + execute script + scorecard + run + Safety Net B + post-audit</span></li>
-    <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 11 — Sprint close + Sprint 7 handoff</span></li>
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 1 &mdash; Freeze merge-only direction</span></li>
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 2 &mdash; Tighten <code>IDENTITY_RULES.md</code> + redefine core/tail</span></li>
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 3 &mdash; Audit current pair corpus / blocking strategies</span></li>
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 4 &mdash; Freeze <code>benchmark_v1</code></span></li>
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 5 &mdash; Design <code>evidence_packet_v1</code></span></li>
+    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 6 &mdash; Broad bakeoff design</span></li>
+    <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 7 &mdash; Packet generator + evaluation harness</span></li>
+    <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 8 &mdash; First adjudication bakeoff</span></li>
+    <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 9 &mdash; Build core adjudication queue</span></li>
+    <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 10 &mdash; Build tail adjudication queue</span></li>
+    <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 11 &mdash; Publish pre-execution scorecard</span></li>
   </ul>
   <!--/block-steps-->
 </div>
-
 <!-- ============= SPRINT METRICS + TARGETS ============= -->
 <div class="section-label">Sprint 6 &mdash; Core/Tail split &amp; quality targets</div>
 <div class="sprint-card">
   <div class="goal">
-    Producer dedup on 33,281 rows. Expanded Core = US country + US retail/importer staging + TTB-linked + &ge;5 wines + any score/price + international retailer + competition data. Core gets near-perfect attention; Tail gets targeted escalation coverage plus Safety Net B backstop at Step 10.
+    Producer dedup on 33,281 rows and 225,281 wines. Core/tail is now a product-risk split used for evaluation, not the old routing-stage execution plan. The immediate quality task is choosing the adjudication path that protects core precision without making tail review volume explode.
   </div>
   <table class="metrics-table">
     <tr>
@@ -379,20 +374,18 @@
       <td>&le;1% False Merges &middot; &le;10% Missed Merges &middot; PC deferred</td>
     </tr>
   </table>
-
   <div class="vitals">
     <table>
-      <tr><td>Budget spent</td><td>$231.67 (Steps 1-6) + $78.81 (Step 7 active) = $310.48</td></tr>
-      <tr><td>Step 7 actual so far</td><td>Tail + Audit COMPLETE; Core ~60% in flight</td></tr>
-      <tr><td>Step 7b Part B Deep (queued)</td><td>664-producer sanity scorecard, ~$2 (Part A dropped)</td></tr>
-      <tr><td>Sprint projected total</td><td>$278&ndash;288</td></tr>
-      <tr><td>Reserve of $450 ceiling</td><td>$162&ndash;172</td></tr>
-      <tr><td>Web-validated pairs</td><td>3,398 (Step 6) + ~17,280 (Step 7 done so far) = ~20,678</td></tr>
-      <tr><td>Expected user review pile</td><td>~50 pattern-cluster pairs (Step 9 only)</td></tr>
+      <tr><td>Live canonical snapshot</td><td>33,281 producers &middot; 225,281 wines &middot; 125,934 vintages</td></tr>
+      <tr><td>Benchmark state</td><td><code>benchmark_v1</code> frozen at 152 merge-only cases</td></tr>
+      <tr><td>Evidence packet state</td><td><code>evidence_packet_v1</code> defined as JSONL-first with hidden benchmark overlay</td></tr>
+      <tr><td>Immediate next artifact</td><td>broad bakeoff design</td></tr>
+      <tr><td>After that</td><td>packet generator + evaluation harness, then first adjudication bakeoff</td></tr>
+      <tr><td>Execution status</td><td>no producer-merge execution path is active yet</td></tr>
+      <tr><td>Primary risk</td><td>choosing a bakeoff that silently optimizes for the wrong metric or leaks answer-key fields</td></tr>
     </table>
   </div>
 </div>
-
 <!-- ============= REMAINING TASKS + ETAs ============= -->
 <div class="section-label">Remaining tasks &amp; ETAs</div>
 <div class="sprint-card">
@@ -404,146 +397,43 @@
       <th class="num">Cost</th>
     </tr>
     <tr>
-      <td>Core 7a (15,428 pairs)</td>
-      <td>✓ complete</td>
-      <td>—</td>
-      <td class="num">$51.78</td>
-    </tr>
-    <tr>
-      <td>Tail (6,190 pairs)</td>
-      <td>✓ complete</td>
-      <td>—</td>
-      <td class="num">$20.40</td>
-    </tr>
-    <tr>
-      <td>Auto-SKIP audit (2,020 pairs)</td>
-      <td>✓ complete</td>
-      <td>—</td>
-      <td class="num">$6.63</td>
-    </tr>
-    <tr>
-      <td>Step 8 — build routing_stage3</td>
-      <td>✓ complete</td>
-      <td>3,154 merges + 785 PC + 146,435 skips + 716 for review</td>
+      <td>Step 6 &mdash; broad bakeoff design</td>
+      <td>next</td>
+      <td>Lock contenders, scoring rules, pass/fail gates, and the exact adjudication output contract against <code>benchmark_v1</code> + <code>evidence_packet_v1</code></td>
       <td class="num">$0</td>
     </tr>
     <tr>
-      <td>Step 7b — Part B producer scorecard</td>
-      <td>✓ complete</td>
-      <td>593 green / 71 yellow / 0 red across 664 producers &mdash; feeds Step 9</td>
-      <td class="num">~$0.30</td>
-    </tr>
-    <tr>
-      <td>Step 9a — Opus pattern audit (DONE) + §11.4.m-s drafted</td>
-      <td>✓ complete</td>
-      <td>10 clusters identified + 7 rule amendments drafted</td>
-      <td class="num">$0</td>
-    </tr>
-    <tr>
-      <td>Chrome MCP test (verify + ridgewine.com test)</td>
+      <td>Step 7 &mdash; packet generator + evaluation harness</td>
       <td>pending</td>
-      <td>~5 min; no Sonnet+web fallback if fails</td>
-      <td class="num">$0</td>
+      <td>Render benchmark pairs into model-visible packets while guaranteeing <code>benchmark_overlay</code> fields never leak into adjudicator input</td>
+      <td class="num">$0-5</td>
     </tr>
     <tr>
-      <td>Phase A — Opus inline bulk review of 740 user-review pairs (30-pair calibration first)</td>
+      <td>Step 8 &mdash; first adjudication bakeoff</td>
       <td>pending</td>
-      <td>~1-2 hrs autonomous</td>
-      <td class="num">$0</td>
+      <td>Compare method/model contenders on false merges, missed merges, survivor correctness, cost, and auditability</td>
+      <td class="num">TBD by design</td>
+    </tr>
+    <tr>
+      <td>Step 9 &mdash; core adjudication queue</td>
+      <td>pending</td>
+      <td>Only after the bakeoff picks a production path and fallback</td>
+      <td class="num">TBD</td>
+    </tr>
+    <tr>
+      <td>Step 10 &mdash; tail adjudication queue</td>
+      <td>pending</td>
+      <td>Keep tail conservative; skip or flag when evidence is thin</td>
+      <td class="num">TBD</td>
     </tr>
     <tr style="background:#fff4e5;">
-      <td>⚠️ <strong>USER TOUCHPOINT 1: calibration checkpoint</strong> — review 30-pair Phase A sample before full 740-pair run</td>
-      <td>—</td>
-      <td>~10 min user time</td>
-      <td class="num">—</td>
-    </tr>
-    <tr>
-      <td>Chrome spot-check on Bucket 2 (~50 escalated pairs)</td>
-      <td>pending</td>
-      <td>~1-2 hrs autonomous</td>
-      <td class="num">~$0</td>
-    </tr>
-    <tr>
-      <td>Chrome yellow flag validation (71 producers)</td>
-      <td>pending</td>
-      <td>~1-2 hrs autonomous</td>
-      <td class="num">~$0</td>
-    </tr>
-    <tr>
-      <td>§11 rule impact measurement + apply to IDENTITY_RULES.md + regenerate routing_stage3</td>
-      <td>pending</td>
-      <td>~30 min</td>
-      <td class="num">$0</td>
-    </tr>
-    <tr style="background:#fff4e5;">
-      <td>⚠️ <strong>USER TOUCHPOINT 2: §11 amendment signoff</strong> — ~5 revised rules + rule-change impact count</td>
-      <td>—</td>
-      <td>~10 min user time</td>
-      <td class="num">—</td>
-    </tr>
-    <tr>
-      <td>Write Step 10 execute SQL (survivor selection + re-pointing + merge_history + MERGE↔PC cascade)</td>
-      <td>pending</td>
-      <td>~2-3 hrs (runs during Phase A idle)</td>
-      <td class="num">$0</td>
-    </tr>
-    <tr>
-      <td>Step 10c-<strong>PRE</strong>: pre-execution scorecard (simulate merges, audit planned decisions)</td>
-      <td>pending</td>
-      <td>~20-30 min Opus inline</td>
-      <td class="num">~$5</td>
-    </tr>
-    <tr style="background:#ffe5e5;">
-      <td>⚠️ <strong>USER TOUCHPOINT 3: pre-execution scorecard signoff</strong> — critical gate before irreversible merges</td>
-      <td>—</td>
-      <td>~10 min user time</td>
-      <td class="num">—</td>
-    </tr>
-    <tr>
-      <td>COMMIT #1 — §11 + Phase A verdicts + scorecard</td>
-      <td>pending</td>
-      <td>~2 min</td>
-      <td class="num">$0</td>
-    </tr>
-    <tr>
-      <td>Step 10a — execute merges + producer_merge_history</td>
-      <td>pending</td>
-      <td>~5 min SQL</td>
-      <td class="num">$0</td>
-    </tr>
-    <tr>
-      <td>Step 10b — Safety Net B rescan</td>
-      <td>pending</td>
-      <td>~10-15 min; flags candidates for Sprint 7</td>
-      <td class="num">~$3-5</td>
-    </tr>
-    <tr>
-      <td>Step 10c-<strong>POST</strong>: 100-pair verification audit</td>
-      <td>pending</td>
-      <td>~10 min Opus inline</td>
-      <td class="num">~$2</td>
-    </tr>
-    <tr style="background:#fff4e5;">
-      <td>⚠️ <strong>USER TOUCHPOINT 4: final scorecard review</strong> — False/Missed metrics for Core and Tail</td>
-      <td>—</td>
-      <td>~5 min user time</td>
-      <td class="num">—</td>
-    </tr>
-    <tr>
-      <td>COMMIT #2 — execution + merge history</td>
-      <td>pending</td>
-      <td>~2 min</td>
-      <td class="num">$0</td>
-    </tr>
-    <tr>
-      <td>Step 11 — dashboard, docs, archive, commit</td>
-      <td>pending</td>
-      <td>~15 min</td>
-      <td class="num">$0</td>
+      <td><strong>Next user touchpoint</strong> &mdash; approve the bakeoff design before packet-generation or execution work starts</td>
+      <td>&mdash;</td>
+      <td>One focused review session once contenders and score rules are drafted</td>
+      <td class="num">&mdash;</td>
     </tr>
   </table>
 </div>
-
 <!-- ============= AUDIT FINDINGS ============= -->
 <div class="section-label">Step 7 audit &mdash; Core auto-SKIP False-Negative rate (measured)</div>
 <div class="sprint-card">
@@ -617,7 +507,7 @@
   <li><span class="marker done-marker">&#10003;</span> <span>Sprint 3 Fix</span> <span class="detail">&mdash; 158 fixed, 101 deferred, $0</span></li>
   <li><span class="marker done-marker">&#10003;</span> <span>Sprint 4 Demo</span> <span class="detail">&mdash; 515 wines Grade A across 14 producers, $37.44</span></li>
   <li><span class="marker done-marker">&#10003;</span> <span>Sprint 5 AI Bakeoff</span> <span class="detail">&mdash; 29 models tested, gpt-5.4-mini leader under current prompt, ~$55</span></li>
-  <li><span class="marker current-marker">&#9654;</span> <span class="current">Sprint 6 Producer Dedup</span> <span class="detail">&mdash; 11-step plan; Expanded Core + Plan C; $232 / $450 so far</span></li>
+  <li><span class="marker current-marker">&#9654;</span> <span class="current">Sprint 6 Producer Dedup</span> <span class="detail">&mdash; merge-only Codex rebuild; benchmark + evidence complete; broad bakeoff design next</span></li>
   <li><span class="marker future-marker">&#9675;</span> <span class="future">Sprint 7 Wine Dedup</span> <span class="detail">&mdash; LWIN-7 backbone + producer-filtered blocking + deterministic-tuple match + cheap-AI remainder + Haiku+Serper on escalations only. <strong>~$100-200 projected</strong> (revised down from $2-3K).</span></li>
   <li><span class="marker future-marker">&#9675;</span> <span class="future">Sprint 8</span> <span class="detail">&mdash; prompt v2 + L3 fact-check gate + re-enrichment + demo sharing</span></li>
 </ul>
@@ -626,14 +516,14 @@
 <div class="section-label">Key numbers (DB state)</div>
 <!--key-numbers-->
 <div class="numbers">
-  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">224,316</div></div>
+  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">225,281</div></div>
   <div class="n-item"><div class="n-label">Producers</div><div class="n-value">33,281</div></div>
   <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">125,934</div></div>
   <div class="n-item"><div class="n-label">Prices</div><div class="n-value">40,193</div></div>
   <div class="n-item"><div class="n-label">Scores</div><div class="n-value">30,339</div></div>
   <div class="n-item"><div class="n-label">Grape links</div><div class="n-value">43,131</div></div>
   <div class="n-item"><div class="n-label">Appellations</div><div class="n-value">3,662</div></div>
-  <div class="n-item"><div class="n-label">Insights</div><div class="n-value">11,598</div></div>
+  <div class="n-item"><div class="n-label">Insights</div><div class="n-value">5,485</div></div>
 </div>
 <!--/key-numbers-->
 
@@ -683,3 +573,4 @@
 
 </body>
 </html>
+
