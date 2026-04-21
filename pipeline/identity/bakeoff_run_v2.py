@@ -949,7 +949,11 @@ def render_proof_memo(gate_report: dict) -> str:
 
 def run_once(args, *, proof_sample: bool, run_name: str) -> dict:
     benchmark_payload = load_benchmark_payload(args.benchmark)
-    full_packets, visible_packets, packet_validation = ensure_visible_packets(args.packet_dir, args.benchmark)
+    full_packets, visible_packets, packet_validation = ensure_visible_packets(
+        args.packet_dir,
+        args.benchmark,
+        force_rebuild=args.force_rebuild_packets,
+    )
     _, request_paths, request_validation = prepare_request_wrappers(
         benchmark_payload=benchmark_payload,
         visible_packets=visible_packets,
@@ -1004,6 +1008,7 @@ def main() -> int:
     parser.add_argument("--packet-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--output-root", type=Path, default=DEFAULT_RUN_ROOT)
     parser.add_argument("--run-name", default=RUN_NAME_DEFAULT)
+    parser.add_argument("--force-rebuild-packets", action="store_true")
     parser.add_argument("--full-after-proof", action="store_true")
     args = parser.parse_args()
 

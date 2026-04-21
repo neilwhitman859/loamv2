@@ -24,6 +24,7 @@ from pipeline.identity.bakeoff_harness_v1 import (
 from pipeline.identity.bakeoff_packet_v2 import (
     DEFAULT_BENCHMARK,
     DEFAULT_OUTPUT_DIR,
+    PACKET_VERSION,
     build_packets,
     canonical_json_dumps,
     write_jsonl,
@@ -70,18 +71,25 @@ def benchmark_cases_by_id(benchmark_payload: dict) -> dict[str, dict]:
     return {case["case_id"]: case for case in benchmark_payload["cases"]}
 
 
-def ensure_visible_packets(packet_dir: Path, benchmark_path: Path) -> tuple[list[dict], list[dict], dict]:
+def ensure_visible_packets(
+    packet_dir: Path,
+    benchmark_path: Path,
+    *,
+    force_rebuild: bool = False,
+) -> tuple[list[dict], list[dict], dict]:
     full_path = packet_dir / "benchmark_v1_packets_full_v2.jsonl"
     visible_path = packet_dir / "benchmark_v1_packets_visible_v2.jsonl"
     validation_path = packet_dir / "benchmark_v1_packet_validation_v2.json"
     benchmark_payload = load_benchmark_payload(benchmark_path)
-    rebuild = not full_path.exists() or not visible_path.exists() or not validation_path.exists()
+    rebuild = force_rebuild or not full_path.exists() or not visible_path.exists() or not validation_path.exists()
     if not rebuild:
         existing_full = load_jsonl(full_path)
         existing_visible = load_jsonl(visible_path)
         rebuild = (
             len(existing_full) != benchmark_payload["case_count"]
             or len(existing_visible) != benchmark_payload["case_count"]
+            or any(packet.get("packet_version") != PACKET_VERSION for packet in existing_full)
+            or any(packet.get("packet_version") != PACKET_VERSION for packet in existing_visible)
         )
         if not rebuild:
             return existing_full, existing_visible, json.loads(validation_path.read_text(encoding="utf-8"))
@@ -92,6 +100,7 @@ def ensure_visible_packets(packet_dir: Path, benchmark_path: Path) -> tuple[list
     write_jsonl(visible_path, visible_packets)
     validation = {
         "benchmark_id": benchmark_id,
+        "packet_version": PACKET_VERSION,
         "packet_count": len(full_packets),
         "visible_packet_count": len(visible_packets),
         "hidden_field_leaks": sum(item["hidden_field_leaks"] for item in validations),
@@ -387,6 +396,7 @@ def apply_merge_veto(normalized_row: dict, packet: dict) -> dict:
     if has_hard_official_continuity(packet):
         return normalized_row
 
+    packet_refs = packet_ref_ids(packet)
     risk_refs = packet_risk_refs(packet)
     veto_refs = sorted(
         risk_refs
@@ -394,9 +404,16 @@ def apply_merge_veto(normalized_row: dict, packet: dict) -> dict:
             "risk_shared_surname_split",
             "risk_holdco_or_product_tier",
             "risk_owner_or_operator_not_identity",
+            "risk_secondary_relationship_without_identity",
             "geo_country_conflict",
         }
     )
+    if "risk_sparse_official_evidence" in risk_refs:
+        # Under unresolved official evidence, only keep MERGE in the very narrow
+        # exact-name/exact-overlap same-country pattern. Everything weaker is
+        # too vulnerable to secondary-evidence overreach.
+        if not {"lex_near_exact", "catalog_exact_overlap", "geo_same_country"}.issubset(packet_refs):
+            veto_refs = sorted(set(veto_refs) | {"risk_sparse_official_evidence"})
     if not veto_refs:
         return normalized_row
 

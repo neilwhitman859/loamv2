@@ -60,6 +60,7 @@ from pipeline.lib.serper import search
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "data" / "sprints" / "dedup" / "bakeoff_v2" / "packets"
+PACKET_VERSION = "v2.1"
 ARTICLE_TOKENS = {
     "a",
     "al",
@@ -139,6 +140,17 @@ OWNERSHIP_RISK_PHRASES = {
     "portfolio",
     "project of",
     "sister brand",
+}
+SECONDARY_RELATIONSHIP_RISK_PHRASES = OWNERSHIP_RISK_PHRASES | {
+    "brief period",
+    "created by",
+    "former",
+    "formerly",
+    "later",
+    "merged into",
+    "purchased",
+    "purchased by",
+    "renamed",
 }
 
 
@@ -334,6 +346,23 @@ def find_owner_operator_identity_risk_ref(
                     "Ownership, operator, or acquisition language links the two names, but that does not prove same on-label identity.",
                     detail={"support_ref_id": hit["ref_id"]},
                 )
+    return None
+
+
+def find_secondary_relationship_without_identity_risk_ref(
+    retrieval_a: dict,
+    retrieval_b: dict,
+) -> dict | None:
+    for hit in retrieval_a["secondary_hits"] + retrieval_b["secondary_hits"]:
+        haystack = hit_haystack(hit)
+        if any(phrase in haystack for phrase in SECONDARY_RELATIONSHIP_RISK_PHRASES):
+            return ref_entry(
+                "risk_secondary_relationship_without_identity",
+                "risk",
+                "risk",
+                "Secondary retrieval suggests acquisition, operator, rename, or former-estate continuity, but that does not prove same current on-label identity.",
+                detail={"support_ref_id": hit["ref_id"]},
+            )
     return None
 
 
@@ -672,6 +701,9 @@ def build_evidence_refs(
     owner_operator_risk = find_owner_operator_identity_risk_ref(producer_a, producer_b, retrieval_a, retrieval_b)
     if owner_operator_risk:
         refs.append(owner_operator_risk)
+    secondary_relationship_risk = find_secondary_relationship_without_identity_risk_ref(retrieval_a, retrieval_b)
+    if secondary_relationship_risk:
+        refs.append(secondary_relationship_risk)
 
     refs.extend(retrieval_a["official_hits"])
     refs.extend(retrieval_b["official_hits"])
@@ -701,6 +733,7 @@ def build_evidence_refs(
         "shared_surname_split": shared_surname_risk,
         "holdco_or_product_tier": holdco_risk,
         "owner_or_operator_not_identity": bool(owner_operator_risk),
+        "secondary_relationship_without_identity": bool(secondary_relationship_risk),
         "country_conflict": not same_country,
         "has_hard_official_continuity": any(
             entry["ref_id"].startswith("hard_official_continuity_") for entry in ordered
@@ -745,7 +778,7 @@ def build_packet(case: dict, pair_row: dict, producer_a: dict, producer_b: dict,
         retrieval_complete = "partial"
 
     packet = {
-        "packet_version": "v2",
+        "packet_version": PACKET_VERSION,
         "packet_id": f"producer_pair_{case['pair_id']}_v2",
         "envelope": {
             "pair_id": case["pair_id"],

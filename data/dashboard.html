@@ -291,7 +291,7 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">Sprint 6 &middot; Merge-only rebuild checkpoint &middot; <!--updated-->updated 2026-04-21 07:19 ET<!--/updated--></div>
+  <div class="meta">Sprint 6 &middot; Merge-only rebuild checkpoint &middot; <!--updated-->updated 2026-04-21 07:49 ET<!--/updated--></div>
 </div>
 
 <!-- ============= SESSION TOKENS ============= -->
@@ -318,15 +318,15 @@
 <!-- ============= CURRENT STEP ============= -->
 <div class="section-label">Current step</div>
 <div class="block-card">
-  <h2>Rebuild checkpoint &mdash; v3 continuity patch shipped, proof rerun failed cleanly, full rerun still blocked</h2>
-  <div class="goal">Session 9.1 implemented the minimum v3 continuity redesign: hard-vs-soft continuity refs, stricter official-domain trust, exact-phrase alias proof, shared-domain downgrade, an ownership/operator risk flag, and a proof-only runner path. The 36-case proof rerun materially improved the reused 28-case base, but it still failed on three continuity add-on cases where the models over-read secondary/catalog evidence after official continuity stayed unresolved.</div>
+  <h2>Rebuild checkpoint &mdash; unresolved-official backstop landed, fresh proof passed, full rerun now awaits explicit approval</h2>
+  <div class="goal">Session 9.2 found that the prior proof artifacts were still using stale pre-v3 packets, forced a fresh packet rebuild, and added the minimum unresolved-official / secondary-evidence backstop needed for acquisition, rename, former-estate, and thin secondary-driven merge stories. The rebuilt 36-case proof subset passed cleanly: zero false merges on the 8-case continuity add-on and zero false merges on the reused 28-case base for Sonnet, Gemini, and consensus.</div>
   <!--progress-block-->
   <div class="block-progress">
-    <div class="pstep">Rebuild artifacts now include the Session 9.1 continuity patch and expanded proof rerun: rules tightened, pair corpus audited, benchmark frozen, evidence packets v1+v2 built, bakeoff rules locked, harness plumbing built, the first real contender run scored, the v2 redesign memo implemented, the full v2 rerun published, the v3 redesign specified, and the proof-only rerun executed</div><div class="pstats">Session 1 = pair corpus audit &middot; Session 2 = benchmark freeze &middot; Session 3 = evidence packet &middot; Session 4 = broad bakeoff design &middot; Session 5 = packet generator + evaluation harness &middot; Session 6 = first real adjudication bakeoff &middot; Session 7 = v2 design memo &middot; Session 8 = v2 implementation + rerun &middot; Session 9 = v3 continuity audit + redesign memo &middot; Session 9.1 = v3 continuity implementation + proof rerun</div>
+    <div class="pstep">Rebuild artifacts now include the Session 9.2 unresolved-official backstop and fresh proof rerun: rules tightened, pair corpus audited, benchmark frozen, evidence packets v1+v2 built, bakeoff rules locked, harness plumbing built, the first real contender run scored, the v2 redesign memo implemented, the full v2 rerun published, the v3 redesign specified, the stale-packet issue corrected, and the proof-only rerun executed on fresh packets</div><div class="pstats">Session 1 = pair corpus audit &middot; Session 2 = benchmark freeze &middot; Session 3 = evidence packet &middot; Session 4 = broad bakeoff design &middot; Session 5 = packet generator + evaluation harness &middot; Session 6 = first real adjudication bakeoff &middot; Session 7 = v2 design memo &middot; Session 8 = v2 implementation + rerun &middot; Session 9 = v3 continuity audit + redesign memo &middot; Session 9.1 = v3 continuity implementation + first proof rerun &middot; Session 9.2 = unresolved-official backstop + fresh proof rerun</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">direction and rules</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">merge-only path locked &middot; PARENT_CHILD deferred &middot; core/tail redefined by product risk</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">benchmark + evidence</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">152 benchmark pairs frozen &middot; JSONL-first evidence packet defined &middot; hidden benchmark overlay split from visible evidence</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">bakeoff spec</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">v1 contender set frozen &middot; `FLAGGED` semantics locked &middot; production/fallback gates explicit</div>
-    <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div><div class="progress-bar"><div class="progress-fill" style="width: 89%"></div></div><div class="pstats" style="font-size:11.5px;">36-case proof rerun complete &middot; reused-base false merges dropped 10&rarr;1 for Sonnet, 7&rarr;0 for Gemini, and 7&rarr;0 for consensus &middot; proof still failed on add-on cases 048, 080, and 008, so the 152-case rerun remains blocked</div>
+    <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div><div class="progress-bar"><div class="progress-fill" style="width: 92%"></div></div><div class="pstats" style="font-size:11.5px;">36-case proof rerun complete on fresh `v2.1` packets &middot; add-on false merges = 0 for Sonnet, Gemini, and consensus &middot; reused-base false merges dropped to 0 for all three &middot; full 152-case rerun did not execute and still requires explicit user approval</div>
   </div>
   <!--/progress-block-->
   <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current rebuild doctrine:</strong> ground adjudication in official-domain evidence, local wine-list coherence, and deterministic identity rules. Search is retrieval, not truth by itself. Session 9.1 proved that weak continuity hints can no longer waive the veto, but unresolved-official cases still need a stronger backstop so secondary/catalog evidence cannot carry unsafe merges by itself.</div>
@@ -340,7 +340,7 @@
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 6 &mdash; Broad bakeoff design</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 7 &mdash; Packet generator + evaluation harness</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 8 &mdash; First adjudication bakeoff</span></li>
-    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 9 &mdash; Build core adjudication queue (still blocked; the v3 proof improved sharply but failed on three add-on cases, so queue work stays paused)</span></li>
+    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 9 &mdash; Build core adjudication queue (proof is now clean, but queue work still stays paused until an explicitly approved fresh 152-case rerun lands)</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 10 &mdash; Build tail adjudication queue</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 11 &mdash; Publish pre-execution scorecard</span></li>
   </ul>
@@ -350,7 +350,7 @@
 <div class="section-label">Sprint 6 &mdash; Core/Tail split &amp; quality targets</div>
 <div class="sprint-card">
   <div class="goal">
-    Producer dedup on 33,225 rows and 224,316 wines. Core/tail is now a product-risk split used for evaluation, not the old routing-stage execution plan. The immediate quality task is no longer the v2 rerun itself; it is diagnosing the three remaining proof failures where unresolved-official cases still merged on secondary/catalog evidence without moving the frozen benchmark or hard gates.
+    Producer dedup on 33,225 rows and 224,316 wines. Core/tail is now a product-risk split used for evaluation, not the old routing-stage execution plan. The immediate quality task is no longer diagnosing the residual proof failures; it is waiting for explicit approval to rerun the full 152-case benchmark on fresh `v2.1` packets and measure the new backstop at full scale.
   </div>
   <table class="metrics-table">
     <tr>
@@ -380,11 +380,11 @@
       <tr><td>Live canonical snapshot</td><td>33,225 producers &middot; 224,316 wines &middot; 125,934 vintages</td></tr>
       <tr><td>Benchmark state</td><td><code>benchmark_v1</code> frozen at 152 merge-only cases</td></tr>
       <tr><td>Evidence packet state</td><td><code>evidence_packet_v1</code> defined as JSONL-first with hidden benchmark overlay</td></tr>
-      <tr><td>Bakeoff state</td><td>v1 real run is preserved under <code>session6_first_real_bakeoff_v1</code>; v2 real run is canonical under <code>session7_first_real_bakeoff_v2</code>; Session 9.1 proof-only artifacts now live under <code>session9_v3_continuity_proof_subset</code> and the full rerun did not execute</td></tr>
-      <tr><td>Immediate next artifact</td><td><code>session9_v3_continuity_proof_subset_memo.md</code>: proof memo showing strong base-slice improvement but residual add-on false merges on cases 048, 080, and 008</td></tr>
-      <tr><td>After that</td><td>tighten the unresolved-official backstop for secondary/catalog-driven merges, rerun proof only again, and keep queue-building blocked until the add-on slice is clean</td></tr>
+      <tr><td>Bakeoff state</td><td>v1 real run is preserved under <code>session6_first_real_bakeoff_v1</code>; v2 real run is canonical under <code>session7_first_real_bakeoff_v2</code>; Session 9.2 proof-only artifacts now live under <code>session9_2_unresolved_official_backstop_proof_subset</code> on fresh <code>v2.1</code> packets, and the full rerun did not execute</td></tr>
+      <tr><td>Immediate next artifact</td><td><code>session9_2_unresolved_official_backstop_proof_subset_memo.md</code>: proof memo showing zero add-on false merges and zero reused-base false merges across Sonnet, Gemini, and consensus</td></tr>
+      <tr><td>After that</td><td>wait for explicit user approval before running the fresh 152-case rerun; keep queue-building blocked until that rerun lands and is reviewed</td></tr>
       <tr><td>Execution status</td><td>no producer-merge execution path is active yet</td></tr>
-      <tr><td>Primary risk</td><td>hard-vs-soft continuity fixed the big packet-side contamination, but unresolved-official cases can still slip through when secondary evidence plus catalog overlap is persuasive and no narrower risk flag fires</td></tr>
+      <tr><td>Primary risk</td><td>the proof slice is now clean, but the 152-case rerun has not been repeated on fresh <code>v2.1</code> packets yet, so full-benchmark recall / precision tradeoffs from the new backstop are still unmeasured</td></tr>
     </table>
   </div>
 </div>
@@ -419,7 +419,7 @@
     <tr>
       <td>Step 9 &mdash; core adjudication queue</td>
       <td>blocked</td>
-      <td>Blocked: Session 9 found that the dominant defect is packet-side continuity trust, not schema hygiene; 39 unique false merges remain, 37 of them carried continuity refs, so the next move is v3 continuity tightening plus an expanded proof rerun, not queue-building</td>
+      <td>Blocked pending explicit approval: Session 9.2 passed the fresh proof rerun on rebuilt <code>v2.1</code> packets, so the next move is a user-approved 152-case rerun, not queue-building yet</td>
       <td class="num">$3.63</td>
     </tr>
     <tr>
@@ -429,9 +429,9 @@
       <td class="num">TBD</td>
     </tr>
     <tr style="background:#fff4e5;">
-      <td><strong>Next user touchpoint</strong> &mdash; review the completed v2 rerun and choose the next redesign target</td>
+      <td><strong>Next user touchpoint</strong> &mdash; review the clean Session 9.2 proof memo and decide whether to authorize the fresh 152-case rerun</td>
       <td>&mdash;</td>
-      <td>One focused audit/design session to tighten official-continuity evidence rules before any v3 proof rerun</td>
+      <td>One execution session to run the full rerun on fresh <code>v2.1</code> packets if explicitly approved; otherwise stop here</td>
       <td class="num">&mdash;</td>
     </tr>
   </table>
@@ -518,8 +518,8 @@
 <div class="section-label">Key numbers (DB state)</div>
 <!--key-numbers-->
 <div class="numbers">
-  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">225,281</div></div>
-  <div class="n-item"><div class="n-label">Producers</div><div class="n-value">33,281</div></div>
+  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">224,316</div></div>
+  <div class="n-item"><div class="n-label">Producers</div><div class="n-value">33,225</div></div>
   <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">125,934</div></div>
   <div class="n-item"><div class="n-label">Prices</div><div class="n-value">40,193</div></div>
   <div class="n-item"><div class="n-label">Scores</div><div class="n-value">30,339</div></div>
