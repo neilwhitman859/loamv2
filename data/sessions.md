@@ -8,17 +8,27 @@ Each session should map to one primary deliverable and one roadmap step or sub-s
 
 When starting a session under **Active**, use this shape:
 
-- **YYYY-MM-DD Session N: short label** (Codex) - Goal: ... Primary deliverable: ... In scope: ... Out of scope: ... Tables read/write: ...
+- **N - short label (YYYY-MM-DD)** (Codex) - Goal: ... Primary deliverable: ... In scope: ... Out of scope: ... Tables read/write: ... Budget estimate: ...
 
 When moving a session to **Done**, rewrite the entry in this shape:
 
-- **YYYY-MM-DD Session N: short label** (Codex) - Produced: ... Decisions made: ... Open risks: ... Next recommended session: ... Next session prompt: ...
+- **N - short label (YYYY-MM-DD)** (Codex) - Produced: ... Decisions made: ... Open risks: ... Next recommended session: ... Next session prompt: ... Confidence producer dedup reaches spec: ... Budget spent: ...
+
+Wrap-up standard for the user-facing close-out:
+
+- What this session did, and how it fits into the project as a whole
+- What the next session will do, and how it fits into the project as a whole
+- Biggest concern about this session's work
+- Biggest concern about the current sprint as a whole
+- Confidence producer dedup can still reach spec (as a %)
+- Budget estimate vs actual API spend
+- Next session prompt in a fenced code block, even if it just points to an `.md`
 
 If the work grows beyond one primary deliverable, close the current session and start a new one instead of stretching the entry.
 
 ## Active
 
-- None currently logged.
+- **9.3 - full rerun on fresh v2.1 packets (2026-04-21)** (Codex) - Goal: run the approved 152-case adjudication rerun using the proof-cleared Session 9.2 path and publish the full scorecard/diff without starting queue-building. Primary deliverable: one fresh full-run artifact set under `data/sprints/dedup/bakeoff_v2/` plus refreshed dashboard/session docs. In scope: `pipeline/identity/bakeoff_packet_v2.py`, `pipeline/identity/bakeoff_harness_v2.py`, `pipeline/identity/bakeoff_run_v2.py`, `data/sprints/dedup/bakeoff_v2/`, `data/dashboard.html`, `AGENTS.md`, `data/sessions.md`. Out of scope: changing `benchmark_v1`, changing Session 4 hard gates, queue-building, producer execution, or new redesign work unless the rerun exposes a fresh blocker. Tables read/write: read `producers`, `wines`, `wine_vintages`, `wine_vintage_prices`, `wine_vintage_scores`, `wine_grapes`, `wine_insights`, `producer_dedup_pairs`; no DB writes planned. Budget estimate: $4-8 API spend.
 
 ## Done
 

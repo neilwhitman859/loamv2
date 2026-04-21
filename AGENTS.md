@@ -59,23 +59,39 @@ If the user is going a long stretch without wrapping up, if decisions are being 
 ### Session Whiteboard
 Read `data/sessions.md` at session start. Log what you're working on under **Active** (include tables you're writing to). At wrap-up, move your entry to **Done** with a summary. If another session is active, don't edit AGENTS.md or docs/ — the next solo session merges it in.
 
+Session naming convention:
+- put the session number first in session names and whiteboard entries, e.g. `9.2 - unresolved-official backstop`
+- when possible, keep the same number-first convention in user-visible session/thread titles and prompt filenames
+
 ### Session Protocol
 Default to **one session = one primary deliverable = one roadmap step or sub-step**.
 
-Every session should declare four things up front in `data/sessions.md`:
+Every session should declare these things up front in `data/sessions.md`:
 - `Goal` — what this session is trying to accomplish
 - `Primary deliverable` — the durable artifact the next session can build on
 - `In scope` — files, tables, and decisions this session is allowed to touch
 - `Out of scope` — nearby work this session is explicitly not trying to do
+- `Budget estimate` — expected external API spend before work begins
 
-Every session should close with four things:
+Every session should close with these things:
 - `Produced` — the artifact or concrete output created
 - `Decisions made` — judgment calls locked this session
 - `Open risks` — anything unresolved or shaky
 - `Next recommended session` — the exact best follow-on task
+- `Confidence producer dedup reaches spec` — a % estimate at wrap-up
+- `Budget spent` — actual external API spend during the session
 
 When another session is clearly next, every session should also end with:
 - `Next session prompt` — a ready-to-run prompt file under `data/session_prompts/` (or the active sprint dir if more appropriate), and the final user-facing wrap-up should include that prompt inline plus the file path
+
+Every user-facing session wrap-up should also include:
+- a short summary of what this session did and how it fits into the project as a whole
+- a short summary of what the next session will do and how it fits into the project as a whole
+- the biggest concern about the work done this session
+- the biggest concern about the sprint as a whole
+- the producer-dedup confidence % at wrap-up
+- budget estimate versus actual API spend
+- the next-session prompt in a fenced code block, even if it is only a pointer to an `.md` file
 
 Guardrails:
 - If the work no longer fits one primary deliverable, stop and start a new session.
@@ -157,6 +173,7 @@ When logging session start, include:
 - `In scope`
 - `Out of scope`
 - `Tables read/write`
+- `Budget estimate`
 
 **Session close (4 steps):**
 1. Update `data/dashboard.html` — check off tracks, refresh metrics
@@ -170,6 +187,8 @@ When closing a session entry, rewrite it to include:
 - `Open risks`
 - `Next recommended session`
 - `Next session prompt` when a clear follow-on session exists
+- `Confidence producer dedup reaches spec`
+- `Budget spent`
 
 **Sprint open:** Create sprint dir (`data/sprints/<name>/`), sessions.json,
 budget.json, journal.md. Update `data/sprints/current.json`.
@@ -660,5 +679,6 @@ content in specific, validated reference data rather than relying solely on LLM 
   - `docs/SOURCES.md` — update if source status changed (new source, fetcher built, data loaded)
   - `docs/PRINCIPLES.md` — update if product philosophy changed
   - `docs/VOICE.md` — update if tone/content guidance changed
+  - final user-facing wrap-up — always include project-fit summary, next-session-fit summary, biggest concern this session, biggest concern this sprint, producer-dedup confidence %, budget estimate vs actual API spend, and the next-session prompt in a fenced code block
 - **"log that"** — Force a DECISIONS.md entry.
 - **"briefing"** — Give current state summary anytime mid-session.
