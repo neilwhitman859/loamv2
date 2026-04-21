@@ -5,7 +5,7 @@
     "title": "Full method bakeoff rerun",
     "shape": "evaluation",
     "spent": 0.00,
-    "notes": "Ran the full frozen 152-case benchmark for merge_proposer_plus_veto_v1, expanded_layered_router_v1, and evidence_digest_then_judge_v1 against the Session 9.7 layered fallback control. All three broader methods recovered 3-5 missed merges, but each reopened 5-9 false merges at full scale, so none cleared the frozen production or fallback gates. The best surviving artifact remains layered_safety_sonnet_r2_narrow_v1, and queue-building stays blocked; the next honest move is freeze / closeout rather than another redesign in the same session."
+    "notes": "Ran the full frozen 152-case benchmark for merge_proposer_plus_veto_v1, expanded_layered_router_v1, and evidence_digest_then_judge_v1 against the Session 9.7 layered fallback control. All three broader methods recovered 3-5 missed merges, but each reopened 5-9 false merges at full scale, so none cleared the frozen production or fallback gates. The best surviving artifact remains layered_safety_sonnet_r2_narrow_v1, and queue-building stays blocked; the next honest move from the evidence is freeze / closeout rather than another redesign in the same session. The user later redirected the immediate follow-on work to a higher-level viability review before any freeze-closeout memo."
   },
   {
     "id": "S9.10",

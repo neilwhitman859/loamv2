@@ -380,11 +380,11 @@
       <tr><td>Live canonical snapshot</td><td>33,281 producers &middot; 225,281 wines &middot; 125,934 vintages</td></tr>
       <tr><td>Benchmark state</td><td><code>benchmark_v1</code> frozen at 152 merge-only cases</td></tr>
       <tr><td>Evidence packet state</td><td><code>evidence_packet_v2</code> rebuilt as fresh <code>v2.1</code> packets with hidden benchmark overlay stripped from model-visible inputs</td></tr>
-      <tr><td>Bakeoff state</td><td>v1 real run is preserved under <code>session6_first_real_bakeoff_v1</code>; v2 real run is canonical under <code>session7_first_real_bakeoff_v2</code>; Session 9.2 proof-only artifacts live under <code>session9_2_unresolved_official_backstop_proof_subset</code> on fresh <code>v2.1</code> packets; Session 9.3 completed the approved full rerun under <code>session9_3_full_rerun_if_approved</code>; Session 9.10 completed the bounded broader-method proof under <code>session9_10_method_bakeoff_proof_subset</code></td></tr>
-      <tr><td>Immediate next artifact</td><td><code>s9_12_freeze_at_best_non_production_artifact.md</code>: follow-on closeout brief to lock <code>session9_7_layered_safety_sonnet_r2_narrow</code> as the best surviving non-production artifact and freeze this adjudication line honestly</td></tr>
-      <tr><td>After that</td><td>publish the freeze / closeout memo; only reopen redesign if the user explicitly rejects the measured freeze recommendation</td></tr>
+      <tr><td>Bakeoff state</td><td>v1 real run is preserved under <code>session6_first_real_bakeoff_v1</code>; v2 real run is canonical under <code>session7_first_real_bakeoff_v2</code>; Session 9.2 proof-only artifacts live under <code>session9_2_unresolved_official_backstop_proof_subset</code> on fresh <code>v2.1</code> packets; Session 9.3 completed the approved full rerun under <code>session9_3_full_rerun_if_approved</code>; Session 9.10 completed the bounded broader-method proof under <code>session9_10_method_bakeoff_proof_subset</code>; Session 9.11 completed the capped full rerun under <code>session9_11_full_method_bakeoff_rerun_if_approved</code></td></tr>
+      <tr><td>Immediate next artifact</td><td><code>s9_12_high_level_next_steps_viability_review.md</code>: high-level discussion prompt to decide whether Loam should continue, freeze at the best non-production artifact, or shut down if producer dedup cannot be made trustworthy</td></tr>
+      <tr><td>After that</td><td>publish the viability memo; if the project still has a credible path, decide whether to freeze at the Session 9.7 fallback artifact or authorize a materially new continuation, and if not, shut down / shelve rather than queue-build on compromised dedup</td></tr>
       <tr><td>Execution status</td><td>no producer-merge execution path is active; Session 9.11 did not unlock queue-building</td></tr>
-      <tr><td>Primary risk</td><td>the biggest remaining risk is process drift: overriding the measured full-rerun answer and reopening redesign churn even though the broader methods failed to beat the Session 9.7 fallback control under the frozen gates.</td></tr>
+      <tr><td>Primary risk</td><td>the biggest remaining risk is sunk-cost drift: continuing to spend or redesign because the project already exists even if trustworthy producer dedup turns out to be a hard stop for Loam itself.</td></tr>
     </table>
   </div>
 </div>
@@ -419,7 +419,7 @@
     <tr>
       <td>Step 9 &mdash; core adjudication queue</td>
       <td>blocked</td>
-      <td>Fresh rerun, failure audit, strategy memo, routed specialist proof, broadened layered redesign, recovery audit, Session 9.9 design, and the Session 9.10 proof subset are all complete; queue-building stays blocked until the approved full rerun of the three surviving methods clears the frozen gates</td>
+      <td>Fresh rerun, failure audit, strategy memo, routed specialist proof, broadened layered redesign, recovery audit, Session 9.9 design, Session 9.10 proof subset, and the Session 9.11 full rerun are all complete; queue-building stays blocked, and the next step is now a high-level viability review rather than another automatic bakeoff continuation</td>
       <td class="num">$6.14</td>
     </tr>
     <tr>
@@ -429,9 +429,9 @@
       <td class="num">TBD</td>
     </tr>
     <tr style="background:#fff4e5;">
-      <td><strong>Next user touchpoint</strong> &mdash; review the Session 9.11 full-rerun memo and decide whether to accept the freeze at the Session 9.7 fallback control as the best surviving non-production artifact</td>
+      <td><strong>Next user touchpoint</strong> &mdash; review the Session 9.11 result at project level and decide whether Loam should continue if trustworthy producer dedup cannot be achieved</td>
       <td>&mdash;</td>
-      <td>Recommended path: freeze at <code>session9_7_layered_safety_sonnet_r2_narrow</code>. The full-rerun methods improved recall but all reopened false merges, so another redesign should require an explicit new decision rather than happening by drift.</td>
+      <td>Recommended path: hold the high-level viability discussion first. Operationally, keep <code>session9_7_layered_safety_sonnet_r2_narrow</code> as the best surviving non-production artifact and do not queue-build unless that discussion surfaces a genuinely credible continuation.</td>
       <td class="num">&mdash;</td>
     </tr>
   </table>

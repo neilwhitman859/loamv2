@@ -2,7 +2,7 @@
 
 **Opened:** 2026-04-16
 **Status:** Active — merge-only Codex rebuild; the best surviving artifact is still the fallback-safe Session 9.7 layered control, and production readiness remains unproven under the frozen gates.
-**Current block:** Session 9.11 completed the capped full 152-case rerun of the three broader proof survivors. All three reopened false merges at full scale, so queue-building remains blocked and the next honest move is now freeze / closeout at the best non-production artifact.
+**Current block:** Session 9.11 completed the capped full 152-case rerun of the three broader proof survivors. All three reopened false merges at full scale, so queue-building remains blocked. The evidence still points to the Session 9.7 fallback artifact as the best surviving non-production result, but the next session is now a high-level viability review before any freeze / closeout.
 
 **Status addendum (2026-04-21):** Session 9.7 now supplies a layered fallback
 contender that clears the fallback gate but still fails the frozen production
@@ -12,9 +12,12 @@ new model spend. `merge_proposer_plus_veto_v1`,
 `expanded_layered_router_v1`, and `evidence_digest_then_judge_v1` all improved
 recall versus the Session 9.7 fallback control but reopened `5-9` false merges,
 so none cleared the frozen production or fallback gates. The best surviving
-artifact remains `session9_7_layered_safety_sonnet_r2_narrow`, and the next
-recommended step is freeze / closeout rather than another redesign in the same
-session.
+artifact remains `session9_7_layered_safety_sonnet_r2_narrow`, but the user has
+redirected the next session toward a higher-level viability discussion instead
+of an automatic freeze / closeout memo.
+**Strategic addendum:** the key next question is no longer just which artifact
+to freeze. It is whether Loam should continue at all if producer dedup cannot
+be made trustworthy enough for production.
 
 ---
 
@@ -59,10 +62,12 @@ session.
   **Spend:** `$0.00` incremental external API cost. Sprint 6 spend remains
   `$319.51` against the `$450` ceiling.
 
-  **Recommendation after Session 9.11:** freeze at
-  `session9_7_layered_safety_sonnet_r2_narrow` as the best surviving
-  non-production artifact and publish the adjudication-line closeout / handoff
-  memo. Do not open another redesign inside the same session.
+  **Recommendation after Session 9.11:** hold a high-level viability /
+  next-steps discussion before any freeze-closeout memo. Interim operational
+  stance: keep `session9_7_layered_safety_sonnet_r2_narrow` as the best
+  surviving non-production artifact, do not queue-build, and only consider
+  further continuation if that discussion identifies a credible path to
+  trustworthy producer dedup.
 
 - **Session 9.10 (2026-04-21):** Implemented and ran the proof-first broader
   method comparison from Session 9.9 on a bounded trap-heavy subset before any
