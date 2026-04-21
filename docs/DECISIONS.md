@@ -4,6 +4,25 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-21: Session 10.2 keeps the cheap producer dossier backbone-first and makes `RELATED_BUT_DISTINCT` a first-class non-merge edge
+
+While executing Session 10.2, the live DB state made one thing clear: the
+cheap dossier cannot honestly be website-first or relationship-table-first
+because those fields barely exist yet (`producers.website_url = 14`,
+`producer_aliases = 0`, `producer_importers = 0`, producer-level
+`external_ids = 0`). Decision: `producer_dossier_v1` should therefore be built
+around the signals Loam actually has at scale today: canonical names,
+LWIN/TTB/state-registration name forms, place fingerprints, portfolio shape,
+and US regulatory/market clues. Website/profile/history fields are reserved for
+the escalation dossier only.
+
+The same session also locked the selector label semantics: the only allowed
+outputs are `SAME_AS`, `RELATED_BUT_DISTINCT`, `NONE`, and `UNSURE`, and only
+accepted `SAME_AS` edges are merge-eligible. `RELATED_BUT_DISTINCT` must be
+stored explicitly as a durable non-merge edge rather than collapsed into
+`NONE`, because preserving adjacency without merging is a core Sprint 7 safety
+goal.
+
 ### 2026-04-21: Launch Sprint 7 as producer identity ER using `identity_dossier_select_v1`
 
 After the Sprint 6 pairwise merge-only rebuild failed to produce a trustworthy

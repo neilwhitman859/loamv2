@@ -6,5 +6,13 @@
     "shape": "planning",
     "spent": 0.00,
     "notes": "Launched Sprint 7 as the new active producer-identity program after Sprint 6's pairwise merge-only path failed to produce a trustworthy execution route. Locked the new method family as identity_dossier_select_v1 (Identity Dossier Select): reusable producer dossiers, shortlist generation, select-best-or-none adjudication, explicit RELATED_BUT_DISTINCT handling, AI-only escalation, and merges only from accepted SAME_AS edges. Human pair review at scale is out; budget remains fixed; abstention is preferred over risky merges."
+  },
+  {
+    "id": "S10.2",
+    "date": "2026-04-21",
+    "title": "Identity dossier schema + candidate inventory",
+    "shape": "spec",
+    "spent": 0.00,
+    "notes": "Defined producer_dossier_v1, source_signal_inventory, and edge_taxonomy_v1 as the durable evidence contract for Sprint 7. Locked the cheap dossier as backbone-first and regulatory-aware because the canonical producer table is still sparse for websites, aliases, importer links, history, and producer-level external IDs. Fixed the selector label set at SAME_AS, RELATED_BUT_DISTINCT, NONE, and UNSURE; only accepted SAME_AS edges are merge-eligible. The next session should design shortlist generation against that fixed dossier object."
   }
 ]

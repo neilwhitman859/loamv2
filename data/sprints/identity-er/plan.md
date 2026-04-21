@@ -112,7 +112,7 @@ Clusters come **after** accepted `SAME_AS` edges. No optimistic transitivity.
 | Session | Focus | Durable output |
 |---|---|---|
 | 10.1 | Sprint launch + method naming | Sprint scaffold, roadmap updates, next prompt |
-| 10.2 | Producer dossier schema + candidate inventory | `producer_dossier_v1.md` + source inventory |
+| 10.2 | Producer dossier schema + candidate inventory | `producer_dossier_v1.md` + `source_signal_inventory.md` + `edge_taxonomy_v1.md` |
 | 10.3 | Shortlist generation design | shortlist spec + blocking / retrieval plan |
 | 10.4 | Selector contract + evaluation harness | prompt / schema / scorer design |
 | 10.5 | Escalation layer + edge model | escalation spec + accepted-edge rules |
@@ -123,11 +123,11 @@ Clusters come **after** accepted `SAME_AS` edges. No optimistic transitivity.
 
 ## Success criteria
 
-- [ ] `producer_dossier_v1` exists and is small enough to build cheaply
+- [x] `producer_dossier_v1` exists and is small enough to build cheaply
 - [ ] shortlist design can produce manageable candidate sets
-- [ ] selector contract cleanly represents `RELATED_BUT_DISTINCT`
+- [x] selector contract cleanly represents `RELATED_BUT_DISTINCT`
 - [ ] escalation path is bounded and AI-only
-- [ ] accepted-edge rules prevent blind transitive merges
+- [x] accepted-edge rules prevent blind transitive merges
 - [ ] bounded proof shows a credible safety / usefulness improvement over raw
       pairwise judging
 
