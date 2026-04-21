@@ -4,6 +4,26 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-21: Session 10.3 keeps shortlist generation Tier-A-only, caps the selector shortlist at 12, and suppresses known false-candidate families before model calls
+
+Session 10.3 resolved the open Sprint 7 handoff blocker about whether
+importer, retailer, and profile sources should be allowed to seed shortlist
+candidates in `v1`. Decision: **no**. `shortlist_generation_v1` is now
+explicitly Tier-A-only for candidate creation: canonical lexical blocking,
+LWIN producer-name variants, TTB brand/applicant variants, and state-
+registration brand/legal-name variants may generate candidate IDs; importer,
+retailer, merchant, website, profile, terroir, and history sources may only
+re-rank or feed escalation after a candidate already exists.
+
+The same session also fixed the shortlist size and pruning posture. Raw
+candidate union is capped at `24` unique candidates, the final selector
+shortlist is capped at `12`, and the suppression layer must proactively drop
+weak fuzzy hits, shared-surname / first-word collisions, permit-only or
+facility-only adjacency, legal-name-only entities without brand coherence, and
+merchant/importer-context-only candidates. Empty shortlist is an acceptable
+outcome in `v1`; safe abstention is preferred over reviving Sprint 6-style
+noisy pair inflation.
+
 ### 2026-04-21: Session handoffs must explicitly say whether autonomous continuation is allowed
 
 After setting up a heartbeat to continue future sessions, the user pushed for a

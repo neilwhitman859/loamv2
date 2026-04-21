@@ -2,10 +2,9 @@
 
 **Opened:** 2026-04-21
 **Status:** Active
-**Current block:** Session 10.2a hardened the handoff rule: Session 10.3 stays
-blocked until `data/sessions.md` explicitly says autonomous continuation is
-allowed. The open decision is still whether importer / retailer / profile
-sources may seed shortlist candidates in `v1`.
+**Current block:** Session 10.3 resolved shortlist-generation scope. The next
+honest step is Session 10.4: design the selector harness against the now-fixed
+`producer_dossier_v1` + `shortlist_generation_v1` contracts.
 
 ---
 
@@ -76,3 +75,31 @@ sources may seed shortlist candidates in `v1`.
 
   **Why this matters:** the heartbeat can now follow a narrow machine-readable
   gate instead of trying to infer permission from narrative wrap-up prose.
+
+- **Session 10.3 (2026-04-21):** turned Sprint 7's shortlist idea into a fixed
+  retrieval contract.
+
+  **Scope held:** no shortlist-builder implementation, no selector prompt
+  design, no benchmark proof, no queue-building, and no merge execution.
+
+  **Artifacts produced:**
+  - `shortlist_generation_v1.md`
+  - `s10_4_selector_harness_design.md`
+
+  **Decisions locked in the spec:**
+  - only Tier A sources may seed candidate IDs in `v1`: canonical lexical,
+    LWIN producer names, TTB brand/applicant names, and state-registration
+    brand/legal names
+  - importer, retailer, merchant, profile, website, and history sources are
+    re-rank-only or escalation-only, not seed generators
+  - the raw candidate union is capped at `24` unique candidates and the final
+    selector shortlist is capped at `12`
+  - the suppression layer must proactively drop weak fuzzy hits, shared-surname
+    / first-word collisions, permit-only adjacency, and merchant/importer
+    context-only candidates before selector work
+  - empty shortlist is a valid `v1` outcome; safe abstention beats a forced
+    noisy candidate list
+
+  **Why this matters:** Session 10.2a's autonomy blocker is now cleared by an
+  explicit shortlist-source decision, and Session 10.4 can design the selector
+  against a stable candidate universe instead of reopening retrieval scope.

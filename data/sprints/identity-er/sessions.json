@@ -22,5 +22,13 @@
     "shape": "protocol",
     "spent": 0.00,
     "notes": "Added an explicit Autonomous continuation yes/no field to the session handoff protocol and tightened the Auto Next Session heartbeat to rely on that field instead of inferring readiness from prose. The current setting remains blocked because the shortlist seed-source decision for importer, retailer, and profile sources is still unresolved."
+  },
+  {
+    "id": "S10.3",
+    "date": "2026-04-21",
+    "title": "Shortlist generation design",
+    "shape": "spec",
+    "spent": 0.00,
+    "notes": "Defined shortlist_generation_v1 as the fixed retrieval contract for Identity Dossier Select. Locked Tier A-only candidate seeding (canonical lexical, LWIN producer names, TTB brand/applicant names, and state-registration brand/legal names), demoted importer/retailer/profile sources to rerank or escalation only, capped the raw candidate union at 24 and the final selector shortlist at 12, and added suppression rules for weak fuzzy hits, permit-only adjacency, shared-surname/first-word collisions, and merchant/importer-context-only candidates. The autonomy blocker from Session 10.2a is now cleared; the next session should design the selector harness against this fixed shortlist contract."
   }
 ]

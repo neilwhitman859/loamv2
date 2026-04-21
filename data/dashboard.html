@@ -291,14 +291,14 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">Sprint 7 &middot; Producer identity ER &middot; <!--updated-->updated 2026-04-21 16:10 ET<!--/updated--></div>
+  <div class="meta">Sprint 7 &middot; Producer identity ER &middot; <!--updated-->updated 2026-04-21 16:18 ET<!--/updated--></div>
 </div>
 
 <div class="session-strip">
   <div class="session-cell">
     <div class="s-label">Current session</div>
-    <div class="s-cost">10.2a</div>
-    <div class="s-detail">Autonomy gate &middot; heartbeat hardening</div>
+    <div class="s-cost">10.3</div>
+    <div class="s-detail">Shortlist contract &middot; seed caps &middot; suppression</div>
   </div>
   <div class="session-cell">
     <div class="s-label">Session spend</div>
@@ -323,19 +323,19 @@
     <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
     <div class="pstats" style="font-size:11.5px;">no human review at scale &middot; fixed budget &middot; abstention beats false merges</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">method frame</div>
-    <div class="progress-bar"><div class="progress-fill" style="width: 46%"></div></div>
-    <div class="pstats" style="font-size:11.5px;"><code>producer_dossier_v1</code>, source inventory, and edge taxonomy are fixed &middot; shortlist design is next</div>
+    <div class="progress-bar"><div class="progress-fill" style="width: 58%"></div></div>
+    <div class="pstats" style="font-size:11.5px;"><code>producer_dossier_v1</code>, source inventory, edge taxonomy, and shortlist contract are fixed &middot; selector design is next</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div>
-    <div class="progress-bar"><div class="progress-fill" style="width: 30%"></div></div>
-    <div class="pstats" style="font-size:11.5px;">Step 3 is complete at <code>$0</code>; the next artifact is <code>s10_3_shortlist_generation_design.md</code></div>
+    <div class="progress-bar"><div class="progress-fill" style="width: 40%"></div></div>
+    <div class="pstats" style="font-size:11.5px;">Step 4 is complete at <code>$0</code>; the next artifact is <code>s10_4_selector_harness_design.md</code></div>
   </div>
   <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current doctrine:</strong> compare identities, not raw pairs. Build a reusable producer dossier, generate a small shortlist, select best match or <code>none</code>, represent <code>RELATED_BUT_DISTINCT</code> explicitly, and merge only from accepted <code>SAME_AS</code> edges.</div>
   <ul class="steps">
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 1 &mdash; Lock Sprint 7 constraints and roadmap shift</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 2 &mdash; Name the method and open the sprint scaffold</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 3 &mdash; Define <code>producer_dossier_v1</code> and edge taxonomy</span></li>
-    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 4 &mdash; Design candidate shortlist generation</span></li>
-    <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 5 &mdash; Design select-best-or-none harness</span></li>
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 4 &mdash; Design candidate shortlist generation</span></li>
+    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 5 &mdash; Design select-best-or-none harness</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 6 &mdash; Add AI-only escalation dossier</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 7 &mdash; Define accepted-edge and negative-edge rules</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 8 &mdash; Run a bounded proof and decide continue / kill</span></li>
@@ -381,14 +381,14 @@
   </table>
   <div class="vitals">
     <table>
-      <tr><td>Live canonical snapshot</td><td>33,281 producers &middot; 225,281 wines &middot; 125,934 vintages</td></tr>
+      <tr><td>Live canonical snapshot</td><td>33,281 producers &middot; 224,316 wines &middot; 125,934 vintages</td></tr>
       <tr><td>Sprint 6 carry-over</td><td>pairwise benchmark and failure-mode corpus preserved; best artifact remains <code>session9_7_layered_safety_sonnet_r2_narrow</code></td></tr>
       <tr><td>Method name</td><td><code>identity_dossier_select_v1</code> (&ldquo;Identity Dossier Select&rdquo;)</td></tr>
-      <tr><td>Latest artifact</td><td><code>producer_dossier_v1.md</code> + <code>source_signal_inventory.md</code> + <code>edge_taxonomy_v1.md</code></td></tr>
-      <tr><td>Immediate next artifact</td><td><code>s10_3_shortlist_generation_design.md</code> &mdash; design candidate seeds, caps, and ranking rules against the fixed dossier</td></tr>
+      <tr><td>Latest artifact</td><td><code>shortlist_generation_v1.md</code> &mdash; Tier A seed stack, candidate caps, and suppression rules are now fixed</td></tr>
+      <tr><td>Immediate next artifact</td><td><code>s10_4_selector_harness_design.md</code> &mdash; design selector input/output and bounded-proof scoring against the fixed shortlist</td></tr>
       <tr><td>After that</td><td>selector harness &rarr; escalation layer &rarr; bounded proof</td></tr>
-      <tr><td>Execution status</td><td>Step 3 is complete; no producer merges are active and Sprint 7 remains in design / proof-prep mode</td></tr>
-      <tr><td>Primary risk</td><td>shortlist generation could still explode candidate volume if the new source stack is not disciplined enough.</td></tr>
+      <tr><td>Execution status</td><td>Step 4 is complete; no producer merges are active and Sprint 7 remains in design / proof-prep mode</td></tr>
+      <tr><td>Primary risk</td><td>selector design could still blur `SAME_AS` vs `RELATED_BUT_DISTINCT` even with the shortlist now disciplined enough to stay small.</td></tr>
     </table>
   </div>
 </div>
@@ -416,14 +416,14 @@
     </tr>
     <tr>
       <td>Candidate shortlist design</td>
-      <td>next</td>
-      <td>Run Session 10.3 and turn the Tier A source stack into shortlist seeds, caps, and ranking rules once the autonomy gate is cleared</td>
-      <td class="num">TBD</td>
+      <td>done</td>
+      <td>Session 10.3 fixed Tier A-only seeding, capped raw candidates at <code>24</code>, capped the final shortlist at <code>12</code>, and added suppression rules for weak fuzzy / permit-only / merchant-context candidates</td>
+      <td class="num">$0</td>
     </tr>
     <tr>
       <td>Select-best-or-none harness</td>
-      <td>pending</td>
-      <td>Design prompt + schema + scorer for shortlist selection</td>
+      <td>next</td>
+      <td>Design the selector packet, output schema, reason codes, and bounded-proof rubric for shortlist selection</td>
       <td class="num">TBD</td>
     </tr>
     <tr>
@@ -439,9 +439,9 @@
       <td class="num">&le;$20 phase 1</td>
     </tr>
     <tr style="background:#fff4e5;">
-      <td><strong>Next user touchpoint</strong> &mdash; start Session 10.3 shortlist design</td>
+      <td><strong>Next user touchpoint</strong> &mdash; start Session 10.4 selector harness design</td>
       <td>&mdash;</td>
-      <td>Recommended path: keep the next session at <code>$0</code>, use canonical lexical + LWIN + TTB + state-registration signals as the shortlist seed stack, and keep importer / retailer / profile sources out of seed generation unless they are only used as re-rankers. Autonomous continuation is currently <code>no</code> until that decision is explicitly cleared.</td>
+      <td>Recommended path: keep the next session at <code>$0</code>, show the selector one anchor dossier plus at most <code>12</code> candidate mini-cards, make <code>none</code> an explicit first-class option, and score the bounded proof on structured outputs rather than prose. Autonomous continuation is now <code>yes</code> because shortlist seed-source scope is fixed.</td>
       <td class="num">&mdash;</td>
     </tr>
   </table>
@@ -520,7 +520,7 @@
 
 <div class="section-label">Key numbers (DB state)</div>
 <div class="numbers">
-  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">225,281</div></div>
+  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">224,316</div></div>
   <div class="n-item"><div class="n-label">Producers</div><div class="n-value">33,281</div></div>
   <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">125,934</div></div>
   <div class="n-item"><div class="n-label">Prices</div><div class="n-value">40,193</div></div>
@@ -561,7 +561,7 @@
         <tr><td style="color:var(--muted);">Session 10.1 launch + naming</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
         <tr><td style="color:var(--muted);">Session 10.2 dossier schema</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
         <tr><td style="color:var(--muted);">Session 10.2a autonomy gating</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
-        <tr><td style="color:var(--muted);">Session 10.3 shortlist design</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0 planned</td></tr>
+        <tr><td style="color:var(--muted);">Session 10.3 shortlist design</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
         <tr><td style="color:var(--muted);">Selector + escalation proof prep</td><td style="text-align:right; font-variant-numeric: tabular-nums;">TBD</td></tr>
         <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Phase 1 ceiling</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$20.00</td></tr>
         <tr><td style="color:var(--green);">Remaining</td><td style="text-align:right; font-variant-numeric: tabular-nums; color:var(--green);">$20.00</td></tr>
