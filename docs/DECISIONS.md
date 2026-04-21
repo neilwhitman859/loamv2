@@ -4,6 +4,34 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-20: Producer dedup execution scope shifts to merge-only
+
+After the 100-pair blind core audit and broader bundle review, the safest path is to treat producer dedup as a **merge-quality problem first**, not an ownership-modeling problem. For production readiness, the execution-critical verdicts are now `MERGE`, `SKIP`, and `FLAGGED/UNRESOLVED`. `PARENT_CHILD` remains a valid long-term data model concept, but it is **out of the critical path** for getting producer dedup production-ready because sampled quality was too weak and the product value is lower than merge correctness.
+
+Implication: ambiguous former-PC cases default to separate rows unless official evidence makes the ownership relation explicit and worth modeling in a later metadata sprint. We do not hold merge execution hostage on parent/child perfection.
+
+### 2026-04-20: Producer dedup ground truth = official-domain evidence + local wine-list coherence + deterministic identity rules
+
+Ground truth for producer dedup is defined as:
+1. **Official-domain evidence** first: producer website, official portfolio/brand pages, official importer portfolio pages when they are the brand's authoritative US-facing source.
+2. **Local wine-list coherence** second: the wines attached to each producer row must make geographic and brand sense together; region/appellation incompatibility is a major red flag against merge.
+3. **Deterministic identity rules** third: rules in `docs/IDENTITY_RULES.md` decide how to interpret renames, shared surnames, private labels, second wines, merchant prefixes, and other edge cases.
+
+Search engines are retrieval tools, not ground truth by themselves. They help find the evidence; the evidence still has to cash out in official sources plus coherent local catalog state.
+
+### 2026-04-20: Existing producer pair corpus is a benchmark artifact, not a protected execution input
+
+The current `producer_dedup_pairs` / `routing_stage3` corpus is worth keeping for audit, benchmarking, and regression comparison, but it is **not** assumed to be the final candidate universe for production execution. The pair list may be rebuilt from scratch if recall, precision, or reviewability improve. Historical outputs from Claude stay useful as:
+- a benchmark set,
+- a source of known failure modes,
+- and a regression target for the next method.
+
+They are not privileged as ground truth.
+
+### 2026-04-20: Core vs tail is a product-risk split, not an old pipeline bucket
+
+Going forward, `core` means producers with meaningful product blast radius: US-market presence, shopper-visible commercial signals, or enough catalog depth that a wrong merge would be highly visible. `Tail` means the thin-signal long tail, usually LWIN-only or near-LWIN-only producers with small catalogs and little external visibility. The old Sprint 6 `sprint6_core_producers` table remains a useful benchmark artifact, but the split can be recomputed from this product-risk definition for the rebuild.
+
 ### 2026-04-19: Survivor selection for producer dedup = US-market label form
 
 User (2026-04-19): "Keep the survivor that is written on the bottle. Call producers what producers want to be called in America."
@@ -1922,3 +1950,11 @@ All 493 B6.5a Chrome-validated verdicts (yellow 71 + Core 143 + Mid 138 + Tail 1
 10. **§11.4.s added** — sub-brands / cuvée-lines / named product tiers under a parent. 29 Chrome pairs (25 PC, 2 MERGE, 2 SKIP). Verget ⇔ Verget au Sud, Haan ⇔ Haan Hanenhof, Argento ⇔ Artesano de Argento, Koerner ⇔ Brothers Koerner.
 
 None of these amendments change any verdict already frozen in the four verdict JSONL files — they retrospectively describe what Chrome did. §11.8 logging is satisfied. All 493 verdicts remain the source of truth for B6.6 execution; §11.4 is the documentation of *why* those verdicts are correct.
+
+### 2026-04-20: Producer dedup benchmark v1 is merge-only and frozen during the bakeoff
+
+Session 2 ("Benchmark Freeze") created `data/sprints/dedup/benchmark_v1.json` as the evaluation target for the merge-only rebuild. Scope decision: `PARENT_CHILD` stays out of the benchmark entirely; only `MERGE` and `SKIP` are scored. Freeze rule: do not change the benchmark during the bakeoff except for clear factual mistakes, corrupted metadata, or accidental duplicate-case construction. The benchmark is intentionally compact and pattern-led, not exhaustive: (1) a documented 100-case merge-only reconstruction of the referenced blind core audit from the final Chrome core ledger, because the exact 100-case slice was not stored as a standalone file; (2) representative known false-merge patterns; (3) representative known missed-merge patterns; (4) a clean random tail sample. This keeps the bakeoff target stable so we measure method quality rather than moving benchmark composition.
+
+### 2026-04-20: Standardize session work around one primary deliverable plus explicit handoff
+
+User chose to formalize working procedure instead of relying on ad hoc fresh starts. Repo-wide rule: one session should map to one primary deliverable and one roadmap step or sub-step, with explicit fields at open (`Goal`, `Primary deliverable`, `In scope`, `Out of scope`, `Tables read/write`) and explicit handoff fields at close (`Produced`, `Decisions made`, `Open risks`, `Next recommended session`). `AGENTS.md` is the canonical rulebook; `data/sessions.md` mirrors the format as the copy-paste whiteboard template; sprint-specific playbooks can add narrower guidance without replacing the repo-wide protocol.

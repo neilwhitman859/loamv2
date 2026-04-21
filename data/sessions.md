@@ -2,13 +2,29 @@
 
 Active and recent sessions. Read at session start, append when starting/finishing work.
 
+## Session Protocol
+
+Each session should map to one primary deliverable and one roadmap step or sub-step.
+
+When starting a session under **Active**, use this shape:
+
+- **YYYY-MM-DD Session N: short label** (Codex) - Goal: ... Primary deliverable: ... In scope: ... Out of scope: ... Tables read/write: ...
+
+When moving a session to **Done**, rewrite the entry in this shape:
+
+- **YYYY-MM-DD Session N: short label** (Codex) - Produced: ... Decisions made: ... Open risks: ... Next recommended session: ...
+
+If the work grows beyond one primary deliverable, close the current session and start a new one instead of stretching the entry.
+
 ## Active
 
-(B6.5a-partial PAUSED for user reassess. Stage 2 analysis report +
-recommendations at `data/sprints/dedup/b6_5a_stage2_analysis.md`. Awaiting
-user Path 1/2/3 decision before resuming L3 + merge execution.)
+- **2026-04-20 Session 2: benchmark freeze** (Codex) - Building a frozen producer-dedup benchmark at [`data/sprints/dedup/benchmark_v1.json`](/C:/Users/neilw/Documents/GitHub/loamv2/data/sprints/dedup/benchmark_v1.json) from the blind core audit, known false-merge patterns, known missed-merge patterns, and a clean random tail sample. Tables read for context: `producers`, `wines`, `wine_vintages`, `wine_vintage_prices`, `wine_vintage_scores`, `wine_grapes`, `wine_insights`, `producer_dedup_pairs`, `producer_dedup_routing_stage3`. No DB writes.
 
 ## Done
+
+- **2026-04-20 Session 1: pair corpus audit** (Codex) - Audited [`pipeline/identity/producer_blocking.py`](/C:/Users/neilw/Documents/GitHub/loamv2/pipeline/identity/producer_blocking.py) against the merge-only rebuild roadmap, live DB state, and known false-merge/missed-merge patterns from B6.5a / Step 9. Produced [`data/sprints/dedup/session1_pair_corpus_audit.md`](/C:/Users/neilw/Documents/GitHub/loamv2/data/sprints/dedup/session1_pair_corpus_audit.md) with keep/tune/drop dispositions and candidate-generation v1 recommendations. Tables read: `producers`, `wines`, `wine_vintages`, `wine_vintage_prices`, `wine_vintage_scores`, `wine_grapes`, `wine_insights`, `producer_dedup_pairs`, `producer_dedup_routing_stage3`. No DB writes.
+
+- **2026-04-20 Producer dedup reset: merge-only rebuild design** (Codex) - Auditing and tightening `docs/IDENTITY_RULES.md`, redefining `core` vs `tail` around product risk rather than old routing buckets, and drafting a focused rebuild roadmap for producer dedup. Tables read for context: `producers`, `wines`, `producer_dedup_pairs`, `producer_dedup_routing_stage3`, `producer_merge_history`. No DB writes.
 
 - **2026-04-17 → 2026-04-18 B6.5a-partial: Production ladder + Stage 2 analysis** (Opus 4.7 1M, $105.85 pipeline + ~$460 Opus chat) — Ran Steps 1-6 of the 11-step B6.5a plan plus $16 of exploratory probes, then STOPPED per user reassess directive before Step 7 (L3). **Step 1 L1.5 Gemini basic ($32.13):** 150,885/151,120 pairs classified (99.84%). Mid-run OR cap hit at $100 (then $200) forced pause+resume twice; user raised to $300. **Step 2 Stage 1 routing:** initial 0.97/0.97 SKIP threshold auto-skipped only 24K (vs projected 100-125K) — tripped plan's pause rule. Ran 600-pair band-stratified SKIP audit ($8) through L2 + L3 no-web: 0 auto-apply MERGE FNs across all bands. User chose 0.95/0.95 over 0.97, 0.93, or asymmetric. Final Stage 1: auto-skip 91,555, auto-merge 1,520, escalations 57,810. **Steps 4+5 L2 + L2.5 rich ($51.14 combined, parallel):** L2 Haiku rich 57,459 at $38.04; L2.5 Gemini rich 57,570 at $13.10. Cross-family MERGE consensus 1,097 pairs; aggressive-Gemini bucket (L2 SKIP × L2.5 MERGE) 1,055 pairs. **Step 6 Stage 2 routing:** auto-skip 34,078, auto-merge 676, PC review 3,226, residual 19,575, missing-tier 255. **Residual above 10K trigger** — same root cause as Stage 1; 88% of residual is both-tier SKIP below 0.95/0.95. **$16 exploratory probes (470 no-web + 65 web):** (1) Stage 2 SKIP residual 0.93-0.94 band = 2% L3 MERGE rate, safe to lower threshold. (2) Stage 2 auto-SKIP control = 1% FN, acceptable. (3) **Stage 2 auto-MERGE 10% L3 SKIP + 7% UNCERTAIN = 17% dissent — auto-applying 676 would merge ~68 wrong producers.** Patterns catching Haiku+Gemini but not L3: shared-surname splits (Faustino/FRU, Janisson/Janisson Baradon, Tertre Daugay/Daugay, Andre Lorentz/Lorentz), HdB négociant variants, same-name cross-country (McPherson US/AU), collaboration labels (Savart & Chartogne), formal-vs-casual (Weingut Johannisberg/Johannisberg). (4) Random residual = 6% MERGE yield. (5) L2 SKIP × L2.5 MERGE disagreement = 60% L3 MERGE — Gemini catches real merges Haiku missed. (6) Web vs no-web A/B on random residuals = 5% delta (marginal). (7-9) Web on négociant=20%, disagreement=67%, cross-country=30% — web valuable on specific buckets only. **Recommendations in `b6_5a_stage2_analysis.md`:** Path 1 Pragmatic $218 (in ceiling, 11K user review), Path 2 Balanced $313 ($320 raise needed, my rec, 2-3K user review), Path 3 Rigor $451 ($500 raise, 1.5-2K user review). All three lower Stage 2 SKIP to 0.93/0.93 and L3-validate auto-MERGEs ($9). §11 amendments surfaced: shared-surname-split rule, cross-country same-name strengthening, collaboration-label rule. Cheaper web search researched: Serper.dev $1/1K vs Anthropic $10/1K; pre-fetch + Haiku rich = 18x cheaper than L3 Sonnet + built-in web; worth building for Sprint 7. **Meta-tooling built:** `pipeline/analyze/session_tokens.py`, `pipeline/analyze/update_dashboard.py`, rewritten `data/dashboard.html` (light mode, live strip, 10-min auto-tick, spend breakdown), `data/stats/spend_ledger.md`, extended L2/L3/Gemini scripts with `--pair-ids-file`. **Tables touched:** 7 new method_names in `producer_dedup_pairs` (none modify producers/wines); 2 working tables `producer_dedup_routing_stage1` + `producer_dedup_routing_stage2`. **Sprint 6 total so far: ~$208.80 / $250 ceiling, $41 remaining.** Files: `data/sprints/dedup/b6_5a_stage2_analysis.md` (full recommendations), `b6_5a_stage1_escalations.json` (57,810 pair IDs), `b6_5a_skip_audit_pair_ids.json` (600 band-stratified), `b6_5a_probe_*.json` (9 files, 535 pair IDs), `b6_5a_routing_sql.md`, `b6_5a_l4_audit_queries.sql`, `pipeline/analyze/session_tokens.py`, `pipeline/analyze/update_dashboard.py`, `data/stats/spend_ledger.md`, 9 probe logs in `data/stats/b6_5a_*`.
 
