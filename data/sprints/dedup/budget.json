@@ -17,9 +17,10 @@
     "S9_5_freeze_or_rebuild_strategy": 0.00,
     "S9_6_pattern_specialist_proof": 0.12,
     "S9_7_layered_safety_redesign": 0.44,
-    "S9_8_recover_production_from_layered_fallback": 0.00
+    "S9_8_recover_production_from_layered_fallback": 0.00,
+    "S9_9_method_bakeoff_design": 0.00
   },
-  "remaining_projected_b6_5_thru_close": "Session 9.8 found no narrow recall-only continuation that is still honest under the frozen benchmark and gates. Further Sprint 6 spend is not justified as another narrow proof. Freeze at the Session 9.7 layered fallback endpoint unless the user explicitly opens a broader multi-family redesign.",
+  "remaining_projected_b6_5_thru_close": "Session 9.9 keeps Sprint 6 pointed at production readiness through a broader method-class bakeoff. Keep benchmark_v1, the Session 4 gates, and the Session 9.7 safety base fixed; spend only on a proof-first comparison of a few materially different methods. Recommended continuation target: $3-15 total, hard cap $25, with freeze at the Session 9.7 fallback endpoint if no contender survives the proof subset cleanly.",
   "remaining_sprint_ceiling": 130.49,
   "paths_for_continuation": {
     "legacy_path_1_pragmatic": {
@@ -38,5 +39,5 @@
       "status": "archived as pre-rebuild analysis"
     }
   },
-  "note": "The legacy B6.5a partial path remains useful as benchmark and failure-mode context. The merge-only Codex rebuild has now completed the Session 9.8 recovery audit. The new leading artifact remains session9_7_layered_safety_sonnet_r2_narrow: 0 false merges overall, fallback gate pass, production gate fail. Session 9.8 did not find another honest narrow continuation, so queue-building remains blocked and the recommended posture is now freeze at that Session 9.7 layered fallback endpoint unless the user explicitly opens a broader redesign."
+  "note": "The legacy B6.5a partial path remains useful as benchmark and failure-mode context. The leading artifact remains session9_7_layered_safety_sonnet_r2_narrow: 0 false merges overall, fallback gate pass, production gate fail. Session 9.8 showed there is no honest narrow continuation. Session 9.9 records the user's decision to keep chasing production readiness through a broader method bakeoff instead of a plain model rerun. Queue-building remains blocked; next spend should be limited to the proof-first method comparison."
 }

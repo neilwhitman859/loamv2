@@ -1,21 +1,66 @@
 # Sprint 6: Dedup (Producers) — journal
 
 **Opened:** 2026-04-16
-**Status:** Active — merge-only Codex rebuild; first real v1 adjudication bakeoff complete; no contender cleared production or fallback gates
-**Current block:** Session 6 closeout complete under `session6_first_real_bakeoff_v1`. Next block is a focused v2 bakeoff redesign using the new packet/request/normalize/score path plus the Session 6 error ledger. Queue-building remains blocked until a contender lineup actually clears the frozen gates.
+**Status:** Active — merge-only Codex rebuild; a fallback-safe layered contender exists, but production readiness is still unproven under the frozen gates.
+**Current block:** Session 9.9 has locked the broader method-bakeoff design. The next block is the proof-first comparison of broader adjudication methods against the fixed Session 9.7 safety base. Queue-building remains blocked.
 
 **Status addendum (2026-04-21):** Session 9.7 now supplies a layered fallback
 contender that clears the fallback gate but still fails the frozen production
 gate.
-**Current block addendum:** Session 9.8 found that no narrow recall-focused
-continuation is credible enough to recover production readiness. The current
-recommendation is to freeze the adjudication path at
-`session9_7_layered_safety_sonnet_r2_narrow`, unless the user explicitly
-reopens Sprint 6 with a broader multi-family redesign.
+**Current block addendum:** Session 9.9 records that the user explicitly kept
+Sprint 6 aimed at production readiness and authorized a broader redesign. The
+current block is now a budget-bounded method bakeoff on top of the fixed
+Session 9.7 safety base, with a proof subset next and queue-building still
+paused.
 
 ---
 
 ## Block log
+
+- **Session 9.9 (2026-04-21):** Converted the Session 9.8 freeze finding into a
+  broader, budget-bounded method-bakeoff design after the user explicitly kept
+  Sprint 6 aimed at production readiness.
+
+  **Scope held:** kept `benchmark_v1`, the frozen Session 4 gates, and the
+  Session 9.7 layered safety base fixed; did not queue-build; did not mutate
+  the benchmark; and did not run another proof inside the design session.
+
+  **Implementation:**
+  - Added the design memo
+    `data/sprints/dedup/session9_9_method_bakeoff_design.md`.
+  - Added the follow-on proof prompt
+    `data/session_prompts/s9_10_method_bakeoff_proof_if_approved.md`.
+  - Logged the continuation decision in `docs/DECISIONS.md`.
+
+  **Design result:**
+  - the honest continuation is now a **method-class bakeoff**, not another
+    plain model rerun and not another narrow rescue
+  - the fixed control remains
+    `session9_7_layered_safety_sonnet_r2_narrow`
+  - the recommended contender classes are:
+    `expanded_layered_router_v1`, `signature_router_v1`,
+    `merge_proposer_plus_veto_v1`, and `evidence_digest_then_judge_v1`
+  - the next execution step is a proof subset built from the `9` remaining
+    misses, the `5` Session 9.6 false merges, signature-adjacent skip controls,
+    and a small hold set of Session 9.7 recall wins
+
+  **Budget posture:**
+  - Session 9.10 proof subset target: `$0-5`, hard cap `$8`
+  - any later full 152-case rerun only if proof survivors exist
+  - combined continuation target: `$3-15`, hard cap `$25`
+
+  **Interpretation:** Session 9.8 still stands: there is no honest narrow fix.
+  But because the user explicitly rejected fallback-only closure as the sprint
+  goal, Sprint 6 now has one credible continuation left: compare a small number
+  of materially different adjudication methods under the frozen benchmark and
+  gates.
+
+  **Spend:** `$0.00` incremental external API cost. Sprint 6 spend remains
+  `$319.51` against the `$450` ceiling.
+
+  **Recommendation after Session 9.9:** implement the method contenders and run
+  the proof subset. If no contender survives cleanly, freeze at
+  `session9_7_layered_safety_sonnet_r2_narrow`.
 
 - **Session 9.8 (2026-04-21):** Audited the remaining misses in the Session 9.7
   layered fallback and tested whether one more narrow continuation was still

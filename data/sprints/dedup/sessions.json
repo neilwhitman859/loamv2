@@ -150,5 +150,13 @@
     "shape": "audit",
     "spent": 0.00,
     "notes": "Published data/sprints/dedup/session9_8_recover_production_from_layered_fallback.md and conditional follow-on prompt data/session_prompts/s9_9_broader_redesign_if_not_freezing.md. Audited the exact miss set in session9_7_layered_safety_sonnet_r2_narrow and found 9 remaining disagreements, all missed merges. Session 9.7 had not lost recall versus Session 9.6; it had only removed the 5 false merges. The remaining blocker is too fragmented for one more honest narrow continuation: production still needs at least 5 additional safe recoveries, the 5 blind-core blockers span 5 family/signature shapes, 4 of the 9 remaining misses sit outside the current routed-family specialist bundle, and the repeating signatures are entangled with benchmark skip controls and prior false-merge traps. No new proof was run because any proof small enough to stay narrow would not change the production-readiness answer, and any proof large enough to matter would already be a broader redesign. Recommendation: freeze the adjudication path at the Session 9.7 layered fallback endpoint unless the user explicitly reopens Sprint 6 with a broader multi-family redesign."
+  },
+  {
+    "id": "S9.9",
+    "date": "2026-04-21",
+    "title": "Broader method bakeoff design",
+    "shape": "design",
+    "spent": 0.00,
+    "notes": "Published data/sprints/dedup/session9_9_method_bakeoff_design.md and follow-on prompt data/session_prompts/s9_10_method_bakeoff_proof_if_approved.md. User explicitly kept Sprint 6 aimed at production readiness after Session 9.8, so the continuation is now a broader method-class bakeoff rather than a plain model rerun or another narrow rescue. The design keeps benchmark_v1, the Session 4 hard gates, and the Session 9.7 layered safety base fixed, and recommends four contender classes: expanded layered router, signature router, merge proposer plus veto, and evidence digest then judge. Next execution step is a proof subset built from the 9 remaining misses, the 5 Session 9.6 false merges, signature-adjacent skip controls, and a small hold set of Session 9.7 recall wins. Budget posture: proof subset target $0-5 with hard cap $8; any later full rerun only if proof survivors exist."
   }
 ]

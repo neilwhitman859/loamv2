@@ -291,7 +291,7 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">Sprint 6 &middot; Merge-only rebuild checkpoint &middot; <!--updated-->updated 2026-04-21 12:23 ET<!--/updated--></div>
+  <div class="meta">Sprint 6 &middot; Merge-only rebuild checkpoint &middot; <!--updated-->updated 2026-04-21 12:47 ET<!--/updated--></div>
 </div>
 
 <!-- ============= SESSION TOKENS ============= -->
@@ -318,18 +318,18 @@
 <!-- ============= CURRENT STEP ============= -->
 <div class="section-label">Current step</div>
 <div class="block-card">
-  <h2>Rebuild checkpoint &mdash; a layered fallback now exists, but production is still blocked</h2>
-  <div class="goal">Session 9.8 audited the remaining miss set in the Session 9.7 layered fallback. The layered run still has `9` disagreements, all missed merges, and production would still need at least `5` additional safe recoveries. Those blockers are too fragmented for one more honest narrow continuation: the blind-core misses span `5` family/signature shapes, `4` of the `9` remaining misses sit outside the current routed-family specialist bundle, and the repeating signatures are entangled with benchmark skip controls. The honest posture is now freeze at the Session 9.7 fallback state unless the user explicitly opens a broader redesign.</div>
+  <h2>Rebuild checkpoint &mdash; broader method bakeoff approved, queue work still paused</h2>
+  <div class="goal">Session 9.8 showed there is no honest narrow continuation on top of the Session 9.7 layered fallback. Session 9.9 converts that finding into the next credible production-ready path: a budget-bounded method bakeoff that keeps the benchmark, hard gates, and Session 9.7 safety base fixed while comparing a few materially different adjudication architectures. Queue-building remains paused until that proof-first bakeoff produces a real production candidate.</div>
   <!--progress-block-->
   <div class="block-progress">
-    <div class="pstep">Rebuild artifacts now include the Session 9.2 unresolved-official backstop, the fresh Session 9.3 rerun on `v2.1` packets, the Session 9.4 failure audit, the Session 9.5 freeze-or-rebuild strategy memo, the Session 9.6 routed-specialist proof, the Session 9.7 layered safety-gate redesign, and the Session 9.8 recovery audit</div><div class="pstats">Session 1 = pair corpus audit &middot; Session 2 = benchmark freeze &middot; Session 3 = evidence packet &middot; Session 4 = broad bakeoff design &middot; Session 5 = packet generator + evaluation harness &middot; Session 6 = first real adjudication bakeoff &middot; Session 7 = v2 design memo &middot; Session 8 = v2 implementation + rerun &middot; Session 9 = v3 continuity audit + redesign memo &middot; Session 9.1 = v3 continuity implementation + first proof rerun &middot; Session 9.2 = unresolved-official backstop + fresh proof rerun &middot; Session 9.3 = approved full rerun on fresh packets &middot; Session 9.4 = post-rerun failure audit &middot; Session 9.5 = freeze-or-rebuild strategy &middot; Session 9.6 = routed pattern-specialist proof &middot; Session 9.7 = layered safety-gate redesign &middot; Session 9.8 = recovery audit and freeze recommendation</div>
+    <div class="pstep">Rebuild artifacts now include the Session 9.2 unresolved-official backstop, the fresh Session 9.3 rerun on `v2.1` packets, the Session 9.4 failure audit, the Session 9.5 freeze-or-rebuild strategy memo, the Session 9.6 routed-specialist proof, the Session 9.7 layered safety-gate redesign, the Session 9.8 recovery audit, and the Session 9.9 method-bakeoff design</div><div class="pstats">Session 1 = pair corpus audit &middot; Session 2 = benchmark freeze &middot; Session 3 = evidence packet &middot; Session 4 = broad bakeoff design &middot; Session 5 = packet generator + evaluation harness &middot; Session 6 = first real adjudication bakeoff &middot; Session 7 = v2 design memo &middot; Session 8 = v2 implementation + rerun &middot; Session 9 = v3 continuity audit + redesign memo &middot; Session 9.1 = v3 continuity implementation + first proof rerun &middot; Session 9.2 = unresolved-official backstop + fresh proof rerun &middot; Session 9.3 = approved full rerun on fresh packets &middot; Session 9.4 = post-rerun failure audit &middot; Session 9.5 = freeze-or-rebuild strategy &middot; Session 9.6 = routed pattern-specialist proof &middot; Session 9.7 = layered safety-gate redesign &middot; Session 9.8 = recovery audit &middot; Session 9.9 = broader method-bakeoff design</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">direction and rules</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">merge-only path locked &middot; PARENT_CHILD deferred &middot; core/tail redefined by product risk</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">benchmark + evidence</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">152 benchmark pairs frozen &middot; JSONL-first evidence packet defined &middot; hidden benchmark overlay split from visible evidence</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">bakeoff spec</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">v1 contender set frozen &middot; `FLAGGED` semantics locked &middot; production/fallback gates explicit</div>
-    <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div><div class="progress-bar"><div class="progress-fill" style="width: 97%"></div></div><div class="pstats" style="font-size:11.5px;">Session 9.8 showed the remaining miss set is too fragmented for one more narrow continuation: `9` misses, `6` signatures, `4` misses outside the current routed-family specialist bundle, and freeze now recommended at the Session 9.7 fallback endpoint</div>
+    <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div><div class="progress-bar"><div class="progress-fill" style="width: 97%"></div></div><div class="pstats" style="font-size:11.5px;">Session 9.9 keeps the sprint moving toward production readiness through a proof-first method bakeoff: frozen control = Session 9.7 layered fallback, next step = bounded proof subset across broader method classes</div>
   </div>
   <!--/progress-block-->
-  <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current rebuild doctrine:</strong> ground adjudication in official-domain evidence, local wine-list coherence, and deterministic identity rules. Search is retrieval, not truth by itself. Session 9.7's layered safety base stays fixed; Session 9.8 concludes that any recall attempt large enough to matter would already be a broader multi-family positive-control redesign, not one more narrow continuation.</div>
+  <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current rebuild doctrine:</strong> ground adjudication in official-domain evidence, local wine-list coherence, and deterministic identity rules. Search is retrieval, not truth by itself. Session 9.7's layered safety base stays fixed; Session 9.9 says the only honest continuation is now a proof-first method bakeoff on broader architectures, not a plain model zoo and not one more narrow continuation.</div>
   <!--block-steps-->
   <ul class="steps">
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 1 &mdash; Freeze merge-only direction</span></li>
@@ -340,7 +340,7 @@
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 6 &mdash; Broad bakeoff design</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 7 &mdash; Packet generator + evaluation harness</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 8 &mdash; First adjudication bakeoff</span></li>
-    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 9 &mdash; Build core adjudication queue (queue work stays paused; Session 9.8 did not find another honest narrow continuation, so freeze is recommended unless the user explicitly opens a broader redesign)</span></li>
+    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 9 &mdash; Build core adjudication queue (queue work stays paused; Session 9.10 should first run the bounded method-bakeoff proof subset designed in Session 9.9)</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 10 &mdash; Build tail adjudication queue</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 11 &mdash; Publish pre-execution scorecard</span></li>
   </ul>
@@ -350,7 +350,7 @@
 <div class="section-label">Sprint 6 &mdash; Core/Tail split &amp; quality targets</div>
 <div class="sprint-card">
   <div class="goal">
-    Producer dedup on 33,281 rows and 225,281 wines. Core/tail is now a product-risk split used for evaluation, not the old routing-stage execution plan. Session 9.7 already produced the fallback-safe layered contender. Session 9.8 then tested whether one more narrow recall-focused continuation was still honest and concluded no: the current recommendation is now freeze at that layered fallback endpoint unless the user explicitly reopens the work as a broader redesign.
+    Producer dedup on 33,281 rows and 225,281 wines. Core/tail is now a product-risk split used for evaluation, not the old routing-stage execution plan. Session 9.7 already produced the fallback-safe layered contender. Session 9.8 then showed there was no honest narrow continuation on top of it. Session 9.9 converts that finding into the approved continuation: a broader method bakeoff aimed at production readiness, with the Session 9.7 safety base, the frozen benchmark, and the hard gates all held fixed.
   </div>
   <table class="metrics-table">
     <tr>
@@ -381,10 +381,10 @@
       <tr><td>Benchmark state</td><td><code>benchmark_v1</code> frozen at 152 merge-only cases</td></tr>
       <tr><td>Evidence packet state</td><td><code>evidence_packet_v2</code> rebuilt as fresh <code>v2.1</code> packets with hidden benchmark overlay stripped from model-visible inputs</td></tr>
       <tr><td>Bakeoff state</td><td>v1 real run is preserved under <code>session6_first_real_bakeoff_v1</code>; v2 real run is canonical under <code>session7_first_real_bakeoff_v2</code>; Session 9.2 proof-only artifacts live under <code>session9_2_unresolved_official_backstop_proof_subset</code> on fresh <code>v2.1</code> packets; Session 9.3 completed the approved full rerun under <code>session9_3_full_rerun_if_approved</code></td></tr>
-      <tr><td>Immediate next artifact</td><td><code>session9_8_recover_production_from_layered_fallback.md</code>: records the remaining miss audit, the failed search for one more narrow continuation, and the freeze recommendation</td></tr>
-      <tr><td>After that</td><td>recommended next move: freeze at the Session 9.7 layered fallback state; only if that freeze is explicitly rejected should work reopen under <code>s9_9_broader_redesign_if_not_freezing.md</code></td></tr>
+      <tr><td>Immediate next artifact</td><td><code>session9_9_method_bakeoff_design.md</code>: locks the broader method-class bakeoff, the contender set, the proof-first sequencing, and the continuation budget</td></tr>
+      <tr><td>After that</td><td>recommended next move: run the bounded proof subset under <code>s9_10_method_bakeoff_proof_if_approved.md</code>; only if one or more methods survive cleanly should the sprint spend on a full 152-case rerun</td></tr>
       <tr><td>Execution status</td><td>no producer-merge execution path is active yet</td></tr>
-      <tr><td>Primary risk</td><td>false merges are now controlled in the leading layered run, but the remaining recall blocker is too fragmented for a small safe patch; a careless continuation would likely become benchmark-shaped special-casing or reopen the old trap families while chasing those misses</td></tr>
+      <tr><td>Primary risk</td><td>false merges are now controlled in the leading layered run, but the remaining recall blocker is architectural. The main risk now is turning the continuation into a disguised model zoo or reopening the old trap families while testing broader positive-control methods.</td></tr>
     </table>
   </div>
 </div>
@@ -419,7 +419,7 @@
     <tr>
       <td>Step 9 &mdash; core adjudication queue</td>
       <td>blocked</td>
-      <td>Fresh rerun, failure audit, strategy memo, routed specialist proof, broadened layered redesign, and Session 9.8 recovery audit are all complete; the leading path still clears the fallback gate with 0 false merges overall but no honest narrow continuation remains, so queue-building stays blocked and freeze is now recommended</td>
+      <td>Fresh rerun, failure audit, strategy memo, routed specialist proof, broadened layered redesign, recovery audit, and Session 9.9 design are all complete; queue-building stays blocked while the next session tests the new method contenders on a bounded proof subset</td>
       <td class="num">$6.14</td>
     </tr>
     <tr>
@@ -429,9 +429,9 @@
       <td class="num">TBD</td>
     </tr>
     <tr style="background:#fff4e5;">
-      <td><strong>Next user touchpoint</strong> &mdash; review the Session 9.8 recovery memo and decide whether to freeze at the Session 9.7 layered fallback endpoint or explicitly open a broader redesign</td>
+      <td><strong>Next user touchpoint</strong> &mdash; review the Session 9.9 design memo and decide whether to approve the Session 9.10 method-bakeoff proof subset</td>
       <td>&mdash;</td>
-      <td>Recommended path: freeze at the stronger Session 9.7 fallback endpoint. Reopen only if you want a broader multi-family redesign, not one more narrow continuation.</td>
+      <td>Recommended path: approve the proof-first method bakeoff. If none of the broader methods survives cleanly, freeze at the stronger Session 9.7 fallback endpoint.</td>
       <td class="num">&mdash;</td>
     </tr>
   </table>
@@ -509,7 +509,7 @@
   <li><span class="marker done-marker">&#10003;</span> <span>Sprint 3 Fix</span> <span class="detail">&mdash; 158 fixed, 101 deferred, $0</span></li>
   <li><span class="marker done-marker">&#10003;</span> <span>Sprint 4 Demo</span> <span class="detail">&mdash; 515 wines Grade A across 14 producers, $37.44</span></li>
   <li><span class="marker done-marker">&#10003;</span> <span>Sprint 5 AI Bakeoff</span> <span class="detail">&mdash; 29 models tested, gpt-5.4-mini leader under current prompt, ~$55</span></li>
-  <li><span class="marker current-marker">&#9654;</span> <span class="current">Sprint 6 Producer Dedup</span> <span class="detail">&mdash; merge-only Codex rebuild; a broader layered redesign now clears the fallback gate with 0 false merges overall, but the frozen production gate still fails on recall so queue execution remains blocked</span></li>
+  <li><span class="marker current-marker">&#9654;</span> <span class="current">Sprint 6 Producer Dedup</span> <span class="detail">&mdash; merge-only Codex rebuild; the best current artifact still clears the fallback gate with 0 false merges overall, and Session 9.9 now points the sprint at a broader method bakeoff to try to recover production-ready recall without reopening those merges</span></li>
   <li><span class="marker future-marker">&#9675;</span> <span class="future">Sprint 7 Wine Dedup</span> <span class="detail">&mdash; LWIN-7 backbone + producer-filtered blocking + deterministic-tuple match + cheap-AI remainder + Haiku+Serper on escalations only. <strong>~$100-200 projected</strong> (revised down from $2-3K).</span></li>
   <li><span class="marker future-marker">&#9675;</span> <span class="future">Sprint 8</span> <span class="detail">&mdash; prompt v2 + L3 fact-check gate + re-enrichment + demo sharing</span></li>
 </ul>
