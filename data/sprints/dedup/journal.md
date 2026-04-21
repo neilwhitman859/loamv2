@@ -1,12 +1,84 @@
 # Sprint 6: Dedup (Producers) — journal
 
 **Opened:** 2026-04-16
-**Status:** Active — B6.5a Phase B Chrome validation in progress (Path A, plan locked 2026-04-19)
-**Current block:** B6.5a Phase B — Chrome-validating 71 yellow-flag top producers + 143 Core escalate pairs. Plan LOCKED per `data/sprints/dedup/chrome_validation/PLAN_LOCK.md` — do not redesign, do not substitute §11 defaults for Chrome on Core. Working log: `yellow_verdicts.jsonl` (producer idx). Resume from last logged idx. Prior Sonnet session drifted to heuristic shortcuts; user re-committed to rigorous Chrome-per-pair.
+**Status:** Active — merge-only Codex rebuild; first real v1 adjudication bakeoff complete; no contender cleared production or fallback gates
+**Current block:** Session 6 closeout complete under `session6_first_real_bakeoff_v1`. Next block is a focused v2 bakeoff redesign using the new packet/request/normalize/score path plus the Session 6 error ledger. Queue-building remains blocked until a contender lineup actually clears the frozen gates.
 
 ---
 
 ## Block log
+
+- **Session 6 (2026-04-20):** First real adjudication bakeoff completed through the
+  frozen Session 5 packet/request/normalize/score path.
+
+  **Scope held:** existing `pipeline/identity/bakeoff_packet_v1.py` +
+  `pipeline/identity/bakeoff_harness_v1.py` plumbing retained; no contender-set
+  changes, no benchmark/spec/score-math changes, no queue build, no merge SQL,
+  no `PARENT_CHILD` expansion.
+
+  **Runner/build work:**
+  - Added `pipeline/identity/bakeoff_run_v1.py` to orchestrate the canonical run
+    name `session6_first_real_bakeoff_v1`.
+  - Added real contender runners/adapters for `haiku_single_v1`,
+    `gemini_single_v1`, `gpt5mini_single_v1`, `haiku_gemini_consensus_v1`, and
+    `sonnet_single_v1`.
+  - Extended `pipeline/identity/bakeoff_harness_v1.py` normalization to
+    preserve `runtime_error:*` transport/model failures as auditable fail-closed
+    `FLAGGED` rows instead of generic invalid payloads.
+
+  **Availability guardrail:** preflight verified all frozen model IDs before the
+  run and stopped on failure in code, but all were available in practice:
+  `claude-haiku-4-5-20251001`, `google/gemini-3-flash-preview`,
+  `openai/gpt-5.4-mini`, and `claude-sonnet-4-5-20250929`.
+
+  **Canonical outputs written:**
+  - requests, raw, normalized, and scored artifacts grouped under
+    `data/sprints/dedup/bakeoff_v1/` for run `session6_first_real_bakeoff_v1`
+  - `session6_first_real_bakeoff_v1.md`
+  - `session6_first_real_bakeoff_v1.json`
+  - `session6_first_real_bakeoff_v1_manifest.json`
+  - `session6_first_real_bakeoff_v1_error_ledger.jsonl`
+
+  **Run integrity:**
+  - 152/152 request rows per contender
+  - 152/152 raw rows per contender
+  - 152/152 normalized rows per contender
+  - hidden overlay leaks: 0
+  - no silent model substitution
+
+  **Headline result:** no frozen contender passed the production gate or the
+  fallback gate. Queue-building is therefore still blocked.
+
+  **Score summary:**
+  - `haiku_single_v1`: exact acc 22.4%, false merge 0, hard missed 5,
+    soft missed 44, safe flag 69, auditability 0.2632
+  - `gemini_single_v1`: exact acc 59.2%, false merge 10, hard missed 4,
+    soft missed 13, safe flag 35, auditability 0.7105
+  - `gpt5mini_single_v1`: exact acc 57.9%, false merge 14, hard missed 16,
+    soft missed 7, safe flag 27, auditability 0.8026
+  - `haiku_gemini_consensus_v1`: exact acc 20.4%, false merge 0,
+    hard missed 0, soft missed 49, safe flag 72, auditability 0.2697
+  - `sonnet_single_v1`: exact acc 73.7%, false merge 11, hard missed 9,
+    soft missed 10, safe flag 10, auditability 0.8882
+
+  **Interpretation:** Sonnet led on accuracy but still failed on false merges
+  plus auditability/schema-validity. Gemini and GPT-5.4-mini were more accurate
+  than Haiku but still false-merged enough to fail. Haiku and the consensus path
+  were conservative but generated too much `FLAGGED` burden and too many missed
+  merges. The v1 packet plus contender lineup is therefore informative but not
+  execution-ready.
+
+  **Spend:** $2.89 total for the real bakeoff run (Haiku $0.33, Gemini $0.22,
+  GPT-5.4-mini $0.53, Haiku+Gemini consensus $0.56 combined child cost,
+  Sonnet $1.24). Sprint 6 spend now $313.37 against the current $450 ceiling.
+
+  **Files:** `pipeline/identity/bakeoff_run_v1.py`,
+  `pipeline/identity/bakeoff_harness_v1.py`,
+  `data/sprints/dedup/bakeoff_v1/raw/session6_first_real_bakeoff_v1/`,
+  `data/sprints/dedup/bakeoff_v1/normalized/session6_first_real_bakeoff_v1/`,
+  `data/sprints/dedup/bakeoff_v1/scored/session6_first_real_bakeoff_v1.{md,json}`,
+  `data/sprints/dedup/bakeoff_v1/scored/session6_first_real_bakeoff_v1_manifest.json`,
+  `data/sprints/dedup/bakeoff_v1/scored/session6_first_real_bakeoff_v1_error_ledger.jsonl`.
 
 - **B5.8 (2026-04-16):** Sprint 5 closed, Sprint 6 opened. Preliminary research
   gathered in `plan.md` so B6.1 can dive into design. User directive: "throw the

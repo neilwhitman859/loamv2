@@ -1,6 +1,6 @@
 {
-  "budget": 250.00,
-  "spent": 208.80,
+  "budget": 450.00,
+  "spent": 313.37,
   "sessions": {
     "B6.1": 0.00,
     "B6.2": 0.00,
@@ -8,33 +8,29 @@
     "B6.2.2": 0.00,
     "B6.3_pilot": 0.12,
     "B6.3_full_l1": 78.32,
-    "B6.4_oracle": 22.93,
-    "B6.4_gemini_basic": 0.13,
-    "B6.4_l2_haiku_rich": 0.59,
-    "B6.4_gemini_rich": 0.19,
-    "B6.4_l3_noweb_ablation": 0.65,
-    "B6.4_safety_net_a": 0.05,
     "B6.4_total": 24.51,
-    "B6.5a_l1_gemini_basic": 32.13,
-    "B6.5a_skip_audit_l2": 0.51,
-    "B6.5a_skip_audit_l3": 6.06,
-    "B6.5a_l2_haiku_rich_prod": 38.04,
-    "B6.5a_l2_gemini_rich_prod": 13.10,
-    "B6.5a_probe_l3_noweb": 7.00,
-    "B6.5a_probe_l3_web": 9.01,
-    "B6.5a_probe_demo": 0.79,
-    "B6.5a_serper_validation_65": 0.24,
-    "B6.5a_serper_broad_269": 0.92,
-    "B6.5a_serper_broad_930": 5.60,
-    "B6.5a_phase3a_haiku_serper_3403": 20.00,
-    "B6.5a_total_partial_v2": 142.40
+    "B6.5a_total_partial_v2": 142.40,
+    "B6.5x_chrome_and_coverage": 65.13,
+    "S6_first_real_bakeoff_v1": 2.89
   },
-  "remaining_projected_b6_5_thru_close": "5-15 for Phase 4-8",
-  "remaining_sprint_ceiling": 18.33,
+  "remaining_projected_b6_5_thru_close": "blocked pending v2 bakeoff redesign; no queue build budget should be committed yet",
+  "remaining_sprint_ceiling": 136.63,
   "paths_for_continuation": {
-    "path_1_pragmatic": {"total_add": 9, "sprint_total": 218, "in_ceiling": true, "user_review_pile": "~11K"},
-    "path_2_balanced": {"total_add": 104, "sprint_total": 313, "need_ceiling_raise": true, "user_review_pile": "~2-3K", "recommended": true},
-    "path_3_rigor": {"total_add": 242, "sprint_total": 451, "need_ceiling_raise": "to $500", "user_review_pile": "~1.5-2K"}
+    "legacy_path_1_pragmatic": {
+      "total_add": 9,
+      "sprint_total": 218,
+      "status": "archived as pre-rebuild analysis"
+    },
+    "legacy_path_2_balanced": {
+      "total_add": 104,
+      "sprint_total": 313,
+      "status": "archived as pre-rebuild analysis"
+    },
+    "legacy_path_3_rigor": {
+      "total_add": 242,
+      "sprint_total": 451,
+      "status": "archived as pre-rebuild analysis"
+    }
   },
-  "note": "B6.5a-partial COMPLETE. Ran through Stage 2 routing + $16 exploratory probes. Stopped per user directive for reassessment before L3. Key findings: (1) Stage 2 auto-MERGE has 10% FP rate — do not auto-apply without L3 validation. (2) Stage 2 SKIP threshold too tight — 0.93/0.93 drops residual from 19.5K to 7.3K with 2% measured FN. (3) L3 web earns 11x cost only on cross-family disagreements + négociant patterns; random residual delta is 5%. (4) Stage 2 auto-merge cross-family precision at >=0.90 is 81-90% in production vs calibration's 98.7%. Recommendations: Path 2 (balanced) if $320 ceiling acceptable; Path 1 (pragmatic in-ceiling) if not. Full analysis at data/sprints/dedup/b6_5a_stage2_analysis.md."
+  "note": "The legacy B6.5a partial path remains useful as benchmark and failure-mode context, but the active merge-only Codex rebuild now has a completed real bakeoff artifact: session6_first_real_bakeoff_v1. That run added $2.89 and showed that no frozen contender cleared the production or fallback gates. Queue-building is blocked; the next spend should be on a tightly scoped v2 bakeoff redesign, not execution."
 }

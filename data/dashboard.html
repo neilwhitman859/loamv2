@@ -291,7 +291,7 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">Sprint 6 &middot; Merge-only rebuild checkpoint &middot; <!--updated-->updated 2026-04-20 21:18 ET<!--/updated--></div>
+  <div class="meta">Sprint 6 &middot; Merge-only rebuild checkpoint &middot; <!--updated-->updated 2026-04-20 22:49 ET<!--/updated--></div>
 </div>
 
 <!-- ============= SESSION TOKENS ============= -->
@@ -318,15 +318,15 @@
 <!-- ============= CURRENT STEP ============= -->
 <div class="section-label">Current step</div>
 <div class="block-card">
-  <h2>Rebuild checkpoint &mdash; packet and harness complete</h2>
-  <div class="goal">The producer-dedup rebuild has now locked direction, audited the current pair corpus, frozen the benchmark, defined the standard evidence packet, frozen the first adjudication bakeoff, and built the Session 4 plumbing: benchmark-to-packet generation, hidden-overlay stripping, normalized result rows, fail-closed coercion, and proof scoring. The next artifact is the first real adjudication bakeoff, not queue execution.</div>
+  <h2>Rebuild checkpoint &mdash; first real bakeoff complete, no eligible winner</h2>
+  <div class="goal">The producer-dedup rebuild has now completed the first full 152-case adjudication bakeoff through the frozen packet/request/normalize/score path. All frozen contenders ran or were auditable, normalized outputs and scored summaries were published, and the result is clear: no contender cleared the Session 4 production or fallback gates, so queue execution remains blocked.</div>
   <!--progress-block-->
   <div class="block-progress">
-    <div class="pstep">Rebuild artifacts complete: rules tightened, pair corpus audited, benchmark frozen, evidence packet designed, bakeoff rules locked, packet/harness plumbing built</div><div class="pstats">Session 1 = pair corpus audit &middot; Session 2 = benchmark freeze &middot; Session 3 = evidence packet &middot; Session 4 = broad bakeoff design &middot; Session 5 = packet generator + evaluation harness</div>
+    <div class="pstep">Rebuild artifacts complete: rules tightened, pair corpus audited, benchmark frozen, evidence packet designed, bakeoff rules locked, packet/harness plumbing built, and the first real contender run scored</div><div class="pstats">Session 1 = pair corpus audit &middot; Session 2 = benchmark freeze &middot; Session 3 = evidence packet &middot; Session 4 = broad bakeoff design &middot; Session 5 = packet generator + evaluation harness &middot; Session 6 = first real adjudication bakeoff</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">direction and rules</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">merge-only path locked &middot; PARENT_CHILD deferred &middot; core/tail redefined by product risk</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">benchmark + evidence</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">152 benchmark pairs frozen &middot; JSONL-first evidence packet defined &middot; hidden benchmark overlay split from visible evidence</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">bakeoff spec</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">v1 contender set frozen &middot; `FLAGGED` semantics locked &middot; production/fallback gates explicit</div>
-    <div class="pstep" style="font-size:12px; margin-top:6px;">next up</div><div class="progress-bar"><div class="progress-fill" style="width: 62%"></div></div><div class="pstats" style="font-size:11.5px;">packet generator + harness done &middot; proof run scored on 8 benchmark cases &middot; first adjudication bakeoff is now next</div>
+    <div class="pstep" style="font-size:12px; margin-top:6px;">next up</div><div class="progress-bar"><div class="progress-fill" style="width: 74%"></div></div><div class="pstats" style="font-size:11.5px;">real bakeoff complete &middot; winner table published &middot; queue build blocked until a v2 design produces a gate-clearing production and fallback path</div>
   </div>
   <!--/progress-block-->
   <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current rebuild doctrine:</strong> ground adjudication in official-domain evidence, local wine-list coherence, and deterministic identity rules. Search is retrieval, not truth by itself. The bakeoff should compare methods as well as models, using <code>benchmark_v1</code> and <code>evidence_packet_v1</code> as the shared test bed.</div>
@@ -339,8 +339,8 @@
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 5 &mdash; Design <code>evidence_packet_v1</code></span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 6 &mdash; Broad bakeoff design</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 7 &mdash; Packet generator + evaluation harness</span></li>
-    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 8 &mdash; First adjudication bakeoff</span></li>
-    <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 9 &mdash; Build core adjudication queue</span></li>
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 8 &mdash; First adjudication bakeoff</span></li>
+    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 9 &mdash; Build core adjudication queue (blocked pending v2 bakeoff redesign)</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 10 &mdash; Build tail adjudication queue</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 11 &mdash; Publish pre-execution scorecard</span></li>
   </ul>
@@ -350,7 +350,7 @@
 <div class="section-label">Sprint 6 &mdash; Core/Tail split &amp; quality targets</div>
 <div class="sprint-card">
   <div class="goal">
-    Producer dedup on 33,281 rows and 225,281 wines. Core/tail is now a product-risk split used for evaluation, not the old routing-stage execution plan. The immediate quality task is implementing the frozen packet/harness contract so contenders can be judged without leaking the answer key.
+    Producer dedup on 33,281 rows and 225,281 wines. Core/tail is now a product-risk split used for evaluation, not the old routing-stage execution plan. The immediate quality task is designing a v2 adjudication bakeoff after the frozen v1 contender set failed the production-readiness gates.
   </div>
   <table class="metrics-table">
     <tr>
@@ -377,14 +377,14 @@
   </table>
   <div class="vitals">
     <table>
-      <tr><td>Live canonical snapshot</td><td>33,225 producers &middot; 224,316 wines &middot; 125,934 vintages</td></tr>
+      <tr><td>Live canonical snapshot</td><td>33,281 producers &middot; 225,281 wines &middot; 125,934 vintages</td></tr>
       <tr><td>Benchmark state</td><td><code>benchmark_v1</code> frozen at 152 merge-only cases</td></tr>
       <tr><td>Evidence packet state</td><td><code>evidence_packet_v1</code> defined as JSONL-first with hidden benchmark overlay</td></tr>
-      <tr><td>Bakeoff state</td><td><code>session4_bakeoff_design.md</code> frozen with contender list, score math, and queue-building gates</td></tr>
-      <tr><td>Immediate next artifact</td><td>first adjudication bakeoff against the frozen contender set</td></tr>
-      <tr><td>After that</td><td>pick a production path plus fallback, then build queues only if the hard gates clear</td></tr>
+      <tr><td>Bakeoff state</td><td>v1 real run complete under <code>session6_first_real_bakeoff_v1</code>; no contender cleared production or fallback gates</td></tr>
+      <tr><td>Immediate next artifact</td><td>v2 bakeoff redesign focused on auditability, false-merge control, and packet/runner improvements</td></tr>
+      <tr><td>After that</td><td>rerun adjudication and build queues only if a production path plus fallback truly clear the hard gates</td></tr>
       <tr><td>Execution status</td><td>no producer-merge execution path is active yet</td></tr>
-      <tr><td>Primary risk</td><td>the real contenders may still fail the hard gates even though the packet/harness plumbing is now in place and proofed</td></tr>
+      <tr><td>Primary risk</td><td>the current evidence packet and contender behaviors still overproduce invalid rows, false merges, or heavy `FLAGGED` burden, leaving no execution-safe lineup</td></tr>
     </table>
   </div>
 </div>
@@ -412,14 +412,14 @@
     </tr>
     <tr>
       <td>Step 8 &mdash; first adjudication bakeoff</td>
-      <td>next</td>
-      <td>Run the frozen Session 4 lineup and publish the required summary, core/tail, stratum, error-ledger, and winner-selection tables</td>
-      <td class="num">TBD by design</td>
+      <td>done</td>
+      <td>Ran the frozen Session 4 lineup across all 152 cases; published normalized outputs, summary tables, winner-selection table, and error ledger under <code>session6_first_real_bakeoff_v1</code></td>
+      <td class="num">$2.89</td>
     </tr>
     <tr>
       <td>Step 9 &mdash; core adjudication queue</td>
-      <td>pending</td>
-      <td>Only after the bakeoff picks a production path and fallback</td>
+      <td>blocked</td>
+      <td>Blocked: v1 bakeoff produced no eligible production path or fallback contender</td>
       <td class="num">TBD</td>
     </tr>
     <tr>
@@ -429,9 +429,9 @@
       <td class="num">TBD</td>
     </tr>
     <tr style="background:#fff4e5;">
-      <td><strong>Next user touchpoint</strong> &mdash; review the first real adjudication bakeoff once the frozen contenders have been run through the new packet/harness path</td>
+      <td><strong>Next user touchpoint</strong> &mdash; review the completed v1 bakeoff and approve the exact v2 redesign scope</td>
       <td>&mdash;</td>
-      <td>One focused review session once real contender outputs and the winner-selection table exist</td>
+      <td>One focused design session on why v1 failed and what to change before any queue build</td>
       <td class="num">&mdash;</td>
     </tr>
   </table>
@@ -509,7 +509,7 @@
   <li><span class="marker done-marker">&#10003;</span> <span>Sprint 3 Fix</span> <span class="detail">&mdash; 158 fixed, 101 deferred, $0</span></li>
   <li><span class="marker done-marker">&#10003;</span> <span>Sprint 4 Demo</span> <span class="detail">&mdash; 515 wines Grade A across 14 producers, $37.44</span></li>
   <li><span class="marker done-marker">&#10003;</span> <span>Sprint 5 AI Bakeoff</span> <span class="detail">&mdash; 29 models tested, gpt-5.4-mini leader under current prompt, ~$55</span></li>
-  <li><span class="marker current-marker">&#9654;</span> <span class="current">Sprint 6 Producer Dedup</span> <span class="detail">&mdash; merge-only Codex rebuild; benchmark + evidence complete; broad bakeoff design next</span></li>
+  <li><span class="marker current-marker">&#9654;</span> <span class="current">Sprint 6 Producer Dedup</span> <span class="detail">&mdash; merge-only Codex rebuild; first real adjudication bakeoff complete; no contender passed gates; v2 redesign next</span></li>
   <li><span class="marker future-marker">&#9675;</span> <span class="future">Sprint 7 Wine Dedup</span> <span class="detail">&mdash; LWIN-7 backbone + producer-filtered blocking + deterministic-tuple match + cheap-AI remainder + Haiku+Serper on escalations only. <strong>~$100-200 projected</strong> (revised down from $2-3K).</span></li>
   <li><span class="marker future-marker">&#9675;</span> <span class="future">Sprint 8</span> <span class="detail">&mdash; prompt v2 + L3 fact-check gate + re-enrichment + demo sharing</span></li>
 </ul>
@@ -518,8 +518,8 @@
 <div class="section-label">Key numbers (DB state)</div>
 <!--key-numbers-->
 <div class="numbers">
-  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">224,316</div></div>
-  <div class="n-item"><div class="n-label">Producers</div><div class="n-value">33,225</div></div>
+  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">225,281</div></div>
+  <div class="n-item"><div class="n-label">Producers</div><div class="n-value">33,281</div></div>
   <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">125,934</div></div>
   <div class="n-item"><div class="n-label">Prices</div><div class="n-value">40,193</div></div>
   <div class="n-item"><div class="n-label">Scores</div><div class="n-value">30,339</div></div>
@@ -552,8 +552,8 @@
         <tr><td style="color:var(--muted);">Sprint 3 Fix</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
         <tr><td style="color:var(--muted);">Sprint 4 Demo</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$37.44</td></tr>
         <tr><td style="color:var(--muted);">Sprint 5 AI Bakeoff</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$55.00</td></tr>
-        <tr><td style="color:var(--accent); font-weight:700;">Sprint 6 Producer Dedup</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$310.48</td></tr>
-        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Total project spend</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$402.92</td></tr>
+        <tr><td style="color:var(--accent); font-weight:700;">Sprint 6 Producer Dedup</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$313.37</td></tr>
+        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Total project spend</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$405.81</td></tr>
       </table>
     </div>
     <div>
@@ -564,9 +564,10 @@
         <tr><td style="color:var(--muted);">Step 4 Calibration</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$24.51</td></tr>
         <tr><td style="color:var(--muted);">Step 5 L1.5 + L2 + L2.5</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$115.85</td></tr>
         <tr><td style="color:var(--muted);">Step 6 Phase 3a web-validate</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$12.87</td></tr>
-        <tr><td style="color:var(--accent); font-weight:700;">Step 7 Coverage expansion</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$78.81</td></tr>
-        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Sprint 6 spent</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$310.48</td></tr>
-        <tr><td style="color:var(--muted); color:var(--green);">Remaining of $450 ceiling</td><td style="text-align:right; font-variant-numeric: tabular-nums; color:var(--green);">$139.52</td></tr>
+        <tr><td style="color:var(--muted);">Step 7 Coverage expansion</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$78.81</td></tr>
+        <tr><td style="color:var(--accent); font-weight:700;">Step 8 First real adjudication bakeoff</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$2.89</td></tr>
+        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Sprint 6 spent</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$313.37</td></tr>
+        <tr><td style="color:var(--muted); color:var(--green);">Remaining of $450 ceiling</td><td style="text-align:right; font-variant-numeric: tabular-nums; color:var(--green);">$136.63</td></tr>
       </table>
     </div>
   </div>

@@ -239,7 +239,7 @@ constraints. **`ENRICHMENT_ENABLED=false` feature flag on `enrich-wine` stays OF
 through Sprint 3 into Sprint 5** until voice module + L3 fact-check gate + grape
 repair compound + AI-disclaimer UI all land.
 
-**Sprint sequence:** 1 (Build, done) → 2 (Audit, done) → 3 (Fix, done) → 4 (Demo, done) → 5 (AI Bakeoff, done) → **6 (active): LWIN import + producer dedup — B6.1 plan locked, LWIN-first (B6.2) then tiered AI ladder (L1 Haiku batched → L2 Haiku batched → L3 Sonnet+web_search → L4 Opus-inline), evaluation + execution same sprint, 50-150 user-reviewed toughest pairs** → Sprint 7: wine dedup → Sprint 8: prompt v2 + L3 fact-check gate + re-enrichment + share. The bake-off ranked models under the *current* prompt; re-enrichment is deferred until prompt + gate work lands so we don't bake in the current-prompt ceiling.
+**Sprint sequence:** 1 (Build, done) → 2 (Audit, done) → 3 (Fix, done) → 4 (Demo, done) → 5 (AI Bakeoff, done) → **6 (active): LWIN import + producer dedup — current path is the merge-only Codex rebuild, with the frozen Session 4 adjudication bakeoff now completed on the full 152-case benchmark. Result: no v1 contender cleared the production or fallback gates, so queue-building is blocked pending a v2 bakeoff redesign** → Sprint 7: wine dedup → Sprint 8: prompt v2 + L3 fact-check gate + re-enrichment + share. The bake-off ranked models under the *current* prompt; re-enrichment is deferred until prompt + gate work lands so we don't bake in the current-prompt ceiling.
 Sprint 4 plan: [`data/sprints/demo/plan.md`](data/sprints/demo/plan.md). Sprint 5 plan: [`data/sprints/ai-bakeoff/plan.md`](data/sprints/ai-bakeoff/plan.md). Sprint 5 outcome: [`bakeoff/scores/tournament_results.md`](bakeoff/scores/tournament_results.md). See `data/dashboard.html` for live progress.
 
 **Always query the DB for live numbers.** Never rely on hardcoded counts in this file.
@@ -391,10 +391,11 @@ Completed rebuild artifacts so far:
 - `data/sprints/dedup/session4_bakeoff_design.md`
 - `pipeline/identity/bakeoff_packet_v1.py`
 - `pipeline/identity/bakeoff_harness_v1.py`
-- `data/sprints/dedup/bakeoff_v1/` (stored packets, stripped visible packets, request wrappers, normalized proof outputs, scored proof run)
+- `pipeline/identity/bakeoff_run_v1.py`
+- `data/sprints/dedup/bakeoff_v1/` (stored packets, stripped visible packets, request wrappers, normalized proof outputs, real raw contender outputs, normalized full-run outputs, scored proof run, and scored full-run outputs)
 
 Immediate next session target:
-- run the first real adjudication bakeoff against the frozen Session 4 contender set through the new packet/request/normalize/score path, then publish the winner-selection table and error ledger
+- design the v2 adjudication bakeoff after reviewing why `session6_first_real_bakeoff_v1` failed the gates, then pick the exact packet/runner changes to test before any queue build
 
 Historical artifacts worth keeping:
 - B6.2 + B6.2.1 + B6.2.2 + B6.3 + B6.4 + B6.5a-partial outputs
@@ -404,6 +405,8 @@ Historical artifacts worth keeping:
 These are still useful for benchmark comparison and failure-mode mining, but they are **not** assumed to be production-ready execution inputs.
 
 **Cheaper rigor-tier architecture for the rebuild:** external search retrieval + smaller adjudication model remains attractive (e.g. Haiku + Serper-style retrieval) because it is dramatically cheaper than full Sonnet web-search and better suited to pair-by-pair evidence packets. Session 4 locked the first adjudication bakeoff as a frozen, packet-based comparison among `haiku_single_v1`, `gemini_single_v1`, `gpt5mini_single_v1`, `haiku_gemini_consensus_v1`, and `sonnet_single_v1`, with a deterministic control reported separately but excluded from winner selection.
+
+**Session 6 real bakeoff outcome (2026-04-20):** `session6_first_real_bakeoff_v1` completed end-to-end across the full 152-case benchmark with raw, normalized, scored, manifest, and error-ledger artifacts under `data/sprints/dedup/bakeoff_v1/`. Frozen-model availability was preflight-verified; no silent substitutions were used. Result: **no contender cleared either the production gate or the fallback gate.** Best exact-accuracy contender was `sonnet_single_v1` at 73.7%, but it still failed on false merges and auditability/schema-validity. `gemini_single_v1` and `gpt5mini_single_v1` improved accuracy over Haiku but still false-merged. `haiku_single_v1` and `haiku_gemini_consensus_v1` were conservative but over-flagged and missed too many true merges. Queue-building stays blocked until a v2 bakeoff produces a real production path plus fallback.
 
 **B6.4 DONE (2026-04-17, $24.51):** Calibration only — 600-pair stratified
 set, gold-labeled 367 pairs (200 proxy + 167 from Sonnet+web oracle). Ran

@@ -340,6 +340,9 @@ def normalize_one(raw_row: dict, packet: dict, allowed_rule_ids: set[str]) -> di
         "search_calls": 0,
         "cost_usd": 0.0,
     }
+    runtime_error = raw_row.get("runtime_error")
+    if runtime_error:
+        return fail_closed_row(raw_row, packet, f"runtime_error:{runtime_error}", usage)
     output = raw_row.get("raw_output")
     if isinstance(output, str):
         try:
