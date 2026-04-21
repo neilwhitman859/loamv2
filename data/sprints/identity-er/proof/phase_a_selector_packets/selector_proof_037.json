@@ -1,0 +1,540 @@
+{
+  "anchor": {
+    "canonical_name": "Boisson",
+    "conflicts": {
+      "market_conflicts": [
+        "multiple applicant states present"
+      ],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "domaine boisson",
+        "row_count": 27,
+        "source_family": "ttb",
+        "value": "DOMAINE BOISSON"
+      },
+      {
+        "normalized": "boisson",
+        "row_count": 8,
+        "source_family": "canonical",
+        "value": "Boisson"
+      },
+      {
+        "normalized": "domaine boisson cotes du rhone",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "DOMAINE BOISSON  Cotes Du Rhone"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 7,
+        "source_family": "ttb",
+        "value": "ERIN LAMSON"
+      },
+      {
+        "row_count": 6,
+        "source_family": "ttb",
+        "value": "ALAIN JUNGUENET"
+      },
+      {
+        "row_count": 6,
+        "source_family": "ttb",
+        "value": "Merrick Dowson"
+      },
+      {
+        "row_count": 2,
+        "source_family": "ttb",
+        "value": "TIMOTHY DUNLAVY"
+      }
+    ],
+    "name_normalized": "boisson",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 8,
+          "value": "CAIRANNE"
+        },
+        {
+          "count": 8,
+          "value": "COTES DU RHONE"
+        },
+        {
+          "count": 4,
+          "value": "COTES DU RHONE VILLAGES"
+        },
+        {
+          "count": 1,
+          "value": "BURGUNDY"
+        },
+        {
+          "count": 1,
+          "value": "Bordeaux sup\u00e9rieur"
+        }
+      ],
+      "countries": [
+        {
+          "count": 8,
+          "value": "FR"
+        },
+        {
+          "count": 8,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 8,
+          "value": "Rh\u00f4ne Valley"
+        },
+        {
+          "count": 7,
+          "value": "Rhone"
+        },
+        {
+          "count": 1,
+          "value": "Bordeaux"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 6,
+          "value": "red"
+        },
+        {
+          "count": 2,
+          "value": "white"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 8,
+          "value": "AOP"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Boisson, Cotes du Rhone, Cairanne Blanc"
+        },
+        {
+          "count": 1,
+          "value": "Boisson, Cotes du Rhone, Massif d'Uchaux"
+        },
+        {
+          "count": 1,
+          "value": "Chateau Boisson, Bordeaux Superieur"
+        },
+        {
+          "count": 1,
+          "value": "Domaine Boisson, Cairanne"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Boisson Blanc, Cairanne"
+        },
+        {
+          "count": 1,
+          "value": "Boisson Cairanne Blanc, C\u00f4tes du Rh\u00f4ne"
+        },
+        {
+          "count": 1,
+          "value": "Boisson Exigence, Cairanne"
+        },
+        {
+          "count": 1,
+          "value": "Boisson Massif Uchaux Bussieres, C\u00f4tes du Rh\u00f4ne Villages"
+        },
+        {
+          "count": 1,
+          "value": "Boisson Massif d'Uchaux, C\u00f4tes du Rh\u00f4ne"
+        },
+        {
+          "count": 1,
+          "value": "Chateau Boisson, Bordeaux Superieur"
+        }
+      ]
+    },
+    "producer_id": "9db35622-2205-48a3-8cf6-3e8adf005616",
+    "region": "Rh\u00f4ne Valley",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [
+        {
+          "count": 2,
+          "value": "VINTAGE RESOURCES"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 7,
+          "value": "ERIN LAMSON"
+        },
+        {
+          "count": 6,
+          "value": "ALAIN JUNGUENET"
+        },
+        {
+          "count": 6,
+          "value": "Merrick Dowson"
+        },
+        {
+          "count": 2,
+          "value": "TIMOTHY DUNLAVY"
+        },
+        {
+          "count": 1,
+          "value": "PHILIP TENENBAUM"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 14,
+          "value": "CA"
+        },
+        {
+          "count": 6,
+          "value": "NJ"
+        },
+        {
+          "count": 1,
+          "value": "IL"
+        },
+        {
+          "count": 1,
+          "value": "NC"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 14,
+          "value": "CA-I-3223"
+        },
+        {
+          "count": 7,
+          "value": "NJ-I-627"
+        },
+        {
+          "count": 2,
+          "value": "OR-I-933"
+        },
+        {
+          "count": 1,
+          "value": "CA-I-3888"
+        },
+        {
+          "count": 1,
+          "value": "CA-I-3963"
+        },
+        {
+          "count": 1,
+          "value": "CT-I-381"
+        }
+      ]
+    },
+    "slug": "boisson",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 8,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 29,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 2,
+          "source_family": "state_reg"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 8
+    }
+  },
+  "case_id": "selector_proof_037",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 2,
+    "candidates": [
+      {
+        "candidate_id": "e09e1e11-53e6-4113-a386-030b50582394",
+        "candidate_identity": {
+          "canonical_name": "Anne Boisson",
+          "color_mix": [
+            {
+              "count": 7,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 7,
+              "value": "Anne Boisson"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Burgundy",
+          "source_families": [
+            {
+              "linked_rows": 7,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 7,
+              "value": "AOP"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Anne Boisson, Bourgogne Aligote"
+            },
+            {
+              "count": 1,
+              "value": "Anne Boisson, Bourgogne, Blanc"
+            },
+            {
+              "count": 1,
+              "value": "Anne Boisson, Bourgogne, Blanc Les Clous Perrons"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Anne Boisson, Bourgogne Aligote"
+            },
+            {
+              "count": 1,
+              "value": "Anne Boisson, Bourgogne, Blanc"
+            },
+            {
+              "count": 1,
+              "value": "Anne Boisson, Bourgogne, Blanc Les Clous Perrons"
+            },
+            {
+              "count": 1,
+              "value": "Anne Boisson, Meursault"
+            },
+            {
+              "count": 1,
+              "value": "Anne Boisson, Meursault Premier Cru, Genevrieres"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Anne Boisson"
+          ],
+          "divergent_place_signals": [
+            "Burgundy",
+            "Bourgogne",
+            "Bourgogne aligot\u00e9",
+            "Meursault"
+          ],
+          "divergent_portfolio_signals": [
+            "Anne Boisson, Bourgogne Aligote",
+            "Anne Boisson, Bourgogne, Blanc",
+            "Anne Boisson, Bourgogne, Blanc Les Clous Perrons",
+            "Anne Boisson, Meursault"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "FR",
+            "France"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "containment",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      },
+      {
+        "candidate_id": "7661d59b-5402-4c98-89f5-b894fddfeabe",
+        "candidate_identity": {
+          "canonical_name": "Cros de la Mure",
+          "color_mix": [
+            {
+              "count": 4,
+              "value": "red"
+            },
+            {
+              "count": 1,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 5,
+              "value": "Cros de la Mure"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Rh\u00f4ne Valley",
+          "source_families": [
+            {
+              "linked_rows": 5,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 5,
+              "value": "AOP"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Cros de la Mure, Chateauneuf-du-Pape"
+            },
+            {
+              "count": 1,
+              "value": "Cros de la Mure, Cotes du Rhone"
+            },
+            {
+              "count": 1,
+              "value": "Cros de la Mure, Cotes du Rhone, Blanc"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Cros de la Mure, Chateauneuf-du-Pape"
+            },
+            {
+              "count": 1,
+              "value": "Cros de la Mure, Cotes du Rhone"
+            },
+            {
+              "count": 1,
+              "value": "Cros de la Mure, Cotes du Rhone, Blanc"
+            },
+            {
+              "count": 1,
+              "value": "Cros de la Mure, Cotes du Rhone, Massif d'Uchaux"
+            },
+            {
+              "count": 1,
+              "value": "Cros de la Mure, Gigondas"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 2,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Cros de la Mure"
+          ],
+          "divergent_place_signals": [
+            "Ch\u00e2teauneuf-du-Pape",
+            "Gigondas"
+          ],
+          "divergent_portfolio_signals": [
+            "Cros de la Mure, Chateauneuf-du-Pape",
+            "Cros de la Mure, Cotes du Rhone",
+            "Cros de la Mure, Cotes du Rhone, Blanc",
+            "Cros de la Mure, Cotes du Rhone, Massif d'Uchaux"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "FR",
+            "France",
+            "Rhone",
+            "Rh\u00f4ne Valley"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "orthographic_variant",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

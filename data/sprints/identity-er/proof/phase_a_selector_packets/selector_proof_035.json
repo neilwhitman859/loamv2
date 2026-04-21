@@ -1,0 +1,467 @@
+{
+  "anchor": {
+    "canonical_name": "Audrey Brocard",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "sparse_wine_catalog",
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "audrey brocard",
+        "row_count": 2,
+        "source_family": "canonical",
+        "value": "Audrey Brocard"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "audrey brocard",
+    "place_fingerprint": {
+      "appellations": [],
+      "countries": [
+        {
+          "count": 2,
+          "value": "FR"
+        },
+        {
+          "count": 2,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 2,
+          "value": "Champagne"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 1,
+          "value": "rose"
+        },
+        {
+          "count": 1,
+          "value": "white"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 2,
+          "value": "AOP"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Audrey Brocard, Coeur de Village Extra Brut, Champagne"
+        },
+        {
+          "count": 1,
+          "value": "Audrey Brocard, Rose de Meunier, Champagne"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Audrey Brocard, Coeur de Village Extra Brut, Champagne"
+        },
+        {
+          "count": 1,
+          "value": "Audrey Brocard, Rose de Meunier, Champagne"
+        }
+      ]
+    },
+    "producer_id": "44ccc16a-42b9-4c02-814b-43d2b2d84fbf",
+    "region": "Champagne",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "audrey-brocard",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 2,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 2
+    }
+  },
+  "case_id": "selector_proof_035",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 2,
+    "candidates": [
+      {
+        "candidate_id": "b29b6f60-cef0-485d-96b4-dac874f5078b",
+        "candidate_identity": {
+          "canonical_name": "Brocard Pierre",
+          "color_mix": [
+            {
+              "count": 5,
+              "value": "white"
+            },
+            {
+              "count": 1,
+              "value": "rose"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 6,
+              "value": "Brocard Pierre"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Champagne",
+          "source_families": [
+            {
+              "linked_rows": 6,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 6,
+              "value": "AOP"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Brocard Pierre, Absimilis, Champagne"
+            },
+            {
+              "count": 1,
+              "value": "Brocard Pierre, Bulles Blanc Extra Brut"
+            },
+            {
+              "count": 1,
+              "value": "Brocard Pierre, Contree Noire Extra Brut"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Brocard Pierre, Absimilis, Champagne"
+            },
+            {
+              "count": 1,
+              "value": "Brocard Pierre, Bulles Blanc Extra Brut"
+            },
+            {
+              "count": 1,
+              "value": "Brocard Pierre, Contree Noire Extra Brut"
+            },
+            {
+              "count": 1,
+              "value": "Brocard Pierre, Cuvee Tradition"
+            },
+            {
+              "count": 1,
+              "value": "Brocard Pierre, L'egaree Zero Dosage"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Brocard Pierre"
+          ],
+          "divergent_place_signals": [],
+          "divergent_portfolio_signals": [
+            "Brocard Pierre, Absimilis, Champagne",
+            "Brocard Pierre, Bulles Blanc Extra Brut",
+            "Brocard Pierre, Contree Noire Extra Brut",
+            "Brocard Pierre, Cuvee Tradition"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "FR",
+            "France",
+            "Champagne"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "fuzzy",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      },
+      {
+        "candidate_id": "9140d68d-9bc9-4df8-833e-d684145ff7cc",
+        "candidate_identity": {
+          "canonical_name": "Laherte Freres",
+          "color_mix": [
+            {
+              "count": 26,
+              "value": "white"
+            },
+            {
+              "count": 3,
+              "value": "rose"
+            }
+          ],
+          "conflicts": [
+            "multiple label-facing name forms require comparison",
+            "multiple country signals in cheap dossier",
+            "multiple applicant states present"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 345,
+              "value": "LAHERTE FRERES"
+            },
+            {
+              "row_count": 66,
+              "value": "LAHERTE FR\ufffdRES"
+            },
+            {
+              "row_count": 7,
+              "value": "PALOMAR IMPORTS LLC"
+            },
+            {
+              "row_count": 3,
+              "value": "SELECT VINTAGES"
+            },
+            {
+              "row_count": 2,
+              "value": "INTEGRITY WINES"
+            },
+            {
+              "row_count": 2,
+              "value": "LAHERTE FRERES CHAMPAGNE"
+            }
+          ],
+          "legal_or_applicant_names": [
+            {
+              "row_count": 36,
+              "value": "HEIKE MAY-FENDRICH"
+            },
+            {
+              "row_count": 27,
+              "value": "Scott Wright"
+            },
+            {
+              "row_count": 26,
+              "value": "MICHAEL SULLIVAN"
+            },
+            {
+              "row_count": 20,
+              "value": "BARBARA SZOKE"
+            }
+          ],
+          "region": "Champagne",
+          "source_families": [
+            {
+              "linked_rows": 21,
+              "source_family": "lwin"
+            },
+            {
+              "linked_rows": 412,
+              "source_family": "ttb"
+            },
+            {
+              "linked_rows": 35,
+              "source_family": "state_reg"
+            }
+          ],
+          "sparse_signal_flags": [],
+          "supplier_or_distributor_names": [
+            {
+              "count": 15,
+              "value": "WINECRAFT"
+            },
+            {
+              "count": 2,
+              "value": "GEORGE GORDON HUE(DBA WINECRAFT)"
+            },
+            {
+              "count": 2,
+              "value": "JH IMPORTS LLC"
+            },
+            {
+              "count": 2,
+              "value": "NATURAL WINE COMPANY"
+            }
+          ],
+          "top_designations": [
+            {
+              "count": 20,
+              "value": "AOP"
+            }
+          ],
+          "top_grapes": [
+            {
+              "count": 8,
+              "value": "Chardonnay"
+            },
+            {
+              "count": 6,
+              "value": "Pinot Noir"
+            },
+            {
+              "count": 5,
+              "value": "Pinot Meunier"
+            }
+          ],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Laherte Freres, Blanc de Blancs Brut Nature"
+            },
+            {
+              "count": 1,
+              "value": "Laherte Freres, Blancs de Blancs Brut Nature Grand Cru"
+            },
+            {
+              "count": 1,
+              "value": "Laherte Freres, Empreintes"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Laherte Freres & Pinot, Champagne"
+            },
+            {
+              "count": 1,
+              "value": "Laherte Freres Blanc de Blancs Brut Nature"
+            },
+            {
+              "count": 1,
+              "value": "Laherte Freres Blancs de Blancs Brut Nature"
+            },
+            {
+              "count": 1,
+              "value": "Laherte Freres Blancs de Blancs, Champagne"
+            },
+            {
+              "count": 1,
+              "value": "Laherte Freres Empreintes, Champagne"
+            }
+          ],
+          "ttb_applicant_names": [
+            {
+              "count": 36,
+              "value": "HEIKE MAY-FENDRICH"
+            },
+            {
+              "count": 27,
+              "value": "Scott Wright"
+            },
+            {
+              "count": 26,
+              "value": "MICHAEL SULLIVAN"
+            },
+            {
+              "count": 20,
+              "value": "BARBARA SZOKE"
+            }
+          ]
+        },
+        "candidate_rank": 2,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "INTEGRITY WINES",
+            "LAHERE FRERES BLANC DE BLANCS BRUT NATURE CHARDONNAY CHAMPAGNE,",
+            "LAHERE FRERES BRUT ULTRATRADITION SPARKLING WINE CHAMPAGNE,",
+            "LAHERTE FRERES"
+          ],
+          "divergent_place_signals": [
+            "CHAMPAGE",
+            "CHAMPAGNE",
+            "CHAMPAGNE PREMIER CRU",
+            "COTEAUX CHAMPENOIS"
+          ],
+          "divergent_portfolio_signals": [
+            "Laherte Freres Blanc de Blancs Brut Nature",
+            "Laherte Freres Blancs de Blancs Brut Nature",
+            "Laherte Freres Blancs de Blancs, Champagne",
+            "Laherte Freres Empreintes, Champagne"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "FR",
+            "France",
+            "Champagne"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "orthographic_variant",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

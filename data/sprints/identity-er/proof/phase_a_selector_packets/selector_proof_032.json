@@ -1,0 +1,677 @@
+{
+  "anchor": {
+    "canonical_name": "Lafage",
+    "conflicts": {
+      "market_conflicts": [
+        "multiple applicant states present"
+      ],
+      "name_conflicts": [
+        "multiple label-facing name forms require comparison"
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "sparse_signal_flags": []
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "lafage",
+        "row_count": 45,
+        "source_family": "canonical",
+        "value": "Lafage"
+      },
+      {
+        "normalized": "usa wine west llc",
+        "row_count": 15,
+        "source_family": "state_reg",
+        "value": "USA WINE WEST LLC"
+      },
+      {
+        "normalized": "domaine lafage cuvee nicolas vieille vig",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "DOMAINE LAFAGE CUVEE NICOLAS VIEILLE VIG"
+      },
+      {
+        "normalized": "domaine lafage cuvee lea",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "DOMAINE LAFAGE-CUVEE LEA"
+      },
+      {
+        "normalized": "lafage narassa cotes du roussillon",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "LAFAGE  Narassa Cotes Du Roussillon"
+      },
+      {
+        "normalized": "lafage cuvee nicolas vin de pays des cotes catalanes",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "LAFAGE CUVEE NICOLAS VIN DE PAYS DES COTES CATALANES"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 37,
+        "source_family": "ttb",
+        "value": "ANNE BUISSON"
+      },
+      {
+        "row_count": 3,
+        "source_family": "state_reg",
+        "value": "USA WINE WEST"
+      },
+      {
+        "row_count": 1,
+        "source_family": "ttb",
+        "value": "BERNADETTE LEGGIERO"
+      },
+      {
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "CLASSIC WINE IMPORTS"
+      }
+    ],
+    "name_normalized": "lafage",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 15,
+          "value": "C\u00f4tes du Roussillon"
+        },
+        {
+          "count": 10,
+          "value": "C\u00f4tes Catalanes"
+        },
+        {
+          "count": 9,
+          "value": "VIN DE PAYS DES COTES CATALANES"
+        },
+        {
+          "count": 5,
+          "value": "VIN DE FRANCE"
+        },
+        {
+          "count": 2,
+          "value": "Muscat de Rivesaltes"
+        },
+        {
+          "count": 2,
+          "value": "Rivesaltes"
+        }
+      ],
+      "countries": [
+        {
+          "count": 45,
+          "value": "FR"
+        },
+        {
+          "count": 45,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 32,
+          "value": "Roussillon"
+        },
+        {
+          "count": 11,
+          "value": "Cotes Catalanes"
+        },
+        {
+          "count": 10,
+          "value": "France"
+        },
+        {
+          "count": 2,
+          "value": "Languedoc"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 20,
+          "value": "red"
+        },
+        {
+          "count": 14,
+          "value": "white"
+        },
+        {
+          "count": 9,
+          "value": "rose"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 18,
+          "value": "AOP"
+        },
+        {
+          "count": 11,
+          "value": "IGP"
+        },
+        {
+          "count": 1,
+          "value": "VdF"
+        }
+      ],
+      "top_grapes": [
+        {
+          "count": 5,
+          "value": "Grenache"
+        },
+        {
+          "count": 4,
+          "value": "Carignan Noir"
+        },
+        {
+          "count": 3,
+          "value": "Syrah"
+        },
+        {
+          "count": 2,
+          "value": "Chardonnay"
+        }
+      ],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Domaine Lafage, Nereda Blanc, Cotes Catalanes"
+        },
+        {
+          "count": 1,
+          "value": "Domaine Lafage, Nereda Rose, Cotes Catalanes"
+        },
+        {
+          "count": 1,
+          "value": "Lafage, Ambre Hors Age Vin Doux Naturel"
+        },
+        {
+          "count": 1,
+          "value": "Lafage, Arqueta, Collioure"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Lafage Ambre Hors Age, Rivesaltes"
+        },
+        {
+          "count": 1,
+          "value": "Lafage Carignan Tessellae Vieilles Vignes"
+        },
+        {
+          "count": 1,
+          "value": "Lafage Cayrol Carignan"
+        },
+        {
+          "count": 1,
+          "value": "Lafage Cote Est Blanc"
+        },
+        {
+          "count": 1,
+          "value": "Lafage Cote Rose"
+        },
+        {
+          "count": 1,
+          "value": "Lafage Cote Sud Rouge"
+        }
+      ]
+    },
+    "producer_id": "0315429a-b724-4c7a-9e7f-91daef7775d7",
+    "region": null,
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [
+        {
+          "count": 3,
+          "value": "USA WINE WEST"
+        },
+        {
+          "count": 1,
+          "value": "CLASSIC WINE IMPORTS"
+        },
+        {
+          "count": 1,
+          "value": "CLASSIC WINES IMPORTS"
+        },
+        {
+          "count": 1,
+          "value": "Standard Beverage (18002012201), Standard Beverage (18016000601), Standard Beverage (18019901807), Standard Beverage (18035006101)"
+        },
+        {
+          "count": 1,
+          "value": "USA Wine West (19001200423)"
+        },
+        {
+          "count": 1,
+          "value": "USA Wine West LLC"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 37,
+          "value": "ANNE BUISSON"
+        },
+        {
+          "count": 1,
+          "value": "BERNADETTE LEGGIERO"
+        },
+        {
+          "count": 1,
+          "value": "Darrin Bell"
+        },
+        {
+          "count": 1,
+          "value": "Kristin Prochasson"
+        },
+        {
+          "count": 1,
+          "value": "Tim Elenteny"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 37,
+          "value": "NC"
+        },
+        {
+          "count": 2,
+          "value": "NY"
+        },
+        {
+          "count": 1,
+          "value": "CA"
+        },
+        {
+          "count": 1,
+          "value": "WA"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 37,
+          "value": "NC-I-811"
+        },
+        {
+          "count": 1,
+          "value": "CA-I-23488"
+        },
+        {
+          "count": 1,
+          "value": "NY-I-1179"
+        },
+        {
+          "count": 1,
+          "value": "NY-I-15547"
+        },
+        {
+          "count": 1,
+          "value": "WA-I-1044"
+        }
+      ]
+    },
+    "slug": "lafage",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 30,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 41,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 25,
+          "source_family": "state_reg"
+        }
+      ],
+      "vintage_count": 36,
+      "wine_count": 45
+    }
+  },
+  "case_id": "selector_proof_032",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 2,
+    "candidates": [
+      {
+        "candidate_id": "34933170-ef50-4378-a919-d0eab6be2052",
+        "candidate_identity": {
+          "canonical_name": "La Fage",
+          "color_mix": [
+            {
+              "count": 1,
+              "value": "red"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 1,
+              "value": "La Fage"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Southwest France",
+          "source_families": [
+            {
+              "linked_rows": 1,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "sparse_wine_catalog",
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 1,
+              "value": "AOP"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Chateau La Fage, Merlot, Bergerac"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Chateau La Fage, Merlot, Bergerac"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "La Fage"
+          ],
+          "divergent_place_signals": [
+            "Southwest France",
+            "Sud Ouest",
+            "Bergerac"
+          ],
+          "divergent_portfolio_signals": [
+            "Chateau La Fage, Merlot, Bergerac"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "FR",
+            "France"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "fuzzy",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      },
+      {
+        "candidate_id": "e85f3856-b783-4cd6-873f-5d1885c31768",
+        "candidate_identity": {
+          "canonical_name": "Serene",
+          "color_mix": [
+            {
+              "count": 46,
+              "value": "red"
+            },
+            {
+              "count": 22,
+              "value": "white"
+            },
+            {
+              "count": 2,
+              "value": "rose"
+            }
+          ],
+          "conflicts": [
+            "multiple label-facing name forms require comparison",
+            "multiple country signals in cheap dossier",
+            "multiple region signals in cheap dossier",
+            "multiple applicant states present"
+          ],
+          "country": "United States",
+          "label_like_names": [
+            {
+              "row_count": 390,
+              "value": "DOMAINE SERENE"
+            },
+            {
+              "row_count": 70,
+              "value": "Serene"
+            },
+            {
+              "row_count": 14,
+              "value": "DOMAINE SERENE Pinot Noir DUNDEE HILLS"
+            },
+            {
+              "row_count": 14,
+              "value": "DOMAINE SERENE VINEYARDS & WINERY"
+            },
+            {
+              "row_count": 11,
+              "value": "DOMAINE SERENE Chardonnay DUNDEE HILLS"
+            },
+            {
+              "row_count": 11,
+              "value": "DOMAINE SERENE DUNDEE HILLS"
+            }
+          ],
+          "legal_or_applicant_names": [
+            {
+              "row_count": 153,
+              "value": "Evan Karp"
+            },
+            {
+              "row_count": 112,
+              "value": "ARTHUR WEINER"
+            },
+            {
+              "row_count": 36,
+              "value": "DOMAINE SERENE VINEYARDS & WINERY"
+            },
+            {
+              "row_count": 32,
+              "value": "Domaine Serene Vineyards & Winery, Inc."
+            }
+          ],
+          "region": "Oregon",
+          "source_families": [
+            {
+              "linked_rows": 38,
+              "source_family": "lwin"
+            },
+            {
+              "linked_rows": 398,
+              "source_family": "ttb"
+            },
+            {
+              "linked_rows": 193,
+              "source_family": "state_reg"
+            }
+          ],
+          "sparse_signal_flags": [],
+          "supplier_or_distributor_names": [
+            {
+              "count": 36,
+              "value": "DOMAINE SERENE VINEYARDS & WINERY"
+            },
+            {
+              "count": 32,
+              "value": "Domaine Serene Vineyards & Winery, Inc."
+            },
+            {
+              "count": 30,
+              "value": "SOJOURNER IMPORTS"
+            },
+            {
+              "count": 17,
+              "value": "Domaine Serene Rockblock Cellars (19001200439)"
+            }
+          ],
+          "top_designations": [
+            {
+              "count": 34,
+              "value": "AVA"
+            }
+          ],
+          "top_grapes": [
+            {
+              "count": 18,
+              "value": "Pinot Noir"
+            },
+            {
+              "count": 9,
+              "value": "Chardonnay"
+            },
+            {
+              "count": 3,
+              "value": "Syrah"
+            }
+          ],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Domaine Serene, Abbey Oaks Vineyard Pinot Noir, Yamhill-Carlton"
+            },
+            {
+              "count": 1,
+              "value": "Domaine Serene, Aspect, Dundee Hills"
+            },
+            {
+              "count": 1,
+              "value": "Domaine Serene, Barrel 23 Pinot Noir, Willamette Valley"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 2,
+              "value": "Serene Barrel 23 Pinot Noir, Willamette Valley"
+            },
+            {
+              "count": 2,
+              "value": "Serene Coeur Blanc White Pinot, Willamette Valley"
+            },
+            {
+              "count": 2,
+              "value": "Serene Cote Sud Vyd Chardonnay, Willamette Valley"
+            },
+            {
+              "count": 2,
+              "value": "Serene Monogram Pinot Noir, Willamette Valley"
+            },
+            {
+              "count": 2,
+              "value": "Serene Yamhill Cuvee Pinot Noir, Willamette Valley"
+            }
+          ],
+          "ttb_applicant_names": [
+            {
+              "count": 153,
+              "value": "Evan Karp"
+            },
+            {
+              "count": 112,
+              "value": "ARTHUR WEINER"
+            },
+            {
+              "count": 21,
+              "value": "Grace Evenstad"
+            },
+            {
+              "count": 13,
+              "value": "Elizabeth Kelly-Campanale"
+            }
+          ]
+        },
+        "candidate_rank": 2,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "CELLAR SOCIETY",
+            "DOMAINE SERENE",
+            "DOMAINE SERENE Chardonnay DUNDEE HILLS",
+            "DOMAINE SERENE DUNDEE HILLS"
+          ],
+          "divergent_place_signals": [
+            "United States",
+            "US",
+            "Columbia Valley",
+            "Oregon"
+          ],
+          "divergent_portfolio_signals": [
+            "Serene Abbey Oaks Pinot Noir, Yamhill-Carlton",
+            "Serene Barrel 23 Pinot Noir, Willamette Valley",
+            "Serene Coeur Blanc White Pinot, Willamette Valley",
+            "Serene Cote Sud Vyd Chardonnay, Willamette Valley"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [],
+          "matched_portfolio_signals": [
+            "Chardonnay",
+            "Syrah"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "orthographic_variant",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

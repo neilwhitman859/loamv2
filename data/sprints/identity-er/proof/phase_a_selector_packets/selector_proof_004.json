@@ -1,0 +1,285 @@
+{
+  "anchor": {
+    "canonical_name": "Stadt Krems",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "Austria",
+    "escalation_available": {
+      "people_history_signals": [
+        "production"
+      ],
+      "profile_source_families": [
+        "importer"
+      ],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "stadt krems",
+        "row_count": 12,
+        "source_family": "canonical",
+        "value": "Stadt Krems"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "stadt krems",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 9,
+          "value": "Kremstal"
+        },
+        {
+          "count": 3,
+          "value": "Kremstal Reserve"
+        }
+      ],
+      "countries": [
+        {
+          "count": 12,
+          "value": "AT"
+        },
+        {
+          "count": 12,
+          "value": "Austria"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 12,
+          "value": "Nieder\u00f6sterreich"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 12,
+          "value": "white"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 12,
+          "value": "DAC"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Stadt Krems, Domane Krems Gruner Veltliner, Kremstal"
+        },
+        {
+          "count": 1,
+          "value": "Stadt Krems, Domane Krems Riesling, Kremstal"
+        },
+        {
+          "count": 1,
+          "value": "Stadt Krems, Grillenparz Riesling Reserve Erste Lage, Kremstal Reserve"
+        },
+        {
+          "count": 1,
+          "value": "Stadt Krems, Gruner Veltliner Lossterrassen, Kremstal"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Stadt Krems Domane Krems Gruner Veltliner, Kremstal"
+        },
+        {
+          "count": 1,
+          "value": "Stadt Krems Domane Krems Riesling, Kremstal"
+        },
+        {
+          "count": 1,
+          "value": "Stadt Krems Grillenparz Riesling Reserve"
+        },
+        {
+          "count": 1,
+          "value": "Stadt Krems Gruner Veltliner Lossterrassen, Kremstal"
+        },
+        {
+          "count": 1,
+          "value": "Stadt Krems Kogl Riesling, Kremstal"
+        },
+        {
+          "count": 1,
+          "value": "Stadt Krems Ried Schreck Riesling, Kremstal"
+        }
+      ]
+    },
+    "producer_id": "6bec8b08-4cc0-46e1-95cf-f917b235b865",
+    "region": "Nieder\u00f6sterreich",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "stadt-krems",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 12,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 5,
+          "source_family": "importer"
+        }
+      ],
+      "vintage_count": 8,
+      "wine_count": 12
+    }
+  },
+  "case_id": "selector_proof_004",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "b0692eed-4aab-4479-87fb-9a71cc3336eb",
+        "candidate_identity": {
+          "canonical_name": "Krems",
+          "color_mix": [
+            {
+              "count": 6,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "Austria",
+          "label_like_names": [
+            {
+              "row_count": 6,
+              "value": "Krems"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Nieder\u00f6sterreich",
+          "source_families": [
+            {
+              "linked_rows": 6,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 6,
+              "value": "DAC"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Krems, Kellermeister Privat Gruner Veltliner Kremser Goldberg, Kremstal"
+            },
+            {
+              "count": 1,
+              "value": "Krems, Kremser Kremsleiten Riesling, Kremstal"
+            },
+            {
+              "count": 1,
+              "value": "Krems, Kremser Pfaffenberg Riesling, Kremstal"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Krems, Kellermeister Privat Gruner Veltliner Kremser Goldberg, Kremstal"
+            },
+            {
+              "count": 1,
+              "value": "Krems, Kremser Kremsleiten Riesling, Kremstal"
+            },
+            {
+              "count": 1,
+              "value": "Krems, Kremser Pfaffenberg Riesling, Kremstal"
+            },
+            {
+              "count": 1,
+              "value": "Krems, Kremser Sandgrube Gruner Veltliner, Kremstal"
+            },
+            {
+              "count": 1,
+              "value": "Krems, Kremser Wachtberg Gruner Veltliner, Kremstal"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Krems"
+          ],
+          "divergent_place_signals": [],
+          "divergent_portfolio_signals": [
+            "Krems, Kellermeister Privat Gruner Veltliner Kremser Goldberg, Kremstal",
+            "Krems, Kremser Kremsleiten Riesling, Kremstal",
+            "Krems, Kremser Pfaffenberg Riesling, Kremstal",
+            "Krems, Kremser Sandgrube Gruner Veltliner, Kremstal"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "AT",
+            "Austria",
+            "Nieder\u00f6sterreich",
+            "Kremstal"
+          ],
+          "matched_portfolio_signals": [
+            "DAC"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "containment",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

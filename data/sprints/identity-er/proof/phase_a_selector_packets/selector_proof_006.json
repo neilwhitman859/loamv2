@@ -1,0 +1,227 @@
+{
+  "anchor": {
+    "canonical_name": "Hermitage Thieuley",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [],
+      "sparse_signal_flags": [
+        "sparse_wine_catalog",
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "hermitage thieuley",
+        "row_count": 1,
+        "source_family": "canonical",
+        "value": "Hermitage Thieuley"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "hermitage thieuley",
+    "place_fingerprint": {
+      "appellations": [],
+      "countries": [
+        {
+          "count": 1,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [],
+      "regions": [
+        {
+          "count": 1,
+          "value": "Bordeaux"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [],
+      "top_designations": [
+        {
+          "count": 1,
+          "value": "AOP"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [],
+      "top_wine_labels": []
+    },
+    "producer_id": "3b64f9be-cba2-4adb-9b33-3a7cd947979b",
+    "region": "Bordeaux",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "hermitage-thieuley",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 1,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 0
+    }
+  },
+  "case_id": "selector_proof_006",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "55dd133e-db6c-4b14-b33f-7de502a26950",
+        "candidate_identity": {
+          "canonical_name": "Thieuley",
+          "color_mix": [
+            {
+              "count": 6,
+              "value": "red"
+            },
+            {
+              "count": 3,
+              "value": "white"
+            },
+            {
+              "count": 2,
+              "value": "rose"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 11,
+              "value": "Thieuley"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Bordeaux",
+          "source_families": [
+            {
+              "linked_rows": 11,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 10,
+              "value": "AOP"
+            },
+            {
+              "count": 1,
+              "value": "VdF"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Cabernet Sauvignon, Chateau Thieuley, Bordeaux Superieur"
+            },
+            {
+              "count": 1,
+              "value": "Chateau Thieuley, Bordeaux Blanc Sec"
+            },
+            {
+              "count": 1,
+              "value": "Chateau Thieuley, Bordeaux Clairet Rose"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Thieuley Blanc Sec"
+            },
+            {
+              "count": 1,
+              "value": "Thieuley Cabernet Sauvignon, Bordeaux sup\u00e9rieur"
+            },
+            {
+              "count": 1,
+              "value": "Thieuley Clairet Rose"
+            },
+            {
+              "count": 1,
+              "value": "Thieuley Cuvee Francis Courselle"
+            },
+            {
+              "count": 1,
+              "value": "Thieuley Heritage de Thieuley, Bordeaux sup\u00e9rieur"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Thieuley"
+          ],
+          "divergent_place_signals": [
+            "FR",
+            "Bordeaux sup\u00e9rieur"
+          ],
+          "divergent_portfolio_signals": [
+            "Thieuley Blanc Sec",
+            "Thieuley Cabernet Sauvignon, Bordeaux sup\u00e9rieur",
+            "Thieuley Clairet Rose",
+            "Thieuley Cuvee Francis Courselle"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "France",
+            "Bordeaux"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "containment",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

@@ -1,0 +1,314 @@
+{
+  "anchor": {
+    "canonical_name": "Henry Lamarche",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "sparse_wine_catalog",
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "henry lamarche",
+        "row_count": 2,
+        "source_family": "canonical",
+        "value": "Henry Lamarche"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "henry lamarche",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 1,
+          "value": "Grands-Echezeaux"
+        },
+        {
+          "count": 1,
+          "value": "Vosne-Roman\u00e9e"
+        }
+      ],
+      "countries": [
+        {
+          "count": 2,
+          "value": "FR"
+        },
+        {
+          "count": 2,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 2,
+          "value": "Burgundy"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 2,
+          "value": "red"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 2,
+          "value": "AOP"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Henry Lamarche, Grands Echezeaux Grand Cru"
+        },
+        {
+          "count": 1,
+          "value": "Henry Lamarche, Vosne-Romanee, Grande Rue"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Henry Lamarche, Grands Echezeaux Grand Cru"
+        },
+        {
+          "count": 1,
+          "value": "Henry Lamarche, Vosne-Romanee, Grande Rue"
+        }
+      ]
+    },
+    "producer_id": "42da1df4-a4b1-4052-a377-d3a343ca2200",
+    "region": "Burgundy",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "henry-lamarche",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 2,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 2
+    }
+  },
+  "case_id": "selector_proof_009",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "5f01f7f5-1eee-4041-a112-843c8774ee61",
+        "candidate_identity": {
+          "canonical_name": "Nicole Lamarche",
+          "color_mix": [
+            {
+              "count": 24,
+              "value": "red"
+            },
+            {
+              "count": 8,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier",
+            "multiple region signals in cheap dossier",
+            "multiple applicant states present"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 166,
+              "value": "NICOLE LAMARCHE"
+            },
+            {
+              "row_count": 4,
+              "value": "DOMAINE NICOLE LAMARCHE"
+            }
+          ],
+          "legal_or_applicant_names": [
+            {
+              "row_count": 17,
+              "value": "Jesse Acker-Johnson"
+            },
+            {
+              "row_count": 14,
+              "value": "REBECCA THOMAS"
+            },
+            {
+              "row_count": 13,
+              "value": "Connie Molitor"
+            },
+            {
+              "row_count": 13,
+              "value": "John Edwards"
+            }
+          ],
+          "region": "Burgundy",
+          "source_families": [
+            {
+              "linked_rows": 22,
+              "source_family": "lwin"
+            },
+            {
+              "linked_rows": 170,
+              "source_family": "ttb"
+            }
+          ],
+          "sparse_signal_flags": [],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 22,
+              "value": "AOP"
+            }
+          ],
+          "top_grapes": [
+            {
+              "count": 4,
+              "value": "Pinot Noir"
+            },
+            {
+              "count": 1,
+              "value": "Chardonnay"
+            }
+          ],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Domaine Nicole Lamarche, Bourgogne, Hautes Cotes de Nuits"
+            },
+            {
+              "count": 1,
+              "value": "Domaine Nicole Lamarche, Bourgogne, Pinot Noir"
+            },
+            {
+              "count": 1,
+              "value": "Domaine Nicole Lamarche, Clos de Vougeot Grand Cru"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Domaine Nicole Lamarche, Bourgogne, Hautes Cotes de Nuits"
+            },
+            {
+              "count": 1,
+              "value": "Domaine Nicole Lamarche, Clos de Vougeot Grand Cru"
+            },
+            {
+              "count": 1,
+              "value": "Domaine Nicole Lamarche, Echezeaux Grand Cru"
+            },
+            {
+              "count": 1,
+              "value": "Domaine Nicole Lamarche, Gevrey-Chambertin"
+            },
+            {
+              "count": 1,
+              "value": "Domaine Nicole Lamarche, Grands Echezeaux Grand Cru"
+            }
+          ],
+          "ttb_applicant_names": [
+            {
+              "count": 17,
+              "value": "Jesse Acker-Johnson"
+            },
+            {
+              "count": 14,
+              "value": "REBECCA THOMAS"
+            },
+            {
+              "count": 13,
+              "value": "Connie Molitor"
+            },
+            {
+              "count": 13,
+              "value": "John Edwards"
+            }
+          ]
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "DOMAINE NICOLE LAMARCHE",
+            "NICOLE LAMARCHE"
+          ],
+          "divergent_place_signals": [
+            "C\u00f4te Chalonnaise",
+            "C\u00f4te de Beaune",
+            "C\u00f4te de Nuits",
+            "Bourgogne"
+          ],
+          "divergent_portfolio_signals": [
+            "Domaine Nicole Lamarche, Bourgogne, Hautes Cotes de Nuits",
+            "Domaine Nicole Lamarche, Clos de Vougeot Grand Cru",
+            "Domaine Nicole Lamarche, Echezeaux Grand Cru",
+            "Domaine Nicole Lamarche, Gevrey-Chambertin"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "FR",
+            "France",
+            "Burgundy",
+            "Vosne-Roman\u00e9e"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "fuzzy",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

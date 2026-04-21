@@ -1,0 +1,409 @@
+{
+  "added_evidence": {
+    "people_history": {
+      "anchor": [],
+      "candidate": []
+    },
+    "profile_snippets": [
+      {
+        "source_url": "",
+        "text": "Cannot confirm D Guyon is Antonin Guyon short form. Conservative SKIP per 11.4.m. Flag Sprint 7 for disambiguation.",
+        "title": "blind_core_audit_060"
+      }
+    ],
+    "raw_supporting_rows": [
+      {
+        "source_family": "benchmark_v1",
+        "source_id": "benchmark_v1:blind_core_audit_060",
+        "summary": "Cannot confirm D Guyon is Antonin Guyon short form. Conservative SKIP per 11.4.m. Flag Sprint 7 for disambiguation."
+      }
+    ],
+    "retrieval_gap_diagnostics": [
+      {
+        "kind": "suppressed_candidate_probe",
+        "summary": "Shortlist gap probe against `D Guyon` kept bounded to the proof case source `blind_core_audit_060`."
+      }
+    ],
+    "vineyard_profile": {
+      "anchor": [],
+      "candidate": []
+    },
+    "web_identity": {
+      "anchor_urls": [],
+      "candidate_urls": [],
+      "source_urls": []
+    }
+  },
+  "anchor": {
+    "canonical_name": "Antonin Guyon",
+    "conflicts": {
+      "market_conflicts": [
+        "multiple applicant states present"
+      ],
+      "name_conflicts": [
+        "multiple label-facing name forms require comparison"
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "proof_empty_shortlist_case"
+      ]
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "domaine antonin guyon",
+        "row_count": 129,
+        "source_family": "ttb",
+        "value": "DOMAINE ANTONIN GUYON"
+      },
+      {
+        "normalized": "antonin guyon",
+        "row_count": 55,
+        "source_family": "canonical",
+        "value": "Antonin Guyon"
+      },
+      {
+        "normalized": "palm bay international",
+        "row_count": 11,
+        "source_family": "state_reg",
+        "value": "PALM BAY INTERNATIONAL"
+      },
+      {
+        "normalized": "esprit du vin",
+        "row_count": 8,
+        "source_family": "state_reg",
+        "value": "ESPRIT DU VIN"
+      },
+      {
+        "normalized": "domaine antonim guyon",
+        "row_count": 1,
+        "source_family": "ttb",
+        "value": "DOMAINE ANTONIM GUYON"
+      },
+      {
+        "normalized": "domaine antonin guyon corton charlemagne grand cru",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "DOMAINE ANTONIN GUYON  Corton-Charlemagne Grand Cru"
+      },
+      {
+        "normalized": "domaine antonin guyon les cras chambolle musigny",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "DOMAINE ANTONIN GUYON  Les Cras Chambolle-Musigny"
+      },
+      {
+        "normalized": "domaine antonin guyon clos de la chaume",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "DOMAINE ANTONIN GUYON CLOS DE LA CHAUME"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 29,
+        "source_family": "state_reg",
+        "value": "FREDERICK WILDMAN & SONS, LTD"
+      },
+      {
+        "row_count": 17,
+        "source_family": "ttb",
+        "value": "Michele Caruso"
+      },
+      {
+        "row_count": 17,
+        "source_family": "ttb",
+        "value": "REBECCA THOMAS"
+      },
+      {
+        "row_count": 16,
+        "source_family": "ttb",
+        "value": "Justin Appel"
+      }
+    ],
+    "name_normalized": "antonin guyon",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 11,
+          "value": "GEVREY-CHAMBERTIN"
+        },
+        {
+          "count": 8,
+          "value": "CHAMBOLLE-MUSIGNY"
+        },
+        {
+          "count": 7,
+          "value": "CORTON GRAND CRU"
+        },
+        {
+          "count": 5,
+          "value": "Vosne-Roman\u00e9e"
+        },
+        {
+          "count": 4,
+          "value": "Aloxe-Corton"
+        },
+        {
+          "count": 4,
+          "value": "Bourgogne"
+        }
+      ],
+      "countries": [
+        {
+          "count": 55,
+          "value": "FR"
+        },
+        {
+          "count": 55,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 55,
+          "value": "Burgundy"
+        },
+        {
+          "count": 13,
+          "value": "C\u00f4te de Beaune"
+        },
+        {
+          "count": 10,
+          "value": "C\u00f4te de Nuits"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 45,
+          "value": "red"
+        },
+        {
+          "count": 10,
+          "value": "white"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 44,
+          "value": "AOP"
+        }
+      ],
+      "top_grapes": [
+        {
+          "count": 8,
+          "value": "Pinot Noir"
+        },
+        {
+          "count": 2,
+          "value": "Chardonnay"
+        }
+      ],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Antonin Guyon, Gevrey-Chambertin Premier Cru, Platiere"
+        },
+        {
+          "count": 1,
+          "value": "Domaine Antonin Guyon, Aloxe-Corton Premier Cru, Les Fournieres"
+        },
+        {
+          "count": 1,
+          "value": "Domaine Antonin Guyon, Aloxe-Corton Premier Cru, Les Guerets Rouge"
+        },
+        {
+          "count": 1,
+          "value": "Domaine Antonin Guyon, Aloxe-Corton Premier Cru, Les Vercots"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Antonin Guyon Blanc, Pernand-Vergelesses"
+        },
+        {
+          "count": 1,
+          "value": "Antonin Guyon Chardonnay, Bourgogne"
+        },
+        {
+          "count": 1,
+          "value": "Antonin Guyon Rouge, Aloxe-Corton"
+        },
+        {
+          "count": 1,
+          "value": "Antonin Guyon Villages, C\u00f4te de Beaune"
+        },
+        {
+          "count": 1,
+          "value": "Antonin Guyon, Aloxe-Corton"
+        },
+        {
+          "count": 1,
+          "value": "Antonin Guyon, Beaune"
+        }
+      ]
+    },
+    "producer_id": "77eb6075-40d4-4074-baa1-2cb49cc21435",
+    "region": "Burgundy",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [
+        {
+          "count": 29,
+          "value": "FREDERICK WILDMAN & SONS, LTD"
+        },
+        {
+          "count": 18,
+          "value": "Frederick Wildman & Sons (19001880167)"
+        },
+        {
+          "count": 18,
+          "value": "Southern Glazers of Kansas (18001513703), Southern Glazers of Kansas (18002023801)"
+        },
+        {
+          "count": 10,
+          "value": "SMT ACQUISITIONS LLC(TAUB FAMILY SELECTIONS)"
+        },
+        {
+          "count": 8,
+          "value": "Palm Bay International"
+        },
+        {
+          "count": 4,
+          "value": "PALM BAY INTERNATIONAL INC(PALM BAY INTERNATIONAL)"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 17,
+          "value": "Michele Caruso"
+        },
+        {
+          "count": 17,
+          "value": "REBECCA THOMAS"
+        },
+        {
+          "count": 16,
+          "value": "Justin Appel"
+        },
+        {
+          "count": 14,
+          "value": "DENISE DESSIBOURG"
+        },
+        {
+          "count": 13,
+          "value": "LISA WU"
+        },
+        {
+          "count": 13,
+          "value": "Rachel Israel"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 83,
+          "value": "FL"
+        },
+        {
+          "count": 24,
+          "value": "CA"
+        },
+        {
+          "count": 23,
+          "value": "NY"
+        },
+        {
+          "count": 3,
+          "value": "GA"
+        },
+        {
+          "count": 2,
+          "value": "PA"
+        },
+        {
+          "count": 1,
+          "value": "MA"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 50,
+          "value": "FL-I-21310"
+        },
+        {
+          "count": 27,
+          "value": "FL-I-540"
+        },
+        {
+          "count": 18,
+          "value": "NY-I-400"
+        },
+        {
+          "count": 7,
+          "value": "FL-I-21456"
+        },
+        {
+          "count": 6,
+          "value": "CA-I-23488"
+        },
+        {
+          "count": 6,
+          "value": "CA-I-3223"
+        }
+      ]
+    },
+    "slug": "antonin-guyon",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 44,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 150,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 89,
+          "source_family": "state_reg"
+        }
+      ],
+      "vintage_count": 3,
+      "wine_count": 55
+    }
+  },
+  "case_id": "selector_proof_048",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "escalation_mode": "shortlist_gap_probe",
+  "escalation_version": "escalation_dossier_v1",
+  "selector_result_ref": {
+    "anchor_producer_id": "77eb6075-40d4-4074-baa1-2cb49cc21435",
+    "prior_choice_type": "none",
+    "prior_label": "UNSURE",
+    "prior_reason_code": "unsure_shortlist_gap_possible",
+    "prior_selected_candidate_id": "caf234de-e555-4886-871c-79fc8786ec7b",
+    "selector_version": "selector_harness_v1"
+  }
+}

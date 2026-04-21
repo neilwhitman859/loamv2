@@ -1,0 +1,168 @@
+{
+  "anchor": {
+    "canonical_name": "L'Ostal Cazes",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint",
+        "proof_empty_shortlist_case"
+      ]
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "l ostal cazes",
+        "row_count": 5,
+        "source_family": "canonical",
+        "value": "L'Ostal Cazes"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "l ostal cazes",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 3,
+          "value": "Minervois"
+        }
+      ],
+      "countries": [
+        {
+          "count": 5,
+          "value": "FR"
+        },
+        {
+          "count": 5,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 5,
+          "value": "Languedoc"
+        },
+        {
+          "count": 2,
+          "value": "Pays d'Oc"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 3,
+          "value": "red"
+        },
+        {
+          "count": 1,
+          "value": "rose"
+        },
+        {
+          "count": 1,
+          "value": "white"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 3,
+          "value": "AOP"
+        },
+        {
+          "count": 2,
+          "value": "IGP"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Domaine L'Ostal Cazes, Liviniere, Minervois"
+        },
+        {
+          "count": 1,
+          "value": "L'Ostal Cazes, Blanc, Pays d'Oc"
+        },
+        {
+          "count": 1,
+          "value": "L'Ostal Cazes, Estibals, Minervois"
+        },
+        {
+          "count": 1,
+          "value": "L'Ostal Cazes, Minervois"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Domaine L'Ostal Cazes, Liviniere, Minervois"
+        },
+        {
+          "count": 1,
+          "value": "L'Ostal Cazes, Blanc, Pays d'Oc"
+        },
+        {
+          "count": 1,
+          "value": "L'Ostal Cazes, Estibals, Minervois"
+        },
+        {
+          "count": 1,
+          "value": "L'Ostal Cazes, Minervois"
+        },
+        {
+          "count": 1,
+          "value": "L'Ostal Cazes, Rose, Pays d'Oc"
+        }
+      ]
+    },
+    "producer_id": "353a26ff-71a7-47da-af65-4f823621dc1a",
+    "region": "Languedoc",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "l-ostal-cazes",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 5,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 5
+    }
+  },
+  "case_id": "selector_proof_047",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 0,
+    "candidates": [],
+    "shortlist_status": "no_candidate_found"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

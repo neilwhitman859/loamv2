@@ -1,0 +1,524 @@
+{
+  "anchor": {
+    "canonical_name": "Substance",
+    "conflicts": {
+      "market_conflicts": [
+        "multiple applicant states present"
+      ],
+      "name_conflicts": [
+        "multiple label-facing name forms require comparison"
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "United States",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "substance",
+        "row_count": 68,
+        "source_family": "ttb",
+        "value": "SUBSTANCE"
+      },
+      {
+        "normalized": "sorting table",
+        "row_count": 9,
+        "source_family": "state_reg",
+        "value": "SORTING TABLE"
+      },
+      {
+        "normalized": "wines of substance",
+        "row_count": 5,
+        "source_family": "state_reg",
+        "value": "WINES OF SUBSTANCE"
+      },
+      {
+        "normalized": "wines of substance llc",
+        "row_count": 5,
+        "source_family": "state_reg",
+        "value": "WINES OF SUBSTANCE LLC"
+      },
+      {
+        "normalized": "substance pg",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "SUBSTANCE (PG)"
+      },
+      {
+        "normalized": "substance cf",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "SUBSTANCE CF"
+      },
+      {
+        "normalized": "substance ch",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "SUBSTANCE CH"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 44,
+        "source_family": "ttb",
+        "value": "JAMIE BROWN"
+      },
+      {
+        "row_count": 11,
+        "source_family": "state_reg",
+        "value": "O NEILL BEVERAGES CO LLC(ONEILL VINTNERS & DISTILLERS)"
+      },
+      {
+        "row_count": 9,
+        "source_family": "ttb",
+        "value": "Beth Roller"
+      },
+      {
+        "row_count": 6,
+        "source_family": "ttb",
+        "value": "CHARLES SMITH"
+      }
+    ],
+    "name_normalized": "substance",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 40,
+          "value": "WASHINGTON STATE"
+        },
+        {
+          "count": 26,
+          "value": "COLUMBIA VALLEY"
+        },
+        {
+          "count": 3,
+          "value": "Wahluke Slope"
+        },
+        {
+          "count": 1,
+          "value": "Ancient Lakes of Columbia Valley"
+        },
+        {
+          "count": 1,
+          "value": "WASHINGTON"
+        }
+      ],
+      "countries": [
+        {
+          "count": 12,
+          "value": "US"
+        },
+        {
+          "count": 12,
+          "value": "United States"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 12,
+          "value": "Washington"
+        },
+        {
+          "count": 2,
+          "value": "Walla Walla Valley"
+        },
+        {
+          "count": 1,
+          "value": "Oregon"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 9,
+          "value": "red"
+        },
+        {
+          "count": 3,
+          "value": "white"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 11,
+          "value": "AVA"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Substance, Bx Klein Red, Columbia Valley"
+        },
+        {
+          "count": 1,
+          "value": "Substance, CH Chardonnay, Columbia Valley"
+        },
+        {
+          "count": 1,
+          "value": "Substance, Cc Powerline Cabernet Sauvignon, Washington"
+        },
+        {
+          "count": 1,
+          "value": "Substance, Cs Cabernet Sauvignon Jack, Walla Walla Valley"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Substance Bx Klein Red, Columbia Valley"
+        },
+        {
+          "count": 1,
+          "value": "Substance CH Chardonnay, Columbia Valley"
+        },
+        {
+          "count": 1,
+          "value": "Substance CS Cabernet Sauvignon, Columbia Valley"
+        },
+        {
+          "count": 1,
+          "value": "Substance Cc Powerline Cabernet Sauvignon"
+        },
+        {
+          "count": 1,
+          "value": "Substance Cs Cabernet Sauvignon Jack"
+        },
+        {
+          "count": 1,
+          "value": "Substance Cs Cabernet Sauvignon Powerline"
+        }
+      ]
+    },
+    "producer_id": "613bf8cf-3c20-4dcc-bb71-eecb6aca41db",
+    "region": "Washington",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [
+        {
+          "count": 11,
+          "value": "O NEILL BEVERAGES CO LLC(ONEILL VINTNERS & DISTILLERS)"
+        },
+        {
+          "count": 8,
+          "value": "Oneill Vintners & Distillers (19001201138)"
+        },
+        {
+          "count": 4,
+          "value": "Worldwide Beverage Group (17019025207)"
+        },
+        {
+          "count": 4,
+          "value": "Worldwide Beverage Group (18019025207)"
+        },
+        {
+          "count": 2,
+          "value": "K VINTNERS, LLC(K VINTNERS)"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 44,
+          "value": "JAMIE BROWN"
+        },
+        {
+          "count": 9,
+          "value": "Beth Roller"
+        },
+        {
+          "count": 6,
+          "value": "CHARLES SMITH"
+        },
+        {
+          "count": 6,
+          "value": "Christina Solano"
+        },
+        {
+          "count": 3,
+          "value": "GREG HARRINGTON"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 66,
+          "value": "WA"
+        },
+        {
+          "count": 1,
+          "value": "CA"
+        },
+        {
+          "count": 1,
+          "value": "MA"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 42,
+          "value": "BWN-WA-15270"
+        },
+        {
+          "count": 9,
+          "value": "BWN-WA-15092"
+        },
+        {
+          "count": 6,
+          "value": "BW-WA-336"
+        },
+        {
+          "count": 6,
+          "value": "BWN-WA-21147"
+        },
+        {
+          "count": 3,
+          "value": "BWN-WA-15084"
+        },
+        {
+          "count": 1,
+          "value": "BW-CA-7006"
+        }
+      ]
+    },
+    "slug": "substance",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 12,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 68,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 35,
+          "source_family": "state_reg"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 12
+    }
+  },
+  "case_id": "selector_proof_019",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "ce38f5f2-8641-4618-84df-066816630187",
+        "candidate_identity": {
+          "canonical_name": "Casasmith",
+          "color_mix": [
+            {
+              "count": 2,
+              "value": "red"
+            }
+          ],
+          "conflicts": [
+            "multiple label-facing name forms require comparison",
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "United States",
+          "label_like_names": [
+            {
+              "row_count": 23,
+              "value": "CASASMITH"
+            },
+            {
+              "row_count": 6,
+              "value": "K VINTNERS LLC"
+            },
+            {
+              "row_count": 3,
+              "value": "VINO"
+            },
+            {
+              "row_count": 1,
+              "value": "CASASMITH PINOT GRIGIO EVERGREEN VINEYAR"
+            },
+            {
+              "row_count": 1,
+              "value": "CASASMITH VINO PINOT GRIGIO EVEGREEN VIN"
+            },
+            {
+              "row_count": 1,
+              "value": "LOCA LINDA"
+            }
+          ],
+          "legal_or_applicant_names": [
+            {
+              "row_count": 14,
+              "value": "K VINTNERS"
+            },
+            {
+              "row_count": 11,
+              "value": "Beth Roller"
+            },
+            {
+              "row_count": 7,
+              "value": "Christina Solano"
+            },
+            {
+              "row_count": 5,
+              "value": "Deanna Leon"
+            }
+          ],
+          "region": "Washington",
+          "source_families": [
+            {
+              "linked_rows": 2,
+              "source_family": "lwin"
+            },
+            {
+              "linked_rows": 24,
+              "source_family": "ttb"
+            },
+            {
+              "linked_rows": 33,
+              "source_family": "state_reg"
+            }
+          ],
+          "sparse_signal_flags": [
+            "sparse_wine_catalog",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [
+            {
+              "count": 14,
+              "value": "K VINTNERS"
+            },
+            {
+              "count": 4,
+              "value": "Handcrafted Wines of Kansas (18019302501)"
+            },
+            {
+              "count": 4,
+              "value": "K Vintners (19001200518)"
+            },
+            {
+              "count": 3,
+              "value": "O NEILL BEVERAGES CO LLC(ONEILL VINTNERS & DISTILLERS)"
+            }
+          ],
+          "top_designations": [
+            {
+              "count": 2,
+              "value": "AVA"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Casasmith, Chingiale Sangiovese, Wahluke Slope"
+            },
+            {
+              "count": 1,
+              "value": "Casasmith, Vino Cabernet Sauvignon Sangiovese, Columbia Valley"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Casasmith Chingiale Sangiovese, Wahluke Slope"
+            },
+            {
+              "count": 1,
+              "value": "Casasmith Vino Cabernet Sauvignon Sangiovese, Columbia Valley"
+            }
+          ],
+          "ttb_applicant_names": [
+            {
+              "count": 11,
+              "value": "Beth Roller"
+            },
+            {
+              "count": 7,
+              "value": "Christina Solano"
+            },
+            {
+              "count": 5,
+              "value": "Deanna Leon"
+            },
+            {
+              "count": 1,
+              "value": "Tim Elenteny"
+            }
+          ]
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "CASASMITH",
+            "CASASMITH PINOT GRIGIO EVERGREEN VINEYAR",
+            "CASASMITH VINO PINOT GRIGIO EVEGREEN VIN",
+            "K VINTNERS LLC"
+          ],
+          "divergent_place_signals": [
+            "WALLA WALLA VALLEY"
+          ],
+          "divergent_portfolio_signals": [
+            "Casasmith Chingiale Sangiovese, Wahluke Slope",
+            "Casasmith Vino Cabernet Sauvignon Sangiovese, Columbia Valley"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "United States",
+            "US",
+            "Washington",
+            "Ancient Lakes of Columbia Valley"
+          ],
+          "matched_portfolio_signals": [
+            "AVA"
+          ],
+          "matched_regulatory_signals": [
+            "BW-WA-336",
+            "BWN-WA-15092",
+            "BWN-WA-21147",
+            "Beth Roller"
+          ],
+          "risk_tags": [
+            "holdco_split"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible",
+            "regulatory or market signal corroborated the candidate"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "orthographic_variant",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "ttb"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

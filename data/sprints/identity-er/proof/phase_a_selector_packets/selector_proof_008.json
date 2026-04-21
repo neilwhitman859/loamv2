@@ -1,0 +1,434 @@
+{
+  "anchor": {
+    "canonical_name": "Amiot Bonfils",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "amiot bonfils",
+        "row_count": 1,
+        "source_family": "ttb",
+        "value": "AMIOT - BONFILS"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 1,
+        "source_family": "ttb",
+        "value": "CHRISTOPHER MCCANN"
+      },
+      {
+        "row_count": 1,
+        "source_family": "ttb",
+        "value": "John Dorsey"
+      }
+    ],
+    "name_normalized": "amiot bonfils",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 6,
+          "value": "Chassagne-Montrachet"
+        },
+        {
+          "count": 2,
+          "value": "Morey-Saint-Denis"
+        },
+        {
+          "count": 1,
+          "value": "Chambolle-Musigny"
+        },
+        {
+          "count": 1,
+          "value": "Clos Saint-Denis"
+        },
+        {
+          "count": 1,
+          "value": "Clos de la Roche"
+        },
+        {
+          "count": 1,
+          "value": "Gevrey-Chambertin"
+        }
+      ],
+      "countries": [
+        {
+          "count": 14,
+          "value": "France"
+        },
+        {
+          "count": 13,
+          "value": "FR"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 14,
+          "value": "Burgundy"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 7,
+          "value": "white"
+        },
+        {
+          "count": 6,
+          "value": "red"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 14,
+          "value": "AOP"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Amiot Bonfils, Chambolle-Musigny"
+        },
+        {
+          "count": 1,
+          "value": "Amiot Bonfils, Chassagne-Montrachet"
+        },
+        {
+          "count": 1,
+          "value": "Amiot Bonfils, Chassagne-Montrachet Premier Cru, Cailleret"
+        },
+        {
+          "count": 1,
+          "value": "Amiot Bonfils, Chassagne-Montrachet Premier Cru, Clos Saint-Jean Blanc"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Amiot Bonfils Blanc, Chassagne-Montrachet"
+        },
+        {
+          "count": 1,
+          "value": "Amiot Bonfils, Chambolle-Musigny"
+        },
+        {
+          "count": 1,
+          "value": "Amiot Bonfils, Chassagne-Montrachet"
+        },
+        {
+          "count": 1,
+          "value": "Amiot Bonfils, Chassagne-Montrachet Premier Cru, Cailleret"
+        },
+        {
+          "count": 1,
+          "value": "Amiot Bonfils, Chassagne-Montrachet Premier Cru, Les Champs Gain"
+        },
+        {
+          "count": 1,
+          "value": "Amiot Bonfils, Chassagne-Montrachet Premier Cru, Les Vergers"
+        }
+      ]
+    },
+    "producer_id": "5da48f3b-ccf8-46b1-8bc7-ffb48f26d94b",
+    "region": "Burgundy",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [
+        {
+          "count": 1,
+          "value": "CHRISTOPHER MCCANN"
+        },
+        {
+          "count": 1,
+          "value": "John Dorsey"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 2,
+          "value": "NY"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 5,
+          "value": "CA-I-2216"
+        },
+        {
+          "count": 4,
+          "value": "PA-I-314"
+        },
+        {
+          "count": 2,
+          "value": "CA-I-3734"
+        },
+        {
+          "count": 2,
+          "value": "CT I 250"
+        }
+      ]
+    },
+    "slug": "amiot-bonfils",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 14,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 19,
+          "source_family": "ttb"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 13
+    }
+  },
+  "case_id": "selector_proof_008",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "d3758130-8414-4fb6-94fc-58bfc0d40725",
+        "candidate_identity": {
+          "canonical_name": "Guy Amiot et Fils",
+          "color_mix": [
+            {
+              "count": 25,
+              "value": "white"
+            },
+            {
+              "count": 9,
+              "value": "red"
+            },
+            {
+              "count": 1,
+              "value": "rose"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier",
+            "multiple region signals in cheap dossier",
+            "multiple applicant states present"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 96,
+              "value": "GUY AMIOT ET FILS"
+            },
+            {
+              "row_count": 2,
+              "value": "GUY AMIOT ET FILS  Santenay"
+            },
+            {
+              "row_count": 1,
+              "value": "GUY AMIOT ET FILS  Meursault"
+            }
+          ],
+          "legal_or_applicant_names": [
+            {
+              "row_count": 22,
+              "value": "Kyle Greene"
+            },
+            {
+              "row_count": 16,
+              "value": "ELIZABETH HETHERINGTON"
+            },
+            {
+              "row_count": 9,
+              "value": "Charles Meyer"
+            },
+            {
+              "row_count": 9,
+              "value": "SALLY AZURMENDI"
+            }
+          ],
+          "region": "Burgundy",
+          "source_families": [
+            {
+              "linked_rows": 29,
+              "source_family": "lwin"
+            },
+            {
+              "linked_rows": 96,
+              "source_family": "ttb"
+            },
+            {
+              "linked_rows": 7,
+              "source_family": "state_reg"
+            }
+          ],
+          "sparse_signal_flags": [],
+          "supplier_or_distributor_names": [
+            {
+              "count": 3,
+              "value": "MICHAEL CORSO SELECTIONS"
+            },
+            {
+              "count": 3,
+              "value": "SANGLIER SELECTIONS LLC(MICHAEL CORSO SELECTIONS)"
+            },
+            {
+              "count": 1,
+              "value": "Michael Corso Selections (3276)"
+            },
+            {
+              "count": 1,
+              "value": "Vintegrity Kansas (3018)"
+            }
+          ],
+          "top_designations": [
+            {
+              "count": 29,
+              "value": "AOP"
+            }
+          ],
+          "top_grapes": [
+            {
+              "count": 4,
+              "value": "Chardonnay"
+            },
+            {
+              "count": 3,
+              "value": "Pinot Noir"
+            },
+            {
+              "count": 2,
+              "value": "Aligot\u00e9"
+            }
+          ],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Domaine Guy Amiot et Fils, Cremant de Bourgogne, Brut Rose"
+            },
+            {
+              "count": 1,
+              "value": "Guy Amiot et Fils, Beaune, Longbois"
+            },
+            {
+              "count": 1,
+              "value": "Guy Amiot et Fils, Bourgogne Aligote"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 2,
+              "value": "Guy Amiot et Fils, Chassagne-Montrachet"
+            },
+            {
+              "count": 1,
+              "value": "Guy Amiot et Fils Blanc, Bourgogne"
+            },
+            {
+              "count": 1,
+              "value": "Guy Amiot et Fils Brut Rose, Cr\u00e9mant de Bourgogne"
+            },
+            {
+              "count": 1,
+              "value": "Guy Amiot et Fils Brut, Cr\u00e9mant de Bourgogne"
+            },
+            {
+              "count": 1,
+              "value": "Guy Amiot et Fils Chardonnay Cuvee Flavie, Bourgogne"
+            }
+          ],
+          "ttb_applicant_names": [
+            {
+              "count": 22,
+              "value": "Kyle Greene"
+            },
+            {
+              "count": 16,
+              "value": "ELIZABETH HETHERINGTON"
+            },
+            {
+              "count": 9,
+              "value": "Charles Meyer"
+            },
+            {
+              "count": 9,
+              "value": "SALLY AZURMENDI"
+            }
+          ]
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "GUY AMIOT ET FILS",
+            "GUY AMIOT ET FILS  Meursault",
+            "GUY AMIOT ET FILS  Santenay"
+          ],
+          "divergent_place_signals": [
+            "C\u00f4te Chalonnaise",
+            "C\u00f4te de Beaune",
+            "BOURGOGNE",
+            "Bourgogne aligot\u00e9"
+          ],
+          "divergent_portfolio_signals": [
+            "Guy Amiot et Fils Blanc, Bourgogne",
+            "Guy Amiot et Fils Brut, Cr\u00e9mant de Bourgogne",
+            "Guy Amiot et Fils Brut Rose, Cr\u00e9mant de Bourgogne",
+            "Guy Amiot et Fils Chardonnay Cuvee Flavie, Bourgogne"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "FR",
+            "France",
+            "Burgundy",
+            "Chassagne-Montrachet"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "fuzzy",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

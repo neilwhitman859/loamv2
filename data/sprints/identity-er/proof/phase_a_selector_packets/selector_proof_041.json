@@ -1,0 +1,282 @@
+{
+  "anchor": {
+    "canonical_name": "Benedikt Baltes",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "Germany",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "benedikt baltes",
+        "row_count": 3,
+        "source_family": "canonical",
+        "value": "Benedikt Baltes"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "benedikt baltes",
+    "place_fingerprint": {
+      "appellations": [],
+      "countries": [
+        {
+          "count": 3,
+          "value": "DE"
+        },
+        {
+          "count": 3,
+          "value": "Germany"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 3,
+          "value": "Franken"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 3,
+          "value": "red"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 3,
+          "value": "Qualitatswein"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Benedikt Baltes, Buntsandstein Spatburgunder, Franken"
+        },
+        {
+          "count": 1,
+          "value": "Benedikt Baltes, Klingenberg R Alte Reben, Franken"
+        },
+        {
+          "count": 1,
+          "value": "Benedikt Baltes, Schlossberg Klingenberg Spatburgunder GG, Franken"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Benedikt Baltes, Buntsandstein Spatburgunder, Franken"
+        },
+        {
+          "count": 1,
+          "value": "Benedikt Baltes, Klingenberg R Alte Reben, Franken"
+        },
+        {
+          "count": 1,
+          "value": "Benedikt Baltes, Schlossberg Klingenberg Spatburgunder GG, Franken"
+        }
+      ]
+    },
+    "producer_id": "948c0e4e-0617-46de-87a8-3dd55096fa44",
+    "region": "Franken",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "benedikt-baltes",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 3,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 3
+    }
+  },
+  "case_id": "selector_proof_041",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "a7180992-b4ba-4609-9d75-e342f3ed9e70",
+        "candidate_identity": {
+          "canonical_name": "Bertram-Baltes",
+          "color_mix": [
+            {
+              "count": 7,
+              "value": "red"
+            },
+            {
+              "count": 1,
+              "value": "rose"
+            },
+            {
+              "count": 1,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "Germany",
+          "label_like_names": [
+            {
+              "row_count": 10,
+              "value": "Bertram-Baltes"
+            }
+          ],
+          "legal_or_applicant_names": [
+            {
+              "row_count": 3,
+              "value": "Kevin Pike"
+            },
+            {
+              "row_count": 1,
+              "value": "Stephen Bitterolf"
+            }
+          ],
+          "region": "Ahr",
+          "source_families": [
+            {
+              "linked_rows": 10,
+              "source_family": "lwin"
+            },
+            {
+              "linked_rows": 4,
+              "source_family": "ttb"
+            }
+          ],
+          "sparse_signal_flags": [
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 9,
+              "value": "Qualitatswein"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Bertram-Baltes, Ahrweiler Spatburgunder, Ahr"
+            },
+            {
+              "count": 1,
+              "value": "Bertram-Baltes, Alte Reben Spatburgunder Blanc de Noir, Ahr"
+            },
+            {
+              "count": 1,
+              "value": "Bertram-Baltes, Assortment Case"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Bertram-Baltes Ahrweiler Spatburgunder"
+            },
+            {
+              "count": 1,
+              "value": "Bertram-Baltes Alte Reben Spatburgunder Blanc de Noir"
+            },
+            {
+              "count": 1,
+              "value": "Bertram-Baltes Assortment Case"
+            },
+            {
+              "count": 1,
+              "value": "Bertram-Baltes Dernauer Goldkaul Spatburgunder"
+            },
+            {
+              "count": 1,
+              "value": "Bertram-Baltes Dernauer Pfarrwingert Spatburgunder"
+            }
+          ],
+          "ttb_applicant_names": [
+            {
+              "count": 3,
+              "value": "Kevin Pike"
+            },
+            {
+              "count": 1,
+              "value": "Stephen Bitterolf"
+            }
+          ]
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Bertram-Baltes"
+          ],
+          "divergent_place_signals": [
+            "Ahr",
+            "AHR"
+          ],
+          "divergent_portfolio_signals": [
+            "Bertram-Baltes Ahrweiler Spatburgunder",
+            "Bertram-Baltes Alte Reben Spatburgunder Blanc de Noir",
+            "Bertram-Baltes Assortment Case",
+            "Bertram-Baltes Dernauer Goldkaul Spatburgunder"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "DE",
+            "Germany"
+          ],
+          "matched_portfolio_signals": [
+            "Qualitatswein"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "fuzzy",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

@@ -1,0 +1,52 @@
+{
+  "all_oracle_phases_pass": true,
+  "manifest_path": "data\\sprints\\identity-er\\proof\\selector_proof_case_sources_v1.json",
+  "oracle_phase_a": {
+    "case_count": 48,
+    "choice_valid_rate": 1.0,
+    "evidence_ref_integrity_rate": 1.0,
+    "false_none": 0,
+    "false_related": 0,
+    "false_same_as": 0,
+    "missed_related": 0,
+    "missed_same_as": 0,
+    "over_escalation": 0,
+    "passes": true,
+    "schema_valid_rate": 1.0,
+    "unsafe_frontier_resolution": 0
+  },
+  "oracle_phase_b": {
+    "case_count": 8,
+    "escalation_block_scope_valid_rate": 1.0,
+    "escalation_choice_valid_rate": 1.0,
+    "escalation_evidence_ref_integrity_rate": 1.0,
+    "escalation_schema_valid_rate": 1.0,
+    "exact_escalation_label_hits": 5,
+    "false_related_after_escalation": 0,
+    "false_same_as_after_escalation": 0,
+    "passes": true,
+    "resolvable_frontier_recovery": 5,
+    "unsafe_resolution_of_expected_unsure": 0
+  },
+  "oracle_phase_c": {
+    "case_count": 48,
+    "empty_shortlist_correct_rate": 1.0,
+    "gold_candidate_present_rate": 1.0,
+    "gold_candidate_top_3_rate": 1.0,
+    "none_control_median_candidate_count": 2,
+    "passes": true,
+    "shortlist_cap_breaches": 0
+  },
+  "oracle_phase_d": {
+    "accepted_edge_schema_valid_rate": 1.0,
+    "contradictory_edge_overwrite_attempts": 0,
+    "frontier_record_schema_valid_rate": 1.0,
+    "illegal_negative_edge_from_empty_shortlist": 0,
+    "invalid_selector_none_fanout_count": 0,
+    "passes": true,
+    "same_as_component_barrier_conflicts": 0
+  },
+  "phase_a_packet_issues": {},
+  "phase_b_packet_issues": {},
+  "proof_version": "selector_proof_v1"
+}

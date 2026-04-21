@@ -1,0 +1,860 @@
+{
+  "case_count": 48,
+  "cases": [
+    {
+      "case_id": "selector_proof_001",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_002",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_002",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_006",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_003",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_014",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_004",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_016",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_005",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_018",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_006",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_020",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_007",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.f",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_005",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_008",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.f",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_008",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_009",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.f",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_015",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_010",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.f",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_019",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_011",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.n",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_023",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_012",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.n",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_028",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_013",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.n",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "tail",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "known_missed_merge_patterns_014",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_014",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.n",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "tail",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "known_missed_merge_patterns_015",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_015",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.p",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_007",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_016",
+      "expected_selector_label": "SAME_AS",
+      "pattern_family": "11.4.n",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "tail",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "known_missed_merge_patterns_016",
+      "source_kind": "benchmark_v1",
+      "stratum": "same_as_core",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_017",
+      "expected_selector_label": "RELATED_BUT_DISTINCT",
+      "pattern_family": "11.4.g",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_042",
+      "source_kind": "benchmark_v1",
+      "stratum": "related_controls",
+      "world_relationship": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "case_id": "selector_proof_018",
+      "expected_selector_label": "RELATED_BUT_DISTINCT",
+      "pattern_family": "11.4.g",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_058",
+      "source_kind": "benchmark_v1",
+      "stratum": "related_controls",
+      "world_relationship": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "case_id": "selector_proof_019",
+      "expected_selector_label": "RELATED_BUT_DISTINCT",
+      "pattern_family": "11.4.g",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_078",
+      "source_kind": "benchmark_v1",
+      "stratum": "related_controls",
+      "world_relationship": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "case_id": "selector_proof_020",
+      "expected_selector_label": "RELATED_BUT_DISTINCT",
+      "pattern_family": "11.4.g",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_096",
+      "source_kind": "benchmark_v1",
+      "stratum": "related_controls",
+      "world_relationship": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "case_id": "selector_proof_021",
+      "expected_selector_label": "RELATED_BUT_DISTINCT",
+      "pattern_family": "11.4.m",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_031",
+      "source_kind": "benchmark_v1",
+      "stratum": "related_controls",
+      "world_relationship": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "case_id": "selector_proof_022",
+      "expected_selector_label": "RELATED_BUT_DISTINCT",
+      "pattern_family": "11.4.m",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_040",
+      "source_kind": "benchmark_v1",
+      "stratum": "related_controls",
+      "world_relationship": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "case_id": "selector_proof_023",
+      "expected_selector_label": "RELATED_BUT_DISTINCT",
+      "pattern_family": "11.4.j",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_070",
+      "source_kind": "benchmark_v1",
+      "stratum": "related_controls",
+      "world_relationship": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "case_id": "selector_proof_024",
+      "expected_selector_label": "RELATED_BUT_DISTINCT",
+      "pattern_family": "11.4.j",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_080",
+      "source_kind": "benchmark_v1",
+      "stratum": "related_controls",
+      "world_relationship": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "case_id": "selector_proof_025",
+      "expected_selector_label": "RELATED_BUT_DISTINCT",
+      "pattern_family": "11.4.j",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_098",
+      "source_kind": "benchmark_v1",
+      "stratum": "related_controls",
+      "world_relationship": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "case_id": "selector_proof_026",
+      "expected_selector_label": "RELATED_BUT_DISTINCT",
+      "pattern_family": "11.4.o",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_057",
+      "source_kind": "benchmark_v1",
+      "stratum": "related_controls",
+      "world_relationship": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "case_id": "selector_proof_027",
+      "expected_selector_label": "RELATED_BUT_DISTINCT",
+      "pattern_family": "11.4.q",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "tail",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "tail_random_sample_013",
+      "source_kind": "benchmark_v1",
+      "stratum": "related_controls",
+      "world_relationship": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "case_id": "selector_proof_028",
+      "expected_selector_label": "RELATED_BUT_DISTINCT",
+      "pattern_family": "11.4.s",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_069",
+      "source_kind": "benchmark_v1",
+      "stratum": "related_controls",
+      "world_relationship": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "case_id": "selector_proof_029",
+      "expected_selector_label": "NONE",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 1,
+        "choice_type": "none",
+        "packet_mode": "comparison_packet"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_053",
+      "source_kind": "benchmark_v1",
+      "stratum": "none_controls",
+      "world_relationship": "NONE"
+    },
+    {
+      "case_id": "selector_proof_030",
+      "expected_selector_label": "NONE",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "none",
+        "packet_mode": "empty_shortlist"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "empty_shortlist_ok",
+      "source_case_id": "blind_core_audit_055",
+      "source_kind": "benchmark_v1",
+      "stratum": "none_controls",
+      "world_relationship": "NONE"
+    },
+    {
+      "case_id": "selector_proof_031",
+      "expected_selector_label": "NONE",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 1,
+        "choice_type": "none",
+        "packet_mode": "comparison_packet"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_066",
+      "source_kind": "benchmark_v1",
+      "stratum": "none_controls",
+      "world_relationship": "NONE"
+    },
+    {
+      "case_id": "selector_proof_032",
+      "expected_selector_label": "NONE",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 1,
+        "choice_type": "none",
+        "packet_mode": "comparison_packet"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_068",
+      "source_kind": "benchmark_v1",
+      "stratum": "none_controls",
+      "world_relationship": "NONE"
+    },
+    {
+      "case_id": "selector_proof_033",
+      "expected_selector_label": "NONE",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 1,
+        "choice_type": "none",
+        "packet_mode": "comparison_packet"
+      },
+      "risk_tier": "tail",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "known_false_merge_patterns_001",
+      "source_kind": "benchmark_v1",
+      "stratum": "none_controls",
+      "world_relationship": "NONE"
+    },
+    {
+      "case_id": "selector_proof_034",
+      "expected_selector_label": "NONE",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 1,
+        "choice_type": "none",
+        "packet_mode": "comparison_packet"
+      },
+      "risk_tier": "tail",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "known_false_merge_patterns_002",
+      "source_kind": "benchmark_v1",
+      "stratum": "none_controls",
+      "world_relationship": "NONE"
+    },
+    {
+      "case_id": "selector_proof_035",
+      "expected_selector_label": "NONE",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 1,
+        "choice_type": "none",
+        "packet_mode": "comparison_packet"
+      },
+      "risk_tier": "tail",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "known_false_merge_patterns_004",
+      "source_kind": "benchmark_v1",
+      "stratum": "none_controls",
+      "world_relationship": "NONE"
+    },
+    {
+      "case_id": "selector_proof_036",
+      "expected_selector_label": "NONE",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "none",
+        "packet_mode": "empty_shortlist"
+      },
+      "risk_tier": "tail",
+      "shortlist_expectation": "empty_shortlist_ok",
+      "source_case_id": "known_false_merge_patterns_008",
+      "source_kind": "benchmark_v1",
+      "stratum": "none_controls",
+      "world_relationship": "NONE"
+    },
+    {
+      "case_id": "selector_proof_037",
+      "expected_selector_label": "NONE",
+      "pattern_family": "11.4.m",
+      "phase_a": {
+        "auto_distractor_count": 1,
+        "choice_type": "none",
+        "packet_mode": "comparison_packet"
+      },
+      "risk_tier": "tail",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "known_false_merge_patterns_010",
+      "source_kind": "benchmark_v1",
+      "stratum": "none_controls",
+      "world_relationship": "NONE"
+    },
+    {
+      "case_id": "selector_proof_038",
+      "expected_selector_label": "NONE",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 1,
+        "choice_type": "none",
+        "packet_mode": "comparison_packet"
+      },
+      "risk_tier": "tail",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "known_false_merge_patterns_016",
+      "source_kind": "benchmark_v1",
+      "stratum": "none_controls",
+      "world_relationship": "NONE"
+    },
+    {
+      "case_id": "selector_proof_039",
+      "expected_selector_label": "NONE",
+      "pattern_family": "11.1",
+      "phase_a": {
+        "auto_distractor_count": 1,
+        "choice_type": "none",
+        "packet_mode": "comparison_packet"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_054",
+      "source_kind": "benchmark_v1",
+      "stratum": "none_controls",
+      "world_relationship": "NONE"
+    },
+    {
+      "case_id": "selector_proof_040",
+      "expected_selector_label": "NONE",
+      "pattern_family": "11.1",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "none",
+        "packet_mode": "empty_shortlist"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "empty_shortlist_ok",
+      "source_case_id": "blind_core_audit_097",
+      "source_kind": "benchmark_v1",
+      "stratum": "none_controls",
+      "world_relationship": "NONE"
+    },
+    {
+      "case_id": "selector_proof_041",
+      "expected_selector_label": "UNSURE",
+      "pattern_family": "11.4.f",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "phase_b": {
+        "allowed_escalation_blocks": [
+          "profile_snippets",
+          "raw_supporting_rows"
+        ],
+        "escalation_mode": "candidate_frontier",
+        "expected_case_resolution": "accepted_edge",
+        "expected_escalation_choice_type": "candidate",
+        "expected_escalation_label": "SAME_AS"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_017",
+      "source_kind": "benchmark_v1",
+      "stratum": "unsure_frontier",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_042",
+      "expected_selector_label": "UNSURE",
+      "pattern_family": "11.4.f",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "phase_b": {
+        "allowed_escalation_blocks": [
+          "profile_snippets",
+          "raw_supporting_rows"
+        ],
+        "escalation_mode": "candidate_frontier",
+        "expected_case_resolution": "accepted_edge",
+        "expected_escalation_choice_type": "candidate",
+        "expected_escalation_label": "SAME_AS"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_030",
+      "source_kind": "benchmark_v1",
+      "stratum": "unsure_frontier",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_043",
+      "expected_selector_label": "UNSURE",
+      "pattern_family": "11.4.p",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "phase_b": {
+        "allowed_escalation_blocks": [
+          "profile_snippets",
+          "raw_supporting_rows"
+        ],
+        "escalation_mode": "candidate_frontier",
+        "expected_case_resolution": "accepted_edge",
+        "expected_escalation_choice_type": "candidate",
+        "expected_escalation_label": "SAME_AS"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_013",
+      "source_kind": "benchmark_v1",
+      "stratum": "unsure_frontier",
+      "world_relationship": "SAME_AS"
+    },
+    {
+      "case_id": "selector_proof_044",
+      "expected_selector_label": "UNSURE",
+      "pattern_family": "11.4.j",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "phase_b": {
+        "allowed_escalation_blocks": [
+          "web_identity",
+          "profile_snippets",
+          "raw_supporting_rows"
+        ],
+        "escalation_mode": "candidate_frontier",
+        "expected_case_resolution": "accepted_edge",
+        "expected_escalation_choice_type": "candidate",
+        "expected_escalation_label": "RELATED_BUT_DISTINCT"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_kind": "calibration_set",
+      "source_pair_id": 116371,
+      "stratum": "unsure_frontier",
+      "world_relationship": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "case_id": "selector_proof_045",
+      "expected_selector_label": "UNSURE",
+      "pattern_family": "11.4.j",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "single_candidate"
+      },
+      "phase_b": {
+        "allowed_escalation_blocks": [
+          "web_identity",
+          "profile_snippets",
+          "raw_supporting_rows"
+        ],
+        "escalation_mode": "candidate_frontier",
+        "expected_case_resolution": "accepted_edge",
+        "expected_escalation_choice_type": "candidate",
+        "expected_escalation_label": "RELATED_BUT_DISTINCT"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_kind": "calibration_set",
+      "source_pair_id": 118462,
+      "stratum": "unsure_frontier",
+      "world_relationship": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "case_id": "selector_proof_046",
+      "expected_selector_label": "UNSURE",
+      "pattern_family": "11.4.h",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "candidate",
+        "packet_mode": "comparison_packet"
+      },
+      "phase_b": {
+        "allowed_escalation_blocks": [
+          "profile_snippets",
+          "raw_supporting_rows"
+        ],
+        "escalation_mode": "candidate_frontier",
+        "expected_case_resolution": "closed_no_candidate",
+        "expected_escalation_choice_type": "none",
+        "expected_escalation_label": "NONE"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "candidate_present",
+      "source_case_id": "blind_core_audit_094",
+      "source_kind": "benchmark_v1",
+      "stratum": "unsure_frontier",
+      "world_relationship": "NONE"
+    },
+    {
+      "case_id": "selector_proof_047",
+      "expected_selector_label": "UNSURE",
+      "pattern_family": "11.4.g",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "none",
+        "packet_mode": "empty_shortlist"
+      },
+      "phase_b": {
+        "allowed_escalation_blocks": [
+          "retrieval_gap_diagnostics",
+          "raw_supporting_rows"
+        ],
+        "escalation_mode": "shortlist_gap_probe",
+        "expected_case_resolution": "frontier_unresolved",
+        "expected_escalation_choice_type": "none",
+        "expected_escalation_label": "UNSURE"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "frontier_gap_ok",
+      "source_case_id": "blind_core_audit_052",
+      "source_kind": "benchmark_v1",
+      "stratum": "unsure_frontier",
+      "world_relationship": "RELATED_BUT_DISTINCT"
+    },
+    {
+      "case_id": "selector_proof_048",
+      "expected_selector_label": "UNSURE",
+      "pattern_family": "11.4.m",
+      "phase_a": {
+        "auto_distractor_count": 0,
+        "choice_type": "none",
+        "packet_mode": "empty_shortlist"
+      },
+      "phase_b": {
+        "allowed_escalation_blocks": [
+          "retrieval_gap_diagnostics",
+          "raw_supporting_rows"
+        ],
+        "escalation_mode": "shortlist_gap_probe",
+        "expected_case_resolution": "frontier_unresolved",
+        "expected_escalation_choice_type": "none",
+        "expected_escalation_label": "UNSURE"
+      },
+      "risk_tier": "core",
+      "shortlist_expectation": "frontier_gap_ok",
+      "source_case_id": "blind_core_audit_060",
+      "source_kind": "benchmark_v1",
+      "stratum": "unsure_frontier",
+      "world_relationship": "NONE"
+    }
+  ],
+  "proof_version": "selector_proof_v1",
+  "source_artifacts": {
+    "benchmark_v1": "data/sprints/dedup/benchmark_v1.json",
+    "calibration_set": "data/sprints/dedup/calibration_set.json"
+  }
+}

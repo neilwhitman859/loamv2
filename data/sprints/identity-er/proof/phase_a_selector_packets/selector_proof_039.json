@@ -1,0 +1,430 @@
+{
+  "anchor": {
+    "canonical_name": "V.J.H. Justino Henriques",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "sparse_wine_catalog",
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "Portugal",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "v j h justino henriques",
+        "row_count": 2,
+        "source_family": "canonical",
+        "value": "V.J.H. Justino Henriques"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "v j h justino henriques",
+    "place_fingerprint": {
+      "appellations": [],
+      "countries": [
+        {
+          "count": 2,
+          "value": "PT"
+        },
+        {
+          "count": 2,
+          "value": "Portugal"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 2,
+          "value": "Madeira"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [],
+      "top_designations": [
+        {
+          "count": 2,
+          "value": "DOC"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "V.J.H. Justino Henriques, Boal Madeira"
+        },
+        {
+          "count": 1,
+          "value": "V.J.H. Justino Henriques, Sercial Madeira"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "V.J.H. Justino Henriques, Boal Madeira"
+        },
+        {
+          "count": 1,
+          "value": "V.J.H. Justino Henriques, Sercial Madeira"
+        }
+      ]
+    },
+    "producer_id": "725662ae-7cb8-46fc-a37e-6bd16ef2a46d",
+    "region": "Madeira",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "v-j-h-justino-henriques",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 2,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 2
+    }
+  },
+  "case_id": "selector_proof_039",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 2,
+    "candidates": [
+      {
+        "candidate_id": "d9489851-4fd9-4de1-9076-dce5e4805ad3",
+        "candidate_identity": {
+          "canonical_name": "Henriques & Henriques",
+          "color_mix": [
+            {
+              "count": 28,
+              "value": "white"
+            },
+            {
+              "count": 11,
+              "value": "red"
+            }
+          ],
+          "conflicts": [
+            "multiple label-facing name forms require comparison",
+            "multiple country signals in cheap dossier",
+            "multiple applicant states present"
+          ],
+          "country": "Portugal",
+          "label_like_names": [
+            {
+              "row_count": 216,
+              "value": "HENRIQUES & HENRIQUES"
+            },
+            {
+              "row_count": 18,
+              "value": "MHW LTD."
+            },
+            {
+              "row_count": 1,
+              "value": "HENRIQUES AND HENRIQUES"
+            },
+            {
+              "row_count": 1,
+              "value": "HENRIQUES AND HENRIQUES MADEIRA RESERVA"
+            }
+          ],
+          "legal_or_applicant_names": [
+            {
+              "row_count": 23,
+              "value": "Mike Miller"
+            },
+            {
+              "row_count": 21,
+              "value": "ERIC SEED"
+            },
+            {
+              "row_count": 7,
+              "value": "VALERIE WALTER"
+            },
+            {
+              "row_count": 6,
+              "value": "MICHAEL REISS"
+            }
+          ],
+          "region": "Madeira",
+          "source_families": [
+            {
+              "linked_rows": 57,
+              "source_family": "lwin"
+            },
+            {
+              "linked_rows": 217,
+              "source_family": "ttb"
+            },
+            {
+              "linked_rows": 39,
+              "source_family": "state_reg"
+            }
+          ],
+          "sparse_signal_flags": [],
+          "supplier_or_distributor_names": [
+            {
+              "count": 1,
+              "value": "MHW, LTD."
+            }
+          ],
+          "top_designations": [
+            {
+              "count": 57,
+              "value": "DOC"
+            }
+          ],
+          "top_grapes": [
+            {
+              "count": 9,
+              "value": "Malvasia Fina"
+            },
+            {
+              "count": 5,
+              "value": "Furmint"
+            },
+            {
+              "count": 4,
+              "value": "Malvasia"
+            }
+          ],
+          "top_lwin_display_names": [
+            {
+              "count": 2,
+              "value": "Henriques & Henriques, Sercial Vintage, Madeira"
+            },
+            {
+              "count": 2,
+              "value": "Henriques & Henriques, Verdelho 20 YO, Madeira"
+            },
+            {
+              "count": 1,
+              "value": "Henriques & Henriques, 10YO Verdelho Madeira"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Henriques & Henriques 10 YO, Madeira"
+            },
+            {
+              "count": 1,
+              "value": "Henriques & Henriques 10YO Verdelho"
+            },
+            {
+              "count": 1,
+              "value": "Henriques & Henriques 10YO, Madeira"
+            },
+            {
+              "count": 1,
+              "value": "Henriques & Henriques 15 YO, Madeira"
+            },
+            {
+              "count": 1,
+              "value": "Henriques & Henriques 15YO, Madeira"
+            }
+          ],
+          "ttb_applicant_names": [
+            {
+              "count": 23,
+              "value": "Mike Miller"
+            },
+            {
+              "count": 21,
+              "value": "ERIC SEED"
+            },
+            {
+              "count": 7,
+              "value": "VALERIE WALTER"
+            },
+            {
+              "count": 6,
+              "value": "MICHAEL REISS"
+            }
+          ]
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "HENRIQUES AND HENRIQUES",
+            "HENRIQUES AND HENRIQUES MADEIRA RESERVA",
+            "HENRIQUES & HENRIQUES",
+            "MHW LTD."
+          ],
+          "divergent_place_signals": [
+            "MADEIRA"
+          ],
+          "divergent_portfolio_signals": [
+            "Henriques & Henriques 10 YO, Madeira",
+            "Henriques & Henriques 10YO, Madeira",
+            "Henriques & Henriques 10YO Verdelho",
+            "Henriques & Henriques 15 YO, Madeira"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "Portugal",
+            "PT",
+            "Madeira"
+          ],
+          "matched_portfolio_signals": [
+            "DOC"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "fuzzy",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      },
+      {
+        "candidate_id": "7ed8330c-27fb-4228-9b52-c458a5a1b2f5",
+        "candidate_identity": {
+          "canonical_name": "Justino Henriques",
+          "color_mix": [],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "Portugal",
+          "label_like_names": [
+            {
+              "row_count": 5,
+              "value": "Justino Henriques"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Madeira",
+          "source_families": [
+            {
+              "linked_rows": 5,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 4,
+              "value": "DOC"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Justino Henriques, Fine Fanal 1860, Madeira"
+            },
+            {
+              "count": 1,
+              "value": "Justino Henriques, Malmsey, Madeira"
+            },
+            {
+              "count": 1,
+              "value": "Justino Henriques, Sercial Solera 1830, Madeira"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Justino Henriques, Fine Fanal 1860, Madeira"
+            },
+            {
+              "count": 1,
+              "value": "Justino Henriques, Malmsey, Madeira"
+            },
+            {
+              "count": 1,
+              "value": "Justino Henriques, Sercial Solera 1830, Madeira"
+            },
+            {
+              "count": 1,
+              "value": "Justino Henriques, Verdelho Solera 1748 Madeira"
+            },
+            {
+              "count": 1,
+              "value": "Justino Henriques, Verdelho, Madeira"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 2,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Justino Henriques"
+          ],
+          "divergent_place_signals": [],
+          "divergent_portfolio_signals": [
+            "Justino Henriques, Fine Fanal 1860, Madeira",
+            "Justino Henriques, Malmsey, Madeira",
+            "Justino Henriques, Sercial Solera 1830, Madeira",
+            "Justino Henriques, Verdelho, Madeira"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "Portugal",
+            "PT",
+            "Madeira"
+          ],
+          "matched_portfolio_signals": [
+            "DOC"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "containment",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

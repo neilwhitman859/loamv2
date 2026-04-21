@@ -1,0 +1,330 @@
+{
+  "anchor": {
+    "canonical_name": "La Rousselle",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "sparse_wine_catalog",
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "la rousselle",
+        "row_count": 1,
+        "source_family": "canonical",
+        "value": "La Rousselle"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "la rousselle",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 1,
+          "value": "Fronsac"
+        }
+      ],
+      "countries": [
+        {
+          "count": 1,
+          "value": "FR"
+        },
+        {
+          "count": 1,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 1,
+          "value": "Bordeaux"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 1,
+          "value": "red"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 1,
+          "value": "AOP"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Chateau La Rousselle, Fronsac"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Chateau La Rousselle, Fronsac"
+        }
+      ]
+    },
+    "producer_id": "1d0d883a-1335-4ba4-9eeb-eda06b50c0ed",
+    "region": "Bordeaux",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "la-rousselle",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 1,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 1
+    }
+  },
+  "case_id": "selector_proof_034",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 2,
+    "candidates": [
+      {
+        "candidate_id": "5320eb0b-b6f6-472b-8e8c-d5c9cb505e3c",
+        "candidate_identity": {
+          "canonical_name": "Rousselle",
+          "color_mix": [
+            {
+              "count": 4,
+              "value": "red"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 4,
+              "value": "Rousselle"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Bordeaux",
+          "source_families": [
+            {
+              "linked_rows": 4,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 4,
+              "value": "AOP"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Chateau Rousselle, Cotes de Bourg"
+            },
+            {
+              "count": 1,
+              "value": "Chateau Rousselle, Marius, Cotes de Bourg"
+            },
+            {
+              "count": 1,
+              "value": "Chateau Rousselle, Prestige, Cotes de Bourg"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Chateau Rousselle, Cotes de Bourg"
+            },
+            {
+              "count": 1,
+              "value": "Chateau Rousselle, Marius, Cotes de Bourg"
+            },
+            {
+              "count": 1,
+              "value": "Chateau Rousselle, Prestige, Cotes de Bourg"
+            },
+            {
+              "count": 1,
+              "value": "La Soif de Vincent, Cotes de Bourg"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Rousselle"
+          ],
+          "divergent_place_signals": [
+            "Bourg / C\u00f4tes de Bourg / Bourgeais",
+            "Cotes de Bourg"
+          ],
+          "divergent_portfolio_signals": [
+            "Chateau Rousselle, Cotes de Bourg",
+            "Chateau Rousselle, Marius, Cotes de Bourg",
+            "Chateau Rousselle, Prestige, Cotes de Bourg",
+            "La Soif de Vincent, Cotes de Bourg"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "FR",
+            "France",
+            "Bordeaux"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "containment",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      },
+      {
+        "candidate_id": "d2e50763-5b1e-4aa7-bba2-4845cd7558c1",
+        "candidate_identity": {
+          "canonical_name": "La Rousseliere",
+          "color_mix": [
+            {
+              "count": 1,
+              "value": "red"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 1,
+              "value": "La Rousseliere"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Bordeaux",
+          "source_families": [
+            {
+              "linked_rows": 1,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "sparse_wine_catalog",
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 1,
+              "value": "AOP"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Chateau La Rousseliere, Saint-Estephe"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Chateau La Rousseliere, Saint-Estephe"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 2,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "La Rousseliere"
+          ],
+          "divergent_place_signals": [
+            "Saint-Est\u00e8phe"
+          ],
+          "divergent_portfolio_signals": [
+            "Chateau La Rousseliere, Saint-Estephe"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "FR",
+            "France",
+            "Bordeaux"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "fuzzy",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

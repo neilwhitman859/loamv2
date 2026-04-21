@@ -1,0 +1,472 @@
+{
+  "anchor": {
+    "canonical_name": "Robert Mondavi",
+    "conflicts": {
+      "market_conflicts": [
+        "multiple applicant states present"
+      ],
+      "name_conflicts": [
+        "multiple label-facing name forms require comparison"
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "sparse_signal_flags": []
+    },
+    "country": "United States",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "robert mondavi",
+        "row_count": 180,
+        "source_family": "ttb",
+        "value": "ROBERT MONDAVI"
+      },
+      {
+        "normalized": "robert mondavi winery",
+        "row_count": 3,
+        "source_family": "state_reg",
+        "value": "ROBERT MONDAVI WINERY"
+      },
+      {
+        "normalized": "constellation brands",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "CONSTELLATION BRANDS"
+      },
+      {
+        "normalized": "miller squared inc",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "MILLER SQUARED INC."
+      },
+      {
+        "normalized": "robert mondavi private selection",
+        "row_count": 1,
+        "source_family": "ttb",
+        "value": "ROBERT MONDAVI PRIVATE SELECTION"
+      },
+      {
+        "normalized": "robert mondavi private selection meritag",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "ROBERT MONDAVI PRIVATE SELECTION MERITAG"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 6,
+        "source_family": "ttb",
+        "value": "Amanda OBrien"
+      },
+      {
+        "row_count": 6,
+        "source_family": "ttb",
+        "value": "MAILE PIERI"
+      },
+      {
+        "row_count": 5,
+        "source_family": "ttb",
+        "value": "Christine Ealy"
+      },
+      {
+        "row_count": 4,
+        "source_family": "ttb",
+        "value": "Libby Enright"
+      }
+    ],
+    "name_normalized": "robert mondavi",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 13,
+          "value": "CALIFORNIA"
+        },
+        {
+          "count": 9,
+          "value": "Napa Valley"
+        },
+        {
+          "count": 7,
+          "value": "Central Coast"
+        },
+        {
+          "count": 7,
+          "value": "OAKVILLE, NAPA VALLEY"
+        },
+        {
+          "count": 4,
+          "value": "Oakville"
+        },
+        {
+          "count": 2,
+          "value": "Monterey"
+        }
+      ],
+      "countries": [
+        {
+          "count": 47,
+          "value": "US"
+        },
+        {
+          "count": 47,
+          "value": "United States"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 47,
+          "value": "California"
+        },
+        {
+          "count": 8,
+          "value": "Napa Valley"
+        },
+        {
+          "count": 1,
+          "value": "Monterey"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 30,
+          "value": "red"
+        },
+        {
+          "count": 17,
+          "value": "white"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 14,
+          "value": "AVA"
+        }
+      ],
+      "top_grapes": [
+        {
+          "count": 10,
+          "value": "Cabernet Sauvignon"
+        },
+        {
+          "count": 7,
+          "value": "Chardonnay"
+        },
+        {
+          "count": 1,
+          "value": "Primitivo"
+        },
+        {
+          "count": 1,
+          "value": "Sauvignon Blanc"
+        }
+      ],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Robert Mondavi, 30Th Anniversary Reserve Cabernet Sauvignon, Napa Valley"
+        },
+        {
+          "count": 1,
+          "value": "Robert Mondavi, Cabernet Sauvignon, Los Carneros"
+        },
+        {
+          "count": 1,
+          "value": "Robert Mondavi, Cabernet Sauvignon, Oakville"
+        },
+        {
+          "count": 1,
+          "value": "Robert Mondavi, Cabernet Sauvignon, Stags Leap District"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 2,
+          "value": "Robert Mondavi Cabernet Sauvignon, Oakville"
+        },
+        {
+          "count": 2,
+          "value": "Robert Mondavi Coastal Cabernet Sauvignon, Central Coast"
+        },
+        {
+          "count": 2,
+          "value": "Robert Mondavi Private Selection Bourbon Barrels Cabernet Sauvignon, Monterey"
+        },
+        {
+          "count": 2,
+          "value": "Robert Mondavi Private Selection Chardonnay, Central Coast"
+        },
+        {
+          "count": 2,
+          "value": "Robert Mondavi Private Selection Zinfandel, Central Coast"
+        },
+        {
+          "count": 2,
+          "value": "Robert Mondavi To Kalon Vyd Cabernet Sauvignon, Oakville"
+        }
+      ]
+    },
+    "producer_id": "67de1c02-45b5-4e2d-86b1-537965387879",
+    "region": "California",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [
+        {
+          "count": 3,
+          "value": "Constellation Brands (19001880017)"
+        },
+        {
+          "count": 3,
+          "value": "Standard Beverage (18002012201), Standard Beverage (18016000601), Standard Beverage (18019901807), Standard Beverage (18035006101)"
+        },
+        {
+          "count": 2,
+          "value": "CONSTELLATION BRANDS   INC"
+        },
+        {
+          "count": 1,
+          "value": "CONSTELLATION BRANDS"
+        },
+        {
+          "count": 1,
+          "value": "CONSTELLATION BRANDS INC(CONSTELLATION WINES US)"
+        },
+        {
+          "count": 1,
+          "value": "CONSTELLATION BRANDS, INC.(CONSTELLATION BRANDS)"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 6,
+          "value": "Amanda OBrien"
+        },
+        {
+          "count": 6,
+          "value": "MAILE PIERI"
+        },
+        {
+          "count": 5,
+          "value": "Christine Ealy"
+        },
+        {
+          "count": 4,
+          "value": "Libby Enright"
+        },
+        {
+          "count": 3,
+          "value": "Sam Browning"
+        },
+        {
+          "count": 3,
+          "value": "Tim Elenteny"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 34,
+          "value": "CA"
+        },
+        {
+          "count": 1,
+          "value": "MA"
+        },
+        {
+          "count": 1,
+          "value": "NY"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 61,
+          "value": "BW-CA-4674"
+        },
+        {
+          "count": 28,
+          "value": "BW-CA-4802"
+        },
+        {
+          "count": 21,
+          "value": "BW-CA-4511"
+        },
+        {
+          "count": 9,
+          "value": "CA-W-3110"
+        },
+        {
+          "count": 8,
+          "value": "BW-CA-6085"
+        }
+      ]
+    },
+    "slug": "robert-mondavi",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 30,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 190,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 10,
+          "source_family": "state_reg"
+        }
+      ],
+      "vintage_count": 203,
+      "wine_count": 47
+    }
+  },
+  "case_id": "selector_proof_002",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "c86bb256-1977-4628-9fee-5bdb51b4ad93",
+        "candidate_identity": {
+          "canonical_name": "Mondavi",
+          "color_mix": [
+            {
+              "count": 3,
+              "value": "red"
+            },
+            {
+              "count": 1,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "United States",
+          "label_like_names": [
+            {
+              "row_count": 16,
+              "value": "MONDAVI"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "California",
+          "source_families": [
+            {
+              "linked_rows": 4,
+              "source_family": "lwin"
+            },
+            {
+              "linked_rows": 16,
+              "source_family": "ttb"
+            }
+          ],
+          "sparse_signal_flags": [
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 4,
+              "value": "AVA"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Mondavi, 50th Anniversary To Kalon Reserve Cabernet Sauvignon, Napa Valley"
+            },
+            {
+              "count": 1,
+              "value": "Mondavi, Cabernet Sauvignon To Kalon Reserve, Oakville"
+            },
+            {
+              "count": 1,
+              "value": "Mondavi, Fume Blanc, Napa Valley"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Mondavi 50th Anniversary To Kalon Reserve Cabernet Sauvignon, Napa Valley"
+            },
+            {
+              "count": 1,
+              "value": "Mondavi Cabernet Sauvignon To Kalon Reserve, Oakville"
+            },
+            {
+              "count": 1,
+              "value": "Mondavi Fume Blanc, Napa Valley"
+            },
+            {
+              "count": 1,
+              "value": "Mondavi To Kalon Vineyard The Reserve Cabernet Sauvignon, Oakville"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "MONDAVI"
+          ],
+          "divergent_place_signals": [],
+          "divergent_portfolio_signals": [
+            "Mondavi 50th Anniversary To Kalon Reserve Cabernet Sauvignon, Napa Valley",
+            "Mondavi Cabernet Sauvignon To Kalon Reserve, Oakville",
+            "Mondavi Fume Blanc, Napa Valley",
+            "Mondavi To Kalon Vineyard The Reserve Cabernet Sauvignon, Oakville"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "United States",
+            "US",
+            "California",
+            "Napa Valley"
+          ],
+          "matched_portfolio_signals": [
+            "AVA"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "containment",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

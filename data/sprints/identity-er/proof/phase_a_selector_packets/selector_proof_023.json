@@ -1,0 +1,476 @@
+{
+  "anchor": {
+    "canonical_name": "Lafond",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [
+        "multiple label-facing name forms require comparison"
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "United States",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "lafond",
+        "row_count": 66,
+        "source_family": "ttb",
+        "value": "LAFOND"
+      },
+      {
+        "normalized": "lafond vineyards",
+        "row_count": 25,
+        "source_family": "ttb",
+        "value": "LAFOND VINEYARDS"
+      },
+      {
+        "normalized": "winesellers ltd",
+        "row_count": 3,
+        "source_family": "state_reg",
+        "value": "WINESELLERS LTD."
+      },
+      {
+        "normalized": "lafond srh",
+        "row_count": 2,
+        "source_family": "state_reg",
+        "value": "LAFOND SRH"
+      },
+      {
+        "normalized": "lafond vineyards srh",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "LAFOND VINEYARDS SRH"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 47,
+        "source_family": "ttb",
+        "value": "DANIEL CEREPANYA"
+      },
+      {
+        "row_count": 10,
+        "source_family": "ttb",
+        "value": "MIRELLA MENDEZ"
+      },
+      {
+        "row_count": 3,
+        "source_family": "state_reg",
+        "value": "WINESELLERS LTD"
+      },
+      {
+        "row_count": 1,
+        "source_family": "ttb",
+        "value": "Shannon Valladarez"
+      }
+    ],
+    "name_normalized": "lafond",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 57,
+          "value": "STA. RITA HILLS"
+        },
+        {
+          "count": 1,
+          "value": "Santa Ynez Valley"
+        }
+      ],
+      "countries": [
+        {
+          "count": 16,
+          "value": "US"
+        },
+        {
+          "count": 16,
+          "value": "United States"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 16,
+          "value": "California"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 9,
+          "value": "red"
+        },
+        {
+          "count": 5,
+          "value": "white"
+        },
+        {
+          "count": 2,
+          "value": "rose"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 16,
+          "value": "AVA"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Lafond, Hilltop Ranch Vineyard Chardonnay, Sta. Rita Hills"
+        },
+        {
+          "count": 1,
+          "value": "Lafond, Joughin Vineyard Syrah, Santa Ynez Valley"
+        },
+        {
+          "count": 1,
+          "value": "Lafond, Lafond Vineyard Chardonnay, Sta. Rita Hills"
+        },
+        {
+          "count": 1,
+          "value": "Lafond, Lafond Vineyard Clone 667 Pinot Noir, Sta. Rita Hills"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Lafond Hilltop Ranch Vineyard Chardonnay, Sta. Rita Hills"
+        },
+        {
+          "count": 1,
+          "value": "Lafond Joughin Vineyard Syrah, Santa Ynez Valley"
+        },
+        {
+          "count": 1,
+          "value": "Lafond Lafond Vineyard Chardonnay, Sta. Rita Hills"
+        },
+        {
+          "count": 1,
+          "value": "Lafond Lafond Vineyard Clone 667 Pinot Noir, Sta. Rita Hills"
+        },
+        {
+          "count": 1,
+          "value": "Lafond Lafond Vineyard Clone 777 Pinot Noir, Sta. Rita Hills"
+        },
+        {
+          "count": 1,
+          "value": "Lafond Lafond Vineyard Martin Ray Clone Pinot Noir, Sta. Rita Hills"
+        }
+      ]
+    },
+    "producer_id": "0c7992a9-fe79-469c-b9be-a102eaa65f41",
+    "region": "California",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [
+        {
+          "count": 3,
+          "value": "WINESELLERS LTD"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 47,
+          "value": "DANIEL CEREPANYA"
+        },
+        {
+          "count": 10,
+          "value": "MIRELLA MENDEZ"
+        },
+        {
+          "count": 1,
+          "value": "Shannon Valladarez"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 58,
+          "value": "CA"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 82,
+          "value": "BW-CA-4490"
+        },
+        {
+          "count": 10,
+          "value": "BW-CA-6335"
+        },
+        {
+          "count": 1,
+          "value": "BW-CA-6699"
+        },
+        {
+          "count": 1,
+          "value": "STP-I-3"
+        }
+      ]
+    },
+    "slug": "lafond",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 16,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 94,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 6,
+          "source_family": "state_reg"
+        }
+      ],
+      "vintage_count": 16,
+      "wine_count": 16
+    }
+  },
+  "case_id": "selector_proof_023",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "56aad186-8233-4284-b1d1-7989331df734",
+        "candidate_identity": {
+          "canonical_name": "Margerum",
+          "color_mix": [
+            {
+              "count": 29,
+              "value": "white"
+            },
+            {
+              "count": 18,
+              "value": "red"
+            },
+            {
+              "count": 6,
+              "value": "rose"
+            }
+          ],
+          "conflicts": [
+            "multiple label-facing name forms require comparison",
+            "multiple country signals in cheap dossier",
+            "multiple region signals in cheap dossier"
+          ],
+          "country": "United States",
+          "label_like_names": [
+            {
+              "row_count": 54,
+              "value": "Margerum"
+            },
+            {
+              "row_count": 1,
+              "value": "MARGERUM -M5"
+            },
+            {
+              "row_count": 1,
+              "value": "MARGERUM M5 RED BLEND SANTA BARBARA COUNTY, CA"
+            },
+            {
+              "row_count": 1,
+              "value": "MARGERUM M5 WHITE BLEND SANTA BARBARA COUNTY, CA"
+            },
+            {
+              "row_count": 1,
+              "value": "MARGERUM WINE COMPANY"
+            },
+            {
+              "row_count": 1,
+              "value": "MARGERUM WINE COMPANY INC."
+            }
+          ],
+          "legal_or_applicant_names": [
+            {
+              "row_count": 26,
+              "value": "DOUGLAS MARGERUM"
+            },
+            {
+              "row_count": 10,
+              "value": "SARAH COGAN"
+            },
+            {
+              "row_count": 6,
+              "value": "Deanna Leon"
+            },
+            {
+              "row_count": 2,
+              "value": "Lew Eisaguirre"
+            }
+          ],
+          "region": "California",
+          "source_families": [
+            {
+              "linked_rows": 31,
+              "source_family": "lwin"
+            },
+            {
+              "linked_rows": 48,
+              "source_family": "ttb"
+            },
+            {
+              "linked_rows": 8,
+              "source_family": "state_reg"
+            }
+          ],
+          "sparse_signal_flags": [],
+          "supplier_or_distributor_names": [
+            {
+              "count": 1,
+              "value": "Johnson Brothers Liquor Co.(Johnson Brothers)"
+            }
+          ],
+          "top_designations": [
+            {
+              "count": 16,
+              "value": "AVA"
+            }
+          ],
+          "top_grapes": [
+            {
+              "count": 5,
+              "value": "Sauvignon Blanc"
+            },
+            {
+              "count": 3,
+              "value": "Grenache"
+            },
+            {
+              "count": 3,
+              "value": "Syrah"
+            }
+          ],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Margerum, Cafe Rose, San Luis Obispo County"
+            },
+            {
+              "count": 1,
+              "value": "Margerum, Cafe White, Santa Barbara County"
+            },
+            {
+              "count": 1,
+              "value": "Margerum, Chenin Blanc, Santa Ynez Valley"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 2,
+              "value": "Margerum Chenin Blanc, Santa Ynez Valley"
+            },
+            {
+              "count": 2,
+              "value": "Margerum Cinsault, Los Olivos District"
+            },
+            {
+              "count": 2,
+              "value": "Margerum D Sauvignon Blanc, Happy Canyon of Santa Barbara"
+            },
+            {
+              "count": 2,
+              "value": "Margerum Patina Sauvignon Blanc, Happy Canyon of Santa Barbara"
+            },
+            {
+              "count": 2,
+              "value": "Margerum Sybarite Sauvignon Blanc, Happy Canyon of Santa Barbara"
+            }
+          ],
+          "ttb_applicant_names": [
+            {
+              "count": 26,
+              "value": "DOUGLAS MARGERUM"
+            },
+            {
+              "count": 10,
+              "value": "SARAH COGAN"
+            },
+            {
+              "count": 6,
+              "value": "Deanna Leon"
+            },
+            {
+              "count": 2,
+              "value": "Lew Eisaguirre"
+            }
+          ]
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Margerum",
+            "MARGERUM -M5",
+            "MARGERUM M5 RED BLEND SANTA BARBARA COUNTY, CA",
+            "MARGERUM M5 WHITE BLEND SANTA BARBARA COUNTY, CA"
+          ],
+          "divergent_place_signals": [
+            "Columbia Valley",
+            "Santa Barbara County",
+            "Washington",
+            "CA - SANTA BARBARA"
+          ],
+          "divergent_portfolio_signals": [
+            "Margerum Cafe Rose, San Luis Obispo",
+            "Margerum Chenin Blanc, Santa Ynez Valley",
+            "Margerum Cinsault, Los Olivos District",
+            "Margerum D Sauvignon Blanc, Happy Canyon of Santa Barbara"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "United States",
+            "US",
+            "California"
+          ],
+          "matched_portfolio_signals": [
+            "AVA"
+          ],
+          "matched_regulatory_signals": [
+            "BW-CA-4490"
+          ],
+          "risk_tags": [
+            "permit_only"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible",
+            "regulatory or market signal corroborated the candidate"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "orthographic_variant",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "ttb"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

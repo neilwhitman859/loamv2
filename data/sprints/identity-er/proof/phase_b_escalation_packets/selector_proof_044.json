@@ -1,0 +1,590 @@
+{
+  "added_evidence": {
+    "people_history": {
+      "anchor": [],
+      "candidate": []
+    },
+    "profile_snippets": [
+      {
+        "source_url": "https://pullthatcork.com/2020/ron-rubin-winery/",
+        "text": "Explicitly states Ron Rubin purchased River Road Family Vineyards and Winery in 2011 and makes both the 'Ron Rubin' and 'River Road' lines of wine at the same winery \u2014 two distinct brands, one facility.",
+        "title": "Wines from Ron Rubin Winery \u2013 Pull That Cork"
+      },
+      {
+        "source_url": "https://ronrubinwinery.com/team/diane-diroma/",
+        "text": "Confirms the physical winery was renamed 'Ron Rubin Winery, home of River Road Family Vineyards,' establishing Ron Rubin Winery as the parent entity and River Road as a housed brand.",
+        "title": "Diane DiRoma, VP Sales and Marketing | Ron Rubin Brands"
+      }
+    ],
+    "raw_supporting_rows": [
+      {
+        "source_family": "calibration_set",
+        "source_id": "calibration_set:116371",
+        "summary": "Web evidence confirms that Ron Rubin purchased River Road Family Vineyards and Winery in 2011, renamed the physical winery 'Ron Rubin Winery,' and operates both 'River Road' and 'Ron Rubin' as distinct consumer-facing brands under one roof. The official bra..."
+      }
+    ],
+    "retrieval_gap_diagnostics": [],
+    "vineyard_profile": {
+      "anchor": [],
+      "candidate": []
+    },
+    "web_identity": {
+      "anchor_urls": [],
+      "candidate_urls": [],
+      "source_urls": [
+        "https://pullthatcork.com/2020/ron-rubin-winery/",
+        "https://ronrubinwinery.com/team/diane-diroma/"
+      ]
+    }
+  },
+  "anchor": {
+    "canonical_name": "River Road",
+    "conflicts": {
+      "market_conflicts": [
+        "multiple applicant states present"
+      ],
+      "name_conflicts": [
+        "multiple label-facing name forms require comparison"
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "United States",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "river road",
+        "row_count": 183,
+        "source_family": "ttb",
+        "value": "RIVER ROAD"
+      },
+      {
+        "normalized": "river road vineyards",
+        "row_count": 96,
+        "source_family": "ttb",
+        "value": "RIVER ROAD VINEYARDS"
+      },
+      {
+        "normalized": "deutsch family wine spirits",
+        "row_count": 15,
+        "source_family": "state_reg",
+        "value": "DEUTSCH FAMILY WINE & SPIRITS"
+      },
+      {
+        "normalized": "river road family vineyards and winery",
+        "row_count": 6,
+        "source_family": "state_reg",
+        "value": "RIVER ROAD FAMILY VINEYARDS AND WINERY"
+      },
+      {
+        "normalized": "h m borges",
+        "row_count": 1,
+        "source_family": "ttb",
+        "value": "H.M. BORGES"
+      },
+      {
+        "normalized": "river road boschetti vineyard",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "RIVER ROAD BOSCHETTI VINEYARD"
+      },
+      {
+        "normalized": "river road chardonnay sonoma county ca",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "RIVER ROAD CHARDONNAY SONOMA COUNTY, CA"
+      },
+      {
+        "normalized": "river road family vineyards",
+        "row_count": 1,
+        "source_family": "ttb",
+        "value": "RIVER ROAD FAMILY VINEYARDS"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 36,
+        "source_family": "ttb",
+        "value": "GARY MILLS"
+      },
+      {
+        "row_count": 27,
+        "source_family": "ttb",
+        "value": "Carly Yokem"
+      },
+      {
+        "row_count": 26,
+        "source_family": "ttb",
+        "value": "ELISE BARIL"
+      },
+      {
+        "row_count": 22,
+        "source_family": "ttb",
+        "value": "WILHELMINA BICKMORE"
+      }
+    ],
+    "name_normalized": "river road",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 64,
+          "value": "RUSSIAN RIVER VALLEY"
+        },
+        {
+          "count": 32,
+          "value": "CALIFORNIA"
+        },
+        {
+          "count": 17,
+          "value": "SONOMA COUNTY"
+        },
+        {
+          "count": 11,
+          "value": "GREEN VALLEY OF RUSSIAN RIVER VALLEY"
+        },
+        {
+          "count": 3,
+          "value": "Ca - Sonoma"
+        },
+        {
+          "count": 1,
+          "value": "Alexander Valley"
+        }
+      ],
+      "countries": [
+        {
+          "count": 10,
+          "value": "US"
+        },
+        {
+          "count": 10,
+          "value": "United States"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 10,
+          "value": "California"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 5,
+          "value": "red"
+        },
+        {
+          "count": 5,
+          "value": "white"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 6,
+          "value": "AVA"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "River Road, Cabernet Sauvignon, Alexander Valley"
+        },
+        {
+          "count": 1,
+          "value": "River Road, Chardonnay, Sonoma County"
+        },
+        {
+          "count": 1,
+          "value": "River Road, Double Oaked Chardonnay, Russian River Valley"
+        },
+        {
+          "count": 1,
+          "value": "River Road, Mills Cuvee Chardonnay, Russian River Valley"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "River Road Cabernet Sauvignon, Alexander Valley"
+        },
+        {
+          "count": 1,
+          "value": "River Road Chardonnay"
+        },
+        {
+          "count": 1,
+          "value": "River Road Double Oaked Chardonnay, Russian River Valley"
+        },
+        {
+          "count": 1,
+          "value": "River Road Mills Cuvee Chardonnay, Russian River Valley"
+        },
+        {
+          "count": 1,
+          "value": "River Road Pinot Noir"
+        },
+        {
+          "count": 1,
+          "value": "River Road Red Blend"
+        }
+      ]
+    },
+    "producer_id": "3cd3c763-c229-45a3-8c5c-e4787d3893a9",
+    "region": "California",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [
+        {
+          "count": 21,
+          "value": "LONE STAR WINE AND SPIRITS LLC(LONE STAR WINE AND SPIRITS)"
+        },
+        {
+          "count": 14,
+          "value": "Clay Street Imports (15416)"
+        },
+        {
+          "count": 14,
+          "value": "Trident Beverage (15979)"
+        },
+        {
+          "count": 8,
+          "value": "W J DEUTSCH & SONS LTD(DEUTSCH FAMILY WINE & SPIRITS)"
+        },
+        {
+          "count": 7,
+          "value": "W.J. Deutsch & Sons, LTD."
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 36,
+          "value": "GARY MILLS"
+        },
+        {
+          "count": 27,
+          "value": "Carly Yokem"
+        },
+        {
+          "count": 26,
+          "value": "ELISE BARIL"
+        },
+        {
+          "count": 22,
+          "value": "WILHELMINA BICKMORE"
+        },
+        {
+          "count": 15,
+          "value": "GAYLEEN ROBBINS"
+        },
+        {
+          "count": 7,
+          "value": "Robyn Harris"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 167,
+          "value": "CA"
+        },
+        {
+          "count": 1,
+          "value": "NJ"
+        },
+        {
+          "count": 1,
+          "value": "TX"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 119,
+          "value": "BW-CA-5541"
+        },
+        {
+          "count": 39,
+          "value": "BW-CA-5547"
+        },
+        {
+          "count": 27,
+          "value": "BWN-CA-21443"
+        },
+        {
+          "count": 26,
+          "value": "BW-CA-6612"
+        },
+        {
+          "count": 7,
+          "value": "BW-CA-5018"
+        },
+        {
+          "count": 6,
+          "value": "BWN-CA-15516"
+        }
+      ]
+    },
+    "slug": "river-road",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 10,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 282,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 78,
+          "source_family": "state_reg"
+        }
+      ],
+      "vintage_count": 18,
+      "wine_count": 10
+    }
+  },
+  "case_id": "selector_proof_044",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "escalation_mode": "candidate_frontier",
+  "escalation_version": "escalation_dossier_v1",
+  "frontier_candidate": {
+    "candidate_id": "806b6691-50b3-42bc-9dd2-074b4a48786f",
+    "candidate_identity": {
+      "canonical_name": "Ron Rubin",
+      "color_mix": [
+        {
+          "count": 2,
+          "value": "red"
+        },
+        {
+          "count": 2,
+          "value": "white"
+        }
+      ],
+      "conflicts": [
+        "multiple label-facing name forms require comparison",
+        "multiple country signals in cheap dossier"
+      ],
+      "country": "United States",
+      "label_like_names": [
+        {
+          "row_count": 50,
+          "value": "RON RUBIN"
+        },
+        {
+          "row_count": 6,
+          "value": "RIVER ROAD VINEYARDS"
+        },
+        {
+          "row_count": 2,
+          "value": "RON RUBIN PINOT NOIR GREEN VALLEY OF RUSSIAN RIVER VALLEY"
+        },
+        {
+          "row_count": 2,
+          "value": "RON RUBIN PINOT NOIR RUSSIAN RIVER VALLEY"
+        },
+        {
+          "row_count": 1,
+          "value": "LA BELLE ANGELE"
+        },
+        {
+          "row_count": 1,
+          "value": "RON RUBIN RUSSIAN RIVER VALLEY PINOT NOI"
+        }
+      ],
+      "legal_or_applicant_names": [
+        {
+          "row_count": 11,
+          "value": "GAYLEEN ROBBINS"
+        },
+        {
+          "row_count": 10,
+          "value": "Robyn Harris"
+        },
+        {
+          "row_count": 10,
+          "value": "WILHELMINA BICKMORE"
+        },
+        {
+          "row_count": 6,
+          "value": "SOJOURNER IMPORTS"
+        }
+      ],
+      "region": "California",
+      "source_families": [
+        {
+          "linked_rows": 4,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 51,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 17,
+          "source_family": "state_reg"
+        }
+      ],
+      "sparse_signal_flags": [
+        "no_grape_fingerprint"
+      ],
+      "supplier_or_distributor_names": [
+        {
+          "count": 6,
+          "value": "SOJOURNER IMPORTS"
+        },
+        {
+          "count": 3,
+          "value": "RUBIN WINES LLC(RUBIN WINES)"
+        },
+        {
+          "count": 1,
+          "value": "Clay Street Imports (15416)"
+        },
+        {
+          "count": 1,
+          "value": "LONE STAR WINE AND SPIRITS LLC(LONE STAR WINE AND SPIRITS)"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 3,
+          "value": "AVA"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Ron Rubin, Chardonnay, Russian River Valley"
+        },
+        {
+          "count": 1,
+          "value": "Ron Rubin, Gunsalus Vineyard Pinot Noir, Russian River Valley"
+        },
+        {
+          "count": 1,
+          "value": "Ron Rubin, Pam's UN\u2022Oaked Chardonnay, California"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Ron Rubin Chardonnay, Russian River Valley"
+        },
+        {
+          "count": 1,
+          "value": "Ron Rubin Gunsalus Vineyard Pinot Noir, Russian River Valley"
+        },
+        {
+          "count": 1,
+          "value": "Ron Rubin Pam's UN\u2022Oaked Chardonnay"
+        },
+        {
+          "count": 1,
+          "value": "Ron Rubin Pinot Noir, Russian River Valley"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 11,
+          "value": "GAYLEEN ROBBINS"
+        },
+        {
+          "count": 10,
+          "value": "Robyn Harris"
+        },
+        {
+          "count": 10,
+          "value": "WILHELMINA BICKMORE"
+        },
+        {
+          "count": 4,
+          "value": "ELISE BARIL"
+        }
+      ]
+    },
+    "candidate_rank": 1,
+    "comparison_to_anchor": {
+      "divergent_name_signals": [
+        "LA BELLE ANGELE",
+        "RON RUBIN",
+        "RON RUBIN PINOT NOIR GREEN VALLEY OF RUSSIAN RIVER VALLEY",
+        "RON RUBIN PINOT NOIR RUSSIAN RIVER VALLEY"
+      ],
+      "divergent_place_signals": [
+        "GREEN VALLEY OF RUSSIAN RIVER VALLEY SONOMA COUNTY",
+        "VIN DE FRANCE"
+      ],
+      "divergent_portfolio_signals": [
+        "Ron Rubin Chardonnay, Russian River Valley",
+        "Ron Rubin Gunsalus Vineyard Pinot Noir, Russian River Valley",
+        "Ron Rubin Pam's UN\u2022Oaked Chardonnay",
+        "Ron Rubin Pinot Noir, Russian River Valley"
+      ],
+      "matched_name_forms": [
+        "RIVER ROAD VINEYARDS"
+      ],
+      "matched_place_signals": [
+        "United States",
+        "US",
+        "California",
+        "CALIFORNIA"
+      ],
+      "matched_portfolio_signals": [
+        "AVA"
+      ],
+      "matched_regulatory_signals": [
+        "BW-CA-5541",
+        "BW-CA-6612",
+        "BWN-CA-15516",
+        "BWN-CA-21443"
+      ],
+      "risk_tags": [
+        "permit_only"
+      ],
+      "why_this_candidate_survived": [
+        "shared label-facing name form survived Tier A retrieval",
+        "portfolio overlap kept candidate visible",
+        "regulatory or market signal corroborated the candidate"
+      ]
+    },
+    "retrieval_basis": {
+      "lexical_strength": "orthographic_variant",
+      "matched_anchor_name_forms": [
+        "RIVER ROAD VINEYARDS"
+      ],
+      "seed_families": [
+        "ttb"
+      ],
+      "shortlist_pressure_band": "fallback"
+    }
+  },
+  "selector_result_ref": {
+    "anchor_producer_id": "3cd3c763-c229-45a3-8c5c-e4787d3893a9",
+    "prior_choice_type": "candidate",
+    "prior_label": "UNSURE",
+    "prior_reason_code": "unsure_conflicting_signals",
+    "prior_selected_candidate_id": "806b6691-50b3-42bc-9dd2-074b4a48786f",
+    "selector_version": "selector_harness_v1"
+  }
+}

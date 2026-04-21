@@ -1,0 +1,220 @@
+{
+  "anchor": {
+    "canonical_name": "Cupcake Vineyards",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "sparse_wine_catalog",
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "New Zealand",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "cupcake vineyards",
+        "row_count": 1,
+        "source_family": "canonical",
+        "value": "Cupcake Vineyards"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "cupcake vineyards",
+    "place_fingerprint": {
+      "appellations": [],
+      "countries": [
+        {
+          "count": 1,
+          "value": "NZ"
+        },
+        {
+          "count": 1,
+          "value": "New Zealand"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 1,
+          "value": "Marlborough"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 1,
+          "value": "white"
+        }
+      ],
+      "top_designations": [],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Cupcake Vineyards, Sauvignon Blanc, Marlborough"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Cupcake Vineyards, Sauvignon Blanc, Marlborough"
+        }
+      ]
+    },
+    "producer_id": "064b746b-1cd0-4a52-a1fd-089f18b92871",
+    "region": "Marlborough",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "cupcake-vineyards",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 1,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 1
+    }
+  },
+  "case_id": "selector_proof_014",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "787d27d6-a3a4-4511-a3a5-0f5da8487523",
+        "candidate_identity": {
+          "canonical_name": "Cupcake Vineyards",
+          "color_mix": [
+            {
+              "count": 2,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "Italy",
+          "label_like_names": [
+            {
+              "row_count": 2,
+              "value": "Cupcake Vineyards"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": null,
+          "source_families": [
+            {
+              "linked_rows": 2,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "sparse_wine_catalog",
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 1,
+              "value": "DOC"
+            },
+            {
+              "count": 1,
+              "value": "IGT"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Cupcake Vineyards, Moscato, Trevenezie"
+            },
+            {
+              "count": 1,
+              "value": "Cupcake Vineyards, Prosecco"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Cupcake Vineyards, Moscato, Trevenezie"
+            },
+            {
+              "count": 1,
+              "value": "Cupcake Vineyards, Prosecco"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [],
+          "divergent_place_signals": [
+            "IT",
+            "Italy",
+            "Prosecco",
+            "Trevenezie"
+          ],
+          "divergent_portfolio_signals": [
+            "Cupcake Vineyards, Moscato, Trevenezie",
+            "Cupcake Vineyards, Prosecco"
+          ],
+          "matched_name_forms": [
+            "Cupcake Vineyards"
+          ],
+          "matched_place_signals": [],
+          "matched_portfolio_signals": [],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname",
+            "global_brand_country_split"
+          ],
+          "why_this_candidate_survived": [
+            "shared label-facing name form survived Tier A retrieval"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "exact_normalized",
+          "matched_anchor_name_forms": [
+            "Cupcake Vineyards"
+          ],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "exact_single_source"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

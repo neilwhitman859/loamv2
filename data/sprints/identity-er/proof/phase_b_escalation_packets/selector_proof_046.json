@@ -1,0 +1,427 @@
+{
+  "added_evidence": {
+    "people_history": {
+      "anchor": [],
+      "candidate": []
+    },
+    "profile_snippets": [
+      {
+        "source_url": "",
+        "text": "CRITICAL FLIP: Chalk Hill Estate (Sonoma CA, William P. Foley II, Chalk Hill AVA) and Chalk Hill Wines (McLaren Vale SA, Harvey family, 6-generation estate since 1964) are COMPLETELY DIFFERENT producers.",
+        "title": "blind_core_audit_094"
+      }
+    ],
+    "raw_supporting_rows": [
+      {
+        "source_family": "benchmark_v1",
+        "source_id": "benchmark_v1:blind_core_audit_094",
+        "summary": "CRITICAL FLIP: Chalk Hill Estate (Sonoma CA, William P. Foley II, Chalk Hill AVA) and Chalk Hill Wines (McLaren Vale SA, Harvey family, 6-generation estate since 1964) are COMPLETELY DIFFERENT producers."
+      }
+    ],
+    "retrieval_gap_diagnostics": [],
+    "vineyard_profile": {
+      "anchor": [],
+      "candidate": []
+    },
+    "web_identity": {
+      "anchor_urls": [],
+      "candidate_urls": [],
+      "source_urls": []
+    }
+  },
+  "anchor": {
+    "canonical_name": "Chalk Hill",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "United States",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "chalk hill",
+        "row_count": 13,
+        "source_family": "canonical",
+        "value": "Chalk Hill"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "chalk hill",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 8,
+          "value": "Chalk Hill"
+        },
+        {
+          "count": 2,
+          "value": "Sonoma Coast"
+        },
+        {
+          "count": 2,
+          "value": "Sonoma County"
+        },
+        {
+          "count": 1,
+          "value": "Russian River Valley"
+        }
+      ],
+      "countries": [
+        {
+          "count": 13,
+          "value": "US"
+        },
+        {
+          "count": 13,
+          "value": "United States"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 13,
+          "value": "California"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 9,
+          "value": "red"
+        },
+        {
+          "count": 4,
+          "value": "white"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 11,
+          "value": "AVA"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Chalk Hill, Botrytised Semillon, Russian River Valley"
+        },
+        {
+          "count": 1,
+          "value": "Chalk Hill, Cabernet Sauvignon Carmenere, Chalk Hill"
+        },
+        {
+          "count": 1,
+          "value": "Chalk Hill, Chardonnay, Sonoma Coast"
+        },
+        {
+          "count": 1,
+          "value": "Chalk Hill, Clara's Vineyard, Chalk Hill"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Chalk Hill Botrytised Semillon, Russian River Valley"
+        },
+        {
+          "count": 1,
+          "value": "Chalk Hill Cabernet Sauvignon Carmenere, Chalk Hill"
+        },
+        {
+          "count": 1,
+          "value": "Chalk Hill Chardonnay, Sonoma Coast"
+        },
+        {
+          "count": 1,
+          "value": "Chalk Hill Clara's Vineyard, Chalk Hill"
+        },
+        {
+          "count": 1,
+          "value": "Chalk Hill Estate Bottled Sauvignon Blanc, Chalk Hill"
+        },
+        {
+          "count": 1,
+          "value": "Chalk Hill Estate Cabernet Sauvignon, Chalk Hill"
+        }
+      ]
+    },
+    "producer_id": "72871cc8-9f78-4c06-94c5-dcd277112d20",
+    "region": "California",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "chalk-hill",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 13,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 43,
+      "wine_count": 13
+    }
+  },
+  "case_id": "selector_proof_046",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "escalation_mode": "candidate_frontier",
+  "escalation_version": "escalation_dossier_v1",
+  "frontier_candidate": {
+    "candidate_id": "dfde0fe4-02f8-4281-9b68-df360abfede4",
+    "candidate_identity": {
+      "canonical_name": "Chalk Hill",
+      "color_mix": [
+        {
+          "count": 33,
+          "value": "red"
+        },
+        {
+          "count": 13,
+          "value": "white"
+        }
+      ],
+      "conflicts": [
+        "multiple label-facing name forms require comparison",
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier",
+        "multiple applicant states present"
+      ],
+      "country": "Australia",
+      "label_like_names": [
+        {
+          "row_count": 189,
+          "value": "CHALK HILL"
+        },
+        {
+          "row_count": 25,
+          "value": "CHALK HILL WINERY"
+        },
+        {
+          "row_count": 21,
+          "value": "FOLEY FAMILY WINES"
+        },
+        {
+          "row_count": 9,
+          "value": "CHALK HILL ESTATE WINERY LLC"
+        },
+        {
+          "row_count": 8,
+          "value": "FOLEY FAMILY WINES INC"
+        },
+        {
+          "row_count": 2,
+          "value": "CHALK HILL ESTATE BOTTLED"
+        }
+      ],
+      "legal_or_applicant_names": [
+        {
+          "row_count": 39,
+          "value": "Alexandra Neureuter"
+        },
+        {
+          "row_count": 28,
+          "value": "Ryan Powers"
+        },
+        {
+          "row_count": 22,
+          "value": "LORA STAGGS-HARRIS"
+        },
+        {
+          "row_count": 14,
+          "value": "Foley Family Wines, Inc."
+        }
+      ],
+      "region": "California",
+      "source_families": [
+        {
+          "linked_rows": 20,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 214,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 119,
+          "source_family": "state_reg"
+        }
+      ],
+      "sparse_signal_flags": [],
+      "supplier_or_distributor_names": [
+        {
+          "count": 30,
+          "value": "Foley Family Wines (19003201006)"
+        },
+        {
+          "count": 30,
+          "value": "Standard Beverage (18002012201), Standard Beverage (18016000601), Standard Beverage (18019901807), Standard Beverage (18035006101)"
+        },
+        {
+          "count": 14,
+          "value": "Foley Family Wines, Inc."
+        },
+        {
+          "count": 5,
+          "value": "FOLEY FAMILY WINES"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 19,
+          "value": "GI"
+        }
+      ],
+      "top_grapes": [
+        {
+          "count": 6,
+          "value": "Cabernet Sauvignon"
+        },
+        {
+          "count": 6,
+          "value": "Syrah"
+        },
+        {
+          "count": 5,
+          "value": "Chardonnay"
+        }
+      ],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Chalk Hill, Alpha Crucis Blewitt Springs Grenache, McLaren Vale"
+        },
+        {
+          "count": 1,
+          "value": "Chalk Hill, Alpha Crucis Blewitt Springs Mataro Grenache, McLaren Vale"
+        },
+        {
+          "count": 1,
+          "value": "Chalk Hill, Alpha Crucis Blewitt Springs Syrah, McLaren Vale"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 2,
+          "value": "Chalk Hill Alpha Crucis Blewitt Springs Grenache, McLaren Vale"
+        },
+        {
+          "count": 2,
+          "value": "Chalk Hill Alpha Crucis Blewitt Springs Mataro Grenache, McLaren Vale"
+        },
+        {
+          "count": 2,
+          "value": "Chalk Hill Alpha Crucis Chardonnay, Adelaide Hills"
+        },
+        {
+          "count": 2,
+          "value": "Chalk Hill Alpha Crucis Clarendon Syrah, McLaren Vale"
+        },
+        {
+          "count": 2,
+          "value": "Chalk Hill Alpha Crucis SV Syrah, McLaren Vale"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 39,
+          "value": "Alexandra Neureuter"
+        },
+        {
+          "count": 28,
+          "value": "Ryan Powers"
+        },
+        {
+          "count": 22,
+          "value": "LORA STAGGS-HARRIS"
+        },
+        {
+          "count": 10,
+          "value": "Michelle Whitaker"
+        }
+      ]
+    },
+    "candidate_rank": 1,
+    "comparison_to_anchor": {
+      "divergent_name_signals": [
+        "CHALK ESTATE BOTTLED",
+        "CHALK HILL Cabernet Sauvignon Chalk Hill",
+        "CHALK HILL ESTATE BOTTLED",
+        "CHALK HILL ESTATE WINERY LLC"
+      ],
+      "divergent_place_signals": [
+        "AU",
+        "Australia",
+        "Adelaide Hills",
+        "McLaren Vale"
+      ],
+      "divergent_portfolio_signals": [
+        "Chalk Hill Alpha Crucis Blewitt Springs Grenache, McLaren Vale",
+        "Chalk Hill Alpha Crucis Blewitt Springs Mataro Grenache, McLaren Vale",
+        "Chalk Hill Alpha Crucis Chardonnay, Adelaide Hills",
+        "Chalk Hill Alpha Crucis Clarendon Syrah, McLaren Vale"
+      ],
+      "matched_name_forms": [
+        "Chalk Hill"
+      ],
+      "matched_place_signals": [
+        "California",
+        "Chalk Hill",
+        "Russian River Valley",
+        "Sonoma Coast"
+      ],
+      "matched_portfolio_signals": [],
+      "matched_regulatory_signals": [],
+      "risk_tags": [
+        "shared_surname",
+        "global_brand_country_split"
+      ],
+      "why_this_candidate_survived": [
+        "shared label-facing name form survived Tier A retrieval"
+      ]
+    },
+    "retrieval_basis": {
+      "lexical_strength": "exact_normalized",
+      "matched_anchor_name_forms": [
+        "Chalk Hill"
+      ],
+      "seed_families": [
+        "canonical"
+      ],
+      "shortlist_pressure_band": "exact_single_source"
+    }
+  },
+  "selector_result_ref": {
+    "anchor_producer_id": "72871cc8-9f78-4c06-94c5-dcd277112d20",
+    "prior_choice_type": "candidate",
+    "prior_label": "UNSURE",
+    "prior_reason_code": "unsure_conflicting_signals",
+    "prior_selected_candidate_id": "dfde0fe4-02f8-4281-9b68-df360abfede4",
+    "selector_version": "selector_harness_v1"
+  }
+}

@@ -2,10 +2,10 @@
 
 **Opened:** 2026-04-21
 **Status:** Active
-**Current block:** Session 10.5 fixed the Sprint 7 control package. The next
-honest step is Session 10.6: build the bounded proof bundle, scorer, and
-accepted-edge write simulator against the now-frozen selector, escalation, and
-edge-policy contracts.
+**Current block:** Session 10.6 built the frozen proof bundle and local scorer
+stack. The next honest step is Session 10.7: run the first bounded proof
+execution against the frozen Phase A / Phase B packets, determine whether Phase
+C is runnable from existing shortlist code, and write the go / no-go memo.
 
 ---
 
@@ -167,3 +167,41 @@ edge-policy contracts.
   loose stack of separate specs. Session 10.6 can build proof artifacts and
   local scaffolding without quietly inventing escalation, edge, or proof rules
   during implementation.
+
+- **Session 10.6 (2026-04-21):** built the first frozen local proof bundle for
+  Sprint 7.
+
+  **Scope held:** no model calls, no DB writes, no benchmark edits, no policy
+  widening, and no merge execution.
+
+  **Artifacts produced:**
+  - `proof/selector_proof_case_sources_v1.json`
+  - `proof/selector_proof_hidden_key_v1.json`
+  - `proof/phase_a_selector_packets/` (`48` packets)
+  - `proof/phase_b_escalation_packets/` (`8` packets)
+  - `proof/phase_c_shortlist_manifest.json`
+  - `proof/selector_proof_result_schema_v1.json`
+  - `proof/selector_proof_scorecard_template_v1.md`
+  - `proof/phase_d_oracle_write_simulation_v1.json`
+  - `proof/selector_proof_build_validation_v1.json`
+  - `proof/selector_proof_build_memo_v1.md`
+  - `pipeline/identity/selector_proof_v1.py`
+  - `s10_7_bounded_proof_execution.md`
+
+  **Implementation facts locked by the build:**
+  - the proof bundle now persists a hidden key, visible packet trees, shortlist
+    smoke manifest, score schema, and accepted-edge/frontier write simulation
+    in one local directory
+  - the builder uses live DB reads only and preserves the Session 10.5 policy
+    contract without adding new labels, new escalation modes, or new proof
+    strata
+  - Phase C scoring now keys off manifest strata instead of hardcoded case
+    ranges, so the smoke checker follows the frozen proof object instead of an
+    accidental numbering convention
+  - oracle self-check passed all four local phases, proving the scaffolding is
+    coherent even though no real model outputs have been run yet
+
+  **Why this matters:** Sprint 7 now has a real artifact boundary between
+  design and execution. Session 10.7 can spend the first proof budget on
+  bounded packet execution and scoring instead of inventing file layout,
+  schema glue, or write-simulation logic mid-run.

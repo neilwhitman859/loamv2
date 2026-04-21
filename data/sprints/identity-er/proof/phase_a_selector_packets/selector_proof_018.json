@@ -1,0 +1,405 @@
+{
+  "anchor": {
+    "canonical_name": "Mathilde Chapoutier",
+    "conflicts": {
+      "market_conflicts": [
+        "multiple applicant states present"
+      ],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "mathilde chapoutier",
+        "row_count": 9,
+        "source_family": "canonical",
+        "value": "Mathilde Chapoutier"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 4,
+        "source_family": "ttb",
+        "value": "CHRIS MILLICH"
+      },
+      {
+        "row_count": 4,
+        "source_family": "state_reg",
+        "value": "FOLIO WINE COMPANY LLC"
+      },
+      {
+        "row_count": 1,
+        "source_family": "ttb",
+        "value": "LORI GRIMES"
+      },
+      {
+        "row_count": 1,
+        "source_family": "ttb",
+        "value": "Laure Levesque"
+      }
+    ],
+    "name_normalized": "mathilde chapoutier",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 5,
+          "value": "COTES DE PROVENCE"
+        },
+        {
+          "count": 4,
+          "value": "Duche d'Uzes"
+        },
+        {
+          "count": 1,
+          "value": "COTES DE PROVENCE SAINTE-VICTOIRE"
+        },
+        {
+          "count": 1,
+          "value": "C\u00f4tes du Rh\u00f4ne"
+        }
+      ],
+      "countries": [
+        {
+          "count": 9,
+          "value": "FR"
+        },
+        {
+          "count": 9,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 9,
+          "value": "Rh\u00f4ne Valley"
+        },
+        {
+          "count": 5,
+          "value": "Rhone"
+        },
+        {
+          "count": 3,
+          "value": "Provence"
+        },
+        {
+          "count": 1,
+          "value": "Languedoc"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 4,
+          "value": "rose"
+        },
+        {
+          "count": 3,
+          "value": "red"
+        },
+        {
+          "count": 2,
+          "value": "white"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 9,
+          "value": "AOP"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Mathilde Chapoutier, Aurado, Cotes du Rhone"
+        },
+        {
+          "count": 1,
+          "value": "Mathilde Chapoutier, Blanc, Duche d'Uzes"
+        },
+        {
+          "count": 1,
+          "value": "Mathilde Chapoutier, Grand Ferrage Rose, Cotes de Provence"
+        },
+        {
+          "count": 1,
+          "value": "Mathilde Chapoutier, Languedoc"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Mathilde Chapoutier Aurado, C\u00f4tes du Rh\u00f4ne"
+        },
+        {
+          "count": 1,
+          "value": "Mathilde Chapoutier Blanc"
+        },
+        {
+          "count": 1,
+          "value": "Mathilde Chapoutier Grand Ferrage Rose, C\u00f4tes de Provence"
+        },
+        {
+          "count": 1,
+          "value": "Mathilde Chapoutier Grand Ferrage, C\u00f4tes de Provence"
+        },
+        {
+          "count": 1,
+          "value": "Mathilde Chapoutier Orsuro, C\u00f4tes de Provence"
+        },
+        {
+          "count": 1,
+          "value": "Mathilde Chapoutier Rose"
+        }
+      ]
+    },
+    "producer_id": "a28dc0fe-2c9a-4fee-b9f5-5072476d95e4",
+    "region": "Rh\u00f4ne Valley",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [
+        {
+          "count": 4,
+          "value": "FOLIO WINE COMPANY LLC"
+        },
+        {
+          "count": 2,
+          "value": "Folio Wine Co (19001200511)"
+        },
+        {
+          "count": 2,
+          "value": "Standard Beverage (18002012201), Standard Beverage (18016000601), Standard Beverage (18019901807), Standard Beverage (18035006101)"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 4,
+          "value": "CHRIS MILLICH"
+        },
+        {
+          "count": 1,
+          "value": "LORI GRIMES"
+        },
+        {
+          "count": 1,
+          "value": "Laure Levesque"
+        },
+        {
+          "count": 1,
+          "value": "Meagan MacLean"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 5,
+          "value": "CA"
+        },
+        {
+          "count": 1,
+          "value": "NC"
+        },
+        {
+          "count": 1,
+          "value": "NY"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 4,
+          "value": "CA-I-15163"
+        },
+        {
+          "count": 1,
+          "value": "BW-CA-4591"
+        },
+        {
+          "count": 1,
+          "value": "NC-I-15183"
+        },
+        {
+          "count": 1,
+          "value": "NY-I-1727"
+        }
+      ]
+    },
+    "slug": "mathilde-chapoutier",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 9,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 7,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 6,
+          "source_family": "state_reg"
+        }
+      ],
+      "vintage_count": 5,
+      "wine_count": 9
+    }
+  },
+  "case_id": "selector_proof_018",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "d08fe89e-657f-44d3-be4e-ffa73b8137d4",
+        "candidate_identity": {
+          "canonical_name": "de Bila-Haut (M. Chapoutier)",
+          "color_mix": [
+            {
+              "count": 8,
+              "value": "red"
+            },
+            {
+              "count": 3,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 11,
+              "value": "de Bila-Haut (M. Chapoutier)"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Roussillon",
+          "source_families": [
+            {
+              "linked_rows": 11,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 11,
+              "value": "AOP"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Domaine de Bila-Haut (M. Chapoutier), Banyuls, Rimage"
+            },
+            {
+              "count": 1,
+              "value": "Domaine de Bila-Haut (M. Chapoutier), Collioure"
+            },
+            {
+              "count": 1,
+              "value": "Domaine de Bila-Haut (M. Chapoutier), Collioure, Chrysopee Blanc"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Domaine de Bila-Haut (M. Chapoutier), Collioure"
+            },
+            {
+              "count": 1,
+              "value": "de Bila-Haut (M. Chapoutier) Blanc, C\u00f4tes du Roussillon Villages"
+            },
+            {
+              "count": 1,
+              "value": "de Bila-Haut (M. Chapoutier) Chrysopee Blanc, Collioure"
+            },
+            {
+              "count": 1,
+              "value": "de Bila-Haut (M. Chapoutier) Chrysopee Rouge, Collioure"
+            },
+            {
+              "count": 1,
+              "value": "de Bila-Haut (M. Chapoutier) Occultum Lapidem Blanc, C\u00f4tes du Roussillon"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "de Bila-Haut (M. Chapoutier)"
+          ],
+          "divergent_place_signals": [
+            "Roussillon",
+            "Banyuls",
+            "Collioure",
+            "C\u00f4tes du Roussillon"
+          ],
+          "divergent_portfolio_signals": [
+            "de Bila-Haut (M. Chapoutier) Blanc, C\u00f4tes du Roussillon Villages",
+            "de Bila-Haut (M. Chapoutier) Chrysopee Blanc, Collioure",
+            "de Bila-Haut (M. Chapoutier) Chrysopee Rouge, Collioure",
+            "de Bila-Haut (M. Chapoutier) Occultum Lapidem Blanc, C\u00f4tes du Roussillon"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "FR",
+            "France"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname",
+            "holdco_split"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "fuzzy",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

@@ -1,0 +1,351 @@
+{
+  "anchor": {
+    "canonical_name": "Miles Madeira Wine",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "Portugal",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "miles madeira wine",
+        "row_count": 15,
+        "source_family": "canonical",
+        "value": "Miles Madeira Wine"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "miles madeira wine",
+    "place_fingerprint": {
+      "appellations": [],
+      "countries": [
+        {
+          "count": 15,
+          "value": "PT"
+        },
+        {
+          "count": 15,
+          "value": "Portugal"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 15,
+          "value": "Madeira"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [],
+      "top_designations": [
+        {
+          "count": 15,
+          "value": "DOC"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Miles Madeira Wine, 10 Years Dry Madeira"
+        },
+        {
+          "count": 1,
+          "value": "Miles Madeira Wine, 10 Years Rich Madeira"
+        },
+        {
+          "count": 1,
+          "value": "Miles Madeira Wine, 3 Years Dry Madeira"
+        },
+        {
+          "count": 1,
+          "value": "Miles Madeira Wine, 3 Years Medium Dry"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Miles Madeira Wine 10 Years Dry"
+        },
+        {
+          "count": 1,
+          "value": "Miles Madeira Wine 10 Years Rich"
+        },
+        {
+          "count": 1,
+          "value": "Miles Madeira Wine 3 Years Dry"
+        },
+        {
+          "count": 1,
+          "value": "Miles Madeira Wine 3 Years Medium Dry"
+        },
+        {
+          "count": 1,
+          "value": "Miles Madeira Wine 3 Years Medium Rich"
+        },
+        {
+          "count": 1,
+          "value": "Miles Madeira Wine 3 Years Rich"
+        }
+      ]
+    },
+    "producer_id": "6c51e592-e077-4a3d-8bea-0a270ca2f901",
+    "region": "Madeira",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "miles-madeira-wine",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 15,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 15
+    }
+  },
+  "case_id": "selector_proof_020",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "6ea15115-1259-42e1-af50-ace33b9c8a03",
+        "candidate_identity": {
+          "canonical_name": "Leacock's",
+          "color_mix": [
+            {
+              "count": 2,
+              "value": "red"
+            },
+            {
+              "count": 2,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple label-facing name forms require comparison",
+            "multiple country signals in cheap dossier",
+            "multiple applicant states present"
+          ],
+          "country": "Portugal",
+          "label_like_names": [
+            {
+              "row_count": 63,
+              "value": "LEACOCKS"
+            },
+            {
+              "row_count": 26,
+              "value": "Leacock's"
+            },
+            {
+              "row_count": 3,
+              "value": "LEACOCK'S MADEIRA"
+            },
+            {
+              "row_count": 2,
+              "value": "PREMIUM PORT WINES INC."
+            }
+          ],
+          "legal_or_applicant_names": [
+            {
+              "row_count": 8,
+              "value": "SEREEN OMAR"
+            },
+            {
+              "row_count": 5,
+              "value": "PETER SCOTT"
+            },
+            {
+              "row_count": 3,
+              "value": "MICHAEL REISS"
+            },
+            {
+              "row_count": 3,
+              "value": "PREMIUM PORT WINES INC"
+            }
+          ],
+          "region": "Madeira",
+          "source_families": [
+            {
+              "linked_rows": 19,
+              "source_family": "lwin"
+            },
+            {
+              "linked_rows": 83,
+              "source_family": "ttb"
+            },
+            {
+              "linked_rows": 9,
+              "source_family": "state_reg"
+            }
+          ],
+          "sparse_signal_flags": [],
+          "supplier_or_distributor_names": [
+            {
+              "count": 3,
+              "value": "PREMIUM PORT WINES INC"
+            },
+            {
+              "count": 3,
+              "value": "WILLIAM WILEY STOCKTON"
+            },
+            {
+              "count": 1,
+              "value": "Premium Port Wines Inc.(Premium Ports & Madeiras)"
+            }
+          ],
+          "top_designations": [
+            {
+              "count": 19,
+              "value": "DOC"
+            }
+          ],
+          "top_grapes": [
+            {
+              "count": 4,
+              "value": "Malvasia Fina"
+            },
+            {
+              "count": 3,
+              "value": "Furmint"
+            },
+            {
+              "count": 1,
+              "value": "Alfrocheiro"
+            }
+          ],
+          "top_lwin_display_names": [
+            {
+              "count": 2,
+              "value": "Leacock's, Malvazia Madeira"
+            },
+            {
+              "count": 1,
+              "value": "Leacock's, A Special Dry 1920 Madeira"
+            },
+            {
+              "count": 1,
+              "value": "Leacock's, Bastardo Madeira"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Leacock's 1863 Solera, Madeira"
+            },
+            {
+              "count": 1,
+              "value": "Leacock's A Special Dry 1920"
+            },
+            {
+              "count": 1,
+              "value": "Leacock's A Special Dry, Madeira"
+            },
+            {
+              "count": 1,
+              "value": "Leacock's Bastardo"
+            },
+            {
+              "count": 1,
+              "value": "Leacock's Bual, Madeira"
+            }
+          ],
+          "ttb_applicant_names": [
+            {
+              "count": 8,
+              "value": "SEREEN OMAR"
+            },
+            {
+              "count": 5,
+              "value": "PETER SCOTT"
+            },
+            {
+              "count": 3,
+              "value": "MICHAEL REISS"
+            },
+            {
+              "count": 2,
+              "value": "DEVIN WARNER"
+            }
+          ]
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Leacock's",
+            "LEACOCK'S MADEIRA",
+            "LEACOCKS",
+            "PREMIUM PORT WINES INC."
+          ],
+          "divergent_place_signals": [
+            "Porto",
+            "MADEIRA"
+          ],
+          "divergent_portfolio_signals": [
+            "Leacock's 1863 Solera, Madeira",
+            "Leacock's A Special Dry 1920",
+            "Leacock's A Special Dry, Madeira",
+            "Leacock's Bastardo"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "Portugal",
+            "PT",
+            "Madeira"
+          ],
+          "matched_portfolio_signals": [
+            "DOC"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "holdco_split"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "orthographic_variant",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

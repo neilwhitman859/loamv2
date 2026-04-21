@@ -1,0 +1,152 @@
+{
+  "anchor": {
+    "canonical_name": "Tenuta Brunelli",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint",
+        "proof_empty_shortlist_case"
+      ]
+    },
+    "country": "Italy",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "tenuta brunelli",
+        "row_count": 3,
+        "source_family": "canonical",
+        "value": "Tenuta Brunelli"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "tenuta brunelli",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 1,
+          "value": "Brunello di Montalcino"
+        },
+        {
+          "count": 1,
+          "value": "Rosso di Montalcino"
+        }
+      ],
+      "countries": [
+        {
+          "count": 3,
+          "value": "IT"
+        },
+        {
+          "count": 3,
+          "value": "Italy"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 3,
+          "value": "Tuscany"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 3,
+          "value": "red"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 1,
+          "value": "DOC"
+        },
+        {
+          "count": 1,
+          "value": "DOCG"
+        },
+        {
+          "count": 1,
+          "value": "IGT"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Tenuta Brunelli, Brunello di Montalcino, Martoccia"
+        },
+        {
+          "count": 1,
+          "value": "Tenuta Brunelli, Poggio Apricale, IGT"
+        },
+        {
+          "count": 1,
+          "value": "Tenuta Brunelli, Rosso di Montalcino"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Tenuta Brunelli, Brunello di Montalcino, Martoccia"
+        },
+        {
+          "count": 1,
+          "value": "Tenuta Brunelli, Poggio Apricale, IGT"
+        },
+        {
+          "count": 1,
+          "value": "Tenuta Brunelli, Rosso di Montalcino"
+        }
+      ]
+    },
+    "producer_id": "63b23c27-e6f0-4b52-8906-9fa7bb4415e5",
+    "region": "Tuscany",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "tenuta-brunelli",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 3,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 3
+    }
+  },
+  "case_id": "selector_proof_036",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 0,
+    "candidates": [],
+    "shortlist_status": "no_candidate_found"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

@@ -1,0 +1,594 @@
+{
+  "anchor": {
+    "canonical_name": "de Montille",
+    "conflicts": {
+      "market_conflicts": [
+        "multiple applicant states present"
+      ],
+      "name_conflicts": [
+        "multiple label-facing name forms require comparison"
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "sparse_signal_flags": []
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "domaine de montille",
+        "row_count": 1396,
+        "source_family": "ttb",
+        "value": "DOMAINE DE MONTILLE"
+      },
+      {
+        "normalized": "de montille",
+        "row_count": 109,
+        "source_family": "canonical",
+        "value": "de Montille"
+      },
+      {
+        "normalized": "deux montille soeur frere",
+        "row_count": 27,
+        "source_family": "state_reg",
+        "value": "DEUX MONTILLE SOEUR-FRERE"
+      },
+      {
+        "normalized": "veritas imports",
+        "row_count": 23,
+        "source_family": "state_reg",
+        "value": "VERITAS IMPORTS"
+      },
+      {
+        "normalized": "domaine de montille les mitans volnay 1er cru",
+        "row_count": 2,
+        "source_family": "state_reg",
+        "value": "DOMAINE DE MONTILLE  Les Mitans Volnay 1Er Cru"
+      },
+      {
+        "normalized": "domaine de montille les greves",
+        "row_count": 2,
+        "source_family": "state_reg",
+        "value": "DOMAINE DE MONTILLE LES GREVES"
+      },
+      {
+        "normalized": "domaine de montille les perrieres",
+        "row_count": 2,
+        "source_family": "state_reg",
+        "value": "DOMAINE DE MONTILLE LES PERRIERES"
+      },
+      {
+        "normalized": "domaine de montille aux malconsorts christiane vosen romanee 1er cru",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "DOMAINE DE MONTILLE  Aux Malconsorts Christiane Vosen-Romanee 1Er Cru"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 89,
+        "source_family": "ttb",
+        "value": "MICHAEL SULLIVAN"
+      },
+      {
+        "row_count": 77,
+        "source_family": "ttb",
+        "value": "HEIKE MAY-FENDRICH"
+      },
+      {
+        "row_count": 57,
+        "source_family": "ttb",
+        "value": "MICHAEL REISS"
+      },
+      {
+        "row_count": 46,
+        "source_family": "ttb",
+        "value": "ANNABEL CRUM"
+      }
+    ],
+    "name_normalized": "de montille",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 118,
+          "value": "VOLNAY"
+        },
+        {
+          "count": 84,
+          "value": "POMMARD"
+        },
+        {
+          "count": 82,
+          "value": "BEAUNE"
+        },
+        {
+          "count": 78,
+          "value": "BOURGOGNE"
+        },
+        {
+          "count": 14,
+          "value": "Meursault"
+        },
+        {
+          "count": 10,
+          "value": "Puligny-Montrachet"
+        }
+      ],
+      "countries": [
+        {
+          "count": 109,
+          "value": "FR"
+        },
+        {
+          "count": 109,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 109,
+          "value": "Burgundy"
+        },
+        {
+          "count": 20,
+          "value": "C\u00f4te de Beaune"
+        },
+        {
+          "count": 5,
+          "value": "C\u00f4te de Nuits"
+        },
+        {
+          "count": 2,
+          "value": "C\u00f4te Chalonnaise"
+        },
+        {
+          "count": 1,
+          "value": "Chablis"
+        },
+        {
+          "count": 1,
+          "value": "M\u00e2connais"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 63,
+          "value": "white"
+        },
+        {
+          "count": 46,
+          "value": "red"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 91,
+          "value": "AOP"
+        }
+      ],
+      "top_grapes": [
+        {
+          "count": 7,
+          "value": "Chardonnay"
+        },
+        {
+          "count": 5,
+          "value": "Pinot Noir"
+        },
+        {
+          "count": 2,
+          "value": "Pinot Blanc"
+        },
+        {
+          "count": 1,
+          "value": "Aligot\u00e9"
+        }
+      ],
+      "top_lwin_display_names": [
+        {
+          "count": 2,
+          "value": "Domaine de Montille, Puligny-Montrachet Premier Cru, La Garenne"
+        },
+        {
+          "count": 2,
+          "value": "Maison de Montille, Saint-Romain"
+        },
+        {
+          "count": 1,
+          "value": "de Montille, Chablis Premier Cru, Montee de Tonnerre"
+        },
+        {
+          "count": 1,
+          "value": "de Montille, Pernand-Vergelesses, Sous Fretille"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Domaine de Montille, Batard-Montrachet Grand Cru"
+        },
+        {
+          "count": 1,
+          "value": "Domaine de Montille, Beaune Premier Cru, Les Aigrots"
+        },
+        {
+          "count": 1,
+          "value": "Domaine de Montille, Beaune Premier Cru, Les Epenotes"
+        },
+        {
+          "count": 1,
+          "value": "Domaine de Montille, Beaune Premier Cru, Les Greves"
+        },
+        {
+          "count": 1,
+          "value": "Domaine de Montille, Beaune Premier Cru, Les Perrieres"
+        },
+        {
+          "count": 1,
+          "value": "Domaine de Montille, Beaune Premier Cru, Les Sizies"
+        }
+      ]
+    },
+    "producer_id": "0899a2f2-36be-4da7-acc8-f5b647df742e",
+    "region": "Burgundy",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [
+        {
+          "count": 19,
+          "value": "DEMEINE ESTATES LLC"
+        },
+        {
+          "count": 19,
+          "value": "OLD WORLD IMPORTS LLC"
+        },
+        {
+          "count": 7,
+          "value": "THE SORTING TABLE LLC(THE SORTING TABLE)"
+        },
+        {
+          "count": 6,
+          "value": "DEMEINE ESTATES"
+        },
+        {
+          "count": 1,
+          "value": "Demeine Estates (12747)"
+        },
+        {
+          "count": 1,
+          "value": "Southern Glazers of Kansas (18001513703), Southern Glazers of Kansas (18002023801)"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 89,
+          "value": "MICHAEL SULLIVAN"
+        },
+        {
+          "count": 77,
+          "value": "HEIKE MAY-FENDRICH"
+        },
+        {
+          "count": 57,
+          "value": "MICHAEL REISS"
+        },
+        {
+          "count": 46,
+          "value": "ANNABEL CRUM"
+        },
+        {
+          "count": 40,
+          "value": "MAUREEN PERES"
+        },
+        {
+          "count": 36,
+          "value": "BERNADETTE LEGGIERO"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 342,
+          "value": "NY"
+        },
+        {
+          "count": 321,
+          "value": "CA"
+        },
+        {
+          "count": 75,
+          "value": "MA"
+        },
+        {
+          "count": 62,
+          "value": "FL"
+        },
+        {
+          "count": 62,
+          "value": "OR"
+        },
+        {
+          "count": 52,
+          "value": "CO"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 92,
+          "value": "CA-I-15182"
+        },
+        {
+          "count": 87,
+          "value": "NY-I-1282"
+        },
+        {
+          "count": 76,
+          "value": "NY-I-1704"
+        },
+        {
+          "count": 57,
+          "value": "MA-I-493"
+        },
+        {
+          "count": 46,
+          "value": "NY-I-2017"
+        },
+        {
+          "count": 37,
+          "value": "NY-I-1179"
+        }
+      ]
+    },
+    "slug": "de-montille",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 91,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 1411,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 106,
+          "source_family": "state_reg"
+        }
+      ],
+      "vintage_count": 48,
+      "wine_count": 109
+    }
+  },
+  "case_id": "selector_proof_021",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "1a9d2c76-fa1a-49da-996b-a2d5fcb92468",
+        "candidate_identity": {
+          "canonical_name": "Deux Montille",
+          "color_mix": [
+            {
+              "count": 35,
+              "value": "white"
+            },
+            {
+              "count": 7,
+              "value": "red"
+            }
+          ],
+          "conflicts": [
+            "multiple label-facing name forms require comparison",
+            "multiple country signals in cheap dossier",
+            "multiple region signals in cheap dossier",
+            "multiple applicant states present"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 180,
+              "value": "DEUX MONTILLE"
+            },
+            {
+              "row_count": 7,
+              "value": "DEUX MONTILLE SOEUR-FRERE"
+            },
+            {
+              "row_count": 2,
+              "value": "DOMAINE DEUX MONTILLE"
+            },
+            {
+              "row_count": 1,
+              "value": "DOMAINE DEUX MONTILLE LES BABILLERES"
+            }
+          ],
+          "legal_or_applicant_names": [
+            {
+              "row_count": 31,
+              "value": "MICHAEL SULLIVAN"
+            },
+            {
+              "row_count": 28,
+              "value": "MAUREEN PERES"
+            },
+            {
+              "row_count": 16,
+              "value": "REBEKAH LAUCK"
+            },
+            {
+              "row_count": 14,
+              "value": "Dana Lirette"
+            }
+          ],
+          "region": "Burgundy",
+          "source_families": [
+            {
+              "linked_rows": 30,
+              "source_family": "lwin"
+            },
+            {
+              "linked_rows": 180,
+              "source_family": "ttb"
+            },
+            {
+              "linked_rows": 7,
+              "source_family": "state_reg"
+            }
+          ],
+          "sparse_signal_flags": [],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 30,
+              "value": "AOP"
+            }
+          ],
+          "top_grapes": [
+            {
+              "count": 3,
+              "value": "Chardonnay"
+            },
+            {
+              "count": 1,
+              "value": "Gamay"
+            }
+          ],
+          "top_lwin_display_names": [
+            {
+              "count": 3,
+              "value": "Deux Montille, Auxey-Duresses"
+            },
+            {
+              "count": 2,
+              "value": "Deux Montille, Puligny-Montrachet Premier Cru, Champ Gain"
+            },
+            {
+              "count": 1,
+              "value": "Deux Montille, Batard-Montrachet Grand Cru"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 2,
+              "value": "Deux Montille, Auxey-Duresses"
+            },
+            {
+              "count": 2,
+              "value": "Deux Montille, Chambolle-Musigny"
+            },
+            {
+              "count": 2,
+              "value": "Deux Montille, Chevalier-Montrachet Grand Cru"
+            },
+            {
+              "count": 2,
+              "value": "Deux Montille, Corton-Charlemagne Grand Cru"
+            },
+            {
+              "count": 2,
+              "value": "Deux Montille, Pernand-Vergelesses"
+            }
+          ],
+          "ttb_applicant_names": [
+            {
+              "count": 31,
+              "value": "MICHAEL SULLIVAN"
+            },
+            {
+              "count": 28,
+              "value": "MAUREEN PERES"
+            },
+            {
+              "count": 16,
+              "value": "REBEKAH LAUCK"
+            },
+            {
+              "count": 14,
+              "value": "Dana Lirette"
+            }
+          ]
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "DEUX MONTILLE",
+            "DOMAINE DEUX MONTILLE",
+            "DOMAINE DEUX MONTILLE LES BABILLERES"
+          ],
+          "divergent_place_signals": [
+            "Auxey-Duresses",
+            "BURGUNDY",
+            "Chambolle-Musigny",
+            "RULLY"
+          ],
+          "divergent_portfolio_signals": [
+            "Deux Montille, Auxey-Duresses",
+            "Deux Montille, Chambolle-Musigny",
+            "Deux Montille, Chevalier-Montrachet Grand Cru",
+            "Deux Montille, Corton-Charlemagne Grand Cru"
+          ],
+          "matched_name_forms": [
+            "DEUX MONTILLE SOEUR-FRERE"
+          ],
+          "matched_place_signals": [
+            "FR",
+            "France",
+            "Burgundy",
+            "C\u00f4te Chalonnaise"
+          ],
+          "matched_portfolio_signals": [
+            "Chardonnay",
+            "AOP"
+          ],
+          "matched_regulatory_signals": [
+            "CA-I-15182",
+            "MA-I-493",
+            "NY-I-1282",
+            "MAUREEN PERES"
+          ],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "shared label-facing name form survived Tier A retrieval",
+            "portfolio overlap kept candidate visible",
+            "regulatory or market signal corroborated the candidate"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "orthographic_variant",
+          "matched_anchor_name_forms": [
+            "DEUX MONTILLE SOEUR-FRERE"
+          ],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

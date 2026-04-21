@@ -1,0 +1,206 @@
+{
+  "anchor": {
+    "canonical_name": "Prophecy",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "sparse_wine_catalog",
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "prophecy",
+        "row_count": 1,
+        "source_family": "canonical",
+        "value": "Prophecy"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "prophecy",
+    "place_fingerprint": {
+      "appellations": [],
+      "countries": [
+        {
+          "count": 1,
+          "value": "FR"
+        },
+        {
+          "count": 1,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": []
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 1,
+          "value": "rose"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 1,
+          "value": "VdF"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Prophecy, Rose, VdF"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Prophecy, Rose, VdF"
+        }
+      ]
+    },
+    "producer_id": "ec9d39e7-0ad8-4031-bfe8-c6896f353c2a",
+    "region": null,
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "prophecy",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 1,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 1
+    }
+  },
+  "case_id": "selector_proof_016",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "f52c456c-f3ac-4a87-b6b6-9cda525aff05",
+        "candidate_identity": {
+          "canonical_name": "Prophecy",
+          "color_mix": [
+            {
+              "count": 1,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "Italy",
+          "label_like_names": [
+            {
+              "row_count": 1,
+              "value": "Prophecy"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": null,
+          "source_families": [
+            {
+              "linked_rows": 1,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "sparse_wine_catalog",
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 1,
+              "value": "DOC"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Prophecy, Pinot Grigio, Delle Venezie"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Prophecy, Pinot Grigio, Delle Venezie"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [],
+          "divergent_place_signals": [
+            "IT",
+            "Italy",
+            "Delle Venezie"
+          ],
+          "divergent_portfolio_signals": [
+            "Prophecy, Pinot Grigio, Delle Venezie"
+          ],
+          "matched_name_forms": [
+            "Prophecy"
+          ],
+          "matched_place_signals": [],
+          "matched_portfolio_signals": [],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname",
+            "global_brand_country_split"
+          ],
+          "why_this_candidate_survived": [
+            "shared label-facing name form survived Tier A retrieval"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "exact_normalized",
+          "matched_anchor_name_forms": [
+            "Prophecy"
+          ],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "exact_single_source"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

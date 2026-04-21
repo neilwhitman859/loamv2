@@ -1,0 +1,290 @@
+{
+  "anchor": {
+    "canonical_name": "Vocoret",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "vocoret",
+        "row_count": 15,
+        "source_family": "canonical",
+        "value": "Vocoret"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 9,
+        "source_family": "ttb",
+        "value": "DONALD OMAN"
+      }
+    ],
+    "name_normalized": "vocoret",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 15,
+          "value": "Chablis"
+        },
+        {
+          "count": 4,
+          "value": "CHABLIS PREMIER CRU"
+        },
+        {
+          "count": 2,
+          "value": "CHABLIS GRAND CRU"
+        },
+        {
+          "count": 1,
+          "value": "PETIT CHABLIS"
+        }
+      ],
+      "countries": [
+        {
+          "count": 15,
+          "value": "FR"
+        },
+        {
+          "count": 15,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 15,
+          "value": "Burgundy"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 15,
+          "value": "white"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 15,
+          "value": "AOP"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Vocoret, Chablis"
+        },
+        {
+          "count": 1,
+          "value": "Vocoret, Chablis Grand Cru, Blanchot"
+        },
+        {
+          "count": 1,
+          "value": "Vocoret, Chablis Grand Cru, Les Clos"
+        },
+        {
+          "count": 1,
+          "value": "Vocoret, Chablis Grand Cru, Valmur"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Vocoret Le Bas de Chapelot, Chablis"
+        },
+        {
+          "count": 1,
+          "value": "Vocoret Les Pargues, Chablis"
+        },
+        {
+          "count": 1,
+          "value": "Vocoret Vieilles Vignes, Chablis"
+        },
+        {
+          "count": 1,
+          "value": "Vocoret, Chablis"
+        },
+        {
+          "count": 1,
+          "value": "Vocoret, Chablis Grand Cru, Blanchot"
+        },
+        {
+          "count": 1,
+          "value": "Vocoret, Chablis Grand Cru, Les Clos"
+        }
+      ]
+    },
+    "producer_id": "2da66547-7598-42ab-b98c-624f496be252",
+    "region": "Burgundy",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [
+        {
+          "count": 9,
+          "value": "DONALD OMAN"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 9,
+          "value": "OR"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 9,
+          "value": "OR-I-969"
+        }
+      ]
+    },
+    "slug": "vocoret",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 15,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 9,
+          "source_family": "ttb"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 15
+    }
+  },
+  "case_id": "selector_proof_001",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "e02536aa-192a-479b-97ee-7a512a519067",
+        "candidate_identity": {
+          "canonical_name": "Vocoret et Fils",
+          "color_mix": [
+            {
+              "count": 2,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 2,
+              "value": "Vocoret et Fils"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Burgundy",
+          "source_families": [
+            {
+              "linked_rows": 2,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "sparse_wine_catalog",
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 2,
+              "value": "AOP"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Domaine Vocoret et Fils, Chablis"
+            },
+            {
+              "count": 1,
+              "value": "Vocoret et Fils, Chablis Premier Cru, Vaillons"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Domaine Vocoret et Fils, Chablis"
+            },
+            {
+              "count": 1,
+              "value": "Vocoret et Fils, Chablis Premier Cru, Vaillons"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Vocoret et Fils"
+          ],
+          "divergent_place_signals": [],
+          "divergent_portfolio_signals": [
+            "Domaine Vocoret et Fils, Chablis",
+            "Vocoret et Fils, Chablis Premier Cru, Vaillons"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "FR",
+            "France",
+            "Burgundy",
+            "Chablis"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "containment",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

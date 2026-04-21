@@ -1,0 +1,238 @@
+{
+  "anchor": {
+    "canonical_name": "Gaspare Buscemi",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "sparse_wine_catalog",
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "Italy",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "gaspare buscemi",
+        "row_count": 2,
+        "source_family": "canonical",
+        "value": "Gaspare Buscemi"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "gaspare buscemi",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 2,
+          "value": "Venezia Giulia"
+        }
+      ],
+      "countries": [
+        {
+          "count": 2,
+          "value": "IT"
+        },
+        {
+          "count": 2,
+          "value": "Italy"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 2,
+          "value": "Friuli-Venezia Giulia"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 2,
+          "value": "white"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 2,
+          "value": "IGT"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Gaspare Buscemi, Venezia Giulia, Alture Bianco"
+        },
+        {
+          "count": 1,
+          "value": "Gaspare Buscemi, Venezia Giulia, Braide Bianco"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Gaspare Buscemi, Venezia Giulia, Alture Bianco"
+        },
+        {
+          "count": 1,
+          "value": "Gaspare Buscemi, Venezia Giulia, Braide Bianco"
+        }
+      ]
+    },
+    "producer_id": "1210976c-655f-46b1-bd63-ac7cf6ab91c2",
+    "region": "Friuli-Venezia Giulia",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "gaspare-buscemi",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 2,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 2
+    }
+  },
+  "case_id": "selector_proof_038",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "675ef2d2-bcf4-4d11-a483-ec2a3913ee83",
+        "candidate_identity": {
+          "canonical_name": "Buscemi",
+          "color_mix": [
+            {
+              "count": 1,
+              "value": "red"
+            },
+            {
+              "count": 1,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "Italy",
+          "label_like_names": [
+            {
+              "row_count": 2,
+              "value": "Buscemi"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Sicily",
+          "source_families": [
+            {
+              "linked_rows": 2,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "sparse_wine_catalog",
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 2,
+              "value": "IGT"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Buscemi, Il Bianco, Terre Siciliane"
+            },
+            {
+              "count": 1,
+              "value": "Buscemi, Tartaraci, Terre Siciliane"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Buscemi, Il Bianco, Terre Siciliane"
+            },
+            {
+              "count": 1,
+              "value": "Buscemi, Tartaraci, Terre Siciliane"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Buscemi"
+          ],
+          "divergent_place_signals": [
+            "Sicily",
+            "Terre Siciliane"
+          ],
+          "divergent_portfolio_signals": [
+            "Buscemi, Il Bianco, Terre Siciliane",
+            "Buscemi, Tartaraci, Terre Siciliane"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "IT",
+            "Italy"
+          ],
+          "matched_portfolio_signals": [
+            "IGT"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "containment",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

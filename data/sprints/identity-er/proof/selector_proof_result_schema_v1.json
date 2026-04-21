@@ -1,0 +1,50 @@
+{
+  "schema_version": "selector_proof_result_schema_v1",
+  "selector_result": {
+    "choice_type_enum": [
+      "candidate",
+      "none"
+    ],
+    "label_enum": [
+      "SAME_AS",
+      "RELATED_BUT_DISTINCT",
+      "NONE",
+      "UNSURE"
+    ],
+    "required": [
+      "proof_version",
+      "case_id",
+      "decision_stage",
+      "selector_version",
+      "anchor_producer_id",
+      "shortlist_status",
+      "choice",
+      "label",
+      "primary_reason_code",
+      "secondary_reason_codes",
+      "rule_hypotheses",
+      "support_ref_paths",
+      "conflict_ref_paths",
+      "needs_escalation",
+      "escalation_focus"
+    ],
+    "stage_enum": [
+      "selector",
+      "escalation"
+    ]
+  },
+  "shortlist_observation": {
+    "required": [
+      "proof_version",
+      "case_id",
+      "anchor_producer_id",
+      "shortlist_status",
+      "candidate_count",
+      "candidate_ids"
+    ],
+    "status_enum": [
+      "candidates_present",
+      "no_candidate_found"
+    ]
+  }
+}

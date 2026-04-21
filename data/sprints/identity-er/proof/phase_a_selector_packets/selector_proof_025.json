@@ -1,0 +1,377 @@
+{
+  "anchor": {
+    "canonical_name": "Robert Ramsay",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "thin_regulatory_market_signal"
+      ]
+    },
+    "country": "United States",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "robert ramsay",
+        "row_count": 34,
+        "source_family": "canonical",
+        "value": "Robert Ramsay"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "robert ramsay",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 9,
+          "value": "Columbia Valley"
+        },
+        {
+          "count": 8,
+          "value": "Yakima Valley"
+        },
+        {
+          "count": 7,
+          "value": "Horse Heaven Hills"
+        },
+        {
+          "count": 7,
+          "value": "Snipes Mountain"
+        },
+        {
+          "count": 3,
+          "value": "Red Mountain"
+        }
+      ],
+      "countries": [
+        {
+          "count": 34,
+          "value": "US"
+        },
+        {
+          "count": 34,
+          "value": "United States"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 34,
+          "value": "Washington"
+        },
+        {
+          "count": 12,
+          "value": "Columbia Valley"
+        },
+        {
+          "count": 5,
+          "value": "Yakima Valley"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 28,
+          "value": "red"
+        },
+        {
+          "count": 4,
+          "value": "white"
+        },
+        {
+          "count": 2,
+          "value": "rose"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 21,
+          "value": "AVA"
+        }
+      ],
+      "top_grapes": [
+        {
+          "count": 5,
+          "value": "Syrah"
+        },
+        {
+          "count": 2,
+          "value": "Durif"
+        },
+        {
+          "count": 1,
+          "value": "Cabernet Sauvignon"
+        },
+        {
+          "count": 1,
+          "value": "Cinsaut"
+        }
+      ],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Robert Ramsay, Boushey Syrah, Yakima Valley"
+        },
+        {
+          "count": 1,
+          "value": "Robert Ramsay, Dineen Syrah, Yakima Valley"
+        },
+        {
+          "count": 1,
+          "value": "Robert Ramsay, La Previa, Columbia Valley"
+        },
+        {
+          "count": 1,
+          "value": "Robert Ramsay, Le Mien, Columbia Valley"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 2,
+          "value": "Robert Ramsay Boushey Syrah, Yakima Valley"
+        },
+        {
+          "count": 2,
+          "value": "Robert Ramsay Dineen Syrah, Yakima Valley"
+        },
+        {
+          "count": 2,
+          "value": "Robert Ramsay McKinley Springs Cinsault, Horse Heaven Hills"
+        },
+        {
+          "count": 2,
+          "value": "Robert Ramsay Phinny Hill Cabernet Sauvignon, Horse Heaven Hills"
+        },
+        {
+          "count": 2,
+          "value": "Robert Ramsay Syrah, Columbia Valley"
+        },
+        {
+          "count": 1,
+          "value": "Robert Ramsay Heaven Counoise, Red Mountain"
+        }
+      ]
+    },
+    "producer_id": "a93e3d8e-b6d7-4995-81db-e245e86c3c93",
+    "region": "Washington",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "robert-ramsay",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 21,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 1,
+      "wine_count": 34
+    }
+  },
+  "case_id": "selector_proof_025",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "cef811a1-5724-496e-aa0f-4ad3b8fe88bf",
+        "candidate_identity": {
+          "canonical_name": "W.T. Vintners",
+          "color_mix": [
+            {
+              "count": 9,
+              "value": "red"
+            },
+            {
+              "count": 3,
+              "value": "white"
+            },
+            {
+              "count": 1,
+              "value": "rose"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier",
+            "multiple region signals in cheap dossier"
+          ],
+          "country": "United States",
+          "label_like_names": [
+            {
+              "row_count": 13,
+              "value": "W.T. Vintners"
+            },
+            {
+              "row_count": 1,
+              "value": "W.T. VINTNERS Grenache, Mourv\u00e8dre, Syrah Yakima Valley"
+            },
+            {
+              "row_count": 1,
+              "value": "W.T. VINTNERS Syrah Columbia Valley"
+            }
+          ],
+          "legal_or_applicant_names": [
+            {
+              "row_count": 3,
+              "value": "GEORGE WHITE"
+            },
+            {
+              "row_count": 2,
+              "value": "UNITED BEVERAGE IMPORTS"
+            }
+          ],
+          "region": "Washington",
+          "source_families": [
+            {
+              "linked_rows": 13,
+              "source_family": "lwin"
+            },
+            {
+              "linked_rows": 3,
+              "source_family": "ttb"
+            },
+            {
+              "linked_rows": 2,
+              "source_family": "state_reg"
+            }
+          ],
+          "sparse_signal_flags": [
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [
+            {
+              "count": 2,
+              "value": "UNITED BEVERAGE IMPORTS"
+            }
+          ],
+          "top_designations": [
+            {
+              "count": 12,
+              "value": "AVA"
+            },
+            {
+              "count": 1,
+              "value": "AOR"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "W.T. Vintners, Boushey Grenache, Yakima Valley"
+            },
+            {
+              "count": 1,
+              "value": "W.T. Vintners, Boushey Mourvedre, Yakima Valley"
+            },
+            {
+              "count": 1,
+              "value": "W.T. Vintners, Boushey Rhone Blend, Yakima Valley"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "W.T. Vintners Boushey Grenache, Yakima Valley"
+            },
+            {
+              "count": 1,
+              "value": "W.T. Vintners Boushey Mourvedre, Yakima Valley"
+            },
+            {
+              "count": 1,
+              "value": "W.T. Vintners Boushey Rhone Blend, Yakima Valley"
+            },
+            {
+              "count": 1,
+              "value": "W.T. Vintners Boushey Syrah, Yakima Valley"
+            },
+            {
+              "count": 1,
+              "value": "W.T. Vintners Destiny Ridge Vineyard Syrah, Yakima Valley"
+            }
+          ],
+          "ttb_applicant_names": [
+            {
+              "count": 3,
+              "value": "GEORGE WHITE"
+            }
+          ]
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "W.T. Vintners",
+            "W.T. VINTNERS Grenache, Mourv\u00e8dre, Syrah Yakima Valley",
+            "W.T. VINTNERS Syrah Columbia Valley"
+          ],
+          "divergent_place_signals": [
+            "Oregon",
+            "Walla Walla Valley",
+            "Columbia Gorge",
+            "Eola-Amity Hills"
+          ],
+          "divergent_portfolio_signals": [
+            "W.T. Vintners Boushey Grenache, Yakima Valley",
+            "W.T. Vintners Boushey Mourvedre, Yakima Valley",
+            "W.T. Vintners Boushey Rhone Blend, Yakima Valley",
+            "W.T. Vintners Boushey Syrah, Yakima Valley"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "United States",
+            "US",
+            "Washington",
+            "Columbia Valley"
+          ],
+          "matched_portfolio_signals": [
+            "AVA"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "permit_only"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "orthographic_variant",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

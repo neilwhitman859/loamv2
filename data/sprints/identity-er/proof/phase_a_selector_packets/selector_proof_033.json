@@ -1,0 +1,404 @@
+{
+  "anchor": {
+    "canonical_name": "Cordella",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "Italy",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "cordella",
+        "row_count": 3,
+        "source_family": "canonical",
+        "value": "Cordella"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "cordella",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 2,
+          "value": "Brunello di Montalcino"
+        },
+        {
+          "count": 1,
+          "value": "Rosso di Montalcino"
+        }
+      ],
+      "countries": [
+        {
+          "count": 3,
+          "value": "IT"
+        },
+        {
+          "count": 3,
+          "value": "Italy"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 3,
+          "value": "Tuscany"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 3,
+          "value": "red"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 2,
+          "value": "DOCG"
+        },
+        {
+          "count": 1,
+          "value": "DOC"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Cordella, Brunello di Montalcino"
+        },
+        {
+          "count": 1,
+          "value": "Cordella, Brunello di Montalcino, Riserva"
+        },
+        {
+          "count": 1,
+          "value": "Cordella, Rosso di Montalcino"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Cordella, Brunello di Montalcino"
+        },
+        {
+          "count": 1,
+          "value": "Cordella, Brunello di Montalcino, Riserva"
+        },
+        {
+          "count": 1,
+          "value": "Cordella, Rosso di Montalcino"
+        }
+      ]
+    },
+    "producer_id": "3199f79c-9831-459d-889e-934554594fae",
+    "region": "Tuscany",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "cordella",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 3,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 3
+    }
+  },
+  "case_id": "selector_proof_033",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 2,
+    "candidates": [
+      {
+        "candidate_id": "9d129273-f1fc-4c53-aa76-e5e85993077a",
+        "candidate_identity": {
+          "canonical_name": "Fabio Cordella",
+          "color_mix": [
+            {
+              "count": 7,
+              "value": "red"
+            },
+            {
+              "count": 2,
+              "value": "rose"
+            },
+            {
+              "count": 2,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier",
+            "multiple region signals in cheap dossier"
+          ],
+          "country": "Italy",
+          "label_like_names": [
+            {
+              "row_count": 12,
+              "value": "Fabio Cordella"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Puglia",
+          "source_families": [
+            {
+              "linked_rows": 12,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 7,
+              "value": "IGT"
+            },
+            {
+              "count": 3,
+              "value": "DOCG"
+            },
+            {
+              "count": 1,
+              "value": "DOC"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Fabio Cordella, Brunello di Montalcino, Buffon"
+            },
+            {
+              "count": 1,
+              "value": "Fabio Cordella, Brunello di Montalcino, Ronaldinho"
+            },
+            {
+              "count": 1,
+              "value": "Fabio Cordella, Brunello di Montalcino, Wesley Sneijder"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Fabio Cordella Buffon, Brunello di Montalcino"
+            },
+            {
+              "count": 1,
+              "value": "Fabio Cordella Marcos Cafu Primitivo Malvasia Nera, Salento"
+            },
+            {
+              "count": 1,
+              "value": "Fabio Cordella Roberto Carlos Bianco, Salento"
+            },
+            {
+              "count": 1,
+              "value": "Fabio Cordella Roberto Carlos Negroamaro, Salento"
+            },
+            {
+              "count": 1,
+              "value": "Fabio Cordella Ronaldinho R One Chardonnay, Salento"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Fabio Cordella"
+          ],
+          "divergent_place_signals": [
+            "Prosecco",
+            "Puglia",
+            "Salento"
+          ],
+          "divergent_portfolio_signals": [
+            "Fabio Cordella Buffon, Brunello di Montalcino",
+            "Fabio Cordella Marcos Cafu Primitivo Malvasia Nera, Salento",
+            "Fabio Cordella Roberto Carlos Bianco, Salento",
+            "Fabio Cordella Roberto Carlos Negroamaro, Salento"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "IT",
+            "Italy",
+            "Tuscany",
+            "Brunello di Montalcino"
+          ],
+          "matched_portfolio_signals": [
+            "DOC",
+            "DOCG"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "containment",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      },
+      {
+        "candidate_id": "97befc3e-b259-437e-ac2b-22e20acd8c2a",
+        "candidate_identity": {
+          "canonical_name": "Antonella Corda",
+          "color_mix": [
+            {
+              "count": 2,
+              "value": "white"
+            },
+            {
+              "count": 1,
+              "value": "red"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "Italy",
+          "label_like_names": [
+            {
+              "row_count": 3,
+              "value": "Antonella Corda"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Sardinia",
+          "source_families": [
+            {
+              "linked_rows": 3,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 2,
+              "value": "DOC"
+            },
+            {
+              "count": 1,
+              "value": "IGT"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Antonella Corda, Cannonau di Sardegna"
+            },
+            {
+              "count": 1,
+              "value": "Antonella Corda, Isola dei Nuraghi, Ziru"
+            },
+            {
+              "count": 1,
+              "value": "Antonella Corda, Vermentino di Sardegna"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Antonella Corda, Cannonau di Sardegna"
+            },
+            {
+              "count": 1,
+              "value": "Antonella Corda, Isola dei Nuraghi, Ziru"
+            },
+            {
+              "count": 1,
+              "value": "Antonella Corda, Vermentino di Sardegna"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 2,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Antonella Corda"
+          ],
+          "divergent_place_signals": [
+            "Sardinia",
+            "Cannonau di Sardegna",
+            "Isola dei Nuraghi",
+            "Vermentino di Sardegna"
+          ],
+          "divergent_portfolio_signals": [
+            "Antonella Corda, Cannonau di Sardegna",
+            "Antonella Corda, Isola dei Nuraghi, Ziru",
+            "Antonella Corda, Vermentino di Sardegna"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "IT",
+            "Italy"
+          ],
+          "matched_portfolio_signals": [
+            "DOC"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "fuzzy",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

@@ -1,0 +1,504 @@
+{
+  "anchor": {
+    "canonical_name": "Decelle Villa",
+    "conflicts": {
+      "market_conflicts": [
+        "multiple applicant states present"
+      ],
+      "name_conflicts": [
+        "multiple label-facing name forms require comparison"
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "decelle villa",
+        "row_count": 82,
+        "source_family": "ttb",
+        "value": "DECELLE VILLA"
+      },
+      {
+        "normalized": "deutsch family wine spirits",
+        "row_count": 6,
+        "source_family": "state_reg",
+        "value": "DEUTSCH FAMILY WINE SPIRITS"
+      },
+      {
+        "normalized": "decelle villa clos du roi pinot noir",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "DECELLE VILLA 'CLOS DU ROI' PINOT NOIR,"
+      },
+      {
+        "normalized": "decelle villa 2017 pinot noir bourgogne",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "DECELLE VILLA 2017 PINOT NOIR, BOURGOGNE"
+      },
+      {
+        "normalized": "decelle villa red pinot noir nuits sai",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "DECELLE VILLA, RED PINOT NOIR, NUITS SAI"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 34,
+        "source_family": "ttb",
+        "value": "Florent Blanchet"
+      },
+      {
+        "row_count": 17,
+        "source_family": "ttb",
+        "value": "MARK NEWMAN"
+      },
+      {
+        "row_count": 15,
+        "source_family": "ttb",
+        "value": "JD CHANSARD"
+      },
+      {
+        "row_count": 7,
+        "source_family": "ttb",
+        "value": "Michael Riahi"
+      }
+    ],
+    "name_normalized": "decelle villa",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 5,
+          "value": "POMMARD"
+        },
+        {
+          "count": 5,
+          "value": "SAVIGNY-LES-BEAUNE"
+        },
+        {
+          "count": 4,
+          "value": "BOURGOGNE"
+        },
+        {
+          "count": 4,
+          "value": "CHOREY-LES-BEAUNE"
+        },
+        {
+          "count": 2,
+          "value": "Nuits-Saint-Georges"
+        },
+        {
+          "count": 2,
+          "value": "Puligny-Montrachet"
+        }
+      ],
+      "countries": [
+        {
+          "count": 16,
+          "value": "FR"
+        },
+        {
+          "count": 16,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 16,
+          "value": "Burgundy"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 12,
+          "value": "red"
+        },
+        {
+          "count": 4,
+          "value": "white"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 16,
+          "value": "AOP"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Decelle Villa, Chambolle-Musigny"
+        },
+        {
+          "count": 1,
+          "value": "Decelle Villa, Chorey-les-Beaune"
+        },
+        {
+          "count": 1,
+          "value": "Decelle Villa, Corton-Charlemagne Grand Cru"
+        },
+        {
+          "count": 1,
+          "value": "Decelle Villa, Cote de Nuits-Villages"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Decelle Villa Longeroies, Marsannay"
+        },
+        {
+          "count": 1,
+          "value": "Decelle Villa, Chambolle-Musigny"
+        },
+        {
+          "count": 1,
+          "value": "Decelle Villa, Chorey-les-Beaune"
+        },
+        {
+          "count": 1,
+          "value": "Decelle Villa, Corton-Charlemagne Grand Cru"
+        },
+        {
+          "count": 1,
+          "value": "Decelle Villa, Cote de Nuits-Villages"
+        },
+        {
+          "count": 1,
+          "value": "Decelle Villa, Gevrey-Chambertin"
+        }
+      ]
+    },
+    "producer_id": "56c80605-5b56-47dc-b2c2-1cbb7389f531",
+    "region": "Burgundy",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [
+        {
+          "count": 7,
+          "value": "W J DEUTSCH & SONS LTD(DEUTSCH FAMILY WINE & SPIRITS)"
+        },
+        {
+          "count": 3,
+          "value": "Deutsch Family Wines & Spirits (19001991164)"
+        },
+        {
+          "count": 3,
+          "value": "Trident Beverage (15979)"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 34,
+          "value": "Florent Blanchet"
+        },
+        {
+          "count": 17,
+          "value": "MARK NEWMAN"
+        },
+        {
+          "count": 15,
+          "value": "JD CHANSARD"
+        },
+        {
+          "count": 7,
+          "value": "Michael Riahi"
+        },
+        {
+          "count": 6,
+          "value": "BRADLEY COHEN"
+        },
+        {
+          "count": 6,
+          "value": "MARCELO LAVIANO"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 34,
+          "value": "FL"
+        },
+        {
+          "count": 19,
+          "value": "CA"
+        },
+        {
+          "count": 15,
+          "value": "GA"
+        },
+        {
+          "count": 13,
+          "value": "NY"
+        },
+        {
+          "count": 7,
+          "value": "CT"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 34,
+          "value": "FL-I-21456"
+        },
+        {
+          "count": 16,
+          "value": "CA-I-15220"
+        },
+        {
+          "count": 15,
+          "value": "GA-I-21116"
+        },
+        {
+          "count": 7,
+          "value": "CT-I-21055"
+        },
+        {
+          "count": 7,
+          "value": "NY-I-21397"
+        },
+        {
+          "count": 6,
+          "value": "NY-I-1878"
+        }
+      ]
+    },
+    "slug": "decelle-villa",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 16,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 88,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 16,
+          "source_family": "state_reg"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 16
+    }
+  },
+  "case_id": "selector_proof_026",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "87cf9df6-ed9d-4036-aae7-81fd40ea2dd7",
+        "candidate_identity": {
+          "canonical_name": "Decelle & Fils",
+          "color_mix": [
+            {
+              "count": 9,
+              "value": "red"
+            },
+            {
+              "count": 3,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier",
+            "multiple applicant states present"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 12,
+              "value": "Decelle & Fils"
+            },
+            {
+              "row_count": 7,
+              "value": "DOMAINE DECELLE & FILS"
+            },
+            {
+              "row_count": 1,
+              "value": "DOMAINE DECELLE VILLA"
+            }
+          ],
+          "legal_or_applicant_names": [
+            {
+              "row_count": 10,
+              "value": "ALISON FOLEY"
+            },
+            {
+              "row_count": 5,
+              "value": "W J DEUTSCH & SONS LTD(DEUTSCH FAMILY WINE & SPIRITS)"
+            },
+            {
+              "row_count": 1,
+              "value": "Florent Blanchet"
+            }
+          ],
+          "region": "Burgundy",
+          "source_families": [
+            {
+              "linked_rows": 12,
+              "source_family": "lwin"
+            },
+            {
+              "linked_rows": 11,
+              "source_family": "ttb"
+            },
+            {
+              "linked_rows": 10,
+              "source_family": "state_reg"
+            }
+          ],
+          "sparse_signal_flags": [
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [
+            {
+              "count": 5,
+              "value": "Deutsch Family Wines & Spirits (19001991164)"
+            },
+            {
+              "count": 5,
+              "value": "Trident Beverage (15979)"
+            },
+            {
+              "count": 5,
+              "value": "W J DEUTSCH & SONS LTD(DEUTSCH FAMILY WINE & SPIRITS)"
+            }
+          ],
+          "top_designations": [
+            {
+              "count": 12,
+              "value": "AOP"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Domaine Decelle & Fils, Beaune Premier Cru, Clos du Roi"
+            },
+            {
+              "count": 1,
+              "value": "Domaine Decelle & Fils, Beaune Premier Cru, Les Teurons"
+            },
+            {
+              "count": 1,
+              "value": "Domaine Decelle & Fils, Bourgogne, Chardonnay"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Decelle & Fils Chardonnay, Bourgogne"
+            },
+            {
+              "count": 1,
+              "value": "Decelle & Fils Les Champlains Blanc, Bourgogne"
+            },
+            {
+              "count": 1,
+              "value": "Decelle & Fils Les Champlains Rouge, Bourgogne"
+            },
+            {
+              "count": 1,
+              "value": "Decelle & Fils Pinot Noir, Bourgogne"
+            },
+            {
+              "count": 1,
+              "value": "Domaine Decelle & Fils, Beaune Premier Cru, Clos du Roi"
+            }
+          ],
+          "ttb_applicant_names": [
+            {
+              "count": 10,
+              "value": "ALISON FOLEY"
+            },
+            {
+              "count": 1,
+              "value": "Florent Blanchet"
+            }
+          ]
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Decelle & Fils",
+            "DOMAINE DECELLE & FILS",
+            "DOMAINE DECELLE VILLA"
+          ],
+          "divergent_place_signals": [
+            "Beaune",
+            "BEAUNE 1ER CRU",
+            "BOURGOGNE HAUTES COTES DE BEAUNE"
+          ],
+          "divergent_portfolio_signals": [
+            "Decelle & Fils Chardonnay, Bourgogne",
+            "Decelle & Fils Les Champlains Blanc, Bourgogne",
+            "Decelle & Fils Les Champlains Rouge, Bourgogne",
+            "Decelle & Fils Pinot Noir, Bourgogne"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "FR",
+            "France",
+            "Burgundy",
+            "BOURGOGNE"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [
+            "CT-I-21055",
+            "FL-I-21456",
+            "Florent Blanchet",
+            "Deutsch Family Wines & Spirits (19001991164)"
+          ],
+          "risk_tags": [
+            "label_relationship"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible",
+            "regulatory or market signal corroborated the candidate"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "fuzzy",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

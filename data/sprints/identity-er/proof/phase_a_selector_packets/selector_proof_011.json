@@ -1,0 +1,339 @@
+{
+  "anchor": {
+    "canonical_name": "Selaks",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "Australia",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "selaks",
+        "row_count": 6,
+        "source_family": "canonical",
+        "value": "Selaks"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "selaks",
+    "place_fingerprint": {
+      "appellations": [],
+      "countries": [
+        {
+          "count": 6,
+          "value": "AU"
+        },
+        {
+          "count": 6,
+          "value": "Australia"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 6,
+          "value": "South Australia"
+        },
+        {
+          "count": 2,
+          "value": "South Eastern Australia"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 5,
+          "value": "red"
+        },
+        {
+          "count": 1,
+          "value": "white"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 4,
+          "value": "GI"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Selaks, Bold & Bright Merlot"
+        },
+        {
+          "count": 1,
+          "value": "Selaks, Bright & Fresh Pinot Gris"
+        },
+        {
+          "count": 1,
+          "value": "Selaks, Cabernet Sauvignon, South Australia"
+        },
+        {
+          "count": 1,
+          "value": "Selaks, Merlot, South Eastern Australia"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Selaks, Bold & Bright Merlot"
+        },
+        {
+          "count": 1,
+          "value": "Selaks, Bright & Fresh Pinot Gris"
+        },
+        {
+          "count": 1,
+          "value": "Selaks, Cabernet Sauvignon, South Australia"
+        },
+        {
+          "count": 1,
+          "value": "Selaks, Merlot, South Eastern Australia"
+        },
+        {
+          "count": 1,
+          "value": "Selaks, Pinot Noir, South Eastern Australia"
+        },
+        {
+          "count": 1,
+          "value": "Selaks, Shiraz, South Australia"
+        }
+      ]
+    },
+    "producer_id": "12f907aa-28eb-4653-a8ae-33af4033f0d2",
+    "region": "South Australia",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "selaks",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 6,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 6
+    }
+  },
+  "case_id": "selector_proof_011",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "1f932c2b-6f8c-4c3a-a1d5-4ad69d645170",
+        "candidate_identity": {
+          "canonical_name": "Selaks",
+          "color_mix": [
+            {
+              "count": 23,
+              "value": "white"
+            },
+            {
+              "count": 8,
+              "value": "red"
+            },
+            {
+              "count": 4,
+              "value": "rose"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier",
+            "multiple region signals in cheap dossier"
+          ],
+          "country": "New Zealand",
+          "label_like_names": [
+            {
+              "row_count": 37,
+              "value": "SELAKS"
+            },
+            {
+              "row_count": 1,
+              "value": "AMERICAN ESTATES WINES INC."
+            },
+            {
+              "row_count": 1,
+              "value": "SELAKS ICE EAST COAST"
+            }
+          ],
+          "legal_or_applicant_names": [
+            {
+              "row_count": 5,
+              "value": "George Galey"
+            },
+            {
+              "row_count": 1,
+              "value": "TEMPLE IMPORTS"
+            }
+          ],
+          "region": "Central Otago",
+          "source_families": [
+            {
+              "linked_rows": 18,
+              "source_family": "lwin"
+            },
+            {
+              "linked_rows": 37,
+              "source_family": "ttb"
+            },
+            {
+              "linked_rows": 2,
+              "source_family": "state_reg"
+            }
+          ],
+          "sparse_signal_flags": [],
+          "supplier_or_distributor_names": [
+            {
+              "count": 1,
+              "value": "TEMPLE IMPORTS"
+            }
+          ],
+          "top_designations": [
+            {
+              "count": 16,
+              "value": "GI"
+            }
+          ],
+          "top_grapes": [
+            {
+              "count": 4,
+              "value": "Chardonnay"
+            },
+            {
+              "count": 4,
+              "value": "Pinot Noir"
+            },
+            {
+              "count": 4,
+              "value": "Sauvignon Blanc"
+            }
+          ],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Selaks, Apple & Pear Pinot Gris, Hawke's Bay"
+            },
+            {
+              "count": 1,
+              "value": "Selaks, Berries & Cream, Hawke's Bay"
+            },
+            {
+              "count": 1,
+              "value": "Selaks, Berries and Cream, Hawke's Bay"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 2,
+              "value": "Selaks Premium Selection Chardonnay"
+            },
+            {
+              "count": 1,
+              "value": "Selaks Apple & Pear Pinot Gris"
+            },
+            {
+              "count": 1,
+              "value": "Selaks Apple & Pear Pinot Gris, Hawke's Bay"
+            },
+            {
+              "count": 1,
+              "value": "Selaks Berries & Cream, Hawke's Bay"
+            },
+            {
+              "count": 1,
+              "value": "Selaks Berries and Cream, Hawke's Bay"
+            }
+          ],
+          "ttb_applicant_names": [
+            {
+              "count": 5,
+              "value": "George Galey"
+            }
+          ]
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "AMERICAN ESTATES WINES INC.",
+            "SELAKS ICE EAST COAST"
+          ],
+          "divergent_place_signals": [
+            "New Zealand",
+            "NZ",
+            "Central Otago",
+            "Hawke's Bay"
+          ],
+          "divergent_portfolio_signals": [
+            "Selaks Apple & Pear Pinot Gris",
+            "Selaks Apple & Pear Pinot Gris, Hawke's Bay",
+            "Selaks Berries and Cream, Hawke's Bay",
+            "Selaks Berries & Cream, Hawke's Bay"
+          ],
+          "matched_name_forms": [
+            "Selaks"
+          ],
+          "matched_place_signals": [
+            "South Australia"
+          ],
+          "matched_portfolio_signals": [
+            "GI"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname",
+            "global_brand_country_split"
+          ],
+          "why_this_candidate_survived": [
+            "shared label-facing name form survived Tier A retrieval",
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "exact_normalized",
+          "matched_anchor_name_forms": [
+            "Selaks"
+          ],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "exact_single_source"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

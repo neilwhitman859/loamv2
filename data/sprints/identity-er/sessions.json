@@ -46,5 +46,13 @@
     "shape": "spec",
     "spent": 0.00,
     "notes": "Defined escalation_dossier_v1, accepted_edge_rules_v1, and selector_proof_v1 as the Sprint 7 control package for Identity Dossier Select. Locked escalation to UNSURE-only one-pass frontier cases, kept the heavy path on the same four-label contract, split durable graph state into accepted pairwise edges versus frontier records, clarified that selector-side NONE fans out only to candidates actually shown in the packet while empty shortlists write no pairwise negatives, and froze the next proof as a four-phase bundle: 48-case selector proof, 8-case escalation replay, shortlist smoke, and accepted-edge write simulation. The next session should build the local proof bundle, scorer, and write simulator without reopening policy or writing to the DB."
+  },
+  {
+    "id": "S10.6",
+    "date": "2026-04-21",
+    "title": "Bounded proof artifact build",
+    "shape": "implementation",
+    "spent": 0.00,
+    "notes": "Built the frozen local selector_proof_v1 bundle and first execution scaffolding for Identity Dossier Select: hidden answer key, 48 Phase A selector packets, 8 Phase B escalation packets, Phase C shortlist manifest, normalized result schema, scorecard template, and Phase D accepted-edge/frontier write simulation, all under data/sprints/identity-er/proof/. Implemented the deterministic builder/scorer in pipeline/identity/selector_proof_v1.py, verified it against live read-only DB data, and confirmed the oracle self-check passes all four local phases with no packet-schema issues. The next session should run the first real bounded proof execution against the frozen packets, score the outputs, and write the Sprint 7 go/no-go memo."
   }
 ]

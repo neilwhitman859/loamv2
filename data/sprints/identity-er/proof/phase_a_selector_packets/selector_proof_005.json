@@ -1,0 +1,429 @@
+{
+  "anchor": {
+    "canonical_name": "Bart",
+    "conflicts": {
+      "market_conflicts": [
+        "multiple applicant states present"
+      ],
+      "name_conflicts": [
+        "multiple label-facing name forms require comparison"
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "sparse_signal_flags": []
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "domaine bart",
+        "row_count": 422,
+        "source_family": "ttb",
+        "value": "DOMAINE BART"
+      },
+      {
+        "normalized": "bart",
+        "row_count": 33,
+        "source_family": "canonical",
+        "value": "Bart"
+      },
+      {
+        "normalized": "la lupe wines cabernet sauvignon",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "LA LUPE WINES-CABERNET SAUVIGNON"
+      },
+      {
+        "normalized": "landon winery greenville",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "LANDON WINERY GREENVILLE"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 21,
+        "source_family": "ttb",
+        "value": "PHILIP BURKHART"
+      },
+      {
+        "row_count": 19,
+        "source_family": "ttb",
+        "value": "Michael Bathurst"
+      },
+      {
+        "row_count": 17,
+        "source_family": "ttb",
+        "value": "ANNA BALISTRERI"
+      },
+      {
+        "row_count": 17,
+        "source_family": "ttb",
+        "value": "DAVID BOWLER"
+      }
+    ],
+    "name_normalized": "bart",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 213,
+          "value": "MARSANNAY"
+        },
+        {
+          "count": 30,
+          "value": "FIXIN"
+        },
+        {
+          "count": 29,
+          "value": "BONNES MARES"
+        },
+        {
+          "count": 21,
+          "value": "CHAMBERTIN CLOS DE BEZE"
+        },
+        {
+          "count": 3,
+          "value": "Santenay"
+        },
+        {
+          "count": 2,
+          "value": "Chambolle-Musigny"
+        }
+      ],
+      "countries": [
+        {
+          "count": 33,
+          "value": "FR"
+        },
+        {
+          "count": 33,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 33,
+          "value": "Burgundy"
+        },
+        {
+          "count": 10,
+          "value": "C\u00f4te de Nuits"
+        },
+        {
+          "count": 2,
+          "value": "C\u00f4te de Beaune"
+        },
+        {
+          "count": 1,
+          "value": "Rhone"
+        },
+        {
+          "count": 1,
+          "value": "Rh\u00f4ne Valley"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 25,
+          "value": "red"
+        },
+        {
+          "count": 7,
+          "value": "white"
+        },
+        {
+          "count": 1,
+          "value": "rose"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 24,
+          "value": "AOP"
+        }
+      ],
+      "top_grapes": [
+        {
+          "count": 3,
+          "value": "Pinot Noir"
+        },
+        {
+          "count": 1,
+          "value": "Chardonnay"
+        },
+        {
+          "count": 1,
+          "value": "Chardonnay Blanc Musque"
+        }
+      ],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Bart, Chateauneuf-du-Pape, Terroir"
+        },
+        {
+          "count": 1,
+          "value": "Domaine Bart, Bonnes Mares Grand Cru"
+        },
+        {
+          "count": 1,
+          "value": "Domaine Bart, Bourgogne, Rouge"
+        },
+        {
+          "count": 1,
+          "value": "Domaine Bart, Chambertin-Clos de Beze Grand Cru"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Bart Blanc, Marsannay"
+        },
+        {
+          "count": 1,
+          "value": "Bart Brut, Cr\u00e9mant de Bourgogne"
+        },
+        {
+          "count": 1,
+          "value": "Bart Chardonnay Musque, Marsannay"
+        },
+        {
+          "count": 1,
+          "value": "Bart Rose, Marsannay"
+        },
+        {
+          "count": 1,
+          "value": "Bart Rouge, Marsannay"
+        },
+        {
+          "count": 1,
+          "value": "Bart, Bonnes-Mares Grand Cru"
+        }
+      ]
+    },
+    "producer_id": "0480eb26-d5fd-4d74-b22a-a55632f92cff",
+    "region": "Burgundy",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [
+        {
+          "count": 21,
+          "value": "PHILIP BURKHART"
+        },
+        {
+          "count": 19,
+          "value": "Michael Bathurst"
+        },
+        {
+          "count": 17,
+          "value": "ANNA BALISTRERI"
+        },
+        {
+          "count": 17,
+          "value": "DAVID BOWLER"
+        },
+        {
+          "count": 16,
+          "value": "Hugo Prochasson"
+        },
+        {
+          "count": 15,
+          "value": "Connie Molitor"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 92,
+          "value": "CA"
+        },
+        {
+          "count": 71,
+          "value": "NY"
+        },
+        {
+          "count": 32,
+          "value": "OR"
+        },
+        {
+          "count": 22,
+          "value": "VA"
+        },
+        {
+          "count": 21,
+          "value": "GA"
+        },
+        {
+          "count": 17,
+          "value": "WI"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 32,
+          "value": "NY-I-1335"
+        },
+        {
+          "count": 25,
+          "value": "VA-I-534"
+        },
+        {
+          "count": 22,
+          "value": "CA-I-15093"
+        },
+        {
+          "count": 22,
+          "value": "CA-I-23488"
+        },
+        {
+          "count": 18,
+          "value": "CA-I-1863"
+        },
+        {
+          "count": 18,
+          "value": "IL-I-1066"
+        }
+      ]
+    },
+    "slug": "bart",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 24,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 435,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 1,
+          "source_family": "state_reg"
+        }
+      ],
+      "vintage_count": 2,
+      "wine_count": 33
+    }
+  },
+  "case_id": "selector_proof_005",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "a29b6a66-dc4a-4184-918b-a7a673ae4019",
+        "candidate_identity": {
+          "canonical_name": "Andre Bart",
+          "color_mix": [
+            {
+              "count": 1,
+              "value": "red"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 1,
+              "value": "Andre Bart"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Burgundy",
+          "source_families": [
+            {
+              "linked_rows": 1,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "sparse_wine_catalog",
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 1,
+              "value": "AOP"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Andre Bart, Fixin Premier Cru, Hervelets"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Andre Bart, Fixin Premier Cru, Hervelets"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Andre Bart"
+          ],
+          "divergent_place_signals": [],
+          "divergent_portfolio_signals": [
+            "Andre Bart, Fixin Premier Cru, Hervelets"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "FR",
+            "France",
+            "Burgundy",
+            "FIXIN"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "containment",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

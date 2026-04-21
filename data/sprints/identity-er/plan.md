@@ -118,7 +118,7 @@ Clusters come **after** accepted `SAME_AS` edges. No optimistic transitivity.
 | 10.4 | Selector contract + evaluation harness | `selector_harness_v1.md` + prompt / schema / scorer design |
 | 10.5 | Control layer design | `escalation_dossier_v1.md` + `accepted_edge_rules_v1.md` + `selector_proof_v1.md` |
 | 10.6 | Bounded proof build | frozen proof bundle + scorer + edge-write simulator |
-| 10.7 | Go / no-go decision | continue, reshape, or kill memo |
+| 10.7 | Bounded proof execution + go / no-go decision | scored proof results + continuation memo |
 
 ---
 

@@ -1,0 +1,484 @@
+{
+  "added_evidence": {
+    "people_history": {
+      "anchor": [],
+      "candidate": []
+    },
+    "profile_snippets": [
+      {
+        "source_url": "",
+        "text": "Jean Rijckaert (Belgian, founded this Jura/Burgundy domaine 1998 with Jean-Marie Guffens) retired in 2013; Florent Rouve took over the estate. Same continuous vineyard holdings. Per \u00a711.4.f succession MERGE.",
+        "title": "blind_core_audit_030"
+      }
+    ],
+    "raw_supporting_rows": [
+      {
+        "source_family": "benchmark_v1",
+        "source_id": "benchmark_v1:blind_core_audit_030",
+        "summary": "Jean Rijckaert (Belgian, founded this Jura/Burgundy domaine 1998 with Jean-Marie Guffens) retired in 2013; Florent Rouve took over the estate. Same continuous vineyard holdings. Per \u00a711.4.f succession MERGE."
+      }
+    ],
+    "retrieval_gap_diagnostics": [],
+    "vineyard_profile": {
+      "anchor": [],
+      "candidate": []
+    },
+    "web_identity": {
+      "anchor_urls": [],
+      "candidate_urls": [],
+      "source_urls": []
+    }
+  },
+  "anchor": {
+    "canonical_name": "Florent Rouve",
+    "conflicts": {
+      "market_conflicts": [
+        "multiple applicant states present"
+      ],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "sparse_signal_flags": []
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "florent rouve",
+        "row_count": 28,
+        "source_family": "canonical",
+        "value": "Florent Rouve"
+      },
+      {
+        "normalized": "florent rouve macon villages white wine",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "FLORENT ROUVE MACON VILLAGES WHITE WINE"
+      },
+      {
+        "normalized": "master brands",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "MASTER BRANDS"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 3,
+        "source_family": "ttb",
+        "value": "BRIAN MOTA"
+      },
+      {
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "GEORGE GORDON HUE(DBA WINECRAFT)"
+      },
+      {
+        "row_count": 1,
+        "source_family": "ttb",
+        "value": "GEORGE HUE"
+      },
+      {
+        "row_count": 1,
+        "source_family": "ttb",
+        "value": "Jaime Bachrach"
+      }
+    ],
+    "name_normalized": "florent rouve",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 6,
+          "value": "Arbois"
+        },
+        {
+          "count": 6,
+          "value": "C\u00f4tes du Jura"
+        },
+        {
+          "count": 5,
+          "value": "Saint-V\u00e9ran"
+        },
+        {
+          "count": 4,
+          "value": "Vir\u00e9-Cless\u00e9"
+        },
+        {
+          "count": 3,
+          "value": "M\u00e2con"
+        },
+        {
+          "count": 2,
+          "value": "Pouilly-Fuiss\u00e9"
+        }
+      ],
+      "countries": [
+        {
+          "count": 28,
+          "value": "FR"
+        },
+        {
+          "count": 28,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 28,
+          "value": "Burgundy"
+        },
+        {
+          "count": 8,
+          "value": "Jura"
+        },
+        {
+          "count": 7,
+          "value": "M\u00e2connais"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 27,
+          "value": "white"
+        },
+        {
+          "count": 1,
+          "value": "red"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 16,
+          "value": "AOP"
+        }
+      ],
+      "top_grapes": [
+        {
+          "count": 5,
+          "value": "Chardonnay"
+        },
+        {
+          "count": 1,
+          "value": "Pinot Blanc"
+        },
+        {
+          "count": 1,
+          "value": "Ruche"
+        },
+        {
+          "count": 1,
+          "value": "Sauvignon Blanc"
+        }
+      ],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Florent Rouve, Arbois, Chardonnay"
+        },
+        {
+          "count": 1,
+          "value": "Florent Rouve, Arbois, En Paradis Vieilles Vignes"
+        },
+        {
+          "count": 1,
+          "value": "Florent Rouve, Arbois, Poulsard"
+        },
+        {
+          "count": 1,
+          "value": "Florent Rouve, Arbois, Savagnin"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Florent Rouve Buissieres Les Clos Vieilles Vignes, M\u00e2con"
+        },
+        {
+          "count": 1,
+          "value": "Florent Rouve Chardonnay, Arbois"
+        },
+        {
+          "count": 1,
+          "value": "Florent Rouve En Paradis Vieilles Vignes, Arbois"
+        },
+        {
+          "count": 1,
+          "value": "Florent Rouve Face a l'Est Chardonnay, C\u00f4tes du Jura"
+        },
+        {
+          "count": 1,
+          "value": "Florent Rouve Macon La Roche Vineuse Soleil Levant Vieilles Vignes"
+        },
+        {
+          "count": 1,
+          "value": "Florent Rouve Poulsard, Arbois"
+        }
+      ]
+    },
+    "producer_id": "55fbe34c-9096-4f2c-acd3-6bdf1d3320bc",
+    "region": "Burgundy",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [
+        {
+          "count": 1,
+          "value": "GEORGE GORDON HUE(DBA WINECRAFT)"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 3,
+          "value": "BRIAN MOTA"
+        },
+        {
+          "count": 1,
+          "value": "GEORGE HUE"
+        },
+        {
+          "count": 1,
+          "value": "Jaime Bachrach"
+        },
+        {
+          "count": 1,
+          "value": "Philippe Vernet"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 4,
+          "value": "NY"
+        },
+        {
+          "count": 1,
+          "value": "CT"
+        },
+        {
+          "count": 1,
+          "value": "OH"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 3,
+          "value": "NY-I-15465"
+        },
+        {
+          "count": 1,
+          "value": "CT-I-21068"
+        },
+        {
+          "count": 1,
+          "value": "NY-I-1335"
+        },
+        {
+          "count": 1,
+          "value": "OH-I-15067"
+        }
+      ]
+    },
+    "slug": "florent-rouve",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 18,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 6,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 2,
+          "source_family": "state_reg"
+        }
+      ],
+      "vintage_count": 1,
+      "wine_count": 28
+    }
+  },
+  "case_id": "selector_proof_042",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "escalation_mode": "candidate_frontier",
+  "escalation_version": "escalation_dossier_v1",
+  "frontier_candidate": {
+    "candidate_id": "e6e03e7c-599d-41e9-a3a8-5166b2c95ff3",
+    "candidate_identity": {
+      "canonical_name": "Jean Rijckaert",
+      "color_mix": [
+        {
+          "count": 52,
+          "value": "white"
+        },
+        {
+          "count": 2,
+          "value": "red"
+        }
+      ],
+      "conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "country": "France",
+      "label_like_names": [
+        {
+          "row_count": 54,
+          "value": "Jean Rijckaert"
+        }
+      ],
+      "legal_or_applicant_names": [
+        {
+          "row_count": 1,
+          "value": "Hugo Prochasson"
+        }
+      ],
+      "region": "Burgundy",
+      "source_families": [
+        {
+          "linked_rows": 41,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 4,
+          "source_family": "ttb"
+        }
+      ],
+      "sparse_signal_flags": [],
+      "supplier_or_distributor_names": [],
+      "top_designations": [
+        {
+          "count": 40,
+          "value": "AOP"
+        },
+        {
+          "count": 1,
+          "value": "VdF"
+        }
+      ],
+      "top_grapes": [
+        {
+          "count": 9,
+          "value": "Chardonnay"
+        },
+        {
+          "count": 2,
+          "value": "Gew\u00fcrztraminer"
+        },
+        {
+          "count": 2,
+          "value": "Sauvignon Blanc"
+        }
+      ],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Jean Rijckaert, Arbois, Savagnin"
+        },
+        {
+          "count": 1,
+          "value": "Jean Rijckaert, Batard-Montrachet Grand Cru"
+        },
+        {
+          "count": 1,
+          "value": "Jean Rijckaert, Bourgogne, Chardonnay"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 2,
+          "value": "Jean Rijckaert, Corton-Charlemagne Grand Cru"
+        },
+        {
+          "count": 1,
+          "value": "Jean Rijckaert Blanc, Chassagne-Montrachet"
+        },
+        {
+          "count": 1,
+          "value": "Jean Rijckaert Chardonnay, Bourgogne"
+        },
+        {
+          "count": 1,
+          "value": "Jean Rijckaert Cotes Chardonnay Vignes Voises Vieilles Vignes, C\u00f4tes du Jura"
+        },
+        {
+          "count": 1,
+          "value": "Jean Rijckaert Les Sarres Savagnin, C\u00f4tes du Jura"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 1,
+          "value": "Hugo Prochasson"
+        }
+      ]
+    },
+    "candidate_rank": 1,
+    "comparison_to_anchor": {
+      "divergent_name_signals": [
+        "Jean Rijckaert"
+      ],
+      "divergent_place_signals": [
+        "C\u00f4te de Beaune",
+        "Bourgogne"
+      ],
+      "divergent_portfolio_signals": [
+        "Jean Rijckaert Blanc, Chassagne-Montrachet",
+        "Jean Rijckaert Chardonnay, Bourgogne",
+        "Jean Rijckaert, Corton-Charlemagne Grand Cru",
+        "Jean Rijckaert Cotes Chardonnay Vignes Voises Vieilles Vignes, C\u00f4tes du Jura"
+      ],
+      "matched_name_forms": [],
+      "matched_place_signals": [
+        "FR",
+        "France",
+        "Burgundy",
+        "Jura"
+      ],
+      "matched_portfolio_signals": [
+        "Chardonnay",
+        "Pinot Blanc",
+        "Sauvignon Blanc",
+        "AOP"
+      ],
+      "matched_regulatory_signals": [],
+      "risk_tags": [],
+      "why_this_candidate_survived": [
+        "portfolio overlap kept candidate visible"
+      ]
+    },
+    "retrieval_basis": {
+      "lexical_strength": "orthographic_variant",
+      "matched_anchor_name_forms": [],
+      "seed_families": [
+        "canonical"
+      ],
+      "shortlist_pressure_band": "fallback"
+    }
+  },
+  "selector_result_ref": {
+    "anchor_producer_id": "55fbe34c-9096-4f2c-acd3-6bdf1d3320bc",
+    "prior_choice_type": "candidate",
+    "prior_label": "UNSURE",
+    "prior_reason_code": "unsure_escalation_only_signal_needed",
+    "prior_selected_candidate_id": "e6e03e7c-599d-41e9-a3a8-5166b2c95ff3",
+    "selector_version": "selector_harness_v1"
+  }
+}

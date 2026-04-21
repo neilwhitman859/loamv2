@@ -1,0 +1,349 @@
+{
+  "anchor": {
+    "canonical_name": "Taillevent (Joseph Drouhin)",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "sparse_wine_catalog",
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "taillevent joseph drouhin",
+        "row_count": 1,
+        "source_family": "canonical",
+        "value": "Taillevent (Joseph Drouhin)"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "taillevent joseph drouhin",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 1,
+          "value": "Chambolle-Musigny"
+        }
+      ],
+      "countries": [
+        {
+          "count": 1,
+          "value": "FR"
+        },
+        {
+          "count": 1,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 1,
+          "value": "Burgundy"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 1,
+          "value": "red"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 1,
+          "value": "AOP"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Taillevent (Joseph Drouhin), Chambolle-Musigny"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Taillevent (Joseph Drouhin), Chambolle-Musigny"
+        }
+      ]
+    },
+    "producer_id": "2ee6e12f-32f8-4bfa-8d3c-5caf8a023a85",
+    "region": "Burgundy",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "taillevent-joseph-drouhin",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 1,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 1
+    }
+  },
+  "case_id": "selector_proof_015",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "9d1d6d4c-8272-4773-aa13-bea3b2956a66",
+        "candidate_identity": {
+          "canonical_name": "Joseph Drouhin",
+          "color_mix": [
+            {
+              "count": 152,
+              "value": "red"
+            },
+            {
+              "count": 83,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple label-facing name forms require comparison",
+            "multiple country signals in cheap dossier",
+            "multiple region signals in cheap dossier",
+            "multiple applicant states present"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 1781,
+              "value": "JOSEPH DROUHIN"
+            },
+            {
+              "row_count": 25,
+              "value": "DREYFUS ASHBY INC."
+            },
+            {
+              "row_count": 7,
+              "value": "JOSEPH DROUHIN Burgundy"
+            },
+            {
+              "row_count": 6,
+              "value": "MILLER SQUARED INC."
+            },
+            {
+              "row_count": 3,
+              "value": "JOSEPH DROUHIN LAFORET"
+            },
+            {
+              "row_count": 2,
+              "value": "JOSEPH DROUHIN - BEAUJOLAIS NOUVEAU"
+            }
+          ],
+          "legal_or_applicant_names": [
+            {
+              "row_count": 392,
+              "value": "EILEEN MORMINO"
+            },
+            {
+              "row_count": 69,
+              "value": "CAROLYN DELELEE"
+            },
+            {
+              "row_count": 51,
+              "value": "Hugo Prochasson"
+            },
+            {
+              "row_count": 45,
+              "value": "PHILIP BURKHART"
+            }
+          ],
+          "region": "Beaujolais",
+          "source_families": [
+            {
+              "linked_rows": 174,
+              "source_family": "lwin"
+            },
+            {
+              "linked_rows": 1783,
+              "source_family": "ttb"
+            },
+            {
+              "linked_rows": 129,
+              "source_family": "state_reg"
+            }
+          ],
+          "sparse_signal_flags": [],
+          "supplier_or_distributor_names": [
+            {
+              "count": 22,
+              "value": "Dreyfus Ashby & Co (19001300016)"
+            },
+            {
+              "count": 22,
+              "value": "Veritas Selections (6129)"
+            },
+            {
+              "count": 20,
+              "value": "Dreyfus Ashby Inc(Dreyfus Ashby and Co)"
+            },
+            {
+              "count": 17,
+              "value": "Armada Brands"
+            }
+          ],
+          "top_designations": [
+            {
+              "count": 172,
+              "value": "AOP"
+            },
+            {
+              "count": 1,
+              "value": "AOC"
+            }
+          ],
+          "top_grapes": [
+            {
+              "count": 22,
+              "value": "Chardonnay"
+            },
+            {
+              "count": 20,
+              "value": "Pinot Noir"
+            },
+            {
+              "count": 7,
+              "value": "Gamay"
+            }
+          ],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Joseph Drouhin, Aloxe-Corton"
+            },
+            {
+              "count": 1,
+              "value": "Joseph Drouhin, Assortment Case"
+            },
+            {
+              "count": 1,
+              "value": "Joseph Drouhin, Batard-Montrachet Grand Cru"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 2,
+              "value": "Joseph Drouhin, Aloxe-Corton"
+            },
+            {
+              "count": 2,
+              "value": "Joseph Drouhin, Beaune Premier Cru"
+            },
+            {
+              "count": 2,
+              "value": "Joseph Drouhin, Brouilly"
+            },
+            {
+              "count": 2,
+              "value": "Joseph Drouhin, Chambertin Grand Cru"
+            },
+            {
+              "count": 2,
+              "value": "Joseph Drouhin, Chambolle-Musigny Premier Cru"
+            }
+          ],
+          "ttb_applicant_names": [
+            {
+              "count": 392,
+              "value": "EILEEN MORMINO"
+            },
+            {
+              "count": 69,
+              "value": "CAROLYN DELELEE"
+            },
+            {
+              "count": 51,
+              "value": "Hugo Prochasson"
+            },
+            {
+              "count": 45,
+              "value": "PHILIP BURKHART"
+            }
+          ]
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Chorey Les Beaune",
+            "Cote De Nuits Villages",
+            "DREYFUS ASHBY INC.",
+            "JOSEPH DROUHIN"
+          ],
+          "divergent_place_signals": [
+            "Beaujolais",
+            "C\u00f4te Chalonnaise",
+            "C\u00f4te de Beaune",
+            "C\u00f4te de Nuits"
+          ],
+          "divergent_portfolio_signals": [
+            "Joseph Drouhin, Aloxe-Corton",
+            "Joseph Drouhin, Beaune Premier Cru",
+            "Joseph Drouhin, Brouilly",
+            "Joseph Drouhin, Chambertin Grand Cru"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "FR",
+            "France",
+            "Burgundy"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "containment",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

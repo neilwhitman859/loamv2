@@ -1,0 +1,231 @@
+{
+  "anchor": {
+    "canonical_name": "Tussock Jumper",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "sparse_wine_catalog",
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "Portugal",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "tussock jumper",
+        "row_count": 2,
+        "source_family": "canonical",
+        "value": "Tussock Jumper"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "tussock jumper",
+    "place_fingerprint": {
+      "appellations": [],
+      "countries": [
+        {
+          "count": 2,
+          "value": "PT"
+        },
+        {
+          "count": 2,
+          "value": "Portugal"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 1,
+          "value": "Alentejano"
+        },
+        {
+          "count": 1,
+          "value": "Minho"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 1,
+          "value": "red"
+        },
+        {
+          "count": 1,
+          "value": "white"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 1,
+          "value": "DOC"
+        },
+        {
+          "count": 1,
+          "value": "VR"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Tussock Jumper, Red Blend, VR"
+        },
+        {
+          "count": 1,
+          "value": "Tussock Jumper, Vinho Verde, Minho"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Tussock Jumper, Red Blend, VR"
+        },
+        {
+          "count": 1,
+          "value": "Tussock Jumper, Vinho Verde, Minho"
+        }
+      ]
+    },
+    "producer_id": "235a77e3-4d45-46d5-9ea3-0f0785dc1111",
+    "region": null,
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "tussock-jumper",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 2,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 2
+    }
+  },
+  "case_id": "selector_proof_013",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "377994ad-e512-4d21-a017-50376d0dc884",
+        "candidate_identity": {
+          "canonical_name": "Tussock Jumper",
+          "color_mix": [
+            {
+              "count": 1,
+              "value": "white"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "Germany",
+          "label_like_names": [
+            {
+              "row_count": 1,
+              "value": "Tussock Jumper"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Rheinhessen",
+          "source_families": [
+            {
+              "linked_rows": 1,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "sparse_wine_catalog",
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 1,
+              "value": "Qualitatswein"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Tussock Jumper, Deer Riesling, Rheinhessen"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Tussock Jumper, Deer Riesling, Rheinhessen"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [],
+          "divergent_place_signals": [
+            "DE",
+            "Germany",
+            "Rheinhessen"
+          ],
+          "divergent_portfolio_signals": [
+            "Tussock Jumper, Deer Riesling, Rheinhessen"
+          ],
+          "matched_name_forms": [
+            "Tussock Jumper"
+          ],
+          "matched_place_signals": [],
+          "matched_portfolio_signals": [],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname",
+            "global_brand_country_split"
+          ],
+          "why_this_candidate_survived": [
+            "shared label-facing name form survived Tier A retrieval"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "exact_normalized",
+          "matched_anchor_name_forms": [
+            "Tussock Jumper"
+          ],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "exact_single_source"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

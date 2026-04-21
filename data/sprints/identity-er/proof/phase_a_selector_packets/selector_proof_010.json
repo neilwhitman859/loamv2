@@ -1,0 +1,475 @@
+{
+  "anchor": {
+    "canonical_name": "Francois Carillon",
+    "conflicts": {
+      "market_conflicts": [
+        "multiple applicant states present"
+      ],
+      "name_conflicts": [
+        "multiple label-facing name forms require comparison"
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "sparse_signal_flags": []
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "francois carillon",
+        "row_count": 280,
+        "source_family": "ttb",
+        "value": "FRANCOIS CARILLON"
+      },
+      {
+        "normalized": "vineyard brands",
+        "row_count": 17,
+        "source_family": "state_reg",
+        "value": "VINEYARD BRANDS"
+      },
+      {
+        "normalized": "francois carillon puligny montrachet 1",
+        "row_count": 4,
+        "source_family": "state_reg",
+        "value": "FRANCOIS CARILLON, PULIGNY MONTRACHET, 1"
+      },
+      {
+        "normalized": "francois carillon les folatieres",
+        "row_count": 2,
+        "source_family": "state_reg",
+        "value": "FRANCOIS CARILLON LES FOLATIERES"
+      },
+      {
+        "normalized": "francois carillon chassagne montrachet",
+        "row_count": 2,
+        "source_family": "state_reg",
+        "value": "FRANCOIS CARILLON, CHASSAGNE MONTRACHET"
+      },
+      {
+        "normalized": "francois carillon monthelie",
+        "row_count": 2,
+        "source_family": "state_reg",
+        "value": "Francois Carillon  Monthelie"
+      },
+      {
+        "normalized": "palm bay international",
+        "row_count": 2,
+        "source_family": "state_reg",
+        "value": "PALM BAY INTERNATIONAL"
+      },
+      {
+        "normalized": "francois carillon combe bazin saint romain",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "Francois Carillon  Combe Bazin Saint-Romain"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 39,
+        "source_family": "ttb",
+        "value": "PAMELA THURBER"
+      },
+      {
+        "row_count": 27,
+        "source_family": "ttb",
+        "value": "Frank Martell"
+      },
+      {
+        "row_count": 17,
+        "source_family": "ttb",
+        "value": "BERNADETTE LEGGIERO"
+      },
+      {
+        "row_count": 16,
+        "source_family": "ttb",
+        "value": "Mark Wessels"
+      }
+    ],
+    "name_normalized": "francois carillon",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 77,
+          "value": "PULIGNY MONTRACHET"
+        },
+        {
+          "count": 27,
+          "value": "BOURGOGNE"
+        },
+        {
+          "count": 24,
+          "value": "CHASSAGNE MONTRACHET"
+        },
+        {
+          "count": 8,
+          "value": "Saint-Aubin"
+        },
+        {
+          "count": 2,
+          "value": "Beaune"
+        },
+        {
+          "count": 2,
+          "value": "Bourgogne aligot\u00e9"
+        }
+      ],
+      "countries": [
+        {
+          "count": 52,
+          "value": "FR"
+        },
+        {
+          "count": 52,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 52,
+          "value": "Burgundy"
+        },
+        {
+          "count": 12,
+          "value": "C\u00f4te de Beaune"
+        },
+        {
+          "count": 1,
+          "value": "France"
+        },
+        {
+          "count": 1,
+          "value": "M\u00e2connais"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 45,
+          "value": "white"
+        },
+        {
+          "count": 7,
+          "value": "red"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 41,
+          "value": "AOP"
+        },
+        {
+          "count": 2,
+          "value": "VdF"
+        }
+      ],
+      "top_grapes": [
+        {
+          "count": 7,
+          "value": "Chardonnay"
+        },
+        {
+          "count": 1,
+          "value": "Aligot\u00e9"
+        },
+        {
+          "count": 1,
+          "value": "Pinot Blanc"
+        }
+      ],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Francois Carillon, Beaune, Les Paules"
+        },
+        {
+          "count": 1,
+          "value": "Francois Carillon, Bourgogne Aligote"
+        },
+        {
+          "count": 1,
+          "value": "Francois Carillon, Bourgogne, Cote d'Or Chardonnay"
+        },
+        {
+          "count": 1,
+          "value": "Francois Carillon, Bourgogne, Cote d'Or Chardonnay Vieux Clos"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 2,
+          "value": "Francois Carillon, Chassagne-Montrachet Premier Cru"
+        },
+        {
+          "count": 2,
+          "value": "Francois Carillon, Chevalier-Montrachet Grand Cru"
+        },
+        {
+          "count": 1,
+          "value": "Francois Carillon Blanc, Chassagne-Montrachet"
+        },
+        {
+          "count": 1,
+          "value": "Francois Carillon Cap au Sud Chardonnay"
+        },
+        {
+          "count": 1,
+          "value": "Francois Carillon Chardonnay Vieux Clos, Bourgogne"
+        },
+        {
+          "count": 1,
+          "value": "Francois Carillon Chardonnay, Bourgogne"
+        }
+      ]
+    },
+    "producer_id": "65c590f5-d3f8-4ad9-8279-ab775e0f4da9",
+    "region": "Burgundy",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [
+        {
+          "count": 13,
+          "value": "VINEYARD BRANDS LLC"
+        },
+        {
+          "count": 9,
+          "value": "VINEYARD BRANDS, LLC(VINEYARD BRANDS)"
+        },
+        {
+          "count": 4,
+          "value": "Southern Glazers of Kansas (18001513703), Southern Glazers of Kansas (18002023801)"
+        },
+        {
+          "count": 4,
+          "value": "Vineyard Brands (19001300066)"
+        },
+        {
+          "count": 1,
+          "value": "PURPLE WINE COMPANY LLC(PURPLE WINES)"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 39,
+          "value": "PAMELA THURBER"
+        },
+        {
+          "count": 27,
+          "value": "Frank Martell"
+        },
+        {
+          "count": 17,
+          "value": "BERNADETTE LEGGIERO"
+        },
+        {
+          "count": 16,
+          "value": "Mark Wessels"
+        },
+        {
+          "count": 16,
+          "value": "Tim Elenteny"
+        },
+        {
+          "count": 13,
+          "value": "Hugo Prochasson"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 102,
+          "value": "CA"
+        },
+        {
+          "count": 64,
+          "value": "NY"
+        },
+        {
+          "count": 51,
+          "value": "AL"
+        },
+        {
+          "count": 17,
+          "value": "DC"
+        },
+        {
+          "count": 10,
+          "value": "FL"
+        },
+        {
+          "count": 9,
+          "value": "MA"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 51,
+          "value": "AL-I-381"
+        },
+        {
+          "count": 27,
+          "value": "CA-I-16510"
+        },
+        {
+          "count": 17,
+          "value": "NY-I-1179"
+        },
+        {
+          "count": 16,
+          "value": "NY-I-15547"
+        },
+        {
+          "count": 15,
+          "value": "DC-I-388"
+        },
+        {
+          "count": 14,
+          "value": "CA-I-15093"
+        }
+      ]
+    },
+    "slug": "francois-carillon",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 43,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 280,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 49,
+          "source_family": "state_reg"
+        }
+      ],
+      "vintage_count": 35,
+      "wine_count": 52
+    }
+  },
+  "case_id": "selector_proof_010",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 1,
+    "candidates": [
+      {
+        "candidate_id": "e6cc4418-8cf0-4a44-af95-fa34bcdd09d9",
+        "candidate_identity": {
+          "canonical_name": "Jacques et Francois Carillon",
+          "color_mix": [
+            {
+              "count": 1,
+              "value": "red"
+            }
+          ],
+          "conflicts": [
+            "multiple country signals in cheap dossier"
+          ],
+          "country": "France",
+          "label_like_names": [
+            {
+              "row_count": 2,
+              "value": "Jacques et Francois Carillon"
+            }
+          ],
+          "legal_or_applicant_names": [],
+          "region": "Burgundy",
+          "source_families": [
+            {
+              "linked_rows": 2,
+              "source_family": "lwin"
+            }
+          ],
+          "sparse_signal_flags": [
+            "sparse_wine_catalog",
+            "thin_regulatory_market_signal",
+            "no_grape_fingerprint"
+          ],
+          "supplier_or_distributor_names": [],
+          "top_designations": [
+            {
+              "count": 2,
+              "value": "AOP"
+            }
+          ],
+          "top_grapes": [],
+          "top_lwin_display_names": [
+            {
+              "count": 1,
+              "value": "Jacques et Francois Carillon, Mercurey Premier Cru, Les Champs Martin Rouge"
+            },
+            {
+              "count": 1,
+              "value": "Jacques et Francois Carillon, Mercurey, Rouge"
+            }
+          ],
+          "top_wine_labels": [
+            {
+              "count": 1,
+              "value": "Jacques et Francois Carillon, Mercurey, Rouge"
+            }
+          ],
+          "ttb_applicant_names": []
+        },
+        "candidate_rank": 1,
+        "comparison_to_anchor": {
+          "divergent_name_signals": [
+            "Jacques et Francois Carillon"
+          ],
+          "divergent_place_signals": [
+            "Mercurey"
+          ],
+          "divergent_portfolio_signals": [
+            "Jacques et Francois Carillon, Mercurey, Rouge"
+          ],
+          "matched_name_forms": [],
+          "matched_place_signals": [
+            "FR",
+            "France",
+            "Burgundy"
+          ],
+          "matched_portfolio_signals": [
+            "AOP"
+          ],
+          "matched_regulatory_signals": [],
+          "risk_tags": [
+            "shared_surname"
+          ],
+          "why_this_candidate_survived": [
+            "portfolio overlap kept candidate visible"
+          ]
+        },
+        "retrieval_basis": {
+          "lexical_strength": "containment",
+          "matched_anchor_name_forms": [],
+          "seed_families": [
+            "canonical"
+          ],
+          "shortlist_pressure_band": "fallback"
+        }
+      }
+    ],
+    "shortlist_status": "candidates_present"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}

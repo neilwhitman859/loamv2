@@ -1,0 +1,559 @@
+{
+  "added_evidence": {
+    "people_history": {
+      "anchor": [],
+      "candidate": []
+    },
+    "profile_snippets": [
+      {
+        "source_url": "https://en.wikipedia.org/wiki/Lazy_Creek_Vineyards",
+        "text": "Confirms ownership: 'Lazy Creek Vineyards is owned by Ferrari-Carano' and that 'the winery sells both Lazy Creek wine and Ferrari-Carano wine' \u2014 establishing two distinct brand identities under common ownership.",
+        "title": "Lazy Creek Vineyards - Wikipedia"
+      },
+      {
+        "source_url": "https://winebusinessanalytics.com/sections/printout_article.cfm?content=147167&article=feature",
+        "text": "Confirms Lazy Creek produces both Lazy Creek-labeled wines AND Ferrari-Carano-labeled Middleridge Ranch and Sky High Ranch vineyard designates, proving the Middleridge Ranch wine appears under both labels from the same facility \u2014 shared...",
+        "title": "Wines & Vines - Technical Spotlight: Lazy Creek Vineyards"
+      }
+    ],
+    "raw_supporting_rows": [
+      {
+        "source_family": "calibration_set",
+        "source_id": "calibration_set:118462",
+        "summary": "Web evidence conclusively confirms that Lazy Creek Vineyards and Ferrari-Carano are distinct brands under common ownership. Don and Rhonda Carano (owners of Ferrari-Carano) acquired Lazy Creek Vineyards in 2008, and the winery sells wines under both labels..."
+      }
+    ],
+    "retrieval_gap_diagnostics": [],
+    "vineyard_profile": {
+      "anchor": [],
+      "candidate": []
+    },
+    "web_identity": {
+      "anchor_urls": [],
+      "candidate_urls": [],
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Lazy_Creek_Vineyards",
+        "https://winebusinessanalytics.com/sections/printout_article.cfm?content=147167&article=feature"
+      ]
+    }
+  },
+  "anchor": {
+    "canonical_name": "Lazy Creek Vineyards",
+    "conflicts": {
+      "market_conflicts": [
+        "multiple applicant states present"
+      ],
+      "name_conflicts": [
+        "multiple label-facing name forms require comparison"
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "no_grape_fingerprint"
+      ]
+    },
+    "country": "United States",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "lazy creek vineyards",
+        "row_count": 147,
+        "source_family": "ttb",
+        "value": "LAZY CREEK VINEYARDS"
+      },
+      {
+        "normalized": "lazy creek",
+        "row_count": 13,
+        "source_family": "state_reg",
+        "value": "Lazy Creek"
+      },
+      {
+        "normalized": "ferrari carano vineyards winery llc",
+        "row_count": 10,
+        "source_family": "state_reg",
+        "value": "FERRARI-CARANO VINEYARDS & WINERY LLC"
+      },
+      {
+        "normalized": "lazy creek 2018 rose of pinot noir ander",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "LAZY CREEK 2018 ROSE OF PINOT NOIR ANDER"
+      },
+      {
+        "normalized": "lazy creek vineyards red table wine",
+        "row_count": 1,
+        "source_family": "state_reg",
+        "value": "LAZY CREEK VINEYARDS (RED TABLE WINE)"
+      }
+    ],
+    "legal_or_applicant_names": [
+      {
+        "row_count": 50,
+        "source_family": "ttb",
+        "value": "DEBORAH WESTRICK"
+      },
+      {
+        "row_count": 5,
+        "source_family": "state_reg",
+        "value": "FERRARI-CARANO VINEYARDS & WINERY, LLC(FERRARI-CARANO VINEYARDS AND WINERY)"
+      },
+      {
+        "row_count": 5,
+        "source_family": "state_reg",
+        "value": "FERRARI-CARANO(FERRARI-CARANO VINEYARDS AND WINERY)"
+      },
+      {
+        "row_count": 5,
+        "source_family": "ttb",
+        "value": "Jodee Anello"
+      }
+    ],
+    "name_normalized": "lazy creek vineyards",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 48,
+          "value": "ANDERSON VALLEY"
+        },
+        {
+          "count": 3,
+          "value": "MENDOCINO COUNTY"
+        },
+        {
+          "count": 1,
+          "value": "MENDOCINO RIDGE"
+        }
+      ],
+      "countries": [
+        {
+          "count": 7,
+          "value": "US"
+        },
+        {
+          "count": 7,
+          "value": "United States"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 7,
+          "value": "California"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 4,
+          "value": "red"
+        },
+        {
+          "count": 2,
+          "value": "white"
+        },
+        {
+          "count": 1,
+          "value": "rose"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 7,
+          "value": "AVA"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Lazy Creek Vineyards, Five Barrel Pinot Noir, Anderson Valley"
+        },
+        {
+          "count": 1,
+          "value": "Lazy Creek Vineyards, Gewurztraminer, Anderson Valley"
+        },
+        {
+          "count": 1,
+          "value": "Lazy Creek Vineyards, Middleridge Ranch Pinot Noir, Anderson Valley"
+        },
+        {
+          "count": 1,
+          "value": "Lazy Creek Vineyards, Pinot Noir, Anderson Valley"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Lazy Creek Vineyards Five Barrel Pinot Noir, Anderson Valley"
+        },
+        {
+          "count": 1,
+          "value": "Lazy Creek Vineyards Gewurztraminer, Anderson Valley"
+        },
+        {
+          "count": 1,
+          "value": "Lazy Creek Vineyards Middleridge Ranch Pinot Noir, Anderson Valley"
+        },
+        {
+          "count": 1,
+          "value": "Lazy Creek Vineyards Pinot Noir, Anderson Valley"
+        },
+        {
+          "count": 1,
+          "value": "Lazy Creek Vineyards Riesling, Anderson Valley"
+        },
+        {
+          "count": 1,
+          "value": "Lazy Creek Vineyards Rose of Pinot Noir, Anderson Valley"
+        }
+      ]
+    },
+    "producer_id": "6f2446f2-e769-46b6-b76a-df0a4d6debd2",
+    "region": "California",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [
+        {
+          "count": 5,
+          "value": "FERRARI-CARANO VINEYARDS & WINERY, LLC(FERRARI-CARANO VINEYARDS AND WINERY)"
+        },
+        {
+          "count": 5,
+          "value": "FERRARI-CARANO(FERRARI-CARANO VINEYARDS AND WINERY)"
+        },
+        {
+          "count": 3,
+          "value": "FERRARI-CARANO VINEYARDS AND WINERY, LLC"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 50,
+          "value": "DEBORAH WESTRICK"
+        },
+        {
+          "count": 5,
+          "value": "Jodee Anello"
+        }
+      ],
+      "ttb_applicant_states": [
+        {
+          "count": 54,
+          "value": "CA"
+        },
+        {
+          "count": 1,
+          "value": "WA"
+        }
+      ],
+      "ttb_permits": [
+        {
+          "count": 121,
+          "value": "BW-CA-4883"
+        },
+        {
+          "count": 6,
+          "value": "CA-W-2641"
+        },
+        {
+          "count": 4,
+          "value": "CA-4883"
+        },
+        {
+          "count": 3,
+          "value": "4883"
+        },
+        {
+          "count": 3,
+          "value": "BW-CA-5620"
+        },
+        {
+          "count": 2,
+          "value": "BW 4883"
+        }
+      ]
+    },
+    "slug": "lazy-creek-vineyards",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 7,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 147,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 29,
+          "source_family": "state_reg"
+        }
+      ],
+      "vintage_count": 9,
+      "wine_count": 7
+    }
+  },
+  "case_id": "selector_proof_045",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "escalation_mode": "candidate_frontier",
+  "escalation_version": "escalation_dossier_v1",
+  "frontier_candidate": {
+    "candidate_id": "b77c4049-ef3b-4c3e-b3ed-5978a0daed2d",
+    "candidate_identity": {
+      "canonical_name": "Ferrari-Carano",
+      "color_mix": [
+        {
+          "count": 22,
+          "value": "red"
+        },
+        {
+          "count": 15,
+          "value": "white"
+        },
+        {
+          "count": 2,
+          "value": "rose"
+        }
+      ],
+      "conflicts": [
+        "multiple label-facing name forms require comparison",
+        "multiple country signals in cheap dossier",
+        "multiple region signals in cheap dossier",
+        "multiple applicant states present"
+      ],
+      "country": "United States",
+      "label_like_names": [
+        {
+          "row_count": 530,
+          "value": "FERRARI-CARANO"
+        },
+        {
+          "row_count": 28,
+          "value": "FERRARI-CARANO VINEYARDS & WINERY LLC"
+        },
+        {
+          "row_count": 14,
+          "value": "FOLEY FAMILY WINES"
+        },
+        {
+          "row_count": 3,
+          "value": "FERRARI-CARANO TRESOR"
+        },
+        {
+          "row_count": 2,
+          "value": "FERRARI-CARANO-SIENA"
+        },
+        {
+          "row_count": 1,
+          "value": "Baci"
+        }
+      ],
+      "legal_or_applicant_names": [
+        {
+          "row_count": 226,
+          "value": "DEBORAH WESTRICK"
+        },
+        {
+          "row_count": 47,
+          "value": "FOLEY FAMILY WINES INC"
+        },
+        {
+          "row_count": 42,
+          "value": "Jodee Anello"
+        },
+        {
+          "row_count": 34,
+          "value": "Alexandra Neureuter"
+        }
+      ],
+      "region": "California",
+      "source_families": [
+        {
+          "linked_rows": 26,
+          "source_family": "lwin"
+        },
+        {
+          "linked_rows": 533,
+          "source_family": "ttb"
+        },
+        {
+          "linked_rows": 228,
+          "source_family": "state_reg"
+        }
+      ],
+      "sparse_signal_flags": [],
+      "supplier_or_distributor_names": [
+        {
+          "count": 47,
+          "value": "FOLEY FAMILY WINES INC"
+        },
+        {
+          "count": 24,
+          "value": "FERRARI CARANO VINEYARDS AND WINERY LLC(FERRARI CARANO VINEYARDS & WINERY)"
+        },
+        {
+          "count": 23,
+          "value": "Foley Family Wines (19003201006)"
+        },
+        {
+          "count": 23,
+          "value": "Standard Beverage (18002012201), Standard Beverage (18016000601), Standard Beverage (18019901807), Standard Beverage (18035006101)"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 15,
+          "value": "AVA"
+        }
+      ],
+      "top_grapes": [
+        {
+          "count": 6,
+          "value": "Cabernet Sauvignon"
+        },
+        {
+          "count": 4,
+          "value": "Chardonnay"
+        },
+        {
+          "count": 3,
+          "value": "Pinot Noir"
+        }
+      ],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Ferrari-Carano, Baci, Dry Creek Valley"
+        },
+        {
+          "count": 1,
+          "value": "Ferrari-Carano, Cabernet Sauvignon, Alexander Valley"
+        },
+        {
+          "count": 1,
+          "value": "Ferrari-Carano, Cabernet Sauvignon, Sonoma County"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 2,
+          "value": "Ferrari-Carano Cabernet Sauvignon, Alexander Valley"
+        },
+        {
+          "count": 2,
+          "value": "Ferrari-Carano Fiorella Chardonnay, Russian River Valley"
+        },
+        {
+          "count": 2,
+          "value": "Ferrari-Carano Middleridge Ranch Pinot Noir, Anderson Valley"
+        },
+        {
+          "count": 2,
+          "value": "Ferrari-Carano Pinot Noir, Anderson Valley"
+        },
+        {
+          "count": 2,
+          "value": "Ferrari-Carano Sky High Ranch Pinot Noir, Alexander Valley"
+        }
+      ],
+      "ttb_applicant_names": [
+        {
+          "count": 226,
+          "value": "DEBORAH WESTRICK"
+        },
+        {
+          "count": 42,
+          "value": "Jodee Anello"
+        },
+        {
+          "count": 34,
+          "value": "Alexandra Neureuter"
+        },
+        {
+          "count": 24,
+          "value": "ILA HALSTEAD"
+        }
+      ]
+    },
+    "candidate_rank": 1,
+    "comparison_to_anchor": {
+      "divergent_name_signals": [
+        "Baci",
+        "FERRARI-CARANO",
+        "FERRARI-CARANO Cabernet Sauvignon Reserve Alexander Valley",
+        "FERRARI-CARANO-SIENA"
+      ],
+      "divergent_place_signals": [
+        "Mendocino County",
+        "Napa Valley",
+        "Sonoma County",
+        "ALEXANDER VALLEY"
+      ],
+      "divergent_portfolio_signals": [
+        "Ferrari-Carano Cabernet Sauvignon, Alexander Valley",
+        "Ferrari-Carano Fiorella Chardonnay, Russian River Valley",
+        "Ferrari-Carano Middleridge Ranch Pinot Noir, Anderson Valley",
+        "Ferrari-Carano Pinot Noir, Anderson Valley"
+      ],
+      "matched_name_forms": [
+        "FERRARI-CARANO VINEYARDS & WINERY LLC"
+      ],
+      "matched_place_signals": [
+        "United States",
+        "US",
+        "California"
+      ],
+      "matched_portfolio_signals": [
+        "AVA"
+      ],
+      "matched_regulatory_signals": [
+        "BW-CA-4883",
+        "DEBORAH WESTRICK",
+        "Jodee Anello",
+        "FERRARI-CARANO VINEYARDS AND WINERY, LLC"
+      ],
+      "risk_tags": [
+        "permit_only"
+      ],
+      "why_this_candidate_survived": [
+        "shared label-facing name form survived Tier A retrieval",
+        "portfolio overlap kept candidate visible",
+        "regulatory or market signal corroborated the candidate"
+      ]
+    },
+    "retrieval_basis": {
+      "lexical_strength": "orthographic_variant",
+      "matched_anchor_name_forms": [
+        "FERRARI-CARANO VINEYARDS & WINERY LLC"
+      ],
+      "seed_families": [
+        "ttb",
+        "canonical"
+      ],
+      "shortlist_pressure_band": "variant_multi_source"
+    }
+  },
+  "selector_result_ref": {
+    "anchor_producer_id": "6f2446f2-e769-46b6-b76a-df0a4d6debd2",
+    "prior_choice_type": "candidate",
+    "prior_label": "UNSURE",
+    "prior_reason_code": "unsure_conflicting_signals",
+    "prior_selected_candidate_id": "b77c4049-ef3b-4c3e-b3ed-5978a0daed2d",
+    "selector_version": "selector_harness_v1"
+  }
+}

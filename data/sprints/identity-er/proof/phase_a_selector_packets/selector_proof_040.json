@@ -1,0 +1,172 @@
+{
+  "anchor": {
+    "canonical_name": "Romuald Petit",
+    "conflicts": {
+      "market_conflicts": [],
+      "name_conflicts": [],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "sparse_signal_flags": [
+        "thin_regulatory_market_signal",
+        "no_grape_fingerprint",
+        "proof_empty_shortlist_case"
+      ]
+    },
+    "country": "France",
+    "escalation_available": {
+      "people_history_signals": [],
+      "profile_source_families": [],
+      "website_domains": []
+    },
+    "label_like_names": [
+      {
+        "normalized": "romuald petit",
+        "row_count": 7,
+        "source_family": "canonical",
+        "value": "Romuald Petit"
+      }
+    ],
+    "legal_or_applicant_names": [],
+    "name_normalized": "romuald petit",
+    "place_fingerprint": {
+      "appellations": [
+        {
+          "count": 3,
+          "value": "Saint-V\u00e9ran"
+        },
+        {
+          "count": 2,
+          "value": "Bourgogne"
+        },
+        {
+          "count": 2,
+          "value": "Morgon"
+        }
+      ],
+      "countries": [
+        {
+          "count": 7,
+          "value": "FR"
+        },
+        {
+          "count": 7,
+          "value": "France"
+        }
+      ],
+      "place_conflicts": [
+        "multiple country signals in cheap dossier"
+      ],
+      "regions": [
+        {
+          "count": 7,
+          "value": "Burgundy"
+        },
+        {
+          "count": 2,
+          "value": "Beaujolais"
+        }
+      ]
+    },
+    "portfolio_fingerprint": {
+      "color_mix": [
+        {
+          "count": 5,
+          "value": "white"
+        },
+        {
+          "count": 2,
+          "value": "red"
+        }
+      ],
+      "top_designations": [
+        {
+          "count": 7,
+          "value": "AOP"
+        }
+      ],
+      "top_grapes": [],
+      "top_lwin_display_names": [
+        {
+          "count": 1,
+          "value": "Romuald Petit, Bourgogne, Chardonnay"
+        },
+        {
+          "count": 1,
+          "value": "Romuald Petit, Bourgogne, Heritage Blanc"
+        },
+        {
+          "count": 1,
+          "value": "Romuald Petit, Morgon, Roche Noire"
+        },
+        {
+          "count": 1,
+          "value": "Romuald Petit, Morgon, Vieilles Vignes"
+        }
+      ],
+      "top_wine_labels": [
+        {
+          "count": 1,
+          "value": "Romuald Petit, Bourgogne, Chardonnay"
+        },
+        {
+          "count": 1,
+          "value": "Romuald Petit, Bourgogne, Heritage Blanc"
+        },
+        {
+          "count": 1,
+          "value": "Romuald Petit, Morgon, Roche Noire"
+        },
+        {
+          "count": 1,
+          "value": "Romuald Petit, Morgon, Vieilles Vignes"
+        },
+        {
+          "count": 1,
+          "value": "Romuald Petit, Saint-Veran, Champ Rond"
+        },
+        {
+          "count": 1,
+          "value": "Romuald Petit, Saint-Veran, Les Dimes"
+        }
+      ]
+    },
+    "producer_id": "7018d27a-dc8c-4a86-aa72-520322f5741b",
+    "region": "Burgundy",
+    "regulatory_market_fingerprint": {
+      "supplier_or_distributor_names": [],
+      "ttb_applicant_names": [],
+      "ttb_applicant_states": [],
+      "ttb_permits": []
+    },
+    "slug": "romuald-petit",
+    "source_presence": {
+      "source_families": [
+        {
+          "linked_rows": 7,
+          "source_family": "lwin"
+        }
+      ],
+      "vintage_count": 0,
+      "wine_count": 7
+    }
+  },
+  "case_id": "selector_proof_040",
+  "decision_options": {
+    "allowed_choice_types": [
+      "candidate",
+      "none"
+    ],
+    "none_definition": "Choose NONE when no shortlisted candidate deserves SAME_AS or RELATED_BUT_DISTINCT and escalation is unlikely to change that.",
+    "selection_rule": "Choose at most one candidate. Do not emit multiple candidates or an invented candidate.",
+    "unsure_definition": "Choose UNSURE when evidence is too thin or conflicting for a safe accepted label and escalation has a plausible path to resolve it."
+  },
+  "dossier_version": "producer_dossier_v1",
+  "selector_version": "selector_harness_v1",
+  "shortlist": {
+    "candidate_count": 0,
+    "candidates": [],
+    "shortlist_status": "no_candidate_found"
+  },
+  "shortlist_version": "shortlist_generation_v1"
+}
