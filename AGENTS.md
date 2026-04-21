@@ -84,16 +84,25 @@ Every session should close with these things:
 When another session is clearly next, every session should also end with:
 - `Next session prompt` — a ready-to-run prompt file under `data/session_prompts/` (or the active sprint dir if more appropriate), and the final user-facing wrap-up should include that prompt inline plus the file path
 
-Every user-facing session wrap-up should also include:
-- a short summary of what this session did and how it fits into the project as a whole
-- a short summary of what the next session will do and how it fits into the project as a whole
-- the biggest concern about the work done this session
-- the biggest concern about the sprint as a whole
-- the producer-dedup confidence % at wrap-up
-- what would move confidence up or down next session
-- the exact user decision needed before the next session starts
-- budget estimate versus actual API spend
-- the next-session prompt in a fenced code block, even if it is only a pointer to an `.md` file
+Every user-facing session wrap-up should use the exact standardized format below:
+- title: `Session <number> Wrap-Up`
+- section 1: `What This Session Did`
+- section 2: `What The Next Session Will Do`
+- section 3: `Biggest Concern About This Session`
+- section 4: `Biggest Concern About The Sprint`
+- section 5: `Confidence Producer Dedup Reaches Spec`
+- section 6: `What Would Move Confidence Up Or Down Next Session`
+- section 7: `Exact User Decision Needed Before Next Session Starts`
+- section 8: `Budget`
+- section 9: `Next Session Prompt`
+
+Within that fixed section order, always include:
+- project-fit summary in section 1
+- next-session-fit summary in section 2
+- producer-dedup confidence as a % in section 5
+- `Up:` and `Down:` bullets in section 6
+- `Estimated:` and `Actual API spend:` bullets in section 8
+- the next-session prompt in a fenced `text` code block in section 9, even if it is only a pointer to an `.md` file
 
 Guardrails:
 - If the work no longer fits one primary deliverable, stop and start a new session.
@@ -260,7 +269,9 @@ constraints. **`ENRICHMENT_ENABLED=false` feature flag on `enrich-wine` stays OF
 through Sprint 3 into Sprint 5** until voice module + L3 fact-check gate + grape
 repair compound + AI-disclaimer UI all land.
 
-**Sprint sequence:** 1 (Build, done) → 2 (Audit, done) → 3 (Fix, done) → 4 (Demo, done) → 5 (AI Bakeoff, done) → **6 (active): LWIN import + producer dedup — current path is the merge-only Codex rebuild. The frozen Session 4 adjudication bakeoff has now been rerun in v2, audited in Session 9, proof-cleared in Session 9.2 on fresh `v2.1` packets, fully rerun in Session 9.3, failure-audited in Session 9.4, and strategy-scoped in Session 9.5; queue-building remains blocked because no contender cleared the frozen production or fallback gates, and the only bounded continuation now on the table is a routed pattern-specialist proof under the user's `$20` exploration cap** → Sprint 7: wine dedup → Sprint 8: prompt v2 + L3 fact-check gate + re-enrichment + share. The bake-off ranked models under the *current* prompt; re-enrichment is deferred until prompt + gate work lands so we don't bake in the current-prompt ceiling.
+**Sprint sequence:** 1 (Build, done) → 2 (Audit, done) → 3 (Fix, done) → 4 (Demo, done) → 5 (AI Bakeoff, done) → **6 (active): LWIN import + producer dedup — current path is the merge-only Codex rebuild. The frozen Session 4 adjudication bakeoff has now been rerun in v2, audited in Session 9, proof-cleared in Session 9.2 on fresh `v2.1` packets, fully rerun in Session 9.3, failure-audited in Session 9.4, strategy-scoped in Session 9.5, and bounded-specialist-tested in Session 9.6; queue-building remains blocked because no contender has cleared the frozen production or fallback gates, and the Session 9.6 routed pattern-specialist proof recovered recall but still failed on `5` false merges overall, so the recommended next move is now to freeze the adjudication path unless the user explicitly opens a broader redesign** → Sprint 7: wine dedup → Sprint 8: prompt v2 + L3 fact-check gate + re-enrichment + share. The bake-off ranked models under the *current* prompt; re-enrichment is deferred until prompt + gate work lands so we don't bake in the current-prompt ceiling.
+**Session 9.7 addendum (2026-04-21):** the user explicitly opened the broader redesign after the failed Session 9.6 specialist proof. The new best artifact is `session9_7_layered_safety_sonnet_r2_narrow`, which clears the fallback gate with `0` false merges overall but still fails the frozen production gate. Queue-building remains blocked; the next narrow target is recall recovery on top of that layered fallback state, or else freezing at the Session 9.7 endpoint.
+
 Sprint 4 plan: [`data/sprints/demo/plan.md`](data/sprints/demo/plan.md). Sprint 5 plan: [`data/sprints/ai-bakeoff/plan.md`](data/sprints/ai-bakeoff/plan.md). Sprint 5 outcome: [`bakeoff/scores/tournament_results.md`](bakeoff/scores/tournament_results.md). See `data/dashboard.html` for live progress.
 
 **Always query the DB for live numbers.** Never rely on hardcoded counts in this file.
@@ -414,6 +425,7 @@ Completed rebuild artifacts so far:
 - `data/sprints/dedup/session9_v3_continuity_audit.md`
 - `data/sprints/dedup/session9_4_post_rerun_failure_audit.md`
 - `data/sprints/dedup/session9_5_freeze_or_rebuild_strategy.md`
+- `data/sprints/dedup/bakeoff_v2/scored/session9_6_pattern_specialist_proof_if_approved_memo.md`
 - `pipeline/identity/bakeoff_packet_v1.py`
 - `pipeline/identity/bakeoff_harness_v1.py`
 - `pipeline/identity/bakeoff_run_v1.py`
@@ -421,10 +433,15 @@ Completed rebuild artifacts so far:
 - `pipeline/identity/bakeoff_packet_v2.py`
 - `pipeline/identity/bakeoff_harness_v2.py`
 - `pipeline/identity/bakeoff_run_v2.py`
+- `pipeline/identity/bakeoff_pattern_specialist_proof.py`
+- `pipeline/identity/bakeoff_layered_safety_gate.py`
+- `data/sprints/dedup/session9_7_layered_safety_redesign.md`
 - `data/sprints/dedup/bakeoff_v2/` (packet v2, request wrappers, raw outputs, normalized outputs, scored summaries, manifests, proof gate check, and v1-vs-v2 diff outputs)
 
+**Session 9.7 layered redesign outcome (2026-04-21):** a broader continuation beyond the failed Session 9.6 specialist proof has now been tested. The best narrow layered run, `session9_7_layered_safety_sonnet_r2_narrow`, keeps the Session 9.6 recall gains while eliminating all false merges on the frozen benchmark: `0` false merges overall, `0` blind-core false merges, `5` blind-core missed merges, `42 / 47` routed merge recoveries, `0.1316` full-benchmark flag rate, `0.8289` exact verdict accuracy. It now **passes the fallback gate** but still **fails the production gate**, so queue-building remains blocked. The new leading architecture is: routed specialist recall engine + deterministic anti-trap vetoes + very narrow skeptical review only on the remaining one-anchor `11.4.f` continuity traps.
+
 Immediate next session target:
-- user decision point: either freeze the current adjudication path as a non-execution-ready benchmark artifact, or explicitly approve the bounded `73`-case routed pattern-specialist proof in `data/session_prompts/s9_6_pattern_specialist_proof_if_approved.md`; do not start queue-building and do not spend on another narrow rerun or any all-pairs build
+- recommended next move: treat `session9_7_layered_safety_sonnet_r2_narrow` as the new leading fallback artifact and run one narrow recall-focused continuation on top of it, without changing `benchmark_v1`, the frozen Session 4 gates, or the new zero-false-merge safety structure; if the user does not want that continuation, freeze at the Session 9.7 fallback state rather than the weaker Session 9.6 specialist-only state
 
 Historical artifacts worth keeping:
 - B6.2 + B6.2.1 + B6.2.2 + B6.3 + B6.4 + B6.5a-partial outputs
@@ -688,6 +705,6 @@ content in specific, validated reference data rather than relying solely on LLM 
   - `docs/SOURCES.md` — update if source status changed (new source, fetcher built, data loaded)
   - `docs/PRINCIPLES.md` — update if product philosophy changed
   - `docs/VOICE.md` — update if tone/content guidance changed
-  - final user-facing wrap-up — always include project-fit summary, next-session-fit summary, biggest concern this session, biggest concern this sprint, producer-dedup confidence %, what would move confidence up or down next session, the exact user decision needed before the next session starts, budget estimate vs actual API spend, and the next-session prompt in a fenced code block
+  - final user-facing wrap-up — always use the exact nine-section `Session <number> Wrap-Up` format in AGENTS.md / `data/sessions.md`, including `Up:` / `Down:` under confidence movement, `Estimated:` / `Actual API spend:` under Budget, and the next-session prompt in a fenced `text` code block
 - **"log that"** — Force a DECISIONS.md entry.
 - **"briefing"** — Give current state summary anytime mid-session.

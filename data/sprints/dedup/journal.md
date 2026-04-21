@@ -4,9 +4,150 @@
 **Status:** Active — merge-only Codex rebuild; first real v1 adjudication bakeoff complete; no contender cleared production or fallback gates
 **Current block:** Session 6 closeout complete under `session6_first_real_bakeoff_v1`. Next block is a focused v2 bakeoff redesign using the new packet/request/normalize/score path plus the Session 6 error ledger. Queue-building remains blocked until a contender lineup actually clears the frozen gates.
 
+**Status addendum (2026-04-21):** Session 9.7 now supplies a layered fallback
+contender that clears the fallback gate but still fails the frozen production
+gate.
+**Current block addendum:** the next block is a narrow recall-focused
+continuation on top of `session9_7_layered_safety_sonnet_r2_narrow`, unless the
+user prefers to freeze the adjudication path at this new fallback-only state.
+
 ---
 
 ## Block log
+
+- **Session 9.7 (2026-04-21):** Broadened the redesign beyond the failed
+  Session 9.6 specialist proof and tested a layered safety-gate architecture.
+
+  **Scope held:** kept `benchmark_v1` and the frozen Session 4 gates unchanged,
+  did not queue-build, did not touch all-pairs execution, and stayed inside a
+  bounded proof-first continuation. The broader redesign was limited to layered
+  routing logic on top of the existing Session 9.6 specialist artifact.
+
+  **Implementation:**
+  - Added `pipeline/identity/bakeoff_layered_safety_gate.py`, a reusable proof
+    runner that starts from the Session 9.6 routed-specialist outputs, applies
+    deterministic anti-trap vetoes, optionally runs a skeptical review stage on
+    a chosen subset of routed `MERGE` proposals, reverts vetoed proposals back
+    to the safe Session 9.3 Gemini base path, and scores the composite result
+    against the frozen 152-case benchmark.
+  - Added the Session 9.7 closeout memo
+    `data/sprints/dedup/session9_7_layered_safety_redesign.md`.
+  - Added follow-on prompt
+    `data/session_prompts/s9_8_recover_production_from_layered_fallback.md`.
+
+  **Rounds run:**
+  - `session9_7_layered_safety_det_only`
+    - deterministic vetoes only
+    - false merges `5 -> 2`
+    - blind-core missed merges unchanged at `5`
+  - `session9_7_layered_safety_gpt5mini_r1`
+    - invalid transport round
+    - OpenRouter returned provider-routing `404` failures on all review calls
+    - kept only as a failure artifact, not model evidence
+  - `session9_7_layered_safety_sonnet_r1`
+    - broad Sonnet skeptical review over all surviving `11.4.f` specialist
+      merges
+    - removed false merges but over-vetoed true merges
+  - `session9_7_layered_safety_sonnet_r2_narrow`
+    - Sonnet skeptical review only on the suspicious one-anchor `11.4.f`
+      continuity traps
+    - best Session 9.7 result
+
+  **Best result (canonical Session 9.7 endpoint):**
+  - run: `session9_7_layered_safety_sonnet_r2_narrow`
+  - false merges overall: `0`
+  - blind-core false merges: `0`
+  - blind-core missed merges: `5`
+  - routed merge recoveries: `42 / 47`
+  - full-benchmark flag rate: `0.1316`
+  - exact verdict accuracy: `0.8289`
+  - fallback gate: `pass`
+  - production gate: `fail`
+
+  **Interpretation:** the broader redesign succeeded in finding a better
+  architecture than the raw Session 9.6 specialist composite. The winning shape
+  is: keep the routed specialist for recall, keep deterministic anti-trap
+  vetoes for the obvious false merges, and use skeptical review only as a
+  narrow scalpel on the remaining one-anchor `11.4.f` continuity traps. That
+  combination eliminated the Session 9.6 false merges without giving back the
+  recovered recall, but it still did not clear the frozen production gate.
+  Queue-building remains blocked. The path is now meaningful as a fallback-only
+  contender rather than a dead-end artifact.
+
+  **Spend:** `$0.44` incremental external API cost across the two substantive
+  Sonnet review rounds (`$0.357219` + `$0.078549`, rounded in user-facing docs
+  to `$0.44`). Sprint 6 spend is now `$319.51` against the `$450` ceiling.
+
+  **Recommendation after Session 9.7:** if Sprint 6 continues, continue from
+  the Session 9.7 layered fallback state rather than the weaker Session 9.6
+  specialist-only state. The next narrow target is recall, not safety: recover
+  the remaining blind-core / hard missed merges without undoing the new
+  zero-false-merge behavior. If the user does not want another continuation
+  session, freeze at the Session 9.7 fallback state.
+
+- **Session 9.6 (2026-04-21):** Ran the bounded routed pattern-specialist proof
+  from `data/session_prompts/s9_6_pattern_specialist_proof_if_approved.md`.
+
+  **Scope held:** kept `gemini_guardrailed_v2` as the conservative base path,
+  routed only the approved `73` benchmark cases in `11.4.h`, `11.4.f`,
+  `11.4.n`, and `11.4.p`, kept the remaining `79` benchmark cases on the
+  frozen Session 9.3 base path, did not touch `benchmark_v1`, did not change
+  the frozen Session 4 gates, did not queue-build, and did not drift into
+  all-pairs work.
+
+  **Implementation:**
+  - Added `pipeline/identity/bakeoff_pattern_specialist_proof.py`, a proof-only
+    helper that reuses the frozen v2.1 packets, builds routed request files for
+    the four approved families, runs family-specific Gemini specialist prompts
+    only on those 73 cases, normalizes the routed rows without the generic
+    sparse-official merge veto, and scores the composite 152-case result
+    through the frozen Session 4 scorer.
+  - Wrote durable request, raw, normalized, scored, memo, and manifest
+    artifacts under `data/sprints/dedup/bakeoff_v2/` for canonical run
+    `session9_6_pattern_specialist_proof_if_approved`.
+
+  **Canonical outputs written:**
+  - `data/sprints/dedup/bakeoff_v2/scored/session9_6_pattern_specialist_proof_if_approved.json`
+  - `data/sprints/dedup/bakeoff_v2/scored/session9_6_pattern_specialist_proof_if_approved.md`
+  - `data/sprints/dedup/bakeoff_v2/scored/session9_6_pattern_specialist_proof_if_approved_memo.md`
+  - `data/sprints/dedup/bakeoff_v2/scored/session9_6_pattern_specialist_proof_if_approved_manifest.json`
+  - routed raw / normalized family files plus the composite normalized rows
+    under `data/sprints/dedup/bakeoff_v2/raw/` and `.../normalized/`
+
+  **Headline result:** the family-routed proof was materially different and
+  dramatically improved recall, but it still failed the frozen bar because it
+  reintroduced `5` false merges overall.
+
+  **Composite scorecard:**
+  - false merges overall: `5`
+  - blind-core false merges: `0`
+  - blind-core missed merges: `5`
+  - targeted routed merge recoveries: `42 / 47`
+  - full-benchmark flag rate: `0.1053`
+  - exact verdict accuracy: `0.8224`
+
+  **Family breakdown:**
+  - `11.4.h`: `24 / 28` merges recovered, but `3` false merges
+  - `11.4.f`: `7 / 8` merges recovered, but `2` false merges
+  - `11.4.n`: `7 / 7` merges recovered, `0` false merges
+  - `11.4.p`: `4 / 4` merges recovered, `0` false merges
+
+  **Interpretation:** the routed-specialist idea did solve the recall wall.
+  It recovered `42` of the `47` targeted merges, drove blind-core missed merges
+  down from `30` to `5`, and cut the full-benchmark flag rate from `0.3882` to
+  `0.1053`. But the same orthographic / generational families that needed the
+  recall lift also reopened the benchmark's protected false-merge traps, with
+  `5` wrong merges (`4` in known-false-merge patterns plus `1` tail false
+  merge). Under the frozen benchmark and gates, that means the bounded
+  continuation has now been honestly tested and has failed.
+
+  **Spend:** `$0.12` incremental external API cost for the full routed proof,
+  comfortably inside the user's `$20` exploration cap. Sprint 6 spend is now
+  `$319.07` against the `$450` ceiling.
+
+  **Recommendation after Session 9.6:** freeze the current adjudication path as
+  a non-execution-ready benchmark artifact unless the user explicitly authorizes
+  a broader redesign beyond the bounded specialist proof.
 
 - **Session 6 (2026-04-20):** First real adjudication bakeoff completed through the
   frozen Session 5 packet/request/normalize/score path.

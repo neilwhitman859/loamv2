@@ -1,6 +1,6 @@
 {
   "budget": 450.00,
-  "spent": 318.95,
+  "spent": 319.51,
   "sessions": {
     "B6.1": 0.00,
     "B6.2": 0.00,
@@ -14,10 +14,12 @@
     "S6_first_real_bakeoff_v1": 2.89,
     "S8_to_S9_3_v2_rebuild_total": 5.58,
     "S9_4_post_rerun_failure_audit": 0.00,
-    "S9_5_freeze_or_rebuild_strategy": 0.00
+    "S9_5_freeze_or_rebuild_strategy": 0.00,
+    "S9_6_pattern_specialist_proof": 0.12,
+    "S9_7_layered_safety_redesign": 0.44
   },
-  "remaining_projected_b6_5_thru_close": "queue-building remains blocked; no further Sprint 6 spend should be committed until the user explicitly chooses between freezing the current adjudication path or approving the bounded Session 9.6 routed-specialist proof under the $20 exploration cap",
-  "remaining_sprint_ceiling": 131.05,
+  "remaining_projected_b6_5_thru_close": "Session 9.7 broadened the redesign and found a layered fallback contender that now clears the fallback gate with 0 false merges overall, but the frozen production gate still fails on recall. Further Sprint 6 spend is only justified as one narrow recall-focused continuation on top of the Session 9.7 layered fallback state; otherwise freeze at that new endpoint.",
+  "remaining_sprint_ceiling": 130.49,
   "paths_for_continuation": {
     "legacy_path_1_pragmatic": {
       "total_add": 9,
@@ -35,5 +37,5 @@
       "status": "archived as pre-rebuild analysis"
     }
   },
-  "note": "The legacy B6.5a partial path remains useful as benchmark and failure-mode context. The merge-only Codex rebuild has now completed the v2 rerun sequence through Session 9.5. Session 9.4 found no credible narrow redesign, and Session 9.5 narrowed the only bounded continuation to a routed pattern-family specialist proof on the frozen 152-case benchmark. Queue-building is still blocked. Any further Sprint 6 spend now requires an explicit user decision: freeze the adjudication path as a non-execution-ready artifact, or approve the Session 9.6 specialist proof under the $20 exploration cap."
+  "note": "The legacy B6.5a partial path remains useful as benchmark and failure-mode context. The merge-only Codex rebuild has now completed the broader Session 9.7 redesign round. The new leading artifact is session9_7_layered_safety_sonnet_r2_narrow: 0 false merges overall, fallback gate pass, production gate fail. Queue-building remains blocked. The next spend, if any, should be one narrow recall-focused continuation on top of that layered fallback state; otherwise freeze there."
 }

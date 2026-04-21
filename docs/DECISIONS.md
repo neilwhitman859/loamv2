@@ -4,6 +4,30 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-21: Freeze prompt overridden; broadened adjudication redesign is explicitly authorized
+
+The default Session 9.7 prompt was to publish a freeze memo and stop after the
+failed Session 9.6 routed-specialist proof. User overrode that scope in the new
+session and asked to "use more creativity and broaden the redesign process" and
+to use multiple test rounds if needed to try to achieve the Sprint 6 goal.
+
+Decision: treat the freeze path as no longer mandatory for this session. A
+bounded broader redesign is explicitly authorized, but it must still stay on the
+frozen `benchmark_v1` and Session 4 gates, remain proof-first rather than
+queue-building-first, and stop short of any all-pairs rollout unless a new
+production-worthy path is actually demonstrated.
+
+### 2026-04-21: Exploration cap before scale = $20 for any new dedup method/model
+
+User is open to exploring more complex producer-dedup redesigns, but wants a
+strict spend gate before committing to any new method or model at scale.
+Decision: any new adjudication redesign path must stay within **$20 total
+exploratory spend** before the project moves forward to a scaled run. That
+exploration budget should cover the minimum proof needed to decide whether the
+approach deserves scale-up at all; if the proof does not clearly justify the
+next step inside that cap, stop and reassess rather than drifting into another
+expensive partial rollout.
+
 ### 2026-04-20: Session wrap-ups should always hand over the next prompt when a clear follow-on session exists
 
 User asked to stop ending sessions with only a generic "next recommended session" when the next step is already well-defined. New rule: if another session is clearly next, the session closeout should include a ready-to-run next-session prompt, stored in `data/session_prompts/` (or the active sprint directory when more appropriate) and also surfaced directly in the final user-facing wrap-up. This turns the handoff into an executable artifact instead of a vague recommendation and reduces setup friction for the next chat.
@@ -1991,3 +2015,7 @@ User directed Session 9.1 to implement the minimum v3 continuity redesign and re
 ### 2026-04-21: Session protocol now leads with session number and requires confidence, budget, and fixed wrap-up items
 
 User tightened the session-management protocol for producer dedup. Session names should now start with the session number (for example `9.2 - unresolved-official backstop`) so ordering is obvious in sidebars and handoffs. Every session should record a **budget estimate at open** and report **actual external API spend at wrap-up**. Every wrap-up should also report a **confidence % that producer dedup can still reach spec**, plus seven required close-out items: (1) what this session did and how it fits the project, (2) what the next session will do and how it fits the project, (3) biggest concern about this session's work, (4) biggest concern about the current sprint, (5) what would move confidence up or down next session, (6) the exact user decision needed before the next session starts, and (7) the next-session prompt in a fenced code block even when it only points to an `.md` file. Reason: the user wants tighter visibility into naming/order, confidence drift, budget drift, and whether iteration is still converging toward the producer-dedup spec.
+
+### 2026-04-21: Session wrap-ups now use a fixed nine-section template with explicit heading text
+
+User tightened the wrap-up format from "include these items" to "emit them in this exact order with these exact labels." Future user-facing close-outs should use the title `Session <number> Wrap-Up` and then exactly these sections: `What This Session Did`, `What The Next Session Will Do`, `Biggest Concern About This Session`, `Biggest Concern About The Sprint`, `Confidence Producer Dedup Reaches Spec`, `What Would Move Confidence Up Or Down Next Session`, `Exact User Decision Needed Before Next Session Starts`, `Budget`, and `Next Session Prompt`. Section 6 should use `Up:` / `Down:` bullets, section 8 should use `Estimated:` / `Actual API spend:` bullets, and section 9 should use a fenced `text` code block. Reason: the user wants session handoffs to be fully standardized and copy-paste consistent rather than merely containing the right ingredients.

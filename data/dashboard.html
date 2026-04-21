@@ -291,7 +291,7 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">Sprint 6 &middot; Merge-only rebuild checkpoint &middot; <!--updated-->updated 2026-04-21 10:06 ET<!--/updated--></div>
+  <div class="meta">Sprint 6 &middot; Merge-only rebuild checkpoint &middot; <!--updated-->updated 2026-04-21 12:04 ET<!--/updated--></div>
 </div>
 
 <!-- ============= SESSION TOKENS ============= -->
@@ -318,18 +318,18 @@
 <!-- ============= CURRENT STEP ============= -->
 <div class="section-label">Current step</div>
 <div class="block-card">
-  <h2>Rebuild checkpoint &mdash; the redesign choice is now explicit, and queue-building is still blocked</h2>
-  <div class="goal">Session 9.5 converted the Session 9.4 stop-or-redesign audit into one concrete recommendation: if Sprint 6 continues, test a routed pattern-family specialist bundle on top of the safe `gemini_guardrailed_v2` base. The current path is still not execution-ready, but the next bounded proof is no longer vague. It is a 73-case specialist bundle under the user's `$20` exploration cap, or else a clean freeze of the adjudication path as a benchmark artifact.</div>
+  <h2>Rebuild checkpoint &mdash; a layered fallback now exists, but production is still blocked</h2>
+  <div class="goal">Session 9.7 reopened the redesign after the failed Session 9.6 specialist proof and tested a layered safety-gate architecture on top of the same frozen benchmark. The best narrow run (`session9_7_layered_safety_sonnet_r2_narrow`) eliminated all `5` Session 9.6 false merges, preserved `42 / 47` routed merge recoveries, held blind-core missed merges at `5`, improved exact verdict accuracy to `0.8289`, and passed the fallback gate. It still failed the frozen production gate, so queue-building stays blocked. The next decision is now whether to run one narrow recall-focused continuation on top of this new fallback state or freeze the adjudication path there.</div>
   <!--progress-block-->
   <div class="block-progress">
-    <div class="pstep">Rebuild artifacts now include the Session 9.2 unresolved-official backstop, the fresh Session 9.3 rerun on `v2.1` packets, the Session 9.4 failure audit, and the Session 9.5 freeze-or-rebuild strategy memo</div><div class="pstats">Session 1 = pair corpus audit &middot; Session 2 = benchmark freeze &middot; Session 3 = evidence packet &middot; Session 4 = broad bakeoff design &middot; Session 5 = packet generator + evaluation harness &middot; Session 6 = first real adjudication bakeoff &middot; Session 7 = v2 design memo &middot; Session 8 = v2 implementation + rerun &middot; Session 9 = v3 continuity audit + redesign memo &middot; Session 9.1 = v3 continuity implementation + first proof rerun &middot; Session 9.2 = unresolved-official backstop + fresh proof rerun &middot; Session 9.3 = approved full rerun on fresh packets &middot; Session 9.4 = post-rerun failure audit &middot; Session 9.5 = freeze-or-rebuild strategy</div>
+    <div class="pstep">Rebuild artifacts now include the Session 9.2 unresolved-official backstop, the fresh Session 9.3 rerun on `v2.1` packets, the Session 9.4 failure audit, the Session 9.5 freeze-or-rebuild strategy memo, the Session 9.6 routed-specialist proof, and the Session 9.7 layered safety-gate redesign</div><div class="pstats">Session 1 = pair corpus audit &middot; Session 2 = benchmark freeze &middot; Session 3 = evidence packet &middot; Session 4 = broad bakeoff design &middot; Session 5 = packet generator + evaluation harness &middot; Session 6 = first real adjudication bakeoff &middot; Session 7 = v2 design memo &middot; Session 8 = v2 implementation + rerun &middot; Session 9 = v3 continuity audit + redesign memo &middot; Session 9.1 = v3 continuity implementation + first proof rerun &middot; Session 9.2 = unresolved-official backstop + fresh proof rerun &middot; Session 9.3 = approved full rerun on fresh packets &middot; Session 9.4 = post-rerun failure audit &middot; Session 9.5 = freeze-or-rebuild strategy &middot; Session 9.6 = routed pattern-specialist proof &middot; Session 9.7 = layered safety-gate redesign</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">direction and rules</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">merge-only path locked &middot; PARENT_CHILD deferred &middot; core/tail redefined by product risk</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">benchmark + evidence</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">152 benchmark pairs frozen &middot; JSONL-first evidence packet defined &middot; hidden benchmark overlay split from visible evidence</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">bakeoff spec</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">v1 contender set frozen &middot; `FLAGGED` semantics locked &middot; production/fallback gates explicit</div>
-    <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div><div class="progress-bar"><div class="progress-fill" style="width: 95%"></div></div><div class="pstats" style="font-size:11.5px;">Failure audit complete &middot; 49 of 51 expected-MERGE cases were missed by all three contenders &middot; Session 9.5 narrowed the only bounded continuation to a 73-case routed specialist bundle covering 47 of 51 merge cases and all 16 known false-merge benchmark cases</div>
+    <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div><div class="progress-bar"><div class="progress-fill" style="width: 97%"></div></div><div class="pstats" style="font-size:11.5px;">Session 9.7 proved the broader layered design can keep the Session 9.6 recall gains while removing all false merges on the frozen benchmark: 42 of 47 routed merges recovered, blind-core missed merges held at 5, exact accuracy 0.8289, fallback gate pass, production gate still fail</div>
   </div>
   <!--/progress-block-->
-  <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current rebuild doctrine:</strong> ground adjudication in official-domain evidence, local wine-list coherence, and deterministic identity rules. Search is retrieval, not truth by itself. Session 9.5 keeps that doctrine, rejects another global packet relaxation, and recommends family-routed specialists as the only bounded proof worth spending on.</div>
+  <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current rebuild doctrine:</strong> ground adjudication in official-domain evidence, local wine-list coherence, and deterministic identity rules. Search is retrieval, not truth by itself. Session 9.7's leading architecture is now layered: specialist recall recovery + deterministic anti-trap vetoes + very narrow skeptical review only on the remaining one-anchor `11.4.f` continuity traps.</div>
   <!--block-steps-->
   <ul class="steps">
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 1 &mdash; Freeze merge-only direction</span></li>
@@ -340,7 +340,7 @@
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 6 &mdash; Broad bakeoff design</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 7 &mdash; Packet generator + evaluation harness</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 8 &mdash; First adjudication bakeoff</span></li>
-    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 9 &mdash; Build core adjudication queue (queue work stays paused; user must either freeze the path or approve the 73-case routed specialist proof under the `$20` cap)</span></li>
+    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 9 &mdash; Build core adjudication queue (queue work stays paused; a new fallback-safe layered contender exists, but the frozen production gate still fails on recall)</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 10 &mdash; Build tail adjudication queue</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 11 &mdash; Publish pre-execution scorecard</span></li>
   </ul>
@@ -350,7 +350,7 @@
 <div class="section-label">Sprint 6 &mdash; Core/Tail split &amp; quality targets</div>
 <div class="sprint-card">
   <div class="goal">
-    Producer dedup on 33,281 rows and 225,281 wines. Core/tail is now a product-risk split used for evaluation, not the old routing-stage execution plan. The immediate quality task is no longer rerun approval, packet freshness, or miss-cluster diagnosis. It is deciding whether to freeze the current adjudication path or approve the bounded pattern-specialist proof recommended in Session 9.5.
+    Producer dedup on 33,281 rows and 225,281 wines. Core/tail is now a product-risk split used for evaluation, not the old routing-stage execution plan. The immediate quality task is no longer whether to authorize a broader redesign. Session 9.7 already did that work and produced a fallback-safe layered contender. The next quality decision is whether to run one narrow recall-focused continuation on top of that new fallback state or freeze there.
   </div>
   <table class="metrics-table">
     <tr>
@@ -381,10 +381,10 @@
       <tr><td>Benchmark state</td><td><code>benchmark_v1</code> frozen at 152 merge-only cases</td></tr>
       <tr><td>Evidence packet state</td><td><code>evidence_packet_v2</code> rebuilt as fresh <code>v2.1</code> packets with hidden benchmark overlay stripped from model-visible inputs</td></tr>
       <tr><td>Bakeoff state</td><td>v1 real run is preserved under <code>session6_first_real_bakeoff_v1</code>; v2 real run is canonical under <code>session7_first_real_bakeoff_v2</code>; Session 9.2 proof-only artifacts live under <code>session9_2_unresolved_official_backstop_proof_subset</code> on fresh <code>v2.1</code> packets; Session 9.3 completed the approved full rerun under <code>session9_3_full_rerun_if_approved</code></td></tr>
-      <tr><td>Immediate next artifact</td><td><code>session9_5_freeze_or_rebuild_strategy.md</code>: recommends one bounded continuation only &mdash; a routed pattern-specialist proof on four dominant miss families, scored against the frozen 152-case benchmark</td></tr>
-      <tr><td>After that</td><td>user decision point: freeze the current adjudication path as a benchmark artifact, or approve <code>s9_6_pattern_specialist_proof_if_approved.md</code>; queue-building remains blocked either way</td></tr>
+      <tr><td>Immediate next artifact</td><td><code>session9_7_layered_safety_redesign.md</code>: records the broadened layered redesign, all Session 9.7 proof rounds, and the new fallback-only posture</td></tr>
+      <tr><td>After that</td><td>recommended next session: <code>s9_8_recover_production_from_layered_fallback.md</code> to target the remaining recall blocker while keeping the new zero-false-merge safety structure fixed; if that continuation is not wanted, freeze at the Session 9.7 fallback state</td></tr>
       <tr><td>Execution status</td><td>no producer-merge execution path is active yet</td></tr>
-      <tr><td>Primary risk</td><td>the unsafe continuity false merges are now largely controlled, but even the recommended specialist proof may fail if the same `11.4.h` / `11.4.f` families cannot recover recall without reopening the benchmark's known false-merge traps</td></tr>
+      <tr><td>Primary risk</td><td>false merges are now controlled in the leading layered run, but the frozen production gate still fails because blind-core recall remains short; a careless continuation could easily re-open the old trap families while chasing those remaining misses</td></tr>
     </table>
   </div>
 </div>
@@ -419,8 +419,8 @@
     <tr>
       <td>Step 9 &mdash; core adjudication queue</td>
       <td>blocked</td>
-      <td>Fresh rerun + failure audit complete: no contender cleared the frozen gates and the audit did not justify another narrow rerun, so queue-building remains blocked pending a user decision on freeze vs larger redesign</td>
-      <td class="num">$5.58</td>
+      <td>Fresh rerun, failure audit, strategy memo, routed specialist proof, and broadened layered redesign are all complete; the new leading path clears the fallback gate with 0 false merges overall but still fails the frozen production gate, so queue-building remains blocked while recall is reassessed</td>
+      <td class="num">$6.14</td>
     </tr>
     <tr>
       <td>Step 10 &mdash; tail adjudication queue</td>
@@ -429,9 +429,9 @@
       <td class="num">TBD</td>
     </tr>
     <tr style="background:#fff4e5;">
-      <td><strong>Next user touchpoint</strong> &mdash; review the Session 9.4 failure audit and decide whether to freeze this adjudication path or authorize a larger redesign session</td>
+      <td><strong>Next user touchpoint</strong> &mdash; review the Session 9.7 layered redesign memo and decide whether to run one narrow recall-focused continuation on top of the new fallback state or freeze there</td>
       <td>&mdash;</td>
-      <td>One decision session to accept the freeze recommendation or deliberately open a broader redesign path; do not queue-build or rerun yet</td>
+      <td>Recommended path: continue only with one narrow recall-focused session that keeps the new layered safety structure fixed; otherwise freeze at the stronger Session 9.7 fallback endpoint.</td>
       <td class="num">&mdash;</td>
     </tr>
   </table>
@@ -509,7 +509,7 @@
   <li><span class="marker done-marker">&#10003;</span> <span>Sprint 3 Fix</span> <span class="detail">&mdash; 158 fixed, 101 deferred, $0</span></li>
   <li><span class="marker done-marker">&#10003;</span> <span>Sprint 4 Demo</span> <span class="detail">&mdash; 515 wines Grade A across 14 producers, $37.44</span></li>
   <li><span class="marker done-marker">&#10003;</span> <span>Sprint 5 AI Bakeoff</span> <span class="detail">&mdash; 29 models tested, gpt-5.4-mini leader under current prompt, ~$55</span></li>
-  <li><span class="marker current-marker">&#9654;</span> <span class="current">Sprint 6 Producer Dedup</span> <span class="detail">&mdash; merge-only Codex rebuild; v2 rerun complete with clean packet/contract hygiene, but no contender passed the frozen gates, so queue execution remains blocked</span></li>
+  <li><span class="marker current-marker">&#9654;</span> <span class="current">Sprint 6 Producer Dedup</span> <span class="detail">&mdash; merge-only Codex rebuild; a broader layered redesign now clears the fallback gate with 0 false merges overall, but the frozen production gate still fails on recall so queue execution remains blocked</span></li>
   <li><span class="marker future-marker">&#9675;</span> <span class="future">Sprint 7 Wine Dedup</span> <span class="detail">&mdash; LWIN-7 backbone + producer-filtered blocking + deterministic-tuple match + cheap-AI remainder + Haiku+Serper on escalations only. <strong>~$100-200 projected</strong> (revised down from $2-3K).</span></li>
   <li><span class="marker future-marker">&#9675;</span> <span class="future">Sprint 8</span> <span class="detail">&mdash; prompt v2 + L3 fact-check gate + re-enrichment + demo sharing</span></li>
 </ul>
@@ -552,8 +552,8 @@
         <tr><td style="color:var(--muted);">Sprint 3 Fix</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
         <tr><td style="color:var(--muted);">Sprint 4 Demo</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$37.44</td></tr>
         <tr><td style="color:var(--muted);">Sprint 5 AI Bakeoff</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$55.00</td></tr>
-        <tr><td style="color:var(--accent); font-weight:700;">Sprint 6 Producer Dedup</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$318.95</td></tr>
-        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Total project spend</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$411.39</td></tr>
+        <tr><td style="color:var(--accent); font-weight:700;">Sprint 6 Producer Dedup</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$319.51</td></tr>
+        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Total project spend</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$411.95</td></tr>
       </table>
     </div>
     <div>
@@ -566,9 +566,9 @@
         <tr><td style="color:var(--muted);">Step 6 Phase 3a web-validate</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$12.87</td></tr>
         <tr><td style="color:var(--muted);">Step 7 Coverage expansion</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$78.81</td></tr>
         <tr><td style="color:var(--muted);">Step 8 First real adjudication bakeoff</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$2.89</td></tr>
-        <tr><td style="color:var(--accent); font-weight:700;">Step 9 v2 implementation + rerun</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$5.58</td></tr>
-        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Sprint 6 spent</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$318.95</td></tr>
-        <tr><td style="color:var(--muted); color:var(--green);">Remaining of $450 ceiling</td><td style="text-align:right; font-variant-numeric: tabular-nums; color:var(--green);">$131.05</td></tr>
+        <tr><td style="color:var(--accent); font-weight:700;">Step 9 v2 implementation + rerun</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$6.14</td></tr>
+        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Sprint 6 spent</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$319.51</td></tr>
+        <tr><td style="color:var(--muted); color:var(--green);">Remaining of $450 ceiling</td><td style="text-align:right; font-variant-numeric: tabular-nums; color:var(--green);">$130.49</td></tr>
       </table>
     </div>
   </div>

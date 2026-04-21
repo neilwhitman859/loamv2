@@ -126,5 +126,21 @@
     "shape": "strategy",
     "spent": 0.00,
     "notes": "Published data/sprints/dedup/session9_5_freeze_or_rebuild_strategy.md and follow-on prompt data/session_prompts/s9_6_pattern_specialist_proof_if_approved.md. Compared the three remaining redesign families under the frozen benchmark and Session 4 gates plus the new $20 exploration cap. Recommendation: if Sprint 6 continues, test routed pattern-family specialists on top of the safe gemini_guardrailed_v2 base rather than another global packet relaxation. The four dominant families 11.4.h / 11.4.f / 11.4.n / 11.4.p cover 47 of 51 merge cases and 26 skip cases in the benchmark, including all 16 known false-merge pattern cases, so the smallest honest proof is a 73-case routed bundle scored back against the full 152-case benchmark. Queue-building remains blocked pending an explicit user choice to freeze or approve that bounded proof."
+  },
+  {
+    "id": "S9.6",
+    "date": "2026-04-21",
+    "title": "Routed pattern-specialist proof",
+    "shape": "evaluation",
+    "spent": 0.12,
+    "notes": "Built pipeline/identity/bakeoff_pattern_specialist_proof.py and ran the bounded Session 9.6 proof on the frozen 152-case benchmark. The helper reused gemini_guardrailed_v2 as the safe base for 79 non-routed cases, routed only the approved 73-case family bundle (11.4.h / 11.4.f / 11.4.n / 11.4.p) through family-specific Gemini specialist prompts, normalized the routed rows without the generic sparse-official merge veto, and scored the composite result back through the frozen Session 4 scorer. Result: the family-routed redesign was materially different and dramatically improved recall, but it still failed the key bar. Composite scorecard landed at 42/47 targeted merge recoveries, blind-core missed merges down to 5, full-benchmark flag rate 0.1053, but 5 false merges overall (all outside blind core) re-opened the benchmark's protected false-merge families. Conclusion: the bounded specialist proof is not strong enough to justify further build under the frozen benchmark/gates; freeze the adjudication path unless the user explicitly authorizes a broader redesign."
+  },
+  {
+    "id": "S9.7",
+    "date": "2026-04-21",
+    "title": "Layered safety redesign after failed specialist proof",
+    "shape": "evaluation",
+    "spent": 0.44,
+    "notes": "User explicitly overrode the planned freeze-only Session 9.7 scope and authorized a broader redesign. Built pipeline/identity/bakeoff_layered_safety_gate.py plus closeout memo data/sprints/dedup/session9_7_layered_safety_redesign.md and next prompt data/session_prompts/s9_8_recover_production_from_layered_fallback.md. Session tested four bounded rounds on top of the Session 9.6 routed-specialist artifact: (1) deterministic vetoes only, which cut false merges 5 -> 2 at zero cost; (2) GPT-5 mini safety-gate attempt, preserved only as a transport-failure artifact because OpenRouter returned provider-routing 404s on all review calls; (3) broad Sonnet skeptical review over all surviving 11.4.f specialist merges, which removed false merges but over-vetoed true merges; and (4) narrow Sonnet skeptical review only on the suspicious one-anchor 11.4.f continuity traps. The narrow layered run session9_7_layered_safety_sonnet_r2_narrow is now the canonical Session 9.7 endpoint: 0 false merges overall, 0 blind-core false merges, blind-core missed merges held at 5, routed merge recoveries held at 42/47, exact verdict accuracy improved to 0.8289, fallback gate passed, production gate still failed. Conclusion: the broader redesign produced a real fallback-quality contender and supersedes the old Session 9.6 freeze posture, but queue-building remains blocked because the frozen production gate is still not clear."
   }
 ]
