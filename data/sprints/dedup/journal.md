@@ -1,21 +1,68 @@
 # Sprint 6: Dedup (Producers) — journal
 
 **Opened:** 2026-04-16
-**Status:** Active — merge-only Codex rebuild; a fallback-safe layered contender exists, but production readiness is still unproven under the frozen gates.
-**Current block:** Session 9.10 proved that three broader method classes can survive the trap-heavy proof subset on top of the fixed Session 9.7 safety base. The next block is a capped full 152-case rerun of only those survivors. Queue-building remains blocked.
+**Status:** Active — merge-only Codex rebuild; the best surviving artifact is still the fallback-safe Session 9.7 layered control, and production readiness remains unproven under the frozen gates.
+**Current block:** Session 9.11 completed the capped full 152-case rerun of the three broader proof survivors. All three reopened false merges at full scale, so queue-building remains blocked and the next honest move is now freeze / closeout at the best non-production artifact.
 
 **Status addendum (2026-04-21):** Session 9.7 now supplies a layered fallback
 contender that clears the fallback gate but still fails the frozen production
 gate.
-**Current block addendum:** Session 9.10 completed that proof subset at `$0.00`
-new model spend and downselected `merge_proposer_plus_veto_v1`,
-`expanded_layered_router_v1`, and `evidence_digest_then_judge_v1` for any later
-full rerun. Queue-building remains paused until one of those survivors clears
-the frozen benchmark and gates.
+**Current block addendum:** Session 9.11 completed the full rerun at `$0.00`
+new model spend. `merge_proposer_plus_veto_v1`,
+`expanded_layered_router_v1`, and `evidence_digest_then_judge_v1` all improved
+recall versus the Session 9.7 fallback control but reopened `5-9` false merges,
+so none cleared the frozen production or fallback gates. The best surviving
+artifact remains `session9_7_layered_safety_sonnet_r2_narrow`, and the next
+recommended step is freeze / closeout rather than another redesign in the same
+session.
 
 ---
 
 ## Block log
+
+- **Session 9.11 (2026-04-21):** Ran the full 152-case rerun for the three
+  broader method survivors that cleared the Session 9.10 proof subset.
+
+  **Scope held:** kept `benchmark_v1`, the frozen Session 4 gates, and the
+  Session 9.7 layered safety base fixed; used only the three Session 9.10
+  survivors; did not queue-build; did not mutate the benchmark; and did not
+  open any new contender family beyond the proof survivors.
+
+  **Implementation:**
+  - Added `pipeline/identity/bakeoff_method_bakeoff_full.py`.
+  - Tightened `pipeline/identity/bakeoff_method_bakeoff_proof.py` so
+    method-promoted `MERGE` rows carry the packet-recommended survivor id
+    instead of being penalized as null-survivor merges at score time.
+  - Added the top-level rerun memo
+    `data/sprints/dedup/session9_11_full_method_bakeoff_rerun_if_approved.md`.
+  - Added scored full-rerun artifacts
+    `data/sprints/dedup/bakeoff_v2/scored/session9_11_full_method_bakeoff_rerun_if_approved.json`,
+    `.md`, and `_manifest.json`.
+  - Logged the user's rerun approval in `docs/DECISIONS.md`.
+
+  **Full-rerun result vs Session 9.7 control:**
+  - frozen control `layered_safety_sonnet_r2_narrow_v1` remains
+    `0` false merges, `6` hard misses, `3` soft misses, `0.1316` flag rate,
+    fallback gate `pass`
+  - `merge_proposer_plus_veto_v1`: `5` recoveries, but `9` false merges
+    (`6` blind-core / `1` known-false-merge / `2` tail), fallback gate `fail`
+  - `expanded_layered_router_v1`: `4` recoveries, but `5` false merges
+    (`3` blind-core / `0` known-false-merge / `2` tail), fallback gate `fail`
+  - `evidence_digest_then_judge_v1`: `3` recoveries, but `5` false merges
+    (`4` blind-core / `1` known-false-merge / `0` tail), fallback gate `fail`
+
+  **Interpretation:** the broader method-class idea was real enough to improve
+  recall, but not strong enough to survive the full benchmark honestly. The
+  full rerun did not displace the Session 9.7 layered fallback control as the
+  best surviving artifact, and it did not unlock queue-building.
+
+  **Spend:** `$0.00` incremental external API cost. Sprint 6 spend remains
+  `$319.51` against the `$450` ceiling.
+
+  **Recommendation after Session 9.11:** freeze at
+  `session9_7_layered_safety_sonnet_r2_narrow` as the best surviving
+  non-production artifact and publish the adjudication-line closeout / handoff
+  memo. Do not open another redesign inside the same session.
 
 - **Session 9.10 (2026-04-21):** Implemented and ran the proof-first broader
   method comparison from Session 9.9 on a bounded trap-heavy subset before any

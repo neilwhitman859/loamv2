@@ -153,6 +153,7 @@ class PacketFeatures:
     cluster: str
     expected_verdict: str
     packet_id: str
+    recommended_survivor_id: str | None
     refs: frozenset[str]
     containment: str
     shared_core_token_count: int
@@ -225,6 +226,9 @@ def build_features(case: dict, packet: dict) -> PacketFeatures:
         cluster=case["pattern_cluster"],
         expected_verdict=case["expected_verdict"],
         packet_id=packet["packet_id"],
+        recommended_survivor_id=packet["evidence"]["survivor_if_merge"].get(
+            "recommended_survivor_producer_id"
+        ),
         refs=refs,
         containment=str(lexical.get("containment") or "none"),
         shared_core_token_count=len(lexical.get("shared_core_tokens") or []),
@@ -256,7 +260,11 @@ def zero_usage() -> dict:
     }
 
 
-def build_merge_output(packet_id: str, proposal: Proposal) -> dict:
+def build_merge_output(
+    packet_id: str,
+    proposal: Proposal,
+    survivor_producer_id: str | None,
+) -> dict:
     return {
         "packet_id": packet_id,
         "verdict": "MERGE",
@@ -265,7 +273,7 @@ def build_merge_output(packet_id: str, proposal: Proposal) -> dict:
         "reason": proposal.reason,
         "key_support_refs": list(proposal.support_refs),
         "key_contradiction_refs": list(proposal.contradiction_refs),
-        "survivor_producer_id": None,
+        "survivor_producer_id": survivor_producer_id,
         "follow_up": None,
     }
 
@@ -619,7 +627,11 @@ def build_method_rows(
             if proposal is not None:
                 safety_block = fixed_safety_block_reason(features)
                 if safety_block is None:
-                    row["normalized_output"] = build_merge_output(features.packet_id, proposal)
+                    row["normalized_output"] = build_merge_output(
+                        features.packet_id,
+                        proposal,
+                        features.recommended_survivor_id,
+                    )
                     row["proof_action"] = "proposal_promoted_to_merge"
                     row["proof_signature"] = proposal.signature
                 else:
