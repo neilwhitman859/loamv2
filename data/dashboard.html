@@ -291,7 +291,7 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">Sprint 6 &middot; Merge-only rebuild checkpoint &middot; <!--updated-->updated 2026-04-21 00:12 ET<!--/updated--></div>
+  <div class="meta">Sprint 6 &middot; Merge-only rebuild checkpoint &middot; <!--updated-->updated 2026-04-21 03:10 ET<!--/updated--></div>
 </div>
 
 <!-- ============= SESSION TOKENS ============= -->
@@ -318,18 +318,18 @@
 <!-- ============= CURRENT STEP ============= -->
 <div class="section-label">Current step</div>
 <div class="block-card">
-  <h2>Rebuild checkpoint &mdash; v2 rerun complete, queue build still blocked</h2>
-  <div class="goal">The producer-dedup rebuild has now completed the full v2 packet/runner rerun on the same 152-case benchmark. The contract fixes landed cleanly: packet v2 built with flat citeable refs plus official-domain retrieval, the proof subset passed with 0 hidden-field leaks and 1.00 schema-valid rate for every contender, and the full rerun produced a canonical artifact set under <code>bakeoff_v2/</code>. The outcome is still a block: no contender cleared the frozen Session 4 production or fallback gates.</div>
+  <h2>Rebuild checkpoint &mdash; v2 rerun audited, v3 continuity redesign locked, queue build still blocked</h2>
+  <div class="goal">The producer-dedup rebuild has now completed the Session 9 audit of the full v2 rerun. The contract layer remains clean, but the false-merge diagnosis is now sharper: the main blocker is not schema/citation hygiene anymore, it is over-permissive continuity evidence. Weak alias cross-mentions and same-domain umbrella signals are still being promoted into <code>official_continuity_*</code> refs, which lets distinct producers slip past the guardrail.</div>
   <!--progress-block-->
   <div class="block-progress">
-    <div class="pstep">Rebuild artifacts complete through the first v2 rerun: rules tightened, pair corpus audited, benchmark frozen, evidence packets v1+v2 built, bakeoff rules locked, harness plumbing built, the first real contender run scored, the v2 redesign memo implemented, and the full v2 rerun published</div><div class="pstats">Session 1 = pair corpus audit &middot; Session 2 = benchmark freeze &middot; Session 3 = evidence packet &middot; Session 4 = broad bakeoff design &middot; Session 5 = packet generator + evaluation harness &middot; Session 6 = first real adjudication bakeoff &middot; Session 7 = v2 design memo &middot; Session 8 = v2 implementation + rerun</div>
+    <div class="pstep">Rebuild artifacts complete through the first v2 rerun plus the continuity-failure audit: rules tightened, pair corpus audited, benchmark frozen, evidence packets v1+v2 built, bakeoff rules locked, harness plumbing built, the first real contender run scored, the v2 redesign memo implemented, the full v2 rerun published, and the minimum v3 redesign now specified</div><div class="pstats">Session 1 = pair corpus audit &middot; Session 2 = benchmark freeze &middot; Session 3 = evidence packet &middot; Session 4 = broad bakeoff design &middot; Session 5 = packet generator + evaluation harness &middot; Session 6 = first real adjudication bakeoff &middot; Session 7 = v2 design memo &middot; Session 8 = v2 implementation + rerun &middot; Session 9 = v3 continuity audit + redesign memo</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">direction and rules</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">merge-only path locked &middot; PARENT_CHILD deferred &middot; core/tail redefined by product risk</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">benchmark + evidence</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">152 benchmark pairs frozen &middot; JSONL-first evidence packet defined &middot; hidden benchmark overlay split from visible evidence</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">bakeoff spec</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">v1 contender set frozen &middot; `FLAGGED` semantics locked &middot; production/fallback gates explicit</div>
-    <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div><div class="progress-bar"><div class="progress-fill" style="width: 84%"></div></div><div class="pstats" style="font-size:11.5px;">v2 rerun complete &middot; 547 official-domain retrieval searches materialized into packet v2 &middot; proof subset passed contract checks &middot; queue build still blocked because no contender cleared the hard gates</div>
+    <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div><div class="progress-bar"><div class="progress-fill" style="width: 86%"></div></div><div class="pstats" style="font-size:11.5px;">v2 rerun complete &middot; Session 9 audit found 39 unique false-merge cases, with 37 carrying weak continuity refs and 29 absent from the current proof slice &middot; next action is implement hard-vs-soft continuity and rerun proof only</div>
   </div>
   <!--/progress-block-->
-  <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current rebuild doctrine:</strong> ground adjudication in official-domain evidence, local wine-list coherence, and deterministic identity rules. Search is retrieval, not truth by itself. The v2 redesign keeps <code>benchmark_v1</code> and the hard gates frozen, and changes the packet/runner/contender method layer rather than the answer key.</div>
+  <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current rebuild doctrine:</strong> ground adjudication in official-domain evidence, local wine-list coherence, and deterministic identity rules. Search is retrieval, not truth by itself. Session 9 tightened that further: weak continuity hints must stop pretending to be official continuity, and only hard continuity evidence should be allowed to waive the merge veto.</div>
   <!--block-steps-->
   <ul class="steps">
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 1 &mdash; Freeze merge-only direction</span></li>
@@ -340,7 +340,7 @@
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 6 &mdash; Broad bakeoff design</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 7 &mdash; Packet generator + evaluation harness</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 8 &mdash; First adjudication bakeoff</span></li>
-    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 9 &mdash; Build core adjudication queue (still blocked; v2 rerun complete but no contender cleared production or fallback gates)</span></li>
+    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 9 &mdash; Build core adjudication queue (still blocked; v3 continuity redesign is now locked, but proof must pass before any queue work resumes)</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 10 &mdash; Build tail adjudication queue</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 11 &mdash; Publish pre-execution scorecard</span></li>
   </ul>
@@ -381,10 +381,10 @@
       <tr><td>Benchmark state</td><td><code>benchmark_v1</code> frozen at 152 merge-only cases</td></tr>
       <tr><td>Evidence packet state</td><td><code>evidence_packet_v1</code> defined as JSONL-first with hidden benchmark overlay</td></tr>
       <tr><td>Bakeoff state</td><td>v1 real run is preserved under <code>session6_first_real_bakeoff_v1</code>; v2 real run is now canonical under <code>session7_first_real_bakeoff_v2</code>; neither produced a production path or fallback contender</td></tr>
-      <tr><td>Immediate next artifact</td><td>a v3 design/audit memo focused on false official-continuity signals, over-permissive alias resolution, and the remaining false-merge clusters exposed by <code>session7_first_real_bakeoff_v2</code></td></tr>
-      <tr><td>After that</td><td>tighten packet-side continuity evidence rules and only then run another proof subset; queue-building stays blocked until a future rerun produces both a production path and a fallback path</td></tr>
+      <tr><td>Immediate next artifact</td><td><code>session9_v3_continuity_audit.md</code>: the continuity-failure audit memo that buckets the v2 false merges, separates packet-vs-adjudicator fault, and locks the minimum v3 redesign</td></tr>
+      <tr><td>After that</td><td>implement hard-vs-soft continuity, tighten official-domain trust and alias minting, expand the proof slice to 36 cases, and rerun proof only; queue-building stays blocked until that proof passes and a later full rerun clears both frozen gates</td></tr>
       <tr><td>Execution status</td><td>no producer-merge execution path is active yet</td></tr>
-      <tr><td>Primary risk</td><td>schema/citation hygiene is now solved, but the new official-continuity heuristics are still too permissive and are feeding false merges back into the lineup</td></tr>
+      <tr><td>Primary risk</td><td>schema/citation hygiene is now solved, but weak continuity hints are still masquerading as official continuity and suppressing the exact veto meant to stop family-split, holdco, and portfolio false merges</td></tr>
     </table>
   </div>
 </div>
@@ -419,7 +419,7 @@
     <tr>
       <td>Step 9 &mdash; core adjudication queue</td>
       <td>blocked</td>
-      <td>Blocked: v2 rerun completed successfully at the contract layer, but <code>sonnet_guardrailed_v2</code> still posted 26 false merges, <code>gemini_guardrailed_v2</code> 31, and <code>sonnet_gemini_consensus_v2</code> 18, so no contender cleared the frozen gates</td>
+      <td>Blocked: Session 9 found that the dominant defect is packet-side continuity trust, not schema hygiene; 39 unique false merges remain, 37 of them carried continuity refs, so the next move is v3 continuity tightening plus an expanded proof rerun, not queue-building</td>
       <td class="num">$3.63</td>
     </tr>
     <tr>
