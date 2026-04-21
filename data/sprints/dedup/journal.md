@@ -1,8 +1,8 @@
 # Sprint 6: Dedup (Producers) — journal
 
 **Opened:** 2026-04-16
-**Status:** Active — producer dedup build work is now recommended frozen at the Session 9.7 layered fallback artifact pending an explicit project-level decision about Loam's scope.
-**Current block:** Session 9.12 completed the high-level viability review and concluded that the current dedup continuation is spent. Queue-building remains blocked; the next move is now an explicit founder-level decision, not another automatic redesign.
+**Status:** Closed / preserved as a failed pairwise benchmark path. Superseded on 2026-04-21 by Sprint 7 producer identity ER (`identity_dossier_select_v1`).
+**Current block:** No active execution path. Queue-building remains blocked, and Sprint 6 now serves as historical benchmark / failure-mode context for the new Sprint 7 method family rather than as the live plan.
 
 **Status addendum (2026-04-21):** Session 9.7 now supplies a layered fallback
 contender that clears the fallback gate but still fails the frozen production
@@ -22,10 +22,31 @@ be made trustworthy enough for production.
 dedup line at `session9_7_layered_safety_sonnet_r2_narrow`, preserving Loam as
 an asset for one explicit project decision, and forbidding new reruns or
 queue-building unless a genuinely new thesis is approved later.
+**Sprint closure addendum (2026-04-21):** the user chose that genuinely new
+thesis. Sprint 6 is now closed as the preserved pairwise benchmark / failure
+artifact set, and active producer-identity work moves to Sprint 7 under
+`identity_dossier_select_v1`.
 
 ---
 
 ## Block log
+
+- **Sprint closure / supersession (2026-04-21):** user launched Sprint 7 as a
+  new producer-identity ER effort instead of continuing the pairwise merge-only
+  line or opening a human-review workflow.
+
+  **Closure interpretation:**
+  - Sprint 6 did useful work as a benchmark, packet, and failure-mode program.
+  - It did **not** deliver a production-ready execution path for producer
+    merges.
+  - Its best surviving artifact remains
+    `session9_7_layered_safety_sonnet_r2_narrow`.
+  - That artifact is now reference material for Sprint 7, not the current
+    shipping plan.
+
+  **What carries forward into Sprint 7:** frozen benchmark cases, high-risk
+  false-merge families, continuity / shared-surname / holdco lessons, and the
+  hard rule that abstention is better than a false merge.
 
 - **Session 9.12 (2026-04-21):** Published the project-level viability memo
   `data/sprints/dedup/session9_12_high_level_next_steps_viability_review.md`

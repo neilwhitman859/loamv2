@@ -4,6 +4,23 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-21: Launch Sprint 7 as producer identity ER using `identity_dossier_select_v1`
+
+After the Sprint 6 pairwise merge-only rebuild failed to produce a trustworthy
+execution path, the user chose to keep exploring producer dedup but under a new
+method family rather than through more pairwise bakeoff drift or any human pair
+review queue. New constraints are explicit: **no human review at scale**,
+**fixed budget**, **AI-only escalation is allowed**, and **abstention is
+better than a risky merge**.
+
+Decision: open **Sprint 7** as a producer-identity entity-resolution sprint and
+name the method **`identity_dossier_select_v1`** ("Identity Dossier Select").
+The system should reason over reusable producer dossiers, candidate shortlists,
+and explicit outputs (`SAME_AS`, `RELATED_BUT_DISTINCT`, `NONE`, `UNSURE`),
+with merges allowed only from accepted `SAME_AS` edges. Consequence: Sprint 6
+is preserved as the failed pairwise benchmark path; Sprint 8 becomes wine
+dedup; Sprint 9 becomes prompt v2 + L3 fact-check gate + re-enrichment.
+
 ### 2026-04-21: Session 9.10 is approved as a proof-first method comparison before any full rerun
 
 User approved moving from the Session 9.9 design memo into actual execution,

@@ -1,13 +1,13 @@
 {
-  "name": "dedup",
+  "name": "identity-er",
   "status": "active",
-  "sprint_number": 6,
-  "started_at": "2026-04-16",
+  "sprint_number": 7,
+  "started_at": "2026-04-21",
   "previous": {
-    "name": "ai-bakeoff",
-    "sprint_number": 5,
-    "closed_at": "2026-04-15",
-    "archive_path": "data/sprints/ai-bakeoff/"
+    "name": "dedup",
+    "sprint_number": 6,
+    "closed_at": "2026-04-21",
+    "archive_path": "data/sprints/dedup/"
   },
-  "notes": "Sprint 6 — Producer dedup. User directive: dedup all 10,683 producers + build a reusable method for future imports. Throw the kitchen sink at it, use AI creatively. Sprint 7 = wine dedup. Sprint 8 = prompt v2 + L3 gate + re-enrichment. B5.8 opened the sprint (2026-04-16) with scope + research; detailed design deferred to B6.1 planning session. See data/sprints/dedup/plan.md + data/session_prompts/b6_1_planning.md."
+  "notes": "Sprint 7 - Producer identity ER. Launches a new producer-card / dossier-based entity-resolution program after Sprint 6's pairwise merge-only rebuild failed to clear the trust bar. Method name: identity_dossier_select_v1 (Identity Dossier Select). Constraints: no human pair review at scale, fixed budget, AI-only escalation on a narrow frontier, and abstain rather than risk a false merge. Sprint 8 = wine dedup. Sprint 9 = prompt v2 + L3 gate + re-enrichment."
 }
