@@ -1,5 +1,13 @@
 [
   {
+    "id": "S9.10",
+    "date": "2026-04-21",
+    "title": "Method bakeoff proof subset",
+    "shape": "evaluation",
+    "spent": 0.00,
+    "notes": "Implemented four broader method classes on a 29-case trap-heavy proof subset against the frozen Session 9.7 layered fallback control. Result: merge_proposer_plus_veto_v1 recovered 5 merges with 0 false merges, expanded_layered_router_v1 recovered 4 with 0 false merges, evidence_digest_then_judge_v1 recovered 3 with 0 false merges, and signature_router_v1 matched expanded_layered_router_v1 exactly and was dropped as redundant. Recommendation: proceed to a capped full 152-case rerun using only the three surviving methods; queue-building remains blocked until one clears the frozen gates."
+  },
+  {
     "id": "B6.1",
     "date": "2026-04-16",
     "title": "Sprint 6 planning & design",

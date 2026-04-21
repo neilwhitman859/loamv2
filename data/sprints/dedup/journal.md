@@ -2,20 +2,75 @@
 
 **Opened:** 2026-04-16
 **Status:** Active — merge-only Codex rebuild; a fallback-safe layered contender exists, but production readiness is still unproven under the frozen gates.
-**Current block:** Session 9.9 has locked the broader method-bakeoff design. The next block is the proof-first comparison of broader adjudication methods against the fixed Session 9.7 safety base. Queue-building remains blocked.
+**Current block:** Session 9.10 proved that three broader method classes can survive the trap-heavy proof subset on top of the fixed Session 9.7 safety base. The next block is a capped full 152-case rerun of only those survivors. Queue-building remains blocked.
 
 **Status addendum (2026-04-21):** Session 9.7 now supplies a layered fallback
 contender that clears the fallback gate but still fails the frozen production
 gate.
-**Current block addendum:** Session 9.9 records that the user explicitly kept
-Sprint 6 aimed at production readiness and authorized a broader redesign. The
-current block is now a budget-bounded method bakeoff on top of the fixed
-Session 9.7 safety base, with a proof subset next and queue-building still
-paused.
+**Current block addendum:** Session 9.10 completed that proof subset at `$0.00`
+new model spend and downselected `merge_proposer_plus_veto_v1`,
+`expanded_layered_router_v1`, and `evidence_digest_then_judge_v1` for any later
+full rerun. Queue-building remains paused until one of those survivors clears
+the frozen benchmark and gates.
 
 ---
 
 ## Block log
+
+- **Session 9.10 (2026-04-21):** Implemented and ran the proof-first broader
+  method comparison from Session 9.9 on a bounded trap-heavy subset before any
+  full rerun.
+
+  **Scope held:** kept `benchmark_v1`, the frozen Session 4 gates, and the
+  Session 9.7 layered safety base fixed; did not queue-build; did not mutate
+  the benchmark; and did not run the full 152-case rerun inside the proof
+  session.
+
+  **Implementation:**
+  - Added `pipeline/identity/bakeoff_method_bakeoff_proof.py`.
+  - Added the top-level proof memo
+    `data/sprints/dedup/session9_10_method_bakeoff_proof_subset.md`.
+  - Added scored proof artifacts
+    `data/sprints/dedup/bakeoff_v2/scored/session9_10_method_bakeoff_proof_subset.json`,
+    `.md`, and `_manifest.json`.
+  - Logged the proof-first execution approval in `docs/DECISIONS.md`.
+
+  **Proof subset composition:** `29` cases = `9` Session 9.7 residual misses +
+  `5` Session 9.6 false merges + `5` Session 9.8 adjacent skip controls + `5`
+  expanded-family negatives + `5` hold-set current wins.
+
+  **Implemented contenders:** `expanded_layered_router_v1`,
+  `signature_router_v1`, `merge_proposer_plus_veto_v1`, and
+  `evidence_digest_then_judge_v1`.
+
+  **Proof result vs control:**
+  - frozen Session 9.7 control on this slice = `0` false merges, `9` missed
+    merges
+  - `merge_proposer_plus_veto_v1`: `5` recoveries, `4` blind-core blocker
+    recoveries, `0` false merges, `0` lost current wins
+  - `expanded_layered_router_v1`: `4` recoveries, `3` blind-core blocker
+    recoveries, `0` false merges, `0` lost current wins
+  - `signature_router_v1`: exact same decision vector as
+    `expanded_layered_router_v1`; dropped as redundant
+  - `evidence_digest_then_judge_v1`: `3` recoveries, `3` blind-core blocker
+    recoveries, `0` false merges, `0` lost current wins
+
+  **Downselect:** any later full rerun should keep only
+  `merge_proposer_plus_veto_v1`, `expanded_layered_router_v1`, and
+  `evidence_digest_then_judge_v1`.
+
+  **Interpretation:** Session 9.9's broader method-class continuation is now
+  evidence-backed enough to justify one capped full rerun. Queue-building is
+  still blocked, but freezing immediately at the Session 9.7 fallback endpoint
+  is no longer the best-supported next move.
+
+  **Spend:** `$0.00` incremental external API cost. Sprint 6 spend remains
+  `$319.51` against the `$450` ceiling.
+
+  **Recommendation after Session 9.10:** run the full 152-case rerun on only
+  the three downselected survivors. If they all fail the frozen production
+  gate, freeze at the best surviving non-production artifact rather than
+  opening another redesign inside the same session.
 
 - **Session 9.9 (2026-04-21):** Converted the Session 9.8 freeze finding into a
   broader, budget-bounded method-bakeoff design after the user explicitly kept

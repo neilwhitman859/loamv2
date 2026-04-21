@@ -4,6 +4,15 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-21: Session 9.10 is approved as a proof-first method comparison before any full rerun
+
+User approved moving from the Session 9.9 design memo into actual execution,
+but only through the bounded proof subset first. Decision: implement the new
+method classes on the proof slice, compare them against the frozen Session 9.7
+control, and stop there unless the proof itself justifies a later 152-case
+rerun. This keeps `benchmark_v1`, the Session 4 gates, and the Session 9.7
+safety base fixed while preserving the queue-building block.
+
 ### 2026-04-21: Freeze prompt overridden; broadened adjudication redesign is explicitly authorized
 
 The default Session 9.7 prompt was to publish a freeze memo and stop after the
