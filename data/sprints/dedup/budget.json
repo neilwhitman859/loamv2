@@ -13,9 +13,10 @@
     "B6.5x_chrome_and_coverage": 65.13,
     "S6_first_real_bakeoff_v1": 2.89,
     "S8_to_S9_3_v2_rebuild_total": 5.58,
-    "S9_4_post_rerun_failure_audit": 0.00
+    "S9_4_post_rerun_failure_audit": 0.00,
+    "S9_5_freeze_or_rebuild_strategy": 0.00
   },
-  "remaining_projected_b6_5_thru_close": "queue-building remains blocked; no further Sprint 6 spend should be committed until the user explicitly chooses between freezing the current adjudication path or authorizing a larger redesign",
+  "remaining_projected_b6_5_thru_close": "queue-building remains blocked; no further Sprint 6 spend should be committed until the user explicitly chooses between freezing the current adjudication path or approving the bounded Session 9.6 routed-specialist proof under the $20 exploration cap",
   "remaining_sprint_ceiling": 131.05,
   "paths_for_continuation": {
     "legacy_path_1_pragmatic": {
@@ -34,5 +35,5 @@
       "status": "archived as pre-rebuild analysis"
     }
   },
-  "note": "The legacy B6.5a partial path remains useful as benchmark and failure-mode context. The merge-only Codex rebuild has now completed the v2 rerun sequence through Session 9.3, and Session 9.4's audit found no credible narrow redesign that would recover recall without risking the newly-fixed false-merge families. Queue-building is still blocked. Any further Sprint 6 spend now requires an explicit user decision: freeze the adjudication path as a non-execution-ready artifact, or authorize a larger redesign."
+  "note": "The legacy B6.5a partial path remains useful as benchmark and failure-mode context. The merge-only Codex rebuild has now completed the v2 rerun sequence through Session 9.5. Session 9.4 found no credible narrow redesign, and Session 9.5 narrowed the only bounded continuation to a routed pattern-family specialist proof on the frozen 152-case benchmark. Queue-building is still blocked. Any further Sprint 6 spend now requires an explicit user decision: freeze the adjudication path as a non-execution-ready artifact, or approve the Session 9.6 specialist proof under the $20 exploration cap."
 }

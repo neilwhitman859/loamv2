@@ -118,5 +118,13 @@
     "shape": "audit",
     "spent": 0.00,
     "notes": "Published data/sprints/dedup/session9_4_post_rerun_failure_audit.md. The audit showed the current blocker is mainly soft missed merges / over-flagging rather than residual false merges, with 49 of 51 true-merge cases missed by all three contenders and 39 cases that both single models had merged in Session 8 now downgraded to non-MERGE in Session 9.3. Dominant miss families were 11.4.h orthographic variants, 11.4.f generational succession, 11.4.n global multi-country brands, and 11.4.p merchant prefixes. The tempting narrow rescue (relaxing sparse official evidence) was rejected because it overlaps the same packet signatures that fixed prior false merges. Recommendation: freeze the current adjudication path as a non-execution-ready artifact unless the user explicitly approves a larger redesign."
+  },
+  {
+    "id": "S9.5",
+    "date": "2026-04-21",
+    "title": "Freeze-or-rebuild strategy",
+    "shape": "strategy",
+    "spent": 0.00,
+    "notes": "Published data/sprints/dedup/session9_5_freeze_or_rebuild_strategy.md and follow-on prompt data/session_prompts/s9_6_pattern_specialist_proof_if_approved.md. Compared the three remaining redesign families under the frozen benchmark and Session 4 gates plus the new $20 exploration cap. Recommendation: if Sprint 6 continues, test routed pattern-family specialists on top of the safe gemini_guardrailed_v2 base rather than another global packet relaxation. The four dominant families 11.4.h / 11.4.f / 11.4.n / 11.4.p cover 47 of 51 merge cases and 26 skip cases in the benchmark, including all 16 known false-merge pattern cases, so the smallest honest proof is a 73-case routed bundle scored back against the full 152-case benchmark. Queue-building remains blocked pending an explicit user choice to freeze or approve that bounded proof."
   }
 ]

@@ -260,7 +260,7 @@ constraints. **`ENRICHMENT_ENABLED=false` feature flag on `enrich-wine` stays OF
 through Sprint 3 into Sprint 5** until voice module + L3 fact-check gate + grape
 repair compound + AI-disclaimer UI all land.
 
-**Sprint sequence:** 1 (Build, done) → 2 (Audit, done) → 3 (Fix, done) → 4 (Demo, done) → 5 (AI Bakeoff, done) → **6 (active): LWIN import + producer dedup — current path is the merge-only Codex rebuild. The frozen Session 4 adjudication bakeoff has now been rerun in v2, audited in Session 9, proof-cleared in Session 9.2 on fresh `v2.1` packets, and fully rerun in Session 9.3; queue-building remains blocked because no contender cleared the frozen production or fallback gates** → Sprint 7: wine dedup → Sprint 8: prompt v2 + L3 fact-check gate + re-enrichment + share. The bake-off ranked models under the *current* prompt; re-enrichment is deferred until prompt + gate work lands so we don't bake in the current-prompt ceiling.
+**Sprint sequence:** 1 (Build, done) → 2 (Audit, done) → 3 (Fix, done) → 4 (Demo, done) → 5 (AI Bakeoff, done) → **6 (active): LWIN import + producer dedup — current path is the merge-only Codex rebuild. The frozen Session 4 adjudication bakeoff has now been rerun in v2, audited in Session 9, proof-cleared in Session 9.2 on fresh `v2.1` packets, fully rerun in Session 9.3, failure-audited in Session 9.4, and strategy-scoped in Session 9.5; queue-building remains blocked because no contender cleared the frozen production or fallback gates, and the only bounded continuation now on the table is a routed pattern-specialist proof under the user's `$20` exploration cap** → Sprint 7: wine dedup → Sprint 8: prompt v2 + L3 fact-check gate + re-enrichment + share. The bake-off ranked models under the *current* prompt; re-enrichment is deferred until prompt + gate work lands so we don't bake in the current-prompt ceiling.
 Sprint 4 plan: [`data/sprints/demo/plan.md`](data/sprints/demo/plan.md). Sprint 5 plan: [`data/sprints/ai-bakeoff/plan.md`](data/sprints/ai-bakeoff/plan.md). Sprint 5 outcome: [`bakeoff/scores/tournament_results.md`](bakeoff/scores/tournament_results.md). See `data/dashboard.html` for live progress.
 
 **Always query the DB for live numbers.** Never rely on hardcoded counts in this file.
@@ -413,6 +413,7 @@ Completed rebuild artifacts so far:
 - `data/sprints/dedup/session7_bakeoff_v2_design.md`
 - `data/sprints/dedup/session9_v3_continuity_audit.md`
 - `data/sprints/dedup/session9_4_post_rerun_failure_audit.md`
+- `data/sprints/dedup/session9_5_freeze_or_rebuild_strategy.md`
 - `pipeline/identity/bakeoff_packet_v1.py`
 - `pipeline/identity/bakeoff_harness_v1.py`
 - `pipeline/identity/bakeoff_run_v1.py`
@@ -423,7 +424,7 @@ Completed rebuild artifacts so far:
 - `data/sprints/dedup/bakeoff_v2/` (packet v2, request wrappers, raw outputs, normalized outputs, scored summaries, manifests, proof gate check, and v1-vs-v2 diff outputs)
 
 Immediate next session target:
-- user decision point: either freeze the current adjudication path as a non-execution-ready benchmark artifact, or explicitly authorize a larger redesign session; do not start queue-building and do not spend on another narrow rerun
+- user decision point: either freeze the current adjudication path as a non-execution-ready benchmark artifact, or explicitly approve the bounded `73`-case routed pattern-specialist proof in `data/session_prompts/s9_6_pattern_specialist_proof_if_approved.md`; do not start queue-building and do not spend on another narrow rerun or any all-pairs build
 
 Historical artifacts worth keeping:
 - B6.2 + B6.2.1 + B6.2.2 + B6.3 + B6.4 + B6.5a-partial outputs

@@ -766,6 +766,25 @@
   current adjudication path as a non-execution-ready artifact and require an
   explicit user decision before any further Sprint 6 spend.
 
+- **Session 9.5 (2026-04-21):** Published
+  `data/sprints/dedup/session9_5_freeze_or_rebuild_strategy.md`, the larger
+  redesign-selection memo, plus the follow-on prompt
+  `data/session_prompts/s9_6_pattern_specialist_proof_if_approved.md`. The memo
+  compared the three remaining redesign families under the frozen Session 4
+  benchmark and gates plus the new `$20` exploration cap. Recommendation: if
+  Sprint 6 continues, test **pattern-family specialists** layered on the safe
+  `gemini_guardrailed_v2` base rather than another global packet tweak.
+  Evidence: the four dominant families `11.4.h`, `11.4.f`, `11.4.n`, and
+  `11.4.p` cover `47 / 51` merge cases and `26` skip cases in the benchmark,
+  including all `16` known false-merge pattern cases. Smallest honest proof:
+  route only those `73` cases through specialists, keep the remaining `79` on
+  the base path, and score the composite result across the full `152`.
+  Estimated external spend stays well below cap: measured `Haiku + Serper`
+  economics imply roughly `$0.44` per full 73-case pass and a conservative
+  `$5-10` proof budget. Queue-building remains blocked; the next user decision
+  is now specific: freeze the adjudication path, or approve the bounded
+  specialist proof.
+
 ---
 
 ## Done
