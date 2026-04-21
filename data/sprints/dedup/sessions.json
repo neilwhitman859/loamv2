@@ -1,5 +1,13 @@
 [
   {
+    "id": "S9.12",
+    "date": "2026-04-21",
+    "title": "High-level next steps viability review",
+    "shape": "strategy",
+    "spent": 0.00,
+    "notes": "Published data/sprints/dedup/session9_12_high_level_next_steps_viability_review.md plus the follow-on decision prompt data/session_prompts/s9_13_explicit_project_decision_after_viability_review.md. Session 9.12 did not design or run anything new; it treated Session 9.11's full-rerun failure as a project-level question. Conclusion: the current producer-dedup continuation is spent. The honest posture is freeze-first: preserve session9_7_layered_safety_sonnet_r2_narrow as the best surviving non-production artifact, do not queue-build, and make the next session an explicit founder-level decision on whether Loam continues under a narrower honest scope or gets shelved. Budget remained $0.00."
+  },
+  {
     "id": "S9.11",
     "date": "2026-04-21",
     "title": "Full method bakeoff rerun",

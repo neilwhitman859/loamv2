@@ -1,8 +1,8 @@
 # Sprint 6: Dedup (Producers) — journal
 
 **Opened:** 2026-04-16
-**Status:** Active — merge-only Codex rebuild; the best surviving artifact is still the fallback-safe Session 9.7 layered control, and production readiness remains unproven under the frozen gates.
-**Current block:** Session 9.11 completed the capped full 152-case rerun of the three broader proof survivors. All three reopened false merges at full scale, so queue-building remains blocked. The evidence still points to the Session 9.7 fallback artifact as the best surviving non-production result, but the next session is now a high-level viability review before any freeze / closeout.
+**Status:** Active — producer dedup build work is now recommended frozen at the Session 9.7 layered fallback artifact pending an explicit project-level decision about Loam's scope.
+**Current block:** Session 9.12 completed the high-level viability review and concluded that the current dedup continuation is spent. Queue-building remains blocked; the next move is now an explicit founder-level decision, not another automatic redesign.
 
 **Status addendum (2026-04-21):** Session 9.7 now supplies a layered fallback
 contender that clears the fallback gate but still fails the frozen production
@@ -18,10 +18,42 @@ of an automatic freeze / closeout memo.
 **Strategic addendum:** the key next question is no longer just which artifact
 to freeze. It is whether Loam should continue at all if producer dedup cannot
 be made trustworthy enough for production.
+**Session 9.12 outcome addendum:** the viability memo recommends freezing the
+dedup line at `session9_7_layered_safety_sonnet_r2_narrow`, preserving Loam as
+an asset for one explicit project decision, and forbidding new reruns or
+queue-building unless a genuinely new thesis is approved later.
 
 ---
 
 ## Block log
+
+- **Session 9.12 (2026-04-21):** Published the project-level viability memo
+  `data/sprints/dedup/session9_12_high_level_next_steps_viability_review.md`
+  after the Session 9.11 full-rerun failure.
+
+  **Scope held:** no new contender design, no new reruns or proof subsets, no
+  queue-building, no benchmark mutation, no all-pairs execution, and no
+  detailed shutdown planning.
+
+  **Live state referenced:** `33,225` active producers, `224,316` active
+  wines, `125,934` vintages, `40,193` price rows, `30,339` score rows,
+  `43,131` grape links, `3,662` appellations, `5,485` wine insights,
+  `wine_lookups = 7`, and only `14` producers with any real metadata.
+
+  **Memo conclusion:**
+  - Session 9.11 closed the current technical continuation cleanly: broader
+    methods can recover recall but reopen too many false merges at full scale.
+  - Producer dedup is central enough to Loam's trust model that continuing with
+    compromised identity would undercut the product thesis.
+  - The broader Loam asset is still real enough that shutdown is not forced by
+    the evidence today.
+  - Therefore the honest posture is: freeze the dedup line first, then make one
+    explicit project decision instead of drifting into more redesign.
+
+  **Recommendation after Session 9.12:** keep
+  `session9_7_layered_safety_sonnet_r2_narrow` as the best surviving
+  non-production artifact, do not queue-build, and use the next session only to
+  decide whether Loam continues under a narrower honest scope or gets shelved.
 
 - **Session 9.11 (2026-04-21):** Ran the full 152-case rerun for the three
   broader method survivors that cleared the Session 9.10 proof subset.

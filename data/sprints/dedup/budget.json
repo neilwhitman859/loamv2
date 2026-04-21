@@ -20,9 +20,10 @@
     "S9_8_recover_production_from_layered_fallback": 0.00,
     "S9_9_method_bakeoff_design": 0.00,
     "S9_10_method_bakeoff_proof_subset": 0.00,
-    "S9_11_full_method_bakeoff_rerun": 0.00
+    "S9_11_full_method_bakeoff_rerun": 0.00,
+    "S9_12_high_level_next_steps_viability_review": 0.00
   },
-  "remaining_projected_b6_5_thru_close": "Session 9.11 completed the capped full rerun and all three broader methods failed to beat the Session 9.7 fallback control under the frozen gates. Recommended next spend remains $0: use the next session for a high-level viability review before any freeze closeout or new redesign. If trustworthy producer dedup cannot be made credible, freeze or shut down rather than spend into queue-building on a compromised foundation.",
+  "remaining_projected_b6_5_thru_close": "Session 9.12 completed the high-level viability review and recommended a freeze-first posture. Recommended next spend remains $0: hold one explicit project-decision session, do not queue-build, and do not reopen producer dedup unless a genuinely new thesis is approved. If that decision does not surface an honest narrower scope, shelve rather than drift into more redesign.",
   "remaining_sprint_ceiling": 130.49,
   "paths_for_continuation": {
     "legacy_path_1_pragmatic": {
@@ -41,5 +42,5 @@
       "status": "archived as pre-rebuild analysis"
     }
   },
-  "note": "The legacy B6.5a partial path remains useful as benchmark and failure-mode context. The leading artifact remains session9_7_layered_safety_sonnet_r2_narrow: 0 false merges overall, fallback gate pass, production gate fail. Session 9.10 showed that three broader method classes could recover 3-5 merges on a 29-case trap-heavy proof subset with 0 false merges, but Session 9.11 showed those same methods reopen 5-9 false merges on the full benchmark. Queue-building remains blocked; the immediate next step is now a high-level viability review at $0 additional spend, with freeze or shutdown on the table if no trustworthy producer-dedup path remains."
+  "note": "The legacy B6.5a partial path remains useful as benchmark and failure-mode context. The leading artifact remains session9_7_layered_safety_sonnet_r2_narrow: 0 false merges overall, fallback gate pass, production gate fail. Session 9.10 showed that three broader method classes could recover 3-5 merges on a 29-case trap-heavy proof subset with 0 false merges, but Session 9.11 showed those same methods reopen 5-9 false merges on the full benchmark. Session 9.12 then concluded that the current continuation is spent. Queue-building remains blocked; the immediate next step is now an explicit project decision at $0 additional spend, with freeze-first recommended and shutdown still on the table if no honest narrower scope remains."
 }
