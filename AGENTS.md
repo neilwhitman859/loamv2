@@ -74,6 +74,9 @@ Every session should close with four things:
 - `Open risks` — anything unresolved or shaky
 - `Next recommended session` — the exact best follow-on task
 
+When another session is clearly next, every session should also end with:
+- `Next session prompt` — a ready-to-run prompt file under `data/session_prompts/` (or the active sprint dir if more appropriate), and the final user-facing wrap-up should include that prompt inline plus the file path
+
 Guardrails:
 - If the work no longer fits one primary deliverable, stop and start a new session.
 - If a session produces no durable artifact, it probably was not scoped tightly enough.
@@ -166,6 +169,7 @@ When closing a session entry, rewrite it to include:
 - `Decisions made`
 - `Open risks`
 - `Next recommended session`
+- `Next session prompt` when a clear follow-on session exists
 
 **Sprint open:** Create sprint dir (`data/sprints/<name>/`), sessions.json,
 budget.json, journal.md. Update `data/sprints/current.json`.

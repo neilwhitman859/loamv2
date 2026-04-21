@@ -4,6 +4,10 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-20: Session wrap-ups should always hand over the next prompt when a clear follow-on session exists
+
+User asked to stop ending sessions with only a generic "next recommended session" when the next step is already well-defined. New rule: if another session is clearly next, the session closeout should include a ready-to-run next-session prompt, stored in `data/session_prompts/` (or the active sprint directory when more appropriate) and also surfaced directly in the final user-facing wrap-up. This turns the handoff into an executable artifact instead of a vague recommendation and reduces setup friction for the next chat.
+
 ### 2026-04-20: Producer dedup execution scope shifts to merge-only
 
 After the 100-pair blind core audit and broader bundle review, the safest path is to treat producer dedup as a **merge-quality problem first**, not an ownership-modeling problem. For production readiness, the execution-critical verdicts are now `MERGE`, `SKIP`, and `FLAGGED/UNRESOLVED`. `PARENT_CHILD` remains a valid long-term data model concept, but it is **out of the critical path** for getting producer dedup production-ready because sampled quality was too weak and the product value is lower than merge correctness.

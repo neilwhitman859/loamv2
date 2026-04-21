@@ -223,6 +223,10 @@ At the **end** of each session, write these four lines:
 3. `Next:` the single next session target
 4. `User review needed:` yes/no, and for what
 
+If the next session is already clear, add:
+
+5. `Next session prompt:` a ready-to-run prompt file path plus the exact prompt text you hand to the user
+
 ## What You Should Do From Your End
 
 Your role should be light but decisive:
