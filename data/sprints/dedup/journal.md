@@ -695,6 +695,30 @@
 
 ## Done
 
+- **S7 - adjudication bakeoff v2 design.** Produced
+  `data/sprints/dedup/session7_bakeoff_v2_design.md`, a durable postmortem +
+  redesign memo that keeps `benchmark_v1` and the Session 4 hard gates frozen,
+  explains why `session6_first_real_bakeoff_v1` failed, and defines the exact
+  packet / runner / contender changes to test next. Headline findings: (1) all
+  152 v1 packets had `retrieval = missing` and zero official-domain hits, so
+  the hardest merge-vs-split cases lacked the main disambiguator; (2) the
+  output contract made citation failure easy because the packet exposed nested
+  facts but too few legal citeable refs, which drove auditability collapse via
+  `broken_support_refs` / `broken_contradiction_refs`; (3) the
+  `haiku_gemini_consensus_v1` contender was built from raw child outputs, so it
+  inherited child-schema failures instead of absorbing them; (4) Sonnet was the
+  closest single contender on exact accuracy, but still false-merged shared-
+  surname splits and holdco / product-tier cases often enough to stay unsafe.
+  Recommended v2: packet v2 with a flat citeable evidence ledger + real
+  official-domain retrieval, ref-safe adjudicator prompt, normalized-child
+  consensus, explicit merge veto on the highest-risk contradiction families,
+  and a narrowed lineup centered on `sonnet_guardrailed_v2`,
+  `gemini_guardrailed_v2`, and `sonnet_gemini_consensus_v2` (with
+  `gpt5mini_guardrailed_v2` as backup swap if Gemini still looks too
+  merge-happy on the proof subset). Queue-building remains blocked until a full
+  v2 rerun clears both the production and fallback gates. Added next-session
+  prompt `data/session_prompts/s7_1_bakeoff_v2_build_and_run.md`. Spend: $0.
+
 - **B6.1 — Sprint 6 planning.** Plan locked at `data/sprints/dedup/plan.md`.
   Multiple rounds of design dialog (10 initial + 8 clarifying + 4 edge-case
   questions). Sprint reshaped three times in response to user input. Final

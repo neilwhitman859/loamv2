@@ -389,13 +389,14 @@ Completed rebuild artifacts so far:
 - `data/sprints/dedup/benchmark_v1.json` plus `data/sprints/dedup/benchmark_v1.md`
 - `data/sprints/dedup/evidence_packet_v1.md`
 - `data/sprints/dedup/session4_bakeoff_design.md`
+- `data/sprints/dedup/session7_bakeoff_v2_design.md`
 - `pipeline/identity/bakeoff_packet_v1.py`
 - `pipeline/identity/bakeoff_harness_v1.py`
 - `pipeline/identity/bakeoff_run_v1.py`
 - `data/sprints/dedup/bakeoff_v1/` (stored packets, stripped visible packets, request wrappers, normalized proof outputs, real raw contender outputs, normalized full-run outputs, scored proof run, and scored full-run outputs)
 
 Immediate next session target:
-- design the v2 adjudication bakeoff after reviewing why `session6_first_real_bakeoff_v1` failed the gates, then pick the exact packet/runner changes to test before any queue build
+- implement the Session 7 v2 redesign: build packet v2 with citeable evidence refs + official-domain retrieval, make the adjudicator prompt ref-safe, rebuild consensus on normalized child outputs, run the proof subset, then run the full v2 bakeoff before any queue build
 
 Historical artifacts worth keeping:
 - B6.2 + B6.2.1 + B6.2.2 + B6.3 + B6.4 + B6.5a-partial outputs
@@ -407,6 +408,8 @@ These are still useful for benchmark comparison and failure-mode mining, but the
 **Cheaper rigor-tier architecture for the rebuild:** external search retrieval + smaller adjudication model remains attractive (e.g. Haiku + Serper-style retrieval) because it is dramatically cheaper than full Sonnet web-search and better suited to pair-by-pair evidence packets. Session 4 locked the first adjudication bakeoff as a frozen, packet-based comparison among `haiku_single_v1`, `gemini_single_v1`, `gpt5mini_single_v1`, `haiku_gemini_consensus_v1`, and `sonnet_single_v1`, with a deterministic control reported separately but excluded from winner selection.
 
 **Session 6 real bakeoff outcome (2026-04-20):** `session6_first_real_bakeoff_v1` completed end-to-end across the full 152-case benchmark with raw, normalized, scored, manifest, and error-ledger artifacts under `data/sprints/dedup/bakeoff_v1/`. Frozen-model availability was preflight-verified; no silent substitutions were used. Result: **no contender cleared either the production gate or the fallback gate.** Best exact-accuracy contender was `sonnet_single_v1` at 73.7%, but it still failed on false merges and auditability/schema-validity. `gemini_single_v1` and `gpt5mini_single_v1` improved accuracy over Haiku but still false-merged. `haiku_single_v1` and `haiku_gemini_consensus_v1` were conservative but over-flagged and missed too many true merges. Queue-building stays blocked until a v2 bakeoff produces a real production path plus fallback.
+
+**Session 7 v2 design outcome (2026-04-20):** `session7_bakeoff_v2_design.md` locks the next move without changing `benchmark_v1` or the Session 4 hard gates. The memo's core findings: all 152 v1 packets had `retrieval = missing` and zero official-domain hits; the packet exposed too few legal citeable refs, driving widespread `broken_support_refs` / `broken_contradiction_refs`; the v1 consensus contender inherited child schema failures because it combined raw child outputs; and Sonnet, while best on exact accuracy, still false-merged shared-surname and holdco/product-tier cases often enough to remain unsafe. Recommended v2 scope: packet v2 with a flat citeable evidence ledger + real official-domain retrieval, ref-safe adjudicator prompt, normalized-child consensus, explicit merge veto on the highest-risk contradiction families, and a narrowed contender set centered on `sonnet_guardrailed_v2`, `gemini_guardrailed_v2`, and `sonnet_gemini_consensus_v2` (with `gpt5mini_guardrailed_v2` as backup swap). Queue-building remains blocked until the full v2 rerun clears both the production and fallback gates.
 
 **B6.4 DONE (2026-04-17, $24.51):** Calibration only — 600-pair stratified
 set, gold-labeled 367 pairs (200 proxy + 167 from Sonnet+web oracle). Ran

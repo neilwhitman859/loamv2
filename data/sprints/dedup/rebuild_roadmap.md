@@ -12,6 +12,7 @@ Working plan from the 2026-04-20 Codex audit. This is a focused rebuild for **pr
 - [x] Design evidence-packet schema
 - [x] Design broad bakeoff on methods and models
 - [x] Build packet generator + evaluation harness
+- [x] Diagnose v1 bakeoff failure and lock the v2 redesign
 - [ ] Build core adjudication queue
 - [ ] Build tail adjudication queue
 - [ ] Publish pre-execution scorecard
@@ -179,6 +180,6 @@ Rule:
 
 ## Immediate Next Steps
 
-1. Run the first adjudication bakeoff against the frozen contender set and choose one production path plus one fallback.
-2. Build execution queues only if the bakeoff clears the hard gates.
-3. Publish the pre-execution scorecard only after the winning path survives the hard gates.
+1. Implement `evidence_packet_v2`, the ref-safe adjudicator prompt, and normalized-child consensus exactly as specified in `session7_bakeoff_v2_design.md`.
+2. Run a small proof subset to verify zero hidden-field leaks and `schema_valid_rate = 1.00` for the v2 contenders before the full rerun.
+3. Run the full v2 adjudication bakeoff and only build execution queues if one production path plus one fallback path clear the hard gates.

@@ -62,5 +62,13 @@
     "shape": "evaluation",
     "spent": 2.89,
     "notes": "Ran the full frozen Session 4 contender set through the Session 5 packet/request/normalize/score path under canonical run name session6_first_real_bakeoff_v1. Added pipeline/identity/bakeoff_run_v1.py plus real runner/adapters for haiku_single_v1, gemini_single_v1, gpt5mini_single_v1, haiku_gemini_consensus_v1, and sonnet_single_v1. Preflight-verified frozen model availability with no silent substitutions. Wrote raw contender outputs in harness-compatible JSONL, normalized every row through the fail-closed Session 4 contract, and published the scored markdown/json summary, manifest, error ledger, core/tail breakdown, stratum breakdown, and winner-selection table. Outcome: no contender cleared either the production gate or the fallback gate, so queue-building remains blocked pending a v2 bakeoff redesign."
+  },
+  {
+    "id": "S7",
+    "date": "2026-04-20",
+    "title": "Adjudication bakeoff v2 design",
+    "shape": "design",
+    "spent": 0.00,
+    "notes": "Produced data/sprints/dedup/session7_bakeoff_v2_design.md, a durable v2 redesign memo based on the full session6_first_real_bakeoff_v1 artifacts. Locked conclusions without changing benchmark_v1 or the Session 4 hard gates: all 152 v1 packets had retrieval=missing with zero official-domain hits; the output contract exposed too few legal citeable refs and caused widespread broken_support_refs / broken_contradiction_refs; the v1 consensus contender was built from raw child outputs and inherited child schema failures; Sonnet was the closest single contender but still unsafe on shared-surname and holdco/product-tier false merges. Recommended v2 scope: packet v2 with a flat citeable evidence ledger + real official-domain retrieval, ref-safe adjudicator prompt, normalized-child consensus, merge veto on the highest-risk contradiction families, and a narrowed lineup centered on sonnet_guardrailed_v2, gemini_guardrailed_v2, and sonnet_gemini_consensus_v2 (with gpt5mini_guardrailed_v2 as backup swap). Queue-building remains blocked until the full v2 rerun clears both production and fallback gates. Added next-session prompt data/session_prompts/s7_1_bakeoff_v2_build_and_run.md."
   }
 ]
