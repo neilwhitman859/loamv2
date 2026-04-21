@@ -1,6 +1,6 @@
 {
   "budget": 20.00,
-  "spent": 0.00,
+  "spent": 2.082858,
   "sessions": {
     "S10_1_sprint_launch_and_method_naming": 0.00,
     "S10_2_identity_dossier_schema_and_candidate_inventory": 0.00,
@@ -8,9 +8,10 @@
     "S10_3_shortlist_generation_design": 0.00,
     "S10_4_selector_harness_design": 0.00,
     "S10_5_control_layer_design_and_proof_prep": 0.00,
-    "S10_6_bounded_proof_artifact_build": 0.00
+    "S10_6_bounded_proof_artifact_build": 0.00,
+    "S10_7_bounded_proof_execution": 2.082858
   },
-  "remaining_projected_s7_thru_phase1": "Launch, dossier design, shortlist design, selector-harness design, the Session 10.5 control-package spec, and the Session 10.6 proof-bundle build have all remained at $0. The first real spend should now be the bounded proof execution itself; keep that run cheap, stay within the $20 phase-1 ceiling, and only expand beyond proof mode if actual scored results show a real safety/usefulness improvement over Sprint 6's pairwise framing.",
-  "remaining_sprint_ceiling": 20.00,
-  "note": "Sprint 7 starts with a small proof-first budget because the project may still be shut down if the new producer-identity thesis does not look honest. The budget is therefore a gate, not an aspiration."
+  "remaining_projected_s7_thru_phase1": "Session 10.7 spent $2.08 on the first real bounded proof execution and the result was NO_GO: Phase A / B / D failed and Phase C is still blocked. Phase 1 still has budget left, but the next spend should happen only if the user explicitly authorizes a narrow failure-analysis continuation instead of freezing Sprint 7 at this checkpoint.",
+  "remaining_sprint_ceiling": 17.917142,
+  "note": "Sprint 7 starts with a small proof-first budget because the project may still be shut down if the new producer-identity thesis does not look honest. After Session 10.7, the budget remains a gate: do not spend the remaining ceiling automatically just because it exists."
 }

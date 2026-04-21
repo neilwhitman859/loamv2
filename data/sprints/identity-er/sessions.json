@@ -54,5 +54,13 @@
     "shape": "implementation",
     "spent": 0.00,
     "notes": "Built the frozen local selector_proof_v1 bundle and first execution scaffolding for Identity Dossier Select: hidden answer key, 48 Phase A selector packets, 8 Phase B escalation packets, Phase C shortlist manifest, normalized result schema, scorecard template, and Phase D accepted-edge/frontier write simulation, all under data/sprints/identity-er/proof/. Implemented the deterministic builder/scorer in pipeline/identity/selector_proof_v1.py, verified it against live read-only DB data, and confirmed the oracle self-check passes all four local phases with no packet-schema issues. The next session should run the first real bounded proof execution against the frozen packets, score the outputs, and write the Sprint 7 go/no-go memo."
+  },
+  {
+    "id": "S10.7",
+    "date": "2026-04-21",
+    "title": "Bounded proof execution + no-go memo",
+    "shape": "execution",
+    "spent": 2.082858,
+    "notes": "Ran the first real selector_proof_v1 execution on claude-sonnet-4-6 against the frozen 48 Phase A selector packets and 8 Phase B escalation packets, writing normalized results, raw response logs, a scored summary, a filled scorecard, an explicit Phase C blocked/runnability note, and the Sprint 7 go/no-go memo under data/sprints/identity-er/proof/. Result: NO_GO. Phase A stayed safe on false SAME_AS but still missed 7/16 SAME_AS, missed all 12/12 RELATED_BUT_DISTINCT, and resolved all 8 frontier UNSURE cases to non-UNSURE labels; Phase B recovered only 4/6 resolvable frontier cases, reopened 1 false RELATED_BUT_DISTINCT, and still resolved both expected-UNSURE shortlist-gap probes to NONE; Phase D reopened 4 contradictory overwrite attempts; and Phase C remains blocked because there is still no reusable shortlist_generation_v1 runner outside the proof scaffolding. The next honest session is failure analysis only if the user explicitly wants Sprint 7 to continue."
   }
 ]

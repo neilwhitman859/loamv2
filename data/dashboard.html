@@ -291,24 +291,24 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">Sprint 7 &middot; Producer identity ER &middot; <!--updated-->updated 2026-04-21 18:15 ET<!--/updated--></div>
+  <div class="meta">Sprint 7 &middot; Producer identity ER &middot; <!--updated-->updated 2026-04-21 19:27 ET<!--/updated--></div>
 </div>
 
 <div class="session-strip">
   <div class="session-cell">
     <div class="s-label">Current session</div>
-    <div class="s-cost">10.6</div>
-    <div class="s-detail">Proof bundle built &middot; 48 selector packets &middot; 8 escalation packets &middot; oracle self-check green</div>
+    <div class="s-cost">10.7</div>
+    <div class="s-detail">Bounded proof executed &middot; Sonnet 4.6 &middot; NO-GO memo written</div>
   </div>
   <div class="session-cell">
     <div class="s-label">Session spend</div>
-    <div class="s-cost">$0.00</div>
-    <div class="s-detail">protocol-only session &middot; no model calls</div>
+    <div class="s-cost">$2.08</div>
+    <div class="s-detail">48 selector packets &middot; 8 escalation packets &middot; ~626k total tokens</div>
   </div>
   <div class="session-cell total">
     <div class="s-label">Phase 1 ceiling</div>
     <div class="s-cost">$20.00</div>
-    <div class="s-detail">$20.00 remaining</div>
+    <div class="s-detail">$17.92 remaining</div>
   </div>
 </div>
 
@@ -324,10 +324,10 @@
     <div class="pstats" style="font-size:11.5px;">no human review at scale &middot; fixed budget &middot; abstention beats false merges</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">method frame</div>
     <div class="progress-bar"><div class="progress-fill" style="width: 78%"></div></div>
-    <div class="pstats" style="font-size:11.5px;"><code>producer_dossier_v1</code>, source inventory, edge taxonomy, shortlist generation, selector harness, escalation dossier, accepted-edge rules, and the frozen proof bundle are in place &middot; bounded proof execution is next</div>
+    <div class="pstats" style="font-size:11.5px;"><code>producer_dossier_v1</code>, source inventory, edge taxonomy, shortlist generation, selector harness, escalation dossier, accepted-edge rules, frozen proof bundle, and the first real proof run are now on disk</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div>
-    <div class="progress-bar"><div class="progress-fill" style="width: 74%"></div></div>
-    <div class="pstats" style="font-size:11.5px;">Step 8 is now complete at <code>$0</code>; the next artifact is <code>s10_7_bounded_proof_execution.md</code></div>
+    <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
+    <div class="pstats" style="font-size:11.5px;">Step 9 completed at <code>$2.08</code> on <code>claude-sonnet-4-6</code> &middot; result: <code>NO_GO</code> for builder implementation because Phase A / B / D failed and Phase C is still blocked</div>
   </div>
   <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current doctrine:</strong> compare identities, not raw pairs. Build a reusable producer dossier, generate a small shortlist, select best match or <code>none</code>, represent <code>RELATED_BUT_DISTINCT</code> explicitly, and merge only from accepted <code>SAME_AS</code> edges.</div>
   <ul class="steps">
@@ -339,7 +339,7 @@
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 6 &mdash; Add AI-only escalation dossier</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 7 &mdash; Define accepted-edge and negative-edge rules</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 8 &mdash; Build the bounded proof bundle and local scorer before any broader implementation</span></li>
-    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 9 &mdash; Run the bounded proof execution and write the go / no-go memo</span></li>
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 9 &mdash; Run the bounded proof execution and write the go / no-go memo</span></li>
   </ul>
 </div>
 
@@ -387,14 +387,14 @@
   </table>
   <div class="vitals">
     <table>
-      <tr><td>Live canonical snapshot</td><td>33,281 producers &middot; 225,281 wines &middot; 125,934 vintages</td></tr>
+      <tr><td>Live canonical snapshot</td><td>33,281 producers &middot; 224,316 wines &middot; 125,934 vintages</td></tr>
       <tr><td>Sprint 6 carry-over</td><td>pairwise benchmark and failure-mode corpus preserved; best artifact remains <code>session9_7_layered_safety_sonnet_r2_narrow</code></td></tr>
       <tr><td>Method name</td><td><code>identity_dossier_select_v1</code> (&ldquo;Identity Dossier Select&rdquo;)</td></tr>
-      <tr><td>Latest artifact</td><td><code>data/sprints/identity-er/proof/</code> + <code>selector_proof_v1.py</code> &mdash; the frozen local proof bundle, scorer, and accepted-edge/frontier write simulation now exist on disk</td></tr>
-      <tr><td>Immediate next artifact</td><td><code>s10_7_bounded_proof_execution.md</code> &mdash; run the first real proof execution against the frozen packets and write the go / no-go memo</td></tr>
-      <tr><td>After that</td><td>bounded proof execution &rarr; go / no-go memo &rarr; continue, reshape, or stop</td></tr>
-      <tr><td>Execution status</td><td>Step 8 is complete at <code>$0</code>; the bundle is locally validated, no producer merges are active, and no model outputs or DB writes exist yet</td></tr>
-      <tr><td>Primary risk</td><td>the local oracle pass proves scaffolding coherence, not real selector quality. The next session still has to show that actual Phase A / Phase B model outputs can clear the frozen gates without Phase C quietly turning into unplanned builder work.</td></tr>
+      <tr><td>Latest artifact</td><td><code>selector_proof_execution_summary_v1.json</code>, <code>selector_proof_scorecard_v1.md</code>, and <code>selector_proof_go_no_go_memo_v1.md</code> under <code>data/sprints/identity-er/proof/</code></td></tr>
+      <tr><td>Immediate next artifact</td><td><code>s10_8_selector_proof_failure_analysis.md</code> &mdash; only if the user explicitly wants Sprint 7 to continue after the current no-go</td></tr>
+      <tr><td>After that</td><td>user decision &rarr; failure analysis or freeze Sprint 7</td></tr>
+      <tr><td>Execution status</td><td>Session 10.7 spent <code>$2.08</code> on <code>claude-sonnet-4-6</code>; Phase A, Phase B, and Phase D failed, Phase C is still blocked, and no producer merges or DB writes were attempted</td></tr>
+      <tr><td>Primary risk</td><td>the selector is conservative in the wrong places: it missed <code>7 / 16</code> `SAME_AS`, missed all <code>12 / 12</code> `RELATED_BUT_DISTINCT`, and collapsed all <code>8</code> frontier `UNSURE` cases to non-`UNSURE` labels before escalation could behave consistently.</td></tr>
     </table>
   </div>
 </div>
@@ -444,16 +444,16 @@
       <td>Session 10.6 built the frozen proof bundle, local scorer, and accepted-edge/frontier write simulator under <code>selector_proof_v1.md</code> with oracle self-check passing all four local phases</td>
       <td class="num">$0</td>
     </tr>
-    <tr style="background:#fff4e5;">
+    <tr>
       <td>Bounded proof execution + go / no-go memo</td>
-      <td>next</td>
-      <td>Run the first real proof execution against the frozen packet bundle, score actual Phase A / Phase B outputs, and document whether Phase C is runnable from existing shortlist code or still blocked</td>
-      <td class="num">&le;$20 phase 1</td>
+      <td>done</td>
+      <td>Session 10.7 ran the first real proof on <code>claude-sonnet-4-6</code> at <code>$2.08</code> and returned <code>NO_GO</code>: Phase A / B / D failed and Phase C is still blocked</td>
+      <td class="num">$2.08</td>
     </tr>
     <tr style="background:#fff4e5;">
-      <td><strong>Next user touchpoint</strong> &mdash; start Session 10.7 bounded proof execution</td>
+      <td><strong>Next user touchpoint</strong> &mdash; review Session 10.7 no-go result</td>
       <td>&mdash;</td>
-      <td>Recommended path: keep the proof bundle frozen, run only enough model traffic to execute the bounded Phase A / Phase B proof honestly, and stop early if a hard gate fails or if Phase C is blocked without inventing a shortcut. Autonomous continuation remains <code>yes</code> because the artifact boundary is now real.</td>
+      <td>Recommended path: do not open builder work. Decide whether to authorize a narrow failure-analysis session against the exact Session 10.7 miss families and Phase D contradictions, or freeze Sprint 7 at this no-go checkpoint. Autonomous continuation is now <code>no</code>.</td>
       <td class="num">&mdash;</td>
     </tr>
   </table>
@@ -532,7 +532,7 @@
 
 <div class="section-label">Key numbers (DB state)</div>
 <div class="numbers">
-  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">225,281</div></div>
+  <div class="n-item"><div class="n-label">Wines</div><div class="n-value">224,316</div></div>
   <div class="n-item"><div class="n-label">Producers</div><div class="n-value">33,281</div></div>
   <div class="n-item"><div class="n-label">Vintages</div><div class="n-value">125,934</div></div>
   <div class="n-item"><div class="n-label">Prices</div><div class="n-value">40,193</div></div>
@@ -563,8 +563,8 @@
         <tr><td style="color:var(--muted);">Sprint 4 Demo</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$37.44</td></tr>
         <tr><td style="color:var(--muted);">Sprint 5 AI Bakeoff</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$55.00</td></tr>
         <tr><td style="color:var(--muted);">Sprint 6 Producer Dedup</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$319.51</td></tr>
-        <tr><td style="color:var(--accent); font-weight:700;">Sprint 7 Producer Identity ER</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$0.00</td></tr>
-        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Total project spend</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$411.95</td></tr>
+        <tr><td style="color:var(--accent); font-weight:700;">Sprint 7 Producer Identity ER</td><td style="text-align:right; font-weight:700; color:var(--accent); font-variant-numeric: tabular-nums;">$2.08</td></tr>
+        <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Total project spend</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$414.03</td></tr>
       </table>
     </div>
     <div>
@@ -577,8 +577,9 @@
         <tr><td style="color:var(--muted);">Session 10.4 selector harness</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
         <tr><td style="color:var(--muted);">Session 10.5 control package</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
         <tr><td style="color:var(--muted);">Session 10.6 proof build</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
+        <tr><td style="color:var(--muted);">Session 10.7 proof execution</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$2.08</td></tr>
         <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Phase 1 ceiling</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$20.00</td></tr>
-        <tr><td style="color:var(--green);">Remaining</td><td style="text-align:right; font-variant-numeric: tabular-nums; color:var(--green);">$20.00</td></tr>
+        <tr><td style="color:var(--green);">Remaining</td><td style="text-align:right; font-variant-numeric: tabular-nums; color:var(--green);">$17.92</td></tr>
       </table>
     </div>
   </div>

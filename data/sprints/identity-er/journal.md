@@ -2,10 +2,12 @@
 
 **Opened:** 2026-04-21
 **Status:** Active
-**Current block:** Session 10.6 built the frozen proof bundle and local scorer
-stack. The next honest step is Session 10.7: run the first bounded proof
-execution against the frozen Phase A / Phase B packets, determine whether Phase
-C is runnable from existing shortlist code, and write the go / no-go memo.
+**Current block:** Session 10.7 ran the first real bounded proof on
+`claude-sonnet-4-6` for `$2.08` and returned `NO_GO`. Phase A, Phase B, and
+Phase D all failed, and Phase C remains blocked because no reusable
+`shortlist_generation_v1` runner exists outside the proof scaffolding. The next
+honest step is Session 10.8 failure analysis only if the user explicitly wants
+Sprint 7 to continue; otherwise freeze at this checkpoint.
 
 ---
 
@@ -205,3 +207,40 @@ C is runnable from existing shortlist code, and write the go / no-go memo.
   design and execution. Session 10.7 can spend the first proof budget on
   bounded packet execution and scoring instead of inventing file layout,
   schema glue, or write-simulation logic mid-run.
+
+- **Session 10.7 (2026-04-21):** ran the first real bounded proof against the
+  frozen `selector_proof_v1` bundle.
+
+  **Scope held:** one model pass only on the frozen Phase A / Phase B packets,
+  no DB writes, no policy widening, no proof-set mutation, no benchmark edits,
+  and no Phase C shortcut implementation.
+
+  **Artifacts produced:**
+  - `proof/selector_proof_phase_a_results_v1.jsonl`
+  - `proof/selector_proof_phase_b_results_v1.jsonl`
+  - `proof/selector_proof_phase_a_raw_v1.jsonl`
+  - `proof/selector_proof_phase_b_raw_v1.jsonl`
+  - `proof/selector_proof_execution_summary_v1.json`
+  - `proof/selector_proof_scorecard_v1.md`
+  - `proof/selector_proof_phase_c_runnability_v1.md`
+  - `proof/selector_proof_go_no_go_memo_v1.md`
+  - `s10_8_selector_proof_failure_analysis.md`
+
+  **Execution facts locked by the run:**
+  - the first real proof used `claude-sonnet-4-6` and spent `$2.08`, staying
+    inside the Sprint 7 Phase 1 ceiling
+  - Phase A stayed safe on false `SAME_AS` (`0`) but still failed the selector
+    gate: `7 / 16` `SAME_AS` misses, `12 / 12` `RELATED_BUT_DISTINCT` misses,
+    and all `8` frontier `UNSURE` cases collapsed to non-`UNSURE` labels
+  - Phase B also failed: `4 / 8` exact hits, `4 / 6` resolvable-frontier
+    recoveries, `1` false `RELATED_BUT_DISTINCT`, and both expected-`UNSURE`
+    shortlist-gap probes resolved to `NONE`
+  - Phase D reopened `4` contradictory overwrite attempts because escalation
+    tried to recover cases the selector had already written as `NONE`
+  - Phase C is now explicitly blocked, not just deferred: no reusable
+    shortlist-builder implementation exists yet outside the proof scaffolding
+
+  **Why this matters:** Sprint 7 now has its first real outcome, and it is not
+  strong enough to justify builder implementation. The next move is not "build
+  more"; it is an explicit decision on whether the failure families deserve one
+  narrow analysis pass or whether this sprint should freeze here.

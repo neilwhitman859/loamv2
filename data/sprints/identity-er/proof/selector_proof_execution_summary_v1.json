@@ -1,0 +1,2603 @@
+{
+  "execution": {
+    "memo_path": "data\\sprints\\identity-er\\proof\\selector_proof_go_no_go_memo_v1.md",
+    "model": "claude-sonnet-4-6",
+    "phase_a_raw_path": "data\\sprints\\identity-er\\proof\\selector_proof_phase_a_raw_v1.jsonl",
+    "phase_a_results_path": "data\\sprints\\identity-er\\proof\\selector_proof_phase_a_results_v1.jsonl",
+    "phase_b_raw_path": "data\\sprints\\identity-er\\proof\\selector_proof_phase_b_raw_v1.jsonl",
+    "phase_b_results_path": "data\\sprints\\identity-er\\proof\\selector_proof_phase_b_results_v1.jsonl",
+    "phase_c_note_path": "data\\sprints\\identity-er\\proof\\selector_proof_phase_c_runnability_v1.md",
+    "scorecard_path": "data\\sprints\\identity-er\\proof\\selector_proof_scorecard_v1.md",
+    "summary_path": "data\\sprints\\identity-er\\proof\\selector_proof_execution_summary_v1.json"
+  },
+  "overall": {
+    "go": false,
+    "hard_failures": [
+      "Phase A failed the frozen selector gate.",
+      "Phase B failed the frozen escalation gate.",
+      "Phase D failed the accepted-edge/frontier write-simulation gate.",
+      "Phase C is still blocked because no honest shortlist_generation_v1 runner exists yet."
+    ],
+    "recommendation": "NO-GO: at least one executed proof layer failed before shortlist-builder implementation was even in play, so Sprint 7 should stay in proof/failure-analysis mode."
+  },
+  "phase_a": {
+    "case_count": 48,
+    "choice_valid_rate": 1.0,
+    "evidence_ref_integrity_rate": 0.9583,
+    "false_none": 18,
+    "false_related": 1,
+    "false_same_as": 0,
+    "missed_related": 12,
+    "missed_same_as": 7,
+    "over_escalation": 1,
+    "passes": false,
+    "schema_valid_rate": 1.0,
+    "unsafe_frontier_resolution": 8
+  },
+  "phase_b": {
+    "case_count": 8,
+    "escalation_block_scope_valid_rate": 0.75,
+    "escalation_choice_valid_rate": 1.0,
+    "escalation_evidence_ref_integrity_rate": 0.75,
+    "escalation_schema_valid_rate": 1.0,
+    "exact_escalation_label_hits": 4,
+    "false_related_after_escalation": 1,
+    "false_same_as_after_escalation": 0,
+    "passes": false,
+    "resolvable_frontier_recovery": 4,
+    "unsafe_resolution_of_expected_unsure": 2
+  },
+  "phase_c": {
+    "provided": false
+  },
+  "phase_c_status": {
+    "evidence": [
+      "Only `pipeline/identity/selector_proof_v1.py` references `shortlist_generation_v1` in executable code.",
+      "`data/sprints/identity-er/proof/phase_c_shortlist_manifest.json` is a frozen expectation object, not a generated shortlist run.",
+      "No other `pipeline/identity/*.py` file provides a reusable shortlist-builder entrypoint for Session 10.7."
+    ],
+    "provided": false,
+    "reason": "No reusable `shortlist_generation_v1` runner exists yet outside the proof-bundle scaffolding. The repo has the frozen manifest plus build-time helper internals in `pipeline/identity/selector_proof_v1.py`, but no standalone shortlist builder that can be run honestly on the 48 proof anchors without inventing new code mid-proof.",
+    "runnable": false,
+    "status": "blocked"
+  },
+  "phase_d": {
+    "identity_case_runs": [
+      {
+        "case_id": "selector_proof_001",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/candidate_identity/sparse_signal_flags"
+        ],
+        "decision_stage": "selector",
+        "label": "SAME_AS",
+        "primary_reason_code": "same_exact_or_orthographic_alias",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/place_fingerprint/regions",
+          "/anchor/portfolio_fingerprint/color_mix",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_002",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals",
+          "/shortlist/candidates/0/candidate_identity/sparse_signal_flags"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_lexical_collision_only",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0/value",
+          "/anchor/label_like_names/0/value",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ]
+      },
+      {
+        "case_id": "selector_proof_003",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_lexical_collision_only",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/candidate_identity/sparse_signal_flags",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_004",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_lexical_collision_only",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/shortlist/candidates/0/retrieval_basis/lexical_strength"
+        ]
+      },
+      {
+        "case_id": "selector_proof_005",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_lexical_collision_only",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/shortlist/candidates/0/candidate_identity/sparse_signal_flags"
+        ]
+      },
+      {
+        "case_id": "selector_proof_006",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_lexical_collision_only",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/retrieval_basis/lexical_strength",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ]
+      },
+      {
+        "case_id": "selector_proof_007",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ],
+        "decision_stage": "selector",
+        "label": "SAME_AS",
+        "primary_reason_code": "same_historical_name_continuity",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/place_fingerprint/regions",
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_008",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals"
+        ],
+        "decision_stage": "selector",
+        "label": "SAME_AS",
+        "primary_reason_code": "same_historical_name_continuity",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations/0",
+          "/anchor/portfolio_fingerprint/top_wine_labels",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_009",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals"
+        ],
+        "decision_stage": "selector",
+        "label": "SAME_AS",
+        "primary_reason_code": "same_historical_name_continuity",
+        "support_ref_paths": [
+          "/anchor/portfolio_fingerprint/top_lwin_display_names/1",
+          "/anchor/place_fingerprint/appellations",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_010",
+        "conflict_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/candidate_identity/sparse_signal_flags"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_011",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals"
+        ],
+        "decision_stage": "selector",
+        "label": "SAME_AS",
+        "primary_reason_code": "same_global_brand_multi_country",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags/1",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/anchor/portfolio_fingerprint/top_wine_labels"
+        ]
+      },
+      {
+        "case_id": "selector_proof_012",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/candidate_identity/sparse_signal_flags"
+        ],
+        "decision_stage": "selector",
+        "label": "SAME_AS",
+        "primary_reason_code": "same_global_brand_multi_country",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/anchor/label_like_names/0"
+        ]
+      },
+      {
+        "case_id": "selector_proof_013",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals"
+        ],
+        "decision_stage": "selector",
+        "label": "SAME_AS",
+        "primary_reason_code": "same_global_brand_multi_country",
+        "support_ref_paths": [
+          "/anchor/label_like_names/0/value",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0/value",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms/0",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags/1"
+        ]
+      },
+      {
+        "case_id": "selector_proof_014",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals"
+        ],
+        "decision_stage": "selector",
+        "label": "SAME_AS",
+        "primary_reason_code": "same_global_brand_multi_country",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/retrieval_basis/lexical_strength",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags/1"
+        ]
+      },
+      {
+        "case_id": "selector_proof_015",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/anchor/source_presence/wine_count",
+          "/anchor/conflicts/sparse_signal_flags"
+        ],
+        "decision_stage": "selector",
+        "label": "RELATED_BUT_DISTINCT",
+        "primary_reason_code": "related_auction_or_negociant_bottling",
+        "support_ref_paths": [
+          "/anchor/canonical_name",
+          "/anchor/portfolio_fingerprint/top_wine_labels/0",
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels"
+        ]
+      },
+      {
+        "case_id": "selector_proof_016",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/anchor/place_fingerprint/place_conflicts",
+          "/shortlist/candidates/0/conflicts"
+        ],
+        "decision_stage": "selector",
+        "label": "SAME_AS",
+        "primary_reason_code": "same_global_brand_multi_country",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/anchor/canonical_name"
+        ]
+      },
+      {
+        "case_id": "selector_proof_017",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/candidate_identity/sparse_signal_flags",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/retrieval_basis/lexical_strength",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_018",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals",
+          "/anchor/place_fingerprint/appellations",
+          "/shortlist/candidates/0/candidate_identity/region"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/shortlist/candidates/0/retrieval_basis/lexical_strength"
+        ]
+      },
+      {
+        "case_id": "selector_proof_019",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_lexical_collision_only",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/candidate_identity/label_like_names",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_020",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/retrieval_basis/matched_anchor_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_lexical_collision_only",
+        "support_ref_paths": [
+          "/anchor/canonical_name",
+          "/anchor/place_fingerprint/regions",
+          "/anchor/portfolio_fingerprint/top_wine_labels",
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_021",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0",
+          "/anchor/label_like_names/0"
+        ]
+      },
+      {
+        "case_id": "selector_proof_022",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/retrieval_basis/lexical_strength",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_023",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/candidate_identity/label_like_names",
+          "/anchor/label_like_names"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ]
+      },
+      {
+        "case_id": "selector_proof_024",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/anchor/label_like_names/0",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/__missing_support__"
+        ]
+      },
+      {
+        "case_id": "selector_proof_025",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/shortlist/candidates/0/candidate_identity/ttb_applicant_names",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_lexical_collision_only",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_026",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/2"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_lexical_collision_only",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/candidate_identity/label_like_names"
+        ]
+      },
+      {
+        "case_id": "selector_proof_027",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_no_candidate_survived",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names/0",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names/0",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names/1",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals/0"
+        ]
+      },
+      {
+        "case_id": "selector_proof_028",
+        "conflict_ref_paths": [
+          "/anchor/label_like_names/0",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_lexical_collision_only",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_029",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/1/retrieval_basis/lexical_strength"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/1/candidate_identity/region",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_030",
+        "conflict_ref_paths": [],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_no_candidate_survived",
+        "support_ref_paths": [
+          "/shortlist/shortlist_status"
+        ]
+      },
+      {
+        "case_id": "selector_proof_031",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_place_signals"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/1/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_name_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_032",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/1/candidate_identity/region",
+          "/shortlist/candidates/1/candidate_identity/label_like_names"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/place_fingerprint/regions",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_033",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/1/candidate_identity/region",
+          "/shortlist/candidates/1/candidate_identity/top_lwin_display_names"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/place_fingerprint/regions",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/1/retrieval_basis/lexical_strength"
+        ]
+      },
+      {
+        "case_id": "selector_proof_034",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_portfolio_signals"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/anchor/portfolio_fingerprint/top_lwin_display_names/0",
+          "/anchor/place_fingerprint/appellations/0",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/1/candidate_identity/top_lwin_display_names/0",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_035",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/1/candidate_identity/canonical_name",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_name_signals"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_no_candidate_survived",
+        "support_ref_paths": [
+          "/anchor/canonical_name",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/anchor/place_fingerprint/regions"
+        ]
+      },
+      {
+        "case_id": "selector_proof_036",
+        "conflict_ref_paths": [],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_no_candidate_survived",
+        "support_ref_paths": [
+          "/shortlist/shortlist_status"
+        ]
+      },
+      {
+        "case_id": "selector_proof_037",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/1/candidate_identity/canonical_name",
+          "/shortlist/candidates/1/candidate_identity/top_lwin_display_names"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_lexical_collision_only",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/portfolio_fingerprint/top_wine_labels",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/1/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_038",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/anchor/place_fingerprint/regions",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names"
+        ]
+      },
+      {
+        "case_id": "selector_proof_039",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/1/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/1/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/1/candidate_identity/top_lwin_display_names",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/anchor/conflicts/sparse_signal_flags"
+        ],
+        "decision_stage": "selector",
+        "label": "UNSURE",
+        "primary_reason_code": "unsure_thin_evidence",
+        "support_ref_paths": [
+          "/shortlist/candidates/1/candidate_identity/canonical_name",
+          "/shortlist/candidates/1/candidate_identity/region",
+          "/shortlist/candidates/1/candidate_identity/country",
+          "/shortlist/candidates/1/retrieval_basis/lexical_strength",
+          "/anchor/place_fingerprint/regions",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names"
+        ]
+      },
+      {
+        "case_id": "selector_proof_040",
+        "conflict_ref_paths": [],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_no_candidate_survived",
+        "support_ref_paths": [
+          "/shortlist/shortlist_status"
+        ]
+      },
+      {
+        "case_id": "selector_proof_041",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/regions/0",
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names"
+        ]
+      },
+      {
+        "case_id": "selector_proof_041",
+        "conflict_ref_paths": [
+          "/frontier_candidate/comparison_to_anchor/divergent_place_signals",
+          "/frontier_candidate/comparison_to_anchor/divergent_name_signals",
+          "/frontier_candidate/comparison_to_anchor/divergent_portfolio_signals"
+        ],
+        "decision_stage": "escalation",
+        "label": "RELATED_BUT_DISTINCT",
+        "primary_reason_code": "related_shared_family_distinct_estates",
+        "support_ref_paths": [
+          "/added_evidence/profile_snippets/0/text",
+          "/added_evidence/raw_supporting_rows/0/summary",
+          "/anchor/place_fingerprint/regions/0",
+          "/frontier_candidate/candidate_identity/region",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/frontier_candidate/candidate_identity/top_lwin_display_names"
+        ]
+      },
+      {
+        "case_id": "selector_proof_042",
+        "conflict_ref_paths": [
+          "/anchor/canonical_name",
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_lexical_collision_only",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/shortlist/candidates/0/retrieval_basis/matched_anchor_name_forms"
+        ]
+      },
+      {
+        "case_id": "selector_proof_042",
+        "conflict_ref_paths": [
+          "/frontier_candidate/comparison_to_anchor/divergent_name_signals",
+          "/frontier_candidate/comparison_to_anchor/divergent_portfolio_signals"
+        ],
+        "decision_stage": "escalation",
+        "label": "SAME_AS",
+        "primary_reason_code": "same_historical_name_continuity",
+        "support_ref_paths": [
+          "/added_evidence/profile_snippets/0/text",
+          "/added_evidence/raw_supporting_rows/0/summary",
+          "/frontier_candidate/candidate_identity/top_lwin_display_names",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/frontier_candidate/comparison_to_anchor/matched_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_043",
+        "conflict_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_lexical_collision_only",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_043",
+        "conflict_ref_paths": [
+          "/frontier_candidate/comparison_to_anchor/matched_name_forms",
+          "/frontier_candidate/comparison_to_anchor/divergent_portfolio_signals"
+        ],
+        "decision_stage": "escalation",
+        "label": "NONE",
+        "primary_reason_code": "none_lexical_collision_only",
+        "support_ref_paths": [
+          "/added_evidence/profile_snippets/0/text",
+          "/added_evidence/raw_supporting_rows/0/summary",
+          "/frontier_candidate/candidate_identity/label_like_names/0/value",
+          "/frontier_candidate/comparison_to_anchor/divergent_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_044",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/candidate_identity/label_like_names",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ]
+      },
+      {
+        "case_id": "selector_proof_044",
+        "conflict_ref_paths": [
+          "/frontier_candidate/comparison_to_anchor/divergent_name_signals",
+          "/frontier_candidate/comparison_to_anchor/divergent_portfolio_signals",
+          "/anchor/portfolio_fingerprint/top_wine_labels",
+          "/frontier_candidate/candidate_identity/top_wine_labels"
+        ],
+        "decision_stage": "escalation",
+        "label": "RELATED_BUT_DISTINCT",
+        "primary_reason_code": "related_shared_owner_distinct_brand",
+        "support_ref_paths": [
+          "/added_evidence/profile_snippets/0/text",
+          "/added_evidence/profile_snippets/1/text",
+          "/added_evidence/raw_supporting_rows/0/summary",
+          "/frontier_candidate/candidate_identity/label_like_names/1",
+          "/frontier_candidate/comparison_to_anchor/matched_regulatory_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_045",
+        "conflict_ref_paths": [
+          "/anchor/label_like_names/0",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/anchor/label_like_names/0",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels"
+        ]
+      },
+      {
+        "case_id": "selector_proof_045",
+        "conflict_ref_paths": [
+          "/anchor/label_like_names/0",
+          "/frontier_candidate/candidate_identity/label_like_names/0"
+        ],
+        "decision_stage": "escalation",
+        "label": "RELATED_BUT_DISTINCT",
+        "primary_reason_code": "related_shared_owner_distinct_brand",
+        "support_ref_paths": [
+          "/added_evidence/profile_snippets/0/text",
+          "/added_evidence/profile_snippets/1/text",
+          "/added_evidence/raw_supporting_rows/0/summary"
+        ]
+      },
+      {
+        "case_id": "selector_proof_046",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels"
+        ]
+      },
+      {
+        "case_id": "selector_proof_046",
+        "conflict_ref_paths": [
+          "/frontier_candidate/comparison_to_anchor/matched_name_forms",
+          "/frontier_candidate/comparison_to_anchor/risk_tags"
+        ],
+        "decision_stage": "escalation",
+        "label": "NONE",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "support_ref_paths": [
+          "/added_evidence/profile_snippets/0/text",
+          "/added_evidence/raw_supporting_rows/0/summary",
+          "/frontier_candidate/candidate_identity/country",
+          "/frontier_candidate/comparison_to_anchor/divergent_place_signals",
+          "/frontier_candidate/comparison_to_anchor/divergent_portfolio_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_047",
+        "conflict_ref_paths": [],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_no_candidate_survived",
+        "support_ref_paths": [
+          "/shortlist/shortlist_status"
+        ]
+      },
+      {
+        "case_id": "selector_proof_047",
+        "conflict_ref_paths": [],
+        "decision_stage": "escalation",
+        "label": "NONE",
+        "primary_reason_code": "none_no_candidate_survived",
+        "support_ref_paths": [
+          "/added_evidence/profile_snippets/0/text",
+          "/added_evidence/raw_supporting_rows/0/summary"
+        ]
+      },
+      {
+        "case_id": "selector_proof_048",
+        "conflict_ref_paths": [],
+        "decision_stage": "selector",
+        "label": "NONE",
+        "primary_reason_code": "none_no_candidate_survived",
+        "support_ref_paths": [
+          "/shortlist/shortlist_status"
+        ]
+      },
+      {
+        "case_id": "selector_proof_048",
+        "conflict_ref_paths": [],
+        "decision_stage": "escalation",
+        "label": "NONE",
+        "primary_reason_code": "none_no_candidate_survived",
+        "support_ref_paths": [
+          "/added_evidence/profile_snippets/0/text",
+          "/added_evidence/raw_supporting_rows/0/summary"
+        ]
+      }
+    ],
+    "identity_edges_accepted": [
+      {
+        "case_id": "selector_proof_001",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/candidate_identity/sparse_signal_flags"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "SAME_AS",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_001",
+        "primary_reason_code": "same_exact_or_orthographic_alias",
+        "producer_id_high": "e02536aa-192a-479b-97ee-7a512a519067",
+        "producer_id_low": "2da66547-7598-42ab-b98c-624f496be252",
+        "rule_hypotheses": [
+          "11.4.h",
+          "11.4.f"
+        ],
+        "secondary_reason_codes": [
+          "same_historical_name_continuity"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/place_fingerprint/regions",
+          "/anchor/portfolio_fingerprint/color_mix",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_002",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals",
+          "/shortlist/candidates/0/candidate_identity/sparse_signal_flags"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_002",
+        "primary_reason_code": "none_lexical_collision_only",
+        "producer_id_high": "c86bb256-1977-4628-9fee-5bdb51b4ad93",
+        "producer_id_low": "67de1c02-45b5-4e2d-86b1-537965387879",
+        "rule_hypotheses": [
+          "11.0",
+          "11.1",
+          "11.4.h"
+        ],
+        "secondary_reason_codes": [
+          "none_weak_fuzzy_no_support"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0/value",
+          "/anchor/label_like_names/0/value",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ]
+      },
+      {
+        "case_id": "selector_proof_003",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_003",
+        "primary_reason_code": "none_lexical_collision_only",
+        "producer_id_high": "b159109a-59f7-4897-b70b-4dde264f13e4",
+        "producer_id_low": "a19e64fb-bbf9-4811-8ac0-c69fbbfc8d97",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_place_portfolio_conflict"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/candidate_identity/sparse_signal_flags",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_004",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_004",
+        "primary_reason_code": "none_lexical_collision_only",
+        "producer_id_high": "b0692eed-4aab-4479-87fb-9a71cc3336eb",
+        "producer_id_low": "6bec8b08-4cc0-46e1-95cf-f917b235b865",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.k"
+        ],
+        "secondary_reason_codes": [
+          "none_place_portfolio_conflict"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/shortlist/candidates/0/retrieval_basis/lexical_strength"
+        ]
+      },
+      {
+        "case_id": "selector_proof_005",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_005",
+        "primary_reason_code": "none_lexical_collision_only",
+        "producer_id_high": "a29b6a66-dc4a-4184-918b-a7a673ae4019",
+        "producer_id_low": "0480eb26-d5fd-4d74-b22a-a55632f92cff",
+        "rule_hypotheses": [
+          "11.4.m",
+          "11.3"
+        ],
+        "secondary_reason_codes": [
+          "none_weak_fuzzy_no_support"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/shortlist/candidates/0/candidate_identity/sparse_signal_flags"
+        ]
+      },
+      {
+        "case_id": "selector_proof_006",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_006",
+        "primary_reason_code": "none_lexical_collision_only",
+        "producer_id_high": "55dd133e-db6c-4b14-b33f-7de502a26950",
+        "producer_id_low": "3b64f9be-cba2-4adb-9b33-3a7cd947979b",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.m",
+          "11.4.h"
+        ],
+        "secondary_reason_codes": [
+          "none_place_portfolio_conflict"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/retrieval_basis/lexical_strength",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ]
+      },
+      {
+        "case_id": "selector_proof_007",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "SAME_AS",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_007",
+        "primary_reason_code": "same_historical_name_continuity",
+        "producer_id_high": "be1b3c91-d8cb-4a32-b4a8-b199ab958989",
+        "producer_id_low": "08707d4b-5145-4e0a-8be3-1c3906ee61c2",
+        "rule_hypotheses": [
+          "11.4.f",
+          "11.4.h"
+        ],
+        "secondary_reason_codes": [
+          "same_exact_or_orthographic_alias"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/place_fingerprint/regions",
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_008",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "SAME_AS",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_008",
+        "primary_reason_code": "same_historical_name_continuity",
+        "producer_id_high": "d3758130-8414-4fb6-94fc-58bfc0d40725",
+        "producer_id_low": "5da48f3b-ccf8-46b1-8bc7-ffb48f26d94b",
+        "rule_hypotheses": [
+          "11.4.f",
+          "11.4.h"
+        ],
+        "secondary_reason_codes": [
+          "same_exact_or_orthographic_alias"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations/0",
+          "/anchor/portfolio_fingerprint/top_wine_labels",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_009",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "SAME_AS",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_009",
+        "primary_reason_code": "same_historical_name_continuity",
+        "producer_id_high": "5f01f7f5-1eee-4041-a112-843c8774ee61",
+        "producer_id_low": "42da1df4-a4b1-4052-a377-d3a343ca2200",
+        "rule_hypotheses": [
+          "11.4.f",
+          "11.1"
+        ],
+        "secondary_reason_codes": [
+          "same_exact_or_orthographic_alias"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/portfolio_fingerprint/top_lwin_display_names/1",
+          "/anchor/place_fingerprint/appellations",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_010",
+        "conflict_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/candidate_identity/sparse_signal_flags"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_010",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "e6cc4418-8cf0-4a44-af95-fa34bcdd09d9",
+        "producer_id_low": "65c590f5-d3f8-4ad9-8279-ab775e0f4da9",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_011",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "SAME_AS",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_011",
+        "primary_reason_code": "same_global_brand_multi_country",
+        "producer_id_high": "1f932c2b-6f8c-4c3a-a1d5-4ad69d645170",
+        "producer_id_low": "12f907aa-28eb-4653-a8ae-33af4033f0d2",
+        "rule_hypotheses": [
+          "11.4.n"
+        ],
+        "secondary_reason_codes": [
+          "same_exact_or_orthographic_alias"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags/1",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/anchor/portfolio_fingerprint/top_wine_labels"
+        ]
+      },
+      {
+        "case_id": "selector_proof_012",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/candidate_identity/sparse_signal_flags"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "SAME_AS",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_012",
+        "primary_reason_code": "same_global_brand_multi_country",
+        "producer_id_high": "d8d366fb-1b75-4984-9675-178f9b96e603",
+        "producer_id_low": "985c7848-4597-4894-9a99-14bd6ab73d44",
+        "rule_hypotheses": [
+          "11.4.n"
+        ],
+        "secondary_reason_codes": [
+          "same_exact_or_orthographic_alias",
+          "same_sparse_stub_absorption"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/anchor/label_like_names/0"
+        ]
+      },
+      {
+        "case_id": "selector_proof_013",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "SAME_AS",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_013",
+        "primary_reason_code": "same_global_brand_multi_country",
+        "producer_id_high": "377994ad-e512-4d21-a017-50376d0dc884",
+        "producer_id_low": "235a77e3-4d45-46d5-9ea3-0f0785dc1111",
+        "rule_hypotheses": [
+          "11.4.n"
+        ],
+        "secondary_reason_codes": [
+          "same_exact_or_orthographic_alias"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/label_like_names/0/value",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0/value",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms/0",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags/1"
+        ]
+      },
+      {
+        "case_id": "selector_proof_014",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "SAME_AS",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_014",
+        "primary_reason_code": "same_global_brand_multi_country",
+        "producer_id_high": "787d27d6-a3a4-4511-a3a5-0f5da8487523",
+        "producer_id_low": "064b746b-1cd0-4a52-a1fd-089f18b92871",
+        "rule_hypotheses": [
+          "11.4.n"
+        ],
+        "secondary_reason_codes": [
+          "same_exact_or_orthographic_alias"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/retrieval_basis/lexical_strength",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags/1"
+        ]
+      },
+      {
+        "case_id": "selector_proof_015",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/anchor/source_presence/wine_count",
+          "/anchor/conflicts/sparse_signal_flags"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "RELATED_BUT_DISTINCT",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_015",
+        "primary_reason_code": "related_auction_or_negociant_bottling",
+        "producer_id_high": "9d1d6d4c-8272-4773-aa13-bea3b2956a66",
+        "producer_id_low": "2ee6e12f-32f8-4bfa-8d3c-5caf8a023a85",
+        "rule_hypotheses": [
+          "11.4.p",
+          "11.4.r"
+        ],
+        "secondary_reason_codes": [
+          "same_merchant_or_importer_prefix"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/canonical_name",
+          "/anchor/portfolio_fingerprint/top_wine_labels/0",
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels"
+        ]
+      },
+      {
+        "case_id": "selector_proof_016",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/anchor/place_fingerprint/place_conflicts",
+          "/shortlist/candidates/0/conflicts"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "SAME_AS",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_016",
+        "primary_reason_code": "same_global_brand_multi_country",
+        "producer_id_high": "f52c456c-f3ac-4a87-b6b6-9cda525aff05",
+        "producer_id_low": "ec9d39e7-0ad8-4031-bfe8-c6896f353c2a",
+        "rule_hypotheses": [
+          "11.4.n"
+        ],
+        "secondary_reason_codes": [
+          "same_exact_or_orthographic_alias"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/anchor/canonical_name"
+        ]
+      },
+      {
+        "case_id": "selector_proof_017",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/candidate_identity/sparse_signal_flags",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_017",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "cb2a991b-453f-423f-9efe-90212f2e5ffe",
+        "producer_id_low": "8140e858-5e8d-4ead-81fd-13b3053d4d0e",
+        "rule_hypotheses": [
+          "11.4.e",
+          "11.4.s",
+          "11.0"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/retrieval_basis/lexical_strength",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_018",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals",
+          "/anchor/place_fingerprint/appellations",
+          "/shortlist/candidates/0/candidate_identity/region"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_018",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "d08fe89e-657f-44d3-be4e-ffa73b8137d4",
+        "producer_id_low": "a28dc0fe-2c9a-4fee-b9f5-5072476d95e4",
+        "rule_hypotheses": [
+          "11.0",
+          "11.4.m",
+          "11.4.s"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/shortlist/candidates/0/retrieval_basis/lexical_strength"
+        ]
+      },
+      {
+        "case_id": "selector_proof_019",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_019",
+        "primary_reason_code": "none_lexical_collision_only",
+        "producer_id_high": "ce38f5f2-8641-4618-84df-066816630187",
+        "producer_id_low": "613bf8cf-3c20-4dcc-bb71-eecb6aca41db",
+        "rule_hypotheses": [
+          "11.0",
+          "11.4.j",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "related_shared_permit_or_facility"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/candidate_identity/label_like_names",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_020",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/retrieval_basis/matched_anchor_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_020",
+        "primary_reason_code": "none_lexical_collision_only",
+        "producer_id_high": "6ea15115-1259-42e1-af50-ace33b9c8a03",
+        "producer_id_low": "6c51e592-e077-4a3d-8bea-0a270ca2f901",
+        "rule_hypotheses": [
+          "11.0",
+          "11.3",
+          "11.4.k"
+        ],
+        "secondary_reason_codes": [
+          "none_place_portfolio_conflict"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/canonical_name",
+          "/anchor/place_fingerprint/regions",
+          "/anchor/portfolio_fingerprint/top_wine_labels",
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_021",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_021",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "1a9d2c76-fa1a-49da-996b-a2d5fcb92468",
+        "producer_id_low": "0899a2f2-36be-4da7-acc8-f5b647df742e",
+        "rule_hypotheses": [
+          "11.4.m",
+          "11.3"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0",
+          "/anchor/label_like_names/0"
+        ]
+      },
+      {
+        "case_id": "selector_proof_022",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_022",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "a8aeeb1f-88ba-4f58-b96c-09e55c1f6763",
+        "producer_id_low": "56d5eabd-6be7-475f-81fc-1bab29d23287",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/retrieval_basis/lexical_strength",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_023",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/candidate_identity/label_like_names",
+          "/anchor/label_like_names"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_023",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "56aad186-8233-4284-b1d1-7989331df734",
+        "producer_id_low": "0c7992a9-fe79-469c-b9be-a102eaa65f41",
+        "rule_hypotheses": [
+          "11.4.j"
+        ],
+        "secondary_reason_codes": [
+          "related_shared_permit_or_facility"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ]
+      },
+      {
+        "case_id": "selector_proof_024",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/anchor/label_like_names/0",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_024",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "eddbcb6f-1c37-4b1c-bec8-84adc33f8f2b",
+        "producer_id_low": "b0583680-db3c-4367-9e0c-68e7d6a6916e",
+        "rule_hypotheses": [
+          "11.0",
+          "11.3",
+          "11.4.j"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only",
+          "none_weak_fuzzy_no_support"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/__missing_support__"
+        ]
+      },
+      {
+        "case_id": "selector_proof_025",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/shortlist/candidates/0/candidate_identity/ttb_applicant_names",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_025",
+        "primary_reason_code": "none_lexical_collision_only",
+        "producer_id_high": "cef811a1-5724-496e-aa0f-4ad3b8fe88bf",
+        "producer_id_low": "a93e3d8e-b6d7-4995-81db-e245e86c3c93",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_place_portfolio_conflict"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_026",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/2"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_026",
+        "primary_reason_code": "none_lexical_collision_only",
+        "producer_id_high": "87cf9df6-ed9d-4036-aae7-81fd40ea2dd7",
+        "producer_id_low": "56c80605-5b56-47dc-b2c2-1cbb7389f531",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.m",
+          "11.4.h"
+        ],
+        "secondary_reason_codes": [
+          "related_shared_family_distinct_estates"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/candidate_identity/label_like_names"
+        ]
+      },
+      {
+        "case_id": "selector_proof_027",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_027",
+        "primary_reason_code": "none_no_candidate_survived",
+        "producer_id_high": "c1e17cb5-ed79-4ed0-b28b-25ba7061ba38",
+        "producer_id_low": "b8c5540c-b7ee-4991-8717-551cd01af672",
+        "rule_hypotheses": [
+          "11.4.q"
+        ],
+        "secondary_reason_codes": [
+          "related_auction_or_negociant_bottling"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names/0",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names/0",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names/1",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals/0"
+        ]
+      },
+      {
+        "case_id": "selector_proof_028",
+        "conflict_ref_paths": [
+          "/anchor/label_like_names/0",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_028",
+        "primary_reason_code": "none_lexical_collision_only",
+        "producer_id_high": "d788d7dd-b647-4e0d-b219-509403a40900",
+        "producer_id_low": "b0fd2fef-b246-4d3d-8118-4ef841ec7657",
+        "rule_hypotheses": [
+          "11.0",
+          "11.3",
+          "11.4.k"
+        ],
+        "secondary_reason_codes": [
+          "none_place_portfolio_conflict"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_029",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/1/retrieval_basis/lexical_strength"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_029",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "bcbc8df7-bf6f-4ca2-8dcf-d200e56901df",
+        "producer_id_low": "88f89a84-2af8-41a8-bbbf-f89da6a75360",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.k",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only",
+          "none_no_candidate_survived"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/1/candidate_identity/region",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_029",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/1/retrieval_basis/lexical_strength"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_029",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "88f89a84-2af8-41a8-bbbf-f89da6a75360",
+        "producer_id_low": "77eb6075-40d4-4074-baa1-2cb49cc21435",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.k",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only",
+          "none_no_candidate_survived"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/1/candidate_identity/region",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_031",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_place_signals"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_031",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "aa642e60-74f8-4ce0-b0db-800c02075fac",
+        "producer_id_low": "55a5169e-4e39-4b55-9ef7-8e37a7714a2c",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only",
+          "none_no_candidate_survived"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/1/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_name_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_031",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_place_signals"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_031",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "599b5d3c-402b-4fba-ab49-6118ed757adb",
+        "producer_id_low": "55a5169e-4e39-4b55-9ef7-8e37a7714a2c",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only",
+          "none_no_candidate_survived"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/1/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_name_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_032",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/1/candidate_identity/region",
+          "/shortlist/candidates/1/candidate_identity/label_like_names"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_032",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "34933170-ef50-4378-a919-d0eab6be2052",
+        "producer_id_low": "0315429a-b724-4c7a-9e7f-91daef7775d7",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.k"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only",
+          "none_no_candidate_survived"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/place_fingerprint/regions",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_032",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/1/candidate_identity/region",
+          "/shortlist/candidates/1/candidate_identity/label_like_names"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_032",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "e85f3856-b783-4cd6-873f-5d1885c31768",
+        "producer_id_low": "0315429a-b724-4c7a-9e7f-91daef7775d7",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.k"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only",
+          "none_no_candidate_survived"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/place_fingerprint/regions",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_033",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/1/candidate_identity/region",
+          "/shortlist/candidates/1/candidate_identity/top_lwin_display_names"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_033",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "9d129273-f1fc-4c53-aa76-e5e85993077a",
+        "producer_id_low": "3199f79c-9831-459d-889e-934554594fae",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.k",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only",
+          "none_weak_fuzzy_no_support"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/place_fingerprint/regions",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/1/retrieval_basis/lexical_strength"
+        ]
+      },
+      {
+        "case_id": "selector_proof_033",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/1/candidate_identity/region",
+          "/shortlist/candidates/1/candidate_identity/top_lwin_display_names"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_033",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "97befc3e-b259-437e-ac2b-22e20acd8c2a",
+        "producer_id_low": "3199f79c-9831-459d-889e-934554594fae",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.k",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only",
+          "none_weak_fuzzy_no_support"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/place_fingerprint/regions",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/1/retrieval_basis/lexical_strength"
+        ]
+      },
+      {
+        "case_id": "selector_proof_034",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_portfolio_signals"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_034",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "5320eb0b-b6f6-472b-8e8c-d5c9cb505e3c",
+        "producer_id_low": "1d0d883a-1335-4ba4-9eeb-eda06b50c0ed",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.k"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/portfolio_fingerprint/top_lwin_display_names/0",
+          "/anchor/place_fingerprint/appellations/0",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/1/candidate_identity/top_lwin_display_names/0",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_034",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_portfolio_signals"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_034",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "d2e50763-5b1e-4aa7-bba2-4845cd7558c1",
+        "producer_id_low": "1d0d883a-1335-4ba4-9eeb-eda06b50c0ed",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.k"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/portfolio_fingerprint/top_lwin_display_names/0",
+          "/anchor/place_fingerprint/appellations/0",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/1/candidate_identity/top_lwin_display_names/0",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_035",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/1/candidate_identity/canonical_name",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_name_signals"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_035",
+        "primary_reason_code": "none_no_candidate_survived",
+        "producer_id_high": "b29b6f60-cef0-485d-96b4-dac874f5078b",
+        "producer_id_low": "44ccc16a-42b9-4c02-814b-43d2b2d84fbf",
+        "rule_hypotheses": [
+          "11.0",
+          "11.3",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only",
+          "none_place_portfolio_conflict"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/canonical_name",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/anchor/place_fingerprint/regions"
+        ]
+      },
+      {
+        "case_id": "selector_proof_035",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/1/candidate_identity/canonical_name",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_name_signals"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_035",
+        "primary_reason_code": "none_no_candidate_survived",
+        "producer_id_high": "9140d68d-9bc9-4df8-833e-d684145ff7cc",
+        "producer_id_low": "44ccc16a-42b9-4c02-814b-43d2b2d84fbf",
+        "rule_hypotheses": [
+          "11.0",
+          "11.3",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only",
+          "none_place_portfolio_conflict"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/canonical_name",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/anchor/place_fingerprint/regions"
+        ]
+      },
+      {
+        "case_id": "selector_proof_037",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/1/candidate_identity/canonical_name",
+          "/shortlist/candidates/1/candidate_identity/top_lwin_display_names"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_037",
+        "primary_reason_code": "none_lexical_collision_only",
+        "producer_id_high": "e09e1e11-53e6-4113-a386-030b50582394",
+        "producer_id_low": "9db35622-2205-48a3-8cf6-3e8adf005616",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_place_portfolio_conflict"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/portfolio_fingerprint/top_wine_labels",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/1/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_037",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels",
+          "/shortlist/candidates/1/candidate_identity/canonical_name",
+          "/shortlist/candidates/1/candidate_identity/top_lwin_display_names"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_037",
+        "primary_reason_code": "none_lexical_collision_only",
+        "producer_id_high": "9db35622-2205-48a3-8cf6-3e8adf005616",
+        "producer_id_low": "7661d59b-5402-4c98-89f5-b894fddfeabe",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_place_portfolio_conflict"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/appellations",
+          "/anchor/portfolio_fingerprint/top_wine_labels",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/1/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/1/retrieval_basis/shortlist_pressure_band"
+        ]
+      },
+      {
+        "case_id": "selector_proof_038",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_038",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "675ef2d2-bcf4-4d11-a483-ec2a3913ee83",
+        "producer_id_low": "1210976c-655f-46b1-bd63-ac7cf6ab91c2",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/anchor/place_fingerprint/regions",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names"
+        ]
+      },
+      {
+        "case_id": "selector_proof_041",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_041",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "a7180992-b4ba-4609-9d75-e342f3ed9e70",
+        "producer_id_low": "948c0e4e-0617-46de-87a8-3dd55096fa44",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.m"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/place_fingerprint/regions/0",
+          "/shortlist/candidates/0/candidate_identity/region",
+          "/shortlist/candidates/0/candidate_identity/top_lwin_display_names",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names"
+        ]
+      },
+      {
+        "case_id": "selector_proof_042",
+        "conflict_ref_paths": [
+          "/anchor/canonical_name",
+          "/shortlist/candidates/0/candidate_identity/canonical_name",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_042",
+        "primary_reason_code": "none_lexical_collision_only",
+        "producer_id_high": "e6e03e7c-599d-41e9-a3a8-5166b2c95ff3",
+        "producer_id_low": "55fbe34c-9096-4f2c-acd3-6bdf1d3320bc",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.k"
+        ],
+        "secondary_reason_codes": [
+          "none_place_portfolio_conflict"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/retrieval_basis/shortlist_pressure_band",
+          "/shortlist/candidates/0/retrieval_basis/matched_anchor_name_forms"
+        ]
+      },
+      {
+        "case_id": "selector_proof_043",
+        "conflict_ref_paths": [
+          "/frontier_candidate/comparison_to_anchor/matched_name_forms",
+          "/frontier_candidate/comparison_to_anchor/divergent_portfolio_signals"
+        ],
+        "decision_stage": "escalation",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_043",
+        "primary_reason_code": "none_lexical_collision_only",
+        "producer_id_high": "898d7176-923a-4ade-a560-bd76c4474280",
+        "producer_id_low": "3707b518-6b7c-4754-8a2b-cfe63012b268",
+        "rule_hypotheses": [
+          "11.0",
+          "11.4.i",
+          "11.4.r"
+        ],
+        "secondary_reason_codes": [
+          "related_shared_permit_or_facility"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/added_evidence/profile_snippets/0/text",
+          "/added_evidence/raw_supporting_rows/0/summary",
+          "/frontier_candidate/candidate_identity/label_like_names/0/value",
+          "/frontier_candidate/comparison_to_anchor/divergent_place_signals"
+        ]
+      },
+      {
+        "case_id": "selector_proof_044",
+        "conflict_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/matched_regulatory_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/matched_name_forms"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_044",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "806b6691-50b3-42bc-9dd2-074b4a48786f",
+        "producer_id_low": "3cd3c763-c229-45a3-8c5c-e4787d3893a9",
+        "rule_hypotheses": [
+          "11.0",
+          "11.4.j",
+          "11.4.k"
+        ],
+        "secondary_reason_codes": [
+          "related_shared_permit_or_facility"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_portfolio_signals",
+          "/shortlist/candidates/0/candidate_identity/label_like_names",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ]
+      },
+      {
+        "case_id": "selector_proof_045",
+        "conflict_ref_paths": [
+          "/anchor/label_like_names/0",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_name_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/divergent_place_signals",
+          "/shortlist/candidates/0/comparison_to_anchor/risk_tags"
+        ],
+        "decision_stage": "selector",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_045",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "b77c4049-ef3b-4c3e-b3ed-5978a0daed2d",
+        "producer_id_low": "6f2446f2-e769-46b6-b76a-df0a4d6debd2",
+        "rule_hypotheses": [
+          "11.0",
+          "11.4.j",
+          "11.4.s"
+        ],
+        "secondary_reason_codes": [
+          "related_shared_permit_or_facility"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/anchor/label_like_names/0",
+          "/anchor/portfolio_fingerprint/top_lwin_display_names",
+          "/shortlist/candidates/0/candidate_identity/label_like_names/0",
+          "/shortlist/candidates/0/candidate_identity/top_wine_labels"
+        ]
+      },
+      {
+        "case_id": "selector_proof_046",
+        "conflict_ref_paths": [
+          "/frontier_candidate/comparison_to_anchor/matched_name_forms",
+          "/frontier_candidate/comparison_to_anchor/risk_tags"
+        ],
+        "decision_stage": "escalation",
+        "edge_type": "NONE",
+        "edge_version": "accepted_edge_rules_v1",
+        "packet_id": "selector_proof_046",
+        "primary_reason_code": "none_place_portfolio_conflict",
+        "producer_id_high": "dfde0fe4-02f8-4281-9b68-df360abfede4",
+        "producer_id_low": "72871cc8-9f78-4c06-94c5-dcd277112d20",
+        "rule_hypotheses": [
+          "11.3",
+          "11.4.n"
+        ],
+        "secondary_reason_codes": [
+          "none_lexical_collision_only"
+        ],
+        "status": "accepted",
+        "support_ref_paths": [
+          "/added_evidence/profile_snippets/0/text",
+          "/added_evidence/raw_supporting_rows/0/summary",
+          "/frontier_candidate/candidate_identity/country",
+          "/frontier_candidate/comparison_to_anchor/divergent_place_signals",
+          "/frontier_candidate/comparison_to_anchor/divergent_portfolio_signals"
+        ]
+      }
+    ],
+    "identity_frontier_cases": [
+      {
+        "anchor_producer_id": "163bbb5e-1ca0-4a35-a2d3-104e9aec4ea4",
+        "case_id": "selector_proof_030",
+        "escalation_focus": [],
+        "frontier_candidate_id": null,
+        "frontier_kind": "shortlist_gap_probe",
+        "frontier_version": "accepted_edge_rules_v1",
+        "last_decision_stage": "selector",
+        "reason_code": "none_no_candidate_survived",
+        "status": "closed_no_candidate"
+      },
+      {
+        "anchor_producer_id": "63b23c27-e6f0-4b52-8906-9fa7bb4415e5",
+        "case_id": "selector_proof_036",
+        "escalation_focus": [],
+        "frontier_candidate_id": null,
+        "frontier_kind": "shortlist_gap_probe",
+        "frontier_version": "accepted_edge_rules_v1",
+        "last_decision_stage": "selector",
+        "reason_code": "none_no_candidate_survived",
+        "status": "closed_no_candidate"
+      },
+      {
+        "anchor_producer_id": "725662ae-7cb8-46fc-a37e-6bd16ef2a46d",
+        "case_id": "selector_proof_039",
+        "escalation_focus": [
+          "web_identity",
+          "profile_snippets",
+          "people_history"
+        ],
+        "frontier_candidate_id": "7ed8330c-27fb-4228-9b52-c458a5a1b2f5",
+        "frontier_kind": "candidate_frontier",
+        "frontier_version": "accepted_edge_rules_v1",
+        "last_decision_stage": "selector",
+        "reason_code": "unsure_thin_evidence",
+        "status": "unresolved"
+      },
+      {
+        "anchor_producer_id": "7018d27a-dc8c-4a86-aa72-520322f5741b",
+        "case_id": "selector_proof_040",
+        "escalation_focus": [],
+        "frontier_candidate_id": null,
+        "frontier_kind": "shortlist_gap_probe",
+        "frontier_version": "accepted_edge_rules_v1",
+        "last_decision_stage": "selector",
+        "reason_code": "none_no_candidate_survived",
+        "status": "closed_no_candidate"
+      },
+      {
+        "anchor_producer_id": "353a26ff-71a7-47da-af65-4f823621dc1a",
+        "case_id": "selector_proof_047",
+        "escalation_focus": [],
+        "frontier_candidate_id": null,
+        "frontier_kind": "shortlist_gap_probe",
+        "frontier_version": "accepted_edge_rules_v1",
+        "last_decision_stage": "escalation",
+        "reason_code": "none_no_candidate_survived",
+        "status": "closed_no_candidate"
+      },
+      {
+        "anchor_producer_id": "77eb6075-40d4-4074-baa1-2cb49cc21435",
+        "case_id": "selector_proof_048",
+        "escalation_focus": [],
+        "frontier_candidate_id": null,
+        "frontier_kind": "shortlist_gap_probe",
+        "frontier_version": "accepted_edge_rules_v1",
+        "last_decision_stage": "escalation",
+        "reason_code": "none_no_candidate_survived",
+        "status": "closed_no_candidate"
+      }
+    ],
+    "metrics": {
+      "accepted_edge_schema_valid_rate": 1.0,
+      "contradictory_edge_overwrite_attempts": 4,
+      "frontier_record_schema_valid_rate": 1.0,
+      "illegal_negative_edge_from_empty_shortlist": 0,
+      "invalid_selector_none_fanout_count": 0,
+      "same_as_component_barrier_conflicts": 0
+    },
+    "passes": false
+  },
+  "usage": {
+    "phase_a": {
+      "completion_tokens": 14769,
+      "cost_usd": 1.776042,
+      "prompt_tokens": 518169,
+      "search_calls": 0
+    },
+    "phase_b": {
+      "completion_tokens": 2272,
+      "cost_usd": 0.306816,
+      "prompt_tokens": 90912,
+      "search_calls": 0
+    },
+    "total": {
+      "completion_tokens": 17041,
+      "cost_usd": 2.082858,
+      "prompt_tokens": 609081,
+      "search_calls": 0
+    }
+  }
+}

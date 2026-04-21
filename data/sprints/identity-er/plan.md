@@ -132,6 +132,20 @@ Clusters come **after** accepted `SAME_AS` edges. No optimistic transitivity.
 - [ ] bounded proof shows a credible safety / usefulness improvement over raw
       pairwise judging
 
+## Latest Result
+
+Session 10.7 ran the first real bounded proof on `claude-sonnet-4-6` at
+`$2.08` and returned `NO_GO`. Phase A missed `7 / 16` `SAME_AS`, missed all
+`12 / 12` `RELATED_BUT_DISTINCT`, and resolved all `8` frontier cheap-path
+`UNSURE` cases to non-`UNSURE` labels. Phase B recovered only `4 / 6`
+resolvable frontier cases, reopened `1` false `RELATED_BUT_DISTINCT`, and
+still resolved the `2` expected-`UNSURE` shortlist-gap probes to `NONE`. Phase
+C remains blocked because no honest reusable shortlist-builder implementation
+exists yet, and Phase D reopened `4` contradictory overwrite attempts when
+escalation tried to recover cases the selector had already written as `NONE`.
+Sprint 7 implementation work is therefore blocked pending an explicit user
+decision on failure analysis versus freeze.
+
 ---
 
 ## Budget posture

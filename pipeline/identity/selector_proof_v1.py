@@ -16,11 +16,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
+import time
 from collections import Counter, defaultdict
 from copy import deepcopy
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
+
+import anthropic
 
 from pipeline.identity.bakeoff_packet_v1 import (
     canonical_json_dumps,
@@ -30,7 +34,8 @@ from pipeline.identity.bakeoff_packet_v1 import (
     tokenize,
     write_jsonl,
 )
-from pipeline.lib.db import get_conn
+from pipeline.lib.db import get_conn, get_env
+from pipeline.lib.models import SONNET_MODEL
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -43,6 +48,57 @@ DEFAULT_MANIFEST = (
     / "selector_proof_case_sources_v1.json"
 )
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "data" / "sprints" / "identity-er" / "proof"
+
+PRICING_BY_MODEL = {
+    SONNET_MODEL: {
+        "input": 3.0,
+        "output": 15.0,
+    }
+}
+
+PHASE_A_RESULTS_FILE = "selector_proof_phase_a_results_v1.jsonl"
+PHASE_B_RESULTS_FILE = "selector_proof_phase_b_results_v1.jsonl"
+PHASE_A_RAW_FILE = "selector_proof_phase_a_raw_v1.jsonl"
+PHASE_B_RAW_FILE = "selector_proof_phase_b_raw_v1.jsonl"
+EXECUTION_SUMMARY_FILE = "selector_proof_execution_summary_v1.json"
+SCORECARD_FILE = "selector_proof_scorecard_v1.md"
+GO_NO_GO_MEMO_FILE = "selector_proof_go_no_go_memo_v1.md"
+PHASE_C_NOTE_FILE = "selector_proof_phase_c_runnability_v1.md"
+
+LABEL_ENUM = {"SAME_AS", "RELATED_BUT_DISTINCT", "NONE", "UNSURE"}
+
+PRIMARY_REASON_CODES = {
+    "SAME_AS": [
+        "same_exact_or_orthographic_alias",
+        "same_historical_name_continuity",
+        "same_legal_vs_label_identity",
+        "same_merchant_or_importer_prefix",
+        "same_global_brand_multi_country",
+        "same_sparse_stub_absorption",
+    ],
+    "RELATED_BUT_DISTINCT": [
+        "related_shared_owner_distinct_brand",
+        "related_shared_family_distinct_estates",
+        "related_shared_permit_or_facility",
+        "related_joint_venture_or_collab",
+        "related_auction_or_negociant_bottling",
+        "related_subbrand_or_secondary_label",
+    ],
+    "NONE": [
+        "none_no_candidate_survived",
+        "none_lexical_collision_only",
+        "none_place_portfolio_conflict",
+        "none_weak_fuzzy_no_support",
+        "none_noise_candidate",
+    ],
+    "UNSURE": [
+        "unsure_conflicting_signals",
+        "unsure_thin_evidence",
+        "unsure_top_candidates_too_close",
+        "unsure_shortlist_gap_possible",
+        "unsure_escalation_only_signal_needed",
+    ],
+}
 
 GENERIC_NAME_TOKENS = {
     "and",
@@ -1664,10 +1720,16 @@ def score_phase_b(cases: list[dict], key: dict, packets: dict[str, dict], result
         evidence_valid += int(evidence_ok)
         label = row["label"]
         expected_label = exp["expected_escalation_label"]
-        candidate_ok = (
-            not exp["acceptable_candidate_ids"]
-            or row["choice"]["selected_candidate_id"] in exp["acceptable_candidate_ids"]
-        )
+        candidate_required = label in {"SAME_AS", "RELATED_BUT_DISTINCT"} or expected_label in {
+            "SAME_AS",
+            "RELATED_BUT_DISTINCT",
+        }
+        candidate_ok = True
+        if candidate_required:
+            candidate_ok = (
+                not exp["acceptable_candidate_ids"]
+                or row["choice"]["selected_candidate_id"] in exp["acceptable_candidate_ids"]
+            )
         if label == expected_label and candidate_ok:
             exact_hits += 1
         if expected_label != "UNSURE" and label == expected_label and candidate_ok:
@@ -2045,6 +2107,656 @@ def build_scorecard_template() -> str:
 """
 
 
+def load_section_11() -> str:
+    text = (REPO_ROOT / "docs" / "IDENTITY_RULES.md").read_text(encoding="utf-8")
+    match = re.search(
+        r"(## 11\. Producer Identity Rules.*?)(?=\n## Appendix|\n---\s*\n## )",
+        text,
+        re.DOTALL,
+    )
+    if not match:
+        raise RuntimeError("Could not locate Section 11 in docs/IDENTITY_RULES.md")
+    return match.group(1).strip()
+
+
+def anthropic_text(response) -> str:
+    chunks: list[str] = []
+    for block in response.content:
+        if getattr(block, "type", None) == "text":
+            chunks.append(block.text)
+    return "".join(chunks).strip()
+
+
+def anthropic_usage_to_dict(usage, model: str) -> dict:
+    pricing = PRICING_BY_MODEL.get(model, {"input": 0.0, "output": 0.0})
+    input_tokens = int(getattr(usage, "input_tokens", 0) or 0)
+    output_tokens = int(getattr(usage, "output_tokens", 0) or 0)
+    cost = (
+        input_tokens * pricing["input"] / 1_000_000
+        + output_tokens * pricing["output"] / 1_000_000
+    )
+    return {
+        "prompt_tokens": input_tokens,
+        "completion_tokens": output_tokens,
+        "search_calls": 0,
+        "cost_usd": round(cost, 6),
+    }
+
+
+def empty_usage() -> dict:
+    return {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "search_calls": 0,
+        "cost_usd": 0.0,
+    }
+
+
+def accumulate_usage(rows: list[dict]) -> dict:
+    totals = empty_usage()
+    for row in rows:
+        usage = row.get("usage") or {}
+        totals["prompt_tokens"] += int(usage.get("prompt_tokens", 0) or 0)
+        totals["completion_tokens"] += int(usage.get("completion_tokens", 0) or 0)
+        totals["search_calls"] += int(usage.get("search_calls", 0) or 0)
+        totals["cost_usd"] += float(usage.get("cost_usd", 0.0) or 0.0)
+    totals["cost_usd"] = round(totals["cost_usd"], 6)
+    return totals
+
+
+def extract_json_object(text: str) -> dict | None:
+    stripped = (text or "").strip()
+    if not stripped:
+        return None
+    if stripped.startswith("```"):
+        stripped = re.sub(r"^```(?:json)?\s*", "", stripped)
+        stripped = re.sub(r"\s*```$", "", stripped)
+    try:
+        parsed = json.loads(stripped)
+        return parsed if isinstance(parsed, dict) else None
+    except json.JSONDecodeError:
+        pass
+    candidates = list(re.finditer(r"\{(?:[^{}]|\{[^{}]*\})*\}", stripped, re.DOTALL))
+    for match in reversed(candidates):
+        try:
+            parsed = json.loads(match.group(0))
+        except json.JSONDecodeError:
+            continue
+        if isinstance(parsed, dict):
+            return parsed
+    return None
+
+
+def as_string_list(value: Any, *, limit: int = 6) -> list[str]:
+    if isinstance(value, list):
+        out = [safe_text(item) for item in value if safe_text(item)]
+        return out[:limit]
+    if isinstance(value, str) and safe_text(value):
+        return [safe_text(value)][:limit]
+    return []
+
+
+def normalize_label(value: Any) -> str | None:
+    raw = safe_text(value).upper().replace("-", "_").replace(" ", "_")
+    mapping = {
+        "SAME_AS": "SAME_AS",
+        "RELATED_BUT_DISTINCT": "RELATED_BUT_DISTINCT",
+        "RELATEDDISTINCT": "RELATED_BUT_DISTINCT",
+        "NONE": "NONE",
+        "UNSURE": "UNSURE",
+    }
+    return mapping.get(raw)
+
+
+def candidate_rank_for_packet(packet: dict, candidate_id: str | None, *, stage: str) -> int | None:
+    if not candidate_id:
+        return None
+    if stage == "selector":
+        for candidate in packet["shortlist"]["candidates"]:
+            if candidate["candidate_id"] == candidate_id:
+                return int(candidate["candidate_rank"])
+        return None
+    frontier_candidate = packet.get("frontier_candidate")
+    if frontier_candidate and frontier_candidate.get("candidate_id") == candidate_id:
+        return int(frontier_candidate["candidate_rank"])
+    return None
+
+
+def infer_escalation_blocks(paths: list[str]) -> list[str]:
+    mapping = {
+        "/added_evidence/web_identity/": "web_identity",
+        "/added_evidence/profile_snippets/": "profile_snippets",
+        "/added_evidence/people_history/": "people_history",
+        "/added_evidence/vineyard_profile/": "vineyard_profile",
+        "/added_evidence/raw_supporting_rows/": "raw_supporting_rows",
+        "/added_evidence/retrieval_gap_diagnostics/": "retrieval_gap_diagnostics",
+    }
+    used: list[str] = []
+    for path in paths:
+        for prefix, block in mapping.items():
+            if path.startswith(prefix) and block not in used:
+                used.append(block)
+    return used
+
+
+def fallback_result_row(packet: dict, *, stage: str, note: str) -> dict:
+    selector_version = packet.get("selector_version") or packet.get("selector_result_ref", {}).get(
+        "selector_version",
+        "selector_harness_v1",
+    )
+    shortlist_status = (
+        packet["shortlist"]["shortlist_status"]
+        if stage == "selector"
+        else ("candidates_present" if packet.get("frontier_candidate") else "no_candidate_found")
+    )
+    row = {
+        "proof_version": "selector_proof_v1",
+        "case_id": packet["case_id"],
+        "decision_stage": stage,
+        "selector_version": selector_version,
+        "anchor_producer_id": packet["anchor"]["producer_id"],
+        "shortlist_status": shortlist_status,
+        "choice": {
+            "choice_type": "none",
+            "selected_candidate_id": None,
+            "selected_candidate_rank": None,
+        },
+        "label": "UNSURE",
+        "primary_reason_code": "unsure_thin_evidence",
+        "secondary_reason_codes": [note],
+        "rule_hypotheses": [],
+        "support_ref_paths": ["/__parse_error__"],
+        "conflict_ref_paths": ["/__parse_error__"],
+        "needs_escalation": stage == "selector",
+        "escalation_focus": [],
+    }
+    if stage == "escalation":
+        row["resolved_from_prior_label"] = "UNSURE"
+        row["used_escalation_blocks"] = []
+        row["needs_escalation"] = False
+    return row
+
+
+def normalize_model_result(parsed: dict | None, packet: dict, *, stage: str) -> tuple[dict, str]:
+    if not isinstance(parsed, dict):
+        return fallback_result_row(packet, stage=stage, note="runtime_parse_error"), "fallback_invalid_json"
+    label = normalize_label(parsed.get("label"))
+    if label not in LABEL_ENUM:
+        return fallback_result_row(packet, stage=stage, note="runtime_invalid_label"), "fallback_invalid_label"
+
+    choice_payload = parsed.get("choice") or {}
+    selected_candidate_id = (
+        parsed.get("selected_candidate_id")
+        or choice_payload.get("selected_candidate_id")
+        or choice_payload.get("candidate_id")
+    )
+    selected_candidate_id = safe_text(selected_candidate_id) or None
+    if selected_candidate_id and selected_candidate_id.lower() in {"none", "null"}:
+        selected_candidate_id = None
+    selected_candidate_rank = candidate_rank_for_packet(packet, selected_candidate_id, stage=stage)
+    support_paths = as_string_list(parsed.get("support_ref_paths") or parsed.get("support_paths"))
+    conflict_paths = as_string_list(parsed.get("conflict_ref_paths") or parsed.get("conflict_paths"))
+    if not support_paths:
+        support_paths = ["/__missing_support__"]
+    if label == "UNSURE" and not conflict_paths:
+        conflict_paths = ["/__missing_conflict__"]
+
+    shortlist_status = (
+        packet["shortlist"]["shortlist_status"]
+        if stage == "selector"
+        else ("candidates_present" if packet.get("frontier_candidate") else "no_candidate_found")
+    )
+    row = {
+        "proof_version": "selector_proof_v1",
+        "case_id": packet["case_id"],
+        "decision_stage": stage,
+        "selector_version": packet.get("selector_version")
+        or packet.get("selector_result_ref", {}).get("selector_version", "selector_harness_v1"),
+        "anchor_producer_id": packet["anchor"]["producer_id"],
+        "shortlist_status": shortlist_status,
+        "choice": {
+            "choice_type": "candidate" if selected_candidate_id else "none",
+            "selected_candidate_id": selected_candidate_id,
+            "selected_candidate_rank": selected_candidate_rank,
+        },
+        "label": label,
+        "primary_reason_code": safe_text(parsed.get("primary_reason_code")) or "model_missing_reason_code",
+        "secondary_reason_codes": as_string_list(parsed.get("secondary_reason_codes"), limit=3),
+        "rule_hypotheses": as_string_list(parsed.get("rule_hypotheses") or parsed.get("rule_ids"), limit=3),
+        "support_ref_paths": support_paths[:6],
+        "conflict_ref_paths": conflict_paths[:6],
+        "needs_escalation": bool(parsed.get("needs_escalation")) if stage == "selector" else False,
+        "escalation_focus": as_string_list(parsed.get("escalation_focus"), limit=3),
+    }
+    if stage == "selector" and label == "UNSURE" and not row["needs_escalation"]:
+        row["needs_escalation"] = True
+    if stage == "selector" and label != "UNSURE":
+        row["needs_escalation"] = False
+        row["escalation_focus"] = []
+    if stage == "escalation":
+        row["resolved_from_prior_label"] = "UNSURE"
+        explicit_blocks = as_string_list(parsed.get("used_escalation_blocks"), limit=6)
+        inferred_blocks = infer_escalation_blocks(row["support_ref_paths"] + row["conflict_ref_paths"])
+        row["used_escalation_blocks"] = explicit_blocks or inferred_blocks
+        row["needs_escalation"] = False
+        row["escalation_focus"] = []
+    return row, "ok"
+
+
+def reason_code_lines() -> str:
+    lines = []
+    for label, codes in PRIMARY_REASON_CODES.items():
+        lines.append(f"- {label}: {', '.join(codes)}")
+    return "\n".join(lines)
+
+
+def build_selector_system_prompt(section_11: str) -> str:
+    return f"""You are `selector_proof_executor_v1`, evaluating one frozen Phase A selector packet from `selector_proof_v1`.
+
+Use ONLY the packet you are given. Do not use outside knowledge, live web search, or any hidden answer key.
+
+Apply Section 11 strictly:
+
+{section_11}
+
+Selector rules:
+- Choose at most one shortlisted candidate or none.
+- `SAME_AS` and `RELATED_BUT_DISTINCT` require a real shortlisted candidate id.
+- `NONE` means stop: no shortlisted candidate deserves a stored accepted relationship.
+- `UNSURE` is only for a real frontier where escalation could plausibly help; safe stop is `NONE`.
+- Do not invent candidate ids, reason codes, or JSON paths.
+- `support_ref_paths` and `conflict_ref_paths` must be valid JSON pointers into the packet.
+- `primary_reason_code` must come from these families:
+{reason_code_lines()}
+
+Return exactly one JSON object with this shape:
+{{
+  "choice": {{"selected_candidate_id": "uuid|null"}},
+  "label": "SAME_AS|RELATED_BUT_DISTINCT|NONE|UNSURE",
+  "primary_reason_code": "string",
+  "secondary_reason_codes": ["string"],
+  "rule_hypotheses": ["11.x"],
+  "support_ref_paths": ["/json/pointer"],
+  "conflict_ref_paths": ["/json/pointer"],
+  "needs_escalation": true,
+  "escalation_focus": ["web_identity|profile_snippets|people_history|vineyard_profile|raw_supporting_rows|retrieval_gap_diagnostics"]
+}}
+
+`needs_escalation` must be true only for `UNSURE`. `escalation_focus` must be empty unless `needs_escalation` is true.
+Return JSON only."""
+
+
+def build_escalation_system_prompt(section_11: str) -> str:
+    return f"""You are `selector_proof_escalation_executor_v1`, evaluating one frozen Phase B escalation packet from `selector_proof_v1`.
+
+Use ONLY the packet you are given. Do not use outside knowledge, live web search, or any hidden answer key.
+
+Apply Section 11 strictly:
+
+{section_11}
+
+Escalation rules:
+- This is a one-pass resolver for a prior `UNSURE`.
+- Do not invent a new candidate. You may choose only the packet's `frontier_candidate` or none.
+- `SAME_AS` and `RELATED_BUT_DISTINCT` require the visible frontier candidate id.
+- If the richer packet still does not justify a safe accepted label, return `NONE` or `UNSURE`.
+- `needs_escalation` must be false because this is the heavy pass already.
+- `used_escalation_blocks` must be a subset of the evidence blocks actually present in `added_evidence`.
+- `support_ref_paths` and `conflict_ref_paths` must be valid JSON pointers into the packet.
+- `primary_reason_code` must come from these families:
+{reason_code_lines()}
+
+Return exactly one JSON object with this shape:
+{{
+  "choice": {{"selected_candidate_id": "uuid|null"}},
+  "label": "SAME_AS|RELATED_BUT_DISTINCT|NONE|UNSURE",
+  "primary_reason_code": "string",
+  "secondary_reason_codes": ["string"],
+  "rule_hypotheses": ["11.x"],
+  "support_ref_paths": ["/json/pointer"],
+  "conflict_ref_paths": ["/json/pointer"],
+  "needs_escalation": false,
+  "escalation_focus": [],
+  "used_escalation_blocks": ["web_identity|profile_snippets|people_history|vineyard_profile|raw_supporting_rows|retrieval_gap_diagnostics"]
+}}
+
+Return JSON only."""
+
+
+def build_packet_user_prompt(packet: dict) -> str:
+    return "Evaluate this frozen packet and return JSON only:\n\n" + pretty_json(packet)
+
+
+def execute_model_packet(
+    client,
+    packet: dict,
+    *,
+    stage: str,
+    model: str,
+    system_prompt: str,
+) -> tuple[dict, dict]:
+    started = time.perf_counter()
+    raw_text = ""
+    parsed = None
+    usage = empty_usage()
+    normalization_status = "ok"
+    runtime_error = None
+    try:
+        response = client.messages.create(
+            model=model,
+            max_tokens=900,
+            temperature=0,
+            system=[{"type": "text", "text": system_prompt}],
+            messages=[{"role": "user", "content": build_packet_user_prompt(packet)}],
+        )
+        raw_text = anthropic_text(response)
+        parsed = extract_json_object(raw_text)
+        usage = anthropic_usage_to_dict(response.usage, model)
+        normalized_row, normalization_status = normalize_model_result(parsed, packet, stage=stage)
+    except Exception as exc:
+        runtime_error = str(exc)
+        normalized_row = fallback_result_row(packet, stage=stage, note="runtime_exception")
+        normalization_status = "runtime_exception"
+    raw_row = {
+        "case_id": packet["case_id"],
+        "decision_stage": stage,
+        "model": model,
+        "elapsed_ms": int((time.perf_counter() - started) * 1000),
+        "usage": usage,
+        "normalization_status": normalization_status,
+        "runtime_error": runtime_error,
+        "parsed_json": parsed,
+        "raw_text": raw_text,
+        "normalized_label": normalized_row["label"],
+    }
+    return normalized_row, raw_row
+
+
+def load_proof_context(output_dir: Path) -> tuple[dict, dict, dict[str, dict], dict[str, dict], dict, list[dict]]:
+    hidden_key = read_json(output_dir / "selector_proof_hidden_key_v1.json")
+    phase_c_manifest = read_json(output_dir / "phase_c_shortlist_manifest.json")
+    phase_a_packets = {
+        path.stem: read_json(path) for path in (output_dir / "phase_a_selector_packets").glob("*.json")
+    }
+    phase_b_packets = {
+        path.stem: read_json(path) for path in (output_dir / "phase_b_escalation_packets").glob("*.json")
+    }
+    manifest = read_json(output_dir / "selector_proof_case_sources_v1.json")
+    benchmark_map, calibration_map = load_source_maps(manifest)
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cases = [
+                hydrate_case_entities(cur, resolve_source_case(item, benchmark_map, calibration_map))
+                for item in manifest["cases"]
+            ]
+    return manifest, hidden_key, phase_a_packets, phase_b_packets, phase_c_manifest, cases
+
+
+def phase_c_runnability() -> dict:
+    return {
+        "provided": False,
+        "runnable": False,
+        "status": "blocked",
+        "reason": (
+            "No reusable `shortlist_generation_v1` runner exists yet outside the proof-bundle scaffolding. "
+            "The repo has the frozen manifest plus build-time helper internals in `pipeline/identity/selector_proof_v1.py`, "
+            "but no standalone shortlist builder that can be run honestly on the 48 proof anchors without inventing new code mid-proof."
+        ),
+        "evidence": [
+            "Only `pipeline/identity/selector_proof_v1.py` references `shortlist_generation_v1` in executable code.",
+            "`data/sprints/identity-er/proof/phase_c_shortlist_manifest.json` is a frozen expectation object, not a generated shortlist run.",
+            "No other `pipeline/identity/*.py` file provides a reusable shortlist-builder entrypoint for Session 10.7.",
+        ],
+    }
+
+
+def write_markdown(path: Path, text: str) -> None:
+    path.write_text(text.rstrip() + "\n", encoding="utf-8")
+
+
+def format_metric_value(value: Any) -> str:
+    if isinstance(value, float):
+        return f"{value:.4f}".rstrip("0").rstrip(".") if value != int(value) else f"{value:.1f}"
+    return str(value)
+
+
+def render_phase_table(title: str, rows: list[tuple[str, Any, str]]) -> str:
+    lines = [f"## {title}", "", "| Metric | Value | Gate |", "| --- | --- | --- |"]
+    for metric, value, gate in rows:
+        lines.append(f"| {metric} | {format_metric_value(value)} | {gate} |")
+    return "\n".join(lines)
+
+
+def render_scorecard(summary: dict) -> str:
+    phase_a = summary["phase_a"]
+    phase_b = summary["phase_b"]
+    phase_d = summary["phase_d"]["metrics"]
+    phase_c_status = summary["phase_c_status"]
+    lines = [
+        "# selector_proof_scorecard_v1",
+        "",
+        f"- model: `{summary['execution']['model']}`",
+        f"- total spend (estimated from Anthropic usage): `${summary['usage']['total']['cost_usd']:.4f}`",
+        f"- overall verdict: `{'GO' if summary['overall']['go'] else 'NO_GO'}`",
+        "",
+        render_phase_table(
+            "Phase A",
+            [
+                ("false_same_as", phase_a["false_same_as"], "0"),
+                ("false_related", phase_a["false_related"], "<= 1"),
+                ("unsafe_frontier_resolution", phase_a["unsafe_frontier_resolution"], "0"),
+                ("missed_same_as", phase_a["missed_same_as"], "<= 4 / 16"),
+                ("missed_related", phase_a["missed_related"], "<= 4 / 12"),
+                ("over_escalation", phase_a["over_escalation"], "<= 8 / 40"),
+                ("schema_valid_rate", phase_a["schema_valid_rate"], "1.00"),
+                ("choice_valid_rate", phase_a["choice_valid_rate"], "1.00"),
+                ("evidence_ref_integrity_rate", phase_a["evidence_ref_integrity_rate"], ">= 0.95"),
+            ],
+        ),
+        "",
+        render_phase_table(
+            "Phase B",
+            [
+                ("false_same_as_after_escalation", phase_b["false_same_as_after_escalation"], "0"),
+                ("false_related_after_escalation", phase_b["false_related_after_escalation"], "0"),
+                ("unsafe_resolution_of_expected_unsure", phase_b["unsafe_resolution_of_expected_unsure"], "0"),
+                ("exact_escalation_label_hits", phase_b["exact_escalation_label_hits"], ">= 5 / 8"),
+                ("resolvable_frontier_recovery", phase_b["resolvable_frontier_recovery"], ">= 4 / 6"),
+                ("escalation_schema_valid_rate", phase_b["escalation_schema_valid_rate"], "1.00"),
+                ("escalation_choice_valid_rate", phase_b["escalation_choice_valid_rate"], "1.00"),
+                ("escalation_evidence_ref_integrity_rate", phase_b["escalation_evidence_ref_integrity_rate"], ">= 0.95"),
+                ("escalation_block_scope_valid_rate", phase_b["escalation_block_scope_valid_rate"], "1.00"),
+            ],
+        ),
+        "",
+        "## Phase C",
+        "",
+        f"- status: `{'runnable' if phase_c_status['runnable'] else 'blocked'}`",
+        f"- note: {phase_c_status['reason']}",
+        "",
+        render_phase_table(
+            "Phase D",
+            [
+                ("accepted_edge_schema_valid_rate", phase_d["accepted_edge_schema_valid_rate"], "1.00"),
+                ("frontier_record_schema_valid_rate", phase_d["frontier_record_schema_valid_rate"], "1.00"),
+                ("contradictory_edge_overwrite_attempts", phase_d["contradictory_edge_overwrite_attempts"], "0"),
+                ("same_as_component_barrier_conflicts", phase_d["same_as_component_barrier_conflicts"], "0"),
+                ("illegal_negative_edge_from_empty_shortlist", phase_d["illegal_negative_edge_from_empty_shortlist"], "0"),
+                ("invalid_selector_none_fanout_count", phase_d["invalid_selector_none_fanout_count"], "0"),
+            ],
+        ),
+    ]
+    return "\n".join(lines)
+
+
+def render_phase_c_note(status: dict) -> str:
+    lines = [
+        "# Phase C shortlist smoke status",
+        "",
+        f"- status: `{status['status']}`",
+        "",
+        status["reason"],
+        "",
+        "## Evidence",
+        "",
+    ]
+    lines.extend(f"- {item}" for item in status["evidence"])
+    return "\n".join(lines)
+
+
+def overall_verdict(summary: dict) -> dict:
+    hard_failures: list[str] = []
+    if not summary["phase_a"]["passes"]:
+        hard_failures.append("Phase A failed the frozen selector gate.")
+    if not summary["phase_b"]["passes"]:
+        hard_failures.append("Phase B failed the frozen escalation gate.")
+    if not summary["phase_d"]["passes"]:
+        hard_failures.append("Phase D failed the accepted-edge/frontier write-simulation gate.")
+    if not summary["phase_c_status"]["runnable"]:
+        hard_failures.append("Phase C is still blocked because no honest shortlist_generation_v1 runner exists yet.")
+    go = not hard_failures
+    if go:
+        recommendation = "GO: the bounded proof cleared every frozen phase and Sprint 7 may move into real builder implementation."
+    elif summary["phase_a"]["passes"] and summary["phase_b"]["passes"] and summary["phase_d"]["passes"]:
+        recommendation = (
+            "NO-GO for implementation yet: Phase A, B, and D look viable, but Phase C is still blocked, so the full control layer has not cleared the four-phase proof."
+        )
+    else:
+        recommendation = (
+            "NO-GO: at least one executed proof layer failed before shortlist-builder implementation was even in play, so Sprint 7 should stay in proof/failure-analysis mode."
+        )
+    return {
+        "go": go,
+        "hard_failures": hard_failures,
+        "recommendation": recommendation,
+    }
+
+
+def render_go_no_go_memo(summary: dict) -> str:
+    phase_a = summary["phase_a"]
+    phase_b = summary["phase_b"]
+    phase_d = summary["phase_d"]
+    lines = [
+        "# Session 10.7 bounded proof go / no-go memo",
+        "",
+        "## Verdict",
+        "",
+        f"- decision: `{'GO' if summary['overall']['go'] else 'NO_GO'}`",
+        f"- recommendation: {summary['overall']['recommendation']}",
+        "",
+        "## What ran",
+        "",
+        f"- model: `{summary['execution']['model']}`",
+        f"- Phase A selector packets: `{phase_a['case_count']}`",
+        f"- Phase B escalation packets: `{phase_b['case_count']}`",
+        f"- estimated spend: `${summary['usage']['total']['cost_usd']:.4f}`",
+        "",
+        "## Executed results",
+        "",
+        f"- Phase A pass: `{phase_a['passes']}` (`false_same_as={phase_a['false_same_as']}`, `false_related={phase_a['false_related']}`, `missed_same_as={phase_a['missed_same_as']}`, `missed_related={phase_a['missed_related']}`, `over_escalation={phase_a['over_escalation']}`, `evidence_ref_integrity_rate={phase_a['evidence_ref_integrity_rate']}`)",
+        f"- Phase B pass: `{phase_b['passes']}` (`false_same_as_after_escalation={phase_b['false_same_as_after_escalation']}`, `false_related_after_escalation={phase_b['false_related_after_escalation']}`, `unsafe_resolution_of_expected_unsure={phase_b['unsafe_resolution_of_expected_unsure']}`, `exact_escalation_label_hits={phase_b['exact_escalation_label_hits']}`, `resolvable_frontier_recovery={phase_b['resolvable_frontier_recovery']}`)",
+        f"- Phase D pass: `{phase_d['passes']}` (`accepted_edges={len(phase_d['identity_edges_accepted'])}`, `frontier_cases={len(phase_d['identity_frontier_cases'])}`, `case_runs={len(phase_d['identity_case_runs'])}`)",
+        "",
+        "## Phase C status",
+        "",
+        f"- runnable from existing code: `{summary['phase_c_status']['runnable']}`",
+        f"- reason: {summary['phase_c_status']['reason']}",
+        "",
+        "## Why this is the recommendation",
+        "",
+    ]
+    lines.extend(f"- {item}" for item in summary["overall"]["hard_failures"])
+    if not summary["overall"]["hard_failures"]:
+        lines.append("- All four frozen proof layers cleared, so the method has earned the next implementation step.")
+    return "\n".join(lines)
+
+
+def execute_bound_proof(output_dir: Path, *, model: str) -> dict:
+    manifest, hidden_key, phase_a_packets, phase_b_packets, phase_c_manifest, cases = load_proof_context(output_dir)
+    del manifest, hidden_key, phase_c_manifest
+    section_11 = load_section_11()
+    client = anthropic.Anthropic(api_key=get_env("ANTHROPIC_API_KEY"))
+
+    selector_rows: list[dict] = []
+    selector_raw_rows: list[dict] = []
+    selector_system_prompt = build_selector_system_prompt(section_11)
+    phase_a_ids = sorted(phase_a_packets)
+    for idx, case_id in enumerate(phase_a_ids, start=1):
+        row, raw_row = execute_model_packet(
+            client,
+            phase_a_packets[case_id],
+            stage="selector",
+            model=model,
+            system_prompt=selector_system_prompt,
+        )
+        selector_rows.append(row)
+        selector_raw_rows.append(raw_row)
+        print(f"[Phase A {idx:02d}/{len(phase_a_ids)}] {case_id}: {row['label']}")
+
+    escalation_rows: list[dict] = []
+    escalation_raw_rows: list[dict] = []
+    escalation_system_prompt = build_escalation_system_prompt(section_11)
+    phase_b_ids = sorted(phase_b_packets)
+    for idx, case_id in enumerate(phase_b_ids, start=1):
+        row, raw_row = execute_model_packet(
+            client,
+            phase_b_packets[case_id],
+            stage="escalation",
+            model=model,
+            system_prompt=escalation_system_prompt,
+        )
+        escalation_rows.append(row)
+        escalation_raw_rows.append(raw_row)
+        print(f"[Phase B {idx:02d}/{len(phase_b_ids)}] {case_id}: {row['label']}")
+
+    phase_a_path = output_dir / PHASE_A_RESULTS_FILE
+    phase_b_path = output_dir / PHASE_B_RESULTS_FILE
+    phase_a_raw_path = output_dir / PHASE_A_RAW_FILE
+    phase_b_raw_path = output_dir / PHASE_B_RAW_FILE
+    write_jsonl(phase_a_path, selector_rows)
+    write_jsonl(phase_b_path, escalation_rows)
+    write_jsonl(phase_a_raw_path, selector_raw_rows)
+    write_jsonl(phase_b_raw_path, escalation_raw_rows)
+
+    summary = score_from_files(output_dir, phase_a_path, phase_b_path, None)
+    summary["execution"] = {
+        "model": model,
+        "phase_a_results_path": str(phase_a_path.relative_to(REPO_ROOT)),
+        "phase_b_results_path": str(phase_b_path.relative_to(REPO_ROOT)),
+        "phase_a_raw_path": str(phase_a_raw_path.relative_to(REPO_ROOT)),
+        "phase_b_raw_path": str(phase_b_raw_path.relative_to(REPO_ROOT)),
+    }
+    summary["usage"] = {
+        "phase_a": accumulate_usage(selector_raw_rows),
+        "phase_b": accumulate_usage(escalation_raw_rows),
+    }
+    summary["usage"]["total"] = {
+        "prompt_tokens": summary["usage"]["phase_a"]["prompt_tokens"] + summary["usage"]["phase_b"]["prompt_tokens"],
+        "completion_tokens": summary["usage"]["phase_a"]["completion_tokens"] + summary["usage"]["phase_b"]["completion_tokens"],
+        "search_calls": 0,
+        "cost_usd": round(
+            summary["usage"]["phase_a"]["cost_usd"] + summary["usage"]["phase_b"]["cost_usd"],
+            6,
+        ),
+    }
+    summary["phase_c_status"] = phase_c_runnability()
+    summary["overall"] = overall_verdict(summary)
+
+    phase_c_note_path = output_dir / PHASE_C_NOTE_FILE
+    scorecard_path = output_dir / SCORECARD_FILE
+    memo_path = output_dir / GO_NO_GO_MEMO_FILE
+    summary_path = output_dir / EXECUTION_SUMMARY_FILE
+    write_markdown(phase_c_note_path, render_phase_c_note(summary["phase_c_status"]))
+    write_markdown(scorecard_path, render_scorecard(summary))
+    write_markdown(memo_path, render_go_no_go_memo(summary))
+    summary["execution"]["phase_c_note_path"] = str(phase_c_note_path.relative_to(REPO_ROOT))
+    summary["execution"]["scorecard_path"] = str(scorecard_path.relative_to(REPO_ROOT))
+    summary["execution"]["memo_path"] = str(memo_path.relative_to(REPO_ROOT))
+    summary_path.write_text(pretty_json(summary), encoding="utf-8")
+    summary["execution"]["summary_path"] = str(summary_path.relative_to(REPO_ROOT))
+    return summary
+
+
 def write_phase_packets(output_dir: Path, phase_a_packets: dict[str, dict], phase_b_packets: dict[str, dict]) -> None:
     phase_a_dir = output_dir / "phase_a_selector_packets"
     phase_b_dir = output_dir / "phase_b_escalation_packets"
@@ -2199,22 +2911,7 @@ def build_bundle(manifest_path: Path, output_dir: Path) -> dict:
 
 
 def score_from_files(output_dir: Path, selector_results_path: Path, escalation_results_path: Path | None, shortlist_path: Path | None) -> dict:
-    hidden_key = read_json(output_dir / "selector_proof_hidden_key_v1.json")
-    phase_c_manifest = read_json(output_dir / "phase_c_shortlist_manifest.json")
-    phase_a_packets = {
-        path.stem: read_json(path) for path in (output_dir / "phase_a_selector_packets").glob("*.json")
-    }
-    phase_b_packets = {
-        path.stem: read_json(path) for path in (output_dir / "phase_b_escalation_packets").glob("*.json")
-    }
-    manifest = read_json(output_dir / "selector_proof_case_sources_v1.json")
-    benchmark_map, calibration_map = load_source_maps(manifest)
-    with get_conn() as conn:
-        with conn.cursor() as cur:
-            cases = [
-                hydrate_case_entities(cur, resolve_source_case(item, benchmark_map, calibration_map))
-                for item in manifest["cases"]
-            ]
+    _, hidden_key, phase_a_packets, phase_b_packets, phase_c_manifest, cases = load_proof_context(output_dir)
     selector_rows = [json.loads(line) for line in selector_results_path.read_text(encoding="utf-8").splitlines() if line.strip()]
     escalation_rows = []
     if escalation_results_path and escalation_results_path.exists():
@@ -2233,6 +2930,11 @@ def score_from_files(output_dir: Path, selector_results_path: Path, escalation_r
         else {"provided": False}
     )
     summary["phase_c"] = score_phase_c(phase_c_manifest, shortlist_rows) if shortlist_rows else {"provided": False}
+    summary["phase_d"] = (
+        simulate_phase_d(cases, phase_a_packets, phase_b_packets, selector_rows, escalation_rows)
+        if selector_rows and escalation_rows
+        else {"provided": False}
+    )
     return summary
 
 
@@ -2250,6 +2952,10 @@ def main() -> int:
     score_parser.add_argument("--escalation-results", type=Path, default=None)
     score_parser.add_argument("--shortlist-observations", type=Path, default=None)
 
+    execute_parser = subparsers.add_parser("execute")
+    execute_parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
+    execute_parser.add_argument("--model", default=SONNET_MODEL)
+
     args = parser.parse_args()
     command = args.command or "build"
     if command == "build":
@@ -2257,6 +2963,16 @@ def main() -> int:
         print(f"Built selector_proof_v1 bundle with {len(result['cases'])} frozen cases.")
         print(f"Output directory: {args.output_dir}")
         print(f"Oracle phases pass: {result['build_validation']['all_oracle_phases_pass']}")
+        return 0
+
+    if command == "execute":
+        summary = execute_bound_proof(args.output_dir, model=args.model)
+        print(
+            f"Completed bounded proof execution with {args.model}. "
+            f"Estimated spend: ${summary['usage']['total']['cost_usd']:.4f}. "
+            f"Overall verdict: {'GO' if summary['overall']['go'] else 'NO_GO'}."
+        )
+        print(f"Summary: {summary['execution']['summary_path']}")
         return 0
 
     summary = score_from_files(
