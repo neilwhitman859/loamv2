@@ -11,7 +11,7 @@ Working plan from the 2026-04-20 Codex audit. This is a focused rebuild for **pr
 - [x] Freeze benchmark set
 - [x] Design evidence-packet schema
 - [x] Design broad bakeoff on methods and models
-- [ ] Build packet generator + evaluation harness
+- [x] Build packet generator + evaluation harness
 - [ ] Build core adjudication queue
 - [ ] Build tail adjudication queue
 - [ ] Publish pre-execution scorecard
@@ -179,6 +179,6 @@ Rule:
 
 ## Immediate Next Steps
 
-1. Build the packet generator plus evaluation harness that can render `benchmark_v1` pairs into `evidence_packet_v1` inputs without leaking benchmark overlays.
-2. Run the first adjudication bakeoff against the frozen contender set and choose one production path plus one fallback.
-3. Build execution queues only if the bakeoff clears the hard gates.
+1. Run the first adjudication bakeoff against the frozen contender set and choose one production path plus one fallback.
+2. Build execution queues only if the bakeoff clears the hard gates.
+3. Publish the pre-execution scorecard only after the winning path survives the hard gates.

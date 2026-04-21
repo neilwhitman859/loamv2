@@ -385,9 +385,12 @@ Completed rebuild artifacts so far:
 - `data/sprints/dedup/benchmark_v1.json` plus `data/sprints/dedup/benchmark_v1.md`
 - `data/sprints/dedup/evidence_packet_v1.md`
 - `data/sprints/dedup/session4_bakeoff_design.md`
+- `pipeline/identity/bakeoff_packet_v1.py`
+- `pipeline/identity/bakeoff_harness_v1.py`
+- `data/sprints/dedup/bakeoff_v1/` (stored packets, stripped visible packets, request wrappers, normalized proof outputs, scored proof run)
 
 Immediate next session target:
-- build the packet generator + evaluation harness against the frozen Session 4 bakeoff spec, with benchmark-overlay stripping and normalized adjudication result rows
+- run the first real adjudication bakeoff against the frozen Session 4 contender set through the new packet/request/normalize/score path, then publish the winner-selection table and error ledger
 
 Historical artifacts worth keeping:
 - B6.2 + B6.2.1 + B6.2.2 + B6.3 + B6.4 + B6.5a-partial outputs
