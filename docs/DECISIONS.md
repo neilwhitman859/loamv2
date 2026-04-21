@@ -1958,3 +1958,13 @@ Session 2 ("Benchmark Freeze") created `data/sprints/dedup/benchmark_v1.json` as
 ### 2026-04-20: Standardize session work around one primary deliverable plus explicit handoff
 
 User chose to formalize working procedure instead of relying on ad hoc fresh starts. Repo-wide rule: one session should map to one primary deliverable and one roadmap step or sub-step, with explicit fields at open (`Goal`, `Primary deliverable`, `In scope`, `Out of scope`, `Tables read/write`) and explicit handoff fields at close (`Produced`, `Decisions made`, `Open risks`, `Next recommended session`). `AGENTS.md` is the canonical rulebook; `data/sessions.md` mirrors the format as the copy-paste whiteboard template; sprint-specific playbooks can add narrower guidance without replacing the repo-wide protocol.
+
+### 2026-04-20: Producer dedup evidence packets are JSONL-first, merge-only, and split hidden benchmark metadata from model-visible evidence
+
+Session 3 ("Evidence Packet Design") created `data/sprints/dedup/evidence_packet_v1.md` as the standard per-pair adjudication schema for the merge-only rebuild. Three scope decisions were locked:
+
+1. **JSONL is the source of truth** — one JSON object per pair, with any Markdown view rendered from the same object rather than maintained separately.
+2. **Benchmark metadata stays outside the adjudicator's visible evidence** — fields like `expected_verdict`, benchmark stratum, and historical failure-mode labels may exist in an outer `benchmark_overlay`, but the model-visible packet must only expose grounded evidence.
+3. **v1 remains merge-only** — allowed adjudication outputs are `MERGE`, `SKIP`, and `FLAGGED`; `PARENT_CHILD` stays out of scope. If the schema later needs richer scope, create `evidence_packet_v2` instead of mutating `v1` mid-bakeoff.
+
+Reason: the same packet must serve both the bakeoff harness and the later queue builder, so it needs to be stable, auditable, and impossible to contaminate with the answer key.
