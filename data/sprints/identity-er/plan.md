@@ -64,7 +64,8 @@ instead of a large free-floating pair universe.
 
 ### 3. Select-best-or-none adjudication
 
-The model sees one producer dossier plus a shortlist and must choose:
+The model sees one anchor selector card plus a shortlist of candidate
+mini-cards and must first choose **one candidate or `none`**, then apply:
 - `SAME_AS`
 - `RELATED_BUT_DISTINCT`
 - `NONE`

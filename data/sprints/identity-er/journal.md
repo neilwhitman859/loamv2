@@ -2,9 +2,9 @@
 
 **Opened:** 2026-04-21
 **Status:** Active
-**Current block:** Session 10.3 resolved shortlist-generation scope. The next
-honest step is Session 10.4: design the selector harness against the now-fixed
-`producer_dossier_v1` + `shortlist_generation_v1` contracts.
+**Current block:** Session 10.4 fixed the selector harness. The next honest
+step is Session 10.5: design the AI-only escalation layer and accepted-edge
+rules against the now-fixed `selector_harness_v1` contract.
 
 ---
 
@@ -103,3 +103,33 @@ honest step is Session 10.4: design the selector harness against the now-fixed
   **Why this matters:** Session 10.2a's autonomy blocker is now cleared by an
   explicit shortlist-source decision, and Session 10.4 can design the selector
   against a stable candidate universe instead of reopening retrieval scope.
+
+- **Session 10.4 (2026-04-21):** turned Sprint 7's selector idea into a fixed
+  harness contract.
+
+  **Scope held:** no selector implementation, no proof execution, no
+  escalation-dossier design, no accepted-edge storage implementation, no
+  queue-building, and no merge execution.
+
+  **Artifacts produced:**
+  - `selector_harness_v1.md`
+  - `s10_5_escalation_layer_and_accepted_edge_rules.md`
+
+  **Decisions locked in the spec:**
+  - the selector sees one anchor selector card plus up to `12` candidate
+    mini-cards with explicit retrieval-basis and comparison blocks, not raw
+    source dumps
+  - the selector must choose **one candidate or `none`** before applying the
+    Sprint 7 verdict label
+  - `NONE` is now an explicit stop condition, while `UNSURE` is reserved for
+    cases where escalation still has a plausible path to change the answer
+  - patterned reason codes and packet-visible evidence references replace long
+    prose explanations
+  - the first proof is split into a selector-only frozen-packet phase and a
+    shortlist-integration smoke phase so retrieval failures cannot hide inside
+    selector scoring
+
+  **Why this matters:** Sprint 7 now has a fixed middle layer between
+  shortlist generation and escalation. Session 10.5 can design the heavy-path
+  evidence and accepted-edge rules without reopening what the selector sees,
+  what it returns, or how the first bounded proof should score it.

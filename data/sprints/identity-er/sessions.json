@@ -30,5 +30,13 @@
     "shape": "spec",
     "spent": 0.00,
     "notes": "Defined shortlist_generation_v1 as the fixed retrieval contract for Identity Dossier Select. Locked Tier A-only candidate seeding (canonical lexical, LWIN producer names, TTB brand/applicant names, and state-registration brand/legal names), demoted importer/retailer/profile sources to rerank or escalation only, capped the raw candidate union at 24 and the final selector shortlist at 12, and added suppression rules for weak fuzzy hits, permit-only adjacency, shared-surname/first-word collisions, and merchant/importer-context-only candidates. The autonomy blocker from Session 10.2a is now cleared; the next session should design the selector harness against this fixed shortlist contract."
+  },
+  {
+    "id": "S10.4",
+    "date": "2026-04-21",
+    "title": "Selector harness design",
+    "shape": "spec",
+    "spent": 0.00,
+    "notes": "Defined selector_harness_v1 as the fixed select-best-or-none contract for Identity Dossier Select. Locked the model-visible packet to one anchor selector card plus up to 12 candidate mini-cards with explicit comparison blocks, required the selector to choose one candidate or none before applying SAME_AS / RELATED_BUT_DISTINCT / NONE / UNSURE, separated NONE from UNSURE by escalation worth, replaced long explanations with patterned reason codes plus evidence refs, and split the first proof into a selector-only frozen-packet pass plus a shortlist-integration smoke pass. The next session should design the AI-only escalation dossier and accepted-edge rules against that fixed selector contract."
   }
 ]

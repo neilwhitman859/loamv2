@@ -2109,3 +2109,13 @@ After Session 9.10 showed that `merge_proposer_plus_veto_v1`, `expanded_layered_
 ### 2026-04-21: Next session after Session 9.11 is a high-level viability review, not an automatic freeze closeout
 
 After reviewing the Session 9.11 full-rerun failure, the user redirected the next session away from a routine freeze / closeout memo and toward a higher-level discussion about Loam's viability. Trustworthy producer dedup is now treated as a project-level gate rather than a sprint-level inconvenience: if producer dedup cannot be made right enough to trust in production, shutting down or shelving Loam is a real option rather than something to avoid by default. Immediate consequence: queue-building stays blocked, `session9_7_layered_safety_sonnet_r2_narrow` remains only the best surviving non-production artifact, and the next artifact should be a strategic viability memo rather than another redesign or automatic closeout.
+
+### 2026-04-21: Sprint 7 selector harness is choose-one-or-none, keeps `NONE` separate from `UNSURE`, and proves selector logic before retrieval integration
+
+Session 10.4 ("Selector Harness Design") fixed `data/sprints/identity-er/selector_harness_v1.md` as the stable middle layer between shortlist generation and escalation. Three design decisions were locked:
+
+1. **The selector sees one anchor selector card plus up to 12 candidate mini-cards with explicit comparison blocks.** It should compare normalized identity packets, not raw source dumps or a second full dossier for every candidate.
+2. **The selector must choose one candidate or `none` before applying the Sprint 7 label.** `NONE` now means stop because no durable relation is justified and escalation is unlikely to help; `UNSURE` is reserved for frontier cases where more evidence might still change the answer.
+3. **The first proof is split into two phases.** A selector-only frozen-packet proof validates packet shape, label discipline, and output auditability without retrieval noise; a separate shortlist-integration smoke pass then checks whether the real shortlist builder actually surfaces the expected candidate and stays within the caps.
+
+Reason: Sprint 7 needed a fixed selector contract before escalation or proof build could be designed honestly. This keeps the method layered, auditable, and conservative rather than letting shortlist quality and selector quality blur together.
