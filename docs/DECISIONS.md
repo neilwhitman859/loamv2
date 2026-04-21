@@ -2119,3 +2119,45 @@ Session 10.4 ("Selector Harness Design") fixed `data/sprints/identity-er/selecto
 3. **The first proof is split into two phases.** A selector-only frozen-packet proof validates packet shape, label discipline, and output auditability without retrieval noise; a separate shortlist-integration smoke pass then checks whether the real shortlist builder actually surfaces the expected candidate and stays within the caps.
 
 Reason: Sprint 7 needed a fixed selector contract before escalation or proof build could be designed honestly. This keeps the method layered, auditable, and conservative rather than letting shortlist quality and selector quality blur together.
+
+### 2026-04-21: Session 10.5 scope broadened from escalation-only to a full control-package with proof-prep guardrails
+
+The next Sprint 7 session should not stop at escalation triggers plus accepted-edge rules alone. Session 10.5 is now intentionally broader: it should produce a coherent control-package that covers (1) the escalation dossier and triggers, (2) accepted-edge storage/blocking rules, and (3) the bounded-proof / implementation-handoff guardrails Session 10.6 would otherwise be forced to invent ad hoc. The broadened prompt lives at `data/session_prompts/s10_5_escalation_layer_and_accepted_edge_rules.md`.
+
+Reason: the selector harness is now fixed, so the next real risk is policy drift between escalation design, edge policy, and proof setup. Locking those together in one design session is broader, but still one coherent deliverable.
+
+### 2026-04-21: Sprint 7 control layer is now UNSURE-only escalation plus accepted-edge/frontier separation
+
+Session 10.5 ("Control Layer Design and Proof Prep") fixed the Sprint 7
+control package in `data/sprints/identity-er/escalation_dossier_v1.md`,
+`accepted_edge_rules_v1.md`, and `selector_proof_v1.md`. Four decisions were
+locked:
+
+1. **Escalation is now `UNSURE`-only and one-pass.** Only real frontier cases
+   may escalate, and only through `candidate_frontier` or
+   `shortlist_gap_probe`. Weak fuzzy, shared-surname, permit-only,
+   facility-only, importer-only, and merchant-only cases should stop rather
+   than consume heavy-path budget.
+2. **The heavy path may add only bounded evidence blocks and keeps the same
+   four-label output contract.** Allowed additions are `web_identity`,
+   `profile_snippets`, `people_history`, `vineyard_profile`,
+   `raw_supporting_rows`, and bounded `retrieval_gap_diagnostics`. The
+   escalation result still resolves to `SAME_AS`, `RELATED_BUT_DISTINCT`,
+   `NONE`, or `UNSURE`; it does not introduce a fifth label or a second-stage
+   scoring vocabulary.
+3. **Accepted graph state is now explicitly separate from frontier memory.**
+   Durable pairwise edges may only be `SAME_AS`,
+   `RELATED_BUT_DISTINCT`, or `NONE`. `UNSURE` never becomes an accepted edge.
+   Selector-side `NONE` writes negative edges only to candidates actually shown
+   in the packet; empty-shortlist outcomes and post-escalation `UNSURE` cases
+   stay outside the accepted-edge graph.
+4. **The first control-layer proof is frozen as `selector_proof_v1`.** Session
+   10.6 should build a four-phase local proof bundle: Phase A 48-case
+   selector-only proof, Phase B escalation replay on the 8 frontier cases,
+   Phase C shortlist integration smoke, and Phase D accepted-edge write
+   simulation. Session 10.6 may build packets, scorer logic, and a local write
+   simulator, but it may not widen policy or write to the DB.
+
+Reason: once the selector contract was fixed, the main remaining risk was drift
+between escalation policy, edge storage, and proof implementation. Locking all
+three together keeps the next build session from silently inventing new rules.

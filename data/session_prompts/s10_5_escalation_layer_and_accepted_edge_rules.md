@@ -1,21 +1,25 @@
-# Session 10.5 - escalation layer and accepted-edge rules
+# Session 10.5 - control layer design and proof prep
 
 ## Goal
 
-Turn the fixed Sprint 7 selector harness into the next control layer:
-exactly when `UNSURE` cases escalate, what extra evidence the heavier pass may
-see, and which selector outcomes become durable graph edges versus unresolved
-frontier cases.
+Turn the fixed Sprint 7 selector harness into the broader control layer for
+`identity_dossier_select_v1`: exactly when `UNSURE` cases escalate, what extra
+evidence the heavier pass may see, which selector outcomes become durable graph
+edges versus unresolved frontier cases, and what proof/implementation guardrails
+must already be fixed before Session 10.6 starts building artifacts.
 
 ## Primary deliverable
 
-A durable escalation-and-edges spec package for `identity_dossier_select_v1`:
+A durable Sprint 7 control-package for `identity_dossier_select_v1`:
 
 - `escalation_dossier_v1.md`
 - `accepted_edge_rules_v1.md`
+- `selector_proof_v1.md` or equivalent bounded-proof spec
 - explicit escalation triggers keyed off `selector_harness_v1`
 - explicit storage / blocking behavior for `SAME_AS`,
   `RELATED_BUT_DISTINCT`, `NONE`, and `UNSURE`
+- explicit proof-set / scorecard / implementation-handoff guardrails so Session
+  10.6 can build without reopening policy questions
 
 ## In scope
 
@@ -25,6 +29,11 @@ A durable escalation-and-edges spec package for `identity_dossier_select_v1`:
 - `data/sprints/identity-er/edge_taxonomy_v1.md`
 - `data/sprints/identity-er/shortlist_generation_v1.md`
 - `data/sprints/identity-er/selector_harness_v1.md`
+- relevant Sprint 6 benchmark/evaluation references if useful for proof-shape
+  rigor:
+  - `data/sprints/dedup/benchmark_v1.json`
+  - `data/sprints/dedup/metrics_and_goals.md`
+  - `data/sprints/dedup/session4_bakeoff_design.md`
 - new escalation / edge spec files under `data/sprints/identity-er/`
 - `data/dashboard.html`
 - `AGENTS.md`
@@ -37,10 +46,12 @@ A durable escalation-and-edges spec package for `identity_dossier_select_v1`:
 ## Out of scope
 
 - selector implementation
-- building the proof corpus
+- assembling the full proof corpus
 - running model calls
 - merge execution
 - full graph schema implementation
+- reopening shortlist scope unless the selector contract makes a tiny correction
+  unavoidable
 
 ## Budget
 
@@ -54,18 +65,25 @@ A durable escalation-and-edges spec package for `identity_dossier_select_v1`:
 4. Which selector outcomes become durable accepted edges, and which remain
    unresolved?
 5. What graph rules must block unsafe transitivity or duplicate edge drift?
+6. What exact bounded-proof artifact should validate the selector +
+   escalation-control layer before implementation work starts?
+7. Which implementation guardrails should Session 10.6 inherit so it builds
+   artifacts instead of silently making new policy?
 
 ## Recommended posture
 
-Keep escalation narrow and candidate-focused. Do not reopen shortlist scope.
-Escalate only when Session 10.4's selector contract says extra evidence could
-plausibly change the answer. Accepted-edge rules should stay conservative:
-`SAME_AS`, `RELATED_BUT_DISTINCT`, and `NONE` may become durable graph facts
-only when they clear their own acceptance rules; `UNSURE` should remain a
-frontier state, not a soft stored verdict.
+Broaden the session around one coherent control-package, not around extra
+implementation. Keep escalation narrow and candidate-focused, but use the same
+session to freeze the proof-prep and handoff rules that would otherwise leak
+into Session 10.6. Do not reopen shortlist scope or selector semantics unless a
+small clarification is truly unavoidable. Accepted-edge rules should stay
+conservative: `SAME_AS`, `RELATED_BUT_DISTINCT`, and `NONE` may become durable
+graph facts only when they clear their own acceptance rules; `UNSURE` should
+remain a frontier state, not a soft stored verdict.
 
 ## Stop rule
 
-Stop once Sprint 7 has a frozen escalation trigger model and accepted-edge
-policy strong enough that Session 10.6 can build the bounded proof without
-reopening selector semantics or graph semantics.
+Stop once Sprint 7 has a frozen control-package strong enough that Session 10.6
+can build the bounded proof artifacts and/or first implementation scaffolding
+without reopening selector semantics, escalation policy, edge policy, or proof
+rules.

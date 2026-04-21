@@ -2,9 +2,10 @@
 
 **Opened:** 2026-04-21
 **Status:** Active
-**Current block:** Session 10.4 fixed the selector harness. The next honest
-step is Session 10.5: design the AI-only escalation layer and accepted-edge
-rules against the now-fixed `selector_harness_v1` contract.
+**Current block:** Session 10.5 fixed the Sprint 7 control package. The next
+honest step is Session 10.6: build the bounded proof bundle, scorer, and
+accepted-edge write simulator against the now-frozen selector, escalation, and
+edge-policy contracts.
 
 ---
 
@@ -133,3 +134,36 @@ rules against the now-fixed `selector_harness_v1` contract.
   shortlist generation and escalation. Session 10.5 can design the heavy-path
   evidence and accepted-edge rules without reopening what the selector sees,
   what it returns, or how the first bounded proof should score it.
+
+- **Session 10.5 (2026-04-21):** turned Sprint 7's selector and escalation
+  handoff into a full control package.
+
+  **Scope held:** no selector implementation, no model runs, no proof execution,
+  no DB writes, no merge execution, and no graph-schema migration work.
+
+  **Artifacts produced:**
+  - `escalation_dossier_v1.md`
+  - `accepted_edge_rules_v1.md`
+  - `selector_proof_v1.md`
+  - `s10_6_bounded_proof_build.md`
+
+  **Decisions locked in the spec:**
+  - escalation is now `UNSURE`-only, one-pass, and limited to
+    `candidate_frontier` or `shortlist_gap_probe`
+  - the heavy path may add only bounded `web_identity`, `profile_snippets`,
+    `people_history`, `vineyard_profile`, `raw_supporting_rows`, and
+    `retrieval_gap_diagnostics` blocks, and it keeps the same four-label output
+    contract as the cheap selector
+  - durable graph state now splits between accepted pairwise edges
+    (`SAME_AS`, `RELATED_BUT_DISTINCT`, `NONE`) and non-edge frontier records;
+    selector-side `NONE` fans out only to candidates actually shown in the
+    packet, while empty shortlists and post-escalation `UNSURE` stay out of the
+    accepted-edge graph
+  - the next proof is frozen as a four-phase bundle: Phase A 48-case selector
+    proof, Phase B escalation replay on the 8 frontier cases, Phase C shortlist
+    integration smoke, and Phase D accepted-edge write simulation
+
+  **Why this matters:** Sprint 7 now has a coherent control layer instead of a
+  loose stack of separate specs. Session 10.6 can build proof artifacts and
+  local scaffolding without quietly inventing escalation, edge, or proof rules
+  during implementation.

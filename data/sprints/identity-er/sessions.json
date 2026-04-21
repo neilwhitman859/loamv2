@@ -38,5 +38,13 @@
     "shape": "spec",
     "spent": 0.00,
     "notes": "Defined selector_harness_v1 as the fixed select-best-or-none contract for Identity Dossier Select. Locked the model-visible packet to one anchor selector card plus up to 12 candidate mini-cards with explicit comparison blocks, required the selector to choose one candidate or none before applying SAME_AS / RELATED_BUT_DISTINCT / NONE / UNSURE, separated NONE from UNSURE by escalation worth, replaced long explanations with patterned reason codes plus evidence refs, and split the first proof into a selector-only frozen-packet pass plus a shortlist-integration smoke pass. The next session should design the AI-only escalation dossier and accepted-edge rules against that fixed selector contract."
+  },
+  {
+    "id": "S10.5",
+    "date": "2026-04-21",
+    "title": "Control layer design and proof prep",
+    "shape": "spec",
+    "spent": 0.00,
+    "notes": "Defined escalation_dossier_v1, accepted_edge_rules_v1, and selector_proof_v1 as the Sprint 7 control package for Identity Dossier Select. Locked escalation to UNSURE-only one-pass frontier cases, kept the heavy path on the same four-label contract, split durable graph state into accepted pairwise edges versus frontier records, clarified that selector-side NONE fans out only to candidates actually shown in the packet while empty shortlists write no pairwise negatives, and froze the next proof as a four-phase bundle: 48-case selector proof, 8-case escalation replay, shortlist smoke, and accepted-edge write simulation. The next session should build the local proof bundle, scorer, and write simulator without reopening policy or writing to the DB."
   }
 ]

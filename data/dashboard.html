@@ -291,14 +291,14 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">Sprint 7 &middot; Producer identity ER &middot; <!--updated-->updated 2026-04-21 16:36 ET<!--/updated--></div>
+  <div class="meta">Sprint 7 &middot; Producer identity ER &middot; <!--updated-->updated 2026-04-21 17:02 ET<!--/updated--></div>
 </div>
 
 <div class="session-strip">
   <div class="session-cell">
     <div class="s-label">Current session</div>
-    <div class="s-cost">10.4</div>
-    <div class="s-detail">Selector harness &middot; none vs unsure &middot; proof split</div>
+    <div class="s-cost">10.5</div>
+    <div class="s-detail">Control package fixed &middot; escalation &middot; edge rules &middot; proof prep</div>
   </div>
   <div class="session-cell">
     <div class="s-label">Session spend</div>
@@ -323,11 +323,11 @@
     <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
     <div class="pstats" style="font-size:11.5px;">no human review at scale &middot; fixed budget &middot; abstention beats false merges</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">method frame</div>
-    <div class="progress-bar"><div class="progress-fill" style="width: 58%"></div></div>
-    <div class="pstats" style="font-size:11.5px;"><code>producer_dossier_v1</code>, source inventory, edge taxonomy, shortlist generation, and selector harness are fixed &middot; escalation design is next</div>
+    <div class="progress-bar"><div class="progress-fill" style="width: 78%"></div></div>
+    <div class="pstats" style="font-size:11.5px;"><code>producer_dossier_v1</code>, source inventory, edge taxonomy, shortlist generation, selector harness, escalation dossier, accepted-edge rules, and proof spec are fixed &middot; bounded proof build is next</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div>
-    <div class="progress-bar"><div class="progress-fill" style="width: 40%"></div></div>
-    <div class="pstats" style="font-size:11.5px;">Step 5 is complete at <code>$0</code>; the next artifact is <code>s10_5_escalation_layer_and_accepted_edge_rules.md</code></div>
+    <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
+    <div class="pstats" style="font-size:11.5px;">Step 6 and Step 7 are complete at <code>$0</code>; the next artifact is <code>s10_6_bounded_proof_build.md</code></div>
   </div>
   <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current doctrine:</strong> compare identities, not raw pairs. Build a reusable producer dossier, generate a small shortlist, select best match or <code>none</code>, represent <code>RELATED_BUT_DISTINCT</code> explicitly, and merge only from accepted <code>SAME_AS</code> edges.</div>
   <ul class="steps">
@@ -336,9 +336,9 @@
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 3 &mdash; Define <code>producer_dossier_v1</code> and edge taxonomy</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 4 &mdash; Design candidate shortlist generation</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 5 &mdash; Design select-best-or-none harness</span></li>
-    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 6 &mdash; Add AI-only escalation dossier</span></li>
-    <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 7 &mdash; Define accepted-edge and negative-edge rules</span></li>
-    <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 8 &mdash; Run a bounded proof and decide continue / kill</span></li>
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 6 &mdash; Add AI-only escalation dossier</span></li>
+    <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 7 &mdash; Define accepted-edge and negative-edge rules</span></li>
+    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 8 &mdash; Build the bounded proof bundle and score it before any broader implementation</span></li>
   </ul>
 </div>
 
@@ -370,12 +370,17 @@
     </tr>
     <tr>
       <td><strong>Escalation</strong></td>
-      <td>Heavier AI only on the uncertainty frontier</td>
-      <td>next</td>
+      <td><code>escalation_dossier_v1.md</code> fixed as the narrow heavy path</td>
+      <td>done</td>
     </tr>
     <tr>
       <td><strong>Edge model</strong></td>
-      <td>Accepted-edge storage and blocking rules</td>
+      <td><code>accepted_edge_rules_v1.md</code> fixed accepted edges vs frontier cases</td>
+      <td>done</td>
+    </tr>
+    <tr>
+      <td><strong>Proof harness</strong></td>
+      <td><code>selector_proof_v1.md</code> fixed the 4-phase bounded proof and build guardrails</td>
       <td>next</td>
     </tr>
   </table>
@@ -384,11 +389,11 @@
       <tr><td>Live canonical snapshot</td><td>33,281 producers &middot; 225,281 wines &middot; 125,934 vintages</td></tr>
       <tr><td>Sprint 6 carry-over</td><td>pairwise benchmark and failure-mode corpus preserved; best artifact remains <code>session9_7_layered_safety_sonnet_r2_narrow</code></td></tr>
       <tr><td>Method name</td><td><code>identity_dossier_select_v1</code> (&ldquo;Identity Dossier Select&rdquo;)</td></tr>
-      <tr><td>Latest artifact</td><td><code>selector_harness_v1.md</code> &mdash; one anchor card, up to <code>12</code> candidate mini-cards, explicit <code>none</code> vs <code>UNSURE</code>, patterned reason codes, and a two-phase proof rubric are now fixed</td></tr>
-      <tr><td>Immediate next artifact</td><td><code>s10_5_escalation_layer_and_accepted_edge_rules.md</code> &mdash; design escalation triggers and accepted-edge storage rules against the fixed selector</td></tr>
-      <tr><td>After that</td><td>escalation layer &rarr; accepted-edge rules &rarr; bounded proof build</td></tr>
-      <tr><td>Execution status</td><td>Step 5 is complete at <code>$0</code>; no producer merges are active and Step 6 is next</td></tr>
-      <tr><td>Primary risk</td><td>escalation design could still sprawl or blur durable accepted edges versus frontier cases, undoing the selector discipline that Session 10.4 just fixed.</td></tr>
+      <tr><td>Latest artifact</td><td><code>escalation_dossier_v1.md</code> + <code>accepted_edge_rules_v1.md</code> + <code>selector_proof_v1.md</code> &mdash; the Sprint 7 control package is now fixed against the selector contract</td></tr>
+      <tr><td>Immediate next artifact</td><td><code>s10_6_bounded_proof_build.md</code> &mdash; build the local proof bundle, scorer, and accepted-edge write simulator against the frozen control package</td></tr>
+      <tr><td>After that</td><td>proof artifact build &rarr; bounded proof execution &rarr; go / no-go memo</td></tr>
+      <tr><td>Execution status</td><td>Step 6 and Step 7 are complete at <code>$0</code>; no producer merges are active and the next bounded step is proof-build scaffolding only</td></tr>
+      <tr><td>Primary risk</td><td>the control package is now coherent on paper, but the bounded proof may still show that selector-side <code>NONE</code> fanout or retrieval-gap handling is too brittle once packet/scorer logic becomes real.</td></tr>
     </table>
   </div>
 </div>
@@ -428,20 +433,20 @@
     </tr>
     <tr>
       <td>AI-only escalation + accepted-edge rules</td>
-      <td>next</td>
-      <td>Design the narrow escalation dossier, escalation triggers, and durable graph-edge rules that sit on top of the fixed selector output contract</td>
+      <td>done</td>
+      <td>Session 10.5 fixed <code>escalation_dossier_v1.md</code>, <code>accepted_edge_rules_v1.md</code>, and the proof / implementation handoff guardrails that sit on top of the selector output contract</td>
       <td class="num">$0</td>
     </tr>
     <tr>
-      <td>Bounded proof</td>
-      <td>pending</td>
-      <td>Run a small scored proof before any corpus-scale buildout</td>
+      <td>Bounded proof artifact build</td>
+      <td>next</td>
+      <td>Build the local proof bundle, scorer, and accepted-edge/frontier write simulator under <code>selector_proof_v1.md</code> without model calls or DB writes</td>
       <td class="num">&le;$20 phase 1</td>
     </tr>
     <tr style="background:#fff4e5;">
-      <td><strong>Next user touchpoint</strong> &mdash; start Session 10.5 escalation layer and accepted-edge rules</td>
+      <td><strong>Next user touchpoint</strong> &mdash; start Session 10.6 bounded proof build</td>
       <td>&mdash;</td>
-      <td>Recommended path: keep the next session at <code>$0</code>, escalate only real <code>UNSURE</code> frontier cases, preserve the selector's new choose-one-or-none contract, and lock which outputs become durable graph edges before any proof implementation starts. Autonomous continuation remains <code>yes</code> because selector semantics are now fixed.</td>
+      <td>Recommended path: keep the next session at <code>$0</code>, build the local proof key, packets, scorer, and accepted-edge write simulator first, and stop before model calls or DB writes. Autonomous continuation remains <code>yes</code> because the control-package policy is now fixed.</td>
       <td class="num">&mdash;</td>
     </tr>
   </table>
@@ -562,7 +567,9 @@
         <tr><td style="color:var(--muted);">Session 10.2 dossier schema</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
         <tr><td style="color:var(--muted);">Session 10.2a autonomy gating</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
         <tr><td style="color:var(--muted);">Session 10.3 shortlist design</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
-        <tr><td style="color:var(--muted);">Selector + escalation proof prep</td><td style="text-align:right; font-variant-numeric: tabular-nums;">TBD</td></tr>
+        <tr><td style="color:var(--muted);">Session 10.4 selector harness</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
+        <tr><td style="color:var(--muted);">Session 10.5 control package</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
+        <tr><td style="color:var(--muted);">Session 10.6 proof build</td><td style="text-align:right; font-variant-numeric: tabular-nums;">TBD</td></tr>
         <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Phase 1 ceiling</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$20.00</td></tr>
         <tr><td style="color:var(--green);">Remaining</td><td style="text-align:right; font-variant-numeric: tabular-nums; color:var(--green);">$20.00</td></tr>
       </table>
