@@ -4,6 +4,19 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-21: Session handoffs must explicitly say whether autonomous continuation is allowed
+
+After setting up a heartbeat to continue future sessions, the user pushed for a
+harder gate than "infer it from the wrap-up prose." Decision: the latest
+session entry in `data/sessions.md` must now carry an explicit
+`Autonomous continuation: yes` or `Autonomous continuation: no` field.
+
+Rule: use `yes` only when the next session may begin without any further user
+review, approval, or unresolved decision. If the field is missing or the
+language is ambiguous, automation must treat the session as blocked. This makes
+autonomous continuation opt-in and machine-readable enough for a heartbeat to
+trust.
+
 ### 2026-04-21: Session 10.2 keeps the cheap producer dossier backbone-first and makes `RELATED_BUT_DISTINCT` a first-class non-merge edge
 
 While executing Session 10.2, the live DB state made one thing clear: the

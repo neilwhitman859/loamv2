@@ -12,7 +12,7 @@ When starting a session under **Active**, use this shape:
 
 When moving a session to **Done**, rewrite the entry in this shape:
 
-- **N - short label (YYYY-MM-DD)** (Codex) - Produced: ... Decisions made: ... Open risks: ... Next recommended session: ... Next session prompt: ... Confidence producer dedup reaches spec: ... Budget spent: ...
+- **N - short label (YYYY-MM-DD)** (Codex) - Produced: ... Decisions made: ... Open risks: ... Next recommended session: ... Next session prompt: ... Autonomous continuation: yes/no ... Confidence producer dedup reaches spec: ... Budget spent: ...
 
 Wrap-up standard for the user-facing close-out:
 
@@ -35,6 +35,9 @@ Section requirements:
 - Section 6 must use `Up:` and `Down:` bullets
 - Section 8 must use `Estimated:` and `Actual API spend:` bullets
 - Section 9 must use a fenced `text` code block, even if it only points to an `.md`
+- Every **Done** entry must include `Autonomous continuation: yes` or `Autonomous continuation: no`
+- Use `Autonomous continuation: yes` only when the next session may start without user review, approval, or any unresolved user decision
+- Missing or ambiguous autonomy language should be treated as `no` by automations and by the next session
 
 If the work grows beyond one primary deliverable, close the current session and start a new one instead of stretching the entry.
 
@@ -43,6 +46,8 @@ If the work grows beyond one primary deliverable, close the current session and 
 - None currently logged.
 
 ## Done
+
+- **10.2a - autonomous continuation gating (2026-04-21)** (Codex) - Produced: an explicit autonomy gate in this whiteboard, the repo-wide protocol update in [AGENTS.md](/C:/Users/neilw/Documents/GitHub/loamv2/AGENTS.md), a logged decision in [docs/DECISIONS.md](/C:/Users/neilw/Documents/GitHub/loamv2/docs/DECISIONS.md), and a tightened `Auto Next Session` heartbeat that advances only when the latest **Done** entry explicitly says `Autonomous continuation: yes`. Decisions made: autonomous continuation should be controlled by an explicit session-level field rather than inferred from prose; and missing or ambiguous autonomy language must count as blocked, not as implicit permission to continue. Open risks: this only stays trustworthy if future session close-outs set the field carefully and keep the blocker language honest. Next recommended session: keep Session 10.3 blocked until the shortlist seed-source decision is explicitly resolved, then run the shortlist-generation design against the fixed dossier. Next session prompt: [s10_3_shortlist_generation_design.md](/C:/Users/neilw/Documents/GitHub/loamv2/data/session_prompts/s10_3_shortlist_generation_design.md). Autonomous continuation: no - blocked pending the explicit decision on whether importer, retailer, and profile sources may seed shortlist candidates in `v1`. Confidence producer dedup reaches spec: 31%. Budget spent: estimated $0; actual $0.00.
 
 - **10.2 - identity dossier schema and candidate inventory (2026-04-21)** (Codex) - Produced: the Sprint 7 spec package [`producer_dossier_v1.md`](/C:/Users/neilw/Documents/GitHub/loamv2/data/sprints/identity-er/producer_dossier_v1.md), [`source_signal_inventory.md`](/C:/Users/neilw/Documents/GitHub/loamv2/data/sprints/identity-er/source_signal_inventory.md), and [`edge_taxonomy_v1.md`](/C:/Users/neilw/Documents/GitHub/loamv2/data/sprints/identity-er/edge_taxonomy_v1.md); the follow-on prompt [`s10_3_shortlist_generation_design.md`](/C:/Users/neilw/Documents/GitHub/loamv2/data/session_prompts/s10_3_shortlist_generation_design.md); refreshed [`data/dashboard.html`](/C:/Users/neilw/Documents/GitHub/loamv2/data/dashboard.html) with live DB counts and Step 3 completion; updated [`AGENTS.md`](/C:/Users/neilw/Documents/GitHub/loamv2/AGENTS.md), [`docs/DECISIONS.md`](/C:/Users/neilw/Documents/GitHub/loamv2/docs/DECISIONS.md), and Sprint 7 bookkeeping in [`journal.md`](/C:/Users/neilw/Documents/GitHub/loamv2/data/sprints/identity-er/journal.md), [`sessions.json`](/C:/Users/neilw/Documents/GitHub/loamv2/data/sprints/identity-er/sessions.json), and [`budget.json`](/C:/Users/neilw/Documents/GitHub/loamv2/data/sprints/identity-er/budget.json). Decisions made: the cheap dossier is now explicitly backbone-first and regulatory-aware; websites, profile prose, and history fields are escalation-only because canonical producer metadata is still too sparse to support them on the cheap path; the selector label set is fixed at `SAME_AS`, `RELATED_BUT_DISTINCT`, `NONE`, and `UNSURE`; and only accepted `SAME_AS` edges are merge-eligible while `RELATED_BUT_DISTINCT` is a first-class stored non-merge edge. Open risks: shortlist generation could still explode candidate volume if the seed stack is too broad; and the producer-side relationship tables are still too empty to help much beyond source-level clues. Next recommended session: design shortlist generation using only the Tier A source stack, set candidate caps, and define suppression rules before any selector prompt or proof work starts. Next session prompt: [`s10_3_shortlist_generation_design.md`](/C:/Users/neilw/Documents/GitHub/loamv2/data/session_prompts/s10_3_shortlist_generation_design.md). Confidence producer dedup reaches spec: 31%. Budget spent: estimated $0; actual $0.00.
 

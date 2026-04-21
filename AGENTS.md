@@ -79,10 +79,15 @@ Every session should close with these things:
 - `Open risks` — anything unresolved or shaky
 - `Next recommended session` — the exact best follow-on task
 - `Confidence producer dedup reaches spec` — a % estimate at wrap-up
+- `Autonomous continuation` — explicit `yes` / `no`; use `yes` only when the next session may start without user review, approval, or any unresolved user decision
 - `Budget spent` — actual external API spend during the session
 
 When another session is clearly next, every session should also end with:
 - `Next session prompt` — a ready-to-run prompt file under `data/session_prompts/` (or the active sprint dir if more appropriate), and the final user-facing wrap-up should include that prompt inline plus the file path
+
+Automation rule:
+- session automation should key off the latest `data/sessions.md` **Done** entry's `Autonomous continuation` field, not infer readiness from prose
+- missing or ambiguous autonomy language counts as `no`
 
 Every user-facing session wrap-up should use the exact standardized format below:
 - title: `Session <number> Wrap-Up`
@@ -198,6 +203,7 @@ When closing a session entry, rewrite it to include:
 - `Open risks`
 - `Next recommended session`
 - `Next session prompt` when a clear follow-on session exists
+- `Autonomous continuation`
 - `Confidence producer dedup reaches spec`
 - `Budget spent`
 

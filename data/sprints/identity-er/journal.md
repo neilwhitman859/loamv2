@@ -2,9 +2,10 @@
 
 **Opened:** 2026-04-21
 **Status:** Active
-**Current block:** Session 10.2 fixed `producer_dossier_v1`, the source/signal
-inventory, and the edge taxonomy. Session 10.3 is next: design shortlist
-generation against that now-stable evidence object.
+**Current block:** Session 10.2a hardened the handoff rule: Session 10.3 stays
+blocked until `data/sessions.md` explicitly says autonomous continuation is
+allowed. The open decision is still whether importer / retailer / profile
+sources may seed shortlist candidates in `v1`.
 
 ---
 
@@ -54,3 +55,24 @@ generation against that now-stable evidence object.
   **Why this matters:** Sprint 7 can now design shortlist generation against a
   stable evidence object instead of re-litigating what the model should see on
   every later session.
+
+- **Session 10.2a (2026-04-21):** tightened the handoff contract for any
+  autonomous continuation.
+
+  **Scope held:** no shortlist design, no selector work, no implementation,
+  no benchmark reruns, and no merge execution.
+
+  **Artifacts produced:**
+  - explicit `Autonomous continuation: yes/no` protocol in `data/sessions.md`
+  - matching repo-wide rule in `AGENTS.md`
+  - heartbeat prompt hardened to require the explicit field
+
+  **Decisions locked in the protocol:**
+  - automation should advance only when the latest **Done** session explicitly
+    says `Autonomous continuation: yes`
+  - missing or ambiguous autonomy language counts as blocked
+  - the current Sprint 7 handoff remains blocked until the shortlist
+    seed-source decision is explicitly cleared
+
+  **Why this matters:** the heartbeat can now follow a narrow machine-readable
+  gate instead of trying to infer permission from narrative wrap-up prose.
