@@ -693,6 +693,81 @@
 
 ---
 
+- **Session 7 (2026-04-20):** Published
+  `data/sprints/dedup/session7_bakeoff_v2_design.md`, the durable redesign memo
+  for the first v2 adjudication rebuild. Locked conclusions without changing
+  `benchmark_v1` or the frozen Session 4 gates: v1 packets had no real
+  official-domain retrieval, the citation contract exposed too few legal refs,
+  the consensus path inherited child-schema failures, and Sonnet remained
+  unsafe on shared-surname / holdco false merges. Recommended v2 scope:
+  packet v2 with flat `evidence_refs`, official-domain retrieval, ref-safe
+  adjudicator prompts, normalized-child consensus, and merge vetoes on the
+  highest-risk contradiction families. Queue-building stayed blocked pending a
+  real v2 rerun.
+
+- **Session 8 (2026-04-20):** Built
+  `pipeline/identity/bakeoff_packet_v2.py`,
+  `pipeline/identity/bakeoff_harness_v2.py`, and
+  `pipeline/identity/bakeoff_run_v2.py`, then ran the canonical v2 proof subset
+  plus the full rerun under `data/sprints/dedup/bakeoff_v2/`. Contract hygiene
+  was fixed: hidden-field leaks stayed at zero, schema-validity and citation
+  integrity hit 1.0, and normalized-child consensus no longer inherited child
+  ref breakage. But the full rerun still failed the frozen gates because
+  continuity / alias evidence remained too permissive and drove 31 false merges
+  for Gemini, 26 for Sonnet, and 18 for consensus. Result: queue-building still
+  blocked; the new root problem was continuity trust, not packet contract
+  hygiene.
+
+- **Session 9 (2026-04-21):** Audited those v2 false merges and published
+  `data/sprints/dedup/session9_v3_continuity_audit.md`. Core finding: 37 of 39
+  unique false-merge cases carried `official_continuity_*` refs; alias
+  cross-mentions and shared-domain continuity were doing far too much work.
+  Locked the minimum v3 redesign: split hard vs soft continuity, stop treating
+  organic-domain matches as official continuity, require exact full-name alias
+  proof on hard-official pages, downgrade shared-domain continuity unless
+  page-level brand identity aligns, add a narrow ownership/acquisition risk
+  flag, and expand the proof subset to 36 cases with 8 continuity stress cases.
+
+- **Session 9.1 (2026-04-21):** Implemented the minimum v3 continuity redesign
+  and added a proof-only runner path. The first proof cycle failed on the
+  unresolved-official / secondary-evidence cluster and correctly stopped before
+  any 152-case rerun. Session 9.2 later established that those proof artifacts
+  still depended on stale pre-v3 packet files, so Session 9.1 remains useful as
+  a diagnosis memo but not the final verdict on the packet layer.
+
+- **Session 9.2 (2026-04-21):** Forced a fresh packet rebuild to `v2.1` and
+  added the unresolved-official / secondary-evidence backstop in the packet and
+  harness layers. Fresh proof artifacts under
+  `session9_2_unresolved_official_backstop_proof_subset` passed cleanly for
+  Sonnet, Gemini, and consensus. The dangerous continuity false-merge cluster
+  was now controlled on a rebuilt proof slice, but the full rerun still
+  required explicit approval.
+
+- **Session 9.3 (2026-04-21):** Ran the approved 152-case rerun on the
+  proof-cleared `v2.1` path and published the canonical scorecard, diff,
+  manifest, and gate memo under `data/sprints/dedup/bakeoff_v2/`. Safety
+  improved sharply: Gemini and consensus reached `0` false merges, Sonnet fell
+  to `1`, and auditability stayed perfect. But recall / queue burden remained
+  far outside the frozen gates: Sonnet finished `1 false merge / 5 hard missed /
+  44 soft missed`, Gemini `0 / 9 / 42`, consensus `0 / 4 / 47`. Queue-building
+  stayed blocked.
+
+- **Session 9.4 (2026-04-21):** Published
+  `data/sprints/dedup/session9_4_post_rerun_failure_audit.md`, the post-rerun
+  failure audit memo. The audit showed the new blocker is mainly soft missed
+  merges / over-flagging, not residual false merges: 49 of 51 expected-MERGE
+  benchmark cases were missed by all three contenders, and 39 cases that both
+  single models had merged in Session 8 became non-MERGE for both in Session
+  9.3. Dominant miss families were `11.4.h` orthographic variants, `11.4.f`
+  generational succession, `11.4.n` global multi-country brands, and `11.4.p`
+  merchant prefixes. The tempting rescue of relaxing
+  `risk_sparse_official_evidence` was rejected because the same packet
+  signature overlaps previously fixed false merges. Recommendation: treat the
+  current adjudication path as a non-execution-ready artifact and require an
+  explicit user decision before any further Sprint 6 spend.
+
+---
+
 ## Done
 
 - **S7 - adjudication bakeoff v2 design.** Produced

@@ -1,6 +1,6 @@
 {
   "budget": 450.00,
-  "spent": 313.37,
+  "spent": 318.95,
   "sessions": {
     "B6.1": 0.00,
     "B6.2": 0.00,
@@ -11,10 +11,12 @@
     "B6.4_total": 24.51,
     "B6.5a_total_partial_v2": 142.40,
     "B6.5x_chrome_and_coverage": 65.13,
-    "S6_first_real_bakeoff_v1": 2.89
+    "S6_first_real_bakeoff_v1": 2.89,
+    "S8_to_S9_3_v2_rebuild_total": 5.58,
+    "S9_4_post_rerun_failure_audit": 0.00
   },
-  "remaining_projected_b6_5_thru_close": "blocked pending v2 bakeoff redesign; no queue build budget should be committed yet",
-  "remaining_sprint_ceiling": 136.63,
+  "remaining_projected_b6_5_thru_close": "queue-building remains blocked; no further Sprint 6 spend should be committed until the user explicitly chooses between freezing the current adjudication path or authorizing a larger redesign",
+  "remaining_sprint_ceiling": 131.05,
   "paths_for_continuation": {
     "legacy_path_1_pragmatic": {
       "total_add": 9,
@@ -32,5 +34,5 @@
       "status": "archived as pre-rebuild analysis"
     }
   },
-  "note": "The legacy B6.5a partial path remains useful as benchmark and failure-mode context, but the active merge-only Codex rebuild now has a completed real bakeoff artifact: session6_first_real_bakeoff_v1. That run added $2.89 and showed that no frozen contender cleared the production or fallback gates. Queue-building is blocked; the next spend should be on a tightly scoped v2 bakeoff redesign, not execution."
+  "note": "The legacy B6.5a partial path remains useful as benchmark and failure-mode context. The merge-only Codex rebuild has now completed the v2 rerun sequence through Session 9.3, and Session 9.4's audit found no credible narrow redesign that would recover recall without risking the newly-fixed false-merge families. Queue-building is still blocked. Any further Sprint 6 spend now requires an explicit user decision: freeze the adjudication path as a non-execution-ready artifact, or authorize a larger redesign."
 }

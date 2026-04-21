@@ -70,5 +70,53 @@
     "shape": "design",
     "spent": 0.00,
     "notes": "Produced data/sprints/dedup/session7_bakeoff_v2_design.md, a durable v2 redesign memo based on the full session6_first_real_bakeoff_v1 artifacts. Locked conclusions without changing benchmark_v1 or the Session 4 hard gates: all 152 v1 packets had retrieval=missing with zero official-domain hits; the output contract exposed too few legal citeable refs and caused widespread broken_support_refs / broken_contradiction_refs; the v1 consensus contender was built from raw child outputs and inherited child schema failures; Sonnet was the closest single contender but still unsafe on shared-surname and holdco/product-tier false merges. Recommended v2 scope: packet v2 with a flat citeable evidence ledger + real official-domain retrieval, ref-safe adjudicator prompt, normalized-child consensus, merge veto on the highest-risk contradiction families, and a narrowed lineup centered on sonnet_guardrailed_v2, gemini_guardrailed_v2, and sonnet_gemini_consensus_v2 (with gpt5mini_guardrailed_v2 as backup swap). Queue-building remains blocked until the full v2 rerun clears both production and fallback gates. Added next-session prompt data/session_prompts/s7_1_bakeoff_v2_build_and_run.md."
+  },
+  {
+    "id": "S8",
+    "date": "2026-04-20",
+    "title": "Adjudication bakeoff v2 build + rerun",
+    "shape": "evaluation",
+    "spent": 0.00,
+    "notes": "Built pipeline/identity/bakeoff_packet_v2.py, bakeoff_harness_v2.py, and bakeoff_run_v2.py. Replaced the v1 packet contract with a flat evidence_refs ledger, official-domain retrieval, normalized-child consensus, and packet-side / harness-side merge-veto guardrails. Ran the proof subset and the full canonical v2 rerun under data/sprints/dedup/bakeoff_v2/. Contract hygiene passed cleanly, but no contender cleared the frozen Session 4 production or fallback gates; the main blocker shifted from schema/citation failures to unsafe continuity / alias evidence over-merging distinct producers."
+  },
+  {
+    "id": "S9",
+    "date": "2026-04-21",
+    "title": "V3 continuity audit and redesign memo",
+    "shape": "audit",
+    "spent": 0.00,
+    "notes": "Published data/sprints/dedup/session9_v3_continuity_audit.md. Audited the v2 false merges and showed they were overwhelmingly driven by packet-side continuity trust, especially alias cross-mentions and shared-domain continuity. Locked the minimum v3 redesign around hard-vs-soft continuity, stricter official-domain trust, exact-name alias proof, a narrow ownership/acquisition risk flag, and an expanded proof subset. Queue-building remained blocked pending proof."
+  },
+  {
+    "id": "S9.1",
+    "date": "2026-04-21",
+    "title": "V3 continuity implementation + first proof rerun",
+    "shape": "implementation",
+    "spent": 0.00,
+    "notes": "Implemented the minimum v3 continuity redesign in bakeoff_packet_v2.py, bakeoff_harness_v2.py, and bakeoff_run_v2.py, and added a proof-only runner path so the 152-case rerun could not fire without explicit approval. The first proof cycle failed on unresolved-official secondary-evidence cases, and the session stopped without running the full rerun. Those artifacts remained diagnostically useful, but Session 9.2 later established that this proof still depended on stale pre-v3 packet files."
+  },
+  {
+    "id": "S9.2",
+    "date": "2026-04-21",
+    "title": "Unresolved-official backstop + fresh proof rerun",
+    "shape": "implementation",
+    "spent": 0.00,
+    "notes": "Forced a fresh packet rebuild to packet version v2.1 and added the unresolved-official / secondary-evidence backstop in the packet and harness layers. The rebuilt 36-case proof subset passed cleanly for sonnet_guardrailed_v2, gemini_guardrailed_v2, and sonnet_gemini_consensus_v2, eliminating the residual continuity false merges from Session 9.1. Queue-building remained blocked because the full rerun still required explicit user approval."
+  },
+  {
+    "id": "S9.3",
+    "date": "2026-04-21",
+    "title": "Full rerun on fresh v2.1 packets",
+    "shape": "evaluation",
+    "spent": 1.95,
+    "notes": "Ran the approved full 152-case rerun on the proof-cleared v2.1 packet path and published the canonical scorecard, diff, manifest, and gate memo under data/sprints/dedup/bakeoff_v2/. Safety improved materially: gemini_guardrailed_v2 and sonnet_gemini_consensus_v2 both reached 0 false merges, and sonnet_guardrailed_v2 dropped to 1. But recall and queue burden still failed the frozen gates: sonnet 1/5/44 false-hard-soft, gemini 0/9/42, consensus 0/4/47. Queue-building remained blocked; the next move shifted to a focused failure audit rather than execution."
+  },
+  {
+    "id": "S9.4",
+    "date": "2026-04-21",
+    "title": "Post-rerun failure audit",
+    "shape": "audit",
+    "spent": 0.00,
+    "notes": "Published data/sprints/dedup/session9_4_post_rerun_failure_audit.md. The audit showed the current blocker is mainly soft missed merges / over-flagging rather than residual false merges, with 49 of 51 true-merge cases missed by all three contenders and 39 cases that both single models had merged in Session 8 now downgraded to non-MERGE in Session 9.3. Dominant miss families were 11.4.h orthographic variants, 11.4.f generational succession, 11.4.n global multi-country brands, and 11.4.p merchant prefixes. The tempting narrow rescue (relaxing sparse official evidence) was rejected because it overlaps the same packet signatures that fixed prior false merges. Recommendation: freeze the current adjudication path as a non-execution-ready artifact unless the user explicitly approves a larger redesign."
   }
 ]

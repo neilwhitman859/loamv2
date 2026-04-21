@@ -291,7 +291,7 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">Sprint 6 &middot; Merge-only rebuild checkpoint &middot; <!--updated-->updated 2026-04-21 09:06 ET<!--/updated--></div>
+  <div class="meta">Sprint 6 &middot; Merge-only rebuild checkpoint &middot; <!--updated-->updated 2026-04-21 12:10 ET<!--/updated--></div>
 </div>
 
 <!-- ============= SESSION TOKENS ============= -->
@@ -318,18 +318,18 @@
 <!-- ============= CURRENT STEP ============= -->
 <div class="section-label">Current step</div>
 <div class="block-card">
-  <h2>Rebuild checkpoint &mdash; the fresh 152-case rerun is complete, the proof stayed clean, and queue-building remains blocked</h2>
-  <div class="goal">Session 9.3 reran the proof-cleared `session9_2_unresolved_official_backstop` path on fresh `v2.1` packets. The proof subset passed again, and the full 152-case rerun confirmed that the unresolved-official backstop fixed the dangerous continuity false-merge cluster. But no contender cleared the frozen Session 4 production or fallback gates because the new safety posture still leaves too many true merges as `SKIP` or `FLAGGED`.</div>
+  <h2>Rebuild checkpoint &mdash; the post-rerun failure audit is complete, and queue-building is still blocked</h2>
+  <div class="goal">Session 9.4 audited the fresh Session 9.3 rerun and answered the remaining question: there is no credible narrow redesign left that both recovers enough recall and preserves the new false-merge safety. The unresolved-official backstop fixed the dangerous continuity cluster, but the remaining misses are now a broader recall / flag-burden wall. The current adjudication path should be treated as a non-execution-ready artifact unless the user explicitly chooses a larger redesign.</div>
   <!--progress-block-->
   <div class="block-progress">
-    <div class="pstep">Rebuild artifacts now include the Session 9.2 unresolved-official backstop, the fresh proof rerun, and the full Session 9.3 scorecard on rebuilt `v2.1` packets</div><div class="pstats">Session 1 = pair corpus audit &middot; Session 2 = benchmark freeze &middot; Session 3 = evidence packet &middot; Session 4 = broad bakeoff design &middot; Session 5 = packet generator + evaluation harness &middot; Session 6 = first real adjudication bakeoff &middot; Session 7 = v2 design memo &middot; Session 8 = v2 implementation + rerun &middot; Session 9 = v3 continuity audit + redesign memo &middot; Session 9.1 = v3 continuity implementation + first proof rerun &middot; Session 9.2 = unresolved-official backstop + fresh proof rerun &middot; Session 9.3 = approved full rerun on fresh packets</div>
+    <div class="pstep">Rebuild artifacts now include the Session 9.2 unresolved-official backstop, the fresh Session 9.3 rerun on `v2.1` packets, and the Session 9.4 stop-or-redesign audit memo</div><div class="pstats">Session 1 = pair corpus audit &middot; Session 2 = benchmark freeze &middot; Session 3 = evidence packet &middot; Session 4 = broad bakeoff design &middot; Session 5 = packet generator + evaluation harness &middot; Session 6 = first real adjudication bakeoff &middot; Session 7 = v2 design memo &middot; Session 8 = v2 implementation + rerun &middot; Session 9 = v3 continuity audit + redesign memo &middot; Session 9.1 = v3 continuity implementation + first proof rerun &middot; Session 9.2 = unresolved-official backstop + fresh proof rerun &middot; Session 9.3 = approved full rerun on fresh packets &middot; Session 9.4 = post-rerun failure audit</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">direction and rules</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">merge-only path locked &middot; PARENT_CHILD deferred &middot; core/tail redefined by product risk</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">benchmark + evidence</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">152 benchmark pairs frozen &middot; JSONL-first evidence packet defined &middot; hidden benchmark overlay split from visible evidence</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">bakeoff spec</div><div class="progress-bar"><div class="progress-fill" style="width: 100.0%"></div></div><div class="pstats" style="font-size:11.5px;">v1 contender set frozen &middot; `FLAGGED` semantics locked &middot; production/fallback gates explicit</div>
-    <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div><div class="progress-bar"><div class="progress-fill" style="width: 94%"></div></div><div class="pstats" style="font-size:11.5px;">Proof PASS on fresh `v2.1` packets &middot; Sonnet full run = 1 false merge / 5 hard missed / 44 soft missed &middot; Gemini = 0 / 9 / 42 &middot; consensus = 0 / 4 / 47 &middot; no contender cleared the frozen production or fallback gates</div>
+    <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div><div class="progress-bar"><div class="progress-fill" style="width: 94%"></div></div><div class="pstats" style="font-size:11.5px;">Failure audit complete &middot; 49 of 51 expected-MERGE cases were missed by all three contenders &middot; 39 cases that both single models had merged in Session 8 became non-MERGE for both in Session 9.3 &middot; no credible narrow redesign survived the audit</div>
   </div>
   <!--/progress-block-->
-  <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current rebuild doctrine:</strong> ground adjudication in official-domain evidence, local wine-list coherence, and deterministic identity rules. Search is retrieval, not truth by itself. Session 9.1 proved that weak continuity hints can no longer waive the veto, but unresolved-official cases still need a stronger backstop so secondary/catalog evidence cannot carry unsafe merges by itself.</div>
+  <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current rebuild doctrine:</strong> ground adjudication in official-domain evidence, local wine-list coherence, and deterministic identity rules. Search is retrieval, not truth by itself. Session 9.4's audit says the remaining recall wall is not one more sparse-evidence tweak away from the frozen gates.</div>
   <!--block-steps-->
   <ul class="steps">
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 1 &mdash; Freeze merge-only direction</span></li>
@@ -340,7 +340,7 @@
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 6 &mdash; Broad bakeoff design</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 7 &mdash; Packet generator + evaluation harness</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 8 &mdash; First adjudication bakeoff</span></li>
-    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 9 &mdash; Build core adjudication queue (fresh rerun landed, but queue work stays paused because no contender cleared the frozen gates)</span></li>
+    <li><span class="marker current-marker">&#9654;</span><span class="current">Step 9 &mdash; Build core adjudication queue (post-rerun audit complete; queue work stays paused pending user choice to freeze or authorize a larger redesign)</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 10 &mdash; Build tail adjudication queue</span></li>
     <li><span class="marker pending-s">&#9675;</span><span class="pending-s">Step 11 &mdash; Publish pre-execution scorecard</span></li>
   </ul>
@@ -350,7 +350,7 @@
 <div class="section-label">Sprint 6 &mdash; Core/Tail split &amp; quality targets</div>
 <div class="sprint-card">
   <div class="goal">
-    Producer dedup on 33,281 rows and 225,281 wines. Core/tail is now a product-risk split used for evaluation, not the old routing-stage execution plan. The immediate quality task is no longer rerun approval or packet freshness. It is deciding whether the Session 9.3 result justifies one more narrow redesign to recover recall without reopening the false-merge problem.
+    Producer dedup on 33,281 rows and 225,281 wines. Core/tail is now a product-risk split used for evaluation, not the old routing-stage execution plan. The immediate quality task is no longer rerun approval, packet freshness, or miss-cluster diagnosis. It is deciding whether to freeze the current adjudication path or authorize a materially larger redesign.
   </div>
   <table class="metrics-table">
     <tr>
@@ -381,10 +381,10 @@
       <tr><td>Benchmark state</td><td><code>benchmark_v1</code> frozen at 152 merge-only cases</td></tr>
       <tr><td>Evidence packet state</td><td><code>evidence_packet_v2</code> rebuilt as fresh <code>v2.1</code> packets with hidden benchmark overlay stripped from model-visible inputs</td></tr>
       <tr><td>Bakeoff state</td><td>v1 real run is preserved under <code>session6_first_real_bakeoff_v1</code>; v2 real run is canonical under <code>session7_first_real_bakeoff_v2</code>; Session 9.2 proof-only artifacts live under <code>session9_2_unresolved_official_backstop_proof_subset</code> on fresh <code>v2.1</code> packets; Session 9.3 completed the approved full rerun under <code>session9_3_full_rerun_if_approved</code></td></tr>
-      <tr><td>Immediate next artifact</td><td><code>session9_3_full_rerun_if_approved_gate_memo.md</code>: proof stayed clean, but no contender cleared the frozen gates because recall / flag burden remains too high</td></tr>
-      <tr><td>After that</td><td>run a focused post-rerun failure audit before considering any further redesign; queue-building remains blocked</td></tr>
+      <tr><td>Immediate next artifact</td><td><code>session9_4_post_rerun_failure_audit.md</code>: no credible narrow redesign survived the audit; current adjudication path is not execution-ready under the frozen gates</td></tr>
+      <tr><td>After that</td><td>user decision point: freeze the current adjudication path as a benchmark artifact, or authorize a larger redesign session; queue-building remains blocked</td></tr>
       <tr><td>Execution status</td><td>no producer-merge execution path is active yet</td></tr>
-      <tr><td>Primary risk</td><td>the unsafe continuity false merges are now largely controlled, but merge recall and queue burden are still far outside the frozen execution bar, so the adjudication path remains non-execution-ready</td></tr>
+      <tr><td>Primary risk</td><td>the unsafe continuity false merges are now largely controlled, but the remaining recall / flag-burden wall is too broad for one more safe micro-fix, so the adjudication path remains non-execution-ready</td></tr>
     </table>
   </div>
 </div>
@@ -419,7 +419,7 @@
     <tr>
       <td>Step 9 &mdash; core adjudication queue</td>
       <td>blocked</td>
-      <td>Fresh rerun complete: no contender cleared the frozen production or fallback gates, so queue-building remains blocked pending a focused post-rerun failure audit</td>
+      <td>Fresh rerun + failure audit complete: no contender cleared the frozen gates and the audit did not justify another narrow rerun, so queue-building remains blocked pending a user decision on freeze vs larger redesign</td>
       <td class="num">$5.58</td>
     </tr>
     <tr>
@@ -429,9 +429,9 @@
       <td class="num">TBD</td>
     </tr>
     <tr style="background:#fff4e5;">
-      <td><strong>Next user touchpoint</strong> &mdash; review the Session 9.3 scorecard, diff, and gate memo, then decide whether to authorize the post-rerun failure audit</td>
+      <td><strong>Next user touchpoint</strong> &mdash; review the Session 9.4 failure audit and decide whether to freeze this adjudication path or authorize a larger redesign session</td>
       <td>&mdash;</td>
-      <td>One analysis session to inspect the remaining hard-miss / soft-miss clusters and decide whether a minimal next redesign is justified</td>
+      <td>One decision session to accept the freeze recommendation or deliberately open a broader redesign path; do not queue-build or rerun yet</td>
       <td class="num">&mdash;</td>
     </tr>
   </table>

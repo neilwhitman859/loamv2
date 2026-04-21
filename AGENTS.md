@@ -411,6 +411,8 @@ Completed rebuild artifacts so far:
 - `data/sprints/dedup/evidence_packet_v1.md`
 - `data/sprints/dedup/session4_bakeoff_design.md`
 - `data/sprints/dedup/session7_bakeoff_v2_design.md`
+- `data/sprints/dedup/session9_v3_continuity_audit.md`
+- `data/sprints/dedup/session9_4_post_rerun_failure_audit.md`
 - `pipeline/identity/bakeoff_packet_v1.py`
 - `pipeline/identity/bakeoff_harness_v1.py`
 - `pipeline/identity/bakeoff_run_v1.py`
@@ -421,7 +423,7 @@ Completed rebuild artifacts so far:
 - `data/sprints/dedup/bakeoff_v2/` (packet v2, request wrappers, raw outputs, normalized outputs, scored summaries, manifests, proof gate check, and v1-vs-v2 diff outputs)
 
 Immediate next session target:
-- inspect the Session 9.3 full-rerun misses and flag burden to decide whether one narrow redesign can recover recall without reopening the false-merge problem; do not start queue-building unless that audit justifies a new approach
+- user decision point: either freeze the current adjudication path as a non-execution-ready benchmark artifact, or explicitly authorize a larger redesign session; do not start queue-building and do not spend on another narrow rerun
 
 Historical artifacts worth keeping:
 - B6.2 + B6.2.1 + B6.2.2 + B6.3 + B6.4 + B6.5a-partial outputs
@@ -445,6 +447,8 @@ These are still useful for benchmark comparison and failure-mode mining, but the
 **Session 9.2 proof outcome (2026-04-21):** `session9_2_unresolved_official_backstop` is now the canonical proof-cleared setup. Session 9.2 forced a fresh packet rebuild, bumped packet freshness to `v2.1`, and added the minimum unresolved-official / secondary-evidence backstop: a packet-side risk ref for acquisition / rename / former-estate narratives plus a harness-side veto that refuses weak unresolved-official merges without the narrow exact-name/exact-overlap same-country pattern. Fresh proof artifacts live under `data/sprints/dedup/bakeoff_v2/` with run name `session9_2_unresolved_official_backstop_proof_subset`. Result: **proof passed cleanly, and the 152-case rerun still did not execute.** On the rebuilt 36-case proof subset, add-on false merges fell to zero for `sonnet_guardrailed_v2`, `gemini_guardrailed_v2`, and `sonnet_gemini_consensus_v2`; reused-base false merges also fell to zero for all three. The three residual cases from Session 9.1 now resolve safely (`048` = Sonnet `SKIP`, Gemini vetoed to `FLAGGED`; `080` = Sonnet `SKIP`, Gemini `SKIP`; `008` = Sonnet and Gemini vetoed to `FLAGGED`). Queue-building remains blocked until a user-approved fresh 152-case rerun lands.
 
 **Session 9.3 full rerun outcome (2026-04-21):** `session9_3_full_rerun_if_approved` reran the proof-cleared `session9_2_unresolved_official_backstop` setup end-to-end on fresh `v2.1` packets. The proof subset passed again, and the full 152-case rerun completed cleanly with fresh score, diff, and manifest artifacts under `data/sprints/dedup/bakeoff_v2/`. Result: **no contender cleared the frozen Session 4 production or fallback gates.** The unsafe continuity false-merge cluster was sharply reduced, but the new blocker is now recall / queue burden rather than false-merge safety. `sonnet_guardrailed_v2` finished at 55.9% exact accuracy with 1 false merge, 5 hard missed merges, and 44 soft missed merges; `gemini_guardrailed_v2` reached 0 false merges but still posted 9 hard missed merges and 42 soft missed merges; `sonnet_gemini_consensus_v2` also held 0 false merges but over-flagged even harder with 4 hard missed merges and 47 soft missed merges. Auditability stayed perfect (`schema_valid_rate = 1.00`, `citation_integrity_rate = 1.00`, `rule_trace_rate = 1.00`) across the rerun. Queue-building remains blocked; the next move is a focused post-rerun failure audit, not execution.
+
+**Session 9.4 failure-audit outcome (2026-04-21):** `data/sprints/dedup/session9_4_post_rerun_failure_audit.md` is now the canonical readout on whether one more narrow redesign is justified. Result: **no credible narrow redesign emerged.** The current blocker is mainly soft missed merges / over-flagging, not residual false merges. Across the 51 expected-MERGE benchmark cases, 49 were missed by all three contenders, and 39 cases that both single models had merged in Session 8 became non-MERGE for both in Session 9.3. Dominant miss families are `11.4.h` orthographic variants, `11.4.f` generational succession, `11.4.n` global multi-country brands, and `11.4.p` merchant prefixes. `risk_sparse_official_evidence` is the main packet-side pressure point, but relaxing it is not a safe micro-fix because the same sparse-only signature overlaps multiple previously fixed false merges. Recommendation: freeze the current adjudication path as a non-execution-ready artifact unless the user explicitly approves a larger redesign.
 
 **B6.4 DONE (2026-04-17, $24.51):** Calibration only — 600-pair stratified
 set, gold-labeled 367 pairs (200 proxy + 167 from Sonnet+web oracle). Ran
