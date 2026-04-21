@@ -7,13 +7,61 @@
 **Status addendum (2026-04-21):** Session 9.7 now supplies a layered fallback
 contender that clears the fallback gate but still fails the frozen production
 gate.
-**Current block addendum:** the next block is a narrow recall-focused
-continuation on top of `session9_7_layered_safety_sonnet_r2_narrow`, unless the
-user prefers to freeze the adjudication path at this new fallback-only state.
+**Current block addendum:** Session 9.8 found that no narrow recall-focused
+continuation is credible enough to recover production readiness. The current
+recommendation is to freeze the adjudication path at
+`session9_7_layered_safety_sonnet_r2_narrow`, unless the user explicitly
+reopens Sprint 6 with a broader multi-family redesign.
 
 ---
 
 ## Block log
+
+- **Session 9.8 (2026-04-21):** Audited the remaining misses in the Session 9.7
+  layered fallback and tested whether one more narrow continuation was still
+  honest.
+
+  **Scope held:** kept `benchmark_v1`, the frozen Session 4 gates, and the new
+  zero-false-merge safety structure fixed; did not queue-build; did not touch
+  all-pairs execution; and did not run another proof unless the continuation
+  stayed genuinely narrow.
+
+  **Implementation:**
+  - Added the audit memo
+    `data/sprints/dedup/session9_8_recover_production_from_layered_fallback.md`.
+  - Added the conditional follow-on prompt
+    `data/session_prompts/s9_9_broader_redesign_if_not_freezing.md`.
+
+  **Audit result:**
+  - remaining disagreements: `9`, all missed merges (`6` hard, `3` soft)
+  - production still needs at least `5` additional safe recoveries to clear the
+    frozen gate
+  - the remaining miss set spans `6` packet-ref signatures
+  - `4` of the `9` misses sit outside the current routed-family specialist
+    bundle altogether
+  - the layered Session 9.7 run did not lose any recall versus Session 9.6; it
+    only removed the `5` false merges
+
+  **Why no proof ran:** a continuation confined to the current routed families
+  could not recover production readiness even in the best case, because the
+  still-blocking blind-core misses include `11.1`, `11.4.g`, and `11.4.b`
+  cases outside the routed bundle. The repeat signatures that do exist are also
+  entangled with benchmark skip controls and prior false-merge traps, so the
+  next proof large enough to matter would already be a broader redesign rather
+  than one more narrow recall-only continuation.
+
+  **Interpretation:** Session 9.8 did not find another honest bounded proof.
+  The current adjudication path remains useful as a fallback-only artifact, but
+  the correct freeze point is now the stronger Session 9.7 layered fallback
+  endpoint, not the weaker Session 9.6 specialist-only result.
+
+  **Spend:** `$0.00` incremental external API cost. Sprint 6 spend remains
+  `$319.51` against the `$450` ceiling.
+
+  **Recommendation after Session 9.8:** freeze the current adjudication path at
+  `session9_7_layered_safety_sonnet_r2_narrow`. Only reopen Sprint 6 if the
+  user explicitly wants a broader multi-family redesign rather than one more
+  narrow continuation.
 
 - **Session 9.7 (2026-04-21):** Broadened the redesign beyond the failed
   Session 9.6 specialist proof and tested a layered safety-gate architecture.

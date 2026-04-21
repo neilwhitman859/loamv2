@@ -16,9 +16,10 @@
     "S9_4_post_rerun_failure_audit": 0.00,
     "S9_5_freeze_or_rebuild_strategy": 0.00,
     "S9_6_pattern_specialist_proof": 0.12,
-    "S9_7_layered_safety_redesign": 0.44
+    "S9_7_layered_safety_redesign": 0.44,
+    "S9_8_recover_production_from_layered_fallback": 0.00
   },
-  "remaining_projected_b6_5_thru_close": "Session 9.7 broadened the redesign and found a layered fallback contender that now clears the fallback gate with 0 false merges overall, but the frozen production gate still fails on recall. Further Sprint 6 spend is only justified as one narrow recall-focused continuation on top of the Session 9.7 layered fallback state; otherwise freeze at that new endpoint.",
+  "remaining_projected_b6_5_thru_close": "Session 9.8 found no narrow recall-only continuation that is still honest under the frozen benchmark and gates. Further Sprint 6 spend is not justified as another narrow proof. Freeze at the Session 9.7 layered fallback endpoint unless the user explicitly opens a broader multi-family redesign.",
   "remaining_sprint_ceiling": 130.49,
   "paths_for_continuation": {
     "legacy_path_1_pragmatic": {
@@ -37,5 +38,5 @@
       "status": "archived as pre-rebuild analysis"
     }
   },
-  "note": "The legacy B6.5a partial path remains useful as benchmark and failure-mode context. The merge-only Codex rebuild has now completed the broader Session 9.7 redesign round. The new leading artifact is session9_7_layered_safety_sonnet_r2_narrow: 0 false merges overall, fallback gate pass, production gate fail. Queue-building remains blocked. The next spend, if any, should be one narrow recall-focused continuation on top of that layered fallback state; otherwise freeze there."
+  "note": "The legacy B6.5a partial path remains useful as benchmark and failure-mode context. The merge-only Codex rebuild has now completed the Session 9.8 recovery audit. The new leading artifact remains session9_7_layered_safety_sonnet_r2_narrow: 0 false merges overall, fallback gate pass, production gate fail. Session 9.8 did not find another honest narrow continuation, so queue-building remains blocked and the recommended posture is now freeze at that Session 9.7 layered fallback endpoint unless the user explicitly opens a broader redesign."
 }
