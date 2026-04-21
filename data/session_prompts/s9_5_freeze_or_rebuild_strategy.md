@@ -1,18 +1,18 @@
-# Session 9.5 - freeze or rebuild strategy
+# Session 9.5 - larger redesign selection under 152-case cap
 
 Goal:
-Review the Session 9.4 post-rerun failure audit and make the next high-level
-Sprint 6 decision: freeze the current adjudication path as non-execution-ready,
-or define a larger replacement strategy that does not rely on one more narrow
-packet-side rerun.
+Review the Session 9.4 post-rerun failure audit and choose one materially
+different redesign family to test on the frozen 152-case benchmark, with a hard
+exploration cap before any all-pairs scale-up.
 
 Primary deliverable:
 
-- one decision memo under `data/sprints/dedup/` that:
-  - accepts or rejects the Session 9.4 freeze recommendation
-  - if freezing: records the rationale and the exact handoff state
-  - if continuing: proposes one larger redesign family and explains why it is
-    materially different from the failed narrow-fix path
+- one design memo under `data/sprints/dedup/` that:
+  - names the single redesign family recommended next
+  - explains why it is materially different from the failed narrow-fix path
+  - defines the smallest 152-case proof needed to validate it
+  - estimates spend and keeps that proof within the user's $20 exploration cap
+    before any all-pairs run
 
 In scope:
 
@@ -20,28 +20,31 @@ In scope:
 - `data/sprints/dedup/session4_bakeoff_design.md`
 - `data/sprints/dedup/rebuild_roadmap.md`
 - `data/sprints/dedup/bakeoff_v2/scored/session9_3_full_rerun_if_approved*.{json,md}`
+- `docs/DECISIONS.md` entries from 2026-04-21 about exploration spend
 - dashboard / AGENTS / sessions updates
 
 Out of scope:
 
 - queue-building
 - producer execution
-- another rerun
+- any all-pairs run
+- running another rerun unless the design memo proves it is the right next proof
 - changing `benchmark_v1`
 - changing the frozen Session 4 hard gates
 
 Questions to answer:
 
-1. Should the current adjudication path be frozen as a benchmark artifact and
-   removed from the execution-critical path?
-2. If not, what larger redesign family is justified:
+1. Which larger redesign family is most justified next:
    - pattern-family specialists,
    - stronger deterministic evidence synthesis,
    - or benchmark/gate redesign?
-3. What exact user approval is required before any further Sprint 6 spend?
+2. What is the smallest proof on the 152-case segment that would genuinely
+   de-risk that redesign?
+3. Can that proof be done inside the user's $20 exploration cap?
+4. What exact user approval is needed before any all-pairs scale-up?
 
 Stop rule:
 
-- publish the decision memo and stop
+- publish the design memo and stop
 - do not rerun
 - do not queue-build

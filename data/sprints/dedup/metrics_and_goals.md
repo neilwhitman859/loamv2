@@ -1,6 +1,6 @@
 # Sprint 6 — Metrics & Goals (locked 2026-04-18)
 
-**Status:** locked after user sign-off on Step 7 planning session.
+**Status:** historical benchmark document. The 2026-04-18 Step 7-11 plan is preserved for audit comparison, but as of 2026-04-20 the working path is a merge-only Codex rebuild.
 **Budget:** $450 ceiling (raised from $300). Spent through Step 6: $231.67. Projected Steps 7-11: ~$162. Projected final: ~$394.
 
 ---
@@ -14,23 +14,21 @@
 | **False PC** | PC precision problem | PARENT_CHILD links created where no ownership exists, OR with wrong direction. Reversible metadata error. |
 | **Missed PC** | PC recall problem | Real ownership relations not recorded. Invisible to users (rows work fine); fully recoverable later. |
 
-## Core vs Tail split (adopted project-wide)
+## Core vs Tail split (going forward)
 
-### Core definition (Sprint 6 version: "Expanded Core")
+Historical note: Sprint 6's "Expanded Core" remains a useful benchmark artifact. Going forward, core/tail should be defined by **product risk**, not by whichever bucket an earlier pipeline happened to produce.
+
+### Core definition (production-risk core)
 
 A producer is **Core** if ANY of:
-- Country = US, OR
-- Has ≥1 wine linked via US retailer/importer staging (Spec's, Wally's, Flatiron, Skurnik, Kermit Lynch, Empson, Winebow, European Cellars, Polaner, Domestique, Best Wine Store, Firstleaf, Last Bottle, WineDeals), OR
-- Linked to any TTB COLA, OR
-- Has ≥5 wines in canonical DB, OR
-- Has any `wine_vintage_scores` row, OR
-- Has any `wine_vintage_prices` row, OR
-- Has ≥1 wine in international retailer staging (LCBO, Systembolaget, BC Liquor, PA PLCB), OR
-- Has ≥1 wine in competition data (Berliner, TEXSOM, Enofile)
+- Has any **US-market signal**: country = US, any linked TTB COLA, or any wine linked via US retailer/importer staging (Spec's, Wally's, Flatiron, Skurnik, Kermit Lynch, Empson, Winebow, European Cellars, Polaner, Domestique, Best Wine Store, Firstleaf, Last Bottle, WineDeals), OR
+- Has any **shopper-visible commercial signal** outside the US: any `wine_vintage_scores`, any `wine_vintage_prices`, any international retailer presence (LCBO, Systembolaget, BC Liquor, PA PLCB), or any competition presence (Berliner, TEXSOM, Enofile), OR
+- Has **catalog blast radius**: at least 5 canonical wines, OR
+- Is manually promoted into core because it is marquee, demo-visible, previously flagged high-risk, or part of a known family/brand cluster where a bad merge would be unusually visible.
 
-**Tail = everything else.**
+**Tail = everything else**: usually LWIN-only or near-LWIN-only producers with thin catalogs and few external visibility signals.
 
-Implementation: `sprint6_core_producers` table in DB, populated by `scripts/sprint6_lock_core.py`. Each row carries a `reasons[]` array tagging which criteria qualified it.
+Operational rule: recompute and then freeze the core/tail split at the start of a dedup sprint. Keep the frozen split for evaluation and scorecards so quality metrics remain comparable within that sprint.
 
 ### Current split (as of 2026-04-18)
 
@@ -43,33 +41,37 @@ Tail is dominated by low-wine-count producers: 15,070 have 1-2 wines (most of Ta
 
 ## Quality targets
 
-### Core (Sprint 6 targets)
+Parent/child modeling is intentionally removed from the production-readiness gate below. The gating question is whether merge decisions are safe enough for Loam's credibility targets.
+
+### Core
 
 | Metric | Target | Validated by |
 |---|---|---|
-| False Merges | **0** | Phase 3a + Step 7 web validation on all MERGE candidates |
-| Missed Merges | **≤3%** (~97% catch) | Step 7 escalation coverage + Step 10 stratified audit |
-| False PC | **0** | Step 7 web validation on all PC candidates + Step 10 direction audit |
-| Missed PC | ≤5% | Web validation of PC-flagged pairs; accept some Missed PC as recoverable |
-| Web-validation coverage | ~100% of escalations, PC, and uncertain; stratified audit of auto-SKIPs | Step 7 |
+| False Merges | **0** | Independent evidence review on all execution-bound core merges + pre-execution scorecard |
+| Missed Merges | **≤3%** | Stratified audit of core skips plus targeted recall probes on known duplicate clusters |
+| Unresolved coverage | High-risk ambiguous core pairs should be `FLAGGED`, not force-merged | Review queue audit |
+| Survivor correctness | Survivor must match current US-market label form | Pre-execution survivor audit |
 
-### Tail (Sprint 6 targets)
+### Tail
 
 | Metric | Target | Validated by |
 |---|---|---|
-| False Merges | **≤1%** | Only auto-merge when high confidence; bias to SKIP |
-| Missed Merges | ≤10% | Step 7 covers escalation pile; auto-SKIPs trusted on B6.4 calibration |
-| PC correctness | Deferred | Default-SKIP Tail PC; handle in a later metadata sprint |
-| Web-validation coverage | ≥20% (escalations only) | Step 7 |
+| False Merges | **≤1%** | Conservative thresholds, bias to SKIP, stratified audit of execution-bound tail merges |
+| Missed Merges | **≤10%** | Random tail-skip audit plus targeted sampling of known hard patterns |
+| Unresolved coverage | Tail may tolerate a larger `FLAGGED` queue than core | Review queue audit |
 
 ## Defaults & conventions carried forward to Sprint 7+
 
 1. **Terminology:** False Merges / Missed Merges / False PC / Missed PC. Never "precision/recall" in user-facing docs.
-2. **Core/Tail split** applied at the start of every dedup sprint.
-3. **Spending priority:** disproportionate Core investment; Tail gets post-execution safety nets.
-4. **Human review cap:** ~50 pairs per sprint max. AI+web is the reliability floor (see `memory/feedback_user_review_scale.md`).
-5. **Haiku+Serper** as default rigor tier (vs L3 Sonnet+Anthropic-web): ~25× cheaper, measured more accurate on merchant/shared-surname/collab patterns (see `memory/feedback_opus_inline_reasoning.md` and Sprint 6 Phase 3a findings).
-6. **Quality measurement:** Opus inline audits a stratified random sample at sprint close (~400-600 pairs). Scorecard published with sprint close.
+2. **Core/Tail split** is a frozen product-risk tier for the sprint, not a live moving bucket.
+3. **Spending priority:** disproportionate Core investment; Tail gets stricter bias-to-skip behavior and sampled audits.
+4. **Execution scope:** merge-only first; parent/child is optional later metadata work.
+5. **Human review cap:** keep review tight and high-signal; ambiguous rows should become `FLAGGED`, not a second full manual dedup project.
+6. **Quality measurement:** publish a pre-execution scorecard before any DB mutation.
+
+## Working rebuild note
+
+The current working plan for the Codex rebuild lives in `data/sprints/dedup/rebuild_roadmap.md`. The Step 7-11 section below remains as the historical Sprint 6 execution plan that was audited, not the new baseline.
 
 ## Plan lock — Sprint 6 Steps 7-11
 
