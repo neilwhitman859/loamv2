@@ -126,6 +126,20 @@ HOLDCO_RISK_TOKENS = COMMON_PLACE_TOKENS | {
     "selection",
     "series",
 }
+OWNERSHIP_RISK_PHRASES = {
+    "acquired",
+    "acquisition",
+    "controlled by",
+    "estate of",
+    "founded by",
+    "owned by",
+    "operated by",
+    "operator of",
+    "part of",
+    "portfolio",
+    "project of",
+    "sister brand",
+}
 
 
 def now_iso() -> str:
@@ -201,32 +215,16 @@ def choose_official_domain(producer: dict, primary_result) -> tuple[str | None, 
 
     kg = primary_result.knowledge_graph or {}
     kg_domain = root_domain(domain_host(kg.get("website")))
-    if kg_domain and kg_domain not in OFFICIAL_BLOCKLIST:
+    kg_title = str(kg.get("title") or "")
+    if (
+        kg_domain
+        and kg_domain not in OFFICIAL_BLOCKLIST
+        and (
+            domain_matches_producer_name(kg_domain, producer["name"])
+            or name_alignment_ok(producer["name"], kg_title)
+        )
+    ):
         return kg_domain, "serper.knowledge_graph.website"
-
-    name_tokens = meaningful_name_tokens(producer["name"])
-    best_host = None
-    best_score = -1
-    for organic in primary_result.organic:
-        host = root_domain(domain_host(organic.get("link")))
-        if not host or host in OFFICIAL_BLOCKLIST:
-            continue
-        score = 0
-        host_text = normalize_text(host.replace(".", " "))
-        title_text = normalize_text((organic.get("title") or ""))
-        snippet_text = normalize_text((organic.get("snippet") or ""))
-        for token in name_tokens:
-            if token in host_text:
-                score += 4
-            if token in title_text:
-                score += 2
-            if token in snippet_text:
-                score += 1
-        if score > best_score:
-            best_score = score
-            best_host = host
-    if best_host and best_score >= 4:
-        return best_host, "serper.organic.domain_match"
     return None, None
 
 
@@ -268,6 +266,75 @@ def build_secondary_ref(ref_id: str, subject: str, item: dict) -> dict:
             "url": item.get("link"),
         },
     )
+
+
+def domain_matches_producer_name(domain: str | None, producer_name: str) -> bool:
+    host_text = normalize_text((domain or "").replace(".", " "))
+    if not host_text:
+        return False
+    return any(token in host_text for token in meaningful_name_tokens(producer_name))
+
+
+def hit_haystack(hit: dict) -> str:
+    detail = hit.get("detail", {}) if isinstance(hit.get("detail"), dict) else {}
+    return normalize_text(
+        " ".join(
+            [
+                str(hit.get("summary") or ""),
+                str(detail.get("title") or ""),
+                str(detail.get("url") or ""),
+            ]
+        )
+    )
+
+
+def full_name_phrase_present(text: str, producer_name: str) -> bool:
+    phrase = normalize_text(producer_name)
+    return bool(phrase) and phrase in text
+
+
+def official_hits_mention_name(retrieval: dict, producer_name: str) -> bool:
+    return any(full_name_phrase_present(hit_haystack(hit), producer_name) for hit in retrieval["official_hits"])
+
+
+def shared_domain_brand_identity_aligned(
+    producer_a: dict,
+    producer_b: dict,
+    retrieval_a: dict,
+    retrieval_b: dict,
+) -> bool:
+    if retrieval_a["resolved_domain"] != retrieval_b["resolved_domain"]:
+        return False
+    if not name_alignment_ok(producer_a["name"], producer_b["name"]):
+        return False
+    return official_hits_mention_name(retrieval_a, producer_a["name"]) and official_hits_mention_name(
+        retrieval_b, producer_b["name"]
+    )
+
+
+def find_owner_operator_identity_risk_ref(
+    producer_a: dict,
+    producer_b: dict,
+    retrieval_a: dict,
+    retrieval_b: dict,
+) -> dict | None:
+    for retrieval, other_name in (
+        (retrieval_a, producer_b["name"]),
+        (retrieval_b, producer_a["name"]),
+    ):
+        for hit in retrieval["official_hits"] + retrieval["secondary_hits"]:
+            haystack = hit_haystack(hit)
+            if not full_name_phrase_present(haystack, other_name):
+                continue
+            if any(phrase in haystack for phrase in OWNERSHIP_RISK_PHRASES):
+                return ref_entry(
+                    "risk_owner_or_operator_not_identity",
+                    "risk",
+                    "risk",
+                    "Ownership, operator, or acquisition language links the two names, but that does not prove same on-label identity.",
+                    detail={"support_ref_id": hit["ref_id"]},
+                )
+    return None
 
 
 def retrieve_official_domain(producer_key: str, producer: dict) -> dict:
@@ -414,44 +481,53 @@ def build_continuity_refs(
     if domain_a and domain_b and domain_a == domain_b:
         refs.append(
             ref_entry(
-                "official_continuity_shared_domain",
+                "soft_continuity_hint_shared_domain",
                 "retrieval",
                 "support",
-                f"Both sides resolve to the same official domain `{domain_a}`.",
+                f"Both sides resolve to the same producer-owned domain `{domain_a}`, but shared domain alone does not prove same brand identity.",
                 detail={"domain": domain_a},
             )
         )
-    alias_tokens_a = meaningful_name_tokens(producer_a["name"])
-    alias_tokens_b = meaningful_name_tokens(producer_b["name"])
-    for retrieval, own_tokens, other_name, producer_key in (
-        (retrieval_a, alias_tokens_a, producer_b["name"], "a"),
-        (retrieval_b, alias_tokens_b, producer_a["name"], "b"),
-    ):
-        if refs:
-            break
-        other_tokens = meaningful_name_tokens(other_name)
-        for hit in retrieval["official_hits"]:
-            haystack = normalize_text(
-                " ".join(
-                    [
-                        hit.get("summary", ""),
-                        str(hit.get("detail", {}).get("title") or ""),
-                        str(hit.get("detail", {}).get("url") or ""),
-                    ]
+        if shared_domain_brand_identity_aligned(producer_a, producer_b, retrieval_a, retrieval_b):
+            refs.append(
+                ref_entry(
+                    "hard_official_continuity_shared_domain",
+                    "retrieval",
+                    "support",
+                    f"Both sides resolve to `{domain_a}` and the page-level brand identity aligns with the producer names on both sides.",
+                    detail={"domain": domain_a},
                 )
             )
-            if other_tokens and any(token in haystack for token in other_tokens):
+    for retrieval, other_name, producer_key in (
+        (retrieval_a, producer_b["name"], "a"),
+        (retrieval_b, producer_a["name"], "b"),
+    ):
+        other_tokens = meaningful_name_tokens(other_name)
+        for hit in retrieval["official_hits"]:
+            haystack = hit_haystack(hit)
+            if full_name_phrase_present(haystack, other_name):
                 refs.append(
                     ref_entry(
-                        f"official_continuity_alias_{producer_key}",
+                        f"hard_official_continuity_alias_{producer_key}",
                         "retrieval",
                         "support",
-                        f"Official-domain retrieval for one side directly mentions the other on-label form `{other_name}`.",
+                        f"Hard-official retrieval for one side directly mentions the full other on-label form `{other_name}`.",
                         detail={"support_ref_id": hit["ref_id"]},
                     )
                 )
                 break
-    return refs[:1]
+            if other_tokens and any(token in haystack for token in other_tokens):
+                refs.append(
+                    ref_entry(
+                        f"soft_continuity_hint_alias_{producer_key}",
+                        "retrieval",
+                        "support",
+                        f"Retrieval for one side cross-mentions tokens from `{other_name}`, but not as exact alias proof.",
+                        detail={"support_ref_id": hit["ref_id"]},
+                    )
+                )
+                break
+    return refs
 
 
 def build_evidence_refs(
@@ -593,6 +669,9 @@ def build_evidence_refs(
                 "One name looks like a parent-family, holdco, or product-tier extension of the other.",
             )
         )
+    owner_operator_risk = find_owner_operator_identity_risk_ref(producer_a, producer_b, retrieval_a, retrieval_b)
+    if owner_operator_risk:
+        refs.append(owner_operator_risk)
 
     refs.extend(retrieval_a["official_hits"])
     refs.extend(retrieval_b["official_hits"])
@@ -621,8 +700,14 @@ def build_evidence_refs(
     flags = {
         "shared_surname_split": shared_surname_risk,
         "holdco_or_product_tier": holdco_risk,
+        "owner_or_operator_not_identity": bool(owner_operator_risk),
         "country_conflict": not same_country,
-        "has_official_continuity": any(entry["ref_id"].startswith("official_continuity_") for entry in ordered),
+        "has_hard_official_continuity": any(
+            entry["ref_id"].startswith("hard_official_continuity_") for entry in ordered
+        ),
+        "has_soft_continuity_hint": any(
+            entry["ref_id"].startswith("soft_continuity_hint_") for entry in ordered
+        ),
     }
     return ordered, flags
 

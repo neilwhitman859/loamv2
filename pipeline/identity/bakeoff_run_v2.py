@@ -142,8 +142,10 @@ Additional v2 rules:
 - Do not cite free-text facts like `same_country` or rule ids like `11.4.m`
   as support refs. Rule ids belong only in `rule_ids`.
 - If `allowed_ref_ids` includes `risk_shared_surname_split`,
-  `risk_holdco_or_product_tier`, or `geo_country_conflict`, do NOT return
-  `MERGE` unless an `official_continuity_*` ref is also present.
+  `risk_holdco_or_product_tier`, `risk_owner_or_operator_not_identity`, or
+  `geo_country_conflict`, do NOT return `MERGE` unless a
+  `hard_official_continuity_*` ref is also present.
+- `soft_continuity_hint_*` refs are weak hints, not official continuity proof.
 - Search is retrieval, not truth by itself: prefer official continuity plus
   local catalog coherence plus deterministic identity rules.
 
@@ -213,6 +215,10 @@ def sanitize_error(text: str) -> str:
     cleaned = re.sub(r"\s+", "_", text.strip().lower())
     cleaned = re.sub(r"[^a-z0-9_:/.-]+", "", cleaned)
     return cleaned[:120] or "unknown_error"
+
+
+def has_hard_continuity_refs(refs: set[str]) -> bool:
+    return any(ref.startswith("hard_official_continuity_") for ref in refs)
 
 
 def anthropic_text(response) -> str:
@@ -365,7 +371,7 @@ def deterministic_control(wrapper: dict) -> dict:
     refs = {entry["ref_id"] for entry in packet.get("evidence_refs", [])}
     survivor = packet["evidence"]["survivor_if_merge"]["recommended_survivor_producer_id"]
 
-    if "geo_country_conflict" in refs and not any(ref.startswith("official_continuity_") for ref in refs):
+    if "geo_country_conflict" in refs and not has_hard_continuity_refs(refs):
         return {
             "packet_id": packet["packet_id"],
             "verdict": "SKIP",
@@ -377,7 +383,7 @@ def deterministic_control(wrapper: dict) -> dict:
             "survivor_producer_id": None,
             "follow_up": None,
         }
-    if "risk_shared_surname_split" in refs and not any(ref.startswith("official_continuity_") for ref in refs):
+    if "risk_shared_surname_split" in refs and not has_hard_continuity_refs(refs):
         return {
             "packet_id": packet["packet_id"],
             "verdict": "SKIP",
@@ -389,14 +395,21 @@ def deterministic_control(wrapper: dict) -> dict:
             "survivor_producer_id": None,
             "follow_up": None,
         }
-    if "risk_holdco_or_product_tier" in refs and not any(ref.startswith("official_continuity_") for ref in refs):
+    if (
+        ("risk_holdco_or_product_tier" in refs or "risk_owner_or_operator_not_identity" in refs)
+        and not has_hard_continuity_refs(refs)
+    ):
         return {
             "packet_id": packet["packet_id"],
             "verdict": "FLAGGED",
             "confidence": 0.72,
             "rule_ids": ["11.1"],
-            "reason": "Deterministic control escalates holdco/product-tier patterns unless official continuity is explicit.",
-            "key_support_refs": ["risk_holdco_or_product_tier"],
+            "reason": "Deterministic control escalates holdco, ownership, and product-tier patterns unless hard official continuity is explicit.",
+            "key_support_refs": [
+                ref
+                for ref in ("risk_holdco_or_product_tier", "risk_owner_or_operator_not_identity")
+                if ref in refs
+            ][:2],
             "key_contradiction_refs": ["risk_sparse_official_evidence"] if "risk_sparse_official_evidence" in refs else [],
             "survivor_producer_id": None,
             "follow_up": "needs_human_review",
@@ -413,14 +426,25 @@ def deterministic_control(wrapper: dict) -> dict:
             "survivor_producer_id": survivor,
             "follow_up": None,
         }
-    if "lex_contains" in refs and "geo_same_country" in refs and ("catalog_subset_match" in refs or any(ref.startswith("official_continuity_") for ref in refs)):
+    if "lex_contains" in refs and "geo_same_country" in refs and (
+        "catalog_subset_match" in refs or has_hard_continuity_refs(refs)
+    ):
         return {
             "packet_id": packet["packet_id"],
             "verdict": "MERGE",
             "confidence": 0.9,
             "rule_ids": ["11.1", "11.4.h", "11.6"],
-            "reason": "Deterministic control merges short/full-form same-country pairs when the packet also shows catalog or official continuity support.",
-            "key_support_refs": [ref for ref in ("lex_contains", "geo_same_country", "catalog_subset_match", "official_continuity_shared_domain") if ref in refs][:3],
+            "reason": "Deterministic control merges short/full-form same-country pairs when the packet also shows catalog or hard official continuity support.",
+            "key_support_refs": [
+                ref
+                for ref in (
+                    "lex_contains",
+                    "geo_same_country",
+                    "catalog_subset_match",
+                    "hard_official_continuity_shared_domain",
+                )
+                if ref in refs
+            ][:3],
             "key_contradiction_refs": [],
             "survivor_producer_id": survivor,
             "follow_up": None,
@@ -823,6 +847,106 @@ def normalize_and_score(
     return summary, normalized_paths, consensus_raw_path
 
 
+def case_ids_with_false_merges(
+    normalized_rows: list[dict],
+    case_ids: list[str],
+    cases_by_id: dict[str, dict],
+) -> list[str]:
+    case_id_set = set(case_ids)
+    flagged: list[str] = []
+    for row in normalized_rows:
+        case_id = row["case_id"]
+        if case_id not in case_id_set:
+            continue
+        expected = cases_by_id[case_id]["expected_verdict"]
+        actual = row["normalized_output"]["verdict"]
+        if expected == "SKIP" and actual == "MERGE":
+            flagged.append(case_id)
+    return sorted(flagged)
+
+
+def build_proof_gate_report(
+    *,
+    benchmark_payload: dict,
+    request_validation: dict,
+    normalized_paths: dict[str, Path],
+    base_failures: list[str],
+) -> dict:
+    cases_by_id = benchmark_cases_by_id(benchmark_payload)
+    prior_proof_root = DEFAULT_RUN_ROOT / "normalized" / "session7_first_real_bakeoff_v2_proof_subset"
+    add_on_case_ids = request_validation.get("continuity_add_on_case_ids", [])
+    base_case_ids = request_validation.get("base_case_ids", [])
+    production_contenders = [
+        "sonnet_guardrailed_v2",
+        "gemini_guardrailed_v2",
+        "sonnet_gemini_consensus_v2",
+    ]
+
+    contender_results: list[dict] = []
+    failures = list(base_failures)
+    for contender_id in production_contenders:
+        current_rows = load_jsonl(normalized_paths[contender_id])
+        prior_rows = load_jsonl(prior_proof_root / f"{contender_id}.jsonl")
+        add_on_false_merges = case_ids_with_false_merges(current_rows, add_on_case_ids, cases_by_id)
+        base_false_merges_current = case_ids_with_false_merges(current_rows, base_case_ids, cases_by_id)
+        base_false_merges_prior = case_ids_with_false_merges(prior_rows, base_case_ids, cases_by_id)
+        contender_results.append(
+            {
+                "contender_id": contender_id,
+                "add_on_false_merges": add_on_false_merges,
+                "base_false_merges_current": base_false_merges_current,
+                "base_false_merges_prior": base_false_merges_prior,
+                "base_false_merge_delta": len(base_false_merges_current) - len(base_false_merges_prior),
+            }
+        )
+        if add_on_false_merges:
+            failures.append(
+                f"{contender_id} false-merged continuity add-on cases: {', '.join(add_on_false_merges)}"
+            )
+        if len(base_false_merges_current) >= len(base_false_merges_prior):
+            failures.append(
+                f"{contender_id} did not improve false merges on the reused 28-case base "
+                f"({len(base_false_merges_prior)} -> {len(base_false_merges_current)})"
+            )
+
+    return {
+        "run_name": request_validation["run_name"],
+        "base_case_ids": base_case_ids,
+        "continuity_add_on_case_ids": add_on_case_ids,
+        "production_contenders": contender_results,
+        "failures": failures,
+        "passed": not failures,
+    }
+
+
+def render_proof_memo(gate_report: dict) -> str:
+    lines = []
+    lines.append(f"# {gate_report['run_name']} - proof memo")
+    lines.append("")
+    lines.append(f"- Result: {'PASS' if gate_report['passed'] else 'FAIL'}")
+    lines.append(f"- Reused base cases: {len(gate_report['base_case_ids'])}")
+    lines.append(f"- Continuity add-on cases: {len(gate_report['continuity_add_on_case_ids'])}")
+    lines.append("")
+    lines.append("| Contender | Add-on false merges | Base false merges (prior -> current) |")
+    lines.append("|---|---|---|")
+    for item in gate_report["production_contenders"]:
+        add_on = ", ".join(item["add_on_false_merges"]) if item["add_on_false_merges"] else "0"
+        lines.append(
+            f"| {item['contender_id']} | {add_on} | {len(item['base_false_merges_prior'])} -> {len(item['base_false_merges_current'])} |"
+        )
+    lines.append("")
+    if gate_report["failures"]:
+        lines.append("Failures:")
+        for failure in gate_report["failures"]:
+            lines.append(f"- {failure}")
+        lines.append("")
+        lines.append("Recommendation: stop here. Do not run the 152-case rerun.")
+    else:
+        lines.append("Recommendation: proof passed cleanly. A full rerun is now technically justified, but it still requires explicit user approval before execution.")
+    lines.append("")
+    return "\n".join(lines)
+
+
 def run_once(args, *, proof_sample: bool, run_name: str) -> dict:
     benchmark_payload = load_benchmark_payload(args.benchmark)
     full_packets, visible_packets, packet_validation = ensure_visible_packets(args.packet_dir, args.benchmark)
@@ -880,26 +1004,38 @@ def main() -> int:
     parser.add_argument("--packet-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--output-root", type=Path, default=DEFAULT_RUN_ROOT)
     parser.add_argument("--run-name", default=RUN_NAME_DEFAULT)
+    parser.add_argument("--full-after-proof", action="store_true")
     args = parser.parse_args()
 
     proof_name = f"{args.run_name}_proof_subset"
     proof_result = run_once(args, proof_sample=True, run_name=proof_name)
     consensus_rows = load_jsonl(proof_result["normalized_paths"]["sonnet_gemini_consensus_v2"])
-    proof_failures = validate_proof_summary(
+    base_failures = validate_proof_summary(
         proof_result["summary"],
         proof_result["request_validation"],
         consensus_rows,
     )
+    gate_report = build_proof_gate_report(
+        benchmark_payload=load_benchmark_payload(args.benchmark),
+        request_validation=proof_result["request_validation"],
+        normalized_paths=proof_result["normalized_paths"],
+        base_failures=base_failures,
+    )
     write_json(
         args.output_root / "scored" / f"{proof_name}_gate_check.json",
-        {
-            "run_name": proof_name,
-            "failures": proof_failures,
-            "passed": not proof_failures,
-        },
+        gate_report,
     )
-    if proof_failures:
-        raise RuntimeError("Proof subset failed stop criteria: " + "; ".join(proof_failures))
+    (args.output_root / "scored" / f"{proof_name}_memo.md").write_text(
+        render_proof_memo(gate_report),
+        encoding="utf-8",
+    )
+    if gate_report["failures"]:
+        raise RuntimeError("Proof subset failed stop criteria: " + "; ".join(gate_report["failures"]))
+    if not args.full_after_proof:
+        print(f"Completed proof subset: {proof_name}")
+        print(f"Proof memo: {args.output_root / 'scored' / f'{proof_name}_memo.md'}")
+        print("Full bakeoff rerun skipped: explicit --full-after-proof flag not provided.")
+        return 0
 
     full_result = run_once(args, proof_sample=False, run_name=args.run_name)
     diff_payload = build_diff_payload(

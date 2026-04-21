@@ -1983,3 +1983,7 @@ Session 4 ("Broad Bakeoff Design") created `data/sprints/dedup/session4_bakeoff_
 4. **Queue-building is blocked on hard gates, not one blended score.** Production eligibility requires zero false merges on the benchmark, zero hard missed merges in the blind core audit, strong survivor accuracy and auditability, and a second fallback contender that also clears its own gate set. If the bakeoff fails these gates, the next step is a deliberate v2 design session, not quietly proceeding to queue construction.
 
 Reason: the rebuild needs a stable, non-gameable evaluation frame. Freezing contender scope, `FLAGGED` semantics, and queue-building gates now prevents the next implementation session from changing the rules halfway through.
+
+### 2026-04-21: Session 9.1 runs proof only; no 152-case rerun without explicit approval after a clean proof
+
+User directed Session 9.1 to implement the minimum v3 continuity redesign and rerun only the expanded proof subset. Operational rule locked: even if the proof passes, the 152-case rerun does **not** auto-start. A full rerun now requires two conditions together: (1) the proof passes the Session 9 gate checks cleanly, and (2) the user explicitly asks for the full rerun. Reason: the continuity redesign is intentionally narrow and needs a bounded verification pass before spending more model budget or mutating the canonical bakeoff artifact set again.

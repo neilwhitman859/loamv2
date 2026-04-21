@@ -40,6 +40,21 @@ VALID_CONTENDERS = {
     "gpt5mini_guardrailed_v2",
     "sonnet_gemini_consensus_v2",
 }
+PROOF_CONTINUITY_CASE_IDS = [
+    "blind_core_audit_041",
+    "blind_core_audit_067",
+    "blind_core_audit_048",
+    "blind_core_audit_052",
+    "known_false_merge_patterns_005",
+    "tail_random_sample_008",
+    "blind_core_audit_076",
+    "blind_core_audit_080",
+]
+# `blind_core_audit_067` is already in the legacy 28-case base proof slice, so
+# add one more alias-cross-mention stress case to preserve the 36-case target.
+PROOF_CONTINUITY_FILL_CASE_IDS = [
+    "blind_core_audit_065",
+]
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -93,7 +108,7 @@ def load_v1_sonnet_rows() -> list[dict]:
     )
 
 
-def select_proof_cases(benchmark_payload: dict) -> list[dict]:
+def select_proof_cases(benchmark_payload: dict) -> tuple[list[dict], dict]:
     cases_by_id = benchmark_cases_by_id(benchmark_payload)
     v1_rows = load_v1_sonnet_rows()
 
@@ -128,9 +143,25 @@ def select_proof_cases(benchmark_payload: dict) -> list[dict]:
         and row["normalized_output"]["verdict"] == "SKIP"
     )[:2]
 
-    chosen_ids = false_merges + hard_misses + soft_misses[:4] + clean_merge_controls + clean_skip_controls
+    base_case_ids = false_merges + hard_misses + soft_misses[:4] + clean_merge_controls + clean_skip_controls
+    chosen_ids = list(base_case_ids)
+    continuity_add_on_case_ids: list[str] = []
+    seen = set(base_case_ids)
+    for case_id in PROOF_CONTINUITY_CASE_IDS + PROOF_CONTINUITY_FILL_CASE_IDS:
+        if case_id in seen:
+            continue
+        chosen_ids.append(case_id)
+        continuity_add_on_case_ids.append(case_id)
+        seen.add(case_id)
+        if len(continuity_add_on_case_ids) == 8:
+            break
+    if len(continuity_add_on_case_ids) != 8:
+        raise RuntimeError("Expanded proof subset could not reach the required 8 continuity add-on cases.")
     chosen = [cases_by_id[case_id] for case_id in chosen_ids]
-    return chosen
+    return chosen, {
+        "base_case_ids": base_case_ids,
+        "continuity_add_on_case_ids": continuity_add_on_case_ids,
+    }
 
 
 def build_request_wrapper(benchmark_id: str, case: dict, visible_packet: dict, contender_id: str) -> dict:
@@ -156,7 +187,11 @@ def prepare_request_wrappers(
     proof_sample: bool = False,
 ) -> tuple[list[dict], dict[str, Path], dict]:
     benchmark_id = benchmark_payload["benchmark_id"]
-    cases = select_proof_cases(benchmark_payload) if proof_sample else benchmark_payload["cases"]
+    proof_meta = {"base_case_ids": [], "continuity_add_on_case_ids": []}
+    if proof_sample:
+        cases, proof_meta = select_proof_cases(benchmark_payload)
+    else:
+        cases = benchmark_payload["cases"]
     visible_by_id = packets_by_id(visible_packets)
 
     wrappers: list[dict] = []
@@ -182,6 +217,8 @@ def prepare_request_wrappers(
         "request_count": len(wrappers),
         "case_count": len(cases),
         "case_ids": [case["case_id"] for case in cases],
+        "base_case_ids": proof_meta["base_case_ids"],
+        "continuity_add_on_case_ids": proof_meta["continuity_add_on_case_ids"],
         "contenders": contenders,
         "hidden_key_violations": hidden_key_violations,
     }
@@ -206,9 +243,9 @@ def packet_risk_refs(packet: dict) -> set[str]:
     }
 
 
-def has_official_continuity(packet: dict) -> bool:
+def has_hard_official_continuity(packet: dict) -> bool:
     return any(
-        entry["ref_id"].startswith("official_continuity_")
+        entry["ref_id"].startswith("hard_official_continuity_")
         for entry in packet.get("evidence_refs", [])
         if isinstance(entry, dict) and entry.get("ref_id")
     )
@@ -347,7 +384,7 @@ def apply_merge_veto(normalized_row: dict, packet: dict) -> dict:
     verdict = normalized_row["normalized_output"]["verdict"]
     if verdict != "MERGE":
         return normalized_row
-    if has_official_continuity(packet):
+    if has_hard_official_continuity(packet):
         return normalized_row
 
     risk_refs = packet_risk_refs(packet)
@@ -356,6 +393,7 @@ def apply_merge_veto(normalized_row: dict, packet: dict) -> dict:
         & {
             "risk_shared_surname_split",
             "risk_holdco_or_product_tier",
+            "risk_owner_or_operator_not_identity",
             "geo_country_conflict",
         }
     )
