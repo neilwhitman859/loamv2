@@ -2217,3 +2217,14 @@ incremental budget ceiling for this autonomous run. Reason: the current ER path
 is spent enough that the honest next step is not incremental tuning but a
 bounded search over new method families, while still holding the same trust bar
 and budget discipline.
+
+### 2026-04-22: Session 10.12 should move forward with Pack 002 under Pack 001's strict evidence bar
+
+After Session 10.11 landed `ground_truth_pack_001_v1`, the user chose to move
+directly into Session 10.12 and build the second audited expansion pack rather
+than reopen Pack 001 for more volume. The Pack 001 trust posture remains fixed:
+`no DB writes`, `no benchmark reruns`, `no new method search`, keep Pack 001
+labels unchanged unless direct contradictory evidence is found, prefer primary
+sources wherever possible, and quarantine disputed cases instead of forcing
+scoreable labels. Reason: the project needs faster audited truth growth, but
+that growth only matters if the strict evidence bar from Pack 001 stays intact.

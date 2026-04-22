@@ -371,3 +371,36 @@ wants to reopen Pack 001 and trade strictness for more volume.
   weakening the evidence bar. Session 10.12 should therefore focus on more
   `SAME_AS` recall and additional non-`FR` coverage, not on relitigating the
   bakeoff or pretending Pack 001 solved the breadth problem.
+
+- **Session 10.12 (2026-04-22):** built the second audited truth-expansion pack.
+
+  **Scope held:** no DB writes, no benchmark reruns, no new method search,
+  no Pack 001 relabeling without direct contradictory evidence, and no
+  dilution of the Pack 001 evidence bar.
+
+  **Artifacts produced:**
+  - `ground_truth_pack_002_v1.jsonl`
+  - `ground_truth_pack_002_summary_v1.md`
+  - `pipeline/identity/build_ground_truth_pack_002_v1.py`
+  - `s10_13_ground_truth_pack_003.md`
+
+  **Results locked by the pack:**
+  - Pack 002 requested `21` candidate cases and landed `21` audited records
+  - all `21` records are net-new scoreable additions:
+    - `11` `SAME_AS`
+    - `5` `RELATED_BUT_DISTINCT`
+    - `5` `NONE`
+  - the scoreable truth corpus now moves from `446` to `467`, leaving a
+    documented gap of `+533` to the `1,000`-pair target
+  - the new builder switches from Pack 001's name-keyed lookup to explicit
+    producer IDs so cross-country same-name merchant-house cases can be
+    audited without collapsing the two sides together
+  - the strongest reusable evidence lanes were:
+    - global merchant-house cross-country continuity (`11.4.n`)
+    - non-`FR` parent / collaboration families (`11.4.s`, `11.4.o`)
+    - non-`FR` TTB shared-permit precision traps (`11.4.j`)
+
+  **Why this matters:** Sprint 7 now has two audited expansion packs and a
+  truth corpus of `467` scoreable pairs. The bottleneck is no longer whether
+  the Pack 001 bar can be reused; it is whether future packs can broaden the
+  corpus beyond the easiest core-heavy families without weakening that bar.

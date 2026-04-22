@@ -291,19 +291,19 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">Sprint 7 &middot; Producer identity ER &middot; <!--updated-->updated 2026-04-22 09:01 ET<!--/updated--></div>
+  <div class="meta">Sprint 7 &middot; Producer identity ER &middot; <!--updated-->updated 2026-04-22 12:42 ET<!--/updated--></div>
 </div>
 
 <div class="session-strip">
   <div class="session-cell">
     <div class="s-label">Latest session</div>
-    <div class="s-cost">10.11</div>
-    <div class="s-detail">Ground truth Pack 001 &middot; 36 audited records &middot; 29 net-new scoreable additions</div>
+    <div class="s-cost">10.12</div>
+    <div class="s-detail">Ground truth Pack 002 &middot; 21 audited records &middot; 21 net-new scoreable additions</div>
   </div>
   <div class="session-cell">
     <div class="s-label">Run spend</div>
     <div class="s-cost">$0.00</div>
-    <div class="s-detail">Session 10.11 raised the truth base from 417 to 446 scoreable pairs and quarantined 3 disputed cases</div>
+    <div class="s-detail">Session 10.12 raised the truth base from 446 to 467 scoreable pairs without reopening any quarantined disputes</div>
   </div>
   <div class="session-cell total">
     <div class="s-label">Prior bakeoff spend</div>
@@ -327,7 +327,7 @@
     <div class="pstats" style="font-size:11.5px;"><code>producer_dossier_v1</code>, source inventory, edge taxonomy, shortlist generation, selector harness, escalation dossier, accepted-edge rules, frozen proof bundle, and the first real proof run are now on disk</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div>
     <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
-    <div class="pstats" style="font-size:11.5px;">Session 10.11 landed Pack 001: 36 audited records, 29 net-new scoreable pairs, and 3 quarantined disputes under a strict evidence bar</div>
+    <div class="pstats" style="font-size:11.5px;">Session 10.12 landed Pack 002: 21 audited records, all net-new scoreable, pushing the truth base to 467 while keeping Pack 001 labels fixed</div>
   </div>
   <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current doctrine:</strong> compare identities, not raw pairs. Build a reusable producer dossier, generate a small shortlist, select best match or <code>none</code>, represent <code>RELATED_BUT_DISTINCT</code> explicitly, and merge only from accepted <code>SAME_AS</code> edges.</div>
   <ul class="steps">
@@ -392,11 +392,11 @@
       <tr><td>Live canonical snapshot</td><td>33,281 producers &middot; 224,316 active wines &middot; 125,934 vintages</td></tr>
       <tr><td>Sprint 6 carry-over</td><td>pairwise benchmark and failure-mode corpus preserved; best artifact remains <code>session9_7_layered_safety_sonnet_r2_narrow</code></td></tr>
       <tr><td>Method name</td><td><code>identity_dossier_select_v1</code> (&ldquo;Identity Dossier Select&rdquo;)</td></tr>
-      <tr><td>Latest artifact</td><td><code>ground_truth_pack_001_v1.jsonl</code>, <code>ground_truth_pack_001_summary_v1.md</code>, and <code>build_ground_truth_pack_001_v1.py</code> under <code>data/sprints/identity-er/</code></td></tr>
-      <tr><td>Immediate next artifact</td><td><code>ground_truth_pack_002_v1.jsonl</code> plus a Pack 002 summary focused on additional <code>SAME_AS</code> recall and non-<code>FR</code> coverage</td></tr>
+      <tr><td>Latest artifact</td><td><code>ground_truth_pack_002_v1.jsonl</code>, <code>ground_truth_pack_002_summary_v1.md</code>, and <code>build_ground_truth_pack_002_v1.py</code> under <code>data/sprints/identity-er/</code></td></tr>
+      <tr><td>Immediate next artifact</td><td><code>ground_truth_pack_003_v1.jsonl</code> plus a Pack 003 summary focused on non-<code>FR</code> high-similarity <code>NONE</code> traps and better mid/tail balance</td></tr>
       <tr><td>After that</td><td>expand the scoreable pair corpus in audited packs, then judge future method claims against the stronger truth set instead of against the old thin benchmark alone</td></tr>
-      <tr><td>Execution status</td><td>Broad bakeoff complete. Truth expansion is now underway: Pack 001 landed, method search remains paused, and the bottleneck is still growing the audited pair corpus fast enough without weakening the evidence bar.</td></tr>
-      <tr><td>Primary risk</td><td>Pack 001 only added `29` net-new scoreable pairs, with `SAME_AS` growth still slow under the strict evidence rules, so the truth base remains too small to bless any new method claim confidently.</td></tr>
+      <tr><td>Execution status</td><td>Broad bakeoff complete. Truth expansion is underway through Pack 002, method search remains paused, and the bottleneck is now breadth and balance: the audited corpus is bigger, but still too core-heavy to bless new method claims.</td></tr>
+      <tr><td>Primary risk</td><td>Pack 002 landed cleanly, but the combined truth corpus is still only `467` scoreable pairs and Pack 002 itself skewed `20` core / `1` mid / `0` tail, so the benchmark replacement is not yet broad enough or balanced enough to trust at production stakes.</td></tr>
     </table>
   </div>
 </div>
@@ -476,10 +476,16 @@
       <td>Built `36` audited records, including `29` net-new scoreable additions and `3` quarantined disputes, moving the scoreable truth base to `446`</td>
       <td class="num">$0.00</td>
     </tr>
+    <tr>
+      <td>Ground-truth Pack 002</td>
+      <td>done</td>
+      <td>Built `21` audited records, all net-new scoreable (`11` `SAME_AS`, `5` `RELATED_BUT_DISTINCT`, `5` `NONE`), moving the scoreable truth base to `467` without changing Pack 001 labels</td>
+      <td class="num">$0.00</td>
+    </tr>
     <tr style="background:#fff4e5;">
-      <td><strong>Next user touchpoint</strong> &mdash; decide whether to accept Pack 001's strict evidence bar and move to Pack 002, or reopen Pack 001 to chase more than `29` net-new additions</td>
+      <td><strong>Next user touchpoint</strong> &mdash; Session 10.13 can now build Pack 003 under the same strict evidence bar, with Pack 001 / Pack 002 labels frozen unless direct contradictory evidence appears</td>
       <td>&mdash;</td>
-      <td>The honest next move is still truth growth, not more bakeoff cycling: either continue under the same strict pack rules or explicitly trade strictness for more Pack 001 volume.</td>
+      <td>The honest next move remains truth growth, not more bakeoff cycling: target non-`FR` high-similarity `NONE` traps, improve mid/tail balance, and add only unusually clean first-party `RELATED_BUT_DISTINCT` cases without weakening the evidence threshold.</td>
       <td class="num">&mdash;</td>
     </tr>
   </table>
@@ -608,6 +614,7 @@
         <tr><td style="color:var(--muted);">Session 10.9 web validation</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
         <tr><td style="color:var(--muted);">Session 10.10 ground truth foundation</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
         <tr><td style="color:var(--muted);">Session 10.11 ground truth Pack 001</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
+        <tr><td style="color:var(--muted);">Session 10.12 ground truth Pack 002</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
         <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Phase 1 ceiling</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$30.00</td></tr>
         <tr><td style="color:var(--green);">Remaining</td><td style="text-align:right; font-variant-numeric: tabular-nums; color:var(--green);">$16.87</td></tr>
       </table>
