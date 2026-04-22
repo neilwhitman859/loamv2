@@ -1,0 +1,404 @@
+{
+  "auditability": {
+    "auditability_score": 1.0,
+    "citation_integrity_rate": 1.0,
+    "rule_trace_rate": 1.0,
+    "schema_valid_rate": 1.0
+  },
+  "breakdowns": {
+    "source_pair_tier": {
+      "core": {
+        "false_merge": 0,
+        "hard_missed_merge": 0,
+        "safe_flag": 11,
+        "soft_missed_merge": 1,
+        "survivor_error": 0,
+        "true_merge": 30,
+        "true_skip": 71
+      },
+      "mid": {
+        "false_merge": 0,
+        "hard_missed_merge": 2,
+        "safe_flag": 3,
+        "soft_missed_merge": 0,
+        "survivor_error": 0,
+        "true_merge": 12,
+        "true_skip": 11
+      },
+      "tail": {
+        "false_merge": 0,
+        "hard_missed_merge": 0,
+        "safe_flag": 3,
+        "soft_missed_merge": 0,
+        "survivor_error": 0,
+        "true_merge": 9,
+        "true_skip": 19
+      }
+    },
+    "stratum": {
+      "blind_core_audit": {
+        "false_merge": 0,
+        "hard_missed_merge": 0,
+        "safe_flag": 11,
+        "soft_missed_merge": 1,
+        "survivor_error": 0,
+        "true_merge": 30,
+        "true_skip": 70
+      },
+      "known_false_merge_patterns": {
+        "false_merge": 0,
+        "hard_missed_merge": 0,
+        "safe_flag": 3,
+        "soft_missed_merge": 0,
+        "survivor_error": 0,
+        "true_merge": 0,
+        "true_skip": 16
+      },
+      "known_missed_merge_patterns": {
+        "false_merge": 0,
+        "hard_missed_merge": 2,
+        "safe_flag": 0,
+        "soft_missed_merge": 0,
+        "survivor_error": 0,
+        "true_merge": 16,
+        "true_skip": 0
+      },
+      "tail_random_sample": {
+        "false_merge": 0,
+        "hard_missed_merge": 0,
+        "safe_flag": 3,
+        "soft_missed_merge": 0,
+        "survivor_error": 0,
+        "true_merge": 5,
+        "true_skip": 15
+      }
+    }
+  },
+  "case_count_expected": 152,
+  "case_count_seen": 152,
+  "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+  "cost": {
+    "cost_per_pair": 0.019515,
+    "median_latency_ms": 0,
+    "tokens_per_pair": 1027.06,
+    "total_cost_usd": 2.966235
+  },
+  "counts": {
+    "false_merge": 0,
+    "hard_missed_merge": 2,
+    "safe_flag": 17,
+    "soft_missed_merge": 1,
+    "survivor_error": 0,
+    "true_merge": 51,
+    "true_skip": 101
+  },
+  "error_ledger": [
+    {
+      "case_id": "blind_core_audit_016",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "MERGE",
+      "pair_id": 96369,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "secondary_a_1",
+        "secondary_b_1",
+        "secondary_b_2",
+        "risk_shared_surname_split",
+        "lex_contains",
+        "catalog_subset_match"
+      ]
+    },
+    {
+      "case_id": "blind_core_audit_046",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 30499,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "catalog_subset_match",
+        "catalog_exact_overlap",
+        "lex_shared_core_tokens",
+        "risk_secondary_relationship_without_identity",
+        "risk_sparse_official_evidence"
+      ]
+    },
+    {
+      "case_id": "blind_core_audit_048",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 54219,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "risk_secondary_relationship_without_identity",
+        "risk_sparse_official_evidence",
+        "secondary_b_1",
+        "catalog_portfolio_shape"
+      ]
+    },
+    {
+      "case_id": "blind_core_audit_057",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 65678,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "risk_sparse_official_evidence",
+        "lex_shared_core_tokens",
+        "geo_same_region"
+      ]
+    },
+    {
+      "case_id": "blind_core_audit_059",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 77183,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "lex_shared_core_tokens",
+        "geo_same_region",
+        "risk_secondary_relationship_without_identity",
+        "secondary_a_1",
+        "secondary_b_1",
+        "risk_sparse_official_evidence"
+      ]
+    },
+    {
+      "case_id": "blind_core_audit_060",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 78749,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "risk_secondary_relationship_without_identity",
+        "risk_shared_surname_split",
+        "risk_sparse_official_evidence"
+      ]
+    },
+    {
+      "case_id": "blind_core_audit_062",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 93107,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "secondary_a_2",
+        "secondary_b_1",
+        "secondary_b_2",
+        "lex_contains",
+        "geo_same_region",
+        "risk_shared_surname_split"
+      ]
+    },
+    {
+      "case_id": "blind_core_audit_064",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 93489,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "lex_shared_core_tokens",
+        "geo_same_region",
+        "secondary_b_1",
+        "secondary_b_2",
+        "risk_sparse_official_evidence"
+      ]
+    },
+    {
+      "case_id": "blind_core_audit_067",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 103859,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "risk_secondary_relationship_without_identity",
+        "risk_shared_surname_split",
+        "risk_sparse_official_evidence"
+      ]
+    },
+    {
+      "case_id": "blind_core_audit_084",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 122397,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "risk_shared_surname_split",
+        "lex_shared_core_tokens",
+        "catalog_exact_overlap",
+        "official_unresolved_a",
+        "official_unresolved_b",
+        "risk_sparse_official_evidence"
+      ]
+    },
+    {
+      "case_id": "blind_core_audit_090",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 136089,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "geo_country_conflict",
+        "risk_shared_surname_split",
+        "risk_sparse_official_evidence"
+      ]
+    },
+    {
+      "case_id": "blind_core_audit_093",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 140166,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "catalog_subset_match",
+        "lex_near_exact",
+        "geo_country_conflict",
+        "risk_sparse_official_evidence"
+      ]
+    },
+    {
+      "case_id": "known_false_merge_patterns_005",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 27972,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "risk_shared_surname_split",
+        "risk_sparse_official_evidence",
+        "secondary_a_1",
+        "catalog_portfolio_shape"
+      ]
+    },
+    {
+      "case_id": "known_false_merge_patterns_007",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 41728,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "risk_shared_surname_split",
+        "risk_sparse_official_evidence",
+        "lex_contains",
+        "catalog_portfolio_shape"
+      ]
+    },
+    {
+      "case_id": "known_false_merge_patterns_011",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 78125,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "risk_shared_surname_split",
+        "risk_sparse_official_evidence",
+        "secondary_a_1"
+      ]
+    },
+    {
+      "case_id": "known_missed_merge_patterns_001",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "MERGE",
+      "pair_id": 4784,
+      "predicted_verdict": "SKIP",
+      "packet_refs_used": [
+        "catalog_portfolio_shape",
+        "secondary_a_1",
+        "secondary_b_2",
+        "lex_shared_core_tokens"
+      ]
+    },
+    {
+      "case_id": "known_missed_merge_patterns_008",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "MERGE",
+      "pair_id": 67132,
+      "predicted_verdict": "SKIP",
+      "packet_refs_used": [
+        "catalog_portfolio_shape",
+        "risk_shared_surname_split",
+        "lex_shared_core_tokens"
+      ]
+    },
+    {
+      "case_id": "tail_random_sample_006",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 11935,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "lex_shared_core_tokens",
+        "geo_same_region",
+        "risk_sparse_official_evidence",
+        "catalog_portfolio_shape"
+      ]
+    },
+    {
+      "case_id": "tail_random_sample_008",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 21177,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "risk_secondary_relationship_without_identity",
+        "risk_sparse_official_evidence",
+        "lex_shared_core_tokens"
+      ]
+    },
+    {
+      "case_id": "tail_random_sample_011",
+      "contender_id": "hybrid_guarded_cuvee_anchor_v1",
+      "expected_verdict": "SKIP",
+      "pair_id": 37923,
+      "predicted_verdict": "FLAGGED",
+      "packet_refs_used": [
+        "lex_shared_core_tokens",
+        "geo_same_region",
+        "catalog_subset_match",
+        "risk_sparse_official_evidence",
+        "secondary_b_1",
+        "secondary_b_2"
+      ]
+    }
+  ],
+  "full_benchmark_run": true,
+  "gates": {
+    "fallback": {
+      "checks": {
+        "auditability_score_gte_0_95": true,
+        "blind_core_false_merge_zero": true,
+        "false_merge_zero": true,
+        "flag_rate_total_lte_0_35": true,
+        "survivor_accuracy_gte_0_90": true
+      },
+      "status": "pass"
+    },
+    "production": {
+      "checks": {
+        "auditability_score_gte_0_95": true,
+        "blind_core_false_merge_zero": true,
+        "blind_core_hard_missed_zero": true,
+        "blind_core_soft_missed_lte_1": true,
+        "false_merge_zero": true,
+        "known_false_merge_false_merge_zero": true,
+        "known_false_merge_safe_flag_lte_4": true,
+        "known_missed_hard_lte_2": true,
+        "known_missed_soft_lte_4": true,
+        "schema_valid_rate_1_00": true,
+        "survivor_accuracy_gte_0_95": true,
+        "tail_false_merge_zero": true,
+        "tail_flag_rate_lte_0_25": true,
+        "tail_hard_missed_lte_2": true
+      },
+      "status": "pass"
+    }
+  },
+  "rates": {
+    "exact_verdict_accuracy": 0.8684,
+    "false_merge_rate": 0.0,
+    "flag_rate_total": 0.1184,
+    "hard_missed_merge_rate": 0.0392,
+    "merge_capture_rate": 0.9412,
+    "safe_flag_rate": 0.1683,
+    "soft_missed_merge_rate": 0.0196,
+    "survivor_accuracy": 1.0
+  }
+}

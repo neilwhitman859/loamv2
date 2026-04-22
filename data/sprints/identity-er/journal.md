@@ -2,12 +2,14 @@
 
 **Opened:** 2026-04-21
 **Status:** Active
-**Current block:** Session 10.7 ran the first real bounded proof on
-`claude-sonnet-4-6` for `$2.08` and returned `NO_GO`. Phase A, Phase B, and
-Phase D all failed, and Phase C remains blocked because no reusable
-`shortlist_generation_v1` runner exists outside the proof scaffolding. The next
-honest step is Session 10.8 failure analysis only if the user explicitly wants
-Sprint 7 to continue; otherwise freeze at this checkpoint.
+**Current block:** the broad bakeoff has already produced its strongest
+benchmark survivor, but Session 10.9 web validation has now challenged that
+survivor's late overlay wins. Keep `benchmark_v1`, the frozen Session 4
+production/fallback gates, `no DB writes`, `no human pair review at scale`, and
+the rule that abstention beats a false merge fixed. The next honest move is not
+another method-search pass; it is a benchmark-truth / entity-history repair
+pass on the challenged late overlay families before any further recommendation
+or implementation work.
 
 ---
 
@@ -244,3 +246,59 @@ Sprint 7 to continue; otherwise freeze at this checkpoint.
   strong enough to justify builder implementation. The next move is not "build
   more"; it is an explicit decision on whether the failure families deserve one
   narrow analysis pass or whether this sprint should freeze here.
+
+- **Session 10.8 (2026-04-21 to 2026-04-22):** ran the broad autonomous method
+  bakeoff after the Session 10.7 no-go.
+
+  **Scope held:** keep `benchmark_v1` and the Session 4 production/fallback
+  gates fixed, do not write to the DB, do not open human pair review at scale,
+  do not mutate the benchmark mid-bakeoff, and do not quietly soften the trust
+  bar to make a candidate look viable.
+
+  **Artifacts produced:**
+  - `method_bakeoff/session10_8_method_scoreboard_v1.md`
+  - `method_bakeoff/session10_8_hybrid_guarded_stack_confirmation_v1.md`
+  - `method_bakeoff/session10_8_hybrid_guarded_stack_stress_audit_v1.md`
+  - zero-cost overlay contenders under `pipeline/identity/`
+
+  **Findings locked by the bakeoff:**
+  - the next path became a broad method bakeoff, not narrow failure analysis
+  - `identity_dossier_select_v1` moved to failed-contender status rather than
+    staying the live frame for Sprint 7
+  - `hybrid_guarded_fils_person_alias_v1` emerged as the strongest benchmark
+    survivor
+  - the final stack cleared the frozen benchmark on Sonnet, Sonnet rerun, Opus,
+    and Opus rerun at `0` false merges / `0` hard misses / `0` soft misses
+  - frozen-file confirmation then reached its honest limit because the late
+    overlays were not independently covered by the existing 24-case holdout
+
+  **Why this matters:** the method search itself reached a natural stop. The
+  bottleneck moved from "find a better benchmark survivor" to "test whether the
+  benchmark winner survives independent scrutiny."
+
+- **Session 10.9 (2026-04-22):** pressure-tested the benchmark-clearing stack
+  against live canonical snapshots plus fresh web evidence.
+
+  **Scope held:** no model calls, no DB writes, no benchmark edits, no policy
+  widening, and no pretending ambiguous outside evidence is stronger than it is.
+
+  **Artifacts produced:**
+  - `method_bakeoff/session10_9_case_snapshots_v1.json`
+  - `method_bakeoff/session10_9_web_validation_ledger_v1.md`
+  - `method_bakeoff/session10_9_web_validation_memo_v1.md`
+  - `pipeline/identity/build_session10_9_case_snapshots.py`
+
+  **Findings locked by web validation:**
+  - `place_alias` held up best and has real external support (`Stadt Krems` /
+    `Krems`)
+  - the `maison_alias` benchmark win did **not** survive independent scrutiny:
+    `Ardhuy Cabotte` / `de la Cabotte` now looks like a bad merge between a
+    Rhône Cabotte estate under the d'Ardhuy family and a separate Burgundy
+    `Maison la Cabotte` line
+  - `fils_person_alias` did not independently clear; one exact negative remains
+    plausibly distinct, but the analogue controls are historically messy rather
+    than cleanly separate
+
+  **Why this matters:** the benchmark-clearing stack is no longer the trusted
+  recommendation. The next honest session is truth repair on the challenged late
+  benchmark wins, not more bakeoff cycling or implementation work.

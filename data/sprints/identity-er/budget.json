@@ -1,6 +1,6 @@
 {
-  "budget": 20.00,
-  "spent": 2.082858,
+  "budget": 30.00,
+  "spent": 13.132858,
   "sessions": {
     "S10_1_sprint_launch_and_method_naming": 0.00,
     "S10_2_identity_dossier_schema_and_candidate_inventory": 0.00,
@@ -9,9 +9,11 @@
     "S10_4_selector_harness_design": 0.00,
     "S10_5_control_layer_design_and_proof_prep": 0.00,
     "S10_6_bounded_proof_artifact_build": 0.00,
-    "S10_7_bounded_proof_execution": 2.082858
+    "S10_7_bounded_proof_execution": 2.082858,
+    "S10_8_broad_method_bakeoff": 11.05,
+    "S10_9_web_validation_of_benchmark_clearing_stack": 0.00
   },
-  "remaining_projected_s7_thru_phase1": "Session 10.7 spent $2.08 on the first real bounded proof execution and the result was NO_GO: Phase A / B / D failed and Phase C is still blocked. Phase 1 still has budget left, but the next spend should happen only if the user explicitly authorizes a narrow failure-analysis continuation instead of freezing Sprint 7 at this checkpoint.",
-  "remaining_sprint_ceiling": 17.917142,
-  "note": "Sprint 7 starts with a small proof-first budget because the project may still be shut down if the new producer-identity thesis does not look honest. After Session 10.7, the budget remains a gate: do not spend the remaining ceiling automatically just because it exists."
+  "remaining_projected_s7_thru_phase1": "Session 10.8 used about $11.05 on the broad benchmark bakeoff and found a benchmark-clearing survivor, but Session 10.9 then challenged that survivor with outside web evidence at $0 new model spend. The next spend should go only to benchmark-truth and entity-history repair if the user explicitly authorizes that follow-on.",
+  "remaining_sprint_ceiling": 16.867142,
+  "note": "Sprint 7 started as a small proof-first budget because the project might still freeze if the new producer-identity thesis does not look honest. The broad bakeoff stayed within the sprint ceiling, but Session 10.9 showed that benchmark clearance alone is not enough: independent validation can still demote a candidate after the spend has happened."
 }

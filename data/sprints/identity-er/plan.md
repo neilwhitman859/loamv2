@@ -119,6 +119,9 @@ Clusters come **after** accepted `SAME_AS` edges. No optimistic transitivity.
 | 10.5 | Control layer design | `escalation_dossier_v1.md` + `accepted_edge_rules_v1.md` + `selector_proof_v1.md` |
 | 10.6 | Bounded proof build | frozen proof bundle + scorer + edge-write simulator |
 | 10.7 | Bounded proof execution + go / no-go decision | scored proof results + continuation memo |
+| 10.8 | Broad autonomous method bakeoff | ranked method ledger + strongest surviving bounded-proof artifact under the frozen production gate |
+| 10.9 | Independent web validation | outside-benchmark validation ledger + recommendation memo for the benchmark-clearing stack |
+| 10.10 | Benchmark truth repair | repaired truth ledger for challenged late overlay wins + keep/narrow/remove recommendation |
 
 ---
 
@@ -134,28 +137,39 @@ Clusters come **after** accepted `SAME_AS` edges. No optimistic transitivity.
 
 ## Latest Result
 
-Session 10.7 ran the first real bounded proof on `claude-sonnet-4-6` at
-`$2.08` and returned `NO_GO`. Phase A missed `7 / 16` `SAME_AS`, missed all
-`12 / 12` `RELATED_BUT_DISTINCT`, and resolved all `8` frontier cheap-path
-`UNSURE` cases to non-`UNSURE` labels. Phase B recovered only `4 / 6`
-resolvable frontier cases, reopened `1` false `RELATED_BUT_DISTINCT`, and
-still resolved the `2` expected-`UNSURE` shortlist-gap probes to `NONE`. Phase
-C remains blocked because no honest reusable shortlist-builder implementation
-exists yet, and Phase D reopened `4` contradictory overwrite attempts when
-escalation tried to recover cases the selector had already written as `NONE`.
-Sprint 7 implementation work is therefore blocked pending an explicit user
-decision on failure analysis versus freeze.
+Session 10.8's broad bakeoff found a benchmark-clearing survivor:
+`hybrid_guarded_fils_person_alias_v1` reached `0` false merges / `0` hard
+misses / `0` soft misses on the frozen benchmark after a guarded base plus
+three zero-cost overlays. Session 10.9 then pressure-tested that stack against
+fresh web evidence and live read-only canonical snapshots and withdrew it as
+the trusted recommendation. `place_alias` held up, but the `maison_alias`
+benchmark win around `Ardhuy Cabotte` / `de la Cabotte` is now challenged by
+outside evidence, and `fils_person_alias` remains unresolved rather than
+independently validated. Sprint 7 is therefore blocked on truth repair, not on
+finding yet another benchmark survivor.
+
+## Current Direction
+
+The broad bakeoff itself is complete. The next honest move is a focused
+benchmark-truth and entity-history repair pass on the challenged late overlay
+wins that turned the stack from "good guarded survivor" into "perfect on the
+frozen benchmark." Keep `benchmark_v1`, the Session 4 production/fallback
+gates, `no DB writes`, `no human pair review at scale`, and the rule that
+abstention beats a false merge fixed. Do not reopen method search until the
+challenged truth cases are either repaired or formally demoted.
 
 ---
 
 ## Budget posture
 
-**Phase 1 ceiling: $20.00**
+**Phase 1 ceiling: $30.00**
 
 Interpretation:
 - launch + design work should cost `$0`
 - first proof work must stay cheap and bounded
-- do not expand the sprint budget unless the new method clears an honest proof
+- the user-authorized broad bakeoff + validation work now sits within a hard
+  `$30` ceiling
+- do not expand the sprint budget unless the post-repair path earns it
 
 ---
 

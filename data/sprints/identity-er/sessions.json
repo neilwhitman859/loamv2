@@ -62,5 +62,21 @@
     "shape": "execution",
     "spent": 2.082858,
     "notes": "Ran the first real selector_proof_v1 execution on claude-sonnet-4-6 against the frozen 48 Phase A selector packets and 8 Phase B escalation packets, writing normalized results, raw response logs, a scored summary, a filled scorecard, an explicit Phase C blocked/runnability note, and the Sprint 7 go/no-go memo under data/sprints/identity-er/proof/. Result: NO_GO. Phase A stayed safe on false SAME_AS but still missed 7/16 SAME_AS, missed all 12/12 RELATED_BUT_DISTINCT, and resolved all 8 frontier UNSURE cases to non-UNSURE labels; Phase B recovered only 4/6 resolvable frontier cases, reopened 1 false RELATED_BUT_DISTINCT, and still resolved both expected-UNSURE shortlist-gap probes to NONE; Phase D reopened 4 contradictory overwrite attempts; and Phase C remains blocked because there is still no reusable shortlist_generation_v1 runner outside the proof scaffolding. The next honest session is failure analysis only if the user explicitly wants Sprint 7 to continue."
+  },
+  {
+    "id": "S10.8",
+    "date": "2026-04-22",
+    "title": "Broad method bakeoff",
+    "shape": "bakeoff",
+    "spent": 11.05,
+    "notes": "Ran the user-authorized broad producer-dedup method bakeoff under the frozen benchmark_v1 and Session 4 production gate. The strongest benchmark survivor became hybrid_guarded_fils_person_alias_v1 after a guarded baseline plus three zero-cost overlays cleared the full frozen benchmark on Sonnet, Sonnet rerun, Opus, and Opus rerun at 0 false merges / 0 hard misses / 0 soft misses. The durable artifacts are the method scoreboard, the benchmark-clear confirmation memo, and the frozen-file stress audit under data/sprints/identity-er/method_bakeoff/. Spend here reflects the paid underlying proof and confirmation runs tracked in the scoreboard; the late overlay confirmations were zero-cost."
+  },
+  {
+    "id": "S10.9",
+    "date": "2026-04-22",
+    "title": "Web validation of benchmark-clearing stack",
+    "shape": "validation",
+    "spent": 0.0,
+    "notes": "Pressure-tested the benchmark-clearing stack against live canonical snapshots plus fresh web evidence. Produced session10_9_case_snapshots_v1.json, session10_9_web_validation_ledger_v1.md, session10_9_web_validation_memo_v1.md, and the read-only snapshot builder. Result: the current recommendation was withdrawn. place_alias held up, but the maison_alias benchmark win Ardhuy Cabotte / de la Cabotte no longer survives independent scrutiny, and fils_person_alias remains unresolved rather than independently validated. The next honest session is benchmark-truth and entity-history repair, not more method cycling."
   }
 ]

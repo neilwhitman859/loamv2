@@ -1,0 +1,126 @@
+{
+  "generated_on": "2026-04-22",
+  "candidate": "hybrid_guarded_fils_person_alias_v1",
+  "benchmark_runs": [
+    {
+      "run_name": "session10_8_hybrid_guarded_fils_person_alias_sonnet_v1",
+      "source_model": "claude-sonnet-4-6",
+      "false_merge": 0,
+      "hard_missed_merge": 0,
+      "soft_missed_merge": 0,
+      "safe_flag": 18,
+      "merge_capture_rate": 1.0,
+      "exact_verdict_accuracy": 0.8816,
+      "production_status": "pass",
+      "fallback_status": "pass",
+      "source_cost_usd": 0.539217
+    },
+    {
+      "run_name": "session10_8_hybrid_guarded_fils_person_alias_sonnet_rerun_v1",
+      "source_model": "claude-sonnet-4-6",
+      "false_merge": 0,
+      "hard_missed_merge": 0,
+      "soft_missed_merge": 0,
+      "safe_flag": 18,
+      "merge_capture_rate": 1.0,
+      "exact_verdict_accuracy": 0.8816,
+      "production_status": "pass",
+      "fallback_status": "pass",
+      "source_cost_usd": 0.538242
+    },
+    {
+      "run_name": "session10_8_hybrid_guarded_fils_person_alias_opus_v1",
+      "source_model": "claude-opus-4-6",
+      "false_merge": 0,
+      "hard_missed_merge": 0,
+      "soft_missed_merge": 0,
+      "safe_flag": 17,
+      "merge_capture_rate": 1.0,
+      "exact_verdict_accuracy": 0.8882,
+      "production_status": "pass",
+      "fallback_status": "pass",
+      "source_cost_usd": 2.966235
+    },
+    {
+      "run_name": "session10_8_hybrid_guarded_fils_person_alias_opus_rerun_v1",
+      "source_model": "claude-opus-4-6",
+      "false_merge": 0,
+      "hard_missed_merge": 0,
+      "soft_missed_merge": 0,
+      "safe_flag": 17,
+      "merge_capture_rate": 1.0,
+      "exact_verdict_accuracy": 0.8882,
+      "production_status": "pass",
+      "fallback_status": "pass",
+      "source_cost_usd": 2.996385
+    }
+  ],
+  "ledger_audit": {
+    "place_alias": {
+      "hits": [
+        {
+          "pair_id": 96369,
+          "inside_benchmark": true,
+          "verdict": "MERGE",
+          "pattern_cluster": "11.4.h",
+          "name_a": "Stadt Krems",
+          "name_b": "Krems"
+        }
+      ],
+      "outside_benchmark_count": 0,
+      "outside_benchmark_verdicts": {}
+    },
+    "fils_person_alias": {
+      "hits": [
+        {
+          "pair_id": 19129,
+          "inside_benchmark": true,
+          "verdict": "SKIP",
+          "pattern_cluster": "11.4.m",
+          "name_a": "Jean Boillot & Fils",
+          "name_b": "Jean-Marc Boillot"
+        },
+        {
+          "pair_id": 4784,
+          "inside_benchmark": true,
+          "verdict": "MERGE",
+          "pattern_cluster": "11.4.h",
+          "name_a": "Protheau & Fils",
+          "name_b": "Jean-Francois Protheau"
+        }
+      ],
+      "outside_benchmark_count": 0,
+      "outside_benchmark_verdicts": {}
+    }
+  },
+  "context_audit": {
+    "maison_alias": {
+      "hits": [
+        {
+          "pair_id": 67132,
+          "inside_benchmark": true,
+          "verdict": "MERGE",
+          "pattern_cluster": "11.4.h",
+          "name_a": "Ardhuy Cabotte",
+          "name_b": "de la Cabotte"
+        }
+      ],
+      "outside_benchmark_count": 0,
+      "outside_benchmark_verdicts": {}
+    }
+  },
+  "holdout_coverage": {
+    "place_alias": {
+      "count": 0,
+      "case_ids": []
+    },
+    "maison_alias": {
+      "count": 0,
+      "case_ids": []
+    },
+    "fils_person_alias": {
+      "count": 0,
+      "case_ids": []
+    }
+  }
+}

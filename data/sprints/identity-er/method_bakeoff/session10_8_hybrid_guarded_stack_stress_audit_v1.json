@@ -1,0 +1,444 @@
+{
+  "generated_on": "2026-04-22",
+  "candidate": "hybrid_guarded_fils_person_alias_v1",
+  "benchmark_clear_reference": "data/sprints/identity-er/method_bakeoff/session10_8_hybrid_guarded_stack_confirmation_v1.md",
+  "families": {
+    "place_alias": {
+      "exact_hits": [
+        {
+          "pair_id": 96369,
+          "inside_benchmark": true,
+          "verdict": "MERGE",
+          "pattern_cluster": "11.4.h",
+          "name_a": "Stadt Krems",
+          "name_b": "Krems"
+        }
+      ],
+      "exact_summary": {
+        "count": 1,
+        "inside_benchmark_count": 1,
+        "outside_benchmark_count": 0,
+        "by_scope_and_verdict": {
+          "inside:MERGE": 1
+        }
+      },
+      "broad_summary_note": "No broader frozen ledger rows with `Stadt`/`Weingut`/`Winzer` name prefixes were found outside the single benchmark case."
+    },
+    "maison_alias": {
+      "exact_hits": [
+        {
+          "pair_id": 67132,
+          "inside_benchmark": true,
+          "verdict": "MERGE",
+          "pattern_cluster": "11.4.h",
+          "name_a": "Ardhuy Cabotte",
+          "name_b": "de la Cabotte"
+        }
+      ],
+      "exact_summary": {
+        "count": 1,
+        "inside_benchmark_count": 1,
+        "outside_benchmark_count": 0,
+        "by_scope_and_verdict": {
+          "inside:MERGE": 1
+        }
+      },
+      "broad_name_hits": [
+        {
+          "pair_id": 67132,
+          "inside_benchmark": true,
+          "verdict": "MERGE",
+          "pattern_cluster": "11.4.h",
+          "name_a": "Ardhuy Cabotte",
+          "name_b": "de la Cabotte"
+        },
+        {
+          "pair_id": 90721,
+          "inside_benchmark": false,
+          "verdict": "SKIP",
+          "pattern_cluster": "11.4.m",
+          "name_a": "de la Gaffeliere",
+          "name_b": "Canon la Gaffeliere"
+        }
+      ],
+      "broad_name_summary": {
+        "count": 2,
+        "inside_benchmark_count": 1,
+        "outside_benchmark_count": 1,
+        "by_scope_and_verdict": {
+          "inside:MERGE": 1,
+          "outside:SKIP": 1
+        }
+      }
+    },
+    "fils_person_alias": {
+      "exact_hits": [
+        {
+          "pair_id": 19129,
+          "inside_benchmark": true,
+          "verdict": "SKIP",
+          "pattern_cluster": "11.4.m",
+          "name_a": "Jean Boillot & Fils",
+          "name_b": "Jean-Marc Boillot"
+        },
+        {
+          "pair_id": 4784,
+          "inside_benchmark": true,
+          "verdict": "MERGE",
+          "pattern_cluster": "11.4.h",
+          "name_a": "Protheau & Fils",
+          "name_b": "Jean-Francois Protheau"
+        }
+      ],
+      "exact_summary": {
+        "count": 2,
+        "inside_benchmark_count": 2,
+        "outside_benchmark_count": 0,
+        "by_scope_and_verdict": {
+          "inside:SKIP": 1,
+          "inside:MERGE": 1
+        }
+      },
+      "broad_name_hits": [
+        {
+          "pair_id": 4067,
+          "inside_benchmark": true,
+          "verdict": "MERGE",
+          "pattern_cluster": "11.4.h",
+          "name_a": "Vocoret",
+          "name_b": "Vocoret et Fils",
+          "broad_detail": {
+            "fils_name": "Vocoret et Fils",
+            "person_name": "Vocoret",
+            "fils_side": "b",
+            "person_has_fils": false,
+            "person_word_count": 1,
+            "person_first_word_hyphenated": false,
+            "shared_tokens": [
+              "vocoret"
+            ]
+          }
+        },
+        {
+          "pair_id": 19129,
+          "inside_benchmark": true,
+          "verdict": "SKIP",
+          "pattern_cluster": "11.4.m",
+          "name_a": "Jean Boillot & Fils",
+          "name_b": "Jean-Marc Boillot",
+          "broad_detail": {
+            "fils_name": "Jean Boillot & Fils",
+            "person_name": "Jean-Marc Boillot",
+            "fils_side": "a",
+            "person_has_fils": false,
+            "person_word_count": 2,
+            "person_first_word_hyphenated": true,
+            "shared_tokens": [
+              "boillot",
+              "jean"
+            ]
+          }
+        },
+        {
+          "pair_id": 52229,
+          "inside_benchmark": true,
+          "verdict": "MERGE",
+          "pattern_cluster": "11.4.f",
+          "name_a": "Amiot Bonfils",
+          "name_b": "Guy Amiot et Fils",
+          "broad_detail": {
+            "fils_name": "Guy Amiot et Fils",
+            "person_name": "Amiot Bonfils",
+            "fils_side": "b",
+            "person_has_fils": false,
+            "person_word_count": 2,
+            "person_first_word_hyphenated": false,
+            "shared_tokens": [
+              "amiot"
+            ]
+          }
+        },
+        {
+          "pair_id": 65678,
+          "inside_benchmark": true,
+          "verdict": "SKIP",
+          "pattern_cluster": "11.4.o",
+          "name_a": "Decelle Villa",
+          "name_b": "Decelle & Fils",
+          "broad_detail": {
+            "fils_name": "Decelle & Fils",
+            "person_name": "Decelle Villa",
+            "fils_side": "b",
+            "person_has_fils": false,
+            "person_word_count": 2,
+            "person_first_word_hyphenated": false,
+            "shared_tokens": [
+              "decelle"
+            ]
+          }
+        },
+        {
+          "pair_id": 103518,
+          "inside_benchmark": false,
+          "verdict": "DEFERRED_SPRINT_7",
+          "pattern_cluster": "11.4.h",
+          "name_a": "Clavelier",
+          "name_b": "Clavelier et Fils",
+          "broad_detail": {
+            "fils_name": "Clavelier et Fils",
+            "person_name": "Clavelier",
+            "fils_side": "b",
+            "person_has_fils": false,
+            "person_word_count": 1,
+            "person_first_word_hyphenated": false,
+            "shared_tokens": [
+              "clavelier"
+            ]
+          }
+        },
+        {
+          "pair_id": 123950,
+          "inside_benchmark": false,
+          "verdict": "SKIP",
+          "pattern_cluster": "11.4.m",
+          "name_a": "Fery-Meunier",
+          "name_b": "Jean Fery & Fils",
+          "broad_detail": {
+            "fils_name": "Jean Fery & Fils",
+            "person_name": "Fery-Meunier",
+            "fils_side": "b",
+            "person_has_fils": false,
+            "person_word_count": 1,
+            "person_first_word_hyphenated": true,
+            "shared_tokens": [
+              "fery"
+            ]
+          }
+        },
+        {
+          "pair_id": 4784,
+          "inside_benchmark": true,
+          "verdict": "MERGE",
+          "pattern_cluster": "11.4.h",
+          "name_a": "Protheau & Fils",
+          "name_b": "Jean-Francois Protheau",
+          "broad_detail": {
+            "fils_name": "Protheau & Fils",
+            "person_name": "Jean-Francois Protheau",
+            "fils_side": "a",
+            "person_has_fils": false,
+            "person_word_count": 2,
+            "person_first_word_hyphenated": true,
+            "shared_tokens": [
+              "protheau"
+            ]
+          }
+        },
+        {
+          "pair_id": 32548,
+          "inside_benchmark": true,
+          "verdict": "MERGE",
+          "pattern_cluster": "11.4.h",
+          "name_a": "Metrat et Fils ",
+          "name_b": "Metrat B",
+          "broad_detail": {
+            "fils_name": "Metrat et Fils ",
+            "person_name": "Metrat B",
+            "fils_side": "a",
+            "person_has_fils": false,
+            "person_word_count": 2,
+            "person_first_word_hyphenated": false,
+            "shared_tokens": [
+              "metrat"
+            ]
+          }
+        },
+        {
+          "pair_id": 87456,
+          "inside_benchmark": false,
+          "verdict": "SKIP",
+          "pattern_cluster": "11.4.m",
+          "name_a": "Grivelet Pere & Fils",
+          "name_b": "Grivelet-Cusset",
+          "broad_detail": {
+            "fils_name": "Grivelet Pere & Fils",
+            "person_name": "Grivelet-Cusset",
+            "fils_side": "a",
+            "person_has_fils": false,
+            "person_word_count": 1,
+            "person_first_word_hyphenated": true,
+            "shared_tokens": [
+              "grivelet"
+            ]
+          }
+        },
+        {
+          "pair_id": 107035,
+          "inside_benchmark": false,
+          "verdict": "SKIP",
+          "pattern_cluster": "11.4.m",
+          "name_a": "Daniel Dampt & Fils",
+          "name_b": "Dampt",
+          "broad_detail": {
+            "fils_name": "Daniel Dampt & Fils",
+            "person_name": "Dampt",
+            "fils_side": "a",
+            "person_has_fils": false,
+            "person_word_count": 1,
+            "person_first_word_hyphenated": false,
+            "shared_tokens": [
+              "dampt"
+            ]
+          }
+        },
+        {
+          "pair_id": 136777,
+          "inside_benchmark": false,
+          "verdict": "SKIP",
+          "pattern_cluster": "11.4.m",
+          "name_a": "Roy Fils",
+          "name_b": "Roy Pere Fils",
+          "broad_detail": {
+            "fils_name": "Roy Fils",
+            "person_name": "Roy Pere Fils",
+            "fils_side": "a",
+            "person_has_fils": true,
+            "person_word_count": 3,
+            "person_first_word_hyphenated": false,
+            "shared_tokens": [
+              "fils",
+              "roy"
+            ]
+          }
+        },
+        {
+          "pair_id": 3695,
+          "inside_benchmark": false,
+          "verdict": "SKIP",
+          "pattern_cluster": "11.4.m",
+          "name_a": "Jean Paul Gauffroy et Fils",
+          "name_b": "Gauffroy Marc & Fils",
+          "broad_detail": {
+            "fils_name": "Jean Paul Gauffroy et Fils",
+            "person_name": "Gauffroy Marc & Fils",
+            "fils_side": "a",
+            "person_has_fils": true,
+            "person_word_count": 4,
+            "person_first_word_hyphenated": false,
+            "shared_tokens": [
+              "fils",
+              "gauffroy"
+            ]
+          }
+        },
+        {
+          "pair_id": 12249,
+          "inside_benchmark": true,
+          "verdict": "SKIP",
+          "pattern_cluster": "11.4.h",
+          "name_a": "Gauffroy Marc & Fils",
+          "name_b": "Gauffroy-Jacob",
+          "broad_detail": {
+            "fils_name": "Gauffroy Marc & Fils",
+            "person_name": "Gauffroy-Jacob",
+            "fils_side": "a",
+            "person_has_fils": false,
+            "person_word_count": 1,
+            "person_first_word_hyphenated": true,
+            "shared_tokens": [
+              "gauffroy"
+            ]
+          }
+        },
+        {
+          "pair_id": 17949,
+          "inside_benchmark": false,
+          "verdict": "PARENT_CHILD",
+          "pattern_cluster": "11.4.g",
+          "name_a": "Quancard Pere et Fils",
+          "name_b": "de Paillet-Quancard",
+          "broad_detail": {
+            "fils_name": "Quancard Pere et Fils",
+            "person_name": "de Paillet-Quancard",
+            "fils_side": "a",
+            "person_has_fils": false,
+            "person_word_count": 2,
+            "person_first_word_hyphenated": false,
+            "shared_tokens": [
+              "quancard"
+            ]
+          }
+        },
+        {
+          "pair_id": 75683,
+          "inside_benchmark": false,
+          "verdict": "SKIP",
+          "pattern_cluster": "11.4.m",
+          "name_a": "Marc Parce",
+          "name_b": "Parce Fils",
+          "broad_detail": {
+            "fils_name": "Parce Fils",
+            "person_name": "Marc Parce",
+            "fils_side": "b",
+            "person_has_fils": false,
+            "person_word_count": 2,
+            "person_first_word_hyphenated": false,
+            "shared_tokens": [
+              "parce"
+            ]
+          }
+        },
+        {
+          "pair_id": 97583,
+          "inside_benchmark": false,
+          "verdict": "SKIP",
+          "pattern_cluster": "11.4.m",
+          "name_a": "Michaut",
+          "name_b": "Michaut Pere & Fils",
+          "broad_detail": {
+            "fils_name": "Michaut Pere & Fils",
+            "person_name": "Michaut",
+            "fils_side": "b",
+            "person_has_fils": false,
+            "person_word_count": 1,
+            "person_first_word_hyphenated": false,
+            "shared_tokens": [
+              "michaut"
+            ]
+          }
+        }
+      ],
+      "broad_name_summary": {
+        "count": 16,
+        "inside_benchmark_count": 7,
+        "outside_benchmark_count": 9,
+        "by_scope_and_verdict": {
+          "inside:MERGE": 4,
+          "inside:SKIP": 3,
+          "outside:DEFERRED_SPRINT_7": 1,
+          "outside:SKIP": 7,
+          "outside:PARENT_CHILD": 1
+        }
+      }
+    }
+  },
+  "holdout_family_coverage": {
+    "place_exact": {
+      "count": 0,
+      "case_ids": []
+    },
+    "maison_name_broad": {
+      "count": 0,
+      "case_ids": []
+    },
+    "fils_exact": {
+      "count": 0,
+      "case_ids": []
+    }
+  },
+  "freeze_assessment": {
+    "frozen_file_confirmation_exhausted": true,
+    "reason": "The final stack now has repeated benchmark clearance plus the strongest honest frozen-file stress audit available. The existing holdout does not cover the late overlay families, and the remaining outside-benchmark corpora only show adjacent analogues rather than faithful full-packet rerun coverage.",
+    "next_non_frozen_requirement": "Restore a working packet-build/runtime path or preserve richer outside-benchmark structured packets before making a fresh independent confirmation claim."
+  }
+}

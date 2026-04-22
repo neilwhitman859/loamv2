@@ -4,6 +4,22 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-22: Benchmark-clearing producer-dedup survivors must face fresh outside-benchmark validation before they keep the recommendation
+
+After Session 10.8 produced a benchmark-clearing survivor, the user explicitly
+redirected the next hour away from more method search and toward independent
+validation using web-grounded evidence and any other cheap external checks that
+would best test the method. Decision: a benchmark-clear result is not enough to
+keep trust by itself when the late wins depend on thin continuity or
+entity-history assumptions. The next gate must be a fresh outside-benchmark
+validation pass using primary web sources plus live read-only canonical
+snapshots before the method can continue as the trusted recommendation.
+
+Implication: benchmark survivors can be demoted after the spend has already
+happened if fresh outside evidence challenges the exact cases that made them
+look production-ready. Method search pauses until that external validation
+passes or the challenged truth cases are repaired.
+
 ### 2026-04-21: Session 10.3 keeps shortlist generation Tier-A-only, caps the selector shortlist at 12, and suppresses known false-candidate families before model calls
 
 Session 10.3 resolved the open Sprint 7 handoff blocker about whether
@@ -2161,3 +2177,25 @@ locked:
 Reason: once the selector contract was fixed, the main remaining risk was drift
 between escalation policy, edge storage, and proof implementation. Locking all
 three together keeps the next build session from silently inventing new rules.
+
+### 2026-04-21: Session 10.8 reopens Sprint 7 as an 11-hour autonomous broad method bakeoff under the frozen production gate
+
+After Session 10.7 returned `NO_GO`, the user explicitly rejected the narrow
+failure-analysis-only continuation and reopened Sprint 7 as a broader autonomous
+method bakeoff. The fixed constraints stay fixed: keep `benchmark_v1`, the
+Session 4 production/fallback gates, `no DB writes`, `no human pair review at
+scale`, and the rule that abstention is better than a false merge. Everything
+else is rethinkable, including packet shape, adjudication shape, routing shape,
+and graph semantics. Operationally, the run should proceed as a loop:
+
+1. strategize materially different methods
+2. pick the method that looks most likely to clear the frozen production gate
+3. build it out and run a bounded proof
+4. if it passes, run stricter confirmation before trusting it; if it fails, go
+   back to step 1
+
+The user also approved 15-minute thread heartbeats and a hard `$30`
+incremental budget ceiling for this autonomous run. Reason: the current ER path
+is spent enough that the honest next step is not incremental tuning but a
+bounded search over new method families, while still holding the same trust bar
+and budget discipline.

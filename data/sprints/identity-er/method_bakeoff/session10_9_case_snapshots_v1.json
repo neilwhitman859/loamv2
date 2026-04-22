@@ -1,0 +1,473 @@
+{
+  "generated_from": "live read-only canonical tables",
+  "case_count": 8,
+  "cases": [
+    {
+      "validation_case_id": "place_positive_stadt_krems",
+      "family": "place_alias",
+      "pair_kind": "benchmark_positive_exact",
+      "left_name": "Stadt Krems",
+      "right_name": "Krems",
+      "left": {
+        "id": "6bec8b08-4cc0-46e1-95cf-f917b235b865",
+        "name": "Stadt Krems",
+        "website_url": null,
+        "country": "Austria",
+        "region": "Nieder\u00f6sterreich",
+        "appellation": null,
+        "wine_count": 12,
+        "representative_wines": [
+          "Domane Krems Gruner Veltliner",
+          "Domane Krems Riesling",
+          "Grillenparz Riesling Reserve",
+          "Gruner Veltliner Lossterrassen",
+          "Kogl Riesling"
+        ]
+      },
+      "right": {
+        "id": "b0692eed-4aab-4479-87fb-9a71cc3336eb",
+        "name": "Krems",
+        "website_url": null,
+        "country": "Austria",
+        "region": "Nieder\u00f6sterreich",
+        "appellation": null,
+        "wine_count": 6,
+        "representative_wines": [
+          "Kellermeister Privat Gruner Veltliner Kremser Goldberg",
+          "Kremser Kremsleiten Riesling",
+          "Kremser Pfaffenberg Riesling",
+          "Kremser Sandgrube Gruner Veltliner",
+          "Kremser Wachtberg Gruner Veltliner"
+        ]
+      },
+      "comparison": {
+        "same_country": true,
+        "same_region": true,
+        "same_appellation": true,
+        "exact_overlap_count": 0,
+        "lexical": {
+          "left_tokens": [
+            "stadt",
+            "krems"
+          ],
+          "right_tokens": [
+            "krems"
+          ],
+          "shared_core_tokens": [
+            "krems"
+          ],
+          "left_contains_right": true,
+          "right_contains_left": false
+        }
+      }
+    },
+    {
+      "validation_case_id": "place_negative_tenuta_brunelli",
+      "family": "place_alias",
+      "pair_kind": "outside_benchmark_negative_analogue",
+      "left_name": "Tenuta Brunelli",
+      "right_name": "Brunelli",
+      "left": {
+        "id": "63b23c27-e6f0-4b52-8906-9fa7bb4415e5",
+        "name": "Tenuta Brunelli",
+        "website_url": null,
+        "country": "Italy",
+        "region": "Tuscany",
+        "appellation": null,
+        "wine_count": 3,
+        "representative_wines": [
+          "Martoccia",
+          "Poggio Apricale",
+          "Rosso di Montalcino"
+        ]
+      },
+      "right": {
+        "id": "c211da2b-8299-472a-a95a-1389dc0bbae2",
+        "name": "Brunelli",
+        "website_url": null,
+        "country": "Italy",
+        "region": "Veneto",
+        "appellation": null,
+        "wine_count": 4,
+        "representative_wines": [
+          "Amarone della Valpolicella, Classico",
+          "Brunello di Montalcino",
+          "Campo Titari Riserva",
+          "Riserva"
+        ]
+      },
+      "comparison": {
+        "same_country": true,
+        "same_region": false,
+        "same_appellation": true,
+        "exact_overlap_count": 0,
+        "lexical": {
+          "left_tokens": [
+            "tenuta",
+            "brunelli"
+          ],
+          "right_tokens": [
+            "brunelli"
+          ],
+          "shared_core_tokens": [
+            "brunelli"
+          ],
+          "left_contains_right": true,
+          "right_contains_left": false
+        }
+      }
+    },
+    {
+      "validation_case_id": "maison_positive_ardhuy_cabotte",
+      "family": "maison_alias",
+      "pair_kind": "benchmark_positive_exact",
+      "left_name": "Ardhuy Cabotte",
+      "right_name": "de la Cabotte",
+      "left": {
+        "id": "28657f5d-21e1-4a79-ab6e-b5cb54bb88a6",
+        "name": "Ardhuy Cabotte",
+        "website_url": null,
+        "country": "France",
+        "region": "Rh\u00f4ne Valley",
+        "appellation": null,
+        "wine_count": 2,
+        "representative_wines": [
+          "Cotes Village Sauvageonne Blanc",
+          "Cotes Villages Sauvageonne Blanc"
+        ]
+      },
+      "right": {
+        "id": "d1ae7fb0-32fe-4499-8d71-e870b4f7d750",
+        "name": "de la Cabotte",
+        "website_url": null,
+        "country": "France",
+        "region": "Burgundy",
+        "appellation": null,
+        "wine_count": 6,
+        "representative_wines": [
+          "Corton Grand Cru",
+          "Gevrey-Chambertin",
+          "Gevrey-Chambertin Premier Cru, Combe au Moine",
+          "Nuits-Saint-Georges Premier Cru, Les Vaucrains",
+          "Pinot Noir Vieilles Vignes"
+        ]
+      },
+      "comparison": {
+        "same_country": true,
+        "same_region": false,
+        "same_appellation": true,
+        "exact_overlap_count": 0,
+        "lexical": {
+          "left_tokens": [
+            "ardhuy",
+            "cabotte"
+          ],
+          "right_tokens": [
+            "de",
+            "la",
+            "cabotte"
+          ],
+          "shared_core_tokens": [
+            "cabotte"
+          ],
+          "left_contains_right": false,
+          "right_contains_left": false
+        }
+      }
+    },
+    {
+      "validation_case_id": "maison_negative_gaffeliere",
+      "family": "maison_alias",
+      "pair_kind": "outside_benchmark_negative_analogue",
+      "left_name": "de la Gaffeliere",
+      "right_name": "Canon la Gaffeliere",
+      "left": {
+        "id": "13837b10-d9a6-4915-9aa3-00845f4a80ab",
+        "name": "de la Gaffeliere",
+        "website_url": null,
+        "country": "France",
+        "region": "Bordeaux",
+        "appellation": null,
+        "wine_count": 1,
+        "representative_wines": [
+          "Saint-Emilion"
+        ]
+      },
+      "right": {
+        "id": "e0d72c03-7639-4f94-817b-e13d57187ce9",
+        "name": "Canon la Gaffeliere",
+        "website_url": null,
+        "country": "France",
+        "region": "Bordeaux",
+        "appellation": null,
+        "wine_count": 4,
+        "representative_wines": [
+          "Cote Mignon la Gaffeliere",
+          "Le Rose de Canon La Gaffeliere",
+          "Les Hauts de Canon la Gaffeliere",
+          "Saint-Emilion Grand Cru"
+        ]
+      },
+      "comparison": {
+        "same_country": true,
+        "same_region": true,
+        "same_appellation": true,
+        "exact_overlap_count": 0,
+        "lexical": {
+          "left_tokens": [
+            "de",
+            "la",
+            "gaffeliere"
+          ],
+          "right_tokens": [
+            "canon",
+            "la",
+            "gaffeliere"
+          ],
+          "shared_core_tokens": [
+            "gaffeliere"
+          ],
+          "left_contains_right": false,
+          "right_contains_left": false
+        }
+      }
+    },
+    {
+      "validation_case_id": "fils_positive_protheau",
+      "family": "fils_person_alias",
+      "pair_kind": "benchmark_positive_exact",
+      "left_name": "Protheau & Fils",
+      "right_name": "Jean-Francois Protheau",
+      "left": {
+        "id": "bad17a31-de64-4499-a98d-eb203701ef10",
+        "name": "Protheau & Fils",
+        "website_url": null,
+        "country": "France",
+        "region": "Burgundy",
+        "appellation": null,
+        "wine_count": 7,
+        "representative_wines": [
+          "Chambertin-Clos de Beze Grand Cru",
+          "Chambolle-Musigny",
+          "Clos de Vougeot Grand Cru",
+          "Gevrey-Chambertin",
+          "Pommard"
+        ]
+      },
+      "right": {
+        "id": "ff16017d-333d-44c3-84ac-4dfaba590d68",
+        "name": "Jean-Francois Protheau",
+        "website_url": null,
+        "country": "France",
+        "region": "Beaujolais",
+        "appellation": null,
+        "wine_count": 3,
+        "representative_wines": [
+          "Blanc",
+          "Nouveau",
+          "Saint-Amour"
+        ]
+      },
+      "comparison": {
+        "same_country": true,
+        "same_region": false,
+        "same_appellation": true,
+        "exact_overlap_count": 0,
+        "lexical": {
+          "left_tokens": [
+            "protheau",
+            "fils"
+          ],
+          "right_tokens": [
+            "jean",
+            "francois",
+            "protheau"
+          ],
+          "shared_core_tokens": [
+            "protheau"
+          ],
+          "left_contains_right": false,
+          "right_contains_left": false
+        }
+      }
+    },
+    {
+      "validation_case_id": "fils_negative_jean_boillot",
+      "family": "fils_person_alias",
+      "pair_kind": "benchmark_negative_exact",
+      "left_name": "Jean Boillot & Fils",
+      "right_name": "Jean-Marc Boillot",
+      "left": {
+        "id": "56d5eabd-6be7-475f-81fc-1bab29d23287",
+        "name": "Jean Boillot & Fils",
+        "website_url": null,
+        "country": "France",
+        "region": "Burgundy",
+        "appellation": null,
+        "wine_count": 10,
+        "representative_wines": [
+          "Chassagne-Montrachet Premier Cru, Les Chaumees",
+          "Meursault",
+          "Meursault Premier Cru, Les Cras",
+          "Nuits-Saint-Georges Premier Cru, Les Cailles",
+          "Puligny-Montrachet Premier Cru, Champ Canet"
+        ]
+      },
+      "right": {
+        "id": "a8aeeb1f-88ba-4f58-b96c-09e55c1f6763",
+        "name": "Jean-Marc Boillot",
+        "website_url": null,
+        "country": "France",
+        "region": "Burgundy",
+        "appellation": null,
+        "wine_count": 2,
+        "representative_wines": [
+          "Montagny",
+          "Puligny-Montrachet Premier Cru, Champ Canet"
+        ]
+      },
+      "comparison": {
+        "same_country": true,
+        "same_region": true,
+        "same_appellation": true,
+        "exact_overlap_count": 1,
+        "lexical": {
+          "left_tokens": [
+            "jean",
+            "boillot",
+            "fils"
+          ],
+          "right_tokens": [
+            "jean",
+            "marc",
+            "boillot"
+          ],
+          "shared_core_tokens": [
+            "boillot",
+            "jean"
+          ],
+          "left_contains_right": false,
+          "right_contains_left": false
+        }
+      }
+    },
+    {
+      "validation_case_id": "fils_negative_fery_meunier",
+      "family": "fils_person_alias",
+      "pair_kind": "outside_benchmark_negative_analogue",
+      "left_name": "Fery-Meunier",
+      "right_name": "Jean Fery & Fils",
+      "left": {
+        "id": "b64ab69a-38b8-40bd-ae15-579e50e7f363",
+        "name": "Fery-Meunier",
+        "website_url": null,
+        "country": "France",
+        "region": "Burgundy",
+        "appellation": null,
+        "wine_count": 37,
+        "representative_wines": [
+          "Blanc",
+          "Chambertin Grand Cru",
+          "Chambolle-Musigny Premier Cru",
+          "Charmes-Chambertin Grand Cru",
+          "Clos de Vougeot Grand Cru"
+        ]
+      },
+      "right": {
+        "id": "c408c88b-b331-4b8a-a426-e0e8b842c5ab",
+        "name": "Jean Fery & Fils",
+        "website_url": null,
+        "country": "France",
+        "region": "Burgundy",
+        "appellation": null,
+        "wine_count": 53,
+        "representative_wines": [
+          "Aloxe-Corton",
+          "Aloxe-Corton Premier Cru, Les Guerets",
+          "Blanc",
+          "Bourgogne, Haute-Cote de Beaune",
+          "Chassagne-Montrachet Premier Cru, Abbaye de Morgeot"
+        ]
+      },
+      "comparison": {
+        "same_country": true,
+        "same_region": true,
+        "same_appellation": true,
+        "exact_overlap_count": 6,
+        "lexical": {
+          "left_tokens": [
+            "fery",
+            "meunier"
+          ],
+          "right_tokens": [
+            "jean",
+            "fery",
+            "fils"
+          ],
+          "shared_core_tokens": [
+            "fery"
+          ],
+          "left_contains_right": false,
+          "right_contains_left": false
+        }
+      }
+    },
+    {
+      "validation_case_id": "fils_negative_grivelet",
+      "family": "fils_person_alias",
+      "pair_kind": "outside_benchmark_negative_analogue",
+      "left_name": "Grivelet Pere & Fils",
+      "right_name": "Grivelet-Cusset",
+      "left": {
+        "id": "7e63da8e-103f-4dc9-9707-aa61ca2ffb09",
+        "name": "Grivelet Pere & Fils",
+        "website_url": null,
+        "country": "France",
+        "region": "Burgundy",
+        "appellation": null,
+        "wine_count": 6,
+        "representative_wines": [
+          "Les Belles Roches",
+          "Les Chanes",
+          "Philippe Le Long",
+          "Saint-Amour",
+          "Santenay Premier Cru, Passetemps"
+        ]
+      },
+      "right": {
+        "id": "98db25a8-e598-47bb-9e40-d9d0aaa66cad",
+        "name": "Grivelet-Cusset",
+        "website_url": null,
+        "country": "France",
+        "region": "Burgundy",
+        "appellation": null,
+        "wine_count": 1,
+        "representative_wines": [
+          "Pommard Premier Cru, Les Chanlins"
+        ]
+      },
+      "comparison": {
+        "same_country": true,
+        "same_region": true,
+        "same_appellation": true,
+        "exact_overlap_count": 0,
+        "lexical": {
+          "left_tokens": [
+            "grivelet",
+            "pere",
+            "fils"
+          ],
+          "right_tokens": [
+            "grivelet",
+            "cusset"
+          ],
+          "shared_core_tokens": [
+            "grivelet"
+          ],
+          "left_contains_right": false,
+          "right_contains_left": false
+        }
+      }
+    }
+  ]
+}
