@@ -86,5 +86,13 @@
     "shape": "measurement",
     "spent": 0.0,
     "notes": "Turned Sprint 7's next bottleneck into a reproducible artifact set instead of another narrow memo. Built ground_truth_program_v1.md, a reproducible seed builder, ground_truth_seed_pairs_v1.jsonl, ground_truth_seed_singletons_v1.jsonl, and ground_truth_seed_summary_v1.md. Result: Sprint 7 now starts from 422 validated pair rows still mapping to today's producer_dedup_pairs, counts 417 scoreable pair truths toward a new 1,000-pair target, and explicitly refuses to treat the live pair table's machine verdicts as truth while verdict_source remains blank."
+  },
+  {
+    "id": "S10.11",
+    "date": "2026-04-22",
+    "title": "Ground truth pack 001",
+    "shape": "measurement",
+    "spent": 0.0,
+    "notes": "Built the first audited truth-expansion pack under the new Sprint 7 ground-truth program: ground_truth_pack_001_v1.jsonl, ground_truth_pack_001_summary_v1.md, and a reproducible builder. Pack 001 requested 72 candidate cases and landed 36 audited records, including 29 net-new scoreable additions (9 SAME_AS, 8 RELATED_BUT_DISTINCT, 12 NONE) plus 3 quarantined disputes around Ardhuy Cabotte, Protheau, and Fery-Meunier. The scoreable truth corpus now rises from 417 to 446. The strongest reusable lanes were strict TTB shared-permit precision traps and web-backed subbrand / collaboration families; the main remaining blocker is still breadth, especially SAME_AS growth under a strict evidence bar."
   }
 ]

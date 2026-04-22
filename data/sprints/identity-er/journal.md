@@ -2,16 +2,15 @@
 
 **Opened:** 2026-04-21
 **Status:** Active
-**Current block:** the broad bakeoff has already produced and then lost its
-trusted survivor. Session 10.10 froze a broader ground-truth foundation:
-`ground_truth_seed_v1` now captures `422` validated pair rows still mapping to
-today's `producer_dedup_pairs`, plus `71` singleton sanity records and a
-documented path from `417` scoreable pair truths to a `1,000`-pair target.
-Keep `benchmark_v1`, the frozen Session 4 production/fallback gates, `no DB
-writes`, `no human pair review at scale`, and the rule that abstention beats a
-false merge fixed. The next honest move is Pack 001 truth expansion, with the
-challenged late overlay wins treated as part of that audited pack rather than
-as a one-off memo.
+**Current block:** Session 10.11 landed the first audited truth-expansion pack:
+`ground_truth_pack_001_v1` built `36` records, including `29` net-new
+scoreable additions and `3` quarantined disputes. That starts the truth-growth
+loop honestly, but the corpus is still only `446` scoreable pairs, so breadth
+is still the blocker rather than method search. Keep `benchmark_v1`, the frozen
+Session 4 production/fallback gates, `no DB writes`, `no human pair review at
+scale`, and the rule that abstention beats a false merge fixed. The next honest
+move is Pack 002 under the same strict evidence bar unless the user explicitly
+wants to reopen Pack 001 and trade strictness for more volume.
 
 ---
 
@@ -336,3 +335,39 @@ as a one-off memo.
   **Why this matters:** Sprint 7 finally has a reproducible measurement object.
   Future method claims can now be judged against the same truth files instead
   of against whichever benchmark slice happens to look decisive in the moment.
+
+- **Session 10.11 (2026-04-22):** built the first audited truth-expansion pack.
+
+  **Scope held:** no DB writes, no benchmark reruns, no new method search, no
+  queue-building, and no attempt to force disputed-history cases into
+  scoreable labels.
+
+  **Artifacts produced:**
+  - `ground_truth_pack_001_v1.jsonl`
+  - `ground_truth_pack_001_summary_v1.md`
+  - `pipeline/identity/build_ground_truth_pack_001_v1.py`
+  - `s10_12_ground_truth_pack_002.md`
+
+  **Results locked by the pack:**
+  - Pack 001 requested `72` candidate cases and built `36` audited records
+  - `29` of those records are net-new scoreable additions:
+    - `9` `SAME_AS`
+    - `8` `RELATED_BUT_DISTINCT`
+    - `12` `NONE`
+  - `6` records are explicit seed repair / reaffirm outputs, including
+    `3` quarantined disputes:
+    - `Ardhuy Cabotte` / `de la Cabotte`
+    - `Protheau & Fils` / `Jean-Francois Protheau`
+    - `Fery-Meunier` / `Jean Fery & Fils`
+  - the scoreable truth corpus now moves from `417` to `446`, leaving a
+    documented gap of `+554` to the `1,000`-pair target
+  - the strongest new growth came from two reusable evidence lanes:
+    - strict TTB shared-permit precision traps (`11.4.j`)
+    - web-backed subbrand / collaboration / foreign-domain families
+      (`11.4.s`, `11.4.o`)
+
+  **Why this matters:** Sprint 7 is no longer blocked on "build the first
+  pack." It is now blocked on growing the truth base fast enough without
+  weakening the evidence bar. Session 10.12 should therefore focus on more
+  `SAME_AS` recall and additional non-`FR` coverage, not on relitigating the
+  bakeoff or pretending Pack 001 solved the breadth problem.
