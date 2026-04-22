@@ -121,7 +121,8 @@ Clusters come **after** accepted `SAME_AS` edges. No optimistic transitivity.
 | 10.7 | Bounded proof execution + go / no-go decision | scored proof results + continuation memo |
 | 10.8 | Broad autonomous method bakeoff | ranked method ledger + strongest surviving bounded-proof artifact under the frozen production gate |
 | 10.9 | Independent web validation | outside-benchmark validation ledger + recommendation memo for the benchmark-clearing stack |
-| 10.10 | Benchmark truth repair | repaired truth ledger for challenged late overlay wins + keep/narrow/remove recommendation |
+| 10.10 | Ground truth foundation | `ground_truth_program_v1.md` + reproducible seed manifest + next-pack prompt |
+| 10.11 | Ground truth pack 001 | first audited expansion pack toward the 1,000-pair scoreable target |
 
 ---
 
@@ -142,21 +143,24 @@ Session 10.8's broad bakeoff found a benchmark-clearing survivor:
 misses / `0` soft misses on the frozen benchmark after a guarded base plus
 three zero-cost overlays. Session 10.9 then pressure-tested that stack against
 fresh web evidence and live read-only canonical snapshots and withdrew it as
-the trusted recommendation. `place_alias` held up, but the `maison_alias`
-benchmark win around `Ardhuy Cabotte` / `de la Cabotte` is now challenged by
-outside evidence, and `fils_person_alias` remains unresolved rather than
-independently validated. Sprint 7 is therefore blocked on truth repair, not on
-finding yet another benchmark survivor.
+the trusted recommendation. Session 10.10 responded by freezing a broader
+ground-truth foundation instead of chasing another thin benchmark win:
+`ground_truth_seed_v1` now captures `422` validated pair rows still mapping to
+today's `producer_dedup_pairs`, `71` singleton sanity records, and a concrete
+path from `417` scoreable pair truths to a `1,000`-pair target. Sprint 7 is
+therefore now blocked on truth expansion quality, not on finding yet another
+benchmark survivor.
 
 ## Current Direction
 
-The broad bakeoff itself is complete. The next honest move is a focused
-benchmark-truth and entity-history repair pass on the challenged late overlay
-wins that turned the stack from "good guarded survivor" into "perfect on the
-frozen benchmark." Keep `benchmark_v1`, the Session 4 production/fallback
-gates, `no DB writes`, `no human pair review at scale`, and the rule that
-abstention beats a false merge fixed. Do not reopen method search until the
-challenged truth cases are either repaired or formally demoted.
+The broad bakeoff itself is complete. The next honest move is now a **ground
+truth program**, not another winner-search pass. Keep `benchmark_v1`, the
+Session 4 production/fallback gates, `no DB writes`, `no human pair review at
+scale`, and the rule that abstention beats a false merge fixed. Treat
+`ground_truth_seed_v1` as the reproducible baseline, repair the challenged late
+overlay wins inside Pack 001, and expand toward `1,000` scoreable audited pairs
+before trusting a new method claim. Do not reopen method search until the truth
+base itself is stronger.
 
 ---
 

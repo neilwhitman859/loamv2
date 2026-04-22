@@ -14,6 +14,8 @@ node_modules/
 !data/sprints/dedup/chrome_validation/tail_verdicts.jsonl
 !data/sprints/dedup/chrome_validation/_rechrome_core_verdicts.jsonl
 !data/sprints/dedup/chrome_validation/_rechrome_rest_verdicts.jsonl
+!data/sprints/identity-er/ground_truth_seed_pairs_v1.jsonl
+!data/sprints/identity-er/ground_truth_seed_singletons_v1.jsonl
 
 # Vivino pipeline artifacts
 vivino_*.json
@@ -124,4 +126,3 @@ data/stats/loam_roadmap.md
 
 # Serper response cache — large & derivable, don't commit
 data/stats/serper_cache/
-

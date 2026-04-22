@@ -2,14 +2,16 @@
 
 **Opened:** 2026-04-21
 **Status:** Active
-**Current block:** the broad bakeoff has already produced its strongest
-benchmark survivor, but Session 10.9 web validation has now challenged that
-survivor's late overlay wins. Keep `benchmark_v1`, the frozen Session 4
-production/fallback gates, `no DB writes`, `no human pair review at scale`, and
-the rule that abstention beats a false merge fixed. The next honest move is not
-another method-search pass; it is a benchmark-truth / entity-history repair
-pass on the challenged late overlay families before any further recommendation
-or implementation work.
+**Current block:** the broad bakeoff has already produced and then lost its
+trusted survivor. Session 10.10 froze a broader ground-truth foundation:
+`ground_truth_seed_v1` now captures `422` validated pair rows still mapping to
+today's `producer_dedup_pairs`, plus `71` singleton sanity records and a
+documented path from `417` scoreable pair truths to a `1,000`-pair target.
+Keep `benchmark_v1`, the frozen Session 4 production/fallback gates, `no DB
+writes`, `no human pair review at scale`, and the rule that abstention beats a
+false merge fixed. The next honest move is Pack 001 truth expansion, with the
+challenged late overlay wins treated as part of that audited pack rather than
+as a one-off memo.
 
 ---
 
@@ -302,3 +304,35 @@ or implementation work.
   **Why this matters:** the benchmark-clearing stack is no longer the trusted
   recommendation. The next honest session is truth repair on the challenged late
   benchmark wins, not more bakeoff cycling or implementation work.
+
+- **Session 10.10 (2026-04-22):** shifted Sprint 7 from a narrow truth-repair
+  memo into a broader ground-truth foundation.
+
+  **Scope held:** no DB writes, no benchmark reruns, no new method bakeoff,
+  no relabeling of machine verdicts as truth, and no pretending singleton
+  sanity cases count toward the pair target.
+
+  **Artifacts produced:**
+  - `ground_truth_program_v1.md`
+  - `ground_truth_seed_pairs_v1.jsonl`
+  - `ground_truth_seed_singletons_v1.jsonl`
+  - `ground_truth_seed_summary_v1.md`
+  - `pipeline/identity/build_ground_truth_seed_v1.py`
+  - `s10_11_ground_truth_pack_001.md`
+
+  **Decisions locked by the foundation:**
+  - Sprint 7 should optimize against a broader audited ground-truth program,
+    not just the old `152`-case frozen benchmark
+  - the reusable seed now starts from `422` validated pair rows still mapping
+    to today's `producer_dedup_pairs`
+  - only scoreable pair labels (`SAME_AS`, `RELATED_BUT_DISTINCT`, `NONE`)
+    count toward the new `1,000`-pair target; `DEFERRED` rows and singleton
+    `KEEP_AS_IS` checks stay in side ledgers
+  - the live `producer_dedup_pairs` table still does **not** count as truth
+    because `verdict_source` is blank
+  - Pack 001 should absorb the challenged late overlay wins and use them as
+    part of a broader audited truth expansion, not as isolated special cases
+
+  **Why this matters:** Sprint 7 finally has a reproducible measurement object.
+  Future method claims can now be judged against the same truth files instead
+  of against whichever benchmark slice happens to look decisive in the moment.

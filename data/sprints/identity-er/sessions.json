@@ -78,5 +78,13 @@
     "shape": "validation",
     "spent": 0.0,
     "notes": "Pressure-tested the benchmark-clearing stack against live canonical snapshots plus fresh web evidence. Produced session10_9_case_snapshots_v1.json, session10_9_web_validation_ledger_v1.md, session10_9_web_validation_memo_v1.md, and the read-only snapshot builder. Result: the current recommendation was withdrawn. place_alias held up, but the maison_alias benchmark win Ardhuy Cabotte / de la Cabotte no longer survives independent scrutiny, and fils_person_alias remains unresolved rather than independently validated. The next honest session is benchmark-truth and entity-history repair, not more method cycling."
+  },
+  {
+    "id": "S10.10",
+    "date": "2026-04-22",
+    "title": "Ground truth foundation",
+    "shape": "measurement",
+    "spent": 0.0,
+    "notes": "Turned Sprint 7's next bottleneck into a reproducible artifact set instead of another narrow memo. Built ground_truth_program_v1.md, a reproducible seed builder, ground_truth_seed_pairs_v1.jsonl, ground_truth_seed_singletons_v1.jsonl, and ground_truth_seed_summary_v1.md. Result: Sprint 7 now starts from 422 validated pair rows still mapping to today's producer_dedup_pairs, counts 417 scoreable pair truths toward a new 1,000-pair target, and explicitly refuses to treat the live pair table's machine verdicts as truth while verdict_source remains blank."
   }
 ]

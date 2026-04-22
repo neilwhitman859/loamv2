@@ -4,6 +4,24 @@ Append-only. Each entry records a human judgment call and why. Claude adds entri
 
 ---
 
+### 2026-04-22: Sprint 7 should establish a 1,000-pair scoreable ground-truth program before trusting another benchmark win
+
+After the user pushed on the real blocker ("we need better ground truth so the
+goal is measurable and loopable"), Sprint 7 shifted from a narrow
+benchmark-truth repair memo into a broader ground-truth program. Decision:
+freeze the existing validated pair ledger as `ground_truth_seed_v1`, count only
+provenance-backed scoreable pair labels toward progress, and expand toward
+`1,000` scoreable pairs through audited packs rather than through ad hoc
+benchmark edits. The seed starts from `422` validated pair rows still mapping to
+today's `producer_dedup_pairs`, with `417` scoreable today; singleton
+`KEEP_AS_IS` checks and `DEFERRED` rows stay in side ledgers and do not count
+toward the target.
+
+Reason: benchmark clearance without trusted truth is not a real convergence
+signal. The live `producer_dedup_pairs` machine verdicts are explicitly **not**
+truth while `verdict_source` remains blank, so the only honest path is to build
+and iterate against a stronger audited truth set first.
+
 ### 2026-04-22: Benchmark-clearing producer-dedup survivors must face fresh outside-benchmark validation before they keep the recommendation
 
 After Session 10.8 produced a benchmark-clearing survivor, the user explicitly

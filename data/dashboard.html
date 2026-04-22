@@ -291,19 +291,19 @@
 
 <div class="header">
   <h1>Loam</h1>
-  <div class="meta">Sprint 7 &middot; Producer identity ER &middot; <!--updated-->updated 2026-04-22 07:20 ET<!--/updated--></div>
+  <div class="meta">Sprint 7 &middot; Producer identity ER &middot; <!--updated-->updated 2026-04-22 07:30 ET<!--/updated--></div>
 </div>
 
 <div class="session-strip">
   <div class="session-cell">
     <div class="s-label">Latest session</div>
-    <div class="s-cost">10.9</div>
-    <div class="s-detail">Independent web validation &middot; live read-only snapshots &middot; no new model spend</div>
+    <div class="s-cost">10.10</div>
+    <div class="s-detail">Ground truth foundation &middot; 422 mapped pair truths &middot; no new model spend</div>
   </div>
   <div class="session-cell">
     <div class="s-label">Run spend</div>
     <div class="s-cost">$0.00</div>
-    <div class="s-detail">Session 10.9 validated the benchmark leader with web evidence and live canonical reads only</div>
+    <div class="s-detail">Session 10.10 froze the seed truth manifest and the path from 417 scoreable pairs to 1,000</div>
   </div>
   <div class="session-cell total">
     <div class="s-label">Prior bakeoff spend</div>
@@ -327,7 +327,7 @@
     <div class="pstats" style="font-size:11.5px;"><code>producer_dossier_v1</code>, source inventory, edge taxonomy, shortlist generation, selector harness, escalation dossier, accepted-edge rules, frozen proof bundle, and the first real proof run are now on disk</div>
     <div class="pstep" style="font-size:12px; margin-top:6px;">current result</div>
     <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
-    <div class="pstats" style="font-size:11.5px;">Session 10.8 found a benchmark-clearing survivor, but Session 10.9 web validation withdrew it as the trusted recommendation after a challenged late overlay win</div>
+    <div class="pstats" style="font-size:11.5px;">Session 10.10 froze a 422-pair ground-truth seed and shifted the next bottleneck from method search to audited truth expansion</div>
   </div>
   <div class="goal" style="font-size:12px; margin-top:10px; padding:10px; background:rgba(200,120,0,0.06); border-left:3px solid #c87800;"><strong>Current doctrine:</strong> compare identities, not raw pairs. Build a reusable producer dossier, generate a small shortlist, select best match or <code>none</code>, represent <code>RELATED_BUT_DISTINCT</code> explicitly, and merge only from accepted <code>SAME_AS</code> edges.</div>
   <ul class="steps">
@@ -341,7 +341,7 @@
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 8 &mdash; Build the bounded proof bundle and local scorer before any broader implementation</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 9 &mdash; Run the bounded proof execution and write the go / no-go memo</span></li>
     <li><span class="marker done-s">&#10003;</span><span class="done-s">Step 10 &mdash; Run the broad autonomous method bakeoff under the frozen Session 4 production gate</span></li>
-    <li><span class="marker current-s">&#9654;</span><span class="current-s">Step 11 &mdash; Repair challenged late benchmark wins with an external truth / entity-history pass before trusting any survivor</span></li>
+    <li><span class="marker current-s">&#9654;</span><span class="current-s">Step 11 &mdash; Establish expanded producer ground truth, repair challenged cases inside that ledger, and stop trusting thin benchmark wins</span></li>
   </ul>
 </div>
 
@@ -392,11 +392,11 @@
       <tr><td>Live canonical snapshot</td><td>33,281 producers &middot; 225,281 wines &middot; 125,934 vintages</td></tr>
       <tr><td>Sprint 6 carry-over</td><td>pairwise benchmark and failure-mode corpus preserved; best artifact remains <code>session9_7_layered_safety_sonnet_r2_narrow</code></td></tr>
       <tr><td>Method name</td><td><code>identity_dossier_select_v1</code> (&ldquo;Identity Dossier Select&rdquo;)</td></tr>
-      <tr><td>Latest artifact</td><td><code>session10_9_web_validation_ledger_v1.md</code>, <code>session10_9_web_validation_memo_v1.md</code>, and <code>session10_9_case_snapshots_v1.json</code> under <code>data/sprints/identity-er/method_bakeoff/</code></td></tr>
-      <tr><td>Immediate next artifact</td><td><code>s10_10_benchmark_truth_repair.md</code> plus a repaired truth ledger for the challenged late overlay wins</td></tr>
-      <tr><td>After that</td><td>either demote/remove the challenged late overlays and rerank survivors on corrected truth, or reopen method search only after the truth set is repaired</td></tr>
-      <tr><td>Execution status</td><td>Broad bakeoff complete. The prior benchmark-clear stack is now a web-challenged provisional artifact rather than the trusted recommendation.</td></tr>
-      <tr><td>Primary risk</td><td>truth-set contamination or entity-history confusion in the late benchmark wins could fabricate perfect benchmark results and create false confidence in the wrong method.</td></tr>
+      <tr><td>Latest artifact</td><td><code>ground_truth_program_v1.md</code>, <code>ground_truth_seed_pairs_v1.jsonl</code>, and <code>ground_truth_seed_summary_v1.md</code> under <code>data/sprints/identity-er/</code></td></tr>
+      <tr><td>Immediate next artifact</td><td><code>ground_truth_pack_001_v1.jsonl</code> plus an audited Pack 001 summary against the new 1,000-pair target</td></tr>
+      <tr><td>After that</td><td>expand the scoreable pair corpus in audited packs, then judge future method claims against the stronger truth set instead of against the old thin benchmark alone</td></tr>
+      <tr><td>Execution status</td><td>Broad bakeoff complete. Method search is paused; Sprint 7 now has a reproducible ground-truth baseline and is blocked on truth expansion quality rather than on finding another apparent survivor.</td></tr>
+      <tr><td>Primary risk</td><td>the current seed is still France-heavy and underweights related-but-distinct cases, so a method can still look better than it is unless Pack 001 broadens the truth base honestly.</td></tr>
     </table>
   </div>
 </div>
@@ -464,10 +464,16 @@
       <td>Session 10.9 challenged the trusted recommendation with fresh web evidence, live canonical snapshots, and no new model spend</td>
       <td class="num">$0.00</td>
     </tr>
+    <tr>
+      <td>Ground-truth foundation</td>
+      <td>done</td>
+      <td>Session 10.10 froze the first reusable seed manifest (`422` mapped pair truths, `417` scoreable) and defined the audited path to a `1,000`-pair target</td>
+      <td class="num">$0.00</td>
+    </tr>
     <tr style="background:#fff4e5;">
-      <td><strong>Next user touchpoint</strong> &mdash; review the Session 10.9 validation memo and decide whether to authorize a benchmark-truth repair pass</td>
+      <td><strong>Next user touchpoint</strong> &mdash; review the new ground-truth program and decide whether to keep the proposed `1,000`-pair target shape or adjust it before Pack 001 starts</td>
       <td>&mdash;</td>
-      <td>The honest next move is no longer more bakeoff cycling. It is a truth / entity-history repair session on the challenged late overlay wins.</td>
+      <td>The honest next move is no longer more bakeoff cycling. It is the first audited truth-expansion pack, with the challenged late overlay wins absorbed into that broader ledger.</td>
       <td class="num">&mdash;</td>
     </tr>
   </table>
@@ -594,6 +600,7 @@
         <tr><td style="color:var(--muted);">Session 10.7 proof execution</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$2.08</td></tr>
         <tr><td style="color:var(--muted);">Session 10.8 broad bakeoff</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$11.05</td></tr>
         <tr><td style="color:var(--muted);">Session 10.9 web validation</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
+        <tr><td style="color:var(--muted);">Session 10.10 ground truth foundation</td><td style="text-align:right; font-variant-numeric: tabular-nums;">$0.00</td></tr>
         <tr><td style="font-weight:600; border-top:1px solid var(--border); padding-top:4px;">Phase 1 ceiling</td><td style="text-align:right; font-weight:700; font-variant-numeric: tabular-nums; border-top:1px solid var(--border); padding-top:4px;">$30.00</td></tr>
         <tr><td style="color:var(--green);">Remaining</td><td style="text-align:right; font-variant-numeric: tabular-nums; color:var(--green);">$16.87</td></tr>
       </table>
